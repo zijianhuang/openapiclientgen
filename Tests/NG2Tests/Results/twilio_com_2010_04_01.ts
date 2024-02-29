@@ -809,16 +809,16 @@ export namespace MyNS {
 		from?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		parent_call_sid?: string | null;
 		phone_number_sid?: string | null;
 		price?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -855,16 +855,16 @@ export namespace MyNS {
 		from: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		parent_call_sid: FormControl<string | null | undefined>,
 		phone_number_sid: FormControl<string | null | undefined>,
 		price: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -953,8 +953,8 @@ export namespace MyNS {
 		from?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		parent_call_sid?: string | null;
 
@@ -968,8 +968,8 @@ export namespace MyNS {
 		price_unit?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1018,8 +1018,8 @@ export namespace MyNS {
 		from: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		parent_call_sid: FormControl<string | null | undefined>,
 
@@ -1033,8 +1033,8 @@ export namespace MyNS {
 		price_unit: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -3850,8 +3850,8 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter state or province abbreviation of this phone number.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		region?: string | null;
 	}
@@ -3883,8 +3883,8 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter state or province abbreviation of this phone number.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		region: FormControl<string | null | undefined>,
 	}
@@ -3971,8 +3971,8 @@ export namespace MyNS {
 		max_size?: number | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		uri?: string | null;
@@ -3992,8 +3992,8 @@ export namespace MyNS {
 		max_size: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		uri: FormControl<string | null | undefined>,
@@ -4095,8 +4095,8 @@ export namespace MyNS {
 		max_size?: number | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		uri?: string | null;
@@ -4116,8 +4116,8 @@ export namespace MyNS {
 		max_size: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		uri: FormControl<string | null | undefined>,
@@ -5117,6 +5117,7 @@ export namespace MyNS {
 		 * is currently available for provisioning within your account.
 		 * Get Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local{mediaTypeExtension}
 		 * @param {string} IsoCountryCode ISO 3166-1 alpha-2.
+		 *     Min length: 2    Max length: 2
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @return {void} The request was successful and the response body contains the representation
 		 * requested.
@@ -5129,6 +5130,7 @@ export namespace MyNS {
 		 * Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
 		 * Get Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Mobile{mediaTypeExtension}
 		 * @param {string} IsoCountryCode ISO 3166-1 alpha-2.
+		 *     Min length: 2    Max length: 2
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @return {void} The request was successful and the response body contains the representation
 		 * requested.
@@ -5144,6 +5146,7 @@ export namespace MyNS {
 		 * phone number, POST the number to the IncomingPhoneNumbers resource.
 		 * Get Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree{mediaTypeExtension}
 		 * @param {string} IsoCountryCode ISO 3166-1 alpha-2.
+		 *     Min length: 2    Max length: 2
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @return {void} The request was successful and the response body contains the representation
 		 * requested.
@@ -6288,6 +6291,7 @@ export namespace MyNS {
 		 * Get Accounts/{AccountSid}{mediaTypeExtension}
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @param {string} AccountSid A 34 character string that uniquely identifies this account.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} The request was successful and the response body contains the representation
 		 * requested.
 		 */
@@ -6300,6 +6304,7 @@ export namespace MyNS {
 		 * Put Accounts/{AccountSid}{mediaTypeExtension}
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @param {string} AccountSid A 34 character string that uniquely identifies this account.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} The request was successful, we updated the resource and the response
 		 * body contains the representation.
 		 */
@@ -6312,6 +6317,7 @@ export namespace MyNS {
 		 * Post Accounts/{AccountSid}{mediaTypeExtension}
 		 * @param {Accounts_AccountSidApplications_ApplicationSid_mediaTypeExtensionGetMediaTypeExtension} mediaTypeExtension By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		 * @param {string} AccountSid A 34 character string that uniquely identifies this account.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} The request was successful, we updated the resource and the response
 		 * body contains the representation.
 		 */

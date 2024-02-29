@@ -30,32 +30,56 @@ export namespace MyNS {
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColor {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha?: number | null;
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColorFormProperties {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeColorFormGroup() {
@@ -298,26 +322,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -1118,14 +1160,20 @@ export namespace MyNS {
 	/** Options for a multi-valued variant of an associated field type. */
 	export interface GoogleAppsDriveLabelsV2FieldListOptions {
 
-		/** Maximum number of entries permitted. */
+		/**
+		 * Maximum number of entries permitted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEntries?: number | null;
 	}
 
 	/** Options for a multi-valued variant of an associated field type. */
 	export interface GoogleAppsDriveLabelsV2FieldListOptionsFormProperties {
 
-		/** Maximum number of entries permitted. */
+		/**
+		 * Maximum number of entries permitted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEntries: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2FieldListOptionsFormGroup() {
@@ -1139,20 +1187,32 @@ export namespace MyNS {
 	/** Options for the Text field type. */
 	export interface GoogleAppsDriveLabelsV2FieldTextOptions {
 
-		/** Output only. The maximum valid length of values for the text field. */
+		/**
+		 * Output only. The maximum valid length of values for the text field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength?: number | null;
 
-		/** Output only. The minimum valid length of values for the text field. */
+		/**
+		 * Output only. The minimum valid length of values for the text field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength?: number | null;
 	}
 
 	/** Options for the Text field type. */
 	export interface GoogleAppsDriveLabelsV2FieldTextOptionsFormProperties {
 
-		/** Output only. The maximum valid length of values for the text field. */
+		/**
+		 * Output only. The maximum valid length of values for the text field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
-		/** Output only. The minimum valid length of values for the text field. */
+		/**
+		 * Output only. The minimum valid length of values for the text field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2FieldTextOptionsFormGroup() {
@@ -1635,7 +1695,10 @@ export namespace MyNS {
 		/** The field of the created field. When left blank in a create request, a key will be autogenerated and can be identified here. */
 		id?: string | null;
 
-		/** The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n). */
+		/**
+		 * The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
@@ -1645,7 +1708,10 @@ export namespace MyNS {
 		/** The field of the created field. When left blank in a create request, a key will be autogenerated and can be identified here. */
 		id: FormControl<string | null | undefined>,
 
-		/** The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n). */
+		/**
+		 * The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2DeltaUpdateLabelResponseCreateFieldResponseFormGroup() {
@@ -1772,14 +1838,20 @@ export namespace MyNS {
 	/** Response following update to Field properties. */
 	export interface GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponse {
 
-		/** The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n). */
+		/**
+		 * The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
 	/** Response following update to Field properties. */
 	export interface GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponseFormProperties {
 
-		/** The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n). */
+		/**
+		 * The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponseFormGroup() {
@@ -1821,14 +1893,20 @@ export namespace MyNS {
 	/** Response following update to Selection Choice properties. */
 	export interface GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse {
 
-		/** The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n). */
+		/**
+		 * The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
 	/** Response following update to Selection Choice properties. */
 	export interface GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponseFormProperties {
 
-		/** The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n). */
+		/**
+		 * The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponseFormGroup() {
@@ -2187,13 +2265,22 @@ export namespace MyNS {
 		/** Limits for long text Field type. */
 		longTextLimits?: GoogleAppsDriveLabelsV2LongTextLimits;
 
-		/** Limits for Field description, also called help text. */
+		/**
+		 * Limits for Field description, also called help text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDescriptionLength?: number | null;
 
-		/** Limits for Field title. */
+		/**
+		 * Limits for Field title.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDisplayNameLength?: number | null;
 
-		/** Max length for the id. */
+		/**
+		 * Max length for the id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdLength?: number | null;
 
 		/** Limits for selection Field type. */
@@ -2209,13 +2296,22 @@ export namespace MyNS {
 	/** Field constants governing the structure of a Field; such as, the maximum title length, minimum and maximum field values or length, etc. */
 	export interface GoogleAppsDriveLabelsV2FieldLimitsFormProperties {
 
-		/** Limits for Field description, also called help text. */
+		/**
+		 * Limits for Field description, also called help text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDescriptionLength: FormControl<number | null | undefined>,
 
-		/** Limits for Field title. */
+		/**
+		 * Limits for Field title.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDisplayNameLength: FormControl<number | null | undefined>,
 
-		/** Max length for the id. */
+		/**
+		 * Max length for the id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2FieldLimitsFormGroup() {
@@ -2259,20 +2355,32 @@ export namespace MyNS {
 	/** Limits for long text Field type. */
 	export interface GoogleAppsDriveLabelsV2LongTextLimits {
 
-		/** Maximum length allowed for a long text Field type. */
+		/**
+		 * Maximum length allowed for a long text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength?: number | null;
 
-		/** Minimum length allowed for a long text Field type. */
+		/**
+		 * Minimum length allowed for a long text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength?: number | null;
 	}
 
 	/** Limits for long text Field type. */
 	export interface GoogleAppsDriveLabelsV2LongTextLimitsFormProperties {
 
-		/** Maximum length allowed for a long text Field type. */
+		/**
+		 * Maximum length allowed for a long text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
-		/** Minimum length allowed for a long text Field type. */
+		/**
+		 * Minimum length allowed for a long text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2LongTextLimitsFormGroup() {
@@ -2290,32 +2398,56 @@ export namespace MyNS {
 		/** Limits for list-variant of a Field type. */
 		listLimits?: GoogleAppsDriveLabelsV2ListLimits;
 
-		/** The max number of choices. */
+		/**
+		 * The max number of choices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChoices?: number | null;
 
-		/** Maximum number of deleted choices. */
+		/**
+		 * Maximum number of deleted choices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeletedChoices?: number | null;
 
-		/** Maximum length for display name. */
+		/**
+		 * Maximum length for display name.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDisplayNameLength?: number | null;
 
-		/** Maximum ID length for a selection options. */
+		/**
+		 * Maximum ID length for a selection options.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdLength?: number | null;
 	}
 
 	/** Limits for selection Field type. */
 	export interface GoogleAppsDriveLabelsV2SelectionLimitsFormProperties {
 
-		/** The max number of choices. */
+		/**
+		 * The max number of choices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChoices: FormControl<number | null | undefined>,
 
-		/** Maximum number of deleted choices. */
+		/**
+		 * Maximum number of deleted choices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeletedChoices: FormControl<number | null | undefined>,
 
-		/** Maximum length for display name. */
+		/**
+		 * Maximum length for display name.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDisplayNameLength: FormControl<number | null | undefined>,
 
-		/** Maximum ID length for a selection options. */
+		/**
+		 * Maximum ID length for a selection options.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2SelectionLimitsFormGroup() {
@@ -2332,14 +2464,20 @@ export namespace MyNS {
 	/** Limits for list-variant of a Field type. */
 	export interface GoogleAppsDriveLabelsV2ListLimits {
 
-		/** Maximum number of values allowed for the Field type. */
+		/**
+		 * Maximum number of values allowed for the Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEntries?: number | null;
 	}
 
 	/** Limits for list-variant of a Field type. */
 	export interface GoogleAppsDriveLabelsV2ListLimitsFormProperties {
 
-		/** Maximum number of values allowed for the Field type. */
+		/**
+		 * Maximum number of values allowed for the Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEntries: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2ListLimitsFormGroup() {
@@ -2353,20 +2491,32 @@ export namespace MyNS {
 	/** Limits for text Field type. */
 	export interface GoogleAppsDriveLabelsV2TextLimits {
 
-		/** Maximum length allowed for a text Field type. */
+		/**
+		 * Maximum length allowed for a text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength?: number | null;
 
-		/** Minimum length allowed for a text Field type. */
+		/**
+		 * Minimum length allowed for a text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength?: number | null;
 	}
 
 	/** Limits for text Field type. */
 	export interface GoogleAppsDriveLabelsV2TextLimitsFormProperties {
 
-		/** Maximum length allowed for a text Field type. */
+		/**
+		 * Maximum length allowed for a text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
-		/** Minimum length allowed for a text Field type. */
+		/**
+		 * Minimum length allowed for a text Field type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAppsDriveLabelsV2TextLimitsFormGroup() {
@@ -2401,19 +2551,34 @@ export namespace MyNS {
 		/** Field constants governing the structure of a Field; such as, the maximum title length, minimum and maximum field values or length, etc. */
 		fieldLimits?: GoogleAppsDriveLabelsV2FieldLimits;
 
-		/** The maximum number of published Fields that can be deleted. */
+		/**
+		 * The maximum number of published Fields that can be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeletedFields?: number | null;
 
-		/** The maximum number of characters allowed for the description. */
+		/**
+		 * The maximum number of characters allowed for the description.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDescriptionLength?: number | null;
 
-		/** The maximum number of draft revisions that will be kept before deleting old drafts. */
+		/**
+		 * The maximum number of draft revisions that will be kept before deleting old drafts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDraftRevisions?: number | null;
 
-		/** The maximum number of Fields allowed within the label. */
+		/**
+		 * The maximum number of Fields allowed within the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFields?: number | null;
 
-		/** The maximum number of characters allowed for the title. */
+		/**
+		 * The maximum number of characters allowed for the title.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTitleLength?: number | null;
 
 		/** Resource name. */
@@ -2423,19 +2588,34 @@ export namespace MyNS {
 	/** Label constraints governing the structure of a Label; such as, the maximum number of Fields allowed and maximum length of the label title. */
 	export interface GoogleAppsDriveLabelsV2LabelLimitsFormProperties {
 
-		/** The maximum number of published Fields that can be deleted. */
+		/**
+		 * The maximum number of published Fields that can be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeletedFields: FormControl<number | null | undefined>,
 
-		/** The maximum number of characters allowed for the description. */
+		/**
+		 * The maximum number of characters allowed for the description.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDescriptionLength: FormControl<number | null | undefined>,
 
-		/** The maximum number of draft revisions that will be kept before deleting old drafts. */
+		/**
+		 * The maximum number of draft revisions that will be kept before deleting old drafts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDraftRevisions: FormControl<number | null | undefined>,
 
-		/** The maximum number of Fields allowed within the label. */
+		/**
+		 * The maximum number of Fields allowed within the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFields: FormControl<number | null | undefined>,
 
-		/** The maximum number of characters allowed for the title. */
+		/**
+		 * The maximum number of characters allowed for the title.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTitleLength: FormControl<number | null | undefined>,
 
 		/** Resource name. */
@@ -2758,6 +2938,7 @@ export namespace MyNS {
 		 * @param {string} languageCode The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language are used.
 		 * @param {GoogleAppsDriveLabelsV2LabelPermissionRole} minimumRole Specifies the level of access the user must have on the returned Labels. The minimum role a user must have on a label. Defaults to `READER`.
 		 * @param {number} pageSize Maximum number of labels to return per page. Default: 50. Max: 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token of the page to return.
 		 * @param {boolean} publishedOnly Whether to include only published labels in the results. * When `true`, only the current published label revisions are returned. Disabled labels are included. Returned label resource names reference the published revision (`labels/{id}/{revision_id}`). * When `false`, the current label revisions are returned, which might not be published. Returned label resource names don't reference a specific revision (`labels/{id}`).
 		 * @param {boolean} useAdminAccess Set to `true` in order to use the user's admin credentials. This will return all Labels within the customer.
@@ -2869,6 +3050,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/locks
 		 * @param {string} parent Required. Label on which Locks are applied. Format: labels/{label}
 		 * @param {number} pageSize Maximum number of Locks to return per page. Default: 100. Max: 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token of the page to return.
 		 * @return {GoogleAppsDriveLabelsV2ListLabelLocksResponse} Successful response
 		 */
@@ -2881,6 +3063,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/permissions
 		 * @param {string} parent Required. The parent Label resource name on which Label Permission are listed. Format: labels/{label}
 		 * @param {number} pageSize Maximum number of permissions to return per page. Default: 50. Max: 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token of the page to return.
 		 * @param {boolean} useAdminAccess Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.
 		 * @return {GoogleAppsDriveLabelsV2ListLabelPermissionsResponse} Successful response

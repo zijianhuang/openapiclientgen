@@ -906,6 +906,7 @@ export namespace MyNS {
 		 * Get subscription wide details of components.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.WorkloadMonitor/componentsSummary
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {Operations_ListApi_version} api_version The API version to use for this operation.
 		 * @param {string} select Properties to be returned in the response.
 		 * @param {string} filter Filter to be applied on the operation.
@@ -924,6 +925,7 @@ export namespace MyNS {
 		 * Get subscription wide health instances.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.WorkloadMonitor/monitorInstancesSummary
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {Operations_ListApi_version} api_version The API version to use for this operation.
 		 * @param {string} select Properties to be returned in the response.
 		 * @param {string} filter Filter to be applied on the operation.
@@ -942,7 +944,9 @@ export namespace MyNS {
 		 * Get list of components for a resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/components
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -964,7 +968,9 @@ export namespace MyNS {
 		 * Get details of a component.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/components/{componentId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -982,7 +988,9 @@ export namespace MyNS {
 		 * Get list of monitor instances for a resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitorInstances
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1004,7 +1012,9 @@ export namespace MyNS {
 		 * Get details of a monitorInstance.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitorInstances/{monitorInstanceId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1022,7 +1032,9 @@ export namespace MyNS {
 		 * Get list of a monitors of a resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1039,7 +1051,9 @@ export namespace MyNS {
 		 * Get details of a single monitor.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1055,7 +1069,9 @@ export namespace MyNS {
 		 * Update a Monitor's configuration.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1072,7 +1088,9 @@ export namespace MyNS {
 		 * Get list of notification settings for a resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1088,7 +1106,9 @@ export namespace MyNS {
 		 * Get a of notification setting for a resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings/{notificationSettingName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -1104,7 +1124,9 @@ export namespace MyNS {
 		 * Update notification settings for a resource.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings/{notificationSettingName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.

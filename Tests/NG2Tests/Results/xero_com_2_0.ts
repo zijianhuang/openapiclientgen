@@ -4981,6 +4981,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactionsGetByWhereAndOrderAndUnitdpReturn} A successful response
 		 */
 		BankTransactionsGetByWhereAndOrderAndUnitdp(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BankTransactionsGetByWhereAndOrderAndUnitdpReturn> {
@@ -5001,6 +5002,7 @@ export namespace MyNS {
 		 * Create a new spend or receive money (inc. prepayments and overpayments)
 		 * Post BankTransactions
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {BankTransactionsPostByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5012,6 +5014,7 @@ export namespace MyNS {
 		 * Retrieve a spend or receive money (inc. prepayments and overpayments)
 		 * Get BankTransactions/{BankTransactionID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions_BankTransactionIDGetByUnitdpReturn} A successful response
 		 */
 		BankTransactions_BankTransactionIDGetByUnitdp(BankTransactionID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BankTransactions_BankTransactionIDGetByUnitdpReturn> {
@@ -5022,6 +5025,7 @@ export namespace MyNS {
 		 * Update a spend or receive money
 		 * Post BankTransactions/{BankTransactionID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions_BankTransactionIDPostByUnitdpReturn} A successful response
 		 */
 		BankTransactions_BankTransactionIDPostByUnitdp(BankTransactionID: string, unitdp: number | null | undefined, requestBody: BankTransaction, headersHandler?: () => HttpHeaders): Observable<BankTransactions_BankTransactionIDPostByUnitdpReturn> {
@@ -5314,7 +5318,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreditNotesGetByWhereAndOrderAndUnitdpAndPageReturn} A successful response
 		 */
 		CreditNotesGetByWhereAndOrderAndUnitdpAndPage(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<CreditNotesGetByWhereAndOrderAndUnitdpAndPageReturn> {
@@ -5325,6 +5331,7 @@ export namespace MyNS {
 		 * Create a credit note
 		 * Put CreditNotes
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {CreditNotesPutByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5336,6 +5343,7 @@ export namespace MyNS {
 		 * Create or update a credit note
 		 * Post CreditNotes
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {CreditNotesPostByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5347,6 +5355,7 @@ export namespace MyNS {
 		 * Retrieve an individual credit note
 		 * Get CreditNotes/{CreditNoteID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreditNotes_CreditNoteIDGetByUnitdpReturn} A successful response
 		 */
 		CreditNotes_CreditNoteIDGetByUnitdp(CreditNoteID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<CreditNotes_CreditNoteIDGetByUnitdpReturn> {
@@ -5357,6 +5366,7 @@ export namespace MyNS {
 		 * Update a credit note
 		 * Post CreditNotes/{CreditNoteID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreditNotes_CreditNoteIDPostByUnitdpReturn} A successful response
 		 */
 		CreditNotes_CreditNoteIDPostByUnitdp(CreditNoteID: string, unitdp: number | null | undefined, requestBody: CreditNote, headersHandler?: () => HttpHeaders): Observable<CreditNotes_CreditNoteIDPostByUnitdpReturn> {
@@ -5533,6 +5543,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IDs Filter by a comma-separated list of InvoiceIDs
 		 * @param {string} ContactIDs Filter by a comma-separated list of ContactIDs
 		 * @param {string} Statuses Filter by a comma-separated list of Statuses
@@ -5547,6 +5558,7 @@ export namespace MyNS {
 		 * Create an Invoice (sales invoices or bills)
 		 * Put Invoices
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {InvoicesPutByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5558,6 +5570,7 @@ export namespace MyNS {
 		 * Create or update an Invoice (sales invoices or bills)
 		 * Post Invoices
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {InvoicesPostByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5569,6 +5582,7 @@ export namespace MyNS {
 		 * Retrieve an Invoice (sales invoice or bill)
 		 * Get Invoices/{InvoiceID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices_InvoiceIDGetByUnitdpReturn} A successful response
 		 */
 		Invoices_InvoiceIDGetByUnitdp(InvoiceID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Invoices_InvoiceIDGetByUnitdpReturn> {
@@ -5579,6 +5593,7 @@ export namespace MyNS {
 		 * Update an Invoice (sales invoice or bill)
 		 * Post Invoices/{InvoiceID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices_InvoiceIDPostByUnitdpReturn} A successful response
 		 */
 		Invoices_InvoiceIDPostByUnitdp(InvoiceID: string, unitdp: number | null | undefined, requestBody: Invoice, headersHandler?: () => HttpHeaders): Observable<Invoices_InvoiceIDPostByUnitdpReturn> {
@@ -5636,6 +5651,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ItemsGetByWhereAndOrderAndUnitdpReturn} A successful response
 		 */
 		ItemsGetByWhereAndOrderAndUnitdp(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ItemsGetByWhereAndOrderAndUnitdpReturn> {
@@ -5646,6 +5662,7 @@ export namespace MyNS {
 		 * Create an item
 		 * Put Items
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {ItemsPutByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5657,6 +5674,7 @@ export namespace MyNS {
 		 * Create or update an item
 		 * Post Items
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {ItemsPostByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -5668,6 +5686,7 @@ export namespace MyNS {
 		 * Retrieve an item
 		 * Get Items/{ItemID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items_ItemIDGetByUnitdpReturn} A successful response
 		 */
 		Items_ItemIDGetByUnitdp(ItemID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Items_ItemIDGetByUnitdpReturn> {
@@ -5678,6 +5697,7 @@ export namespace MyNS {
 		 * Update an item
 		 * Post Items/{ItemID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items_ItemIDPostByUnitdpReturn} A successful response
 		 */
 		Items_ItemIDPostByUnitdp(ItemID: string, unitdp: number | null | undefined, requestBody: Item, headersHandler?: () => HttpHeaders): Observable<Items_ItemIDPostByUnitdpReturn> {
@@ -5698,6 +5718,7 @@ export namespace MyNS {
 		 * Get Journals
 		 * @param {boolean} paymentsOnly Return results on a the cash basis
 		 * @param {number} offset Offset by a specified journal number. e.g. journals with a JournalNumber greater than the offset will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {JournalsGetByPaymentsOnlyAndOffsetReturn} A successful response
 		 */
 		JournalsGetByPaymentsOnlyAndOffset(paymentsOnly: boolean | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<JournalsGetByPaymentsOnlyAndOffsetReturn> {
@@ -5717,6 +5738,7 @@ export namespace MyNS {
 		 * Retrieve a collection of linked transactions (billable expenses)
 		 * Get LinkedTransactions
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} SourceTransactionID Filter by the SourceTransactionID. Get all the linked transactions created from a particular ACCPAY invoice
 		 * @param {string} ContactID Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer.
 		 * @param {string} Status Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED.
@@ -5778,6 +5800,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ManualJournalsGetByWhereAndOrderAndPageReturn} A successful response
 		 */
 		ManualJournalsGetByWhereAndOrderAndPage(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ManualJournalsGetByWhereAndOrderAndPageReturn> {
@@ -5882,7 +5905,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OverpaymentsGetByWhereAndOrderAndPageAndUnitdpReturn} A successful response
 		 */
 		OverpaymentsGetByWhereAndOrderAndPageAndUnitdp(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<OverpaymentsGetByWhereAndOrderAndPageAndUnitdpReturn> {
@@ -5893,6 +5918,7 @@ export namespace MyNS {
 		 * Retrieve an overpayment
 		 * Get Overpayments/{OverpaymentID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Overpayments_OverpaymentIDGetByUnitdpReturn} A successful response
 		 */
 		Overpayments_OverpaymentIDGetByUnitdp(OverpaymentID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Overpayments_OverpaymentIDGetByUnitdpReturn> {
@@ -5963,7 +5989,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by any element returned
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PrepaymentsGetByWhereAndOrderAndPageAndUnitdpReturn} A successful response
 		 */
 		PrepaymentsGetByWhereAndOrderAndPageAndUnitdp(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PrepaymentsGetByWhereAndOrderAndPageAndUnitdpReturn> {
@@ -5974,6 +6002,7 @@ export namespace MyNS {
 		 * Retrieve an individual prepayment
 		 * Get Prepayments/{PrepaymentID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Prepayments_PrepaymentIDGetByUnitdpReturn} A successful response
 		 */
 		Prepayments_PrepaymentIDGetByUnitdp(PrepaymentID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Prepayments_PrepaymentIDGetByUnitdpReturn> {
@@ -5994,6 +6023,7 @@ export namespace MyNS {
 		 * Get PurchaseOrders
 		 * @param {string} order Order by any element returned
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} DateFrom Type: DateOnly
 		 * @param {Date} DateTo Type: DateOnly
 		 * @return {PurchaseOrdersGetByOrderAndPageAndDateFromAndDateToAndStatusReturn} A successful response
@@ -6082,6 +6112,7 @@ export namespace MyNS {
 		 * @param {string} order Order by any element returned
 		 * @param {string} where Filter by an any element
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReceiptsGetByOrderAndWhereAndUnitdpReturn} A successful response
 		 */
 		ReceiptsGetByOrderAndWhereAndUnitdp(order: string | null | undefined, where: string | null | undefined, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReceiptsGetByOrderAndWhereAndUnitdpReturn> {
@@ -6092,6 +6123,7 @@ export namespace MyNS {
 		 * Create a receipt
 		 * Put Receipts
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {ReceiptsPutByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -6103,6 +6135,7 @@ export namespace MyNS {
 		 * Create or update a receipt
 		 * Post Receipts
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} summarizeErrors If you plan to submit more than one entity per API call, we recommend that you append the summarizeErrors=false querystring to your API call. This ensures that every entity is returned back to you, each having their own status attribute.
 		 * @return {ReceiptsPostByUnitdpAndSummarizeErrorsReturn} A successful response
 		 */
@@ -6114,6 +6147,7 @@ export namespace MyNS {
 		 * Retrieve an individual receipt
 		 * Get Receipts/{ReceiptID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Receipts_ReceiptIDGetByUnitdpReturn} A successful response
 		 */
 		Receipts_ReceiptIDGetByUnitdp(ReceiptID: string, unitdp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Receipts_ReceiptIDGetByUnitdpReturn> {
@@ -6124,6 +6158,7 @@ export namespace MyNS {
 		 * Update a receipt
 		 * Post Receipts/{ReceiptID}
 		 * @param {number} unitdp Determines the decimal places accepted/returned on the UnitAmount. UnitAmount is 2 decimal places by default but can be increased to 4 decimal places by supplying the unitdp=4 parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Receipts_ReceiptIDPostByUnitdpReturn} A successful response
 		 */
 		Receipts_ReceiptIDPostByUnitdp(ReceiptID: string, unitdp: number | null | undefined, requestBody: Receipt, headersHandler?: () => HttpHeaders): Observable<Receipts_ReceiptIDPostByUnitdpReturn> {
@@ -6248,6 +6283,7 @@ export namespace MyNS {
 		 * Retrieve a Balance Sheet Report
 		 * Get Reports/BalanceSheet
 		 * @param {Date} date YYYY-MM-DD
+		 *     Type: DateOnly
 		 * @param {string} trackingOptionID1 Run the balance sheet for a specific tracking option
 		 * @param {string} trackingOptionID2 Run the balance sheet for a combination of two tracking options
 		 * @param {boolean} standardLayout If set to true no custom report layouts will be applied to response
@@ -6286,7 +6322,9 @@ export namespace MyNS {
 		 * Get Reports/BudgetSummary
 		 * @param {string} date YYYY-MM-DD
 		 * @param {number} periods The number of periods to compare (integer between 1 and 12)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeframe The period size to compare to (1=month, 3=quarter, 12=year)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReportsBudgetSummaryGetByDateAndPeriodsAndTimeframeReturn} A successful response
 		 */
 		ReportsBudgetSummaryGetByDateAndPeriodsAndTimeframe(date: string | null | undefined, periods: number | null | undefined, timeframe: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReportsBudgetSummaryGetByDateAndPeriodsAndTimeframeReturn> {

@@ -8,8 +8,9 @@ export namespace MyNS {
 		/**
 		 * Account activity status
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		active: number;
+		active: string;
 
 		/**
 		 * Date when account was created
@@ -32,20 +33,23 @@ export namespace MyNS {
 		/**
 		 * Account group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Account id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Account institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: number;
+		institution_id: string;
 
 		/**
 		 * Account institution user id
@@ -62,8 +66,9 @@ export namespace MyNS {
 		/**
 		 * Maximum upload size for account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maximum_file_size: number;
+		maximum_file_size: string;
 
 		/**
 		 * Date of last account modification
@@ -80,34 +85,39 @@ export namespace MyNS {
 		/**
 		 * Account quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: number;
+		quota: string;
 
 		/**
 		 * Account total used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: number;
+		used_quota: string;
 
 		/**
 		 * Account used private quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_private: number;
+		used_quota_private: string;
 
 		/**
 		 * Account public used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_public: number;
+		used_quota_public: string;
 	}
 	export interface AccountFormProperties {
 
 		/**
 		 * Account activity status
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		active: FormControl<number | null | undefined>,
+		active: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when account was created
@@ -130,20 +140,23 @@ export namespace MyNS {
 		/**
 		 * Account group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: FormControl<number | null | undefined>,
+		institution_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account institution user id
@@ -160,8 +173,9 @@ export namespace MyNS {
 		/**
 		 * Maximum upload size for account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maximum_file_size: FormControl<number | null | undefined>,
+		maximum_file_size: FormControl<string | null | undefined>,
 
 		/**
 		 * Date of last account modification
@@ -178,45 +192,49 @@ export namespace MyNS {
 		/**
 		 * Account quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: FormControl<number | null | undefined>,
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Account total used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: FormControl<number | null | undefined>,
+		used_quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Account used private quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_private: FormControl<number | null | undefined>,
+		used_quota_private: FormControl<string | null | undefined>,
 
 		/**
 		 * Account public used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_public: FormControl<number | null | undefined>,
+		used_quota_public: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			active: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			active: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			first_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			institution_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			institution_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			institution_user_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			maximum_file_size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			maximum_file_size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			pending_quota_request: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota_private: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota_public: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota_private: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota_public: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -226,8 +244,8 @@ export namespace MyNS {
 		/**
 		 * Email of account
 		 * Required
-		 * Max length: 150
 		 * Min length: 3
+		 * Max length: 150
 		 */
 		email: string;
 
@@ -238,8 +256,11 @@ export namespace MyNS {
 		 */
 		first_name: string;
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id?: number | null;
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/**
 		 * Institution user id
@@ -256,8 +277,11 @@ export namespace MyNS {
 		 */
 		last_name?: string | null;
 
-		/** Account quota */
-		quota?: number | null;
+		/**
+		 * Account quota
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota?: string | null;
 
 		/**
 		 * Symplectic user id
@@ -270,8 +294,8 @@ export namespace MyNS {
 		/**
 		 * Email of account
 		 * Required
-		 * Max length: 150
 		 * Min length: 3
+		 * Max length: 150
 		 */
 		email: FormControl<string | null | undefined>,
 
@@ -282,8 +306,11 @@ export namespace MyNS {
 		 */
 		first_name: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Institution user id
@@ -300,8 +327,11 @@ export namespace MyNS {
 		 */
 		last_name: FormControl<string | null | undefined>,
 
-		/** Account quota */
-		quota: FormControl<number | null | undefined>,
+		/**
+		 * Account quota
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Symplectic user id
@@ -313,11 +343,11 @@ export namespace MyNS {
 		return new FormGroup<AccountCreateFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(150)]),
 			first_name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30)]),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			institution_user_id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			is_active: new FormControl<boolean | null | undefined>(undefined),
 			last_name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
-			quota: new FormControl<number | null | undefined>(undefined),
+			quota: new FormControl<string | null | undefined>(undefined),
 			symplectic_user_id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 		});
 
@@ -348,8 +378,9 @@ export namespace MyNS {
 		/**
 		 * The ID of the account which generated this report.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * Date when the AccountReport was requested
@@ -366,14 +397,16 @@ export namespace MyNS {
 		/**
 		 * The group ID that was used to filter the report, if any.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * A unique ID for the AccountRecord
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Status of the report
@@ -386,8 +419,9 @@ export namespace MyNS {
 		/**
 		 * The ID of the account which generated this report.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when the AccountReport was requested
@@ -404,14 +438,16 @@ export namespace MyNS {
 		/**
 		 * The group ID that was used to filter the report, if any.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique ID for the AccountRecord
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Status of the report
@@ -421,11 +457,11 @@ export namespace MyNS {
 	}
 	export function CreateAccountReportFormGroup() {
 		return new FormGroup<AccountReportFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			download_url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<AccountReportStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -438,8 +474,9 @@ export namespace MyNS {
 		/**
 		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Is account active
@@ -452,8 +489,9 @@ export namespace MyNS {
 		/**
 		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is account active
@@ -463,7 +501,7 @@ export namespace MyNS {
 	}
 	export function CreateAccountUpdateFormGroup() {
 		return new FormGroup<AccountUpdateFormProperties>({
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			is_active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -474,8 +512,9 @@ export namespace MyNS {
 		/**
 		 * Type of article identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		defined_type: number;
+		defined_type: string;
 
 		/**
 		 * Name of the article type identifier
@@ -492,6 +531,7 @@ export namespace MyNS {
 		/**
 		 * Group ID
 		 * Required
+		 * Type: double
 		 */
 		group_id: number;
 
@@ -504,8 +544,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for article
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Posted date
@@ -563,8 +604,9 @@ export namespace MyNS {
 		/**
 		 * Type of article identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		defined_type: FormControl<number | null | undefined>,
+		defined_type: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the article type identifier
@@ -581,6 +623,7 @@ export namespace MyNS {
 		/**
 		 * Group ID
 		 * Required
+		 * Type: double
 		 */
 		group_id: FormControl<number | null | undefined>,
 
@@ -593,8 +636,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for article
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Posted date
@@ -646,12 +690,12 @@ export namespace MyNS {
 	}
 	export function CreateArticleFormGroup() {
 		return new FormGroup<ArticleFormProperties>({
-			defined_type: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			defined_type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			defined_type_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			doi: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			handle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			published_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			thumb: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -797,8 +841,9 @@ export namespace MyNS {
 		/**
 		 * Author id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * True if author has published items
@@ -829,8 +874,9 @@ export namespace MyNS {
 		/**
 		 * Author id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * True if author has published items
@@ -853,7 +899,7 @@ export namespace MyNS {
 	export function CreateAuthorFormGroup() {
 		return new FormGroup<AuthorFormProperties>({
 			full_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			is_active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			orcid_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -915,8 +961,9 @@ export namespace MyNS {
 		/**
 		 * Embargo option id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * IP range name; value appears if type is ip_range
@@ -935,8 +982,9 @@ export namespace MyNS {
 		/**
 		 * Embargo option id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * IP range name; value appears if type is ip_range
@@ -952,7 +1000,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupEmbargoOptionsFormGroup() {
 		return new FormGroup<GroupEmbargoOptionsFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ip_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<GroupEmbargoOptionsType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -978,8 +1026,9 @@ export namespace MyNS {
 		/**
 		 * File id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * True if file is hosted somewhere else
@@ -996,8 +1045,9 @@ export namespace MyNS {
 		/**
 		 * File size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 
 		/**
 		 * File supplied md5
@@ -1022,8 +1072,9 @@ export namespace MyNS {
 		/**
 		 * File id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * True if file is hosted somewhere else
@@ -1040,8 +1091,9 @@ export namespace MyNS {
 		/**
 		 * File size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * File supplied md5
@@ -1053,10 +1105,10 @@ export namespace MyNS {
 		return new FormGroup<PublicFileFormProperties>({
 			computed_md5: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			download_url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			is_link_only: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			supplied_md5: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1067,8 +1119,9 @@ export namespace MyNS {
 		/**
 		 * ID of the account owning the article
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * Group resource id
@@ -1081,8 +1134,9 @@ export namespace MyNS {
 		/**
 		 * ID of the account owning the article
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group resource id
@@ -1092,7 +1146,7 @@ export namespace MyNS {
 	}
 	export function CreateArticleCompletePrivateFormGroup() {
 		return new FormGroup<ArticleCompletePrivateFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			group_resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1169,8 +1223,11 @@ export namespace MyNS {
 		/** Funding creation / update items */
 		funding_list?: Array<FundingCreate>;
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id?: number | null;
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle?: string | null;
@@ -1181,8 +1238,11 @@ export namespace MyNS {
 		/** List of tags to be associated with the article. Tags can be used instead */
 		keywords?: Array<string>;
 
-		/** License id for this article. */
-		license?: number | null;
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license?: string | null;
 
 		/** Article metadata reason */
 		metadata_reason?: string | null;
@@ -1203,8 +1263,8 @@ export namespace MyNS {
 		/**
 		 * Title of article
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: string;
 	}
@@ -1228,8 +1288,11 @@ export namespace MyNS {
 		/** Grant number or funding authority */
 		funding: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle: FormControl<string | null | undefined>,
@@ -1237,8 +1300,11 @@ export namespace MyNS {
 		/** True if article has no files */
 		is_metadata_record: FormControl<boolean | null | undefined>,
 
-		/** License id for this article. */
-		license: FormControl<number | null | undefined>,
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license: FormControl<string | null | undefined>,
 
 		/** Article metadata reason */
 		metadata_reason: FormControl<string | null | undefined>,
@@ -1252,8 +1318,8 @@ export namespace MyNS {
 		/**
 		 * Title of article
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -1264,10 +1330,10 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			doi: new FormControl<string | null | undefined>(undefined),
 			funding: new FormControl<string | null | undefined>(undefined),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
 			is_metadata_record: new FormControl<boolean | null | undefined>(undefined),
-			license: new FormControl<number | null | undefined>(undefined),
+			license: new FormControl<string | null | undefined>(undefined),
 			metadata_reason: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 			resource_title: new FormControl<string | null | undefined>(undefined),
@@ -1314,23 +1380,29 @@ export namespace MyNS {
 
 	export interface FundingCreate {
 
-		/** A funding ID as returned by the Funding Search endpoint */
-		id?: number | null;
+		/**
+		 * A funding ID as returned by the Funding Search endpoint
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The title of the new user created funding */
 		title?: string | null;
 	}
 	export interface FundingCreateFormProperties {
 
-		/** A funding ID as returned by the Funding Search endpoint */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * A funding ID as returned by the Funding Search endpoint
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The title of the new user created funding */
 		title: FormControl<string | null | undefined>,
 	}
 	export function CreateFundingCreateFormGroup() {
 		return new FormGroup<FundingCreateFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1603,8 +1675,11 @@ export namespace MyNS {
 		/** List of tags to be associated with the article. Tags can be used instead */
 		keywords?: Array<string>;
 
-		/** License id for this article. */
-		license?: number | null;
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license?: string | null;
 
 		/** List of links to be associated with the article (e.g ["http://link1", "http://link2", "http://link3"]) */
 		references?: Array<string>;
@@ -1622,8 +1697,8 @@ export namespace MyNS {
 		/**
 		 * Title of article
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: string;
 	}
@@ -1650,8 +1725,11 @@ export namespace MyNS {
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle: FormControl<string | null | undefined>,
 
-		/** License id for this article. */
-		license: FormControl<number | null | undefined>,
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license: FormControl<string | null | undefined>,
 
 		/** Not applicable to regular users. In a publisher case, this is the publisher article DOI. */
 		resource_doi: FormControl<string | null | undefined>,
@@ -1662,8 +1740,8 @@ export namespace MyNS {
 		/**
 		 * Title of article
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -1675,7 +1753,7 @@ export namespace MyNS {
 			doi: new FormControl<string | null | undefined>(undefined),
 			funding: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
-			license: new FormControl<number | null | undefined>(undefined),
+			license: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 			resource_title: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]),
@@ -1691,14 +1769,20 @@ export namespace MyNS {
 		/** Only return articles with this handle */
 		handle?: string | null;
 
-		/** Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model */
-		item_type?: number | null;
+		/**
+		 * Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		item_type?: string | null;
 
 		/** The field by which to order */
 		order?: ArticleSearchOrder | null;
 
-		/** Only return articles in this project */
-		project_id?: number | null;
+		/**
+		 * Only return articles in this project
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		project_id?: string | null;
 
 		/** Only return articles with this resource_doi */
 		resource_doi?: string | null;
@@ -1711,14 +1795,20 @@ export namespace MyNS {
 		/** Only return articles with this handle */
 		handle: FormControl<string | null | undefined>,
 
-		/** Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model */
-		item_type: FormControl<number | null | undefined>,
+		/**
+		 * Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		item_type: FormControl<string | null | undefined>,
 
 		/** The field by which to order */
 		order: FormControl<ArticleSearchOrder | null | undefined>,
 
-		/** Only return articles in this project */
-		project_id: FormControl<number | null | undefined>,
+		/**
+		 * Only return articles in this project
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		project_id: FormControl<string | null | undefined>,
 
 		/** Only return articles with this resource_doi */
 		resource_doi: FormControl<string | null | undefined>,
@@ -1727,9 +1817,9 @@ export namespace MyNS {
 		return new FormGroup<ArticleSearchFormProperties>({
 			doi: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
-			item_type: new FormControl<number | null | undefined>(undefined),
+			item_type: new FormControl<string | null | undefined>(undefined),
 			order: new FormControl<ArticleSearchOrder | null | undefined>(undefined),
-			project_id: new FormControl<number | null | undefined>(undefined),
+			project_id: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1772,8 +1862,11 @@ export namespace MyNS {
 		/** Funding creation / update items */
 		funding_list?: Array<FundingCreate>;
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id?: number | null;
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle?: string | null;
@@ -1784,8 +1877,11 @@ export namespace MyNS {
 		/** List of tags to be associated with the article. Tags can be used instead */
 		keywords?: Array<string>;
 
-		/** License id for this article. */
-		license?: number | null;
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license?: string | null;
 
 		/** Article metadata reason */
 		metadata_reason?: string | null;
@@ -1805,8 +1901,8 @@ export namespace MyNS {
 
 		/**
 		 * Title of article
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title?: string | null;
 	}
@@ -1830,8 +1926,11 @@ export namespace MyNS {
 		/** Grant number or funding authority */
 		funding: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle: FormControl<string | null | undefined>,
@@ -1839,8 +1938,11 @@ export namespace MyNS {
 		/** True if article has no files */
 		is_metadata_record: FormControl<boolean | null | undefined>,
 
-		/** License id for this article. */
-		license: FormControl<number | null | undefined>,
+		/**
+		 * License id for this article.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		license: FormControl<string | null | undefined>,
 
 		/** Article metadata reason */
 		metadata_reason: FormControl<string | null | undefined>,
@@ -1853,8 +1955,8 @@ export namespace MyNS {
 
 		/**
 		 * Title of article
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -1865,10 +1967,10 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			doi: new FormControl<string | null | undefined>(undefined),
 			funding: new FormControl<string | null | undefined>(undefined),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
 			is_metadata_record: new FormControl<boolean | null | undefined>(undefined),
-			license: new FormControl<number | null | undefined>(undefined),
+			license: new FormControl<string | null | undefined>(undefined),
 			metadata_reason: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 			resource_title: new FormControl<string | null | undefined>(undefined),
@@ -1888,8 +1990,9 @@ export namespace MyNS {
 		/**
 		 * Version number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: number;
+		version: string;
 	}
 	export interface ArticleVersionsFormProperties {
 
@@ -1902,13 +2005,14 @@ export namespace MyNS {
 		/**
 		 * Version number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateArticleVersionsFormGroup() {
 		return new FormGroup<ArticleVersionsFormProperties>({
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1918,20 +2022,22 @@ export namespace MyNS {
 		/**
 		 * Project id for this article.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		project_id: number;
+		project_id: string;
 	}
 	export interface ArticleWithProjectFormProperties {
 
 		/**
 		 * Project id for this article.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		project_id: FormControl<number | null | undefined>,
+		project_id: FormControl<string | null | undefined>,
 	}
 	export function CreateArticleWithProjectFormGroup() {
 		return new FormGroup<ArticleWithProjectFormProperties>({
-			project_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			project_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1963,20 +2069,23 @@ export namespace MyNS {
 		/**
 		 * Group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Institution id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: number;
+		institution_id: string;
 
 		/**
 		 * if 1 then the author has published items
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		is_public: number;
+		is_public: string;
 
 		/**
 		 * Job title
@@ -2001,20 +2110,23 @@ export namespace MyNS {
 		/**
 		 * Group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Institution id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: FormControl<number | null | undefined>,
+		institution_id: FormControl<string | null | undefined>,
 
 		/**
 		 * if 1 then the author has published items
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		is_public: FormControl<number | null | undefined>,
+		is_public: FormControl<string | null | undefined>,
 
 		/**
 		 * Job title
@@ -2031,9 +2143,9 @@ export namespace MyNS {
 	export function CreateAuthorCompleteFormGroup() {
 		return new FormGroup<AuthorCompleteFormProperties>({
 			first_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			institution_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			is_public: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			institution_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			is_public: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			job_title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2077,14 +2189,16 @@ export namespace MyNS {
 		/**
 		 * Category id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Parent category
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parent_id: number;
+		parent_id: string;
 
 		/**
 		 * Path to all ancestor ids
@@ -2101,8 +2215,9 @@ export namespace MyNS {
 		/**
 		 * Internal id of taxonomy the category is part of
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		taxonomy_id: number;
+		taxonomy_id: string;
 
 		/**
 		 * Category title
@@ -2115,14 +2230,16 @@ export namespace MyNS {
 		/**
 		 * Category id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent category
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parent_id: FormControl<number | null | undefined>,
+		parent_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Path to all ancestor ids
@@ -2139,8 +2256,9 @@ export namespace MyNS {
 		/**
 		 * Internal id of taxonomy the category is part of
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		taxonomy_id: FormControl<number | null | undefined>,
+		taxonomy_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Category title
@@ -2150,11 +2268,11 @@ export namespace MyNS {
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			parent_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			parent_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			path: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			source_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			taxonomy_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			taxonomy_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2177,6 +2295,7 @@ export namespace MyNS {
 		/**
 		 * Collaborator id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		user_id: number;
 	}
@@ -2197,6 +2316,7 @@ export namespace MyNS {
 		/**
 		 * Collaborator id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		user_id: FormControl<number | null | undefined>,
 	}
@@ -2226,8 +2346,9 @@ export namespace MyNS {
 		/**
 		 * Collection id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Date when collection was published
@@ -2267,8 +2388,9 @@ export namespace MyNS {
 		/**
 		 * Collection id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when collection was published
@@ -2292,7 +2414,7 @@ export namespace MyNS {
 		return new FormGroup<CollectionFormProperties>({
 			doi: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			handle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			published_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -2305,8 +2427,9 @@ export namespace MyNS {
 		/**
 		 * Number of articles in collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		articles_count: number;
+		articles_count: string;
 
 		/**
 		 * List of collection authors
@@ -2353,8 +2476,9 @@ export namespace MyNS {
 		/**
 		 * Collection group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Collection group resource id
@@ -2365,8 +2489,9 @@ export namespace MyNS {
 		/**
 		 * Collection institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: number;
+		institution_id: string;
 
 		/**
 		 * Date when collection was last modified
@@ -2413,8 +2538,9 @@ export namespace MyNS {
 		/**
 		 * Collection resource version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		resource_version: number;
+		resource_version: string;
 
 		/**
 		 * List of collection tags
@@ -2428,16 +2554,18 @@ export namespace MyNS {
 		/**
 		 * Collection version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: number;
+		version: string;
 	}
 	export interface CollectionCompleteFormProperties {
 
 		/**
 		 * Number of articles in collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		articles_count: FormControl<number | null | undefined>,
+		articles_count: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection citation
@@ -2460,8 +2588,9 @@ export namespace MyNS {
 		/**
 		 * Collection group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection group resource id
@@ -2472,8 +2601,9 @@ export namespace MyNS {
 		/**
 		 * Collection institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: FormControl<number | null | undefined>,
+		institution_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when collection was last modified
@@ -2514,32 +2644,34 @@ export namespace MyNS {
 		/**
 		 * Collection resource version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		resource_version: FormControl<number | null | undefined>,
+		resource_version: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateCollectionCompleteFormGroup() {
 		return new FormGroup<CollectionCompleteFormProperties>({
-			articles_count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			articles_count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			citation: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			group_resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			institution_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			institution_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			public: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			resource_doi: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resource_version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resource_version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2561,8 +2693,9 @@ export namespace MyNS {
 		/**
 		 * Funding id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Return whether the grant has been introduced manually
@@ -2599,8 +2732,9 @@ export namespace MyNS {
 		/**
 		 * Funding id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Return whether the grant has been introduced manually
@@ -2624,7 +2758,7 @@ export namespace MyNS {
 		return new FormGroup<FundingInformationFormProperties>({
 			funder_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			grant_code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			is_user_defined: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -2637,14 +2771,16 @@ export namespace MyNS {
 		/**
 		 * ID of the account owning the collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * Number of articles in collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		articles_count: number;
+		articles_count: string;
 
 		/**
 		 * List of collection authors
@@ -2691,8 +2827,9 @@ export namespace MyNS {
 		/**
 		 * Collection group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Collection group resource id
@@ -2703,8 +2840,9 @@ export namespace MyNS {
 		/**
 		 * Collection institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: number;
+		institution_id: string;
 
 		/**
 		 * Date when collection was last modified
@@ -2751,8 +2889,9 @@ export namespace MyNS {
 		/**
 		 * Collection resource version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		resource_version: number;
+		resource_version: string;
 
 		/**
 		 * List of collection tags
@@ -2766,22 +2905,25 @@ export namespace MyNS {
 		/**
 		 * Collection version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: number;
+		version: string;
 	}
 	export interface CollectionCompletePrivateFormProperties {
 
 		/**
 		 * ID of the account owning the collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of articles in collection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		articles_count: FormControl<number | null | undefined>,
+		articles_count: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection citation
@@ -2804,8 +2946,9 @@ export namespace MyNS {
 		/**
 		 * Collection group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection group resource id
@@ -2816,8 +2959,9 @@ export namespace MyNS {
 		/**
 		 * Collection institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: FormControl<number | null | undefined>,
+		institution_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when collection was last modified
@@ -2858,33 +3002,35 @@ export namespace MyNS {
 		/**
 		 * Collection resource version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		resource_version: FormControl<number | null | undefined>,
+		resource_version: FormControl<string | null | undefined>,
 
 		/**
 		 * Collection version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateCollectionCompletePrivateFormGroup() {
 		return new FormGroup<CollectionCompletePrivateFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			articles_count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			articles_count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			citation: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			group_resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			institution_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			institution_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			public: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			resource_doi: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resource_version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resource_version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2924,8 +3070,11 @@ export namespace MyNS {
 		/** Funding creation / update items */
 		funding_list?: Array<FundingCreate>;
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id?: number | null;
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle?: string | null;
@@ -2948,7 +3097,10 @@ export namespace MyNS {
 		/** Not applicable to regular users. In a publisher case, this is the publisher article title. */
 		resource_title?: string | null;
 
-		/** Not applicable to regular users. In a publisher case, this is the publisher article version */
+		/**
+		 * Not applicable to regular users. In a publisher case, this is the publisher article version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resource_version?: number | null;
 
 		/** List of tags to be associated with the collection. Keywords can be used instead */
@@ -2958,8 +3110,8 @@ export namespace MyNS {
 		/**
 		 * Title of collection
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: string;
 	}
@@ -2980,8 +3132,11 @@ export namespace MyNS {
 		/** Grant number or funding authority */
 		funding: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle: FormControl<string | null | undefined>,
@@ -2998,14 +3153,17 @@ export namespace MyNS {
 		/** Not applicable to regular users. In a publisher case, this is the publisher article title. */
 		resource_title: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. In a publisher case, this is the publisher article version */
+		/**
+		 * Not applicable to regular users. In a publisher case, this is the publisher article version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resource_version: FormControl<number | null | undefined>,
 
 		/**
 		 * Title of collection
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -3015,7 +3173,7 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			doi: new FormControl<string | null | undefined>(undefined),
 			funding: new FormControl<string | null | undefined>(undefined),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 			resource_id: new FormControl<string | null | undefined>(undefined),
@@ -3172,8 +3330,11 @@ export namespace MyNS {
 		/** Funding creation / update items */
 		funding_list?: Array<FundingCreate>;
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id?: number | null;
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle?: string | null;
@@ -3196,7 +3357,10 @@ export namespace MyNS {
 		/** Not applicable to regular users. In a publisher case, this is the publisher article title. */
 		resource_title?: string | null;
 
-		/** Not applicable to regular users. In a publisher case, this is the publisher article version */
+		/**
+		 * Not applicable to regular users. In a publisher case, this is the publisher article version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resource_version?: number | null;
 
 		/** List of tags to be associated with the collection. Keywords can be used instead */
@@ -3205,8 +3369,8 @@ export namespace MyNS {
 
 		/**
 		 * Title of collection
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title?: string | null;
 	}
@@ -3227,8 +3391,11 @@ export namespace MyNS {
 		/** Grant number or funding authority */
 		funding: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/** Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system. */
 		handle: FormControl<string | null | undefined>,
@@ -3245,13 +3412,16 @@ export namespace MyNS {
 		/** Not applicable to regular users. In a publisher case, this is the publisher article title. */
 		resource_title: FormControl<string | null | undefined>,
 
-		/** Not applicable to regular users. In a publisher case, this is the publisher article version */
+		/**
+		 * Not applicable to regular users. In a publisher case, this is the publisher article version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resource_version: FormControl<number | null | undefined>,
 
 		/**
 		 * Title of collection
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -3261,7 +3431,7 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			doi: new FormControl<string | null | undefined>(undefined),
 			funding: new FormControl<string | null | undefined>(undefined),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			handle: new FormControl<string | null | undefined>(undefined),
 			resource_doi: new FormControl<string | null | undefined>(undefined),
 			resource_id: new FormControl<string | null | undefined>(undefined),
@@ -3278,8 +3448,9 @@ export namespace MyNS {
 		/**
 		 * Version number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Api endpoint for the collection version
@@ -3292,8 +3463,9 @@ export namespace MyNS {
 		/**
 		 * Version number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Api endpoint for the collection version
@@ -3303,7 +3475,7 @@ export namespace MyNS {
 	}
 	export function CreateCollectionVersionsFormGroup() {
 		return new FormGroup<CollectionVersionsFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3311,10 +3483,16 @@ export namespace MyNS {
 
 	export interface CommonSearch {
 
-		/** only return collections from this group */
+		/**
+		 * only return collections from this group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		group?: number | null;
 
-		/** only return collections from this institution */
+		/**
+		 * only return collections from this institution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		institution?: number | null;
 
 		/**
@@ -3322,7 +3500,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit?: number | null;
+		limit?: string | null;
 
 		/** Filter by article modified date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD */
 		modified_since?: string | null;
@@ -3332,7 +3510,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset?: number | null;
+		offset?: string | null;
 
 		/** Direction of ordering */
 		order_direction?: CommonSearchOrder_direction | null;
@@ -3342,14 +3520,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page?: number | null;
+		page?: string | null;
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size?: number | null;
+		page_size?: string | null;
 
 		/** Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD */
 		published_since?: string | null;
@@ -3359,10 +3537,16 @@ export namespace MyNS {
 	}
 	export interface CommonSearchFormProperties {
 
-		/** only return collections from this group */
+		/**
+		 * only return collections from this group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		group: FormControl<number | null | undefined>,
 
-		/** only return collections from this institution */
+		/**
+		 * only return collections from this institution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		institution: FormControl<number | null | undefined>,
 
 		/**
@@ -3370,7 +3554,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit: FormControl<number | null | undefined>,
+		limit: FormControl<string | null | undefined>,
 
 		/** Filter by article modified date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD */
 		modified_since: FormControl<string | null | undefined>,
@@ -3380,7 +3564,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset: FormControl<number | null | undefined>,
+		offset: FormControl<string | null | undefined>,
 
 		/** Direction of ordering */
 		order_direction: FormControl<CommonSearchOrder_direction | null | undefined>,
@@ -3390,14 +3574,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page: FormControl<number | null | undefined>,
+		page: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size: FormControl<number | null | undefined>,
+		page_size: FormControl<string | null | undefined>,
 
 		/** Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD */
 		published_since: FormControl<string | null | undefined>,
@@ -3409,12 +3593,12 @@ export namespace MyNS {
 		return new FormGroup<CommonSearchFormProperties>({
 			group: new FormControl<number | null | undefined>(undefined),
 			institution: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			limit: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			modified_since: new FormControl<string | null | undefined>(undefined),
-			offset: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
+			offset: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
 			order_direction: new FormControl<CommonSearchOrder_direction | null | undefined>(undefined),
-			page: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
-			page_size: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			page: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
+			page_size: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			published_since: new FormControl<string | null | undefined>(undefined),
 			search_for: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3451,8 +3635,9 @@ export namespace MyNS {
 		/**
 		 * Figshare ID of the entity
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		entity_id: number;
+		entity_id: string;
 
 		/**
 		 * Url for entity
@@ -3465,8 +3650,9 @@ export namespace MyNS {
 		/**
 		 * Figshare ID of the entity
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		entity_id: FormControl<number | null | undefined>,
+		entity_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Url for entity
@@ -3476,7 +3662,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectResponseFormGroup() {
 		return new FormGroup<CreateProjectResponseFormProperties>({
-			entity_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			entity_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3487,26 +3673,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the account of the owner of the article of this review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * The ID of the article of this review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		article_id: number;
+		article_id: string;
 
 		/**
 		 * The ID of the account to which this review is assigned.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		assigned_to: number;
+		assigned_to: string;
 
 		/**
 		 * The number of comments in the review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		comments_count: number;
+		comments_count: string;
 
 		/**
 		 * The creation date of the review.
@@ -3517,14 +3707,16 @@ export namespace MyNS {
 		/**
 		 * The group in which the article is present.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * The review id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The date the review has been modified.
@@ -3547,34 +3739,39 @@ export namespace MyNS {
 		/**
 		 * The Version number of the article in review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: number;
+		version: string;
 	}
 	export interface CurationFormProperties {
 
 		/**
 		 * The ID of the account of the owner of the article of this review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the article of this review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		article_id: FormControl<number | null | undefined>,
+		article_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the account to which this review is assigned.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		assigned_to: FormControl<number | null | undefined>,
+		assigned_to: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of comments in the review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		comments_count: FormControl<number | null | undefined>,
+		comments_count: FormControl<string | null | undefined>,
 
 		/**
 		 * The creation date of the review.
@@ -3585,14 +3782,16 @@ export namespace MyNS {
 		/**
 		 * The group in which the article is present.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The review id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The date the review has been modified.
@@ -3615,22 +3814,23 @@ export namespace MyNS {
 		/**
 		 * The Version number of the article in review.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateCurationFormGroup() {
 		return new FormGroup<CurationFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			article_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			assigned_to: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			comments_count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			article_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			assigned_to: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			comments_count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			review_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<CurationStatus | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3642,14 +3842,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the account which generated this comment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * The ID of the comment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The value/content of the comment.
@@ -3668,14 +3870,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the account which generated this comment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the comment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The value/content of the comment.
@@ -3691,8 +3895,8 @@ export namespace MyNS {
 	}
 	export function CreateCurationCommentFormGroup() {
 		return new FormGroup<CurationCommentFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<CurationCommentType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3706,8 +3910,8 @@ export namespace MyNS {
 		/**
 		 * The contents/value of the comment
 		 * Required
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		text: string;
 	}
@@ -3716,8 +3920,8 @@ export namespace MyNS {
 		/**
 		 * The contents/value of the comment
 		 * Required
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		text: FormControl<string | null | undefined>,
 	}
@@ -3743,23 +3947,29 @@ export namespace MyNS {
 
 	export interface ErrorMessage {
 
-		/** A machine friendly error code, used by the dev team to identify the error. */
-		code?: number | null;
+		/**
+		 * A machine friendly error code, used by the dev team to identify the error.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		code?: string | null;
 
 		/** A human friendly message explaining the error. */
 		message?: string | null;
 	}
 	export interface ErrorMessageFormProperties {
 
-		/** A machine friendly error code, used by the dev team to identify the error. */
-		code: FormControl<number | null | undefined>,
+		/**
+		 * A machine friendly error code, used by the dev team to identify the error.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		code: FormControl<string | null | undefined>,
 
 		/** A human friendly message explaining the error. */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateErrorMessageFormGroup() {
 		return new FormGroup<ErrorMessageFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3776,8 +3986,11 @@ export namespace MyNS {
 		/** File name including the extension; can be omitted only for linked files. */
 		name?: string | null;
 
-		/** File size in bytes; can be omitted only for linked files. */
-		size?: number | null;
+		/**
+		 * File size in bytes; can be omitted only for linked files.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 	}
 	export interface FileCreatorFormProperties {
 
@@ -3790,32 +4003,41 @@ export namespace MyNS {
 		/** File name including the extension; can be omitted only for linked files. */
 		name: FormControl<string | null | undefined>,
 
-		/** File size in bytes; can be omitted only for linked files. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * File size in bytes; can be omitted only for linked files.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreateFileCreatorFormGroup() {
 		return new FormGroup<FileCreatorFormProperties>({
 			link: new FormControl<string | null | undefined>(undefined),
 			md5: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface FileId {
 
-		/** File ID */
-		file_id?: number | null;
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		file_id?: string | null;
 	}
 	export interface FileIdFormProperties {
 
-		/** File ID */
-		file_id: FormControl<number | null | undefined>,
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		file_id: FormControl<string | null | undefined>,
 	}
 	export function CreateFileIdFormGroup() {
 		return new FormGroup<FileIdFormProperties>({
-			file_id: new FormControl<number | null | undefined>(undefined),
+			file_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3848,8 +4070,9 @@ export namespace MyNS {
 		/**
 		 * Group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Group name
@@ -3860,8 +4083,9 @@ export namespace MyNS {
 		/**
 		 * Parent group if any
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parent_id: number;
+		parent_id: string;
 
 		/**
 		 * Group resource id
@@ -3880,8 +4104,9 @@ export namespace MyNS {
 		/**
 		 * Group id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group name
@@ -3892,8 +4117,9 @@ export namespace MyNS {
 		/**
 		 * Parent group if any
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parent_id: FormControl<number | null | undefined>,
+		parent_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group resource id
@@ -3904,9 +4130,9 @@ export namespace MyNS {
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
 			association_criteria: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parent_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			parent_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resource_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3923,8 +4149,9 @@ export namespace MyNS {
 		/**
 		 * Institution id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Institution name
@@ -3943,8 +4170,9 @@ export namespace MyNS {
 		/**
 		 * Institution id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Institution name
@@ -3955,7 +4183,7 @@ export namespace MyNS {
 	export function CreateInstitutionFormGroup() {
 		return new FormGroup<InstitutionFormProperties>({
 			domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3974,35 +4202,35 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 1
 		 */
-		is_active?: number | null;
+		is_active?: string | null;
 
 		/**
 		 * Number of results included on a page. Used for pagination with query
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit?: number | null;
+		limit?: string | null;
 
 		/**
 		 * Where to start the listing(the offset of the first result). Used for pagination with limit
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset?: number | null;
+		offset?: string | null;
 
 		/**
 		 * Page number. Used for pagination with page_size
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page?: number | null;
+		page?: string | null;
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size?: number | null;
+		page_size?: string | null;
 
 		/** Search term */
 		search_for?: string | null;
@@ -4020,35 +4248,35 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 1
 		 */
-		is_active: FormControl<number | null | undefined>,
+		is_active: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of results included on a page. Used for pagination with query
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit: FormControl<number | null | undefined>,
+		limit: FormControl<string | null | undefined>,
 
 		/**
 		 * Where to start the listing(the offset of the first result). Used for pagination with limit
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset: FormControl<number | null | undefined>,
+		offset: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number. Used for pagination with page_size
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page: FormControl<number | null | undefined>,
+		page: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size: FormControl<number | null | undefined>,
+		page_size: FormControl<string | null | undefined>,
 
 		/** Search term */
 		search_for: FormControl<string | null | undefined>,
@@ -4057,11 +4285,11 @@ export namespace MyNS {
 		return new FormGroup<InstitutionAccountsSearchFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined),
 			institution_user_id: new FormControl<string | null | undefined>(undefined),
-			is_active: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
-			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			offset: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
-			page: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
-			page_size: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			is_active: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
+			limit: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			offset: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
+			page: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
+			page_size: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			search_for: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4080,7 +4308,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 1
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The selectable status
@@ -4125,7 +4353,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 1
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The selectable status
@@ -4160,7 +4388,7 @@ export namespace MyNS {
 	export function CreateItemTypeFormGroup() {
 		return new FormGroup<ItemTypeFormProperties>({
 			icon: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			is_selectable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			public_description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -4187,8 +4415,9 @@ export namespace MyNS {
 		/**
 		 * License value
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		value: number;
+		value: string;
 	}
 	export interface LicenseFormProperties {
 
@@ -4207,14 +4436,15 @@ export namespace MyNS {
 		/**
 		 * License value
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		value: FormControl<number | null | undefined>,
+		value: FormControl<string | null | undefined>,
 	}
 	export function CreateLicenseFormGroup() {
 		return new FormGroup<LicenseFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4247,8 +4477,9 @@ export namespace MyNS {
 		/**
 		 * Figshare ID of the entity
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		entity_id: number;
+		entity_id: string;
 
 		/**
 		 * Url for entity
@@ -4267,8 +4498,9 @@ export namespace MyNS {
 		/**
 		 * Figshare ID of the entity
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		entity_id: FormControl<number | null | undefined>,
+		entity_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Url for entity
@@ -4278,7 +4510,7 @@ export namespace MyNS {
 	}
 	export function CreateLocationWarningsFormGroup() {
 		return new FormGroup<LocationWarningsFormProperties>({
-			entity_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			entity_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4332,11 +4564,17 @@ export namespace MyNS {
 
 	export interface PrivateAuthorsSearch {
 
-		/** Return only authors in this group or subgroups of the group */
-		group_id?: number | null;
+		/**
+		 * Return only authors in this group or subgroups of the group
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
-		/** Return only authors associated to this institution */
-		institution_id?: number | null;
+		/**
+		 * Return only authors associated to this institution
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		institution_id?: string | null;
 
 		/** Return only active authors if True */
 		is_active?: boolean | null;
@@ -4349,14 +4587,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit?: number | null;
+		limit?: string | null;
 
 		/**
 		 * Where to start the listing(the offset of the first result). Used for pagination with limit
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset?: number | null;
+		offset?: string | null;
 
 		/** Orcid of author */
 		orcid?: string | null;
@@ -4372,25 +4610,31 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page?: number | null;
+		page?: string | null;
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size?: number | null;
+		page_size?: string | null;
 
 		/** Search term */
 		search_for?: string | null;
 	}
 	export interface PrivateAuthorsSearchFormProperties {
 
-		/** Return only authors in this group or subgroups of the group */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Return only authors in this group or subgroups of the group
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
-		/** Return only authors associated to this institution */
-		institution_id: FormControl<number | null | undefined>,
+		/**
+		 * Return only authors associated to this institution
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		institution_id: FormControl<string | null | undefined>,
 
 		/** Return only active authors if True */
 		is_active: FormControl<boolean | null | undefined>,
@@ -4403,14 +4647,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		limit: FormControl<number | null | undefined>,
+		limit: FormControl<string | null | undefined>,
 
 		/**
 		 * Where to start the listing(the offset of the first result). Used for pagination with limit
 		 * Minimum: 0
 		 * Maximum: 5000
 		 */
-		offset: FormControl<number | null | undefined>,
+		offset: FormControl<string | null | undefined>,
 
 		/** Orcid of author */
 		orcid: FormControl<string | null | undefined>,
@@ -4426,31 +4670,31 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 5000
 		 */
-		page: FormControl<number | null | undefined>,
+		page: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of results included on a page. Used for pagination with page
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		page_size: FormControl<number | null | undefined>,
+		page_size: FormControl<string | null | undefined>,
 
 		/** Search term */
 		search_for: FormControl<string | null | undefined>,
 	}
 	export function CreatePrivateAuthorsSearchFormGroup() {
 		return new FormGroup<PrivateAuthorsSearchFormProperties>({
-			group_id: new FormControl<number | null | undefined>(undefined),
-			institution_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
+			institution_id: new FormControl<string | null | undefined>(undefined),
 			is_active: new FormControl<boolean | null | undefined>(undefined),
 			is_public: new FormControl<boolean | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			offset: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
+			limit: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			offset: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
 			orcid: new FormControl<string | null | undefined>(undefined),
 			order: new FormControl<ArticleSearchOrder | null | undefined>(undefined),
 			order_direction: new FormControl<CommonSearchOrder_direction | null | undefined>(undefined),
-			page: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
-			page_size: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			page: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
+			page_size: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			search_for: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4701,8 +4945,9 @@ export namespace MyNS {
 		/**
 		 * Project id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Date when project was published
@@ -4727,8 +4972,9 @@ export namespace MyNS {
 		/**
 		 * Project id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when project was published
@@ -4750,7 +4996,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			published_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -4883,8 +5129,9 @@ export namespace MyNS {
 		/**
 		 * Article size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 
 		/**
 		 * Article status
@@ -4901,8 +5148,9 @@ export namespace MyNS {
 		/**
 		 * Article version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: number;
+		version: string;
 	}
 	export interface ProjectArticleFormProperties {
 
@@ -5011,8 +5259,9 @@ export namespace MyNS {
 		/**
 		 * Article size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * Article status
@@ -5023,8 +5272,9 @@ export namespace MyNS {
 		/**
 		 * Article version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectArticleFormGroup() {
 		return new FormGroup<ProjectArticleFormProperties>({
@@ -5045,9 +5295,9 @@ export namespace MyNS {
 			is_public: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			metadata_reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5075,6 +5325,7 @@ export namespace MyNS {
 		/**
 		 * Collaborator id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		user_id: number;
 	}
@@ -5101,6 +5352,7 @@ export namespace MyNS {
 		/**
 		 * Collaborator id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		user_id: FormControl<number | null | undefined>,
 	}
@@ -5128,8 +5380,11 @@ export namespace MyNS {
 		 */
 		role_name: ProjectCollaboratorInviteRole_name;
 
-		/** User id of the collaborator */
-		user_id?: number | null;
+		/**
+		 * User id of the collaborator
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		user_id?: string | null;
 	}
 	export interface ProjectCollaboratorInviteFormProperties {
 
@@ -5145,15 +5400,18 @@ export namespace MyNS {
 		 */
 		role_name: FormControl<ProjectCollaboratorInviteRole_name | null | undefined>,
 
-		/** User id of the collaborator */
-		user_id: FormControl<number | null | undefined>,
+		/**
+		 * User id of the collaborator
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		user_id: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectCollaboratorInviteFormGroup() {
 		return new FormGroup<ProjectCollaboratorInviteFormProperties>({
 			comment: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			role_name: new FormControl<ProjectCollaboratorInviteRole_name | null | undefined>(undefined, [Validators.required]),
-			user_id: new FormControl<number | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5226,8 +5484,9 @@ export namespace MyNS {
 		/**
 		 * ID of the account owning the project
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: number;
+		account_id: string;
 
 		/**
 		 * List of project collaborators
@@ -5274,8 +5533,9 @@ export namespace MyNS {
 		/**
 		 * Group of project if any
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: number;
+		group_id: string;
 
 		/**
 		 * Date when project was last modified
@@ -5286,34 +5546,39 @@ export namespace MyNS {
 		/**
 		 * Project quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: number;
+		quota: string;
 
 		/**
 		 * Project used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: number;
+		used_quota: string;
 
 		/**
 		 * Project private quota used
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_private: number;
+		used_quota_private: string;
 
 		/**
 		 * Project public quota used
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_public: number;
+		used_quota_public: string;
 	}
 	export interface ProjectCompletePrivateFormProperties {
 
 		/**
 		 * ID of the account owning the project
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		account_id: FormControl<number | null | undefined>,
+		account_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when project was created
@@ -5342,8 +5607,9 @@ export namespace MyNS {
 		/**
 		 * Group of project if any
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		group_id: FormControl<number | null | undefined>,
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when project was last modified
@@ -5354,40 +5620,44 @@ export namespace MyNS {
 		/**
 		 * Project quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: FormControl<number | null | undefined>,
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Project used quota
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: FormControl<number | null | undefined>,
+		used_quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Project private quota used
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_private: FormControl<number | null | undefined>,
+		used_quota_private: FormControl<string | null | undefined>,
 
 		/**
 		 * Project public quota used
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota_public: FormControl<number | null | undefined>,
+		used_quota_public: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectCompletePrivateFormGroup() {
 		return new FormGroup<ProjectCompletePrivateFormProperties>({
-			account_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			figshare_url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			funding: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			group_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota_private: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota_public: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota_private: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota_public: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5412,14 +5682,17 @@ export namespace MyNS {
 		/** Funding creation / update items */
 		funding_list?: Array<FundingCreate>;
 
-		/** Only if project type is group. */
-		group_id?: number | null;
+		/**
+		 * Only if project type is group.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id?: string | null;
 
 		/**
 		 * The title for this project - mandatory. 3 - 1000 characters.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: string;
 	}
@@ -5437,14 +5710,17 @@ export namespace MyNS {
 		/** Grant number or organization(s) that funded this project. Up to 2000 characters permitted. */
 		funding: FormControl<string | null | undefined>,
 
-		/** Only if project type is group. */
-		group_id: FormControl<number | null | undefined>,
+		/**
+		 * Only if project type is group.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		group_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The title for this project - mandatory. 3 - 1000 characters.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -5453,7 +5729,7 @@ export namespace MyNS {
 			custom_fields: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			funding: new FormControl<string | null | undefined>(undefined),
-			group_id: new FormControl<number | null | undefined>(undefined),
+			group_id: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]),
 		});
 
@@ -5476,8 +5752,9 @@ export namespace MyNS {
 		/**
 		 * Project note id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Date when note was last modified
@@ -5488,8 +5765,9 @@ export namespace MyNS {
 		/**
 		 * User who wrote the note
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		user_id: number;
+		user_id: string;
 
 		/**
 		 * Username of the one who wrote the note
@@ -5514,8 +5792,9 @@ export namespace MyNS {
 		/**
 		 * Project note id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when note was last modified
@@ -5526,8 +5805,9 @@ export namespace MyNS {
 		/**
 		 * User who wrote the note
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		user_id: FormControl<number | null | undefined>,
+		user_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Username of the one who wrote the note
@@ -5539,9 +5819,9 @@ export namespace MyNS {
 		return new FormGroup<ProjectNoteFormProperties>({
 			abstract: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			created_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			user_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			user_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			user_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5657,8 +5937,8 @@ export namespace MyNS {
 
 		/**
 		 * The title for this project - mandatory. 3 - 1000 characters.
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title?: string | null;
 	}
@@ -5678,8 +5958,8 @@ export namespace MyNS {
 
 		/**
 		 * The title for this project - mandatory. 3 - 1000 characters.
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -5741,8 +6021,11 @@ export namespace MyNS {
 		 */
 		title?: string | null;
 
-		/** Version of resource item */
-		version?: number | null;
+		/**
+		 * Version of resource item
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 	export interface ResourceFormProperties {
 
@@ -5773,8 +6056,11 @@ export namespace MyNS {
 		 */
 		title: FormControl<string | null | undefined>,
 
-		/** Version of resource item */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Version of resource item
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceFormGroup() {
 		return new FormGroup<ResourceFormProperties>({
@@ -5783,7 +6069,7 @@ export namespace MyNS {
 			link: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5828,8 +6114,9 @@ export namespace MyNS {
 		/**
 		 * Role id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Role name
@@ -5854,8 +6141,9 @@ export namespace MyNS {
 		/**
 		 * Role id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Role name
@@ -5867,7 +6155,7 @@ export namespace MyNS {
 		return new FormGroup<RoleFormProperties>({
 			category: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5878,8 +6166,9 @@ export namespace MyNS {
 		/**
 		 * Account activity status
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		active: number;
+		active: string;
 
 		/**
 		 * User email
@@ -5896,14 +6185,16 @@ export namespace MyNS {
 		/**
 		 * Account id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Account institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: number;
+		institution_id: string;
 
 		/**
 		 * Account institution user id
@@ -5926,28 +6217,32 @@ export namespace MyNS {
 		/**
 		 * Total storage available to account, in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: number;
+		quota: string;
 
 		/**
 		 * Storage used by the account, in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: number;
+		used_quota: string;
 
 		/**
 		 * User id associated with account, useful for example for adding the account as an author to an item
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		user_id: number;
+		user_id: string;
 	}
 	export interface ShortAccountFormProperties {
 
 		/**
 		 * Account activity status
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		active: FormControl<number | null | undefined>,
+		active: FormControl<string | null | undefined>,
 
 		/**
 		 * User email
@@ -5964,14 +6259,16 @@ export namespace MyNS {
 		/**
 		 * Account id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account institution
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		institution_id: FormControl<number | null | undefined>,
+		institution_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account institution user id
@@ -5994,34 +6291,37 @@ export namespace MyNS {
 		/**
 		 * Total storage available to account, in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quota: FormControl<number | null | undefined>,
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Storage used by the account, in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		used_quota: FormControl<number | null | undefined>,
+		used_quota: FormControl<string | null | undefined>,
 
 		/**
 		 * User id associated with account, useful for example for adding the account as an author to an item
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		user_id: FormControl<number | null | undefined>,
+		user_id: FormControl<string | null | undefined>,
 	}
 	export function CreateShortAccountFormGroup() {
 		return new FormGroup<ShortAccountFormProperties>({
-			active: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			active: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			first_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			institution_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			institution_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			institution_user_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			orcid_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			used_quota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			user_id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used_quota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			user_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6037,8 +6337,9 @@ export namespace MyNS {
 		/**
 		 * Custom field id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Custom field name
@@ -6057,8 +6358,9 @@ export namespace MyNS {
 		/**
 		 * Custom field id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Custom field name
@@ -6069,7 +6371,7 @@ export namespace MyNS {
 	export function CreateShortCustomFieldFormGroup() {
 		return new FormGroup<ShortCustomFieldFormProperties>({
 			field_type: new FormControl<ShortCustomFieldField_type | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -6079,44 +6381,62 @@ export namespace MyNS {
 
 	export interface UploadFilePart {
 
-		/** Indexes on byte range. zero-based and inclusive */
-		endOffset?: number | null;
+		/**
+		 * Indexes on byte range. zero-based and inclusive
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		endOffset?: string | null;
 
 		/** When a part is being uploaded it is being locked, by setting the locked flag to true. No changes/uploads can happen on this part from other requests. */
 		locked?: boolean | null;
 
-		/** File part id */
-		partNo?: number | null;
+		/**
+		 * File part id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		partNo?: string | null;
 
-		/** Indexes on byte range. zero-based and inclusive */
-		startOffset?: number | null;
+		/**
+		 * Indexes on byte range. zero-based and inclusive
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		startOffset?: string | null;
 
 		/** part status */
 		status?: UploadFilePartStatus | null;
 	}
 	export interface UploadFilePartFormProperties {
 
-		/** Indexes on byte range. zero-based and inclusive */
-		endOffset: FormControl<number | null | undefined>,
+		/**
+		 * Indexes on byte range. zero-based and inclusive
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		endOffset: FormControl<string | null | undefined>,
 
 		/** When a part is being uploaded it is being locked, by setting the locked flag to true. No changes/uploads can happen on this part from other requests. */
 		locked: FormControl<boolean | null | undefined>,
 
-		/** File part id */
-		partNo: FormControl<number | null | undefined>,
+		/**
+		 * File part id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		partNo: FormControl<string | null | undefined>,
 
-		/** Indexes on byte range. zero-based and inclusive */
-		startOffset: FormControl<number | null | undefined>,
+		/**
+		 * Indexes on byte range. zero-based and inclusive
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		startOffset: FormControl<string | null | undefined>,
 
 		/** part status */
 		status: FormControl<UploadFilePartStatus | null | undefined>,
 	}
 	export function CreateUploadFilePartFormGroup() {
 		return new FormGroup<UploadFilePartFormProperties>({
-			endOffset: new FormControl<number | null | undefined>(undefined),
+			endOffset: new FormControl<string | null | undefined>(undefined),
 			locked: new FormControl<boolean | null | undefined>(undefined),
-			partNo: new FormControl<number | null | undefined>(undefined),
-			startOffset: new FormControl<number | null | undefined>(undefined),
+			partNo: new FormControl<string | null | undefined>(undefined),
+			startOffset: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<UploadFilePartStatus | null | undefined>(undefined),
 		});
 
@@ -6135,8 +6455,11 @@ export namespace MyNS {
 		/** Uploads parts */
 		parts?: Array<UploadFilePart>;
 
-		/** size of file in bytes */
-		size?: number | null;
+		/**
+		 * size of file in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** Upload status */
 		status?: UploadInfoStatus | null;
@@ -6152,8 +6475,11 @@ export namespace MyNS {
 		/** name of file on upload server */
 		name: FormControl<string | null | undefined>,
 
-		/** size of file in bytes */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * size of file in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** Upload status */
 		status: FormControl<UploadInfoStatus | null | undefined>,
@@ -6165,7 +6491,7 @@ export namespace MyNS {
 		return new FormGroup<UploadInfoFormProperties>({
 			md5: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<UploadInfoStatus | null | undefined>(undefined),
 			token: new FormControl<string | null | undefined>(undefined),
 		});
@@ -6185,8 +6511,9 @@ export namespace MyNS {
 		/**
 		 * User id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Account activity status
@@ -6241,8 +6568,9 @@ export namespace MyNS {
 		/**
 		 * User id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Account activity status
@@ -6289,7 +6617,7 @@ export namespace MyNS {
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			first_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			is_active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			is_public: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			job_title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -6352,13 +6680,17 @@ export namespace MyNS {
 		 * Private Articles
 		 * Get Own Articles
 		 * Get account/articles
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Array<Article>} OK. An array of articles belonging to the account
 		 */
-		Private_articles_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Array<Article>> {
+		Private_articles_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'account/articles?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -6377,10 +6709,11 @@ export namespace MyNS {
 		 * Account Article Report
 		 * Return status on all reports generated for the account from the oauth credentials
 		 * Get account/articles/export
-		 * @param {number} group_id A group ID to filter by
+		 * @param {string} group_id A group ID to filter by
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<AccountReport>} OK. An array of account report entries
 		 */
-		Account_article_report(group_id: number | null | undefined): Observable<Array<AccountReport>> {
+		Account_article_report(group_id: string | null | undefined): Observable<Array<AccountReport>> {
 			return this.http.get<Array<AccountReport>>(this.baseUri + 'account/articles/export?group_id=' + group_id, {});
 		}
 
@@ -6472,11 +6805,13 @@ export namespace MyNS {
 		 * Delete article author
 		 * De-associate author from article
 		 * Delete account/articles/{article_id}/authors/{author_id}
-		 * @param {number} article_id Article unique identifier
-		 * @param {number} author_id Article Author unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
+		 * @param {string} author_id Article Author unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_article_author_delete(article_id: number, author_id: number): Observable<HttpResponse<string>> {
+		Private_article_author_delete(article_id: string, author_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/articles/' + article_id + '/authors/' + author_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6514,11 +6849,13 @@ export namespace MyNS {
 		 * Delete article category
 		 * De-associate category from article
 		 * Delete account/articles/{article_id}/categories/{category_id}
-		 * @param {number} article_id Article unique identifier
-		 * @param {number} category_id Category unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
+		 * @param {string} category_id Category unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_article_category_delete(article_id: number, category_id: number): Observable<HttpResponse<string>> {
+		Private_article_category_delete(article_id: string, category_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/articles/' + article_id + '/categories/' + category_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6678,10 +7015,11 @@ export namespace MyNS {
 		 * - If the whole article is under embargo, it will not be published immediately, but when the embargo expires or is lifted.
 		 * - When an article is published, a new public version will be generated. Any further updates to the article will affect the private article data. In order to make these changes publicly visible, an explicit publish operation is needed.
 		 * Post account/articles/{article_id}/publish
-		 * @param {number} article_id Article unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_article_publish(article_id: number): Observable<HttpResponse<string>> {
+		Private_article_publish(article_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'account/articles/' + article_id + '/publish', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6689,10 +7027,11 @@ export namespace MyNS {
 		 * Private Article Reserve DOI
 		 * Reserve DOI for article
 		 * Post account/articles/{article_id}/reserve_doi
-		 * @param {number} article_id Article unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
 		 * @return {ArticleDOI} OK
 		 */
-		Private_article_reserve_doi(article_id: number): Observable<ArticleDOI> {
+		Private_article_reserve_doi(article_id: string): Observable<ArticleDOI> {
 			return this.http.post<ArticleDOI>(this.baseUri + 'account/articles/' + article_id + '/reserve_doi', null, {});
 		}
 
@@ -6700,10 +7039,11 @@ export namespace MyNS {
 		 * Private Article Reserve Handle
 		 * Reserve Handle for article
 		 * Post account/articles/{article_id}/reserve_handle
-		 * @param {number} article_id Article unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
 		 * @return {ArticleHandle} OK
 		 */
-		Private_article_reserve_handle(article_id: number): Observable<ArticleHandle> {
+		Private_article_reserve_handle(article_id: string): Observable<ArticleHandle> {
 			return this.http.post<ArticleHandle>(this.baseUri + 'account/articles/' + article_id + '/reserve_handle', null, {});
 		}
 
@@ -6711,11 +7051,12 @@ export namespace MyNS {
 		 * Private Article Resource
 		 * Edit article resource data.
 		 * Post account/articles/{article_id}/resource
-		 * @param {number} article_id Article unique identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
 		 * @param {Resource} requestBody Resource data
 		 * @return {void} 
 		 */
-		Private_article_resource(article_id: number, requestBody: Resource): Observable<HttpResponse<string>> {
+		Private_article_resource(article_id: string, requestBody: Resource): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'account/articles/' + article_id + '/resource', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6723,12 +7064,14 @@ export namespace MyNS {
 		 * Update article version
 		 * Updating an article version by passing body parameters; request can also be made with the PATCH method.
 		 * Put account/articles/{article_id}/versions/{version_id}/
-		 * @param {number} article_id Article unique identifier
-		 * @param {number} version_id Article version identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
+		 * @param {string} version_id Article version identifier
+		 *     Minimum: 1
 		 * @param {ArticleUpdate} requestBody Article description
 		 * @return {void} 
 		 */
-		Article_version_update(article_id: number, version_id: number, requestBody: ArticleUpdate): Observable<HttpResponse<string>> {
+		Article_version_update(article_id: string, version_id: string, requestBody: ArticleUpdate): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'account/articles/' + article_id + '/versions/' + version_id + '/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6736,12 +7079,14 @@ export namespace MyNS {
 		 * Update article version thumbnail
 		 * For a given public article version update the article thumbnail by choosing one of the associated files
 		 * Put account/articles/{article_id}/versions/{version_id}/update_thumb
-		 * @param {number} article_id Article unique identifier
-		 * @param {number} version_id Article version identifier
+		 * @param {string} article_id Article unique identifier
+		 *     Minimum: 1
+		 * @param {string} version_id Article version identifier
+		 *     Minimum: 1
 		 * @param {FileId} requestBody File ID
 		 * @return {void} 
 		 */
-		Article_version_update_thumb(article_id: number, version_id: number, requestBody: FileId): Observable<HttpResponse<string>> {
+		Article_version_update_thumb(article_id: string, version_id: string, requestBody: FileId): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'account/articles/' + article_id + '/versions/' + version_id + '/update_thumb', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6780,14 +7125,18 @@ export namespace MyNS {
 		 * Private Collections List
 		 * List private collections
 		 * Get account/collections
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {CollectionSearchOrder} order The field by which to order. Default varies by endpoint/resource.
 		 * @return {Array<Collection>} OK. An array of collections
 		 */
-		Private_collections_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: CollectionSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined): Observable<Array<Collection>> {
+		Private_collections_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: CollectionSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined): Observable<Array<Collection>> {
 			return this.http.get<Array<Collection>>(this.baseUri + 'account/collections?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction, {});
 		}
 
@@ -6848,13 +7197,17 @@ export namespace MyNS {
 		 * List collection articles
 		 * List collection articles
 		 * Get account/collections/{collection_id}/articles
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Array<Article>} OK. Articles List
 		 */
-		Private_collection_articles_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Array<Article>> {
+		Private_collection_articles_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'account/collections/{collection_id}/articles?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -6884,11 +7237,13 @@ export namespace MyNS {
 		 * Delete collection article
 		 * De-associate article from collection
 		 * Delete account/collections/{collection_id}/articles/{article_id}
-		 * @param {number} collection_id Collection unique identifier
-		 * @param {number} article_id Collection article unique identifier
+		 * @param {string} collection_id Collection unique identifier
+		 *     Minimum: 1
+		 * @param {string} article_id Collection article unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_collection_article_delete(collection_id: number, article_id: number): Observable<HttpResponse<string>> {
+		Private_collection_article_delete(collection_id: string, article_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/collections/' + collection_id + '/articles/' + article_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6928,11 +7283,13 @@ export namespace MyNS {
 		 * Delete collection author
 		 * Delete collection author
 		 * Delete account/collections/{collection_id}/authors/{author_id}
-		 * @param {number} collection_id Collection unique identifier
-		 * @param {number} author_id Collection Author unique identifier
+		 * @param {string} collection_id Collection unique identifier
+		 *     Minimum: 1
+		 * @param {string} author_id Collection Author unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_collection_author_delete(collection_id: number, author_id: number): Observable<HttpResponse<string>> {
+		Private_collection_author_delete(collection_id: string, author_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/collections/' + collection_id + '/authors/' + author_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6972,11 +7329,13 @@ export namespace MyNS {
 		 * Delete collection category
 		 * De-associate category from collection
 		 * Delete account/collections/{collection_id}/categories/{category_id}
-		 * @param {number} collection_id Collection unique identifier
-		 * @param {number} category_id Collection category unique identifier
+		 * @param {string} collection_id Collection unique identifier
+		 *     Minimum: 1
+		 * @param {string} category_id Collection category unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_collection_category_delete(collection_id: number, category_id: number): Observable<HttpResponse<string>> {
+		Private_collection_category_delete(collection_id: string, category_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/collections/' + collection_id + '/categories/' + category_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7024,10 +7383,11 @@ export namespace MyNS {
 		 * Private Collection Publish
 		 * When a collection is published, a new public version will be generated. Any further updates to the collection will affect the private collection data. In order to make these changes publicly visible, an explicit publish operation is needed.
 		 * Post account/collections/{collection_id}/publish
-		 * @param {number} collection_id Collection Unique identifier
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_collection_publish(collection_id: number): Observable<HttpResponse<string>> {
+		Private_collection_publish(collection_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'account/collections/' + collection_id + '/publish', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7035,10 +7395,11 @@ export namespace MyNS {
 		 * Private Collection Reserve DOI
 		 * Reserve DOI for collection
 		 * Post account/collections/{collection_id}/reserve_doi
-		 * @param {number} collection_id Collection Unique identifier
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
 		 * @return {CollectionDOI} OK
 		 */
-		Private_collection_reserve_doi(collection_id: number): Observable<CollectionDOI> {
+		Private_collection_reserve_doi(collection_id: string): Observable<CollectionDOI> {
 			return this.http.post<CollectionDOI>(this.baseUri + 'account/collections/' + collection_id + '/reserve_doi', null, {});
 		}
 
@@ -7046,10 +7407,11 @@ export namespace MyNS {
 		 * Private Collection Reserve Handle
 		 * Reserve Handle for collection
 		 * Post account/collections/{collection_id}/reserve_handle
-		 * @param {number} collection_id Collection Unique identifier
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
 		 * @return {CollectionHandle} OK
 		 */
-		Private_collection_reserve_handle(collection_id: number): Observable<CollectionHandle> {
+		Private_collection_reserve_handle(collection_id: string): Observable<CollectionHandle> {
 			return this.http.post<CollectionHandle>(this.baseUri + 'account/collections/' + collection_id + '/reserve_handle', null, {});
 		}
 
@@ -7057,11 +7419,12 @@ export namespace MyNS {
 		 * Private Collection Resource
 		 * Edit collection resource data.
 		 * Post account/collections/{collection_id}/resource
-		 * @param {number} collection_id Collection unique identifier
+		 * @param {string} collection_id Collection unique identifier
+		 *     Minimum: 1
 		 * @param {Resource} requestBody Resource data
 		 * @return {void} 
 		 */
-		Private_collection_resource(collection_id: number, requestBody: Resource): Observable<HttpResponse<string>> {
+		Private_collection_resource(collection_id: string, requestBody: Resource): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'account/collections/' + collection_id + '/resource', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -7090,18 +7453,25 @@ export namespace MyNS {
 		 * Private Account Institution Accounts
 		 * Returns the accounts for which the account has administrative privileges (assigned and inherited).
 		 * Get account/institution/accounts
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
-		 * @param {number} is_active Filter by active status
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
+		 * @param {string} is_active Filter by active status
+		 *     Minimum: 0    Maximum: 1
 		 * @param {string} institution_user_id Filter by institution_user_id
 		 * @param {string} email Filter by email
-		 * @param {number} id_lte Retrieve accounts with an ID lower or equal to the specified value
-		 * @param {number} id_gte Retrieve accounts with an ID greater or equal to the specified value
+		 * @param {string} id_lte Retrieve accounts with an ID lower or equal to the specified value
+		 *     Minimum: 0
+		 * @param {string} id_gte Retrieve accounts with an ID greater or equal to the specified value
+		 *     Minimum: 0
 		 * @return {Array<ShortAccount>} OK. An array of Accounts
 		 */
-		Private_institution_accounts_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, is_active: number | null | undefined, institution_user_id: string | null | undefined, email: string | null | undefined, id_lte: number | null | undefined, id_gte: number | null | undefined): Observable<Array<ShortAccount>> {
+		Private_institution_accounts_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, is_active: string | null | undefined, institution_user_id: string | null | undefined, email: string | null | undefined, id_lte: string | null | undefined, id_gte: string | null | undefined): Observable<Array<ShortAccount>> {
 			return this.http.get<Array<ShortAccount>>(this.baseUri + 'account/institution/accounts?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&is_active=' + is_active + '&institution_user_id=' + (institution_user_id == null ? '' : encodeURIComponent(institution_user_id)) + '&email=' + (email == null ? '' : encodeURIComponent(email)) + '&id_lte=' + id_lte + '&id_gte=' + id_gte, {});
 		}
 
@@ -7131,11 +7501,12 @@ export namespace MyNS {
 		 * Update Institution Account
 		 * Update Institution Account
 		 * Put account/institution/accounts/{account_id}
-		 * @param {number} account_id Account identifier the user is associated to
+		 * @param {string} account_id Account identifier the user is associated to
+		 *     Minimum: 1
 		 * @param {AccountUpdate} requestBody Account description
 		 * @return {void} 
 		 */
-		Private_institution_accounts_update(account_id: number, requestBody: AccountUpdate): Observable<HttpResponse<string>> {
+		Private_institution_accounts_update(account_id: string, requestBody: AccountUpdate): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'account/institution/accounts/' + account_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -7143,19 +7514,25 @@ export namespace MyNS {
 		 * Private Institution Articles
 		 * Get Articles from own institution. User must be administrator of the institution
 		 * Get account/institution/articles
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {ArticleSearchOrder} order The field by which to order. Default varies by endpoint/resource.
 		 * @param {string} published_since Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD
 		 * @param {string} modified_since Filter by article modified date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD
-		 * @param {number} status only return collections with this status
+		 * @param {string} status only return collections with this status
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} resource_doi only return collections with this resource_doi
-		 * @param {number} item_type Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 * @param {string} item_type Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Article>} OK. An array of articles belonging to the institution
 		 */
-		Private_institution_articles(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: ArticleSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, status: number | null | undefined, resource_doi: string | null | undefined, item_type: number | null | undefined): Observable<Array<Article>> {
+		Private_institution_articles(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: ArticleSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, status: string | null | undefined, resource_doi: string | null | undefined, item_type: string | null | undefined): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'account/institution/articles?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction + '&published_since=' + (published_since == null ? '' : encodeURIComponent(published_since)) + '&modified_since=' + (modified_since == null ? '' : encodeURIComponent(modified_since)) + '&status=' + status + '&resource_doi=' + (resource_doi == null ? '' : encodeURIComponent(resource_doi)) + '&item_type=' + item_type, {});
 		}
 
@@ -7163,10 +7540,11 @@ export namespace MyNS {
 		 * Private account institution group custom fields
 		 * Returns the custom fields in the group the user belongs to, or the ones in the group specified, if the user has access.
 		 * Get account/institution/custom_fields
-		 * @param {number} group_id Group_id
+		 * @param {string} group_id Group_id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ShortCustomField>} OK. An array of custom fields
 		 */
-		Custom_fields_list(group_id: number | null | undefined): Observable<Array<ShortCustomField>> {
+		Custom_fields_list(group_id: string | null | undefined): Observable<Array<ShortCustomField>> {
 			return this.http.get<Array<ShortCustomField>>(this.baseUri + 'account/institution/custom_fields?group_id=' + group_id, {});
 		}
 
@@ -7194,10 +7572,11 @@ export namespace MyNS {
 		 * Private Account Institution Group Embargo Options
 		 * Account institution group embargo options details
 		 * Get account/institution/groups/{group_id}/embargo_options
-		 * @param {number} group_id Group identifier
+		 * @param {string} group_id Group identifier
+		 *     Minimum: 1
 		 * @return {Array<GroupEmbargoOptions>} OK. An array of embargo options
 		 */
-		Private_group_embargo_options_details(group_id: number): Observable<Array<GroupEmbargoOptions>> {
+		Private_group_embargo_options_details(group_id: string): Observable<Array<GroupEmbargoOptions>> {
 			return this.http.get<Array<GroupEmbargoOptions>>(this.baseUri + 'account/institution/groups/' + group_id + '/embargo_options', {});
 		}
 
@@ -7215,11 +7594,13 @@ export namespace MyNS {
 		 * Institution Curation Review Comments
 		 * Retrieve a certain curation review's comments.
 		 * Get account/institution/review/{curation_id}/comments
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {CurationComment} OK. A curation review's comments.
 		 */
-		Account_institution_curation_comments(limit: number | null | undefined, offset: number | null | undefined): Observable<CurationComment> {
+		Account_institution_curation_comments(limit: string | null | undefined, offset: string | null | undefined): Observable<CurationComment> {
 			return this.http.get<CurationComment>(this.baseUri + 'account/institution/review/{curation_id}/comments?limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -7238,14 +7619,18 @@ export namespace MyNS {
 		 * Institution Curation Reviews
 		 * Retrieve a list of curation reviews for this institution
 		 * Get account/institution/reviews
-		 * @param {number} group_id Filter by the group ID
-		 * @param {number} article_id Retrieve the reviews for this article
+		 * @param {string} group_id Filter by the group ID
+		 *     Minimum: 0
+		 * @param {string} article_id Retrieve the reviews for this article
+		 *     Minimum: 0
 		 * @param {CurationStatus} status Filter by the status of the review
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Curation} OK. A list of curation reviews.
 		 */
-		Account_institution_curations(group_id: number | null | undefined, article_id: number | null | undefined, status: CurationStatus | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Curation> {
+		Account_institution_curations(group_id: string | null | undefined, article_id: string | null | undefined, status: CurationStatus | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Observable<Curation> {
 			return this.http.get<Curation>(this.baseUri + 'account/institution/reviews?group_id=' + group_id + '&article_id=' + article_id + '&status=' + status + '&limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -7284,12 +7669,15 @@ export namespace MyNS {
 		 * Delete Institution Account Group Role
 		 * Delete Institution Account Group Role
 		 * Delete account/institution/roles/{account_id}/{group_id}/{role_id}
-		 * @param {number} account_id Account identifier for which to remove the role
-		 * @param {number} group_id Group identifier for which to remove the role
-		 * @param {number} role_id Role identifier
+		 * @param {string} account_id Account identifier for which to remove the role
+		 *     Minimum: 1
+		 * @param {string} group_id Group identifier for which to remove the role
+		 *     Minimum: 1
+		 * @param {string} role_id Role identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_institution_account_group_role_delete(account_id: number, group_id: number, role_id: number): Observable<HttpResponse<string>> {
+		Private_institution_account_group_role_delete(account_id: string, group_id: string, role_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/institution/roles/' + account_id + '/' + group_id + '/' + role_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7297,10 +7685,11 @@ export namespace MyNS {
 		 * Private Account Institution User
 		 * Retrieve institution user information using the account_id
 		 * Get account/institution/users/{account_id}
-		 * @param {number} account_id Account identifier the user is associated to
+		 * @param {string} account_id Account identifier the user is associated to
+		 *     Minimum: 1
 		 * @return {User} OK. User representation
 		 */
-		Private_account_institution_user(account_id: number): Observable<User> {
+		Private_account_institution_user(account_id: string): Observable<User> {
 			return this.http.get<User>(this.baseUri + 'account/institution/users/' + account_id, {});
 		}
 
@@ -7318,16 +7707,20 @@ export namespace MyNS {
 		 * Private Projects
 		 * List private projects
 		 * Get account/projects
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {ProjectsSearchOrder} order The field by which to order.
 		 * @param {Private_projects_listStorage} storage only return collections from this institution
 		 * @param {string} roles Any combination of owner, collaborator, viewer separated by comma. Examples: "owner" or "owner,collaborator".
 		 * @return {Array<ProjectPrivate>} OK. An array of projects
 		 */
-		Private_projects_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: ProjectsSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, storage: Private_projects_listStorage | null | undefined, roles: string | null | undefined): Observable<Array<ProjectPrivate>> {
+		Private_projects_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: ProjectsSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, storage: Private_projects_listStorage | null | undefined, roles: string | null | undefined): Observable<Array<ProjectPrivate>> {
 			return this.http.get<Array<ProjectPrivate>>(this.baseUri + 'account/projects?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction + '&storage=' + storage + '&roles=' + (roles == null ? '' : encodeURIComponent(roles)), {});
 		}
 
@@ -7431,11 +7824,13 @@ export namespace MyNS {
 		 * Project article list files
 		 * List article files
 		 * Get account/projects/{project_id}/articles/{article_id}/files
-		 * @param {number} project_id Project unique identifier
-		 * @param {number} article_id Project Article unique identifier
+		 * @param {string} project_id Project unique identifier
+		 *     Minimum: 1
+		 * @param {string} article_id Project Article unique identifier
+		 *     Minimum: 1
 		 * @return {Array<PrivateFile>} OK. List of files
 		 */
-		Private_project_article_files(project_id: number, article_id: number): Observable<Array<PrivateFile>> {
+		Private_project_article_files(project_id: string, article_id: string): Observable<Array<PrivateFile>> {
 			return this.http.get<Array<PrivateFile>>(this.baseUri + 'account/projects/' + project_id + '/articles/' + article_id + '/files', {});
 		}
 
@@ -7443,12 +7838,15 @@ export namespace MyNS {
 		 * Project article file details
 		 * Project article file details
 		 * Get account/projects/{project_id}/articles/{article_id}/files/{file_id}
-		 * @param {number} project_id Project unique identifier
-		 * @param {number} article_id Project Article unique identifier
-		 * @param {number} file_id File unique identifier
+		 * @param {string} project_id Project unique identifier
+		 *     Minimum: 1
+		 * @param {string} article_id Project Article unique identifier
+		 *     Minimum: 1
+		 * @param {string} file_id File unique identifier
+		 *     Minimum: 1
 		 * @return {PrivateFile} OK. File representation
 		 */
-		Private_project_article_file(project_id: number, article_id: number, file_id: number): Observable<PrivateFile> {
+		Private_project_article_file(project_id: string, article_id: string, file_id: string): Observable<PrivateFile> {
 			return this.http.get<PrivateFile>(this.baseUri + 'account/projects/' + project_id + '/articles/' + article_id + '/files/' + file_id, {});
 		}
 
@@ -7477,11 +7875,13 @@ export namespace MyNS {
 		 * Remove project collaborator
 		 * Remove project collaborator
 		 * Delete account/projects/{project_id}/collaborators/{user_id}
-		 * @param {number} project_id Project unique identifier
-		 * @param {number} user_id User unique identifier
+		 * @param {string} project_id Project unique identifier
+		 *     Minimum: 1
+		 * @param {string} user_id User unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_project_collaborator__Delete(project_id: number, user_id: number): Observable<HttpResponse<string>> {
+		Private_project_collaborator__Delete(project_id: string, user_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'account/projects/' + project_id + '/collaborators/' + user_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7489,10 +7889,11 @@ export namespace MyNS {
 		 * Private Project Leave
 		 * Please note: project's owner cannot leave the project.
 		 * Post account/projects/{project_id}/leave
-		 * @param {number} project_id Project unique identifier
+		 * @param {string} project_id Project unique identifier
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		Private_project_leave(project_id: number): Observable<HttpResponse<string>> {
+		Private_project_leave(project_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'account/projects/' + project_id + '/leave', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7500,13 +7901,17 @@ export namespace MyNS {
 		 * List project notes
 		 * List project notes
 		 * Get account/projects/{project_id}/notes
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Array<ProjectNote>} OK. List of project notes
 		 */
-		Private_project_notes_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Array<ProjectNote>> {
+		Private_project_notes_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Observable<Array<ProjectNote>> {
 			return this.http.get<Array<ProjectNote>>(this.baseUri + 'account/projects/{project_id}/notes?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -7553,10 +7958,11 @@ export namespace MyNS {
 		 * Private Project Publish
 		 * Publish a project. Possible after all items inside it are public
 		 * Post account/projects/{project_id}/publish
-		 * @param {number} project_id Project unique identifier
+		 * @param {string} project_id Project unique identifier
+		 *     Minimum: 1
 		 * @return {ResponseMessage} OK
 		 */
-		Private_project_publish(project_id: number): Observable<ResponseMessage> {
+		Private_project_publish(project_id: string): Observable<ResponseMessage> {
 			return this.http.post<ResponseMessage>(this.baseUri + 'account/projects/' + project_id + '/publish', null, {});
 		}
 
@@ -7564,22 +7970,29 @@ export namespace MyNS {
 		 * Public Articles
 		 * Returns a list of public articles
 		 * Get articles
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {ArticleSearchOrder} order The field by which to order. Default varies by endpoint/resource.
-		 * @param {number} institution only return articles from this institution
+		 * @param {string} institution only return articles from this institution
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} published_since Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD
 		 * @param {string} modified_since Filter by article modified date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD
-		 * @param {number} group only return articles from this group
+		 * @param {string} group only return articles from this group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} resource_doi only return articles with this resource_doi
-		 * @param {number} item_type Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 * @param {string} item_type Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} doi only return articles with this doi
 		 * @param {string} handle only return articles with this handle
 		 * @return {Array<Article>} OK. An array of articles
 		 */
-		Articles_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: ArticleSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: number | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, group: number | null | undefined, resource_doi: string | null | undefined, item_type: number | null | undefined, doi: string | null | undefined, handle: string | null | undefined): Observable<Array<Article>> {
+		Articles_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: ArticleSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: string | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, group: string | null | undefined, resource_doi: string | null | undefined, item_type: string | null | undefined, doi: string | null | undefined, handle: string | null | undefined): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'articles?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction + '&institution=' + institution + '&published_since=' + (published_since == null ? '' : encodeURIComponent(published_since)) + '&modified_since=' + (modified_since == null ? '' : encodeURIComponent(modified_since)) + '&group=' + group + '&resource_doi=' + (resource_doi == null ? '' : encodeURIComponent(resource_doi)) + '&item_type=' + item_type + '&doi=' + (doi == null ? '' : encodeURIComponent(doi)) + '&handle=' + (handle == null ? '' : encodeURIComponent(handle)), {});
 		}
 
@@ -7598,10 +8011,11 @@ export namespace MyNS {
 		 * View article details
 		 * View an article
 		 * Get articles/{article_id}
-		 * @param {number} article_id Article Unique identifier
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
 		 * @return {ArticleComplete} OK. Article representation
 		 */
-		Article_details(article_id: number): Observable<ArticleComplete> {
+		Article_details(article_id: string): Observable<ArticleComplete> {
 			return this.http.get<ArticleComplete>(this.baseUri + 'articles/' + article_id, {});
 		}
 
@@ -7609,10 +8023,11 @@ export namespace MyNS {
 		 * List article files
 		 * Files list for article
 		 * Get articles/{article_id}/files
-		 * @param {number} article_id Article Unique identifier
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
 		 * @return {Array<PublicFile>} OK. List of article files
 		 */
-		Article_files(article_id: number): Observable<Array<PublicFile>> {
+		Article_files(article_id: string): Observable<Array<PublicFile>> {
 			return this.http.get<Array<PublicFile>>(this.baseUri + 'articles/' + article_id + '/files', {});
 		}
 
@@ -7620,11 +8035,13 @@ export namespace MyNS {
 		 * Article file details
 		 * File by id
 		 * Get articles/{article_id}/files/{file_id}
-		 * @param {number} article_id Article Unique identifier
-		 * @param {number} file_id File Unique identifier
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
+		 * @param {string} file_id File Unique identifier
+		 *     Minimum: 1
 		 * @return {PublicFile} OK. File representation
 		 */
-		Article_file_details(article_id: number, file_id: number): Observable<PublicFile> {
+		Article_file_details(article_id: string, file_id: string): Observable<PublicFile> {
 			return this.http.get<PublicFile>(this.baseUri + 'articles/' + article_id + '/files/' + file_id, {});
 		}
 
@@ -7632,10 +8049,11 @@ export namespace MyNS {
 		 * List article versions
 		 * List public article versions
 		 * Get articles/{article_id}/versions
-		 * @param {number} article_id Article Unique identifier
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
 		 * @return {Array<ArticleVersions>} OK. Article version representations
 		 */
-		Article_versions(article_id: number): Observable<Array<ArticleVersions>> {
+		Article_versions(article_id: string): Observable<Array<ArticleVersions>> {
 			return this.http.get<Array<ArticleVersions>>(this.baseUri + 'articles/' + article_id + '/versions', {});
 		}
 
@@ -7643,11 +8061,13 @@ export namespace MyNS {
 		 * Article details for version
 		 * Article with specified version
 		 * Get articles/{article_id}/versions/{v_number}
-		 * @param {number} article_id Article Unique identifier
-		 * @param {number} v_number Article Version Number
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
+		 * @param {string} v_number Article Version Number
+		 *     Minimum: 1
 		 * @return {ArticleComplete} OK. Article representation
 		 */
-		Article_version_details(article_id: number, v_number: number): Observable<ArticleComplete> {
+		Article_version_details(article_id: string, v_number: string): Observable<ArticleComplete> {
 			return this.http.get<ArticleComplete>(this.baseUri + 'articles/' + article_id + '/versions/' + v_number, {});
 		}
 
@@ -7655,11 +8075,13 @@ export namespace MyNS {
 		 * Public Article Confidentiality for article version
 		 * Confidentiality for article version. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows.
 		 * Get articles/{article_id}/versions/{v_number}/confidentiality
-		 * @param {number} article_id Article Unique identifier
-		 * @param {number} v_number Version Number
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
+		 * @param {string} v_number Version Number
+		 *     Minimum: 1
 		 * @return {ArticleConfidentiality} OK. Confidentiality representation
 		 */
-		Article_version_confidentiality(article_id: number, v_number: number): Observable<ArticleConfidentiality> {
+		Article_version_confidentiality(article_id: string, v_number: string): Observable<ArticleConfidentiality> {
 			return this.http.get<ArticleConfidentiality>(this.baseUri + 'articles/' + article_id + '/versions/' + v_number + '/confidentiality', {});
 		}
 
@@ -7667,11 +8089,13 @@ export namespace MyNS {
 		 * Public Article Embargo for article version
 		 * Embargo for article version
 		 * Get articles/{article_id}/versions/{v_number}/embargo
-		 * @param {number} article_id Article Unique identifier
-		 * @param {number} v_number Version Number
+		 * @param {string} article_id Article Unique identifier
+		 *     Minimum: 1
+		 * @param {string} v_number Version Number
+		 *     Minimum: 1
 		 * @return {ArticleEmbargo} OK. Embargo representation
 		 */
-		Article_version_embargo(article_id: number, v_number: number): Observable<ArticleEmbargo> {
+		Article_version_embargo(article_id: string, v_number: string): Observable<ArticleEmbargo> {
 			return this.http.get<ArticleEmbargo>(this.baseUri + 'articles/' + article_id + '/versions/' + v_number + '/embargo', {});
 		}
 
@@ -7689,21 +8113,27 @@ export namespace MyNS {
 		 * Public Collections
 		 * Returns a list of public collections
 		 * Get collections
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {CollectionSearchOrder} order The field by which to order. Default varies by endpoint/resource.
-		 * @param {number} institution only return collections from this institution
+		 * @param {string} institution only return collections from this institution
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} published_since Filter by collection publishing date. Will only return collections published after the date. date(ISO 8601) YYYY-MM-DD
 		 * @param {string} modified_since Filter by collection modified date. Will only return collections published after the date. date(ISO 8601) YYYY-MM-DD
-		 * @param {number} group only return collections from this group
+		 * @param {string} group only return collections from this group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} resource_doi only return collections with this resource_doi
 		 * @param {string} doi only return collections with this doi
 		 * @param {string} handle only return collections with this handle
 		 * @return {Array<Collection>} OK. An array of collections
 		 */
-		Collections_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: CollectionSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: number | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, group: number | null | undefined, resource_doi: string | null | undefined, doi: string | null | undefined, handle: string | null | undefined): Observable<Array<Collection>> {
+		Collections_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: CollectionSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: string | null | undefined, published_since: string | null | undefined, modified_since: string | null | undefined, group: string | null | undefined, resource_doi: string | null | undefined, doi: string | null | undefined, handle: string | null | undefined): Observable<Array<Collection>> {
 			return this.http.get<Array<Collection>>(this.baseUri + 'collections?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction + '&institution=' + institution + '&published_since=' + (published_since == null ? '' : encodeURIComponent(published_since)) + '&modified_since=' + (modified_since == null ? '' : encodeURIComponent(modified_since)) + '&group=' + group + '&resource_doi=' + (resource_doi == null ? '' : encodeURIComponent(resource_doi)) + '&doi=' + (doi == null ? '' : encodeURIComponent(doi)) + '&handle=' + (handle == null ? '' : encodeURIComponent(handle)), {});
 		}
 
@@ -7722,10 +8152,11 @@ export namespace MyNS {
 		 * Collection details
 		 * View a collection
 		 * Get collections/{collection_id}
-		 * @param {number} collection_id Collection Unique identifier
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
 		 * @return {CollectionComplete} OK. Collection representation
 		 */
-		Collection_details(collection_id: number): Observable<CollectionComplete> {
+		Collection_details(collection_id: string): Observable<CollectionComplete> {
 			return this.http.get<CollectionComplete>(this.baseUri + 'collections/' + collection_id, {});
 		}
 
@@ -7733,14 +8164,19 @@ export namespace MyNS {
 		 * Public Collection Articles
 		 * Returns a list of public collection articles
 		 * Get collections/{collection_id}/articles
-		 * @param {number} collection_id Collection Unique identifier
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Array<Article>} OK. An array of articles belonging to the collection
 		 */
-		Collection_articles(collection_id: number, page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Array<Article>> {
+		Collection_articles(collection_id: string, page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'collections/' + collection_id + '/articles?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -7748,10 +8184,11 @@ export namespace MyNS {
 		 * Collection Versions list
 		 * Returns a list of public collection Versions
 		 * Get collections/{collection_id}/versions
-		 * @param {number} collection_id Collection Unique identifier
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
 		 * @return {Array<CollectionVersions>} OK. An array of versions
 		 */
-		Collection_versions(collection_id: number): Observable<Array<CollectionVersions>> {
+		Collection_versions(collection_id: string): Observable<Array<CollectionVersions>> {
 			return this.http.get<Array<CollectionVersions>>(this.baseUri + 'collections/' + collection_id + '/versions', {});
 		}
 
@@ -7759,11 +8196,13 @@ export namespace MyNS {
 		 * Collection Version details
 		 * View details for a certain version of a collection
 		 * Get collections/{collection_id}/versions/{version_id}
-		 * @param {number} collection_id Collection Unique identifier
-		 * @param {number} version_id Version Number
+		 * @param {string} collection_id Collection Unique identifier
+		 *     Minimum: 1
+		 * @param {string} version_id Version Number
+		 *     Minimum: 1
 		 * @return {CollectionComplete} OK. Collection for that version
 		 */
-		Collection_version_details(collection_id: number, version_id: number): Observable<CollectionComplete> {
+		Collection_version_details(collection_id: string, version_id: string): Observable<CollectionComplete> {
 			return this.http.get<CollectionComplete>(this.baseUri + 'collections/' + collection_id + '/versions/' + version_id, {});
 		}
 
@@ -7771,9 +8210,10 @@ export namespace MyNS {
 		 * Public File Download
 		 * Starts the download of a file
 		 * Get file/download/{file_id}
+		 * @param {string} file_id Minimum: 1
 		 * @return {void} OK
 		 */
-		File_download(file_id: number): Observable<HttpResponse<string>> {
+		File_download(file_id: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'file/download/' + file_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7791,10 +8231,11 @@ export namespace MyNS {
 		 * Item Types
 		 * Returns the list of Item Types of the requested group. If no user is authenticated, returns the item types available for Figshare.
 		 * Get item_types
-		 * @param {number} group_id Identifier of the group for which the item types are requested
+		 * @param {string} group_id Identifier of the group for which the item types are requested
+		 *     Minimum: 0
 		 * @return {Array<ItemType>} OK. An array of item types
 		 */
-		Item_types_list(group_id: number | null | undefined): Observable<Array<ItemType>> {
+		Item_types_list(group_id: string | null | undefined): Observable<Array<ItemType>> {
 			return this.http.get<Array<ItemType>>(this.baseUri + 'item_types?group_id=' + group_id, {});
 		}
 
@@ -7812,17 +8253,23 @@ export namespace MyNS {
 		 * Public Projects
 		 * Returns a list of public projects
 		 * Get projects
-		 * @param {number} page Page number. Used for pagination with page_size
-		 * @param {number} page_size The number of results included on a page. Used for pagination with page
-		 * @param {number} limit Number of results included on a page. Used for pagination with query
-		 * @param {number} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 * @param {string} page Page number. Used for pagination with page_size
+		 *     Minimum: 1    Maximum: 5000
+		 * @param {string} page_size The number of results included on a page. Used for pagination with page
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} limit Number of results included on a page. Used for pagination with query
+		 *     Minimum: 1    Maximum: 1000
+		 * @param {string} offset Where to start the listing(the offset of the first result). Used for pagination with limit
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {ProjectsSearchOrder} order The field by which to order. Default varies by endpoint/resource.
-		 * @param {number} institution only return collections from this institution
+		 * @param {string} institution only return collections from this institution
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} published_since Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD
-		 * @param {number} group only return collections from this group
+		 * @param {string} group only return collections from this group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Project>} OK. An array of projects
 		 */
-		Projects_list(page: number | null | undefined, page_size: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, order: ProjectsSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: number | null | undefined, published_since: string | null | undefined, group: number | null | undefined): Observable<Array<Project>> {
+		Projects_list(page: string | null | undefined, page_size: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, order: ProjectsSearchOrder | null | undefined, order_direction: CommonSearchOrder_direction | null | undefined, institution: string | null | undefined, published_since: string | null | undefined, group: string | null | undefined): Observable<Array<Project>> {
 			return this.http.get<Array<Project>>(this.baseUri + 'projects?page=' + page + '&page_size=' + page_size + '&limit=' + limit + '&offset=' + offset + '&order=' + order + '&order_direction=' + order_direction + '&institution=' + institution + '&published_since=' + (published_since == null ? '' : encodeURIComponent(published_since)) + '&group=' + group, {});
 		}
 
@@ -7841,10 +8288,11 @@ export namespace MyNS {
 		 * Public Project
 		 * View a project
 		 * Get projects/{project_id}
-		 * @param {number} project_id Project Unique identifier
+		 * @param {string} project_id Project Unique identifier
+		 *     Minimum: 1
 		 * @return {ProjectComplete} OK. Project representation
 		 */
-		Project_details(project_id: number): Observable<ProjectComplete> {
+		Project_details(project_id: string): Observable<ProjectComplete> {
 			return this.http.get<ProjectComplete>(this.baseUri + 'projects/' + project_id, {});
 		}
 
@@ -7852,10 +8300,11 @@ export namespace MyNS {
 		 * Public Project Articles
 		 * List articles in project
 		 * Get projects/{project_id}/articles
-		 * @param {number} project_id Project Unique identifier
+		 * @param {string} project_id Project Unique identifier
+		 *     Minimum: 1
 		 * @return {Array<Article>} OK. Project articles list
 		 */
-		Project_articles(project_id: number): Observable<Array<Article>> {
+		Project_articles(project_id: string): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + 'projects/' + project_id + '/articles', {});
 		}
 	}

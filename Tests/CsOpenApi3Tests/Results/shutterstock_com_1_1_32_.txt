@@ -7323,9 +7323,16 @@ namespace MyNS
 		/// <param name="render_speed_over">Show descriptors with an average render speed that is greater than or equal to the specified value</param>
 		/// <param name="band_id">Show descriptors that contain the specified band (case-sentsitive)</param>
 		/// <param name="band_name">Show descriptors with the specified band name (case-sensitive)</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
-		/// <param name="id">Show descriptors with the specified IDs (case-sensitive)</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="id">Show descriptors with the specified IDs (case-sensitive)
+		/// Maximum items: 20
+		// </param>
 		/// <param name="instrument_name">Show descriptors with the specified instrument name (case-sensitive)</param>
 		/// <param name="instrument_id">Show descriptors with the specified instrument ID (case-sensitive)</param>
 		/// <param name="tempo">Show descriptors whose tempo range includes the specified tempo in beats per minute</param>
@@ -7368,8 +7375,13 @@ namespace MyNS
 		/// ListCustomInstruments v2/ai/audio/instruments
 		/// </summary>
 		/// <param name="id">Show instruments with the specified ID</param>
-		/// <param name="per_page">Number of results per page</param>
-		/// <param name="page">Page number</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
 		/// <param name="name">Show instruments with the specified name (case-sensitive)</param>
 		/// <param name="tag">Show instruments with the specified tag, such as Percussion or Strings (case-sensitive)</param>
 		/// <returns>OK</returns>
@@ -7483,7 +7495,10 @@ namespace MyNS
 		/// This endpoint lists information about one or more audio tracks, including the description and publication date.
 		/// GetTrackList v2/audio
 		/// </summary>
-		/// <param name="id">One or more audio IDs</param>
+		/// <param name="id">One or more audio IDs
+		/// Minimum items: 1
+		/// Maximum items: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <param name="search_id">The ID of the search that is related to this request</param>
 		/// <returns>OK</returns>
@@ -7520,8 +7535,13 @@ namespace MyNS
 		/// This endpoint lists your collections of audio tracks and their basic attributes.
 		/// GetTrackCollectionList v2/audio/collections
 		/// </summary>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <param name="embed">Which sharing information to include in the response, such as a URL to the collection</param>
 		/// <returns>OK</returns>
 		public async Task<CollectionDataList> GetTrackCollectionListAsync(int page, int per_page, string[] embed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7723,8 +7743,13 @@ namespace MyNS
 		/// GetTrackCollectionItems v2/audio/collections/{id}/items
 		/// </summary>
 		/// <param name="id">Collection ID</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <param name="share_code">Code to retrieve the contents of a shared collection</param>
 		/// <param name="sort">Sort order</param>
 		/// <returns>OK</returns>
@@ -7869,8 +7894,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="audio_id">Show licenses for the specified track ID</param>
 		/// <param name="license">Restrict results by license. Prepending a `-` sign will exclude results by license</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -8031,8 +8061,13 @@ namespace MyNS
 		/// <param name="is_instrumental">Show instrumental music only</param>
 		/// <param name="instruments">Show tracks with each of the specified instruments; to get the list of instruments, use `GET /v2/audio/instruments`</param>
 		/// <param name="moods">Show tracks with each of the specified moods; to get the list of moods, use `GET /v2/audio/moods`</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="query">One or more search terms separated by spaces</param>
 		/// <param name="sort">Sort by</param>
 		/// <param name="sort_order">Sort order</param>
@@ -8136,9 +8171,15 @@ namespace MyNS
 		/// </summary>
 		/// <param name="added_date">Show images added on the specified date</param>
 		/// <param name="added_date_start">Show images added on or after the specified date</param>
-		/// <param name="aspect_ratio_min">Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
-		/// <param name="aspect_ratio_max">Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
-		/// <param name="aspect_ratio">Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
+		/// <param name="aspect_ratio_min">Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
+		/// <param name="aspect_ratio_max">Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
+		/// <param name="aspect_ratio">Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
 		/// <param name="added_date_end">Show images added before the specified date</param>
 		/// <param name="category">Show images with the specified Shutterstock-defined category; specify a category name or ID</param>
 		/// <param name="color">Specify either a hexadecimal color in the format '4F21EA' or 'grayscale'; the API returns images that use similar colors</param>
@@ -8154,13 +8195,21 @@ namespace MyNS
 		/// <param name="license">Show only images with the specified license</param>
 		/// <param name="model">Show image results with the specified model IDs</param>
 		/// <param name="orientation">Show image results with horizontal or vertical orientation</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 20
+		// </param>
 		/// <param name="people_model_released">Show images of people with a signed model release</param>
 		/// <param name="people_age">Show images that feature people of the specified age category</param>
 		/// <param name="people_ethnicity">Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities</param>
 		/// <param name="people_gender">Show images with people of the specified gender</param>
-		/// <param name="people_number">Show images with the specified number of people</param>
+		/// <param name="people_number">Show images with the specified number of people
+		/// Minimum: 0
+		/// Maximum: 4
+		// </param>
 		/// <param name="region">Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country</param>
 		/// <param name="safe">Enable or disable safe search</param>
 		/// <param name="sort">Sort by</param>
@@ -8248,8 +8297,13 @@ namespace MyNS
 		/// This endpoint returns a list of catalog collections.
 		/// GetCollections v2/catalog/collections
 		/// </summary>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 2
+		/// Maximum: 50
+		// </param>
 		/// <param name="sort">Sort by</param>
 		/// <param name="shared">Set to true to omit collections that you own and return only collections  that are shared with you</param>
 		/// <returns>OK</returns>
@@ -8471,10 +8525,17 @@ namespace MyNS
 		/// SearchCatalog v2/catalog/search
 		/// </summary>
 		/// <param name="sort">Sort by</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="query">One or more search terms separated by spaces</param>
-		/// <param name="collection_id">Filter by collection id</param>
+		/// <param name="collection_id">Filter by collection id
+		/// Maximum items: 50
+		// </param>
 		/// <param name="asset_type">Filter by asset type</param>
 		/// <returns>OK</returns>
 		public async Task<CatalogCollectionItemDataList> SearchCatalogAsync(GetTrackCollectionItemsSort sort, int page, int per_page, string query, string[] collection_id, string[] asset_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8654,8 +8715,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="contributor_id">Contributor ID</param>
 		/// <param name="id">Collection ID that belongs to the contributor</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <returns>OK</returns>
 		public async Task<CollectionItemDataList> GetContributorCollectionItemsAsync(string contributor_id, string id, int page, int per_page, GetTrackCollectionItemsSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8765,8 +8831,13 @@ namespace MyNS
 		/// <param name="license">Show only images with the specified license</param>
 		/// <param name="safe">Enable or disable safe search</param>
 		/// <param name="language">Language for the keywords and categories in the response</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <returns>OK</returns>
 		public async Task<ImageSearchResults> GetSimilarImagesAsync(string asset_id, string[] license, bool safe, Language language, int page, int per_page, SearchImageView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8806,8 +8877,13 @@ namespace MyNS
 		/// <param name="license">Show only videos with the specified license</param>
 		/// <param name="safe">Enable or disable safe search</param>
 		/// <param name="language">Language for the keywords and categories in the response</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <returns>OK</returns>
 		public async Task<VideoSearchResults> GetSimilarVideosAsync(string asset_id, string[] license, bool safe, Language language, int page, int per_page, SearchImageView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8913,8 +8989,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="image_id">Show licenses for the specified editorial image ID</param>
 		/// <param name="license">Show editorial images that are available with the specified license name</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -8997,8 +9078,13 @@ namespace MyNS
 		/// GetEditorialImageLivefeedList v2/editorial/images/livefeeds
 		/// </summary>
 		/// <param name="country">Returns only livefeeds that are available for distribution in a certain country</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<EditorialImageLivefeedList> GetEditorialImageLivefeedListAsync(string country, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9110,7 +9196,10 @@ namespace MyNS
 		/// <param name="supplier_code">Show only editorial content from certain suppliers</param>
 		/// <param name="date_start">Show only editorial content generated on or after a specific date</param>
 		/// <param name="date_end">Show only editorial content generated on or before a specific date</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="cursor">The cursor of the page with which to start fetching results; this cursor is returned from previous requests</param>
 		/// <returns>OK</returns>
 		public async Task<EditorialSearchResults> SearchEditorialImagesAsync(string query, SearchEditorialImagesSort sort, string category, string country, string[] supplier_code, System.DateOnly date_start, System.DateOnly date_end, int per_page, string cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9155,7 +9244,10 @@ namespace MyNS
 		/// <param name="sort">Sort by</param>
 		/// <param name="supplier_code">Show only editorial content from certain suppliers</param>
 		/// <param name="country">Show only editorial content that is available for distribution in a certain country</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 100
+		/// Maximum: 500
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<EditorialUpdatedResults> GetUpdatedEditorialImagesAsync(GetUpdatedEditorialImagesType type, System.DateTimeOffset date_updated_start, System.DateTimeOffset date_updated_end, System.DateOnly date_taken_start, System.DateOnly date_taken_end, string cursor, GetTrackCollectionItemsSort sort, string[] supplier_code, string country, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9269,8 +9361,13 @@ namespace MyNS
 		/// GetEditorialLivefeedList v2/editorial/livefeeds
 		/// </summary>
 		/// <param name="country">Returns only livefeeds that are available for distribution in a certain country</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<EditorialLivefeedList> GetEditorialLivefeedListAsync(string country, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9384,7 +9481,10 @@ namespace MyNS
 		/// <param name="supplier_code">Show only editorial content from certain suppliers</param>
 		/// <param name="date_start">Show only editorial content generated on or after a specific date</param>
 		/// <param name="date_end">Show only editorial content generated on or before a specific date</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="cursor">The cursor of the page with which to start fetching results; this cursor is returned from previous requests</param>
 		/// <returns>OK</returns>
 		public async Task<EditorialSearchResults> SearchEditorialAsync(string query, SearchEditorialImagesSort sort, string category, string country, string[] supplier_code, System.DateOnly date_start, System.DateOnly date_end, int per_page, string cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9429,7 +9529,10 @@ namespace MyNS
 		/// <param name="sort">Sort by</param>
 		/// <param name="supplier_code">Show only editorial content from certain suppliers</param>
 		/// <param name="country">Show only editorial content that is available for distribution in a certain country</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 100
+		/// Maximum: 500
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<EditorialUpdatedResults> GetUpdatedEditorialImageAsync(GetUpdatedEditorialImagesType type, System.DateTimeOffset date_updated_start, System.DateTimeOffset date_updated_end, System.DateOnly date_taken_start, System.DateOnly date_taken_end, string cursor, GetTrackCollectionItemsSort sort, string[] supplier_code, string country, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9500,8 +9603,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="video_id">Show licenses for the specified editorial video ID</param>
 		/// <param name="license">Show editorial videos that are available with the specified license name</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -9593,7 +9701,10 @@ namespace MyNS
 		/// <param name="date_end">Show only editorial video content generated on or before a specific date</param>
 		/// <param name="resolution">Show only editorial video content with specific resolution</param>
 		/// <param name="fps">Show only editorial video content generated with specific frames per second</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="cursor">The cursor of the page with which to start fetching results; this cursor is returned from previous requests</param>
 		/// <returns>OK</returns>
 		public async Task<EditorialVideoSearchResults> SearchEditorialVideosAsync(string query, SearchEditorialImagesSort sort, string category, string country, string[] supplier_code, System.DateOnly date_start, System.DateOnly date_end, SearchEditorialVideosResolution resolution, double fps, int per_page, string cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9703,7 +9814,9 @@ namespace MyNS
 		/// This endpoint lists information about one or more images, including the available sizes.
 		/// GetImageList v2/images
 		/// </summary>
-		/// <param name="id">One or more image IDs</param>
+		/// <param name="id">One or more image IDs
+		/// Maximum items: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <param name="search_id">The ID of the search that is related to this request</param>
 		/// <returns>OK</returns>
@@ -9811,8 +9924,13 @@ namespace MyNS
 		/// GetImageCollectionList v2/images/collections
 		/// </summary>
 		/// <param name="embed">Which sharing information to include in the response, such as a URL to the collection</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CollectionDataList> GetImageCollectionListAsync(string[] embed, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9957,8 +10075,13 @@ namespace MyNS
 		/// GetFeaturedImageCollectionItems v2/images/collections/featured/{id}/items
 		/// </summary>
 		/// <param name="id">Collection ID</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CollectionItemDataList> GetFeaturedImageCollectionItemsAsync(string id, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10124,8 +10247,13 @@ namespace MyNS
 		/// GetImageCollectionItems v2/images/collections/{id}/items
 		/// </summary>
 		/// <param name="id">Collection ID</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <param name="share_code">Code to retrieve the contents of a shared collection</param>
 		/// <param name="sort">Sort order</param>
 		/// <returns>OK</returns>
@@ -10200,8 +10328,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="image_id">Show licenses for the specified image ID</param>
 		/// <param name="license">Show images that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -10332,7 +10465,10 @@ namespace MyNS
 		/// GetImageRecommendations v2/images/recommendations
 		/// </summary>
 		/// <param name="id">Image IDs</param>
-		/// <param name="max_items">Maximum number of results returned in the response</param>
+		/// <param name="max_items">Maximum number of results returned in the response
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="safe">Restrict results to safe images</param>
 		/// <returns>OK</returns>
 		public async Task<RecommendationDataList> GetImageRecommendationsAsync(string[] id, int max_items, bool safe, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10370,11 +10506,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="added_date">Show images added on the specified date</param>
 		/// <param name="added_date_start">Show images added on or after the specified date</param>
-		/// <param name="aspect_ratio_min">Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
-		/// <param name="aspect_ratio_max">Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
-		/// <param name="aspect_ratio">Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image</param>
+		/// <param name="aspect_ratio_min">Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
+		/// <param name="aspect_ratio_max">Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
+		/// <param name="aspect_ratio">Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		/// Minimum: 0
+		// </param>
 		/// <param name="ai_search">Set to true and specify the `ai_objective` and `ai_industry` parameters to use AI-powered search; the API returns information about how well images meet the objective for the industry </param>
-		/// <param name="ai_labels_limit">For AI-powered search, specify the maximum number of labels to return</param>
+		/// <param name="ai_labels_limit">For AI-powered search, specify the maximum number of labels to return
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="ai_industry">For AI-powered search, specify the industry to target; requires that the `ai_search` parameter is set to true</param>
 		/// <param name="ai_objective">For AI-powered search, specify the goal of the media; requires that the `ai_search` parameter is set to true</param>
 		/// <param name="added_date_end">Show images added before the specified date</param>
@@ -10392,13 +10537,21 @@ namespace MyNS
 		/// <param name="license">Show only images with the specified license</param>
 		/// <param name="model">Show image results with the specified model IDs</param>
 		/// <param name="orientation">Show image results with horizontal or vertical orientation</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="people_model_released">Show images of people with a signed model release</param>
 		/// <param name="people_age">Show images that feature people of the specified age category</param>
 		/// <param name="people_ethnicity">Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities</param>
 		/// <param name="people_gender">Show images with people of the specified gender</param>
-		/// <param name="people_number">Show images with the specified number of people</param>
+		/// <param name="people_number">Show images with the specified number of people
+		/// Minimum: 0
+		/// Maximum: 4
+		// </param>
 		/// <param name="query">One or more search terms separated by spaces; you can use NOT to filter out images that match a term</param>
 		/// <param name="region">Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country</param>
 		/// <param name="safe">Enable or disable safe search</param>
@@ -10484,7 +10637,10 @@ namespace MyNS
 		/// GetImageSuggestions v2/images/search/suggestions
 		/// </summary>
 		/// <param name="query">Search term for which you want keyword suggestions</param>
-		/// <param name="limit">Limit the number of suggestions</param>
+		/// <param name="limit">Limit the number of suggestions
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Suggestions> GetImageSuggestionsAsync(string query, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10565,8 +10721,13 @@ namespace MyNS
 		/// <param name="start_date">Show images updated on or after the specified date</param>
 		/// <param name="end_date">Show images updated before the specified date</param>
 		/// <param name="interval">Show images updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows images that were updated in the hour preceding the request</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <returns>OK</returns>
 		public async Task<UpdatedMediaDataList> GetUpdatedImagesAsync(string[] type, System.DateOnly start_date, System.DateOnly end_date, string interval, int page, int per_page, GetTrackCollectionItemsSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10642,8 +10803,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">Image ID</param>
 		/// <param name="language">Language for the keywords and categories in the response</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <returns>OK</returns>
 		public async Task<ImageSearchResults> ListSimilarImagesAsync(string id, Language language, int page, int per_page, SearchImageView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10753,7 +10919,9 @@ namespace MyNS
 		/// This endpoint shows information about sound effects.
 		/// GetSfxListDetails v2/sfx
 		/// </summary>
-		/// <param name="id">One or more sound effect IDs</param>
+		/// <param name="id">One or more sound effect IDs
+		/// Maximum items: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <param name="language">Language for the keywords and categories in the response</param>
 		/// <param name="library">Which library to fetch from</param>
@@ -10794,8 +10962,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="sfx_id">Show licenses for the specified sound effects ID</param>
 		/// <param name="license">Show sound effects that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort order</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -10914,8 +11087,13 @@ namespace MyNS
 		/// <param name="duration">Show sound effects with the specified duration in seconds</param>
 		/// <param name="duration_from">Show sound effects with the specified duration or longer in seconds</param>
 		/// <param name="duration_to">Show sound effects with the specified duration or shorter in seconds</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="query">One or more search terms separated by spaces</param>
 		/// <param name="safe">Enable or disable safe search</param>
 		/// <param name="sort">Sort by</param>
@@ -11162,7 +11340,10 @@ namespace MyNS
 		/// This endpoint lists information about one or more videos, including the aspect ratio and URLs to previews.
 		/// GetVideoList v2/videos
 		/// </summary>
-		/// <param name="id">One or more video IDs</param>
+		/// <param name="id">One or more video IDs
+		/// Minimum items: 1
+		/// Maximum items: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <param name="search_id">The ID of the search that is related to this request</param>
 		/// <returns>OK</returns>
@@ -11234,8 +11415,13 @@ namespace MyNS
 		/// This endpoint lists your collections of videos and their basic attributes.
 		/// GetVideoCollectionList v2/videos/collections
 		/// </summary>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <param name="embed">Which sharing information to include in the response, such as a URL to the collection</param>
 		/// <returns>OK</returns>
 		public async Task<CollectionDataList> GetVideoCollectionListAsync(int page, int per_page, string[] embed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11378,8 +11564,13 @@ namespace MyNS
 		/// GetFeaturedVideoCollectionItems v2/videos/collections/featured/{id}/items
 		/// </summary>
 		/// <param name="id">Collection ID</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<VideoCollectionItemDataList> GetFeaturedVideoCollectionItemsAsync(string id, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11545,8 +11736,13 @@ namespace MyNS
 		/// GetVideoCollectionItems v2/videos/collections/{id}/items
 		/// </summary>
 		/// <param name="id">Collection ID</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 150
+		// </param>
 		/// <param name="share_code">Code to retrieve the contents of a shared collection</param>
 		/// <param name="sort">Sort order</param>
 		/// <returns>OK</returns>
@@ -11621,8 +11817,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="video_id">Show licenses for the specified video ID</param>
 		/// <param name="license">Show videos that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="sort">Sort by oldest or newest videos first</param>
 		/// <param name="username">Filter licenses by username of licensee</param>
 		/// <param name="start_date">Show licenses created on or after the specified date</param>
@@ -11768,12 +11969,20 @@ namespace MyNS
 		/// <param name="language">Set query and result language (uses Accept-Language header if not set)</param>
 		/// <param name="license">Show only videos with the specified license or licenses</param>
 		/// <param name="model">Show videos with each of the specified models</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="people_age">Show videos that feature people of the specified age range</param>
 		/// <param name="people_ethnicity">Show videos with people of the specified ethnicities</param>
 		/// <param name="people_gender">Show videos with people with the specified gender</param>
-		/// <param name="people_number">Show videos with the specified number of people</param>
+		/// <param name="people_number">Show videos with the specified number of people
+		/// Minimum: 0
+		/// Maximum: 4
+		// </param>
 		/// <param name="people_model_released">Show only videos of people with a signed model release</param>
 		/// <param name="query">One or more search terms separated by spaces; you can use NOT to filter out videos that match a term</param>
 		/// <param name="resolution">Show videos with the specified resolution</param>
@@ -11845,7 +12054,10 @@ namespace MyNS
 		/// GetVideoSuggestions v2/videos/search/suggestions
 		/// </summary>
 		/// <param name="query">Search term for which you want keyword suggestions</param>
-		/// <param name="limit">Limit the number of the suggestions</param>
+		/// <param name="limit">Limit the number of the suggestions
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Suggestions> GetVideoSuggestionsAsync(string query, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11883,8 +12095,13 @@ namespace MyNS
 		/// <param name="start_date">Show videos updated on or after the specified date</param>
 		/// <param name="end_date">Show videos updated before the specified date</param>
 		/// <param name="interval">Show videos updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows videos that were updated in the hour preceding the request</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="sort">Sort by oldest or newest videos first</param>
 		/// <returns>OK</returns>
 		public async Task<UpdatedMediaDataList> GetUpdatedVideosAsync(System.DateOnly start_date, System.DateOnly end_date, string interval, int page, int per_page, GetTrackCollectionItemsSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11960,8 +12177,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">The ID of a video for which similar videos should be returned</param>
 		/// <param name="language">Language for the keywords and categories in the response</param>
-		/// <param name="page">Page number</param>
-		/// <param name="per_page">Number of results per page</param>
+		/// <param name="page">Page number
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Number of results per page
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="view">Amount of detail to render in the response</param>
 		/// <returns>OK</returns>
 		public async Task<VideoSearchResults> FindSimilarVideosAsync(string id, Language language, int page, int per_page, SearchImageView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

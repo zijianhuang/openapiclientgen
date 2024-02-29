@@ -1146,8 +1146,13 @@ namespace MyNS
 		/// Retrieve a list of all Services.
 		/// ListService v1/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1183,8 +1188,13 @@ namespace MyNS
 		/// ListAsset v1/Services/{ServiceSid}/Assets
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Asset resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListAssetReturn> ListAssetAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1220,9 +1230,17 @@ namespace MyNS
 		/// ListAssetVersion v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Asset Version resource from.</param>
-		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListAssetVersionReturn> ListAssetVersionAsync(string ServiceSid, string AssetSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1258,8 +1276,14 @@ namespace MyNS
 		/// FetchAssetVersion v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Asset Version resource from.</param>
-		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resource to fetch.</param>
-		/// <param name="Sid">The SID of the Asset Version resource to fetch.</param>
+		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Asset Version resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceassetasset_version> FetchAssetVersionAsync(string ServiceSid, string AssetSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1294,7 +1318,10 @@ namespace MyNS
 		/// DeleteAsset v1/Services/{ServiceSid}/Assets/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Asset resource from.</param>
-		/// <param name="Sid">The SID that identifies the Asset resource to delete.</param>
+		/// <param name="Sid">The SID that identifies the Asset resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteAssetAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Assets/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1322,7 +1349,10 @@ namespace MyNS
 		/// FetchAsset v1/Services/{ServiceSid}/Assets/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Asset resource from.</param>
-		/// <param name="Sid">The SID that identifies the Asset resource to fetch.</param>
+		/// <param name="Sid">The SID that identifies the Asset resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceasset> FetchAssetAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1357,8 +1387,13 @@ namespace MyNS
 		/// ListBuild v1/Services/{ServiceSid}/Builds
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Build resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListBuildReturn> ListBuildAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1394,7 +1429,10 @@ namespace MyNS
 		/// DeleteBuild v1/Services/{ServiceSid}/Builds/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Build resource from.</param>
-		/// <param name="Sid">The SID of the Build resource to delete.</param>
+		/// <param name="Sid">The SID of the Build resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteBuildAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Builds/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1422,7 +1460,10 @@ namespace MyNS
 		/// FetchBuild v1/Services/{ServiceSid}/Builds/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Build resource from.</param>
-		/// <param name="Sid">The SID of the Build resource to fetch.</param>
+		/// <param name="Sid">The SID of the Build resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicebuild> FetchBuildAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1457,7 +1498,10 @@ namespace MyNS
 		/// FetchBuildStatus v1/Services/{ServiceSid}/Builds/{Sid}/Status
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Build resource from.</param>
-		/// <param name="Sid">The SID of the Build resource to fetch.</param>
+		/// <param name="Sid">The SID of the Build resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicebuildbuild_status> FetchBuildStatusAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1492,8 +1536,13 @@ namespace MyNS
 		/// ListEnvironment v1/Services/{ServiceSid}/Environments
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Environment resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListEnvironmentReturn> ListEnvironmentAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1529,9 +1578,17 @@ namespace MyNS
 		/// ListDeployment v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Deployment resources from.</param>
-		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDeploymentReturn> ListDeploymentAsync(string ServiceSid, string EnvironmentSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1567,8 +1624,14 @@ namespace MyNS
 		/// FetchDeployment v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Deployment resource from.</param>
-		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment to fetch.</param>
-		/// <param name="Sid">The SID that identifies the Deployment resource to fetch.</param>
+		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID that identifies the Deployment resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentdeployment> FetchDeploymentAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1603,12 +1666,23 @@ namespace MyNS
 		/// ListLog v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Logs
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Log resource from.</param>
-		/// <param name="EnvironmentSid">The SID of the environment with the Log resources to read.</param>
-		/// <param name="FunctionSid">The SID of the function whose invocation produced the Log resources to read.</param>
+		/// <param name="EnvironmentSid">The SID of the environment with the Log resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="FunctionSid">The SID of the function whose invocation produced the Log resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="StartDate">The date/time (in GMT, ISO 8601) after which the Log resources must have been created. Defaults to 1 day prior to current date/time.</param>
 		/// <param name="EndDate">The date/time (in GMT, ISO 8601) before which the Log resources must have been created. Defaults to current date/time.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListLogReturn> ListLogAsync(string ServiceSid, string EnvironmentSid, string FunctionSid, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1644,8 +1718,14 @@ namespace MyNS
 		/// FetchLog v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Logs/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Log resource from.</param>
-		/// <param name="EnvironmentSid">The SID of the environment with the Log resource to fetch.</param>
-		/// <param name="Sid">The SID of the Log resource to fetch.</param>
+		/// <param name="EnvironmentSid">The SID of the environment with the Log resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Log resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentlog> FetchLogAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1680,9 +1760,17 @@ namespace MyNS
 		/// ListVariable v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Variable resources from.</param>
-		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListVariableReturn> ListVariableAsync(string ServiceSid, string EnvironmentSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1718,8 +1806,14 @@ namespace MyNS
 		/// DeleteVariable v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Variable resource from.</param>
-		/// <param name="EnvironmentSid">The SID of the Environment with the Variables to delete.</param>
-		/// <param name="Sid">The SID of the Variable resource to delete.</param>
+		/// <param name="EnvironmentSid">The SID of the Environment with the Variables to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Variable resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteVariableAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Environments/"+ (EnvironmentSid==null? "" : System.Uri.EscapeDataString(EnvironmentSid))+"/Variables/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1747,8 +1841,14 @@ namespace MyNS
 		/// FetchVariable v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Variable resource from.</param>
-		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resource to fetch.</param>
-		/// <param name="Sid">The SID of the Variable resource to fetch.</param>
+		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Variable resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentvariable> FetchVariableAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1783,7 +1883,10 @@ namespace MyNS
 		/// DeleteEnvironment v1/Services/{ServiceSid}/Environments/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Environment resource from.</param>
-		/// <param name="Sid">The SID of the Environment resource to delete.</param>
+		/// <param name="Sid">The SID of the Environment resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteEnvironmentAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Environments/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1811,7 +1914,10 @@ namespace MyNS
 		/// FetchEnvironment v1/Services/{ServiceSid}/Environments/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Environment resource from.</param>
-		/// <param name="Sid">The SID of the Environment resource to fetch.</param>
+		/// <param name="Sid">The SID of the Environment resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironment> FetchEnvironmentAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1846,8 +1952,13 @@ namespace MyNS
 		/// ListFunction v1/Services/{ServiceSid}/Functions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Function resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFunctionReturn> ListFunctionAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1883,9 +1994,17 @@ namespace MyNS
 		/// ListFunctionVersion v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Function Version resources from.</param>
-		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFunctionVersionReturn> ListFunctionVersionAsync(string ServiceSid, string FunctionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1921,8 +2040,14 @@ namespace MyNS
 		/// FetchFunctionVersion v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function Version resource from.</param>
-		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resource to fetch.</param>
-		/// <param name="Sid">The SID of the Function Version resource to fetch.</param>
+		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Function Version resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunctionfunction_version> FetchFunctionVersionAsync(string ServiceSid, string FunctionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1957,8 +2082,14 @@ namespace MyNS
 		/// FetchFunctionVersionContent v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}/Content
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function Version content from.</param>
-		/// <param name="FunctionSid">The SID of the Function that is the parent of the Function Version content to fetch.</param>
-		/// <param name="Sid">The SID of the Function Version content to fetch.</param>
+		/// <param name="FunctionSid">The SID of the Function that is the parent of the Function Version content to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Function Version content to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunctionfunction_versionfunction_version_content> FetchFunctionVersionContentAsync(string ServiceSid, string FunctionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1993,7 +2124,10 @@ namespace MyNS
 		/// DeleteFunction v1/Services/{ServiceSid}/Functions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Function resource from.</param>
-		/// <param name="Sid">The SID of the Function resource to delete.</param>
+		/// <param name="Sid">The SID of the Function resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteFunctionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Functions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2021,7 +2155,10 @@ namespace MyNS
 		/// FetchFunction v1/Services/{ServiceSid}/Functions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function resource from.</param>
-		/// <param name="Sid">The SID of the Function resource to fetch.</param>
+		/// <param name="Sid">The SID of the Function resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunction> FetchFunctionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

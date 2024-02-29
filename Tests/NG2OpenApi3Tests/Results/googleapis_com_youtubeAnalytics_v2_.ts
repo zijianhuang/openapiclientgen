@@ -511,10 +511,12 @@ export namespace MyNS {
 		 * @param {string} ids Identifies the YouTube channel or content owner for which you are retrieving YouTube Analytics data. - To request data for a YouTube user, set the `ids` parameter value to `channel==CHANNEL_ID`, where `CHANNEL_ID` specifies the unique YouTube channel ID. - To request data for a YouTube CMS content owner, set the `ids` parameter value to `contentOwner==OWNER_NAME`, where `OWNER_NAME` is the CMS name of the content owner. required: true, pattern: [a-zA-Z]+==[a-zA-Z0-9_+-]+
 		 * @param {boolean} includeHistoricalChannelData If set to true historical data (i.e. channel data from before the linking of the channel to the content owner) will be retrieved.",
 		 * @param {number} maxResults The maximum number of rows to include in the response.", minValue: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} metrics A comma-separated list of YouTube Analytics metrics, such as `views` or `likes,dislikes`. See the [Available Reports](/youtube/analytics/v2/available_reports) document for a list of the reports that you can retrieve and the metrics available in each report, and see the [Metrics](/youtube/analytics/v2/dimsmets/mets) document for definitions of those metrics. required: true, pattern: [0-9a-zA-Z,]+
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending. The '`-`' prefix causes descending sort order.", pattern: [-0-9a-zA-Z,]+
 		 * @param {string} startDate The start date for fetching YouTube Analytics data. The value should be in `YYYY-MM-DD` format. required: true, pattern: "[0-9]{4}-[0-9]{2}-[0-9]{2}
 		 * @param {number} startIndex An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter (one-based, inclusive).", minValue: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {QueryResponse} Successful response
 		 */
 		YoutubeAnalytics_reports_query(currency: string | null | undefined, dimensions: string | null | undefined, endDate: string | null | undefined, filters: string | null | undefined, ids: string | null | undefined, includeHistoricalChannelData: boolean | null | undefined, maxResults: number | null | undefined, metrics: string | null | undefined, sort: string | null | undefined, startDate: string | null | undefined, startIndex: number | null | undefined): Observable<QueryResponse> {

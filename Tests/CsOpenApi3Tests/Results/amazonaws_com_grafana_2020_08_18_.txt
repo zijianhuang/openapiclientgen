@@ -1386,7 +1386,10 @@ namespace MyNS
 		/// Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
 		/// ListWorkspaces workspaces
 		/// </summary>
-		/// <param name="maxResults">The maximum number of workspaces to include in the results.</param>
+		/// <param name="maxResults">The maximum number of workspaces to include in the results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkspacesResponse> ListWorkspacesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1557,7 +1560,10 @@ namespace MyNS
 		/// Deletes a Grafana API key for the workspace.
 		/// DeleteWorkspaceApiKey workspaces/{workspaceId}/apikeys/{keyName}
 		/// </summary>
-		/// <param name="keyName">The name of the API key to delete.</param>
+		/// <param name="keyName">The name of the API key to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="workspaceId">The ID of the workspace to delete.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWorkspaceApiKeyResponse> DeleteWorkspaceApiKeyAsync(string keyName, string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1735,10 +1741,19 @@ namespace MyNS
 		/// Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code> roles in this workspace. If you use this operation without specifying <code>userId</code> or <code>groupId</code>, the operation returns the roles of all users and groups. If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for that user or group are returned. If you do this, you can specify only one <code>userId</code> or one <code>groupId</code>.
 		/// ListPermissions workspaces/{workspaceId}/permissions
 		/// </summary>
-		/// <param name="groupId">(Optional) Limits the results to only the group that matches this ID.</param>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
+		/// <param name="groupId">(Optional) Limits the results to only the group that matches this ID.
+		/// Max length: 47
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</param>
-		/// <param name="userId">(Optional) Limits the results to only the user that matches this ID.</param>
+		/// <param name="userId">(Optional) Limits the results to only the user that matches this ID.
+		/// Max length: 47
+		/// Min length: 1
+		// </param>
 		/// <param name="userType">(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</param>
 		/// <param name="workspaceId">The ID of the workspace to list permissions for. This parameter is required.</param>
 		/// <returns>Success</returns>
@@ -1890,7 +1905,10 @@ namespace MyNS
 		/// Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally, include a workspace to list the versions to which it can be upgraded.
 		/// ListVersions versions
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token to use when requesting the next set of results. You receive this token from a previous <code>ListVersions</code> operation.</param>
 		/// <param name="workspace_id">The ID of the workspace to list the available upgrade versions. If not included, lists all versions of Grafana that are supported for <code>CreateWorkspace</code>.</param>
 		/// <returns>Success</returns>

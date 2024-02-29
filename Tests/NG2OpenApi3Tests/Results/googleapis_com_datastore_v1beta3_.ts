@@ -145,10 +145,16 @@ export namespace MyNS {
 		/** The kinds to query (if empty, returns entities of all kinds). Currently at most 1 kind may be specified. */
 		kind?: Array<KindExpression>;
 
-		/** The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0 if specified. */
+		/**
+		 * The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0 if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be >= 0 if specified. */
+		/**
+		 * The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be >= 0 if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order to apply to the query results (if empty, order is unspecified). */
@@ -167,10 +173,16 @@ export namespace MyNS {
 		/** An ending point for the query results. Query cursors are returned in query result batches and [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). */
 		endCursor: FormControl<string | null | undefined>,
 
-		/** The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0 if specified. */
+		/**
+		 * The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0 if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be >= 0 if specified. */
+		/**
+		 * The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be >= 0 if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** A starting point for the query results. Query cursors are returned in query result batches and [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). */
@@ -274,7 +286,10 @@ export namespace MyNS {
 		/** A boolean value. */
 		booleanValue?: boolean | null;
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** A Datastore data object. Must not exceed 1 MiB - 4 bytes. */
@@ -292,7 +307,10 @@ export namespace MyNS {
 		/** A unique identifier for an entity. If a key's partition ID or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts. */
 		keyValue?: Key;
 
-		/** The `meaning` field should only be populated for backwards compatibility. */
+		/**
+		 * The `meaning` field should only be populated for backwards compatibility.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meaning?: number | null;
 
 		/** A null value. */
@@ -314,7 +332,10 @@ export namespace MyNS {
 		/** A boolean value. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** If the value should be excluded from all indexes including those defined explicitly. */
@@ -323,7 +344,10 @@ export namespace MyNS {
 		/** An integer value. */
 		integerValue: FormControl<string | null | undefined>,
 
-		/** The `meaning` field should only be populated for backwards compatibility. */
+		/**
+		 * The `meaning` field should only be populated for backwards compatibility.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meaning: FormControl<number | null | undefined>,
 
 		/** A null value. */
@@ -478,20 +502,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -836,7 +872,10 @@ export namespace MyNS {
 		/** The transaction commit timestamp. Not set for non-transactional commits. */
 		commitTime?: string | null;
 
-		/** The number of index entries updated during the commit, or zero if none were updated. */
+		/**
+		 * The number of index entries updated during the commit, or zero if none were updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexUpdates?: number | null;
 
 		/** The result of performing the mutations. The i-th mutation result corresponds to the i-th mutation in the request. */
@@ -849,7 +888,10 @@ export namespace MyNS {
 		/** The transaction commit timestamp. Not set for non-transactional commits. */
 		commitTime: FormControl<string | null | undefined>,
 
-		/** The number of index entries updated during the commit, or zero if none were updated. */
+		/**
+		 * The number of index entries updated during the commit, or zero if none were updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexUpdates: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitResponseFormGroup() {
@@ -1646,7 +1688,10 @@ export namespace MyNS {
 		/** A cursor that points to the position after the last skipped result. Will be set when `skipped_results` != 0. */
 		skippedCursor?: string | null;
 
-		/** The number of results skipped, typically because of an offset. */
+		/**
+		 * The number of results skipped, typically because of an offset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResults?: number | null;
 
 		/** The version number of the snapshot this batch was returned from. This applies to the range of results from the query's `start_cursor` (or the beginning of the query if no cursor was given) to this batch's `end_cursor` (not the query's `end_cursor`). In a single transaction, subsequent query result batches for the same query can have a greater snapshot version number. Each batch's snapshot version is valid for all preceding batches. The value will be zero for eventually consistent queries. */
@@ -1671,7 +1716,10 @@ export namespace MyNS {
 		/** A cursor that points to the position after the last skipped result. Will be set when `skipped_results` != 0. */
 		skippedCursor: FormControl<string | null | undefined>,
 
-		/** The number of results skipped, typically because of an offset. */
+		/**
+		 * The number of results skipped, typically because of an offset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResults: FormControl<number | null | undefined>,
 
 		/** The version number of the snapshot this batch was returned from. This applies to the range of results from the query's `start_cursor` (or the beginning of the query if no cursor was given) to this batch's `end_cursor` (not the query's `end_cursor`). In a single transaction, subsequent query result batches for the same query can have a greater snapshot version number. Each batch's snapshot version is valid for all preceding batches. The value will be zero for eventually consistent queries. */

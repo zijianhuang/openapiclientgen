@@ -4302,6 +4302,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version.
 		 * @return {FactoryListResponse} OK.
 		 */
@@ -4314,7 +4315,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {Factory} OK.
 		 */
@@ -4327,7 +4330,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {Factory} requestBody Factory resource definition.
 		 * @return {Factory} OK.
@@ -4341,7 +4346,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4354,7 +4361,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {FactoryUpdateParameters} requestBody The parameters for updating a factory.
 		 * @return {Factory} OK.
@@ -4368,7 +4377,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/addDataFlowToDebugSession
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {DataFlowDebugPackage} requestBody Data flow debug session definition with debug content.
 		 * @return {AddDataFlowToDebugSessionResponse} OK.
@@ -4382,7 +4393,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/createDataFlowDebugSession
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {CreateDataFlowDebugSessionRequest} requestBody Data flow debug session definition
 		 * @return {CreateDataFlowDebugSessionResponse} OK.
@@ -4396,7 +4409,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {DataFlowListResponse} OK.
 		 */
@@ -4409,8 +4424,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} dataFlowName The data flow name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {DataFlowResource} OK.
 		 */
@@ -4423,8 +4441,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} dataFlowName The data flow name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {DataFlowResource} requestBody Data flow resource definition.
 		 * @return {DataFlowResource} OK.
@@ -4438,8 +4459,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} dataFlowName The data flow name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4452,7 +4476,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {DatasetListResponse} OK.
 		 */
@@ -4465,8 +4491,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} datasetName The dataset name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {DatasetResource} OK.
 		 */
@@ -4479,8 +4508,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} datasetName The dataset name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {DatasetResource} requestBody Dataset resource definition.
 		 * @return {DatasetResource} OK.
@@ -4494,8 +4526,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} datasetName The dataset name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4508,7 +4543,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/deleteDataFlowDebugSession
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {DeleteDataFlowDebugSessionRequest} requestBody Data flow debug session definition for deletion
 		 * @return {void} OK.
@@ -4522,7 +4559,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/executeDataFlowDebugCommand
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {DataFlowDebugCommandRequest} requestBody Data flow debug command definition.
 		 * @return {DataFlowDebugCommandResponse} OK.
@@ -4536,7 +4575,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getDataPlaneAccess
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {UserAccessPolicy} requestBody Data Plane user access policy definition.
 		 * @return {AccessPolicyResponse} OK.
@@ -4550,7 +4591,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getFeatureValue
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {ExposureControlRequest} requestBody The exposure control request.
 		 * @return {ExposureControlResponse} OK.
@@ -4564,7 +4607,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getGitHubAccessToken
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {GitHubAccessTokenRequest} requestBody Get GitHub access token request definition.
 		 * @return {GitHubAccessTokenResponse} OK.
@@ -4578,7 +4623,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimeListResponse} OK.
 		 */
@@ -4591,8 +4638,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimeResource} OK.
 		 */
@@ -4605,8 +4655,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {IntegrationRuntimeResource} requestBody Integration runtime resource definition.
 		 * @return {IntegrationRuntimeResource} OK.
@@ -4620,8 +4673,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4634,8 +4690,11 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {UpdateIntegrationRuntimeRequest} requestBody The parameters for updating an integration runtime.
 		 * @return {IntegrationRuntimeResource} OK.
@@ -4649,8 +4708,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getConnectionInfo
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimes_GetConnectionInfoReturn} OK.
 		 */
@@ -4663,8 +4725,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getObjectMetadata
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {GetSsisObjectMetadataRequest} requestBody The parameters for getting a SSIS object metadata.
 		 * @return {IntegrationRuntimeObjectMetadata_GetReturn} OK.
@@ -4678,8 +4743,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getStatus
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimeStatusResponse} OK.
 		 */
@@ -4692,8 +4760,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/linkedIntegrationRuntime
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {CreateLinkedIntegrationRuntimeRequest} requestBody The linked integration runtime properties.
 		 * @return {IntegrationRuntimeStatusResponse} OK.
@@ -4707,8 +4778,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/listAuthKeys
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimes_ListAuthKeysReturn} OK.
 		 */
@@ -4721,8 +4795,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/monitoringData
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimes_GetMonitoringDataReturn} OK.
 		 */
@@ -4735,9 +4812,13 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} nodeName The integration runtime node name.
+		 *     Min length: 1    Max length: 150
 		 * @param {string} api_version The API version.
 		 * @return {any} OK.
 		 */
@@ -4750,9 +4831,13 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} nodeName The integration runtime node name.
+		 *     Min length: 1    Max length: 150
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4765,9 +4850,13 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} nodeName The integration runtime node name.
+		 *     Min length: 1    Max length: 150
 		 * @param {string} api_version The API version.
 		 * @param {UpdateIntegrationRuntimeNodeRequest} requestBody The parameters for updating an integration runtime node.
 		 * @return {any} OK.
@@ -4781,9 +4870,13 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}/ipAddress
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} nodeName The integration runtime node name.
+		 *     Min length: 1    Max length: 150
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimeNodes_GetIpAddressReturn} OK.
 		 */
@@ -4796,8 +4889,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/refreshObjectMetadata
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {SsisObjectMetadataStatusResponse} OK.
 		 */
@@ -4810,8 +4906,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/regenerateAuthKey
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {IntegrationRuntimes_RegenerateAuthKeyPostBody} requestBody The parameters for regenerating integration runtime authentication key.
 		 * @return {IntegrationRuntimes_RegenerateAuthKeyReturn} OK.
@@ -4825,8 +4924,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/removeLinks
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {LinkedIntegrationRuntimeRequest} requestBody The data factory name for the linked integration runtime.
 		 * @return {void} OK.
@@ -4840,8 +4942,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {IntegrationRuntimeStatusResponse} OK.
 		 */
@@ -4854,8 +4959,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4868,8 +4976,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/syncCredentials
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4882,8 +4993,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/upgrade
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} integrationRuntimeName The integration runtime name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4896,7 +5010,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {LinkedServiceListResponse} OK.
 		 */
@@ -4909,8 +5025,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} linkedServiceName The linked service name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {LinkedServiceResource} OK.
 		 */
@@ -4923,8 +5042,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} linkedServiceName The linked service name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {LinkedServiceResource} requestBody Linked service resource definition.
 		 * @return {LinkedServiceResource} OK.
@@ -4938,8 +5060,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} linkedServiceName The linked service name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -4952,7 +5077,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} runId The pipeline run identifier.
 		 * @param {string} api_version The API version.
 		 * @return {PipelineRun} OK.
@@ -4966,7 +5093,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}/cancel
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} runId The pipeline run identifier.
 		 * @param {boolean} isRecursive If true, cancel all the Child pipelines that are triggered by the current pipeline.
 		 * @param {string} api_version The API version.
@@ -4981,7 +5110,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}/queryActivityruns
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} runId The pipeline run identifier.
 		 * @param {string} api_version The API version.
 		 * @param {RunFilterParameters} requestBody Parameters to filter the activity runs.
@@ -4996,7 +5127,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {PipelineListResponse} OK.
 		 */
@@ -5009,8 +5142,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} pipelineName The pipeline name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {PipelineResource} OK.
 		 */
@@ -5023,8 +5159,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} pipelineName The pipeline name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {PipelineResource} requestBody Pipeline resource definition.
 		 * @return {PipelineResource} OK.
@@ -5038,8 +5177,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} pipelineName The pipeline name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -5052,8 +5194,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}/createRun
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} pipelineName The pipeline name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {string} referencePipelineRunId The pipeline run identifier. If run ID is specified the parameters of the specified run will be used to create a new run.
 		 * @param {boolean} isRecovery Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.
@@ -5070,7 +5215,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryDataFlowDebugSessions
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {QueryDataFlowDebugSessionsResponse} OK.
 		 */
@@ -5083,7 +5230,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryPipelineRuns
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {RunFilterParameters} requestBody Parameters to filter the pipeline run.
 		 * @return {PipelineRunsQueryResponse} OK.
@@ -5097,7 +5246,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryTriggerRuns
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @param {RunFilterParameters} requestBody Parameters to filter the pipeline run.
 		 * @return {TriggerRunsQueryResponse} OK.
@@ -5111,7 +5262,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version.
 		 * @return {TriggerListResponse} OK.
 		 */
@@ -5124,8 +5277,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {TriggerResource} OK.
 		 */
@@ -5138,8 +5294,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {TriggerResource} requestBody Trigger resource definition.
 		 * @return {TriggerResource} OK.
@@ -5153,8 +5312,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} OK.
 		 */
@@ -5167,8 +5329,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/getEventSubscriptionStatus
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {TriggerSubscriptionOperationStatus} Trigger event subscription state.
 		 */
@@ -5181,8 +5346,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {RerunTriggerListResponse} OK.
 		 */
@@ -5195,9 +5363,13 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} rerunTriggerName The rerun trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @param {RerunTumblingWindowTriggerActionParameters} requestBody Rerun tumbling window trigger action parameters.
 		 * @return {TriggerResource} OK.
@@ -5211,9 +5383,13 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/cancel
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} rerunTriggerName The rerun trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} Trigger has been canceled successfully.
 		 */
@@ -5226,9 +5402,13 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/start
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} rerunTriggerName The rerun trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} Trigger has been started successfully.
 		 */
@@ -5241,9 +5421,13 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/stop
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} rerunTriggerName The rerun trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} Trigger has been stopped successfully.
 		 */
@@ -5256,8 +5440,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/start
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} Trigger has been started successfully.
 		 */
@@ -5270,8 +5457,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/stop
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {void} Trigger has been stopped successfully.
 		 */
@@ -5284,8 +5474,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/subscribeToEvents
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {TriggerSubscriptionOperationStatus} Trigger is subscribed to events.
 		 */
@@ -5298,8 +5491,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/triggerRuns/{runId}/rerun
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} runId The pipeline run identifier.
 		 * @param {string} api_version The API version.
 		 * @return {void} TriggerRun has been restarted.
@@ -5313,8 +5509,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/unsubscribeFromEvents
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The resource group name.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} factoryName The factory name.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} triggerName The trigger name.
+		 *     Min length: 1    Max length: 260
 		 * @param {string} api_version The API version.
 		 * @return {TriggerSubscriptionOperationStatus} Trigger is unsubscribed from events.
 		 */

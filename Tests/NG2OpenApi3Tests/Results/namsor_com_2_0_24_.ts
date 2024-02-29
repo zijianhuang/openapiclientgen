@@ -13,29 +13,53 @@ export namespace MyNS {
 		/** Current period billing status ex OPEN. */
 		billingStatus?: string | null;
 
-		/** Current period hard limit (reaching the limit sends an email notification and blocks the API Key). */
-		hardLimit?: number | null;
+		/**
+		 * Current period hard limit (reaching the limit sends an email notification and blocks the API Key).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		hardLimit?: string | null;
 
-		/** Datetime when the the plan's current period endend. */
-		periodEnded?: number | null;
+		/**
+		 * Datetime when the the plan's current period endend.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodEnded?: string | null;
 
-		/** Datetime when the the plan's current period started. */
-		periodStarted?: number | null;
+		/**
+		 * Datetime when the the plan's current period started.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodStarted?: string | null;
 
-		/** Current period soft limit (reaching the limit sends an email notification). */
-		softLimit?: number | null;
+		/**
+		 * Current period soft limit (reaching the limit sends an email notification).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		softLimit?: string | null;
 
-		/** Datetime when the the plan's current period endend (in Stripe). Internal and Stripe periodicity should ~coincide. */
-		stripeCurrentPeriodEnd?: number | null;
+		/**
+		 * Datetime when the the plan's current period endend (in Stripe). Internal and Stripe periodicity should ~coincide.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		stripeCurrentPeriodEnd?: string | null;
 
-		/** Datetime when the the plan's current period started (in Stripe). Internal and Stripe periodicity should ~coincide. */
-		stripeCurrentPeriodStart?: number | null;
+		/**
+		 * Datetime when the the plan's current period started (in Stripe). Internal and Stripe periodicity should ~coincide.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		stripeCurrentPeriodStart?: string | null;
 
-		/** Datetime when the user subscribed to the plan. */
-		subscriptionStarted?: number | null;
+		/**
+		 * Datetime when the user subscribed to the plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		subscriptionStarted?: string | null;
 
-		/** Current period usage in units (NB some API endpoints use more than one unit). */
-		usage?: number | null;
+		/**
+		 * Current period usage in units (NB some API endpoints use more than one unit).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usage?: string | null;
 	}
 
 	/** The current billing period. */
@@ -47,42 +71,66 @@ export namespace MyNS {
 		/** Current period billing status ex OPEN. */
 		billingStatus: FormControl<string | null | undefined>,
 
-		/** Current period hard limit (reaching the limit sends an email notification and blocks the API Key). */
-		hardLimit: FormControl<number | null | undefined>,
+		/**
+		 * Current period hard limit (reaching the limit sends an email notification and blocks the API Key).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		hardLimit: FormControl<string | null | undefined>,
 
-		/** Datetime when the the plan's current period endend. */
-		periodEnded: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the the plan's current period endend.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodEnded: FormControl<string | null | undefined>,
 
-		/** Datetime when the the plan's current period started. */
-		periodStarted: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the the plan's current period started.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodStarted: FormControl<string | null | undefined>,
 
-		/** Current period soft limit (reaching the limit sends an email notification). */
-		softLimit: FormControl<number | null | undefined>,
+		/**
+		 * Current period soft limit (reaching the limit sends an email notification).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		softLimit: FormControl<string | null | undefined>,
 
-		/** Datetime when the the plan's current period endend (in Stripe). Internal and Stripe periodicity should ~coincide. */
-		stripeCurrentPeriodEnd: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the the plan's current period endend (in Stripe). Internal and Stripe periodicity should ~coincide.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		stripeCurrentPeriodEnd: FormControl<string | null | undefined>,
 
-		/** Datetime when the the plan's current period started (in Stripe). Internal and Stripe periodicity should ~coincide. */
-		stripeCurrentPeriodStart: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the the plan's current period started (in Stripe). Internal and Stripe periodicity should ~coincide.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		stripeCurrentPeriodStart: FormControl<string | null | undefined>,
 
-		/** Datetime when the user subscribed to the plan. */
-		subscriptionStarted: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the user subscribed to the plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		subscriptionStarted: FormControl<string | null | undefined>,
 
-		/** Current period usage in units (NB some API endpoints use more than one unit). */
-		usage: FormControl<number | null | undefined>,
+		/**
+		 * Current period usage in units (NB some API endpoints use more than one unit).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usage: FormControl<string | null | undefined>,
 	}
 	export function CreateAPIBillingPeriodUsageOutFormGroup() {
 		return new FormGroup<APIBillingPeriodUsageOutFormProperties>({
 			apiKey: new FormControl<string | null | undefined>(undefined),
 			billingStatus: new FormControl<string | null | undefined>(undefined),
-			hardLimit: new FormControl<number | null | undefined>(undefined),
-			periodEnded: new FormControl<number | null | undefined>(undefined),
-			periodStarted: new FormControl<number | null | undefined>(undefined),
-			softLimit: new FormControl<number | null | undefined>(undefined),
-			stripeCurrentPeriodEnd: new FormControl<number | null | undefined>(undefined),
-			stripeCurrentPeriodStart: new FormControl<number | null | undefined>(undefined),
-			subscriptionStarted: new FormControl<number | null | undefined>(undefined),
-			usage: new FormControl<number | null | undefined>(undefined),
+			hardLimit: new FormControl<string | null | undefined>(undefined),
+			periodEnded: new FormControl<string | null | undefined>(undefined),
+			periodStarted: new FormControl<string | null | undefined>(undefined),
+			softLimit: new FormControl<string | null | undefined>(undefined),
+			stripeCurrentPeriodEnd: new FormControl<string | null | undefined>(undefined),
+			stripeCurrentPeriodStart: new FormControl<string | null | undefined>(undefined),
+			subscriptionStarted: new FormControl<string | null | undefined>(undefined),
+			usage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -207,23 +255,35 @@ export namespace MyNS {
 		/** The apiService corresponds to the classifier name. */
 		apiService?: string | null;
 
-		/** The create datetime of the counter. */
-		createdDateTime?: number | null;
+		/**
+		 * The create datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdDateTime?: string | null;
 
 		/** The processing hostAddress. */
 		hostAddress?: string | null;
 
-		/** The flush datetime of the counter. */
-		lastFlushedDateTime?: number | null;
+		/**
+		 * The flush datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastFlushedDateTime?: string | null;
 
-		/** The last usage datetime of the counter. */
-		lastUsedDateTime?: number | null;
+		/**
+		 * The last usage datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUsedDateTime?: string | null;
 
 		/** Usage of special features, such as Chinese, Japanese. */
-		serviceFeaturesUsage?: {[id: string]: number };
+		serviceFeaturesUsage?: {[id: string]: string };
 
-		/** The usage of the counter. */
-		totalUsage?: number | null;
+		/**
+		 * The usage of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalUsage?: string | null;
 	}
 
 	/** Detailed usage as reported by the deduplicating API counter. */
@@ -232,33 +292,45 @@ export namespace MyNS {
 		/** The apiService corresponds to the classifier name. */
 		apiService: FormControl<string | null | undefined>,
 
-		/** The create datetime of the counter. */
-		createdDateTime: FormControl<number | null | undefined>,
+		/**
+		 * The create datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdDateTime: FormControl<string | null | undefined>,
 
 		/** The processing hostAddress. */
 		hostAddress: FormControl<string | null | undefined>,
 
-		/** The flush datetime of the counter. */
-		lastFlushedDateTime: FormControl<number | null | undefined>,
+		/**
+		 * The flush datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastFlushedDateTime: FormControl<string | null | undefined>,
 
-		/** The last usage datetime of the counter. */
-		lastUsedDateTime: FormControl<number | null | undefined>,
+		/**
+		 * The last usage datetime of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUsedDateTime: FormControl<string | null | undefined>,
 
 		/** Usage of special features, such as Chinese, Japanese. */
-		serviceFeaturesUsage: FormControl<{[id: string]: number } | null | undefined>,
+		serviceFeaturesUsage: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The usage of the counter. */
-		totalUsage: FormControl<number | null | undefined>,
+		/**
+		 * The usage of the counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalUsage: FormControl<string | null | undefined>,
 	}
 	export function CreateAPICounterV2OutFormGroup() {
 		return new FormGroup<APICounterV2OutFormProperties>({
 			apiService: new FormControl<string | null | undefined>(undefined),
-			createdDateTime: new FormControl<number | null | undefined>(undefined),
+			createdDateTime: new FormControl<string | null | undefined>(undefined),
 			hostAddress: new FormControl<string | null | undefined>(undefined),
-			lastFlushedDateTime: new FormControl<number | null | undefined>(undefined),
-			lastUsedDateTime: new FormControl<number | null | undefined>(undefined),
-			serviceFeaturesUsage: new FormControl<{[id: string]: number } | null | undefined>(undefined),
-			totalUsage: new FormControl<number | null | undefined>(undefined),
+			lastFlushedDateTime: new FormControl<string | null | undefined>(undefined),
+			lastUsedDateTime: new FormControl<string | null | undefined>(undefined),
+			serviceFeaturesUsage: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			totalUsage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -351,14 +423,23 @@ export namespace MyNS {
 		/** Currency of the overage amount. */
 		overageCurrency?: string | null;
 
-		/** Overage amount including any tax. */
+		/**
+		 * Overage amount including any tax.
+		 * Type: double
+		 */
 		overageExclTax?: number | null;
 
-		/** Overage amount including tax (if applicable). */
+		/**
+		 * Overage amount including tax (if applicable).
+		 * Type: double
+		 */
 		overageInclTax?: number | null;
 
-		/** Quantity above monthly quota of the current subscritpion, in units. */
-		overageQuantity?: number | null;
+		/**
+		 * Quantity above monthly quota of the current subscritpion, in units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		overageQuantity?: string | null;
 
 		/** The API Plan governing the subscription. */
 		subscription?: APIPlanSubscriptionOut;
@@ -368,21 +449,30 @@ export namespace MyNS {
 		/** Currency of the overage amount. */
 		overageCurrency: FormControl<string | null | undefined>,
 
-		/** Overage amount including any tax. */
+		/**
+		 * Overage amount including any tax.
+		 * Type: double
+		 */
 		overageExclTax: FormControl<number | null | undefined>,
 
-		/** Overage amount including tax (if applicable). */
+		/**
+		 * Overage amount including tax (if applicable).
+		 * Type: double
+		 */
 		overageInclTax: FormControl<number | null | undefined>,
 
-		/** Quantity above monthly quota of the current subscritpion, in units. */
-		overageQuantity: FormControl<number | null | undefined>,
+		/**
+		 * Quantity above monthly quota of the current subscritpion, in units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		overageQuantity: FormControl<string | null | undefined>,
 	}
 	export function CreateAPIPeriodUsageOutFormGroup() {
 		return new FormGroup<APIPeriodUsageOutFormProperties>({
 			overageCurrency: new FormControl<string | null | undefined>(undefined),
 			overageExclTax: new FormControl<number | null | undefined>(undefined),
 			overageInclTax: new FormControl<number | null | undefined>(undefined),
-			overageQuantity: new FormControl<number | null | undefined>(undefined),
+			overageQuantity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -397,41 +487,68 @@ export namespace MyNS {
 		/** Current plan Currency for prices. */
 		currency?: string | null;
 
-		/** For USD, GBP, EUR - the factor is 1. */
+		/**
+		 * For USD, GBP, EUR - the factor is 1.
+		 * Type: double
+		 */
 		currencyFactor?: number | null;
 
 		/** Current plan key (as in Stripe product). */
 		planBaseFeesKey?: string | null;
 
-		/** Datetime when the user ended the plan. */
-		planEnded?: number | null;
+		/**
+		 * Datetime when the user ended the plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planEnded?: string | null;
 
 		/** Current plan name. */
 		planName?: string | null;
 
-		/** Current plan quota in quantity of units (NB: some API use several units per name). */
-		planQuota?: number | null;
+		/**
+		 * Current plan quota in quantity of units (NB: some API use several units per name).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planQuota?: string | null;
 
-		/** Datetime when the user subscribed to the current plan. */
-		planStarted?: number | null;
+		/**
+		 * Datetime when the user subscribed to the current plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planStarted?: string | null;
 
 		/** Plan status. */
 		planStatus?: string | null;
 
-		/** Current plan price for overages expressed in Currency (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in Currency (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		price?: number | null;
 
-		/** Current plan price for overages expressed in Currency (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in Currency (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		priceOverage?: number | null;
 
-		/** Current plan price for overages expressed in USD (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in USD (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		priceOverageUSD?: number | null;
 
-		/** Current plan monthly price expressed in USD (includes a free quota). */
+		/**
+		 * Current plan monthly price expressed in USD (includes a free quota).
+		 * Type: double
+		 */
 		priceUSD?: number | null;
 
-		/** Datetime when the user subscribed to the prior plan. */
-		priorPlanStarted?: number | null;
+		/**
+		 * Datetime when the user subscribed to the prior plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		priorPlanStarted?: string | null;
 
 		/** Stripe customer identifier. */
 		stripeCustomerId?: string | null;
@@ -442,7 +559,10 @@ export namespace MyNS {
 		/** Stripe subscription identifier. */
 		stripeSubscription?: string | null;
 
-		/** Applicable tax rate for the plan. */
+		/**
+		 * Applicable tax rate for the plan.
+		 * Type: double
+		 */
 		taxRate?: number | null;
 
 		/** Internal user identifier. */
@@ -458,41 +578,68 @@ export namespace MyNS {
 		/** Current plan Currency for prices. */
 		currency: FormControl<string | null | undefined>,
 
-		/** For USD, GBP, EUR - the factor is 1. */
+		/**
+		 * For USD, GBP, EUR - the factor is 1.
+		 * Type: double
+		 */
 		currencyFactor: FormControl<number | null | undefined>,
 
 		/** Current plan key (as in Stripe product). */
 		planBaseFeesKey: FormControl<string | null | undefined>,
 
-		/** Datetime when the user ended the plan. */
-		planEnded: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the user ended the plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planEnded: FormControl<string | null | undefined>,
 
 		/** Current plan name. */
 		planName: FormControl<string | null | undefined>,
 
-		/** Current plan quota in quantity of units (NB: some API use several units per name). */
-		planQuota: FormControl<number | null | undefined>,
+		/**
+		 * Current plan quota in quantity of units (NB: some API use several units per name).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planQuota: FormControl<string | null | undefined>,
 
-		/** Datetime when the user subscribed to the current plan. */
-		planStarted: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the user subscribed to the current plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		planStarted: FormControl<string | null | undefined>,
 
 		/** Plan status. */
 		planStatus: FormControl<string | null | undefined>,
 
-		/** Current plan price for overages expressed in Currency (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in Currency (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Current plan price for overages expressed in Currency (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in Currency (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		priceOverage: FormControl<number | null | undefined>,
 
-		/** Current plan price for overages expressed in USD (extra price per unit above the free quota). */
+		/**
+		 * Current plan price for overages expressed in USD (extra price per unit above the free quota).
+		 * Type: double
+		 */
 		priceOverageUSD: FormControl<number | null | undefined>,
 
-		/** Current plan monthly price expressed in USD (includes a free quota). */
+		/**
+		 * Current plan monthly price expressed in USD (includes a free quota).
+		 * Type: double
+		 */
 		priceUSD: FormControl<number | null | undefined>,
 
-		/** Datetime when the user subscribed to the prior plan. */
-		priorPlanStarted: FormControl<number | null | undefined>,
+		/**
+		 * Datetime when the user subscribed to the prior plan.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		priorPlanStarted: FormControl<string | null | undefined>,
 
 		/** Stripe customer identifier. */
 		stripeCustomerId: FormControl<string | null | undefined>,
@@ -503,7 +650,10 @@ export namespace MyNS {
 		/** Stripe subscription identifier. */
 		stripeSubscription: FormControl<string | null | undefined>,
 
-		/** Applicable tax rate for the plan. */
+		/**
+		 * Applicable tax rate for the plan.
+		 * Type: double
+		 */
 		taxRate: FormControl<number | null | undefined>,
 
 		/** Internal user identifier. */
@@ -515,16 +665,16 @@ export namespace MyNS {
 			currency: new FormControl<string | null | undefined>(undefined),
 			currencyFactor: new FormControl<number | null | undefined>(undefined),
 			planBaseFeesKey: new FormControl<string | null | undefined>(undefined),
-			planEnded: new FormControl<number | null | undefined>(undefined),
+			planEnded: new FormControl<string | null | undefined>(undefined),
 			planName: new FormControl<string | null | undefined>(undefined),
-			planQuota: new FormControl<number | null | undefined>(undefined),
-			planStarted: new FormControl<number | null | undefined>(undefined),
+			planQuota: new FormControl<string | null | undefined>(undefined),
+			planStarted: new FormControl<string | null | undefined>(undefined),
 			planStatus: new FormControl<string | null | undefined>(undefined),
 			price: new FormControl<number | null | undefined>(undefined),
 			priceOverage: new FormControl<number | null | undefined>(undefined),
 			priceOverageUSD: new FormControl<number | null | undefined>(undefined),
 			priceUSD: new FormControl<number | null | undefined>(undefined),
-			priorPlanStarted: new FormControl<number | null | undefined>(undefined),
+			priorPlanStarted: new FormControl<string | null | undefined>(undefined),
 			stripeCustomerId: new FormControl<string | null | undefined>(undefined),
 			stripeStatus: new FormControl<string | null | undefined>(undefined),
 			stripeSubscription: new FormControl<string | null | undefined>(undefined),
@@ -538,7 +688,10 @@ export namespace MyNS {
 	/** List of API Services */
 	export interface APIServiceOut {
 
-		/** Indicates how many units per call this service costs (ex. the number of units per name) */
+		/**
+		 * Indicates how many units per call this service costs (ex. the number of units per name)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		costInUnits?: number | null;
 
 		/** Groups together classifiers providing a similar service (ex. gender groups personalname_gender and personalfullname_gender) */
@@ -551,7 +704,10 @@ export namespace MyNS {
 	/** List of API Services */
 	export interface APIServiceOutFormProperties {
 
-		/** Indicates how many units per call this service costs (ex. the number of units per name) */
+		/**
+		 * Indicates how many units per call this service costs (ex. the number of units per name)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		costInUnits: FormControl<number | null | undefined>,
 
 		/** Groups together classifiers providing a similar service (ex. gender groups personalname_gender and personalfullname_gender) */
@@ -593,11 +749,17 @@ export namespace MyNS {
 		/** If the history was truncaded due to data limit */
 		historyTruncated?: boolean | null;
 
-		/** End datetime of the reporting period */
-		periodEnd?: number | null;
+		/**
+		 * End datetime of the reporting period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodEnd?: string | null;
 
-		/** Start datetime of the reporting period */
-		periodStart?: number | null;
+		/**
+		 * Start datetime of the reporting period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodStart?: string | null;
 
 		/** dates as row headers */
 		rowHeaders?: Array<string>;
@@ -605,33 +767,45 @@ export namespace MyNS {
 		/** Time unit is DAY, WEEK or MONTH depending on prior usage */
 		timeUnit?: string | null;
 
-		/** Total usage in the current period */
-		totalUsage?: number | null;
+		/**
+		 * Total usage in the current period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalUsage?: string | null;
 	}
 	export interface APIUsageAggregatedOutFormProperties {
 
 		/** If the history was truncaded due to data limit */
 		historyTruncated: FormControl<boolean | null | undefined>,
 
-		/** End datetime of the reporting period */
-		periodEnd: FormControl<number | null | undefined>,
+		/**
+		 * End datetime of the reporting period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodEnd: FormControl<string | null | undefined>,
 
-		/** Start datetime of the reporting period */
-		periodStart: FormControl<number | null | undefined>,
+		/**
+		 * Start datetime of the reporting period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		periodStart: FormControl<string | null | undefined>,
 
 		/** Time unit is DAY, WEEK or MONTH depending on prior usage */
 		timeUnit: FormControl<string | null | undefined>,
 
-		/** Total usage in the current period */
-		totalUsage: FormControl<number | null | undefined>,
+		/**
+		 * Total usage in the current period
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalUsage: FormControl<string | null | undefined>,
 	}
 	export function CreateAPIUsageAggregatedOutFormGroup() {
 		return new FormGroup<APIUsageAggregatedOutFormProperties>({
 			historyTruncated: new FormControl<boolean | null | undefined>(undefined),
-			periodEnd: new FormControl<number | null | undefined>(undefined),
-			periodStart: new FormControl<number | null | undefined>(undefined),
+			periodEnd: new FormControl<string | null | undefined>(undefined),
+			periodStart: new FormControl<string | null | undefined>(undefined),
 			timeUnit: new FormControl<string | null | undefined>(undefined),
-			totalUsage: new FormControl<number | null | undefined>(undefined),
+			totalUsage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1402,10 +1576,16 @@ export namespace MyNS {
 		/** The best alternative country of origin of the name. */
 		originCountryIso2Alt?: string | null;
 
-		/** The phone country code of the phone number, verified using libphonenumber. */
+		/**
+		 * The phone country code of the phone number, verified using libphonenumber.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phoneCountryCode?: number | null;
 
-		/** The best alternative phone country code of the phone number. */
+		/**
+		 * The best alternative phone country code of the phone number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phoneCountryCodeAlt?: number | null;
 
 		/** The likely country of the phone number. */
@@ -1452,10 +1632,16 @@ export namespace MyNS {
 		/** The best alternative country of origin of the name. */
 		originCountryIso2Alt: FormControl<string | null | undefined>,
 
-		/** The phone country code of the phone number, verified using libphonenumber. */
+		/**
+		 * The phone country code of the phone number, verified using libphonenumber.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phoneCountryCode: FormControl<number | null | undefined>,
 
-		/** The best alternative phone country code of the phone number. */
+		/**
+		 * The best alternative phone country code of the phone number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phoneCountryCodeAlt: FormControl<number | null | undefined>,
 
 		/** The likely country of the phone number. */
@@ -1858,13 +2044,22 @@ export namespace MyNS {
 		/** The name matching candidate name */
 		candidateName?: string | null;
 
-		/** The family name prediction score. */
+		/**
+		 * The family name prediction score.
+		 * Type: double
+		 */
 		predScoreFamilyName?: number | null;
 
-		/** The given name prediction score. */
+		/**
+		 * The given name prediction score.
+		 * Type: double
+		 */
 		predScoreGivenName?: number | null;
 
-		/** The name matching estimated probability. */
+		/**
+		 * The name matching estimated probability.
+		 * Type: double
+		 */
 		probability?: number | null;
 	}
 
@@ -1874,13 +2069,22 @@ export namespace MyNS {
 		/** The name matching candidate name */
 		candidateName: FormControl<string | null | undefined>,
 
-		/** The family name prediction score. */
+		/**
+		 * The family name prediction score.
+		 * Type: double
+		 */
 		predScoreFamilyName: FormControl<number | null | undefined>,
 
-		/** The given name prediction score. */
+		/**
+		 * The given name prediction score.
+		 * Type: double
+		 */
 		predScoreGivenName: FormControl<number | null | undefined>,
 
-		/** The name matching estimated probability. */
+		/**
+		 * The name matching estimated probability.
+		 * Type: double
+		 */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateNameMatchCandidateOutFormGroup() {
@@ -1913,6 +2117,8 @@ export namespace MyNS {
 
 		/** The name matching status. */
 		matchStatus?: NameMatchedOutMatchStatus | null;
+
+		/** Type: double */
 		score?: number | null;
 		script?: string | null;
 	}
@@ -1923,6 +2129,8 @@ export namespace MyNS {
 
 		/** The name matching status. */
 		matchStatus: FormControl<NameMatchedOutMatchStatus | null | undefined>,
+
+		/** Type: double */
 		score: FormControl<number | null | undefined>,
 		script: FormControl<string | null | undefined>,
 	}
@@ -2757,17 +2965,23 @@ export namespace MyNS {
 
 	export interface FeedbackLoopOut {
 
-		/** Number of units recredited as per feedback loop successful classification */
-		feedbackCredits?: number | null;
+		/**
+		 * Number of units recredited as per feedback loop successful classification
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feedbackCredits?: string | null;
 	}
 	export interface FeedbackLoopOutFormProperties {
 
-		/** Number of units recredited as per feedback loop successful classification */
-		feedbackCredits: FormControl<number | null | undefined>,
+		/**
+		 * Number of units recredited as per feedback loop successful classification
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feedbackCredits: FormControl<string | null | undefined>,
 	}
 	export function CreateFeedbackLoopOutFormGroup() {
 		return new FormGroup<FeedbackLoopOutFormProperties>({
-			feedbackCredits: new FormControl<number | null | undefined>(undefined),
+			feedbackCredits: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

@@ -3938,7 +3938,10 @@ namespace MyNS
 		/// <p>Accepts a core network attachment request. </p> <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>
 		/// AcceptAttachment attachments/{attachmentId}/accept
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment. </param>
+		/// <param name="attachmentId">The ID of the attachment. 
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptAttachmentResponse> AcceptAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3967,7 +3970,10 @@ namespace MyNS
 		/// <p>Associates a core network Connect peer with a device and optionally, with a link. </p> <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
 		/// AssociateConnectPeer global-networks/{globalNetworkId}/connect-peer-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of your global network.</param>
+		/// <param name="globalNetworkId">The ID of your global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateConnectPeerResponse> AssociateConnectPeerAsync(string globalNetworkId, AssociateConnectPeerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4008,10 +4014,19 @@ namespace MyNS
 		/// Returns information about a core network Connect peer associations.
 		/// GetConnectPeerAssociations global-networks/{globalNetworkId}/connect-peer-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="connectPeerIds">The IDs of the Connect peers.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4047,7 +4062,10 @@ namespace MyNS
 		/// <p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot associate a customer gateway with more than one device and link. </p>
 		/// AssociateCustomerGateway global-networks/{globalNetworkId}/customer-gateway-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateCustomerGatewayResponse> AssociateCustomerGatewayAsync(string globalNetworkId, AssociateCustomerGatewayPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4088,10 +4106,19 @@ namespace MyNS
 		/// Gets the association information for customer gateways that are associated with devices and links in your global network.
 		/// GetCustomerGatewayAssociations global-networks/{globalNetworkId}/customer-gateway-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="customerGatewayArns">One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4127,7 +4154,10 @@ namespace MyNS
 		/// Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.
 		/// AssociateLink global-networks/{globalNetworkId}/link-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateLinkResponse> AssociateLinkAsync(string globalNetworkId, AssociateLinkPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4168,11 +4198,26 @@ namespace MyNS
 		/// Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.
 		/// GetLinkAssociations global-networks/{globalNetworkId}/link-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="deviceId">The ID of the device.</param>
-		/// <param name="linkId">The ID of the link.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="deviceId">The ID of the device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="linkId">The ID of the link.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4208,7 +4253,10 @@ namespace MyNS
 		/// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p> <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
 		/// AssociateTransitGatewayConnectPeer global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateTransitGatewayConnectPeerResponse> AssociateTransitGatewayConnectPeerAsync(string globalNetworkId, AssociateTransitGatewayConnectPeerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4249,10 +4297,19 @@ namespace MyNS
 		/// Gets information about one or more of your transit gateway Connect peer associations in a global network.
 		/// GetTransitGatewayConnectPeerAssociations global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="transitGatewayConnectPeerArns">One or more transit gateway Connect peer Amazon Resource Names (ARNs).</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4368,10 +4425,22 @@ namespace MyNS
 		/// Returns a list of core network Connect peers.
 		/// ListConnectPeers connect-peers
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
-		/// <param name="connectAttachmentId">The ID of the attachment.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="connectAttachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4407,7 +4476,10 @@ namespace MyNS
 		/// Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network.
 		/// CreateConnection global-networks/{globalNetworkId}/connections
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateConnectionResponse> CreateConnectionAsync(string globalNetworkId, CreateConnectionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4448,11 +4520,23 @@ namespace MyNS
 		/// Gets information about one or more of your connections in a global network.
 		/// GetConnections global-networks/{globalNetworkId}/connections
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="connectionIds">One or more connection IDs.</param>
-		/// <param name="deviceId">The ID of the device.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="deviceId">The ID of the device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4528,8 +4612,14 @@ namespace MyNS
 		/// Returns a list of owned and shared core networks.
 		/// ListCoreNetworks core-networks
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4565,7 +4655,10 @@ namespace MyNS
 		/// Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.
 		/// CreateDevice global-networks/{globalNetworkId}/devices
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDeviceResponse> CreateDeviceAsync(string globalNetworkId, CreateDevicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4606,11 +4699,23 @@ namespace MyNS
 		/// Gets information about one or more of your devices in a global network.
 		/// GetDevices global-networks/{globalNetworkId}/devices
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="deviceIds">One or more device IDs. The maximum is 10.</param>
-		/// <param name="siteId">The ID of the site.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="siteId">The ID of the site.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4687,8 +4792,14 @@ namespace MyNS
 		/// DescribeGlobalNetworks global-networks
 		/// </summary>
 		/// <param name="globalNetworkIds">The IDs of one or more global networks. The maximum is 10.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4724,7 +4835,10 @@ namespace MyNS
 		/// Creates a new link for a specified site.
 		/// CreateLink global-networks/{globalNetworkId}/links
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLinkResponse> CreateLinkAsync(string globalNetworkId, CreateLinkPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4765,13 +4879,31 @@ namespace MyNS
 		/// <p>Gets information about one or more links in a specified global network.</p> <p>If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.</p>
 		/// GetLinks global-networks/{globalNetworkId}/links
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="linkIds">One or more link IDs. The maximum is 10.</param>
-		/// <param name="siteId">The ID of the site.</param>
-		/// <param name="type">The link type.</param>
-		/// <param name="provider">The link provider.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="siteId">The ID of the site.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="type">The link type.
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="provider">The link provider.
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4807,7 +4939,10 @@ namespace MyNS
 		/// Creates a new site in a global network.
 		/// CreateSite global-networks/{globalNetworkId}/sites
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSiteResponse> CreateSiteAsync(string globalNetworkId, CreateSitePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4848,10 +4983,19 @@ namespace MyNS
 		/// Gets information about one or more of your sites in a global network.
 		/// GetSites global-networks/{globalNetworkId}/sites
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="siteIds">One or more site IDs. The maximum is 10.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5047,7 +5191,10 @@ namespace MyNS
 		/// Deletes an attachment. Supports all attachment types.
 		/// DeleteAttachment attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment to delete.</param>
+		/// <param name="attachmentId">The ID of the attachment to delete.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAttachmentResponse> DeleteAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5081,7 +5228,10 @@ namespace MyNS
 		/// Deletes a Connect peer.
 		/// DeleteConnectPeer connect-peers/{connectPeerId}
 		/// </summary>
-		/// <param name="connectPeerId">The ID of the deleted Connect peer.</param>
+		/// <param name="connectPeerId">The ID of the deleted Connect peer.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteConnectPeerResponse> DeleteConnectPeerAsync(string connectPeerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5115,7 +5265,10 @@ namespace MyNS
 		/// Returns information about a core network Connect peer.
 		/// GetConnectPeer connect-peers/{connectPeerId}
 		/// </summary>
-		/// <param name="connectPeerId">The ID of the Connect peer.</param>
+		/// <param name="connectPeerId">The ID of the Connect peer.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectPeerResponse> GetConnectPeerAsync(string connectPeerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5149,8 +5302,14 @@ namespace MyNS
 		/// Deletes the specified connection in your global network.
 		/// DeleteConnection global-networks/{globalNetworkId}/connections/{connectionId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="connectionId">The ID of the connection.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="connectionId">The ID of the connection.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteConnectionResponse> DeleteConnectionAsync(string globalNetworkId, string connectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5184,8 +5343,14 @@ namespace MyNS
 		/// Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.
 		/// UpdateConnection global-networks/{globalNetworkId}/connections/{connectionId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="connectionId">The ID of the connection.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="connectionId">The ID of the connection.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateConnectionResponse> UpdateConnectionAsync(string globalNetworkId, string connectionId, UpdateConnectionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5226,7 +5391,10 @@ namespace MyNS
 		/// Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network.
 		/// DeleteCoreNetwork core-networks/{coreNetworkId}
 		/// </summary>
-		/// <param name="coreNetworkId">The network ID of the deleted core network.</param>
+		/// <param name="coreNetworkId">The network ID of the deleted core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCoreNetworkResponse> DeleteCoreNetworkAsync(string coreNetworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5260,7 +5428,10 @@ namespace MyNS
 		/// Returns information about the LIVE policy for a core network.
 		/// GetCoreNetwork core-networks/{coreNetworkId}
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCoreNetworkResponse> GetCoreNetworkAsync(string coreNetworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5294,7 +5465,10 @@ namespace MyNS
 		/// Updates the description of a core network.
 		/// UpdateCoreNetwork core-networks/{coreNetworkId}
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCoreNetworkResponse> UpdateCoreNetworkAsync(string coreNetworkId, UpdateCoreNetworkPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5335,7 +5509,10 @@ namespace MyNS
 		/// Deletes a policy version from a core network. You can't delete the current LIVE policy.
 		/// DeleteCoreNetworkPolicyVersion core-networks/{coreNetworkId}/core-network-policy-versions/{policyVersionId}
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network for the deleted policy.</param>
+		/// <param name="coreNetworkId">The ID of a core network for the deleted policy.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The version ID of the deleted policy.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCoreNetworkPolicyVersionResponse> DeleteCoreNetworkPolicyVersionAsync(string coreNetworkId, int policyVersionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5370,8 +5547,14 @@ namespace MyNS
 		/// Deletes an existing device. You must first disassociate the device from any links and customer gateways.
 		/// DeleteDevice global-networks/{globalNetworkId}/devices/{deviceId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="deviceId">The ID of the device.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="deviceId">The ID of the device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDeviceResponse> DeleteDeviceAsync(string globalNetworkId, string deviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5405,8 +5588,14 @@ namespace MyNS
 		/// Updates the details for an existing device. To remove information for any of the parameters, specify an empty string.
 		/// UpdateDevice global-networks/{globalNetworkId}/devices/{deviceId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="deviceId">The ID of the device.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="deviceId">The ID of the device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDeviceResponse> UpdateDeviceAsync(string globalNetworkId, string deviceId, UpdateDevicePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5447,7 +5636,10 @@ namespace MyNS
 		/// Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.
 		/// DeleteGlobalNetwork global-networks/{globalNetworkId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGlobalNetworkResponse> DeleteGlobalNetworkAsync(string globalNetworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5481,7 +5673,10 @@ namespace MyNS
 		/// Updates an existing global network. To remove information for any of the parameters, specify an empty string.
 		/// UpdateGlobalNetwork global-networks/{globalNetworkId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of your global network.</param>
+		/// <param name="globalNetworkId">The ID of your global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGlobalNetworkResponse> UpdateGlobalNetworkAsync(string globalNetworkId, UpdateGlobalNetworkPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5522,8 +5717,14 @@ namespace MyNS
 		/// Deletes an existing link. You must first disassociate the link from any devices and customer gateways.
 		/// DeleteLink global-networks/{globalNetworkId}/links/{linkId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="linkId">The ID of the link.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="linkId">The ID of the link.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteLinkResponse> DeleteLinkAsync(string globalNetworkId, string linkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5557,8 +5758,14 @@ namespace MyNS
 		/// Updates the details for an existing link. To remove information for any of the parameters, specify an empty string.
 		/// UpdateLink global-networks/{globalNetworkId}/links/{linkId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="linkId">The ID of the link.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="linkId">The ID of the link.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLinkResponse> UpdateLinkAsync(string globalNetworkId, string linkId, UpdateLinkPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5599,7 +5806,10 @@ namespace MyNS
 		/// Deletes an existing peering connection.
 		/// DeletePeering peerings/{peeringId}
 		/// </summary>
-		/// <param name="peeringId">The ID of the peering connection to delete.</param>
+		/// <param name="peeringId">The ID of the peering connection to delete.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePeeringResponse> DeletePeeringAsync(string peeringId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5633,7 +5843,10 @@ namespace MyNS
 		/// Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy.
 		/// DeleteResourcePolicy resource-policy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the policy to delete.</param>
+		/// <param name="resourceArn">The ARN of the policy to delete.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5667,7 +5880,10 @@ namespace MyNS
 		/// Returns information about a resource policy.
 		/// GetResourcePolicy resource-policy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5701,7 +5917,10 @@ namespace MyNS
 		/// Creates or updates a resource policy.
 		/// PutResourcePolicy resource-policy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource policy. </param>
+		/// <param name="resourceArn">The ARN of the resource policy. 
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutResourcePolicyResponse> PutResourcePolicyAsync(string resourceArn, PutResourcePolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5742,8 +5961,14 @@ namespace MyNS
 		/// Deletes an existing site. The site cannot be associated with any device or link.
 		/// DeleteSite global-networks/{globalNetworkId}/sites/{siteId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="siteId">The ID of the site.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="siteId">The ID of the site.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSiteResponse> DeleteSiteAsync(string globalNetworkId, string siteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5777,8 +6002,14 @@ namespace MyNS
 		/// Updates the information for an existing site. To remove information for any of the parameters, specify an empty string.
 		/// UpdateSite global-networks/{globalNetworkId}/sites/{siteId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="siteId">The ID of your site.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="siteId">The ID of your site.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSiteResponse> UpdateSiteAsync(string globalNetworkId, string siteId, UpdateSitePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5819,8 +6050,14 @@ namespace MyNS
 		/// Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.
 		/// DeregisterTransitGateway global-networks/{globalNetworkId}/transit-gateway-registrations/{transitGatewayArn}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="transitGatewayArn">The Amazon Resource Name (ARN) of the transit gateway.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="transitGatewayArn">The Amazon Resource Name (ARN) of the transit gateway.
+		/// Max length: 500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterTransitGatewayResponse> DeregisterTransitGatewayAsync(string globalNetworkId, string transitGatewayArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5854,8 +6091,14 @@ namespace MyNS
 		/// Disassociates a core network Connect peer from a device and a link.
 		/// DisassociateConnectPeer global-networks/{globalNetworkId}/connect-peer-associations/{connectPeerId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="connectPeerId">The ID of the Connect peer to disassociate from a device.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="connectPeerId">The ID of the Connect peer to disassociate from a device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateConnectPeerResponse> DisassociateConnectPeerAsync(string globalNetworkId, string connectPeerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5889,8 +6132,14 @@ namespace MyNS
 		/// Disassociates a customer gateway from a device and a link.
 		/// DisassociateCustomerGateway global-networks/{globalNetworkId}/customer-gateway-associations/{customerGatewayArn}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="customerGatewayArn">The Amazon Resource Name (ARN) of the customer gateway.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="customerGatewayArn">The Amazon Resource Name (ARN) of the customer gateway.
+		/// Max length: 500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateCustomerGatewayResponse> DisassociateCustomerGatewayAsync(string globalNetworkId, string customerGatewayArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5924,9 +6173,18 @@ namespace MyNS
 		/// Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.
 		/// DisassociateLink global-networks/{globalNetworkId}/link-associations#deviceId&linkId
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="deviceId">The ID of the device.</param>
-		/// <param name="linkId">The ID of the link.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="deviceId">The ID of the device.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="linkId">The ID of the link.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateLinkResponse> DisassociateLinkAsync(string globalNetworkId, string deviceId, string linkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5960,8 +6218,14 @@ namespace MyNS
 		/// Disassociates a transit gateway Connect peer from a device and link.
 		/// DisassociateTransitGatewayConnectPeer global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations/{transitGatewayConnectPeerArn}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="transitGatewayConnectPeerArn">The Amazon Resource Name (ARN) of the transit gateway Connect peer.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="transitGatewayConnectPeerArn">The Amazon Resource Name (ARN) of the transit gateway Connect peer.
+		/// Max length: 500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateTransitGatewayConnectPeerResponse> DisassociateTransitGatewayConnectPeerAsync(string globalNetworkId, string transitGatewayConnectPeerArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5995,7 +6259,10 @@ namespace MyNS
 		/// Executes a change set on your core network. Deploys changes globally based on the policy submitted..
 		/// ExecuteCoreNetworkChangeSet core-networks/{coreNetworkId}/core-network-change-sets/{policyVersionId}/execute
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The ID of the policy version.</param>
 		/// <returns>Success</returns>
 		public async Task<ExecuteCoreNetworkChangeSetResponse> ExecuteCoreNetworkChangeSetAsync(string coreNetworkId, int policyVersionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6025,7 +6292,10 @@ namespace MyNS
 		/// Returns information about a core network Connect attachment.
 		/// GetConnectAttachment connect-attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment.</param>
+		/// <param name="attachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectAttachmentResponse> GetConnectAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6059,10 +6329,19 @@ namespace MyNS
 		/// Returns information about a core network change event.
 		/// GetCoreNetworkChangeEvents core-networks/{coreNetworkId}/core-network-change-events/{policyVersionId}
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The ID of the policy version.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6098,10 +6377,19 @@ namespace MyNS
 		/// Returns a change set between the LIVE core network policy and a submitted policy.
 		/// GetCoreNetworkChangeSet core-networks/{coreNetworkId}/core-network-change-sets/{policyVersionId}
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The ID of the policy version.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6137,7 +6425,10 @@ namespace MyNS
 		/// Returns details about a core network policy. You can get details about your current live policy or any previous policy version.
 		/// GetCoreNetworkPolicy core-networks/{coreNetworkId}/core-network-policy
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The ID of a core network policy version.</param>
 		/// <param name="alias">The alias of a core network policy </param>
 		/// <returns>Success</returns>
@@ -6173,7 +6464,10 @@ namespace MyNS
 		/// Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.
 		/// PutCoreNetworkPolicy core-networks/{coreNetworkId}/core-network-policy
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutCoreNetworkPolicyResponse> PutCoreNetworkPolicyAsync(string coreNetworkId, PutCoreNetworkPolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6214,10 +6508,22 @@ namespace MyNS
 		/// Gets the count of network resources, by resource type, for the specified global network.
 		/// GetNetworkResourceCounts global-networks/{globalNetworkId}/network-resource-count
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul></param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6253,15 +6559,42 @@ namespace MyNS
 		/// Gets the network resource relationships for the specified global network.
 		/// GetNetworkResourceRelationships global-networks/{globalNetworkId}/network-resource-relationships
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
-		/// <param name="registeredGatewayArn">The ARN of the registered gateway.</param>
-		/// <param name="awsRegion">The Amazon Web Services Region.</param>
-		/// <param name="accountId">The Amazon Web Services account ID.</param>
-		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul></param>
-		/// <param name="resourceArn">The ARN of the gateway.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="registeredGatewayArn">The ARN of the registered gateway.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="awsRegion">The Amazon Web Services Region.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
+		/// <param name="accountId">The Amazon Web Services account ID.
+		/// Max length: 12
+		/// Min length: 12
+		// </param>
+		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="resourceArn">The ARN of the gateway.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6297,15 +6630,42 @@ namespace MyNS
 		/// <p>Describes the network resources for the specified global network.</p> <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
 		/// GetNetworkResources global-networks/{globalNetworkId}/network-resources
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
-		/// <param name="registeredGatewayArn">The ARN of the gateway.</param>
-		/// <param name="awsRegion">The Amazon Web Services Region.</param>
-		/// <param name="accountId">The Amazon Web Services account ID.</param>
-		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li> <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li> <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li> <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li> <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li> <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li> </ul></param>
-		/// <param name="resourceArn">The ARN of the resource.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="registeredGatewayArn">The ARN of the gateway.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="awsRegion">The Amazon Web Services Region.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
+		/// <param name="accountId">The Amazon Web Services account ID.
+		/// Max length: 12
+		/// Min length: 12
+		// </param>
+		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li> <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li> <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li> <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li> <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li> <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li> </ul>
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6341,7 +6701,10 @@ namespace MyNS
 		/// Gets the network routes of the specified global network.
 		/// GetNetworkRoutes global-networks/{globalNetworkId}/network-routes
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkRoutesResponse> GetNetworkRoutesAsync(string globalNetworkId, GetNetworkRoutesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6382,15 +6745,42 @@ namespace MyNS
 		/// Gets the network telemetry of the specified global network.
 		/// GetNetworkTelemetry global-networks/{globalNetworkId}/network-telemetry
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
-		/// <param name="registeredGatewayArn">The ARN of the gateway.</param>
-		/// <param name="awsRegion">The Amazon Web Services Region.</param>
-		/// <param name="accountId">The Amazon Web Services account ID.</param>
-		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul></param>
-		/// <param name="resourceArn">The ARN of the resource.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="registeredGatewayArn">The ARN of the gateway.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="awsRegion">The Amazon Web Services Region.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
+		/// <param name="accountId">The Amazon Web Services account ID.
+		/// Max length: 12
+		/// Min length: 12
+		// </param>
+		/// <param name="resourceType"><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6426,8 +6816,14 @@ namespace MyNS
 		/// Gets information about the specified route analysis.
 		/// GetRouteAnalysis global-networks/{globalNetworkId}/route-analyses/{routeAnalysisId}
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="routeAnalysisId">The ID of the route analysis.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="routeAnalysisId">The ID of the route analysis.
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRouteAnalysisResponse> GetRouteAnalysisAsync(string globalNetworkId, string routeAnalysisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6461,7 +6857,10 @@ namespace MyNS
 		/// Returns information about a site-to-site VPN attachment.
 		/// GetSiteToSiteVpnAttachment site-to-site-vpn-attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment.</param>
+		/// <param name="attachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSiteToSiteVpnAttachmentResponse> GetSiteToSiteVpnAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6495,7 +6894,10 @@ namespace MyNS
 		/// Returns information about a transit gateway peer.
 		/// GetTransitGatewayPeering transit-gateway-peerings/{peeringId}
 		/// </summary>
-		/// <param name="peeringId">The ID of the peering request.</param>
+		/// <param name="peeringId">The ID of the peering request.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTransitGatewayPeeringResponse> GetTransitGatewayPeeringAsync(string peeringId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6529,10 +6931,19 @@ namespace MyNS
 		/// Gets information about the transit gateway registrations in a specified global network.
 		/// GetTransitGatewayRegistrations global-networks/{globalNetworkId}/transit-gateway-registrations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="transitGatewayArns">The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6568,7 +6979,10 @@ namespace MyNS
 		/// Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see <a href="https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions">Region Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.
 		/// RegisterTransitGateway global-networks/{globalNetworkId}/transit-gateway-registrations
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterTransitGatewayResponse> RegisterTransitGatewayAsync(string globalNetworkId, RegisterTransitGatewayPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6609,7 +7023,10 @@ namespace MyNS
 		/// Returns information about a transit gateway route table attachment.
 		/// GetTransitGatewayRouteTableAttachment transit-gateway-route-table-attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the transit gateway route table attachment.</param>
+		/// <param name="attachmentId">The ID of the transit gateway route table attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTransitGatewayRouteTableAttachmentResponse> GetTransitGatewayRouteTableAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6643,7 +7060,10 @@ namespace MyNS
 		/// Returns information about a VPC attachment.
 		/// GetVpcAttachment vpc-attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment.</param>
+		/// <param name="attachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVpcAttachmentResponse> GetVpcAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6677,7 +7097,10 @@ namespace MyNS
 		/// Updates a VPC attachment.
 		/// UpdateVpcAttachment vpc-attachments/{attachmentId}
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment.</param>
+		/// <param name="attachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVpcAttachmentResponse> UpdateVpcAttachmentAsync(string attachmentId, UpdateVpcAttachmentPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6718,12 +7141,24 @@ namespace MyNS
 		/// Returns a list of core network attachments.
 		/// ListAttachments attachments
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="attachmentType">The type of attachment.</param>
-		/// <param name="edgeLocation">The Region where the edge is located.</param>
+		/// <param name="edgeLocation">The Region where the edge is located.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
 		/// <param name="state">The state of the attachment.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6759,9 +7194,18 @@ namespace MyNS
 		/// Returns a list of core network policy versions.
 		/// ListCoreNetworkPolicyVersions core-networks/{coreNetworkId}/core-network-policy-versions
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6797,8 +7241,14 @@ namespace MyNS
 		/// Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization.
 		/// ListOrganizationServiceAccessStatus organizations/service-access
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListOrganizationServiceAccessStatusResponse> ListOrganizationServiceAccessStatusAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6872,12 +7322,24 @@ namespace MyNS
 		/// Lists the peerings for a core network.
 		/// ListPeerings peerings
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="peeringType">Returns a list of a peering requests.</param>
-		/// <param name="edgeLocation">Returns a list edge locations for the </param>
+		/// <param name="edgeLocation">Returns a list edge locations for the 
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
 		/// <param name="state">Returns a list of the peering request states.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6913,7 +7375,10 @@ namespace MyNS
 		/// Lists the tags for a specified resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6947,7 +7412,10 @@ namespace MyNS
 		/// Tags a specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6988,7 +7456,10 @@ namespace MyNS
 		/// Rejects a core network attachment request.
 		/// RejectAttachment attachments/{attachmentId}/reject
 		/// </summary>
-		/// <param name="attachmentId">The ID of the attachment.</param>
+		/// <param name="attachmentId">The ID of the attachment.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RejectAttachmentResponse> RejectAttachmentAsync(string attachmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7017,7 +7488,10 @@ namespace MyNS
 		/// Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.
 		/// RestoreCoreNetworkPolicyVersion core-networks/{coreNetworkId}/core-network-policy-versions/{policyVersionId}/restore
 		/// </summary>
-		/// <param name="coreNetworkId">The ID of a core network.</param>
+		/// <param name="coreNetworkId">The ID of a core network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <param name="policyVersionId">The ID of the policy version to restore.</param>
 		/// <returns>Success</returns>
 		public async Task<RestoreCoreNetworkPolicyVersionResponse> RestoreCoreNetworkPolicyVersionAsync(string coreNetworkId, int policyVersionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7047,7 +7521,10 @@ namespace MyNS
 		/// Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.
 		/// StartRouteAnalysis global-networks/{globalNetworkId}/route-analyses
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartRouteAnalysisResponse> StartRouteAnalysisAsync(string globalNetworkId, StartRouteAnalysisPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7088,7 +7565,10 @@ namespace MyNS
 		/// Removes tags from a specified resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <param name="tagKeys">The tag keys to remove from the specified resource.</param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7123,8 +7603,14 @@ namespace MyNS
 		/// Updates the resource metadata for the specified global network.
 		/// UpdateNetworkResourceMetadata global-networks/{globalNetworkId}/network-resources/{resourceArn}/metadata
 		/// </summary>
-		/// <param name="globalNetworkId">The ID of the global network.</param>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="globalNetworkId">The ID of the global network.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 1500
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateNetworkResourceMetadataResponse> UpdateNetworkResourceMetadataAsync(string globalNetworkId, string resourceArn, UpdateNetworkResourceMetadataPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

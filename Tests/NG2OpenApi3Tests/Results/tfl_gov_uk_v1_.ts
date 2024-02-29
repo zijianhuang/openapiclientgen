@@ -15,11 +15,15 @@ export namespace MyNS {
 	}
 
 	export interface SystemDataSpatialDbGeographyWellKnownValue {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coordinateSystemId?: number | null;
 		wellKnownBinary?: string | null;
 		wellKnownText?: string | null;
 	}
 	export interface SystemDataSpatialDbGeographyWellKnownValueFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coordinateSystemId: FormControl<number | null | undefined>,
 		wellKnownBinary: FormControl<string | null | undefined>,
 		wellKnownText: FormControl<string | null | undefined>,
@@ -97,18 +101,30 @@ export namespace MyNS {
 
 	export interface TflApiCommonGeoPoint {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lon: number;
 	}
 	export interface TflApiCommonGeoPointFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiCommonGeoPointFormGroup() {
@@ -120,21 +136,49 @@ export namespace MyNS {
 	}
 
 	export interface TflApiCommonJourneyPlannerJpElevation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distance?: number | null;
+
+		/** Type: double */
 		endLat?: number | null;
+
+		/** Type: double */
 		endLon?: number | null;
+
+		/** Type: double */
 		gradient?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		heightFromPreviousPoint?: number | null;
+
+		/** Type: double */
 		startLat?: number | null;
+
+		/** Type: double */
 		startLon?: number | null;
 	}
 	export interface TflApiCommonJourneyPlannerJpElevationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		endLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		endLon: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gradient: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		heightFromPreviousPoint: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		startLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		startLon: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiCommonJourneyPlannerJpElevationFormGroup() {
@@ -151,19 +195,43 @@ export namespace MyNS {
 	}
 
 	export interface TflApiCommonPlaceGeo {
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
+
+		/** Type: double */
 		neLat?: number | null;
+
+		/** Type: double */
 		neLon?: number | null;
+
+		/** Type: double */
 		swLat?: number | null;
+
+		/** Type: double */
 		swLon?: number | null;
 	}
 	export interface TflApiCommonPlaceGeoFormProperties {
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		neLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		neLon: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		swLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		swLon: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiCommonPlaceGeoFormGroup() {
@@ -195,9 +263,15 @@ export namespace MyNS {
 		borough?: string | null;
 		casualties?: Array<TflApiPresentationEntitiesAccidentStatsCasualty>;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		lat?: number | null;
 		location?: string | null;
+
+		/** Type: double */
 		lon?: number | null;
 		severity?: string | null;
 		vehicles?: Array<TflApiPresentationEntitiesAccidentStatsVehicle>;
@@ -205,9 +279,15 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesAccidentStatsAccidentDetailFormProperties {
 		borough: FormControl<string | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
 		location: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		severity: FormControl<string | null | undefined>,
 	}
@@ -225,6 +305,8 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesAccidentStatsCasualty {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age?: number | null;
 		ageBand?: string | null;
 		class?: string | null;
@@ -232,6 +314,8 @@ export namespace MyNS {
 		severity?: string | null;
 	}
 	export interface TflApiPresentationEntitiesAccidentStatsCasualtyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age: FormControl<number | null | undefined>,
 		ageBand: FormControl<string | null | undefined>,
 		class: FormControl<string | null | undefined>,
@@ -263,13 +347,21 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesAccidentStatsAccidentStatsOrderedSummary {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accidents?: number | null;
 		borough?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface TflApiPresentationEntitiesAccidentStatsAccidentStatsOrderedSummaryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accidents: FormControl<number | null | undefined>,
 		borough: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesAccidentStatsAccidentStatsOrderedSummaryFormGroup() {
@@ -579,15 +671,27 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesBay {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bayCount?: number | null;
 		bayType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		free?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupied?: number | null;
 	}
 	export interface TflApiPresentationEntitiesBayFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bayCount: FormControl<number | null | undefined>,
 		bayType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		free: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupied: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesBayFormGroup() {
@@ -604,13 +708,22 @@ export namespace MyNS {
 	/** Bike point occupancy */
 	export interface TflApiPresentationEntitiesBikePointOccupancy {
 
-		/** Total bike counts */
+		/**
+		 * Total bike counts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bikesCount?: number | null;
 
-		/** Total ebikes count */
+		/**
+		 * Total ebikes count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eBikesCount?: number | null;
 
-		/** Empty docks */
+		/**
+		 * Empty docks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyDocks?: number | null;
 
 		/** Id of the bike point such as BikePoints_1 */
@@ -619,23 +732,38 @@ export namespace MyNS {
 		/** Name / Common name of the bike point */
 		name?: string | null;
 
-		/** Total standard bikes count */
+		/**
+		 * Total standard bikes count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		standardBikesCount?: number | null;
 
-		/** Total docks available */
+		/**
+		 * Total docks available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocks?: number | null;
 	}
 
 	/** Bike point occupancy */
 	export interface TflApiPresentationEntitiesBikePointOccupancyFormProperties {
 
-		/** Total bike counts */
+		/**
+		 * Total bike counts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bikesCount: FormControl<number | null | undefined>,
 
-		/** Total ebikes count */
+		/**
+		 * Total ebikes count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eBikesCount: FormControl<number | null | undefined>,
 
-		/** Empty docks */
+		/**
+		 * Empty docks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyDocks: FormControl<number | null | undefined>,
 
 		/** Id of the bike point such as BikePoints_1 */
@@ -644,10 +772,16 @@ export namespace MyNS {
 		/** Name / Common name of the bike point */
 		name: FormControl<string | null | undefined>,
 
-		/** Total standard bikes count */
+		/**
+		 * Total standard bikes count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		standardBikesCount: FormControl<number | null | undefined>,
 
-		/** Total docks available */
+		/**
+		 * Total docks available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocks: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesBikePointOccupancyFormGroup() {
@@ -684,11 +818,15 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesChargeConnectorOccupancy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		sourceSystemPlaceId?: string | null;
 		status?: string | null;
 	}
 	export interface TflApiPresentationEntitiesChargeConnectorOccupancyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		sourceSystemPlaceId: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
@@ -703,19 +841,43 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesCoordinate {
+
+		/** Type: double */
 		easting?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
+
+		/** Type: double */
 		northing?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xCoord?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yCoord?: number | null;
 	}
 	export interface TflApiPresentationEntitiesCoordinateFormProperties {
+
+		/** Type: double */
 		easting: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		northing: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xCoord: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yCoord: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesCoordinateFormGroup() {
@@ -751,7 +913,10 @@ export namespace MyNS {
 		/** Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc. */
 		timeSlice?: string | null;
 
-		/** Count of passenger flow towards a platform */
+		/**
+		 * Count of passenger flow towards a platform
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface TflApiPresentationEntitiesPassengerFlowFormProperties {
@@ -759,7 +924,10 @@ export namespace MyNS {
 		/** Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc. */
 		timeSlice: FormControl<string | null | undefined>,
 
-		/** Count of passenger flow towards a platform */
+		/**
+		 * Count of passenger flow towards a platform
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesPassengerFlowFormGroup() {
@@ -793,6 +961,7 @@ export namespace MyNS {
 		/**
 		 * Scale between 1-6,
 		 * 1 = Very quiet, 2 = Quiet, 3 = Fairly busy, 4 = Busy, 5 = Very busy, 6 = Exceptionally busy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value?: number | null;
 	}
@@ -819,6 +988,7 @@ export namespace MyNS {
 		/**
 		 * Scale between 1-6,
 		 * 1 = Very quiet, 2 = Quiet, 3 = Fairly busy, 4 = Busy, 5 = Very busy, 6 = Exceptionally busy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1033,10 +1203,14 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesRouteSectionNaptanEntrySequence {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ordinal?: number | null;
 		stopPoint?: TflApiPresentationEntitiesStopPoint;
 	}
 	export interface TflApiPresentationEntitiesRouteSectionNaptanEntrySequenceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ordinal: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesRouteSectionNaptanEntrySequenceFormGroup() {
@@ -1060,6 +1234,7 @@ export namespace MyNS {
 		/**
 		 * The distance of the place from its search point, if this is the result
 		 * of a geographical search, otherwise zero.
+		 * Type: double
 		 */
 		distance?: number | null;
 		fullName?: string | null;
@@ -1073,13 +1248,19 @@ export namespace MyNS {
 		indicator?: string | null;
 		individualStopId?: string | null;
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat?: number | null;
 		lineGroup?: Array<TflApiPresentationEntitiesLineGroup>;
 		lineModeGroups?: Array<TflApiPresentationEntitiesLineModeGroup>;
 		lines?: Array<TflApiPresentationEntitiesIdentifier>;
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon?: number | null;
 		modes?: Array<string>;
 		naptanId?: string | null;
@@ -1108,6 +1289,7 @@ export namespace MyNS {
 		/**
 		 * The distance of the place from its search point, if this is the result
 		 * of a geographical search, otherwise zero.
+		 * Type: double
 		 */
 		distance: FormControl<number | null | undefined>,
 		fullName: FormControl<string | null | undefined>,
@@ -1121,10 +1303,16 @@ export namespace MyNS {
 		indicator: FormControl<string | null | undefined>,
 		individualStopId: FormControl<string | null | undefined>,
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 		naptanId: FormControl<string | null | undefined>,
 		naptanMode: FormControl<string | null | undefined>,
@@ -1183,16 +1371,23 @@ export namespace MyNS {
 		/**
 		 * The distance of the place from its search point, if this is the result
 		 * of a geographical search, otherwise zero.
+		 * Type: double
 		 */
 		distance?: number | null;
 
 		/** A unique identifier. */
 		id?: string | null;
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** The type of Place. See /Place/Meta/placeTypes for possible values. */
@@ -1209,16 +1404,23 @@ export namespace MyNS {
 		/**
 		 * The distance of the place from its search point, if this is the result
 		 * of a geographical search, otherwise zero.
+		 * Type: double
 		 */
 		distance: FormControl<number | null | undefined>,
 
 		/** A unique identifier. */
 		id: FormControl<string | null | undefined>,
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** The type of Place. See /Place/Meta/placeTypes for possible values. */
@@ -1395,9 +1597,13 @@ export namespace MyNS {
 	export enum TflApiPresentationEntitiesDisruptionCategory { Undefined = 'Undefined', RealTime = 'RealTime', PlannedWork = 'PlannedWork', Information = 'Information', Event = 'Event', Crowding = 'Crowding', StatusAlert = 'StatusAlert' }
 
 	export interface TflApiPresentationEntitiesFaresFare {
+
+		/** Type: double */
 		cap?: number | null;
 		cost?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mode?: string | null;
 		passengerType?: string | null;
@@ -1408,9 +1614,13 @@ export namespace MyNS {
 		zone?: string | null;
 	}
 	export interface TflApiPresentationEntitiesFaresFareFormProperties {
+
+		/** Type: double */
 		cap: FormControl<number | null | undefined>,
 		cost: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		passengerType: FormControl<string | null | undefined>,
@@ -1440,8 +1650,12 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesFaresFareBounds {
 		description?: string | null;
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		from?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isPopularFare?: boolean | null;
 		isPopularTravelCard?: boolean | null;
@@ -1455,8 +1669,12 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesFaresFareBoundsFormProperties {
 		description: FormControl<string | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isPopularFare: FormControl<boolean | null | undefined>,
 		isPopularTravelCard: FormControl<boolean | null | undefined>,
@@ -1485,6 +1703,8 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesMessage {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bulletOrder?: number | null;
 		header?: boolean | null;
 		linkText?: string | null;
@@ -1492,6 +1712,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface TflApiPresentationEntitiesMessageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bulletOrder: FormControl<number | null | undefined>,
 		header: FormControl<boolean | null | undefined>,
 		linkText: FormControl<string | null | undefined>,
@@ -1510,9 +1732,13 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesFaresFareDetails {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		boundsId?: number | null;
 		contactlessPAYGOnlyFare?: boolean | null;
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		endDate?: Date | null;
 		from?: string | null;
@@ -1534,9 +1760,13 @@ export namespace MyNS {
 		via?: string | null;
 	}
 	export interface TflApiPresentationEntitiesFaresFareDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		boundsId: FormControl<number | null | undefined>,
 		contactlessPAYGOnlyFare: FormControl<boolean | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		endDate: FormControl<Date | null | undefined>,
 		from: FormControl<string | null | undefined>,
@@ -1584,6 +1814,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesFaresTicket {
 		cost?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		messages?: Array<TflApiPresentationEntitiesMessage>;
 		mode?: string | null;
@@ -1594,6 +1826,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesFaresTicketFormProperties {
 		cost: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		passengerType: FormControl<string | null | undefined>,
@@ -1664,11 +1898,15 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesFaresFaresMode {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface TflApiPresentationEntitiesFaresFaresModeFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -1683,6 +1921,8 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesFaresFaresPeriod {
 		endDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isFuture?: boolean | null;
 		startDate?: Date | null;
@@ -1690,6 +1930,8 @@ export namespace MyNS {
 	}
 	export interface TflApiPresentationEntitiesFaresFaresPeriodFormProperties {
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isFuture: FormControl<boolean | null | undefined>,
 		startDate: FormControl<Date | null | undefined>,
@@ -1708,6 +1950,8 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesFaresFaresSection {
 		header?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		journey?: TflApiPresentationEntitiesFaresJourney;
 		messages?: Array<TflApiPresentationEntitiesMessage>;
@@ -1715,6 +1959,8 @@ export namespace MyNS {
 	}
 	export interface TflApiPresentationEntitiesFaresFaresSectionFormProperties {
 		header: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesFaresFaresSectionFormGroup() {
@@ -1740,12 +1986,16 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesFaresPassengerType {
 		description?: string | null;
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		type?: string | null;
 	}
 	export interface TflApiPresentationEntitiesFaresPassengerTypeFormProperties {
 		description: FormControl<string | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -1764,6 +2014,8 @@ export namespace MyNS {
 		discountCard?: string | null;
 		fareType?: string | null;
 		gettingYourTicket?: Array<TflApiPresentationEntitiesMessage>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		keyFeatures?: Array<TflApiPresentationEntitiesMessage>;
 		notes?: Array<TflApiPresentationEntitiesMessage>;
@@ -1771,9 +2023,15 @@ export namespace MyNS {
 		priceDescription?: string | null;
 		product?: string | null;
 		productType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 		recommendedTopUp?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rule?: number | null;
+
+		/** Type: double */
 		singleFare?: number | null;
 		ticketTime?: string | null;
 		ticketType?: string | null;
@@ -1783,14 +2041,22 @@ export namespace MyNS {
 		cost: FormControl<string | null | undefined>,
 		discountCard: FormControl<string | null | undefined>,
 		fareType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		priceComparison: FormControl<string | null | undefined>,
 		priceDescription: FormControl<string | null | undefined>,
 		product: FormControl<string | null | undefined>,
 		productType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 		recommendedTopUp: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rule: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		singleFare: FormControl<number | null | undefined>,
 		ticketTime: FormControl<string | null | undefined>,
 		ticketType: FormControl<string | null | undefined>,
@@ -1833,7 +2099,11 @@ export namespace MyNS {
 		/** A string describing the formatted address of the place. Adds additional context to the place's Name. */
 		address?: string | null;
 		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 		name?: string | null;
 
@@ -1846,7 +2116,11 @@ export namespace MyNS {
 		/** A string describing the formatted address of the place. Adds additional context to the place's Name. */
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1881,14 +2155,26 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesInstructionStep {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cumulativeDistance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cumulativeTravelTime?: number | null;
 		description?: string | null;
 		descriptionHeading?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distance?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		pathAttribute?: TflApiPresentationEntitiesPathAttribute;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skyDirection?: number | null;
 		skyDirectionDescription?: TflApiPresentationEntitiesInstructionStepSkyDirectionDescription | null;
 		streetName?: string | null;
@@ -1896,13 +2182,25 @@ export namespace MyNS {
 		turnDirection?: string | null;
 	}
 	export interface TflApiPresentationEntitiesInstructionStepFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cumulativeDistance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cumulativeTravelTime: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		descriptionHeading: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skyDirection: FormControl<number | null | undefined>,
 		skyDirectionDescription: FormControl<TflApiPresentationEntitiesInstructionStepSkyDirectionDescription | null | undefined>,
 		streetName: FormControl<string | null | undefined>,
@@ -1949,10 +2247,14 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesInterval {
 		stopId?: string | null;
+
+		/** Type: double */
 		timeToArrival?: number | null;
 	}
 	export interface TflApiPresentationEntitiesIntervalFormProperties {
 		stopId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timeToArrival: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesIntervalFormGroup() {
@@ -1966,22 +2268,42 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesJourneyPlannerFare {
 		chargeLevel?: string | null;
 		chargeProfileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		highZone?: number | null;
 		isHopperFare?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lowZone?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offPeak?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peak?: number | null;
 		taps?: Array<TflApiPresentationEntitiesJourneyPlannerFareTap>;
 	}
 	export interface TflApiPresentationEntitiesJourneyPlannerFareFormProperties {
 		chargeLevel: FormControl<string | null | undefined>,
 		chargeProfileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		highZone: FormControl<number | null | undefined>,
 		isHopperFare: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lowZone: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offPeak: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peak: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesJourneyPlannerFareFormGroup() {
@@ -2016,6 +2338,8 @@ export namespace MyNS {
 		busRouteId?: string | null;
 		hostDeviceType?: string | null;
 		modeType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nationalLocationCode?: number | null;
 		tapTimestamp?: Date | null;
 		validationType?: string | null;
@@ -2024,6 +2348,8 @@ export namespace MyNS {
 		busRouteId: FormControl<string | null | undefined>,
 		hostDeviceType: FormControl<string | null | undefined>,
 		modeType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nationalLocationCode: FormControl<number | null | undefined>,
 		tapTimestamp: FormControl<Date | null | undefined>,
 		validationType: FormControl<string | null | undefined>,
@@ -2063,6 +2389,8 @@ export namespace MyNS {
 		journeyVector?: TflApiPresentationEntitiesJourneyPlannerJourneyVector;
 		journeys?: Array<TflApiPresentationEntitiesJourneyPlannerJourney>;
 		lines?: Array<TflApiPresentationEntitiesLine>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recommendedMaxAgeMinutes?: number | null;
 		searchCriteria?: TflApiPresentationEntitiesJourneyPlannerSearchCriteria;
 		stopMessages?: Array<string>;
@@ -2070,6 +2398,8 @@ export namespace MyNS {
 
 	/** A DTO representing a list of possible journeys. */
 	export interface TflApiPresentationEntitiesJourneyPlannerItineraryResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recommendedMaxAgeMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesJourneyPlannerItineraryResultFormGroup() {
@@ -2081,18 +2411,34 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesJourneyPlannerJourneyPlannerCycleHireDockingStationData {
 		destinationId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		destinationNumberOfBikes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		destinationNumberOfEmptySlots?: number | null;
 		originId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originNumberOfBikes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originNumberOfEmptySlots?: number | null;
 	}
 	export interface TflApiPresentationEntitiesJourneyPlannerJourneyPlannerCycleHireDockingStationDataFormProperties {
 		destinationId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		destinationNumberOfBikes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		destinationNumberOfEmptySlots: FormControl<number | null | undefined>,
 		originId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originNumberOfBikes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originNumberOfEmptySlots: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesJourneyPlannerJourneyPlannerCycleHireDockingStationDataFormGroup() {
@@ -2133,6 +2479,8 @@ export namespace MyNS {
 	/** Object that represents an end to end journey (see schematic). */
 	export interface TflApiPresentationEntitiesJourneyPlannerJourney {
 		arrivalDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		fare?: TflApiPresentationEntitiesJourneyPlannerJourneyFare;
 		legs?: Array<TflApiPresentationEntitiesJourneyPlannerLeg>;
@@ -2142,6 +2490,8 @@ export namespace MyNS {
 	/** Object that represents an end to end journey (see schematic). */
 	export interface TflApiPresentationEntitiesJourneyPlannerJourneyFormProperties {
 		arrivalDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		startDateTime: FormControl<Date | null | undefined>,
 	}
@@ -2157,9 +2507,13 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesJourneyPlannerJourneyFare {
 		caveats?: Array<TflApiPresentationEntitiesJourneyPlannerFareCaveat>;
 		fares?: Array<TflApiPresentationEntitiesJourneyPlannerFare>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCost?: number | null;
 	}
 	export interface TflApiPresentationEntitiesJourneyPlannerJourneyFareFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCost: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesJourneyPlannerJourneyFareFormGroup() {
@@ -2179,7 +2533,11 @@ export namespace MyNS {
 		departurePoint?: TflApiPresentationEntitiesPoint;
 		departureTime?: Date | null;
 		disruptions?: Array<TflApiPresentationEntitiesDisruption>;
+
+		/** Type: double */
 		distance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		hasFixedLocations?: boolean | null;
 		instruction?: TflApiPresentationEntitiesInstruction;
@@ -2198,7 +2556,11 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesJourneyPlannerLegFormProperties {
 		arrivalTime: FormControl<Date | null | undefined>,
 		departureTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		hasFixedLocations: FormControl<boolean | null | undefined>,
 		interChangeDuration: FormControl<string | null | undefined>,
@@ -2229,20 +2591,32 @@ export namespace MyNS {
 	/** Represents a point located at a latitude and longitude using the WGS84 co-ordinate system. */
 	export interface TflApiPresentationEntitiesPoint {
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon?: number | null;
 	}
 
 	/** Represents a point located at a latitude and longitude using the WGS84 co-ordinate system. */
 	export interface TflApiPresentationEntitiesPointFormProperties {
 
-		/** WGS84 latitude of the location. */
+		/**
+		 * WGS84 latitude of the location.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** WGS84 longitude of the location. */
+		/**
+		 * WGS84 longitude of the location.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesPointFormGroup() {
@@ -2256,12 +2630,16 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesJourneyPlannerObstacle {
 		incline?: string | null;
 		position?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stopId?: number | null;
 		type?: string | null;
 	}
 	export interface TflApiPresentationEntitiesJourneyPlannerObstacleFormProperties {
 		incline: FormControl<string | null | undefined>,
 		position: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stopId: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -2380,20 +2758,28 @@ export namespace MyNS {
 
 		/** Represents a disruption to a route within the transport network. */
 		disruption?: TflApiPresentationEntitiesDisruption;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lineId?: string | null;
 		modified?: Date | null;
 		reason?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusSeverity?: number | null;
 		statusSeverityDescription?: string | null;
 		validityPeriods?: Array<TflApiPresentationEntitiesValidityPeriod>;
 	}
 	export interface TflApiPresentationEntitiesLineStatusFormProperties {
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		lineId: FormControl<string | null | undefined>,
 		modified: FormControl<Date | null | undefined>,
 		reason: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusSeverity: FormControl<number | null | undefined>,
 		statusSeverityDescription: FormControl<string | null | undefined>,
 	}
@@ -2602,11 +2988,15 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesKnownJourney {
 		hour?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intervalId?: number | null;
 		minute?: string | null;
 	}
 	export interface TflApiPresentationEntitiesKnownJourneyFormProperties {
 		hour: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intervalId: FormControl<number | null | undefined>,
 		minute: FormControl<string | null | undefined>,
 	}
@@ -2623,6 +3013,8 @@ export namespace MyNS {
 		destination?: string | null;
 		direction?: string | null;
 		fromStation?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		routeId?: number | null;
 		serviceType?: string | null;
 		toStation?: string | null;
@@ -2632,6 +3024,8 @@ export namespace MyNS {
 		destination: FormControl<string | null | undefined>,
 		direction: FormControl<string | null | undefined>,
 		fromStation: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		routeId: FormControl<number | null | undefined>,
 		serviceType: FormControl<string | null | undefined>,
 		toStation: FormControl<string | null | undefined>,
@@ -2679,9 +3073,13 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesMatchedRouteSections {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface TflApiPresentationEntitiesMatchedRouteSectionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesMatchedRouteSectionsFormGroup() {
@@ -2697,12 +3095,18 @@ export namespace MyNS {
 		hasDisruption?: boolean | null;
 		icsId?: string | null;
 		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
 		lines?: Array<TflApiPresentationEntitiesIdentifier>;
+
+		/** Type: double */
 		lon?: number | null;
 		modes?: Array<string>;
 		name?: string | null;
 		parentId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		routeId?: number | null;
 		stationId?: string | null;
 		status?: boolean | null;
@@ -2719,10 +3123,16 @@ export namespace MyNS {
 		hasDisruption: FormControl<boolean | null | undefined>,
 		icsId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		parentId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		routeId: FormControl<number | null | undefined>,
 		stationId: FormControl<string | null | undefined>,
 		status: FormControl<boolean | null | undefined>,
@@ -2791,6 +3201,8 @@ export namespace MyNS {
 		message?: string | null;
 		operator?: string | null;
 		status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusLevel?: number | null;
 	}
 
@@ -2799,6 +3211,8 @@ export namespace MyNS {
 		message: FormControl<string | null | undefined>,
 		operator: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesNetworkStatusFormGroup() {
@@ -2845,11 +3259,19 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesServiceFrequency {
+
+		/** Type: double */
 		highestFrequency?: number | null;
+
+		/** Type: double */
 		lowestFrequency?: number | null;
 	}
 	export interface TflApiPresentationEntitiesServiceFrequencyFormProperties {
+
+		/** Type: double */
 		highestFrequency: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lowestFrequency: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesServiceFrequencyFormGroup() {
@@ -2943,7 +3365,10 @@ export namespace MyNS {
 		/** Identifier for the prediction */
 		naptanId?: string | null;
 
-		/** The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache) */
+		/**
+		 * The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType?: number | null;
 
 		/** Platform name (for bus, this is the stop letter) */
@@ -2955,7 +3380,10 @@ export namespace MyNS {
 		/** The expiry time for the prediction */
 		timeToLive?: Date | null;
 
-		/** Prediction of the Time to station in seconds */
+		/**
+		 * Prediction of the Time to station in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToStation?: number | null;
 
 		/** Timestamp for when the prediction was inserted/modified (source column drives what objects are broadcast on each iteration) */
@@ -3005,7 +3433,10 @@ export namespace MyNS {
 		/** Identifier for the prediction */
 		naptanId: FormControl<string | null | undefined>,
 
-		/** The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache) */
+		/**
+		 * The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType: FormControl<number | null | undefined>,
 
 		/** Platform name (for bus, this is the stop letter) */
@@ -3017,7 +3448,10 @@ export namespace MyNS {
 		/** The expiry time for the prediction */
 		timeToLive: FormControl<Date | null | undefined>,
 
-		/** Prediction of the Time to station in seconds */
+		/**
+		 * Prediction of the Time to station in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToStation: FormControl<number | null | undefined>,
 
 		/** Timestamp for when the prediction was inserted/modified (source column drives what objects are broadcast on each iteration) */
@@ -3238,7 +3672,10 @@ export namespace MyNS {
 		/** Main road name / number (borough) or preset area name where the disruption is located. This might be useful for a map popup where space is limited. */
 		location?: string | null;
 
-		/** An ordinal of the disruption based on severity, level of interest and corridor. */
+		/**
+		 * An ordinal of the disruption based on severity, level of interest and corridor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal?: number | null;
 
 		/** Latitude and longitude (WGS84) of the centroid of the disruption, stored in a geoJSON-formatted string. */
@@ -3344,7 +3781,10 @@ export namespace MyNS {
 		/** Main road name / number (borough) or preset area name where the disruption is located. This might be useful for a map popup where space is limited. */
 		location: FormControl<string | null | undefined>,
 
-		/** An ordinal of the disruption based on severity, level of interest and corridor. */
+		/**
+		 * An ordinal of the disruption based on severity, level of interest and corridor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal: FormControl<number | null | undefined>,
 
 		/** Latitude and longitude (WGS84) of the centroid of the disruption, stored in a geoJSON-formatted string. */
@@ -3429,6 +3869,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesRoadDisruptionImpactArea {
 		endDate?: Date | null;
 		endTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		polygon?: SystemDataSpatialDbGeography;
 		roadDisruptionId?: string | null;
@@ -3438,6 +3880,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesRoadDisruptionImpactAreaFormProperties {
 		endDate: FormControl<Date | null | undefined>,
 		endTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		roadDisruptionId: FormControl<string | null | undefined>,
 		startDate: FormControl<Date | null | undefined>,
@@ -3458,6 +3902,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesRoadDisruptionLine {
 		endDate?: Date | null;
 		endTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isDiversion?: boolean | null;
 		multiLineString?: SystemDataSpatialDbGeography;
@@ -3468,6 +3914,8 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesRoadDisruptionLineFormProperties {
 		endDate: FormControl<Date | null | undefined>,
 		endTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isDiversion: FormControl<boolean | null | undefined>,
 		roadDisruptionId: FormControl<string | null | undefined>,
@@ -3578,8 +4026,11 @@ export namespace MyNS {
 		/** Geographic description of the sections of this street that are affected. */
 		segments?: Array<TflApiPresentationEntitiesStreetSegment>;
 
-		/** The ID from the source system of the disruption that this street belongs to. */
-		sourceSystemId?: number | null;
+		/**
+		 * The ID from the source system of the disruption that this street belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sourceSystemId?: string | null;
 
 		/** The key of the source system of the disruption that this street belongs to. */
 		sourceSystemKey?: string | null;
@@ -3611,8 +4062,11 @@ export namespace MyNS {
 		/** Street name */
 		name: FormControl<string | null | undefined>,
 
-		/** The ID from the source system of the disruption that this street belongs to. */
-		sourceSystemId: FormControl<number | null | undefined>,
+		/**
+		 * The ID from the source system of the disruption that this street belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sourceSystemId: FormControl<string | null | undefined>,
 
 		/** The key of the source system of the disruption that this street belongs to. */
 		sourceSystemKey: FormControl<string | null | undefined>,
@@ -3622,7 +4076,7 @@ export namespace MyNS {
 			closure: new FormControl<string | null | undefined>(undefined),
 			directions: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			sourceSystemId: new FormControl<number | null | undefined>(undefined),
+			sourceSystemId: new FormControl<string | null | undefined>(undefined),
 			sourceSystemKey: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3633,8 +4087,11 @@ export namespace MyNS {
 		/** geoJSON formatted LineString containing two latitude/longitude (WGS84) pairs that identify the start and end points of the street segment. */
 		lineString?: string | null;
 
-		/** The ID from the source system of the disruption that this street belongs to. */
-		sourceSystemId?: number | null;
+		/**
+		 * The ID from the source system of the disruption that this street belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sourceSystemId?: string | null;
 
 		/** The key of the source system of the disruption that this street belongs to. */
 		sourceSystemKey?: string | null;
@@ -3647,8 +4104,11 @@ export namespace MyNS {
 		/** geoJSON formatted LineString containing two latitude/longitude (WGS84) pairs that identify the start and end points of the street segment. */
 		lineString: FormControl<string | null | undefined>,
 
-		/** The ID from the source system of the disruption that this street belongs to. */
-		sourceSystemId: FormControl<number | null | undefined>,
+		/**
+		 * The ID from the source system of the disruption that this street belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sourceSystemId: FormControl<string | null | undefined>,
 
 		/** The key of the source system of the disruption that this street belongs to. */
 		sourceSystemKey: FormControl<string | null | undefined>,
@@ -3659,7 +4119,7 @@ export namespace MyNS {
 	export function CreateTflApiPresentationEntitiesStreetSegmentFormGroup() {
 		return new FormGroup<TflApiPresentationEntitiesStreetSegmentFormProperties>({
 			lineString: new FormControl<string | null | undefined>(undefined),
-			sourceSystemId: new FormControl<number | null | undefined>(undefined),
+			sourceSystemId: new FormControl<string | null | undefined>(undefined),
 			sourceSystemKey: new FormControl<string | null | undefined>(undefined),
 			toid: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3668,10 +4128,14 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesRouteSearchMatch {
 		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
 		lineId?: string | null;
 		lineName?: string | null;
 		lineRouteSection?: Array<TflApiPresentationEntitiesLineRouteSection>;
+
+		/** Type: double */
 		lon?: number | null;
 		matchedRouteSections?: Array<TflApiPresentationEntitiesMatchedRouteSections>;
 		matchedStops?: Array<TflApiPresentationEntitiesMatchedStop>;
@@ -3681,9 +4145,13 @@ export namespace MyNS {
 	}
 	export interface TflApiPresentationEntitiesRouteSearchMatchFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
 		lineId: FormControl<string | null | undefined>,
 		lineName: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -3748,7 +4216,10 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesStopPointSequence {
 
-		/** The id of this branch. */
+		/**
+		 * The id of this branch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		branchId?: number | null;
 		direction?: string | null;
 		lineId?: string | null;
@@ -3770,7 +4241,10 @@ export namespace MyNS {
 	}
 	export interface TflApiPresentationEntitiesStopPointSequenceFormProperties {
 
-		/** The id of this branch. */
+		/**
+		 * The id of this branch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		branchId: FormControl<number | null | undefined>,
 		direction: FormControl<string | null | undefined>,
 		lineId: FormControl<string | null | undefined>,
@@ -3809,14 +4283,22 @@ export namespace MyNS {
 
 	export interface TflApiPresentationEntitiesSearchMatch {
 		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 		name?: string | null;
 		url?: string | null;
 	}
 	export interface TflApiPresentationEntitiesSearchMatchFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -3833,22 +4315,42 @@ export namespace MyNS {
 	}
 
 	export interface TflApiPresentationEntitiesSearchResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		from?: number | null;
 		matches?: Array<TflApiPresentationEntitiesSearchMatch>;
+
+		/** Type: double */
 		maxScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
 		provider?: string | null;
 		query?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface TflApiPresentationEntitiesSearchResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		from: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
 		provider: FormControl<string | null | undefined>,
 		query: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesSearchResponseFormGroup() {
@@ -3881,11 +4383,15 @@ export namespace MyNS {
 	export interface TflApiPresentationEntitiesStatusSeverity {
 		description?: string | null;
 		modeName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severityLevel?: number | null;
 	}
 	export interface TflApiPresentationEntitiesStatusSeverityFormProperties {
 		description: FormControl<string | null | undefined>,
 		modeName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severityLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesStatusSeverityFormGroup() {
@@ -3964,29 +4470,47 @@ export namespace MyNS {
 		/** The centre latitude/longitude of this list of StopPoints */
 		centrePoint?: Array<number>;
 
-		/** The index of this page */
+		/**
+		 * The index of this page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The maximum size of the page in this response i.e. the maximum number of StopPoints */
+		/**
+		 * The maximum size of the page in this response i.e. the maximum number of StopPoints
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Collection of stop points */
 		stopPoints?: Array<TflApiPresentationEntitiesStopPoint>;
 
-		/** The total number of StopPoints available across all pages */
+		/**
+		 * The total number of StopPoints available across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
 	/** A paged response containing StopPoints */
 	export interface TflApiPresentationEntitiesStopPointsResponseFormProperties {
 
-		/** The index of this page */
+		/**
+		 * The index of this page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The maximum size of the page in this response i.e. the maximum number of StopPoints */
+		/**
+		 * The maximum size of the page in this response i.e. the maximum number of StopPoints
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
-		/** The total number of StopPoints available across all pages */
+		/**
+		 * The total number of StopPoints available across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTflApiPresentationEntitiesStopPointsResponseFormGroup() {
@@ -4089,6 +4613,7 @@ export namespace MyNS {
 		 * Gets all accident details for accidents occuring in the specified year
 		 * Get AccidentStats/{year}
 		 * @param {number} year The year for which to filter the accidents on.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TflApiPresentationEntitiesAccidentStatsAccidentDetail>} OK
 		 */
 		AccidentStats_Get(year: number): Observable<Array<TflApiPresentationEntitiesAccidentStatsAccidentDetail>> {
@@ -4140,12 +4665,16 @@ export namespace MyNS {
 		 * Gets taxis and minicabs contact information
 		 * Get Cabwise/search
 		 * @param {number} lat Latitude
+		 *     Type: double
 		 * @param {number} lon Longitude
+		 *     Type: double
 		 * @param {string} optype Operator Type e.g Minicab, Executive, Limousine
 		 * @param {string} wc Wheelchair accessible
 		 * @param {number} radius The radius of the bounding circle in metres
+		 *     Type: double
 		 * @param {string} name Trading name of operating company
 		 * @param {number} maxResults An optional parameter to limit the number of results return. Default and maximum is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} legacyFormat Legacy Format
 		 * @param {boolean} forceXml Force Xml
 		 * @param {boolean} twentyFourSevenOnly Twenty Four Seven Only
@@ -4307,6 +4836,7 @@ export namespace MyNS {
 		 * A list of valid severity codes can be obtained from a call to Line/Meta/Severity
 		 * Get Line/Status/{severity}
 		 * @param {number} severity The level of severity (eg: a number from 0 to 14)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TflApiPresentationEntitiesLine>} OK
 		 */
 		Line_StatusBySeverity(severity: number): Observable<Array<TflApiPresentationEntitiesLine>> {
@@ -4443,6 +4973,7 @@ export namespace MyNS {
 		 * Get Mode/{mode}/Arrivals
 		 * @param {string} mode A mode name e.g. tube, dlr
 		 * @param {number} count A number of arrivals to return for each stop, -1 to return all available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TflApiPresentationEntitiesPrediction>} OK
 		 */
 		Mode_Arrivals(mode: string, count: number | null | undefined): Observable<Array<TflApiPresentationEntitiesPrediction>> {
@@ -4501,11 +5032,19 @@ export namespace MyNS {
 		 * Optionally filters on type and can strip properties for a smaller payload.
 		 * Get Place
 		 * @param {number} radius The radius of the bounding circle in metres when only lat/lon are specified.
+		 *     Type: double
 		 * @param {Array<string>} categories An optional list of comma separated property categories to return in the Place's property bag. If null or empty, all categories of property are returned. Pass the keyword "none" to return no properties (a valid list of categories can be obtained from the /Place/Meta/categories endpoint)
 		 * @param {boolean} includeChildren Defaults to false. If true child places e.g. individual charging stations at a charge point while be included, otherwise just the URLs of any child places will be returned
 		 * @param {Array<string>} type Place types to filter on, or null to return all types
 		 * @param {boolean} activeOnly An optional parameter to limit the results to active records only (Currently only the 'VariableMessageSign' place type is supported)
 		 * @param {number} numberOfPlacesToReturn If specified, limits the number of returned places equal to the given value
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} placeGeo_swLat Type: double
+		 * @param {number} placeGeo_swLon Type: double
+		 * @param {number} placeGeo_neLat Type: double
+		 * @param {number} placeGeo_neLon Type: double
+		 * @param {number} placeGeo_lat Type: double
+		 * @param {number} placeGeo_lon Type: double
 		 * @return {Array<TflApiPresentationEntitiesStopPoint>} OK
 		 */
 		Place_GetByGeo(radius: number | null | undefined, categories: Array<string> | null | undefined, includeChildren: boolean | null | undefined, type: Array<string> | null | undefined, activeOnly: boolean | null | undefined, numberOfPlacesToReturn: number | null | undefined, placeGeo_swLat: number | null | undefined, placeGeo_swLon: number | null | undefined, placeGeo_neLat: number | null | undefined, placeGeo_neLon: number | null | undefined, placeGeo_lat: number | null | undefined, placeGeo_lon: number | null | undefined): Observable<Array<TflApiPresentationEntitiesStopPoint>> {
@@ -4579,6 +5118,8 @@ export namespace MyNS {
 		 * must be polygonal e.g. a BoroughBoundary.
 		 * Get Place/{type}/At/{Lat}/{Lon}
 		 * @param {Array<string>} type The place type (a valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint)
+		 * @param {number} location_lat Type: double
+		 * @param {number} location_lon Type: double
 		 * @param {string} Lat Automatically added
 		 * @param {string} Lon Automatically added
 		 * @return {SystemObject} OK
@@ -4591,9 +5132,14 @@ export namespace MyNS {
 		 * Gets the place overlay for a given set of co-ordinates and a given width/height.
 		 * Get Place/{type}/overlay/{z}/{Lat}/{Lon}/{width}/{height}
 		 * @param {number} z The zoom level
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} type The place type (a valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint)
 		 * @param {number} width The width of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The height of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} location_lat Type: double
+		 * @param {number} location_lon Type: double
 		 * @param {string} Lat Automatically added
 		 * @param {string} Lon Automatically added
 		 * @return {SystemObject} OK
@@ -4738,10 +5284,13 @@ export namespace MyNS {
 		 * Get StopPoint
 		 * @param {Array<string>} stopTypes a list of stopTypes that should be returned (a list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint)
 		 * @param {number} radius the radius of the bounding circle in metres (default : 200)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} useStopPointHierarchy Re-arrange the output into a parent/child hierarchy
 		 * @param {Array<string>} modes the list of modes to search (comma separated mode names e.g. tube,dlr)
 		 * @param {Array<string>} categories an optional list of comma separated property categories to return in the StopPoint's property bag. If null or empty, all categories of property are returned. Pass the keyword "none" to return no properties (a valid list of categories can be obtained from the /StopPoint/Meta/categories endpoint)
 		 * @param {boolean} returnLines true to return the lines that each stop point serves as a nested resource
+		 * @param {number} location_lat Type: double
+		 * @param {number} location_lon Type: double
 		 * @return {TflApiPresentationEntitiesStopPointsResponse} OK
 		 */
 		StopPoint_GetByGeoPoint(stopTypes: Array<string>, radius: number | null | undefined, useStopPointHierarchy: boolean | null | undefined, modes: Array<string> | null | undefined, categories: Array<string> | null | undefined, returnLines: boolean | null | undefined, location_lat: number, location_lon: number): Observable<TflApiPresentationEntitiesStopPointsResponse> {
@@ -4780,6 +5329,7 @@ export namespace MyNS {
 		 * Get StopPoint/Mode/{modes}
 		 * @param {Array<string>} modes A comma-seperated list of modes e.g. tube,dlr
 		 * @param {number} page The data set page to return. Page 1 equates to the first 1000 stop points, page 2 equates to 1001-2000 etc. Must be entered for bus mode as data set is too large.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TflApiPresentationEntitiesStopPointsResponse} OK
 		 */
 		StopPoint_GetByMode(modes: Array<string>, page: number | null | undefined): Observable<TflApiPresentationEntitiesStopPointsResponse> {
@@ -4804,6 +5354,7 @@ export namespace MyNS {
 		 * @param {boolean} faresOnly True to only return stations in that have Fares data available for single fares to another station.
 		 * @param {number} maxResults An optional result limit, defaulting to and with a maximum of 50. Since children of the stop point heirarchy are returned for matches,
 		 *             it is possible that the flattened result set will contain more than 50 items.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} lines An optional, parameter separated list of the lines to filter by
 		 * @param {boolean} includeHubs If true, returns results including HUBs.
 		 * @param {boolean} tflOperatedNationalRailStationsOnly If the national-rail mode is included, this flag will filter the national rail stations so that only those operated by TfL are returned
@@ -4821,6 +5372,7 @@ export namespace MyNS {
 		 * @param {boolean} faresOnly True to only return stations in that have Fares data available for single fares to another station.
 		 * @param {number} maxResults An optional result limit, defaulting to and with a maximum of 50. Since children of the stop point heirarchy are returned for matches,
 		 *             it is possible that the flattened result set will contain more than 50 items.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} lines An optional, parameter separated list of the lines to filter by
 		 * @param {boolean} includeHubs If true, returns results including HUBs.
 		 * @param {boolean} tflOperatedNationalRailStationsOnly If the national-rail mode is included, this flag will filter the national rail stations so that only those operated by TfL are returned
@@ -4867,6 +5419,7 @@ export namespace MyNS {
 		/**
 		 * Gets all the stop points of given type(s) with a page number
 		 * Get StopPoint/Type/{types}/page/{page}
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TflApiPresentationEntitiesStopPoint>} OK
 		 */
 		StopPoint_GetByTypeWithPagination(types: Array<string>, page: number): Observable<Array<TflApiPresentationEntitiesStopPoint>> {
@@ -5001,17 +5554,25 @@ export namespace MyNS {
 		 * Gets the TravelTime overlay.
 		 * Get TravelTimes/compareOverlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}
 		 * @param {number} z The zoom level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pinLat The latitude of the pin.
+		 *     Type: double
 		 * @param {number} pinLon The longitude of the pin.
+		 *     Type: double
 		 * @param {number} mapCenterLat The map center latitude.
+		 *     Type: double
 		 * @param {number} mapCenterLon The map center longitude.
+		 *     Type: double
 		 * @param {string} scenarioTitle The title of the scenario.
 		 * @param {string} timeOfDayId The id for the time of day (AM/INTER/PM)
 		 * @param {string} modeId The id of the mode.
 		 * @param {number} width The width of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The height of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TravelTime_GetCompareOverlayDirection} direction The direction of travel.
 		 * @param {number} travelTimeInterval The total minutes between the travel time bands
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		TravelTime_GetCompareOverlay(z: number, pinLat: number, pinLon: number, mapCenterLat: number, mapCenterLon: number, scenarioTitle: string, timeOfDayId: string, modeId: string, width: number, height: number, direction: TravelTime_GetCompareOverlayDirection, travelTimeInterval: number, compareType: string, compareValue: string): Observable<SystemObject> {
@@ -5022,17 +5583,25 @@ export namespace MyNS {
 		 * Gets the TravelTime overlay.
 		 * Get TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}
 		 * @param {number} z The zoom level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pinLat The latitude of the pin.
+		 *     Type: double
 		 * @param {number} pinLon The longitude of the pin.
+		 *     Type: double
 		 * @param {number} mapCenterLat The map center latitude.
+		 *     Type: double
 		 * @param {number} mapCenterLon The map center longitude.
+		 *     Type: double
 		 * @param {string} scenarioTitle The title of the scenario.
 		 * @param {string} timeOfDayId The id for the time of day (AM/INTER/PM)
 		 * @param {string} modeId The id of the mode.
 		 * @param {number} width The width of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The height of the requested overlay.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TravelTime_GetCompareOverlayDirection} direction The direction of travel.
 		 * @param {number} travelTimeInterval The total minutes between the travel time bands
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		TravelTime_GetOverlay(z: number, pinLat: number, pinLon: number, mapCenterLat: number, mapCenterLon: number, scenarioTitle: string, timeOfDayId: string, modeId: string, width: number, height: number, direction: TravelTime_GetCompareOverlayDirection, travelTimeInterval: number): Observable<SystemObject> {

@@ -477,7 +477,10 @@ namespace MyNS
 		/// Retrieve a list of jobs.
 		/// Job_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="filter">The filter to apply on the operation.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -511,7 +514,10 @@ namespace MyNS
 		/// Job_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -544,7 +550,10 @@ namespace MyNS
 		/// Job_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -578,7 +587,10 @@ namespace MyNS
 		/// Job_GetOutput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/output
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The name of the job to be created.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -609,7 +621,10 @@ namespace MyNS
 		/// Resume the job identified by jobName.
 		/// Job_Resume subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/resume
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -637,7 +652,10 @@ namespace MyNS
 		/// Job_GetRunbookContent subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/runbookContent
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -668,7 +686,10 @@ namespace MyNS
 		/// Stop the job identified by jobName.
 		/// Job_Stop subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/stop
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -695,7 +716,10 @@ namespace MyNS
 		/// Retrieve a list of jobs streams identified by job name.
 		/// JobStream_ListByJob subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/streams
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="filter">The filter to apply on the operation.</param>
@@ -730,7 +754,10 @@ namespace MyNS
 		/// JobStream_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/streams/{jobStreamId}
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="jobStreamId">The job stream id.</param>
@@ -764,7 +791,10 @@ namespace MyNS
 		/// Job_Suspend subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}/suspend
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="api_version">Client Api Version.</param>

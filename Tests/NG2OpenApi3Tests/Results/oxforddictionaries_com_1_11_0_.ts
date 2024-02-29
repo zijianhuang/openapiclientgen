@@ -1676,6 +1676,7 @@ export namespace MyNS {
 		/**
 		 * The number of times the ngram (a sequence of n words) appears in the corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: number;
 
@@ -1691,6 +1692,7 @@ export namespace MyNS {
 		/**
 		 * The number of times the ngram (a sequence of n words) appears in the corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: FormControl<number | null | undefined>,
 	}
@@ -1976,6 +1978,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears in the entire corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: number;
 
@@ -1988,12 +1991,14 @@ export namespace MyNS {
 		/**
 		 * The number of database records that matched the query params (stated frequency is the sum of the individual frequencies)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		matchCount: number;
 
 		/**
 		 * The number of times a word appears on average in 1 million words
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		normalizedFrequency: number;
 
@@ -2008,6 +2013,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears in the entire corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: FormControl<number | null | undefined>,
 
@@ -2020,12 +2026,14 @@ export namespace MyNS {
 		/**
 		 * The number of database records that matched the query params (stated frequency is the sum of the individual frequencies)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		matchCount: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of times a word appears on average in 1 million words
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		normalizedFrequency: FormControl<number | null | undefined>,
 
@@ -2080,6 +2088,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears in the entire corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: number;
 
@@ -2098,6 +2107,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears on average in 1 million words
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		normalizedFrequency: number;
 
@@ -2118,6 +2128,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears in the entire corpus
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequency: FormControl<number | null | undefined>,
 
@@ -2136,6 +2147,7 @@ export namespace MyNS {
 		/**
 		 * The number of times a word appears on average in 1 million words
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		normalizedFrequency: FormControl<number | null | undefined>,
 
@@ -2704,17 +2716,23 @@ export namespace MyNS {
 		 * @param {string} contains Find ngrams containing the given token(s). Use comma or space as token separators; the order of tokens is irrelevant.
 		 * @param {string} punctuation Flag specifying whether to lookup ngrams that include punctuation or not (possible values are "true" and "false"; default is "false")
 		 * @param {string} format Option specifying whether tokens should be returned as a single string (option "google") or as a list of strings (option "oup")
-		 * @param {number} minFrequency Restrict the query to entries with frequency of at least `minFrequency`
-		 * @param {number} maxFrequency Restrict the query to entries with frequency of at most `maxFrequency`
-		 * @param {number} minDocumentFrequency Restrict the query to entries that appear in at least `minDocumentFrequency` documents
-		 * @param {number} maxDocumentFrequency Restrict the query to entries that appera in at most `maxDocumentFrequency` documents
+		 * @param {string} minFrequency Restrict the query to entries with frequency of at least `minFrequency`
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} maxFrequency Restrict the query to entries with frequency of at most `maxFrequency`
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} minDocumentFrequency Restrict the query to entries that appear in at least `minDocumentFrequency` documents
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} maxDocumentFrequency Restrict the query to entries that appera in at most `maxDocumentFrequency` documents
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} collate collate the results by wordform, trueCase, lemma, lexicalCategory. Multiple values can be separated by commas (e.g., collate=trueCase,lemma,lexicalCategory).
 		 * @param {string} sort sort the resulting list by wordform, trueCase, lemma, lexicalCategory, frequency, normalizedFrequency. Descending order is achieved by prepending the value with the minus sign ('-'). Multiple values can be separated by commas (e.g., sort=lexicalCategory,-frequency)
-		 * @param {number} offset pagination - results offset
-		 * @param {number} limit pagination - results limit
+		 * @param {string} offset pagination - results offset
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit pagination - results limit
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {NgramsResult} Successful response.
 		 */
-		StatsFrequencyNgrams_source_lang_corpus_ngram_sizeGetByTokensAndContainsAndPunctuationAndFormatAndMinFrequencyAndMaxFrequencyAndMinDocumentFrequencyAndMaxDocumentFrequencyAndCollateAndSortAndOffsetAndLimit(source_lang: string, corpus: string, ngram_size: string, tokens: string | null | undefined, contains: string | null | undefined, punctuation: string | null | undefined, format: string | null | undefined, minFrequency: number | null | undefined, maxFrequency: number | null | undefined, minDocumentFrequency: number | null | undefined, maxDocumentFrequency: number | null | undefined, collate: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<NgramsResult> {
+		StatsFrequencyNgrams_source_lang_corpus_ngram_sizeGetByTokensAndContainsAndPunctuationAndFormatAndMinFrequencyAndMaxFrequencyAndMinDocumentFrequencyAndMaxDocumentFrequencyAndCollateAndSortAndOffsetAndLimit(source_lang: string, corpus: string, ngram_size: string, tokens: string | null | undefined, contains: string | null | undefined, punctuation: string | null | undefined, format: string | null | undefined, minFrequency: string | null | undefined, maxFrequency: string | null | undefined, minDocumentFrequency: string | null | undefined, maxDocumentFrequency: string | null | undefined, collate: string | null | undefined, sort: string | null | undefined, offset: string | null | undefined, limit: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<NgramsResult> {
 			return this.http.get<NgramsResult>(this.baseUri + 'stats/frequency/ngrams/' + (source_lang == null ? '' : encodeURIComponent(source_lang)) + '/' + (corpus == null ? '' : encodeURIComponent(corpus)) + '/{ngram_size}/&tokens=' + (tokens == null ? '' : encodeURIComponent(tokens)) + '&contains=' + (contains == null ? '' : encodeURIComponent(contains)) + '&punctuation=' + (punctuation == null ? '' : encodeURIComponent(punctuation)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&minFrequency=' + minFrequency + '&maxFrequency=' + maxFrequency + '&minDocumentFrequency=' + minDocumentFrequency + '&maxDocumentFrequency=' + maxDocumentFrequency + '&collate=' + (collate == null ? '' : encodeURIComponent(collate)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2785,15 +2803,21 @@ export namespace MyNS {
 		 * @param {string} grammaticalFeatures The grammatical features of the word(s) to look up entered as a list of k:v (e.g., degree_type:comparative)
 		 * @param {string} sort sort the resulting list by wordform, trueCase, lemma, lexicalCategory, frequency, normalizedFrequency. Descending order is achieved by prepending the value with the minus sign ('-'). Multiple values can be separated by commas (e.g., sort=lexicalCategory,-frequency)
 		 * @param {string} collate collate the results by wordform, trueCase, lemma, lexicalCategory. Multiple values can be separated by commas (e.g., collate=trueCase,lemma,lexicalCategory).
-		 * @param {number} minFrequency Restrict the query to entries with frequency of at least `minFrequency`
-		 * @param {number} maxFrequency Restrict the query to entries with frequency of at most `maxFrequency`
+		 * @param {string} minFrequency Restrict the query to entries with frequency of at least `minFrequency`
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} maxFrequency Restrict the query to entries with frequency of at most `maxFrequency`
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} minNormalizedFrequency Restrict the query to entries with frequency of at least `minNormalizedFrequency`
+		 *     Type: float
 		 * @param {number} maxNormalizedFrequency Restrict the query to entries with frequency of at most `maxNormalizedFrequency`
-		 * @param {number} offset pagination - results offset
-		 * @param {number} limit pagination - results limit
+		 *     Type: float
+		 * @param {string} offset pagination - results offset
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit pagination - results limit
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StatsWordResultList} Successful response.
 		 */
-		StatsFrequencyWords_source_langGetByCorpusAndWordformAndTrueCaseAndLemmaAndLexicalCategoryAndGrammaticalFeaturesAndSortAndCollateAndMinFrequencyAndMaxFrequencyAndMinNormalizedFrequencyAndMaxNormalizedFrequencyAndOffsetAndLimit(source_lang: string, corpus: string | null | undefined, wordform: string | null | undefined, trueCase: string | null | undefined, lemma: string | null | undefined, lexicalCategory: string | null | undefined, grammaticalFeatures: string | null | undefined, sort: string | null | undefined, collate: string | null | undefined, minFrequency: number | null | undefined, maxFrequency: number | null | undefined, minNormalizedFrequency: number | null | undefined, maxNormalizedFrequency: number | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<StatsWordResultList> {
+		StatsFrequencyWords_source_langGetByCorpusAndWordformAndTrueCaseAndLemmaAndLexicalCategoryAndGrammaticalFeaturesAndSortAndCollateAndMinFrequencyAndMaxFrequencyAndMinNormalizedFrequencyAndMaxNormalizedFrequencyAndOffsetAndLimit(source_lang: string, corpus: string | null | undefined, wordform: string | null | undefined, trueCase: string | null | undefined, lemma: string | null | undefined, lexicalCategory: string | null | undefined, grammaticalFeatures: string | null | undefined, sort: string | null | undefined, collate: string | null | undefined, minFrequency: string | null | undefined, maxFrequency: string | null | undefined, minNormalizedFrequency: number | null | undefined, maxNormalizedFrequency: number | null | undefined, offset: string | null | undefined, limit: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<StatsWordResultList> {
 			return this.http.get<StatsWordResultList>(this.baseUri + 'stats/frequency/words/' + (source_lang == null ? '' : encodeURIComponent(source_lang)) + '/&corpus=' + (corpus == null ? '' : encodeURIComponent(corpus)) + '&wordform=' + (wordform == null ? '' : encodeURIComponent(wordform)) + '&trueCase=' + (trueCase == null ? '' : encodeURIComponent(trueCase)) + '&lemma=' + (lemma == null ? '' : encodeURIComponent(lemma)) + '&lexicalCategory=' + (lexicalCategory == null ? '' : encodeURIComponent(lexicalCategory)) + '&grammaticalFeatures=' + (grammaticalFeatures == null ? '' : encodeURIComponent(grammaticalFeatures)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&collate=' + (collate == null ? '' : encodeURIComponent(collate)) + '&minFrequency=' + minFrequency + '&maxFrequency=' + maxFrequency + '&minNormalizedFrequency=' + minNormalizedFrequency + '&maxNormalizedFrequency=' + maxNormalizedFrequency + '&offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined });
 		}
 

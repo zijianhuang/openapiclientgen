@@ -146,15 +146,15 @@ export namespace MyNS {
 
 		/**
 		 * The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -168,15 +168,15 @@ export namespace MyNS {
 
 		/**
 		 * The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}

@@ -2680,7 +2680,10 @@ namespace MyNS
 		/// Cancels a contact with a specified contact ID.
 		/// CancelContact contact/{contactId}
 		/// </summary>
-		/// <param name="contactId">UUID of a contact.</param>
+		/// <param name="contactId">UUID of a contact.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ContactIdResponse> CancelContactAsync(string contactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2714,7 +2717,10 @@ namespace MyNS
 		/// Describes an existing contact.
 		/// DescribeContact contact/{contactId}
 		/// </summary>
-		/// <param name="contactId">UUID of a contact.</param>
+		/// <param name="contactId">UUID of a contact.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeContactResponse> DescribeContactAsync(string contactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2788,8 +2794,14 @@ namespace MyNS
 		/// Returns a list of <code>Config</code> objects.
 		/// ListConfigs config
 		/// </summary>
-		/// <param name="maxResults">Maximum number of <code>Configs</code> returned.</param>
-		/// <param name="nextToken">Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</param>
+		/// <param name="maxResults">Maximum number of <code>Configs</code> returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListConfigsResponse> ListConfigsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2863,8 +2875,14 @@ namespace MyNS
 		/// Returns a list of <code>DataflowEndpoint</code> groups.
 		/// ListDataflowEndpointGroups dataflowEndpointGroup
 		/// </summary>
-		/// <param name="maxResults">Maximum number of dataflow endpoint groups returned.</param>
-		/// <param name="nextToken">Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</param>
+		/// <param name="maxResults">Maximum number of dataflow endpoint groups returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDataflowEndpointGroupsResponse> ListDataflowEndpointGroupsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2978,8 +2996,14 @@ namespace MyNS
 		/// Returns a list of mission profiles.
 		/// ListMissionProfiles missionprofile
 		/// </summary>
-		/// <param name="maxResults">Maximum number of mission profiles returned.</param>
-		/// <param name="nextToken">Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</param>
+		/// <param name="maxResults">Maximum number of mission profiles returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMissionProfilesResponse> ListMissionProfilesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3013,7 +3037,10 @@ namespace MyNS
 		/// Deletes a <code>Config</code>.
 		/// DeleteConfig config/{configType}/{configId}
 		/// </summary>
-		/// <param name="configId">UUID of a <code>Config</code>.</param>
+		/// <param name="configId">UUID of a <code>Config</code>.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<ConfigIdResponse> DeleteConfigAsync(string configId, DeleteConfigConfigType configType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3048,7 +3075,10 @@ namespace MyNS
 		/// <p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>
 		/// GetConfig config/{configType}/{configId}
 		/// </summary>
-		/// <param name="configId">UUID of a <code>Config</code>.</param>
+		/// <param name="configId">UUID of a <code>Config</code>.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<GetConfigResponse> GetConfigAsync(string configId, GetConfigConfigType configType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3083,7 +3113,10 @@ namespace MyNS
 		/// <p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
 		/// UpdateConfig config/{configType}/{configId}
 		/// </summary>
-		/// <param name="configId">UUID of a <code>Config</code>.</param>
+		/// <param name="configId">UUID of a <code>Config</code>.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<ConfigIdResponse> UpdateConfigAsync(string configId, UpdateConfigConfigType configType, UpdateConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3125,7 +3158,10 @@ namespace MyNS
 		/// Deletes a dataflow endpoint group.
 		/// DeleteDataflowEndpointGroup dataflowEndpointGroup/{dataflowEndpointGroupId}
 		/// </summary>
-		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.</param>
+		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DataflowEndpointGroupIdResponse> DeleteDataflowEndpointGroupAsync(string dataflowEndpointGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3159,7 +3195,10 @@ namespace MyNS
 		/// Returns the dataflow endpoint group.
 		/// GetDataflowEndpointGroup dataflowEndpointGroup/{dataflowEndpointGroupId}
 		/// </summary>
-		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.</param>
+		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataflowEndpointGroupResponse> GetDataflowEndpointGroupAsync(string dataflowEndpointGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3193,7 +3232,10 @@ namespace MyNS
 		/// Deletes an ephemeris
 		/// DeleteEphemeris ephemeris/{ephemerisId}
 		/// </summary>
-		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.</param>
+		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EphemerisIdResponse> DeleteEphemerisAsync(string ephemerisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3227,7 +3269,10 @@ namespace MyNS
 		/// Describes an existing ephemeris.
 		/// DescribeEphemeris ephemeris/{ephemerisId}
 		/// </summary>
-		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.</param>
+		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeEphemerisResponse> DescribeEphemerisAsync(string ephemerisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3261,7 +3306,10 @@ namespace MyNS
 		/// Updates an existing ephemeris
 		/// UpdateEphemeris ephemeris/{ephemerisId}
 		/// </summary>
-		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.</param>
+		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EphemerisIdResponse> UpdateEphemerisAsync(string ephemerisId, UpdateEphemerisPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3302,7 +3350,10 @@ namespace MyNS
 		/// Deletes a mission profile.
 		/// DeleteMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
-		/// <param name="missionProfileId">UUID of a mission profile.</param>
+		/// <param name="missionProfileId">UUID of a mission profile.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<MissionProfileIdResponse> DeleteMissionProfileAsync(string missionProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3336,7 +3387,10 @@ namespace MyNS
 		/// Returns a mission profile.
 		/// GetMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
-		/// <param name="missionProfileId">UUID of a mission profile.</param>
+		/// <param name="missionProfileId">UUID of a mission profile.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMissionProfileResponse> GetMissionProfileAsync(string missionProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3370,7 +3424,10 @@ namespace MyNS
 		/// <p>Updates a mission profile.</p> <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
 		/// UpdateMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
-		/// <param name="missionProfileId">UUID of a mission profile.</param>
+		/// <param name="missionProfileId">UUID of a mission profile.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<MissionProfileIdResponse> UpdateMissionProfileAsync(string missionProfileId, UpdateMissionProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3411,7 +3468,10 @@ namespace MyNS
 		/// <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>
 		/// GetAgentConfiguration agent/{agentId}/configuration
 		/// </summary>
-		/// <param name="agentId">UUID of agent to get configuration information for.</param>
+		/// <param name="agentId">UUID of agent to get configuration information for.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(string agentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3485,7 +3545,10 @@ namespace MyNS
 		/// Returns a satellite.
 		/// GetSatellite satellite/{satelliteId}
 		/// </summary>
-		/// <param name="satelliteId">UUID of a satellite.</param>
+		/// <param name="satelliteId">UUID of a satellite.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSatelliteResponse> GetSatelliteAsync(string satelliteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3561,8 +3624,14 @@ namespace MyNS
 		/// List existing ephemerides.
 		/// ListEphemerides ephemerides
 		/// </summary>
-		/// <param name="maxResults">Maximum number of ephemerides to return.</param>
-		/// <param name="nextToken">Pagination token.</param>
+		/// <param name="maxResults">Maximum number of ephemerides to return.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Pagination token.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEphemeridesResponse> ListEphemeridesAsync(int maxResults, string nextToken, ListEphemeridesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3603,9 +3672,18 @@ namespace MyNS
 		/// Returns a list of ground stations.
 		/// ListGroundStations groundstation
 		/// </summary>
-		/// <param name="maxResults">Maximum number of ground stations returned.</param>
-		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of ground stations.</param>
-		/// <param name="satelliteId">Satellite ID to retrieve on-boarded ground stations.</param>
+		/// <param name="maxResults">Maximum number of ground stations returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of ground stations.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
+		/// <param name="satelliteId">Satellite ID to retrieve on-boarded ground stations.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListGroundStationsResponse> ListGroundStationsAsync(int maxResults, string nextToken, string satelliteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3639,8 +3717,14 @@ namespace MyNS
 		/// Returns a list of satellites.
 		/// ListSatellites satellite
 		/// </summary>
-		/// <param name="maxResults">Maximum number of satellites returned.</param>
-		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of satellites.</param>
+		/// <param name="maxResults">Maximum number of satellites returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of satellites.
+		/// Max length: 1000
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSatellitesResponse> ListSatellitesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3674,7 +3758,10 @@ namespace MyNS
 		/// Returns a list of tags for a specified resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">ARN of a resource.</param>
+		/// <param name="resourceArn">ARN of a resource.
+		/// Max length: 1024
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3708,7 +3795,10 @@ namespace MyNS
 		/// Assigns a tag to a resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">ARN of a resource tag.</param>
+		/// <param name="resourceArn">ARN of a resource tag.
+		/// Max length: 1024
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3829,8 +3919,14 @@ namespace MyNS
 		/// Deassigns a resource tag.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">ARN of a resource.</param>
-		/// <param name="tagKeys">Keys of a resource tag.</param>
+		/// <param name="resourceArn">ARN of a resource.
+		/// Max length: 1024
+		/// Min length: 5
+		// </param>
+		/// <param name="tagKeys">Keys of a resource tag.
+		/// Minimum items: 0
+		/// Maximum items: 500
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3864,7 +3960,10 @@ namespace MyNS
 		/// <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>
 		/// UpdateAgentStatus agent/{agentId}
 		/// </summary>
-		/// <param name="agentId">UUID of agent to update.</param>
+		/// <param name="agentId">UUID of agent to update.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(string agentId, UpdateAgentStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

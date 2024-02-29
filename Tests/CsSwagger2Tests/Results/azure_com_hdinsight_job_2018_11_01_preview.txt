@@ -593,7 +593,9 @@ namespace MyNS
 		/// Job_Kill templeton/v1/jobs/{jobId}
 		/// </summary>
 		/// <param name="user_name">The user name used for running job.</param>
-		/// <param name="jobId">The id of the job.</param>
+		/// <param name="jobId">The id of the job.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK response definition.</returns>
 		public async Task<JobDetailRootJsonObject> Job_KillAsync(string user_name, string jobId)
 		{
@@ -624,7 +626,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="user_name">The user name used for running job.</param>
 		/// <param name="jobid">JobId from where to list jobs.</param>
-		/// <param name="numrecords">Number of jobs to fetch.</param>
+		/// <param name="numrecords">Number of jobs to fetch.
+		/// Minimum: 1
+		// </param>
 		/// <param name="showall">If showall is set to 'true', the request will return all jobs the user has permission to view, not only the jobs belonging to the user.</param>
 		/// <param name="fields">If fields set to '*', the request will return full details of the job. Currently the value can only be '*'.</param>
 		/// <returns>OK response definition.</returns>

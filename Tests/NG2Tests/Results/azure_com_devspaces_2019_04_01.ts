@@ -530,6 +530,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @return {ControllerList} The request was successful; response contains the list of Azure Dev Spaces Controllers in the resource group.
 		 */
 		Controllers_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<ControllerList> {
@@ -543,7 +544,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the resource.
+		 *     Min length: 1    Max length: 63
 		 * @return {Controller} The request was successful; response contains the Azure Dev Spaces Controller.
 		 */
 		Controllers_Get(api_version: string, subscriptionId: string, resourceGroupName: string, name: string): Observable<Controller> {
@@ -557,7 +560,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the resource.
+		 *     Min length: 1    Max length: 63
 		 * @param {Controller} requestBody Controller create parameters.
 		 * @return {Controller} The request was successful; response contains the created Azure Dev Spaces Controller .
 		 */
@@ -572,7 +577,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the resource.
+		 *     Min length: 1    Max length: 63
 		 * @return {void} The request was successful; the Azure Dev Spaces Controller is deleted.
 		 */
 		Controllers_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, name: string): Observable<HttpResponse<string>> {
@@ -586,7 +593,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the resource.
+		 *     Min length: 1    Max length: 63
 		 * @param {ControllerUpdateParameters} requestBody Parameters for updating the Azure Dev Spaces Controller.
 		 * @return {Controller} The request was successful; response contains the updated Azure Dev Spaces Controller .
 		 */
@@ -601,7 +610,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the resource.
+		 *     Min length: 1    Max length: 63
 		 * @param {ListConnectionDetailsParameters} requestBody Parameters for listing connection details of Azure Dev Spaces Controller.
 		 * @return {ControllerConnectionDetailsList} The request was successful; response contains the list of connection details for the Azure Dev Spaces Controller .
 		 */
@@ -615,6 +626,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} location Location of the container host.
 		 * @return {ContainerHostMapping} The request was successful; response contains the container host mapping.
 		 */

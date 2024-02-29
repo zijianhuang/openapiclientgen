@@ -2706,8 +2706,14 @@ namespace MyNS
 		/// Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority.
 		/// BatchUpdateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateRuleResponse> BatchUpdateRuleAsync(string listenerIdentifier, string serviceIdentifier, BatchUpdateRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2748,8 +2754,14 @@ namespace MyNS
 		/// Creates a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		/// CreateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		public async Task CreateRuleAsync(string listenerIdentifier, string serviceIdentifier, CreateRulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "services/"+ (serviceIdentifier==null? "" : System.Uri.EscapeDataString(serviceIdentifier))+"/listeners/"+ (listenerIdentifier==null? "" : System.Uri.EscapeDataString(listenerIdentifier))+"/rules";
@@ -2783,10 +2795,22 @@ namespace MyNS
 		/// Lists the rules for the listener.
 		/// ListRules services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRulesResponse> ListRulesAsync(string listenerIdentifier, int maxResults, string nextToken, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2853,7 +2877,10 @@ namespace MyNS
 		/// Creates a listener for a service. Before you start using your Amazon VPC Lattice service, you must add one or more listeners. A listener is a process that checks for connection requests to your services. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html">Listeners</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		/// CreateListener services/{serviceIdentifier}/listeners
 		/// </summary>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		public async Task CreateListenerAsync(string serviceIdentifier, CreateListenerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "services/"+ (serviceIdentifier==null? "" : System.Uri.EscapeDataString(serviceIdentifier))+"/listeners";
@@ -2887,9 +2914,18 @@ namespace MyNS
 		/// Lists the listeners for the specified service.
 		/// ListListeners services/{serviceIdentifier}/listeners
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListListenersResponse> ListListenersAsync(int maxResults, string nextToken, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2956,8 +2992,14 @@ namespace MyNS
 		/// Lists the services owned by the caller account or shared with the caller account.
 		/// ListServices services
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServicesResponse> ListServicesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3024,8 +3066,14 @@ namespace MyNS
 		/// Lists the service networks owned by the caller account or shared with the caller account. Also includes the account ID in the ARN to show which account owns the service network.
 		/// ListServiceNetworks servicenetworks
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworksResponse> ListServiceNetworksAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3099,10 +3147,22 @@ namespace MyNS
 		/// <p>Lists the associations between the service network and the service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p> <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association will include the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
 		/// ListServiceNetworkServiceAssociations servicenetworkserviceassociations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
-		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
+		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
+		/// Max length: 2048
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworkServiceAssociationsResponse> ListServiceNetworkServiceAssociationsAsync(int maxResults, string nextToken, string serviceIdentifier, string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3176,10 +3236,22 @@ namespace MyNS
 		/// Lists the service network and VPC associations. You can filter the list either by VPC or service network. You must provide either the service network identifier or the VPC identifier.
 		/// ListServiceNetworkVpcAssociations servicenetworkvpcassociations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.</param>
-		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the VPC.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
+		/// Max length: 2048
+		/// Min length: 3
+		// </param>
+		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the VPC.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworkVpcAssociationsResponse> ListServiceNetworkVpcAssociationsAsync(int maxResults, string nextToken, string serviceNetworkIdentifier, string vpcIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3246,10 +3318,19 @@ namespace MyNS
 		/// Lists your target groups. You can narrow your search by using the filters below in your request.
 		/// ListTargetGroups targetgroups
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="targetGroupType">The target group type.</param>
-		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTargetGroupsResponse> ListTargetGroupsAsync(int maxResults, string nextToken, TargetGroupType targetGroupType, string vpcIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3283,7 +3364,10 @@ namespace MyNS
 		/// Deletes the specified access log subscription.
 		/// DeleteAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
-		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.</param>
+		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		public async Task DeleteAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "accesslogsubscriptions/"+ (accessLogSubscriptionIdentifier==null? "" : System.Uri.EscapeDataString(accessLogSubscriptionIdentifier));
@@ -3310,7 +3394,10 @@ namespace MyNS
 		/// Retrieves information about the specified access log subscription.
 		/// GetAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
-		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.</param>
+		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAccessLogSubscriptionResponse> GetAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3344,7 +3431,10 @@ namespace MyNS
 		/// Updates the specified access log subscription.
 		/// UpdateAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
-		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.</param>
+		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAccessLogSubscriptionResponse> UpdateAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, UpdateAccessLogSubscriptionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3385,7 +3475,10 @@ namespace MyNS
 		/// Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.
 		/// DeleteAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
-		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the resource.
+		/// Max length: 200
+		/// Min length: 17
+		// </param>
 		public async Task DeleteAuthPolicyAsync(string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "authpolicy/"+ (resourceIdentifier==null? "" : System.Uri.EscapeDataString(resourceIdentifier));
@@ -3412,7 +3505,10 @@ namespace MyNS
 		/// Retrieves information about the auth policy for the specified service or service network.
 		/// GetAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
-		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.</param>
+		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.
+		/// Max length: 200
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAuthPolicyResponse> GetAuthPolicyAsync(string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3446,7 +3542,10 @@ namespace MyNS
 		/// Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.
 		/// PutAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
-		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</param>
+		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
+		/// Max length: 200
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAuthPolicyResponse> PutAuthPolicyAsync(string resourceIdentifier, PutAuthPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3487,8 +3586,14 @@ namespace MyNS
 		/// Deletes the specified listener.
 		/// DeleteListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		public async Task DeleteListenerAsync(string listenerIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "services/"+ (serviceIdentifier==null? "" : System.Uri.EscapeDataString(serviceIdentifier))+"/listeners/"+ (listenerIdentifier==null? "" : System.Uri.EscapeDataString(listenerIdentifier));
@@ -3515,8 +3620,14 @@ namespace MyNS
 		/// Retrieves information about the specified listener for the specified service.
 		/// GetListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetListenerResponse> GetListenerAsync(string listenerIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3550,8 +3661,14 @@ namespace MyNS
 		/// Updates the specified listener for the specified service.
 		/// UpdateListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateListenerResponse> UpdateListenerAsync(string listenerIdentifier, string serviceIdentifier, UpdateListenerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3592,7 +3709,10 @@ namespace MyNS
 		/// Deletes the specified resource policy.
 		/// DeleteResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 200
+		/// Min length: 20
+		// </param>
 		public async Task DeleteResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "resourcepolicy/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -3619,7 +3739,10 @@ namespace MyNS
 		/// Retrieves information about the resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.
 		/// GetResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the service network or service.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the service network or service.
+		/// Max length: 200
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3653,7 +3776,10 @@ namespace MyNS
 		/// Attaches a resource-based permission policy to a service or service network. The policy must contain the same actions and condition statements as the Amazon Web Services Resource Access Manager permission for sharing services and service networks.
 		/// PutResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</param>
+		/// <param name="resourceArn">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
+		/// Max length: 200
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutResourcePolicyResponse> PutResourcePolicyAsync(string resourceArn, PutResourcePolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3694,9 +3820,18 @@ namespace MyNS
 		/// <p>Deletes a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. You can delete additional listener rules, but you cannot delete the default rule.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
 		/// DeleteRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		public async Task DeleteRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "services/"+ (serviceIdentifier==null? "" : System.Uri.EscapeDataString(serviceIdentifier))+"/listeners/"+ (listenerIdentifier==null? "" : System.Uri.EscapeDataString(listenerIdentifier))+"/rules/"+ (ruleIdentifier==null? "" : System.Uri.EscapeDataString(ruleIdentifier));
@@ -3723,9 +3858,18 @@ namespace MyNS
 		/// Retrieves information about listener rules. You can also retrieve information about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		/// GetRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the listener rule.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the listener rule.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRuleResponse> GetRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3759,9 +3903,18 @@ namespace MyNS
 		/// Updates a rule for the listener. You can't modify a default listener rule. To modify a default listener rule, use <code>UpdateListener</code>.
 		/// UpdateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
-		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.</param>
-		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.</param>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRuleResponse> UpdateRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, UpdateRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3802,7 +3955,10 @@ namespace MyNS
 		/// Deletes a service. A service can't be deleted if it's associated with a service network. If you delete a service, all resources related to the service, such as the resource policy, auth policy, listeners, listener rules, and access log subscriptions, are also deleted. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html#delete-service">Delete a service</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		/// DeleteService services/{serviceIdentifier}
 		/// </summary>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceResponse> DeleteServiceAsync(string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3836,7 +3992,10 @@ namespace MyNS
 		/// Retrieves information about the specified service.
 		/// GetService services/{serviceIdentifier}
 		/// </summary>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceResponse> GetServiceAsync(string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3870,7 +4029,10 @@ namespace MyNS
 		/// Updates the specified service.
 		/// UpdateService services/{serviceIdentifier}
 		/// </summary>
-		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.</param>
+		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceResponse> UpdateServiceAsync(string serviceIdentifier, UpdateServicePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3911,7 +4073,10 @@ namespace MyNS
 		/// Deletes a service network. You can only delete the service network if there is no service or VPC associated with it. If you delete a service network, all resources related to the service network, such as the resource policy, auth policy, and access log subscriptions, are also deleted. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#delete-service-network">Delete a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		/// DeleteServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkIdentifier">The Amazon Resource Name (ARN) or ID of the service network.</param>
+		/// <param name="serviceNetworkIdentifier">The Amazon Resource Name (ARN) or ID of the service network.
+		/// Max length: 2048
+		/// Min length: 3
+		// </param>
 		public async Task DeleteServiceNetworkAsync(string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "servicenetworks/"+ (serviceNetworkIdentifier==null? "" : System.Uri.EscapeDataString(serviceNetworkIdentifier));
@@ -3938,7 +4103,10 @@ namespace MyNS
 		/// Retrieves information about the specified service network.
 		/// GetServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.</param>
+		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
+		/// Max length: 2048
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkResponse> GetServiceNetworkAsync(string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3972,7 +4140,10 @@ namespace MyNS
 		/// Updates the specified service network.
 		/// UpdateServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.</param>
+		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
+		/// Max length: 2048
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceNetworkResponse> UpdateServiceNetworkAsync(string serviceNetworkIdentifier, UpdateServiceNetworkPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4013,7 +4184,10 @@ namespace MyNS
 		/// Deletes the association between a specified service and the specific service network. This request will fail if an association is still in progress.
 		/// DeleteServiceNetworkServiceAssociation servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.</param>
+		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceNetworkServiceAssociationResponse> DeleteServiceNetworkServiceAssociationAsync(string serviceNetworkServiceAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4047,7 +4221,10 @@ namespace MyNS
 		/// Retrieves information about the specified association between a service network and a service.
 		/// GetServiceNetworkServiceAssociation servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.</param>
+		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkServiceAssociationResponse> GetServiceNetworkServiceAssociationAsync(string serviceNetworkServiceAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4081,7 +4258,10 @@ namespace MyNS
 		/// Disassociates the VPC from the service network. You can't disassociate the VPC if there is a create or update association in progress.
 		/// DeleteServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.</param>
+		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceNetworkVpcAssociationResponse> DeleteServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4115,7 +4295,10 @@ namespace MyNS
 		/// Retrieves information about the association between a service network and a VPC.
 		/// GetServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.</param>
+		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkVpcAssociationResponse> GetServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4149,7 +4332,10 @@ namespace MyNS
 		/// Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.
 		/// UpdateServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
-		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.</param>
+		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceNetworkVpcAssociationResponse> UpdateServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, UpdateServiceNetworkVpcAssociationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4190,7 +4376,10 @@ namespace MyNS
 		/// Deletes a target group. You can't delete a target group if it is used in a listener rule or if the target group creation is in progress.
 		/// DeleteTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTargetGroupResponse> DeleteTargetGroupAsync(string targetGroupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4224,7 +4413,10 @@ namespace MyNS
 		/// Retrieves information about the specified target group.
 		/// GetTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTargetGroupResponse> GetTargetGroupAsync(string targetGroupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4258,7 +4450,10 @@ namespace MyNS
 		/// Updates the specified target group.
 		/// UpdateTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTargetGroupResponse> UpdateTargetGroupAsync(string targetGroupIdentifier, UpdateTargetGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4299,7 +4494,10 @@ namespace MyNS
 		/// Deregisters the specified targets from the specified target group.
 		/// DeregisterTargets targetgroups/{targetGroupIdentifier}/deregistertargets
 		/// </summary>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterTargetsResponse> DeregisterTargetsAsync(string targetGroupIdentifier, DeregisterTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4340,9 +4538,18 @@ namespace MyNS
 		/// Lists all access log subscriptions for the specified service network or service.
 		/// ListAccessLogSubscriptions accesslogsubscriptions#resourceIdentifier
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.
+		/// Max length: 200
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAccessLogSubscriptionsResponse> ListAccessLogSubscriptionsAsync(int maxResults, string nextToken, string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4376,7 +4583,10 @@ namespace MyNS
 		/// Lists the tags for the specified resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1224
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4410,7 +4620,10 @@ namespace MyNS
 		/// Adds the specified tags to the specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1224
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4451,9 +4664,18 @@ namespace MyNS
 		/// Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also ﬁlter the results by target.
 		/// ListTargets targetgroups/{targetGroupIdentifier}/listtargets
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return.</param>
-		/// <param name="nextToken">A pagination token for the next page of results.</param>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTargetsResponse> ListTargetsAsync(int maxResults, string nextToken, string targetGroupIdentifier, ListTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4494,7 +4716,10 @@ namespace MyNS
 		/// Registers the targets with the target group. If it's a Lambda target, you can only have one target in a target group.
 		/// RegisterTargets targetgroups/{targetGroupIdentifier}/registertargets
 		/// </summary>
-		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.</param>
+		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
+		/// Max length: 2048
+		/// Min length: 17
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterTargetsResponse> RegisterTargetsAsync(string targetGroupIdentifier, RegisterTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4535,8 +4760,14 @@ namespace MyNS
 		/// Removes the specified tags from the specified resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
-		/// <param name="tagKeys">The tag keys of the tags to remove.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1224
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">The tag keys of the tags to remove.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

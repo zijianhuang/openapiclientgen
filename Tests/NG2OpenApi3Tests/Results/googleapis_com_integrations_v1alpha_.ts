@@ -150,6 +150,8 @@ export namespace MyNS {
 	export interface EnterpriseCrmEventbusProtoValueType {
 		booleanValue?: boolean | null;
 		doubleArray?: EnterpriseCrmEventbusProtoDoubleArray;
+
+		/** Type: double */
 		doubleValue?: number | null;
 		intArray?: EnterpriseCrmEventbusProtoIntArray;
 		intValue?: string | null;
@@ -161,6 +163,8 @@ export namespace MyNS {
 	/** Used for define type for values. Currently supported value types include int, string, double, array, and any proto message. */
 	export interface EnterpriseCrmEventbusProtoValueTypeFormProperties {
 		booleanValue: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		doubleValue: FormControl<number | null | undefined>,
 		intValue: FormControl<string | null | undefined>,
 		protoValue: FormControl<{[id: string]: any } | null | undefined>,
@@ -289,10 +293,16 @@ export namespace MyNS {
 		/** To which type(s) of logs the limits apply. */
 		logType?: Array<string>;
 
-		/** maximum array size. If the array exceds this size, the field (list) is truncated. */
+		/**
+		 * maximum array size. If the array exceds this size, the field (list) is truncated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxArraySize?: number | null;
 
-		/** maximum string length. If the field exceeds this amount the field is shortened. */
+		/**
+		 * maximum string length. If the field exceeds this amount the field is shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxStringLength?: number | null;
 		shortenerType?: EnterpriseCrmLoggingGwsFieldLimitsShortenerType | null;
 	}
@@ -301,10 +311,16 @@ export namespace MyNS {
 	export interface EnterpriseCrmLoggingGwsFieldLimitsFormProperties {
 		logAction: FormControl<EnterpriseCrmLoggingGwsFieldLimitsLogAction | null | undefined>,
 
-		/** maximum array size. If the array exceds this size, the field (list) is truncated. */
+		/**
+		 * maximum array size. If the array exceds this size, the field (list) is truncated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxArraySize: FormControl<number | null | undefined>,
 
-		/** maximum string length. If the field exceeds this amount the field is shortened. */
+		/**
+		 * maximum string length. If the field exceeds this amount the field is shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxStringLength: FormControl<number | null | undefined>,
 		shortenerType: FormControl<EnterpriseCrmLoggingGwsFieldLimitsShortenerType | null | undefined>,
 	}
@@ -348,12 +364,16 @@ export namespace MyNS {
 	/** The threshold value of the metric, above or below which the alert should be triggered. See EventAlertConfig or TaskAlertConfig for the different alert metric types in each case. For the *RATE metrics, one or both of these fields may be set. Zero is the default value and can be left at that. For *PERCENTILE_DURATION metrics, one or both of these fields may be set, and also, the duration threshold value should be specified in the threshold_duration_ms member below. For *AVERAGE_DURATION metrics, these fields should not be set at all. A different member, threshold_duration_ms, must be set in the EventAlertConfig or the TaskAlertConfig. */
 	export interface EnterpriseCrmEventbusProtoBaseAlertConfigThresholdValue {
 		absolute?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentage?: number | null;
 	}
 
 	/** The threshold value of the metric, above or below which the alert should be triggered. See EventAlertConfig or TaskAlertConfig for the different alert metric types in each case. For the *RATE metrics, one or both of these fields may be set. Zero is the default value and can be left at that. For *PERCENTILE_DURATION metrics, one or both of these fields may be set, and also, the duration threshold value should be specified in the threshold_duration_ms member below. For *AVERAGE_DURATION metrics, these fields should not be set at all. A different member, threshold_duration_ms, must be set in the EventAlertConfig or the TaskAlertConfig. */
 	export interface EnterpriseCrmEventbusProtoBaseAlertConfigThresholdValueFormProperties {
 		absolute: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoBaseAlertConfigThresholdValueFormGroup() {
@@ -615,6 +635,8 @@ export namespace MyNS {
 		booleanArray?: EnterpriseCrmEventbusProtoBooleanParameterArray;
 		booleanValue?: boolean | null;
 		doubleArray?: EnterpriseCrmEventbusProtoDoubleParameterArray;
+
+		/** Type: double */
 		doubleValue?: number | null;
 		intArray?: EnterpriseCrmEventbusProtoIntParameterArray;
 		intValue?: string | null;
@@ -628,6 +650,8 @@ export namespace MyNS {
 	/** LINT.IfChange To support various types of parameter values. Next available id: 14 */
 	export interface EnterpriseCrmEventbusProtoParameterValueTypeFormProperties {
 		booleanValue: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		doubleValue: FormControl<number | null | undefined>,
 		intValue: FormControl<string | null | undefined>,
 		protoValue: FormControl<{[id: string]: any } | null | undefined>,
@@ -983,13 +1007,21 @@ export namespace MyNS {
 
 	/** Represents two-dimensional positions. */
 	export interface EnterpriseCrmEventbusProtoCoordinate {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y?: number | null;
 	}
 
 	/** Represents two-dimensional positions. */
 	export interface EnterpriseCrmEventbusProtoCoordinateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoCoordinateFormGroup() {
@@ -1156,7 +1188,10 @@ export namespace MyNS {
 		/** The severity of the error: ERROR|WARN|INFO. */
 		severity?: EnterpriseCrmEventbusProtoErrorDetailSeverity | null;
 
-		/** The task try-number, in which, the error occurred. If zero, the error happened at the event level. */
+		/**
+		 * The task try-number, in which, the error occurred. If zero, the error happened at the event level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskNumber?: number | null;
 	}
 
@@ -1169,7 +1204,10 @@ export namespace MyNS {
 		/** The severity of the error: ERROR|WARN|INFO. */
 		severity: FormControl<EnterpriseCrmEventbusProtoErrorDetailSeverity | null | undefined>,
 
-		/** The task try-number, in which, the error occurred. If zero, the error happened at the event level. */
+		/**
+		 * The task try-number, in which, the error occurred. If zero, the error happened at the event level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoErrorDetailFormGroup() {
@@ -1231,7 +1269,10 @@ export namespace MyNS {
 		eventExecutionSnapshot?: Array<EnterpriseCrmEventbusProtoEventExecutionSnapshot>;
 		eventExecutionState?: EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState | null;
 
-		/** Indicates the number of times the execution has restarted from the beginning. */
+		/**
+		 * Indicates the number of times the execution has restarted from the beginning.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventRetriesFromBeginningCount?: number | null;
 
 		/** The log file path (aka. cns address) for this event. */
@@ -1243,7 +1284,10 @@ export namespace MyNS {
 		/** Next scheduled execution time in case the execution status was RETRY_ON_HOLD. */
 		nextExecutionTime?: string | null;
 
-		/** Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/ */
+		/**
+		 * Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ryeLockUnheldCount?: number | null;
 	}
 
@@ -1251,7 +1295,10 @@ export namespace MyNS {
 	export interface EnterpriseCrmEventbusProtoEventExecutionDetailsFormProperties {
 		eventExecutionState: FormControl<EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState | null | undefined>,
 
-		/** Indicates the number of times the execution has restarted from the beginning. */
+		/**
+		 * Indicates the number of times the execution has restarted from the beginning.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventRetriesFromBeginningCount: FormControl<number | null | undefined>,
 
 		/** The log file path (aka. cns address) for this event. */
@@ -1263,7 +1310,10 @@ export namespace MyNS {
 		/** Next scheduled execution time in case the execution status was RETRY_ON_HOLD. */
 		nextExecutionTime: FormControl<string | null | undefined>,
 
-		/** Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/ */
+		/**
+		 * Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ryeLockUnheldCount: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoEventExecutionDetailsFormGroup() {
@@ -1373,10 +1423,16 @@ export namespace MyNS {
 
 	export interface EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata {
 
-		/** the event attempt number this snapshot belongs to. */
+		/**
+		 * the event attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventAttemptNum?: number | null;
 
-		/** the task attempt number this snapshot belongs to. Could be empty. */
+		/**
+		 * the task attempt number this snapshot belongs to. Could be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskAttemptNum?: number | null;
 
 		/** the task label associated with this snapshot. Could be empty. */
@@ -1390,10 +1446,16 @@ export namespace MyNS {
 	}
 	export interface EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadataFormProperties {
 
-		/** the event attempt number this snapshot belongs to. */
+		/**
+		 * the event attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventAttemptNum: FormControl<number | null | undefined>,
 
-		/** the task attempt number this snapshot belongs to. Could be empty. */
+		/**
+		 * the task attempt number this snapshot belongs to. Could be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskAttemptNum: FormControl<number | null | undefined>,
 
 		/** the task label associated with this snapshot. Could be empty. */
@@ -1548,7 +1610,10 @@ export namespace MyNS {
 		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the initial interval for backoff. */
 		intervalInSeconds?: string | null;
 
-		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the number of times the task will be retried if failed. */
+		/**
+		 * Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the number of times the task will be retried if failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumRetries?: number | null;
 
 		/** Defines what happens to the task upon failure. */
@@ -1561,7 +1626,10 @@ export namespace MyNS {
 		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the initial interval for backoff. */
 		intervalInSeconds: FormControl<string | null | undefined>,
 
-		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the number of times the task will be retried if failed. */
+		/**
+		 * Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_WORKFLOW_WITH_BACKOFF. Defines the number of times the task will be retried if failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumRetries: FormControl<number | null | undefined>,
 
 		/** Defines what happens to the task upon failure. */
@@ -1943,20 +2011,32 @@ export namespace MyNS {
 	/** Range used to validate doubles and floats. */
 	export interface EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRange {
 
-		/** The inclusive maximum of the acceptable range. */
+		/**
+		 * The inclusive maximum of the acceptable range.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** The inclusive minimum of the acceptable range. */
+		/**
+		 * The inclusive minimum of the acceptable range.
+		 * Type: double
+		 */
 		min?: number | null;
 	}
 
 	/** Range used to validate doubles and floats. */
 	export interface EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRangeFormProperties {
 
-		/** The inclusive maximum of the acceptable range. */
+		/**
+		 * The inclusive maximum of the acceptable range.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** The inclusive minimum of the acceptable range. */
+		/**
+		 * The inclusive minimum of the acceptable range.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRangeFormGroup() {
@@ -2210,24 +2290,36 @@ export namespace MyNS {
 
 	export interface EnterpriseCrmEventbusProtoSuspensionExpiration {
 
-		/** Milliseconds after which the suspension expires, if no action taken. */
+		/**
+		 * Milliseconds after which the suspension expires, if no action taken.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireAfterMs?: number | null;
 
 		/** Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED is the default behavior. */
 		liftWhenExpired?: boolean | null;
 
-		/** Milliseconds after which the previous suspension action reminder, if any, is sent using the selected notification option, for a suspension which is still PENDING_UNSPECIFIED. */
+		/**
+		 * Milliseconds after which the previous suspension action reminder, if any, is sent using the selected notification option, for a suspension which is still PENDING_UNSPECIFIED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remindAfterMs?: number | null;
 	}
 	export interface EnterpriseCrmEventbusProtoSuspensionExpirationFormProperties {
 
-		/** Milliseconds after which the suspension expires, if no action taken. */
+		/**
+		 * Milliseconds after which the suspension expires, if no action taken.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireAfterMs: FormControl<number | null | undefined>,
 
 		/** Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED is the default behavior. */
 		liftWhenExpired: FormControl<boolean | null | undefined>,
 
-		/** Milliseconds after which the previous suspension action reminder, if any, is sent using the selected notification option, for a suspension which is still PENDING_UNSPECIFIED. */
+		/**
+		 * Milliseconds after which the previous suspension action reminder, if any, is sent using the selected notification option, for a suspension which is still PENDING_UNSPECIFIED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remindAfterMs: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusProtoSuspensionExpirationFormGroup() {
@@ -2374,7 +2466,10 @@ export namespace MyNS {
 		errorEnumList?: EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList;
 		metricType?: EnterpriseCrmEventbusProtoTaskAlertConfigMetricType | null;
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAggregationPeriods?: number | null;
 
 		/** Only count final task attempts, not retries. */
@@ -2412,7 +2507,10 @@ export namespace MyNS {
 		durationThresholdMs: FormControl<string | null | undefined>,
 		metricType: FormControl<EnterpriseCrmEventbusProtoTaskAlertConfigMetricType | null | undefined>,
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAggregationPeriods: FormControl<number | null | undefined>,
 
 		/** Only count final task attempts, not retries. */
@@ -2472,7 +2570,10 @@ export namespace MyNS {
 		docMarkdown?: string | null;
 		externalCategory?: EnterpriseCrmEventbusProtoTaskMetadataExternalCategory | null;
 
-		/** Sequence with which the task in specific category to be displayed in task discovery panel for external users. */
+		/**
+		 * Sequence with which the task in specific category to be displayed in task discovery panel for external users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		externalCategorySequence?: number | null;
 
 		/** External-facing documention embedded in the RHP for this task. */
@@ -2533,7 +2634,10 @@ export namespace MyNS {
 		docMarkdown: FormControl<string | null | undefined>,
 		externalCategory: FormControl<EnterpriseCrmEventbusProtoTaskMetadataExternalCategory | null | undefined>,
 
-		/** Sequence with which the task in specific category to be displayed in task discovery panel for external users. */
+		/**
+		 * Sequence with which the task in specific category to be displayed in task discovery panel for external users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		externalCategorySequence: FormControl<number | null | undefined>,
 
 		/** External-facing documention embedded in the RHP for this task. */
@@ -2763,7 +2867,10 @@ export namespace MyNS {
 		errorEnumList?: EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList;
 		metricType?: EnterpriseCrmEventbusProtoWorkflowAlertConfigMetricType | null;
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAggregationPeriods?: number | null;
 
 		/** For either events or tasks, depending on the type of alert, count only final attempts, not retries. */
@@ -2801,7 +2908,10 @@ export namespace MyNS {
 		durationThresholdMs: FormControl<string | null | undefined>,
 		metricType: FormControl<EnterpriseCrmEventbusProtoWorkflowAlertConfigMetricType | null | undefined>,
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAggregationPeriods: FormControl<number | null | undefined>,
 
 		/** For either events or tasks, depending on the type of alert, count only final attempts, not retries. */
@@ -2836,32 +2946,56 @@ export namespace MyNS {
 	export interface EnterpriseCrmEventbusStats {
 		dimensions?: EnterpriseCrmEventbusStatsDimensions;
 
-		/** Average duration in seconds. */
+		/**
+		 * Average duration in seconds.
+		 * Type: double
+		 */
 		durationInSeconds?: number | null;
 
-		/** Average error rate. */
+		/**
+		 * Average error rate.
+		 * Type: double
+		 */
 		errorRate?: number | null;
 
-		/** Queries per second. */
+		/**
+		 * Queries per second.
+		 * Type: double
+		 */
 		qps?: number | null;
 
-		/** Average warning rate. */
+		/**
+		 * Average warning rate.
+		 * Type: double
+		 */
 		warningRate?: number | null;
 	}
 
 	/** Stats for the requested dimensions: QPS, duration, and error/warning rate */
 	export interface EnterpriseCrmEventbusStatsFormProperties {
 
-		/** Average duration in seconds. */
+		/**
+		 * Average duration in seconds.
+		 * Type: double
+		 */
 		durationInSeconds: FormControl<number | null | undefined>,
 
-		/** Average error rate. */
+		/**
+		 * Average error rate.
+		 * Type: double
+		 */
 		errorRate: FormControl<number | null | undefined>,
 
-		/** Queries per second. */
+		/**
+		 * Queries per second.
+		 * Type: double
+		 */
 		qps: FormControl<number | null | undefined>,
 
-		/** Average warning rate. */
+		/**
+		 * Average warning rate.
+		 * Type: double
+		 */
 		warningRate: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmEventbusStatsFormGroup() {
@@ -2957,7 +3091,10 @@ export namespace MyNS {
 		/** The execution state of this event. */
 		eventExecutionState?: EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState | null;
 
-		/** Indicates the number of times the execution has restarted from the beginning. */
+		/**
+		 * Indicates the number of times the execution has restarted from the beginning.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventRetriesFromBeginningCount?: number | null;
 
 		/** The log file path (aka. cns address) for this event. */
@@ -2969,7 +3106,10 @@ export namespace MyNS {
 		/** Next scheduled execution time in case the execution status was RETRY_ON_HOLD. */
 		nextExecutionTime?: string | null;
 
-		/** Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/ */
+		/**
+		 * Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ryeLockUnheldCount?: number | null;
 	}
 
@@ -2979,7 +3119,10 @@ export namespace MyNS {
 		/** The execution state of this event. */
 		eventExecutionState: FormControl<EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState | null | undefined>,
 
-		/** Indicates the number of times the execution has restarted from the beginning. */
+		/**
+		 * Indicates the number of times the execution has restarted from the beginning.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventRetriesFromBeginningCount: FormControl<number | null | undefined>,
 
 		/** The log file path (aka. cns address) for this event. */
@@ -2991,7 +3134,10 @@ export namespace MyNS {
 		/** Next scheduled execution time in case the execution status was RETRY_ON_HOLD. */
 		nextExecutionTime: FormControl<string | null | undefined>,
 
-		/** Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/ */
+		/**
+		 * Used internally and shouldn't be exposed to users. A counter for the cron job to record how many times this event is in in_process state but don't have a lock consecutively/
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ryeLockUnheldCount: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseCrmFrontendsEventbusProtoEventExecutionDetailsFormGroup() {
@@ -3118,6 +3264,8 @@ export namespace MyNS {
 		booleanArray?: EnterpriseCrmFrontendsEventbusProtoBooleanParameterArray;
 		booleanValue?: boolean | null;
 		doubleArray?: EnterpriseCrmFrontendsEventbusProtoDoubleParameterArray;
+
+		/** Type: double */
 		doubleValue?: number | null;
 		intArray?: EnterpriseCrmFrontendsEventbusProtoIntParameterArray;
 		intValue?: string | null;
@@ -3132,6 +3280,8 @@ export namespace MyNS {
 	/** To support various types of parameter values. Next available id: 14 */
 	export interface EnterpriseCrmFrontendsEventbusProtoParameterValueTypeFormProperties {
 		booleanValue: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		doubleValue: FormControl<number | null | undefined>,
 		intValue: FormControl<string | null | undefined>,
 		jsonValue: FormControl<string | null | undefined>,
@@ -3526,7 +3676,10 @@ export namespace MyNS {
 		/** Policy that defines the task retry logic and failure type. If no FailurePolicy is defined for a task, all its dependent tasks will not be executed (i.e, a `retry_strategy` of NONE will be applied). */
 		failurePolicy?: EnterpriseCrmEventbusProtoFailurePolicy;
 
-		/** The number of edges leading into this TaskConfig. */
+		/**
+		 * The number of edges leading into this TaskConfig.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		incomingEdgeCount?: number | null;
 
 		/** If set, overrides the option configured in the Task implementation class. */
@@ -3606,7 +3759,10 @@ export namespace MyNS {
 		errorCatcherId: FormControl<string | null | undefined>,
 		externalTaskType: FormControl<EnterpriseCrmFrontendsEventbusProtoTaskConfigExternalTaskType | null | undefined>,
 
-		/** The number of edges leading into this TaskConfig. */
+		/**
+		 * The number of edges leading into this TaskConfig.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		incomingEdgeCount: FormControl<number | null | undefined>,
 
 		/** If set, overrides the option configured in the Task implementation class. */
@@ -4424,7 +4580,10 @@ export namespace MyNS {
 		/** For publicly routable host. */
 		host?: string | null;
 
-		/** The port is the target port number that is accepted by the destination. */
+		/**
+		 * The port is the target port number that is accepted by the destination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** PSC service attachments. Format: projects/regions/serviceAttachments/* */
@@ -4435,7 +4594,10 @@ export namespace MyNS {
 		/** For publicly routable host. */
 		host: FormControl<string | null | undefined>,
 
-		/** The port is the target port number that is accepted by the destination. */
+		/**
+		 * The port is the target port number that is accepted by the destination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** PSC service attachments. Format: projects/regions/serviceAttachments/* */
@@ -4503,20 +4665,32 @@ export namespace MyNS {
 	/** Node configuration for the connection. */
 	export interface GoogleCloudConnectorsV1NodeConfig {
 
-		/** Maximum number of nodes in the runtime nodes. */
+		/**
+		 * Maximum number of nodes in the runtime nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount?: number | null;
 
-		/** Minimum number of nodes in the runtime nodes. */
+		/**
+		 * Minimum number of nodes in the runtime nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount?: number | null;
 	}
 
 	/** Node configuration for the connection. */
 	export interface GoogleCloudConnectorsV1NodeConfigFormProperties {
 
-		/** Maximum number of nodes in the runtime nodes. */
+		/**
+		 * Maximum number of nodes in the runtime nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount: FormControl<number | null | undefined>,
 
-		/** Minimum number of nodes in the runtime nodes. */
+		/**
+		 * Minimum number of nodes in the runtime nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudConnectorsV1NodeConfigFormGroup() {
@@ -5122,7 +5296,10 @@ export namespace MyNS {
 		/** This message only contains a field of double number array. */
 		doubleArray?: GoogleCloudIntegrationsV1alphaDoubleParameterArray;
 
-		/** Double Number. */
+		/**
+		 * Double Number.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** This message only contains a field of integer array. */
@@ -5147,7 +5324,10 @@ export namespace MyNS {
 		/** Boolean. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** Double Number. */
+		/**
+		 * Double Number.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Integer. */
@@ -5679,20 +5859,32 @@ export namespace MyNS {
 	/** Configuration detail of coordinate, it used for UI */
 	export interface GoogleCloudIntegrationsV1alphaCoordinate {
 
-		/** Required. X axis of the coordinate */
+		/**
+		 * Required. X axis of the coordinate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Required. Y axis of the coordinate */
+		/**
+		 * Required. Y axis of the coordinate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** Configuration detail of coordinate, it used for UI */
 	export interface GoogleCloudIntegrationsV1alphaCoordinateFormProperties {
 
-		/** Required. X axis of the coordinate */
+		/**
+		 * Required. X axis of the coordinate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Required. Y axis of the coordinate */
+		/**
+		 * Required. Y axis of the coordinate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIntegrationsV1alphaCoordinateFormGroup() {
@@ -5981,6 +6173,8 @@ export namespace MyNS {
 	export interface IoCloudeventsV1CloudEventCloudEventAttributeValue {
 		ceBoolean?: boolean | null;
 		ceBytes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ceInteger?: number | null;
 		ceString?: string | null;
 		ceTimestamp?: string | null;
@@ -5990,6 +6184,8 @@ export namespace MyNS {
 	export interface IoCloudeventsV1CloudEventCloudEventAttributeValueFormProperties {
 		ceBoolean: FormControl<boolean | null | undefined>,
 		ceBytes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ceInteger: FormControl<number | null | undefined>,
 		ceString: FormControl<string | null | undefined>,
 		ceTimestamp: FormControl<string | null | undefined>,
@@ -6269,13 +6465,19 @@ export namespace MyNS {
 	/** Metadata of the execution snapshot. */
 	export interface GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata {
 
-		/** the execution attempt number this snapshot belongs to. */
+		/**
+		 * the execution attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionAttempt?: number | null;
 
 		/** the task name associated with this snapshot. */
 		task?: string | null;
 
-		/** the task attempt number this snapshot belongs to. */
+		/**
+		 * the task attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskAttempt?: number | null;
 
 		/** the task label associated with this snapshot. Could be empty. */
@@ -6288,13 +6490,19 @@ export namespace MyNS {
 	/** Metadata of the execution snapshot. */
 	export interface GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadataFormProperties {
 
-		/** the execution attempt number this snapshot belongs to. */
+		/**
+		 * the execution attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionAttempt: FormControl<number | null | undefined>,
 
 		/** the task name associated with this snapshot. */
 		task: FormControl<string | null | undefined>,
 
-		/** the task attempt number this snapshot belongs to. */
+		/**
+		 * the task attempt number this snapshot belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskAttempt: FormControl<number | null | undefined>,
 
 		/** the task label associated with this snapshot. Could be empty. */
@@ -6358,7 +6566,10 @@ export namespace MyNS {
 		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the initial interval in seconds for backoff. */
 		intervalTime?: string | null;
 
-		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the number of times the task will be retried if failed. */
+		/**
+		 * Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the number of times the task will be retried if failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
 		/** Defines what happens to the task upon failure. */
@@ -6371,7 +6582,10 @@ export namespace MyNS {
 		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the initial interval in seconds for backoff. */
 		intervalTime: FormControl<string | null | undefined>,
 
-		/** Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the number of times the task will be retried if failed. */
+		/**
+		 * Required if retry_strategy is FIXED_INTERVAL or LINEAR/EXPONENTIAL_BACKOFF/RESTART_INTEGRATION_WITH_BACKOFF. Defines the number of times the task will be retried if failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
 		/** Defines what happens to the task upon failure. */
@@ -6458,7 +6672,10 @@ export namespace MyNS {
 		/** The period over which the metric value should be aggregated and evaluated. Format is , where integer should be a positive integer and unit should be one of (s,m,h,d,w) meaning (second, minute, hour, day, week). For an EXPECTED_MIN threshold, this aggregation_period must be lesser than 24 hours. */
 		aggregationPeriod?: string | null;
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertThreshold?: number | null;
 
 		/** Set to false by default. When set to true, the metrics are not aggregated or pushed to Monarch for this integration alert. */
@@ -6489,7 +6706,10 @@ export namespace MyNS {
 		/** The period over which the metric value should be aggregated and evaluated. Format is , where integer should be a positive integer and unit should be one of (s,m,h,d,w) meaning (second, minute, hour, day, week). For an EXPECTED_MIN threshold, this aggregation_period must be lesser than 24 hours. */
 		aggregationPeriod: FormControl<string | null | undefined>,
 
-		/** For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired. */
+		/**
+		 * For how many contiguous aggregation periods should the expected min or max be violated for the alert to be fired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertThreshold: FormControl<number | null | undefined>,
 
 		/** Set to false by default. When set to true, the metrics are not aggregated or pushed to Monarch for this integration alert. */
@@ -6533,7 +6753,10 @@ export namespace MyNS {
 		/** Absolute value threshold. */
 		absolute?: string | null;
 
-		/** Percentage threshold. */
+		/**
+		 * Percentage threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
@@ -6543,7 +6766,10 @@ export namespace MyNS {
 		/** Absolute value threshold. */
 		absolute: FormControl<string | null | undefined>,
 
-		/** Percentage threshold. */
+		/**
+		 * Percentage threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIntegrationsV1alphaIntegrationAlertConfigThresholdValueFormGroup() {
@@ -8267,6 +8493,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The client, which owns this collection of AuthConfigs.
 		 * @param {string} filter Filtering as supported in https://developers.google.com/authorized-buyers/apis/guides/list-filters.
 		 * @param {number} pageSize The size of entries in the response. If unspecified, defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned in the previous response.
 		 * @param {string} readMask The mask which specifies fields that need to be returned in the AuthConfig's response.
 		 * @return {GoogleCloudIntegrationsV1alphaListAuthConfigsResponse} Successful response
@@ -8294,6 +8521,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The client, which owns this collection of Certificates.
 		 * @param {string} filter Filtering as supported in https://developers.google.com/authorized-buyers/apis/guides/list-filters.
 		 * @param {number} pageSize The size of entries in the response. If unspecified, defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned in the previous response.
 		 * @param {string} readMask The mask which specifies fields that need to be returned in the Certificate's response.
 		 * @return {GoogleCloudIntegrationsV1alphaListCertificatesResponse} Successful response
@@ -8319,6 +8547,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter.
 		 * @param {string} orderBy Order by parameters.
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token.
 		 * @return {GoogleCloudIntegrationsV1alphaListConnectionsResponse} Successful response
 		 */
@@ -8345,6 +8574,7 @@ export namespace MyNS {
 		 * @param {string} filterParams_workflowName Workflow name.
 		 * @param {string} orderBy Optional. The results would be returned in order you specified here. Currently supporting "last_modified_time" and "create_time".
 		 * @param {number} pageSize Optional. The size of entries in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The token returned in the previous response.
 		 * @param {string} readMask Optional. View mask for the response data. If set, only the field specified will be returned as part of the result. If not set, all fields in event execution info will be filled and returned.
 		 * @param {boolean} refreshAcl Optional. If true, the service will use the most recent acl information to list event execution infos and renew the acl cache. Note that fetching the most recent acl is synchronous, so it will increase RPC call latency.
@@ -8362,6 +8592,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter on fields of IntegrationVersion. Fields can be compared with literal values by use of ":" (containment), "=" (equality), ">" (greater), "<" (less than), >=" (greater than or equal to), "<=" (less than or equal to), and "!=" (inequality) operators. Negation, conjunction, and disjunction are written using NOT, AND, and OR keywords. For example, organization_id=\"1\" AND state=ACTIVE AND description:"test". Filtering cannot be performed on repeated fields like `task_config`.
 		 * @param {string} orderBy The results would be returned in order you specified here. Supported sort keys are: Descending sort order by "last_modified_time", "created_time", "snapshot_number". Ascending sort order by the integration name.
 		 * @param {number} pageSize The page size for the resquest.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token for the resquest.
 		 * @return {GoogleCloudIntegrationsV1alphaListIntegrationsResponse} Successful response
 		 */
@@ -8375,6 +8606,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent resource of RuntimeActionSchema. Format: projects/{project}/locations/{location}/connections/{connection}
 		 * @param {string} filter Filter. Only the action field with literal equality operator is supported.
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token.
 		 * @return {GoogleCloudIntegrationsV1alphaListRuntimeActionSchemasResponse} Successful response
 		 */
@@ -8388,6 +8620,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent resource of RuntimeEntitySchema. Format: projects/{project}/locations/{location}/connections/{connection}
 		 * @param {string} filter Filter. Only the entity field with literal equality operator is supported.
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token.
 		 * @return {GoogleCloudIntegrationsV1alphaListRuntimeEntitySchemasResponse} Successful response
 		 */
@@ -8401,6 +8634,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The client, which owns this collection of SfdcChannels.
 		 * @param {string} filter Filtering as supported in https://developers.google.com/authorized-buyers/apis/guides/list-filters.
 		 * @param {number} pageSize The size of entries in the response. If unspecified, defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned in the previous response.
 		 * @param {string} readMask The mask which specifies fields that need to be returned in the SfdcChannel's response.
 		 * @return {GoogleCloudIntegrationsV1alphaListSfdcChannelsResponse} Successful response
@@ -8425,6 +8659,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The client, which owns this collection of SfdcInstances.
 		 * @param {string} filter Filtering as supported in https://developers.google.com/authorized-buyers/apis/guides/list-filters.
 		 * @param {number} pageSize The size of entries in the response. If unspecified, defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned in the previous response.
 		 * @param {string} readMask The mask which specifies fields that need to be returned in the SfdcInstance's response.
 		 * @return {GoogleCloudIntegrationsV1alphaListSfdcInstancesResponse} Successful response
@@ -8450,6 +8685,7 @@ export namespace MyNS {
 		 * @param {string} filter Standard filter field.
 		 * @param {string} orderBy Field name to order by.
 		 * @param {number} pageSize Maximum number of entries in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to retrieve a specific page.
 		 * @return {GoogleCloudIntegrationsV1alphaListSuspensionsResponse} Successful response
 		 */
@@ -8463,6 +8699,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Format: projects/{project}/location/{location}/product/{product}/integrationtemplates/{integrationtemplate}
 		 * @param {string} filter Filter syntax: defined in the EBNF grammar.
 		 * @param {number} pageSize The maximum number of IntegrationTemplateVersions to return. The service may return fewer than this value. If unspecified, at most 50 versions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListIntegrationTemplateVersions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListIntegrationTemplateVersions` must match the call that provided the page token.
 		 * @return {GoogleCloudIntegrationsV1alphaListIntegrationTemplateVersionsResponse} Successful response
 		 */

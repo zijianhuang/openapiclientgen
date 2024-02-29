@@ -743,8 +743,8 @@ export namespace MyNS {
 		/**
 		 * A unique, user-specified identifier for the request that ensures idempotency.
 		 * Required
-		 * Max length: 150
 		 * Min length: 10
+		 * Max length: 150
 		 */
 		ClientRequestToken: string;
 		Tags?: Array<Tag>;
@@ -768,8 +768,8 @@ export namespace MyNS {
 		/**
 		 * A unique, user-specified identifier for the request that ensures idempotency.
 		 * Required
-		 * Max length: 150
 		 * Min length: 10
+		 * Max length: 150
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}

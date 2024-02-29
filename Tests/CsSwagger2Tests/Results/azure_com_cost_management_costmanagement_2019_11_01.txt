@@ -949,7 +949,10 @@ namespace MyNS
 		/// <param name="filter">May be used to filter dimensions by properties/category, properties/usageStart, properties/usageEnd. Supported operators are 'eq','lt', 'gt', 'le', 'ge'.</param>
 		/// <param name="expand">May be used to expand the properties/data within a dimension category. By default, data is not included when listing dimensions.</param>
 		/// <param name="skiptoken">Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.</param>
-		/// <param name="top">May be used to limit the number of results to the most recent N dimension data.</param>
+		/// <param name="top">May be used to limit the number of results to the most recent N dimension data.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<DimensionsListResult> Dimensions_ListAsync(string scope, string api_version, string filter, string expand, string skiptoken, int top)
 		{

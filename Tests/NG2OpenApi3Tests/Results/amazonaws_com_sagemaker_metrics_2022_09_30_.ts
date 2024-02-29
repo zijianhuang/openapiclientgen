@@ -114,8 +114,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Trial Component to associate with the metrics.
 		 * Required
-		 * Max length: 120
 		 * Min length: 1
+		 * Max length: 120
 		 */
 		TrialComponentName: string;
 
@@ -132,8 +132,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Trial Component to associate with the metrics.
 		 * Required
-		 * Max length: 120
 		 * Min length: 1
+		 * Max length: 120
 		 */
 		TrialComponentName: FormControl<string | null | undefined>,
 	}

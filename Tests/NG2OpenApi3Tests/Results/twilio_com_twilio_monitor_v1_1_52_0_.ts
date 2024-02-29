@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -44,22 +44,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid?: string | null;
 
 		/**
 		 * The SID of the service or resource that generated the alert. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -70,8 +70,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -107,22 +107,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the service or resource that generated the alert. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -156,8 +156,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -199,8 +199,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid?: string | null;
 
@@ -212,15 +212,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the service or resource that generated the alert. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -231,8 +231,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -274,8 +274,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid: FormControl<string | null | undefined>,
 
@@ -287,15 +287,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the service or resource that generated the alert. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Alert resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -331,15 +331,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Event resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the actor that caused the event, if available. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		actor_sid?: string | null;
 
@@ -363,8 +363,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource that was affected.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid?: string | null;
 
@@ -373,8 +373,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Event resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -391,15 +391,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Event resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the actor that caused the event, if available. Can be `null`.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		actor_sid: FormControl<string | null | undefined>,
 
@@ -423,8 +423,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the resource that was affected.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		resource_sid: FormControl<string | null | undefined>,
 
@@ -433,8 +433,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Event resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -478,7 +478,9 @@ export namespace MyNS {
 		 * @param {Date} StartDate Only include alerts that occurred on or after this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.
 		 * @param {Date} EndDate Only include alerts that occurred on or before this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAlertReturn} OK
 		 */
@@ -489,6 +491,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Alerts/{Sid}
 		 * @param {string} Sid The SID of the Alert resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Monitorv1alert_instance} OK
 		 */
 		FetchAlert(Sid: string): Observable<Monitorv1alert_instance> {
@@ -499,13 +502,17 @@ export namespace MyNS {
 		 * Returns a list of events in the account, sorted by event-date.
 		 * Get v1/Events
 		 * @param {string} ActorSid Only include events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} EventType Only include events of this [Event Type](https://www.twilio.com/docs/usage/monitor-events#event-types).
 		 * @param {string} ResourceSid Only include events that refer to this resource. Useful for discovering the history of a specific resource.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SourceIpAddress Only include events that originated from this IP address. Useful for tracking suspicious activity originating from the API or the Twilio Console.
 		 * @param {Date} StartDate Only include events that occurred on or after this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * @param {Date} EndDate Only include events that occurred on or before this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListEventReturn} OK
 		 */
@@ -516,6 +523,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Events/{Sid}
 		 * @param {string} Sid The SID of the Event resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Monitorv1event} OK
 		 */
 		FetchEvent(Sid: string): Observable<Monitorv1event> {
@@ -539,7 +547,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -548,7 +560,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -582,7 +598,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -591,7 +611,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

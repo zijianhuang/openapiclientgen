@@ -108,7 +108,10 @@ namespace MyNS
 		/// Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
 		/// ResourceHealthMetadata_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/resourceHealthMetadata
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
 		/// <returns>OK</returns>
@@ -140,7 +143,10 @@ namespace MyNS
 		/// Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection
 		/// ResourceHealthMetadata_ListBySite subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/resourceHealthMetadata
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of web app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -173,7 +179,10 @@ namespace MyNS
 		/// Description for Gets the category of ResourceHealthMetadata to use for the given site
 		/// ResourceHealthMetadata_GetBySite subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/resourceHealthMetadata/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of web app</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -206,7 +215,10 @@ namespace MyNS
 		/// Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection
 		/// ResourceHealthMetadata_ListBySiteSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/resourceHealthMetadata
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of web app.</param>
 		/// <param name="slot">Name of web app slot. If not specified then will default to production slot.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -240,7 +252,10 @@ namespace MyNS
 		/// Description for Gets the category of ResourceHealthMetadata to use for the given site
 		/// ResourceHealthMetadata_GetBySiteSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/resourceHealthMetadata/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of web app</param>
 		/// <param name="slot">Name of web app slot. If not specified then will default to production slot.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

@@ -303,7 +303,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -318,7 +321,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -347,7 +353,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -362,7 +371,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -391,12 +403,20 @@ export namespace MyNS {
 	}
 
 	export interface StubMappingResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface StubMappingResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -431,7 +451,9 @@ export namespace MyNS {
 		 * Get all stub mappings
 		 * Get __admin/mappings
 		 * @param {number} limit The maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The start index of the results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {__adminMappingsGetByLimitAndOffsetReturn} All stub mappings
 		 */
 		__adminMappingsGetByLimitAndOffset(limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<__adminMappingsGetByLimitAndOffsetReturn> {
@@ -950,7 +972,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -965,7 +990,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -994,7 +1022,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1009,7 +1040,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -1038,12 +1072,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappingsGetByLimitAndOffsetReturnMappingsResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappingsGetByLimitAndOffsetReturnMappingsResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -1058,12 +1100,18 @@ export namespace MyNS {
 
 	export interface __adminMappingsGetByLimitAndOffsetReturnMeta {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface __adminMappingsGetByLimitAndOffsetReturnMetaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function Create__adminMappingsGetByLimitAndOffsetReturnMetaFormGroup() {
@@ -1277,7 +1325,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1292,7 +1343,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -1321,7 +1375,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1336,7 +1393,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -1365,12 +1425,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappingsPostPostBodyResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappingsPostPostBodyResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -1619,7 +1687,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1634,7 +1705,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -1663,7 +1737,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1678,7 +1755,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -1707,12 +1787,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappingsFind_by_metadataPostReturnMappingsResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappingsFind_by_metadataPostReturnMappingsResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -1727,12 +1815,18 @@ export namespace MyNS {
 
 	export interface __adminMappingsFind_by_metadataPostReturnMeta {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface __adminMappingsFind_by_metadataPostReturnMetaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function Create__adminMappingsFind_by_metadataPostReturnMetaFormGroup() {
@@ -1966,7 +2060,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -1981,7 +2078,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -2010,7 +2110,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -2025,7 +2128,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -2054,12 +2160,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappings_stubMappingIdGetReturnResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappings_stubMappingIdGetReturnResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -2276,7 +2390,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -2291,7 +2408,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -2320,7 +2440,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -2335,7 +2458,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -2364,12 +2490,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappings_stubMappingIdPutPutBodyResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappings_stubMappingIdPutPutBodyResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -2586,7 +2720,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -2601,7 +2738,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -2630,7 +2770,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -2645,7 +2788,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -2674,12 +2820,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminMappings_stubMappingIdPutReturnResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminMappings_stubMappingIdPutReturnResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -3182,7 +3336,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -3197,7 +3354,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -3226,7 +3386,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -3241,7 +3404,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -3270,12 +3436,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminRecordingsSnapshotPostReturnMappingsResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminRecordingsSnapshotPostReturnMappingsResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -3290,12 +3464,18 @@ export namespace MyNS {
 
 	export interface __adminRecordingsSnapshotPostReturnMeta {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface __adminRecordingsSnapshotPostReturnMetaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function Create__adminRecordingsSnapshotPostReturnMetaFormGroup() {
@@ -3624,7 +3804,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault?: StubMappingResponseFault | null;
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds?: number | null;
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -3639,7 +3822,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl?: string | null;
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The HTTP status message to be returned */
@@ -3668,7 +3854,10 @@ export namespace MyNS {
 		/** The fault to apply (instead of a full, valid response). */
 		fault: FormControl<StubMappingResponseFault | null | undefined>,
 
-		/** Number of milliseconds to delay be before sending the response. */
+		/**
+		 * Number of milliseconds to delay be before sending the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedDelayMilliseconds: FormControl<number | null | undefined>,
 
 		/** Read-only flag indicating false if this was the default, unmatched response. Not present otherwise. */
@@ -3683,7 +3872,10 @@ export namespace MyNS {
 		/** The base URL of the target to proxy matching requests to. */
 		proxyBaseUrl: FormControl<string | null | undefined>,
 
-		/** The HTTP status code to be returned */
+		/**
+		 * The HTTP status code to be returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The HTTP status message to be returned */
@@ -3712,12 +3904,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminRecordingsStopPostReturnMappingsResponseDelayDistribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminRecordingsStopPostReturnMappingsResponseDelayDistributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}
@@ -3732,12 +3932,18 @@ export namespace MyNS {
 
 	export interface __adminRecordingsStopPostReturnMeta {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface __adminRecordingsStopPostReturnMetaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function Create__adminRecordingsStopPostReturnMetaFormGroup() {
@@ -3844,9 +4050,13 @@ export namespace MyNS {
 	}
 
 	export interface __adminRequestsCountPostReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 	}
 	export interface __adminRequestsCountPostReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function Create__adminRequestsCountPostReturnFormGroup() {
@@ -4175,12 +4385,20 @@ export namespace MyNS {
 	}
 
 	export interface __adminSettingsPostPostBody {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
+
+		/** Type: double */
 		sigma?: number | null;
 		type?: StubMappingResponseDelayDistributionType | null;
 	}
 	export interface __adminSettingsPostPostBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sigma: FormControl<number | null | undefined>,
 		type: FormControl<StubMappingResponseDelayDistributionType | null | undefined>,
 	}

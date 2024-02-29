@@ -42,10 +42,16 @@ export namespace MyNS {
 		/** Gets or sets the mark as pending. */
 		markAsPending?: boolean | null;
 
-		/** Gets or sets the recipe identifier. */
+		/**
+		 * Gets or sets the recipe identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeId?: number | null;
 
-		/** Gets or sets the scale. */
+		/**
+		 * Gets or sets the scale.
+		 * Type: double
+		 */
 		scale?: number | null;
 	}
 	export interface API2ControllersWebAPIGroceryListControllerPostGroceryListRecipeRequestFormProperties {
@@ -53,10 +59,16 @@ export namespace MyNS {
 		/** Gets or sets the mark as pending. */
 		markAsPending: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the recipe identifier. */
+		/**
+		 * Gets or sets the recipe identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeId: FormControl<number | null | undefined>,
 
-		/** Gets or sets the scale. */
+		/**
+		 * Gets or sets the scale.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ControllersWebAPIGroceryListControllerPostGroceryListRecipeRequestFormGroup() {
@@ -111,11 +123,15 @@ export namespace MyNS {
 		DisplayQuantity?: string | null;
 		GUID?: string | null;
 		IsChecked?: boolean | null;
-		ItemID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ItemID?: string | null;
 		LastModified?: Date | null;
 		LocalStatus?: string | null;
 		Name?: string | null;
 		Notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
 		ThirdPartyURL?: string | null;
 	}
@@ -126,11 +142,15 @@ export namespace MyNS {
 		DisplayQuantity: FormControl<string | null | undefined>,
 		GUID: FormControl<string | null | undefined>,
 		IsChecked: FormControl<boolean | null | undefined>,
-		ItemID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ItemID: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
 		LocalStatus: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
 		ThirdPartyURL: FormControl<string | null | undefined>,
 	}
@@ -142,7 +162,7 @@ export namespace MyNS {
 			DisplayQuantity: new FormControl<string | null | undefined>(undefined),
 			GUID: new FormControl<string | null | undefined>(undefined),
 			IsChecked: new FormControl<boolean | null | undefined>(undefined),
-			ItemID: new FormControl<number | null | undefined>(undefined),
+			ItemID: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			LocalStatus: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
@@ -165,18 +185,32 @@ export namespace MyNS {
 		ImageURL120?: string | null;
 		IsBookmark?: boolean | null;
 		IsPrivate?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
 		Microcategory?: string | null;
 		Poster?: BigOvenModelAPIUserInfo;
+
+		/** Type: double */
 		QualityScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount?: number | null;
+
+		/** Type: double */
 		StarRating?: number | null;
 		StarRatingIMG?: string | null;
 		Subcategory?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalTries?: number | null;
 		WebURL?: string | null;
+
+		/** Type: double */
 		YieldNumber?: number | null;
 	}
 	export interface BigOvenModelAPIRecipeInfoFormProperties {
@@ -191,17 +225,31 @@ export namespace MyNS {
 		ImageURL120: FormControl<string | null | undefined>,
 		IsBookmark: FormControl<boolean | null | undefined>,
 		IsPrivate: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
 		Microcategory: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		QualityScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
 		StarRatingIMG: FormControl<string | null | undefined>,
 		Subcategory: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalTries: FormControl<number | null | undefined>,
 		WebURL: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		YieldNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenModelAPIRecipeInfoFormGroup() {
@@ -244,6 +292,8 @@ export namespace MyNS {
 		PhotoUrl?: string | null;
 		PhotoUrl48?: string | null;
 		PremiumExpiryDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		UserName?: string | null;
 		WebUrl?: string | null;
@@ -259,6 +309,8 @@ export namespace MyNS {
 		PhotoUrl: FormControl<string | null | undefined>,
 		PhotoUrl48: FormControl<string | null | undefined>,
 		PremiumExpiryDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		UserName: FormControl<string | null | undefined>,
 		WebUrl: FormControl<string | null | undefined>,
@@ -388,7 +440,10 @@ export namespace MyNS {
 
 	export interface API2ControllersWebAPIImagesControllerRecipePhotosResponse {
 
-		/** Gets or sets the result count. */
+		/**
+		 * Gets or sets the result count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ResultCount?: number | null;
 
 		/** Gets or sets the results. */
@@ -396,7 +451,10 @@ export namespace MyNS {
 	}
 	export interface API2ControllersWebAPIImagesControllerRecipePhotosResponseFormProperties {
 
-		/** Gets or sets the result count. */
+		/**
+		 * Gets or sets the result count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ResultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ControllersWebAPIImagesControllerRecipePhotosResponseFormGroup() {
@@ -409,8 +467,12 @@ export namespace MyNS {
 	export interface BigOvenModelAPI2Photo {
 		Caption?: string | null;
 		CreationDate?: string | null;
-		ImageID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ImageID?: string | null;
 		IsPrimary?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
 		PhotoUrl?: string | null;
 		Poster?: BigOvenModelAPI2UserInfoTinyx;
@@ -418,8 +480,12 @@ export namespace MyNS {
 	export interface BigOvenModelAPI2PhotoFormProperties {
 		Caption: FormControl<string | null | undefined>,
 		CreationDate: FormControl<string | null | undefined>,
-		ImageID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ImageID: FormControl<string | null | undefined>,
 		IsPrimary: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
 	}
@@ -427,7 +493,7 @@ export namespace MyNS {
 		return new FormGroup<BigOvenModelAPI2PhotoFormProperties>({
 			Caption: new FormControl<string | null | undefined>(undefined),
 			CreationDate: new FormControl<string | null | undefined>(undefined),
-			ImageID: new FormControl<number | null | undefined>(undefined),
+			ImageID: new FormControl<string | null | undefined>(undefined),
 			IsPrimary: new FormControl<boolean | null | undefined>(undefined),
 			MaxImageSquare: new FormControl<number | null | undefined>(undefined),
 			PhotoUrl: new FormControl<string | null | undefined>(undefined),
@@ -439,6 +505,8 @@ export namespace MyNS {
 		FirstName?: string | null;
 		LastName?: string | null;
 		PhotoUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		UserName?: string | null;
 	}
@@ -446,6 +514,8 @@ export namespace MyNS {
 		FirstName: FormControl<string | null | undefined>,
 		LastName: FormControl<string | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		UserName: FormControl<string | null | undefined>,
 	}
@@ -522,7 +592,10 @@ export namespace MyNS {
 		/** Gets or sets the unique identifier. */
 		GUID?: string | null;
 
-		/** Gets or sets the identifier. */
+		/**
+		 * Gets or sets the identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/** Gets or sets the notes. */
@@ -531,10 +604,16 @@ export namespace MyNS {
 		/** Gets or sets the people. */
 		People?: string | null;
 
-		/** Gets or sets the recipe identifier. */
+		/**
+		 * Gets or sets the recipe identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecipeID?: number | null;
 
-		/** Gets or sets the user identifier. */
+		/**
+		 * Gets or sets the user identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID?: number | null;
 
 		/** Gets or sets the variations. */
@@ -554,7 +633,10 @@ export namespace MyNS {
 		/** Gets or sets the unique identifier. */
 		GUID: FormControl<string | null | undefined>,
 
-		/** Gets or sets the identifier. */
+		/**
+		 * Gets or sets the identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/** Gets or sets the notes. */
@@ -563,10 +645,16 @@ export namespace MyNS {
 		/** Gets or sets the people. */
 		People: FormControl<string | null | undefined>,
 
-		/** Gets or sets the recipe identifier. */
+		/**
+		 * Gets or sets the recipe identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecipeID: FormControl<number | null | undefined>,
 
-		/** Gets or sets the user identifier. */
+		/**
+		 * Gets or sets the user identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID: FormControl<number | null | undefined>,
 
 		/** Gets or sets the variations. */
@@ -616,6 +704,7 @@ export namespace MyNS {
 		/**
 		 * How many minutes of ACTIVE time (i.e., actively working on the recipe, not waiting for rising, baking, etc.) did it
 		 * demand of the cook? Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ActiveMinutes?: number | null;
 
@@ -625,10 +714,16 @@ export namespace MyNS {
 		/** "yes" or "no" */
 		MakeAgain?: string | null;
 
-		/** 1, 2, 3, 4, or 5 */
+		/**
+		 * 1, 2, 3, 4, or 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StarRating?: number | null;
 
-		/** How long, start to finish, in minutes (integer) did it take? Optional. */
+		/**
+		 * How long, start to finish, in minutes (integer) did it take? Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalMinutes?: number | null;
 	}
 
@@ -638,6 +733,7 @@ export namespace MyNS {
 		/**
 		 * How many minutes of ACTIVE time (i.e., actively working on the recipe, not waiting for rising, baking, etc.) did it
 		 * demand of the cook? Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 
@@ -647,10 +743,16 @@ export namespace MyNS {
 		/** "yes" or "no" */
 		MakeAgain: FormControl<string | null | undefined>,
 
-		/** 1, 2, 3, 4, or 5 */
+		/**
+		 * 1, 2, 3, 4, or 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StarRating: FormControl<number | null | undefined>,
 
-		/** How long, start to finish, in minutes (integer) did it take? Optional. */
+		/**
+		 * How long, start to finish, in minutes (integer) did it take? Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ControllersWebAPIReviewControllerReviewRequestFormGroup() {
@@ -667,23 +769,39 @@ export namespace MyNS {
 
 	/** Legacy -- This object here is deprecated. Please use the new "ReviewRequest" structure for all future development */
 	export interface API2ControllersWebAPIReviewControllerReviewRequestLegacy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes?: number | null;
 		Comment?: string | null;
 		GUID?: string | null;
 		MakeAgain?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StarRating?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes?: number | null;
 	}
 
 	/** Legacy -- This object here is deprecated. Please use the new "ReviewRequest" structure for all future development */
 	export interface API2ControllersWebAPIReviewControllerReviewRequestLegacyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 		GUID: FormControl<string | null | undefined>,
 		MakeAgain: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StarRating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ControllersWebAPIReviewControllerReviewRequestLegacyFormGroup() {
@@ -724,12 +842,16 @@ export namespace MyNS {
 	}
 
 	export interface API2ModelsAccounting {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CreditBalance?: number | null;
 		MemberSince?: Date | null;
 		PremiumExpiryDate?: Date | null;
 		UserLevel?: string | null;
 	}
 	export interface API2ModelsAccountingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CreditBalance: FormControl<number | null | undefined>,
 		MemberSince: FormControl<Date | null | undefined>,
 		PremiumExpiryDate: FormControl<Date | null | undefined>,
@@ -800,11 +922,15 @@ export namespace MyNS {
 	export interface API2ModelsLocation {
 		City?: string | null;
 		Country?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DMA?: number | null;
 	}
 	export interface API2ModelsLocationFormProperties {
 		City: FormControl<string | null | undefined>,
 		Country: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DMA: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ModelsLocationFormGroup() {
@@ -838,7 +964,9 @@ export namespace MyNS {
 		HomeUrl?: string | null;
 		LastName?: string | null;
 		PhotoUrl?: string | null;
-		UserID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		UserID?: string | null;
 		UserName?: string | null;
 	}
 	export interface API2ModelsProfileFormProperties {
@@ -849,7 +977,9 @@ export namespace MyNS {
 		HomeUrl: FormControl<string | null | undefined>,
 		LastName: FormControl<string | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
-		UserID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		UserID: FormControl<string | null | undefined>,
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateAPI2ModelsProfileFormGroup() {
@@ -861,36 +991,60 @@ export namespace MyNS {
 			HomeUrl: new FormControl<string | null | undefined>(undefined),
 			LastName: new FormControl<string | null | undefined>(undefined),
 			PhotoUrl: new FormControl<string | null | undefined>(undefined),
-			UserID: new FormControl<number | null | undefined>(undefined),
+			UserID: new FormControl<string | null | undefined>(undefined),
 			UserName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface API2ModelsCounts {
-		AddedCount?: number | null;
-		FollowersCount?: number | null;
-		FollowingCount?: number | null;
-		PrivateRecipeCount?: number | null;
-		PublicRecipeCount?: number | null;
-		TotalRecipes?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		AddedCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		FollowersCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		FollowingCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PrivateRecipeCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PublicRecipeCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		TotalRecipes?: string | null;
 	}
 	export interface API2ModelsCountsFormProperties {
-		AddedCount: FormControl<number | null | undefined>,
-		FollowersCount: FormControl<number | null | undefined>,
-		FollowingCount: FormControl<number | null | undefined>,
-		PrivateRecipeCount: FormControl<number | null | undefined>,
-		PublicRecipeCount: FormControl<number | null | undefined>,
-		TotalRecipes: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		AddedCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		FollowersCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		FollowingCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PrivateRecipeCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PublicRecipeCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		TotalRecipes: FormControl<string | null | undefined>,
 	}
 	export function CreateAPI2ModelsCountsFormGroup() {
 		return new FormGroup<API2ModelsCountsFormProperties>({
-			AddedCount: new FormControl<number | null | undefined>(undefined),
-			FollowersCount: new FormControl<number | null | undefined>(undefined),
-			FollowingCount: new FormControl<number | null | undefined>(undefined),
-			PrivateRecipeCount: new FormControl<number | null | undefined>(undefined),
-			PublicRecipeCount: new FormControl<number | null | undefined>(undefined),
-			TotalRecipes: new FormControl<number | null | undefined>(undefined),
+			AddedCount: new FormControl<string | null | undefined>(undefined),
+			FollowersCount: new FormControl<string | null | undefined>(undefined),
+			FollowingCount: new FormControl<string | null | undefined>(undefined),
+			PrivateRecipeCount: new FormControl<string | null | undefined>(undefined),
+			PublicRecipeCount: new FormControl<string | null | undefined>(undefined),
+			TotalRecipes: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -911,8 +1065,12 @@ export namespace MyNS {
 
 	/** DTO used to return a recipe with videos */
 	export interface API2ModelsRecipesRecipeResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes?: number | null;
 		AdTags?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost?: number | null;
 		AllCategoriesText?: string | null;
 		BookmarkImageURL?: string | null;
@@ -920,10 +1078,14 @@ export namespace MyNS {
 		BookmarkURL?: string | null;
 		Category?: string | null;
 		Collection?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID?: number | null;
 		CreationDate?: Date | null;
 		Cuisine?: string | null;
 		Description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount?: number | null;
 		ImageSquares?: Array<number>;
 		ImageURL?: string | null;
@@ -935,22 +1097,40 @@ export namespace MyNS {
 		IsRecipeScan?: boolean | null;
 		IsSponsored?: boolean | null;
 		LastModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount?: number | null;
 		Microcategory?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount?: number | null;
 		NutritionInfo?: BigOvenModelAPINutritionInfo;
 		PhotoUrl?: string | null;
 		Poster?: BigOvenModelAPIUserInfo;
 		PrimaryIngredient?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount?: number | null;
+
+		/** Type: double */
 		StarRating?: number | null;
 		Steps?: Array<BigOvenModelInstructionStep>;
 		Subcategory?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID?: number | null;
 		VerifiedByClass?: string | null;
 		VerifiedDateTime?: Date | null;
@@ -958,14 +1138,20 @@ export namespace MyNS {
 		/** Gets or sets the recipe videos, i.e. a list of type {API2.Models.Recipes.RecipeVideoResponse} */
 		Videos?: Array<API2ModelsRecipesRecipeVideoResponse>;
 		WebURL?: string | null;
+
+		/** Type: double */
 		YieldNumber?: number | null;
 		YieldUnit?: string | null;
 	}
 
 	/** DTO used to return a recipe with videos */
 	export interface API2ModelsRecipesRecipeResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 		AdTags: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost: FormControl<number | null | undefined>,
 		AllCategoriesText: FormControl<string | null | undefined>,
 		BookmarkImageURL: FormControl<string | null | undefined>,
@@ -973,10 +1159,14 @@ export namespace MyNS {
 		BookmarkURL: FormControl<string | null | undefined>,
 		Category: FormControl<string | null | undefined>,
 		Collection: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID: FormControl<number | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		Cuisine: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount: FormControl<number | null | undefined>,
 		ImageURL: FormControl<string | null | undefined>,
 		IngredientsTextBlock: FormControl<string | null | undefined>,
@@ -986,23 +1176,43 @@ export namespace MyNS {
 		IsRecipeScan: FormControl<boolean | null | undefined>,
 		IsSponsored: FormControl<boolean | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount: FormControl<number | null | undefined>,
 		Microcategory: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount: FormControl<number | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
 		PrimaryIngredient: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
 		Subcategory: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID: FormControl<number | null | undefined>,
 		VerifiedByClass: FormControl<string | null | undefined>,
 		VerifiedDateTime: FormControl<Date | null | undefined>,
 		WebURL: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		YieldNumber: FormControl<number | null | undefined>,
 		YieldUnit: FormControl<string | null | undefined>,
 	}
@@ -1054,33 +1264,49 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPIIngredient {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DisplayIndex?: number | null;
 		DisplayQuantity?: string | null;
 		HTMLName?: string | null;
-		IngredientID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		IngredientID?: string | null;
 		IngredientInfo?: BigOvenModelAPIIngredientInfo;
 		IsHeading?: boolean | null;
 		IsLinked?: boolean | null;
 		MetricDisplayQuantity?: string | null;
+
+		/** Type: double */
 		MetricQuantity?: number | null;
 		MetricUnit?: string | null;
 		Name?: string | null;
 		PreparationNotes?: string | null;
+
+		/** Type: double */
 		Quantity?: number | null;
 		Unit?: string | null;
 	}
 	export interface BigOvenModelAPIIngredientFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DisplayIndex: FormControl<number | null | undefined>,
 		DisplayQuantity: FormControl<string | null | undefined>,
 		HTMLName: FormControl<string | null | undefined>,
-		IngredientID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		IngredientID: FormControl<string | null | undefined>,
 		IsHeading: FormControl<boolean | null | undefined>,
 		IsLinked: FormControl<boolean | null | undefined>,
 		MetricDisplayQuantity: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		MetricQuantity: FormControl<number | null | undefined>,
 		MetricUnit: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		PreparationNotes: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Quantity: FormControl<number | null | undefined>,
 		Unit: FormControl<string | null | undefined>,
 	}
@@ -1089,7 +1315,7 @@ export namespace MyNS {
 			DisplayIndex: new FormControl<number | null | undefined>(undefined),
 			DisplayQuantity: new FormControl<string | null | undefined>(undefined),
 			HTMLName: new FormControl<string | null | undefined>(undefined),
-			IngredientID: new FormControl<number | null | undefined>(undefined),
+			IngredientID: new FormControl<string | null | undefined>(undefined),
 			IsHeading: new FormControl<boolean | null | undefined>(undefined),
 			IsLinked: new FormControl<boolean | null | undefined>(undefined),
 			MetricDisplayQuantity: new FormControl<string | null | undefined>(undefined),
@@ -1105,12 +1331,16 @@ export namespace MyNS {
 
 	export interface BigOvenModelAPIIngredientInfo {
 		Department?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MasterIngredientID?: number | null;
 		Name?: string | null;
 		UsuallyOnHand?: boolean | null;
 	}
 	export interface BigOvenModelAPIIngredientInfoFormProperties {
 		Department: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MasterIngredientID: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		UsuallyOnHand: FormControl<boolean | null | undefined>,
@@ -1126,53 +1356,141 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPINutritionInfo {
+
+		/** Type: double */
 		CaloriesFromFat?: number | null;
+
+		/** Type: double */
 		Cholesterol?: number | null;
+
+		/** Type: double */
 		CholesterolPct?: number | null;
+
+		/** Type: double */
 		DietaryFiber?: number | null;
+
+		/** Type: double */
 		DietaryFiberPct?: number | null;
+
+		/** Type: double */
 		MonoFat?: number | null;
+
+		/** Type: double */
 		PolyFat?: number | null;
+
+		/** Type: double */
 		Potassium?: number | null;
+
+		/** Type: double */
 		PotassiumPct?: number | null;
+
+		/** Type: double */
 		Protein?: number | null;
+
+		/** Type: double */
 		ProteinPct?: number | null;
+
+		/** Type: double */
 		SatFat?: number | null;
+
+		/** Type: double */
 		SatFatPct?: number | null;
 		SingularYieldUnit?: string | null;
+
+		/** Type: double */
 		Sodium?: number | null;
+
+		/** Type: double */
 		SodiumPct?: number | null;
+
+		/** Type: double */
 		Sugar?: number | null;
+
+		/** Type: double */
 		TotalCalories?: number | null;
+
+		/** Type: double */
 		TotalCarbs?: number | null;
+
+		/** Type: double */
 		TotalCarbsPct?: number | null;
+
+		/** Type: double */
 		TotalFat?: number | null;
+
+		/** Type: double */
 		TotalFatPct?: number | null;
+
+		/** Type: double */
 		TransFat?: number | null;
 	}
 	export interface BigOvenModelAPINutritionInfoFormProperties {
+
+		/** Type: double */
 		CaloriesFromFat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Cholesterol: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CholesterolPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DietaryFiber: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DietaryFiberPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MonoFat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PolyFat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Potassium: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PotassiumPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Protein: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ProteinPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SatFat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SatFatPct: FormControl<number | null | undefined>,
 		SingularYieldUnit: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Sodium: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SodiumPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Sugar: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalCalories: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalCarbs: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalCarbsPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalFat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalFatPct: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TransFat: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenModelAPINutritionInfoFormGroup() {
@@ -1205,12 +1523,20 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelInstructionStep {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EndGantt?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StartGantt?: number | null;
 		Text?: string | null;
 	}
 	export interface BigOvenModelInstructionStepFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EndGantt: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StartGantt: FormControl<number | null | undefined>,
 		Text: FormControl<string | null | undefined>,
 	}
@@ -1236,7 +1562,10 @@ export namespace MyNS {
 		/** Gets or sets the JWPlayer media id. */
 		MediaId?: string | null;
 
-		/** Gets or sets the video id. */
+		/**
+		 * Gets or sets the video id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VidId?: number | null;
 	}
 
@@ -1252,7 +1581,10 @@ export namespace MyNS {
 		/** Gets or sets the JWPlayer media id. */
 		MediaId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the video id. */
+		/**
+		 * Gets or sets the video id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VidId: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ModelsRecipesRecipeVideoResponseFormGroup() {
@@ -1268,10 +1600,14 @@ export namespace MyNS {
 	export interface API2Result {
 		Data?: SystemObject;
 		Message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusCode?: number | null;
 	}
 	export interface API2ResultFormProperties {
 		Message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI2ResultFormGroup() {
@@ -1295,7 +1631,9 @@ export namespace MyNS {
 	export interface BigOvenModelAPIImage {
 		Caption?: string | null;
 		CreationDate?: string | null;
-		ImageID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ImageID?: string | null;
 		ImageSquares?: Array<number>;
 		ImageURL?: string | null;
 		ImageURL120?: string | null;
@@ -1305,13 +1643,17 @@ export namespace MyNS {
 		ImageURL48?: string | null;
 		ImageURL64?: string | null;
 		IsPrimary?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
 		Poster?: BigOvenModelAPIUserInfo;
 	}
 	export interface BigOvenModelAPIImageFormProperties {
 		Caption: FormControl<string | null | undefined>,
 		CreationDate: FormControl<string | null | undefined>,
-		ImageID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ImageID: FormControl<string | null | undefined>,
 		ImageURL: FormControl<string | null | undefined>,
 		ImageURL120: FormControl<string | null | undefined>,
 		ImageURL128: FormControl<string | null | undefined>,
@@ -1320,13 +1662,15 @@ export namespace MyNS {
 		ImageURL48: FormControl<string | null | undefined>,
 		ImageURL64: FormControl<string | null | undefined>,
 		IsPrimary: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenModelAPIImageFormGroup() {
 		return new FormGroup<BigOvenModelAPIImageFormProperties>({
 			Caption: new FormControl<string | null | undefined>(undefined),
 			CreationDate: new FormControl<string | null | undefined>(undefined),
-			ImageID: new FormControl<number | null | undefined>(undefined),
+			ImageID: new FormControl<string | null | undefined>(undefined),
 			ImageURL: new FormControl<string | null | undefined>(undefined),
 			ImageURL120: new FormControl<string | null | undefined>(undefined),
 			ImageURL128: new FormControl<string | null | undefined>(undefined),
@@ -1341,8 +1685,12 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPIRecipe {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes?: number | null;
 		AdTags?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost?: number | null;
 		AllCategoriesText?: string | null;
 		BookmarkImageURL?: string | null;
@@ -1350,10 +1698,14 @@ export namespace MyNS {
 		BookmarkURL?: string | null;
 		Category?: string | null;
 		Collection?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID?: number | null;
 		CreationDate?: Date | null;
 		Cuisine?: string | null;
 		Description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount?: number | null;
 		HeroPhotoUrl?: string | null;
 		ImageSquares?: Array<number>;
@@ -1366,30 +1718,54 @@ export namespace MyNS {
 		IsRecipeScan?: boolean | null;
 		IsSponsored?: boolean | null;
 		LastModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount?: number | null;
 		Microcategory?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount?: number | null;
 		NutritionInfo?: BigOvenModelAPINutritionInfo;
 		Poster?: BigOvenModelAPIUserInfo;
 		PrimaryIngredient?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount?: number | null;
+
+		/** Type: double */
 		StarRating?: number | null;
 		Subcategory?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID?: number | null;
 		VerifiedByClass?: string | null;
 		VerifiedDateTime?: Date | null;
 		WebURL?: string | null;
+
+		/** Type: double */
 		YieldNumber?: number | null;
 		YieldUnit?: string | null;
 	}
 	export interface BigOvenModelAPIRecipeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 		AdTags: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost: FormControl<number | null | undefined>,
 		AllCategoriesText: FormControl<string | null | undefined>,
 		BookmarkImageURL: FormControl<string | null | undefined>,
@@ -1397,10 +1773,14 @@ export namespace MyNS {
 		BookmarkURL: FormControl<string | null | undefined>,
 		Category: FormControl<string | null | undefined>,
 		Collection: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID: FormControl<number | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		Cuisine: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount: FormControl<number | null | undefined>,
 		HeroPhotoUrl: FormControl<string | null | undefined>,
 		ImageURL: FormControl<string | null | undefined>,
@@ -1411,22 +1791,42 @@ export namespace MyNS {
 		IsRecipeScan: FormControl<boolean | null | undefined>,
 		IsSponsored: FormControl<boolean | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount: FormControl<number | null | undefined>,
 		Microcategory: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount: FormControl<number | null | undefined>,
 		PrimaryIngredient: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
 		Subcategory: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID: FormControl<number | null | undefined>,
 		VerifiedByClass: FormControl<string | null | undefined>,
 		VerifiedDateTime: FormControl<Date | null | undefined>,
 		WebURL: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		YieldNumber: FormControl<number | null | undefined>,
 		YieldUnit: FormControl<string | null | undefined>,
 	}
@@ -1482,10 +1882,16 @@ export namespace MyNS {
 		Date?: string | null;
 		DateDT?: Date | null;
 		GUID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID?: number | null;
 		Notes?: string | null;
 		People?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		Variations?: string | null;
 	}
@@ -1494,10 +1900,16 @@ export namespace MyNS {
 		Date: FormControl<string | null | undefined>,
 		DateDT: FormControl<Date | null | undefined>,
 		GUID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID: FormControl<number | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
 		People: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		Variations: FormControl<string | null | undefined>,
 	}
@@ -1518,10 +1930,14 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPIRecipeNoteList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ResultCount?: number | null;
 		Results?: Array<BigOvenModelAPIRecipeNote>;
 	}
 	export interface BigOvenModelAPIRecipeNoteListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ResultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenModelAPIRecipeNoteListFormGroup() {
@@ -1561,6 +1977,8 @@ export namespace MyNS {
 		FirstName?: string | null;
 		LastName?: string | null;
 		PhotoUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		UserName?: string | null;
 	}
@@ -1568,6 +1986,8 @@ export namespace MyNS {
 		FirstName: FormControl<string | null | undefined>,
 		LastName: FormControl<string | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		UserName: FormControl<string | null | undefined>,
 	}
@@ -1583,6 +2003,8 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPIReview {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes?: number | null;
 		Comment?: string | null;
 		CreationDate?: Date | null;
@@ -1590,25 +2012,47 @@ export namespace MyNS {
 		GUID?: string | null;
 		ID?: string | null;
 		LastModified?: Date | null;
-		ParentID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ParentID?: string | null;
 		Poster?: BigOvenModelAPIUserInfo;
 		Replies?: Array<BigOvenModelAPIReview>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReplyCount?: number | null;
-		ReviewID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ReviewID?: string | null;
+
+		/** Type: double */
 		StarRating?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes?: number | null;
 	}
 	export interface BigOvenModelAPIReviewFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		GUID: FormControl<string | null | undefined>,
 		ID: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
-		ParentID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ParentID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReplyCount: FormControl<number | null | undefined>,
-		ReviewID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ReviewID: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenModelAPIReviewFormGroup() {
@@ -1619,9 +2063,9 @@ export namespace MyNS {
 			GUID: new FormControl<string | null | undefined>(undefined),
 			ID: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
-			ParentID: new FormControl<number | null | undefined>(undefined),
+			ParentID: new FormControl<string | null | undefined>(undefined),
 			ReplyCount: new FormControl<number | null | undefined>(undefined),
-			ReviewID: new FormControl<number | null | undefined>(undefined),
+			ReviewID: new FormControl<string | null | undefined>(undefined),
 			StarRating: new FormControl<number | null | undefined>(undefined),
 			TotalMinutes: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1630,6 +2074,8 @@ export namespace MyNS {
 
 	export interface BigOvenModelAPI2CollectionInfo {
 		Description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID?: number | null;
 		IsFiltered?: boolean | null;
 		IsSponsored?: boolean | null;
@@ -1643,6 +2089,8 @@ export namespace MyNS {
 	}
 	export interface BigOvenModelAPI2CollectionInfoFormProperties {
 		Description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID: FormControl<number | null | undefined>,
 		IsFiltered: FormControl<boolean | null | undefined>,
 		IsSponsored: FormControl<boolean | null | undefined>,
@@ -1680,12 +2128,22 @@ export namespace MyNS {
 		Microcategory?: string | null;
 		PhotoUrl?: string | null;
 		Poster?: BigOvenModelAPI2UserInfoTinyx;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount?: number | null;
+
+		/** Type: double */
 		Servings?: number | null;
+
+		/** Type: double */
 		StarRating?: number | null;
 		Subcategory?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalTries?: number | null;
 		WebURL?: string | null;
 	}
@@ -1699,12 +2157,22 @@ export namespace MyNS {
 		IsRecipeScan: FormControl<boolean | null | undefined>,
 		Microcategory: FormControl<string | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Servings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
 		Subcategory: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalTries: FormControl<number | null | undefined>,
 		WebURL: FormControl<string | null | undefined>,
 	}
@@ -1750,8 +2218,12 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPI2Recipe {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes?: number | null;
 		AdTags?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost?: number | null;
 		AllCategoriesText?: string | null;
 		BookmarkImageURL?: string | null;
@@ -1759,10 +2231,14 @@ export namespace MyNS {
 		BookmarkURL?: string | null;
 		Category?: string | null;
 		Collection?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID?: number | null;
 		CreationDate?: Date | null;
 		Cuisine?: string | null;
 		Description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount?: number | null;
 		ImageSquares?: Array<number>;
 		ImageURL?: string | null;
@@ -1774,32 +2250,56 @@ export namespace MyNS {
 		IsRecipeScan?: boolean | null;
 		IsSponsored?: boolean | null;
 		LastModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount?: number | null;
 		Microcategory?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount?: number | null;
 		NutritionInfo?: BigOvenModelAPINutritionInfo;
 		PhotoUrl?: string | null;
 		Poster?: BigOvenModelAPIUserInfo;
 		PrimaryIngredient?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount?: number | null;
+
+		/** Type: double */
 		StarRating?: number | null;
 		Steps?: Array<BigOvenModelInstructionStep>;
 		Subcategory?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID?: number | null;
 		VerifiedByClass?: string | null;
 		VerifiedDateTime?: Date | null;
 		WebURL?: string | null;
+
+		/** Type: double */
 		YieldNumber?: number | null;
 		YieldUnit?: string | null;
 	}
 	export interface BigOvenModelAPI2RecipeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ActiveMinutes: FormControl<number | null | undefined>,
 		AdTags: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AdminBoost: FormControl<number | null | undefined>,
 		AllCategoriesText: FormControl<string | null | undefined>,
 		BookmarkImageURL: FormControl<string | null | undefined>,
@@ -1807,10 +2307,14 @@ export namespace MyNS {
 		BookmarkURL: FormControl<string | null | undefined>,
 		Category: FormControl<string | null | undefined>,
 		Collection: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CollectionID: FormControl<number | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		Cuisine: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FavoriteCount: FormControl<number | null | undefined>,
 		ImageURL: FormControl<string | null | undefined>,
 		IngredientsTextBlock: FormControl<string | null | undefined>,
@@ -1820,23 +2324,43 @@ export namespace MyNS {
 		IsRecipeScan: FormControl<boolean | null | undefined>,
 		IsSponsored: FormControl<boolean | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxImageSquare: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MedalCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MenuCount: FormControl<number | null | undefined>,
 		Microcategory: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotesCount: FormControl<number | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
 		PrimaryIngredient: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReviewCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StarRating: FormControl<number | null | undefined>,
 		Subcategory: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VariantOfRecipeID: FormControl<number | null | undefined>,
 		VerifiedByClass: FormControl<string | null | undefined>,
 		VerifiedDateTime: FormControl<Date | null | undefined>,
 		WebURL: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		YieldNumber: FormControl<number | null | undefined>,
 		YieldUnit: FormControl<string | null | undefined>,
 	}
@@ -1892,10 +2416,16 @@ export namespace MyNS {
 		Date?: string | null;
 		DateDT?: Date | null;
 		GUID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID?: number | null;
 		Notes?: string | null;
 		People?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		Variations?: string | null;
 	}
@@ -1904,10 +2434,16 @@ export namespace MyNS {
 		Date: FormControl<string | null | undefined>,
 		DateDT: FormControl<Date | null | undefined>,
 		GUID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID: FormControl<number | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
 		People: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		Variations: FormControl<string | null | undefined>,
 	}
@@ -1928,11 +2464,15 @@ export namespace MyNS {
 	}
 
 	export interface BigOvenModelAPI2RecipeSearchResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ResultCount?: number | null;
 		Results?: Array<BigOvenModelAPI2RecipeInfox>;
 		SpellSuggest?: string | null;
 	}
 	export interface BigOvenModelAPI2RecipeSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ResultCount: FormControl<number | null | undefined>,
 		SpellSuggest: FormControl<string | null | undefined>,
 	}
@@ -1946,18 +2486,34 @@ export namespace MyNS {
 
 	export interface BigOvenModelRecipeCategory {
 		Category?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultActiveMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultTotalMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentID?: number | null;
 		PrimaryImage?: string | null;
 		ShortDescription?: string | null;
 	}
 	export interface BigOvenModelRecipeCategoryFormProperties {
 		Category: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultActiveMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultTotalMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentID: FormControl<number | null | undefined>,
 		PrimaryImage: FormControl<string | null | undefined>,
 		ShortDescription: FormControl<string | null | undefined>,
@@ -2003,15 +2559,27 @@ export namespace MyNS {
 
 	export interface BigOvenModelRecipeInfoTiny {
 		ImageURL?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QualityScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
+
+		/** Type: double */
 		Servings?: number | null;
 		Title?: string | null;
 	}
 	export interface BigOvenModelRecipeInfoTinyFormProperties {
 		ImageURL: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QualityScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Servings: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -2034,13 +2602,23 @@ export namespace MyNS {
 		IsChecked?: boolean | null;
 		ItemName?: string | null;
 		LastModified?: Date | null;
-		ListID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ListID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MealPlanID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MealPlanObjectType?: number | null;
 		Notes?: string | null;
 		PendingAddition?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID?: number | null;
-		ShoppingListLineID?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ShoppingListLineID?: string | null;
 		Store?: string | null;
 		TextAmt?: string | null;
 		ThirdPartyHost?: string | null;
@@ -2055,13 +2633,23 @@ export namespace MyNS {
 		IsChecked: FormControl<boolean | null | undefined>,
 		ItemName: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
-		ListID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ListID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MealPlanID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MealPlanObjectType: FormControl<number | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
 		PendingAddition: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecipeID: FormControl<number | null | undefined>,
-		ShoppingListLineID: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ShoppingListLineID: FormControl<string | null | undefined>,
 		Store: FormControl<string | null | undefined>,
 		TextAmt: FormControl<string | null | undefined>,
 		ThirdPartyHost: FormControl<string | null | undefined>,
@@ -2077,13 +2665,13 @@ export namespace MyNS {
 			IsChecked: new FormControl<boolean | null | undefined>(undefined),
 			ItemName: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
-			ListID: new FormControl<number | null | undefined>(undefined),
+			ListID: new FormControl<string | null | undefined>(undefined),
 			MealPlanID: new FormControl<number | null | undefined>(undefined),
 			MealPlanObjectType: new FormControl<number | null | undefined>(undefined),
 			Notes: new FormControl<string | null | undefined>(undefined),
 			PendingAddition: new FormControl<boolean | null | undefined>(undefined),
 			RecipeID: new FormControl<number | null | undefined>(undefined),
-			ShoppingListLineID: new FormControl<number | null | undefined>(undefined),
+			ShoppingListLineID: new FormControl<string | null | undefined>(undefined),
 			Store: new FormControl<string | null | undefined>(undefined),
 			TextAmt: new FormControl<string | null | undefined>(undefined),
 			ThirdPartyHost: new FormControl<string | null | undefined>(undefined),
@@ -2096,10 +2684,14 @@ export namespace MyNS {
 	export interface BigOvenResult {
 		Data?: SystemObject;
 		Message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusCode?: number | null;
 	}
 	export interface BigOvenResultFormProperties {
 		Message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateBigOvenResultFormGroup() {
@@ -2119,8 +2711,11 @@ export namespace MyNS {
 		 * Gets a recipe collection. A recipe collection is a curated set of recipes.
 		 * Get collection/{id}
 		 * @param {number} id the collection identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pg page number (starting with 1)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPI2RecipeSearchResult} OK
 		 */
 		Collection_idGetByRppAndPgAndTestAndSessionForLogging(id: number, rpp: number | null | undefined, pg: number | null | undefined, test: boolean | null | undefined, sessionForLogging: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPI2RecipeSearchResult> {
@@ -2131,6 +2726,7 @@ export namespace MyNS {
 		 * Gets a recipe collection metadata. A recipe collection is a curated set of recipes.
 		 * Get collection/{id}/meta
 		 * @param {number} id the collection identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPI2CollectionInfo} OK
 		 */
 		Collection_idMetaGet(id: number, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPI2CollectionInfo> {
@@ -2341,6 +2937,7 @@ export namespace MyNS {
 		/**
 		 * Given a query, return recipe titles starting with query. Query must be at least 3 chars in length.
 		 * Get recipe/autocomplete
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		RecipeAutocompleteGetByQueryAndLimit(query: string, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2352,6 +2949,7 @@ export namespace MyNS {
 		 * Get recipe/autocomplete/all
 		 * @param {string} query The query.
 		 * @param {number} limit The limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelRecipeInfoTiny>} OK
 		 */
 		RecipeAutocompleteAllGetByQueryAndLimit(query: string, limit: number, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelRecipeInfoTiny>> {
@@ -2363,6 +2961,7 @@ export namespace MyNS {
 		 * Get recipe/autocomplete/mine
 		 * @param {string} query The query.
 		 * @param {number} limit The limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelRecipeInfoTiny>} OK
 		 */
 		RecipeAutocompleteMineGetByQueryAndLimit(query: string, limit: number, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelRecipeInfoTiny>> {
@@ -2390,6 +2989,8 @@ export namespace MyNS {
 		/**
 		 * Gets recipe single step as text
 		 * Post recipe/get/saved/step
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} stepId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		RecipeGetSavedStepPostByUserNameAndRecipeIdAndStepId(userName: string, recipeId: number, stepId: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -2399,6 +3000,7 @@ export namespace MyNS {
 		/**
 		 * Returns stored step number and number of steps in recipe
 		 * Post recipe/get/step/number
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {API2Result} OK
 		 */
 		RecipeGetStepNumberPostByUserNameAndRecipeId(userName: string, recipeId: number, headersHandler?: () => HttpHeaders): Observable<API2Result> {
@@ -2417,6 +3019,8 @@ export namespace MyNS {
 		/**
 		 * Stores recipe step number and returns saved step data
 		 * Post recipe/post/step
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} stepId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenResult} OK
 		 */
 		RecipePostStepPostByUserNameAndRecipeIdAndStepId(userName: string, recipeId: number, stepId: number, headersHandler?: () => HttpHeaders): Observable<BigOvenResult> {
@@ -2465,7 +3069,9 @@ export namespace MyNS {
 		 * Get a paged list of replies for a given review.
 		 * Get recipe/review/{reviewId}/replies
 		 * @param {number} pg the page (int), starting with 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp results per page (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelAPIReply>} OK
 		 */
 		RecipeReview_reviewIdRepliesGetByPgAndRpp(reviewId: string, pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelAPIReply>> {
@@ -2492,6 +3098,8 @@ export namespace MyNS {
 		 * 7)  Email the requesing user
 		 * 8)  Call out to www.bigoven.com to fetch the image and re-create the thumbnail
 		 * Post recipe/scan
+		 * @param {number} lat Type: double
+		 * @param {number} lng Type: double
 		 * @return {void} 
 		 */
 		RecipeScanPostByTestAndDevicetypeAndLatAndLng(test: boolean | null | undefined, devicetype: string | null | undefined, lat: number | null | undefined, lng: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2502,6 +3110,7 @@ export namespace MyNS {
 		 * Return full Recipe detail with steps. Returns 403 if the recipe is owned by someone else.
 		 * Get recipe/steps/{id}
 		 * @param {number} id the Recipe ID to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPI2Recipe} OK
 		 */
 		RecipeSteps_idGetByPrefetch(id: number, prefetch: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPI2Recipe> {
@@ -2511,6 +3120,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Recipe (you must be authenticated as an owner of the recipe)
 		 * Delete recipe/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		Recipe_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
@@ -2521,6 +3131,7 @@ export namespace MyNS {
 		 * Return full Recipe detail. Returns 403 if the recipe is owned by someone else.
 		 * Get recipe/{id}
 		 * @param {number} id The Recipe ID to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} prefetch The prefetch.
 		 * @return {BigOvenModelAPI2Recipe} OK
 		 */
@@ -2532,6 +3143,7 @@ export namespace MyNS {
 		 * Zaps the recipe.
 		 * Get recipe/{id}/zap
 		 * @param {number} id The identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		Recipe_idZapGet(id: number, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
@@ -2541,6 +3153,7 @@ export namespace MyNS {
 		/**
 		 * Feedback on a Recipe -- for internal BigOven editors
 		 * Post recipe/{recipeId}/feedback
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {API2ModelsRecipesFeedbackDTO} requestBody The payload for feedback, which includes the field "feedback"
 		 * @return {SystemObject} OK
 		 */
@@ -2557,6 +3170,8 @@ export namespace MyNS {
 		 * 2) On the request, click Body and choose "form-data", then add a line item with "key" column set to "file" and on the right,
 		 * change the type of the input from Text to File.  Browse and choose a JPG.
 		 * Post recipe/{recipeId}/image
+		 * @param {number} lat Type: double
+		 * @param {number} lng Type: double
 		 * @return {SystemObject} Success
 		 */
 		Recipe_recipeIdImagePostByCaptionAndLatAndLng(recipeId: string, caption: string | null | undefined, lat: number | null | undefined, lng: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
@@ -2567,6 +3182,7 @@ export namespace MyNS {
 		 * Get all the images for a recipe. DEPRECATED. Please use /recipe/{recipeId}/photos.
 		 * Get recipe/{recipeId}/images
 		 * @param {number} recipeId Recipe ID (required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelAPIImage>} OK
 		 */
 		Recipe_recipeIdImagesGet(recipeId: number, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelAPIImage>> {
@@ -2577,6 +3193,7 @@ export namespace MyNS {
 		 * HTTP POST a new note into the system.
 		 * Post recipe/{recipeId}/note
 		 * @param {number} recipeId recipeId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {API2ControllersWebAPINoteControllerNoteRequest} requestBody a recipe note, with fields: Date (YYYY-MM-DD string), Notes (string), People (string), Variations (string), RecipeID (int?)
 		 * @return {BigOvenModelAPI2RecipeNote} OK
 		 */
@@ -2589,7 +3206,9 @@ export namespace MyNS {
 		 * do a DELETE Http request of /note/{ID}
 		 * Delete recipe/{recipeId}/note/{noteId}
 		 * @param {number} recipeId recipeId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} noteId noteId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		Recipe_recipeIdNote_noteIdDelete(recipeId: number, noteId: number, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
@@ -2600,7 +3219,9 @@ export namespace MyNS {
 		 * Get a given note. Make sure you're passing authentication information in the header for the user who owns the note.
 		 * Get recipe/{recipeId}/note/{noteId}
 		 * @param {number} recipeId recipe identifier (integer)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} noteId The note ID (note -- it's not the RecipeID)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIRecipeNote} OK
 		 */
 		Recipe_recipeIdNote_noteIdGet(recipeId: number, noteId: number, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIRecipeNote> {
@@ -2610,6 +3231,8 @@ export namespace MyNS {
 		/**
 		 * HTTP PUT (update) a Recipe note (RecipeNote).
 		 * Put recipe/{recipeId}/note/{noteId}
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} noteId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIRecipeNote} OK
 		 */
 		Recipe_recipeIdNote_noteIdPut(recipeId: number, noteId: number, requestBody: API2ControllersWebAPINoteControllerNoteRequest, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIRecipeNote> {
@@ -2620,8 +3243,11 @@ export namespace MyNS {
 		 * recipe/100/notes
 		 * Get recipe/{recipeId}/notes
 		 * @param {number} recipeId recipeId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pg page (int, starting from 1)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp recipeId
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIRecipeNoteList} OK
 		 */
 		Recipe_recipeIdNotesGetByPgAndRpp(recipeId: number, pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIRecipeNoteList> {
@@ -2632,6 +3258,9 @@ export namespace MyNS {
 		 * Get all the photos for a recipe
 		 * Get recipe/{recipeId}/photos
 		 * @param {number} recipeId Recipe ID (required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pg Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} rpp Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {API2ControllersWebAPIImagesControllerRecipePhotosResponse} OK
 		 */
 		Recipe_recipeIdPhotosGetByPgAndRpp(recipeId: number, pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<API2ControllersWebAPIImagesControllerRecipePhotosResponse> {
@@ -2642,8 +3271,11 @@ export namespace MyNS {
 		 * Get recipes related to the given recipeId
 		 * Get recipe/{recipeId}/related
 		 * @param {number} recipeId The recipe id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pg The page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp The results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPI2RecipeSearchResult} OK
 		 */
 		Recipe_recipeIdRelatedGetByPgAndRpp(recipeId: number, pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPI2RecipeSearchResult> {
@@ -2653,6 +3285,7 @@ export namespace MyNS {
 		/**
 		 * Get *my* review for the recipe {recipeId}, where "me" is determined by standard authentication headers
 		 * Get recipe/{recipeId}/review
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIReview} OK
 		 */
 		Recipe_recipeIdReviewGet(recipeId: number, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIReview> {
@@ -2662,6 +3295,7 @@ export namespace MyNS {
 		/**
 		 * Add a new review. Only one review can be provided per {userId, recipeId} pair. Otherwise your review will be updated.
 		 * Post recipe/{recipeId}/review
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SystemObject} OK
 		 */
 		Recipe_recipeIdReviewPost(recipeId: number, requestBody: API2ControllersWebAPIReviewControllerReviewRequest, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
@@ -2671,9 +3305,11 @@ export namespace MyNS {
 		/**
 		 * DEPRECATED! - Deletes a review by recipeId and reviewId. Please use recipe/review/{reviewId} instead.
 		 * Delete recipe/{recipeId}/review/{reviewId}
+		 * @param {number} recipeId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} reviewId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SystemObject} OK
 		 */
-		Recipe_recipeIdReview_reviewIdDelete(recipeId: number, reviewId: number, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
+		Recipe_recipeIdReview_reviewIdDelete(recipeId: number, reviewId: string, headersHandler?: () => HttpHeaders): Observable<SystemObject> {
 			return this.http.delete<SystemObject>(this.baseUri + 'recipe/' + recipeId + '/review/' + reviewId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2686,7 +3322,9 @@ export namespace MyNS {
 		 * which do NOT carry the "DEPRECATED" flag.
 		 * Get recipe/{recipeId}/review/{reviewId}
 		 * @param {number} reviewId int
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} recipeId int
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIReview} OK
 		 */
 		Recipe_recipeIdReview_reviewIdGet(reviewId: number, recipeId: number, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIReview> {
@@ -2698,7 +3336,9 @@ export namespace MyNS {
 		 * We are moving to a string-based primary key system, no longer integers, for reviews and replies.
 		 * Put recipe/{recipeId}/review/{reviewId}
 		 * @param {number} reviewId reviewId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} recipeId recipeId (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BigOvenModelAPIReview} OK
 		 */
 		Recipe_recipeIdReview_reviewIdPut(reviewId: number, recipeId: number, requestBody: API2ControllersWebAPIReviewControllerReviewRequestLegacy, headersHandler?: () => HttpHeaders): Observable<BigOvenModelAPIReview> {
@@ -2709,8 +3349,11 @@ export namespace MyNS {
 		 * Get paged list of reviews for a recipe. Each review will have at most one FeaturedReply, as well as a ReplyCount.
 		 * Get recipe/{recipeId}/reviews
 		 * @param {number} recipeId recipe id (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pg the page (int), starting with 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp results per page (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelAPIReview>} OK
 		 */
 		Recipe_recipeIdReviewsGetByPgAndRpp(recipeId: number, pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelAPIReview>> {
@@ -2721,6 +3364,7 @@ export namespace MyNS {
 		 * Gets a list of RecipeScan images for the recipe. There will be at most 3 per recipe.
 		 * Get recipe/{recipeId}/scans
 		 * @param {number} recipeId the recipe identifier (int)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelAPIImage>} OK
 		 */
 		Recipe_recipeIdScansGet(recipeId: number, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelAPIImage>> {
@@ -2749,9 +3393,11 @@ export namespace MyNS {
 		 * @param {string} any_kw Search anywhere in the recipe for the keyword
 		 * @param {string} folder Search in a specific folder name for the authenticated user
 		 * @param {number} coll Limit to a collection ID number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter optionally set to either "myrecipes", "try", "favorites","added" to filter to just the authenticated user's recipe set
 		 * @param {string} title_kw Search just in the recipe title for the keyword
 		 * @param {number} userId Set the target userid to search their public recipes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} username Set the target username to search their public recipes
 		 * @param {boolean} photos if set to true, limit search results to photos only
 		 * @param {boolean} boostmine if set to true, boost my own recipes in my folders so they show up high in the list (at the expense of other sort orders)
@@ -2764,24 +3410,43 @@ export namespace MyNS {
 		 * @param {string} cuisine Limit to a specific cuisine. Cooks can enter anything free-form, but the few dozen preconfigured values are Afghan,African,American,American-South,Asian,Australian,Brazilian,Cajun,Canadian,Caribbean,Chinese,Croatian,Cuban,Dessert,Eastern European,English,French,German,Greek,Hawaiian,Hungarian,India,Indian,Irish,Italian,Japanese,Jewish,Korean,Latin,Mediterranean,Mexican,Middle Eastern,Moroccan,Polish,Russian,Scandanavian,Seafood,Southern,Southwestern,Spanish,Tex-Mex,Thai,Vegan,Vegetarian,Vietnamese
 		 * @param {string} userset If set to a given username, it'll force the search to filter to just that username
 		 * @param {number} servingsMin Limit to yield of a given number size or greater. Note that cooks usually enter recipes by Servings, but sometimes they are posted by "dozen", etc. This parameter simply specifies the minimum number for that value entered in "yield."
+		 *     Type: double
 		 * @param {number} totalMins Optional. If supplied, will restrict results to recipes that can be made in {totalMins} or less. (Convert "1 hour, 15 minutes" to 75 before passing in.)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxIngredients Optional. If supplied, will restrict results to recipes that can be made with {maxIngredients} ingredients or less
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minIngredients Optional. If supplied, will restrict results to recipes that have at least {minIngredients}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp integer; results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pg integer: the page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vtn when set to 1, limit to vegetarian (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vgn when set to 1, limit to vegan (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} chs when set to 1, limit to contains-cheese (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} glf when set to 1, limit to gluten-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ntf when set to 1, limit to nut-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dyf when set to 1, limit to dairy-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sff when set to 1, limit to seafood-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} slf when set to 1, limit to shellfish-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} tnf when set to 1, limit to tree-nut free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} wmf when set to 1, limit to white-meat free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rmf when set to 1, limit to red-meat free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cps when set to 1, recipe contains pasta, set to 0 means contains no pasta (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} champion optional. When set to 1, this will limit search results to "best of" recipes as determined by various internal editorial and programmatic algorithms. For the most comprehensive results, don't include this parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} synonyms optional, default is false. When set to true, BigOven will attempt to apply synonyms in search (e.g., excluding pork will also exclude bacon)
 		 * @return {BigOvenModelAPI2RecipeSearchResult} OK
 		 */
@@ -2802,7 +3467,9 @@ export namespace MyNS {
 		 * Get the recipe/comment tuples for those recipes with 4 or 5 star ratings
 		 * Get recipes/raves
 		 * @param {number} pg page, starting with 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelRecipeInfoReviewTuple2>} OK
 		 */
 		RecipesRavesGetByPgAndRpp(pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelRecipeInfoReviewTuple2>> {
@@ -2813,7 +3480,9 @@ export namespace MyNS {
 		 * Get a list of recipes that the authenticated user has most recently viewed
 		 * Get recipes/recentviews
 		 * @param {number} pg Page number starting with 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rpp results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<BigOvenModelRecipeInfoDateTuple2>} OK
 		 */
 		RecipesRecentviewsGetByPgAndRpp(pg: number | null | undefined, rpp: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<BigOvenModelRecipeInfoDateTuple2>> {
@@ -2842,9 +3511,11 @@ export namespace MyNS {
 		 * @param {string} any_kw Search anywhere in the recipe for the keyword
 		 * @param {string} folder Search in a specific folder name for the authenticated user
 		 * @param {number} coll Limit to a collection ID number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter optionally set to either "myrecipes", "try", "favorites","added" to filter to just the authenticated user's recipe set
 		 * @param {string} title_kw Search just in the recipe title for the keyword
 		 * @param {number} userId Set the target userid to search their public recipes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} username Set the target username to search their public recipes
 		 * @param {boolean} photos if set to true, limit search results to photos only
 		 * @param {boolean} boostmine if set to true, boost my own recipes in my folders so they show up high in the list (at the expense of other sort orders)
@@ -2857,22 +3528,39 @@ export namespace MyNS {
 		 * @param {string} cuisine Limit to a specific cuisine. Cooks can enter anything free-form, but the few dozen preconfigured values are Afghan,African,American,American-South,Asian,Australian,Brazilian,Cajun,Canadian,Caribbean,Chinese,Croatian,Cuban,Dessert,Eastern European,English,French,German,Greek,Hawaiian,Hungarian,India,Indian,Irish,Italian,Japanese,Jewish,Korean,Latin,Mediterranean,Mexican,Middle Eastern,Moroccan,Polish,Russian,Scandanavian,Seafood,Southern,Southwestern,Spanish,Tex-Mex,Thai,Vegan,Vegetarian,Vietnamese
 		 * @param {string} userset If set to a given username, it'll force the search to filter to just that username
 		 * @param {number} servingsMin Limit to yield of a given number size or greater. Note that cooks usually enter recipes by Servings, but sometimes they are posted by "dozen", etc. This parameter simply specifies the minimum number for that value entered in "yield."
+		 *     Type: double
 		 * @param {number} totalMins Optional. If supplied, will restrict results to recipes that can be made in {totalMins} or less. (Convert "1 hour, 15 minutes" to 75 before passing in.)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxIngredients Optional. If supplied, will restrict results to recipes that can be made with {maxIngredients} ingredients or less
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minIngredients Optional. If supplied, will restrict results to recipes that have at least {minIngredients}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vtn when set to 1, limit to vegetarian (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vgn when set to 1, limit to vegan (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} chs when set to 1, limit to contains-cheese (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} glf when set to 1, limit to gluten-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ntf when set to 1, limit to nut-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dyf when set to 1, limit to dairy-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sff when set to 1, limit to seafood-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} slf when set to 1, limit to shellfish-free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} tnf when set to 1, limit to tree-nut free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} wmf when set to 1, limit to white-meat free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rmf when set to 1, limit to red-meat free (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cps when set to 1, recipe contains pasta, set to 0 means contains no pasta (Powersearch-capable plan required)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} champion optional. When set to 1, this will limit search results to "best of" recipes as determined by various internal editorial and programmatic algorithms. For the most comprehensive results, don't include this parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} synonyms optional, default is false. When set to true, BigOven will attempt to apply synonyms in search (e.g., excluding pork will also exclude bacon)
 		 * @return {BigOvenModelAPI2RecipeSearchResult} OK
 		 */
@@ -2884,6 +3572,7 @@ export namespace MyNS {
 		 * Same as GET recipe but also includes the recipe videos (if any)
 		 * Get recipes/{id}
 		 * @param {number} id The Recipe ID to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} prefetch The prefetch.
 		 * @return {API2ModelsRecipesRecipeResponse} OK
 		 */

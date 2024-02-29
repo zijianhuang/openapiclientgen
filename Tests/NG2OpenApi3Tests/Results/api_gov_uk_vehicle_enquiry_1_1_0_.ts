@@ -60,19 +60,31 @@ export namespace MyNS {
 
 	export interface Vehicle {
 
-		/** Additional Rate of Tax End Date, format: YYYY-MM-DD */
+		/**
+		 * Additional Rate of Tax End Date, format: YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		artEndDate?: Date | null;
 
-		/** Carbon Dioxide emissions in grams per kilometre */
+		/**
+		 * Carbon Dioxide emissions in grams per kilometre
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2Emissions?: number | null;
 
 		/** Vehicle colour */
 		colour?: string | null;
 
-		/** Date of last V5C issued */
+		/**
+		 * Date of last V5C issued
+		 * Type: DateOnly
+		 */
 		dateOfLastV5CIssued?: Date | null;
 
-		/** Engine capacity in cubic centimetres */
+		/**
+		 * Engine capacity in cubic centimetres
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		engineCapacity?: number | null;
 
 		/** Euro Status (Dealer / Customer Provided (new vehicles)) */
@@ -87,13 +99,22 @@ export namespace MyNS {
 		/** True only if vehicle has been export marked */
 		markedForExport?: boolean | null;
 
-		/** Month of First DVLA Registration */
+		/**
+		 * Month of First DVLA Registration
+		 * Type: DateOnly
+		 */
 		monthOfFirstDvlaRegistration?: Date | null;
 
-		/** Month of First Registration */
+		/**
+		 * Month of First Registration
+		 * Type: DateOnly
+		 */
 		monthOfFirstRegistration?: Date | null;
 
-		/** Mot Expiry Date */
+		/**
+		 * Mot Expiry Date
+		 * Type: DateOnly
+		 */
 		motExpiryDate?: Date | null;
 
 		/** MOT Status of the vehicle */
@@ -108,10 +129,16 @@ export namespace MyNS {
 		 */
 		registrationNumber: string;
 
-		/** Revenue weight in kilograms */
+		/**
+		 * Revenue weight in kilograms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueWeight?: number | null;
 
-		/** Date of tax liablity, Used in calculating licence information presented to user */
+		/**
+		 * Date of tax liablity, Used in calculating licence information presented to user
+		 * Type: DateOnly
+		 */
 		taxDueDate?: Date | null;
 
 		/** Tax status of the vehicle */
@@ -123,24 +150,39 @@ export namespace MyNS {
 		/** Vehicle wheel plan */
 		wheelplan?: string | null;
 
-		/** Year of Manufacture */
+		/**
+		 * Year of Manufacture
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yearOfManufacture?: number | null;
 	}
 	export interface VehicleFormProperties {
 
-		/** Additional Rate of Tax End Date, format: YYYY-MM-DD */
+		/**
+		 * Additional Rate of Tax End Date, format: YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		artEndDate: FormControl<Date | null | undefined>,
 
-		/** Carbon Dioxide emissions in grams per kilometre */
+		/**
+		 * Carbon Dioxide emissions in grams per kilometre
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2Emissions: FormControl<number | null | undefined>,
 
 		/** Vehicle colour */
 		colour: FormControl<string | null | undefined>,
 
-		/** Date of last V5C issued */
+		/**
+		 * Date of last V5C issued
+		 * Type: DateOnly
+		 */
 		dateOfLastV5CIssued: FormControl<Date | null | undefined>,
 
-		/** Engine capacity in cubic centimetres */
+		/**
+		 * Engine capacity in cubic centimetres
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		engineCapacity: FormControl<number | null | undefined>,
 
 		/** Euro Status (Dealer / Customer Provided (new vehicles)) */
@@ -155,13 +197,22 @@ export namespace MyNS {
 		/** True only if vehicle has been export marked */
 		markedForExport: FormControl<boolean | null | undefined>,
 
-		/** Month of First DVLA Registration */
+		/**
+		 * Month of First DVLA Registration
+		 * Type: DateOnly
+		 */
 		monthOfFirstDvlaRegistration: FormControl<Date | null | undefined>,
 
-		/** Month of First Registration */
+		/**
+		 * Month of First Registration
+		 * Type: DateOnly
+		 */
 		monthOfFirstRegistration: FormControl<Date | null | undefined>,
 
-		/** Mot Expiry Date */
+		/**
+		 * Mot Expiry Date
+		 * Type: DateOnly
+		 */
 		motExpiryDate: FormControl<Date | null | undefined>,
 
 		/** MOT Status of the vehicle */
@@ -176,10 +227,16 @@ export namespace MyNS {
 		 */
 		registrationNumber: FormControl<string | null | undefined>,
 
-		/** Revenue weight in kilograms */
+		/**
+		 * Revenue weight in kilograms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueWeight: FormControl<number | null | undefined>,
 
-		/** Date of tax liablity, Used in calculating licence information presented to user */
+		/**
+		 * Date of tax liablity, Used in calculating licence information presented to user
+		 * Type: DateOnly
+		 */
 		taxDueDate: FormControl<Date | null | undefined>,
 
 		/** Tax status of the vehicle */
@@ -191,7 +248,10 @@ export namespace MyNS {
 		/** Vehicle wheel plan */
 		wheelplan: FormControl<string | null | undefined>,
 
-		/** Year of Manufacture */
+		/**
+		 * Year of Manufacture
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yearOfManufacture: FormControl<number | null | undefined>,
 	}
 	export function CreateVehicleFormGroup() {

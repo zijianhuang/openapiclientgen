@@ -561,7 +561,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="jobId">Storage job id</param>
 		/// <param name="objectToken">Object token</param>
-		/// <param name="max_results">Maximum number of chunks</param>
+		/// <param name="max_results">Maximum number of chunks
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="next_token">Pagination token</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -601,7 +604,10 @@ namespace MyNS
 		/// <param name="jobId">Storage job id</param>
 		/// <param name="starting_object_name">Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL</param>
 		/// <param name="starting_object_prefix">Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL</param>
-		/// <param name="max_results">Maximum objects count</param>
+		/// <param name="max_results">Maximum objects count
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="next_token">Pagination token</param>
 		/// <param name="created_before">(Optional) Created before filter</param>
 		/// <param name="created_after">(Optional) Created after filter</param>

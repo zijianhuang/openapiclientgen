@@ -405,32 +405,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -447,26 +471,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1717,7 +1759,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1730,7 +1775,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1994,7 +2042,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2004,7 +2055,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -2253,6 +2307,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2266,6 +2321,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2350,6 +2406,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation.
 		 * @param {string} orderBy Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
 		 * @param {number} pageSize Optional. The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous List request, if any.
 		 * @return {ListBackupsResponse} Successful response
 		 */
@@ -2375,6 +2432,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation. For example, `Domain.fqdn="mydomain.myorginization"`.
 		 * @param {string} orderBy Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
 		 * @param {number} pageSize If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListDomainsResponse} Successful response
 		 */
@@ -2400,6 +2458,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation. For example, `peering.authoized_network ="/projects/myprojectid"`.
 		 * @param {string} orderBy Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
 		 * @param {number} pageSize Optional. The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous List request, if any.
 		 * @return {ListPeeringsResponse} Successful response
 		 */
@@ -2425,6 +2484,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation. For example, `SqlIntegration.name="sql"`.
 		 * @param {string} orderBy Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order.
 		 * @param {number} pageSize Optional. The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response'ANIZATIONs next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous List request, if any.
 		 * @return {ListSQLIntegrationsResponse} Successful response
 		 */
@@ -2437,6 +2497,7 @@ export namespace MyNS {
 		 * Get v1alpha1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Managedidentities_projects_locations_global_peerings_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

@@ -100,6 +100,8 @@ export namespace MyNS {
 	}
 
 	export interface SurveyMetadataBase {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interviewCount?: number | null;
 		languages?: Array<Language>;
 		name?: string | null;
@@ -107,6 +109,8 @@ export namespace MyNS {
 		variables?: Array<Variable>;
 	}
 	export interface SurveyMetadataBaseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interviewCount: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -140,6 +144,8 @@ export namespace MyNS {
 	export interface Variable {
 		ident?: string | null;
 		label?: Label;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxResponses?: number | null;
 		name?: string | null;
 		parentType?: ParentType;
@@ -150,6 +156,8 @@ export namespace MyNS {
 	}
 	export interface VariableFormProperties {
 		ident: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxResponses: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		parentType: FormControl<ParentType | null | undefined>,
@@ -220,11 +228,15 @@ export namespace MyNS {
 		code?: string | null;
 		ident?: string | null;
 		label?: Label;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 	}
 	export interface ValueFormProperties {
 		code: FormControl<string | null | undefined>,
 		ident: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateValueFormGroup() {
@@ -291,6 +303,8 @@ export namespace MyNS {
 
 	export interface SurveyMetadata {
 		hierarchies?: Array<Hierarchy>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interviewCount?: number | null;
 		languages?: Array<Language>;
 		name?: string | null;
@@ -298,6 +312,8 @@ export namespace MyNS {
 		variables?: Array<Variable>;
 	}
 	export interface SurveyMetadataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interviewCount: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -328,6 +344,8 @@ export namespace MyNS {
 		/**
 		 * Fetches some interview records for a specific survey
 		 * Get Surveys/{surveyId}/Interviews
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxLength Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Interview>} Success
 		 */
 		SurveysGetBySurveyIdAndStartAndMaxLength(surveyId: string, start: number | null | undefined, maxLength: number | null | undefined): Observable<Array<Interview>> {

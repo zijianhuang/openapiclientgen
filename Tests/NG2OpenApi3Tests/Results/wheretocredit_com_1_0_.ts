@@ -20,7 +20,10 @@ export namespace MyNS {
 		/** Indicates that the itinerary may be missing miles due to unpublished earning rates from the program. */
 		unpublished?: boolean | null;
 
-		/** Total redeemable miles or points earned for the frequent flyer program. */
+		/**
+		 * Total redeemable miles or points earned for the frequent flyer program.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface CalculateItineraryProgramResultFormProperties {
@@ -37,7 +40,10 @@ export namespace MyNS {
 		/** Indicates that the itinerary may be missing miles due to unpublished earning rates from the program. */
 		unpublished: FormControl<boolean | null | undefined>,
 
-		/** Total redeemable miles or points earned for the frequent flyer program. */
+		/**
+		 * Total redeemable miles or points earned for the frequent flyer program.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateItineraryProgramResultFormGroup() {
@@ -98,7 +104,10 @@ export namespace MyNS {
 
 	export interface Itinerary {
 
-		/** Amount in USD that will be used to calculate revenue program mileage earning.  This amount should generally include carrier imposed surcharges but exclude other taxes. Default is 0. */
+		/**
+		 * Amount in USD that will be used to calculate revenue program mileage earning.  This amount should generally include carrier imposed surcharges but exclude other taxes. Default is 0.
+		 * Type: double
+		 */
 		baseFareUSD?: number | null;
 
 		/** Unique identifier for this itinerary that will be passed back to help correlate a result. */
@@ -115,7 +124,10 @@ export namespace MyNS {
 	}
 	export interface ItineraryFormProperties {
 
-		/** Amount in USD that will be used to calculate revenue program mileage earning.  This amount should generally include carrier imposed surcharges but exclude other taxes. Default is 0. */
+		/**
+		 * Amount in USD that will be used to calculate revenue program mileage earning.  This amount should generally include carrier imposed surcharges but exclude other taxes. Default is 0.
+		 * Type: double
+		 */
 		baseFareUSD: FormControl<number | null | undefined>,
 
 		/** Unique identifier for this itinerary that will be passed back to help correlate a result. */
@@ -157,10 +169,16 @@ export namespace MyNS {
 		 */
 		destination: string;
 
-		/** The number of miles for this flight segment.  Otherwise, distance is calculated using the great-circle distance between the origin and destination and may not match other data sources exactly. */
+		/**
+		 * The number of miles for this flight segment.  Otherwise, distance is calculated using the great-circle distance between the origin and destination and may not match other data sources exactly.
+		 * Type: double
+		 */
 		distance?: number | null;
 
-		/** The airline identifier for the flight segment, most commonly (but not always) a number and is used for earning charts that are restricted to specific flight numbers. */
+		/**
+		 * The airline identifier for the flight segment, most commonly (but not always) a number and is used for earning charts that are restricted to specific flight numbers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flightNumber?: number | null;
 
 		/** Two-letter IATA carrier code for the operating airline.  This value is only used when earning is based on marketing carrier but restricted to a specific operating carrier.  Leaving this value blank will assume the flight is operated by the marketing carrier. */
@@ -196,10 +214,16 @@ export namespace MyNS {
 		 */
 		destination: FormControl<string | null | undefined>,
 
-		/** The number of miles for this flight segment.  Otherwise, distance is calculated using the great-circle distance between the origin and destination and may not match other data sources exactly. */
+		/**
+		 * The number of miles for this flight segment.  Otherwise, distance is calculated using the great-circle distance between the origin and destination and may not match other data sources exactly.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 
-		/** The airline identifier for the flight segment, most commonly (but not always) a number and is used for earning charts that are restricted to specific flight numbers. */
+		/**
+		 * The airline identifier for the flight segment, most commonly (but not always) a number and is used for earning charts that are restricted to specific flight numbers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flightNumber: FormControl<number | null | undefined>,
 
 		/** Two-letter IATA carrier code for the operating airline.  This value is only used when earning is based on marketing carrier but restricted to a specific operating carrier.  Leaving this value blank will assume the flight is operated by the marketing carrier. */

@@ -4,10 +4,14 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -27,13 +31,22 @@ export namespace MyNS {
 		/** City of travel center */
 		city?: string | null;
 
-		/** Identifying number */
+		/**
+		 * Identifying number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Latitude of travel center location */
+		/**
+		 * Latitude of travel center location
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Longitude of travel center location */
+		/**
+		 * Longitude of travel center location
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** Name of travel center */
@@ -56,13 +69,22 @@ export namespace MyNS {
 		/** City of travel center */
 		city: FormControl<string | null | undefined>,
 
-		/** Identifying number */
+		/**
+		 * Identifying number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Latitude of travel center location */
+		/**
+		 * Latitude of travel center location
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude of travel center location */
+		/**
+		 * Longitude of travel center location
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** Name of travel center */
@@ -128,7 +150,9 @@ export namespace MyNS {
 		 * Get information about a station near a location
 		 * Get reisezentren/loc/{lat}/{lon}
 		 * @param {number} lat Latitude
+		 *     Type: float
 		 * @param {number} lon Longitude
+		 *     Type: float
 		 * @return {TravelCenter} A station was found
 		 */
 		ReisezentrenLoc_lat_lonGet(lat: number, lon: number, headersHandler?: () => HttpHeaders): Observable<TravelCenter> {
@@ -140,8 +164,11 @@ export namespace MyNS {
 		 * Get stations in a given radius
 		 * Get reisezentren/loc/{lat}/{lon}/{dist}
 		 * @param {number} lat Latitude
+		 *     Type: float
 		 * @param {number} lon Longitude
+		 *     Type: float
 		 * @param {number} dist Radius
+		 *     Type: float
 		 * @return {TravelCenter} A station was found
 		 */
 		ReisezentrenLoc_lat_lon_distGet(lat: number, lon: number, dist: number, headersHandler?: () => HttpHeaders): Observable<TravelCenter> {

@@ -17,7 +17,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -37,7 +40,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -137,6 +143,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -151,6 +158,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -277,6 +285,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -291,6 +300,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -326,6 +336,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 
@@ -346,6 +357,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 
@@ -382,6 +394,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -396,6 +409,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -427,7 +441,10 @@ export namespace MyNS {
 		/** Name of source event that webhook is subscribed to. */
 		event_type?: string | null;
 
-		/** Number of attempts webhook endpoint was called before a success was returned or eventually failed */
+		/**
+		 * Number of attempts webhook endpoint was called before a success was returned or eventually failed
+		 * Type: double
+		 */
 		execution_attempt?: number | null;
 
 		/** HTTP Method of request to endpoint. */
@@ -446,7 +463,10 @@ export namespace MyNS {
 		/** Apideck service provider associated with event. */
 		service?: WebhookEventLogService;
 
-		/** HTTP Status code that was returned. */
+		/**
+		 * HTTP Status code that was returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code?: number | null;
 
 		/** Whether or not the request was successful. */
@@ -475,7 +495,10 @@ export namespace MyNS {
 		/** Name of source event that webhook is subscribed to. */
 		event_type: FormControl<string | null | undefined>,
 
-		/** Number of attempts webhook endpoint was called before a success was returned or eventually failed */
+		/**
+		 * Number of attempts webhook endpoint was called before a success was returned or eventually failed
+		 * Type: double
+		 */
 		execution_attempt: FormControl<number | null | undefined>,
 
 		/** HTTP Method of request to endpoint. */
@@ -491,7 +514,10 @@ export namespace MyNS {
 		/** If the request has not hit the max retry limit and will be retried. */
 		retry_scheduled: FormControl<boolean | null | undefined>,
 
-		/** HTTP Status code that was returned. */
+		/**
+		 * HTTP Status code that was returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** Whether or not the request was successful. */
@@ -526,10 +552,16 @@ export namespace MyNS {
 
 	export interface WebhookEventLogAttempts {
 
-		/** Number of attempts webhook endpoint was called before a success was returned or eventually failed */
+		/**
+		 * Number of attempts webhook endpoint was called before a success was returned or eventually failed
+		 * Type: double
+		 */
 		execution_attempt?: number | null;
 
-		/** HTTP Status code that was returned. */
+		/**
+		 * HTTP Status code that was returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code?: number | null;
 
 		/** Whether or not the request was successful. */
@@ -540,10 +572,16 @@ export namespace MyNS {
 	}
 	export interface WebhookEventLogAttemptsFormProperties {
 
-		/** Number of attempts webhook endpoint was called before a success was returned or eventually failed */
+		/**
+		 * Number of attempts webhook endpoint was called before a success was returned or eventually failed
+		 * Type: double
+		 */
 		execution_attempt: FormControl<number | null | undefined>,
 
-		/** HTTP Status code that was returned. */
+		/**
+		 * HTTP Status code that was returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** Whether or not the request was successful. */
@@ -640,14 +678,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -702,6 +746,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -716,6 +761,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -747,6 +793,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -761,6 +808,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -786,7 +834,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -806,7 +857,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -838,7 +892,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -858,7 +915,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -890,7 +950,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -910,7 +973,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -952,6 +1018,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 
@@ -972,6 +1039,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 
@@ -1006,7 +1074,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1026,7 +1097,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1058,7 +1132,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1078,7 +1155,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1114,7 +1194,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1134,7 +1217,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1200,6 +1286,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1214,6 +1301,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1240,7 +1328,10 @@ export namespace MyNS {
 		event_id?: string | null;
 		event_type?: WebhookEventType | null;
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt?: number | null;
 
 		/** ISO Datetime for when the original event occurred */
@@ -1264,7 +1355,10 @@ export namespace MyNS {
 		event_id: FormControl<string | null | undefined>,
 		event_type: FormControl<WebhookEventType | null | undefined>,
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt: FormControl<number | null | undefined>,
 
 		/** ISO Datetime for when the original event occurred */
@@ -1334,6 +1428,7 @@ export namespace MyNS {
 		 * Get webhook/logs
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {WebhookEventLogsFilter} filter Filter results
 		 * @return {GetWebhookEventLogsResponse} EventLogs
 		 */
@@ -1373,6 +1468,7 @@ export namespace MyNS {
 		 * Get webhook/webhooks
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetWebhooksResponse} Webhooks
 		 */
 		WebhooksAll(cursor: string | null | undefined, limit: number | null | undefined): Observable<GetWebhooksResponse> {

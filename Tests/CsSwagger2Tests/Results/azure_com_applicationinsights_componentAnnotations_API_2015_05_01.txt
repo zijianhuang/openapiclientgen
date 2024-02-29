@@ -145,9 +145,16 @@ namespace MyNS
 		/// Gets the list of annotations for a component for given time range
 		/// Annotations_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="start">The start time to query from for annotations, cannot be older than 90 days from current date.</param>
 		/// <param name="end">The end time to query for annotations.</param>
@@ -179,9 +186,16 @@ namespace MyNS
 		/// Create an Annotation of an Application Insights component.
 		/// Annotations_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="requestBody">Properties that need to be specified to create an annotation of a Application Insights component.</param>
 		/// <returns>An object containing the annotation definition created by this PUT call.</returns>
@@ -219,9 +233,16 @@ namespace MyNS
 		/// Get the annotation for given id.
 		/// Annotations_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="annotationId">The unique annotation ID. This is unique within a Application Insights component.</param>
 		/// <returns>The Annotation object for this id.</returns>
@@ -252,9 +273,16 @@ namespace MyNS
 		/// Delete an Annotation of an Application Insights component.
 		/// Annotations_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="annotationId">The unique annotation ID. This is unique within a Application Insights component.</param>
 		/// <returns>The annotation that was successfully deleted.</returns>

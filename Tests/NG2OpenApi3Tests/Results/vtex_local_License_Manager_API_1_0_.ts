@@ -332,7 +332,10 @@ export namespace MyNS {
 	export interface LicenseItems {
 		expiration?: Date | null;
 
-		/** ID of the category of the license */
+		/**
+		 * ID of the category of the license
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** If the license is purchased */
@@ -349,7 +352,10 @@ export namespace MyNS {
 	export interface LicenseItemsFormProperties {
 		expiration: FormControl<Date | null | undefined>,
 
-		/** ID of the category of the license */
+		/**
+		 * ID of the category of the license
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** If the license is purchased */
@@ -372,7 +378,10 @@ export namespace MyNS {
 		domains?: Array<string>;
 		endpoints?: LicenseItemsProductsEndpoints;
 
-		/** ID of the product */
+		/**
+		 * ID of the product
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Name of the product */
@@ -380,7 +389,10 @@ export namespace MyNS {
 	}
 	export interface LicenseItemsProductsFormProperties {
 
-		/** ID of the product */
+		/**
+		 * ID of the product
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the product */
@@ -420,9 +432,14 @@ export namespace MyNS {
 		/** Hosts associated to the store */
 		hosts?: Array<string>;
 
-		/** ID of the store */
+		/**
+		 * ID of the store
+		 * Type: double
+		 */
 		id?: number | null;
 		logo?: string | null;
+
+		/** Type: double */
 		monetaryUnitId?: number | null;
 
 		/** Store name */
@@ -436,9 +453,14 @@ export namespace MyNS {
 	export interface SiteItemsFormProperties {
 		LV: FormControl<string | null | undefined>,
 
-		/** ID of the store */
+		/**
+		 * ID of the store
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 		logo: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		monetaryUnitId: FormControl<number | null | undefined>,
 
 		/** Store name */
@@ -752,7 +774,10 @@ export namespace MyNS {
 	/** Object representing roles */
 	export interface RoleItems {
 
-		/** ID of the role */
+		/**
+		 * ID of the role
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** If the role is admin */
@@ -766,14 +791,20 @@ export namespace MyNS {
 		products?: Array<ProductItems>;
 		resources?: string | null;
 
-		/** Returns 1 for custom roles, and 0 otherwise */
+		/**
+		 * Returns 1 for custom roles, and 0 otherwise
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roleType?: number | null;
 	}
 
 	/** Object representing roles */
 	export interface RoleItemsFormProperties {
 
-		/** ID of the role */
+		/**
+		 * ID of the role
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** If the role is admin */
@@ -784,7 +815,10 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		resources: FormControl<string | null | undefined>,
 
-		/** Returns 1 for custom roles, and 0 otherwise */
+		/**
+		 * Returns 1 for custom roles, and 0 otherwise
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roleType: FormControl<number | null | undefined>,
 	}
 	export function CreateRoleItemsFormGroup() {
@@ -854,24 +888,28 @@ export namespace MyNS {
 		/**
 		 * Current page number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: number;
 
 		/**
 		 * Total of pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: number;
 
 		/**
 		 * Items per page
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		perPage: number;
 
 		/**
 		 * Total of items
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -882,24 +920,28 @@ export namespace MyNS {
 		/**
 		 * Current page number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Total of pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 
 		/**
 		 * Items per page
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		perPage: FormControl<number | null | undefined>,
 
 		/**
 		 * Total of items
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1008,7 +1050,10 @@ export namespace MyNS {
 		/** Array of hosts corresponding to the store */
 		hosts?: Array<string>;
 
-		/** ID of the store */
+		/**
+		 * ID of the store
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Name of the store */
@@ -1018,7 +1063,10 @@ export namespace MyNS {
 	/** Object containing summarized information from a store */
 	export interface StoreItemsFormProperties {
 
-		/** ID of the store */
+		/**
+		 * ID of the store
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the store */
@@ -1066,13 +1114,19 @@ export namespace MyNS {
 		/** Details of error */
 		Detais?: string | null;
 
-		/** Status code of HTTP response */
+		/**
+		 * Status code of HTTP response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpStatusCode?: number | null;
 
 		/** Error message */
 		Message?: string | null;
 
-		/** Error code for License Manager */
+		/**
+		 * Error code for License Manager
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VLMErrorCode?: number | null;
 	}
 
@@ -1082,13 +1136,19 @@ export namespace MyNS {
 		/** Details of error */
 		Detais: FormControl<string | null | undefined>,
 
-		/** Status code of HTTP response */
+		/**
+		 * Status code of HTTP response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpStatusCode: FormControl<number | null | undefined>,
 
 		/** Error message */
 		Message: FormControl<string | null | undefined>,
 
-		/** Error code for License Manager */
+		/**
+		 * Error code for License Manager
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VLMErrorCode: FormControl<number | null | undefined>,
 	}
 	export function CreateVLMErrorFormGroup() {
@@ -1111,7 +1171,9 @@ export namespace MyNS {
 		 * Returns a list of registered users. The response is divided in pages. The query parameter `numItems` defines the number of items in each page, and consequently the amount of pages for the whole list.
 		 * Get api/license-manager/site/pvt/logins/list/paged
 		 * @param {number} numItems Number of items in the returned page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageNumber Which page from the whole list will be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Chooses the field that the list will be sorted by
 		 * @param {string} sortType Defines the sorting order. `ASC` is used for ascendant order. `DSC` is used for descendant order
 		 * @return {ListUsersResponse} Success
@@ -1125,7 +1187,9 @@ export namespace MyNS {
 		 * Returns a list of available roles. The response is divided in pages. The query parameter `numItems` defines the number of items in each page, and consequently the amount of pages for the whole list.
 		 * Get api/license-manager/site/pvt/roles/list/paged
 		 * @param {number} numItems Number of items in the returned page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageNumber Which page from the whole list will be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Chooses the field that the list will be sorted by
 		 * @param {string} sortType Defines the sorting order. ASC is used for ascendant order. DSC is used for descendant order
 		 * @return {ListRolesResponse} Success
@@ -1309,7 +1373,10 @@ export namespace MyNS {
 
 	export interface GetRolesbyUserReturn {
 
-		/** ID of role */
+		/**
+		 * ID of role
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of role */
@@ -1317,7 +1384,10 @@ export namespace MyNS {
 	}
 	export interface GetRolesbyUserReturnFormProperties {
 
-		/** ID of role */
+		/**
+		 * ID of role
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of role */

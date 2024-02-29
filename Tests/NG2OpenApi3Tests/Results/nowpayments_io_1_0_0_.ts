@@ -245,15 +245,23 @@ export namespace MyNS {
 	}
 
 	export interface GetEstimatedPriceReturn {
+
+		/** Type: double */
 		amount_from?: number | null;
 		currency_from?: string | null;
 		currency_to?: string | null;
+
+		/** Type: double */
 		estimated_amount?: number | null;
 	}
 	export interface GetEstimatedPriceReturnFormProperties {
+
+		/** Type: double */
 		amount_from: FormControl<number | null | undefined>,
 		currency_from: FormControl<string | null | undefined>,
 		currency_to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		estimated_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetEstimatedPriceReturnFormGroup() {
@@ -269,13 +277,21 @@ export namespace MyNS {
 	export interface GetTheMinimumPaymentAmountReturn {
 		currency_from?: string | null;
 		currency_to?: string | null;
+
+		/** Type: double */
 		fiat_equivalent?: number | null;
+
+		/** Type: double */
 		min_amount?: number | null;
 	}
 	export interface GetTheMinimumPaymentAmountReturnFormProperties {
 		currency_from: FormControl<string | null | undefined>,
 		currency_to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		fiat_equivalent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		min_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTheMinimumPaymentAmountReturnFormGroup() {
@@ -290,15 +306,31 @@ export namespace MyNS {
 
 	export interface GetListOfPaymentsReturn {
 		GetListOfPaymentsReturnData?: Array<GetListOfPaymentsReturnData>;
+
+		/** Type: double */
 		limit?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pagesCount?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetListOfPaymentsReturnFormProperties {
+
+		/** Type: double */
 		limit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pagesCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetListOfPaymentsReturnFormGroup() {
@@ -312,31 +344,51 @@ export namespace MyNS {
 	}
 
 	export interface GetListOfPaymentsReturnData {
+
+		/** Type: double */
 		actually_paid?: number | null;
 		order_description?: string | null;
 		order_id?: string | null;
+
+		/** Type: double */
 		outcome_amount?: number | null;
 		outcome_currency?: string | null;
 		pay_address?: string | null;
+
+		/** Type: double */
 		pay_amount?: number | null;
 		pay_currency?: string | null;
+
+		/** Type: double */
 		payment_id?: number | null;
 		payment_status?: string | null;
+
+		/** Type: double */
 		price_amount?: number | null;
 		price_currency?: string | null;
 		purchase_id?: string | null;
 	}
 	export interface GetListOfPaymentsReturnDataFormProperties {
+
+		/** Type: double */
 		actually_paid: FormControl<number | null | undefined>,
 		order_description: FormControl<string | null | undefined>,
 		order_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		outcome_amount: FormControl<number | null | undefined>,
 		outcome_currency: FormControl<string | null | undefined>,
 		pay_address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		pay_amount: FormControl<number | null | undefined>,
 		pay_currency: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		payment_id: FormControl<number | null | undefined>,
 		payment_status: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 		price_currency: FormControl<string | null | undefined>,
 		purchase_id: FormControl<string | null | undefined>,
@@ -363,12 +415,16 @@ export namespace MyNS {
 	export interface GetUpdatePaymentEstimateReturn {
 		expiration_estimate_date?: string | null;
 		id?: string | null;
+
+		/** Type: double */
 		pay_amount?: number | null;
 		token_id?: string | null;
 	}
 	export interface GetUpdatePaymentEstimateReturnFormProperties {
 		expiration_estimate_date: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		pay_amount: FormControl<number | null | undefined>,
 		token_id: FormControl<string | null | undefined>,
 	}
@@ -383,34 +439,54 @@ export namespace MyNS {
 	}
 
 	export interface GetPaymentStatusReturn {
+
+		/** Type: double */
 		actually_paid?: number | null;
 		created_at?: string | null;
 		order_description?: string | null;
 		order_id?: string | null;
+
+		/** Type: double */
 		outcome_amount?: number | null;
 		outcome_currency?: string | null;
 		pay_address?: string | null;
+
+		/** Type: double */
 		pay_amount?: number | null;
 		pay_currency?: string | null;
+
+		/** Type: double */
 		payment_id?: number | null;
 		payment_status?: string | null;
+
+		/** Type: double */
 		price_amount?: number | null;
 		price_currency?: string | null;
 		purchase_id?: string | null;
 		updated_at?: string | null;
 	}
 	export interface GetPaymentStatusReturnFormProperties {
+
+		/** Type: double */
 		actually_paid: FormControl<number | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
 		order_description: FormControl<string | null | undefined>,
 		order_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		outcome_amount: FormControl<number | null | undefined>,
 		outcome_currency: FormControl<string | null | undefined>,
 		pay_address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		pay_amount: FormControl<number | null | undefined>,
 		pay_currency: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		payment_id: FormControl<number | null | undefined>,
 		payment_status: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 		price_currency: FormControl<string | null | undefined>,
 		purchase_id: FormControl<string | null | undefined>,
@@ -488,11 +564,19 @@ export namespace MyNS {
 	}
 
 	export interface GetSubPartnerBalanceReturnResultBalancesUsddtrc20 {
+
+		/** Type: double */
 		amount?: number | null;
+
+		/** Type: double */
 		pendingAmount?: number | null;
 	}
 	export interface GetSubPartnerBalanceReturnResultBalancesUsddtrc20FormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pendingAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSubPartnerBalanceReturnResultBalancesUsddtrc20FormGroup() {
@@ -504,11 +588,19 @@ export namespace MyNS {
 	}
 
 	export interface GetSubPartnerBalanceReturnResultBalancesUsdtbsc {
+
+		/** Type: double */
 		amount?: number | null;
+
+		/** Type: double */
 		pendingAmount?: number | null;
 	}
 	export interface GetSubPartnerBalanceReturnResultBalancesUsdtbscFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pendingAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSubPartnerBalanceReturnResultBalancesUsdtbscFormGroup() {
@@ -565,10 +657,14 @@ export namespace MyNS {
 	}
 
 	export interface GetAllTransfersReturn {
+
+		/** Type: double */
 		count?: number | null;
 		GetAllTransfersReturnResult?: Array<GetAllTransfersReturnResult>;
 	}
 	export interface GetAllTransfersReturnFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAllTransfersReturnFormGroup() {
@@ -613,10 +709,14 @@ export namespace MyNS {
 	}
 
 	export interface GetManyRecurringPaymentsReturn {
+
+		/** Type: double */
 		count?: number | null;
 		GetManyRecurringPaymentsReturnResult?: Array<GetManyRecurringPaymentsReturnResult>;
 	}
 	export interface GetManyRecurringPaymentsReturnFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetManyRecurringPaymentsReturnFormGroup() {
@@ -675,10 +775,14 @@ export namespace MyNS {
 	}
 
 	export interface GetManyPlansReturn {
+
+		/** Type: double */
 		count?: number | null;
 		GetManyPlansReturnResult?: Array<GetManyPlansReturnResult>;
 	}
 	export interface GetManyPlansReturnFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetManyPlansReturnFormGroup() {
@@ -689,6 +793,8 @@ export namespace MyNS {
 	}
 
 	export interface GetManyPlansReturnResult {
+
+		/** Type: double */
 		amount?: number | null;
 		cancel_url?: any;
 		created_at?: string | null;
@@ -702,6 +808,8 @@ export namespace MyNS {
 		updated_at?: string | null;
 	}
 	export interface GetManyPlansReturnResultFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		cancel_url: FormControl<any | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
@@ -743,6 +851,8 @@ export namespace MyNS {
 	}
 
 	export interface GetOnePlanReturnResult {
+
+		/** Type: double */
 		amount?: number | null;
 		cancel_url?: any;
 		created_at?: string | null;
@@ -756,6 +866,8 @@ export namespace MyNS {
 		updated_at?: string | null;
 	}
 	export interface GetOnePlanReturnResultFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		cancel_url: FormControl<any | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
@@ -786,14 +898,22 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePlanPatchBody {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: string | null;
+
+		/** Type: double */
 		interval_day?: number | null;
 		title?: string | null;
 	}
 	export interface UpdatePlanPatchBodyFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		interval_day: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}

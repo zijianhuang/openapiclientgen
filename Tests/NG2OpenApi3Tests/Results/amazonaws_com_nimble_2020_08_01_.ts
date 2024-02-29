@@ -2593,6 +2593,7 @@ export namespace MyNS {
 		 * List all the launch profiles a studio.
 		 * Get 2020-08-01/studios/{studioId}/launch-profiles
 		 * @param {number} maxResults The max number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results, or null if there are no more results.
 		 * @param {string} principalId The principal ID. This currently supports a IAM Identity Center UserId. 
 		 * @param {Array<LaunchProfileState>} states Filter this request to launch profiles in any of the given states.
@@ -2693,6 +2694,7 @@ export namespace MyNS {
 		 * Lists the <code>StudioComponents</code> in a studio.
 		 * Get 2020-08-01/studios/{studioId}/studio-components
 		 * @param {number} maxResults The max number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results, or null if there are no more results.
 		 * @param {Array<StudioComponentState>} states Filters the request to studio components that are in one of the given states. 
 		 * @param {string} studioId The studio ID. 
@@ -2986,6 +2988,7 @@ export namespace MyNS {
 		 * Get 2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership
 		 * @param {string} launchProfileId The ID of the launch profile used to control access from the streaming session.
 		 * @param {number} maxResults The max number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results, or null if there are no more results.
 		 * @param {string} studioId The studio ID. 
 		 * @return {ListLaunchProfileMembersResponse} Success
@@ -3021,6 +3024,7 @@ export namespace MyNS {
 		 * <p>Get all users in a given studio membership.</p> <note> <p> <code>ListStudioMembers</code> only returns admin members.</p> </note>
 		 * Get 2020-08-01/studios/{studioId}/membership
 		 * @param {number} maxResults The max number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results, or null if there are no more results.
 		 * @param {string} studioId The studio ID. 
 		 * @return {ListStudioMembersResponse} Success
@@ -3120,8 +3124,8 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable description of the launch profile.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
@@ -3142,8 +3146,8 @@ export namespace MyNS {
 		/**
 		 * The name for the launch profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
@@ -3168,16 +3172,16 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable description of the launch profile.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the launch profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3227,8 +3231,8 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
@@ -3241,8 +3245,8 @@ export namespace MyNS {
 		/**
 		 * A friendly name for a streaming image resource.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: string;
 
@@ -3253,8 +3257,8 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3267,8 +3271,8 @@ export namespace MyNS {
 		/**
 		 * A friendly name for a streaming image resource.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3301,8 +3305,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the streaming image.
-		 * Max length: 22
 		 * Min length: 0
+		 * Max length: 22
 		 */
 		streamingImageId?: string | null;
 
@@ -3325,8 +3329,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the streaming image.
-		 * Max length: 22
 		 * Min length: 0
+		 * Max length: 22
 		 */
 		streamingImageId: FormControl<string | null | undefined>,
 
@@ -3374,16 +3378,16 @@ export namespace MyNS {
 		/**
 		 * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		adminRoleArn: string;
 
 		/**
 		 * A friendly name for the studio.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: string;
 
@@ -3393,8 +3397,8 @@ export namespace MyNS {
 		/**
 		 * The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.
 		 * Required
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		studioName: string;
 
@@ -3404,8 +3408,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		userRoleArn: string;
 	}
@@ -3414,24 +3418,24 @@ export namespace MyNS {
 		/**
 		 * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		adminRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A friendly name for the studio.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.
 		 * Required
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		studioName: FormControl<string | null | undefined>,
 
@@ -3441,8 +3445,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		userRoleArn: FormControl<string | null | undefined>,
 	}
@@ -3480,8 +3484,8 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
@@ -3498,15 +3502,15 @@ export namespace MyNS {
 		/**
 		 * The name for the studio component.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		runtimeRoleArn?: string | null;
 
@@ -3519,8 +3523,8 @@ export namespace MyNS {
 
 		/**
 		 * An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		secureInitializationRoleArn?: string | null;
 
@@ -3540,30 +3544,30 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the studio component.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		runtimeRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		secureInitializationRoleArn: FormControl<string | null | undefined>,
 
@@ -3610,8 +3614,8 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable description of the launch profile.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
@@ -3620,8 +3624,8 @@ export namespace MyNS {
 
 		/**
 		 * The name for the launch profile.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name?: string | null;
 
@@ -3639,15 +3643,15 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable description of the launch profile.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the launch profile.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3716,15 +3720,15 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * A friendly name for a streaming image resource.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name?: string | null;
 	}
@@ -3732,15 +3736,15 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A friendly name for a streaming image resource.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3756,22 +3760,22 @@ export namespace MyNS {
 
 		/**
 		 * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		adminRoleArn?: string | null;
 
 		/**
 		 * A friendly name for the studio.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName?: string | null;
 
 		/**
 		 * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		userRoleArn?: string | null;
 	}
@@ -3779,22 +3783,22 @@ export namespace MyNS {
 
 		/**
 		 * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		adminRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A friendly name for the studio.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		userRoleArn: FormControl<string | null | undefined>,
 	}
@@ -3814,8 +3818,8 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
@@ -3831,15 +3835,15 @@ export namespace MyNS {
 
 		/**
 		 * The name for the studio component.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name?: string | null;
 
 		/**
 		 * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		runtimeRoleArn?: string | null;
 
@@ -3852,8 +3856,8 @@ export namespace MyNS {
 
 		/**
 		 * An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		secureInitializationRoleArn?: string | null;
 
@@ -3867,29 +3871,29 @@ export namespace MyNS {
 
 		/**
 		 * The description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the studio component.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		runtimeRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		secureInitializationRoleArn: FormControl<string | null | undefined>,
 

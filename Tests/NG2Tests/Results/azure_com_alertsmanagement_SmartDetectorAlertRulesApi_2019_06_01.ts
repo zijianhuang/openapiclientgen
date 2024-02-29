@@ -422,6 +422,7 @@ export namespace MyNS {
 		 * List all the existing Smart Detector alert rules within the subscription.
 		 * Get subscriptions/{subscriptionId}/providers/microsoft.alertsManagement/smartDetectorAlertRules
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version Client Api Version.
 		 * @param {boolean} expandDetector Indicates if Smart Detector should be expanded.
 		 * @return {AlertRulesList} Successful request to list Smart Detector alert rules.
@@ -434,6 +435,7 @@ export namespace MyNS {
 		 * List all the existing Smart Detector alert rules within the subscription and resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} api_version Client Api Version.
 		 * @param {boolean} expandDetector Indicates if Smart Detector should be expanded.
@@ -447,6 +449,7 @@ export namespace MyNS {
 		 * Get a specific Smart Detector alert rule.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} alertRuleName The name of the alert rule.
 		 * @param {string} api_version Client Api Version.
@@ -461,6 +464,7 @@ export namespace MyNS {
 		 * Create or update a Smart Detector alert rule.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} alertRuleName The name of the alert rule.
 		 * @param {string} api_version Client Api Version.
@@ -475,6 +479,7 @@ export namespace MyNS {
 		 * Delete an existing Smart Detector alert rule.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} alertRuleName The name of the alert rule.
 		 * @param {string} api_version Client Api Version.
@@ -488,6 +493,7 @@ export namespace MyNS {
 		 * Patch a specific Smart Detector alert rule.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} alertRuleName The name of the alert rule.
 		 * @param {string} api_version Client Api Version.

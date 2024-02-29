@@ -7858,6 +7858,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=defaultStorageAccount)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {LabList} OK
@@ -7886,6 +7887,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=status)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ScheduleList} OK
@@ -7902,6 +7904,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=defaultStorageAccount)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {LabList} OK
@@ -7919,6 +7922,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=displayName)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ArtifactSourceList} OK
@@ -7937,6 +7941,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=displayName)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ArmTemplateList} OK
@@ -7971,6 +7976,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=title)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ArtifactList} OK
@@ -8109,6 +8115,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=vm)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {CustomImageList} OK
@@ -8185,6 +8192,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=description)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {FormulaList} OK
@@ -8261,6 +8269,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=author)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {GalleryImageList} OK
@@ -8278,6 +8287,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=webHookUrl)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {NotificationChannelList} OK
@@ -8385,6 +8395,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=description)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {PolicyList} OK
@@ -8465,6 +8476,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=status)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ScheduleList} OK
@@ -8612,6 +8624,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=identity)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {UserList} OK
@@ -8689,6 +8702,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=diskType)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {DiskList} OK
@@ -8802,6 +8816,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=deploymentProperties)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {DtlEnvironmentList} OK
@@ -8883,6 +8898,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=value)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {SecretList} OK
@@ -8964,6 +8980,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($expand=applicableSchedule)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ServiceFabricList} OK
@@ -9091,6 +9108,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=status)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ScheduleList} OK
@@ -9191,6 +9209,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($expand=artifacts,computeVm,networkInterface,applicableSchedule)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {LabVirtualMachineList} OK
@@ -9454,6 +9473,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=status)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ScheduleList} OK
@@ -9549,6 +9569,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($expand=externalSubnets)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {VirtualNetworkList} OK
@@ -9761,6 +9782,7 @@ export namespace MyNS {
 		 * @param {string} expand Specify the $expand query. Example: 'properties($select=status)'
 		 * @param {string} filter The filter to apply to the operation. Example: '$filter=contains(name,'myName')
 		 * @param {number} top The maximum number of resources to return from the operation. Example: '$top=10'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderby The ordering expression for the results, using OData notation. Example: '$orderby=name desc'
 		 * @param {string} api_version Client API version.
 		 * @return {ScheduleList} OK

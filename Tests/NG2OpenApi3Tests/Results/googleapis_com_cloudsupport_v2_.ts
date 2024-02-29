@@ -357,7 +357,10 @@ export namespace MyNS {
 		/** # gdata.* are outside protos with mising documentation */
 		cosmoBinaryReference?: string | null;
 
-		/** # gdata.* are outside protos with mising documentation */
+		/**
+		 * # gdata.* are outside protos with mising documentation
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** # gdata.* are outside protos with mising documentation */
@@ -391,7 +394,10 @@ export namespace MyNS {
 		/** # gdata.* are outside protos with mising documentation */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** # gdata.* are outside protos with mising documentation */
+		/**
+		 * # gdata.* are outside protos with mising documentation
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** # gdata.* are outside protos with mising documentation */
@@ -842,7 +848,10 @@ export namespace MyNS {
 		/** # gdata.* are outside protos with mising documentation */
 		cosmoBinaryReference?: string | null;
 
-		/** # gdata.* are outside protos with mising documentation */
+		/**
+		 * # gdata.* are outside protos with mising documentation
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** # gdata.* are outside protos with mising documentation */
@@ -927,7 +936,10 @@ export namespace MyNS {
 		/** # gdata.* are outside protos with mising documentation */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** # gdata.* are outside protos with mising documentation */
+		/**
+		 * # gdata.* are outside protos with mising documentation
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** # gdata.* are outside protos with mising documentation */
@@ -1096,6 +1108,7 @@ export namespace MyNS {
 		 * Retrieve valid classifications to use when creating a support case. Classifications are hierarchical. Each classification is a string containing all levels of the hierarchy separated by `" > "`. For example, `"Technical Issue > Compute > Compute Engine"`. Classification IDs returned by this endpoint are valid for at least six months. When a classification is deactivated, this endpoint immediately stops returning it. After six months, `case.create` requests using the classification will fail. EXAMPLES: cURL: ```shell curl \ --header "Authorization: Bearer $(gcloud auth print-access-token)" \ 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"*Compute%20Engine*"' ``` Python: ```python import googleapiclient.discovery supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version="v2", discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", ) request = supportApiService.caseClassifications().search( query='display_name:"*Compute Engine*"' ) print(request.execute()) ```
 		 * Get v2/caseClassifications:search
 		 * @param {number} pageSize The maximum number of classifications fetched with each request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return. If unspecified, the first page is retrieved.
 		 * @param {string} query An expression used to filter case classifications. If it's an empty string, then no filtering happens. Otherwise, case classifications will be returned that match the filter.
 		 * @return {SearchCaseClassificationsResponse} Successful response
@@ -1160,6 +1173,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/attachments
 		 * @param {string} parent Required. The name of the case for which attachments should be listed.
 		 * @param {number} pageSize The maximum number of attachments fetched with each request. If not provided, the default is 10. The maximum page size that will be returned is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return. If unspecified, the first page is retrieved.
 		 * @return {ListAttachmentsResponse} Successful response
 		 */
@@ -1173,6 +1187,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of a parent to list cases under.
 		 * @param {string} filter An expression used to filter cases. If it's an empty string, then no filtering happens. Otherwise, the endpoint returns the cases that match the filter. Expressions use the following fields separated by `AND` and specified with `=`: - `state`: Can be `OPEN` or `CLOSED`. - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - `creator.email`: The email address of the case creator. EXAMPLES: - `state=CLOSED` - `state=OPEN AND creator.email="tester@example.com"` - `state=OPEN AND (priority=P0 OR priority=P1)`
 		 * @param {number} pageSize The maximum number of cases fetched with each request. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return. If unspecified, the first page is retrieved.
 		 * @return {ListCasesResponse} Successful response
 		 */
@@ -1195,6 +1210,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/cases:search
 		 * @param {string} parent The name of the parent resource to search for cases under.
 		 * @param {number} pageSize The maximum number of cases fetched with each request. The default page size is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return. If unspecified, the first page is retrieved.
 		 * @param {string} query An expression used to filter cases. Expressions use the following fields separated by `AND` and specified with `=`: - `organization`: An organization name in the form `organizations/`. - `project`: A project name in the form `projects/`. - `state`: Can be `OPEN` or `CLOSED`. - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - `creator.email`: The email address of the case creator. You must specify either `organization` or `project`. To search across `displayName`, `description`, and comments, use a global restriction with no keyword or operator. For example, `"my search"`. To search only cases updated after a certain date, use `update_time` restricted with that particular date, time, and timezone in ISO datetime format. For example, `update_time>"2020-01-01T00:00:00-05:00"`. `update_time` only supports the greater than operator (`>`). Examples: - `organization="organizations/123456789"` - `project="projects/my-project-id"` - `project="projects/123456789"` - `organization="organizations/123456789" AND state=CLOSED` - `project="projects/my-project-id" AND creator.email="tester@example.com"` - `project="projects/my-project-id" AND (priority=P0 OR priority=P1)`
 		 * @return {SearchCasesResponse} Successful response
@@ -1208,6 +1224,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/comments
 		 * @param {string} parent Required. The name of the case for which to list comments.
 		 * @param {number} pageSize The maximum number of comments to fetch. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return. If unspecified, the first page is returned.
 		 * @return {ListCommentsResponse} Successful response
 		 */

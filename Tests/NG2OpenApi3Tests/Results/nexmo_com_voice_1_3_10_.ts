@@ -101,8 +101,8 @@ export namespace MyNS {
 		/**
 		 * The phone number to connect to
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		number: string;
 
@@ -119,8 +119,8 @@ export namespace MyNS {
 		/**
 		 * The phone number to connect to
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		number: FormControl<string | null | undefined>,
 
@@ -281,8 +281,8 @@ export namespace MyNS {
 		/**
 		 * The phone number to connect to
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		number: string;
 
@@ -302,8 +302,8 @@ export namespace MyNS {
 		/**
 		 * The phone number to connect to
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		number: FormControl<string | null | undefined>,
 
@@ -334,8 +334,8 @@ export namespace MyNS {
 
 		/**
 		 * The SIP URI to connect to
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		uri?: string | null;
 	}
@@ -351,8 +351,8 @@ export namespace MyNS {
 
 		/**
 		 * The SIP URI to connect to
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		uri: FormControl<string | null | undefined>,
 	}
@@ -415,8 +415,8 @@ export namespace MyNS {
 		type: string;
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		uri?: string | null;
 	}
@@ -434,8 +434,8 @@ export namespace MyNS {
 		type: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		uri: FormControl<string | null | undefined>,
 	}
@@ -623,13 +623,25 @@ export namespace MyNS {
 		/** A list of call objects. See the [get details of a specific call](#getCall) response fields for a description of the nested objects */
 		_embedded?: GetCallsResponse_embedded;
 		_links?: GetCallsResponse_links;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		record_index?: number | null;
 	}
 	export interface GetCallsResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		record_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGetCallsResponseFormGroup() {
@@ -685,7 +697,10 @@ export namespace MyNS {
 		/** Set the audio level of the stream in the range `-1 >= level <= 1` with a precision of 0.1. The default value is 0. */
 		level?: string | null;
 
-		/** the number of times to play the file, 0 for infinite */
+		/**
+		 * the number of times to play the file, 0 for infinite
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loop?: number | null;
 
 		/** Required */
@@ -696,7 +711,10 @@ export namespace MyNS {
 		/** Set the audio level of the stream in the range `-1 >= level <= 1` with a precision of 0.1. The default value is 0. */
 		level: FormControl<string | null | undefined>,
 
-		/** the number of times to play the file, 0 for infinite */
+		/**
+		 * the number of times to play the file, 0 for infinite
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loop: FormControl<number | null | undefined>,
 	}
 	export function CreateStartStreamRequestFormGroup() {
@@ -739,13 +757,19 @@ export namespace MyNS {
 		/** The volume level that the speech is played. This can be any value between `-1` to `1` in `0.1` increments, with `0` being the default. */
 		level?: string | null;
 
-		/** The number of times to repeat the text the file, 0 for infinite */
+		/**
+		 * The number of times to repeat the text the file, 0 for infinite
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loop?: number | null;
 
 		/** Set to true to use the premium version of the specified style if available, otherwise the standard version will be used. The default value is false. You can find more information about Premium Voices in the [Text-To-Speech guide](/voice/voice-api/guides/text-to-speech#premium-voices). */
 		premium?: boolean | null;
 
-		/** The vocal style (vocal range, tessitura, and timbre) to use */
+		/**
+		 * The vocal style (vocal range, tessitura, and timbre) to use
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		style?: number | null;
 
 		/**
@@ -765,13 +789,19 @@ export namespace MyNS {
 		/** The volume level that the speech is played. This can be any value between `-1` to `1` in `0.1` increments, with `0` being the default. */
 		level: FormControl<string | null | undefined>,
 
-		/** The number of times to repeat the text the file, 0 for infinite */
+		/**
+		 * The number of times to repeat the text the file, 0 for infinite
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loop: FormControl<number | null | undefined>,
 
 		/** Set to true to use the premium version of the specified style if available, otherwise the standard version will be used. The default value is false. You can find more information about Premium Voices in the [Text-To-Speech guide](/voice/voice-api/guides/text-to-speech#premium-voices). */
 		premium: FormControl<boolean | null | undefined>,
 
-		/** The vocal style (vocal range, tessitura, and timbre) to use */
+		/**
+		 * The vocal style (vocal range, tessitura, and timbre) to use
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		style: FormControl<number | null | undefined>,
 
 		/**
@@ -1100,7 +1130,9 @@ export namespace MyNS {
 		 * @param {Date} date_start Return the records that occurred after this point in time
 		 * @param {Date} date_end Return the records that occurred before this point in time
 		 * @param {number} page_size Return this amount of records in the response
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} record_index Return calls from this index in the response
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetCallsOrder} order Either ascending or  descending order.
 		 * @param {string} conversation_uuid Return all the records associated with a specific conversation.
 		 * @return {GetCallsResponse} OK

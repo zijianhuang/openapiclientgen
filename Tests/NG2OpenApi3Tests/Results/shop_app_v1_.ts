@@ -79,7 +79,9 @@ export namespace MyNS {
 		 * Get openai/search
 		 * @param {string} query Query string to search for items.
 		 * @param {number} price_min The minimum price to filter by.
+		 *     Type: double
 		 * @param {number} price_max The maximum price to filter by.
+		 *     Type: double
 		 * @param {string} similar_to_id A product id that you want to find similar products for. (Only include one)
 		 * @param {string} num_results How many results to return. Defaults to 5. It can be a number between 1 and 10.
 		 * @return {SearchResponse} OK

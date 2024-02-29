@@ -15,6 +15,8 @@ export namespace MyNS {
 		link?: string | null;
 		procedureStepId?: string | null;
 		procedureStepUri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		statutoryInstrumentId?: string | null;
 		statutoryInstrumentUri?: string | null;
@@ -32,6 +34,8 @@ export namespace MyNS {
 		link: FormControl<string | null | undefined>,
 		procedureStepId: FormControl<string | null | undefined>,
 		procedureStepUri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		statutoryInstrumentId: FormControl<string | null | undefined>,
 		statutoryInstrumentUri: FormControl<string | null | undefined>,
@@ -112,12 +116,20 @@ export namespace MyNS {
 
 	export interface BusinessItemResourceCollection {
 		items?: Array<BusinessItemResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface BusinessItemResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBusinessItemResourceCollectionFormGroup() {
@@ -129,11 +141,15 @@ export namespace MyNS {
 	}
 
 	export interface Department {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId?: number | null;
 		id?: string | null;
 		name?: string | null;
 	}
 	export interface DepartmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -168,11 +184,15 @@ export namespace MyNS {
 	export enum LaidPaperType { StatutoryInstrument = 'StatutoryInstrument', ProposedNegative = 'ProposedNegative' }
 
 	export interface LayingBody {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId?: number | null;
 		id?: string | null;
 		name?: string | null;
 	}
 	export interface LayingBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -200,12 +220,20 @@ export namespace MyNS {
 
 	export interface LayingBodyResourceCollection {
 		items?: Array<LayingBodyResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface LayingBodyResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateLayingBodyResourceCollectionFormGroup() {
@@ -221,6 +249,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -228,6 +258,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -310,12 +342,20 @@ export namespace MyNS {
 
 	export interface ProcedureResourceCollection {
 		items?: Array<ProcedureResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ProcedureResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateProcedureResourceCollectionFormGroup() {
@@ -329,6 +369,8 @@ export namespace MyNS {
 	export interface ProposedNegativeStatutoryInstrument {
 		commonsLayingDate?: Date | null;
 		commonsPublishedDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId?: number | null;
 		id?: string | null;
 		layingBodyDepartment?: Department;
@@ -349,6 +391,8 @@ export namespace MyNS {
 	export interface ProposedNegativeStatutoryInstrumentFormProperties {
 		commonsLayingDate: FormControl<Date | null | undefined>,
 		commonsPublishedDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		layingBodyId: FormControl<string | null | undefined>,
@@ -398,12 +442,20 @@ export namespace MyNS {
 
 	export interface ProposedNegativeStatutoryInstrumentResourceCollection {
 		items?: Array<ProposedNegativeStatutoryInstrumentResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ProposedNegativeStatutoryInstrumentResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateProposedNegativeStatutoryInstrumentResourceCollectionFormGroup() {
@@ -417,6 +469,8 @@ export namespace MyNS {
 	export interface StatutoryInstrument {
 		commonsLayingDate?: Date | null;
 		commonsPublishedDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId?: number | null;
 		id?: string | null;
 		layingBodyDepartment?: Department;
@@ -429,6 +483,8 @@ export namespace MyNS {
 		paperComingIntoForceDate?: Date | null;
 		paperComingIntoForceNote?: string | null;
 		paperMadeDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paperNumber?: number | null;
 		paperPrefix?: string | null;
 		paperYear?: string | null;
@@ -443,6 +499,8 @@ export namespace MyNS {
 	export interface StatutoryInstrumentFormProperties {
 		commonsLayingDate: FormControl<Date | null | undefined>,
 		commonsPublishedDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		departmentId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		layingBodyId: FormControl<string | null | undefined>,
@@ -454,6 +512,8 @@ export namespace MyNS {
 		paperComingIntoForceDate: FormControl<Date | null | undefined>,
 		paperComingIntoForceNote: FormControl<string | null | undefined>,
 		paperMadeDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paperNumber: FormControl<number | null | undefined>,
 		paperPrefix: FormControl<string | null | undefined>,
 		paperYear: FormControl<string | null | undefined>,
@@ -504,12 +564,20 @@ export namespace MyNS {
 
 	export interface StatutoryInstrumentResourceCollection {
 		items?: Array<StatutoryInstrumentResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface StatutoryInstrumentResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateStatutoryInstrumentResourceCollectionFormGroup() {
@@ -572,9 +640,12 @@ export namespace MyNS {
 		 * @param {string} Name Proposed negative statutory instruments with the name provided
 		 * @param {boolean} RecommendedForProcedureChange Proposed negative statutory instruments recommended for procedure change
 		 * @param {number} DepartmentId Proposed negative statutory instruments with the department ID specified
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {string} LayingBodyId Proposed negative statutory instruments with the laying body ID specified
 		 * @param {number} Skip The number of records to skip from the first, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} Take The number of records to return, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @return {ProposedNegativeStatutoryInstrumentResourceCollection} Success
 		 */
 		GetProposedNegativeStatutoryInstruments(Name: string | null | undefined, RecommendedForProcedureChange: boolean | null | undefined, DepartmentId: number | null | undefined, LayingBodyId: string | null | undefined, Skip: number | null | undefined, Take: number | null | undefined): Observable<ProposedNegativeStatutoryInstrumentResourceCollection> {
@@ -611,10 +682,13 @@ export namespace MyNS {
 		 * @param {boolean} ConcernsRaisedByCommittee Statutory instruments which contains concerns raised by committee
 		 * @param {ParliamentaryProcess} ParliamentaryProcessConcluded Statutory instruments where the parliamentary process is concluded or notconcluded
 		 * @param {number} DepartmentId Statutory instruments with the department ID specified
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {string} LayingBodyId Statutory instruments with the laying body ID specified
 		 * @param {BusinessItemHouseHouse} House Statutory instruments laid in the house specified
 		 * @param {number} Skip The number of records to skip from the first, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} Take The number of records to return, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @return {StatutoryInstrumentResourceCollection} Success
 		 */
 		GetStatutoryInstruments(Name: string | null | undefined, StatutoryInstrumentType: StatutoryInstrumentType | null | undefined, ScheduledDebate: boolean | null | undefined, MotionToStop: boolean | null | undefined, ConcernsRaisedByCommittee: boolean | null | undefined, ParliamentaryProcessConcluded: ParliamentaryProcess | null | undefined, DepartmentId: number | null | undefined, LayingBodyId: string | null | undefined, House: BusinessItemHouseHouse | null | undefined, Skip: number | null | undefined, Take: number | null | undefined): Observable<StatutoryInstrumentResourceCollection> {

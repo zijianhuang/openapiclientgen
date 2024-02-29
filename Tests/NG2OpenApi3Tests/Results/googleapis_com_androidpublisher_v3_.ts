@@ -293,14 +293,20 @@ export namespace MyNS {
 		/** Represents the binary payload of an APK. */
 		binary?: ApkBinary;
 
-		/** The version code of the APK, as specified in the manifest file. */
+		/**
+		 * The version code of the APK, as specified in the manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 	}
 
 	/** Information about an APK. The resource for ApksService. */
 	export interface ApkFormProperties {
 
-		/** The version code of the APK, as specified in the manifest file. */
+		/**
+		 * The version code of the APK, as specified in the manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateApkFormGroup() {
@@ -535,7 +541,10 @@ export namespace MyNS {
 		/** Alias for a screen density. */
 		densityAlias?: ScreenDensityDensityAlias | null;
 
-		/** Value for density dpi. */
+		/**
+		 * Value for density dpi.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		densityDpi?: number | null;
 	}
 
@@ -545,7 +554,10 @@ export namespace MyNS {
 		/** Alias for a screen density. */
 		densityAlias: FormControl<ScreenDensityDensityAlias | null | undefined>,
 
-		/** Value for density dpi. */
+		/**
+		 * Value for density dpi.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		densityDpi: FormControl<number | null | undefined>,
 	}
 	export function CreateScreenDensityFormGroup() {
@@ -582,14 +594,20 @@ export namespace MyNS {
 	/** Represents an sdk version. */
 	export interface SdkVersion {
 
-		/** Inclusive minimum value of an sdk version. */
+		/**
+		 * Inclusive minimum value of an sdk version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min?: number | null;
 	}
 
 	/** Represents an sdk version. */
 	export interface SdkVersionFormProperties {
 
-		/** Inclusive minimum value of an sdk version. */
+		/**
+		 * Inclusive minimum value of an sdk version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateSdkVersionFormGroup() {
@@ -754,7 +772,10 @@ export namespace MyNS {
 		/** Name of the feature. */
 		featureName?: string | null;
 
-		/** The feature version specified by android:glEsVersion or android:version in in the AndroidManifest. */
+		/**
+		 * The feature version specified by android:glEsVersion or android:version in in the AndroidManifest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		featureVersion?: number | null;
 	}
 
@@ -764,7 +785,10 @@ export namespace MyNS {
 		/** Name of the feature. */
 		featureName: FormControl<string | null | undefined>,
 
-		/** The feature version specified by android:glEsVersion or android:version in in the AndroidManifest. */
+		/**
+		 * The feature version specified by android:glEsVersion or android:version in in the AndroidManifest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		featureVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceFeatureFormGroup() {
@@ -841,10 +865,16 @@ export namespace MyNS {
 		/** The icon image from the APK, as a base64 encoded byte array. */
 		iconBase64?: string | null;
 
-		/** The maximum SDK supported by this APK (optional). */
+		/**
+		 * The maximum SDK supported by this APK (optional).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumSdk?: number | null;
 
-		/** The minimum SDK targeted by this APK. */
+		/**
+		 * The minimum SDK targeted by this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumSdk?: number | null;
 
 		/** The native code environments supported by this APK (optional). */
@@ -859,7 +889,10 @@ export namespace MyNS {
 		/** The permissions requested by this APK. */
 		usesPermissions?: Array<UsesPermission>;
 
-		/** The version code of this APK. */
+		/**
+		 * The version code of this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The version name of this APK. */
@@ -887,16 +920,25 @@ export namespace MyNS {
 		/** The icon image from the APK, as a base64 encoded byte array. */
 		iconBase64: FormControl<string | null | undefined>,
 
-		/** The maximum SDK supported by this APK (optional). */
+		/**
+		 * The maximum SDK supported by this APK (optional).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumSdk: FormControl<number | null | undefined>,
 
-		/** The minimum SDK targeted by this APK. */
+		/**
+		 * The minimum SDK targeted by this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumSdk: FormControl<number | null | undefined>,
 
 		/** The package name. */
 		packageName: FormControl<string | null | undefined>,
 
-		/** The version code of this APK. */
+		/**
+		 * The version code of this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The version name of this APK. */
@@ -923,7 +965,10 @@ export namespace MyNS {
 	/** A permission used by this APK. */
 	export interface UsesPermission {
 
-		/** Optionally, the maximum SDK version for which the permission is required. */
+		/**
+		 * Optionally, the maximum SDK version for which the permission is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion?: number | null;
 
 		/** The name of the permission requested. */
@@ -933,7 +978,10 @@ export namespace MyNS {
 	/** A permission used by this APK. */
 	export interface UsesPermissionFormProperties {
 
-		/** Optionally, the maximum SDK version for which the permission is required. */
+		/**
+		 * Optionally, the maximum SDK version for which the permission is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion: FormControl<number | null | undefined>,
 
 		/** The name of the permission requested. */
@@ -1439,7 +1487,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -1452,7 +1503,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -1794,7 +1848,10 @@ export namespace MyNS {
 		/** Configuration for any new locations Play may launch in for a single offer phase. */
 		otherRegionsConfig?: OtherRegionsSubscriptionOfferPhaseConfig;
 
-		/** Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase. */
+		/**
+		 * Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recurrenceCount?: number | null;
 
 		/** Required. The region-specific configuration of this offer phase. This list must contain exactly one entry for each region for which the subscription offer has a regional config. */
@@ -1807,7 +1864,10 @@ export namespace MyNS {
 		/** Required. The duration of a single recurrence of this phase. Specified in ISO 8601 format. */
 		duration: FormControl<string | null | undefined>,
 
-		/** Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase. */
+		/**
+		 * Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recurrenceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionOfferPhaseFormGroup() {
@@ -1828,14 +1888,20 @@ export namespace MyNS {
 		/** Pricing information for any new locations Play may launch in. */
 		otherRegionsPrices?: OtherRegionsSubscriptionOfferPhasePrices;
 
-		/** The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in. */
+		/**
+		 * The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in.
+		 * Type: double
+		 */
 		relativeDiscount?: number | null;
 	}
 
 	/** Configuration for any new locations Play may launch in for a single offer phase. */
 	export interface OtherRegionsSubscriptionOfferPhaseConfigFormProperties {
 
-		/** The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in. */
+		/**
+		 * The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in.
+		 * Type: double
+		 */
 		relativeDiscount: FormControl<number | null | undefined>,
 	}
 	export function CreateOtherRegionsSubscriptionOfferPhaseConfigFormGroup() {
@@ -1878,7 +1944,10 @@ export namespace MyNS {
 		/** Required. Immutable. The region to which this config applies. */
 		regionCode?: string | null;
 
-		/** The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region. */
+		/**
+		 * The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region.
+		 * Type: double
+		 */
 		relativeDiscount?: number | null;
 	}
 
@@ -1888,7 +1957,10 @@ export namespace MyNS {
 		/** Required. Immutable. The region to which this config applies. */
 		regionCode: FormControl<string | null | undefined>,
 
-		/** The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region. */
+		/**
+		 * The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region.
+		 * Type: double
+		 */
 		relativeDiscount: FormControl<number | null | undefined>,
 	}
 	export function CreateRegionalSubscriptionOfferPhaseConfigFormGroup() {
@@ -2666,7 +2738,10 @@ export namespace MyNS {
 		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
 		sha256?: string | null;
 
-		/** The version code of the Android App Bundle, as specified in the Android App Bundle's base module APK manifest file. */
+		/**
+		 * The version code of the Android App Bundle, as specified in the Android App Bundle's base module APK manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 	}
 
@@ -2679,7 +2754,10 @@ export namespace MyNS {
 		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
 		sha256: FormControl<string | null | undefined>,
 
-		/** The version code of the Android App Bundle, as specified in the Android App Bundle's base module APK manifest file. */
+		/**
+		 * The version code of the Android App Bundle, as specified in the Android App Bundle's base module APK manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateBundleFormGroup() {
@@ -2913,7 +2991,10 @@ export namespace MyNS {
 	/** A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970. */
 	export interface Timestamp {
 
-		/** Non-negative fractions of a second at nanosecond resolution. Must be from 0 to 999,999,999 inclusive. */
+		/**
+		 * Non-negative fractions of a second at nanosecond resolution. Must be from 0 to 999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** Represents seconds of UTC time since Unix epoch. */
@@ -2923,7 +3004,10 @@ export namespace MyNS {
 	/** A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970. */
 	export interface TimestampFormProperties {
 
-		/** Non-negative fractions of a second at nanosecond resolution. Must be from 0 to 999,999,999 inclusive. */
+		/**
+		 * Non-negative fractions of a second at nanosecond resolution. Must be from 0 to 999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** Represents seconds of UTC time since Unix epoch. */
@@ -2941,10 +3025,16 @@ export namespace MyNS {
 	/** User entry from conversation between user and developer. */
 	export interface UserComment {
 
-		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
+		/**
+		 * Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidOsVersion?: number | null;
 
-		/** Integer version code of the app as installed at the time the review was written. May be absent. */
+		/**
+		 * Integer version code of the app as installed at the time the review was written. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		appVersionCode?: number | null;
 
 		/** String version name of the app as installed at the time the review was written. May be absent. */
@@ -2965,26 +3055,41 @@ export namespace MyNS {
 		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
 		reviewerLanguage?: string | null;
 
-		/** The star rating associated with the review, from 1 to 5. */
+		/**
+		 * The star rating associated with the review, from 1 to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		starRating?: number | null;
 
 		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
 		text?: string | null;
 
-		/** Number of users who have given this review a thumbs down. */
+		/**
+		 * Number of users who have given this review a thumbs down.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsDownCount?: number | null;
 
-		/** Number of users who have given this review a thumbs up. */
+		/**
+		 * Number of users who have given this review a thumbs up.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsUpCount?: number | null;
 	}
 
 	/** User entry from conversation between user and developer. */
 	export interface UserCommentFormProperties {
 
-		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
+		/**
+		 * Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidOsVersion: FormControl<number | null | undefined>,
 
-		/** Integer version code of the app as installed at the time the review was written. May be absent. */
+		/**
+		 * Integer version code of the app as installed at the time the review was written. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		appVersionCode: FormControl<number | null | undefined>,
 
 		/** String version name of the app as installed at the time the review was written. May be absent. */
@@ -2999,16 +3104,25 @@ export namespace MyNS {
 		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
 		reviewerLanguage: FormControl<string | null | undefined>,
 
-		/** The star rating associated with the review, from 1 to 5. */
+		/**
+		 * The star rating associated with the review, from 1 to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		starRating: FormControl<number | null | undefined>,
 
 		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
 		text: FormControl<string | null | undefined>,
 
-		/** Number of users who have given this review a thumbs down. */
+		/**
+		 * Number of users who have given this review a thumbs down.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsDownCount: FormControl<number | null | undefined>,
 
-		/** Number of users who have given this review a thumbs up. */
+		/**
+		 * Number of users who have given this review a thumbs up.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsUpCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCommentFormGroup() {
@@ -3040,7 +3154,10 @@ export namespace MyNS {
 		/** Device class (e.g. tablet) */
 		deviceClass?: string | null;
 
-		/** OpenGL version */
+		/**
+		 * OpenGL version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		glEsVersion?: number | null;
 
 		/** Device manufacturer (e.g. Motorola) */
@@ -3052,16 +3169,28 @@ export namespace MyNS {
 		/** Device model name (e.g. Droid) */
 		productName?: string | null;
 
-		/** Device RAM in Megabytes, e.g. "2048" */
+		/**
+		 * Device RAM in Megabytes, e.g. "2048"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ramMb?: number | null;
 
-		/** Screen density in DPI */
+		/**
+		 * Screen density in DPI
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensityDpi?: number | null;
 
-		/** Screen height in pixels */
+		/**
+		 * Screen height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenHeightPx?: number | null;
 
-		/** Screen width in pixels */
+		/**
+		 * Screen width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenWidthPx?: number | null;
 	}
 
@@ -3077,7 +3206,10 @@ export namespace MyNS {
 		/** Device class (e.g. tablet) */
 		deviceClass: FormControl<string | null | undefined>,
 
-		/** OpenGL version */
+		/**
+		 * OpenGL version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		glEsVersion: FormControl<number | null | undefined>,
 
 		/** Device manufacturer (e.g. Motorola) */
@@ -3089,16 +3221,28 @@ export namespace MyNS {
 		/** Device model name (e.g. Droid) */
 		productName: FormControl<string | null | undefined>,
 
-		/** Device RAM in Megabytes, e.g. "2048" */
+		/**
+		 * Device RAM in Megabytes, e.g. "2048"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ramMb: FormControl<number | null | undefined>,
 
-		/** Screen density in DPI */
+		/**
+		 * Screen density in DPI
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensityDpi: FormControl<number | null | undefined>,
 
-		/** Screen height in pixels */
+		/**
+		 * Screen height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenHeightPx: FormControl<number | null | undefined>,
 
-		/** Screen width in pixels */
+		/**
+		 * Screen width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenWidthPx: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceMetadataFormGroup() {
@@ -3494,7 +3638,10 @@ export namespace MyNS {
 	/** The device spec used to generate a system APK. */
 	export interface DeviceSpec {
 
-		/** Screen dpi. */
+		/**
+		 * Screen dpi.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		screenDensity?: number | null;
 
 		/** Supported ABI architectures in the order of preference. The values should be the string as reported by the platform, e.g. "armeabi-v7a", "x86_64". */
@@ -3507,7 +3654,10 @@ export namespace MyNS {
 	/** The device spec used to generate a system APK. */
 	export interface DeviceSpecFormProperties {
 
-		/** Screen dpi. */
+		/**
+		 * Screen dpi.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		screenDensity: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceSpecFormGroup() {
@@ -3524,14 +3674,20 @@ export namespace MyNS {
 		/** Groups of devices included in this tier. These groups must be defined explicitly under device_groups in this configuration. */
 		deviceGroupNames?: Array<string>;
 
-		/** The priority level of the tier. Tiers are evaluated in descending order of level: the highest level tier has the highest priority. The highest tier matching a given device is selected for that device. You should use a contiguous range of levels for your tiers in a tier set; tier levels in a tier set must be unique. For instance, if your tier set has 4 tiers (including the global fallback), you should define tiers 1, 2 and 3 in this configuration. Note: tier 0 is implicitly defined as a global fallback and selected for devices that don't match any of the tiers explicitly defined here. You mustn't define level 0 explicitly in this configuration. */
+		/**
+		 * The priority level of the tier. Tiers are evaluated in descending order of level: the highest level tier has the highest priority. The highest tier matching a given device is selected for that device. You should use a contiguous range of levels for your tiers in a tier set; tier levels in a tier set must be unique. For instance, if your tier set has 4 tiers (including the global fallback), you should define tiers 1, 2 and 3 in this configuration. Note: tier 0 is implicitly defined as a global fallback and selected for devices that don't match any of the tiers explicitly defined here. You mustn't define level 0 explicitly in this configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 	}
 
 	/** A single device tier. Devices matching any of the device groups in device_group_names are considered to match the tier. */
 	export interface DeviceTierFormProperties {
 
-		/** The priority level of the tier. Tiers are evaluated in descending order of level: the highest level tier has the highest priority. The highest tier matching a given device is selected for that device. You should use a contiguous range of levels for your tiers in a tier set; tier levels in a tier set must be unique. For instance, if your tier set has 4 tiers (including the global fallback), you should define tiers 1, 2 and 3 in this configuration. Note: tier 0 is implicitly defined as a global fallback and selected for devices that don't match any of the tiers explicitly defined here. You mustn't define level 0 explicitly in this configuration. */
+		/**
+		 * The priority level of the tier. Tiers are evaluated in descending order of level: the highest level tier has the highest priority. The highest tier matching a given device is selected for that device. You should use a contiguous range of levels for your tiers in a tier set; tier levels in a tier set must be unique. For instance, if your tier set has 4 tiers (including the global fallback), you should define tiers 1, 2 and 3 in this configuration. Note: tier 0 is implicitly defined as a global fallback and selected for devices that don't match any of the tiers explicitly defined here. You mustn't define level 0 explicitly in this configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceTierFormGroup() {
@@ -3619,7 +3775,10 @@ export namespace MyNS {
 		/** If set, this field indicates that this APK has an expansion file uploaded to it: this APK does not reference another APK's expansion file. The field's value is the size of the uploaded expansion file in bytes. */
 		fileSize?: string | null;
 
-		/** If set, this APK's expansion file references another APK's expansion file. The file_size field will not be set. */
+		/**
+		 * If set, this APK's expansion file references another APK's expansion file. The file_size field will not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referencesVersion?: number | null;
 	}
 
@@ -3629,7 +3788,10 @@ export namespace MyNS {
 		/** If set, this field indicates that this APK has an expansion file uploaded to it: this APK does not reference another APK's expansion file. The field's value is the size of the uploaded expansion file in bytes. */
 		fileSize: FormControl<string | null | undefined>,
 
-		/** If set, this APK's expansion file references another APK's expansion file. The file_size field will not be set. */
+		/**
+		 * If set, this APK's expansion file references another APK's expansion file. The file_size field will not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referencesVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateExpansionFileFormGroup() {
@@ -4088,7 +4250,10 @@ export namespace MyNS {
 		/** Split ID. Empty for the main split of the base module. */
 		splitId?: string | null;
 
-		/** ID of the generated variant. */
+		/**
+		 * ID of the generated variant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantId?: number | null;
 	}
 
@@ -4104,7 +4269,10 @@ export namespace MyNS {
 		/** Split ID. Empty for the main split of the base module. */
 		splitId: FormControl<string | null | undefined>,
 
-		/** ID of the generated variant. */
+		/**
+		 * ID of the generated variant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantId: FormControl<number | null | undefined>,
 	}
 	export function CreateGeneratedSplitApkFormGroup() {
@@ -4124,7 +4292,10 @@ export namespace MyNS {
 		/** Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method. */
 		downloadId?: string | null;
 
-		/** ID of the generated variant. */
+		/**
+		 * ID of the generated variant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantId?: number | null;
 	}
 
@@ -4134,7 +4305,10 @@ export namespace MyNS {
 		/** Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method. */
 		downloadId: FormControl<string | null | undefined>,
 
-		/** ID of the generated variant. */
+		/**
+		 * ID of the generated variant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantId: FormControl<number | null | undefined>,
 	}
 	export function CreateGeneratedStandaloneApkFormGroup() {
@@ -4203,14 +4377,20 @@ export namespace MyNS {
 		/** Targeting on the level of variants. */
 		targeting?: VariantTargeting;
 
-		/** Number of the variant, starting at 0 (unless overridden). A device will receive APKs from the first variant that matches the device configuration, with higher variant numbers having priority over lower variant numbers. */
+		/**
+		 * Number of the variant, starting at 0 (unless overridden). A device will receive APKs from the first variant that matches the device configuration, with higher variant numbers having priority over lower variant numbers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantNumber?: number | null;
 	}
 
 	/** Variant is a group of APKs that covers a part of the device configuration space. APKs from multiple variants are never combined on one device. */
 	export interface SplitApkVariantFormProperties {
 
-		/** Number of the variant, starting at 0 (unless overridden). A device will receive APKs from the first variant that matches the device configuration, with higher variant numbers having priority over lower variant numbers. */
+		/**
+		 * Number of the variant, starting at 0 (unless overridden). A device will receive APKs from the first variant that matches the device configuration, with higher variant numbers having priority over lower variant numbers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variantNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateSplitApkVariantFormGroup() {
@@ -4725,26 +4905,44 @@ export namespace MyNS {
 	/** Information about the current page. List operations that supports paging return only one "page" of results. This protocol buffer message describes the page that has been returned. */
 	export interface PageInfo {
 
-		/** Maximum number of results returned in one page. ! The number of results included in the API response. */
+		/**
+		 * Maximum number of results returned in one page. ! The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultPerPage?: number | null;
 
-		/** Index of the first result returned in the current page. */
+		/**
+		 * Index of the first result returned in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** Total number of results available on the backend ! The total number of results in the result set. */
+		/**
+		 * Total number of results available on the backend ! The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** Information about the current page. List operations that supports paging return only one "page" of results. This protocol buffer message describes the page that has been returned. */
 	export interface PageInfoFormProperties {
 
-		/** Maximum number of results returned in one page. ! The number of results included in the API response. */
+		/**
+		 * Maximum number of results returned in one page. ! The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultPerPage: FormControl<number | null | undefined>,
 
-		/** Index of the first result returned in the current page. */
+		/**
+		 * Index of the first result returned in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** Total number of results available on the backend ! The total number of results in the result set. */
+		/**
+		 * Total number of results available on the backend ! The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePageInfoFormGroup() {
@@ -4825,7 +5023,10 @@ export namespace MyNS {
 		/** ISO 4217 currency code for the introductory subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
 		introductoryPriceCurrencyCode?: string | null;
 
-		/** The number of billing period to offer introductory pricing. */
+		/**
+		 * The number of billing period to offer introductory pricing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		introductoryPriceCycles?: number | null;
 
 		/** Introductory price period, specified in ISO 8601 format. Common values are (but not limited to) "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
@@ -4841,7 +5042,10 @@ export namespace MyNS {
 		/** ISO 4217 currency code for the introductory subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
 		introductoryPriceCurrencyCode: FormControl<string | null | undefined>,
 
-		/** The number of billing period to offer introductory pricing. */
+		/**
+		 * The number of billing period to offer introductory pricing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		introductoryPriceCycles: FormControl<number | null | undefined>,
 
 		/** Introductory price period, specified in ISO 8601 format. Common values are (but not limited to) "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
@@ -5229,10 +5433,16 @@ export namespace MyNS {
 	/** A ProductPurchase resource indicates the status of a user's inapp product purchase. */
 	export interface ProductPurchase {
 
-		/** The acknowledgement state of the inapp product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged */
+		/**
+		 * The acknowledgement state of the inapp product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgementState?: number | null;
 
-		/** The consumption state of the inapp product. Possible values are: 0. Yet to be consumed 1. Consumed */
+		/**
+		 * The consumption state of the inapp product. Possible values are: 0. Yet to be consumed 1. Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumptionState?: number | null;
 
 		/** A developer-specified string that contains supplemental information about an order. */
@@ -5253,7 +5463,10 @@ export namespace MyNS {
 		/** The inapp product SKU. May not be present. */
 		productId?: string | null;
 
-		/** The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending */
+		/**
+		 * The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseState?: number | null;
 
 		/** The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). */
@@ -5262,10 +5475,16 @@ export namespace MyNS {
 		/** The purchase token generated to identify this purchase. May not be present. */
 		purchaseToken?: string | null;
 
-		/** The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying) */
+		/**
+		 * The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseType?: number | null;
 
-		/** The quantity associated with the purchase of the inapp product. If not present, the quantity is 1. */
+		/**
+		 * The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted. */
@@ -5275,10 +5494,16 @@ export namespace MyNS {
 	/** A ProductPurchase resource indicates the status of a user's inapp product purchase. */
 	export interface ProductPurchaseFormProperties {
 
-		/** The acknowledgement state of the inapp product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged */
+		/**
+		 * The acknowledgement state of the inapp product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgementState: FormControl<number | null | undefined>,
 
-		/** The consumption state of the inapp product. Possible values are: 0. Yet to be consumed 1. Consumed */
+		/**
+		 * The consumption state of the inapp product. Possible values are: 0. Yet to be consumed 1. Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumptionState: FormControl<number | null | undefined>,
 
 		/** A developer-specified string that contains supplemental information about an order. */
@@ -5299,7 +5524,10 @@ export namespace MyNS {
 		/** The inapp product SKU. May not be present. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending */
+		/**
+		 * The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseState: FormControl<number | null | undefined>,
 
 		/** The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). */
@@ -5308,10 +5536,16 @@ export namespace MyNS {
 		/** The purchase token generated to identify this purchase. May not be present. */
 		purchaseToken: FormControl<string | null | undefined>,
 
-		/** The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying) */
+		/**
+		 * The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseType: FormControl<number | null | undefined>,
 
-		/** The quantity associated with the purchase of the inapp product. If not present, the quantity is 1. */
+		/**
+		 * The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted. */
@@ -5616,7 +5850,10 @@ export namespace MyNS {
 	/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
 	export interface SubscriptionCancelSurveyResult {
 
-		/** The cancellation reason the user chose in the survey. Possible values are: 0. Other 1. I don't use this service enough 2. Technical issues 3. Cost-related reasons 4. I found a better app */
+		/**
+		 * The cancellation reason the user chose in the survey. Possible values are: 0. Other 1. I don't use this service enough 2. Technical issues 3. Cost-related reasons 4. I found a better app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelSurveyReason?: number | null;
 
 		/** The customized input cancel reason from the user. Only present when cancelReason is 0. */
@@ -5626,7 +5863,10 @@ export namespace MyNS {
 	/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
 	export interface SubscriptionCancelSurveyResultFormProperties {
 
-		/** The cancellation reason the user chose in the survey. Possible values are: 0. Other 1. I don't use this service enough 2. Technical issues 3. Cost-related reasons 4. I found a better app */
+		/**
+		 * The cancellation reason the user chose in the survey. Possible values are: 0. Other 1. I don't use this service enough 2. Technical issues 3. Cost-related reasons 4. I found a better app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelSurveyReason: FormControl<number | null | undefined>,
 
 		/** The customized input cancel reason from the user. Only present when cancelReason is 0. */
@@ -5675,14 +5915,20 @@ export namespace MyNS {
 		/** Definition of a price, i.e. currency and units. */
 		newPrice?: Price;
 
-		/** The current state of the price change. Possible values are: 0. Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 1. Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next. */
+		/**
+		 * The current state of the price change. Possible values are: 0. Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 1. Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		state?: number | null;
 	}
 
 	/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
 	export interface SubscriptionPriceChangeFormProperties {
 
-		/** The current state of the price change. Possible values are: 0. Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 1. Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next. */
+		/**
+		 * The current state of the price change. Possible values are: 0. Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 1. Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		state: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionPriceChangeFormGroup() {
@@ -5696,7 +5942,10 @@ export namespace MyNS {
 	/** A SubscriptionPurchase resource indicates the status of a user's subscription purchase. */
 	export interface SubscriptionPurchase {
 
-		/** The acknowledgement state of the subscription product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged */
+		/**
+		 * The acknowledgement state of the subscription product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgementState?: number | null;
 
 		/** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
@@ -5705,7 +5954,10 @@ export namespace MyNS {
 		/** Time at which the subscription will be automatically resumed, in milliseconds since the Epoch. Only present if the user has requested to pause the subscription. */
 		autoResumeTimeMillis?: string | null;
 
-		/** The reason why a subscription was canceled or is not auto-renewing. Possible values are: 0. User canceled the subscription 1. Subscription was canceled by the system, for example because of a billing problem 2. Subscription was replaced with a new subscription 3. Subscription was canceled by the developer */
+		/**
+		 * The reason why a subscription was canceled or is not auto-renewing. Possible values are: 0. User canceled the subscription 1. Subscription was canceled by the system, for example because of a billing problem 2. Subscription was replaced with a new subscription 3. Subscription was canceled by the developer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelReason?: number | null;
 
 		/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
@@ -5750,7 +6002,10 @@ export namespace MyNS {
 		/** The order id of the latest recurring order associated with the purchase of the subscription. If the subscription was canceled because payment was declined, this will be the order id from the payment declined order. */
 		orderId?: string | null;
 
-		/** The payment state of the subscription. Possible values are: 0. Payment pending 1. Payment received 2. Free trial 3. Pending deferred upgrade/downgrade Not present for canceled, expired subscriptions. */
+		/**
+		 * The payment state of the subscription. Possible values are: 0. Payment pending 1. Payment received 2. Free trial 3. Pending deferred upgrade/downgrade Not present for canceled, expired subscriptions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentState?: number | null;
 
 		/** Price of the subscription, For tax exclusive countries, the price doesn't include tax. For tax inclusive countries, the price includes tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
@@ -5771,10 +6026,16 @@ export namespace MyNS {
 		/** The promotion code applied on this purchase. This field is only set if a vanity code promotion is applied when the subscription was purchased. */
 		promotionCode?: string | null;
 
-		/** The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are: 0. One time code 1. Vanity code */
+		/**
+		 * The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are: 0. One time code 1. Vanity code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promotionType?: number | null;
 
-		/** The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) */
+		/**
+		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseType?: number | null;
 
 		/** Time at which the subscription was granted, in milliseconds since the Epoch. */
@@ -5787,7 +6048,10 @@ export namespace MyNS {
 	/** A SubscriptionPurchase resource indicates the status of a user's subscription purchase. */
 	export interface SubscriptionPurchaseFormProperties {
 
-		/** The acknowledgement state of the subscription product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged */
+		/**
+		 * The acknowledgement state of the subscription product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgementState: FormControl<number | null | undefined>,
 
 		/** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
@@ -5796,7 +6060,10 @@ export namespace MyNS {
 		/** Time at which the subscription will be automatically resumed, in milliseconds since the Epoch. Only present if the user has requested to pause the subscription. */
 		autoResumeTimeMillis: FormControl<string | null | undefined>,
 
-		/** The reason why a subscription was canceled or is not auto-renewing. Possible values are: 0. User canceled the subscription 1. Subscription was canceled by the system, for example because of a billing problem 2. Subscription was replaced with a new subscription 3. Subscription was canceled by the developer */
+		/**
+		 * The reason why a subscription was canceled or is not auto-renewing. Possible values are: 0. User canceled the subscription 1. Subscription was canceled by the system, for example because of a billing problem 2. Subscription was replaced with a new subscription 3. Subscription was canceled by the developer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelReason: FormControl<number | null | undefined>,
 
 		/** ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted. */
@@ -5835,7 +6102,10 @@ export namespace MyNS {
 		/** The order id of the latest recurring order associated with the purchase of the subscription. If the subscription was canceled because payment was declined, this will be the order id from the payment declined order. */
 		orderId: FormControl<string | null | undefined>,
 
-		/** The payment state of the subscription. Possible values are: 0. Payment pending 1. Payment received 2. Free trial 3. Pending deferred upgrade/downgrade Not present for canceled, expired subscriptions. */
+		/**
+		 * The payment state of the subscription. Possible values are: 0. Payment pending 1. Payment received 2. Free trial 3. Pending deferred upgrade/downgrade Not present for canceled, expired subscriptions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentState: FormControl<number | null | undefined>,
 
 		/** Price of the subscription, For tax exclusive countries, the price doesn't include tax. For tax inclusive countries, the price includes tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
@@ -5853,10 +6123,16 @@ export namespace MyNS {
 		/** The promotion code applied on this purchase. This field is only set if a vanity code promotion is applied when the subscription was purchased. */
 		promotionCode: FormControl<string | null | undefined>,
 
-		/** The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are: 0. One time code 1. Vanity code */
+		/**
+		 * The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are: 0. One time code 1. Vanity code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promotionType: FormControl<number | null | undefined>,
 
-		/** The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) */
+		/**
+		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		purchaseType: FormControl<number | null | undefined>,
 
 		/** Time at which the subscription was granted, in milliseconds since the Epoch. */
@@ -6157,14 +6433,20 @@ export namespace MyNS {
 		/** Options for system APKs. */
 		options?: SystemApkOptions;
 
-		/** Output only. The ID of a previously created system APK variant. */
+		/**
+		 * Output only. The ID of a previously created system APK variant.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		variantId?: number | null;
 	}
 
 	/** APK that is suitable for inclusion in a system image. The resource of SystemApksService. */
 	export interface VariantFormProperties {
 
-		/** Output only. The ID of a previously created system APK variant. */
+		/**
+		 * Output only. The ID of a previously created system APK variant.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		variantId: FormControl<number | null | undefined>,
 	}
 	export function CreateVariantFormGroup() {
@@ -6222,7 +6504,10 @@ export namespace MyNS {
 		/** Country targeting specification. */
 		countryTargeting?: CountryTargeting;
 
-		/** In-app update priority of the release. All newly added APKs in the release will be considered at this priority. Can take values in the range [0, 5], with 5 the highest priority. Defaults to 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates. */
+		/**
+		 * In-app update priority of the release. All newly added APKs in the release will be considered at this priority. Can take values in the range [0, 5], with 5 the highest priority. Defaults to 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppUpdatePriority?: number | null;
 
 		/** The release name. Not required to be unique. If not set, the name is generated from the APK's version_name. If the release contains multiple APKs, the name is generated from the date. */
@@ -6234,7 +6519,10 @@ export namespace MyNS {
 		/** The status of the release. */
 		status?: TrackReleaseStatus | null;
 
-		/** Fraction of users who are eligible for a staged release. 0 < fraction < 1. Can only be set when status is "inProgress" or "halted". */
+		/**
+		 * Fraction of users who are eligible for a staged release. 0 < fraction < 1. Can only be set when status is "inProgress" or "halted".
+		 * Type: double
+		 */
 		userFraction?: number | null;
 
 		/** Version codes of all APKs in the release. Must include version codes to retain from previous releases. */
@@ -6244,7 +6532,10 @@ export namespace MyNS {
 	/** A release within a track. */
 	export interface TrackReleaseFormProperties {
 
-		/** In-app update priority of the release. All newly added APKs in the release will be considered at this priority. Can take values in the range [0, 5], with 5 the highest priority. Defaults to 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates. */
+		/**
+		 * In-app update priority of the release. All newly added APKs in the release will be considered at this priority. Can take values in the range [0, 5], with 5 the highest priority. Defaults to 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppUpdatePriority: FormControl<number | null | undefined>,
 
 		/** The release name. Not required to be unique. If not set, the name is generated from the APK's version_name. If the release contains multiple APKs, the name is generated from the date. */
@@ -6253,7 +6544,10 @@ export namespace MyNS {
 		/** The status of the release. */
 		status: FormControl<TrackReleaseStatus | null | undefined>,
 
-		/** Fraction of users who are eligible for a staged release. 0 < fraction < 1. Can only be set when status is "inProgress" or "halted". */
+		/**
+		 * Fraction of users who are eligible for a staged release. 0 < fraction < 1. Can only be set when status is "inProgress" or "halted".
+		 * Type: double
+		 */
 		userFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateTrackReleaseFormGroup() {
@@ -6399,10 +6693,16 @@ export namespace MyNS {
 		/** The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API). */
 		purchaseToken?: string | null;
 
-		/** The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback */
+		/**
+		 * The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voidedReason?: number | null;
 
-		/** The initiator of voided purchase, possible values are: 0. User 1. Developer 2. Google */
+		/**
+		 * The initiator of voided purchase, possible values are: 0. User 1. Developer 2. Google
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voidedSource?: number | null;
 
 		/** The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970). */
@@ -6424,10 +6724,16 @@ export namespace MyNS {
 		/** The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API). */
 		purchaseToken: FormControl<string | null | undefined>,
 
-		/** The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback */
+		/**
+		 * The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voidedReason: FormControl<number | null | undefined>,
 
-		/** The initiator of voided purchase, possible values are: 0. User 1. Developer 2. Google */
+		/**
+		 * The initiator of voided purchase, possible values are: 0. User 1. Developer 2. Google
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voidedSource: FormControl<number | null | undefined>,
 
 		/** The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970). */
@@ -6540,6 +6846,7 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/deviceTierConfigs
 		 * @param {string} packageName Package name of the app.
 		 * @param {number} pageSize The maximum number of device tier configs to return. The service may return fewer than this value. If unspecified, at most 10 device tier configs will be returned. The maximum value for this field is 100; values above 100 will be coerced to 100. Device tier configs will be ordered by descending creation time.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDeviceTierConfigs` call. Provide this to retrieve the subsequent page.
 		 * @return {ListDeviceTierConfigsResponse} Successful response
 		 */
@@ -6640,6 +6947,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app.
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose Deobfuscation File is being uploaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {DeobfuscationFileSymbolType} deobfuscationFileType The type of the deobfuscation file.
 		 * @return {DeobfuscationFilesUploadResponse} Successful response
 		 */
@@ -6653,6 +6961,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} editId Identifier of the edit.
 		 * @param {number} apkVersionCode The version code of the APK whose expansion file configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Androidpublisher_edits_expansionfiles_getExpansionFileType} expansionFileType The file type of the file configuration which is being read or modified.
 		 * @return {ExpansionFile} Successful response
 		 */
@@ -6666,6 +6975,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} editId Identifier of the edit.
 		 * @param {number} apkVersionCode The version code of the APK whose expansion file configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Androidpublisher_edits_expansionfiles_getExpansionFileType} expansionFileType The file type of the expansion file configuration which is being updated.
 		 * @return {ExpansionFile} Successful response
 		 */
@@ -6679,6 +6989,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} editId Identifier of the edit.
 		 * @param {number} apkVersionCode The version code of the APK whose expansion file configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Androidpublisher_edits_expansionfiles_getExpansionFileType} expansionFileType The file type of the expansion file configuration which is being updated.
 		 * @return {ExpansionFilesUploadResponse} Successful response
 		 */
@@ -6692,6 +7003,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} editId Identifier of the edit.
 		 * @param {number} apkVersionCode The version code of the APK whose expansion file configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Androidpublisher_edits_expansionfiles_getExpansionFileType} expansionFileType The file type of the file configuration which is being read or modified.
 		 * @return {ExpansionFile} Successful response
 		 */
@@ -7013,6 +7325,7 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/generatedApks/{versionCode}
 		 * @param {string} packageName Package name of the app.
 		 * @param {number} versionCode Version code of the app bundle.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GeneratedApksListResponse} Successful response
 		 */
 		Androidpublisher_generatedapks_list(packageName: string, versionCode: number): Observable<GeneratedApksListResponse> {
@@ -7024,6 +7337,7 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/generatedApks/{versionCode}/downloads/{downloadId}:download
 		 * @param {string} packageName Package name of the app.
 		 * @param {number} versionCode Version code of the app bundle.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} downloadId Download ID, which uniquely identifies the APK to download. Can be obtained from the response of `generatedapks.list` method.
 		 * @return {void} Successful response
 		 */
@@ -7036,7 +7350,9 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/inappproducts
 		 * @param {string} packageName Package name of the app.
 		 * @param {number} maxResults Deprecated and ignored. The page size is determined by the server.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startIndex Deprecated and ignored. Set the `token` parameter to retrieve the next page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Pagination token. If empty, list starts at the first product.
 		 * @return {InappproductsListResponse} Successful response
 		 */
@@ -7294,10 +7610,13 @@ export namespace MyNS {
 		 * @param {string} packageName The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
 		 * @param {string} endTime The time, in milliseconds since the Epoch, of the newest voided purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
 		 * @param {number} maxResults Defines how many results the list operation should return. The default number depends on the resource collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startIndex Defines the index of the first element to return. This can only be used if indexed paging is enabled.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startTime The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
 		 * @param {string} token Defines the token of the page to return, usually taken from TokenPagination. This can only be used if token paging is enabled.
 		 * @param {number} type The type of voided purchases that you want to see in the response. Possible values are: 0. Only voided in-app product purchases will be returned in the response. This is the default value. 1. Both voided in-app purchases and voided subscription purchases will be returned in the response. Note: Before requesting to receive voided subscription purchases, you must switch to use orderId in the response which uniquely identifies one-time purchases and subscriptions. Otherwise, you will receive multiple subscription orders with the same PurchaseToken, because subscription renewal orders share the same PurchaseToken.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VoidedPurchasesListResponse} Successful response
 		 */
 		Androidpublisher_purchases_voidedpurchases_list(packageName: string, endTime: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined, startTime: string | null | undefined, token: string | null | undefined, type: number | null | undefined): Observable<VoidedPurchasesListResponse> {
@@ -7309,7 +7628,9 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/reviews
 		 * @param {string} packageName Package name of the app.
 		 * @param {number} maxResults How many results the list operation should return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startIndex The index of the first element to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Pagination token. If empty, list starts at the first review.
 		 * @param {string} translationLanguage Language localization code.
 		 * @return {ReviewsListResponse} Successful response
@@ -7346,6 +7667,7 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/applications/{packageName}/subscriptions
 		 * @param {string} packageName Required. The parent app (package name) for which the subscriptions should be read.
 		 * @param {number} pageSize The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token.
 		 * @param {boolean} showArchived Whether archived subscriptions should be included in the response. Defaults to false.
 		 * @return {ListSubscriptionsResponse} Successful response
@@ -7422,6 +7744,7 @@ export namespace MyNS {
 		 * @param {string} productId Required. The parent subscription (ID) for which the offers should be read. May be specified as '-' to read all offers under an app.
 		 * @param {string} basePlanId Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read all offers under a subscription or an app. Must be specified as '-' if product_id is specified as '-'.
 		 * @param {number} pageSize The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSubscriptionsOffers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptionOffers` must match the call that provided the page token.
 		 * @return {ListSubscriptionOffersResponse} Successful response
 		 */
@@ -7666,6 +7989,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} versionCode The version code of the App Bundle.
 		 * @param {number} variantId The ID of a previously created system APK variant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Variant} Successful response
 		 */
 		Androidpublisher_systemapks_variants_get(packageName: string, versionCode: string, variantId: number): Observable<Variant> {
@@ -7678,6 +8002,7 @@ export namespace MyNS {
 		 * @param {string} packageName Package name of the app.
 		 * @param {string} versionCode The version code of the App Bundle.
 		 * @param {number} variantId The ID of a previously created system APK variant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_systemapks_variants_download(packageName: string, versionCode: string, variantId: number): Observable<HttpResponse<string>> {
@@ -7751,6 +8076,7 @@ export namespace MyNS {
 		 * Get androidpublisher/v3/{parent}/users
 		 * @param {string} parent Required. The developer account to fetch users from. Format: developers/{developer}
 		 * @param {number} pageSize The maximum number of results to return. This must be set to -1 to disable pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token received from a previous call to this method, in order to retrieve further results.
 		 * @return {ListUsersResponse} Successful response
 		 */

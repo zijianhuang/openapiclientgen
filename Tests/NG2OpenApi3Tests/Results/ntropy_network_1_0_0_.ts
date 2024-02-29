@@ -31,6 +31,8 @@ export namespace MyNS {
 
 	export interface GetABatchOfBusinessTransactionClassificationResultsReturn {
 		id?: string | null;
+
+		/** Type: double */
 		progress?: number | null;
 		GetABatchOfBusinessTransactionClassificationResultsReturnResults?: Array<GetABatchOfBusinessTransactionClassificationResultsReturnResults>;
 		status?: string | null;
@@ -38,6 +40,8 @@ export namespace MyNS {
 	}
 	export interface GetABatchOfBusinessTransactionClassificationResultsReturnFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		updated_at: FormControl<string | null | undefined>,
@@ -77,6 +81,8 @@ export namespace MyNS {
 
 	export interface GetABatchOfConsumerTransactionClassificationResultsReturn {
 		id?: string | null;
+
+		/** Type: double */
 		progress?: number | null;
 		GetABatchOfConsumerTransactionClassificationResultsReturnResults?: Array<GetABatchOfConsumerTransactionClassificationResultsReturnResults>;
 		status?: string | null;
@@ -84,6 +90,8 @@ export namespace MyNS {
 	}
 	export interface GetABatchOfConsumerTransactionClassificationResultsReturnFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		updated_at: FormControl<string | null | undefined>,
@@ -147,7 +155,11 @@ export namespace MyNS {
 		address?: string | null;
 		city?: string | null;
 		country?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 		postal_code?: string | null;
 	}
@@ -155,7 +167,11 @@ export namespace MyNS {
 		address: FormControl<string | null | undefined>,
 		city: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		postal_code: FormControl<string | null | undefined>,
 	}
@@ -172,11 +188,19 @@ export namespace MyNS {
 	}
 
 	export interface GetABatchOfConsumerTransactionClassificationResultsReturnResultsRating {
+
+		/** Type: double */
 		reviews?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface GetABatchOfConsumerTransactionClassificationResultsReturnResultsRatingFormProperties {
+
+		/** Type: double */
 		reviews: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetABatchOfConsumerTransactionClassificationResultsReturnResultsRatingFormGroup() {

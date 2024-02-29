@@ -119,13 +119,25 @@ export namespace MyNS {
 	}
 
 	export interface CollectionMetadata {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 	}
 	export interface CollectionMetadataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectionMetadataFormGroup() {
@@ -1367,6 +1379,8 @@ export namespace MyNS {
 		last_successful_refresh_at?: Date | null;
 		name?: string | null;
 		previous_sha?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous_size?: number | null;
 		refresh_finished_at?: Date | null;
 		refresh_started_at?: Date | null;
@@ -1392,6 +1406,8 @@ export namespace MyNS {
 		last_successful_refresh_at: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		previous_sha: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous_size: FormControl<number | null | undefined>,
 		refresh_finished_at: FormControl<Date | null | undefined>,
 		refresh_started_at: FormControl<Date | null | undefined>,
@@ -1679,7 +1695,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceCredentialType objects
 		 * Get service_credential_types
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceCredentialTypesCollection} ServiceCredentialTypes collection
@@ -1704,7 +1722,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceCredential objects
 		 * Get service_credentials
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceCredentialsCollection} ServiceCredentials collection
@@ -1729,7 +1749,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceInstance objects
 		 * Get service_instances
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceInstancesCollection} ServiceInstances collection
@@ -1754,7 +1776,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceInventory objects
 		 * Get service_inventories
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceInventoriesCollection} ServiceInventories collection
@@ -1791,7 +1815,9 @@ export namespace MyNS {
 		 * Returns an array of Tag objects
 		 * Get service_inventories/{id}/tags
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -1818,7 +1844,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceOfferingNode objects
 		 * Get service_offering_nodes
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceOfferingNodesCollection} ServiceOfferingNodes collection
@@ -1843,7 +1871,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceOffering objects
 		 * Get service_offerings
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServiceOfferingsCollection} ServiceOfferings collection
@@ -1892,7 +1922,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceInstance objects
 		 * Get service_offerings/{id}/service_instances
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -1907,7 +1939,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceOfferingNode objects
 		 * Get service_offerings/{id}/service_offering_nodes
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -1922,7 +1956,9 @@ export namespace MyNS {
 		 * Returns an array of ServicePlan objects
 		 * Get service_offerings/{id}/service_plans
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -1937,7 +1973,9 @@ export namespace MyNS {
 		 * Returns an array of ServicePlan objects
 		 * Get service_plans
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {ServicePlansCollection} ServicePlans collection
@@ -1962,7 +2000,9 @@ export namespace MyNS {
 		 * Returns an array of Source objects
 		 * Get sources
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {SourcesCollection} Sources collection
@@ -2009,7 +2049,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceInstance objects
 		 * Get sources/{id}/service_instances
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2024,7 +2066,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceInventory objects
 		 * Get sources/{id}/service_inventories
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2039,7 +2083,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceOfferingNode objects
 		 * Get sources/{id}/service_offering_nodes
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2054,7 +2100,9 @@ export namespace MyNS {
 		 * Returns an array of ServiceOffering objects
 		 * Get sources/{id}/service_offerings
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2069,7 +2117,9 @@ export namespace MyNS {
 		 * Returns an array of ServicePlan objects
 		 * Get sources/{id}/service_plans
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2084,7 +2134,9 @@ export namespace MyNS {
 		 * Returns an array of Task objects
 		 * Get sources/{id}/tasks
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @param {string} id ID of the resource
@@ -2099,7 +2151,9 @@ export namespace MyNS {
 		 * Returns an array of Tag objects
 		 * Get tags
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {TagsCollection} Tags collection
@@ -2113,7 +2167,9 @@ export namespace MyNS {
 		 * Returns an array of Task objects
 		 * Get tasks
 		 * @param {number} limit The numbers of items to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} offset The number of items to skip before starting to collect the result set.
+		 *     Minimum: 0
 		 * @param {string} filter Filter for querying collections.
 		 * @param {string} sort_by The list of attribute and order to sort the result set by.
 		 * @return {TasksCollection} Tasks collection

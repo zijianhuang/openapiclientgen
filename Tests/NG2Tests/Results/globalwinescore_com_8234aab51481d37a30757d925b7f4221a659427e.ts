@@ -19,7 +19,9 @@ export namespace MyNS {
 		 * @param {string} lwin L-WIN wine identifier (See definition <a href="https://www.liv-ex.com/lwin/" target="_blank">here</a>)
 		 * @param {string} lwin_11 L-WIN wine/vintage identifier (See definition <a href="https://www.liv-ex.com/lwin/" target="_blank">here</a>)
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 0
 		 * @param {number} offset The initial index from which to return the results.
+		 *     Minimum: 0
 		 * @param {ListHistoricalGWSOrdering} ordering Which field to use when ordering the results.
 		 * @return {void} 
 		 */
@@ -38,7 +40,9 @@ export namespace MyNS {
 		 * @param {string} lwin L-WIN wine identifier (See definition <a href="https://www.liv-ex.com/lwin/" target="_blank">here</a>)
 		 * @param {string} lwin_11 L-WIN wine/vintage identifier (See definition <a href="https://www.liv-ex.com/lwin/" target="_blank">here</a>)
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 0
 		 * @param {number} offset The initial index from which to return the results.
+		 *     Minimum: 0
 		 * @param {ListHistoricalGWSOrdering} ordering Which field to use when ordering the results.
 		 * @return {void} 
 		 */

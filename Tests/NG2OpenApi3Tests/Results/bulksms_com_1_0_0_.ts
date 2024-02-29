@@ -43,6 +43,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 
@@ -68,6 +69,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 
@@ -101,7 +103,10 @@ export namespace MyNS {
 		 */
 		body: any;
 
-		/** The cost of the message (in credits).   Note that this field does not have a value in the submission response. */
+		/**
+		 * The cost of the message (in credits).   Note that this field does not have a value in the submission response.
+		 * Type: float
+		 */
 		creditCost?: number | null;
 
 		/** The type of the content.  See the `encoding` field for more information. */
@@ -116,13 +121,22 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** See the `messageClass` field for more information. */
+		/**
+		 * See the `messageClass` field for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageClass?: number | null;
 
-		/** The number of parts.  If this is a concatenated message, the number of parts will be more than 1.  Note that this field does not have a value in the submission response. */
+		/**
+		 * The number of parts.  If this is a concatenated message, the number of parts will be more than 1.  Note that this field does not have a value in the submission response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfParts?: number | null;
 
-		/** See the `protocolId` field for more information. */
+		/**
+		 * See the `protocolId` field for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protocolId?: number | null;
 
 		/**
@@ -172,7 +186,10 @@ export namespace MyNS {
 		 */
 		body: FormControl<any | null | undefined>,
 
-		/** The cost of the message (in credits).   Note that this field does not have a value in the submission response. */
+		/**
+		 * The cost of the message (in credits).   Note that this field does not have a value in the submission response.
+		 * Type: float
+		 */
 		creditCost: FormControl<number | null | undefined>,
 
 		/** The type of the content.  See the `encoding` field for more information. */
@@ -187,13 +204,22 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** See the `messageClass` field for more information. */
+		/**
+		 * See the `messageClass` field for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageClass: FormControl<number | null | undefined>,
 
-		/** The number of parts.  If this is a concatenated message, the number of parts will be more than 1.  Note that this field does not have a value in the submission response. */
+		/**
+		 * The number of parts.  If this is a concatenated message, the number of parts will be more than 1.  Note that this field does not have a value in the submission response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfParts: FormControl<number | null | undefined>,
 
-		/** See the `protocolId` field for more information. */
+		/**
+		 * See the `protocolId` field for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protocolId: FormControl<number | null | undefined>,
 
 		/**
@@ -522,13 +548,21 @@ export namespace MyNS {
 	}
 
 	export interface ProfileCredits {
+
+		/** Type: float */
 		balance?: number | null;
 		isTransferAllowed?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 	}
 	export interface ProfileCreditsFormProperties {
+
+		/** Type: float */
 		balance: FormControl<number | null | undefined>,
 		isTransferAllowed: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateProfileCreditsFormGroup() {
@@ -559,12 +593,14 @@ export namespace MyNS {
 		/**
 		 * The number of messages you can still send today.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		remaining: number;
 
 		/**
 		 * The setting that limits the number of messages you can send in a day.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 	}
@@ -573,12 +609,14 @@ export namespace MyNS {
 		/**
 		 * The number of messages you can still send today.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		remaining: FormControl<number | null | undefined>,
 
 		/**
 		 * The setting that limits the number of messages you can send in a day.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 	}
@@ -631,6 +669,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of message parts that can be used for a [concatenated message](https://en.wikipedia.org/wiki/Concatenated_SMS).
 		 * The default is `3`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		longMessageMaxParts?: number | null;
 
@@ -724,6 +763,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of message parts that can be used for a [concatenated message](https://en.wikipedia.org/wiki/Concatenated_SMS).
 		 * The default is `3`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		longMessageMaxParts: FormControl<number | null | undefined>,
 
@@ -910,6 +950,7 @@ export namespace MyNS {
 		/**
 		 * The amount of credits to transfer.
 		 * Required
+		 * Type: double
 		 */
 		credits: number;
 
@@ -917,6 +958,7 @@ export namespace MyNS {
 		 * The numeric user ID of the account that will receive the credits.
 		 * The ID must match the username.
 		 * Required
+		 * Type: double
 		 */
 		toUserId: number;
 
@@ -943,6 +985,7 @@ export namespace MyNS {
 		/**
 		 * The amount of credits to transfer.
 		 * Required
+		 * Type: double
 		 */
 		credits: FormControl<number | null | undefined>,
 
@@ -950,6 +993,7 @@ export namespace MyNS {
 		 * The numeric user ID of the account that will receive the credits.
 		 * The ID must match the username.
 		 * Required
+		 * Type: double
 		 */
 		toUserId: FormControl<number | null | undefined>,
 
@@ -973,6 +1017,8 @@ export namespace MyNS {
 	export interface Webhook {
 		active?: boolean | null;
 		contactEmailAddress?: string | null;
+
+		/** Type: double */
 		id?: number | null;
 		name?: string | null;
 		onWebApp?: boolean | null;
@@ -982,6 +1028,8 @@ export namespace MyNS {
 	export interface WebhookFormProperties {
 		active: FormControl<boolean | null | undefined>,
 		contactEmailAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		onWebApp: FormControl<boolean | null | undefined>,
@@ -1143,7 +1191,9 @@ export namespace MyNS {
 		 * List blocked numbers
 		 * Get blocked-numbers
 		 * @param {number} min_id Records with an `id` that is greater or equal to min-id will be returned. The default value is `0`.  You can add 1 to an id that you previously retrieved, to return subsequent records.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of records to return. The default value is `10000`. The value cannot be greater than 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BlockedNumber} A list of BlockedNumber objects
 		 */
 		Blocked_numbersGetByMin_idAndLimit(min_id: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BlockedNumber> {
@@ -1263,6 +1313,7 @@ export namespace MyNS {
 		 * Post messages
 		 * @param {number} deduplication_id Safeguards against the possibility of sending the same messages more than once.
 		 * If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the `deduplication-id` of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.
 		 * Messages that contain only GSM 03.38 characters are not affected by this setting. 
 		 * If the value is `true` then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly). 

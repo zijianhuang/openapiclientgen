@@ -228,6 +228,7 @@ export namespace MyNS {
 		 * Retrieve a list of certificates.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -241,6 +242,7 @@ export namespace MyNS {
 		 * Retrieve the certificate identified by certificate name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} certificateName The name of certificate.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -255,6 +257,7 @@ export namespace MyNS {
 		 * Create a certificate.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} certificateName The parameters supplied to the create or update certificate operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -270,6 +273,7 @@ export namespace MyNS {
 		 * Delete the certificate.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} certificateName The name of certificate.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -284,6 +288,7 @@ export namespace MyNS {
 		 * Update a certificate.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} certificateName The parameters supplied to the update certificate operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.

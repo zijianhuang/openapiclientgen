@@ -194,7 +194,10 @@ export namespace MyNS {
 		/** GTM client's API relative path. */
 		path?: string | null;
 
-		/** Priority determines relative firing order. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update */
+		/**
+		 * Priority determines relative firing order. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Auto generated link to the tag manager UI */
@@ -232,7 +235,10 @@ export namespace MyNS {
 		/** GTM client's API relative path. */
 		path: FormControl<string | null | undefined>,
 
-		/** Priority determines relative firing order. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update */
+		/**
+		 * Priority determines relative firing order. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Auto generated link to the tag manager UI */

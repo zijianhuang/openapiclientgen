@@ -4954,7 +4954,10 @@ namespace MyNS
 		/// Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		/// AcceptInboundConnection 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}/accept
 		/// </summary>
-		/// <param name="ConnectionId">The ID of the inbound connection to accept.</param>
+		/// <param name="ConnectionId">The ID of the inbound connection to accept.
+		/// Max length: 256
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptInboundConnectionResponse> AcceptInboundConnectionAsync(string ConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5018,7 +5021,10 @@ namespace MyNS
 		/// AssociatePackage 2021-01-01/packages/associate/{PackageID}/{DomainName}
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </param>
-		/// <param name="DomainName">Name of the domain to associate the package with.</param>
+		/// <param name="DomainName">Name of the domain to associate the package with.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociatePackageResponse> AssociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5047,7 +5053,10 @@ namespace MyNS
 		/// Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		/// AuthorizeVpcEndpointAccess 2021-01-01/opensearch/domain/{DomainName}/authorizeVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain to provide access to.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain to provide access to.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(string DomainName, AuthorizeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5322,7 +5331,10 @@ namespace MyNS
 		/// Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover a domain after you delete it.
 		/// DeleteDomain 2021-01-01/opensearch/domain/{DomainName}
 		/// </summary>
-		/// <param name="DomainName">The name of the domain you want to permanently delete.</param>
+		/// <param name="DomainName">The name of the domain you want to permanently delete.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5356,7 +5368,10 @@ namespace MyNS
 		/// Describes the domain configuration for the specified Amazon OpenSearch Service domain, including the domain ID, domain service endpoint, and domain ARN.
 		/// DescribeDomain 2021-01-01/opensearch/domain/{DomainName}
 		/// </summary>
-		/// <param name="DomainName">The name of the domain that you want information about.</param>
+		/// <param name="DomainName">The name of the domain that you want information about.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainResponse> DescribeDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5390,7 +5405,10 @@ namespace MyNS
 		/// Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		/// DeleteInboundConnection 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}
 		/// </summary>
-		/// <param name="ConnectionId">The ID of the inbound connection to permanently delete.</param>
+		/// <param name="ConnectionId">The ID of the inbound connection to permanently delete.
+		/// Max length: 256
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteInboundConnectionResponse> DeleteInboundConnectionAsync(string ConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5424,7 +5442,10 @@ namespace MyNS
 		/// Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		/// DeleteOutboundConnection 2021-01-01/opensearch/cc/outboundConnection/{ConnectionId}
 		/// </summary>
-		/// <param name="ConnectionId">The ID of the outbound connection you want to permanently delete.</param>
+		/// <param name="ConnectionId">The ID of the outbound connection you want to permanently delete.
+		/// Max length: 256
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteOutboundConnectionResponse> DeleteOutboundConnectionAsync(string ConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5492,7 +5513,10 @@ namespace MyNS
 		/// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
 		/// DeleteVpcEndpoint 2021-01-01/opensearch/vpcEndpoints/{VpcEndpointId}
 		/// </summary>
-		/// <param name="VpcEndpointId">The unique identifier of the endpoint.</param>
+		/// <param name="VpcEndpointId">The unique identifier of the endpoint.
+		/// Max length: 256
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(string VpcEndpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5526,7 +5550,10 @@ namespace MyNS
 		/// Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.
 		/// DescribeDomainAutoTunes 2021-01-01/opensearch/domain/{DomainName}/autoTunes
 		/// </summary>
-		/// <param name="DomainName">Name of the domain that you want Auto-Tune details about.</param>
+		/// <param name="DomainName">Name of the domain that you want Auto-Tune details about.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5562,8 +5589,14 @@ namespace MyNS
 		/// Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making configuration changes in Amazon OpenSearch Service</a>.
 		/// DescribeDomainChangeProgress 2021-01-01/opensearch/domain/{DomainName}/progress
 		/// </summary>
-		/// <param name="DomainName">The name of the domain to get progress information for.</param>
-		/// <param name="changeid">The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</param>
+		/// <param name="DomainName">The name of the domain to get progress information for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="changeid">The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(string DomainName, string changeid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5597,7 +5630,10 @@ namespace MyNS
 		/// Returns the configuration of an Amazon OpenSearch Service domain.
 		/// DescribeDomainConfig 2021-01-01/opensearch/domain/{DomainName}/config
 		/// </summary>
-		/// <param name="DomainName">Name of the OpenSearch Service domain configuration that you want to describe.</param>
+		/// <param name="DomainName">Name of the OpenSearch Service domain configuration that you want to describe.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainConfigResponse> DescribeDomainConfigAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5631,7 +5667,10 @@ namespace MyNS
 		/// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
 		/// UpdateDomainConfig 2021-01-01/opensearch/domain/{DomainName}/config
 		/// </summary>
-		/// <param name="DomainName">The name of the domain that you're updating.</param>
+		/// <param name="DomainName">The name of the domain that you're updating.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDomainConfigResponse> UpdateDomainConfigAsync(string DomainName, UpdateDomainConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5672,7 +5711,10 @@ namespace MyNS
 		/// Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node.
 		/// DescribeDomainHealth 2021-01-01/opensearch/domain/{DomainName}/health
 		/// </summary>
-		/// <param name="DomainName">The name of the domain.</param>
+		/// <param name="DomainName">The name of the domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainHealthResponse> DescribeDomainHealthAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5706,7 +5748,10 @@ namespace MyNS
 		/// Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node configurations, and node states.
 		/// DescribeDomainNodes 2021-01-01/opensearch/domain/{DomainName}/nodes
 		/// </summary>
-		/// <param name="DomainName">The name of the domain.</param>
+		/// <param name="DomainName">The name of the domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainNodesResponse> DescribeDomainNodesAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5780,8 +5825,14 @@ namespace MyNS
 		/// Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining whether a change will cause a blue/green deployment</a>.
 		/// DescribeDryRunProgress 2021-01-01/opensearch/domain/{DomainName}/dryRun
 		/// </summary>
-		/// <param name="DomainName">The name of the domain.</param>
-		/// <param name="dryRunId">The unique identifier of the dry run.</param>
+		/// <param name="DomainName">The name of the domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="dryRunId">The unique identifier of the dry run.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="loadDryRunConfig">Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDryRunProgressResponse> DescribeDryRunProgressAsync(string DomainName, string dryRunId, bool loadDryRunConfig, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5858,9 +5909,15 @@ namespace MyNS
 		/// Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type.
 		/// DescribeInstanceTypeLimits 2021-01-01/opensearch/instanceTypeLimits/{EngineVersion}/{InstanceType}
 		/// </summary>
-		/// <param name="domainName">The name of the domain. Only specify if you need the limits for an existing domain.</param>
+		/// <param name="domainName">The name of the domain. Only specify if you need the limits for an existing domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="InstanceType">The OpenSearch Service instance type for which you need limit information.</param>
-		/// <param name="EngineVersion">Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</param>
+		/// <param name="EngineVersion">Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.
+		/// Max length: 18
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeInstanceTypeLimitsResponse> DescribeInstanceTypeLimitsAsync(string domainName, DescribeInstanceTypeLimitsInstanceType InstanceType, string EngineVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5978,8 +6035,13 @@ namespace MyNS
 		/// Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.
 		/// DescribeReservedInstanceOfferings 2021-01-01/opensearch/reservedInstanceOfferings
 		/// </summary>
-		/// <param name="offeringId">The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="offeringId">The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6016,8 +6078,13 @@ namespace MyNS
 		/// Describes the Amazon OpenSearch Service instances that you have reserved in a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.
 		/// DescribeReservedInstances 2021-01-01/opensearch/reservedInstances
 		/// </summary>
-		/// <param name="reservationId">The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="reservationId">The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6095,7 +6162,10 @@ namespace MyNS
 		/// DissociatePackage 2021-01-01/packages/dissociate/{PackageID}/{DomainName}
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</param>
-		/// <param name="DomainName">Name of the domain to dissociate the package from.</param>
+		/// <param name="DomainName">Name of the domain to dissociate the package from.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DissociatePackageResponse> DissociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6124,7 +6194,10 @@ namespace MyNS
 		/// Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
 		/// GetCompatibleVersions 2021-01-01/opensearch/compatibleVersions
 		/// </summary>
-		/// <param name="domainName">The name of an existing domain. Provide this parameter to limit the results to a single domain.</param>
+		/// <param name="domainName">The name of an existing domain. Provide this parameter to limit the results to a single domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCompatibleVersionsResponse> GetCompatibleVersionsAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6159,7 +6232,9 @@ namespace MyNS
 		/// GetPackageVersionHistory 2021-01-01/packages/{PackageID}/history
 		/// </summary>
 		/// <param name="PackageID">The unique identifier of the package.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns results in the next page. </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6196,8 +6271,13 @@ namespace MyNS
 		/// Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch Service domain.
 		/// GetUpgradeHistory 2021-01-01/opensearch/upgradeDomain/{DomainName}/history
 		/// </summary>
-		/// <param name="DomainName">The name of an existing domain.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="DomainName">The name of an existing domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6234,7 +6314,10 @@ namespace MyNS
 		/// Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch Service domain.
 		/// GetUpgradeStatus 2021-01-01/opensearch/upgradeDomain/{DomainName}/status
 		/// </summary>
-		/// <param name="DomainName">The domain of the domain to get upgrade status information for.</param>
+		/// <param name="DomainName">The domain of the domain to get upgrade status information for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6303,7 +6386,9 @@ namespace MyNS
 		/// ListDomainsForPackage 2021-01-01/packages/{PackageID}/domains
 		/// </summary>
 		/// <param name="PackageID">The unique identifier of the package for which to list associated domains.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6340,12 +6425,23 @@ namespace MyNS
 		/// Lists all instance types and available features for a given OpenSearch or Elasticsearch version.
 		/// ListInstanceTypeDetails 2021-01-01/opensearch/instanceTypeDetails/{EngineVersion}
 		/// </summary>
-		/// <param name="EngineVersion">The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</param>
-		/// <param name="domainName">The name of the domain.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="EngineVersion">The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.
+		/// Max length: 18
+		/// Min length: 14
+		// </param>
+		/// <param name="domainName">The name of the domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</param>
 		/// <param name="retrieveAZs">An optional parameter that specifies the Availability Zones for the domain.</param>
-		/// <param name="instanceType">An optional parameter that lists information for a given instance type.</param>
+		/// <param name="instanceType">An optional parameter that lists information for a given instance type.
+		/// Max length: 40
+		/// Min length: 10
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6381,8 +6477,13 @@ namespace MyNS
 		/// Lists all packages associated with an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.
 		/// ListPackagesForDomain 2021-01-01/domain/{DomainName}/packages
 		/// </summary>
-		/// <param name="DomainName">The name of the domain for which you want to list associated packages.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="DomainName">The name of the domain for which you want to list associated packages.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6419,8 +6520,13 @@ namespace MyNS
 		/// Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software updates</a> or <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancements</a>.
 		/// ListScheduledActions 2021-01-01/opensearch/domain/{DomainName}/scheduledActions
 		/// </summary>
-		/// <param name="DomainName">The name of the domain.</param>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="DomainName">The name of the domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListScheduledActions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListScheduledActions</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6457,7 +6563,10 @@ namespace MyNS
 		/// Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.
 		/// ListTags 2021-01-01/tags/#arn
 		/// </summary>
-		/// <param name="arn">Amazon Resource Name (ARN) for the domain to view tags for.</param>
+		/// <param name="arn">Amazon Resource Name (ARN) for the domain to view tags for.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsResponse> ListTagsAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6491,7 +6600,9 @@ namespace MyNS
 		/// Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.
 		/// ListVersions 2021-01-01/opensearch/versions
 		/// </summary>
-		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</param>
+		/// <param name="maxResults">An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6528,7 +6639,10 @@ namespace MyNS
 		/// Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		/// ListVpcEndpointAccess 2021-01-01/opensearch/domain/{DomainName}/listVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain to retrieve access information for.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain to retrieve access information for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListVpcEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpointAccess</code> operations, which returns results in the next page.</param>
 		/// <returns>Success</returns>
 		public async Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(string DomainName, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6563,7 +6677,10 @@ namespace MyNS
 		/// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
 		/// ListVpcEndpointsForDomain 2021-01-01/opensearch/domain/{DomainName}/vpcEndpoints
 		/// </summary>
-		/// <param name="DomainName">The name of the domain to list associated VPC endpoints for.</param>
+		/// <param name="DomainName">The name of the domain to list associated VPC endpoints for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="nextToken">If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</param>
 		/// <returns>Success</returns>
 		public async Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(string DomainName, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6638,7 +6755,10 @@ namespace MyNS
 		/// Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request.
 		/// RejectInboundConnection 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}/reject
 		/// </summary>
-		/// <param name="ConnectionId">The unique identifier of the inbound connection to reject.</param>
+		/// <param name="ConnectionId">The unique identifier of the inbound connection to reject.
+		/// Max length: 256
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RejectInboundConnectionResponse> RejectInboundConnectionAsync(string ConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6701,7 +6821,10 @@ namespace MyNS
 		/// Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 		/// RevokeVpcEndpointAccess 2021-01-01/opensearch/domain/{DomainName}/revokeVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(string DomainName, RevokeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6822,7 +6945,10 @@ namespace MyNS
 		/// Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.
 		/// UpdateScheduledAction 2021-01-01/opensearch/domain/{DomainName}/scheduledAction/update
 		/// </summary>
-		/// <param name="DomainName">The name of the domain to reschedule an action for.</param>
+		/// <param name="DomainName">The name of the domain to reschedule an action for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateScheduledActionResponse> UpdateScheduledActionAsync(string DomainName, UpdateScheduledActionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

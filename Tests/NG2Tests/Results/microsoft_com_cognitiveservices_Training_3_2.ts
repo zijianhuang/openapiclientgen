@@ -2429,7 +2429,9 @@ export namespace MyNS {
 		 * @param {Array<string>} tagIds A list of tags ids to filter the images. Defaults to all tagged images when null. Limited to 20.
 		 * @param {GetTaggedImagesOrderBy} orderBy The ordering. Defaults to newest.
 		 * @param {number} take Maximum number of images to return. Defaults to 50, limited to 256.
+		 *     Minimum: 0    Maximum: 256
 		 * @param {number} skip Number of images to skip before beginning the image batch. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Image>} OK
 		 */
 		GetTaggedImages(projectId: string, iterationId: string | null | undefined, tagIds: Array<string> | null | undefined, orderBy: GetTaggedImagesOrderBy | null | undefined, take: number | null | undefined, skip: number | null | undefined): Observable<Array<Image>> {
@@ -2445,6 +2447,7 @@ export namespace MyNS {
 		 * @param {string} iterationId The iteration id. Defaults to workspace.
 		 * @param {Array<string>} tagIds A list of tags ids to filter the images to count. Defaults to all tags when null.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetTaggedImageCount(projectId: string, iterationId: string | null | undefined, tagIds: Array<string> | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/images/tagged/count&iterationId=' + (iterationId == null ? '' : encodeURIComponent(iterationId)) + '&' + tagIds?.map(z => `tagIds=${encodeURIComponent(z)}`).join('&'), {});
@@ -2482,7 +2485,9 @@ export namespace MyNS {
 		 * @param {string} iterationId The iteration id. Defaults to workspace.
 		 * @param {GetTaggedImagesOrderBy} orderBy The ordering. Defaults to newest.
 		 * @param {number} take Maximum number of images to return. Defaults to 50, limited to 256.
+		 *     Minimum: 0    Maximum: 256
 		 * @param {number} skip Number of images to skip before beginning the image batch. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Image>} OK
 		 */
 		GetUntaggedImages(projectId: string, iterationId: string | null | undefined, orderBy: GetTaggedImagesOrderBy | null | undefined, take: number | null | undefined, skip: number | null | undefined): Observable<Array<Image>> {
@@ -2497,6 +2502,7 @@ export namespace MyNS {
 		 * @param {string} projectId The project id.
 		 * @param {string} iterationId The iteration id. Defaults to workspace.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetUntaggedImageCount(projectId: string, iterationId: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/images/untagged/count&iterationId=' + (iterationId == null ? '' : encodeURIComponent(iterationId)), {});
@@ -2600,7 +2606,9 @@ export namespace MyNS {
 		 * @param {string} projectId The id of the project the iteration belongs to.
 		 * @param {string} iterationId The id of the iteration to get.
 		 * @param {number} threshold The threshold used to determine true predictions.
+		 *     Type: float
 		 * @param {number} overlapThreshold If applicable, the bounding box overlap threshold used to determine true predictions.
+		 *     Type: float
 		 * @return {IterationPerformance} OK
 		 */
 		GetIterationPerformance(projectId: string, iterationId: string, threshold: number | null | undefined, overlapThreshold: number | null | undefined): Observable<IterationPerformance> {
@@ -2619,7 +2627,9 @@ export namespace MyNS {
 		 * @param {Array<string>} tagIds A list of tags ids to filter the images. Defaults to all tagged images when null. Limited to 20.
 		 * @param {GetTaggedImagesOrderBy} orderBy The ordering. Defaults to newest.
 		 * @param {number} take Maximum number of images to return. Defaults to 50, limited to 256.
+		 *     Minimum: 0    Maximum: 256
 		 * @param {number} skip Number of images to skip before beginning the image batch. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ImagePerformance>} OK
 		 */
 		GetImagePerformances(projectId: string, iterationId: string, tagIds: Array<string> | null | undefined, orderBy: GetTaggedImagesOrderBy | null | undefined, take: number | null | undefined, skip: number | null | undefined): Observable<Array<ImagePerformance>> {
@@ -2636,6 +2646,7 @@ export namespace MyNS {
 		 * @param {string} iterationId The iteration id. Defaults to workspace.
 		 * @param {Array<string>} tagIds A list of tags ids to filter the images to count. Defaults to all tags when null.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetImagePerformanceCount(projectId: string, iterationId: string, tagIds: Array<string> | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/iterations/' + (iterationId == null ? '' : encodeURIComponent(iterationId)) + '/performance/images/count&' + tagIds?.map(z => `tagIds=${encodeURIComponent(z)}`).join('&'), {});
@@ -2780,6 +2791,7 @@ export namespace MyNS {
 		 * @param {string} projectId The project id.
 		 * @param {IterationTrainingType} trainingType The type of training to use to train the project (default: Regular).
 		 * @param {number} reservedBudgetInHours The number of hours reserved as budget for training (if applicable).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} forceTrain Whether to force train even if dataset and configuration does not change (default: false).
 		 * @param {string} notificationEmailAddress The email address to send notification to when training finishes (default: null).
 		 * @param {TrainingParameters} requestBody Additional training parameters passed in to control how the project is trained.

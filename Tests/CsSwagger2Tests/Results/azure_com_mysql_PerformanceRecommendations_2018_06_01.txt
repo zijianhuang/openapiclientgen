@@ -178,8 +178,12 @@ namespace MyNS
 		/// Recommendation action session operation status.
 		/// LocationBasedRecommendedActionSessionsOperationStatus_Get subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}/recommendedActionSessionsAzureAsyncOperation/{operationId}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="locationName">The name of the location.</param>
 		/// <param name="operationId">The operation identifier.</param>
 		/// <returns>OK.</returns>
@@ -210,8 +214,12 @@ namespace MyNS
 		/// Recommendation action session operation result.
 		/// LocationBasedRecommendedActionSessionsResult_List subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}/recommendedActionSessionsOperationResults/{operationId}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="locationName">The name of the location.</param>
 		/// <param name="operationId">The operation identifier.</param>
 		/// <returns>Created</returns>
@@ -242,9 +250,16 @@ namespace MyNS
 		/// List recommendation action advisors.
 		/// Advisors_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/advisors
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <returns>OK</returns>
 		public async Task<AdvisorsResultList> Advisors_ListByServerAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName)
@@ -274,9 +289,16 @@ namespace MyNS
 		/// Get a recommendation action advisor.
 		/// Advisors_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/advisors/{advisorName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
 		/// <returns>OK</returns>
@@ -307,9 +329,16 @@ namespace MyNS
 		/// Create recommendation action session for the advisor.
 		/// CreateRecommendedActionSession subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/advisors/{advisorName}/createRecommendedActionSession
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
 		/// <param name="databaseName">The name of the database.</param>
@@ -335,9 +364,16 @@ namespace MyNS
 		/// Retrieve recommended actions from the advisor.
 		/// RecommendedActions_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/advisors/{advisorName}/recommendedActions
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
 		/// <param name="sessionId">The recommendation action session identifier.</param>
@@ -369,9 +405,16 @@ namespace MyNS
 		/// Retrieve recommended actions from the advisor.
 		/// RecommendedActions_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/advisors/{advisorName}/recommendedActions/{recommendedActionName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
 		/// <param name="recommendedActionName">The recommended action name.</param>

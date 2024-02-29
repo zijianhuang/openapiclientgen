@@ -35,7 +35,11 @@ export namespace MyNS {
 
 	export interface Clip_response_object_dataAttributes {
 		created_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end_char?: number | null;
+
+		/** Type: double */
 		end_time?: number | null;
 		external_id?: string | null;
 		is_processing?: boolean | null;
@@ -47,14 +51,24 @@ export namespace MyNS {
 		media_file_width?: string | null;
 		name?: string | null;
 		processing_started_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start_char?: number | null;
+
+		/** Type: double */
 		start_time?: number | null;
 		text?: string | null;
 	}
 	export interface Clip_response_object_dataAttributesFormProperties {
 		created_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end_char: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		end_time: FormControl<number | null | undefined>,
 		external_id: FormControl<string | null | undefined>,
 		is_processing: FormControl<boolean | null | undefined>,
@@ -66,8 +80,14 @@ export namespace MyNS {
 		media_file_width: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		processing_started_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start_char: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		start_time: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -257,9 +277,15 @@ export namespace MyNS {
 		processing_started_at?: string | null;
 		source_created_at?: string | null;
 		source_file_content_type?: string | null;
+
+		/** Type: double */
 		source_file_duration?: number | null;
+
+		/** Type: double */
 		source_file_height?: number | null;
 		source_file_preview_image_url?: string | null;
+
+		/** Type: double */
 		source_file_width?: number | null;
 		source_url?: string | null;
 	}
@@ -274,9 +300,15 @@ export namespace MyNS {
 		processing_started_at: FormControl<string | null | undefined>,
 		source_created_at: FormControl<string | null | undefined>,
 		source_file_content_type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		source_file_duration: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		source_file_height: FormControl<number | null | undefined>,
 		source_file_preview_image_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		source_file_width: FormControl<number | null | undefined>,
 		source_url: FormControl<string | null | undefined>,
 	}
@@ -771,7 +803,10 @@ export namespace MyNS {
 
 	export interface CreateClipPostBodyDataAttributes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		end_time: number;
 
 		/** Required */
@@ -780,12 +815,18 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		start_time: number;
 	}
 	export interface CreateClipPostBodyDataAttributesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		end_time: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -794,7 +835,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		start_time: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateClipPostBodyDataAttributesFormGroup() {
@@ -834,13 +878,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClipByIdPutBodyDataAttributes {
+
+		/** Type: double */
 		end_time?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		start_time?: number | null;
 	}
 	export interface UpdateClipByIdPutBodyDataAttributesFormProperties {
+
+		/** Type: double */
 		end_time: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start_time: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateClipByIdPutBodyDataAttributesFormGroup() {

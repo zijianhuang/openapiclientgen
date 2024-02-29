@@ -16,6 +16,8 @@ export namespace MyNS {
 
 	export interface Batch {
 		completed?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		created_at?: string | null;
 		id?: string | null;
@@ -25,6 +27,8 @@ export namespace MyNS {
 	}
 	export interface BatchFormProperties {
 		completed: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -179,9 +183,13 @@ export namespace MyNS {
 	}
 
 	export interface DomainRankReturn {
+
+		/** Type: double */
 		rank?: number | null;
 	}
 	export interface DomainRankReturnFormProperties {
+
+		/** Type: double */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateDomainRankReturnFormGroup() {

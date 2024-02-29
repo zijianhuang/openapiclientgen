@@ -5436,7 +5436,9 @@ export namespace MyNS {
 		 * Stops a multipart upload.
 		 * Delete sequencestore/{sequenceStoreId}/upload/{uploadId}/abort
 		 * @param {string} sequenceStoreId  The sequence store ID for the store involved in the multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @param {string} uploadId  The ID for the multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @return {AbortMultipartReadSetUploadResponse} Success
 		 */
 		AbortMultipartReadSetUpload(sequenceStoreId: string, uploadId: string): Observable<AbortMultipartReadSetUploadResponse> {
@@ -5447,6 +5449,7 @@ export namespace MyNS {
 		 * Deletes one or more read sets.
 		 * Post sequencestore/{sequenceStoreId}/readset/batch/delete
 		 * @param {string} sequenceStoreId The read sets' sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {BatchDeleteReadSetResponse} Success
 		 */
 		BatchDeleteReadSet(sequenceStoreId: string, requestBody: BatchDeleteReadSetPostBody): Observable<BatchDeleteReadSetResponse> {
@@ -5477,6 +5480,7 @@ export namespace MyNS {
 		 * Cancels a run.
 		 * Post run/{id}/cancel
 		 * @param {string} id The run's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		CancelRun(id: string): Observable<HttpResponse<string>> {
@@ -5507,7 +5511,9 @@ export namespace MyNS {
 		 * Concludes a multipart upload once you have uploaded all the components.
 		 * Post sequencestore/{sequenceStoreId}/upload/{uploadId}/complete
 		 * @param {string} sequenceStoreId  The sequence store ID for the store involved in the multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @param {string} uploadId  The ID for the multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @return {CompleteMultipartReadSetUploadResponse} Success
 		 */
 		CompleteMultipartReadSetUpload(sequenceStoreId: string, uploadId: string, requestBody: CompleteMultipartReadSetUploadPostBody): Observable<CompleteMultipartReadSetUploadResponse> {
@@ -5527,6 +5533,7 @@ export namespace MyNS {
 		 * Begins a multipart read set upload.
 		 * Post sequencestore/{sequenceStoreId}/upload
 		 * @param {string} sequenceStoreId  The sequence store ID for the store that is the destination of the multipart uploads. 
+		 *     Min length: 10    Max length: 36
 		 * @return {CreateMultipartReadSetUploadResponse} Success
 		 */
 		CreateMultipartReadSetUpload(sequenceStoreId: string, requestBody: CreateMultipartReadSetUploadPostBody): Observable<CreateMultipartReadSetUploadResponse> {
@@ -5555,8 +5562,11 @@ export namespace MyNS {
 		 * Retrieves a list of run groups.
 		 * Get runGroup
 		 * @param {string} name The run groups' name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} startingToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of run groups to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListRunGroupsResponse} Success
 		 */
 		ListRunGroups(name: string | null | undefined, startingToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListRunGroupsResponse> {
@@ -5594,9 +5604,13 @@ export namespace MyNS {
 		 * Retrieves a list of workflows.
 		 * Get workflow
 		 * @param {WorkflowType} type The workflows' type.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} name The workflows' name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} startingToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of workflows to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListWorkflowsResponse} Success
 		 */
 		ListWorkflows(type: WorkflowType | null | undefined, name: string | null | undefined, startingToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListWorkflowsResponse> {
@@ -5638,7 +5652,9 @@ export namespace MyNS {
 		 * Deletes a genome reference.
 		 * Delete referencestore/{referenceStoreId}/reference/{id}
 		 * @param {string} id The reference's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} referenceStoreId The reference's store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {DeleteReferenceResponse} Success
 		 */
 		DeleteReference(id: string, referenceStoreId: string): Observable<DeleteReferenceResponse> {
@@ -5649,6 +5665,7 @@ export namespace MyNS {
 		 * Deletes a genome reference store.
 		 * Delete referencestore/{id}
 		 * @param {string} id The store's ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {DeleteReferenceStoreResponse} Success
 		 */
 		DeleteReferenceStore(id: string): Observable<DeleteReferenceStoreResponse> {
@@ -5659,6 +5676,7 @@ export namespace MyNS {
 		 * Gets information about a reference store.
 		 * Get referencestore/{id}
 		 * @param {string} id The store's ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReferenceStoreResponse} Success
 		 */
 		GetReferenceStore(id: string): Observable<GetReferenceStoreResponse> {
@@ -5669,6 +5687,7 @@ export namespace MyNS {
 		 * Deletes a workflow run.
 		 * Delete run/{id}
 		 * @param {string} id The run's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		DeleteRun(id: string): Observable<HttpResponse<string>> {
@@ -5679,7 +5698,9 @@ export namespace MyNS {
 		 * Gets information about a workflow run.
 		 * Get run/{id}
 		 * @param {string} id The run's ID.
+		 *     Min length: 1    Max length: 18
 		 * @param {Array<RunExport>} _export The run's export format.
+		 *     Minimum items: 0    Maximum items: 32
 		 * @return {GetRunResponse} Success
 		 */
 		GetRun(id: string, _export: Array<RunExport> | null | undefined): Observable<GetRunResponse> {
@@ -5690,6 +5711,7 @@ export namespace MyNS {
 		 * Deletes a workflow run group.
 		 * Delete runGroup/{id}
 		 * @param {string} id The run group's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		DeleteRunGroup(id: string): Observable<HttpResponse<string>> {
@@ -5700,6 +5722,7 @@ export namespace MyNS {
 		 * Gets information about a workflow run group.
 		 * Get runGroup/{id}
 		 * @param {string} id The group's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {GetRunGroupResponse} Success
 		 */
 		GetRunGroup(id: string): Observable<GetRunGroupResponse> {
@@ -5710,6 +5733,7 @@ export namespace MyNS {
 		 * Updates a run group.
 		 * Post runGroup/{id}
 		 * @param {string} id The group's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		UpdateRunGroup(id: string, requestBody: UpdateRunGroupPostBody): Observable<HttpResponse<string>> {
@@ -5720,6 +5744,7 @@ export namespace MyNS {
 		 * Deletes a sequence store.
 		 * Delete sequencestore/{id}
 		 * @param {string} id The sequence store's ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {DeleteSequenceStoreResponse} Success
 		 */
 		DeleteSequenceStore(id: string): Observable<DeleteSequenceStoreResponse> {
@@ -5730,6 +5755,7 @@ export namespace MyNS {
 		 * Gets information about a sequence store.
 		 * Get sequencestore/{id}
 		 * @param {string} id The store's ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetSequenceStoreResponse} Success
 		 */
 		GetSequenceStore(id: string): Observable<GetSequenceStoreResponse> {
@@ -5771,6 +5797,7 @@ export namespace MyNS {
 		 * Deletes a workflow.
 		 * Delete workflow/{id}
 		 * @param {string} id The workflow's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		DeleteWorkflow(id: string): Observable<HttpResponse<string>> {
@@ -5781,8 +5808,11 @@ export namespace MyNS {
 		 * Gets information about a workflow.
 		 * Get workflow/{id}
 		 * @param {string} id The workflow's ID.
+		 *     Min length: 1    Max length: 18
 		 * @param {WorkflowType} type The workflow's type.
+		 *     Min length: 1    Max length: 64
 		 * @param {Array<WorkflowExport>} _export The export format for the workflow.
+		 *     Minimum items: 0    Maximum items: 32
 		 * @return {GetWorkflowResponse} Success
 		 */
 		GetWorkflow(id: string, type: WorkflowType | null | undefined, _export: Array<WorkflowExport> | null | undefined): Observable<GetWorkflowResponse> {
@@ -5793,6 +5823,7 @@ export namespace MyNS {
 		 * Updates a workflow.
 		 * Post workflow/{id}
 		 * @param {string} id The workflow's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {void} 
 		 */
 		UpdateWorkflow(id: string, requestBody: UpdateWorkflowPostBody): Observable<HttpResponse<string>> {
@@ -5803,9 +5834,12 @@ export namespace MyNS {
 		 * Gets a file from a read set.
 		 * Get sequencestore/{sequenceStoreId}/readset/{id}#partNumber
 		 * @param {string} id The read set's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {ReadSetFile} file The file to retrieve.
 		 * @param {number} partNumber The part number to retrieve.
+		 *     Minimum: 1    Maximum: 10000
 		 * @return {GetReadSetResponse} Success
 		 */
 		GetReadSet(id: string, sequenceStoreId: string, file: ReadSetFile | null | undefined, partNumber: number): Observable<GetReadSetResponse> {
@@ -5816,7 +5850,9 @@ export namespace MyNS {
 		 * Gets information about a read set activation job.
 		 * Get sequencestore/{sequenceStoreId}/activationjob/{id}
 		 * @param {string} id The job's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} sequenceStoreId The job's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReadSetActivationJobResponse} Success
 		 */
 		GetReadSetActivationJob(id: string, sequenceStoreId: string): Observable<GetReadSetActivationJobResponse> {
@@ -5827,7 +5863,9 @@ export namespace MyNS {
 		 * Gets information about a read set export job.
 		 * Get sequencestore/{sequenceStoreId}/exportjob/{id}
 		 * @param {string} sequenceStoreId The job's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} id The job's ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReadSetExportJobResponse} Success
 		 */
 		GetReadSetExportJob(sequenceStoreId: string, id: string): Observable<GetReadSetExportJobResponse> {
@@ -5838,7 +5876,9 @@ export namespace MyNS {
 		 * Gets information about a read set import job.
 		 * Get sequencestore/{sequenceStoreId}/importjob/{id}
 		 * @param {string} id The job's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} sequenceStoreId The job's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReadSetImportJobResponse} Success
 		 */
 		GetReadSetImportJob(id: string, sequenceStoreId: string): Observable<GetReadSetImportJobResponse> {
@@ -5849,7 +5889,9 @@ export namespace MyNS {
 		 * Gets details about a read set.
 		 * Get sequencestore/{sequenceStoreId}/readset/{id}/metadata
 		 * @param {string} id The read set's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReadSetMetadataResponse} Success
 		 */
 		GetReadSetMetadata(id: string, sequenceStoreId: string): Observable<GetReadSetMetadataResponse> {
@@ -5860,8 +5902,11 @@ export namespace MyNS {
 		 * Gets a reference file.
 		 * Get referencestore/{referenceStoreId}/reference/{id}#partNumber
 		 * @param {string} id The reference's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} referenceStoreId The reference's store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {number} partNumber The part number to retrieve.
+		 *     Minimum: 1    Maximum: 10000
 		 * @param {ReferenceFile} file The file to retrieve.
 		 * @return {GetReferenceResponse} Success
 		 */
@@ -5873,7 +5918,9 @@ export namespace MyNS {
 		 * Gets information about a reference import job.
 		 * Get referencestore/{referenceStoreId}/importjob/{id}
 		 * @param {string} id The job's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} referenceStoreId The job's reference store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReferenceImportJobResponse} Success
 		 */
 		GetReferenceImportJob(id: string, referenceStoreId: string): Observable<GetReferenceImportJobResponse> {
@@ -5884,7 +5931,9 @@ export namespace MyNS {
 		 * Gets information about a genome reference's metadata.
 		 * Get referencestore/{referenceStoreId}/reference/{id}/metadata
 		 * @param {string} id The reference's ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {string} referenceStoreId The reference's reference store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {GetReferenceMetadataResponse} Success
 		 */
 		GetReferenceMetadata(id: string, referenceStoreId: string): Observable<GetReferenceMetadataResponse> {
@@ -5895,7 +5944,9 @@ export namespace MyNS {
 		 * Gets information about a workflow run task.
 		 * Get run/{id}/task/{taskId}
 		 * @param {string} id The task's ID.
+		 *     Min length: 1    Max length: 18
 		 * @param {string} taskId The task's ID.
+		 *     Min length: 1    Max length: 18
 		 * @return {GetRunTaskResponse} Success
 		 */
 		GetRunTask(id: string, taskId: string): Observable<GetRunTaskResponse> {
@@ -5906,7 +5957,9 @@ export namespace MyNS {
 		 * Retrieves a list of annotation import jobs.
 		 * Post import/annotations
 		 * @param {number} maxResults The maximum number of jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 10000
 		 * @return {ListAnnotationImportJobsResponse} Success
 		 */
 		ListAnnotationImportJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListAnnotationImportJobsPostBody): Observable<ListAnnotationImportJobsResponse> {
@@ -5917,7 +5970,9 @@ export namespace MyNS {
 		 * Retrieves a list of annotation stores.
 		 * Post annotationStores
 		 * @param {number} maxResults The maximum number of stores to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 10000
 		 * @return {ListAnnotationStoresResponse} Success
 		 */
 		ListAnnotationStores(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListAnnotationStoresPostBody): Observable<ListAnnotationStoresResponse> {
@@ -5928,8 +5983,11 @@ export namespace MyNS {
 		 * Lists all multipart read set uploads and their statuses.
 		 * Post sequencestore/{sequenceStoreId}/uploads
 		 * @param {string} sequenceStoreId  The Sequence Store ID used for the multipart uploads. 
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults  The maximum number of multipart uploads returned in a page. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken  Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. 
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListMultipartReadSetUploadsResponse} Success
 		 */
 		ListMultipartReadSetUploads(sequenceStoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMultipartReadSetUploadsResponse> {
@@ -5940,8 +5998,11 @@ export namespace MyNS {
 		 * Retrieves a list of read set activation jobs.
 		 * Post sequencestore/{sequenceStoreId}/activationjobs
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults The maximum number of read set activation jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReadSetActivationJobsResponse} Success
 		 */
 		ListReadSetActivationJobs(sequenceStoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReadSetActivationJobsPostBody): Observable<ListReadSetActivationJobsResponse> {
@@ -5952,8 +6013,11 @@ export namespace MyNS {
 		 * Retrieves a list of read set export jobs.
 		 * Post sequencestore/{sequenceStoreId}/exportjobs
 		 * @param {string} sequenceStoreId The jobs' sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults The maximum number of jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReadSetExportJobsResponse} Success
 		 */
 		ListReadSetExportJobs(sequenceStoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReadSetExportJobsPostBody): Observable<ListReadSetExportJobsResponse> {
@@ -5964,8 +6028,11 @@ export namespace MyNS {
 		 * Retrieves a list of read set import jobs.
 		 * Post sequencestore/{sequenceStoreId}/importjobs
 		 * @param {number} maxResults The maximum number of jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @param {string} sequenceStoreId The jobs' sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {ListReadSetImportJobsResponse} Success
 		 */
 		ListReadSetImportJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, sequenceStoreId: string, requestBody: ListReadSetImportJobsPostBody): Observable<ListReadSetImportJobsResponse> {
@@ -5976,9 +6043,13 @@ export namespace MyNS {
 		 * This operation will list all parts in a requested multipart upload for a sequence store.
 		 * Post sequencestore/{sequenceStoreId}/upload/{uploadId}/parts
 		 * @param {string} sequenceStoreId  The Sequence Store ID used for the multipart uploads. 
+		 *     Min length: 10    Max length: 36
 		 * @param {string} uploadId  The ID for the initiated multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults  The maximum number of read set upload parts returned in a page. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken  Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. 
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReadSetUploadPartsResponse} Success
 		 */
 		ListReadSetUploadParts(sequenceStoreId: string, uploadId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReadSetUploadPartsPostBody): Observable<ListReadSetUploadPartsResponse> {
@@ -5989,8 +6060,11 @@ export namespace MyNS {
 		 * Retrieves a list of read sets.
 		 * Post sequencestore/{sequenceStoreId}/readsets
 		 * @param {string} sequenceStoreId The jobs' sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults The maximum number of read sets to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReadSetsResponse} Success
 		 */
 		ListReadSets(sequenceStoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReadSetsPostBody): Observable<ListReadSetsResponse> {
@@ -6001,8 +6075,11 @@ export namespace MyNS {
 		 * Retrieves a list of reference import jobs.
 		 * Post referencestore/{referenceStoreId}/importjobs
 		 * @param {number} maxResults The maximum number of jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @param {string} referenceStoreId The job's reference store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {ListReferenceImportJobsResponse} Success
 		 */
 		ListReferenceImportJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, referenceStoreId: string, requestBody: ListReferenceImportJobsPostBody): Observable<ListReferenceImportJobsResponse> {
@@ -6013,7 +6090,9 @@ export namespace MyNS {
 		 * Retrieves a list of reference stores.
 		 * Post referencestores
 		 * @param {number} maxResults The maximum number of stores to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReferenceStoresResponse} Success
 		 */
 		ListReferenceStores(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReferenceStoresPostBody): Observable<ListReferenceStoresResponse> {
@@ -6024,8 +6103,11 @@ export namespace MyNS {
 		 * Retrieves a list of references.
 		 * Post referencestore/{referenceStoreId}/references
 		 * @param {string} referenceStoreId The references' reference store ID.
+		 *     Min length: 10    Max length: 36
 		 * @param {number} maxResults The maximum number of references to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListReferencesResponse} Success
 		 */
 		ListReferences(referenceStoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListReferencesPostBody): Observable<ListReferencesResponse> {
@@ -6036,9 +6118,13 @@ export namespace MyNS {
 		 * Retrieves a list of tasks for a run.
 		 * Get run/{id}/task
 		 * @param {string} id The run's ID.
+		 *     Min length: 1    Max length: 18
 		 * @param {TaskStatus} status Filter the list by status.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} startingToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of run tasks to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListRunTasksResponse} Success
 		 */
 		ListRunTasks(id: string, status: TaskStatus | null | undefined, startingToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListRunTasksResponse> {
@@ -6049,10 +6135,15 @@ export namespace MyNS {
 		 * Retrieves a list of runs.
 		 * Get run
 		 * @param {string} name Filter the list by run name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} runGroupId Filter the list by run group ID.
+		 *     Min length: 1    Max length: 18
 		 * @param {string} startingToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of runs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {RunStatus} status  The status of a run. 
+		 *     Min length: 1    Max length: 64
 		 * @return {ListRunsResponse} Success
 		 */
 		ListRuns(name: string | null | undefined, runGroupId: string | null | undefined, startingToken: string | null | undefined, maxResults: number | null | undefined, status: RunStatus | null | undefined): Observable<ListRunsResponse> {
@@ -6072,7 +6163,9 @@ export namespace MyNS {
 		 * Retrieves a list of sequence stores.
 		 * Post sequencestores
 		 * @param {number} maxResults The maximum number of stores to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 6144
 		 * @return {ListSequenceStoresResponse} Success
 		 */
 		ListSequenceStores(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListSequenceStoresPostBody): Observable<ListSequenceStoresResponse> {
@@ -6083,6 +6176,7 @@ export namespace MyNS {
 		 * Retrieves a list of tags for a resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -6093,6 +6187,7 @@ export namespace MyNS {
 		 * Tags a resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -6103,7 +6198,9 @@ export namespace MyNS {
 		 * Retrieves a list of variant import jobs.
 		 * Post import/variants
 		 * @param {number} maxResults The maximum number of import jobs to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 10000
 		 * @return {ListVariantImportJobsResponse} Success
 		 */
 		ListVariantImportJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListVariantImportJobsPostBody): Observable<ListVariantImportJobsResponse> {
@@ -6114,7 +6211,9 @@ export namespace MyNS {
 		 * Retrieves a list of variant stores.
 		 * Post variantStores
 		 * @param {number} maxResults The maximum number of stores to return in one page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 10000
 		 * @return {ListVariantStoresResponse} Success
 		 */
 		ListVariantStores(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListVariantStoresPostBody): Observable<ListVariantStoresResponse> {
@@ -6134,6 +6233,7 @@ export namespace MyNS {
 		 * Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.
 		 * Post sequencestore/{sequenceStoreId}/activationjob
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {StartReadSetActivationJobResponse} Success
 		 */
 		StartReadSetActivationJob(sequenceStoreId: string, requestBody: StartReadSetActivationJobPostBody): Observable<StartReadSetActivationJobResponse> {
@@ -6144,6 +6244,7 @@ export namespace MyNS {
 		 * Exports a read set to Amazon S3.
 		 * Post sequencestore/{sequenceStoreId}/exportjob
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {StartReadSetExportJobResponse} Success
 		 */
 		StartReadSetExportJob(sequenceStoreId: string, requestBody: StartReadSetExportJobPostBody): Observable<StartReadSetExportJobResponse> {
@@ -6154,6 +6255,7 @@ export namespace MyNS {
 		 * Starts a read set import job.
 		 * Post sequencestore/{sequenceStoreId}/importjob
 		 * @param {string} sequenceStoreId The read set's sequence store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {StartReadSetImportJobResponse} Success
 		 */
 		StartReadSetImportJob(sequenceStoreId: string, requestBody: StartReadSetImportJobPostBody): Observable<StartReadSetImportJobResponse> {
@@ -6164,6 +6266,7 @@ export namespace MyNS {
 		 * Starts a reference import job.
 		 * Post referencestore/{referenceStoreId}/importjob
 		 * @param {string} referenceStoreId The job's reference store ID.
+		 *     Min length: 10    Max length: 36
 		 * @return {StartReferenceImportJobResponse} Success
 		 */
 		StartReferenceImportJob(referenceStoreId: string, requestBody: StartReferenceImportJobPostBody): Observable<StartReferenceImportJobResponse> {
@@ -6183,7 +6286,9 @@ export namespace MyNS {
 		 * Removes tags from a resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} tagKeys Keys of tags to remove.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -6194,9 +6299,12 @@ export namespace MyNS {
 		 * This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten.
 		 * Put sequencestore/{sequenceStoreId}/upload/{uploadId}/part#partSource&partNumber
 		 * @param {string} sequenceStoreId  The Sequence Store ID used for the multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @param {string} uploadId  The ID for the initiated multipart upload. 
+		 *     Min length: 10    Max length: 36
 		 * @param {ReadSetPartSource} partSource  The source file for an upload part. 
 		 * @param {number} partNumber  The number of the part being uploaded. 
+		 *     Minimum: 1    Maximum: 10000
 		 * @return {UploadReadSetPartResponse} Success
 		 */
 		UploadReadSetPart(sequenceStoreId: string, uploadId: string, partSource: ReadSetPartSource, partNumber: number, requestBody: UploadReadSetPartPutBody): Observable<UploadReadSetPartResponse> {
@@ -6248,8 +6356,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -6275,8 +6383,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6343,8 +6451,8 @@ export namespace MyNS {
 
 		/**
 		 * An idempotency token that can be used to avoid triggering multiple multipart uploads.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -6357,46 +6465,46 @@ export namespace MyNS {
 		/**
 		 * The source's subject ID.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		subjectId: string;
 
 		/**
 		 * The source's sample ID.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		sampleId: string;
 
 		/**
 		 * Where the source originated.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		generatedFrom?: string | null;
 
 		/**
 		 * The ARN of the reference.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		referenceArn: string;
 
 		/**
 		 * The name of the read set.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
 		/**
 		 * The description of the read set.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -6407,8 +6515,8 @@ export namespace MyNS {
 
 		/**
 		 * An idempotency token that can be used to avoid triggering multiple multipart uploads.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6421,46 +6529,46 @@ export namespace MyNS {
 		/**
 		 * The source's subject ID.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		subjectId: FormControl<string | null | undefined>,
 
 		/**
 		 * The source's sample ID.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		sampleId: FormControl<string | null | undefined>,
 
 		/**
 		 * Where the source originated.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		generatedFrom: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the reference.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		referenceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the read set.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the read set.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6487,15 +6595,15 @@ export namespace MyNS {
 		/**
 		 * A name for the store.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
 		/**
 		 * A description for the store.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -6507,8 +6615,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique token for each request.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 	}
@@ -6517,15 +6625,15 @@ export namespace MyNS {
 		/**
 		 * A name for the store.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the store.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6534,8 +6642,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique token for each request.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6569,8 +6677,8 @@ export namespace MyNS {
 
 		/**
 		 * A name for the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -6601,8 +6709,8 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: string;
 
@@ -6617,8 +6725,8 @@ export namespace MyNS {
 
 		/**
 		 * A name for the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -6649,8 +6757,8 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: FormControl<string | null | undefined>,
 
@@ -6679,15 +6787,15 @@ export namespace MyNS {
 		/**
 		 * A name for the store.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
 		/**
 		 * A description for the store.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -6699,8 +6807,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique token for each request.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -6712,15 +6820,15 @@ export namespace MyNS {
 		/**
 		 * A name for the store.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the store.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6729,8 +6837,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique token for each request.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6777,8 +6885,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -6795,8 +6903,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6845,22 +6953,22 @@ export namespace MyNS {
 
 		/**
 		 * A name for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * A description for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * An engine for the workflow.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		engine?: WorkflowEngine | null;
 
@@ -6869,15 +6977,15 @@ export namespace MyNS {
 
 		/**
 		 * The URI of a definition for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		definitionUri?: string | null;
 
 		/**
 		 * The path of the main definition file for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		main?: string | null;
 
@@ -6897,15 +7005,15 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: string;
 
 		/**
 		 * The computational accelerator specified to run the workflow.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		accelerators?: Accelerators | null;
 	}
@@ -6913,22 +7021,22 @@ export namespace MyNS {
 
 		/**
 		 * A name for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * An engine for the workflow.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		engine: FormControl<WorkflowEngine | null | undefined>,
 
@@ -6937,15 +7045,15 @@ export namespace MyNS {
 
 		/**
 		 * The URI of a definition for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		definitionUri: FormControl<string | null | undefined>,
 
 		/**
 		 * The path of the main definition file for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		main: FormControl<string | null | undefined>,
 
@@ -6965,15 +7073,15 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: FormControl<string | null | undefined>,
 
 		/**
 		 * The computational accelerator specified to run the workflow.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		accelerators: FormControl<Accelerators | null | undefined>,
 	}
@@ -6998,8 +7106,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 	}
@@ -7007,8 +7115,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -7023,8 +7131,8 @@ export namespace MyNS {
 
 		/**
 		 * A name for the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -7060,8 +7168,8 @@ export namespace MyNS {
 
 		/**
 		 * A name for the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -7108,8 +7216,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 	}
@@ -7117,8 +7225,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the store.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -7133,15 +7241,15 @@ export namespace MyNS {
 
 		/**
 		 * A name for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * A description for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description?: string | null;
 	}
@@ -7149,15 +7257,15 @@ export namespace MyNS {
 
 		/**
 		 * A name for the workflow.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the workflow.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -7529,44 +7637,44 @@ export namespace MyNS {
 
 		/**
 		 * The run's workflow ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		workflowId?: string | null;
 
 		/**
 		 * The run's workflows type.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		workflowType?: WorkflowType | null;
 
 		/**
 		 * The run's ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		runId?: string | null;
 
 		/**
 		 * A service role for the run.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roleArn: string;
 
 		/**
 		 * A name for the run.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * The run's group ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		runGroupId?: string | null;
 
@@ -7589,15 +7697,15 @@ export namespace MyNS {
 
 		/**
 		 * An output URI for the run.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		outputUri?: string | null;
 
 		/**
 		 * A log level for the run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		logLevel?: RunLogLevel | null;
 
@@ -7607,8 +7715,8 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: string;
 	}
@@ -7616,44 +7724,44 @@ export namespace MyNS {
 
 		/**
 		 * The run's workflow ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		workflowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The run's workflows type.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		workflowType: FormControl<WorkflowType | null | undefined>,
 
 		/**
 		 * The run's ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		runId: FormControl<string | null | undefined>,
 
 		/**
 		 * A service role for the run.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the run.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The run's group ID.
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		runGroupId: FormControl<string | null | undefined>,
 
@@ -7676,15 +7784,15 @@ export namespace MyNS {
 
 		/**
 		 * An output URI for the run.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		outputUri: FormControl<string | null | undefined>,
 
 		/**
 		 * A log level for the run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		logLevel: FormControl<RunLogLevel | null | undefined>,
 
@@ -7694,8 +7802,8 @@ export namespace MyNS {
 		/**
 		 * To ensure that requests don't run multiple times, specify a unique ID for each request.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		requestId: FormControl<string | null | undefined>,
 	}
@@ -7847,16 +7955,16 @@ export namespace MyNS {
 		/**
 		 * A destination annotation store for the job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		destinationName: string;
 
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -7881,16 +7989,16 @@ export namespace MyNS {
 		/**
 		 * A destination annotation store for the job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		destinationName: FormControl<string | null | undefined>,
 
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -7926,8 +8034,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -7943,8 +8051,8 @@ export namespace MyNS {
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7966,15 +8074,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -7997,15 +8105,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8023,15 +8131,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -8048,15 +8156,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8073,15 +8181,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken?: string | null;
 
@@ -8098,15 +8206,15 @@ export namespace MyNS {
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * To ensure that jobs don't run multiple times, specify a unique token for each job.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8123,16 +8231,16 @@ export namespace MyNS {
 		/**
 		 * The destination variant store for the job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		destinationName: string;
 
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -8154,16 +8262,16 @@ export namespace MyNS {
 		/**
 		 * The destination variant store for the job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		destinationName: FormControl<string | null | undefined>,
 
 		/**
 		 * A service role for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 

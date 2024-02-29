@@ -9,8 +9,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -20,8 +20,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -136,8 +136,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -145,8 +145,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -162,8 +162,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -175,8 +175,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -232,8 +232,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -241,8 +241,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -258,8 +258,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -271,8 +271,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -289,8 +289,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -300,8 +300,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -319,8 +319,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -334,8 +334,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -413,8 +413,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -441,8 +441,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -579,8 +579,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -594,8 +594,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -634,8 +634,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -649,8 +649,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -686,8 +686,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -713,8 +713,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -1131,8 +1131,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -1159,8 +1159,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -1387,8 +1387,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -1396,8 +1396,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1413,8 +1413,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -1423,8 +1423,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1441,8 +1441,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -1452,8 +1452,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1471,8 +1471,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -1486,8 +1486,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -1597,8 +1597,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -1608,8 +1608,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1627,8 +1627,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -1639,8 +1639,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1842,8 +1842,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Status?: AvailabilityMonitorTestStatus;
@@ -1853,8 +1853,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Status: FormControl<AvailabilityMonitorTestStatus | null | undefined>,
@@ -1876,8 +1876,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -1886,8 +1886,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1904,8 +1904,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		AverageUploadRateLimitInBitsPerSec?: number | null;
@@ -1917,8 +1917,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
@@ -1940,8 +1940,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -1952,8 +1952,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -1968,8 +1968,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		BandwidthRateLimitIntervals?: Array<BandwidthRateLimitInterval>;
@@ -1978,8 +1978,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2046,8 +2046,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -2056,8 +2056,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2072,8 +2072,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		DiskIds?: Array<string>;
@@ -2087,8 +2087,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		CacheAllocatedInBytes: FormControl<number | null | undefined>,
@@ -2114,8 +2114,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -2124,8 +2124,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2168,8 +2168,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 		TargetName?: string;
@@ -2190,8 +2190,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 		TargetName: FormControl<string | null | undefined>,
@@ -2339,8 +2339,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Tags?: Array<Tag>;
@@ -2360,8 +2360,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2412,8 +2412,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		GatewayId?: string;
@@ -2443,8 +2443,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		GatewayId: FormControl<string | null | undefined>,
@@ -2523,8 +2523,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -2535,8 +2535,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2553,8 +2553,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		HourOfDay?: number | null;
@@ -2569,8 +2569,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		HourOfDay: FormControl<number | null | undefined>,
@@ -2598,8 +2598,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -2610,8 +2610,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -2646,37 +2646,37 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId?: string | null;
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 
@@ -2685,15 +2685,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role?: string | null;
 
 		/**
 		 * <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		 * Max length: 1400
 		 * Min length: 16
+		 * Max length: 1400
 		 */
 		LocationARN?: string | null;
 		DefaultStorageClass?: string;
@@ -2710,8 +2710,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following:</p> <ul> <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> </ul>
-		 * Max length: 15
 		 * Min length: 5
+		 * Max length: 15
 		 */
 		Squash?: string | null;
 		ReadOnly?: boolean | null;
@@ -2731,37 +2731,37 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 
@@ -2770,15 +2770,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		 * Max length: 1400
 		 * Min length: 16
+		 * Max length: 1400
 		 */
 		LocationARN: FormControl<string | null | undefined>,
 		DefaultStorageClass: FormControl<string | null | undefined>,
@@ -2788,8 +2788,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following:</p> <ul> <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> </ul>
-		 * Max length: 15
 		 * Min length: 5
+		 * Max length: 15
 		 */
 		Squash: FormControl<string | null | undefined>,
 		ReadOnly: FormControl<boolean | null | undefined>,
@@ -2865,52 +2865,52 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId?: string | null;
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 		Path?: string;
 
 		/**
 		 * The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role?: string | null;
 
 		/**
 		 * <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		 * Max length: 1400
 		 * Min length: 16
+		 * Max length: 1400
 		 */
 		LocationARN?: string | null;
 		DefaultStorageClass?: string;
@@ -2929,8 +2929,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-		 * Max length: 15
 		 * Min length: 5
+		 * Max length: 15
 		 */
 		Authentication?: string | null;
 		CaseSensitivity?: CaseSensitivity;
@@ -2948,52 +2948,52 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 		Path: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		 * Max length: 1400
 		 * Min length: 16
+		 * Max length: 1400
 		 */
 		LocationARN: FormControl<string | null | undefined>,
 		DefaultStorageClass: FormControl<string | null | undefined>,
@@ -3009,8 +3009,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-		 * Max length: 15
 		 * Min length: 5
+		 * Max length: 15
 		 */
 		Authentication: FormControl<string | null | undefined>,
 		CaseSensitivity: FormControl<CaseSensitivity | null | undefined>,
@@ -3071,8 +3071,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		DomainName?: string;
@@ -3086,8 +3086,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		DomainName: FormControl<string | null | undefined>,
@@ -3132,8 +3132,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -3142,8 +3142,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -3231,8 +3231,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 		TargetName?: string;
@@ -3255,8 +3255,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 		TargetName: FormControl<string | null | undefined>,
@@ -3330,8 +3330,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 		PoolId?: string;
@@ -3353,8 +3353,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 		PoolId: FormControl<string | null | undefined>,
@@ -3408,8 +3408,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo>;
@@ -3421,8 +3421,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -3468,8 +3468,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 		Marker?: string;
@@ -3482,8 +3482,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -3530,8 +3530,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey?: string | null;
 		PoolId?: string;
@@ -3553,8 +3553,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		KMSKey: FormControl<string | null | undefined>,
 		PoolId: FormControl<string | null | undefined>,
@@ -3588,8 +3588,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 		TapeARNs?: Array<string>;
@@ -3603,8 +3603,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -3623,8 +3623,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		DiskIds?: Array<string>;
@@ -3635,8 +3635,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		UploadBufferUsedInBytes: FormControl<number | null | undefined>,
@@ -3656,8 +3656,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -3666,8 +3666,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -3684,8 +3684,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		VTLDevices?: Array<VTLDevice>;
@@ -3697,8 +3697,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -3771,8 +3771,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 		VTLDeviceARNs?: Array<string>;
@@ -3786,8 +3786,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -3808,8 +3808,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		DiskIds?: Array<string>;
@@ -3822,8 +3822,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		WorkingStorageUsedInBytes: FormControl<number | null | undefined>,
@@ -3845,8 +3845,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -3857,8 +3857,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -3934,8 +3934,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -3946,8 +3946,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4078,8 +4078,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -4089,8 +4089,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4150,8 +4150,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -4159,8 +4159,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4201,29 +4201,29 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId?: string | null;
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -4236,29 +4236,29 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the file share.
-		 * Max length: 30
 		 * Min length: 12
+		 * Max length: 30
 		 */
 		FileShareId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		FileShareStatus: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4324,8 +4324,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -4338,8 +4338,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4357,8 +4357,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Limit?: number | null;
@@ -4368,8 +4368,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Limit: FormControl<number | null | undefined>,
@@ -4463,8 +4463,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Disks?: Array<Disk>;
@@ -4473,8 +4473,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4496,8 +4496,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		DiskAllocationType?: string | null;
 		DiskAllocationResource?: string;
@@ -4520,8 +4520,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		DiskAllocationType: FormControl<string | null | undefined>,
 		DiskAllocationResource: FormControl<string | null | undefined>,
@@ -4546,8 +4546,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -4558,8 +4558,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4804,8 +4804,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		VolumeRecoveryPointInfos?: Array<VolumeRecoveryPointInfo>;
@@ -4814,8 +4814,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4857,8 +4857,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -4867,8 +4867,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -4885,8 +4885,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Marker?: string;
@@ -4898,8 +4898,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -4920,8 +4920,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		GatewayId?: string;
@@ -4937,8 +4937,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		GatewayId: FormControl<string | null | undefined>,
@@ -4965,8 +4965,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		Marker?: string;
@@ -4978,8 +4978,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
@@ -4998,15 +4998,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN?: string | null;
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NotificationId?: string | null;
 	}
@@ -5014,15 +5014,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NotificationId: FormControl<string | null | undefined>,
 	}
@@ -5039,8 +5039,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: string;
 	}
@@ -5049,8 +5049,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 	}
@@ -5067,15 +5067,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN?: string | null;
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NotificationId?: string | null;
 	}
@@ -5085,15 +5085,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		FileShareARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NotificationId: FormControl<string | null | undefined>,
 	}
@@ -5175,8 +5175,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5184,8 +5184,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5201,8 +5201,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5211,8 +5211,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5295,8 +5295,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5310,8 +5310,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5327,8 +5327,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5336,8 +5336,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5355,8 +5355,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -5370,8 +5370,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -5390,8 +5390,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5399,8 +5399,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5445,8 +5445,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5456,8 +5456,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5475,8 +5475,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5487,8 +5487,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5503,8 +5503,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5512,8 +5512,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5529,8 +5529,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5539,8 +5539,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5557,8 +5557,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5568,8 +5568,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5587,8 +5587,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5599,8 +5599,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5615,8 +5615,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5624,8 +5624,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5644,8 +5644,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -5654,8 +5654,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5672,8 +5672,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5683,8 +5683,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5702,8 +5702,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 		AverageUploadRateLimitInBitsPerSec?: number | null;
@@ -5716,8 +5716,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
@@ -5736,8 +5736,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5745,8 +5745,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5762,8 +5762,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -5775,8 +5775,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -5893,8 +5893,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 		GatewayName?: string;
@@ -5905,8 +5905,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 		GatewayName: FormControl<string | null | undefined>,
@@ -5924,15 +5924,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
 		/**
 		 * The name you configured for your gateway.
-		 * Max length: 255
 		 * Min length: 2
+		 * Max length: 255
 		 */
 		GatewayName?: string | null;
 		GatewayTimezone?: string;
@@ -5944,15 +5944,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The name you configured for your gateway.
-		 * Max length: 255
 		 * Min length: 2
+		 * Max length: 255
 		 */
 		GatewayName: FormControl<string | null | undefined>,
 		GatewayTimezone: FormControl<string | null | undefined>,
@@ -5976,8 +5976,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -5987,8 +5987,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6006,8 +6006,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 	}
@@ -6018,8 +6018,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6036,8 +6036,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -6047,8 +6047,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6066,8 +6066,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -6086,8 +6086,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -6272,8 +6272,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -6281,8 +6281,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6298,8 +6298,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -6311,8 +6311,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 
@@ -6331,8 +6331,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -6340,8 +6340,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6357,8 +6357,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -6370,8 +6370,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6386,8 +6386,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN?: string | null;
 	}
@@ -6395,8 +6395,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 	}
@@ -6412,8 +6412,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: string;
 
@@ -6425,8 +6425,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 500
 		 * Min length: 50
+		 * Max length: 500
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
 

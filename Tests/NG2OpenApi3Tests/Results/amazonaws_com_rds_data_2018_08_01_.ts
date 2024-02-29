@@ -781,38 +781,38 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: string;
 
 		/**
 		 * <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: string;
 
 		/**
 		 * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sql: string;
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database?: string | null;
 
 		/**
 		 * <p>The name of the database schema.</p> <note> <p>Currently, the <code>schema</code> parameter isn't supported.</p> </note>
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema?: string | null;
 
@@ -821,8 +821,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p> <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId?: string | null;
 	}
@@ -831,45 +831,45 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sql: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the database schema.</p> <note> <p>Currently, the <code>schema</code> parameter isn't supported.</p> </note>
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p> <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: FormControl<string | null | undefined>,
 	}
@@ -890,30 +890,30 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: string;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: string;
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database?: string | null;
 
 		/**
 		 * The name of the database schema.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema?: string | null;
 	}
@@ -922,30 +922,30 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database schema.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema: FormControl<string | null | undefined>,
 	}
@@ -964,24 +964,24 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: string;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: string;
 
 		/**
 		 * The identifier of the transaction to end and commit.
 		 * Required
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: string;
 	}
@@ -990,24 +990,24 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the transaction to end and commit.
 		 * Required
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: FormControl<string | null | undefined>,
 	}
@@ -1025,38 +1025,38 @@ export namespace MyNS {
 		/**
 		 * The ARN of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		dbClusterOrInstanceArn: string;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		awsSecretStoreArn: string;
 
 		/**
 		 * <p>One or more SQL statements to run on the DB cluster.</p> <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sqlStatements: string;
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database?: string | null;
 
 		/**
 		 * The name of the database schema.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema?: string | null;
 	}
@@ -1065,38 +1065,38 @@ export namespace MyNS {
 		/**
 		 * The ARN of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		dbClusterOrInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		awsSecretStoreArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>One or more SQL statements to run on the DB cluster.</p> <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sqlStatements: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database schema.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema: FormControl<string | null | undefined>,
 	}
@@ -1116,38 +1116,38 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: string;
 
 		/**
 		 * <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: string;
 
 		/**
 		 * The SQL statement to run.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sql: string;
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database?: string | null;
 
 		/**
 		 * <p>The name of the database schema.</p> <note> <p>Currently, the <code>schema</code> parameter isn't supported.</p> </note>
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema?: string | null;
 
@@ -1156,8 +1156,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p> <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId?: string | null;
 
@@ -1178,45 +1178,45 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The SQL statement to run.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 0
+		 * Max length: 65536
 		 */
 		sql: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		database: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the database schema.</p> <note> <p>Currently, the <code>schema</code> parameter isn't supported.</p> </note>
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		schema: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p> <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: FormControl<string | null | undefined>,
 
@@ -1265,24 +1265,24 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: string;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: string;
 
 		/**
 		 * The identifier of the transaction to roll back.
 		 * Required
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: string;
 	}
@@ -1291,24 +1291,24 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 11
+		 * Max length: 100
 		 */
 		secretArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the transaction to roll back.
 		 * Required
-		 * Max length: 192
 		 * Min length: 0
+		 * Max length: 192
 		 */
 		transactionId: FormControl<string | null | undefined>,
 	}

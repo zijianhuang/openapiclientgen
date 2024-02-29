@@ -211,7 +211,10 @@ namespace MyNS
 		/// ListAccountRoles assignment/roles#x-amz-sso_bearer_token&account_id
 		/// </summary>
 		/// <param name="next_token">The page token from the previous response output when you request subsequent pages.</param>
-		/// <param name="max_result">The number of items that clients can request per page.</param>
+		/// <param name="max_result">The number of items that clients can request per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="account_id">The identifier for the AWS account that is assigned to the user.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -249,7 +252,10 @@ namespace MyNS
 		/// ListAccounts assignment/accounts#x-amz-sso_bearer_token
 		/// </summary>
 		/// <param name="next_token">(Optional) When requesting subsequent pages, this is the page token from the previous response output.</param>
-		/// <param name="max_result">This is the number of items clients can request per page.</param>
+		/// <param name="max_result">This is the number of items clients can request per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>

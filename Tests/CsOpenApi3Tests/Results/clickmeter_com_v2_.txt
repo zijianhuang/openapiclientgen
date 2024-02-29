@@ -1592,8 +1592,13 @@ namespace MyNS
 		/// Retrieve list of a domains allowed to redirect in DDU mode
 		/// Account_GetDomainWhitelist account/domainwhitelist
 		/// </summary>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_> Account_GetDomainWhitelistAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/domainwhitelist?offset="+offset+"&limit="+limit;
@@ -1699,8 +1704,13 @@ namespace MyNS
 		/// Retrieve list of a guest
 		/// Account_GetGuests account/guests
 		/// </summary>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="sortBy">Field to sort by</param>
 		/// <param name="sortDirection">Direction of sort "asc" or "desc"</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
@@ -1918,8 +1928,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="guestId">Id of the guest</param>
 		/// <param name="entityType">Can be "datapoint" or "group"</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Can be "w" or "r"</param>
 		/// <param name="entityId">Optional id of the datapoint/group entity to filter by</param>
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_> Account_GetPermissionsAsync(long guestId, Account_GetPermissionsEntityType entityType, int offset, int limit, Account_GetPermissionsType type, long entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2074,8 +2089,13 @@ namespace MyNS
 		/// Retrieve list of a ip to exclude from event tracking
 		/// Account_GetIpBlacklist account/ipblacklist
 		/// </summary>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_> Account_GetIpBlacklistAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/ipblacklist?offset="+offset+"&limit="+limit;
@@ -2291,8 +2311,13 @@ namespace MyNS
 		/// <param name="status">Status of conversion ("deleted"/"active")</param>
 		/// <param name="sortBy">Field to sort by</param>
 		/// <param name="sortDirection">Direction of sort "asc" or "desc"</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetConversionsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2335,8 +2360,13 @@ namespace MyNS
 		/// <param name="favourite">Is the datapoint marked as favourite</param>
 		/// <param name="sortBy">Field to sort by</param>
 		/// <param name="sortDirection">Direction of sort "asc" or "desc"</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="groupId">Filter by this group id</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetDatapointsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, Aggregated_GetDatapointsSummaryType type, string fromDay, string toDay, Aggregated_GetDatapointsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, long groupId, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2379,8 +2409,13 @@ namespace MyNS
 		/// <param name="favourite">Is the group marked as favourite</param>
 		/// <param name="sortBy">Field to sort by</param>
 		/// <param name="sortDirection">Direction of sort "asc" or "desc"</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetGroupsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2451,8 +2486,13 @@ namespace MyNS
 		/// Retrieve a list of conversions
 		/// Conversions_Get conversions
 		/// </summary>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Status of conversion ("deleted"/"active")</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		/// <param name="createdAfter">Exclude conversions created before this date (YYYYMMDD)</param>
@@ -2786,8 +2826,13 @@ namespace MyNS
 		/// Conversions_GetDatapoints conversions/{conversionId}/datapoints
 		/// </summary>
 		/// <param name="conversionId">Id of the conversion</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Type of datapoint ("tl"/"tp")</param>
 		/// <param name="status">Status of datapoint ("deleted"/"active"/"paused"/"spam")</param>
 		/// <param name="tags">Filter by this tag name</param>
@@ -2949,7 +2994,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="conversionId">Id of the conversion</param>
 		/// <param name="timeframe">Timeframe of the request. See list at $timeframeList</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="offset">Offset where to start from (it's the lastKey field in the response object)</param>
 		/// <param name="fromDay">If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)</param>
 		/// <param name="toDay">If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)</param>
@@ -3027,8 +3075,13 @@ namespace MyNS
 		/// List of all the datapoints associated to the user
 		/// DataPoints_Get datapoints
 		/// </summary>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Type of the datapoint ("tp"/"tl")</param>
 		/// <param name="status">Status of the datapoint</param>
 		/// <param name="tags">A comma separated list of tags you want to filter with.</param>
@@ -3552,7 +3605,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">Id of the datapoint</param>
 		/// <param name="timeframe">Timeframe of the request. See list at $timeframeList</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="offset">Offset where to start from (it's the lastKey field in the response object)</param>
 		/// <param name="fromDay">If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)</param>
 		/// <param name="toDay">If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)</param>
@@ -3630,8 +3686,13 @@ namespace MyNS
 		/// Retrieve a list of domains
 		/// Domains_Get domains
 		/// </summary>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Type of domain ("system"/"go"/"personal"/"dedicated"). If not specified default is "system"</param>
 		/// <param name="name">Filter domains with this anmen</param>
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Domains_GetAsync(int offset, int limit, Domains_GetType type, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3847,8 +3908,13 @@ namespace MyNS
 		/// List of all the groups associated to the user.
 		/// Groups_Get groups
 		/// </summary>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Status of the group</param>
 		/// <param name="tags">A comma separated list of tags you want to filter with.</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
@@ -4234,8 +4300,13 @@ namespace MyNS
 		/// <param name="favourite">Is the datapoint marked as favourite</param>
 		/// <param name="sortBy">Field to sort by</param>
 		/// <param name="sortDirection">Direction of sort "asc" or "desc"</param>
-		/// <param name="offset">Offset where to start from</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="offset">Offset where to start from
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Groups_GetDatapointsSummaryAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, Aggregated_GetDatapointsSummaryType type, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4270,8 +4341,13 @@ namespace MyNS
 		/// Groups_GetDatapoints groups/{id}/datapoints
 		/// </summary>
 		/// <param name="id">Id of the group</param>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Type of the datapoint ("tp"/"tl")</param>
 		/// <param name="status">Status of the datapoint</param>
 		/// <param name="tags">A comma separated list of tags you want to filter with.</param>
@@ -4424,7 +4500,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">Id of the group</param>
 		/// <param name="timeframe">Timeframe of the request. See list at $timeframeList</param>
-		/// <param name="limit">Limit results to this number</param>
+		/// <param name="limit">Limit results to this number
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="offset">Offset where to start from (it's the lastKey field in the response object)</param>
 		/// <param name="fromDay">If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)</param>
 		/// <param name="toDay">If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)</param>
@@ -4604,8 +4683,13 @@ namespace MyNS
 		/// List of all the retargeting scripts associated to the user
 		/// Retargeting_Get retargeting
 		/// </summary>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_GetAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting?offset="+offset+"&limit="+limit;
@@ -4818,8 +4902,13 @@ namespace MyNS
 		/// Retargeting_GetDatapoints retargeting/{id}/datapoints
 		/// </summary>
 		/// <param name="id">Id of the retargeting script</param>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Status of the datapoint</param>
 		/// <param name="tags">A comma separated list of tags you want to filter with.</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
@@ -4899,8 +4988,13 @@ namespace MyNS
 		/// List of all the groups associated to the user filtered by this tag.
 		/// Tags_Get tags
 		/// </summary>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="name">Name of the tag</param>
 		/// <param name="datapoints">Comma separated list of datapoints id to filter by</param>
 		/// <param name="groups">Comma separated list of groups id to filter by</param>
@@ -5113,8 +5207,13 @@ namespace MyNS
 		/// Tags_GetDatapoints tags/{tagId}/datapoints
 		/// </summary>
 		/// <param name="tagId">Id of the tag.</param>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Type of the datapoint ("tp"/"tl")</param>
 		/// <param name="status">Status of the datapoint</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
@@ -5265,8 +5364,13 @@ namespace MyNS
 		/// Tags_GetGroups tags/{tagId}/groups
 		/// </summary>
 		/// <param name="tagId">Id of the tag.</param>
-		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.</param>
-		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.</param>
+		/// <param name="offset">Where to start when retrieving elements. Default is 0 if not specified.
+		/// Min length: 0
+		// </param>
+		/// <param name="limit">Maximum elements to retrieve. Default to 20 if not specified.
+		/// Max length: 0
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Status of the datapoint</param>
 		/// <param name="textSearch">Filter fields by this pattern</param>
 		/// <param name="createdAfter">Exclude groups created before this date (YYYYMMDD)</param>

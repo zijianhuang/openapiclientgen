@@ -51,7 +51,10 @@ export namespace MyNS {
 
 	export interface Snapshot {
 
-		/** The HTTP status of the URL requested */
+		/**
+		 * The HTTP status of the URL requested
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The timestamp of the snapshot in [RFC 3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html) format */
@@ -62,7 +65,10 @@ export namespace MyNS {
 	}
 	export interface SnapshotFormProperties {
 
-		/** The HTTP status of the URL requested */
+		/**
+		 * The HTTP status of the URL requested
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The timestamp of the snapshot in [RFC 3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html) format */
@@ -178,8 +184,10 @@ export namespace MyNS {
 		 *  - YYYY-MM-DD:HH:mm+00:00
 		 * @param {string} callback Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.
 		 * @param {number} timeout Timeout is the maximum number of seconds to wait for the availability API to get its underlying results from the CDX server. The default value is 5.0.
+		 *     Type: double
 		 * @param {WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagClosest} closest The direction specifies whether to match archived timestamps that are before the provided one, after, or the default either (closest in either direction). Must be before, after, or either. May be overidden by individual requests.
 		 * @param {WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagStatus_code} status_code HTTP status codes to filter by. Only results with these codes will be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag The optional tag can have any value, and is returned with the results; it can be used to help collate input and output values.
 		 * @return {AvailabilityResults} Nominal Availability results
 		 */
@@ -198,8 +206,10 @@ export namespace MyNS {
 		 *  - YYYY-MM-DD:HH:mm+00:00
 		 * @param {string} callback Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.
 		 * @param {number} timeout Timeout is the maximum number of seconds to wait for the availability API to get its underlying results from the CDX server. The default value is 5.0.
+		 *     Type: double
 		 * @param {WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagClosest} closest The direction specifies whether to match archived timestamps that are before the provided one, after, or the default either (closest in either direction). Must be before, after, or either. May be overidden by individual requests.
 		 * @param {WaybackV1AvailablePostByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagStatus_code} status_code HTTP status codes to filter by. Only results with these codes will be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag The optional tag can have any value, and is returned with the results; it can be used to help collate input and output values.
 		 * @return {AvailabilityResults} Nominal Availability results
 		 */

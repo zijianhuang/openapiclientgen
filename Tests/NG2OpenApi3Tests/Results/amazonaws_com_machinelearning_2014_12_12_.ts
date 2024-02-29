@@ -317,8 +317,8 @@ export namespace MyNS {
 		/**
 		 * The name of a database hosted on an RDS DB instance.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DatabaseName: string;
 	}
@@ -332,8 +332,8 @@ export namespace MyNS {
 		/**
 		 * The name of a database hosted on an RDS DB instance.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 	}
@@ -352,16 +352,16 @@ export namespace MyNS {
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Username: string;
 
 		/**
 		 * The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.
 		 * Required
-		 * Max length: 128
 		 * Min length: 8
+		 * Max length: 128
 		 */
 		Password: string;
 	}
@@ -372,16 +372,16 @@ export namespace MyNS {
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Username: FormControl<string | null | undefined>,
 
 		/**
 		 * The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.
 		 * Required
-		 * Max length: 128
 		 * Min length: 8
+		 * Max length: 128
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
@@ -493,16 +493,16 @@ export namespace MyNS {
 		/**
 		 * The name of a database hosted on an Amazon Redshift cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DatabaseName: string;
 
 		/**
 		 * The ID of an Amazon Redshift cluster.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClusterIdentifier: string;
 	}
@@ -513,16 +513,16 @@ export namespace MyNS {
 		/**
 		 * The name of a database hosted on an Amazon Redshift cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of an Amazon Redshift cluster.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
@@ -541,16 +541,16 @@ export namespace MyNS {
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Username: string;
 
 		/**
 		 * A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 8
+		 * Max length: 64
 		 */
 		Password: string;
 	}
@@ -561,16 +561,16 @@ export namespace MyNS {
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Username: FormControl<string | null | undefined>,
 
 		/**
 		 * A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 8
+		 * Max length: 64
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
@@ -1090,7 +1090,10 @@ export namespace MyNS {
 		OutputUri?: string;
 		Message?: string;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
@@ -1099,10 +1102,16 @@ export namespace MyNS {
 		/** A timestamp represented in epoch time. */
 		StartedAt?: Date | null;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvalidRecordCount?: number | null;
 	}
 
@@ -1120,7 +1129,10 @@ export namespace MyNS {
 		OutputUri: FormControl<string | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime: FormControl<number | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -1129,10 +1141,16 @@ export namespace MyNS {
 		/** A timestamp represented in epoch time. */
 		StartedAt: FormControl<Date | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvalidRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchPredictionFormGroup() {
@@ -1253,13 +1271,16 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
-		 * Max length: 110
 		 * Min length: 1
+		 * Max length: 110
 		 */
 		RoleARN?: string | null;
 		ComputeStatistics?: boolean | null;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
@@ -1285,13 +1306,16 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
-		 * Max length: 110
 		 * Min length: 1
+		 * Max length: 110
 		 */
 		RoleARN: FormControl<string | null | undefined>,
 		ComputeStatistics: FormControl<boolean | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime: FormControl<number | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -1331,8 +1355,8 @@ export namespace MyNS {
 
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DatabaseUserName?: string | null;
 		SelectSqlQuery?: string;
@@ -1343,8 +1367,8 @@ export namespace MyNS {
 
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DatabaseUserName: FormControl<string | null | undefined>,
 		SelectSqlQuery: FormControl<string | null | undefined>,
@@ -1364,8 +1388,8 @@ export namespace MyNS {
 
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DatabaseUserName?: string | null;
 		SelectSqlQuery?: string;
@@ -1379,8 +1403,8 @@ export namespace MyNS {
 
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DatabaseUserName: FormControl<string | null | undefined>,
 		SelectSqlQuery: FormControl<string | null | undefined>,
@@ -1479,7 +1503,10 @@ export namespace MyNS {
 		PerformanceMetrics?: PerformanceMetrics;
 		Message?: string;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
@@ -1502,7 +1529,10 @@ export namespace MyNS {
 		Status: FormControl<EntityStatus | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime: FormControl<number | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -1627,18 +1657,26 @@ export namespace MyNS {
 		Name?: string;
 		Status?: EntityStatus;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeInBytes?: number | null;
 		EndpointInfo?: RealtimeEndpointInfo;
 		TrainingParameters?: TrainingParameters;
 		InputDataLocationS3?: string;
 		Algorithm?: Algorithm;
 		MLModelType?: MLModelType;
+
+		/** Type: float */
 		ScoreThreshold?: number | null;
 		ScoreThresholdLastUpdatedAt?: Date;
 		Message?: string;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
@@ -1658,16 +1696,24 @@ export namespace MyNS {
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<EntityStatus | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeInBytes: FormControl<number | null | undefined>,
 		InputDataLocationS3: FormControl<string | null | undefined>,
 		Algorithm: FormControl<Algorithm | null | undefined>,
 		MLModelType: FormControl<MLModelType | null | undefined>,
+
+		/** Type: float */
 		ScoreThreshold: FormControl<number | null | undefined>,
 		ScoreThresholdLastUpdatedAt: FormControl<Date | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ComputeTime: FormControl<number | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -1899,8 +1945,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
-		 * Max length: 110
 		 * Min length: 1
+		 * Max length: 110
 		 */
 		RoleARN?: string | null;
 		ComputeStatistics?: boolean | null;
@@ -1927,8 +1973,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
-		 * Max length: 110
 		 * Min length: 1
+		 * Max length: 110
 		 */
 		RoleARN: FormControl<string | null | undefined>,
 		ComputeStatistics: FormControl<boolean | null | undefined>,
@@ -2066,7 +2112,10 @@ export namespace MyNS {
 		Name?: string;
 		Status?: EntityStatus;
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeInBytes?: number | null;
 		EndpointInfo?: RealtimeEndpointInfo;
 		TrainingParameters?: TrainingParameters;
@@ -2093,7 +2142,10 @@ export namespace MyNS {
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<EntityStatus | null | undefined>,
 
-		/** Long integer type that is a 64-bit signed number. */
+		/**
+		 * Long integer type that is a 64-bit signed number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeInBytes: FormControl<number | null | undefined>,
 		InputDataLocationS3: FormControl<string | null | undefined>,
 		MLModelType: FormControl<MLModelType | null | undefined>,

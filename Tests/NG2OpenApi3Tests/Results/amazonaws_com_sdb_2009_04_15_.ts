@@ -44,11 +44,15 @@ export namespace MyNS {
 
 	/** The item name was specified more than once.  */
 	export interface DuplicateItemName {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The item name was specified more than once.  */
 	export interface DuplicateItemNameFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateDuplicateItemNameFormGroup() {
@@ -61,11 +65,15 @@ export namespace MyNS {
 
 	/** The value for a parameter is invalid. */
 	export interface InvalidParameterValue {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The value for a parameter is invalid. */
 	export interface InvalidParameterValueFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidParameterValueFormGroup() {
@@ -78,11 +86,15 @@ export namespace MyNS {
 
 	/** The request must contain the specified missing parameter. */
 	export interface MissingParameter {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The request must contain the specified missing parameter. */
 	export interface MissingParameterFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateMissingParameterFormGroup() {
@@ -95,11 +107,15 @@ export namespace MyNS {
 
 	/** The specified domain does not exist. */
 	export interface NoSuchDomain {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The specified domain does not exist. */
 	export interface NoSuchDomainFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNoSuchDomainFormGroup() {
@@ -112,11 +128,15 @@ export namespace MyNS {
 
 	/** Too many attributes in this item. */
 	export interface NumberItemAttributesExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many attributes in this item. */
 	export interface NumberItemAttributesExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberItemAttributesExceededFormGroup() {
@@ -129,11 +149,15 @@ export namespace MyNS {
 
 	/** Too many attributes in this domain. */
 	export interface NumberDomainAttributesExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many attributes in this domain. */
 	export interface NumberDomainAttributesExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberDomainAttributesExceededFormGroup() {
@@ -146,11 +170,15 @@ export namespace MyNS {
 
 	/** Too many bytes in this domain. */
 	export interface NumberDomainBytesExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many bytes in this domain. */
 	export interface NumberDomainBytesExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberDomainBytesExceededFormGroup() {
@@ -163,11 +191,15 @@ export namespace MyNS {
 
 	/** Too many items exist in a single call. */
 	export interface NumberSubmittedItemsExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many items exist in a single call. */
 	export interface NumberSubmittedItemsExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberSubmittedItemsExceededFormGroup() {
@@ -180,11 +212,15 @@ export namespace MyNS {
 
 	/** Too many attributes exist in a single call. */
 	export interface NumberSubmittedAttributesExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many attributes exist in a single call. */
 	export interface NumberSubmittedAttributesExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberSubmittedAttributesExceededFormGroup() {
@@ -197,11 +233,15 @@ export namespace MyNS {
 
 	/** Too many domains exist per this account. */
 	export interface NumberDomainsExceeded {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many domains exist per this account. */
 	export interface NumberDomainsExceededFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberDomainsExceededFormGroup() {
@@ -234,11 +274,15 @@ export namespace MyNS {
 
 	/** The specified attribute does not exist. */
 	export interface AttributeDoesNotExist {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The specified attribute does not exist. */
 	export interface AttributeDoesNotExistFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateAttributeDoesNotExistFormGroup() {
@@ -307,11 +351,15 @@ export namespace MyNS {
 
 	/** The specified NextToken is not valid.  */
 	export interface InvalidNextToken {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The specified NextToken is not valid.  */
 	export interface InvalidNextTokenFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidNextTokenFormGroup() {
@@ -365,11 +413,15 @@ export namespace MyNS {
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberPredicates {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberPredicatesFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidNumberPredicatesFormGroup() {
@@ -382,11 +434,15 @@ export namespace MyNS {
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberValueTests {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberValueTestsFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidNumberValueTestsFormGroup() {
@@ -399,11 +455,15 @@ export namespace MyNS {
 
 	/** The specified query expression syntax is not valid. */
 	export interface InvalidQueryExpression {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** The specified query expression syntax is not valid. */
 	export interface InvalidQueryExpressionFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidQueryExpressionFormGroup() {
@@ -416,11 +476,15 @@ export namespace MyNS {
 
 	/** A timeout occurred when attempting to query the specified domain with specified query expression. */
 	export interface RequestTimeout {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** A timeout occurred when attempting to query the specified domain with specified query expression. */
 	export interface RequestTimeoutFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestTimeoutFormGroup() {
@@ -433,11 +497,15 @@ export namespace MyNS {
 
 	/** Too many attributes requested. */
 	export interface TooManyRequestedAttributes {
+
+		/** Type: float */
 		BoxUsage?: number | null;
 	}
 
 	/** Too many attributes requested. */
 	export interface TooManyRequestedAttributesFormProperties {
+
+		/** Type: float */
 		BoxUsage: FormControl<number | null | undefined>,
 	}
 	export function CreateTooManyRequestedAttributesFormGroup() {
@@ -822,6 +890,7 @@ export namespace MyNS {
 		 * The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call.
 		 * Get #Action=ListDomains
 		 * @param {number} MaxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} NextToken A string informing Amazon SimpleDB where to start the next list of domain names.
 		 * @return {void} Success
 		 */

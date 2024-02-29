@@ -151,7 +151,10 @@ export namespace MyNS {
 	/** 1P/3P metadata about a user's level. */
 	export interface GamesPlayerLevelResource {
 
-		/** The level for the user. */
+		/**
+		 * The level for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** The maximum experience points for this level. */
@@ -164,7 +167,10 @@ export namespace MyNS {
 	/** 1P/3P metadata about a user's level. */
 	export interface GamesPlayerLevelResourceFormProperties {
 
-		/** The level for the user. */
+		/**
+		 * The level for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** The maximum experience points for this level. */
@@ -503,6 +509,7 @@ export namespace MyNS {
 		 * Get games/v1management/applications/{applicationId}/players/hidden
 		 * @param {string} applicationId The application ID from the Google Play developer console.
 		 * @param {number} maxResults The maximum number of player resources to return in the response, used for paging. For any response, the actual number of player resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {HiddenPlayerList} Successful response
 		 */

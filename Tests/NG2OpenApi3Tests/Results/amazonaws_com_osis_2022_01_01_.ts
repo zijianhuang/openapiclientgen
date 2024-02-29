@@ -769,6 +769,7 @@ export namespace MyNS {
 		 * Deletes an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html">Deleting Amazon OpenSearch Ingestion pipelines</a>.
 		 * Delete 2022-01-01/osis/deletePipeline/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline to delete.
+		 *     Min length: 3    Max length: 28
 		 * @return {DeletePipelineResponse} Success
 		 */
 		DeletePipeline(PipelineName: string): Observable<DeletePipelineResponse> {
@@ -779,6 +780,7 @@ export namespace MyNS {
 		 * Retrieves information about an OpenSearch Ingestion pipeline.
 		 * Get 2022-01-01/osis/getPipeline/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline to get information about.
+		 *     Min length: 3    Max length: 28
 		 * @return {GetPipelineResponse} Success
 		 */
 		GetPipeline(PipelineName: string): Observable<GetPipelineResponse> {
@@ -799,6 +801,7 @@ export namespace MyNS {
 		 * <p>Returns progress information for the current change happening on an OpenSearch Ingestion pipeline. Currently, this operation only returns information when a pipeline is being created.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress">Tracking the status of pipeline creation</a>.</p>
 		 * Get 2022-01-01/osis/getPipelineChangeProgress/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline.
+		 *     Min length: 3    Max length: 28
 		 * @return {GetPipelineChangeProgressResponse} Success
 		 */
 		GetPipelineChangeProgress(PipelineName: string): Observable<GetPipelineChangeProgressResponse> {
@@ -818,7 +821,9 @@ export namespace MyNS {
 		 * Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html">Viewing Amazon OpenSearch Ingestion pipelines</a>.
 		 * Get 2022-01-01/osis/listPipelines
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListPipelines</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPipelines</code> operations, which returns results in the next page.
+		 *     Min length: 0    Max length: 3000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPipelinesResponse} Success
@@ -831,6 +836,7 @@ export namespace MyNS {
 		 * Lists all resource tags associated with an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging Amazon OpenSearch Ingestion pipelines</a>.
 		 * Get 2022-01-01/osis/listTagsForResource/#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the pipeline to retrieve tags for.
+		 *     Min length: 46    Max length: 76
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -841,6 +847,7 @@ export namespace MyNS {
 		 * Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start">Starting an OpenSearch Ingestion pipeline</a>.
 		 * Put 2022-01-01/osis/startPipeline/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline to start.
+		 *     Min length: 3    Max length: 28
 		 * @return {StartPipelineResponse} Success
 		 */
 		StartPipeline(PipelineName: string): Observable<StartPipelineResponse> {
@@ -851,6 +858,7 @@ export namespace MyNS {
 		 * Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop">Stopping an OpenSearch Ingestion pipeline</a>.
 		 * Put 2022-01-01/osis/stopPipeline/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline to stop.
+		 *     Min length: 3    Max length: 28
 		 * @return {StopPipelineResponse} Success
 		 */
 		StopPipeline(PipelineName: string): Observable<StopPipelineResponse> {
@@ -861,6 +869,7 @@ export namespace MyNS {
 		 * Tags an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging Amazon OpenSearch Ingestion pipelines</a>.
 		 * Post 2022-01-01/osis/tagResource/#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the pipeline to tag.
+		 *     Min length: 46    Max length: 76
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(arn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -871,6 +880,7 @@ export namespace MyNS {
 		 * Removes one or more tags from an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging Amazon OpenSearch Ingestion pipelines</a>.
 		 * Post 2022-01-01/osis/untagResource/#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the pipeline to remove tags from.
+		 *     Min length: 46    Max length: 76
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(arn: string, requestBody: UntagResourcePostBody): Observable<UntagResourceResponse> {
@@ -881,6 +891,7 @@ export namespace MyNS {
 		 * Updates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html">Updating Amazon OpenSearch Ingestion pipelines</a>.
 		 * Put 2022-01-01/osis/updatePipeline/{PipelineName}
 		 * @param {string} PipelineName The name of the pipeline to update.
+		 *     Min length: 3    Max length: 28
 		 * @return {UpdatePipelineResponse} Success
 		 */
 		UpdatePipeline(PipelineName: string, requestBody: UpdatePipelinePutBody): Observable<UpdatePipelineResponse> {
@@ -902,8 +913,8 @@ export namespace MyNS {
 		/**
 		 * The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PipelineName: string;
 
@@ -926,8 +937,8 @@ export namespace MyNS {
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		 * Required
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody: string;
 
@@ -945,8 +956,8 @@ export namespace MyNS {
 		/**
 		 * The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PipelineName: FormControl<string | null | undefined>,
 
@@ -969,8 +980,8 @@ export namespace MyNS {
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		 * Required
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody: FormControl<string | null | undefined>,
 	}
@@ -1060,8 +1071,8 @@ export namespace MyNS {
 
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody?: string | null;
 
@@ -1086,8 +1097,8 @@ export namespace MyNS {
 
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody: FormControl<string | null | undefined>,
 	}
@@ -1119,8 +1130,8 @@ export namespace MyNS {
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		 * Required
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody: string;
 	}
@@ -1129,8 +1140,8 @@ export namespace MyNS {
 		/**
 		 * The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		 * Required
-		 * Max length: 24000
 		 * Min length: 1
+		 * Max length: 24000
 		 */
 		PipelineConfigurationBody: FormControl<string | null | undefined>,
 	}

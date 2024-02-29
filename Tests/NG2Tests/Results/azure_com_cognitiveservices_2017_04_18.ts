@@ -1131,6 +1131,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {CognitiveServicesAccount} The resource provider should return 200 (OK) to indicate that the operation completed successfully.
@@ -1156,6 +1157,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {CognitiveServicesAccount} requestBody The parameters to provide for the created account.
@@ -1170,6 +1172,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -1183,6 +1186,7 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {CognitiveServicesAccount} requestBody The parameters to provide for the created account.
@@ -1197,6 +1201,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/listKeys
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {CognitiveServicesAccountKeys} Returns with a response body containing the subscription keys for the resource: key1
@@ -1213,6 +1218,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/regenerateKey
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {RegenerateKeyParameters} requestBody regenerate key parameters.
@@ -1226,6 +1232,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/skus
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {CognitiveServicesAccountEnumerateSkusResult} The resource provider should return 200 (OK) to indicate that the operation completed successfully.
@@ -1251,6 +1258,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/usages
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription.
 		 * @param {string} accountName The name of Cognitive Services account.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} filter An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).

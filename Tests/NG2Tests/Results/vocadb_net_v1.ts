@@ -2408,8 +2408,10 @@ export namespace MyNS {
 		 * @param {Date} before Filter to return activity entries only before this date. Optional, by default no filter.
 		 * @param {Date} since Filter to return activity entries only after this date. Optional, by default no filter.
 		 * @param {number} userId Filter by user Id. Optional, by default no filter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActivityEntryForApiContractEditEvent} editEvent Filter by entry edit event (either Created or Updated). Optional, by default no filter.
 		 * @param {number} maxResults Maximum number of results to return. Default 50. Maximum value 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangFields} fields Optional fields.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangEntryFields} entryFields Optional fields for entries.
@@ -2441,7 +2443,9 @@ export namespace MyNS {
 		 * @param {Date} releaseDateBefore Filter by albums whose release date is before this date (exclusive).
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). 
 		 *             Possible values are None, Name, ReleaseDate, ReleaseDateWithNulls, AdditionDate, RatingAverage, RatingTotal, NameThenReleaseDate.
@@ -2467,6 +2471,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/albums/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -2480,6 +2485,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/albums/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiAlbumsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2492,6 +2498,7 @@ export namespace MyNS {
 		 * @param {string} query Text query.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiAlbumsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2522,6 +2529,7 @@ export namespace MyNS {
 		 * Gets an album by Id.
 		 * Get api/albums/{id}
 		 * @param {number} id Album Id (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields} fields Optional fields (optional). Possible values are artists, names, pvs, tags, tracks, webLinks.
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} songFields Optional fields for tracks, if included (optional).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
@@ -2535,6 +2543,7 @@ export namespace MyNS {
 		 * Deletes an album.
 		 * Delete api/albums/{id}
 		 * @param {number} id ID of the album to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @return {void} 
 		 */
@@ -2547,6 +2556,7 @@ export namespace MyNS {
 		 * Pagination and sorting might be added later.
 		 * Get api/albums/{id}/comments
 		 * @param {number} id ID of the album whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} OK
 		 */
 		ApiAlbums_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -2557,6 +2567,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/albums/{id}/comments
 		 * @param {number} id ID of the album for which to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -2595,6 +2606,7 @@ export namespace MyNS {
 		 * Gets tracks for an album.
 		 * Get api/albums/{id}/tracks
 		 * @param {number} id Album ID (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields List of optional fields (optional). Possible values are Albums, Artists, Names, PVs, Tags, ThumbUrl, WebLinks.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
 		 * @return {Array<SongInAlbumForApiContract>} OK
@@ -2632,10 +2644,13 @@ export namespace MyNS {
 		 * @param {Array<number>} tagId Filter by tag Id (optional). This filter can be specified multiple times.
 		 * @param {boolean} childTags Include child tags, if the tags being filtered by have any.
 		 * @param {number} followedByUserId Filter by user following the artists. By default there is no filtering.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EntryForApiContractStatus} status Filter by entry status (optional).
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 100).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, AdditionDate, AdditionDateAsc.
 		 * @param {boolean} preferAccurateMatches Whether the search should prefer accurate matches. 
@@ -2657,6 +2672,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/artists/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -2670,6 +2686,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/artists/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiArtistsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2682,6 +2699,7 @@ export namespace MyNS {
 		 * @param {string} query Text query.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiArtistsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2692,6 +2710,7 @@ export namespace MyNS {
 		 * Gets an artist by Id.
 		 * Get api/artists/{id}
 		 * @param {number} id Artist ID (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangFields} fields List of optional fields (optional). Possible values are Description, Groups, Members, Names, Tags, WebLinks.
 		 * @param {ApiArtists_idGetByFieldsAndRelationsAndLangRelations} relations List of artist relations (optional). Possible values are LatestAlbums, PopularAlbums, LatestSongs, PopularSongs, All
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
@@ -2705,6 +2724,7 @@ export namespace MyNS {
 		 * Deletes an artist.
 		 * Delete api/artists/{id}
 		 * @param {number} id ID of the artist to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @return {void} 
 		 */
@@ -2717,6 +2737,7 @@ export namespace MyNS {
 		 * Pagination and sorting might be added later.
 		 * Get api/artists/{id}/comments
 		 * @param {number} id ID of the artist whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} OK
 		 */
 		ApiArtists_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -2727,6 +2748,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/artists/{id}/comments
 		 * @param {number} id ID of the artist for which to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -2739,6 +2761,7 @@ export namespace MyNS {
 		 * Get api/comments/{entryType}-comments
 		 * @param {EntryForApiContractEntryType} entryType Entry type.
 		 * @param {number} entryId ID of the entry whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartialFindResult_CommentForApiContract} OK
 		 */
 		ApiComments_entryType_commentsGetByEntryId(entryType: EntryForApiContractEntryType, entryId: number, headersHandler?: () => HttpHeaders): Observable<PartialFindResult_CommentForApiContract> {
@@ -2763,6 +2786,7 @@ export namespace MyNS {
 		 * Post api/comments/{entryType}-comments/{commentId}
 		 * @param {EntryForApiContractEntryType} entryType Entry type.
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -2777,6 +2801,7 @@ export namespace MyNS {
 		 * Delete api/comments/{entryType}-comments/{commentId}
 		 * @param {EntryForApiContractEntryType} entryType Entry type.
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiComments_entryType_comments_commentIdDelete(entryType: EntryForApiContractEntryType, commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2892,7 +2917,9 @@ export namespace MyNS {
 		 * @param {ApiEntriesGetByQueryAndTagNameAndTagIdAndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangEntryTypes} entryTypes Included entry types (optional).
 		 * @param {EntryForApiContractStatus} status Filter by entry status (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 30).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiEntriesGetByQueryAndTagNameAndTagIdAndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, AdditionDate.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for entry name (optional, defaults to Exact).
@@ -2910,6 +2937,7 @@ export namespace MyNS {
 		 * @param {string} query Text query.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiEntriesNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2921,6 +2949,7 @@ export namespace MyNS {
 		 * Get api/pvs/for-songs
 		 * @param {string} author Uploader name (optional).
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
 		 * @return {PartialFindResult_PVForSongContract} OK
@@ -2934,7 +2963,9 @@ export namespace MyNS {
 		 * Get api/releaseEventSeries
 		 * @param {string} query Text query.
 		 * @param {number} start First item to be retrieved (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for event name (optional).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
@@ -2948,6 +2979,7 @@ export namespace MyNS {
 		 * Deletes an event series.
 		 * Delete api/releaseEventSeries/{id}
 		 * @param {number} id ID of the series to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @param {boolean} hardDelete If true, the entry is hard deleted. Hard deleted entries cannot be restored normally, but they will be moved to trash.
 		 *             If false, the entry is soft deleted, meaning it can still be restored.
@@ -2963,10 +2995,12 @@ export namespace MyNS {
 		 * @param {string} query Event name query (optional).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for event name (optional, defaults to Auto).
 		 * @param {number} seriesId Filter by series Id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} afterDate Filter by events after this date (inclusive).
 		 * @param {Date} beforeDate Filter by events before this date (exclusive).
 		 * @param {EntryForApiContractEventCategory} category Filter by event category.
 		 * @param {number} userCollectionId Filter to include only events in user's events (interested or attending).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} tagId Filter by one or more tag Ids (optional).
 		 * @param {boolean} childTags Include child tags, if the tags being filtered by have any.
 		 * @param {Array<number>} artistId Filter by artist Id.
@@ -2974,7 +3008,9 @@ export namespace MyNS {
 		 * @param {boolean} includeMembers Include members of groups. This applies if {artistId} is a group.
 		 * @param {EntryForApiContractStatus} status Filter by entry status.
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiReleaseEventsGetByQueryAndNameMatchModeAndSeriesIdAndAfterDateAndBeforeDateAndCategoryAndUserCollectionIdAndTagIdAndChildTagsAndArtistIdAndChildVoicebanksAndIncludeMembersAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). 
 		 *             Possible values are None, Name, Date, SeriesName.
@@ -2992,6 +3028,7 @@ export namespace MyNS {
 		 * Get api/releaseEvents/names
 		 * @param {string} query Event name query, for example "Voc@loid".
 		 * @param {number} maxResults Maximum number of search results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiReleaseEventsNamesGetByQueryAndMaxResults(query: string | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3002,6 +3039,7 @@ export namespace MyNS {
 		 * Gets a list of albums for a specific event.
 		 * Get api/releaseEvents/{eventId}/albums
 		 * @param {number} eventId Release event ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields} fields List of optional album fields.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference.
 		 * @return {Array<AlbumForApiContract>} OK
@@ -3014,6 +3052,7 @@ export namespace MyNS {
 		 * Gets a list of songs for a specific event.
 		 * Get api/releaseEvents/{eventId}/published-songs
 		 * @param {number} eventId Event ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields List of optional song fields.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference.
 		 * @return {Array<SongForApiContract>} OK
@@ -3026,9 +3065,11 @@ export namespace MyNS {
 		 * Creates a new report.
 		 * Post api/releaseEvents/{eventId}/reports
 		 * @param {number} eventId Event to be reported.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType} reportType Report type.
 		 * @param {string} notes Notes. Optional.
 		 * @param {number} versionNumber Version to be reported. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumber(eventId: number, reportType: ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType, notes: string, versionNumber: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3048,6 +3089,7 @@ export namespace MyNS {
 		 * Deletes an event.
 		 * Delete api/releaseEvents/{id}
 		 * @param {number} id ID of the event to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @param {boolean} hardDelete If true, the entry is hard deleted. Hard deleted entries cannot be restored normally, but they will be moved to trash.
 		 *             If false, the entry is soft deleted, meaning it can still be restored.
@@ -3073,6 +3115,7 @@ export namespace MyNS {
 		 * Post api/songLists
 		 * @param {SongListForEditContract} requestBody Song list properties.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiSongListsPost(requestBody: SongListForEditContract, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/songLists', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -3084,6 +3127,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/songLists/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -3097,6 +3141,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/songLists/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiSongListsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3112,7 +3157,9 @@ export namespace MyNS {
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for list name (optional, defaults to Auto).
 		 * @param {EntryForApiContractSongListFeaturedCategory} featuredCategory Filter by a specific featured category. If empty, all categories are returned.
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiSongListsFeaturedGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortSort} sort List sort rule. Possible values are Nothing, Date, CreateDate, Name.
 		 * @return {PartialFindResult_SongListForApiContract} OK
@@ -3128,6 +3175,7 @@ export namespace MyNS {
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode. Words is treated the same as Partial.
 		 * @param {EntryForApiContractSongListFeaturedCategory} featuredCategory Filter by a specific featured category. If empty, all categories are returned.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiSongListsFeaturedNamesGetByQueryAndNameMatchModeAndFeaturedCategoryAndMaxResults(query: string | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, featuredCategory: EntryForApiContractSongListFeaturedCategory | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3138,6 +3186,7 @@ export namespace MyNS {
 		 * Deletes a song list.
 		 * Delete api/songLists/{id}
 		 * @param {number} id ID of the list to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @param {boolean} hardDelete If true, the entry is hard deleted. Hard deleted entries cannot be restored normally, but they will be moved to trash.
 		 *             If false, the entry is soft deleted, meaning it can still be restored.
@@ -3151,6 +3200,7 @@ export namespace MyNS {
 		 * Gets a list of comments for a song list.
 		 * Get api/songLists/{listId}/comments
 		 * @param {number} listId ID of the list whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartialFindResult_CommentForApiContract} OK
 		 */
 		ApiSongLists_listIdCommentsGet(listId: number, headersHandler?: () => HttpHeaders): Observable<PartialFindResult_CommentForApiContract> {
@@ -3161,6 +3211,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/songLists/{listId}/comments
 		 * @param {number} listId ID of the song list for which to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -3172,6 +3223,7 @@ export namespace MyNS {
 		 * Gets a list of songs in a song list.
 		 * Get api/songLists/{listId}/songs
 		 * @param {number} listId ID of the song list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Song name query (optional).
 		 * @param {string} songTypes Filtered song types (optional).
 		 * @param {SongForApiContractPvServices} pvServices Filter by one or more PV services (separated by commas). The song will pass the filter if it has a PV for any of the matched services.
@@ -3180,7 +3232,9 @@ export namespace MyNS {
 		 * @param {boolean} childVoicebanks Include child voicebanks, if the artist being filtered by has any.
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiSongLists_listIdSongsGetByQueryAndSongTypesAndPvServicesAndTagIdAndArtistIdAndChildVoicebanksAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangSort} sort Song sort rule (optional, by default songs are sorted by song list order).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for song name (optional, defaults to Auto).
@@ -3213,14 +3267,21 @@ export namespace MyNS {
 		 * @param {boolean} onlyWithPvs Whether to only include songs with at least one PV.
 		 * @param {SongForApiContractPvServices} pvServices Filter by one or more PV services (separated by commas). The song will pass the filter if it has a PV for any of the matched services.
 		 * @param {number} since Allow only entries that have been created at most this many hours ago. By default there is no filtering.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minScore Minimum rating score. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userCollectionId Filter by user's rated songs. By default there is no filtering.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} releaseEventId Filter by release event. By default there is no filtering.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} parentSongId Filter by parent song. By default there is no filtering.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EntryForApiContractStatus} status Filter by entry status (optional).
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiSongLists_listIdSongsGetByQueryAndSongTypesAndPvServicesAndTagIdAndArtistIdAndChildVoicebanksAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, AdditionDate, FavoritedTimes, RatingScore.
 		 * @param {boolean} preferAccurateMatches Whether the search should prefer accurate matches. 
@@ -3255,6 +3316,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/songs/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -3268,6 +3330,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/songs/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiSongsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3289,6 +3352,7 @@ export namespace MyNS {
 		 * Output is cached. Specify song version as parameter to refresh.
 		 * Get api/songs/lyrics/{lyricsId}
 		 * @param {number} lyricsId Lyrics ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LyricsForSongContract} OK
 		 */
 		ApiSongsLyrics_lyricsIdGet(lyricsId: number, headersHandler?: () => HttpHeaders): Observable<LyricsForSongContract> {
@@ -3301,6 +3365,7 @@ export namespace MyNS {
 		 * @param {string} query Text query.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiSongsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3311,10 +3376,12 @@ export namespace MyNS {
 		 * Gets top rated songs.
 		 * Get api/songs/top-rated
 		 * @param {number} durationHours Duration in hours from which to get songs.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} startDate Lower bound of the date. Optional.
 		 * @param {ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreferenceFilterBy} filterBy Filtering mode.
 		 * @param {ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreferenceVocalist} vocalist Vocalist selection.
 		 * @param {number} maxResults Maximum number of results to be loaded (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields Optional song fields to load.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} languagePreference Language preference.
 		 * @return {Array<SongForApiContract>} OK
@@ -3327,6 +3394,7 @@ export namespace MyNS {
 		 * Gets a song by Id.
 		 * Get api/songs/{id}
 		 * @param {number} id Song Id (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields List of optional fields (optional). 
 		 *             Possible values are Albums, Artists, Names, PVs, Tags, ThumbUrl, WebLinks.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
@@ -3340,6 +3408,7 @@ export namespace MyNS {
 		 * Deletes a song.
 		 * Delete api/songs/{id}
 		 * @param {number} id ID of the song to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes.
 		 * @return {void} 
 		 */
@@ -3352,6 +3421,7 @@ export namespace MyNS {
 		 * Pagination and sorting might be added later.
 		 * Get api/songs/{id}/comments
 		 * @param {number} id ID of the song whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} OK
 		 */
 		ApiSongs_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -3362,6 +3432,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/songs/{id}/comments
 		 * @param {number} id ID of the song for which to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -3374,6 +3445,7 @@ export namespace MyNS {
 		 * Pagination and sorting might be added later.
 		 * Get api/songs/{id}/derived
 		 * @param {number} id Song Id (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields List of optional fields (optional). 
 		 *             Possible values are Albums, Artists, Names, PVs, Tags, ThumbUrl, WebLinks.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
@@ -3389,6 +3461,7 @@ export namespace MyNS {
 		 * For users who have requested not to make their ratings public, the user will be empty.
 		 * Get api/songs/{id}/ratings
 		 * @param {number} id Song ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiSongs_idRatingsGetByUserFieldsAndLangUserFields} userFields Optional fields for the users.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference.
 		 * @return {Array<RatedSongForUserForApiContract>} OK
@@ -3404,6 +3477,7 @@ export namespace MyNS {
 		 * This API supports CORS.
 		 * Post api/songs/{id}/ratings
 		 * @param {number} id ID of the song to be rated.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SongRatingContract} requestBody Rating to be given. Possible values are Nothing, Like, Favorite.
 		 * @return {void} 
 		 */
@@ -3415,6 +3489,7 @@ export namespace MyNS {
 		 * Gets related songs.
 		 * Get api/songs/{id}/related
 		 * @param {number} id Song whose related songs are to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields} fields Optional song fields.
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference.
 		 * @return {RelatedSongsContract} OK
@@ -3430,7 +3505,9 @@ export namespace MyNS {
 		 * @param {boolean} allowChildren Whether to allow child tags. If this is false, only root tags (that aren't children of any other tag) will be included.
 		 * @param {string} categoryName Filter tags by category (optional). If specified, this must be an exact match (case insensitive).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 30).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for song name (optional, defaults to Exact).
 		 * @param {ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetSort} sort Sort rule (optional, by default tags are sorted by name).Possible values are Name and UsageCount.
@@ -3483,6 +3560,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/tags/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -3496,6 +3574,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/tags/comments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiTagsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3510,6 +3589,7 @@ export namespace MyNS {
 		 * @param {boolean} allowAliases Whether to find tags that are aliases of other tags as well. 
 		 *             If false, only tags that are not aliases will be listed.
 		 * @param {number} maxResults Maximum number of search results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiTagsNamesGetByQueryAndAllowAliasesAndMaxResults(query: string | null | undefined, allowAliases: boolean | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3521,6 +3601,7 @@ export namespace MyNS {
 		 * Get api/tags/top
 		 * @param {string} categoryName Tag category, for example "Genres". Optional - if not specified, no filtering is done.
 		 * @param {number} maxResults Maximum number of tags to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
 		 * @return {Array<TagBaseContract>} OK
 		 */
@@ -3532,6 +3613,7 @@ export namespace MyNS {
 		 * Gets a tag by ID.
 		 * Get api/tags/{id}
 		 * @param {number} id Tag ID (required).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields} fields List of optional fields (optional).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
 		 * @return {TagForApiContract} OK
@@ -3544,6 +3626,7 @@ export namespace MyNS {
 		 * Deletes a tag.
 		 * Delete api/tags/{id}
 		 * @param {number} id ID of the tag to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} notes Notes (optional).
 		 * @param {boolean} hardDelete If true, the entry is hard deleted. Hard deleted entries cannot be restored normally, but they will be moved to trash.
 		 *             If false, the entry is soft deleted, meaning it can still be restored.
@@ -3558,6 +3641,7 @@ export namespace MyNS {
 		 * Only direct children will be included.
 		 * Get api/tags/{tagId}/children
 		 * @param {number} tagId ID of the tag whose children to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields} fields List of optional fields (optional).
 		 * @param {ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang} lang Content language preference (optional).
 		 * @return {Array<TagForApiContract>} OK
@@ -3571,6 +3655,7 @@ export namespace MyNS {
 		 * Note: pagination and sorting might be added later.
 		 * Get api/tags/{tagId}/comments
 		 * @param {number} tagId ID of the tag whose comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartialFindResult_CommentForApiContract} OK
 		 */
 		ApiTags_tagIdCommentsGet(tagId: number, headersHandler?: () => HttpHeaders): Observable<PartialFindResult_CommentForApiContract> {
@@ -3581,6 +3666,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/tags/{tagId}/comments
 		 * @param {number} tagId ID of the tag for which to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -3592,9 +3678,11 @@ export namespace MyNS {
 		 * Creates a new report.
 		 * Post api/tags/{tagId}/reports
 		 * @param {number} tagId Tag to be reported.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType} reportType Report type.
 		 * @param {string} notes Notes. Optional.
 		 * @param {number} versionNumber Version to be reported. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiTags_tagIdReportsPostByReportTypeAndNotesAndVersionNumber(tagId: number, reportType: ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType, notes: string, versionNumber: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3610,7 +3698,9 @@ export namespace MyNS {
 		 * @param {Date} joinDateBefore Filter by users who joined before this date (exclusive).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode.
 		 * @param {number} start Index of the first entry to be loaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to get total number of results.
 		 * @param {ApiUsersGetByQueryAndGroupsAndJoinDateAfterAndJoinDateBeforeAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndIncludeDisabledAndOnlyVerifiedAndKnowsLanguageAndFieldsSort} sort Sort rule.
 		 * @param {boolean} includeDisabled Whether to include disabled user accounts.
@@ -3641,9 +3731,11 @@ export namespace MyNS {
 		 * Authorization cookie must be included.
 		 * Post api/users/current/albums/{albumId}
 		 * @param {number} albumId ID of the album to be rated.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AlbumForUserForApiContractPurchaseStatus} collectionStatus Collection status. Possible values are Nothing, Wishlisted, Ordered and Owned.
 		 * @param {AlbumForUserForApiContractMediaType} mediaType Album media type. Possible values are PhysicalDisc, DigitalDownload and Other.
 		 * @param {number} rating Rating to be given. Possible values are between 0 and 5.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		ApiUsersCurrentAlbums_albumIdPostByCollectionStatusAndMediaTypeAndRating(albumId: number, collectionStatus: AlbumForUserForApiContractPurchaseStatus, mediaType: AlbumForUserForApiContractMediaType, rating: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -3673,6 +3765,7 @@ export namespace MyNS {
 		 * Requires authentication.
 		 * Get api/users/current/ratedSongs/{songId}
 		 * @param {number} songId ID of the song whose rating is to be checked.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RatedSongForUserForApiContractRating} OK
 		 */
 		ApiUsersCurrentRatedSongs_songIdGet(songId: number, headersHandler?: () => HttpHeaders): Observable<RatedSongForUserForApiContractRating> {
@@ -3684,6 +3777,7 @@ export namespace MyNS {
 		 * Post api/users/current/refreshEntryEdit
 		 * @param {EntryForApiContractEntryType} entryType Type of entry.
 		 * @param {number} entryId Entry ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiUsersCurrentRefreshEntryEditPostByEntryTypeAndEntryId(entryType: EntryForApiContractEntryType, entryId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3697,6 +3791,7 @@ export namespace MyNS {
 		 * Authorization cookie is required.
 		 * Post api/users/current/songTags/{songId}
 		 * @param {number} songId ID of the song to be tagged.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<TagBaseContract>} requestBody List of tags to be appended.
 		 * @return {void} 
 		 */
@@ -3710,6 +3805,7 @@ export namespace MyNS {
 		 * User can only load messages from their own inbox.
 		 * Get api/users/messages/{messageId}
 		 * @param {number} messageId ID of the message.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserMessageContract} OK
 		 */
 		ApiUsersMessages_messageIdGet(messageId: number, headersHandler?: () => HttpHeaders): Observable<UserMessageContract> {
@@ -3722,6 +3818,7 @@ export namespace MyNS {
 		 * @param {string} query Text query.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Name match mode. Words is treated the same as Partial.
 		 * @param {number} maxResults Maximum number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDisabled Whether to include disabled user accounts. If false, disabled accounts are excluded.
 		 * @return {Array<string>} OK
 		 */
@@ -3735,6 +3832,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Post api/users/profileComments/{commentId}
 		 * @param {number} commentId ID of the comment to be edited.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody New comment data. Only message can be edited.
 		 * @return {void} 
 		 */
@@ -3748,6 +3846,7 @@ export namespace MyNS {
 		 * Requires login.
 		 * Delete api/users/profileComments/{commentId}
 		 * @param {number} commentId ID of the comment to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiUsersProfileComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3758,6 +3857,7 @@ export namespace MyNS {
 		 * Gets user by ID.
 		 * Get api/users/{id}
 		 * @param {number} id User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiSongs_idRatingsGetByUserFieldsAndLangUserFields} fields Optional fields.
 		 * @return {UserForApiContract} OK
 		 */
@@ -3771,16 +3871,22 @@ export namespace MyNS {
 		 * Note that the user might have set his album ownership status and media type as private, in which case those properties are not included.
 		 * Get api/users/{id}/albums
 		 * @param {number} id ID of the user whose albums are to be browsed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Album name query (optional).
 		 * @param {number} tagId Filter by tag Id (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Filter by tag (optional).
 		 * @param {number} artistId Filter by album artist (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiUsers_idAlbumsGetByQueryAndTagIdAndTagAndArtistIdAndPurchaseStatusesAndReleaseEventIdAndAlbumTypesAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangPurchaseStatuses} purchaseStatuses Filter by a comma-separated list of purchase statuses (optional). Possible values are Nothing, Wishlisted, Ordered, Owned, and all combinations of these.
 		 * @param {number} releaseEventId Filter by release event. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EntryForApiContractDiscType} albumTypes Filter by album type (optional).
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, ReleaseDate, AdditionDate, RatingAverage, RatingTotal, CollectionCount.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for album name (optional, defaults to Auto).
@@ -3796,6 +3902,7 @@ export namespace MyNS {
 		 * Gets a list of events a user has subscribed to.
 		 * Get api/users/{id}/events
 		 * @param {number} id User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiUsers_idEventsGetByRelationshipTypeRelationshipType} relationshipType Type of event subscription.
 		 * @return {Array<ReleaseEventForApiContract>} OK
 		 */
@@ -3807,11 +3914,14 @@ export namespace MyNS {
 		 * Gets a list of artists followed by a user.
 		 * Get api/users/{id}/followedArtists
 		 * @param {number} id ID of the user whose followed artists are to be browsed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Artist name query (optional).
 		 * @param {Array<number>} tagId Filter by tag Id (optional). This filter can be specified multiple times.
 		 * @param {EntryForApiContractArtistType} artistType Filter by artist type.
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, AdditionDate, AdditionDateAsc.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for artist name (optional, defaults to Auto).
@@ -3827,11 +3937,15 @@ export namespace MyNS {
 		 * Gets a list of messages.
 		 * Get api/users/{id}/messages
 		 * @param {number} id User ID. Must be the currently logged in user (loading messages for another user is not allowed).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UserMessageContractInbox} inbox Type of inbox. Possible values are Nothing (load all, default), Received, Sent, Notifications.
 		 * @param {boolean} unread Whether to only load unread messages. Loading unread messages is only possible for received messages and notifications (not sent messages).
 		 * @param {number} anotherUserId Filter by id of the other user (either sender or receiver).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start Index of the first entry to be loaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to get total number of results.
 		 * @return {PartialFindResult_UserMessageContract} OK
 		 */
@@ -3843,6 +3957,7 @@ export namespace MyNS {
 		 * Creates a new message.
 		 * Post api/users/{id}/messages
 		 * @param {number} id User ID. Must be logged in user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UserMessageContract} requestBody Message data.
 		 * @return {UserMessageContract} OK
 		 */
@@ -3854,6 +3969,7 @@ export namespace MyNS {
 		 * Deletes a list of user messages.
 		 * Delete api/users/{id}/messages
 		 * @param {number} id ID of the user whose messages to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} messageId IDs of messages.
 		 * @return {void} 
 		 */
@@ -3865,8 +3981,11 @@ export namespace MyNS {
 		 * Gets a list of comments posted on user's profile.
 		 * Get api/users/{id}/profileComments
 		 * @param {number} id ID of the user whose comments are to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start Index of the first comment to be loaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of comments to load.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load the total number of comments.
 		 * @return {PartialFindResult_CommentForApiContract} OK
 		 */
@@ -3878,6 +3997,7 @@ export namespace MyNS {
 		 * Posts a new comment.
 		 * Post api/users/{id}/profileComments
 		 * @param {number} id ID of the user for whom to create the comment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentForApiContract} requestBody Comment data. Message and author must be specified. Author must match the logged in user.
 		 * @return {CommentForApiContract} OK
 		 */
@@ -3889,6 +4009,7 @@ export namespace MyNS {
 		 * Gets a list of songs rated by a user.
 		 * Get api/users/{id}/ratedSongs
 		 * @param {number} id ID of the user whose songs are to be browsed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Song name query (optional).
 		 * @param {string} tagName Filter by tag name (optional).
 		 * @param {Array<number>} tagId Filter by tag Id (optional). This filter can be specified multiple times.
@@ -3897,11 +4018,14 @@ export namespace MyNS {
 		 * @param {ApiUsers_idRatedSongsGetByQueryAndTagNameAndTagIdAndArtistIdAndChildVoicebanksAndArtistGroupingAndRatingAndSongListIdAndGroupByRatingAndPvServicesAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangArtistGrouping} artistGrouping Logical grouping for artists.
 		 * @param {RatedSongForUserForApiContractRating} rating Filter songs by given rating (optional).
 		 * @param {number} songListId Filter songs by song list (optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} groupByRating Group results by rating so that highest rated are first.
 		 * @param {SongForApiContractPvServices} pvServices Filter by one or more PV services (separated by commas). The song will pass the filter if it has a PV for any of the matched services.
 		 * @param {Array<string>} advancedFilters List of advanced filters (optional).
 		 * @param {number} start First item to be retrieved (optional, defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults Maximum number of results to be loaded (optional, defaults to 10, maximum of 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} getTotalCount Whether to load total number of items (optional, default to false).
 		 * @param {ApiUsers_idRatedSongsGetByQueryAndTagNameAndTagIdAndArtistIdAndChildVoicebanksAndArtistGroupingAndRatingAndSongListIdAndGroupByRatingAndPvServicesAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangSort} sort Sort rule (optional, defaults to Name). Possible values are None, Name, AdditionDate, FavoritedTimes, RatingScore.
 		 * @param {ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode} nameMatchMode Match mode for song name (optional, defaults to Auto).
@@ -3917,7 +4041,9 @@ export namespace MyNS {
 		 * Gets a specific user's rating for a song.
 		 * Get api/users/{id}/ratedSongs/{songId}
 		 * @param {number} id User whose rating is to be checked.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} songId ID of the song whose rating is to be checked.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RatedSongForUserForApiContractRating} OK
 		 */
 		ApiUsers_idRatedSongs_songIdGet(id: number, songId: number, headersHandler?: () => HttpHeaders): Observable<RatedSongForUserForApiContractRating> {
@@ -3937,6 +4063,7 @@ export namespace MyNS {
 		 * Updates user setting.
 		 * Post api/users/{id}/settings/{settingName}
 		 * @param {number} id ID of the user to be updated. This must match the current user OR be unspecified (or 0) if the user is not logged in.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} settingName Name of the setting to be updated, for example 'showChatBox'.
 		 * @param {string} requestBody Setting value, for example 'false'.
 		 * @return {void} 

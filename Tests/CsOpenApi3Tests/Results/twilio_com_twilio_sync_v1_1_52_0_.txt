@@ -973,8 +973,13 @@ namespace MyNS
 		/// <summary>
 		/// ListService v1/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1009,8 +1014,13 @@ namespace MyNS
 		/// ListDocument v1/Services/{ServiceSid}/Documents
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Document resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDocumentReturn> ListDocumentAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1047,8 +1057,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Document Permission resources to read.</param>
 		/// <param name="DocumentSid">The SID of the Sync Document with the Document Permission resources to read. Can be the Document resource's `sid` or its `unique_name`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDocumentPermissionReturn> ListDocumentPermissionAsync(string ServiceSid, string DocumentSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1209,8 +1224,13 @@ namespace MyNS
 		/// ListSyncList v1/Services/{ServiceSid}/Lists
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncListReturn> ListSyncListAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1249,8 +1269,13 @@ namespace MyNS
 		/// <param name="Order">How to order the List Items returned by their `index` value. Can be: `asc` (ascending) or `desc` (descending) and the default is ascending.</param>
 		/// <param name="From">The `index` of the first Sync List Item resource to read. See also `bounds`.</param>
 		/// <param name="Bounds">Whether to include the List Item referenced by the `from` parameter. Can be: `inclusive` to include the List Item referenced by the `from` parameter or `exclusive` to start with the next List Item. The default value is `inclusive`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncListItemReturn> ListSyncListItemAsync(string ServiceSid, string ListSid, Sync_list_item_enum_query_result_order Order, string From, Sync_list_item_enum_query_from_bound_type Bounds, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1350,8 +1375,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List Permission resources to read.</param>
 		/// <param name="ListSid">The SID of the Sync List with the Sync List Permission resources to read. Can be the Sync List resource's `sid` or its `unique_name`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncListPermissionReturn> ListSyncListPermissionAsync(string ServiceSid, string ListSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1512,8 +1542,13 @@ namespace MyNS
 		/// ListSyncMap v1/Services/{ServiceSid}/Maps
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync Map resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncMapReturn> ListSyncMapAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1552,8 +1587,13 @@ namespace MyNS
 		/// <param name="Order">How to order the Map Items returned by their `key` value. Can be: `asc` (ascending) or `desc` (descending) and the default is ascending. Map Items are [ordered lexicographically](https://en.wikipedia.org/wiki/Lexicographical_order) by Item key.</param>
 		/// <param name="From">The `key` of the first Sync Map Item resource to read. See also `bounds`.</param>
 		/// <param name="Bounds">Whether to include the Map Item referenced by the `from` parameter. Can be: `inclusive` to include the Map Item referenced by the `from` parameter or `exclusive` to start with the next Map Item. The default value is `inclusive`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncMapItemReturn> ListSyncMapItemAsync(string ServiceSid, string MapSid, Sync_list_item_enum_query_result_order Order, string From, Sync_list_item_enum_query_from_bound_type Bounds, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1653,8 +1693,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync Map Permission resources to read. Can be the Service's `sid` value or `default`.</param>
 		/// <param name="MapSid">The SID of the Sync Map with the Permission resources to read. Can be the Sync Map resource's `sid` or its `unique_name`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncMapPermissionReturn> ListSyncMapPermissionAsync(string ServiceSid, string MapSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1816,8 +1861,13 @@ namespace MyNS
 		/// ListSyncStream v1/Services/{ServiceSid}/Streams
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Stream resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSyncStreamReturn> ListSyncStreamAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

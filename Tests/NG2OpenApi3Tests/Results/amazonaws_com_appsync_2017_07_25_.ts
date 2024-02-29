@@ -2998,6 +2998,7 @@ export namespace MyNS {
 		 * Maps an endpoint to your custom domain.
 		 * Post v1/domainnames/{domainName}/apiassociation
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {AssociateApiResponse} Success
 		 */
 		AssociateApi(domainName: string, requestBody: AssociateApiPostBody): Observable<AssociateApiResponse> {
@@ -3008,6 +3009,7 @@ export namespace MyNS {
 		 * Removes an <code>ApiAssociation</code> object from a custom domain.
 		 * Delete v1/domainnames/{domainName}/apiassociation
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {DisassociateApiResponse} Success
 		 */
 		DisassociateApi(domainName: string): Observable<DisassociateApiResponse> {
@@ -3018,6 +3020,7 @@ export namespace MyNS {
 		 * Retrieves an <code>ApiAssociation</code> object.
 		 * Get v1/domainnames/{domainName}/apiassociation
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {GetApiAssociationResponse} Success
 		 */
 		GetApiAssociation(domainName: string): Observable<GetApiAssociationResponse> {
@@ -3089,7 +3092,9 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/apikeys
 		 * @param {string} apiId The API ID.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListApiKeysResponse} Success
 		 */
 		ListApiKeys(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListApiKeysResponse> {
@@ -3111,7 +3116,9 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/datasources
 		 * @param {string} apiId The API ID.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListDataSourcesResponse} Success
 		 */
 		ListDataSources(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDataSourcesResponse> {
@@ -3131,7 +3138,9 @@ export namespace MyNS {
 		 * Lists multiple custom domain names.
 		 * Get v1/domainnames
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListDomainNamesResponse} Success
 		 */
 		ListDomainNames(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDomainNamesResponse> {
@@ -3153,7 +3162,9 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/functions
 		 * @param {string} apiId The GraphQL API ID.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListFunctionsResponse} Success
 		 */
 		ListFunctions(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListFunctionsResponse> {
@@ -3173,7 +3184,9 @@ export namespace MyNS {
 		 * Lists your GraphQL APIs.
 		 * Get v1/apis
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {GraphQLApiType} apiType The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).
 		 * @param {Ownership} owner The account owner of the GraphQL API.
 		 * @return {ListGraphqlApisResponse} Success
@@ -3187,6 +3200,7 @@ export namespace MyNS {
 		 * Post v1/apis/{apiId}/types/{typeName}/resolvers
 		 * @param {string} apiId The ID for the GraphQL API for which the resolver is being created.
 		 * @param {string} typeName The name of the <code>Type</code>.
+		 *     Min length: 1    Max length: 65536
 		 * @return {CreateResolverResponse} Success
 		 */
 		CreateResolver(apiId: string, typeName: string, requestBody: CreateResolverPostBody): Observable<CreateResolverResponse> {
@@ -3199,7 +3213,9 @@ export namespace MyNS {
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The type name.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListResolversResponse} Success
 		 */
 		ListResolvers(apiId: string, typeName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListResolversResponse> {
@@ -3243,6 +3259,7 @@ export namespace MyNS {
 		 * Delete v1/apis/{apiId}/datasources/{name}
 		 * @param {string} apiId The API ID.
 		 * @param {string} name The name of the data source.
+		 *     Min length: 1    Max length: 65536
 		 * @return {DeleteDataSourceResponse} Success
 		 */
 		DeleteDataSource(apiId: string, name: string): Observable<DeleteDataSourceResponse> {
@@ -3254,6 +3271,7 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/datasources/{name}
 		 * @param {string} apiId The API ID.
 		 * @param {string} name The name of the data source.
+		 *     Min length: 1    Max length: 65536
 		 * @return {GetDataSourceResponse} Success
 		 */
 		GetDataSource(apiId: string, name: string): Observable<GetDataSourceResponse> {
@@ -3265,6 +3283,7 @@ export namespace MyNS {
 		 * Post v1/apis/{apiId}/datasources/{name}
 		 * @param {string} apiId The API ID.
 		 * @param {string} name The new name for the data source.
+		 *     Min length: 1    Max length: 65536
 		 * @return {UpdateDataSourceResponse} Success
 		 */
 		UpdateDataSource(apiId: string, name: string, requestBody: UpdateDataSourcePostBody): Observable<UpdateDataSourceResponse> {
@@ -3275,6 +3294,7 @@ export namespace MyNS {
 		 * Deletes a custom <code>DomainName</code> object.
 		 * Delete v1/domainnames/{domainName}
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {DeleteDomainNameResponse} Success
 		 */
 		DeleteDomainName(domainName: string): Observable<DeleteDomainNameResponse> {
@@ -3285,6 +3305,7 @@ export namespace MyNS {
 		 * Retrieves a custom <code>DomainName</code> object.
 		 * Get v1/domainnames/{domainName}
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {GetDomainNameResponse} Success
 		 */
 		GetDomainName(domainName: string): Observable<GetDomainNameResponse> {
@@ -3295,6 +3316,7 @@ export namespace MyNS {
 		 * Updates a custom <code>DomainName</code> object.
 		 * Post v1/domainnames/{domainName}
 		 * @param {string} domainName The domain name.
+		 *     Min length: 1    Max length: 253
 		 * @return {UpdateDomainNameResponse} Success
 		 */
 		UpdateDomainName(domainName: string, requestBody: UpdateDomainNamePostBody): Observable<UpdateDomainNameResponse> {
@@ -3306,6 +3328,7 @@ export namespace MyNS {
 		 * Delete v1/apis/{apiId}/functions/{functionId}
 		 * @param {string} apiId The GraphQL API ID.
 		 * @param {string} functionId The <code>Function</code> ID.
+		 *     Min length: 1    Max length: 65536
 		 * @return {DeleteFunctionResponse} Success
 		 */
 		DeleteFunction(apiId: string, functionId: string): Observable<DeleteFunctionResponse> {
@@ -3317,6 +3340,7 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/functions/{functionId}
 		 * @param {string} apiId The GraphQL API ID.
 		 * @param {string} functionId The <code>Function</code> ID.
+		 *     Min length: 1    Max length: 65536
 		 * @return {GetFunctionResponse} Success
 		 */
 		GetFunction(apiId: string, functionId: string): Observable<GetFunctionResponse> {
@@ -3328,6 +3352,7 @@ export namespace MyNS {
 		 * Post v1/apis/{apiId}/functions/{functionId}
 		 * @param {string} apiId The GraphQL API ID.
 		 * @param {string} functionId The function ID.
+		 *     Min length: 1    Max length: 65536
 		 * @return {UpdateFunctionResponse} Success
 		 */
 		UpdateFunction(apiId: string, functionId: string, requestBody: UpdateFunctionPostBody): Observable<UpdateFunctionResponse> {
@@ -3369,7 +3394,9 @@ export namespace MyNS {
 		 * Delete v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The name of the resolver type.
+		 *     Min length: 1    Max length: 65536
 		 * @param {string} fieldName The resolver field name.
+		 *     Min length: 1    Max length: 65536
 		 * @return {DeleteResolverResponse} Success
 		 */
 		DeleteResolver(apiId: string, typeName: string, fieldName: string): Observable<DeleteResolverResponse> {
@@ -3381,7 +3408,9 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The resolver type name.
+		 *     Min length: 1    Max length: 65536
 		 * @param {string} fieldName The resolver field name.
+		 *     Min length: 1    Max length: 65536
 		 * @return {GetResolverResponse} Success
 		 */
 		GetResolver(apiId: string, typeName: string, fieldName: string): Observable<GetResolverResponse> {
@@ -3393,7 +3422,9 @@ export namespace MyNS {
 		 * Post v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The new type name.
+		 *     Min length: 1    Max length: 65536
 		 * @param {string} fieldName The new field name.
+		 *     Min length: 1    Max length: 65536
 		 * @return {UpdateResolverResponse} Success
 		 */
 		UpdateResolver(apiId: string, typeName: string, fieldName: string, requestBody: UpdateResolverPostBody): Observable<UpdateResolverResponse> {
@@ -3405,6 +3436,7 @@ export namespace MyNS {
 		 * Delete v1/apis/{apiId}/types/{typeName}
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The type name.
+		 *     Min length: 1    Max length: 65536
 		 * @return {DeleteTypeResponse} Success
 		 */
 		DeleteType(apiId: string, typeName: string): Observable<DeleteTypeResponse> {
@@ -3416,6 +3448,7 @@ export namespace MyNS {
 		 * Post v1/apis/{apiId}/types/{typeName}
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The new type name.
+		 *     Min length: 1    Max length: 65536
 		 * @return {UpdateTypeResponse} Success
 		 */
 		UpdateType(apiId: string, typeName: string, requestBody: UpdateTypePostBody): Observable<UpdateTypeResponse> {
@@ -3531,6 +3564,7 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/types/{typeName}#format
 		 * @param {string} apiId The API ID.
 		 * @param {string} typeName The type name.
+		 *     Min length: 1    Max length: 65536
 		 * @param {TypeDefinitionFormat} format The type format: SDL or JSON.
 		 * @return {GetTypeResponse} Success
 		 */
@@ -3544,7 +3578,9 @@ export namespace MyNS {
 		 * @param {string} apiId The API ID.
 		 * @param {string} functionId The function ID.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListResolversByFunctionResponse} Success
 		 */
 		ListResolversByFunction(apiId: string, functionId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListResolversByFunctionResponse> {
@@ -3556,7 +3592,9 @@ export namespace MyNS {
 		 * Get v1/apis/{apiId}/sourceApiAssociations
 		 * @param {string} apiId The API ID.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListSourceApiAssociationsResponse} Success
 		 */
 		ListSourceApiAssociations(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListSourceApiAssociationsResponse> {
@@ -3567,6 +3605,7 @@ export namespace MyNS {
 		 * Lists the tags for a resource.
 		 * Get v1/tags/{resourceArn}
 		 * @param {string} resourceArn The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		 *     Min length: 70    Max length: 75
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3577,6 +3616,7 @@ export namespace MyNS {
 		 * Tags a resource with user-supplied tags.
 		 * Post v1/tags/{resourceArn}
 		 * @param {string} resourceArn The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		 *     Min length: 70    Max length: 75
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -3589,7 +3629,9 @@ export namespace MyNS {
 		 * @param {string} apiId The API ID.
 		 * @param {TypeDefinitionFormat} format The type format: SDL or JSON.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListTypesResponse} Success
 		 */
 		ListTypes(apiId: string, format: TypeDefinitionFormat, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListTypesResponse> {
@@ -3603,7 +3645,9 @@ export namespace MyNS {
 		 * @param {string} associationId The ID generated by the AppSync service for the source API association.
 		 * @param {TypeDefinitionFormat} format The format type.
 		 * @param {string} nextToken An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		 *     Min length: 1    Max length: 65536
 		 * @param {number} maxResults The maximum number of results that you want the request to return.
+		 *     Minimum: 0    Maximum: 25
 		 * @return {ListTypesByAssociationResponse} Success
 		 */
 		ListTypesByAssociation(mergedApiIdentifier: string, associationId: string, format: TypeDefinitionFormat, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListTypesByAssociationResponse> {
@@ -3625,7 +3669,9 @@ export namespace MyNS {
 		 * Untags a resource.
 		 * Delete v1/tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		 *     Min length: 70    Max length: 75
 		 * @param {Array<string>} tagKeys A list of <code>TagKey</code> objects.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -3763,6 +3809,7 @@ export namespace MyNS {
 		/**
 		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600 seconds.</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: number;
 
@@ -3789,6 +3836,7 @@ export namespace MyNS {
 		/**
 		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600 seconds.</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: FormControl<number | null | undefined>,
 
@@ -3826,7 +3874,10 @@ export namespace MyNS {
 		/** A description of the purpose of the API key. */
 		description?: string | null;
 
-		/** From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see . */
+		/**
+		 * From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires?: number | null;
 	}
 	export interface CreateApiKeyPostBodyFormProperties {
@@ -3834,7 +3885,10 @@ export namespace MyNS {
 		/** A description of the purpose of the API key. */
 		description: FormControl<string | null | undefined>,
 
-		/** From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see . */
+		/**
+		 * From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateApiKeyPostBodyFormGroup() {
@@ -3850,8 +3904,8 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name for the <code>DataSource</code>.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: string;
 
@@ -3893,8 +3947,8 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name for the <code>DataSource</code>.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4034,23 +4088,23 @@ export namespace MyNS {
 		/**
 		 * The domain name.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domainName: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		certificateArn: string;
 
 		/**
 		 * A description of the <code>DomainName</code>.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -4059,23 +4113,23 @@ export namespace MyNS {
 		/**
 		 * The domain name.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domainName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		certificateArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the <code>DomainName</code>.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4093,8 +4147,8 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> name. The function name does not have to be unique.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: string;
 
@@ -4104,22 +4158,22 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: string;
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate?: string | null;
 
 		/**
 		 * The <code>Function</code> response mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate?: string | null;
 
@@ -4141,8 +4195,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code?: string | null;
 	}
@@ -4151,8 +4205,8 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> name. The function name does not have to be unique.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4162,22 +4216,22 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Function</code> response mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 
@@ -4193,8 +4247,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: FormControl<string | null | undefined>,
 	}
@@ -4425,29 +4479,29 @@ export namespace MyNS {
 		/**
 		 * The name of the field to attach the resolver to.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		fieldName: string;
 
 		/**
 		 * The name of the data source for which the resolver is being created.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName?: string | null;
 
 		/**
 		 * <p>The mapping template to use for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate?: string | null;
 
 		/**
 		 * The mapping template to use for responses from the data source.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate?: string | null;
 
@@ -4475,8 +4529,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code?: string | null;
 	}
@@ -4485,29 +4539,29 @@ export namespace MyNS {
 		/**
 		 * The name of the field to attach the resolver to.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		fieldName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the data source for which the resolver is being created.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The mapping template to use for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
 
 		/**
 		 * The mapping template to use for responses from the data source.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 
@@ -4523,8 +4577,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: FormControl<string | null | undefined>,
 	}
@@ -4640,7 +4694,10 @@ export namespace MyNS {
 		/** A description of the purpose of the API key. */
 		description?: string | null;
 
-		/** From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see . */
+		/**
+		 * From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires?: number | null;
 	}
 	export interface UpdateApiKeyPostBodyFormProperties {
@@ -4648,7 +4705,10 @@ export namespace MyNS {
 		/** A description of the purpose of the API key. */
 		description: FormControl<string | null | undefined>,
 
-		/** From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see . */
+		/**
+		 * From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateApiKeyPostBodyFormGroup() {
@@ -4830,8 +4890,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the <code>DomainName</code>.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -4839,8 +4899,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the <code>DomainName</code>.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4856,8 +4916,8 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: string;
 
@@ -4867,22 +4927,22 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: string;
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate?: string | null;
 
 		/**
 		 * The <code>Function</code> request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate?: string | null;
 
@@ -4904,8 +4964,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code?: string | null;
 	}
@@ -4914,8 +4974,8 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4925,22 +4985,22 @@ export namespace MyNS {
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Function</code> request mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 
@@ -4956,8 +5016,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: FormControl<string | null | undefined>,
 	}
@@ -5160,22 +5220,22 @@ export namespace MyNS {
 
 		/**
 		 * The new data source name.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName?: string | null;
 
 		/**
 		 * <p>The new request mapping template.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate?: string | null;
 
 		/**
 		 * The new response mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate?: string | null;
 
@@ -5203,8 +5263,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code?: string | null;
 	}
@@ -5212,22 +5272,22 @@ export namespace MyNS {
 
 		/**
 		 * The new data source name.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		dataSourceName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The new request mapping template.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
 
 		/**
 		 * The new response mapping template.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 
@@ -5243,8 +5303,8 @@ export namespace MyNS {
 
 		/**
 		 * The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: FormControl<string | null | undefined>,
 	}
@@ -5392,16 +5452,16 @@ export namespace MyNS {
 		/**
 		 * The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
 		 * Required
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: string;
 
 		/**
 		 * The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.
 		 * Required
-		 * Max length: 28000
 		 * Min length: 2
+		 * Max length: 28000
 		 */
 		context: string;
 
@@ -5413,16 +5473,16 @@ export namespace MyNS {
 		/**
 		 * The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
 		 * Required
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		code: FormControl<string | null | undefined>,
 
 		/**
 		 * The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.
 		 * Required
-		 * Max length: 28000
 		 * Min length: 2
+		 * Max length: 28000
 		 */
 		context: FormControl<string | null | undefined>,
 
@@ -5459,16 +5519,16 @@ export namespace MyNS {
 		/**
 		 * The mapping template; this can be a request or response template. A <code>template</code> is required for this action.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		template: string;
 
 		/**
 		 * The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.
 		 * Required
-		 * Max length: 28000
 		 * Min length: 2
+		 * Max length: 28000
 		 */
 		context: string;
 	}
@@ -5477,16 +5537,16 @@ export namespace MyNS {
 		/**
 		 * The mapping template; this can be a request or response template. A <code>template</code> is required for this action.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		template: FormControl<string | null | undefined>,
 
 		/**
 		 * The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.
 		 * Required
-		 * Max length: 28000
 		 * Min length: 2
+		 * Max length: 28000
 		 */
 		context: FormControl<string | null | undefined>,
 	}
@@ -5549,6 +5609,7 @@ export namespace MyNS {
 		/**
 		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600 seconds.</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: number;
 
@@ -5569,6 +5630,7 @@ export namespace MyNS {
 		/**
 		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600 seconds.</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: FormControl<number | null | undefined>,
 

@@ -17,7 +17,10 @@ export namespace MyNS {
 		/** Indicates the compatibility classification of the part based on high-level vehicle types. */
 		compatibleVehicleTypes?: Array<string>;
 
-		/** Specifies the maximum number of compatible vehicle-applications allowed per item. */
+		/**
+		 * Specifies the maximum number of compatible vehicle-applications allowed per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfCompatibleVehicles?: number | null;
 	}
 	export interface AutomotivePartsCompatibilityPolicyFormProperties {
@@ -31,7 +34,10 @@ export namespace MyNS {
 		/** Indicates whether the category supports parts compatibility by either <code>ASSEMBLY</code> or by <code>SPECIFICATION</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/metadata/types/sel:CompatibilityTypeEnum'>eBay API documentation</a> */
 		compatibilityBasedOn: FormControl<string | null | undefined>,
 
-		/** Specifies the maximum number of compatible vehicle-applications allowed per item. */
+		/**
+		 * Specifies the maximum number of compatible vehicle-applications allowed per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfCompatibleVehicles: FormControl<number | null | undefined>,
 	}
 	export function CreateAutomotivePartsCompatibilityPolicyFormGroup() {
@@ -70,7 +76,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use <i>JSONPath</i> notation. */
@@ -101,7 +110,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
@@ -630,7 +642,10 @@ export namespace MyNS {
 		/** A time-measurement unit that specifies a singular period of time.  <br><br>A span of time is defined when you apply the value specified in the <b>value</b> field to the value specified for <b>unit</b>.  <br><br>Time-measurement units can be YEAR, MONTH, DAY, and so on. See <b>TimeDurationUnitEnum</b> for a complete list of possible time-measurement units. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/metadata/types/ba:TimeDurationUnitEnum'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field. */
+		/**
+		 * An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -640,7 +655,10 @@ export namespace MyNS {
 		/** A time-measurement unit that specifies a singular period of time.  <br><br>A span of time is defined when you apply the value specified in the <b>value</b> field to the value specified for <b>unit</b>.  <br><br>Time-measurement units can be YEAR, MONTH, DAY, and so on. See <b>TimeDurationUnitEnum</b> for a complete list of possible time-measurement units. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/metadata/types/ba:TimeDurationUnitEnum'>eBay API documentation</a> */
 		unit: FormControl<string | null | undefined>,
 
-		/** An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field. */
+		/**
+		 * An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeDurationFormGroup() {

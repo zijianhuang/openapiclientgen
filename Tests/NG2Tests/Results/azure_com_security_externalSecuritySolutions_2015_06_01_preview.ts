@@ -235,6 +235,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions/{externalSecuritySolutionsName}
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} externalSecuritySolutionsName Name of an external security solution.
 		 * @param {string} api_version API version for the operation

@@ -1683,7 +1683,9 @@ namespace MyNS
 		/// GET_AddTags #Action=AddTags
 		/// </summary>
 		/// <param name="LoadBalancerNames">The name of the load balancer. You can specify one load balancer only.</param>
-		/// <param name="Tags">The tags.</param>
+		/// <param name="Tags">The tags.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_AddTagsAsync(string[] LoadBalancerNames, Tag[] Tags, GET_AddTagsAction Action, GET_AddTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1864,7 +1866,9 @@ namespace MyNS
 		/// <param name="Subnets">The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</param>
 		/// <param name="SecurityGroups">The IDs of the security groups to assign to the load balancer.</param>
 		/// <param name="Scheme"><p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p></param>
-		/// <param name="Tags"><p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p></param>
+		/// <param name="Tags"><p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+		/// Minimum items: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateLoadBalancerAsync(string LoadBalancerName, Listener[] Listeners, string[] AvailabilityZones, string[] Subnets, string[] SecurityGroups, string Scheme, Tag[] Tags, GET_CreateLoadBalancerAction Action, GET_CreateLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2068,7 +2072,10 @@ namespace MyNS
 		/// GET_DescribeAccountLimits #Action=DescribeAccountLimits
 		/// </summary>
 		/// <param name="Marker">The marker for the next set of results. (You received this marker from a previous call.)</param>
-		/// <param name="PageSize">The maximum number of results to return with this call.</param>
+		/// <param name="PageSize">The maximum number of results to return with this call.
+		/// Minimum: 1
+		/// Maximum: 400
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeAccountLimitsAsync(string Marker, int PageSize, GET_DescribeAccountLimitsAction Action, GET_DescribeAccountLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2212,7 +2219,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="LoadBalancerNames">The names of the load balancers.</param>
 		/// <param name="Marker">The marker for the next set of results. (You received this marker from a previous call.)</param>
-		/// <param name="PageSize">The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</param>
+		/// <param name="PageSize">The maximum number of results to return with this call (a number from 1 to 400). The default is 400.
+		/// Minimum: 1
+		/// Maximum: 400
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeLoadBalancersAsync(string[] LoadBalancerNames, string Marker, int PageSize, GET_DescribeLoadBalancersAction Action, GET_DescribeLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2240,7 +2250,10 @@ namespace MyNS
 		/// Describes the tags associated with the specified load balancers.
 		/// GET_DescribeTags #Action=DescribeTags
 		/// </summary>
-		/// <param name="LoadBalancerNames">The names of the load balancers.</param>
+		/// <param name="LoadBalancerNames">The names of the load balancers.
+		/// Minimum items: 1
+		/// Maximum items: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeTagsAsync(string[] LoadBalancerNames, GET_DescribeTagsAction Action, GET_DescribeTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2414,7 +2427,9 @@ namespace MyNS
 		/// GET_RemoveTags #Action=RemoveTags
 		/// </summary>
 		/// <param name="LoadBalancerNames">The name of the load balancer. You can specify a maximum of one load balancer name.</param>
-		/// <param name="Tags">The list of tag keys to remove.</param>
+		/// <param name="Tags">The list of tag keys to remove.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_RemoveTagsAsync(string[] LoadBalancerNames, TagKeyOnly[] Tags, GET_RemoveTagsAction Action, GET_RemoveTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

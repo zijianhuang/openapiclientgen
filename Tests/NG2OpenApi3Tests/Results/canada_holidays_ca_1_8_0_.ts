@@ -49,6 +49,7 @@ export namespace MyNS {
 		/**
 		 * ISO date: the literal date of the holiday
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -81,6 +82,7 @@ export namespace MyNS {
 		/**
 		 * ISO date: when this holiday is observed
 		 * Required
+		 * Type: DateOnly
 		 */
 		observedDate: Date;
 
@@ -95,6 +97,7 @@ export namespace MyNS {
 		/**
 		 * ISO date: the literal date of the holiday
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -127,6 +130,7 @@ export namespace MyNS {
 		/**
 		 * ISO date: when this holiday is observed
 		 * Required
+		 * Type: DateOnly
 		 */
 		observedDate: FormControl<Date | null | undefined>,
 
@@ -264,6 +268,7 @@ export namespace MyNS {
 		 * Returns Canadian public holidays. Each holiday lists the regions that observe it.
 		 * Get api/v1/holidays
 		 * @param {number} year A calendar year
+		 *     Minimum: 2016    Maximum: 2029
 		 * @param {HolidaysFederal} federal A boolean parameter. If true or 1, will return only federal holidays. If false or 0, will return no federal holidays.
 		 * @param {HolidaysFederal} optional A boolean parameter. If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.
 		 * @return {HolidaysReturn} OK
@@ -277,6 +282,7 @@ export namespace MyNS {
 		 * Returns one Canadian statutory holiday by integer id. Returns a 404 response for invalid ids.
 		 * Get api/v1/holidays/{holidayId}
 		 * @param {number} year A calendar year
+		 *     Minimum: 2016    Maximum: 2029
 		 * @param {HolidaysFederal} optional A boolean parameter. If false or 0 (default), will return provinces for which this is a legislated holiday. If true or 1, will return provinces which optionally celebrate this holiday.
 		 * @return {HolidayReturn} OK
 		 */
@@ -289,6 +295,7 @@ export namespace MyNS {
 		 * Returns provinces and territories in Canada. Each province or territory lists its associated holidays.
 		 * Get api/v1/provinces
 		 * @param {number} year A calendar year
+		 *     Minimum: 2016    Maximum: 2029
 		 * @param {HolidaysFederal} optional A boolean parameter. If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.
 		 * @return {ProvincesReturn} OK
 		 */
@@ -301,6 +308,7 @@ export namespace MyNS {
 		 * Returns a Canadian province or territory with its associated holidays. Returns a 404 response for invalid abbreviations.
 		 * Get api/v1/provinces/{provinceId}
 		 * @param {number} year A calendar year
+		 *     Minimum: 2016    Maximum: 2029
 		 * @param {HolidaysFederal} optional A boolean parameter (AB and BC only). If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.
 		 * @return {ProvinceReturn} OK
 		 */

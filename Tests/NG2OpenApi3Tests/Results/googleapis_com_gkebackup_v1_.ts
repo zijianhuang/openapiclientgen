@@ -78,7 +78,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Backup resource was created. */
 		createTime?: string | null;
 
-		/** Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update). */
+		/**
+		 * Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deleteLockDays?: number | null;
 
 		/** Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days). */
@@ -102,13 +105,22 @@ export namespace MyNS {
 		/** Output only. The fully qualified name of the Backup. `projects/locations/backupPlans/backups/*` */
 		name?: string | null;
 
-		/** Output only. The total number of Kubernetes Pods contained in the Backup. */
+		/**
+		 * Output only. The total number of Kubernetes Pods contained in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount?: number | null;
 
-		/** Output only. The total number of Kubernetes resources included in the Backup. */
+		/**
+		 * Output only. The total number of Kubernetes resources included in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceCount?: number | null;
 
-		/** Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value. */
+		/**
+		 * Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainDays?: number | null;
 
 		/** Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days). */
@@ -135,7 +147,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Backup resource was last updated. */
 		updateTime?: string | null;
 
-		/** Output only. The total number of volume backups contained in the Backup. */
+		/**
+		 * Output only. The total number of volume backups contained in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumeCount?: number | null;
 	}
 
@@ -160,7 +175,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Backup resource was created. */
 		createTime: FormControl<string | null | undefined>,
 
-		/** Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update). */
+		/**
+		 * Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deleteLockDays: FormControl<number | null | undefined>,
 
 		/** Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days). */
@@ -181,13 +199,22 @@ export namespace MyNS {
 		/** Output only. The fully qualified name of the Backup. `projects/locations/backupPlans/backups/*` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of Kubernetes Pods contained in the Backup. */
+		/**
+		 * Output only. The total number of Kubernetes Pods contained in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount: FormControl<number | null | undefined>,
 
-		/** Output only. The total number of Kubernetes resources included in the Backup. */
+		/**
+		 * Output only. The total number of Kubernetes resources included in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceCount: FormControl<number | null | undefined>,
 
-		/** Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value. */
+		/**
+		 * Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainDays: FormControl<number | null | undefined>,
 
 		/** Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days). */
@@ -208,7 +235,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Backup resource was last updated. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of volume backups contained in the Backup. */
+		/**
+		 * Output only. The total number of volume backups contained in the Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBackupFormGroup() {
@@ -449,7 +479,10 @@ export namespace MyNS {
 		/** Output only. The full name of the BackupPlan resource. Format: `projects/locations/backupPlans/*` */
 		name?: string | null;
 
-		/** Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan. */
+		/**
+		 * Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedPodCount?: number | null;
 
 		/** RetentionPolicy defines a Backup retention policy for a BackupPlan. */
@@ -492,7 +525,10 @@ export namespace MyNS {
 		/** Output only. The full name of the BackupPlan resource. Format: `projects/locations/backupPlans/*` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan. */
+		/**
+		 * Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedPodCount: FormControl<number | null | undefined>,
 
 		/** Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update */
@@ -557,10 +593,16 @@ export namespace MyNS {
 	/** RetentionPolicy defines a Backup retention policy for a BackupPlan. */
 	export interface RetentionPolicy {
 
-		/** Optional. Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90 (inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup's (create_time + backup_delete_lock_days). Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking) */
+		/**
+		 * Optional. Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90 (inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup's (create_time + backup_delete_lock_days). Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupDeleteLockDays?: number | null;
 
-		/** Optional. The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0 and <= 365. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches (create_time + backup_retain_days). If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: backup_retain_days must be >= backup_delete_lock_days. If cron_schedule is defined, then this must be <= 360 * the creation interval. If rpo_config is defined, then this must be <= 360 * target_rpo_minutes / (1440minutes/day). Default: 0 (no automatic deletion) */
+		/**
+		 * Optional. The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0 and <= 365. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches (create_time + backup_retain_days). If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: backup_retain_days must be >= backup_delete_lock_days. If cron_schedule is defined, then this must be <= 360 * the creation interval. If rpo_config is defined, then this must be <= 360 * target_rpo_minutes / (1440minutes/day). Default: 0 (no automatic deletion)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupRetainDays?: number | null;
 
 		/** Optional. This flag denotes whether the retention policy of this BackupPlan is locked. If set to True, no further update is allowed on this policy, including the `locked` field itself. Default: False */
@@ -570,10 +612,16 @@ export namespace MyNS {
 	/** RetentionPolicy defines a Backup retention policy for a BackupPlan. */
 	export interface RetentionPolicyFormProperties {
 
-		/** Optional. Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90 (inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup's (create_time + backup_delete_lock_days). Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking) */
+		/**
+		 * Optional. Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90 (inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup's (create_time + backup_delete_lock_days). Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupDeleteLockDays: FormControl<number | null | undefined>,
 
-		/** Optional. The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0 and <= 365. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches (create_time + backup_retain_days). If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: backup_retain_days must be >= backup_delete_lock_days. If cron_schedule is defined, then this must be <= 360 * the creation interval. If rpo_config is defined, then this must be <= 360 * target_rpo_minutes / (1440minutes/day). Default: 0 (no automatic deletion) */
+		/**
+		 * Optional. The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0 and <= 365. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches (create_time + backup_retain_days). If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: backup_retain_days must be >= backup_delete_lock_days. If cron_schedule is defined, then this must be <= 360 * the creation interval. If rpo_config is defined, then this must be <= 360 * target_rpo_minutes / (1440minutes/day). Default: 0 (no automatic deletion)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupRetainDays: FormControl<number | null | undefined>,
 
 		/** Optional. This flag denotes whether the retention policy of this BackupPlan is locked. If set to True, no further update is allowed on this policy, including the `locked` field itself. Default: False */
@@ -822,7 +870,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -835,7 +886,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1363,13 +1417,22 @@ export namespace MyNS {
 		/** Output only. The full name of the Restore resource. Format: `projects/locations/restorePlans/restores/*` */
 		name?: string | null;
 
-		/** Output only. Number of resources excluded during the restore execution. */
+		/**
+		 * Output only. Number of resources excluded during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesExcludedCount?: number | null;
 
-		/** Output only. Number of resources that failed to be restored during the restore execution. */
+		/**
+		 * Output only. Number of resources that failed to be restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFailedCount?: number | null;
 
-		/** Output only. Number of resources restored during the restore execution. */
+		/**
+		 * Output only. Number of resources restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesRestoredCount?: number | null;
 
 		/** Configuration of a restore. Next id: 14 */
@@ -1387,7 +1450,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Restore resource was last updated. */
 		updateTime?: string | null;
 
-		/** Output only. Number of volumes restored during the restore execution. */
+		/**
+		 * Output only. Number of volumes restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumesRestoredCount?: number | null;
 	}
 
@@ -1418,13 +1484,22 @@ export namespace MyNS {
 		/** Output only. The full name of the Restore resource. Format: `projects/locations/restorePlans/restores/*` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. Number of resources excluded during the restore execution. */
+		/**
+		 * Output only. Number of resources excluded during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesExcludedCount: FormControl<number | null | undefined>,
 
-		/** Output only. Number of resources that failed to be restored during the restore execution. */
+		/**
+		 * Output only. Number of resources that failed to be restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFailedCount: FormControl<number | null | undefined>,
 
-		/** Output only. Number of resources restored during the restore execution. */
+		/**
+		 * Output only. Number of resources restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesRestoredCount: FormControl<number | null | undefined>,
 
 		/** Output only. The current state of the Restore. */
@@ -1439,7 +1514,10 @@ export namespace MyNS {
 		/** Output only. The timestamp when this Restore resource was last updated. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. Number of volumes restored during the restore execution. */
+		/**
+		 * Output only. Number of volumes restored during the restore execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumesRestoredCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRestoreFormGroup() {
@@ -1791,7 +1869,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -1801,7 +1882,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -1914,6 +1998,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1927,6 +2012,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -1951,6 +2037,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListBackupPlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackupPlans` must match the call that provided the page token.
 		 * @return {ListBackupPlansResponse} Successful response
 		 */
@@ -1976,6 +2063,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackups` must match the call that provided the page token.
 		 * @return {ListBackupsResponse} Successful response
 		 */
@@ -2001,6 +2089,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListRestorePlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestorePlans` must match the call that provided the page token.
 		 * @return {ListRestorePlansResponse} Successful response
 		 */
@@ -2026,6 +2115,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestores` must match the call that provided the page token.
 		 * @return {ListRestoresResponse} Successful response
 		 */
@@ -2051,6 +2141,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListVolumeBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeBackups` must match the call that provided the page token.
 		 * @return {ListVolumeBackupsResponse} Successful response
 		 */
@@ -2065,6 +2156,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Field match expression used to filter the results.
 		 * @param {string} orderBy Optional. Field by which to sort the results.
 		 * @param {number} pageSize Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The value of next_page_token received from a previous `ListVolumeRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeRestores` must match the call that provided the page token.
 		 * @return {ListVolumeRestoresResponse} Successful response
 		 */
@@ -2077,6 +2169,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Gkebackup_projects_locations_restorePlans_restores_volumeRestores_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

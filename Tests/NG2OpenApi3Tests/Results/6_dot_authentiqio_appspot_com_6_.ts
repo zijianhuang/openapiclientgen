@@ -97,7 +97,10 @@ export namespace MyNS {
 	export interface Error {
 		detail?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error: number;
 		title?: string | null;
 
@@ -107,7 +110,10 @@ export namespace MyNS {
 	export interface ErrorFormProperties {
 		detail: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
@@ -135,7 +141,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		aud: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		exp?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		iat?: number | null;
 
 		/**
@@ -143,6 +153,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		iss: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nbf?: number | null;
 
 		/**
@@ -162,7 +174,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		aud: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		exp: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		iat: FormControl<number | null | undefined>,
 
 		/**
@@ -170,6 +186,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		iss: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nbf: FormControl<number | null | undefined>,
 
 		/**
@@ -424,6 +442,8 @@ export namespace MyNS {
 	}
 
 	export interface Sign_retrieveReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		exp?: number | null;
 		field?: string | null;
 
@@ -431,6 +451,8 @@ export namespace MyNS {
 		sub?: string | null;
 	}
 	export interface Sign_retrieveReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		exp: FormControl<number | null | undefined>,
 		field: FormControl<string | null | undefined>,
 

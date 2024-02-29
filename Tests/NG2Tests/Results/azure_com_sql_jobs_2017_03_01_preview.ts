@@ -1216,7 +1216,9 @@ export namespace MyNS {
 		 * @param {Date} endTimeMax If specified, only job executions completed before the specified time are included.
 		 * @param {boolean} isActive If specified, only active or only completed job executions are included.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top The number of elements to return from the collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobExecutionListResult} Successfully retrieved job executions.
@@ -1298,7 +1300,9 @@ export namespace MyNS {
 		 * @param {Date} endTimeMax If specified, only job executions completed before the specified time are included.
 		 * @param {boolean} isActive If specified, only active or only completed job executions are included.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top The number of elements to return from the collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobExecutionListResult} Successfully retrieved job executions.
@@ -1369,7 +1373,9 @@ export namespace MyNS {
 		 * @param {Date} endTimeMax If specified, only job executions completed before the specified time are included.
 		 * @param {boolean} isActive If specified, only active or only completed job executions are included.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top The number of elements to return from the collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobExecutionListResult} Successfully retrieved the step executions.
@@ -1410,7 +1416,9 @@ export namespace MyNS {
 		 * @param {Date} endTimeMax If specified, only job executions completed before the specified time are included.
 		 * @param {boolean} isActive If specified, only active or only completed job executions are included.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top The number of elements to return from the collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobExecutionListResult} Successfully retrieved the target executions.
@@ -1451,7 +1459,9 @@ export namespace MyNS {
 		 * @param {Date} endTimeMax If specified, only job executions completed before the specified time are included.
 		 * @param {boolean} isActive If specified, only active or only completed job executions are included.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top The number of elements to return from the collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobExecutionListResult} Successfully retrieved the target executions.
@@ -1562,6 +1572,7 @@ export namespace MyNS {
 		 * @param {string} jobAgentName The name of the job agent.
 		 * @param {string} jobName The name of the job.
 		 * @param {number} jobVersion The version of the job to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobVersion} Successfully retrieved the job version.
@@ -1578,6 +1589,7 @@ export namespace MyNS {
 		 * @param {string} jobAgentName The name of the job agent.
 		 * @param {string} jobName The name of the job to get.
 		 * @param {number} jobVersion The version of the job to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {JobStepListResult} Successfully retrieved the list of job steps.
@@ -1594,6 +1606,7 @@ export namespace MyNS {
 		 * @param {string} jobAgentName The name of the job agent.
 		 * @param {string} jobName The name of the job.
 		 * @param {number} jobVersion The version of the job to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} stepName The name of the job step.
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.

@@ -344,7 +344,10 @@ namespace MyNS
 		/// <p>Deletes the specified human loop for a flow definition.</p> <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
 		/// DeleteHumanLoop human-loops/{HumanLoopName}
 		/// </summary>
-		/// <param name="HumanLoopName">The name of the human loop that you want to delete.</param>
+		/// <param name="HumanLoopName">The name of the human loop that you want to delete.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteHumanLoopResponse> DeleteHumanLoopAsync(string HumanLoopName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -378,7 +381,10 @@ namespace MyNS
 		/// Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error.
 		/// DescribeHumanLoop human-loops/{HumanLoopName}
 		/// </summary>
-		/// <param name="HumanLoopName">The name of the human loop that you want information about.</param>
+		/// <param name="HumanLoopName">The name of the human loop that you want information about.
+		/// Max length: 63
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeHumanLoopResponse> DescribeHumanLoopAsync(string HumanLoopName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -414,10 +420,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="CreationTimeAfter">(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</param>
 		/// <param name="CreationTimeBefore">(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</param>
-		/// <param name="FlowDefinitionArn">The Amazon Resource Name (ARN) of a flow definition.</param>
+		/// <param name="FlowDefinitionArn">The Amazon Resource Name (ARN) of a flow definition.
+		/// Max length: 1024
+		// </param>
 		/// <param name="SortOrder">Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</param>
-		/// <param name="NextToken">A token to display the next page of results.</param>
-		/// <param name="MaxResults">The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </param>
+		/// <param name="NextToken">A token to display the next page of results.
+		/// Max length: 8192
+		// </param>
+		/// <param name="MaxResults">The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListHumanLoopsResponse> ListHumanLoopsAsync(System.DateTimeOffset CreationTimeAfter, System.DateTimeOffset CreationTimeBefore, string FlowDefinitionArn, SortOrder SortOrder, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

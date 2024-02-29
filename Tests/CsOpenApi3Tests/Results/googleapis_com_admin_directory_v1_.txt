@@ -4886,7 +4886,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="customerId">The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).</param>
 		/// <param name="includeChildOrgunits">Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="orderBy">Device property to use for sorting results.</param>
 		/// <param name="orgUnitPath">The full path of the organizational unit (minus the leading `/`) or its unique ID.</param>
 		/// <param name="pageToken">The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.</param>
@@ -5240,7 +5242,10 @@ namespace MyNS
 		/// Directory_mobiledevices_list admin/directory/v1/customer/{customerId}/devices/mobile
 		/// </summary>
 		/// <param name="customerId">The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).</param>
-		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 100.</param>
+		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="orderBy">Device property to use for sorting results.</param>
 		/// <param name="pageToken">Token to specify next page in the list</param>
 		/// <param name="projection">Restrict information returned to a set of selected fields.</param>
@@ -6108,7 +6113,10 @@ namespace MyNS
 		/// Directory_resources_buildings_list admin/directory/v1/customer/{customer}/resources/buildings
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Buildings> Directory_resources_buildings_listAsync(string customer, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6336,7 +6344,10 @@ namespace MyNS
 		/// Directory_resources_calendars_list admin/directory/v1/customer/{customer}/resources/calendars
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderBy">Field(s) to sort results by in either ascending or descending order. Supported fields include `resourceId`, `resourceName`, `capacity`, `buildingId`, and `floorName`. If no order is specified, defaults to ascending. Should be of the form "field [asc|desc], field [asc|desc], ...". For example `buildingId, capacity desc` would return results sorted first by `buildingId` in ascending order then by `capacity` in descending order.</param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>
 		/// <param name="query">String query used to filter results. Should be of the form "field operator value" where field can be any of supported fields and operators can be any of supported operations. Operators include '=' for exact match, '!=' for mismatch and ':' for prefix match or HAS match where applicable. For prefix match, the value should always be followed by a *. Logical operators NOT and AND are supported (in this order of precedence). Supported fields include `generatedResourceName`, `name`, `buildingId`, `floor_name`, `capacity`, `featureInstances.feature.name`, `resourceEmail`, `resourceCategory`. For example `buildingId=US-NYC-9TH AND featureInstances.feature.name:Phone`.</param>
@@ -6563,7 +6574,10 @@ namespace MyNS
 		/// Directory_resources_features_list admin/directory/v1/customer/{customer}/resources/features
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Features> Directory_resources_features_listAsync(string customer, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6825,7 +6839,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.</param>
 		/// <param name="includeIndirectRoleAssignments">When set to `true`, fetches indirect role assignments (i.e. role assignment via a group) as well as direct ones. Defaults to `false`. You must specify `user_key` or the indirect role assignments will not be included.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>
 		/// <param name="roleId">Immutable ID of a role. If included in the request, returns only role assignments containing this role ID.</param>
 		/// <param name="userKey">The primary email address, alias email address, or unique user or group ID. If included in the request, returns role assignments only for this user or group.</param>
@@ -6968,7 +6985,10 @@ namespace MyNS
 		/// Directory_roles_list admin/directory/v1/customer/{customer}/roles
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Roles> Directory_roles_listAsync(string customer, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7344,7 +7364,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.</param>
 		/// <param name="domain">The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.</param>
-		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 200.</param>
+		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 200.
+		/// Minimum: 1
+		// </param>
 		/// <param name="orderBy">Column to use for sorting results</param>
 		/// <param name="pageToken">Token to specify next page in the list</param>
 		/// <param name="query">Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-groups</param>
@@ -7708,7 +7730,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="groupKey">Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.</param>
 		/// <param name="includeDerivedMembership">Whether to list indirect memberships. Default: false.</param>
-		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 200.</param>
+		/// <param name="maxResults">Maximum number of results to return. Max allowed value is 200.
+		/// Minimum: 1
+		// </param>
 		/// <param name="pageToken">Token to specify next page in the list.</param>
 		/// <param name="roles">The `roles` query parameter allows you to retrieve group members by role. Allowed values are `OWNER`, `MANAGER`, and `MEMBER`.</param>
 		/// <returns>Successful response</returns>
@@ -7937,7 +7961,10 @@ namespace MyNS
 		/// <param name="customer">The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.</param>
 		/// <param name="domain">The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.</param>
 		/// <param name="_event">Event on which subscription is intended (if subscribing)</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderBy">Property to use for sorting results.</param>
 		/// <param name="pageToken">Token to specify next page in the list</param>
 		/// <param name="projection">What subset of fields to fetch for this user.</param>
@@ -8023,7 +8050,10 @@ namespace MyNS
 		/// <param name="customer">Immutable ID of the Google Workspace account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.</param>
 		/// <param name="domain">Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead."</param>
 		/// <param name="_event">Events to watch for.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderBy">Column to use for sorting results</param>
 		/// <param name="pageToken">Token to specify next page in the list</param>
 		/// <param name="projection">What subset of fields to fetch for this user.</param>

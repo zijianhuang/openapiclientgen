@@ -112,7 +112,9 @@ export namespace MyNS {
 		 * @param {string} prefix Filters results to filesystems within the specified prefix.
 		 * @param {string} continuation The number of filesystems returned with each invocation is limited. If the number of filesystems to be returned exceeds this limit, a continuation token is returned in the response header x-ms-continuation. When a continuation token is  returned in the response, it must be specified in a subsequent invocation of the list operation to continue listing the filesystems.
 		 * @param {number} maxResults An optional value that specifies the maximum number of items to return. If omitted or greater than 5,000, the response will include up to 5,000 items.
+		 *     Minimum: 1
 		 * @param {number} timeout An optional operation timeout value in seconds. The period begins when the request is received by the service. If the timeout value elapses before the operation completes, the operation fails.
+		 *     Minimum: 1
 		 * @return {FilesystemList} OK
 		 */
 		Filesystem_List(resource: Filesystem_ListResource, prefix: string | null | undefined, continuation: string | null | undefined, maxResults: number | null | undefined, timeout: number | null | undefined): Observable<FilesystemList> {
@@ -127,6 +129,7 @@ export namespace MyNS {
 		 * @param {boolean} recursive If "true", all paths are listed; otherwise, only paths at the root of the filesystem are listed.  If "directory" is specified, the list will only include paths that share the same root.
 		 * @param {string} continuation The number of paths returned with each invocation is limited. If the number of paths to be returned exceeds this limit, a continuation token is returned in the response header x-ms-continuation. When a continuation token is  returned in the response, it must be specified in a subsequent invocation of the list operation to continue listing the paths.
 		 * @param {number} maxResults An optional value that specifies the maximum number of items to return. If omitted or greater than 5,000, the response will include up to 5,000 items.
+		 *     Minimum: 1
 		 * @param {boolean} upn Optional. Valid only when Hierarchical Namespace is enabled for the account. If "true", the user identity values returned in the owner and group fields of each list entry will be transformed from Azure Active Directory Object IDs to User Principal Names.  If "false", the values will be returned as Azure Active Directory Object IDs. The default value is false. Note that group and application Object IDs are not translated because they do not have unique friendly names.
 		 * @return {PathList} Ok
 		 */

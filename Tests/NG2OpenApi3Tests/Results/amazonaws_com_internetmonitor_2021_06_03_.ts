@@ -947,6 +947,7 @@ export namespace MyNS {
 		 * Get v20210603/Monitors
 		 * @param {string} NextToken The token for the next set of results. You receive this token from a previous call.
 		 * @param {number} MaxResults The number of monitor objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} MonitorStatus <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p> <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
 		 * @return {ListMonitorsOutput} Success
 		 */
@@ -958,6 +959,7 @@ export namespace MyNS {
 		 * Deletes a monitor in Amazon CloudWatch Internet Monitor.
 		 * Delete v20210603/Monitors/{MonitorName}
 		 * @param {string} MonitorName The name of the monitor to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteMonitorOutput} Success
 		 */
 		DeleteMonitor(MonitorName: string): Observable<DeleteMonitorOutput> {
@@ -968,6 +970,7 @@ export namespace MyNS {
 		 * Gets information about a monitor in Amazon CloudWatch Internet Monitor based on a monitor name. The information returned includes the Amazon Resource Name (ARN), create time, modified time, resources included in the monitor, and status information.
 		 * Get v20210603/Monitors/{MonitorName}
 		 * @param {string} MonitorName The name of the monitor.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetMonitorOutput} Success
 		 */
 		GetMonitor(MonitorName: string): Observable<GetMonitorOutput> {
@@ -978,6 +981,7 @@ export namespace MyNS {
 		 * <p>Updates a monitor. You can update a monitor to change the percentage of traffic to monitor or the maximum number of city-networks (locations and ASNs), to add or remove resources, or to change the status of the monitor. Note that you can't change the name of a monitor.</p> <p>The city-network maximum that you choose is the limit, but you only pay for the number of city-networks that are actually monitored. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 		 * Patch v20210603/Monitors/{MonitorName}
 		 * @param {string} MonitorName The name of the monitor. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateMonitorOutput} Success
 		 */
 		UpdateMonitor(MonitorName: string, requestBody: UpdateMonitorPatchBody): Observable<UpdateMonitorOutput> {
@@ -988,7 +992,9 @@ export namespace MyNS {
 		 * <p>Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all the information related to the event, by location.</p> <p>The information returned includes the impact on performance, availability, and round-trip time, information about the network providers (ASNs), the event type, and so on.</p> <p>Information rolled up at the global traffic level is also returned, including the impact type and total traffic impact.</p>
 		 * Get v20210603/Monitors/{MonitorName}/HealthEvents/{EventId}
 		 * @param {string} MonitorName The name of the monitor.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} EventId The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetHealthEventOutput} Success
 		 */
 		GetHealthEvent(MonitorName: string, EventId: string): Observable<GetHealthEventOutput> {
@@ -999,10 +1005,12 @@ export namespace MyNS {
 		 * <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns information for health events including the event start and end time and the status.</p> <note> <p>Health events that have start times during the time frame that is requested are not included in the list of health events.</p> </note>
 		 * Get v20210603/Monitors/{MonitorName}/HealthEvents
 		 * @param {string} MonitorName The name of the monitor.
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} StartTime The time when a health event started.
 		 * @param {Date} EndTime The time when a health event ended. If the health event is still ongoing, then the end time is not set.
 		 * @param {string} NextToken The token for the next set of results. You receive this token from a previous call.
 		 * @param {number} MaxResults The number of health event objects that you want to return with this call. 
+		 *     Minimum: 1    Maximum: 25
 		 * @param {HealthEventStatus} EventStatus The status of a health event.
 		 * @return {ListHealthEventsOutput} Success
 		 */
@@ -1014,6 +1022,7 @@ export namespace MyNS {
 		 * Lists the tags for a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) for a resource.
+		 *     Min length: 20    Max length: 512
 		 * @return {ListTagsForResourceOutput} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceOutput> {
@@ -1024,6 +1033,7 @@ export namespace MyNS {
 		 * <p>Adds a tag to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor. You can add a maximum of 50 tags in Internet Monitor.</p> <p>A minimum of one tag is required for this call. It returns an error if you use the <code>TagResource</code> request with 0 tags.</p>
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) for a tag that you add to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor.
+		 *     Min length: 20    Max length: 512
 		 * @return {void} 
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -1034,7 +1044,9 @@ export namespace MyNS {
 		 * Removes a tag from a resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) for a tag you remove a resource from.
+		 *     Min length: 20    Max length: 512
 		 * @param {Array<string>} tagKeys Tag keys that you remove from a resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -1047,8 +1059,8 @@ export namespace MyNS {
 		/**
 		 * The name of the monitor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MonitorName: string;
 
@@ -1086,8 +1098,8 @@ export namespace MyNS {
 		/**
 		 * The name of the monitor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MonitorName: FormControl<string | null | undefined>,
 

@@ -57,7 +57,10 @@ export namespace MyNS {
 		/** The digit that terminates a DTMF digit sequence. */
 		finishDigit?: string | null;
 
-		/** Max length of DTMF digits. */
+		/**
+		 * Max length of DTMF digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDigits?: number | null;
 	}
 
@@ -70,7 +73,10 @@ export namespace MyNS {
 		/** The digit that terminates a DTMF digit sequence. */
 		finishDigit: FormControl<string | null | undefined>,
 
-		/** Max length of DTMF digits. */
+		/**
+		 * Max length of DTMF digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDigits: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettingsFormGroup() {
@@ -156,7 +162,10 @@ export namespace MyNS {
 		/** Optional. A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood. See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details. */
 		phraseHints?: Array<string>;
 
-		/** Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
 		/** Optional. If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. */
@@ -178,7 +187,10 @@ export namespace MyNS {
 		/** Optional. Which variant of the Speech model to use. */
 		modelVariant: FormControl<GoogleCloudDialogflowCxV3InputAudioConfigModelVariant | null | undefined>,
 
-		/** Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 
 		/** Optional. If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. */
@@ -280,7 +292,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -293,7 +308,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1416,7 +1434,10 @@ export namespace MyNS {
 		/** The collection of parameters associated with the intent. */
 		parameters?: Array<GoogleCloudDialogflowCxV3IntentParameter>;
 
-		/** The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** The collection of training phrases the agent is trained on to identify the intent. */
@@ -1441,7 +1462,10 @@ export namespace MyNS {
 		/** The unique identifier of the intent. Required for the Intents.UpdateIntent method. Intents.CreateIntent populates the name automatically. Format: `projects//locations//agents//intents/`. */
 		name: FormControl<string | null | undefined>,
 
-		/** The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3IntentFormGroup() {
@@ -1508,7 +1532,10 @@ export namespace MyNS {
 		/** Required. The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase. Note: The API does not automatically annotate training phrases like the Dialogflow Console does. Note: Do not forget to include whitespace at part boundaries, so the training phrase is well formatted when the parts are concatenated. If the training phrase does not need to be annotated with parameters, you just need a single part with only the Part.text field set. If you want to annotate the training phrase, you must create multiple parts, where the fields of each part are populated in one of two ways: - `Part.text` is set to a part of the phrase that has no parameters. - `Part.text` is set to a part of the phrase that you want to annotate, and the `parameter_id` field is set. */
 		parts?: Array<GoogleCloudDialogflowCxV3IntentTrainingPhrasePart>;
 
-		/** Indicates how many times this example was added to the intent. */
+		/**
+		 * Indicates how many times this example was added to the intent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount?: number | null;
 	}
 
@@ -1518,7 +1545,10 @@ export namespace MyNS {
 		/** Output only. The unique identifier of the training phrase. */
 		id: FormControl<string | null | undefined>,
 
-		/** Indicates how many times this example was added to the intent. */
+		/**
+		 * Indicates how many times this example was added to the intent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3IntentTrainingPhraseFormGroup() {
@@ -1638,10 +1668,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage?: boolean | null;
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude?: number | null;
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore?: number | null;
 
 		/** Whether user was specifically asking for a live agent. */
@@ -1669,10 +1705,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage: FormControl<boolean | null | undefined>,
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore: FormControl<number | null | undefined>,
 
 		/** Whether user was specifically asking for a live agent. */
@@ -2831,7 +2873,10 @@ export namespace MyNS {
 	/** Represents intent information communicated to the webhook. */
 	export interface GoogleCloudDialogflowCxV3WebhookRequestIntentInfo {
 
-		/** The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Always present. The display name of the last matched intent. */
@@ -2847,7 +2892,10 @@ export namespace MyNS {
 	/** Represents intent information communicated to the webhook. */
 	export interface GoogleCloudDialogflowCxV3WebhookRequestIntentInfoFormProperties {
 
-		/** The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Always present. The display name of the last matched intent. */
@@ -2901,20 +2949,32 @@ export namespace MyNS {
 	/** Represents the result of sentiment analysis. */
 	export interface GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResult {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Represents the result of sentiment analysis. */
 	export interface GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResultFormProperties {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResultFormGroup() {
@@ -3049,7 +3109,10 @@ export namespace MyNS {
 		/** The digit that terminates a DTMF digit sequence. */
 		finishDigit?: string | null;
 
-		/** Max length of DTMF digits. */
+		/**
+		 * Max length of DTMF digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDigits?: number | null;
 	}
 
@@ -3062,7 +3125,10 @@ export namespace MyNS {
 		/** The digit that terminates a DTMF digit sequence. */
 		finishDigit: FormControl<string | null | undefined>,
 
-		/** Max length of DTMF digits. */
+		/**
+		 * Max length of DTMF digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDigits: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3beta1AdvancedSettingsDtmfSettingsFormGroup() {
@@ -3148,7 +3214,10 @@ export namespace MyNS {
 		/** Optional. A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood. See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details. */
 		phraseHints?: Array<string>;
 
-		/** Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
 		/** Optional. If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. */
@@ -3170,7 +3239,10 @@ export namespace MyNS {
 		/** Optional. Which variant of the Speech model to use. */
 		modelVariant: FormControl<GoogleCloudDialogflowCxV3InputAudioConfigModelVariant | null | undefined>,
 
-		/** Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 
 		/** Optional. If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. */
@@ -4360,7 +4432,10 @@ export namespace MyNS {
 		/** The collection of parameters associated with the intent. */
 		parameters?: Array<GoogleCloudDialogflowCxV3beta1IntentParameter>;
 
-		/** The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** The collection of training phrases the agent is trained on to identify the intent. */
@@ -4385,7 +4460,10 @@ export namespace MyNS {
 		/** The unique identifier of the intent. Required for the Intents.UpdateIntent method. Intents.CreateIntent populates the name automatically. Format: `projects//locations//agents//intents/`. */
 		name: FormControl<string | null | undefined>,
 
-		/** The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3beta1IntentFormGroup() {
@@ -4452,7 +4530,10 @@ export namespace MyNS {
 		/** Required. The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase. Note: The API does not automatically annotate training phrases like the Dialogflow Console does. Note: Do not forget to include whitespace at part boundaries, so the training phrase is well formatted when the parts are concatenated. If the training phrase does not need to be annotated with parameters, you just need a single part with only the Part.text field set. If you want to annotate the training phrase, you must create multiple parts, where the fields of each part are populated in one of two ways: - `Part.text` is set to a part of the phrase that has no parameters. - `Part.text` is set to a part of the phrase that you want to annotate, and the `parameter_id` field is set. */
 		parts?: Array<GoogleCloudDialogflowCxV3beta1IntentTrainingPhrasePart>;
 
-		/** Indicates how many times this example was added to the intent. */
+		/**
+		 * Indicates how many times this example was added to the intent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount?: number | null;
 	}
 
@@ -4462,7 +4543,10 @@ export namespace MyNS {
 		/** Output only. The unique identifier of the training phrase. */
 		id: FormControl<string | null | undefined>,
 
-		/** Indicates how many times this example was added to the intent. */
+		/**
+		 * Indicates how many times this example was added to the intent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3beta1IntentTrainingPhraseFormGroup() {
@@ -4578,10 +4662,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage?: boolean | null;
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude?: number | null;
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore?: number | null;
 
 		/** Whether user was specifically asking for a live agent. */
@@ -4609,10 +4699,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage: FormControl<boolean | null | undefined>,
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore: FormControl<number | null | undefined>,
 
 		/** Whether user was specifically asking for a live agent. */
@@ -5763,7 +5859,10 @@ export namespace MyNS {
 	/** Represents intent information communicated to the webhook. */
 	export interface GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfo {
 
-		/** The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Always present. The display name of the last matched intent. */
@@ -5779,7 +5878,10 @@ export namespace MyNS {
 	/** Represents intent information communicated to the webhook. */
 	export interface GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfoFormProperties {
 
-		/** The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Always present. The display name of the last matched intent. */
@@ -5833,20 +5935,32 @@ export namespace MyNS {
 	/** Represents the result of sentiment analysis. */
 	export interface GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Represents the result of sentiment analysis. */
 	export interface GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResultFormProperties {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResultFormGroup() {
@@ -5935,7 +6049,10 @@ export namespace MyNS {
 		/** Optional. The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted [Web Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo) integration. */
 		avatarUri?: string | null;
 
-		/** Optional. To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used. */
+		/**
+		 * Optional. To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used.
+		 * Type: float
+		 */
 		classificationThreshold?: number | null;
 
 		/** Required. The default language of the agent as a language tag. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. This field cannot be set by the `Update` method. */
@@ -5975,7 +6092,10 @@ export namespace MyNS {
 		/** Optional. The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted [Web Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo) integration. */
 		avatarUri: FormControl<string | null | undefined>,
 
-		/** Optional. To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used. */
+		/**
+		 * Optional. To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used.
+		 * Type: float
+		 */
 		classificationThreshold: FormControl<number | null | undefined>,
 
 		/** Required. The default language of the agent as a language tag. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. This field cannot be set by the `Update` method. */
@@ -6161,7 +6281,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord?: string | null;
 
-		/** Article match confidence. The system's confidence score that this article is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Article match confidence. The system's confidence score that this article is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -6183,7 +6306,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** Article match confidence. The system's confidence score that this article is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Article match confidence. The system's confidence score that this article is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -6293,7 +6419,10 @@ export namespace MyNS {
 		/** An intent categorizes an end-user's intention for one conversation turn. For each agent, you define many intents, where your combined intents can handle a complete conversation. When an end-user writes or says something, referred to as an end-user expression or end-user input, Dialogflow matches the end-user input to the best intent in your agent. Matching an intent is also known as intent classification. For more information, see the [intent guide](https://cloud.google.com/dialogflow/docs/intents-overview). */
 		intent?: GoogleCloudDialogflowV2Intent;
 
-		/** The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list. */
+		/**
+		 * The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list.
+		 * Type: float
+		 */
 		intentDetectionConfidence?: number | null;
 
 		/** The language that was triggered during intent detection. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. */
@@ -6311,7 +6440,10 @@ export namespace MyNS {
 		/** The result of sentiment analysis. Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. For Participants.DetectIntent, it needs to be configured in DetectIntentRequest.query_params. For Participants.StreamingDetectIntent, it needs to be configured in StreamingDetectIntentRequest.query_params. And for Participants.AnalyzeContent and Participants.StreamingAnalyzeContent, it needs to be configured in ConversationProfile.human_agent_assistant_config */
 		sentimentAnalysisResult?: GoogleCloudDialogflowV2SentimentAnalysisResult;
 
-		/** The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. */
+		/**
+		 * The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult.
+		 * Type: float
+		 */
 		speechRecognitionConfidence?: number | null;
 
 		/** If the query was fulfilled by a webhook call, this field is set to the value of the `payload` field returned in the webhook response. */
@@ -6339,7 +6471,10 @@ export namespace MyNS {
 		/** The text to be pronounced to the user or shown on the screen. Note: This is a legacy field, `fulfillment_messages` should be preferred. */
 		fulfillmentText: FormControl<string | null | undefined>,
 
-		/** The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list. */
+		/**
+		 * The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list.
+		 * Type: float
+		 */
 		intentDetectionConfidence: FormControl<number | null | undefined>,
 
 		/** The language that was triggered during intent detection. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. */
@@ -6351,7 +6486,10 @@ export namespace MyNS {
 		/** The original conversational query text: - If natural language text was provided as input, `query_text` contains a copy of the input. - If natural language speech audio was provided as input, `query_text` contains the speech recognition result. If speech recognizer produced multiple alternatives, a particular one is picked. - If automatic spell correction is enabled, `query_text` will contain the corrected user input. */
 		queryText: FormControl<string | null | undefined>,
 
-		/** The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. */
+		/**
+		 * The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult.
+		 * Type: float
+		 */
 		speechRecognitionConfidence: FormControl<number | null | undefined>,
 
 		/** If the query was fulfilled by a webhook call, this field is set to the value of the `payload` field returned in the webhook response. */
@@ -7254,7 +7392,10 @@ export namespace MyNS {
 		/** Read-only after creation. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent. It identifies the parent followup intent. Format: `projects//agent/intents/`. */
 		parentFollowupIntentName?: string | null;
 
-		/** Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Optional. Indicates whether to delete all contexts in the current session when this intent is matched. */
@@ -7297,7 +7438,10 @@ export namespace MyNS {
 		/** Read-only after creation. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent. It identifies the parent followup intent. Format: `projects//agent/intents/`. */
 		parentFollowupIntentName: FormControl<string | null | undefined>,
 
-		/** Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Optional. Indicates whether to delete all contexts in the current session when this intent is matched. */
@@ -7359,7 +7503,10 @@ export namespace MyNS {
 	/** Dialogflow contexts are similar to natural language context. If a person says to you "they are orange", you need context in order to understand what "they" is referring to. Similarly, for Dialogflow to handle an end-user expression like that, it needs to be provided with context in order to correctly match an intent. Using contexts, you can control the flow of a conversation. You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, Dialogflow is more likely to match intents that are configured with input contexts that correspond to the currently active contexts. For more information about context, see the [Contexts guide](https://cloud.google.com/dialogflow/docs/contexts-overview). */
 	export interface GoogleCloudDialogflowV2Context {
 
-		/** Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries. */
+		/**
+		 * Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lifespanCount?: number | null;
 
 		/** Required. The unique identifier of the context. Format: `projects//agent/sessions//contexts/`, or `projects//agent/environments//users//sessions//contexts/`. The `Context ID` is always converted to lowercase, may only contain characters in `a-zA-Z0-9_-%` and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size` */
@@ -7372,7 +7519,10 @@ export namespace MyNS {
 	/** Dialogflow contexts are similar to natural language context. If a person says to you "they are orange", you need context in order to understand what "they" is referring to. Similarly, for Dialogflow to handle an end-user expression like that, it needs to be provided with context in order to correctly match an intent. Using contexts, you can control the flow of a conversation. You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, Dialogflow is more likely to match intents that are configured with input contexts that correspond to the currently active contexts. For more information about context, see the [Contexts guide](https://cloud.google.com/dialogflow/docs/contexts-overview). */
 	export interface GoogleCloudDialogflowV2ContextFormProperties {
 
-		/** Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries. */
+		/**
+		 * Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lifespanCount: FormControl<number | null | undefined>,
 
 		/** Required. The unique identifier of the context. Format: `projects//agent/sessions//contexts/`, or `projects//agent/environments//users//sessions//contexts/`. The `Context ID` is always converted to lowercase, may only contain characters in `a-zA-Z0-9_-%` and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size` */
@@ -7466,7 +7616,10 @@ export namespace MyNS {
 		/** Required. The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase. Note: The API does not automatically annotate training phrases like the Dialogflow Console does. Note: Do not forget to include whitespace at part boundaries, so the training phrase is well formatted when the parts are concatenated. If the training phrase does not need to be annotated with parameters, you just need a single part with only the Part.text field set. If you want to annotate the training phrase, you must create multiple parts, where the fields of each part are populated in one of two ways: - `Part.text` is set to a part of the phrase that has no parameters. - `Part.text` is set to a part of the phrase that you want to annotate, and the `entity_type`, `alias`, and `user_defined` fields are all set. */
 		parts?: Array<GoogleCloudDialogflowV2IntentTrainingPhrasePart>;
 
-		/** Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased. */
+		/**
+		 * Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timesAddedCount?: number | null;
 
 		/** Required. The type of the training phrase. */
@@ -7479,7 +7632,10 @@ export namespace MyNS {
 		/** Output only. The unique identifier of this training phrase. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased. */
+		/**
+		 * Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timesAddedCount: FormControl<number | null | undefined>,
 
 		/** Required. The type of the training phrase. */
@@ -7561,20 +7717,32 @@ export namespace MyNS {
 	/** The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result. */
 	export interface GoogleCloudDialogflowV2Sentiment {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result. */
 	export interface GoogleCloudDialogflowV2SentimentFormProperties {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2SentimentFormGroup() {
@@ -7595,7 +7763,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord?: string | null;
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -7617,7 +7788,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -7808,20 +7982,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface GoogleTypeLatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface GoogleTypeLatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeLatLngFormGroup() {
@@ -7917,7 +8103,10 @@ export namespace MyNS {
 		/** Required. Audio encoding of the synthesized audio content. */
 		audioEncoding?: GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding | null;
 
-		/** The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality). */
+		/**
+		 * The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
 		/** Configuration of how speech should be synthesized. */
@@ -7930,7 +8119,10 @@ export namespace MyNS {
 		/** Required. Audio encoding of the synthesized audio content. */
 		audioEncoding: FormControl<GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding | null | undefined>,
 
-		/** The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality). */
+		/**
+		 * The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2OutputAudioConfigFormGroup() {
@@ -7950,29 +8142,47 @@ export namespace MyNS {
 		/** Optional. An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech. Effects are applied on top of each other in the order they are given. */
 		effectsProfileId?: Array<string>;
 
-		/** Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch. */
+		/**
+		 * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch.
+		 * Type: double
+		 */
 		pitch?: number | null;
 
-		/** Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error. */
+		/**
+		 * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error.
+		 * Type: double
+		 */
 		speakingRate?: number | null;
 
 		/** Description of which voice to use for speech synthesis. */
 		voice?: GoogleCloudDialogflowV2VoiceSelectionParams;
 
-		/** Optional. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. We strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that. */
+		/**
+		 * Optional. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. We strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that.
+		 * Type: double
+		 */
 		volumeGainDb?: number | null;
 	}
 
 	/** Configuration of how speech should be synthesized. */
 	export interface GoogleCloudDialogflowV2SynthesizeSpeechConfigFormProperties {
 
-		/** Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch. */
+		/**
+		 * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch.
+		 * Type: double
+		 */
 		pitch: FormControl<number | null | undefined>,
 
-		/** Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error. */
+		/**
+		 * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error.
+		 * Type: double
+		 */
 		speakingRate: FormControl<number | null | undefined>,
 
-		/** Optional. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. We strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that. */
+		/**
+		 * Optional. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. We strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that.
+		 * Type: double
+		 */
 		volumeGainDb: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2SynthesizeSpeechConfigFormGroup() {
@@ -8233,7 +8443,10 @@ export namespace MyNS {
 		/** Articles ordered by score in descending order. */
 		articleAnswers?: Array<GoogleCloudDialogflowV2ArticleAnswer>;
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -8243,7 +8456,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestArticles. */
 	export interface GoogleCloudDialogflowV2SuggestArticlesResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -8261,7 +8477,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestFaqAnswers. */
 	export interface GoogleCloudDialogflowV2SuggestFaqAnswersResponse {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Answers extracted from FAQ documents. */
@@ -8274,7 +8493,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestFaqAnswers. */
 	export interface GoogleCloudDialogflowV2SuggestFaqAnswersResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -8292,7 +8514,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2SuggestSmartRepliesResponse {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -8305,7 +8530,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2SuggestSmartRepliesResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -8326,7 +8554,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord?: string | null;
 
-		/** Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The content of the reply. */
@@ -8339,7 +8570,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The content of the reply. */
@@ -9454,7 +9688,10 @@ export namespace MyNS {
 		/** The allowlist document resource name. Format: `projects//knowledgeBases//documents/`. Only used for smart compose model. */
 		allowlistDocument?: string | null;
 
-		/** Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate. */
+		/**
+		 * Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount?: number | null;
 	}
 
@@ -9464,7 +9701,10 @@ export namespace MyNS {
 		/** The allowlist document resource name. Format: `projects//knowledgeBases//documents/`. Only used for smart compose model. */
 		allowlistDocument: FormControl<string | null | undefined>,
 
-		/** Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate. */
+		/**
+		 * Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2EvaluationConfigSmartComposeConfigFormGroup() {
@@ -9482,7 +9722,10 @@ export namespace MyNS {
 		/** The allowlist document resource name. Format: `projects//knowledgeBases//documents/`. Only used for smart reply model. */
 		allowlistDocument?: string | null;
 
-		/** Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate. */
+		/**
+		 * Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount?: number | null;
 	}
 
@@ -9492,7 +9735,10 @@ export namespace MyNS {
 		/** The allowlist document resource name. Format: `projects//knowledgeBases//documents/`. Only used for smart reply model. */
 		allowlistDocument: FormControl<string | null | undefined>,
 
-		/** Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate. */
+		/**
+		 * Required. The model to be evaluated can return multiple results with confidence score on each query. These results will be sorted by the descending order of the scores and we only keep the first max_result_count results as the final results to evaluate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2EvaluationConfigSmartReplyConfigFormGroup() {
@@ -9507,7 +9753,10 @@ export namespace MyNS {
 	/** The evaluation metrics for smart reply model. */
 	export interface GoogleCloudDialogflowV2SmartReplyMetrics {
 
-		/** Percentage of target participant messages in the evaluation dataset for which similar messages have appeared at least once in the allowlist. Should be [0, 1]. */
+		/**
+		 * Percentage of target participant messages in the evaluation dataset for which similar messages have appeared at least once in the allowlist. Should be [0, 1].
+		 * Type: float
+		 */
 		allowlistCoverage?: number | null;
 
 		/** Total number of conversations used to generate this metric. */
@@ -9520,7 +9769,10 @@ export namespace MyNS {
 	/** The evaluation metrics for smart reply model. */
 	export interface GoogleCloudDialogflowV2SmartReplyMetricsFormProperties {
 
-		/** Percentage of target participant messages in the evaluation dataset for which similar messages have appeared at least once in the allowlist. Should be [0, 1]. */
+		/**
+		 * Percentage of target participant messages in the evaluation dataset for which similar messages have appeared at least once in the allowlist. Should be [0, 1].
+		 * Type: float
+		 */
 		allowlistCoverage: FormControl<number | null | undefined>,
 
 		/** Total number of conversations used to generate this metric. */
@@ -9538,20 +9790,32 @@ export namespace MyNS {
 	/** Evaluation metrics when retrieving `n` smart replies with the model. */
 	export interface GoogleCloudDialogflowV2SmartReplyMetricsTopNMetrics {
 
-		/** Number of retrieved smart replies. For example, when `n` is 3, this evaluation contains metrics for when Dialogflow retrieves 3 smart replies with the model. */
+		/**
+		 * Number of retrieved smart replies. For example, when `n` is 3, this evaluation contains metrics for when Dialogflow retrieves 3 smart replies with the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		n?: number | null;
 
-		/** Defined as `number of queries whose top n smart replies have at least one similar (token match similarity above the defined threshold) reply as the real reply` divided by `number of queries with at least one smart reply`. Value ranges from 0.0 to 1.0 inclusive. */
+		/**
+		 * Defined as `number of queries whose top n smart replies have at least one similar (token match similarity above the defined threshold) reply as the real reply` divided by `number of queries with at least one smart reply`. Value ranges from 0.0 to 1.0 inclusive.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Evaluation metrics when retrieving `n` smart replies with the model. */
 	export interface GoogleCloudDialogflowV2SmartReplyMetricsTopNMetricsFormProperties {
 
-		/** Number of retrieved smart replies. For example, when `n` is 3, this evaluation contains metrics for when Dialogflow retrieves 3 smart replies with the model. */
+		/**
+		 * Number of retrieved smart replies. For example, when `n` is 3, this evaluation contains metrics for when Dialogflow retrieves 3 smart replies with the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		n: FormControl<number | null | undefined>,
 
-		/** Defined as `number of queries whose top n smart replies have at least one similar (token match similarity above the defined threshold) reply as the real reply` divided by `number of queries with at least one smart reply`. Value ranges from 0.0 to 1.0 inclusive. */
+		/**
+		 * Defined as `number of queries whose top n smart replies have at least one similar (token match similarity above the defined threshold) reply as the real reply` divided by `number of queries with at least one smart reply`. Value ranges from 0.0 to 1.0 inclusive.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2SmartReplyMetricsTopNMetricsFormGroup() {
@@ -9781,14 +10045,20 @@ export namespace MyNS {
 	/** Config to process conversation. */
 	export interface GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig {
 
-		/** Number of recent non-small-talk sentences to use as context for article and FAQ suggestion */
+		/**
+		 * Number of recent non-small-talk sentences to use as context for article and FAQ suggestion
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recentSentencesCount?: number | null;
 	}
 
 	/** Config to process conversation. */
 	export interface GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfigFormProperties {
 
-		/** Number of recent non-small-talk sentences to use as context for article and FAQ suggestion */
+		/**
+		 * Number of recent non-small-talk sentences to use as context for article and FAQ suggestion
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recentSentencesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfigFormGroup() {
@@ -9802,7 +10072,10 @@ export namespace MyNS {
 	/** Config for suggestion query. */
 	export interface GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig {
 
-		/** Confidence threshold of query result. Agent Assist gives each suggestion a score in the range [0.0, 1.0], based on the relevance between the suggestion and the current conversation context. A score of 0.0 has no relevance, while a score of 1.0 has high relevance. Only suggestions with a score greater than or equal to the value of this field are included in the results. For a baseline model (the default), the recommended value is in the range [0.05, 0.1]. For a custom model, there is no recommended value. Tune this value by starting from a very low value and slowly increasing until you have desired results. If this field is not set, it defaults to 0.0, which means that all suggestions are returned. Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE, KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION. */
+		/**
+		 * Confidence threshold of query result. Agent Assist gives each suggestion a score in the range [0.0, 1.0], based on the relevance between the suggestion and the current conversation context. A score of 0.0 has no relevance, while a score of 1.0 has high relevance. Only suggestions with a score greater than or equal to the value of this field are included in the results. For a baseline model (the default), the recommended value is in the range [0.05, 0.1]. For a custom model, there is no recommended value. Tune this value by starting from a very low value and slowly increasing until you have desired results. If this field is not set, it defaults to 0.0, which means that all suggestions are returned. Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE, KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
 		/** Settings that determine how to filter recent conversation context when generating suggestions. */
@@ -9817,7 +10090,10 @@ export namespace MyNS {
 		/** Knowledge base source settings. Supported features: ARTICLE_SUGGESTION, FAQ. */
 		knowledgeBaseQuerySource?: GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigKnowledgeBaseQuerySource;
 
-		/** Maximum number of results to return. Currently, if unset, defaults to 10. And the max number is 20. */
+		/**
+		 * Maximum number of results to return. Currently, if unset, defaults to 10. And the max number is 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** Custom sections to return when requesting a summary of a conversation. This is only supported when `baseline_model_version` == '2.0'. Supported features: CONVERSATION_SUMMARIZATION, CONVERSATION_SUMMARIZATION_VOICE. */
@@ -9827,10 +10103,16 @@ export namespace MyNS {
 	/** Config for suggestion query. */
 	export interface GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigFormProperties {
 
-		/** Confidence threshold of query result. Agent Assist gives each suggestion a score in the range [0.0, 1.0], based on the relevance between the suggestion and the current conversation context. A score of 0.0 has no relevance, while a score of 1.0 has high relevance. Only suggestions with a score greater than or equal to the value of this field are included in the results. For a baseline model (the default), the recommended value is in the range [0.05, 0.1]. For a custom model, there is no recommended value. Tune this value by starting from a very low value and slowly increasing until you have desired results. If this field is not set, it defaults to 0.0, which means that all suggestions are returned. Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE, KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION. */
+		/**
+		 * Confidence threshold of query result. Agent Assist gives each suggestion a score in the range [0.0, 1.0], based on the relevance between the suggestion and the current conversation context. A score of 0.0 has no relevance, while a score of 1.0 has high relevance. Only suggestions with a score greater than or equal to the value of this field are included in the results. For a baseline model (the default), the recommended value is in the range [0.05, 0.1]. For a custom model, there is no recommended value. Tune this value by starting from a very low value and slowly increasing until you have desired results. If this field is not set, it defaults to 0.0, which means that all suggestions are returned. Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE, KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Maximum number of results to return. Currently, if unset, defaults to 10. And the max number is 20. */
+		/**
+		 * Maximum number of results to return. Currently, if unset, defaults to 10. And the max number is 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigFormGroup() {
@@ -10509,7 +10791,10 @@ export namespace MyNS {
 		/** A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood. See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details. This field is deprecated. Please use [`speech_contexts`]() instead. If you specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will treat the [`phrase_hints`]() as a single additional [`SpeechContext`](). */
 		phraseHints?: Array<string>;
 
-		/** Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
 		/** If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. Note: When specified, InputAudioConfig.single_utterance takes precedence over StreamingDetectIntentRequest.single_utterance. */
@@ -10543,7 +10828,10 @@ export namespace MyNS {
 		/** Which variant of the Speech model to use. */
 		modelVariant: FormControl<GoogleCloudDialogflowCxV3InputAudioConfigModelVariant | null | undefined>,
 
-		/** Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. */
+		/**
+		 * Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 
 		/** If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. Note: When specified, InputAudioConfig.single_utterance takes precedence over StreamingDetectIntentRequest.single_utterance. */
@@ -10568,7 +10856,10 @@ export namespace MyNS {
 	/** Hints for the speech recognizer to help with recognition in a specific conversation state. */
 	export interface GoogleCloudDialogflowV2SpeechContext {
 
-		/** Optional. Boost for this context compared to other contexts: * If the boost is positive, Dialogflow will increase the probability that the phrases in this context are recognized over similar sounding phrases. * If the boost is unspecified or non-positive, Dialogflow will not apply any boost. Dialogflow recommends that you use boosts in the range (0, 20] and that you find a value that fits your use case with binary search. */
+		/**
+		 * Optional. Boost for this context compared to other contexts: * If the boost is positive, Dialogflow will increase the probability that the phrases in this context are recognized over similar sounding phrases. * If the boost is unspecified or non-positive, Dialogflow will not apply any boost. Dialogflow recommends that you use boosts in the range (0, 20] and that you find a value that fits your use case with binary search.
+		 * Type: float
+		 */
 		boost?: number | null;
 
 		/** Optional. A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood. This list can be used to: * improve accuracy for words and phrases you expect the user to say, e.g. typical commands for your Dialogflow agent * add additional words to the speech recognizer vocabulary * ... See the [Cloud Speech documentation](https://cloud.google.com/speech-to-text/quotas) for usage limits. */
@@ -10578,7 +10869,10 @@ export namespace MyNS {
 	/** Hints for the speech recognizer to help with recognition in a specific conversation state. */
 	export interface GoogleCloudDialogflowV2SpeechContextFormProperties {
 
-		/** Optional. Boost for this context compared to other contexts: * If the boost is positive, Dialogflow will increase the probability that the phrases in this context are recognized over similar sounding phrases. * If the boost is unspecified or non-positive, Dialogflow will not apply any boost. Dialogflow recommends that you use boosts in the range (0, 20] and that you find a value that fits your use case with binary search. */
+		/**
+		 * Optional. Boost for this context compared to other contexts: * If the boost is positive, Dialogflow will increase the probability that the phrases in this context are recognized over similar sounding phrases. * If the boost is unspecified or non-positive, Dialogflow will not apply any boost. Dialogflow recommends that you use boosts in the range (0, 20] and that you find a value that fits your use case with binary search.
+		 * Type: float
+		 */
 		boost: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2SpeechContextFormGroup() {
@@ -10870,7 +11164,10 @@ export namespace MyNS {
 		/** Required. Audio encoding of the synthesized audio content. */
 		outputAudioEncoding?: GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding | null;
 
-		/** Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality). */
+		/**
+		 * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
 		/** Optional. Configuration of how speech should be synthesized, mapping from language (https://cloud.google.com/dialogflow/docs/reference/language) to SynthesizeSpeechConfig. */
@@ -10886,7 +11183,10 @@ export namespace MyNS {
 		/** Required. Audio encoding of the synthesized audio content. */
 		outputAudioEncoding: FormControl<GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding | null | undefined>,
 
-		/** Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality). */
+		/**
+		 * Optional. The synthesis sample rate (in hertz) for this audio. If not provided, then the synthesizer will use the default sample rate based on the audio encoding. If this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 
 		/** Optional. Configuration of how speech should be synthesized, mapping from language (https://cloud.google.com/dialogflow/docs/reference/language) to SynthesizeSpeechConfig. */
@@ -11096,7 +11396,10 @@ export namespace MyNS {
 		/** The name of the latest conversation message used as context for generating a Summary. If empty, the latest message of the conversation will be used. The format is specific to the user and the names of the messages provided. */
 		latestMessage?: string | null;
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxContextSize?: number | null;
 
 		/** The minimum amount of information required to generate a Summary without having a Conversation resource created. */
@@ -11109,7 +11412,10 @@ export namespace MyNS {
 		/** The name of the latest conversation message used as context for generating a Summary. If empty, the latest message of the conversation will be used. The format is specific to the user and the names of the messages provided. */
 		latestMessage: FormControl<string | null | undefined>,
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxContextSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2GenerateStatelessSummaryRequestFormGroup() {
@@ -11141,7 +11447,10 @@ export namespace MyNS {
 	/** The response message for Conversations.GenerateStatelessSummary. */
 	export interface GoogleCloudDialogflowV2GenerateStatelessSummaryResponse {
 
-		/** Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.context_size field in the request if there weren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used as context for compiling suggestion. The format is specific to the user and the names of the messages provided. */
@@ -11154,7 +11463,10 @@ export namespace MyNS {
 	/** The response message for Conversations.GenerateStatelessSummary. */
 	export interface GoogleCloudDialogflowV2GenerateStatelessSummaryResponseFormProperties {
 
-		/** Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.context_size field in the request if there weren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used as context for compiling suggestion. The format is specific to the user and the names of the messages provided. */
@@ -11300,7 +11612,10 @@ export namespace MyNS {
 		/** The resource name of the imported conversation dataset. Format: `projects//locations//conversationDatasets/` */
 		conversationDataset?: string | null;
 
-		/** Number of conversations imported successfully. */
+		/**
+		 * Number of conversations imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount?: number | null;
 	}
 
@@ -11310,7 +11625,10 @@ export namespace MyNS {
 		/** The resource name of the imported conversation dataset. Format: `projects//locations//conversationDatasets/` */
 		conversationDataset: FormControl<string | null | undefined>,
 
-		/** Number of conversations imported successfully. */
+		/**
+		 * Number of conversations imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2ImportConversationDataOperationResponseFormGroup() {
@@ -11928,7 +12246,10 @@ export namespace MyNS {
 		/** Output only. The status of this version. This field is read-only and cannot be set by create and update methods. */
 		status?: GoogleCloudDialogflowV2VersionStatus | null;
 
-		/** Output only. The sequential number of this version. This field is read-only which means it cannot be set by create and update methods. */
+		/**
+		 * Output only. The sequential number of this version. This field is read-only which means it cannot be set by create and update methods.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber?: number | null;
 	}
 
@@ -11947,7 +12268,10 @@ export namespace MyNS {
 		/** Output only. The status of this version. This field is read-only and cannot be set by create and update methods. */
 		status: FormControl<GoogleCloudDialogflowV2VersionStatus | null | undefined>,
 
-		/** Output only. The sequential number of this version. This field is read-only which means it cannot be set by create and update methods. */
+		/**
+		 * Output only. The sequential number of this version. This field is read-only which means it cannot be set by create and update methods.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2VersionFormGroup() {
@@ -12309,7 +12633,10 @@ export namespace MyNS {
 		/** Represents the parameters of human assist query. */
 		assistQueryParams?: GoogleCloudDialogflowV2AssistQueryParameters;
 
-		/** Optional. Max number of messages prior to and including latest_message to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Optional. Max number of messages prior to and including latest_message to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Optional. The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`. */
@@ -12319,7 +12646,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestArticles. */
 	export interface GoogleCloudDialogflowV2SuggestArticlesRequestFormProperties {
 
-		/** Optional. Max number of messages prior to and including latest_message to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Optional. Max number of messages prior to and including latest_message to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** Optional. The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`. */
@@ -12340,7 +12670,10 @@ export namespace MyNS {
 		/** Represents the parameters of human assist query. */
 		assistQueryParams?: GoogleCloudDialogflowV2AssistQueryParameters;
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used as context for compiling suggestion. If empty, the latest message of the conversation will be used. Format: `projects//locations//conversations//messages/`. */
@@ -12350,7 +12683,10 @@ export namespace MyNS {
 	/** The request message for Conversations.SuggestConversationSummary. */
 	export interface GoogleCloudDialogflowV2SuggestConversationSummaryRequestFormProperties {
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used as context for compiling suggestion. If empty, the latest message of the conversation will be used. Format: `projects//locations//conversations//messages/`. */
@@ -12368,7 +12704,10 @@ export namespace MyNS {
 	/** The response message for Conversations.SuggestConversationSummary. */
 	export interface GoogleCloudDialogflowV2SuggestConversationSummaryResponse {
 
-		/** Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the SuggestSummaryRequest.context_size field in the request if there weren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the SuggestSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used as context for compiling suggestion. Format: `projects//locations//conversations//messages/`. */
@@ -12381,7 +12720,10 @@ export namespace MyNS {
 	/** The response message for Conversations.SuggestConversationSummary. */
 	export interface GoogleCloudDialogflowV2SuggestConversationSummaryResponseFormProperties {
 
-		/** Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the SuggestSummaryRequest.context_size field in the request if there weren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the SuggestSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used as context for compiling suggestion. Format: `projects//locations//conversations//messages/`. */
@@ -12444,7 +12786,10 @@ export namespace MyNS {
 		/** Represents the parameters of human assist query. */
 		assistQueryParams?: GoogleCloudDialogflowV2AssistQueryParameters;
 
-		/** Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Optional. The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`. */
@@ -12454,7 +12799,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestFaqAnswers. */
 	export interface GoogleCloudDialogflowV2SuggestFaqAnswersRequestFormProperties {
 
-		/** Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** Optional. The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`. */
@@ -12472,7 +12820,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2SuggestSmartRepliesRequest {
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Auxiliary proto messages. Represents the natural language text to be processed. */
@@ -12485,7 +12836,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2SuggestSmartRepliesRequestFormProperties {
 
-		/** Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50. */
+		/**
+		 * Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 20 and at most 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message to compile suggestion for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`. */
@@ -12928,7 +13282,10 @@ export namespace MyNS {
 		/** Optional. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent. It identifies the parent followup intent. Format: `projects//agent/intents/`. */
 		parentFollowupIntentName?: string | null;
 
-		/** Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Optional. Indicates whether to delete all contexts in the current session when this intent is matched. */
@@ -12974,7 +13331,10 @@ export namespace MyNS {
 		/** Optional. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent. It identifies the parent followup intent. Format: `projects//agent/intents/`. */
 		parentFollowupIntentName: FormControl<string | null | undefined>,
 
-		/** Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests. */
+		/**
+		 * Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Optional. Indicates whether to delete all contexts in the current session when this intent is matched. */
@@ -14241,7 +14601,10 @@ export namespace MyNS {
 	/** Dialogflow contexts are similar to natural language context. If a person says to you "they are orange", you need context in order to understand what "they" is referring to. Similarly, for Dialogflow to handle an end-user expression like that, it needs to be provided with context in order to correctly match an intent. Using contexts, you can control the flow of a conversation. You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, Dialogflow is more likely to match intents that are configured with input contexts that correspond to the currently active contexts. For more information about context, see the [Contexts guide](https://cloud.google.com/dialogflow/docs/contexts-overview). */
 	export interface GoogleCloudDialogflowV2beta1Context {
 
-		/** Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries. */
+		/**
+		 * Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lifespanCount?: number | null;
 
 		/** Required. The unique identifier of the context. Supported formats: - `projects//agent/sessions//contexts/`, - `projects//locations//agent/sessions//contexts/`, - `projects//agent/environments//users//sessions//contexts/`, - `projects//locations//agent/environments//users//sessions//contexts/`, The `Context ID` is always converted to lowercase, may only contain characters in `a-zA-Z0-9_-%` and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size` */
@@ -14254,7 +14617,10 @@ export namespace MyNS {
 	/** Dialogflow contexts are similar to natural language context. If a person says to you "they are orange", you need context in order to understand what "they" is referring to. Similarly, for Dialogflow to handle an end-user expression like that, it needs to be provided with context in order to correctly match an intent. Using contexts, you can control the flow of a conversation. You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, Dialogflow is more likely to match intents that are configured with input contexts that correspond to the currently active contexts. For more information about context, see the [Contexts guide](https://cloud.google.com/dialogflow/docs/contexts-overview). */
 	export interface GoogleCloudDialogflowV2beta1ContextFormProperties {
 
-		/** Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries. */
+		/**
+		 * Optional. The number of conversational query requests after which the context expires. The default is `0`. If set to `0`, the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lifespanCount: FormControl<number | null | undefined>,
 
 		/** Required. The unique identifier of the context. Supported formats: - `projects//agent/sessions//contexts/`, - `projects//locations//agent/sessions//contexts/`, - `projects//agent/environments//users//sessions//contexts/`, - `projects//locations//agent/environments//users//sessions//contexts/`, The `Context ID` is always converted to lowercase, may only contain characters in `a-zA-Z0-9_-%` and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size` */
@@ -14348,7 +14714,10 @@ export namespace MyNS {
 		/** Required. The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase. Note: The API does not automatically annotate training phrases like the Dialogflow Console does. Note: Do not forget to include whitespace at part boundaries, so the training phrase is well formatted when the parts are concatenated. If the training phrase does not need to be annotated with parameters, you just need a single part with only the Part.text field set. If you want to annotate the training phrase, you must create multiple parts, where the fields of each part are populated in one of two ways: - `Part.text` is set to a part of the phrase that has no parameters. - `Part.text` is set to a part of the phrase that you want to annotate, and the `entity_type`, `alias`, and `user_defined` fields are all set. */
 		parts?: Array<GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart>;
 
-		/** Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased. */
+		/**
+		 * Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timesAddedCount?: number | null;
 
 		/** Required. The type of the training phrase. */
@@ -14361,7 +14730,10 @@ export namespace MyNS {
 		/** Output only. The unique identifier of this training phrase. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased. */
+		/**
+		 * Optional. Indicates how many times this example was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timesAddedCount: FormControl<number | null | undefined>,
 
 		/** Required. The type of the training phrase. */
@@ -14610,20 +14982,32 @@ export namespace MyNS {
 	/** The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result. */
 	export interface GoogleCloudDialogflowV2beta1Sentiment {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result. */
 	export interface GoogleCloudDialogflowV2beta1SentimentFormProperties {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDialogflowV2beta1SentimentFormGroup() {
@@ -14721,7 +15105,10 @@ export namespace MyNS {
 		/** An intent categorizes an end-user's intention for one conversation turn. For each agent, you define many intents, where your combined intents can handle a complete conversation. When an end-user writes or says something, referred to as an end-user expression or end-user input, Dialogflow matches the end-user input to the best intent in your agent. Matching an intent is also known as intent classification. For more information, see the [intent guide](https://cloud.google.com/dialogflow/docs/intents-overview). */
 		intent?: GoogleCloudDialogflowV2beta1Intent;
 
-		/** The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list. */
+		/**
+		 * The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list.
+		 * Type: float
+		 */
 		intentDetectionConfidence?: number | null;
 
 		/** Represents the result of querying a Knowledge base. */
@@ -14742,7 +15129,10 @@ export namespace MyNS {
 		/** The result of sentiment analysis. Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. For Participants.DetectIntent, it needs to be configured in DetectIntentRequest.query_params. For Participants.StreamingDetectIntent, it needs to be configured in StreamingDetectIntentRequest.query_params. And for Participants.AnalyzeContent and Participants.StreamingAnalyzeContent, it needs to be configured in ConversationProfile.human_agent_assistant_config */
 		sentimentAnalysisResult?: GoogleCloudDialogflowV2beta1SentimentAnalysisResult;
 
-		/** The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. */
+		/**
+		 * The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult.
+		 * Type: float
+		 */
 		speechRecognitionConfidence?: number | null;
 
 		/** If the query was fulfilled by a webhook call, this field is set to the value of the `payload` field returned in the webhook response. */
@@ -14770,7 +15160,10 @@ export namespace MyNS {
 		/** The text to be pronounced to the user or shown on the screen. Note: This is a legacy field, `fulfillment_messages` should be preferred. */
 		fulfillmentText: FormControl<string | null | undefined>,
 
-		/** The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list. */
+		/**
+		 * The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. If there are `multiple knowledge_answers` messages, this value is set to the greatest `knowledgeAnswers.match_confidence` value in the list.
+		 * Type: float
+		 */
 		intentDetectionConfidence: FormControl<number | null | undefined>,
 
 		/** The language that was triggered during intent detection. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. */
@@ -14782,7 +15175,10 @@ export namespace MyNS {
 		/** The original conversational query text: - If natural language text was provided as input, `query_text` contains a copy of the input. - If natural language speech audio was provided as input, `query_text` contains the speech recognition result. If speech recognizer produced multiple alternatives, a particular one is picked. - If automatic spell correction is enabled, `query_text` will contain the corrected user input. */
 		queryText: FormControl<string | null | undefined>,
 
-		/** The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. */
+		/**
+		 * The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set. This field is not guaranteed to be accurate or set. In particular this field isn't set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult.
+		 * Type: float
+		 */
 		speechRecognitionConfidence: FormControl<number | null | undefined>,
 
 		/** If the query was fulfilled by a webhook call, this field is set to the value of the `payload` field returned in the webhook response. */
@@ -14836,7 +15232,10 @@ export namespace MyNS {
 		/** The corresponding FAQ question if the answer was extracted from a FAQ Document, empty otherwise. */
 		faqQuestion?: string | null;
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query. The range is from 0.0 (completely uncertain) to 1.0 (completely certain). Note: The confidence score is likely to vary somewhat (possibly even for identical requests), as the underlying model is under constant improvement. It may be deprecated in the future. We recommend using `match_confidence_level` which should be generally more stable. */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query. The range is from 0.0 (completely uncertain) to 1.0 (completely certain). Note: The confidence score is likely to vary somewhat (possibly even for identical requests), as the underlying model is under constant improvement. It may be deprecated in the future. We recommend using `match_confidence_level` which should be generally more stable.
+		 * Type: float
+		 */
 		matchConfidence?: number | null;
 
 		/** The system's confidence level that this knowledge answer is a good match for this conversational query. NOTE: The confidence level for a given `` pair may change without notice, as it depends on models that are constantly being improved. However, it will change less frequently than the confidence score below, and should be preferred for referencing the quality of an answer. */
@@ -14855,7 +15254,10 @@ export namespace MyNS {
 		/** The corresponding FAQ question if the answer was extracted from a FAQ Document, empty otherwise. */
 		faqQuestion: FormControl<string | null | undefined>,
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query. The range is from 0.0 (completely uncertain) to 1.0 (completely certain). Note: The confidence score is likely to vary somewhat (possibly even for identical requests), as the underlying model is under constant improvement. It may be deprecated in the future. We recommend using `match_confidence_level` which should be generally more stable. */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query. The range is from 0.0 (completely uncertain) to 1.0 (completely certain). Note: The confidence score is likely to vary somewhat (possibly even for identical requests), as the underlying model is under constant improvement. It may be deprecated in the future. We recommend using `match_confidence_level` which should be generally more stable.
+		 * Type: float
+		 */
 		matchConfidence: FormControl<number | null | undefined>,
 
 		/** The system's confidence level that this knowledge answer is a good match for this conversational query. NOTE: The confidence level for a given `` pair may change without notice, as it depends on models that are constantly being improved. However, it will change less frequently than the confidence score below, and should be preferred for referencing the quality of an answer. */
@@ -14988,7 +15390,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord?: string | null;
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -15010,7 +15415,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this Knowledge answer is a good match for this conversational query, range from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** A map that contains metadata about the answer and the document from which it originates. */
@@ -15104,7 +15512,10 @@ export namespace MyNS {
 		/** Output only. Articles ordered by score in descending order. */
 		articleAnswers?: Array<GoogleCloudDialogflowV2beta1ArticleAnswer>;
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesResponse.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesResponse.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -15114,7 +15525,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestArticles. */
 	export interface GoogleCloudDialogflowV2beta1SuggestArticlesResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesResponse.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestArticlesResponse.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -15132,7 +15546,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestDialogflowAssists. */
 	export interface GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestDialogflowAssistsRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestDialogflowAssistsRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Output only. Multiple reply options provided by Dialogflow assist service. The order is based on the rank of the model prediction. */
@@ -15145,7 +15562,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestDialogflowAssists. */
 	export interface GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestDialogflowAssistsRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestDialogflowAssistsRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to suggest answer. Format: `projects//locations//conversations//messages/`. */
@@ -15163,7 +15583,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestFaqAnswers. */
 	export interface GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** Output only. Answers extracted from FAQ documents. */
@@ -15176,7 +15599,10 @@ export namespace MyNS {
 	/** The request message for Participants.SuggestFaqAnswers. */
 	export interface GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestFaqAnswersRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -15194,7 +15620,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize?: number | null;
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -15207,7 +15636,10 @@ export namespace MyNS {
 	/** The response message for Participants.SuggestSmartReplies. */
 	export interface GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponseFormProperties {
 
-		/** Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation. */
+		/**
+		 * Number of messages prior to and including latest_message to compile the suggestion. It may be smaller than the SuggestSmartRepliesRequest.context_size field in the request if there aren't that many messages in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contextSize: FormControl<number | null | undefined>,
 
 		/** The name of the latest conversation message used to compile suggestion for. Format: `projects//locations//conversations//messages/`. */
@@ -15228,7 +15660,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord?: string | null;
 
-		/** Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The content of the reply. */
@@ -15241,7 +15676,10 @@ export namespace MyNS {
 		/** The name of answer record, in the format of "projects//locations//answerRecords/" */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * Smart reply confidence. The system's confidence score that this reply is a good match for this conversation, as a value from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The content of the reply. */
@@ -15549,10 +15987,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage?: boolean | null;
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude?: number | null;
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore?: number | null;
 
 		/** Whether agent has triggered the event corresponding to user abandoning the conversation. */
@@ -15583,10 +16027,16 @@ export namespace MyNS {
 		/** Whether turn resulted in End Session page. */
 		reachedEndPage: FormControl<boolean | null | undefined>,
 
-		/** Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment magnitude of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentMagnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled. */
+		/**
+		 * Sentiment score of the user utterance if [sentiment](https://cloud.google.com/dialogflow/cx/docs/concept/sentiment) was enabled.
+		 * Type: float
+		 */
 		sentimentScore: FormControl<number | null | undefined>,
 
 		/** Whether agent has triggered the event corresponding to user abandoning the conversation. */
@@ -15975,6 +16425,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {GoogleCloudLocationListLocationsResponse} Successful response
 		 */
@@ -15988,6 +16439,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -16142,6 +16594,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/agent:search
 		 * @param {string} parent Required. The project to list agents from. Format: `projects/`.
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2SearchAgentsResponse} Successful response
 		 */
@@ -16165,6 +16618,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project to list all answer records for in reverse chronological order. Format: `projects//locations/`.
 		 * @param {string} filter Optional. Filters to restrict results to specific answer records. Marked deprecated as it hasn't been, and isn't currently, supported. For more information about filtering, see [API Filtering](https://aip.dev/160).
 		 * @param {number} pageSize Optional. The maximum number of records to return in a single page. The server may return fewer records than this. If unspecified, we use 10. The maximum is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The ListAnswerRecordsResponse.next_page_token value returned from a previous list request used to continue listing on the next page.
 		 * @return {GoogleCloudDialogflowV2ListAnswerRecordsResponse} Successful response
 		 */
@@ -16187,6 +16641,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/contexts
 		 * @param {string} parent Required. The session to list all contexts from. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListContextsResponse} Successful response
 		 */
@@ -16209,6 +16664,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/conversationDatasets
 		 * @param {string} parent Required. The project and location name to list all conversation datasets for. Format: `projects//locations/`
 		 * @param {number} pageSize Optional. Maximum number of conversation datasets to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListConversationDatasetsResponse} Successful response
 		 */
@@ -16231,6 +16687,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/conversationModels
 		 * @param {string} parent Required. The project to list all conversation models for. Format: `projects/`
 		 * @param {number} pageSize Optional. Maximum number of conversation models to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListConversationModelsResponse} Successful response
 		 */
@@ -16253,6 +16710,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/conversationProfiles
 		 * @param {string} parent Required. The project to list all conversation profiles from. Format: `projects//locations/`.
 		 * @param {number} pageSize The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListConversationProfilesResponse} Successful response
 		 */
@@ -16276,6 +16734,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project from which to list all conversation. Format: `projects//locations/`.
 		 * @param {string} filter A filter expression that filters conversations listed in the response. In general, the expression must specify the field name, a comparison operator, and the value to use for filtering: - The value must be a string, a number, or a boolean. - The comparison operator must be either `=`,`!=`, `>`, or `<`. - To filter on multiple expressions, separate the expressions with `AND` or `OR` (omitting both implies `AND`). - For clarity, expressions can be enclosed in parentheses. Only `lifecycle_state` can be filtered on in this way. For example, the following expression only returns `COMPLETED` conversations: `lifecycle_state = "COMPLETED"` For more information about filtering, see [API Filtering](https://aip.dev/160).
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListConversationsResponse} Successful response
 		 */
@@ -16300,6 +16759,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The knowledge base to list all documents for. Format: `projects//locations//knowledgeBases/`.
 		 * @param {string} filter The filter expression used to filter documents returned by the list method. The expression has the following syntax: [AND ] ... The following fields and operators are supported: * knowledge_types with has(:) operator * display_name with has(:) operator * state with equals(=) operator Examples: * "knowledge_types:FAQ" matches documents with FAQ knowledge type. * "display_name:customer" matches documents whose display name contains "customer". * "state=ACTIVE" matches documents with ACTIVE state. * "knowledge_types:FAQ AND state=ACTIVE" matches all active FAQ documents. For more information about filtering, see [API Filtering](https://aip.dev/160).
 		 * @param {number} pageSize The maximum number of items to return in a single page. By default 10 and at most 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListDocumentsResponse} Successful response
 		 */
@@ -16362,6 +16822,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/entityTypes
 		 * @param {string} parent Required. The session to list all session entity types from. Format: `projects//agent/sessions/` or `projects//agent/environments//users// sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListSessionEntityTypesResponse} Successful response
 		 */
@@ -16405,6 +16866,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/environments
 		 * @param {string} parent Required. The agent to list all environments from. Format: - `projects//agent` - `projects//locations//agent`
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListEnvironmentsResponse} Successful response
 		 */
@@ -16428,6 +16890,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/evaluations
 		 * @param {string} parent Required. The conversation model resource name. Format: `projects//conversationModels/`
 		 * @param {number} pageSize Optional. Maximum number of evaluations to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListConversationModelEvaluationsResponse} Successful response
 		 */
@@ -16450,6 +16913,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/history
 		 * @param {string} parent Required. The name of the environment to retrieve history for. Supported formats: - `projects//agent/environments/` - `projects//locations//agent/environments/` The environment ID for the default environment is `-`.
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2EnvironmentHistory} Successful response
 		 */
@@ -16464,6 +16928,7 @@ export namespace MyNS {
 		 * @param {GoogleCloudDialogflowV2BatchUpdateIntentsRequestIntentView} intentView Optional. The resource view to apply to the returned intent.
 		 * @param {string} languageCode Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListIntentsResponse} Successful response
 		 */
@@ -16509,6 +16974,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project to list of knowledge bases for. Format: `projects//locations/`.
 		 * @param {string} filter The filter expression used to filter knowledge bases returned by the list method. The expression has the following syntax: [AND ] ... The following fields and operators are supported: * display_name with has(:) operator * language_code with equals(=) operator Examples: * 'language_code=en-us' matches knowledge bases with en-us language code. * 'display_name:articles' matches knowledge bases whose display name contains "articles". * 'display_name:"Best Articles"' matches knowledge bases whose display name contains "Best Articles". * 'language_code=en-gb AND display_name=articles' matches all knowledge bases whose display name contains "articles" and whose language code is "en-gb". Note: An empty filter string (i.e. "") is a no-op and will result in no filtering. For more information about filtering, see [API Filtering](https://aip.dev/160).
 		 * @param {number} pageSize The maximum number of items to return in a single page. By default 10 and at most 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListKnowledgeBasesResponse} Successful response
 		 */
@@ -16532,6 +16998,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the conversation to list messages for. Format: `projects//locations//conversations/`
 		 * @param {string} filter Optional. Filter on message fields. Currently predicates on `create_time` and `create_time_epoch_microseconds` are supported. `create_time` only support milliseconds accuracy. E.g., `create_time_epoch_microseconds > 1551790877964485` or `create_time > 2017-01-15T01:30:15.01Z`. For more information about filtering, see [API Filtering](https://aip.dev/160).
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListMessagesResponse} Successful response
 		 */
@@ -16544,6 +17011,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/participants
 		 * @param {string} parent Required. The conversation to list all participants from. Format: `projects//locations//conversations/`.
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListParticipantsResponse} Successful response
 		 */
@@ -16616,6 +17084,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/versions
 		 * @param {string} parent Required. The agent to list all versions from. Supported formats: - `projects//agent` - `projects//locations//agent`
 		 * @param {number} pageSize Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous list request.
 		 * @return {GoogleCloudDialogflowV2ListVersionsResponse} Successful response
 		 */

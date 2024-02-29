@@ -17,7 +17,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -37,7 +40,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -87,6 +93,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -119,6 +126,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -246,6 +254,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -278,6 +287,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -365,6 +375,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -397,6 +408,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -447,10 +459,16 @@ export namespace MyNS {
 		/** The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID. */
 		messaging_service_id?: string | null;
 
-		/** The number of media files associated with the message. */
+		/**
+		 * The number of media files associated with the message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_media_files?: number | null;
 
-		/** The number of units that make up the complete message. Messages can be split up due to the constraints of the message size. */
+		/**
+		 * The number of units that make up the complete message. Messages can be split up due to the constraints of the message size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_units?: number | null;
 
 		/** Price of the message. */
@@ -517,10 +535,16 @@ export namespace MyNS {
 		/** The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID. */
 		messaging_service_id: FormControl<string | null | undefined>,
 
-		/** The number of media files associated with the message. */
+		/**
+		 * The number of media files associated with the message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_media_files: FormControl<number | null | undefined>,
 
-		/** The number of units that make up the complete message. Messages can be split up due to the constraints of the message size. */
+		/**
+		 * The number of units that make up the complete message. Messages can be split up due to the constraints of the message size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_units: FormControl<number | null | undefined>,
 
 		/** A client reference. */
@@ -666,6 +690,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -698,6 +723,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -754,14 +780,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -816,7 +848,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -836,7 +871,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -868,7 +906,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -888,7 +929,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -920,7 +964,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -940,7 +987,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -970,7 +1020,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -987,7 +1040,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1034,7 +1090,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1054,7 +1113,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1086,7 +1148,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1106,7 +1171,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1138,7 +1206,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1158,7 +1229,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1208,6 +1282,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1240,6 +1315,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1266,6 +1342,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetMessagesResponse} Messages
 		 */

@@ -302,7 +302,10 @@ export namespace MyNS {
 		 */
 		From: string;
 
-		/** Actual answering machine detection assessment duration (in milliseconds) */
+		/**
+		 * Actual answering machine detection assessment duration (in milliseconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MachineDetectionDuration?: number | null;
 
 		/**
@@ -370,7 +373,10 @@ export namespace MyNS {
 		 */
 		From: FormControl<string | null | undefined>,
 
-		/** Actual answering machine detection assessment duration (in milliseconds) */
+		/**
+		 * Actual answering machine detection assessment duration (in milliseconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MachineDetectionDuration: FormControl<number | null | undefined>,
 
 		/**

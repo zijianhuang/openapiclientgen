@@ -181,7 +181,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -194,7 +197,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -824,32 +830,56 @@ export namespace MyNS {
 	/** Represents the Compliance Status of this workload */
 	export interface GoogleCloudAssuredworkloadsV1beta1WorkloadComplianceStatus {
 
-		/** Number of current resource violations which are not acknowledged. */
+		/**
+		 * Number of current resource violations which are not acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgedResourceViolationCount?: number | null;
 
-		/** Number of current orgPolicy violations which are acknowledged. */
+		/**
+		 * Number of current orgPolicy violations which are acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgedViolationCount?: number | null;
 
-		/** Number of current resource violations which are acknowledged. */
+		/**
+		 * Number of current resource violations which are acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeResourceViolationCount?: number | null;
 
-		/** Number of current orgPolicy violations which are not acknowledged. */
+		/**
+		 * Number of current orgPolicy violations which are not acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeViolationCount?: number | null;
 	}
 
 	/** Represents the Compliance Status of this workload */
 	export interface GoogleCloudAssuredworkloadsV1beta1WorkloadComplianceStatusFormProperties {
 
-		/** Number of current resource violations which are not acknowledged. */
+		/**
+		 * Number of current resource violations which are not acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgedResourceViolationCount: FormControl<number | null | undefined>,
 
-		/** Number of current orgPolicy violations which are acknowledged. */
+		/**
+		 * Number of current orgPolicy violations which are acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acknowledgedViolationCount: FormControl<number | null | undefined>,
 
-		/** Number of current resource violations which are acknowledged. */
+		/**
+		 * Number of current resource violations which are acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeResourceViolationCount: FormControl<number | null | undefined>,
 
-		/** Number of current orgPolicy violations which are not acknowledged. */
+		/**
+		 * Number of current orgPolicy violations which are not acknowledged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeViolationCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAssuredworkloadsV1beta1WorkloadComplianceStatusFormGroup() {
@@ -1210,6 +1240,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -1255,6 +1286,7 @@ export namespace MyNS {
 		 * @param {string} interval_endTime The end of the time window.
 		 * @param {string} interval_startTime The start of the time window.
 		 * @param {number} pageSize Optional. Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token returned from previous request.
 		 * @return {GoogleCloudAssuredworkloadsV1beta1ListViolationsResponse} Successful response
 		 */
@@ -1268,6 +1300,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent Resource to list workloads from. Must be of the form `organizations/{org_id}/locations/{location}`.
 		 * @param {string} filter A custom filter for filtering by properties of a workload. At this time, only filtering by labels is supported.
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token returned from previous request. Page token contains context from previous request. Page token needs to be passed in the second and following requests.
 		 * @return {GoogleCloudAssuredworkloadsV1beta1ListWorkloadsResponse} Successful response
 		 */
@@ -1292,6 +1325,7 @@ export namespace MyNS {
 		 * @param {string} target Required. The resource ID of the folder-based destination workload. This workload is where the source resource will hypothetically be moved to. Specify the workload's relative resource name, formatted as: "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}" For example: "organizations/123/locations/us-east1/workloads/assured-workload-2"
 		 * @param {Array<string>} assetTypes Optional. List of asset types to be analyzed, including and under the source resource. If empty, all assets are analyzed. The complete list of asset types is available [here](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
 		 * @param {number} pageSize Optional. Page size. If a value is not specified, the default value of 10 is used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The page token from the previous response. It needs to be passed in the second and following requests.
 		 * @param {string} project The source type is a project. Specify the project's relative resource name, formatted as either a project number or a project ID: "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}" For example: "projects/951040570662" when specifying a project number, or "projects/my-project-123" when specifying a project ID.
 		 * @return {GoogleCloudAssuredworkloadsV1beta1AnalyzeWorkloadMoveResponse} Successful response

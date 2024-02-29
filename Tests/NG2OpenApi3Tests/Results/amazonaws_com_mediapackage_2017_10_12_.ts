@@ -1637,6 +1637,7 @@ export namespace MyNS {
 		 * Returns a collection of Channels.
 		 * Get channels
 		 * @param {number} maxResults Upper bound on number of records to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken A token used to resume pagination from the end of a previous request.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1661,6 +1662,7 @@ export namespace MyNS {
 		 * @param {string} includeChannelId When specified, the request will return only HarvestJobs associated with the given Channel ID.
 		 * @param {string} includeStatus When specified, the request will return only HarvestJobs in the given status.
 		 * @param {number} maxResults The upper bound on the number of records to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken A token used to resume pagination from the end of a previous request.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1684,6 +1686,7 @@ export namespace MyNS {
 		 * Get origin_endpoints
 		 * @param {string} channelId When specified, the request will return only OriginEndpoints associated with the given Channel ID.
 		 * @param {number} maxResults The upper bound on the number of records to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken A token used to resume pagination from the end of a previous request.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -2029,6 +2032,7 @@ export namespace MyNS {
 		/**
 		 * Maximum duration (seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startoverWindowSeconds?: number | null;
 
@@ -2038,6 +2042,7 @@ export namespace MyNS {
 		/**
 		 * Amount of delay (seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeDelaySeconds?: number | null;
 
@@ -2076,6 +2081,7 @@ export namespace MyNS {
 		/**
 		 * Maximum duration (seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startoverWindowSeconds: FormControl<number | null | undefined>,
 
@@ -2085,6 +2091,7 @@ export namespace MyNS {
 		/**
 		 * Amount of delay (seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeDelaySeconds: FormControl<number | null | undefined>,
 	}
@@ -2295,12 +2302,14 @@ export namespace MyNS {
 		/**
 		 * Maximum duration (in seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startoverWindowSeconds?: number | null;
 
 		/**
 		 * Amount of delay (in seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeDelaySeconds?: number | null;
 
@@ -2325,12 +2334,14 @@ export namespace MyNS {
 		/**
 		 * Maximum duration (in seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startoverWindowSeconds: FormControl<number | null | undefined>,
 
 		/**
 		 * Amount of delay (in seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeDelaySeconds: FormControl<number | null | undefined>,
 	}

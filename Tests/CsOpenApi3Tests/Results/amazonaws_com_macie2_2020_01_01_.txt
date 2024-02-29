@@ -5974,7 +5974,10 @@ namespace MyNS
 		/// Retrieves a subset of information about all the allow lists for an account.
 		/// ListAllowLists allow-lists
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <returns>Success</returns>
 		public async Task<ListAllowListsResponse> ListAllowListsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6129,7 +6132,10 @@ namespace MyNS
 		/// Retrieves a subset of information about all the findings filters for an account.
 		/// ListFindingsFilters findingsfilters
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <returns>Success</returns>
 		public async Task<ListFindingsFiltersResponse> ListFindingsFiltersAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6204,7 +6210,10 @@ namespace MyNS
 		/// Retrieves information about the Amazon Macie membership invitations that were received by an account.
 		/// ListInvitations invitations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <returns>Success</returns>
 		public async Task<ListInvitationsResponse> ListInvitationsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6279,7 +6288,10 @@ namespace MyNS
 		/// Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
 		/// ListMembers members
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <param name="onlyAssociated">Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</param>
 		/// <returns>Success</returns>
@@ -7285,7 +7297,10 @@ namespace MyNS
 		/// Retrieves information about the delegated Amazon Macie administrator account for an organization in Organizations.
 		/// ListOrganizationAdminAccounts admin
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <returns>Success</returns>
 		public async Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8437,7 +8452,10 @@ namespace MyNS
 		/// Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
 		/// ListResourceProfileDetections resource-profiles/detections#resourceArn
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</param>
 		/// <returns>Success</returns>
@@ -8514,7 +8532,10 @@ namespace MyNS
 		/// <p>Retrieves a subset of information about the sensitivity inspection template for an account.</p>
 		/// ListSensitivityInspectionTemplates templates/sensitivity-inspections
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.</param>
+		/// <param name="maxResults">The maximum number of items to include in each page of a paginated response.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
 		/// <param name="nextToken">The nextToken string that specifies which page of results to return in a paginated response.</param>
 		/// <returns>Success</returns>
 		public async Task<ListSensitivityInspectionTemplatesResponse> ListSensitivityInspectionTemplatesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

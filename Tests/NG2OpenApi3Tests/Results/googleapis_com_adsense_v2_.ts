@@ -404,26 +404,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1004,6 +1022,7 @@ export namespace MyNS {
 		 * Lists all accounts available to this user.
 		 * Get v2/accounts
 		 * @param {number} pageSize The maximum number of accounts to include in the response, used for paging. If unspecified, at most 10000 accounts will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccounts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccounts` must match the call that provided the page token.
 		 * @return {ListAccountsResponse} Successful response
 		 */
@@ -1019,17 +1038,24 @@ export namespace MyNS {
 		 * @param {Adsense_accounts_reports_generateDateRange} dateRange Date range of the report, if unset the range will be considered CUSTOM.
 		 * @param {Array<string>} dimensions Dimensions to base the report on.
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filters A list of [filters](/adsense/management/reporting/filtering) to apply to the report. All provided filters must match in order for the data to be included in the report.
 		 * @param {string} languageCode The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
 		 * @param {number} limit The maximum number of rows of report data to return. Reports producing more rows than the requested limit will be truncated. If unset, this defaults to 100,000 rows for `Reports.GenerateReport` and 1,000,000 rows for `Reports.GenerateCsvReport`, which are also the maximum values permitted here. Report truncation can be identified (for `Reports.GenerateReport` only) by comparing the number of rows returned to the value returned in `total_matched_rows`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} metrics Required. Reporting metrics.
 		 * @param {Array<string>} orderBy The name of a dimension or metric to sort the resulting report on, can be prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {Adsense_accounts_reports_generateReportingTimeZone} reportingTimeZone Timezone in which to generate the report. If unspecified, this defaults to the account timezone. For more information, see [changing the time zone of your reports](https://support.google.com/adsense/answer/9830725).
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReportResult} Successful response
 		 */
 		Adsense_accounts_reports_generate(account: string, currencyCode: string | null | undefined, dateRange: Adsense_accounts_reports_generateDateRange | null | undefined, dimensions: Array<string> | null | undefined, endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, filters: Array<string> | null | undefined, languageCode: string | null | undefined, limit: number | null | undefined, metrics: Array<string> | null | undefined, orderBy: Array<string> | null | undefined, reportingTimeZone: Adsense_accounts_reports_generateReportingTimeZone | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<ReportResult> {
@@ -1044,17 +1070,24 @@ export namespace MyNS {
 		 * @param {Adsense_accounts_reports_generateDateRange} dateRange Date range of the report, if unset the range will be considered CUSTOM.
 		 * @param {Array<string>} dimensions Dimensions to base the report on.
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filters A list of [filters](/adsense/management/reporting/filtering) to apply to the report. All provided filters must match in order for the data to be included in the report.
 		 * @param {string} languageCode The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
 		 * @param {number} limit The maximum number of rows of report data to return. Reports producing more rows than the requested limit will be truncated. If unset, this defaults to 100,000 rows for `Reports.GenerateReport` and 1,000,000 rows for `Reports.GenerateCsvReport`, which are also the maximum values permitted here. Report truncation can be identified (for `Reports.GenerateReport` only) by comparing the number of rows returned to the value returned in `total_matched_rows`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} metrics Required. Reporting metrics.
 		 * @param {Array<string>} orderBy The name of a dimension or metric to sort the resulting report on, can be prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {Adsense_accounts_reports_generateReportingTimeZone} reportingTimeZone Timezone in which to generate the report. If unspecified, this defaults to the account timezone. For more information, see [changing the time zone of your reports](https://support.google.com/adsense/answer/9830725).
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {HttpBody} Successful response
 		 */
 		Adsense_accounts_reports_generateCsv(account: string, currencyCode: string | null | undefined, dateRange: Adsense_accounts_reports_generateDateRange | null | undefined, dimensions: Array<string> | null | undefined, endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, filters: Array<string> | null | undefined, languageCode: string | null | undefined, limit: number | null | undefined, metrics: Array<string> | null | undefined, orderBy: Array<string> | null | undefined, reportingTimeZone: Adsense_accounts_reports_generateReportingTimeZone | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<HttpBody> {
@@ -1129,13 +1162,19 @@ export namespace MyNS {
 		 * @param {string} currencyCode The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set.
 		 * @param {Adsense_accounts_reports_generateDateRange} dateRange Date range of the report, if unset the range will be considered CUSTOM.
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} languageCode The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
 		 * @param {Adsense_accounts_reports_generateReportingTimeZone} reportingTimeZone Timezone in which to generate the report. If unspecified, this defaults to the account timezone. For more information, see [changing the time zone of your reports](https://support.google.com/adsense/answer/9830725).
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReportResult} Successful response
 		 */
 		Adsense_accounts_reports_saved_generate(name: string, currencyCode: string | null | undefined, dateRange: Adsense_accounts_reports_generateDateRange | null | undefined, endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, languageCode: string | null | undefined, reportingTimeZone: Adsense_accounts_reports_generateReportingTimeZone | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<ReportResult> {
@@ -1149,13 +1188,19 @@ export namespace MyNS {
 		 * @param {string} currencyCode The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set.
 		 * @param {Adsense_accounts_reports_generateDateRange} dateRange Date range of the report, if unset the range will be considered CUSTOM.
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} languageCode The language to use for translating report output. If unspecified, this defaults to English ("en"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag).
 		 * @param {Adsense_accounts_reports_generateReportingTimeZone} reportingTimeZone Timezone in which to generate the report. If unspecified, this defaults to the account timezone. For more information, see [changing the time zone of your reports](https://support.google.com/adsense/answer/9830725).
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {HttpBody} Successful response
 		 */
 		Adsense_accounts_reports_saved_generateCsv(name: string, currencyCode: string | null | undefined, dateRange: Adsense_accounts_reports_generateDateRange | null | undefined, endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, languageCode: string | null | undefined, reportingTimeZone: Adsense_accounts_reports_generateReportingTimeZone | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<HttpBody> {
@@ -1167,6 +1212,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/adclients
 		 * @param {string} parent Required. The account which owns the collection of ad clients. Format: accounts/{account}
 		 * @param {number} pageSize The maximum number of ad clients to include in the response, used for paging. If unspecified, at most 10000 ad clients will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAdClients` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAdClients` must match the call that provided the page token.
 		 * @return {ListAdClientsResponse} Successful response
 		 */
@@ -1179,6 +1225,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/adunits
 		 * @param {string} parent Required. The ad client which owns the collection of ad units. Format: accounts/{account}/adclients/{adclient}
 		 * @param {number} pageSize The maximum number of ad units to include in the response, used for paging. If unspecified, at most 10000 ad units will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAdUnits` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAdUnits` must match the call that provided the page token.
 		 * @return {ListAdUnitsResponse} Successful response
 		 */
@@ -1212,6 +1259,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/customchannels
 		 * @param {string} parent Required. The ad client which owns the collection of custom channels. Format: accounts/{account}/adclients/{adclient}
 		 * @param {number} pageSize The maximum number of custom channels to include in the response, used for paging. If unspecified, at most 10000 custom channels will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCustomChannels` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomChannels` must match the call that provided the page token.
 		 * @return {ListCustomChannelsResponse} Successful response
 		 */
@@ -1244,6 +1292,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/reports/saved
 		 * @param {string} parent Required. The account which owns the collection of reports. Format: accounts/{account}
 		 * @param {number} pageSize The maximum number of reports to include in the response, used for paging. If unspecified, at most 10000 reports will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSavedReports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSavedReports` must match the call that provided the page token.
 		 * @return {ListSavedReportsResponse} Successful response
 		 */
@@ -1256,6 +1305,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/sites
 		 * @param {string} parent Required. The account which owns the collection of sites. Format: accounts/{account}
 		 * @param {number} pageSize The maximum number of sites to include in the response, used for paging. If unspecified, at most 10000 sites will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSites` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSites` must match the call that provided the page token.
 		 * @return {ListSitesResponse} Successful response
 		 */
@@ -1268,6 +1318,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/urlchannels
 		 * @param {string} parent Required. The ad client which owns the collection of url channels. Format: accounts/{account}/adclients/{adclient}
 		 * @param {number} pageSize The maximum number of url channels to include in the response, used for paging. If unspecified, at most 10000 url channels will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListUrlChannels` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListUrlChannels` must match the call that provided the page token.
 		 * @return {ListUrlChannelsResponse} Successful response
 		 */
@@ -1280,6 +1331,7 @@ export namespace MyNS {
 		 * Get v2/{parent}:listChildAccounts
 		 * @param {string} parent Required. The parent account, which owns the child accounts. Format: accounts/{account}
 		 * @param {number} pageSize The maximum number of accounts to include in the response, used for paging. If unspecified, at most 10000 accounts will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListChildAccounts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListChildAccounts` must match the call that provided the page token.
 		 * @return {ListChildAccountsResponse} Successful response
 		 */
@@ -1292,6 +1344,7 @@ export namespace MyNS {
 		 * Get v2/{parent}:listLinkedAdUnits
 		 * @param {string} parent Required. The custom channel which owns the collection of ad units. Format: accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
 		 * @param {number} pageSize The maximum number of ad units to include in the response, used for paging. If unspecified, at most 10000 ad units will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListLinkedAdUnits` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListLinkedAdUnits` must match the call that provided the page token.
 		 * @return {ListLinkedAdUnitsResponse} Successful response
 		 */
@@ -1304,6 +1357,7 @@ export namespace MyNS {
 		 * Get v2/{parent}:listLinkedCustomChannels
 		 * @param {string} parent Required. The ad unit which owns the collection of custom channels. Format: accounts/{account}/adclients/{adclient}/adunits/{adunit}
 		 * @param {number} pageSize The maximum number of custom channels to include in the response, used for paging. If unspecified, at most 10000 custom channels will be returned. The maximum value is 10000; values above 10000 will be coerced to 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListLinkedCustomChannels` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListLinkedCustomChannels` must match the call that provided the page token.
 		 * @return {ListLinkedCustomChannelsResponse} Successful response
 		 */

@@ -6,20 +6,24 @@ export namespace MyNS {
 	export enum Answered { Any = 'Any', Answered = 'Answered', Unanswered = 'Unanswered' }
 
 	export interface AttachmentViewModel {
-		fileSizeBytes?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileSizeBytes?: string | null;
 		fileType?: string | null;
 		title?: string | null;
 		url?: string | null;
 	}
 	export interface AttachmentViewModelFormProperties {
-		fileSizeBytes: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileSizeBytes: FormControl<string | null | undefined>,
 		fileType: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachmentViewModelFormGroup() {
 		return new FormGroup<AttachmentViewModelFormProperties>({
-			fileSizeBytes: new FormControl<number | null | undefined>(undefined),
+			fileSizeBytes: new FormControl<string | null | undefined>(undefined),
 			fileType: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -29,20 +33,24 @@ export namespace MyNS {
 
 	export interface DailyReportViewModel {
 		date?: Date | null;
-		fileSizeBytes?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileSizeBytes?: string | null;
 		house?: DailyReportViewModelHouse | null;
 		url?: string | null;
 	}
 	export interface DailyReportViewModelFormProperties {
 		date: FormControl<Date | null | undefined>,
-		fileSizeBytes: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileSizeBytes: FormControl<string | null | undefined>,
 		house: FormControl<DailyReportViewModelHouse | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateDailyReportViewModelFormGroup() {
 		return new FormGroup<DailyReportViewModelFormProperties>({
 			date: new FormControl<Date | null | undefined>(undefined),
-			fileSizeBytes: new FormControl<number | null | undefined>(undefined),
+			fileSizeBytes: new FormControl<string | null | undefined>(undefined),
 			house: new FormControl<DailyReportViewModelHouse | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -84,9 +92,13 @@ export namespace MyNS {
 
 	export interface DailyReportViewModelSearchResult {
 		results?: Array<DailyReportViewModelItem>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface DailyReportViewModelSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDailyReportViewModelSearchResultFormGroup() {
@@ -117,11 +129,15 @@ export namespace MyNS {
 	export interface LinkedStatements {
 		linkDate?: Date | null;
 		linkType?: LinkedStatementsLinkType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linkedStatementId?: number | null;
 	}
 	export interface LinkedStatementsFormProperties {
 		linkDate: FormControl<Date | null | undefined>,
 		linkType: FormControl<LinkedStatementsLinkType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linkedStatementId: FormControl<number | null | undefined>,
 	}
 	export function CreateLinkedStatementsFormGroup() {
@@ -136,6 +152,8 @@ export namespace MyNS {
 	export enum LinkedStatementsLinkType { CorrectedStatement = 'CorrectedStatement', CorrectedAnswer = 'CorrectedAnswer', JointStatement = 'JointStatement' }
 
 	export interface MemberViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		listAs?: string | null;
 		memberFrom?: string | null;
@@ -146,6 +164,8 @@ export namespace MyNS {
 		thumbnailUrl?: string | null;
 	}
 	export interface MemberViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		listAs: FormControl<string | null | undefined>,
 		memberFrom: FormControl<string | null | undefined>,
@@ -172,6 +192,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -179,6 +201,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -200,16 +224,26 @@ export namespace MyNS {
 		answerIsCorrection?: boolean | null;
 		answerIsHolding?: boolean | null;
 		answerText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId?: number | null;
 		answeringBodyName?: string | null;
 		answeringMember?: MemberViewModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringMemberId?: number | null;
 		askingMember?: MemberViewModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		askingMemberId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount?: number | null;
 		attachments?: Array<AttachmentViewModel>;
 		comparableAnswerText?: string | null;
 		correctingMember?: MemberViewModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		correctingMemberId?: number | null;
 		dateAnswerCorrected?: Date | null;
 		dateAnswered?: Date | null;
@@ -220,6 +254,8 @@ export namespace MyNS {
 		groupedQuestionsDates?: Array<GroupedQuestionViewModel>;
 		heading?: string | null;
 		house?: DailyReportViewModelHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isNamedDay?: boolean | null;
 		isWithdrawn?: boolean | null;
@@ -232,12 +268,22 @@ export namespace MyNS {
 		answerIsCorrection: FormControl<boolean | null | undefined>,
 		answerIsHolding: FormControl<boolean | null | undefined>,
 		answerText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId: FormControl<number | null | undefined>,
 		answeringBodyName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringMemberId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		askingMemberId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount: FormControl<number | null | undefined>,
 		comparableAnswerText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		correctingMemberId: FormControl<number | null | undefined>,
 		dateAnswerCorrected: FormControl<Date | null | undefined>,
 		dateAnswered: FormControl<Date | null | undefined>,
@@ -246,6 +292,8 @@ export namespace MyNS {
 		dateTabled: FormControl<Date | null | undefined>,
 		heading: FormControl<string | null | undefined>,
 		house: FormControl<DailyReportViewModelHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isNamedDay: FormControl<boolean | null | undefined>,
 		isWithdrawn: FormControl<boolean | null | undefined>,
@@ -298,9 +346,13 @@ export namespace MyNS {
 
 	export interface QuestionsViewModelSearchResult {
 		results?: Array<QuestionsViewModelItem>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface QuestionsViewModelSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsViewModelSearchResultFormGroup() {
@@ -313,6 +365,8 @@ export namespace MyNS {
 	export enum StatementLinkTypeEnum { CorrectedStatement = 'CorrectedStatement', CorrectedAnswer = 'CorrectedAnswer', JointStatement = 'JointStatement' }
 
 	export interface StatementsViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId?: number | null;
 		answeringBodyName?: string | null;
 		attachments?: Array<AttachmentViewModel>;
@@ -320,26 +374,40 @@ export namespace MyNS {
 		hasAttachments?: boolean | null;
 		hasLinkedStatements?: boolean | null;
 		house?: DailyReportViewModelHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		linkedStatements?: Array<LinkedStatements>;
 		member?: MemberViewModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		memberRole?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noticeNumber?: number | null;
 		text?: string | null;
 		title?: string | null;
 		uin?: string | null;
 	}
 	export interface StatementsViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId: FormControl<number | null | undefined>,
 		answeringBodyName: FormControl<string | null | undefined>,
 		dateMade: FormControl<Date | null | undefined>,
 		hasAttachments: FormControl<boolean | null | undefined>,
 		hasLinkedStatements: FormControl<boolean | null | undefined>,
 		house: FormControl<DailyReportViewModelHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		memberRole: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noticeNumber: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -378,9 +446,13 @@ export namespace MyNS {
 
 	export interface StatementsViewModelSearchResult {
 		results?: Array<StatementsViewModelItem>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface StatementsViewModelSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateStatementsViewModelSearchResultFormGroup() {
@@ -402,7 +474,9 @@ export namespace MyNS {
 		 * @param {Date} dateTo Daily report with report date on or before the date specified. Date format yyyy-mm-dd
 		 * @param {DailyReportViewModelHouse} house Daily report relating to the House specified. Defaults to Bicameral
 		 * @param {number} skip Number of records to skip, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} take Number of records to take, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @return {DailyReportViewModelSearchResult} Success
 		 */
 		DailyReportsGetByDateFromAndDateToAndHouseAndSkipAndTake(dateFrom: Date | null | undefined, dateTo: Date | null | undefined, house: DailyReportViewModelHouse | null | undefined, skip: number | null | undefined, take: number | null | undefined): Observable<DailyReportViewModelSearchResult> {
@@ -413,7 +487,9 @@ export namespace MyNS {
 		 * Returns a list of written questions
 		 * Get api/writtenquestions/questions
 		 * @param {number} askingMemberId Written questions asked by member with member ID specified
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {number} answeringMemberId Written questions answered by member with member ID specified
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {Date} tabledWhenFrom Written questions tabled on or after the date specified. Date format yyyy-mm-dd
 		 * @param {Date} tabledWhenTo Written questions tabled on or before the date specified. Date format yyyy-mm-dd
 		 * @param {Answered} answered Written questions that have been answered, unanswered or either.
@@ -430,7 +506,9 @@ export namespace MyNS {
 		 * @param {Array<number>} members Written questions / statements relating to the members with the IDs specified
 		 * @param {DailyReportViewModelHouse} house Written questions / statements relating to the House specified
 		 * @param {number} skip Number of records to skip, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} take Number of records to take, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @return {QuestionsViewModelSearchResult} Success
 		 */
 		WrittenQuestionsGetByAskingMemberIdAndAnsweringMemberIdAndTabledWhenFromAndTabledWhenToAndAnsweredAndAnsweredWhenFromAndAnsweredWhenToAndQuestionStatusAndIncludeWithdrawnAndExpandMemberAndCorrectedWhenFromAndCorrectedWhenToAndSearchTermAndUINAndAnsweringBodiesAndMembersAndHouseAndSkipAndTake(askingMemberId: number | null | undefined, answeringMemberId: number | null | undefined, tabledWhenFrom: Date | null | undefined, tabledWhenTo: Date | null | undefined, answered: Answered | null | undefined, answeredWhenFrom: Date | null | undefined, answeredWhenTo: Date | null | undefined, questionStatus: QuestionStatusEnum | null | undefined, includeWithdrawn: boolean | null | undefined, expandMember: boolean | null | undefined, correctedWhenFrom: Date | null | undefined, correctedWhenTo: Date | null | undefined, searchTerm: string | null | undefined, uIN: string | null | undefined, answeringBodies: Array<number> | null | undefined, members: Array<number> | null | undefined, house: DailyReportViewModelHouse | null | undefined, skip: number | null | undefined, take: number | null | undefined): Observable<QuestionsViewModelSearchResult> {
@@ -453,6 +531,7 @@ export namespace MyNS {
 		 * Returns a written question
 		 * Get api/writtenquestions/questions/{id}
 		 * @param {number} id written question with ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} expandMember Expand the details of Members in the result
 		 * @return {QuestionsViewModelItem} Success
 		 */
@@ -471,7 +550,9 @@ export namespace MyNS {
 		 * @param {Array<number>} members Written questions / statements relating to the members with the IDs specified
 		 * @param {DailyReportViewModelHouse} house Written questions / statements relating to the House specified
 		 * @param {number} skip Number of records to skip, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} take Number of records to take, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {boolean} expandMember Expand the details of Members in the results
 		 * @return {StatementsViewModelSearchResult} Success
 		 */
@@ -495,6 +576,7 @@ export namespace MyNS {
 		 * Returns a written statement
 		 * Get api/writtenstatements/statements/{id}
 		 * @param {number} id Written statement with ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} expandMember Expand the details of Members in the results
 		 * @return {StatementsViewModelSearchResult} Success
 		 */

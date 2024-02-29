@@ -245,19 +245,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
 		prev?: string | null;
 
-		/** The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span> */
+		/**
+		 * The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -267,19 +276,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span> */
+		/**
+		 * The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAdGroupPagedCollectionResponseFormGroup() {
@@ -321,19 +339,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.<p><b>Default</b>: <code>10</code> */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.<p><b>Default</b>: <code>10</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The call URI that can be used to retrieve the next page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be increased to retrieve the next page of results. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first result on the current page. This value can be set in the request with the <b>offset</b> query parameter. If the <b>offset</b> value is not set, it defaults to zero.<p><b>Default</b>: <code>0</code></p><p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first result on the current page. This value can be set in the request with the <b>offset</b> query parameter. If the <b>offset</b> value is not set, it defaults to zero.<p><b>Default</b>: <code>0</code></p><p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev?: string | null;
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -343,19 +370,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.<p><b>Default</b>: <code>10</code> */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.<p><b>Default</b>: <code>10</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be increased to retrieve the next page of results. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first result on the current page. This value can be set in the request with the <b>offset</b> query parameter. If the <b>offset</b> value is not set, it defaults to zero.<p><b>Default</b>: <code>0</code></p><p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first result on the current page. This value can be set in the request with the <b>offset</b> query parameter. If the <b>offset</b> value is not set, it defaults to zero.<p><b>Default</b>: <code>0</code></p><p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAdPagedCollectionResponseFormGroup() {
@@ -434,7 +470,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a listing that is generated when the listing is created. */
 		listingId?: string | null;
 
-		/** An HTTP status code indicating if the corresponding ad was successfully created or not. <code>200 Successful</code> should be returned for successfully created ads.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller creates, or attempts to create.</span> */
+		/**
+		 * An HTTP status code indicating if the corresponding ad was successfully created or not. <code>200 Successful</code> should be returned for successfully created ads.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller creates, or attempts to create.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -453,7 +492,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a listing that is generated when the listing is created. */
 		listingId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code indicating if the corresponding ad was successfully created or not. <code>200 Successful</code> should be returned for successfully created ads.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller creates, or attempts to create.</span> */
+		/**
+		 * An HTTP status code indicating if the corresponding ad was successfully created or not. <code>200 Successful</code> should be returned for successfully created ads.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller creates, or attempts to create.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAdResponseFormGroup() {
@@ -477,7 +519,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use <i>JSONPath</i> notation. */
@@ -508,7 +553,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
@@ -576,7 +624,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID that is generated when the listing is created. */
 		listingId?: string | null;
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -592,7 +643,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID that is generated when the listing is created. */
 		listingId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAdUpdateResponseFormGroup() {
@@ -621,7 +675,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID that is generated when the listing is created. */
 		listingId?: string | null;
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -637,7 +694,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID that is generated when the listing is created. */
 		listingId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAdUpdateStatusByListingIdResponseFormGroup() {
@@ -663,7 +723,10 @@ export namespace MyNS {
 		/** The URI for the ad, which can be used to retrieve the ad. */
 		href?: string | null;
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -676,7 +739,10 @@ export namespace MyNS {
 		/** The URI for the ad, which can be used to retrieve the ad. */
 		href: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the response-status of the request. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAdUpdateStatusResponseFormGroup() {
@@ -1030,7 +1096,10 @@ export namespace MyNS {
 		/** Indicates the type of item the <b>inventoryReferenceId</b> references. The item can be either an <code>INVENTORY_ITEM</code> or <code>INVENTORY_ITEM_GROUP</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType?: string | null;
 
-		/** An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfuly created. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfuly created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1046,7 +1115,10 @@ export namespace MyNS {
 		/** Indicates the type of item the <b>inventoryReferenceId</b> references. The item can be either an <code>INVENTORY_ITEM</code> or <code>INVENTORY_ITEM_GROUP</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfuly created. */
+		/**
+		 * An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfuly created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateAdsByInventoryReferenceResponseFormGroup() {
@@ -1153,7 +1225,10 @@ export namespace MyNS {
 		/** A field that defines the match type for the keyword.<br /><br /><b>Valid Values:</b><ul><li><code>BROAD</code></li><li><code>EXACT</code></li><li><code>PHRASE</code></li></ul> For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:MatchTypeEnum'>eBay API documentation</a> */
 		matchType?: string | null;
 
-		/** An HTTP status code is returned for each keyword to indicate the success or failure of adding that keyword to the ad group. */
+		/**
+		 * An HTTP status code is returned for each keyword to indicate the success or failure of adding that keyword to the ad group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1175,7 +1250,10 @@ export namespace MyNS {
 		/** A field that defines the match type for the keyword.<br /><br /><b>Valid Values:</b><ul><li><code>BROAD</code></li><li><code>EXACT</code></li><li><code>PHRASE</code></li></ul> For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:MatchTypeEnum'>eBay API documentation</a> */
 		matchType: FormControl<string | null | undefined>,
 
-		/** An HTTP status code is returned for each keyword to indicate the success or failure of adding that keyword to the ad group. */
+		/**
+		 * An HTTP status code is returned for each keyword to indicate the success or failure of adding that keyword to the ad group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateKeywordResponseFormGroup() {
@@ -1291,7 +1369,10 @@ export namespace MyNS {
 		/** The text for the negative keyword. */
 		negativeKeywordText?: string | null;
 
-		/** The status of the request to create a negative keyword. This field indicates whether the process was successful or not. */
+		/**
+		 * The status of the request to create a negative keyword. This field indicates whether the process was successful or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1316,7 +1397,10 @@ export namespace MyNS {
 		/** The text for the negative keyword. */
 		negativeKeywordText: FormControl<string | null | undefined>,
 
-		/** The status of the request to create a negative keyword. This field indicates whether the process was successful or not. */
+		/**
+		 * The status of the request to create a negative keyword. This field indicates whether the process was successful or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateNegativeKeywordResponseFormGroup() {
@@ -1400,7 +1484,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a listing that is generated when the listing is created. */
 		listingId?: string | null;
 
-		/** An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span> */
+		/**
+		 * An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1413,7 +1500,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a listing that is generated when the listing is created. */
 		listingId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span> */
+		/**
+		 * An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.<span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteAdResponseFormGroup() {
@@ -1503,7 +1593,10 @@ export namespace MyNS {
 		/** The enumeration value returned here indicates if the ad was for a single-variation listing or a multiple-variation listing. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType?: string | null;
 
-		/** An HTTP status code indicating if the corresponding ad was successfully deleted or not. <code>200 Successful</code> should be returned for successfully deleted ads. <span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span> */
+		/**
+		 * An HTTP status code indicating if the corresponding ad was successfully deleted or not. <code>200 Successful</code> should be returned for successfully deleted ads. <span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1516,7 +1609,10 @@ export namespace MyNS {
 		/** The enumeration value returned here indicates if the ad was for a single-variation listing or a multiple-variation listing. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType: FormControl<string | null | undefined>,
 
-		/** An HTTP status code indicating if the corresponding ad was successfully deleted or not. <code>200 Successful</code> should be returned for successfully deleted ads. <span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span> */
+		/**
+		 * An HTTP status code indicating if the corresponding ad was successfully deleted or not. <code>200 Successful</code> should be returned for successfully deleted ads. <span class="tablenote"><b>Note:</b>A status code is returned for each ad that the seller deletes, or attempts to delete.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteAdsByInventoryReferenceResponseFormGroup() {
@@ -1658,7 +1754,10 @@ export namespace MyNS {
 		/** The inventory reference type associated with the ad. The inventory reference type could be a SKU number or Inventory Item Group. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType?: string | null;
 
-		/** An HTTP status code that indicates whether or not the CPS ad was successfully updated. */
+		/**
+		 * An HTTP status code that indicates whether or not the CPS ad was successfully updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1671,7 +1770,10 @@ export namespace MyNS {
 		/** The inventory reference type associated with the ad. The inventory reference type could be a SKU number or Inventory Item Group. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:InventoryReferenceTypeEnum'>eBay API documentation</a> */
 		inventoryReferenceType: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates whether or not the CPS ad was successfully updated. */
+		/**
+		 * An HTTP status code that indicates whether or not the CPS ad was successfully updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateAdsByInventoryReferenceResponseFormGroup() {
@@ -1758,7 +1860,10 @@ export namespace MyNS {
 		/** This field identifies the keyword that the seller updated, or attempted to update. */
 		keywordId?: string | null;
 
-		/** An HTTP status code is returned for each keyword to indicate the success or failure of updating that keyword. */
+		/**
+		 * An HTTP status code is returned for each keyword to indicate the success or failure of updating that keyword.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1768,7 +1873,10 @@ export namespace MyNS {
 		/** This field identifies the keyword that the seller updated, or attempted to update. */
 		keywordId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code is returned for each keyword to indicate the success or failure of updating that keyword. */
+		/**
+		 * An HTTP status code is returned for each keyword to indicate the success or failure of updating that keyword.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateKeywordResponseFormGroup() {
@@ -1851,7 +1959,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a negative keyword. This keyword ID will be generated for each successfully created negative keyword. */
 		negativeKeywordId?: string | null;
 
-		/** An HTTP status code that indicates the success or failure of updating that negative keyword. */
+		/**
+		 * An HTTP status code that indicates the success or failure of updating that negative keyword.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -1861,7 +1972,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID for a negative keyword. This keyword ID will be generated for each successfully created negative keyword. */
 		negativeKeywordId: FormControl<string | null | undefined>,
 
-		/** An HTTP status code that indicates the success or failure of updating that negative keyword. */
+		/**
+		 * An HTTP status code that indicates the success or failure of updating that negative keyword.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNegativeKeywordResponseFormGroup() {
@@ -2117,19 +2231,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev?: string | null;
 
-		/** The total number of campaigns retrieved in the result set.  <br><br>If no campaigns are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of campaigns retrieved in the result set.  <br><br>If no campaigns are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -2139,19 +2262,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of campaigns retrieved in the result set.  <br><br>If no campaigns are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of campaigns retrieved in the result set.  <br><br>If no campaigns are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCampaignPagedCollectionResponseFormGroup() {
@@ -2231,7 +2363,10 @@ export namespace MyNS {
 		/** This indicates the type of Coded Coupon promotion, and is required when the promotion type is <b>CODED_COUPON</b>.<br><br>Supported types:<ul><li><b>PRIVATE_SINGLE_SELLER_COUPON:</b> Anyone can use and share the coupon code, but it isn't posted on eBay.</li><li><b>PUBLIC_SINGLE_SELLER_COUPON:</b> Anyone can find the coupon code on eBay and use it.</li></ul> For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/sme:CouponTypeEnum'>eBay API documentation</a> */
 		couponType?: string | null;
 
-		/** This sets the limit on the number of times a buyer can use this coupon. The range of values is 1-10. If no value is provided, a buyer can use the coupon an unlimited number of times. */
+		/**
+		 * This sets the limit on the number of times a buyer can use this coupon. The range of values is 1-10. If no value is provided, a buyer can use the coupon an unlimited number of times.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCouponRedemptionPerUser?: number | null;
 	}
 
@@ -2244,7 +2379,10 @@ export namespace MyNS {
 		/** This indicates the type of Coded Coupon promotion, and is required when the promotion type is <b>CODED_COUPON</b>.<br><br>Supported types:<ul><li><b>PRIVATE_SINGLE_SELLER_COUPON:</b> Anyone can use and share the coupon code, but it isn't posted on eBay.</li><li><b>PUBLIC_SINGLE_SELLER_COUPON:</b> Anyone can find the coupon code on eBay and use it.</li></ul> For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/sme:CouponTypeEnum'>eBay API documentation</a> */
 		couponType: FormControl<string | null | undefined>,
 
-		/** This sets the limit on the number of times a buyer can use this coupon. The range of values is 1-10. If no value is provided, a buyer can use the coupon an unlimited number of times. */
+		/**
+		 * This sets the limit on the number of times a buyer can use this coupon. The range of values is 1-10. If no value is provided, a buyer can use the coupon an unlimited number of times.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCouponRedemptionPerUser: FormControl<number | null | undefined>,
 	}
 	export function CreateCouponConfigurationFormGroup() {
@@ -2559,14 +2697,20 @@ export namespace MyNS {
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
 		maxDiscountAmount?: Amount;
 
-		/** This field indicates the order in which the <b>discountRules</b> are presented. The value specified for this field must equal the associated <b>minQuantity</b> value. <br><br><i>Required if </i> you are creating a volume pricing promotion. */
+		/**
+		 * This field indicates the order in which the <b>discountRules</b> are presented. The value specified for this field must equal the associated <b>minQuantity</b> value. <br><br><i>Required if </i> you are creating a volume pricing promotion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleOrder?: number | null;
 	}
 
 	/** This complex type defines a promotion as being either a monetary amount or a percentage of a sales price that's subtracted from the price of an item or order. <p>Set the amount of the discount and the rules that govern when the discount triggers using the <b>discountBenefit</b> and <b>discountSpecification</b> fields.</p>  <p class="tablenote"><b>Note:</b> In <b>volume pricing promotions</b>, you must configure at least two <b>discountRule</b> containers and at most four.</p> */
 	export interface DiscountRuleFormProperties {
 
-		/** This field indicates the order in which the <b>discountRules</b> are presented. The value specified for this field must equal the associated <b>minQuantity</b> value. <br><br><i>Required if </i> you are creating a volume pricing promotion. */
+		/**
+		 * This field indicates the order in which the <b>discountRules</b> are presented. The value specified for this field must equal the associated <b>minQuantity</b> value. <br><br><i>Required if </i> you are creating a volume pricing promotion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscountRuleFormGroup() {
@@ -2583,29 +2727,47 @@ export namespace MyNS {
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
 		forEachAmount?: Amount;
 
-		/** The number of items that must be purchased in order to qualify for the discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code> */
+		/**
+		 * The number of items that must be purchased in order to qualify for the discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forEachQuantity?: number | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
 		minAmount?: Amount;
 
-		/** The minimum quantity of promoted items that needs to be bought in order to qualify for the promotion's discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code> */
+		/**
+		 * The minimum quantity of promoted items that needs to be bought in order to qualify for the promotion's discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minQuantity?: number | null;
 
-		/** Use this field to configure "Buy One Get One" (or <b>BOGO</b>) promotions.  <br><br>You must couple this field with <b>forEachQuantity</b> and an <b>amountOffItem</b> or <b>percentOffItem</b> field to configure your BOGO promotion. This field is not valid with order-based promotions. <br><br>The value of this field represents the number of items to be discounted when other promotion criteria is met. For example, when the buyer adds the number of items identified by the <b>forEachQuantity</b> value to their cart, they are then eligible to receive the stated discount from an additional number of like items (the number of which is identified by this field) when they add those items to their cart. To receive the discount, the buyer must purchase the number of items indicated by  <b>forEachQuantity</b> <i>plus</i> the number indicated by this field.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code> */
+		/**
+		 * Use this field to configure "Buy One Get One" (or <b>BOGO</b>) promotions.  <br><br>You must couple this field with <b>forEachQuantity</b> and an <b>amountOffItem</b> or <b>percentOffItem</b> field to configure your BOGO promotion. This field is not valid with order-based promotions. <br><br>The value of this field represents the number of items to be discounted when other promotion criteria is met. For example, when the buyer adds the number of items identified by the <b>forEachQuantity</b> value to their cart, they are then eligible to receive the stated discount from an additional number of like items (the number of which is identified by this field) when they add those items to their cart. To receive the discount, the buyer must purchase the number of items indicated by  <b>forEachQuantity</b> <i>plus</i> the number indicated by this field.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDiscountedItems?: number | null;
 	}
 
 	/** This container defines the criteria for when the discounts of a promotion trigger, such as the minimum quantity the buyer must purchase before the promotion kicks in. The promotional discount is applied each time the criteria defined by this container is met.  <p><b>Note:</b> When configuring the rules that govern when the discounts are applied, populate just one of the following fields in the <b>discountSpecification</b> container:</p>  <ul><li><b>minAmount</b></li> <li><b>minQuantity</b></li> <li><b>forEachQuantity</b></li> <li><b>forEachAmount</b></li></ul> <p class="tablenote"><b>Tip:</b> Refer to <a href="/api-docs/sell/static/marketing/pm-specifying-discounts.html">Configuring discounts for threshold promotions</a> for information and examples on how to combine <b>discountBenefit</b> and <b>discountSpecification</b> to create different types of promotions.</p> */
 	export interface DiscountSpecificationFormProperties {
 
-		/** The number of items that must be purchased in order to qualify for the discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code> */
+		/**
+		 * The number of items that must be purchased in order to qualify for the discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forEachQuantity: FormControl<number | null | undefined>,
 
-		/** The minimum quantity of promoted items that needs to be bought in order to qualify for the promotion's discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code> */
+		/**
+		 * The minimum quantity of promoted items that needs to be bought in order to qualify for the promotion's discount.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, <br> &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 <br> &nbsp; 20, 25, 50, 75, 100</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minQuantity: FormControl<number | null | undefined>,
 
-		/** Use this field to configure "Buy One Get One" (or <b>BOGO</b>) promotions.  <br><br>You must couple this field with <b>forEachQuantity</b> and an <b>amountOffItem</b> or <b>percentOffItem</b> field to configure your BOGO promotion. This field is not valid with order-based promotions. <br><br>The value of this field represents the number of items to be discounted when other promotion criteria is met. For example, when the buyer adds the number of items identified by the <b>forEachQuantity</b> value to their cart, they are then eligible to receive the stated discount from an additional number of like items (the number of which is identified by this field) when they add those items to their cart. To receive the discount, the buyer must purchase the number of items indicated by  <b>forEachQuantity</b> <i>plus</i> the number indicated by this field.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code> */
+		/**
+		 * Use this field to configure "Buy One Get One" (or <b>BOGO</b>) promotions.  <br><br>You must couple this field with <b>forEachQuantity</b> and an <b>amountOffItem</b> or <b>percentOffItem</b> field to configure your BOGO promotion. This field is not valid with order-based promotions. <br><br>The value of this field represents the number of items to be discounted when other promotion criteria is met. For example, when the buyer adds the number of items identified by the <b>forEachQuantity</b> value to their cart, they are then eligible to receive the stated discount from an additional number of like items (the number of which is identified by this field) when they add those items to their cart. To receive the discount, the buyer must purchase the number of items indicated by  <b>forEachQuantity</b> <i>plus</i> the number indicated by this field.  <br><br><b>Valid values:</b> <br><code> &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDiscountedItems: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscountSpecificationFormGroup() {
@@ -2701,7 +2863,10 @@ export namespace MyNS {
 	/** A container for details regarding the basis for an item. */
 	export interface ItemBasis {
 
-		/** The estimated value of the search impressions for items based on the provided dimensions. <br /><br /><b>Duration:</b> 17 days<br /><br /><b>Total slots:</b> 200 <br /><br /><b>Channel:</b> Dweb, Mweb, Native */
+		/**
+		 * The estimated value of the search impressions for items based on the provided dimensions. <br /><br /><b>Duration:</b> 17 days<br /><br /><b>Total slots:</b> 200 <br /><br /><b>Channel:</b> Dweb, Mweb, Native
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedValue?: number | null;
 
 		/** The basis of the statistics. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:TargetingMetricsEnum'>eBay API documentation</a> */
@@ -2711,7 +2876,10 @@ export namespace MyNS {
 	/** A container for details regarding the basis for an item. */
 	export interface ItemBasisFormProperties {
 
-		/** The estimated value of the search impressions for items based on the provided dimensions. <br /><br /><b>Duration:</b> 17 days<br /><br /><b>Total slots:</b> 200 <br /><br /><b>Channel:</b> Dweb, Mweb, Native */
+		/**
+		 * The estimated value of the search impressions for items based on the provided dimensions. <br /><br /><b>Duration:</b> 17 days<br /><br /><b>Total slots:</b> 200 <br /><br /><b>Channel:</b> Dweb, Mweb, Native
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedValue: FormControl<number | null | undefined>,
 
 		/** The basis of the statistics. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/pls:TargetingMetricsEnum'>eBay API documentation</a> */
@@ -2867,7 +3035,10 @@ export namespace MyNS {
 		/** This type defines either the selections rules or the list of listing IDs for the promotion. The "listing IDs" are are either the seller's item IDs or the eBay listing IDs. */
 		inventoryCriterion?: InventoryCriterion;
 
-		/** For markdown promotions, this field is reserved for future use. <!--This field specifies the precedence of this set of inventory criteria, which is taken into account if an item is selected for multiple discounts by different sets of criteria. The criteria with the highest priority (lowest ruleOrder value) takes precedence over criteria with a lower precedence.--> */
+		/**
+		 * For markdown promotions, this field is reserved for future use. <!--This field specifies the precedence of this set of inventory criteria, which is taken into account if an item is selected for multiple discounts by different sets of criteria. The criteria with the highest priority (lowest ruleOrder value) takes precedence over criteria with a lower precedence.-->
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleOrder?: number | null;
 	}
 
@@ -2877,7 +3048,10 @@ export namespace MyNS {
 		/** A unique, eBay-generated ID that you can use to identify the discount. This field is ignored in POST and PUT operations. */
 		discountId: FormControl<string | null | undefined>,
 
-		/** For markdown promotions, this field is reserved for future use. <!--This field specifies the precedence of this set of inventory criteria, which is taken into account if an item is selected for multiple discounts by different sets of criteria. The criteria with the highest priority (lowest ruleOrder value) takes precedence over criteria with a lower precedence.--> */
+		/**
+		 * For markdown promotions, this field is reserved for future use. <!--This field specifies the precedence of this set of inventory criteria, which is taken into account if an item is selected for multiple discounts by different sets of criteria. The criteria with the highest priority (lowest ruleOrder value) takes precedence over criteria with a lower precedence.-->
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateSelectedInventoryDiscountFormGroup() {
@@ -3094,7 +3268,10 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** An array of the listings associated with a promotion. */
@@ -3103,13 +3280,19 @@ export namespace MyNS {
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		prev?: string | null;
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
 		/** A list of warnings that were generated by the request. Warning do not stop processing, but should be checked to ensure that the response contains the correct information. */
@@ -3122,19 +3305,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsPagedCollectionFormGroup() {
@@ -3180,7 +3372,10 @@ export namespace MyNS {
 		/** A list of the status values assigned to the item and the date that each new status was assigned. */
 		listingPromotionStatuses?: Array<ItemMarkdownStatus>;
 
-		/** The number of items being sold in the listing. */
+		/**
+		 * The number of items being sold in the listing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Store CategoryId (if any) that to which the listing belongs. This field is blank if there is no seller Store category ID. */
@@ -3214,7 +3409,10 @@ export namespace MyNS {
 		/** A unique eBay-assigned ID that is generated when the item is listed. */
 		listingId: FormControl<string | null | undefined>,
 
-		/** The number of items being sold in the listing. */
+		/**
+		 * The number of items being sold in the listing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Store CategoryId (if any) that to which the listing belongs. This field is blank if there is no seller Store category ID. */
@@ -3301,19 +3499,28 @@ export namespace MyNS {
 		/** This array contains all of the keywords that match the request criteria. Keywords will be sorted by adGroupId, regardless of whether you searched for keywords across the entire campaign, or if you searched for keywords within one or specific ad groups. */
 		keywords?: Array<Keyword>;
 
-		/** The number of keywords returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of keywords returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev?: string | null;
 
-		/** The total number of keywords retrieved in the result set.  <br><br>If no keywords are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of keywords retrieved in the result set.  <br><br>If no keywords are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -3323,19 +3530,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of keywords returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of keywords returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of keywords retrieved in the result set.  <br><br>If no keywords are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of keywords retrieved in the result set.  <br><br>If no keywords are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateKeywordPagedCollectionResponseFormGroup() {
@@ -3469,7 +3685,10 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** A list of negative keywords returned in the paginated collection. */
@@ -3478,13 +3697,19 @@ export namespace MyNS {
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><b>Default:</b> <code>0</code><br /><br /><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><b>Default:</b> <code>0</code><br /><br /><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
 		prev?: string | null;
 
-		/** The total number of result sets in the paginated collection. */
+		/**
+		 * The total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -3494,19 +3719,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><b>Default:</b> <code>0</code><br /><br /><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><b>Default:</b> <code>0</code><br /><br /><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of result sets in the paginated collection. */
+		/**
+		 * The total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateNegativeKeywordPagedCollectionResponseFormGroup() {
@@ -3641,10 +3875,16 @@ export namespace MyNS {
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
 		baseSale?: Amount;
 
-		/** This is the quantity of items purchased in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your number of items sold (<b>itemsSoldQuantity</b>) would be 2 and you number of orders sold (<b>numberOfOrdersSold</b>) would be 1. */
+		/**
+		 * This is the quantity of items purchased in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your number of items sold (<b>itemsSoldQuantity</b>) would be 2 and you number of orders sold (<b>numberOfOrdersSold</b>) would be 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsSoldQuantity?: number | null;
 
-		/** This is the number of orders sold in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your <b>numberOfOrdersSold</b> would be 1 and your <b>itemsSoldQuantity</b> would be 2. */
+		/**
+		 * This is the number of orders sold in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your <b>numberOfOrdersSold</b> would be 1 and your <b>itemsSoldQuantity</b> would be 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfOrdersSold?: number | null;
 
 		/** The <i>percentage sales lift</i> is the total dollar amount gained due to promotions. This value is calculated as follows:  <br><br> <b>promotionSale</b> / <b>totalSale</b> =  <b>percentageSalesLift</b> */
@@ -3678,10 +3918,16 @@ export namespace MyNS {
 		/** The <i>average order size</i> is the average number of items that each order contained in a promotion. This value is calculated as follows:  <br><br><b>itemsSoldQuantity</b> / <b>numberOfOrdersSold</b> = <b>averageOrderSize</b> */
 		averageOrderSize: FormControl<string | null | undefined>,
 
-		/** This is the quantity of items purchased in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your number of items sold (<b>itemsSoldQuantity</b>) would be 2 and you number of orders sold (<b>numberOfOrdersSold</b>) would be 1. */
+		/**
+		 * This is the quantity of items purchased in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your number of items sold (<b>itemsSoldQuantity</b>) would be 2 and you number of orders sold (<b>numberOfOrdersSold</b>) would be 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsSoldQuantity: FormControl<number | null | undefined>,
 
-		/** This is the number of orders sold in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your <b>numberOfOrdersSold</b> would be 1 and your <b>itemsSoldQuantity</b> would be 2. */
+		/**
+		 * This is the number of orders sold in a threshold promotion where the threshold <i>has been met</i> and the discount was applied. <br><br>For example, suppose you're running a "Buy 1, get 1 at 50%" promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your <b>numberOfOrdersSold</b> would be 1 and your <b>itemsSoldQuantity</b> would be 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfOrdersSold: FormControl<number | null | undefined>,
 
 		/** The <i>percentage sales lift</i> is the total dollar amount gained due to promotions. This value is calculated as follows:  <br><br> <b>promotionSale</b> / <b>totalSale</b> =  <b>percentageSalesLift</b> */
@@ -3720,13 +3966,19 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
@@ -3735,7 +3987,10 @@ export namespace MyNS {
 		/** A list containing the details of each returned promotion. This includes all the information about the promotions except for the listings that are part of the promotions. */
 		promotions?: Array<PromotionDetail>;
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -3745,19 +4000,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePromotionsPagedCollectionFormGroup() {
@@ -3779,13 +4043,19 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
@@ -3794,7 +4064,10 @@ export namespace MyNS {
 		/** A list of <b>promotionReports</b> contained in the paginated result set. */
 		promotionReports?: Array<PromotionReportDetail>;
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -3804,19 +4077,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p class="tablenote"><strong>Note: </strong>The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePromotionsReportPagedCollectionFormGroup() {
@@ -3880,10 +4162,16 @@ export namespace MyNS {
 		/** A list containing the metadata for the dimension used in the report. */
 		dimensionMetadata?: Array<DimensionMetadata>;
 
-		/** The maximum number of dimensions that can be requested for the specified report type. */
+		/**
+		 * The maximum number of dimensions that can be requested for the specified report type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfDimensionsToRequest?: number | null;
 
-		/** The maximum number of metrics that can be requested for the specified report type. */
+		/**
+		 * The maximum number of metrics that can be requested for the specified report type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfMetricsToRequest?: number | null;
 
 		/** A list containing the metadata for the metrics in the report. */
@@ -3896,10 +4184,16 @@ export namespace MyNS {
 	/** This type defines the fields included in the report. */
 	export interface ReportMetadataFormProperties {
 
-		/** The maximum number of dimensions that can be requested for the specified report type. */
+		/**
+		 * The maximum number of dimensions that can be requested for the specified report type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfDimensionsToRequest: FormControl<number | null | undefined>,
 
-		/** The maximum number of metrics that can be requested for the specified report type. */
+		/**
+		 * The maximum number of metrics that can be requested for the specified report type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfMetricsToRequest: FormControl<number | null | undefined>,
 
 		/** The <b>report_type</b>, as specified in the request to create the report task.<br/><br/><span class="tablenote"><b>Note:</b> INVENTORY_PERFORMANCE_REPORT is not currently available; availability date is pending.</span> For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/marketing/types/plr:ReportTypeEnum'>eBay API documentation</a> */
@@ -4075,13 +4369,19 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><span class="tablenote"><span style="color:#004680"><strong>Note:</strong></span> The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><span class="tablenote"><span style="color:#004680"><strong>Note:</strong></span> The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
@@ -4090,7 +4390,10 @@ export namespace MyNS {
 		/** A list of report tasks contained on this page from the paginated response. */
 		reportTasks?: Array<ReportTask>;
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -4100,19 +4403,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><span class="tablenote"><span style="color:#004680"><strong>Note:</strong></span> The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter.<br /><br /><span class="tablenote"><span style="color:#004680"><strong>Note:</strong></span> The items in a paginated result set use a zero-based list where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. <br><br><b>Max length</b>: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of items retrieved in the result set.  <br><br>If no items are found, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateReportTaskPagedCollectionFormGroup() {
@@ -4233,13 +4545,19 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
@@ -4248,7 +4566,10 @@ export namespace MyNS {
 		/** A list of suggested items in the paginated collection. */
 		suggestedItems?: Array<TargetingItems>;
 
-		/** The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span> */
+		/**
+		 * The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -4258,19 +4579,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the <b>limit</b> query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the next page in the result set. This value is returned only if there is an additional page of results to display from the result set. */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the <b>offset</b> query parameter. <p><b>Default:</b> 0</p><br><span class="tablenote"><b>Note: </b>The items in a paginated result set use a zero-based list, where the first item in the list has an offset of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The call URI that can be used to retrieve the previous page in the result set. Basically, all of the request parameters will remain the same except the offset value, which will be decreased to retrieve the previous page of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span> */
+		/**
+		 * The total number of items retrieved in the result set.<br /><br /><span class="tablenote"><b>Note: </b>If no items are found, this field is returned with a value of <code>0</code>.</span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetedAdsPagedCollectionFormGroup() {

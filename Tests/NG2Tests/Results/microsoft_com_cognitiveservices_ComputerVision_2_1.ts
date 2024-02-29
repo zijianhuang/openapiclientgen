@@ -1237,6 +1237,7 @@ export namespace MyNS {
 		 * A successful response will be returned in JSON. If the request failed, the response will contain an error code and a message to help understand what went wrong.
 		 * Post describe
 		 * @param {number} maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AnalyzeImageLanguage} language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese.
 		 * @param {Array<string>} descriptionExclude Turn off specified domain models when generating the description.
 		 * @param {ImageUrl} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
@@ -1264,7 +1265,9 @@ export namespace MyNS {
 		 * Upon failure, the error code and an error message are returned. The error code could be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, InvalidThumbnailSize, NotSupportedImage, FailedToProcess, Timeout, or InternalServerError.
 		 * Post generateThumbnail
 		 * @param {number} width Width of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.
+		 *     Minimum: 1    Maximum: 1024
 		 * @param {number} height Height of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.
+		 *     Minimum: 1    Maximum: 1024
 		 * @param {boolean} smartCropping Boolean flag for enabling smart cropping.
 		 * @param {ImageUrl} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
 		 * @return {void} The generated thumbnail in binary format.

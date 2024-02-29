@@ -1045,6 +1045,7 @@ export namespace MyNS {
 		 * Lists applications owned by the requester.
 		 * Get applications
 		 * @param {number} maxItems The total number of items to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A token to specify where to start paginating.
 		 * @param {string} MaxItems Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1155,6 +1156,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/dependencies
 		 * @param {string} applicationId The Amazon Resource Name (ARN) of the application.
 		 * @param {number} maxItems The total number of items to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A token to specify where to start paginating.
 		 * @param {string} semanticVersion The semantic version of the application to get.
 		 * @param {string} MaxItems Pagination limit
@@ -1170,6 +1172,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/versions
 		 * @param {string} applicationId The Amazon Resource Name (ARN) of the application.
 		 * @param {number} maxItems The total number of items to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A token to specify where to start paginating.
 		 * @param {string} MaxItems Pagination limit
 		 * @param {string} NextToken Pagination token

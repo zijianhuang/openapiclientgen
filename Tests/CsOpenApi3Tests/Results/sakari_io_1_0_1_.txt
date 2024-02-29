@@ -941,8 +941,13 @@ namespace MyNS
 		/// Campaigns_fetchAll v1/accounts/{accountId}/campaigns
 		/// </summary>
 		/// <param name="accountId">Account to apply operations to</param>
-		/// <param name="offset">Results to skip when paginating through a result set</param>
-		/// <param name="limit">Maximum number of results to return</param>
+		/// <param name="offset">Results to skip when paginating through a result set
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Maximum number of results to return
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="name">Filter by name or part of</param>
 		/// <returns>successful operation</returns>
 		public async Task<CampaignsResponse> Campaigns_fetchAllAsync(string accountId, long offset, long limit, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1112,8 +1117,13 @@ namespace MyNS
 		/// Contacts_fetchAll v1/accounts/{accountId}/contacts
 		/// </summary>
 		/// <param name="accountId">Account to apply operations to</param>
-		/// <param name="offset">Results to skip when paginating through a result set</param>
-		/// <param name="limit">Maximum number of results to return</param>
+		/// <param name="offset">Results to skip when paginating through a result set
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Maximum number of results to return
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="firstName">Filter by first name or part of</param>
 		/// <param name="lastName">Filter by last name or part of</param>
 		/// <param name="mobile">Filter by mobile or part of</param>
@@ -1288,8 +1298,13 @@ namespace MyNS
 		/// Conversations_fetchAll v1/accounts/{accountId}/conversations
 		/// </summary>
 		/// <param name="accountId">Account to apply operations to</param>
-		/// <param name="offset">Results to skip when paginating through a result set</param>
-		/// <param name="limit">Maximum number of results to return</param>
+		/// <param name="offset">Results to skip when paginating through a result set
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Maximum number of results to return
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<ConversationsResponse> Conversations_fetchAllAsync(string accountId, long offset, long limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1389,8 +1404,13 @@ namespace MyNS
 		/// Messages_fetchAll v1/accounts/{accountId}/messages
 		/// </summary>
 		/// <param name="accountId">Account to apply operations to</param>
-		/// <param name="offset">Results to skip when paginating through a result set</param>
-		/// <param name="limit">Maximum number of results to return</param>
+		/// <param name="offset">Results to skip when paginating through a result set
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Maximum number of results to return
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="contactId">ID of contact</param>
 		/// <param name="conversationId">ID of conversation</param>
 		/// <returns>successful operation</returns>
@@ -1504,8 +1524,13 @@ namespace MyNS
 		/// Templates_fetchAll v1/accounts/{accountId}/templates
 		/// </summary>
 		/// <param name="accountId">Account to apply operations to</param>
-		/// <param name="offset">Results to skip when paginating through a result set</param>
-		/// <param name="limit">Maximum number of results to return</param>
+		/// <param name="offset">Results to skip when paginating through a result set
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Maximum number of results to return
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="name">Filter by name or part of</param>
 		/// <returns>successful operation</returns>
 		public async Task<TemplatesResponse> Templates_fetchAllAsync(string accountId, long offset, long limit, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

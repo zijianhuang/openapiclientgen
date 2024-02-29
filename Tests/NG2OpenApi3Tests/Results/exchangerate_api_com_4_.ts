@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** Each supported currency code in terms of the base currency */
 		rates?: {[id: string]: number };
 
-		/** The epoch time this set of exchange rates was generated */
+		/**
+		 * The epoch time this set of exchange rates was generated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_last_updated?: number | null;
 	}
 	export interface Latest_base_currencyGetReturnFormProperties {
@@ -44,7 +47,10 @@ export namespace MyNS {
 		/** Each supported currency code in terms of the base currency */
 		rates: FormControl<{[id: string]: number } | null | undefined>,
 
-		/** The epoch time this set of exchange rates was generated */
+		/**
+		 * The epoch time this set of exchange rates was generated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_last_updated: FormControl<number | null | undefined>,
 	}
 	export function CreateLatest_base_currencyGetReturnFormGroup() {

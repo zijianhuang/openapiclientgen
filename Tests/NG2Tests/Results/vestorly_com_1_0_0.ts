@@ -2100,7 +2100,9 @@ export namespace MyNS {
 		 * @param {string} access_token OAuth Token
 		 * @param {string} text_search Text to search phrases
 		 * @param {number} size Number of returned phrases
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} from Number of phrases to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Response
 		 */
 		FindArticlePhrases(vestorly_auth: string, access_token: string | null | undefined, text_search: string | null | undefined, size: number | null | undefined, from: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2113,6 +2115,7 @@ export namespace MyNS {
 		 * @param {string} vestorly_auth Vestorly Auth Token
 		 * @param {string} access_token OAuth Token
 		 * @param {number} limit Limit on the number of articles to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} text_query Search query parameter
 		 * @param {string} sort_direction Direction of sort (used with sort_by parameter)
 		 * @param {string} sort_by Field on model to sort by
@@ -2261,8 +2264,10 @@ export namespace MyNS {
 		 * @param {string} access_token OAuth Token
 		 * @param {string} id Category Id to fetch
 		 * @param {number} limit Limit on the number of articles to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort_by Field on model to sort by
 		 * @param {number} start Field where the fetch will start from
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} created_at_gte_days_ago Filter retrieved articles since this date
 		 * @param {string} text_query Search query parameter
 		 * @return {void} Response
@@ -2406,7 +2411,9 @@ export namespace MyNS {
 		 * @param {string} vestorly_auth Vestorly Auth Token
 		 * @param {string} access_token OAuth Token
 		 * @param {number} start Skips number of members from start
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of members to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Member response
 		 */
 		FindMembers(vestorly_auth: string, access_token: string | null | undefined, start: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {

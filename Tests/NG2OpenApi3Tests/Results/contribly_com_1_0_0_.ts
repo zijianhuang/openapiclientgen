@@ -4,19 +4,31 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Artifact {
+
+		/** Type: double */
 		contentLength?: number | null;
 		contentType?: string | null;
+
+		/** Type: double */
 		height?: number | null;
 		label?: string | null;
 		url?: string | null;
+
+		/** Type: double */
 		width?: number | null;
 	}
 	export interface ArtifactFormProperties {
+
+		/** Type: double */
 		contentLength: FormControl<number | null | undefined>,
 		contentType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		height: FormControl<number | null | undefined>,
 		label: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateArtifactFormGroup() {
@@ -167,12 +179,16 @@ export namespace MyNS {
 	}
 
 	export interface Media {
+
+		/** Type: double */
 		duration?: number | null;
 		id?: string | null;
 		place?: Place;
 		type?: string | null;
 	}
 	export interface MediaFormProperties {
+
+		/** Type: double */
 		duration: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -211,11 +227,19 @@ export namespace MyNS {
 	}
 
 	export interface LatLong {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface LatLongFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLongFormGroup() {
@@ -227,10 +251,14 @@ export namespace MyNS {
 	}
 
 	export interface OsmId {
+
+		/** Type: double */
 		osmId?: number | null;
 		osmType?: string | null;
 	}
 	export interface OsmIdFormProperties {
+
+		/** Type: double */
 		osmId: FormControl<number | null | undefined>,
 		osmType: FormControl<string | null | undefined>,
 	}
@@ -662,6 +690,8 @@ export namespace MyNS {
 
 		/** Required */
 		owner: string;
+
+		/** Type: double */
 		progress?: number | null;
 
 		/** Required */
@@ -677,6 +707,8 @@ export namespace MyNS {
 
 		/** Required */
 		owner: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -701,6 +733,7 @@ export namespace MyNS {
 		/**
 		 * The number of contributions selected for export.
 		 * Required
+		 * Type: double
 		 */
 		contributions: number;
 
@@ -710,12 +743,14 @@ export namespace MyNS {
 		/**
 		 * The number of media files included in this export.
 		 * Required
+		 * Type: double
 		 */
 		media: number;
 
 		/**
 		 * The expected total size of the media files to be exported.
 		 * Required
+		 * Type: double
 		 */
 		totalMediaSize: number;
 	}
@@ -724,6 +759,7 @@ export namespace MyNS {
 		/**
 		 * The number of contributions selected for export.
 		 * Required
+		 * Type: double
 		 */
 		contributions: FormControl<number | null | undefined>,
 
@@ -733,12 +769,14 @@ export namespace MyNS {
 		/**
 		 * The number of media files included in this export.
 		 * Required
+		 * Type: double
 		 */
 		media: FormControl<number | null | undefined>,
 
 		/**
 		 * The expected total size of the media files to be exported.
 		 * Required
+		 * Type: double
 		 */
 		totalMediaSize: FormControl<number | null | undefined>,
 	}
@@ -1170,7 +1208,9 @@ export namespace MyNS {
 		 * Get assignments
 		 * @param {string} ownedBy Restrict results to assignments owned by this user.
 		 * @param {number} page Pagination page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Pagination page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} q Restrict results to assignments whose name or description matches this keyword.
 		 * @param {string} urlWords Select an assignment by urlWords.
 		 * @param {boolean} open Select open or closed assignments
@@ -1244,6 +1284,7 @@ export namespace MyNS {
 		 * @param {boolean} hasLocation Restrict results to contributions which have a publicly visible location.
 		 * @param {string} latLong Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair). Also see radius
 		 * @param {number} radius When limiting result by location with the latLong parameter, specify the radius in kilometers.
+		 *     Type: double
 		 * @param {string} mediaType Restrict results to contributions which include a media file of the given type (ie. image / video)
 		 * @param {string} ownedBy Restrict results to contributions which are fall under the jurisdiction by this user.
 		 * @param {string} q Restrict results to contributions whose headline text matches this keyword.
@@ -1251,6 +1292,7 @@ export namespace MyNS {
 		 * @param {string} user Restrict results to contributions by this user identified by id.
 		 * @param {string} refinements Comma seperated list of refinement names.
 		 * @param {number} refinementSize Number of refinement options to return.
+		 *     Type: double
 		 * @return {{[id: string]: Array<string> }} A map of refinement names to lists of options
 		 */
 		Contribution_refinementsGetByAssignmentAndCountryAndCreatedBeforeAndCreatedAfterAndGeohashAndHasLocationAndLatLongAndRadiusAndMediaTypeAndOwnedByAndQAndUrlWordsAndUserAndRefinementsAndRefinementSize(assignment: string | null | undefined, country: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, geohash: string | null | undefined, hasLocation: boolean | null | undefined, latLong: string | null | undefined, radius: number | null | undefined, mediaType: string | null | undefined, ownedBy: string | null | undefined, q: string | null | undefined, urlWords: string | null | undefined, user: string | null | undefined, refinements: string | null | undefined, refinementSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<{[id: string]: Array<string> }> {
@@ -1266,11 +1308,13 @@ export namespace MyNS {
 		 * @param {Date} createdBefore Limit results to contributions created before this date time.
 		 * @param {Date} createdAfter Limit results to contributions created after this date time.
 		 * @param {Date} createdDay Limit results to contributions created on this day.
+		 *     Type: DateOnly
 		 * @param {string} createdMonth Limit results to contributions created during this month.
 		 * @param {string} geohash Restrict results to contributions which have specified a location which falls within this geohash (or comma seperated list of multiple geohashes)
 		 * @param {boolean} hasLocation Restrict results to contributions which have a publicly visible location.
 		 * @param {string} latLong Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair). Also see radius
 		 * @param {number} radius When limiting result by location with the latLong parameter, specify the radius in kilometers.
+		 *     Type: double
 		 * @param {string} mediaType Restrict results to contributions which include a media file of the given type (ie. image / video)
 		 * @param {string} ownedBy Restrict results to contributions which are fall under the jurisdiction by this user.
 		 * @param {string} q Restrict results to contributions whose headline text matches this keyword.
@@ -1331,6 +1375,7 @@ export namespace MyNS {
 		 * Post contributions/{id}/like
 		 * @param {string} id Id of the contribution
 		 * @return {number} The updated like count for this contribution.
+		 *     Type: double
 		 */
 		Contributions_idLikePost(id: string, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'contributions/' + (id == null ? '' : encodeURIComponent(id)) + '/like', null, { headers: headersHandler ? headersHandler() : undefined });
@@ -1390,6 +1435,7 @@ export namespace MyNS {
 		 * @param {boolean} hasLocation Restrict results to contributions which have a publicly visible location.
 		 * @param {string} latLong Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair). Also see radius
 		 * @param {number} radius When limiting result by location with the latLong parameter, specify the radius in kilometers.
+		 *     Type: double
 		 * @param {string} mediaType Restrict results to contributions which include a media file of the given type (ie. image / video)
 		 * @param {string} ownedBy Restrict results to contributions which are fall under the jurisdiction by this user.
 		 * @param {string} q Restrict results to contributions whose headline text matches this keyword.
@@ -1418,6 +1464,7 @@ export namespace MyNS {
 		 * @param {boolean} hasLocation Restrict results to contributions which have a publicly visible location.
 		 * @param {string} latLong Limit results to contributions with location near this latitude and longitude (comma seperated lat/long pair). Also see radius
 		 * @param {number} radius When limiting result by location with the latLong parameter, specify the radius in kilometers.
+		 *     Type: double
 		 * @param {string} mediaType Restrict results to contributions which include a media file of the given type (ie. image / video)
 		 * @param {string} ownedBy Restrict results to contributions which are fall under the jurisdiction by this user.
 		 * @param {string} q Restrict results to contributions whose headline text matches this keyword.
@@ -1641,6 +1688,7 @@ export namespace MyNS {
 		 * @param {string} assignment Restrict results to the users who have contributed to this assignment.
 		 * @param {string} country Restrict results to the users who have submitted a contribution with a public location located within this country.
 		 * @param {number} minimumContributions Restrict results to the users who have submitted at least this many contributions.
+		 *     Type: double
 		 * @param {string} linkedProfile Restrict results to the users who a linked profile of this type.
 		 * @param {string} ownedBy Restrict results to the users who are owned by of this owner.
 		 * @param {Date} submittedBefore Limit results to users who have submitted at least one contribution before this date time.

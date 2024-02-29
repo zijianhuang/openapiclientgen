@@ -2898,6 +2898,7 @@ export namespace MyNS {
 		 * This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order and the maxResults parameter is ignored.
 		 * Get v1/data-sets
 		 * @param {number} maxResults The maximum number of results returned by a single call.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
 		 * @param {string} origin A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).
 		 * @param {string} MaxResults Pagination limit
@@ -2922,6 +2923,7 @@ export namespace MyNS {
 		 * Get v1/event-actions
 		 * @param {string} eventSourceId The unique identifier for the event source.
 		 * @param {number} maxResults The maximum number of results returned by a single call.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -2945,6 +2947,7 @@ export namespace MyNS {
 		 * Get v1/jobs
 		 * @param {string} dataSetId The unique identifier for a data set.
 		 * @param {number} maxResults The maximum number of results returned by a single call.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
 		 * @param {string} revisionId The unique identifier for a revision.
 		 * @param {string} MaxResults Pagination limit
@@ -2970,6 +2973,7 @@ export namespace MyNS {
 		 * Get v1/data-sets/{DataSetId}/revisions
 		 * @param {string} DataSetId The unique identifier for a data set.
 		 * @param {number} maxResults The maximum number of results returned by a single call.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3113,6 +3117,7 @@ export namespace MyNS {
 		 * Get v1/data-sets/{DataSetId}/revisions/{RevisionId}/assets
 		 * @param {string} DataSetId The unique identifier for a data set.
 		 * @param {number} maxResults The maximum number of results returned by a single call.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
 		 * @param {string} RevisionId The unique identifier for a revision.
 		 * @param {string} MaxResults Pagination limit
@@ -3328,8 +3333,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional comment about the revision.
-		 * Max length: 16384
 		 * Min length: 0
+		 * Max length: 16384
 		 */
 		Comment?: string | null;
 
@@ -3340,8 +3345,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional comment about the revision.
-		 * Max length: 16384
 		 * Min length: 0
+		 * Max length: 16384
 		 */
 		Comment: FormControl<string | null | undefined>,
 
@@ -3431,8 +3436,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional comment about the revision.
-		 * Max length: 16384
 		 * Min length: 0
+		 * Max length: 16384
 		 */
 		Comment?: string | null;
 
@@ -3443,8 +3448,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional comment about the revision.
-		 * Max length: 16384
 		 * Min length: 0
+		 * Max length: 16384
 		 */
 		Comment: FormControl<string | null | undefined>,
 
@@ -3487,8 +3492,8 @@ export namespace MyNS {
 		/**
 		 * A required comment to inform subscribers of the reason their access to the revision was revoked.
 		 * Required
-		 * Max length: 512
 		 * Min length: 10
+		 * Max length: 512
 		 */
 		RevocationComment: string;
 	}
@@ -3497,8 +3502,8 @@ export namespace MyNS {
 		/**
 		 * A required comment to inform subscribers of the reason their access to the revision was revoked.
 		 * Required
-		 * Max length: 512
 		 * Min length: 10
+		 * Max length: 512
 		 */
 		RevocationComment: FormControl<string | null | undefined>,
 	}

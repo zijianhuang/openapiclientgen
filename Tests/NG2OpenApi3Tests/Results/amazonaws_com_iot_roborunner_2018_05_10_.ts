@@ -8,16 +8,16 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
@@ -44,16 +44,16 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -163,16 +163,16 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
@@ -193,16 +193,16 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -233,16 +233,16 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
@@ -261,8 +261,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 	}
@@ -271,16 +271,16 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -299,8 +299,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 	}
@@ -351,16 +351,16 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
@@ -381,16 +381,16 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -461,32 +461,32 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -510,8 +510,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -520,32 +520,32 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -569,8 +569,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -593,39 +593,39 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: string;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 
@@ -646,39 +646,39 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -712,32 +712,32 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -756,22 +756,22 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -789,32 +789,32 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -833,22 +833,22 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -874,29 +874,29 @@ export namespace MyNS {
 		/**
 		 * The worker ID defined by the vendor FMS.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId: string;
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties?: string | null;
 	}
@@ -907,29 +907,29 @@ export namespace MyNS {
 		/**
 		 * The worker ID defined by the vendor FMS.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -980,32 +980,32 @@ export namespace MyNS {
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -1023,8 +1023,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -1033,32 +1033,32 @@ export namespace MyNS {
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -1076,8 +1076,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -1098,8 +1098,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -1110,8 +1110,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1129,32 +1129,32 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -1178,8 +1178,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -1190,32 +1190,32 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -1239,8 +1239,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -1262,8 +1262,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -1274,8 +1274,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1293,8 +1293,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
@@ -1304,8 +1304,8 @@ export namespace MyNS {
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: string;
 
@@ -1322,8 +1322,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
@@ -1333,8 +1333,8 @@ export namespace MyNS {
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
@@ -1358,8 +1358,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -1370,8 +1370,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1389,32 +1389,32 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -1432,8 +1432,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -1444,32 +1444,32 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -1487,8 +1487,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -1509,8 +1509,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -1521,8 +1521,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1540,24 +1540,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: string;
 
@@ -1576,30 +1576,30 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -1619,24 +1619,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: FormControl<string | null | undefined>,
 
@@ -1655,30 +1655,30 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -1702,24 +1702,24 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1737,8 +1737,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -1747,24 +1747,24 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the destination's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1782,8 +1782,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -1804,38 +1804,38 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode?: string | null;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 
@@ -1850,38 +1850,38 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the site's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -1908,24 +1908,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: string;
 
@@ -1938,22 +1938,22 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -1971,24 +1971,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the workers identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: FormControl<string | null | undefined>,
 
@@ -2001,22 +2001,22 @@ export namespace MyNS {
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2038,24 +2038,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: string;
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -2067,8 +2067,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -2077,24 +2077,24 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters access by the worker fleet's identifier
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2106,8 +2106,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2130,32 +2130,32 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 		state?: CreateDestinationResponseState;
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -2163,32 +2163,32 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 		state: FormControl<CreateDestinationResponseState | null | undefined>,
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2207,31 +2207,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: string;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 	}
@@ -2239,31 +2239,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2281,31 +2281,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -2313,31 +2313,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2355,38 +2355,38 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: string;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -2403,38 +2403,38 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2454,8 +2454,8 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -2464,8 +2464,8 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -2481,8 +2481,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -2491,8 +2491,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -2508,8 +2508,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -2518,8 +2518,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -2535,8 +2535,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -2545,8 +2545,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -2642,15 +2642,15 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -2659,8 +2659,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -2669,15 +2669,15 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2686,8 +2686,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2706,29 +2706,29 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode?: string | null;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 	}
@@ -2737,29 +2737,29 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2778,22 +2778,22 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -2802,22 +2802,22 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2835,29 +2835,29 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -2875,29 +2875,29 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -2991,6 +2991,8 @@ export namespace MyNS {
 		/**
 		 * Grants permission to get a destination
 		 * Get getDestination#id
+		 * @param {string} id Min length: 1
+		 *     Max length: 1011
 		 * @return {GetDestinationResponse} Success
 		 */
 		GetDestination(id: string): Observable<GetDestinationResponse> {
@@ -3000,6 +3002,8 @@ export namespace MyNS {
 		/**
 		 * Grants permission to get a site
 		 * Get getSite#id
+		 * @param {string} id Min length: 1
+		 *     Max length: 1011
 		 * @return {GetSiteResponse} Success
 		 */
 		GetSite(id: string): Observable<GetSiteResponse> {
@@ -3009,6 +3013,8 @@ export namespace MyNS {
 		/**
 		 * Grants permission to get a worker
 		 * Get getWorker#id
+		 * @param {string} id Min length: 1
+		 *     Max length: 1011
 		 * @return {GetWorkerResponse} Success
 		 */
 		GetWorker(id: string): Observable<GetWorkerResponse> {
@@ -3018,6 +3024,8 @@ export namespace MyNS {
 		/**
 		 * Grants permission to get a worker fleet
 		 * Get getWorkerFleet#id
+		 * @param {string} id Min length: 1
+		 *     Max length: 1011
 		 * @return {GetWorkerFleetResponse} Success
 		 */
 		GetWorkerFleet(id: string): Observable<GetWorkerFleetResponse> {
@@ -3027,6 +3035,12 @@ export namespace MyNS {
 		/**
 		 * Grants permission to list destinations
 		 * Get listDestinations#site
+		 * @param {string} site Min length: 1
+		 *     Max length: 1011
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
+		 * @param {string} nextToken Min length: 1
+		 *     Max length: 2048
 		 * @return {ListDestinationsResponse} Success
 		 */
 		ListDestinations(site: string, maxResults: number | null | undefined, nextToken: string | null | undefined, state: CreateDestinationResponseState | null | undefined): Observable<ListDestinationsResponse> {
@@ -3036,6 +3050,10 @@ export namespace MyNS {
 		/**
 		 * Grants permission to list sites
 		 * Get listSites
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 25
+		 * @param {string} nextToken Min length: 1
+		 *     Max length: 2048
 		 * @return {ListSitesResponse} Success
 		 */
 		ListSites(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSitesResponse> {
@@ -3045,6 +3063,12 @@ export namespace MyNS {
 		/**
 		 * Grants permission to list worker fleets
 		 * Get listWorkerFleets#site
+		 * @param {string} site Min length: 1
+		 *     Max length: 1011
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 25
+		 * @param {string} nextToken Min length: 1
+		 *     Max length: 2048
 		 * @return {ListWorkerFleetsResponse} Success
 		 */
 		ListWorkerFleets(site: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListWorkerFleetsResponse> {
@@ -3054,6 +3078,14 @@ export namespace MyNS {
 		/**
 		 * Grants permission to list workers
 		 * Get listWorkers#site
+		 * @param {string} site Min length: 1
+		 *     Max length: 1011
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 25
+		 * @param {string} nextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {string} fleet Min length: 1
+		 *     Max length: 1011
 		 * @return {ListWorkersResponse} Success
 		 */
 		ListWorkers(site: string, maxResults: number | null | undefined, nextToken: string | null | undefined, fleet: string | null | undefined): Observable<ListWorkersResponse> {
@@ -3101,24 +3133,24 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
@@ -3127,8 +3159,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -3136,24 +3168,24 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
@@ -3162,8 +3194,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3182,31 +3214,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: string;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 	}
@@ -3214,31 +3246,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -3256,38 +3288,38 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: string;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -3304,38 +3336,38 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		fleet: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3354,29 +3386,29 @@ export namespace MyNS {
 
 		/**
 		 * The worker ID defined by the vendor FMS.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId?: string | null;
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties?: string | null;
 	}
@@ -3384,29 +3416,29 @@ export namespace MyNS {
 
 		/**
 		 * The worker ID defined by the vendor FMS.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3448,31 +3480,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: string;
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -3480,31 +3512,31 @@ export namespace MyNS {
 
 		/**
 		 * Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		site: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3523,8 +3555,8 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -3533,8 +3565,8 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -3550,8 +3582,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -3560,8 +3592,8 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -3577,8 +3609,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -3587,8 +3619,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -3604,8 +3636,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 	}
@@ -3614,8 +3646,8 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -3631,15 +3663,15 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -3648,8 +3680,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -3658,15 +3690,15 @@ export namespace MyNS {
 		/**
 		 * Destination ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3675,8 +3707,8 @@ export namespace MyNS {
 
 		/**
 		 * JSON document containing additional fixed properties regarding the destination
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3695,29 +3727,29 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode?: string | null;
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description?: string | null;
 	}
@@ -3726,29 +3758,29 @@ export namespace MyNS {
 		/**
 		 * Site ARN.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * A high-level description of the site.
-		 * Max length: 140
 		 * Min length: 0
+		 * Max length: 140
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -3767,29 +3799,29 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 
@@ -3807,29 +3839,29 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3847,29 +3879,29 @@ export namespace MyNS {
 
 		/**
 		 * The worker ID defined by the vendor FMS.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId?: string | null;
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties?: string | null;
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties?: string | null;
 	}
@@ -3877,29 +3909,29 @@ export namespace MyNS {
 
 		/**
 		 * The worker ID defined by the vendor FMS.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vendorWorkerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The worker IP address defined by the vendor FMS.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		vendorWorkerIpAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalTransientProperties: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		vendorAdditionalFixedProperties: FormControl<string | null | undefined>,
 	}
@@ -3942,22 +3974,22 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: string;
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties?: string | null;
 	}
@@ -3966,22 +3998,22 @@ export namespace MyNS {
 		/**
 		 * Full ARN of the worker fleet.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Human friendly name of the resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * JSON blob containing additional fixed properties regarding the worker fleet
-		 * Max length: 131072
 		 * Min length: 1
+		 * Max length: 131072
 		 */
 		additionalFixedProperties: FormControl<string | null | undefined>,
 	}

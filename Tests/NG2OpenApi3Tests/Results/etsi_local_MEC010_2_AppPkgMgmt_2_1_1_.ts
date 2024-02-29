@@ -236,7 +236,10 @@ export namespace MyNS {
 		 */
 		ipAddressType: DNSRuleDescriptorIpAddressType;
 
-		/** Time-to-live value */
+		/**
+		 * Time-to-live value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface DNSRuleDescriptorFormProperties {
@@ -265,7 +268,10 @@ export namespace MyNS {
 		 */
 		ipAddressType: FormControl<DNSRuleDescriptorIpAddressType | null | undefined>,
 
-		/** Time-to-live value */
+		/**
+		 * Time-to-live value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateDNSRuleDescriptorFormGroup() {
@@ -587,6 +593,7 @@ export namespace MyNS {
 		/**
 		 * Priority of this traffic rule. If traffic rule conflicts, the one with higher priority take precedence.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: number;
 
@@ -620,6 +627,7 @@ export namespace MyNS {
 		/**
 		 * Priority of this traffic rule. If traffic rule conflicts, the one with higher priority take precedence.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 
@@ -744,7 +752,10 @@ export namespace MyNS {
 
 	export interface TrafficFilter {
 
-		/** Used to match all IPv4 packets that have the same DSCP. */
+		/**
+		 * Used to match all IPv4 packets that have the same DSCP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dSCP?: number | null;
 
 		/**
@@ -771,7 +782,10 @@ export namespace MyNS {
 		 */
 		protocol?: Array<string>;
 
-		/** Used to match all packets that have the same QCI. */
+		/**
+		 * Used to match all packets that have the same QCI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qCI?: number | null;
 
 		/**
@@ -798,7 +812,10 @@ export namespace MyNS {
 		 */
 		srcTunnelPort?: Array<string>;
 
-		/** Used to match all IPv6 packets that have the same TC. */
+		/**
+		 * Used to match all IPv6 packets that have the same TC.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tC?: number | null;
 
 		/**
@@ -815,13 +832,22 @@ export namespace MyNS {
 	}
 	export interface TrafficFilterFormProperties {
 
-		/** Used to match all IPv4 packets that have the same DSCP. */
+		/**
+		 * Used to match all IPv4 packets that have the same DSCP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dSCP: FormControl<number | null | undefined>,
 
-		/** Used to match all packets that have the same QCI. */
+		/**
+		 * Used to match all packets that have the same QCI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qCI: FormControl<number | null | undefined>,
 
-		/** Used to match all IPv6 packets that have the same TC. */
+		/**
+		 * Used to match all IPv6 packets that have the same TC.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tC: FormControl<number | null | undefined>,
 	}
 	export function CreateTrafficFilterFormGroup() {
@@ -1581,7 +1607,10 @@ export namespace MyNS {
 		/** A URI reference that identifies the specific occurrence of the problem */
 		instance?: string | null;
 
-		/** The HTTP status code for this occurrence of the problem */
+		/**
+		 * The HTTP status code for this occurrence of the problem
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		status?: number | null;
 
 		/** A short, human-readable summary of the problem type */
@@ -1598,7 +1627,10 @@ export namespace MyNS {
 		/** A URI reference that identifies the specific occurrence of the problem */
 		instance: FormControl<string | null | undefined>,
 
-		/** The HTTP status code for this occurrence of the problem */
+		/**
+		 * The HTTP status code for this occurrence of the problem
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** A short, human-readable summary of the problem type */

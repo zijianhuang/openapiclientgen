@@ -265,7 +265,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -278,7 +281,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -856,7 +862,10 @@ export namespace MyNS {
 		/** The internal IP address of this network endpoint. */
 		ipAddress?: string | null;
 
-		/** The port of this network endpoint. */
+		/**
+		 * The port of this network endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -866,7 +875,10 @@ export namespace MyNS {
 		/** The internal IP address of this network endpoint. */
 		ipAddress: FormControl<string | null | undefined>,
 
-		/** The port of this network endpoint. */
+		/**
+		 * The port of this network endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkEndpointFormGroup() {
@@ -1357,7 +1369,10 @@ export namespace MyNS {
 	/** Parameters to specify for multi-node QueuedResource requests. This field must be populated in case of multi-node requests instead of node_id. It's an error to specify both node_id and multi_node_params. */
 	export interface MultiNodeParams {
 
-		/** Required. Number of nodes with this spec. The system will attempt to provison "node_count" nodes as part of the request. This needs to be > 1. */
+		/**
+		 * Required. Number of nodes with this spec. The system will attempt to provison "node_count" nodes as part of the request. This needs to be > 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** Prefix of node_ids in case of multi-node request Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format. If node_count = 3 and node_id_prefix = "np", node ids of nodes created will be "np-0", "np-1", "np-2". If this field is not provided we use queued_resource_id as the node_id_prefix. */
@@ -1367,7 +1382,10 @@ export namespace MyNS {
 	/** Parameters to specify for multi-node QueuedResource requests. This field must be populated in case of multi-node requests instead of node_id. It's an error to specify both node_id and multi_node_params. */
 	export interface MultiNodeParamsFormProperties {
 
-		/** Required. Number of nodes with this spec. The system will attempt to provison "node_count" nodes as part of the request. This needs to be > 1. */
+		/**
+		 * Required. Number of nodes with this spec. The system will attempt to provison "node_count" nodes as part of the request. This needs to be > 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** Prefix of node_ids in case of multi-node request Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format. If node_count = 3 and node_id_prefix = "np", node ids of nodes created will be "np-0", "np-1", "np-2". If this field is not provided we use queued_resource_id as the node_id_prefix. */
@@ -1436,7 +1454,10 @@ export namespace MyNS {
 		/** The resource type of the reservation. */
 		resourceType?: string | null;
 
-		/** The size of the reservation, in the units specified in the 'capacity_units' field. */
+		/**
+		 * The size of the reservation, in the units specified in the 'capacity_units' field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 		usage?: Usage;
 	}
@@ -1446,7 +1467,10 @@ export namespace MyNS {
 		/** The resource type of the reservation. */
 		resourceType: FormControl<string | null | undefined>,
 
-		/** The size of the reservation, in the units specified in the 'capacity_units' field. */
+		/**
+		 * The size of the reservation, in the units specified in the 'capacity_units' field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateStandardFormGroup() {
@@ -1698,6 +1722,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1711,6 +1736,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1785,6 +1811,7 @@ export namespace MyNS {
 		 * @param {string} filter List filter.
 		 * @param {string} orderBy Sort results.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListAcceleratorTypesResponse} Successful response
 		 */
@@ -1797,6 +1824,7 @@ export namespace MyNS {
 		 * Get v2alpha1/{parent}/nodes
 		 * @param {string} parent Required. The parent resource name.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListNodesResponse} Successful response
 		 */
@@ -1821,6 +1849,7 @@ export namespace MyNS {
 		 * Get v2alpha1/{parent}/queuedResources
 		 * @param {string} parent Required. The parent resource name.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListQueuedResourcesResponse} Successful response
 		 */
@@ -1845,6 +1874,7 @@ export namespace MyNS {
 		 * Get v2alpha1/{parent}/reservations
 		 * @param {string} parent Required. The parent for reservations.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListReservationsResponse} Successful response
 		 */
@@ -1859,6 +1889,7 @@ export namespace MyNS {
 		 * @param {string} filter List filter.
 		 * @param {string} orderBy Sort results.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListRuntimeVersionsResponse} Successful response
 		 */

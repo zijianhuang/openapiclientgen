@@ -171,14 +171,20 @@ export namespace MyNS {
 	/** Conversation properties */
 	export interface Conversation_properties {
 
-		/** Time to leave. After how many seconds an empty conversation is deleted. */
+		/**
+		 * Time to leave. After how many seconds an empty conversation is deleted.
+		 * Type: double
+		 */
 		ttl?: number | null;
 	}
 
 	/** Conversation properties */
 	export interface Conversation_propertiesFormProperties {
 
-		/** Time to leave. After how many seconds an empty conversation is deleted. */
+		/**
+		 * Time to leave. After how many seconds an empty conversation is deleted.
+		 * Type: double
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateConversation_propertiesFormGroup() {
@@ -556,7 +562,9 @@ export namespace MyNS {
 		 * @param {string} date_start Return the records that occurred after this point in time.
 		 * @param {string} date_end Return the records that occurred before this point in time.
 		 * @param {number} page_size Return this amount of records in the response
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} record_index Return calls from this index in the response
+		 *     Minimum: 0
 		 * @param {ListConversationsOrder} order Return the records in ascending or descending order.
 		 * @return {ListConversationsReturn} List Conversations Response Payload Object.
 		 */
@@ -789,6 +797,7 @@ export namespace MyNS {
 		/**
 		 * The total number of records returned by your request.
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 
@@ -812,6 +821,7 @@ export namespace MyNS {
 		/**
 		 * The total number of records returned by your request.
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -1287,6 +1297,7 @@ export namespace MyNS {
 		/**
 		 * The total number of records returned by your request.
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 
@@ -1310,6 +1321,7 @@ export namespace MyNS {
 		/**
 		 * The total number of records returned by your request.
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 

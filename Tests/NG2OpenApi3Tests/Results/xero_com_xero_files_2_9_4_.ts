@@ -62,7 +62,10 @@ export namespace MyNS {
 		/** File Name */
 		Name?: string | null;
 
-		/** Numeric value in bytes */
+		/**
+		 * Numeric value in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size?: number | null;
 
 		/** Updated date in UTC */
@@ -86,7 +89,10 @@ export namespace MyNS {
 		/** File Name */
 		Name: FormControl<string | null | undefined>,
 
-		/** Numeric value in bytes */
+		/**
+		 * Numeric value in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size: FormControl<number | null | undefined>,
 
 		/** Updated date in UTC */
@@ -158,13 +164,25 @@ export namespace MyNS {
 
 	export interface Files {
 		Items?: Array<FileObject>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface FilesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateFilesFormGroup() {
@@ -181,7 +199,10 @@ export namespace MyNS {
 		/** The email address used to email files to the inbox. Only the inbox will have this element. */
 		Email?: string | null;
 
-		/** The number of files in the folder */
+		/**
+		 * The number of files in the folder
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FileCount?: number | null;
 
 		/** Xero unique identifier for a folder  Files */
@@ -198,7 +219,10 @@ export namespace MyNS {
 		/** The email address used to email files to the inbox. Only the inbox will have this element. */
 		Email: FormControl<string | null | undefined>,
 
-		/** The number of files in the folder */
+		/**
+		 * The number of files in the folder
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FileCount: FormControl<number | null | undefined>,
 
 		/** Xero unique identifier for a folder  Files */
@@ -260,7 +284,9 @@ export namespace MyNS {
 		 * Retrieves files
 		 * Get Files
 		 * @param {number} pagesize pass an optional page size value
+		 *     Maximum: 100
 		 * @param {number} page number of records to skip for pagination
+		 *     Minimum: 1
 		 * @param {GetFilesSort} sort values to sort by
 		 * @return {Files} search results matching criteria
 		 */

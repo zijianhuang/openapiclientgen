@@ -409,6 +409,7 @@ export namespace MyNS {
 		 * Get v1/notes
 		 * @param {string} filter Filter for list results. If no filter is supplied, the `trashed` filter is applied by default. Valid fields to filter by are: `create_time`, `update_time`, `trash_time`, and `trashed`. Filter syntax follows the [Google AIP filtering spec](https://aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The previous page's `next_page_token` field.
 		 * @return {ListNotesResponse} Successful response
 		 */

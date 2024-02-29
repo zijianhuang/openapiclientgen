@@ -2035,6 +2035,7 @@ export namespace MyNS {
 		 * Retrieves details about an application component.
 		 * Get get-applicationcomponent-details/{applicationComponentId}
 		 * @param {string} applicationComponentId  The ID of the application component. The ID is unique within an AWS account.
+		 *     Min length: 0    Max length: 44
 		 * @return {GetApplicationComponentDetailsResponse} Success
 		 */
 		GetApplicationComponentDetails(applicationComponentId: string): Observable<GetApplicationComponentDetailsResponse> {
@@ -2045,6 +2046,7 @@ export namespace MyNS {
 		 * Retrieves a list of all the recommended strategies and tools for an application component running on a server.
 		 * Get get-applicationcomponent-strategies/{applicationComponentId}
 		 * @param {string} applicationComponentId  The ID of the application component. The ID is unique within an AWS account.
+		 *     Min length: 0    Max length: 44
 		 * @return {GetApplicationComponentStrategiesResponse} Success
 		 */
 		GetApplicationComponentStrategies(applicationComponentId: string): Observable<GetApplicationComponentStrategiesResponse> {
@@ -2055,6 +2057,7 @@ export namespace MyNS {
 		 * Retrieves the status of an on-going assessment.
 		 * Get get-assessment/{id}
 		 * @param {string} id  The <code>assessmentid</code> returned by <a>StartAssessment</a>.
+		 *     Min length: 0    Max length: 52
 		 * @return {GetAssessmentResponse} Success
 		 */
 		GetAssessment(id: string): Observable<GetAssessmentResponse> {
@@ -2065,6 +2068,7 @@ export namespace MyNS {
 		 * Retrieves the details about a specific import task.
 		 * Get get-import-file-task/{id}
 		 * @param {string} id  The ID of the import file task. This ID is returned in the response of <a>StartImportFileTask</a>. 
+		 *     Min length: 0    Max length: 1024
 		 * @return {GetImportFileTaskResponse} Success
 		 */
 		GetImportFileTask(id: string): Observable<GetImportFileTaskResponse> {
@@ -2102,6 +2106,7 @@ export namespace MyNS {
 		 * Retrieves detailed information about the specified recommendation report.
 		 * Get get-recommendation-report-details/{id}
 		 * @param {string} id  The recommendation report generation task <code>id</code> returned by <a>StartRecommendationReportGeneration</a>. 
+		 *     Min length: 0    Max length: 52
 		 * @return {GetRecommendationReportDetailsResponse} Success
 		 */
 		GetRecommendationReportDetails(id: string): Observable<GetRecommendationReportDetailsResponse> {
@@ -2112,8 +2117,11 @@ export namespace MyNS {
 		 * Retrieves detailed information about a specified server.
 		 * Get get-server-details/{serverId}
 		 * @param {number} maxResults  The maximum number of items to include in the response. The maximum value is 100. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} serverId  The ID of the server. 
+		 *     Min length: 1    Max length: 27
 		 * @return {GetServerDetailsResponse} Success
 		 */
 		GetServerDetails(maxResults: number | null | undefined, nextToken: string | null | undefined, serverId: string): Observable<GetServerDetailsResponse> {
@@ -2124,6 +2132,7 @@ export namespace MyNS {
 		 * Retrieves recommended strategies and tools for the specified server.
 		 * Get get-server-strategies/{serverId}
 		 * @param {string} serverId  The ID of the server. 
+		 *     Min length: 1    Max length: 27
 		 * @return {GetServerStrategiesResponse} Success
 		 */
 		GetServerStrategies(serverId: string): Observable<GetServerStrategiesResponse> {
@@ -2145,7 +2154,9 @@ export namespace MyNS {
 		 * Retrieves a list of all the installed collectors.
 		 * Get list-collectors
 		 * @param {number} maxResults  The maximum number of items to include in the response. The maximum value is 100. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListCollectorsResponse} Success
 		 */
 		ListCollectors(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListCollectorsResponse> {
@@ -2156,7 +2167,9 @@ export namespace MyNS {
 		 * Retrieves a list of all the imports performed.
 		 * Get list-import-file-task
 		 * @param {number} maxResults  The total number of items to return. The maximum value is 100. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		 *     Min length: 0    Max length: 1024
 		 * @return {ListImportFileTaskResponse} Success
 		 */
 		ListImportFileTask(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListImportFileTaskResponse> {
@@ -2245,21 +2258,24 @@ export namespace MyNS {
 
 		/**
 		 * Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on server1.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		filterValue?: string | null;
 
 		/** The group ID specified in to filter on. */
 		groupIdFilter?: Array<Group>;
 
-		/** The maximum number of items to include in the response. The maximum value is 100. */
+		/**
+		 * The maximum number of items to include in the response. The maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
 		 * The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -2273,18 +2289,21 @@ export namespace MyNS {
 
 		/**
 		 * Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on server1.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		filterValue: FormControl<string | null | undefined>,
 
-		/** The maximum number of items to include in the response. The maximum value is 100. */
+		/**
+		 * The maximum number of items to include in the response. The maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/**
 		 * The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -2306,21 +2325,24 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterValue?: string | null;
 
 		/** Specifies the group ID to filter on. */
 		groupIdFilter?: Array<Group>;
 
-		/** The maximum number of items to include in the response. The maximum value is 100. */
+		/**
+		 * The maximum number of items to include in the response. The maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
 		 * The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -2334,18 +2356,21 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterValue: FormControl<string | null | undefined>,
 
-		/** The maximum number of items to include in the response. The maximum value is 100. */
+		/**
+		 * The maximum number of items to include in the response. The maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/**
 		 * The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -2439,15 +2464,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForAnalysisData?: string | null;
 
 		/**
 		 * The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForReportData?: string | null;
 	}
@@ -2455,15 +2480,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForAnalysisData: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForReportData: FormControl<string | null | undefined>,
 	}
@@ -2480,8 +2505,8 @@ export namespace MyNS {
 		/**
 		 * The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.
 		 * Required
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		S3Bucket: string;
 
@@ -2494,23 +2519,23 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the request.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		name: string;
 
 		/**
 		 * The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForReportData?: string | null;
 
 		/**
 		 * The Amazon S3 key name of the import file.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		s3key: string;
 	}
@@ -2519,8 +2544,8 @@ export namespace MyNS {
 		/**
 		 * The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.
 		 * Required
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -2530,23 +2555,23 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the request.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-.
-		 * Max length: 63
 		 * Min length: 0
+		 * Max length: 63
 		 */
 		s3bucketForReportData: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon S3 key name of the import file.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		s3key: FormControl<string | null | undefined>,
 	}
@@ -2586,8 +2611,8 @@ export namespace MyNS {
 		/**
 		 * The <code>assessmentId</code> returned by <a>StartAssessment</a>.
 		 * Required
-		 * Max length: 52
 		 * Min length: 0
+		 * Max length: 52
 		 */
 		assessmentId: string;
 	}
@@ -2596,8 +2621,8 @@ export namespace MyNS {
 		/**
 		 * The <code>assessmentId</code> returned by <a>StartAssessment</a>.
 		 * Required
-		 * Max length: 52
 		 * Min length: 0
+		 * Max length: 52
 		 */
 		assessmentId: FormControl<string | null | undefined>,
 	}
@@ -2616,8 +2641,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the application component. The ID is unique within an AWS account.
 		 * Required
-		 * Max length: 44
 		 * Min length: 0
+		 * Max length: 44
 		 */
 		applicationComponentId: string;
 
@@ -2629,8 +2654,8 @@ export namespace MyNS {
 
 		/**
 		 * Database credentials.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		secretsManagerKey?: string | null;
 
@@ -2648,8 +2673,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the application component. The ID is unique within an AWS account.
 		 * Required
-		 * Max length: 44
 		 * Min length: 0
+		 * Max length: 44
 		 */
 		applicationComponentId: FormControl<string | null | undefined>,
 
@@ -2661,8 +2686,8 @@ export namespace MyNS {
 
 		/**
 		 * Database credentials.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		secretsManagerKey: FormControl<string | null | undefined>,
 	}
@@ -2704,8 +2729,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the server.
 		 * Required
-		 * Max length: 27
 		 * Min length: 1
+		 * Max length: 27
 		 */
 		serverId: string;
 
@@ -2717,8 +2742,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the server.
 		 * Required
-		 * Max length: 27
 		 * Min length: 1
+		 * Max length: 27
 		 */
 		serverId: FormControl<string | null | undefined>,
 	}

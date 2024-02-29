@@ -198,6 +198,7 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for this specific incentive/law/regulation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -222,7 +223,10 @@ export namespace MyNS {
 		/** The date legislation is enacted or a rulemaking is finalized to repeal the incentive/law/regulation. */
 		repealed_date?: Date | null;
 
-		/** The numerical value assigned to a description to show the order in which it is displayed online within a jurisdiction (state). */
+		/**
+		 * The numerical value assigned to a description to show the order in which it is displayed online within a jurisdiction (state).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seq_num?: number | null;
 
 		/** When the last significant update to the law was made. */
@@ -286,6 +290,7 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for this specific incentive/law/regulation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -304,7 +309,10 @@ export namespace MyNS {
 		/** The date legislation is enacted or a rulemaking is finalized to repeal the incentive/law/regulation. */
 		repealed_date: FormControl<Date | null | undefined>,
 
-		/** The numerical value assigned to a description to show the order in which it is displayed online within a jurisdiction (state). */
+		/**
+		 * The numerical value assigned to a description to show the order in which it is displayed online within a jurisdiction (state).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seq_num: FormControl<number | null | undefined>,
 
 		/** When the last significant update to the law was made. */
@@ -481,12 +489,14 @@ export namespace MyNS {
 		/**
 		 * The database id of the law topic
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * The sort order of the law topic
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sort_order: number;
 
@@ -503,12 +513,14 @@ export namespace MyNS {
 		/**
 		 * The database id of the law topic
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The sort order of the law topic
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sort_order: FormControl<number | null | undefined>,
 
@@ -540,6 +552,7 @@ export namespace MyNS {
 		/**
 		 * The id of the law type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -562,6 +575,7 @@ export namespace MyNS {
 		/**
 		 * The id of the law type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -640,7 +654,10 @@ export namespace MyNS {
 	/** The identifying metadata. */
 	export interface Metadata {
 
-		/** If the request returns an array of results, this is the number of results returned in the array */
+		/**
+		 * If the request returns an array of results, this is the number of results returned in the array
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/**
@@ -653,7 +670,10 @@ export namespace MyNS {
 	/** The identifying metadata. */
 	export interface MetadataFormProperties {
 
-		/** If the request returns an array of results, this is the number of results returned in the array */
+		/**
+		 * If the request returns an array of results, this is the number of results returned in the array
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
@@ -709,6 +729,7 @@ export namespace MyNS {
 		 * @param {Transportation_incentives_laws_allOutput_format} output_format Response format
 		 * @param {string} api_key API Key
 		 * @param {number} limit Limit the number of laws returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} jurisdiction Return laws for the given Jurisdiction. Jurisdiction must be given as a two character state code (eg, 'CO' for Colorado). A single jurisdiction, or a comma-separate list of multiple jurisdiction, may be given.  Use the code 'US' for federal laws and the code 'DC' for Washington D.C.
 		 * @param {string} technology Search by the technology type. A single type, or a comma-separate list of multiple types, may be given. Values and what they stand for are as follows: 'BIOD' for Biodiesel, 'ETH' for Ethanol / Flexible Fuel Vehicles, 'NG' for Natural Gas / Natural Gas Vehicles, 'LPG' for Liquefied Petroleum Gas (Propane) / Propane Vehicles, 'HY' for Hydrogen / Fuel Cell Electric Vehicles, 'ELEC' for All-Electric Vehicles (EVs), 'PHEV' for Plug-In Hybrid Electric Vehicles (PHEVs), 'HEV' for Hybrid Electric Vehicles (HEVs), 'NEVS' for Neighborhood Electric Vehicles (NEVs), 'RD' for Renewable Diesel, 'AFTMKTCONV' for Aftermarket Conversions, 'EFFEC' for Fuel Economy / Efficiency, 'IR' for Idle Reduction, 'AUTONOMOUS' for Connected and Autonomous Vehicles, and 'OTHER' for Other.
 		 * @param {string} incentive_type Search by the incentive type. A single type, or a comma-separate list of multiple types, may be given. Values and what they stand for are as follows: 'GNT' for Grants, 'TAX' for Tax Incentives, 'LOANS' for Loans and Leases, 'RBATE' for Rebates, 'EXEM' for Exemptions, 'TOU' for Time-of-Use Rate, and 'OTHER' for Other.
@@ -756,6 +777,7 @@ export namespace MyNS {
 		 * @param {Transportation_incentives_laws_categoriesOutput_format} output_format Response format
 		 * @param {string} api_key API Key
 		 * @param {number} id The id of the law that you are searching
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} poc Include points of contacts in the return value.
 		 * @param {boolean} expired The 'true' value returns a record no matter its status (current, expired, archived, or repealed). The default 'false' value returns only current laws and incentives.
 		 * @return {void} Successful request

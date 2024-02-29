@@ -9,7 +9,11 @@ export namespace MyNS {
 		hideCount?: boolean | null;
 		hideParams?: boolean | null;
 		hideValue?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentCommission?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentValue?: number | null;
 	}
 	export interface ApiCoreDtoAccountingConversionOptionsFormProperties {
@@ -18,7 +22,11 @@ export namespace MyNS {
 		hideCount: FormControl<boolean | null | undefined>,
 		hideParams: FormControl<boolean | null | undefined>,
 		hideValue: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentCommission: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentValue: FormControl<number | null | undefined>,
 	}
 	export function CreateApiCoreDtoAccountingConversionOptionsFormGroup() {
@@ -77,24 +85,36 @@ export namespace MyNS {
 		decimalSeparator?: string | null;
 		email?: string | null;
 		extendedGrants?: ApiCoreDtoAccountingExtendedGrants;
-		groupGrants?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupGrants?: string | null;
 		hitOptions?: ApiCoreDtoAccountingHitOptions;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		key?: string | null;
 		language?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		loginCount?: number | null;
 		name?: string | null;
 		notes?: string | null;
 		numberGroupSeparator?: string | null;
 		password?: string | null;
 		timeFormat?: ApiCoreDtoAccountingGuestTimeFormat | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeZone?: number | null;
 
 		/** (A date in "YmdHis" format) */
 		timeframeMinDate?: string | null;
 		timezonename?: string | null;
-		tlGrants?: number | null;
-		tpGrants?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tlGrants?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tpGrants?: string | null;
 		userName?: string | null;
 	}
 	export interface ApiCoreDtoAccountingGuestFormProperties {
@@ -105,23 +125,35 @@ export namespace MyNS {
 		dateFormat: FormControl<string | null | undefined>,
 		decimalSeparator: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
-		groupGrants: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupGrants: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		loginCount: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		numberGroupSeparator: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		timeFormat: FormControl<ApiCoreDtoAccountingGuestTimeFormat | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeZone: FormControl<number | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
 		timeframeMinDate: FormControl<string | null | undefined>,
 		timezonename: FormControl<string | null | undefined>,
-		tlGrants: FormControl<number | null | undefined>,
-		tpGrants: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tlGrants: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tpGrants: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoAccountingGuestFormGroup() {
@@ -131,8 +163,8 @@ export namespace MyNS {
 			dateFormat: new FormControl<string | null | undefined>(undefined),
 			decimalSeparator: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
-			groupGrants: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			groupGrants: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			key: new FormControl<string | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined),
 			loginCount: new FormControl<number | null | undefined>(undefined),
@@ -144,8 +176,8 @@ export namespace MyNS {
 			timeZone: new FormControl<number | null | undefined>(undefined),
 			timeframeMinDate: new FormControl<string | null | undefined>(undefined),
 			timezonename: new FormControl<string | null | undefined>(undefined),
-			tlGrants: new FormControl<number | null | undefined>(undefined),
-			tpGrants: new FormControl<number | null | undefined>(undefined),
+			tlGrants: new FormControl<string | null | undefined>(undefined),
+			tpGrants: new FormControl<string | null | undefined>(undefined),
 			userName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -175,16 +207,20 @@ export namespace MyNS {
 	}
 
 	export interface ApiCoreResponsesEntityUri_SystemInt64_ {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		uri?: string | null;
 	}
 	export interface ApiCoreResponsesEntityUri_SystemInt64_FormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreResponsesEntityUri_SystemInt64_FormGroup() {
 		return new FormGroup<ApiCoreResponsesEntityUri_SystemInt64_FormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			uri: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -222,7 +258,11 @@ export namespace MyNS {
 	}
 
 	export interface ApiCoreDtoAccountingPlan {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedPersonalDomains?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedPersonalUrls?: number | null;
 
 		/** (A date in "YmdHis" format) */
@@ -230,20 +270,42 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		billingPeriodStart?: string | null;
-		bonusMonthlyEvents?: number | null;
-		maximumDatapoints?: number | null;
-		maximumGuests?: number | null;
-		monthlyEvents?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bonusMonthlyEvents?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maximumDatapoints?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maximumGuests?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		monthlyEvents?: string | null;
 		name?: string | null;
+
+		/** Type: double */
 		price?: number | null;
-		profileId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		profileId?: string | null;
 		recurring?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurringPeriod?: number | null;
-		usedDatapoints?: number | null;
-		usedMonthlyEvents?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usedDatapoints?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usedMonthlyEvents?: string | null;
 	}
 	export interface ApiCoreDtoAccountingPlanFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedPersonalDomains: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedPersonalUrls: FormControl<number | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
@@ -251,17 +313,35 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		billingPeriodStart: FormControl<string | null | undefined>,
-		bonusMonthlyEvents: FormControl<number | null | undefined>,
-		maximumDatapoints: FormControl<number | null | undefined>,
-		maximumGuests: FormControl<number | null | undefined>,
-		monthlyEvents: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bonusMonthlyEvents: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maximumDatapoints: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maximumGuests: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		monthlyEvents: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
-		profileId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		profileId: FormControl<string | null | undefined>,
 		recurring: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurringPeriod: FormControl<number | null | undefined>,
-		usedDatapoints: FormControl<number | null | undefined>,
-		usedMonthlyEvents: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usedDatapoints: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usedMonthlyEvents: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoAccountingPlanFormGroup() {
 		return new FormGroup<ApiCoreDtoAccountingPlanFormProperties>({
@@ -269,24 +349,26 @@ export namespace MyNS {
 			allowedPersonalUrls: new FormControl<number | null | undefined>(undefined),
 			billingPeriodEnd: new FormControl<string | null | undefined>(undefined),
 			billingPeriodStart: new FormControl<string | null | undefined>(undefined),
-			bonusMonthlyEvents: new FormControl<number | null | undefined>(undefined),
-			maximumDatapoints: new FormControl<number | null | undefined>(undefined),
-			maximumGuests: new FormControl<number | null | undefined>(undefined),
-			monthlyEvents: new FormControl<number | null | undefined>(undefined),
+			bonusMonthlyEvents: new FormControl<string | null | undefined>(undefined),
+			maximumDatapoints: new FormControl<string | null | undefined>(undefined),
+			maximumGuests: new FormControl<string | null | undefined>(undefined),
+			monthlyEvents: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			price: new FormControl<number | null | undefined>(undefined),
-			profileId: new FormControl<number | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
 			recurring: new FormControl<boolean | null | undefined>(undefined),
 			recurringPeriod: new FormControl<number | null | undefined>(undefined),
-			usedDatapoints: new FormControl<number | null | undefined>(undefined),
-			usedMonthlyEvents: new FormControl<number | null | undefined>(undefined),
+			usedDatapoints: new FormControl<string | null | undefined>(undefined),
+			usedMonthlyEvents: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ApiCoreDtoAccountingUser {
 		boGoVal?: string | null;
-		bonusClicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bonusClicks?: string | null;
 		companyName?: string | null;
 		companyRole?: string | null;
 		email?: string | null;
@@ -300,12 +382,16 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		timeframeMinDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone?: number | null;
 		timezonename?: string | null;
 	}
 	export interface ApiCoreDtoAccountingUserFormProperties {
 		boGoVal: FormControl<string | null | undefined>,
-		bonusClicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bonusClicks: FormControl<string | null | undefined>,
 		companyName: FormControl<string | null | undefined>,
 		companyRole: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
@@ -319,13 +405,15 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		timeframeMinDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone: FormControl<number | null | undefined>,
 		timezonename: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoAccountingUserFormGroup() {
 		return new FormGroup<ApiCoreDtoAccountingUserFormProperties>({
 			boGoVal: new FormControl<string | null | undefined>(undefined),
-			bonusClicks: new FormControl<number | null | undefined>(undefined),
+			bonusClicks: new FormControl<string | null | undefined>(undefined),
 			companyName: new FormControl<string | null | undefined>(undefined),
 			companyRole: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
@@ -345,10 +433,18 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		activityDay?: string | null;
+
+		/** Type: double */
 		commissionsCost?: number | null;
+
+		/** Type: double */
 		conversionsCost?: number | null;
+
+		/** Type: double */
 		conversionsValue?: number | null;
-		convertedClicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		convertedClicks?: string | null;
 		entityData?: SystemObject;
 		entityId?: string | null;
 
@@ -358,24 +454,44 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		lastHitDate?: string | null;
-		spiderHitsCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderHitsCount?: string | null;
 
 		/** (A date in "YmdHis" format) */
 		toDay?: string | null;
-		totalClicks?: number | null;
-		totalViews?: number | null;
-		uniqueClicks?: number | null;
-		uniqueConversions?: number | null;
-		uniqueViews?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalClicks?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalViews?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueClicks?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueConversions?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueViews?: string | null;
 	}
 	export interface ApiCoreDtoAggregatedAggregatedResultFormProperties {
 
 		/** (A date in "YmdHis" format) */
 		activityDay: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		commissionsCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		conversionsCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		conversionsValue: FormControl<number | null | undefined>,
-		convertedClicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		convertedClicks: FormControl<string | null | undefined>,
 		entityId: FormControl<string | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
@@ -384,15 +500,27 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		lastHitDate: FormControl<string | null | undefined>,
-		spiderHitsCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderHitsCount: FormControl<string | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
 		toDay: FormControl<string | null | undefined>,
-		totalClicks: FormControl<number | null | undefined>,
-		totalViews: FormControl<number | null | undefined>,
-		uniqueClicks: FormControl<number | null | undefined>,
-		uniqueConversions: FormControl<number | null | undefined>,
-		uniqueViews: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalClicks: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalViews: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueClicks: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueConversions: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueViews: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoAggregatedAggregatedResultFormGroup() {
 		return new FormGroup<ApiCoreDtoAggregatedAggregatedResultFormProperties>({
@@ -400,18 +528,18 @@ export namespace MyNS {
 			commissionsCost: new FormControl<number | null | undefined>(undefined),
 			conversionsCost: new FormControl<number | null | undefined>(undefined),
 			conversionsValue: new FormControl<number | null | undefined>(undefined),
-			convertedClicks: new FormControl<number | null | undefined>(undefined),
+			convertedClicks: new FormControl<string | null | undefined>(undefined),
 			entityId: new FormControl<string | null | undefined>(undefined),
 			fromDay: new FormControl<string | null | undefined>(undefined),
 			hourlyBreakDown: new FormControl<{[id: string]: ApiCoreDtoAggregatedAggregatedResult } | null | undefined>(undefined),
 			lastHitDate: new FormControl<string | null | undefined>(undefined),
-			spiderHitsCount: new FormControl<number | null | undefined>(undefined),
+			spiderHitsCount: new FormControl<string | null | undefined>(undefined),
 			toDay: new FormControl<string | null | undefined>(undefined),
-			totalClicks: new FormControl<number | null | undefined>(undefined),
-			totalViews: new FormControl<number | null | undefined>(undefined),
-			uniqueClicks: new FormControl<number | null | undefined>(undefined),
-			uniqueConversions: new FormControl<number | null | undefined>(undefined),
-			uniqueViews: new FormControl<number | null | undefined>(undefined),
+			totalClicks: new FormControl<string | null | undefined>(undefined),
+			totalViews: new FormControl<string | null | undefined>(undefined),
+			uniqueClicks: new FormControl<string | null | undefined>(undefined),
+			uniqueConversions: new FormControl<string | null | undefined>(undefined),
+			uniqueViews: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -427,21 +555,33 @@ export namespace MyNS {
 	}
 
 	export interface ApiCoreDtoAggregatedAggregatedSummaryResult {
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
-		offset?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offset?: string | null;
 		result?: Array<ApiCoreDtoAggregatedAggregatedResult>;
 	}
 	export interface ApiCoreDtoAggregatedAggregatedSummaryResultFormProperties {
-		count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
-		offset: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offset: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoAggregatedAggregatedSummaryResultFormGroup() {
 		return new FormGroup<ApiCoreDtoAggregatedAggregatedSummaryResultFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 			limit: new FormControl<number | null | undefined>(undefined),
-			offset: new FormControl<number | null | undefined>(undefined),
+			offset: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -506,24 +646,32 @@ export namespace MyNS {
 
 	export interface ApiCoreDtoClickStreamHitBrowserInfo {
 		browserType?: string | null;
-		familyId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		familyId?: string | null;
 		familyName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface ApiCoreDtoClickStreamHitBrowserInfoFormProperties {
 		browserType: FormControl<string | null | undefined>,
-		familyId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		familyId: FormControl<string | null | undefined>,
 		familyName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoClickStreamHitBrowserInfoFormGroup() {
 		return new FormGroup<ApiCoreDtoClickStreamHitBrowserInfoFormProperties>({
 			browserType: new FormControl<string | null | undefined>(undefined),
-			familyId: new FormControl<number | null | undefined>(undefined),
+			familyId: new FormControl<string | null | undefined>(undefined),
 			familyName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -533,30 +681,46 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		accessTime?: string | null;
+
+		/** Type: double */
 		comcost?: number | null;
+
+		/** Type: double */
 		cost?: number | null;
 
 		/** (A date in "YmdHis" format) */
 		date?: string | null;
 		deleted?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		parameter?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ApiCoreDtoClickStreamHitConversionInfoFormProperties {
 
 		/** (A date in "YmdHis" format) */
 		accessTime: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		comcost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cost: FormControl<number | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
 		date: FormControl<string | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		parameter: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApiCoreDtoClickStreamHitConversionInfoFormGroup() {
@@ -566,7 +730,7 @@ export namespace MyNS {
 			cost: new FormControl<number | null | undefined>(undefined),
 			date: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			parameter: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<number | null | undefined>(undefined),
@@ -579,12 +743,16 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate?: string | null;
 		datapointFavourite?: boolean | null;
-		datapointId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		datapointId?: string | null;
 		datapointName?: string | null;
 		datapointTitle?: string | null;
 		datapointType?: string | null;
 		destinationUrl?: string | null;
-		groupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupId?: string | null;
 		groupName?: string | null;
 		isABTest?: boolean | null;
 		isPrivateShared?: boolean | null;
@@ -599,12 +767,16 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate: FormControl<string | null | undefined>,
 		datapointFavourite: FormControl<boolean | null | undefined>,
-		datapointId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		datapointId: FormControl<string | null | undefined>,
 		datapointName: FormControl<string | null | undefined>,
 		datapointTitle: FormControl<string | null | undefined>,
 		datapointType: FormControl<string | null | undefined>,
 		destinationUrl: FormControl<string | null | undefined>,
-		groupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupId: FormControl<string | null | undefined>,
 		groupName: FormControl<string | null | undefined>,
 		isABTest: FormControl<boolean | null | undefined>,
 		isPrivateShared: FormControl<boolean | null | undefined>,
@@ -617,12 +789,12 @@ export namespace MyNS {
 		return new FormGroup<ApiCoreDtoClickStreamHitDatapointInfoFormProperties>({
 			creationDate: new FormControl<string | null | undefined>(undefined),
 			datapointFavourite: new FormControl<boolean | null | undefined>(undefined),
-			datapointId: new FormControl<number | null | undefined>(undefined),
+			datapointId: new FormControl<string | null | undefined>(undefined),
 			datapointName: new FormControl<string | null | undefined>(undefined),
 			datapointTitle: new FormControl<string | null | undefined>(undefined),
 			datapointType: new FormControl<string | null | undefined>(undefined),
 			destinationUrl: new FormControl<string | null | undefined>(undefined),
-			groupId: new FormControl<number | null | undefined>(undefined),
+			groupId: new FormControl<string | null | undefined>(undefined),
 			groupName: new FormControl<string | null | undefined>(undefined),
 			isABTest: new FormControl<boolean | null | undefined>(undefined),
 			isPrivateShared: new FormControl<boolean | null | undefined>(undefined),
@@ -639,16 +811,20 @@ export namespace MyNS {
 	export interface ApiCoreDtoTagsTag {
 		datapoints?: Array<number>;
 		groups?: Array<number>;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface ApiCoreDtoTagsTagFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoTagsTagFormGroup() {
 		return new FormGroup<ApiCoreDtoTagsTagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -658,7 +834,11 @@ export namespace MyNS {
 		areacode?: string | null;
 		city?: string | null;
 		country?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		metrocode?: string | null;
 		organization?: string | null;
@@ -670,7 +850,11 @@ export namespace MyNS {
 		areacode: FormControl<string | null | undefined>,
 		city: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		metrocode: FormControl<string | null | undefined>,
 		organization: FormControl<string | null | undefined>,
@@ -695,40 +879,52 @@ export namespace MyNS {
 	}
 
 	export interface ApiCoreDtoClickStreamHitOsInfo {
-		familyId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		familyId?: string | null;
 		familyName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface ApiCoreDtoClickStreamHitOsInfoFormProperties {
-		familyId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		familyId: FormControl<string | null | undefined>,
 		familyName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoClickStreamHitOsInfoFormGroup() {
 		return new FormGroup<ApiCoreDtoClickStreamHitOsInfoFormProperties>({
-			familyId: new FormControl<number | null | undefined>(undefined),
+			familyId: new FormControl<string | null | undefined>(undefined),
 			familyName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ApiCoreDtoClickStreamHitSource {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		param?: string | null;
 	}
 	export interface ApiCoreDtoClickStreamHitSourceFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		param: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoClickStreamHitSourceFormGroup() {
 		return new FormGroup<ApiCoreDtoClickStreamHitSourceFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			param: new FormControl<string | null | undefined>(undefined),
 		});
@@ -756,9 +952,13 @@ export namespace MyNS {
 		creationDate?: string | null;
 		deleted?: boolean | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		protocol?: ApiCoreDtoConversionsConversionProtocol | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ApiCoreDtoConversionsConversionFormProperties {
@@ -768,9 +968,13 @@ export namespace MyNS {
 		creationDate: FormControl<string | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		protocol: FormControl<ApiCoreDtoConversionsConversionProtocol | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApiCoreDtoConversionsConversionFormGroup() {
@@ -779,7 +983,7 @@ export namespace MyNS {
 			creationDate: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			protocol: new FormControl<ApiCoreDtoConversionsConversionProtocol | null | undefined>(undefined),
 			value: new FormControl<number | null | undefined>(undefined),
@@ -813,15 +1017,25 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate?: string | null;
 		encodeIp?: boolean | null;
-		fifthConversionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fifthConversionId?: string | null;
 		fifthConversionName?: string | null;
-		firstConversionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		firstConversionId?: string | null;
 		firstConversionName?: string | null;
-		fourthConversionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fourthConversionId?: string | null;
 		fourthConversionName?: string | null;
-		groupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupId?: string | null;
 		groupName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isPublic?: boolean | null;
 		isSecured?: boolean | null;
 		lightTracking?: boolean | null;
@@ -829,11 +1043,15 @@ export namespace MyNS {
 		notes?: string | null;
 		preferred?: boolean | null;
 		redirectOnly?: boolean | null;
-		secondConversionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		secondConversionId?: string | null;
 		secondConversionName?: string | null;
 		status?: ApiCoreDtoClickStreamHitDatapointInfoStatus | null;
 		tags?: Array<ApiCoreDtoTagsTag>;
-		thirdConversionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		thirdConversionId?: string | null;
 		thirdConversionName?: string | null;
 		title?: string | null;
 		trackingCode?: string | null;
@@ -847,15 +1065,25 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate: FormControl<string | null | undefined>,
 		encodeIp: FormControl<boolean | null | undefined>,
-		fifthConversionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fifthConversionId: FormControl<string | null | undefined>,
 		fifthConversionName: FormControl<string | null | undefined>,
-		firstConversionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		firstConversionId: FormControl<string | null | undefined>,
 		firstConversionName: FormControl<string | null | undefined>,
-		fourthConversionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fourthConversionId: FormControl<string | null | undefined>,
 		fourthConversionName: FormControl<string | null | undefined>,
-		groupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		groupId: FormControl<string | null | undefined>,
 		groupName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isPublic: FormControl<boolean | null | undefined>,
 		isSecured: FormControl<boolean | null | undefined>,
 		lightTracking: FormControl<boolean | null | undefined>,
@@ -863,10 +1091,14 @@ export namespace MyNS {
 		notes: FormControl<string | null | undefined>,
 		preferred: FormControl<boolean | null | undefined>,
 		redirectOnly: FormControl<boolean | null | undefined>,
-		secondConversionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		secondConversionId: FormControl<string | null | undefined>,
 		secondConversionName: FormControl<string | null | undefined>,
 		status: FormControl<ApiCoreDtoClickStreamHitDatapointInfoStatus | null | undefined>,
-		thirdConversionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		thirdConversionId: FormControl<string | null | undefined>,
 		thirdConversionName: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		trackingCode: FormControl<string | null | undefined>,
@@ -877,15 +1109,15 @@ export namespace MyNS {
 		return new FormGroup<ApiCoreDtoDatapointsDatapointFormProperties>({
 			creationDate: new FormControl<string | null | undefined>(undefined),
 			encodeIp: new FormControl<boolean | null | undefined>(undefined),
-			fifthConversionId: new FormControl<number | null | undefined>(undefined),
+			fifthConversionId: new FormControl<string | null | undefined>(undefined),
 			fifthConversionName: new FormControl<string | null | undefined>(undefined),
-			firstConversionId: new FormControl<number | null | undefined>(undefined),
+			firstConversionId: new FormControl<string | null | undefined>(undefined),
 			firstConversionName: new FormControl<string | null | undefined>(undefined),
-			fourthConversionId: new FormControl<number | null | undefined>(undefined),
+			fourthConversionId: new FormControl<string | null | undefined>(undefined),
 			fourthConversionName: new FormControl<string | null | undefined>(undefined),
-			groupId: new FormControl<number | null | undefined>(undefined),
+			groupId: new FormControl<string | null | undefined>(undefined),
 			groupName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isPublic: new FormControl<boolean | null | undefined>(undefined),
 			isSecured: new FormControl<boolean | null | undefined>(undefined),
 			lightTracking: new FormControl<boolean | null | undefined>(undefined),
@@ -893,10 +1125,10 @@ export namespace MyNS {
 			notes: new FormControl<string | null | undefined>(undefined),
 			preferred: new FormControl<boolean | null | undefined>(undefined),
 			redirectOnly: new FormControl<boolean | null | undefined>(undefined),
-			secondConversionId: new FormControl<number | null | undefined>(undefined),
+			secondConversionId: new FormControl<string | null | undefined>(undefined),
 			secondConversionName: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ApiCoreDtoClickStreamHitDatapointInfoStatus | null | undefined>(undefined),
-			thirdConversionId: new FormControl<number | null | undefined>(undefined),
+			thirdConversionId: new FormControl<string | null | undefined>(undefined),
 			thirdConversionName: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 			trackingCode: new FormControl<string | null | undefined>(undefined),
@@ -912,13 +1144,19 @@ export namespace MyNS {
 		appendQuery?: boolean | null;
 		browserDestinationItem?: ApiCoreDtoDatapointsBrowserBaseDestinationItem;
 		destinationMode?: ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		domainId?: number | null;
 		encodeUrl?: boolean | null;
-		expirationClicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expirationClicks?: string | null;
 
 		/** (A date in "YmdHis" format) */
 		expirationDate?: string | null;
 		firstUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		goDomainId?: number | null;
 		hideUrl?: boolean | null;
 		hideUrlTitle?: string | null;
@@ -943,13 +1181,19 @@ export namespace MyNS {
 	export interface ApiCoreDtoDatapointsTrackingLinkSpecificsFormProperties {
 		appendQuery: FormControl<boolean | null | undefined>,
 		destinationMode: FormControl<ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		domainId: FormControl<number | null | undefined>,
 		encodeUrl: FormControl<boolean | null | undefined>,
-		expirationClicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expirationClicks: FormControl<string | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
 		expirationDate: FormControl<string | null | undefined>,
 		firstUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		goDomainId: FormControl<number | null | undefined>,
 		hideUrl: FormControl<boolean | null | undefined>,
 		hideUrlTitle: FormControl<string | null | undefined>,
@@ -969,7 +1213,7 @@ export namespace MyNS {
 			destinationMode: new FormControl<ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode | null | undefined>(undefined),
 			domainId: new FormControl<number | null | undefined>(undefined),
 			encodeUrl: new FormControl<boolean | null | undefined>(undefined),
-			expirationClicks: new FormControl<number | null | undefined>(undefined),
+			expirationClicks: new FormControl<string | null | undefined>(undefined),
 			expirationDate: new FormControl<string | null | undefined>(undefined),
 			firstUrl: new FormControl<string | null | undefined>(undefined),
 			goDomainId: new FormControl<number | null | undefined>(undefined),
@@ -1008,16 +1252,20 @@ export namespace MyNS {
 	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsReferrerClean { None = 'None', Clean = 'Clean', Myself = 'Myself' }
 
 	export interface ApiCoreDtoDatapointsDatapointRetargetingInfo {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface ApiCoreDtoDatapointsDatapointRetargetingInfoFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoDatapointsDatapointRetargetingInfoFormGroup() {
 		return new FormGroup<ApiCoreDtoDatapointsDatapointRetargetingInfoFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1070,10 +1318,14 @@ export namespace MyNS {
 
 	export interface ApiCoreDtoDatapointsWeightedDestinationItem {
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight?: number | null;
 	}
 	export interface ApiCoreDtoDatapointsWeightedDestinationItemFormProperties {
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateApiCoreDtoDatapointsWeightedDestinationItemFormGroup() {
@@ -1100,14 +1352,18 @@ export namespace MyNS {
 	export interface ApiCoreDtoDomainsDomain {
 		custom404?: string | null;
 		customHomepage?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		type?: ApiCoreDtoDomainsDomainType | null;
 	}
 	export interface ApiCoreDtoDomainsDomainFormProperties {
 		custom404: FormControl<string | null | undefined>,
 		customHomepage: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		type: FormControl<ApiCoreDtoDomainsDomainType | null | undefined>,
 	}
@@ -1115,7 +1371,7 @@ export namespace MyNS {
 		return new FormGroup<ApiCoreDtoDomainsDomainFormProperties>({
 			custom404: new FormControl<string | null | undefined>(undefined),
 			customHomepage: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<ApiCoreDtoDomainsDomainType | null | undefined>(undefined),
 		});
@@ -1125,16 +1381,20 @@ export namespace MyNS {
 	export enum ApiCoreDtoDomainsDomainType { System = 'System', Go = 'Go', Dedicated = 'Dedicated', Personal = 'Personal' }
 
 	export interface ApiCoreDtoEntityUriLong {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		uri?: string | null;
 	}
 	export interface ApiCoreDtoEntityUriLongFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoEntityUriLongFormGroup() {
 		return new FormGroup<ApiCoreDtoEntityUriLongFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			uri: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1145,7 +1405,9 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate?: string | null;
 		deleted?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isPublic?: boolean | null;
 		name?: string | null;
 		notes?: string | null;
@@ -1159,7 +1421,9 @@ export namespace MyNS {
 		/** (A date in "YmdHis" format) */
 		creationDate: FormControl<string | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isPublic: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
@@ -1171,7 +1435,7 @@ export namespace MyNS {
 		return new FormGroup<ApiCoreDtoGroupsGroupFormProperties>({
 			creationDate: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isPublic: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
@@ -1183,18 +1447,22 @@ export namespace MyNS {
 	}
 
 	export interface ApiCoreDtoRetargetingRetargetingScript {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		script?: string | null;
 	}
 	export interface ApiCoreDtoRetargetingRetargetingScriptFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		script: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoRetargetingRetargetingScriptFormGroup() {
 		return new FormGroup<ApiCoreDtoRetargetingRetargetingScriptFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			script: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1228,75 +1496,135 @@ export namespace MyNS {
 
 		/** (A date in "YmdHis" format) */
 		lastHitDate?: string | null;
-		spiderClicks?: number | null;
-		spiderHits?: number | null;
-		spiderViews?: number | null;
-		totalClicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderClicks?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderHits?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderViews?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalClicks?: string | null;
+
+		/** Type: double */
 		totalCommissionsCost?: number | null;
-		totalConversions?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalConversions?: string | null;
+
+		/** Type: double */
 		totalConversionsCost?: number | null;
+
+		/** Type: double */
 		totalConversionsValue?: number | null;
-		totalHits?: number | null;
-		totalViews?: number | null;
-		uniqueClicks?: number | null;
-		uniqueHits?: number | null;
-		uniqueViews?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalHits?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalViews?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueClicks?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueHits?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueViews?: string | null;
 	}
 	export interface ApiCoreDtoTopsTopItemFormProperties {
 		id: FormControl<string | null | undefined>,
 
 		/** (A date in "YmdHis" format) */
 		lastHitDate: FormControl<string | null | undefined>,
-		spiderClicks: FormControl<number | null | undefined>,
-		spiderHits: FormControl<number | null | undefined>,
-		spiderViews: FormControl<number | null | undefined>,
-		totalClicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderClicks: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderHits: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		spiderViews: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalClicks: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		totalCommissionsCost: FormControl<number | null | undefined>,
-		totalConversions: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalConversions: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		totalConversionsCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalConversionsValue: FormControl<number | null | undefined>,
-		totalHits: FormControl<number | null | undefined>,
-		totalViews: FormControl<number | null | undefined>,
-		uniqueClicks: FormControl<number | null | undefined>,
-		uniqueHits: FormControl<number | null | undefined>,
-		uniqueViews: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalHits: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalViews: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueClicks: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueHits: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uniqueViews: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreDtoTopsTopItemFormGroup() {
 		return new FormGroup<ApiCoreDtoTopsTopItemFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
 			lastHitDate: new FormControl<string | null | undefined>(undefined),
-			spiderClicks: new FormControl<number | null | undefined>(undefined),
-			spiderHits: new FormControl<number | null | undefined>(undefined),
-			spiderViews: new FormControl<number | null | undefined>(undefined),
-			totalClicks: new FormControl<number | null | undefined>(undefined),
+			spiderClicks: new FormControl<string | null | undefined>(undefined),
+			spiderHits: new FormControl<string | null | undefined>(undefined),
+			spiderViews: new FormControl<string | null | undefined>(undefined),
+			totalClicks: new FormControl<string | null | undefined>(undefined),
 			totalCommissionsCost: new FormControl<number | null | undefined>(undefined),
-			totalConversions: new FormControl<number | null | undefined>(undefined),
+			totalConversions: new FormControl<string | null | undefined>(undefined),
 			totalConversionsCost: new FormControl<number | null | undefined>(undefined),
 			totalConversionsValue: new FormControl<number | null | undefined>(undefined),
-			totalHits: new FormControl<number | null | undefined>(undefined),
-			totalViews: new FormControl<number | null | undefined>(undefined),
-			uniqueClicks: new FormControl<number | null | undefined>(undefined),
-			uniqueHits: new FormControl<number | null | undefined>(undefined),
-			uniqueViews: new FormControl<number | null | undefined>(undefined),
+			totalHits: new FormControl<string | null | undefined>(undefined),
+			totalViews: new FormControl<string | null | undefined>(undefined),
+			uniqueClicks: new FormControl<string | null | undefined>(undefined),
+			uniqueHits: new FormControl<string | null | undefined>(undefined),
+			uniqueViews: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ApiCoreRequestsConversionPatchBody {
 		Action?: string | null;
-		Id?: number | null;
-		ReplaceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ReplaceId?: string | null;
 	}
 	export interface ApiCoreRequestsConversionPatchBodyFormProperties {
 		Action: FormControl<string | null | undefined>,
-		Id: FormControl<number | null | undefined>,
-		ReplaceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ReplaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreRequestsConversionPatchBodyFormGroup() {
 		return new FormGroup<ApiCoreRequestsConversionPatchBodyFormProperties>({
 			Action: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
-			ReplaceId: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			ReplaceId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1338,16 +1666,20 @@ export namespace MyNS {
 
 	export interface ApiCoreRequestsPatchBody {
 		Action?: string | null;
-		Id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id?: string | null;
 	}
 	export interface ApiCoreRequestsPatchBodyFormProperties {
 		Action: FormControl<string | null | undefined>,
-		Id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreRequestsPatchBodyFormGroup() {
 		return new FormGroup<ApiCoreRequestsPatchBodyFormProperties>({
 			Action: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1365,32 +1697,40 @@ export namespace MyNS {
 
 	export interface ApiCoreRequestsPermissionPatchRequest {
 		Action?: string | null;
-		Id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id?: string | null;
 		Verb?: string | null;
 	}
 	export interface ApiCoreRequestsPermissionPatchRequestFormProperties {
 		Action: FormControl<string | null | undefined>,
-		Id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Id: FormControl<string | null | undefined>,
 		Verb: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreRequestsPermissionPatchRequestFormGroup() {
 		return new FormGroup<ApiCoreRequestsPermissionPatchRequestFormProperties>({
 			Action: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
 			Verb: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ApiCoreResponsesCountResponce {
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
 	}
 	export interface ApiCoreResponsesCountResponceFormProperties {
-		count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateApiCoreResponsesCountResponceFormGroup() {
 		return new FormGroup<ApiCoreResponsesCountResponceFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1503,7 +1843,6 @@ export namespace MyNS {
 		/**
 		 * Retrieve current account data
 		 * Get account
-		 * @return {ApiCoreDtoAccountingUser} 
 		 */
 		Account_Get(): Observable<ApiCoreDtoAccountingUser> {
 			return this.http.get<ApiCoreDtoAccountingUser>(this.baseUri + 'account', {});
@@ -1512,7 +1851,6 @@ export namespace MyNS {
 		/**
 		 * Update current account data
 		 * Post account
-		 * @return {ApiCoreDtoAccountingUser} 
 		 */
 		Account_Post(requestBody: ApiCoreDtoAccountingUser): Observable<ApiCoreDtoAccountingUser> {
 			return this.http.post<ApiCoreDtoAccountingUser>(this.baseUri + 'account', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1522,8 +1860,9 @@ export namespace MyNS {
 		 * Retrieve list of a domains allowed to redirect in DDU mode
 		 * Get account/domainwhitelist
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_} 
+		 *     Min length: 0    Max length: 0
 		 */
 		Account_GetDomainWhitelist(offset: number | null | undefined, limit: number | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_>(this.baseUri + 'account/domainwhitelist?offset=' + offset + '&limit=' + limit, {});
@@ -1533,7 +1872,6 @@ export namespace MyNS {
 		 * Create an domain entry
 		 * Post account/domainwhitelist
 		 * @param {ApiCoreDtoAccountingDomainWhitelistEntry} requestBody The entry to add
-		 * @return {ApiCoreDtoAccountingDomainWhitelistEntry} 
 		 */
 		Account_PutDomainWhitelist(requestBody: ApiCoreDtoAccountingDomainWhitelistEntry): Observable<ApiCoreDtoAccountingDomainWhitelistEntry> {
 			return this.http.post<ApiCoreDtoAccountingDomainWhitelistEntry>(this.baseUri + 'account/domainwhitelist', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1543,7 +1881,6 @@ export namespace MyNS {
 		 * Delete an domain entry
 		 * Delete account/domainwhitelist/{whitelistId}
 		 * @param {string} whitelistId The id of the domain to delete
-		 * @return {ApiCoreDtoAccountingDomainWhitelistEntry} 
 		 */
 		Account_DeleteDomainWhitelist(whitelistId: string): Observable<ApiCoreDtoAccountingDomainWhitelistEntry> {
 			return this.http.delete<ApiCoreDtoAccountingDomainWhitelistEntry>(this.baseUri + 'account/domainwhitelist/' + (whitelistId == null ? '' : encodeURIComponent(whitelistId)), {});
@@ -1553,11 +1890,12 @@ export namespace MyNS {
 		 * Retrieve list of a guest
 		 * Get account/guests
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} sortBy Field to sort by
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Account_GetGuests(offset: number | null | undefined, limit: number | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'account/guests?offset=' + offset + '&limit=' + limit + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
@@ -1567,7 +1905,6 @@ export namespace MyNS {
 		 * Create a guest
 		 * Post account/guests
 		 * @param {ApiCoreDtoAccountingGuest} requestBody Guest object to create
-		 * @return {ApiCoreDtoAccountingGuest} 
 		 */
 		Account_PutGuest(requestBody: ApiCoreDtoAccountingGuest): Observable<ApiCoreDtoAccountingGuest> {
 			return this.http.post<ApiCoreDtoAccountingGuest>(this.baseUri + 'account/guests', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1577,7 +1914,6 @@ export namespace MyNS {
 		 * Retrieve count of guests
 		 * Get account/guests/count
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		Account_GetGuestsCount(textSearch: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'account/guests/count?textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
@@ -1586,83 +1922,87 @@ export namespace MyNS {
 		/**
 		 * Delete a guest
 		 * Delete account/guests/{guestId}
-		 * @param {number} guestId Id of the guest
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Account_DeleteGuest(guestId: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Account_DeleteGuest(guestId: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'account/guests/' + guestId, {});
 		}
 
 		/**
 		 * Retrieve a guest
 		 * Get account/guests/{guestId}
-		 * @param {number} guestId Id of the guest
-		 * @return {ApiCoreDtoAccountingGuest} 
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Account_GetGuest(guestId: number): Observable<ApiCoreDtoAccountingGuest> {
+		Account_GetGuest(guestId: string): Observable<ApiCoreDtoAccountingGuest> {
 			return this.http.get<ApiCoreDtoAccountingGuest>(this.baseUri + 'account/guests/' + guestId, {});
 		}
 
 		/**
 		 * Update a guest
 		 * Post account/guests/{guestId}
-		 * @param {number} guestId Id of the guest
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoAccountingGuest} requestBody Guest object with field updated
-		 * @return {ApiCoreDtoAccountingGuest} 
 		 */
-		Account_PostGuest(guestId: number, requestBody: ApiCoreDtoAccountingGuest): Observable<ApiCoreDtoAccountingGuest> {
+		Account_PostGuest(guestId: string, requestBody: ApiCoreDtoAccountingGuest): Observable<ApiCoreDtoAccountingGuest> {
 			return this.http.post<ApiCoreDtoAccountingGuest>(this.baseUri + 'account/guests/' + guestId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve permissions for a guest
 		 * Get account/guests/{guestId}/permissions
-		 * @param {number} guestId Id of the guest
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Account_GetPermissionsEntityType} entityType Can be "datapoint" or "group"
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {Account_GetPermissionsType} type Can be "w" or "r"
-		 * @param {number} entityId Optional id of the datapoint/group entity to filter by
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_} 
+		 * @param {string} entityId Optional id of the datapoint/group entity to filter by
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Account_GetPermissions(guestId: number, entityType: Account_GetPermissionsEntityType | null | undefined, offset: number | null | undefined, limit: number | null | undefined, type: Account_GetPermissionsType | null | undefined, entityId: number | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_> {
+		Account_GetPermissions(guestId: string, entityType: Account_GetPermissionsEntityType | null | undefined, offset: number | null | undefined, limit: number | null | undefined, type: Account_GetPermissionsType | null | undefined, entityId: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_>(this.baseUri + 'account/guests/' + guestId + '/permissions?entityType=' + entityType + '&offset=' + offset + '&limit=' + limit + '&type=' + type + '&entityId=' + entityId, {});
 		}
 
 		/**
 		 * Retrieve count of the permissions for a guest
 		 * Get account/guests/{guestId}/permissions/count
-		 * @param {number} guestId Id of the guest
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Account_GetPermissionsEntityType} entityType Can be "datapoint" or "group"
 		 * @param {Account_GetPermissionsType} type Can be "w" or "r"
-		 * @param {number} entityId Optional id of the datapoint/group entity to filter by
-		 * @return {ApiCoreResponsesCountResponce} 
+		 * @param {string} entityId Optional id of the datapoint/group entity to filter by
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Account_GetPermissionsCount(guestId: number, entityType: Account_GetPermissionsEntityType | null | undefined, type: Account_GetPermissionsType | null | undefined, entityId: number | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Account_GetPermissionsCount(guestId: string, entityType: Account_GetPermissionsEntityType | null | undefined, type: Account_GetPermissionsType | null | undefined, entityId: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'account/guests/' + guestId + '/permissions/count?entityType=' + entityType + '&type=' + type + '&entityId=' + entityId, {});
 		}
 
 		/**
 		 * Change the permission on a shared object
 		 * Post account/guests/{guestId}/{type}/permissions/patch
-		 * @param {number} guestId Id of the guest
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Account_GetPermissionsEntityType} type Can be "datapoint" or "group"
 		 * @param {ApiCoreRequestsPermissionPatchRequest} requestBody The patch permission request
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		AccountPostByGuestIdAndType(guestId: number, type: Account_GetPermissionsEntityType, requestBody: ApiCoreRequestsPermissionPatchRequest): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		AccountPostByGuestIdAndType(guestId: string, type: Account_GetPermissionsEntityType, requestBody: ApiCoreRequestsPermissionPatchRequest): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'account/guests/' + guestId + '/' + type + '/permissions/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Change the permission on a shared object
 		 * Put account/guests/{guestId}/{type}/permissions/patch
-		 * @param {number} guestId Id of the guest
+		 * @param {string} guestId Id of the guest
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Account_GetPermissionsEntityType} type Can be "datapoint" or "group"
 		 * @param {ApiCoreRequestsPermissionPatchRequest} requestBody The patch permission request
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Account_PatchPermissions(guestId: number, type: Account_GetPermissionsEntityType, requestBody: ApiCoreRequestsPermissionPatchRequest): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Account_PatchPermissions(guestId: string, type: Account_GetPermissionsEntityType, requestBody: ApiCoreRequestsPermissionPatchRequest): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'account/guests/' + guestId + '/' + type + '/permissions/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1670,8 +2010,9 @@ export namespace MyNS {
 		 * Retrieve list of a ip to exclude from event tracking
 		 * Get account/ipblacklist
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_} 
+		 *     Min length: 0    Max length: 0
 		 */
 		Account_GetIpBlacklist(offset: number | null | undefined, limit: number | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_>(this.baseUri + 'account/ipblacklist?offset=' + offset + '&limit=' + limit, {});
@@ -1681,7 +2022,6 @@ export namespace MyNS {
 		 * Create an ip blacklist entry
 		 * Post account/ipblacklist
 		 * @param {ApiCoreDtoAccountingIpBlacklistEntry} requestBody The entry to add
-		 * @return {ApiCoreDtoAccountingIpBlacklistEntry} 
 		 */
 		Account_PutIpBlacklist(requestBody: ApiCoreDtoAccountingIpBlacklistEntry): Observable<ApiCoreDtoAccountingIpBlacklistEntry> {
 			return this.http.post<ApiCoreDtoAccountingIpBlacklistEntry>(this.baseUri + 'account/ipblacklist', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1691,7 +2031,6 @@ export namespace MyNS {
 		 * Delete an ip blacklist entry
 		 * Delete account/ipblacklist/{blacklistId}
 		 * @param {string} blacklistId The id of the ip to delete
-		 * @return {ApiCoreDtoAccountingIpBlacklistEntry} 
 		 */
 		Account_DeleteIpBlacklist(blacklistId: string): Observable<ApiCoreDtoAccountingIpBlacklistEntry> {
 			return this.http.delete<ApiCoreDtoAccountingIpBlacklistEntry>(this.baseUri + 'account/ipblacklist/' + (blacklistId == null ? '' : encodeURIComponent(blacklistId)), {});
@@ -1700,7 +2039,6 @@ export namespace MyNS {
 		/**
 		 * Retrieve current account plan
 		 * Get account/plan
-		 * @return {ApiCoreDtoAccountingPlan} 
 		 */
 		Account_GetPlan(): Observable<ApiCoreDtoAccountingPlan> {
 			return this.http.get<ApiCoreDtoAccountingPlan>(this.baseUri + 'account/plan', {});
@@ -1713,7 +2051,6 @@ export namespace MyNS {
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {boolean} hourly If using "yesterday" or "today" timeframe you can ask for the hourly detail
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
 		Aggregated_GetStatisticsSingle(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined, onlyFavorites: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'aggregated?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&hourly=' + hourly + '&onlyFavorites=' + (onlyFavorites == null ? '' : encodeURIComponent(onlyFavorites)), {});
@@ -1726,7 +2063,6 @@ export namespace MyNS {
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
 		Aggregated_GetStatisticsList(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&groupBy=' + groupBy, {});
@@ -1742,9 +2078,10 @@ export namespace MyNS {
 		 * @param {string} sortBy Field to sort by
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreDtoAggregatedAggregatedSummaryResult} 
 		 */
 		Aggregated_GetConversionsSummary(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedSummaryResult>(this.baseUri + 'aggregated/summary/conversions?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&offset=' + offset + '&limit=' + limit + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
@@ -1763,12 +2100,14 @@ export namespace MyNS {
 		 * @param {string} sortBy Field to sort by
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
-		 * @param {number} groupId Filter by this group id
+		 *     Min length: 0    Max length: 0
+		 * @param {string} groupId Filter by this group id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreDtoAggregatedAggregatedSummaryResult} 
 		 */
-		Aggregated_GetDatapointsSummary(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, type: Aggregated_GetDatapointsSummaryType, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, groupId: number | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
+		Aggregated_GetDatapointsSummary(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, type: Aggregated_GetDatapointsSummaryType, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, groupId: string | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedSummaryResult>(this.baseUri + 'aggregated/summary/datapoints?timeFrame=' + timeFrame + '&type=' + type + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&offset=' + offset + '&limit=' + limit + '&groupId=' + groupId + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
 		}
 
@@ -1784,9 +2123,10 @@ export namespace MyNS {
 		 * @param {string} sortBy Field to sort by
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreDtoAggregatedAggregatedSummaryResult} 
 		 */
 		Aggregated_GetGroupsSummary(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedSummaryResult>(this.baseUri + 'aggregated/summary/groups?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&offset=' + offset + '&limit=' + limit + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
@@ -1795,14 +2135,17 @@ export namespace MyNS {
 		/**
 		 * Retrieve the latest list of events of this account. Limited to last 100.
 		 * Get clickstream
-		 * @param {number} group Filter by this group id (mutually exclusive with "datapoint" and "conversion")
-		 * @param {number} datapoint Filter by this datapoint id (mutually exclusive with "group" and "conversion")
-		 * @param {number} conversion Filter by this conversion id (mutually exclusive with "datapoint" and "group")
+		 * @param {string} group Filter by this group id (mutually exclusive with "datapoint" and "conversion")
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} datapoint Filter by this datapoint id (mutually exclusive with "group" and "conversion")
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} conversion Filter by this conversion id (mutually exclusive with "datapoint" and "group")
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} pageSize Limit results to this number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ClickStream_GetFilter} filter Filter event type ("spiders"/"uniques"/"nonuniques"/"conversions")
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_} 
 		 */
-		ClickStream_Get(group: number | null | undefined, datapoint: number | null | undefined, conversion: number | null | undefined, pageSize: number | null | undefined, filter: ClickStream_GetFilter | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_> {
+		ClickStream_Get(group: string | null | undefined, datapoint: string | null | undefined, conversion: string | null | undefined, pageSize: number | null | undefined, filter: ClickStream_GetFilter | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_>(this.baseUri + 'clickstream?group=' + group + '&datapoint=' + datapoint + '&conversion=' + conversion + '&pageSize=' + pageSize + '&filter=' + filter, {});
 		}
 
@@ -1810,12 +2153,13 @@ export namespace MyNS {
 		 * Retrieve a list of conversions
 		 * Get conversions
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of conversion ("deleted"/"active")
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude conversions created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude conversions created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Conversions_Get(offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions?offset=' + offset + '&limit=' + limit + '&status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
@@ -1825,7 +2169,6 @@ export namespace MyNS {
 		 * Create a conversion
 		 * Post conversions
 		 * @param {ApiCoreDtoConversionsConversion} requestBody The body of the conversion
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Conversions_Put(requestBody: ApiCoreDtoConversionsConversion): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1839,7 +2182,6 @@ export namespace MyNS {
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of conversion ("deleted"/"active")
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
 		Conversions_GetStatisticsAllList(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'conversions/aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&groupBy=' + groupBy, {});
@@ -1852,7 +2194,6 @@ export namespace MyNS {
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude conversions created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude conversions created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		Conversions_Count(status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'conversions/count?status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
@@ -1861,144 +2202,147 @@ export namespace MyNS {
 		/**
 		 * Delete conversion specified by id
 		 * Delete conversions/{conversionId}
-		 * @param {number} conversionId Id of the conversion
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Conversions_Delete(conversionId: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Conversions_Delete(conversionId: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId, {});
 		}
 
 		/**
 		 * Retrieve conversion specified by id
 		 * Get conversions/{conversionId}
-		 * @param {number} conversionId Id of the conversion
-		 * @return {ApiCoreDtoConversionsConversion} 
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		ConversionsGetByConversionId(conversionId: number): Observable<ApiCoreDtoConversionsConversion> {
+		ConversionsGetByConversionId(conversionId: string): Observable<ApiCoreDtoConversionsConversion> {
 			return this.http.get<ApiCoreDtoConversionsConversion>(this.baseUri + 'conversions/' + conversionId, {});
 		}
 
 		/**
 		 * Update conversion specified by id
 		 * Post conversions/{conversionId}
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoConversionsConversion} requestBody Updated body of the conversion
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Conversions_Post(conversionId: number, requestBody: ApiCoreDtoConversionsConversion): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Conversions_Post(conversionId: string, requestBody: ApiCoreDtoConversionsConversion): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve statistics about this conversion for a timeframe
 		 * Get conversions/{conversionId}/aggregated
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {string} tag Filter by this tag name
 		 * @param {boolean} favourite Is the datapoint marked as favourite
 		 * @param {boolean} hourly If using "yesterday" or "today" timeframe you can ask for the hourly detail
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
-		Conversions_GetStatisticsSingle(conversionId: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
+		Conversions_GetStatisticsSingle(conversionId: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'conversions/' + conversionId + '/aggregated?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&hourly=' + hourly, {});
 		}
 
 		/**
 		 * Retrieve statistics about this conversion for a timeframe grouped by some temporal entity (day/week/month)
 		 * Get conversions/{conversionId}/aggregated/list
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
-		Conversions_GetStatisticsList(conversionId: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
+		Conversions_GetStatisticsList(conversionId: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'conversions/' + conversionId + '/aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&groupBy=' + groupBy, {});
 		}
 
 		/**
 		 * Retrieve a list of datapoints connected to this conversion
 		 * Get conversions/{conversionId}/datapoints
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of datapoint ("tl"/"tp")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of datapoint ("deleted"/"active"/"paused"/"spam")
 		 * @param {string} tags Filter by this tag name
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Conversions_GetDatapoints(conversionId: number, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
+		Conversions_GetDatapoints(conversionId: string, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId + '/datapoints?offset=' + offset + '&limit=' + limit + '&type=' + type + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Modify the association between a conversion and multiple datapoints
 		 * Put conversions/{conversionId}/datapoints/batch/patch
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsPatchBodyBatch} requestBody Patch requests
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		ConversionsPutByConversionId(conversionId: number, requestBody: ApiCoreRequestsPatchBodyBatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		ConversionsPutByConversionId(conversionId: string, requestBody: ApiCoreRequestsPatchBodyBatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId + '/datapoints/batch/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve a count of datapoints connected to this conversion
 		 * Get conversions/{conversionId}/datapoints/count
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} type Type of datapoint ("tl"/"tp")
 		 * @param {string} status Status of datapoint ("deleted"/"active"/"paused"/"spam")
 		 * @param {string} tags Filter by this tag name
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
-		Conversions_GetDatapointsCount(conversionId: number, type: string | null | undefined, status: string | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Conversions_GetDatapointsCount(conversionId: string, type: string | null | undefined, status: string | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'conversions/' + conversionId + '/datapoints/count?type=' + (type == null ? '' : encodeURIComponent(type)) + '&status=' + (status == null ? '' : encodeURIComponent(status)) + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Modify the association between a conversion and a datapoint
 		 * Put conversions/{conversionId}/datapoints/patch
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsConversionPatchBody} requestBody Patch request
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Conversions_Patch(conversionId: number, requestBody: ApiCoreRequestsConversionPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Conversions_Patch(conversionId: string, requestBody: ApiCoreRequestsConversionPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId + '/datapoints/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve the list of events related to this conversion.
 		 * Get conversions/{conversionId}/hits
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Conversions_GetHitsTimeframe} timeframe Timeframe of the request. See list at $timeframeList
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} offset Offset where to start from (it's the lastKey field in the response object)
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Conversions_GetHitsFilter} filter Filter event type ("spiders"/"uniques"/"nonuniques"/"conversions")
-		 * @return {ApiCoreDtoClickStreamHitListPage} 
 		 */
-		Conversions_GetHits(conversionId: number, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
+		Conversions_GetHits(conversionId: string, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
 			return this.http.get<ApiCoreDtoClickStreamHitListPage>(this.baseUri + 'conversions/' + conversionId + '/hits?timeframe=' + timeframe + '&limit=' + limit + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&filter=' + filter, {});
 		}
 
 		/**
 		 * Fast patch the "notes" field of a conversion
 		 * Put conversions/{conversionId}/notes
-		 * @param {number} conversionId Id of the conversion
+		 * @param {string} conversionId Id of the conversion
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsGenericTextPatch} requestBody Patch requests
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Conversions_PatchNotes(conversionId: number, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Conversions_PatchNotes(conversionId: string, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'conversions/' + conversionId + '/notes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2006,7 +2350,9 @@ export namespace MyNS {
 		 * List of all the datapoints associated to the user
 		 * Get datapoints
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of the datapoint ("tp"/"tl")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} tags A comma separated list of tags you want to filter with.
@@ -2016,7 +2362,6 @@ export namespace MyNS {
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		DataPoints_Get(offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints?offset=' + offset + '&limit=' + limit + '&type=' + type + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
@@ -2026,7 +2371,6 @@ export namespace MyNS {
 		 * Create a datapoint
 		 * Post datapoints
 		 * @param {ApiCoreDtoDatapointsDatapoint} requestBody The body of the datapoint
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		DataPoints_Put(requestBody: ApiCoreDtoDatapointsDatapoint): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2043,7 +2387,6 @@ export namespace MyNS {
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of datapoint ("deleted"/"active"/"paused"/"spam")
 		 * @param {string} tag A comma separated list of tags you want to filter with.
 		 * @param {boolean} favourite Is the datapoint is marked as favourite
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
 		DataPoints_GetStatisticsAggregatedSingle(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, type: Aggregated_GetDatapointsSummaryType | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'datapoints/aggregated?timeFrame=' + timeFrame + '&type=' + type + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&hourly=' + hourly + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite, {});
@@ -2060,7 +2403,6 @@ export namespace MyNS {
 		 * @param {string} tag A comma separated list of tags you want to filter with.
 		 * @param {boolean} favourite Is the datapoint is marked as favourite
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
 		DataPoints_GetStatisticsAllList(type: Aggregated_GetDatapointsSummaryType, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'datapoints/aggregated/list?type=' + type + '&timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&groupBy=' + groupBy, {});
@@ -2069,7 +2411,6 @@ export namespace MyNS {
 		/**
 		 * Delete multiple datapoints
 		 * Delete datapoints/batch
-		 * @return {ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_} 
 		 */
 		DataPoints_BatchDelete(): Observable<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(this.baseUri + 'datapoints/batch', {});
@@ -2079,7 +2420,6 @@ export namespace MyNS {
 		 * Update multiple datapoints
 		 * Post datapoints/batch
 		 * @param {ApiCoreRequestsDatapointsBatch} requestBody A json containing the datapoints to update.
-		 * @return {ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_} 
 		 */
 		DataPoints_BatchPost(requestBody: ApiCoreRequestsDatapointsBatch): Observable<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(this.baseUri + 'datapoints/batch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2089,7 +2429,6 @@ export namespace MyNS {
 		 * Create multiple datapoints
 		 * Put datapoints/batch
 		 * @param {ApiCoreRequestsDatapointsBatch} requestBody A json containing the datapoints to create.
-		 * @return {ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_} 
 		 */
 		DataPoints_BatchPut(requestBody: ApiCoreRequestsDatapointsBatch): Observable<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(this.baseUri + 'datapoints/batch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2105,7 +2444,6 @@ export namespace MyNS {
 		 * @param {boolean} onlyFavorites Filter fields by favourite status
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		DataPoints_Count(type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'datapoints/count?type=' + type + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
@@ -2114,96 +2452,97 @@ export namespace MyNS {
 		/**
 		 * Delete a datapoint
 		 * Delete datapoints/{id}
-		 * @param {number} id The id of the datapoint
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id The id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		DataPoints_Delete(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		DataPoints_Delete(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints/' + id, {});
 		}
 
 		/**
 		 * Get a datapoint
 		 * Get datapoints/{id}
-		 * @param {number} id The id of the datapoint
-		 * @return {ApiCoreDtoDatapointsDatapoint} 
+		 * @param {string} id The id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		DataPointsGetById(id: number): Observable<ApiCoreDtoDatapointsDatapoint> {
+		DataPointsGetById(id: string): Observable<ApiCoreDtoDatapointsDatapoint> {
 			return this.http.get<ApiCoreDtoDatapointsDatapoint>(this.baseUri + 'datapoints/' + id, {});
 		}
 
 		/**
 		 * Update a datapoint
 		 * Post datapoints/{id}
-		 * @param {number} id The id of the datapoint
+		 * @param {string} id The id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoDatapointsDatapoint} requestBody The body of the datapoint
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		DataPoints_Post(id: number, requestBody: ApiCoreDtoDatapointsDatapoint): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		DataPoints_Post(id: string, requestBody: ApiCoreDtoDatapointsDatapoint): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve statistics about this datapoint for a timeframe
 		 * Get datapoints/{id}/aggregated
-		 * @param {number} id Id of the datapoint
+		 * @param {string} id Id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {boolean} hourly If using "yesterday" or "today" timeframe you can ask for the hourly detail
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
-		DataPoints_GetStatisticsSingle(id: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
+		DataPoints_GetStatisticsSingle(id: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'datapoints/' + id + '/aggregated?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&hourly=' + hourly, {});
 		}
 
 		/**
 		 * Retrieve statistics about this datapoint for a timeframe grouped by some temporal entity (day/week/month)
 		 * Get datapoints/{id}/aggregated/list
-		 * @param {number} id Id of the datapoint
+		 * @param {string} id Id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
-		DataPoints_GetStatisticsList(id: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
+		DataPoints_GetStatisticsList(id: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'datapoints/' + id + '/aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&groupBy=' + groupBy, {});
 		}
 
 		/**
 		 * Fast switch the "favourite" field of a datapoint
 		 * Put datapoints/{id}/favourite
-		 * @param {number} id Id of the datapoint
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id Id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		DataPoints_PatchFavourite(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		DataPoints_PatchFavourite(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints/' + id + '/favourite', null, {});
 		}
 
 		/**
 		 * Retrieve the list of events related to this datapoint.
 		 * Get datapoints/{id}/hits
-		 * @param {number} id Id of the datapoint
+		 * @param {string} id Id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Conversions_GetHitsTimeframe} timeframe Timeframe of the request. See list at $timeframeList
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} offset Offset where to start from (it's the lastKey field in the response object)
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Conversions_GetHitsFilter} filter Filter event type ("spiders"/"uniques"/"nonuniques"/"conversions")
-		 * @return {ApiCoreDtoClickStreamHitListPage} 
 		 */
-		DataPoints_GetHits(id: number, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
+		DataPoints_GetHits(id: string, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
 			return this.http.get<ApiCoreDtoClickStreamHitListPage>(this.baseUri + 'datapoints/' + id + '/hits?timeframe=' + timeframe + '&limit=' + limit + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&filter=' + filter, {});
 		}
 
 		/**
 		 * Fast patch the "notes" field of a datapoint
 		 * Put datapoints/{id}/notes
-		 * @param {number} id Id of the datapoint
+		 * @param {string} id Id of the datapoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsGenericTextPatch} requestBody Patch requests
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		DataPoints_PatchNotes(id: number, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		DataPoints_PatchNotes(id: string, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'datapoints/' + id + '/notes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2211,10 +2550,11 @@ export namespace MyNS {
 		 * Retrieve a list of domains
 		 * Get domains
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {Domains_GetType} type Type of domain ("system"/"go"/"personal"/"dedicated"). If not specified default is "system"
 		 * @param {string} name Filter domains with this anmen
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Domains_Get(offset: number | null | undefined, limit: number | null | undefined, type: Domains_GetType | null | undefined, name: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'domains?offset=' + offset + '&limit=' + limit + '&type=' + type + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
@@ -2224,7 +2564,6 @@ export namespace MyNS {
 		 * Create a domain
 		 * Post domains
 		 * @param {ApiCoreDtoDomainsDomain} requestBody The domain to create
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Domains_Put(requestBody: ApiCoreDtoDomainsDomain): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'domains', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2235,7 +2574,6 @@ export namespace MyNS {
 		 * Get domains/count
 		 * @param {Domains_GetType} type Type of domain ("system"/"go"/"personal"/"dedicated"). If not specified default is "system"
 		 * @param {string} name Filter domains with this anmen
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		Domains_Count(type: Domains_GetType | null | undefined, name: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'domains/count?type=' + type + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
@@ -2244,31 +2582,31 @@ export namespace MyNS {
 		/**
 		 * Delete a domain
 		 * Delete domains/{id}
-		 * @param {number} id Id of domain
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id Id of domain
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Domains_Delete(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Domains_Delete(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'domains/' + id, {});
 		}
 
 		/**
 		 * Get a domain
 		 * Get domains/{id}
-		 * @param {number} id Id of domain
-		 * @return {ApiCoreDtoDomainsDomain} 
+		 * @param {string} id Id of domain
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		DomainsGetById(id: number): Observable<ApiCoreDtoDomainsDomain> {
+		DomainsGetById(id: string): Observable<ApiCoreDtoDomainsDomain> {
 			return this.http.get<ApiCoreDtoDomainsDomain>(this.baseUri + 'domains/' + id, {});
 		}
 
 		/**
 		 * Update a domain
 		 * Post domains/{id}
-		 * @param {number} id Id of domain
+		 * @param {string} id Id of domain
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoDomainsDomain} requestBody The domain to update
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Domains_Update(id: number, requestBody: ApiCoreDtoDomainsDomain): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Domains_Update(id: string, requestBody: ApiCoreDtoDomainsDomain): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'domains/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2276,14 +2614,15 @@ export namespace MyNS {
 		 * List of all the groups associated to the user.
 		 * Get groups
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of the group
 		 * @param {string} tags A comma separated list of tags you want to filter with.
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude groups created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude groups created after this date (YYYYMMDD)
 		 * @param {boolean} write Write permission
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Groups_Get(offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined, write: boolean | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups?offset=' + offset + '&limit=' + limit + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)) + '&write=' + write, {});
@@ -2293,7 +2632,6 @@ export namespace MyNS {
 		 * Create a group
 		 * Post groups
 		 * @param {ApiCoreDtoGroupsGroup} requestBody The body of the group
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Groups_Put(requestBody: ApiCoreDtoGroupsGroup): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2309,7 +2647,6 @@ export namespace MyNS {
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of group ("deleted"/"active")
 		 * @param {string} tag A comma separated list of tags you want to filter with.
 		 * @param {boolean} favourite Is the group is marked as favourite
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
 		Groups_GetStatisticsAggregatedSingle(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'groups/aggregated?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&hourly=' + hourly + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite, {});
@@ -2325,7 +2662,6 @@ export namespace MyNS {
 		 * @param {string} tag A comma separated list of tags you want to filter with.
 		 * @param {boolean} favourite Is the group is marked as favourite
 		 * @param {Aggregated_GetConversionsSummaryStatus} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
 		Groups_GetStatisticsAllList(timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, status: string | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, groupBy: Aggregated_GetConversionsSummaryStatus | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'groups/aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + (status == null ? '' : encodeURIComponent(status)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&groupBy=' + groupBy, {});
@@ -2340,7 +2676,6 @@ export namespace MyNS {
 		 * @param {string} createdAfter Exclude groups created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude groups created after this date (YYYYMMDD)
 		 * @param {boolean} write Write permission
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		Groups_Count(status: Aggregated_GetConversionsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined, write: boolean | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'groups/count?status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)) + '&write=' + write, {});
@@ -2349,66 +2684,67 @@ export namespace MyNS {
 		/**
 		 * Delete group specified by id
 		 * Delete groups/{id}
-		 * @param {number} id Id of the group
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Groups_Delete(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_Delete(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id, {});
 		}
 
 		/**
 		 * Get a group
 		 * Get groups/{id}
-		 * @param {number} id The id of the group
-		 * @return {ApiCoreDtoGroupsGroup} 
+		 * @param {string} id The id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		GroupsGetById(id: number): Observable<ApiCoreDtoGroupsGroup> {
+		GroupsGetById(id: string): Observable<ApiCoreDtoGroupsGroup> {
 			return this.http.get<ApiCoreDtoGroupsGroup>(this.baseUri + 'groups/' + id, {});
 		}
 
 		/**
 		 * Update a group
 		 * Post groups/{id}
-		 * @param {number} id The id of the group
+		 * @param {string} id The id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoGroupsGroup} requestBody The body of the group
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Groups_Post(id: number, requestBody: ApiCoreDtoGroupsGroup): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_Post(id: string, requestBody: ApiCoreDtoGroupsGroup): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieve statistics about this group for a timeframe
 		 * Get groups/{id}/aggregated
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {boolean} hourly If using "yesterday" or "today" timeframe you can ask for the hourly detail
-		 * @return {ApiCoreDtoAggregatedAggregatedResult} 
 		 */
-		Groups_GetStatisticsSingle(id: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
+		Groups_GetStatisticsSingle(id: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, hourly: boolean | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedResult>(this.baseUri + 'groups/' + id + '/aggregated?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&hourly=' + hourly, {});
 		}
 
 		/**
 		 * Retrieve statistics about this group for a timeframe grouped by some temporal entity (day/week/month)
 		 * Get groups/{id}/aggregated/list
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Aggregated_GetStatisticsListGroupBy} groupBy The temporal entity you want to group by ("week"/"month"). If unspecified is "day".
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_} 
 		 */
-		Groups_GetStatisticsList(id: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
+		Groups_GetStatisticsList(id: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, fromDay: string | null | undefined, toDay: string | null | undefined, groupBy: Aggregated_GetStatisticsListGroupBy | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(this.baseUri + 'groups/' + id + '/aggregated/list?timeFrame=' + timeFrame + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&groupBy=' + groupBy, {});
 		}
 
 		/**
 		 * Retrieve statistics about a subset of datapoints for a timeframe with datapoints data
 		 * Get groups/{id}/aggregated/summary
-		 * @param {number} id Filter by this group id
+		 * @param {string} id Filter by this group id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetStatisticsSingleTimeFrame} timeFrame Timeframe of the request. See list at $timeframeList
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of datapoint ("tl"/"tp")
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
@@ -2419,20 +2755,24 @@ export namespace MyNS {
 		 * @param {string} sortBy Field to sort by
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {number} offset Offset where to start from
+		 *     Min length: 0
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} textSearch Filter fields by this pattern
-		 * @return {ApiCoreDtoAggregatedAggregatedSummaryResult} 
 		 */
-		Groups_GetDatapointsSummary(id: number, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, type: Aggregated_GetDatapointsSummaryType | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
+		Groups_GetDatapointsSummary(id: string, timeFrame: Aggregated_GetStatisticsSingleTimeFrame, type: Aggregated_GetDatapointsSummaryType | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, tag: string | null | undefined, favourite: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, offset: number | null | undefined, limit: number | null | undefined, textSearch: string | null | undefined): Observable<ApiCoreDtoAggregatedAggregatedSummaryResult> {
 			return this.http.get<ApiCoreDtoAggregatedAggregatedSummaryResult>(this.baseUri + 'groups/' + id + '/aggregated/summary?timeFrame=' + timeFrame + '&type=' + type + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&status=' + status + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&favourite=' + favourite + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&offset=' + offset + '&limit=' + limit + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)), {});
 		}
 
 		/**
 		 * List of all the datapoints associated to the user in this group.
 		 * Get groups/{id}/datapoints
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of the datapoint ("tp"/"tl")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} tags A comma separated list of tags you want to filter with.
@@ -2442,27 +2782,27 @@ export namespace MyNS {
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Groups_GetDatapoints(id: number, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_GetDatapoints(id: string, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id + '/datapoints?offset=' + offset + '&limit=' + limit + '&type=' + type + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Create a datapoint in this group
 		 * Post groups/{id}/datapoints
-		 * @param {number} id The id of the group
+		 * @param {string} id The id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoDatapointsDatapoint} requestBody The body of the datapoint
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Groups_PutDatapoint(id: number, requestBody: ApiCoreDtoDatapointsDatapoint): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_PutDatapoint(id: string, requestBody: ApiCoreDtoDatapointsDatapoint): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id + '/datapoints', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Count the datapoints associated to the user in this group.
 		 * Get groups/{id}/datapoints/count
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of the datapoint ("tp"/"tl")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} tags A comma separated list of tags you want to filter with.
@@ -2470,46 +2810,46 @@ export namespace MyNS {
 		 * @param {boolean} onlyFavorites Filter fields by favourite status
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
-		Groups_GetDatapointsCount(id: number, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Groups_GetDatapointsCount(id: string, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'groups/' + id + '/datapoints/count?type=' + type + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Fast switch the "favourite" field of a group
 		 * Put groups/{id}/favourite
-		 * @param {number} id Id of the group
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Groups_PatchFavourite(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_PatchFavourite(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id + '/favourite', null, {});
 		}
 
 		/**
 		 * Retrieve the list of events related to this group.
 		 * Get groups/{id}/hits
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Conversions_GetHitsTimeframe} timeframe Timeframe of the request. See list at $timeframeList
 		 * @param {number} limit Limit results to this number
+		 *     Min length: 0    Max length: 0
 		 * @param {string} offset Offset where to start from (it's the lastKey field in the response object)
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Conversions_GetHitsFilter} filter Filter event type ("spiders"/"uniques"/"nonuniques"/"conversions")
-		 * @return {ApiCoreDtoClickStreamHitListPage} 
 		 */
-		Groups_GetHits(id: number, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
+		Groups_GetHits(id: string, timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
 			return this.http.get<ApiCoreDtoClickStreamHitListPage>(this.baseUri + 'groups/' + id + '/hits?timeframe=' + timeframe + '&limit=' + limit + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&filter=' + filter, {});
 		}
 
 		/**
 		 * Fast patch the "notes" field of a group
 		 * Put groups/{id}/notes
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsGenericTextPatch} requestBody Patch requests
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Groups_PatchNotes(id: number, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Groups_PatchNotes(id: string, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'groups/' + id + '/notes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2518,11 +2858,11 @@ export namespace MyNS {
 		 * Get hits
 		 * @param {Conversions_GetHitsTimeframe} timeframe Timeframe of the request. See list at $timeframeList
 		 * @param {number} limit Limit results to this number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} offset Offset where to start from (it's the lastKey field in the response object)
 		 * @param {string} fromDay If using a "custom" timeFrame you can specify the starting day (YYYYMMDD)
 		 * @param {string} toDay If using a "custom" timeFrame you can specify the ending day (YYYYMMDD)
 		 * @param {Conversions_GetHitsFilter} filter Filter event type ("spiders"/"uniques"/"nonuniques"/"conversions")
-		 * @return {ApiCoreDtoClickStreamHitListPage} 
 		 */
 		Hits_GetHits(timeframe: Conversions_GetHitsTimeframe, limit: number | null | undefined, offset: string | null | undefined, fromDay: string | null | undefined, toDay: string | null | undefined, filter: Conversions_GetHitsFilter | null | undefined): Observable<ApiCoreDtoClickStreamHitListPage> {
 			return this.http.get<ApiCoreDtoClickStreamHitListPage>(this.baseUri + 'hits?timeframe=' + timeframe + '&limit=' + limit + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&fromDay=' + (fromDay == null ? '' : encodeURIComponent(fromDay)) + '&toDay=' + (toDay == null ? '' : encodeURIComponent(toDay)) + '&filter=' + filter, {});
@@ -2531,7 +2871,6 @@ export namespace MyNS {
 		/**
 		 * Retrieve current account data
 		 * Get me
-		 * @return {ApiCoreDtoAccountingUser} 
 		 */
 		Me_GetMe(): Observable<ApiCoreDtoAccountingUser> {
 			return this.http.get<ApiCoreDtoAccountingUser>(this.baseUri + 'me', {});
@@ -2540,7 +2879,6 @@ export namespace MyNS {
 		/**
 		 * Retrieve current account plan
 		 * Get me/plan
-		 * @return {ApiCoreDtoAccountingPlan} 
 		 */
 		Me_GetMePlan(): Observable<ApiCoreDtoAccountingPlan> {
 			return this.http.get<ApiCoreDtoAccountingPlan>(this.baseUri + 'me/plan', {});
@@ -2550,8 +2888,9 @@ export namespace MyNS {
 		 * List of all the retargeting scripts associated to the user
 		 * Get retargeting
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
+		 *     Min length: 0    Max length: 0
 		 */
 		Retargeting_Get(offset: number | null | undefined, limit: number | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'retargeting?offset=' + offset + '&limit=' + limit, {});
@@ -2561,7 +2900,6 @@ export namespace MyNS {
 		 * Creates a retargeting script
 		 * Post retargeting
 		 * @param {ApiCoreDtoRetargetingRetargetingScript} requestBody The body of the retargeting script
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Retargeting_Put(requestBody: ApiCoreDtoRetargetingRetargetingScript): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'retargeting', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2570,7 +2908,6 @@ export namespace MyNS {
 		/**
 		 * Retrieve count of retargeting scripts
 		 * Get retargeting/count
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
 		Retargeting_Count(): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'retargeting/count', {});
@@ -2579,40 +2916,43 @@ export namespace MyNS {
 		/**
 		 * Deletes a retargeting script (and remove associations)
 		 * Delete retargeting/{id}
-		 * @param {number} id The id of the retargeting script
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} id The id of the retargeting script
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Retargeting_Delete(id: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Retargeting_Delete(id: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'retargeting/' + id, {});
 		}
 
 		/**
 		 * Get a retargeting script object
 		 * Get retargeting/{id}
-		 * @param {number} id The id of the retargeting script
-		 * @return {ApiCoreDtoRetargetingRetargetingScript} 
+		 * @param {string} id The id of the retargeting script
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		RetargetingGetById(id: number): Observable<ApiCoreDtoRetargetingRetargetingScript> {
+		RetargetingGetById(id: string): Observable<ApiCoreDtoRetargetingRetargetingScript> {
 			return this.http.get<ApiCoreDtoRetargetingRetargetingScript>(this.baseUri + 'retargeting/' + id, {});
 		}
 
 		/**
 		 * Updates a retargeting script
 		 * Post retargeting/{id}
-		 * @param {number} id The id of the retargeting script
+		 * @param {string} id The id of the retargeting script
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreDtoRetargetingRetargetingScript} requestBody The body of the retargeting script
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Retargeting_Post(id: number, requestBody: ApiCoreDtoRetargetingRetargetingScript): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Retargeting_Post(id: string, requestBody: ApiCoreDtoRetargetingRetargetingScript): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'retargeting/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * List of all the datapoints associated to the retargeting script.
 		 * Get retargeting/{id}/datapoints
-		 * @param {number} id Id of the retargeting script
+		 * @param {string} id Id of the retargeting script
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} tags A comma separated list of tags you want to filter with.
 		 * @param {string} textSearch Filter fields by this pattern
@@ -2621,25 +2961,24 @@ export namespace MyNS {
 		 * @param {Account_GetGuestsSortDirection} sortDirection Direction of sort "asc" or "desc"
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Retargeting_GetDatapoints(id: number, offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
+		Retargeting_GetDatapoints(id: string, offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, sortBy: string | null | undefined, sortDirection: Account_GetGuestsSortDirection | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'retargeting/' + id + '/datapoints?offset=' + offset + '&limit=' + limit + '&status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&sortDirection=' + sortDirection + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Count the datapoints associated to the retargeting script.
 		 * Get retargeting/{id}/datapoints/count
-		 * @param {number} id Id of the group
+		 * @param {string} id Id of the group
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} tags A comma separated list of tags you want to filter with.
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {boolean} onlyFavorites Filter fields by favourite status
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
-		Retargeting_GetDatapointsCount(id: number, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Retargeting_GetDatapointsCount(id: string, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, tags: string | null | undefined, textSearch: string | null | undefined, onlyFavorites: boolean | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'retargeting/' + id + '/datapoints/count?status=' + status + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&onlyFavorites=' + onlyFavorites + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
@@ -2647,12 +2986,13 @@ export namespace MyNS {
 		 * List of all the groups associated to the user filtered by this tag.
 		 * Get tags
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {string} name Name of the tag
 		 * @param {string} datapoints Comma separated list of datapoints id to filter by
 		 * @param {string} groups Comma separated list of groups id to filter by
 		 * @param {Tags_GetType} type Type of entity related to the tag
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Tags_Get(offset: number | null | undefined, limit: number | null | undefined, name: string | null | undefined, datapoints: string | null | undefined, groups: string | null | undefined, type: Tags_GetType | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags?offset=' + offset + '&limit=' + limit + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&datapoints=' + (datapoints == null ? '' : encodeURIComponent(datapoints)) + '&groups=' + (groups == null ? '' : encodeURIComponent(groups)) + '&type=' + type, {});
@@ -2662,7 +3002,6 @@ export namespace MyNS {
 		 * Create a tag
 		 * Post tags
 		 * @param {ApiCoreDtoTagsTag} requestBody The body of the tag
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
 		Tags_Put(requestBody: ApiCoreDtoTagsTag): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.post<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2675,7 +3014,6 @@ export namespace MyNS {
 		 * @param {string} datapoints Comma separated list of datapoints id to filter by
 		 * @param {string} groups Comma separated list of groups id to filter by
 		 * @param {Tags_GetType} type Type of entity related to the tag
-		 * @return {SystemObject} 
 		 */
 		Tags_Count(name: string | null | undefined, datapoints: string | null | undefined, groups: string | null | undefined, type: Tags_GetType | null | undefined): Observable<SystemObject> {
 			return this.http.get<SystemObject>(this.baseUri + 'tags/count?name=' + (name == null ? '' : encodeURIComponent(name)) + '&datapoints=' + (datapoints == null ? '' : encodeURIComponent(datapoints)) + '&groups=' + (groups == null ? '' : encodeURIComponent(groups)) + '&type=' + type, {});
@@ -2684,135 +3022,139 @@ export namespace MyNS {
 		/**
 		 * Delete a tag
 		 * Delete tags/{tagId}
-		 * @param {number} tagId Id of the tag
-		 * @return {SystemObject} 
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Tags_Delete(tagId: number): Observable<SystemObject> {
+		Tags_Delete(tagId: string): Observable<SystemObject> {
 			return this.http.delete<SystemObject>(this.baseUri + 'tags/' + tagId, {});
 		}
 
 		/**
 		 * Retrieve a tag
 		 * Get tags/{tagId}
-		 * @param {number} tagId Id of the tag
-		 * @return {ApiCoreDtoTagsTag} 
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		TagsGetByTagId(tagId: number): Observable<ApiCoreDtoTagsTag> {
+		TagsGetByTagId(tagId: string): Observable<ApiCoreDtoTagsTag> {
 			return this.http.get<ApiCoreDtoTagsTag>(this.baseUri + 'tags/' + tagId, {});
 		}
 
 		/**
 		 * Delete the association of this tag with all datapoints
 		 * Delete tags/{tagId}/datapoints
-		 * @param {number} tagId Id of the tag
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Tags_DeleteRelatedDatapoints(tagId: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_DeleteRelatedDatapoints(tagId: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/datapoints', {});
 		}
 
 		/**
 		 * List of all the datapoints associated to the user filtered by this tag
 		 * Get tags/{tagId}/datapoints
-		 * @param {number} tagId Id of the tag.
+		 * @param {string} tagId Id of the tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of the datapoint ("tp"/"tl")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Tags_GetDatapoints(tagId: number, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_GetDatapoints(tagId: string, offset: number | null | undefined, limit: number | null | undefined, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/datapoints?offset=' + offset + '&limit=' + limit + '&type=' + type + '&status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Count the datapoints associated to the user filtered by this tag
 		 * Get tags/{tagId}/datapoints/count
-		 * @param {number} tagId Id of the tag.
+		 * @param {string} tagId Id of the tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetDatapointsSummaryType} type Type of the datapoint ("tp"/"tl")
 		 * @param {Aggregated_GetDatapointsSummaryStatus} status Status of the datapoint
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude datapoints created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude datapoints created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
-		Tags_GetDatapointsCount(tagId: number, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Tags_GetDatapointsCount(tagId: string, type: Aggregated_GetDatapointsSummaryType | null | undefined, status: Aggregated_GetDatapointsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'tags/' + tagId + '/datapoints/count?type=' + type + '&status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Associate/Deassociate a tag with a datapoint
 		 * Put tags/{tagId}/datapoints/patch
-		 * @param {number} tagId Id of the tag
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsPatchBody} requestBody The body patch
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Tags_PatchDataPoint(tagId: number, requestBody: ApiCoreRequestsPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_PatchDataPoint(tagId: string, requestBody: ApiCoreRequestsPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/datapoints/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Delete the association of this tag with all groups
 		 * Delete tags/{tagId}/groups
-		 * @param {number} tagId Id of the tag
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Tags_DeleteRelatedGroups(tagId: number): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_DeleteRelatedGroups(tagId: string): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.delete<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/groups', {});
 		}
 
 		/**
 		 * List of all the groups associated to the user filtered by this tag.
 		 * Get tags/{tagId}/groups
-		 * @param {number} tagId Id of the tag.
+		 * @param {string} tagId Id of the tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Where to start when retrieving elements. Default is 0 if not specified.
+		 *     Min length: 0
 		 * @param {number} limit Maximum elements to retrieve. Default to 20 if not specified.
+		 *     Min length: 0    Max length: 0
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of the datapoint
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude groups created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude groups created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Tags_GetGroups(tagId: number, offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_GetGroups(tagId: string, offset: number | null | undefined, limit: number | null | undefined, status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.get<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/groups?offset=' + offset + '&limit=' + limit + '&status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Count the groups associated to the user filtered by this tag
 		 * Get tags/{tagId}/groups/count
-		 * @param {number} tagId Id of the tag.
+		 * @param {string} tagId Id of the tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Aggregated_GetConversionsSummaryStatus} status Status of the datapoint
 		 * @param {string} textSearch Filter fields by this pattern
 		 * @param {string} createdAfter Exclude groups created before this date (YYYYMMDD)
 		 * @param {string} createdBefore Exclude groups created after this date (YYYYMMDD)
-		 * @return {ApiCoreResponsesCountResponce} 
 		 */
-		Tags_GetGroupsCount(tagId: number, status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
+		Tags_GetGroupsCount(tagId: string, status: Aggregated_GetConversionsSummaryStatus | null | undefined, textSearch: string | null | undefined, createdAfter: string | null | undefined, createdBefore: string | null | undefined): Observable<ApiCoreResponsesCountResponce> {
 			return this.http.get<ApiCoreResponsesCountResponce>(this.baseUri + 'tags/' + tagId + '/groups/count?status=' + status + '&textSearch=' + (textSearch == null ? '' : encodeURIComponent(textSearch)) + '&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&createdBefore=' + (createdBefore == null ? '' : encodeURIComponent(createdBefore)), {});
 		}
 
 		/**
 		 * Associate/Deassociate a tag with a group
 		 * Put tags/{tagId}/groups/patch
-		 * @param {number} tagId Id of the tag
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsPatchBody} requestBody The body patch
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Tags_PatchGroup(tagId: number, requestBody: ApiCoreRequestsPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_PatchGroup(tagId: string, requestBody: ApiCoreRequestsPatchBody): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/groups/patch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Fast patch a tag name
 		 * Put tags/{tagId}/name
-		 * @param {number} tagId Id of the tag
+		 * @param {string} tagId Id of the tag
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiCoreRequestsGenericTextPatch} requestBody The body patch
-		 * @return {ApiCoreResponsesEntityUri_SystemInt64_} 
 		 */
-		Tags_PatchTagName(tagId: number, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
+		Tags_PatchTagName(tagId: string, requestBody: ApiCoreRequestsGenericTextPatch): Observable<ApiCoreResponsesEntityUri_SystemInt64_> {
 			return this.http.put<ApiCoreResponsesEntityUri_SystemInt64_>(this.baseUri + 'tags/' + tagId + '/name', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}

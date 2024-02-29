@@ -345,6 +345,7 @@ export namespace MyNS {
 		 * Retrieve a list of source controls.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} filter The filter to apply on the operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -359,6 +360,7 @@ export namespace MyNS {
 		 * Retrieve the source control identified by source control name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The name of source control.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -373,6 +375,7 @@ export namespace MyNS {
 		 * Create a source control.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The source control name.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -388,6 +391,7 @@ export namespace MyNS {
 		 * Delete the source control.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The name of source control.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -402,6 +406,7 @@ export namespace MyNS {
 		 * Update a source control.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The source control name.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.

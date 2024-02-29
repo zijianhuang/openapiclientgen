@@ -292,8 +292,14 @@ namespace MyNS
 		/// <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in the IoT Developer Guide.</p>
 		/// DeleteThingShadow things/{thingName}/shadow
 		/// </summary>
-		/// <param name="thingName">The name of the thing.</param>
-		/// <param name="name">The name of the shadow.</param>
+		/// <param name="thingName">The name of the thing.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The name of the shadow.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteThingShadowResponse> DeleteThingShadowAsync(string thingName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -327,8 +333,14 @@ namespace MyNS
 		/// <p>Gets the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the IoT Developer Guide.</p>
 		/// GetThingShadow things/{thingName}/shadow
 		/// </summary>
-		/// <param name="thingName">The name of the thing.</param>
-		/// <param name="name">The name of the shadow.</param>
+		/// <param name="thingName">The name of the thing.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The name of the shadow.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetThingShadowResponse> GetThingShadowAsync(string thingName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -362,8 +374,14 @@ namespace MyNS
 		/// <p>Updates the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the IoT Developer Guide.</p>
 		/// UpdateThingShadow things/{thingName}/shadow
 		/// </summary>
-		/// <param name="thingName">The name of the thing.</param>
-		/// <param name="name">The name of the shadow.</param>
+		/// <param name="thingName">The name of the thing.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The name of the shadow.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThingShadowResponse> UpdateThingShadowAsync(string thingName, string name, UpdateThingShadowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -438,9 +456,15 @@ namespace MyNS
 		/// <p>Lists the shadows for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListNamedShadowsForThing</a> action.</p>
 		/// ListNamedShadowsForThing api/things/shadow/ListNamedShadowsForThing/{thingName}
 		/// </summary>
-		/// <param name="thingName">The name of the thing.</param>
+		/// <param name="thingName">The name of the thing.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
-		/// <param name="pageSize">The result page size.</param>
+		/// <param name="pageSize">The result page size.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListNamedShadowsForThingResponse> ListNamedShadowsForThingAsync(string thingName, string nextToken, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -475,7 +499,10 @@ namespace MyNS
 		/// ListRetainedMessages retainedMessage
 		/// </summary>
 		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return at one time.</param>
+		/// <param name="maxResults">The maximum number of results to return at one time.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRetainedMessagesResponse> ListRetainedMessagesAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -510,7 +537,10 @@ namespace MyNS
 		/// Publish topics/{topic}
 		/// </summary>
 		/// <param name="topic">The name of the MQTT topic.</param>
-		/// <param name="qos">The Quality of Service (QoS) level. The default QoS level is 0.</param>
+		/// <param name="qos">The Quality of Service (QoS) level. The default QoS level is 0.
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
 		/// <param name="retain"><p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code> </p></param>
 		/// <param name="contentType">A UTF-8 encoded string that describes the content of the publishing message.</param>
 		/// <param name="responseTopic">A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</param>

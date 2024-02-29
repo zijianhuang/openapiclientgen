@@ -13,16 +13,28 @@ export namespace MyNS {
 		/** Optional. Input only. An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech. Effects are applied on top of each other in the order they are given. See [audio profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for current supported profile ids. */
 		effectsProfileId?: Array<string>;
 
-		/** Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch. */
+		/**
+		 * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch.
+		 * Type: double
+		 */
 		pitch?: number | null;
 
-		/** Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT. */
+		/**
+		 * Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 
-		/** Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error. */
+		/**
+		 * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error.
+		 * Type: double
+		 */
 		speakingRate?: number | null;
 
-		/** Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that. */
+		/**
+		 * Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that.
+		 * Type: double
+		 */
 		volumeGainDb?: number | null;
 	}
 
@@ -32,16 +44,28 @@ export namespace MyNS {
 		/** Required. The format of the audio byte stream. */
 		audioEncoding: FormControl<AudioConfigAudioEncoding | null | undefined>,
 
-		/** Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch. */
+		/**
+		 * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch.
+		 * Type: double
+		 */
 		pitch: FormControl<number | null | undefined>,
 
-		/** Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT. */
+		/**
+		 * Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 
-		/** Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error. */
+		/**
+		 * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error.
+		 * Type: double
+		 */
 		speakingRate: FormControl<number | null | undefined>,
 
-		/** Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that. */
+		/**
+		 * Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that.
+		 * Type: double
+		 */
 		volumeGainDb: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioConfigFormGroup() {
@@ -119,7 +143,10 @@ export namespace MyNS {
 	/** Metadata for response returned by the `SynthesizeLongAudio` method. */
 	export interface GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata {
 
-		/** The progress of the most recent processing update in percentage, ie. 70.0%. */
+		/**
+		 * The progress of the most recent processing update in percentage, ie. 70.0%.
+		 * Type: double
+		 */
 		progressPercentage?: number | null;
 
 		/** Time when the request was received. */
@@ -129,7 +156,10 @@ export namespace MyNS {
 	/** Metadata for response returned by the `SynthesizeLongAudio` method. */
 	export interface GoogleCloudTexttospeechV1SynthesizeLongAudioMetadataFormProperties {
 
-		/** The progress of the most recent processing update in percentage, ie. 70.0%. */
+		/**
+		 * The progress of the most recent processing update in percentage, ie. 70.0%.
+		 * Type: double
+		 */
 		progressPercentage: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -216,7 +246,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -229,7 +262,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -270,7 +306,10 @@ export namespace MyNS {
 		/** The name of this voice. Each distinct voice has a unique name. */
 		name?: string | null;
 
-		/** The natural sample rate (in hertz) for this voice. */
+		/**
+		 * The natural sample rate (in hertz) for this voice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		naturalSampleRateHertz?: number | null;
 
 		/** The gender of this voice. */
@@ -283,7 +322,10 @@ export namespace MyNS {
 		/** The name of this voice. Each distinct voice has a unique name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The natural sample rate (in hertz) for this voice. */
+		/**
+		 * The natural sample rate (in hertz) for this voice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		naturalSampleRateHertz: FormControl<number | null | undefined>,
 
 		/** The gender of this voice. */
@@ -332,7 +374,10 @@ export namespace MyNS {
 	/** Metadata for response returned by the `SynthesizeLongAudio` method. */
 	export interface SynthesizeLongAudioMetadata {
 
-		/** The progress of the most recent processing update in percentage, ie. 70.0%. */
+		/**
+		 * The progress of the most recent processing update in percentage, ie. 70.0%.
+		 * Type: double
+		 */
 		progressPercentage?: number | null;
 
 		/** Time when the request was received. */
@@ -342,7 +387,10 @@ export namespace MyNS {
 	/** Metadata for response returned by the `SynthesizeLongAudio` method. */
 	export interface SynthesizeLongAudioMetadataFormProperties {
 
-		/** The progress of the most recent processing update in percentage, ie. 70.0%. */
+		/**
+		 * The progress of the most recent processing update in percentage, ie. 70.0%.
+		 * Type: double
+		 */
 		progressPercentage: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -518,6 +566,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

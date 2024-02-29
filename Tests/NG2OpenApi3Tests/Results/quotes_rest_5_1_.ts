@@ -102,7 +102,10 @@ export namespace MyNS {
 		/** Image URL that can be used for background to display this quote. */
 		image?: string | null;
 
-		/** Length of the quote string. */
+		/**
+		 * Length of the quote string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 	}
 	export interface QuoteFormProperties extends NewQuoteFormProperties {
@@ -116,7 +119,10 @@ export namespace MyNS {
 		/** Image URL that can be used for background to display this quote. */
 		image: FormControl<string | null | undefined>,
 
-		/** Length of the quote string. */
+		/**
+		 * Length of the quote string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 	}
 	export function CreateQuoteFormGroup() {
@@ -286,6 +292,7 @@ export namespace MyNS {
 		 * Get the list of Qshows in They Said So platform.
 		 * Get qshow/list
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _public Should include public qshows or not in the list
 		 * @return {void} 200  response
 		 */
@@ -391,7 +398,9 @@ export namespace MyNS {
 		 * @param {string} language Language. A same author may have quotes in two or more different languages. So for example 'Mahatma Gandhi' may be returned for language "en"(English), and "மஹாத்மா காந்தி" may be returned when the language is "ta" (Tamil).
 		 * @param {string} detailed Should return detailed author information such as `birthday`, `death date`, `occupation`, `description` etc. Only available at certain subscription levels.
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Response is paged. This parameter controls how many is returned in the result. The maximum depends on the subscription level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 200  response
 		 */
 		QuoteAuthorsPopularGetByLanguageAndDetailedAndStartAndLimit(language: string | null | undefined, detailed: string | null | undefined, start: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -405,7 +414,9 @@ export namespace MyNS {
 		 * @param {string} language Language. A same author may have quotes in two or more different languages. So for example 'Mahatma Gandhi' may be returned for language "en"(English), and "மஹாத்மா காந்தி" may be returned when the language is "ta" (Tamil).
 		 * @param {string} detailed Should return detailed author information such as `birthday`, `death date`, `occupation`, `description` etc. Only available at certain subscription levels.
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Response is paged. This parameter controls how many is returned in the result. The maximum depends on the subscription level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 200  response
 		 */
 		QuoteAuthorsSearchGetByQueryAndLanguageAndDetailedAndStartAndLimit(query: string | null | undefined, language: string | null | undefined, detailed: string | null | undefined, start: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -426,7 +437,9 @@ export namespace MyNS {
 		 * Gets a list of popular `Quote` Categories.
 		 * Get quote/categories/popular
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Response is paged. This parameter controls how many is returned in the result. The maximum depends on the subscription level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 200  response
 		 */
 		QuoteCategoriesPopularGetByStartAndLimit(start: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -438,7 +451,9 @@ export namespace MyNS {
 		 * Get quote/categories/search
 		 * @param {string} query Text string to search for in the categories
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Response is paged. This parameter controls how many is returned in the result. The maximum depends on the subscription level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 200  response
 		 */
 		QuoteCategoriesSearchGetByQueryAndStartAndLimit(query: string | null | undefined, start: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -617,7 +632,9 @@ export namespace MyNS {
 		 * Get the list of quotes in your private collection.
 		 * Get quote/list
 		 * @param {number} start Response is paged. This parameter controls where response starts the listing at
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Response is paged. This parameter controls how many is returned in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 200  response
 		 */
 		QuoteListGetByStartAndLimit(start: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -641,7 +658,9 @@ export namespace MyNS {
 		 * @param {string} category Quote Category
 		 * @param {string} author Quote Author
 		 * @param {number} minlength Quote minimum Length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxlength Quote maximum Length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query keyword to search for in the quote
 		 * @param {string} _private Should search private collection? Default searches public collection.
 		 * @param {string} language Language of the Quote. The language must be supported in our system.

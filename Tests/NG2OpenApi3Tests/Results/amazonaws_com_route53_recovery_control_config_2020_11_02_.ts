@@ -1145,6 +1145,7 @@ export namespace MyNS {
 		 * Returns an array of all the clusters in an account.
 		 * Get cluster
 		 * @param {number} MaxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken The token that identifies which batch of results you want to see.
 		 * @return {ListClustersResponse} Success
 		 */
@@ -1290,6 +1291,7 @@ export namespace MyNS {
 		 * Returns an array of all Amazon Route 53 health checks associated with a specific routing control.
 		 * Get routingcontrol/{RoutingControlArn}/associatedRoute53HealthChecks
 		 * @param {number} MaxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken The token that identifies which batch of results you want to see.
 		 * @param {string} RoutingControlArn The Amazon Resource Name (ARN) of the routing control.
 		 * @return {ListAssociatedRoute53HealthChecksResponse} Success
@@ -1303,6 +1305,7 @@ export namespace MyNS {
 		 * Get controlpanels
 		 * @param {string} ClusterArn The Amazon Resource Name (ARN) of a cluster.
 		 * @param {number} MaxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken The token that identifies which batch of results you want to see.
 		 * @return {ListControlPanelsResponse} Success
 		 */
@@ -1315,6 +1318,7 @@ export namespace MyNS {
 		 * Get controlpanel/{ControlPanelArn}/routingcontrols
 		 * @param {string} ControlPanelArn The Amazon Resource Name (ARN) of the control panel.
 		 * @param {number} MaxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken The token that identifies which batch of results you want to see.
 		 * @return {ListRoutingControlsResponse} Success
 		 */
@@ -1327,6 +1331,7 @@ export namespace MyNS {
 		 * Get controlpanel/{ControlPanelArn}/safetyrules
 		 * @param {string} ControlPanelArn The Amazon Resource Name (ARN) of the control panel.
 		 * @param {number} MaxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken The token that identifies which batch of results you want to see.
 		 * @return {ListSafetyRulesResponse} Success
 		 */
@@ -1370,16 +1375,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The name of the cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClusterName: string;
 
@@ -1390,16 +1395,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClusterName: FormControl<string | null | undefined>,
 
@@ -1419,24 +1424,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the cluster for the control panel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClusterArn: string;
 
 		/**
 		 * The name of the control panel.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ControlPanelName: string;
 
@@ -1447,24 +1452,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the cluster for the control panel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClusterArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the control panel.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ControlPanelName: FormControl<string | null | undefined>,
 
@@ -1486,16 +1491,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the control panel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ControlPanelArn: string;
 
 		/**
 		 * The name of the control panel.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ControlPanelName: string;
 	}
@@ -1504,16 +1509,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the control panel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ControlPanelArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the control panel.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ControlPanelName: FormControl<string | null | undefined>,
 	}
@@ -1529,31 +1534,31 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the cluster that includes the routing control.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClusterArn: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the control panel that includes the routing control.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ControlPanelArn?: string | null;
 
 		/**
 		 * The name of the routing control.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RoutingControlName: string;
 	}
@@ -1561,31 +1566,31 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the cluster that includes the routing control.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClusterArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the control panel that includes the routing control.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ControlPanelArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the routing control.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RoutingControlName: FormControl<string | null | undefined>,
 	}
@@ -1604,16 +1609,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the routing control.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RoutingControlArn: string;
 
 		/**
 		 * The name of the routing control.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RoutingControlName: string;
 	}
@@ -1622,16 +1627,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the routing control.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RoutingControlArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the routing control.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RoutingControlName: FormControl<string | null | undefined>,
 	}
@@ -1650,8 +1655,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
@@ -1665,8 +1670,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 

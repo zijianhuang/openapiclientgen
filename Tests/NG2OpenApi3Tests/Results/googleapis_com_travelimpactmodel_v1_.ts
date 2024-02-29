@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** Required. IATA airport code for flight destination, e.g. "JFK". */
 		destination?: string | null;
 
-		/** Required. Flight number, e.g. 324. */
+		/**
+		 * Required. Flight number, e.g. 324.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flightNumber?: number | null;
 
 		/** Required. IATA carrier code, e.g. "AA". */
@@ -46,7 +49,10 @@ export namespace MyNS {
 		/** Required. IATA airport code for flight destination, e.g. "JFK". */
 		destination: FormControl<string | null | undefined>,
 
-		/** Required. Flight number, e.g. 324. */
+		/**
+		 * Required. Flight number, e.g. 324.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flightNumber: FormControl<number | null | undefined>,
 
 		/** Required. IATA carrier code, e.g. "AA". */
@@ -69,26 +75,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -144,32 +168,56 @@ export namespace MyNS {
 	/** Grouped emissions per seating class results. */
 	export interface EmissionsGramsPerPax {
 
-		/** Emissions for one passenger in business class in grams. This field is always computed and populated, regardless of whether the aircraft has business class seats or not. */
+		/**
+		 * Emissions for one passenger in business class in grams. This field is always computed and populated, regardless of whether the aircraft has business class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		business?: number | null;
 
-		/** Emissions for one passenger in economy class in grams. This field is always computed and populated, regardless of whether the aircraft has economy class seats or not. */
+		/**
+		 * Emissions for one passenger in economy class in grams. This field is always computed and populated, regardless of whether the aircraft has economy class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		economy?: number | null;
 
-		/** Emissions for one passenger in first class in grams. This field is always computed and populated, regardless of whether the aircraft has first class seats or not. */
+		/**
+		 * Emissions for one passenger in first class in grams. This field is always computed and populated, regardless of whether the aircraft has first class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		first?: number | null;
 
-		/** Emissions for one passenger in premium economy class in grams. This field is always computed and populated, regardless of whether the aircraft has premium economy class seats or not. */
+		/**
+		 * Emissions for one passenger in premium economy class in grams. This field is always computed and populated, regardless of whether the aircraft has premium economy class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		premiumEconomy?: number | null;
 	}
 
 	/** Grouped emissions per seating class results. */
 	export interface EmissionsGramsPerPaxFormProperties {
 
-		/** Emissions for one passenger in business class in grams. This field is always computed and populated, regardless of whether the aircraft has business class seats or not. */
+		/**
+		 * Emissions for one passenger in business class in grams. This field is always computed and populated, regardless of whether the aircraft has business class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		business: FormControl<number | null | undefined>,
 
-		/** Emissions for one passenger in economy class in grams. This field is always computed and populated, regardless of whether the aircraft has economy class seats or not. */
+		/**
+		 * Emissions for one passenger in economy class in grams. This field is always computed and populated, regardless of whether the aircraft has economy class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		economy: FormControl<number | null | undefined>,
 
-		/** Emissions for one passenger in first class in grams. This field is always computed and populated, regardless of whether the aircraft has first class seats or not. */
+		/**
+		 * Emissions for one passenger in first class in grams. This field is always computed and populated, regardless of whether the aircraft has first class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		first: FormControl<number | null | undefined>,
 
-		/** Emissions for one passenger in premium economy class in grams. This field is always computed and populated, regardless of whether the aircraft has premium economy class seats or not. */
+		/**
+		 * Emissions for one passenger in premium economy class in grams. This field is always computed and populated, regardless of whether the aircraft has premium economy class seats or not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		premiumEconomy: FormControl<number | null | undefined>,
 	}
 	export function CreateEmissionsGramsPerPaxFormGroup() {
@@ -189,13 +237,22 @@ export namespace MyNS {
 		/** Dated versions: Model datasets are recreated with refreshed input data but no change to the algorithms regularly. */
 		dated?: string | null;
 
-		/** Major versions: Major changes to methodology (e.g. adding new data sources to the model that lead to major output changes). Such changes will be infrequent and announced well in advance. Might involve API version changes, which will respect guidelines in https://cloud.google.com/endpoints/docs/openapi/versioning-an-api#backwards-incompatible */
+		/**
+		 * Major versions: Major changes to methodology (e.g. adding new data sources to the model that lead to major output changes). Such changes will be infrequent and announced well in advance. Might involve API version changes, which will respect guidelines in https://cloud.google.com/endpoints/docs/openapi/versioning-an-api#backwards-incompatible
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** Minor versions: Changes to the model that, while being consistent across schema versions, change the model parameters or implementation. */
+		/**
+		 * Minor versions: Changes to the model that, while being consistent across schema versions, change the model parameters or implementation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
-		/** Patch versions: Implementation changes meant to address bugs or inaccuracies in the model implementation. */
+		/**
+		 * Patch versions: Implementation changes meant to address bugs or inaccuracies in the model implementation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		patch?: number | null;
 	}
 
@@ -205,13 +262,22 @@ export namespace MyNS {
 		/** Dated versions: Model datasets are recreated with refreshed input data but no change to the algorithms regularly. */
 		dated: FormControl<string | null | undefined>,
 
-		/** Major versions: Major changes to methodology (e.g. adding new data sources to the model that lead to major output changes). Such changes will be infrequent and announced well in advance. Might involve API version changes, which will respect guidelines in https://cloud.google.com/endpoints/docs/openapi/versioning-an-api#backwards-incompatible */
+		/**
+		 * Major versions: Major changes to methodology (e.g. adding new data sources to the model that lead to major output changes). Such changes will be infrequent and announced well in advance. Might involve API version changes, which will respect guidelines in https://cloud.google.com/endpoints/docs/openapi/versioning-an-api#backwards-incompatible
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** Minor versions: Changes to the model that, while being consistent across schema versions, change the model parameters or implementation. */
+		/**
+		 * Minor versions: Changes to the model that, while being consistent across schema versions, change the model parameters or implementation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
-		/** Patch versions: Implementation changes meant to address bugs or inaccuracies in the model implementation. */
+		/**
+		 * Patch versions: Implementation changes meant to address bugs or inaccuracies in the model implementation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		patch: FormControl<number | null | undefined>,
 	}
 	export function CreateModelVersionFormGroup() {

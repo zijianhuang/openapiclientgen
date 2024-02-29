@@ -342,7 +342,10 @@ export namespace MyNS {
 		/** true if the image is not the event's image but a fallbak image */
 		fallback?: boolean | null;
 
-		/** Height of the image */
+		/**
+		 * Height of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Aspect ratio of the image */
@@ -351,7 +354,10 @@ export namespace MyNS {
 		/** Public URL of the image */
 		url?: string | null;
 
-		/** Width of the image */
+		/**
+		 * Width of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -364,7 +370,10 @@ export namespace MyNS {
 		/** true if the image is not the event's image but a fallbak image */
 		fallback: FormControl<boolean | null | undefined>,
 
-		/** Height of the image */
+		/**
+		 * Height of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Aspect ratio of the image */
@@ -373,7 +382,10 @@ export namespace MyNS {
 		/** Public URL of the image */
 		url: FormControl<string | null | undefined>,
 
-		/** Width of the image */
+		/**
+		 * Width of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -552,7 +564,11 @@ export namespace MyNS {
 		durationField?: DurationField;
 		leapDurationField?: DurationField;
 		lenient?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximumValue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumValue?: number | null;
 		name?: string | null;
 		rangeDurationField?: DurationField;
@@ -561,7 +577,11 @@ export namespace MyNS {
 	}
 	export interface DateTimeFieldFormProperties {
 		lenient: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximumValue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumValue: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		supported: FormControl<boolean | null | undefined>,
@@ -582,20 +602,24 @@ export namespace MyNS {
 		precise?: boolean | null;
 		supported?: boolean | null;
 		type?: DurationFieldType;
-		unitMillis?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unitMillis?: string | null;
 	}
 	export interface DurationFieldFormProperties {
 		name: FormControl<string | null | undefined>,
 		precise: FormControl<boolean | null | undefined>,
 		supported: FormControl<boolean | null | undefined>,
-		unitMillis: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unitMillis: FormControl<string | null | undefined>,
 	}
 	export function CreateDurationFieldFormGroup() {
 		return new FormGroup<DurationFieldFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 			precise: new FormControl<boolean | null | undefined>(undefined),
 			supported: new FormControl<boolean | null | undefined>(undefined),
-			unitMillis: new FormControl<number | null | undefined>(undefined),
+			unitMillis: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -653,14 +677,20 @@ export namespace MyNS {
 	/** DMA (Designated Market Area) */
 	export interface Dma {
 
-		/** DMS's id */
+		/**
+		 * DMS's id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 	}
 
 	/** DMA (Designated Market Area) */
 	export interface DmaFormProperties {
 
-		/** DMS's id */
+		/**
+		 * DMS's id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateDmaFormGroup() {
@@ -680,7 +710,10 @@ export namespace MyNS {
 		/** The event end date time */
 		dateTime?: Date | null;
 
-		/** The event end date in local date */
+		/**
+		 * The event end date in local date
+		 * Type: DateOnly
+		 */
 		localDate?: Date | null;
 		localTime?: LocalTime;
 
@@ -697,7 +730,10 @@ export namespace MyNS {
 		/** The event end date time */
 		dateTime: FormControl<Date | null | undefined>,
 
-		/** The event end date in local date */
+		/**
+		 * The event end date in local date
+		 * Type: DateOnly
+		 */
 		localDate: FormControl<Date | null | undefined>,
 
 		/** Boolean flag to indicate whether or not the event end time has no specific time */
@@ -717,18 +753,38 @@ export namespace MyNS {
 		chronology?: Chronology;
 		fieldTypes?: Array<DateTimeFieldType>;
 		fields?: Array<DateTimeField>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hourOfDay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfDay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfSecond?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minuteOfHour?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secondOfMinute?: number | null;
 		values?: Array<number>;
 	}
 	export interface LocalTimeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hourOfDay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfDay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfSecond: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minuteOfHour: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secondOfMinute: FormControl<number | null | undefined>,
 	}
 	export function CreateLocalTimeFormGroup() {
@@ -774,6 +830,8 @@ export namespace MyNS {
 
 		/** Description's of the entity */
 		description?: string | null;
+
+		/** Type: double */
 		distance?: number | null;
 
 		/** List of external links */
@@ -849,6 +907,8 @@ export namespace MyNS {
 
 		/** Description's of the entity */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 
 		/** List of external links */
@@ -957,7 +1017,10 @@ export namespace MyNS {
 		/** The event start datetime */
 		dateTime?: Date | null;
 
-		/** The event start date in local date */
+		/**
+		 * The event start date in local date
+		 * Type: DateOnly
+		 */
 		localDate?: Date | null;
 		localTime?: LocalTime;
 
@@ -980,7 +1043,10 @@ export namespace MyNS {
 		/** The event start datetime */
 		dateTime: FormControl<Date | null | undefined>,
 
-		/** The event start date in local date */
+		/**
+		 * The event start date in local date
+		 * Type: DateOnly
+		 */
 		localDate: FormControl<Date | null | undefined>,
 
 		/** Boolean flag to indicate whether or not the event start time has no specific time */
@@ -1028,20 +1094,32 @@ export namespace MyNS {
 	/** Location */
 	export interface Location {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** Location */
 	export interface LocationFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationFormGroup() {
@@ -1161,10 +1239,16 @@ export namespace MyNS {
 		/** Currency */
 		currency?: string | null;
 
-		/** Maximum price */
+		/**
+		 * Maximum price
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Minimum price */
+		/**
+		 * Minimum price
+		 * Type: double
+		 */
 		min?: number | null;
 
 		/** Type of price */
@@ -1177,10 +1261,16 @@ export namespace MyNS {
 		/** Currency */
 		currency: FormControl<string | null | undefined>,
 
-		/** Maximum price */
+		/**
+		 * Maximum price
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Minimum price */
+		/**
+		 * Minimum price
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 
 		/** Type of price */
@@ -1870,6 +1960,8 @@ export namespace MyNS {
 
 		/** Description's of the entity */
 		description?: string | null;
+
+		/** Type: double */
 		distance?: number | null;
 
 		/** The list of associated DMAs (Designated Market Areas) of the venue */
@@ -1948,6 +2040,8 @@ export namespace MyNS {
 
 		/** Description's of the entity */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 
 		/** List of external links */
@@ -2117,7 +2211,9 @@ export namespace MyNS {
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource} source Filter entities by its source name
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest} includeTest True if you want to have entities flag as test in the response. Only, if you only wanted test entities
 		 * @param {string} page Page number
+		 *     Minimum: 0
 		 * @param {string} size Page size of the response
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} locale The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') 
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeLicensedContent Yes if you want to display licensed content
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeSpellcheck yes, to include spell check suggestions in the response.
@@ -2150,7 +2246,9 @@ export namespace MyNS {
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource} source Filter entities by its source name
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest} includeTest True if you want to have entities flag as test in the response. Only, if you only wanted test entities
 		 * @param {string} page Page number
+		 *     Minimum: 0
 		 * @param {string} size Page size of the response
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} locale The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') 
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeLicensedContent Yes if you want to display licensed content
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeSpellcheck yes, to include spell check suggestions in the response.
@@ -2248,7 +2346,9 @@ export namespace MyNS {
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource} source Filter entities by its source name
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest} includeTest True if you want to have entities flag as test in the response. Only, if you only wanted test entities
 		 * @param {string} page Page number
+		 *     Minimum: 0
 		 * @param {string} size Page size of the response
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} locale The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') 
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeLicensedContent Yes if you want to display licensed content
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeSpellcheck yes, to include spell check suggestions in the response.
@@ -2294,6 +2394,7 @@ export namespace MyNS {
 		 * @param {string} radius Radius of the area in which we want to search for events.
 		 * @param {DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckUnit} unit Unit of the radius
 		 * @param {string} size Size of every entity returned in the response
+		 *     Minimum: 1    Maximum: 5
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeFuzzy yes, to include fuzzy matches in the search. This has performance impact.
 		 * @param {string} clientVisibility Filter events to clientName
 		 * @param {string} countryCode Filter suggestions by country code
@@ -2326,7 +2427,9 @@ export namespace MyNS {
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource} source Filter entities by its source name
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest} includeTest True if you want to have entities flag as test in the response. Only, if you only wanted test entities
 		 * @param {string} page Page number
+		 *     Minimum: 0
 		 * @param {string} size Page size of the response
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} locale The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') 
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeLicensedContent Yes if you want to display licensed content
 		 * @param {DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent} includeSpellcheck yes, to include spell check suggestions in the response.

@@ -2078,7 +2078,9 @@ namespace MyNS
 		/// Lists all of the available Storage Sync Rest API operations.
 		/// Operations_List providers/Microsoft.StorageSync/operations
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Array of operations resources in the Resource Provider</returns>
 		public async Task<OperationEntityListResult> Operations_ListAsync(string api_version)
 		{
@@ -2108,8 +2110,12 @@ namespace MyNS
 		/// StorageSyncServices_CheckNameAvailability subscriptions/{subscriptionId}/providers/Microsoft.StorageSync/locations/{locationName}/checkNameAvailability
 		/// </summary>
 		/// <param name="locationName">The desired region for the name check.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Parameters to check availability of the given namespace name</param>
 		/// <returns>check availability returned successfully.</returns>
 		public async Task<CheckNameAvailabilityResult> StorageSyncServices_CheckNameAvailabilityAsync(string locationName, string api_version, string subscriptionId, CheckNameAvailabilityParameters requestBody)
@@ -2146,8 +2152,12 @@ namespace MyNS
 		/// Get a StorageSyncService list by subscription.
 		/// StorageSyncServices_ListBySubscription subscriptions/{subscriptionId}/providers/Microsoft.StorageSync/storageSyncServices
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Array of registered Storage Sync Service resources in the subscription.</returns>
 		public async Task<StorageSyncServiceArray> StorageSyncServices_ListBySubscriptionAsync(string subscriptionId, string api_version)
 		{
@@ -2176,9 +2186,16 @@ namespace MyNS
 		/// Get Operation status
 		/// OperationStatus_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/locations/{locationName}/workflows/{workflowId}/operations/{operationId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="locationName">The desired region to obtain information from.</param>
 		/// <param name="workflowId">workflow Id</param>
 		/// <param name="operationId">operation Id</param>
@@ -2210,9 +2227,16 @@ namespace MyNS
 		/// Get a StorageSyncService list by Resource group name.
 		/// StorageSyncServices_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Array of registered Storage Sync Service resources in the Resource Group</returns>
 		public async Task<StorageSyncServiceArray> StorageSyncServices_ListByResourceGroupAsync(string subscriptionId, string resourceGroupName, string api_version)
 		{
@@ -2241,10 +2265,17 @@ namespace MyNS
 		/// Get a given StorageSyncService.
 		/// StorageSyncServices_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Storage Sync Service object</returns>
 		public async Task<StorageSyncService> StorageSyncServices_GetAsync(string subscriptionId, string resourceGroupName, string storageSyncServiceName, string api_version)
 		{
@@ -2273,9 +2304,16 @@ namespace MyNS
 		/// Create a new StorageSyncService.
 		/// StorageSyncServices_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="requestBody">Storage Sync Service resource name.</param>
 		/// <returns>Storage Sync Service object created/updated</returns>
@@ -2313,9 +2351,16 @@ namespace MyNS
 		/// Delete a given StorageSyncService.
 		/// StorageSyncServices_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <returns>Storage Sync Service object was deleted.</returns>
 		public async Task StorageSyncServices_DeleteAsync(string subscriptionId, string resourceGroupName, string api_version, string storageSyncServiceName)
@@ -2339,9 +2384,16 @@ namespace MyNS
 		/// Patch a given StorageSyncService.
 		/// StorageSyncServices_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="requestBody">Storage Sync Service resource.</param>
 		/// <returns>Storage Sync Service object created/updated</returns>
@@ -2379,9 +2431,16 @@ namespace MyNS
 		/// Get a given registered server list.
 		/// RegisteredServers_ListByStorageSyncService subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <returns>Array of Registered Server resources in Storage Sync Service</returns>
 		public async Task<RegisteredServerArray> RegisteredServers_ListByStorageSyncServiceAsync(string subscriptionId, string resourceGroupName, string api_version, string storageSyncServiceName)
@@ -2411,9 +2470,16 @@ namespace MyNS
 		/// Get a given registered server.
 		/// RegisteredServers_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="serverId">GUID identifying the on-premises server.</param>
 		/// <returns>Registered Server resources in Sync Group</returns>
@@ -2444,9 +2510,16 @@ namespace MyNS
 		/// Add a new registered server.
 		/// RegisteredServers_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="serverId">GUID identifying the on-premises server.</param>
 		/// <param name="requestBody">Body of Registered Server object.</param>
@@ -2485,9 +2558,16 @@ namespace MyNS
 		/// Delete the given registered server.
 		/// RegisteredServers_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="serverId">GUID identifying the on-premises server.</param>
 		/// <returns>Ok</returns>
@@ -2512,9 +2592,16 @@ namespace MyNS
 		/// Triggers Server certificate rollover.
 		/// RegisteredServers_triggerRollover subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}/triggerRollover
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="serverId">Server Id</param>
 		/// <param name="requestBody">Body of Trigger Rollover request.</param>
@@ -2547,9 +2634,16 @@ namespace MyNS
 		/// Get a SyncGroup List.
 		/// SyncGroups_ListByStorageSyncService subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <returns>Array of Sync Group resources in Storage Sync Service</returns>
 		public async Task<SyncGroupArray> SyncGroups_ListByStorageSyncServiceAsync(string subscriptionId, string resourceGroupName, string api_version, string storageSyncServiceName)
@@ -2579,9 +2673,16 @@ namespace MyNS
 		/// Get a given SyncGroup.
 		/// SyncGroups_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <returns>Sync Group object</returns>
@@ -2612,9 +2713,16 @@ namespace MyNS
 		/// Create a new SyncGroup.
 		/// SyncGroups_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="requestBody">Sync Group Body</param>
@@ -2653,9 +2761,16 @@ namespace MyNS
 		/// Delete a given SyncGroup.
 		/// SyncGroups_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <returns>Sync Group object was deleted</returns>
@@ -2680,9 +2795,16 @@ namespace MyNS
 		/// Get a CloudEndpoint List.
 		/// CloudEndpoints_ListBySyncGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <returns>Array of Cloud Endpoint resources in Sync Group</returns>
@@ -2713,9 +2835,16 @@ namespace MyNS
 		/// Get a given CloudEndpoint.
 		/// CloudEndpoints_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2747,9 +2876,16 @@ namespace MyNS
 		/// Create a new CloudEndpoint.
 		/// CloudEndpoints_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2789,9 +2925,16 @@ namespace MyNS
 		/// Delete a given CloudEndpoint.
 		/// CloudEndpoints_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2817,9 +2960,16 @@ namespace MyNS
 		/// Post Backup a given CloudEndpoint.
 		/// CloudEndpoints_PostBackup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/postbackup
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2859,9 +3009,16 @@ namespace MyNS
 		/// Post Restore a given CloudEndpoint.
 		/// CloudEndpoints_PostRestore subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/postrestore
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2895,9 +3052,16 @@ namespace MyNS
 		/// Pre Backup a given CloudEndpoint.
 		/// CloudEndpoints_PreBackup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/prebackup
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2931,9 +3095,16 @@ namespace MyNS
 		/// Pre Restore a given CloudEndpoint.
 		/// CloudEndpoints_PreRestore subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/prerestore
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2967,9 +3138,16 @@ namespace MyNS
 		/// Restore Heartbeat a given CloudEndpoint.
 		/// CloudEndpoints_restoreheartbeat subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/restoreheartbeat
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -2995,9 +3173,16 @@ namespace MyNS
 		/// Triggers detection of changes performed on Azure File share connected to the specified Azure File Sync Cloud Endpoint.
 		/// CloudEndpoints_TriggerChangeDetection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/triggerChangeDetection
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="cloudEndpointName">Name of Cloud Endpoint object.</param>
@@ -3031,9 +3216,16 @@ namespace MyNS
 		/// Get a ServerEndpoint list.
 		/// ServerEndpoints_ListBySyncGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <returns>Array of Server Endpoint resources in Sync Group</returns>
@@ -3064,9 +3256,16 @@ namespace MyNS
 		/// Get a ServerEndpoint.
 		/// ServerEndpoints_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="serverEndpointName">Name of Server Endpoint object.</param>
@@ -3098,9 +3297,16 @@ namespace MyNS
 		/// Create a new ServerEndpoint.
 		/// ServerEndpoints_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="serverEndpointName">Name of Server Endpoint object.</param>
@@ -3140,9 +3346,16 @@ namespace MyNS
 		/// Delete a given ServerEndpoint.
 		/// ServerEndpoints_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="serverEndpointName">Name of Server Endpoint object.</param>
@@ -3168,9 +3381,16 @@ namespace MyNS
 		/// Patch a given ServerEndpoint.
 		/// ServerEndpoints_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="serverEndpointName">Name of Server Endpoint object.</param>
@@ -3210,9 +3430,16 @@ namespace MyNS
 		/// Recall a server endpoint.
 		/// ServerEndpoints_recallAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}/recallAction
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="syncGroupName">Name of Sync Group resource.</param>
 		/// <param name="serverEndpointName">Name of Server Endpoint object.</param>
@@ -3246,9 +3473,16 @@ namespace MyNS
 		/// Get a Workflow List
 		/// Workflows_ListByStorageSyncService subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <returns>Array of Workflow resources in Storage Sync Service</returns>
 		public async Task<WorkflowArray> Workflows_ListByStorageSyncServiceAsync(string subscriptionId, string resourceGroupName, string api_version, string storageSyncServiceName)
@@ -3278,9 +3512,16 @@ namespace MyNS
 		/// Get Workflows resource
 		/// Workflows_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows/{workflowId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="workflowId">workflow Id</param>
 		/// <returns>Workflow object</returns>
@@ -3311,9 +3552,16 @@ namespace MyNS
 		/// Abort the given workflow.
 		/// Workflows_Abort subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows/{workflowId}/abort
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="storageSyncServiceName">Name of Storage Sync Service resource.</param>
 		/// <param name="workflowId">workflow Id</param>
 		/// <returns>success</returns>

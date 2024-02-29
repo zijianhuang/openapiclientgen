@@ -4,21 +4,29 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ChapterSchema {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapter_number?: number | null;
 		chapter_summary?: string | null;
 		name?: string | null;
 		name_meaning?: string | null;
 		name_translation?: string | null;
 		name_transliterated?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		verses_count?: number | null;
 	}
 	export interface ChapterSchemaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapter_number: FormControl<number | null | undefined>,
 		chapter_summary: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		name_meaning: FormControl<string | null | undefined>,
 		name_translation: FormControl<string | null | undefined>,
 		name_transliterated: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		verses_count: FormControl<number | null | undefined>,
 	}
 	export function CreateChapterSchemaFormGroup() {
@@ -82,6 +90,7 @@ export namespace MyNS {
 		 * Get api/v1/chapters/{chapter_number}
 		 * @param {string} access_token Your app's access token.
 		 * @param {ChapterGetByAccess_tokenAndChapter_numberAndLanguageChapter_number} chapter_number Which Chapter Number to filter?
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ChapterGetByAccess_tokenAndLanguageLanguage} language Language to query. Leave blank for english.
 		 * @return {ChapterSchema} Success: Everything worked as expected.
 		 */
@@ -95,6 +104,7 @@ export namespace MyNS {
 		 * Get api/v1/chapters/{chapter_number}/verses
 		 * @param {string} access_token Your app's access token.
 		 * @param {VerseGetByAccess_tokenAndChapter_numberAndLanguageChapter_number} chapter_number Which Chapter Number to filter?
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ChapterGetByAccess_tokenAndLanguageLanguage} language Language to query. Leave blank for english.
 		 * @return {VerseSchema} Success: Everything worked as expected.
 		 */
@@ -108,6 +118,7 @@ export namespace MyNS {
 		 * Get api/v1/chapters/{chapter_number}/verses/{verse_number}
 		 * @param {string} access_token Your app's access token.
 		 * @param {VerseGetByAccess_tokenAndChapter_numberAndVerse_numberAndLanguageChapter_number} chapter_number Which Chapter Number to filter?
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ChapterGetByAccess_tokenAndChapter_numberAndLanguageChapter_number} verse_number Which Verse Number to filter?
 		 * @param {ChapterGetByAccess_tokenAndLanguageLanguage} language Language to query. Leave blank for english.
 		 * @return {VerseSchema} Success: Everything worked as expected.

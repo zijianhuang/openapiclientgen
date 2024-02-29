@@ -445,8 +445,13 @@ namespace MyNS
 		/// <param name="LogLevel">Only show alerts for this log-level.  Can be: `error`, `warning`, `notice`, or `debug`.</param>
 		/// <param name="StartDate">Only include alerts that occurred on or after this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.</param>
 		/// <param name="EndDate">Only include alerts that occurred on or before this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListAlertReturn> ListAlertAsync(string LogLevel, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -480,7 +485,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchAlert v1/Alerts/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Alert resource to fetch.</param>
+		/// <param name="Sid">The SID of the Alert resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Monitorv1alert_instance> FetchAlertAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -514,14 +522,25 @@ namespace MyNS
 		/// Returns a list of events in the account, sorted by event-date.
 		/// ListEvent v1/Events
 		/// </summary>
-		/// <param name="ActorSid">Only include events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials.</param>
+		/// <param name="ActorSid">Only include events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EventType">Only include events of this [Event Type](https://www.twilio.com/docs/usage/monitor-events#event-types).</param>
-		/// <param name="ResourceSid">Only include events that refer to this resource. Useful for discovering the history of a specific resource.</param>
+		/// <param name="ResourceSid">Only include events that refer to this resource. Useful for discovering the history of a specific resource.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="SourceIpAddress">Only include events that originated from this IP address. Useful for tracking suspicious activity originating from the API or the Twilio Console.</param>
 		/// <param name="StartDate">Only include events that occurred on or after this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only include events that occurred on or before this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListEventReturn> ListEventAsync(string ActorSid, string EventType, string ResourceSid, string SourceIpAddress, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -555,7 +574,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchEvent v1/Events/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Event resource to fetch.</param>
+		/// <param name="Sid">The SID of the Event resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Monitorv1event> FetchEventAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

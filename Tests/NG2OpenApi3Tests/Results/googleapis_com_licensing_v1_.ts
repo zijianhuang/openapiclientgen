@@ -213,6 +213,7 @@ export namespace MyNS {
 		 * @param {string} skuId A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
 		 * @param {string} customerId The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.
 		 * @param {number} maxResults The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken Token to fetch the next page of data. The `maxResults` query string is related to the `pageToken` since `maxResults` determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
 		 * @return {LicenseAssignmentList} Successful response
 		 */
@@ -226,6 +227,7 @@ export namespace MyNS {
 		 * @param {string} productId A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
 		 * @param {string} customerId The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.
 		 * @param {number} maxResults The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken Token to fetch the next page of data. The `maxResults` query string is related to the `pageToken` since `maxResults` determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
 		 * @return {LicenseAssignmentList} Successful response
 		 */

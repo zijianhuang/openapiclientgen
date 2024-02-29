@@ -3532,6 +3532,9 @@ namespace MyNS
 		/// <summary>
 		/// ApiV1Environments_environmentIdPorts_portDelete api/v1/Environments/{environmentId}/ports/{port}
 		/// </summary>
+		/// <param name="port">Minimum: 1
+		/// Maximum: 65535
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiV1Environments_environmentIdPorts_portDeleteAsync(string environmentId, int port, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3558,6 +3561,9 @@ namespace MyNS
 		/// <summary>
 		/// ApiV1Environments_environmentIdPorts_portPut api/v1/Environments/{environmentId}/ports/{port}
 		/// </summary>
+		/// <param name="port">Minimum: 1
+		/// Maximum: 65535
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiV1Environments_environmentIdPorts_portPutAsync(string environmentId, int port, AddForwardedPortSettings requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

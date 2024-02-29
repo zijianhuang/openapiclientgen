@@ -3177,6 +3177,7 @@ export namespace MyNS {
 		 * Gets a list of Workspaces associated with the given subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.BatchAI/workspaces
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {WorkspaceListResult} The operation was successful. The response contains a formatted list of workspaces and their properties.
@@ -3190,6 +3191,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {WorkspaceListResult} The operation was successful. The response contains a list of workspaces within the resource group.
@@ -3203,6 +3205,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {Workspace} The operation was successful. The response contains information about the Workspace.
@@ -3216,6 +3219,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {WorkspaceCreateParameters} requestBody Workspace creation parameters.
@@ -3230,6 +3234,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.
@@ -3243,6 +3248,7 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {WorkspaceUpdateParameters} requestBody Additional parameters for workspace update.
@@ -3257,7 +3263,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {ClusterListResult} The operation was successful. The response contains a list of Clusters and their properties.
@@ -3271,7 +3279,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters/{clusterName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clusterName The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {Cluster} The operation was successful. The response contains information about the Cluster.
@@ -3285,7 +3295,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters/{clusterName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clusterName The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {ClusterCreateParameters} requestBody The parameters to provide for the Cluster creation.
@@ -3300,7 +3312,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters/{clusterName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clusterName The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.
@@ -3314,7 +3328,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters/{clusterName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clusterName The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {ClusterUpdateParameters} requestBody Additional parameters for cluster update.
@@ -3329,7 +3345,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/clusters/{clusterName}/listRemoteLoginInformation
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clusterName The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {RemoteLoginInformationListResult} The operation was successful. The response contains the list of IP addresses.
@@ -3343,7 +3361,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {ExperimentListResult} The operation was successful. The response contains a list of experiments within the workspace.
@@ -3357,7 +3377,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {Experiment} The operation was successful. The response contains information about the experiment.
@@ -3371,7 +3393,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {Experiment} The operation was successful. The response contains the experiment entity.
@@ -3385,7 +3409,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.
@@ -3399,8 +3425,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {JobListResult} The operation was successful. The response contains a list of ExperimentJob entities associated with the experiment.
@@ -3414,8 +3443,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {Job} The operation was successful. The response contains the Job entity.
@@ -3429,8 +3461,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {JobCreateParameters} requestBody The parameters to provide for job creation.
@@ -3445,8 +3480,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.
@@ -3460,12 +3498,17 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}/listOutputFiles
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} outputdirectoryid Id of the job output directory. This is the OutputDirectory-->id parameter that is given by the user during Create Job.
 		 * @param {string} directory The path to the directory.
 		 * @param {number} linkexpiryinminutes The number of minutes after which the download link will expire.
+		 *     Minimum: 5    Maximum: 600
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {FileListResult} The operation was successful. The response contains the list of files.
@@ -3479,8 +3522,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}/listRemoteLoginInformation
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {RemoteLoginInformationListResult} The operation was successful. The response contains compute node remote login information.
@@ -3494,8 +3540,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/experiments/{experimentName}/jobs/{jobName}/terminate
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} experimentName The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobName The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.
@@ -3509,7 +3558,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/fileServers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {FileServerListResult} The operation was successful. The response contains a list of File Servers and their properties.
@@ -3523,7 +3574,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/fileServers/{fileServerName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} fileServerName The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {FileServer} The operation was successful. The response contains information about the FileServer.
@@ -3537,7 +3590,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/fileServers/{fileServerName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} fileServerName The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @param {FileServerCreateParameters} requestBody The parameters to provide for File Server creation.
@@ -3552,7 +3607,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BatchAI/workspaces/{workspaceName}/fileServers/{fileServerName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
 		 * @param {string} workspaceName The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} fileServerName The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Specifies the version of API used for this request.
 		 * @param {string} subscriptionId The subscriptionID for the Azure user.
 		 * @return {void} The operation was successful.

@@ -2519,6 +2519,7 @@ export namespace MyNS {
 		 * Get #Action=AddTags
 		 * @param {Array<string>} ResourceArns The Amazon Resource Name (ARN) of the resource.
 		 * @param {Array<Tag>} Tags The tags.
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_AddTags(ResourceArns: Array<string>, Tags: Array<Tag>, Action: GET_AddTagsAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2531,11 +2532,13 @@ export namespace MyNS {
 		 * @param {string} LoadBalancerArn The Amazon Resource Name (ARN) of the load balancer.
 		 * @param {ProtocolEnum} Protocol The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.
 		 * @param {number} Port The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
+		 *     Minimum: 1    Maximum: 65535
 		 * @param {string} SslPolicy <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 		 * @param {Array<Certificate>} Certificates [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
 		 * @param {Array<Action>} DefaultActions The actions for the default rule.
 		 * @param {Array<string>} AlpnPolicy <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p> <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li> <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 		 * @param {Array<Tag>} Tags The tags to assign to the listener.
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_CreateListener(LoadBalancerArn: string, Protocol: ProtocolEnum | null | undefined, Port: number | null | undefined, SslPolicy: string | null | undefined, Certificates: Array<Certificate> | null | undefined, DefaultActions: Array<Action>, AlpnPolicy: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateListenerAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2551,9 +2554,11 @@ export namespace MyNS {
 		 * @param {Array<string>} SecurityGroups [Application Load Balancers] The IDs of the security groups for the load balancer.
 		 * @param {LoadBalancerSchemeEnum} Scheme <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p> <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p> <p>The default is an Internet-facing load balancer.</p> <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
 		 * @param {Array<Tag>} Tags The tags to assign to the load balancer.
+		 *     Minimum items: 1
 		 * @param {LoadBalancerTypeEnum} Type The type of load balancer. The default is <code>application</code>.
 		 * @param {IpAddressType} IpAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). 
 		 * @param {string} CustomerOwnedIpv4Pool [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		GET_CreateLoadBalancer(Name: string, Subnets: Array<string> | null | undefined, SubnetMappings: Array<SubnetMapping> | null | undefined, SecurityGroups: Array<string> | null | undefined, Scheme: LoadBalancerSchemeEnum | null | undefined, Tags: Array<Tag> | null | undefined, Type: LoadBalancerTypeEnum | null | undefined, IpAddressType: IpAddressType | null | undefined, CustomerOwnedIpv4Pool: string | null | undefined, Action: GET_CreateLoadBalancerAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2566,8 +2571,10 @@ export namespace MyNS {
 		 * @param {string} ListenerArn The Amazon Resource Name (ARN) of the listener.
 		 * @param {Array<RuleCondition>} Conditions The conditions.
 		 * @param {number} Priority The rule priority. A listener can't have multiple rules with the same priority.
+		 *     Minimum: 1    Maximum: 50000
 		 * @param {Array<Action>} Actions The actions.
 		 * @param {Array<Tag>} Tags The tags to assign to the rule.
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_CreateRule(ListenerArn: string, Conditions: Array<RuleCondition>, Priority: number, Actions: Array<Action>, Tags: Array<Tag> | null | undefined, Action: GET_CreateRuleAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2581,18 +2588,25 @@ export namespace MyNS {
 		 * @param {ProtocolEnum} Protocol The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.
 		 * @param {string} ProtocolVersion [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
 		 * @param {number} Port The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.
+		 *     Minimum: 1    Maximum: 65535
 		 * @param {string} VpcId The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.
 		 * @param {ProtocolEnum} HealthCheckProtocol The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.
 		 * @param {string} HealthCheckPort The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.
 		 * @param {boolean} HealthCheckEnabled Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.
 		 * @param {string} HealthCheckPath <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} HealthCheckIntervalSeconds The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+		 *     Minimum: 5    Maximum: 300
 		 * @param {number} HealthCheckTimeoutSeconds The amount of time, in seconds, during which no response from a target means a failed health check. The range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
+		 *     Minimum: 2    Maximum: 120
 		 * @param {number} HealthyThresholdCount The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>, the default is 5.
+		 *     Minimum: 2    Maximum: 10
 		 * @param {number} UnhealthyThresholdCount The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.
+		 *     Minimum: 2    Maximum: 10
 		 * @param {GET_CreateTargetGroupMatcher} Matcher [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.
 		 * @param {TargetTypeEnum} TargetType <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> <ul> <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li> </ul>
 		 * @param {Array<Tag>} Tags The tags to assign to the target group.
+		 *     Minimum items: 1
 		 * @param {TargetGroupIpAddressTypeEnum} IpAddressType The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.
 		 * @return {void} Success
 		 */
@@ -2656,6 +2670,7 @@ export namespace MyNS {
 		 * Get #Action=DescribeAccountLimits
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeAccountLimits(Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeAccountLimitsAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2668,6 +2683,7 @@ export namespace MyNS {
 		 * @param {string} ListenerArn The Amazon Resource Names (ARN) of the listener.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeListenerCertificates(ListenerArn: string, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeListenerCertificatesAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2681,6 +2697,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ListenerArns The Amazon Resource Names (ARN) of the listeners.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeListeners(LoadBalancerArn: string | null | undefined, ListenerArns: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeListenersAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2704,6 +2721,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Names The names of the load balancers.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeLoadBalancers(LoadBalancerArns: Array<string> | null | undefined, Names: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2717,6 +2735,7 @@ export namespace MyNS {
 		 * @param {Array<string>} RuleArns The Amazon Resource Names (ARN) of the rules.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeRules(ListenerArn: string | null | undefined, RuleArns: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeRulesAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2729,6 +2748,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Names The names of the policies.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @param {LoadBalancerTypeEnum} LoadBalancerType  The type of load balancer. The default lists the SSL policies for all load balancers.
 		 * @return {void} Success
 		 */
@@ -2764,6 +2784,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Names The names of the target groups.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeTargetGroups(LoadBalancerArn: string | null | undefined, TargetGroupArns: Array<string> | null | undefined, Names: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeTargetGroupsAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2786,6 +2807,7 @@ export namespace MyNS {
 		 * Get #Action=ModifyListener
 		 * @param {string} ListenerArn The Amazon Resource Name (ARN) of the listener.
 		 * @param {number} Port The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.
+		 *     Minimum: 1    Maximum: 65535
 		 * @param {ProtocolEnum} Protocol The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.
 		 * @param {string} SslPolicy <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 		 * @param {Array<Certificate>} Certificates [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
@@ -2802,6 +2824,7 @@ export namespace MyNS {
 		 * Get #Action=ModifyLoadBalancerAttributes
 		 * @param {string} LoadBalancerArn The Amazon Resource Name (ARN) of the load balancer.
 		 * @param {Array<LoadBalancerAttribute>} Attributes The load balancer attributes.
+		 *     Maximum items: 20
 		 * @return {void} Success
 		 */
 		GET_ModifyLoadBalancerAttributes(LoadBalancerArn: string, Attributes: Array<LoadBalancerAttribute>, Action: GET_ModifyLoadBalancerAttributesAction, Version: GET_AddListenerCertificatesVersion): Observable<HttpResponse<string>> {
@@ -2827,11 +2850,16 @@ export namespace MyNS {
 		 * @param {ProtocolEnum} HealthCheckProtocol The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.
 		 * @param {string} HealthCheckPort The port the load balancer uses when performing health checks on targets.
 		 * @param {string} HealthCheckPath <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+		 *     Min length: 1    Max length: 1024
 		 * @param {boolean} HealthCheckEnabled Indicates whether health checks are enabled.
 		 * @param {number} HealthCheckIntervalSeconds The approximate amount of time, in seconds, between health checks of an individual target.
+		 *     Minimum: 5    Maximum: 300
 		 * @param {number} HealthCheckTimeoutSeconds [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
+		 *     Minimum: 2    Maximum: 120
 		 * @param {number} HealthyThresholdCount The number of consecutive health checks successes required before considering an unhealthy target healthy.
+		 *     Minimum: 2    Maximum: 10
 		 * @param {number} UnhealthyThresholdCount The number of consecutive health check failures required before considering the target unhealthy.
+		 *     Minimum: 2    Maximum: 10
 		 * @param {GET_ModifyTargetGroupMatcher} Matcher [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.
 		 * @return {void} Success
 		 */

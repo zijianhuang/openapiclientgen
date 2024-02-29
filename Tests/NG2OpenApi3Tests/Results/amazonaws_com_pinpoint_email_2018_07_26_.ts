@@ -2453,6 +2453,7 @@ export namespace MyNS {
 		 * Get v1/email/configuration-sets
 		 * @param {string} NextToken A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListConfigurationSetsResponse} Success
 		 */
 		ListConfigurationSets(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListConfigurationSetsResponse> {
@@ -2493,6 +2494,7 @@ export namespace MyNS {
 		 * Get v1/email/dedicated-ip-pools
 		 * @param {string} NextToken A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDedicatedIpPoolsResponse} Success
 		 */
 		ListDedicatedIpPools(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDedicatedIpPoolsResponse> {
@@ -2522,6 +2524,7 @@ export namespace MyNS {
 		 * Get v1/email/identities
 		 * @param {string} NextToken A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListEmailIdentitiesResponse} Success
 		 */
 		ListEmailIdentities(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListEmailIdentitiesResponse> {
@@ -2635,6 +2638,7 @@ export namespace MyNS {
 		 * @param {string} PoolName The name of the IP pool that the dedicated IP address is associated with.
 		 * @param {string} NextToken A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.
 		 * @param {number} PageSize The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetDedicatedIpsResponse} Success
 		 */
 		GetDedicatedIps(PoolName: string | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<GetDedicatedIpsResponse> {
@@ -2696,6 +2700,7 @@ export namespace MyNS {
 		 * Get v1/email/deliverability-dashboard/test-reports
 		 * @param {string} NextToken A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDeliverabilityTestReportsResponse} Success
 		 */
 		ListDeliverabilityTestReports(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDeliverabilityTestReportsResponse> {
@@ -2710,6 +2715,7 @@ export namespace MyNS {
 		 * @param {string} SubscribedDomain The domain to obtain deliverability data for.
 		 * @param {string} NextToken A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.
 		 * @param {number} PageSize The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDomainDeliverabilityCampaignsResponse} Success
 		 */
 		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDomainDeliverabilityCampaignsResponse> {
@@ -3308,6 +3314,7 @@ export namespace MyNS {
 		/**
 		 * The warm-up percentage that you want to associate with the dedicated IP address.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		WarmupPercentage: number;
 	}
@@ -3316,6 +3323,7 @@ export namespace MyNS {
 		/**
 		 * The warm-up percentage that you want to associate with the dedicated IP address.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		WarmupPercentage: FormControl<number | null | undefined>,
 	}

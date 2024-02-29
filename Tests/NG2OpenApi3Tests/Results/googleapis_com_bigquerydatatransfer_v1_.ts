@@ -54,7 +54,10 @@ export namespace MyNS {
 		/** Data source id. */
 		dataSourceId?: string | null;
 
-		/** Default data refresh window on days. Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`. */
+		/**
+		 * Default data refresh window on days. Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultDataRefreshWindowDays?: number | null;
 
 		/** Default data transfer schedule. Examples of valid schedules include: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 		/** Deprecated. This field has no effect. */
 		transferType?: DataSourceTransferType | null;
 
-		/** The number of seconds to wait for an update from the data source before the Data Transfer Service marks the transfer as FAILED. */
+		/**
+		 * The number of seconds to wait for an update from the data source before the Data Transfer Service marks the transfer as FAILED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updateDeadlineSeconds?: number | null;
 	}
 
@@ -112,7 +118,10 @@ export namespace MyNS {
 		/** Data source id. */
 		dataSourceId: FormControl<string | null | undefined>,
 
-		/** Default data refresh window on days. Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`. */
+		/**
+		 * Default data refresh window on days. Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultDataRefreshWindowDays: FormControl<number | null | undefined>,
 
 		/** Default data transfer schedule. Examples of valid schedules include: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. */
@@ -145,7 +154,10 @@ export namespace MyNS {
 		/** Deprecated. This field has no effect. */
 		transferType: FormControl<DataSourceTransferType | null | undefined>,
 
-		/** The number of seconds to wait for an update from the data source before the Data Transfer Service marks the transfer as FAILED. */
+		/**
+		 * The number of seconds to wait for an update from the data source before the Data Transfer Service marks the transfer as FAILED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updateDeadlineSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourceFormGroup() {
@@ -196,10 +208,16 @@ export namespace MyNS {
 		/** Cannot be changed after initial creation. */
 		immutable?: boolean | null;
 
-		/** For integer and double values specifies maximum allowed value. */
+		/**
+		 * For integer and double values specifies maximum allowed value.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** For integer and double values specifies minimum allowed value. */
+		/**
+		 * For integer and double values specifies minimum allowed value.
+		 * Type: double
+		 */
 		minValue?: number | null;
 
 		/** Parameter identifier. */
@@ -242,10 +260,16 @@ export namespace MyNS {
 		/** Cannot be changed after initial creation. */
 		immutable: FormControl<boolean | null | undefined>,
 
-		/** For integer and double values specifies maximum allowed value. */
+		/**
+		 * For integer and double values specifies maximum allowed value.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** For integer and double values specifies minimum allowed value. */
+		/**
+		 * For integer and double values specifies minimum allowed value.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 
 		/** Parameter identifier. */
@@ -494,7 +518,10 @@ export namespace MyNS {
 	/** Represents a data transfer configuration. A transfer configuration contains all metadata needed to perform a data transfer. For example, `destination_dataset_id` specifies where data should be stored. When a new transfer configuration is created, the specified `destination_dataset_id` is created when needed and shared with the appropriate data source service account. */
 	export interface TransferConfig {
 
-		/** The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value. */
+		/**
+		 * The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataRefreshWindowDays?: number | null;
 
 		/** Data source ID. This cannot be changed once data transfer is created. The full list of available data source IDs can be returned through an API call: https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list */
@@ -552,7 +579,10 @@ export namespace MyNS {
 	/** Represents a data transfer configuration. A transfer configuration contains all metadata needed to perform a data transfer. For example, `destination_dataset_id` specifies where data should be stored. When a new transfer configuration is created, the specified `destination_dataset_id` is created when needed and shared with the appropriate data source service account. */
 	export interface TransferConfigFormProperties {
 
-		/** The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value. */
+		/**
+		 * The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataRefreshWindowDays: FormControl<number | null | undefined>,
 
 		/** Data source ID. This cannot be changed once data transfer is created. The full list of available data source IDs can be returned through an API call: https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list */
@@ -872,7 +902,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -885,7 +918,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1058,6 +1094,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1090,6 +1127,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/dataSources
 		 * @param {string} parent Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
 		 * @param {number} pageSize Page size. The default page size is the maximum value of 1000 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token, which can be used to request a specific page of `ListDataSourcesRequest` list results. For multiple-page results, `ListDataSourcesResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
 		 * @return {ListDataSourcesResponse} Successful response
 		 */
@@ -1102,6 +1140,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/runs
 		 * @param {string} parent Required. Name of transfer configuration for which transfer runs should be retrieved. Format of transfer configuration resource name is: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
 		 * @param {number} pageSize Page size. The default page size is the maximum value of 1000 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token, which can be used to request a specific page of `ListTransferRunsRequest` list results. For multiple-page results, `ListTransferRunsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
 		 * @param {Bigquerydatatransfer_projects_transferConfigs_runs_listRunAttempt} runAttempt Indicates how run attempts are to be pulled.
 		 * @param {Array<TransferConfigState>} states When specified, only transfer runs with requested states are returned.
@@ -1117,6 +1156,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The BigQuery project id for which transfer configs should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
 		 * @param {Array<string>} dataSourceIds When specified, only configurations of requested data sources are returned.
 		 * @param {number} pageSize Page size. The default page size is the maximum value of 1000 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token, which can be used to request a specific page of `ListTransfersRequest` list results. For multiple-page results, `ListTransfersResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
 		 * @return {ListTransferConfigsResponse} Successful response
 		 */
@@ -1143,6 +1183,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Transfer run name in the form: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
 		 * @param {Array<TransferMessageSeverity>} messageTypes Message types to return. If not populated - INFO, WARNING and ERROR messages are returned.
 		 * @param {number} pageSize Page size. The default page size is the maximum value of 1000 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token, which can be used to request a specific page of `ListTransferLogsRequest` list results. For multiple-page results, `ListTransferLogsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
 		 * @return {ListTransferLogsResponse} Successful response
 		 */

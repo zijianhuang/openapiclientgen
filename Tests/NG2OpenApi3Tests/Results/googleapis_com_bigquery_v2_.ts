@@ -7,50 +7,92 @@ export namespace MyNS {
 	/** Aggregate metrics for classification/classifier models. For multi-class models, the metrics are either macro-averaged or micro-averaged. When macro-averaged, the metrics are calculated for each label and then an unweighted average is taken of those values. When micro-averaged, the metric is calculated globally by counting the total number of correctly predicted rows. */
 	export interface AggregateClassificationMetrics {
 
-		/** Accuracy is the fraction of predictions given the correct label. For multiclass this is a micro-averaged metric. */
+		/**
+		 * Accuracy is the fraction of predictions given the correct label. For multiclass this is a micro-averaged metric.
+		 * Type: double
+		 */
 		accuracy?: number | null;
 
-		/** The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric. */
+		/**
+		 * The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		f1Score?: number | null;
 
-		/** Logarithmic Loss. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Logarithmic Loss. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		logLoss?: number | null;
 
-		/** Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier. */
+		/**
+		 * Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier.
+		 * Type: double
+		 */
 		precision?: number | null;
 
-		/** Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		recall?: number | null;
 
-		/** Area Under a ROC Curve. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Area Under a ROC Curve. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		rocAuc?: number | null;
 
-		/** Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classfication models this is the confidence threshold. */
+		/**
+		 * Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classfication models this is the confidence threshold.
+		 * Type: double
+		 */
 		threshold?: number | null;
 	}
 
 	/** Aggregate metrics for classification/classifier models. For multi-class models, the metrics are either macro-averaged or micro-averaged. When macro-averaged, the metrics are calculated for each label and then an unweighted average is taken of those values. When micro-averaged, the metric is calculated globally by counting the total number of correctly predicted rows. */
 	export interface AggregateClassificationMetricsFormProperties {
 
-		/** Accuracy is the fraction of predictions given the correct label. For multiclass this is a micro-averaged metric. */
+		/**
+		 * Accuracy is the fraction of predictions given the correct label. For multiclass this is a micro-averaged metric.
+		 * Type: double
+		 */
 		accuracy: FormControl<number | null | undefined>,
 
-		/** The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric. */
+		/**
+		 * The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Logarithmic Loss. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Logarithmic Loss. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		logLoss: FormControl<number | null | undefined>,
 
-		/** Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier. */
+		/**
+		 * Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier.
+		 * Type: double
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** Area Under a ROC Curve. For multiclass this is a macro-averaged metric. */
+		/**
+		 * Area Under a ROC Curve. For multiclass this is a macro-averaged metric.
+		 * Type: double
+		 */
 		rocAuc: FormControl<number | null | undefined>,
 
-		/** Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classfication models this is the confidence threshold. */
+		/**
+		 * Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classfication models this is the confidence threshold.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregateClassificationMetricsFormGroup() {
@@ -219,7 +261,10 @@ export namespace MyNS {
 		/** Auto-regressive coefficients, an array of double. */
 		autoRegressiveCoefficients?: Array<number>;
 
-		/** Intercept coefficient, just a double not an array. */
+		/**
+		 * Intercept coefficient, just a double not an array.
+		 * Type: double
+		 */
 		interceptCoefficient?: number | null;
 
 		/** Moving-average coefficients, an array of double. */
@@ -229,7 +274,10 @@ export namespace MyNS {
 	/** Arima coefficients. */
 	export interface ArimaCoefficientsFormProperties {
 
-		/** Intercept coefficient, just a double not an array. */
+		/**
+		 * Intercept coefficient, just a double not an array.
+		 * Type: double
+		 */
 		interceptCoefficient: FormControl<number | null | undefined>,
 	}
 	export function CreateArimaCoefficientsFormGroup() {
@@ -243,26 +291,44 @@ export namespace MyNS {
 	/** ARIMA model fitting metrics. */
 	export interface ArimaFittingMetrics {
 
-		/** AIC. */
+		/**
+		 * AIC.
+		 * Type: double
+		 */
 		aic?: number | null;
 
-		/** Log-likelihood. */
+		/**
+		 * Log-likelihood.
+		 * Type: double
+		 */
 		logLikelihood?: number | null;
 
-		/** Variance. */
+		/**
+		 * Variance.
+		 * Type: double
+		 */
 		variance?: number | null;
 	}
 
 	/** ARIMA model fitting metrics. */
 	export interface ArimaFittingMetricsFormProperties {
 
-		/** AIC. */
+		/**
+		 * AIC.
+		 * Type: double
+		 */
 		aic: FormControl<number | null | undefined>,
 
-		/** Log-likelihood. */
+		/**
+		 * Log-likelihood.
+		 * Type: double
+		 */
 		logLikelihood: FormControl<number | null | undefined>,
 
-		/** Variance. */
+		/**
+		 * Variance.
+		 * Type: double
+		 */
 		variance: FormControl<number | null | undefined>,
 	}
 	export function CreateArimaFittingMetricsFormGroup() {
@@ -644,7 +710,10 @@ export namespace MyNS {
 
 	export interface BigQueryModelTraining {
 
-		/** [Output-only, Beta] Index of current ML training iteration. Updated during create model query job to show job progress. */
+		/**
+		 * [Output-only, Beta] Index of current ML training iteration. Updated during create model query job to show job progress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentIteration?: number | null;
 
 		/** [Output-only, Beta] Expected number of iterations for the create model query job specified as num_iterations in the input query. The actual total number of iterations may be less than this number due to early stop. */
@@ -652,7 +721,10 @@ export namespace MyNS {
 	}
 	export interface BigQueryModelTrainingFormProperties {
 
-		/** [Output-only, Beta] Index of current ML training iteration. Updated during create model query job to show job progress. */
+		/**
+		 * [Output-only, Beta] Index of current ML training iteration. Updated during create model query job to show job progress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentIteration: FormControl<number | null | undefined>,
 
 		/** [Output-only, Beta] Expected number of iterations for the create model query job specified as num_iterations in the input query. The actual total number of iterations may be less than this number due to early stop. */
@@ -820,10 +892,16 @@ export namespace MyNS {
 	/** Confusion matrix for binary classification models. */
 	export interface BinaryConfusionMatrix {
 
-		/** The fraction of predictions given the correct label. */
+		/**
+		 * The fraction of predictions given the correct label.
+		 * Type: double
+		 */
 		accuracy?: number | null;
 
-		/** The equally weighted average of recall and precision. */
+		/**
+		 * The equally weighted average of recall and precision.
+		 * Type: double
+		 */
 		f1Score?: number | null;
 
 		/** Number of false samples predicted as false. */
@@ -832,13 +910,22 @@ export namespace MyNS {
 		/** Number of false samples predicted as true. */
 		falsePositives?: string | null;
 
-		/** Threshold value used when computing each of the following metric. */
+		/**
+		 * Threshold value used when computing each of the following metric.
+		 * Type: double
+		 */
 		positiveClassThreshold?: number | null;
 
-		/** The fraction of actual positive predictions that had positive actual labels. */
+		/**
+		 * The fraction of actual positive predictions that had positive actual labels.
+		 * Type: double
+		 */
 		precision?: number | null;
 
-		/** The fraction of actual positive labels that were given a positive prediction. */
+		/**
+		 * The fraction of actual positive labels that were given a positive prediction.
+		 * Type: double
+		 */
 		recall?: number | null;
 
 		/** Number of true samples predicted as false. */
@@ -851,10 +938,16 @@ export namespace MyNS {
 	/** Confusion matrix for binary classification models. */
 	export interface BinaryConfusionMatrixFormProperties {
 
-		/** The fraction of predictions given the correct label. */
+		/**
+		 * The fraction of predictions given the correct label.
+		 * Type: double
+		 */
 		accuracy: FormControl<number | null | undefined>,
 
-		/** The equally weighted average of recall and precision. */
+		/**
+		 * The equally weighted average of recall and precision.
+		 * Type: double
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
 		/** Number of false samples predicted as false. */
@@ -863,13 +956,22 @@ export namespace MyNS {
 		/** Number of false samples predicted as true. */
 		falsePositives: FormControl<string | null | undefined>,
 
-		/** Threshold value used when computing each of the following metric. */
+		/**
+		 * Threshold value used when computing each of the following metric.
+		 * Type: double
+		 */
 		positiveClassThreshold: FormControl<number | null | undefined>,
 
-		/** The fraction of actual positive predictions that had positive actual labels. */
+		/**
+		 * The fraction of actual positive predictions that had positive actual labels.
+		 * Type: double
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** The fraction of actual positive labels that were given a positive prediction. */
+		/**
+		 * The fraction of actual positive labels that were given a positive prediction.
+		 * Type: double
+		 */
 		recall: FormControl<number | null | undefined>,
 
 		/** Number of true samples predicted as false. */
@@ -967,16 +1069,28 @@ export namespace MyNS {
 		/** [Output-only, Beta] Time taken to run the training iteration in milliseconds. */
 		durationMs?: string | null;
 
-		/** [Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows. */
+		/**
+		 * [Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows.
+		 * Type: double
+		 */
 		evalLoss?: number | null;
 
-		/** [Output-only, Beta] Index of the ML training iteration, starting from zero for each training run. */
+		/**
+		 * [Output-only, Beta] Index of the ML training iteration, starting from zero for each training run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** [Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant. */
+		/**
+		 * [Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant.
+		 * Type: double
+		 */
 		learnRate?: number | null;
 
-		/** [Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type. */
+		/**
+		 * [Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type.
+		 * Type: double
+		 */
 		trainingLoss?: number | null;
 	}
 	export interface BqmlIterationResultFormProperties {
@@ -984,16 +1098,28 @@ export namespace MyNS {
 		/** [Output-only, Beta] Time taken to run the training iteration in milliseconds. */
 		durationMs: FormControl<string | null | undefined>,
 
-		/** [Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows. */
+		/**
+		 * [Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows.
+		 * Type: double
+		 */
 		evalLoss: FormControl<number | null | undefined>,
 
-		/** [Output-only, Beta] Index of the ML training iteration, starting from zero for each training run. */
+		/**
+		 * [Output-only, Beta] Index of the ML training iteration, starting from zero for each training run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** [Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant. */
+		/**
+		 * [Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant.
+		 * Type: double
+		 */
 		learnRate: FormControl<number | null | undefined>,
 
-		/** [Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type. */
+		/**
+		 * [Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type.
+		 * Type: double
+		 */
 		trainingLoss: FormControl<number | null | undefined>,
 	}
 	export function CreateBqmlIterationResultFormGroup() {
@@ -1039,23 +1165,43 @@ export namespace MyNS {
 
 	export interface BqmlTrainingRunTrainingOptions {
 		earlyStop?: boolean | null;
+
+		/** Type: double */
 		l1Reg?: number | null;
+
+		/** Type: double */
 		l2Reg?: number | null;
+
+		/** Type: double */
 		learnRate?: number | null;
 		learnRateStrategy?: string | null;
+
+		/** Type: double */
 		lineSearchInitLearnRate?: number | null;
 		maxIteration?: string | null;
+
+		/** Type: double */
 		minRelProgress?: number | null;
 		warmStart?: boolean | null;
 	}
 	export interface BqmlTrainingRunTrainingOptionsFormProperties {
 		earlyStop: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		l1Reg: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l2Reg: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		learnRate: FormControl<number | null | undefined>,
 		learnRateStrategy: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lineSearchInitLearnRate: FormControl<number | null | undefined>,
 		maxIteration: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		minRelProgress: FormControl<number | null | undefined>,
 		warmStart: FormControl<boolean | null | undefined>,
 	}
@@ -1209,7 +1355,10 @@ export namespace MyNS {
 		/** The feature column name. */
 		featureColumn?: string | null;
 
-		/** The numerical feature value. This is the centroid value for this feature. */
+		/**
+		 * The numerical feature value. This is the centroid value for this feature.
+		 * Type: double
+		 */
 		numericalValue?: number | null;
 	}
 
@@ -1219,7 +1368,10 @@ export namespace MyNS {
 		/** The feature column name. */
 		featureColumn: FormControl<string | null | undefined>,
 
-		/** The numerical feature value. This is the centroid value for this feature. */
+		/**
+		 * The numerical feature value. This is the centroid value for this feature.
+		 * Type: double
+		 */
 		numericalValue: FormControl<number | null | undefined>,
 	}
 	export function CreateFeatureValueFormGroup() {
@@ -1237,7 +1389,10 @@ export namespace MyNS {
 		/** Centroid id. */
 		centroidId?: string | null;
 
-		/** Cluster radius, the average distance from centroid to each point assigned to the cluster. */
+		/**
+		 * Cluster radius, the average distance from centroid to each point assigned to the cluster.
+		 * Type: double
+		 */
 		clusterRadius?: number | null;
 
 		/** Cluster size, the total number of points assigned to the cluster. */
@@ -1250,7 +1405,10 @@ export namespace MyNS {
 		/** Centroid id. */
 		centroidId: FormControl<string | null | undefined>,
 
-		/** Cluster radius, the average distance from centroid to each point assigned to the cluster. */
+		/**
+		 * Cluster radius, the average distance from centroid to each point assigned to the cluster.
+		 * Type: double
+		 */
 		clusterRadius: FormControl<number | null | undefined>,
 
 		/** Cluster size, the total number of points assigned to the cluster. */
@@ -1285,20 +1443,32 @@ export namespace MyNS {
 		/** Information for all clusters. */
 		clusters?: Array<Cluster>;
 
-		/** Davies-Bouldin index. */
+		/**
+		 * Davies-Bouldin index.
+		 * Type: double
+		 */
 		daviesBouldinIndex?: number | null;
 
-		/** Mean of squared distances between each sample to its cluster centroid. */
+		/**
+		 * Mean of squared distances between each sample to its cluster centroid.
+		 * Type: double
+		 */
 		meanSquaredDistance?: number | null;
 	}
 
 	/** Evaluation metrics for clustering models. */
 	export interface ClusteringMetricsFormProperties {
 
-		/** Davies-Bouldin index. */
+		/**
+		 * Davies-Bouldin index.
+		 * Type: double
+		 */
 		daviesBouldinIndex: FormControl<number | null | undefined>,
 
-		/** Mean of squared distances between each sample to its cluster centroid. */
+		/**
+		 * Mean of squared distances between each sample to its cluster centroid.
+		 * Type: double
+		 */
 		meanSquaredDistance: FormControl<number | null | undefined>,
 	}
 	export function CreateClusteringMetricsFormGroup() {
@@ -1313,7 +1483,10 @@ export namespace MyNS {
 	/** Confusion matrix for multi-class classification models. */
 	export interface ConfusionMatrix {
 
-		/** Confidence threshold used when computing the entries of the confusion matrix. */
+		/**
+		 * Confidence threshold used when computing the entries of the confusion matrix.
+		 * Type: double
+		 */
 		confidenceThreshold?: number | null;
 
 		/** One row per actual label. */
@@ -1323,7 +1496,10 @@ export namespace MyNS {
 	/** Confusion matrix for multi-class classification models. */
 	export interface ConfusionMatrixFormProperties {
 
-		/** Confidence threshold used when computing the entries of the confusion matrix. */
+		/**
+		 * Confidence threshold used when computing the entries of the confusion matrix.
+		 * Type: double
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateConfusionMatrixFormGroup() {
@@ -1963,14 +2139,20 @@ export namespace MyNS {
 	/** Model evaluation metrics for dimensionality reduction models. */
 	export interface DimensionalityReductionMetrics {
 
-		/** Total percentage of variance explained by the selected principal components. */
+		/**
+		 * Total percentage of variance explained by the selected principal components.
+		 * Type: double
+		 */
 		totalExplainedVarianceRatio?: number | null;
 	}
 
 	/** Model evaluation metrics for dimensionality reduction models. */
 	export interface DimensionalityReductionMetricsFormProperties {
 
-		/** Total percentage of variance explained by the selected principal components. */
+		/**
+		 * Total percentage of variance explained by the selected principal components.
+		 * Type: double
+		 */
 		totalExplainedVarianceRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionalityReductionMetricsFormGroup() {
@@ -2052,20 +2234,32 @@ export namespace MyNS {
 	/** Range of a double hyperparameter. */
 	export interface DoubleRange {
 
-		/** Max value of the double parameter. */
+		/**
+		 * Max value of the double parameter.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Min value of the double parameter. */
+		/**
+		 * Min value of the double parameter.
+		 * Type: double
+		 */
 		min?: number | null;
 	}
 
 	/** Range of a double hyperparameter. */
 	export interface DoubleRangeFormProperties {
 
-		/** Max value of the double parameter. */
+		/**
+		 * Max value of the double parameter.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Min value of the double parameter. */
+		/**
+		 * Min value of the double parameter.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateDoubleRangeFormGroup() {
@@ -2173,32 +2367,56 @@ export namespace MyNS {
 	/** Evaluation metrics used by weighted-ALS models specified by feedback_type=implicit. */
 	export interface RankingMetrics {
 
-		/** Determines the goodness of a ranking by computing the percentile rank from the predicted confidence and dividing it by the original rank. */
+		/**
+		 * Determines the goodness of a ranking by computing the percentile rank from the predicted confidence and dividing it by the original rank.
+		 * Type: double
+		 */
 		averageRank?: number | null;
 
-		/** Calculates a precision per user for all the items by ranking them and then averages all the precisions across all the users. */
+		/**
+		 * Calculates a precision per user for all the items by ranking them and then averages all the precisions across all the users.
+		 * Type: double
+		 */
 		meanAveragePrecision?: number | null;
 
-		/** Similar to the mean squared error computed in regression and explicit recommendation models except instead of computing the rating directly, the output from evaluate is computed against a preference which is 1 or 0 depending on if the rating exists or not. */
+		/**
+		 * Similar to the mean squared error computed in regression and explicit recommendation models except instead of computing the rating directly, the output from evaluate is computed against a preference which is 1 or 0 depending on if the rating exists or not.
+		 * Type: double
+		 */
 		meanSquaredError?: number | null;
 
-		/** A metric to determine the goodness of a ranking calculated from the predicted confidence by comparing it to an ideal rank measured by the original ratings. */
+		/**
+		 * A metric to determine the goodness of a ranking calculated from the predicted confidence by comparing it to an ideal rank measured by the original ratings.
+		 * Type: double
+		 */
 		normalizedDiscountedCumulativeGain?: number | null;
 	}
 
 	/** Evaluation metrics used by weighted-ALS models specified by feedback_type=implicit. */
 	export interface RankingMetricsFormProperties {
 
-		/** Determines the goodness of a ranking by computing the percentile rank from the predicted confidence and dividing it by the original rank. */
+		/**
+		 * Determines the goodness of a ranking by computing the percentile rank from the predicted confidence and dividing it by the original rank.
+		 * Type: double
+		 */
 		averageRank: FormControl<number | null | undefined>,
 
-		/** Calculates a precision per user for all the items by ranking them and then averages all the precisions across all the users. */
+		/**
+		 * Calculates a precision per user for all the items by ranking them and then averages all the precisions across all the users.
+		 * Type: double
+		 */
 		meanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** Similar to the mean squared error computed in regression and explicit recommendation models except instead of computing the rating directly, the output from evaluate is computed against a preference which is 1 or 0 depending on if the rating exists or not. */
+		/**
+		 * Similar to the mean squared error computed in regression and explicit recommendation models except instead of computing the rating directly, the output from evaluate is computed against a preference which is 1 or 0 depending on if the rating exists or not.
+		 * Type: double
+		 */
 		meanSquaredError: FormControl<number | null | undefined>,
 
-		/** A metric to determine the goodness of a ranking calculated from the predicted confidence by comparing it to an ideal rank measured by the original ratings. */
+		/**
+		 * A metric to determine the goodness of a ranking calculated from the predicted confidence by comparing it to an ideal rank measured by the original ratings.
+		 * Type: double
+		 */
 		normalizedDiscountedCumulativeGain: FormControl<number | null | undefined>,
 	}
 	export function CreateRankingMetricsFormGroup() {
@@ -2215,38 +2433,68 @@ export namespace MyNS {
 	/** Evaluation metrics for regression and explicit feedback type matrix factorization models. */
 	export interface RegressionMetrics {
 
-		/** Mean absolute error. */
+		/**
+		 * Mean absolute error.
+		 * Type: double
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Mean squared error. */
+		/**
+		 * Mean squared error.
+		 * Type: double
+		 */
 		meanSquaredError?: number | null;
 
-		/** Mean squared log error. */
+		/**
+		 * Mean squared log error.
+		 * Type: double
+		 */
 		meanSquaredLogError?: number | null;
 
-		/** Median absolute error. */
+		/**
+		 * Median absolute error.
+		 * Type: double
+		 */
 		medianAbsoluteError?: number | null;
 
-		/** R^2 score. This corresponds to r2_score in ML.EVALUATE. */
+		/**
+		 * R^2 score. This corresponds to r2_score in ML.EVALUATE.
+		 * Type: double
+		 */
 		rSquared?: number | null;
 	}
 
 	/** Evaluation metrics for regression and explicit feedback type matrix factorization models. */
 	export interface RegressionMetricsFormProperties {
 
-		/** Mean absolute error. */
+		/**
+		 * Mean absolute error.
+		 * Type: double
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Mean squared error. */
+		/**
+		 * Mean squared error.
+		 * Type: double
+		 */
 		meanSquaredError: FormControl<number | null | undefined>,
 
-		/** Mean squared log error. */
+		/**
+		 * Mean squared log error.
+		 * Type: double
+		 */
 		meanSquaredLogError: FormControl<number | null | undefined>,
 
-		/** Median absolute error. */
+		/**
+		 * Median absolute error.
+		 * Type: double
+		 */
 		medianAbsoluteError: FormControl<number | null | undefined>,
 
-		/** R^2 score. This corresponds to r2_score in ML.EVALUATE. */
+		/**
+		 * R^2 score. This corresponds to r2_score in ML.EVALUATE.
+		 * Type: double
+		 */
 		rSquared: FormControl<number | null | undefined>,
 	}
 	export function CreateRegressionMetricsFormGroup() {
@@ -2271,10 +2519,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent on CPU-bound tasks. */
 		computeMsMax?: string | null;
 
-		/** Relative amount of time the average shard spent on CPU-bound tasks. */
+		/**
+		 * Relative amount of time the average shard spent on CPU-bound tasks.
+		 * Type: double
+		 */
 		computeRatioAvg?: number | null;
 
-		/** Relative amount of time the slowest shard spent on CPU-bound tasks. */
+		/**
+		 * Relative amount of time the slowest shard spent on CPU-bound tasks.
+		 * Type: double
+		 */
 		computeRatioMax?: number | null;
 
 		/** Stage end time represented as milliseconds since epoch. */
@@ -2298,10 +2552,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent reading input. */
 		readMsMax?: string | null;
 
-		/** Relative amount of time the average shard spent reading input. */
+		/**
+		 * Relative amount of time the average shard spent reading input.
+		 * Type: double
+		 */
 		readRatioAvg?: number | null;
 
-		/** Relative amount of time the slowest shard spent reading input. */
+		/**
+		 * Relative amount of time the slowest shard spent reading input.
+		 * Type: double
+		 */
 		readRatioMax?: number | null;
 
 		/** Number of records read into the stage. */
@@ -2334,10 +2594,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent waiting to be scheduled. */
 		waitMsMax?: string | null;
 
-		/** Relative amount of time the average shard spent waiting to be scheduled. */
+		/**
+		 * Relative amount of time the average shard spent waiting to be scheduled.
+		 * Type: double
+		 */
 		waitRatioAvg?: number | null;
 
-		/** Relative amount of time the slowest shard spent waiting to be scheduled. */
+		/**
+		 * Relative amount of time the slowest shard spent waiting to be scheduled.
+		 * Type: double
+		 */
 		waitRatioMax?: number | null;
 
 		/** Milliseconds the average shard spent on writing output. */
@@ -2346,10 +2612,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent on writing output. */
 		writeMsMax?: string | null;
 
-		/** Relative amount of time the average shard spent on writing output. */
+		/**
+		 * Relative amount of time the average shard spent on writing output.
+		 * Type: double
+		 */
 		writeRatioAvg?: number | null;
 
-		/** Relative amount of time the slowest shard spent on writing output. */
+		/**
+		 * Relative amount of time the slowest shard spent on writing output.
+		 * Type: double
+		 */
 		writeRatioMax?: number | null;
 	}
 	export interface ExplainQueryStageFormProperties {
@@ -2363,10 +2635,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent on CPU-bound tasks. */
 		computeMsMax: FormControl<string | null | undefined>,
 
-		/** Relative amount of time the average shard spent on CPU-bound tasks. */
+		/**
+		 * Relative amount of time the average shard spent on CPU-bound tasks.
+		 * Type: double
+		 */
 		computeRatioAvg: FormControl<number | null | undefined>,
 
-		/** Relative amount of time the slowest shard spent on CPU-bound tasks. */
+		/**
+		 * Relative amount of time the slowest shard spent on CPU-bound tasks.
+		 * Type: double
+		 */
 		computeRatioMax: FormControl<number | null | undefined>,
 
 		/** Stage end time represented as milliseconds since epoch. */
@@ -2387,10 +2665,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent reading input. */
 		readMsMax: FormControl<string | null | undefined>,
 
-		/** Relative amount of time the average shard spent reading input. */
+		/**
+		 * Relative amount of time the average shard spent reading input.
+		 * Type: double
+		 */
 		readRatioAvg: FormControl<number | null | undefined>,
 
-		/** Relative amount of time the slowest shard spent reading input. */
+		/**
+		 * Relative amount of time the slowest shard spent reading input.
+		 * Type: double
+		 */
 		readRatioMax: FormControl<number | null | undefined>,
 
 		/** Number of records read into the stage. */
@@ -2420,10 +2704,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent waiting to be scheduled. */
 		waitMsMax: FormControl<string | null | undefined>,
 
-		/** Relative amount of time the average shard spent waiting to be scheduled. */
+		/**
+		 * Relative amount of time the average shard spent waiting to be scheduled.
+		 * Type: double
+		 */
 		waitRatioAvg: FormControl<number | null | undefined>,
 
-		/** Relative amount of time the slowest shard spent waiting to be scheduled. */
+		/**
+		 * Relative amount of time the slowest shard spent waiting to be scheduled.
+		 * Type: double
+		 */
 		waitRatioMax: FormControl<number | null | undefined>,
 
 		/** Milliseconds the average shard spent on writing output. */
@@ -2432,10 +2722,16 @@ export namespace MyNS {
 		/** Milliseconds the slowest shard spent on writing output. */
 		writeMsMax: FormControl<string | null | undefined>,
 
-		/** Relative amount of time the average shard spent on writing output. */
+		/**
+		 * Relative amount of time the average shard spent on writing output.
+		 * Type: double
+		 */
 		writeRatioAvg: FormControl<number | null | undefined>,
 
-		/** Relative amount of time the slowest shard spent on writing output. */
+		/**
+		 * Relative amount of time the slowest shard spent on writing output.
+		 * Type: double
+		 */
 		writeRatioMax: FormControl<number | null | undefined>,
 	}
 	export function CreateExplainQueryStageFormGroup() {
@@ -2496,7 +2792,10 @@ export namespace MyNS {
 	/** Explanation for a single feature. */
 	export interface Explanation {
 
-		/** Attribution of feature. */
+		/**
+		 * Attribution of feature.
+		 * Type: double
+		 */
 		attribution?: number | null;
 
 		/** The full feature name. For non-numerical features, will be formatted like `.`. Overall size of feature name will always be truncated to first 120 characters. */
@@ -2506,7 +2805,10 @@ export namespace MyNS {
 	/** Explanation for a single feature. */
 	export interface ExplanationFormProperties {
 
-		/** Attribution of feature. */
+		/**
+		 * Attribution of feature.
+		 * Type: double
+		 */
 		attribution: FormControl<number | null | undefined>,
 
 		/** The full feature name. For non-numerical features, will be formatted like `.`. Overall size of feature name will always be truncated to first 120 characters. */
@@ -2546,7 +2848,10 @@ export namespace MyNS {
 		ignoreUnknownValues?: boolean | null;
 		jsonOptions?: JsonOptions;
 
-		/** [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. */
+		/**
+		 * [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBadRecords?: number | null;
 
 		/** [Optional] Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. */
@@ -2583,7 +2888,10 @@ export namespace MyNS {
 		/** [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored. */
 		ignoreUnknownValues: FormControl<boolean | null | undefined>,
 
-		/** [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. */
+		/**
+		 * [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBadRecords: FormControl<number | null | undefined>,
 
 		/** [Optional] Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. */
@@ -2880,14 +3188,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -3282,7 +3596,10 @@ export namespace MyNS {
 		/** Error message for FAILED and INFEASIBLE trial. */
 		errorMessage?: string | null;
 
-		/** Loss computed on the eval data at the end of trial. */
+		/**
+		 * Loss computed on the eval data at the end of trial.
+		 * Type: double
+		 */
 		evalLoss?: number | null;
 
 		/** Evaluation metrics of a model. These are either computed on all training data or just the eval data based on whether eval data was used during training. These are not present for imported models. */
@@ -3300,7 +3617,10 @@ export namespace MyNS {
 		/** The status of the trial. */
 		status?: HparamTuningTrialStatus | null;
 
-		/** Loss computed on the training data at the end of trial. */
+		/**
+		 * Loss computed on the training data at the end of trial.
+		 * Type: double
+		 */
 		trainingLoss?: number | null;
 
 		/** 1-based index of the trial. */
@@ -3316,7 +3636,10 @@ export namespace MyNS {
 		/** Error message for FAILED and INFEASIBLE trial. */
 		errorMessage: FormControl<string | null | undefined>,
 
-		/** Loss computed on the eval data at the end of trial. */
+		/**
+		 * Loss computed on the eval data at the end of trial.
+		 * Type: double
+		 */
 		evalLoss: FormControl<number | null | undefined>,
 
 		/** Starting time of the trial. */
@@ -3325,7 +3648,10 @@ export namespace MyNS {
 		/** The status of the trial. */
 		status: FormControl<HparamTuningTrialStatus | null | undefined>,
 
-		/** Loss computed on the training data at the end of trial. */
+		/**
+		 * Loss computed on the training data at the end of trial.
+		 * Type: double
+		 */
 		trainingLoss: FormControl<number | null | undefined>,
 
 		/** 1-based index of the trial. */
@@ -3375,7 +3701,10 @@ export namespace MyNS {
 		/** Booster type for boosted tree models. */
 		boosterType?: TrainingOptionsBoosterType | null;
 
-		/** Budget in hours for AutoML training. */
+		/**
+		 * Budget in hours for AutoML training.
+		 * Type: double
+		 */
 		budgetHours?: number | null;
 
 		/** Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models. */
@@ -3390,13 +3719,22 @@ export namespace MyNS {
 		/** Enums for color space, used for processing images in Object Table. See more details at https://www.tensorflow.org/io/tutorials/colorspace. */
 		colorSpace?: TrainingOptionsColorSpace | null;
 
-		/** Subsample ratio of columns for each level for boosted tree models. */
+		/**
+		 * Subsample ratio of columns for each level for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBylevel?: number | null;
 
-		/** Subsample ratio of columns for each node(split) for boosted tree models. */
+		/**
+		 * Subsample ratio of columns for each node(split) for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBynode?: number | null;
 
-		/** Subsample ratio of columns when constructing each tree for boosted tree models. */
+		/**
+		 * Subsample ratio of columns when constructing each tree for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBytree?: number | null;
 
 		/** Type of normalization algorithm for boosted tree models using dart booster. */
@@ -3408,7 +3746,10 @@ export namespace MyNS {
 		/** The column to split data with. This column won't be used as a feature. 1. When data_split_method is CUSTOM, the corresponding column should be boolean. The rows with true value tag are eval data, and the false are training data. 2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION rows (from smallest to largest) in the corresponding column are used as training data, and the rest are eval data. It respects the order in Orderable data types: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties */
 		dataSplitColumn?: string | null;
 
-		/** The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2. */
+		/**
+		 * The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2.
+		 * Type: double
+		 */
 		dataSplitEvalFraction?: number | null;
 
 		/** The data split type for training and evaluation, e.g. RANDOM. */
@@ -3420,7 +3761,10 @@ export namespace MyNS {
 		/** Distance type for clustering models. */
 		distanceType?: TrainingOptionsDistanceType | null;
 
-		/** Dropout probability for dnn models. */
+		/**
+		 * Dropout probability for dnn models.
+		 * Type: double
+		 */
 		dropout?: number | null;
 
 		/** Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms. */
@@ -3453,7 +3797,10 @@ export namespace MyNS {
 		/** Include drift when fitting an ARIMA model. */
 		includeDrift?: boolean | null;
 
-		/** Specifies the initial learning rate for the line search learn rate strategy. */
+		/**
+		 * Specifies the initial learning rate for the line search learn rate strategy.
+		 * Type: double
+		 */
 		initialLearnRate?: number | null;
 
 		/** Name of input label columns in training data. */
@@ -3474,19 +3821,31 @@ export namespace MyNS {
 		/** The method used to initialize the centroids for kmeans algorithm. */
 		kmeansInitializationMethod?: TrainingOptionsKmeansInitializationMethod | null;
 
-		/** L1 regularization coefficient to activations. */
+		/**
+		 * L1 regularization coefficient to activations.
+		 * Type: double
+		 */
 		l1RegActivation?: number | null;
 
-		/** L1 regularization coefficient. */
+		/**
+		 * L1 regularization coefficient.
+		 * Type: double
+		 */
 		l1Regularization?: number | null;
 
-		/** L2 regularization coefficient. */
+		/**
+		 * L2 regularization coefficient.
+		 * Type: double
+		 */
 		l2Regularization?: number | null;
 
 		/** Weights associated with each label class, for rebalancing the training data. Only applicable for classification models. */
 		labelClassWeights?: {[id: string]: number };
 
-		/** Learning rate in training. Used only for iterative training algorithms. */
+		/**
+		 * Learning rate in training. Used only for iterative training algorithms.
+		 * Type: double
+		 */
 		learnRate?: number | null;
 
 		/** The strategy to determine learn rate for the current iteration. */
@@ -3507,10 +3866,16 @@ export namespace MyNS {
 		/** Maximum depth of a tree for boosted tree models. */
 		maxTreeDepth?: string | null;
 
-		/** When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms. */
+		/**
+		 * When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms.
+		 * Type: double
+		 */
 		minRelativeProgress?: number | null;
 
-		/** Minimum split loss for boosted tree models. */
+		/**
+		 * Minimum split loss for boosted tree models.
+		 * Type: double
+		 */
 		minSplitLoss?: number | null;
 
 		/** The minimum number of time points in a time series that are used in modeling the trend component of the time series. If you use this option you must also set the `timeSeriesLengthFraction` option. This training option ensures that enough time points are available when you use `timeSeriesLengthFraction` in trend modeling. This is particularly important when forecasting multiple time series in a single query using `timeSeriesIdColumn`. If the total number of time points is less than the `minTimeSeriesLength` value, then the query uses all available time points. */
@@ -3549,7 +3914,10 @@ export namespace MyNS {
 		/** Optimizer used for training the neural nets. */
 		optimizer?: string | null;
 
-		/** The minimum ratio of cumulative explained variance that needs to be given by the PCA model. */
+		/**
+		 * The minimum ratio of cumulative explained variance that needs to be given by the PCA model.
+		 * Type: double
+		 */
 		pcaExplainedVarianceRatio?: number | null;
 
 		/** The solver for PCA. */
@@ -3564,7 +3932,10 @@ export namespace MyNS {
 		/** Whether to standardize numerical features. Default to true. */
 		standardizeFeatures?: boolean | null;
 
-		/** Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models. */
+		/**
+		 * Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
+		 * Type: double
+		 */
 		subsample?: number | null;
 
 		/** Based on the selected TF version, the corresponding docker image is used to train external models. */
@@ -3579,7 +3950,10 @@ export namespace MyNS {
 		/** The time series id columns that were used during ARIMA model training. */
 		timeSeriesIdColumns?: Array<string>;
 
-		/** The fraction of the interpolated length of the time series that's used to model the time series trend component. All of the time points of the time series are used to model the non-trend component. This training option accelerates modeling training without sacrificing much forecasting accuracy. You can use this option with `minTimeSeriesLength` but not with `maxTimeSeriesLength`. */
+		/**
+		 * The fraction of the interpolated length of the time series that's used to model the time series trend component. All of the time points of the time series are used to model the non-trend component. This training option accelerates modeling training without sacrificing much forecasting accuracy. You can use this option with `minTimeSeriesLength` but not with `maxTimeSeriesLength`.
+		 * Type: double
+		 */
 		timeSeriesLengthFraction?: number | null;
 
 		/** Column to be designated as time series timestamp for ARIMA model. */
@@ -3597,7 +3971,10 @@ export namespace MyNS {
 		/** The version aliases to apply in Vertex AI model registry. Always overwrite if the version aliases exists in a existing model. */
 		vertexAiModelVersionAliases?: Array<string>;
 
-		/** Hyperparameter for matrix factoration when implicit feedback type is specified. */
+		/**
+		 * Hyperparameter for matrix factoration when implicit feedback type is specified.
+		 * Type: double
+		 */
 		walsAlpha?: number | null;
 
 		/** Whether to train a model from the last checkpoint. */
@@ -3637,7 +4014,10 @@ export namespace MyNS {
 		/** Booster type for boosted tree models. */
 		boosterType: FormControl<TrainingOptionsBoosterType | null | undefined>,
 
-		/** Budget in hours for AutoML training. */
+		/**
+		 * Budget in hours for AutoML training.
+		 * Type: double
+		 */
 		budgetHours: FormControl<number | null | undefined>,
 
 		/** Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models. */
@@ -3652,13 +4032,22 @@ export namespace MyNS {
 		/** Enums for color space, used for processing images in Object Table. See more details at https://www.tensorflow.org/io/tutorials/colorspace. */
 		colorSpace: FormControl<TrainingOptionsColorSpace | null | undefined>,
 
-		/** Subsample ratio of columns for each level for boosted tree models. */
+		/**
+		 * Subsample ratio of columns for each level for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBylevel: FormControl<number | null | undefined>,
 
-		/** Subsample ratio of columns for each node(split) for boosted tree models. */
+		/**
+		 * Subsample ratio of columns for each node(split) for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBynode: FormControl<number | null | undefined>,
 
-		/** Subsample ratio of columns when constructing each tree for boosted tree models. */
+		/**
+		 * Subsample ratio of columns when constructing each tree for boosted tree models.
+		 * Type: double
+		 */
 		colsampleBytree: FormControl<number | null | undefined>,
 
 		/** Type of normalization algorithm for boosted tree models using dart booster. */
@@ -3670,7 +4059,10 @@ export namespace MyNS {
 		/** The column to split data with. This column won't be used as a feature. 1. When data_split_method is CUSTOM, the corresponding column should be boolean. The rows with true value tag are eval data, and the false are training data. 2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION rows (from smallest to largest) in the corresponding column are used as training data, and the rest are eval data. It respects the order in Orderable data types: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties */
 		dataSplitColumn: FormControl<string | null | undefined>,
 
-		/** The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2. */
+		/**
+		 * The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2.
+		 * Type: double
+		 */
 		dataSplitEvalFraction: FormControl<number | null | undefined>,
 
 		/** The data split type for training and evaluation, e.g. RANDOM. */
@@ -3682,7 +4074,10 @@ export namespace MyNS {
 		/** Distance type for clustering models. */
 		distanceType: FormControl<TrainingOptionsDistanceType | null | undefined>,
 
-		/** Dropout probability for dnn models. */
+		/**
+		 * Dropout probability for dnn models.
+		 * Type: double
+		 */
 		dropout: FormControl<number | null | undefined>,
 
 		/** Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms. */
@@ -3706,7 +4101,10 @@ export namespace MyNS {
 		/** Include drift when fitting an ARIMA model. */
 		includeDrift: FormControl<boolean | null | undefined>,
 
-		/** Specifies the initial learning rate for the line search learn rate strategy. */
+		/**
+		 * Specifies the initial learning rate for the line search learn rate strategy.
+		 * Type: double
+		 */
 		initialLearnRate: FormControl<number | null | undefined>,
 
 		/** Name of the instance weight column for training data. This column isn't be used as a feature. */
@@ -3724,19 +4122,31 @@ export namespace MyNS {
 		/** The method used to initialize the centroids for kmeans algorithm. */
 		kmeansInitializationMethod: FormControl<TrainingOptionsKmeansInitializationMethod | null | undefined>,
 
-		/** L1 regularization coefficient to activations. */
+		/**
+		 * L1 regularization coefficient to activations.
+		 * Type: double
+		 */
 		l1RegActivation: FormControl<number | null | undefined>,
 
-		/** L1 regularization coefficient. */
+		/**
+		 * L1 regularization coefficient.
+		 * Type: double
+		 */
 		l1Regularization: FormControl<number | null | undefined>,
 
-		/** L2 regularization coefficient. */
+		/**
+		 * L2 regularization coefficient.
+		 * Type: double
+		 */
 		l2Regularization: FormControl<number | null | undefined>,
 
 		/** Weights associated with each label class, for rebalancing the training data. Only applicable for classification models. */
 		labelClassWeights: FormControl<{[id: string]: number } | null | undefined>,
 
-		/** Learning rate in training. Used only for iterative training algorithms. */
+		/**
+		 * Learning rate in training. Used only for iterative training algorithms.
+		 * Type: double
+		 */
 		learnRate: FormControl<number | null | undefined>,
 
 		/** The strategy to determine learn rate for the current iteration. */
@@ -3757,10 +4167,16 @@ export namespace MyNS {
 		/** Maximum depth of a tree for boosted tree models. */
 		maxTreeDepth: FormControl<string | null | undefined>,
 
-		/** When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms. */
+		/**
+		 * When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms.
+		 * Type: double
+		 */
 		minRelativeProgress: FormControl<number | null | undefined>,
 
-		/** Minimum split loss for boosted tree models. */
+		/**
+		 * Minimum split loss for boosted tree models.
+		 * Type: double
+		 */
 		minSplitLoss: FormControl<number | null | undefined>,
 
 		/** The minimum number of time points in a time series that are used in modeling the trend component of the time series. If you use this option you must also set the `timeSeriesLengthFraction` option. This training option ensures that enough time points are available when you use `timeSeriesLengthFraction` in trend modeling. This is particularly important when forecasting multiple time series in a single query using `timeSeriesIdColumn`. If the total number of time points is less than the `minTimeSeriesLength` value, then the query uses all available time points. */
@@ -3796,7 +4212,10 @@ export namespace MyNS {
 		/** Optimizer used for training the neural nets. */
 		optimizer: FormControl<string | null | undefined>,
 
-		/** The minimum ratio of cumulative explained variance that needs to be given by the PCA model. */
+		/**
+		 * The minimum ratio of cumulative explained variance that needs to be given by the PCA model.
+		 * Type: double
+		 */
 		pcaExplainedVarianceRatio: FormControl<number | null | undefined>,
 
 		/** The solver for PCA. */
@@ -3811,7 +4230,10 @@ export namespace MyNS {
 		/** Whether to standardize numerical features. Default to true. */
 		standardizeFeatures: FormControl<boolean | null | undefined>,
 
-		/** Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models. */
+		/**
+		 * Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
+		 * Type: double
+		 */
 		subsample: FormControl<number | null | undefined>,
 
 		/** Based on the selected TF version, the corresponding docker image is used to train external models. */
@@ -3823,7 +4245,10 @@ export namespace MyNS {
 		/** The time series id column that was used during ARIMA model training. */
 		timeSeriesIdColumn: FormControl<string | null | undefined>,
 
-		/** The fraction of the interpolated length of the time series that's used to model the time series trend component. All of the time points of the time series are used to model the non-trend component. This training option accelerates modeling training without sacrificing much forecasting accuracy. You can use this option with `minTimeSeriesLength` but not with `maxTimeSeriesLength`. */
+		/**
+		 * The fraction of the interpolated length of the time series that's used to model the time series trend component. All of the time points of the time series are used to model the non-trend component. This training option accelerates modeling training without sacrificing much forecasting accuracy. You can use this option with `minTimeSeriesLength` but not with `maxTimeSeriesLength`.
+		 * Type: double
+		 */
 		timeSeriesLengthFraction: FormControl<number | null | undefined>,
 
 		/** Column to be designated as time series timestamp for ARIMA model. */
@@ -3838,7 +4263,10 @@ export namespace MyNS {
 		/** User column specified for matrix factorization models. */
 		userColumn: FormControl<string | null | undefined>,
 
-		/** Hyperparameter for matrix factoration when implicit feedback type is specified. */
+		/**
+		 * Hyperparameter for matrix factoration when implicit feedback type is specified.
+		 * Type: double
+		 */
 		walsAlpha: FormControl<number | null | undefined>,
 
 		/** Whether to train a model from the last checkpoint. */
@@ -4003,16 +4431,28 @@ export namespace MyNS {
 		/** Time taken to run the iteration in milliseconds. */
 		durationMs?: string | null;
 
-		/** Loss computed on the eval data at the end of iteration. */
+		/**
+		 * Loss computed on the eval data at the end of iteration.
+		 * Type: double
+		 */
 		evalLoss?: number | null;
 
-		/** Index of the iteration, 0 based. */
+		/**
+		 * Index of the iteration, 0 based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** Learn rate used for this iteration. */
+		/**
+		 * Learn rate used for this iteration.
+		 * Type: double
+		 */
 		learnRate?: number | null;
 
-		/** Loss computed on the training data at the end of iteration. */
+		/**
+		 * Loss computed on the training data at the end of iteration.
+		 * Type: double
+		 */
 		trainingLoss?: number | null;
 	}
 	export interface IterationResultFormProperties {
@@ -4020,16 +4460,28 @@ export namespace MyNS {
 		/** Time taken to run the iteration in milliseconds. */
 		durationMs: FormControl<string | null | undefined>,
 
-		/** Loss computed on the eval data at the end of iteration. */
+		/**
+		 * Loss computed on the eval data at the end of iteration.
+		 * Type: double
+		 */
 		evalLoss: FormControl<number | null | undefined>,
 
-		/** Index of the iteration, 0 based. */
+		/**
+		 * Index of the iteration, 0 based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** Learn rate used for this iteration. */
+		/**
+		 * Learn rate used for this iteration.
+		 * Type: double
+		 */
 		learnRate: FormControl<number | null | undefined>,
 
-		/** Loss computed on the training data at the end of iteration. */
+		/**
+		 * Loss computed on the training data at the end of iteration.
+		 * Type: double
+		 */
 		trainingLoss: FormControl<number | null | undefined>,
 	}
 	export function CreateIterationResultFormGroup() {
@@ -4316,7 +4768,10 @@ export namespace MyNS {
 		/** [Optional] If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON. For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited GeoJSON: set to GEOJSON. */
 		jsonExtension?: string | null;
 
-		/** [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid. */
+		/**
+		 * [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBadRecords?: number | null;
 
 		/** [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify "\N", BigQuery interprets "\N" as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value. */
@@ -4346,7 +4801,10 @@ export namespace MyNS {
 		/** Allows the schema of the destination table to be updated as a side effect of the load job if a schema is autodetected or supplied in the job configuration. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable. */
 		schemaUpdateOptions?: Array<string>;
 
-		/** [Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. */
+		/**
+		 * [Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skipLeadingRows?: number | null;
 
 		/** [Optional] The format of the data files. For CSV files, specify "CSV". For datastore backups, specify "DATASTORE_BACKUP". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro, specify "AVRO". For parquet, specify "PARQUET". For orc, specify "ORC". The default value is CSV. */
@@ -4394,7 +4852,10 @@ export namespace MyNS {
 		/** [Optional] If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON. For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited GeoJSON: set to GEOJSON. */
 		jsonExtension: FormControl<string | null | undefined>,
 
-		/** [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid. */
+		/**
+		 * [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBadRecords: FormControl<number | null | undefined>,
 
 		/** [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify "\N", BigQuery interprets "\N" as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value. */
@@ -4415,7 +4876,10 @@ export namespace MyNS {
 		/** [Deprecated] The format of the schemaInline property. */
 		schemaInlineFormat: FormControl<string | null | undefined>,
 
-		/** [Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. */
+		/**
+		 * [Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skipLeadingRows: FormControl<number | null | undefined>,
 
 		/** [Optional] The format of the data files. For CSV files, specify "CSV". For datastore backups, specify "DATASTORE_BACKUP". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro, specify "AVRO". For parquet, specify "PARQUET". For orc, specify "ORC". The default value is CSV. */
@@ -4563,7 +5027,10 @@ export namespace MyNS {
 		/** [Optional] If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For standard SQL queries, this flag is ignored and results are never flattened. */
 		flattenResults?: boolean | null;
 
-		/** [Optional] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default. */
+		/**
+		 * [Optional] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBillingTier?: number | null;
 
 		/** [Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default. */
@@ -4621,7 +5088,10 @@ export namespace MyNS {
 		/** [Optional] If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For standard SQL queries, this flag is ignored and results are never flattened. */
 		flattenResults: FormControl<boolean | null | undefined>,
 
-		/** [Optional] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default. */
+		/**
+		 * [Optional] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBillingTier: FormControl<number | null | undefined>,
 
 		/** [Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default. */
@@ -4794,7 +5264,10 @@ export namespace MyNS {
 
 	export interface JobStatistics {
 
-		/** [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs. */
+		/**
+		 * [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
+		 * Type: double
+		 */
 		completionRatio?: number | null;
 		copy?: JobStatistics5;
 
@@ -4838,7 +5311,10 @@ export namespace MyNS {
 	}
 	export interface JobStatisticsFormProperties {
 
-		/** [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs. */
+		/**
+		 * [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
+		 * Type: double
+		 */
 		completionRatio: FormControl<number | null | undefined>,
 
 		/** [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs. */
@@ -4972,7 +5448,10 @@ export namespace MyNS {
 	export interface JobStatistics2 {
 		biEngineStatistics?: BiEngineStatistics;
 
-		/** [Output only] Billing tier for the job. */
+		/**
+		 * [Output only] Billing tier for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		billingTier?: number | null;
 
 		/** [Output only] Whether the query result was fetched from the query cache. */
@@ -4995,7 +5474,10 @@ export namespace MyNS {
 		mlStatistics?: MlStatistics;
 		modelTraining?: BigQueryModelTraining;
 
-		/** [Output only, Beta] Deprecated; do not use. */
+		/**
+		 * [Output only, Beta] Deprecated; do not use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelTrainingCurrentIteration?: number | null;
 
 		/** [Output only, Beta] Deprecated; do not use. */
@@ -5048,7 +5530,10 @@ export namespace MyNS {
 	}
 	export interface JobStatistics2FormProperties {
 
-		/** [Output only] Billing tier for the job. */
+		/**
+		 * [Output only] Billing tier for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		billingTier: FormControl<number | null | undefined>,
 
 		/** [Output only] Whether the query result was fetched from the query cache. */
@@ -5063,7 +5548,10 @@ export namespace MyNS {
 		/** [Output only] The original estimate of bytes processed for the job. */
 		estimatedBytesProcessed: FormControl<string | null | undefined>,
 
-		/** [Output only, Beta] Deprecated; do not use. */
+		/**
+		 * [Output only, Beta] Deprecated; do not use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelTrainingCurrentIteration: FormControl<number | null | undefined>,
 
 		/** [Output only, Beta] Deprecated; do not use. */
@@ -5387,19 +5875,31 @@ export namespace MyNS {
 
 	export interface ScriptStackFrame {
 
-		/** [Output-only] One-based end column. */
+		/**
+		 * [Output-only] One-based end column.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endColumn?: number | null;
 
-		/** [Output-only] One-based end line. */
+		/**
+		 * [Output-only] One-based end line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endLine?: number | null;
 
 		/** [Output-only] Name of the active procedure, empty if in a top-level script. */
 		procedureId?: string | null;
 
-		/** [Output-only] One-based start column. */
+		/**
+		 * [Output-only] One-based start column.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumn?: number | null;
 
-		/** [Output-only] One-based start line. */
+		/**
+		 * [Output-only] One-based start line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startLine?: number | null;
 
 		/** [Output-only] Text of the current statement/expression. */
@@ -5407,19 +5907,31 @@ export namespace MyNS {
 	}
 	export interface ScriptStackFrameFormProperties {
 
-		/** [Output-only] One-based end column. */
+		/**
+		 * [Output-only] One-based end column.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endColumn: FormControl<number | null | undefined>,
 
-		/** [Output-only] One-based end line. */
+		/**
+		 * [Output-only] One-based end line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endLine: FormControl<number | null | undefined>,
 
 		/** [Output-only] Name of the active procedure, empty if in a top-level script. */
 		procedureId: FormControl<string | null | undefined>,
 
-		/** [Output-only] One-based start column. */
+		/**
+		 * [Output-only] One-based start column.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumn: FormControl<number | null | undefined>,
 
-		/** [Output-only] One-based start line. */
+		/**
+		 * [Output-only] One-based start line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startLine: FormControl<number | null | undefined>,
 
 		/** [Output-only] Text of the current statement/expression. */
@@ -6379,7 +6891,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -6389,7 +6904,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -6404,13 +6922,22 @@ export namespace MyNS {
 	/** Principal component infos, used only for eigen decomposition based models, e.g., PCA. Ordered by explained_variance in the descending order. */
 	export interface PrincipalComponentInfo {
 
-		/** The explained_variance is pre-ordered in the descending order to compute the cumulative explained variance ratio. */
+		/**
+		 * The explained_variance is pre-ordered in the descending order to compute the cumulative explained variance ratio.
+		 * Type: double
+		 */
 		cumulativeExplainedVarianceRatio?: number | null;
 
-		/** Explained variance by this principal component, which is simply the eigenvalue. */
+		/**
+		 * Explained variance by this principal component, which is simply the eigenvalue.
+		 * Type: double
+		 */
 		explainedVariance?: number | null;
 
-		/** Explained_variance over the total explained variance. */
+		/**
+		 * Explained_variance over the total explained variance.
+		 * Type: double
+		 */
 		explainedVarianceRatio?: number | null;
 
 		/** Id of the principal component. */
@@ -6420,13 +6947,22 @@ export namespace MyNS {
 	/** Principal component infos, used only for eigen decomposition based models, e.g., PCA. Ordered by explained_variance in the descending order. */
 	export interface PrincipalComponentInfoFormProperties {
 
-		/** The explained_variance is pre-ordered in the descending order to compute the cumulative explained variance ratio. */
+		/**
+		 * The explained_variance is pre-ordered in the descending order to compute the cumulative explained variance ratio.
+		 * Type: double
+		 */
 		cumulativeExplainedVarianceRatio: FormControl<number | null | undefined>,
 
-		/** Explained variance by this principal component, which is simply the eigenvalue. */
+		/**
+		 * Explained variance by this principal component, which is simply the eigenvalue.
+		 * Type: double
+		 */
 		explainedVariance: FormControl<number | null | undefined>,
 
-		/** Explained_variance over the total explained variance. */
+		/**
+		 * Explained_variance over the total explained variance.
+		 * Type: double
+		 */
 		explainedVarianceRatio: FormControl<number | null | undefined>,
 
 		/** Id of the principal component. */
@@ -6473,7 +7009,10 @@ export namespace MyNS {
 		/** Projects to which you have at least READ access. */
 		ProjectListProjects?: Array<ProjectListProjects>;
 
-		/** The total number of projects in the list. */
+		/**
+		 * The total number of projects in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface ProjectListFormProperties {
@@ -6487,7 +7026,10 @@ export namespace MyNS {
 		/** A token to request the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of projects in the list. */
+		/**
+		 * The total number of projects in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectListFormGroup() {
@@ -6583,7 +7125,10 @@ export namespace MyNS {
 		/** The geographic location where the job should run. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location. */
 		location?: string | null;
 
-		/** [Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies. */
+		/**
+		 * [Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxResults?: number | null;
 
 		/** [Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default. */
@@ -6604,7 +7149,10 @@ export namespace MyNS {
 		/** A unique user provided identifier to ensure idempotent behavior for queries. Note that this is different from the job_id. It has the following properties: 1. It is case-sensitive, limited to up to 36 ASCII characters. A UUID is recommended. 2. Read only queries can ignore this token since they are nullipotent by definition. 3. For the purposes of idempotency ensured by the request_id, a request is considered duplicate of another only if they have the same request_id and are actually duplicates. When determining whether a request is a duplicate of the previous request, all parameters in the request that may affect the behavior are considered. For example, query, connection_properties, query_parameters, use_legacy_sql are parameters that affect the result and are considered when determining whether a request is a duplicate, but properties like timeout_ms don't affect the result and are thus not considered. Dry run query requests are never considered duplicate of another request. 4. When a duplicate mutating query request is detected, it returns: a. the results of the mutation if it completes successfully within the timeout. b. the running operation if it is still in progress at the end of the timeout. 5. Its lifetime is limited to 15 minutes. In other words, if two requests are sent with the same request_id, but more than 15 minutes apart, idempotency is not guaranteed. */
 		requestId?: string | null;
 
-		/** [Optional] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the 'jobComplete' flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds). */
+		/**
+		 * [Optional] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the 'jobComplete' flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		timeoutMs?: number | null;
 
 		/** Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false. */
@@ -6636,7 +7184,10 @@ export namespace MyNS {
 		/** The geographic location where the job should run. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location. */
 		location: FormControl<string | null | undefined>,
 
-		/** [Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies. */
+		/**
+		 * [Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** [Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default. */
@@ -6654,7 +7205,10 @@ export namespace MyNS {
 		/** A unique user provided identifier to ensure idempotent behavior for queries. Note that this is different from the job_id. It has the following properties: 1. It is case-sensitive, limited to up to 36 ASCII characters. A UUID is recommended. 2. Read only queries can ignore this token since they are nullipotent by definition. 3. For the purposes of idempotency ensured by the request_id, a request is considered duplicate of another only if they have the same request_id and are actually duplicates. When determining whether a request is a duplicate of the previous request, all parameters in the request that may affect the behavior are considered. For example, query, connection_properties, query_parameters, use_legacy_sql are parameters that affect the result and are considered when determining whether a request is a duplicate, but properties like timeout_ms don't affect the result and are thus not considered. Dry run query requests are never considered duplicate of another request. 4. When a duplicate mutating query request is detected, it returns: a. the results of the mutation if it completes successfully within the timeout. b. the running operation if it is still in progress at the end of the timeout. 5. Its lifetime is limited to 15 minutes. In other words, if two requests are sent with the same request_id, but more than 15 minutes apart, idempotency is not guaranteed. */
 		requestId: FormControl<string | null | undefined>,
 
-		/** [Optional] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the 'jobComplete' flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds). */
+		/**
+		 * [Optional] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the 'jobComplete' flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		timeoutMs: FormControl<number | null | undefined>,
 
 		/** Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false. */
@@ -7266,12 +7820,18 @@ export namespace MyNS {
 		/** Error information for the row indicated by the index property. */
 		errors?: Array<ErrorProto>;
 
-		/** The index of the row that error applies to. */
+		/**
+		 * The index of the row that error applies to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		index?: number | null;
 	}
 	export interface TableDataInsertAllResponseInsertErrorsFormProperties {
 
-		/** The index of the row that error applies to. */
+		/**
+		 * The index of the row that error applies to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateTableDataInsertAllResponseInsertErrorsFormGroup() {
@@ -7336,7 +7896,10 @@ export namespace MyNS {
 		/** Tables in the requested dataset. */
 		TableListTables?: Array<TableListTables>;
 
-		/** The total number of tables in the dataset. */
+		/**
+		 * The total number of tables in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface TableListFormProperties {
@@ -7350,7 +7913,10 @@ export namespace MyNS {
 		/** A token to request the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of tables in the dataset. */
+		/**
+		 * The total number of tables in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateTableListFormGroup() {
@@ -7515,6 +8081,7 @@ export namespace MyNS {
 		 * Lists all projects to which you have been granted any project role.
 		 * Get projects
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {ProjectList} Successful response
 		 */
@@ -7529,6 +8096,7 @@ export namespace MyNS {
 		 * @param {boolean} all Whether to list all datasets, including hidden ones
 		 * @param {string} filter An expression for filtering the results of the request by label. The syntax is "labels.<name>[:<value>]". Multiple filters can be ANDed together by connecting with a space. Example: "labels.department:receiving labels.active". See Filtering datasets using labels for details.
 		 * @param {number} maxResults The maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {DatasetList} Successful response
 		 */
@@ -7598,6 +8166,7 @@ export namespace MyNS {
 		 * @param {string} projectId Required. Project ID of the models to list.
 		 * @param {string} datasetId Required. Dataset ID of the models to list.
 		 * @param {number} maxResults The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call to request the next page of results
 		 * @return {ListModelsResponse} Successful response
 		 */
@@ -7648,6 +8217,7 @@ export namespace MyNS {
 		 * @param {string} datasetId Required. Dataset ID of the routines to list
 		 * @param {string} filter If set, then only the Routines matching this filter are returned. The supported format is `routineType:{RoutineType}`, where `{RoutineType}` is a RoutineType enum. For example: `routineType:SCALAR_FUNCTION`.
 		 * @param {number} maxResults The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @param {string} readMask If set, then only the Routine fields in the field mask, as well as project_id, dataset_id and routine_id, are returned in the response. If unset, then the following Routine fields are returned: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, and language.
 		 * @return {ListRoutinesResponse} Successful response
@@ -7710,6 +8280,7 @@ export namespace MyNS {
 		 * @param {string} projectId Project ID of the tables to list
 		 * @param {string} datasetId Dataset ID of the tables to list
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {TableList} Successful response
 		 */
@@ -7787,6 +8358,7 @@ export namespace MyNS {
 		 * @param {string} datasetId Dataset ID of the table to read
 		 * @param {string} tableId Table ID of the table to read
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, identifying the result set
 		 * @param {string} selectedFields List of fields to return (comma-separated). If unspecified, all fields are returned
 		 * @param {string} startIndex Zero-based index of the starting row to read
@@ -7815,6 +8387,7 @@ export namespace MyNS {
 		 * @param {string} datasetId Required. Dataset ID of row access policies to list.
 		 * @param {string} tableId Required. Table ID of the table to list row access policies.
 		 * @param {number} pageSize The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results.
 		 * @return {ListRowAccessPoliciesResponse} Successful response
 		 */
@@ -7829,6 +8402,7 @@ export namespace MyNS {
 		 * @param {boolean} allUsers Whether to display jobs owned by all users in the project. Default false
 		 * @param {string} maxCreationTime Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} minCreationTime Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @param {string} parentJobId If set, retrieves only jobs whose parent is this job. Otherwise, retrieves only jobs which have no parent
@@ -7893,9 +8467,11 @@ export namespace MyNS {
 		 * @param {string} jobId [Required] Job ID of the query job
 		 * @param {string} location The geographic location where the job should run. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
 		 * @param {number} maxResults Maximum number of results to read
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @param {string} startIndex Zero-based index of the starting row
 		 * @param {number} timeoutMs How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetQueryResultsResponse} Successful response
 		 */
 		Bigquery_jobs_getQueryResults(projectId: string, jobId: string, location: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startIndex: string | null | undefined, timeoutMs: number | null | undefined): Observable<GetQueryResultsResponse> {

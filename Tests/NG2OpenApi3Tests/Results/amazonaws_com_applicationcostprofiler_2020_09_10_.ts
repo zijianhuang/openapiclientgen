@@ -403,6 +403,7 @@ export namespace MyNS {
 		 * Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.
 		 * Delete reportDefinition/{reportId}
 		 * @param {string} reportId Required. ID of the report to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteReportDefinitionResult} Success
 		 */
 		DeleteReportDefinition(reportId: string): Observable<DeleteReportDefinitionResult> {
@@ -413,6 +414,7 @@ export namespace MyNS {
 		 * Retrieves the definition of a report already configured in AWS Application Cost Profiler.
 		 * Get reportDefinition/{reportId}
 		 * @param {string} reportId ID of the report to retrieve.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetReportDefinitionResult} Success
 		 */
 		GetReportDefinition(reportId: string): Observable<GetReportDefinitionResult> {
@@ -423,6 +425,7 @@ export namespace MyNS {
 		 * Updates existing report in AWS Application Cost Profiler.
 		 * Put reportDefinition/{reportId}
 		 * @param {string} reportId Required. ID of the report to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateReportDefinitionResult} Success
 		 */
 		UpdateReportDefinition(reportId: string, requestBody: UpdateReportDefinitionPutBody): Observable<UpdateReportDefinitionResult> {
@@ -442,7 +445,9 @@ export namespace MyNS {
 		 * <p>Retrieves a list of all reports and their configurations for your AWS account.</p> <p>The maximum number of reports is one.</p>
 		 * Get reportDefinition
 		 * @param {string} nextToken The token value from a previous call to access the next page of results.
+		 *     Min length: 1    Max length: 102400
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListReportDefinitionsResult} Success
 		 */
 		ListReportDefinitions(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListReportDefinitionsResult> {
@@ -464,8 +469,8 @@ export namespace MyNS {
 		/**
 		 * Required. Description of the report.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		reportDescription: string;
 
@@ -492,8 +497,8 @@ export namespace MyNS {
 		/**
 		 * Required. Description of the report.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		reportDescription: FormControl<string | null | undefined>,
 
@@ -574,16 +579,16 @@ export namespace MyNS {
 		/**
 		 * Required. ID of the report. You can choose any valid string matching the pattern for the ID.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		reportId: string;
 
 		/**
 		 * Required. Description of the report.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		reportDescription: string;
 
@@ -610,16 +615,16 @@ export namespace MyNS {
 		/**
 		 * Required. ID of the report. You can choose any valid string matching the pattern for the ID.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		reportId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required. Description of the report.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		reportDescription: FormControl<string | null | undefined>,
 

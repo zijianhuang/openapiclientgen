@@ -3312,7 +3312,9 @@ export namespace MyNS {
 		 * Returns an array of staging accounts for existing extended source servers.
 		 * Get ListStagingAccounts
 		 * @param {number} maxResults The maximum number of staging Accounts to retrieve.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The token of the next staging Account to retrieve.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListStagingAccountsResponse} Success
 		 */
 		ListStagingAccounts(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListStagingAccountsResponse> {
@@ -3323,6 +3325,7 @@ export namespace MyNS {
 		 * List all tags for your Elastic Disaster Recovery resources.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource whose tags should be returned.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3333,6 +3336,7 @@ export namespace MyNS {
 		 * Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn ARN of the resource for which tags are to be added or updated.
+		 *     Min length: 20    Max length: 2048
 		 * @return {void} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -3442,6 +3446,7 @@ export namespace MyNS {
 		 * Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn ARN of the resource for which tags are to be removed.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys Array of tags to be removed.
 		 * @return {void} Success
 		 */
@@ -3500,16 +3505,16 @@ export namespace MyNS {
 		/**
 		 * CloudFormation template to associate with a Source Network.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		cfnStackName: string;
 
 		/**
 		 * The Source Network ID to associate with CloudFormation template.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: string;
 	}
@@ -3518,16 +3523,16 @@ export namespace MyNS {
 		/**
 		 * CloudFormation template to associate with a Source Network.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		cfnStackName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Source Network ID to associate with CloudFormation template.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: FormControl<string | null | undefined>,
 	}
@@ -3544,8 +3549,8 @@ export namespace MyNS {
 		/**
 		 * This defines the ARN of the source server in staging Account based on which you want to create an extended source server.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		sourceServerArn: string;
 
@@ -3557,8 +3562,8 @@ export namespace MyNS {
 		/**
 		 * This defines the ARN of the source server in staging Account based on which you want to create an extended source server.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		sourceServerArn: FormControl<string | null | undefined>,
 
@@ -3583,8 +3588,8 @@ export namespace MyNS {
 
 		/**
 		 * S3 bucket ARN to export Source Network templates.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		exportBucketArn?: string | null;
 
@@ -3610,8 +3615,8 @@ export namespace MyNS {
 
 		/**
 		 * S3 bucket ARN to export Source Network templates.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		exportBucketArn: FormControl<string | null | undefined>,
 
@@ -3693,8 +3698,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
@@ -3709,8 +3714,8 @@ export namespace MyNS {
 		/**
 		 * The instance type to be used for the replication server.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: string;
 
@@ -3725,8 +3730,8 @@ export namespace MyNS {
 		/**
 		 * The subnet to be used by the replication staging area.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: string;
 
@@ -3789,24 +3794,24 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The instance type to be used for the replication server.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * The subnet to be used by the replication staging area.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 
@@ -3849,16 +3854,16 @@ export namespace MyNS {
 		/**
 		 * Account containing the VPC to protect.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		originAccountID: string;
 
 		/**
 		 * Region containing the VPC to protect.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		originRegion: string;
 
@@ -3868,8 +3873,8 @@ export namespace MyNS {
 		/**
 		 * Which VPC ID to protect.
 		 * Required
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		vpcID: string;
 	}
@@ -3878,16 +3883,16 @@ export namespace MyNS {
 		/**
 		 * Account containing the VPC to protect.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		originAccountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Region containing the VPC to protect.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		originRegion: FormControl<string | null | undefined>,
 
@@ -3897,8 +3902,8 @@ export namespace MyNS {
 		/**
 		 * Which VPC ID to protect.
 		 * Required
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		vpcID: FormControl<string | null | undefined>,
 	}
@@ -3917,8 +3922,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Job to be deleted.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: string;
 	}
@@ -3927,8 +3932,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Job to be deleted.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: FormControl<string | null | undefined>,
 	}
@@ -3944,8 +3949,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Launch Configuration Template to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 	}
@@ -3954,8 +3959,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Launch Configuration Template to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 	}
@@ -3971,8 +3976,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance to be deleted.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 	}
@@ -3981,8 +3986,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance to be deleted.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 	}
@@ -3998,8 +4003,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Replication Configuration Template to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: string;
 	}
@@ -4008,8 +4013,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Replication Configuration Template to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: FormControl<string | null | undefined>,
 	}
@@ -4025,8 +4030,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to delete.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: string;
 	}
@@ -4035,8 +4040,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to delete.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: FormControl<string | null | undefined>,
 	}
@@ -4052,8 +4057,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to be deleted.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4062,8 +4067,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to be deleted.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4079,8 +4084,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Job for which Job log items will be retrieved.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: string;
 
@@ -4092,8 +4097,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Job log items to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4102,8 +4107,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Job for which Job log items will be retrieved.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: FormControl<string | null | undefined>,
 
@@ -4115,8 +4120,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Job log items to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4142,8 +4147,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Job to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4157,8 +4162,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Job to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4205,8 +4210,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Launch Configuration Template to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4221,8 +4226,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Launch Configuration Template to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4247,8 +4252,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Recovery Instance to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4262,8 +4267,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Recovery Instance to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4300,8 +4305,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Recovery Snapshot to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -4311,8 +4316,8 @@ export namespace MyNS {
 		/**
 		 * Filter Recovery Snapshots by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4326,8 +4331,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Recovery Snapshot to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -4337,8 +4342,8 @@ export namespace MyNS {
 		/**
 		 * Filter Recovery Snapshots by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4378,8 +4383,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Replication Configuration Template to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -4400,8 +4405,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Replication Configuration Template to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4426,8 +4431,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Source Networks to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4441,8 +4446,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Source Networks to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4484,8 +4489,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Source Server to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -4499,8 +4504,8 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next Source Server to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4532,8 +4537,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance to disconnect.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 	}
@@ -4542,8 +4547,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance to disconnect.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 	}
@@ -4559,8 +4564,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to disconnect.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4569,8 +4574,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to disconnect.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4586,8 +4591,8 @@ export namespace MyNS {
 		/**
 		 * The Source Network ID to export its CloudFormation template to an S3 bucket.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: string;
 	}
@@ -4596,8 +4601,8 @@ export namespace MyNS {
 		/**
 		 * The Source Network ID to export its CloudFormation template to an S3 bucket.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: FormControl<string | null | undefined>,
 	}
@@ -4613,8 +4618,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance whose failback replication configuration should be returned.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 	}
@@ -4623,8 +4628,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance whose failback replication configuration should be returned.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 	}
@@ -4640,8 +4645,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4650,8 +4655,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4667,8 +4672,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Serve for this Replication Configuration.r
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4677,8 +4682,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Serve for this Replication Configuration.r
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4700,16 +4705,16 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next extensible source server to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * The Id of the staging Account to retrieve extensible source servers from.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		stagingAccountID: string;
 	}
@@ -4724,16 +4729,16 @@ export namespace MyNS {
 
 		/**
 		 * The token of the next extensible source server to retrieve.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Id of the staging Account to retrieve extensible source servers from.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		stagingAccountID: FormControl<string | null | undefined>,
 	}
@@ -4774,8 +4779,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server whose data replication should be retried.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4784,8 +4789,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server whose data replication should be retried.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4801,8 +4806,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance that we want to reverse the replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 	}
@@ -4811,8 +4816,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance that we want to reverse the replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 	}
@@ -4885,8 +4890,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to start replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4895,8 +4900,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to start replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4944,8 +4949,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to replicate.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: string;
 	}
@@ -4954,8 +4959,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to replicate.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: FormControl<string | null | undefined>,
 	}
@@ -4971,8 +4976,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance we want to stop failback for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 	}
@@ -4981,8 +4986,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Recovery Instance we want to stop failback for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 	}
@@ -4998,8 +5003,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to stop replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -5008,8 +5013,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server to stop replication for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -5025,8 +5030,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to stop replication.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: string;
 	}
@@ -5035,8 +5040,8 @@ export namespace MyNS {
 		/**
 		 * ID of the Source Network to stop replication.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		sourceNetworkID: FormControl<string | null | undefined>,
 	}
@@ -5075,16 +5080,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Failback Replication Configuration.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name?: string | null;
 
 		/**
 		 * The ID of the Recovery Instance.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: string;
 
@@ -5101,16 +5106,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Failback Replication Configuration.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Recovery Instance.
 		 * Required
-		 * Max length: 19
 		 * Min length: 10
+		 * Max length: 19
 		 */
 		recoveryInstanceID: FormControl<string | null | undefined>,
 
@@ -5143,16 +5148,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the launch configuration.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 
@@ -5172,16 +5177,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the launch configuration.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 
@@ -5223,16 +5228,16 @@ export namespace MyNS {
 
 		/**
 		 * S3 bucket ARN to export Source Network templates.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		exportBucketArn?: string | null;
 
 		/**
 		 * Launch Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 
@@ -5255,16 +5260,16 @@ export namespace MyNS {
 
 		/**
 		 * S3 bucket ARN to export Source Network templates.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		exportBucketArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Launch Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 
@@ -5327,15 +5332,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
 		/**
 		 * The name of the Replication Configuration.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -5355,8 +5360,8 @@ export namespace MyNS {
 
 		/**
 		 * The instance type to be used for the replication server.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType?: string | null;
 
@@ -5370,15 +5375,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the Source Server for this Replication Configuration.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 
 		/**
 		 * The subnet to be used by the replication staging area.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId?: string | null;
 
@@ -5416,37 +5421,37 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Replication Configuration.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The instance type to be used for the replication server.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Source Server for this Replication Configuration.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 
 		/**
 		 * The subnet to be used by the replication staging area.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 
@@ -5480,8 +5485,8 @@ export namespace MyNS {
 
 		/**
 		 * The Replication Configuration Template ARN.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		arn?: string | null;
 
@@ -5511,8 +5516,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
@@ -5526,15 +5531,15 @@ export namespace MyNS {
 		/**
 		 * The Replication Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: string;
 
 		/**
 		 * The instance type to be used for the replication server.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType?: string | null;
 
@@ -5547,8 +5552,8 @@ export namespace MyNS {
 
 		/**
 		 * The subnet to be used by the replication staging area.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId?: string | null;
 
@@ -5562,8 +5567,8 @@ export namespace MyNS {
 
 		/**
 		 * The Replication Configuration Template ARN.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		arn: FormControl<string | null | undefined>,
 
@@ -5593,30 +5598,30 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the EBS encryption key to be used during replication.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Replication Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: FormControl<string | null | undefined>,
 
 		/**
 		 * The instance type to be used for the replication server.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * The subnet to be used by the replication staging area.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 

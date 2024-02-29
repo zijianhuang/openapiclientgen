@@ -12,9 +12,11 @@ export namespace MyNS {
 		 * Additional Data
 		 * Get search/{versionNumber}/additionalData.{ext}
 		 * @param {Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomExt} ext Expected response format.
 		 * @param {string} geometries Comma separated list of geometry UUIDs, previously retrieved from an Search API request.
 		 * @param {Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomGeometriesZoom} geometriesZoom Defines the precision of the geometries.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK: additional data were retrieved and the body of the response contains requested data.
 		 */
 		Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoom(versionNumber: Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomVersionNumber, ext: Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomExt, geometries: string, geometriesZoom: Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomGeometriesZoom | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -25,17 +27,23 @@ export namespace MyNS {
 		 * Low Bandwith Category Search
 		 * Get search/{versionNumber}/cS/{category}.{ext}
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} category Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -57,17 +65,23 @@ export namespace MyNS {
 		 * Category Search
 		 * Get search/{versionNumber}/categorySearch/{query}.{ext}
 		 * @param {Search_versionNumberCategorySearch_query__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -89,18 +103,24 @@ export namespace MyNS {
 		 * Geocode
 		 * Get search/{versionNumber}/geocode/{query}.{ext}
 		 * @param {Search_versionNumberGeocode_query__extGetByStoreResultAndTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} storeResult If the "storeResult" flag is set, the query will be interpreted as a stored geocode and will be billed according to the terms of use.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -122,6 +142,7 @@ export namespace MyNS {
 		 * Geometry Filter
 		 * Get search/{versionNumber}/geometryFilter.{ext}
 		 * @param {Search_versionNumberGeometryFilter__extGetByGeometryListAndPoiListVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {string} geometryList List of geometries to filter by. Available types are CIRCLE (with the radius expressed in meters) and POLYGON.
 		 * @param {string} poiList List of POIs to filter. The only required attribute of a POI is position, everything else is optional and will be echoed back when passed in.
@@ -135,6 +156,7 @@ export namespace MyNS {
 		 * Geometry Filter
 		 * Post search/{versionNumber}/geometryFilter.{ext}
 		 * @param {Search_versionNumberGeometryFilter__extPostVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @return {void} OK: the search successfully returned zero or more results.
 		 */
@@ -146,10 +168,12 @@ export namespace MyNS {
 		 * Geometry Search
 		 * Get search/{versionNumber}/geometrySearch/{query}.{ext}
 		 * @param {Search_versionNumberGeometrySearch_query__extGetByGeometryListAndLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {string} geometryList List of geometries to filter by. Available types are CIRCLE (with the radius expressed in meters) and POLYGON.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
 		 * @param {string} extendedPostalCodesFor Indexes for which extended postal codes should be included in the results. Available indexes are:
 		 *   - <b>Addr</b> = Address ranges
@@ -175,9 +199,11 @@ export namespace MyNS {
 		 * Geometry Search
 		 * Post search/{versionNumber}/geometrySearch/{query}.{ext}
 		 * @param {Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
 		 * @param {string} extendedPostalCodesFor Indexes for which extended postal codes should be included in the results. Available indexes are:
 		 *   - <b>Addr</b> = Address ranges
@@ -203,15 +229,21 @@ export namespace MyNS {
 		 * Nearby Search
 		 * Get search/{versionNumber}/nearbySearch/.{ext}
 		 * @param {Search_versionNumberNearbySearch__extGetByLatAndLonAndLimitAndOfsAndCountrySetAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndMinFuzzyLevelAndMaxFuzzyLevelAndIdxSetAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} radius If radius and position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Maximum: 50000
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -223,7 +255,9 @@ export namespace MyNS {
 		 *   - <b>Str</b> = Streets
 		 *   - <b>XStr</b> = Cross Streets (intersections)
 		 * @param {number} minFuzzyLevel Minimum fuzziness level to be used.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {number} maxFuzzyLevel Maximum fuzziness level to be used.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {string} idxSet A comma separated list of indexes which should be utilized for the search. Item order does not matter. Available indexes are:
 		 *   - <b>Addr</b> = Address range interpolation (when there is no PAD)
 		 *   - <b>Geo</b> = Geographies
@@ -242,17 +276,23 @@ export namespace MyNS {
 		 * Points of Interest Search
 		 * Get search/{versionNumber}/poiSearch/{query}.{ext}
 		 * @param {Search_versionNumberPoiSearch_query__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -274,12 +314,16 @@ export namespace MyNS {
 		 * Cross Street lookup
 		 * Get search/{versionNumber}/reverseGeocode/crossStreet/{position}.{ext}
 		 * @param {Search_versionNumberReverseGeocodeCrossStreet_position__extGetByLimitAndSpatialKeysAndHeadingAndRadiusAndLanguageVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} position This is specified as a comma separated string composed of lat., lon.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {number} limit Maximum number of cross-streets to return.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {boolean} spatialKeys If the "spatialKeys" flag is set, the response will also contain a proprietary geospatial keys for a specified location.
 		 * @param {number} heading The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)
+		 *     Type: float
 		 * @param {number} radius The maximum distance in meters from the specified position for the reverse geocoder to consider.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
 		 * @return {void} OK: the search successfully returned zero or more results.
 		 */
@@ -291,12 +335,15 @@ export namespace MyNS {
 		 * Reverse Geocode
 		 * Get search/{versionNumber}/reverseGeocode/{position}.{ext}
 		 * @param {Search_versionNumberReverseGeocode_position__extGetBySpatialKeysAndReturnSpeedLimitAndHeadingAndRadiusAndNumberAndReturnRoadUseAndRoadUseAndCallbackVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} position This is specified as a comma separated string composed of lat., lon.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} spatialKeys If the "spatialKeys" flag is set, the response will also contain a proprietary geospatial keys for a specified location.
 		 * @param {boolean} returnSpeedLimit To enable return of the posted speed limit (where available).
 		 * @param {number} heading The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)
+		 *     Type: float
 		 * @param {number} radius The maximum distance in meters from the specified position for the reverse geocoder to consider.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} number If a number is sent in along with the request, the response may include the side of the street (Left/Right) and an offset position for that number.
 		 * @param {boolean} returnRoadUse Enables return of the road use array for reverse geocodes at street level.
 		 * @param {string} roadUse Restricts reverse geocodes to a certain type of road use. The road use array for reverse geocodes can be one or more of: ["LimitedAccess", "Arterial", "Terminal", "Ramp", "Rotary", "LocalStreet"].
@@ -311,11 +358,14 @@ export namespace MyNS {
 		 * Routed Filter
 		 * Get search/{versionNumber}/routedFilter/{position}/{heading}.{ext}
 		 * @param {Search_versionNumberRoutedFilter_position_heading__extGetByPoiListAndRoutingTimeoutVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} position This is specified as a comma separated string composed of lat., lon.
 		 * @param {number} heading The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)
+		 *     Type: float
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {string} poiList List of POIs to filter. The only required attribute of a POI is position, everything else is optional and will be echoed back when passed in.
 		 * @param {number} routingTimeout Only return results that arrive from routing engine within this time limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK: the search successfully returned zero or more results.
 		 */
 		Search_versionNumberRoutedFilter_position_heading__extGetByPoiListAndRoutingTimeout(versionNumber: Search_versionNumberRoutedFilter_position_heading__extGetByPoiListAndRoutingTimeoutVersionNumber, position: string, heading: number, ext: Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt, poiList: string, routingTimeout: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -326,10 +376,13 @@ export namespace MyNS {
 		 * Routed Filter
 		 * Post search/{versionNumber}/routedFilter/{position}/{heading}.{ext}
 		 * @param {Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} position This is specified as a comma separated string composed of lat., lon.
 		 * @param {number} heading The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)
+		 *     Type: float
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {number} routingTimeout Only return results that arrive from routing engine within this time limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK: the search successfully returned zero or more results.
 		 */
 		Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeout(versionNumber: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutVersionNumber, position: string, heading: number, ext: Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt, routingTimeout: number | null | undefined, requestBody: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -340,14 +393,19 @@ export namespace MyNS {
 		 * Routed Search
 		 * Get search/{versionNumber}/routedSearch/{query}/{position}/{heading}.{ext}
 		 * @param {Search_versionNumberRoutedSearch_query_position_heading__extGetByTypeaheadAndLimitAndMultiplierAndRoutingTimeoutAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {string} position This is specified as a comma separated string composed of lat., lon.
 		 * @param {number} heading The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)
+		 *     Type: float
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} multiplier Multiplies the limit by N to gather more candidate POIs, which will then be sorted by drive distance, returning only the top candidates according to the limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} routingTimeout Only return results that arrive from routing engine within this time limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
 		 * @param {string} extendedPostalCodesFor Indexes for which extended postal codes should be included in the results. Available indexes are:
 		 *   - <b>Addr</b> = Address ranges
@@ -373,17 +431,23 @@ export namespace MyNS {
 		 * Low bandwith Search
 		 * Get search/{versionNumber}/s/{query}.{ext}
 		 * @param {Search_versionNumberS_query__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -405,18 +469,24 @@ export namespace MyNS {
 		 * Fuzzy Search
 		 * Get search/{versionNumber}/search/{query}.{ext}
 		 * @param {Search_versionNumberSearch_query__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndMinFuzzyLevelAndMaxFuzzyLevelAndIdxSetAndViewVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * To perform a reverse geocode, the user can provide latitude and longitude coordinates directly in the query. More information can be found <a href="/search-api/search-api-documentation-search/fuzzy-search#AdditionalInfo">here</a>.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {boolean} typeahead If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} countrySet Comma separated string of country codes. This will limit the search to the specified countries.
 		 * @param {number} lat Latitude where results should be biased.
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} lon Longitude where results should be biased
 		 * NOTE: supplying a lat/lon without a radius will return search results biased to that point.
+		 *     Type: float
 		 * @param {number} radius If radius <b>and</b> position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topLeft Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} btmRight Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.
 		 * @param {string} language Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.
@@ -428,7 +498,9 @@ export namespace MyNS {
 		 *   - <b>Str</b> = Streets
 		 *   - <b>XStr</b> = Cross Streets (intersections)
 		 * @param {number} minFuzzyLevel Minimum fuzziness level to be used.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {number} maxFuzzyLevel Maximum fuzziness level to be used.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {string} idxSet A comma separated list of indexes which should be utilized for the search. Item order does not matter. Available indexes are:
 		 *   - <b>Addr</b> = Address range interpolation (when there is no PAD)
 		 *   - <b>Geo</b> = Geographies
@@ -447,10 +519,13 @@ export namespace MyNS {
 		 * Along Route Search
 		 * Post search/{versionNumber}/searchAlongRoute/{query}.{ext}
 		 * @param {Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Query string. Must be properly URL encoded.
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {number} maxDetourTime Maximum detour time
+		 *     Maximum: 3600
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @return {void} OK: the search successfully returned zero or more results.
 		 */
 		Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimit(versionNumber: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber, query: string, ext: Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt, maxDetourTime: number, limit: number | null | undefined, requestBody: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -461,10 +536,13 @@ export namespace MyNS {
 		 * Structured Geocode
 		 * Get search/{versionNumber}/structuredGeocode.{ext}
 		 * @param {Search_versionNumberStructuredGeocode__extGetByCountryCodeAndLimitAndOfsAndStreetNumberAndStreetNameAndCrossStreetAndMunicipalityAndMunicipalitySubdivisionAndCountryTertiarySubdivisionAndCountrySecondarySubdivisionAndCountrySubdivisionAndPostalCodeAndLanguageAndExtendedPostalCodesForVersionNumber} versionNumber Service version number. The current value is 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt} ext Expected response format.
 		 * @param {string} countryCode 2 or 3 letter country code (e.g.: FR, ES).
 		 * @param {number} limit Maximum number of search results that will be returned.
+		 *     Maximum: 100
 		 * @param {number} ofs Starting offset of the returned results within the full result set.
+		 *     Maximum: 1900
 		 * @param {string} streetNumber The street number for the structured address.
 		 * @param {string} streetName The street name for the structured address.
 		 * @param {string} crossStreet The cross street name for the structured address.
@@ -523,12 +601,16 @@ export namespace MyNS {
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyGeometryList {
 		position?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		radius?: number | null;
 		type?: string | null;
 		vertices?: Array<string>;
 	}
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyGeometryListFormProperties {
 		position: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		radius: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -581,11 +663,19 @@ export namespace MyNS {
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiListPosition {
+
+		/** Type: float */
 		lat?: number | null;
+
+		/** Type: float */
 		lon?: number | null;
 	}
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiListPositionFormProperties {
+
+		/** Type: float */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyPoiListPositionFormGroup() {
@@ -613,12 +703,16 @@ export namespace MyNS {
 
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList {
 		position?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		radius?: number | null;
 		type?: string | null;
 		vertices?: Array<string>;
 	}
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryListFormProperties {
 		position: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		radius: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -694,11 +788,19 @@ export namespace MyNS {
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListPosition {
+
+		/** Type: float */
 		lat?: number | null;
+
+		/** Type: float */
 		lon?: number | null;
 	}
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListPositionFormProperties {
+
+		/** Type: float */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListPositionFormGroup() {
@@ -740,11 +842,19 @@ export namespace MyNS {
 	}
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints {
+
+		/** Type: float */
 		lat?: number | null;
+
+		/** Type: float */
 		lon?: number | null;
 	}
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePointsFormProperties {
+
+		/** Type: float */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePointsFormGroup() {

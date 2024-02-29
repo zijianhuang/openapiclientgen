@@ -643,8 +643,8 @@ export namespace MyNS {
 		/**
 		 * Value of the feature flag. See Azure SignalR service document https://docs.microsoft.com/azure/azure-signalr/ for allowed values.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		value: string;
 	}
@@ -666,8 +666,8 @@ export namespace MyNS {
 		/**
 		 * Value of the feature flag. See Azure SignalR service document https://docs.microsoft.com/azure/azure-signalr/ for allowed values.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		value: FormControl<string | null | undefined>,
 	}

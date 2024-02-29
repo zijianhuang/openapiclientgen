@@ -128,7 +128,10 @@ export namespace MyNS {
 		/** The URL of the container for pages in this blog. */
 		selfLink?: string | null;
 
-		/** The count of pages in this blog. */
+		/**
+		 * The count of pages in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface BlogPagesFormProperties {
@@ -136,7 +139,10 @@ export namespace MyNS {
 		/** The URL of the container for pages in this blog. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The count of pages in this blog. */
+		/**
+		 * The count of pages in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateBlogPagesFormGroup() {
@@ -155,7 +161,10 @@ export namespace MyNS {
 		/** The URL of the container for posts in this blog. */
 		selfLink?: string | null;
 
-		/** The count of posts in this blog. */
+		/**
+		 * The count of posts in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface BlogPostsFormProperties {
@@ -163,7 +172,10 @@ export namespace MyNS {
 		/** The URL of the container for posts in this blog. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The count of posts in this blog. */
+		/**
+		 * The count of posts in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateBlogPostsFormGroup() {
@@ -383,10 +395,16 @@ export namespace MyNS {
 
 	export interface PostLocation {
 
-		/** Location's latitude. */
+		/**
+		 * Location's latitude.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Location's longitude. */
+		/**
+		 * Location's longitude.
+		 * Type: double
+		 */
 		lng?: number | null;
 
 		/** Location name. */
@@ -397,10 +415,16 @@ export namespace MyNS {
 	}
 	export interface PostLocationFormProperties {
 
-		/** Location's latitude. */
+		/**
+		 * Location's latitude.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Location's longitude. */
+		/**
+		 * Location's longitude.
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Location name. */
@@ -1276,6 +1300,7 @@ export namespace MyNS {
 		/**
 		 * Gets a blog by id.
 		 * Get v3/blogs/{blogId}
+		 * @param {number} maxPosts Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Blog} Successful response
 		 */
 		Blogger_blogs_get(blogId: string, maxPosts: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<Blog> {
@@ -1285,6 +1310,7 @@ export namespace MyNS {
 		/**
 		 * Lists comments by blog.
 		 * Get v3/blogs/{blogId}/comments
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentList} Successful response
 		 */
 		Blogger_comments_listByBlog(blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<CommentStatus> | null | undefined): Observable<CommentList> {
@@ -1294,6 +1320,7 @@ export namespace MyNS {
 		/**
 		 * Lists pages.
 		 * Get v3/blogs/{blogId}/pages
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PageList} Successful response
 		 */
 		Blogger_pages_list(blogId: string, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, status: Array<PageStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<PageList> {
@@ -1376,6 +1403,7 @@ export namespace MyNS {
 		/**
 		 * Lists posts.
 		 * Get v3/blogs/{blogId}/posts
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Blogger_posts_listSortOption} sortOption Sort direction applied to post list.
 		 * @return {PostList} Successful response
 		 */
@@ -1395,6 +1423,7 @@ export namespace MyNS {
 		/**
 		 * Gets a post by path.
 		 * Get v3/blogs/{blogId}/posts/bypath
+		 * @param {number} maxComments Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Post} Successful response
 		 */
 		Blogger_posts_getByPath(blogId: string, path: string, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<Post> {
@@ -1423,6 +1452,7 @@ export namespace MyNS {
 		/**
 		 * Gets a post by blog id and post id
 		 * Get v3/blogs/{blogId}/posts/{postId}
+		 * @param {number} maxComments Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Post} Successful response
 		 */
 		Blogger_posts_get(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<Post> {
@@ -1432,6 +1462,7 @@ export namespace MyNS {
 		/**
 		 * Patches a post.
 		 * Patch v3/blogs/{blogId}/posts/{postId}
+		 * @param {number} maxComments Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Post} Successful response
 		 */
 		Blogger_posts_patch(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<Post> {
@@ -1441,6 +1472,7 @@ export namespace MyNS {
 		/**
 		 * Updates a post by blog id and post id.
 		 * Put v3/blogs/{blogId}/posts/{postId}
+		 * @param {number} maxComments Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Post} Successful response
 		 */
 		Blogger_posts_update(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<Post> {
@@ -1450,6 +1482,7 @@ export namespace MyNS {
 		/**
 		 * Lists comments.
 		 * Get v3/blogs/{blogId}/posts/{postId}/comments
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentList} Successful response
 		 */
 		Blogger_comments_list(blogId: string, postId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: CommentStatus | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<CommentList> {
@@ -1541,6 +1574,7 @@ export namespace MyNS {
 		/**
 		 * Gets one blog and user info pair by blog id and user id.
 		 * Get v3/users/{userId}/blogs/{blogId}
+		 * @param {number} maxPosts Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BlogUserInfo} Successful response
 		 */
 		Blogger_blogUserInfos_get(userId: string, blogId: string, maxPosts: number | null | undefined): Observable<BlogUserInfo> {
@@ -1550,6 +1584,7 @@ export namespace MyNS {
 		/**
 		 * Lists post and user info pairs.
 		 * Get v3/users/{userId}/blogs/{blogId}/posts
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PostUserInfosList} Successful response
 		 */
 		Blogger_postUserInfos_list(userId: string, blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, labels: string | null | undefined, maxResults: number | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<PostStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<PostUserInfosList> {
@@ -1559,6 +1594,7 @@ export namespace MyNS {
 		/**
 		 * Gets one post and user info pair, by post_id and user_id.
 		 * Get v3/users/{userId}/blogs/{blogId}/posts/{postId}
+		 * @param {number} maxComments Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PostUserInfo} Successful response
 		 */
 		Blogger_postUserInfos_get(userId: string, blogId: string, postId: string, maxComments: number | null | undefined): Observable<PostUserInfo> {

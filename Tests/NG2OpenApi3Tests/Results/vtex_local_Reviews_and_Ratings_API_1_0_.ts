@@ -23,6 +23,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: double
 		 */
 		rating: number;
 
@@ -70,6 +71,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: double
 		 */
 		rating: FormControl<number | null | undefined>,
 
@@ -122,6 +124,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: number;
 
@@ -154,6 +157,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: FormControl<number | null | undefined>,
 
@@ -284,18 +288,30 @@ export namespace MyNS {
 
 	export interface GetProductRatingReturn {
 
-		/** Avarage rating of the product. */
+		/**
+		 * Avarage rating of the product.
+		 * Type: double
+		 */
 		average?: number | null;
 
-		/** Total amount of ranting of the product. */
+		/**
+		 * Total amount of ranting of the product.
+		 * Type: double
+		 */
 		totalCount?: number | null;
 	}
 	export interface GetProductRatingReturnFormProperties {
 
-		/** Avarage rating of the product. */
+		/**
+		 * Avarage rating of the product.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Total amount of ranting of the product. */
+		/**
+		 * Total amount of ranting of the product.
+		 * Type: double
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetProductRatingReturnFormGroup() {
@@ -326,7 +342,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId?: string | null;
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** Review's date and time. */
@@ -373,7 +392,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId: FormControl<string | null | undefined>,
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Review's date and time. */
@@ -441,7 +463,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId?: string | null;
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** Review's date and time. */
@@ -488,7 +513,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId: FormControl<string | null | undefined>,
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Review's date and time. */
@@ -550,6 +578,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: double
 		 */
 		rating: number;
 
@@ -591,6 +620,7 @@ export namespace MyNS {
 		/**
 		 * Customer rating.
 		 * Required
+		 * Type: double
 		 */
 		rating: FormControl<number | null | undefined>,
 
@@ -652,7 +682,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId?: string | null;
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** Review's date and time. */
@@ -699,7 +732,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId: FormControl<string | null | undefined>,
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Review's date and time. */
@@ -783,7 +819,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId?: string | null;
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** Review's date and time. */
@@ -830,7 +869,10 @@ export namespace MyNS {
 		/** Product ID. */
 		productId: FormControl<string | null | undefined>,
 
-		/** Customer rating. */
+		/**
+		 * Customer rating.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Review's date and time. */
@@ -880,24 +922,42 @@ export namespace MyNS {
 
 	export interface GetalistofReviewsReturnRange {
 
-		/** Zero base starting record number. */
+		/**
+		 * Zero base starting record number.
+		 * Type: double
+		 */
 		from?: number | null;
 
-		/** Zero base ending record number. */
+		/**
+		 * Zero base ending record number.
+		 * Type: double
+		 */
 		to?: number | null;
 
-		/** Total number of reviews on the list. */
+		/**
+		 * Total number of reviews on the list.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface GetalistofReviewsReturnRangeFormProperties {
 
-		/** Zero base starting record number. */
+		/**
+		 * Zero base starting record number.
+		 * Type: double
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** Zero base ending record number. */
+		/**
+		 * Zero base ending record number.
+		 * Type: double
+		 */
 		to: FormControl<number | null | undefined>,
 
-		/** Total number of reviews on the list. */
+		/**
+		 * Total number of reviews on the list.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalistofReviewsReturnRangeFormGroup() {

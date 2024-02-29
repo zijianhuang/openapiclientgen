@@ -4657,7 +4657,9 @@ export namespace MyNS {
 		 * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK status to <code>ACTIVE</code>.
 		 * Post 2013-04-01/keysigningkey/{HostedZoneId}/{Name}/activate
 		 * @param {string} HostedZoneId A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @param {string} Name A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
+		 *     Min length: 3    Max length: 128
 		 * @return {void} Success
 		 */
 		ActivateKeySigningKey(HostedZoneId: string, Name: string): Observable<HttpResponse<string>> {
@@ -4679,6 +4681,7 @@ export namespace MyNS {
 		 * Get 2013-04-01/cidrcollection/{CidrCollectionId}
 		 * @param {string} CidrCollectionId The CIDR collection ID.
 		 * @param {string} nexttoken <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> <p>If no value is provided, the listing of results starts from the beginning.</p>
+		 *     Max length: 1024
 		 * @param {string} maxresults The maximum number of CIDR collection locations to return in the response.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4693,6 +4696,7 @@ export namespace MyNS {
 		 * Get 2013-04-01/tags/{ResourceType}/{ResourceId}
 		 * @param {TagResourceType} ResourceType <p>The type of the resource.</p> <ul> <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li> </ul>
 		 * @param {string} ResourceId The ID of the resource for which you want to retrieve tags.
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		ListTagsForResource(ResourceType: TagResourceType, ResourceId: string): Observable<HttpResponse<string>> {
@@ -4703,6 +4707,7 @@ export namespace MyNS {
 		 * Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).
 		 * Get 2013-04-01/cidrcollection
 		 * @param {string} nexttoken <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> <p>If no value is provided, the listing of results starts from the beginning.</p>
+		 *     Max length: 1024
 		 * @param {string} maxresults The maximum number of CIDR collections to return in the response.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4716,6 +4721,7 @@ export namespace MyNS {
 		 * Retrieve a list of the health checks that are associated with the current Amazon Web Services account.
 		 * Get 2013-04-01/healthcheck
 		 * @param {string} marker <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p> <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
+		 *     Max length: 64
 		 * @param {string} maxitems The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. 
 		 * @param {string} MaxItems Pagination limit
 		 * @param {string} Marker Pagination token
@@ -4729,8 +4735,10 @@ export namespace MyNS {
 		 * <p>Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account. The response includes a <code>HostedZones</code> child element for each hosted zone.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups of up to 100.</p>
 		 * Get 2013-04-01/hostedzone
 		 * @param {string} marker <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p> <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
+		 *     Max length: 64
 		 * @param {string} maxitems (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.
 		 * @param {string} delegationsetid If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. 
+		 *     Max length: 32
 		 * @param {string} MaxItems Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {void} Success
@@ -4743,7 +4751,9 @@ export namespace MyNS {
 		 * <p>Lists the configurations for DNS query logging that are associated with the current Amazon Web Services account or the configuration that is associated with a specified hosted zone.</p> <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>. Additional information, including the format of DNS query logs, appears in <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
 		 * Get 2013-04-01/queryloggingconfig
 		 * @param {string} hostedzoneid <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p> <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
+		 *     Max length: 32
 		 * @param {string} nexttoken <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+		 *     Max length: 1024
 		 * @param {string} maxresults <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request. If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a> in the response to get the next page of results.</p> <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4757,6 +4767,7 @@ export namespace MyNS {
 		 * Retrieves a list of the reusable delegation sets that are associated with the current Amazon Web Services account.
 		 * Get 2013-04-01/delegationset
 		 * @param {string} marker <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request. </p> <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more reusable delegation sets to get.</p>
+		 *     Max length: 64
 		 * @param {string} maxitems The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
 		 * @return {void} Success
 		 */
@@ -4768,7 +4779,9 @@ export namespace MyNS {
 		 * <p>Gets a list of the VPCs that were created by other accounts and that can be associated with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>The response includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be associated with the hosted zone.</p>
 		 * Get 2013-04-01/hostedzone/{Id}/authorizevpcassociation
 		 * @param {string} Id The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.
+		 *     Max length: 32
 		 * @param {string} nexttoken  <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of results, submit another request, and include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another <code>ListVPCAssociationAuthorizations</code> request.
+		 *     Max length: 1024
 		 * @param {string} maxresults  <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
 		 * @return {void} Success
 		 */
@@ -4780,7 +4793,9 @@ export namespace MyNS {
 		 * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the KSK status to <code>INACTIVE</code>.
 		 * Post 2013-04-01/keysigningkey/{HostedZoneId}/{Name}/deactivate
 		 * @param {string} HostedZoneId A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @param {string} Name A string used to identify a key-signing key (KSK).
+		 *     Min length: 3    Max length: 128
 		 * @return {void} Success
 		 */
 		DeactivateKeySigningKey(HostedZoneId: string, Name: string): Observable<HttpResponse<string>> {
@@ -4791,6 +4806,7 @@ export namespace MyNS {
 		 * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent you from deleting a health check even if the health check is associated with one or more resource record sets. If you delete a health check and you don't update the associated resource record sets, the future status of the health check can't be predicted and may change. This will affect the routing of DNS queries for your DNS failover configuration. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </important> <p>If you're using Cloud Map and you configured Cloud Map to create a Route 53 health check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the health check. The health check is deleted automatically when you deregister the instance; there can be a delay of several hours before the health check is deleted from Route 53. </p>
 		 * Delete 2013-04-01/healthcheck/{HealthCheckId}
 		 * @param {string} HealthCheckId The ID of the health check that you want to delete.
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		DeleteHealthCheck(HealthCheckId: string): Observable<HttpResponse<string>> {
@@ -4801,6 +4817,7 @@ export namespace MyNS {
 		 * Gets information about a specified health check.
 		 * Get 2013-04-01/healthcheck/{HealthCheckId}
 		 * @param {string} HealthCheckId The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		GetHealthCheck(HealthCheckId: string): Observable<HttpResponse<string>> {
@@ -4811,6 +4828,7 @@ export namespace MyNS {
 		 * <p>Deletes a hosted zone.</p> <p>If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones that were created by another service.)</p> <p>If you want to keep your domain registration but you want to stop routing internet traffic to your website or web application, we recommend that you delete resource record sets in the hosted zone instead of deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you can't undelete it. You must create a new hosted zone and update the name servers for your domain registration, which can require up to 48 hours to take effect. (If you delegated responsibility for a subdomain to a hosted zone and you delete the child hosted zone, you must update the name servers in the parent hosted zone.) In addition, if you delete a hosted zone, someone could hijack the domain and route traffic to their own resources using your domain name.</p> </important> <p>If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration. If the domain is registered with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to update name servers for the domain registration. For more information, perform an internet search on "free DNS service."</p> <p>You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p> <p>To verify that the hosted zone has been deleted, do one of the following:</p> <ul> <li> <p>Use the <code>GetHostedZone</code> action to request information about the hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current Amazon Web Services account.</p> </li> </ul>
 		 * Delete 2013-04-01/hostedzone/{Id}
 		 * @param {string} Id The ID of the hosted zone you want to delete.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		DeleteHostedZone(Id: string): Observable<HttpResponse<string>> {
@@ -4821,6 +4839,7 @@ export namespace MyNS {
 		 * Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.
 		 * Get 2013-04-01/hostedzone/{Id}
 		 * @param {string} Id The ID of the hosted zone that you want to get information about.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		GetHostedZone(Id: string): Observable<HttpResponse<string>> {
@@ -4831,7 +4850,9 @@ export namespace MyNS {
 		 * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.</p> <p>You can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeactivateKeySigningKey.html">DeactivateKeySigningKey</a> to deactivate the key before you delete it.</p> <p>Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a> to verify that the KSK is in an <code>INACTIVE</code> status.</p>
 		 * Delete 2013-04-01/keysigningkey/{HostedZoneId}/{Name}
 		 * @param {string} HostedZoneId A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @param {string} Name A string used to identify a key-signing key (KSK).
+		 *     Min length: 3    Max length: 128
 		 * @return {void} Success
 		 */
 		DeleteKeySigningKey(HostedZoneId: string, Name: string): Observable<HttpResponse<string>> {
@@ -4842,6 +4863,7 @@ export namespace MyNS {
 		 * <p>Deletes a configuration for DNS query logging. If you delete a configuration, Amazon Route 53 stops sending query logs to CloudWatch Logs. Route 53 doesn't delete any logs that are already in CloudWatch Logs.</p> <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p>
 		 * Delete 2013-04-01/queryloggingconfig/{Id}
 		 * @param {string} Id The ID of the configuration that you want to delete. 
+		 *     Min length: 1    Max length: 36
 		 * @return {void} Success
 		 */
 		DeleteQueryLoggingConfig(Id: string): Observable<HttpResponse<string>> {
@@ -4852,6 +4874,7 @@ export namespace MyNS {
 		 * <p>Gets information about a specified configuration for DNS query logging.</p> <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a>.</p>
 		 * Get 2013-04-01/queryloggingconfig/{Id}
 		 * @param {string} Id The ID of the configuration for DNS query logging that you want to get information about.
+		 *     Min length: 1    Max length: 36
 		 * @return {void} Success
 		 */
 		GetQueryLoggingConfig(Id: string): Observable<HttpResponse<string>> {
@@ -4862,6 +4885,7 @@ export namespace MyNS {
 		 * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a reusable delegation set only if it isn't associated with any hosted zones.</p> </important> <p>To verify that the reusable delegation set is not associated with any hosted zones, submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a> request and specify the ID of the reusable delegation set that you want to delete.</p>
 		 * Delete 2013-04-01/delegationset/{Id}
 		 * @param {string} Id The ID of the reusable delegation set that you want to delete.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		DeleteReusableDelegationSet(Id: string): Observable<HttpResponse<string>> {
@@ -4872,6 +4896,7 @@ export namespace MyNS {
 		 * Retrieves information about a specified reusable delegation set, including the four name servers that are assigned to the delegation set.
 		 * Get 2013-04-01/delegationset/{Id}
 		 * @param {string} Id The ID of the reusable delegation set that you want to get a list of name servers for.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		GetReusableDelegationSet(Id: string): Observable<HttpResponse<string>> {
@@ -4882,7 +4907,9 @@ export namespace MyNS {
 		 * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted. However, Route 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li> <p>Deleted traffic policies aren't listed if you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p> </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li> <p>If you retain the ID of the policy, you can get information about the policy, including the traffic policy document, by running <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p> </li> </ul>
 		 * Delete 2013-04-01/trafficpolicy/{Id}/{Version}
 		 * @param {string} Id The ID of the traffic policy that you want to delete.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} Version The version number of the traffic policy that you want to delete.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {void} Success
 		 */
 		DeleteTrafficPolicy(Id: string, Version: number): Observable<HttpResponse<string>> {
@@ -4893,7 +4920,9 @@ export namespace MyNS {
 		 * <p>Gets information about a specific traffic policy version.</p> <p>For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>. </p>
 		 * Get 2013-04-01/trafficpolicy/{Id}/{Version}
 		 * @param {string} Id The ID of the traffic policy that you want to get information about.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} Version The version number of the traffic policy that you want to get information about.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {void} Success
 		 */
 		GetTrafficPolicy(Id: string, Version: number): Observable<HttpResponse<string>> {
@@ -4904,6 +4933,7 @@ export namespace MyNS {
 		 * <p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p> <note> <p>In the Route 53 console, traffic policy instances are known as policy records.</p> </note>
 		 * Delete 2013-04-01/trafficpolicyinstance/{Id}
 		 * @param {string} Id <p>The ID of the traffic policy instance that you want to delete. </p> <important> <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> </important>
+		 *     Min length: 1    Max length: 36
 		 * @return {void} Success
 		 */
 		DeleteTrafficPolicyInstance(Id: string): Observable<HttpResponse<string>> {
@@ -4914,6 +4944,7 @@ export namespace MyNS {
 		 * <p>Gets information about a specified traffic policy instance.</p> <note> <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <note> <p>In the Route 53 console, traffic policy instances are known as policy records.</p> </note>
 		 * Get 2013-04-01/trafficpolicyinstance/{Id}
 		 * @param {string} Id The ID of the traffic policy instance that you want to get information about.
+		 *     Min length: 1    Max length: 36
 		 * @return {void} Success
 		 */
 		GetTrafficPolicyInstance(Id: string): Observable<HttpResponse<string>> {
@@ -4924,6 +4955,7 @@ export namespace MyNS {
 		 * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs) that are active in the hosted zone.
 		 * Post 2013-04-01/hostedzone/{Id}/disable-dnssec
 		 * @param {string} Id A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		DisableHostedZoneDNSSEC(Id: string): Observable<HttpResponse<string>> {
@@ -4934,6 +4966,7 @@ export namespace MyNS {
 		 * Enables DNSSEC signing in a specific hosted zone.
 		 * Post 2013-04-01/hostedzone/{Id}/enable-dnssec
 		 * @param {string} Id A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		EnableHostedZoneDNSSEC(Id: string): Observable<HttpResponse<string>> {
@@ -4954,6 +4987,7 @@ export namespace MyNS {
 		 * <p>Returns the current status of a change batch request. The status is one of the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the changes in this request have not propagated to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status of all change batch requests.</p> </li> <li> <p> <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers managing the hosted zone. </p> </li> </ul>
 		 * Get 2013-04-01/change/{Id}
 		 * @param {string} Id The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
+		 *     Min length: 1    Max length: 6500
 		 * @return {void} Success
 		 */
 		GetChange(Id: string): Observable<HttpResponse<string>> {
@@ -4973,6 +5007,7 @@ export namespace MyNS {
 		 * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted zone.
 		 * Get 2013-04-01/hostedzone/{Id}/dnssec
 		 * @param {string} Id A unique string used to identify a hosted zone.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		GetDNSSEC(Id: string): Observable<HttpResponse<string>> {
@@ -4983,8 +5018,11 @@ export namespace MyNS {
 		 * <p>Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p> <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p> <p>Use the following syntax to determine whether a continent is supported for geolocation:</p> <p> <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i> </code> </p> <p>Use the following syntax to determine whether a country is supported for geolocation:</p> <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code> </p> <p>Use the following syntax to determine whether a subdivision of a country is supported for geolocation:</p> <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code> </p>
 		 * Get 2013-04-01/geolocation
 		 * @param {string} continentcode <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p> <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p> <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p> <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li> <p> <b>SA</b>: South America</p> </li> </ul>
+		 *     Min length: 2    Max length: 2
 		 * @param {string} countrycode Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
+		 *     Min length: 1    Max length: 2
 		 * @param {string} subdivisioncode The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.
+		 *     Min length: 1    Max length: 3
 		 * @return {void} Success
 		 */
 		GetGeoLocation(continentcode: string | null | undefined, countrycode: string | null | undefined, subdivisioncode: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5004,6 +5042,7 @@ export namespace MyNS {
 		 * Gets the reason that a specified health check failed most recently.
 		 * Get 2013-04-01/healthcheck/{HealthCheckId}/lastfailurereason
 		 * @param {string} HealthCheckId <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p> </note>
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		GetHealthCheckLastFailureReason(HealthCheckId: string): Observable<HttpResponse<string>> {
@@ -5014,6 +5053,7 @@ export namespace MyNS {
 		 * <p>Gets status of a specified health check. </p> <important> <p>This API is intended for use during development to diagnose behavior. It doesn’t support production use-cases with high query rates that require immediate and actionable responses.</p> </important>
 		 * Get 2013-04-01/healthcheck/{HealthCheckId}/status
 		 * @param {string} HealthCheckId <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p> </note>
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		GetHealthCheckStatus(HealthCheckId: string): Observable<HttpResponse<string>> {
@@ -5034,6 +5074,7 @@ export namespace MyNS {
 		 * Get 2013-04-01/hostedzonelimit/{Id}/{Type}
 		 * @param {HostedZoneLimitType} Type <p>The limit that you want to get. Valid values include the following:</p> <ul> <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li> <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li> </ul>
 		 * @param {string} Id The ID of the hosted zone that you want to get a limit for.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		GetHostedZoneLimit(Type: HostedZoneLimitType, Id: string): Observable<HttpResponse<string>> {
@@ -5045,6 +5086,7 @@ export namespace MyNS {
 		 * Get 2013-04-01/reusabledelegationsetlimit/{Id}/{Type}
 		 * @param {ReusableDelegationSetLimitType} Type Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.
 		 * @param {string} Id The ID of the delegation set that you want to get the limit for.
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		GetReusableDelegationSetLimit(Type: ReusableDelegationSetLimitType, Id: string): Observable<HttpResponse<string>> {
@@ -5065,7 +5107,9 @@ export namespace MyNS {
 		 * Get 2013-04-01/cidrcollection/{CidrCollectionId}/cidrblocks
 		 * @param {string} CidrCollectionId The UUID of the CIDR collection.
 		 * @param {string} location The name of the CIDR collection location.
+		 *     Min length: 1    Max length: 16
 		 * @param {string} nexttoken An opaque pagination token to indicate where the service is to begin enumerating results.
+		 *     Max length: 1024
 		 * @param {string} maxresults Maximum number of results you want returned.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -5079,8 +5123,11 @@ export namespace MyNS {
 		 * <p>Retrieves a list of supported geographic locations.</p> <p>Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a country (for example, states or provinces), the subdivisions for that country are listed in alphabetical order immediately after the corresponding country.</p> <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p> <p>For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
 		 * Get 2013-04-01/geolocations
 		 * @param {string} startcontinentcode <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p> <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
+		 *     Min length: 2    Max length: 2
 		 * @param {string} startcountrycode The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.
+		 *     Min length: 1    Max length: 2
 		 * @param {string} startsubdivisioncode <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p> <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+		 *     Min length: 1    Max length: 3
 		 * @param {string} maxitems (Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.
 		 * @return {void} Success
 		 */
@@ -5092,7 +5139,9 @@ export namespace MyNS {
 		 * <p>Retrieves a list of your hosted zones in lexicographic order. The response includes a <code>HostedZones</code> child element for each hosted zone created by the current Amazon Web Services account. </p> <p> <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed. For example:</p> <p> <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change the sort order in some circumstances.</p> <p>If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the domain name using the escaped or Punycoded value, which is the format that Amazon Route 53 saves in its database. For example, to create a hosted zone for exämple.com, you specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code> alphabetizes it as:</p> <p> <code>com.ex\344mple.</code> </p> <p>The labels are reversed and alphabetized using the escaped value. For more information about valid domain name formats, including internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>Route 53 returns up to 100 items in each response. If you have a lot of hosted zones, use the <code>MaxItems</code> parameter to list them in groups of up to 100. The response includes values that help navigate from one group of <code>MaxItems</code> hosted zones to the next:</p> <ul> <li> <p>The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain the values, if any, specified for the <code>dnsname</code> and <code>hostedzoneid</code> parameters in the request that produced the current response.</p> </li> <li> <p>The <code>MaxItems</code> element in the response contains the value, if any, that you specified for the <code>maxitems</code> parameter in the request that produced the current response.</p> </li> <li> <p>If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated with the current Amazon Web Services account. </p> <p>If <code>IsTruncated</code> is false, this response includes the last hosted zone that is associated with the current account. The <code>NextDNSName</code> element and <code>NextHostedZoneId</code> elements are omitted from the response.</p> </li> <li> <p>The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response contain the domain name and the hosted zone ID of the next hosted zone that is associated with the current Amazon Web Services account. If you want to list more hosted zones, make another call to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p> </li> </ul>
 		 * Get 2013-04-01/hostedzonesbyname
 		 * @param {string} dnsname (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.
+		 *     Max length: 1024
 		 * @param {string} hostedzoneid <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p> <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
+		 *     Max length: 32
 		 * @param {string} maxitems The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. 
 		 * @return {void} Success
 		 */
@@ -5104,9 +5153,12 @@ export namespace MyNS {
 		 * <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which contains the account number of either the current Amazon Web Services account or another Amazon Web Services account. Some services, such as Cloud Map, create hosted zones using the current account. </p> </li> <li> <p>An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li> </ul> <note> <p>When listing private hosted zones, the hosted zone and the Amazon VPC must belong to the same partition where the hosted zones were created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p> </note>
 		 * Get 2013-04-01/hostedzonesbyvpc#vpcid&vpcregion
 		 * @param {string} vpcid The ID of the Amazon VPC that you want to list hosted zones for.
+		 *     Max length: 1024
 		 * @param {VPCRegion} vpcregion For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} maxitems (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.
 		 * @param {string} nexttoken <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p> <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
+		 *     Max length: 1024
 		 * @return {void} Success
 		 */
 		ListHostedZonesByVPC(vpcid: string, vpcregion: VPCRegion, maxitems: string | null | undefined, nexttoken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5117,9 +5169,12 @@ export namespace MyNS {
 		 * <p>Lists the resource record sets in a specified hosted zone.</p> <p> <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code> elements.</p> <p> <b>Sort order</b> </p> <p> <code>ListResourceRecordSets</code> sorts results first by DNS name with the labels reversed, for example:</p> <p> <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change the sort order when the record name contains characters that appear before <code>.</code> (decimal 46) in the ASCII table. These characters include the following: <code>! " # $ % &amp; ' ( ) * + , -</code> </p> <p>When multiple records have the same DNS name, <code>ListResourceRecordSets</code> sorts results by the record type.</p> <p> <b>Specifying where to start listing records</b> </p> <p>You can use the name and type elements to specify the resource record set that the list begins with:</p> <dl> <dt>If you do not specify Name or Type</dt> <dd> <p>The results begin with the first resource record set that the hosted zone contains.</p> </dd> <dt>If you specify Name but not Type</dt> <dd> <p>The results begin with the first resource record set in the list whose name is greater than or equal to <code>Name</code>.</p> </dd> <dt>If you specify Type but not Name</dt> <dd> <p>Amazon Route 53 returns the <code>InvalidInput</code> error.</p> </dd> <dt>If you specify both Name and Type</dt> <dd> <p>The results begin with the first resource record set in the list whose name is greater than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.</p> </dd> </dl> <p> <b>Resource record sets that are PENDING</b> </p> <p>This action returns the most current version of the records. This includes records that are <code>PENDING</code>, and that are not yet available on all Route 53 DNS servers.</p> <p> <b>Changing resource record sets</b> </p> <p>To ensure that you get an accurate listing of the resource record sets for a hosted zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request while you're paging through the results of a <code>ListResourceRecordSets</code> request. If you do, some pages may display results without the latest changes while other pages display results with the latest changes.</p> <p> <b>Displaying the next page of results</b> </p> <p>If a <code>ListResourceRecordSets</code> command returns more than one page of results, the value of <code>IsTruncated</code> is <code>true</code>. To display the next page of results, get the values of <code>NextRecordName</code>, <code>NextRecordType</code>, and <code>NextRecordIdentifier</code> (if any) from the response. Then submit another <code>ListResourceRecordSets</code> request, and specify those values for <code>StartRecordName</code>, <code>StartRecordType</code>, and <code>StartRecordIdentifier</code>.</p>
 		 * Get 2013-04-01/hostedzone/{Id}/rrset
 		 * @param {string} Id The ID of the hosted zone that contains the resource record sets that you want to list.
+		 *     Max length: 32
 		 * @param {string} name The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.
+		 *     Max length: 1024
 		 * @param {RRType} type <p>The type of resource record set to begin the record listing from.</p> <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
 		 * @param {string} identifier  <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxitems (Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.
 		 * @param {string} MaxItems Pagination limit
 		 * @param {string} StartRecordName Pagination token
@@ -5135,6 +5190,7 @@ export namespace MyNS {
 		 * <p>Gets information about the latest version for every traffic policy that is associated with the current Amazon Web Services account. Policies are listed in the order that they were created in. </p> <p>For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>. </p>
 		 * Get 2013-04-01/trafficpolicies
 		 * @param {string} trafficpolicyid <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
+		 *     Min length: 1    Max length: 36
 		 * @param {string} maxitems (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
@@ -5146,7 +5202,9 @@ export namespace MyNS {
 		 * <p>Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.</p> <note> <p>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
 		 * Get 2013-04-01/trafficpolicyinstances
 		 * @param {string} hostedzoneid <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>HostedZoneId</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+		 *     Max length: 32
 		 * @param {string} trafficpolicyinstancename <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+		 *     Max length: 1024
 		 * @param {RRType} trafficpolicyinstancetype <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
 		 * @param {string} maxitems The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
 		 * @return {void} Success
@@ -5159,7 +5217,9 @@ export namespace MyNS {
 		 * <p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note> <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
 		 * Get 2013-04-01/trafficpolicyinstances/hostedzone#id
 		 * @param {string} id The ID of the hosted zone that you want to list traffic policy instances for.
+		 *     Max length: 32
 		 * @param {string} trafficpolicyinstancename <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+		 *     Max length: 1024
 		 * @param {RRType} trafficpolicyinstancetype <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
@@ -5172,9 +5232,13 @@ export namespace MyNS {
 		 * <p>Gets information about the traffic policy instances that you created by using a specify traffic policy version.</p> <note> <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
 		 * Get 2013-04-01/trafficpolicyinstances/trafficpolicy#id&version
 		 * @param {string} id The ID of the traffic policy for which you want to list traffic policy instances.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} version The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} hostedzoneid <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p> <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+		 *     Max length: 32
 		 * @param {string} trafficpolicyinstancename <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+		 *     Max length: 1024
 		 * @param {RRType} trafficpolicyinstancetype <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
@@ -5187,7 +5251,9 @@ export namespace MyNS {
 		 * <p>Gets information about all of the versions for a specified traffic policy.</p> <p>Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.</p>
 		 * Get 2013-04-01/trafficpolicies/{Id}/versions
 		 * @param {string} Id Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} trafficpolicyversion <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p> <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
+		 *     Max length: 4
 		 * @param {string} maxitems The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
@@ -5199,11 +5265,16 @@ export namespace MyNS {
 		 * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p> <p>This call only supports querying public hosted zones.</p> <note> <p>The <code>TestDnsAnswer </code> returns information similar to what you would expect from the answer section of the <code>dig</code> command. Therefore, if you query for the name servers of a subdomain that point to the parent name servers, those will not be returned.</p> </note>
 		 * Get 2013-04-01/testdnsanswer#hostedzoneid&recordname&recordtype
 		 * @param {string} hostedzoneid The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+		 *     Max length: 32
 		 * @param {string} recordname The name of the resource record set that you want Amazon Route 53 to simulate a query for.
+		 *     Max length: 1024
 		 * @param {RRType} recordtype The type of the resource record set.
 		 * @param {string} resolverip If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).
+		 *     Max length: 45
 		 * @param {string} edns0clientsubnetip If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.
+		 *     Max length: 45
 		 * @param {string} edns0clientsubnetmask <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p> <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p> <ul> <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li> <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
+		 *     Min length: 0    Max length: 3
 		 * @return {void} Success
 		 */
 		TestDNSAnswer(hostedzoneid: string, recordname: string, recordtype: RRType, resolverip: string | null | undefined, edns0clientsubnetip: string | null | undefined, edns0clientsubnetmask: string | null | undefined): Observable<HttpResponse<string>> {

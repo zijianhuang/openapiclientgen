@@ -17,16 +17,20 @@ export namespace MyNS {
 
 	/** Configuration options to apply to the reranking. */
 	export interface QueryRequestRerankingConfig {
-		rerankerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rerankerId?: string | null;
 	}
 
 	/** Configuration options to apply to the reranking. */
 	export interface QueryRequestRerankingConfigFormProperties {
-		rerankerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rerankerId: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryRequestRerankingConfigFormGroup() {
 		return new FormGroup<QueryRequestRerankingConfigFormProperties>({
-			rerankerId: new FormControl<number | null | undefined>(undefined),
+			rerankerId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -55,11 +59,17 @@ export namespace MyNS {
 		encrypted?: boolean | null;
 		filterAttributes?: Array<AdminFilterAttribute>;
 
-		/** The Corpus ID. */
-		id?: number | null;
+		/**
+		 * The Corpus ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** An optional maximum size of the metadata that each document can contain. */
-		metadataMaxBytes?: number | null;
+		/**
+		 * An optional maximum size of the metadata that each document can contain.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		metadataMaxBytes?: string | null;
 
 		/** The name of the corpus. */
 		name?: string | null;
@@ -102,11 +112,17 @@ export namespace MyNS {
 		/** Encryption is on by default and cannot be turned off. */
 		encrypted: FormControl<boolean | null | undefined>,
 
-		/** The Corpus ID. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The Corpus ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** An optional maximum size of the metadata that each document can contain. */
-		metadataMaxBytes: FormControl<number | null | undefined>,
+		/**
+		 * An optional maximum size of the metadata that each document can contain.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		metadataMaxBytes: FormControl<string | null | undefined>,
 
 		/** The name of the corpus. */
 		name: FormControl<string | null | undefined>,
@@ -134,8 +150,8 @@ export namespace MyNS {
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			encoderId: new FormControl<string | null | undefined>(undefined),
 			encrypted: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			metadataMaxBytes: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			metadataMaxBytes: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			swapIenc: new FormControl<boolean | null | undefined>(undefined),
 			swapQenc: new FormControl<boolean | null | undefined>(undefined),
@@ -156,7 +172,10 @@ export namespace MyNS {
 		/** A description for the custom dimension. */
 		description?: string | null;
 
-		/** The default value to give to documents for this custom dimension. */
+		/**
+		 * The default value to give to documents for this custom dimension.
+		 * Type: double
+		 */
 		indexingDefault?: number | null;
 
 		/**
@@ -168,6 +187,7 @@ export namespace MyNS {
 		/**
 		 * The default weight to give this dimension when running queries. A value of
 		 * 0.0, for example, gives it no weight at all.
+		 * Type: double
 		 */
 		servingDefault?: number | null;
 	}
@@ -183,7 +203,10 @@ export namespace MyNS {
 		/** A description for the custom dimension. */
 		description: FormControl<string | null | undefined>,
 
-		/** The default value to give to documents for this custom dimension. */
+		/**
+		 * The default value to give to documents for this custom dimension.
+		 * Type: double
+		 */
 		indexingDefault: FormControl<number | null | undefined>,
 
 		/**
@@ -195,6 +218,7 @@ export namespace MyNS {
 		/**
 		 * The default weight to give this dimension when running queries. A value of
 		 * 0.0, for example, gives it no weight at all.
+		 * Type: double
 		 */
 		servingDefault: FormControl<number | null | undefined>,
 	}
@@ -266,18 +290,24 @@ export namespace MyNS {
 
 	export interface AdminCreateCorpusResponse {
 
-		/** The Corpus ID that was created. */
-		corpusId?: number | null;
+		/**
+		 * The Corpus ID that was created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId?: string | null;
 		status?: ComvectaraStatus;
 	}
 	export interface AdminCreateCorpusResponseFormProperties {
 
-		/** The Corpus ID that was created. */
-		corpusId: FormControl<number | null | undefined>,
+		/**
+		 * The Corpus ID that was created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminCreateCorpusResponseFormGroup() {
 		return new FormGroup<AdminCreateCorpusResponseFormProperties>({
-			corpusId: new FormControl<number | null | undefined>(undefined),
+			corpusId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -302,24 +332,36 @@ export namespace MyNS {
 
 	export interface AdminDeleteCorpusRequest {
 
-		/** The Corpus ID to be deleted. */
-		corpusId?: number | null;
+		/**
+		 * The Corpus ID to be deleted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId?: string | null;
 
-		/** The Customer ID that contains the corpus to be deleted. */
-		customerId?: number | null;
+		/**
+		 * The Customer ID that contains the corpus to be deleted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId?: string | null;
 	}
 	export interface AdminDeleteCorpusRequestFormProperties {
 
-		/** The Corpus ID to be deleted. */
-		corpusId: FormControl<number | null | undefined>,
+		/**
+		 * The Corpus ID to be deleted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId: FormControl<string | null | undefined>,
 
-		/** The Customer ID that contains the corpus to be deleted. */
-		customerId: FormControl<number | null | undefined>,
+		/**
+		 * The Customer ID that contains the corpus to be deleted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminDeleteCorpusRequestFormGroup() {
 		return new FormGroup<AdminDeleteCorpusRequestFormProperties>({
-			corpusId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			corpusId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -340,8 +382,11 @@ export namespace MyNS {
 		/** A regex to match corpora against. */
 		filter?: string | null;
 
-		/** The maximum results to return. */
-		numResults?: number | null;
+		/**
+		 * The maximum results to return.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numResults?: string | null;
 
 		/** A key that is passed in to retrieve a specific page of results. */
 		pageKey?: string | null;
@@ -351,8 +396,11 @@ export namespace MyNS {
 		/** A regex to match corpora against. */
 		filter: FormControl<string | null | undefined>,
 
-		/** The maximum results to return. */
-		numResults: FormControl<number | null | undefined>,
+		/**
+		 * The maximum results to return.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numResults: FormControl<string | null | undefined>,
 
 		/** A key that is passed in to retrieve a specific page of results. */
 		pageKey: FormControl<string | null | undefined>,
@@ -360,7 +408,7 @@ export namespace MyNS {
 	export function CreateAdminListCorporaRequestFormGroup() {
 		return new FormGroup<AdminListCorporaRequestFormProperties>({
 			filter: new FormControl<string | null | undefined>(undefined),
-			numResults: new FormControl<number | null | undefined>(undefined),
+			numResults: new FormControl<string | null | undefined>(undefined),
 			pageKey: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -393,24 +441,36 @@ export namespace MyNS {
 
 	export interface AdminResetCorpusRequest {
 
-		/** The Corpus ID to be reset. */
-		corpusId?: number | null;
+		/**
+		 * The Corpus ID to be reset.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId?: string | null;
 
-		/** The Customer ID that contains the corpus to be reset. */
-		customerId?: number | null;
+		/**
+		 * The Customer ID that contains the corpus to be reset.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId?: string | null;
 	}
 	export interface AdminResetCorpusRequestFormProperties {
 
-		/** The Corpus ID to be reset. */
-		corpusId: FormControl<number | null | undefined>,
+		/**
+		 * The Corpus ID to be reset.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId: FormControl<string | null | undefined>,
 
-		/** The Customer ID that contains the corpus to be reset. */
-		customerId: FormControl<number | null | undefined>,
+		/**
+		 * The Customer ID that contains the corpus to be reset.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminResetCorpusRequestFormGroup() {
 		return new FormGroup<AdminResetCorpusRequestFormProperties>({
-			corpusId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			corpusId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -427,11 +487,15 @@ export namespace MyNS {
 	}
 
 	export interface GooglerpcStatus {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		details?: Array<ProtobufAny>;
 		message?: string | null;
 	}
 	export interface GooglerpcStatusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -664,6 +728,7 @@ export namespace MyNS {
 		/**
 		 * Optionally, the unique ID of this section. If set, it will be returned as
 		 * metadata in query results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -690,6 +755,7 @@ export namespace MyNS {
 		/**
 		 * Optionally, the unique ID of this section. If set, it will be returned as
 		 * metadata in query results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -723,7 +789,10 @@ export namespace MyNS {
 		/** The name of the dimension. */
 		name?: string | null;
 
-		/** The value of the dimension. */
+		/**
+		 * The value of the dimension.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -733,7 +802,10 @@ export namespace MyNS {
 		/** The name of the dimension. */
 		name: FormControl<string | null | undefined>,
 
-		/** The value of the dimension. */
+		/**
+		 * The value of the dimension.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateVectaraindexingCustomDimensionFormGroup() {
@@ -774,41 +846,57 @@ export namespace MyNS {
 	export interface ServingQueryRequest {
 		corpusKey?: Array<ServingCorpusKey>;
 
-		/** The number of results to return. */
-		numResults?: number | null;
+		/**
+		 * The number of results to return.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numResults?: string | null;
 
 		/** The query text to use from the end user. */
 		query?: string | null;
 
 		/** Configuration options to apply to the reranking. */
 		rerankingConfig?: QueryRequestRerankingConfig;
-		start?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
 	}
 	export interface ServingQueryRequestFormProperties {
 
-		/** The number of results to return. */
-		numResults: FormControl<number | null | undefined>,
+		/**
+		 * The number of results to return.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numResults: FormControl<string | null | undefined>,
 
 		/** The query text to use from the end user. */
 		query: FormControl<string | null | undefined>,
-		start: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
 	}
 	export function CreateServingQueryRequestFormGroup() {
 		return new FormGroup<ServingQueryRequestFormProperties>({
-			numResults: new FormControl<number | null | undefined>(undefined),
+			numResults: new FormControl<string | null | undefined>(undefined),
 			query: new FormControl<string | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ServingCorpusKey {
 
-		/** The Corpus ID. */
-		corpusId?: number | null;
+		/**
+		 * The Corpus ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId?: string | null;
 
-		/** The Customer ID. */
-		customerId?: number | null;
+		/**
+		 * The Customer ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId?: string | null;
 
 		/** Weights on custom dimensions for the corpus. */
 		dim?: Array<VectaraservingCustomDimension>;
@@ -826,11 +914,17 @@ export namespace MyNS {
 	}
 	export interface ServingCorpusKeyFormProperties {
 
-		/** The Corpus ID. */
-		corpusId: FormControl<number | null | undefined>,
+		/**
+		 * The Corpus ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		corpusId: FormControl<string | null | undefined>,
 
-		/** The Customer ID. */
-		customerId: FormControl<number | null | undefined>,
+		/**
+		 * The Customer ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId: FormControl<string | null | undefined>,
 		metadataFilter: FormControl<string | null | undefined>,
 
 		/**
@@ -845,8 +939,8 @@ export namespace MyNS {
 	}
 	export function CreateServingCorpusKeyFormGroup() {
 		return new FormGroup<ServingCorpusKeyFormProperties>({
-			corpusId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			corpusId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			metadataFilter: new FormControl<string | null | undefined>(undefined),
 			semantics: new FormControl<CorpusKeySemantics | null | undefined>(undefined),
 		});
@@ -857,12 +951,16 @@ export namespace MyNS {
 	/** Defined the weight of a custom dimension at query time. */
 	export interface VectaraservingCustomDimension {
 		name?: string | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 
 	/** Defined the weight of a custom dimension at query time. */
 	export interface VectaraservingCustomDimensionFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateVectaraservingCustomDimensionFormGroup() {
@@ -892,40 +990,64 @@ export namespace MyNS {
 	/** Basic performance metrics that can be attached to a server response. */
 	export interface ServingPerformanceMetrics {
 
-		/** How long it took to encode the query. */
-		queryEncodeMs?: number | null;
+		/**
+		 * How long it took to encode the query.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryEncodeMs?: string | null;
 
-		/** How long it took to rerank the results. */
-		rerankMs?: number | null;
+		/**
+		 * How long it took to rerank the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rerankMs?: string | null;
 
-		/** How long it took to retrieve relevant results. */
-		retrievalMs?: number | null;
+		/**
+		 * How long it took to retrieve relevant results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retrievalMs?: string | null;
 
-		/** How long it took to retrieve user data. */
-		userdataRetrievalMs?: number | null;
+		/**
+		 * How long it took to retrieve user data.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userdataRetrievalMs?: string | null;
 	}
 
 	/** Basic performance metrics that can be attached to a server response. */
 	export interface ServingPerformanceMetricsFormProperties {
 
-		/** How long it took to encode the query. */
-		queryEncodeMs: FormControl<number | null | undefined>,
+		/**
+		 * How long it took to encode the query.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryEncodeMs: FormControl<string | null | undefined>,
 
-		/** How long it took to rerank the results. */
-		rerankMs: FormControl<number | null | undefined>,
+		/**
+		 * How long it took to rerank the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rerankMs: FormControl<string | null | undefined>,
 
-		/** How long it took to retrieve relevant results. */
-		retrievalMs: FormControl<number | null | undefined>,
+		/**
+		 * How long it took to retrieve relevant results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retrievalMs: FormControl<string | null | undefined>,
 
-		/** How long it took to retrieve user data. */
-		userdataRetrievalMs: FormControl<number | null | undefined>,
+		/**
+		 * How long it took to retrieve user data.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userdataRetrievalMs: FormControl<string | null | undefined>,
 	}
 	export function CreateServingPerformanceMetricsFormGroup() {
 		return new FormGroup<ServingPerformanceMetricsFormProperties>({
-			queryEncodeMs: new FormControl<number | null | undefined>(undefined),
-			rerankMs: new FormControl<number | null | undefined>(undefined),
-			retrievalMs: new FormControl<number | null | undefined>(undefined),
-			userdataRetrievalMs: new FormControl<number | null | undefined>(undefined),
+			queryEncodeMs: new FormControl<string | null | undefined>(undefined),
+			rerankMs: new FormControl<string | null | undefined>(undefined),
+			retrievalMs: new FormControl<string | null | undefined>(undefined),
+			userdataRetrievalMs: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -962,26 +1084,38 @@ export namespace MyNS {
 	export interface ServingResponse {
 		corpusKey?: ServingCorpusKey;
 
-		/** Use this ID to find the document in the ResponseSet. */
-		documentIndex?: number | null;
+		/**
+		 * Use this ID to find the document in the ResponseSet.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		documentIndex?: string | null;
 		metadata?: Array<ServingAttribute>;
 
-		/** The score used for ranking results.  The higher the score, the better the match. */
+		/**
+		 * The score used for ranking results.  The higher the score, the better the match.
+		 * Type: float
+		 */
 		score?: number | null;
 		text?: string | null;
 	}
 	export interface ServingResponseFormProperties {
 
-		/** Use this ID to find the document in the ResponseSet. */
-		documentIndex: FormControl<number | null | undefined>,
+		/**
+		 * Use this ID to find the document in the ResponseSet.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		documentIndex: FormControl<string | null | undefined>,
 
-		/** The score used for ranking results.  The higher the score, the better the match. */
+		/**
+		 * The score used for ranking results.  The higher the score, the better the match.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
 	export function CreateServingResponseFormGroup() {
 		return new FormGroup<ServingResponseFormProperties>({
-			documentIndex: new FormControl<number | null | undefined>(undefined),
+			documentIndex: new FormControl<string | null | undefined>(undefined),
 			score: new FormControl<number | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 		});

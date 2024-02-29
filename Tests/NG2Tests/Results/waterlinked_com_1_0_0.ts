@@ -2222,6 +2222,7 @@ export namespace MyNS {
 		 * Get receiver configuration by id
 		 * Get api/v1/config/receivers/{ID}
 		 * @param {number} ID Identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ApiV1ConfigReceivers_IDGet(ID: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2233,6 +2234,7 @@ export namespace MyNS {
 		 * Modify receiver configuration, does not apply the change until generic modify is called. Calling list will discard changes
 		 * Put api/v1/config/receivers/{ID}
 		 * @param {number} ID Identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ModifyReceiverConfigPayload} requestBody A receiver configuration
 		 * @return {void} 
 		 */

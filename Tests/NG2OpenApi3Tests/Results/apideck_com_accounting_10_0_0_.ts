@@ -658,7 +658,10 @@ export namespace MyNS {
 		/** Name of the tax rate */
 		name?: string | null;
 
-		/** Rate of the tax rate */
+		/**
+		 * Rate of the tax rate
+		 * Type: double
+		 */
 		rate?: number | null;
 	}
 	export interface LinkedTaxRateFormProperties {
@@ -672,7 +675,10 @@ export namespace MyNS {
 		/** Name of the tax rate */
 		name: FormControl<string | null | undefined>,
 
-		/** Rate of the tax rate */
+		/**
+		 * Rate of the tax rate
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateLinkedTaxRateFormGroup() {
@@ -752,7 +758,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -772,7 +781,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -891,6 +903,7 @@ export namespace MyNS {
 		/**
 		 * Total assets
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -899,6 +912,7 @@ export namespace MyNS {
 		/**
 		 * Total assets
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -917,6 +931,7 @@ export namespace MyNS {
 		/**
 		 * Total current assets
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -925,6 +940,7 @@ export namespace MyNS {
 		/**
 		 * Total current assets
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -943,7 +959,10 @@ export namespace MyNS {
 		/** The name of the current asset account */
 		name?: string | null;
 
-		/** The value of the current asset */
+		/**
+		 * The value of the current asset
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface BalanceSheetAssetsCurrent_assetsAccountsFormProperties {
@@ -954,7 +973,10 @@ export namespace MyNS {
 		/** The name of the current asset account */
 		name: FormControl<string | null | undefined>,
 
-		/** The value of the current asset */
+		/**
+		 * The value of the current asset
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBalanceSheetAssetsCurrent_assetsAccountsFormGroup() {
@@ -974,6 +996,7 @@ export namespace MyNS {
 		/**
 		 * Total fixed assets
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -982,6 +1005,7 @@ export namespace MyNS {
 		/**
 		 * Total fixed assets
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1000,7 +1024,10 @@ export namespace MyNS {
 		/** The name of the fixed asset account */
 		name?: string | null;
 
-		/** The value of the fixed asset */
+		/**
+		 * The value of the fixed asset
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface BalanceSheetAssetsFixed_assetsAccountsFormProperties {
@@ -1011,7 +1038,10 @@ export namespace MyNS {
 		/** The name of the fixed asset account */
 		name: FormControl<string | null | undefined>,
 
-		/** The value of the fixed asset */
+		/**
+		 * The value of the fixed asset
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBalanceSheetAssetsFixed_assetsAccountsFormGroup() {
@@ -1031,6 +1061,7 @@ export namespace MyNS {
 		/**
 		 * Total equity
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -1039,6 +1070,7 @@ export namespace MyNS {
 		/**
 		 * Total equity
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1057,7 +1089,10 @@ export namespace MyNS {
 		/** The type of the equity */
 		name?: string | null;
 
-		/** The equity amount */
+		/**
+		 * The equity amount
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface BalanceSheetEquityItemsFormProperties {
@@ -1068,7 +1103,10 @@ export namespace MyNS {
 		/** The type of the equity */
 		name: FormControl<string | null | undefined>,
 
-		/** The equity amount */
+		/**
+		 * The equity amount
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBalanceSheetEquityItemsFormGroup() {
@@ -1088,6 +1126,7 @@ export namespace MyNS {
 		/**
 		 * Total liabilities
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -1096,6 +1135,7 @@ export namespace MyNS {
 		/**
 		 * Total liabilities
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1114,7 +1154,10 @@ export namespace MyNS {
 		/** The name of the liability account */
 		name?: string | null;
 
-		/** The value of the liability */
+		/**
+		 * The value of the liability
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface BalanceSheetLiabilitiesAccountsFormProperties {
@@ -1125,7 +1168,10 @@ export namespace MyNS {
 		/** The name of the liability account */
 		name: FormControl<string | null | undefined>,
 
-		/** The value of the liability */
+		/**
+		 * The value of the liability
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBalanceSheetLiabilitiesAccountsFormGroup() {
@@ -1166,11 +1212,17 @@ export namespace MyNS {
 		/** Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. */
 		accounting_by_row?: boolean | null;
 
-		/** Balance of bill due. */
+		/**
+		 * Balance of bill due.
+		 * Type: double
+		 */
 		balance?: number | null;
 		bank_account?: BankAccount;
 
-		/** Date bill was issued - YYYY-MM-DD. */
+		/**
+		 * Date bill was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		bill_date?: Date | null;
 
 		/** Reference to supplier bill number */
@@ -1188,22 +1240,34 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
 		custom_mappings?: CustomMappings;
 
-		/** Amount of deposit made to this bill. */
+		/**
+		 * Amount of deposit made to this bill.
+		 * Type: double
+		 */
 		deposit?: number | null;
 
-		/** Discount percentage applied to this transaction. */
+		/**
+		 * Discount percentage applied to this transaction.
+		 * Type: double
+		 */
 		discount_percentage?: number | null;
 
 		/** The third-party API ID of original entity */
 		downstream_id?: string | null;
 
-		/** The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. */
+		/**
+		 * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date?: Date | null;
 
 		/** A unique identifier for an object. */
@@ -1215,7 +1279,10 @@ export namespace MyNS {
 		line_items?: Array<BillLineItem>;
 		notes?: string | null;
 
-		/** The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD. */
+		/**
+		 * The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		paid_date?: Date | null;
 
 		/** Payment method used for the transaction, such as cash, credit card, bank transfer, or check */
@@ -1233,7 +1300,10 @@ export namespace MyNS {
 		/** Invoice status */
 		status?: BillStatus | null;
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total?: number | null;
 
 		/** The supplier this entity is linked to. */
@@ -1248,10 +1318,16 @@ export namespace MyNS {
 		/** Terms of payment. */
 		terms?: string | null;
 
-		/** Total amount of bill, including tax. */
+		/**
+		 * Total amount of bill, including tax.
+		 * Type: double
+		 */
 		total?: number | null;
 
-		/** Total tax amount applied to this bill. */
+		/**
+		 * Total tax amount applied to this bill.
+		 * Type: double
+		 */
 		total_tax?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -1265,10 +1341,16 @@ export namespace MyNS {
 		/** Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. */
 		accounting_by_row: FormControl<boolean | null | undefined>,
 
-		/** Balance of bill due. */
+		/**
+		 * Balance of bill due.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
-		/** Date bill was issued - YYYY-MM-DD. */
+		/**
+		 * Date bill was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		bill_date: FormControl<Date | null | undefined>,
 
 		/** Reference to supplier bill number */
@@ -1286,19 +1368,31 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
-		/** Amount of deposit made to this bill. */
+		/**
+		 * Amount of deposit made to this bill.
+		 * Type: double
+		 */
 		deposit: FormControl<number | null | undefined>,
 
-		/** Discount percentage applied to this transaction. */
+		/**
+		 * Discount percentage applied to this transaction.
+		 * Type: double
+		 */
 		discount_percentage: FormControl<number | null | undefined>,
 
 		/** The third-party API ID of original entity */
 		downstream_id: FormControl<string | null | undefined>,
 
-		/** The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. */
+		/**
+		 * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date: FormControl<Date | null | undefined>,
 
 		/** A unique identifier for an object. */
@@ -1308,7 +1402,10 @@ export namespace MyNS {
 		language: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 
-		/** The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD. */
+		/**
+		 * The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		paid_date: FormControl<Date | null | undefined>,
 
 		/** Payment method used for the transaction, such as cash, credit card, bank transfer, or check */
@@ -1326,7 +1423,10 @@ export namespace MyNS {
 		/** Invoice status */
 		status: FormControl<BillStatus | null | undefined>,
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -1338,10 +1438,16 @@ export namespace MyNS {
 		/** Terms of payment. */
 		terms: FormControl<string | null | undefined>,
 
-		/** Total amount of bill, including tax. */
+		/**
+		 * Total amount of bill, including tax.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total tax amount applied to this bill. */
+		/**
+		 * Total tax amount applied to this bill.
+		 * Type: double
+		 */
 		total_tax: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -1403,10 +1509,16 @@ export namespace MyNS {
 		/** User defined description */
 		description?: string | null;
 
-		/** Discount amount applied to the line item when supported downstream. */
+		/**
+		 * Discount amount applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_amount?: number | null;
 
-		/** Discount percentage applied to the line item when supported downstream. */
+		/**
+		 * Discount percentage applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_percentage?: number | null;
 
 		/** A unique identifier for an object. */
@@ -1414,11 +1526,16 @@ export namespace MyNS {
 		item?: LinkedInvoiceItem;
 		ledger_account?: LinkedLedgerAccount;
 
-		/** Line number in the invoice */
+		/**
+		 * Line number in the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line_number?: number | null;
 
 		/** Location id */
 		location_id?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 
 		/** Row ID */
@@ -1427,11 +1544,17 @@ export namespace MyNS {
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
 		row_version?: string | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 		tax_rate?: LinkedTaxRate;
 
-		/** Total amount of the line item */
+		/**
+		 * Total amount of the line item
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/** Bill Line Item type */
@@ -1439,6 +1562,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure?: string | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -1464,20 +1589,31 @@ export namespace MyNS {
 		/** User defined description */
 		description: FormControl<string | null | undefined>,
 
-		/** Discount amount applied to the line item when supported downstream. */
+		/**
+		 * Discount amount applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_amount: FormControl<number | null | undefined>,
 
-		/** Discount percentage applied to the line item when supported downstream. */
+		/**
+		 * Discount percentage applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_percentage: FormControl<number | null | undefined>,
 
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
 
-		/** Line number in the invoice */
+		/**
+		 * Line number in the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line_number: FormControl<number | null | undefined>,
 
 		/** Location id */
 		location_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Row ID */
@@ -1486,10 +1622,16 @@ export namespace MyNS {
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
 		row_version: FormControl<string | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount of the line item */
+		/**
+		 * Total amount of the line item
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Bill Line Item type */
@@ -1497,6 +1639,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -1659,7 +1803,10 @@ export namespace MyNS {
 		annual_revenue?: string | null;
 		bank_accounts?: Array<BankAccount>;
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday?: Date | null;
 
 		/** Creation date */
@@ -1697,7 +1844,10 @@ export namespace MyNS {
 		/** The industry represents the type of business the company is in. */
 		industry?: string | null;
 
-		/** Number of interactions */
+		/**
+		 * Number of interactions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interaction_count?: number | null;
 
 		/** Last activity date */
@@ -1768,7 +1918,10 @@ export namespace MyNS {
 		/** The annual revenue of the company */
 		annual_revenue: FormControl<string | null | undefined>,
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday: FormControl<Date | null | undefined>,
 
 		/** Creation date */
@@ -1801,7 +1954,10 @@ export namespace MyNS {
 		/** The industry represents the type of business the company is in. */
 		industry: FormControl<string | null | undefined>,
 
-		/** Number of interactions */
+		/**
+		 * Number of interactions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interaction_count: FormControl<number | null | undefined>,
 
 		/** Last activity date */
@@ -1994,7 +2150,10 @@ export namespace MyNS {
 		/** The name of the company. */
 		company_name?: string | null;
 
-		/** Date when company file was created */
+		/**
+		 * Date when company file was created
+		 * Type: DateOnly
+		 */
 		company_start_date?: Date | null;
 
 		/** country code according to ISO 3166-1 alpha-2. */
@@ -2051,7 +2210,10 @@ export namespace MyNS {
 		/** The name of the company. */
 		company_name: FormControl<string | null | undefined>,
 
-		/** Date when company file was created */
+		/**
+		 * Date when company file was created
+		 * Type: DateOnly
+		 */
 		company_start_date: FormControl<Date | null | undefined>,
 
 		/** country code according to ISO 3166-1 alpha-2. */
@@ -2135,7 +2297,10 @@ export namespace MyNS {
 		/** Description of tax rate */
 		description?: string | null;
 
-		/** Effective tax rate */
+		/**
+		 * Effective tax rate
+		 * Type: double
+		 */
 		effective_tax_rate?: number | null;
 
 		/** ID assigned to identify this tax rate. */
@@ -2165,7 +2330,10 @@ export namespace MyNS {
 		/** Unique identifier for the account for tax remitted. */
 		tax_remitted_account_id?: string | null;
 
-		/** Not compounded sum of the components of a tax rate */
+		/**
+		 * Not compounded sum of the components of a tax rate
+		 * Type: double
+		 */
 		total_tax_rate?: number | null;
 
 		/** Tax type used to indicate the source of tax collected or paid */
@@ -2191,7 +2359,10 @@ export namespace MyNS {
 		/** Description of tax rate */
 		description: FormControl<string | null | undefined>,
 
-		/** Effective tax rate */
+		/**
+		 * Effective tax rate
+		 * Type: double
+		 */
 		effective_tax_rate: FormControl<number | null | undefined>,
 
 		/** ID assigned to identify this tax rate. */
@@ -2221,7 +2392,10 @@ export namespace MyNS {
 		/** Unique identifier for the account for tax remitted. */
 		tax_remitted_account_id: FormControl<string | null | undefined>,
 
-		/** Not compounded sum of the components of a tax rate */
+		/**
+		 * Not compounded sum of the components of a tax rate
+		 * Type: double
+		 */
 		total_tax_rate: FormControl<number | null | undefined>,
 
 		/** Tax type used to indicate the source of tax collected or paid */
@@ -2262,6 +2436,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		name?: string | null;
+
+		/** Type: double */
 		rate?: number | null;
 	}
 	export interface TaxRateComponentsFormProperties {
@@ -2270,6 +2446,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxRateComponentsFormGroup() {
@@ -2306,7 +2484,10 @@ export namespace MyNS {
 		/** The creation date of the contact. */
 		created_at?: Date | null;
 
-		/** The current balance of the contact. */
+		/**
+		 * The current balance of the contact.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 		custom_fields?: Array<CustomField>;
 
@@ -2410,7 +2591,10 @@ export namespace MyNS {
 		/** The creation date of the contact. */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The current balance of the contact. */
+		/**
+		 * The current balance of the contact.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
 		/** The department of the contact. */
@@ -2561,6 +2745,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2593,6 +2778,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2662,6 +2848,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2694,6 +2881,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2740,6 +2928,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2772,6 +2961,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2818,6 +3008,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2850,6 +3041,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2896,6 +3088,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2928,6 +3121,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2998,6 +3192,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3030,6 +3225,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3076,6 +3272,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3108,6 +3305,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3154,6 +3352,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3186,6 +3385,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3232,6 +3432,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3264,6 +3465,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3310,6 +3512,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3342,6 +3545,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3388,6 +3592,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3420,6 +3625,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3438,7 +3644,10 @@ export namespace MyNS {
 		account?: LinkedLedgerAccount;
 		CreditNoteAllocations?: Array<CreditNoteAllocations>;
 
-		/** The balance reflecting any payments made against the transaction. */
+		/**
+		 * The balance reflecting any payments made against the transaction.
+		 * Type: double
+		 */
 		balance?: number | null;
 
 		/** The date and time when the object was created. */
@@ -3450,7 +3659,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
@@ -3481,7 +3693,10 @@ export namespace MyNS {
 		/** Optional reference message ie: Debit remittance detail. */
 		reference?: string | null;
 
-		/** Indicates the total credit amount still available to apply towards the payment. */
+		/**
+		 * Indicates the total credit amount still available to apply towards the payment.
+		 * Type: double
+		 */
 		remaining_credit?: number | null;
 
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
@@ -3490,7 +3705,10 @@ export namespace MyNS {
 		/** Status of credit notes */
 		status?: CreditNoteStatus | null;
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total?: number | null;
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -3505,10 +3723,14 @@ export namespace MyNS {
 		/**
 		 * Amount of transaction
 		 * Required
+		 * Type: double
 		 */
 		total_amount: number;
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax?: number | null;
 
 		/** Type of payment */
@@ -3522,7 +3744,10 @@ export namespace MyNS {
 	}
 	export interface CreditNoteFormProperties {
 
-		/** The balance reflecting any payments made against the transaction. */
+		/**
+		 * The balance reflecting any payments made against the transaction.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was created. */
@@ -3534,7 +3759,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
 		/** Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD */
@@ -3558,7 +3786,10 @@ export namespace MyNS {
 		/** Optional reference message ie: Debit remittance detail. */
 		reference: FormControl<string | null | undefined>,
 
-		/** Indicates the total credit amount still available to apply towards the payment. */
+		/**
+		 * Indicates the total credit amount still available to apply towards the payment.
+		 * Type: double
+		 */
 		remaining_credit: FormControl<number | null | undefined>,
 
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
@@ -3567,7 +3798,10 @@ export namespace MyNS {
 		/** Status of credit notes */
 		status: FormControl<CreditNoteStatus | null | undefined>,
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -3582,10 +3816,14 @@ export namespace MyNS {
 		/**
 		 * Amount of transaction
 		 * Required
+		 * Type: double
 		 */
 		total_amount: FormControl<number | null | undefined>,
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax: FormControl<number | null | undefined>,
 
 		/** Type of payment */
@@ -3628,7 +3866,10 @@ export namespace MyNS {
 
 	export interface CreditNoteAllocations {
 
-		/** Amount of payment that should be attributed to this allocation. If null, the total_amount will be used. */
+		/**
+		 * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+		 * Type: double
+		 */
 		amount?: number | null;
 		code?: string | null;
 
@@ -3640,7 +3881,10 @@ export namespace MyNS {
 	}
 	export interface CreditNoteAllocationsFormProperties {
 
-		/** Amount of payment that should be attributed to this allocation. If null, the total_amount will be used. */
+		/**
+		 * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 		code: FormControl<string | null | undefined>,
 
@@ -3737,10 +3981,16 @@ export namespace MyNS {
 		/** User defined description */
 		description?: string | null;
 
-		/** Discount amount applied to the line item when supported downstream. */
+		/**
+		 * Discount amount applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_amount?: number | null;
 
-		/** Discount percentage applied to the line item when supported downstream. */
+		/**
+		 * Discount percentage applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_percentage?: number | null;
 
 		/** A unique identifier for an object. */
@@ -3748,11 +3998,16 @@ export namespace MyNS {
 		item?: LinkedInvoiceItem;
 		ledger_account?: LinkedLedgerAccount;
 
-		/** Line number in the invoice */
+		/**
+		 * Line number in the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line_number?: number | null;
 
 		/** Location id */
 		location_id?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 
 		/** Row ID */
@@ -3761,11 +4016,17 @@ export namespace MyNS {
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
 		row_version?: string | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 		tax_rate?: LinkedTaxRate;
 
-		/** Total amount of the line item */
+		/**
+		 * Total amount of the line item
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/** Item type */
@@ -3773,6 +4034,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure?: string | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -3798,20 +4061,31 @@ export namespace MyNS {
 		/** User defined description */
 		description: FormControl<string | null | undefined>,
 
-		/** Discount amount applied to the line item when supported downstream. */
+		/**
+		 * Discount amount applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_amount: FormControl<number | null | undefined>,
 
-		/** Discount percentage applied to the line item when supported downstream. */
+		/**
+		 * Discount percentage applied to the line item when supported downstream.
+		 * Type: double
+		 */
 		discount_percentage: FormControl<number | null | undefined>,
 
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
 
-		/** Line number in the invoice */
+		/**
+		 * Line number in the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line_number: FormControl<number | null | undefined>,
 
 		/** Location id */
 		location_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Row ID */
@@ -3820,10 +4094,16 @@ export namespace MyNS {
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
 		row_version: FormControl<string | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount of the line item */
+		/**
+		 * Total amount of the line item
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Item type */
@@ -3831,6 +4111,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -4143,6 +4425,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4175,6 +4458,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4221,6 +4505,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4253,6 +4538,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4299,6 +4585,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4331,6 +4618,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4377,6 +4665,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4409,6 +4698,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4455,6 +4745,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4487,6 +4778,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4533,6 +4825,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4565,6 +4858,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4611,6 +4905,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4643,6 +4938,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4689,6 +4985,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4721,6 +5018,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4767,6 +5065,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4799,6 +5098,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4845,6 +5145,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4877,6 +5178,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4923,6 +5225,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4955,6 +5258,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5001,6 +5305,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5033,6 +5338,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5079,6 +5385,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5111,6 +5418,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5163,6 +5471,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5195,6 +5504,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5251,14 +5561,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -5331,6 +5647,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5363,6 +5680,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5409,6 +5727,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5441,6 +5760,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5493,6 +5813,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5525,6 +5846,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5571,6 +5893,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5603,6 +5926,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5655,6 +5979,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5687,6 +6012,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5733,6 +6059,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5765,6 +6092,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5803,7 +6131,10 @@ export namespace MyNS {
 		id?: string | null;
 		income_account?: LinkedLedgerAccount;
 
-		/** The date of opening balance if inventory item is tracked - YYYY-MM-DD. */
+		/**
+		 * The date of opening balance if inventory item is tracked - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		inventory_date?: Date | null;
 
 		/** Item name */
@@ -5812,6 +6143,8 @@ export namespace MyNS {
 
 		/** Item is available for purchase transactions */
 		purchased?: boolean | null;
+
+		/** Type: double */
 		quantity?: number | null;
 
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
@@ -5830,6 +6163,8 @@ export namespace MyNS {
 
 		/** Item type */
 		type?: InvoiceItemType | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -5856,7 +6191,10 @@ export namespace MyNS {
 		/** The ID of the item. */
 		id: FormControl<string | null | undefined>,
 
-		/** The date of opening balance if inventory item is tracked - YYYY-MM-DD. */
+		/**
+		 * The date of opening balance if inventory item is tracked - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		inventory_date: FormControl<Date | null | undefined>,
 
 		/** Item name */
@@ -5864,6 +6202,8 @@ export namespace MyNS {
 
 		/** Item is available for purchase transactions */
 		purchased: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
@@ -5880,6 +6220,8 @@ export namespace MyNS {
 
 		/** Item type */
 		type: FormControl<InvoiceItemType | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -5920,6 +6262,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure?: string | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 	}
 	export interface InvoiceItemPurchase_detailsFormProperties {
@@ -5929,6 +6273,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceItemPurchase_detailsFormGroup() {
@@ -5948,6 +6294,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure?: string | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 	}
 	export interface InvoiceItemSales_detailsFormProperties {
@@ -5957,6 +6305,8 @@ export namespace MyNS {
 
 		/** Description of the unit type the item is sold as, ie: kg, hour. */
 		unit_of_measure: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceItemSales_detailsFormGroup() {
@@ -6032,6 +6382,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6064,6 +6415,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6110,6 +6462,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6142,6 +6495,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6161,7 +6515,10 @@ export namespace MyNS {
 		/** Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. */
 		accounting_by_row?: boolean | null;
 
-		/** Balance of invoice due. */
+		/**
+		 * Balance of invoice due.
+		 * Type: double
+		 */
 		balance?: number | null;
 		bank_account?: BankAccount;
 		billing_address?: Address;
@@ -6178,7 +6535,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
@@ -6190,25 +6550,40 @@ export namespace MyNS {
 		/** Customer memo */
 		customer_memo?: string | null;
 
-		/** Amount of deposit made to this invoice. */
+		/**
+		 * Amount of deposit made to this invoice.
+		 * Type: double
+		 */
 		deposit?: number | null;
 
-		/** Discount amount applied to this invoice. */
+		/**
+		 * Discount amount applied to this invoice.
+		 * Type: double
+		 */
 		discount_amount?: number | null;
 
-		/** Discount percentage applied to this invoice. */
+		/**
+		 * Discount percentage applied to this invoice.
+		 * Type: double
+		 */
 		discount_percentage?: number | null;
 
 		/** The third-party API ID of original entity */
 		downstream_id?: string | null;
 
-		/** The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD. */
+		/**
+		 * The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date?: Date | null;
 
 		/** A unique identifier for an object. */
 		id?: string | null;
 
-		/** Date invoice was issued - YYYY-MM-DD. */
+		/**
+		 * Date invoice was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		invoice_date?: Date | null;
 
 		/** Invoice sent to contact/customer. */
@@ -6241,7 +6616,10 @@ export namespace MyNS {
 		/** Invoice status */
 		status?: BillStatus | null;
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total?: number | null;
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -6256,10 +6634,16 @@ export namespace MyNS {
 		/** Terms of payment. */
 		terms?: string | null;
 
-		/** Total amount of invoice, including tax. */
+		/**
+		 * Total amount of invoice, including tax.
+		 * Type: double
+		 */
 		total?: number | null;
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax?: number | null;
 		tracking_category?: LinkedTrackingCategory;
 
@@ -6277,7 +6661,10 @@ export namespace MyNS {
 		/** Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. */
 		accounting_by_row: FormControl<boolean | null | undefined>,
 
-		/** Balance of invoice due. */
+		/**
+		 * Balance of invoice due.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** The channel through which the transaction is processed. */
@@ -6292,31 +6679,49 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
 		/** Customer memo */
 		customer_memo: FormControl<string | null | undefined>,
 
-		/** Amount of deposit made to this invoice. */
+		/**
+		 * Amount of deposit made to this invoice.
+		 * Type: double
+		 */
 		deposit: FormControl<number | null | undefined>,
 
-		/** Discount amount applied to this invoice. */
+		/**
+		 * Discount amount applied to this invoice.
+		 * Type: double
+		 */
 		discount_amount: FormControl<number | null | undefined>,
 
-		/** Discount percentage applied to this invoice. */
+		/**
+		 * Discount percentage applied to this invoice.
+		 * Type: double
+		 */
 		discount_percentage: FormControl<number | null | undefined>,
 
 		/** The third-party API ID of original entity */
 		downstream_id: FormControl<string | null | undefined>,
 
-		/** The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD. */
+		/**
+		 * The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date: FormControl<Date | null | undefined>,
 
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
 
-		/** Date invoice was issued - YYYY-MM-DD. */
+		/**
+		 * Date invoice was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		invoice_date: FormControl<Date | null | undefined>,
 
 		/** Invoice sent to contact/customer. */
@@ -6346,7 +6751,10 @@ export namespace MyNS {
 		/** Invoice status */
 		status: FormControl<BillStatus | null | undefined>,
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -6361,10 +6769,16 @@ export namespace MyNS {
 		/** Terms of payment. */
 		terms: FormControl<string | null | undefined>,
 
-		/** Total amount of invoice, including tax. */
+		/**
+		 * Total amount of invoice, including tax.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax: FormControl<number | null | undefined>,
 
 		/** Invoice type */
@@ -6456,6 +6870,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6488,6 +6903,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6540,6 +6956,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6572,6 +6989,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6597,7 +7015,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
@@ -6653,7 +7074,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
 		/** A unique identifier for an object. */
@@ -6730,17 +7154,26 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		location_id?: string | null;
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total?: number | null;
 
 		/** The supplier this entity is linked to. */
 		supplier?: LinkedSupplier;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 		tax_rate?: LinkedTaxRate;
 
-		/** Debit entries are considered positive, and credit entries are considered negative. */
+		/**
+		 * Debit entries are considered positive, and credit entries are considered negative.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 		tracking_category?: LinkedTrackingCategory;
 
@@ -6764,13 +7197,22 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		location_id: FormControl<string | null | undefined>,
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Debit entries are considered positive, and credit entries are considered negative. */
+		/**
+		 * Debit entries are considered positive, and credit entries are considered negative.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/**
@@ -6827,6 +7269,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6859,6 +7302,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6905,6 +7349,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6937,6 +7382,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6975,7 +7421,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** The current balance of the account. */
+		/**
+		 * The current balance of the account.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
@@ -6996,8 +7445,13 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		id?: string | null;
 
-		/** Reconciliation Date means the last calendar day of each Reconciliation Period. */
+		/**
+		 * Reconciliation Date means the last calendar day of each Reconciliation Period.
+		 * Type: DateOnly
+		 */
 		last_reconciliation_date?: Date | null;
+
+		/** Type: double */
 		level?: number | null;
 
 		/** The name of the account. */
@@ -7006,7 +7460,10 @@ export namespace MyNS {
 		/** The nominal code of the ledger account. */
 		nominal_code?: string | null;
 
-		/** The opening balance of the account. */
+		/**
+		 * The opening balance of the account.
+		 * Type: double
+		 */
 		opening_balance?: number | null;
 		parent_account?: LedgerAccountParent_account;
 
@@ -7058,7 +7515,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** The current balance of the account. */
+		/**
+		 * The current balance of the account.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
 		/** The description of the account. */
@@ -7076,8 +7536,13 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
 
-		/** Reconciliation Date means the last calendar day of each Reconciliation Period. */
+		/**
+		 * Reconciliation Date means the last calendar day of each Reconciliation Period.
+		 * Type: DateOnly
+		 */
 		last_reconciliation_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		level: FormControl<number | null | undefined>,
 
 		/** The name of the account. */
@@ -7086,7 +7551,10 @@ export namespace MyNS {
 		/** The nominal code of the ledger account. */
 		nominal_code: FormControl<string | null | undefined>,
 
-		/** The opening balance of the account. */
+		/**
+		 * The opening balance of the account.
+		 * Type: double
+		 */
 		opening_balance: FormControl<number | null | undefined>,
 
 		/** A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. */
@@ -7261,6 +7729,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -7293,6 +7762,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -7339,6 +7809,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -7371,6 +7842,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -7404,7 +7876,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
@@ -7455,6 +7930,7 @@ export namespace MyNS {
 		/**
 		 * Amount of payment
 		 * Required
+		 * Type: double
 		 */
 		total_amount: number;
 
@@ -7490,7 +7966,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
 		/** Payment id to be displayed. */
@@ -7532,6 +8011,7 @@ export namespace MyNS {
 		/**
 		 * Amount of payment
 		 * Required
+		 * Type: double
 		 */
 		total_amount: FormControl<number | null | undefined>,
 
@@ -7580,7 +8060,10 @@ export namespace MyNS {
 
 	export interface PaymentAllocations {
 
-		/** Amount of payment that should be attributed to this allocation. If null, the total_amount will be used. */
+		/**
+		 * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+		 * Type: double
+		 */
 		amount?: number | null;
 		code?: string | null;
 
@@ -7592,7 +8075,10 @@ export namespace MyNS {
 	}
 	export interface PaymentAllocationsFormProperties {
 
-		/** Amount of payment that should be attributed to this allocation. If null, the total_amount will be used. */
+		/**
+		 * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 		code: FormControl<string | null | undefined>,
 
@@ -7654,6 +8140,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -7686,6 +8173,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -7732,6 +8220,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -7764,6 +8253,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -7856,6 +8346,7 @@ export namespace MyNS {
 		/**
 		 * Total expense
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -7864,6 +8355,7 @@ export namespace MyNS {
 		/**
 		 * Total expense
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -7882,6 +8374,7 @@ export namespace MyNS {
 		/**
 		 * Total gross profit
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -7890,6 +8383,7 @@ export namespace MyNS {
 		/**
 		 * Total gross profit
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -7908,6 +8402,7 @@ export namespace MyNS {
 		/**
 		 * Total income
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -7916,6 +8411,7 @@ export namespace MyNS {
 		/**
 		 * Total income
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -7934,6 +8430,7 @@ export namespace MyNS {
 		/**
 		 * Total net income
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -7942,6 +8439,7 @@ export namespace MyNS {
 		/**
 		 * Total net income
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -7960,6 +8458,7 @@ export namespace MyNS {
 		/**
 		 * Total net operating income
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 	}
@@ -7968,6 +8467,7 @@ export namespace MyNS {
 		/**
 		 * Total net operating income
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -8010,6 +8510,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8042,6 +8543,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -8074,31 +8576,49 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate?: number | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
 		custom_mappings?: CustomMappings;
 
-		/** The date on which the purchase order is to be delivered - YYYY-MM-DD. */
+		/**
+		 * The date on which the purchase order is to be delivered - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		delivery_date?: Date | null;
 
-		/** Discount percentage applied to this transaction. */
+		/**
+		 * Discount percentage applied to this transaction.
+		 * Type: double
+		 */
 		discount_percentage?: number | null;
 
 		/** The third-party API ID of original entity */
 		downstream_id?: string | null;
 
-		/** The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. */
+		/**
+		 * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date?: Date | null;
 
-		/** The date on which the order is expected to arrive - YYYY-MM-DD. */
+		/**
+		 * The date on which the order is expected to arrive - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		expected_arrival_date?: Date | null;
 
 		/** A unique identifier for an object. */
 		id?: string | null;
 
-		/** Date purchase order was issued - YYYY-MM-DD. */
+		/**
+		 * Date purchase order was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		issued_date?: Date | null;
 		ledger_account?: LinkedLedgerAccount;
 		line_items?: Array<InvoiceLineItem>;
@@ -8120,7 +8640,10 @@ export namespace MyNS {
 		shipping_address?: Address;
 		status?: PurchaseOrderStatus | null;
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total?: number | null;
 
 		/** The supplier this entity is linked to. */
@@ -8135,10 +8658,16 @@ export namespace MyNS {
 		/** Optional purchase order template */
 		template_id?: string | null;
 
-		/** Total amount of invoice, including tax. */
+		/**
+		 * Total amount of invoice, including tax.
+		 * Type: double
+		 */
 		total?: number | null;
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -8164,28 +8693,46 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Currency Exchange Rate at the time entity was recorded/generated. */
+		/**
+		 * Currency Exchange Rate at the time entity was recorded/generated.
+		 * Type: double
+		 */
 		currency_rate: FormControl<number | null | undefined>,
 
-		/** The date on which the purchase order is to be delivered - YYYY-MM-DD. */
+		/**
+		 * The date on which the purchase order is to be delivered - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		delivery_date: FormControl<Date | null | undefined>,
 
-		/** Discount percentage applied to this transaction. */
+		/**
+		 * Discount percentage applied to this transaction.
+		 * Type: double
+		 */
 		discount_percentage: FormControl<number | null | undefined>,
 
 		/** The third-party API ID of original entity */
 		downstream_id: FormControl<string | null | undefined>,
 
-		/** The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. */
+		/**
+		 * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		due_date: FormControl<Date | null | undefined>,
 
-		/** The date on which the order is expected to arrive - YYYY-MM-DD. */
+		/**
+		 * The date on which the order is expected to arrive - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		expected_arrival_date: FormControl<Date | null | undefined>,
 
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
 
-		/** Date purchase order was issued - YYYY-MM-DD. */
+		/**
+		 * Date purchase order was issued - YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		issued_date: FormControl<Date | null | undefined>,
 
 		/** Message for the supplier. This text appears on the Purchase Order. */
@@ -8204,7 +8751,10 @@ export namespace MyNS {
 		row_version: FormControl<string | null | undefined>,
 		status: FormControl<PurchaseOrderStatus | null | undefined>,
 
-		/** Sub-total amount, normally before tax. */
+		/**
+		 * Sub-total amount, normally before tax.
+		 * Type: double
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
 		/** Applicable tax id/code override if tax is not supplied on a line item basis. */
@@ -8216,10 +8766,16 @@ export namespace MyNS {
 		/** Optional purchase order template */
 		template_id: FormControl<string | null | undefined>,
 
-		/** Total amount of invoice, including tax. */
+		/**
+		 * Total amount of invoice, including tax.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total tax amount applied to this invoice. */
+		/**
+		 * Total tax amount applied to this invoice.
+		 * Type: double
+		 */
 		total_tax: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -8301,6 +8857,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8333,6 +8890,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -8379,6 +8937,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8411,6 +8970,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -8635,6 +9195,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8667,6 +9228,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -8713,6 +9275,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8745,6 +9308,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -8797,6 +9361,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -8829,6 +9394,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -9012,7 +9578,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9032,7 +9601,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9064,7 +9636,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9084,7 +9659,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9133,7 +9711,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9153,7 +9734,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9225,6 +9809,8 @@ export namespace MyNS {
 
 		/** Required */
 		type: string;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ProfitAndLossRecordFormProperties {
@@ -9233,6 +9819,8 @@ export namespace MyNS {
 
 		/** Required */
 		type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateProfitAndLossRecordFormGroup() {
@@ -9249,6 +9837,8 @@ export namespace MyNS {
 		id?: string | null;
 		records?: Array<string>;
 		title?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 
 		/** Required */
@@ -9257,6 +9847,8 @@ export namespace MyNS {
 	export interface ProfitAndLossSectionFormProperties {
 		id: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9378,7 +9970,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9395,7 +9990,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9442,7 +10040,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9462,7 +10063,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9494,7 +10098,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9514,7 +10121,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9546,7 +10156,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -9566,7 +10179,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -9616,6 +10232,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -9648,6 +10265,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -9694,6 +10312,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -9726,6 +10345,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -9772,6 +10392,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -9804,6 +10425,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -9850,6 +10472,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -9882,6 +10505,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -9928,6 +10552,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -9960,6 +10585,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10006,6 +10632,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10038,6 +10665,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10084,6 +10712,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10116,6 +10745,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10162,6 +10792,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10194,6 +10825,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10240,6 +10872,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10272,6 +10905,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10318,6 +10952,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10350,6 +10985,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10396,6 +11032,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -10428,6 +11065,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -10467,6 +11105,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {BillsSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -10543,6 +11182,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetCreditNotesResponse} Credit Notes
@@ -10606,6 +11246,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {CustomersFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -10670,6 +11311,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {InvoiceItemsFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -10734,6 +11376,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {InvoicesSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -10798,6 +11441,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetJournalEntriesResponse} JournalEntry
@@ -10861,6 +11505,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetLedgerAccountsResponse} LedgerAccounts
@@ -10924,6 +11569,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PaymentsFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -11003,6 +11649,7 @@ export namespace MyNS {
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetPurchaseOrdersResponse} PurchaseOrders
 		 */
 		PurchaseOrdersAll(raw: boolean | null | undefined, cursor: string | null | undefined, pass_through: PassThroughQuery | null | undefined, limit: number | null | undefined): Observable<GetPurchaseOrdersResponse> {
@@ -11063,6 +11710,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {SuppliersFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -11127,6 +11775,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {TaxRatesFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.

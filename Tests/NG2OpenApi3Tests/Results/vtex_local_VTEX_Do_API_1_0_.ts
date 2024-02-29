@@ -265,7 +265,9 @@ export namespace MyNS {
 		 * Get notes
 		 * @param {string} target_id ID of the order.
 		 * @param {number} perPage Number of notes per page. Maximum: 30.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of the page to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} reason This parameter is relevant only for PII-compliant accounts. When sending requests to this endpoint, PII-compliant accounts can use this parameter to declare the reason for requesting unmasked data. Otherwise, this endpoint will return masked PII data.
 		 * @return {any} OK
 		 */

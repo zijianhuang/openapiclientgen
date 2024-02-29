@@ -724,8 +724,11 @@ export namespace MyNS {
 		 * Calculates a quote for the given model in the given material and quantity. This endpoint required that you've already uploaded the model to our servers -- to get a quote for a model you haven't yet uploaded, you can try /model/quote_attrs.
 		 * Get model/quote
 		 * @param {number} model_id The unique id of the model you'd like to quote.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} material_id The unique id of the desired material.
+		 *     Type: double
 		 * @param {number} quantity The number of units in this quote.
+		 *     Type: double
 		 * @param {string} units The units of the model file. Either "mm", "cm", or "in". The correct value to pass here depends on which design program you're using. Defaults to "mm".
 		 * @param {boolean} options_orientation Indicates whether or not this model needs to be oriented prior to printing. If your model is already oriented for 3D printing, you can omit this flag (or set it to false) and it will not be re-oriented prior to printing. If true, it will be re-oriented prior to printing. If you're not sure if your model is oriented, you should set this flag to true. There is an additional charge for orientation.
 		 * @return {ModelQuote} Quote for model with attributes
@@ -739,12 +742,19 @@ export namespace MyNS {
 		 * This endpoint will provide a quote for a model matching the submitted parameters. Note that this quote may be different than the quote provided by /model/quote in the case that your attribute calculations differ from the ones used by Voodoo Manufacturing.
 		 * Get model/quote_attrs
 		 * @param {number} x The calculated unitless x dimension of this model's bounding box.
+		 *     Type: double
 		 * @param {number} y The calculated unitless y dimension of this model's bounding box.
+		 *     Type: double
 		 * @param {number} z The calculated unitless z dimension of this model's bounding box.
+		 *     Type: double
 		 * @param {number} volume The calculated unitless volume of the model.
+		 *     Type: double
 		 * @param {number} surface_area The calculated unitless surface area of the model.
+		 *     Type: double
 		 * @param {number} material_id The unique id of the desired material.
+		 *     Type: double
 		 * @param {number} quantity The number of units in this quote.
+		 *     Type: double
 		 * @param {string} units The units of the model file. Either "mm", "cm", or "in". The correct value to pass here depends on which design program you're using. Defaults to "mm".
 		 * @param {boolean} options_orientation Indicates whether or not this model needs to be oriented prior to printing. If your model is already oriented for 3D printing, you can omit this flag (or set it to false) and it will not be re-oriented prior to printing. If true, it will be re-oriented prior to printing. If you're not sure if your model is oriented, you should set this flag to true. There is an additional charge for orientation.
 		 * @return {ModelQuote} Quote for model with attributes

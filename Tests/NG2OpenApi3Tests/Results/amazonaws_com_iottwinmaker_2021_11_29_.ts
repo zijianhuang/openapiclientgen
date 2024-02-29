@@ -3131,6 +3131,7 @@ export namespace MyNS {
 		 * Sets values for multiple time series properties.
 		 * Post workspaces/{workspaceId}/entity-properties
 		 * @param {string} workspaceId The ID of the workspace that contains the properties to set.
+		 *     Min length: 1    Max length: 128
 		 * @return {BatchPutPropertyValuesResponse} Success
 		 */
 		BatchPutPropertyValues(workspaceId: string, requestBody: BatchPutPropertyValuesPostBody): Observable<BatchPutPropertyValuesResponse> {
@@ -3141,7 +3142,9 @@ export namespace MyNS {
 		 * Creates a component type.
 		 * Post workspaces/{workspaceId}/component-types/{componentTypeId}
 		 * @param {string} workspaceId The ID of the workspace that contains the component type.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} componentTypeId The ID of the component type.
+		 *     Min length: 1    Max length: 256
 		 * @return {CreateComponentTypeResponse} Success
 		 */
 		CreateComponentType(workspaceId: string, componentTypeId: string, requestBody: CreateComponentTypePostBody): Observable<CreateComponentTypeResponse> {
@@ -3152,7 +3155,9 @@ export namespace MyNS {
 		 * Deletes a component type.
 		 * Delete workspaces/{workspaceId}/component-types/{componentTypeId}
 		 * @param {string} workspaceId The ID of the workspace that contains the component type.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} componentTypeId The ID of the component type to delete.
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteComponentTypeResponse} Success
 		 */
 		DeleteComponentType(workspaceId: string, componentTypeId: string): Observable<DeleteComponentTypeResponse> {
@@ -3163,7 +3168,9 @@ export namespace MyNS {
 		 * Retrieves information about a component type.
 		 * Get workspaces/{workspaceId}/component-types/{componentTypeId}
 		 * @param {string} workspaceId The ID of the workspace that contains the component type.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} componentTypeId The ID of the component type.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetComponentTypeResponse} Success
 		 */
 		GetComponentType(workspaceId: string, componentTypeId: string): Observable<GetComponentTypeResponse> {
@@ -3174,7 +3181,9 @@ export namespace MyNS {
 		 * Updates information in a component type.
 		 * Put workspaces/{workspaceId}/component-types/{componentTypeId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} componentTypeId The ID of the component type.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateComponentTypeResponse} Success
 		 */
 		UpdateComponentType(workspaceId: string, componentTypeId: string, requestBody: UpdateComponentTypePutBody): Observable<UpdateComponentTypeResponse> {
@@ -3185,6 +3194,7 @@ export namespace MyNS {
 		 * Creates an entity.
 		 * Post workspaces/{workspaceId}/entities
 		 * @param {string} workspaceId The ID of the workspace that contains the entity.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateEntityResponse} Success
 		 */
 		CreateEntity(workspaceId: string, requestBody: CreateEntityPostBody): Observable<CreateEntityResponse> {
@@ -3195,6 +3205,7 @@ export namespace MyNS {
 		 * Creates a scene.
 		 * Post workspaces/{workspaceId}/scenes
 		 * @param {string} workspaceId The ID of the workspace that contains the scene.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateSceneResponse} Success
 		 */
 		CreateScene(workspaceId: string, requestBody: CreateScenePostBody): Observable<CreateSceneResponse> {
@@ -3205,6 +3216,7 @@ export namespace MyNS {
 		 * This action creates a SyncJob.
 		 * Post workspaces/{workspaceId}/sync-jobs/{syncSource}
 		 * @param {string} workspaceId The workspace ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} syncSource <p>The sync source.</p> <note> <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> </note>
 		 * @return {CreateSyncJobResponse} Success
 		 */
@@ -3216,6 +3228,7 @@ export namespace MyNS {
 		 * Delete the SyncJob.
 		 * Delete workspaces/{workspaceId}/sync-jobs/{syncSource}
 		 * @param {string} workspaceId The workspace ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} syncSource <p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note>
 		 * @return {DeleteSyncJobResponse} Success
 		 */
@@ -3227,6 +3240,7 @@ export namespace MyNS {
 		 * Creates a workplace.
 		 * Post workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateWorkspaceResponse} Success
 		 */
 		CreateWorkspace(workspaceId: string, requestBody: CreateWorkspacePostBody): Observable<CreateWorkspaceResponse> {
@@ -3237,6 +3251,7 @@ export namespace MyNS {
 		 * Deletes a workspace.
 		 * Delete workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteWorkspaceResponse} Success
 		 */
 		DeleteWorkspace(workspaceId: string): Observable<DeleteWorkspaceResponse> {
@@ -3247,6 +3262,7 @@ export namespace MyNS {
 		 * Retrieves information about a workspace.
 		 * Get workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetWorkspaceResponse} Success
 		 */
 		GetWorkspace(workspaceId: string): Observable<GetWorkspaceResponse> {
@@ -3257,6 +3273,7 @@ export namespace MyNS {
 		 * Updates a workspace.
 		 * Put workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateWorkspaceResponse} Success
 		 */
 		UpdateWorkspace(workspaceId: string, requestBody: UpdateWorkspacePutBody): Observable<UpdateWorkspaceResponse> {
@@ -3267,7 +3284,9 @@ export namespace MyNS {
 		 * Deletes an entity.
 		 * Delete workspaces/{workspaceId}/entities/{entityId}
 		 * @param {string} workspaceId The ID of the workspace that contains the entity to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} entityId The ID of the entity to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} isRecursive A Boolean value that specifies whether the operation deletes child entities.
 		 * @return {DeleteEntityResponse} Success
 		 */
@@ -3279,7 +3298,9 @@ export namespace MyNS {
 		 * Retrieves information about an entity.
 		 * Get workspaces/{workspaceId}/entities/{entityId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} entityId The ID of the entity.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetEntityResponse} Success
 		 */
 		GetEntity(workspaceId: string, entityId: string): Observable<GetEntityResponse> {
@@ -3290,7 +3311,9 @@ export namespace MyNS {
 		 * Updates an entity.
 		 * Put workspaces/{workspaceId}/entities/{entityId}
 		 * @param {string} workspaceId The ID of the workspace that contains the entity.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} entityId The ID of the entity.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateEntityResponse} Success
 		 */
 		UpdateEntity(workspaceId: string, entityId: string, requestBody: UpdateEntityPutBody): Observable<UpdateEntityResponse> {
@@ -3301,7 +3324,9 @@ export namespace MyNS {
 		 * Deletes a scene.
 		 * Delete workspaces/{workspaceId}/scenes/{sceneId}
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sceneId The ID of the scene to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteSceneResponse} Success
 		 */
 		DeleteScene(workspaceId: string, sceneId: string): Observable<DeleteSceneResponse> {
@@ -3312,7 +3337,9 @@ export namespace MyNS {
 		 * Retrieves information about a scene.
 		 * Get workspaces/{workspaceId}/scenes/{sceneId}
 		 * @param {string} workspaceId The ID of the workspace that contains the scene.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sceneId The ID of the scene.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetSceneResponse} Success
 		 */
 		GetScene(workspaceId: string, sceneId: string): Observable<GetSceneResponse> {
@@ -3323,7 +3350,9 @@ export namespace MyNS {
 		 * Updates a scene.
 		 * Put workspaces/{workspaceId}/scenes/{sceneId}
 		 * @param {string} workspaceId The ID of the workspace that contains the scene.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sceneId The ID of the scene.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateSceneResponse} Success
 		 */
 		UpdateScene(workspaceId: string, sceneId: string, requestBody: UpdateScenePutBody): Observable<UpdateSceneResponse> {
@@ -3363,6 +3392,7 @@ export namespace MyNS {
 		 * <p>Gets the property values for a component, component type, entity, or workspace.</p> <p>You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>, or <code>workspaceId</code>.</p>
 		 * Post workspaces/{workspaceId}/entity-properties/value
 		 * @param {string} workspaceId The ID of the workspace whose values the operation returns.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {GetPropertyValueResponse} Success
@@ -3375,6 +3405,7 @@ export namespace MyNS {
 		 * <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p> <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
 		 * Post workspaces/{workspaceId}/entity-properties/history
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {GetPropertyValueHistoryResponse} Success
@@ -3388,6 +3419,7 @@ export namespace MyNS {
 		 * Get sync-jobs/{syncSource}
 		 * @param {string} syncSource <p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note>
 		 * @param {string} workspace The workspace ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetSyncJobResponse} Success
 		 */
 		GetSyncJob(syncSource: string, workspace: string | null | undefined): Observable<GetSyncJobResponse> {
@@ -3398,6 +3430,7 @@ export namespace MyNS {
 		 * Lists all component types in a workspace.
 		 * Post workspaces/{workspaceId}/component-types-list
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListComponentTypesResponse} Success
@@ -3410,6 +3443,7 @@ export namespace MyNS {
 		 * Lists all entities in a workspace.
 		 * Post workspaces/{workspaceId}/entities-list
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEntitiesResponse} Success
@@ -3422,6 +3456,7 @@ export namespace MyNS {
 		 * Lists all scenes in a workspace.
 		 * Post workspaces/{workspaceId}/scenes-list
 		 * @param {string} workspaceId The ID of the workspace that contains the scenes.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListScenesResponse} Success
@@ -3434,6 +3469,7 @@ export namespace MyNS {
 		 * List all SyncJobs.
 		 * Post workspaces/{workspaceId}/sync-jobs-list
 		 * @param {string} workspaceId The ID of the workspace that contains the sync job.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSyncJobsResponse} Success
@@ -3446,6 +3482,7 @@ export namespace MyNS {
 		 * Lists the sync resources.
 		 * Post workspaces/{workspaceId}/sync-jobs/{syncSource}/resources-list
 		 * @param {string} workspaceId The ID of the workspace that contains the sync job.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} syncSource <p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note>
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -3488,7 +3525,9 @@ export namespace MyNS {
 		 * Removes tags from a resource.
 		 * Delete tags#resourceARN&tagKeys
 		 * @param {string} resourceARN The ARN of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceARN: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -3521,8 +3560,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component type.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -3543,8 +3582,8 @@ export namespace MyNS {
 
 		/**
 		 * A friendly name for the component type.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		componentTypeName?: string | null;
 	}
@@ -3555,8 +3594,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component type.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3574,8 +3613,8 @@ export namespace MyNS {
 
 		/**
 		 * A friendly name for the component type.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		componentTypeName: FormControl<string | null | undefined>,
 	}
@@ -3599,8 +3638,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component type.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -3618,8 +3657,8 @@ export namespace MyNS {
 
 		/**
 		 * The component type name.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		componentTypeName?: string | null;
 	}
@@ -3630,8 +3669,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component type.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3646,8 +3685,8 @@ export namespace MyNS {
 
 		/**
 		 * The component type name.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		componentTypeName: FormControl<string | null | undefined>,
 	}
@@ -3667,23 +3706,23 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId?: string | null;
 
 		/**
 		 * The name of the entity.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		entityName: string;
 
 		/**
 		 * The description of the entity.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -3692,8 +3731,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity's parent entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		parentEntityId?: string | null;
 
@@ -3704,23 +3743,23 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the entity.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		entityName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the entity.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3729,8 +3768,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity's parent entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		parentEntityId: FormControl<string | null | undefined>,
 
@@ -3754,23 +3793,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the scene.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		sceneId: string;
 
 		/**
 		 * The relative path that specifies the location of the content definition file.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		contentLocation: string;
 
 		/**
 		 * The description for this scene.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -3792,23 +3831,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the scene.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		sceneId: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path that specifies the location of the content definition file.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		contentLocation: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for this scene.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3834,8 +3873,8 @@ export namespace MyNS {
 		/**
 		 * The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		syncRole: string;
 
@@ -3847,8 +3886,8 @@ export namespace MyNS {
 		/**
 		 * The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		syncRole: FormControl<string | null | undefined>,
 
@@ -3867,24 +3906,24 @@ export namespace MyNS {
 
 		/**
 		 * The description of the workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
 		/**
 		 * The ARN of the S3 bucket where resources associated with the workspace are stored.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		s3Location: string;
 
 		/**
 		 * The ARN of the execution role associated with the workspace.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		role: string;
 
@@ -3895,24 +3934,24 @@ export namespace MyNS {
 
 		/**
 		 * The description of the workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the S3 bucket where resources associated with the workspace are stored.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		s3Location: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the execution role associated with the workspace.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		role: FormControl<string | null | undefined>,
 
@@ -3933,15 +3972,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
 		/**
 		 * The ARN of the execution role associated with the workspace.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		role?: string | null;
 	}
@@ -3949,15 +3988,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the execution role associated with the workspace.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		role: FormControl<string | null | undefined>,
 	}
@@ -3973,15 +4012,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the entity.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		entityName?: string | null;
 
 		/**
 		 * The description of the entity.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -3995,15 +4034,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the entity.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		entityName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the entity.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4039,15 +4078,15 @@ export namespace MyNS {
 
 		/**
 		 * The relative path that specifies the location of the content definition file.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		contentLocation?: string | null;
 
 		/**
 		 * The description of this scene.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description?: string | null;
 
@@ -4065,15 +4104,15 @@ export namespace MyNS {
 
 		/**
 		 * The relative path that specifies the location of the content definition file.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		contentLocation: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of this scene.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4094,16 +4133,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the workspace.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		workspaceId: string;
 
 		/**
 		 * The query statement.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		queryStatement: string;
 
@@ -4116,8 +4155,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4126,16 +4165,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the workspace.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		workspaceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The query statement.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		queryStatement: FormControl<string | null | undefined>,
 
@@ -4148,8 +4187,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4197,22 +4236,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the component whose property values the operation returns.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentName?: string | null;
 
 		/**
 		 * The ID of the component type whose property values the operation returns.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentTypeId?: string | null;
 
 		/**
 		 * The ID of the entity whose property values the operation returns.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId?: string | null;
 
@@ -4233,15 +4272,15 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * The property group name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		propertyGroupName?: string | null;
 
@@ -4252,22 +4291,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the component whose property values the operation returns.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the component type whose property values the operation returns.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the entity whose property values the operation returns.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId: FormControl<string | null | undefined>,
 
@@ -4280,15 +4319,15 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The property group name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		propertyGroupName: FormControl<string | null | undefined>,
 	}
@@ -4320,22 +4359,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId?: string | null;
 
 		/**
 		 * The name of the component.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentName?: string | null;
 
 		/**
 		 * The ID of the component type.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentTypeId?: string | null;
 
@@ -4365,8 +4404,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 
@@ -4382,15 +4421,15 @@ export namespace MyNS {
 
 		/**
 		 * Timestamp represented in ISO 8601 format
-		 * Max length: 35
 		 * Min length: 20
+		 * Max length: 35
 		 */
 		startTime?: string | null;
 
 		/**
 		 * Timestamp represented in ISO 8601 format
-		 * Max length: 35
 		 * Min length: 20
+		 * Max length: 35
 		 */
 		endTime?: string | null;
 	}
@@ -4398,22 +4437,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		entityId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the component.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the component type.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		componentTypeId: FormControl<string | null | undefined>,
 
@@ -4425,8 +4464,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -4442,15 +4481,15 @@ export namespace MyNS {
 
 		/**
 		 * Timestamp represented in ISO 8601 format
-		 * Max length: 35
 		 * Min length: 20
+		 * Max length: 35
 		 */
 		startTime: FormControl<string | null | undefined>,
 
 		/**
 		 * Timestamp represented in ISO 8601 format
-		 * Max length: 35
 		 * Min length: 20
+		 * Max length: 35
 		 */
 		endTime: FormControl<string | null | undefined>,
 	}
@@ -4493,8 +4532,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 
@@ -4509,8 +4548,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -4543,8 +4582,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4559,8 +4598,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4583,8 +4622,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4599,8 +4638,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4623,8 +4662,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4639,8 +4678,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4666,8 +4705,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4682,8 +4721,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4700,8 +4739,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		resourceARN: string;
 
@@ -4714,8 +4753,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4724,8 +4763,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		resourceARN: FormControl<string | null | undefined>,
 
@@ -4738,8 +4777,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4763,8 +4802,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken?: string | null;
 	}
@@ -4779,8 +4818,8 @@ export namespace MyNS {
 
 		/**
 		 * The string that specifies the next page of results.
-		 * Max length: 17880
 		 * Min length: 0
+		 * Max length: 17880
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -4797,8 +4836,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		resourceARN: string;
 
@@ -4813,8 +4852,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		resourceARN: FormControl<string | null | undefined>,
 

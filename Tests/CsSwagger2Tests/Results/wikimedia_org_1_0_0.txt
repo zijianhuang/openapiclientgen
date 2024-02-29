@@ -1420,7 +1420,9 @@ namespace MyNS
 		/// 
 		/// MediaMathFormula_hashGet media/math/formula/{hash}
 		/// </summary>
-		/// <param name="hash">The hash string of the previous POST data</param>
+		/// <param name="hash">The hash string of the previous POST data
+		/// Min length: 1
+		// </param>
 		/// <returns>Information about the checked formula</returns>
 		public async Task MediaMathFormula_hashGetAsync(string hash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1457,7 +1459,9 @@ namespace MyNS
 		/// MediaMathRender_format_hashGet media/math/render/{format}/{hash}
 		/// </summary>
 		/// <param name="format">The output format; can be svg or mml</param>
-		/// <param name="hash">The hash string of the previous POST data</param>
+		/// <param name="hash">The hash string of the previous POST data
+		/// Min length: 1
+		// </param>
 		/// <returns>The rendered formula</returns>
 		public async Task MediaMathRender_format_hashGetAsync(MediaMathRender_format_hashGetFormat format, string hash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

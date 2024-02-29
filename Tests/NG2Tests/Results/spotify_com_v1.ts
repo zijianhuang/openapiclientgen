@@ -2086,7 +2086,9 @@ export namespace MyNS {
 		 * Get albums/{id}/tracks
 		 * @param {string} id The Spotify ID for the album
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} market The market (an ISO 3166-1 alpha-2 country code)
 		 * @return {Track_simple_page} OK
 		 */
@@ -2119,7 +2121,9 @@ export namespace MyNS {
 		 * Get artists/{id}/albums
 		 * @param {string} id The Spotify ID for the artist
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} album_type Filter by album types
 		 * @param {string} market The market (an ISO 3166-1 alpha-2 country code)
 		 * @return {Album_simple_page} OK
@@ -2153,7 +2157,9 @@ export namespace MyNS {
 		 * [Get a List of Browse Categories](https://developer.spotify.com/web-api/get-list-categories/)
 		 * Get browse/categories
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country The country (an ISO 3166-1 alpha-2 country code)
 		 * @param {string} locale The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: es_MX, meaning "Spanish (Mexico)".
 		 * @return {Category_page} OK
@@ -2179,7 +2185,9 @@ export namespace MyNS {
 		 * Get browse/categories/{category_id}/playlists
 		 * @param {string} category_id The Spotify ID of the category you wish to fetch.
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country The country (an ISO 3166-1 alpha-2 country code)
 		 * @return {BrowseCategories_category_idPlaylistsGetByLimitAndOffsetAndCountryReturn} OK
 		 */
@@ -2191,7 +2199,9 @@ export namespace MyNS {
 		 * [Get a List of Featured Playlists](https://developer.spotify.com/web-api/get-list-featured-playlists/)
 		 * Get browse/featured-playlists
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country The country (an ISO 3166-1 alpha-2 country code)
 		 * @param {string} locale The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: es_MX, meaning "Spanish (Mexico)".
 		 * @param {string} timestamp A timestamp in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss) with the user's local time to get results tailored to a specific date and time in the day. If not provided, it defaults to the current UTC time. Example: "2014-10-23T09:00:00" for a user whose local time is 9AM.
@@ -2205,7 +2215,9 @@ export namespace MyNS {
 		 * [Get a List of New Releases](https://developer.spotify.com/web-api/get-list-new-releases/)
 		 * Get browse/new-releases
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country The country (an ISO 3166-1 alpha-2 country code)
 		 * @return {Album_simple_page} OK
 		 */
@@ -2227,6 +2239,7 @@ export namespace MyNS {
 		 * Get me/following
 		 * @param {MeFollowingGetByTypeAndLimitAndAfterType} type The ID type, currently only artist is supported.
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} after The last artist ID retrieved from the previous request.
 		 * @return {User_followed} OK
 		 */
@@ -2271,7 +2284,9 @@ export namespace MyNS {
 		 * [Get Current User's Saved Tracks](https://developer.spotify.com/web-api/get-users-saved-tracks/)
 		 * Get me/tracks
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} market The market (an ISO 3166-1 alpha-2 country code)
 		 * @return {Saved_track_page} OK
 		 */
@@ -2313,7 +2328,9 @@ export namespace MyNS {
 		 * [Search for an Item](https://developer.spotify.com/web-api/search-item/)
 		 * Get search
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} q The search query's keywords (and optional field filters). The search is not case-sensitive: 'roadhouse' will match 'Roadhouse', 'roadHouse', etc. Keywords will be matched in any order unless surrounded by quotes, thus q=roadhouse&20blues will match both 'Blues Roadhouse' and 'Roadhouse of the Blues'. Quotation marks can be used to limit the match to a phrase: q=roadhouse&20blues will match 'My Roadhouse Blues' but not 'Roadhouse of the Blues'. By default, results are returned when a match is found in any field of the target object type. Searches can be made more specific by specifying an album, artist or track field filter. For example q=album:gold%20artist:abba&type=album will search for albums with the text 'gold' in the album name and the text 'abba' in an artist name. Other possible field filters, depending on object types being searched, include year, genre, upc, and isrc. For example, q=damian%20genre:reggae-pop&type=artist. The asterisk (*) character can, with some limitations, be used as a wildcard (maximum: 2 per query). It will match a variable number of non-white-space characters. It cannot be used in a quoted phrase, in a field filter, or as the first character of the keyword string. Searching for playlists will return results matching the playlist's name and/or description.
 		 * @param {string} type A comma-separated list of item types to search across. Search results will include hits from all the specified item types; for example q=name:abacab&type=album,track will return both albums and tracks with "abacab" in their name.
 		 * @param {string} market The market (an ISO 3166-1 alpha-2 country code).  If given, only items with content playable in that market will be returned.
@@ -2359,7 +2376,9 @@ export namespace MyNS {
 		 * Get users/{user_id}/playlists
 		 * @param {string} user_id The user's Spotify user ID.
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Playlist_simple_page} OK
 		 */
 		Users_user_idPlaylistsGetByLimitAndOffset(user_id: string, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Playlist_simple_page> {
@@ -2440,7 +2459,9 @@ export namespace MyNS {
 		 * @param {string} user_id The user's Spotify user ID.
 		 * @param {string} playlist_id The Spotify playlist ID.
 		 * @param {number} limit The maximum number of items to return
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} fields A comma-separated list of fields to filter query
 		 * @param {string} market The market (an ISO 3166-1 alpha-2 country code)
 		 * @return {Playlist_track_page} OK
@@ -2466,6 +2487,7 @@ export namespace MyNS {
 		 * @param {string} user_id The user's Spotify user ID.
 		 * @param {string} playlist_id The Spotify playlist ID.
 		 * @param {number} position The position to insert the tracks, a zero-based index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} uris A comma-separated list of Spotify track URIs to add. A maximum of 100 tracks can be added in one request.
 		 * @return {Playlist_snapshot} OK
 		 */

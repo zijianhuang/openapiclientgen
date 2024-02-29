@@ -5152,8 +5152,13 @@ namespace MyNS
 		/// <param name="filter_updated_at">The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for events updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_cursor">Page cursor</param>
 		/// <param name="include">List of related resources to include in the response</param>
 		/// <returns>OK</returns>
@@ -5450,8 +5455,13 @@ namespace MyNS
 		/// <param name="filter_organization">Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_cursor">Page cursor</param>
 		/// <param name="include">List of related resources to include in the response</param>
 		/// <returns>OK</returns>
@@ -5519,8 +5529,13 @@ namespace MyNS
 		/// <param name="filter_organization">Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_cursor">Page cursor</param>
 		/// <param name="include">List of related resources to include in the response</param>
 		/// <returns>OK</returns>
@@ -5848,8 +5863,13 @@ namespace MyNS
 		/// <param name="filter_updated_at">The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for patients updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_cursor">Page cursor</param>
 		/// <returns>OK</returns>
 		public async Task FetchPatientsAsync(string filter_groups, string filter_organization, string filter_identifier_system, string filter_identifier_value, bool filter_archived, string filter_created_at, string filter_updated_at, int page_number, int page_size, int page_limit, string page_cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5973,8 +5993,13 @@ namespace MyNS
 		/// <param name="filter_organization">Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[groups]`, `filter[organization]`.
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_cursor">Page cursor</param>
 		/// <returns>OK</returns>
 		public async Task FetchPatientHealthMetricsAsync(string filter_patient, string filter_groups, string filter_organization, int page_number, int page_size, int page_limit, string page_cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6108,8 +6133,13 @@ namespace MyNS
 		/// <param name="filter_updated_at">The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for results updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		///</param>
 		/// <param name="page_number">Page number</param>
-		/// <param name="page_size">Page size</param>
-		/// <param name="page_limit">Page limit</param>
+		/// <param name="page_size">Page size
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="page_limit">Page limit
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_after">Page cursor</param>
 		/// <returns>OK</returns>
 		public async Task FetchPatientHealthResultsAsync(string filter_patient, string filter_actions, string filter_start_at, string filter_end_at, string filter_threads, string filter_created_at, string filter_updated_at, int page_number, int page_size, int page_limit, string page_after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

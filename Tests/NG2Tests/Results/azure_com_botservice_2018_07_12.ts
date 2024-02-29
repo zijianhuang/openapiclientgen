@@ -2051,6 +2051,7 @@ export namespace MyNS {
 		 * Returns all the resources of a particular type belonging to a resource group
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {BotResponseList} The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -2071,7 +2072,9 @@ export namespace MyNS {
 		 * Returns a BotService specified by the parameters.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {Bot} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -2084,7 +2087,9 @@ export namespace MyNS {
 		 * Creates a Bot Service. Bot Service is a resource group wide resource type.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {Bot} requestBody The parameters to provide for the created bot.
@@ -2098,7 +2103,9 @@ export namespace MyNS {
 		 * Deletes a Bot Service from the resource group.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -2111,7 +2118,9 @@ export namespace MyNS {
 		 * Updates a Bot Service
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {Bot} requestBody The parameters to provide for the created bot.
@@ -2125,8 +2134,11 @@ export namespace MyNS {
 		 * Get a Connection Setting registration for a Bot Service
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} connectionName The name of the Bot Service Connection Setting resource
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {ConnectionSetting} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -2139,8 +2151,11 @@ export namespace MyNS {
 		 * Register a new Auth Connection for a Bot Service
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} connectionName The name of the Bot Service Connection Setting resource
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {ConnectionSetting} requestBody The parameters to provide for creating the Connection Setting.
@@ -2154,8 +2169,11 @@ export namespace MyNS {
 		 * Deletes a Connection Setting registration for a Bot Service
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} connectionName The name of the Bot Service Connection Setting resource
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -2168,8 +2186,11 @@ export namespace MyNS {
 		 * Updates a Connection Setting registration for a Bot Service
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} connectionName The name of the Bot Service Connection Setting resource
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {ConnectionSetting} requestBody The parameters to provide for updating the Connection Setting.
@@ -2183,8 +2204,11 @@ export namespace MyNS {
 		 * Get a Connection Setting registration for a Bot Service
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}/listWithSecrets
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} connectionName The name of the Bot Service Connection Setting resource
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {ConnectionSetting} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -2197,7 +2221,9 @@ export namespace MyNS {
 		 * Returns all the Channel registrations of a particular BotService resource
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {ChannelResponseList} The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -2218,8 +2244,11 @@ export namespace MyNS {
 		 * Returns a BotService Channel registration specified by the parameters.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} channelName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {BotChannel} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -2232,7 +2261,9 @@ export namespace MyNS {
 		 * Creates a Channel registration for a Bot Service
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {Channels_CreateChannelName} channelName The name of the Channel resource.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
@@ -2247,8 +2278,11 @@ export namespace MyNS {
 		 * Deletes a Channel registration from a Bot Service
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} channelName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -2261,7 +2295,9 @@ export namespace MyNS {
 		 * Updates a Channel registration for a Bot Service
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {Channels_CreateChannelName} channelName The name of the Channel resource.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
@@ -2276,7 +2312,9 @@ export namespace MyNS {
 		 * Lists a Channel registration for a Bot Service including secrets
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}/listChannelWithKeys
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {Channels_CreateChannelName} channelName The name of the Channel resource.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
@@ -2290,7 +2328,9 @@ export namespace MyNS {
 		 * Returns all the Connection Settings registered to a particular BotService resource
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/connections
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {ConnectionSettingResponseList} The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -2311,6 +2351,7 @@ export namespace MyNS {
 		 * Returns all the resources of a particular type belonging to a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {EnterpriseChannelResponseList} The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -2331,7 +2372,9 @@ export namespace MyNS {
 		 * Returns an Enterprise Channel specified by the parameters.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {EnterpriseChannel} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -2344,7 +2387,9 @@ export namespace MyNS {
 		 * Creates an Enterprise Channel.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {EnterpriseChannel} requestBody The parameters to provide for the new Enterprise Channel.
@@ -2358,7 +2403,9 @@ export namespace MyNS {
 		 * Deletes an Enterprise Channel from the resource group
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -2371,7 +2418,9 @@ export namespace MyNS {
 		 * Updates an Enterprise Channel.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		 * @param {string} resourceGroupName The name of the Bot resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the Bot resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {EnterpriseChannel} requestBody The parameters to provide to update the Enterprise Channel.

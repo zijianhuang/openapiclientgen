@@ -2054,10 +2054,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="classification_id">Limit the result to classification inclusions linked to a classification with this ID.</param>
 		/// <param name="classification_type">The type of classification that the classification inclusions are linked to.
 		///Depending on the permissions of your credential, only a subset of these types are usable.
@@ -2133,10 +2138,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="type">Limit the result to classifications of this type. The possible values for types
 		///depends on the privileges of the provided credential.
 		///</param>
@@ -2211,10 +2221,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="creditable_id">Limit the result to credits for the entity with this ID only. If the entity is not
 		///published, the credential needs to have the right privilege to list the credits for it.
 		///</param>
@@ -2292,10 +2307,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="included_in_inventory_calendar">Limit the result to episodes usable with an inventory management calendar for the provided AdDeal ID.</param>
 		/// <param name="month">Limit the result to episodes released in this month.</param>
 		/// <param name="published">If `true`, limit the result to published episodes only.
@@ -2733,10 +2753,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="q">Limit the result to networks with a name containing this parameter in a case-insensitive way.</param>
 		/// <param name="ad_rep_account_id">Limit the result to networks containing at least one series with an ad deal of this Ad Ops profile.
 		///</param>
@@ -2816,10 +2841,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="q">Limit the result to people with a full name containing this parameter in a case-insensitive way.</param>
 		/// <param name="sort">Specify how to sort the result. Please refer to either the top section or the
 		///[JSON:API specification](https://jsonapi.org/format/#fetching-sorting) on how sorting works in general.
@@ -2893,10 +2923,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="series_id">Limit the result to seasons owned by this series.</param>
 		/// <param name="q">Limit the result to seasons with a title containing this parameter in a case-insensitive way.</param>
 		/// <param name="sort">Specify how to sort the result. Please refer to either the top section or the
@@ -2968,10 +3003,15 @@ namespace MyNS
 		///</param>
 		/// <param name="page_number">Select which page number to receive results for. Pages are numbered starting at 1.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="page_size">Indicate how many records to return per page. The maximum is 100.
 		///
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="ad_rep_account_id">Limit the result to series with an ad deal of this Ad Ops profile.
 		///</param>
 		/// <param name="network_id">Limit the result to series owned by this network.</param>

@@ -61,11 +61,19 @@ export namespace MyNS {
 	}
 
 	export interface AccountsBalances {
+
+		/** Type: double */
 		available?: number | null;
+
+		/** Type: double */
 		current?: number | null;
 	}
 	export interface AccountsBalancesFormProperties {
+
+		/** Type: double */
 		available: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountsBalancesFormGroup() {
@@ -77,19 +85,35 @@ export namespace MyNS {
 	}
 
 	export interface AccountsTransactions {
+
+		/** Type: double */
 		amount?: number | null;
+
+		/** Type: double */
 		balance?: number | null;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		operation_date?: Date | null;
 		uuid?: string | null;
+
+		/** Type: DateOnly */
 		value_date?: Date | null;
 	}
 	export interface AccountsTransactionsFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		balance: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		operation_date: FormControl<Date | null | undefined>,
 		uuid: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		value_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateAccountsTransactionsFormGroup() {
@@ -107,6 +131,8 @@ export namespace MyNS {
 
 	/** Tarjetas de crédito, débito y prepago */
 	export interface Cards {
+
+		/** Type: double */
 		anual_interest?: number | null;
 
 		/** Required */
@@ -124,12 +150,16 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: DateOnly */
 		next_payment_date?: Date | null;
 		owner?: Owner;
 		status?: CardsStatus | null;
 
 		/** Required */
 		subtype: CardsSubtype;
+
+		/** Type: double */
 		tae?: number | null;
 		transactions?: Array<string>;
 
@@ -139,6 +169,8 @@ export namespace MyNS {
 
 	/** Tarjetas de crédito, débito y prepago */
 	export interface CardsFormProperties {
+
+		/** Type: double */
 		anual_interest: FormControl<number | null | undefined>,
 
 		/**
@@ -153,11 +185,15 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		next_payment_date: FormControl<Date | null | undefined>,
 		status: FormControl<CardsStatus | null | undefined>,
 
 		/** Required */
 		subtype: FormControl<CardsSubtype | null | undefined>,
+
+		/** Type: double */
 		tae: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -180,13 +216,25 @@ export namespace MyNS {
 	}
 
 	export interface CardsBalances {
+
+		/** Type: double */
 		available?: number | null;
+
+		/** Type: double */
 		disposed?: number | null;
+
+		/** Type: double */
 		limit?: number | null;
 	}
 	export interface CardsBalancesFormProperties {
+
+		/** Type: double */
 		available: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		disposed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateCardsBalancesFormGroup() {
@@ -479,6 +527,7 @@ export namespace MyNS {
 		/**
 		 * Duración de la ejecución
 		 * Required
+		 * Type: double
 		 */
 		execution_time: number;
 
@@ -499,6 +548,7 @@ export namespace MyNS {
 		/**
 		 * Duración de la ejecución
 		 * Required
+		 * Type: double
 		 */
 		execution_time: FormControl<number | null | undefined>,
 
@@ -582,10 +632,16 @@ export namespace MyNS {
 		PropertiesHistoric_prices: Array<PropertiesHistoric_prices>;
 		purpose?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		trading_price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		trading_year: number;
 
 		/** Required */
@@ -606,10 +662,16 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		purpose: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		trading_price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		trading_year: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -629,11 +691,19 @@ export namespace MyNS {
 	}
 
 	export interface PropertiesHistoric_prices {
+
+		/** Type: DateOnly */
 		date?: Date | null;
+
+		/** Type: double */
 		price?: number | null;
 	}
 	export interface PropertiesHistoric_pricesFormProperties {
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreatePropertiesHistoric_pricesFormGroup() {
@@ -651,6 +721,8 @@ export namespace MyNS {
 		/** Required */
 		ID: string;
 		address?: string | null;
+
+		/** Type: DateOnly */
 		birth_date?: Date | null;
 		birth_place?: string | null;
 
@@ -676,6 +748,8 @@ export namespace MyNS {
 		/** Required */
 		ID: FormControl<string | null | undefined>,
 		address: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		birth_date: FormControl<Date | null | undefined>,
 		birth_place: FormControl<string | null | undefined>,
 
@@ -781,7 +855,10 @@ export namespace MyNS {
 
 	export interface Error_codes {
 
-		/** Código de error */
+		/**
+		 * Código de error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Descripción del error */
@@ -795,7 +872,10 @@ export namespace MyNS {
 	}
 	export interface Error_codesFormProperties {
 
-		/** Código de error */
+		/**
+		 * Código de error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Descripción del error */
@@ -857,6 +937,7 @@ export namespace MyNS {
 		/**
 		 * El valor será 0 cuando la entidad no lo proporcione
 		 * Required
+		 * Type: double
 		 */
 		annualized_volatility: number;
 
@@ -869,10 +950,16 @@ export namespace MyNS {
 		 */
 		composition: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		contracting_date: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		contributions: number;
 
 		/** Required */
@@ -893,7 +980,10 @@ export namespace MyNS {
 		/** Required */
 		subtype: PortfoliosSubtype;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_value: number;
 
 		/** Required */
@@ -905,13 +995,22 @@ export namespace MyNS {
 		 */
 		uuid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weighted_return: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		withholdings: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		yield: number;
 	}
 
@@ -921,16 +1020,23 @@ export namespace MyNS {
 		/**
 		 * El valor será 0 cuando la entidad no lo proporcione
 		 * Required
+		 * Type: double
 		 */
 		annualized_volatility: FormControl<number | null | undefined>,
 
 		/** Required */
 		code: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		contracting_date: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -948,7 +1054,10 @@ export namespace MyNS {
 		/** Required */
 		subtype: FormControl<PortfoliosSubtype | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_value: FormControl<number | null | undefined>,
 
 		/**
@@ -957,13 +1066,22 @@ export namespace MyNS {
 		 */
 		uuid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weighted_return: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		withholdings: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		yield: FormControl<number | null | undefined>,
 	}
 	export function CreatePortfoliosFormGroup() {

@@ -14,8 +14,8 @@ export namespace MyNS {
 		 * Get asset
 		 * @param {string} updatedAfter Updated After
 		 * @param {number} limit Limit the the number of items to be returned per page. For example: 5.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		ListAssets(updatedAfter: string | null | undefined, limit: number | null | undefined, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'asset?updatedAfter=' + (updatedAfter == null ? '' : encodeURIComponent(updatedAfter)) + '&limit=' + limit + '&aliases=' + aliases, { responseType: 'text' });
@@ -27,7 +27,6 @@ export namespace MyNS {
 		 * Get asset/{assetId}
 		 * @param {string} assetId A asset ID filter for the schedule collection. This can be a reference to any type of asset i.e. movie, season, series or episode.
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		GetAsset(assetId: string, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'asset/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&aliases=' + aliases, { responseType: 'text' });
@@ -39,7 +38,6 @@ export namespace MyNS {
 		 * Get asset/{assetId}/contributor
 		 * @param {string} assetId A asset ID filter for the schedule collection. This can be a reference to any type of asset i.e. movie, season, series or episode.
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		GetAssetContributors(assetId: string, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'asset/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '/contributor&aliases=' + aliases, { responseType: 'text' });
@@ -49,7 +47,6 @@ export namespace MyNS {
 		 * Catalogue Collection
 		 * Return a collection of Catalogues.
 		 * Get catalogue
-		 * @return {string} 
 		 */
 		ListCatalogues(): Observable<string> {
 			return this.http.get(this.baseUri + 'catalogue', { responseType: 'text' });
@@ -60,7 +57,6 @@ export namespace MyNS {
 		 * Return the content of the selected catalogue.
 		 * Get catalogue/{catalogueId}
 		 * @param {string} catalogueId The identifier for the selected catalogue.
-		 * @return {string} 
 		 */
 		GetCatalogue(catalogueId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'catalogue/' + (catalogueId == null ? '' : encodeURIComponent(catalogueId)), { responseType: 'text' });
@@ -76,8 +72,8 @@ export namespace MyNS {
 		 * @param {string} end The End Date for the catalogue date range.
 		 * @param {string} updatedAfter Retrieve items only that have been updated after this point.
 		 * @param {number} limit Restrict number of returned items Min = 1, Max = 500.
+		 *     Type: double
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		GetCatalogueAsset(catalogueId: string, title: string | null | undefined, start: string | null | undefined, end: string | null | undefined, updatedAfter: string | null | undefined, limit: number | null | undefined, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'catalogue/' + (catalogueId == null ? '' : encodeURIComponent(catalogueId)) + '/asset&title=' + (title == null ? '' : encodeURIComponent(title)) + '&start=' + (start == null ? '' : encodeURIComponent(start)) + '&end=' + (end == null ? '' : encodeURIComponent(end)) + '&updatedAfter=' + (updatedAfter == null ? '' : encodeURIComponent(updatedAfter)) + '&limit=' + limit + '&aliases=' + aliases, { responseType: 'text' });
@@ -89,7 +85,6 @@ export namespace MyNS {
 		 * Get catalogue/{catalogueId}/asset/{assetId}
 		 * @param {string} catalogueId The identifier for the selected catalogue.
 		 * @param {string} assetId The identifier for the selected catalogue asset.
-		 * @return {string} 
 		 */
 		GetCatalogueAssetDetail(catalogueId: string, assetId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'catalogue/' + (catalogueId == null ? '' : encodeURIComponent(catalogueId)) + '/asset/' + (assetId == null ? '' : encodeURIComponent(assetId)), { responseType: 'text' });
@@ -113,7 +108,6 @@ export namespace MyNS {
 		 * @param {string} scheduleStart The Start Date for the schedule.
 		 * @param {string} scheduleEnd The End Date for the schedule.
 		 * @param {string} scheduleUpdatedSince Schedule Updated Since
-		 * @return {string} 
 		 */
 		ListChannels(platformId: string | null | undefined, regionId: string | null | undefined, aliases: boolean | null | undefined, date: string | null | undefined, scheduleStart: string | null | undefined, scheduleEnd: string | null | undefined, scheduleUpdatedSince: string | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'channel?platformId=' + (platformId == null ? '' : encodeURIComponent(platformId)) + '&regionId=' + (regionId == null ? '' : encodeURIComponent(regionId)) + '&aliases=' + aliases + '&date=' + (date == null ? '' : encodeURIComponent(date)) + '&scheduleStart=' + (scheduleStart == null ? '' : encodeURIComponent(scheduleStart)) + '&scheduleEnd=' + (scheduleEnd == null ? '' : encodeURIComponent(scheduleEnd)) + '&scheduleUpdatedSince=' + (scheduleUpdatedSince == null ? '' : encodeURIComponent(scheduleUpdatedSince)), { responseType: 'text' });
@@ -125,7 +119,6 @@ export namespace MyNS {
 		 * Get channel/{channelId}
 		 * @param {string} channelId The identifier for the selected channel.
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		GetChannel(channelId: string, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'channel/' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&aliases=' + aliases, { responseType: 'text' });
@@ -137,8 +130,8 @@ export namespace MyNS {
 		 * Get contributor
 		 * @param {string} updatedAfter Updated After
 		 * @param {number} limit Limit the the number of items to be returned per page. For example: 5.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		ListContributor(updatedAfter: string | null | undefined, limit: number | null | undefined, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'contributor?updatedAfter=' + (updatedAfter == null ? '' : encodeURIComponent(updatedAfter)) + '&limit=' + limit + '&aliases=' + aliases, { responseType: 'text' });
@@ -150,7 +143,6 @@ export namespace MyNS {
 		 * Get contributor/{contributorId}
 		 * @param {string} contributorId Filter the schedule items by contributor ID
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		GetContributor(contributorId: string, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'contributor/' + (contributorId == null ? '' : encodeURIComponent(contributorId)) + '&aliases=' + aliases, { responseType: 'text' });
@@ -164,7 +156,6 @@ export namespace MyNS {
 		 * @param {string} date Date of the collection of feature items.
 		 * @param {string} start Start date for a range of features.
 		 * @param {string} end End date for a range of features.
-		 * @return {string} 
 		 */
 		ListFeatures(type: string | null | undefined, date: string | null | undefined, start: string | null | undefined, end: string | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'feature?type=' + (type == null ? '' : encodeURIComponent(type)) + '&date=' + (date == null ? '' : encodeURIComponent(date)) + '&start=' + (start == null ? '' : encodeURIComponent(start)) + '&end=' + (end == null ? '' : encodeURIComponent(end)), { responseType: 'text' });
@@ -174,7 +165,6 @@ export namespace MyNS {
 		 * Feature Type Collection
 		 * Return a collection of Feature Types.
 		 * Get feature-type
-		 * @return {string} 
 		 */
 		ListFeatureTypes(): Observable<string> {
 			return this.http.get(this.baseUri + 'feature-type', { responseType: 'text' });
@@ -185,7 +175,6 @@ export namespace MyNS {
 		 * Return the content of the selected feature.
 		 * Get feature/{featureId}
 		 * @param {string} featureId The identifier for the selected feature.
-		 * @return {string} 
 		 */
 		GetFeature(featureId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'feature/' + (featureId == null ? '' : encodeURIComponent(featureId)), { responseType: 'text' });
@@ -196,7 +185,6 @@ export namespace MyNS {
 		 * Return a list of available platforms.
 		 * Get platform
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		ListPlatforms(aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'platform?aliases=' + aliases, { responseType: 'text' });
@@ -207,7 +195,6 @@ export namespace MyNS {
 		 * Return the content of the selected platform.
 		 * Get platform/{platformId}
 		 * @param {string} platformId The identifier for the selected platform.
-		 * @return {string} 
 		 */
 		GetPlatform(platformId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'platform/' + (platformId == null ? '' : encodeURIComponent(platformId)), { responseType: 'text' });
@@ -219,7 +206,6 @@ export namespace MyNS {
 		 * Get platform/{platformId}/region
 		 * @param {string} platformId The identifier for the selected platform.
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		ListPlatformRegions(platformId: string, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'platform/' + (platformId == null ? '' : encodeURIComponent(platformId)) + '/region&aliases=' + aliases, { responseType: 'text' });
@@ -235,7 +221,6 @@ export namespace MyNS {
 		 * @param {string} start The Start Date for the schedule.
 		 * @param {string} end The End Date for the schedule.
 		 * @param {boolean} aliases Flag to display Legacy and Provider Ids.
-		 * @return {string} 
 		 */
 		ListSchedule(channelId: string, start: string, end: string | null | undefined, aliases: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'schedule?channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&start=' + (start == null ? '' : encodeURIComponent(start)) + '&end=' + (end == null ? '' : encodeURIComponent(end)) + '&aliases=' + aliases, { responseType: 'text' });

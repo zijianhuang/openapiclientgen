@@ -108,16 +108,32 @@ export namespace MyNS {
 	export enum AmpInspectionResultRobotsTxtState { ROBOTS_TXT_STATE_UNSPECIFIED = 'ROBOTS_TXT_STATE_UNSPECIFIED', ALLOWED = 'ALLOWED', DISALLOWED = 'DISALLOWED' }
 
 	export interface ApiDataRow {
+
+		/** Type: double */
 		clicks?: number | null;
+
+		/** Type: double */
 		ctr?: number | null;
+
+		/** Type: double */
 		impressions?: number | null;
 		keys?: Array<string>;
+
+		/** Type: double */
 		position?: number | null;
 	}
 	export interface ApiDataRowFormProperties {
+
+		/** Type: double */
 		clicks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ctr: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		impressions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateApiDataRowFormGroup() {
@@ -709,7 +725,10 @@ export namespace MyNS {
 		/** [Required] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range. */
 		endDate?: string | null;
 
-		/** [Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive). */
+		/**
+		 * [Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit?: number | null;
 
 		/** [Optional; Default is \"web\"] The search type to filter for. */
@@ -718,7 +737,10 @@ export namespace MyNS {
 		/** [Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range. */
 		startDate?: string | null;
 
-		/** [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number. */
+		/**
+		 * [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRow?: number | null;
 
 		/** Optional. [Optional; Default is \"web\"] Type of report: search type, or either Discover or Gnews. */
@@ -735,7 +757,10 @@ export namespace MyNS {
 		/** [Required] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range. */
 		endDate: FormControl<string | null | undefined>,
 
-		/** [Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive). */
+		/**
+		 * [Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit: FormControl<number | null | undefined>,
 
 		/** [Optional; Default is \"web\"] The search type to filter for. */
@@ -744,7 +769,10 @@ export namespace MyNS {
 		/** [Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range. */
 		startDate: FormControl<string | null | undefined>,
 
-		/** [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number. */
+		/**
+		 * [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRow: FormControl<number | null | undefined>,
 
 		/** Optional. [Optional; Default is \"web\"] Type of report: search type, or either Discover or Gnews. */

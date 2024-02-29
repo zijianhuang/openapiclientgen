@@ -746,12 +746,16 @@ export namespace MyNS {
 	/** Describes a value within an enum. */
 	export interface Proto2EnumValueDescriptorProto {
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 
 	/** Describes a value within an enum. */
 	export interface Proto2EnumValueDescriptorProtoFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateProto2EnumValueDescriptorProtoFormGroup() {
@@ -794,9 +798,14 @@ export namespace MyNS {
 		jsonName?: string | null;
 		label?: Proto2FieldDescriptorProtoLabel | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 
-		/** If set, gives the index of a oneof in the containing type's oneof_decl list. This field is a member of that oneof. */
+		/**
+		 * If set, gives the index of a oneof in the containing type's oneof_decl list. This field is a member of that oneof.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex?: number | null;
 
 		/** If true, this is a proto3 "optional". When a proto3 field is optional, it tracks presence regardless of field type. When proto3_optional is true, this field must belong to a oneof to signal to old proto3 clients that presence is tracked for this field. This oneof is known as a "synthetic" oneof, and this field must be its sole member (each proto3 optional field gets its own synthetic oneof). Synthetic oneofs exist in the descriptor only, and do not generate any API. Synthetic oneofs must be ordered after all "real" oneofs. For message fields, proto3_optional doesn't create any semantic change, since non-repeated message fields always track presence. However it still indicates the semantic detail of whether the user wrote "optional" or not. This can be useful for round-tripping the .proto file. For consistency we give message fields a synthetic oneof also, even though it is not required to track presence. This is especially important because the parser can't tell if a field is a message or an enum, so it must always create a synthetic oneof. Proto2 optional fields do not set this flag, because they already indicate optional with `LABEL_OPTIONAL`. */
@@ -819,9 +828,14 @@ export namespace MyNS {
 		jsonName: FormControl<string | null | undefined>,
 		label: FormControl<Proto2FieldDescriptorProtoLabel | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 
-		/** If set, gives the index of a oneof in the containing type's oneof_decl list. This field is a member of that oneof. */
+		/**
+		 * If set, gives the index of a oneof in the containing type's oneof_decl list. This field is a member of that oneof.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex: FormControl<number | null | undefined>,
 
 		/** If true, this is a proto3 "optional". When a proto3 field is optional, it tracks presence regardless of field type. When proto3_optional is true, this field must belong to a oneof to signal to old proto3 clients that presence is tracked for this field. This oneof is known as a "synthetic" oneof, and this field must be its sole member (each proto3 optional field gets its own synthetic oneof). Synthetic oneofs exist in the descriptor only, and do not generate any API. Synthetic oneofs must be ordered after all "real" oneofs. For message fields, proto3_optional doesn't create any semantic change, since non-repeated message fields always track presence. However it still indicates the semantic detail of whether the user wrote "optional" or not. This can be useful for round-tripping the .proto file. For consistency we give message fields a synthetic oneof also, even though it is not required to track presence. This is especially important because the parser can't tell if a field is a message or an enum, so it must always create a synthetic oneof. Proto2 optional fields do not set this flag, because they already indicate optional with `LABEL_OPTIONAL`. */
@@ -1102,26 +1116,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -1315,7 +1347,10 @@ export namespace MyNS {
 	/** Request message for getting the resolved policy value for a specific target. */
 	export interface GoogleChromePolicyVersionsV1ResolveRequest {
 
-		/** The maximum number of policies to return, defaults to 100 and has a maximum of 1000. */
+		/**
+		 * The maximum number of policies to return, defaults to 100 and has a maximum of 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The page token used to retrieve a specific page of the request. */
@@ -1331,7 +1366,10 @@ export namespace MyNS {
 	/** Request message for getting the resolved policy value for a specific target. */
 	export interface GoogleChromePolicyVersionsV1ResolveRequestFormProperties {
 
-		/** The maximum number of policies to return, defaults to 100 and has a maximum of 1000. */
+		/**
+		 * The maximum number of policies to return, defaults to 100 and has a maximum of 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The page token used to retrieve a specific page of the request. */
@@ -1620,6 +1658,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The customer for which the listing request will apply.
 		 * @param {string} filter The schema filter used to find a particular schema based on fields like its resource name, description and `additionalTargetKeyNames`.
 		 * @param {number} pageSize The maximum number of policy schemas to return, defaults to 100 and has a maximum of 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token used to retrieve a specific page of the listing request.
 		 * @return {GoogleChromePolicyVersionsV1ListPolicySchemasResponse} Successful response
 		 */

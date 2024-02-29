@@ -7,8 +7,11 @@ export namespace MyNS {
 	/** Represents a file associated with a library item. */
 	export interface File {
 
-		/** Unique identifier for the file. */
-		id?: number | null;
+		/**
+		 * Unique identifier for the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The size of the file in bytes. */
 		size?: string | null;
@@ -20,8 +23,11 @@ export namespace MyNS {
 	/** Represents a file associated with a library item. */
 	export interface FileFormProperties {
 
-		/** Unique identifier for the file. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The size of the file in bytes. */
 		size: FormControl<string | null | undefined>,
@@ -31,7 +37,7 @@ export namespace MyNS {
 	}
 	export function CreateFileFormGroup() {
 		return new FormGroup<FileFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			size: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -54,8 +60,11 @@ export namespace MyNS {
 		/** List of files associated with the library item. */
 		files?: Array<File>;
 
-		/** Unique identifier for the library item. */
-		id?: number | null;
+		/**
+		 * Unique identifier for the library item.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Publisher of the library item. */
 		publishedBy?: string | null;
@@ -82,8 +91,11 @@ export namespace MyNS {
 		/** External URL for the library item. */
 		externalUrl: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the library item. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the library item.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Publisher of the library item. */
 		publishedBy: FormControl<string | null | undefined>,
@@ -102,7 +114,7 @@ export namespace MyNS {
 			completionDate: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			externalUrl: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			publishedBy: new FormControl<string | null | undefined>(undefined),
 			publishedDate: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
@@ -187,10 +199,16 @@ export namespace MyNS {
 		/** The month and year the project is expected to complete its work. */
 		endDate?: string | null;
 
-		/** Unique identifier for the project. */
-		id?: number | null;
+		/**
+		 * Unique identifier for the project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** ISO 8601 full-date in the format YYYY-MM-DD describing the last time this project was updated. */
+		/**
+		 * ISO 8601 full-date in the format YYYY-MM-DD describing the last time this project was updated.
+		 * Type: DateOnly
+		 */
 		lastUpdated?: Date | null;
 
 		/** A NASA center/facility associated with an project. */
@@ -269,10 +287,16 @@ export namespace MyNS {
 		/** The month and year the project is expected to complete its work. */
 		endDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the project. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** ISO 8601 full-date in the format YYYY-MM-DD describing the last time this project was updated. */
+		/**
+		 * ISO 8601 full-date in the format YYYY-MM-DD describing the last time this project was updated.
+		 * Type: DateOnly
+		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 
 		/** The NASA Mission Directorate or Office that is the primary funding source for this project. */
@@ -312,7 +336,7 @@ export namespace MyNS {
 			closeoutSummary: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			endDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			responsibleMissionDirectorateOrOffice: new FormControl<string | null | undefined>(undefined),
 			responsibleProgram: new FormControl<string | null | undefined>(undefined),
@@ -335,8 +359,11 @@ export namespace MyNS {
 		/** The code identifier for the Technology Area. */
 		code?: string | null;
 
-		/** Unique identifier for the Technology Area. */
-		id?: number | null;
+		/**
+		 * Unique identifier for the Technology Area.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The name of the Technology Area. */
 		name?: string | null;
@@ -348,8 +375,11 @@ export namespace MyNS {
 		/** The code identifier for the Technology Area. */
 		code: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the Technology Area. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the Technology Area.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The name of the Technology Area. */
 		name: FormControl<string | null | undefined>,
@@ -357,7 +387,7 @@ export namespace MyNS {
 	export function CreateTechnologyAreaFormGroup() {
 		return new FormGroup<TechnologyAreaFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -380,12 +410,13 @@ export namespace MyNS {
 		/**
 		 * Returns information about a specific technology project.
 		 * Get api/projects/{id}{.format}
-		 * @param {number} id ID of project to fetch
+		 * @param {string} id ID of project to fetch
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ApiProjects_id__formatGetByFormatFormat} format The response type desired.
 		 * @param {string} _format Automatically added
 		 * @return {Project} Successful response
 		 */
-		ApiProjects_id__formatGetByFormat(id: number, format: ApiProjects_id__formatGetByFormatFormat, _format: string, headersHandler?: () => HttpHeaders): Observable<Project> {
+		ApiProjects_id__formatGetByFormat(id: string, format: ApiProjects_id__formatGetByFormatFormat, _format: string, headersHandler?: () => HttpHeaders): Observable<Project> {
 			return this.http.get<Project>(this.baseUri + 'api/projects/' + id + (_format == null ? '' : encodeURIComponent(_format)) + '?format=' + format + '', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -393,6 +424,7 @@ export namespace MyNS {
 		 * Returns a list of available technology project IDs.
 		 * Get api/projects{.format}
 		 * @param {Date} updatedSince ISO 8601 full-date in the format YYYY-MM-DD. Filters the list of available ID values by their lastUpdated parameter.
+		 *     Type: DateOnly
 		 * @param {ApiProjects_id__formatGetByFormatFormat} format The response type desired.
 		 * @param {string} _format Automatically added
 		 * @return {ApiProjects__formatGetByUpdatedSinceAndFormatReturn} Successful response
@@ -405,16 +437,20 @@ export namespace MyNS {
 	export enum ApiProjects_id__formatGetByFormatFormat { json = 'json', xml = 'xml' }
 
 	export interface ApiProjects__formatGetByUpdatedSinceAndFormatReturn {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdated?: string | null;
 	}
 	export interface ApiProjects__formatGetByUpdatedSinceAndFormatReturnFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdated: FormControl<string | null | undefined>,
 	}
 	export function CreateApiProjects__formatGetByUpdatedSinceAndFormatReturnFormGroup() {
 		return new FormGroup<ApiProjects__formatGetByUpdatedSinceAndFormatReturnFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 		});
 

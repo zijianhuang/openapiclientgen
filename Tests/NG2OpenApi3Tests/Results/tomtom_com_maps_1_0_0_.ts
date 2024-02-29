@@ -15,6 +15,7 @@ export namespace MyNS {
 		 * This call returns copyright information for the whole world.
 		 * Get map/{versionNumber}/copyrights.{format}
 		 * @param {Map_versionNumberCopyrights__formatGetByCallbackVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberCopyrights__formatGetByCallbackFormat} format Format of the response
 		 * @param {string} callback Specifies the jsonp callback method. Only used when format is jsonp
 		 * @return {void} <b>OK</b>
@@ -28,6 +29,7 @@ export namespace MyNS {
 		 * This API returns copyright captions for the map service.
 		 * Get map/{versionNumber}/copyrights/caption.{format}
 		 * @param {Map_versionNumberCopyrightsCaption__formatGetByCallbackVersionNumber} versionNumber Version of the service to call. The current version is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberCopyrights__formatGetByCallbackFormat} format Format of the response
 		 * @param {string} callback Specifies the jsonp callback method. Only used when format is jsonp
 		 * @return {void} <b>OK</b>
@@ -43,11 +45,16 @@ export namespace MyNS {
 		 * This call returns copyright information for a specific bounding box.
 		 * Get map/{versionNumber}/copyrights/{minLon}/{minLat}/{maxLon}/{maxLat}.{format}
 		 * @param {Map_versionNumberCopyrights_minLon_minLat_maxLon_maxLat__formatGetByCallbackVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberCopyrights__formatGetByCallbackFormat} format Format of the response
 		 * @param {number} minLon Minimum longitude coordinate of bounding box defined in terms of latitude/longitude.
+		 *     Type: double
 		 * @param {number} minLat Minimum latitude coordinate of bounding box defined in terms of latitude/longitude.
+		 *     Type: double
 		 * @param {number} maxLon Maximum longitude coordinate of bounding box defined in terms of latitude/longitude.
+		 *     Type: double
 		 * @param {number} maxLat Maximum latitude coordinate of bounding box defined in terms of latitude/longitude.
+		 *     Type: double
 		 * @param {string} callback Specifies the jsonp callback method. Only used when format is jsonp.
 		 * @return {void} <b>OK</b>
 		 */
@@ -62,13 +69,17 @@ export namespace MyNS {
 		 * This call returns copyright information for the a specific map tile.
 		 * Get map/{versionNumber}/copyrights/{zoom}/{X}/{Y}.{format}
 		 * @param {Map_versionNumberCopyrights_zoom_X_Y__formatGetByCallbackVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberCopyrights__formatGetByCallbackFormat} format Format of the response
 		 * @param {Map_versionNumberCopyrights_zoom_X_Y__formatGetByCallbackZoom} zoom Zoom level of tile to be rendered. Only used for tile-level
 		 * copyright calls.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} X X coordinate of the tile on zoom grid. Only used for tile-level
 		 * copyright calls.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Y Y coordinate of the tile on zoom grid. Only used for tile-level
 		 * copyright calls.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} callback Specifies the jsonp callback method. Only used when format is jsonp.
 		 * @return {void} <b>OK</b>
 		 */
@@ -83,17 +94,21 @@ export namespace MyNS {
 		 * using either a center point plus width and height or a bounding box.
 		 * Get map/{versionNumber}/staticimage
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewVersionNumber} versionNumber Version of the service to call. The current version is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer} layer Layer of image to be rendered. <em>Hybrid</em> and <em>labels</em>
 		 * are intended for layering with other data and are only available in <em>png</em> format.
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewStyle} style Map style to be returned
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewFormat} format Image format to be returned
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewZoom} zoom Zoom level of map image to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} center Coordinates for the center point of the image.
 		 * Must be used with the <strong>width</strong> and
 		 * <strong>height</strong> parameters; cannot be used with <strong>bbox</strong>.
 		 * Uses EPSG:3857 projection (functionally equivalent to EPSG:900910).
 		 * @param {number} width Width of the resulting image in pixels. Width must be a positive integer between 1 and 8192.
+		 *     Minimum: 1    Maximum: 8192
 		 * @param {number} height Height of the resulting image in pixels. Height must be a positive integer between 1 and 8192.
+		 *     Minimum: 1    Maximum: 8192
 		 * @param {string} bbox Bounding box for the image, using EPSG:3857 projection (functionally equivalent to EPSG:900910).
 		 * Values <strong>must</strong> be in the order of minLon, minLat, maxLon, maxLat.
 		 * MaxLat must be greater than minLat. Longitude values can be on both sides of the 180th meridian.
@@ -110,11 +125,15 @@ export namespace MyNS {
 		 * The Maps API Vector Service delivers vector tiles, which are representations of square sections of map data.
 		 * Get map/{versionNumber}/tile/{layer}/{style}/{zoom}/{X}/{Y}.pbf
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer} layer Layer of tile to be rendered
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageStyle} style Style of tile to be rendered
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageZoom} zoom Zoom level of tile to be rendered
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} X x coordinate of tile on zoom grid
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Y y coordinate of tile on zoom grid
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageView} view Geopolitical view. Determines rendering of disputed areas. See the <a href="/maps-api/maps-api-documentation-vector/tile">documentation</a> for an explanation of how this works in live services.
 		 * @param {string} language Language to be used for labels in the response. The default is NGT: Neutral Ground Truth, which uses each place's local official language and script (where available). See the <a href="/maps-api/maps-api-documentation-vector/tile">documentation</a> for a full list of options.
 		 * @return {void} <b>OK</b>
@@ -128,13 +147,18 @@ export namespace MyNS {
 		 * The Maps API Raster Service delivers raster tiles, which are representations of square sections of map data.
 		 * Get map/{versionNumber}/tile/{layer}/{style}/{zoom}/{X}/{Y}.{format}
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewVersionNumber} versionNumber Version of the service to call. The current version is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer} layer Layer of tile to be rendered. <em>Hybrid</em> and <em>labels</em> are intended for layering with other data and are only available in <em>png</em> format.
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewStyle} style Style of tile to be rendered
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewZoom} zoom Zoom level of tile to be rendered
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} X x coordinate of tile on zoom grid
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Y y coordinate of tile on zoom grid
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewFormat} format Format of the response.
 		 * @param {Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewTileSize} tileSize Tile dimensions in pixels. <em>512</em> is only available for the <em>main</em> style and <em>basic</em> or <em>labels</em> layers.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewView} view Geopolitical view. Determines rendering of disputed areas. See the <a href="/maps-sdk-web/functional-examples#geopolitical-views">documentation</a> for an explanation of how this works in live services.
 		 * @return {void} <b>OK</b>
 		 */
@@ -149,6 +173,7 @@ export namespace MyNS {
 		 * in the response to the GetCapabilities API call.
 		 * Get map/{versionNumber}/wms/
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionRequest} request Request type
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionSrs} srs Projection used in describing the <b>bbox</b> EPSG:3857 is
 		 * recommended, particularly at higher zoom levels. (Note that
@@ -156,7 +181,9 @@ export namespace MyNS {
 		 * @param {string} bbox Bounding box in the projection stated in <b>srs</b>
 		 * (minLon,minLat,maxLon,maxLat)
 		 * @param {number} width Width of the resulting image, in pixels Maximum value is 2048
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Height of the resulting image, in pixels Maximum value is 2048
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionFormat} format Image format to be returned
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionLayers} layers Map layers requested Currently only the basic layer is available
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionStyles} styles Map styles to be returned. Currently, no styles are available. This
@@ -176,6 +203,7 @@ export namespace MyNS {
 		 * the Web Map Service (WMS). It provides descriptions of the other calls
 		 * that are available in the implementation.
 		 * Get map/{versionNumber}/wms//
+		 * @param {Map_versionNumberWmsGetByServiceAndRequestAndVersionVersionNumber} versionNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionVersion} version WMS service version
 		 * @return {void} <b>OK</b>
 		 */
@@ -193,6 +221,7 @@ export namespace MyNS {
 		 * for more information on WMTS.
 		 * Get map/{versionNumber}/wmts/{key}/{wmtsVersion}/WMTSCapabilities.xml
 		 * @param {Map_versionNumberWmts_key_wmtsVersionWMTSCapabilities_xmlGetVersionNumber} versionNumber Version of the service to call. The current version is 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} key Your API key for calling this service.
 		 * @return {void} <b>OK</b>
 		 */

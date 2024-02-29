@@ -571,6 +571,7 @@ export namespace MyNS {
 		/**
 		 * Standard HTTP Status returned with Error
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -587,6 +588,7 @@ export namespace MyNS {
 		/**
 		 * Standard HTTP Status returned with Error
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -603,6 +605,7 @@ export namespace MyNS {
 		/**
 		 * The document height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
@@ -615,6 +618,7 @@ export namespace MyNS {
 		/**
 		 * The document width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -623,6 +627,7 @@ export namespace MyNS {
 		/**
 		 * The document height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -635,6 +640,7 @@ export namespace MyNS {
 		/**
 		 * The document width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -655,12 +661,14 @@ export namespace MyNS {
 		/**
 		 * The total number of documents contained in this upload
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_documents: number;
 
 		/**
 		 * The total number of pages contained in this upload
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_pages: number;
 	}
@@ -672,12 +680,14 @@ export namespace MyNS {
 		/**
 		 * The total number of documents contained in this upload
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_documents: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of pages contained in this upload
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_pages: FormControl<number | null | undefined>,
 	}

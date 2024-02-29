@@ -4,29 +4,49 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Activity {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EstimationId?: number | null;
 		EstimationNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
 		InvoiceNumber?: string | null;
 		Link?: string | null;
 		Message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OrderId?: number | null;
 		OrderNumber?: string | null;
 		Type?: ActivityType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface ActivityFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EstimationId: FormControl<number | null | undefined>,
 		EstimationNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
 		InvoiceNumber: FormControl<string | null | undefined>,
 		Link: FormControl<string | null | undefined>,
 		Message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OrderId: FormControl<number | null | undefined>,
 		OrderNumber: FormControl<string | null | undefined>,
 		Type: FormControl<ActivityType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityFormGroup() {
@@ -50,13 +70,21 @@ export namespace MyNS {
 
 	export interface AdditionalClientEmail {
 		Client?: Client;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId?: number | null;
 		Email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 	}
 	export interface AdditionalClientEmailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId: FormControl<number | null | undefined>,
 		Email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateAdditionalClientEmailFormGroup() {
@@ -70,29 +98,53 @@ export namespace MyNS {
 
 	export interface Client {
 		Address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCountryId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCurrencyId?: number | null;
 		CompanyRegistrationNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultDueDateInDays?: number | null;
 		Email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
 		PhoneNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UiLanguageId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 		Vat?: string | null;
 	}
 	export interface ClientFormProperties {
 		Address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCountryId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCurrencyId: FormControl<number | null | undefined>,
 		CompanyRegistrationNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultDueDateInDays: FormControl<number | null | undefined>,
 		Email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		PhoneNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UiLanguageId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 		Vat: FormControl<string | null | undefined>,
 	}
@@ -133,7 +185,10 @@ export namespace MyNS {
 
 	export interface ChangeOrderStatusApiModel {
 
-		/** Order Id */
+		/**
+		 * Order Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Reason for status change */
@@ -144,7 +199,10 @@ export namespace MyNS {
 	}
 	export interface ChangeOrderStatusApiModelFormProperties {
 
-		/** Order Id */
+		/**
+		 * Order Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Reason for status change */
@@ -166,7 +224,10 @@ export namespace MyNS {
 
 	export interface ChangeStatusApiModel {
 
-		/** Invoice Id */
+		/**
+		 * Invoice Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** New status of the invoice */
@@ -174,7 +235,10 @@ export namespace MyNS {
 	}
 	export interface ChangeStatusApiModelFormProperties {
 
-		/** Invoice Id */
+		/**
+		 * Invoice Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** New status of the invoice */
@@ -198,16 +262,25 @@ export namespace MyNS {
 		/** Client business address */
 		Address?: string | null;
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId?: number | null;
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId?: number | null;
 
 		/** Client's Company Registration Number */
 		CompanyRegistrationNumber?: string | null;
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays?: number | null;
 
 		/** Client email */
@@ -219,7 +292,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber?: string | null;
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId?: number | null;
 
 		/** Client's VAT number */
@@ -230,16 +306,25 @@ export namespace MyNS {
 		/** Client business address */
 		Address: FormControl<string | null | undefined>,
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId: FormControl<number | null | undefined>,
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId: FormControl<number | null | undefined>,
 
 		/** Client's Company Registration Number */
 		CompanyRegistrationNumber: FormControl<string | null | undefined>,
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays: FormControl<number | null | undefined>,
 
 		/** Client email */
@@ -251,7 +336,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber: FormControl<string | null | undefined>,
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId: FormControl<number | null | undefined>,
 
 		/** Client's VAT number */
@@ -275,12 +363,18 @@ export namespace MyNS {
 
 	export interface ClientDeleteApiModel {
 
-		/** Id of client to be deleted */
+		/**
+		 * Id of client to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface ClientDeleteApiModelFormProperties {
 
-		/** Id of client to be deleted */
+		/**
+		 * Id of client to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateClientDeleteApiModelFormGroup() {
@@ -298,10 +392,16 @@ export namespace MyNS {
 		/** Client business address */
 		Address?: string | null;
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId?: number | null;
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId?: number | null;
 
 		/** Client's Company Registration Number */
@@ -310,13 +410,19 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn?: Date | null;
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays?: number | null;
 
 		/** Client email */
 		Email?: string | null;
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the client */
@@ -325,7 +431,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber?: string | null;
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId?: number | null;
 
 		/** Client's VAT number */
@@ -336,10 +445,16 @@ export namespace MyNS {
 		/** Client business address */
 		Address: FormControl<string | null | undefined>,
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId: FormControl<number | null | undefined>,
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId: FormControl<number | null | undefined>,
 
 		/** Client's Company Registration Number */
@@ -348,13 +463,19 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn: FormControl<Date | null | undefined>,
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays: FormControl<number | null | undefined>,
 
 		/** Client email */
 		Email: FormControl<string | null | undefined>,
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the client */
@@ -363,7 +484,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber: FormControl<string | null | undefined>,
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId: FormControl<number | null | undefined>,
 
 		/** Client's VAT number */
@@ -395,22 +519,34 @@ export namespace MyNS {
 		/** Client business address */
 		Address?: string | null;
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId?: number | null;
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId?: number | null;
 
 		/** Client's Company Registration Number */
 		CompanyRegistrationNumber?: string | null;
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays?: number | null;
 
 		/** Client email */
 		Email?: string | null;
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the client */
@@ -419,7 +555,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber?: string | null;
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId?: number | null;
 
 		/** Client's VAT number */
@@ -430,22 +569,34 @@ export namespace MyNS {
 		/** Client business address */
 		Address: FormControl<string | null | undefined>,
 
-		/** Indicates the country where the clients is from */
+		/**
+		 * Indicates the country where the clients is from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCountryId: FormControl<number | null | undefined>,
 
-		/** Indicates the default system currency used by the user for the client */
+		/**
+		 * Indicates the default system currency used by the user for the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientCurrencyId: FormControl<number | null | undefined>,
 
 		/** Client's Company Registration Number */
 		CompanyRegistrationNumber: FormControl<string | null | undefined>,
 
-		/** Client custom payment terms */
+		/**
+		 * Client custom payment terms
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DefaultDueDateInDays: FormControl<number | null | undefined>,
 
 		/** Client email */
 		Email: FormControl<string | null | undefined>,
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the client */
@@ -454,7 +605,10 @@ export namespace MyNS {
 		/** Client phone numer */
 		PhoneNumber: FormControl<string | null | undefined>,
 
-		/** Hold a value of the language in which the invoice will be sent */
+		/**
+		 * Hold a value of the language in which the invoice will be sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UiLanguageId: FormControl<number | null | undefined>,
 
 		/** Client's VAT number */
@@ -478,11 +632,15 @@ export namespace MyNS {
 	}
 
 	export interface Country {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
 		Value?: string | null;
 	}
 	export interface CountryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
@@ -498,7 +656,10 @@ export namespace MyNS {
 
 	export interface CountryDetailsApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the country */
@@ -509,7 +670,10 @@ export namespace MyNS {
 	}
 	export interface CountryDetailsApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the country */
@@ -529,6 +693,8 @@ export namespace MyNS {
 
 	export interface Currency {
 		Code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
 		Symbol?: string | null;
@@ -536,6 +702,8 @@ export namespace MyNS {
 	}
 	export interface CurrencyFormProperties {
 		Code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Symbol: FormControl<string | null | undefined>,
@@ -581,7 +749,10 @@ export namespace MyNS {
 		/** Currency short numeric code */
 		Code?: string | null;
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the country */
@@ -598,7 +769,10 @@ export namespace MyNS {
 		/** Currency short numeric code */
 		Code: FormControl<string | null | undefined>,
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the country */
@@ -626,7 +800,10 @@ export namespace MyNS {
 		/** Indicates to which estimation this activity refers to */
 		EstimationNumber?: string | null;
 
-		/** Id of estimation activity */
+		/**
+		 * Id of estimation activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Url which point out to a certain activity action. Ex: Click to view the payment */
@@ -643,7 +820,10 @@ export namespace MyNS {
 		/** Indicates to which estimation this activity refers to */
 		EstimationNumber: FormControl<string | null | undefined>,
 
-		/** Id of estimation activity */
+		/**
+		 * Id of estimation activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Url which point out to a certain activity action. Ex: Click to view the payment */
@@ -668,7 +848,10 @@ export namespace MyNS {
 
 	export interface EstimationAttachmentApiModel {
 
-		/** Id of estimation attachment */
+		/**
+		 * Id of estimation attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Link to the file */
@@ -680,15 +863,21 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface EstimationAttachmentApiModelFormProperties {
 
-		/** Id of estimation attachment */
+		/**
+		 * Id of estimation attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Link to the file */
@@ -700,8 +889,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -712,7 +904,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -722,7 +914,10 @@ export namespace MyNS {
 
 	export interface EstimationChangeStatusApiModel {
 
-		/** Estimation Id */
+		/**
+		 * Estimation Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** New status of the estimation */
@@ -730,7 +925,10 @@ export namespace MyNS {
 	}
 	export interface EstimationChangeStatusApiModelFormProperties {
 
-		/** Estimation Id */
+		/**
+		 * Estimation Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** New status of the estimation */
@@ -751,13 +949,22 @@ export namespace MyNS {
 		/** List of estimation attachments */
 		Attachments?: Array<EstimationCreateAttachmentApiModel>;
 
-		/** The client to whom this estimation is assigned */
+		/**
+		 * The client to whom this estimation is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId?: number | null;
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 
-		/** Id of the currency for the estimation amounts */
+		/**
+		 * Id of the currency for the estimation amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Indicates when the estimation will be proclamed as due */
@@ -789,13 +996,22 @@ export namespace MyNS {
 	}
 	export interface EstimationCreateApiModelFormProperties {
 
-		/** The client to whom this estimation is assigned */
+		/**
+		 * The client to whom this estimation is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId: FormControl<number | null | undefined>,
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Id of the currency for the estimation amounts */
+		/**
+		 * Id of the currency for the estimation amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation will be proclamed as due */
@@ -846,8 +1062,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
@@ -863,8 +1082,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -874,7 +1096,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -882,48 +1104,84 @@ export namespace MyNS {
 
 	export interface EstimationCreateItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the estimation item */
 		Description?: string | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface EstimationCreateItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the estimation item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationCreateItemApiModelFormGroup() {
@@ -958,12 +1216,18 @@ export namespace MyNS {
 
 	export interface EstimationDeleteApiModel {
 
-		/** Id of estimation to be deleted */
+		/**
+		 * Id of estimation to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface EstimationDeleteApiModelFormProperties {
 
-		/** Id of estimation to be deleted */
+		/**
+		 * Id of estimation to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationDeleteApiModelFormGroup() {
@@ -979,17 +1243,26 @@ export namespace MyNS {
 		AccessToken?: string | null;
 		Client?: ClientDetailsApiModel;
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn?: Date | null;
 
-		/** Estimation id */
+		/**
+		 * Estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates when the estimation was issued */
@@ -1007,16 +1280,25 @@ export namespace MyNS {
 		/** Indicate the status of the estimation (paid/unpaid/overdue) */
 		Status?: EstimationChangeStatusApiModelStatus | null;
 
-		/** Total amount of the estimation without tax */
+		/**
+		 * Total amount of the estimation without tax
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
 		/** Terms of agreement */
 		Terms?: string | null;
 
-		/** Total amount of the estimation with tax */
+		/**
+		 * Total amount of the estimation with tax
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 	}
 	export interface EstimationDetailsApiModelFormProperties {
@@ -1024,16 +1306,25 @@ export namespace MyNS {
 		/** Security access token used for accessing the estimation anonymously */
 		AccessToken: FormControl<string | null | undefined>,
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn: FormControl<Date | null | undefined>,
 
-		/** Estimation id */
+		/**
+		 * Estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation was issued */
@@ -1051,16 +1342,25 @@ export namespace MyNS {
 		/** Indicate the status of the estimation (paid/unpaid/overdue) */
 		Status: FormControl<EstimationChangeStatusApiModelStatus | null | undefined>,
 
-		/** Total amount of the estimation without tax */
+		/**
+		 * Total amount of the estimation without tax
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Terms of agreement */
 		Terms: FormControl<string | null | undefined>,
 
-		/** Total amount of the estimation with tax */
+		/**
+		 * Total amount of the estimation with tax
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationDetailsApiModelFormGroup() {
@@ -1095,17 +1395,26 @@ export namespace MyNS {
 		Attachments?: Array<EstimationAttachmentApiModel>;
 		Client?: ClientDetailsApiModel;
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn?: Date | null;
 
-		/** Estimation id */
+		/**
+		 * Estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates when the estimation was issued */
@@ -1129,16 +1438,25 @@ export namespace MyNS {
 		/** Indicate the status of the estimation (paid/unpaid/overdue) */
 		Status?: EstimationChangeStatusApiModelStatus | null;
 
-		/** Total amount of the estimation without tax */
+		/**
+		 * Total amount of the estimation without tax
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
 		/** Terms of agreement */
 		Terms?: string | null;
 
-		/** Total amount of the estimation with tax */
+		/**
+		 * Total amount of the estimation with tax
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 	}
 	export interface EstimationFullDetailsApiModelFormProperties {
@@ -1146,16 +1464,25 @@ export namespace MyNS {
 		/** Security access token used for accessing the estimation anonymously */
 		AccessToken: FormControl<string | null | undefined>,
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn: FormControl<Date | null | undefined>,
 
-		/** Estimation id */
+		/**
+		 * Estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation was issued */
@@ -1173,16 +1500,25 @@ export namespace MyNS {
 		/** Indicate the status of the estimation (paid/unpaid/overdue) */
 		Status: FormControl<EstimationChangeStatusApiModelStatus | null | undefined>,
 
-		/** Total amount of the estimation without tax */
+		/**
+		 * Total amount of the estimation without tax
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Terms of agreement */
 		Terms: FormControl<string | null | undefined>,
 
-		/** Total amount of the estimation with tax */
+		/**
+		 * Total amount of the estimation with tax
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationFullDetailsApiModelFormGroup() {
@@ -1207,78 +1543,144 @@ export namespace MyNS {
 
 	export interface EstimationItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the estimation item */
 		Description?: string | null;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Id of estimation item */
+		/**
+		 * Id of estimation item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Sub-Total amount of the estimation item (Amount without tax) */
+		/**
+		 * Sub-Total amount of the estimation item (Amount without tax)
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Total amount of the estimation item */
+		/**
+		 * Total amount of the estimation item
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface EstimationItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the estimation item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Id of estimation item */
+		/**
+		 * Id of estimation item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Sub-Total amount of the estimation item (Amount without tax) */
+		/**
+		 * Sub-Total amount of the estimation item (Amount without tax)
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Total amount of the estimation item */
+		/**
+		 * Total amount of the estimation item
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationItemApiModelFormGroup() {
@@ -1304,19 +1706,31 @@ export namespace MyNS {
 		/** List of estimation attachments */
 		Attachments?: Array<EstimationUpdateAttachmentApiModel>;
 
-		/** The client to whom this estimation is assigned */
+		/**
+		 * The client to whom this estimation is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId?: number | null;
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 
-		/** Id of the currency for the estimation amounts */
+		/**
+		 * Id of the currency for the estimation amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn?: Date | null;
 
-		/** estimation id */
+		/**
+		 * estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates when the estimation was issued */
@@ -1345,19 +1759,31 @@ export namespace MyNS {
 	}
 	export interface EstimationUpdateApiModelFormProperties {
 
-		/** The client to whom this estimation is assigned */
+		/**
+		 * The client to whom this estimation is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId: FormControl<number | null | undefined>,
 
-		/** Indicate from which estimation this estimation has been cloned from */
+		/**
+		 * Indicate from which estimation this estimation has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Id of the currency for the estimation amounts */
+		/**
+		 * Id of the currency for the estimation amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation will be proclamed as due */
 		ExpiresOn: FormControl<Date | null | undefined>,
 
-		/** estimation id */
+		/**
+		 * estimation id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates when the estimation was issued */
@@ -1397,7 +1823,10 @@ export namespace MyNS {
 
 	export interface EstimationUpdateAttachmentApiModel {
 
-		/** Id of estimation attachment */
+		/**
+		 * Id of estimation attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Link to the file */
@@ -1409,15 +1838,21 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface EstimationUpdateAttachmentApiModelFormProperties {
 
-		/** Id of estimation attachment */
+		/**
+		 * Id of estimation attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Link to the file */
@@ -1429,8 +1864,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -1441,7 +1879,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -1449,54 +1887,96 @@ export namespace MyNS {
 
 	export interface EstimationUpdateItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the estimation item */
 		Description?: string | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Id of estimation item */
+		/**
+		 * Id of estimation item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface EstimationUpdateItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the estimation item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Id of estimation item */
+		/**
+		 * Id of estimation item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimationUpdateItemApiModelFormGroup() {
@@ -1537,8 +2017,12 @@ export namespace MyNS {
 		ExpiresOn?: Date | null;
 		ExternalUserId?: string | null;
 		ExternalUsername?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Provider?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface ExternalConnectionFormProperties {
@@ -1548,8 +2032,12 @@ export namespace MyNS {
 		ExpiresOn: FormControl<Date | null | undefined>,
 		ExternalUserId: FormControl<string | null | undefined>,
 		ExternalUsername: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Provider: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateExternalConnectionFormGroup() {
@@ -1593,59 +2081,115 @@ export namespace MyNS {
 		AccessToken?: string | null;
 		Activities?: Array<Activity>;
 		Attachments?: Array<InvoiceAttachment>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClonedFromId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId?: number | null;
+
+		/** Type: double */
 		DiscountAmount?: number | null;
 		Duedate?: Date | null;
 		EnablePartialPayments?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EstimationId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceCategoryId?: number | null;
 		IsDigitallySigned?: boolean | null;
 		IssuedOn?: Date | null;
 		Items?: Array<InvoiceItem>;
 		Notes?: string | null;
 		Number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OrderId?: number | null;
 		PaymentGateways?: Array<PaymentGatewayForInvoice>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PaymentLinkId?: number | null;
 		Payments?: Array<Payment>;
 		PoNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurringProfileId?: number | null;
 		ShouldSendReminders?: boolean | null;
 		Status?: ChangeStatusApiModelStatus | null;
+
+		/** Type: double */
 		SubTotalAmount?: number | null;
+
+		/** Type: double */
 		TaxAmount?: number | null;
 		Terms?: string | null;
+
+		/** Type: double */
 		TotalAmount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface InvoiceFormProperties {
 		AccessToken: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClonedFromId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DiscountAmount: FormControl<number | null | undefined>,
 		Duedate: FormControl<Date | null | undefined>,
 		EnablePartialPayments: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		EstimationId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceCategoryId: FormControl<number | null | undefined>,
 		IsDigitallySigned: FormControl<boolean | null | undefined>,
 		IssuedOn: FormControl<Date | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
 		Number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OrderId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PaymentLinkId: FormControl<number | null | undefined>,
 		PoNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 		ShouldSendReminders: FormControl<boolean | null | undefined>,
 		Status: FormControl<ChangeStatusApiModelStatus | null | undefined>,
+
+		/** Type: double */
 		SubTotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxAmount: FormControl<number | null | undefined>,
 		Terms: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceFormGroup() {
@@ -1680,21 +2224,33 @@ export namespace MyNS {
 	}
 
 	export interface InvoiceAttachment {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
 		Link?: string | null;
 		ObfuscatedFileName?: string | null;
 		OriginalFileName?: string | null;
-		Size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size?: string | null;
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface InvoiceAttachmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
 		Link: FormControl<string | null | undefined>,
 		ObfuscatedFileName: FormControl<string | null | undefined>,
 		OriginalFileName: FormControl<string | null | undefined>,
-		Size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size: FormControl<string | null | undefined>,
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
 	}
 	export function CreateInvoiceAttachmentFormGroup() {
@@ -1704,40 +2260,88 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface InvoiceItem {
+
+		/** Type: double */
 		Cost?: number | null;
 		Description?: string | null;
+
+		/** Type: double */
 		DiscountAmount?: number | null;
+
+		/** Type: double */
 		DiscountPercentage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
+
+		/** Type: double */
 		Quantity?: number | null;
+
+		/** Type: double */
 		SubTotalAmount?: number | null;
+
+		/** Type: double */
 		TaxAmount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TaxId?: number | null;
+
+		/** Type: double */
 		TaxPercentage?: number | null;
+
+		/** Type: double */
 		TotalAmount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorkTypeId?: number | null;
 	}
 	export interface InvoiceItemFormProperties {
+
+		/** Type: double */
 		Cost: FormControl<number | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DiscountAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DiscountPercentage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SubTotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TaxId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceItemFormGroup() {
@@ -1760,10 +2364,14 @@ export namespace MyNS {
 	}
 
 	export interface PaymentGatewayForInvoice {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
 	}
 	export interface PaymentGatewayForInvoiceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 	}
@@ -1776,9 +2384,15 @@ export namespace MyNS {
 	}
 
 	export interface Payment {
+
+		/** Type: double */
 		Amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Invoice?: Invoice;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
 		IsAutomatic?: boolean | null;
 		Note?: string | null;
@@ -1787,8 +2401,14 @@ export namespace MyNS {
 		Type?: PaymentType | null;
 	}
 	export interface PaymentFormProperties {
+
+		/** Type: double */
 		Amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
 		IsAutomatic: FormControl<boolean | null | undefined>,
 		Note: FormControl<string | null | undefined>,
@@ -1814,7 +2434,10 @@ export namespace MyNS {
 
 	export interface InvoiceActivityApiModel {
 
-		/** Id of invoice activity */
+		/**
+		 * Id of invoice activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates to which invoice this activity refers to */
@@ -1831,7 +2454,10 @@ export namespace MyNS {
 	}
 	export interface InvoiceActivityApiModelFormProperties {
 
-		/** Id of invoice activity */
+		/**
+		 * Id of invoice activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates to which invoice this activity refers to */
@@ -1859,7 +2485,10 @@ export namespace MyNS {
 
 	export interface InvoiceAttachmentApiModel {
 
-		/** Id of invoice attachment */
+		/**
+		 * Id of invoice attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Link to the file */
@@ -1871,15 +2500,21 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface InvoiceAttachmentApiModelFormProperties {
 
-		/** Id of invoice attachment */
+		/**
+		 * Id of invoice attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Link to the file */
@@ -1891,8 +2526,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -1903,7 +2541,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -1911,7 +2549,10 @@ export namespace MyNS {
 
 	export interface InvoiceCategoryApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Category name */
@@ -1919,7 +2560,10 @@ export namespace MyNS {
 	}
 	export interface InvoiceCategoryApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Category name */
@@ -1951,9 +2595,13 @@ export namespace MyNS {
 	}
 
 	export interface InvoiceCategoryDeleteApiModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 	}
 	export interface InvoiceCategoryDeleteApiModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceCategoryDeleteApiModelFormGroup() {
@@ -1965,7 +2613,10 @@ export namespace MyNS {
 
 	export interface InvoiceCategoryUpdateApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Category name */
@@ -1973,7 +2624,10 @@ export namespace MyNS {
 	}
 	export interface InvoiceCategoryUpdateApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Category name */
@@ -1992,19 +2646,31 @@ export namespace MyNS {
 		/** List of invoice attachments */
 		Attachments?: Array<InvoiceCreateAttachmentApiModel>;
 
-		/** The client to whom this invoice is assigned */
+		/**
+		 * The client to whom this invoice is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId?: number | null;
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 
-		/** Id of the currency for the invoice amounts */
+		/**
+		 * Id of the currency for the invoice amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Indicates when the invoice will be proclamed as due */
 		Duedate?: Date | null;
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId?: number | null;
 
 		/** Indicates when the invoice was issued */
@@ -2028,7 +2694,10 @@ export namespace MyNS {
 		/** Definition of invoice recurring profile */
 		RecurringProfile?: InvoiceRecurringApiModel;
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId?: number | null;
 
 		/** Should send email reminders to client? */
@@ -2042,19 +2711,31 @@ export namespace MyNS {
 	}
 	export interface InvoiceCreateApiModelFormProperties {
 
-		/** The client to whom this invoice is assigned */
+		/**
+		 * The client to whom this invoice is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId: FormControl<number | null | undefined>,
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Id of the currency for the invoice amounts */
+		/**
+		 * Id of the currency for the invoice amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice will be proclamed as due */
 		Duedate: FormControl<Date | null | undefined>,
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice was issued */
@@ -2069,7 +2750,10 @@ export namespace MyNS {
 		/** Unique number generated by the buyer */
 		PoNumber: FormControl<string | null | undefined>,
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 
 		/** Should send email reminders to client? */
@@ -2111,8 +2795,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
@@ -2128,8 +2815,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -2139,7 +2829,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -2147,48 +2837,84 @@ export namespace MyNS {
 
 	export interface InvoiceCreateItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the invoice item */
 		Description?: string | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface InvoiceCreateItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the invoice item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceCreateItemApiModelFormGroup() {
@@ -2225,19 +2951,28 @@ export namespace MyNS {
 	/** Definition of invoice recurring profile */
 	export interface InvoiceRecurringApiModel {
 
-		/** Day of month when the recurrance should happen */
+		/**
+		 * Day of month when the recurrance should happen
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DayOfMonth?: number | null;
 
 		/** Day when the recurrance should happen */
 		DayOfWeek?: InvoiceRecurringApiModelDayOfWeek | null;
 
-		/** Total number of days for the client to pay the invoice after issuing it */
+		/**
+		 * Total number of days for the client to pay the invoice after issuing it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DueDateInDays?: number | null;
 
 		/** Indcate the date when the recurrance should stop */
 		EndOfRecurrance?: Date | null;
 
-		/** Month when the recurrance should happen */
+		/**
+		 * Month when the recurrance should happen
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Month?: number | null;
 
 		/** How often the recurrance occurs */
@@ -2246,6 +2981,7 @@ export namespace MyNS {
 		/**
 		 * Recurring every [value] RecurrancePattern
 		 * Ex: Recur every 1 week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		RecurranceValue?: number | null;
 
@@ -2265,19 +3001,28 @@ export namespace MyNS {
 	/** Definition of invoice recurring profile */
 	export interface InvoiceRecurringApiModelFormProperties {
 
-		/** Day of month when the recurrance should happen */
+		/**
+		 * Day of month when the recurrance should happen
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DayOfMonth: FormControl<number | null | undefined>,
 
 		/** Day when the recurrance should happen */
 		DayOfWeek: FormControl<InvoiceRecurringApiModelDayOfWeek | null | undefined>,
 
-		/** Total number of days for the client to pay the invoice after issuing it */
+		/**
+		 * Total number of days for the client to pay the invoice after issuing it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DueDateInDays: FormControl<number | null | undefined>,
 
 		/** Indcate the date when the recurrance should stop */
 		EndOfRecurrance: FormControl<Date | null | undefined>,
 
-		/** Month when the recurrance should happen */
+		/**
+		 * Month when the recurrance should happen
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Month: FormControl<number | null | undefined>,
 
 		/** How often the recurrance occurs */
@@ -2286,6 +3031,7 @@ export namespace MyNS {
 		/**
 		 * Recurring every [value] RecurrancePattern
 		 * Ex: Recur every 1 week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		RecurranceValue: FormControl<number | null | undefined>,
 
@@ -2325,12 +3071,18 @@ export namespace MyNS {
 
 	export interface InvoiceDeleteApiModel {
 
-		/** Id of invoice to be deleted */
+		/**
+		 * Id of invoice to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface InvoiceDeleteApiModelFormProperties {
 
-		/** Id of invoice to be deleted */
+		/**
+		 * Id of invoice to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceDeleteApiModelFormGroup() {
@@ -2346,11 +3098,17 @@ export namespace MyNS {
 		AccessToken?: string | null;
 		Client?: ClientDetailsApiModel;
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
 		/** Indicates when the invoice will be proclamed as due */
@@ -2359,10 +3117,16 @@ export namespace MyNS {
 		/** Indicate that the invoice allows the user to pay the invoice partially */
 		EnablePartialPayments?: boolean | null;
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId?: number | null;
 
 		/** Indicates when the invoice was issued */
@@ -2380,7 +3144,10 @@ export namespace MyNS {
 		/** Definition of invoice recurring profile */
 		RecurringProfile?: InvoiceRecurringApiModel;
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId?: number | null;
 
 		/** Should send email reminders to client? */
@@ -2389,16 +3156,25 @@ export namespace MyNS {
 		/** Indicate the status of the invoice (paid/unpaid/overdue) */
 		Status?: ChangeStatusApiModelStatus | null;
 
-		/** Total amount of the invoice without tax */
+		/**
+		 * Total amount of the invoice without tax
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
 		/** Terms of agreement */
 		Terms?: string | null;
 
-		/** Total amount of the invoice with tax */
+		/**
+		 * Total amount of the invoice with tax
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 	}
 	export interface InvoiceDetailsApiModelFormProperties {
@@ -2406,10 +3182,16 @@ export namespace MyNS {
 		/** Security access token used for accessing the invoice anonymously */
 		AccessToken: FormControl<string | null | undefined>,
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice will be proclamed as due */
@@ -2418,10 +3200,16 @@ export namespace MyNS {
 		/** Indicate that the invoice allows the user to pay the invoice partially */
 		EnablePartialPayments: FormControl<boolean | null | undefined>,
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice was issued */
@@ -2436,7 +3224,10 @@ export namespace MyNS {
 		/** Unique number generated by the buyer */
 		PoNumber: FormControl<string | null | undefined>,
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 
 		/** Should send email reminders to client? */
@@ -2445,16 +3236,25 @@ export namespace MyNS {
 		/** Indicate the status of the invoice (paid/unpaid/overdue) */
 		Status: FormControl<ChangeStatusApiModelStatus | null | undefined>,
 
-		/** Total amount of the invoice without tax */
+		/**
+		 * Total amount of the invoice without tax
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Terms of agreement */
 		Terms: FormControl<string | null | undefined>,
 
-		/** Total amount of the invoice with tax */
+		/**
+		 * Total amount of the invoice with tax
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceDetailsApiModelFormGroup() {
@@ -2493,11 +3293,17 @@ export namespace MyNS {
 		Attachments?: Array<InvoiceAttachmentApiModel>;
 		Client?: ClientDetailsApiModel;
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
 		/** Indicates when the invoice will be proclamed as due */
@@ -2506,10 +3312,16 @@ export namespace MyNS {
 		/** Indicate that the invoice allows the user to pay the invoice partially */
 		EnablePartialPayments?: boolean | null;
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId?: number | null;
 
 		/** Indicates when the invoice was issued */
@@ -2536,7 +3348,10 @@ export namespace MyNS {
 		/** Definition of invoice recurring profile */
 		RecurringProfile?: InvoiceRecurringApiModel;
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId?: number | null;
 
 		/** Should send email reminders to client? */
@@ -2545,16 +3360,25 @@ export namespace MyNS {
 		/** Indicate the status of the invoice (paid/unpaid/overdue) */
 		Status?: ChangeStatusApiModelStatus | null;
 
-		/** Total amount of the invoice without tax */
+		/**
+		 * Total amount of the invoice without tax
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
 		/** Terms of agreement */
 		Terms?: string | null;
 
-		/** Total amount of the invoice with tax */
+		/**
+		 * Total amount of the invoice with tax
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 	}
 	export interface InvoiceFullDetailsApiModelFormProperties {
@@ -2562,10 +3386,16 @@ export namespace MyNS {
 		/** Security access token used for accessing the invoice anonymously */
 		AccessToken: FormControl<string | null | undefined>,
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice will be proclamed as due */
@@ -2574,10 +3404,16 @@ export namespace MyNS {
 		/** Indicate that the invoice allows the user to pay the invoice partially */
 		EnablePartialPayments: FormControl<boolean | null | undefined>,
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice was issued */
@@ -2592,7 +3428,10 @@ export namespace MyNS {
 		/** Unique number generated by the buyer */
 		PoNumber: FormControl<string | null | undefined>,
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 
 		/** Should send email reminders to client? */
@@ -2601,16 +3440,25 @@ export namespace MyNS {
 		/** Indicate the status of the invoice (paid/unpaid/overdue) */
 		Status: FormControl<ChangeStatusApiModelStatus | null | undefined>,
 
-		/** Total amount of the invoice without tax */
+		/**
+		 * Total amount of the invoice without tax
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Terms of agreement */
 		Terms: FormControl<string | null | undefined>,
 
-		/** Total amount of the invoice with tax */
+		/**
+		 * Total amount of the invoice with tax
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceFullDetailsApiModelFormGroup() {
@@ -2639,78 +3487,144 @@ export namespace MyNS {
 
 	export interface InvoiceItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the invoice item */
 		Description?: string | null;
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Id of invoice item */
+		/**
+		 * Id of invoice item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Sub-Total amount of the invoice item (Amount without tax) */
+		/**
+		 * Sub-Total amount of the invoice item (Amount without tax)
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Total amount of the invoice item */
+		/**
+		 * Total amount of the invoice item
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface InvoiceItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the invoice item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Amount that goes as a discount */
+		/**
+		 * Amount that goes as a discount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Id of invoice item */
+		/**
+		 * Id of invoice item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Sub-Total amount of the invoice item (Amount without tax) */
+		/**
+		 * Sub-Total amount of the invoice item (Amount without tax)
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Amount that goes to the tax */
+		/**
+		 * Amount that goes to the tax
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Total amount of the invoice item */
+		/**
+		 * Total amount of the invoice item
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceItemApiModelFormGroup() {
@@ -2733,10 +3647,16 @@ export namespace MyNS {
 
 	export interface InvoicePaymentApiModel {
 
-		/** Total amount of the payment */
+		/**
+		 * Total amount of the payment
+		 * Type: double
+		 */
 		Amount?: number | null;
 
-		/** Id of invoice payment */
+		/**
+		 * Id of invoice payment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicate if the payment is automatic or manual */
@@ -2756,10 +3676,16 @@ export namespace MyNS {
 	}
 	export interface InvoicePaymentApiModelFormProperties {
 
-		/** Total amount of the payment */
+		/**
+		 * Total amount of the payment
+		 * Type: double
+		 */
 		Amount: FormControl<number | null | undefined>,
 
-		/** Id of invoice payment */
+		/**
+		 * Id of invoice payment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicate if the payment is automatic or manual */
@@ -2792,7 +3718,11 @@ export namespace MyNS {
 
 	export interface InvoiceMessage {
 		AttachPdf?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
 		Message?: string | null;
 		SendToSelf?: boolean | null;
@@ -2801,7 +3731,11 @@ export namespace MyNS {
 	}
 	export interface InvoiceMessageFormProperties {
 		AttachPdf: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 		SendToSelf: FormControl<boolean | null | undefined>,
@@ -2828,22 +3762,37 @@ export namespace MyNS {
 		/** List of invoice attachments */
 		Attachments?: Array<InvoiceUpdateAttachmentApiModel>;
 
-		/** The client to whom this invoice is assigned */
+		/**
+		 * The client to whom this invoice is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId?: number | null;
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId?: number | null;
 
-		/** Id of the currency for the invoice amounts */
+		/**
+		 * Id of the currency for the invoice amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Indicates when the invoice will be proclamed as due */
 		Duedate?: Date | null;
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId?: number | null;
 
 		/** Indicates when the invoice was issued */
@@ -2867,7 +3816,10 @@ export namespace MyNS {
 		/** Definition of invoice recurring profile */
 		RecurringProfile?: InvoiceRecurringApiModel;
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId?: number | null;
 
 		/** Should send email reminders to client? */
@@ -2881,22 +3833,37 @@ export namespace MyNS {
 	}
 	export interface InvoiceUpdateApiModelFormProperties {
 
-		/** The client to whom this invoice is assigned */
+		/**
+		 * The client to whom this invoice is assigned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClientId: FormControl<number | null | undefined>,
 
-		/** Indicate from which invoice this invoice has been cloned from */
+		/**
+		 * Indicate from which invoice this invoice has been cloned from
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ClonedFromId: FormControl<number | null | undefined>,
 
-		/** Id of the currency for the invoice amounts */
+		/**
+		 * Id of the currency for the invoice amounts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice will be proclamed as due */
 		Duedate: FormControl<Date | null | undefined>,
 
-		/** Invoice id */
+		/**
+		 * Invoice id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Hold the id of the invoice category */
+		/**
+		 * Hold the id of the invoice category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceCategoryId: FormControl<number | null | undefined>,
 
 		/** Indicates when the invoice was issued */
@@ -2911,7 +3878,10 @@ export namespace MyNS {
 		/** Unique number generated by the buyer */
 		PoNumber: FormControl<string | null | undefined>,
 
-		/** Hold the id of the recurring profile */
+		/**
+		 * Hold the id of the recurring profile
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 
 		/** Should send email reminders to client? */
@@ -2945,7 +3915,10 @@ export namespace MyNS {
 
 	export interface InvoiceUpdateAttachmentApiModel {
 
-		/** Id of invoice attachment */
+		/**
+		 * Id of invoice attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Link to the file */
@@ -2957,15 +3930,21 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface InvoiceUpdateAttachmentApiModelFormProperties {
 
-		/** Id of invoice attachment */
+		/**
+		 * Id of invoice attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Link to the file */
@@ -2977,8 +3956,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -2989,7 +3971,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -2997,54 +3979,96 @@ export namespace MyNS {
 
 	export interface InvoiceUpdateItemApiModel {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** Additional description attached to the invoice item */
 		Description?: string | null;
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Id of invoice item */
+		/**
+		 * Id of invoice item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface InvoiceUpdateItemApiModelFormProperties {
 
-		/** Amount per unit */
+		/**
+		 * Amount per unit
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** Additional description attached to the invoice item */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount percentage for the overall amount */
+		/**
+		 * Discount percentage for the overall amount
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Id of invoice item */
+		/**
+		 * Id of invoice item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Quantity in total used for the work type */
+		/**
+		 * Quantity in total used for the work type
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** Tax applied on the item */
+		/**
+		 * Tax applied on the item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Work type (Name of the service) */
+		/**
+		 * Work type (Name of the service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceUpdateItemApiModelFormGroup() {
@@ -3079,15 +4103,23 @@ export namespace MyNS {
 	}
 
 	export interface ListResult_EstimationDetailsApiModel_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<EstimationDetailsApiModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_EstimationDetailsApiModel_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_EstimationDetailsApiModel_FormGroup() {
@@ -3100,15 +4132,23 @@ export namespace MyNS {
 	}
 
 	export interface ListResult_InvoiceCategoryApiModel_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<InvoiceCategoryApiModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_InvoiceCategoryApiModel_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_InvoiceCategoryApiModel_FormGroup() {
@@ -3121,15 +4161,23 @@ export namespace MyNS {
 	}
 
 	export interface ListResult_InvoiceDetailsApiModel_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<InvoiceDetailsApiModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_InvoiceDetailsApiModel_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_InvoiceDetailsApiModel_FormGroup() {
@@ -3142,15 +4190,23 @@ export namespace MyNS {
 	}
 
 	export interface ListResult_OrderDetailsApiModel_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<OrderDetailsApiModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_OrderDetailsApiModel_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_OrderDetailsApiModel_FormGroup() {
@@ -3174,16 +4230,25 @@ export namespace MyNS {
 		CouponCode?: string | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
 		Description?: string | null;
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Order id */
+		/**
+		 * Order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Product alias */
@@ -3194,13 +4259,19 @@ export namespace MyNS {
 		OrderBillingDetails?: OrderBillingDetailsApiModel;
 		OrderShippingDetails?: OrderShippingDetailsApiModel;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId?: number | null;
 
 		/** Represent the referral for this order */
 		Referral?: string | null;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -3209,16 +4280,28 @@ export namespace MyNS {
 		/** Order status */
 		Status?: ChangeOrderStatusApiModelStatus | null;
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Total amount with shipping */
+		/**
+		 * Total amount with shipping
+		 * Type: double
+		 */
 		TotalWithShipping?: number | null;
 
 		/** What happens next description */
@@ -3235,16 +4318,25 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		CouponCode: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Order id */
+		/**
+		 * Order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Product alias */
@@ -3253,13 +4345,19 @@ export namespace MyNS {
 		/** Customer note to seller */
 		Note: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId: FormControl<number | null | undefined>,
 
 		/** Represent the referral for this order */
 		Referral: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -3268,16 +4366,28 @@ export namespace MyNS {
 		/** Order status */
 		Status: FormControl<ChangeOrderStatusApiModelStatus | null | undefined>,
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount with shipping */
+		/**
+		 * Total amount with shipping
+		 * Type: double
+		 */
 		TotalWithShipping: FormControl<number | null | undefined>,
 
 		/** What happens next description */
@@ -3313,7 +4423,10 @@ export namespace MyNS {
 		/** Client street and number */
 		Address?: string | null;
 
-		/** Client country id */
+		/**
+		 * Client country id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CountryId?: number | null;
 
 		/** Client email */
@@ -3330,7 +4443,10 @@ export namespace MyNS {
 		/** Client street and number */
 		Address: FormControl<string | null | undefined>,
 
-		/** Client country id */
+		/**
+		 * Client country id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CountryId: FormControl<number | null | undefined>,
 
 		/** Client email */
@@ -3358,7 +4474,10 @@ export namespace MyNS {
 		/** Client street and number */
 		Address?: string | null;
 
-		/** Client country id */
+		/**
+		 * Client country id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CountryId?: number | null;
 
 		/** Client email */
@@ -3375,7 +4494,10 @@ export namespace MyNS {
 		/** Client street and number */
 		Address: FormControl<string | null | undefined>,
 
-		/** Client country id */
+		/**
+		 * Client country id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CountryId: FormControl<number | null | undefined>,
 
 		/** Client email */
@@ -3399,15 +4521,23 @@ export namespace MyNS {
 	}
 
 	export interface ListResult_PaymentLink_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<PaymentLink>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_PaymentLink_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_PaymentLink_FormGroup() {
@@ -3422,30 +4552,62 @@ export namespace MyNS {
 	export interface PaymentLink {
 		AccessToken?: string | null;
 		Client?: Client;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId?: number | null;
 		Currency?: Currency;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId?: number | null;
+
+		/** Type: double */
 		DiscountAmount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Invoice?: Invoice;
 		Items?: Array<PaymentLinkItem>;
 		Number?: string | null;
+
+		/** Type: double */
 		SubTotalAmount?: number | null;
+
+		/** Type: double */
 		TaxAmount?: number | null;
+
+		/** Type: double */
 		TotalAmount?: number | null;
 		User?: User;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface PaymentLinkFormProperties {
 		AccessToken: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DiscountAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SubTotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentLinkFormGroup() {
@@ -3465,33 +4627,81 @@ export namespace MyNS {
 	}
 
 	export interface PaymentLinkItem {
+
+		/** Type: double */
 		Cost?: number | null;
+
+		/** Type: double */
 		DiscountAmount?: number | null;
+
+		/** Type: double */
 		DiscountPercentage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PaymentLinkId?: number | null;
+
+		/** Type: double */
 		Quantity?: number | null;
+
+		/** Type: double */
 		SubTotalAmount?: number | null;
 		Tax?: Tax;
+
+		/** Type: double */
 		TaxAmount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TaxId?: number | null;
+
+		/** Type: double */
 		TaxPercentage?: number | null;
+
+		/** Type: double */
 		TotalAmount?: number | null;
 		WorkType?: WorkType;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorkTypeId?: number | null;
 	}
 	export interface PaymentLinkItemFormProperties {
+
+		/** Type: double */
 		Cost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DiscountAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DiscountPercentage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PaymentLinkId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SubTotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TaxId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TaxPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalAmount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentLinkItemFormGroup() {
@@ -3513,15 +4723,27 @@ export namespace MyNS {
 	}
 
 	export interface Tax {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
+
+		/** Type: double */
 		Percentage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface TaxFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Percentage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxFormGroup() {
@@ -3535,13 +4757,21 @@ export namespace MyNS {
 	}
 
 	export interface WorkType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface WorkTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkTypeFormGroup() {
@@ -3558,6 +4788,8 @@ export namespace MyNS {
 		Email?: string | null;
 		ExternalConnections?: Array<ExternalConnection>;
 		HasBeenOnboarded?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		IsLocked?: boolean | null;
 		IsVerified?: boolean | null;
@@ -3567,6 +4799,8 @@ export namespace MyNS {
 		Password?: string | null;
 		PasswordSalt?: string | null;
 		ReferralPath?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReferredUsers?: number | null;
 		ReferrerKey?: string | null;
 		Settings?: UserSettings;
@@ -3581,6 +4815,8 @@ export namespace MyNS {
 		ActionNotificationsLastReadOn: FormControl<Date | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 		HasBeenOnboarded: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		IsLocked: FormControl<boolean | null | undefined>,
 		IsVerified: FormControl<boolean | null | undefined>,
@@ -3590,6 +4826,8 @@ export namespace MyNS {
 		Password: FormControl<string | null | undefined>,
 		PasswordSalt: FormControl<string | null | undefined>,
 		ReferralPath: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReferredUsers: FormControl<number | null | undefined>,
 		ReferrerKey: FormControl<string | null | undefined>,
 		Status: FormControl<UserStatus | null | undefined>,
@@ -3634,11 +4872,17 @@ export namespace MyNS {
 		Cname?: string | null;
 		CompanyRegistrationNumber?: string | null;
 		Country?: Country;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CountryId?: number | null;
 		Currency?: Currency;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId?: number | null;
 		CurrencySymbol?: string | null;
 		DefaultDateFormat?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultDueDateInDays?: number | null;
 		DoNotTrack?: boolean | null;
 		EnableClientPortal?: boolean | null;
@@ -3646,6 +4890,8 @@ export namespace MyNS {
 		EnableRecurringInvoicing?: boolean | null;
 		HasInvoiceLogo?: boolean | null;
 		Iban?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		InvoiceTemplate?: UserSettingsInvoiceTemplate | null;
 		InvoiceTemplateColorHex?: string | null;
@@ -3656,11 +4902,15 @@ export namespace MyNS {
 		StoreCheckoutFields?: UserSettingsStoreCheckoutFields | null;
 		StoreColorHex?: string | null;
 		StoreCurrency?: Currency;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StoreCurrencyId?: number | null;
 		StoreCustomJavaScript?: string | null;
 		StoreDescription?: string | null;
 		StoreEmail?: string | null;
 		StoreLanguage?: UiLanguage;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StoreLanguageId?: number | null;
 		StoreName?: string | null;
 		StorePurchaseEmailMessage?: string | null;
@@ -3670,9 +4920,13 @@ export namespace MyNS {
 		SubscribeToProductEmails?: boolean | null;
 		Swift?: string | null;
 		Terms?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 		UserSignature?: string | null;
 		VatNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YearsOfExperience?: number | null;
 	}
 	export interface UserSettingsFormProperties {
@@ -3685,10 +4939,16 @@ export namespace MyNS {
 		BankAccount: FormControl<string | null | undefined>,
 		Cname: FormControl<string | null | undefined>,
 		CompanyRegistrationNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CountryId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrencyId: FormControl<number | null | undefined>,
 		CurrencySymbol: FormControl<string | null | undefined>,
 		DefaultDateFormat: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultDueDateInDays: FormControl<number | null | undefined>,
 		DoNotTrack: FormControl<boolean | null | undefined>,
 		EnableClientPortal: FormControl<boolean | null | undefined>,
@@ -3696,6 +4956,8 @@ export namespace MyNS {
 		EnableRecurringInvoicing: FormControl<boolean | null | undefined>,
 		HasInvoiceLogo: FormControl<boolean | null | undefined>,
 		Iban: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		InvoiceTemplate: FormControl<UserSettingsInvoiceTemplate | null | undefined>,
 		InvoiceTemplateColorHex: FormControl<string | null | undefined>,
@@ -3705,10 +4967,14 @@ export namespace MyNS {
 		ReferralProgram: FormControl<UserSettingsReferralProgram | null | undefined>,
 		StoreCheckoutFields: FormControl<UserSettingsStoreCheckoutFields | null | undefined>,
 		StoreColorHex: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StoreCurrencyId: FormControl<number | null | undefined>,
 		StoreCustomJavaScript: FormControl<string | null | undefined>,
 		StoreDescription: FormControl<string | null | undefined>,
 		StoreEmail: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StoreLanguageId: FormControl<number | null | undefined>,
 		StoreName: FormControl<string | null | undefined>,
 		StorePurchaseEmailMessage: FormControl<string | null | undefined>,
@@ -3718,9 +4984,13 @@ export namespace MyNS {
 		SubscribeToProductEmails: FormControl<boolean | null | undefined>,
 		Swift: FormControl<string | null | undefined>,
 		Terms: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 		UserSignature: FormControl<string | null | undefined>,
 		VatNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YearsOfExperience: FormControl<number | null | undefined>,
 	}
 	export function CreateUserSettingsFormGroup() {
@@ -3784,11 +5054,15 @@ export namespace MyNS {
 	export enum UserSettingsStoreCheckoutFields { ShowMinimumRequiredFields = 'ShowMinimumRequiredFields', ShowAllFields = 'ShowAllFields' }
 
 	export interface UiLanguage {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Name?: string | null;
 		UiCulture?: string | null;
 	}
 	export interface UiLanguageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		UiCulture: FormControl<string | null | undefined>,
@@ -3812,24 +5086,38 @@ export namespace MyNS {
 		Features?: Array<string>;
 		HasDuePayment?: boolean | null;
 		HasDuePaymentSince?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Identifier?: string | null;
 		IsActive?: boolean | null;
 		IsLifetime?: boolean | null;
 		LastPaymentOn?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxClients?: number | null;
 		Name?: string | null;
 		OnHold?: boolean | null;
 		OrderIdentifier?: string | null;
+
+		/** Type: double */
 		Price?: number | null;
 		Recurrence?: SubscriptionPlanRecurrence | null;
-		SaleId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		SaleId?: string | null;
 		Status?: SubscriptionPlanStatus | null;
 		SystemCancelationReason?: SubscriptionPlanSystemCancelationReason | null;
 		TrialEndsOn?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TrialNumberOfDays?: number | null;
 		TrialStartsOn?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Version?: number | null;
 	}
 	export interface SubscriptionPlanFormProperties {
@@ -3839,24 +5127,38 @@ export namespace MyNS {
 		ExternalIdentifier: FormControl<string | null | undefined>,
 		HasDuePayment: FormControl<boolean | null | undefined>,
 		HasDuePaymentSince: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		Identifier: FormControl<string | null | undefined>,
 		IsActive: FormControl<boolean | null | undefined>,
 		IsLifetime: FormControl<boolean | null | undefined>,
 		LastPaymentOn: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxClients: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		OnHold: FormControl<boolean | null | undefined>,
 		OrderIdentifier: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Price: FormControl<number | null | undefined>,
 		Recurrence: FormControl<SubscriptionPlanRecurrence | null | undefined>,
-		SaleId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		SaleId: FormControl<string | null | undefined>,
 		Status: FormControl<SubscriptionPlanStatus | null | undefined>,
 		SystemCancelationReason: FormControl<SubscriptionPlanSystemCancelationReason | null | undefined>,
 		TrialEndsOn: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TrialNumberOfDays: FormControl<number | null | undefined>,
 		TrialStartsOn: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionPlanFormGroup() {
@@ -3878,7 +5180,7 @@ export namespace MyNS {
 			OrderIdentifier: new FormControl<string | null | undefined>(undefined),
 			Price: new FormControl<number | null | undefined>(undefined),
 			Recurrence: new FormControl<SubscriptionPlanRecurrence | null | undefined>(undefined),
-			SaleId: new FormControl<number | null | undefined>(undefined),
+			SaleId: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<SubscriptionPlanStatus | null | undefined>(undefined),
 			SystemCancelationReason: new FormControl<SubscriptionPlanSystemCancelationReason | null | undefined>(undefined),
 			TrialEndsOn: new FormControl<Date | null | undefined>(undefined),
@@ -3901,15 +5203,23 @@ export namespace MyNS {
 	export enum UserYearsOfExperience { One = 'One', OneToThree = 'OneToThree', ThreeToFive = 'ThreeToFive', SixPlus = 'SixPlus' }
 
 	export interface ListResult_ProductDetailsApiModel_ {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		ErrorMessages?: Array<IErrorInfo>;
 		IsFaulted?: boolean | null;
 		Result?: Array<ProductDetailsApiModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount?: number | null;
 	}
 	export interface ListResult_ProductDetailsApiModel_FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		IsFaulted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListResult_ProductDetailsApiModel_FormGroup() {
@@ -3936,13 +5246,19 @@ export namespace MyNS {
 		ButtonCallToAction?: string | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
 		Description?: string | null;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicate that the product is set as featured */
@@ -3951,7 +5267,10 @@ export namespace MyNS {
 		/** Product alias */
 		Name?: string | null;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -3960,13 +5279,22 @@ export namespace MyNS {
 		/** Product availability status */
 		Status?: ProductDetailsApiModelStatus | null;
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Total amount of product with shipping */
+		/**
+		 * Total amount of product with shipping
+		 * Type: double
+		 */
 		TotalWithShipping?: number | null;
 
 		/** What happens next description */
@@ -3986,13 +5314,19 @@ export namespace MyNS {
 		 */
 		ButtonCallToAction: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicate that the product is set as featured */
@@ -4001,7 +5335,10 @@ export namespace MyNS {
 		/** Product alias */
 		Name: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -4010,13 +5347,22 @@ export namespace MyNS {
 		/** Product availability status */
 		Status: FormControl<ProductDetailsApiModelStatus | null | undefined>,
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount of product with shipping */
+		/**
+		 * Total amount of product with shipping
+		 * Type: double
+		 */
 		TotalWithShipping: FormControl<number | null | undefined>,
 
 		/** What happens next description */
@@ -4056,8 +5402,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
@@ -4073,8 +5422,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -4084,7 +5436,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -4101,13 +5453,19 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		CouponCode?: string | null;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
 		Description?: string | null;
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
 		/** List of Order items */
@@ -4121,13 +5479,19 @@ export namespace MyNS {
 		OrderBillingDetails?: OrderBillingDetailsApiModel;
 		OrderShippingDetails?: OrderShippingDetailsApiModel;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId?: number | null;
 
 		/** Represent the referral for this order */
 		Referral?: string | null;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -4136,13 +5500,22 @@ export namespace MyNS {
 		/** Order status */
 		Status?: ChangeOrderStatusApiModelStatus | null;
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
 		/** What happens next description */
@@ -4156,13 +5529,19 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		CouponCode: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
 		/** Product alias */
@@ -4171,13 +5550,19 @@ export namespace MyNS {
 		/** Customer note to seller */
 		Note: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId: FormControl<number | null | undefined>,
 
 		/** Represent the referral for this order */
 		Referral: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -4186,13 +5571,22 @@ export namespace MyNS {
 		/** Order status */
 		Status: FormControl<ChangeOrderStatusApiModelStatus | null | undefined>,
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
 		/** What happens next description */
@@ -4222,72 +5616,126 @@ export namespace MyNS {
 
 	export interface OrderItemApiModel {
 
-		/** Work item cost */
+		/**
+		 * Work item cost
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** General description */
 		Description?: string | null;
 
-		/** Foreign key product item id */
+		/**
+		 * Foreign key product item id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductItemId?: number | null;
 
-		/** Work item quantity */
+		/**
+		 * Work item quantity
+		 * Type: double
+		 */
 		Quantity?: number | null;
 
 		/** Order SKU */
 		ReferenceId?: string | null;
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Foreign key Tax id */
+		/**
+		 * Foreign key Tax id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Tax percentage */
+		/**
+		 * Tax percentage
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Foreign key work type id */
+		/**
+		 * Foreign key work type id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface OrderItemApiModelFormProperties {
 
-		/** Work item cost */
+		/**
+		 * Work item cost
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** General description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Foreign key product item id */
+		/**
+		 * Foreign key product item id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductItemId: FormControl<number | null | undefined>,
 
-		/** Work item quantity */
+		/**
+		 * Work item quantity
+		 * Type: double
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
 		/** Order SKU */
 		ReferenceId: FormControl<string | null | undefined>,
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Foreign key Tax id */
+		/**
+		 * Foreign key Tax id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Tax percentage */
+		/**
+		 * Tax percentage
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Foreign key work type id */
+		/**
+		 * Foreign key work type id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderItemApiModelFormGroup() {
@@ -4309,12 +5757,18 @@ export namespace MyNS {
 
 	export interface OrderDeleteApiModel {
 
-		/** Id of order to be deleted */
+		/**
+		 * Id of order to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface OrderDeleteApiModelFormProperties {
 
-		/** Id of order to be deleted */
+		/**
+		 * Id of order to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderDeleteApiModelFormGroup() {
@@ -4339,16 +5793,25 @@ export namespace MyNS {
 		CouponCode?: string | null;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
 		Description?: string | null;
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Order id */
+		/**
+		 * Order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** List of Order items */
@@ -4362,13 +5825,19 @@ export namespace MyNS {
 		OrderBillingDetails?: OrderBillingDetailsApiModel;
 		OrderShippingDetails?: OrderShippingDetailsApiModel;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId?: number | null;
 
 		/** Represent the referral for this order */
 		Referral?: string | null;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -4377,16 +5846,28 @@ export namespace MyNS {
 		/** Order status */
 		Status?: ChangeOrderStatusApiModelStatus | null;
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Total amount with shipping */
+		/**
+		 * Total amount with shipping
+		 * Type: double
+		 */
 		TotalWithShipping?: number | null;
 
 		/** What happens next description */
@@ -4403,16 +5884,25 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		CouponCode: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Order id */
+		/**
+		 * Order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Product alias */
@@ -4421,13 +5911,19 @@ export namespace MyNS {
 		/** Customer note to seller */
 		Note: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductId: FormControl<number | null | undefined>,
 
 		/** Represent the referral for this order */
 		Referral: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -4436,16 +5932,28 @@ export namespace MyNS {
 		/** Order status */
 		Status: FormControl<ChangeOrderStatusApiModelStatus | null | undefined>,
 
-		/** Sub total amount */
+		/**
+		 * Sub total amount
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Total amount */
+		/**
+		 * Total amount
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount with shipping */
+		/**
+		 * Total amount with shipping
+		 * Type: double
+		 */
 		TotalWithShipping: FormControl<number | null | undefined>,
 
 		/** What happens next description */
@@ -4480,11 +5988,17 @@ export namespace MyNS {
 		CanDisconnect?: boolean | null;
 		ClientImportUri?: string | null;
 		ConnectionType?: PaymentGatewayConnectionType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ExternalConnectionId?: number | null;
 		Fields?: Array<PaymentGatewayInputField>;
 		IsConnected?: boolean | null;
 		IsEnabled?: boolean | null;
+
+		/** Type: double */
 		MaximumAmount?: number | null;
+
+		/** Type: double */
 		MinimumAmount?: number | null;
 		Name?: string | null;
 		OAuthUri?: string | null;
@@ -4498,10 +6012,16 @@ export namespace MyNS {
 		CanDisconnect: FormControl<boolean | null | undefined>,
 		ClientImportUri: FormControl<string | null | undefined>,
 		ConnectionType: FormControl<PaymentGatewayConnectionType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ExternalConnectionId: FormControl<number | null | undefined>,
 		IsConnected: FormControl<boolean | null | undefined>,
 		IsEnabled: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		MaximumAmount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MinimumAmount: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		OAuthUri: FormControl<string | null | undefined>,
@@ -4596,7 +6116,10 @@ export namespace MyNS {
 
 	export interface ProductAttachmentApiModel {
 
-		/** Product attachment id */
+		/**
+		 * Product attachment id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Link to the file */
@@ -4608,15 +6131,21 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName?: string | null;
 
-		/** File size number in bytes */
-		Size?: number | null;
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** Type of the link (Attached or external) */
 		Type?: EstimationAttachmentApiModelType | null;
 	}
 	export interface ProductAttachmentApiModelFormProperties {
 
-		/** Product attachment id */
+		/**
+		 * Product attachment id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Link to the file */
@@ -4628,8 +6157,11 @@ export namespace MyNS {
 		/** Name of the file */
 		OriginalFileName: FormControl<string | null | undefined>,
 
-		/** File size number in bytes */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * File size number in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** Type of the link (Attached or external) */
 		Type: FormControl<EstimationAttachmentApiModelType | null | undefined>,
@@ -4640,7 +6172,7 @@ export namespace MyNS {
 			Link: new FormControl<string | null | undefined>(undefined),
 			ObfuscatedFileName: new FormControl<string | null | undefined>(undefined),
 			OriginalFileName: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<EstimationAttachmentApiModelType | null | undefined>(undefined),
 		});
 
@@ -4651,13 +6183,22 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		Code?: string | null;
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Discount percentage */
+		/**
+		 * Discount percentage
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Product coupon id */
+		/**
+		 * Product coupon id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Coupon expiration date */
@@ -4668,13 +6209,22 @@ export namespace MyNS {
 		/** Coupon to apply in order to get the discount */
 		Code: FormControl<string | null | undefined>,
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Discount percentage */
+		/**
+		 * Discount percentage
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Product coupon id */
+		/**
+		 * Product coupon id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Coupon expiration date */
@@ -4708,7 +6258,10 @@ export namespace MyNS {
 		/** List of product coupons */
 		Coupons?: Array<ProductCouponApiModel>;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
@@ -4729,7 +6282,10 @@ export namespace MyNS {
 		/** List of enabled payment gateways for this product */
 		PaymentGateways?: Array<ProductGatewayApiModel>;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -4752,7 +6308,10 @@ export namespace MyNS {
 		 */
 		ButtonCallToAction: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
@@ -4764,7 +6323,10 @@ export namespace MyNS {
 		/** Product alias */
 		Name: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -4794,13 +6356,22 @@ export namespace MyNS {
 
 	export interface ProductDiscountApiModel {
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount?: number | null;
 
-		/** Discount percentage */
+		/**
+		 * Discount percentage
+		 * Type: double
+		 */
 		DiscountPercentage?: number | null;
 
-		/** Product discount id */
+		/**
+		 * Product discount id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name */
@@ -4814,13 +6385,22 @@ export namespace MyNS {
 	}
 	export interface ProductDiscountApiModelFormProperties {
 
-		/** Discount amount */
+		/**
+		 * Discount amount
+		 * Type: double
+		 */
 		DiscountAmount: FormControl<number | null | undefined>,
 
-		/** Discount percentage */
+		/**
+		 * Discount percentage
+		 * Type: double
+		 */
 		DiscountPercentage: FormControl<number | null | undefined>,
 
-		/** Product discount id */
+		/**
+		 * Product discount id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name */
@@ -4846,72 +6426,126 @@ export namespace MyNS {
 
 	export interface ProductItemApiModel {
 
-		/** Work item cost */
+		/**
+		 * Work item cost
+		 * Type: double
+		 */
 		Cost?: number | null;
 
 		/** General description */
 		Description?: string | null;
 
-		/** Product item id */
+		/**
+		 * Product item id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Minimum required quantity in order to buy a work item */
+		/**
+		 * Minimum required quantity in order to buy a work item
+		 * Type: double
+		 */
 		MinimumQuantity?: number | null;
 
 		/** Product SKU */
 		ReferenceId?: string | null;
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount?: number | null;
 
-		/** Foreign key Tax id */
+		/**
+		 * Foreign key Tax id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId?: number | null;
 
-		/** Tax percentage */
+		/**
+		 * Tax percentage
+		 * Type: double
+		 */
 		TaxPercentage?: number | null;
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Foreign key work type id */
+		/**
+		 * Foreign key work type id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId?: number | null;
 	}
 	export interface ProductItemApiModelFormProperties {
 
-		/** Work item cost */
+		/**
+		 * Work item cost
+		 * Type: double
+		 */
 		Cost: FormControl<number | null | undefined>,
 
 		/** General description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Product item id */
+		/**
+		 * Product item id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Minimum required quantity in order to buy a work item */
+		/**
+		 * Minimum required quantity in order to buy a work item
+		 * Type: double
+		 */
 		MinimumQuantity: FormControl<number | null | undefined>,
 
 		/** Product SKU */
 		ReferenceId: FormControl<string | null | undefined>,
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
-		/** Foreign key Tax id */
+		/**
+		 * Foreign key Tax id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxId: FormControl<number | null | undefined>,
 
-		/** Tax percentage */
+		/**
+		 * Tax percentage
+		 * Type: double
+		 */
 		TaxPercentage: FormControl<number | null | undefined>,
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Foreign key work type id */
+		/**
+		 * Foreign key work type id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WorkTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateProductItemApiModelFormGroup() {
@@ -4950,12 +6584,18 @@ export namespace MyNS {
 
 	export interface ProductDeleteApiModel {
 
-		/** Id of product to be deleted */
+		/**
+		 * Id of product to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface ProductDeleteApiModelFormProperties {
 
-		/** Id of product to be deleted */
+		/**
+		 * Id of product to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateProductDeleteApiModelFormGroup() {
@@ -4986,7 +6626,10 @@ export namespace MyNS {
 		Coupons?: Array<ProductCouponApiModel>;
 		Currency?: CurrencyDetailsApiModel;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
@@ -4995,7 +6638,10 @@ export namespace MyNS {
 		/** List of product discounts */
 		Discounts?: Array<ProductDiscountApiModel>;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicate that the product is set as featured */
@@ -5010,7 +6656,10 @@ export namespace MyNS {
 		/** List of enabled payment gateways for this product */
 		PaymentGateways?: Array<ProductGatewayApiModel>;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -5019,13 +6668,22 @@ export namespace MyNS {
 		/** Product availability status */
 		Status?: ProductDetailsApiModelStatus | null;
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount?: number | null;
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount?: number | null;
 
-		/** Total amount of product with shipping */
+		/**
+		 * Total amount of product with shipping
+		 * Type: double
+		 */
 		TotalWithShipping?: number | null;
 
 		/** What happens next description */
@@ -5045,13 +6703,19 @@ export namespace MyNS {
 		 */
 		ButtonCallToAction: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicate that the product is set as featured */
@@ -5060,7 +6724,10 @@ export namespace MyNS {
 		/** Product alias */
 		Name: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -5069,13 +6736,22 @@ export namespace MyNS {
 		/** Product availability status */
 		Status: FormControl<ProductDetailsApiModelStatus | null | undefined>,
 
-		/** Subtotal amount of product */
+		/**
+		 * Subtotal amount of product
+		 * Type: double
+		 */
 		SubTotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount of product */
+		/**
+		 * Total amount of product
+		 * Type: double
+		 */
 		TotalAmount: FormControl<number | null | undefined>,
 
-		/** Total amount of product with shipping */
+		/**
+		 * Total amount of product with shipping
+		 * Type: double
+		 */
 		TotalWithShipping: FormControl<number | null | undefined>,
 
 		/** What happens next description */
@@ -5119,7 +6795,10 @@ export namespace MyNS {
 		/** List of product coupons */
 		Coupons?: Array<ProductCouponApiModel>;
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId?: number | null;
 
 		/** Product description */
@@ -5128,7 +6807,10 @@ export namespace MyNS {
 		/** List of product discounts */
 		Discounts?: Array<ProductDiscountApiModel>;
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicate that the product is set as featured */
@@ -5143,7 +6825,10 @@ export namespace MyNS {
 		/** List of enabled payment gateways for this product */
 		PaymentGateways?: Array<ProductGatewayApiModel>;
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount?: number | null;
 
 		/** Client instructions for shipping */
@@ -5166,13 +6851,19 @@ export namespace MyNS {
 		 */
 		ButtonCallToAction: FormControl<string | null | undefined>,
 
-		/** Foreign key Currency */
+		/**
+		 * Foreign key Currency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrencyId: FormControl<number | null | undefined>,
 
 		/** Product description */
 		Description: FormControl<string | null | undefined>,
 
-		/** Product id */
+		/**
+		 * Product id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicate that the product is set as featured */
@@ -5181,7 +6872,10 @@ export namespace MyNS {
 		/** Product alias */
 		Name: FormControl<string | null | undefined>,
 
-		/** Cost for shipping the product */
+		/**
+		 * Cost for shipping the product
+		 * Type: double
+		 */
 		ShippingAmount: FormControl<number | null | undefined>,
 
 		/** Client instructions for shipping */
@@ -5211,11 +6905,19 @@ export namespace MyNS {
 	}
 
 	export interface QueryOptions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PageSize?: number | null;
 	}
 	export interface QueryOptionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryOptionsFormGroup() {
@@ -5227,22 +6929,42 @@ export namespace MyNS {
 	}
 
 	export interface QueuedInvoice {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClonedFromId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		Invoice?: Invoice;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurringProfileId?: number | null;
 		ScheduledFor?: Date | null;
 		Status?: QueuedInvoiceStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId?: number | null;
 	}
 	export interface QueuedInvoiceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClonedFromId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurringProfileId: FormControl<number | null | undefined>,
 		ScheduledFor: FormControl<Date | null | undefined>,
 		Status: FormControl<QueuedInvoiceStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserId: FormControl<number | null | undefined>,
 	}
 	export function CreateQueuedInvoiceFormGroup() {
@@ -5261,28 +6983,52 @@ export namespace MyNS {
 	export enum QueuedInvoiceStatus { Pending = 'Pending', Cancelled = 'Cancelled', Failed = 'Failed', Processed = 'Processed' }
 
 	export interface RecurringProfile {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DayOfMonth?: number | null;
 		DayOfWeek?: InvoiceRecurringApiModelDayOfWeek | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueDateInDays?: number | null;
 		EndOfRecurrance?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Month?: number | null;
 		RecurrancePattern?: InvoiceRecurringApiModelRecurrancePattern | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurranceValue?: number | null;
 		StartOfRecurrance?: Date | null;
 		Status?: InvoiceRecurringApiModelStatus | null;
 		Title?: string | null;
 	}
 	export interface RecurringProfileFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DayOfMonth: FormControl<number | null | undefined>,
 		DayOfWeek: FormControl<InvoiceRecurringApiModelDayOfWeek | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueDateInDays: FormControl<number | null | undefined>,
 		EndOfRecurrance: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvoiceId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Month: FormControl<number | null | undefined>,
 		RecurrancePattern: FormControl<InvoiceRecurringApiModelRecurrancePattern | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RecurranceValue: FormControl<number | null | undefined>,
 		StartOfRecurrance: FormControl<Date | null | undefined>,
 		Status: FormControl<InvoiceRecurringApiModelStatus | null | undefined>,
@@ -5309,14 +7055,22 @@ export namespace MyNS {
 	export interface SearchRequest {
 		Order?: SearchRequestOrder | null;
 		OrderBy?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PageSize?: number | null;
 		Query?: string | null;
 	}
 	export interface SearchRequestFormProperties {
 		Order: FormControl<SearchRequestOrder | null | undefined>,
 		OrderBy: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PageSize: FormControl<number | null | undefined>,
 		Query: FormControl<string | null | undefined>,
 	}
@@ -5338,10 +7092,16 @@ export namespace MyNS {
 		/** Should attach pdf file */
 		AttachPdf?: boolean | null;
 
-		/** Id of the estimation */
+		/**
+		 * Id of the estimation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EstimationId?: number | null;
 
-		/** Id of the estimation */
+		/**
+		 * Id of the estimation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Message to be embedded in the email */
@@ -5358,10 +7118,16 @@ export namespace MyNS {
 		/** Should attach pdf file */
 		AttachPdf: FormControl<boolean | null | undefined>,
 
-		/** Id of the estimation */
+		/**
+		 * Id of the estimation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EstimationId: FormControl<number | null | undefined>,
 
-		/** Id of the estimation */
+		/**
+		 * Id of the estimation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Message to be embedded in the email */
@@ -5387,12 +7153,18 @@ export namespace MyNS {
 
 	export interface SendInvoiceToAccountantApiModel {
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface SendInvoiceToAccountantApiModelFormProperties {
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateSendInvoiceToAccountantApiModelFormGroup() {
@@ -5407,10 +7179,16 @@ export namespace MyNS {
 		/** Should attach pdf file */
 		AttachPdf?: boolean | null;
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceId?: number | null;
 
 		/** Message to be embedded in the email */
@@ -5427,10 +7205,16 @@ export namespace MyNS {
 		/** Should attach pdf file */
 		AttachPdf: FormControl<boolean | null | undefined>,
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
-		/** Id of the invoice */
+		/**
+		 * Id of the invoice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InvoiceId: FormControl<number | null | undefined>,
 
 		/** Message to be embedded in the email */
@@ -5459,7 +7243,10 @@ export namespace MyNS {
 		/** Name of the task */
 		Name?: string | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage?: number | null;
 	}
 	export interface TaxCreateApiModelFormProperties {
@@ -5467,7 +7254,10 @@ export namespace MyNS {
 		/** Name of the task */
 		Name: FormControl<string | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxCreateApiModelFormGroup() {
@@ -5480,12 +7270,18 @@ export namespace MyNS {
 
 	export interface TaxDeleteApiModel {
 
-		/** Id of tax to be deleted */
+		/**
+		 * Id of tax to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface TaxDeleteApiModelFormProperties {
 
-		/** Id of tax to be deleted */
+		/**
+		 * Id of tax to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxDeleteApiModelFormGroup() {
@@ -5500,13 +7296,19 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn?: Date | null;
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the task */
 		Name?: string | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage?: number | null;
 	}
 	export interface TaxDetailsApiModelFormProperties {
@@ -5514,13 +7316,19 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn: FormControl<Date | null | undefined>,
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the task */
 		Name: FormControl<string | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxDetailsApiModelFormGroup() {
@@ -5535,24 +7343,36 @@ export namespace MyNS {
 
 	export interface TaxUpdateApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the task */
 		Name?: string | null;
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage?: number | null;
 	}
 	export interface TaxUpdateApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the task */
 		Name: FormControl<string | null | undefined>,
 
-		/** Task percentage. Ex: 18% */
+		/**
+		 * Task percentage. Ex: 18%
+		 * Type: double
+		 */
 		Percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxUpdateApiModelFormGroup() {
@@ -5566,7 +7386,10 @@ export namespace MyNS {
 
 	export interface UILanguageDetailsApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Name of the country */
@@ -5577,7 +7400,10 @@ export namespace MyNS {
 	}
 	export interface UILanguageDetailsApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Name of the country */
@@ -5614,12 +7440,18 @@ export namespace MyNS {
 
 	export interface WorkTypeDeleteApiModel {
 
-		/** Id of work type to be deleted */
+		/**
+		 * Id of work type to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 	}
 	export interface WorkTypeDeleteApiModelFormProperties {
 
-		/** Id of work type to be deleted */
+		/**
+		 * Id of work type to be deleted
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkTypeDeleteApiModelFormGroup() {
@@ -5634,7 +7466,10 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn?: Date | null;
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates the title of of the work type (Logo design, development...) */
@@ -5645,7 +7480,10 @@ export namespace MyNS {
 		/** Date of creation */
 		CreatedOn: FormControl<Date | null | undefined>,
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates the title of of the work type (Logo design, development...) */
@@ -5662,7 +7500,10 @@ export namespace MyNS {
 
 	export interface WorkTypeUpdateApiModel {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Indicates the title of of the work type (Logo design, development...) */
@@ -5670,7 +7511,10 @@ export namespace MyNS {
 	}
 	export interface WorkTypeUpdateApiModelFormProperties {
 
-		/** Entity id */
+		/**
+		 * Entity id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Indicates the title of of the work type (Logo design, development...) */
@@ -5701,6 +7545,7 @@ export namespace MyNS {
 		/**
 		 * Check if the provided client can be deleted
 		 * Get api/client/candelete
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {boolean} OK
 		 */
 		ApiClientCandeleteGetById(id: number, headersHandler?: () => HttpHeaders): Observable<boolean> {
@@ -5711,6 +7556,7 @@ export namespace MyNS {
 		 * Delete an existing client
 		 * Post api/client/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiClientDeletePost(requestBody: ClientDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/client/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5719,6 +7565,7 @@ export namespace MyNS {
 		/**
 		 * Return client details. Activities and invoices included.
 		 * Get api/client/details
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ClientDetailsApiModel} OK
 		 */
 		ApiClientDetailsGetById(id: number, headersHandler?: () => HttpHeaders): Observable<ClientDetailsApiModel> {
@@ -5729,6 +7576,7 @@ export namespace MyNS {
 		 * Create a client
 		 * Post api/client/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiClientNewPost(requestBody: ClientCreateApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/client/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5746,6 +7594,8 @@ export namespace MyNS {
 		/**
 		 * Return all estimation for the account
 		 * Get api/estimation/all
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResult_EstimationDetailsApiModel_} OK
 		 */
 		ApiEstimationAllGetByQueryOptions_pageAndQueryOptions_pageSize(queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ListResult_EstimationDetailsApiModel_> {
@@ -5774,6 +7624,7 @@ export namespace MyNS {
 		 * Delete an existing estimation
 		 * Post api/estimation/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiEstimationDeletePost(requestBody: EstimationDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/estimation/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5782,6 +7633,7 @@ export namespace MyNS {
 		/**
 		 * Return estimation data
 		 * Get api/estimation/details
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EstimationFullDetailsApiModel} OK
 		 */
 		ApiEstimationDetailsGetById(id: number, headersHandler?: () => HttpHeaders): Observable<EstimationFullDetailsApiModel> {
@@ -5801,6 +7653,7 @@ export namespace MyNS {
 		 * Send the provided estimation to the client
 		 * Post api/estimation/sendtoclient
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiEstimationSendtoclientPost(requestBody: SendEstimationToClientApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/estimation/sendtoclient', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5809,6 +7662,7 @@ export namespace MyNS {
 		/**
 		 * Retrieve the status of the estimation
 		 * Get api/estimation/status
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EstimationChangeStatusApiModelStatus} OK
 		 */
 		ApiEstimationStatusGetById(id: number, headersHandler?: () => HttpHeaders): Observable<EstimationChangeStatusApiModelStatus> {
@@ -5827,6 +7681,7 @@ export namespace MyNS {
 		/**
 		 * Return the unique url to the client's invoice
 		 * Get api/estimation/uri
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EstimationUriApiModel} OK
 		 */
 		ApiEstimationUriGetById(id: number, headersHandler?: () => HttpHeaders): Observable<EstimationUriApiModel> {
@@ -5872,6 +7727,8 @@ export namespace MyNS {
 		/**
 		 * Return all invoices for the account
 		 * Get api/invoice/all
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResult_InvoiceDetailsApiModel_} OK
 		 */
 		ApiInvoiceAllGetByQueryOptions_pageAndQueryOptions_pageSize(queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ListResult_InvoiceDetailsApiModel_> {
@@ -5900,6 +7757,7 @@ export namespace MyNS {
 		 * Delete an existing invoice
 		 * Post api/invoice/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiInvoiceDeletePost(requestBody: InvoiceDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/invoice/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5909,6 +7767,7 @@ export namespace MyNS {
 		 * Delete an existing invoice category
 		 * Post api/invoice/deletecategory
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiInvoiceDeletecategoryPost(requestBody: InvoiceCategoryDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/invoice/deletecategory', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5917,6 +7776,7 @@ export namespace MyNS {
 		/**
 		 * Return invoice data
 		 * Get api/invoice/details
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {InvoiceFullDetailsApiModel} OK
 		 */
 		ApiInvoiceDetailsGetById(id: number, headersHandler?: () => HttpHeaders): Observable<InvoiceFullDetailsApiModel> {
@@ -5944,6 +7804,7 @@ export namespace MyNS {
 		/**
 		 * Return the PDF for the invoice
 		 * Get api/invoice/pdf
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {InvoiceUriApiModel} OK
 		 */
 		ApiInvoicePdfGetByIdAndSignedVersion(id: number, signedVersion: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<InvoiceUriApiModel> {
@@ -5954,6 +7815,7 @@ export namespace MyNS {
 		 * Send the provided invoice to the accountant
 		 * Post api/invoice/sendtoaccountant
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiInvoiceSendtoaccountantPost(requestBody: SendInvoiceToAccountantApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/invoice/sendtoaccountant', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5963,6 +7825,7 @@ export namespace MyNS {
 		 * Send the provided invoice to the client
 		 * Post api/invoice/sendtoclient
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiInvoiceSendtoclientPost(requestBody: SendInvoiceToClientApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/invoice/sendtoclient', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5971,6 +7834,7 @@ export namespace MyNS {
 		/**
 		 * Retrieve the status of the invoice
 		 * Get api/invoice/status
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChangeStatusApiModelStatus} OK
 		 */
 		ApiInvoiceStatusGetById(id: number, headersHandler?: () => HttpHeaders): Observable<ChangeStatusApiModelStatus> {
@@ -5998,6 +7862,7 @@ export namespace MyNS {
 		/**
 		 * Return the unique url to the client's invoice
 		 * Get api/invoice/uri
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {InvoiceUriApiModel} OK
 		 */
 		ApiInvoiceUriGetById(id: number, headersHandler?: () => HttpHeaders): Observable<InvoiceUriApiModel> {
@@ -6007,6 +7872,8 @@ export namespace MyNS {
 		/**
 		 * Return all orders for the account
 		 * Get api/order/all
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResult_OrderDetailsApiModel_} OK
 		 */
 		ApiOrderAllGetByQueryOptions_pageAndQueryOptions_pageSize(queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ListResult_OrderDetailsApiModel_> {
@@ -6016,6 +7883,7 @@ export namespace MyNS {
 		/**
 		 * Change order shipping details
 		 * Post api/order/changeshippingdetails
+		 * @param {number} orderId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiOrderChangeshippingdetailsPostByOrderId(orderId: number, requestBody: OrderShippingDetailsApiModel, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -6035,6 +7903,7 @@ export namespace MyNS {
 		 * Delete an existing order
 		 * Post api/order/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiOrderDeletePost(requestBody: OrderDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/order/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6043,6 +7912,7 @@ export namespace MyNS {
 		/**
 		 * Return order details
 		 * Get api/order/details
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OrderFullDetailsApiModel} OK
 		 */
 		ApiOrderDetailsGetById(id: number, headersHandler?: () => HttpHeaders): Observable<OrderFullDetailsApiModel> {
@@ -6053,6 +7923,7 @@ export namespace MyNS {
 		 * Create an order
 		 * Post api/order/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiOrderNewPost(requestBody: OrderCreateApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/order/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6070,6 +7941,8 @@ export namespace MyNS {
 		/**
 		 * Create a payment link
 		 * Get api/paymentlink/all
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResult_PaymentLink_} OK
 		 */
 		ApiPaymentlinkAllGetByQueryOptions_pageAndQueryOptions_pageSize(queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ListResult_PaymentLink_> {
@@ -6080,6 +7953,7 @@ export namespace MyNS {
 		 * Delete an existing payment link
 		 * Post api/paymentlink/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiPaymentlinkDeletePost(requestBody: PaymentLink, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/paymentlink/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6089,6 +7963,7 @@ export namespace MyNS {
 		 * Create a payment link
 		 * Post api/paymentlink/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiPaymentlinkNewPost(requestBody: PaymentLink, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/paymentlink/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6097,6 +7972,7 @@ export namespace MyNS {
 		/**
 		 * Return the unique url to the client's payment link
 		 * Get api/paymentlink/uri
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PaymentLinkUriApiModel} OK
 		 */
 		ApiPaymentlinkUriGetById(id: number, headersHandler?: () => HttpHeaders): Observable<PaymentLinkUriApiModel> {
@@ -6106,6 +7982,8 @@ export namespace MyNS {
 		/**
 		 * Return all products for the account
 		 * Get api/product/all
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResult_ProductDetailsApiModel_} OK
 		 */
 		ApiProductAllGetByQueryOptions_pageAndQueryOptions_pageSize(queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ListResult_ProductDetailsApiModel_> {
@@ -6116,6 +7994,7 @@ export namespace MyNS {
 		 * Delete an existing product
 		 * Post api/product/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiProductDeletePost(requestBody: ProductDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/product/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6124,6 +8003,7 @@ export namespace MyNS {
 		/**
 		 * Return product details
 		 * Get api/product/details
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProductFullDetailsApiModel} OK
 		 */
 		ApiProductDetailsGetById(id: number, headersHandler?: () => HttpHeaders): Observable<ProductFullDetailsApiModel> {
@@ -6134,6 +8014,7 @@ export namespace MyNS {
 		 * Create a product
 		 * Post api/product/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiProductNewPost(requestBody: ProductCreateApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/product/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6161,6 +8042,7 @@ export namespace MyNS {
 		 * Delete an existing tax
 		 * Post api/tax/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiTaxDeletePost(requestBody: TaxDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/tax/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6170,6 +8052,7 @@ export namespace MyNS {
 		 * Create a tax
 		 * Post api/tax/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiTaxNewPost(requestBody: TaxCreateApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/tax/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6197,6 +8080,7 @@ export namespace MyNS {
 		 * Delete an existing work type
 		 * Post api/worktype/delete
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiWorktypeDeletePost(requestBody: WorkTypeDeleteApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/worktype/delete', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6205,6 +8089,7 @@ export namespace MyNS {
 		/**
 		 * Return work type details
 		 * Get api/worktype/details
+		 * @param {number} workTypeId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {WorkTypeDetailsApiModel} OK
 		 */
 		ApiWorktypeDetailsGetByWorkTypeId(workTypeId: number, headersHandler?: () => HttpHeaders): Observable<WorkTypeDetailsApiModel> {
@@ -6215,6 +8100,7 @@ export namespace MyNS {
 		 * Create a work type
 		 * Post api/worktype/new
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiWorktypeNewPost(requestBody: WorkTypeCreateApiModel, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/worktype/new', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -6223,6 +8109,8 @@ export namespace MyNS {
 		/**
 		 * Return all work types for the account that match the query param
 		 * Get api/worktype/search
+		 * @param {number} queryOptions_page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} queryOptions_pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkTypeDetailsApiModel>} OK
 		 */
 		ApiWorktypeSearchGetByQueryOptions_queryAndQueryOptions_orderByAndQueryOptions_orderAndQueryOptions_pageAndQueryOptions_pageSize(queryOptions_query: string | null | undefined, queryOptions_orderBy: string | null | undefined, queryOptions_order: SearchRequestOrder | null | undefined, queryOptions_page: number | null | undefined, queryOptions_pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<WorkTypeDetailsApiModel>> {

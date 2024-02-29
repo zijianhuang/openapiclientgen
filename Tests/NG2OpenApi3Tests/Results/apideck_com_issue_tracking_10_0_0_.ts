@@ -223,7 +223,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -243,7 +246,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -579,6 +585,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -611,6 +618,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -680,6 +688,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -712,6 +721,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -802,6 +812,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -834,6 +845,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -880,6 +892,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -912,6 +925,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1071,6 +1085,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1103,6 +1118,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1155,6 +1171,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1187,6 +1204,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1243,14 +1261,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -1323,6 +1347,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1355,6 +1380,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1407,6 +1433,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1439,6 +1466,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1491,6 +1519,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1523,6 +1552,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1569,6 +1599,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1601,6 +1632,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1653,6 +1685,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1685,6 +1718,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1731,6 +1765,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1763,6 +1798,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1929,6 +1965,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1961,6 +1998,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2028,7 +2066,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2048,7 +2089,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2080,7 +2124,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2100,7 +2147,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2149,7 +2199,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2169,7 +2222,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2293,7 +2349,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2310,7 +2369,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2357,7 +2419,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2377,7 +2442,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2409,7 +2477,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2429,7 +2500,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2461,7 +2535,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2481,7 +2558,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2531,6 +2611,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2563,6 +2644,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2609,6 +2691,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2641,6 +2724,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2708,6 +2792,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {CollectionsSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -2738,6 +2823,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetCollectionTagsResponse} List Tags
@@ -2753,6 +2839,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} collection_id The collection ID
 		 * @param {TicketsSort} sort Apply sorting
 		 * @param {IssuesFilter} filter Apply filters
@@ -2823,6 +2910,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} collection_id The collection ID
 		 * @param {string} ticket_id ID of the ticket you are acting upon.
 		 * @param {CommentsSort} sort Apply sorting
@@ -2869,6 +2957,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} collection_id The collection ID
 		 * @param {string} ticket_id ID of the ticket you are acting upon.
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -2900,6 +2989,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetCollectionUsersResponse} Users

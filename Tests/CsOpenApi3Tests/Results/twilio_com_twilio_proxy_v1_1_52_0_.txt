@@ -1504,8 +1504,13 @@ namespace MyNS
 		/// Retrieve a list of all Services for Twilio Proxy. A maximum of 100 records will be returned per page.
 		/// ListService v1/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1540,9 +1545,17 @@ namespace MyNS
 		/// Retrieve a list of all Phone Numbers in the Proxy Number Pool for a Service. A maximum of 100 records will be returned per page.
 		/// ListPhoneNumber v1/Services/{ServiceSid}/PhoneNumbers
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListPhoneNumberReturn> ListPhoneNumberAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1577,8 +1590,14 @@ namespace MyNS
 		/// Delete a specific Phone Number from a Service.
 		/// DeletePhoneNumber v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeletePhoneNumberAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/PhoneNumbers/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1605,8 +1624,14 @@ namespace MyNS
 		/// Fetch a specific Phone Number.
 		/// FetchPhoneNumber v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to fetch.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicephone_number> FetchPhoneNumberAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1640,9 +1665,17 @@ namespace MyNS
 		/// Retrieve a list of all Sessions for the Service. A maximum of 100 records will be returned per page.
 		/// ListSession v1/Services/{ServiceSid}/Sessions
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSessionReturn> ListSessionAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1677,10 +1710,21 @@ namespace MyNS
 		/// Retrieve a list of all Interactions for a Session. A maximum of 100 records will be returned per page.
 		/// ListInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInteractionReturn> ListInteractionAsync(string ServiceSid, string SessionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1715,9 +1759,18 @@ namespace MyNS
 		/// Delete a specific Interaction.
 		/// DeleteInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInteractionAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Sessions/"+ (SessionSid==null? "" : System.Uri.EscapeDataString(SessionSid))+"/Interactions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1744,9 +1797,18 @@ namespace MyNS
 		/// Retrieve a list of Interactions for a given [Session](https://www.twilio.com/docs/proxy/api/session).
 		/// FetchInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessioninteraction> FetchInteractionAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1780,10 +1842,21 @@ namespace MyNS
 		/// Retrieve a list of all Participants in a Session.
 		/// ListParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resources to read.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListParticipantReturn> ListParticipantAsync(string ServiceSid, string SessionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1817,11 +1890,25 @@ namespace MyNS
 		/// <summary>
 		/// ListMessageInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.</param>
-		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) to read the resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMessageInteractionReturn> ListMessageInteractionAsync(string ServiceSid, string SessionSid, string ParticipantSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1855,10 +1942,22 @@ namespace MyNS
 		/// <summary>
 		/// FetchMessageInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.</param>
-		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the MessageInteraction resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the MessageInteraction resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessionparticipantmessage_interaction> FetchMessageInteractionAsync(string ServiceSid, string SessionSid, string ParticipantSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1892,9 +1991,18 @@ namespace MyNS
 		/// Delete a specific Participant. This is a soft-delete. The participant remains associated with the session and cannot be re-added. Participants are only permanently deleted when the [Session](https://www.twilio.com/docs/proxy/api/session) is deleted.
 		/// DeleteParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteParticipantAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Sessions/"+ (SessionSid==null? "" : System.Uri.EscapeDataString(SessionSid))+"/Participants/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1921,9 +2029,18 @@ namespace MyNS
 		/// Fetch a specific Participant.
 		/// FetchParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.</param>
-		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessionparticipant> FetchParticipantAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1957,8 +2074,14 @@ namespace MyNS
 		/// Delete a specific Session.
 		/// DeleteSession v1/Services/{ServiceSid}/Sessions/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Session resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Session resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteSessionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Sessions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1985,7 +2108,10 @@ namespace MyNS
 		/// Fetch a specific Session.
 		/// FetchSession v1/Services/{ServiceSid}/Sessions/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Session resource to fetch.</param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesession> FetchSessionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2020,9 +2146,17 @@ namespace MyNS
 		/// Retrieve a list of all Short Codes in the Proxy Number Pool for the Service. A maximum of 100 records will be returned per page.
 		/// ListShortCode v1/Services/{ServiceSid}/ShortCodes
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListShortCodeReturn> ListShortCodeAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2057,8 +2191,14 @@ namespace MyNS
 		/// Delete a specific Short Code from a Service.
 		/// DeleteShortCode v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource to delete the ShortCode resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource to delete the ShortCode resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteShortCodeAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/ShortCodes/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2085,8 +2225,14 @@ namespace MyNS
 		/// Fetch a specific Short Code.
 		/// FetchShortCode v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to fetch the resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1serviceshort_code> FetchShortCodeAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2120,7 +2266,10 @@ namespace MyNS
 		/// Delete a specific Service.
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));

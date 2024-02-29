@@ -993,6 +993,7 @@ export namespace MyNS {
 		 * Gets a user from a given user id
 		 * Get api/rest/v1/account/user/{userId}
 		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {WebServiceUser} OK
 		 */
 		ApiRestV1AccountUser_userIdGet(userId: string, headersHandler?: () => HttpHeaders): Observable<WebServiceUser> {
@@ -1004,6 +1005,7 @@ export namespace MyNS {
 		 * Updates a sub-account in your team. The following fields can be updated <i>firstname, lastname, contact number</i> and <i>password.</i>
 		 * Post api/rest/v1/account/user/{userId}
 		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {WebServiceUser} requestBody request
 		 * @return {WebServiceUser} Description was not specified
 		 */
@@ -1222,7 +1224,9 @@ export namespace MyNS {
 		 * Returns all messages
 		 * Get api/rest/v1/messages/all
 		 * @param {number} pageSize number of elements to return at a time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiRestV1MessagesAllGetByPageSizeAndPageAndTypeAndStatusAndFromDateTimeSentAndToDateTimeSentAndFromDateTimeReceivedAndToDateTimeReceivedAndFromNumberAndToNumberAndMessageAndCampaignAndDataFieldAndDeletedAndReadAndRepliesToMessageIdType} type filter by message type
 		 * @param {ApiRestV1MessagesAllGetByPageSizeAndPageAndTypeAndStatusAndFromDateTimeSentAndToDateTimeSentAndFromDateTimeReceivedAndToDateTimeReceivedAndFromNumberAndToNumberAndMessageAndCampaignAndDataFieldAndDeletedAndReadAndRepliesToMessageIdStatus} status filter by message status
 		 * @param {Date} fromDateTimeSent date format: yyyyMMdd
@@ -1260,6 +1264,7 @@ export namespace MyNS {
 		 * Post api/rest/v1/messages/analyse/message-credit-cost
 		 * @param {WebServiceAnalyseMessageRequestMessageAndRecipientNumber} requestBody request
 		 * @return {number} Description was not specified
+		 *     Type: double
 		 */
 		ApiRestV1MessagesAnalyseMessage_credit_costPost(requestBody: WebServiceAnalyseMessageRequestMessageAndRecipientNumber, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/rest/v1/messages/analyse/message-credit-cost', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -1282,6 +1287,7 @@ export namespace MyNS {
 		 * Post api/rest/v1/messages/analyse/message-length
 		 * @param {WebServiceAnalyseMessageRequestMessageOnly} requestBody request
 		 * @return {number} Description was not specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiRestV1MessagesAnalyseMessage_lengthPost(requestBody: WebServiceAnalyseMessageRequestMessageOnly, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/rest/v1/messages/analyse/message-length', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -1304,6 +1310,7 @@ export namespace MyNS {
 		 * Post api/rest/v1/messages/analyse/number-of-messages
 		 * @param {WebServiceAnalyseMessageRequestMessageOnly} requestBody request
 		 * @return {number} Description was not specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiRestV1MessagesAnalyseNumber_of_messagesPost(requestBody: WebServiceAnalyseMessageRequestMessageOnly, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/rest/v1/messages/analyse/number-of-messages', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -1494,6 +1501,7 @@ export namespace MyNS {
 		 * Returns details for a single template
 		 * Get api/rest/v1/templates/{templateId}
 		 * @param {string} templateId templateId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {WebServiceTemplate} OK
 		 */
 		ApiRestV1Templates_templateIdGet(templateId: string, headersHandler?: () => HttpHeaders): Observable<WebServiceTemplate> {
@@ -1505,6 +1513,7 @@ export namespace MyNS {
 		 * Deletes a  template
 		 * Delete api/rest/v1/templates/{templateId}
 		 * @param {string} templateId templateId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Description was not specified
 		 */
 		ApiRestV1Templates_templateIdDelete(templateId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1516,7 +1525,9 @@ export namespace MyNS {
 		 * Returns all voice messages
 		 * Get api/rest/v1/voice/all
 		 * @param {number} pageSize number of elements to return at a time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiRestV1MessagesAllGetByPageSizeAndPageAndTypeAndStatusAndFromDateTimeSentAndToDateTimeSentAndFromDateTimeReceivedAndToDateTimeReceivedAndFromNumberAndToNumberAndMessageAndCampaignAndDataFieldAndDeletedAndReadAndRepliesToMessageIdStatus} status filter by message status
 		 * @param {Date} fromDateTimeSent date format: yyyyMMdd
 		 * @param {Date} toDateTimeSent date format: yyyyMMdd

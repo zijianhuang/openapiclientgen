@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Asset {
 
-		/** The accounting value of the asset */
+		/**
+		 * The accounting value of the asset
+		 * Type: double
+		 */
 		accountingBookValue?: number | null;
 
 		/** The Xero-generated Id for the asset */
@@ -31,19 +34,31 @@ export namespace MyNS {
 		/** Boolean to indicate whether depreciation can be rolled back for this asset individually. This is true if it doesn't have 'legacy' journal entries and if there is no lock period that would prevent this asset from rolling back. */
 		canRollback?: boolean | null;
 
-		/** The date the asset was disposed */
+		/**
+		 * The date the asset was disposed
+		 * Type: DateOnly
+		 */
 		disposalDate?: Date | null;
 
-		/** The price the asset was disposed at */
+		/**
+		 * The price the asset was disposed at
+		 * Type: double
+		 */
 		disposalPrice?: number | null;
 
 		/** Boolean to indicate whether delete is enabled */
 		isDeleteEnabledForDate?: boolean | null;
 
-		/** The date the asset was purchased YYYY-MM-DD */
+		/**
+		 * The date the asset was purchased YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		purchaseDate?: Date | null;
 
-		/** The purchase price of the asset */
+		/**
+		 * The purchase price of the asset
+		 * Type: double
+		 */
 		purchasePrice?: number | null;
 
 		/** The asset's serial number */
@@ -54,7 +69,10 @@ export namespace MyNS {
 	}
 	export interface AssetFormProperties {
 
-		/** The accounting value of the asset */
+		/**
+		 * The accounting value of the asset
+		 * Type: double
+		 */
 		accountingBookValue: FormControl<number | null | undefined>,
 
 		/** The Xero-generated Id for the asset */
@@ -78,19 +96,31 @@ export namespace MyNS {
 		/** Boolean to indicate whether depreciation can be rolled back for this asset individually. This is true if it doesn't have 'legacy' journal entries and if there is no lock period that would prevent this asset from rolling back. */
 		canRollback: FormControl<boolean | null | undefined>,
 
-		/** The date the asset was disposed */
+		/**
+		 * The date the asset was disposed
+		 * Type: DateOnly
+		 */
 		disposalDate: FormControl<Date | null | undefined>,
 
-		/** The price the asset was disposed at */
+		/**
+		 * The price the asset was disposed at
+		 * Type: double
+		 */
 		disposalPrice: FormControl<number | null | undefined>,
 
 		/** Boolean to indicate whether delete is enabled */
 		isDeleteEnabledForDate: FormControl<boolean | null | undefined>,
 
-		/** The date the asset was purchased YYYY-MM-DD */
+		/**
+		 * The date the asset was purchased YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		purchaseDate: FormControl<Date | null | undefined>,
 
-		/** The purchase price of the asset */
+		/**
+		 * The purchase price of the asset
+		 * Type: double
+		 */
 		purchasePrice: FormControl<number | null | undefined>,
 
 		/** The asset's serial number */
@@ -152,7 +182,10 @@ export namespace MyNS {
 		/** The asset account for fixed assets of this type */
 		fixedAssetAccountId?: string | null;
 
-		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */
+		/**
+		 * All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locks?: number | null;
 	}
 	export interface AssetTypeFormProperties {
@@ -175,7 +208,10 @@ export namespace MyNS {
 		/** The asset account for fixed assets of this type */
 		fixedAssetAccountId: FormControl<string | null | undefined>,
 
-		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */
+		/**
+		 * All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locks: FormControl<number | null | undefined>,
 	}
 	export function CreateAssetTypeFormGroup() {
@@ -204,48 +240,90 @@ export namespace MyNS {
 
 	export interface BookDepreciationDetail {
 
-		/** The value of the asset you want to depreciate, if this is less than the cost of the asset. */
+		/**
+		 * The value of the asset you want to depreciate, if this is less than the cost of the asset.
+		 * Type: double
+		 */
 		costLimit?: number | null;
 
-		/** All depreciation occurring in the current financial year. */
+		/**
+		 * All depreciation occurring in the current financial year.
+		 * Type: double
+		 */
 		currentAccumDepreciationAmount?: number | null;
 
-		/** When an asset is disposed, this will be the sell price minus the purchase price if a profit was made. */
+		/**
+		 * When an asset is disposed, this will be the sell price minus the purchase price if a profit was made.
+		 * Type: double
+		 */
 		currentCapitalGain?: number | null;
 
-		/** When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value. */
+		/**
+		 * When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value.
+		 * Type: double
+		 */
 		currentGainLoss?: number | null;
 
-		/** YYYY-MM-DD */
+		/**
+		 * YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		depreciationStartDate?: Date | null;
 
-		/** All depreciation prior to the current financial year. */
+		/**
+		 * All depreciation prior to the current financial year.
+		 * Type: double
+		 */
 		priorAccumDepreciationAmount?: number | null;
 
-		/** The value of the asset remaining when you've fully depreciated it. */
+		/**
+		 * The value of the asset remaining when you've fully depreciated it.
+		 * Type: double
+		 */
 		residualValue?: number | null;
 	}
 	export interface BookDepreciationDetailFormProperties {
 
-		/** The value of the asset you want to depreciate, if this is less than the cost of the asset. */
+		/**
+		 * The value of the asset you want to depreciate, if this is less than the cost of the asset.
+		 * Type: double
+		 */
 		costLimit: FormControl<number | null | undefined>,
 
-		/** All depreciation occurring in the current financial year. */
+		/**
+		 * All depreciation occurring in the current financial year.
+		 * Type: double
+		 */
 		currentAccumDepreciationAmount: FormControl<number | null | undefined>,
 
-		/** When an asset is disposed, this will be the sell price minus the purchase price if a profit was made. */
+		/**
+		 * When an asset is disposed, this will be the sell price minus the purchase price if a profit was made.
+		 * Type: double
+		 */
 		currentCapitalGain: FormControl<number | null | undefined>,
 
-		/** When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value. */
+		/**
+		 * When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value.
+		 * Type: double
+		 */
 		currentGainLoss: FormControl<number | null | undefined>,
 
-		/** YYYY-MM-DD */
+		/**
+		 * YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		depreciationStartDate: FormControl<Date | null | undefined>,
 
-		/** All depreciation prior to the current financial year. */
+		/**
+		 * All depreciation prior to the current financial year.
+		 * Type: double
+		 */
 		priorAccumDepreciationAmount: FormControl<number | null | undefined>,
 
-		/** The value of the asset remaining when you've fully depreciated it. */
+		/**
+		 * The value of the asset remaining when you've fully depreciated it.
+		 * Type: double
+		 */
 		residualValue: FormControl<number | null | undefined>,
 	}
 	export function CreateBookDepreciationDetailFormGroup() {
@@ -281,10 +359,16 @@ export namespace MyNS {
 		/** The method of depreciation applied to this asset. See Depreciation Methods */
 		depreciationMethod?: BookDepreciationSettingDepreciationMethod | null;
 
-		/** The rate of depreciation (e.g. 0.05) */
+		/**
+		 * The rate of depreciation (e.g. 0.05)
+		 * Type: double
+		 */
 		depreciationRate?: number | null;
 
-		/** Effective life of the asset in years (e.g. 5) */
+		/**
+		 * Effective life of the asset in years (e.g. 5)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		effectiveLifeYears?: number | null;
 	}
 	export interface BookDepreciationSettingFormProperties {
@@ -307,10 +391,16 @@ export namespace MyNS {
 		/** The method of depreciation applied to this asset. See Depreciation Methods */
 		depreciationMethod: FormControl<BookDepreciationSettingDepreciationMethod | null | undefined>,
 
-		/** The rate of depreciation (e.g. 0.05) */
+		/**
+		 * The rate of depreciation (e.g. 0.05)
+		 * Type: double
+		 */
 		depreciationRate: FormControl<number | null | undefined>,
 
-		/** Effective life of the asset in years (e.g. 5) */
+		/**
+		 * Effective life of the asset in years (e.g. 5)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		effectiveLifeYears: FormControl<number | null | undefined>,
 	}
 	export function CreateBookDepreciationSettingFormGroup() {
@@ -468,15 +558,31 @@ export namespace MyNS {
 	}
 
 	export interface Pagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
 	}
 	export interface PaginationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -497,7 +603,10 @@ export namespace MyNS {
 		/** The next available sequence number */
 		assetNumberSequence?: string | null;
 
-		/** The date depreciation calculations started on registered fixed assets in Xero */
+		/**
+		 * The date depreciation calculations started on registered fixed assets in Xero
+		 * Type: DateOnly
+		 */
 		assetStartDate?: Date | null;
 
 		/** Default account that capital gains are posted to */
@@ -509,7 +618,10 @@ export namespace MyNS {
 		/** Default account that losses are posted to */
 		defaultLossOnDisposalAccountId?: string | null;
 
-		/** The last depreciation date */
+		/**
+		 * The last depreciation date
+		 * Type: DateOnly
+		 */
 		lastDepreciationDate?: Date | null;
 
 		/** opt in for tax calculation */
@@ -523,7 +635,10 @@ export namespace MyNS {
 		/** The next available sequence number */
 		assetNumberSequence: FormControl<string | null | undefined>,
 
-		/** The date depreciation calculations started on registered fixed assets in Xero */
+		/**
+		 * The date depreciation calculations started on registered fixed assets in Xero
+		 * Type: DateOnly
+		 */
 		assetStartDate: FormControl<Date | null | undefined>,
 
 		/** Default account that capital gains are posted to */
@@ -535,7 +650,10 @@ export namespace MyNS {
 		/** Default account that losses are posted to */
 		defaultLossOnDisposalAccountId: FormControl<string | null | undefined>,
 
-		/** The last depreciation date */
+		/**
+		 * The last depreciation date
+		 * Type: DateOnly
+		 */
 		lastDepreciationDate: FormControl<Date | null | undefined>,
 
 		/** opt in for tax calculation */
@@ -587,7 +705,9 @@ export namespace MyNS {
 		 * Get Assets
 		 * @param {AssetStatusQueryParam} status Required when retrieving a collection of assets. See Asset Status Codes
 		 * @param {number} page Results are paged. This specifies which page of the results to return. The default page is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The number of records returned per page. By default the number of records returned is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetAssetsOrderBy} orderBy Requests can be ordered by AssetType, AssetName, AssetNumber, PurchaseDate and PurchasePrice. If the asset status is DISPOSED it also allows DisposalDate and DisposalPrice.
 		 * @param {GetAssetsSortDirection} sortDirection ASC or DESC
 		 * @param {string} filterBy A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields.

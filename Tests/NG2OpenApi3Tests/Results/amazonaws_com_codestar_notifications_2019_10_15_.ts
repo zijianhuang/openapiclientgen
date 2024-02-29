@@ -879,8 +879,8 @@ export namespace MyNS {
 		/**
 		 * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -911,8 +911,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p> </note>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientRequestToken?: string | null;
 
@@ -927,8 +927,8 @@ export namespace MyNS {
 		/**
 		 * The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -946,8 +946,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p> </note>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -997,8 +997,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
 		 * Required
-		 * Max length: 320
 		 * Min length: 1
+		 * Max length: 320
 		 */
 		TargetAddress: string;
 
@@ -1010,8 +1010,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
 		 * Required
-		 * Max length: 320
 		 * Min length: 1
+		 * Max length: 320
 		 */
 		TargetAddress: FormControl<string | null | undefined>,
 
@@ -1193,8 +1193,8 @@ export namespace MyNS {
 
 		/**
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -1208,8 +1208,8 @@ export namespace MyNS {
 
 		/**
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1284,8 +1284,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the Chatbot topic to unsubscribe from the notification rule.
 		 * Required
-		 * Max length: 320
 		 * Min length: 1
+		 * Max length: 320
 		 */
 		TargetAddress: string;
 	}
@@ -1300,8 +1300,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the Chatbot topic to unsubscribe from the notification rule.
 		 * Required
-		 * Max length: 320
 		 * Min length: 1
+		 * Max length: 320
 		 */
 		TargetAddress: FormControl<string | null | undefined>,
 	}
@@ -1323,8 +1323,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the notification rule.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name?: string | null;
 
@@ -1353,8 +1353,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the notification rule.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 

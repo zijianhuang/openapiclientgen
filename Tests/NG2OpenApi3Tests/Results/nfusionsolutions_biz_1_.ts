@@ -4,22 +4,46 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Interval {
+
+		/** Type: double */
 		change?: number | null;
+
+		/** Type: double */
 		changePercent?: number | null;
 		end?: Date | null;
+
+		/** Type: double */
 		high?: number | null;
+
+		/** Type: double */
 		last?: number | null;
+
+		/** Type: double */
 		low?: number | null;
+
+		/** Type: double */
 		open?: number | null;
 		start?: Date | null;
 	}
 	export interface IntervalFormProperties {
+
+		/** Type: double */
 		change: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		changePercent: FormControl<number | null | undefined>,
 		end: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		high: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		low: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		open: FormControl<number | null | undefined>,
 		start: FormControl<Date | null | undefined>,
 	}
@@ -86,11 +110,15 @@ export namespace MyNS {
 	export interface Rate {
 		symbol?: string | null;
 		timestamp?: Date | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface RateFormProperties {
 		symbol: FormControl<string | null | undefined>,
 		timestamp: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateRateFormGroup() {
@@ -129,43 +157,103 @@ export namespace MyNS {
 	}
 
 	export interface Summary {
+
+		/** Type: double */
 		ask?: number | null;
 		baseCurrency?: string | null;
+
+		/** Type: double */
 		bid?: number | null;
+
+		/** Type: double */
 		fiftyTwoWeekHigh?: number | null;
+
+		/** Type: double */
 		fiftyTwoWeekLow?: number | null;
+
+		/** Type: double */
 		fiftyTwoWeekPercentChange?: number | null;
+
+		/** Type: double */
 		fourWeekPercentChange?: number | null;
+
+		/** Type: double */
 		high?: number | null;
+
+		/** Type: double */
 		last?: number | null;
+
+		/** Type: double */
 		low?: number | null;
+
+		/** Type: double */
 		oneDayChange?: number | null;
+
+		/** Type: double */
 		oneDayPercentChange?: number | null;
+
+		/** Type: double */
 		oneDayValue?: number | null;
+
+		/** Type: double */
 		open?: number | null;
 		symbol?: string | null;
 		timeStamp?: Date | null;
+
+		/** Type: double */
 		twelveWeekPercentChange?: number | null;
+
+		/** Type: double */
 		yearToDatePercentChange?: number | null;
 	}
 	export interface SummaryFormProperties {
+
+		/** Type: double */
 		ask: FormControl<number | null | undefined>,
 		baseCurrency: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		bid: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fiftyTwoWeekHigh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fiftyTwoWeekLow: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fiftyTwoWeekPercentChange: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fourWeekPercentChange: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		high: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		low: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		oneDayChange: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		oneDayPercentChange: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		oneDayValue: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		open: FormControl<number | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
 		timeStamp: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		twelveWeekPercentChange: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		yearToDatePercentChange: FormControl<number | null | undefined>,
 	}
 	export function CreateSummaryFormGroup() {
@@ -456,6 +544,7 @@ export namespace MyNS {
 		 * dwt=pennyweight
 		 * @param {Currencies_History_GETFormat} format to override content negotiation specify a value of json or xml
 		 * @param {number} years Number of years of history to return. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IntervalCollectionResponse>} Success
 		 */
 		Metals_SpotAnnualHistoricalPerformance_GET(metals: string, currency: string | null | undefined, unitofmeasure: Metals_BenchmarkHistory_GETUnitofmeasure | null | undefined, format: Currencies_History_GETFormat | null | undefined, years: number | null | undefined): Observable<Array<IntervalCollectionResponse>> {

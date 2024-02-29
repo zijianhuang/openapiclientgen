@@ -20,7 +20,10 @@ export namespace MyNS {
 		/** Unique number (across all Products/Licensees of a Vendor) that identifies the License. Vendor can assign this number when creating a License or let NetLicensing generate one. Read-only after corresponding creation Transaction status is set to closed. */
 		number?: string | null;
 
-		/** 'price' for the License. If >0, it must always be accompanied by the currency specification. Read-only, set from License Template on creation. */
+		/**
+		 * 'price' for the License. If >0, it must always be accompanied by the currency specification. Read-only, set from License Template on creation.
+		 * Type: double
+		 */
 		price?: number | null;
 	}
 	export interface LicenseFormProperties {
@@ -40,7 +43,10 @@ export namespace MyNS {
 		/** Unique number (across all Products/Licensees of a Vendor) that identifies the License. Vendor can assign this number when creating a License or let NetLicensing generate one. Read-only after corresponding creation Transaction status is set to closed. */
 		number: FormControl<string | null | undefined>,
 
-		/** 'price' for the License. If >0, it must always be accompanied by the currency specification. Read-only, set from License Template on creation. */
+		/**
+		 * 'price' for the License. If >0, it must always be accompanied by the currency specification. Read-only, set from License Template on creation.
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseFormGroup() {
@@ -81,7 +87,10 @@ export namespace MyNS {
 		/** Unique number (across all Product of a Vendor) that identifies the License Template. Vendor can assign this number when creating a License Template or let NetLicensing generate one. Read-only after creation of the first License from this License Template. */
 		number?: string | null;
 
-		/** 'price' for the License. If >0, it must always be accompanied by the currency specification. */
+		/**
+		 * 'price' for the License. If >0, it must always be accompanied by the currency specification.
+		 * Type: double
+		 */
 		price?: number | null;
 	}
 	export interface LicenseTemplateFormProperties {
@@ -110,7 +119,10 @@ export namespace MyNS {
 		/** Unique number (across all Product of a Vendor) that identifies the License Template. Vendor can assign this number when creating a License Template or let NetLicensing generate one. Read-only after creation of the first License from this License Template. */
 		number: FormControl<string | null | undefined>,
 
-		/** 'price' for the License. If >0, it must always be accompanied by the currency specification. */
+		/**
+		 * 'price' for the License. If >0, it must always be accompanied by the currency specification.
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseTemplateFormGroup() {
@@ -321,11 +333,15 @@ export namespace MyNS {
 	export interface Discount {
 		amountPercent?: string | null;
 		currency?: string | null;
+
+		/** Type: double */
 		totalPrice?: number | null;
 	}
 	export interface DiscountFormProperties {
 		amountPercent: FormControl<string | null | undefined>,
 		currency: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		totalPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscountFormGroup() {

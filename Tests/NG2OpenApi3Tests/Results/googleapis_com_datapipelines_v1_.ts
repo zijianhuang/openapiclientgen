@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** Pipeline job details specific to the Dataflow API. This is encapsulated here to allow for more executors to store their specific details separately. */
 	export interface GoogleCloudDatapipelinesV1DataflowJobDetails {
 
-		/** Output only. The current number of workers used to run the jobs. Only set to a value if the job is still running. */
+		/**
+		 * Output only. The current number of workers used to run the jobs. Only set to a value if the job is still running.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentWorkers?: number | null;
 
 		/** Cached version of all the metrics of interest for the job. This value gets stored here when the job is terminated. As long as the job is running, this field is populated from the Dataflow API. */
@@ -20,7 +23,10 @@ export namespace MyNS {
 	/** Pipeline job details specific to the Dataflow API. This is encapsulated here to allow for more executors to store their specific details separately. */
 	export interface GoogleCloudDatapipelinesV1DataflowJobDetailsFormProperties {
 
-		/** Output only. The current number of workers used to run the jobs. Only set to a value if the job is still running. */
+		/**
+		 * Output only. The current number of workers used to run the jobs. Only set to a value if the job is still running.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentWorkers: FormControl<number | null | undefined>,
 
 		/** Cached version of all the metrics of interest for the job. This value gets stored here when the job is terminated. As long as the job is running, this field is populated from the Dataflow API. */
@@ -96,13 +102,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType?: string | null;
 
-		/** The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers?: number | null;
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network?: string | null;
 
-		/** The initial number of Compute Engine instances for the job. */
+		/**
+		 * The initial number of Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers?: number | null;
 
 		/** The email address of the service account to run the job as. */
@@ -145,13 +157,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers: FormControl<number | null | undefined>,
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network: FormControl<string | null | undefined>,
 
-		/** The initial number of Compute Engine instances for the job. */
+		/**
+		 * The initial number of Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers: FormControl<number | null | undefined>,
 
 		/** The email address of the service account to run the job as. */
@@ -258,7 +276,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -271,7 +292,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -452,13 +476,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType?: string | null;
 
-		/** The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers?: number | null;
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network?: string | null;
 
-		/** The initial number of Compute Engine instances for the job. */
+		/**
+		 * The initial number of Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers?: number | null;
 
 		/** The email address of the service account to run the job as. */
@@ -501,13 +531,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers: FormControl<number | null | undefined>,
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network: FormControl<string | null | undefined>,
 
-		/** The initial number of Compute Engine instances for the job. */
+		/**
+		 * The initial number of Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers: FormControl<number | null | undefined>,
 
 		/** The email address of the service account to run the job as. */
@@ -652,7 +688,10 @@ export namespace MyNS {
 		/** Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). */
 		displayName?: string | null;
 
-		/** Output only. Number of jobs. */
+		/**
+		 * Output only. Number of jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobCount?: number | null;
 
 		/** Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. */
@@ -689,7 +728,10 @@ export namespace MyNS {
 		/** Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. Number of jobs. */
+		/**
+		 * Output only. Number of jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobCount: FormControl<number | null | undefined>,
 
 		/** Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. */
@@ -904,6 +946,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/jobs
 		 * @param {string} parent Required. The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`.
 		 * @param {number} pageSize The maximum number of entities to return. The service may return fewer than this value, even if there are additional pages. If unspecified, the max limit will be determined by the backend implementation.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListJobs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListJobs` must match the call that provided the page token.
 		 * @return {GoogleCloudDatapipelinesV1ListJobsResponse} Successful response
 		 */
@@ -917,6 +960,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
 		 * @param {string} filter An expression for filtering the results of the request. If unspecified, all pipelines will be returned. Multiple filters can be applied and must be comma separated. Fields eligible for filtering are: + `type`: The type of the pipeline (streaming or batch). Allowed values are `ALL`, `BATCH`, and `STREAMING`. + `status`: The activity status of the pipeline. Allowed values are `ALL`, `ACTIVE`, `ARCHIVED`, and `PAUSED`. For example, to limit results to active batch processing pipelines: type:BATCH,status:ACTIVE
 		 * @param {number} pageSize The maximum number of entities to return. The service may return fewer than this value, even if there are additional pages. If unspecified, the max limit is yet to be determined by the backend implementation.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListPipelines` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPipelines` must match the call that provided the page token.
 		 * @return {GoogleCloudDatapipelinesV1ListPipelinesResponse} Successful response
 		 */

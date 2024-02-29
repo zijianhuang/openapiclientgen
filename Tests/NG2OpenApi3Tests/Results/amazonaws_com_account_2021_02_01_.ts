@@ -566,8 +566,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you disable a Region, Amazon Web Services performs actions to deactivate that Region in your account, such as destroying IAM resources in the Region. This process takes a few minutes for most accounts, but this can take several hours. You cannot enable the Region until the disabling process is fully completed.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: string;
 	}
@@ -579,8 +579,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you disable a Region, Amazon Web Services performs actions to deactivate that Region in your account, such as destroying IAM resources in the Region. This process takes a few minutes for most accounts, but this can take several hours. You cannot enable the Region until the disabling process is fully completed.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: FormControl<string | null | undefined>,
 	}
@@ -600,8 +600,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs actions to prepare your account in that Region, such as distributing your IAM resources to the Region. This process takes a few minutes for most accounts, but it can take several hours. You cannot use the Region until this process is complete. Furthermore, you cannot disable the Region until the enabling process is fully completed.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: string;
 	}
@@ -613,8 +613,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs actions to prepare your account in that Region, such as distributing your IAM resources to the Region. This process takes a few minutes for most accounts, but it can take several hours. You cannot use the Region until this process is complete. Furthermore, you cannot disable the Region until the enabling process is fully completed.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: FormControl<string | null | undefined>,
 	}
@@ -681,8 +681,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). This function will return the status of whatever Region you pass into this parameter.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: string;
 	}
@@ -694,8 +694,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). This function will return the status of whatever Region you pass into this parameter.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		RegionName: FormControl<string | null | undefined>,
 	}
@@ -721,8 +721,8 @@ export namespace MyNS {
 
 		/**
 		 * A token used to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		NextToken?: string | null;
 
@@ -743,8 +743,8 @@ export namespace MyNS {
 
 		/**
 		 * A token used to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -771,32 +771,32 @@ export namespace MyNS {
 		/**
 		 * Specifies an email address for the alternate contact.
 		 * Required
-		 * Max length: 254
 		 * Min length: 1
+		 * Max length: 254
 		 */
 		EmailAddress: string;
 
 		/**
 		 * Specifies a name for the alternate contact.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
 		/**
 		 * Specifies a phone number for the alternate contact.
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		PhoneNumber: string;
 
 		/**
 		 * Specifies a title for the alternate contact.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Title: string;
 	}
@@ -814,32 +814,32 @@ export namespace MyNS {
 		/**
 		 * Specifies an email address for the alternate contact.
 		 * Required
-		 * Max length: 254
 		 * Min length: 1
+		 * Max length: 254
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies a name for the alternate contact.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies a phone number for the alternate contact.
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		PhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies a title for the alternate contact.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Title: FormControl<string | null | undefined>,
 	}

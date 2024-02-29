@@ -7305,6 +7305,7 @@ export namespace MyNS {
 		 * <p>Adds a specified number of users to a channel.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html">BatchCreateChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/memberships#operation=batch-create
 		 * @param {string} channelArn The ARN of the channel to which you're adding users.
+		 *     Min length: 5    Max length: 1600
 		 * @return {BatchCreateChannelMembershipResponse} Success
 		 */
 		BatchCreateChannelMembership(channelArn: string, operation: BatchCreateAttendeeOperation, requestBody: BatchCreateChannelMembershipPostBody): Observable<BatchCreateChannelMembershipResponse> {
@@ -7377,6 +7378,7 @@ export namespace MyNS {
 		 * @param {string} user_email Optional. The user email address used to filter results. Maximum 1.
 		 * @param {UserType} user_type The user type.
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -7399,9 +7401,11 @@ export namespace MyNS {
 		 * Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address, which returns one account result.
 		 * Get accounts
 		 * @param {string} name Amazon Chime account name prefix with which to filter results.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} user_email User email address with which to filter results.
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccountsResponse} Success
@@ -7423,7 +7427,9 @@ export namespace MyNS {
 		 * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstances.html">ListAppInstances</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances
 		 * @param {number} max_results The maximum number of <code>AppInstance</code>s that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstancesResponse} Success
@@ -7436,6 +7442,7 @@ export namespace MyNS {
 		 * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html">CreateAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
 		 * Post app-instances/{appInstanceArn}/admins
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateAppInstanceAdmin(appInstanceArn: string, requestBody: CreateAppInstanceAdminPostBody): Observable<HttpResponse<string>> {
@@ -7446,8 +7453,11 @@ export namespace MyNS {
 		 * <p>Returns a list of the administrators in the <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html">ListAppInstanceAdmins</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances/{appInstanceArn}/admins
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of administrators that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of administrators is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceAdminsResponse} Success
@@ -7481,6 +7491,7 @@ export namespace MyNS {
 		 * @param {string} meetingId The Amazon Chime SDK meeting ID.
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttendeesResponse} Success
@@ -7504,6 +7515,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/bots
 		 * @param {string} accountId The Amazon Chime account ID.
 		 * @param {number} max_results The maximum number of results to return in a single call. The default is 10.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -7526,6 +7538,7 @@ export namespace MyNS {
 		 * <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelBan.html">CreateChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/bans
 		 * @param {string} channelArn The ARN of the ban request.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelBan(channelArn: string, requestBody: CreateChannelBanPostBody): Observable<HttpResponse<string>> {
@@ -7536,8 +7549,11 @@ export namespace MyNS {
 		 * <p>Lists all the users banned from a particular channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html">ListChannelBans</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/bans
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of bans that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested bans are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelBansResponse} Success
@@ -7550,6 +7566,7 @@ export namespace MyNS {
 		 * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html">CreateChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/memberships
 		 * @param {string} channelArn The ARN of the channel to which you're adding users.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelMembership(channelArn: string, requestBody: CreateChannelMembershipPostBody): Observable<HttpResponse<string>> {
@@ -7560,9 +7577,12 @@ export namespace MyNS {
 		 * <p>Lists all channel memberships in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMemberships.html">ListChannelMemberships</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/memberships
 		 * @param {string} channelArn The maximum number of channel memberships that you want returned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {ChannelMembershipType} type The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.
 		 * @param {number} max_results The maximum number of channel memberships that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channel memberships are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMembershipsResponse} Success
@@ -7575,6 +7595,7 @@ export namespace MyNS {
 		 * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelModerator.html">CreateChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/moderators
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelModerator(channelArn: string, requestBody: CreateChannelModeratorPostBody): Observable<HttpResponse<string>> {
@@ -7585,8 +7606,11 @@ export namespace MyNS {
 		 * <p>Lists all the moderators for a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html">ListChannelModerators</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/moderators
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of moderators that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested moderators are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelModeratorsResponse} Success
@@ -7609,6 +7633,7 @@ export namespace MyNS {
 		 * Get media-capture-pipelines
 		 * @param {string} next_token The token used to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMediaCapturePipelinesResponse} Success
@@ -7631,6 +7656,7 @@ export namespace MyNS {
 		 * Get meetings
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMeetingsResponse} Success
@@ -7672,6 +7698,7 @@ export namespace MyNS {
 		 * Get phone-number-orders
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumberOrdersResponse} Success
@@ -7684,6 +7711,7 @@ export namespace MyNS {
 		 * <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone numbers.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateProxySession.html">CreateProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post voice-connectors/{voiceConnectorId}/proxy-sessions
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		CreateProxySession(voiceConnectorId: string, requestBody: CreateProxySessionPostBody): Observable<HttpResponse<string>> {
@@ -7694,9 +7722,12 @@ export namespace MyNS {
 		 * <p>Lists the proxy sessions for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListProxySessions.html">ListProxySessions</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get voice-connectors/{voiceConnectorId}/proxy-sessions
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {ProxySessionStatus} status The proxy session status.
 		 * @param {string} next_token The token to use to retrieve the next page of results.
+		 *     Max length: 65535
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProxySessionsResponse} Success
@@ -7721,6 +7752,7 @@ export namespace MyNS {
 		 * @param {string} accountId The Amazon Chime account ID.
 		 * @param {string} member_id The member ID (user ID or bot ID).
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -7747,6 +7779,7 @@ export namespace MyNS {
 		 * @param {string} accountId The Amazon Chime account ID.
 		 * @param {string} roomId The room ID.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -7769,7 +7802,9 @@ export namespace MyNS {
 		 * <p>Lists the SIP media applications under the administrator's AWS account.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListSipMediaApplications.html">ListSipMediaApplications</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get sip-media-applications
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
+		 *     Max length: 65535
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSipMediaApplicationsResponse} Success
@@ -7802,7 +7837,9 @@ export namespace MyNS {
 		 * Get sip-rules
 		 * @param {string} sip_media_application The SIP media application ID.
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
+		 *     Max length: 65535
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSipRulesResponse} Success
@@ -7835,6 +7872,7 @@ export namespace MyNS {
 		 * Get voice-connectors
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorsResponse} Success
@@ -7857,6 +7895,7 @@ export namespace MyNS {
 		 * Get voice-connector-groups
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorGroupsResponse} Success
@@ -7899,6 +7938,7 @@ export namespace MyNS {
 		 * <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstance.html">DeleteAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstance(appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -7909,6 +7949,7 @@ export namespace MyNS {
 		 * <p>Returns the full details of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstance.html">DescribeAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceResponse} Success
 		 */
 		DescribeAppInstance(appInstanceArn: string): Observable<DescribeAppInstanceResponse> {
@@ -7919,6 +7960,7 @@ export namespace MyNS {
 		 * <p>Updates <code>AppInstance</code> metadata.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstance.html">UpdateAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateAppInstanceResponse} Success
 		 */
 		UpdateAppInstance(appInstanceArn: string, requestBody: UpdateAppInstancePutBody): Observable<UpdateAppInstanceResponse> {
@@ -7929,7 +7971,9 @@ export namespace MyNS {
 		 * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html">DeleteAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		 * @param {string} appInstanceAdminArn The ARN of the <code>AppInstance</code>'s administrator.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceAdmin(appInstanceAdminArn: string, appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -7940,7 +7984,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html">DescribeAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		 * @param {string} appInstanceAdminArn The ARN of the <code>AppInstanceAdmin</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceAdminResponse} Success
 		 */
 		DescribeAppInstanceAdmin(appInstanceAdminArn: string, appInstanceArn: string): Observable<DescribeAppInstanceAdminResponse> {
@@ -7951,6 +7997,7 @@ export namespace MyNS {
 		 * <p>Deletes the streaming configurations of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceStreamingConfigurations.html">DeleteAppInstanceStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the streaming configurations being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceStreamingConfigurations(appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -7961,6 +8008,7 @@ export namespace MyNS {
 		 * <p>Gets the streaming settings for an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingStreamingConfigurations.html">GetMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {GetAppInstanceStreamingConfigurationsResponse} Success
 		 */
 		GetAppInstanceStreamingConfigurations(appInstanceArn: string): Observable<GetAppInstanceStreamingConfigurationsResponse> {
@@ -7971,6 +8019,7 @@ export namespace MyNS {
 		 * <p>The data streaming configurations of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html">PutMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutAppInstanceStreamingConfigurationsResponse} Success
 		 */
 		PutAppInstanceStreamingConfigurations(appInstanceArn: string, requestBody: PutAppInstanceStreamingConfigurationsPutBody): Observable<PutAppInstanceStreamingConfigurationsResponse> {
@@ -7981,6 +8030,7 @@ export namespace MyNS {
 		 * <p>Deletes an <code>AppInstanceUser</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html">DeleteAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the user request being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceUser(appInstanceUserArn: string): Observable<HttpResponse<string>> {
@@ -7991,6 +8041,7 @@ export namespace MyNS {
 		 * <p>Returns the full details of an <code>AppInstanceUser</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html">DescribeAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceUserResponse} Success
 		 */
 		DescribeAppInstanceUser(appInstanceUserArn: string): Observable<DescribeAppInstanceUserResponse> {
@@ -8001,6 +8052,7 @@ export namespace MyNS {
 		 * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html">UpdateAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateAppInstanceUserResponse} Success
 		 */
 		UpdateAppInstanceUser(appInstanceUserArn: string, requestBody: UpdateAppInstanceUserPutBody): Observable<UpdateAppInstanceUserResponse> {
@@ -8033,6 +8085,7 @@ export namespace MyNS {
 		 * <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannel.html">DeleteChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete channels/{channelArn}
 		 * @param {string} channelArn The ARN of the channel being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannel(channelArn: string): Observable<HttpResponse<string>> {
@@ -8043,6 +8096,7 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannel.html">DescribeChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelResponse} Success
 		 */
 		DescribeChannel(channelArn: string): Observable<DescribeChannelResponse> {
@@ -8053,6 +8107,7 @@ export namespace MyNS {
 		 * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannel.html">UpdateChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put channels/{channelArn}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateChannelResponse} Success
 		 */
 		UpdateChannel(channelArn: string, requestBody: UpdateChannelPutBody): Observable<UpdateChannelResponse> {
@@ -8063,7 +8118,9 @@ export namespace MyNS {
 		 * <p>Removes a user from a channel's ban list.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelBan.html">DeleteChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete channels/{channelArn}/bans/{memberArn}
 		 * @param {string} channelArn The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelBan(channelArn: string, memberArn: string): Observable<HttpResponse<string>> {
@@ -8074,7 +8131,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel ban.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelBan.html">DescribeChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/bans/{memberArn}
 		 * @param {string} channelArn The ARN of the channel from which the user is banned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the member being banned.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelBanResponse} Success
 		 */
 		DescribeChannelBan(channelArn: string, memberArn: string): Observable<DescribeChannelBanResponse> {
@@ -8085,7 +8144,9 @@ export namespace MyNS {
 		 * <p>Removes a member from a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html">DeleteChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete channels/{channelArn}/memberships/{memberArn}
 		 * @param {string} channelArn The ARN of the channel from which you want to remove the user.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the member that you're removing from the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelMembership(channelArn: string, memberArn: string): Observable<HttpResponse<string>> {
@@ -8096,7 +8157,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a user's channel membership.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html">DescribeChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/memberships/{memberArn}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the member.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelMembershipResponse} Success
 		 */
 		DescribeChannelMembership(channelArn: string, memberArn: string): Observable<DescribeChannelMembershipResponse> {
@@ -8107,7 +8170,9 @@ export namespace MyNS {
 		 * <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html">DeleteChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete channels/{channelArn}/messages/{messageId}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message being deleted.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteChannelMessage(channelArn: string, messageId: string): Observable<HttpResponse<string>> {
@@ -8118,7 +8183,9 @@ export namespace MyNS {
 		 * <p>Gets the full details of a channel message.</p> <note> <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html">GetChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/messages/{messageId}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetChannelMessageResponse} Success
 		 */
 		GetChannelMessage(channelArn: string, messageId: string): Observable<GetChannelMessageResponse> {
@@ -8129,7 +8196,9 @@ export namespace MyNS {
 		 * <p>Updates the content of a message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html">UpdateChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put channels/{channelArn}/messages/{messageId}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID string of the message being updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateChannelMessageResponse} Success
 		 */
 		UpdateChannelMessage(channelArn: string, messageId: string, requestBody: UpdateChannelMessagePutBody): Observable<UpdateChannelMessageResponse> {
@@ -8140,7 +8209,9 @@ export namespace MyNS {
 		 * <p>Deletes a channel moderator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html">DeleteChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete channels/{channelArn}/moderators/{channelModeratorArn}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} channelModeratorArn The ARN of the moderator being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelModerator(channelArn: string, channelModeratorArn: string): Observable<HttpResponse<string>> {
@@ -8151,7 +8222,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a single ChannelModerator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html">DescribeChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/moderators/{channelModeratorArn}
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} channelModeratorArn The ARN of the channel moderator.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelModeratorResponse} Success
 		 */
 		DescribeChannelModerator(channelArn: string, channelModeratorArn: string): Observable<DescribeChannelModeratorResponse> {
@@ -8265,7 +8338,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified proxy session from the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteProxySession.html">DeleteProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteProxySession(voiceConnectorId: string, proxySessionId: string): Observable<HttpResponse<string>> {
@@ -8276,7 +8351,9 @@ export namespace MyNS {
 		 * <p>Gets the specified proxy session details for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetProxySession.html">GetProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetProxySessionResponse} Success
 		 */
 		GetProxySession(voiceConnectorId: string, proxySessionId: string): Observable<GetProxySessionResponse> {
@@ -8287,7 +8364,9 @@ export namespace MyNS {
 		 * <p>Updates the specified proxy session details, such as voice or SMS capabilities.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateProxySession.html">UpdateProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		UpdateProxySession(voiceConnectorId: string, proxySessionId: string, requestBody: UpdateProxySessionPostBody): Observable<HttpResponse<string>> {
@@ -8535,6 +8614,7 @@ export namespace MyNS {
 		 * <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorProxy.html">DeleteVoiceProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Delete voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Amazon Chime Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteVoiceConnectorProxy(voiceConnectorId: string): Observable<HttpResponse<string>> {
@@ -8545,6 +8625,7 @@ export namespace MyNS {
 		 * <p>Gets the proxy configuration details for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorProxy.html">GetVoiceConnectorProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetVoiceConnectorProxyResponse} Success
 		 */
 		GetVoiceConnectorProxy(voiceConnectorId: string): Observable<GetVoiceConnectorProxyResponse> {
@@ -8555,6 +8636,7 @@ export namespace MyNS {
 		 * <p>Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorProxy.html">PutVoiceConnectorProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Amazon Chime voice connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {PutVoiceConnectorProxyResponse} Success
 		 */
 		PutVoiceConnectorProxy(voiceConnectorId: string, requestBody: PutVoiceConnectorProxyPutBody): Observable<PutVoiceConnectorProxyResponse> {
@@ -8635,7 +8717,9 @@ export namespace MyNS {
 		 * <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html">DescribeChannelMembershipForAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}#scope=app-instance-user-membership&app-instance-user-arn
 		 * @param {string} channelArn The ARN of the channel to which the user belongs.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} app_instance_user_arn The ARN of the user in a channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelMembershipForAppInstanceUserResponse} Success
 		 */
 		DescribeChannelMembershipForAppInstanceUser(channelArn: string, app_instance_user_arn: string, scope: DescribeChannelMembershipForAppInstanceUserScope): Observable<DescribeChannelMembershipForAppInstanceUserResponse> {
@@ -8646,7 +8730,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html">DescribeChannelModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}#scope=app-instance-user-moderated-channel&app-instance-user-arn
 		 * @param {string} channelArn The ARN of the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} app_instance_user_arn The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelModeratedByAppInstanceUserResponse} Success
 		 */
 		DescribeChannelModeratedByAppInstanceUser(channelArn: string, app_instance_user_arn: string, scope: DescribeChannelModeratedByAppInstanceUserScope): Observable<DescribeChannelModeratedByAppInstanceUserResponse> {
@@ -8718,6 +8804,7 @@ export namespace MyNS {
 		 * <p>Gets the retention settings for an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html">GetMessagingRetentionSettings</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instances/{appInstanceArn}/retention-settings
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {GetAppInstanceRetentionSettingsResponse} Success
 		 */
 		GetAppInstanceRetentionSettings(appInstanceArn: string): Observable<GetAppInstanceRetentionSettingsResponse> {
@@ -8728,6 +8815,7 @@ export namespace MyNS {
 		 * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html">PutAppInstanceRetentionSettings</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put app-instances/{appInstanceArn}/retention-settings
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutAppInstanceRetentionSettingsResponse} Success
 		 */
 		PutAppInstanceRetentionSettings(appInstanceArn: string, requestBody: PutAppInstanceRetentionSettingsPutBody): Observable<PutAppInstanceRetentionSettingsResponse> {
@@ -8939,8 +9027,11 @@ export namespace MyNS {
 		 * <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html">ListAppInstanceUsers</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get app-instance-users#app-instance-arn
 		 * @param {string} app_instance_arn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of requests that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested users are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceUsersResponse} Success
@@ -8964,8 +9055,11 @@ export namespace MyNS {
 		 * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels#scope=app-instance-user-memberships
 		 * @param {string} app_instance_user_arn The ARN of the <code>AppInstanceUser</code>s
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of users that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of channel memberships is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMembershipsForAppInstanceUserResponse} Success
@@ -8978,11 +9072,14 @@ export namespace MyNS {
 		 * <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMessages.html">ListChannelMessages</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels/{channelArn}/messages
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {SortOrder} sort_order The order in which you want messages sorted. Default is Descending, based on time created.
 		 * @param {Date} not_before The initial or starting time stamp for your requested messages.
 		 * @param {Date} not_after The final or ending time stamp for your requested messages.
 		 * @param {number} max_results The maximum number of messages that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested messages are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMessagesResponse} Success
@@ -8995,6 +9092,7 @@ export namespace MyNS {
 		 * <p>Sends a message to a particular channel that the member is a part of.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SendChannelMessage.html">SendChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/messages
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		SendChannelMessage(channelArn: string, requestBody: SendChannelMessagePostBody): Observable<HttpResponse<string>> {
@@ -9005,9 +9103,12 @@ export namespace MyNS {
 		 * <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class="title"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels#app-instance-arn
 		 * @param {string} app_instance_arn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {ChannelPrivacy} privacy The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. 
 		 * @param {number} max_results The maximum number of channels that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channels are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
@@ -9020,8 +9121,11 @@ export namespace MyNS {
 		 * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html">ListChannelsModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get channels#scope=app-instance-user-moderated-channels
 		 * @param {string} app_instance_user_arn The ARN of the user in the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of channels in the request.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of channels moderated by the user is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsModeratedByAppInstanceUserResponse} Success
@@ -9048,6 +9152,7 @@ export namespace MyNS {
 		 * @param {PhoneNumberAssociationName} filter_name The filter to use to limit the number of results.
 		 * @param {string} filter_value The value to use for the filter.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -9071,6 +9176,7 @@ export namespace MyNS {
 		 * <p>Lists the tags applied to an Amazon Chime SDK meeting and messaging resources.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the applicable latest version in the Amazon Chime SDK.</p> <ul> <li> <p>For meetings: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li> <li> <p>For messaging: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li> </ul> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Get tags#arn
 		 * @param {string} arn The resource ARN.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -9112,7 +9218,9 @@ export namespace MyNS {
 		 * <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_RedactChannelMessage.html">RedactChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Post channels/{channelArn}/messages/{messageId}#operation=redact
 		 * @param {string} channelArn The ARN of the channel containing the messages that you want to redact.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message being redacted.
+		 *     Min length: 1    Max length: 128
 		 * @return {RedactChannelMessageResponse} Success
 		 */
 		RedactChannelMessage(channelArn: string, messageId: string, operation: RedactChannelMessageOperation): Observable<RedactChannelMessageResponse> {
@@ -9183,8 +9291,10 @@ export namespace MyNS {
 		 * @param {string} country The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.
 		 * @param {string} state The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.
 		 * @param {string} toll_free_prefix The toll-free prefix that you use to filter results. Only applies to the US.
+		 *     Min length: 3    Max length: 3
 		 * @param {PhoneNumberType} phone_number_type The phone number type used to filter results. Required for non-US numbers.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} next_token The token used to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -9278,6 +9388,7 @@ export namespace MyNS {
 		 * <p>The details of the time when a user last read messages in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html">UpdateChannelReadMarker</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		 * Put channels/{channelArn}/readMarker
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateChannelReadMarkerResponse} Success
 		 */
 		UpdateChannelReadMarker(channelArn: string): Observable<UpdateChannelReadMarkerResponse> {
@@ -9553,8 +9664,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime account.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 	}
@@ -9563,8 +9674,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime account.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -9580,23 +9691,23 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -9612,23 +9723,23 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9646,8 +9757,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the administrator of the current <code>AppInstance</code>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceAdminArn: string;
 	}
@@ -9656,8 +9767,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the administrator of the current <code>AppInstance</code>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceAdminArn: FormControl<string | null | undefined>,
 	}
@@ -9673,39 +9784,39 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
 		/**
 		 * The user ID of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AppInstanceUserId: string;
 
 		/**
 		 * The user's name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * The request's metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The token assigned to the user requesting an <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -9721,39 +9832,39 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The user ID of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AppInstanceUserId: FormControl<string | null | undefined>,
 
 		/**
 		 * The user's name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The request's metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The token assigned to the user requesting an <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9773,8 +9884,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalUserId: string;
 
@@ -9790,8 +9901,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalUserId: FormControl<string | null | undefined>,
 	}
@@ -9837,16 +9948,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -9858,16 +9969,16 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the creation request. Limited to 1KB and UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The client token for the request. An <code>Idempotency</code> token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -9883,16 +9994,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9904,16 +10015,16 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the creation request. Limited to 1KB and UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token for the request. An <code>Idempotency</code> token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9934,8 +10045,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the member being banned.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: string;
 	}
@@ -9944,8 +10055,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the member being banned.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: FormControl<string | null | undefined>,
 	}
@@ -9961,8 +10072,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the member you want to add to the channel.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: string;
 
@@ -9977,8 +10088,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the member you want to add to the channel.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: FormControl<string | null | undefined>,
 
@@ -10001,8 +10112,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the moderator.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelModeratorArn: string;
 	}
@@ -10011,8 +10122,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the moderator.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelModeratorArn: FormControl<string | null | undefined>,
 	}
@@ -10034,8 +10145,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the source from which the media artifacts are captured.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SourceArn: string;
 
@@ -10048,15 +10159,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the sink type.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SinkArn: string;
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a different token for different media pipeline requests.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -10074,8 +10185,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the source from which the media artifacts are captured.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SourceArn: FormControl<string | null | undefined>,
 
@@ -10088,15 +10199,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the sink type.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SinkArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a different token for different media pipeline requests.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -10128,22 +10239,22 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * The external meeting ID.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId?: string | null;
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId?: string | null;
 
@@ -10165,22 +10276,22 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The external meeting ID.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId: FormControl<string | null | undefined>,
 
@@ -10230,8 +10341,8 @@ export namespace MyNS {
 		/**
 		 * Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 2
+		 * Max length: 2048
 		 */
 		JoinToken: string;
 	}
@@ -10252,8 +10363,8 @@ export namespace MyNS {
 		/**
 		 * Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 2
+		 * Max length: 2048
 		 */
 		JoinToken: FormControl<string | null | undefined>,
 	}
@@ -10273,22 +10384,22 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * The external meeting ID.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId?: string | null;
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId?: string | null;
 
@@ -10317,22 +10428,22 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The external meeting ID.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId: FormControl<string | null | undefined>,
 
@@ -10481,8 +10592,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -10496,8 +10607,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -10550,8 +10661,8 @@ export namespace MyNS {
 		/**
 		 * The SIP media application name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -10574,8 +10685,8 @@ export namespace MyNS {
 		/**
 		 * The SIP media application name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -10635,8 +10746,8 @@ export namespace MyNS {
 		/**
 		 * The name of the SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -10668,8 +10779,8 @@ export namespace MyNS {
 		/**
 		 * The name of the SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10736,8 +10847,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -10755,8 +10866,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10783,8 +10894,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -10796,8 +10907,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -10812,8 +10923,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified Amazon Chime account.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name?: string | null;
 
@@ -10824,8 +10935,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified Amazon Chime account.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10845,15 +10956,15 @@ export namespace MyNS {
 		/**
 		 * The name that you want to change.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * The metadata that you want to change.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 	}
@@ -10862,15 +10973,15 @@ export namespace MyNS {
 		/**
 		 * The name that you want to change.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata that you want to change.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -10905,15 +11016,15 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * The metadata of the <code>AppInstanceUser</code>.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 	}
@@ -10922,15 +11033,15 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the <code>AppInstanceUser</code>.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -10947,8 +11058,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -10960,8 +11071,8 @@ export namespace MyNS {
 
 		/**
 		 * The metadata for the update request.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 	}
@@ -10970,8 +11081,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10983,8 +11094,8 @@ export namespace MyNS {
 
 		/**
 		 * The metadata for the update request.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -11001,15 +11112,15 @@ export namespace MyNS {
 
 		/**
 		 * The content of the message being updated.
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Content?: string | null;
 
 		/**
 		 * The metadata of the message being updated.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 	}
@@ -11017,15 +11128,15 @@ export namespace MyNS {
 
 		/**
 		 * The content of the message being updated.
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Content: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the message being updated.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -11152,8 +11263,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified SIP media application.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name?: string | null;
 
@@ -11168,8 +11279,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified SIP media application.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11185,8 +11296,8 @@ export namespace MyNS {
 		/**
 		 * The new name for the specified SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -11205,8 +11316,8 @@ export namespace MyNS {
 		/**
 		 * The new name for the specified SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11226,8 +11337,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -11242,8 +11353,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11293,8 +11404,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -11309,8 +11420,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11356,6 +11467,7 @@ export namespace MyNS {
 		/**
 		 * The default number of minutes allowed for proxy sessions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DefaultSessionExpiryMinutes: number;
 
@@ -11378,6 +11490,7 @@ export namespace MyNS {
 		/**
 		 * The default number of minutes allowed for proxy sessions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
 
@@ -11891,16 +12004,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional metadata for each message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The <code>Idempotency</code> token for each client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 	}
@@ -11927,16 +12040,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional metadata for each message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Idempotency</code> token for each client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -12055,8 +12168,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -12073,8 +12186,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -12128,8 +12241,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -12146,8 +12259,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

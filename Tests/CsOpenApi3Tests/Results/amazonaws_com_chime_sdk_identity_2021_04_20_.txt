@@ -1302,8 +1302,14 @@ namespace MyNS
 		/// Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
 		/// ListAppInstances app-instances
 		/// </summary>
-		/// <param name="max_results">The maximum number of <code>AppInstance</code>s that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</param>
+		/// <param name="max_results">The maximum number of <code>AppInstance</code>s that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1339,7 +1345,10 @@ namespace MyNS
 		/// <p>Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The promoted entity can perform the following actions. </p> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
 		/// CreateAppInstanceAdmin app-instances/{appInstanceArn}/admins
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateAppInstanceAdminAsync(string appInstanceArn, CreateAppInstanceAdminPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/admins";
@@ -1373,9 +1382,18 @@ namespace MyNS
 		/// Returns a list of the administrators in the <code>AppInstance</code>.
 		/// ListAppInstanceAdmins app-instances/{appInstanceArn}/admins
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
-		/// <param name="max_results">The maximum number of administrators that you want to return.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of administrators that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1477,7 +1495,10 @@ namespace MyNS
 		/// Deletes an <code>AppInstance</code> and all associated data asynchronously.
 		/// DeleteAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn));
@@ -1504,7 +1525,10 @@ namespace MyNS
 		/// Returns the full details of an <code>AppInstance</code>.
 		/// DescribeAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceResponse> DescribeAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1538,7 +1562,10 @@ namespace MyNS
 		/// Updates <code>AppInstance</code> metadata.
 		/// UpdateAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(string appInstanceArn, UpdateAppInstancePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1579,8 +1606,14 @@ namespace MyNS
 		/// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This action does not delete the user.
 		/// DeleteAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
-		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.</param>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/admins/"+ (appInstanceAdminArn==null? "" : System.Uri.EscapeDataString(appInstanceAdminArn));
@@ -1607,8 +1640,14 @@ namespace MyNS
 		/// Returns the full details of an <code>AppInstanceAdmin</code>.
 		/// DescribeAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
-		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.</param>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceAdminResponse> DescribeAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1642,7 +1681,10 @@ namespace MyNS
 		/// Deletes an <code>AppInstanceBot</code>.
 		/// DeleteAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
-		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code> being deleted.</param>
+		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code> being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceBotAsync(string appInstanceBotArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instance-bots/"+ (appInstanceBotArn==null? "" : System.Uri.EscapeDataString(appInstanceBotArn));
@@ -1669,7 +1711,10 @@ namespace MyNS
 		/// The <code>AppInstanceBot's</code> information.
 		/// DescribeAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
-		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.</param>
+		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceBotResponse> DescribeAppInstanceBotAsync(string appInstanceBotArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1703,7 +1748,10 @@ namespace MyNS
 		/// Updates the name and metadata of an <code>AppInstanceBot</code>.
 		/// UpdateAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
-		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.</param>
+		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceBotResponse> UpdateAppInstanceBotAsync(string appInstanceBotArn, UpdateAppInstanceBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1744,7 +1792,10 @@ namespace MyNS
 		/// Deletes an <code>AppInstanceUser</code>.
 		/// DeleteAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.</param>
+		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instance-users/"+ (appInstanceUserArn==null? "" : System.Uri.EscapeDataString(appInstanceUserArn));
@@ -1771,7 +1822,10 @@ namespace MyNS
 		/// Returns the full details of an <code>AppInstanceUser</code>.
 		/// DescribeAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserResponse> DescribeAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1805,7 +1859,10 @@ namespace MyNS
 		/// Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
 		/// UpdateAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserResponse> UpdateAppInstanceUserAsync(string appInstanceUserArn, UpdateAppInstanceUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1846,8 +1903,14 @@ namespace MyNS
 		/// Deregisters an <code>AppInstanceUserEndpoint</code>.
 		/// DeregisterAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
-		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		public async Task DeregisterAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instance-users/"+ (appInstanceUserArn==null? "" : System.Uri.EscapeDataString(appInstanceUserArn))+"/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId));
@@ -1874,8 +1937,14 @@ namespace MyNS
 		/// Returns the full details of an <code>AppInstanceUserEndpoint</code>.
 		/// DescribeAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
-		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
+		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserEndpointResponse> DescribeAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1909,8 +1978,14 @@ namespace MyNS
 		/// Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.
 		/// UpdateAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
-		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserEndpointResponse> UpdateAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, UpdateAppInstanceUserEndpointPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1951,7 +2026,10 @@ namespace MyNS
 		/// Gets the retention settings for an <code>AppInstance</code>.
 		/// GetAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceRetentionSettingsResponse> GetAppInstanceRetentionSettingsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1985,7 +2063,10 @@ namespace MyNS
 		/// Sets the amount of time in days that a given <code>AppInstance</code> retains data.
 		/// PutAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceRetentionSettingsResponse> PutAppInstanceRetentionSettingsAsync(string appInstanceArn, PutAppInstanceRetentionSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2026,9 +2107,18 @@ namespace MyNS
 		/// Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
 		/// ListAppInstanceBots app-instance-bots#app-instance-arn
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.</param>
-		/// <param name="max_results">The maximum number of requests to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested bots are returned.</param>
+		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of requests to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested bots are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2064,9 +2154,18 @@ namespace MyNS
 		/// Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.
 		/// ListAppInstanceUserEndpoints app-instance-users/{appInstanceUserArn}/endpoints
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
-		/// <param name="max_results">The maximum number of endpoints that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested endpoints are returned.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of endpoints that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested endpoints are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2102,7 +2201,10 @@ namespace MyNS
 		/// Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.
 		/// RegisterAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task RegisterAppInstanceUserEndpointAsync(string appInstanceUserArn, RegisterAppInstanceUserEndpointPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instance-users/"+ (appInstanceUserArn==null? "" : System.Uri.EscapeDataString(appInstanceUserArn))+"/endpoints";
@@ -2136,9 +2238,18 @@ namespace MyNS
 		/// List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
 		/// ListAppInstanceUsers app-instance-users#app-instance-arn
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.</param>
-		/// <param name="max_results">The maximum number of requests that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.</param>
+		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of requests that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2174,7 +2285,10 @@ namespace MyNS
 		/// Lists the tags applied to an Amazon Chime SDK identity resource.
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The ARN of the resource.</param>
+		/// <param name="arn">The ARN of the resource.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2208,7 +2322,10 @@ namespace MyNS
 		/// <p>Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.</p> <note> <p>A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion times may vary.</p> <p>Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p> </note>
 		/// PutAppInstanceUserExpirationSettings app-instance-users/{appInstanceUserArn}/expiration-settings
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceUserExpirationSettingsResponse> PutAppInstanceUserExpirationSettingsAsync(string appInstanceUserArn, PutAppInstanceUserExpirationSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

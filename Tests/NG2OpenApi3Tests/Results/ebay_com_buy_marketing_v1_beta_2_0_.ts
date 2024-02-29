@@ -70,10 +70,16 @@ export namespace MyNS {
 		/** An array of containers for ratings of the product aspects, such as "Is it a good value". */
 		ratingAspects?: Array<RatingAspect>;
 
-		/** The total number of eBay users that rated the product. */
+		/**
+		 * The total number of eBay users that rated the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingCount?: number | null;
 
-		/** The total number of eBay users that wrote a review for the product. */
+		/**
+		 * The total number of eBay users that wrote a review for the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 
 		/** The title of the product. */
@@ -89,10 +95,16 @@ export namespace MyNS {
 		/** The eBay product identifier of a product from the eBay product catalog. You can use this value in the Browse API <b>search</b> method to retrieve items for this product. */
 		epid: FormControl<string | null | undefined>,
 
-		/** The total number of eBay users that rated the product. */
+		/**
+		 * The total number of eBay users that rated the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingCount: FormControl<number | null | undefined>,
 
-		/** The total number of eBay users that wrote a review for the product. */
+		/**
+		 * The total number of eBay users that wrote a review for the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 
 		/** The title of the product. */
@@ -113,26 +125,38 @@ export namespace MyNS {
 	/** Type the defines the details of an image, such as size and URL. Currently only <b> imageUrl</b> is getting populated. The <b> height</b> and <b> width</b> were added for future use. */
 	export interface Image {
 
-		/** <b> Reserved for future use. </b> */
+		/**
+		 * <b> Reserved for future use. </b>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The URL of the image. */
 		imageUrl?: string | null;
 
-		/** <b> Reserved for future use. </b> */
+		/**
+		 * <b> Reserved for future use. </b>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Type the defines the details of an image, such as size and URL. Currently only <b> imageUrl</b> is getting populated. The <b> height</b> and <b> width</b> were added for future use. */
 	export interface ImageFormProperties {
 
-		/** <b> Reserved for future use. </b> */
+		/**
+		 * <b> Reserved for future use. </b>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The URL of the image. */
 		imageUrl: FormControl<string | null | undefined>,
 
-		/** <b> Reserved for future use. </b> */
+		/**
+		 * <b> Reserved for future use. </b>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -175,7 +199,10 @@ export namespace MyNS {
 	/** The type that defines the fields for the product aspect ratings. */
 	export interface RatingAspect {
 
-		/** The number of eBay users that rated the product on this aspect. */
+		/**
+		 * The number of eBay users that rated the product on this aspect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The name of the rating aspect. Camping tent examples: Is it lightweight? or Is it easy to set up? */
@@ -191,7 +218,10 @@ export namespace MyNS {
 	/** The type that defines the fields for the product aspect ratings. */
 	export interface RatingAspectFormProperties {
 
-		/** The number of eBay users that rated the product on this aspect. */
+		/**
+		 * The number of eBay users that rated the product on this aspect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The name of the rating aspect. Camping tent examples: Is it lightweight? or Is it easy to set up? */
@@ -213,7 +243,10 @@ export namespace MyNS {
 	/** The type that defines the field for the aspect rating details, such as the aspect rating value, usually TRUE or FALSE and the user count and percentage. */
 	export interface RatingAspectDistribution {
 
-		/** The number of eBay users that choose this rating aspect value. */
+		/**
+		 * The number of eBay users that choose this rating aspect value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The percentage of the aspect rating value. <br /><br /> <b> ratingAspectDistributions.percentage</b> =  <b> ratingAspectDistributions.count</b> /  <b>ratingAspects.count</b> */
@@ -226,7 +259,10 @@ export namespace MyNS {
 	/** The type that defines the field for the aspect rating details, such as the aspect rating value, usually TRUE or FALSE and the user count and percentage. */
 	export interface RatingAspectDistributionFormProperties {
 
-		/** The number of eBay users that choose this rating aspect value. */
+		/**
+		 * The number of eBay users that choose this rating aspect value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The percentage of the aspect rating value. <br /><br /> <b> ratingAspectDistributions.percentage</b> =  <b> ratingAspectDistributions.count</b> /  <b>ratingAspects.count</b> */
@@ -254,7 +290,10 @@ export namespace MyNS {
 		/** The name of the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of reference IDs that identify the specific request elements most closely associated to the error or warning, if any. */
@@ -285,7 +324,10 @@ export namespace MyNS {
 		/** The name of the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A detailed description of the condition that caused the error or warning, and information on what to do to correct the problem. */

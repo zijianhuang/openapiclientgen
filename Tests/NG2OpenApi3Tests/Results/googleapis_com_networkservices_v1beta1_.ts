@@ -688,7 +688,10 @@ export namespace MyNS {
 		/** Required. The URL of a destination service to which to route traffic. Must refer to either a BackendService or ServiceDirectoryService. */
 		serviceName?: string | null;
 
-		/** Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -698,7 +701,10 @@ export namespace MyNS {
 		/** Required. The URL of a destination service to which to route traffic. Must refer to either a BackendService or ServiceDirectoryService. */
 		serviceName: FormControl<string | null | undefined>,
 
-		/** Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateGrpcRouteDestinationFormGroup() {
@@ -733,20 +739,32 @@ export namespace MyNS {
 	/** Specification of how client requests are aborted as part of fault injection before being sent to a destination. */
 	export interface GrpcRouteFaultInjectionPolicyAbort {
 
-		/** The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. */
+		/**
+		 * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatus?: number | null;
 
-		/** The percentage of traffic which will be aborted. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic which will be aborted. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
 	/** Specification of how client requests are aborted as part of fault injection before being sent to a destination. */
 	export interface GrpcRouteFaultInjectionPolicyAbortFormProperties {
 
-		/** The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. */
+		/**
+		 * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatus: FormControl<number | null | undefined>,
 
-		/** The percentage of traffic which will be aborted. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic which will be aborted. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGrpcRouteFaultInjectionPolicyAbortFormGroup() {
@@ -764,7 +782,10 @@ export namespace MyNS {
 		/** Specify a fixed delay before forwarding the request. */
 		fixedDelay?: string | null;
 
-		/** The percentage of traffic on which delay will be injected. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic on which delay will be injected. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
@@ -774,7 +795,10 @@ export namespace MyNS {
 		/** Specify a fixed delay before forwarding the request. */
 		fixedDelay: FormControl<string | null | undefined>,
 
-		/** The percentage of traffic on which delay will be injected. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic on which delay will be injected. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGrpcRouteFaultInjectionPolicyDelayFormGroup() {
@@ -789,7 +813,10 @@ export namespace MyNS {
 	/** The specifications for retries. */
 	export interface GrpcRouteRetryPolicy {
 
-		/** Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1. */
+		/**
+		 * Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		numRetries?: number | null;
 
 		/** - connect-failure: Router will retry on failures connecting to Backend Services, for example due to connection timeouts. - refused-stream: Router will retry if the backend service resets the stream with a REFUSED_STREAM error code. This reset type indicates that it is safe to retry. - cancelled: Router will retry if the gRPC status code in the response header is set to cancelled - deadline-exceeded: Router will retry if the gRPC status code in the response header is set to deadline-exceeded - resource-exhausted: Router will retry if the gRPC status code in the response header is set to resource-exhausted - unavailable: Router will retry if the gRPC status code in the response header is set to unavailable */
@@ -799,7 +826,10 @@ export namespace MyNS {
 	/** The specifications for retries. */
 	export interface GrpcRouteRetryPolicyFormProperties {
 
-		/** Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1. */
+		/**
+		 * Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		numRetries: FormControl<number | null | undefined>,
 	}
 	export function CreateGrpcRouteRetryPolicyFormGroup() {
@@ -1141,7 +1171,10 @@ export namespace MyNS {
 		/** The URL of a BackendService to route traffic to. */
 		serviceName?: string | null;
 
-		/** Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -1151,7 +1184,10 @@ export namespace MyNS {
 		/** The URL of a BackendService to route traffic to. */
 		serviceName: FormControl<string | null | undefined>,
 
-		/** Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRouteDestinationFormGroup() {
@@ -1200,7 +1236,10 @@ export namespace MyNS {
 		/** Optional. Response body as bytes. Maximum body size is 4096B. */
 		bytesBody?: string | null;
 
-		/** Required. Status to return as part of HTTP Response. Must be a positive integer. */
+		/**
+		 * Required. Status to return as part of HTTP Response. Must be a positive integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** Optional. Response body as a string. Maximum body length is 1024 characters. */
@@ -1213,7 +1252,10 @@ export namespace MyNS {
 		/** Optional. Response body as bytes. Maximum body size is 4096B. */
 		bytesBody: FormControl<string | null | undefined>,
 
-		/** Required. Status to return as part of HTTP Response. Must be a positive integer. */
+		/**
+		 * Required. Status to return as part of HTTP Response. Must be a positive integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Optional. Response body as a string. Maximum body length is 1024 characters. */
@@ -1252,20 +1294,32 @@ export namespace MyNS {
 	/** Specification of how client requests are aborted as part of fault injection before being sent to a destination. */
 	export interface HttpRouteFaultInjectionPolicyAbort {
 
-		/** The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. */
+		/**
+		 * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatus?: number | null;
 
-		/** The percentage of traffic which will be aborted. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic which will be aborted. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
 	/** Specification of how client requests are aborted as part of fault injection before being sent to a destination. */
 	export interface HttpRouteFaultInjectionPolicyAbortFormProperties {
 
-		/** The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. */
+		/**
+		 * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatus: FormControl<number | null | undefined>,
 
-		/** The percentage of traffic which will be aborted. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic which will be aborted. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRouteFaultInjectionPolicyAbortFormGroup() {
@@ -1283,7 +1337,10 @@ export namespace MyNS {
 		/** Specify a fixed delay before forwarding the request. */
 		fixedDelay?: string | null;
 
-		/** The percentage of traffic on which delay will be injected. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic on which delay will be injected. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
@@ -1293,7 +1350,10 @@ export namespace MyNS {
 		/** Specify a fixed delay before forwarding the request. */
 		fixedDelay: FormControl<string | null | undefined>,
 
-		/** The percentage of traffic on which delay will be injected. The value must be between [0, 100] */
+		/**
+		 * The percentage of traffic on which delay will be injected. The value must be between [0, 100]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRouteFaultInjectionPolicyDelayFormGroup() {
@@ -1317,7 +1377,10 @@ export namespace MyNS {
 		/** The path that will be used in the redirect response instead of the one that was supplied in the request. path_redirect can not be supplied together with prefix_redirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. */
 		pathRedirect?: string | null;
 
-		/** The port that will be used in the redirected request instead of the one that was supplied in the request. */
+		/**
+		 * The port that will be used in the redirected request instead of the one that was supplied in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		portRedirect?: number | null;
 
 		/** Indicates that during redirection, the matched prefix (or path) should be swapped with this value. This option allows URLs be dynamically created based on the request. */
@@ -1342,7 +1405,10 @@ export namespace MyNS {
 		/** The path that will be used in the redirect response instead of the one that was supplied in the request. path_redirect can not be supplied together with prefix_redirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. */
 		pathRedirect: FormControl<string | null | undefined>,
 
-		/** The port that will be used in the redirected request instead of the one that was supplied in the request. */
+		/**
+		 * The port that will be used in the redirected request instead of the one that was supplied in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		portRedirect: FormControl<number | null | undefined>,
 
 		/** Indicates that during redirection, the matched prefix (or path) should be swapped with this value. This option allows URLs be dynamically created based on the request. */
@@ -1376,14 +1442,20 @@ export namespace MyNS {
 		/** Specifications of a destination to which the request should be routed to. */
 		destination?: HttpRouteDestination;
 
-		/** Optional. The percentage of requests to get mirrored to the desired destination. */
+		/**
+		 * Optional. The percentage of requests to get mirrored to the desired destination.
+		 * Type: float
+		 */
 		mirrorPercent?: number | null;
 	}
 
 	/** Specifies the policy on how requests are shadowed to a separate mirrored destination service. The proxy does not wait for responses from the shadow service. Prior to sending traffic to the shadow service, the host/authority header is suffixed with -shadow. */
 	export interface HttpRouteRequestMirrorPolicyFormProperties {
 
-		/** Optional. The percentage of requests to get mirrored to the desired destination. */
+		/**
+		 * Optional. The percentage of requests to get mirrored to the desired destination.
+		 * Type: float
+		 */
 		mirrorPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRouteRequestMirrorPolicyFormGroup() {
@@ -1397,7 +1469,10 @@ export namespace MyNS {
 	/** The specifications for retries. */
 	export interface HttpRouteRetryPolicy {
 
-		/** Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1. */
+		/**
+		 * Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numRetries?: number | null;
 
 		/** Specifies a non-zero timeout per retry attempt. */
@@ -1410,7 +1485,10 @@ export namespace MyNS {
 	/** The specifications for retries. */
 	export interface HttpRouteRetryPolicyFormProperties {
 
-		/** Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1. */
+		/**
+		 * Specifies the allowed number of retries. This number must be > 0. If not specified, default to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numRetries: FormControl<number | null | undefined>,
 
 		/** Specifies a non-zero timeout per retry attempt. */
@@ -1591,20 +1669,32 @@ export namespace MyNS {
 	/** Represents an integer value range. */
 	export interface HttpRouteHeaderMatchIntegerRange {
 
-		/** End of the range (exclusive) */
+		/**
+		 * End of the range (exclusive)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** Start of the range (inclusive) */
+		/**
+		 * Start of the range (inclusive)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 
 	/** Represents an integer value range. */
 	export interface HttpRouteHeaderMatchIntegerRangeFormProperties {
 
-		/** End of the range (exclusive) */
+		/**
+		 * End of the range (exclusive)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Start of the range (inclusive) */
+		/**
+		 * Start of the range (inclusive)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRouteHeaderMatchIntegerRangeFormGroup() {
@@ -2046,7 +2136,10 @@ export namespace MyNS {
 		/** Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers. */
 		envoyHeaders?: GatewayEnvoyHeaders | null;
 
-		/** Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This is applicable only for sidecar proxy deployments. */
+		/**
+		 * Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This is applicable only for sidecar proxy deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interceptionPort?: number | null;
 
 		/** Optional. Set of label tags associated with the Mesh resource. */
@@ -2074,7 +2167,10 @@ export namespace MyNS {
 		/** Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers. */
 		envoyHeaders: FormControl<GatewayEnvoyHeaders | null | undefined>,
 
-		/** Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This is applicable only for sidecar proxy deployments. */
+		/**
+		 * Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This is applicable only for sidecar proxy deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interceptionPort: FormControl<number | null | undefined>,
 
 		/** Optional. Set of label tags associated with the Mesh resource. */
@@ -2176,7 +2272,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2189,7 +2288,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2401,14 +2503,20 @@ export namespace MyNS {
 	/** Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy. */
 	export interface ServiceLbPolicyFailoverConfig {
 
-		/** Optional. The percentage threshold that a load balancer will begin to send traffic to failover backends. If the percentage of endpoints in a MIG/NEG is smaller than this value, traffic would be sent to failover backends if possible. This field should be set to a value between 1 and 99. The default value is 50 for Global external HTTP(S) load balancer (classic) and Proxyless service mesh, and 70 for others. */
+		/**
+		 * Optional. The percentage threshold that a load balancer will begin to send traffic to failover backends. If the percentage of endpoints in a MIG/NEG is smaller than this value, traffic would be sent to failover backends if possible. This field should be set to a value between 1 and 99. The default value is 50 for Global external HTTP(S) load balancer (classic) and Proxyless service mesh, and 70 for others.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failoverHealthThreshold?: number | null;
 	}
 
 	/** Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy. */
 	export interface ServiceLbPolicyFailoverConfigFormProperties {
 
-		/** Optional. The percentage threshold that a load balancer will begin to send traffic to failover backends. If the percentage of endpoints in a MIG/NEG is smaller than this value, traffic would be sent to failover backends if possible. This field should be set to a value between 1 and 99. The default value is 50 for Global external HTTP(S) load balancer (classic) and Proxyless service mesh, and 70 for others. */
+		/**
+		 * Optional. The percentage threshold that a load balancer will begin to send traffic to failover backends. If the percentage of endpoints in a MIG/NEG is smaller than this value, traffic would be sent to failover backends if possible. This field should be set to a value between 1 and 99. The default value is 50 for Global external HTTP(S) load balancer (classic) and Proxyless service mesh, and 70 for others.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failoverHealthThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateServiceLbPolicyFailoverConfigFormGroup() {
@@ -2567,7 +2675,10 @@ export namespace MyNS {
 		/** Required. The URL of a BackendService to route traffic to. */
 		serviceName?: string | null;
 
-		/** Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -2577,7 +2688,10 @@ export namespace MyNS {
 		/** Required. The URL of a BackendService to route traffic to. */
 		serviceName: FormControl<string | null | undefined>,
 
-		/** Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them. */
+		/**
+		 * Optional. Specifies the proportion of requests forwarded to the backend referenced by the serviceName field. This is computed as: - weight/Sum(weights in this destination list). For non-zero values, there may be some epsilon from the exact proportion defined here depending on the precision an implementation supports. If only one serviceName is specified and it has a weight greater than 0, 100% of the traffic is forwarded to that backend. If weights are specified for any one service name, they need to be specified for all of them. If weights are unspecified for all services, then, traffic is distributed in equal proportions to all of them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateTcpRouteRouteDestinationFormGroup() {
@@ -2756,7 +2870,10 @@ export namespace MyNS {
 		/** Required. The URL of a BackendService to route traffic to. */
 		serviceName?: string | null;
 
-		/** Optional. Specifies the proportion of requests forwareded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100. */
+		/**
+		 * Optional. Specifies the proportion of requests forwareded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -2766,7 +2883,10 @@ export namespace MyNS {
 		/** Required. The URL of a BackendService to route traffic to. */
 		serviceName: FormControl<string | null | undefined>,
 
-		/** Optional. Specifies the proportion of requests forwareded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100. */
+		/**
+		 * Optional. Specifies the proportion of requests forwareded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateTlsRouteRouteDestinationFormGroup() {
@@ -2873,7 +2993,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2883,7 +3006,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -2995,6 +3121,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3008,6 +3135,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3030,6 +3158,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/endpointPolicies
 		 * @param {string} parent Required. The project and location from which the EndpointPolicies should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of EndpointPolicies to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListEndpointPoliciesResponse` Indicates that this is a continuation of a prior `ListEndpointPolicies` call, and that the system should return the next page of data.
 		 * @return {ListEndpointPoliciesResponse} Successful response
 		 */
@@ -3053,6 +3182,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/gateways
 		 * @param {string} parent Required. The project and location from which the Gateways should be listed, specified in the format `projects/locations/*`.
 		 * @param {number} pageSize Maximum number of Gateways to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListGatewaysResponse` Indicates that this is a continuation of a prior `ListGateways` call, and that the system should return the next page of data.
 		 * @return {ListGatewaysResponse} Successful response
 		 */
@@ -3076,6 +3206,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/grpcRoutes
 		 * @param {string} parent Required. The project and location from which the GrpcRoutes should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of GrpcRoutes to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListGrpcRoutesResponse` Indicates that this is a continuation of a prior `ListGrpcRoutes` call, and that the system should return the next page of data.
 		 * @return {ListGrpcRoutesResponse} Successful response
 		 */
@@ -3099,6 +3230,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/httpRoutes
 		 * @param {string} parent Required. The project and location from which the HttpRoutes should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of HttpRoutes to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListHttpRoutesResponse` Indicates that this is a continuation of a prior `ListHttpRoutes` call, and that the system should return the next page of data.
 		 * @return {ListHttpRoutesResponse} Successful response
 		 */
@@ -3124,6 +3256,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filtering results.
 		 * @param {string} orderBy Optional. Hint for how to order the results.
 		 * @param {number} pageSize Optional. Requested page size. The server might return fewer items than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results that the server returns.
 		 * @return {ListLbRouteExtensionsResponse} Successful response
 		 */
@@ -3150,6 +3283,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filtering results.
 		 * @param {string} orderBy Optional. Hint for how to order the results.
 		 * @param {number} pageSize Optional. Requested page size. The server might return fewer items than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results that the server returns.
 		 * @return {ListLbTrafficExtensionsResponse} Successful response
 		 */
@@ -3174,6 +3308,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/meshes
 		 * @param {string} parent Required. The project and location from which the Meshes should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of Meshes to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListMeshesResponse` Indicates that this is a continuation of a prior `ListMeshes` call, and that the system should return the next page of data.
 		 * @return {ListMeshesResponse} Successful response
 		 */
@@ -3197,6 +3332,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/serviceBindings
 		 * @param {string} parent Required. The project and location from which the ServiceBindings should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of ServiceBindings to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListServiceBindingsResponse` Indicates that this is a continuation of a prior `ListRouters` call, and that the system should return the next page of data.
 		 * @return {ListServiceBindingsResponse} Successful response
 		 */
@@ -3220,6 +3356,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/serviceLbPolicies
 		 * @param {string} parent Required. The project and location from which the ServiceLbPolicies should be listed, specified in the format `projects/{project}/locations/{location}`.
 		 * @param {number} pageSize Maximum number of ServiceLbPolicies to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListServiceLbPoliciesResponse` Indicates that this is a continuation of a prior `ListRouters` call, and that the system should return the next page of data.
 		 * @return {ListServiceLbPoliciesResponse} Successful response
 		 */
@@ -3243,6 +3380,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/tcpRoutes
 		 * @param {string} parent Required. The project and location from which the TcpRoutes should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of TcpRoutes to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListTcpRoutesResponse` Indicates that this is a continuation of a prior `ListTcpRoutes` call, and that the system should return the next page of data.
 		 * @return {ListTcpRoutesResponse} Successful response
 		 */
@@ -3266,6 +3404,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/tlsRoutes
 		 * @param {string} parent Required. The project and location from which the TlsRoutes should be listed, specified in the format `projects/locations/global`.
 		 * @param {number} pageSize Maximum number of TlsRoutes to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListTlsRoutesResponse` Indicates that this is a continuation of a prior `ListTlsRoutes` call, and that the system should return the next page of data.
 		 * @return {ListTlsRoutesResponse} Successful response
 		 */
@@ -3289,6 +3428,7 @@ export namespace MyNS {
 		 * Get v1beta1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Networkservices_projects_locations_serviceLbPolicies_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

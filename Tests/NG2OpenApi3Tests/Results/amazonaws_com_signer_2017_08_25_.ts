@@ -1274,6 +1274,7 @@ export namespace MyNS {
 		 * Adds cross-account permissions to a signing profile.
 		 * Post signing-profiles/{profileName}/permissions
 		 * @param {string} profileName The human-readable name of the signing profile.
+		 *     Min length: 2    Max length: 64
 		 * @return {AddProfilePermissionResponse} Success
 		 */
 		AddProfilePermission(profileName: string, requestBody: AddProfilePermissionPostBody): Observable<AddProfilePermissionResponse> {
@@ -1284,6 +1285,7 @@ export namespace MyNS {
 		 * Lists the cross-account permissions associated with a signing profile.
 		 * Get signing-profiles/{profileName}/permissions
 		 * @param {string} profileName Name of the signing profile containing the cross-account permissions.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} nextToken String for specifying the next set of paginated results.
 		 * @return {ListProfilePermissionsResponse} Success
 		 */
@@ -1295,6 +1297,7 @@ export namespace MyNS {
 		 * Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.
 		 * Delete signing-profiles/{profileName}
 		 * @param {string} profileName The name of the signing profile to be canceled.
+		 *     Min length: 2    Max length: 64
 		 * @return {void} Success
 		 */
 		CancelSigningProfile(profileName: string): Observable<HttpResponse<string>> {
@@ -1305,7 +1308,9 @@ export namespace MyNS {
 		 * Returns information on a specific signing profile.
 		 * Get signing-profiles/{profileName}
 		 * @param {string} profileName The name of the target signing profile.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} profileOwner The AWS account ID of the profile owner.
+		 *     Min length: 12    Max length: 12
 		 * @return {GetSigningProfileResponse} Success
 		 */
 		GetSigningProfile(profileName: string, profileOwner: string | null | undefined): Observable<GetSigningProfileResponse> {
@@ -1316,6 +1321,7 @@ export namespace MyNS {
 		 * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job.
 		 * Put signing-profiles/{profileName}
 		 * @param {string} profileName The name of the signing profile to be created.
+		 *     Min length: 2    Max length: 64
 		 * @return {PutSigningProfileResponse} Success
 		 */
 		PutSigningProfile(profileName: string, requestBody: PutSigningProfilePutBody): Observable<PutSigningProfileResponse> {
@@ -1338,7 +1344,9 @@ export namespace MyNS {
 		 * @param {Date} signatureTimestamp The timestamp of the signature that validates the profile or job.
 		 * @param {string} platformId The ID of a signing platform. 
 		 * @param {string} profileVersionArn The version of a signing profile.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} jobArn The ARN of a signing job.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} certificateHashes <p>A list of composite signed hashes that identify certificates.</p> <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
 		 * @return {GetRevocationStatusResponse} Success
 		 */
@@ -1363,11 +1371,13 @@ export namespace MyNS {
 		 * @param {string} platformId The ID of microcontroller platform that you specified for the distribution of your code image.
 		 * @param {string} requestedBy The IAM principal that requested the signing job.
 		 * @param {number} maxResults Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. 
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @param {boolean} isRevoked Filters results to return only signing jobs with revoked signatures.
 		 * @param {Date} signatureExpiresBefore Filters results to return only signing jobs with signatures expiring before a specified timestamp.
 		 * @param {Date} signatureExpiresAfter Filters results to return only signing jobs with signatures expiring after a specified timestamp.
 		 * @param {string} jobInvoker Filters results to return only signing jobs initiated by a specified IAM entity.
+		 *     Min length: 12    Max length: 12
 		 * @return {ListSigningJobsResponse} Success
 		 */
 		ListSigningJobs(status: SigningStatus | null | undefined, platformId: string | null | undefined, requestedBy: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, isRevoked: boolean | null | undefined, signatureExpiresBefore: Date | null | undefined, signatureExpiresAfter: Date | null | undefined, jobInvoker: string | null | undefined): Observable<ListSigningJobsResponse> {
@@ -1390,6 +1400,7 @@ export namespace MyNS {
 		 * @param {string} partner Any partner entities connected to a signing platform.
 		 * @param {string} target The validation template that is used by the target signing platform.
 		 * @param {number} maxResults The maximum number of results to be returned by this operation.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningPlatformsResponse} Success
 		 */
@@ -1402,6 +1413,7 @@ export namespace MyNS {
 		 * Get signing-profiles
 		 * @param {boolean} includeCanceled Designates whether to include profiles with the status of <code>CANCELED</code>.
 		 * @param {number} maxResults The maximum number of profiles to be returned.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @param {string} platformId Filters results to return only signing jobs initiated for a specified signing platform.
 		 * @param {Array<SigningProfileStatus>} statuses Filters results to return only signing jobs with statuses in the specified list.
@@ -1435,6 +1447,7 @@ export namespace MyNS {
 		 * Removes cross-account permissions from a signing profile.
 		 * Delete signing-profiles/{profileName}/permissions/{statementId}#revisionId
 		 * @param {string} profileName A human-readable name for the signing profile with permissions to be removed.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} revisionId An identifier for the current revision of the signing profile permissions.
 		 * @param {string} statementId A unique identifier for the cross-account permissions statement.
 		 * @return {RemoveProfilePermissionResponse} Success
@@ -1457,6 +1470,7 @@ export namespace MyNS {
 		 * Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.
 		 * Put signing-profiles/{profileName}/revoke
 		 * @param {string} profileName The name of the signing profile to be revoked.
+		 *     Min length: 2    Max length: 64
 		 * @return {void} Success
 		 */
 		RevokeSigningProfile(profileName: string, requestBody: RevokeSigningProfilePutBody): Observable<HttpResponse<string>> {
@@ -1477,6 +1491,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) for the signing profile.
 		 * @param {Array<string>} tagKeys A list of tag keys to be removed from the signing profile.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1488,8 +1503,8 @@ export namespace MyNS {
 
 		/**
 		 * The version of the signing profile.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		profileVersion?: string | null;
 
@@ -1518,8 +1533,8 @@ export namespace MyNS {
 
 		/**
 		 * The version of the signing profile.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		profileVersion: FormControl<string | null | undefined>,
 
@@ -1661,8 +1676,8 @@ export namespace MyNS {
 		/**
 		 * The name of the signing profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		profileName: string;
 
@@ -1674,8 +1689,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS account ID of the signing profile owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		profileOwner?: string | null;
 	}
@@ -1684,8 +1699,8 @@ export namespace MyNS {
 		/**
 		 * The name of the signing profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		profileName: FormControl<string | null | undefined>,
 
@@ -1697,8 +1712,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS account ID of the signing profile owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		profileOwner: FormControl<string | null | undefined>,
 	}
@@ -1760,16 +1775,16 @@ export namespace MyNS {
 
 		/**
 		 * AWS account ID of the job owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		jobOwner?: string | null;
 
 		/**
 		 * The reason for revoking the signing job.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		reason: string;
 	}
@@ -1777,16 +1792,16 @@ export namespace MyNS {
 
 		/**
 		 * AWS account ID of the job owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		jobOwner: FormControl<string | null | undefined>,
 
 		/**
 		 * The reason for revoking the signing job.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		reason: FormControl<string | null | undefined>,
 	}
@@ -1803,16 +1818,16 @@ export namespace MyNS {
 		/**
 		 * The version of the signing profile to be revoked.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		profileVersion: string;
 
 		/**
 		 * The reason for revoking a signing profile.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		reason: string;
 
@@ -1827,16 +1842,16 @@ export namespace MyNS {
 		/**
 		 * The version of the signing profile to be revoked.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		profileVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The reason for revoking a signing profile.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		reason: FormControl<string | null | undefined>,
 
@@ -1860,23 +1875,23 @@ export namespace MyNS {
 		/**
 		 * The name of the signing profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		profileName: string;
 
 		/**
 		 * The AWS account ID of the profile owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		profileOwner?: string | null;
 
 		/**
 		 * Specifies the object digest (hash) to sign.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		payload: string;
 
@@ -1891,23 +1906,23 @@ export namespace MyNS {
 		/**
 		 * The name of the signing profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		profileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The AWS account ID of the profile owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		profileOwner: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the object digest (hash) to sign.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		payload: FormControl<string | null | undefined>,
 

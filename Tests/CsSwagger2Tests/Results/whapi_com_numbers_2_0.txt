@@ -89,9 +89,18 @@ namespace MyNS
 		/// GetRandomNumbers generate/integers
 		/// </summary>
 		/// <param name="gameCode">Identifier that indicates the game for which the RNG (Random Number Generator) has been used.</param>
-		/// <param name="highest">Highest possible value to be returned.</param>
-		/// <param name="lowest">Lowest possible value to be returned.</param>
-		/// <param name="count">Number of values to be returned.</param>
+		/// <param name="highest">Highest possible value to be returned.
+		/// Minimum: 1
+		/// Maximum: 9999999999
+		// </param>
+		/// <param name="lowest">Lowest possible value to be returned.
+		/// Minimum: 1
+		/// Maximum: 9999999999
+		// </param>
+		/// <param name="count">Number of values to be returned.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="unique">Should the numbers returned be unique</param>
 		/// <returns>Success</returns>
 		public async Task<Success> GetRandomNumbersAsync(string gameCode, int highest, int lowest, int count, bool unique)

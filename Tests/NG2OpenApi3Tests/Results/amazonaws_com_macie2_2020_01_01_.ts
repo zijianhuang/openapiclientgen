@@ -5787,6 +5787,7 @@ export namespace MyNS {
 		 * Retrieves a subset of information about all the allow lists for an account.
 		 * Get allow-lists
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListAllowListsResponse} Success
 		 */
@@ -5825,6 +5826,7 @@ export namespace MyNS {
 		 * Retrieves a subset of information about all the findings filters for an account.
 		 * Get findingsfilters
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListFindingsFiltersResponse} Success
 		 */
@@ -5845,6 +5847,7 @@ export namespace MyNS {
 		 * Retrieves information about the Amazon Macie membership invitations that were received by an account.
 		 * Get invitations
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListInvitationsResponse} Success
 		 */
@@ -5865,6 +5868,7 @@ export namespace MyNS {
 		 * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
 		 * Get members
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @param {string} onlyAssociated Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.
 		 * @return {ListMembersResponse} Success
@@ -6137,6 +6141,7 @@ export namespace MyNS {
 		 * Retrieves information about the delegated Amazon Macie administrator account for an organization in Organizations.
 		 * Get admin
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListOrganizationAdminAccountsResponse} Success
 		 */
@@ -6440,6 +6445,7 @@ export namespace MyNS {
 		 * Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
 		 * Get resource-profiles/detections#resourceArn
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
 		 * @return {ListResourceProfileDetectionsResponse} Success
@@ -6462,6 +6468,7 @@ export namespace MyNS {
 		 * <p>Retrieves a subset of information about the sensitivity inspection template for an account.</p>
 		 * Get templates/sensitivity-inspections
 		 * @param {number} maxResults The maximum number of items to include in each page of a paginated response.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListSensitivityInspectionTemplatesResponse} Success
 		 */
@@ -6597,16 +6604,16 @@ export namespace MyNS {
 
 		/**
 		 * A custom description of the allow list. The description can contain as many as 512 characters.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description?: string | null;
 
 		/**
 		 * A custom name for the allow list. The name can contain as many as 128 characters.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 
@@ -6623,16 +6630,16 @@ export namespace MyNS {
 
 		/**
 		 * A custom description of the allow list. The description can contain as many as 512 characters.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A custom name for the allow list. The name can contain as many as 128 characters.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -6707,7 +6714,10 @@ export namespace MyNS {
 		 */
 		s3JobDefinition: CreateClassificationJobPostBodyS3JobDefinition;
 
-		/** The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects. */
+		/**
+		 * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplingPercentage?: number | null;
 
 		/** Specifies the recurrence pattern for running a classification job. */
@@ -6745,7 +6755,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects. */
+		/**
+		 * The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplingPercentage: FormControl<number | null | undefined>,
 
 		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for an Amazon Macie resource. */
@@ -6805,7 +6818,10 @@ export namespace MyNS {
 		/** An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive. */
 		keywords?: Array<string>;
 
-		/** The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50. */
+		/**
+		 * The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumMatchDistance?: number | null;
 
 		/**
@@ -6834,7 +6850,10 @@ export namespace MyNS {
 		/** <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p> */
 		description: FormControl<string | null | undefined>,
 
-		/** The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50. */
+		/**
+		 * The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumMatchDistance: FormControl<number | null | undefined>,
 
 		/**
@@ -6890,7 +6909,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings. */
+		/**
+		 * The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for an Amazon Macie resource. */
@@ -6916,7 +6938,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings. */
+		/**
+		 * The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for an Amazon Macie resource. */
@@ -7053,16 +7078,16 @@ export namespace MyNS {
 
 		/**
 		 * A custom description of the allow list. The description can contain as many as 512 characters.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description?: string | null;
 
 		/**
 		 * A custom name for the allow list. The name can contain as many as 128 characters.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 	}
@@ -7070,16 +7095,16 @@ export namespace MyNS {
 
 		/**
 		 * A custom description of the allow list. The description can contain as many as 512 characters.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A custom name for the allow list. The name can contain as many as 128 characters.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -7122,7 +7147,10 @@ export namespace MyNS {
 		/** <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p> */
 		name?: string | null;
 
-		/** The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings. */
+		/**
+		 * The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 	}
 	export interface UpdateFindingsFilterPatchBodyFormProperties {
@@ -7139,7 +7167,10 @@ export namespace MyNS {
 		/** <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p> */
 		name: FormControl<string | null | undefined>,
 
-		/** The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings. */
+		/**
+		 * The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFindingsFilterPatchBodyFormGroup() {
@@ -7185,7 +7216,10 @@ export namespace MyNS {
 		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for information about S3 buckets. */
 		criteria?: {[id: string]: BucketCriteriaAdditionalProperties };
 
-		/** The maximum number of items to include in each page of the response. The default value is 50. */
+		/**
+		 * The maximum number of items to include in each page of the response. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7199,7 +7233,10 @@ export namespace MyNS {
 		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for information about S3 buckets. */
 		criteria: FormControl<{[id: string]: BucketCriteriaAdditionalProperties } | null | undefined>,
 
-		/** The maximum number of items to include in each page of the response. The default value is 50. */
+		/**
+		 * The maximum number of items to include in each page of the response. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7463,7 +7500,10 @@ export namespace MyNS {
 		 */
 		groupBy: GroupBy;
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
 		/** Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings. */
@@ -7477,7 +7517,10 @@ export namespace MyNS {
 		 */
 		groupBy: FormControl<GroupBy | null | undefined>,
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFindingStatisticsPostBodyFormGroup() {
@@ -7588,12 +7631,18 @@ export namespace MyNS {
 
 	export interface UpdateResourceProfilePatchBody {
 
-		/** The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request. */
+		/**
+		 * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivityScoreOverride?: number | null;
 	}
 	export interface UpdateResourceProfilePatchBodyFormProperties {
 
-		/** The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request. */
+		/**
+		 * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivityScoreOverride: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateResourceProfilePatchBodyFormGroup() {
@@ -7687,7 +7736,10 @@ export namespace MyNS {
 		/** An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions. */
 		filterBy?: Array<UsageStatisticsFilter>;
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7701,7 +7753,10 @@ export namespace MyNS {
 	}
 	export interface GetUsageStatisticsPostBodyFormProperties {
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7740,7 +7795,10 @@ export namespace MyNS {
 		/** Specifies criteria for filtering the results of a request for information about classification jobs. */
 		filterCriteria?: ListClassificationJobsPostBodyFilterCriteria;
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7751,7 +7809,10 @@ export namespace MyNS {
 	}
 	export interface ListClassificationJobsPostBodyFormProperties {
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7795,7 +7856,10 @@ export namespace MyNS {
 
 	export interface ListCustomDataIdentifiersPostBody {
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7803,7 +7867,10 @@ export namespace MyNS {
 	}
 	export interface ListCustomDataIdentifiersPostBodyFormProperties {
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7822,7 +7889,10 @@ export namespace MyNS {
 		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
 		findingCriteria?: ListFindingsPostBodyFindingCriteria;
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7833,7 +7903,10 @@ export namespace MyNS {
 	}
 	export interface ListFindingsPostBodyFormProperties {
 
-		/** The maximum number of items to include in each page of the response. */
+		/**
+		 * The maximum number of items to include in each page of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7932,7 +8005,10 @@ export namespace MyNS {
 		/** Specifies property- and tag-based conditions that define filter criteria for including or excluding S3 buckets from the query results. Exclude conditions take precedence over include conditions. */
 		bucketCriteria?: SearchResourcesPostBodyBucketCriteria;
 
-		/** The maximum number of items to include in each page of the response. The default value is 50. */
+		/**
+		 * The maximum number of items to include in each page of the response. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7943,7 +8019,10 @@ export namespace MyNS {
 	}
 	export interface SearchResourcesPostBodyFormProperties {
 
-		/** The maximum number of items to include in each page of the response. The default value is 50. */
+		/**
+		 * The maximum number of items to include in each page of the response. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The nextToken string that specifies which page of results to return in a paginated response. */
@@ -7993,7 +8072,10 @@ export namespace MyNS {
 		/** An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive. */
 		keywords?: Array<string>;
 
-		/** The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50. */
+		/**
+		 * The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumMatchDistance?: number | null;
 
 		/**
@@ -8010,7 +8092,10 @@ export namespace MyNS {
 	}
 	export interface TestCustomDataIdentifierPostBodyFormProperties {
 
-		/** The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50. */
+		/**
+		 * The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumMatchDistance: FormControl<number | null | undefined>,
 
 		/**

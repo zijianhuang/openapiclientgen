@@ -888,8 +888,11 @@ export namespace MyNS {
 		 * Deletes the instance of the given custom app.
 		 * Delete deleteapp#app&domain&simulation
 		 * @param {string} app The name of the app.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} domain The name of the domain of the app.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} simulation The name of the simulation of the app.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteAppOutput} Success
 		 */
 		DeleteApp(app: string, domain: string, simulation: string): Observable<DeleteAppOutput> {
@@ -900,6 +903,7 @@ export namespace MyNS {
 		 * <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p> <note> <p>Your simulation uses resources in other Amazon Web Services. This API operation doesn't delete resources in other Amazon Web Services.</p> </note>
 		 * Delete deletesimulation#simulation
 		 * @param {string} simulation The name of the simulation.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteSimulationOutput} Success
 		 */
 		DeleteSimulation(simulation: string): Observable<DeleteSimulationOutput> {
@@ -910,8 +914,11 @@ export namespace MyNS {
 		 * Returns the state of the given custom app.
 		 * Get describeapp#app&domain&simulation
 		 * @param {string} app The name of the app.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} domain The name of the domain of the app.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} simulation The name of the simulation of the app.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeAppOutput} Success
 		 */
 		DescribeApp(app: string, domain: string, simulation: string): Observable<DescribeAppOutput> {
@@ -922,6 +929,7 @@ export namespace MyNS {
 		 * Returns the current state of the given simulation.
 		 * Get describesimulation#simulation
 		 * @param {string} simulation The name of the simulation.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeSimulationOutput} Success
 		 */
 		DescribeSimulation(simulation: string): Observable<DescribeSimulationOutput> {
@@ -932,9 +940,12 @@ export namespace MyNS {
 		 * Lists all custom apps or service apps for the given simulation and domain.
 		 * Get listapps#simulation
 		 * @param {string} domain The name of the domain that you want to list apps for.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxResults The maximum number of apps to list.
+		 *     Minimum: 1
 		 * @param {string} nextToken If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
 		 * @param {string} simulation The name of the simulation that you want to list apps for.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppsOutput} Success
@@ -947,6 +958,7 @@ export namespace MyNS {
 		 * Lists the SimSpace Weaver simulations in the Amazon Web Services account used to make the API call.
 		 * Get listsimulations
 		 * @param {number} maxResults The maximum number of simulations to list.
+		 *     Minimum: 1
 		 * @param {string} nextToken If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -960,6 +972,7 @@ export namespace MyNS {
 		 * Lists all tags on a SimSpace Weaver resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 0    Max length: 1600
 		 * @return {ListTagsForResourceOutput} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceOutput> {
@@ -970,6 +983,7 @@ export namespace MyNS {
 		 * Adds tags to a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 0    Max length: 1600
 		 * @return {TagResourceOutput} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceOutput> {
@@ -1034,7 +1048,9 @@ export namespace MyNS {
 		 * Removes tags from a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 0    Max length: 1600
 		 * @param {Array<string>} tagKeys A list of tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -1053,8 +1069,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1063,8 +1079,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}
@@ -1118,23 +1134,23 @@ export namespace MyNS {
 
 		/**
 		 * A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
-		 * Max length: 128
 		 * Min length: 32
+		 * Max length: 128
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
 		/**
 		 * The name of the domain of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Domain: string;
 
@@ -1144,16 +1160,16 @@ export namespace MyNS {
 		/**
 		 * The name of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
 		/**
 		 * The name of the simulation of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1161,39 +1177,39 @@ export namespace MyNS {
 
 		/**
 		 * A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
-		 * Max length: 128
 		 * Min length: 32
+		 * Max length: 128
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Domain: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the simulation of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}
@@ -1224,8 +1240,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1234,8 +1250,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}
@@ -1250,38 +1266,38 @@ export namespace MyNS {
 
 		/**
 		 * A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
-		 * Max length: 128
 		 * Min length: 32
+		 * Max length: 128
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the simulation.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
 		/**
 		 * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
-		 * Max length: 6
 		 * Min length: 2
+		 * Max length: 6
 		 */
 		MaximumDuration?: string | null;
 
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		RoleArn: string;
 
@@ -1298,38 +1314,38 @@ export namespace MyNS {
 
 		/**
 		 * A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
-		 * Max length: 128
 		 * Min length: 32
+		 * Max length: 128
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the simulation.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
-		 * Max length: 6
 		 * Min length: 2
+		 * Max length: 6
 		 */
 		MaximumDuration: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -1385,24 +1401,24 @@ export namespace MyNS {
 		/**
 		 * The name of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		App: string;
 
 		/**
 		 * The name of the domain of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Domain: string;
 
 		/**
 		 * The name of the simulation of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1411,24 +1427,24 @@ export namespace MyNS {
 		/**
 		 * The name of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		App: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Domain: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the simulation of the app.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}
@@ -1446,8 +1462,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1456,8 +1472,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}
@@ -1473,8 +1489,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: string;
 	}
@@ -1483,8 +1499,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Simulation: FormControl<string | null | undefined>,
 	}

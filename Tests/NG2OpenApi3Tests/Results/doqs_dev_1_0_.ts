@@ -274,8 +274,8 @@ export namespace MyNS {
 		h_align?: HorizontalAlign;
 
 		/**
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		locale?: string | null;
 
@@ -315,8 +315,8 @@ export namespace MyNS {
 		h_align: FormControl<HorizontalAlign | null | undefined>,
 
 		/**
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		locale: FormControl<string | null | undefined>,
 
@@ -633,8 +633,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		results: string;
 	}
@@ -642,8 +642,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		results: FormControl<string | null | undefined>,
 	}
@@ -678,6 +678,8 @@ export namespace MyNS {
 		 * Minimum: 0
 		 */
 		pages: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size_bytes?: number | null;
 	}
 	export interface TemplateFormProperties {
@@ -690,6 +692,8 @@ export namespace MyNS {
 		 * Minimum: 0
 		 */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size_bytes: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateFormGroup() {
@@ -870,6 +874,9 @@ export namespace MyNS {
 		/**
 		 * List Templates
 		 * Get designer/templates
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 1000
+		 * @param {number} offset Minimum: 0
 		 * @return {ResponseOk_List_fillrentitiesdesigner_templateDesignerTemplate__} Successful Response
 		 */
 		List_templates_designer_templates_get(limit: number | null | undefined, offset: number | null | undefined): Observable<ResponseOk_List_fillrentitiesdesigner_templateDesignerTemplate__> {
@@ -933,6 +940,9 @@ export namespace MyNS {
 		/**
 		 * List
 		 * Get templates
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 1000
+		 * @param {number} offset Minimum: 0
 		 * @return {ResponseOk_List_appsapiroutes_templatesTemplate__} Successful Response
 		 */
 		List(limit: number | null | undefined, offset: number | null | undefined): Observable<ResponseOk_List_appsapiroutes_templatesTemplate__> {

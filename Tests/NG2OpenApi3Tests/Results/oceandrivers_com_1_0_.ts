@@ -64,11 +64,15 @@ export namespace MyNS {
 		 * Get timeseries forecast information<br/>None
 		 * Get v1.0/getForecastTimeSeries/{latitude}/{longitude}/
 		 * @param {number} latitude latitude for the forecast
+		 *     Type: float
 		 * @param {number} longitude longitude for the forecast
+		 *     Type: float
 		 * @param {string} inittime initial date for the forecast ISO string YYYY-MM-DDTHH:mm:SS.SZ
 		 * @param {string} endtime end date for the forecast ISO string YYYY-MM-DDTHH:mm:SS.SZ
 		 * @param {number} days optional number of days in string. Will be added to init forecast date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} hours optional number of hours in string. Will be added to init forecast date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} weather  Comma separated values for the weather parameteres temperature,rain,wind_u,wind_v,gust,pressure,cloud,humidity&wave=height,direction,period
 		 * @param {string} wave  Comma separated values for the wave parameteres height,direction,period
 		 * @param {string} entryid Direct file I want to extract
@@ -82,11 +86,15 @@ export namespace MyNS {
 		 * Get timeseries forecast information<br/>None
 		 * Get v1.0/getForecastTimeSeriesWrf/{latitude}/{longitude}/
 		 * @param {number} latitude latitude for the forecast
+		 *     Type: float
 		 * @param {number} longitude longitude for the forecast
+		 *     Type: float
 		 * @param {string} inittime initial date for the forecast ISO string YYYY-MM-DDTHH:mm:SS.SZ
 		 * @param {string} endtime end date for the forecast ISO string YYYY-MM-DDTHH:mm:SS.SZ
 		 * @param {number} days optional number of days in string. Will be added to init forecast date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} hours optional number of hours in string. Will be added to init forecast date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} weather  Comma separated values for the weather parameteres temperature,rain,wind_u,wind_v,gust,pressure,cloud,humidity&wave=height,direction,period
 		 * @param {string} wave  Comma separated values for the wave parameteres height,direction,period
 		 * @param {string} entryid Direct file I want to extract

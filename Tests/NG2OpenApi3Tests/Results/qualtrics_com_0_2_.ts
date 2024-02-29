@@ -258,25 +258,61 @@ export namespace MyNS {
 	}
 
 	export interface DistributionsResponseResultElementsStats {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blocked?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounced?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		complaints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		finished?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		opened?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sent?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skipped?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		started?: number | null;
 	}
 	export interface DistributionsResponseResultElementsStatsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blocked: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounced: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		complaints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		finished: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		opened: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sent: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skipped: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		started: FormControl<number | null | undefined>,
 	}
 	export function CreateDistributionsResponseResultElementsStatsFormGroup() {
@@ -662,7 +698,6 @@ export namespace MyNS {
 		 * Remove subscription to response event
 		 * Remove event subscription
 		 * Delete eventsubscriptions/
-		 * @return {EventSubscriptionsResponse} 
 		 */
 		WebhookDelete(): Observable<EventSubscriptionsResponse> {
 			return this.http.delete<EventSubscriptionsResponse>(this.baseUri + 'eventsubscriptions/', {});

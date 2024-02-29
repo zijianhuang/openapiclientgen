@@ -292,7 +292,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue?: boolean | null;
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Represents an int64 value. */
@@ -311,7 +314,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue: FormControl<boolean | null | undefined>,
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Represents an int64 value. */
@@ -431,7 +437,10 @@ export namespace MyNS {
 	/** Represents period in days/months/years. */
 	export interface GoogleCloudChannelV1Period {
 
-		/** Total duration of Period Type defined. */
+		/**
+		 * Total duration of Period Type defined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Period Type. */
@@ -441,7 +450,10 @@ export namespace MyNS {
 	/** Represents period in days/months/years. */
 	export interface GoogleCloudChannelV1PeriodFormProperties {
 
-		/** Total duration of Period Type defined. */
+		/**
+		 * Total duration of Period Type defined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Period Type. */
@@ -841,26 +853,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -1428,7 +1458,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode?: string | null;
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -1459,7 +1492,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode: FormControl<string | null | undefined>,
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -1574,22 +1610,40 @@ export namespace MyNS {
 	/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 	export interface GoogleTypeDateTime {
 
-		/** Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day. */
+		/**
+		 * Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0. */
+		/**
+		 * Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month. */
+		/**
+		 * Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0. */
+		/**
+		 * Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 
 		/** Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones). */
@@ -1598,35 +1652,59 @@ export namespace MyNS {
 		/** UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }. */
 		utcOffset?: string | null;
 
-		/** Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year. */
+		/**
+		 * Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 	export interface GoogleTypeDateTimeFormProperties {
 
-		/** Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day. */
+		/**
+		 * Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0. */
+		/**
+		 * Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month. */
+		/**
+		 * Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0. */
+		/**
+		 * Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 
 		/** UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }. */
 		utcOffset: FormControl<string | null | undefined>,
 
-		/** Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year. */
+		/**
+		 * Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateTimeFormGroup() {
@@ -1805,7 +1883,10 @@ export namespace MyNS {
 	/** Request message for CloudChannelReportsService.FetchReportResults. */
 	export interface GoogleCloudChannelV1FetchReportResultsRequest {
 
-		/** Optional. Requested page size of the report. The server may return fewer results than requested. If you don't specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000. */
+		/**
+		 * Optional. Requested page size of the report. The server may return fewer results than requested. If you don't specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A token that specifies a page of results beyond the first page. Obtained through FetchReportResultsResponse.next_page_token of the previous CloudChannelReportsService.FetchReportResults call. */
@@ -1818,7 +1899,10 @@ export namespace MyNS {
 	/** Request message for CloudChannelReportsService.FetchReportResults. */
 	export interface GoogleCloudChannelV1FetchReportResultsRequestFormProperties {
 
-		/** Optional. Requested page size of the report. The server may return fewer results than requested. If you don't specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000. */
+		/**
+		 * Optional. Requested page size of the report. The server may return fewer results than requested. If you don't specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A token that specifies a page of results beyond the first page. Obtained through FetchReportResultsResponse.next_page_token of the previous CloudChannelReportsService.FetchReportResults call. */
@@ -1998,7 +2082,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2011,7 +2098,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2501,7 +2591,10 @@ export namespace MyNS {
 		/** Represents an amount of money with its currency type. */
 		basePrice?: GoogleTypeMoney;
 
-		/** Discount percentage, represented as decimal. For example, a 20% discount will be represent as 0.2. */
+		/**
+		 * Discount percentage, represented as decimal. For example, a 20% discount will be represent as 0.2.
+		 * Type: double
+		 */
 		discount?: number | null;
 
 		/** Represents an amount of money with its currency type. */
@@ -2514,7 +2607,10 @@ export namespace MyNS {
 	/** Represents the price of the Offer. */
 	export interface GoogleCloudChannelV1PriceFormProperties {
 
-		/** Discount percentage, represented as decimal. For example, a 20% discount will be represent as 0.2. */
+		/**
+		 * Discount percentage, represented as decimal. For example, a 20% discount will be represent as 0.2.
+		 * Type: double
+		 */
 		discount: FormControl<number | null | undefined>,
 
 		/** Link to external price list, such as link to Google Voice rate card. */
@@ -2532,10 +2628,16 @@ export namespace MyNS {
 	/** Specifies the price by the duration of months. For example, a 20% discount for the first six months, then a 10% discount starting on the seventh month. */
 	export interface GoogleCloudChannelV1PricePhase {
 
-		/** Defines first period for the phase. */
+		/**
+		 * Defines first period for the phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstPeriod?: number | null;
 
-		/** Defines first period for the phase. */
+		/**
+		 * Defines first period for the phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastPeriod?: number | null;
 
 		/** Defines the phase period type. */
@@ -2551,10 +2653,16 @@ export namespace MyNS {
 	/** Specifies the price by the duration of months. For example, a 20% discount for the first six months, then a 10% discount starting on the seventh month. */
 	export interface GoogleCloudChannelV1PricePhaseFormProperties {
 
-		/** Defines first period for the phase. */
+		/**
+		 * Defines first period for the phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstPeriod: FormControl<number | null | undefined>,
 
-		/** Defines first period for the phase. */
+		/**
+		 * Defines first period for the phase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastPeriod: FormControl<number | null | undefined>,
 
 		/** Defines the phase period type. */
@@ -2573,10 +2681,16 @@ export namespace MyNS {
 	/** Defines price at resource tier level. For example, an offer with following definition : * Tier 1: Provide 25% discount for all seats between 1 and 25. * Tier 2: Provide 10% discount for all seats between 26 and 100. * Tier 3: Provide flat 15% discount for all seats above 100. Each of these tiers is represented as a PriceTier. */
 	export interface GoogleCloudChannelV1PriceTier {
 
-		/** First resource for which the tier price applies. */
+		/**
+		 * First resource for which the tier price applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstResource?: number | null;
 
-		/** Last resource for which the tier price applies. */
+		/**
+		 * Last resource for which the tier price applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastResource?: number | null;
 
 		/** Represents the price of the Offer. */
@@ -2586,10 +2700,16 @@ export namespace MyNS {
 	/** Defines price at resource tier level. For example, an offer with following definition : * Tier 1: Provide 25% discount for all seats between 1 and 25. * Tier 2: Provide 10% discount for all seats between 26 and 100. * Tier 3: Provide flat 15% discount for all seats above 100. Each of these tiers is represented as a PriceTier. */
 	export interface GoogleCloudChannelV1PriceTierFormProperties {
 
-		/** First resource for which the tier price applies. */
+		/**
+		 * First resource for which the tier price applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstResource: FormControl<number | null | undefined>,
 
-		/** Last resource for which the tier price applies. */
+		/**
+		 * Last resource for which the tier price applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastResource: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudChannelV1PriceTierFormGroup() {
@@ -2930,7 +3050,10 @@ export namespace MyNS {
 		/** Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US". */
 		languageCode?: string | null;
 
-		/** Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 offers. The maximum value is 1000; the server will coerce values above 1000. */
+		/**
+		 * Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 offers. The maximum value is 1000; the server will coerce values above 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A token for a page of results other than the first page. Obtained using ListTransferableOffersResponse.next_page_token of the previous CloudChannelService.ListTransferableOffers call. */
@@ -2955,7 +3078,10 @@ export namespace MyNS {
 		/** Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US". */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 offers. The maximum value is 1000; the server will coerce values above 1000. */
+		/**
+		 * Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 offers. The maximum value is 1000; the server will coerce values above 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A token for a page of results other than the first page. Obtained using ListTransferableOffersResponse.next_page_token of the previous CloudChannelService.ListTransferableOffers call. */
@@ -3034,7 +3160,10 @@ export namespace MyNS {
 		/** The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US". Optional. */
 		languageCode?: string | null;
 
-		/** The requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000. Optional. */
+		/**
+		 * The requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000. Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A token for a page of results other than the first page. Obtained using ListTransferableSkusResponse.next_page_token of the previous CloudChannelService.ListTransferableSkus call. Optional. */
@@ -3056,7 +3185,10 @@ export namespace MyNS {
 		/** The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US". Optional. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** The requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000. Optional. */
+		/**
+		 * The requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000. Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A token for a page of results other than the first page. Obtained using ListTransferableSkusResponse.next_page_token of the previous CloudChannelService.ListTransferableSkus call. Optional. */
@@ -3779,7 +3911,10 @@ export namespace MyNS {
 	/** Represents period in days/months/years. */
 	export interface GoogleCloudChannelV1alpha1Period {
 
-		/** Total duration of Period Type defined. */
+		/**
+		 * Total duration of Period Type defined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Period Type. */
@@ -3789,7 +3924,10 @@ export namespace MyNS {
 	/** Represents period in days/months/years. */
 	export interface GoogleCloudChannelV1alpha1PeriodFormProperties {
 
-		/** Total duration of Period Type defined. */
+		/**
+		 * Total duration of Period Type defined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Period Type. */
@@ -3863,7 +4001,10 @@ export namespace MyNS {
 	/** An entitlement is a representation of a customer's ability to use a service. */
 	export interface GoogleCloudChannelV1alpha1Entitlement {
 
-		/** The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead. */
+		/**
+		 * The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assignedUnits?: number | null;
 
 		/** Association links that an entitlement has to other entitlements. */
@@ -3881,13 +4022,19 @@ export namespace MyNS {
 		/** Output only. The time at which the entitlement is created. */
 		createTime?: string | null;
 
-		/** Maximum number of units for a non commitment-based Offer, such as Flexible, Trial or Free entitlements. For commitment-based entitlements, this is a read-only field, which only the internal support team can update. Deprecated: Use `parameters` instead. */
+		/**
+		 * Maximum number of units for a non commitment-based Offer, such as Flexible, Trial or Free entitlements. For commitment-based entitlements, this is a read-only field, which only the internal support team can update. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUnits?: number | null;
 
 		/** Output only. Resource name of an entitlement in the form: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}. */
 		name?: string | null;
 
-		/** Number of units for a commitment-based Offer. For example, for seat-based Offers, this would be the number of seats; for license-based Offers, this would be the number of licenses. Required for creating commitment-based Offers. Deprecated: Use `parameters` instead. */
+		/**
+		 * Number of units for a commitment-based Offer. For example, for seat-based Offers, this would be the number of seats; for license-based Offers, this would be the number of licenses. Required for creating commitment-based Offers. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numUnits?: number | null;
 
 		/** Required. The offer resource name for which the entitlement is to be created. Takes the form: accounts/{account_id}/offers/{offer_id}. */
@@ -3918,7 +4065,10 @@ export namespace MyNS {
 	/** An entitlement is a representation of a customer's ability to use a service. */
 	export interface GoogleCloudChannelV1alpha1EntitlementFormProperties {
 
-		/** The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead. */
+		/**
+		 * The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assignedUnits: FormControl<number | null | undefined>,
 
 		/** Optional. The billing account resource name that is used to pay for this entitlement. */
@@ -3930,13 +4080,19 @@ export namespace MyNS {
 		/** Output only. The time at which the entitlement is created. */
 		createTime: FormControl<string | null | undefined>,
 
-		/** Maximum number of units for a non commitment-based Offer, such as Flexible, Trial or Free entitlements. For commitment-based entitlements, this is a read-only field, which only the internal support team can update. Deprecated: Use `parameters` instead. */
+		/**
+		 * Maximum number of units for a non commitment-based Offer, such as Flexible, Trial or Free entitlements. For commitment-based entitlements, this is a read-only field, which only the internal support team can update. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUnits: FormControl<number | null | undefined>,
 
 		/** Output only. Resource name of an entitlement in the form: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}. */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of units for a commitment-based Offer. For example, for seat-based Offers, this would be the number of seats; for license-based Offers, this would be the number of licenses. Required for creating commitment-based Offers. Deprecated: Use `parameters` instead. */
+		/**
+		 * Number of units for a commitment-based Offer. For example, for seat-based Offers, this would be the number of seats; for license-based Offers, this would be the number of licenses. Required for creating commitment-based Offers. Deprecated: Use `parameters` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numUnits: FormControl<number | null | undefined>,
 
 		/** Required. The offer resource name for which the entitlement is to be created. Takes the form: accounts/{account_id}/offers/{offer_id}. */
@@ -4006,7 +4162,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue?: boolean | null;
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Represents an int64 value. */
@@ -4025,7 +4184,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue: FormControl<boolean | null | undefined>,
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Represents an int64 value. */
@@ -4438,7 +4600,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -4451,7 +4616,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -4490,6 +4658,7 @@ export namespace MyNS {
 		 * @param {string} account Required. The resource name of the reseller account. Format: accounts/{account_id}.
 		 * @param {string} languageCode Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 Products. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page.
 		 * @return {GoogleCloudChannelV1ListProductsResponse} Successful response
 		 */
@@ -4502,6 +4671,7 @@ export namespace MyNS {
 		 * Get v1/{account}:listSubscribers
 		 * @param {string} account Required. Resource name of the account.
 		 * @param {number} pageSize Optional. The maximum number of service accounts to return. The service may return fewer than this value. If unspecified, returns at most 100 service accounts. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListSubscribers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscribers` must match the call that provided the page token.
 		 * @return {GoogleCloudChannelV1ListSubscribersResponse} Successful response
 		 */
@@ -4540,6 +4710,7 @@ export namespace MyNS {
 		 * @param {string} createEntitlementPurchase_sku Required. SKU that the result should be restricted to. Format: products/{product_id}/skus/{sku_id}.
 		 * @param {string} languageCode Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 Offers. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page.
 		 * @return {GoogleCloudChannelV1ListPurchasableOffersResponse} Successful response
 		 */
@@ -4556,6 +4727,7 @@ export namespace MyNS {
 		 * @param {string} createEntitlementPurchase_product Required. List SKUs belonging to this Product. Format: products/{product_id}. Supports products/- to retrieve SKUs for all products.
 		 * @param {string} languageCode Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page.
 		 * @return {GoogleCloudChannelV1ListPurchasableSkusResponse} Successful response
 		 */
@@ -4610,6 +4782,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {Cloudchannel_operations_listFilter} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -4713,6 +4886,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/billableSkus
 		 * @param {string} parent Required. Resource name of the SKU group. Format: accounts/{account}/skuGroups/{sku_group}.
 		 * @param {number} pageSize Optional. The maximum number of SKUs to return. The service may return fewer than this value. If unspecified, returns a maximum of 100000 SKUs. The maximum value is 100000; values above 100000 will be coerced to 100000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results beyond the first page. Obtained through ListSkuGroupBillableSkus.next_page_token of the previous CloudChannelService.ListSkuGroupBillableSkus call.
 		 * @return {GoogleCloudChannelV1ListSkuGroupBillableSkusResponse} Successful response
 		 */
@@ -4725,6 +4899,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/channelPartnerLinks
 		 * @param {string} parent Required. The resource name of the reseller account for listing channel partner links. Parent uses the format: accounts/{account_id}
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, server will pick a default size (25). The maximum value is 200; the server will coerce values above 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page. Obtained using ListChannelPartnerLinksResponse.next_page_token of the previous CloudChannelService.ListChannelPartnerLinks call.
 		 * @param {Cloudchannel_operations_listFilter} view Optional. The level of granularity the ChannelPartnerLink will display.
 		 * @return {GoogleCloudChannelV1ListChannelPartnerLinksResponse} Successful response
@@ -4749,6 +4924,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the account's ChannelPartnerLink. Parent uses the format: accounts/{account_id}/channelPartnerLinks/{channel_partner_id}. Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs for all channel partners.
 		 * @param {string} filter Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs] results (channel_partner_link only). You can use this filter when you support a BatchGet-like query. To use the filter, you must set `parent=accounts/{account_id}/channelPartnerLinks/-`. Example: `channel_partner_link = accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link = accounts/account_id/channelPartnerLinks/c2`.
 		 * @param {number} pageSize Optional. The maximum number of repricing configs to return. The service may return fewer than this value. If unspecified, returns a maximum of 50 rules. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results beyond the first page. Obtained through ListChannelPartnerRepricingConfigsResponse.next_page_token of the previous CloudChannelService.ListChannelPartnerRepricingConfigs call.
 		 * @return {GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse} Successful response
 		 */
@@ -4772,6 +4948,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the customer. Parent uses the format: accounts/{account_id}/customers/{customer_id}. Supports accounts/{account_id}/customers/- to retrieve configs for all customers.
 		 * @param {string} filter Optional. A filter for [CloudChannelService.ListCustomerRepricingConfigs] results (customer only). You can use this filter when you support a BatchGet-like query. To use the filter, you must set `parent=accounts/{account_id}/customers/-`. Example: customer = accounts/account_id/customers/c1 OR customer = accounts/account_id/customers/c2.
 		 * @param {number} pageSize Optional. The maximum number of repricing configs to return. The service may return fewer than this value. If unspecified, returns a maximum of 50 rules. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results beyond the first page. Obtained through ListCustomerRepricingConfigsResponse.next_page_token of the previous CloudChannelService.ListCustomerRepricingConfigs call.
 		 * @return {GoogleCloudChannelV1ListCustomerRepricingConfigsResponse} Successful response
 		 */
@@ -4795,6 +4972,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the reseller account to list customers from. Parent uses the format: accounts/{account_id}.
 		 * @param {string} filter Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers for more information.
 		 * @param {number} pageSize Optional. The maximum number of customers to return. The service may return fewer than this value. If unspecified, returns at most 10 customers. The maximum value is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results other than the first page. Obtained through ListCustomersResponse.next_page_token of the previous CloudChannelService.ListCustomers call.
 		 * @return {GoogleCloudChannelV1ListCustomersResponse} Successful response
 		 */
@@ -4827,6 +5005,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/entitlements
 		 * @param {string} parent Required. The resource name of the reseller's customer account to list entitlements for. Parent uses the format: accounts/{account_id}/customers/{customer_id}
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, return at most 50 entitlements. The maximum value is 100; the server will coerce values above 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page. Obtained using ListEntitlementsResponse.next_page_token of the previous CloudChannelService.ListEntitlements call.
 		 * @return {GoogleCloudChannelV1ListEntitlementsResponse} Successful response
 		 */
@@ -4851,6 +5030,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The expression to filter results by name (name of the Offer), sku.name (name of the SKU), or sku.product.name (name of the Product). Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1 Example 2: name=accounts/a1/offers/o1
 		 * @param {string} languageCode Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, returns at most 500 Offers. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page.
 		 * @param {boolean} showFutureOffers Optional. A boolean flag that determines if a response returns future offers 30 days from now. If the show_future_offers is true, the response will only contain offers that are scheduled to be available 30 days from now.
 		 * @return {GoogleCloudChannelV1ListOffersResponse} Successful response
@@ -4865,6 +5045,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the partner account to list available reports for. Parent uses the format: accounts/{account_id}
 		 * @param {string} languageCode Optional. The BCP-47 language code, such as "en-US". If specified, the response is localized to the corresponding language code if the original data sources support it. Default is "en-US".
 		 * @param {number} pageSize Optional. Requested page size of the report. The server might return fewer results than requested. If unspecified, returns 20 reports. The maximum value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token that specifies a page of results beyond the first page. Obtained through ListReportsResponse.next_page_token of the previous CloudChannelReportsService.ListReports call.
 		 * @return {GoogleCloudChannelV1ListReportsResponse} Successful response
 		 */
@@ -4877,6 +5058,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/skuGroups
 		 * @param {string} parent Required. The resource name of the account from which to list SKU groups. Parent uses the format: accounts/{account}.
 		 * @param {number} pageSize Optional. The maximum number of SKU groups to return. The service may return fewer than this value. If unspecified, returns a maximum of 1000 SKU groups. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results beyond the first page. Obtained through ListSkuGroups.next_page_token of the previous CloudChannelService.ListSkuGroups call.
 		 * @return {GoogleCloudChannelV1ListSkuGroupsResponse} Successful response
 		 */
@@ -4891,6 +5073,7 @@ export namespace MyNS {
 		 * @param {string} account Required. Resource name of the reseller. Format: accounts/{account_id}.
 		 * @param {string} languageCode Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
 		 * @param {number} pageSize Optional. Requested page size. Server might return fewer results than requested. If unspecified, returns at most 100 SKUs. The maximum value is 1000; the server will coerce values above 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token for a page of results other than the first page. Optional.
 		 * @return {GoogleCloudChannelV1ListSkusResponse} Successful response
 		 */
@@ -4914,6 +5097,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the entitlement for which to list entitlement changes. The `-` wildcard may be used to match entitlements across a customer. Formats: * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id} * accounts/{account_id}/customers/{customer_id}/entitlements/-
 		 * @param {string} filter Optional. Filters applied to the list results.
 		 * @param {number} pageSize Optional. The maximum number of entitlement changes to return. The service may return fewer than this value. If unspecified, returns at most 10 entitlement changes. The maximum value is 50; the server will coerce values above 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous CloudChannelService.ListEntitlementChanges call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to CloudChannelService.ListEntitlementChanges must match the call that provided the page token.
 		 * @return {GoogleCloudChannelV1ListEntitlementChangesResponse} Successful response
 		 */

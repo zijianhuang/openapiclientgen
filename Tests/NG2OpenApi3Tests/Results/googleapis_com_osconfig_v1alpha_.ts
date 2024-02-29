@@ -16,16 +16,25 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact?: CVSSv3AvailabilityImpact | null;
 
-		/** The base score is a function of the base metric scores. https://www.first.org/cvss/specification-document#Base-Metrics */
+		/**
+		 * The base score is a function of the base metric scores. https://www.first.org/cvss/specification-document#Base-Metrics
+		 * Type: float
+		 */
 		baseScore?: number | null;
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
 		confidentialityImpact?: CVSSv3AvailabilityImpact | null;
 
-		/** The Exploitability sub-score equation is derived from the Base Exploitability metrics. https://www.first.org/cvss/specification-document#2-1-Exploitability-Metrics */
+		/**
+		 * The Exploitability sub-score equation is derived from the Base Exploitability metrics. https://www.first.org/cvss/specification-document#2-1-Exploitability-Metrics
+		 * Type: float
+		 */
 		exploitabilityScore?: number | null;
 
-		/** The Impact sub-score equation is derived from the Base Impact metrics. */
+		/**
+		 * The Impact sub-score equation is derived from the Base Impact metrics.
+		 * Type: float
+		 */
 		impactScore?: number | null;
 
 		/** This metric measures the impact to integrity of a successfully exploited vulnerability. */
@@ -53,16 +62,25 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact: FormControl<CVSSv3AvailabilityImpact | null | undefined>,
 
-		/** The base score is a function of the base metric scores. https://www.first.org/cvss/specification-document#Base-Metrics */
+		/**
+		 * The base score is a function of the base metric scores. https://www.first.org/cvss/specification-document#Base-Metrics
+		 * Type: float
+		 */
 		baseScore: FormControl<number | null | undefined>,
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
 		confidentialityImpact: FormControl<CVSSv3AvailabilityImpact | null | undefined>,
 
-		/** The Exploitability sub-score equation is derived from the Base Exploitability metrics. https://www.first.org/cvss/specification-document#2-1-Exploitability-Metrics */
+		/**
+		 * The Exploitability sub-score equation is derived from the Base Exploitability metrics. https://www.first.org/cvss/specification-document#2-1-Exploitability-Metrics
+		 * Type: float
+		 */
 		exploitabilityScore: FormControl<number | null | undefined>,
 
-		/** The Impact sub-score equation is derived from the Base Impact metrics. */
+		/**
+		 * The Impact sub-score equation is derived from the Base Impact metrics.
+		 * Type: float
+		 */
 		impactScore: FormControl<number | null | undefined>,
 
 		/** This metric measures the impact to integrity of a successfully exploited vulnerability. */
@@ -124,26 +142,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -173,20 +209,32 @@ export namespace MyNS {
 	/** Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value. */
 	export interface FixedOrPercent {
 
-		/** Specifies a fixed value. */
+		/**
+		 * Specifies a fixed value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed?: number | null;
 
-		/** Specifies the relative value defined as a percentage, which will be multiplied by a reference value. */
+		/**
+		 * Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent?: number | null;
 	}
 
 	/** Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value. */
 	export interface FixedOrPercentFormProperties {
 
-		/** Specifies a fixed value. */
+		/**
+		 * Specifies a fixed value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed: FormControl<number | null | undefined>,
 
-		/** Specifies the relative value defined as a percentage, which will be multiplied by a reference value. */
+		/**
+		 * Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent: FormControl<number | null | undefined>,
 	}
 	export function CreateFixedOrPercentFormGroup() {
@@ -725,7 +773,10 @@ export namespace MyNS {
 		/** A collection of URLs that provide more information about the update package. */
 		moreInfoUrls?: Array<string>;
 
-		/** The revision number of this update package. */
+		/**
+		 * The revision number of this update package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revisionNumber?: number | null;
 
 		/** A hyperlink to the language-specific support information for the update. */
@@ -747,7 +798,10 @@ export namespace MyNS {
 		/** The last published date of the update, in (UTC) date and time. */
 		lastDeploymentChangeTime: FormControl<string | null | undefined>,
 
-		/** The revision number of this update package. */
+		/**
+		 * The revision number of this update package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revisionNumber: FormControl<number | null | undefined>,
 
 		/** A hyperlink to the language-specific support information for the update. */
@@ -2257,7 +2311,10 @@ export namespace MyNS {
 		/** The CVE of the vulnerability. CVE cannot be empty and the combination of should be unique across vulnerabilities for a VM. */
 		cve?: string | null;
 
-		/** The CVSS V2 score of this vulnerability. CVSS V2 score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * The CVSS V2 score of this vulnerability. CVSS V2 score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssV2Score?: number | null;
 
 		/** Common Vulnerability Scoring System version 3. For details, see https://www.first.org/cvss/specification-document */
@@ -2279,7 +2336,10 @@ export namespace MyNS {
 		/** The CVE of the vulnerability. CVE cannot be empty and the combination of should be unique across vulnerabilities for a VM. */
 		cve: FormControl<string | null | undefined>,
 
-		/** The CVSS V2 score of this vulnerability. CVSS V2 score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * The CVSS V2 score of this vulnerability. CVSS V2 score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssV2Score: FormControl<number | null | undefined>,
 
 		/** The note or description describing the vulnerability from the distro. */
@@ -2466,7 +2526,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2479,7 +2542,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2545,6 +2611,7 @@ export namespace MyNS {
 		 * Get v1alpha/{name}:listRevisions
 		 * @param {string} name Required. The name of the OS policy assignment to list revisions for.
 		 * @param {number} pageSize The maximum number of revisions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListOSPolicyAssignmentRevisions` that indicates where this listing should continue from.
 		 * @return {ListOSPolicyAssignmentRevisionsResponse} Successful response
 		 */
@@ -2558,6 +2625,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name. Format: `projects/{project}/locations/{location}` For `{project}`, either Compute Engine project-number or project-id can be provided.
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by a `InstanceOSPoliciesCompliance` API resource to be included in the response.
 		 * @param {number} pageSize The maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListInstanceOSPoliciesCompliances` that indicates where this listing should continue from.
 		 * @return {ListInstanceOSPoliciesCompliancesResponse} Successful response
 		 */
@@ -2571,6 +2639,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/-` For `{project}`, either `project-number` or `project-id` can be provided.
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by a `Inventory` API resource to be included in the response.
 		 * @param {number} pageSize The maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListInventories` that indicates where this listing should continue from.
 		 * @param {Osconfig_projects_locations_osPolicyAssignments_operations_getView} view Inventory view indicating what information should be included in the inventory resource. If unspecified, the default view is BASIC.
 		 * @return {ListInventoriesResponse} Successful response
@@ -2584,6 +2653,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/osPolicyAssignments
 		 * @param {string} parent Required. The parent resource name.
 		 * @param {number} pageSize The maximum number of assignments to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListOSPolicyAssignments` that indicates where this listing should continue from.
 		 * @return {ListOSPolicyAssignmentsResponse} Successful response
 		 */
@@ -2608,6 +2678,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports` For `{project}`, either `project-number` or `project-id` can be provided. For `{instance}`, either `instance-name`, `instance-id`, or `-` can be provided. If '-' is provided, the response will include OSPolicyAssignmentReports for all instances in the project/location. For `{assignment}`, either `assignment-id` or `-` can be provided. If '-' is provided, the response will include OSPolicyAssignmentReports for all OSPolicyAssignments in the project/location. Either {instance} or {assignment} must be `-`. For example: `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports` returns all reports for the instance `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/{assignment-id}/reports` returns all the reports for the given assignment across all instances. `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/-/reports` returns all the reports for all assignments across all instances.
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by the `OSPolicyAssignmentReport` API resource that is included in the response.
 		 * @param {number} pageSize The maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to the `ListOSPolicyAssignmentReports` method that indicates where this listing should continue from.
 		 * @return {ListOSPolicyAssignmentReportsResponse} Successful response
 		 */
@@ -2621,6 +2692,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/-` For `{project}`, either `project-number` or `project-id` can be provided.
 		 * @param {string} filter This field supports filtering by the severity level for the vulnerability. For a list of severity levels, see [Severity levels for vulnerabilities](https://cloud.google.com/container-analysis/docs/container-scanning-overview#severity_levels_for_vulnerabilities). The filter field follows the rules described in the [AIP-160](https://google.aip.dev/160) guidelines as follows: + **Filter for a specific severity type**: you can list reports that contain vulnerabilities that are classified as medium by specifying `vulnerabilities.details.severity:MEDIUM`. + **Filter for a range of severities** : you can list reports that have vulnerabilities that are classified as critical or high by specifying `vulnerabilities.details.severity:HIGH OR vulnerabilities.details.severity:CRITICAL`
 		 * @param {number} pageSize The maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListVulnerabilityReports` that indicates where this listing should continue from.
 		 * @return {ListVulnerabilityReportsResponse} Successful response
 		 */

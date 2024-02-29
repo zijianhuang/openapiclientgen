@@ -272,7 +272,10 @@ export namespace MyNS {
 		/** The boolean value - this will only be present if type is bool. */
 		valueBool?: boolean | null;
 
-		/** The integer value - this will only be present if type is integer. */
+		/**
+		 * The integer value - this will only be present if type is integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInteger?: number | null;
 
 		/** The list of string values - this will only be present if type is multiselect. */
@@ -291,7 +294,10 @@ export namespace MyNS {
 		/** The boolean value - this will only be present if type is bool. */
 		valueBool: FormControl<boolean | null | undefined>,
 
-		/** The integer value - this will only be present if type is integer. */
+		/**
+		 * The integer value - this will only be present if type is integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInteger: FormControl<number | null | undefined>,
 
 		/** The string value - this will be present for types string, choice and hidden. */
@@ -433,7 +439,10 @@ export namespace MyNS {
 		/** True if this version is a production APK. */
 		isProduction?: boolean | null;
 
-		/** The SDK version this app targets, as specified in the manifest of the APK. See http://developer.android.com/guide/topics/manifest/uses-sdk-element.html */
+		/**
+		 * The SDK version this app targets, as specified in the manifest of the APK. See http://developer.android.com/guide/topics/manifest/uses-sdk-element.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion?: number | null;
 
 		/** Deprecated, use trackId instead. */
@@ -442,7 +451,10 @@ export namespace MyNS {
 		/** Track ids that the app version is published in. Replaces the track field (deprecated), but doesn't include the production track (see isProduction instead). */
 		trackId?: Array<string>;
 
-		/** Unique increasing identifier for the app version. */
+		/**
+		 * Unique increasing identifier for the app version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be "1.4"). */
@@ -455,13 +467,19 @@ export namespace MyNS {
 		/** True if this version is a production APK. */
 		isProduction: FormControl<boolean | null | undefined>,
 
-		/** The SDK version this app targets, as specified in the manifest of the APK. See http://developer.android.com/guide/topics/manifest/uses-sdk-element.html */
+		/**
+		 * The SDK version this app targets, as specified in the manifest of the APK. See http://developer.android.com/guide/topics/manifest/uses-sdk-element.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion: FormControl<number | null | undefined>,
 
 		/** Deprecated, use trackId instead. */
 		track: FormControl<AppVersionTrack | null | undefined>,
 
-		/** Unique increasing identifier for the app version. */
+		/**
+		 * Unique increasing identifier for the app version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be "1.4"). */
@@ -571,10 +589,16 @@ export namespace MyNS {
 		/** The auto-install mode. If unset, defaults to "doNotAutoInstall". An app is automatically installed regardless of a set maintenance window. */
 		autoInstallMode?: AutoInstallPolicyAutoInstallMode | null;
 
-		/** The priority of the install, as an unsigned integer. A lower number means higher priority. */
+		/**
+		 * The priority of the install, as an unsigned integer. A lower number means higher priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		autoInstallPriority?: number | null;
 
-		/** The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. You can set a minimum version code for at most 20 apps per device. */
+		/**
+		 * The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. You can set a minimum version code for at most 20 apps per device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumVersionCode?: number | null;
 	}
 	export interface AutoInstallPolicyFormProperties {
@@ -582,10 +606,16 @@ export namespace MyNS {
 		/** The auto-install mode. If unset, defaults to "doNotAutoInstall". An app is automatically installed regardless of a set maintenance window. */
 		autoInstallMode: FormControl<AutoInstallPolicyAutoInstallMode | null | undefined>,
 
-		/** The priority of the install, as an unsigned integer. A lower number means higher priority. */
+		/**
+		 * The priority of the install, as an unsigned integer. A lower number means higher priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		autoInstallPriority: FormControl<number | null | undefined>,
 
-		/** The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. You can set a minimum version code for at most 20 apps per device. */
+		/**
+		 * The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. You can set a minimum version code for at most 20 apps per device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumVersionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoInstallPolicyFormGroup() {
@@ -706,7 +736,10 @@ export namespace MyNS {
 		/** Retail brand for the device, if set. See android.os.Build.BRAND */
 		retailBrand?: string | null;
 
-		/** API compatibility version. */
+		/**
+		 * API compatibility version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sdkVersion?: number | null;
 	}
 
@@ -737,7 +770,10 @@ export namespace MyNS {
 		/** Retail brand for the device, if set. See android.os.Build.BRAND */
 		retailBrand: FormControl<string | null | undefined>,
 
-		/** API compatibility version. */
+		/**
+		 * API compatibility version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sdkVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
@@ -946,7 +982,10 @@ export namespace MyNS {
 		/** The list of bundles of properties - this will only be present if type of the property is bundle_array. */
 		valueBundleArray?: Array<ManagedPropertyBundle>;
 
-		/** The integer value - this will only be present if type of the property is integer. */
+		/**
+		 * The integer value - this will only be present if type of the property is integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInteger?: number | null;
 
 		/** The string value - this will only be present if type of the property is string, choice or hidden. */
@@ -965,7 +1004,10 @@ export namespace MyNS {
 		/** The boolean value - this will only be present if type of the property is bool. */
 		valueBool: FormControl<boolean | null | undefined>,
 
-		/** The integer value - this will only be present if type of the property is integer. */
+		/**
+		 * The integer value - this will only be present if type of the property is integer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInteger: FormControl<number | null | undefined>,
 
 		/** The string value - this will only be present if type of the property is string, choice or hidden. */
@@ -1273,10 +1315,16 @@ export namespace MyNS {
 		/** Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created. */
 		approval?: GroupLicenseApproval | null;
 
-		/** The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations. */
+		/**
+		 * The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numProvisioned?: number | null;
 
-		/** The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free"). */
+		/**
+		 * The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free").
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPurchased?: number | null;
 
 		/** The permission approval status of the product. This field is only set if the product is approved. Possible states are: - "currentApproved", the current set of permissions is approved, but additional permissions will require the administrator to reapprove the product (If the product was approved without specifying the approved permissions setting, then this is the default behavior.), - "needsReapproval", the product has unapproved permissions. No additional product licenses can be assigned until the product is reapproved, - "allCurrentAndFutureApproved", the current permissions are approved and any future permission updates will be automatically approved without administrator review. */
@@ -1295,10 +1343,16 @@ export namespace MyNS {
 		/** Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created. */
 		approval: FormControl<GroupLicenseApproval | null | undefined>,
 
-		/** The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations. */
+		/**
+		 * The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numProvisioned: FormControl<number | null | undefined>,
 
-		/** The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free"). */
+		/**
+		 * The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free").
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPurchased: FormControl<number | null | undefined>,
 
 		/** The permission approval status of the product. This field is only set if the product is approved. Possible states are: - "currentApproved", the current set of permissions is approved, but additional permissions will require the administrator to reapprove the product (If the product was approved without specifying the approved permissions setting, then this is the default behavior.), - "needsReapproval", the product has unapproved permissions. No additional product licenses can be assigned until the product is reapproved, - "allCurrentAndFutureApproved", the current permissions are approved and any future permission updates will be automatically approved without administrator review. */
@@ -1421,7 +1475,10 @@ export namespace MyNS {
 		/** The ID of the product that the install is for. For example, "app:com.google.android.gm". */
 		productId?: string | null;
 
-		/** The version of the installed product. Guaranteed to be set only if the install state is "installed". */
+		/**
+		 * The version of the installed product. Guaranteed to be set only if the install state is "installed".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 	}
 
@@ -1434,7 +1491,10 @@ export namespace MyNS {
 		/** The ID of the product that the install is for. For example, "app:com.google.android.gm". */
 		productId: FormControl<string | null | undefined>,
 
-		/** The version of the installed product. Guaranteed to be set only if the install state is "installed". */
+		/**
+		 * The version of the installed product. Guaranteed to be set only if the install state is "installed".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateInstallFormGroup() {
@@ -1834,26 +1894,44 @@ export namespace MyNS {
 	/** Information about the current page. List operations that supports paging return only one "page" of results. This protocol buffer message describes the page that has been returned. */
 	export interface PageInfo {
 
-		/** Maximum number of results returned in one page. ! The number of results included in the API response. */
+		/**
+		 * Maximum number of results returned in one page. ! The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultPerPage?: number | null;
 
-		/** Index of the first result returned in the current page. */
+		/**
+		 * Index of the first result returned in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** Total number of results available on the backend ! The total number of results in the result set. */
+		/**
+		 * Total number of results available on the backend ! The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** Information about the current page. List operations that supports paging return only one "page" of results. This protocol buffer message describes the page that has been returned. */
 	export interface PageInfoFormProperties {
 
-		/** Maximum number of results returned in one page. ! The number of results included in the API response. */
+		/**
+		 * Maximum number of results returned in one page. ! The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultPerPage: FormControl<number | null | undefined>,
 
-		/** Index of the first result returned in the current page. */
+		/**
+		 * Index of the first result returned in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** Total number of results available on the backend ! The total number of results in the result set. */
+		/**
+		 * Total number of results available on the backend ! The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePageInfoFormGroup() {
@@ -1949,7 +2027,10 @@ export namespace MyNS {
 		/** The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch. */
 		lastUpdatedTimestampMillis?: string | null;
 
-		/** The minimum Android SDK necessary to run the app. */
+		/**
+		 * The minimum Android SDK necessary to run the app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minAndroidSdkVersion?: number | null;
 
 		/** A list of permissions required by the app. */
@@ -2011,7 +2092,10 @@ export namespace MyNS {
 		/** The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch. */
 		lastUpdatedTimestampMillis: FormControl<string | null | undefined>,
 
-		/** The minimum Android SDK necessary to run the app. */
+		/**
+		 * The minimum Android SDK necessary to run the app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minAndroidSdkVersion: FormControl<number | null | undefined>,
 
 		/** A string of the form *app:<package name>*. For example, app:com.google.android.gm represents the Gmail app. */
@@ -2795,6 +2879,7 @@ export namespace MyNS {
 		 * @param {boolean} approved Specifies whether to search among all products (false) or among only products that have been approved (true). Only "true" is supported, and should be specified.
 		 * @param {string} language The BCP47 tag for the user's preferred language (e.g. "en-US", "de"). Results are returned in the language best matching the preferred language.
 		 * @param {number} maxResults Defines how many results the list operation should return. The default number depends on the resource collection.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query The search query as typed in the Google Play store search box. If omitted, all approved apps will be returned (using the pagination parameters), including apps that are not available in the store (e.g. unpublished apps).
 		 * @param {string} token Defines the token of the page to return, usually taken from TokenPagination. This can only be used if token paging is enabled.
 		 * @return {ProductsListResponse} Successful response

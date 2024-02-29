@@ -6,7 +6,9 @@ export namespace MyNS {
 	export interface CloseApproachData {
 		close_approach_date?: string | null;
 		close_approach_date_full?: string | null;
-		epoch_date_close_approach?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		epoch_date_close_approach?: string | null;
 		miss_distance?: MissDistance;
 		orbiting_body?: string | null;
 		relative_velocity?: RelVelocity;
@@ -14,14 +16,16 @@ export namespace MyNS {
 	export interface CloseApproachDataFormProperties {
 		close_approach_date: FormControl<string | null | undefined>,
 		close_approach_date_full: FormControl<string | null | undefined>,
-		epoch_date_close_approach: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		epoch_date_close_approach: FormControl<string | null | undefined>,
 		orbiting_body: FormControl<string | null | undefined>,
 	}
 	export function CreateCloseApproachDataFormGroup() {
 		return new FormGroup<CloseApproachDataFormProperties>({
 			close_approach_date: new FormControl<string | null | undefined>(undefined),
 			close_approach_date_full: new FormControl<string | null | undefined>(undefined),
-			epoch_date_close_approach: new FormControl<number | null | undefined>(undefined),
+			epoch_date_close_approach: new FormControl<string | null | undefined>(undefined),
 			orbiting_body: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -67,18 +71,30 @@ export namespace MyNS {
 
 	export interface EstimatedDiameter {
 
-		/** An estimate of the maximum size of the Asteroid - bases on the abosolute magnitude */
+		/**
+		 * An estimate of the maximum size of the Asteroid - bases on the abosolute magnitude
+		 * Type: double
+		 */
 		estimated_diameter_max?: number | null;
 
-		/** An estimate of the minimum size of the Asteroid - bases on the abosolute magnitude */
+		/**
+		 * An estimate of the minimum size of the Asteroid - bases on the abosolute magnitude
+		 * Type: double
+		 */
 		estimated_diameter_min?: number | null;
 	}
 	export interface EstimatedDiameterFormProperties {
 
-		/** An estimate of the maximum size of the Asteroid - bases on the abosolute magnitude */
+		/**
+		 * An estimate of the maximum size of the Asteroid - bases on the abosolute magnitude
+		 * Type: double
+		 */
 		estimated_diameter_max: FormControl<number | null | undefined>,
 
-		/** An estimate of the minimum size of the Asteroid - bases on the abosolute magnitude */
+		/**
+		 * An estimate of the minimum size of the Asteroid - bases on the abosolute magnitude
+		 * Type: double
+		 */
 		estimated_diameter_min: FormControl<number | null | undefined>,
 	}
 	export function CreateEstimatedDiameterFormGroup() {
@@ -115,7 +131,10 @@ export namespace MyNS {
 
 	export interface NearEarthObject {
 
-		/** Is a measure of an asteroids brightness */
+		/**
+		 * Is a measure of an asteroids brightness
+		 * Type: double
+		 */
 		absolute_magnitude_h?: number | null;
 
 		/** Close approach information of the Asteroid */
@@ -137,7 +156,10 @@ export namespace MyNS {
 	}
 	export interface NearEarthObjectFormProperties {
 
-		/** Is a measure of an asteroids brightness */
+		/**
+		 * Is a measure of an asteroids brightness
+		 * Type: double
+		 */
 		absolute_magnitude_h: FormControl<number | null | undefined>,
 		designation: FormControl<string | null | undefined>,
 		is_potentially_hazardous_asteroid: FormControl<boolean | null | undefined>,
@@ -170,7 +192,9 @@ export namespace MyNS {
 	export interface OrbitalData {
 		aphelion_distance?: string | null;
 		ascending_node_longitude?: string | null;
-		data_arc_in_days?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		data_arc_in_days?: string | null;
 		eccentricity?: string | null;
 		epoch_osculation?: string | null;
 		equinox?: string | null;
@@ -181,7 +205,9 @@ export namespace MyNS {
 		mean_anomaly?: string | null;
 		mean_motion?: string | null;
 		minimum_orbit_intersection?: string | null;
-		observations_used?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		observations_used?: string | null;
 		orbit_class?: OrbitClass;
 		orbit_determination_date?: string | null;
 		orbit_id?: string | null;
@@ -195,7 +221,9 @@ export namespace MyNS {
 	export interface OrbitalDataFormProperties {
 		aphelion_distance: FormControl<string | null | undefined>,
 		ascending_node_longitude: FormControl<string | null | undefined>,
-		data_arc_in_days: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		data_arc_in_days: FormControl<string | null | undefined>,
 		eccentricity: FormControl<string | null | undefined>,
 		epoch_osculation: FormControl<string | null | undefined>,
 		equinox: FormControl<string | null | undefined>,
@@ -206,7 +234,9 @@ export namespace MyNS {
 		mean_anomaly: FormControl<string | null | undefined>,
 		mean_motion: FormControl<string | null | undefined>,
 		minimum_orbit_intersection: FormControl<string | null | undefined>,
-		observations_used: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		observations_used: FormControl<string | null | undefined>,
 		orbit_determination_date: FormControl<string | null | undefined>,
 		orbit_id: FormControl<string | null | undefined>,
 		orbit_uncertainty: FormControl<string | null | undefined>,
@@ -220,7 +250,7 @@ export namespace MyNS {
 		return new FormGroup<OrbitalDataFormProperties>({
 			aphelion_distance: new FormControl<string | null | undefined>(undefined),
 			ascending_node_longitude: new FormControl<string | null | undefined>(undefined),
-			data_arc_in_days: new FormControl<number | null | undefined>(undefined),
+			data_arc_in_days: new FormControl<string | null | undefined>(undefined),
 			eccentricity: new FormControl<string | null | undefined>(undefined),
 			epoch_osculation: new FormControl<string | null | undefined>(undefined),
 			equinox: new FormControl<string | null | undefined>(undefined),
@@ -231,7 +261,7 @@ export namespace MyNS {
 			mean_anomaly: new FormControl<string | null | undefined>(undefined),
 			mean_motion: new FormControl<string | null | undefined>(undefined),
 			minimum_orbit_intersection: new FormControl<string | null | undefined>(undefined),
-			observations_used: new FormControl<number | null | undefined>(undefined),
+			observations_used: new FormControl<string | null | undefined>(undefined),
 			orbit_determination_date: new FormControl<string | null | undefined>(undefined),
 			orbit_id: new FormControl<string | null | undefined>(undefined),
 			orbit_uncertainty: new FormControl<string | null | undefined>(undefined),
@@ -267,7 +297,10 @@ export namespace MyNS {
 
 	export interface NearEarthObjectList {
 
-		/** Number of NEOs in list */
+		/**
+		 * Number of NEOs in list
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		element_count?: number | null;
 
 		/** Hypermedia links to collection */
@@ -276,7 +309,10 @@ export namespace MyNS {
 	}
 	export interface NearEarthObjectListFormProperties {
 
-		/** Number of NEOs in list */
+		/**
+		 * Number of NEOs in list
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		element_count: FormControl<number | null | undefined>,
 
 		/** Hypermedia links to collection */
@@ -291,23 +327,39 @@ export namespace MyNS {
 	}
 
 	export interface PageMetaData {
-		number?: number | null;
-		size?: number | null;
-		total_elements?: number | null;
-		total_pages?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_elements?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_pages?: string | null;
 	}
 	export interface PageMetaDataFormProperties {
-		number: FormControl<number | null | undefined>,
-		size: FormControl<number | null | undefined>,
-		total_elements: FormControl<number | null | undefined>,
-		total_pages: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_elements: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_pages: FormControl<string | null | undefined>,
 	}
 	export function CreatePageMetaDataFormGroup() {
 		return new FormGroup<PageMetaDataFormProperties>({
-			number: new FormControl<number | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
-			total_elements: new FormControl<number | null | undefined>(undefined),
-			total_pages: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
+			total_elements: new FormControl<string | null | undefined>(undefined),
+			total_pages: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -315,6 +367,8 @@ export namespace MyNS {
 	export interface SentryImpactRiskObject {
 		Palermo_scale_max?: string | null;
 		absolute_magnitude?: string | null;
+
+		/** Type: double */
 		average_lunar_distance?: number | null;
 		designation?: string | null;
 		estimated_diameter?: string | null;
@@ -335,6 +389,8 @@ export namespace MyNS {
 	export interface SentryImpactRiskObjectFormProperties {
 		Palermo_scale_max: FormControl<string | null | undefined>,
 		absolute_magnitude: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		average_lunar_distance: FormControl<number | null | undefined>,
 		designation: FormControl<string | null | undefined>,
 		estimated_diameter: FormControl<string | null | undefined>,
@@ -393,34 +449,46 @@ export namespace MyNS {
 
 	export interface Statistics {
 
-		/** Number of Close Approach listings across all NEOs listed in NeoWs */
-		close_approach_count?: number | null;
+		/**
+		 * Number of Close Approach listings across all NEOs listed in NeoWs
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		close_approach_count?: string | null;
 
 		/** TimeStamp the last time the DB was updated */
 		last_updated?: string | null;
 		nasa_jpl_url?: URL;
 
-		/** Number of NearEarthObjects listed in NeoWs */
-		near_earth_object_count?: number | null;
+		/**
+		 * Number of NearEarthObjects listed in NeoWs
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		near_earth_object_count?: string | null;
 		source?: string | null;
 	}
 	export interface StatisticsFormProperties {
 
-		/** Number of Close Approach listings across all NEOs listed in NeoWs */
-		close_approach_count: FormControl<number | null | undefined>,
+		/**
+		 * Number of Close Approach listings across all NEOs listed in NeoWs
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		close_approach_count: FormControl<string | null | undefined>,
 
 		/** TimeStamp the last time the DB was updated */
 		last_updated: FormControl<string | null | undefined>,
 
-		/** Number of NearEarthObjects listed in NeoWs */
-		near_earth_object_count: FormControl<number | null | undefined>,
+		/**
+		 * Number of NearEarthObjects listed in NeoWs
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		near_earth_object_count: FormControl<string | null | undefined>,
 		source: FormControl<string | null | undefined>,
 	}
 	export function CreateStatisticsFormGroup() {
 		return new FormGroup<StatisticsFormProperties>({
-			close_approach_count: new FormControl<number | null | undefined>(undefined),
+			close_approach_count: new FormControl<string | null | undefined>(undefined),
 			last_updated: new FormControl<string | null | undefined>(undefined),
-			near_earth_object_count: new FormControl<number | null | undefined>(undefined),
+			near_earth_object_count: new FormControl<string | null | undefined>(undefined),
 			source: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -429,10 +497,14 @@ export namespace MyNS {
 	export interface URL {
 		authority?: string | null;
 		content?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultPort?: number | null;
 		file?: string | null;
 		host?: string | null;
 		path?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		protocol?: string | null;
 		query?: string | null;
@@ -442,10 +514,14 @@ export namespace MyNS {
 	export interface URLFormProperties {
 		authority: FormControl<string | null | undefined>,
 		content: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultPort: FormControl<number | null | undefined>,
 		file: FormControl<string | null | undefined>,
 		host: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		protocol: FormControl<string | null | undefined>,
 		query: FormControl<string | null | undefined>,
@@ -503,7 +579,9 @@ export namespace MyNS {
 		 * Retieve a paginated list of Near Earth Objects
 		 * Get rest/v1/neo/browse
 		 * @param {number} page page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {NearEarthObject} OK
 		 */
 		BrowseNearEarthObjects(page: number | null | undefined, size: number | null | undefined): Observable<NearEarthObject> {
@@ -516,7 +594,9 @@ export namespace MyNS {
 		 * Get rest/v1/neo/sentry
 		 * @param {boolean} is_active show current list of Sentry objects, or show removed Sentry objects
 		 * @param {number} page page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SentryObjectPagingDto} OK
 		 */
 		RetrieveSentryRiskData(is_active: boolean | null | undefined, page: number | null | undefined, size: number | null | undefined): Observable<SentryObjectPagingDto> {

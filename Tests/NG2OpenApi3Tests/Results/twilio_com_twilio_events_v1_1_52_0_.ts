@@ -63,7 +63,10 @@ export namespace MyNS {
 		/** The unique identifier of the schema. Each schema can have multiple versions, that share the same id. */
 		id?: string | null;
 
-		/** The latest version published of this schema. */
+		/**
+		 * The latest version published of this schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latest_version?: number | null;
 
 		/** The date that the latest schema version was created, given in ISO 8601 format. */
@@ -80,7 +83,10 @@ export namespace MyNS {
 		/** The unique identifier of the schema. Each schema can have multiple versions, that share the same id. */
 		id: FormControl<string | null | undefined>,
 
-		/** The latest version published of this schema. */
+		/**
+		 * The latest version published of this schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latest_version: FormControl<number | null | undefined>,
 
 		/** The date that the latest schema version was created, given in ISO 8601 format. */
@@ -112,7 +118,10 @@ export namespace MyNS {
 		id?: string | null;
 		raw?: string | null;
 
-		/** The version of this schema. */
+		/**
+		 * The version of this schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schema_version?: number | null;
 
 		/** The URL of this resource. */
@@ -127,7 +136,10 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		raw: FormControl<string | null | undefined>,
 
-		/** The version of this schema. */
+		/**
+		 * The version of this schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schema_version: FormControl<number | null | undefined>,
 
 		/** The URL of this resource. */
@@ -160,8 +172,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Sink.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -189,8 +201,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Sink.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -259,8 +271,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -278,15 +290,15 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Subscription.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the sink that events selected by this subscription should be sent to. Sink must be active for the subscription to be created.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sink_sid?: string | null;
 
@@ -297,8 +309,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -316,15 +328,15 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Subscription.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the sink that events selected by this subscription should be sent to. Sink must be active for the subscription to be created.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sink_sid: FormControl<string | null | undefined>,
 
@@ -349,18 +361,21 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
-		/** The schema version that the Subscription should use. */
+		/**
+		 * The schema version that the Subscription should use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schema_version?: number | null;
 
 		/**
 		 * The unique SID identifier of the Subscription.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		subscription_sid?: string | null;
 
@@ -374,18 +389,21 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
-		/** The schema version that the Subscription should use. */
+		/**
+		 * The schema version that the Subscription should use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schema_version: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Subscription.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		subscription_sid: FormControl<string | null | undefined>,
 
@@ -430,7 +448,9 @@ export namespace MyNS {
 		 * Get v1/Schemas/{Id}/Versions
 		 * @param {string} Id The unique identifier of the schema. Each schema can have multiple versions, that share the same id.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSchemaVersionReturn} OK
 		 */
@@ -443,6 +463,7 @@ export namespace MyNS {
 		 * Get v1/Schemas/{Id}/Versions/{SchemaVersion}
 		 * @param {string} Id The unique identifier of the schema. Each schema can have multiple versions, that share the same id.
 		 * @param {number} SchemaVersion The version of the schema
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Eventsv1schemaschema_version} OK
 		 */
 		FetchSchemaVersion(Id: string, SchemaVersion: number): Observable<Eventsv1schemaschema_version> {
@@ -455,7 +476,9 @@ export namespace MyNS {
 		 * @param {boolean} InUse A boolean query parameter filtering the results to return sinks used/not used by a subscription.
 		 * @param {string} Status A String query parameter filtering the results by status `initialized`, `validating`, `active` or `failed`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSinkReturn} OK
 		 */
@@ -467,6 +490,7 @@ export namespace MyNS {
 		 * Delete a specific Sink.
 		 * Delete v1/Sinks/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Sink.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteSink(Sid: string): Observable<HttpResponse<string>> {
@@ -477,6 +501,7 @@ export namespace MyNS {
 		 * Fetch a specific Sink.
 		 * Get v1/Sinks/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Sink.
+		 *     Min length: 34    Max length: 34
 		 * @return {Eventsv1sink} OK
 		 */
 		FetchSink(Sid: string): Observable<Eventsv1sink> {
@@ -487,6 +512,7 @@ export namespace MyNS {
 		 * Create a new Sink Test Event for the given Sink.
 		 * Post v1/Sinks/{Sid}/Test
 		 * @param {string} Sid A 34 character string that uniquely identifies the Sink to be Tested.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		CreateSinkTest(Sid: string): Observable<HttpResponse<string>> {
@@ -497,8 +523,11 @@ export namespace MyNS {
 		 * Retrieve a paginated list of Subscriptions belonging to the account used to make the request.
 		 * Get v1/Subscriptions
 		 * @param {string} SinkSid The SID of the sink that the list of Subscriptions should be filtered by.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSubscriptionReturn} OK
 		 */
@@ -510,6 +539,7 @@ export namespace MyNS {
 		 * Delete a specific Subscription.
 		 * Delete v1/Subscriptions/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Subscription.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteSubscription(Sid: string): Observable<HttpResponse<string>> {
@@ -520,6 +550,7 @@ export namespace MyNS {
 		 * Fetch a specific Subscription.
 		 * Get v1/Subscriptions/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Subscription.
+		 *     Min length: 34    Max length: 34
 		 * @return {Eventsv1subscription} OK
 		 */
 		FetchSubscription(Sid: string): Observable<Eventsv1subscription> {
@@ -530,8 +561,11 @@ export namespace MyNS {
 		 * Retrieve a list of all Subscribed Event types for a Subscription.
 		 * Get v1/Subscriptions/{SubscriptionSid}/SubscribedEvents
 		 * @param {string} SubscriptionSid The unique SID identifier of the Subscription.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSubscribedEventReturn} OK
 		 */
@@ -543,6 +577,7 @@ export namespace MyNS {
 		 * Remove an event type from a Subscription.
 		 * Delete v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		 * @param {string} SubscriptionSid The unique SID identifier of the Subscription.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Type Type of event being subscribed to.
 		 * @return {void} 
 		 */
@@ -554,6 +589,7 @@ export namespace MyNS {
 		 * Read an Event for a Subscription.
 		 * Get v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		 * @param {string} SubscriptionSid The unique SID identifier of the Subscription.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Type Type of event being subscribed to.
 		 * @return {Eventsv1subscriptionsubscribed_event} OK
 		 */
@@ -566,7 +602,9 @@ export namespace MyNS {
 		 * Get v1/Types
 		 * @param {string} SchemaId A string parameter filtering the results to return only the Event Types using a given schema.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListEventTypeReturn} OK
 		 */
@@ -601,7 +639,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -610,7 +652,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -644,7 +690,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -653,7 +703,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -687,7 +741,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -696,7 +754,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -730,7 +792,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -739,7 +805,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -773,7 +843,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -782,7 +856,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

@@ -58,14 +58,20 @@ export namespace MyNS {
 	/** HTTP request data that is related to a reported error. */
 	export interface GoogleCloudDiscoveryengineLoggingHttpRequestContext {
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode?: number | null;
 	}
 
 	/** HTTP request data that is related to a reported error. */
 	export interface GoogleCloudDiscoveryengineLoggingHttpRequestContextFormProperties {
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineLoggingHttpRequestContextFormGroup() {
@@ -217,7 +223,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -230,7 +239,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1531,7 +1543,10 @@ export namespace MyNS {
 		/** Required. The name of the field to target. Currently supported values: `watch-percentage`, `watch-time`. */
 		targetField?: string | null;
 
-		/** Required. The threshold to be applied to the target (e.g., 0.5). */
+		/**
+		 * Required. The threshold to be applied to the target (e.g., 0.5).
+		 * Type: float
+		 */
 		targetFieldValueFloat?: number | null;
 	}
 
@@ -1541,7 +1556,10 @@ export namespace MyNS {
 		/** Required. The name of the field to target. Currently supported values: `watch-percentage`, `watch-time`. */
 		targetField: FormControl<string | null | undefined>,
 
-		/** Required. The threshold to be applied to the target (e.g., 0.5). */
+		/**
+		 * Required. The threshold to be applied to the target (e.g., 0.5).
+		 * Type: float
+		 */
 		targetFieldValueFloat: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigOptimizationObjectiveConfigFormGroup() {
@@ -2191,19 +2209,31 @@ export namespace MyNS {
 		/** Unique URIs in the request that don't match any TargetSite in the DataStore, only match TargetSites that haven't been fully indexed, or match a TargetSite with type EXCLUDE. */
 		invalidUris?: Array<string>;
 
-		/** Total number of URIs that have yet to be crawled. */
+		/**
+		 * Total number of URIs that have yet to be crawled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingCount?: number | null;
 
-		/** Total number of URIs that were rejected due to insufficient indexing resources. */
+		/**
+		 * Total number of URIs that were rejected due to insufficient indexing resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quotaExceededCount?: number | null;
 
-		/** Total number of URIs that have been crawled so far. */
+		/**
+		 * Total number of URIs that have been crawled so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successCount?: number | null;
 
 		/** Operation last update time. If the operation is done, this is also the finish time. */
 		updateTime?: string | null;
 
-		/** Total number of unique URIs in the request that are not in invalid_uris. */
+		/**
+		 * Total number of unique URIs in the request that are not in invalid_uris.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validUrisCount?: number | null;
 	}
 
@@ -2213,19 +2243,31 @@ export namespace MyNS {
 		/** Operation create time. */
 		createTime: FormControl<string | null | undefined>,
 
-		/** Total number of URIs that have yet to be crawled. */
+		/**
+		 * Total number of URIs that have yet to be crawled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingCount: FormControl<number | null | undefined>,
 
-		/** Total number of URIs that were rejected due to insufficient indexing resources. */
+		/**
+		 * Total number of URIs that were rejected due to insufficient indexing resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quotaExceededCount: FormControl<number | null | undefined>,
 
-		/** Total number of URIs that have been crawled so far. */
+		/**
+		 * Total number of URIs that have been crawled so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successCount: FormControl<number | null | undefined>,
 
 		/** Operation last update time. If the operation is done, this is also the finish time. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Total number of unique URIs in the request that are not in invalid_uris. */
+		/**
+		 * Total number of unique URIs in the request that are not in invalid_uris.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validUrisCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1alphaRecrawlUrisMetadataFormGroup() {
@@ -2554,26 +2596,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -2637,7 +2697,10 @@ export namespace MyNS {
 	/** Detailed completion information including completion attribution token and clicked completion info. */
 	export interface GoogleCloudDiscoveryengineV1betaCompletionInfo {
 
-		/** End user selected CompleteQueryResponse.QuerySuggestion.suggestion position, starting from 0. */
+		/**
+		 * End user selected CompleteQueryResponse.QuerySuggestion.suggestion position, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		selectedPosition?: number | null;
 
 		/** End user selected CompleteQueryResponse.QuerySuggestion.suggestion. */
@@ -2647,7 +2710,10 @@ export namespace MyNS {
 	/** Detailed completion information including completion attribution token and clicked completion info. */
 	export interface GoogleCloudDiscoveryengineV1betaCompletionInfoFormProperties {
 
-		/** End user selected CompleteQueryResponse.QuerySuggestion.suggestion position, starting from 0. */
+		/**
+		 * End user selected CompleteQueryResponse.QuerySuggestion.suggestion position, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		selectedPosition: FormControl<number | null | undefined>,
 
 		/** End user selected CompleteQueryResponse.QuerySuggestion.suggestion. */
@@ -2774,10 +2840,16 @@ export namespace MyNS {
 		/** Anchor text. */
 		anchorText?: string | null;
 
-		/** Anchor text end index. */
+		/**
+		 * Anchor text end index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** Anchor text start index. */
+		/**
+		 * Anchor text start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 
 		/** URI link reference. */
@@ -2790,10 +2862,16 @@ export namespace MyNS {
 		/** Anchor text. */
 		anchorText: FormControl<string | null | undefined>,
 
-		/** Anchor text end index. */
+		/**
+		 * Anchor text end index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Anchor text start index. */
+		/**
+		 * Anchor text start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 
 		/** URI link reference. */
@@ -3113,7 +3191,10 @@ export namespace MyNS {
 		/** Specification of the model. */
 		modelSpec?: GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec;
 
-		/** The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most five results can be used to generate a summary. */
+		/**
+		 * The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most five results can be used to generate a summary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryResultCount?: number | null;
 	}
 
@@ -3132,7 +3213,10 @@ export namespace MyNS {
 		/** Language code for Summary. Use language tags defined by [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). Note: This is an experimental feature. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most five results can be used to generate a summary. */
+		/**
+		 * The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most five results can be used to generate a summary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryResultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecFormGroup() {
@@ -3452,7 +3536,10 @@ export namespace MyNS {
 		/** The promotion IDs associated with this Document. Currently, this field is restricted to at most one ID. */
 		promotionIds?: Array<string>;
 
-		/** Quantity of the Document associated with the user event. Defaults to 1. For example, this field will be 2 if two quantities of the same Document are involved in a `add-to-cart` event. Required for events of the following event types: * `add-to-cart` * `purchase` */
+		/**
+		 * Quantity of the Document associated with the user event. Defaults to 1. For example, this field will be 2 if two quantities of the same Document are involved in a `add-to-cart` event. Required for events of the following event types: * `add-to-cart` * `purchase`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** The Document URI - only allowed for website data stores. */
@@ -3468,7 +3555,10 @@ export namespace MyNS {
 		/** The Document resource full name, of the form: `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Quantity of the Document associated with the user event. Defaults to 1. For example, this field will be 2 if two quantities of the same Document are involved in a `add-to-cart` event. Required for events of the following event types: * `add-to-cart` * `purchase` */
+		/**
+		 * Quantity of the Document associated with the user event. Defaults to 1. For example, this field will be 2 if two quantities of the same Document are involved in a `add-to-cart` event. Required for events of the following event types: * `add-to-cart` * `purchase`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The Document URI - only allowed for website data stores. */
@@ -3975,7 +4065,10 @@ export namespace MyNS {
 		/** The media progress time in seconds, if applicable. For example, if the end user has finished 90 seconds of a playback video, then MediaInfo.media_progress_duration.seconds should be set to 90. */
 		mediaProgressDuration?: string | null;
 
-		/** Media progress should be computed using only the media_progress_duration relative to the media total length. This value must be between `[0, 1.0]` inclusive. If this is not a playback or the progress cannot be computed (e.g. ongoing livestream), this field should be unset. */
+		/**
+		 * Media progress should be computed using only the media_progress_duration relative to the media total length. This value must be between `[0, 1.0]` inclusive. If this is not a playback or the progress cannot be computed (e.g. ongoing livestream), this field should be unset.
+		 * Type: float
+		 */
 		mediaProgressPercentage?: number | null;
 	}
 
@@ -3985,7 +4078,10 @@ export namespace MyNS {
 		/** The media progress time in seconds, if applicable. For example, if the end user has finished 90 seconds of a playback video, then MediaInfo.media_progress_duration.seconds should be set to 90. */
 		mediaProgressDuration: FormControl<string | null | undefined>,
 
-		/** Media progress should be computed using only the media_progress_duration relative to the media total length. This value must be between `[0, 1.0]` inclusive. If this is not a playback or the progress cannot be computed (e.g. ongoing livestream), this field should be unset. */
+		/**
+		 * Media progress should be computed using only the media_progress_duration relative to the media total length. This value must be between `[0, 1.0]` inclusive. If this is not a playback or the progress cannot be computed (e.g. ongoing livestream), this field should be unset.
+		 * Type: float
+		 */
 		mediaProgressPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaMediaInfoFormGroup() {
@@ -4048,10 +4144,16 @@ export namespace MyNS {
 		/** Required. The panel ID. */
 		panelId?: string | null;
 
-		/** The ordered position of the panel, if shown to the user with other panels. If set, then total_panels must also be set. */
+		/**
+		 * The ordered position of the panel, if shown to the user with other panels. If set, then total_panels must also be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panelPosition?: number | null;
 
-		/** The total number of panels, including this one, shown to the user. Must be set if panel_position is set. */
+		/**
+		 * The total number of panels, including this one, shown to the user. Must be set if panel_position is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPanels?: number | null;
 	}
 
@@ -4064,10 +4166,16 @@ export namespace MyNS {
 		/** Required. The panel ID. */
 		panelId: FormControl<string | null | undefined>,
 
-		/** The ordered position of the panel, if shown to the user with other panels. If set, then total_panels must also be set. */
+		/**
+		 * The ordered position of the panel, if shown to the user with other panels. If set, then total_panels must also be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panelPosition: FormControl<number | null | undefined>,
 
-		/** The total number of panels, including this one, shown to the user. Must be set if panel_position is set. */
+		/**
+		 * The total number of panels, including this one, shown to the user. Must be set if panel_position is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPanels: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaPanelInfoFormGroup() {
@@ -4084,7 +4192,10 @@ export namespace MyNS {
 	/** Detailed search information. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchInfo {
 
-		/** An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an `INVALID_ARGUMENT` is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned. */
+		/**
+		 * An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an `INVALID_ARGUMENT` is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order in which products are returned, if applicable. See SearchRequest.order_by for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an `INVALID_ARGUMENT` error is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned. */
@@ -4097,7 +4208,10 @@ export namespace MyNS {
 	/** Detailed search information. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchInfoFormProperties {
 
-		/** An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an `INVALID_ARGUMENT` is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned. */
+		/**
+		 * An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an `INVALID_ARGUMENT` is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The order in which products are returned, if applicable. See SearchRequest.order_by for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an `INVALID_ARGUMENT` error is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an `INVALID_ARGUMENT` error is returned. */
@@ -4119,44 +4233,68 @@ export namespace MyNS {
 	/** A transaction represents the entire purchase transaction. */
 	export interface GoogleCloudDiscoveryengineV1betaTransactionInfo {
 
-		/** All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = value - tax - cost */
+		/**
+		 * All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = value - tax - cost
+		 * Type: float
+		 */
 		cost?: number | null;
 
 		/** Required. Currency code. Use three-character ISO-4217 code. */
 		currency?: string | null;
 
-		/** The total discount(s) value applied to this transaction. This figure should be excluded from TransactionInfo.value For example, if a user paid TransactionInfo.value amount, then nominal (pre-discount) value of the transaction is the sum of TransactionInfo.value and TransactionInfo.discount_value This means that profit is calculated the same way, regardless of the discount value, and that TransactionInfo.discount_value can be larger than TransactionInfo.value: * Profit = value - tax - cost */
+		/**
+		 * The total discount(s) value applied to this transaction. This figure should be excluded from TransactionInfo.value For example, if a user paid TransactionInfo.value amount, then nominal (pre-discount) value of the transaction is the sum of TransactionInfo.value and TransactionInfo.discount_value This means that profit is calculated the same way, regardless of the discount value, and that TransactionInfo.discount_value can be larger than TransactionInfo.value: * Profit = value - tax - cost
+		 * Type: float
+		 */
 		discountValue?: number | null;
 
-		/** All the taxes associated with the transaction. */
+		/**
+		 * All the taxes associated with the transaction.
+		 * Type: float
+		 */
 		tax?: number | null;
 
 		/** The transaction ID with a length limit of 128 characters. */
 		transactionId?: string | null;
 
-		/** Required. Total non-zero value associated with the transaction. This value may include shipping, tax, or other adjustments to the total value that you want to include. */
+		/**
+		 * Required. Total non-zero value associated with the transaction. This value may include shipping, tax, or other adjustments to the total value that you want to include.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
 	/** A transaction represents the entire purchase transaction. */
 	export interface GoogleCloudDiscoveryengineV1betaTransactionInfoFormProperties {
 
-		/** All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = value - tax - cost */
+		/**
+		 * All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = value - tax - cost
+		 * Type: float
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Required. Currency code. Use three-character ISO-4217 code. */
 		currency: FormControl<string | null | undefined>,
 
-		/** The total discount(s) value applied to this transaction. This figure should be excluded from TransactionInfo.value For example, if a user paid TransactionInfo.value amount, then nominal (pre-discount) value of the transaction is the sum of TransactionInfo.value and TransactionInfo.discount_value This means that profit is calculated the same way, regardless of the discount value, and that TransactionInfo.discount_value can be larger than TransactionInfo.value: * Profit = value - tax - cost */
+		/**
+		 * The total discount(s) value applied to this transaction. This figure should be excluded from TransactionInfo.value For example, if a user paid TransactionInfo.value amount, then nominal (pre-discount) value of the transaction is the sum of TransactionInfo.value and TransactionInfo.discount_value This means that profit is calculated the same way, regardless of the discount value, and that TransactionInfo.discount_value can be larger than TransactionInfo.value: * Profit = value - tax - cost
+		 * Type: float
+		 */
 		discountValue: FormControl<number | null | undefined>,
 
-		/** All the taxes associated with the transaction. */
+		/**
+		 * All the taxes associated with the transaction.
+		 * Type: float
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** The transaction ID with a length limit of 128 characters. */
 		transactionId: FormControl<string | null | undefined>,
 
-		/** Required. Total non-zero value associated with the transaction. This value may include shipping, tax, or other adjustments to the total value that you want to include. */
+		/**
+		 * Required. Total non-zero value associated with the transaction. This value may include shipping, tax, or other adjustments to the total value that you want to include.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaTransactionInfoFormGroup() {
@@ -4237,32 +4375,56 @@ export namespace MyNS {
 	/** A floating point interval. */
 	export interface GoogleCloudDiscoveryengineV1betaInterval {
 
-		/** Exclusive upper bound. */
+		/**
+		 * Exclusive upper bound.
+		 * Type: double
+		 */
 		exclusiveMaximum?: number | null;
 
-		/** Exclusive lower bound. */
+		/**
+		 * Exclusive lower bound.
+		 * Type: double
+		 */
 		exclusiveMinimum?: number | null;
 
-		/** Inclusive upper bound. */
+		/**
+		 * Inclusive upper bound.
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** Inclusive lower bound. */
+		/**
+		 * Inclusive lower bound.
+		 * Type: double
+		 */
 		minimum?: number | null;
 	}
 
 	/** A floating point interval. */
 	export interface GoogleCloudDiscoveryengineV1betaIntervalFormProperties {
 
-		/** Exclusive upper bound. */
+		/**
+		 * Exclusive upper bound.
+		 * Type: double
+		 */
 		exclusiveMaximum: FormControl<number | null | undefined>,
 
-		/** Exclusive lower bound. */
+		/**
+		 * Exclusive lower bound.
+		 * Type: double
+		 */
 		exclusiveMinimum: FormControl<number | null | undefined>,
 
-		/** Inclusive upper bound. */
+		/**
+		 * Inclusive upper bound.
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Inclusive lower bound. */
+		/**
+		 * Inclusive lower bound.
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaIntervalFormGroup() {
@@ -4549,7 +4711,10 @@ export namespace MyNS {
 		/** Filter for restricting recommendation results with a length limit of 5,000 characters. Currently, only filter expressions on the `filter_tags` attribute is supported. Examples: * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))` * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))` If `attributeFilteringSyntax` is set to true under the `params` field, then attribute-based expressions are expected instead of the above described tag-based syntax. Examples: * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie")) * (available: true) AND (launguage: ANY("en", "es")) OR (categories: ANY("Movie")) If your filter blocks all results, the API will return generic (unfiltered) popular Documents. If you only want results strictly matching the filters, set `strictFiltering` to True in RecommendRequest.params to receive empty results instead. Note that the API will never return Documents with `storageStatus` of `EXPIRED` or `DELETED` regardless of filter choices. */
 		filter?: string | null;
 
-		/** Maximum number of results to return. Set this property to the number of recommendation results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100. */
+		/**
+		 * Maximum number of results to return. Set this property to the number of recommendation results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Additional domain specific parameters for the recommendations. Allowed values: * `returnDocument`: Boolean. If set to true, the associated Document object will be returned in RecommendResponse.RecommendationResult.document. * `returnScore`: Boolean. If set to true, the recommendation 'score' corresponding to each returned Document will be set in RecommendResponse.RecommendationResult.metadata. The given 'score' indicates the probability of a Document conversion given the user's context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular Documents instead of empty if your filter blocks all recommendation results. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of: * `no-diversity` * `low-diversity` * `medium-diversity` * `high-diversity` * `auto-diversity` This gives request-level control and adjusts recommendation results based on Document category. * `attributeFilteringSyntax`: Boolean. False by default. If set to true, the `filter` field is interpreted according to the new, attribute-based syntax. */
@@ -4571,7 +4736,10 @@ export namespace MyNS {
 		/** Filter for restricting recommendation results with a length limit of 5,000 characters. Currently, only filter expressions on the `filter_tags` attribute is supported. Examples: * `(filter_tags: ANY("Red", "Blue") OR filter_tags: ANY("Hot", "Cold"))` * `(filter_tags: ANY("Red", "Blue")) AND NOT (filter_tags: ANY("Green"))` If `attributeFilteringSyntax` is set to true under the `params` field, then attribute-based expressions are expected instead of the above described tag-based syntax. Examples: * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie")) * (available: true) AND (launguage: ANY("en", "es")) OR (categories: ANY("Movie")) If your filter blocks all results, the API will return generic (unfiltered) popular Documents. If you only want results strictly matching the filters, set `strictFiltering` to True in RecommendRequest.params to receive empty results instead. Note that the API will never return Documents with `storageStatus` of `EXPIRED` or `DELETED` regardless of filter choices. */
 		filter: FormControl<string | null | undefined>,
 
-		/** Maximum number of results to return. Set this property to the number of recommendation results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100. */
+		/**
+		 * Maximum number of results to return. Set this property to the number of recommendation results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Additional domain specific parameters for the recommendations. Allowed values: * `returnDocument`: Boolean. If set to true, the associated Document object will be returned in RecommendResponse.RecommendationResult.document. * `returnScore`: Boolean. If set to true, the recommendation 'score' corresponding to each returned Document will be set in RecommendResponse.RecommendationResult.metadata. The given 'score' indicates the probability of a Document conversion given the user's context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular Documents instead of empty if your filter blocks all recommendation results. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of: * `no-diversity` * `low-diversity` * `medium-diversity` * `high-diversity` * `auto-diversity` This gives request-level control and adjusts recommendation results based on Document category. * `attributeFilteringSyntax`: Boolean. False by default. If set to true, the `filter` field is interpreted according to the new, attribute-based syntax. */
@@ -4687,13 +4855,19 @@ export namespace MyNS {
 		/** Specifies the image query input. */
 		imageQuery?: GoogleCloudDiscoveryengineV1betaSearchRequestImageQuery;
 
-		/** A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Documents deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Documents deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order in which documents are returned. Documents can be ordered by a field in an Document object. Leave it unset if ordered by relevance. `order_by` expression is case-sensitive. For more information on ordering, see [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order) If this field is unrecognizable, an `INVALID_ARGUMENT` is returned. */
 		orderBy?: string | null;
 
-		/** Maximum number of Documents to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 100. Values above 100 are coerced to 100. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * Maximum number of Documents to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 100. Values above 100 are coerced to 100. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A page token received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an `INVALID_ARGUMENT` error is returned. */
@@ -4739,13 +4913,19 @@ export namespace MyNS {
 		/** The filter syntax consists of an expression language for constructing a predicate from one or more fields of the documents being filtered. Filter expression is case-sensitive. If this field is unrecognizable, an `INVALID_ARGUMENT` is returned. Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema. For example a media customer might have a field 'name' in their schema. In this case the filter would look like this: filter --> name:'ANY("king kong")' For more information about filtering including syntax and filter operators, see [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata) */
 		filter: FormControl<string | null | undefined>,
 
-		/** A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Documents deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Documents deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The order in which documents are returned. Documents can be ordered by a field in an Document object. Leave it unset if ordered by relevance. `order_by` expression is case-sensitive. For more information on ordering, see [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order) If this field is unrecognizable, an `INVALID_ARGUMENT` is returned. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** Maximum number of Documents to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 100. Values above 100 are coerced to 100. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * Maximum number of Documents to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 100. Values above 100 are coerced to 100. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A page token received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an `INVALID_ARGUMENT` error is returned. */
@@ -4809,7 +4989,10 @@ export namespace MyNS {
 	/** Boost applies to documents which match a condition. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpecConditionBoostSpec {
 
-		/** Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the document a big promotion. However, it does not necessarily mean that the boosted document will be the top result at all times, nor that other documents will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant documents. Setting to -1.0 gives the document a big demotion. However, results that are deeply relevant might still be shown. The document will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the document a big promotion. However, it does not necessarily mean that the boosted document will be the top result at all times, nor that other documents will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant documents. Setting to -1.0 gives the document a big demotion. However, results that are deeply relevant might still be shown. The document will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost?: number | null;
 
 		/** An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost documents with document ID "doc_1" or "doc_2", and color "Red" or "Blue": * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue")) */
@@ -4819,7 +5002,10 @@ export namespace MyNS {
 	/** Boost applies to documents which match a condition. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpecConditionBoostSpecFormProperties {
 
-		/** Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the document a big promotion. However, it does not necessarily mean that the boosted document will be the top result at all times, nor that other documents will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant documents. Setting to -1.0 gives the document a big demotion. However, results that are deeply relevant might still be shown. The document will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the document a big promotion. However, it does not necessarily mean that the boosted document will be the top result at all times, nor that other documents will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant documents. Setting to -1.0 gives the document a big demotion. However, results that are deeply relevant might still be shown. The document will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost: FormControl<number | null | undefined>,
 
 		/** An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost documents with document ID "doc_1" or "doc_2", and color "Red" or "Blue": * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue")) */
@@ -4860,32 +5046,56 @@ export namespace MyNS {
 	/** A specification for configuring the extractive content in a search response. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec {
 
-		/** The maximum number of extractive answers returned in each search result. An extractive answer is a verbatim answer extracted from the original document, which provides a precise and contextually relevant answer to the search query. If the number of matching answers is less than the `max_extractive_answer_count`, return all of the answers. Otherwise, return the `max_extractive_answer_count`. At most five answers are returned for each SearchResult. */
+		/**
+		 * The maximum number of extractive answers returned in each search result. An extractive answer is a verbatim answer extracted from the original document, which provides a precise and contextually relevant answer to the search query. If the number of matching answers is less than the `max_extractive_answer_count`, return all of the answers. Otherwise, return the `max_extractive_answer_count`. At most five answers are returned for each SearchResult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExtractiveAnswerCount?: number | null;
 
-		/** The max number of extractive segments returned in each search result. Only applied if the DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED or DataStore.solution_types is SOLUTION_TYPE_CHAT. An extractive segment is a text segment extracted from the original document that is relevant to the search query, and, in general, more verbose than an extractive answer. The segment could then be used as input for LLMs to generate summaries and answers. If the number of matching segments is less than `max_extractive_segment_count`, return all of the segments. Otherwise, return the `max_extractive_segment_count`. */
+		/**
+		 * The max number of extractive segments returned in each search result. Only applied if the DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED or DataStore.solution_types is SOLUTION_TYPE_CHAT. An extractive segment is a text segment extracted from the original document that is relevant to the search query, and, in general, more verbose than an extractive answer. The segment could then be used as input for LLMs to generate summaries and answers. If the number of matching segments is less than `max_extractive_segment_count`, return all of the segments. Otherwise, return the `max_extractive_segment_count`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExtractiveSegmentCount?: number | null;
 
-		/** Return at most `num_next_segments` segments after each selected segments. */
+		/**
+		 * Return at most `num_next_segments` segments after each selected segments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNextSegments?: number | null;
 
-		/** Specifies whether to also include the adjacent from each selected segments. Return at most `num_previous_segments` segments before each selected segments. */
+		/**
+		 * Specifies whether to also include the adjacent from each selected segments. Return at most `num_previous_segments` segments before each selected segments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPreviousSegments?: number | null;
 	}
 
 	/** A specification for configuring the extractive content in a search response. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpecFormProperties {
 
-		/** The maximum number of extractive answers returned in each search result. An extractive answer is a verbatim answer extracted from the original document, which provides a precise and contextually relevant answer to the search query. If the number of matching answers is less than the `max_extractive_answer_count`, return all of the answers. Otherwise, return the `max_extractive_answer_count`. At most five answers are returned for each SearchResult. */
+		/**
+		 * The maximum number of extractive answers returned in each search result. An extractive answer is a verbatim answer extracted from the original document, which provides a precise and contextually relevant answer to the search query. If the number of matching answers is less than the `max_extractive_answer_count`, return all of the answers. Otherwise, return the `max_extractive_answer_count`. At most five answers are returned for each SearchResult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExtractiveAnswerCount: FormControl<number | null | undefined>,
 
-		/** The max number of extractive segments returned in each search result. Only applied if the DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED or DataStore.solution_types is SOLUTION_TYPE_CHAT. An extractive segment is a text segment extracted from the original document that is relevant to the search query, and, in general, more verbose than an extractive answer. The segment could then be used as input for LLMs to generate summaries and answers. If the number of matching segments is less than `max_extractive_segment_count`, return all of the segments. Otherwise, return the `max_extractive_segment_count`. */
+		/**
+		 * The max number of extractive segments returned in each search result. Only applied if the DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED or DataStore.solution_types is SOLUTION_TYPE_CHAT. An extractive segment is a text segment extracted from the original document that is relevant to the search query, and, in general, more verbose than an extractive answer. The segment could then be used as input for LLMs to generate summaries and answers. If the number of matching segments is less than `max_extractive_segment_count`, return all of the segments. Otherwise, return the `max_extractive_segment_count`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExtractiveSegmentCount: FormControl<number | null | undefined>,
 
-		/** Return at most `num_next_segments` segments after each selected segments. */
+		/**
+		 * Return at most `num_next_segments` segments after each selected segments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNextSegments: FormControl<number | null | undefined>,
 
-		/** Specifies whether to also include the adjacent from each selected segments. Return at most `num_previous_segments` segments before each selected segments. */
+		/**
+		 * Specifies whether to also include the adjacent from each selected segments. Return at most `num_previous_segments` segments before each selected segments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPreviousSegments: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpecFormGroup() {
@@ -4902,7 +5112,10 @@ export namespace MyNS {
 	/** A specification for configuring snippets in a search response. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec {
 
-		/** [DEPRECATED] This field is deprecated. To control snippet return, use `return_snippet` field. For backwards compatibility, we will return snippet if max_snippet_count > 0. */
+		/**
+		 * [DEPRECATED] This field is deprecated. To control snippet return, use `return_snippet` field. For backwards compatibility, we will return snippet if max_snippet_count > 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSnippetCount?: number | null;
 
 		/** [DEPRECATED] This field is deprecated and will have no affect on the snippet. */
@@ -4915,7 +5128,10 @@ export namespace MyNS {
 	/** A specification for configuring snippets in a search response. */
 	export interface GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpecFormProperties {
 
-		/** [DEPRECATED] This field is deprecated. To control snippet return, use `return_snippet` field. For backwards compatibility, we will return snippet if max_snippet_count > 0. */
+		/**
+		 * [DEPRECATED] This field is deprecated. To control snippet return, use `return_snippet` field. For backwards compatibility, we will return snippet if max_snippet_count > 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSnippetCount: FormControl<number | null | undefined>,
 
 		/** [DEPRECATED] This field is deprecated and will have no affect on the snippet. */
@@ -4987,7 +5203,10 @@ export namespace MyNS {
 		/** Specifies how a facet is computed. */
 		facetKey?: GoogleCloudDiscoveryengineV1betaSearchRequestFacetSpecFacetKey;
 
-		/** Maximum of facet values that should be returned for this facet. If unspecified, defaults to 20. The maximum allowed value is 300. Values above 300 are coerced to 300. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * Maximum of facet values that should be returned for this facet. If unspecified, defaults to 20. The maximum allowed value is 300. Values above 300 are coerced to 300. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 	}
 
@@ -4997,7 +5216,10 @@ export namespace MyNS {
 		/** Enables dynamic position for this facet. If set to true, the position of this facet among all facets in the response is determined automatically. If dynamic facets are enabled, it is ordered together. If set to false, the position of this facet in the response is the same as in the request, and it is ranked before the facets with dynamic position enable and all dynamic facets. For example, you may always want to have rating facet returned in the response, but it's not necessarily to always display the rating facet at the top. In that case, you can set enable_dynamic_position to true so that the position of rating facet in response is determined automatically. Another example, assuming you have the following facets in the request: * "rating", enable_dynamic_position = true * "price", enable_dynamic_position = false * "brands", enable_dynamic_position = false And also you have a dynamic facets enabled, which generates a facet `gender`. Then the final order of the facets in the response can be ("price", "brands", "rating", "gender") or ("price", "brands", "gender", "rating") depends on how API orders "gender" and "rating" facets. However, notice that "price" and "brands" are always ranked at first and second position because their enable_dynamic_position is false. */
 		enableDynamicPosition: FormControl<boolean | null | undefined>,
 
-		/** Maximum of facet values that should be returned for this facet. If unspecified, defaults to 20. The maximum allowed value is 300. Values above 300 are coerced to 300. If this field is negative, an `INVALID_ARGUMENT` is returned. */
+		/**
+		 * Maximum of facet values that should be returned for this facet. If unspecified, defaults to 20. The maximum allowed value is 300. Values above 300 are coerced to 300. If this field is negative, an `INVALID_ARGUMENT` is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaSearchRequestFacetSpecFormGroup() {
@@ -5164,7 +5386,10 @@ export namespace MyNS {
 		/** Summary of the top N search result specified by the summary spec. */
 		summary?: GoogleCloudDiscoveryengineV1betaSearchResponseSummary;
 
-		/** The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches. */
+		/**
+		 * The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -5183,7 +5408,10 @@ export namespace MyNS {
 		/** The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response. */
 		redirectUri: FormControl<string | null | undefined>,
 
-		/** The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches. */
+		/**
+		 * The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDiscoveryengineV1betaSearchResponseFormGroup() {
@@ -5530,6 +5758,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -5554,6 +5783,7 @@ export namespace MyNS {
 		 * @param {string} filter A filter to apply on the list results. The supported features are: user_pseudo_id, state. Example: "user_pseudo_id = some_id"
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `conversation_name` Example: "update_time desc" "create_time"
 		 * @param {number} pageSize Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListConversations` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudDiscoveryengineV1betaListConversationsResponse} Successful response
 		 */
@@ -5576,6 +5806,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/documents
 		 * @param {string} parent Required. The parent branch resource name, such as `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`. Use `default_branch` as the branch ID, to list documents under the default branch. If the caller does not have permission to list Documents under this branch, regardless of whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
 		 * @param {number} pageSize Maximum number of Documents to return. If unspecified, defaults to 100. The maximum allowed value is 1000. Values above 1000 will be coerced to 1000. If this field is negative, an `INVALID_ARGUMENT` error is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token ListDocumentsResponse.next_page_token, received from a previous DocumentService.ListDocuments call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to DocumentService.ListDocuments must match the call that provided the page token. Otherwise, an `INVALID_ARGUMENT` error is returned.
 		 * @return {GoogleCloudDiscoveryengineV1betaListDocumentsResponse} Successful response
 		 */
@@ -5619,6 +5850,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/schemas
 		 * @param {string} parent Required. The parent data store resource name, in the format of `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
 		 * @param {number} pageSize The maximum number of Schemas to return. The service may return fewer than this value. If unspecified, at most 100 Schemas will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous SchemaService.ListSchemas call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SchemaService.ListSchemas must match the call that provided the page token.
 		 * @return {GoogleCloudDiscoveryengineV1betaListSchemasResponse} Successful response
 		 */

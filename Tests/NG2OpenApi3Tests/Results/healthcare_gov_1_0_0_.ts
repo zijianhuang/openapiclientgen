@@ -30,6 +30,8 @@ export namespace MyNS {
 		published?: boolean | null;
 		related?: Array<string>;
 		'seo-keywords'?: string | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -51,6 +53,8 @@ export namespace MyNS {
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
 		'seo-keywords': FormControl<string | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		'title-short': FormControl<string | null | undefined>,
@@ -103,6 +107,8 @@ export namespace MyNS {
 		path?: string | null;
 		published?: boolean | null;
 		'seo-keywords'?: string | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -121,6 +127,8 @@ export namespace MyNS {
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
 		'seo-keywords': FormControl<string | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -166,6 +174,8 @@ export namespace MyNS {
 		layout?: string | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -180,6 +190,8 @@ export namespace MyNS {
 		layout: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -211,6 +223,8 @@ export namespace MyNS {
 		layout?: string | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -225,6 +239,8 @@ export namespace MyNS {
 		layout: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -257,6 +273,8 @@ export namespace MyNS {
 		layout?: string | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -272,6 +290,8 @@ export namespace MyNS {
 		layout: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -303,6 +323,8 @@ export namespace MyNS {
 		lang?: string | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -316,6 +338,8 @@ export namespace MyNS {
 		lang: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -356,6 +380,8 @@ export namespace MyNS {
 		lang?: string | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -369,6 +395,8 @@ export namespace MyNS {
 		lang: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -397,6 +425,8 @@ export namespace MyNS {
 		id?: string | null;
 		lang?: string | null;
 		path?: string | null;
+
+		/** Type: double */
 		sort?: number | null;
 		stateurl?: string | null;
 		tags?: Array<string>;
@@ -410,6 +440,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		lang: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		stateurl: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -464,9 +496,13 @@ export namespace MyNS {
 		layout?: string | null;
 		'meta-description'?: string | null;
 		'meta-title'?: string | null;
+
+		/** Type: double */
 		order?: number | null;
 		path?: string | null;
 		published?: boolean | null;
+
+		/** Type: double */
 		sort?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
@@ -481,9 +517,13 @@ export namespace MyNS {
 		layout: FormControl<string | null | undefined>,
 		'meta-description': FormControl<string | null | undefined>,
 		'meta-title': FormControl<string | null | undefined>,
+
+		/** Type: double */
 		order: FormControl<number | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		sort: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

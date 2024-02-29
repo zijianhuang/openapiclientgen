@@ -577,6 +577,7 @@ export namespace MyNS {
 		 * Get v1alpha1/tables
 		 * @param {string} orderBy Optional. Sorting order for the list of tables on createTime/updateTime.
 		 * @param {number} pageSize The maximum number of tables to return. The service may return fewer than this value. If unspecified, at most 20 tables are returned. The maximum value is 100; values above 100 are coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListTables` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTables` must match the call that provided the page token.
 		 * @return {ListTablesResponse} Successful response
 		 */
@@ -588,6 +589,7 @@ export namespace MyNS {
 		 * Lists workspaces for the user.
 		 * Get v1alpha1/workspaces
 		 * @param {number} pageSize The maximum number of workspaces to return. The service may return fewer than this value. If unspecified, at most 10 workspaces are returned. The maximum value is 25; values above 25 are coerced to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListWorkspaces` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkspaces` must match the call that provided the page token.
 		 * @return {ListWorkspacesResponse} Successful response
 		 */
@@ -635,6 +637,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter to only include resources matching the requirements. For more information, see [Filtering list results](https://support.google.com/area120-tables/answer/10503371).
 		 * @param {string} orderBy Optional. Sorting order for the list of rows on createTime/updateTime.
 		 * @param {number} pageSize The maximum number of rows to return. The service may return fewer than this value. If unspecified, at most 50 rows are returned. The maximum value is 1,000; values above 1,000 are coerced to 1,000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListRows` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRows` must match the call that provided the page token.
 		 * @param {CreateRowRequestView} view Optional. Column key to use for values in the row. Defaults to user entered name.
 		 * @return {ListRowsResponse} Successful response

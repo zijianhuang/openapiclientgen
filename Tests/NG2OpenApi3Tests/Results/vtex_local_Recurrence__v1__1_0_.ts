@@ -8,7 +8,10 @@ export namespace MyNS {
 		/** Required */
 		frequency: Frequency;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -22,7 +25,10 @@ export namespace MyNS {
 	}
 	export interface AddrecurrenceitemRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -46,7 +52,10 @@ export namespace MyNS {
 
 	export interface Frequency {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: number;
 
 		/** Required */
@@ -54,7 +63,10 @@ export namespace MyNS {
 	}
 	export interface FrequencyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -73,7 +85,10 @@ export namespace MyNS {
 		/** Required */
 		frequency: Frequency;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -87,7 +102,10 @@ export namespace MyNS {
 	}
 	export interface ItemFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -124,7 +142,10 @@ export namespace MyNS {
 
 	export interface UpdatepartialrecurrenceRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryDay: number;
 
 		/** Required */
@@ -135,7 +156,10 @@ export namespace MyNS {
 	}
 	export interface UpdatepartialrecurrenceRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryDay: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -155,7 +179,10 @@ export namespace MyNS {
 
 	export interface UpdaterecurrenceRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryDay: number;
 
 		/** Required */
@@ -172,7 +199,10 @@ export namespace MyNS {
 	}
 	export interface UpdaterecurrenceRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryDay: FormControl<number | null | undefined>,
 
 		/** Required */

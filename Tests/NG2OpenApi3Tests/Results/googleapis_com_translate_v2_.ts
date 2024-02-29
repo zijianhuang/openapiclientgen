@@ -38,7 +38,10 @@ export namespace MyNS {
 
 	export interface DetectionsResourceElement {
 
-		/** The confidence of the detection result of this language. */
+		/**
+		 * The confidence of the detection result of this language.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** A boolean to indicate is the language detection result reliable. */
@@ -49,7 +52,10 @@ export namespace MyNS {
 	}
 	export interface DetectionsResourceElementFormProperties {
 
-		/** The confidence of the detection result of this language. */
+		/**
+		 * The confidence of the detection result of this language.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** A boolean to indicate is the language detection result reliable. */

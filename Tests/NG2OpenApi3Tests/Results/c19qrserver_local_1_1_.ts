@@ -72,7 +72,10 @@ export namespace MyNS {
 		/** True if this user is an admin. False otherwise */
 		admin?: boolean | null;
 
-		/** The login id for this user */
+		/**
+		 * The login id for this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		login_id?: number | null;
 
 		/** This user's name */
@@ -91,7 +94,10 @@ export namespace MyNS {
 		/** True if this user is an admin. False otherwise */
 		admin: FormControl<boolean | null | undefined>,
 
-		/** The login id for this user */
+		/**
+		 * The login id for this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		login_id: FormControl<number | null | undefined>,
 
 		/** This user's name */
@@ -146,13 +152,19 @@ export namespace MyNS {
 	/** Payload of signin object */
 	export interface Signin {
 
-		/** The original scan time in number of seconds since 1/1/1970 (GMT) */
+		/**
+		 * The original scan time in number of seconds since 1/1/1970 (GMT)
+		 * Type: double
+		 */
 		dt?: number | null;
 
 		/** The person's email */
 		email?: string | null;
 
-		/** The record id */
+		/**
+		 * The record id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -171,13 +183,19 @@ export namespace MyNS {
 	/** Payload of signin object */
 	export interface SigninFormProperties {
 
-		/** The original scan time in number of seconds since 1/1/1970 (GMT) */
+		/**
+		 * The original scan time in number of seconds since 1/1/1970 (GMT)
+		 * Type: double
+		 */
 		dt: FormControl<number | null | undefined>,
 
 		/** The person's email */
 		email: FormControl<string | null | undefined>,
 
-		/** The record id */
+		/**
+		 * The record id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -242,7 +260,10 @@ export namespace MyNS {
 		/** The user's email address */
 		email?: string | null;
 
-		/** The id of the user's record */
+		/**
+		 * The id of the user's record
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The user's name */
@@ -263,7 +284,10 @@ export namespace MyNS {
 		/** The user's email address */
 		email: FormControl<string | null | undefined>,
 
-		/** The id of the user's record */
+		/**
+		 * The id of the user's record
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The user's name */
@@ -415,13 +439,19 @@ export namespace MyNS {
 	/** Payload of signin object */
 	export interface SigninPayload {
 
-		/** The original scan time in number of seconds since 1/1/1970 (GMT) */
+		/**
+		 * The original scan time in number of seconds since 1/1/1970 (GMT)
+		 * Type: double
+		 */
 		dt?: number | null;
 
 		/** The person's email */
 		email?: string | null;
 
-		/** The record id */
+		/**
+		 * The record id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -440,13 +470,19 @@ export namespace MyNS {
 	/** Payload of signin object */
 	export interface SigninPayloadFormProperties {
 
-		/** The original scan time in number of seconds since 1/1/1970 (GMT) */
+		/**
+		 * The original scan time in number of seconds since 1/1/1970 (GMT)
+		 * Type: double
+		 */
 		dt: FormControl<number | null | undefined>,
 
 		/** The person's email */
 		email: FormControl<string | null | undefined>,
 
-		/** The record id */
+		/**
+		 * The record id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -534,6 +570,7 @@ export namespace MyNS {
 		 * Delete a signin record
 		 * Delete signin/{signinId}
 		 * @param {number} signinId The ID of the signin record to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Signin_signinIdDelete(signinId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -545,6 +582,7 @@ export namespace MyNS {
 		 * Retrieve the information associated with a signin record
 		 * Get signin/{signinId}
 		 * @param {number} signinId The ID of the signin record to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Signin} Success
 		 */
 		Signin_signinIdGet(signinId: number, headersHandler?: () => HttpHeaders): Observable<Signin> {
@@ -556,6 +594,7 @@ export namespace MyNS {
 		 * Update a signin record
 		 * Put signin/{signinId}
 		 * @param {number} signinId The ID of the signin record to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserRecord} Success
 		 */
 		Signin_signinIdPut(signinId: number, requestBody: SigninPayload, headersHandler?: () => HttpHeaders): Observable<UserRecord> {
@@ -567,7 +606,9 @@ export namespace MyNS {
 		 * Returns a list of signin objects sorted by signin ID descending.
 		 * Get signins
 		 * @param {number} less_than Return signins with IDs less than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} return_count Return this many objects
+		 *     Minimum: 1    Maximum: 100
 		 * @return {Array<Signin>} Successful response
 		 */
 		SigninsGetByLess_thanAndReturn_count(less_than: number | null | undefined, return_count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Signin>> {
@@ -590,6 +631,7 @@ export namespace MyNS {
 		 * To preserve referential integrity in the database, the user account  will not be deleted from the database. Rather, the password will be set to the empty string, effectively preventing that user from logging in. Furthermore, all active sessions for that user will be deleted, as will any password reset tokens.
 		 * Delete user/{userId}
 		 * @param {number} userId The ID of the user record to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		User_userIdDelete(userId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -601,6 +643,7 @@ export namespace MyNS {
 		 * Retrieve the information associated with a user's account
 		 * Get user/{userId}
 		 * @param {number} userId The ID of the user record to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserRecord} Success
 		 */
 		User_userIdGet(userId: number, headersHandler?: () => HttpHeaders): Observable<UserRecord> {

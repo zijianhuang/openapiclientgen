@@ -193,8 +193,14 @@ namespace MyNS
 		///Must be used with the <strong>width</strong> and
 		///<strong>height</strong> parameters; cannot be used with <strong>bbox</strong>.
 		///Uses EPSG:3857 projection (functionally equivalent to EPSG:900910).</param>
-		/// <param name="width">Width of the resulting image in pixels. Width must be a positive integer between 1 and 8192.</param>
-		/// <param name="height">Height of the resulting image in pixels. Height must be a positive integer between 1 and 8192.</param>
+		/// <param name="width">Width of the resulting image in pixels. Width must be a positive integer between 1 and 8192.
+		/// Minimum: 1
+		/// Maximum: 8192
+		// </param>
+		/// <param name="height">Height of the resulting image in pixels. Height must be a positive integer between 1 and 8192.
+		/// Minimum: 1
+		/// Maximum: 8192
+		// </param>
 		/// <param name="bbox">Bounding box for the image, using EPSG:3857 projection (functionally equivalent to EPSG:900910).
 		///Values <strong>must</strong> be in the order of minLon, minLat, maxLon, maxLat.
 		///MaxLat must be greater than minLat. Longitude values can be on both sides of the 180th meridian.

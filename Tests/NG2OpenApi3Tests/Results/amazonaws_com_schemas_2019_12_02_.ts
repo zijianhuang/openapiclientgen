@@ -1156,6 +1156,7 @@ export namespace MyNS {
 		 * List the discoverers.
 		 * Get v1/discoverers
 		 * @param {string} discovererIdPrefix Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.
 		 * @param {string} sourceArnPrefix Specifying this limits the results to only those ARNs that start with the specified prefix.
 		 * @param {string} Limit Pagination limit
@@ -1385,6 +1386,7 @@ export namespace MyNS {
 		/**
 		 * List the registries.
 		 * Get v1/registries
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.
 		 * @param {string} registryNamePrefix Specifying this limits the results to only those registry names that start with the specified prefix.
 		 * @param {string} scope Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
@@ -1399,6 +1401,7 @@ export namespace MyNS {
 		/**
 		 * Provides a list of the schema versions and related information.
 		 * Get v1/registries/name/{registryName}/schemas/name/{schemaName}/versions
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.
 		 * @param {string} registryName The name of the registry.
 		 * @param {string} schemaName The name of the schema.
@@ -1413,6 +1416,7 @@ export namespace MyNS {
 		/**
 		 * List the schemas.
 		 * Get v1/registries/name/{registryName}/schemas
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.
 		 * @param {string} registryName The name of the registry.
 		 * @param {string} schemaNamePrefix Specifying this limits the results to only those schema names that start with the specified prefix.
@@ -1448,6 +1452,7 @@ export namespace MyNS {
 		 * Search the schemas
 		 * Get v1/registries/name/{registryName}/schemas/search#keywords
 		 * @param {string} keywords Specifying this limits the results to only schemas that include the provided keywords.
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.
 		 * @param {string} registryName The name of the registry.
 		 * @param {string} Limit Pagination limit
@@ -1494,16 +1499,16 @@ export namespace MyNS {
 
 		/**
 		 * A description for the discoverer.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * The ARN of the event bus.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		SourceArn: string;
 
@@ -1517,16 +1522,16 @@ export namespace MyNS {
 
 		/**
 		 * A description for the discoverer.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the event bus.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		SourceArn: FormControl<string | null | undefined>,
 
@@ -1550,8 +1555,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the registry to be created.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -1562,8 +1567,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the registry to be created.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1582,8 +1587,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the registry to update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 	}
@@ -1591,8 +1596,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the registry to update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -1608,15 +1613,15 @@ export namespace MyNS {
 		/**
 		 * The source of the schema definition.
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		Content: string;
 
 		/**
 		 * A description of the schema.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -1634,15 +1639,15 @@ export namespace MyNS {
 		/**
 		 * The source of the schema definition.
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		Content: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the schema.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1669,22 +1674,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the client token.
-		 * Max length: 36
 		 * Min length: 0
+		 * Max length: 36
 		 */
 		ClientTokenId?: string | null;
 
 		/**
 		 * The source of the schema definition.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		Content?: string | null;
 
 		/**
 		 * The description of the schema.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -1695,22 +1700,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the client token.
-		 * Max length: 36
 		 * Min length: 0
+		 * Max length: 36
 		 */
 		ClientTokenId: FormControl<string | null | undefined>,
 
 		/**
 		 * The source of the schema definition.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		Content: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the schema.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1731,8 +1736,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the discoverer to update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -1743,8 +1748,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the discoverer to update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 

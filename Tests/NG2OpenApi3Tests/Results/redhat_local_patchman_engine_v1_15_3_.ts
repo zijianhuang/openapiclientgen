@@ -34,20 +34,36 @@ export namespace MyNS {
 	}
 
 	export interface ControllersAdvisoryItemAttributes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applicable_systems?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count?: number | null;
 		description?: string | null;
 		public_date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity?: number | null;
 		synopsis?: string | null;
 	}
 	export interface ControllersAdvisoryItemAttributesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applicable_systems: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		public_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity: FormControl<number | null | undefined>,
 		synopsis: FormControl<string | null | undefined>,
 	}
@@ -88,19 +104,31 @@ export namespace MyNS {
 
 	export interface ControllersListMeta {
 		filter?: {[id: string]: ControllersFilterData };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 		search?: string | null;
 		sort?: Array<string>;
 		subtotals?: {[id: string]: number };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_items?: number | null;
 	}
 	export interface ControllersListMetaFormProperties {
 		filter: FormControl<{[id: string]: ControllersFilterData } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 		search: FormControl<string | null | undefined>,
 		subtotals: FormControl<{[id: string]: number } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_items: FormControl<number | null | undefined>,
 	}
 	export function CreateControllersListMetaFormGroup() {
@@ -150,6 +178,8 @@ export namespace MyNS {
 		packages?: {[id: string]: string };
 		public_date?: string | null;
 		references?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity?: number | null;
 		solution?: string | null;
 		synopsis?: string | null;
@@ -161,6 +191,8 @@ export namespace MyNS {
 		modified_date: FormControl<string | null | undefined>,
 		packages: FormControl<{[id: string]: string } | null | undefined>,
 		public_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity: FormControl<number | null | undefined>,
 		solution: FormControl<string | null | undefined>,
 		synopsis: FormControl<string | null | undefined>,
@@ -210,22 +242,38 @@ export namespace MyNS {
 	}
 
 	export interface ControllersAdvisoryInlineItem {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applicable_systems?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count?: number | null;
 		description?: string | null;
 		id?: string | null;
 		public_date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity?: number | null;
 		synopsis?: string | null;
 	}
 	export interface ControllersAdvisoryInlineItemFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applicable_systems: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		public_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity: FormControl<number | null | undefined>,
 		synopsis: FormControl<string | null | undefined>,
 	}
@@ -283,11 +331,23 @@ export namespace MyNS {
 		os_major?: string | null;
 		os_minor?: string | null;
 		os_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		other_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_installed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_updatable?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhba_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhea_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhsa_count?: number | null;
 		rhsm?: string | null;
 		stale?: boolean | null;
@@ -305,11 +365,23 @@ export namespace MyNS {
 		os_major: FormControl<string | null | undefined>,
 		os_minor: FormControl<string | null | undefined>,
 		os_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		other_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_installed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_updatable: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhba_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhea_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhsa_count: FormControl<number | null | undefined>,
 		rhsm: FormControl<string | null | undefined>,
 		stale: FormControl<boolean | null | undefined>,
@@ -399,13 +471,21 @@ export namespace MyNS {
 	export interface ControllersPackageItem {
 		name?: string | null;
 		summary?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		systems_installed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		systems_updatable?: number | null;
 	}
 	export interface ControllersPackageItemFormProperties {
 		name: FormControl<string | null | undefined>,
 		summary: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		systems_installed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		systems_updatable: FormControl<number | null | undefined>,
 	}
 	export function CreateControllersPackageItemFormGroup() {
@@ -496,20 +576,32 @@ export namespace MyNS {
 	}
 
 	export interface ControllersSystemAdvisoriesDBLookup {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count?: number | null;
 		description?: string | null;
 		id?: string | null;
 		public_date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity?: number | null;
 		synopsis?: string | null;
 	}
 	export interface ControllersSystemAdvisoriesDBLookupFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		public_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity: FormControl<number | null | undefined>,
 		synopsis: FormControl<string | null | undefined>,
 	}
@@ -559,18 +651,30 @@ export namespace MyNS {
 	}
 
 	export interface ControllersSystemAdvisoryItemAttributes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count?: number | null;
 		description?: string | null;
 		public_date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity?: number | null;
 		synopsis?: string | null;
 	}
 	export interface ControllersSystemAdvisoryItemAttributesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		advisory_type: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cve_count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		public_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		severity: FormControl<number | null | undefined>,
 		synopsis: FormControl<string | null | undefined>,
 	}
@@ -608,11 +712,23 @@ export namespace MyNS {
 		os_major?: string | null;
 		os_minor?: string | null;
 		os_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		other_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_installed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_updatable?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhba_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhea_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhsa_count?: number | null;
 		rhsm?: string | null;
 		stale?: boolean | null;
@@ -631,11 +747,23 @@ export namespace MyNS {
 		os_major: FormControl<string | null | undefined>,
 		os_minor: FormControl<string | null | undefined>,
 		os_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		other_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_installed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packages_updatable: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhba_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhea_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rhsa_count: FormControl<number | null | undefined>,
 		rhsm: FormControl<string | null | undefined>,
 		stale: FormControl<boolean | null | undefined>,
@@ -801,7 +929,9 @@ export namespace MyNS {
 		 * Show me all applicable advisories for all my systems
 		 * Get api/patch/v1/advisories
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListAdvisoriesSort} sort Sort field
 		 * @param {string} search Find matching text
 		 * @param {string} filter_id Filter 
@@ -837,7 +967,9 @@ export namespace MyNS {
 		 * Get api/patch/v1/advisories/{advisory_id}/systems
 		 * @param {string} advisory_id Advisory ID
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListAdvisorySystemsSort} sort Sort field
 		 * @param {string} search Find matching text
 		 * @param {string} filter_id Filter
@@ -1002,7 +1134,9 @@ export namespace MyNS {
 		 * Show me all installed packages across my systems
 		 * Get api/patch/v1/packages/
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExportPackagesSort} sort Sort field
 		 * @param {string} search Find matching text
 		 * @param {string} filter_name Filter
@@ -1034,7 +1168,9 @@ export namespace MyNS {
 		 * Show me all my systems which have a package installed
 		 * Get api/patch/v1/packages/{package_name}/systems
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} package_name Package name
 		 * @param {Array<string>} tags Tag filter
 		 * @param {string} filter_system_profile_sap_system Filter only SAP systems
@@ -1050,7 +1186,9 @@ export namespace MyNS {
 		 * Show me all package versions installed on some system
 		 * Get api/patch/v1/packages/{package_name}/versions
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} package_name Package name
 		 * @return {ControllersPackageVersionsResponse} OK
 		 */
@@ -1063,7 +1201,9 @@ export namespace MyNS {
 		 * Show me all my systems
 		 * Get api/patch/v1/systems
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListSystemsSort} sort Sort field
 		 * @param {string} search Find matching text
 		 * @param {string} filter_insights_id Filter
@@ -1119,7 +1259,9 @@ export namespace MyNS {
 		 * Get api/patch/v1/systems/{inventory_id}/advisories
 		 * @param {string} inventory_id Inventory ID
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListSystemAdvisoriesSort} sort Sort field
 		 * @param {string} search Find matching text
 		 * @param {string} filter_id Filter
@@ -1140,7 +1282,9 @@ export namespace MyNS {
 		 * Get api/patch/v1/systems/{inventory_id}/packages
 		 * @param {string} inventory_id Inventory ID
 		 * @param {number} limit Limit for paging, set -1 to return all
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Find matching text
 		 * @param {string} filter_name Filter
 		 * @param {string} filter_description Filter

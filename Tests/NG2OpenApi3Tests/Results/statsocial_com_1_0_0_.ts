@@ -4,18 +4,38 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface _18_24 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile?: number | null;
 		statistical_info?: Statistical_info_18;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface _18_24FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_18_24FormGroup() {
@@ -30,13 +50,25 @@ export namespace MyNS {
 	}
 
 	export interface Statistical_info_18 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound?: number | null;
 	}
 	export interface Statistical_info_18FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound: FormControl<number | null | undefined>,
 	}
 	export function CreateStatistical_info_18FormGroup() {
@@ -49,18 +81,38 @@ export namespace MyNS {
 	}
 
 	export interface _25_34 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile?: number | null;
 		statistical_info?: Statistical_info_25;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface _25_34FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_25_34FormGroup() {
@@ -75,13 +127,25 @@ export namespace MyNS {
 	}
 
 	export interface Statistical_info_25 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound?: number | null;
 	}
 	export interface Statistical_info_25FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound: FormControl<number | null | undefined>,
 	}
 	export function CreateStatistical_info_25FormGroup() {
@@ -94,18 +158,38 @@ export namespace MyNS {
 	}
 
 	export interface _35_44 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile?: number | null;
 		statistical_info?: Statistical_info_35;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface _35_44FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_35_44FormGroup() {
@@ -120,13 +204,25 @@ export namespace MyNS {
 	}
 
 	export interface Statistical_info_35 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound?: number | null;
 	}
 	export interface Statistical_info_35FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound: FormControl<number | null | undefined>,
 	}
 	export function CreateStatistical_info_35FormGroup() {
@@ -251,14 +347,26 @@ export namespace MyNS {
 	}
 
 	export interface Application_response {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining_count?: number | null;
 		reports?: Report_info;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_reports_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_reports_done?: number | null;
 	}
 	export interface Application_responseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_reports_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_reports_done: FormControl<number | null | undefined>,
 	}
 	export function CreateApplication_responseFormGroup() {
@@ -452,11 +560,19 @@ export namespace MyNS {
 	}
 
 	export interface Custom_insert_response {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distinct_relations?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_relations?: number | null;
 	}
 	export interface Custom_insert_responseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distinct_relations: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_relations: FormControl<number | null | undefined>,
 	}
 	export function CreateCustom_insert_responseFormGroup() {
@@ -468,18 +584,38 @@ export namespace MyNS {
 	}
 
 	export interface Female {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile?: number | null;
 		statistical_info?: Statistical_info_f;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface FemaleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateFemaleFormGroup() {
@@ -494,13 +630,25 @@ export namespace MyNS {
 	}
 
 	export interface Statistical_info_f {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound?: number | null;
 	}
 	export interface Statistical_info_fFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound: FormControl<number | null | undefined>,
 	}
 	export function CreateStatistical_info_fFormGroup() {
@@ -513,18 +661,38 @@ export namespace MyNS {
 	}
 
 	export interface Male {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile?: number | null;
 		statistical_info?: Statistical_info_m;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface MaleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		multiplicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		percentile: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stdev: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMaleFormGroup() {
@@ -539,13 +707,25 @@ export namespace MyNS {
 	}
 
 	export interface Statistical_info_m {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound?: number | null;
 	}
 	export interface Statistical_info_mFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_range: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lower_bound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		upper_bound: FormControl<number | null | undefined>,
 	}
 	export function CreateStatistical_info_mFormGroup() {
@@ -653,8 +833,11 @@ export namespace MyNS {
 		 * Get reports/
 		 * @param {string} report_hash Unique report hash
 		 * @param {number} baseline Default value will be 'world'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} report_date report_date represents a Unix timestamp of when the report was generated. Default value will be the latest report generated. You can request the /report/dates/ endpoint in order to obtain available timestamps. Date must be in the future.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sample Sample report indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Report_Success} Success
 		 */
 		ReportsGetByReport_hashAndBaselineAndReport_dateAndSample(report_hash: string, baseline: number | null | undefined, report_date: number | null | undefined, sample: number, headersHandler?: () => HttpHeaders): Observable<Report_Success> {
@@ -667,8 +850,11 @@ export namespace MyNS {
 		 * Post reports/
 		 * @param {string} report_hash Unique report hash
 		 * @param {number} baseline Default value will be 'world'
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} report_date report_date represents a Unix timestamp of when the report was generated. Default value will be the latest report generated. You can request the /report/dates/ endpoint in order to obtain available timestamps. Date must be in the future.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sample Sample report indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Report_Success} Success
 		 */
 		ReportsPostByReport_hashAndBaselineAndReport_dateAndSample(report_hash: string, baseline: number | null | undefined, report_date: number | null | undefined, sample: number, headersHandler?: () => HttpHeaders): Observable<Report_Success> {
@@ -795,7 +981,9 @@ export namespace MyNS {
 		 * Get reports/tweet/create/
 		 * @param {string} report_name Name of report
 		 * @param {number} start_date A unix timestamp. start_date will be set to the previous midnight.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} end_date A unix timestamp. end_date will be set to the next midnight.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} terms If you are tracking a single term, then the keyword itself is suffice otherwise, tracking multiple terms must be in JSON form, example '[{"operator":"","word":"http://google.com"},{"operator":"or","word":"#test"},{"operator":"and","word":"test2"}]' Which results in filtering tweets containing 'http://google.com' OR '#test' AND 'test2'. (NOTE) Make sure to URL encode the terms value for multiple terms.
 		 * @param {string} filter Filtering options to be used when creating a filtered report. The options must be in JSON form, example: {'gender':['male'],'ages':['18-24'],'countries':['usa']}
 		 * @return {void} 
@@ -810,7 +998,9 @@ export namespace MyNS {
 		 * Post reports/tweet/create/
 		 * @param {string} report_name Name of report
 		 * @param {number} start_date A unix timestamp. start_date will be set to the previous midnight.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} end_date A unix timestamp. end_date will be set to the next midnight.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} terms If you are tracking a single term, then the keyword itself is suffice otherwise, tracking multiple terms must be in JSON form, example '[{"operator":"","word":"http://google.com"},{"operator":"or","word":"#test"},{"operator":"and","word":"test2"}]' Which results in filtering tweets containing 'http://google.com' OR '#test' AND 'test2'. (NOTE) Make sure to URL encode the terms value for multiple terms.
 		 * @param {string} filter Filtering options to be used when creating a filtered report. The options must be in JSON form, example: {'gender':['male'],'ages':['18-24'],'countries':['usa']}
 		 * @return {void} 
@@ -824,6 +1014,7 @@ export namespace MyNS {
 		 * This report uses the twitter followers as the audience. To create custom or tweet reports other methods must be used. Any report older than two days will be automatically regenerated upon create.
 		 * Get reports/twitter/create/
 		 * @param {number} twitter_id (required if twitter_handle is not supplied) twitter_id must be sent with all client requests. Multiple handles are separated by commas.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} twitter_handle (required if twitter_id is not supplied) twitter_handle must be sent with all client requests. Multiple ids are separated by commas.
 		 * @param {string} filter Filtering options to be used when creating a filtered report. The options must be in JSON form, example: {'gender':['male'],'ages':['18-24'],'countries':['usa']}
 		 * @return {void} 
@@ -837,6 +1028,7 @@ export namespace MyNS {
 		 * This report uses the twitter followers as the audience. To create custom or tweet reports other methods must be used. Any report older than two days will be automatically regenerated upon create.
 		 * Post reports/twitter/create/
 		 * @param {number} twitter_id (required if twitter_handle is not supplied) twitter_id must be sent with all client requests. Multiple handles are separated by commas.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} twitter_handle (required if twitter_id is not supplied) twitter_handle must be sent with all client requests. Multiple ids are separated by commas.
 		 * @param {string} filter Filtering options to be used when creating a filtered report. The options must be in JSON form, example: {'gender':['male'],'ages':['18-24'],'countries':['usa']}
 		 * @return {void} 

@@ -113,14 +113,22 @@ export namespace MyNS {
 
 	export interface ArticleWithCountTypeMedia_media_metadata_ {
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface ArticleWithCountTypeMedia_media_metadata_FormProperties {
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateArticleWithCountTypeMedia_media_metadata_FormGroup() {
@@ -180,12 +188,16 @@ export namespace MyNS {
 
 	export interface GET_mostemailed_section_time_period_jsonReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<ArticleWithCountType>;
 		status?: string | null;
 	}
 	export interface GET_mostemailed_section_time_period_jsonReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -200,12 +212,16 @@ export namespace MyNS {
 
 	export interface GET_mostshared_section_time_period_jsonReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Article>;
 		status?: string | null;
 	}
 	export interface GET_mostshared_section_time_period_jsonReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -220,12 +236,16 @@ export namespace MyNS {
 
 	export interface GET_mostviewed_section_time_period_jsonReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Article>;
 		status?: string | null;
 	}
 	export interface GET_mostviewed_section_time_period_jsonReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}

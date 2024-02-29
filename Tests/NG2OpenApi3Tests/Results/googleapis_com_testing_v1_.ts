@@ -130,13 +130,22 @@ export namespace MyNS {
 		/** Version-specific information of an Android model. */
 		perVersionInfo?: Array<PerAndroidVersionInfo>;
 
-		/** Screen density in DPI. This corresponds to ro.sf.lcd_density */
+		/**
+		 * Screen density in DPI. This corresponds to ro.sf.lcd_density
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensity?: number | null;
 
-		/** Screen size in the horizontal (X) dimension measured in pixels. */
+		/**
+		 * Screen size in the horizontal (X) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenX?: number | null;
 
-		/** Screen size in the vertical (Y) dimension measured in pixels. */
+		/**
+		 * Screen size in the vertical (Y) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenY?: number | null;
 
 		/** The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list. Elements are optionally prefixed by "version_id:" (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version. */
@@ -179,13 +188,22 @@ export namespace MyNS {
 		/** The human-readable marketing name for this device model. Examples: "Nexus 5", "Galaxy S5". */
 		name: FormControl<string | null | undefined>,
 
-		/** Screen density in DPI. This corresponds to ro.sf.lcd_density */
+		/**
+		 * Screen density in DPI. This corresponds to ro.sf.lcd_density
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensity: FormControl<number | null | undefined>,
 
-		/** Screen size in the horizontal (X) dimension measured in pixels. */
+		/**
+		 * Screen size in the horizontal (X) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenX: FormControl<number | null | undefined>,
 
-		/** Screen size in the vertical (Y) dimension measured in pixels. */
+		/**
+		 * Screen size in the vertical (Y) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenY: FormControl<number | null | undefined>,
 
 		/** URL of a thumbnail image (photo) of the device. */
@@ -367,7 +385,10 @@ export namespace MyNS {
 	/** A version of the Android OS. */
 	export interface AndroidVersion {
 
-		/** The API level for this Android version. Examples: 18, 19. */
+		/**
+		 * The API level for this Android version. Examples: 18, 19.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel?: number | null;
 
 		/** The code name for this Android version. Examples: "JellyBean", "KitKat". */
@@ -392,7 +413,10 @@ export namespace MyNS {
 	/** A version of the Android OS. */
 	export interface AndroidVersionFormProperties {
 
-		/** The API level for this Android version. Examples: 18, 19. */
+		/**
+		 * The API level for this Android version. Examples: 18, 19.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel: FormControl<number | null | undefined>,
 
 		/** The code name for this Android version. Examples: "JellyBean", "KitKat". */
@@ -418,7 +442,10 @@ export namespace MyNS {
 	/** Data about the relative number of devices running a given configuration of the Android platform. */
 	export interface Distribution {
 
-		/** Output only. The estimated fraction (0-1) of the total market with this configuration. */
+		/**
+		 * Output only. The estimated fraction (0-1) of the total market with this configuration.
+		 * Type: double
+		 */
 		marketShare?: number | null;
 
 		/** Output only. The time this distribution was measured. */
@@ -428,7 +455,10 @@ export namespace MyNS {
 	/** Data about the relative number of devices running a given configuration of the Android platform. */
 	export interface DistributionFormProperties {
 
-		/** Output only. The estimated fraction (0-1) of the total market with this configuration. */
+		/**
+		 * Output only. The estimated fraction (0-1) of the total market with this configuration.
+		 * Type: double
+		 */
 		marketShare: FormControl<number | null | undefined>,
 
 		/** Output only. The time this distribution was measured. */
@@ -446,26 +476,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -673,14 +721,20 @@ export namespace MyNS {
 	/** Uniformly shards test cases given a total number of shards. For instrumentation tests, it will be translated to "-e numShard" and "-e shardIndex" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying either of these sharding arguments via `environment_variables` is invalid. Based on the sharding mechanism AndroidJUnitRunner uses, there is no guarantee that test cases will be distributed uniformly across all shards. */
 	export interface UniformSharding {
 
-		/** Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be <= 50. When you select one or more ARM virtual devices, it must be <= 200. When you select only x86 virtual devices, it must be <= 500. */
+		/**
+		 * Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be <= 50. When you select one or more ARM virtual devices, it must be <= 200. When you select only x86 virtual devices, it must be <= 500.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numShards?: number | null;
 	}
 
 	/** Uniformly shards test cases given a total number of shards. For instrumentation tests, it will be translated to "-e numShard" and "-e shardIndex" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying either of these sharding arguments via `environment_variables` is invalid. Based on the sharding mechanism AndroidJUnitRunner uses, there is no guarantee that test cases will be distributed uniformly across all shards. */
 	export interface UniformShardingFormProperties {
 
-		/** Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be <= 50. When you select one or more ARM virtual devices, it must be <= 200. When you select only x86 virtual devices, it must be <= 500. */
+		/**
+		 * Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be <= 50. When you select one or more ARM virtual devices, it must be <= 200. When you select only x86 virtual devices, it must be <= 500.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numShards: FormControl<number | null | undefined>,
 	}
 	export function CreateUniformShardingFormGroup() {
@@ -732,10 +786,16 @@ export namespace MyNS {
 		/** The java package for the application under test. The default value is determined by examining the application's manifest. */
 		appPackageId?: string | null;
 
-		/** The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50. */
+		/**
+		 * The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDepth?: number | null;
 
-		/** The max number of steps Robo can execute. Default is no limit. */
+		/**
+		 * The max number of steps Robo can execute. Default is no limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSteps?: number | null;
 
 		/** A set of directives Robo should apply during the crawl. This allows users to customize the crawl. For example, the username and password for a test account can be provided. */
@@ -760,10 +820,16 @@ export namespace MyNS {
 		/** The java package for the application under test. The default value is determined by examining the application's manifest. */
 		appPackageId: FormControl<string | null | undefined>,
 
-		/** The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50. */
+		/**
+		 * The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDepth: FormControl<number | null | undefined>,
 
-		/** The max number of steps Robo can execute. Default is no limit. */
+		/**
+		 * The max number of steps Robo can execute. Default is no limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSteps: FormControl<number | null | undefined>,
 
 		/** The mode in which Robo should run. Most clients should allow the server to populate this field automatically. */
@@ -990,13 +1056,19 @@ export namespace MyNS {
 		applicationLabel?: string | null;
 		intentFilters?: Array<IntentFilter>;
 
-		/** Maximum API level on which the application is designed to run. */
+		/**
+		 * Maximum API level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion?: number | null;
 
 		/** Meta-data tags defined in the manifest. */
 		metadata?: Array<Metadata>;
 
-		/** Minimum API level required for the application to run. */
+		/**
+		 * Minimum API level required for the application to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minSdkVersion?: number | null;
 
 		/** Full Java-style package name for this application, e.g. "com.example.foo". */
@@ -1005,7 +1077,10 @@ export namespace MyNS {
 		/** Services contained in the tag. */
 		services?: Array<Service>;
 
-		/** Specifies the API Level on which the application is designed to run. */
+		/**
+		 * Specifies the API Level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion?: number | null;
 
 		/** Feature usage tags defined in the manifest. */
@@ -1027,16 +1102,25 @@ export namespace MyNS {
 		/** User-readable name for the application. */
 		applicationLabel: FormControl<string | null | undefined>,
 
-		/** Maximum API level on which the application is designed to run. */
+		/**
+		 * Maximum API level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion: FormControl<number | null | undefined>,
 
-		/** Minimum API level required for the application to run. */
+		/**
+		 * Minimum API level required for the application to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minSdkVersion: FormControl<number | null | undefined>,
 
 		/** Full Java-style package name for this application, e.g. "com.example.foo". */
 		packageName: FormControl<string | null | undefined>,
 
-		/** Specifies the API Level on which the application is designed to run. */
+		/**
+		 * Specifies the API Level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion: FormControl<number | null | undefined>,
 
 		/** Version number used internally by the app. */
@@ -1710,13 +1794,22 @@ export namespace MyNS {
 		/** Version-specific information of an iOS model. */
 		perVersionInfo?: Array<PerIosVersionInfo>;
 
-		/** Screen density in DPI. */
+		/**
+		 * Screen density in DPI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensity?: number | null;
 
-		/** Screen size in the horizontal (X) dimension measured in pixels. */
+		/**
+		 * Screen size in the horizontal (X) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenX?: number | null;
 
-		/** Screen size in the vertical (Y) dimension measured in pixels. */
+		/**
+		 * Screen size in the vertical (Y) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenY?: number | null;
 
 		/** The set of iOS major software versions this device supports. */
@@ -1738,13 +1831,22 @@ export namespace MyNS {
 		/** The human-readable name for this device model. Examples: "iPhone 4s", "iPad Mini 2". */
 		name: FormControl<string | null | undefined>,
 
-		/** Screen density in DPI. */
+		/**
+		 * Screen density in DPI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensity: FormControl<number | null | undefined>,
 
-		/** Screen size in the horizontal (X) dimension measured in pixels. */
+		/**
+		 * Screen size in the horizontal (X) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenX: FormControl<number | null | undefined>,
 
-		/** Screen size in the vertical (Y) dimension measured in pixels. */
+		/**
+		 * Screen size in the vertical (Y) dimension measured in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenY: FormControl<number | null | undefined>,
 	}
 	export function CreateIosModelFormGroup() {
@@ -1814,10 +1916,16 @@ export namespace MyNS {
 		/** An opaque id for this iOS version. Use this id to invoke the TestExecutionService. */
 		id?: string | null;
 
-		/** An integer representing the major iOS version. Examples: "8", "9". */
+		/**
+		 * An integer representing the major iOS version. Examples: "8", "9".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorVersion?: number | null;
 
-		/** An integer representing the minor iOS version. Examples: "1", "2". */
+		/**
+		 * An integer representing the minor iOS version. Examples: "1", "2".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorVersion?: number | null;
 
 		/** The available Xcode versions for this version. */
@@ -1833,10 +1941,16 @@ export namespace MyNS {
 		/** An opaque id for this iOS version. Use this id to invoke the TestExecutionService. */
 		id: FormControl<string | null | undefined>,
 
-		/** An integer representing the major iOS version. Examples: "8", "9". */
+		/**
+		 * An integer representing the major iOS version. Examples: "8", "9".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorVersion: FormControl<number | null | undefined>,
 
-		/** An integer representing the minor iOS version. Examples: "1", "2". */
+		/**
+		 * An integer representing the minor iOS version. Examples: "1", "2".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateIosVersionFormGroup() {
@@ -2079,38 +2193,62 @@ export namespace MyNS {
 	/** Network emulation parameters. */
 	export interface TrafficRule {
 
-		/** Bandwidth in kbits/second. */
+		/**
+		 * Bandwidth in kbits/second.
+		 * Type: float
+		 */
 		bandwidth?: number | null;
 
-		/** Burst size in kbits. */
+		/**
+		 * Burst size in kbits.
+		 * Type: float
+		 */
 		burst?: number | null;
 
 		/** Packet delay, must be >= 0. */
 		delay?: string | null;
 
-		/** Packet duplication ratio (0.0 - 1.0). */
+		/**
+		 * Packet duplication ratio (0.0 - 1.0).
+		 * Type: float
+		 */
 		packetDuplicationRatio?: number | null;
 
-		/** Packet loss ratio (0.0 - 1.0). */
+		/**
+		 * Packet loss ratio (0.0 - 1.0).
+		 * Type: float
+		 */
 		packetLossRatio?: number | null;
 	}
 
 	/** Network emulation parameters. */
 	export interface TrafficRuleFormProperties {
 
-		/** Bandwidth in kbits/second. */
+		/**
+		 * Bandwidth in kbits/second.
+		 * Type: float
+		 */
 		bandwidth: FormControl<number | null | undefined>,
 
-		/** Burst size in kbits. */
+		/**
+		 * Burst size in kbits.
+		 * Type: float
+		 */
 		burst: FormControl<number | null | undefined>,
 
 		/** Packet delay, must be >= 0. */
 		delay: FormControl<string | null | undefined>,
 
-		/** Packet duplication ratio (0.0 - 1.0). */
+		/**
+		 * Packet duplication ratio (0.0 - 1.0).
+		 * Type: float
+		 */
 		packetDuplicationRatio: FormControl<number | null | undefined>,
 
-		/** Packet loss ratio (0.0 - 1.0). */
+		/**
+		 * Packet loss ratio (0.0 - 1.0).
+		 * Type: float
+		 */
 		packetLossRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateTrafficRuleFormGroup() {
@@ -2263,10 +2401,16 @@ export namespace MyNS {
 		/** Output only. The estimated shard duration based on previous test case timing records, if available. */
 		estimatedShardDuration?: string | null;
 
-		/** Output only. The total number of shards. */
+		/**
+		 * Output only. The total number of shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numShards?: number | null;
 
-		/** Output only. The index of the shard among all the shards. */
+		/**
+		 * Output only. The index of the shard among all the shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardIndex?: number | null;
 
 		/** Test targets for a shard. */
@@ -2279,10 +2423,16 @@ export namespace MyNS {
 		/** Output only. The estimated shard duration based on previous test case timing records, if available. */
 		estimatedShardDuration: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of shards. */
+		/**
+		 * Output only. The total number of shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numShards: FormControl<number | null | undefined>,
 
-		/** Output only. The index of the shard among all the shards. */
+		/**
+		 * Output only. The index of the shard among all the shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateShardFormGroup() {
@@ -2296,12 +2446,18 @@ export namespace MyNS {
 
 	export interface SystraceSetup {
 
-		/** Systrace duration in seconds. Should be between 1 and 30 seconds. 0 disables systrace. */
+		/**
+		 * Systrace duration in seconds. Should be between 1 and 30 seconds. 0 disables systrace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationSeconds?: number | null;
 	}
 	export interface SystraceSetupFormProperties {
 
-		/** Systrace duration in seconds. Should be between 1 and 30 seconds. 0 disables systrace. */
+		/**
+		 * Systrace duration in seconds. Should be between 1 and 30 seconds. 0 disables systrace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateSystraceSetupFormGroup() {
@@ -2587,7 +2743,10 @@ export namespace MyNS {
 		/** If true, only a single attempt at most will be made to run each execution/shard in the matrix. Flaky test attempts are not affected. Normally, 2 or more attempts are made if a potential infrastructure issue is detected. This feature is for latency sensitive workloads. The incidence of execution failures may be significantly greater for fail-fast matrices and support is more limited because of that expectation. */
 		failFast?: boolean | null;
 
-		/** The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns. */
+		/**
+		 * The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flakyTestAttempts?: number | null;
 
 		/** Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state. */
@@ -2624,7 +2783,10 @@ export namespace MyNS {
 		/** If true, only a single attempt at most will be made to run each execution/shard in the matrix. Flaky test attempts are not affected. Normally, 2 or more attempts are made if a potential infrastructure issue is detected. This feature is for latency sensitive workloads. The incidence of execution failures may be significantly greater for fail-fast matrices and support is more limited because of that expectation. */
 		failFast: FormControl<boolean | null | undefined>,
 
-		/** The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns. */
+		/**
+		 * The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flakyTestAttempts: FormControl<number | null | undefined>,
 
 		/** Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state. */
@@ -2758,6 +2920,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the parent to request, e.g. "projects/{project_id}"
 		 * @param {string} filter Optional. If specified, responses will be filtered by the given filter. Allowed fields are: session_state.
 		 * @param {number} pageSize Optional. The maximum number of DeviceSessions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A continuation token for paging.
 		 * @return {ListDeviceSessionsResponse} Successful response
 		 */

@@ -4,10 +4,14 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -153,7 +157,9 @@ export namespace MyNS {
 		 * Get search/v1/organic
 		 * @param {string} q Lucene-type search query
 		 * @param {string} field Metadata field
+		 *     Min length: 1    Max length: 250
 		 * @param {number} size Number of query results to return
+		 *     Minimum: 10    Maximum: 10000
 		 * @param {boolean} total_only Request total only; do not return hits
 		 * @param {string} callback Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.
 		 * @return {OrganicResult} Organic Search API. Returns results in descending relevance order
@@ -167,8 +173,11 @@ export namespace MyNS {
 		 * Get search/v1/scrape
 		 * @param {string} q Lucene-type search query
 		 * @param {string} field Metadata field
+		 *     Min length: 1    Max length: 250
 		 * @param {string} sort sort collations
+		 *     Min length: 5    Max length: 250
 		 * @param {number} size Number of query results to return
+		 *     Minimum: 10    Maximum: 10000
 		 * @param {string} cursor Cursor for scrolling (used for subsequent calls)
 		 * @param {boolean} total_only Request total only; do not return hits
 		 * @param {string} callback Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.

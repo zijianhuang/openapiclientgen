@@ -6,11 +6,15 @@ export namespace MyNS {
 	export enum AllEntityType { Group = 'Group', BaseSecurityGroup = 'BaseSecurityGroup', BaseEvent = 'BaseEvent', BaseVirtualMachine = 'BaseVirtualMachine', BaseFirewallRule = 'BaseFirewallRule', BaseIPSet = 'BaseIPSet', BaseL2Network = 'BaseL2Network', BaseFirewall = 'BaseFirewall', BaseService = 'BaseService', BaseServiceGroup = 'BaseServiceGroup', BaseVnic = 'BaseVnic', VirtualMachine = 'VirtualMachine', EC2Instance = 'EC2Instance', Host = 'Host', Vnic = 'Vnic', Vmknic = 'Vmknic', VxlanLayer2Network = 'VxlanLayer2Network', VlanL2Network = 'VlanL2Network', Cluster = 'Cluster', SecurityTag = 'SecurityTag', ResourcePool = 'ResourcePool', NSXIPSet = 'NSXIPSet', EC2IPSet = 'EC2IPSet', NSXSecurityGroup = 'NSXSecurityGroup', EC2SecurityGroup = 'EC2SecurityGroup', Flow = 'Flow', ProblemEvent = 'ProblemEvent', Application = 'Application', Tier = 'Tier', NSXFirewallRule = 'NSXFirewallRule', EC2SGFirewallRule = 'EC2SGFirewallRule', NSXRedirectRule = 'NSXRedirectRule', VCenterManager = 'VCenterManager', NSXVManager = 'NSXVManager', BaseManager = 'BaseManager', BaseNSXManager = 'BaseNSXManager', NSXService = 'NSXService', EC2Service = 'EC2Service', VPC = 'VPC', NSXDistributedFirewall = 'NSXDistributedFirewall', EC2Firewall = 'EC2Firewall', NSXServiceGroup = 'NSXServiceGroup', DistributedVirtualSwitch = 'DistributedVirtualSwitch', DistributedVirtualPortgroup = 'DistributedVirtualPortgroup', VCDatacenter = 'VCDatacenter', Datastore = 'Datastore', Folder = 'Folder' }
 
 	export interface ApiError {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		details?: Array<ErrorDetail>;
 		message?: string | null;
 	}
 	export interface ApiErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -23,11 +27,15 @@ export namespace MyNS {
 	}
 
 	export interface ErrorDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		message?: string | null;
 		target?: Array<string>;
 	}
 	export interface ErrorDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -40,26 +48,34 @@ export namespace MyNS {
 	}
 
 	export interface Application extends BaseEntity {
-		create_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		create_time?: string | null;
 		created_by?: string | null;
 		last_modified_by?: string | null;
-		last_modified_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_modified_time?: string | null;
 	}
 	export interface ApplicationFormProperties extends BaseEntityFormProperties {
-		create_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		create_time: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
 		last_modified_by: FormControl<string | null | undefined>,
-		last_modified_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_modified_time: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationFormGroup() {
 		return new FormGroup<ApplicationFormProperties>({
 			entity_id: new FormControl<string | null | undefined>(undefined),
 			entity_type: new FormControl<BaseEntityEntity_type | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			create_time: new FormControl<number | null | undefined>(undefined),
+			create_time: new FormControl<string | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			last_modified_by: new FormControl<string | null | undefined>(undefined),
-			last_modified_time: new FormControl<number | null | undefined>(undefined),
+			last_modified_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -205,14 +221,18 @@ export namespace MyNS {
 		anchor_entities?: Array<Reference>;
 		archived?: boolean | null;
 		event_tags?: Array<string>;
-		event_time_epoch_ms?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		event_time_epoch_ms?: string | null;
 		message?: string | null;
 		related_entities?: Array<Reference>;
 	}
 	export interface BaseEventFormProperties extends BaseEntityFormProperties {
 		admin_state: FormControl<BaseEventAdmin_state | null | undefined>,
 		archived: FormControl<boolean | null | undefined>,
-		event_time_epoch_ms: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		event_time_epoch_ms: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateBaseEventFormGroup() {
@@ -222,7 +242,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			admin_state: new FormControl<BaseEventAdmin_state | null | undefined>(undefined),
 			archived: new FormControl<boolean | null | undefined>(undefined),
-			event_time_epoch_ms: new FormControl<number | null | undefined>(undefined),
+			event_time_epoch_ms: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -288,6 +308,8 @@ export namespace MyNS {
 		rule_id?: string | null;
 		section_id?: string | null;
 		section_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence_number?: number | null;
 		service_any?: boolean | null;
 		services?: Array<Reference>;
@@ -303,6 +325,8 @@ export namespace MyNS {
 		rule_id: FormControl<string | null | undefined>,
 		section_id: FormControl<string | null | undefined>,
 		section_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence_number: FormControl<number | null | undefined>,
 		service_any: FormControl<boolean | null | undefined>,
 		source_any: FormControl<boolean | null | undefined>,
@@ -332,16 +356,24 @@ export namespace MyNS {
 
 	export interface PortRange {
 		display?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		iana_name?: string | null;
 		iana_port_display?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 	}
 	export interface PortRangeFormProperties {
 		display: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		iana_name: FormControl<string | null | undefined>,
 		iana_port_display: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreatePortRangeFormGroup() {
@@ -364,11 +396,15 @@ export namespace MyNS {
 		ip_numeric_ranges?: Array<IpNumericRange>;
 		ip_ranges?: Array<IpAddressRange>;
 		parent_security_groups?: Array<Reference>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		translated_vm_count?: number | null;
 		vendor?: string | null;
 		vendor_id?: string | null;
 	}
 	export interface BaseIPSetFormProperties extends BaseEntityFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		translated_vm_count: FormControl<number | null | undefined>,
 		vendor: FormControl<string | null | undefined>,
 		vendor_id: FormControl<string | null | undefined>,
@@ -405,17 +441,25 @@ export namespace MyNS {
 	}
 
 	export interface IpNumericRange {
-		end?: number | null;
-		start?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
 	}
 	export interface IpNumericRangeFormProperties {
-		end: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
 	}
 	export function CreateIpNumericRangeFormGroup() {
 		return new FormGroup<IpNumericRangeFormProperties>({
-			end: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			end: new FormControl<string | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -480,10 +524,14 @@ export namespace MyNS {
 		indirect_source_rules?: Array<RuleSet>;
 		members?: Array<Reference>;
 		parents?: Array<Reference>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		translated_vm_count?: number | null;
 		vendor_id?: string | null;
 	}
 	export interface BaseSecurityGroupFormProperties extends GroupFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		translated_vm_count: FormControl<number | null | undefined>,
 		vendor_id: FormControl<string | null | undefined>,
 	}
@@ -553,11 +601,19 @@ export namespace MyNS {
 	}
 
 	export interface Vlan {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		begin?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 	}
 	export interface VlanFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		begin: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 	}
 	export function CreateVlanFormGroup() {
@@ -684,9 +740,13 @@ export namespace MyNS {
 
 	export interface DataSourceListResponse {
 		results?: Array<DataSourceEntityId>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count?: number | null;
 	}
 	export interface DataSourceListResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourceListResponseFormGroup() {
@@ -948,20 +1008,24 @@ export namespace MyNS {
 		/** Entity Identifier */
 		entity_id?: string | null;
 		entity_type?: BaseEntityEntity_type | null;
-		time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time?: string | null;
 	}
 	export interface EntityIdWithTimeFormProperties {
 
 		/** Entity Identifier */
 		entity_id: FormControl<string | null | undefined>,
 		entity_type: FormControl<BaseEntityEntity_type | null | undefined>,
-		time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time: FormControl<string | null | undefined>,
 	}
 	export function CreateEntityIdWithTimeFormGroup() {
 		return new FormGroup<EntityIdWithTimeFormProperties>({
 			entity_id: new FormControl<string | null | undefined>(undefined),
 			entity_type: new FormControl<BaseEntityEntity_type | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -976,7 +1040,7 @@ export namespace MyNS {
 		return new FormGroup<EntityNameFormProperties>({
 			entity_id: new FormControl<string | null | undefined>(undefined),
 			entity_type: new FormControl<BaseEntityEntity_type | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1182,6 +1246,8 @@ export namespace MyNS {
 		service_tag?: string | null;
 		vcenter_manager?: Reference;
 		vendor_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vm_count?: number | null;
 		vmknics?: Array<Reference>;
 	}
@@ -1190,6 +1256,8 @@ export namespace MyNS {
 		maintenance_mode: FormControl<string | null | undefined>,
 		service_tag: FormControl<string | null | undefined>,
 		vendor_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vm_count: FormControl<number | null | undefined>,
 	}
 	export function CreateHostFormGroup() {
@@ -1537,16 +1605,20 @@ export namespace MyNS {
 
 	export interface NameRequestParam {
 		entity_id?: string | null;
-		time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time?: string | null;
 	}
 	export interface NameRequestParamFormProperties {
 		entity_id: FormControl<string | null | undefined>,
-		time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time: FormControl<string | null | undefined>,
 	}
 	export function CreateNameRequestParamFormGroup() {
 		return new FormGroup<NameRequestParamFormProperties>({
 			entity_id: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1627,9 +1699,13 @@ export namespace MyNS {
 
 	export interface NodeListResult {
 		results?: Array<NodeId>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count?: number | null;
 	}
 	export interface NodeListResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateNodeListResultFormGroup() {
@@ -1643,22 +1719,34 @@ export namespace MyNS {
 
 	export interface PagedListResponse {
 		cursor?: string | null;
-		end_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time?: string | null;
 		results?: Array<EntityId>;
-		start_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count?: number | null;
 	}
 	export interface PagedListResponseFormProperties {
 		cursor: FormControl<string | null | undefined>,
-		end_time: FormControl<number | null | undefined>,
-		start_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedListResponseFormGroup() {
 		return new FormGroup<PagedListResponseFormProperties>({
 			cursor: new FormControl<string | null | undefined>(undefined),
-			end_time: new FormControl<number | null | undefined>(undefined),
-			start_time: new FormControl<number | null | undefined>(undefined),
+			end_time: new FormControl<string | null | undefined>(undefined),
+			start_time: new FormControl<string | null | undefined>(undefined),
 			total_count: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1666,22 +1754,34 @@ export namespace MyNS {
 
 	export interface PagedListResponseWithTime {
 		cursor?: string | null;
-		end_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time?: string | null;
 		results?: Array<EntityIdWithTime>;
-		start_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count?: number | null;
 	}
 	export interface PagedListResponseWithTimeFormProperties {
 		cursor: FormControl<string | null | undefined>,
-		end_time: FormControl<number | null | undefined>,
-		start_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedListResponseWithTimeFormGroup() {
 		return new FormGroup<PagedListResponseWithTimeFormProperties>({
 			cursor: new FormControl<string | null | undefined>(undefined),
-			end_time: new FormControl<number | null | undefined>(undefined),
-			start_time: new FormControl<number | null | undefined>(undefined),
+			end_time: new FormControl<string | null | undefined>(undefined),
+			start_time: new FormControl<string | null | undefined>(undefined),
 			total_count: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1708,11 +1808,15 @@ export namespace MyNS {
 	}
 
 	export interface ProblemEvent extends BaseEvent {
-		event_close_time_epoch_ms?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		event_close_time_epoch_ms?: string | null;
 		severity?: ProblemEventSeverity | null;
 	}
 	export interface ProblemEventFormProperties extends BaseEventFormProperties {
-		event_close_time_epoch_ms: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		event_close_time_epoch_ms: FormControl<string | null | undefined>,
 		severity: FormControl<ProblemEventSeverity | null | undefined>,
 	}
 	export function CreateProblemEventFormGroup() {
@@ -1722,9 +1826,9 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			admin_state: new FormControl<BaseEventAdmin_state | null | undefined>(undefined),
 			archived: new FormControl<boolean | null | undefined>(undefined),
-			event_time_epoch_ms: new FormControl<number | null | undefined>(undefined),
+			event_time_epoch_ms: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
-			event_close_time_epoch_ms: new FormControl<number | null | undefined>(undefined),
+			event_close_time_epoch_ms: new FormControl<string | null | undefined>(undefined),
 			severity: new FormControl<ProblemEventSeverity | null | undefined>(undefined),
 		});
 
@@ -1754,11 +1858,19 @@ export namespace MyNS {
 	export enum RecommendedRuleAction { ALLOW = 'ALLOW', DROP = 'DROP' }
 
 	export interface SimplePortRange {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 	}
 	export interface SimplePortRangeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateSimplePortRangeFormGroup() {
@@ -1782,17 +1894,25 @@ export namespace MyNS {
 	}
 
 	export interface TimeRange {
-		end_time?: number | null;
-		start_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time?: string | null;
 	}
 	export interface TimeRangeFormProperties {
-		end_time: FormControl<number | null | undefined>,
-		start_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end_time: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time: FormControl<string | null | undefined>,
 	}
 	export function CreateTimeRangeFormGroup() {
 		return new FormGroup<TimeRangeFormProperties>({
-			end_time: new FormControl<number | null | undefined>(undefined),
-			start_time: new FormControl<number | null | undefined>(undefined),
+			end_time: new FormControl<string | null | undefined>(undefined),
+			start_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1900,6 +2020,8 @@ export namespace MyNS {
 
 		/** query filter */
 		filter?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		sort_by?: SortByClause;
 		time_range?: TimeRange;
@@ -1910,6 +2032,8 @@ export namespace MyNS {
 
 		/** query filter */
 		filter: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchRequestFormGroup() {
@@ -1964,9 +2088,13 @@ export namespace MyNS {
 
 	export interface SimpleListResponse {
 		results?: Array<EntityId>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count?: number | null;
 	}
 	export interface SimpleListResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSimpleListResponseFormGroup() {
@@ -2054,19 +2182,25 @@ export namespace MyNS {
 
 	export interface Token {
 
-		/** expiry epoch time in secs. */
-		expiry?: number | null;
+		/**
+		 * expiry epoch time in secs.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiry?: string | null;
 		token?: string | null;
 	}
 	export interface TokenFormProperties {
 
-		/** expiry epoch time in secs. */
-		expiry: FormControl<number | null | undefined>,
+		/**
+		 * expiry epoch time in secs.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiry: FormControl<string | null | undefined>,
 		token: FormControl<string | null | undefined>,
 	}
 	export function CreateTokenFormGroup() {
 		return new FormGroup<TokenFormProperties>({
-			expiry: new FormControl<number | null | undefined>(undefined),
+			expiry: new FormControl<string | null | undefined>(undefined),
 			token: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2174,14 +2308,18 @@ export namespace MyNS {
 	export interface VPC extends BaseEntity {
 		cidr_block?: IpV4Address;
 		default_vpc?: boolean | null;
-		last_synched_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_synched_time?: string | null;
 		region?: string | null;
 		state?: string | null;
 		vendor_id?: string | null;
 	}
 	export interface VPCFormProperties extends BaseEntityFormProperties {
 		default_vpc: FormControl<boolean | null | undefined>,
-		last_synched_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_synched_time: FormControl<string | null | undefined>,
 		region: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		vendor_id: FormControl<string | null | undefined>,
@@ -2192,7 +2330,7 @@ export namespace MyNS {
 			entity_type: new FormControl<BaseEntityEntity_type | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			default_vpc: new FormControl<boolean | null | undefined>(undefined),
-			last_synched_time: new FormControl<number | null | undefined>(undefined),
+			last_synched_time: new FormControl<string | null | undefined>(undefined),
 			region: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
 			vendor_id: new FormControl<string | null | undefined>(undefined),
@@ -2289,11 +2427,15 @@ export namespace MyNS {
 	export interface VxlanLayer2Network extends BaseL2Network {
 		nsx_managers?: Array<Reference>;
 		scope?: NSXFirewallRuleScope | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		segment_id?: number | null;
 		vteps?: Array<Reference>;
 	}
 	export interface VxlanLayer2NetworkFormProperties extends BaseL2NetworkFormProperties {
 		scope: FormControl<NSXFirewallRuleScope | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		segment_id: FormControl<number | null | undefined>,
 	}
 	export function CreateVxlanLayer2NetworkFormGroup() {
@@ -3400,9 +3542,12 @@ export namespace MyNS {
 		 * List clusters
 		 * Get entities/clusters
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListClusters(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3413,11 +3558,12 @@ export namespace MyNS {
 		 * Show cluster details
 		 * Show cluster details
 		 * Get entities/clusters/{id}
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} id entity id
 		 * @return {Cluster} OK
 		 */
-		GetCluster(time: number | null | undefined, id: string): Observable<Cluster> {
+		GetCluster(time: string | null | undefined, id: string): Observable<Cluster> {
 			return this.http.get<Cluster>(this.baseUri + 'entities/clusters/' + (id == null ? '' : encodeURIComponent(id)) + '?time=' + time, {});
 		}
 
@@ -3426,9 +3572,12 @@ export namespace MyNS {
 		 * List datastores
 		 * Get entities/datastores
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListDatastores(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3439,11 +3588,12 @@ export namespace MyNS {
 		 * Show datastore details
 		 * Show datastore details
 		 * Get entities/datastores/{id}
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} id entity id
 		 * @return {Datastore} OK
 		 */
-		GetDatastore(time: number | null | undefined, id: string): Observable<Datastore> {
+		GetDatastore(time: string | null | undefined, id: string): Observable<Datastore> {
 			return this.http.get<Datastore>(this.baseUri + 'entities/datastores/' + (id == null ? '' : encodeURIComponent(id)) + '?time=' + time, {});
 		}
 
@@ -3452,9 +3602,12 @@ export namespace MyNS {
 		 * List distributed virtual portgroups
 		 * Get entities/distributed-virtual-portgroups
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListDistributedVirtualPortgroups(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3466,10 +3619,11 @@ export namespace MyNS {
 		 * Show distributed virtual portgroup details
 		 * Get entities/distributed-virtual-portgroups/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DistributedVirtualPortgroup} OK
 		 */
-		GetDistributedVirtualPortgroup(id: string, time: number | null | undefined): Observable<DistributedVirtualPortgroup> {
+		GetDistributedVirtualPortgroup(id: string, time: string | null | undefined): Observable<DistributedVirtualPortgroup> {
 			return this.http.get<DistributedVirtualPortgroup>(this.baseUri + 'entities/distributed-virtual-portgroups/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3478,9 +3632,12 @@ export namespace MyNS {
 		 * List distributed virtual switches
 		 * Get entities/distributed-virtual-switches
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListDistributedVirtualSwitches(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3492,10 +3649,11 @@ export namespace MyNS {
 		 * Show distributed virtual switch details
 		 * Get entities/distributed-virtual-switches/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DistributedVirtualSwitch} OK
 		 */
-		GetDistributedVirtualSwitch(id: string, time: number | null | undefined): Observable<DistributedVirtualSwitch> {
+		GetDistributedVirtualSwitch(id: string, time: string | null | undefined): Observable<DistributedVirtualSwitch> {
 			return this.http.get<DistributedVirtualSwitch>(this.baseUri + 'entities/distributed-virtual-switches/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3504,9 +3662,12 @@ export namespace MyNS {
 		 * List firewall rules
 		 * Get entities/firewall-rules
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListFirewallRules(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3518,10 +3679,11 @@ export namespace MyNS {
 		 * Show firewall rule details
 		 * Get entities/firewall-rules/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseFirewallRule} OK
 		 */
-		GetFirewallRule(id: string, time: number | null | undefined): Observable<BaseFirewallRule> {
+		GetFirewallRule(id: string, time: string | null | undefined): Observable<BaseFirewallRule> {
 			return this.http.get<BaseFirewallRule>(this.baseUri + 'entities/firewall-rules/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3530,9 +3692,12 @@ export namespace MyNS {
 		 * List firewalls
 		 * Get entities/firewalls
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListFirewalls(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3544,10 +3709,11 @@ export namespace MyNS {
 		 * Show firewall details
 		 * Get entities/firewalls/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseFirewallRule} OK
 		 */
-		GetFirewall(id: string, time: number | null | undefined): Observable<BaseFirewallRule> {
+		GetFirewall(id: string, time: string | null | undefined): Observable<BaseFirewallRule> {
 			return this.http.get<BaseFirewallRule>(this.baseUri + 'entities/firewalls/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3556,9 +3722,12 @@ export namespace MyNS {
 		 * List flows
 		 * Get entities/flows
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		GetFlows(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3570,10 +3739,11 @@ export namespace MyNS {
 		 * Show flow details
 		 * Get entities/flows/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Flow} OK
 		 */
-		GetFlow(id: string, time: number | null | undefined): Observable<Flow> {
+		GetFlow(id: string, time: string | null | undefined): Observable<Flow> {
 			return this.http.get<Flow>(this.baseUri + 'entities/flows/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3582,9 +3752,12 @@ export namespace MyNS {
 		 * List folders
 		 * Get entities/folders
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListFolders(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3595,11 +3768,12 @@ export namespace MyNS {
 		 * Show folder details
 		 * Show folder details
 		 * Get entities/folders/{id}
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} id entity id
 		 * @return {Folder} OK
 		 */
-		GetFolder(time: number | null | undefined, id: string): Observable<Folder> {
+		GetFolder(time: string | null | undefined, id: string): Observable<Folder> {
 			return this.http.get<Folder>(this.baseUri + 'entities/folders/' + (id == null ? '' : encodeURIComponent(id)) + '?time=' + time, {});
 		}
 
@@ -3608,9 +3782,12 @@ export namespace MyNS {
 		 * List hosts
 		 * Get entities/hosts
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListHosts(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3621,11 +3798,12 @@ export namespace MyNS {
 		 * Show host details
 		 * Show host details
 		 * Get entities/hosts/{id}
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} id entity id
 		 * @return {Host} OK
 		 */
-		GetHost(time: number | null | undefined, id: string): Observable<Host> {
+		GetHost(time: string | null | undefined, id: string): Observable<Host> {
 			return this.http.get<Host>(this.baseUri + 'entities/hosts/' + (id == null ? '' : encodeURIComponent(id)) + '?time=' + time, {});
 		}
 
@@ -3634,9 +3812,12 @@ export namespace MyNS {
 		 * List ip sets
 		 * Get entities/ip-sets
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListIPSets(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3648,10 +3829,11 @@ export namespace MyNS {
 		 * Show ip set details
 		 * Get entities/ip-sets/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseIPSet} OK
 		 */
-		GetIPSet(id: string, time: number | null | undefined): Observable<BaseIPSet> {
+		GetIPSet(id: string, time: string | null | undefined): Observable<BaseIPSet> {
 			return this.http.get<BaseIPSet>(this.baseUri + 'entities/ip-sets/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3660,9 +3842,12 @@ export namespace MyNS {
 		 * List layer2 networks
 		 * Get entities/layer2-networks
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListLayer2Networks(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3674,10 +3859,11 @@ export namespace MyNS {
 		 * Show layer2 network details
 		 * Get entities/layer2-networks/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseL2Network} OK
 		 */
-		GetLayer2Network(id: string, time: number | null | undefined): Observable<BaseL2Network> {
+		GetLayer2Network(id: string, time: string | null | undefined): Observable<BaseL2Network> {
 			return this.http.get<BaseL2Network>(this.baseUri + 'entities/layer2-networks/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3697,10 +3883,11 @@ export namespace MyNS {
 		 * Get name of an entity
 		 * Get entities/names/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {EntityName} OK
 		 */
-		GetName(id: string, time: number | null | undefined): Observable<EntityName> {
+		GetName(id: string, time: string | null | undefined): Observable<EntityName> {
 			return this.http.get<EntityName>(this.baseUri + 'entities/names/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3709,9 +3896,12 @@ export namespace MyNS {
 		 * List nsx managers
 		 * Get entities/nsx-managers
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListNSXManagers(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3723,10 +3913,11 @@ export namespace MyNS {
 		 * Show nsx manager details
 		 * Get entities/nsx-managers/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseNSXManager} OK
 		 */
-		GetNSXManager(id: string, time: number | null | undefined): Observable<BaseNSXManager> {
+		GetNSXManager(id: string, time: string | null | undefined): Observable<BaseNSXManager> {
 			return this.http.get<BaseNSXManager>(this.baseUri + 'entities/nsx-managers/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3735,9 +3926,12 @@ export namespace MyNS {
 		 * List problem events.
 		 * Get entities/problems
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListProblemEvents(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3749,10 +3943,11 @@ export namespace MyNS {
 		 * Show problem event details.
 		 * Get entities/problems/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProblemEvent} OK
 		 */
-		GetProblemEvent(id: string, time: number | null | undefined): Observable<ProblemEvent> {
+		GetProblemEvent(id: string, time: string | null | undefined): Observable<ProblemEvent> {
 			return this.http.get<ProblemEvent>(this.baseUri + 'entities/problems/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3761,9 +3956,12 @@ export namespace MyNS {
 		 * List security groups
 		 * Get entities/security-groups
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListSecurityGroups(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3775,10 +3973,11 @@ export namespace MyNS {
 		 * Show security group details
 		 * Get entities/security-groups/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseSecurityGroup} OK
 		 */
-		GetSecurityGroup(id: string, time: number | null | undefined): Observable<BaseSecurityGroup> {
+		GetSecurityGroup(id: string, time: string | null | undefined): Observable<BaseSecurityGroup> {
 			return this.http.get<BaseSecurityGroup>(this.baseUri + 'entities/security-groups/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3787,9 +3986,12 @@ export namespace MyNS {
 		 * List security tags
 		 * Get entities/security-tags
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListSecurityTags(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3801,10 +4003,11 @@ export namespace MyNS {
 		 * Show security tag details
 		 * Get entities/security-tags/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SecurityTag} OK
 		 */
-		GetSecurityTag(id: string, time: number | null | undefined): Observable<SecurityTag> {
+		GetSecurityTag(id: string, time: string | null | undefined): Observable<SecurityTag> {
 			return this.http.get<SecurityTag>(this.baseUri + 'entities/security-tags/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3813,9 +4016,12 @@ export namespace MyNS {
 		 * List service groups
 		 * Get entities/service-groups
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListServiceGroups(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3827,10 +4033,11 @@ export namespace MyNS {
 		 * Show service group details
 		 * Get entities/service-groups/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseServiceGroup} OK
 		 */
-		GetServiceGroup(id: string, time: number | null | undefined): Observable<BaseServiceGroup> {
+		GetServiceGroup(id: string, time: string | null | undefined): Observable<BaseServiceGroup> {
 			return this.http.get<BaseServiceGroup>(this.baseUri + 'entities/service-groups/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3839,9 +4046,12 @@ export namespace MyNS {
 		 * List services
 		 * Get entities/services
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListServices(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3853,10 +4063,11 @@ export namespace MyNS {
 		 * Show service details
 		 * Get entities/services/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseService} OK
 		 */
-		GetService(id: string, time: number | null | undefined): Observable<BaseService> {
+		GetService(id: string, time: string | null | undefined): Observable<BaseService> {
 			return this.http.get<BaseService>(this.baseUri + 'entities/services/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3865,9 +4076,12 @@ export namespace MyNS {
 		 * List vCenter datacenters
 		 * Get entities/vc-datacenters
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListDatacenters(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3878,11 +4092,12 @@ export namespace MyNS {
 		 * Show vCenter datacenter details
 		 * Show vCenter datacenter details
 		 * Get entities/vc-datacenters/{id}
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} id entity id
 		 * @return {VCDatacenter} OK
 		 */
-		GetDatacenter(time: number | null | undefined, id: string): Observable<VCDatacenter> {
+		GetDatacenter(time: string | null | undefined, id: string): Observable<VCDatacenter> {
 			return this.http.get<VCDatacenter>(this.baseUri + 'entities/vc-datacenters/' + (id == null ? '' : encodeURIComponent(id)) + '?time=' + time, {});
 		}
 
@@ -3891,9 +4106,12 @@ export namespace MyNS {
 		 * List vCenter managers
 		 * Get entities/vcenter-managers
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListVcenterManagers(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3905,10 +4123,11 @@ export namespace MyNS {
 		 * Show vCenter manager details
 		 * Get entities/vcenter-managers/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {VCenterManager} OK
 		 */
-		GetVcenterManager(id: string, time: number | null | undefined): Observable<VCenterManager> {
+		GetVcenterManager(id: string, time: string | null | undefined): Observable<VCenterManager> {
 			return this.http.get<VCenterManager>(this.baseUri + 'entities/vcenter-managers/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3917,9 +4136,12 @@ export namespace MyNS {
 		 * List vmknics
 		 * Get entities/vmknics
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListVmknics(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3931,10 +4153,11 @@ export namespace MyNS {
 		 * Show vmknic details
 		 * Get entities/vmknics/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Vmknic} OK
 		 */
-		GetVmknic(id: string, time: number | null | undefined): Observable<Vmknic> {
+		GetVmknic(id: string, time: string | null | undefined): Observable<Vmknic> {
 			return this.http.get<Vmknic>(this.baseUri + 'entities/vmknics/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3943,9 +4166,12 @@ export namespace MyNS {
 		 * List vms
 		 * Get entities/vms
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListVms(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3957,10 +4183,11 @@ export namespace MyNS {
 		 * Show vm details
 		 * Get entities/vms/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseVirtualMachine} OK
 		 */
-		GetVm(id: string, time: number | null | undefined): Observable<BaseVirtualMachine> {
+		GetVm(id: string, time: string | null | undefined): Observable<BaseVirtualMachine> {
 			return this.http.get<BaseVirtualMachine>(this.baseUri + 'entities/vms/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3969,9 +4196,12 @@ export namespace MyNS {
 		 * List vnics
 		 * Get entities/vnics
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponseWithTime} OK
 		 */
 		ListVnics(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponseWithTime> {
@@ -3983,10 +4213,11 @@ export namespace MyNS {
 		 * Show vnic details
 		 * Get entities/vnics/{id}
 		 * @param {string} id entity id
-		 * @param {number} time time in epoch seconds
+		 * @param {string} time time in epoch seconds
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BaseVnic} OK
 		 */
-		GetVnic(id: string, time: number | null | undefined): Observable<BaseVnic> {
+		GetVnic(id: string, time: string | null | undefined): Observable<BaseVnic> {
 			return this.http.get<BaseVnic>(this.baseUri + 'entities/vnics/' + (id == null ? '' : encodeURIComponent(id)) + '&time=' + time, {});
 		}
 
@@ -3995,9 +4226,12 @@ export namespace MyNS {
 		 * List applications
 		 * Get groups/applications
 		 * @param {number} size page size of results
+		 *     Type: double
 		 * @param {string} cursor cursor from previous response
 		 * @param {number} start_time start time for query in epoch seconds
+		 *     Type: double
 		 * @param {number} end_time end time for query in epoch seconds
+		 *     Type: double
 		 * @return {PagedListResponse} OK
 		 */
 		ListApplications(size: number | null | undefined, cursor: string | null | undefined, start_time: number | null | undefined, end_time: number | null | undefined): Observable<PagedListResponse> {

@@ -21,8 +21,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 	}
@@ -33,8 +33,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -57,8 +57,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 	}
@@ -73,8 +73,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 	}
@@ -105,8 +105,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 
@@ -130,8 +130,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 
@@ -329,8 +329,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 	}
@@ -341,8 +341,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -381,8 +381,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -391,8 +391,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid?: string | null;
 	}
@@ -403,8 +403,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -413,8 +413,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid: FormControl<string | null | undefined>,
 	}
@@ -457,8 +457,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -467,8 +467,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid?: string | null;
 	}
@@ -479,8 +479,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -489,8 +489,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid: FormControl<string | null | undefined>,
 	}
@@ -533,8 +533,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -543,8 +543,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid?: string | null;
 
@@ -558,8 +558,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -568,8 +568,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid: FormControl<string | null | undefined>,
 
@@ -679,15 +679,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 
@@ -713,15 +713,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -756,8 +756,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId?: string | null;
 
@@ -791,8 +791,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId: FormControl<string | null | undefined>,
 
@@ -874,8 +874,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 
@@ -884,8 +884,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 
@@ -914,8 +914,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 
@@ -924,8 +924,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -993,30 +993,54 @@ export namespace MyNS {
 
 	export interface EndpointStats {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fail: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sending: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success: number;
 	}
 	export interface EndpointStatsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fail: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sending: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointStatsFormGroup() {
@@ -1032,8 +1056,8 @@ export namespace MyNS {
 	export interface EndpointTransformationIn {
 
 		/**
-		 * Max length: 51200
 		 * Min length: 10
+		 * Max length: 51200
 		 */
 		code?: string | null;
 		enabled?: boolean | null;
@@ -1041,8 +1065,8 @@ export namespace MyNS {
 	export interface EndpointTransformationInFormProperties {
 
 		/**
-		 * Max length: 51200
 		 * Min length: 10
+		 * Max length: 51200
 		 */
 		code: FormControl<string | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -1058,8 +1082,8 @@ export namespace MyNS {
 	export interface EndpointTransformationOut {
 
 		/**
-		 * Max length: 51200
 		 * Min length: 10
+		 * Max length: 51200
 		 */
 		code?: string | null;
 		enabled?: boolean | null;
@@ -1067,8 +1091,8 @@ export namespace MyNS {
 	export interface EndpointTransformationOutFormProperties {
 
 		/**
-		 * Max length: 51200
 		 * Min length: 10
+		 * Max length: 51200
 		 */
 		code: FormControl<string | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -1104,15 +1128,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 
@@ -1135,15 +1159,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -1193,8 +1217,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -1203,8 +1227,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid?: string | null;
 	}
@@ -1215,8 +1239,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -1225,8 +1249,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		endpointUid: FormControl<string | null | undefined>,
 	}
@@ -1751,7 +1775,10 @@ export namespace MyNS {
 		/** Required */
 		response: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: number;
 
 		/**
@@ -1777,8 +1804,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 	}
@@ -1796,7 +1823,10 @@ export namespace MyNS {
 		/** Required */
 		response: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 
 		/**
@@ -1822,8 +1852,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -1890,7 +1920,10 @@ export namespace MyNS {
 		/** Required */
 		response: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: number;
 
 		/**
@@ -1916,8 +1949,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 	}
@@ -1935,7 +1968,10 @@ export namespace MyNS {
 		/** Required */
 		response: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 
 		/**
@@ -1961,8 +1997,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -2044,15 +2080,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 
@@ -2092,15 +2128,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the endpoint
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		uid: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -2164,8 +2200,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId?: string | null;
 
@@ -2188,8 +2224,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId: FormControl<string | null | undefined>,
 
@@ -2246,8 +2282,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -2259,8 +2295,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		msgEventId?: string | null;
 
@@ -2274,8 +2310,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -2284,8 +2320,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		msgEventId: FormControl<string | null | undefined>,
 
@@ -2308,7 +2344,10 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: number;
 
 		/** Required */
@@ -2319,7 +2358,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2369,8 +2411,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid?: string | null;
 
@@ -2382,8 +2424,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		msgEventId?: string | null;
 
@@ -2397,8 +2439,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the application
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		appUid: FormControl<string | null | undefined>,
 
@@ -2407,8 +2449,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		msgEventId: FormControl<string | null | undefined>,
 
@@ -2440,8 +2482,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId?: string | null;
 
@@ -2465,8 +2507,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional unique identifier for the message
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		eventId: FormControl<string | null | undefined>,
 
@@ -2688,6 +2730,7 @@ export namespace MyNS {
 		 * List Applications
 		 * List of all the organization's applications.
 		 * Get api/v1/app/
+		 * @param {number} limit Maximum: 250
 		 * @return {ListResponse_ApplicationOut_} Successful Response
 		 */
 		List_applications_api_v1_app__get(iterator: string | null | undefined, limit: number | null | undefined, order: Ordering | null | undefined): Observable<ListResponse_ApplicationOut_> {
@@ -2709,6 +2752,8 @@ export namespace MyNS {
 		 * Delete Application
 		 * Delete an application.
 		 * Delete api/v1/app/{app_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Delete_application_api_v1_app__app_id___delete(app_id: string): Observable<HttpResponse<string>> {
@@ -2719,6 +2764,8 @@ export namespace MyNS {
 		 * Get Application
 		 * Get an application.
 		 * Get api/v1/app/{app_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {ApplicationOut} Successful Response
 		 */
 		Get_application_api_v1_app__app_id___get(app_id: string): Observable<ApplicationOut> {
@@ -2729,6 +2776,8 @@ export namespace MyNS {
 		 * Update Application
 		 * Update an application.
 		 * Put api/v1/app/{app_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {ApplicationOut} Successful Response
 		 */
 		Update_application_api_v1_app__app_id___put(app_id: string, requestBody: ApplicationIn): Observable<ApplicationOut> {
@@ -2739,6 +2788,14 @@ export namespace MyNS {
 		 * List Attempts By Endpoint
 		 * List attempts by endpoint id
 		 * Get api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {MessageStatus} status Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {StatusCodeClass} status_code_class Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} channel Max length: 128
 		 * @return {ListResponse_MessageAttemptOut_} Successful Response
 		 */
 		List_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___get(app_id: string, endpoint_id: string, iterator: string | null | undefined, limit: number | null | undefined, status: MessageStatus | null | undefined, status_code_class: StatusCodeClass | null | undefined, event_types: Array<string> | null | undefined, channel: string | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_MessageAttemptOut_> {
@@ -2749,6 +2806,16 @@ export namespace MyNS {
 		 * List Attempts By Msg
 		 * List attempts by message id
 		 * Get api/v1/app/{app_id}/attempt/msg/{msg_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {MessageStatus} status Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {StatusCodeClass} status_code_class Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} channel Max length: 128
 		 * @return {ListResponse_MessageAttemptOut_} Successful Response
 		 */
 		List_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___get(app_id: string, msg_id: string, endpoint_id: string | null | undefined, iterator: string | null | undefined, limit: number | null | undefined, status: MessageStatus | null | undefined, status_code_class: StatusCodeClass | null | undefined, event_types: Array<string> | null | undefined, channel: string | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_MessageAttemptOut_> {
@@ -2759,6 +2826,9 @@ export namespace MyNS {
 		 * List Endpoints
 		 * List the application's endpoints.
 		 * Get api/v1/app/{app_id}/endpoint/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
 		 * @return {ListResponse_EndpointOut_} Successful Response
 		 */
 		List_endpoints_api_v1_app__app_id__endpoint__get(app_id: string, iterator: string | null | undefined, limit: number | null | undefined, order: Ordering | null | undefined): Observable<ListResponse_EndpointOut_> {
@@ -2770,6 +2840,8 @@ export namespace MyNS {
 		 * Create a new endpoint for the application.
 		 * When `secret` is `null` the secret is automatically generated (recommended)
 		 * Post api/v1/app/{app_id}/endpoint/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Create_endpoint_api_v1_app__app_id__endpoint__post(app_id: string, requestBody: EndpointIn): Observable<HttpResponse<string>> {
@@ -2780,6 +2852,10 @@ export namespace MyNS {
 		 * Delete Endpoint
 		 * Delete an endpoint.
 		 * Delete api/v1/app/{app_id}/endpoint/{endpoint_id}/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete(endpoint_id: string, app_id: string): Observable<HttpResponse<string>> {
@@ -2790,6 +2866,10 @@ export namespace MyNS {
 		 * Get Endpoint
 		 * Get an application.
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointOut} Successful Response
 		 */
 		Get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___get(endpoint_id: string, app_id: string): Observable<EndpointOut> {
@@ -2800,6 +2880,10 @@ export namespace MyNS {
 		 * Update Endpoint
 		 * Update an endpoint.
 		 * Put api/v1/app/{app_id}/endpoint/{endpoint_id}/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointOut} Successful Response
 		 */
 		Update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___put(endpoint_id: string, app_id: string, requestBody: EndpointUpdate): Observable<EndpointOut> {
@@ -2810,6 +2894,10 @@ export namespace MyNS {
 		 * Get Endpoint Headers
 		 * Get the additional headers to be sent with the webhook
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointHeadersOut} Successful Response
 		 */
 		Get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__get(endpoint_id: string, app_id: string): Observable<EndpointHeadersOut> {
@@ -2820,6 +2908,10 @@ export namespace MyNS {
 		 * Patch Endpoint Headers
 		 * Partially set the additional headers to be sent with the webhook
 		 * Patch api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch(app_id: string, endpoint_id: string, requestBody: EndpointHeadersPatchIn): Observable<HttpResponse<string>> {
@@ -2830,6 +2922,10 @@ export namespace MyNS {
 		 * Update Endpoint Headers
 		 * Set the additional headers to be sent with the webhook
 		 * Put api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__put(app_id: string, endpoint_id: string, requestBody: EndpointHeadersIn): Observable<HttpResponse<string>> {
@@ -2841,6 +2937,13 @@ export namespace MyNS {
 		 * List messages for a particular endpoint. Additionally includes metadata about the latest message attempt.
 		 * The `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed.
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {string} channel Max length: 128
+		 * @param {MessageStatus} status Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResponse_EndpointMessageOut_} Successful Response
 		 */
 		List_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__get(endpoint_id: string, app_id: string, iterator: string | null | undefined, limit: number | null | undefined, channel: string | null | undefined, status: MessageStatus | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_EndpointMessageOut_> {
@@ -2851,6 +2954,10 @@ export namespace MyNS {
 		 * Recover Failed Webhooks
 		 * Resend all failed messages since a given time.
 		 * Post api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__post(app_id: string, endpoint_id: string, requestBody: RecoverIn): Observable<HttpResponse<string>> {
@@ -2861,6 +2968,10 @@ export namespace MyNS {
 		 * Replay Missing Webhooks
 		 * Replays messages to the endpoint. Only messages that were created after `since` will be sent. Messages that were previously sent to the endpoint are not resent.
 		 * Post api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__post(app_id: string, endpoint_id: string, requestBody: ReplayIn): Observable<HttpResponse<string>> {
@@ -2873,6 +2984,10 @@ export namespace MyNS {
 		 * This is used to verify the authenticity of the webhook.
 		 * For more information please refer to [the consuming webhooks docs](https://docs.svix.com/consuming-webhooks/).
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointSecretOut} Successful Response
 		 */
 		Get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__get(endpoint_id: string, app_id: string): Observable<EndpointSecretOut> {
@@ -2883,6 +2998,10 @@ export namespace MyNS {
 		 * Rotate Endpoint Secret
 		 * Rotates the endpoint's signing secret.  The previous secret will be valid for the next 24 hours.
 		 * Post api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__post(endpoint_id: string, app_id: string, requestBody: EndpointSecretRotateIn): Observable<HttpResponse<string>> {
@@ -2893,6 +3012,10 @@ export namespace MyNS {
 		 * Send Event Type Example Message
 		 * Send an example message for event
 		 * Post api/v1/app/{app_id}/endpoint/{endpoint_id}/send-example/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Send_event_type_example_message_api_v1_app__app_id__endpoint__endpoint_id__send_example__post(app_id: string, endpoint_id: string, requestBody: EventExampleIn): Observable<HttpResponse<string>> {
@@ -2903,6 +3026,10 @@ export namespace MyNS {
 		 * Get Endpoint Stats
 		 * Get basic statistics for the endpoint.
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointStats} Successful Response
 		 */
 		Get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__get(endpoint_id: string, app_id: string, since: Date | null | undefined, until: Date | null | undefined): Observable<EndpointStats> {
@@ -2913,6 +3040,10 @@ export namespace MyNS {
 		 * Get Endpoint Transformation
 		 * Get the transformation code associated with this endpoint
 		 * Get api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {EndpointTransformationOut} Successful Response
 		 */
 		Get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__get(endpoint_id: string, app_id: string): Observable<EndpointTransformationOut> {
@@ -2923,6 +3054,10 @@ export namespace MyNS {
 		 * Set Endpoint Transformation
 		 * Set or unset the transformation code associated with this endpoint
 		 * Patch api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patch(app_id: string, endpoint_id: string, requestBody: EndpointTransformationIn): Observable<HttpResponse<string>> {
@@ -2933,6 +3068,9 @@ export namespace MyNS {
 		 * List Integrations
 		 * List the application's integrations.
 		 * Get api/v1/app/{app_id}/integration/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResponse_IntegrationOut_} Successful Response
 		 */
 		List_integrations_api_v1_app__app_id__integration__get(app_id: string, iterator: string | null | undefined, limit: number | null | undefined): Observable<ListResponse_IntegrationOut_> {
@@ -2943,6 +3081,8 @@ export namespace MyNS {
 		 * Create Integration
 		 * Create an integration.
 		 * Post api/v1/app/{app_id}/integration/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Create_integration_api_v1_app__app_id__integration__post(app_id: string, requestBody: IntegrationIn): Observable<HttpResponse<string>> {
@@ -2953,6 +3093,8 @@ export namespace MyNS {
 		 * Delete Integration
 		 * Delete an integration and revoke it's key.
 		 * Delete api/v1/app/{app_id}/integration/{integ_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Delete_integration_api_v1_app__app_id__integration__integ_id___delete(integ_id: string, app_id: string): Observable<HttpResponse<string>> {
@@ -2963,6 +3105,8 @@ export namespace MyNS {
 		 * Get Integration
 		 * Get an integration.
 		 * Get api/v1/app/{app_id}/integration/{integ_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {IntegrationOut} Successful Response
 		 */
 		Get_integration_api_v1_app__app_id__integration__integ_id___get(integ_id: string, app_id: string): Observable<IntegrationOut> {
@@ -2973,6 +3117,8 @@ export namespace MyNS {
 		 * Update Integration
 		 * Update an integration.
 		 * Put api/v1/app/{app_id}/integration/{integ_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {IntegrationOut} Successful Response
 		 */
 		Update_integration_api_v1_app__app_id__integration__integ_id___put(integ_id: string, app_id: string, requestBody: IntegrationUpdate): Observable<IntegrationOut> {
@@ -2983,6 +3129,8 @@ export namespace MyNS {
 		 * Get Integration Key
 		 * Get an integration's key.
 		 * Get api/v1/app/{app_id}/integration/{integ_id}/key/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {IntegrationKeyOut} Successful Response
 		 */
 		Get_integration_key_api_v1_app__app_id__integration__integ_id__key__get(integ_id: string, app_id: string): Observable<IntegrationKeyOut> {
@@ -2993,6 +3141,8 @@ export namespace MyNS {
 		 * Rotate Integration Key
 		 * Rotate the integration's key. The previous key will be immediately revoked.
 		 * Post api/v1/app/{app_id}/integration/{integ_id}/key/rotate/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {IntegrationKeyOut} Successful Response
 		 */
 		Rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__post(integ_id: string, app_id: string): Observable<IntegrationKeyOut> {
@@ -3006,6 +3156,10 @@ export namespace MyNS {
 		 * The `after` parameter lets you filter all items created after a certain date and is ignored if an iterator is passed.
 		 * `before` and `after` cannot be used simultaneously.
 		 * Get api/v1/app/{app_id}/msg/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {string} channel Max length: 128
 		 * @return {ListResponse_MessageOut_} Successful Response
 		 */
 		List_messages_api_v1_app__app_id__msg__get(app_id: string, iterator: string | null | undefined, limit: number | null | undefined, event_types: Array<string> | null | undefined, channel: string | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_MessageOut_> {
@@ -3022,6 +3176,8 @@ export namespace MyNS {
 		 * The `payload` property is the webhook's body (the actual webhook message). Svix supports payload sizes of up to ~350kb, though it's generally a good idea to keep webhook payloads small, probably no larger than 40kb.
 		 * The optional `application` property will be used to create an application if the application referenced in the path does not exist. If it does then this property is ignored.
 		 * Post api/v1/app/{app_id}/msg/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Create_message_api_v1_app__app_id__msg__post(app_id: string, with_content: boolean | null | undefined, requestBody: MessageIn): Observable<HttpResponse<string>> {
@@ -3032,6 +3188,10 @@ export namespace MyNS {
 		 * Get Message
 		 * Get a message by its ID or eventID.
 		 * Get api/v1/app/{app_id}/msg/{msg_id}/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {MessageOut} Successful Response
 		 */
 		Get_message_api_v1_app__app_id__msg__msg_id___get(msg_id: string, app_id: string): Observable<MessageOut> {
@@ -3043,6 +3203,15 @@ export namespace MyNS {
 		 * Deprecated: Please use "List Attempts by Endpoint" and "List Attempts by Msg" instead.
 		 * `msg_id`: Use a message id or a message `eventId`
 		 * Get api/v1/app/{app_id}/msg/{msg_id}/attempt/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} channel Max length: 128
+		 * @param {MessageStatus} status Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResponse_MessageAttemptOut_} Successful Response
 		 */
 		List_attempts_api_v1_app__app_id__msg__msg_id__attempt__get(app_id: string, msg_id: string, iterator: string | null | undefined, limit: number | null | undefined, endpoint_id: string | null | undefined, event_types: Array<string> | null | undefined, channel: string | null | undefined, status: MessageStatus | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_MessageAttemptOut_> {
@@ -3053,6 +3222,10 @@ export namespace MyNS {
 		 * Get Attempt
 		 * `msg_id`: Use a message id or a message `eventId`
 		 * Get api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {MessageAttemptOut} Successful Response
 		 */
 		Get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___get(attempt_id: string, msg_id: string, app_id: string): Observable<MessageAttemptOut> {
@@ -3063,6 +3236,10 @@ export namespace MyNS {
 		 * Delete attempt response body
 		 * Deletes the given attempt's response body. Useful when an endpoint accidentally returned sensitive content.
 		 * Delete api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__delete(attempt_id: string, msg_id: string, app_id: string): Observable<HttpResponse<string>> {
@@ -3074,6 +3251,10 @@ export namespace MyNS {
 		 * Delete the given message's payload. Useful in cases when a message was accidentally sent with sensitive content.
 		 * The message can't be replayed or resent once its payload has been deleted or expired.
 		 * Delete api/v1/app/{app_id}/msg/{msg_id}/content/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__delete(msg_id: string, app_id: string): Observable<HttpResponse<string>> {
@@ -3084,6 +3265,11 @@ export namespace MyNS {
 		 * List Attempted Destinations
 		 * `msg_id`: Use a message id or a message `eventId`
 		 * Get api/v1/app/{app_id}/msg/{msg_id}/endpoint/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
 		 * @return {ListResponse_MessageEndpointOut_} Successful Response
 		 */
 		List_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__get(msg_id: string, app_id: string, iterator: string | null | undefined, limit: number | null | undefined): Observable<ListResponse_MessageEndpointOut_> {
@@ -3097,6 +3283,15 @@ export namespace MyNS {
 		 * Returning the endpoint.
 		 * The `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed.
 		 * Get api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {number} limit Maximum: 250
+		 * @param {string} channel Max length: 128
+		 * @param {MessageStatus} status Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListResponse_MessageAttemptEndpointOut_} Successful Response
 		 */
 		List_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__get(msg_id: string, app_id: string, endpoint_id: string, iterator: string | null | undefined, limit: number | null | undefined, event_types: Array<string> | null | undefined, channel: string | null | undefined, status: MessageStatus | null | undefined, before: Date | null | undefined, after: Date | null | undefined): Observable<ListResponse_MessageAttemptEndpointOut_> {
@@ -3107,6 +3302,12 @@ export namespace MyNS {
 		 * Resend Webhook
 		 * Resend a message to the specified endpoint.
 		 * Post api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/
+		 * @param {string} endpoint_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} msg_id Min length: 1
+		 *     Max length: 256
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__post(endpoint_id: string, msg_id: string, app_id: string): Observable<HttpResponse<string>> {
@@ -3117,6 +3318,8 @@ export namespace MyNS {
 		 * Get Consumer App Portal Access
 		 * Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal.
 		 * Post api/v1/auth/app-portal-access/{app_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {AppPortalAccessOut} Successful Response
 		 */
 		Get_app_portal_access_api_v1_auth_app_portal_access__app_id___post(app_id: string, requestBody: AppPortalAccessIn): Observable<AppPortalAccessOut> {
@@ -3127,6 +3330,8 @@ export namespace MyNS {
 		 * Expire All
 		 * Expire all of the tokens associated with a specific Application
 		 * Post api/v1/auth/app/{app_id}/expire-all/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Expire_all_api_v1_auth_app__app_id__expire_all__post(app_id: string, requestBody: ApplicationTokenExpireIn): Observable<HttpResponse<string>> {
@@ -3138,6 +3343,8 @@ export namespace MyNS {
 		 * DEPRECATED: Please use `app-portal-access` instead.
 		 * Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal.
 		 * Post api/v1/auth/dashboard-access/{app_id}/
+		 * @param {string} app_id Min length: 1
+		 *     Max length: 256
 		 * @return {DashboardAccessOut} Successful Response
 		 */
 		Get_dashboard_access_api_v1_auth_dashboard_access__app_id___post(app_id: string): Observable<DashboardAccessOut> {
@@ -3159,6 +3366,7 @@ export namespace MyNS {
 		 * List Background Tasks
 		 * List background tasks executed in the past 90 days.
 		 * Get api/v1/background-task/
+		 * @param {number} limit Maximum: 250
 		 * @return {ListResponse_BackgroundTaskOut_} Successful Response
 		 */
 		List_background_tasks_api_v1_background_task__get(iterator: string | null | undefined, limit: number | null | undefined, order: Ordering | null | undefined): Observable<ListResponse_BackgroundTaskOut_> {
@@ -3179,6 +3387,8 @@ export namespace MyNS {
 		 * List Event Types
 		 * Return the list of event types.
 		 * Get api/v1/event-type/
+		 * @param {string} iterator Max length: 256
+		 * @param {number} limit Maximum: 250
 		 * @return {ListResponse_EventTypeOut_} Successful Response
 		 */
 		List_event_types_api_v1_event_type__get(iterator: string | null | undefined, limit: number | null | undefined, with_content: boolean | null | undefined, include_archived: boolean | null | undefined): Observable<ListResponse_EventTypeOut_> {
@@ -3208,6 +3418,7 @@ export namespace MyNS {
 		 * If `expunge=true` is set then the event type is deleted instead of archived.
 		 * This can only be used in development environments.
 		 * Delete api/v1/event-type/{event_type_name}/
+		 * @param {string} event_type_name Max length: 256
 		 * @return {void} 
 		 */
 		Delete_event_type_api_v1_event_type__event_type_name___delete(event_type_name: string, expunge: boolean | null | undefined): Observable<HttpResponse<string>> {
@@ -3218,6 +3429,7 @@ export namespace MyNS {
 		 * Get Event Type
 		 * Get an event type.
 		 * Get api/v1/event-type/{event_type_name}/
+		 * @param {string} event_type_name Max length: 256
 		 * @return {EventTypeOut} Successful Response
 		 */
 		Get_event_type_api_v1_event_type__event_type_name___get(event_type_name: string): Observable<EventTypeOut> {
@@ -3228,6 +3440,7 @@ export namespace MyNS {
 		 * Update Event Type
 		 * Update an event type.
 		 * Put api/v1/event-type/{event_type_name}/
+		 * @param {string} event_type_name Max length: 256
 		 * @return {EventTypeOut} Successful Response
 		 */
 		Update_event_type_api_v1_event_type__event_type_name___put(event_type_name: string, requestBody: EventTypeUpdate): Observable<EventTypeOut> {

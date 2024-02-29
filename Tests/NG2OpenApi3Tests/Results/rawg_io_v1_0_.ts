@@ -4,7 +4,11 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Developer {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -12,8 +16,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -21,7 +25,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface DeveloperFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -29,8 +37,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -50,7 +58,11 @@ export namespace MyNS {
 
 	export interface DeveloperSingle {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -58,8 +70,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -68,7 +80,11 @@ export namespace MyNS {
 	}
 	export interface DeveloperSingleFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -76,8 +92,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -97,57 +113,97 @@ export namespace MyNS {
 	}
 
 	export interface Game {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added?: number | null;
 		added_by_status?: string | null;
 		background_image?: string | null;
 		esrb_rating?: GameEsrb_rating;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metacritic?: number | null;
 
 		/** Min length: 1 */
 		name?: string | null;
 		GamePlatforms?: Array<GamePlatforms>;
 
-		/** in hours */
+		/**
+		 * in hours
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playtime?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top?: number | null;
 		ratings?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratings_count?: number | null;
+
+		/** Type: DateOnly */
 		released?: Date | null;
 		reviews_text_count?: string | null;
 
 		/** Min length: 1 */
 		slug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggestions_count?: number | null;
 		tba?: boolean | null;
 		updated?: Date | null;
 	}
 	export interface GameFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added: FormControl<number | null | undefined>,
 		added_by_status: FormControl<string | null | undefined>,
 		background_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metacritic: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
 		name: FormControl<string | null | undefined>,
 
-		/** in hours */
+		/**
+		 * in hours
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playtime: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top: FormControl<number | null | undefined>,
 		ratings: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratings_count: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		released: FormControl<Date | null | undefined>,
 		reviews_text_count: FormControl<string | null | undefined>,
 
 		/** Min length: 1 */
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggestions_count: FormControl<number | null | undefined>,
 		tba: FormControl<boolean | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
@@ -176,11 +232,15 @@ export namespace MyNS {
 	}
 
 	export interface GameEsrb_rating {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: GameEsrb_ratingName | null;
 		slug?: GameEsrb_ratingSlug | null;
 	}
 	export interface GameEsrb_ratingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<GameEsrb_ratingName | null | undefined>,
 		slug: FormControl<GameEsrb_ratingSlug | null | undefined>,
@@ -214,11 +274,15 @@ export namespace MyNS {
 	}
 
 	export interface GamePlatformsPlatform {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		slug?: string | null;
 	}
 	export interface GamePlatformsPlatformFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
@@ -249,7 +313,11 @@ export namespace MyNS {
 	}
 
 	export interface GamePersonList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -266,7 +334,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface GamePersonListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -295,12 +367,16 @@ export namespace MyNS {
 	}
 
 	export interface GamePlatformMetacritic {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metascore?: number | null;
 
 		/** Min length: 1 */
 		url?: string | null;
 	}
 	export interface GamePlatformMetacriticFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metascore: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -315,20 +391,34 @@ export namespace MyNS {
 	}
 
 	export interface GameSingle {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		achievements_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added?: number | null;
 		added_by_status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions_count?: number | null;
 		alternative_names?: Array<string>;
 		background_image?: string | null;
 		background_image_additional?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creators_count?: number | null;
 
 		/** Min length: 1 */
 		description?: string | null;
 		esrb_rating?: GameSingleEsrb_rating;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		game_series_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metacritic?: number | null;
 		metacritic_platforms?: Array<GamePlatformMetacritic>;
 
@@ -337,6 +427,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		metacritic_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		movies_count?: number | null;
 
 		/** Min length: 1 */
@@ -345,18 +437,32 @@ export namespace MyNS {
 		/** Min length: 1 */
 		name_original?: string | null;
 		parent_achievements_count?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parents_count?: number | null;
 		GameSinglePlatforms?: Array<GameSinglePlatforms>;
 
-		/** in hours */
+		/**
+		 * in hours
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playtime?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top?: number | null;
 		ratings?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratings_count?: number | null;
 		reactions?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reddit_count?: number | null;
 
 		/** Min length: 1 */
@@ -373,12 +479,18 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		reddit_url?: string | null;
+
+		/** Type: DateOnly */
 		released?: Date | null;
 		reviews_text_count?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenshots_count?: number | null;
 
 		/** Min length: 1 */
 		slug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggestions_count?: number | null;
 		tba?: boolean | null;
 		twitch_count?: string | null;
@@ -389,18 +501,32 @@ export namespace MyNS {
 		youtube_count?: string | null;
 	}
 	export interface GameSingleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		achievements_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added: FormControl<number | null | undefined>,
 		added_by_status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions_count: FormControl<number | null | undefined>,
 		background_image: FormControl<string | null | undefined>,
 		background_image_additional: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creators_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		game_series_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		metacritic: FormControl<number | null | undefined>,
 
 		/**
@@ -408,6 +534,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		metacritic_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		movies_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -416,17 +544,31 @@ export namespace MyNS {
 		/** Min length: 1 */
 		name_original: FormControl<string | null | undefined>,
 		parent_achievements_count: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parents_count: FormControl<number | null | undefined>,
 
-		/** in hours */
+		/**
+		 * in hours
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playtime: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top: FormControl<number | null | undefined>,
 		ratings: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratings_count: FormControl<number | null | undefined>,
 		reactions: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reddit_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -443,12 +585,18 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		reddit_url: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		released: FormControl<Date | null | undefined>,
 		reviews_text_count: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenshots_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggestions_count: FormControl<number | null | undefined>,
 		tba: FormControl<boolean | null | undefined>,
 		twitch_count: FormControl<string | null | undefined>,
@@ -503,11 +651,15 @@ export namespace MyNS {
 	}
 
 	export interface GameSingleEsrb_rating {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: GameEsrb_ratingName | null;
 		slug?: GameEsrb_ratingSlug | null;
 	}
 	export interface GameSingleEsrb_ratingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<GameEsrb_ratingName | null | undefined>,
 		slug: FormControl<GameEsrb_ratingSlug | null | undefined>,
@@ -537,11 +689,15 @@ export namespace MyNS {
 	}
 
 	export interface GameSinglePlatformsPlatform {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		slug?: string | null;
 	}
 	export interface GameSinglePlatformsPlatformFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
@@ -573,25 +729,29 @@ export namespace MyNS {
 
 	export interface GameStoreFull {
 		game_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		store_id?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		url: string;
 	}
 	export interface GameStoreFullFormProperties {
 		game_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		store_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -606,7 +766,11 @@ export namespace MyNS {
 	}
 
 	export interface Genre {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -614,8 +778,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -623,7 +787,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface GenreFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -631,8 +799,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -652,7 +820,11 @@ export namespace MyNS {
 
 	export interface GenreSingle {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -660,8 +832,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -670,7 +842,11 @@ export namespace MyNS {
 	}
 	export interface GenreSingleFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -678,8 +854,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -700,6 +876,8 @@ export namespace MyNS {
 
 	export interface Movie {
 		data?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -708,6 +886,8 @@ export namespace MyNS {
 	}
 	export interface MovieFormProperties {
 		data: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -728,6 +908,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -739,6 +921,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -758,7 +942,11 @@ export namespace MyNS {
 	}
 
 	export interface Person {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -775,7 +963,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface PersonFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -807,7 +999,11 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -820,7 +1016,11 @@ export namespace MyNS {
 		 */
 		name: string;
 		rating?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reviews_count?: number | null;
 
 		/** Min length: 1 */
@@ -831,7 +1031,11 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -844,7 +1048,11 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 		rating: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating_top: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reviews_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -869,15 +1077,19 @@ export namespace MyNS {
 	}
 
 	export interface Platform {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 		image_background?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -897,15 +1109,19 @@ export namespace MyNS {
 		year_start?: number | null;
 	}
 	export interface PlatformFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 		image_background: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -939,12 +1155,14 @@ export namespace MyNS {
 	}
 
 	export interface PlatformParentSingle {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -955,12 +1173,14 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface PlatformParentSingleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -978,15 +1198,19 @@ export namespace MyNS {
 
 	export interface PlatformSingle {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 		image_background?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1007,15 +1231,19 @@ export namespace MyNS {
 	}
 	export interface PlatformSingleFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 		image_background: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1050,6 +1278,8 @@ export namespace MyNS {
 	}
 
 	export interface Position {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1059,6 +1289,8 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface PositionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1077,7 +1309,11 @@ export namespace MyNS {
 	}
 
 	export interface Publisher {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1085,8 +1321,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1094,7 +1330,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface PublisherFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1102,8 +1342,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1123,7 +1363,11 @@ export namespace MyNS {
 
 	export interface PublisherSingle {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1131,8 +1375,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1141,7 +1385,11 @@ export namespace MyNS {
 	}
 	export interface PublisherSingleFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1149,8 +1397,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1171,6 +1419,8 @@ export namespace MyNS {
 
 	export interface Reddit {
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1193,6 +1443,8 @@ export namespace MyNS {
 	}
 	export interface RedditFormProperties {
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1228,25 +1480,37 @@ export namespace MyNS {
 	}
 
 	export interface ScreenShot {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 
 		/** Set image as hidden or visible. */
 		hidden?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** An image file with size up to 20 MB. */
 		image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface ScreenShotFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 
 		/** Set image as hidden or visible. */
 		hidden: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** An image file with size up to 20 MB. */
 		image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateScreenShotFormGroup() {
@@ -1264,7 +1528,11 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		domain?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1272,8 +1540,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1284,7 +1552,11 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1292,8 +1564,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1317,7 +1589,11 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		domain?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1325,8 +1601,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1338,7 +1614,11 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1346,8 +1626,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1368,7 +1648,11 @@ export namespace MyNS {
 	}
 
 	export interface Tag {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1379,8 +1663,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1388,7 +1672,11 @@ export namespace MyNS {
 		slug?: string | null;
 	}
 	export interface TagFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1399,8 +1687,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1421,7 +1709,11 @@ export namespace MyNS {
 
 	export interface TagSingle {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1429,8 +1721,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1439,7 +1731,11 @@ export namespace MyNS {
 	}
 	export interface TagSingleFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		games_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1447,8 +1743,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1472,7 +1768,11 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		external_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Min length: 1 */
@@ -1484,6 +1784,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		thumbnail?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count?: number | null;
 	}
 	export interface TwitchFormProperties {
@@ -1491,7 +1793,11 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		external_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
@@ -1503,6 +1809,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		thumbnail: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTwitchFormGroup() {
@@ -1527,22 +1835,34 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		channel_title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments_count?: number | null;
 		created?: Date | null;
 
 		/** Min length: 1 */
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dislike_count?: number | null;
 
 		/** Min length: 1 */
 		external_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favorite_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		like_count?: number | null;
 
 		/** Min length: 1 */
 		name?: string | null;
 		thumbnails?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count?: number | null;
 	}
 	export interface YoutubeFormProperties {
@@ -1552,22 +1872,34 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		channel_title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments_count: FormControl<number | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 
 		/** Min length: 1 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dislike_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
 		external_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favorite_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		like_count: FormControl<number | null | undefined>,
 
 		/** Min length: 1 */
 		name: FormControl<string | null | undefined>,
 		thumbnails: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateYoutubeFormGroup() {
@@ -1598,8 +1930,9 @@ export namespace MyNS {
 		 * Get a list of creator positions (jobs).
 		 * Get creator-roles
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Creator_roles_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Creator_roles_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Creator_roles_listReturn> {
 			return this.http.get<Creator_roles_listReturn>(this.baseUri + 'creator-roles?page=' + page + '&page_size=' + page_size, {});
@@ -1609,8 +1942,9 @@ export namespace MyNS {
 		 * Get a list of game creators.
 		 * Get creators
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Creators_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Creators_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Creators_listReturn> {
 			return this.http.get<Creators_listReturn>(this.baseUri + 'creators?page=' + page + '&page_size=' + page_size, {});
@@ -1619,7 +1953,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the creator.
 		 * Get creators/{id}
-		 * @return {PersonSingle} 
 		 */
 		Creators_read(id: string): Observable<PersonSingle> {
 			return this.http.get<PersonSingle>(this.baseUri + 'creators/' + (id == null ? '' : encodeURIComponent(id)), {});
@@ -1629,8 +1962,9 @@ export namespace MyNS {
 		 * Get a list of game developers.
 		 * Get developers
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Developers_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Developers_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Developers_listReturn> {
 			return this.http.get<Developers_listReturn>(this.baseUri + 'developers?page=' + page + '&page_size=' + page_size, {});
@@ -1639,7 +1973,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the developer.
 		 * Get developers/{id}
-		 * @return {DeveloperSingle} 
 		 */
 		Developers_read(): Observable<DeveloperSingle> {
 			return this.http.get<DeveloperSingle>(this.baseUri + 'developers/{id}', {});
@@ -1649,7 +1982,9 @@ export namespace MyNS {
 		 * Get a list of games.
 		 * Get games
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Search query.
 		 * @param {boolean} search_precise Disable fuzziness for the search query.
 		 * @param {boolean} search_exact Mark the search query as exact.
@@ -1664,14 +1999,15 @@ export namespace MyNS {
 		 * @param {string} dates Filter by a release date, for example: `2010-01-01,2018-12-31.1960-01-01,1969-12-31`.
 		 * @param {string} updated Filter by an update date, for example: `2020-12-01,2020-12-31`.
 		 * @param {number} platforms_count Filter by platforms count, for example: `1`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} metacritic Filter by a metacritic rating, for example: `80,100`.
 		 * @param {number} exclude_collection Exclude games from a particular collection, for example: `123`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} exclude_additions Exclude additions.
 		 * @param {boolean} exclude_parents Exclude games which have additions.
 		 * @param {boolean} exclude_game_series Exclude games which included in a game series.
 		 * @param {string} exclude_stores Exclude stores, for example: `5,6`.
 		 * @param {string} ordering Available fields: `name`, `released`, `added`, `created`, `updated`, `rating`, `metacritic`. You can reverse the sort order adding a hyphen, for example: `-released`.
-		 * @return {Games_listReturn} 
 		 */
 		Games_list(page: number | null | undefined, page_size: number | null | undefined, search: string | null | undefined, search_precise: boolean | null | undefined, search_exact: boolean | null | undefined, parent_platforms: string | null | undefined, platforms: string | null | undefined, stores: string | null | undefined, developers: string | null | undefined, publishers: string | null | undefined, genres: string | null | undefined, tags: string | null | undefined, creators: string | null | undefined, dates: string | null | undefined, updated: string | null | undefined, platforms_count: number | null | undefined, metacritic: string | null | undefined, exclude_collection: number | null | undefined, exclude_additions: boolean | null | undefined, exclude_parents: boolean | null | undefined, exclude_game_series: boolean | null | undefined, exclude_stores: string | null | undefined, ordering: string | null | undefined): Observable<Games_listReturn> {
 			return this.http.get<Games_listReturn>(this.baseUri + 'games?page=' + page + '&page_size=' + page_size + '&search=' + (search == null ? '' : encodeURIComponent(search)) + '&search_precise=' + search_precise + '&search_exact=' + search_exact + '&parent_platforms=' + (parent_platforms == null ? '' : encodeURIComponent(parent_platforms)) + '&platforms=' + (platforms == null ? '' : encodeURIComponent(platforms)) + '&stores=' + (stores == null ? '' : encodeURIComponent(stores)) + '&developers=' + (developers == null ? '' : encodeURIComponent(developers)) + '&publishers=' + (publishers == null ? '' : encodeURIComponent(publishers)) + '&genres=' + (genres == null ? '' : encodeURIComponent(genres)) + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)) + '&creators=' + (creators == null ? '' : encodeURIComponent(creators)) + '&dates=' + (dates == null ? '' : encodeURIComponent(dates)) + '&updated=' + (updated == null ? '' : encodeURIComponent(updated)) + '&platforms_count=' + platforms_count + '&metacritic=' + (metacritic == null ? '' : encodeURIComponent(metacritic)) + '&exclude_collection=' + exclude_collection + '&exclude_additions=' + exclude_additions + '&exclude_parents=' + exclude_parents + '&exclude_game_series=' + exclude_game_series + '&exclude_stores=' + (exclude_stores == null ? '' : encodeURIComponent(exclude_stores)) + '&ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)), {});
@@ -1681,8 +2017,9 @@ export namespace MyNS {
 		 * Get a list of DLC's for the game, GOTY and other editions, companion apps, etc.
 		 * Get games/{game_pk}/additions
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_additions_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_additions_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Games_additions_listReturn> {
 			return this.http.get<Games_additions_listReturn>(this.baseUri + 'games/{game_pk}/additions?page=' + page + '&page_size=' + page_size, {});
@@ -1693,8 +2030,9 @@ export namespace MyNS {
 		 * Get games/{game_pk}/development-team
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_development_team_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_development_team_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Games_development_team_listReturn> {
 			return this.http.get<Games_development_team_listReturn>(this.baseUri + 'games/{game_pk}/development-team?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1704,8 +2042,9 @@ export namespace MyNS {
 		 * Get a list of games that are part of the same series.
 		 * Get games/{game_pk}/game-series
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_game_series_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_game_series_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Games_game_series_listReturn> {
 			return this.http.get<Games_game_series_listReturn>(this.baseUri + 'games/{game_pk}/game-series?page=' + page + '&page_size=' + page_size, {});
@@ -1715,8 +2054,9 @@ export namespace MyNS {
 		 * Get a list of parent games for DLC's and editions.
 		 * Get games/{game_pk}/parent-games
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_parent_games_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_parent_games_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Games_parent_games_listReturn> {
 			return this.http.get<Games_parent_games_listReturn>(this.baseUri + 'games/{game_pk}/parent-games?page=' + page + '&page_size=' + page_size, {});
@@ -1727,8 +2067,9 @@ export namespace MyNS {
 		 * Get games/{game_pk}/screenshots
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_screenshots_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_screenshots_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Games_screenshots_listReturn> {
 			return this.http.get<Games_screenshots_listReturn>(this.baseUri + 'games/{game_pk}/screenshots?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1739,8 +2080,9 @@ export namespace MyNS {
 		 * Get games/{game_pk}/stores
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Games_stores_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Games_stores_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Games_stores_listReturn> {
 			return this.http.get<Games_stores_listReturn>(this.baseUri + 'games/{game_pk}/stores?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1750,7 +2092,6 @@ export namespace MyNS {
 		 * Get details of the game.
 		 * Get games/{id}
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {GameSingle} 
 		 */
 		Games_read(id: string): Observable<GameSingle> {
 			return this.http.get<GameSingle>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)), {});
@@ -1760,7 +2101,6 @@ export namespace MyNS {
 		 * Get a list of game achievements.
 		 * Get games/{id}/achievements
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {ParentAchievement} 
 		 */
 		Games_achievements_read(id: string): Observable<ParentAchievement> {
 			return this.http.get<ParentAchievement>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/achievements', {});
@@ -1770,7 +2110,6 @@ export namespace MyNS {
 		 * Get a list of game trailers.
 		 * Get games/{id}/movies
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {Movie} 
 		 */
 		Games_movies_read(id: string): Observable<Movie> {
 			return this.http.get<Movie>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/movies', {});
@@ -1780,7 +2119,6 @@ export namespace MyNS {
 		 * Get a list of most recent posts from the game's subreddit.
 		 * Get games/{id}/reddit
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {Reddit} 
 		 */
 		Games_reddit_read(id: string): Observable<Reddit> {
 			return this.http.get<Reddit>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/reddit', {});
@@ -1790,7 +2128,6 @@ export namespace MyNS {
 		 * Get a list of visually similar games, available only for business and enterprise API users.
 		 * Get games/{id}/suggested
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {GameSingle} 
 		 */
 		Games_suggested_read(id: string): Observable<GameSingle> {
 			return this.http.get<GameSingle>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/suggested', {});
@@ -1800,7 +2137,6 @@ export namespace MyNS {
 		 * Get streams on Twitch associated with the game, available only for business and enterprise API users.
 		 * Get games/{id}/twitch
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {Twitch} 
 		 */
 		Games_twitch_read(id: string): Observable<Twitch> {
 			return this.http.get<Twitch>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/twitch', {});
@@ -1810,7 +2146,6 @@ export namespace MyNS {
 		 * Get videos from YouTube associated with the game, available only for business and enterprise API users.
 		 * Get games/{id}/youtube
 		 * @param {string} id An ID or a slug identifying this Game.
-		 * @return {Youtube} 
 		 */
 		Games_youtube_read(id: string): Observable<Youtube> {
 			return this.http.get<Youtube>(this.baseUri + 'games/' + (id == null ? '' : encodeURIComponent(id)) + '/youtube', {});
@@ -1821,8 +2156,9 @@ export namespace MyNS {
 		 * Get genres
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Genres_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Genres_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Genres_listReturn> {
 			return this.http.get<Genres_listReturn>(this.baseUri + 'genres?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1831,7 +2167,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the genre.
 		 * Get genres/{id}
-		 * @return {GenreSingle} 
 		 */
 		Genres_read(): Observable<GenreSingle> {
 			return this.http.get<GenreSingle>(this.baseUri + 'genres/{id}', {});
@@ -1842,8 +2177,9 @@ export namespace MyNS {
 		 * Get platforms
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Platforms_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Platforms_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Platforms_listReturn> {
 			return this.http.get<Platforms_listReturn>(this.baseUri + 'platforms?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1855,8 +2191,9 @@ export namespace MyNS {
 		 * Get platforms/lists/parents
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Platforms_lists_parents_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Platforms_lists_parents_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Platforms_lists_parents_listReturn> {
 			return this.http.get<Platforms_lists_parents_listReturn>(this.baseUri + 'platforms/lists/parents?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1865,7 +2202,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the platform.
 		 * Get platforms/{id}
-		 * @return {PlatformSingle} 
 		 */
 		Platforms_read(): Observable<PlatformSingle> {
 			return this.http.get<PlatformSingle>(this.baseUri + 'platforms/{id}', {});
@@ -1875,8 +2211,9 @@ export namespace MyNS {
 		 * Get a list of video game publishers.
 		 * Get publishers
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Publishers_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Publishers_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Publishers_listReturn> {
 			return this.http.get<Publishers_listReturn>(this.baseUri + 'publishers?page=' + page + '&page_size=' + page_size, {});
@@ -1885,7 +2222,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the publisher.
 		 * Get publishers/{id}
-		 * @return {PublisherSingle} 
 		 */
 		Publishers_read(): Observable<PublisherSingle> {
 			return this.http.get<PublisherSingle>(this.baseUri + 'publishers/{id}', {});
@@ -1896,8 +2232,9 @@ export namespace MyNS {
 		 * Get stores
 		 * @param {string} ordering Which field to use when ordering the results.
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Stores_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Stores_list(ordering: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Stores_listReturn> {
 			return this.http.get<Stores_listReturn>(this.baseUri + 'stores?ordering=' + (ordering == null ? '' : encodeURIComponent(ordering)) + '&page=' + page + '&page_size=' + page_size, {});
@@ -1906,7 +2243,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the store.
 		 * Get stores/{id}
-		 * @return {StoreSingle} 
 		 */
 		Stores_read(): Observable<StoreSingle> {
 			return this.http.get<StoreSingle>(this.baseUri + 'stores/{id}', {});
@@ -1916,8 +2252,9 @@ export namespace MyNS {
 		 * Get a list of tags.
 		 * Get tags
 		 * @param {number} page A page number within the paginated result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Number of results to return per page.
-		 * @return {Tags_listReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Tags_list(page: number | null | undefined, page_size: number | null | undefined): Observable<Tags_listReturn> {
 			return this.http.get<Tags_listReturn>(this.baseUri + 'tags?page=' + page + '&page_size=' + page_size, {});
@@ -1926,7 +2263,6 @@ export namespace MyNS {
 		/**
 		 * Get details of the tag.
 		 * Get tags/{id}
-		 * @return {TagSingle} 
 		 */
 		Tags_read(): Observable<TagSingle> {
 			return this.http.get<TagSingle>(this.baseUri + 'tags/{id}', {});
@@ -1935,7 +2271,10 @@ export namespace MyNS {
 
 	export interface Creator_roles_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -1945,7 +2284,10 @@ export namespace MyNS {
 	}
 	export interface Creator_roles_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1961,7 +2303,10 @@ export namespace MyNS {
 
 	export interface Creators_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -1971,7 +2316,10 @@ export namespace MyNS {
 	}
 	export interface Creators_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1987,7 +2335,10 @@ export namespace MyNS {
 
 	export interface Developers_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -1997,7 +2348,10 @@ export namespace MyNS {
 	}
 	export interface Developers_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2013,7 +2367,10 @@ export namespace MyNS {
 
 	export interface Games_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2023,7 +2380,10 @@ export namespace MyNS {
 	}
 	export interface Games_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2039,7 +2399,10 @@ export namespace MyNS {
 
 	export interface Games_additions_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2049,7 +2412,10 @@ export namespace MyNS {
 	}
 	export interface Games_additions_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2065,7 +2431,10 @@ export namespace MyNS {
 
 	export interface Games_development_team_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2075,7 +2444,10 @@ export namespace MyNS {
 	}
 	export interface Games_development_team_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2091,7 +2463,10 @@ export namespace MyNS {
 
 	export interface Games_game_series_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2101,7 +2476,10 @@ export namespace MyNS {
 	}
 	export interface Games_game_series_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2117,7 +2495,10 @@ export namespace MyNS {
 
 	export interface Games_parent_games_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2127,7 +2508,10 @@ export namespace MyNS {
 	}
 	export interface Games_parent_games_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2143,7 +2527,10 @@ export namespace MyNS {
 
 	export interface Games_screenshots_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2153,7 +2540,10 @@ export namespace MyNS {
 	}
 	export interface Games_screenshots_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2169,7 +2559,10 @@ export namespace MyNS {
 
 	export interface Games_stores_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2179,7 +2572,10 @@ export namespace MyNS {
 	}
 	export interface Games_stores_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2195,7 +2591,10 @@ export namespace MyNS {
 
 	export interface Genres_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2205,7 +2604,10 @@ export namespace MyNS {
 	}
 	export interface Genres_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2221,7 +2623,10 @@ export namespace MyNS {
 
 	export interface Platforms_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2231,7 +2636,10 @@ export namespace MyNS {
 	}
 	export interface Platforms_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2247,7 +2655,10 @@ export namespace MyNS {
 
 	export interface Platforms_lists_parents_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2257,7 +2668,10 @@ export namespace MyNS {
 	}
 	export interface Platforms_lists_parents_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2273,7 +2687,10 @@ export namespace MyNS {
 
 	export interface Publishers_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2283,7 +2700,10 @@ export namespace MyNS {
 	}
 	export interface Publishers_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2299,7 +2719,10 @@ export namespace MyNS {
 
 	export interface Stores_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2309,7 +2732,10 @@ export namespace MyNS {
 	}
 	export interface Stores_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -2325,7 +2751,10 @@ export namespace MyNS {
 
 	export interface Tags_listReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		next?: string | null;
 		previous?: string | null;
@@ -2335,7 +2764,10 @@ export namespace MyNS {
 	}
 	export interface Tags_listReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,

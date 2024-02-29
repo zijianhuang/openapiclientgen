@@ -869,6 +869,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} api_version Client Api Version.
 		 * @return {RunbookListResult} OK
@@ -882,6 +883,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -896,6 +898,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -911,6 +914,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -925,6 +929,7 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -940,6 +945,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/content
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -954,6 +960,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -968,6 +975,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/content
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -982,6 +990,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -996,6 +1005,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The parameters supplied to the create test job operation.
 		 * @param {string} api_version Client Api Version.
@@ -1011,6 +1021,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob/resume
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -1025,6 +1036,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob/stop
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -1039,6 +1051,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob/streams
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} filter The filter to apply on the operation.
@@ -1054,6 +1067,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob/streams/{jobStreamId}
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} jobStreamId The job stream id.
@@ -1069,6 +1083,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob/suspend
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -1083,6 +1098,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/undoEdit
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The runbook name.
 		 * @param {string} api_version Client Api Version.
@@ -1097,6 +1113,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/publish
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} runbookName The parameters supplied to the publish runbook operation.
 		 * @param {string} api_version Client Api Version.

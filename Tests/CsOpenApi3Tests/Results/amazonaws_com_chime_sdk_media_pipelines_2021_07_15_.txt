@@ -2628,8 +2628,13 @@ namespace MyNS
 		/// Returns a list of media pipelines.
 		/// ListMediaCapturePipelines sdk-media-capture-pipelines
 		/// </summary>
-		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.</param>
+		/// <param name="next_token">The token used to retrieve the next page of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2764,8 +2769,13 @@ namespace MyNS
 		/// Lists the available media insights pipeline configurations.
 		/// ListMediaInsightsPipelineConfigurations media-insights-pipeline-configurations
 		/// </summary>
-		/// <param name="next_token">The token used to return the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="next_token">The token used to return the next page of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2834,7 +2844,10 @@ namespace MyNS
 		/// Deletes the media pipeline.
 		/// DeleteMediaCapturePipeline sdk-media-capture-pipelines/{mediaPipelineId}
 		/// </summary>
-		/// <param name="mediaPipelineId">The ID of the media pipeline being deleted. </param>
+		/// <param name="mediaPipelineId">The ID of the media pipeline being deleted. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteMediaCapturePipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sdk-media-capture-pipelines/"+ (mediaPipelineId==null? "" : System.Uri.EscapeDataString(mediaPipelineId));
@@ -2861,7 +2874,10 @@ namespace MyNS
 		/// Gets an existing media pipeline.
 		/// GetMediaCapturePipeline sdk-media-capture-pipelines/{mediaPipelineId}
 		/// </summary>
-		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.</param>
+		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMediaCapturePipelineResponse> GetMediaCapturePipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2895,7 +2911,9 @@ namespace MyNS
 		/// Deletes the specified configuration settings.
 		/// DeleteMediaInsightsPipelineConfiguration media-insights-pipeline-configurations/{identifier}
 		/// </summary>
-		/// <param name="identifier">The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</param>
+		/// <param name="identifier">The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.
+		/// Max length: 1024
+		// </param>
 		public async Task DeleteMediaInsightsPipelineConfigurationAsync(string identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "media-insights-pipeline-configurations/"+ (identifier==null? "" : System.Uri.EscapeDataString(identifier));
@@ -2922,7 +2940,9 @@ namespace MyNS
 		/// Gets the configuration settings for a media insights pipeline.
 		/// GetMediaInsightsPipelineConfiguration media-insights-pipeline-configurations/{identifier}
 		/// </summary>
-		/// <param name="identifier">The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</param>
+		/// <param name="identifier">The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.
+		/// Max length: 1024
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMediaInsightsPipelineConfigurationResponse> GetMediaInsightsPipelineConfigurationAsync(string identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2956,7 +2976,9 @@ namespace MyNS
 		/// Updates the media insights pipeline's configuration settings.
 		/// UpdateMediaInsightsPipelineConfiguration media-insights-pipeline-configurations/{identifier}
 		/// </summary>
-		/// <param name="identifier">The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</param>
+		/// <param name="identifier">The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.
+		/// Max length: 1024
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMediaInsightsPipelineConfigurationResponse> UpdateMediaInsightsPipelineConfigurationAsync(string identifier, UpdateMediaInsightsPipelineConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2997,7 +3019,10 @@ namespace MyNS
 		/// Deletes the media pipeline.
 		/// DeleteMediaPipeline sdk-media-pipelines/{mediaPipelineId}
 		/// </summary>
-		/// <param name="mediaPipelineId">The ID of the media pipeline to delete.</param>
+		/// <param name="mediaPipelineId">The ID of the media pipeline to delete.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteMediaPipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sdk-media-pipelines/"+ (mediaPipelineId==null? "" : System.Uri.EscapeDataString(mediaPipelineId));
@@ -3024,7 +3049,10 @@ namespace MyNS
 		/// Gets an existing media pipeline.
 		/// GetMediaPipeline sdk-media-pipelines/{mediaPipelineId}
 		/// </summary>
-		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.</param>
+		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMediaPipelineResponse> GetMediaPipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3058,8 +3086,13 @@ namespace MyNS
 		/// Returns a list of media pipelines.
 		/// ListMediaPipelines sdk-media-pipelines
 		/// </summary>
-		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.</param>
+		/// <param name="next_token">The token used to retrieve the next page of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3095,7 +3128,10 @@ namespace MyNS
 		/// Lists the tags available for a media pipeline.
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</param>
+		/// <param name="arn">The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3195,7 +3231,9 @@ namespace MyNS
 		/// Updates the status of a media insights pipeline.
 		/// UpdateMediaInsightsPipelineStatus media-insights-pipeline-status/{identifier}
 		/// </summary>
-		/// <param name="identifier">The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</param>
+		/// <param name="identifier">The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.
+		/// Max length: 1024
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateMediaInsightsPipelineStatusAsync(string identifier, UpdateMediaInsightsPipelineStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

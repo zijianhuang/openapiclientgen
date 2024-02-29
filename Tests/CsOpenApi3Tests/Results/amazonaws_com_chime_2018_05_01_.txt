@@ -6922,7 +6922,10 @@ namespace MyNS
 		/// <p>Adds a specified number of users to a channel.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html">BatchCreateChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// BatchCreateChannelMembership channels/{channelArn}/memberships#operation=batch-create
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which you're adding users.</param>
+		/// <param name="channelArn">The ARN of the channel to which you're adding users.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateChannelMembershipResponse> BatchCreateChannelMembershipAsync(string channelArn, BatchCreateChannelMembershipOperation operation, BatchCreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7204,7 +7207,10 @@ namespace MyNS
 		/// <param name="accountId">The Amazon Chime account ID.</param>
 		/// <param name="user_email">Optional. The user email address used to filter results. Maximum 1.</param>
 		/// <param name="user_type">The user type.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7274,10 +7280,16 @@ namespace MyNS
 		/// Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address, which returns one account result.
 		/// ListAccounts accounts
 		/// </summary>
-		/// <param name="name">Amazon Chime account name prefix with which to filter results.</param>
+		/// <param name="name">Amazon Chime account name prefix with which to filter results.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="user_email">User email address with which to filter results.</param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7346,8 +7358,14 @@ namespace MyNS
 		/// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstances.html">ListAppInstances</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListAppInstances app-instances
 		/// </summary>
-		/// <param name="max_results">The maximum number of <code>AppInstance</code>s that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</param>
+		/// <param name="max_results">The maximum number of <code>AppInstance</code>s that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7383,7 +7401,10 @@ namespace MyNS
 		/// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html">CreateAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
 		/// CreateAppInstanceAdmin app-instances/{appInstanceArn}/admins
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateAppInstanceAdminAsync(string appInstanceArn, CreateAppInstanceAdminPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/admins";
@@ -7417,9 +7438,18 @@ namespace MyNS
 		/// <p>Returns a list of the administrators in the <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html">ListAppInstanceAdmins</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListAppInstanceAdmins app-instances/{appInstanceArn}/admins
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
-		/// <param name="max_results">The maximum number of administrators that you want to return.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of administrators that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7524,7 +7554,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="meetingId">The Amazon Chime SDK meeting ID.</param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7595,7 +7628,10 @@ namespace MyNS
 		/// ListBots accounts/{accountId}/bots
 		/// </summary>
 		/// <param name="accountId">The Amazon Chime account ID.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. The default is 10.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. The default is 10.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7665,7 +7701,10 @@ namespace MyNS
 		/// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelBan.html">CreateChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// CreateChannelBan channels/{channelArn}/bans
 		/// </summary>
-		/// <param name="channelArn">The ARN of the ban request.</param>
+		/// <param name="channelArn">The ARN of the ban request.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelBanAsync(string channelArn, CreateChannelBanPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/bans";
@@ -7699,9 +7738,18 @@ namespace MyNS
 		/// <p>Lists all the users banned from a particular channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html">ListChannelBans</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelBans channels/{channelArn}/bans
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="max_results">The maximum number of bans that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested bans are returned.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of bans that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested bans are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7737,7 +7785,10 @@ namespace MyNS
 		/// <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html">CreateChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// CreateChannelMembership channels/{channelArn}/memberships
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which you're adding users.</param>
+		/// <param name="channelArn">The ARN of the channel to which you're adding users.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelMembershipAsync(string channelArn, CreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/memberships";
@@ -7771,10 +7822,19 @@ namespace MyNS
 		/// <p>Lists all channel memberships in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMemberships.html">ListChannelMemberships</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelMemberships channels/{channelArn}/memberships
 		/// </summary>
-		/// <param name="channelArn">The maximum number of channel memberships that you want returned.</param>
+		/// <param name="channelArn">The maximum number of channel memberships that you want returned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="type">The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</param>
-		/// <param name="max_results">The maximum number of channel memberships that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channel memberships are returned.</param>
+		/// <param name="max_results">The maximum number of channel memberships that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channel memberships are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7810,7 +7870,10 @@ namespace MyNS
 		/// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelModerator.html">CreateChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// CreateChannelModerator channels/{channelArn}/moderators
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelModeratorAsync(string channelArn, CreateChannelModeratorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/moderators";
@@ -7844,9 +7907,18 @@ namespace MyNS
 		/// <p>Lists all the moderators for a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html">ListChannelModerators</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelModerators channels/{channelArn}/moderators
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="max_results">The maximum number of moderators that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested moderators are returned.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of moderators that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested moderators are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7916,7 +7988,10 @@ namespace MyNS
 		/// ListMediaCapturePipelines media-capture-pipelines
 		/// </summary>
 		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7986,7 +8061,10 @@ namespace MyNS
 		/// ListMeetings meetings
 		/// </summary>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8123,7 +8201,10 @@ namespace MyNS
 		/// ListPhoneNumberOrders phone-number-orders
 		/// </summary>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8159,7 +8240,10 @@ namespace MyNS
 		/// <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone numbers.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateProxySession.html">CreateProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// CreateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task CreateProxySessionAsync(string voiceConnectorId, CreateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions";
@@ -8193,10 +8277,18 @@ namespace MyNS
 		/// <p>Lists the proxy sessions for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListProxySessions.html">ListProxySessions</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListProxySessions voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="status">The proxy session status.</param>
-		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="next_token">The token to use to retrieve the next page of results.
+		/// Max length: 65535
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8268,7 +8360,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">The Amazon Chime account ID.</param>
 		/// <param name="member_id">The member ID (user ID or bot ID).</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8342,7 +8437,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">The Amazon Chime account ID.</param>
 		/// <param name="roomId">The room ID.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8412,8 +8510,13 @@ namespace MyNS
 		/// <p>Lists the SIP media applications under the administrator's AWS account.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListSipMediaApplications.html">ListSipMediaApplications</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListSipMediaApplications sip-media-applications
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
-		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
+		/// <param name="next_token">The token to use to retrieve the next page of results.
+		/// Max length: 65535
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8517,8 +8620,13 @@ namespace MyNS
 		/// ListSipRules sip-rules
 		/// </summary>
 		/// <param name="sip_media_application">The SIP media application ID.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
-		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
+		/// <param name="next_token">The token to use to retrieve the next page of results.
+		/// Max length: 65535
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8622,7 +8730,10 @@ namespace MyNS
 		/// ListVoiceConnectors voice-connectors
 		/// </summary>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8692,7 +8803,10 @@ namespace MyNS
 		/// ListVoiceConnectorGroups voice-connector-groups
 		/// </summary>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8830,7 +8944,10 @@ namespace MyNS
 		/// <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstance.html">DeleteAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn));
@@ -8857,7 +8974,10 @@ namespace MyNS
 		/// <p>Returns the full details of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstance.html">DescribeAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceResponse> DescribeAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8891,7 +9011,10 @@ namespace MyNS
 		/// <p>Updates <code>AppInstance</code> metadata.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstance.html">UpdateAppInstance</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateAppInstance app-instances/{appInstanceArn}
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(string appInstanceArn, UpdateAppInstancePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8932,8 +9055,14 @@ namespace MyNS
 		/// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html">DeleteAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
-		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.</param>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/admins/"+ (appInstanceAdminArn==null? "" : System.Uri.EscapeDataString(appInstanceAdminArn));
@@ -8960,8 +9089,14 @@ namespace MyNS
 		/// <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html">DescribeAppInstanceAdmin</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
-		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.</param>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceAdminResponse> DescribeAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8995,7 +9130,10 @@ namespace MyNS
 		/// <p>Deletes the streaming configurations of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceStreamingConfigurations.html">DeleteAppInstanceStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the streaming configurations being deleted.</param>
+		/// <param name="appInstanceArn">The ARN of the streaming configurations being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/streaming-configurations";
@@ -9022,7 +9160,10 @@ namespace MyNS
 		/// <p>Gets the streaming settings for an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingStreamingConfigurations.html">GetMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// GetAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceStreamingConfigurationsResponse> GetAppInstanceStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9056,7 +9197,10 @@ namespace MyNS
 		/// <p>The data streaming configurations of an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html">PutMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// PutAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceStreamingConfigurationsResponse> PutAppInstanceStreamingConfigurationsAsync(string appInstanceArn, PutAppInstanceStreamingConfigurationsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9097,7 +9241,10 @@ namespace MyNS
 		/// <p>Deletes an <code>AppInstanceUser</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html">DeleteAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.</param>
+		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instance-users/"+ (appInstanceUserArn==null? "" : System.Uri.EscapeDataString(appInstanceUserArn));
@@ -9124,7 +9271,10 @@ namespace MyNS
 		/// <p>Returns the full details of an <code>AppInstanceUser</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html">DescribeAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserResponse> DescribeAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9158,7 +9308,10 @@ namespace MyNS
 		/// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html">UpdateAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
-		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.</param>
+		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserResponse> UpdateAppInstanceUserAsync(string appInstanceUserArn, UpdateAppInstanceUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9262,7 +9415,10 @@ namespace MyNS
 		/// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannel.html">DeleteChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteChannel channels/{channelArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel being deleted.</param>
+		/// <param name="channelArn">The ARN of the channel being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn));
@@ -9289,7 +9445,10 @@ namespace MyNS
 		/// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannel.html">DescribeChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannel channels/{channelArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelResponse> DescribeChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9323,7 +9482,10 @@ namespace MyNS
 		/// <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannel.html">UpdateChannel</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateChannel channels/{channelArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelResponse> UpdateChannelAsync(string channelArn, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9364,8 +9526,14 @@ namespace MyNS
 		/// <p>Removes a user from a channel's ban list.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelBan.html">DeleteChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteChannelBan channels/{channelArn}/bans/{memberArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</param>
-		/// <param name="memberArn">The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</param>
+		/// <param name="channelArn">The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/bans/"+ (memberArn==null? "" : System.Uri.EscapeDataString(memberArn));
@@ -9392,8 +9560,14 @@ namespace MyNS
 		/// <p>Returns the full details of a channel ban.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelBan.html">DescribeChannelBan</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannelBan channels/{channelArn}/bans/{memberArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which the user is banned.</param>
-		/// <param name="memberArn">The ARN of the member being banned.</param>
+		/// <param name="channelArn">The ARN of the channel from which the user is banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the member being banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelBanResponse> DescribeChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9427,8 +9601,14 @@ namespace MyNS
 		/// <p>Removes a member from a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html">DeleteChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteChannelMembership channels/{channelArn}/memberships/{memberArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which you want to remove the user.</param>
-		/// <param name="memberArn">The ARN of the member that you're removing from the channel.</param>
+		/// <param name="channelArn">The ARN of the channel from which you want to remove the user.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the member that you're removing from the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelMembershipAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/memberships/"+ (memberArn==null? "" : System.Uri.EscapeDataString(memberArn));
@@ -9455,8 +9635,14 @@ namespace MyNS
 		/// <p>Returns the full details of a user's channel membership.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html">DescribeChannelMembership</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannelMembership channels/{channelArn}/memberships/{memberArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="memberArn">The ARN of the member.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the member.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipResponse> DescribeChannelMembershipAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9490,8 +9676,14 @@ namespace MyNS
 		/// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html">DeleteChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID of the message being deleted.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message being deleted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteChannelMessageAsync(string channelArn, string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/messages/"+ (messageId==null? "" : System.Uri.EscapeDataString(messageId));
@@ -9518,8 +9710,14 @@ namespace MyNS
 		/// <p>Gets the full details of a channel message.</p> <note> <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html">GetChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// GetChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID of the message.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelMessageResponse> GetChannelMessageAsync(string channelArn, string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9553,8 +9751,14 @@ namespace MyNS
 		/// <p>Updates the content of a message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html">UpdateChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID string of the message being updated.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID string of the message being updated.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelMessageResponse> UpdateChannelMessageAsync(string channelArn, string messageId, UpdateChannelMessagePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9595,8 +9799,14 @@ namespace MyNS
 		/// <p>Deletes a channel moderator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html">DeleteChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="channelModeratorArn">The ARN of the moderator being deleted.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="channelModeratorArn">The ARN of the moderator being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/moderators/"+ (channelModeratorArn==null? "" : System.Uri.EscapeDataString(channelModeratorArn));
@@ -9623,8 +9833,14 @@ namespace MyNS
 		/// <p>Returns the full details of a single ChannelModerator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html">DescribeChannelModerator</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="channelModeratorArn">The ARN of the channel moderator.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="channelModeratorArn">The ARN of the channel moderator.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratorResponse> DescribeChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9980,8 +10196,14 @@ namespace MyNS
 		/// <p>Deletes the specified proxy session from the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteProxySession.html">DeleteProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions/"+ (proxySessionId==null? "" : System.Uri.EscapeDataString(proxySessionId));
@@ -10008,8 +10230,14 @@ namespace MyNS
 		/// <p>Gets the specified proxy session details for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetProxySession.html">GetProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// GetProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProxySessionResponse> GetProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10043,8 +10271,14 @@ namespace MyNS
 		/// <p>Updates the specified proxy session details, such as voice or SMS capabilities.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateProxySession.html">UpdateProxySession</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task UpdateProxySessionAsync(string voiceConnectorId, string proxySessionId, UpdateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions/"+ (proxySessionId==null? "" : System.Uri.EscapeDataString(proxySessionId));
@@ -10853,7 +11087,10 @@ namespace MyNS
 		/// <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorProxy.html">DeleteVoiceProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DeleteVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/programmable-numbers/proxy";
@@ -10880,7 +11117,10 @@ namespace MyNS
 		/// <p>Gets the proxy configuration details for the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorProxy.html">GetVoiceConnectorProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// GetVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10914,7 +11154,10 @@ namespace MyNS
 		/// <p>Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorProxy.html">PutVoiceConnectorProxy</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// PutVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.</param>
+		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(string voiceConnectorId, PutVoiceConnectorProxyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11193,8 +11436,14 @@ namespace MyNS
 		/// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html">DescribeChannelMembershipForAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannelMembershipForAppInstanceUser channels/{channelArn}#scope=app-instance-user-membership&app-instance-user-arn
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which the user belongs.</param>
-		/// <param name="app_instance_user_arn">The ARN of the user in a channel.</param>
+		/// <param name="channelArn">The ARN of the channel to which the user belongs.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="app_instance_user_arn">The ARN of the user in a channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipForAppInstanceUserResponse> DescribeChannelMembershipForAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelMembershipForAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11228,8 +11477,14 @@ namespace MyNS
 		/// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html">DescribeChannelModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// DescribeChannelModeratedByAppInstanceUser channels/{channelArn}#scope=app-instance-user-moderated-channel&app-instance-user-arn
 		/// </summary>
-		/// <param name="channelArn">The ARN of the moderated channel.</param>
-		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code> in the moderated channel.</param>
+		/// <param name="channelArn">The ARN of the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratedByAppInstanceUserResponse> DescribeChannelModeratedByAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelModeratedByAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11484,7 +11739,10 @@ namespace MyNS
 		/// <p>Gets the retention settings for an <code>AppInstance</code>.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html">GetMessagingRetentionSettings</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// GetAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceRetentionSettingsResponse> GetAppInstanceRetentionSettingsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11518,7 +11776,10 @@ namespace MyNS
 		/// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html">PutAppInstanceRetentionSettings</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// PutAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceRetentionSettingsResponse> PutAppInstanceRetentionSettingsAsync(string appInstanceArn, PutAppInstanceRetentionSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12268,9 +12529,18 @@ namespace MyNS
 		/// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html">ListAppInstanceUsers</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListAppInstanceUsers app-instance-users#app-instance-arn
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.</param>
-		/// <param name="max_results">The maximum number of requests that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.</param>
+		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of requests that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -12341,9 +12611,18 @@ namespace MyNS
 		/// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelMembershipsForAppInstanceUser channels#scope=app-instance-user-memberships
 		/// </summary>
-		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code>s</param>
-		/// <param name="max_results">The maximum number of users that you want returned.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of channel memberships is reached.</param>
+		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code>s
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of users that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of channel memberships is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -12379,12 +12658,21 @@ namespace MyNS
 		/// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMessages.html">ListChannelMessages</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelMessages channels/{channelArn}/messages
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="sort_order">The order in which you want messages sorted. Default is Descending, based on time created.</param>
 		/// <param name="not_before">The initial or starting time stamp for your requested messages.</param>
 		/// <param name="not_after">The final or ending time stamp for your requested messages.</param>
-		/// <param name="max_results">The maximum number of messages that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested messages are returned.</param>
+		/// <param name="max_results">The maximum number of messages that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested messages are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -12420,7 +12708,10 @@ namespace MyNS
 		/// <p>Sends a message to a particular channel that the member is a part of.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SendChannelMessage.html">SendChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// SendChannelMessage channels/{channelArn}/messages
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task SendChannelMessageAsync(string channelArn, SendChannelMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/messages";
@@ -12454,10 +12745,19 @@ namespace MyNS
 		/// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class="title"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannels channels#app-instance-arn
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="privacy">The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </param>
-		/// <param name="max_results">The maximum number of channels that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.</param>
+		/// <param name="max_results">The maximum number of channels that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -12493,9 +12793,18 @@ namespace MyNS
 		/// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html">ListChannelsModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListChannelsModeratedByAppInstanceUser channels#scope=app-instance-user-moderated-channels
 		/// </summary>
-		/// <param name="app_instance_user_arn">The ARN of the user in the moderated channel.</param>
-		/// <param name="max_results">The maximum number of channels in the request.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of channels moderated by the user is reached.</param>
+		/// <param name="app_instance_user_arn">The ARN of the user in the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of channels in the request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of channels moderated by the user is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -12569,7 +12878,10 @@ namespace MyNS
 		/// <param name="product_type">The phone number product type.</param>
 		/// <param name="filter_name">The filter to use to limit the number of results.</param>
 		/// <param name="filter_value">The value to use for the filter.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12640,7 +12952,10 @@ namespace MyNS
 		/// <p>Lists the tags applied to an Amazon Chime SDK meeting and messaging resources.</p> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the applicable latest version in the Amazon Chime SDK.</p> <ul> <li> <p>For meetings: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li> <li> <p>For messaging: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li> </ul> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The resource ARN.</param>
+		/// <param name="arn">The resource ARN.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12765,8 +13080,14 @@ namespace MyNS
 		/// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_RedactChannelMessage.html">RedactChannelMessage</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// RedactChannelMessage channels/{channelArn}/messages/{messageId}#operation=redact
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel containing the messages that you want to redact.</param>
-		/// <param name="messageId">The ID of the message being redacted.</param>
+		/// <param name="channelArn">The ARN of the channel containing the messages that you want to redact.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message being redacted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RedactChannelMessageResponse> RedactChannelMessageAsync(string channelArn, string messageId, RedactChannelMessageOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12950,9 +13271,15 @@ namespace MyNS
 		/// <param name="city">The city used to filter results. Only applies to the US.</param>
 		/// <param name="country">The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</param>
 		/// <param name="state">The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</param>
-		/// <param name="toll_free_prefix">The toll-free prefix that you use to filter results. Only applies to the US.</param>
+		/// <param name="toll_free_prefix">The toll-free prefix that you use to filter results. Only applies to the US.
+		/// Max length: 3
+		/// Min length: 3
+		// </param>
 		/// <param name="phone_number_type">The phone number type used to filter results. Required for non-US numbers.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="next_token">The token used to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -13263,7 +13590,10 @@ namespace MyNS
 		/// <p>The details of the time when a user last read messages in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note> <important> <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html">UpdateChannelReadMarker</a>, in the Amazon Chime SDK.</p> <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> </important>
 		/// UpdateChannelReadMarker channels/{channelArn}/readMarker
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelReadMarkerResponse> UpdateChannelReadMarkerAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

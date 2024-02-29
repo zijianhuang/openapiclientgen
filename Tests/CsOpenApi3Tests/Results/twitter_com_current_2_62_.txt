@@ -6703,7 +6703,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="type">Type of Compliance Job to list.</param>
 		/// <param name="status">Status of Compliance Job to list.</param>
-		/// <param name="compliance_job_fields">A comma separated list of ComplianceJob fields to display.</param>
+		/// <param name="compliance_job_fields">A comma separated list of ComplianceJob fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ComplianceJobsResponse> ListBatchComplianceJobsAsync(ComplianceJobType type, ListBatchComplianceJobsStatus status, string[] compliance_job_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6780,7 +6782,9 @@ namespace MyNS
 		/// GetBatchComplianceJob 2/compliance/jobs/{id}
 		/// </summary>
 		/// <param name="id">The ID of the Compliance Job to retrieve.</param>
-		/// <param name="compliance_job_fields">A comma separated list of ComplianceJob fields to display.</param>
+		/// <param name="compliance_job_fields">A comma separated list of ComplianceJob fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ComplianceJobsIdResponse> GetBatchComplianceJobAsync(string id, string[] compliance_job_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6850,14 +6854,31 @@ namespace MyNS
 		/// GetDmConversationsWithParticipantIdDmEvents 2/dm_conversations/with/{participant_id}/dm_events
 		/// </summary>
 		/// <param name="participant_id">The ID of the participant user for the One to One DM conversation.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="event_types">The set of event_types to include in the results.</param>
-		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="event_types">The set of event_types to include in the results.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2DmConversationsWithParticipantIdDmEventsResponse> GetDmConversationsWithParticipantIdDmEventsAsync(string participant_id, int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6963,14 +6984,31 @@ namespace MyNS
 		/// GetDmConversationsIdDmEvents 2/dm_conversations/{id}/dm_events
 		/// </summary>
 		/// <param name="id">The DM Conversation ID.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="event_types">The set of event_types to include in the results.</param>
-		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="event_types">The set of event_types to include in the results.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2DmConversationsIdDmEventsResponse> GetDmConversationsIdDmEventsAsync(string id, int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7005,14 +7043,31 @@ namespace MyNS
 		/// Returns recent DM Events across DM conversations
 		/// GetDmEvents 2/dm_events
 		/// </summary>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="event_types">The set of event_types to include in the results.</param>
-		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="event_types">The set of event_types to include in the results.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="dm_event_fields">A comma separated list of DmEvent fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2DmEventsResponse> GetDmEventsAsync(int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7124,9 +7179,15 @@ namespace MyNS
 		/// ListIdGet 2/lists/{id}
 		/// </summary>
 		/// <param name="id">The ID of the List.</param>
-		/// <param name="list_fields">A comma separated list of List fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
+		/// <param name="list_fields">A comma separated list of List fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ListsIdResponse> ListIdGetAsync(string id, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7204,11 +7265,23 @@ namespace MyNS
 		/// ListGetFollowers 2/lists/{id}/followers
 		/// </summary>
 		/// <param name="id">The ID of the List.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ListsIdFollowersResponse> ListGetFollowersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7244,11 +7317,23 @@ namespace MyNS
 		/// ListGetMembers 2/lists/{id}/members
 		/// </summary>
 		/// <param name="id">The ID of the List.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ListsIdMembersResponse> ListGetMembersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7362,14 +7447,31 @@ namespace MyNS
 		/// ListsIdTweets 2/lists/{id}/tweets
 		/// </summary>
 		/// <param name="id">The ID of the List.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2ListsIdTweetsResponse> ListsIdTweetsAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7437,11 +7539,22 @@ namespace MyNS
 		/// Returns a variety of information about the Spaces specified by the requested IDs
 		/// FindSpacesByIds 2/spaces
 		/// </summary>
-		/// <param name="ids">The list of Space IDs to return.</param>
-		/// <param name="space_fields">A comma separated list of Space fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="topic_fields">A comma separated list of Topic fields to display.</param>
+		/// <param name="ids">The list of Space IDs to return.
+		/// Minimum items: 1
+		/// Maximum items: 100
+		// </param>
+		/// <param name="space_fields">A comma separated list of Space fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="topic_fields">A comma separated list of Topic fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesResponse> FindSpacesByIdsAsync(string[] ids, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7476,11 +7589,22 @@ namespace MyNS
 		/// Returns a variety of information about the Spaces created by the provided User IDs
 		/// FindSpacesByCreatorIds 2/spaces/by/creator_ids
 		/// </summary>
-		/// <param name="user_ids">The IDs of Users to search through.</param>
-		/// <param name="space_fields">A comma separated list of Space fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="topic_fields">A comma separated list of Topic fields to display.</param>
+		/// <param name="user_ids">The IDs of Users to search through.
+		/// Minimum items: 1
+		/// Maximum items: 100
+		// </param>
+		/// <param name="space_fields">A comma separated list of Space fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="topic_fields">A comma separated list of Topic fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesByCreatorIdsResponse> FindSpacesByCreatorIdsAsync(string[] user_ids, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7515,13 +7639,27 @@ namespace MyNS
 		/// Returns Spaces that match the provided query.
 		/// SearchSpaces 2/spaces/search
 		/// </summary>
-		/// <param name="query">The search query.</param>
+		/// <param name="query">The search query.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="state">The state of Spaces to search for.</param>
-		/// <param name="max_results">The number of results to return.</param>
-		/// <param name="space_fields">A comma separated list of Space fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="topic_fields">A comma separated list of Topic fields to display.</param>
+		/// <param name="max_results">The number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="space_fields">A comma separated list of Space fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="topic_fields">A comma separated list of Topic fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesSearchResponse> SearchSpacesAsync(string query, SearchSpacesState state, int max_results, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7557,10 +7695,18 @@ namespace MyNS
 		/// FindSpaceById 2/spaces/{id}
 		/// </summary>
 		/// <param name="id">The ID of the Space to be retrieved.</param>
-		/// <param name="space_fields">A comma separated list of Space fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="topic_fields">A comma separated list of Topic fields to display.</param>
+		/// <param name="space_fields">A comma separated list of Space fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="topic_fields">A comma separated list of Topic fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesIdResponse> FindSpaceByIdAsync(string id, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7596,11 +7742,22 @@ namespace MyNS
 		/// SpaceBuyers 2/spaces/{id}/buyers
 		/// </summary>
 		/// <param name="id">The ID of the Space to be retrieved.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesIdBuyersResponse> SpaceBuyersAsync(string id, string pagination_token, int max_results, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7636,13 +7793,28 @@ namespace MyNS
 		/// SpaceTweets 2/spaces/{id}/tweets
 		/// </summary>
 		/// <param name="id">The ID of the Space to be retrieved.</param>
-		/// <param name="max_results">The number of Tweets to fetch from the provided space. If not provided, the value will default to the maximum of 100.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="max_results">The number of Tweets to fetch from the provided space. If not provided, the value will default to the maximum of 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2SpacesIdTweetsResponse> SpaceTweetsAsync(string id, int max_results, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7677,13 +7849,28 @@ namespace MyNS
 		/// Returns a variety of information about the Tweet specified by the requested ID.
 		/// FindTweetsById 2/tweets
 		/// </summary>
-		/// <param name="ids">A comma separated list of Tweet IDs. Up to 100 are allowed in a single request.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="ids">A comma separated list of Tweet IDs. Up to 100 are allowed in a single request.
+		/// Minimum items: 1
+		/// Maximum items: 100
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsResponse> FindTweetsByIdAsync(string[] ids, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7752,8 +7939,14 @@ namespace MyNS
 		/// Streams 100% of compliance data for Tweets
 		/// GetTweetsComplianceStream 2/tweets/compliance/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
-		/// <param name="partition">The partition number.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
+		/// <param name="partition">The partition number.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweet Compliance events will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweet Compliance events will be provided.</param>
 		/// <returns>The request has succeeded.</returns>
@@ -7790,15 +7983,24 @@ namespace MyNS
 		/// Returns Tweet Counts that match a search query.
 		/// TweetCountsFullArchiveSearch 2/tweets/counts/all
 		/// </summary>
-		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.</param>
+		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
 		/// <param name="since_id">Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.</param>
 		/// <param name="until_id">Returns results with a Tweet ID less than (that is, older than) the specified ID.</param>
-		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
+		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
 		/// <param name="granularity">The granularity for the search counts results.</param>
-		/// <param name="search_count_fields">A comma separated list of SearchCount fields to display.</param>
+		/// <param name="search_count_fields">A comma separated list of SearchCount fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsCountsAllResponse> TweetCountsFullArchiveSearchAsync(string query, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string since_id, string until_id, string next_token, string pagination_token, TweetCountsFullArchiveSearchGranularity granularity, string[] search_count_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7833,15 +8035,24 @@ namespace MyNS
 		/// Returns Tweet Counts from the last 7 days that match a search query.
 		/// TweetCountsRecentSearch 2/tweets/counts/recent
 		/// </summary>
-		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.</param>
+		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
 		/// <param name="since_id">Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.</param>
 		/// <param name="until_id">Returns results with a Tweet ID less than (that is, older than) the specified ID.</param>
-		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
+		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
 		/// <param name="granularity">The granularity for the search counts results.</param>
-		/// <param name="search_count_fields">A comma separated list of SearchCount fields to display.</param>
+		/// <param name="search_count_fields">A comma separated list of SearchCount fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsCountsRecentResponse> TweetCountsRecentSearchAsync(string query, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string since_id, string until_id, string next_token, string pagination_token, TweetCountsFullArchiveSearchGranularity granularity, string[] search_count_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7876,16 +8087,34 @@ namespace MyNS
 		/// Streams 100% of public Tweets.
 		/// GetTweetsFirehoseStream 2/tweets/firehose/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
-		/// <param name="partition">The partition number.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
+		/// <param name="partition">The partition number.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Tweets will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<StreamingTweetResponse> GetTweetsFirehoseStreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7920,7 +8149,10 @@ namespace MyNS
 		/// Streams 100% of labeling events applied to Tweets
 		/// GetTweetsLabelStream 2/tweets/label/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweet labels will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the Tweet labels will be provided.</param>
 		/// <returns>The request has succeeded.</returns>
@@ -7957,13 +8189,28 @@ namespace MyNS
 		/// Streams a deterministic 1% of public Tweets.
 		/// SampleStream 2/tweets/sample/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<StreamingTweetResponse> SampleStreamAsync(int backfill_minutes, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7998,16 +8245,34 @@ namespace MyNS
 		/// Streams a deterministic 10% of public Tweets.
 		/// GetTweetsSample10Stream 2/tweets/sample10/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
-		/// <param name="partition">The partition number.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
+		/// <param name="partition">The partition number.
+		/// Minimum: 1
+		/// Maximum: 2
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Tweets will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsSample10StreamResponse> GetTweetsSample10StreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8042,21 +8307,43 @@ namespace MyNS
 		/// Returns Tweets that match a search query.
 		/// TweetsFullarchiveSearch 2/tweets/search/all
 		/// </summary>
-		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.</param>
+		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
 		/// <param name="since_id">Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.</param>
 		/// <param name="until_id">Returns results with a Tweet ID less than (that is, older than) the specified ID.</param>
-		/// <param name="max_results">The maximum number of search results to be returned by a request.</param>
-		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
+		/// <param name="max_results">The maximum number of search results to be returned by a request.
+		/// Minimum: 10
+		/// Maximum: 500
+		// </param>
+		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
 		/// <param name="sort_order">This order in which to return results.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsSearchAllResponse> TweetsFullarchiveSearchAsync(
 					string query, 
@@ -8107,21 +8394,43 @@ namespace MyNS
 		/// Returns Tweets from the last 7 days that match a search query.
 		/// TweetsRecentSearch 2/tweets/search/recent
 		/// </summary>
-		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.</param>
+		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
 		/// <param name="since_id">Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.</param>
 		/// <param name="until_id">Returns results with a Tweet ID less than (that is, older than) the specified ID.</param>
-		/// <param name="max_results">The maximum number of search results to be returned by a request.</param>
-		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</param>
+		/// <param name="max_results">The maximum number of search results to be returned by a request.
+		/// Minimum: 10
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		/// Min length: 1
+		// </param>
 		/// <param name="sort_order">This order in which to return results.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsSearchRecentResponse> TweetsRecentSearchAsync(
 					string query, 
@@ -8172,15 +8481,30 @@ namespace MyNS
 		/// Streams Tweets matching the stream's active rule set.
 		/// SearchStream 2/tweets/search/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<FilteredStreamingTweetResponse> SearchStreamAsync(int backfill_minutes, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8216,8 +8540,14 @@ namespace MyNS
 		/// GetRules 2/tweets/search/stream/rules
 		/// </summary>
 		/// <param name="ids">A comma-separated list of Rule IDs.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This value is populated by passing the 'next_token' returned in a request to paginate through results.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="pagination_token">This value is populated by passing the 'next_token' returned in a request to paginate through results.
+		/// Max length: 16
+		/// Min length: 16
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<RulesLookupResponse> GetRulesAsync(string[] ids, int max_results, string pagination_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8330,12 +8660,24 @@ namespace MyNS
 		/// FindTweetById 2/tweets/{id}
 		/// </summary>
 		/// <param name="id">A single Tweet ID.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsIdResponse> FindTweetByIdAsync(string id, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8371,11 +8713,22 @@ namespace MyNS
 		/// TweetsIdLikingUsers 2/tweets/{id}/liking_users
 		/// </summary>
 		/// <param name="id">A single Tweet ID.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsIdLikingUsersResponse> TweetsIdLikingUsersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8411,15 +8764,34 @@ namespace MyNS
 		/// FindTweetsThatQuoteATweet 2/tweets/{id}/quote_tweets
 		/// </summary>
 		/// <param name="id">A single Tweet ID.</param>
-		/// <param name="max_results">The maximum number of results to be returned.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="exclude">The set of entities to exclude (e.g. 'replies' or 'retweets').</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="max_results">The maximum number of results to be returned.
+		/// Minimum: 10
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="exclude">The set of entities to exclude (e.g. 'replies' or 'retweets').
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsIdQuoteTweetsResponse> FindTweetsThatQuoteATweetAsync(string id, int max_results, string pagination_token, string[] exclude, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8455,11 +8827,22 @@ namespace MyNS
 		/// TweetsIdRetweetingUsers 2/tweets/{id}/retweeted_by
 		/// </summary>
 		/// <param name="id">A single Tweet ID.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2TweetsIdRetweetedByResponse> TweetsIdRetweetingUsersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8536,10 +8919,19 @@ namespace MyNS
 		/// This endpoint returns information about Users. Specify Users by their ID.
 		/// FindUsersById 2/users
 		/// </summary>
-		/// <param name="ids">A list of User IDs, comma-separated. You can specify up to 100 IDs.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="ids">A list of User IDs, comma-separated. You can specify up to 100 IDs.
+		/// Minimum items: 1
+		/// Maximum items: 100
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersResponse> FindUsersByIdAsync(string[] ids, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8574,10 +8966,19 @@ namespace MyNS
 		/// This endpoint returns information about Users. Specify Users by their username.
 		/// FindUsersByUsername 2/users/by
 		/// </summary>
-		/// <param name="usernames">A list of usernames, comma-separated.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="usernames">A list of usernames, comma-separated.
+		/// Minimum items: 1
+		/// Maximum items: 100
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersByResponse> FindUsersByUsernameAsync(string[] usernames, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8613,9 +9014,15 @@ namespace MyNS
 		/// FindUserByUsername 2/users/by/username/{username}
 		/// </summary>
 		/// <param name="username">A username.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersByUsernameUsernameResponse> FindUserByUsernameAsync(string username, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8650,8 +9057,14 @@ namespace MyNS
 		/// Streams 100% of compliance data for Users
 		/// GetUsersComplianceStream 2/users/compliance/stream
 		/// </summary>
-		/// <param name="backfill_minutes">The number of minutes of backfill requested.</param>
-		/// <param name="partition">The partition number.</param>
+		/// <param name="backfill_minutes">The number of minutes of backfill requested.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
+		/// <param name="partition">The partition number.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the User Compliance events will be provided.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the User Compliance events will be provided.</param>
 		/// <returns>The request has succeeded.</returns>
@@ -8688,9 +9101,15 @@ namespace MyNS
 		/// This endpoint returns information about the requesting User.
 		/// FindMyUser 2/users/me
 		/// </summary>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersMeResponse> FindMyUserAsync(string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8726,9 +9145,15 @@ namespace MyNS
 		/// FindUserById 2/users/{id}
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdResponse> FindUserByIdAsync(string id, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8764,11 +9189,22 @@ namespace MyNS
 		/// UsersIdBlocking 2/users/{id}/blocking
 		/// </summary>
 		/// <param name="id">The ID of the authenticated source User for whom to return results.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdBlockingResponse> UsersIdBlockingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8846,14 +9282,31 @@ namespace MyNS
 		/// GetUsersIdBookmarks 2/users/{id}/bookmarks
 		/// </summary>
 		/// <param name="id">The ID of the authenticated source User for whom to return results.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdBookmarksResponse> GetUsersIdBookmarksAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8967,11 +9420,23 @@ namespace MyNS
 		/// UserFollowedLists 2/users/{id}/followed_lists
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="list_fields">A comma separated list of List fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="list_fields">A comma separated list of List fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdFollowedListsResponse> UserFollowedListsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9085,11 +9550,22 @@ namespace MyNS
 		/// UsersIdFollowers 2/users/{id}/followers
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdFollowersResponse> UsersIdFollowersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9125,11 +9601,22 @@ namespace MyNS
 		/// UsersIdFollowing 2/users/{id}/following
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Min length: 16
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdFollowingResponse> UsersIdFollowingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9207,14 +9694,31 @@ namespace MyNS
 		/// UsersIdLikedTweets 2/users/{id}/liked_tweets
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 5
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdLikedTweetsResponse> UsersIdLikedTweetsAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9328,11 +9832,23 @@ namespace MyNS
 		/// GetUserListMemberships 2/users/{id}/list_memberships
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="list_fields">A comma separated list of List fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="list_fields">A comma separated list of List fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdListMembershipsResponse> GetUserListMembershipsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9370,16 +9886,33 @@ namespace MyNS
 		/// <param name="id">The ID of the User to lookup.</param>
 		/// <param name="since_id">The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.</param>
 		/// <param name="until_id">The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 5
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdMentionsResponse> UsersIdMentionsAsync(string id, string since_id, string until_id, int max_results, string pagination_token, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9415,11 +9948,23 @@ namespace MyNS
 		/// UsersIdMuting 2/users/{id}/muting
 		/// </summary>
 		/// <param name="id">The ID of the authenticated source User for whom to return results.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdMutingResponse> UsersIdMutingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9497,11 +10042,23 @@ namespace MyNS
 		/// ListUserOwnedLists 2/users/{id}/owned_lists
 		/// </summary>
 		/// <param name="id">The ID of the User to lookup.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.</param>
-		/// <param name="list_fields">A comma separated list of List fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
+		/// Max length: 19
+		/// Min length: 1
+		// </param>
+		/// <param name="list_fields">A comma separated list of List fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdOwnedListsResponse> ListUserOwnedListsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9537,9 +10094,15 @@ namespace MyNS
 		/// ListUserPinnedLists 2/users/{id}/pinned_lists
 		/// </summary>
 		/// <param name="id">The ID of the authenticated source User for whom to return results.</param>
-		/// <param name="list_fields">A comma separated list of List fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
+		/// <param name="list_fields">A comma separated list of List fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdPinnedListsResponse> ListUserPinnedListsAsync(string id, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9733,17 +10296,34 @@ namespace MyNS
 		/// <param name="id">The ID of the authenticated source User to list Reverse Chronological Timeline Tweets of.</param>
 		/// <param name="since_id">The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.</param>
 		/// <param name="until_id">The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
 		/// <param name="exclude">The set of entities to exclude (e.g. 'replies' or 'retweets').</param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdTimelinesReverseChronologicalResponse> UsersIdTimelineAsync(string id, string since_id, string until_id, int max_results, string pagination_token, string[] exclude, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9781,17 +10361,36 @@ namespace MyNS
 		/// <param name="id">The ID of the User to lookup.</param>
 		/// <param name="since_id">The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.</param>
 		/// <param name="until_id">The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.</param>
-		/// <param name="max_results">The maximum number of results.</param>
-		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.</param>
-		/// <param name="exclude">The set of entities to exclude (e.g. 'replies' or 'retweets').</param>
+		/// <param name="max_results">The maximum number of results.
+		/// Minimum: 5
+		/// Maximum: 100
+		// </param>
+		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
+		/// Min length: 1
+		// </param>
+		/// <param name="exclude">The set of entities to exclude (e.g. 'replies' or 'retweets').
+		/// Minimum items: 1
+		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.</param>
-		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.</param>
-		/// <param name="expansions">A comma separated list of fields to expand.</param>
-		/// <param name="media_fields">A comma separated list of Media fields to display.</param>
-		/// <param name="poll_fields">A comma separated list of Poll fields to display.</param>
-		/// <param name="user_fields">A comma separated list of User fields to display.</param>
-		/// <param name="place_fields">A comma separated list of Place fields to display.</param>
+		/// <param name="tweet_fields">A comma separated list of Tweet fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="expansions">A comma separated list of fields to expand.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="media_fields">A comma separated list of Media fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="poll_fields">A comma separated list of Poll fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="user_fields">A comma separated list of User fields to display.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="place_fields">A comma separated list of Place fields to display.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<Get2UsersIdTweetsResponse> UsersIdTweetsAsync(string id, string since_id, string until_id, int max_results, string pagination_token, string[] exclude, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -4,15 +4,23 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ChartAxes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		axisDataTypeId?: number | null;
 		chartsId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 	}
 	export interface ChartAxesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		axisDataTypeId: FormControl<number | null | undefined>,
 		chartsId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 	}
 	export function CreateChartAxesFormGroup() {
@@ -26,23 +34,31 @@ export namespace MyNS {
 	}
 
 	export interface ChartAxesDetails {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		axisDataTypeId?: number | null;
 		chart?: ChartChartsDetails;
 		chartsId?: string | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		titleTextContainer?: SharedTextContainerDetails;
 		userCreated?: string | null;
 		userModified?: string | null;
 	}
 	export interface ChartAxesDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		axisDataTypeId: FormControl<number | null | undefined>,
 		chartsId: FormControl<string | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -183,6 +199,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		name?: string | null;
 		userCreated?: string | null;
@@ -194,6 +212,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -226,6 +246,8 @@ export namespace MyNS {
 		rowId?: string | null;
 		userCreated?: string | null;
 		userModified?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ChartDataPointsDetailsFormProperties {
@@ -237,6 +259,8 @@ export namespace MyNS {
 		rowId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateChartDataPointsDetailsFormGroup() {
@@ -258,6 +282,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		name?: string | null;
 		rowNameCollection?: ChartRowCollectionsDetails;
@@ -269,6 +295,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		rowNameCollectionId: FormControl<string | null | undefined>,
@@ -297,6 +325,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nameFormatType?: number | null;
 		rows?: Array<ChartRowsDetails>;
 		userCreated?: string | null;
@@ -308,6 +338,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nameFormatType: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -335,22 +367,34 @@ export namespace MyNS {
 		chart?: ChartChartsDetails;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		graphicTypeId?: number | null;
 		groupElement?: SlideGroupElementsDetails;
 
 		/** Foreign key to the GroupElements object */
 		groupElementsId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		picture?: SharedPicturesDetails;
 		smartArt?: SlideSmartArtsDetails;
 		table?: TableTablesDetails;
 		userCreated?: string | null;
 		userModified?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset?: number | null;
 	}
 
@@ -361,18 +405,30 @@ export namespace MyNS {
 	export interface SlideGraphicsDetailsFormProperties {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		graphicTypeId: FormControl<number | null | undefined>,
 
 		/** Foreign key to the GroupElements object */
 		groupElementsId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideGraphicsDetailsFormGroup() {
@@ -406,6 +462,8 @@ export namespace MyNS {
 		 */
 		graphic?: SlideGraphicsDetails;
 		group?: SlideGroupsDetails;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupElementTypeId?: number | null;
 		groupElementTypePk?: string | null;
 		id?: string | null;
@@ -422,6 +480,8 @@ export namespace MyNS {
 	export interface SlideGroupElementsDetailsFormProperties {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupElementTypeId: FormControl<number | null | undefined>,
 		groupElementTypePk: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -453,6 +513,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		effect?: SharedEffectsDetails;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endConnectionIdx?: number | null;
 		endConnectionShape?: SlideShapesDetails;
 		endConnectionShapeId?: string | null;
@@ -469,10 +531,16 @@ export namespace MyNS {
 		isThemeLine?: boolean | null;
 		line?: SharedLinesDetails;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		presetTypeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startConnectionIdx?: number | null;
 		startConnectionShape?: SlideShapesDetails;
 		startConnectionShapeId?: string | null;
@@ -485,6 +553,8 @@ export namespace MyNS {
 		changedBaseElementBlobUrl: FormControl<string | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endConnectionIdx: FormControl<number | null | undefined>,
 		endConnectionShapeId: FormControl<string | null | undefined>,
 		flipHorizontal: FormControl<boolean | null | undefined>,
@@ -497,10 +567,16 @@ export namespace MyNS {
 		isThemeFill: FormControl<boolean | null | undefined>,
 		isThemeLine: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		presetTypeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startConnectionIdx: FormControl<number | null | undefined>,
 		startConnectionShapeId: FormControl<string | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
@@ -585,6 +661,8 @@ export namespace MyNS {
 		dateModified?: Date | null;
 		effect?: SharedEffectsDetails;
 		effectId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		effectTypeId?: number | null;
 		fillMap?: SharedFillMapDetails;
 		id?: string | null;
@@ -596,6 +674,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		effectId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		effectTypeId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -622,6 +702,8 @@ export namespace MyNS {
 		dateModified?: Date | null;
 		effectAttribute?: SharedEffectAttributesDetails;
 		effectAttributeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fillTypeId?: number | null;
 		gradientFill?: SharedGradientFillsDetails;
 		id?: string | null;
@@ -643,6 +725,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		effectAttributeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fillTypeId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		shapeId: FormControl<string | null | undefined>,
@@ -671,6 +755,8 @@ export namespace MyNS {
 	}
 
 	export interface SharedGradientFillsDetails {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		angle?: number | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
@@ -685,6 +771,8 @@ export namespace MyNS {
 		userModified?: string | null;
 	}
 	export interface SharedGradientFillsDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		angle: FormControl<number | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
@@ -718,6 +806,8 @@ export namespace MyNS {
 		gradientFill?: SharedGradientFillsDetails;
 		gradientFillsId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		solidFill?: SharedSolidFillsDetails;
 		userCreated?: string | null;
@@ -728,6 +818,8 @@ export namespace MyNS {
 		dateModified: FormControl<Date | null | undefined>,
 		gradientFillsId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -747,6 +839,8 @@ export namespace MyNS {
 
 	export interface SharedSolidFillsDetails {
 		colorTransformations?: SharedColorTransformationsDetails;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorTypeId?: number | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
@@ -765,6 +859,8 @@ export namespace MyNS {
 		userModified?: string | null;
 	}
 	export interface SharedSolidFillsDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorTypeId: FormControl<number | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
@@ -870,11 +966,19 @@ export namespace MyNS {
 		bottomBorder?: TableBordersDetails;
 		bottomBorderId?: string | null;
 		connectorId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dashTypeId?: number | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndHeightId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndWidthId?: number | null;
 		id?: string | null;
 		leftBorder?: TableBordersDetails;
@@ -889,24 +993,40 @@ export namespace MyNS {
 		shapeId?: string | null;
 		tLtoBRBorder?: TableBordersDetails;
 		tLtoBRBorderId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndHeightId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndWidthId?: number | null;
 		topBorder?: TableBordersDetails;
 		topBorderId?: string | null;
 		userCreated?: string | null;
 		userModified?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight?: number | null;
 	}
 	export interface SharedLinesDetailsFormProperties {
 		bLtoTRBorderId: FormControl<string | null | undefined>,
 		bottomBorderId: FormControl<string | null | undefined>,
 		connectorId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dashTypeId: FormControl<number | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndHeightId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndWidthId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		leftBorderId: FormControl<string | null | undefined>,
@@ -914,12 +1034,20 @@ export namespace MyNS {
 		rightBorderId: FormControl<string | null | undefined>,
 		shapeId: FormControl<string | null | undefined>,
 		tLtoBRBorderId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndHeightId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndWidthId: FormControl<number | null | undefined>,
 		topBorderId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedLinesDetailsFormGroup() {
@@ -989,6 +1117,8 @@ export namespace MyNS {
 		border?: TableBordersDetails;
 		column?: TableColumnsDetails;
 		columnId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnSpan?: number | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
@@ -998,6 +1128,8 @@ export namespace MyNS {
 		isMergedVertical?: boolean | null;
 		row?: TableRowsDetails;
 		rowId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowSpan?: number | null;
 		textContainer?: SharedTextContainerDetails;
 		userCreated?: string | null;
@@ -1005,6 +1137,8 @@ export namespace MyNS {
 	}
 	export interface TableCellsDetailsFormProperties {
 		columnId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnSpan: FormControl<number | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
@@ -1012,6 +1146,8 @@ export namespace MyNS {
 		isMergedHorozontal: FormControl<boolean | null | undefined>,
 		isMergedVertical: FormControl<boolean | null | undefined>,
 		rowId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowSpan: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -1038,22 +1174,30 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		table?: TableTablesDetails;
 		tableId?: string | null;
 		userCreated?: string | null;
 		userModified?: string | null;
-		width?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		width?: string | null;
 	}
 	export interface TableColumnsDetailsFormProperties {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		tableId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
-		width: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		width: FormControl<string | null | undefined>,
 	}
 	export function CreateTableColumnsDetailsFormGroup() {
 		return new FormGroup<TableColumnsDetailsFormProperties>({
@@ -1064,7 +1208,7 @@ export namespace MyNS {
 			tableId: new FormControl<string | null | undefined>(undefined),
 			userCreated: new FormControl<string | null | undefined>(undefined),
 			userModified: new FormControl<string | null | undefined>(undefined),
-			width: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1131,8 +1275,12 @@ export namespace MyNS {
 		cells?: Array<TableCellsDetails>;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
-		height?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		height?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		table?: TableTablesDetails;
 		tableId?: string | null;
@@ -1142,8 +1290,12 @@ export namespace MyNS {
 	export interface TableRowsDetailsFormProperties {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
-		height: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		height: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		tableId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1153,7 +1305,7 @@ export namespace MyNS {
 		return new FormGroup<TableRowsDetailsFormProperties>({
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			dateModified: new FormControl<Date | null | undefined>(undefined),
-			height: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			index: new FormControl<number | null | undefined>(undefined),
 			tableId: new FormControl<string | null | undefined>(undefined),
@@ -1212,6 +1364,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		text?: Array<SharedTextDetails>;
 		textContainer?: SharedTextContainerDetails;
@@ -1223,6 +1377,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		textContainerId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1247,6 +1403,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		font?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fontSize?: number | null;
 		id?: string | null;
 		isBold?: boolean | null;
@@ -1256,6 +1414,8 @@ export namespace MyNS {
 		paragraph?: SharedParagraphDetails;
 		paragraphId?: string | null;
 		rawText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		userCreated?: string | null;
 		userModified?: string | null;
@@ -1265,6 +1425,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		font: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fontSize: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		isBold: FormControl<boolean | null | undefined>,
@@ -1273,6 +1435,8 @@ export namespace MyNS {
 		isUnderline: FormControl<boolean | null | undefined>,
 		paragraphId: FormControl<string | null | undefined>,
 		rawText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -1310,6 +1474,8 @@ export namespace MyNS {
 		freeFormPathXml?: string | null;
 		groupElement?: SlideGroupElementsDetails;
 		groupElementsId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		hidden?: boolean | null;
 		id?: string | null;
@@ -1318,16 +1484,26 @@ export namespace MyNS {
 		isThemeLine?: boolean | null;
 		line?: SharedLinesDetails;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		presetTypeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation?: number | null;
 		svgBlobUrl?: string | null;
 		textContainer?: SharedTextContainerDetails;
 		userCreated?: string | null;
 		userModified?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset?: number | null;
 	}
 	export interface SlideShapesDetailsFormProperties {
@@ -1339,6 +1515,8 @@ export namespace MyNS {
 		flipVertical: FormControl<boolean | null | undefined>,
 		freeFormPathXml: FormControl<string | null | undefined>,
 		groupElementsId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -1346,15 +1524,25 @@ export namespace MyNS {
 		isThemeFill: FormControl<boolean | null | undefined>,
 		isThemeLine: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		presetTypeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation: FormControl<number | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideShapesDetailsFormGroup() {
@@ -1392,6 +1580,8 @@ export namespace MyNS {
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		line?: SharedLinesDetails;
 		theme?: ThemeThemesDetails;
@@ -1403,6 +1593,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1474,6 +1666,8 @@ export namespace MyNS {
 		dateModified?: Date | null;
 		fillMap?: SharedFillMapDetails;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		theme?: ThemeThemesDetails;
 		themeId?: string | null;
@@ -1484,6 +1678,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1610,6 +1806,8 @@ export namespace MyNS {
 		dateModified?: Date | null;
 		effect?: SharedEffectsDetails;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		theme?: ThemeThemesDetails;
 		themeId?: string | null;
@@ -1620,6 +1818,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1643,6 +1843,8 @@ export namespace MyNS {
 		dateModified?: Date | null;
 		fillMap?: SharedFillMapDetails;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		theme?: ThemeThemesDetails;
 		themeId?: string | null;
@@ -1653,6 +1855,8 @@ export namespace MyNS {
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
@@ -1715,7 +1919,11 @@ export namespace MyNS {
 		documentId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		shapeTree?: SlideShapeTreesDetails;
@@ -1734,7 +1942,11 @@ export namespace MyNS {
 		documentId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		slideDocumentUrl: FormControl<string | null | undefined>,
@@ -1768,6 +1980,8 @@ export namespace MyNS {
 		changedBaseElementBlobUrl?: string | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		documentTypeId?: number | null;
 		filename?: string | null;
 		id?: string | null;
@@ -1787,6 +2001,8 @@ export namespace MyNS {
 		changedBaseElementBlobUrl: FormControl<string | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		documentTypeId: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -1832,6 +2048,8 @@ export namespace MyNS {
 		hidden?: boolean | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		slide?: SlideSlidesDetails;
@@ -1850,6 +2068,8 @@ export namespace MyNS {
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		slideId: FormControl<string | null | undefined>,
@@ -1910,42 +2130,90 @@ export namespace MyNS {
 	}
 
 	export interface SlideColorMapsDetails {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent2?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent3?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent4?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent5?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent6?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background2?: number | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followedHyperlink?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hyperlink?: number | null;
 		id?: string | null;
 		slideMaster?: SlideSlideMastersDetails;
 		slideMasterId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text2?: number | null;
 		userCreated?: string | null;
 		userModified?: string | null;
 	}
 	export interface SlideColorMapsDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent2: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent3: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent4: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent5: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent6: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background2: FormControl<number | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followedHyperlink: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hyperlink: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		slideMasterId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text2: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -1978,6 +2246,8 @@ export namespace MyNS {
 		compressionState?: string | null;
 		dateCreated?: Date | null;
 		dateModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi?: number | null;
 		effectsJson?: string | null;
 		fillMap?: SharedFillMapDetails;
@@ -1995,6 +2265,8 @@ export namespace MyNS {
 		compressionState: FormControl<string | null | undefined>,
 		dateCreated: FormControl<Date | null | undefined>,
 		dateModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi: FormControl<number | null | undefined>,
 		effectsJson: FormControl<string | null | undefined>,
 		fillMapId: FormControl<string | null | undefined>,
@@ -2091,6 +2363,8 @@ export namespace MyNS {
 		hidden?: boolean | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		svgBlobUrl?: string | null;
@@ -2107,6 +2381,8 @@ export namespace MyNS {
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
@@ -2140,6 +2416,8 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 		userCreated?: string | null;
 		userModified?: string | null;
@@ -2150,6 +2428,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 		userCreated: FormControl<string | null | undefined>,
 		userModified: FormControl<string | null | undefined>,
@@ -2222,6 +2502,8 @@ export namespace MyNS {
 		id?: string | null;
 		name?: string | null;
 		ooxmlName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ChartAxisDataTypesFormProperties {
@@ -2229,6 +2511,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ooxmlName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateChartAxisDataTypesFormGroup() {
@@ -2325,6 +2609,8 @@ export namespace MyNS {
 		axisId?: string | null;
 		columnCollectionId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		name?: string | null;
 	}
@@ -2332,6 +2618,8 @@ export namespace MyNS {
 		axisId: FormControl<string | null | undefined>,
 		columnCollectionId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -2351,6 +2639,8 @@ export namespace MyNS {
 		columnId?: string | null;
 		id?: string | null;
 		rowId?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ChartDataPointsFormProperties {
@@ -2358,6 +2648,8 @@ export namespace MyNS {
 		columnId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		rowId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateChartDataPointsFormGroup() {
@@ -2375,14 +2667,22 @@ export namespace MyNS {
 		id?: string | null;
 		plotQualifedAssy?: string | null;
 		plotTypeName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowColTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ChartPlotTypeFormProperties {
 		id: FormControl<string | null | undefined>,
 		plotQualifedAssy: FormControl<string | null | undefined>,
 		plotTypeName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowColTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateChartPlotTypeFormGroup() {
@@ -2402,6 +2702,8 @@ export namespace MyNS {
 		id?: string | null;
 		rowName?: string | null;
 		rowQualifedAssy?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ChartRowColFormProperties {
@@ -2410,6 +2712,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		rowName: FormControl<string | null | undefined>,
 		rowQualifedAssy: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateChartRowColFormGroup() {
@@ -2428,12 +2732,16 @@ export namespace MyNS {
 		axisId?: string | null;
 		chartDataId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nameFormatType?: number | null;
 	}
 	export interface ChartRowCollectionsFormProperties {
 		axisId: FormControl<string | null | undefined>,
 		chartDataId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nameFormatType: FormControl<number | null | undefined>,
 	}
 	export function CreateChartRowCollectionsFormGroup() {
@@ -2449,13 +2757,21 @@ export namespace MyNS {
 	export interface ChartRowNameFormatTypes {
 		formatCode?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		powerToolsId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ChartRowNameFormatTypesFormProperties {
 		formatCode: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		powerToolsId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateChartRowNameFormatTypesFormGroup() {
@@ -2470,12 +2786,16 @@ export namespace MyNS {
 
 	export interface ChartRows {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		name?: string | null;
 		rowNameCollectionId?: string | null;
 	}
 	export interface ChartRowsFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		rowNameCollectionId: FormControl<string | null | undefined>,
@@ -2519,6 +2839,8 @@ export namespace MyNS {
 		baseElementBlobUrl?: string | null;
 		blobLocation?: string | null;
 		changedBaseElementBlobUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		documentTypeId?: number | null;
 		filename?: string | null;
 		id?: string | null;
@@ -2533,6 +2855,8 @@ export namespace MyNS {
 		baseElementBlobUrl: FormControl<string | null | undefined>,
 		blobLocation: FormControl<string | null | undefined>,
 		changedBaseElementBlobUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		documentTypeId: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -2584,6 +2908,8 @@ export namespace MyNS {
 		mimeType?: string | null;
 		name?: string | null;
 		ooxmlPackageType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface DocumentTypeFormProperties {
@@ -2593,6 +2919,8 @@ export namespace MyNS {
 		mimeType: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ooxmlPackageType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentTypeFormGroup() {
@@ -2630,6 +2958,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -2637,6 +2967,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -2694,17 +3026,25 @@ export namespace MyNS {
 	}
 
 	export interface SharedColorTypes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorSchemeIndexValueEnum?: number | null;
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedColorTypesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorSchemeIndexValueEnum: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedColorTypesFormGroup() {
@@ -2723,6 +3063,8 @@ export namespace MyNS {
 		id?: string | null;
 		name?: string | null;
 		serializedAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedDashTypesFormProperties {
@@ -2730,6 +3072,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		serializedAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedDashTypesFormGroup() {
@@ -2746,12 +3090,16 @@ export namespace MyNS {
 	export interface SharedEffectAttributes {
 		attributesJson?: string | null;
 		effectId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		effectTypeId?: number | null;
 		id?: string | null;
 	}
 	export interface SharedEffectAttributesFormProperties {
 		attributesJson: FormControl<string | null | undefined>,
 		effectId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		effectTypeId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 	}
@@ -2769,12 +3117,16 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedEffectTypesFormProperties {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedEffectTypesFormGroup() {
@@ -2815,6 +3167,8 @@ export namespace MyNS {
 	export interface SharedFillMap {
 		connectorId?: string | null;
 		effectAttributeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fillTypeId?: number | null;
 		id?: string | null;
 		shapeId?: string | null;
@@ -2825,6 +3179,8 @@ export namespace MyNS {
 	export interface SharedFillMapFormProperties {
 		connectorId: FormControl<string | null | undefined>,
 		effectAttributeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fillTypeId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		shapeId: FormControl<string | null | undefined>,
@@ -2850,12 +3206,16 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedFillTypesFormProperties {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedFillTypesFormGroup() {
@@ -2869,6 +3229,8 @@ export namespace MyNS {
 	}
 
 	export interface SharedGradientFills {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		angle?: number | null;
 		fillMapId?: string | null;
 		id?: string | null;
@@ -2877,6 +3239,8 @@ export namespace MyNS {
 		rotateWithShape?: boolean | null;
 	}
 	export interface SharedGradientFillsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		angle: FormControl<number | null | undefined>,
 		fillMapId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -2899,11 +3263,15 @@ export namespace MyNS {
 	export interface SharedGradientStops {
 		gradientFillsId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 	}
 	export interface SharedGradientStopsFormProperties {
 		gradientFillsId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedGradientStopsFormGroup() {
@@ -2917,6 +3285,8 @@ export namespace MyNS {
 
 	export interface SharedImageFills {
 		compressionState?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi?: number | null;
 		effectsJson?: string | null;
 		fillMapId?: string | null;
@@ -2928,6 +3298,8 @@ export namespace MyNS {
 	}
 	export interface SharedImageFillsFormProperties {
 		compressionState: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi: FormControl<number | null | undefined>,
 		effectsJson: FormControl<string | null | undefined>,
 		fillMapId: FormControl<string | null | undefined>,
@@ -2957,6 +3329,8 @@ export namespace MyNS {
 		id?: string | null;
 		name?: string | null;
 		serializedAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedLineEndSizesFormProperties {
@@ -2964,6 +3338,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		serializedAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedLineEndSizesFormGroup() {
@@ -2982,6 +3358,8 @@ export namespace MyNS {
 		id?: string | null;
 		name?: string | null;
 		serializedAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SharedLineEndTypesFormProperties {
@@ -2989,6 +3367,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		serializedAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedLineEndTypesFormGroup() {
@@ -3006,9 +3386,17 @@ export namespace MyNS {
 		bLtoTRBorderId?: string | null;
 		bottomBorderId?: string | null;
 		connectorId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dashTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndHeightId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndWidthId?: number | null;
 		id?: string | null;
 		leftBorderId?: string | null;
@@ -3016,19 +3404,35 @@ export namespace MyNS {
 		rightBorderId?: string | null;
 		shapeId?: string | null;
 		tLtoBRBorderId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndHeightId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndTypeId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndWidthId?: number | null;
 		topBorderId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight?: number | null;
 	}
 	export interface SharedLinesFormProperties {
 		bLtoTRBorderId: FormControl<string | null | undefined>,
 		bottomBorderId: FormControl<string | null | undefined>,
 		connectorId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dashTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndHeightId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headEndWidthId: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		leftBorderId: FormControl<string | null | undefined>,
@@ -3036,10 +3440,18 @@ export namespace MyNS {
 		rightBorderId: FormControl<string | null | undefined>,
 		shapeId: FormControl<string | null | undefined>,
 		tLtoBRBorderId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndHeightId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndTypeId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tailEndWidthId: FormControl<number | null | undefined>,
 		topBorderId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedLinesFormGroup() {
@@ -3068,11 +3480,15 @@ export namespace MyNS {
 
 	export interface SharedParagraph {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		textContainerId?: string | null;
 	}
 	export interface SharedParagraphFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		textContainerId: FormControl<string | null | undefined>,
 	}
@@ -3123,6 +3539,8 @@ export namespace MyNS {
 	}
 
 	export interface SharedSolidFills {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorTypeId?: number | null;
 		fillMapId?: string | null;
 		hexValue?: string | null;
@@ -3133,6 +3551,8 @@ export namespace MyNS {
 		parentTextId?: string | null;
 	}
 	export interface SharedSolidFillsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorTypeId: FormControl<number | null | undefined>,
 		fillMapId: FormControl<string | null | undefined>,
 		hexValue: FormControl<string | null | undefined>,
@@ -3159,6 +3579,8 @@ export namespace MyNS {
 	export interface SharedText {
 		colorSolidFillsId?: string | null;
 		font?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fontSize?: number | null;
 		id?: string | null;
 		isBold?: boolean | null;
@@ -3167,11 +3589,15 @@ export namespace MyNS {
 		isUnderline?: boolean | null;
 		paragraphId?: string | null;
 		rawText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 	}
 	export interface SharedTextFormProperties {
 		colorSolidFillsId: FormControl<string | null | undefined>,
 		font: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fontSize: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		isBold: FormControl<boolean | null | undefined>,
@@ -3180,6 +3606,8 @@ export namespace MyNS {
 		isUnderline: FormControl<boolean | null | undefined>,
 		paragraphId: FormControl<string | null | undefined>,
 		rawText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 	}
 	export function CreateSharedTextFormGroup() {
@@ -3228,35 +3656,83 @@ export namespace MyNS {
 	}
 
 	export interface SlideColorMaps {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent2?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent3?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent4?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent5?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent6?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background2?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followedHyperlink?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hyperlink?: number | null;
 		id?: string | null;
 		slideMasterId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text2?: number | null;
 	}
 	export interface SlideColorMapsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent2: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent3: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent4: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent5: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accent6: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		background2: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followedHyperlink: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hyperlink: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		slideMasterId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		text2: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideColorMapsFormGroup() {
@@ -3282,6 +3758,8 @@ export namespace MyNS {
 	export interface SlideConnector {
 		baseElementBlobUrl?: string | null;
 		changedBaseElementBlobUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endConnectionIdx?: number | null;
 		endConnectionShapeId?: string | null;
 		flipHorizontal?: boolean | null;
@@ -3294,10 +3772,16 @@ export namespace MyNS {
 		isThemeFill?: boolean | null;
 		isThemeLine?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		presetTypeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startConnectionIdx?: number | null;
 		startConnectionShapeId?: string | null;
 		svgBlobUrl?: string | null;
@@ -3305,6 +3789,8 @@ export namespace MyNS {
 	export interface SlideConnectorFormProperties {
 		baseElementBlobUrl: FormControl<string | null | undefined>,
 		changedBaseElementBlobUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endConnectionIdx: FormControl<number | null | undefined>,
 		endConnectionShapeId: FormControl<string | null | undefined>,
 		flipHorizontal: FormControl<boolean | null | undefined>,
@@ -3317,10 +3803,16 @@ export namespace MyNS {
 		isThemeFill: FormControl<boolean | null | undefined>,
 		isThemeLine: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		presetTypeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startConnectionIdx: FormControl<number | null | undefined>,
 		startConnectionShapeId: FormControl<string | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
@@ -3356,12 +3848,16 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SlideGraphicTypesFormProperties {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideGraphicTypesFormGroup() {
@@ -3375,25 +3871,49 @@ export namespace MyNS {
 	}
 
 	export interface SlideGraphics {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		graphicTypeId?: number | null;
 		groupElementsId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset?: number | null;
 	}
 	export interface SlideGraphicsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		graphicTypeId: FormControl<number | null | undefined>,
 		groupElementsId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideGraphicsFormGroup() {
@@ -3415,12 +3935,16 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface SlideGroupElementTypesFormProperties {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideGroupElementTypesFormGroup() {
@@ -3434,6 +3958,8 @@ export namespace MyNS {
 	}
 
 	export interface SlideGroupElements {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupElementTypeId?: number | null;
 		groupElementTypePk?: string | null;
 		id?: string | null;
@@ -3442,6 +3968,8 @@ export namespace MyNS {
 		ultimateParentShapeTreeId?: string | null;
 	}
 	export interface SlideGroupElementsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupElementTypeId: FormControl<number | null | undefined>,
 		groupElementTypePk: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -3468,6 +3996,8 @@ export namespace MyNS {
 		hidden?: boolean | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		svgBlobUrl?: string | null;
@@ -3480,6 +4010,8 @@ export namespace MyNS {
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
@@ -3508,6 +4040,8 @@ export namespace MyNS {
 		hidden?: boolean | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		slideId?: string | null;
@@ -3521,6 +4055,8 @@ export namespace MyNS {
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		slideId: FormControl<string | null | undefined>,
@@ -3551,6 +4087,8 @@ export namespace MyNS {
 		flipVertical?: boolean | null;
 		freeFormPathXml?: string | null;
 		groupElementsId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		hidden?: boolean | null;
 		id?: string | null;
@@ -3558,13 +4096,23 @@ export namespace MyNS {
 		isThemeFill?: boolean | null;
 		isThemeLine?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		presetTypeId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation?: number | null;
 		svgBlobUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset?: number | null;
 	}
 	export interface SlideShapesFormProperties {
@@ -3574,6 +4122,8 @@ export namespace MyNS {
 		flipVertical: FormControl<boolean | null | undefined>,
 		freeFormPathXml: FormControl<string | null | undefined>,
 		groupElementsId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -3581,13 +4131,23 @@ export namespace MyNS {
 		isThemeFill: FormControl<boolean | null | undefined>,
 		isThemeLine: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		presetTypeId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotation: FormControl<number | null | undefined>,
 		svgBlobUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xOffset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateSlideShapesFormGroup() {
@@ -3639,7 +4199,11 @@ export namespace MyNS {
 		documentId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId?: number | null;
 		packageUri?: string | null;
 		slideDocumentUrl?: string | null;
@@ -3651,7 +4215,11 @@ export namespace MyNS {
 		documentId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ooxmlId: FormControl<number | null | undefined>,
 		packageUri: FormControl<string | null | undefined>,
 		slideDocumentUrl: FormControl<string | null | undefined>,
@@ -3722,20 +4290,28 @@ export namespace MyNS {
 
 	export interface TableCells {
 		columnId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnSpan?: number | null;
 		id?: string | null;
 		isMergedHorozontal?: boolean | null;
 		isMergedVertical?: boolean | null;
 		rowId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowSpan?: number | null;
 	}
 	export interface TableCellsFormProperties {
 		columnId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnSpan: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		isMergedHorozontal: FormControl<boolean | null | undefined>,
 		isMergedVertical: FormControl<boolean | null | undefined>,
 		rowId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateTableCellsFormGroup() {
@@ -3753,41 +4329,57 @@ export namespace MyNS {
 
 	export interface TableColumns {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		tableId?: string | null;
-		width?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		width?: string | null;
 	}
 	export interface TableColumnsFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		tableId: FormControl<string | null | undefined>,
-		width: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		width: FormControl<string | null | undefined>,
 	}
 	export function CreateTableColumnsFormGroup() {
 		return new FormGroup<TableColumnsFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
 			index: new FormControl<number | null | undefined>(undefined),
 			tableId: new FormControl<string | null | undefined>(undefined),
-			width: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface TableRows {
-		height?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		height?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		tableId?: string | null;
 	}
 	export interface TableRowsFormProperties {
-		height: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		height: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		tableId: FormControl<string | null | undefined>,
 	}
 	export function CreateTableRowsFormGroup() {
 		return new FormGroup<TableRowsFormProperties>({
-			height: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			index: new FormControl<number | null | undefined>(undefined),
 			tableId: new FormControl<string | null | undefined>(undefined),
@@ -3848,11 +4440,15 @@ export namespace MyNS {
 
 	export interface ThemeBackgroundFills {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		themeId?: string | null;
 	}
 	export interface ThemeBackgroundFillsFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 	}
@@ -3944,11 +4540,15 @@ export namespace MyNS {
 
 	export interface ThemeEffectMap {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		themeId?: string | null;
 	}
 	export interface ThemeEffectMapFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 	}
@@ -3963,11 +4563,15 @@ export namespace MyNS {
 
 	export interface ThemeFills {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		themeId?: string | null;
 	}
 	export interface ThemeFillsFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 	}
@@ -4006,12 +4610,16 @@ export namespace MyNS {
 		description?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ThemeIntensityFormProperties {
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateThemeIntensityFormGroup() {
@@ -4026,11 +4634,15 @@ export namespace MyNS {
 
 	export interface ThemeLineMap {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId?: number | null;
 		themeId?: string | null;
 	}
 	export interface ThemeLineMapFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		intensityId: FormControl<number | null | undefined>,
 		themeId: FormControl<string | null | undefined>,
 	}
@@ -4100,6 +4712,7 @@ export namespace MyNS {
 		 * AxisDataTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Charts/AxisDataTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChartAxisDataTypes} Success
 		 */
 		Chart_axisdatatypes_typeid_get_type_id(type_id: number): Observable<ChartAxisDataTypes> {
@@ -4233,6 +4846,7 @@ export namespace MyNS {
 		 * PlotType: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Charts/PlotType/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChartPlotType} Success
 		 */
 		Chart_plottype_typeid_get_type_id(type_id: number): Observable<ChartPlotType> {
@@ -4263,6 +4877,7 @@ export namespace MyNS {
 		 * RowCol: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Charts/RowCol/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChartRowCol} Success
 		 */
 		Chart_rowcol_typeid_get_type_id(type_id: number): Observable<ChartRowCol> {
@@ -4303,6 +4918,7 @@ export namespace MyNS {
 		 * RowNameFormatTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Charts/RowNameFormatTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChartRowNameFormatTypes} Success
 		 */
 		Chart_rownameformattypes_typeid_get_type_id(type_id: number): Observable<ChartRowNameFormatTypes> {
@@ -4450,6 +5066,7 @@ export namespace MyNS {
 		 * DocumentType: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Documents/DocumentType/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocumentType} Success
 		 */
 		Documents_documenttype_typeid_get_type_id(type_id: number): Observable<DocumentType> {
@@ -4794,6 +5411,7 @@ export namespace MyNS {
 		 * ColorTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/ColorTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedColorTypes} Success
 		 */
 		Shared_colortypes_typeid_get_type_id(type_id: number): Observable<SharedColorTypes> {
@@ -4824,6 +5442,7 @@ export namespace MyNS {
 		 * DashTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/DashTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedDashTypes} Success
 		 */
 		Shared_dashtypes_typeid_get_type_id(type_id: number): Observable<SharedDashTypes> {
@@ -4864,6 +5483,7 @@ export namespace MyNS {
 		 * EffectTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/EffectTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedEffectTypes} Success
 		 */
 		Shared_effecttypes_typeid_get_type_id(type_id: number): Observable<SharedEffectTypes> {
@@ -4914,6 +5534,7 @@ export namespace MyNS {
 		 * FillTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/FillTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedFillTypes} Success
 		 */
 		Shared_filltypes_typeid_get_type_id(type_id: number): Observable<SharedFillTypes> {
@@ -4974,6 +5595,7 @@ export namespace MyNS {
 		 * LineEndSizes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/LineEndSizes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedLineEndSizes} Success
 		 */
 		Shared_lineendsizes_typeid_get_type_id(type_id: number): Observable<SharedLineEndSizes> {
@@ -5004,6 +5626,7 @@ export namespace MyNS {
 		 * LineEndTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Shared/LineEndTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SharedLineEndTypes} Success
 		 */
 		Shared_lineendtypes_typeid_get_type_id(type_id: number): Observable<SharedLineEndTypes> {
@@ -5114,6 +5737,7 @@ export namespace MyNS {
 		 * GraphicTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Slides/GraphicTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SlideGraphicTypes} Success
 		 */
 		Slides_graphictypes_typeid_get_type_id(type_id: number): Observable<SlideGraphicTypes> {
@@ -5154,6 +5778,7 @@ export namespace MyNS {
 		 * GroupElementTypes: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Slides/GroupElementTypes/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SlideGroupElementTypes} Success
 		 */
 		Slides_groupelementtypes_typeid_get_type_id(type_id: number): Observable<SlideGroupElementTypes> {
@@ -5513,6 +6138,7 @@ export namespace MyNS {
 		 * Intensity: Get By Type Id
 		 * This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api.
 		 * Get Themes/Intensity/TypeId/{type_id}
+		 * @param {number} type_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ThemeIntensity} Success
 		 */
 		Themes_intensity_typeid_get_type_id(type_id: number): Observable<ThemeIntensity> {

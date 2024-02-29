@@ -16,14 +16,20 @@ export namespace MyNS {
 		/** Individual responses to images found within the file. This field will be empty if the `error` field is set. */
 		responses?: Array<AnnotateImageResponse>;
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Response to a single file annotation request. A file may contain one or more images, which individually have their own responses. */
 	export interface AnnotateFileResponseFormProperties {
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateAnnotateFileResponseFormGroup() {
@@ -37,7 +43,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -50,7 +59,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -176,7 +188,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface ImageAnnotationContext {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
@@ -186,7 +201,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface ImageAnnotationContextFormProperties {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The URI of the file used to produce the image. */
@@ -224,20 +242,32 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: BoundingPoly;
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction?: number | null;
 	}
 
 	/** Single crop hint that is used to generate a new crop when serving an image. */
 	export interface CropHintFormProperties {
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateCropHintFormGroup() {
@@ -272,20 +302,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateNormalizedVertexFormGroup() {
@@ -300,20 +342,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateVertexFormGroup() {
@@ -337,7 +391,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: BoundingPoly;
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
@@ -349,16 +406,25 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
 		landmarks?: Array<Landmark>;
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle?: number | null;
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
@@ -367,7 +433,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
@@ -383,7 +452,10 @@ export namespace MyNS {
 		/** Blurred likelihood. */
 		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence: FormControl<number | null | undefined>,
 
 		/** Headwear likelihood. */
@@ -392,13 +464,22 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence: FormControl<number | null | undefined>,
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle: FormControl<number | null | undefined>,
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle: FormControl<number | null | undefined>,
 
 		/** Sorrow likelihood. */
@@ -407,7 +488,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle: FormControl<number | null | undefined>,
 
 		/** Under-exposed likelihood. */
@@ -461,26 +545,44 @@ export namespace MyNS {
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface Position {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface PositionFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreatePositionFormGroup() {
@@ -525,29 +627,47 @@ export namespace MyNS {
 		/** List of blocks of text, images etc on this page. */
 		blocks?: Array<Block>;
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
 		property?: TextProperty;
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Detected page from OCR. */
 	export interface PageFormProperties {
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePageFormGroup() {
@@ -569,7 +689,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: BoundingPoly;
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
@@ -585,7 +708,10 @@ export namespace MyNS {
 		/** Detected block type (text, image etc) for this block. */
 		blockType: FormControl<BlockBlockType | null | undefined>,
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateBlockFormGroup() {
@@ -605,7 +731,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: BoundingPoly;
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -618,7 +747,10 @@ export namespace MyNS {
 	/** Structural unit of text representing a number of words in certain order. */
 	export interface ParagraphFormProperties {
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateParagraphFormGroup() {
@@ -682,7 +814,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface DetectedLanguage {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -692,7 +827,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface DetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -713,7 +851,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: BoundingPoly;
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -726,7 +867,10 @@ export namespace MyNS {
 	/** A word representation. */
 	export interface WordFormProperties {
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateWordFormGroup() {
@@ -743,7 +887,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: BoundingPoly;
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -756,7 +903,10 @@ export namespace MyNS {
 	/** A single symbol representation. */
 	export interface SymbolFormProperties {
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The actual UTF-8 representation of the symbol. */
@@ -811,20 +961,32 @@ export namespace MyNS {
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 		color?: Color;
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction?: number | null;
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image. */
 	export interface ColorInfoFormProperties {
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction: FormControl<number | null | undefined>,
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateColorInfoFormGroup() {
@@ -839,32 +1001,56 @@ export namespace MyNS {
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface Color {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha?: number | null;
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface ColorFormProperties {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateColorFormGroup() {
@@ -884,7 +1070,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: BoundingPoly;
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -902,17 +1091,26 @@ export namespace MyNS {
 		/** Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity. */
 		properties?: Array<Property>;
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality?: number | null;
 	}
 
 	/** Set of detected entity features. */
 	export interface EntityAnnotationFormProperties {
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -924,10 +1122,16 @@ export namespace MyNS {
 		/** Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/). */
 		mid: FormControl<string | null | undefined>,
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality: FormControl<number | null | undefined>,
 	}
 	export function CreateEntityAnnotationFormGroup() {
@@ -963,20 +1167,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -1038,7 +1254,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1054,7 +1273,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateLocalizedObjectAnnotationFormGroup() {
@@ -1130,7 +1352,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1146,7 +1371,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateObjectAnnotationFormGroup() {
@@ -1169,7 +1397,10 @@ export namespace MyNS {
 		/** A Product contains ReferenceImages. */
 		product?: Product;
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1179,7 +1410,10 @@ export namespace MyNS {
 		/** The resource name of the image from the product that is the closest match to the query. */
 		image: FormControl<string | null | undefined>,
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateResultFormGroup() {
@@ -1376,7 +1610,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface WebImage {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result image URL. */
@@ -1386,7 +1623,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface WebImageFormProperties {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result image URL. */
@@ -1413,7 +1653,10 @@ export namespace MyNS {
 		/** Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops. */
 		partialMatchingImages?: Array<WebImage>;
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result web page URL. */
@@ -1426,7 +1669,10 @@ export namespace MyNS {
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle: FormControl<string | null | undefined>,
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result web page URL. */
@@ -1451,7 +1697,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId?: string | null;
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1464,7 +1713,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId: FormControl<string | null | undefined>,
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateWebEntityFormGroup() {
@@ -1497,7 +1749,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface OutputConfig {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
@@ -1507,7 +1762,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface OutputConfigFormProperties {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputConfigFormGroup() {
@@ -1656,7 +1914,10 @@ export namespace MyNS {
 	/** The type of Google Cloud Vision API detection to perform, and the maximum number of results to return for that type. Multiple `Feature` objects can be specified in the `features` list. */
 	export interface GoogleCloudVisionV1p1beta1Feature {
 
-		/** Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`. */
+		/**
+		 * Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest". `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support "builtin/weekly" for the bleeding edge release updated weekly. */
@@ -1669,7 +1930,10 @@ export namespace MyNS {
 	/** The type of Google Cloud Vision API detection to perform, and the maximum number of results to return for that type. Multiple `Feature` objects can be specified in the `features` list. */
 	export interface GoogleCloudVisionV1p1beta1FeatureFormProperties {
 
-		/** Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`. */
+		/**
+		 * Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest". `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support "builtin/weekly" for the bleeding edge release updated weekly. */
@@ -1816,20 +2080,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p1beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p1beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1NormalizedVertexFormGroup() {
@@ -1844,20 +2120,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p1beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p1beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1VertexFormGroup() {
@@ -1978,14 +2266,20 @@ export namespace MyNS {
 		/** Individual responses to images found within the file. This field will be empty if the `error` field is set. */
 		responses?: Array<GoogleCloudVisionV1p1beta1AnnotateImageResponse>;
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Response to a single file annotation request. A file may contain one or more images, which individually have their own responses. */
 	export interface GoogleCloudVisionV1p1beta1AnnotateFileResponseFormProperties {
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1AnnotateFileResponseFormGroup() {
@@ -2055,7 +2349,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p1beta1ImageAnnotationContext {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
@@ -2065,7 +2362,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p1beta1ImageAnnotationContextFormProperties {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The URI of the file used to produce the image. */
@@ -2103,20 +2403,32 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction?: number | null;
 	}
 
 	/** Single crop hint that is used to generate a new crop when serving an image. */
 	export interface GoogleCloudVisionV1p1beta1CropHintFormProperties {
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1CropHintFormGroup() {
@@ -2140,7 +2452,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
@@ -2152,16 +2467,25 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
 		landmarks?: Array<GoogleCloudVisionV1p1beta1FaceAnnotationLandmark>;
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle?: number | null;
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
@@ -2170,7 +2494,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
@@ -2186,7 +2513,10 @@ export namespace MyNS {
 		/** Blurred likelihood. */
 		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence: FormControl<number | null | undefined>,
 
 		/** Headwear likelihood. */
@@ -2195,13 +2525,22 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence: FormControl<number | null | undefined>,
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle: FormControl<number | null | undefined>,
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle: FormControl<number | null | undefined>,
 
 		/** Sorrow likelihood. */
@@ -2210,7 +2549,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle: FormControl<number | null | undefined>,
 
 		/** Under-exposed likelihood. */
@@ -2262,26 +2604,44 @@ export namespace MyNS {
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p1beta1Position {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p1beta1PositionFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1PositionFormGroup() {
@@ -2324,29 +2684,47 @@ export namespace MyNS {
 		/** List of blocks of text, images etc on this page. */
 		blocks?: Array<GoogleCloudVisionV1p1beta1Block>;
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
 		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Detected page from OCR. */
 	export interface GoogleCloudVisionV1p1beta1PageFormProperties {
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1PageFormGroup() {
@@ -2368,7 +2746,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
@@ -2384,7 +2765,10 @@ export namespace MyNS {
 		/** Detected block type (text, image etc) for this block. */
 		blockType: FormControl<BlockBlockType | null | undefined>,
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1BlockFormGroup() {
@@ -2402,7 +2786,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -2415,7 +2802,10 @@ export namespace MyNS {
 	/** Structural unit of text representing a number of words in certain order. */
 	export interface GoogleCloudVisionV1p1beta1ParagraphFormProperties {
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1ParagraphFormGroup() {
@@ -2477,7 +2867,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -2487,7 +2880,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -2508,7 +2904,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -2521,7 +2920,10 @@ export namespace MyNS {
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p1beta1WordFormProperties {
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1WordFormGroup() {
@@ -2538,7 +2940,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -2551,7 +2956,10 @@ export namespace MyNS {
 	/** A single symbol representation. */
 	export interface GoogleCloudVisionV1p1beta1SymbolFormProperties {
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The actual UTF-8 representation of the symbol. */
@@ -2606,20 +3014,32 @@ export namespace MyNS {
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 		color?: Color;
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction?: number | null;
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image. */
 	export interface GoogleCloudVisionV1p1beta1ColorInfoFormProperties {
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction: FormControl<number | null | undefined>,
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1ColorInfoFormGroup() {
@@ -2637,7 +3057,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -2655,17 +3078,26 @@ export namespace MyNS {
 		/** Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity. */
 		properties?: Array<GoogleCloudVisionV1p1beta1Property>;
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality?: number | null;
 	}
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p1beta1EntityAnnotationFormProperties {
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -2677,10 +3109,16 @@ export namespace MyNS {
 		/** Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/). */
 		mid: FormControl<string | null | undefined>,
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1EntityAnnotationFormGroup() {
@@ -2763,7 +3201,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -2779,7 +3220,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1LocalizedObjectAnnotationFormGroup() {
@@ -2855,7 +3299,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -2871,7 +3318,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotationFormGroup() {
@@ -2894,7 +3344,10 @@ export namespace MyNS {
 		/** A Product contains ReferenceImages. */
 		product?: GoogleCloudVisionV1p1beta1Product;
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -2904,7 +3357,10 @@ export namespace MyNS {
 		/** The resource name of the image from the product that is the closest match to the query. */
 		image: FormControl<string | null | undefined>,
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsResultFormGroup() {
@@ -3101,7 +3557,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebImage {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result image URL. */
@@ -3111,7 +3570,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebImageFormProperties {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result image URL. */
@@ -3138,7 +3600,10 @@ export namespace MyNS {
 		/** Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops. */
 		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result web page URL. */
@@ -3151,7 +3616,10 @@ export namespace MyNS {
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle: FormControl<string | null | undefined>,
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result web page URL. */
@@ -3176,7 +3644,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId?: string | null;
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -3189,7 +3660,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId: FormControl<string | null | undefined>,
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1WebDetectionWebEntityFormGroup() {
@@ -3306,7 +3780,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p1beta1OutputConfig {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
@@ -3316,7 +3793,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p1beta1OutputConfigFormProperties {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p1beta1OutputConfigFormGroup() {
@@ -3592,14 +4072,20 @@ export namespace MyNS {
 		/** Individual responses to images found within the file. This field will be empty if the `error` field is set. */
 		responses?: Array<GoogleCloudVisionV1p2beta1AnnotateImageResponse>;
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Response to a single file annotation request. A file may contain one or more images, which individually have their own responses. */
 	export interface GoogleCloudVisionV1p2beta1AnnotateFileResponseFormProperties {
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1AnnotateFileResponseFormGroup() {
@@ -3721,7 +4207,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p2beta1ImageAnnotationContext {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
@@ -3731,7 +4220,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p2beta1ImageAnnotationContextFormProperties {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The URI of the file used to produce the image. */
@@ -3769,20 +4261,32 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction?: number | null;
 	}
 
 	/** Single crop hint that is used to generate a new crop when serving an image. */
 	export interface GoogleCloudVisionV1p2beta1CropHintFormProperties {
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1CropHintFormGroup() {
@@ -3817,20 +4321,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p2beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p2beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1NormalizedVertexFormGroup() {
@@ -3845,20 +4361,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p2beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p2beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1VertexFormGroup() {
@@ -3882,7 +4410,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
@@ -3894,16 +4425,25 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
 		landmarks?: Array<GoogleCloudVisionV1p2beta1FaceAnnotationLandmark>;
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle?: number | null;
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
@@ -3912,7 +4452,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
@@ -3928,7 +4471,10 @@ export namespace MyNS {
 		/** Blurred likelihood. */
 		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence: FormControl<number | null | undefined>,
 
 		/** Headwear likelihood. */
@@ -3937,13 +4483,22 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence: FormControl<number | null | undefined>,
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle: FormControl<number | null | undefined>,
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle: FormControl<number | null | undefined>,
 
 		/** Sorrow likelihood. */
@@ -3952,7 +4507,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle: FormControl<number | null | undefined>,
 
 		/** Under-exposed likelihood. */
@@ -4004,26 +4562,44 @@ export namespace MyNS {
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p2beta1Position {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p2beta1PositionFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1PositionFormGroup() {
@@ -4066,29 +4642,47 @@ export namespace MyNS {
 		/** List of blocks of text, images etc on this page. */
 		blocks?: Array<GoogleCloudVisionV1p2beta1Block>;
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
 		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Detected page from OCR. */
 	export interface GoogleCloudVisionV1p2beta1PageFormProperties {
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1PageFormGroup() {
@@ -4110,7 +4704,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
@@ -4126,7 +4723,10 @@ export namespace MyNS {
 		/** Detected block type (text, image etc) for this block. */
 		blockType: FormControl<BlockBlockType | null | undefined>,
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1BlockFormGroup() {
@@ -4144,7 +4744,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -4157,7 +4760,10 @@ export namespace MyNS {
 	/** Structural unit of text representing a number of words in certain order. */
 	export interface GoogleCloudVisionV1p2beta1ParagraphFormProperties {
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1ParagraphFormGroup() {
@@ -4219,7 +4825,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -4229,7 +4838,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -4250,7 +4862,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -4263,7 +4878,10 @@ export namespace MyNS {
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p2beta1WordFormProperties {
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1WordFormGroup() {
@@ -4280,7 +4898,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -4293,7 +4914,10 @@ export namespace MyNS {
 	/** A single symbol representation. */
 	export interface GoogleCloudVisionV1p2beta1SymbolFormProperties {
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The actual UTF-8 representation of the symbol. */
@@ -4348,20 +4972,32 @@ export namespace MyNS {
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 		color?: Color;
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction?: number | null;
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image. */
 	export interface GoogleCloudVisionV1p2beta1ColorInfoFormProperties {
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction: FormControl<number | null | undefined>,
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1ColorInfoFormGroup() {
@@ -4379,7 +5015,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -4397,17 +5036,26 @@ export namespace MyNS {
 		/** Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity. */
 		properties?: Array<GoogleCloudVisionV1p2beta1Property>;
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality?: number | null;
 	}
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p2beta1EntityAnnotationFormProperties {
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -4419,10 +5067,16 @@ export namespace MyNS {
 		/** Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/). */
 		mid: FormControl<string | null | undefined>,
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1EntityAnnotationFormGroup() {
@@ -4505,7 +5159,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -4521,7 +5178,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1LocalizedObjectAnnotationFormGroup() {
@@ -4597,7 +5257,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -4613,7 +5276,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotationFormGroup() {
@@ -4636,7 +5302,10 @@ export namespace MyNS {
 		/** A Product contains ReferenceImages. */
 		product?: GoogleCloudVisionV1p2beta1Product;
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -4646,7 +5315,10 @@ export namespace MyNS {
 		/** The resource name of the image from the product that is the closest match to the query. */
 		image: FormControl<string | null | undefined>,
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsResultFormGroup() {
@@ -4843,7 +5515,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebImage {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result image URL. */
@@ -4853,7 +5528,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebImageFormProperties {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result image URL. */
@@ -4880,7 +5558,10 @@ export namespace MyNS {
 		/** Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops. */
 		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result web page URL. */
@@ -4893,7 +5574,10 @@ export namespace MyNS {
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle: FormControl<string | null | undefined>,
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result web page URL. */
@@ -4918,7 +5602,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId?: string | null;
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -4931,7 +5618,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId: FormControl<string | null | undefined>,
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1WebDetectionWebEntityFormGroup() {
@@ -4964,7 +5654,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p2beta1OutputConfig {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
@@ -4974,7 +5667,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p2beta1OutputConfigFormProperties {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p2beta1OutputConfigFormGroup() {
@@ -5070,14 +5766,20 @@ export namespace MyNS {
 		/** Individual responses to images found within the file. This field will be empty if the `error` field is set. */
 		responses?: Array<GoogleCloudVisionV1p3beta1AnnotateImageResponse>;
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Response to a single file annotation request. A file may contain one or more images, which individually have their own responses. */
 	export interface GoogleCloudVisionV1p3beta1AnnotateFileResponseFormProperties {
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1AnnotateFileResponseFormGroup() {
@@ -5199,7 +5901,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p3beta1ImageAnnotationContext {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
@@ -5209,7 +5914,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p3beta1ImageAnnotationContextFormProperties {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The URI of the file used to produce the image. */
@@ -5247,20 +5955,32 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction?: number | null;
 	}
 
 	/** Single crop hint that is used to generate a new crop when serving an image. */
 	export interface GoogleCloudVisionV1p3beta1CropHintFormProperties {
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1CropHintFormGroup() {
@@ -5295,20 +6015,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p3beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p3beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1NormalizedVertexFormGroup() {
@@ -5323,20 +6055,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p3beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p3beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1VertexFormGroup() {
@@ -5360,7 +6104,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
@@ -5372,16 +6119,25 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
 		landmarks?: Array<GoogleCloudVisionV1p3beta1FaceAnnotationLandmark>;
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle?: number | null;
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
@@ -5390,7 +6146,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
@@ -5406,7 +6165,10 @@ export namespace MyNS {
 		/** Blurred likelihood. */
 		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence: FormControl<number | null | undefined>,
 
 		/** Headwear likelihood. */
@@ -5415,13 +6177,22 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence: FormControl<number | null | undefined>,
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle: FormControl<number | null | undefined>,
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle: FormControl<number | null | undefined>,
 
 		/** Sorrow likelihood. */
@@ -5430,7 +6201,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle: FormControl<number | null | undefined>,
 
 		/** Under-exposed likelihood. */
@@ -5482,26 +6256,44 @@ export namespace MyNS {
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p3beta1Position {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p3beta1PositionFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1PositionFormGroup() {
@@ -5544,29 +6336,47 @@ export namespace MyNS {
 		/** List of blocks of text, images etc on this page. */
 		blocks?: Array<GoogleCloudVisionV1p3beta1Block>;
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
 		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Detected page from OCR. */
 	export interface GoogleCloudVisionV1p3beta1PageFormProperties {
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1PageFormGroup() {
@@ -5588,7 +6398,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
@@ -5604,7 +6417,10 @@ export namespace MyNS {
 		/** Detected block type (text, image etc) for this block. */
 		blockType: FormControl<BlockBlockType | null | undefined>,
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1BlockFormGroup() {
@@ -5622,7 +6438,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -5635,7 +6454,10 @@ export namespace MyNS {
 	/** Structural unit of text representing a number of words in certain order. */
 	export interface GoogleCloudVisionV1p3beta1ParagraphFormProperties {
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1ParagraphFormGroup() {
@@ -5697,7 +6519,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -5707,7 +6532,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -5728,7 +6556,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -5741,7 +6572,10 @@ export namespace MyNS {
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p3beta1WordFormProperties {
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1WordFormGroup() {
@@ -5758,7 +6592,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -5771,7 +6608,10 @@ export namespace MyNS {
 	/** A single symbol representation. */
 	export interface GoogleCloudVisionV1p3beta1SymbolFormProperties {
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The actual UTF-8 representation of the symbol. */
@@ -5826,20 +6666,32 @@ export namespace MyNS {
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 		color?: Color;
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction?: number | null;
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image. */
 	export interface GoogleCloudVisionV1p3beta1ColorInfoFormProperties {
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction: FormControl<number | null | undefined>,
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1ColorInfoFormGroup() {
@@ -5857,7 +6709,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -5875,17 +6730,26 @@ export namespace MyNS {
 		/** Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity. */
 		properties?: Array<GoogleCloudVisionV1p3beta1Property>;
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality?: number | null;
 	}
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p3beta1EntityAnnotationFormProperties {
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -5897,10 +6761,16 @@ export namespace MyNS {
 		/** Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/). */
 		mid: FormControl<string | null | undefined>,
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1EntityAnnotationFormGroup() {
@@ -5983,7 +6853,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -5999,7 +6872,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1LocalizedObjectAnnotationFormGroup() {
@@ -6075,7 +6951,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -6091,7 +6970,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotationFormGroup() {
@@ -6114,7 +6996,10 @@ export namespace MyNS {
 		/** A Product contains ReferenceImages. */
 		product?: GoogleCloudVisionV1p3beta1Product;
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -6124,7 +7009,10 @@ export namespace MyNS {
 		/** The resource name of the image from the product that is the closest match to the query. */
 		image: FormControl<string | null | undefined>,
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsResultFormGroup() {
@@ -6321,7 +7209,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebImage {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result image URL. */
@@ -6331,7 +7222,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebImageFormProperties {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result image URL. */
@@ -6358,7 +7252,10 @@ export namespace MyNS {
 		/** Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops. */
 		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result web page URL. */
@@ -6371,7 +7268,10 @@ export namespace MyNS {
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle: FormControl<string | null | undefined>,
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result web page URL. */
@@ -6396,7 +7296,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId?: string | null;
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -6409,7 +7312,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId: FormControl<string | null | undefined>,
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1WebDetectionWebEntityFormGroup() {
@@ -6442,7 +7348,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p3beta1OutputConfig {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
@@ -6452,7 +7361,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p3beta1OutputConfigFormProperties {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p3beta1OutputConfigFormGroup() {
@@ -6634,14 +7546,20 @@ export namespace MyNS {
 		/** Individual responses to images found within the file. This field will be empty if the `error` field is set. */
 		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateImageResponse>;
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Response to a single file annotation request. A file may contain one or more images, which individually have their own responses. */
 	export interface GoogleCloudVisionV1p4beta1AnnotateFileResponseFormProperties {
 
-		/** This field gives the total number of pages in the file. */
+		/**
+		 * This field gives the total number of pages in the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1AnnotateFileResponseFormGroup() {
@@ -6763,7 +7681,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p4beta1ImageAnnotationContext {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
@@ -6773,7 +7694,10 @@ export namespace MyNS {
 	/** If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image. */
 	export interface GoogleCloudVisionV1p4beta1ImageAnnotationContextFormProperties {
 
-		/** If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. */
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The URI of the file used to produce the image. */
@@ -6811,20 +7735,32 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction?: number | null;
 	}
 
 	/** Single crop hint that is used to generate a new crop when serving an image. */
 	export interface GoogleCloudVisionV1p4beta1CropHintFormProperties {
 
-		/** Confidence of this being a salient region. Range [0, 1]. */
+		/**
+		 * Confidence of this being a salient region. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Fraction of importance of this salient region with respect to the original image. */
+		/**
+		 * Fraction of importance of this salient region with respect to the original image.
+		 * Type: float
+		 */
 		importanceFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1CropHintFormGroup() {
@@ -6859,20 +7795,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p4beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVisionV1p4beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1NormalizedVertexFormGroup() {
@@ -6887,20 +7835,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p4beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p4beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1VertexFormGroup() {
@@ -6924,7 +7884,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
@@ -6936,19 +7899,28 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
 		landmarks?: Array<GoogleCloudVisionV1p4beta1FaceAnnotationLandmark>;
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle?: number | null;
 
 		/** Additional recognition information. Only computed if image_context.face_recognition_params is provided, **and** a match is found to a Celebrity in the input CelebritySet. This field is sorted in order of decreasing confidence values. */
 		recognitionResult?: Array<GoogleCloudVisionV1p4beta1FaceRecognitionResult>;
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
@@ -6957,7 +7929,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
@@ -6973,7 +7948,10 @@ export namespace MyNS {
 		/** Blurred likelihood. */
 		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Detection confidence. Range [0, 1]. */
+		/**
+		 * Detection confidence. Range [0, 1].
+		 * Type: float
+		 */
 		detectionConfidence: FormControl<number | null | undefined>,
 
 		/** Headwear likelihood. */
@@ -6982,13 +7960,22 @@ export namespace MyNS {
 		/** Joy likelihood. */
 		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Face landmarking confidence. Range [0, 1]. */
+		/**
+		 * Face landmarking confidence. Range [0, 1].
+		 * Type: float
+		 */
 		landmarkingConfidence: FormControl<number | null | undefined>,
 
-		/** Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]. */
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+		 * Type: float
+		 */
 		panAngle: FormControl<number | null | undefined>,
 
-		/** Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]. */
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
+		 * Type: float
+		 */
 		rollAngle: FormControl<number | null | undefined>,
 
 		/** Sorrow likelihood. */
@@ -6997,7 +7984,10 @@ export namespace MyNS {
 		/** Surprise likelihood. */
 		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
 
-		/** Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]. */
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
+		 * Type: float
+		 */
 		tiltAngle: FormControl<number | null | undefined>,
 
 		/** Under-exposed likelihood. */
@@ -7049,26 +8039,44 @@ export namespace MyNS {
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p4beta1Position {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
 	/** A 3D position in the image, used primarily for Face detection landmarks. A valid Position must have both x and y coordinates. The position coordinates are in the same scale as the original image. */
 	export interface GoogleCloudVisionV1p4beta1PositionFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Z coordinate (or depth). */
+		/**
+		 * Z coordinate (or depth).
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1PositionFormGroup() {
@@ -7087,14 +8095,20 @@ export namespace MyNS {
 		/** A Celebrity is a group of Faces with an identity. */
 		celebrity?: GoogleCloudVisionV1p4beta1Celebrity;
 
-		/** Recognition confidence. Range [0, 1]. */
+		/**
+		 * Recognition confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 	}
 
 	/** Information about a face's identity. */
 	export interface GoogleCloudVisionV1p4beta1FaceRecognitionResultFormProperties {
 
-		/** Recognition confidence. Range [0, 1]. */
+		/**
+		 * Recognition confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1FaceRecognitionResultFormGroup() {
@@ -7170,29 +8184,47 @@ export namespace MyNS {
 		/** List of blocks of text, images etc on this page. */
 		blocks?: Array<GoogleCloudVisionV1p4beta1Block>;
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
 		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Detected page from OCR. */
 	export interface GoogleCloudVisionV1p4beta1PageFormProperties {
 
-		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the page. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels. */
+		/**
+		 * Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1PageFormGroup() {
@@ -7214,7 +8246,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
@@ -7230,7 +8265,10 @@ export namespace MyNS {
 		/** Detected block type (text, image etc) for this block. */
 		blockType: FormControl<BlockBlockType | null | undefined>,
 
-		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results on the block. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1BlockFormGroup() {
@@ -7248,7 +8286,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -7261,7 +8302,10 @@ export namespace MyNS {
 	/** Structural unit of text representing a number of words in certain order. */
 	export interface GoogleCloudVisionV1p4beta1ParagraphFormProperties {
 
-		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the paragraph. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1ParagraphFormGroup() {
@@ -7323,7 +8367,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -7333,7 +8380,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range [0, 1]. */
+		/**
+		 * Confidence of detected language. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
@@ -7354,7 +8404,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -7367,7 +8420,10 @@ export namespace MyNS {
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p4beta1WordFormProperties {
 
-		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the word. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1WordFormGroup() {
@@ -7384,7 +8440,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
@@ -7397,7 +8456,10 @@ export namespace MyNS {
 	/** A single symbol representation. */
 	export interface GoogleCloudVisionV1p4beta1SymbolFormProperties {
 
-		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		/**
+		 * Confidence of the OCR results for the symbol. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The actual UTF-8 representation of the symbol. */
@@ -7452,20 +8514,32 @@ export namespace MyNS {
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 		color?: Color;
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction?: number | null;
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image. */
 	export interface GoogleCloudVisionV1p4beta1ColorInfoFormProperties {
 
-		/** The fraction of pixels the color occupies in the image. Value in range [0, 1]. */
+		/**
+		 * The fraction of pixels the color occupies in the image. Value in range [0, 1].
+		 * Type: float
+		 */
 		pixelFraction: FormControl<number | null | undefined>,
 
-		/** Image-specific score for this color. Value in range [0, 1]. */
+		/**
+		 * Image-specific score for this color. Value in range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1ColorInfoFormGroup() {
@@ -7483,7 +8557,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -7501,17 +8578,26 @@ export namespace MyNS {
 		/** Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity. */
 		properties?: Array<GoogleCloudVisionV1p4beta1Property>;
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality?: number | null;
 	}
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p4beta1EntityAnnotationFormProperties {
 
-		/** **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]. */
+		/**
+		 * **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Entity textual description, expressed in its `locale` language. */
@@ -7523,10 +8609,16 @@ export namespace MyNS {
 		/** Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/). */
 		mid: FormControl<string | null | undefined>,
 
-		/** Overall score of the result. Range [0, 1]. */
+		/**
+		 * Overall score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]. */
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
+		 * Type: float
+		 */
 		topicality: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1EntityAnnotationFormGroup() {
@@ -7609,7 +8701,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -7625,7 +8720,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1LocalizedObjectAnnotationFormGroup() {
@@ -7701,7 +8799,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name?: string | null;
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -7717,7 +8818,10 @@ export namespace MyNS {
 		/** Object name, expressed in its `language_code` language. */
 		name: FormControl<string | null | undefined>,
 
-		/** Score of the result. Range [0, 1]. */
+		/**
+		 * Score of the result. Range [0, 1].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotationFormGroup() {
@@ -7740,7 +8844,10 @@ export namespace MyNS {
 		/** A Product contains ReferenceImages. */
 		product?: GoogleCloudVisionV1p4beta1Product;
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -7750,7 +8857,10 @@ export namespace MyNS {
 		/** The resource name of the image from the product that is the closest match to the query. */
 		image: FormControl<string | null | undefined>,
 
-		/** A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence). */
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsResultFormGroup() {
@@ -7947,7 +9057,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebImage {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result image URL. */
@@ -7957,7 +9070,10 @@ export namespace MyNS {
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebImageFormProperties {
 
-		/** (Deprecated) Overall relevancy score for the image. */
+		/**
+		 * (Deprecated) Overall relevancy score for the image.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result image URL. */
@@ -7984,7 +9100,10 @@ export namespace MyNS {
 		/** Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops. */
 		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The result web page URL. */
@@ -7997,7 +9116,10 @@ export namespace MyNS {
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle: FormControl<string | null | undefined>,
 
-		/** (Deprecated) Overall relevancy score for the web page. */
+		/**
+		 * (Deprecated) Overall relevancy score for the web page.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The result web page URL. */
@@ -8022,7 +9144,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId?: string | null;
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -8035,7 +9160,10 @@ export namespace MyNS {
 		/** Opaque entity ID. */
 		entityId: FormControl<string | null | undefined>,
 
-		/** Overall relevancy score for the entity. Not normalized and not comparable across different image queries. */
+		/**
+		 * Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1WebDetectionWebEntityFormGroup() {
@@ -8068,7 +9196,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p4beta1OutputConfig {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
@@ -8078,7 +9209,10 @@ export namespace MyNS {
 	/** The desired output location and metadata. */
 	export interface GoogleCloudVisionV1p4beta1OutputConfigFormProperties {
 
-		/** The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations. */
+		/**
+		 * The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVisionV1p4beta1OutputConfigFormGroup() {

@@ -5,34 +5,58 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Album {
 		can_comment?: boolean | null;
+
+		/** Type: double */
 		count_comments?: number | null;
+
+		/** Type: double */
 		count_views?: number | null;
+
+		/** Type: double */
 		date_create?: number | null;
+
+		/** Type: double */
 		date_update?: number | null;
 		description?: string | null;
 		farm?: string | null;
 		id?: string | null;
+
+		/** Type: double */
 		photos?: number | null;
 		primary?: string | null;
 		secret?: string | null;
 		server?: string | null;
 		title?: string | null;
+
+		/** Type: double */
 		videos?: number | null;
 	}
 	export interface AlbumFormProperties {
 		can_comment: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		count_comments: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		count_views: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		date_create: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		date_update: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		farm: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		photos: FormControl<number | null | undefined>,
 		primary: FormControl<string | null | undefined>,
 		secret: FormControl<string | null | undefined>,
 		server: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		videos: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumFormGroup() {
@@ -59,6 +83,8 @@ export namespace MyNS {
 		farm?: string | null;
 		id?: string | null;
 		is_faved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		license?: number | null;
 		media?: string | null;
 		owner?: string | null;
@@ -73,6 +99,8 @@ export namespace MyNS {
 		farm: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		is_faved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		license: FormControl<number | null | undefined>,
 		media: FormControl<string | null | undefined>,
 		owner: FormControl<string | null | undefined>,
@@ -171,6 +199,8 @@ export namespace MyNS {
 		name?: GroupName;
 		path_alias?: string | null;
 		pool_count?: GroupPool_count;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pool_rows?: number | null;
 		privacy?: GroupPrivacy;
 		restrictions?: GroupRestrictions;
@@ -191,6 +221,8 @@ export namespace MyNS {
 		ispoolmoderated: FormControl<boolean | null | undefined>,
 		lang: FormControl<string | null | undefined>,
 		path_alias: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pool_rows: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
@@ -387,11 +419,15 @@ export namespace MyNS {
 	}
 
 	export interface GroupThrottle {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		mode?: string | null;
 		remaining?: string | null;
 	}
 	export interface GroupThrottleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		remaining: FormControl<string | null | undefined>,
@@ -1059,19 +1095,27 @@ export namespace MyNS {
 	}
 
 	export interface Size {
+
+		/** Type: double */
 		height?: number | null;
 		label?: string | null;
 		media?: string | null;
 		source?: string | null;
 		url?: string | null;
+
+		/** Type: double */
 		width?: number | null;
 	}
 	export interface SizeFormProperties {
+
+		/** Type: double */
 		height: FormControl<number | null | undefined>,
 		label: FormControl<string | null | undefined>,
 		media: FormControl<string | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeFormGroup() {
@@ -1094,6 +1138,8 @@ export namespace MyNS {
 		can_delete?: boolean | null;
 		can_edit?: boolean | null;
 		can_reply?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count_replies?: number | null;
 		datecreate?: string | null;
 		datelastpost?: string | null;
@@ -1117,6 +1163,8 @@ export namespace MyNS {
 		can_delete: FormControl<boolean | null | undefined>,
 		can_edit: FormControl<boolean | null | undefined>,
 		can_reply: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count_replies: FormControl<number | null | undefined>,
 		datecreate: FormControl<string | null | undefined>,
 		datelastpost: FormControl<string | null | undefined>,
@@ -1265,6 +1313,10 @@ export namespace MyNS {
 		/**
 		 * Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.
 		 * Get rest?method=flickr.favorites.getList
+		 * @param {number} min_fave_date Type: double
+		 * @param {number} max_fave_date Type: double
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetFavoritesByPersonIDReturn} OK
 		 */
 		GetFavoritesByPersonID(api_key: string, user_id: string, min_fave_date: number | null | undefined, max_fave_date: number | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetFavoritesByPersonIDReturn> {
@@ -1301,6 +1353,8 @@ export namespace MyNS {
 		/**
 		 * Get a list of discussion topics in a group.
 		 * Get rest?method=flickr.groups.discuss.topics.getList
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetGroupDiscussionsByIDReturn} OK
 		 */
 		GetGroupDiscussionsByID(api_key: string, group_id: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetGroupDiscussionsByIDReturn> {
@@ -1346,6 +1400,15 @@ export namespace MyNS {
 		/**
 		 * Return photos from the given user's photostream
 		 * Get rest?method=flickr.people.getPhotos
+		 * @param {number} safe_search Type: double
+		 * @param {number} min_upload_date Type: double
+		 * @param {number} max_upload_date Type: double
+		 * @param {number} min_taken_date Type: double
+		 * @param {number} max_taken_date Type: double
+		 * @param {number} content_type Type: double
+		 * @param {number} privacy_filter Type: double
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetMediaByPersonIDReturn} OK
 		 */
 		GetMediaByPersonID(api_key: string, user_id: string, safe_search: number | null | undefined, min_upload_date: number | null | undefined, max_upload_date: number | null | undefined, min_taken_date: number | null | undefined, max_taken_date: number | null | undefined, content_type: number | null | undefined, privacy_filter: number | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetMediaByPersonIDReturn> {
@@ -1431,6 +1494,7 @@ export namespace MyNS {
 		 *   3: private photos visible to family,
 		 *   4: private photos visible to friends & family,
 		 *   5: completely private photos
+		 *     Type: double
 		 * @param {string} bbox A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.
 		 * @param {string} accuracy Recorded accuracy level of the location information. Current range is 1-16:
 		 *   World level is 1
@@ -1442,6 +1506,7 @@ export namespace MyNS {
 		 *   1: for safe,
 		 *   2: for moderate,
 		 *   3: for restricted
+		 *     Type: double
 		 * @param {number} content_type Content Type setting:
 		 *   1: photos only.
 		 *   2: screenshots only.
@@ -1450,6 +1515,7 @@ export namespace MyNS {
 		 *   5: screenshots and 'other'.
 		 *   6: photos and 'other'.
 		 *   7: photos, screenshots, and 'other' (all).
+		 *     Type: double
 		 * @param {string} machine_tags Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : "machine_tags" => "dc:" Find photos with a title in the 'dc' namespace : "machine_tags" => "dc:title=" Find photos titled "mr. camera" in the 'dc' namespace : "machine_tags" => "dc:title=\"mr. camera\" Find photos whose value is "mr. camera" : "machine_tags" => "*:*=\"mr. camera\"" Find photos that have a title, in any namespace : "machine_tags" => "*:title=" Find photos that have a title, in any namespace, whose value is "mr. camera" : "machine_tags" => "*:title=\"mr. camera\"" Find photos, in the 'dc' namespace whose value is "mr. camera" : "machine_tags" => "dc:*=\"mr. camera\"" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. "AND" queries are limited to (16) machine tags. "OR" queries are limited to (8).
 		 * @param {string} machine_tag_mode Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.
 		 * @param {string} group_id The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.
@@ -1462,12 +1528,15 @@ export namespace MyNS {
 		 * @param {string} lat A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against "parameterless searches" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).
 		 * @param {string} lon A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against "parameterless searches" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).
 		 * @param {number} radius A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km).
+		 *     Type: double
 		 * @param {string} radius_units The unit of measure when doing radial geo queries. Valid options are "mi" (miles) and "km" (kilometers). The default is "km".
 		 * @param {boolean} is_commons Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false.
 		 * @param {boolean} in_gallery Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos.
 		 * @param {boolean} is_getty Limit the scope of the search to only photos that are for sale on Getty. Default is false.
 		 * @param {number} per_page Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.
+		 *     Type: double
 		 * @param {number} page The page of results to return. If this argument is omitted, it defaults to 1.
+		 *     Type: double
 		 * @return {GetMediaBySearchReturn} OK
 		 */
 		GetMediaBySearch(api_key: string, text: string | null | undefined, tags: string | null | undefined, user_id: string | null | undefined, min_upload_date: string | null | undefined, max_upload_date: string | null | undefined, min_taken_date: string | null | undefined, max_taken_date: string | null | undefined, license: string | null | undefined, sort: string | null | undefined, privacy_filter: number | null | undefined, bbox: string | null | undefined, accuracy: string | null | undefined, safe_search: number | null | undefined, content_type: number | null | undefined, machine_tags: string | null | undefined, machine_tag_mode: string | null | undefined, group_id: string | null | undefined, contacts: string | null | undefined, woe_id: string | null | undefined, place_id: string | null | undefined, media: string | null | undefined, has_geo: string | null | undefined, geo_context: string | null | undefined, lat: string | null | undefined, lon: string | null | undefined, radius: number | null | undefined, radius_units: string | null | undefined, is_commons: boolean | null | undefined, in_gallery: boolean | null | undefined, is_getty: boolean | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<GetMediaBySearchReturn> {
@@ -1486,6 +1555,8 @@ export namespace MyNS {
 		/**
 		 * Returns the albums belonging to the specified user
 		 * Get rest?method=flickr.photosets.getList
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetAlbumsByPersonIDReturn} OK
 		 */
 		GetAlbumsByPersonID(api_key: string, user_id: string, page: number | null | undefined, per_page: number | null | undefined): Observable<GetAlbumsByPersonIDReturn> {
@@ -1541,16 +1612,32 @@ export namespace MyNS {
 	}
 
 	export interface GetFavoritesByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetFavoritesByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFavoritesByPersonIDReturnFormGroup() {
@@ -1603,30 +1690,62 @@ export namespace MyNS {
 	}
 
 	export interface GetGroupDiscussionsByIDReturn {
+
+		/** Type: double */
 		iconfarm?: number | null;
+
+		/** Type: double */
 		iconserver?: number | null;
 		ispoolmoderated?: boolean | null;
 		lang?: string | null;
+
+		/** Type: double */
 		members?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		per_page?: number | null;
+
+		/** Type: double */
 		privacy?: number | null;
 		topics?: Array<Topic>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetGroupDiscussionsByIDReturnFormProperties {
+
+		/** Type: double */
 		iconfarm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		iconserver: FormControl<number | null | undefined>,
 		ispoolmoderated: FormControl<boolean | null | undefined>,
 		lang: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		members: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		per_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		privacy: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetGroupDiscussionsByIDReturnFormGroup() {
@@ -1715,16 +1834,32 @@ export namespace MyNS {
 	}
 
 	export interface GetMediaByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetMediaByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMediaByPersonIDReturnFormGroup() {
@@ -1900,14 +2035,26 @@ export namespace MyNS {
 	}
 
 	export interface GetPhotoSizesByIDReturnSizes {
+
+		/** Type: double */
 		canblog?: number | null;
+
+		/** Type: double */
 		candownload?: number | null;
+
+		/** Type: double */
 		canprint?: number | null;
 		sizes?: Array<Size>;
 	}
 	export interface GetPhotoSizesByIDReturnSizesFormProperties {
+
+		/** Type: double */
 		canblog: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candownload: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		canprint: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPhotoSizesByIDReturnSizesFormGroup() {
@@ -1945,11 +2092,15 @@ export namespace MyNS {
 	}
 
 	export interface GetLicenseByIDReturnLicensesLicense {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		url?: string | null;
 	}
 	export interface GetLicenseByIDReturnLicensesLicenseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1964,16 +2115,32 @@ export namespace MyNS {
 	}
 
 	export interface GetMediaBySearchReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetMediaBySearchReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMediaBySearchReturnFormGroup() {
@@ -2016,16 +2183,32 @@ export namespace MyNS {
 	}
 
 	export interface GetAlbumsByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photosets?: Array<Album>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetAlbumsByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAlbumsByPersonIDReturnFormGroup() {

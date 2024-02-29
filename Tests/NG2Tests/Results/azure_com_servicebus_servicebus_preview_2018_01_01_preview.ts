@@ -687,6 +687,7 @@ export namespace MyNS {
 		 * Gets the available namespaces within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {SBNamespaceListResult} Namespaces successfully returned.
@@ -699,7 +700,9 @@ export namespace MyNS {
 		 * Gets a description for the specified namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {SBNamespace} Namespace successfully returned.
@@ -712,6 +715,7 @@ export namespace MyNS {
 		 * Creates or updates a service namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name.
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -726,7 +730,9 @@ export namespace MyNS {
 		 * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Namespace successfully deleted.
@@ -739,7 +745,9 @@ export namespace MyNS {
 		 * Updates a service namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {SBNamespaceUpdateParameters} requestBody Parameters supplied to update a namespace resource.
@@ -753,7 +761,9 @@ export namespace MyNS {
 		 * Gets a list of IP Filter rules for a Namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/ipfilterrules
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {IpFilterRuleListResult} Namespace IpFilterRule successfully returned.
@@ -766,8 +776,11 @@ export namespace MyNS {
 		 * Gets an IpFilterRule for a Namespace by rule name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} ipFilterRuleName The IP Filter Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {IpFilterRule} Namespace IpFilterRule returned successfully.
@@ -780,8 +793,11 @@ export namespace MyNS {
 		 * Creates or updates an IpFilterRule for a Namespace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} ipFilterRuleName The IP Filter Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {IpFilterRule} requestBody The Namespace IpFilterRule.
@@ -795,8 +811,11 @@ export namespace MyNS {
 		 * Deletes an IpFilterRule for a Namespace.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} ipFilterRuleName The IP Filter Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Namespace IpFilterRule successfully deleted.
@@ -809,7 +828,9 @@ export namespace MyNS {
 		 * Gets NetworkRuleSet for a Namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/networkrulesets/default
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {NetworkRuleSet} Namespace NetworkRuleSet successfully returned.
@@ -822,7 +843,9 @@ export namespace MyNS {
 		 * Gets NetworkRuleSet for a Namespace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/networkrulesets/default
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {NetworkRuleSet} requestBody The Namespace IpFilterRule.
@@ -836,7 +859,9 @@ export namespace MyNS {
 		 * Gets a list of VirtualNetwork rules for a Namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/virtualnetworkrules
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {VirtualNetworkRuleListResult} Namespace VirtualNetworkRule successfully returned.
@@ -849,8 +874,11 @@ export namespace MyNS {
 		 * Gets an VirtualNetworkRule for a Namespace by rule name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} virtualNetworkRuleName The Virtual Network Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {VirtualNetworkRule} Namespace VirtualNetworkRule returned successfully.
@@ -863,8 +891,11 @@ export namespace MyNS {
 		 * Creates or updates an VirtualNetworkRule for a Namespace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} virtualNetworkRuleName The Virtual Network Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {VirtualNetworkRule} requestBody The Namespace VirtualNetworkRule.
@@ -878,8 +909,11 @@ export namespace MyNS {
 		 * Deletes an VirtualNetworkRule for a Namespace.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} virtualNetworkRuleName The Virtual Network Rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Namespace VirtualNetworkRule successfully deleted.

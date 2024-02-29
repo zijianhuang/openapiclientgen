@@ -1167,7 +1167,10 @@ namespace MyNS
 		/// Accounts_GetProperties subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>The resource provider should return 200 (OK) to indicate that the operation completed successfully.
@@ -1212,7 +1215,10 @@ namespace MyNS
 		/// Accounts_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="requestBody">The parameters to provide for the created account.</param>
@@ -1252,7 +1258,10 @@ namespace MyNS
 		/// Accounts_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>A 200 (OK) should be returned if the object exists and was deleted successfully;</returns>
@@ -1278,7 +1287,10 @@ namespace MyNS
 		/// Accounts_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="requestBody">The parameters to provide for the created account.</param>
@@ -1318,7 +1330,10 @@ namespace MyNS
 		/// Accounts_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/listKeys
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>Returns with a response body containing the subscription keys for the resource: key1
@@ -1354,7 +1369,10 @@ namespace MyNS
 		/// Accounts_RegenerateKey subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/regenerateKey
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="requestBody">regenerate key parameters.</param>
@@ -1393,7 +1411,10 @@ namespace MyNS
 		/// Accounts_ListSkus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/skus
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>The resource provider should return 200 (OK) to indicate that the operation completed successfully.
@@ -1438,7 +1459,10 @@ namespace MyNS
 		/// Accounts_GetUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/usages
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
-		/// <param name="accountName">The name of Cognitive Services account.</param>
+		/// <param name="accountName">The name of Cognitive Services account.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).</param>

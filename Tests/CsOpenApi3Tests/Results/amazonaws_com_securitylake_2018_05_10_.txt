@@ -1853,7 +1853,10 @@ namespace MyNS
 		/// List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.
 		/// ListSubscribers v1/subscribers
 		/// </summary>
-		/// <param name="maxResults">The maximum number of accounts for which the configuration is displayed.</param>
+		/// <param name="maxResults">The maximum number of accounts for which the configuration is displayed.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</param>
 		/// <returns>Success</returns>
 		public async Task<ListSubscribersResponse> ListSubscribersAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2044,8 +2047,14 @@ namespace MyNS
 		/// Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security Lake.
 		/// DeleteCustomLogSource v1/datalake/logsources/custom/{sourceName}
 		/// </summary>
-		/// <param name="sourceName">The source name of custom log source that you want to delete.</param>
-		/// <param name="sourceVersion">The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</param>
+		/// <param name="sourceName">The source name of custom log source that you want to delete.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="sourceVersion">The source version for the third-party custom source. You can limit the custom source removal to the specified source version.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCustomLogSourceResponse> DeleteCustomLogSourceAsync(string sourceName, string sourceVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2501,7 +2510,10 @@ namespace MyNS
 		/// Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
 		/// ListTagsForResource v1/tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the tags for.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the tags for.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2535,7 +2547,10 @@ namespace MyNS
 		/// Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria. For more information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
 		/// TagResource v1/tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to add or update the tags for.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to add or update the tags for.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2576,8 +2591,14 @@ namespace MyNS
 		/// Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
 		/// UntagResource v1/tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to remove one or more tags from.</param>
-		/// <param name="tagKeys">A list of one or more tag keys. For each value in the list, specify the tag key for a tag to remove from the Amazon Security Lake resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to remove one or more tags from.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">A list of one or more tag keys. For each value in the list, specify the tag key for a tag to remove from the Amazon Security Lake resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

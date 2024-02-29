@@ -2000,7 +2000,10 @@ namespace MyNS
 		/// Retrieves a list of tags for the specified resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2034,7 +2037,10 @@ namespace MyNS
 		/// Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2279,8 +2285,14 @@ namespace MyNS
 		/// Removes one or more tags from the specified resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the resource.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove from the resource.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

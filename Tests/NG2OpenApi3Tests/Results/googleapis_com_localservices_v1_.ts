@@ -13,10 +13,16 @@ export namespace MyNS {
 		/** Conatiner for aggregator specific information if lead is for an aggregator GLS account. */
 		aggregatorInfo?: GoogleAdsHomeservicesLocalservicesV1AggregatorInfo;
 
-		/** Average review rating score from 1-5 stars. */
+		/**
+		 * Average review rating score from 1-5 stars.
+		 * Type: double
+		 */
 		averageFiveStarRating?: number | null;
 
-		/** Average weekly budget in the currency code of the account. */
+		/**
+		 * Average weekly budget in the currency code of the account.
+		 * Type: double
+		 */
 		averageWeeklyBudget?: number | null;
 
 		/** Business name of the account. */
@@ -34,13 +40,19 @@ export namespace MyNS {
 		/** Number of phone calls in current specified period, including both connected and unconnected calls. */
 		currentPeriodPhoneCalls?: string | null;
 
-		/** Total cost of the account in current specified period in the account's specified currency. */
+		/**
+		 * Total cost of the account in current specified period in the account's specified currency.
+		 * Type: double
+		 */
 		currentPeriodTotalCost?: number | null;
 
 		/** Number of impressions that customers have had in the past 2 days. */
 		impressionsLastTwoDays?: string | null;
 
-		/** Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received. */
+		/**
+		 * Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received.
+		 * Type: double
+		 */
 		phoneLeadResponsiveness?: number | null;
 
 		/** Number of charged leads the account received in previous specified period. */
@@ -52,10 +64,16 @@ export namespace MyNS {
 		/** Number of phone calls in previous specified period, including both connected and unconnected calls. */
 		previousPeriodPhoneCalls?: string | null;
 
-		/** Total cost of the account in previous specified period in the account's specified currency. */
+		/**
+		 * Total cost of the account in previous specified period in the account's specified currency.
+		 * Type: double
+		 */
 		previousPeriodTotalCost?: number | null;
 
-		/** Total number of reviews the account has up to current date. */
+		/**
+		 * Total number of reviews the account has up to current date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReview?: number | null;
 	}
 
@@ -65,10 +83,16 @@ export namespace MyNS {
 		/** Unique identifier of the GLS account. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** Average review rating score from 1-5 stars. */
+		/**
+		 * Average review rating score from 1-5 stars.
+		 * Type: double
+		 */
 		averageFiveStarRating: FormControl<number | null | undefined>,
 
-		/** Average weekly budget in the currency code of the account. */
+		/**
+		 * Average weekly budget in the currency code of the account.
+		 * Type: double
+		 */
 		averageWeeklyBudget: FormControl<number | null | undefined>,
 
 		/** Business name of the account. */
@@ -86,13 +110,19 @@ export namespace MyNS {
 		/** Number of phone calls in current specified period, including both connected and unconnected calls. */
 		currentPeriodPhoneCalls: FormControl<string | null | undefined>,
 
-		/** Total cost of the account in current specified period in the account's specified currency. */
+		/**
+		 * Total cost of the account in current specified period in the account's specified currency.
+		 * Type: double
+		 */
 		currentPeriodTotalCost: FormControl<number | null | undefined>,
 
 		/** Number of impressions that customers have had in the past 2 days. */
 		impressionsLastTwoDays: FormControl<string | null | undefined>,
 
-		/** Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received. */
+		/**
+		 * Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received.
+		 * Type: double
+		 */
 		phoneLeadResponsiveness: FormControl<number | null | undefined>,
 
 		/** Number of charged leads the account received in previous specified period. */
@@ -104,10 +134,16 @@ export namespace MyNS {
 		/** Number of phone calls in previous specified period, including both connected and unconnected calls. */
 		previousPeriodPhoneCalls: FormControl<string | null | undefined>,
 
-		/** Total cost of the account in previous specified period in the account's specified currency. */
+		/**
+		 * Total cost of the account in previous specified period in the account's specified currency.
+		 * Type: double
+		 */
 		previousPeriodTotalCost: FormControl<number | null | undefined>,
 
-		/** Total number of reviews the account has up to current date. */
+		/**
+		 * Total number of reviews the account has up to current date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReview: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsHomeservicesLocalservicesV1AccountReportFormGroup() {
@@ -239,7 +275,10 @@ export namespace MyNS {
 		/** Unique identifier of a Detailed Lead Report. */
 		leadId?: string | null;
 
-		/** Price of the lead (available only after it has been charged). */
+		/**
+		 * Price of the lead (available only after it has been charged).
+		 * Type: double
+		 */
 		leadPrice?: number | null;
 
 		/** Lead type. */
@@ -285,7 +324,10 @@ export namespace MyNS {
 		/** Unique identifier of a Detailed Lead Report. */
 		leadId: FormControl<string | null | undefined>,
 
-		/** Price of the lead (available only after it has been charged). */
+		/**
+		 * Price of the lead (available only after it has been charged).
+		 * Type: double
+		 */
 		leadPrice: FormControl<number | null | undefined>,
 
 		/** Lead type. */
@@ -474,14 +516,21 @@ export namespace MyNS {
 		 * Get account reports containing aggregate account data of all linked GLS accounts. Caller needs to provide their manager customer id and the associated auth credential that allows them read permissions on their linked accounts.
 		 * Get v1/accountReports:search
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The maximum number of accounts to return. If the page size is unset, page size will default to 1000. Maximum page_size is 10000. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous request to SearchAccountReports that indicates where listing should continue. Optional.
 		 * @param {string} query A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |-------------------------|-----------------------------------------------| | manager_customer_id:123 | Get Account Report for Manager with id 123. | Required.
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse} Successful response
 		 */
 		Localservices_accountReports_search(endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse> {
@@ -492,14 +541,21 @@ export namespace MyNS {
 		 * Get detailed lead reports containing leads that have been received by all linked GLS accounts. Caller needs to provide their manager customer id and the associated auth credential that allows them read permissions on their linked accounts.
 		 * Get v1/detailedLeadReports:search
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The maximum number of accounts to return. If the page size is unset, page size will default to 1000. Maximum page_size is 10000. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous request to SearchDetailedLeadReports that indicates where listing should continue. Optional.
 		 * @param {string} query A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |-------------------------|-----------------------------------------------| | manager_customer_id:123 | Get Detailed Lead Report for Manager with id | | | 123. | Required.
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse} Successful response
 		 */
 		Localservices_detailedLeadReports_search(endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse> {

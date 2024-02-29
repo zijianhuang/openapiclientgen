@@ -5166,7 +5166,9 @@ export namespace MyNS {
 		 * @param {string} date_from Take only refunds issued at or after the date. Format: yyyy-MM-dd
 		 * @param {string} date_to Take only refunds issued at or before the date. Format: yyyy-MM-dd
 		 * @param {number} limit Limit (no more than 1000, defaults to 100).
+		 *     Type: double
 		 * @param {number} offset Offset. Defaults to 0
+		 *     Type: double
 		 * @return {GetDetailedRefundsOut} OK
 		 */
 		GetDetailedRefunds(format: string | null | undefined, country_codes: string | null | undefined, date_from: string | null | undefined, date_to: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<GetDetailedRefundsOut> {
@@ -5286,14 +5288,18 @@ export namespace MyNS {
 		 * @param {string} currency_code Currency code for transaction - e.g. EUR.
 		 * @param {string} invoice_address_region Invoice address/region
 		 * @param {number} unit_price Unit price.
+		 *     Type: double
 		 * @param {number} quantity Quantity Defaults to 1.
+		 *     Type: double
 		 * @param {string} buyer_tax_number  Buyer's tax number - EU VAT number for example. If using EU VAT number, it is possible to provide country code in it (e.g. IE1234567X) or simply use billing_country_code field for that. In the first case, if billing_country_code value was provided, it will be overwritten with country code value extracted from VAT number - but only if the VAT has been verified properly.
 		 * @param {string} force_country_code Two-letter ISO country code, e.g. FR. Use it to force country code for tax calculation.
 		 * @param {string} order_date Order date in yyyy-MM-dd format, in merchant's timezone. If provided by the API caller, no timezone conversion is performed. Default value is current date and time. When using public token, the default value is used.
 		 * @param {number} amount Amount. Required if total amount or both unit price and quantity are not provided.
+		 *     Type: double
 		 * @param {string} billing_country_code Billing two letter ISO country code.
 		 * @param {string} invoice_address_postal_code Invoice address/postal_code
 		 * @param {number} total_amount Total amount. Required if amount or both unit price and quantity are not provided.
+		 *     Type: double
 		 * @param {boolean} tax_deducted If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example.
 		 * @return {CalculateSimpleTaxOut} OK
 		 */
@@ -5338,12 +5344,14 @@ export namespace MyNS {
 		 * Get api/v1/transactions
 		 * @param {string} filter_text Filtering expression
 		 * @param {number} offset Offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} has_note Return only transactions with a note field set.
 		 * @param {string} key_or_custom_id Taxamo provided transaction key or custom id
 		 * @param {string} currency_code Three letter ISO currency code.
 		 * @param {string} order_date_to Order date to in yyyy-MM-dd format.
 		 * @param {boolean} sort_reverse If true, results are sorted in descending order.
 		 * @param {number} limit Limit (no more than 1000, defaults to 100).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} invoice_number Transaction invoice number.
 		 * @param {string} tax_country_codes Comma separated list of two letter ISO tax country codes.
 		 * @param {string} statuses Comma separated list of of transaction statuses. 'N' - unconfirmed transaction, 'C' - confirmed transaction.

@@ -287,6 +287,7 @@ export namespace MyNS {
 		 * @param {string} filter Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions are implicitly combined, as if the `AND` operator was always used. The `OR` operator is currently unsupported. * Supported functions: - `saved(bool)`: If set to true, fetches only saved ideas. If set to false, fetches all except saved ideas. Can't be simultaneously used with `dismissed(bool)`. - `dismissed(bool)`: If set to true, fetches only dismissed ideas. Can't be simultaneously used with `saved(bool)`. The `false` value is currently unsupported. Examples: * `saved(true)` * `saved(false)` * `dismissed(true)` The length of this field should be no more than 500 characters.
 		 * @param {string} orderBy Order semantics described below.
 		 * @param {number} pageSize The maximum number of ideas per page. If unspecified, at most 10 ideas will be returned. The maximum value is 2000; values above 2000 will be coerced to 2000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Used to fetch next page.
 		 * @return {GoogleSearchIdeahubV1betaListIdeasResponse} Successful response
 		 */
@@ -299,6 +300,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/locales
 		 * @param {string} parent Required. The web property to check idea availability for Format: platforms/{platform}/property/{property}
 		 * @param {number} pageSize The maximum number of locales to return. The service may return fewer than this value. If unspecified, at most 100 locales will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAvailableLocales` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAvailableLocales` must match the call that provided the page token.
 		 * @return {GoogleSearchIdeahubV1betaListAvailableLocalesResponse} Successful response
 		 */

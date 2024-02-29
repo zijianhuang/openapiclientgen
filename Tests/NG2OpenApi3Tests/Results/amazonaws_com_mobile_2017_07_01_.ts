@@ -679,6 +679,7 @@ export namespace MyNS {
 		 * Lists projects in AWS Mobile Hub.
 		 * Get projects
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. 
 		 * @return {ListProjectsResult} Success
 		 */
@@ -743,6 +744,7 @@ export namespace MyNS {
 		 * List all available bundles.
 		 * Get bundles
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. 
 		 * @return {ListBundlesResult} Success
 		 */

@@ -121,6 +121,7 @@ export namespace MyNS {
 		 * Description for Get past recommendations for an app, optionally specified by the time range.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendationHistory
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} hostingEnvironmentName Name of the hosting environment.
 		 * @param {boolean} expiredOnly Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.
 		 * @param {string} filter Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification' and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[PT1H|PT1M|P1D]
@@ -137,6 +138,7 @@ export namespace MyNS {
 		 * Description for Get all recommendations for an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} hostingEnvironmentName Name of the app.
 		 * @param {boolean} featured Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.
 		 * @param {string} filter Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification'
@@ -153,6 +155,7 @@ export namespace MyNS {
 		 * Description for Disable all recommendations for an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/disable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} environmentName Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -167,6 +170,7 @@ export namespace MyNS {
 		 * Description for Reset all recommendation opt-out settings for an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/reset
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} environmentName Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -181,6 +185,7 @@ export namespace MyNS {
 		 * Description for Get a recommendation rule for an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} hostingEnvironmentName Name of the hosting environment.
 		 * @param {string} name Name of the recommendation.
 		 * @param {boolean} updateSeen Specify <code>true</code> to update the last-seen timestamp of the recommendation object.
@@ -198,6 +203,7 @@ export namespace MyNS {
 		 * Description for Disables the specific rule for a web site permanently.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}/disable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} environmentName Site name
 		 * @param {string} name Rule name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -213,6 +219,7 @@ export namespace MyNS {
 		 * Description for Get past recommendations for an app, optionally specified by the time range.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendationHistory
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Name of the app.
 		 * @param {boolean} expiredOnly Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.
 		 * @param {string} filter Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification' and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[PT1H|PT1M|P1D]
@@ -229,6 +236,7 @@ export namespace MyNS {
 		 * Description for Get all recommendations for an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Name of the app.
 		 * @param {boolean} featured Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.
 		 * @param {string} filter Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification'
@@ -245,6 +253,7 @@ export namespace MyNS {
 		 * Description for Disable all recommendations for an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -259,6 +268,7 @@ export namespace MyNS {
 		 * Description for Reset all recommendation opt-out settings for an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -273,6 +283,7 @@ export namespace MyNS {
 		 * Description for Get a recommendation rule for an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Name of the app.
 		 * @param {string} name Name of the recommendation.
 		 * @param {boolean} updateSeen Specify <code>true</code> to update the last-seen timestamp of the recommendation object.
@@ -290,6 +301,7 @@ export namespace MyNS {
 		 * Description for Disables the specific rule for a web site permanently.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}/disable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site name
 		 * @param {string} name Rule name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).

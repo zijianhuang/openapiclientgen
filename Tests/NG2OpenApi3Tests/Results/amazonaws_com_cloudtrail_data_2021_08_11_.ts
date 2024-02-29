@@ -196,6 +196,7 @@ export namespace MyNS {
 		 * Post PutAuditEvents#channelArn
 		 * @param {string} channelArn The ARN or ID (the ARN suffix) of a channel.
 		 * @param {string} externalId A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.
+		 *     Min length: 2    Max length: 1224
 		 * @return {PutAuditEventsResponse} Success
 		 */
 		PutAuditEvents(channelArn: string, externalId: string | null | undefined, requestBody: PutAuditEventsPostBody): Observable<PutAuditEventsResponse> {

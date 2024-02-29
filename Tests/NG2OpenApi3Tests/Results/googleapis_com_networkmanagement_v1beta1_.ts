@@ -542,7 +542,10 @@ export namespace MyNS {
 		/** Type of the network where the endpoint is located. Applicable only to source endpoint, as destination network type can be inferred from the source. */
 		networkType?: EndpointNetworkType | null;
 
-		/** The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP. */
+		/**
+		 * The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Project ID where the endpoint is located. The Project ID can be derived from the URI if you provide a VM instance or network URI. The following are two cases where you must provide the project ID: 1. Only the IP address is specified, and the IP address is within a Google Cloud project. 2. When you are using Shared VPC and the IP address that you provide is from the service project. In this case, the network that the IP address resides in is defined in the host project. */
@@ -582,7 +585,10 @@ export namespace MyNS {
 		/** Type of the network where the endpoint is located. Applicable only to source endpoint, as destination network type can be inferred from the source. */
 		networkType: FormControl<EndpointNetworkType | null | undefined>,
 
-		/** The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP. */
+		/**
+		 * The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Project ID where the endpoint is located. The Project ID can be derived from the URI if you provide a VM instance or network URI. The following are two cases where you must provide the project ID: 1. Only the IP address is specified, and the IP address is within a Google Cloud project. 2. When you are using Shared VPC and the IP address that you provide is from the service project. In this case, the network that the IP address resides in is defined in the host project. */
@@ -634,10 +640,16 @@ export namespace MyNS {
 		/** The overall result of active probing. */
 		result?: ProbingDetailsResult | null;
 
-		/** Number of probes sent. */
+		/**
+		 * Number of probes sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentProbeCount?: number | null;
 
-		/** Number of probes that reached the destination. */
+		/**
+		 * Number of probes that reached the destination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulProbeCount?: number | null;
 
 		/** The time that reachability was assessed through active probing. */
@@ -653,10 +665,16 @@ export namespace MyNS {
 		/** The overall result of active probing. */
 		result: FormControl<ProbingDetailsResult | null | undefined>,
 
-		/** Number of probes sent. */
+		/**
+		 * Number of probes sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentProbeCount: FormControl<number | null | undefined>,
 
-		/** Number of probes that reached the destination. */
+		/**
+		 * Number of probes that reached the destination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulProbeCount: FormControl<number | null | undefined>,
 
 		/** The time that reachability was assessed through active probing. */
@@ -706,7 +724,10 @@ export namespace MyNS {
 		/** URI of the network where this packet is sent to. */
 		destinationNetworkUri?: string | null;
 
-		/** Destination port. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -721,7 +742,10 @@ export namespace MyNS {
 		/** URI of the network where this packet originates from. */
 		sourceNetworkUri?: string | null;
 
-		/** Source port. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort?: number | null;
 	}
 
@@ -734,7 +758,10 @@ export namespace MyNS {
 		/** URI of the network where this packet is sent to. */
 		destinationNetworkUri: FormControl<string | null | undefined>,
 
-		/** Destination port. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -749,7 +776,10 @@ export namespace MyNS {
 		/** URI of the network where this packet originates from. */
 		sourceNetworkUri: FormControl<string | null | undefined>,
 
-		/** Source port. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointInfoFormGroup() {
@@ -770,7 +800,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -783,7 +816,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -821,7 +857,10 @@ export namespace MyNS {
 		/** percent-th percentile of latency observed, in microseconds. Fraction of percent/100 of samples have latency lower or equal to the value of this field. */
 		latencyMicros?: string | null;
 
-		/** Percentage of samples this data point applies to. */
+		/**
+		 * Percentage of samples this data point applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent?: number | null;
 	}
 
@@ -831,7 +870,10 @@ export namespace MyNS {
 		/** percent-th percentile of latency observed, in microseconds. Fraction of percent/100 of samples have latency lower or equal to the value of this field. */
 		latencyMicros: FormControl<string | null | undefined>,
 
-		/** Percentage of samples this data point applies to. */
+		/**
+		 * Percentage of samples this data point applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent: FormControl<number | null | undefined>,
 	}
 	export function CreateLatencyPercentileFormGroup() {
@@ -1114,7 +1156,10 @@ export namespace MyNS {
 		/** The hierarchical firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules. */
 		policy?: string | null;
 
-		/** The priority of the firewall rule. */
+		/**
+		 * The priority of the firewall rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** The target service accounts specified by the firewall rule. */
@@ -1148,7 +1193,10 @@ export namespace MyNS {
 		/** The hierarchical firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules. */
 		policy: FormControl<string | null | undefined>,
 
-		/** The priority of the firewall rule. */
+		/**
+		 * The priority of the firewall rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** The URI of the VPC firewall rule. This field is not applicable to implied firewall rules or hierarchical firewall policy rules. */
@@ -1571,25 +1619,37 @@ export namespace MyNS {
 		/** Destination IP address after NAT translation. */
 		newDestinationIp?: string | null;
 
-		/** Destination port after NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port after NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newDestinationPort?: number | null;
 
 		/** Source IP address after NAT translation. */
 		newSourceIp?: string | null;
 
-		/** Source port after NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port after NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSourcePort?: number | null;
 
 		/** Destination IP address before NAT translation. */
 		oldDestinationIp?: string | null;
 
-		/** Destination port before NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port before NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldDestinationPort?: number | null;
 
 		/** Source IP address before NAT translation. */
 		oldSourceIp?: string | null;
 
-		/** Source port before NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port before NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldSourcePort?: number | null;
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -1614,25 +1674,37 @@ export namespace MyNS {
 		/** Destination IP address after NAT translation. */
 		newDestinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port after NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port after NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newDestinationPort: FormControl<number | null | undefined>,
 
 		/** Source IP address after NAT translation. */
 		newSourceIp: FormControl<string | null | undefined>,
 
-		/** Source port after NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port after NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSourcePort: FormControl<number | null | undefined>,
 
 		/** Destination IP address before NAT translation. */
 		oldDestinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port before NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port before NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldDestinationPort: FormControl<number | null | undefined>,
 
 		/** Source IP address before NAT translation. */
 		oldSourceIp: FormControl<string | null | undefined>,
 
-		/** Source port before NAT translation. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port before NAT translation. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldSourcePort: FormControl<number | null | undefined>,
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -1710,25 +1782,37 @@ export namespace MyNS {
 		/** Destination IP address of a new connection. */
 		newDestinationIp?: string | null;
 
-		/** Destination port of a new connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port of a new connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newDestinationPort?: number | null;
 
 		/** Source IP address of a new connection. */
 		newSourceIp?: string | null;
 
-		/** Source port of a new connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port of a new connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSourcePort?: number | null;
 
 		/** Destination IP address of an original connection */
 		oldDestinationIp?: string | null;
 
-		/** Destination port of an original connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port of an original connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldDestinationPort?: number | null;
 
 		/** Source IP address of an original connection. */
 		oldSourceIp?: string | null;
 
-		/** Source port of an original connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port of an original connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldSourcePort?: number | null;
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -1747,25 +1831,37 @@ export namespace MyNS {
 		/** Destination IP address of a new connection. */
 		newDestinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port of a new connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port of a new connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newDestinationPort: FormControl<number | null | undefined>,
 
 		/** Source IP address of a new connection. */
 		newSourceIp: FormControl<string | null | undefined>,
 
-		/** Source port of a new connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port of a new connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSourcePort: FormControl<number | null | undefined>,
 
 		/** Destination IP address of an original connection */
 		oldDestinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port of an original connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Destination port of an original connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldDestinationPort: FormControl<number | null | undefined>,
 
 		/** Source IP address of an original connection. */
 		oldSourceIp: FormControl<string | null | undefined>,
 
-		/** Source port of an original connection. Only valid when protocol is TCP or UDP. */
+		/**
+		 * Source port of an original connection. Only valid when protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldSourcePort: FormControl<number | null | undefined>,
 
 		/** IP protocol in string format, for example: "TCP", "UDP", "ICMP". */
@@ -1822,7 +1918,10 @@ export namespace MyNS {
 		/** Type of next hop. */
 		nextHopType?: RouteInfoNextHopType | null;
 
-		/** Priority of the route. */
+		/**
+		 * Priority of the route.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Protocols of the route. Policy based routes only. */
@@ -1868,7 +1967,10 @@ export namespace MyNS {
 		/** Type of next hop. */
 		nextHopType: FormControl<RouteInfoNextHopType | null | undefined>,
 
-		/** Priority of the route. */
+		/**
+		 * Priority of the route.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Indicates where route is applicable. */
@@ -2338,7 +2440,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2348,7 +2453,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -2473,6 +2581,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2486,6 +2595,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2520,6 +2630,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the `ConnectivityTests` that match the filter expression. A filter expression filters the resources listed in the response. The expression must be of the form ` ` where operators: `<`, `>`, `<=`, `>=`, `!=`, `=`, `:` are supported (colon `:` represents a HAS operator which is roughly synonymous with equality). can refer to a proto or JSON field, or a synthetic field. Field names can be camelCase or snake_case. Examples: - Filter by name: name = "projects/proj-1/locations/global/connectivityTests/test-1 - Filter by labels: - Resources that have a key called `foo` labels.foo:* - Resources that have a key called `foo` whose value is `bar` labels.foo = bar
 		 * @param {string} orderBy Field to use to sort the list.
 		 * @param {number} pageSize Number of `ConnectivityTests` to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token from an earlier query, as returned in `next_page_token`.
 		 * @return {ListConnectivityTestsResponse} Successful response
 		 */
@@ -2543,6 +2654,7 @@ export namespace MyNS {
 		 * Get v1beta1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Networkmanagement_projects_locations_global_connectivityTests_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

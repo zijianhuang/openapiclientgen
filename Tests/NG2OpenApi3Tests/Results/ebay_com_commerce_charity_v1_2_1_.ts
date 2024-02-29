@@ -125,20 +125,32 @@ export namespace MyNS {
 	/** Defines the format of a geographic coordinate. */
 	export interface GeoCoordinates {
 
-		/** The latitude component of the geographic coordinate. */
+		/**
+		 * The latitude component of the geographic coordinate.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude component of the geographic coordinate. */
+		/**
+		 * The longitude component of the geographic coordinate.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** Defines the format of a geographic coordinate. */
 	export interface GeoCoordinatesFormProperties {
 
-		/** The latitude component of the geographic coordinate. */
+		/**
+		 * The latitude component of the geographic coordinate.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude component of the geographic coordinate. */
+		/**
+		 * The longitude component of the geographic coordinate.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoCoordinatesFormGroup() {
@@ -194,19 +206,28 @@ export namespace MyNS {
 		/** The relative path to the current set of results. */
 		href?: string | null;
 
-		/** The number of items, from the result set, returned in a single page.<br /><br /><b>Valid Values:</b> <code>1-100</code><br /><br /><b>Default:</b> <code>20</code> */
+		/**
+		 * The number of items, from the result set, returned in a single page.<br /><br /><b>Valid Values:</b> <code>1-100</code><br /><br /><b>Default:</b> <code>20</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The relative path to the next set of results. */
 		next?: string | null;
 
-		/** The number of items that will be skipped in the result set. This is used with the <b>limit</b> field to control the pagination of the output.<br /><br />For example, if the <b>offset</b> is set to <code>0</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 1 through 10 from the list of items returned. If the <b>offset</b> is set to <code>10</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 11 through 20 from the list of items returned.<br /><br /><b>Valid Values:</b> <code>0-10,000</code><br /><br /><b>Default:</b> <code>0</code> */
+		/**
+		 * The number of items that will be skipped in the result set. This is used with the <b>limit</b> field to control the pagination of the output.<br /><br />For example, if the <b>offset</b> is set to <code>0</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 1 through 10 from the list of items returned. If the <b>offset</b> is set to <code>10</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 11 through 20 from the list of items returned.<br /><br /><b>Valid Values:</b> <code>0-10,000</code><br /><br /><b>Default:</b> <code>0</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The relative path to the previous set of results. */
 		prev?: string | null;
 
-		/** The total number of matches for the search criteria. */
+		/**
+		 * The total number of matches for the search criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -216,19 +237,28 @@ export namespace MyNS {
 		/** The relative path to the current set of results. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items, from the result set, returned in a single page.<br /><br /><b>Valid Values:</b> <code>1-100</code><br /><br /><b>Default:</b> <code>20</code> */
+		/**
+		 * The number of items, from the result set, returned in a single page.<br /><br /><b>Valid Values:</b> <code>1-100</code><br /><br /><b>Default:</b> <code>20</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The relative path to the next set of results. */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of items that will be skipped in the result set. This is used with the <b>limit</b> field to control the pagination of the output.<br /><br />For example, if the <b>offset</b> is set to <code>0</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 1 through 10 from the list of items returned. If the <b>offset</b> is set to <code>10</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 11 through 20 from the list of items returned.<br /><br /><b>Valid Values:</b> <code>0-10,000</code><br /><br /><b>Default:</b> <code>0</code> */
+		/**
+		 * The number of items that will be skipped in the result set. This is used with the <b>limit</b> field to control the pagination of the output.<br /><br />For example, if the <b>offset</b> is set to <code>0</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 1 through 10 from the list of items returned. If the <b>offset</b> is set to <code>10</code> and the <b>limit</b> is set to <code>10</code>, the method will retrieve items 11 through 20 from the list of items returned.<br /><br /><b>Valid Values:</b> <code>0-10,000</code><br /><br /><b>Default:</b> <code>0</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The relative path to the previous set of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of matches for the search criteria. */
+		/**
+		 * The total number of matches for the search criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCharitySearchResponseFormGroup() {
@@ -253,7 +283,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -284,7 +317,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */

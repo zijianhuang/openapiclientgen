@@ -63,6 +63,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages?: number | null;
 	}
 
@@ -82,6 +84,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -259,15 +263,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path?: string | null;
 
@@ -286,15 +290,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path: FormControl<string | null | undefined>,
 
@@ -318,8 +322,8 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: string;
 
@@ -331,16 +335,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id?: string | null;
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 	}
@@ -351,23 +355,23 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -395,8 +399,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber?: string | null;
 
@@ -405,43 +409,43 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision?: string | null;
 
 		/**
 		 * Identification of a division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Department?: string | null;
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode?: string | null;
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName?: string | null;
 
 		/**
 		 * Identification of a sub-division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SubDepartment?: string | null;
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName?: string | null;
 	}
@@ -454,8 +458,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber: FormControl<string | null | undefined>,
 
@@ -464,43 +468,43 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of a division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Department: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of a sub-division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SubDepartment: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName: FormControl<string | null | undefined>,
 	}
@@ -528,15 +532,15 @@ export namespace MyNS {
 
 		/**
 		 * Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		MerchantCategoryCode?: string | null;
 
 		/**
 		 * The unique customer identifier of the PSU with the merchant.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		MerchantCustomerIdentification?: string | null;
 
@@ -549,15 +553,15 @@ export namespace MyNS {
 
 		/**
 		 * Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		MerchantCategoryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique customer identifier of the PSU with the merchant.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		MerchantCustomerIdentification: FormControl<string | null | undefined>,
 
@@ -583,8 +587,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber?: string | null;
 
@@ -596,30 +600,30 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision?: string | null;
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode?: string | null;
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName?: string | null;
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName: string;
 	}
@@ -627,8 +631,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber: FormControl<string | null | undefined>,
 
@@ -640,30 +644,30 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName: FormControl<string | null | undefined>,
 	}
@@ -694,8 +698,8 @@ export namespace MyNS {
 
 		/**
 		 * If the payment is recurring, then this field is populated with the transaction identifier of the previous payment occurrence so that the ASPSP can verify that the PISP, amount and the payee are the same as the previous occurrence. The value here refers to the payment id e.g. DomesticPaymentId
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ReferencePaymentOrderId?: string | null;
 
@@ -715,8 +719,8 @@ export namespace MyNS {
 
 		/**
 		 * If the payment is recurring, then this field is populated with the transaction identifier of the previous payment occurrence so that the ASPSP can verify that the PISP, amount and the payee are the same as the previous occurrence. The value here refers to the payment id e.g. DomesticPaymentId
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ReferencePaymentOrderId: FormControl<string | null | undefined>,
 
@@ -774,8 +778,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -790,8 +794,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -821,8 +825,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -837,8 +841,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -861,8 +865,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -870,8 +874,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -895,8 +899,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -905,8 +909,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -919,8 +923,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -929,8 +933,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -939,8 +943,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -953,8 +957,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -973,16 +977,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -995,8 +999,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1005,16 +1009,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1027,8 +1031,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -1085,15 +1089,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -1104,15 +1108,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -1231,8 +1235,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -1247,8 +1251,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -1271,8 +1275,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -1280,8 +1284,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -1305,8 +1309,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -1315,8 +1319,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -1329,8 +1333,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1339,8 +1343,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -1349,8 +1353,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1363,8 +1367,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -1383,16 +1387,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -1405,8 +1409,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1415,16 +1419,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1437,8 +1441,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -1495,15 +1499,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -1514,15 +1518,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -1570,8 +1574,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -1638,8 +1642,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -1802,8 +1806,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -1818,8 +1822,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -1842,8 +1846,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -1851,8 +1855,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -1876,8 +1880,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -1886,8 +1890,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -1900,8 +1904,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1910,8 +1914,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -1920,8 +1924,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1934,8 +1938,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -1954,16 +1958,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -1976,8 +1980,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1986,16 +1990,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2008,8 +2012,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -2066,15 +2070,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -2085,15 +2089,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -2132,8 +2136,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -2151,8 +2155,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticPaymentId: string;
 
@@ -2201,8 +2205,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -2217,8 +2221,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticPaymentId: FormControl<string | null | undefined>,
 
@@ -2324,8 +2328,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -2340,8 +2344,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -2364,8 +2368,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -2373,8 +2377,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -2398,8 +2402,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -2408,8 +2412,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -2422,8 +2426,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -2432,8 +2436,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -2442,8 +2446,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2456,8 +2460,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -2476,16 +2480,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -2498,8 +2502,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -2508,16 +2512,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2530,8 +2534,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -2588,15 +2592,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -2607,15 +2611,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -2643,10 +2647,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -2671,10 +2681,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -2717,8 +2733,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -2727,8 +2743,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -2741,8 +2757,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -2751,8 +2767,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -2761,8 +2777,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2775,8 +2791,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -2816,8 +2832,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -2832,8 +2848,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -2862,8 +2878,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -2878,8 +2894,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -2910,8 +2926,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -2919,8 +2935,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -2954,8 +2970,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -2964,8 +2980,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -2978,8 +2994,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -2988,8 +3004,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -2998,8 +3014,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3012,8 +3028,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -3032,16 +3048,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -3054,8 +3070,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -3064,16 +3080,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3086,8 +3102,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -3144,15 +3160,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -3163,15 +3179,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -3300,8 +3316,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -3316,8 +3332,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -3348,8 +3364,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -3357,8 +3373,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -3392,8 +3408,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -3402,8 +3418,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -3416,8 +3432,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -3426,8 +3442,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -3436,8 +3452,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3450,8 +3466,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -3470,16 +3486,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -3492,8 +3508,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -3502,16 +3518,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3524,8 +3540,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -3582,15 +3598,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -3601,15 +3617,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -3657,8 +3673,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -3731,8 +3747,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -3901,8 +3917,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -3917,8 +3933,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -3949,8 +3965,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -3958,8 +3974,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -3993,8 +4009,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -4003,8 +4019,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -4017,8 +4033,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4027,8 +4043,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -4037,8 +4053,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4051,8 +4067,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4071,16 +4087,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -4093,8 +4109,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4103,16 +4119,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4125,8 +4141,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4183,15 +4199,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -4202,15 +4218,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -4247,8 +4263,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -4266,8 +4282,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic schedule payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticScheduledPaymentId: string;
 
@@ -4316,8 +4332,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -4332,8 +4348,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic schedule payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -4438,8 +4454,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -4454,8 +4470,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -4486,8 +4502,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
@@ -4495,8 +4511,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -4530,8 +4546,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -4540,8 +4556,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -4554,8 +4570,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4564,8 +4580,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -4574,8 +4590,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4588,8 +4604,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4608,16 +4624,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -4630,8 +4646,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4640,16 +4656,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4662,8 +4678,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4720,15 +4736,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -4739,15 +4755,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -4775,10 +4791,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -4803,10 +4825,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -4847,8 +4875,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -4857,8 +4885,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -4871,8 +4899,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4881,8 +4909,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -4891,8 +4919,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4905,8 +4933,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4946,8 +4974,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -4962,8 +4990,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -5042,8 +5070,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -5062,8 +5090,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -5120,8 +5148,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -5137,8 +5165,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -5159,8 +5187,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -5169,8 +5197,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -5183,8 +5211,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5193,8 +5221,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -5203,8 +5231,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5217,8 +5245,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5237,16 +5265,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -5259,8 +5287,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5269,16 +5297,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5291,8 +5319,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5581,8 +5609,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -5601,8 +5629,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -5659,8 +5687,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -5676,8 +5704,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -5698,8 +5726,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -5708,8 +5736,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -5722,8 +5750,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5732,8 +5760,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -5742,8 +5770,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5756,8 +5784,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5776,16 +5804,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -5798,8 +5826,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5808,16 +5836,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5830,8 +5858,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5987,8 +6015,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -6047,8 +6075,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -6251,8 +6279,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -6271,8 +6299,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -6329,8 +6357,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -6346,8 +6374,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -6368,8 +6396,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -6378,8 +6406,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -6392,8 +6420,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -6402,8 +6430,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -6412,8 +6440,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -6426,8 +6454,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -6446,16 +6474,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -6468,8 +6496,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -6478,16 +6506,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -6500,8 +6528,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -6648,8 +6676,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -6667,8 +6695,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic standing order resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticStandingOrderId: string;
 
@@ -6703,8 +6731,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -6719,8 +6747,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic standing order resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DomesticStandingOrderId: FormControl<string | null | undefined>,
 
@@ -6859,8 +6887,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -6879,8 +6907,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -6937,8 +6965,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -6954,8 +6982,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -6976,8 +7004,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -6986,8 +7014,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -7000,8 +7028,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -7010,8 +7038,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -7020,8 +7048,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7034,8 +7062,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -7054,16 +7082,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -7076,8 +7104,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -7086,16 +7114,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7108,8 +7136,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -7247,10 +7275,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -7275,10 +7309,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -7319,8 +7359,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -7329,8 +7369,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -7343,8 +7383,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -7353,8 +7393,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -7363,8 +7403,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7377,8 +7417,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -7410,8 +7450,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -7426,8 +7466,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -7440,7 +7480,10 @@ export namespace MyNS {
 
 	export interface OBWriteFile2DataInitiation {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum?: number | null;
 
 		/** Unambiguous identification of the account of the debtor to which a debit entry will be made as a result of the transaction. */
@@ -7449,15 +7492,15 @@ export namespace MyNS {
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: string;
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference?: string | null;
 
@@ -7492,21 +7535,24 @@ export namespace MyNS {
 	}
 	export interface OBWriteFile2DataInitiationFormProperties {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum: FormControl<number | null | undefined>,
 
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: FormControl<string | null | undefined>,
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference: FormControl<string | null | undefined>,
 
@@ -7551,16 +7597,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -7573,8 +7619,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -7583,16 +7629,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7605,8 +7651,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -7627,15 +7673,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -7646,15 +7692,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -7741,7 +7787,10 @@ export namespace MyNS {
 
 	export interface OBWriteFileConsent3DataInitiation {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum?: number | null;
 
 		/** Unambiguous identification of the account of the debtor to which a debit entry will be made as a result of the transaction. */
@@ -7750,15 +7799,15 @@ export namespace MyNS {
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: string;
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference?: string | null;
 
@@ -7793,21 +7842,24 @@ export namespace MyNS {
 	}
 	export interface OBWriteFileConsent3DataInitiationFormProperties {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum: FormControl<number | null | undefined>,
 
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: FormControl<string | null | undefined>,
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference: FormControl<string | null | undefined>,
 
@@ -7852,16 +7904,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -7874,8 +7926,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -7884,16 +7936,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7906,8 +7958,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -7928,15 +7980,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -7947,15 +7999,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -7995,8 +8047,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -8046,8 +8098,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -8173,7 +8225,10 @@ export namespace MyNS {
 
 	export interface OBWriteFileConsentResponse4DataInitiation {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum?: number | null;
 
 		/** Unambiguous identification of the account of the debtor to which a debit entry will be made as a result of the transaction. */
@@ -8182,15 +8237,15 @@ export namespace MyNS {
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: string;
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference?: string | null;
 
@@ -8225,21 +8280,24 @@ export namespace MyNS {
 	}
 	export interface OBWriteFileConsentResponse4DataInitiationFormProperties {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum: FormControl<number | null | undefined>,
 
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: FormControl<string | null | undefined>,
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference: FormControl<string | null | undefined>,
 
@@ -8284,16 +8342,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -8306,8 +8364,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -8316,16 +8374,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -8338,8 +8396,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -8360,15 +8418,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -8379,15 +8437,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -8426,8 +8484,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -8445,8 +8503,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the file payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FilePaymentId: string;
 
@@ -8478,8 +8536,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -8494,8 +8552,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the file payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FilePaymentId: FormControl<string | null | undefined>,
 
@@ -8568,7 +8626,10 @@ export namespace MyNS {
 
 	export interface OBWriteFileResponse3DataInitiation {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum?: number | null;
 
 		/** Unambiguous identification of the account of the debtor to which a debit entry will be made as a result of the transaction. */
@@ -8577,15 +8638,15 @@ export namespace MyNS {
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: string;
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference?: string | null;
 
@@ -8620,21 +8681,24 @@ export namespace MyNS {
 	}
 	export interface OBWriteFileResponse3DataInitiationFormProperties {
 
-		/** Total of all individual amounts included in the group, irrespective of currencies. */
+		/**
+		 * Total of all individual amounts included in the group, irrespective of currencies.
+		 * Type: double
+		 */
 		ControlSum: FormControl<number | null | undefined>,
 
 		/**
 		 * A base64 encoding of a SHA256 hash of the file to be uploaded.
 		 * Required
-		 * Max length: 44
 		 * Min length: 1
+		 * Max length: 44
 		 */
 		FileHash: FormControl<string | null | undefined>,
 
 		/**
 		 * Reference for the file.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FileReference: FormControl<string | null | undefined>,
 
@@ -8679,16 +8743,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -8701,8 +8765,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -8711,16 +8775,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -8733,8 +8797,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -8755,15 +8819,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -8774,15 +8838,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -8810,10 +8874,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -8838,10 +8908,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -8962,8 +9038,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -8978,8 +9054,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -9024,8 +9100,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -9034,8 +9110,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -9050,8 +9126,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -9068,8 +9144,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -9098,15 +9174,15 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -9114,8 +9190,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -9132,8 +9208,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 	}
@@ -9156,8 +9232,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -9168,8 +9244,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -9185,8 +9261,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -9195,8 +9271,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -9209,8 +9285,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -9219,8 +9295,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -9229,8 +9305,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9243,8 +9319,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -9262,15 +9338,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -9284,15 +9360,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9313,16 +9389,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -9335,8 +9411,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -9345,16 +9421,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9367,8 +9443,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -9386,12 +9462,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -9410,12 +9489,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -9487,15 +9569,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -9506,15 +9588,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -9646,8 +9728,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -9656,8 +9738,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -9672,8 +9754,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -9690,8 +9772,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -9720,15 +9802,15 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -9736,8 +9818,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -9754,8 +9836,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 	}
@@ -9778,8 +9860,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -9790,8 +9872,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -9807,8 +9889,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -9817,8 +9899,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -9831,8 +9913,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -9841,8 +9923,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -9851,8 +9933,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9865,8 +9947,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -9884,15 +9966,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -9906,15 +9988,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9935,16 +10017,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -9957,8 +10039,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -9967,16 +10049,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9989,8 +10071,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -10008,12 +10090,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -10032,12 +10117,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -10105,15 +10193,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -10124,15 +10212,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -10178,8 +10266,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -10249,8 +10337,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -10398,14 +10486,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: number;
 
@@ -10432,14 +10521,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
@@ -10507,8 +10597,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -10517,8 +10607,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -10533,8 +10623,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -10551,8 +10641,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -10581,15 +10671,15 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -10597,8 +10687,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -10615,8 +10705,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 	}
@@ -10639,8 +10729,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -10651,8 +10741,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -10668,8 +10758,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -10678,8 +10768,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -10692,8 +10782,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -10702,8 +10792,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -10712,8 +10802,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10726,8 +10816,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -10745,15 +10835,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -10767,15 +10857,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10796,16 +10886,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -10818,8 +10908,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -10828,16 +10918,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10850,8 +10940,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -10869,12 +10959,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -10893,12 +10986,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -10966,15 +11062,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -10985,15 +11081,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -11030,8 +11126,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -11072,8 +11168,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalPaymentId: string;
 
@@ -11100,8 +11196,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -11130,8 +11226,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalPaymentId: FormControl<string | null | undefined>,
 
@@ -11208,14 +11304,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: number;
 
@@ -11242,14 +11339,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
@@ -11317,8 +11415,8 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: string;
 
@@ -11327,8 +11425,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -11343,8 +11441,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -11361,8 +11459,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -11391,15 +11489,15 @@ export namespace MyNS {
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -11407,8 +11505,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -11425,8 +11523,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 	}
@@ -11449,8 +11547,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -11461,8 +11559,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11478,8 +11576,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -11488,8 +11586,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -11502,8 +11600,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -11512,8 +11610,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -11522,8 +11620,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11536,8 +11634,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -11555,15 +11653,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -11577,15 +11675,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11606,16 +11704,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -11628,8 +11726,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -11638,16 +11736,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11660,8 +11758,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -11679,12 +11777,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -11703,12 +11804,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -11776,15 +11880,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -11795,15 +11899,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -11831,10 +11935,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -11859,10 +11969,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -11909,8 +12025,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -11919,8 +12035,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -11933,8 +12049,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -11943,8 +12059,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -11953,8 +12069,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -11967,8 +12083,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -11986,15 +12102,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -12008,15 +12124,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -12036,8 +12152,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -12048,8 +12164,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12084,8 +12200,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -12100,8 +12216,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -12145,8 +12261,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -12155,8 +12271,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -12171,8 +12287,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -12189,8 +12305,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -12227,15 +12343,15 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -12243,8 +12359,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -12261,8 +12377,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -12295,8 +12411,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -12307,8 +12423,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12324,8 +12440,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -12334,8 +12450,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -12348,8 +12464,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -12358,8 +12474,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -12368,8 +12484,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -12382,8 +12498,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -12401,15 +12517,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -12423,15 +12539,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -12452,16 +12568,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -12474,8 +12590,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -12484,16 +12600,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -12506,8 +12622,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -12525,12 +12641,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -12549,12 +12668,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -12622,15 +12744,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -12641,15 +12763,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -12793,8 +12915,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -12803,8 +12925,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -12819,8 +12941,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -12837,8 +12959,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -12875,15 +12997,15 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -12891,8 +13013,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -12909,8 +13031,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -12943,8 +13065,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -12955,8 +13077,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12972,8 +13094,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -12982,8 +13104,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -12996,8 +13118,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -13006,8 +13128,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -13016,8 +13138,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -13030,8 +13152,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -13049,15 +13171,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -13071,15 +13193,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -13100,16 +13222,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -13122,8 +13244,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -13132,16 +13254,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -13154,8 +13276,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -13173,12 +13295,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -13197,12 +13322,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -13270,15 +13398,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -13289,15 +13417,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -13343,8 +13471,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -13420,8 +13548,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -13576,14 +13704,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: number;
 
@@ -13610,14 +13739,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
@@ -13684,8 +13814,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -13694,8 +13824,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -13710,8 +13840,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -13728,8 +13858,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -13766,15 +13896,15 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -13782,8 +13912,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -13800,8 +13930,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -13834,8 +13964,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -13846,8 +13976,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13863,8 +13993,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -13873,8 +14003,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -13887,8 +14017,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -13897,8 +14027,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -13907,8 +14037,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -13921,8 +14051,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -13940,15 +14070,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -13962,15 +14092,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -13991,16 +14121,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -14013,8 +14143,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -14023,16 +14153,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -14045,8 +14175,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -14064,12 +14194,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -14088,12 +14221,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -14161,15 +14297,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -14180,15 +14316,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -14225,8 +14361,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -14267,8 +14403,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international scheduled payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalScheduledPaymentId: string;
 
@@ -14295,8 +14431,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -14325,8 +14461,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international scheduled payment resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -14403,14 +14539,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: number;
 
@@ -14437,14 +14574,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
@@ -14511,8 +14649,8 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification?: string | null;
 
@@ -14521,8 +14659,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -14537,8 +14675,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: string;
 
@@ -14555,8 +14693,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -14593,15 +14731,15 @@ export namespace MyNS {
 		 * Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
 		 * Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
 		 * OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		EndToEndIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -14609,8 +14747,8 @@ export namespace MyNS {
 		 * Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
 		 * Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		InstructionIdentification: FormControl<string | null | undefined>,
 
@@ -14627,8 +14765,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -14661,8 +14799,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -14673,8 +14811,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -14690,8 +14828,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -14700,8 +14838,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -14714,8 +14852,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -14724,8 +14862,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -14734,8 +14872,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -14748,8 +14886,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -14767,15 +14905,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -14789,15 +14927,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -14818,16 +14956,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -14840,8 +14978,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -14850,16 +14988,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -14872,8 +15010,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -14891,12 +15029,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification?: string | null;
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate?: number | null;
 
 		/**
@@ -14915,12 +15056,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous reference to the foreign exchange contract agreed between the initiating party/creditor and the debtor agent.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
-		/** The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency. */
+		/**
+		 * The factor used for conversion of an amount from one currency to another. This reflects the price at which one currency was bought with another currency.
+		 * Type: double
+		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
 		/**
@@ -14988,15 +15132,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured?: string | null;
 	}
@@ -15007,15 +15151,15 @@ export namespace MyNS {
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
 		 * OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Unstructured: FormControl<string | null | undefined>,
 	}
@@ -15043,10 +15187,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -15071,10 +15221,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -15121,8 +15277,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -15131,8 +15287,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -15145,8 +15301,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -15155,8 +15311,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -15165,8 +15321,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15179,8 +15335,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -15198,15 +15354,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -15220,15 +15376,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15248,8 +15404,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -15260,8 +15416,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -15296,8 +15452,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -15312,8 +15468,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 	}
@@ -15358,8 +15514,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -15418,8 +15574,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -15427,8 +15583,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -15436,8 +15592,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -15460,8 +15616,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -15513,8 +15669,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -15522,8 +15678,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -15531,8 +15687,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -15556,8 +15712,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -15568,8 +15724,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -15585,8 +15741,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -15595,8 +15751,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -15609,8 +15765,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -15619,8 +15775,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -15629,8 +15785,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15643,8 +15799,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -15662,15 +15818,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -15684,15 +15840,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15713,16 +15869,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -15735,8 +15891,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -15745,16 +15901,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15767,8 +15923,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -15951,8 +16107,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -16011,8 +16167,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -16020,8 +16176,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -16029,8 +16185,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -16053,8 +16209,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -16106,8 +16262,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -16115,8 +16271,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -16124,8 +16280,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -16149,8 +16305,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -16161,8 +16317,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -16178,8 +16334,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -16188,8 +16344,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -16202,8 +16358,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -16212,8 +16368,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -16222,8 +16378,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -16236,8 +16392,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -16255,15 +16411,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -16277,15 +16433,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -16306,16 +16462,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -16328,8 +16484,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -16338,16 +16494,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -16360,8 +16516,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -16445,8 +16601,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -16505,8 +16661,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -16675,8 +16831,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -16735,8 +16891,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -16744,8 +16900,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -16753,8 +16909,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -16777,8 +16933,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -16830,8 +16986,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -16839,8 +16995,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -16848,8 +17004,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -16873,8 +17029,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -16885,8 +17041,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -16902,8 +17058,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -16912,8 +17068,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -16926,8 +17082,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -16936,8 +17092,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -16946,8 +17102,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -16960,8 +17116,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -16979,15 +17135,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -17001,15 +17157,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17030,16 +17186,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -17052,8 +17208,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -17062,16 +17218,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17084,8 +17240,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -17160,8 +17316,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -17185,8 +17341,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international standing order resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalStandingOrderId: string;
 
@@ -17213,8 +17369,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -17229,8 +17385,8 @@ export namespace MyNS {
 		/**
 		 * OB: Unique identification as assigned by the ASPSP to uniquely identify the international standing order resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		InternationalStandingOrderId: FormControl<string | null | undefined>,
 
@@ -17335,8 +17491,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose?: string | null;
 
@@ -17395,8 +17551,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -17404,8 +17560,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose?: string | null;
 
@@ -17413,8 +17569,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -17437,8 +17593,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the purpose of an international payment, when there is no corresponding 4 character code available in the ISO20022 list of Purpose Codes.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		ExtendedPurpose: FormControl<string | null | undefined>,
 
@@ -17490,8 +17646,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -17499,8 +17655,8 @@ export namespace MyNS {
 		 * Specifies the external purpose code in the format of character string with a maximum length of 4 characters.
 		 * The list of valid codes is an external code list published separately.
 		 * External code sets can be downloaded from www.iso20022.org.
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		Purpose: FormControl<string | null | undefined>,
 
@@ -17508,8 +17664,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -17533,8 +17689,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -17545,8 +17701,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -17562,8 +17718,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -17572,8 +17728,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -17586,8 +17742,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -17596,8 +17752,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -17606,8 +17762,8 @@ export namespace MyNS {
 		 * Note, the account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17620,8 +17776,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -17639,15 +17795,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -17661,15 +17817,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17690,16 +17846,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -17712,8 +17868,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -17722,16 +17878,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17744,8 +17900,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -17811,10 +17967,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime?: Date | null;
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived?: number | null;
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired?: number | null;
 
 		/**
@@ -17839,10 +18001,16 @@ export namespace MyNS {
 		 */
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 
-		/** Number of authorisations received. */
+		/**
+		 * Number of authorisations received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberReceived: FormControl<number | null | undefined>,
 
-		/** Number of authorisations required for payment order (total required at the start of the multi authorisation journey). */
+		/**
+		 * Number of authorisations required for payment order (total required at the start of the multi authorisation journey).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberRequired: FormControl<number | null | undefined>,
 
 		/**
@@ -17889,8 +18057,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
@@ -17899,8 +18067,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 
@@ -17913,8 +18081,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -17923,8 +18091,8 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -17933,8 +18101,8 @@ export namespace MyNS {
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
 		 * OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -17947,8 +18115,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -17966,15 +18134,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -17988,15 +18156,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -18016,8 +18184,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -18028,8 +18196,8 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -18075,8 +18243,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
 		 * Required
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		PaymentTransactionId: string;
 
@@ -18102,8 +18270,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
 		 * Required
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		PaymentTransactionId: FormControl<string | null | undefined>,
 
@@ -18143,8 +18311,8 @@ export namespace MyNS {
 		/**
 		 * Status of a transfer, as assigned by the transaction administrator.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Status: string;
 
@@ -18153,8 +18321,8 @@ export namespace MyNS {
 
 		/**
 		 * Reason provided for the status of a transfer.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StatusReasonDescription?: string | null;
 	}
@@ -18169,8 +18337,8 @@ export namespace MyNS {
 		/**
 		 * Status of a transfer, as assigned by the transaction administrator.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Status: FormControl<string | null | undefined>,
 
@@ -18179,8 +18347,8 @@ export namespace MyNS {
 
 		/**
 		 * Reason provided for the status of a transfer.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StatusReasonDescription: FormControl<string | null | undefined>,
 	}

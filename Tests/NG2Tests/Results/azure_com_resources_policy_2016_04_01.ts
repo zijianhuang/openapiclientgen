@@ -269,6 +269,7 @@ export namespace MyNS {
 		 * Gets policy assignments for the resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/policyAssignments
 		 * @param {string} resourceGroupName The name of the resource group that contains policy assignments.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter The filter to apply on the operation.
 		 * @param {string} api_version The API version to use for the operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -282,6 +283,7 @@ export namespace MyNS {
 		 * Gets policy assignments for a resource.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/policyassignments
 		 * @param {string} resourceGroupName The name of the resource group containing the resource. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceProviderNamespace The namespace of the resource provider.
 		 * @param {string} parentResourcePath The parent resource path.
 		 * @param {string} resourceType The resource type.

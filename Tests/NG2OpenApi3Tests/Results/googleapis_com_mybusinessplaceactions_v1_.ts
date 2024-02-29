@@ -178,6 +178,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. A filter constraining the place action types to return metadata for. The response includes entries that match the filter. We support only the following filters: 1. location=XYZ where XYZ is a string indicating the resource name of a location, in the format `locations/{location_id}`. 2. region_code=XYZ where XYZ is a Unicode CLDR region code to find available action types. If no filter is provided, all place action types are returned.
 		 * @param {string} languageCode Optional. The IETF BCP-47 code of language to get display names in. If this language is not available, they will be provided in English.
 		 * @param {number} pageSize Optional. How many action types to include per page. Default is 10, minimum is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If specified, the next page of place action type metadata is retrieved. The `pageToken` is returned when a call to `placeActionTypeMetadata.list` returns more results than can fit into the requested page size.
 		 * @return {ListPlaceActionTypeMetadataResponse} Successful response
 		 */
@@ -222,6 +223,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the location whose place action links will be listed. `locations/{location_id}`.
 		 * @param {string} filter Optional. A filter constraining the place action links to return. The response includes entries that match the filter. We support only the following filter: 1. place_action_type=XYZ where XYZ is a valid PlaceActionType.
 		 * @param {number} pageSize Optional. How many place action links to return per page. Default of 10. The minimum is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If specified, returns the next page of place action links.
 		 * @return {ListPlaceActionLinksResponse} Successful response
 		 */

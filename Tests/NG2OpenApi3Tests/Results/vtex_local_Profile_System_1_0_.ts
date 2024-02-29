@@ -211,7 +211,10 @@ export namespace MyNS {
 		 */
 		description: string;
 
-		/** Document time to live, in days. After this many days from its creation or update, any document cerated from this schema will be deleted. */
+		/**
+		 * Document time to live, in days. After this many days from its creation or update, any document cerated from this schema will be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentTTL?: number | null;
 
 		/**
@@ -240,7 +243,10 @@ export namespace MyNS {
 		'v-indexed'?: Array<string>;
 		'v-unique'?: Array<string>;
 
-		/** Schema version. */
+		/**
+		 * Schema version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface SchemaFormProperties {
@@ -251,7 +257,10 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** Document time to live, in days. After this many days from its creation or update, any document cerated from this schema will be deleted. */
+		/**
+		 * Document time to live, in days. After this many days from its creation or update, any document cerated from this schema will be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentTTL: FormControl<number | null | undefined>,
 
 		/**
@@ -266,7 +275,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Schema version. */
+		/**
+		 * Schema version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSchemaFormGroup() {
@@ -363,6 +375,7 @@ export namespace MyNS {
 		 * Post api/storage/profile-system/profiles
 		 * @param {number} ttl This parameter sets the the Time To Live (TTL), in days, of the specific document being created or updated with this request. After this period of time from the moment of the request, the document is deleted. By sending this parameter you override the TTL set for the schema.
 		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		CreateClientProfile(ttl: number | null | undefined, requestBody: Profile): Observable<HttpResponse<string>> {
@@ -420,6 +433,7 @@ export namespace MyNS {
 		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @param {number} ttl This parameter sets the the Time To Live (TTL), in days, of the specific document being created or updated with this request. After this period of time from the moment of the request, the document is deleted. By sending this parameter you override the TTL set for the schema.
 		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		UpdateClientProfile(profileId: string, alternativeKey: string | null | undefined, ttl: number | null | undefined, requestBody: UpdateClientProfilePatchBody): Observable<string> {

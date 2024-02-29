@@ -191,6 +191,7 @@ export namespace MyNS {
 		 * ```
 		 * Get api/catalog-seller-portal/category-tree
 		 * @param {number} depth Category tree level.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCategoryTreeReturn} OK
 		 */
 		GetCategoryTree(depth: number | null | undefined): Observable<GetCategoryTreeReturn> {
@@ -984,7 +985,9 @@ export namespace MyNS {
 		 * @param {string} from The first page of the interval of the product list.
 		 * @param {string} to The last page of the interval of the product list.
 		 * @param {number} id SKU unique idenfier number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} externalid SKU reference unique identifier number in the store.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSKUReturn} OK
 		 */
 		SearchSKU(from: string | null | undefined, to: string | null | undefined, id: number | null | undefined, externalid: number | null | undefined): Observable<SearchSKUReturn> {
@@ -1059,6 +1062,7 @@ export namespace MyNS {
 		/**
 		 * The first page of the interval of the brand list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: number;
 
@@ -1071,12 +1075,14 @@ export namespace MyNS {
 		/**
 		 * The last page of the interval of the brand list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: number;
 
 		/**
 		 * Total of brands on the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -1085,6 +1091,7 @@ export namespace MyNS {
 		/**
 		 * The first page of the interval of the brand list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: FormControl<number | null | undefined>,
 
@@ -1097,12 +1104,14 @@ export namespace MyNS {
 		/**
 		 * The last page of the interval of the brand list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: FormControl<number | null | undefined>,
 
 		/**
 		 * Total of brands on the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -2248,6 +2257,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -2277,6 +2287,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -2297,18 +2308,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -2317,18 +2331,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -2710,6 +2727,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -2742,6 +2760,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -2763,18 +2782,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -2783,18 +2805,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -3173,6 +3198,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -3202,6 +3228,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -3222,18 +3249,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -3242,18 +3272,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -3632,6 +3665,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -3661,6 +3695,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -3681,18 +3716,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -3701,18 +3739,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -4046,6 +4087,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -4075,6 +4117,7 @@ export namespace MyNS {
 		/**
 		 * SKU weight.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -4096,18 +4139,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -4116,18 +4162,21 @@ export namespace MyNS {
 		/**
 		 * SKU height.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU length.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU width.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -4308,24 +4357,42 @@ export namespace MyNS {
 
 	export interface SearchSKUReturn_metadata {
 
-		/** The first page of the interval of the SKU list. */
+		/**
+		 * The first page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** The last page of the interval of the SKU list. */
+		/**
+		 * The last page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 
-		/** Total of SKUs on the list. */
+		/**
+		 * Total of SKUs on the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface SearchSKUReturn_metadataFormProperties {
 
-		/** The first page of the interval of the SKU list. */
+		/**
+		 * The first page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** The last page of the interval of the SKU list. */
+		/**
+		 * The last page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 
-		/** Total of SKUs on the list. */
+		/**
+		 * Total of SKUs on the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSKUReturn_metadataFormGroup() {
@@ -4386,24 +4453,42 @@ export namespace MyNS {
 
 	export interface ListSKUReturn_metadata {
 
-		/** The first page of the interval of the SKU list. */
+		/**
+		 * The first page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** The last page of the interval of the SKU list. */
+		/**
+		 * The last page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 
-		/** Total of SKUs on the list. */
+		/**
+		 * Total of SKUs on the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface ListSKUReturn_metadataFormProperties {
 
-		/** The first page of the interval of the SKU list. */
+		/**
+		 * The first page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** The last page of the interval of the SKU list. */
+		/**
+		 * The last page of the interval of the SKU list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 
-		/** Total of SKUs on the list. */
+		/**
+		 * Total of SKUs on the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateListSKUReturn_metadataFormGroup() {

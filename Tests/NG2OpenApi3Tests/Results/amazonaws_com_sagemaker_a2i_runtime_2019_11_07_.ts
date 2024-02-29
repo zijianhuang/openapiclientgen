@@ -342,6 +342,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
 		 * Delete human-loops/{HumanLoopName}
 		 * @param {string} HumanLoopName The name of the human loop that you want to delete.
+		 *     Min length: 1    Max length: 63
 		 * @return {DeleteHumanLoopResponse} Success
 		 */
 		DeleteHumanLoop(HumanLoopName: string): Observable<DeleteHumanLoopResponse> {
@@ -352,6 +353,7 @@ export namespace MyNS {
 		 * Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error.
 		 * Get human-loops/{HumanLoopName}
 		 * @param {string} HumanLoopName The name of the human loop that you want information about.
+		 *     Min length: 1    Max length: 63
 		 * @return {DescribeHumanLoopResponse} Success
 		 */
 		DescribeHumanLoop(HumanLoopName: string): Observable<DescribeHumanLoopResponse> {
@@ -364,9 +366,12 @@ export namespace MyNS {
 		 * @param {Date} CreationTimeAfter (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.
 		 * @param {Date} CreationTimeBefore (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.
 		 * @param {string} FlowDefinitionArn The Amazon Resource Name (ARN) of a flow definition.
+		 *     Max length: 1024
 		 * @param {SortOrder} SortOrder Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
 		 * @param {string} NextToken A token to display the next page of results.
+		 *     Max length: 8192
 		 * @param {number} MaxResults The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. 
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListHumanLoopsResponse} Success
 		 */
 		ListHumanLoops(CreationTimeAfter: Date | null | undefined, CreationTimeBefore: Date | null | undefined, FlowDefinitionArn: string, SortOrder: SortOrder | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListHumanLoopsResponse> {
@@ -397,8 +402,8 @@ export namespace MyNS {
 		/**
 		 * The name of the human loop.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		HumanLoopName: string;
 
@@ -423,8 +428,8 @@ export namespace MyNS {
 		/**
 		 * The name of the human loop.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 
@@ -472,8 +477,8 @@ export namespace MyNS {
 		/**
 		 * The name of the human loop that you want to stop.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		HumanLoopName: string;
 	}
@@ -482,8 +487,8 @@ export namespace MyNS {
 		/**
 		 * The name of the human loop that you want to stop.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 	}

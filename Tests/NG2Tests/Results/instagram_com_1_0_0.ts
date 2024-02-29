@@ -926,6 +926,7 @@ export namespace MyNS {
 		 * Get geographies/{geo_id}/media/recent
 		 * @param {string} geo_id The geography ID.
 		 * @param {number} count Max number of media to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_id Return media before this `min_id`.
 		 * @return {MediaListResponse} List of recent media entries from a geography subscription.
 		 */
@@ -938,11 +939,14 @@ export namespace MyNS {
 		 * Search for a location by geographic coordinate.
 		 * Get locations/search
 		 * @param {number} distance Default is 1000m (distance=1000), max distance is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} facebook_places_id Returns a location mapped off of a Facebook places id. If used, a Foursquare id and `lat`, `lng` are not required.
 		 * @param {string} foursquare_id Returns a location mapped off of a foursquare v1 api location id. If used, you are not required to use
 		 * `lat` and `lng`. Note that this method is deprecated; you should use the new foursquare IDs with V2 of their API.
 		 * @param {number} lat Latitude of the center search coordinate. If used, `lng` is required.
+		 *     Type: double
 		 * @param {number} lng Longitude of the center search coordinate. If used, `lat` is required.
+		 *     Type: double
 		 * @param {string} foursquare_v2_id Returns a location mapped off of a foursquare v2 api location id. If used, you are not required to use
 		 * `lat` and `lng`.
 		 * @return {LocationSearchResponse} List of found locations.
@@ -968,7 +972,9 @@ export namespace MyNS {
 		 * Get locations/{location_id}/media/recent
 		 * @param {string} location_id The location ID.
 		 * @param {string} min_timestamp Return media after this UNIX timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} max_timestamp Return media before this UNIX timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} min_id Return media before this `min_id`.
 		 * @param {string} max_id Return media after this `max_id`.
 		 * @return {MediaListResponse} List of media entries from this location.
@@ -994,10 +1000,15 @@ export namespace MyNS {
 		 * Defaults time stamps cover the last 5 days. Can return mix of `image` and `video` types.
 		 * Get media/search
 		 * @param {number} lat Latitude of the center search coordinate. If used, `lng` is required.
+		 *     Type: double
 		 * @param {number} lng Longitude of the center search coordinate. If used, `lat` is required.
+		 *     Type: double
 		 * @param {string} min_timestamp A unix timestamp. All media returned will be taken later than this timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} max_timestamp A unix timestamp. All media returned will be taken earlier than this timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} distance Default is 1km (distance=1000), max distance is 5km.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MediaSearchResponse} Found media resources (without likes information) in a given area.
 		 */
 		MediaSearchGetByLatAndLngAndMin_timestampAndMax_timestampAndDistance(lat: number, lng: number, min_timestamp: string | null | undefined, max_timestamp: string | null | undefined, distance: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaSearchResponse> {
@@ -1132,6 +1143,7 @@ export namespace MyNS {
 		 * Get tags/{tag_name}/media/recent
 		 * @param {string} tag_name The tag name.
 		 * @param {number} count Count of tagged media to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_tag_id Return media before this `min_tag_id`.
 		 * @param {string} max_tag_id Return media after this `max_tag_id`.
 		 * @return {TagMediaListResponse} List of media entries with this tag.
@@ -1146,6 +1158,7 @@ export namespace MyNS {
 		 * Get users/search
 		 * @param {string} q A query string.
 		 * @param {number} count Number of users to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UsersInfoResponse} List of found users.
 		 */
 		UsersSearchGetByQAndCount(q: string, count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<UsersInfoResponse> {
@@ -1158,6 +1171,7 @@ export namespace MyNS {
 		 * **Warning:** [Deprecated](http://instagram.com/developer/changelog/) for Apps created **on or after** Nov 17, 2015
 		 * Get users/self/feed
 		 * @param {number} count Count of media to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_id Return media later than this `min_id`.
 		 * @param {string} max_id Return media earlier than this `max_id`.
 		 * @return {MediaListResponse} Users feed entries.
@@ -1173,6 +1187,7 @@ export namespace MyNS {
 		 * user.
 		 * Get users/self/media/liked
 		 * @param {number} count Count of media to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_like_id Return media liked before this id.
 		 * @return {MediaListResponse} Users media entries.
 		 */
@@ -1235,8 +1250,11 @@ export namespace MyNS {
 		 * Get users/{user_id}/media/recent
 		 * @param {string} user_id The ID of a user to get recent media of, or **self** to retrieve media of authenticated user.
 		 * @param {number} count Count of media to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_timestamp Return media before this UNIX timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} min_timestamp Return media after this UNIX timestamp.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} min_id Return media later than this `min_id`.
 		 * @param {string} max_id Return media earlier than this `max_id`.
 		 * @return {MediaListResponse} Users media entries.

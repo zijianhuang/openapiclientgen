@@ -780,7 +780,10 @@ namespace MyNS
 		/// <param name="date_to">End of time range for audit events. DateTime in ISO-8601 format.</param>
 		/// <param name="search_text">Return only audit events where the JSON object contains this search text. Must be legal text for a JSON attribute value, that is quotes and braces must be escaped.</param>
 		/// <param name="page">Page number starting with page 1.</param>
-		/// <param name="size">Number of elements per page.</param>
+		/// <param name="size">Number of elements per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AuditResp> GetEventsAsync(AuditEventEvent_type event_type, string date_from, string date_to, string search_text, string page, int size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

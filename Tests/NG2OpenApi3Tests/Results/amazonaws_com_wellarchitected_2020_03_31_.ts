@@ -112,8 +112,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -130,8 +130,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -172,8 +172,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 		SelectedChoiceIds?: Array<string>;
@@ -184,8 +184,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 	}
@@ -222,8 +222,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -236,8 +236,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -262,8 +262,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -276,8 +276,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -311,8 +311,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -325,8 +325,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -340,8 +340,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -354,8 +354,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -376,43 +376,43 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription?: string | null;
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl?: string | null;
 
 		/**
 		 * <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		HelpfulResourceUrl?: string | null;
 		HelpfulResourceDisplayText?: string;
@@ -443,43 +443,43 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		HelpfulResourceUrl: FormControl<string | null | undefined>,
 		HelpfulResourceDisplayText: FormControl<string | null | undefined>,
@@ -520,22 +520,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Title?: string | null;
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 		HelpfulResource?: ChoiceContent;
@@ -548,22 +548,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Title: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -622,8 +622,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 		Status?: ChoiceStatus;
@@ -636,8 +636,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 		Status: FormControl<ChoiceStatus | null | undefined>,
@@ -695,15 +695,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
@@ -722,15 +722,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
@@ -796,8 +796,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
@@ -811,8 +811,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 	}
@@ -829,8 +829,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
@@ -844,8 +844,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
@@ -866,15 +866,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle?: string | null;
 	}
@@ -884,15 +884,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle: FormControl<string | null | undefined>,
 	}
@@ -923,15 +923,15 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the lens.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 		Owner?: string;
@@ -946,15 +946,15 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the lens.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 		Owner: FormControl<string | null | undefined>,
@@ -988,8 +988,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -1009,8 +1009,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -1035,8 +1035,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -1044,8 +1044,8 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName?: string | null;
 		LensStatus?: LensStatus;
@@ -1078,8 +1078,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -1087,8 +1087,8 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName: FormControl<string | null | undefined>,
 		LensStatus: FormControl<LensStatus | null | undefined>,
@@ -1127,15 +1127,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The name of the pillar.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PillarName?: string | null;
 
@@ -1157,15 +1157,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the pillar.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PillarName: FormControl<string | null | undefined>,
 
@@ -1210,8 +1210,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -1231,8 +1231,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -1257,8 +1257,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -1272,8 +1272,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -1294,8 +1294,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -1310,8 +1310,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -1351,15 +1351,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The name of the pillar.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PillarName?: string | null;
 		DifferenceStatus?: DifferenceStatus;
@@ -1371,15 +1371,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the pillar.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PillarName: FormControl<string | null | undefined>,
 		DifferenceStatus: FormControl<DifferenceStatus | null | undefined>,
@@ -1401,15 +1401,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 		DifferenceStatus?: DifferenceStatus;
@@ -1420,15 +1420,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 		DifferenceStatus: FormControl<DifferenceStatus | null | undefined>,
@@ -1448,8 +1448,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -1462,8 +1462,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 	}
@@ -1487,8 +1487,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName?: string | null;
 
@@ -1511,8 +1511,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
@@ -1534,8 +1534,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -1544,15 +1544,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -1588,8 +1588,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner?: string | null;
 
@@ -1629,8 +1629,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner?: string | null;
 		ShareInvitationId?: string;
@@ -1648,8 +1648,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -1658,15 +1658,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1684,8 +1684,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner: FormControl<string | null | undefined>,
 
@@ -1716,8 +1716,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner: FormControl<string | null | undefined>,
 		ShareInvitationId: FormControl<string | null | undefined>,
@@ -1788,8 +1788,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner?: string | null;
 
@@ -1811,8 +1811,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner: FormControl<string | null | undefined>,
 
@@ -1843,22 +1843,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription?: string | null;
 		QuestionChoices?: Array<ProfileChoice>;
@@ -1872,22 +1872,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription: FormControl<string | null | undefined>,
 		MinSelectedChoices: FormControl<number | null | undefined>,
@@ -1910,22 +1910,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle?: string | null;
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChoiceDescription?: string | null;
 	}
@@ -1935,22 +1935,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChoiceDescription: FormControl<string | null | undefined>,
 	}
@@ -2012,22 +2012,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription?: string | null;
 		QuestionChoices?: Array<ProfileTemplateChoice>;
@@ -2040,22 +2040,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the question.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		QuestionDescription: FormControl<string | null | undefined>,
 		MinSelectedChoices: FormControl<number | null | undefined>,
@@ -2078,22 +2078,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle?: string | null;
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChoiceDescription?: string | null;
 	}
@@ -2103,22 +2103,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of a choice.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		ChoiceTitle: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of a choice.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChoiceDescription: FormControl<string | null | undefined>,
 	}
@@ -2172,8 +2172,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -2186,8 +2186,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -2204,8 +2204,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -2218,8 +2218,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -2244,22 +2244,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 
@@ -2284,22 +2284,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 
@@ -2330,8 +2330,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 		Status?: ChoiceStatus;
@@ -2343,8 +2343,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 		Status: FormControl<ChoiceStatus | null | undefined>,
@@ -2390,30 +2390,30 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 		Status?: CheckStatus;
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId?: string | null;
 		FlaggedResources?: number | null;
@@ -2433,30 +2433,30 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 		Status: FormControl<CheckStatus | null | undefined>,
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 		FlaggedResources: FormControl<number | null | undefined>,
@@ -2522,22 +2522,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 		Status?: CheckStatus;
@@ -2557,22 +2557,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 		Status: FormControl<CheckStatus | null | undefined>,
@@ -2613,8 +2613,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -2627,8 +2627,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -2645,8 +2645,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -2659,8 +2659,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -2685,22 +2685,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId?: string | null;
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId?: string | null;
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle?: string | null;
 
@@ -2709,8 +2709,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl?: string | null;
 		ImprovementPlans?: Array<ChoiceImprovementPlan>;
@@ -2721,22 +2721,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the question.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the question.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QuestionTitle: FormControl<string | null | undefined>,
 
@@ -2745,8 +2745,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl: FormControl<string | null | undefined>,
 	}
@@ -2767,16 +2767,16 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId?: string | null;
 		DisplayText?: string;
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl?: string | null;
 	}
@@ -2786,16 +2786,16 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a choice.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 		DisplayText: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ImprovementPlanUrl: FormControl<string | null | undefined>,
 	}
@@ -2814,8 +2814,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -2838,8 +2838,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -2868,8 +2868,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -2877,8 +2877,8 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName?: string | null;
 		LensStatus?: LensStatus;
@@ -2899,8 +2899,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -2908,8 +2908,8 @@ export namespace MyNS {
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName: FormControl<string | null | undefined>,
 		LensStatus: FormControl<LensStatus | null | undefined>,
@@ -2956,8 +2956,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith?: string | null;
 
@@ -2974,8 +2974,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -3026,23 +3026,23 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName?: string | null;
 		LensType?: LensType;
 
 		/**
 		 * The description of the lens.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -3055,8 +3055,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner?: string | null;
 		LensStatus?: LensStatus;
@@ -3068,23 +3068,23 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName: FormControl<string | null | undefined>,
 		LensType: FormControl<LensType | null | undefined>,
 
 		/**
 		 * The description of the lens.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -3097,8 +3097,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner: FormControl<string | null | undefined>,
 		LensStatus: FormControl<LensStatus | null | undefined>,
@@ -3127,8 +3127,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -3144,8 +3144,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -3173,8 +3173,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName?: string | null;
 
@@ -3197,8 +3197,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
@@ -3220,8 +3220,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -3230,15 +3230,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner?: string | null;
 
@@ -3264,8 +3264,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -3274,15 +3274,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner: FormControl<string | null | undefined>,
 
@@ -3348,22 +3348,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -3376,22 +3376,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -3439,15 +3439,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 	}
@@ -3462,15 +3462,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 	}
@@ -3516,8 +3516,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith?: string | null;
 
@@ -3534,8 +3534,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -3581,8 +3581,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner?: string | null;
 
@@ -3602,8 +3602,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		Owner: FormControl<string | null | undefined>,
 
@@ -3655,15 +3655,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		SharedBy?: string | null;
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith?: string | null;
 
@@ -3673,22 +3673,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName?: string | null;
 		LensArn?: string;
@@ -3702,15 +3702,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		SharedBy: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -3720,22 +3720,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * The full name of the lens.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensName: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -3780,8 +3780,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -3797,8 +3797,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -3822,8 +3822,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith?: string | null;
 
@@ -3843,8 +3843,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -3916,15 +3916,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -3938,15 +3938,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -3993,8 +3993,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -4007,8 +4007,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 	}
@@ -4049,15 +4049,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 		LensArn?: string;
@@ -4071,15 +4071,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 		LensArn: FormControl<string | null | undefined>,
@@ -4120,8 +4120,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -4134,8 +4134,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 	}
@@ -4155,15 +4155,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		SharedBy?: string | null;
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith?: string | null;
 
@@ -4175,15 +4175,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 	}
@@ -4196,15 +4196,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		SharedBy: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -4216,15 +4216,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 	}
@@ -4296,16 +4296,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -4314,16 +4314,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4344,8 +4344,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -4358,8 +4358,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4379,16 +4379,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -4399,16 +4399,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4434,8 +4434,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 		Tags?: TagMap;
@@ -4451,8 +4451,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4470,16 +4470,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -4488,16 +4488,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4516,16 +4516,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: string;
 
 		/**
 		 * The description for the workload.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: string;
 
@@ -4564,8 +4564,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner?: string | null;
 
@@ -4596,8 +4596,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 		Tags?: TagMap;
@@ -4612,16 +4612,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the workload.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -4639,8 +4639,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner: FormControl<string | null | undefined>,
 
@@ -4665,8 +4665,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4696,8 +4696,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
@@ -4710,8 +4710,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -4722,8 +4722,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -4736,8 +4736,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4992,8 +4992,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 
@@ -5003,8 +5003,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 		Tags?: TagMap;
@@ -5013,8 +5013,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 
@@ -5024,8 +5024,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -5076,24 +5076,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: string;
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: string;
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: string;
 	}
@@ -5115,24 +5115,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 	}
@@ -5166,24 +5166,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: string;
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: string;
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: string;
 	}
@@ -5205,24 +5205,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 	}
@@ -5330,8 +5330,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -5343,8 +5343,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -5645,15 +5645,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -5689,8 +5689,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner?: string | null;
 		IsReviewOwnerUpdateAcknowledged?: boolean | null;
@@ -5724,15 +5724,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5747,8 +5747,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner: FormControl<string | null | undefined>,
 		IsReviewOwnerUpdateAcknowledged: FormControl<boolean | null | undefined>,
@@ -5822,15 +5822,15 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -5839,15 +5839,15 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -5863,15 +5863,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName?: string | null;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -5879,15 +5879,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -5907,6 +5907,8 @@ export namespace MyNS {
 		/**
 		 * <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> <p> <b>Disclaimer</b> </p> <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> </note>
 		 * Patch workloads/{WorkloadId}/associateLenses
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		AssociateLenses(WorkloadId: string, requestBody: AssociateLensesPatchBody): Observable<HttpResponse<string>> {
@@ -5916,6 +5918,8 @@ export namespace MyNS {
 		/**
 		 * Associate a profile with a workload.
 		 * Patch workloads/{WorkloadId}/associateProfiles
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		AssociateProfiles(WorkloadId: string, requestBody: AssociateProfilesPatchBody): Observable<HttpResponse<string>> {
@@ -5925,6 +5929,8 @@ export namespace MyNS {
 		/**
 		 * <p>Create a lens share.</p> <p>The owner of a lens can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be shared.</p> <p> Shared access to a lens is not removed until the lens invitation is deleted.</p> <p>If you share a lens with an organization or OU, all accounts in the organization or OU are granted access to the lens.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html">Sharing a custom lens</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		 * Post lenses/{LensAlias}/shares
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @return {CreateLensShareOutput} Success
 		 */
 		CreateLensShare(LensAlias: string, requestBody: CreateLensSharePostBody): Observable<CreateLensShareOutput> {
@@ -5934,8 +5940,12 @@ export namespace MyNS {
 		/**
 		 * List the lens shares associated with the lens.
 		 * Get lenses/{LensAlias}/shares
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @param {string} SharedWithPrefix The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.
+		 *     Max length: 100
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListLensSharesOutput} Success
 		 */
 		ListLensShares(LensAlias: string, SharedWithPrefix: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, Status: LensShareSummaryStatus | null | undefined): Observable<ListLensSharesOutput> {
@@ -5945,6 +5955,8 @@ export namespace MyNS {
 		/**
 		 * <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p> <p>Use this operation to publish a new lens version after you have imported a lens. The <code>LensAlias</code> is used to identify the lens to be published. The owner of a lens can share the lens with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
 		 * Post lenses/{LensAlias}/versions
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @return {CreateLensVersionOutput} Success
 		 */
 		CreateLensVersion(LensAlias: string, requestBody: CreateLensVersionPostBody): Observable<CreateLensVersionOutput> {
@@ -5954,6 +5966,8 @@ export namespace MyNS {
 		/**
 		 * Create a milestone for an existing workload.
 		 * Post workloads/{WorkloadId}/milestones
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {CreateMilestoneOutput} Success
 		 */
 		CreateMilestone(WorkloadId: string, requestBody: CreateMilestonePostBody): Observable<CreateMilestoneOutput> {
@@ -5973,6 +5987,7 @@ export namespace MyNS {
 		 * Create a profile share.
 		 * Post profiles/{ProfileArn}/shares
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
 		 * @return {CreateProfileShareOutput} Success
 		 */
 		CreateProfileShare(ProfileArn: string, requestBody: CreateProfileSharePostBody): Observable<CreateProfileShareOutput> {
@@ -5983,8 +5998,11 @@ export namespace MyNS {
 		 * List profile shares.
 		 * Get profiles/{ProfileArn}/shares
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
 		 * @param {string} SharedWithPrefix The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.
+		 *     Max length: 100
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListProfileSharesOutput} Success
 		 */
 		ListProfileShares(ProfileArn: string, SharedWithPrefix: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, Status: LensShareSummaryStatus | null | undefined): Observable<ListProfileSharesOutput> {
@@ -6003,6 +6021,8 @@ export namespace MyNS {
 		/**
 		 * <p>Create a workload share.</p> <p>The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p> <p>If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
 		 * Post workloads/{WorkloadId}/shares
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {CreateWorkloadShareOutput} Success
 		 */
 		CreateWorkloadShare(WorkloadId: string, requestBody: CreateWorkloadSharePostBody): Observable<CreateWorkloadShareOutput> {
@@ -6012,8 +6032,12 @@ export namespace MyNS {
 		/**
 		 * List the workload shares associated with the workload.
 		 * Get workloads/{WorkloadId}/shares
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @param {string} SharedWithPrefix The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.
+		 *     Max length: 100
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListWorkloadSharesOutput} Success
 		 */
 		ListWorkloadShares(WorkloadId: string, SharedWithPrefix: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, Status: LensShareSummaryStatus | null | undefined): Observable<ListWorkloadSharesOutput> {
@@ -6023,6 +6047,10 @@ export namespace MyNS {
 		/**
 		 * <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		 * Delete lenses/{LensAlias}#ClientRequestToken&LensStatus
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @param {LensStatusType} LensStatus The status of the lens to be deleted.
 		 * @return {void} Success
 		 */
@@ -6033,6 +6061,10 @@ export namespace MyNS {
 		/**
 		 * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		 * Delete lenses/{LensAlias}/shares/{ShareId}#ClientRequestToken
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @return {void} Success
 		 */
 		DeleteLensShare(ShareId: string, LensAlias: string, ClientRequestToken: string): Observable<HttpResponse<string>> {
@@ -6043,6 +6075,9 @@ export namespace MyNS {
 		 * <p>Delete a profile.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		 * Delete profiles/{ProfileArn}#ClientRequestToken
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @return {void} Success
 		 */
 		DeleteProfile(ProfileArn: string, ClientRequestToken: string): Observable<HttpResponse<string>> {
@@ -6053,6 +6088,9 @@ export namespace MyNS {
 		 * Delete a profile share.
 		 * Delete profiles/{ProfileArn}/shares/{ShareId}#ClientRequestToken
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @return {void} Success
 		 */
 		DeleteProfileShare(ShareId: string, ProfileArn: string, ClientRequestToken: string): Observable<HttpResponse<string>> {
@@ -6062,6 +6100,10 @@ export namespace MyNS {
 		/**
 		 * Delete an existing workload.
 		 * Delete workloads/{WorkloadId}#ClientRequestToken
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @return {void} Success
 		 */
 		DeleteWorkload(WorkloadId: string, ClientRequestToken: string): Observable<HttpResponse<string>> {
@@ -6071,6 +6113,10 @@ export namespace MyNS {
 		/**
 		 * Delete a workload share.
 		 * Delete workloads/{WorkloadId}/shares/{ShareId}#ClientRequestToken
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} ClientRequestToken Min length: 1
+		 *     Max length: 2048
 		 * @return {void} Success
 		 */
 		DeleteWorkloadShare(ShareId: string, WorkloadId: string, ClientRequestToken: string): Observable<HttpResponse<string>> {
@@ -6080,6 +6126,8 @@ export namespace MyNS {
 		/**
 		 * <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note> <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p> </note>
 		 * Patch workloads/{WorkloadId}/disassociateLenses
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		DisassociateLenses(WorkloadId: string, requestBody: DisassociateLensesPatchBody): Observable<HttpResponse<string>> {
@@ -6089,6 +6137,8 @@ export namespace MyNS {
 		/**
 		 * Disassociate a profile from a workload.
 		 * Patch workloads/{WorkloadId}/disassociateProfiles
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {void} Success
 		 */
 		DisassociateProfiles(WorkloadId: string, requestBody: DisassociateProfilesPatchBody): Observable<HttpResponse<string>> {
@@ -6098,7 +6148,10 @@ export namespace MyNS {
 		/**
 		 * <p>Export an existing lens.</p> <p>Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be exported.</p> <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p> </note>
 		 * Get lenses/{LensAlias}/export
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @param {string} LensVersion The lens version to be exported.
+		 *     Min length: 1    Max length: 32
 		 * @return {ExportLensOutput} Success
 		 */
 		ExportLens(LensAlias: string, LensVersion: string | null | undefined): Observable<ExportLensOutput> {
@@ -6108,6 +6161,14 @@ export namespace MyNS {
 		/**
 		 * Get the answer to a specific question in a workload review.
 		 * Get workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} QuestionId Min length: 1
+		 *     Max length: 128
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @return {GetAnswerOutput} Success
 		 */
 		GetAnswer(WorkloadId: string, LensAlias: string, QuestionId: string, MilestoneNumber: number | null | undefined): Observable<GetAnswerOutput> {
@@ -6117,6 +6178,12 @@ export namespace MyNS {
 		/**
 		 * Update the answer to a specific question in a workload review.
 		 * Patch workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} QuestionId Min length: 1
+		 *     Max length: 128
 		 * @return {UpdateAnswerOutput} Success
 		 */
 		UpdateAnswer(WorkloadId: string, LensAlias: string, QuestionId: string, requestBody: UpdateAnswerPatchBody): Observable<UpdateAnswerOutput> {
@@ -6129,6 +6196,7 @@ export namespace MyNS {
 		 * @param {ReportFormat} Format <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
 		 * @param {boolean} IncludeSharedResources Set to <code>true</code> to have shared resources included in the report.
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 15
 		 * @return {GetConsolidatedReportOutput} Success
 		 */
 		GetConsolidatedReport(Format: ReportFormat, IncludeSharedResources: boolean | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<GetConsolidatedReportOutput> {
@@ -6138,7 +6206,10 @@ export namespace MyNS {
 		/**
 		 * Get an existing lens.
 		 * Get lenses/{LensAlias}
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @param {string} LensVersion The lens version to be retrieved.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetLensOutput} Success
 		 */
 		GetLens(LensAlias: string, LensVersion: string | null | undefined): Observable<GetLensOutput> {
@@ -6148,6 +6219,12 @@ export namespace MyNS {
 		/**
 		 * Get lens review.
 		 * Get workloads/{WorkloadId}/lensReviews/{LensAlias}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @return {GetLensReviewOutput} Success
 		 */
 		GetLensReview(WorkloadId: string, LensAlias: string, MilestoneNumber: number | null | undefined): Observable<GetLensReviewOutput> {
@@ -6157,6 +6234,10 @@ export namespace MyNS {
 		/**
 		 * Update lens review for a particular workload.
 		 * Patch workloads/{WorkloadId}/lensReviews/{LensAlias}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @return {UpdateLensReviewOutput} Success
 		 */
 		UpdateLensReview(WorkloadId: string, LensAlias: string, requestBody: UpdateLensReviewPatchBody): Observable<UpdateLensReviewOutput> {
@@ -6166,6 +6247,12 @@ export namespace MyNS {
 		/**
 		 * Get lens review report.
 		 * Get workloads/{WorkloadId}/lensReviews/{LensAlias}/report
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @return {GetLensReviewReportOutput} Success
 		 */
 		GetLensReviewReport(WorkloadId: string, LensAlias: string, MilestoneNumber: number | null | undefined): Observable<GetLensReviewReportOutput> {
@@ -6175,8 +6262,12 @@ export namespace MyNS {
 		/**
 		 * Get lens version differences.
 		 * Get lenses/{LensAlias}/versionDifference
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @param {string} BaseLensVersion The base version of the lens.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} TargetLensVersion The lens version to target a difference for.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetLensVersionDifferenceOutput} Success
 		 */
 		GetLensVersionDifference(LensAlias: string, BaseLensVersion: string | null | undefined, TargetLensVersion: string | null | undefined): Observable<GetLensVersionDifferenceOutput> {
@@ -6186,6 +6277,10 @@ export namespace MyNS {
 		/**
 		 * Get a milestone for an existing workload.
 		 * Get workloads/{WorkloadId}/milestones/{MilestoneNumber}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @return {GetMilestoneOutput} Success
 		 */
 		GetMilestone(WorkloadId: string, MilestoneNumber: number): Observable<GetMilestoneOutput> {
@@ -6196,7 +6291,9 @@ export namespace MyNS {
 		 * Get profile information.
 		 * Get profiles/{ProfileArn}
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
 		 * @param {string} ProfileVersion The profile version.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetProfileOutput} Success
 		 */
 		GetProfile(ProfileArn: string, ProfileVersion: string | null | undefined): Observable<GetProfileOutput> {
@@ -6207,6 +6304,7 @@ export namespace MyNS {
 		 * Update a profile.
 		 * Patch profiles/{ProfileArn}
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
 		 * @return {UpdateProfileOutput} Success
 		 */
 		UpdateProfile(ProfileArn: string, requestBody: UpdateProfilePatchBody): Observable<UpdateProfileOutput> {
@@ -6225,6 +6323,8 @@ export namespace MyNS {
 		/**
 		 * Get an existing workload.
 		 * Get workloads/{WorkloadId}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {GetWorkloadOutput} Success
 		 */
 		GetWorkload(WorkloadId: string): Observable<GetWorkloadOutput> {
@@ -6234,6 +6334,8 @@ export namespace MyNS {
 		/**
 		 * Update an existing workload.
 		 * Patch workloads/{WorkloadId}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {UpdateWorkloadOutput} Success
 		 */
 		UpdateWorkload(WorkloadId: string, requestBody: UpdateWorkloadPatchBody): Observable<UpdateWorkloadOutput> {
@@ -6252,7 +6354,16 @@ export namespace MyNS {
 		/**
 		 * List of answers for a particular workload and lens.
 		 * Get workloads/{WorkloadId}/lensReviews/{LensAlias}/answers
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} PillarId Min length: 1
+		 *     Max length: 64
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {QuestionPriority} QuestionPriority The priority of the question.
 		 * @return {ListAnswersOutput} Success
 		 */
@@ -6263,6 +6374,8 @@ export namespace MyNS {
 		/**
 		 * List of Trusted Advisor check details by account related to the workload.
 		 * Post workloads/{WorkloadId}/checks
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCheckDetailsOutput} Success
@@ -6274,6 +6387,8 @@ export namespace MyNS {
 		/**
 		 * List of Trusted Advisor checks summarized for all accounts related to the workload.
 		 * Post workloads/{WorkloadId}/checkSummaries
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCheckSummariesOutput} Success
@@ -6285,7 +6400,16 @@ export namespace MyNS {
 		/**
 		 * List lens review improvements.
 		 * Get workloads/{WorkloadId}/lensReviews/{LensAlias}/improvements
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
+		 * @param {string} PillarId Min length: 1
+		 *     Max length: 64
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {QuestionPriority} QuestionPriority The priority of the question.
 		 * @return {ListLensReviewImprovementsOutput} Success
 		 */
@@ -6296,6 +6420,12 @@ export namespace MyNS {
 		/**
 		 * List lens reviews for a particular workload.
 		 * Get workloads/{WorkloadId}/lensReviews
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {number} MilestoneNumber Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 50
 		 * @return {ListLensReviewsOutput} Success
 		 */
 		ListLensReviews(WorkloadId: string, MilestoneNumber: number | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListLensReviewsOutput> {
@@ -6305,8 +6435,12 @@ export namespace MyNS {
 		/**
 		 * List the available lenses.
 		 * Get lenses
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 50
 		 * @param {LensType} LensType The type of lenses to be returned.
 		 * @param {LensStatusType} LensStatus The status of lenses to be returned.
+		 * @param {string} LensName Min length: 1
+		 *     Max length: 128
 		 * @return {ListLensesOutput} Success
 		 */
 		ListLenses(NextToken: string | null | undefined, MaxResults: number | null | undefined, LensType: LensType | null | undefined, LensStatus: LensStatusType | null | undefined, LensName: string | null | undefined): Observable<ListLensesOutput> {
@@ -6316,6 +6450,8 @@ export namespace MyNS {
 		/**
 		 * List all milestones for an existing workload.
 		 * Post workloads/{WorkloadId}/milestonesSummaries
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMilestonesOutput} Success
@@ -6338,6 +6474,10 @@ export namespace MyNS {
 		/**
 		 * List profile notifications.
 		 * Get profileNotifications/
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 50
 		 * @return {ListProfileNotificationsOutput} Success
 		 */
 		ListProfileNotifications(WorkloadId: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListProfileNotificationsOutput> {
@@ -6348,7 +6488,10 @@ export namespace MyNS {
 		 * List profiles.
 		 * Get profileSummaries
 		 * @param {string} ProfileNamePrefix Prefix for profile name.
+		 *     Max length: 100
 		 * @param {ProfileOwnerType} ProfileOwnerType Profile owner type.
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 50
 		 * @return {ListProfilesOutput} Success
 		 */
 		ListProfiles(ProfileNamePrefix: string | null | undefined, ProfileOwnerType: ProfileOwnerType | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListProfilesOutput> {
@@ -6358,10 +6501,14 @@ export namespace MyNS {
 		/**
 		 * List the workload invitations.
 		 * Get shareInvitations
+		 * @param {string} WorkloadNamePrefix Max length: 100
 		 * @param {string} LensNamePrefix An optional string added to the beginning of each lens name returned in the results.
+		 *     Max length: 100
 		 * @param {ShareResourceType} ShareResourceType The type of share invitations to be returned.
 		 * @param {number} MaxResults The maximum number of results to return for this request.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} ProfileNamePrefix Profile name prefix.
+		 *     Max length: 100
 		 * @return {ListShareInvitationsOutput} Success
 		 */
 		ListShareInvitations(WorkloadNamePrefix: string | null | undefined, LensNamePrefix: string | null | undefined, ShareResourceType: ShareResourceType | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, ProfileNamePrefix: string | null | undefined): Observable<ListShareInvitationsOutput> {
@@ -6401,6 +6548,7 @@ export namespace MyNS {
 		 * <p>Deletes specified tags from a resource.</p> <note> <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.</p> </note> <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
 		 * Delete tags/{WorkloadArn}#tagKeys
 		 * @param {Array<string>} tagKeys A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(WorkloadArn: string, tagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -6429,6 +6577,8 @@ export namespace MyNS {
 		/**
 		 * Update a workload share.
 		 * Patch workloads/{WorkloadId}/shares/{ShareId}
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @return {UpdateWorkloadShareOutput} Success
 		 */
 		UpdateWorkloadShare(ShareId: string, WorkloadId: string, requestBody: UpdateWorkloadSharePatchBody): Observable<UpdateWorkloadShareOutput> {
@@ -6438,6 +6588,10 @@ export namespace MyNS {
 		/**
 		 * Upgrade lens review for a particular workload.
 		 * Put workloads/{WorkloadId}/lensReviews/{LensAlias}/upgrade
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
+		 * @param {string} LensAlias Min length: 1
+		 *     Max length: 128
 		 * @return {void} Success
 		 */
 		UpgradeLensReview(WorkloadId: string, LensAlias: string, requestBody: UpgradeLensReviewPutBody): Observable<HttpResponse<string>> {
@@ -6447,7 +6601,10 @@ export namespace MyNS {
 		/**
 		 * Upgrade a profile.
 		 * Put workloads/{WorkloadId}/profiles/{ProfileArn}/upgrade
+		 * @param {string} WorkloadId Min length: 32
+		 *     Max length: 32
 		 * @param {string} ProfileArn The profile ARN.
+		 *     Max length: 2084
 		 * @return {void} Success
 		 */
 		UpgradeProfileVersion(WorkloadId: string, ProfileArn: string, requestBody: UpgradeProfileVersionPutBody): Observable<HttpResponse<string>> {
@@ -6494,16 +6651,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -6512,16 +6669,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -6538,8 +6695,8 @@ export namespace MyNS {
 		/**
 		 * The version of the lens being created.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		LensVersion: string;
 
@@ -6549,8 +6706,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -6559,8 +6716,8 @@ export namespace MyNS {
 		/**
 		 * The version of the lens being created.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		LensVersion: FormControl<string | null | undefined>,
 
@@ -6570,8 +6727,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -6589,16 +6746,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -6607,16 +6764,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -6633,16 +6790,16 @@ export namespace MyNS {
 		/**
 		 * Name of the profile.
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileName: string;
 
 		/**
 		 * The profile description.
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileDescription: string;
 
@@ -6655,8 +6812,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 
@@ -6668,24 +6825,24 @@ export namespace MyNS {
 		/**
 		 * Name of the profile.
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The profile description.
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -6707,16 +6864,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -6725,16 +6882,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -6751,16 +6908,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: string;
 
 		/**
 		 * The description for the workload.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: string;
 
@@ -6799,8 +6956,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner?: string | null;
 
@@ -6831,8 +6988,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 
@@ -6859,16 +7016,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the workload.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -6886,8 +7043,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner: FormControl<string | null | undefined>,
 
@@ -6912,8 +7069,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -6955,8 +7112,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: string;
 
@@ -6969,8 +7126,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 	}
@@ -6979,8 +7136,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 12
+		 * Max length: 2048
 		 */
 		SharedWith: FormControl<string | null | undefined>,
 
@@ -6993,8 +7150,8 @@ export namespace MyNS {
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -7122,8 +7279,8 @@ export namespace MyNS {
 
 		/**
 		 * The profile description.
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileDescription?: string | null;
 
@@ -7134,8 +7291,8 @@ export namespace MyNS {
 
 		/**
 		 * The profile description.
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		ProfileDescription: FormControl<string | null | undefined>,
 	}
@@ -7150,15 +7307,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName?: string | null;
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -7194,8 +7351,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner?: string | null;
 
@@ -7236,15 +7393,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		WorkloadName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the workload.
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -7259,8 +7416,8 @@ export namespace MyNS {
 
 		/**
 		 * The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		ReviewOwner: FormControl<string | null | undefined>,
 
@@ -7322,24 +7479,24 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias?: string | null;
 
 		/**
 		 * The JSON representation of a lens.
 		 * Required
-		 * Max length: 500000
 		 * Min length: 2
+		 * Max length: 500000
 		 */
 		JSONString: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: string;
 
@@ -7350,24 +7507,24 @@ export namespace MyNS {
 
 		/**
 		 * <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		LensAlias: FormControl<string | null | undefined>,
 
 		/**
 		 * The JSON representation of a lens.
 		 * Required
-		 * Max length: 500000
 		 * Min length: 2
+		 * Max length: 500000
 		 */
 		JSONString: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -7405,24 +7562,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: string;
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: string;
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: string;
 	}
@@ -7447,24 +7604,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 	}
@@ -7501,24 +7658,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: string;
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: string;
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: string;
 	}
@@ -7543,24 +7700,24 @@ export namespace MyNS {
 		/**
 		 * <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		PillarId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the question.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		QuestionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of a choice.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChoiceId: FormControl<string | null | undefined>,
 	}
@@ -7612,8 +7769,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId?: string | null;
 
@@ -7631,8 +7788,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		WorkloadId: FormControl<string | null | undefined>,
 
@@ -7798,15 +7955,15 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: string;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -7815,15 +7972,15 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -7839,15 +7996,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName?: string | null;
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -7855,15 +8012,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		MilestoneName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}

@@ -340,7 +340,10 @@ export namespace MyNS {
 		/** Meeting rooms. Rooms at the hotel designated for business-related gatherings. Rooms are usually equipped with tables or desks, office chairs and audio/visual facilities to allow for presentations and conference calls. Also known as conference rooms. */
 		meetingRooms?: boolean | null;
 
-		/** Meeting rooms count. The number of meeting rooms at the property. */
+		/**
+		 * Meeting rooms count. The number of meeting rooms at the property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meetingRoomsCount?: number | null;
 
 		/** Meeting rooms count exception. */
@@ -362,7 +365,10 @@ export namespace MyNS {
 		/** Meeting rooms. Rooms at the hotel designated for business-related gatherings. Rooms are usually equipped with tables or desks, office chairs and audio/visual facilities to allow for presentations and conference calls. Also known as conference rooms. */
 		meetingRooms: FormControl<boolean | null | undefined>,
 
-		/** Meeting rooms count. The number of meeting rooms at the property. */
+		/**
+		 * Meeting rooms count. The number of meeting rooms at the property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meetingRoomsCount: FormControl<number | null | undefined>,
 
 		/** Meeting rooms count exception. */
@@ -816,7 +822,10 @@ export namespace MyNS {
 		/** Restaurant exception. */
 		restaurantException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Restaurants count. The number of restaurants at the hotel. */
+		/**
+		 * Restaurants count. The number of restaurants at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restaurantsCount?: number | null;
 
 		/** Restaurants count exception. */
@@ -892,7 +901,10 @@ export namespace MyNS {
 		/** Restaurant exception. */
 		restaurantException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Restaurants count. The number of restaurants at the hotel. */
+		/**
+		 * Restaurants count. The number of restaurants at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restaurantsCount: FormControl<number | null | undefined>,
 
 		/** Restaurants count exception. */
@@ -1085,19 +1097,28 @@ export namespace MyNS {
 		/** Executive floor exception. */
 		executiveFloorException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAdultOccupantsCount?: number | null;
 
 		/** Max adult occupants count exception. */
 		maxAdultOccupantsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max child occupants count. The total number of children allowed to stay overnight in the room. */
+		/**
+		 * Max child occupants count. The total number of children allowed to stay overnight in the room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildOccupantsCount?: number | null;
 
 		/** Max child occupants count exception. */
 		maxChildOccupantsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max occupants count. The total number of guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max occupants count. The total number of guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccupantsCount?: number | null;
 
 		/** Max occupants count exception. */
@@ -1149,19 +1170,28 @@ export namespace MyNS {
 		/** Executive floor exception. */
 		executiveFloorException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAdultOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max adult occupants count exception. */
 		maxAdultOccupantsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max child occupants count. The total number of children allowed to stay overnight in the room. */
+		/**
+		 * Max child occupants count. The total number of children allowed to stay overnight in the room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max child occupants count exception. */
 		maxChildOccupantsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max occupants count. The total number of guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max occupants count. The total number of guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max occupants count exception. */
@@ -1908,7 +1938,10 @@ export namespace MyNS {
 		/** Balcony exception. */
 		balconyException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Living area sq meters. The measurement in meters of the area of a guestroom's living space. */
+		/**
+		 * Living area sq meters. The measurement in meters of the area of a guestroom's living space.
+		 * Type: float
+		 */
 		livingAreaSqMeters?: number | null;
 
 		/** Living area sq meters exception. */
@@ -1948,7 +1981,10 @@ export namespace MyNS {
 		/** Balcony exception. */
 		balconyException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Living area sq meters. The measurement in meters of the area of a guestroom's living space. */
+		/**
+		 * Living area sq meters. The measurement in meters of the area of a guestroom's living space.
+		 * Type: float
+		 */
 		livingAreaSqMeters: FormControl<number | null | undefined>,
 
 		/** Living area sq meters exception. */
@@ -2000,25 +2036,37 @@ export namespace MyNS {
 	/** Information about sleeping features in the living area. */
 	export interface LivingAreaSleeping {
 
-		/** Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds. */
+		/**
+		 * Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bedsCount?: number | null;
 
 		/** Beds count exception. */
 		bedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed. */
+		/**
+		 * Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bunkBedsCount?: number | null;
 
 		/** Bunk beds count exception. */
 		bunkBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed */
+		/**
+		 * Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cribsCount?: number | null;
 
 		/** Cribs count exception. */
 		cribsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed. */
+		/**
+		 * Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doubleBedsCount?: number | null;
 
 		/** Double beds count exception. */
@@ -2036,7 +2084,10 @@ export namespace MyNS {
 		/** Hypoallergenic bedding exception. */
 		hypoallergenicBeddingException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king. */
+		/**
+		 * King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		kingBedsCount?: number | null;
 
 		/** King beds count exception. */
@@ -2048,31 +2099,46 @@ export namespace MyNS {
 		/** Memory foam pillows exception. */
 		memoryFoamPillowsException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots. */
+		/**
+		 * Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherBedsCount?: number | null;
 
 		/** Other beds count exception. */
 		otherBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm). */
+		/**
+		 * Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queenBedsCount?: number | null;
 
 		/** Queen beds count exception. */
 		queenBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request. */
+		/**
+		 * Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rollAwayBedsCount?: number | null;
 
 		/** Roll away beds count exception. */
 		rollAwayBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult. */
+		/**
+		 * Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		singleOrTwinBedsCount?: number | null;
 
 		/** Single or twin beds count exception. */
 		singleOrTwinBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress. */
+		/**
+		 * Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sofaBedsCount?: number | null;
 
 		/** Sofa beds count exception. */
@@ -2088,25 +2154,37 @@ export namespace MyNS {
 	/** Information about sleeping features in the living area. */
 	export interface LivingAreaSleepingFormProperties {
 
-		/** Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds. */
+		/**
+		 * Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bedsCount: FormControl<number | null | undefined>,
 
 		/** Beds count exception. */
 		bedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed. */
+		/**
+		 * Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bunkBedsCount: FormControl<number | null | undefined>,
 
 		/** Bunk beds count exception. */
 		bunkBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed */
+		/**
+		 * Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cribsCount: FormControl<number | null | undefined>,
 
 		/** Cribs count exception. */
 		cribsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed. */
+		/**
+		 * Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doubleBedsCount: FormControl<number | null | undefined>,
 
 		/** Double beds count exception. */
@@ -2124,7 +2202,10 @@ export namespace MyNS {
 		/** Hypoallergenic bedding exception. */
 		hypoallergenicBeddingException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king. */
+		/**
+		 * King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		kingBedsCount: FormControl<number | null | undefined>,
 
 		/** King beds count exception. */
@@ -2136,31 +2217,46 @@ export namespace MyNS {
 		/** Memory foam pillows exception. */
 		memoryFoamPillowsException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots. */
+		/**
+		 * Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherBedsCount: FormControl<number | null | undefined>,
 
 		/** Other beds count exception. */
 		otherBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm). */
+		/**
+		 * Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queenBedsCount: FormControl<number | null | undefined>,
 
 		/** Queen beds count exception. */
 		queenBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request. */
+		/**
+		 * Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rollAwayBedsCount: FormControl<number | null | undefined>,
 
 		/** Roll away beds count exception. */
 		rollAwayBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult. */
+		/**
+		 * Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		singleOrTwinBedsCount: FormControl<number | null | undefined>,
 
 		/** Single or twin beds count exception. */
 		singleOrTwinBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress. */
+		/**
+		 * Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sofaBedsCount: FormControl<number | null | undefined>,
 
 		/** Sofa beds count exception. */
@@ -3031,13 +3127,19 @@ export namespace MyNS {
 		/** Kids stay free exception. */
 		kidsStayFreeException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildAge?: number | null;
 
 		/** Max child age exception. */
 		maxChildAgeException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxKidsStayFreeCount?: number | null;
 
 		/** Max kids stay free count exception. */
@@ -3080,13 +3182,19 @@ export namespace MyNS {
 		/** Kids stay free exception. */
 		kidsStayFreeException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildAge: FormControl<number | null | undefined>,
 
 		/** Max child age exception. */
 		maxChildAgeException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxKidsStayFreeCount: FormControl<number | null | undefined>,
 
 		/** Max kids stay free count exception. */
@@ -3122,32 +3230,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -3266,7 +3398,10 @@ export namespace MyNS {
 		/** Indoor pool exception. */
 		indoorPoolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Indoor pools count. The sum of all indoor pools at the hotel. */
+		/**
+		 * Indoor pools count. The sum of all indoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorPoolsCount?: number | null;
 
 		/** Indoor pools count exception. */
@@ -3290,7 +3425,10 @@ export namespace MyNS {
 		/** Outdoor pool exception. */
 		outdoorPoolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Outdoor pools count. The sum of all outdoor pools at the hotel. */
+		/**
+		 * Outdoor pools count. The sum of all outdoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outdoorPoolsCount?: number | null;
 
 		/** Outdoor pools count exception. */
@@ -3302,7 +3440,10 @@ export namespace MyNS {
 		/** Pool exception. */
 		poolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Pools count. The sum of all pools at the hotel. */
+		/**
+		 * Pools count. The sum of all pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolsCount?: number | null;
 
 		/** Pools count exception. */
@@ -3354,7 +3495,10 @@ export namespace MyNS {
 		/** Indoor pool exception. */
 		indoorPoolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Indoor pools count. The sum of all indoor pools at the hotel. */
+		/**
+		 * Indoor pools count. The sum of all indoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorPoolsCount: FormControl<number | null | undefined>,
 
 		/** Indoor pools count exception. */
@@ -3378,7 +3522,10 @@ export namespace MyNS {
 		/** Outdoor pool exception. */
 		outdoorPoolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Outdoor pools count. The sum of all outdoor pools at the hotel. */
+		/**
+		 * Outdoor pools count. The sum of all outdoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outdoorPoolsCount: FormControl<number | null | undefined>,
 
 		/** Outdoor pools count exception. */
@@ -3390,7 +3537,10 @@ export namespace MyNS {
 		/** Pool exception. */
 		poolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Pools count. The sum of all pools at the hotel. */
+		/**
+		 * Pools count. The sum of all pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolsCount: FormControl<number | null | undefined>,
 
 		/** Pools count exception. */
@@ -3458,25 +3608,37 @@ export namespace MyNS {
 	/** General factual information about the property's physical structure and important dates. */
 	export interface Property {
 
-		/** Built year. The year that construction of the property was completed. */
+		/**
+		 * Built year. The year that construction of the property was completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		builtYear?: number | null;
 
 		/** Built year exception. */
 		builtYearException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests. */
+		/**
+		 * Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floorsCount?: number | null;
 
 		/** Floors count exception. */
 		floorsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior. */
+		/**
+		 * Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastRenovatedYear?: number | null;
 
 		/** Last renovated year exception. */
 		lastRenovatedYearException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops. */
+		/**
+		 * Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roomsCount?: number | null;
 
 		/** Rooms count exception. */
@@ -3486,25 +3648,37 @@ export namespace MyNS {
 	/** General factual information about the property's physical structure and important dates. */
 	export interface PropertyFormProperties {
 
-		/** Built year. The year that construction of the property was completed. */
+		/**
+		 * Built year. The year that construction of the property was completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		builtYear: FormControl<number | null | undefined>,
 
 		/** Built year exception. */
 		builtYearException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests. */
+		/**
+		 * Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floorsCount: FormControl<number | null | undefined>,
 
 		/** Floors count exception. */
 		floorsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior. */
+		/**
+		 * Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastRenovatedYear: FormControl<number | null | undefined>,
 
 		/** Last renovated year exception. */
 		lastRenovatedYearException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops. */
+		/**
+		 * Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roomsCount: FormControl<number | null | undefined>,
 
 		/** Rooms count exception. */

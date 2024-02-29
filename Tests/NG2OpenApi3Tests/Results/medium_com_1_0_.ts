@@ -261,6 +261,7 @@ export namespace MyNS {
 		 * Get top_writer/{topic_slug}
 		 * @param {string} topic_slug It's a unique string, usually hyphen-separated, representing a topic/niche, as classified by Medium.
 		 * @param {number} count Limits the number of `article_ids` in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Top_writer_topic_slugGetByCountReturn} OK
 		 */
 		Top_writer_topic_slugGetByCount(topic_slug: string, count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Top_writer_topic_slugGetByCountReturn> {
@@ -280,7 +281,9 @@ export namespace MyNS {
 		 *   - `top_week` : For getting best articles of the week
 		 *   - `top_all_time`: For getting best article of all time
 		 * @param {number} after To get the subsequent top feeds. (`after` &lt; 250)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count To limit the number of top feeds. (`count` &lt; 25)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Topfeeds_tag_modeGetByAfterAndCountReturn} OK
 		 */
 		Topfeeds_tag_modeGetByAfterAndCount(tag: string, mode: string, after: number | null | undefined, count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Topfeeds_tag_modeGetByAfterAndCountReturn> {
@@ -334,6 +337,7 @@ export namespace MyNS {
 		 * Get user/{user_id}/followers
 		 * @param {string} user_id Unique hash id assigned to every single Medium user.
 		 * @param {number} count To limit the number of results. (count &lt; 1500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User_user_idFollowersGetByCountReturn} OK
 		 */
 		User_user_idFollowersGetByCount(user_id: string, count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<User_user_idFollowersGetByCountReturn> {
@@ -347,6 +351,7 @@ export namespace MyNS {
 		 * Get user/{user_id}/following
 		 * @param {string} user_id Unique hash id assigned to every single Medium user.
 		 * @param {number} count To limit the number of results. (count &lt; 1500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User_user_idFollowingGetByCountReturn} OK
 		 */
 		User_user_idFollowingGetByCount(user_id: string, count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<User_user_idFollowingGetByCountReturn> {
@@ -460,6 +465,8 @@ export namespace MyNS {
 
 	export interface Article_article_idGetReturn {
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		claps?: number | null;
 		id?: string | null;
 		image_url?: string | null;
@@ -469,18 +476,28 @@ export namespace MyNS {
 		last_modified_at?: string | null;
 		publication_id?: string | null;
 		published_at?: string | null;
+
+		/** Type: double */
 		reading_time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responses_count?: number | null;
 		subtitle?: string | null;
 		tags?: Array<string>;
 		title?: string | null;
 		topics?: Array<string>;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voters?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		word_count?: number | null;
 	}
 	export interface Article_article_idGetReturnFormProperties {
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		claps: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		image_url: FormControl<string | null | undefined>,
@@ -490,12 +507,20 @@ export namespace MyNS {
 		last_modified_at: FormControl<string | null | undefined>,
 		publication_id: FormControl<string | null | undefined>,
 		published_at: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		reading_time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responses_count: FormControl<number | null | undefined>,
 		subtitle: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voters: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		word_count: FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_article_idGetReturnFormGroup() {
@@ -536,11 +561,15 @@ export namespace MyNS {
 
 	export interface Article_article_idFansGetReturn {
 		article_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		voters?: Array<string>;
 	}
 	export interface Article_article_idFansGetReturnFormProperties {
 		article_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_article_idFansGetReturnFormGroup() {
@@ -607,38 +636,56 @@ export namespace MyNS {
 
 		/** `user_id` of the author */
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		claps?: number | null;
 
-		/** Number of articles in the list */
+		/**
+		 * Number of articles in the list
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 		created_at?: string | null;
 		description?: string | null;
 		id?: string | null;
 		last_item_inserted_at?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responses_count?: number | null;
 
 		/** Image URL */
 		thumbnail?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voters?: number | null;
 	}
 	export interface List_list_idGetReturnFormProperties {
 
 		/** `user_id` of the author */
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		claps: FormControl<number | null | undefined>,
 
-		/** Number of articles in the list */
+		/**
+		 * Number of articles in the list
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		last_item_inserted_at: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responses_count: FormControl<number | null | undefined>,
 
 		/** Image URL */
 		thumbnail: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voters: FormControl<number | null | undefined>,
 	}
 	export function CreateList_list_idGetReturnFormGroup() {
@@ -715,6 +762,8 @@ export namespace MyNS {
 		description?: string | null;
 		editors?: Array<string>;
 		facebook_pagename?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers?: number | null;
 		id?: string | null;
 		instagram_username?: string | null;
@@ -729,6 +778,8 @@ export namespace MyNS {
 		creator: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		facebook_pagename: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		instagram_username: FormControl<string | null | undefined>,
@@ -773,6 +824,8 @@ export namespace MyNS {
 		image?: string | null;
 		name?: string | null;
 		slug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers?: number | null;
 	}
 	export interface Publication_publication_idNewsletterGetReturnFormProperties {
@@ -782,6 +835,8 @@ export namespace MyNS {
 		image: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers: FormControl<number | null | undefined>,
 	}
 	export function CreatePublication_publication_idNewsletterGetReturnFormGroup() {
@@ -923,7 +978,11 @@ export namespace MyNS {
 	export interface User_user_idGetReturn {
 		allow_notes?: boolean | null;
 		bio?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		following_count?: number | null;
 		fullname?: string | null;
 		has_list?: boolean | null;
@@ -940,7 +999,11 @@ export namespace MyNS {
 	export interface User_user_idGetReturnFormProperties {
 		allow_notes: FormControl<boolean | null | undefined>,
 		bio: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		following_count: FormControl<number | null | undefined>,
 		fullname: FormControl<string | null | undefined>,
 		has_list: FormControl<boolean | null | undefined>,

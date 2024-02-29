@@ -473,19 +473,31 @@ export namespace MyNS {
 		/** The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: organizations/123/attackExposureResults/456 */
 		attackExposureResult?: string | null;
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedHighValueResourcesCount?: number | null;
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedLowValueResourcesCount?: number | null;
 
-		/** The number of medium value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of medium value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedMediumValueResourcesCount?: number | null;
 
 		/** The most recent time the attack exposure was updated on this finding. */
 		latestCalculationTime?: string | null;
 
-		/** A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate. */
+		/**
+		 * A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate.
+		 * Type: double
+		 */
 		score?: number | null;
 
 		/** What state this AttackExposure is in. This captures whether or not an attack exposure has been calculated or not. */
@@ -498,19 +510,31 @@ export namespace MyNS {
 		/** The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: organizations/123/attackExposureResults/456 */
 		attackExposureResult: FormControl<string | null | undefined>,
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedHighValueResourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedLowValueResourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of medium value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of medium value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedMediumValueResourcesCount: FormControl<number | null | undefined>,
 
 		/** The most recent time the attack exposure was updated on this finding. */
 		latestCalculationTime: FormControl<string | null | undefined>,
 
-		/** A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate. */
+		/**
+		 * A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate.
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** What state this AttackExposure is in. This captures whether or not an attack exposure has been calculated or not. */
@@ -1224,7 +1248,10 @@ export namespace MyNS {
 		/** Destination IP address. Not present for sockets that are listening and not connected. */
 		destinationIp?: string | null;
 
-		/** Destination port. Not present for sockets that are listening and not connected. */
+		/**
+		 * Destination port. Not present for sockets that are listening and not connected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** IANA Internet Protocol Number such as TCP(6) and UDP(17). */
@@ -1233,7 +1260,10 @@ export namespace MyNS {
 		/** Source IP address. */
 		sourceIp?: string | null;
 
-		/** Source port. */
+		/**
+		 * Source port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort?: number | null;
 	}
 
@@ -1243,7 +1273,10 @@ export namespace MyNS {
 		/** Destination IP address. Not present for sockets that are listening and not connected. */
 		destinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port. Not present for sockets that are listening and not connected. */
+		/**
+		 * Destination port. Not present for sockets that are listening and not connected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** IANA Internet Protocol Number such as TCP(6) and UDP(17). */
@@ -1252,7 +1285,10 @@ export namespace MyNS {
 		/** Source IP address. */
 		sourceIp: FormControl<string | null | undefined>,
 
-		/** Source port. */
+		/**
+		 * Source port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectionFormGroup() {
@@ -1416,13 +1452,21 @@ export namespace MyNS {
 
 	/** A position in the uploaded text version of a module. */
 	export interface Position {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber?: number | null;
 	}
 
 	/** A position in the uploaded text version of a module. */
 	export interface PositionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columnNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber: FormControl<number | null | undefined>,
 	}
 	export function CreatePositionFormGroup() {
@@ -1495,7 +1539,10 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact?: Cvssv3AvailabilityImpact | null;
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: double
+		 */
 		baseScore?: number | null;
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
@@ -1526,7 +1573,10 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact: FormControl<Cvssv3AvailabilityImpact | null | undefined>,
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: double
+		 */
 		baseScore: FormControl<number | null | undefined>,
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
@@ -1658,7 +1708,10 @@ export namespace MyNS {
 		/** The name of the binary associated with the memory hash signature detection. */
 		binary?: string | null;
 
-		/** The percentage of memory page hashes in the signature that were matched. */
+		/**
+		 * The percentage of memory page hashes in the signature that were matched.
+		 * Type: double
+		 */
 		percentPagesMatched?: number | null;
 	}
 
@@ -1668,7 +1721,10 @@ export namespace MyNS {
 		/** The name of the binary associated with the memory hash signature detection. */
 		binary: FormControl<string | null | undefined>,
 
-		/** The percentage of memory page hashes in the signature that were matched. */
+		/**
+		 * The percentage of memory page hashes in the signature that were matched.
+		 * Type: double
+		 */
 		percentPagesMatched: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectionFormGroup() {
@@ -3178,14 +3234,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -3969,7 +4031,10 @@ export namespace MyNS {
 		/** Required. Expression that defines what assets fields to use for grouping. The string value should follow SQL syntax: comma separated list of fields. For example: "security_center_properties.resource_project,security_center_properties.project". The following fields are supported when compare_duration is not set: * security_center_properties.resource_project * security_center_properties.resource_project_display_name * security_center_properties.resource_type * security_center_properties.resource_parent * security_center_properties.resource_parent_display_name The following fields are supported when compare_duration is set: * security_center_properties.resource_type * security_center_properties.resource_project_display_name * security_center_properties.resource_parent_display_name */
 		groupBy?: string | null;
 
-		/** The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000. */
+		/**
+		 * The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The value returned by the last `GroupAssetsResponse`; indicates that this is a continuation of a prior `GroupAssets` call, and that the system should return the next page of data. */
@@ -3991,7 +4056,10 @@ export namespace MyNS {
 		/** Required. Expression that defines what assets fields to use for grouping. The string value should follow SQL syntax: comma separated list of fields. For example: "security_center_properties.resource_project,security_center_properties.project". The following fields are supported when compare_duration is not set: * security_center_properties.resource_project * security_center_properties.resource_project_display_name * security_center_properties.resource_type * security_center_properties.resource_parent * security_center_properties.resource_parent_display_name The following fields are supported when compare_duration is set: * security_center_properties.resource_type * security_center_properties.resource_project_display_name * security_center_properties.resource_parent_display_name */
 		groupBy: FormControl<string | null | undefined>,
 
-		/** The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000. */
+		/**
+		 * The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The value returned by the last `GroupAssetsResponse`; indicates that this is a continuation of a prior `GroupAssets` call, and that the system should return the next page of data. */
@@ -4025,7 +4093,10 @@ export namespace MyNS {
 		/** Time used for executing the groupBy request. */
 		readTime?: string | null;
 
-		/** The total number of results matching the query. */
+		/**
+		 * The total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -4038,7 +4109,10 @@ export namespace MyNS {
 		/** Time used for executing the groupBy request. */
 		readTime: FormControl<string | null | undefined>,
 
-		/** The total number of results matching the query. */
+		/**
+		 * The total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupAssetsResponseFormGroup() {
@@ -4091,7 +4165,10 @@ export namespace MyNS {
 		/** Required. Expression that defines what assets fields to use for grouping (including `state_change`). The string value should follow SQL syntax: comma separated list of fields. For example: "parent,resource_name". The following fields are supported: * resource_name * category * state * parent * severity The following fields are supported when compare_duration is set: * state_change */
 		groupBy?: string | null;
 
-		/** The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000. */
+		/**
+		 * The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The value returned by the last `GroupFindingsResponse`; indicates that this is a continuation of a prior `GroupFindings` call, and that the system should return the next page of data. */
@@ -4113,7 +4190,10 @@ export namespace MyNS {
 		/** Required. Expression that defines what assets fields to use for grouping (including `state_change`). The string value should follow SQL syntax: comma separated list of fields. For example: "parent,resource_name". The following fields are supported: * resource_name * category * state * parent * severity The following fields are supported when compare_duration is set: * state_change */
 		groupBy: FormControl<string | null | undefined>,
 
-		/** The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000. */
+		/**
+		 * The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The value returned by the last `GroupFindingsResponse`; indicates that this is a continuation of a prior `GroupFindings` call, and that the system should return the next page of data. */
@@ -4147,7 +4227,10 @@ export namespace MyNS {
 		/** Time used for executing the groupBy request. */
 		readTime?: string | null;
 
-		/** The total number of results matching the query. */
+		/**
+		 * The total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -4160,7 +4243,10 @@ export namespace MyNS {
 		/** Time used for executing the groupBy request. */
 		readTime: FormControl<string | null | undefined>,
 
-		/** The total number of results matching the query. */
+		/**
+		 * The total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupFindingsResponseFormGroup() {
@@ -4185,7 +4271,10 @@ export namespace MyNS {
 		/** Time used for executing the list request. */
 		readTime?: string | null;
 
-		/** The total number of assets matching the query. */
+		/**
+		 * The total number of assets matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -4198,7 +4287,10 @@ export namespace MyNS {
 		/** Time used for executing the list request. */
 		readTime: FormControl<string | null | undefined>,
 
-		/** The total number of assets matching the query. */
+		/**
+		 * The total number of assets matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssetsResponseFormGroup() {
@@ -4417,7 +4509,10 @@ export namespace MyNS {
 		/** Time used for executing the list request. */
 		readTime?: string | null;
 
-		/** The total number of findings matching the query. */
+		/**
+		 * The total number of findings matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -4430,7 +4525,10 @@ export namespace MyNS {
 		/** Time used for executing the list request. */
 		readTime: FormControl<string | null | undefined>,
 
-		/** The total number of findings matching the query. */
+		/**
+		 * The total number of findings matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListFindingsResponseFormGroup() {
@@ -4724,7 +4822,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -4737,7 +4838,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -4872,7 +4976,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results, or empty if there are no more results. */
 		nextPageToken?: string | null;
 
-		/** The estimated total number of results matching the query. */
+		/**
+		 * The estimated total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 
 		/** The valued resources that the attack path simulation identified. */
@@ -4885,7 +4992,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results, or empty if there are no more results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The estimated total number of results matching the query. */
+		/**
+		 * The estimated total number of results matching the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListValuedResourcesResponseFormGroup() {
@@ -4903,7 +5013,10 @@ export namespace MyNS {
 		/** Human-readable name of the valued resource. */
 		displayName?: string | null;
 
-		/** Exposed score for this valued resource. A value of 0 means no exposure was detected exposure. */
+		/**
+		 * Exposed score for this valued resource. A value of 0 means no exposure was detected exposure.
+		 * Type: double
+		 */
 		exposedScore?: number | null;
 
 		/** Valued resource name, for example, e.g.: `organizations/123/simulations/456/valuedResources/789` */
@@ -4928,7 +5041,10 @@ export namespace MyNS {
 		/** Human-readable name of the valued resource. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Exposed score for this valued resource. A value of 0 means no exposure was detected exposure. */
+		/**
+		 * Exposed score for this valued resource. A value of 0 means no exposure was detected exposure.
+		 * Type: double
+		 */
 		exposedScore: FormControl<number | null | undefined>,
 
 		/** Valued resource name, for example, e.g.: `organizations/123/simulations/456/valuedResources/789` */
@@ -5022,7 +5138,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -5032,7 +5151,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -5352,6 +5474,7 @@ export namespace MyNS {
 		 * @param {string} name Required. Name of the effective custom module to get. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}", "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleCloudSecuritycenterV1EffectiveSecurityHealthAnalyticsCustomModule} Successful response
 		 */
@@ -5409,6 +5532,7 @@ export namespace MyNS {
 		 * @param {string} filter Expression that defines the filter to apply across assets. The expression is a list of zero or more restrictions combined via logical operators `AND` and `OR`. Parentheses are supported, and `OR` has higher precedence than `AND`. Restrictions have the form ` ` and may have a `-` character in front of them to indicate negation. The fields map to those defined in the Asset resource. Examples include: * name * security_center_properties.resource_name * resource_properties.a_property * security_marks.marks.marka The supported operators are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values. * `:`, meaning substring matching, for strings. The supported value types are: * string literals in quotes. * integer literals without quotes. * boolean literals `true` and `false` without quotes. The following are the allowed field and operator combinations: * name: `=` * update_time: `=`, `>`, `<`, `>=`, `<=` Usage: This should be milliseconds since epoch or an RFC3339 string. Examples: `update_time = "2019-06-10T16:07:18-07:00"` `update_time = 1560208038000` * create_time: `=`, `>`, `<`, `>=`, `<=` Usage: This should be milliseconds since epoch or an RFC3339 string. Examples: `create_time = "2019-06-10T16:07:18-07:00"` `create_time = 1560208038000` * iam_policy.policy_blob: `=`, `:` * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=` * security_marks.marks: `=`, `:` * security_center_properties.resource_name: `=`, `:` * security_center_properties.resource_display_name: `=`, `:` * security_center_properties.resource_type: `=`, `:` * security_center_properties.resource_parent: `=`, `:` * security_center_properties.resource_parent_display_name: `=`, `:` * security_center_properties.resource_project: `=`, `:` * security_center_properties.resource_project_display_name: `=`, `:` * security_center_properties.resource_owners: `=`, `:` For example, `resource_properties.size = 100` is a valid filter string. Use a partial match on the empty string to filter based on a property existing: `resource_properties.my_property : ""` Use a negated partial match on the empty string to filter based on a property not existing: `-resource_properties.my_property : ""`
 		 * @param {string} orderBy Expression that defines what fields and order to use for sorting. The string value should follow SQL syntax: comma separated list of fields. For example: "name,resource_properties.a_property". The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be appended to the field name. For example: "name desc,resource_properties.a_property". Redundant space characters in the syntax are insignificant. "name desc,resource_properties.a_property" and " name desc , resource_properties.a_property " are equivalent. The following fields are supported: name update_time resource_properties security_marks.marks security_center_properties.resource_name security_center_properties.resource_display_name security_center_properties.resource_parent security_center_properties.resource_parent_display_name security_center_properties.resource_project security_center_properties.resource_project_display_name security_center_properties.resource_type
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListAssetsResponse`; indicates that this is a continuation of a prior `ListAssets` call, and that the system should return the next page of data.
 		 * @param {string} readTime Time used as a reference point when filtering assets. The filter is limited to assets existing at the supplied time and their values are those at that specific time. Absence of this field will default to the API's version of NOW.
 		 * @return {ListAssetsResponse} Successful response
@@ -5443,6 +5567,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of parent to list attack paths. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}" "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
 		 * @param {string} filter The filter expression that filters the attack path in the response. Supported fields: * `valued_resources` supports =
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListAttackPathsResponse`; indicates that this is a continuation of a prior `ListAttackPaths` call, and that the system should return the next page of data.
 		 * @return {ListAttackPathsResponse} Successful response
 		 */
@@ -5455,6 +5580,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/bigQueryExports
 		 * @param {string} parent Required. The parent, which owns the collection of BigQuery exports. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
 		 * @param {number} pageSize The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 10 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListBigQueryExports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBigQueryExports` must match the call that provided the page token.
 		 * @return {ListBigQueryExportsResponse} Successful response
 		 */
@@ -5478,6 +5604,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/customModules
 		 * @param {string} parent Required. Name of parent to list custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last call indicating a continuation
 		 * @return {ListSecurityHealthAnalyticsCustomModulesResponse} Successful response
 		 */
@@ -5500,6 +5627,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/customModules:listDescendant
 		 * @param {string} parent Required. Name of parent to list descendant custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last call indicating a continuation
 		 * @return {ListDescendantSecurityHealthAnalyticsCustomModulesResponse} Successful response
 		 */
@@ -5522,6 +5650,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/effectiveCustomModules
 		 * @param {string} parent Required. Name of parent to list effective custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last call indicating a continuation
 		 * @return {ListEffectiveSecurityHealthAnalyticsCustomModulesResponse} Successful response
 		 */
@@ -5538,6 +5667,7 @@ export namespace MyNS {
 		 * @param {string} filter Expression that defines the filter to apply across findings. The expression is a list of one or more restrictions combined via logical operators `AND` and `OR`. Parentheses are supported, and `OR` has higher precedence than `AND`. Restrictions have the form ` ` and may have a `-` character in front of them to indicate negation. Examples include: * name * source_properties.a_property * security_marks.marks.marka The supported operators are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values. * `:`, meaning substring matching, for strings. The supported value types are: * string literals in quotes. * integer literals without quotes. * boolean literals `true` and `false` without quotes. The following field and operator combinations are supported: * name: `=` * parent: `=`, `:` * resource_name: `=`, `:` * state: `=`, `:` * category: `=`, `:` * external_uri: `=`, `:` * event_time: `=`, `>`, `<`, `>=`, `<=` Usage: This should be milliseconds since epoch or an RFC3339 string. Examples: `event_time = "2019-06-10T16:07:18-07:00"` `event_time = 1560208038000` * severity: `=`, `:` * workflow_state: `=`, `:` * security_marks.marks: `=`, `:` * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=` For example, `source_properties.size = 100` is a valid filter string. Use a partial match on the empty string to filter based on a property existing: `source_properties.my_property : ""` Use a negated partial match on the empty string to filter based on a property not existing: `-source_properties.my_property : ""` * resource: * resource.name: `=`, `:` * resource.parent_name: `=`, `:` * resource.parent_display_name: `=`, `:` * resource.project_name: `=`, `:` * resource.project_display_name: `=`, `:` * resource.type: `=`, `:` * resource.folders.resource_folder: `=`, `:` * resource.display_name: `=`, `:`
 		 * @param {string} orderBy Expression that defines what fields and order to use for sorting. The string value should follow SQL syntax: comma separated list of fields. For example: "name,resource_properties.a_property". The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be appended to the field name. For example: "name desc,source_properties.a_property". Redundant space characters in the syntax are insignificant. "name desc,source_properties.a_property" and " name desc , source_properties.a_property " are equivalent. The following fields are supported: name parent state category resource_name event_time source_properties security_marks.marks
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListFindingsResponse`; indicates that this is a continuation of a prior `ListFindings` call, and that the system should return the next page of data.
 		 * @param {string} readTime Time used as a reference point when filtering findings. The filter is limited to findings existing at the supplied time and their values are those at that specific time. Absence of this field will default to the API's version of NOW.
 		 * @return {ListFindingsResponse} Successful response
@@ -5582,6 +5712,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/muteConfigs
 		 * @param {string} parent Required. The parent, which owns the collection of mute configs. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
 		 * @param {number} pageSize The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 10 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListMuteConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMuteConfigs` must match the call that provided the page token.
 		 * @return {ListMuteConfigsResponse} Successful response
 		 */
@@ -5605,6 +5736,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/notificationConfigs
 		 * @param {string} parent Required. The name of the parent in which to list the notification configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListNotificationConfigsResponse`; indicates that this is a continuation of a prior `ListNotificationConfigs` call, and that the system should return the next page of data.
 		 * @return {ListNotificationConfigsResponse} Successful response
 		 */
@@ -5628,6 +5760,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/resourceValueConfigs
 		 * @param {string} parent Required. The parent, which owns the collection of resource value configs. Its format is "organizations/[organization_id]"
 		 * @param {number} pageSize The number of results to return. The service may return fewer than this value. If unspecified, at most 10 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListResourceValueConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListResourceValueConfigs` must match the call that provided the page token. page_size can be specified, and the new page_size will be used.
 		 * @return {ListResourceValueConfigsResponse} Successful response
 		 */
@@ -5650,6 +5783,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/sources
 		 * @param {string} parent Required. Resource name of the parent of sources to list. Its format should be "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListSourcesResponse`; indicates that this is a continuation of a prior `ListSources` call, and that the system should return the next page of data.
 		 * @return {ListSourcesResponse} Successful response
 		 */
@@ -5673,6 +5807,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of parent to list valued resources. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
 		 * @param {string} filter The filter expression that filters the valued resources in the response. Supported fields: * `resource_value` supports = * `resource_type` supports =
 		 * @param {number} pageSize The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListValuedResourcesResponse`; indicates that this is a continuation of a prior `ListValuedResources` call, and that the system should return the next page of data.
 		 * @return {ListValuedResourcesResponse} Successful response
 		 */

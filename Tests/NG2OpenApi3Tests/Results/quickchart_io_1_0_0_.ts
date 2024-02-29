@@ -14,7 +14,9 @@ export namespace MyNS {
 		 * Get chart
 		 * @param {string} chart The chart configuration in Chart.js format (JSON or Javascript).
 		 * @param {number} width The width of the chart in pixels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The height of the chart in pixels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The output format of the chart, 'png', 'jpg', 'svg', or 'webp'.
 		 * @param {string} backgroundColor The background color of the chart.
 		 * @return {void} A generated chart image.
@@ -39,9 +41,12 @@ export namespace MyNS {
 		 * Get qr
 		 * @param {string} text The text to be encoded in the QR code.
 		 * @param {number} width The width of the QR code in pixels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The height of the QR code in pixels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The output format of the QR code, e.g., 'png' or 'svg'.
 		 * @param {number} margin The margin around the QR code in pixels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} A generated QR code image.
 		 */
 		QrGetByTextAndWidthAndHeightAndFormatAndMargin(text: string | null | undefined, width: number | null | undefined, height: number | null | undefined, format: string | null | undefined, margin: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -70,10 +75,16 @@ export namespace MyNS {
 		/** The output format of the chart, 'png', 'jpg', 'svg', or 'webp'. */
 		format?: string | null;
 
-		/** The height of the chart in pixels. */
+		/**
+		 * The height of the chart in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The width of the chart in pixels. */
+		/**
+		 * The width of the chart in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface ChartPostPostBodyFormProperties {
@@ -87,10 +98,16 @@ export namespace MyNS {
 		/** The output format of the chart, 'png', 'jpg', 'svg', or 'webp'. */
 		format: FormControl<string | null | undefined>,
 
-		/** The height of the chart in pixels. */
+		/**
+		 * The height of the chart in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The width of the chart in pixels. */
+		/**
+		 * The width of the chart in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateChartPostPostBodyFormGroup() {
@@ -109,16 +126,25 @@ export namespace MyNS {
 		/** The output format of the QR code, e.g., 'png' or 'svg'. */
 		format?: string | null;
 
-		/** The height of the QR code in pixels. */
+		/**
+		 * The height of the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The margin around the QR code in pixels. */
+		/**
+		 * The margin around the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		margin?: number | null;
 
 		/** The text to be encoded in the QR code. */
 		text?: string | null;
 
-		/** The width of the QR code in pixels. */
+		/**
+		 * The width of the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface QrPostPostBodyFormProperties {
@@ -126,16 +152,25 @@ export namespace MyNS {
 		/** The output format of the QR code, e.g., 'png' or 'svg'. */
 		format: FormControl<string | null | undefined>,
 
-		/** The height of the QR code in pixels. */
+		/**
+		 * The height of the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The margin around the QR code in pixels. */
+		/**
+		 * The margin around the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		margin: FormControl<number | null | undefined>,
 
 		/** The text to be encoded in the QR code. */
 		text: FormControl<string | null | undefined>,
 
-		/** The width of the QR code in pixels. */
+		/**
+		 * The width of the QR code in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateQrPostPostBodyFormGroup() {

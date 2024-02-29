@@ -272,6 +272,7 @@ export namespace MyNS {
 		 * List all available Windows.ESU provider operations.
 		 * Get providers/Microsoft.WindowsESU/operations
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {OperationList} OK
 		 */
 		Operations_List(api_version: string): Observable<OperationList> {
@@ -282,7 +283,9 @@ export namespace MyNS {
 		 * List all Multiple Activation Keys (MAK) created for a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.WindowsESU/multipleActivationKeys
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {MultipleActivationKeyList} OK
 		 */
 		MultipleActivationKeys_List(subscriptionId: string, api_version: string): Observable<MultipleActivationKeyList> {
@@ -293,8 +296,11 @@ export namespace MyNS {
 		 * List all Multiple Activation Keys (MAK) in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {MultipleActivationKeyList} OK
 		 */
 		MultipleActivationKeys_ListByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string): Observable<MultipleActivationKeyList> {
@@ -305,8 +311,11 @@ export namespace MyNS {
 		 * Get a MAK key.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} multipleActivationKeyName The name of the MAK key.
 		 * @return {MultipleActivationKey} OK
 		 */
@@ -318,8 +327,11 @@ export namespace MyNS {
 		 * Create a MAK key.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} multipleActivationKeyName The name of the MAK key.
 		 * @param {MultipleActivationKey} requestBody Details of the MAK key.
 		 * @return {MultipleActivationKey} OK
@@ -332,8 +344,11 @@ export namespace MyNS {
 		 * Delete a MAK key.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} multipleActivationKeyName The name of the MAK key.
 		 * @return {void} OK
 		 */
@@ -345,8 +360,11 @@ export namespace MyNS {
 		 * Update a MAK key.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} multipleActivationKeyName The name of the MAK key.
 		 * @param {MultipleActivationKeyUpdate} requestBody Details of the MAK key.
 		 * @return {MultipleActivationKey} OK

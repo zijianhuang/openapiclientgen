@@ -2042,7 +2042,9 @@ export namespace MyNS {
 		 * Lists information about assistants.
 		 * Get assistants
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListAssistantsResponse} Success
 		 */
 		ListAssistants(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListAssistantsResponse> {
@@ -2064,7 +2066,9 @@ export namespace MyNS {
 		 * Get assistants/{assistantId}/associations
 		 * @param {string} assistantId The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListAssistantAssociationsResponse} Success
 		 */
 		ListAssistantAssociations(assistantId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListAssistantAssociationsResponse> {
@@ -2086,7 +2090,9 @@ export namespace MyNS {
 		 * Get knowledgeBases/{knowledgeBaseId}/contents
 		 * @param {string} knowledgeBaseId The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListContentsResponse} Success
 		 */
 		ListContents(knowledgeBaseId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListContentsResponse> {
@@ -2106,7 +2112,9 @@ export namespace MyNS {
 		 * Lists the knowledge bases.
 		 * Get knowledgeBases
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 4096
 		 * @return {ListKnowledgeBasesResponse} Success
 		 */
 		ListKnowledgeBases(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListKnowledgeBasesResponse> {
@@ -2234,8 +2242,10 @@ export namespace MyNS {
 		 * Get assistants/{assistantId}/sessions/{sessionId}/recommendations
 		 * @param {string} assistantId The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} sessionId The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} waitTimeSeconds The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.
+		 *     Minimum: 0    Maximum: 20
 		 * @return {GetRecommendationsResponse} Success
 		 */
 		GetRecommendations(assistantId: string, maxResults: number | null | undefined, sessionId: string, waitTimeSeconds: number | null | undefined): Observable<GetRecommendationsResponse> {
@@ -2321,7 +2331,9 @@ export namespace MyNS {
 		 * Post knowledgeBases/{knowledgeBaseId}/search
 		 * @param {string} knowledgeBaseId The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {SearchContentResponse} Success
 		 */
 		SearchContent(knowledgeBaseId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: SearchContentPostBody): Observable<SearchContentResponse> {
@@ -2333,7 +2345,9 @@ export namespace MyNS {
 		 * Post assistants/{assistantId}/searchSessions
 		 * @param {string} assistantId The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {SearchSessionsResponse} Success
 		 */
 		SearchSessions(assistantId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: SearchSessionsPostBody): Observable<SearchSessionsResponse> {
@@ -2355,6 +2369,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2366,23 +2381,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description of the assistant.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the assistant.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -2402,23 +2417,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the assistant.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the assistant.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2471,8 +2486,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken?: string | null;
 
@@ -2489,8 +2504,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2523,8 +2538,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken?: string | null;
 
@@ -2534,15 +2549,15 @@ export namespace MyNS {
 		/**
 		 * The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		overrideLinkOutUri?: string | null;
 
@@ -2551,16 +2566,16 @@ export namespace MyNS {
 
 		/**
 		 * The title of the content. If not set, the title is equal to the name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		title?: string | null;
 
 		/**
 		 * A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
 		 * Required
-		 * Max length: 1200
 		 * Min length: 1
+		 * Max length: 1200
 		 */
 		uploadId: string;
 	}
@@ -2568,8 +2583,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2579,15 +2594,15 @@ export namespace MyNS {
 		/**
 		 * The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		overrideLinkOutUri: FormControl<string | null | undefined>,
 
@@ -2596,16 +2611,16 @@ export namespace MyNS {
 
 		/**
 		 * The title of the content. If not set, the title is equal to the name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		title: FormControl<string | null | undefined>,
 
 		/**
 		 * A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
 		 * Required
-		 * Max length: 1200
 		 * Min length: 1
+		 * Max length: 1200
 		 */
 		uploadId: FormControl<string | null | undefined>,
 	}
@@ -2626,15 +2641,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -2647,8 +2662,8 @@ export namespace MyNS {
 		/**
 		 * The name of the knowledge base.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -2668,15 +2683,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2689,8 +2704,8 @@ export namespace MyNS {
 		/**
 		 * The name of the knowledge base.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2749,23 +2764,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the session.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -2776,23 +2791,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the session.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2816,8 +2831,8 @@ export namespace MyNS {
 
 		/**
 		 * The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		overrideLinkOutUri?: string | null;
 
@@ -2826,22 +2841,22 @@ export namespace MyNS {
 
 		/**
 		 * The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		revisionId?: string | null;
 
 		/**
 		 * The title of the content.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		title?: string | null;
 
 		/**
 		 * A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-		 * Max length: 1200
 		 * Min length: 1
+		 * Max length: 1200
 		 */
 		uploadId?: string | null;
 	}
@@ -2852,8 +2867,8 @@ export namespace MyNS {
 
 		/**
 		 * The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		overrideLinkOutUri: FormControl<string | null | undefined>,
 
@@ -2862,22 +2877,22 @@ export namespace MyNS {
 
 		/**
 		 * The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		revisionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the content.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		title: FormControl<string | null | undefined>,
 
 		/**
 		 * A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-		 * Max length: 1200
 		 * Min length: 1
+		 * Max length: 1200
 		 */
 		uploadId: FormControl<string | null | undefined>,
 	}
@@ -2943,8 +2958,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -2965,8 +2980,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -2990,8 +3005,8 @@ export namespace MyNS {
 		/**
 		 * The template URI to update.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		templateUri: string;
 	}
@@ -3000,8 +3015,8 @@ export namespace MyNS {
 		/**
 		 * The template URI to update.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		templateUri: FormControl<string | null | undefined>,
 	}

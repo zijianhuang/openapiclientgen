@@ -12,8 +12,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 
 		/** Required */
 		id: string;
@@ -42,8 +45,11 @@ export namespace MyNS {
 		/** Required */
 		type: ArtifactMetaDataType;
 
-		/** Required */
-		version: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: string;
 	}
 	export interface ArtifactMetaDataFormProperties {
 
@@ -54,8 +60,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
@@ -80,22 +89,25 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<ArtifactMetaDataType | null | undefined>,
 
-		/** Required */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateArtifactMetaDataFormGroup() {
 		return new FormGroup<ArtifactMetaDataFormProperties>({
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modifiedBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modifiedOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ArtifactMetaDataState | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<ArtifactMetaDataType | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -131,6 +143,7 @@ export namespace MyNS {
 		/**
 		 * The total number of artifacts that matched the search criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 	}
@@ -141,6 +154,7 @@ export namespace MyNS {
 		/**
 		 * The total number of artifacts that matched the search criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -269,7 +283,10 @@ export namespace MyNS {
 		/** Full details about the error.  This might contain a server stack trace, for example. */
 		detail?: string | null;
 
-		/** The server-side error code. */
+		/**
+		 * The server-side error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code?: number | null;
 
 		/** The short error message. */
@@ -285,7 +302,10 @@ export namespace MyNS {
 		/** Full details about the error.  This might contain a server stack trace, for example. */
 		detail: FormControl<string | null | undefined>,
 
-		/** The server-side error code. */
+		/**
+		 * The server-side error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/** The short error message. */
@@ -335,8 +355,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 		labels?: Array<string>;
 		name?: string | null;
 
@@ -353,7 +376,10 @@ export namespace MyNS {
 		/** Required */
 		type: ArtifactMetaDataType;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: number;
 	}
 
@@ -367,8 +393,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -384,7 +413,10 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<ArtifactMetaDataType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchedVersionFormGroup() {
@@ -392,7 +424,7 @@ export namespace MyNS {
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ArtifactMetaDataState | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<ArtifactMetaDataType | null | undefined>(undefined, [Validators.required]),
@@ -443,8 +475,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 
 		/**
 		 * The artifact id.
@@ -469,8 +504,11 @@ export namespace MyNS {
 		/** Required */
 		type: ArtifactMetaDataType;
 
-		/** Required */
-		version: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: string;
 	}
 	export interface VersionMetaDataFormProperties {
 
@@ -481,8 +519,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 
 		/**
 		 * The artifact id.
@@ -503,20 +544,23 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<ArtifactMetaDataType | null | undefined>,
 
-		/** Required */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateVersionMetaDataFormGroup() {
 		return new FormGroup<VersionMetaDataFormProperties>({
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ArtifactMetaDataState | null | undefined>(undefined),
 			type: new FormControl<ArtifactMetaDataType | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -528,6 +572,7 @@ export namespace MyNS {
 		/**
 		 * The total number of artifacts that matched the search criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -541,6 +586,7 @@ export namespace MyNS {
 		/**
 		 * The total number of artifacts that matched the search criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -962,7 +1008,9 @@ export namespace MyNS {
 		 * Get search/artifacts
 		 * @param {string} search The text to search.
 		 * @param {number} offset The number of artifacts to skip before starting to collect the result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of artifacts to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchOver} over What fields to search.
 		 * @param {SortOrder} order Sort order, ascending or descending.
 		 * @return {ArtifactSearchResults} On a successful response, returns a result set of artifacts - one for each artifact
@@ -978,7 +1026,9 @@ export namespace MyNS {
 		 * of all versions of an artifact (for example, in a user interface).
 		 * Get search/artifacts/{artifactId}/versions
 		 * @param {number} offset The number of versions to skip before starting to collect the result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of versions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VersionSearchResults} On a successful response, returns a result set of versions - one for each version
 		 * of the artifact.
 		 */

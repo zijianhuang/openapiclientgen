@@ -8833,31 +8833,31 @@ export namespace MyNS {
 		/**
 		 * The name of the data catalog used in Athena query execution.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Catalog: string;
 
 		/**
 		 * The name of the database used in the Athena query execution.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Database: string;
 
 		/**
 		 * The SQL query statements, to be executed.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		QueryString: string;
 
 		/**
 		 * The name of the workgroup in which the Athena query is being started.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		WorkGroup?: string | null;
 
@@ -8881,31 +8881,31 @@ export namespace MyNS {
 		/**
 		 * The name of the data catalog used in Athena query execution.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Catalog: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the database used in the Athena query execution.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Database: FormControl<string | null | undefined>,
 
 		/**
 		 * The SQL query statements, to be executed.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		QueryString: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the workgroup in which the Athena query is being started.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		WorkGroup: FormControl<string | null | undefined>,
 
@@ -8947,32 +8947,32 @@ export namespace MyNS {
 		/**
 		 * The Redshift cluster Identifier.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClusterId: string;
 
 		/**
 		 * The name of the Redshift database used in Redshift query execution.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Database: string;
 
 		/**
 		 * The database user name used in Redshift query execution.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DbUser: string;
 
 		/**
 		 * The SQL query statements to be executed.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		QueryString: string;
 
@@ -8999,32 +8999,32 @@ export namespace MyNS {
 		/**
 		 * The Redshift cluster Identifier.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Redshift database used in Redshift query execution.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Database: FormControl<string | null | undefined>,
 
 		/**
 		 * The database user name used in Redshift query execution.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DbUser: FormControl<string | null | undefined>,
 
 		/**
 		 * The SQL query statements to be executed.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		QueryString: FormControl<string | null | undefined>,
 

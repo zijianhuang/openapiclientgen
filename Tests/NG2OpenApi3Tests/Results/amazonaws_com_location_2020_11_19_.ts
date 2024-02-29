@@ -3860,6 +3860,7 @@ export namespace MyNS {
 		 * <p>Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to communicate location data to the linked geofence collection. </p> <p>You can associate up to five geofence collections to each tracker resource.</p> <note> <p>Currently not supported — Cross-account configurations, such as creating associations between a tracker resource in one account and a geofence collection in another account.</p> </note>
 		 * Post tracking/v0/trackers/{TrackerName}/consumers
 		 * @param {string} TrackerName The name of the tracker resource to be associated with a geofence collection.
+		 *     Min length: 1    Max length: 100
 		 * @return {AssociateTrackerConsumerResponse} Success
 		 */
 		AssociateTrackerConsumer(TrackerName: string, requestBody: AssociateTrackerConsumerPostBody): Observable<AssociateTrackerConsumerResponse> {
@@ -3870,6 +3871,7 @@ export namespace MyNS {
 		 * Deletes the position history of one or more devices from a tracker resource.
 		 * Post tracking/v0/trackers/{TrackerName}/delete-positions
 		 * @param {string} TrackerName The name of the tracker resource to delete the device position history from.
+		 *     Min length: 1    Max length: 100
 		 * @return {BatchDeleteDevicePositionHistoryResponse} Success
 		 */
 		BatchDeleteDevicePositionHistory(TrackerName: string, requestBody: BatchDeleteDevicePositionHistoryPostBody): Observable<BatchDeleteDevicePositionHistoryResponse> {
@@ -3880,6 +3882,7 @@ export namespace MyNS {
 		 * <p>Deletes a batch of geofences from a geofence collection.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		 * Post geofencing/v0/collections/{CollectionName}/delete-geofences
 		 * @param {string} CollectionName The geofence collection storing the geofences to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {BatchDeleteGeofenceResponse} Success
 		 */
 		BatchDeleteGeofence(CollectionName: string, requestBody: BatchDeleteGeofencePostBody): Observable<BatchDeleteGeofenceResponse> {
@@ -3890,6 +3893,7 @@ export namespace MyNS {
 		 * <p>Evaluates device positions against the geofence geometries from a given geofence collection.</p> <p>This operation always returns an empty response because geofences are asynchronously evaluated. The evaluation determines if the device has entered or exited a geofenced area, and then publishes one of the following events to Amazon EventBridge:</p> <ul> <li> <p> <code>ENTER</code> if Amazon Location determines that the tracked device has entered a geofenced area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that the tracked device has exited a geofenced area.</p> </li> </ul> <note> <p>The last geofence that a device was observed within is tracked for 30 days after the most recent device position update.</p> </note> <note> <p>Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p> </note> <note> <p>The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.</p> </note>
 		 * Post geofencing/v0/collections/{CollectionName}/positions
 		 * @param {string} CollectionName The geofence collection used in evaluating the position of devices against its geofences.
+		 *     Min length: 1    Max length: 100
 		 * @return {BatchEvaluateGeofencesResponse} Success
 		 */
 		BatchEvaluateGeofences(CollectionName: string, requestBody: BatchEvaluateGeofencesPostBody): Observable<BatchEvaluateGeofencesResponse> {
@@ -3900,6 +3904,7 @@ export namespace MyNS {
 		 * Lists the latest device positions for requested devices.
 		 * Post tracking/v0/trackers/{TrackerName}/get-positions
 		 * @param {string} TrackerName The tracker resource retrieving the device position.
+		 *     Min length: 1
 		 * @return {BatchGetDevicePositionResponse} Success
 		 */
 		BatchGetDevicePosition(TrackerName: string, requestBody: BatchGetDevicePositionPostBody): Observable<BatchGetDevicePositionResponse> {
@@ -3910,6 +3915,7 @@ export namespace MyNS {
 		 * A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.
 		 * Post geofencing/v0/collections/{CollectionName}/put-geofences
 		 * @param {string} CollectionName The geofence collection storing the geofences.
+		 *     Min length: 1    Max length: 100
 		 * @return {BatchPutGeofenceResponse} Success
 		 */
 		BatchPutGeofence(CollectionName: string, requestBody: BatchPutGeofencePostBody): Observable<BatchPutGeofenceResponse> {
@@ -3920,6 +3926,7 @@ export namespace MyNS {
 		 * <p>Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon Location uses the data when it reports the last known device position and position history. Amazon Location retains location data for 30 days.</p> <note> <p>Position updates are handled based on the <code>PositionFiltering</code> property of the tracker. When <code>PositionFiltering</code> is set to <code>TimeBased</code>, updates are evaluated against linked geofence collections, and location data is stored at a maximum of one position per 30 second interval. If your update frequency is more often than every 30 seconds, only one update per 30 seconds is stored for each unique device ID.</p> <p>When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than 30 m (98.4 ft).</p> <p>When <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than the measured accuracy. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is neither stored or evaluated if the device has moved less than 15 m. If <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering, Amazon Location uses the default value <code>{ "Horizontal": 0}</code> when accuracy is not provided on a <code>DevicePositionUpdate</code>.</p> </note>
 		 * Post tracking/v0/trackers/{TrackerName}/positions
 		 * @param {string} TrackerName The name of the tracker resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {BatchUpdateDevicePositionResponse} Success
 		 */
 		BatchUpdateDevicePosition(TrackerName: string, requestBody: BatchUpdateDevicePositionPostBody): Observable<BatchUpdateDevicePositionResponse> {
@@ -3930,7 +3937,9 @@ export namespace MyNS {
 		 * <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p> <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p> <p>Additional options include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates a route based on predictive traffic data at the given time. </p> <note> <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p> </note> </li> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> <note> <p>If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination must be within 40km.</p> </note> </li> </ul>
 		 * Post routes/v0/calculators/{CalculatorName}/calculate/route
 		 * @param {string} CalculatorName The name of the route calculator resource that you want to use to calculate the route. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @return {CalculateRouteResponse} Success
 		 */
 		CalculateRoute(CalculatorName: string, key: string | null | undefined, requestBody: CalculateRoutePostBody): Observable<CalculateRouteResponse> {
@@ -3941,7 +3950,9 @@ export namespace MyNS {
 		 * <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p> <note> <p>Your account is charged for each route calculated, not the number of requests.</p> </note> <p>Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p> <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating routes.</p> <p>Additional options include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html"> Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates routes based on predictive traffic data at the given time. </p> <note> <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p> </note> </li> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li> </ul>
 		 * Post routes/v0/calculators/{CalculatorName}/calculate/route-matrix
 		 * @param {string} CalculatorName The name of the route calculator resource that you want to use to calculate the route matrix. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @return {CalculateRouteMatrixResponse} Success
 		 */
 		CalculateRouteMatrix(CalculatorName: string, key: string | null | undefined, requestBody: CalculateRouteMatrixPostBody): Observable<CalculateRouteMatrixResponse> {
@@ -4006,6 +4017,7 @@ export namespace MyNS {
 		 * <p>Deletes a geofence collection from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource, the devices will no longer be monitored.</p> </note>
 		 * Delete geofencing/v0/collections/{CollectionName}
 		 * @param {string} CollectionName The name of the geofence collection to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteGeofenceCollectionResponse} Success
 		 */
 		DeleteGeofenceCollection(CollectionName: string): Observable<DeleteGeofenceCollectionResponse> {
@@ -4016,6 +4028,7 @@ export namespace MyNS {
 		 * Retrieves the geofence collection details.
 		 * Get geofencing/v0/collections/{CollectionName}
 		 * @param {string} CollectionName The name of the geofence collection.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeGeofenceCollectionResponse} Success
 		 */
 		DescribeGeofenceCollection(CollectionName: string): Observable<DescribeGeofenceCollectionResponse> {
@@ -4026,6 +4039,7 @@ export namespace MyNS {
 		 * Updates the specified properties of a given geofence collection.
 		 * Patch geofencing/v0/collections/{CollectionName}
 		 * @param {string} CollectionName The name of the geofence collection to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateGeofenceCollectionResponse} Success
 		 */
 		UpdateGeofenceCollection(CollectionName: string, requestBody: UpdateGeofenceCollectionPatchBody): Observable<UpdateGeofenceCollectionResponse> {
@@ -4036,6 +4050,7 @@ export namespace MyNS {
 		 * Deletes the specified API key. The API key must have been deactivated more than 90 days previously.
 		 * Delete metadata/v0/keys/{KeyName}
 		 * @param {string} KeyName The name of the API key to delete.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteKeyResponse} Success
 		 */
 		DeleteKey(KeyName: string): Observable<DeleteKeyResponse> {
@@ -4046,6 +4061,7 @@ export namespace MyNS {
 		 * Retrieves the API key resource details.
 		 * Get metadata/v0/keys/{KeyName}
 		 * @param {string} KeyName The name of the API key resource.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeKeyResponse} Success
 		 */
 		DescribeKey(KeyName: string): Observable<DescribeKeyResponse> {
@@ -4056,6 +4072,7 @@ export namespace MyNS {
 		 * Updates the specified properties of a given API key resource.
 		 * Patch metadata/v0/keys/{KeyName}
 		 * @param {string} KeyName The name of the API key resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateKeyResponse} Success
 		 */
 		UpdateKey(KeyName: string, requestBody: UpdateKeyPatchBody): Observable<UpdateKeyResponse> {
@@ -4066,6 +4083,7 @@ export namespace MyNS {
 		 * <p>Deletes a map resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the map is being used in an application, the map may not render.</p> </note>
 		 * Delete maps/v0/maps/{MapName}
 		 * @param {string} MapName The name of the map resource to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteMapResponse} Success
 		 */
 		DeleteMap(MapName: string): Observable<DeleteMapResponse> {
@@ -4076,6 +4094,7 @@ export namespace MyNS {
 		 * Retrieves the map resource details.
 		 * Get maps/v0/maps/{MapName}
 		 * @param {string} MapName The name of the map resource.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeMapResponse} Success
 		 */
 		DescribeMap(MapName: string): Observable<DescribeMapResponse> {
@@ -4086,6 +4105,7 @@ export namespace MyNS {
 		 * Updates the specified properties of a given map resource.
 		 * Patch maps/v0/maps/{MapName}
 		 * @param {string} MapName The name of the map resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateMapResponse} Success
 		 */
 		UpdateMap(MapName: string, requestBody: UpdateMapPatchBody): Observable<UpdateMapResponse> {
@@ -4096,6 +4116,7 @@ export namespace MyNS {
 		 * <p>Deletes a place index resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		 * Delete places/v0/indexes/{IndexName}
 		 * @param {string} IndexName The name of the place index resource to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeletePlaceIndexResponse} Success
 		 */
 		DeletePlaceIndex(IndexName: string): Observable<DeletePlaceIndexResponse> {
@@ -4106,6 +4127,7 @@ export namespace MyNS {
 		 * Retrieves the place index resource details.
 		 * Get places/v0/indexes/{IndexName}
 		 * @param {string} IndexName The name of the place index resource.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribePlaceIndexResponse} Success
 		 */
 		DescribePlaceIndex(IndexName: string): Observable<DescribePlaceIndexResponse> {
@@ -4116,6 +4138,7 @@ export namespace MyNS {
 		 * Updates the specified properties of a given place index resource.
 		 * Patch places/v0/indexes/{IndexName}
 		 * @param {string} IndexName The name of the place index resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdatePlaceIndexResponse} Success
 		 */
 		UpdatePlaceIndex(IndexName: string, requestBody: UpdatePlaceIndexPatchBody): Observable<UpdatePlaceIndexResponse> {
@@ -4126,6 +4149,7 @@ export namespace MyNS {
 		 * <p>Deletes a route calculator resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		 * Delete routes/v0/calculators/{CalculatorName}
 		 * @param {string} CalculatorName The name of the route calculator resource to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteRouteCalculatorResponse} Success
 		 */
 		DeleteRouteCalculator(CalculatorName: string): Observable<DeleteRouteCalculatorResponse> {
@@ -4136,6 +4160,7 @@ export namespace MyNS {
 		 * Retrieves the route calculator resource details.
 		 * Get routes/v0/calculators/{CalculatorName}
 		 * @param {string} CalculatorName The name of the route calculator resource.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeRouteCalculatorResponse} Success
 		 */
 		DescribeRouteCalculator(CalculatorName: string): Observable<DescribeRouteCalculatorResponse> {
@@ -4146,6 +4171,7 @@ export namespace MyNS {
 		 * Updates the specified properties for a given route calculator resource.
 		 * Patch routes/v0/calculators/{CalculatorName}
 		 * @param {string} CalculatorName The name of the route calculator resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateRouteCalculatorResponse} Success
 		 */
 		UpdateRouteCalculator(CalculatorName: string, requestBody: UpdateRouteCalculatorPatchBody): Observable<UpdateRouteCalculatorResponse> {
@@ -4156,6 +4182,7 @@ export namespace MyNS {
 		 * <p>Deletes a tracker resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error. Make sure that the target resource isn't a dependency for your applications.</p> </note>
 		 * Delete tracking/v0/trackers/{TrackerName}
 		 * @param {string} TrackerName The name of the tracker resource to be deleted.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteTrackerResponse} Success
 		 */
 		DeleteTracker(TrackerName: string): Observable<DeleteTrackerResponse> {
@@ -4166,6 +4193,7 @@ export namespace MyNS {
 		 * Retrieves the tracker resource details.
 		 * Get tracking/v0/trackers/{TrackerName}
 		 * @param {string} TrackerName The name of the tracker resource.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeTrackerResponse} Success
 		 */
 		DescribeTracker(TrackerName: string): Observable<DescribeTrackerResponse> {
@@ -4176,6 +4204,7 @@ export namespace MyNS {
 		 * Updates the specified properties of a given tracker resource.
 		 * Patch tracking/v0/trackers/{TrackerName}
 		 * @param {string} TrackerName The name of the tracker resource to update.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateTrackerResponse} Success
 		 */
 		UpdateTracker(TrackerName: string, requestBody: UpdateTrackerPatchBody): Observable<UpdateTrackerResponse> {
@@ -4186,7 +4215,9 @@ export namespace MyNS {
 		 * <p>Removes the association between a tracker resource and a geofence collection.</p> <note> <p>Once you unlink a tracker resource from a geofence collection, the tracker positions will no longer be automatically evaluated against geofences.</p> </note>
 		 * Delete tracking/v0/trackers/{TrackerName}/consumers/{ConsumerArn}
 		 * @param {string} ConsumerArn <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 1600
 		 * @param {string} TrackerName The name of the tracker resource to be dissociated from the consumer.
+		 *     Min length: 1    Max length: 100
 		 * @return {DisassociateTrackerConsumerResponse} Success
 		 */
 		DisassociateTrackerConsumer(ConsumerArn: string, TrackerName: string): Observable<DisassociateTrackerConsumerResponse> {
@@ -4197,7 +4228,9 @@ export namespace MyNS {
 		 * <p>Retrieves a device's most recent position according to its sample time.</p> <note> <p>Device positions are deleted after 30 days.</p> </note>
 		 * Get tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/positions/latest
 		 * @param {string} DeviceId The device whose position you want to retrieve.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TrackerName The tracker resource receiving the position update.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetDevicePositionResponse} Success
 		 */
 		GetDevicePosition(DeviceId: string, TrackerName: string): Observable<GetDevicePositionResponse> {
@@ -4208,7 +4241,9 @@ export namespace MyNS {
 		 * <p>Retrieves the device position history from a tracker resource within a specified range of time.</p> <note> <p>Device positions are deleted after 30 days.</p> </note>
 		 * Post tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/list-positions
 		 * @param {string} DeviceId The device whose position history you want to retrieve.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TrackerName The tracker resource receiving the request for the device position history.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDevicePositionHistoryResponse} Success
@@ -4221,7 +4256,9 @@ export namespace MyNS {
 		 * Retrieves the geofence details from a geofence collection.
 		 * Get geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		 * @param {string} CollectionName The geofence collection storing the target geofence.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} GeofenceId The geofence you're retrieving details for.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetGeofenceResponse} Success
 		 */
 		GetGeofence(CollectionName: string, GeofenceId: string): Observable<GetGeofenceResponse> {
@@ -4232,7 +4269,9 @@ export namespace MyNS {
 		 * Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.
 		 * Put geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		 * @param {string} CollectionName The geofence collection to store the geofence in.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} GeofenceId An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.
+		 *     Min length: 1    Max length: 100
 		 * @return {PutGeofenceResponse} Success
 		 */
 		PutGeofence(CollectionName: string, GeofenceId: string, requestBody: PutGeofencePutBody): Observable<PutGeofenceResponse> {
@@ -4245,7 +4284,9 @@ export namespace MyNS {
 		 * @param {string} FontStack <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight, VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> | <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> <note> <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> </note>
 		 * @param {string} FontUnicodeRange A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} MapName The map resource associated with the glyph ﬁle.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetMapGlyphsResponse} Success
 		 */
 		GetMapGlyphs(FontStack: string, FontUnicodeRange: string, key: string | null | undefined, MapName: string): Observable<GetMapGlyphsResponse> {
@@ -4257,7 +4298,9 @@ export namespace MyNS {
 		 * Get maps/v0/maps/{MapName}/sprites/{FileName}
 		 * @param {string} FileName <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul> <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} MapName The map resource associated with the sprite ﬁle.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetMapSpritesResponse} Success
 		 */
 		GetMapSprites(FileName: string, key: string | null | undefined, MapName: string): Observable<GetMapSpritesResponse> {
@@ -4268,7 +4311,9 @@ export namespace MyNS {
 		 * <p>Retrieves the map style descriptor from a map resource. </p> <p>The style descriptor contains speciﬁcations on how features render on a map. For example, what data to display, what order to display the data in, and the style for the data. Style descriptors follow the Mapbox Style Specification.</p>
 		 * Get maps/v0/maps/{MapName}/style-descriptor
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} MapName The map resource to retrieve the style descriptor from.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetMapStyleDescriptorResponse} Success
 		 */
 		GetMapStyleDescriptor(key: string | null | undefined, MapName: string): Observable<GetMapStyleDescriptorResponse> {
@@ -4279,7 +4324,9 @@ export namespace MyNS {
 		 * <p>Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level. </p> <p>The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0) will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).</p>
 		 * Get maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} MapName The map resource to retrieve the map tiles from.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} X The X axis value for the map tile.
 		 * @param {string} Y The Y axis value for the map tile. 
 		 * @param {string} Z The zoom value for the map tile.
@@ -4293,8 +4340,11 @@ export namespace MyNS {
 		 * <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p> <note> <p>A PlaceId is valid only if all of the following are the same in the original search request and the call to <code>GetPlace</code>.</p> <ul> <li> <p>Customer Amazon Web Services account</p> </li> <li> <p>Amazon Web Services Region</p> </li> <li> <p>Data provider specified in the place index resource</p> </li> </ul> </note>
 		 * Get places/v0/indexes/{IndexName}/places/{PlaceId}
 		 * @param {string} IndexName The name of the place index resource that you want to use for the search.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} language <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+		 *     Min length: 2    Max length: 35
 		 * @param {string} PlaceId The identifier of the place to find.
 		 * @return {GetPlaceResponse} Success
 		 */
@@ -4306,6 +4356,7 @@ export namespace MyNS {
 		 * A batch request to retrieve all device positions.
 		 * Post tracking/v0/trackers/{TrackerName}/list-positions
 		 * @param {string} TrackerName The tracker resource containing the requested devices.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevicePositionsResponse} Success
@@ -4329,6 +4380,7 @@ export namespace MyNS {
 		 * Lists geofences stored in a given geofence collection.
 		 * Post geofencing/v0/collections/{CollectionName}/list-geofences
 		 * @param {string} CollectionName The name of the geofence collection storing the list of geofences.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGeofencesResponse} Success
@@ -4385,6 +4437,7 @@ export namespace MyNS {
 		 * Returns a list of tags that are applied to the specified Amazon Location resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -4395,6 +4448,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p> <p>You can use the <code>TagResource</code> operation with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that's already associated with the resource, the new tag value that you specify replaces the previous value for that tag. </p> <p>You can associate up to 50 tags with a resource.</p>
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 1600
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -4405,6 +4459,7 @@ export namespace MyNS {
 		 * Lists geofence collections currently associated to the given tracker resource.
 		 * Post tracking/v0/trackers/{TrackerName}/list-consumers
 		 * @param {string} TrackerName The tracker resource whose associated geofence collections you want to list.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrackerConsumersResponse} Success
@@ -4428,7 +4483,9 @@ export namespace MyNS {
 		 * Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of interest near a given position.
 		 * Post places/v0/indexes/{IndexName}/search/position
 		 * @param {string} IndexName The name of the place index resource you want to use for the search.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @return {SearchPlaceIndexForPositionResponse} Success
 		 */
 		SearchPlaceIndexForPosition(IndexName: string, key: string | null | undefined, requestBody: SearchPlaceIndexForPositionPostBody): Observable<SearchPlaceIndexForPositionResponse> {
@@ -4439,7 +4496,9 @@ export namespace MyNS {
 		 * <p>Generates suggestions for addresses and points of interest based on partial or misspelled free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy matching.</p> <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p> <note> <p>You can search for suggested place names near a specified position by using <code>BiasPosition</code>, or filter results within a bounding box by using <code>FilterBBox</code>. These parameters are mutually exclusive; using both <code>BiasPosition</code> and <code>FilterBBox</code> in the same command returns an error.</p> </note>
 		 * Post places/v0/indexes/{IndexName}/search/suggestions
 		 * @param {string} IndexName The name of the place index resource you want to use for the search.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @return {SearchPlaceIndexForSuggestionsResponse} Success
 		 */
 		SearchPlaceIndexForSuggestions(IndexName: string, key: string | null | undefined, requestBody: SearchPlaceIndexForSuggestionsPostBody): Observable<SearchPlaceIndexForSuggestionsResponse> {
@@ -4450,7 +4509,9 @@ export namespace MyNS {
 		 * <p>Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest. </p> <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p> <note> <p>You can search for places near a given position using <code>BiasPosition</code>, or filter results within a bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.</p> </note> <p>Search results are returned in order of highest to lowest relevance.</p>
 		 * Post places/v0/indexes/{IndexName}/search/text
 		 * @param {string} IndexName The name of the place index resource you want to use for the search.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} key The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		 *     Min length: 0    Max length: 1000
 		 * @return {SearchPlaceIndexForTextResponse} Success
 		 */
 		SearchPlaceIndexForText(IndexName: string, key: string | null | undefined, requestBody: SearchPlaceIndexForTextPostBody): Observable<SearchPlaceIndexForTextResponse> {
@@ -4461,7 +4522,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified Amazon Location resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 1600
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the specified resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -4474,8 +4537,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		ConsumerArn: string;
 	}
@@ -4484,8 +4547,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		ConsumerArn: FormControl<string | null | undefined>,
 	}
@@ -4811,22 +4874,22 @@ export namespace MyNS {
 		/**
 		 * <p>A custom name for the geofence collection.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique geofence collection name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CollectionName: string;
 
 		/**
 		 * An optional description for the geofence collection.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
@@ -4844,22 +4907,22 @@ export namespace MyNS {
 		/**
 		 * <p>A custom name for the geofence collection.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique geofence collection name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CollectionName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description for the geofence collection.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
@@ -4888,8 +4951,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the API key resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -4899,8 +4962,8 @@ export namespace MyNS {
 		/**
 		 * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		KeyName: string;
 
@@ -4920,8 +4983,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the API key resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -4931,8 +4994,8 @@ export namespace MyNS {
 		/**
 		 * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		KeyName: FormControl<string | null | undefined>,
 
@@ -4976,16 +5039,16 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the map resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p> </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		MapName: string;
 
@@ -4999,16 +5062,16 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the map resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p> </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		MapName: FormControl<string | null | undefined>,
 
@@ -5057,16 +5120,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for the place index resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		IndexName: string;
 
@@ -5086,16 +5149,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for the place index resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		IndexName: FormControl<string | null | undefined>,
 
@@ -5134,8 +5197,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the route calculator resource. </p> <p>Requirements:</p> <ul> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique Route calculator resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CalculatorName: string;
 
@@ -5147,8 +5210,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for the route calculator resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5163,8 +5226,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the route calculator resource. </p> <p>Requirements:</p> <ul> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique Route calculator resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CalculatorName: FormControl<string | null | undefined>,
 
@@ -5176,8 +5239,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for the route calculator resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5202,8 +5265,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the tracker resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5212,8 +5275,8 @@ export namespace MyNS {
 
 		/**
 		 * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
@@ -5232,8 +5295,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name for the tracker resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique tracker resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		TrackerName: string;
 	}
@@ -5241,8 +5304,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the tracker resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5251,8 +5314,8 @@ export namespace MyNS {
 
 		/**
 		 * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
@@ -5271,8 +5334,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name for the tracker resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique tracker resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		TrackerName: FormControl<string | null | undefined>,
 	}
@@ -5294,8 +5357,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the geofence collection.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5309,8 +5372,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the geofence collection.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5333,8 +5396,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the API key resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5354,8 +5417,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the API key resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5398,8 +5461,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the map resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5410,8 +5473,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the map resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5446,8 +5509,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the place index resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5458,8 +5521,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the place index resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5491,8 +5554,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the route calculator resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5503,8 +5566,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the route calculator resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5523,8 +5586,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the tracker resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -5544,8 +5607,8 @@ export namespace MyNS {
 
 		/**
 		 * Updates the description for the tracker resource.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5586,8 +5649,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 
@@ -5608,8 +5671,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -5672,8 +5735,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5688,8 +5751,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5712,8 +5775,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5728,8 +5791,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5752,8 +5815,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5768,8 +5831,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5795,8 +5858,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5811,8 +5874,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5848,8 +5911,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5864,8 +5927,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5888,8 +5951,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5904,8 +5967,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5928,8 +5991,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default Value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -5944,8 +6007,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default Value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5991,8 +6054,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -6007,8 +6070,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -6031,8 +6094,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -6047,8 +6110,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -6064,8 +6127,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language?: string | null;
 
@@ -6088,8 +6151,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language: FormControl<string | null | undefined>,
 
@@ -6140,8 +6203,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language?: string | null;
 
@@ -6155,8 +6218,8 @@ export namespace MyNS {
 		/**
 		 * The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Text: string;
 	}
@@ -6164,8 +6227,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language: FormControl<string | null | undefined>,
 
@@ -6179,8 +6242,8 @@ export namespace MyNS {
 		/**
 		 * The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Text: FormControl<string | null | undefined>,
 	}
@@ -6225,8 +6288,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language?: string | null;
 
@@ -6240,8 +6303,8 @@ export namespace MyNS {
 		/**
 		 * The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Text: string;
 	}
@@ -6249,8 +6312,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		 * Max length: 35
 		 * Min length: 2
+		 * Max length: 35
 		 */
 		Language: FormControl<string | null | undefined>,
 
@@ -6264,8 +6327,8 @@ export namespace MyNS {
 		/**
 		 * The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Text: FormControl<string | null | undefined>,
 	}

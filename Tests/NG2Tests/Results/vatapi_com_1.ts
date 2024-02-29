@@ -1685,6 +1685,7 @@ export namespace MyNS {
 		 * @param {string} currency_from The currency code you are converting from
 		 * @param {string} currency_to The currency code you are converting to
 		 * @param {number} amount Optional, an amount you are wanting to convert. Leave blank to just get the current rate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Currency_conversion(currency_from: string, currency_to: string, amount: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1705,6 +1706,7 @@ export namespace MyNS {
 		 * Retrieve an invoice
 		 * Get invoice/{id}
 		 * @param {number} id Enter the invoice id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Get_invoice(id: number): Observable<HttpResponse<string>> {
@@ -1715,6 +1717,7 @@ export namespace MyNS {
 		 * Update an existing invoice
 		 * Put invoice/{id}
 		 * @param {number} id Enter an invoice id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Update_Invoice_Array} requestBody Enter invoice data as JSON
 		 * @return {void} No response was specified
 		 */
@@ -1726,6 +1729,7 @@ export namespace MyNS {
 		 * Delete an invoice
 		 * Delete invoice/{id}
 		 * @param {number} id Enter an invoice id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Invoice_delete(id: number): Observable<HttpResponse<string>> {
@@ -1768,6 +1772,7 @@ export namespace MyNS {
 		 * @param {string} code The 2 digit country code
 		 * @param {string} country_rate The VAT rate to get the price for. Default: standard
 		 * @param {number} price The price you want converting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} type Optional, if the price is including VAT set the type to 'incl'. Otherwise the default is assumed as excluding VAT already, 'excl'
 		 * @return {void} No response was specified
 		 */

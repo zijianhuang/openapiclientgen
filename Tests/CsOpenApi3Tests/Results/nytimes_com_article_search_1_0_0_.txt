@@ -233,7 +233,10 @@ namespace MyNS
 		///Note: If highlighting is enabled, snippet will be returned even if it is not specified in your fl list."
 		///</param>
 		/// <param name="page">"The value of page corresponds to a set of 10 results (it does not indicate the starting number of the result set). For example, page=0 corresponds to records 0-9. To return records 10-19, set page to 1, not 10."
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 10
+		// </param>
 		/// <param name="facet_field">Comma-delimited list of facets
 		///
 		///Specifies the sets of facet values to include in the facets array at the end of response, which collects the facet values from all the search results. By default no facet fields will be returned. Below is the list of valid facets:

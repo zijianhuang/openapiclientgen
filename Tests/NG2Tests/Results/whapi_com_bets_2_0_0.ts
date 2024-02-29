@@ -1563,7 +1563,9 @@ export namespace MyNS {
 		 * @param {Array<string>} include Specify fields in addition to the default to return (Comma Separated List)
 		 * @param {Array<string>} exclude Specify fields from the default to exclude (Comma Separated List)
 		 * @param {number} page The index of the page to return
+		 *     Type: double
 		 * @param {number} pageSize The number of results per page
+		 *     Type: double
 		 * @param {string} sort The order the response will be retuned by. i.e. transDateTime,desc. Only transDateTime can be used currently
 		 * @param {boolean} settled Filter by settled bets. If omitted, both settled and unsettled will be returned.
 		 * @return {BetHistoryResponse} Success
@@ -1578,6 +1580,7 @@ export namespace MyNS {
 		 * Put {betId}/cashin
 		 * @param {string} betId The identifier of the bet
 		 * @param {number} cashInValue The cash in value of the bet
+		 *     Type: double
 		 * @param {string} cashinBetDelayId The ID of this bet delay
 		 * @return {CashInResponse} Success
 		 */

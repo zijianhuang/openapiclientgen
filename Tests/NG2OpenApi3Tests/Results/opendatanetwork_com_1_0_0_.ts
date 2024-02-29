@@ -162,6 +162,7 @@ export namespace MyNS {
 		 * data for a single variable across many numerical
 		 * constraint options.
 		 * + Default `0`
+		 *     Type: double
 		 * @param {boolean} describe Whether or not to produce a description of the data.
 		 * Set to `true` to produce a description.
 		 * Descriptions are not available if no entities are specified.
@@ -202,6 +203,7 @@ export namespace MyNS {
 		 * entities returned to be less than the specified `limit`.
 		 * @param {number} limit Maximum number of entities in each group.
 		 * Must be an integer from 1 to 1000.
+		 *     Type: double
 		 * @param {string} app_token The [Socrata App Token](https://dev.socrata.com/docs/app-tokens.html) to be
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
@@ -218,8 +220,10 @@ export namespace MyNS {
 		 * will be used in the query.
 		 * @param {number} limit Maximum number of results to return.
 		 * Must be an integer from 0 to 50000.
+		 *     Type: double
 		 * @param {number} offset Number of results to skip.
 		 * Used for pagination.
+		 *     Type: double
 		 * @param {string} app_token The [Socrata App Token](https://dev.socrata.com/docs/app-tokens.html) to be
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
@@ -234,8 +238,10 @@ export namespace MyNS {
 		 * @param {string} query String to search against.
 		 * @param {number} limit Maximum number of results to return.
 		 * Must be an integer from 0 to 50000.
+		 *     Type: double
 		 * @param {number} offset Number of results to skip.
 		 * Used for pagination.
+		 *     Type: double
 		 * @param {string} app_token The [Socrata App Token](https://dev.socrata.com/docs/app-tokens.html) to be
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
@@ -251,6 +257,7 @@ export namespace MyNS {
 		 * @param {string} query Query to match.
 		 * @param {number} limit Maximum number of results to return.
 		 * Must be an integer from 0 to 100.
+		 *     Type: double
 		 * @param {string} variable_id This parameter is only available when suggesting entities with `type=entity`.
 		 * If it is provided, suggestions will be filtered to include
 		 * only entities that have data for the given variable.

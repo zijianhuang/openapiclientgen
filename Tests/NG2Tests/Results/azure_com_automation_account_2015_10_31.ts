@@ -559,6 +559,7 @@ export namespace MyNS {
 		 * Retrieve a list of accounts within a given resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
 		 * @return {AutomationAccountListResult} OK
@@ -571,6 +572,7 @@ export namespace MyNS {
 		 * Get information about an Automation Account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -584,6 +586,7 @@ export namespace MyNS {
 		 * Create or update automation account.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -598,6 +601,7 @@ export namespace MyNS {
 		 * Delete an automation account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -611,6 +615,7 @@ export namespace MyNS {
 		 * Update an automation account.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -625,6 +630,7 @@ export namespace MyNS {
 		 * Retrieve the automation keys for an account.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/listKeys
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -638,6 +644,7 @@ export namespace MyNS {
 		 * Retrieve the statistics for the account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/statistics
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} filter The filter to apply on the operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -652,6 +659,7 @@ export namespace MyNS {
 		 * Retrieve the usage for the account id.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/usages
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.

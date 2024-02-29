@@ -4308,6 +4308,7 @@ export namespace MyNS {
 		 * Get #Action=DeleteIdentityPolicy
 		 * @param {string} Identity <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
 		 * @param {string} PolicyName The name of the policy to be deleted.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteIdentityPolicy(Identity: string, PolicyName: string, Action: GET_DeleteIdentityPolicyAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4536,6 +4537,7 @@ export namespace MyNS {
 		 * Get #Action=ListConfigurationSets
 		 * @param {string} NextToken A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.
 		 * @param {number} MaxItems The number of configuration sets to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ListConfigurationSets(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListConfigurationSetsAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4547,6 +4549,7 @@ export namespace MyNS {
 		 * Get #Action=ListCustomVerificationEmailTemplates
 		 * @param {string} NextToken An array the contains the name and creation time stamp for each template in your Amazon SES account.
 		 * @param {number} MaxResults The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {void} Success
 		 */
 		GET_ListCustomVerificationEmailTemplates(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListCustomVerificationEmailTemplatesAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4559,6 +4562,7 @@ export namespace MyNS {
 		 * @param {IdentityType} IdentityType The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.
 		 * @param {string} NextToken The token to use for pagination.
 		 * @param {number} MaxItems The maximum number of identities per page. Possible values are 1-1000 inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ListIdentities(IdentityType: IdentityType | null | undefined, NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListIdentitiesAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4599,6 +4603,7 @@ export namespace MyNS {
 		 * Get #Action=ListTemplates
 		 * @param {string} NextToken A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.
 		 * @param {number} MaxItems The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ListTemplates(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListTemplatesAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4639,7 +4644,9 @@ export namespace MyNS {
 		 * Get #Action=PutIdentityPolicy
 		 * @param {string} Identity <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
 		 * @param {string} PolicyName <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Policy <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p> <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+		 *     Min length: 1
 		 * @return {void} Success
 		 */
 		GET_PutIdentityPolicy(Identity: string, PolicyName: string, Policy: string, Action: GET_PutIdentityPolicyAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4685,6 +4692,7 @@ export namespace MyNS {
 		 * @param {string} Template The template to use when sending this email.
 		 * @param {string} TemplateArn The ARN of the template to use when sending this email.
 		 * @param {string} DefaultTemplateData <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p> <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+		 *     Max length: 262144
 		 * @param {Array<BulkEmailDestination>} Destinations One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.
 		 * @return {void} Success
 		 */
@@ -4753,6 +4761,7 @@ export namespace MyNS {
 		 * @param {string} Template The template to use when sending this email.
 		 * @param {string} TemplateArn The ARN of the template to use when sending this email.
 		 * @param {string} TemplateData A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
+		 *     Max length: 262144
 		 * @return {void} Success
 		 */
 		GET_SendTemplatedEmail(Source: string, Destination: GET_SendTemplatedEmailDestination, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Template: string, TemplateArn: string | null | undefined, TemplateData: string, Action: GET_SendTemplatedEmailAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {
@@ -4844,6 +4853,7 @@ export namespace MyNS {
 		 * Get #Action=TestRenderTemplate
 		 * @param {string} TemplateName The name of the template that you want to render.
 		 * @param {string} TemplateData A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
+		 *     Max length: 262144
 		 * @return {void} Success
 		 */
 		GET_TestRenderTemplate(TemplateName: string, TemplateData: string, Action: GET_TestRenderTemplateAction, Version: GET_CloneReceiptRuleSetVersion): Observable<HttpResponse<string>> {

@@ -1106,7 +1106,10 @@ namespace MyNS
 		/// Create an alert manager definition.
 		/// CreateAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace in which to create the alert manager definition.</param>
+		/// <param name="workspaceId">The ID of the workspace in which to create the alert manager definition.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task CreateAlertManagerDefinitionAsync(string workspaceId, CreateAlertManagerDefinitionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/alertmanager/definition";
@@ -1140,8 +1143,14 @@ namespace MyNS
 		/// Deletes an alert manager definition.
 		/// DeleteAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace in which to delete the alert manager definition.</param>
-		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</param>
+		/// <param name="workspaceId">The ID of the workspace in which to delete the alert manager definition.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteAlertManagerDefinitionAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/alertmanager/definition&clientToken=" + (clientToken==null? "" : System.Uri.EscapeDataString(clientToken));
@@ -1168,7 +1177,10 @@ namespace MyNS
 		/// Describes an alert manager definition.
 		/// DescribeAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to describe.</param>
+		/// <param name="workspaceId">The ID of the workspace to describe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAlertManagerDefinitionResponse> DescribeAlertManagerDefinitionAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1202,7 +1214,10 @@ namespace MyNS
 		/// Update an alert manager definition.
 		/// PutAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace in which to update the alert manager definition.</param>
+		/// <param name="workspaceId">The ID of the workspace in which to update the alert manager definition.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task PutAlertManagerDefinitionAsync(string workspaceId, PutAlertManagerDefinitionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/alertmanager/definition";
@@ -1236,7 +1251,10 @@ namespace MyNS
 		/// Create logging configuration.
 		/// CreateLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to vend logs to.</param>
+		/// <param name="workspaceId">The ID of the workspace to vend logs to.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task CreateLoggingConfigurationAsync(string workspaceId, CreateLoggingConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/logging";
@@ -1270,8 +1288,14 @@ namespace MyNS
 		/// Delete logging configuration.
 		/// DeleteLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to vend logs to.</param>
-		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</param>
+		/// <param name="workspaceId">The ID of the workspace to vend logs to.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteLoggingConfigurationAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/logging&clientToken=" + (clientToken==null? "" : System.Uri.EscapeDataString(clientToken));
@@ -1298,7 +1322,10 @@ namespace MyNS
 		/// Describes logging configuration.
 		/// DescribeLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to vend logs to.</param>
+		/// <param name="workspaceId">The ID of the workspace to vend logs to.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1332,7 +1359,10 @@ namespace MyNS
 		/// Update logging configuration.
 		/// UpdateLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to vend logs to.</param>
+		/// <param name="workspaceId">The ID of the workspace to vend logs to.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task UpdateLoggingConfigurationAsync(string workspaceId, UpdateLoggingConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/logging";
@@ -1366,7 +1396,10 @@ namespace MyNS
 		/// Create a rule group namespace.
 		/// CreateRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace in which to create the rule group namespace.</param>
+		/// <param name="workspaceId">The ID of the workspace in which to create the rule group namespace.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task CreateRuleGroupsNamespaceAsync(string workspaceId, CreateRuleGroupsNamespacePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/rulegroupsnamespaces";
@@ -1400,10 +1433,19 @@ namespace MyNS
 		/// Lists rule groups namespaces.
 		/// ListRuleGroupsNamespaces workspaces/{workspaceId}/rulegroupsnamespaces
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
-		/// <param name="name">Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="name">Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.</param>
-		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).</param>
+		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRuleGroupsNamespacesResponse> ListRuleGroupsNamespacesAsync(string workspaceId, string name, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1471,8 +1513,14 @@ namespace MyNS
 		/// ListWorkspaces workspaces
 		/// </summary>
 		/// <param name="nextToken">Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.</param>
-		/// <param name="alias">Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.</param>
-		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).</param>
+		/// <param name="alias">Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkspacesResponse> ListWorkspacesAsync(string nextToken, string alias, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1506,9 +1554,18 @@ namespace MyNS
 		/// Delete a rule groups namespace.
 		/// DeleteRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to delete rule group definition.</param>
-		/// <param name="name">The rule groups namespace name.</param>
-		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</param>
+		/// <param name="workspaceId">The ID of the workspace to delete rule group definition.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The rule groups namespace name.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteRuleGroupsNamespaceAsync(string workspaceId, string name, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/rulegroupsnamespaces/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&clientToken=" + (clientToken==null? "" : System.Uri.EscapeDataString(clientToken));
@@ -1535,8 +1592,14 @@ namespace MyNS
 		/// Describe a rule groups namespace.
 		/// DescribeRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to describe.</param>
-		/// <param name="name">The rule groups namespace.</param>
+		/// <param name="workspaceId">The ID of the workspace to describe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The rule groups namespace.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRuleGroupsNamespaceResponse> DescribeRuleGroupsNamespaceAsync(string workspaceId, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1570,8 +1633,14 @@ namespace MyNS
 		/// Update a rule groups namespace.
 		/// PutRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace in which to update the rule group namespace.</param>
-		/// <param name="name">The rule groups namespace name.</param>
+		/// <param name="workspaceId">The ID of the workspace in which to update the rule group namespace.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The rule groups namespace name.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task PutRuleGroupsNamespaceAsync(string workspaceId, string name, PutRuleGroupsNamespacePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/rulegroupsnamespaces/"+ (name==null? "" : System.Uri.EscapeDataString(name));
@@ -1605,8 +1674,14 @@ namespace MyNS
 		/// Deletes an AMP workspace.
 		/// DeleteWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to delete.</param>
-		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</param>
+		/// <param name="workspaceId">The ID of the workspace to delete.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteWorkspaceAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"&clientToken=" + (clientToken==null? "" : System.Uri.EscapeDataString(clientToken));
@@ -1633,7 +1708,10 @@ namespace MyNS
 		/// Describes an existing AMP workspace.
 		/// DescribeWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to describe.</param>
+		/// <param name="workspaceId">The ID of the workspace to describe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1777,7 +1855,10 @@ namespace MyNS
 		/// Updates an AMP workspace alias.
 		/// UpdateWorkspaceAlias workspaces/{workspaceId}/alias
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace being updated.</param>
+		/// <param name="workspaceId">The ID of the workspace being updated.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task UpdateWorkspaceAliasAsync(string workspaceId, UpdateWorkspaceAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspaceId==null? "" : System.Uri.EscapeDataString(workspaceId))+"/alias";

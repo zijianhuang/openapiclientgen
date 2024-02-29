@@ -5932,6 +5932,7 @@ export namespace MyNS {
 		 * Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent the invitation.
 		 * Post detector/{detectorId}/administrator
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {AcceptAdministratorInvitationResponse} Success
 		 */
 		AcceptAdministratorInvitation(detectorId: string, requestBody: AcceptAdministratorInvitationPostBody): Observable<AcceptAdministratorInvitationResponse> {
@@ -5942,6 +5943,7 @@ export namespace MyNS {
 		 * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.
 		 * Get detector/{detectorId}/administrator
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetAdministratorAccountResponse} Success
 		 */
 		GetAdministratorAccount(detectorId: string): Observable<GetAdministratorAccountResponse> {
@@ -5952,6 +5954,7 @@ export namespace MyNS {
 		 * Accepts the invitation to be monitored by a GuardDuty administrator account.
 		 * Post detector/{detectorId}/master
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {AcceptInvitationResponse} Success
 		 */
 		AcceptInvitation(detectorId: string, requestBody: AcceptInvitationPostBody): Observable<AcceptInvitationResponse> {
@@ -5962,6 +5965,7 @@ export namespace MyNS {
 		 * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.
 		 * Get detector/{detectorId}/master
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetMasterAccountResponse} Success
 		 */
 		GetMasterAccount(detectorId: string): Observable<GetMasterAccountResponse> {
@@ -5972,6 +5976,7 @@ export namespace MyNS {
 		 * <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note> <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p> </note>
 		 * Post detector/{detectorId}/findings/archive
 		 * @param {string} detectorId The ID of the detector that specifies the GuardDuty service whose findings you want to archive.
+		 *     Min length: 1    Max length: 300
 		 * @return {ArchiveFindingsResponse} Success
 		 */
 		ArchiveFindings(detectorId: string, requestBody: ArchiveFindingsPostBody): Observable<ArchiveFindingsResponse> {
@@ -5991,6 +5996,7 @@ export namespace MyNS {
 		 * Lists detectorIds of all the existing Amazon GuardDuty detector resources.
 		 * Get detector
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6004,6 +6010,7 @@ export namespace MyNS {
 		 * Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web Services account per Region is 100. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas for GuardDuty</a>.
 		 * Post detector/{detectorId}/filter
 		 * @param {string} detectorId The ID of the detector belonging to the GuardDuty account that you want to create a filter for.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreateFilterResponse} Success
 		 */
 		CreateFilter(detectorId: string, requestBody: CreateFilterPostBody): Observable<CreateFilterResponse> {
@@ -6014,7 +6021,9 @@ export namespace MyNS {
 		 * Returns a paginated list of the current filters.
 		 * Get detector/{detectorId}/filter
 		 * @param {string} detectorId The unique ID of the detector that the filter is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6028,6 +6037,7 @@ export namespace MyNS {
 		 * Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.
 		 * Post detector/{detectorId}/ipset
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreateIPSetResponse} Success
 		 */
 		CreateIPSet(detectorId: string, requestBody: CreateIPSetPostBody): Observable<CreateIPSetResponse> {
@@ -6038,7 +6048,9 @@ export namespace MyNS {
 		 * Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.
 		 * Get detector/{detectorId}/ipset
 		 * @param {string} detectorId The unique ID of the detector that the IPSet is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6052,6 +6064,7 @@ export namespace MyNS {
 		 * <p>Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p> <p>As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account. A delegated administrator must enable GuardDuty prior to being added as a member.</p> <p>If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>, use <code>CreateMembers</code> after GuardDuty has been enabled in potential member accounts.</p> <p>If you disassociate a member from a GuardDuty delegated administrator, the member account details obtained from this API, including the associated email addresses, will be retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p>
 		 * Post detector/{detectorId}/member
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreateMembersResponse} Success
 		 */
 		CreateMembers(detectorId: string, requestBody: CreateMembersPostBody): Observable<CreateMembersResponse> {
@@ -6062,7 +6075,9 @@ export namespace MyNS {
 		 * Lists details about all member accounts for the current GuardDuty administrator account.
 		 * Get detector/{detectorId}/member
 		 * @param {string} detectorId The unique ID of the detector the member is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} onlyAssociated Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. 
 		 * @param {string} MaxResults Pagination limit
@@ -6077,6 +6092,7 @@ export namespace MyNS {
 		 * Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.
 		 * Post detector/{detectorId}/publishingDestination
 		 * @param {string} detectorId The ID of the GuardDuty detector associated with the publishing destination.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreatePublishingDestinationResponse} Success
 		 */
 		CreatePublishingDestination(detectorId: string, requestBody: CreatePublishingDestinationPostBody): Observable<CreatePublishingDestinationResponse> {
@@ -6087,7 +6103,9 @@ export namespace MyNS {
 		 * Returns a list of publishing destinations associated with the specified <code>detectorId</code>.
 		 * Get detector/{detectorId}/publishingDestination
 		 * @param {string} detectorId The ID of the detector to retrieve publishing destinations for.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults The maximum number of results to return in the response.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6101,6 +6119,7 @@ export namespace MyNS {
 		 * Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates sample findings of all supported finding types.
 		 * Post detector/{detectorId}/findings/create
 		 * @param {string} detectorId The ID of the detector to create sample findings for.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreateSampleFindingsResponse} Success
 		 */
 		CreateSampleFindings(detectorId: string, requestBody: CreateSampleFindingsPostBody): Observable<CreateSampleFindingsResponse> {
@@ -6111,6 +6130,7 @@ export namespace MyNS {
 		 * Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.
 		 * Post detector/{detectorId}/threatintelset
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.
+		 *     Min length: 1    Max length: 300
 		 * @return {CreateThreatIntelSetResponse} Success
 		 */
 		CreateThreatIntelSet(detectorId: string, requestBody: CreateThreatIntelSetPostBody): Observable<CreateThreatIntelSetResponse> {
@@ -6121,7 +6141,9 @@ export namespace MyNS {
 		 * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.
 		 * Get detector/{detectorId}/threatintelset
 		 * @param {string} detectorId The unique ID of the detector that the threatIntelSet is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6144,6 +6166,7 @@ export namespace MyNS {
 		 * Deletes an Amazon GuardDuty detector that is specified by the detector ID.
 		 * Delete detector/{detectorId}
 		 * @param {string} detectorId The unique ID of the detector that you want to delete.
+		 *     Min length: 1    Max length: 300
 		 * @return {DeleteDetectorResponse} Success
 		 */
 		DeleteDetector(detectorId: string): Observable<DeleteDetectorResponse> {
@@ -6154,6 +6177,7 @@ export namespace MyNS {
 		 * <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Get detector/{detectorId}
 		 * @param {string} detectorId The unique ID of the detector that you want to get.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetDetectorResponse} Success
 		 */
 		GetDetector(detectorId: string): Observable<GetDetectorResponse> {
@@ -6164,6 +6188,7 @@ export namespace MyNS {
 		 * <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}
 		 * @param {string} detectorId The unique ID of the detector to update.
+		 *     Min length: 1    Max length: 300
 		 * @return {UpdateDetectorResponse} Success
 		 */
 		UpdateDetector(detectorId: string, requestBody: UpdateDetectorPostBody): Observable<UpdateDetectorResponse> {
@@ -6174,6 +6199,7 @@ export namespace MyNS {
 		 * Deletes the filter specified by the filter name.
 		 * Delete detector/{detectorId}/filter/{filterName}
 		 * @param {string} detectorId The unique ID of the detector that the filter is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} filterName The name of the filter that you want to delete.
 		 * @return {DeleteFilterResponse} Success
 		 */
@@ -6185,6 +6211,7 @@ export namespace MyNS {
 		 * Returns the details of the filter specified by the filter name.
 		 * Get detector/{detectorId}/filter/{filterName}
 		 * @param {string} detectorId The unique ID of the detector that the filter is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} filterName The name of the filter you want to get.
 		 * @return {GetFilterResponse} Success
 		 */
@@ -6196,6 +6223,7 @@ export namespace MyNS {
 		 * Updates the filter specified by the filter name.
 		 * Post detector/{detectorId}/filter/{filterName}
 		 * @param {string} detectorId The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} filterName The name of the filter.
 		 * @return {UpdateFilterResponse} Success
 		 */
@@ -6207,6 +6235,7 @@ export namespace MyNS {
 		 * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface.
 		 * Delete detector/{detectorId}/ipset/{ipSetId}
 		 * @param {string} detectorId The unique ID of the detector associated with the IPSet.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} ipSetId The unique ID of the IPSet to delete.
 		 * @return {DeleteIPSetResponse} Success
 		 */
@@ -6218,6 +6247,7 @@ export namespace MyNS {
 		 * Retrieves the IPSet specified by the <code>ipSetId</code>.
 		 * Get detector/{detectorId}/ipset/{ipSetId}
 		 * @param {string} detectorId The unique ID of the detector that the IPSet is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} ipSetId The unique ID of the IPSet to retrieve.
 		 * @return {GetIPSetResponse} Success
 		 */
@@ -6229,6 +6259,7 @@ export namespace MyNS {
 		 * Updates the IPSet specified by the IPSet ID.
 		 * Post detector/{detectorId}/ipset/{ipSetId}
 		 * @param {string} detectorId The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} ipSetId The unique ID that specifies the IPSet that you want to update.
 		 * @return {UpdateIPSetResponse} Success
 		 */
@@ -6249,6 +6280,7 @@ export namespace MyNS {
 		 * <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.</p>
 		 * Post detector/{detectorId}/member/delete
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account whose members you want to delete.
+		 *     Min length: 1    Max length: 300
 		 * @return {DeleteMembersResponse} Success
 		 */
 		DeleteMembers(detectorId: string, requestBody: DeleteMembersPostBody): Observable<DeleteMembersResponse> {
@@ -6259,6 +6291,7 @@ export namespace MyNS {
 		 * Deletes the publishing definition with the specified <code>destinationId</code>.
 		 * Delete detector/{detectorId}/publishingDestination/{destinationId}
 		 * @param {string} detectorId The unique ID of the detector associated with the publishing destination to delete.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} destinationId The ID of the publishing destination to delete.
 		 * @return {DeletePublishingDestinationResponse} Success
 		 */
@@ -6270,6 +6303,7 @@ export namespace MyNS {
 		 * Returns information about the publishing destination specified by the provided <code>destinationId</code>.
 		 * Get detector/{detectorId}/publishingDestination/{destinationId}
 		 * @param {string} detectorId The unique ID of the detector associated with the publishing destination to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} destinationId The ID of the publishing destination to retrieve.
 		 * @return {DescribePublishingDestinationResponse} Success
 		 */
@@ -6281,6 +6315,7 @@ export namespace MyNS {
 		 * Updates information about the publishing destination specified by the <code>destinationId</code>.
 		 * Post detector/{detectorId}/publishingDestination/{destinationId}
 		 * @param {string} detectorId The ID of the detector associated with the publishing destinations to update.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} destinationId The ID of the publishing destination to update.
 		 * @return {UpdatePublishingDestinationResponse} Success
 		 */
@@ -6292,6 +6327,7 @@ export namespace MyNS {
 		 * Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
 		 * Delete detector/{detectorId}/threatintelset/{threatIntelSetId}
 		 * @param {string} detectorId The unique ID of the detector that the threatIntelSet is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} threatIntelSetId The unique ID of the threatIntelSet that you want to delete.
 		 * @return {DeleteThreatIntelSetResponse} Success
 		 */
@@ -6303,6 +6339,7 @@ export namespace MyNS {
 		 * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
 		 * Get detector/{detectorId}/threatintelset/{threatIntelSetId}
 		 * @param {string} detectorId The unique ID of the detector that the threatIntelSet is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} threatIntelSetId The unique ID of the threatIntelSet that you want to get.
 		 * @return {GetThreatIntelSetResponse} Success
 		 */
@@ -6314,6 +6351,7 @@ export namespace MyNS {
 		 * Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
 		 * Post detector/{detectorId}/threatintelset/{threatIntelSetId}
 		 * @param {string} detectorId The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} threatIntelSetId The unique ID that specifies the ThreatIntelSet that you want to update.
 		 * @return {UpdateThreatIntelSetResponse} Success
 		 */
@@ -6325,6 +6363,7 @@ export namespace MyNS {
 		 * <p>Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all the member accounts.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}/malware-scans
 		 * @param {string} detectorId The unique ID of the detector that the request is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeMalwareScansResponse} Success
@@ -6337,7 +6376,9 @@ export namespace MyNS {
 		 * <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Get detector/{detectorId}/admin
 		 * @param {string} detectorId The ID of the detector to retrieve information about the delegated administrator from.
+		 *     Min length: 1    Max length: 300
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items that you want in the response.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6351,6 +6392,7 @@ export namespace MyNS {
 		 * <p>Configures the delegated administrator account with the provided values. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}/admin
 		 * @param {string} detectorId The ID of the detector that configures the delegated administrator.
+		 *     Min length: 1    Max length: 300
 		 * @return {UpdateOrganizationConfigurationResponse} Success
 		 */
 		UpdateOrganizationConfiguration(detectorId: string, requestBody: UpdateOrganizationConfigurationPostBody): Observable<UpdateOrganizationConfigurationResponse> {
@@ -6370,6 +6412,7 @@ export namespace MyNS {
 		 * <p>Disassociates the current GuardDuty member account from its administrator account.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty in a member account.</p>
 		 * Post detector/{detectorId}/administrator/disassociate
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {DisassociateFromAdministratorAccountResponse} Success
 		 */
 		DisassociateFromAdministratorAccount(detectorId: string): Observable<DisassociateFromAdministratorAccountResponse> {
@@ -6380,6 +6423,7 @@ export namespace MyNS {
 		 * <p>Disassociates the current GuardDuty member account from its administrator account.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.</p>
 		 * Post detector/{detectorId}/master/disassociate
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {DisassociateFromMasterAccountResponse} Success
 		 */
 		DisassociateFromMasterAccount(detectorId: string): Observable<DisassociateFromMasterAccountResponse> {
@@ -6390,6 +6434,7 @@ export namespace MyNS {
 		 * <p>Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a member account before removing them from your Amazon Web Services organization.</p>
 		 * Post detector/{detectorId}/member/disassociate
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.
+		 *     Min length: 1    Max length: 300
 		 * @return {DisassociateMembersResponse} Success
 		 */
 		DisassociateMembers(detectorId: string, requestBody: DisassociateMembersPostBody): Observable<DisassociateMembersResponse> {
@@ -6409,6 +6454,7 @@ export namespace MyNS {
 		 * Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes.
 		 * Post detector/{detectorId}/coverage/statistics
 		 * @param {string} detectorId The unique ID of the GuardDuty detector associated to the coverage statistics.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetCoverageStatisticsResponse} Success
 		 */
 		GetCoverageStatistics(detectorId: string, requestBody: GetCoverageStatisticsPostBody): Observable<GetCoverageStatisticsResponse> {
@@ -6419,6 +6465,7 @@ export namespace MyNS {
 		 * Describes Amazon GuardDuty findings specified by finding IDs.
 		 * Post detector/{detectorId}/findings/get
 		 * @param {string} detectorId The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetFindingsResponse} Success
 		 */
 		GetFindings(detectorId: string, requestBody: GetFindingsPostBody): Observable<GetFindingsResponse> {
@@ -6429,6 +6476,7 @@ export namespace MyNS {
 		 * Lists Amazon GuardDuty findings statistics for the specified detector ID.
 		 * Post detector/{detectorId}/findings/statistics
 		 * @param {string} detectorId The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetFindingsStatisticsResponse} Success
 		 */
 		GetFindingsStatistics(detectorId: string, requestBody: GetFindingsStatisticsPostBody): Observable<GetFindingsStatisticsResponse> {
@@ -6448,6 +6496,7 @@ export namespace MyNS {
 		 * <p>Returns the details of the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Get detector/{detectorId}/malware-scan-settings
 		 * @param {string} detectorId The unique ID of the detector that the scan setting is associated with.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetMalwareScanSettingsResponse} Success
 		 */
 		GetMalwareScanSettings(detectorId: string): Observable<GetMalwareScanSettingsResponse> {
@@ -6458,6 +6507,7 @@ export namespace MyNS {
 		 * <p>Updates the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}/malware-scan-settings
 		 * @param {string} detectorId The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.
+		 *     Min length: 1    Max length: 300
 		 * @return {UpdateMalwareScanSettingsResponse} Success
 		 */
 		UpdateMalwareScanSettings(detectorId: string, requestBody: UpdateMalwareScanSettingsPostBody): Observable<UpdateMalwareScanSettingsResponse> {
@@ -6468,6 +6518,7 @@ export namespace MyNS {
 		 * <p>Describes which data sources are enabled for the member account's detector.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}/member/detector/get
 		 * @param {string} detectorId The detector ID for the administrator account.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetMemberDetectorsResponse} Success
 		 */
 		GetMemberDetectors(detectorId: string, requestBody: GetMemberDetectorsPostBody): Observable<GetMemberDetectorsResponse> {
@@ -6478,6 +6529,7 @@ export namespace MyNS {
 		 * Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.
 		 * Post detector/{detectorId}/member/get
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetMembersResponse} Success
 		 */
 		GetMembers(detectorId: string, requestBody: GetMembersPostBody): Observable<GetMembersResponse> {
@@ -6488,6 +6540,7 @@ export namespace MyNS {
 		 * Provides the number of days left for each data source used in the free trial period.
 		 * Post detector/{detectorId}/freeTrial/daysRemaining
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty member account.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetRemainingFreeTrialDaysResponse} Success
 		 */
 		GetRemainingFreeTrialDays(detectorId: string, requestBody: GetRemainingFreeTrialDaysPostBody): Observable<GetRemainingFreeTrialDaysResponse> {
@@ -6498,6 +6551,7 @@ export namespace MyNS {
 		 * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.
 		 * Post detector/{detectorId}/usage/statistics
 		 * @param {string} detectorId The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetUsageStatisticsResponse} Success
@@ -6510,6 +6564,7 @@ export namespace MyNS {
 		 * <p>Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services account that invokes this API. If you are using Amazon Web Services Organizations to manager your GuardDuty environment, this step is not needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing accounts with Amazon Web Services Organizations</a>.</p> <p>To invite Amazon Web Services accounts, the first step is to ensure that GuardDuty has been enabled in the potential member accounts. You can now invoke this API to add accounts by invitation. The invited accounts can either accept or decline the invitation from their GuardDuty accounts. Each invited Amazon Web Services account can choose to accept the invitation from only one Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing GuardDuty accounts by invitation</a>.</p> <p>After the invite has been accepted and you choose to disassociate a member account (by using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html">DisassociateMembers</a>) from your account, the details of the member account obtained by invoking <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>, including the associated email addresses, will be retained. This is done so that you can invoke InviteMembers without the need to invoke <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> again. To remove the details associated with a member account, you must also invoke <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>. </p>
 		 * Post detector/{detectorId}/member/invite
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty account that you want to invite members with.
+		 *     Min length: 1    Max length: 300
 		 * @return {InviteMembersResponse} Success
 		 */
 		InviteMembers(detectorId: string, requestBody: InviteMembersPostBody): Observable<InviteMembersResponse> {
@@ -6520,6 +6575,7 @@ export namespace MyNS {
 		 * <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all resources associated with the active member accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running on their EKS nodes.</p>
 		 * Post detector/{detectorId}/coverage
 		 * @param {string} detectorId The unique ID of the detector whose coverage details you want to retrieve.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCoverageResponse} Success
@@ -6532,6 +6588,7 @@ export namespace MyNS {
 		 * Lists Amazon GuardDuty findings for the specified detector ID.
 		 * Post detector/{detectorId}/findings
 		 * @param {string} detectorId The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+		 *     Min length: 1    Max length: 300
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFindingsResponse} Success
@@ -6544,6 +6601,7 @@ export namespace MyNS {
 		 * Lists all GuardDuty membership invitations that were sent to the current Amazon Web Services account.
 		 * Get invitation
 		 * @param {number} maxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6557,6 +6615,7 @@ export namespace MyNS {
 		 * Lists the accounts configured as GuardDuty delegated administrators.
 		 * Get admin
 		 * @param {number} maxResults The maximum number of results to return in the response.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -6599,6 +6658,7 @@ export namespace MyNS {
 		 * Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a> operation.
 		 * Post detector/{detectorId}/member/start
 		 * @param {string} detectorId The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.
+		 *     Min length: 1    Max length: 300
 		 * @return {StartMonitoringMembersResponse} Success
 		 */
 		StartMonitoringMembers(detectorId: string, requestBody: StartMonitoringMembersPostBody): Observable<StartMonitoringMembersResponse> {
@@ -6609,6 +6669,7 @@ export namespace MyNS {
 		 * <p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring the member accounts in your organization.</p>
 		 * Post detector/{detectorId}/member/stop
 		 * @param {string} detectorId The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.
+		 *     Min length: 1    Max length: 300
 		 * @return {StopMonitoringMembersResponse} Success
 		 */
 		StopMonitoringMembers(detectorId: string, requestBody: StopMonitoringMembersPostBody): Observable<StopMonitoringMembersResponse> {
@@ -6619,6 +6680,7 @@ export namespace MyNS {
 		 * Unarchives GuardDuty findings specified by the <code>findingIds</code>.
 		 * Post detector/{detectorId}/findings/unarchive
 		 * @param {string} detectorId The ID of the detector associated with the findings to unarchive.
+		 *     Min length: 1    Max length: 300
 		 * @return {UnarchiveFindingsResponse} Success
 		 */
 		UnarchiveFindings(detectorId: string, requestBody: UnarchiveFindingsPostBody): Observable<UnarchiveFindingsResponse> {
@@ -6630,6 +6692,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) for the resource to remove tags from.
 		 * @param {Array<string>} tagKeys The tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -6640,6 +6703,7 @@ export namespace MyNS {
 		 * Marks the specified GuardDuty findings as useful or not useful.
 		 * Post detector/{detectorId}/findings/feedback
 		 * @param {string} detectorId The ID of the detector associated with the findings to update feedback for.
+		 *     Min length: 1    Max length: 300
 		 * @return {UpdateFindingsFeedbackResponse} Success
 		 */
 		UpdateFindingsFeedback(detectorId: string, requestBody: UpdateFindingsFeedbackPostBody): Observable<UpdateFindingsFeedbackResponse> {
@@ -6650,6 +6714,7 @@ export namespace MyNS {
 		 * <p>Contains information on member accounts to be updated.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		 * Post detector/{detectorId}/member/detector/update
 		 * @param {string} detectorId The detector ID of the administrator account.
+		 *     Min length: 1    Max length: 300
 		 * @return {UpdateMemberDetectorsResponse} Success
 		 */
 		UpdateMemberDetectors(detectorId: string, requestBody: UpdateMemberDetectorsPostBody): Observable<UpdateMemberDetectorsResponse> {
@@ -6757,8 +6822,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -6784,8 +6849,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6823,22 +6888,22 @@ export namespace MyNS {
 		/**
 		 * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
 		 * Required
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		description?: string | null;
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		action?: FilterAction | null;
 
@@ -6857,8 +6922,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -6870,22 +6935,22 @@ export namespace MyNS {
 		/**
 		 * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
 		 * Required
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		action: FormControl<FilterAction | null | undefined>,
 
@@ -6898,8 +6963,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6934,24 +6999,24 @@ export namespace MyNS {
 		/**
 		 * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
 		/**
 		 * The format of the file that contains the IPSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		format: IpSetFormat;
 
 		/**
 		 * The URI of the file that contains the IPSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: string;
 
@@ -6963,8 +7028,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -6976,24 +7041,24 @@ export namespace MyNS {
 		/**
 		 * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The format of the file that contains the IPSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		format: FormControl<IpSetFormat | null | undefined>,
 
 		/**
 		 * The URI of the file that contains the IPSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: FormControl<string | null | undefined>,
 
@@ -7005,8 +7070,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -7048,8 +7113,8 @@ export namespace MyNS {
 		/**
 		 * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		destinationType: DestinationType;
 
@@ -7061,8 +7126,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -7071,15 +7136,15 @@ export namespace MyNS {
 		/**
 		 * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		destinationType: FormControl<DestinationType | null | undefined>,
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7129,24 +7194,24 @@ export namespace MyNS {
 		/**
 		 * A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
 		/**
 		 * The format of the file that contains the ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		format: IpSetFormat;
 
 		/**
 		 * The URI of the file that contains the ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: string;
 
@@ -7158,8 +7223,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7171,24 +7236,24 @@ export namespace MyNS {
 		/**
 		 * A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The format of the file that contains the ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		format: FormControl<IpSetFormat | null | undefined>,
 
 		/**
 		 * The URI of the file that contains the ThreatIntelSet.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: FormControl<string | null | undefined>,
 
@@ -7200,8 +7265,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the create request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -7285,15 +7350,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		description?: string | null;
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		action?: FilterAction | null;
 
@@ -7311,15 +7376,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		action: FormControl<FilterAction | null | undefined>,
 
@@ -7354,15 +7419,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID that specifies the IPSet that you want to update.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name?: string | null;
 
 		/**
 		 * The updated URI of the file that contains the IPSet.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location?: string | null;
 
@@ -7373,15 +7438,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID that specifies the IPSet that you want to update.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The updated URI of the file that contains the IPSet.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: FormControl<string | null | undefined>,
 
@@ -7466,15 +7531,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID that specifies the ThreatIntelSet that you want to update.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name?: string | null;
 
 		/**
 		 * The updated URI of the file that contains the ThreateIntelSet.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location?: string | null;
 
@@ -7485,15 +7550,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID that specifies the ThreatIntelSet that you want to update.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The updated URI of the file that contains the ThreateIntelSet.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		location: FormControl<string | null | undefined>,
 

@@ -48,6 +48,7 @@ export namespace MyNS {
 		/**
 		 * Line number containing the search result.
 		 * Required
+		 * Type: uint, 0 to 4,294,967,295
 		 */
 		line: number;
 
@@ -76,6 +77,7 @@ export namespace MyNS {
 		/**
 		 * Line number containing the search result.
 		 * Required
+		 * Type: uint, 0 to 4,294,967,295
 		 */
 		line: FormControl<number | null | undefined>,
 

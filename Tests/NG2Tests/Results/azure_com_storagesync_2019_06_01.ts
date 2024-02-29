@@ -2350,6 +2350,7 @@ export namespace MyNS {
 		 * Lists all of the available Storage Sync Rest API operations.
 		 * Get providers/Microsoft.StorageSync/operations
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {OperationEntityListResult} Array of operations resources in the Resource Provider
 		 */
 		Operations_List(api_version: string): Observable<OperationEntityListResult> {
@@ -2361,7 +2362,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.StorageSync/locations/{locationName}/checkNameAvailability
 		 * @param {string} locationName The desired region for the name check.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {CheckNameAvailabilityParameters} requestBody Parameters to check availability of the given namespace name
 		 * @return {CheckNameAvailabilityResult} check availability returned successfully.
 		 */
@@ -2373,7 +2376,9 @@ export namespace MyNS {
 		 * Get a StorageSyncService list by subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.StorageSync/storageSyncServices
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {StorageSyncServiceArray} Array of registered Storage Sync Service resources in the subscription.
 		 */
 		StorageSyncServices_ListBySubscription(subscriptionId: string, api_version: string): Observable<StorageSyncServiceArray> {
@@ -2384,8 +2389,11 @@ export namespace MyNS {
 		 * Get Operation status
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/locations/{locationName}/workflows/{workflowId}/operations/{operationId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} locationName The desired region to obtain information from.
 		 * @param {string} workflowId workflow Id
 		 * @param {string} operationId operation Id
@@ -2399,8 +2407,11 @@ export namespace MyNS {
 		 * Get a StorageSyncService list by Resource group name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {StorageSyncServiceArray} Array of registered Storage Sync Service resources in the Resource Group
 		 */
 		StorageSyncServices_ListByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string): Observable<StorageSyncServiceArray> {
@@ -2411,9 +2422,12 @@ export namespace MyNS {
 		 * Get a given StorageSyncService.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {StorageSyncService} Storage Sync Service object
 		 */
 		StorageSyncServices_Get(subscriptionId: string, resourceGroupName: string, storageSyncServiceName: string, api_version: string): Observable<StorageSyncService> {
@@ -2424,8 +2438,11 @@ export namespace MyNS {
 		 * Create a new StorageSyncService.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {StorageSyncServiceCreateParameters} requestBody Storage Sync Service resource name.
 		 * @return {StorageSyncService} Storage Sync Service object created/updated
@@ -2438,8 +2455,11 @@ export namespace MyNS {
 		 * Delete a given StorageSyncService.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @return {void} Storage Sync Service object was deleted.
 		 */
@@ -2451,8 +2471,11 @@ export namespace MyNS {
 		 * Patch a given StorageSyncService.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {StorageSyncServiceUpdateParameters} requestBody Storage Sync Service resource.
 		 * @return {StorageSyncService} Storage Sync Service object created/updated
@@ -2465,8 +2488,11 @@ export namespace MyNS {
 		 * Get a given registered server list.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @return {RegisteredServerArray} Array of Registered Server resources in Storage Sync Service
 		 */
@@ -2478,8 +2504,11 @@ export namespace MyNS {
 		 * Get a given registered server.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} serverId GUID identifying the on-premises server.
 		 * @return {RegisteredServer} Registered Server resources in Sync Group
@@ -2492,8 +2521,11 @@ export namespace MyNS {
 		 * Add a new registered server.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} serverId GUID identifying the on-premises server.
 		 * @param {RegisteredServerCreateParameters} requestBody Body of Registered Server object.
@@ -2507,8 +2539,11 @@ export namespace MyNS {
 		 * Delete the given registered server.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} serverId GUID identifying the on-premises server.
 		 * @return {void} Ok
@@ -2521,8 +2556,11 @@ export namespace MyNS {
 		 * Triggers Server certificate rollover.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}/triggerRollover
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} serverId Server Id
 		 * @param {TriggerRolloverRequest} requestBody Body of Trigger Rollover request.
@@ -2536,8 +2574,11 @@ export namespace MyNS {
 		 * Get a SyncGroup List.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @return {SyncGroupArray} Array of Sync Group resources in Storage Sync Service
 		 */
@@ -2549,8 +2590,11 @@ export namespace MyNS {
 		 * Get a given SyncGroup.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @return {SyncGroup} Sync Group object
@@ -2563,8 +2607,11 @@ export namespace MyNS {
 		 * Create a new SyncGroup.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {SyncGroupCreateParameters} requestBody Sync Group Body
@@ -2578,8 +2625,11 @@ export namespace MyNS {
 		 * Delete a given SyncGroup.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @return {void} Sync Group object was deleted
@@ -2592,8 +2642,11 @@ export namespace MyNS {
 		 * Get a CloudEndpoint List.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @return {CloudEndpointArray} Array of Cloud Endpoint resources in Sync Group
@@ -2606,8 +2659,11 @@ export namespace MyNS {
 		 * Get a given CloudEndpoint.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2621,8 +2677,11 @@ export namespace MyNS {
 		 * Create a new CloudEndpoint.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2637,8 +2696,11 @@ export namespace MyNS {
 		 * Delete a given CloudEndpoint.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2652,8 +2714,11 @@ export namespace MyNS {
 		 * Post Backup a given CloudEndpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/postbackup
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2668,8 +2733,11 @@ export namespace MyNS {
 		 * Post Restore a given CloudEndpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/postrestore
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2684,8 +2752,11 @@ export namespace MyNS {
 		 * Pre Backup a given CloudEndpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/prebackup
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2700,8 +2771,11 @@ export namespace MyNS {
 		 * Pre Restore a given CloudEndpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/prerestore
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2716,8 +2790,11 @@ export namespace MyNS {
 		 * Restore Heartbeat a given CloudEndpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/restoreheartbeat
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2731,8 +2808,11 @@ export namespace MyNS {
 		 * Triggers detection of changes performed on Azure File share connected to the specified Azure File Sync Cloud Endpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}/triggerChangeDetection
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} cloudEndpointName Name of Cloud Endpoint object.
@@ -2747,8 +2827,11 @@ export namespace MyNS {
 		 * Get a ServerEndpoint list.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @return {ServerEndpointArray} Array of Server Endpoint resources in Sync Group
@@ -2761,8 +2844,11 @@ export namespace MyNS {
 		 * Get a ServerEndpoint.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} serverEndpointName Name of Server Endpoint object.
@@ -2776,8 +2862,11 @@ export namespace MyNS {
 		 * Create a new ServerEndpoint.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} serverEndpointName Name of Server Endpoint object.
@@ -2792,8 +2881,11 @@ export namespace MyNS {
 		 * Delete a given ServerEndpoint.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} serverEndpointName Name of Server Endpoint object.
@@ -2807,8 +2899,11 @@ export namespace MyNS {
 		 * Patch a given ServerEndpoint.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} serverEndpointName Name of Server Endpoint object.
@@ -2823,8 +2918,11 @@ export namespace MyNS {
 		 * Recall a server endpoint.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}/recallAction
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} syncGroupName Name of Sync Group resource.
 		 * @param {string} serverEndpointName Name of Server Endpoint object.
@@ -2839,8 +2937,11 @@ export namespace MyNS {
 		 * Get a Workflow List
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @return {WorkflowArray} Array of Workflow resources in Storage Sync Service
 		 */
@@ -2852,8 +2953,11 @@ export namespace MyNS {
 		 * Get Workflows resource
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows/{workflowId}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} workflowId workflow Id
 		 * @return {Workflow} Workflow object
@@ -2866,8 +2970,11 @@ export namespace MyNS {
 		 * Abort the given workflow.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/workflows/{workflowId}/abort
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} storageSyncServiceName Name of Storage Sync Service resource.
 		 * @param {string} workflowId workflow Id
 		 * @return {void} success

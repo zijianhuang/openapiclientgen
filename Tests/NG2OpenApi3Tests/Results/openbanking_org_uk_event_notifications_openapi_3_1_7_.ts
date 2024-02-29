@@ -50,8 +50,8 @@ export namespace MyNS {
 		/**
 		 * Resource Id for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		'http://openbanking.org.uk/rid': string;
 
@@ -65,16 +65,16 @@ export namespace MyNS {
 		/**
 		 * Resource Type for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		'http://openbanking.org.uk/rty': string;
 
 		/**
 		 * Subject type for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		subject_type: string;
 	}
@@ -85,24 +85,24 @@ export namespace MyNS {
 		/**
 		 * Resource Id for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		'http://openbanking.org.uk/rid': FormControl<string | null | undefined>,
 
 		/**
 		 * Resource Type for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		'http://openbanking.org.uk/rty': FormControl<string | null | undefined>,
 
 		/**
 		 * Subject type for the updated resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		subject_type: FormControl<string | null | undefined>,
 	}
@@ -128,8 +128,8 @@ export namespace MyNS {
 		/**
 		 * Resource version.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		version: string;
 	}
@@ -146,8 +146,8 @@ export namespace MyNS {
 		/**
 		 * Resource version.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		version: FormControl<string | null | undefined>,
 	}
@@ -166,8 +166,8 @@ export namespace MyNS {
 		/**
 		 * Audience.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		aud: string;
 
@@ -193,8 +193,8 @@ export namespace MyNS {
 		/**
 		 * JWT ID.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		jti: string;
 
@@ -214,8 +214,8 @@ export namespace MyNS {
 		/**
 		 * Transaction Identifier.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		txn: string;
 	}
@@ -226,8 +226,8 @@ export namespace MyNS {
 		/**
 		 * Audience.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		aud: FormControl<string | null | undefined>,
 
@@ -247,8 +247,8 @@ export namespace MyNS {
 		/**
 		 * JWT ID.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		jti: FormControl<string | null | undefined>,
 
@@ -268,8 +268,8 @@ export namespace MyNS {
 		/**
 		 * Transaction Identifier.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		txn: FormControl<string | null | undefined>,
 	}

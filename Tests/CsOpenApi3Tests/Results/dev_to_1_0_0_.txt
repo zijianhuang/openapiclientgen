@@ -982,8 +982,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain `30` articles by default.
 		/// ApiArticlesGetByPageAndPer_pageAndTagAndTagsAndTags_excludeAndUsernameAndStateAndTopAndCollection_id api/articles
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="tag">Using this parameter will retrieve articles that contain the requested tag. Articles
 		///will be ordered by descending popularity.This parameter can be used in conjuction with `top`.</param>
 		/// <param name="tags">Using this parameter will retrieve articles with any of the comma-separated tags.
@@ -1001,7 +1006,9 @@ namespace MyNS
 		/// <param name="top">Using this parameter will allow the client to return the most popular articles
 		///in the last `N` days.
 		///`top` indicates the number of days since publication of the articles returned.
-		///This param can be used in conjuction with `tag`.</param>
+		///This param can be used in conjuction with `tag`.
+		/// Minimum: 1
+		// </param>
 		/// <param name="collection_id">Adding this will allow the client to return the list of articles
 		///belonging to the requested collection, ordered by ascending publication date.</param>
 		/// <returns>A List of Articles</returns>
@@ -1076,8 +1083,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain 30 articles by default.
 		/// ApiArticlesLatestGetByPageAndPer_page api/articles/latest
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of Articles</returns>
 		public async Task<ArticleIndex[]> ApiArticlesLatestGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1118,8 +1130,13 @@ namespace MyNS
 		/// It will return published articles with pagination. By default a page will contain 30 articles.
 		/// ApiArticlesMeGetByPageAndPer_page api/articles/me
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of the authenticated user's Articles</returns>
 		public async Task<ArticleIndex[]> ApiArticlesMeGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1162,8 +1179,13 @@ namespace MyNS
 		/// By default a page will contain 30 articles.
 		/// ApiArticlesMeAllGetByPageAndPer_page api/articles/me/all
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of the authenticated user's Articles</returns>
 		public async Task<ArticleIndex[]> ApiArticlesMeAllGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1204,8 +1226,13 @@ namespace MyNS
 		/// It will return published articles with pagination. By default a page will contain 30 articles.
 		/// ApiArticlesMePublishedGetByPageAndPer_page api/articles/me/published
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of the authenticated user's Articles</returns>
 		public async Task<ArticleIndex[]> ApiArticlesMePublishedGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1246,8 +1273,13 @@ namespace MyNS
 		/// It will return unpublished articles with pagination. By default a page will contain 30 articles.
 		/// ApiArticlesMeUnpublishedGetByPageAndPer_page api/articles/me/unpublished
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of the authenticated user's Articles</returns>
 		public async Task<ArticleIndex[]> ApiArticlesMeUnpublishedGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1317,7 +1349,9 @@ namespace MyNS
 		/// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
 		/// ApiArticles_idPut api/articles/{id}
 		/// </summary>
-		/// <param name="id">The ID of the user to unpublish.</param>
+		/// <param name="id">The ID of the user to unpublish.
+		/// Minimum: 1
+		// </param>
 		/// <returns>An Article</returns>
 		public async Task ApiArticles_idPutAsync(int id, Article requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1360,7 +1394,9 @@ namespace MyNS
 		/// will remain.
 		/// ApiArticles_idUnpublishPutByNote api/articles/{id}/unpublish
 		/// </summary>
-		/// <param name="id">The ID of the article to unpublish.</param>
+		/// <param name="id">The ID of the article to unpublish.
+		/// Minimum: 1
+		// </param>
 		/// <param name="note">Content for the note that's created along with unpublishing</param>
 		public async Task ApiArticles_idUnpublishPutByNoteAsync(int id, string note, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1562,7 +1598,9 @@ namespace MyNS
 		/// This endpoint allows the client to retrieve a single display ad, via its id.
 		/// ApiDisplay_ads_idGet api/display_ads/{id}
 		/// </summary>
-		/// <param name="id">The ID of the display ad.</param>
+		/// <param name="id">The ID of the display ad.
+		/// Minimum: 1
+		// </param>
 		/// <returns>successful</returns>
 		public async Task ApiDisplay_ads_idGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1591,7 +1629,9 @@ namespace MyNS
 		/// This endpoint allows the client to update the attributes of a single display ad, via its id.
 		/// ApiDisplay_ads_idPut api/display_ads/{id}
 		/// </summary>
-		/// <param name="id">The ID of the display ad.</param>
+		/// <param name="id">The ID of the display ad.
+		/// Minimum: 1
+		// </param>
 		/// <returns>successful</returns>
 		public async Task<string> ApiDisplay_ads_idPutAsync(int id, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1632,7 +1672,9 @@ namespace MyNS
 		/// This endpoint allows the client to remove a display ad from rotation by un-publishing it.
 		/// ApiDisplay_ads_idUnpublishPut api/display_ads/{id}/unpublish
 		/// </summary>
-		/// <param name="id">The ID of the display ad to unpublish.</param>
+		/// <param name="id">The ID of the display ad to unpublish.
+		/// Minimum: 1
+		// </param>
 		public async Task ApiDisplay_ads_idUnpublishPutAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/display_ads/"+id+"/unpublish";
@@ -1657,8 +1699,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain 80 followers by default.
 		/// ApiFollowersUsersGetByPageAndPer_pageAndSort api/followers/users
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="sort">Default is 'created_at'. Specifies the sort order for the created_at param of the follow
 		///                                relationship. To sort by newest followers first (descending order) specify
 		///                                ?sort=-created_at.</param>
@@ -1765,8 +1812,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain `30` users by default.
 		/// ApiOrganizations_usernameArticlesGetByPageAndPer_page api/organizations/{username}/articles
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>An Organization's Articles</returns>
 		public async Task<ArticleIndex[]> ApiOrganizations_usernameArticlesGetByPageAndPer_pageAsync(string username, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1803,8 +1855,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain `30` users by default.
 		/// ApiOrganizations_usernameUsersGetByPageAndPer_page api/organizations/{username}/users
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>An Organization's users</returns>
 		public async Task<User[]> ApiOrganizations_usernameUsersGetByPageAndPer_pageAsync(string username, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1908,7 +1965,9 @@ namespace MyNS
 		/// This endpoint allows the client to delete a single Page object, specified by ID.
 		/// ApiPages_idDelete api/pages/{id}
 		/// </summary>
-		/// <param name="id">The ID of the page.</param>
+		/// <param name="id">The ID of the page.
+		/// Minimum: 1
+		// </param>
 		/// <returns>successful</returns>
 		public async Task<Page> ApiPages_idDeleteAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1943,7 +2002,9 @@ namespace MyNS
 		/// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
 		/// ApiPages_idGet api/pages/{id}
 		/// </summary>
-		/// <param name="id">The ID of the page.</param>
+		/// <param name="id">The ID of the page.
+		/// Minimum: 1
+		// </param>
 		/// <returns>successful</returns>
 		public async Task<Page> ApiPages_idGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1978,7 +2039,9 @@ namespace MyNS
 		/// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
 		/// ApiPages_idPut api/pages/{id}
 		/// </summary>
-		/// <param name="id">The ID of the page.</param>
+		/// <param name="id">The ID of the page.
+		/// Minimum: 1
+		// </param>
 		/// <returns>successful</returns>
 		public async Task<Page> ApiPages_idPutAsync(int id, Page requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2023,8 +2086,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain 30 articles by default.
 		/// ApiPodcast_episodesGetByPageAndPer_pageAndUsername api/podcast_episodes
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="username">Using this parameter will retrieve episodes belonging to a specific podcast.</param>
 		/// <returns>A List of Podcast episodes filtered by username</returns>
 		public async Task<PodcastEpisodeIndex[]> ApiPodcast_episodesGetByPageAndPer_pageAndUsernameAsync(int page, int per_page, string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2146,8 +2214,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain `30` articles by default
 		/// ApiReadinglistGetByPageAndPer_page api/readinglist
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A list of articles in the users readinglist</returns>
 		public async Task<ArticleIndex[]> ApiReadinglistGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2186,8 +2259,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain 10 tags by default.
 		/// ApiTagsGetByPageAndPer_page api/tags
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of all tags</returns>
 		public async Task<Tag[]> ApiTagsGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2298,7 +2376,9 @@ namespace MyNS
 		/// in the UI, so if you want them to know about this, you must notify them.
 		/// ApiUsers_idSuspendPut api/users/{id}/suspend
 		/// </summary>
-		/// <param name="id">The ID of the user to suspend.</param>
+		/// <param name="id">The ID of the user to suspend.
+		/// Minimum: 1
+		// </param>
 		public async Task ApiUsers_idSuspendPutAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/suspend";
@@ -2333,7 +2413,9 @@ namespace MyNS
 		/// request is completed on the server.
 		/// ApiUsers_idUnpublishPut api/users/{id}/unpublish
 		/// </summary>
-		/// <param name="id">The ID of the user to unpublish.</param>
+		/// <param name="id">The ID of the user to unpublish.
+		/// Minimum: 1
+		// </param>
 		public async Task ApiUsers_idUnpublishPutAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/unpublish";
@@ -2360,8 +2442,13 @@ namespace MyNS
 		/// It supports pagination, each page will contain 24 articles by default.
 		/// ApiVideosGetByPageAndPer_page api/videos
 		/// </summary>
-		/// <param name="page">Pagination page</param>
-		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.</param>
+		/// <param name="page">Pagination page
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A List of all articles with videos</returns>
 		public async Task<VideoArticle[]> ApiVideosGetByPageAndPer_pageAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

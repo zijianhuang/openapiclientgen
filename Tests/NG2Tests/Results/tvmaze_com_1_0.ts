@@ -346,6 +346,7 @@ export namespace MyNS {
 		 * List the marked episodes
 		 * Get user/episodes
 		 * @param {number} show_id Only return episodes from this specific show
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<MarkedEpisode>} An array of marked episodes
 		 */
 		UserEpisodesGetByShow_id(show_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<MarkedEpisode>> {

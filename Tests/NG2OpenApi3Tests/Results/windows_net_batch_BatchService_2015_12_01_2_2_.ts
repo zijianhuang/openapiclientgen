@@ -602,7 +602,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the job entered its previous state. This property is not set if the job is in its initial Active state. */
 		previousStateTransitionTime?: Date | null;
 
-		/** Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Gets or sets the current state of the job. */
@@ -645,7 +648,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the job entered its previous state. This property is not set if the job is in its initial Active state. */
 		previousStateTransitionTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Gets or sets the current state of the job. */
@@ -978,7 +984,10 @@ export namespace MyNS {
 		/** Gets or sets the creation time of the pool. */
 		creationTime?: Date | null;
 
-		/** Gets or sets the number of compute nodes currently in the pool. */
+		/**
+		 * Gets or sets the number of compute nodes currently in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentDedicated?: number | null;
 
 		/** Gets or sets the Azure Guest OS Version currently installed on the virtual machines in the pool. This may differ from TargetOSVersion if the pool state is Upgrading. */
@@ -1002,7 +1011,10 @@ export namespace MyNS {
 		/** Gets or sets the last modified time of the pool. */
 		lastModified?: Date | null;
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** Gets or sets a list of name-value pairs associated with the pool as metadata. */
@@ -1029,7 +1041,10 @@ export namespace MyNS {
 		/** Contains utilization and resource usage statistics for the lifetime of a pool. */
 		stats?: PoolStatistics;
 
-		/** Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated?: number | null;
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. The default value is * which specifies the latest operating system version for the specified family. */
@@ -1063,7 +1078,10 @@ export namespace MyNS {
 		/** Gets or sets the creation time of the pool. */
 		creationTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the number of compute nodes currently in the pool. */
+		/**
+		 * Gets or sets the number of compute nodes currently in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentDedicated: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS Version currently installed on the virtual machines in the pool. This may differ from TargetOSVersion if the pool state is Upgrading. */
@@ -1087,7 +1105,10 @@ export namespace MyNS {
 		/** Gets or sets the last modified time of the pool. */
 		lastModified: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS family to be installed on the virtual machines in the pool. */
@@ -1102,7 +1123,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the pool entered its current state. */
 		stateTransitionTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. The default value is * which specifies the latest operating system version for the specified family. */
@@ -1373,10 +1397,16 @@ export namespace MyNS {
 		/** Gets or sets the time at which the subtask completed. This property is set only if the subtask is in the Completed state. */
 		endTime?: Date | null;
 
-		/** Gets or sets the exit code of the subtask. This property is set only if the subtask is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the subtask. This property is set only if the subtask is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
-		/** Gets or sets the id of the subtask. */
+		/**
+		 * Gets or sets the id of the subtask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Information about the compute node on which a task ran. */
@@ -1407,10 +1437,16 @@ export namespace MyNS {
 		/** Gets or sets the time at which the subtask completed. This property is set only if the subtask is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the exit code of the subtask. This property is set only if the subtask is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the subtask. This property is set only if the subtask is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
-		/** Gets or sets the id of the subtask. */
+		/**
+		 * Gets or sets the id of the subtask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Gets or sets the previous state of the subtask. This property is not set if the subtask is in its initial Active state. */
@@ -1485,7 +1521,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the compute node entered its current state. */
 		stateTransitionTime?: Date | null;
 
-		/** Gets or sets the total number of job tasks completed on the compute node. This includes Job Preparation, Job Release and Job Manager tasks, but not the pool start task. */
+		/**
+		 * Gets or sets the total number of job tasks completed on the compute node. This includes Job Preparation, Job Release and Job Manager tasks, but not the pool start task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalTasksRun?: number | null;
 
 		/** Gets or sets the URL of the compute node. */
@@ -1522,7 +1561,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the compute node entered its current state. */
 		stateTransitionTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the total number of job tasks completed on the compute node. This includes Job Preparation, Job Release and Job Manager tasks, but not the pool start task. */
+		/**
+		 * Gets or sets the total number of job tasks completed on the compute node. This includes Job Preparation, Job Release and Job Manager tasks, but not the pool start task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalTasksRun: FormControl<number | null | undefined>,
 
 		/** Gets or sets the URL of the compute node. */
@@ -1589,7 +1631,10 @@ export namespace MyNS {
 		/** Gets or sets the id of the job to which the task belongs. */
 		jobId?: string | null;
 
-		/** Gets or sets the id of the subtask if the task is a multi-instance task. */
+		/**
+		 * Gets or sets the id of the subtask if the task is a multi-instance task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subtaskId?: number | null;
 
 		/** Gets or sets the id of the task. */
@@ -1611,7 +1656,10 @@ export namespace MyNS {
 		/** Gets or sets the id of the job to which the task belongs. */
 		jobId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the id of the subtask if the task is a multi-instance task. */
+		/**
+		 * Gets or sets the id of the subtask if the task is a multi-instance task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subtaskId: FormControl<number | null | undefined>,
 
 		/** Gets or sets the id of the task. */
@@ -1841,8 +1889,9 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the length of the file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		contentLength: number;
+		contentLength: string;
 
 		/** Gets or sets the content type of the file. */
 		contentType?: string | null;
@@ -1863,8 +1912,9 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the length of the file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		contentLength: FormControl<number | null | undefined>,
+		contentLength: FormControl<string | null | undefined>,
 
 		/** Gets or sets the content type of the file. */
 		contentType: FormControl<string | null | undefined>,
@@ -1880,7 +1930,7 @@ export namespace MyNS {
 	}
 	export function CreateFilePropertiesFormGroup() {
 		return new FormGroup<FilePropertiesFormProperties>({
-			contentLength: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			contentLength: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			contentType: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -1925,7 +1975,10 @@ export namespace MyNS {
 		 */
 		poolInfo: PoolInformation;
 
-		/** Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Gets or sets the flag that determines if this job will use tasks with dependencies. */
@@ -1944,7 +1997,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Gets or sets the flag that determines if this job will use tasks with dependencies. */
@@ -1964,7 +2020,10 @@ export namespace MyNS {
 	/** Specifies the execution constraints for jobs created on a schedule. */
 	export interface JobConstraints {
 
-		/** Gets or sets the maximum number of times each task may be retried. The Batch service retries a task if its exit code is nonzero. */
+		/**
+		 * Gets or sets the maximum number of times each task may be retried. The Batch service retries a task if its exit code is nonzero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** Gets or sets the maximum elapsed time that the job may run, measured from the time the job starts. If the job does not complete within the time limit, the Batch service terminates it and any tasks that are still running. */
@@ -1974,7 +2033,10 @@ export namespace MyNS {
 	/** Specifies the execution constraints for jobs created on a schedule. */
 	export interface JobConstraintsFormProperties {
 
-		/** Gets or sets the maximum number of times each task may be retried. The Batch service retries a task if its exit code is nonzero. */
+		/**
+		 * Gets or sets the maximum number of times each task may be retried. The Batch service retries a task if its exit code is nonzero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the maximum elapsed time that the job may run, measured from the time the job starts. If the job does not complete within the time limit, the Batch service terminates it and any tasks that are still running. */
@@ -2146,14 +2208,20 @@ export namespace MyNS {
 		/** Specifies how a job should be assigned to a pool. */
 		poolInfo?: PoolInformation;
 
-		/** Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
 	/** Parameters for a CloudJobOperations.Patch request. */
 	export interface JobPatchParameterFormProperties {
 
-		/** Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateJobPatchParameterFormGroup() {
@@ -2228,7 +2296,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the Job Preparation task completed. This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** Gets or sets the exit code of the Job Preparation task. This property is set only if the task is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the Job Preparation task. This property is set only if the task is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Gets or sets the most recent time at which a retry of the Job Preparation task started running. This property is set only if the task was retried (i.e. retryCount is nonzero). */
@@ -2237,6 +2308,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the Job Preparation task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -2268,7 +2340,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the Job Preparation task completed. This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the exit code of the Job Preparation task. This property is set only if the task is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the Job Preparation task. This property is set only if the task is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Gets or sets the most recent time at which a retry of the Job Preparation task started running. This property is set only if the task was retried (i.e. retryCount is nonzero). */
@@ -2277,6 +2352,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the Job Preparation task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -2376,7 +2452,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the Job Release task completed. This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** Gets or sets the exit code of the Job Release task. This property is set only if the task is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the Job Release task. This property is set only if the task is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Information about an error when scheduling a task. */
@@ -2407,7 +2486,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the Job Release task completed. This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the exit code of the Job Release task. This property is set only if the task is in the Completed state. */
+		/**
+		 * Gets or sets the exit code of the Job Release task. This property is set only if the task is in the Completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/**
@@ -2562,32 +2644,37 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total number of tasks that failed during the given time range in jobs created under the schedule. A task fails if it exhausts its maximum retry count without returning exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: number;
+		numFailedTasks: string;
 
 		/**
 		 * Gets or sets the total number of tasks successfully completed during the given time range in jobs created under the schedule.  A task completes successfully if it returns exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: number;
+		numSucceededTasks: string;
 
 		/**
 		 * Gets or sets the total number of retries during the given time range on all the tasks in jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numTaskRetries: number;
+		numTaskRetries: string;
 
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: number;
+		readIOps: string;
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -2622,14 +2709,16 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: number;
+		writeIOps: string;
 	}
 
 	/** The lifetime resource usage statistics for a job schedule. */
@@ -2650,32 +2739,37 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total number of tasks that failed during the given time range in jobs created under the schedule. A task fails if it exhausts its maximum retry count without returning exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: FormControl<number | null | undefined>,
+		numFailedTasks: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of tasks successfully completed during the given time range in jobs created under the schedule.  A task completes successfully if it returns exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: FormControl<number | null | undefined>,
+		numSucceededTasks: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of retries during the given time range on all the tasks in jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numTaskRetries: FormControl<number | null | undefined>,
+		numTaskRetries: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: FormControl<number | null | undefined>,
+		readIOps: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -2710,31 +2804,33 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by all the tasks in all the jobs created under the schedule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: FormControl<number | null | undefined>,
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateJobScheduleStatisticsFormGroup() {
 		return new FormGroup<JobScheduleStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			numFailedTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numSucceededTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numTaskRetries: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			numFailedTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numSucceededTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numTaskRetries: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2842,7 +2938,10 @@ export namespace MyNS {
 		/** Specifies how a job should be assigned to a pool. */
 		poolInfo?: PoolInformation;
 
-		/** Gets or sets the priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Gets or sets the flag that determines if this job will use tasks with dependencies. */
@@ -2855,7 +2954,10 @@ export namespace MyNS {
 		/** Gets or sets the display name for jobs created under this schedule. It need not be unique and can contain any Unicode characters up to a maximum length of 1024. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Gets or sets the priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Gets or sets the priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Gets or sets the flag that determines if this job will use tasks with dependencies. */
@@ -2889,32 +2991,37 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total number of tasks in the job that failed during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: number;
+		numFailedTasks: string;
 
 		/**
 		 * Gets or sets the total number of tasks successfully completed in the job during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: number;
+		numSucceededTasks: string;
 
 		/**
 		 * Gets or sets the total number of retries on all the tasks in the job during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numTaskRetries: number;
+		numTaskRetries: string;
 
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by all the tasks in the job.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by all the tasks in the job.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: number;
+		readIOps: string;
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -2949,14 +3056,16 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by all the tasks in the job.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by all the tasks in the job.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: number;
+		writeIOps: string;
 	}
 
 	/** Resource usage statistics for a job. */
@@ -2977,32 +3086,37 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total number of tasks in the job that failed during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: FormControl<number | null | undefined>,
+		numFailedTasks: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of tasks successfully completed in the job during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: FormControl<number | null | undefined>,
+		numSucceededTasks: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of retries on all the tasks in the job during the given time range.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numTaskRetries: FormControl<number | null | undefined>,
+		numTaskRetries: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by all the tasks in the job.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by all the tasks in the job.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: FormControl<number | null | undefined>,
+		readIOps: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -3037,31 +3151,33 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by all the tasks in the job.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by all the tasks in the job.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: FormControl<number | null | undefined>,
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateJobStatisticsFormGroup() {
 		return new FormGroup<JobStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			numFailedTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numSucceededTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numTaskRetries: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			numFailedTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numSucceededTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numTaskRetries: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3103,14 +3219,20 @@ export namespace MyNS {
 		 */
 		poolInfo: PoolInformation;
 
-		/** Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
 	/** Parameters for a CloudJobOperations.Update request. */
 	export interface JobUpdateParameterFormProperties {
 
-		/** Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Sets the priority of the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateJobUpdateParameterFormGroup() {
@@ -3133,6 +3255,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of compute node instances used for multi-instance task.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfInstances: number;
 	}
@@ -3146,6 +3269,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of compute node instances used for multi-instance task.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfInstances: FormControl<number | null | undefined>,
 	}
@@ -3385,7 +3509,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** Gets or sets a list of name-value pairs associated with the pool as metadata. */
@@ -3403,7 +3530,10 @@ export namespace MyNS {
 		/** A task defined on a pool and run by compute nodes when they join the pool. */
 		startTask?: StartTask;
 
-		/** Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated?: number | null;
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. The default value is * which specifies the latest operating system version for the specified family. */
@@ -3443,7 +3573,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/**
@@ -3455,7 +3588,10 @@ export namespace MyNS {
 		/** Gets or sets the timeout for allocation of compute nodes to the pool. In a Get Pool operation, this is the timeout for the most recent resize operation. The default value is 10 minutes. */
 		resizeTimeout: FormControl<string | null | undefined>,
 
-		/** Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool. This property must have the default value if EnableAutoScale is true. It is required if EnableAutoScale is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. The default value is * which specifies the latest operating system version for the specified family. */
@@ -3595,12 +3731,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the cross data center network egress in GiB from the pool during this interval.
 		 * Required
+		 * Type: double
 		 */
 		dataEgressGiB: number;
 
 		/**
 		 * Gets or sets the cross data center network ingress in GiB to the pool during this interval.
 		 * Required
+		 * Type: double
 		 */
 		dataIngressGiB: number;
 
@@ -3625,6 +3763,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total core hours used in the pool during this aggregation interval.
 		 * Required
+		 * Type: double
 		 */
 		totalCoreHours: number;
 
@@ -3641,12 +3780,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the cross data center network egress in GiB from the pool during this interval.
 		 * Required
+		 * Type: double
 		 */
 		dataEgressGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the cross data center network ingress in GiB to the pool during this interval.
 		 * Required
+		 * Type: double
 		 */
 		dataIngressGiB: FormControl<number | null | undefined>,
 
@@ -3671,6 +3812,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total core hours used in the pool during this aggregation interval.
 		 * Required
+		 * Type: double
 		 */
 		totalCoreHours: FormControl<number | null | undefined>,
 
@@ -3732,6 +3874,7 @@ export namespace MyNS {
 		/**
 		 * Sets the desired number of compute nodes in the pool.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		targetDedicated: number;
 	}
@@ -3748,6 +3891,7 @@ export namespace MyNS {
 		/**
 		 * Sets the desired number of compute nodes in the pool.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		targetDedicated: FormControl<number | null | undefined>,
 	}
@@ -3785,7 +3929,10 @@ export namespace MyNS {
 		/** Gets or sets whether the pool permits direct communication between nodes. */
 		enableInterNodeCommunication?: boolean | null;
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** Gets or sets a list of name-value pairs associated with the pool as metadata. */
@@ -3800,7 +3947,10 @@ export namespace MyNS {
 		/** A task defined on a pool and run by compute nodes when they join the pool. */
 		startTask?: StartTask;
 
-		/** Gets or sets the desired number of compute nodes in the pool. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated?: number | null;
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. */
@@ -3831,7 +3981,10 @@ export namespace MyNS {
 		/** Gets or sets whether the pool permits direct communication between nodes. */
 		enableInterNodeCommunication: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool. */
+		/**
+		 * Gets or sets the maximum number of tasks that can run concurrently on a single compute node in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS family to be installed on the virtual machines in the pool. */
@@ -3840,7 +3993,10 @@ export namespace MyNS {
 		/** Gets or sets the timeout for allocation of compute nodes to the pool. */
 		resizeTimeout: FormControl<string | null | undefined>,
 
-		/** Gets or sets the desired number of compute nodes in the pool. */
+		/**
+		 * Gets or sets the desired number of compute nodes in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicated: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Azure Guest OS version to be installed on the virtual machines in the pool. */
@@ -4053,44 +4209,51 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the average CPU usage across all nodes in the pool (percentage per node).
 		 * Required
+		 * Type: double
 		 */
 		avgCPUPercentage: number;
 
 		/**
 		 * Gets or sets the average used disk space in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		avgDiskGiB: number;
 
 		/**
 		 * Gets or sets the average memory usage in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		avgMemoryGiB: number;
 
 		/**
 		 * Gets or sets the total amount of data in GiB of disk reads across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		diskReadGiB: number;
 
 		/**
 		 * Gets or sets the total number of disk read operations across all nodes in the pool.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		diskReadIOps: number;
+		diskReadIOps: string;
 
 		/**
 		 * Gets or sets the total amount of data in GiB of disk writes across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		diskWriteGiB: number;
 
 		/**
 		 * Gets or sets the total number of disk write operations across all nodes in the pool.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		diskWriteIOps: number;
+		diskWriteIOps: string;
 
 		/**
 		 * Gets or sets the time at which the statistics were last updated. All statistics are limited to the range between startTime and lastUpdateTime.
@@ -4101,24 +4264,28 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of network reads across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		networkReadGiB: number;
 
 		/**
 		 * Gets or sets the total amount of data in GiB of network writes across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		networkWriteGiB: number;
 
 		/**
 		 * Gets or sets the peak used disk space in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		peakDiskGiB: number;
 
 		/**
 		 * Gets or sets the peak memory usage in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		peakMemoryGiB: number;
 
@@ -4135,44 +4302,51 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the average CPU usage across all nodes in the pool (percentage per node).
 		 * Required
+		 * Type: double
 		 */
 		avgCPUPercentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the average used disk space in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		avgDiskGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the average memory usage in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		avgMemoryGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total amount of data in GiB of disk reads across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		diskReadGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of disk read operations across all nodes in the pool.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		diskReadIOps: FormControl<number | null | undefined>,
+		diskReadIOps: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the total amount of data in GiB of disk writes across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		diskWriteGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of disk write operations across all nodes in the pool.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		diskWriteIOps: FormControl<number | null | undefined>,
+		diskWriteIOps: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the time at which the statistics were last updated. All statistics are limited to the range between startTime and lastUpdateTime.
@@ -4183,24 +4357,28 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of network reads across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		networkReadGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total amount of data in GiB of network writes across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		networkWriteGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the peak used disk space in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		peakDiskGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the peak memory usage in GiB across all nodes in the pool.
 		 * Required
+		 * Type: double
 		 */
 		peakMemoryGiB: FormControl<number | null | undefined>,
 
@@ -4216,9 +4394,9 @@ export namespace MyNS {
 			avgDiskGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			avgMemoryGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			diskReadGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			diskReadIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			diskReadIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			diskWriteGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			diskWriteIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			diskWriteIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			networkReadGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			networkWriteGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -4281,7 +4459,10 @@ export namespace MyNS {
 		/** Gets or sets a list of environment variable settings for the start task. */
 		environmentSettings?: Array<EnvironmentSetting>;
 
-		/** Gets or sets the maximum number of times the task may be retried. */
+		/**
+		 * Gets or sets the maximum number of times the task may be retried.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** Gets or sets a list of files that Batch will download to the compute node before running the command line. */
@@ -4300,7 +4481,10 @@ export namespace MyNS {
 		/** Gets or sets the command line of the start task. */
 		commandLine: FormControl<string | null | undefined>,
 
-		/** Gets or sets the maximum number of times the task may be retried. */
+		/**
+		 * Gets or sets the maximum number of times the task may be retried.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets whether to run the start task in elevated mode. The default value is false. */
@@ -4326,7 +4510,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the start task stopped running. */
 		endTime?: Date | null;
 
-		/** Gets or sets the exit code of the start task. */
+		/**
+		 * Gets or sets the exit code of the start task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Gets or sets the most recent time at which a retry of the task started running. */
@@ -4335,6 +4522,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -4360,7 +4548,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the start task stopped running. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the exit code of the start task. */
+		/**
+		 * Gets or sets the exit code of the start task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Gets or sets the most recent time at which a retry of the task started running. */
@@ -4369,6 +4560,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -4472,7 +4664,10 @@ export namespace MyNS {
 	/** Constraints to apply to the Job Manager task. */
 	export interface TaskConstraints {
 
-		/** Gets or sets the maximum number of times the task may be retried. The Batch service retries a task if its exit code is nonzero. */
+		/**
+		 * Gets or sets the maximum number of times the task may be retried. The Batch service retries a task if its exit code is nonzero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** Gets or sets the maximum elapsed time that the task may run, measured from the time the task starts. If the task does not complete within the time limit, the Batch service terminates it. */
@@ -4485,7 +4680,10 @@ export namespace MyNS {
 	/** Constraints to apply to the Job Manager task. */
 	export interface TaskConstraintsFormProperties {
 
-		/** Gets or sets the maximum number of times the task may be retried. The Batch service retries a task if its exit code is nonzero. */
+		/**
+		 * Gets or sets the maximum number of times the task may be retried. The Batch service retries a task if its exit code is nonzero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the maximum elapsed time that the task may run, measured from the time the task starts. If the task does not complete within the time limit, the Batch service terminates it. */
@@ -4528,12 +4726,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the last task id in the range.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: number;
 
 		/**
 		 * Gets or sets the first task id in the range.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: number;
 	}
@@ -4542,12 +4742,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the last task id in the range.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the first task id in the range.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: FormControl<number | null | undefined>,
 	}
@@ -4566,7 +4768,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the task completed. This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** Gets or sets the exit code of the task. This property is set only if the task is in completed state. */
+		/**
+		 * Gets or sets the exit code of the task. This property is set only if the task is in completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Gets or sets the most recent time at which the task has been requeued by the Batch service as the result of a user request. */
@@ -4578,12 +4783,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the task has been requeued by the Batch service as the result of a user request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requeueCount: number;
 
 		/**
 		 * Gets or sets the number of times the task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -4600,7 +4807,10 @@ export namespace MyNS {
 		/** Gets or sets the time at which the task completed. This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the exit code of the task. This property is set only if the task is in completed state. */
+		/**
+		 * Gets or sets the exit code of the task. This property is set only if the task is in completed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Gets or sets the most recent time at which the task has been requeued by the Batch service as the result of a user request. */
@@ -4612,12 +4822,14 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the number of times the task has been requeued by the Batch service as the result of a user request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requeueCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the number of times the task has been retried by the Batch service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -4729,14 +4941,16 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by the task.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by the task.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: number;
+		readIOps: string;
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -4771,14 +4985,16 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by the task.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: number;
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by the task.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: number;
+		writeIOps: string;
 	}
 
 	/** Resource usage statistics for a task. */
@@ -4799,14 +5015,16 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O read by the task.
 		 * Required
+		 * Type: double
 		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O read operations performed by the task.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		readIOps: FormControl<number | null | undefined>,
+		readIOps: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets the start time of the time range covered by the statistics.
@@ -4841,28 +5059,30 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the total amount of data in GiB of I/O written by the task.
 		 * Required
+		 * Type: double
 		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the total number of I/O write operations performed by the task.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		writeIOps: FormControl<number | null | undefined>,
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskStatisticsFormGroup() {
 		return new FormGroup<TaskStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4946,9 +5166,10 @@ export namespace MyNS {
 		 * Lists all of the applications available in the specified account.
 		 * Get applications
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {ApplicationListResult} 
 		 */
 		Application_List(maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ApplicationListResult> {
 			return this.http.get<ApplicationListResult>(this.baseUri + 'applications?maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -4959,8 +5180,8 @@ export namespace MyNS {
 		 * Get applications/{applicationId}
 		 * @param {string} applicationId The id of the application.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {ApplicationSummary} 
 		 */
 		Application_Get(applicationId: string, timeout: number | null | undefined, api_version: string): Observable<ApplicationSummary> {
 			return this.http.get<ApplicationSummary>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -4972,7 +5193,9 @@ export namespace MyNS {
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CertificateListResult} Gets the list of certificates.
 		 */
@@ -4986,6 +5209,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate to be deleted.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5000,8 +5224,8 @@ export namespace MyNS {
 		 * @param {string} thumbprint The thumbprint of the certificate to get.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {Certificate} 
 		 */
 		Certificate_Get(thumbprintAlgorithm: string, thumbprint: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<Certificate> {
 			return this.http.get<Certificate>(this.baseUri + 'certificates(thumbprintAlgorithm=' + (thumbprintAlgorithm == null ? '' : encodeURIComponent(thumbprintAlgorithm)) + ',thumbprint=' + (thumbprint == null ? '' : encodeURIComponent(thumbprint)) + ')&select=' + (select == null ? '' : encodeURIComponent(select)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5013,6 +5237,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate being deleted.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5027,9 +5252,10 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJobListResult} 
 		 */
 		Job_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListResult> {
 			return this.http.get<CloudJobListResult>(this.baseUri + 'jobs?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5040,6 +5266,7 @@ export namespace MyNS {
 		 * Delete jobs/{jobId}
 		 * @param {string} jobId The id of the job to delete.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5054,8 +5281,8 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJob} 
 		 */
 		Job_Get(jobId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJob> {
 			return this.http.get<CloudJob>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5066,6 +5293,7 @@ export namespace MyNS {
 		 * Post jobs/{jobId}/enable
 		 * @param {string} jobId The id of the job to enable.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5080,9 +5308,10 @@ export namespace MyNS {
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJobListPreparationAndReleaseTaskStatusResult} 
 		 */
 		Job_ListPreparationAndReleaseTaskStatus(jobId: string, filter: string | null | undefined, select: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListPreparationAndReleaseTaskStatusResult> {
 			return this.http.get<CloudJobListPreparationAndReleaseTaskStatusResult>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/jobpreparationandreleasetaskstatus&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5096,9 +5325,10 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudTaskListResult} 
 		 */
 		Task_List(jobId: string, filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTaskListResult> {
 			return this.http.get<CloudTaskListResult>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/tasks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5110,6 +5340,7 @@ export namespace MyNS {
 		 * @param {string} jobId The id of the job from which to delete the task.
 		 * @param {string} taskId The id of the task to delete.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5125,8 +5356,8 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudTask} 
 		 */
 		Task_Get(jobId: string, taskId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTask> {
 			return this.http.get<CloudTask>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/tasks/' + (taskId == null ? '' : encodeURIComponent(taskId)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5140,9 +5371,10 @@ export namespace MyNS {
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {boolean} recursive Sets whether to list children of a directory.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {NodeFileListResult} 
 		 */
 		File_ListFromTask(jobId: string, taskId: string, filter: string | null | undefined, recursive: boolean | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<NodeFileListResult> {
 			return this.http.get<NodeFileListResult>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/tasks/' + (taskId == null ? '' : encodeURIComponent(taskId)) + '/files&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&recursive=' + recursive + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5156,6 +5388,7 @@ export namespace MyNS {
 		 * @param {string} fileName The path to the task file that you want to delete.
 		 * @param {boolean} recursive Sets whether to delete children of a directory. If the fileName parameter represents a directory instead of a file, you can set Recursive to true to delete the directory and all of the files and subdirectories in it. If Recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5170,8 +5403,8 @@ export namespace MyNS {
 		 * @param {string} taskId The id of the task whose file you want to retrieve.
 		 * @param {string} fileName The path to the task file that you want to get the content of.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {string} 
 		 */
 		File_GetFromTask(jobId: string, taskId: string, fileName: string, timeout: number | null | undefined, api_version: string): Observable<string> {
 			return this.http.get(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/tasks/' + (taskId == null ? '' : encodeURIComponent(taskId)) + '/files/' + (fileName == null ? '' : encodeURIComponent(fileName)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), { responseType: 'text' });
@@ -5184,8 +5417,8 @@ export namespace MyNS {
 		 * @param {string} taskId The id of the task.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudTaskListSubtasksResult} 
 		 */
 		Task_ListSubtasks(jobId: string, taskId: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTaskListSubtasksResult> {
 			return this.http.get<CloudTaskListSubtasksResult>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/tasks/' + (taskId == null ? '' : encodeURIComponent(taskId)) + '/subtasksinfo&select=' + (select == null ? '' : encodeURIComponent(select)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5197,6 +5430,7 @@ export namespace MyNS {
 		 * @param {string} jobId The id of the job containing the task.
 		 * @param {string} taskId The id of the task to terminate.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5211,9 +5445,10 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJobScheduleListResult} 
 		 */
 		JobSchedule_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobScheduleListResult> {
 			return this.http.get<CloudJobScheduleListResult>(this.baseUri + 'jobschedules?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5224,6 +5459,7 @@ export namespace MyNS {
 		 * Delete jobschedules/{jobScheduleId}
 		 * @param {string} jobScheduleId The id of the job schedule to delete.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5238,8 +5474,8 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJobSchedule} 
 		 */
 		JobSchedule_Get(jobScheduleId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobSchedule> {
 			return this.http.get<CloudJobSchedule>(this.baseUri + 'jobschedules/' + (jobScheduleId == null ? '' : encodeURIComponent(jobScheduleId)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5250,6 +5486,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/disable
 		 * @param {string} jobScheduleId The id of the job schedule to disable.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5262,6 +5499,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/enable
 		 * @param {string} jobScheduleId The id of the job schedule to enable.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5277,9 +5515,10 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudJobListResult} 
 		 */
 		Job_ListFromJobSchedule(jobScheduleId: string, filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListResult> {
 			return this.http.get<CloudJobListResult>(this.baseUri + 'jobschedules/' + (jobScheduleId == null ? '' : encodeURIComponent(jobScheduleId)) + '/jobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5290,6 +5529,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/terminate
 		 * @param {string} jobScheduleId The id of the job schedule to terminates.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5301,8 +5541,8 @@ export namespace MyNS {
 		 * Gets lifetime summary statistics for all of the jobs in the specified account. Statistics are aggregated across all jobs that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimejobstats
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {JobStatistics} 
 		 */
 		Job_GetAllJobsLifetimeStatistics(timeout: number | null | undefined, api_version: string): Observable<JobStatistics> {
 			return this.http.get<JobStatistics>(this.baseUri + 'lifetimejobstats?timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5312,8 +5552,8 @@ export namespace MyNS {
 		 * Gets lifetime summary statistics for all of the pools in the specified account. Statistics are aggregated across all pools that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimepoolstats
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {PoolStatistics} 
 		 */
 		Pool_GetAllPoolsLifetimeStatistics(timeout: number | null | undefined, api_version: string): Observable<PoolStatistics> {
 			return this.http.get<PoolStatistics>(this.baseUri + 'lifetimepoolstats?timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5326,9 +5566,10 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudPoolListResult} 
 		 */
 		Pool_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudPoolListResult> {
 			return this.http.get<CloudPoolListResult>(this.baseUri + 'pools?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5339,6 +5580,7 @@ export namespace MyNS {
 		 * Delete pools/{poolId}
 		 * @param {string} poolId The id of the pool to delete.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5353,8 +5595,8 @@ export namespace MyNS {
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {string} expand Sets an OData $expand clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {CloudPool} 
 		 */
 		Pool_Get(poolId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudPool> {
 			return this.http.get<CloudPool>(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5365,6 +5607,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/disableautoscale
 		 * @param {string} poolId The id of the pool on which to disable automatic scaling.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5379,9 +5622,10 @@ export namespace MyNS {
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {ComputeNodeListResult} 
 		 */
 		ComputeNode_List(poolId: string, filter: string | null | undefined, select: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ComputeNodeListResult> {
 			return this.http.get<ComputeNodeListResult>(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '/nodes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5394,8 +5638,8 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the compute node that you want to get information about.
 		 * @param {string} select Sets an OData $select clause.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {ComputeNode} 
 		 */
 		ComputeNode_Get(poolId: string, nodeId: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ComputeNode> {
 			return this.http.get<ComputeNode>(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '/nodes/' + (nodeId == null ? '' : encodeURIComponent(nodeId)) + '&select=' + (select == null ? '' : encodeURIComponent(select)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5407,6 +5651,7 @@ export namespace MyNS {
 		 * @param {string} poolId The id of the pool that contains the compute node.
 		 * @param {string} nodeId The id of the compute node that you want to enable task scheduling.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5422,9 +5667,10 @@ export namespace MyNS {
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {boolean} recursive Sets whether to list children of a directory.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {NodeFileListResult} 
 		 */
 		File_ListFromComputeNode(poolId: string, nodeId: string, filter: string | null | undefined, recursive: boolean | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<NodeFileListResult> {
 			return this.http.get<NodeFileListResult>(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '/nodes/' + (nodeId == null ? '' : encodeURIComponent(nodeId)) + '/files&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&recursive=' + recursive + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -5438,6 +5684,7 @@ export namespace MyNS {
 		 * @param {string} fileName The path to the file that you want to delete.
 		 * @param {boolean} recursive Sets whether to delete children of a directory. If the fileName parameter represents a directory instead of a file, you can set Recursive to true to delete the directory and all of the files and subdirectories in it. If Recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5452,8 +5699,8 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the compute node that contains the file.
 		 * @param {string} fileName The path to the task file that you want to get the content of.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {string} 
 		 */
 		File_GetFromComputeNode(poolId: string, nodeId: string, fileName: string, timeout: number | null | undefined, api_version: string): Observable<string> {
 			return this.http.get(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '/nodes/' + (nodeId == null ? '' : encodeURIComponent(nodeId)) + '/files/' + (fileName == null ? '' : encodeURIComponent(fileName)) + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), { responseType: 'text' });
@@ -5465,8 +5712,8 @@ export namespace MyNS {
 		 * @param {string} poolId The id of the pool that contains the compute node.
 		 * @param {string} nodeId The id of the compute node for which you want to get the Remote Desktop Protocol file.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {string} 
 		 */
 		ComputeNode_GetRemoteDesktop(poolId: string, nodeId: string, timeout: number | null | undefined, api_version: string): Observable<string> {
 			return this.http.get(this.baseUri + 'pools/' + (poolId == null ? '' : encodeURIComponent(poolId)) + '/nodes/' + (nodeId == null ? '' : encodeURIComponent(nodeId)) + '/rdp&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), { responseType: 'text' });
@@ -5479,6 +5726,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the machine on which you want to delete a user account.
 		 * @param {string} userName The name of the user account to delete.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5491,6 +5739,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/stopresize
 		 * @param {string} poolId The id of the pool whose resizing you want to stop.
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5505,9 +5754,10 @@ export namespace MyNS {
 		 * @param {Date} endtime The latest time from which to include metrics. This must be at least two hours before the current time.
 		 * @param {string} filter Sets an OData $filter clause.
 		 * @param {number} maxresults Sets the maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout Sets the maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
-		 * @return {PoolListPoolUsageMetricsResult} 
 		 */
 		Pool_ListPoolUsageMetrics(starttime: Date | null | undefined, endtime: Date | null | undefined, filter: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<PoolListPoolUsageMetricsResult> {
 			return this.http.get<PoolListPoolUsageMetricsResult>(this.baseUri + 'poolusagemetrics?starttime=' + starttime?.toISOString() + '&endtime=' + endtime?.toISOString() + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxresults=' + maxresults + '&timeout=' + timeout + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});

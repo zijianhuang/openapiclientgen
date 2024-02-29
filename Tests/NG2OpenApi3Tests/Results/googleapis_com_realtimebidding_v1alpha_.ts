@@ -131,6 +131,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/biddingFunctions
 		 * @param {string} parent Required. Name of the bidder whose bidding functions will be listed. Format: `bidders/{bidder_account_id}`
 		 * @param {number} pageSize The maximum number of bidding functions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. This value is received from a previous `ListBiddingFunctions` call in ListBiddingFunctionsResponse.nextPageToken.
 		 * @return {ListBiddingFunctionsResponse} Successful response
 		 */

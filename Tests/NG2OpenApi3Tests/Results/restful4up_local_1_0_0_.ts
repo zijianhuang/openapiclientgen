@@ -54,7 +54,10 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface ErrorFormProperties {
@@ -62,7 +65,10 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {

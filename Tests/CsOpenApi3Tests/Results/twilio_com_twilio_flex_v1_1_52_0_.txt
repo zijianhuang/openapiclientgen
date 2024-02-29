@@ -1826,8 +1826,13 @@ namespace MyNS
 		/// <summary>
 		/// ListChannel v1/Channels
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListChannelReturn> ListChannelAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1861,7 +1866,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteChannel v1/Channels/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flex chat channel resource to delete.</param>
+		/// <param name="Sid">The SID of the Flex chat channel resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Channels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1887,7 +1895,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchChannel v1/Channels/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flex chat channel resource to fetch.</param>
+		/// <param name="Sid">The SID of the Flex chat channel resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1channel> FetchChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1954,8 +1965,13 @@ namespace MyNS
 		/// ListFlexFlow v1/FlexFlows
 		/// </summary>
 		/// <param name="FriendlyName">The `friendly_name` of the Flex Flow resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFlexFlowReturn> ListFlexFlowAsync(string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1989,7 +2005,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteFlexFlow v1/FlexFlows/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flex Flow resource to delete.</param>
+		/// <param name="Sid">The SID of the Flex Flow resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteFlexFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/FlexFlows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2015,7 +2034,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchFlexFlow v1/FlexFlows/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flex Flow resource to fetch.</param>
+		/// <param name="Sid">The SID of the Flex Flow resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1flex_flow> FetchFlexFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2050,8 +2072,13 @@ namespace MyNS
 		/// ListInsightsConversations v1/Insights/Conversations
 		/// </summary>
 		/// <param name="SegmentId">Unique Id of the segment for which conversation details needs to be fetched</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsConversationsReturn> ListInsightsConversationsAsync(string SegmentId, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2087,8 +2114,13 @@ namespace MyNS
 		/// ListInsightsAssessments v1/Insights/QualityManagement/Assessments
 		/// </summary>
 		/// <param name="SegmentId">The id of the segment.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsAssessmentsReturn> ListInsightsAssessmentsAsync(string SegmentId, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2125,8 +2157,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SegmentId">The id of the segment.</param>
 		/// <param name="AgentId">The id of the agent.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsAssessmentsCommentReturn> ListInsightsAssessmentsCommentAsync(string SegmentId, string AgentId, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2161,8 +2198,13 @@ namespace MyNS
 		/// To get all the categories
 		/// ListInsightsQuestionnairesCategory v1/Insights/QualityManagement/Categories
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsQuestionnairesCategoryReturn> ListInsightsQuestionnairesCategoryAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2196,7 +2238,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteInsightsQuestionnairesCategory v1/Insights/QualityManagement/Categories/{CategorySid}
 		/// </summary>
-		/// <param name="CategorySid">The SID of the category to be deleted</param>
+		/// <param name="CategorySid">The SID of the category to be deleted
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInsightsQuestionnairesCategoryAsync(string CategorySid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Insights/QualityManagement/Categories/"+ (CategorySid==null? "" : System.Uri.EscapeDataString(CategorySid));
@@ -2224,8 +2269,13 @@ namespace MyNS
 		/// ListInsightsQuestionnaires v1/Insights/QualityManagement/Questionnaires
 		/// </summary>
 		/// <param name="IncludeInactive">Flag indicating whether to include inactive questionnaires or not</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsQuestionnairesReturn> ListInsightsQuestionnairesAsync(bool IncludeInactive, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2260,7 +2310,10 @@ namespace MyNS
 		/// To delete the questionnaire
 		/// DeleteInsightsQuestionnaires v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		/// </summary>
-		/// <param name="QuestionnaireSid">The SID of the questionnaire</param>
+		/// <param name="QuestionnaireSid">The SID of the questionnaire
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInsightsQuestionnairesAsync(string QuestionnaireSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Insights/QualityManagement/Questionnaires/"+ (QuestionnaireSid==null? "" : System.Uri.EscapeDataString(QuestionnaireSid));
@@ -2287,7 +2340,10 @@ namespace MyNS
 		/// To get the Questionnaire Detail
 		/// FetchInsightsQuestionnaires v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		/// </summary>
-		/// <param name="QuestionnaireSid">The SID of the questionnaire</param>
+		/// <param name="QuestionnaireSid">The SID of the questionnaire
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1insights_questionnaires> FetchInsightsQuestionnairesAsync(string QuestionnaireSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2322,8 +2378,13 @@ namespace MyNS
 		/// ListInsightsQuestionnairesQuestion v1/Insights/QualityManagement/Questions
 		/// </summary>
 		/// <param name="CategorySid">The list of category SIDs</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsQuestionnairesQuestionReturn> ListInsightsQuestionnairesQuestionAsync(string[] CategorySid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2357,7 +2418,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteInsightsQuestionnairesQuestion v1/Insights/QualityManagement/Questions/{QuestionSid}
 		/// </summary>
-		/// <param name="QuestionSid">The SID of the question</param>
+		/// <param name="QuestionSid">The SID of the question
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInsightsQuestionnairesQuestionAsync(string QuestionSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Insights/QualityManagement/Questions/"+ (QuestionSid==null? "" : System.Uri.EscapeDataString(QuestionSid));
@@ -2452,8 +2516,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SegmentId">To unique id of the segment</param>
 		/// <param name="ReservationId">The list of reservation Ids</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInsightsSegmentsReturn> ListInsightsSegmentsAsync(string SegmentId, string[] ReservationId, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2542,9 +2611,17 @@ namespace MyNS
 		/// List all Channels for an Interaction.
 		/// ListInteractionChannel v1/Interactions/{InteractionSid}/Channels
 		/// </summary>
-		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInteractionChannelReturn> ListInteractionChannelAsync(string InteractionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2579,10 +2656,21 @@ namespace MyNS
 		/// List all Invites for a Channel.
 		/// ListInteractionChannelInvite v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
-		/// <param name="InteractionSid">The Interaction SID for this Channel.</param>
-		/// <param name="ChannelSid">The Channel SID for this Participant.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="InteractionSid">The Interaction SID for this Channel.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">The Channel SID for this Participant.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInteractionChannelInviteReturn> ListInteractionChannelInviteAsync(string InteractionSid, string ChannelSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2617,10 +2705,21 @@ namespace MyNS
 		/// List all Participants for a Channel.
 		/// ListInteractionChannelParticipant v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Participants
 		/// </summary>
-		/// <param name="InteractionSid">The Interaction Sid for this channel.</param>
-		/// <param name="ChannelSid">The Channel Sid for this Participant.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="InteractionSid">The Interaction Sid for this channel.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">The Channel Sid for this Participant.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInteractionChannelParticipantReturn> ListInteractionChannelParticipantAsync(string InteractionSid, string ChannelSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2655,8 +2754,14 @@ namespace MyNS
 		/// Fetch a Channel for an Interaction.
 		/// FetchInteractionChannel v1/Interactions/{InteractionSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.</param>
-		/// <param name="Sid">The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.</param>
+		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1interactioninteraction_channel> FetchInteractionChannelAsync(string InteractionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2689,7 +2794,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchInteraction v1/Interactions/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Interaction resource to fetch.</param>
+		/// <param name="Sid">The SID of the Interaction resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1interaction> FetchInteractionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2722,8 +2830,13 @@ namespace MyNS
 		/// <summary>
 		/// ListWebChannel v1/WebChannels
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWebChannelReturn> ListWebChannelAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2757,7 +2870,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteWebChannel v1/WebChannels/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the WebChannel resource to delete.</param>
+		/// <param name="Sid">The SID of the WebChannel resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteWebChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/WebChannels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2783,7 +2899,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWebChannel v1/WebChannels/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the WebChannel resource to fetch.</param>
+		/// <param name="Sid">The SID of the WebChannel resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1web_channel> FetchWebChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

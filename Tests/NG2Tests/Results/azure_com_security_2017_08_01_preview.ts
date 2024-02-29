@@ -1151,6 +1151,7 @@ export namespace MyNS {
 		 * @param {AutoProvisioningSettings_ListApi_version} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {PricingList} OK
 		 */
 		Pricings_ListByResourceGroup(api_version: AutoProvisioningSettings_ListApi_version, subscriptionId: string, resourceGroupName: string): Observable<PricingList> {
@@ -1163,6 +1164,7 @@ export namespace MyNS {
 		 * @param {AutoProvisioningSettings_ListApi_version} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} pricingName name of the pricing configuration
 		 * @return {Pricing} OK
 		 */
@@ -1176,6 +1178,7 @@ export namespace MyNS {
 		 * @param {AutoProvisioningSettings_ListApi_version} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} pricingName name of the pricing configuration
 		 * @param {Pricing} requestBody Pricing object
 		 * @return {Pricing} OK

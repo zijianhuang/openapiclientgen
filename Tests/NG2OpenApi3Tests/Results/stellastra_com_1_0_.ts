@@ -14,6 +14,7 @@ export namespace MyNS {
 		 * @param {string} user_email User's email to which the review verification will be sent. 
 		 * @param {string} user_name The user's name, defaults to empty string "".  Thus, if this is omitted, the email to the user will not use the user's name. 
 		 * @param {Post_reviewPostByUser_emailAndUser_nameAndRatingRating} rating The user's star rating, must be a single integer from [1, 2, 3, 4, 5]
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Post_reviewPostByUser_emailAndUser_nameAndRatingPostBody} requestBody The request body requires the user_email and rating. The parameter use_name is optional. 
 		 * @return {Post_reviewPostByUser_emailAndUser_nameAndRatingReturn} A response code of 200 means the request was succesful, and the user has been sent an email confirming their review.
 		 */
@@ -26,7 +27,10 @@ export namespace MyNS {
 
 	export interface Post_reviewPostByUser_emailAndUser_nameAndRatingPostBody {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rating: number;
 
 		/** Required */
@@ -35,7 +39,10 @@ export namespace MyNS {
 	}
 	export interface Post_reviewPostByUser_emailAndUser_nameAndRatingPostBodyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Required */

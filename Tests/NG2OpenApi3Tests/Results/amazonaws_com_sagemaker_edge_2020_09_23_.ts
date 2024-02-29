@@ -359,16 +359,16 @@ export namespace MyNS {
 		/**
 		 * The unique name of the device you want to get the configuration of active deployments from.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: string;
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: string;
 	}
@@ -377,16 +377,16 @@ export namespace MyNS {
 		/**
 		 * The unique name of the device you want to get the configuration of active deployments from.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: FormControl<string | null | undefined>,
 	}
@@ -403,16 +403,16 @@ export namespace MyNS {
 		/**
 		 * The unique name of the device you want to get the registration status from.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: string;
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: string;
 	}
@@ -421,16 +421,16 @@ export namespace MyNS {
 		/**
 		 * The unique name of the device you want to get the registration status from.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: FormControl<string | null | undefined>,
 	}
@@ -453,24 +453,24 @@ export namespace MyNS {
 		/**
 		 * Returns the version of the agent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AgentVersion: string;
 
 		/**
 		 * The unique name of the device.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: string;
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: string;
 
@@ -482,24 +482,24 @@ export namespace MyNS {
 		/**
 		 * Returns the version of the agent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AgentVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique name of the device.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the fleet that the device belongs to.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		DeviceFleetName: FormControl<string | null | undefined>,
 	}

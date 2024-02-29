@@ -5,36 +5,60 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BasicModelStats {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		average: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		median: number;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pVariance: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		stdDev: number;
 	}
 	export interface BasicModelStatsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		median: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pVariance: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		stdDev: FormControl<number | null | undefined>,
 	}
 	export function CreateBasicModelStatsFormGroup() {
@@ -50,6 +74,8 @@ export namespace MyNS {
 
 	export interface BasicModelStatsResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -61,6 +87,8 @@ export namespace MyNS {
 	}
 	export interface BasicModelStatsRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -81,6 +109,8 @@ export namespace MyNS {
 
 	export interface BooleanResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -92,6 +122,8 @@ export namespace MyNS {
 	}
 	export interface BooleanRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 
@@ -116,6 +148,8 @@ export namespace MyNS {
 
 	export interface BrandResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -127,6 +161,8 @@ export namespace MyNS {
 	}
 	export interface BrandRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -147,24 +183,36 @@ export namespace MyNS {
 
 	export interface BucketEntry {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bucket: number;
 
 		/** Required */
 		modelName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfMarket: number;
 	}
 	export interface BucketEntryFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bucket: FormControl<number | null | undefined>,
 
 		/** Required */
 		modelName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfMarket: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketEntryFormGroup() {
@@ -178,6 +226,8 @@ export namespace MyNS {
 
 	export interface BucketResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -189,6 +239,8 @@ export namespace MyNS {
 	}
 	export interface BucketRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -221,7 +273,10 @@ export namespace MyNS {
 		/** Required */
 		state: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zipCode: number;
 	}
 	export interface DealershipDataFormProperties {
@@ -235,7 +290,10 @@ export namespace MyNS {
 		/** Required */
 		state: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zipCode: FormControl<number | null | undefined>,
 	}
 	export function CreateDealershipDataFormGroup() {
@@ -253,18 +311,30 @@ export namespace MyNS {
 		/** Required */
 		dealers: Array<DealershipData>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPages: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 	}
 	export interface DealershipDataPaginatedFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPages: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 	}
 	export function CreateDealershipDataPaginatedFormGroup() {
@@ -277,6 +347,8 @@ export namespace MyNS {
 
 	export interface DealershipDataPaginatedResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -288,6 +360,8 @@ export namespace MyNS {
 	}
 	export interface DealershipDataPaginatedRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -308,6 +382,8 @@ export namespace MyNS {
 
 	export interface DealershipDataResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -319,6 +395,8 @@ export namespace MyNS {
 	}
 	export interface DealershipDataRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -350,6 +428,8 @@ export namespace MyNS {
 
 	export interface GenericResponse {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 		data?: any;
@@ -359,6 +439,8 @@ export namespace MyNS {
 	}
 	export interface GenericResponseFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		data: FormControl<any | null | undefined>,
@@ -419,6 +501,8 @@ export namespace MyNS {
 
 	export interface HistoryResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -430,6 +514,8 @@ export namespace MyNS {
 	}
 	export interface HistoryRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -473,25 +559,40 @@ export namespace MyNS {
 		/** Required */
 		dealerName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		firstSeen: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		lastSeen: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		miles: number;
 
 		/** Required */
 		new: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: number;
 
 		/** Required */
 		state: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zip: number;
 	}
 	export interface VehHistoryFormProperties {
@@ -499,25 +600,40 @@ export namespace MyNS {
 		/** Required */
 		dealerName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		firstSeen: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		lastSeen: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		miles: FormControl<number | null | undefined>,
 
 		/** Required */
 		new: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Required */
 		state: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zip: FormControl<number | null | undefined>,
 	}
 	export function CreateVehHistoryFormGroup() {
@@ -535,14 +651,22 @@ export namespace MyNS {
 	}
 
 	export interface JSONWebToken {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdOn?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires?: number | null;
 
 		/** Required */
 		token: string;
 	}
 	export interface JSONWebTokenFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdOn: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -559,74 +683,114 @@ export namespace MyNS {
 
 	export interface Listing {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		askPrice: number;
 
 		/** Required */
 		brandName: string;
 		color?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dealerID: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		firstSeen: Date;
 		interiorColor?: string | null;
 
 		/** Required */
 		isNew: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		lastSeen: Date;
+
+		/** Type: double */
 		mileage?: number | null;
 
 		/** Required */
 		modelName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		msrp: number;
 
 		/** Required */
 		vin: string;
 		vinDecode?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface ListingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		askPrice: FormControl<number | null | undefined>,
 
 		/** Required */
 		brandName: FormControl<string | null | undefined>,
 		color: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dealerID: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		firstSeen: FormControl<Date | null | undefined>,
 		interiorColor: FormControl<string | null | undefined>,
 
 		/** Required */
 		isNew: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		lastSeen: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		mileage: FormControl<number | null | undefined>,
 
 		/** Required */
 		modelName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		msrp: FormControl<number | null | undefined>,
 
 		/** Required */
 		vin: FormControl<string | null | undefined>,
 		vinDecode: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateListingFormGroup() {
@@ -651,25 +815,37 @@ export namespace MyNS {
 
 	export interface ListingResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
 		/** Required */
 		data: ListingRespPaginated;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		modelName?: string | null;
 		msg?: string | null;
 		regionName?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface ListingRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
 		msg: FormControl<string | null | undefined>,
 		regionName: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateListingRespFormGroup() {
@@ -691,18 +867,30 @@ export namespace MyNS {
 		/** Required */
 		listings: Array<Listing>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPages: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 	}
 	export interface ListingRespPaginatedFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPages: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 	}
 	export function CreateListingRespPaginatedFormGroup() {
@@ -732,6 +920,8 @@ export namespace MyNS {
 
 	export interface ModelResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -743,6 +933,8 @@ export namespace MyNS {
 	}
 	export interface ModelRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -769,10 +961,16 @@ export namespace MyNS {
 		/** Required */
 		modelName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfMarket: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: number;
 	}
 	export interface ModelYearDistEntryFormProperties {
@@ -783,10 +981,16 @@ export namespace MyNS {
 		/** Required */
 		modelName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfMarket: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateModelYearDistEntryFormGroup() {
@@ -801,6 +1005,8 @@ export namespace MyNS {
 
 	export interface ModelYearDistResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -812,6 +1018,8 @@ export namespace MyNS {
 	}
 	export interface ModelYearDistRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -832,6 +1040,8 @@ export namespace MyNS {
 
 	export interface RegionResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -843,6 +1053,8 @@ export namespace MyNS {
 	}
 	export interface RegionRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -863,66 +1075,126 @@ export namespace MyNS {
 
 	export interface SimilarSalePriceData {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysBack: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mileCount: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		milesAvg: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		milesStdDev: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newCount: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		newSaleAvg: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		newSaleStdDev: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usedCount: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		usedSaleAvg: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		usedSaleStdDev: number;
 	}
 	export interface SimilarSalePriceDataFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysBack: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mileCount: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		milesAvg: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		milesStdDev: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newCount: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		newSaleAvg: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		newSaleStdDev: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usedCount: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		usedSaleAvg: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		usedSaleStdDev: FormControl<number | null | undefined>,
 	}
 	export function CreateSimilarSalePriceDataFormGroup() {
@@ -943,33 +1215,49 @@ export namespace MyNS {
 
 	export interface SimilarSalePriceResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
 		/** Required */
 		data: SimilarSalePriceData;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		endDate: Date;
 		modelName?: string | null;
 		msg?: string | null;
 		regionName?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: Date;
 	}
 	export interface SimilarSalePriceRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		endDate: FormControl<Date | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
 		msg: FormControl<string | null | undefined>,
 		regionName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSimilarSalePriceRespFormGroup() {
@@ -987,11 +1275,15 @@ export namespace MyNS {
 	}
 
 	export interface SubUserJSONWebToken {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdOn?: number | null;
 
 		/** Required */
 		domain: string;
 		endPoints?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires?: number | null;
 
 		/** Required */
@@ -1001,10 +1293,14 @@ export namespace MyNS {
 		uuid: string;
 	}
 	export interface SubUserJSONWebTokenFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdOn: FormControl<number | null | undefined>,
 
 		/** Required */
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1026,7 +1322,10 @@ export namespace MyNS {
 
 	export interface TopModelEntry {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		brandMarketShare: number;
 
 		/** Required */
@@ -1035,15 +1334,24 @@ export namespace MyNS {
 		/** Required */
 		modelName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfBrandSales: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfTopSales: number;
 	}
 	export interface TopModelEntryFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		brandMarketShare: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1052,10 +1360,16 @@ export namespace MyNS {
 		/** Required */
 		modelName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfBrandSales: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentOfTopSales: FormControl<number | null | undefined>,
 	}
 	export function CreateTopModelEntryFormGroup() {
@@ -1071,6 +1385,8 @@ export namespace MyNS {
 
 	export interface TopModelResp {
 		brandName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit?: number | null;
 		condition?: string | null;
 
@@ -1082,6 +1398,8 @@ export namespace MyNS {
 	}
 	export interface TopModelRespFormProperties {
 		brandName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheTimeLimit: FormControl<number | null | undefined>,
 		condition: FormControl<string | null | undefined>,
 		modelName: FormControl<string | null | undefined>,
@@ -1151,6 +1469,7 @@ export namespace MyNS {
 		 * Premium. Dealership information in a given zip code using the first 4 digits. Returns name, address, state, zipCode, and IDs.
 		 * For example a call with the zip code 92701 would return dealers with zip codes in the range [92700, 92709]
 		 * Get getDealers
+		 * @param {number} zipCode Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DealershipDataResp} Successful Response
 		 */
 		GetDealers_getDealers_get(jwt: string, zipCode: number): Observable<DealershipDataResp> {
@@ -1162,6 +1481,7 @@ export namespace MyNS {
 		 * Premium. Dealership information using the internal ID. Returns name, address, state, zipCode, and ID for a single dealer in the same format as the /getDealers endpoint.
 		 * Dealer IDs are generally retrieved via the /getDealers or /getDealersByRegion endpoints.
 		 * Get getDealersByID
+		 * @param {number} dealerID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DealershipDataResp} Successful Response
 		 */
 		GetDealers_getDealersByID_get(jwt: string, dealerID: number): Observable<DealershipDataResp> {
@@ -1172,6 +1492,7 @@ export namespace MyNS {
 		 * Premium. Dealers in a region.
 		 * Premium. Dealership information in a given region. Returns name, address, state, zipCode, and IDs. Results are paginated with up to 30 results per page.
 		 * Get getDealersByRegion
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DealershipDataPaginatedResp} Successful Response
 		 */
 		GetDealers_getDealersByRegion_get(jwt: string, regionName: string | null | undefined, page: number | null | undefined): Observable<DealershipDataPaginatedResp> {
@@ -1299,6 +1620,8 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listings
+		 * @param {number} dealerID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		GetListingsByDealer_listings_get(jwt: string, dealerID: number, page: number | null | undefined, newCars: boolean | null | undefined): Observable<ListingResp> {
@@ -1334,6 +1657,18 @@ export namespace MyNS {
 		 * because the request matched no listings.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listings2
+		 * @param {number} dealerID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} zipCode Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} latitude Type: double
+		 * @param {number} longitude Type: double
+		 * @param {number} radius Type: double
+		 * @param {number} modelYear Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} mileageLow Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} mileageHigh Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {Date} startDate Type: DateOnly
+		 * @param {Date} endDate Type: DateOnly
+		 * @param {number} daysBack Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		GetListings2_listings2_get(jwt: string, dealerID: number | null | undefined, zipCode: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, regionName: string | null | undefined, brandName: string | null | undefined, modelName: string | null | undefined, modelYear: number | null | undefined, mileageLow: number | null | undefined, mileageHigh: number | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, daysBack: number | null | undefined, page: number | null | undefined, newCars: boolean | null | undefined, extendedSearch: boolean | null | undefined): Observable<ListingResp> {
@@ -1348,6 +1683,10 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listingsByDate
+		 * @param {number} dealerID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {Date} startDate Type: DateOnly
+		 * @param {Date} endDate Type: DateOnly
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		GetListingsByDealer_listingsByDate_get(jwt: string, dealerID: number, startDate: Date, endDate: Date, page: number | null | undefined, newCars: boolean | null | undefined): Observable<ListingResp> {
@@ -1361,6 +1700,8 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listingsByRegion
+		 * @param {number} daysBack Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		GetListingsByRegion_listingsByRegion_get(jwt: string, regionName: string, modelName: string, daysBack: number | null | undefined, page: number | null | undefined, newCars: boolean | null | undefined): Observable<ListingResp> {
@@ -1374,6 +1715,9 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listingsByRegionAndDate
+		 * @param {Date} startDate Type: DateOnly
+		 * @param {Date} endDate Type: DateOnly
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		GetListingsByRegionAndDate_listingsByRegionAndDate_get(jwt: string, regionName: string, modelName: string, startDate: Date, endDate: Date, page: number | null | undefined, newCars: boolean | null | undefined): Observable<ListingResp> {
@@ -1387,6 +1731,8 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listingsByZipCode
+		 * @param {number} zipCode Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		ListingsByZipCode_listingsByZipCode_get(jwt: string, zipCode: number, page: number | null | undefined, newCars: boolean | null | undefined, modelName: string | null | undefined): Observable<ListingResp> {
@@ -1400,6 +1746,10 @@ export namespace MyNS {
 		 * Listing keys are: vin, askPrice, msrp, isNew, firstSeen, lastSeen, modelName, brandName.
 		 * Results are paginated in chunks of up to 20 vehicles. Prices are in the dealer's local currency (generally USD).
 		 * Get listingsByZipCodeAndDate
+		 * @param {number} zipCode Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {Date} startDate Type: DateOnly
+		 * @param {Date} endDate Type: DateOnly
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListingResp} Successful Response
 		 */
 		ListingsByZipCodeAndDate_listingsByZipCodeAndDate_get(jwt: string, zipCode: number, startDate: Date, endDate: Date, page: number | null | undefined, newCars: boolean | null | undefined, modelName: string | null | undefined): Observable<ListingResp> {
@@ -1439,6 +1789,7 @@ export namespace MyNS {
 		 * The Day field is in YYYY-MM-DD format. For example if you wanted sales data from April 5th of 2020 the day field would be '2020-04-05'
 		 * Data availability depends on region and goes back up to 2016.
 		 * Get regionDailySales
+		 * @param {Date} day Type: DateOnly
 		 * @return {GenericResponse} Successful Response
 		 */
 		GetDealerSales_regionDailySales_get(jwt: string, brandName: string, regionName: string, day: Date): Observable<GenericResponse> {
@@ -1451,6 +1802,7 @@ export namespace MyNS {
 		 * The month field is in YYYY-MM-DD format. For example if you wanted sales data from April of 2020 the month field would be '2020-04-01'
 		 * Data availability depends on region and goes back up to 2016.
 		 * Get regionSales
+		 * @param {Date} month Type: DateOnly
 		 * @return {GenericResponse} Successful Response
 		 */
 		GetDealerSales_regionSales_get(jwt: string, brandName: string, regionName: string, month: Date): Observable<GenericResponse> {
@@ -1495,6 +1847,7 @@ export namespace MyNS {
 		 * Premium. Provides the average, stdDev, and count, of the sale price and mileage of similar new and used vehicles in a given region based off the provided VIN.
 		 * Optionally restricts report to vehicles of the same model year and goes back up to 120 days.
 		 * Get similarSalePrice
+		 * @param {number} daysBack Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SimilarSalePriceResp} Successful Response
 		 */
 		GetMarket3_similarSalePrice_get(jwt: string, vin: string, regionName: string | null | undefined, daysBack: number | null | undefined, sameYear: boolean | null | undefined): Observable<SimilarSalePriceResp> {
@@ -1524,6 +1877,16 @@ export namespace MyNS {
 		 * Date selection is restricted by your subscription tier, same as with the /listings2 endpoint.
 		 * Optionally restricts report to vehicles of the same model year.
 		 * Get valuation
+		 * @param {number} dealerID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} zipCode Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} latitude Type: double
+		 * @param {number} longitude Type: double
+		 * @param {number} radius Type: double
+		 * @param {number} mileageLow Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} mileageHigh Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {Date} startDate Type: DateOnly
+		 * @param {Date} endDate Type: DateOnly
+		 * @param {number} daysBack Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SimilarSalePriceResp} Successful Response
 		 */
 		GetMarket4_valuation_get(jwt: string, vin: string, dealerID: number | null | undefined, zipCode: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, regionName: string | null | undefined, mileageLow: number | null | undefined, mileageHigh: number | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, daysBack: number | null | undefined, newCars: boolean | null | undefined, extendedSearch: boolean | null | undefined, sameYear: boolean | null | undefined): Observable<SimilarSalePriceResp> {
@@ -1549,6 +1912,7 @@ export namespace MyNS {
 		 * This endpoint is more cost effective than the /vehicleHistory endpoint if your use case
 		 * requires searching a large list of vehicles with a low individual likelyhood of appearing on the open market. (For example searching for a specific stolen vehicle).
 		 * Get vehicleSeen
+		 * @param {Date} afterDate Type: DateOnly
 		 * @return {BooleanResp} Successful Response
 		 */
 		GetVehicleSeen_vehicleSeen_get(jwt: string, vin: string, afterDate: Date): Observable<BooleanResp> {

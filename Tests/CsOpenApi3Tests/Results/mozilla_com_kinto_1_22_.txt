@@ -237,6 +237,21 @@ namespace MyNS
 		/// <summary>
 		/// Get_buckets buckets
 		/// </summary>
+		/// <param name="_limit">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_since">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_to">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_before">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="last_modified">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
 		/// <returns>Return a list of matching objects.</returns>
 		public async Task<Get_bucketsReturn> Get_bucketsAsync(int _limit, string[] _sort, string _token, int _since, int _to, int _before, string id, int last_modified, string[] _fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -269,6 +284,21 @@ namespace MyNS
 		/// <summary>
 		/// Get_changess buckets/monitor/collections/changes/records
 		/// </summary>
+		/// <param name="_limit">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_since">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_to">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_before">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="last_modified">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
 		/// <returns>Return a list of matching objects.</returns>
 		public async Task<Get_changessReturn> Get_changessAsync(int _limit, string[] _sort, string _token, int _since, int _to, int _before, string id, int last_modified, string[] _fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -326,6 +356,21 @@ namespace MyNS
 		/// <summary>
 		/// Get_collections buckets/{bucket_id}/collections
 		/// </summary>
+		/// <param name="_limit">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_since">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_to">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_before">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="last_modified">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
 		/// <returns>Return a list of matching objects.</returns>
 		public async Task<Get_collectionsReturn> Get_collectionsAsync(int _limit, string[] _sort, string _token, int _since, int _to, int _before, string id, int last_modified, string[] _fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -358,6 +403,21 @@ namespace MyNS
 		/// <summary>
 		/// Get_records buckets/{bucket_id}/collections/{collection_id}/records
 		/// </summary>
+		/// <param name="_limit">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_since">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_to">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_before">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="last_modified">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
 		/// <returns>Return a list of matching objects.</returns>
 		public async Task<Get_recordsReturn> Get_recordsAsync(int _limit, string[] _sort, string _token, int _since, int _to, int _before, string id, int last_modified, string[] _fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -499,6 +559,21 @@ namespace MyNS
 		/// <summary>
 		/// Get_groups buckets/{bucket_id}/groups
 		/// </summary>
+		/// <param name="_limit">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_since">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_to">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="_before">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
+		/// <param name="last_modified">Minimum: 0
+		/// Maximum: 9223372036854776000
+		// </param>
 		/// <returns>Return a list of matching objects.</returns>
 		public async Task<Get_groupsReturn> Get_groupsAsync(int _limit, string[] _sort, string _token, int _since, int _to, int _before, string id, int last_modified, string[] _fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

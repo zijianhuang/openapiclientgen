@@ -40,15 +40,31 @@ export namespace MyNS {
 	}
 
 	export interface Pagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		perPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PaginationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		perPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -62,16 +78,24 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		message?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		type?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -96,6 +120,8 @@ export namespace MyNS {
 
 		/** DJ/host's email address */
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -117,6 +143,8 @@ export namespace MyNS {
 
 		/** DJ/host's email address */
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -166,7 +194,10 @@ export namespace MyNS {
 		/** HTML-formatted description of the playlist or program/show */
 		description?: string | null;
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** UTC datetime ISO-8601 */
@@ -180,9 +211,15 @@ export namespace MyNS {
 
 		/** Should the client application hide information about the playlist's DJ/host? */
 		hide_dj?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		persona_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 
 		/** Since what year has the program/show existed? */
@@ -211,7 +248,10 @@ export namespace MyNS {
 		/** HTML-formatted description of the playlist or program/show */
 		description: FormControl<string | null | undefined>,
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** UTC datetime ISO-8601 */
@@ -225,9 +265,15 @@ export namespace MyNS {
 
 		/** Should the client application hide information about the playlist's DJ/host? */
 		hide_dj: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		persona_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 
 		/** Since what year has the program/show existed? */
@@ -293,7 +339,10 @@ export namespace MyNS {
 		/** HTML-formatted description of the playlist or program/show */
 		description?: string | null;
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** UTC datetime ISO-8601 */
@@ -301,6 +350,8 @@ export namespace MyNS {
 
 		/** Should the client application hide information about the show's DJs/hosts? */
 		hide_dj?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 
@@ -332,7 +383,10 @@ export namespace MyNS {
 		/** HTML-formatted description of the playlist or program/show */
 		description: FormControl<string | null | undefined>,
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** UTC datetime ISO-8601 */
@@ -340,6 +394,8 @@ export namespace MyNS {
 
 		/** Should the client application hide information about the show's DJs/hosts? */
 		hide_dj: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 
@@ -410,7 +466,10 @@ export namespace MyNS {
 		/** For classical music, conducor of the ensemble */
 		conductor?: string | null;
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** UTC datetime ISO-8601 */
@@ -419,6 +478,8 @@ export namespace MyNS {
 		/** For classical music, orchestra, performing ensemble, choir, etc. */
 		ensemble?: string | null;
 		genre?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Cover art */
@@ -446,13 +507,18 @@ export namespace MyNS {
 
 		/** For classical music, featured performing artists, e.g. soloists */
 		performers?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		playlist_id?: number | null;
 		release?: string | null;
 
 		/** Station-specific custom field relating to the release */
 		'release-custom'?: string | null;
 
-		/** Year of initial release */
+		/**
+		 * Year of initial release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		released?: number | null;
 
 		/** Was the spin requested by a listener? */
@@ -492,7 +558,10 @@ export namespace MyNS {
 		/** For classical music, conducor of the ensemble */
 		conductor: FormControl<string | null | undefined>,
 
-		/** Duration in seconds */
+		/**
+		 * Duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** UTC datetime ISO-8601 */
@@ -501,6 +570,8 @@ export namespace MyNS {
 		/** For classical music, orchestra, performing ensemble, choir, etc. */
 		ensemble: FormControl<string | null | undefined>,
 		genre: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Cover art */
@@ -528,13 +599,18 @@ export namespace MyNS {
 
 		/** For classical music, featured performing artists, e.g. soloists */
 		performers: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		playlist_id: FormControl<number | null | undefined>,
 		release: FormControl<string | null | undefined>,
 
 		/** Station-specific custom field relating to the release */
 		'release-custom': FormControl<string | null | undefined>,
 
-		/** Year of initial release */
+		/**
+		 * Year of initial release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		released: FormControl<number | null | undefined>,
 
 		/** Was the spin requested by a listener? */
@@ -634,7 +710,9 @@ export namespace MyNS {
 		 * Get personas
 		 * @param {string} name Filter by Persona name
 		 * @param {number} count Amount of items to return
+		 *     Minimum: 1
 		 * @param {number} page Offset, used together with count
+		 *     Minimum: 1
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {BaseIndexResponse} The personas
@@ -646,6 +724,7 @@ export namespace MyNS {
 		/**
 		 * Get Persona by id
 		 * Get personas/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {Persona} The Persona
@@ -663,9 +742,13 @@ export namespace MyNS {
 		 * @param {Date} start The datetime starting from items must be returned. Maximum 1 hour in future.
 		 * @param {Date} end The ending datetime. Maximum 1 hour in future.
 		 * @param {number} show_id Filter by show
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} persona_id Filter by persona
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count Amount of items to return
+		 *     Minimum: 1
 		 * @param {number} page Offset, used together with count
+		 *     Minimum: 1
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {BaseIndexResponse} The playlists
@@ -679,6 +762,7 @@ export namespace MyNS {
 		 * The response object represents the playlist specified by {id}.
 		 * Status 404 is returned if a playlist with {id} does not exist or if it does but starts in the future (with allowed tolerance equals 1 hour in future).
 		 * Get playlists/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {Playlist} The playlist
@@ -713,7 +797,9 @@ export namespace MyNS {
 		 * @param {Date} start The datetime starting from items must be returned. Maximum 1 hour in past.
 		 * @param {Date} end The ending datetime. Maximum 1 hour in past.
 		 * @param {number} count Amount of items to return
+		 *     Minimum: 1
 		 * @param {number} page Offset, used together with count
+		 *     Minimum: 1
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {BaseIndexResponse} The shows
@@ -727,6 +813,7 @@ export namespace MyNS {
 		 * The response object represents the next occurence of the show specified by {id}.
 		 * Status 404 is returned if a show with {id} does not exist or if it does but all its scheduled occurences elapsed in the past.
 		 * Get shows/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {Show} The Show
@@ -742,9 +829,13 @@ export namespace MyNS {
 		 * @param {Date} start The datetime starting from items must be returned.
 		 * @param {Date} end The ending datetime.
 		 * @param {number} playlist_id Filter by playlist
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} show_id Filter by show
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count Amount of items to return
+		 *     Minimum: 1
 		 * @param {number} page Offset, used together with count
+		 *     Minimum: 1
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {BaseIndexResponse} The spins
@@ -756,6 +847,7 @@ export namespace MyNS {
 		/**
 		 * Get a Spin by id
 		 * Get spins/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Allows to select only needed fields
 		 * @param {Array<string>} expand Allows to select extra fields
 		 * @return {Spin} The spin

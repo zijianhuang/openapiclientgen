@@ -2099,7 +2099,10 @@ namespace MyNS
 		/// EventLogsAll webhook/logs
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="filter">Filter results</param>
 		/// <returns>EventLogs</returns>
 		public async Task<GetWebhookEventLogsResponse> EventLogsAllAsync(string cursor, int limit, WebhookEventLogsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2217,7 +2220,10 @@ namespace MyNS
 		/// WebhooksAll webhook/webhooks
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Webhooks</returns>
 		public async Task<GetWebhooksResponse> WebhooksAllAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -440,20 +440,32 @@ export namespace MyNS {
 	/** Exact product price. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice {
 
-		/** Optional. Display price of the product. */
+		/**
+		 * Optional. Display price of the product.
+		 * Type: float
+		 */
 		displayPrice?: number | null;
 
-		/** Optional. Price of the product without any discount. If zero, by default set to be the 'displayPrice'. */
+		/**
+		 * Optional. Price of the product without any discount. If zero, by default set to be the 'displayPrice'.
+		 * Type: float
+		 */
 		originalPrice?: number | null;
 	}
 
 	/** Exact product price. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPriceFormProperties {
 
-		/** Optional. Display price of the product. */
+		/**
+		 * Optional. Display price of the product.
+		 * Type: float
+		 */
 		displayPrice: FormControl<number | null | undefined>,
 
-		/** Optional. Price of the product without any discount. If zero, by default set to be the 'displayPrice'. */
+		/**
+		 * Optional. Price of the product without any discount. If zero, by default set to be the 'displayPrice'.
+		 * Type: float
+		 */
 		originalPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPriceFormGroup() {
@@ -468,26 +480,38 @@ export namespace MyNS {
 	/** Catalog item thumbnail/detail image. */
 	export interface GoogleCloudRecommendationengineV1beta1Image {
 
-		/** Optional. Height of the image in number of pixels. */
+		/**
+		 * Optional. Height of the image in number of pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Required. URL of the image with a length limit of 5 KiB. */
 		uri?: string | null;
 
-		/** Optional. Width of the image in number of pixels. */
+		/**
+		 * Optional. Width of the image in number of pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Catalog item thumbnail/detail image. */
 	export interface GoogleCloudRecommendationengineV1beta1ImageFormProperties {
 
-		/** Optional. Height of the image in number of pixels. */
+		/**
+		 * Optional. Height of the image in number of pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Required. URL of the image with a length limit of 5 KiB. */
 		uri: FormControl<string | null | undefined>,
 
-		/** Optional. Width of the image in number of pixels. */
+		/**
+		 * Optional. Width of the image in number of pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecommendationengineV1beta1ImageFormGroup() {
@@ -503,20 +527,32 @@ export namespace MyNS {
 	/** Product price range when there are a range of prices for different variations of the same product. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange {
 
-		/** Required. The maximum product price. */
+		/**
+		 * Required. The maximum product price.
+		 * Type: float
+		 */
 		max?: number | null;
 
-		/** Required. The minimum product price. */
+		/**
+		 * Required. The minimum product price.
+		 * Type: float
+		 */
 		min?: number | null;
 	}
 
 	/** Product price range when there are a range of prices for different variations of the same product. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRangeFormProperties {
 
-		/** Required. The maximum product price. */
+		/**
+		 * Required. The maximum product price.
+		 * Type: float
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Required. The minimum product price. */
+		/**
+		 * Required. The minimum product price.
+		 * Type: float
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRangeFormGroup() {
@@ -831,13 +867,19 @@ export namespace MyNS {
 	/** Detailed product information associated with a user event. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductDetail {
 
-		/** Optional. Quantity of the products in stock when a user event happens. Optional. If provided, this overrides the available quantity in Catalog for this event. and can only be set if `stock_status` is set to `IN_STOCK`. Note that if an item is out of stock, you must set the `stock_state` field to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not sufficient to mark the item out of stock. */
+		/**
+		 * Optional. Quantity of the products in stock when a user event happens. Optional. If provided, this overrides the available quantity in Catalog for this event. and can only be set if `stock_status` is set to `IN_STOCK`. Note that if an item is out of stock, you must set the `stock_state` field to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not sufficient to mark the item out of stock.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** Optional. Currency code for price/costs. Use three-character ISO-4217 code. Required only if originalPrice or displayPrice is set. */
 		currencyCode?: string | null;
 
-		/** Optional. Display price of the product (e.g. discounted price). If provided, this will override the display price in Catalog for this product. */
+		/**
+		 * Optional. Display price of the product (e.g. discounted price). If provided, this will override the display price in Catalog for this product.
+		 * Type: float
+		 */
 		displayPrice?: number | null;
 
 		/** Required. Catalog item ID. UTF-8 encoded string with a length limit of 128 characters. */
@@ -846,10 +888,16 @@ export namespace MyNS {
 		/** FeatureMap represents extra features that customers want to include in the recommendation model for catalogs/user events as categorical/numerical features. */
 		itemAttributes?: GoogleCloudRecommendationengineV1beta1FeatureMap;
 
-		/** Optional. Original price of the product. If provided, this will override the original price in Catalog for this product. */
+		/**
+		 * Optional. Original price of the product. If provided, this will override the original price in Catalog for this product.
+		 * Type: float
+		 */
 		originalPrice?: number | null;
 
-		/** Optional. Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `add-to-cart` event. Required for `add-to-cart`, `add-to-list`, `remove-from-cart`, `checkout-start`, `purchase-complete`, `refund` event types. */
+		/**
+		 * Optional. Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `add-to-cart` event. Required for `add-to-cart`, `add-to-list`, `remove-from-cart`, `checkout-start`, `purchase-complete`, `refund` event types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Optional. Item stock state. If provided, this overrides the stock state in Catalog for items in this event. */
@@ -859,22 +907,34 @@ export namespace MyNS {
 	/** Detailed product information associated with a user event. */
 	export interface GoogleCloudRecommendationengineV1beta1ProductDetailFormProperties {
 
-		/** Optional. Quantity of the products in stock when a user event happens. Optional. If provided, this overrides the available quantity in Catalog for this event. and can only be set if `stock_status` is set to `IN_STOCK`. Note that if an item is out of stock, you must set the `stock_state` field to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not sufficient to mark the item out of stock. */
+		/**
+		 * Optional. Quantity of the products in stock when a user event happens. Optional. If provided, this overrides the available quantity in Catalog for this event. and can only be set if `stock_status` is set to `IN_STOCK`. Note that if an item is out of stock, you must set the `stock_state` field to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not sufficient to mark the item out of stock.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
 		/** Optional. Currency code for price/costs. Use three-character ISO-4217 code. Required only if originalPrice or displayPrice is set. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Optional. Display price of the product (e.g. discounted price). If provided, this will override the display price in Catalog for this product. */
+		/**
+		 * Optional. Display price of the product (e.g. discounted price). If provided, this will override the display price in Catalog for this product.
+		 * Type: float
+		 */
 		displayPrice: FormControl<number | null | undefined>,
 
 		/** Required. Catalog item ID. UTF-8 encoded string with a length limit of 128 characters. */
 		id: FormControl<string | null | undefined>,
 
-		/** Optional. Original price of the product. If provided, this will override the original price in Catalog for this product. */
+		/**
+		 * Optional. Original price of the product. If provided, this will override the original price in Catalog for this product.
+		 * Type: float
+		 */
 		originalPrice: FormControl<number | null | undefined>,
 
-		/** Optional. Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `add-to-cart` event. Required for `add-to-cart`, `add-to-list`, `remove-from-cart`, `checkout-start`, `purchase-complete`, `refund` event types. */
+		/**
+		 * Optional. Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `add-to-cart` event. Required for `add-to-cart`, `add-to-list`, `remove-from-cart`, `checkout-start`, `purchase-complete`, `refund` event types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Optional. Item stock state. If provided, this overrides the stock state in Catalog for items in this event. */
@@ -906,7 +966,10 @@ export namespace MyNS {
 		/** Optional. The transaction ID with a length limit of 128 bytes. */
 		id?: string | null;
 
-		/** Required. Total revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. This field is not required if the event type is `refund`. */
+		/**
+		 * Required. Total revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. This field is not required if the event type is `refund`.
+		 * Type: float
+		 */
 		revenue?: number | null;
 
 		/** Optional. All the taxes associated with the transaction. */
@@ -925,7 +988,10 @@ export namespace MyNS {
 		/** Optional. The transaction ID with a length limit of 128 bytes. */
 		id: FormControl<string | null | undefined>,
 
-		/** Required. Total revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. This field is not required if the event type is `refund`. */
+		/**
+		 * Required. Total revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. This field is not required if the event type is `refund`.
+		 * Type: float
+		 */
 		revenue: FormControl<number | null | undefined>,
 
 		/** Optional. All the taxes associated with the transaction. */
@@ -1015,7 +1081,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1028,7 +1097,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1285,7 +1357,10 @@ export namespace MyNS {
 		/** Optional. The labels for the predict request. * Label keys can contain lowercase letters, digits and hyphens, must start with a letter, and must end with a letter or digit. * Non-zero label values can contain lowercase letters, digits and hyphens, must start with a letter, and must end with a letter or digit. * No more than 64 labels can be associated with a given request. See https://goo.gl/xmQnxf for more information on and examples of labels. */
 		labels?: {[id: string]: string };
 
-		/** Optional. Maximum number of results to return per page. Set this property to the number of prediction results required. If zero, the service will choose a reasonable default. */
+		/**
+		 * Optional. Maximum number of results to return per page. Set this property to the number of prediction results required. If zero, the service will choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. The previous PredictResponse.next_page_token. */
@@ -1310,7 +1385,10 @@ export namespace MyNS {
 		/** Optional. The labels for the predict request. * Label keys can contain lowercase letters, digits and hyphens, must start with a letter, and must end with a letter or digit. * Non-zero label values can contain lowercase letters, digits and hyphens, must start with a letter, and must end with a letter or digit. * No more than 64 labels can be associated with a given request. See https://goo.gl/xmQnxf for more information on and examples of labels. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Optional. Maximum number of results to return per page. Set this property to the number of prediction results required. If zero, the service will choose a reasonable default. */
+		/**
+		 * Optional. Maximum number of results to return per page. Set this property to the number of prediction results required. If zero, the service will choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. The previous PredictResponse.next_page_token. */
@@ -1670,6 +1748,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -1692,6 +1771,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent catalog resource name, such as `projects/locations/global/catalogs/default_catalog`.
 		 * @param {string} filter Optional. Use of this field is not supported by version v1beta1.
 		 * @param {number} pageSize Optional. Maximum number of results to return per page. If zero, the service will choose a reasonable default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The previous ListCatalogItemsResponse.next_page_token.
 		 * @return {GoogleCloudRecommendationengineV1beta1ListCatalogItemsResponse} Successful response
 		 */
@@ -1724,6 +1804,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/catalogs
 		 * @param {string} parent Required. The account resource name with an associated location.
 		 * @param {number} pageSize Optional. Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListCatalogs` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudRecommendationengineV1beta1ListCatalogsResponse} Successful response
 		 */
@@ -1736,6 +1817,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/predictionApiKeyRegistrations
 		 * @param {string} parent Required. The parent placement resource name such as `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
 		 * @param {number} pageSize Optional. Maximum number of results to return per page. If unset, the service will choose a reasonable default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The previous `ListPredictionApiKeyRegistration.nextPageToken`.
 		 * @return {GoogleCloudRecommendationengineV1beta1ListPredictionApiKeyRegistrationsResponse} Successful response
 		 */
@@ -1759,6 +1841,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent eventStore resource name, such as `projects/locations/catalogs/default_catalog/eventStores/default_event_store`.
 		 * @param {string} filter Optional. Filtering expression to specify restrictions over returned events. This is a sequence of terms, where each term applies some kind of a restriction to the returned user events. Use this expression to restrict results to a specific time range, or filter events by eventType. eg: eventTime > "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems eventTime<"2012-04-23T18:25:43.511Z" eventType=search We expect only 3 types of fields: * eventTime: this can be specified a maximum of 2 times, once with a less than operator and once with a greater than operator. The eventTime restrict should result in one contiguous valid eventTime range. * eventType: only 1 eventType restriction can be specified. * eventsMissingCatalogItems: specififying this will restrict results to events for which catalog items were not found in the catalog. The default behavior is to return only those events for which catalog items were found. Some examples of valid filters expressions: * Example 1: eventTime > "2012-04-23T18:25:43.511Z" eventTime < "2012-04-23T18:30:43.511Z" * Example 2: eventTime > "2012-04-23T18:25:43.511Z" eventType = detail-page-view * Example 3: eventsMissingCatalogItems eventType = search eventTime < "2018-04-23T18:30:43.511Z" * Example 4: eventTime > "2012-04-23T18:25:43.511Z" * Example 5: eventType = search * Example 6: eventsMissingCatalogItems
 		 * @param {number} pageSize Optional. Maximum number of results to return per page. If zero, the service will choose a reasonable default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The previous ListUserEventsResponse.next_page_token.
 		 * @return {GoogleCloudRecommendationengineV1beta1ListUserEventsResponse} Successful response
 		 */

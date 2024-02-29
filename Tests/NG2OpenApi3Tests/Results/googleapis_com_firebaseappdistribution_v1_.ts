@@ -65,7 +65,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference?: string | null;
 
-		/** crc32.c hash for the payload. */
+		/**
+		 * crc32.c hash for the payload.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** Media data, set if reference_type is INLINE */
@@ -99,7 +102,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** crc32.c hash for the payload. */
+		/**
+		 * crc32.c hash for the payload.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** Media data, set if reference_type is INLINE */
@@ -414,7 +420,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference?: string | null;
 
-		/** For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported. */
+		/**
+		 * For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** Backend response for a Diff get checksums response. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol. */
@@ -499,7 +508,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported. */
+		/**
+		 * For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** Original file name */
@@ -901,16 +913,25 @@ export namespace MyNS {
 		/** Required. The display name of the group. */
 		displayName?: string | null;
 
-		/** Output only. The number of invite links for this group. */
+		/**
+		 * Output only. The number of invite links for this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inviteLinkCount?: number | null;
 
 		/** The name of the group resource. Format: `projects/{project_number}/groups/{group_alias}` */
 		name?: string | null;
 
-		/** Output only. The number of releases this group is permitted to access. */
+		/**
+		 * Output only. The number of releases this group is permitted to access.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		releaseCount?: number | null;
 
-		/** Output only. The number of testers who are members of this group. */
+		/**
+		 * Output only. The number of testers who are members of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerCount?: number | null;
 	}
 
@@ -920,16 +941,25 @@ export namespace MyNS {
 		/** Required. The display name of the group. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. The number of invite links for this group. */
+		/**
+		 * Output only. The number of invite links for this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inviteLinkCount: FormControl<number | null | undefined>,
 
 		/** The name of the group resource. Format: `projects/{project_number}/groups/{group_alias}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of releases this group is permitted to access. */
+		/**
+		 * Output only. The number of releases this group is permitted to access.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		releaseCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of testers who are members of this group. */
+		/**
+		 * Output only. The number of testers who are members of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleFirebaseAppdistroV1GroupFormGroup() {
@@ -1270,7 +1300,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1283,7 +1316,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1394,6 +1430,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -1436,6 +1473,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/feedbackReports
 		 * @param {string} parent Required. The name of the release resource, which is the parent of the feedback report resources. Format: `projects/{project_number}/apps/{app}/releases/{release}`
 		 * @param {number} pageSize The maximum number of feedback reports to return. The service may return fewer than this value. The valid range is [1-100]; If unspecified (0), at most 25 feedback reports are returned. Values above 100 are coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListFeedbackReports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListFeedbackReports` must match the call that provided the page token.
 		 * @return {GoogleFirebaseAppdistroV1ListFeedbackReportsResponse} Successful response
 		 */
@@ -1448,6 +1486,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/groups
 		 * @param {string} parent Required. The name of the project resource, which is the parent of the group resources. Format: `projects/{project_number}`
 		 * @param {number} pageSize Optional. The maximum number of groups to return. The service may return fewer than this value. The valid range is [1-1000]; If unspecified (0), at most 25 groups are returned. Values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGroups` must match the call that provided the page token.
 		 * @return {GoogleFirebaseAppdistroV1ListGroupsResponse} Successful response
 		 */
@@ -1473,6 +1512,7 @@ export namespace MyNS {
 		 * @param {string} filter The expression to filter releases listed in the response. To learn more about filtering, refer to [Google's AIP-160 standard](http://aip.dev/160). Supported fields: - `releaseNotes.text` supports `=` (can contain a wildcard character (`*`) at the beginning or end of the string) - `createTime` supports `<`, `<=`, `>` and `>=`, and expects an RFC-3339 formatted string Examples: - `createTime <= "2021-09-08T00:00:00+04:00"` - `releaseNotes.text="fixes" AND createTime >= "2021-09-08T00:00:00.0Z"` - `releaseNotes.text="*v1.0.0-rc*"`
 		 * @param {string} orderBy The fields used to order releases. Supported fields: - `createTime` To specify descending order for a field, append a "desc" suffix, for example, `createTime desc`. If this parameter is not set, releases are ordered by `createTime` in descending order.
 		 * @param {number} pageSize The maximum number of releases to return. The service may return fewer than this value. The valid range is [1-100]; If unspecified (0), at most 25 releases are returned. Values above 100 are coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListReleases` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReleases` must match the call that provided the page token.
 		 * @return {GoogleFirebaseAppdistroV1ListReleasesResponse} Successful response
 		 */
@@ -1496,6 +1536,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the project resource, which is the parent of the tester resources. Format: `projects/{project_number}`
 		 * @param {string} filter Optional. The expression to filter testers listed in the response. To learn more about filtering, refer to [Google's AIP-160 standard](http://aip.dev/160). Supported fields: - `name` - `displayName` - `groups` Example: - `name = "projects/-/testers/*@example.com"` - `displayName = "Joe Sixpack"` - `groups = "projects/groups/qa-team"`
 		 * @param {number} pageSize Optional. The maximum number of testers to return. The service may return fewer than this value. The valid range is [1-1000]; If unspecified (0), at most 10 testers are returned. Values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListTesters` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTesters` must match the call that provided the page token.
 		 * @return {GoogleFirebaseAppdistroV1ListTestersResponse} Successful response
 		 */

@@ -1313,8 +1313,14 @@ namespace MyNS
 		/// Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		/// CancelJobRun virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		/// </summary>
-		/// <param name="jobRunId">The ID of the job run to cancel.</param>
-		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run will be canceled.</param>
+		/// <param name="jobRunId">The ID of the job run to cancel.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run will be canceled.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJobRunResponse> CancelJobRunAsync(string jobRunId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1348,8 +1354,14 @@ namespace MyNS
 		/// Displays detailed information about a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		/// DescribeJobRun virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		/// </summary>
-		/// <param name="jobRunId">The ID of the job run request. </param>
-		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run is submitted.</param>
+		/// <param name="jobRunId">The ID of the job run request. 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run is submitted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobRunResponse> DescribeJobRunAsync(string jobRunId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1426,7 +1438,10 @@ namespace MyNS
 		/// <param name="createdAfter">The date and time after which the job templates were created.</param>
 		/// <param name="createdBefore"> The date and time before which the job templates were created.</param>
 		/// <param name="maxResults"> The maximum number of job templates that can be listed.</param>
-		/// <param name="nextToken"> The token for the next set of job templates to return.</param>
+		/// <param name="nextToken"> The token for the next set of job templates to return.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobTemplatesResponse> ListJobTemplatesAsync(System.DateTimeOffset createdAfter, System.DateTimeOffset createdBefore, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1460,7 +1475,10 @@ namespace MyNS
 		/// Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		/// CreateManagedEndpoint virtualclusters/{virtualClusterId}/endpoints
 		/// </summary>
-		/// <param name="virtualClusterId">The ID of the virtual cluster for which a managed endpoint is created.</param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster for which a managed endpoint is created.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateManagedEndpointResponse> CreateManagedEndpointAsync(string virtualClusterId, CreateManagedEndpointPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1501,13 +1519,23 @@ namespace MyNS
 		/// Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		/// ListManagedEndpoints virtualclusters/{virtualClusterId}/endpoints
 		/// </summary>
-		/// <param name="virtualClusterId">The ID of the virtual cluster.</param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="createdBefore">The date and time before which the endpoints are created.</param>
 		/// <param name="createdAfter"> The date and time after which the endpoints are created.</param>
-		/// <param name="types">The types of the managed endpoints.</param>
-		/// <param name="states">The states of the managed endpoints.</param>
+		/// <param name="types">The types of the managed endpoints.
+		/// Maximum items: 10
+		// </param>
+		/// <param name="states">The states of the managed endpoints.
+		/// Maximum items: 10
+		// </param>
 		/// <param name="maxResults">The maximum number of managed endpoints that can be listed.</param>
-		/// <param name="nextToken"> The token for the next set of managed endpoints to return. </param>
+		/// <param name="nextToken"> The token for the next set of managed endpoints to return. 
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListManagedEndpointsResponse> ListManagedEndpointsAsync(string virtualClusterId, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string[] types, EndpointState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1581,13 +1609,21 @@ namespace MyNS
 		/// Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		/// ListVirtualClusters virtualclusters
 		/// </summary>
-		/// <param name="containerProviderId">The container provider ID of the virtual cluster.</param>
+		/// <param name="containerProviderId">The container provider ID of the virtual cluster.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <param name="containerProviderType">The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</param>
 		/// <param name="createdAfter">The date and time after which the virtual clusters are created.</param>
 		/// <param name="createdBefore">The date and time before which the virtual clusters are created.</param>
-		/// <param name="states">The states of the requested virtual clusters.</param>
+		/// <param name="states">The states of the requested virtual clusters.
+		/// Maximum items: 10
+		// </param>
 		/// <param name="maxResults">The maximum number of virtual clusters that can be listed.</param>
-		/// <param name="nextToken">The token for the next set of virtual clusters to return. </param>
+		/// <param name="nextToken">The token for the next set of virtual clusters to return. 
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVirtualClustersResponse> ListVirtualClustersAsync(string containerProviderId, ContainerProviderType containerProviderType, System.DateTimeOffset createdAfter, System.DateTimeOffset createdBefore, VirtualClusterState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1621,7 +1657,10 @@ namespace MyNS
 		/// Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 		/// DeleteJobTemplate jobtemplates/{templateId}
 		/// </summary>
-		/// <param name="templateId">The ID of the job template that will be deleted.</param>
+		/// <param name="templateId">The ID of the job template that will be deleted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteJobTemplateResponse> DeleteJobTemplateAsync(string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1655,7 +1694,10 @@ namespace MyNS
 		/// Displays detailed information about a specified job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 		/// DescribeJobTemplate jobtemplates/{templateId}
 		/// </summary>
-		/// <param name="templateId">The ID of the job template that will be described.</param>
+		/// <param name="templateId">The ID of the job template that will be described.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1689,8 +1731,14 @@ namespace MyNS
 		/// Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		/// DeleteManagedEndpoint virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		/// </summary>
-		/// <param name="endpointId">The ID of the managed endpoint.</param>
-		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.</param>
+		/// <param name="endpointId">The ID of the managed endpoint.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteManagedEndpointResponse> DeleteManagedEndpointAsync(string endpointId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1724,8 +1772,14 @@ namespace MyNS
 		/// Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		/// DescribeManagedEndpoint virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		/// </summary>
-		/// <param name="endpointId">This output displays ID of the managed endpoint.</param>
-		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.</param>
+		/// <param name="endpointId">This output displays ID of the managed endpoint.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeManagedEndpointResponse> DescribeManagedEndpointAsync(string endpointId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1759,7 +1813,10 @@ namespace MyNS
 		/// Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		/// DeleteVirtualCluster virtualclusters/{virtualClusterId}
 		/// </summary>
-		/// <param name="virtualClusterId">The ID of the virtual cluster that will be deleted.</param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster that will be deleted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualClusterResponse> DeleteVirtualClusterAsync(string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1793,7 +1850,10 @@ namespace MyNS
 		/// Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		/// DescribeVirtualCluster virtualclusters/{virtualClusterId}
 		/// </summary>
-		/// <param name="virtualClusterId">The ID of the virtual cluster that will be described.</param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster that will be described.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualClusterResponse> DescribeVirtualClusterAsync(string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1827,8 +1887,14 @@ namespace MyNS
 		/// Generate a session token to connect to a managed endpoint.
 		/// GetManagedEndpointSessionCredentials virtualclusters/{virtualClusterId}/endpoints/{endpointId}/credentials
 		/// </summary>
-		/// <param name="endpointId">The ARN of the managed endpoint for which the request is submitted. </param>
-		/// <param name="virtualClusterId">The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </param>
+		/// <param name="endpointId">The ARN of the managed endpoint for which the request is submitted. 
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="virtualClusterId">The ARN of the Virtual Cluster which the Managed Endpoint belongs to. 
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetManagedEndpointSessionCredentialsResponse> GetManagedEndpointSessionCredentialsAsync(string endpointId, string virtualClusterId, GetManagedEndpointSessionCredentialsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1869,13 +1935,24 @@ namespace MyNS
 		/// Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		/// ListJobRuns virtualclusters/{virtualClusterId}/jobruns
 		/// </summary>
-		/// <param name="virtualClusterId">The ID of the virtual cluster for which to list the job run. </param>
+		/// <param name="virtualClusterId">The ID of the virtual cluster for which to list the job run. 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="createdBefore">The date and time before which the job runs were submitted.</param>
 		/// <param name="createdAfter">The date and time after which the job runs were submitted.</param>
-		/// <param name="name">The name of the job run.</param>
-		/// <param name="states">The states of the job run.</param>
+		/// <param name="name">The name of the job run.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="states">The states of the job run.
+		/// Maximum items: 10
+		// </param>
 		/// <param name="maxResults">The maximum number of job runs that can be listed.</param>
-		/// <param name="nextToken">The token for the next set of job runs to return.</param>
+		/// <param name="nextToken">The token for the next set of job runs to return.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobRunsResponse> ListJobRunsAsync(string virtualClusterId, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string name, JobRunState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1909,7 +1986,10 @@ namespace MyNS
 		/// Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		/// StartJobRun virtualclusters/{virtualClusterId}/jobruns
 		/// </summary>
-		/// <param name="virtualClusterId">The virtual cluster ID for which the job run request is submitted.</param>
+		/// <param name="virtualClusterId">The virtual cluster ID for which the job run request is submitted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobRunResponse> StartJobRunAsync(string virtualClusterId, StartJobRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1950,7 +2030,10 @@ namespace MyNS
 		/// Lists the tags assigned to the resources.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of tagged resources.</param>
+		/// <param name="resourceArn">The ARN of tagged resources.
+		/// Max length: 500
+		/// Min length: 60
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1984,7 +2067,10 @@ namespace MyNS
 		/// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags that you add.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of resources.</param>
+		/// <param name="resourceArn">The ARN of resources.
+		/// Max length: 500
+		/// Min length: 60
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2025,8 +2111,14 @@ namespace MyNS
 		/// Removes tags from resources.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of resources.</param>
-		/// <param name="tagKeys">The tag keys of the resources.</param>
+		/// <param name="resourceArn">The ARN of resources.
+		/// Max length: 500
+		/// Min length: 60
+		// </param>
+		/// <param name="tagKeys">The tag keys of the resources.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

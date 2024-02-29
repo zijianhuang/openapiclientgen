@@ -1686,7 +1686,10 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the behavior graph to remove the tags from.</param>
-		/// <param name="tagKeys">The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</param>
+		/// <param name="tagKeys">The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		public async Task UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

@@ -573,8 +573,13 @@ namespace MyNS
 		/// <summary>
 		/// ListCredential v1/Credentials
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListCredentialReturn> ListCredentialAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -608,7 +613,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Credentials/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -634,7 +642,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -668,8 +679,13 @@ namespace MyNS
 		/// ListService v1/Services
 		/// </summary>
 		/// <param name="FriendlyName">The string that identifies the Service resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -703,13 +719,21 @@ namespace MyNS
 		/// <summary>
 		/// ListBinding v1/Services/{ServiceSid}/Bindings
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to read the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to read the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="StartDate">Only include usage that has occurred on or after this date. Specify the date in GMT and format as `YYYY-MM-DD`.</param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date. Specify the date in GMT and format as `YYYY-MM-DD`.</param>
 		/// <param name="Identity">The [User](https://www.twilio.com/docs/chat/rest/user-resource)'s `identity` value of the resources to read.</param>
 		/// <param name="Tag">Only list Bindings that have all of the specified Tags. The following implicit tags are available: `all`, `apn`, `fcm`, `gcm`, `sms`, `facebook-messenger`. Up to 5 tags are allowed.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListBindingReturn> ListBindingAsync(string ServiceSid, System.DateOnly StartDate, System.DateOnly EndDate, string[] Identity, string[] Tag, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -743,8 +767,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteBinding v1/Services/{ServiceSid}/Bindings/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to delete the resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteBindingAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Bindings/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -770,8 +800,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchBinding v1/Services/{ServiceSid}/Bindings/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to fetch the resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1servicebinding> FetchBindingAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -804,7 +840,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -830,7 +869,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

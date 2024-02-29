@@ -2766,8 +2766,13 @@ namespace MyNS
 		/// ListWorkspace v1/Workspaces
 		/// </summary>
 		/// <param name="FriendlyName">The `friendly_name` of the Workspace resources to read. For example `Customer Support` or `2014 Election Campaign`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWorkspaceReturn> ListWorkspaceAsync(string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2801,7 +2806,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteWorkspace v1/Workspaces/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Workspace resource to delete.</param>
+		/// <param name="Sid">The SID of the Workspace resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2827,7 +2835,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkspace v1/Workspaces/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Workspace resource to fetch.</param>
+		/// <param name="Sid">The SID of the Workspace resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspace> FetchWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2860,11 +2871,19 @@ namespace MyNS
 		/// <summary>
 		/// ListActivity v1/Workspaces/{WorkspaceSid}/Activities
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the Activity resources to read.</param>
 		/// <param name="Available">Whether return only Activity resources that are available or unavailable. A value of `true` returns only available activities. Values of '1' or `yes` also indicate `true`. All other values represent `false` and return activities that are unavailable.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListActivityReturn> ListActivityAsync(string WorkspaceSid, string FriendlyName, string Available, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2898,8 +2917,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteActivity v1/Workspaces/{WorkspaceSid}/Activities/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to delete.</param>
-		/// <param name="Sid">The SID of the Activity resource to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Activity resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Activities/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2925,8 +2950,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchActivity v1/Workspaces/{WorkspaceSid}/Activities/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to fetch.</param>
-		/// <param name="Sid">The SID of the Activity resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Activity resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceactivity> FetchActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2959,7 +2990,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkspaceCumulativeStatistics v1/Workspaces/{WorkspaceSid}/CumulativeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -2997,20 +3031,46 @@ namespace MyNS
 		/// <summary>
 		/// ListEvent v1/Workspaces/{WorkspaceSid}/Events
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Events to read. Returns only the Events that pertain to the specified Workspace.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Events to read. Returns only the Events that pertain to the specified Workspace.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only include Events that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="EventType">The type of Events to read. Returns only Events of the type specified.</param>
 		/// <param name="Minutes">The period of events to read in minutes. Returns only Events that occurred since this many minutes in the past. The default is `15` minutes. Task Attributes for Events occuring more 43,200 minutes ago will be redacted.</param>
-		/// <param name="ReservationSid">The SID of the Reservation with the Events to read. Returns only Events that pertain to the specified Reservation.</param>
+		/// <param name="ReservationSid">The SID of the Reservation with the Events to read. Returns only Events that pertain to the specified Reservation.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="StartDate">Only include Events from on or after this date and time, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Task Attributes for Events older than 30 days will be redacted.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Events to read. Returns only the Events that pertain to the specified TaskQueue.</param>
-		/// <param name="TaskSid">The SID of the Task with the Events to read. Returns only the Events that pertain to the specified Task.</param>
-		/// <param name="WorkerSid">The SID of the Worker with the Events to read. Returns only the Events that pertain to the specified Worker.</param>
-		/// <param name="WorkflowSid">The SID of the Workflow with the Events to read. Returns only the Events that pertain to the specified Workflow.</param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Events to read. Returns only the Events that pertain to the specified TaskQueue.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskSid">The SID of the Task with the Events to read. Returns only the Events that pertain to the specified Task.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the Worker with the Events to read. Returns only the Events that pertain to the specified Worker.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkflowSid">The SID of the Workflow with the Events to read. Returns only the Events that pertain to the specified Workflow.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskChannel">The TaskChannel with the Events to read. Returns only the Events that pertain to the specified TaskChannel.</param>
-		/// <param name="Sid">The SID of the Event resource to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="Sid">The SID of the Event resource to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListEventReturn> ListEventAsync(
@@ -3060,8 +3120,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchEvent v1/Workspaces/{WorkspaceSid}/Events/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Event to fetch.</param>
-		/// <param name="Sid">The SID of the Event resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Event to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Event resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceevent> FetchEventAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3094,7 +3160,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkspaceRealTimeStatistics v1/Workspaces/{WorkspaceSid}/RealTimeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkspace_real_time_statistics> FetchWorkspaceRealTimeStatisticsAsync(string WorkspaceSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3128,7 +3197,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkspaceStatistics v1/Workspaces/{WorkspaceSid}/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
@@ -3166,9 +3238,17 @@ namespace MyNS
 		/// <summary>
 		/// ListTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskChannelReturn> ListTaskChannelAsync(string WorkspaceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3202,7 +3282,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The SID of the Task Channel resource to delete.</param>
 		public async Task DeleteTaskChannelAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3229,7 +3312,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The SID of the Task Channel resource to fetch.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask_channel> FetchTaskChannelAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3263,13 +3349,24 @@ namespace MyNS
 		/// <summary>
 		/// ListTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the TaskQueue resources to read.</param>
 		/// <param name="EvaluateWorkerAttributes">The attributes of the Workers to read. Returns the TaskQueues with Workers that match the attributes specified in this parameter.</param>
-		/// <param name="WorkerSid">The SID of the Worker with the TaskQueue resources to read.</param>
+		/// <param name="WorkerSid">The SID of the Worker with the TaskQueue resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Ordering">Sorting parameter for TaskQueues</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskQueueReturn> ListTaskQueueAsync(string WorkspaceSid, string FriendlyName, string EvaluateWorkerAttributes, string WorkerSid, string Ordering, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3303,15 +3400,23 @@ namespace MyNS
 		/// <summary>
 		/// ListTaskQueuesStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueues to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueues to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="FriendlyName">The `friendly_name` of the TaskQueue statistics to read.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default is 15 minutes.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="TaskChannel">Only calculate statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <param name="SplitByWaitTime">A comma separated list of values that describes the thresholds, in seconds, to calculate statistics on. For each threshold specified, the number of Tasks canceled and reservations accepted above and below the specified thresholds in seconds are computed.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskQueuesStatisticsReturn> ListTaskQueuesStatisticsAsync(string WorkspaceSid, System.DateTimeOffset EndDate, string FriendlyName, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3345,8 +3450,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to delete.</param>
-		/// <param name="Sid">The SID of the TaskQueue resource to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the TaskQueue resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -3372,8 +3483,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.</param>
-		/// <param name="Sid">The SID of the TaskQueue resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the TaskQueue resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask_queue> FetchTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3406,8 +3523,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskQueueCumulativeStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/CumulativeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default is 15 minutes.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -3445,8 +3568,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskQueueRealTimeStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/RealTimeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskChannel">The TaskChannel for which to fetch statistics. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask_queuetask_queue_real_time_statistics> FetchTaskQueueRealTimeStatisticsAsync(string WorkspaceSid, string TaskQueueSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3480,8 +3609,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskQueueStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default is 15 minutes.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -3519,18 +3654,32 @@ namespace MyNS
 		/// <summary>
 		/// ListTask v1/Workspaces/{WorkspaceSid}/Tasks
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Tasks to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Tasks to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Priority">The priority value of the Tasks to read. Returns the list of all Tasks in the Workspace with the specified priority.</param>
 		/// <param name="AssignmentStatus">The `assignment_status` of the Tasks you want to read. Can be: `pending`, `reserved`, `assigned`, `canceled`, `wrapping`, or `completed`. Returns all Tasks in the Workspace with the specified `assignment_status`.</param>
-		/// <param name="WorkflowSid">The SID of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this SID.</param>
+		/// <param name="WorkflowSid">The SID of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this SID.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="WorkflowName">The friendly name of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this friendly name.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this SID.</param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this SID.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this friendly name.</param>
 		/// <param name="EvaluateTaskAttributes">The attributes of the Tasks to read. Returns the Tasks that match the attributes specified in this parameter.</param>
 		/// <param name="Ordering">How to order the returned Task resources. By default, Tasks are sorted by ascending DateCreated. This value is specified as: `Attribute:Order`, where `Attribute` can be either `DateCreated`, `Priority`, or `VirtualStartTime` and `Order` can be either `asc` or `desc`. For example, `Priority:desc` returns Tasks ordered in descending order of their Priority. Pairings of sort orders can be specified in a comma-separated list such as `Priority:desc,DateCreated:asc`, which returns the Tasks in descending Priority order and ascending DateCreated Order. The only ordering pairing not allowed is DateCreated and VirtualStartTime.</param>
 		/// <param name="HasAddons">Whether to read Tasks with Add-ons. If `true`, returns only Tasks with Add-ons. If `false`, returns only Tasks without Add-ons.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskReturn> ListTaskAsync(string WorkspaceSid, int Priority, string[] AssignmentStatus, string WorkflowSid, string WorkflowName, string TaskQueueSid, string TaskQueueName, string EvaluateTaskAttributes, string Ordering, bool HasAddons, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3564,8 +3713,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteTask v1/Workspaces/{WorkspaceSid}/Tasks/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to delete.</param>
-		/// <param name="Sid">The SID of the Task resource to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Task resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -3591,8 +3746,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchTask v1/Workspaces/{WorkspaceSid}/Tasks/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to fetch.</param>
-		/// <param name="Sid">The SID of the Task resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Task resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask> FetchTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3625,12 +3786,26 @@ namespace MyNS
 		/// <summary>
 		/// ListTaskReservation v1/Workspaces/{WorkspaceSid}/Tasks/{TaskSid}/Reservations
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resources to read.</param>
-		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resources to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ReservationStatus">Returns the list of reservations for a task with a specified ReservationStatus.  Can be: `pending`, `accepted`, `rejected`, or `timeout`.</param>
-		/// <param name="WorkerSid">The SID of the reserved Worker resource to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="WorkerSid">The SID of the reserved Worker resource to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskReservationReturn> ListTaskReservationAsync(string WorkspaceSid, string TaskSid, Task_reservation_enum_status ReservationStatus, string WorkerSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3664,9 +3839,18 @@ namespace MyNS
 		/// <summary>
 		/// FetchTaskReservation v1/Workspaces/{WorkspaceSid}/Tasks/{TaskSid}/Reservations/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resource to fetch.</param>
-		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resource to fetch.</param>
-		/// <param name="Sid">The SID of the TaskReservation resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the TaskReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetasktask_reservation> FetchTaskReservationAsync(string WorkspaceSid, string TaskSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3699,17 +3883,31 @@ namespace MyNS
 		/// <summary>
 		/// ListWorker v1/Workspaces/{WorkspaceSid}/Workers
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workers to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workers to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ActivityName">The `activity_name` of the Worker resources to read.</param>
-		/// <param name="ActivitySid">The `activity_sid` of the Worker resources to read.</param>
+		/// <param name="ActivitySid">The `activity_sid` of the Worker resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Available">Whether to return only Worker resources that are available or unavailable. Can be `true`, `1`, or `yes` to return Worker resources that are available, and `false`, or any value returns the Worker resources that are not available.</param>
 		/// <param name="FriendlyName">The `friendly_name` of the Worker resources to read.</param>
 		/// <param name="TargetWorkersExpression">Filter by Workers that would match an expression. In addition to fields in the workers' attributes, the expression can include the following worker fields: `sid`, `friendly_name`, `activity_sid`, or `activity_name`</param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue that the Workers to read are eligible for.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue that the Workers to read are eligible for.</param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue that the Workers to read are eligible for.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Ordering">Sorting parameter for Workers</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWorkerReturn> ListWorkerAsync(string WorkspaceSid, string ActivityName, string ActivitySid, string Available, string FriendlyName, string TargetWorkersExpression, string TaskQueueName, string TaskQueueSid, string Ordering, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3743,7 +3941,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkersCumulativeStatistics v1/Workspaces/{WorkspaceSid}/Workers/CumulativeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -3780,7 +3981,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkersRealTimeStatistics v1/Workspaces/{WorkspaceSid}/Workers/RealTimeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkerworkers_real_time_statistics> FetchWorkersRealTimeStatisticsAsync(string WorkspaceSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3814,11 +4018,17 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkerStatistics v1/Workspaces/{WorkspaceSid}/Workers/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
-		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch Worker statistics.</param>
+		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch Worker statistics.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue for which to fetch Worker statistics.</param>
 		/// <param name="FriendlyName">Only include Workers with `friendly_name` values that match this parameter.</param>
 		/// <param name="TaskChannel">Only calculate statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
@@ -3854,8 +4064,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteWorker v1/Workspaces/{WorkspaceSid}/Workers/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to delete.</param>
-		/// <param name="Sid">The SID of the Worker resource to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Worker resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -3881,8 +4097,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorker v1/Workspaces/{WorkspaceSid}/Workers/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.</param>
-		/// <param name="Sid">The SID of the Worker resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Worker resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworker> FetchWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3915,10 +4137,21 @@ namespace MyNS
 		/// <summary>
 		/// ListWorkerChannel v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Channels
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannels to read.</param>
-		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannels to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannels to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannels to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWorkerChannelReturn> ListWorkerChannelAsync(string WorkspaceSid, string WorkerSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3952,8 +4185,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkerChannel v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.</param>
-		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The SID of the WorkerChannel to fetch.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkerworker_channel> FetchWorkerChannelAsync(string WorkspaceSid, string WorkerSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3987,11 +4226,22 @@ namespace MyNS
 		/// <summary>
 		/// ListWorkerReservation v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Reservations
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resources to read.</param>
-		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resources to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ReservationStatus">Returns the list of reservations for a worker with a specified ReservationStatus. Can be: `pending`, `accepted`, `rejected`, `timeout`, `canceled`, or `rescinded`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWorkerReservationReturn> ListWorkerReservationAsync(string WorkspaceSid, string WorkerSid, Task_reservation_enum_status ReservationStatus, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4025,9 +4275,18 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkerReservation v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Reservations/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resource to fetch.</param>
-		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resource to fetch.</param>
-		/// <param name="Sid">The SID of the WorkerReservation resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the WorkerReservation resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkerworker_reservation> FetchWorkerReservationAsync(string WorkspaceSid, string WorkerSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4060,8 +4319,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkerInstanceStatistics v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.</param>
-		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
@@ -4098,10 +4363,18 @@ namespace MyNS
 		/// <summary>
 		/// ListWorkflow v1/Workspaces/{WorkspaceSid}/Workflows
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to read.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the Workflow resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWorkflowReturn> ListWorkflowAsync(string WorkspaceSid, string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4135,8 +4408,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteWorkflow v1/Workspaces/{WorkspaceSid}/Workflows/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to delete.</param>
-		/// <param name="Sid">The SID of the Workflow resource to delete.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Workflow resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -4162,8 +4441,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkflow v1/Workspaces/{WorkspaceSid}/Workflows/{Sid}
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.</param>
-		/// <param name="Sid">The SID of the Workflow resource to fetch.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Workflow resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkflow> FetchWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4196,8 +4481,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkflowCumulativeStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/CumulativeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.</param>
-		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified Sid value.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified Sid value.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -4235,8 +4526,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkflowRealTimeStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/RealTimeStatistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.</param>
-		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkflowworkflow_real_time_statistics> FetchWorkflowRealTimeStatisticsAsync(string WorkspaceSid, string WorkflowSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4270,8 +4567,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchWorkflowStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/Statistics
 		/// </summary>
-		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.</param>
-		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.</param>
+		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>

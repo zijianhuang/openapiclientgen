@@ -1191,6 +1191,7 @@ export namespace MyNS {
 		 *          value can be between 1 and 100. If this parameter is not
 		 *          used, then <code>ListMeshes</code> returns up to 100 results and a
 		 *             <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated
 		 *          <code>ListMeshes</code> request where <code>limit</code> was used and the
 		 *          results exceeded the value of that parameter. Pagination continues from the end of the
@@ -1216,7 +1217,9 @@ export namespace MyNS {
 		 * virtual nodes with relative weighting.</p>
 		 * Put meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
 		 * @param {string} meshName The name of the service mesh in which to create the route.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router in which to create the route.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateRouteOutput} Success
 		 */
 		CreateRoute(meshName: string, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
@@ -1234,12 +1237,15 @@ export namespace MyNS {
 		 *          value can be between 1 and 100. If this parameter is not
 		 *          used, then <code>ListRoutes</code> returns up to 100 results and a
 		 *             <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh in which to list routes.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated
 		 *          <code>ListRoutes</code> request where <code>limit</code> was used and the
 		 *          results exceeded the value of that parameter. Pagination continues from the end of the
 		 *          previous results that returned the <code>nextToken</code> value.
 		 * @param {string} virtualRouterName The name of the virtual router in which to list routes.
+		 *     Min length: 1    Max length: 255
 		 * @return {ListRoutesOutput} Success
 		 */
 		ListRoutes(limit: number | null | undefined, meshName: string, nextToken: string | null | undefined, virtualRouterName: string): Observable<ListRoutesOutput> {
@@ -1268,6 +1274,7 @@ export namespace MyNS {
 		 * </note>
 		 * Put meshes/{meshName}/virtualNodes
 		 * @param {string} meshName The name of the service mesh in which to create the virtual node.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateVirtualNodeOutput} Success
 		 */
 		CreateVirtualNode(meshName: string, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
@@ -1285,7 +1292,9 @@ export namespace MyNS {
 		 *          value. This value can be between 1 and 100. If this
 		 *          parameter is not used, then <code>ListVirtualNodes</code> returns up to
 		 *          100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh in which to list virtual nodes.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated
 		 *          <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
 		 *          results exceeded the value of that parameter. Pagination continues from the end of the
@@ -1303,6 +1312,7 @@ export namespace MyNS {
 		 * incoming requests to different virtual nodes.</p>
 		 * Put meshes/{meshName}/virtualRouters
 		 * @param {string} meshName The name of the service mesh in which to create the virtual router.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateVirtualRouterOutput} Success
 		 */
 		CreateVirtualRouter(meshName: string, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
@@ -1320,7 +1330,9 @@ export namespace MyNS {
 		 *          value. This value can be between 1 and 100. If this
 		 *          parameter is not used, then <code>ListVirtualRouters</code> returns up to
 		 *          100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh in which to list virtual routers.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated
 		 *          <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
 		 *          results exceeded the value of that parameter. Pagination continues from the end of the
@@ -1337,6 +1349,7 @@ export namespace MyNS {
 		 * mesh before you can delete the mesh itself.</p>
 		 * Delete meshes/{meshName}
 		 * @param {string} meshName The name of the service mesh to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteMeshOutput} Success
 		 */
 		DeleteMesh(meshName: string): Observable<DeleteMeshOutput> {
@@ -1347,6 +1360,7 @@ export namespace MyNS {
 		 * Describes an existing service mesh.
 		 * Get meshes/{meshName}
 		 * @param {string} meshName The name of the service mesh to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeMeshOutput} Success
 		 */
 		DescribeMesh(meshName: string): Observable<DescribeMeshOutput> {
@@ -1357,8 +1371,11 @@ export namespace MyNS {
 		 * Deletes an existing route.
 		 * Delete meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh in which to delete the route.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} routeName The name of the route to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router in which to delete the route.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteRouteOutput} Success
 		 */
 		DeleteRoute(meshName: string, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
@@ -1369,8 +1386,11 @@ export namespace MyNS {
 		 * Describes an existing route.
 		 * Get meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh in which the route resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} routeName The name of the route to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router with which the route is associated.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeRouteOutput} Success
 		 */
 		DescribeRoute(meshName: string, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
@@ -1381,8 +1401,11 @@ export namespace MyNS {
 		 * Updates an existing route for a specified service mesh and virtual router.
 		 * Put meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh in which the route resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} routeName The name of the route to update.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router with which the route is associated.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateRouteOutput} Success
 		 */
 		UpdateRoute(meshName: string, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
@@ -1393,7 +1416,9 @@ export namespace MyNS {
 		 * Deletes an existing virtual node.
 		 * Delete meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh in which to delete the virtual node.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualNodeName The name of the virtual node to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteVirtualNodeOutput} Success
 		 */
 		DeleteVirtualNode(meshName: string, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
@@ -1404,7 +1429,9 @@ export namespace MyNS {
 		 * Describes an existing virtual node.
 		 * Get meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh in which the virtual node resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualNodeName The name of the virtual node to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeVirtualNodeOutput} Success
 		 */
 		DescribeVirtualNode(meshName: string, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
@@ -1415,7 +1442,9 @@ export namespace MyNS {
 		 * Updates an existing virtual node in a specified service mesh.
 		 * Put meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh in which the virtual node resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualNodeName The name of the virtual node to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateVirtualNodeOutput} Success
 		 */
 		UpdateVirtualNode(meshName: string, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
@@ -1428,7 +1457,9 @@ export namespace MyNS {
 		 * router itself.</p>
 		 * Delete meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh in which to delete the virtual router.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteVirtualRouterOutput} Success
 		 */
 		DeleteVirtualRouter(meshName: string, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
@@ -1439,7 +1470,9 @@ export namespace MyNS {
 		 * Describes an existing virtual router.
 		 * Get meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh in which the virtual router resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeVirtualRouterOutput} Success
 		 */
 		DescribeVirtualRouter(meshName: string, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
@@ -1450,7 +1483,9 @@ export namespace MyNS {
 		 * Updates an existing virtual router in a specified service mesh.
 		 * Put meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh in which the virtual router resides.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateVirtualRouterOutput} Success
 		 */
 		UpdateVirtualRouter(meshName: string, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
@@ -1469,8 +1504,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the service mesh.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		meshName: string;
 	}
@@ -1485,8 +1520,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the service mesh.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		meshName: FormControl<string | null | undefined>,
 	}
@@ -1509,8 +1544,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		routeName: string;
 
@@ -1531,8 +1566,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		routeName: FormControl<string | null | undefined>,
 	}
@@ -1572,8 +1607,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualNodeName: string;
 	}
@@ -1588,8 +1623,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
@@ -1631,8 +1666,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual router.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualRouterName: string;
 	}
@@ -1647,8 +1682,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual router.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}

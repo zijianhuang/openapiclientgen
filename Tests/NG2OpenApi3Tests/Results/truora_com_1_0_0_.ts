@@ -16,16 +16,25 @@ export namespace MyNS {
 		/** Client ID of the API Key */
 		client_id?: string | null;
 
-		/** API key creation date */
+		/**
+		 * API key creation date
+		 * Type: DateOnly
+		 */
 		creation_date?: Date | null;
 
-		/** Expiration date of the API key */
+		/**
+		 * Expiration date of the API key
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/** Key name, equals user_key_name normalized */
 		key_name?: string | null;
 
-		/** Date when the API key version was changed */
+		/**
+		 * Date when the API key version was changed
+		 * Type: DateOnly
+		 */
 		update_date?: Date | null;
 
 		/** User name of the API key */
@@ -44,16 +53,25 @@ export namespace MyNS {
 		/** Client ID of the API Key */
 		client_id: FormControl<string | null | undefined>,
 
-		/** API key creation date */
+		/**
+		 * API key creation date
+		 * Type: DateOnly
+		 */
 		creation_date: FormControl<Date | null | undefined>,
 
-		/** Expiration date of the API key */
+		/**
+		 * Expiration date of the API key
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/** Key name, equals user_key_name normalized */
 		key_name: FormControl<string | null | undefined>,
 
-		/** Date when the API key version was changed */
+		/**
+		 * Date when the API key version was changed
+		 * Type: DateOnly
+		 */
 		update_date: FormControl<Date | null | undefined>,
 
 		/** User name of the API key */
@@ -80,10 +98,16 @@ export namespace MyNS {
 		/** Represents changes made to a API key version */
 		changelog?: APIKeyVersionChangelog;
 
-		/** Expiration date of the API key version */
+		/**
+		 * Expiration date of the API key version
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
-		/** Release date of the API key version */
+		/**
+		 * Release date of the API key version
+		 * Type: DateOnly
+		 */
 		release_date?: Date | null;
 
 		/** API key version */
@@ -93,10 +117,16 @@ export namespace MyNS {
 	/** Represents an API key version */
 	export interface APIKeyVersionFormProperties {
 
-		/** Expiration date of the API key version */
+		/**
+		 * Expiration date of the API key version
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
-		/** Release date of the API key version */
+		/**
+		 * Release date of the API key version
+		 * Type: DateOnly
+		 */
 		release_date: FormControl<Date | null | undefined>,
 
 		/** API key version */
@@ -177,6 +207,7 @@ export namespace MyNS {
 		/**
 		 * Birth date of reported person
 		 * Required
+		 * Type: DateOnly
 		 */
 		birth_date: Date;
 
@@ -210,6 +241,7 @@ export namespace MyNS {
 		/**
 		 * Behavior report date
 		 * Required
+		 * Type: DateOnly
 		 */
 		feedback_date: Date;
 
@@ -241,6 +273,7 @@ export namespace MyNS {
 		/**
 		 * Birth date of reported person
 		 * Required
+		 * Type: DateOnly
 		 */
 		birth_date: FormControl<Date | null | undefined>,
 
@@ -274,6 +307,7 @@ export namespace MyNS {
 		/**
 		 * Behavior report date
 		 * Required
+		 * Type: DateOnly
 		 */
 		feedback_date: FormControl<Date | null | undefined>,
 
@@ -356,7 +390,10 @@ export namespace MyNS {
 	/** Represents changes in check scores between continuous checks */
 	export interface Change {
 
-		/** Old and new score map by dataset */
+		/**
+		 * Old and new score map by dataset
+		 * Type: double
+		 */
 		dataset_score_changes?: number | null;
 
 		/** Old and new score list */
@@ -366,7 +403,10 @@ export namespace MyNS {
 	/** Represents changes in check scores between continuous checks */
 	export interface ChangeFormProperties {
 
-		/** Old and new score map by dataset */
+		/**
+		 * Old and new score map by dataset
+		 * Type: double
+		 */
 		dataset_score_changes: FormControl<number | null | undefined>,
 	}
 	export function CreateChangeFormGroup() {
@@ -419,7 +459,10 @@ export namespace MyNS {
 		/** Person foreign identification */
 		foreign_id?: string | null;
 
-		/** [Experimental] Analyzes the probability that the results by name are attributed to a homonym. Number between 0 and 1 where 1 is the the greatest probability */
+		/**
+		 * [Experimental] Analyzes the probability that the results by name are attributed to a homonym. Number between 0 and 1 where 1 is the the greatest probability
+		 * Type: float
+		 */
 		homonym_probability?: number | null;
 
 		/**
@@ -435,6 +478,7 @@ export namespace MyNS {
 		/**
 		 * Background check score regarding results by ID number only. It is a number between 0 and 1 where 1 is the best score. This result is a weighted average of the id_scores listed under scores.
 		 * Required
+		 * Type: float
 		 */
 		id_score: number;
 
@@ -575,7 +619,10 @@ export namespace MyNS {
 		/** Person foreign identification */
 		foreign_id: FormControl<string | null | undefined>,
 
-		/** [Experimental] Analyzes the probability that the results by name are attributed to a homonym. Number between 0 and 1 where 1 is the the greatest probability */
+		/**
+		 * [Experimental] Analyzes the probability that the results by name are attributed to a homonym. Number between 0 and 1 where 1 is the the greatest probability
+		 * Type: float
+		 */
 		homonym_probability: FormControl<number | null | undefined>,
 
 		/**
@@ -588,6 +635,7 @@ export namespace MyNS {
 		/**
 		 * Background check score regarding results by ID number only. It is a number between 0 and 1 where 1 is the best score. This result is a weighted average of the id_scores listed under scores.
 		 * Required
+		 * Type: float
 		 */
 		id_score: FormControl<number | null | undefined>,
 
@@ -730,6 +778,7 @@ export namespace MyNS {
 		/**
 		 * Times this name was found during the background check process
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -752,6 +801,7 @@ export namespace MyNS {
 		/**
 		 * Times this name was found during the background check process
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -867,6 +917,7 @@ export namespace MyNS {
 		/**
 		 * Dataset score. Number between 0 and 1 where 1 is the best score.
 		 * Required
+		 * Type: float
 		 */
 		score: number;
 
@@ -889,6 +940,7 @@ export namespace MyNS {
 		/**
 		 * Dataset score. Number between 0 and 1 where 1 is the best score.
 		 * Required
+		 * Type: float
 		 */
 		score: FormControl<number | null | undefined>,
 
@@ -1047,7 +1099,10 @@ export namespace MyNS {
 	/** Represents the summary of a vehicle background check */
 	export interface VehicleSummary {
 
-		/** Number of passengers allowed to travel in the vehicle */
+		/**
+		 * Number of passengers allowed to travel in the vehicle
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Vehicle color */
@@ -1062,10 +1117,16 @@ export namespace MyNS {
 		/** Vehicle model */
 		model?: string | null;
 
-		/** Vehicle door count */
+		/**
+		 * Vehicle door count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_doors?: number | null;
 
-		/** Expiration date of the vehicle compulsory insurance */
+		/**
+		 * Expiration date of the vehicle compulsory insurance
+		 * Type: DateOnly
+		 */
 		obligatory_insurance_expiration_date?: Date | null;
 
 		/** Status of the vehicle compulsory insurances */
@@ -1083,14 +1144,20 @@ export namespace MyNS {
 		/** Vehicle type */
 		vehicle_type?: string | null;
 
-		/** Vehicle model year */
+		/**
+		 * Vehicle model year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents the summary of a vehicle background check */
 	export interface VehicleSummaryFormProperties {
 
-		/** Number of passengers allowed to travel in the vehicle */
+		/**
+		 * Number of passengers allowed to travel in the vehicle
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Vehicle color */
@@ -1105,10 +1172,16 @@ export namespace MyNS {
 		/** Vehicle model */
 		model: FormControl<string | null | undefined>,
 
-		/** Vehicle door count */
+		/**
+		 * Vehicle door count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_doors: FormControl<number | null | undefined>,
 
-		/** Expiration date of the vehicle compulsory insurance */
+		/**
+		 * Expiration date of the vehicle compulsory insurance
+		 * Type: DateOnly
+		 */
 		obligatory_insurance_expiration_date: FormControl<Date | null | undefined>,
 
 		/** Status of the vehicle compulsory insurances */
@@ -1126,7 +1199,10 @@ export namespace MyNS {
 		/** Vehicle type */
 		vehicle_type: FormControl<string | null | undefined>,
 
-		/** Vehicle model year */
+		/**
+		 * Vehicle model year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateVehicleSummaryFormGroup() {
@@ -1214,6 +1290,7 @@ export namespace MyNS {
 		/**
 		 * Partial detail score. Scores are aggregated later in the background check
 		 * Required
+		 * Type: double
 		 */
 		score: number;
 
@@ -1266,6 +1343,7 @@ export namespace MyNS {
 		/**
 		 * Partial detail score. Scores are aggregated later in the background check
 		 * Required
+		 * Type: double
 		 */
 		score: FormControl<number | null | undefined>,
 	}
@@ -1771,7 +1849,10 @@ export namespace MyNS {
 		 */
 		ContinuousCheckStatus: ContinuousCheckContinuousCheckStatus;
 
-		/** Continuous check creation date in RFC3339 format */
+		/**
+		 * Continuous check creation date in RFC3339 format
+		 * Type: DateOnly
+		 */
 		CreationDate?: Date | null;
 
 		/** Indicates whether continuous check is enabled */
@@ -1792,13 +1873,19 @@ export namespace MyNS {
 		 */
 		LastCheckID: string;
 
-		/** Next background check date, in RFC3339 format (without time) */
+		/**
+		 * Next background check date, in RFC3339 format (without time)
+		 * Type: DateOnly
+		 */
 		NextRunDate?: Date | null;
 
 		/** Represents a background check */
 		OriginalCheck?: Check;
 
-		/** Continuous check update date in RFC3339 format */
+		/**
+		 * Continuous check update date in RFC3339 format
+		 * Type: DateOnly
+		 */
 		UpdateDate?: Date | null;
 	}
 
@@ -1814,7 +1901,10 @@ export namespace MyNS {
 		 */
 		ContinuousCheckStatus: FormControl<ContinuousCheckContinuousCheckStatus | null | undefined>,
 
-		/** Continuous check creation date in RFC3339 format */
+		/**
+		 * Continuous check creation date in RFC3339 format
+		 * Type: DateOnly
+		 */
 		CreationDate: FormControl<Date | null | undefined>,
 
 		/** Indicates whether continuous check is enabled */
@@ -1832,10 +1922,16 @@ export namespace MyNS {
 		 */
 		LastCheckID: FormControl<string | null | undefined>,
 
-		/** Next background check date, in RFC3339 format (without time) */
+		/**
+		 * Next background check date, in RFC3339 format (without time)
+		 * Type: DateOnly
+		 */
 		NextRunDate: FormControl<Date | null | undefined>,
 
-		/** Continuous check update date in RFC3339 format */
+		/**
+		 * Continuous check update date in RFC3339 format
+		 * Type: DateOnly
+		 */
 		UpdateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateContinuousCheckFormGroup() {
@@ -1869,6 +1965,7 @@ export namespace MyNS {
 
 		/**
 		 * Continuous check creation date in RFC3339 format
+		 * Type: DateOnly
 		 */
 		creation_date?: Date | null;
 
@@ -1887,6 +1984,7 @@ export namespace MyNS {
 
 		/**
 		 * Continuous check creation date in RFC3339 format
+		 * Type: DateOnly
 		 */
 		creation_date: FormControl<Date | null | undefined>,
 
@@ -1910,6 +2008,7 @@ export namespace MyNS {
 		/**
 		 * Time in days the API key will be valid for. 365 by default
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_exp: number;
 
@@ -1938,6 +2037,7 @@ export namespace MyNS {
 		/**
 		 * Time in days the API key will be valid for. 365 by default
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_exp: FormControl<number | null | undefined>,
 
@@ -2129,7 +2229,10 @@ export namespace MyNS {
 		 */
 		country: CheckCountry;
 
-		/** Person birthdate. This date is used to get some additional information about a person and to filter homonyms in some cases. YYYY-MM-DD format, Required for complete background checks in Brazil */
+		/**
+		 * Person birthdate. This date is used to get some additional information about a person and to filter homonyms in some cases. YYYY-MM-DD format, Required for complete background checks in Brazil
+		 * Type: DateOnly
+		 */
 		date_of_birth?: Date | null;
 
 		/** Diplomatic ID */
@@ -2150,7 +2253,10 @@ export namespace MyNS {
 		/** Person foreign ID */
 		foreign_id?: string | null;
 
-		/** Person document issue date in "YYYY-mm-dd" format (e.g. 2008-12-31) . This date is used to get some additional information about a person in some cases */
+		/**
+		 * Person document issue date in "YYYY-mm-dd" format (e.g. 2008-12-31) . This date is used to get some additional information about a person in some cases
+		 * Type: DateOnly
+		 */
 		issue_date?: Date | null;
 
 		/** Person or entity last name. If the document type and number are not provided, the report might include homonyms. Required when searching by last name. Required in order to get complete background checks in Brazil */
@@ -2174,7 +2280,10 @@ export namespace MyNS {
 		/** Person passport */
 		passport?: string | null;
 
-		/** Payment day of a vehicle circulation permit (Chile only) */
+		/**
+		 * Payment day of a vehicle circulation permit (Chile only)
+		 * Type: DateOnly
+		 */
 		payment_date?: Date | null;
 
 		/** ID for Venezuelans working in Colombia */
@@ -2235,7 +2344,10 @@ export namespace MyNS {
 		 */
 		country: FormControl<CheckCountry | null | undefined>,
 
-		/** Person birthdate. This date is used to get some additional information about a person and to filter homonyms in some cases. YYYY-MM-DD format, Required for complete background checks in Brazil */
+		/**
+		 * Person birthdate. This date is used to get some additional information about a person and to filter homonyms in some cases. YYYY-MM-DD format, Required for complete background checks in Brazil
+		 * Type: DateOnly
+		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/** Diplomatic ID */
@@ -2256,7 +2368,10 @@ export namespace MyNS {
 		/** Person foreign ID */
 		foreign_id: FormControl<string | null | undefined>,
 
-		/** Person document issue date in "YYYY-mm-dd" format (e.g. 2008-12-31) . This date is used to get some additional information about a person in some cases */
+		/**
+		 * Person document issue date in "YYYY-mm-dd" format (e.g. 2008-12-31) . This date is used to get some additional information about a person in some cases
+		 * Type: DateOnly
+		 */
 		issue_date: FormControl<Date | null | undefined>,
 
 		/** Person or entity last name. If the document type and number are not provided, the report might include homonyms. Required when searching by last name. Required in order to get complete background checks in Brazil */
@@ -2280,7 +2395,10 @@ export namespace MyNS {
 		/** Person passport */
 		passport: FormControl<string | null | undefined>,
 
-		/** Payment day of a vehicle circulation permit (Chile only) */
+		/**
+		 * Payment day of a vehicle circulation permit (Chile only)
+		 * Type: DateOnly
+		 */
 		payment_date: FormControl<Date | null | undefined>,
 
 		/** ID for Venezuelans working in Colombia */
@@ -2396,43 +2514,82 @@ export namespace MyNS {
 		 */
 		country: CheckCountry;
 
-		/** Affiliation and insurance weight for score calculation. From 0 to 1 */
+		/**
+		 * Affiliation and insurance weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_affiliations_and_insurances?: number | null;
 
-		/** Alert in media weight for score calculation. From 0 to 1 */
+		/**
+		 * Alert in media weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_alert_in_media?: number | null;
 
-		/** Business background weight for score calculation. From 0 to 1 */
+		/**
+		 * Business background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_business_background?: number | null;
 
-		/** Criminal record weight for score calculation. From 0 to 1 */
+		/**
+		 * Criminal record weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_criminal_record?: number | null;
 
-		/** Driving license weight for score calculation. From 0 to 1 */
+		/**
+		 * Driving license weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_driving_licenses?: number | null;
 
-		/** International background weight for score calculation. From 0 to 1 */
+		/**
+		 * International background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_international_background?: number | null;
 
-		/** Legal background weight for score calculation. From 0 to 1 */
+		/**
+		 * Legal background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_legal_background?: number | null;
 
-		/** Personal identity weight for score calculation. From 0 to 1 */
+		/**
+		 * Personal identity weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_personal_identity?: number | null;
 
-		/** Professional background weight for score calculation. From 0 to 1 */
+		/**
+		 * Professional background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_professional_background?: number | null;
 
-		/** Taxes and financial background weight for score calculation. From 0 to 1 */
+		/**
+		 * Taxes and financial background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_taxes_and_finances?: number | null;
 
-		/** Traffic fines weight for score calculation. From 0 to 1 */
+		/**
+		 * Traffic fines weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_traffic_fines?: number | null;
 
-		/** Vehicle information weight for score calculation. From 0 to 1 */
+		/**
+		 * Vehicle information weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_vehicle_information?: number | null;
 
-		/** Vehicle certificate background weight for score calculation. From 0 to 1 */
+		/**
+		 * Vehicle certificate background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_vehicle_permits?: number | null;
 
 		/**
@@ -2451,43 +2608,82 @@ export namespace MyNS {
 		 */
 		country: FormControl<CheckCountry | null | undefined>,
 
-		/** Affiliation and insurance weight for score calculation. From 0 to 1 */
+		/**
+		 * Affiliation and insurance weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_affiliations_and_insurances: FormControl<number | null | undefined>,
 
-		/** Alert in media weight for score calculation. From 0 to 1 */
+		/**
+		 * Alert in media weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_alert_in_media: FormControl<number | null | undefined>,
 
-		/** Business background weight for score calculation. From 0 to 1 */
+		/**
+		 * Business background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_business_background: FormControl<number | null | undefined>,
 
-		/** Criminal record weight for score calculation. From 0 to 1 */
+		/**
+		 * Criminal record weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_criminal_record: FormControl<number | null | undefined>,
 
-		/** Driving license weight for score calculation. From 0 to 1 */
+		/**
+		 * Driving license weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_driving_licenses: FormControl<number | null | undefined>,
 
-		/** International background weight for score calculation. From 0 to 1 */
+		/**
+		 * International background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_international_background: FormControl<number | null | undefined>,
 
-		/** Legal background weight for score calculation. From 0 to 1 */
+		/**
+		 * Legal background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_legal_background: FormControl<number | null | undefined>,
 
-		/** Personal identity weight for score calculation. From 0 to 1 */
+		/**
+		 * Personal identity weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_personal_identity: FormControl<number | null | undefined>,
 
-		/** Professional background weight for score calculation. From 0 to 1 */
+		/**
+		 * Professional background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_professional_background: FormControl<number | null | undefined>,
 
-		/** Taxes and financial background weight for score calculation. From 0 to 1 */
+		/**
+		 * Taxes and financial background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_taxes_and_finances: FormControl<number | null | undefined>,
 
-		/** Traffic fines weight for score calculation. From 0 to 1 */
+		/**
+		 * Traffic fines weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_traffic_fines: FormControl<number | null | undefined>,
 
-		/** Vehicle information weight for score calculation. From 0 to 1 */
+		/**
+		 * Vehicle information weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_vehicle_information: FormControl<number | null | undefined>,
 
-		/** Vehicle certificate background weight for score calculation. From 0 to 1 */
+		/**
+		 * Vehicle certificate background weight for score calculation. From 0 to 1
+		 * Type: float
+		 */
 		dataset_vehicle_permits: FormControl<number | null | undefined>,
 
 		/**
@@ -2690,6 +2886,7 @@ export namespace MyNS {
 		/**
 		 * Rule value
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -2718,6 +2915,7 @@ export namespace MyNS {
 		/**
 		 * Rule value
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3171,7 +3369,10 @@ export namespace MyNS {
 		/** name of the user who created the report */
 		created_by?: string | null;
 
-		/** Amount of created checks. Returned only when a file is uploaded */
+		/**
+		 * Amount of created checks. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_checks_count?: number | null;
 
 		/**
@@ -3189,7 +3390,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** number of invalid rows in the uploaded file. Returned only when a file is uploaded */
+		/**
+		 * number of invalid rows in the uploaded file. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalid_checks_count?: number | null;
 
 		/**
@@ -3198,7 +3402,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Uploaded file row count. Returned only when a file is uploaded */
+		/**
+		 * Uploaded file row count. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
 		/**
@@ -3214,7 +3421,10 @@ export namespace MyNS {
 		/** name of the user who created the report */
 		created_by: FormControl<string | null | undefined>,
 
-		/** Amount of created checks. Returned only when a file is uploaded */
+		/**
+		 * Amount of created checks. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_checks_count: FormControl<number | null | undefined>,
 
 		/**
@@ -3232,7 +3442,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** number of invalid rows in the uploaded file. Returned only when a file is uploaded */
+		/**
+		 * number of invalid rows in the uploaded file. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalid_checks_count: FormControl<number | null | undefined>,
 
 		/**
@@ -3241,7 +3454,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Uploaded file row count. Returned only when a file is uploaded */
+		/**
+		 * Uploaded file row count. Returned only when a file is uploaded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
@@ -3367,6 +3583,7 @@ export namespace MyNS {
 		/**
 		 * Rule value
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -3392,6 +3609,7 @@ export namespace MyNS {
 		/**
 		 * Rule value
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3648,7 +3866,6 @@ export namespace MyNS {
 		 * Get v1/checks
 		 * @param {string} start_key Start key value for the pagination
 		 * @param {string} report_id Report id checks to be returned
-		 * @return {ChecksOutput} 
 		 */
 		ListChecks(start_key: string | null | undefined, report_id: string | null | undefined): Observable<ChecksOutput> {
 			return this.http.get<ChecksOutput>(this.baseUri + 'v1/checks?start_key=' + (start_key == null ? '' : encodeURIComponent(start_key)) + '&report_id=' + (report_id == null ? '' : encodeURIComponent(report_id)), {});
@@ -3678,7 +3895,6 @@ export namespace MyNS {
 		 * Keep in mind that results from the API vary depending on the country, check type and the inputs entered on check creation.
 		 * Get v1/checks/{check_id}
 		 * @param {string} check_id Check ID
-		 * @return {CheckOutput} 
 		 */
 		GetCheck(check_id: string): Observable<CheckOutput> {
 			return this.http.get<CheckOutput>(this.baseUri + 'v1/checks/' + (check_id == null ? '' : encodeURIComponent(check_id)), {});
@@ -3690,7 +3906,6 @@ export namespace MyNS {
 		 * Get v1/checks/{check_id}/details
 		 * @param {string} start_key Start key value for the pagination
 		 * @param {string} lang This parameter is used to specify the language wanted for details, if not specified details will come in their original language.
-		 * @return {CheckDetailsOutput} 
 		 */
 		ListCheckDetails(start_key: string | null | undefined, lang: string | null | undefined): Observable<CheckDetailsOutput> {
 			return this.http.get<CheckDetailsOutput>(this.baseUri + 'v1/checks/{check_id}/details?start_key=' + (start_key == null ? '' : encodeURIComponent(start_key)) + '&lang=' + (lang == null ? '' : encodeURIComponent(lang)), {});
@@ -3736,7 +3951,6 @@ export namespace MyNS {
 		 * Lists the custom score configurations of the associated account.
 		 * Get v1/config
 		 * @param {string} start_key The key to start the pagination
-		 * @return {ScoreConfigsOutput} 
 		 */
 		ListScoreConfigs(start_key: string | null | undefined): Observable<ScoreConfigsOutput> {
 			return this.http.get<ScoreConfigsOutput>(this.baseUri + 'v1/config?start_key=' + (start_key == null ? '' : encodeURIComponent(start_key)), {});
@@ -3773,7 +3987,6 @@ export namespace MyNS {
 		 * Lists all hooks
 		 * Lists all the configured hooks in your account.
 		 * Get v1/hooks
-		 * @return {HookOutput} 
 		 */
 		ListHook(): Observable<HookOutput> {
 			return this.http.get<HookOutput>(this.baseUri + 'v1/hooks', {});
@@ -3784,7 +3997,6 @@ export namespace MyNS {
 		 * Deletes hook configuration.
 		 * Delete v1/hooks/{hook_id}
 		 * @param {string} hook_id Hook ID
-		 * @return {string} 
 		 */
 		DeletHook(hook_id: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/hooks/' + (hook_id == null ? '' : encodeURIComponent(hook_id)), { responseType: 'text' });
@@ -3806,7 +4018,6 @@ export namespace MyNS {
 		 * Get Report
 		 * Returns a report with the given ID.
 		 * Get v1/reports/{report_id}
-		 * @return {ReportOutput} 
 		 */
 		GetReport(): Observable<ReportOutput> {
 			return this.http.get<ReportOutput>(this.baseUri + 'v1/reports/{report_id}', {});

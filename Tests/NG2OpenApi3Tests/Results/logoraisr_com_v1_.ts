@@ -5,10 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Color {
 
-		/** RGB-Blue color value */
+		/**
+		 * RGB-Blue color value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue?: number | null;
 
-		/** RGB-Green color value. */
+		/**
+		 * RGB-Green color value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		green?: number | null;
 
 		/**
@@ -17,21 +23,33 @@ export namespace MyNS {
 		 */
 		hex?: string | null;
 
-		/** Number of pixels that holds this color. */
+		/**
+		 * Number of pixels that holds this color.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_pixel?: number | null;
 
 		/** Percentage of pixels that holds this color. */
 		percentage?: string | null;
 
-		/** RGB-Red color value. */
+		/**
+		 * RGB-Red color value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red?: number | null;
 	}
 	export interface ColorFormProperties {
 
-		/** RGB-Blue color value */
+		/**
+		 * RGB-Blue color value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** RGB-Green color value. */
+		/**
+		 * RGB-Green color value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		green: FormControl<number | null | undefined>,
 
 		/**
@@ -40,13 +58,19 @@ export namespace MyNS {
 		 */
 		hex: FormControl<string | null | undefined>,
 
-		/** Number of pixels that holds this color. */
+		/**
+		 * Number of pixels that holds this color.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_pixel: FormControl<number | null | undefined>,
 
 		/** Percentage of pixels that holds this color. */
 		percentage: FormControl<string | null | undefined>,
 
-		/** RGB-Red color value. */
+		/**
+		 * RGB-Red color value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateColorFormGroup() {
@@ -82,8 +106,8 @@ export namespace MyNS {
 
 		/**
 		 * Url from which the preview file can be downloaded.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		preview_img_url?: string | null;
 	}
@@ -91,8 +115,8 @@ export namespace MyNS {
 
 		/**
 		 * Url from which the preview file can be downloaded.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		preview_img_url: FormControl<string | null | undefined>,
 	}
@@ -107,8 +131,8 @@ export namespace MyNS {
 
 		/**
 		 * Crops the image according to the specified mechanism. If you specify the size "WidthexHeight", the image will be cropped centered. If coordinates "x1,y1,x2,y2" are given, the image is cropped according to the coordinates. The image will be cropped to the size of the stories if "faces" are specified as. Example Centered: "crop": "200x300". Example Region: "crop": "200,300,150,300". Example Faces: "crop": "faces".
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		crop?: string | null;
 
@@ -127,8 +151,8 @@ export namespace MyNS {
 
 		/**
 		 * Changes the size of the image according to the specified size. Example: "resize": "200x300".
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resize?: string | null;
 
@@ -143,8 +167,8 @@ export namespace MyNS {
 
 		/**
 		 * Crops the image according to the specified mechanism. If you specify the size "WidthexHeight", the image will be cropped centered. If coordinates "x1,y1,x2,y2" are given, the image is cropped according to the coordinates. The image will be cropped to the size of the stories if "faces" are specified as. Example Centered: "crop": "200x300". Example Region: "crop": "200,300,150,300". Example Faces: "crop": "faces".
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		crop: FormControl<string | null | undefined>,
 
@@ -163,8 +187,8 @@ export namespace MyNS {
 
 		/**
 		 * Changes the size of the image according to the specified size. Example: "resize": "200x300".
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resize: FormControl<string | null | undefined>,
 
@@ -195,7 +219,10 @@ export namespace MyNS {
 		/** Id of the file on which the process was applied. */
 		file_id?: string | null;
 
-		/** Id of the created project. */
+		/**
+		 * Id of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -212,7 +239,10 @@ export namespace MyNS {
 		 */
 		process_id: string;
 
-		/** Number of the created project. */
+		/**
+		 * Number of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_number?: number | null;
 
 		/**
@@ -232,7 +262,10 @@ export namespace MyNS {
 		/** Id of the file on which the process was applied. */
 		file_id: FormControl<string | null | undefined>,
 
-		/** Id of the created project. */
+		/**
+		 * Id of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -248,7 +281,10 @@ export namespace MyNS {
 		 */
 		process_id: FormControl<string | null | undefined>,
 
-		/** Number of the created project. */
+		/**
+		 * Number of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_number: FormControl<number | null | undefined>,
 
 		/**
@@ -315,10 +351,16 @@ export namespace MyNS {
 
 	export interface ProjectResponse {
 
-		/** Id of the created project. */
+		/**
+		 * Id of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id?: number | null;
 
-		/** Number of the created project. */
+		/**
+		 * Number of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_number?: number | null;
 
 		/** Id of the result_file. This id must be specified to create the result_file_url. */
@@ -326,10 +368,16 @@ export namespace MyNS {
 	}
 	export interface ProjectResponseFormProperties {
 
-		/** Id of the created project. */
+		/**
+		 * Id of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
-		/** Number of the created project. */
+		/**
+		 * Number of the created project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_number: FormControl<number | null | undefined>,
 
 		/** Id of the result_file. This id must be specified to create the result_file_url. */
@@ -358,12 +406,14 @@ export namespace MyNS {
 		/**
 		 * Process_id of the process which was applied. Processes are "color-classification".
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		process_id: number;
 
 		/**
 		 * Number of the created report.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_number: number;
 		result?: Result;
@@ -371,6 +421,7 @@ export namespace MyNS {
 		/**
 		 * Result_id of the result which was created.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		result_id: number;
 	}
@@ -388,18 +439,21 @@ export namespace MyNS {
 		/**
 		 * Process_id of the process which was applied. Processes are "color-classification".
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		process_id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of the created report.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_number: FormControl<number | null | undefined>,
 
 		/**
 		 * Result_id of the result which was created.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		result_id: FormControl<number | null | undefined>,
 	}
@@ -417,24 +471,42 @@ export namespace MyNS {
 	export interface Result {
 		colors?: Array<Color>;
 
-		/** Height of image. */
+		/**
+		 * Height of image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Number of pixel in image. */
+		/**
+		 * Number of pixel in image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_pixel_in_image?: number | null;
 
-		/** Width of image. */
+		/**
+		 * Width of image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface ResultFormProperties {
 
-		/** Height of image. */
+		/**
+		 * Height of image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Number of pixel in image. */
+		/**
+		 * Number of pixel in image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number_of_pixel_in_image: FormControl<number | null | undefined>,
 
-		/** Width of image. */
+		/**
+		 * Width of image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateResultFormGroup() {
@@ -501,7 +573,10 @@ export namespace MyNS {
 		 */
 		processing_algorithm?: string | null;
 
-		/** Number of the report which was created. */
+		/**
+		 * Number of the report which was created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		report_number?: number | null;
 		result?: Result;
 	}
@@ -522,7 +597,10 @@ export namespace MyNS {
 		 */
 		processing_algorithm: FormControl<string | null | undefined>,
 
-		/** Number of the report which was created. */
+		/**
+		 * Number of the report which was created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		report_number: FormControl<number | null | undefined>,
 	}
 	export function CreateReportResponseFormGroup() {
@@ -539,8 +617,8 @@ export namespace MyNS {
 
 		/**
 		 * Url from which the result file can be downloaded.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		result_file_url?: string | null;
 	}
@@ -548,8 +626,8 @@ export namespace MyNS {
 
 		/**
 		 * Url from which the result file can be downloaded.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		result_file_url: FormControl<string | null | undefined>,
 	}
@@ -570,7 +648,6 @@ export namespace MyNS {
 		 * This GET-Method returns the URL where the preview image of uploaded file can downloaded from.
 		 * Get previews/{file_id}/
 		 * @param {string} file_id Id of the file for which the preview_img_url is generated.
-		 * @return {PreviewResponse} 
 		 */
 		Previews_read(file_id: string): Observable<PreviewResponse> {
 			return this.http.get<PreviewResponse>(this.baseUri + 'previews/' + (file_id == null ? '' : encodeURIComponent(file_id)) + '/', {});
@@ -580,7 +657,6 @@ export namespace MyNS {
 		 * Get process list.
 		 * This GET-Method lists all on logoraisr available processes.
 		 * Get processes/
-		 * @return {Process} 
 		 */
 		Processes_list(): Observable<Process> {
 			return this.http.get<Process>(this.baseUri + 'processes/', {});
@@ -590,7 +666,6 @@ export namespace MyNS {
 		 * Get user project list.
 		 * This GET-Method lists the user's projects.
 		 * Get projects/
-		 * @return {Project} 
 		 */
 		Projects_list(): Observable<Project> {
 			return this.http.get<Project>(this.baseUri + 'projects/', {});
@@ -611,7 +686,6 @@ export namespace MyNS {
 		 * This GET-Method returns a specific project.
 		 * Get projects/{project_number}/
 		 * @param {string} project_number Number of the project.
-		 * @return {Project} 
 		 */
 		Projects_read(project_number: string): Observable<Project> {
 			return this.http.get<Project>(this.baseUri + 'projects/' + (project_number == null ? '' : encodeURIComponent(project_number)) + '/', {});
@@ -621,7 +695,6 @@ export namespace MyNS {
 		 * Get user report list.
 		 * This GET method lists the user's reports.
 		 * Get reports/
-		 * @return {Report} 
 		 */
 		Reports_list(): Observable<Report> {
 			return this.http.get<Report>(this.baseUri + 'reports/', {});
@@ -641,7 +714,6 @@ export namespace MyNS {
 		 * Get report details.
 		 * This GET-Method returns the details of a specific report.
 		 * Get reports/{report_number}/
-		 * @return {Report} 
 		 */
 		Reports_read(): Observable<Report> {
 			return this.http.get<Report>(this.baseUri + 'reports/{report_number}/', {});
@@ -652,7 +724,6 @@ export namespace MyNS {
 		 * This GET-Method returns the URL where the result can downloaded from.
 		 * Get results/{result_file_id}/
 		 * @param {string} result_file_id Id of the result_file for which the result_file_url is generated.
-		 * @return {ResultResponse} 
 		 */
 		Results_read(result_file_id: string): Observable<ResultResponse> {
 			return this.http.get<ResultResponse>(this.baseUri + 'results/' + (result_file_id == null ? '' : encodeURIComponent(result_file_id)) + '/', {});

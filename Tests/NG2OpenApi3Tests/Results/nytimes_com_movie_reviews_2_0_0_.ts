@@ -42,16 +42,24 @@ export namespace MyNS {
 
 	export interface CriticMultimediaResource {
 		credit?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		src?: string | null;
 		type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface CriticMultimediaResourceFormProperties {
 		credit: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		src: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCriticMultimediaResourceFormGroup() {
@@ -67,6 +75,8 @@ export namespace MyNS {
 
 	export interface Movie {
 		byline?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critics_pick?: number | null;
 		date_updated?: string | null;
 		display_title?: string | null;
@@ -80,6 +90,8 @@ export namespace MyNS {
 	}
 	export interface MovieFormProperties {
 		byline: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critics_pick: FormControl<number | null | undefined>,
 		date_updated: FormControl<string | null | undefined>,
 		display_title: FormControl<string | null | undefined>,
@@ -135,15 +147,23 @@ export namespace MyNS {
 	}
 
 	export interface MovieMultimediaResource {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		src?: string | null;
 		type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface MovieMultimediaResourceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		src: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMovieMultimediaResourceFormGroup() {
@@ -188,6 +208,7 @@ export namespace MyNS {
 		 * Start and end date: YYYY-MM-DD;YYYY-MM-DD
 		 * The opening-date is the date the movie's opening date in the New York region.
 		 * @param {number} offset Positive integer, multiple of 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order Sets the sort order of the results.
 		 * Results ordered by-title are in ascending alphabetical order. Results ordered by one of the date parameters are in reverse chronological order.
 		 * If you do not specify a sort order, the results will be ordered by publication-date.
@@ -202,6 +223,7 @@ export namespace MyNS {
 		 * @param {Reviews_resource_type_jsonGetByOffsetAndOrderResource_type} resource_type Specify all to retrieve all reviews, including NYT Critics' Picks.
 		 * Specify picks to get NYT Critics' Picks currently in theaters.
 		 * @param {number} offset Positive integer, multiple of 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Reviews_resource_type_jsonGetByOffsetAndOrderOrder} order Sets the sort order of the results.
 		 * Results ordered by-title are in ascending alphabetical order. Results ordered by one of the date parameters are in reverse chronological order.
 		 * If you do not specify a sort order, the results will be ordered by publication-date.
@@ -214,12 +236,16 @@ export namespace MyNS {
 
 	export interface Critics_resource_type_jsonGetReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Critic>;
 		status?: string | null;
 	}
 	export interface Critics_resource_type_jsonGetReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -236,12 +262,16 @@ export namespace MyNS {
 
 	export interface ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Movie>;
 		status?: string | null;
 	}
 	export interface ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -260,12 +290,16 @@ export namespace MyNS {
 
 	export interface Reviews_resource_type_jsonGetByOffsetAndOrderReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Movie>;
 		status?: string | null;
 	}
 	export interface Reviews_resource_type_jsonGetByOffsetAndOrderReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}

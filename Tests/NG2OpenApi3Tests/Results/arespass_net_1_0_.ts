@@ -50,18 +50,30 @@ export namespace MyNS {
 
 	export interface AboutApiVersion {
 
-		/** This API version major number. */
+		/**
+		 * This API version major number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorNumber?: number | null;
 
-		/** This API version minor number. */
+		/**
+		 * This API version minor number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorNumber?: number | null;
 	}
 	export interface AboutApiVersionFormProperties {
 
-		/** This API version major number. */
+		/**
+		 * This API version major number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorNumber: FormControl<number | null | undefined>,
 
-		/** This API version minor number. */
+		/**
+		 * This API version minor number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateAboutApiVersionFormGroup() {
@@ -93,12 +105,14 @@ export namespace MyNS {
 		/**
 		 * **The ratio entropy / idealEntropy.**
 		 * It is a float number in the range [0, 1].
+		 * Type: double
 		 */
 		efficiency?: number | null;
 
 		/**
 		 * **The entropy calculated for the input password.**
 		 * It is measured in bits.
+		 * Type: double
 		 */
 		entropy?: number | null;
 
@@ -111,6 +125,7 @@ export namespace MyNS {
 		 * **The Shannon entropy.**
 		 * The Shannon entropy is the entropy calculated if no penalizations - words, number sequence, alphabet sequence, etc - were found in the password.
 		 * It is measured in bits.
+		 * Type: double
 		 */
 		idealEntropy?: number | null;
 
@@ -126,6 +141,7 @@ export namespace MyNS {
 		/**
 		 * **The penalty applied to the whole password because of irregular entropy distribution.**
 		 * This penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		nonUniformEntropyDistributionPenalty?: number | null;
 
@@ -138,13 +154,17 @@ export namespace MyNS {
 		/** The analyzed password. */
 		password?: string | null;
 
-		/** The number of characters the password has. */
+		/**
+		 * The number of characters the password has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordLength?: number | null;
 
 		/**
 		 * **The penalty applied to each character that has been found to be part of a word, number sequence, alphabet sequence, etc.**
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
 		 * Its value is equal to the value of the input parameter *penalty*.
+		 * Type: double
 		 */
 		penalty?: number | null;
 
@@ -162,6 +182,7 @@ export namespace MyNS {
 		/**
 		 * **The timestamp for this response.**
 		 * Milliseconds from the epoch of 1970-01-01T00:00:00Z.
+		 * Type: double
 		 */
 		requestTimestamp?: number | null;
 		summary?: Array<string>;
@@ -193,12 +214,14 @@ export namespace MyNS {
 		/**
 		 * **The ratio entropy / idealEntropy.**
 		 * It is a float number in the range [0, 1].
+		 * Type: double
 		 */
 		efficiency: FormControl<number | null | undefined>,
 
 		/**
 		 * **The entropy calculated for the input password.**
 		 * It is measured in bits.
+		 * Type: double
 		 */
 		entropy: FormControl<number | null | undefined>,
 
@@ -206,6 +229,7 @@ export namespace MyNS {
 		 * **The Shannon entropy.**
 		 * The Shannon entropy is the entropy calculated if no penalizations - words, number sequence, alphabet sequence, etc - were found in the password.
 		 * It is measured in bits.
+		 * Type: double
 		 */
 		idealEntropy: FormControl<number | null | undefined>,
 
@@ -215,19 +239,24 @@ export namespace MyNS {
 		/**
 		 * **The penalty applied to the whole password because of irregular entropy distribution.**
 		 * This penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		nonUniformEntropyDistributionPenalty: FormControl<number | null | undefined>,
 
 		/** The analyzed password. */
 		password: FormControl<string | null | undefined>,
 
-		/** The number of characters the password has. */
+		/**
+		 * The number of characters the password has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordLength: FormControl<number | null | undefined>,
 
 		/**
 		 * **The penalty applied to each character that has been found to be part of a word, number sequence, alphabet sequence, etc.**
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
 		 * Its value is equal to the value of the input parameter *penalty*.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 
@@ -239,6 +268,7 @@ export namespace MyNS {
 		/**
 		 * **The timestamp for this response.**
 		 * Milliseconds from the epoch of 1970-01-01T00:00:00Z.
+		 * Type: double
 		 */
 		requestTimestamp: FormControl<number | null | undefined>,
 	}
@@ -271,6 +301,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of an alphabet sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -285,6 +316,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of an alphabet sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -305,7 +337,10 @@ export namespace MyNS {
 		/** The n-th character after the l33t transformation. */
 		l33tchar?: string | null;
 
-		/** The amount of entropy contributed by this character, expressed as percentage of the total. */
+		/**
+		 * The amount of entropy contributed by this character, expressed as percentage of the total.
+		 * Type: double
+		 */
 		percentage?: number | null;
 	}
 	export interface EcEntropyDistributionFormProperties {
@@ -316,7 +351,10 @@ export namespace MyNS {
 		/** The n-th character after the l33t transformation. */
 		l33tchar: FormControl<string | null | undefined>,
 
-		/** The amount of entropy contributed by this character, expressed as percentage of the total. */
+		/**
+		 * The amount of entropy contributed by this character, expressed as percentage of the total.
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateEcEntropyDistributionFormGroup() {
@@ -339,6 +377,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a keyboard sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -353,6 +392,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a keyboard sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -376,6 +416,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a number sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -390,6 +431,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a number sequence.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -413,6 +455,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is repeated.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -427,6 +470,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is repeated.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -450,6 +494,7 @@ export namespace MyNS {
 		/**
 		 * The total penalty applied to each character.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -464,6 +509,7 @@ export namespace MyNS {
 		/**
 		 * The total penalty applied to each character.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -487,6 +533,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a word.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty?: number | null;
 	}
@@ -501,6 +548,7 @@ export namespace MyNS {
 		/**
 		 * The penalty applied to this character if it is part of a word.
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
+		 * Type: double
 		 */
 		penalty: FormControl<number | null | undefined>,
 	}
@@ -546,6 +594,7 @@ export namespace MyNS {
 		 * The penalty is a float number in the range [0, 1]. Full penalty, 0; no penalty, 1.
 		 * The character used as decimal separator is always '&#46;'. Hence, a parameter value like *0,33* would be illegal.
 		 * The default value is *0.25*.
+		 *     Type: double
 		 * @param {string} reqId **An identifier for this request.**
 		 * The request identifier is a string that must match the regular expression (?i)^[a-z0-9]{8,16}$/*.
 		 * This identifier is echoed in the returned response. Its value has no effect on the password analysis.

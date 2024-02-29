@@ -6607,8 +6607,12 @@ namespace MyNS
 		/// <param name="availability">filter for subset of availabilities</param>
 		/// <param name="descendants_of">filter for subset of availabilities that have PID as ancestor</param>
 		/// <param name="media_set">filter for subset of availabilities with media set</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="territory">filter for availabilities in given territory</param>
 		/// <param name="debug">Turn on debug information (undocumented)</param>
 		/// <returns>Nitro response</returns>
@@ -6660,8 +6664,12 @@ namespace MyNS
 		/// <param name="genre">filter for subset of broadcasts that are classified in the given genre ID</param>
 		/// <param name="id">filter for subset of broadcasts that have given identifier</param>
 		/// <param name="item">filter for subset of broadcasts with the given item performed on it</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="people">filter for subset of broadcasts that have given contributor</param>
 		/// <param name="pid">filter for subset of broadcasts having given PID</param>
 		/// <param name="q">filter for subset of broadcasts matching supplied keyword/phrase (boolean operators permitted)</param>
@@ -6742,13 +6750,25 @@ namespace MyNS
 		///* images: mixin to add image information for a group
 		///* related_links: mixin to return related links for the group
 		///</param>
-		/// <param name="for_descendants_of">filter for groups related to given programme or its descendants</param>
-		/// <param name="for_programme">filter for subset of groups directly related to a given programme</param>
-		/// <param name="group">filter for subset of groups which belong to the given group pid</param>
+		/// <param name="for_descendants_of">filter for groups related to given programme or its descendants
+		/// Min length: 8
+		// </param>
+		/// <param name="for_programme">filter for subset of groups directly related to a given programme
+		/// Min length: 8
+		// </param>
+		/// <param name="group">filter for subset of groups which belong to the given group pid
+		/// Min length: 8
+		// </param>
 		/// <param name="group_type">filter for subset of groups that have the given group type</param>
-		/// <param name="member">filter for subset of groups which contain an entity with the given pid as a member</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="member">filter for subset of groups which contain an entity with the given pid as a member
+		/// Min length: 8
+		// </param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for groups by partner ID</param>
 		/// <param name="partner_pid">filter for groups by partner PID</param>
 		/// <param name="pid">filter for subset of seasons, collections, galleries or franchises having given PID</param>
@@ -6809,12 +6829,22 @@ namespace MyNS
 		///* pid: sort alphabetically by PID
 		///</param>
 		/// <param name="sort_direction">Sort direction</param>
-		/// <param name="group">filter for images belonging to the given group (i.e. Gallery)</param>
+		/// <param name="group">filter for images belonging to the given group (i.e. Gallery)
+		/// Min length: 8
+		// </param>
 		/// <param name="image_type">filter for images by type</param>
-		/// <param name="is_alternate_image_for">filter for alternate images by entity PID</param>
-		/// <param name="is_image_for">filter for images by entity PID</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="is_alternate_image_for">filter for alternate images by entity PID
+		/// Min length: 8
+		// </param>
+		/// <param name="is_image_for">filter for images by entity PID
+		/// Min length: 8
+		// </param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for images by partner ID</param>
 		/// <param name="partner_pid">filter for images by partner PID</param>
 		/// <param name="pid">filter for subset of images having given PID</param>
@@ -6868,13 +6898,19 @@ namespace MyNS
 		/// <param name="id">filter for subset of items having given ID</param>
 		/// <param name="id_type">filter for subset of items that have given an ID of the given type</param>
 		/// <param name="item_type">filter for specific type(s) of items</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for items by partner ID</param>
 		/// <param name="partner_pid">filter for items by partner PID</param>
 		/// <param name="people">filter for subset of items that have specified person involved</param>
 		/// <param name="pid">filter for subset of items matching one of the given PIDs</param>
-		/// <param name="programme">filter for subset of items that are part of the given programme</param>
+		/// <param name="programme">filter for subset of items that are part of the given programme
+		/// Min length: 8
+		// </param>
 		/// <param name="q">filter for subset of items matching supplied keyword/phrase (boolean operators permitted)</param>
 		/// <param name="segment_event">filter for item with the given segment_event</param>
 		/// <returns>Nitro response</returns>
@@ -6936,8 +6972,12 @@ namespace MyNS
 		///* images: mixin to add image information for a masterbrand
 		///</param>
 		/// <param name="mid">filter for subset of masterbrands that have given identifier</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for masterbrands by partner ID</param>
 		/// <param name="partner_pid">filter for masterbrands by partner PID</param>
 		/// <param name="q">filter for subset of masterbrands matching supplied keyword/phrase (boolean operators permitted)</param>
@@ -6979,8 +7019,12 @@ namespace MyNS
 		/// <param name="has_external_id">filter for people who have an external identifier</param>
 		/// <param name="id">filter for subset of people having given ID</param>
 		/// <param name="id_type">filter for subset of people that have given an ID of the given type</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for people by partner ID</param>
 		/// <param name="partner_pid">filter for people by partner PID</param>
 		/// <param name="pid">filter for subset of people having given PID</param>
@@ -7020,8 +7064,12 @@ namespace MyNS
 		/// Look inside pips entities
 		/// ListPips pips
 		/// </summary>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="q">filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)</param>
 		/// <returns>Nitro response</returns>
 		public async Task<Nitro> ListPipsAsync(int page, int page_size, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7057,10 +7105,18 @@ namespace MyNS
 		/// Exposes programme information for a single pid
 		/// ListProgrammeDetails programme_details
 		/// </summary>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
-		/// <param name="partner_pid">Filter for programme information by partner PID</param>
-		/// <param name="pid">Filter for programme information for the provided PID</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
+		/// <param name="partner_pid">Filter for programme information by partner PID
+		/// Min length: 8
+		// </param>
+		/// <param name="pid">Filter for programme information for the provided PID
+		/// Min length: 8
+		// </param>
 		/// <returns>Nitro response</returns>
 		public async Task<Nitro> ListProgrammeDetailsAsync(int page, int page_size, string partner_pid, string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7138,21 +7194,38 @@ namespace MyNS
 		/// <param name="entity_type">filter for subset of programmes that have given entity type</param>
 		/// <param name="format">filter for subset of programmes with format</param>
 		/// <param name="genre">filter for subset of programmes with genre</param>
-		/// <param name="group">filter for subset of programmes which belong to the given group pid</param>
-		/// <param name="initial_letter">filter for subset of programmes with title beginning with initial letter librarian style (ignoring leading 'The', 'An' (Welsh), etc) 0-9 a-z</param>
-		/// <param name="initial_letter_end">Programmes with (librarian) titles whose initial letter is equal/before given letter. Use with initial_letter_start for a range</param>
-		/// <param name="initial_letter_start">Programmes with (librarian) titles whose initial letter is equal/after given letter. Use with initial_letter_end for range.</param>
+		/// <param name="group">filter for subset of programmes which belong to the given group pid
+		/// Min length: 8
+		// </param>
+		/// <param name="initial_letter">filter for subset of programmes with title beginning with initial letter librarian style (ignoring leading 'The', 'An' (Welsh), etc) 0-9 a-z
+		/// Max length: 1
+		/// Min length: 1
+		// </param>
+		/// <param name="initial_letter_end">Programmes with (librarian) titles whose initial letter is equal/before given letter. Use with initial_letter_start for a range
+		/// Max length: 1
+		/// Min length: 1
+		// </param>
+		/// <param name="initial_letter_start">Programmes with (librarian) titles whose initial letter is equal/after given letter. Use with initial_letter_end for range.
+		/// Max length: 1
+		/// Min length: 1
+		// </param>
 		/// <param name="initial_letter_strict">filter for subset of programmes with title beginning with initial letter</param>
 		/// <param name="item">filter for subset of programmes with linked to versions which have the given item pids</param>
 		/// <param name="master_brand">filter for subset of programmes with master_brand</param>
 		/// <param name="media_set">filter for subset of programmes with media set</param>
 		/// <param name="media_type">filter for subset of programmes with media type</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for programmes by partner ID</param>
 		/// <param name="partner_pid">filter for programmes by partner PID</param>
 		/// <param name="payment_type">filter for a subset of programmes that are of the given payment_type</param>
-		/// <param name="people">filter for subset of programmes with contributions by given people PID</param>
+		/// <param name="people">filter for subset of programmes with contributions by given people PID
+		/// Min length: 8
+		// </param>
 		/// <param name="pid">filter for subset of programmes having given PID</param>
 		/// <param name="promoted_for">filter for subset of programmes which are promoted for given service</param>
 		/// <param name="q">filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)</param>
@@ -7238,9 +7311,15 @@ namespace MyNS
 		/// <param name="mixin">Mixins:
 		///* related_links: mixin to return information about related links to a promotion
 		///</param>
-		/// <param name="context">filter for subset of promotions belonging to a given context</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="context">filter for subset of promotions belonging to a given context
+		/// Min length: 8
+		// </param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for promotions by partner ID</param>
 		/// <param name="partner_pid">filter for promotions by partner PID</param>
 		/// <param name="pid">filter for subset of promotions having given PID</param>
@@ -7297,12 +7376,18 @@ namespace MyNS
 		/// <param name="end_to">filter for subset of broadcasts and webcasts that end on or earlier than the specified datetime</param>
 		/// <param name="format">filter for subset of broadcasts and webcasts that are classified in the given format ID</param>
 		/// <param name="genre">filter for subset of broadcasts and webcasts that are classified in the given genre ID</param>
-		/// <param name="group">filter for subset of broadcasts and webcasts that have programmes in the given group</param>
+		/// <param name="group">filter for subset of broadcasts and webcasts that have programmes in the given group
+		/// Min length: 8
+		// </param>
 		/// <param name="id">filter for subset of broadcasts and webcasts that have given identifier</param>
 		/// <param name="id_type">filter for subset of broadcasts and webcasts that have given id type</param>
 		/// <param name="item">filter for subset of broadcasts and webcasts with the given item performed on it</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for broadcasts and webcasts by partner ID</param>
 		/// <param name="partner_pid">filter for broadcasts and webcasts by partner PID</param>
 		/// <param name="people">filter for subset of broadcasts and webcasts that have given contributor</param>
@@ -7412,8 +7497,12 @@ namespace MyNS
 		/// <param name="end_from">Return services that end on or later than the specified datetime</param>
 		/// <param name="end_to">filter for subset of broadcasts that end on or earlier than the specified datetime</param>
 		/// <param name="mid">filter for services by masterbrand MID</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for services by partner ID</param>
 		/// <param name="partner_pid">filter for services by partner PID</param>
 		/// <param name="q">filter for subset of services matching supplied keyword/phrase (boolean operators permitted)</param>
@@ -7764,8 +7853,12 @@ namespace MyNS
 		/// <param name="availability">filter for subset of versions that have availability</param>
 		/// <param name="descendants_of">filter for subset of versions having given programme PID</param>
 		/// <param name="media_set">filter for subset of versions with availability in the given media set</param>
-		/// <param name="page">which page of results to return</param>
-		/// <param name="page_size">number of results in each page</param>
+		/// <param name="page">which page of results to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">number of results in each page
+		/// Maximum: 300
+		// </param>
 		/// <param name="partner_id">filter for versions by partner ID</param>
 		/// <param name="partner_pid">filter for versions by partner PID</param>
 		/// <param name="payment_type">filter for a subset of versions that are of the given payment_type</param>

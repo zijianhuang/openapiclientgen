@@ -41,16 +41,16 @@ export namespace MyNS {
 	export interface DomainInformation {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 		Region?: string | null;
@@ -58,16 +58,16 @@ export namespace MyNS {
 	export interface DomainInformationFormProperties {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -2790,8 +2790,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName?: string | null;
 		TargetVersion?: string;
@@ -2806,8 +2806,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		TargetVersion: FormControl<string | null | undefined>,
@@ -3482,20 +3482,32 @@ export namespace MyNS {
 	/**  InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.  */
 	export interface InstanceCountLimits {
 
-		/** Minimum number of Instances that can be instantiated for given InstanceType. */
+		/**
+		 * Minimum number of Instances that can be instantiated for given InstanceType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinimumInstanceCount?: number | null;
 
-		/** Maximum number of Instances that can be instantiated for given InstanceType. */
+		/**
+		 * Maximum number of Instances that can be instantiated for given InstanceType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaximumInstanceCount?: number | null;
 	}
 
 	/**  InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.  */
 	export interface InstanceCountLimitsFormProperties {
 
-		/** Minimum number of Instances that can be instantiated for given InstanceType. */
+		/**
+		 * Minimum number of Instances that can be instantiated for given InstanceType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinimumInstanceCount: FormControl<number | null | undefined>,
 
-		/** Maximum number of Instances that can be instantiated for given InstanceType. */
+		/**
+		 * Maximum number of Instances that can be instantiated for given InstanceType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaximumInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceCountLimitsFormGroup() {
@@ -3926,8 +3938,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -3942,8 +3954,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -3989,6 +4001,7 @@ export namespace MyNS {
 		 * Post 2015-01-01/packages/associate/{PackageID}/{DomainName}
 		 * @param {string} PackageID Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.
 		 * @param {string} DomainName Name of the domain that you want to associate the package with.
+		 *     Min length: 3    Max length: 28
 		 * @return {AssociatePackageResponse} Success
 		 */
 		AssociatePackage(PackageID: string, DomainName: string): Observable<AssociatePackageResponse> {
@@ -3999,6 +4012,7 @@ export namespace MyNS {
 		 * Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		 * Post 2015-01-01/es/domain/{DomainName}/authorizeVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain to provide access to.
+		 *     Min length: 3    Max length: 28
 		 * @return {AuthorizeVpcEndpointAccessResponse} Success
 		 */
 		AuthorizeVpcEndpointAccess(DomainName: string, requestBody: AuthorizeVpcEndpointAccessPostBody): Observable<AuthorizeVpcEndpointAccessResponse> {
@@ -4064,6 +4078,7 @@ export namespace MyNS {
 		 * Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.
 		 * Delete 2015-01-01/es/domain/{DomainName}
 		 * @param {string} DomainName The name of the Elasticsearch domain that you want to permanently delete.
+		 *     Min length: 3    Max length: 28
 		 * @return {DeleteElasticsearchDomainResponse} Success
 		 */
 		DeleteElasticsearchDomain(DomainName: string): Observable<DeleteElasticsearchDomainResponse> {
@@ -4074,6 +4089,7 @@ export namespace MyNS {
 		 * Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.
 		 * Get 2015-01-01/es/domain/{DomainName}
 		 * @param {string} DomainName The name of the Elasticsearch domain for which you want information.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeElasticsearchDomainResponse} Success
 		 */
 		DescribeElasticsearchDomain(DomainName: string): Observable<DescribeElasticsearchDomainResponse> {
@@ -4123,6 +4139,7 @@ export namespace MyNS {
 		 * Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
 		 * Delete 2015-01-01/es/vpcEndpoints/{VpcEndpointId}
 		 * @param {string} VpcEndpointId The unique identifier of the endpoint to be deleted.
+		 *     Min length: 5    Max length: 256
 		 * @return {DeleteVpcEndpointResponse} Success
 		 */
 		DeleteVpcEndpoint(VpcEndpointId: string): Observable<DeleteVpcEndpointResponse> {
@@ -4133,6 +4150,7 @@ export namespace MyNS {
 		 * Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.
 		 * Get 2015-01-01/es/domain/{DomainName}/autoTunes
 		 * @param {string} DomainName Specifies the domain name for which you want Auto-Tune action details.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDomainAutoTunesResponse} Success
@@ -4145,6 +4163,7 @@ export namespace MyNS {
 		 * Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.
 		 * Get 2015-01-01/es/domain/{DomainName}/progress
 		 * @param {string} DomainName The domain you want to get the progress information about.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} changeid The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. 
 		 * @return {DescribeDomainChangeProgressResponse} Success
 		 */
@@ -4156,6 +4175,7 @@ export namespace MyNS {
 		 * Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.
 		 * Get 2015-01-01/es/domain/{DomainName}/config
 		 * @param {string} DomainName The Elasticsearch domain that you want to get information about.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeElasticsearchDomainConfigResponse} Success
 		 */
 		DescribeElasticsearchDomainConfig(DomainName: string): Observable<DescribeElasticsearchDomainConfigResponse> {
@@ -4166,6 +4186,7 @@ export namespace MyNS {
 		 * Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances.
 		 * Post 2015-01-01/es/domain/{DomainName}/config
 		 * @param {string} DomainName The name of the Elasticsearch domain that you are updating. 
+		 *     Min length: 3    Max length: 28
 		 * @return {UpdateElasticsearchDomainConfigResponse} Success
 		 */
 		UpdateElasticsearchDomainConfig(DomainName: string, requestBody: UpdateElasticsearchDomainConfigPostBody): Observable<UpdateElasticsearchDomainConfigResponse> {
@@ -4185,6 +4206,7 @@ export namespace MyNS {
 		 * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
 		 * Get 2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}
 		 * @param {string} domainName  DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. 
+		 *     Min length: 3    Max length: 28
 		 * @param {ESPartitionInstanceType} InstanceType  The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed. 
 		 * @param {string} ElasticsearchVersion  Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. 
 		 * @return {DescribeElasticsearchInstanceTypeLimitsResponse} Success
@@ -4231,6 +4253,7 @@ export namespace MyNS {
 		 * Get 2015-01-01/es/reservedInstanceOfferings
 		 * @param {string} offeringId The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.
 		 * @param {number} maxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+		 *     Maximum: 100
 		 * @param {string} nextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4245,6 +4268,7 @@ export namespace MyNS {
 		 * Get 2015-01-01/es/reservedInstances
 		 * @param {string} reservationId The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.
 		 * @param {number} maxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+		 *     Maximum: 100
 		 * @param {string} nextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4268,6 +4292,7 @@ export namespace MyNS {
 		 * Post 2015-01-01/packages/dissociate/{PackageID}/{DomainName}
 		 * @param {string} PackageID Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.
 		 * @param {string} DomainName Name of the domain that you want to associate the package with.
+		 *     Min length: 3    Max length: 28
 		 * @return {DissociatePackageResponse} Success
 		 */
 		DissociatePackage(PackageID: string, DomainName: string): Observable<DissociatePackageResponse> {
@@ -4277,6 +4302,8 @@ export namespace MyNS {
 		/**
 		 * Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
 		 * Get 2015-01-01/es/compatibleVersions
+		 * @param {string} domainName Min length: 3
+		 *     Max length: 28
 		 * @return {GetCompatibleElasticsearchVersionsResponse} Success
 		 */
 		GetCompatibleElasticsearchVersions(domainName: string | null | undefined): Observable<GetCompatibleElasticsearchVersionsResponse> {
@@ -4288,6 +4315,7 @@ export namespace MyNS {
 		 * Get 2015-01-01/packages/{PackageID}/history
 		 * @param {string} PackageID Returns an audit history of versions of the package.
 		 * @param {number} maxResults Limits results to a maximum number of versions.
+		 *     Maximum: 100
 		 * @param {string} nextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4300,6 +4328,9 @@ export namespace MyNS {
 		/**
 		 * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
 		 * Get 2015-01-01/es/upgradeDomain/{DomainName}/history
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
+		 * @param {number} maxResults Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetUpgradeHistoryResponse} Success
@@ -4311,6 +4342,8 @@ export namespace MyNS {
 		/**
 		 * Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
 		 * Get 2015-01-01/es/upgradeDomain/{DomainName}/status
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {GetUpgradeStatusResponse} Success
 		 */
 		GetUpgradeStatus(DomainName: string): Observable<GetUpgradeStatusResponse> {
@@ -4332,6 +4365,7 @@ export namespace MyNS {
 		 * Get 2015-01-01/packages/{PackageID}/domains
 		 * @param {string} PackageID The package for which to list domains.
 		 * @param {number} maxResults Limits results to a maximum number of domains.
+		 *     Maximum: 100
 		 * @param {string} nextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4346,7 +4380,9 @@ export namespace MyNS {
 		 * Get 2015-01-01/es/instanceTypes/{ElasticsearchVersion}
 		 * @param {string} ElasticsearchVersion Version of Elasticsearch for which list of supported elasticsearch instance types are needed. 
 		 * @param {string} domainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. 
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults  Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. 
+		 *     Maximum: 100
 		 * @param {string} nextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. 
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4360,6 +4396,7 @@ export namespace MyNS {
 		 * List all supported Elasticsearch versions
 		 * Get 2015-01-01/es/versions
 		 * @param {number} maxResults  Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. 
+		 *     Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListElasticsearchVersionsResponse} Success
@@ -4372,7 +4409,9 @@ export namespace MyNS {
 		 * Lists all packages associated with the Amazon ES domain.
 		 * Get 2015-01-01/domain/{DomainName}/packages
 		 * @param {string} DomainName The name of the domain for which you want to list associated packages.
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults Limits results to a maximum number of packages.
+		 *     Maximum: 100
 		 * @param {string} nextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4396,6 +4435,7 @@ export namespace MyNS {
 		 * Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		 * Get 2015-01-01/es/domain/{DomainName}/listVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain to retrieve access information for.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} nextToken Provides an identifier to allow retrieval of paginated results.
 		 * @return {ListVpcEndpointAccessResponse} Success
 		 */
@@ -4407,6 +4447,7 @@ export namespace MyNS {
 		 * Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
 		 * Get 2015-01-01/es/domain/{DomainName}/vpcEndpoints
 		 * @param {string} DomainName Name of the ElasticSearch domain whose VPC endpoints are to be listed.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} nextToken Provides an identifier to allow retrieval of paginated results.
 		 * @return {ListVpcEndpointsForDomainResponse} Success
 		 */
@@ -4446,6 +4487,7 @@ export namespace MyNS {
 		 * Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 		 * Post 2015-01-01/es/domain/{DomainName}/revokeVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain.
+		 *     Min length: 3    Max length: 28
 		 * @return {RevokeVpcEndpointAccessResponse} Success
 		 */
 		RevokeVpcEndpointAccess(DomainName: string, requestBody: RevokeVpcEndpointAccessPostBody): Observable<RevokeVpcEndpointAccessResponse> {
@@ -4546,8 +4588,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -4556,8 +4598,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -4573,8 +4615,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -4628,8 +4670,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -4896,15 +4938,15 @@ export namespace MyNS {
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfo {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName?: string | null;
 		Region?: string | null;
@@ -4912,15 +4954,15 @@ export namespace MyNS {
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -4937,15 +4979,15 @@ export namespace MyNS {
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfo {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName?: string | null;
 		Region?: string | null;
@@ -4953,15 +4995,15 @@ export namespace MyNS {
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties {
 
 		/**
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -4980,8 +5022,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the package.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PackageName: string;
 
@@ -5008,8 +5050,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the package.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PackageName: FormControl<string | null | undefined>,
 
@@ -5055,8 +5097,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain to grant access to.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		DomainArn: string;
 
@@ -5068,8 +5110,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier to ensure idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 	}
@@ -5078,15 +5120,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain to grant access to.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		DomainArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique, case-sensitive identifier to ensure idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -5523,8 +5565,8 @@ export namespace MyNS {
 		/**
 		 * A customer-specified identifier to track this reservation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 5
+		 * Max length: 64
 		 */
 		ReservationName: string;
 
@@ -5545,8 +5587,8 @@ export namespace MyNS {
 		/**
 		 * A customer-specified identifier to track this reservation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 5
+		 * Max length: 64
 		 */
 		ReservationName: FormControl<string | null | undefined>,
 
@@ -5622,8 +5664,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -5632,8 +5674,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -5720,8 +5762,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the VPC endpoint to be updated.
 		 * Required
-		 * Max length: 256
 		 * Min length: 5
+		 * Max length: 256
 		 */
 		VpcEndpointId: string;
 
@@ -5736,8 +5778,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the VPC endpoint to be updated.
 		 * Required
-		 * Max length: 256
 		 * Min length: 5
+		 * Max length: 256
 		 */
 		VpcEndpointId: FormControl<string | null | undefined>,
 	}
@@ -5765,8 +5807,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -5784,8 +5826,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 

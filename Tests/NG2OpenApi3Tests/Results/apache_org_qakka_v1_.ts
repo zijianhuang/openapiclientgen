@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** Response returned by most Queue API calls. */
 	export interface ApiResponse {
 
-		/** Count of Queues or QueueMessages returned by the call. */
+		/**
+		 * Count of Queues or QueueMessages returned by the call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Informative message intended for client. */
@@ -23,7 +26,10 @@ export namespace MyNS {
 	/** Response returned by most Queue API calls. */
 	export interface ApiResponseFormProperties {
 
-		/** Count of Queues or QueueMessages returned by the call. */
+		/**
+		 * Count of Queues or QueueMessages returned by the call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Informative message intended for client. */
@@ -44,8 +50,11 @@ export namespace MyNS {
 		/** Content-type of data associated with QueueMessage. */
 		contentType?: string | null;
 
-		/** Date that message was received by system. */
-		createDate?: number | null;
+		/**
+		 * Date that message was received by system.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createDate?: string | null;
 
 		/** Embedded JSON to be sent with Queue Message. */
 		data?: string | null;
@@ -78,8 +87,11 @@ export namespace MyNS {
 		/** Content-type of data associated with QueueMessage. */
 		contentType: FormControl<string | null | undefined>,
 
-		/** Date that message was received by system. */
-		createDate: FormControl<number | null | undefined>,
+		/**
+		 * Date that message was received by system.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createDate: FormControl<string | null | undefined>,
 
 		/** Embedded JSON to be sent with Queue Message. */
 		data: FormControl<string | null | undefined>,
@@ -108,7 +120,7 @@ export namespace MyNS {
 	export function CreateQueueMessageFormGroup() {
 		return new FormGroup<QueueMessageFormProperties>({
 			contentType: new FormControl<string | null | undefined>(undefined),
-			createDate: new FormControl<number | null | undefined>(undefined),
+			createDate: new FormControl<string | null | undefined>(undefined),
 			data: new FormControl<string | null | undefined>(undefined),
 			href: new FormControl<string | null | undefined>(undefined),
 			messageId: new FormControl<string | null | undefined>(undefined),

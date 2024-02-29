@@ -7806,7 +7806,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your live streams.
 		 * Get live_streams
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Live_streams} Success
 		 */
 		ListLiveStreams(page: number | null | undefined, per_page: number | null | undefined): Observable<Live_streams> {
@@ -7940,7 +7942,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your players.
 		 * Get players
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Players} Success
 		 */
 		ListPlayers(page: number | null | undefined, per_page: number | null | undefined): Observable<Players> {
@@ -8057,7 +8061,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your recordings.
 		 * Get recordings
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Recordings} Success
 		 */
 		ListRecordings(page: number | null | undefined, per_page: number | null | undefined): Observable<Recordings> {
@@ -8102,7 +8108,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your schedules.
 		 * Get schedules
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Schedules} Success
 		 */
 		ListSchedules(page: number | null | undefined, per_page: number | null | undefined): Observable<Schedules> {
@@ -8192,7 +8200,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your stream sources.
 		 * Get stream_sources
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Stream_sources} Success
 		 */
 		ListStreamSources(page: number | null | undefined, per_page: number | null | undefined): Observable<Stream_sources> {
@@ -8260,7 +8270,9 @@ export namespace MyNS {
 		 * This operation lists the details of all of your stream targets.
 		 * Get stream_targets
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Stream_targets} Success
 		 */
 		ListStreamTargets(page: number | null | undefined, per_page: number | null | undefined): Observable<Stream_targets> {
@@ -8481,7 +8493,9 @@ export namespace MyNS {
 		 * This operation shows the details of all of your transcoders.
 		 * Get transcoders
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Transcoders} Success
 		 */
 		ListTranscoders(page: number | null | undefined, per_page: number | null | undefined): Observable<Transcoders> {
@@ -8885,7 +8899,9 @@ export namespace MyNS {
 		 * Get transcoders/{transcoder_id}/uptimes
 		 * @param {string} transcoder_id The unique alphanumeric string that identifies the transcoder.
 		 * @param {number} page Returns a paginated view of results from the HTTP request. Specify a positive integer to indicate which page of the results should be displayed first. <strong>Next</strong> and <strong>Previous</strong> links allow you to navigate multiple pages of results. Omit the <em>page</em> parameter or specify an integer that's less than or equal to <strong>0</strong> to view all (unpaginated) results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page For use with the <em>page</em> parameter. Indicates how many records should be included on each page of results. A valid value is any positive integer. The default is <strong>10</strong>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Uptimes} Success
 		 */
 		IndexUptimes(transcoder_id: string, page: number | null | undefined, per_page: number | null | undefined): Observable<Uptimes> {

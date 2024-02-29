@@ -365,7 +365,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteJob v1/Exports/Jobs/{JobSid}
 		/// </summary>
-		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job</param>
+		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteJobAsync(string JobSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Exports/Jobs/"+ (JobSid==null? "" : System.Uri.EscapeDataString(JobSid));
@@ -391,7 +394,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchJob v1/Exports/Jobs/{JobSid}
 		/// </summary>
-		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job</param>
+		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Bulkexportsv1exportjob> FetchJobAsync(string JobSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -494,8 +500,13 @@ namespace MyNS
 		/// ListDay v1/Exports/{ResourceType}/Days
 		/// </summary>
 		/// <param name="ResourceType">The type of communication – Messages, Calls, Conferences, and Participants</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDayReturn> ListDayAsync(string ResourceType, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -558,8 +569,13 @@ namespace MyNS
 		/// ListExportCustomJob v1/Exports/{ResourceType}/Jobs
 		/// </summary>
 		/// <param name="ResourceType">The type of communication – Messages, Calls, Conferences, and Participants</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListExportCustomJobReturn> ListExportCustomJobAsync(string ResourceType, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -154,7 +154,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous?: string | null;
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PaginationFormProperties {
@@ -171,7 +174,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous: FormControl<string | null | undefined>,
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -196,6 +202,7 @@ export namespace MyNS {
 		/**
 		 * The number of Subscriptions that the shopper owns in this group
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionCount: number;
 	}
@@ -210,6 +217,7 @@ export namespace MyNS {
 		/**
 		 * The number of Subscriptions that the shopper owns in this group
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionCount: FormControl<number | null | undefined>,
 	}
@@ -247,7 +255,10 @@ export namespace MyNS {
 		/** The url to use or manage this Subscription's active product */
 		launchUrl?: string | null;
 
-		/** Unique identifier of the payment profile that will be used to automatically renew this Subscription */
+		/**
+		 * Unique identifier of the payment profile that will be used to automatically renew this Subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentProfileId?: number | null;
 
 		/**
@@ -310,7 +321,10 @@ export namespace MyNS {
 		/** The url to use or manage this Subscription's active product */
 		launchUrl: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the payment profile that will be used to automatically renew this Subscription */
+		/**
+		 * Unique identifier of the payment profile that will be used to automatically renew this Subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentProfileId: FormControl<number | null | undefined>,
 
 		/**
@@ -378,10 +392,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the add-in product
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pfid: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface SubscriptionAddonFormProperties {
@@ -395,10 +413,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the add-in product
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pfid: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionAddonFormGroup() {
@@ -504,6 +526,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the Product that is subscribed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pfid: number;
 
@@ -516,6 +539,7 @@ export namespace MyNS {
 		/**
 		 * The number of `renewalPeriodUnits` that will be added by the `renewalPfid`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		renewalPeriod: number;
 
@@ -528,6 +552,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the renewal Product
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		renewalPfid: number;
 
@@ -554,6 +579,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the Product that is subscribed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pfid: FormControl<number | null | undefined>,
 
@@ -566,6 +592,7 @@ export namespace MyNS {
 		/**
 		 * The number of `renewalPeriodUnits` that will be added by the `renewalPfid`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		renewalPeriod: FormControl<number | null | undefined>,
 
@@ -578,6 +605,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the renewal Product
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		renewalPfid: FormControl<number | null | undefined>,
 
@@ -625,7 +653,10 @@ export namespace MyNS {
 
 	export interface SubscriptionUpdate {
 
-		/** Unique identifier of the payment profile you want to be used for automatic renewal */
+		/**
+		 * Unique identifier of the payment profile you want to be used for automatic renewal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentProfileId?: number | null;
 
 		/** Whether or not you want the Subscription renew automatically */
@@ -633,7 +664,10 @@ export namespace MyNS {
 	}
 	export interface SubscriptionUpdateFormProperties {
 
-		/** Unique identifier of the payment profile you want to be used for automatic renewal */
+		/**
+		 * Unique identifier of the payment profile you want to be used for automatic renewal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentProfileId: FormControl<number | null | undefined>,
 
 		/** Whether or not you want the Subscription renew automatically */
@@ -658,7 +692,9 @@ export namespace MyNS {
 		 * @param {Array<string>} productGroupKeys Only return Subscriptions with the specified product groups
 		 * @param {Array<string>} includes Optional details to be included in the response
 		 * @param {number} offset Number of Subscriptions to skip before starting to return paged results (must be a multiple of the limit)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of Subscriptions to retrieve in this page, starting after offset
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {ListSort} sort Property name that will be used to sort results. "-" indicates descending
 		 * @return {SubscriptionList} Request was successful
 		 */

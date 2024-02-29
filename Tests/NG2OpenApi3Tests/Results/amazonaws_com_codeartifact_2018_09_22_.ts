@@ -1735,9 +1735,13 @@ export namespace MyNS {
 		 * <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note> <p>A repository can have one or more upstream repositories, or an external connection.</p> </note>
 		 * Post v1/repository/external-connection#domain&repository&external-connection
 		 * @param {string} domain The name of the domain that contains the repository.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository to which the external connection is added. 
+		 *     Min length: 2    Max length: 100
 		 * @param {string} external_connection <p> The name of the external connection to add to the repository. The following values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li> </ul>
+		 *     Min length: 2    Max length: 100
 		 * @return {AssociateExternalConnectionResult} Success
 		 */
 		AssociateExternalConnection(domain: string, domain_owner: string | null | undefined, repository: string, external_connection: string): Observable<AssociateExternalConnectionResult> {
@@ -1748,9 +1752,13 @@ export namespace MyNS {
 		 * Removes an existing external connection from a repository.
 		 * Delete v1/repository/external-connection#domain&repository&external-connection
 		 * @param {string} domain The name of the domain that contains the repository from which to remove the external repository. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository The name of the repository from which the external connection will be removed. 
+		 *     Min length: 2    Max length: 100
 		 * @param {string} external_connection The name of the external connection to be removed from the repository. 
+		 *     Min length: 2    Max length: 100
 		 * @return {DisassociateExternalConnectionResult} Success
 		 */
 		DisassociateExternalConnection(domain: string, domain_owner: string | null | undefined, repository: string, external_connection: string): Observable<DisassociateExternalConnectionResult> {
@@ -1761,12 +1769,18 @@ export namespace MyNS {
 		 * <p> Copies package versions from one repository to another repository in the same domain. </p> <note> <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> </note>
 		 * Post v1/package/versions/copy#domain&source-repository&destination-repository&format&package
 		 * @param {string} domain  The name of the domain that contains the source and destination repositories. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} source_repository  The name of the repository that contains the package versions to be copied. 
+		 *     Min length: 2    Max length: 100
 		 * @param {string} destination_repository  The name of the repository into which package versions are copied. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  The format of the package versions to be copied. 
 		 * @param {string} namespace <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package that contains the versions to be copied. 
+		 *     Min length: 1    Max length: 255
 		 * @return {CopyPackageVersionsResult} Success
 		 */
 		CopyPackageVersions(domain: string, domain_owner: string | null | undefined, source_repository: string, destination_repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, requestBody: CopyPackageVersionsPostBody): Observable<CopyPackageVersionsResult> {
@@ -1777,6 +1791,7 @@ export namespace MyNS {
 		 * <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different Amazon Web Services accounts. An asset is stored only once in a domain, even if it's in multiple repositories. </p> <p>Although you can have multiple domains, we recommend a single production domain that contains all published artifacts so that your development teams can find and share packages. You can use a second pre-production domain to test changes to the production domain configuration. </p>
 		 * Post v1/domain#domain
 		 * @param {string} domain  The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. 
+		 *     Min length: 2    Max length: 50
 		 * @return {CreateDomainResult} Success
 		 */
 		CreateDomain(domain: string, requestBody: CreateDomainPostBody): Observable<CreateDomainResult> {
@@ -1787,7 +1802,9 @@ export namespace MyNS {
 		 * Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain with repositories, first delete its repositories.
 		 * Delete v1/domain#domain
 		 * @param {string} domain  The name of the domain to delete. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @return {DeleteDomainResult} Success
 		 */
 		DeleteDomain(domain: string, domain_owner: string | null | undefined): Observable<DeleteDomainResult> {
@@ -1798,7 +1815,9 @@ export namespace MyNS {
 		 * Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a> object that contains information about the requested domain.
 		 * Get v1/domain#domain
 		 * @param {string} domain  A string that specifies the name of the requested domain. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeDomainResult} Success
 		 */
 		DescribeDomain(domain: string, domain_owner: string | null | undefined): Observable<DescribeDomainResult> {
@@ -1809,8 +1828,11 @@ export namespace MyNS {
 		 * Creates a repository.
 		 * Post v1/repository#domain&repository
 		 * @param {string} domain  The name of the domain that contains the created repository. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository to create. 
+		 *     Min length: 2    Max length: 100
 		 * @return {CreateRepositoryResult} Success
 		 */
 		CreateRepository(domain: string, domain_owner: string | null | undefined, repository: string, requestBody: CreateRepositoryPostBody): Observable<CreateRepositoryResult> {
@@ -1821,8 +1843,11 @@ export namespace MyNS {
 		 * Deletes a repository.
 		 * Delete v1/repository#domain&repository
 		 * @param {string} domain  The name of the domain that contains the repository to delete. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository to delete. 
+		 *     Min length: 2    Max length: 100
 		 * @return {DeleteRepositoryResult} Success
 		 */
 		DeleteRepository(domain: string, domain_owner: string | null | undefined, repository: string): Observable<DeleteRepositoryResult> {
@@ -1833,8 +1858,11 @@ export namespace MyNS {
 		 * Returns a <code>RepositoryDescription</code> object that contains detailed information about the requested repository.
 		 * Get v1/repository#domain&repository
 		 * @param {string} domain  The name of the domain that contains the repository to describe. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  A string that specifies the name of the requested repository. 
+		 *     Min length: 2    Max length: 100
 		 * @return {DescribeRepositoryResult} Success
 		 */
 		DescribeRepository(domain: string, domain_owner: string | null | undefined, repository: string): Observable<DescribeRepositoryResult> {
@@ -1845,8 +1873,11 @@ export namespace MyNS {
 		 * Update the properties of a repository.
 		 * Put v1/repository#domain&repository
 		 * @param {string} domain  The name of the domain associated with the repository to update. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository to update. 
+		 *     Min length: 2    Max length: 100
 		 * @return {UpdateRepositoryResult} Success
 		 */
 		UpdateRepository(domain: string, domain_owner: string | null | undefined, repository: string, requestBody: UpdateRepositoryPutBody): Observable<UpdateRepositoryResult> {
@@ -1857,8 +1888,11 @@ export namespace MyNS {
 		 * Deletes the resource policy set on a domain.
 		 * Delete v1/domain/permissions/policy#domain
 		 * @param {string} domain  The name of the domain associated with the resource policy to be deleted. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} policy_revision  The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. 
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteDomainPermissionsPolicyResult} Success
 		 */
 		DeleteDomainPermissionsPolicy(domain: string, domain_owner: string | null | undefined, policy_revision: string | null | undefined): Observable<DeleteDomainPermissionsPolicyResult> {
@@ -1869,7 +1903,9 @@ export namespace MyNS {
 		 * <p> Returns the resource policy attached to the specified domain. </p> <note> <p> The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>IAM User Guide</i>. </p> </note>
 		 * Get v1/domain/permissions/policy#domain
 		 * @param {string} domain  The name of the domain to which the resource policy is attached. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @return {GetDomainPermissionsPolicyResult} Success
 		 */
 		GetDomainPermissionsPolicy(domain: string, domain_owner: string | null | undefined): Observable<GetDomainPermissionsPolicyResult> {
@@ -1880,11 +1916,16 @@ export namespace MyNS {
 		 * Deletes a package and all associated package versions. A deleted package cannot be restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a> API.
 		 * Delete v1/package#domain&repository&format&package
 		 * @param {string} domain The name of the domain that contains the package to delete.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository The name of the repository that contains the package to delete.
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format The format of the requested package to delete.
 		 * @param {string} namespace <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li> <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package The name of the package to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeletePackageResult} Success
 		 */
 		DeletePackage(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string): Observable<DeletePackageResult> {
@@ -1895,11 +1936,16 @@ export namespace MyNS {
 		 * Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.
 		 * Get v1/package#domain&repository&format&package
 		 * @param {string} domain The name of the domain that contains the repository that contains the package.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository The name of the repository that contains the requested package. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format A format that specifies the type of the requested package.
 		 * @param {string} namespace <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package The name of the requested package.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribePackageResult} Success
 		 */
 		DescribePackage(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string): Observable<DescribePackageResult> {
@@ -1910,11 +1956,16 @@ export namespace MyNS {
 		 * <p>Sets the package origin configuration for a package.</p> <p>The package origin configuration determines how new versions of a package can be added to a repository. You can allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from an external connection or upstream source. For more information about package origin controls and configuration, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing package origin controls</a> in the <i>CodeArtifact User Guide</i>.</p> <p> <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't yet exist in the repository. When called on a package that does not exist, a package is created in the repository with no versions and the requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any versions from external connections or upstream repositories, or to block publishing any versions of the package into the repository before connecting any package managers or publishers to the repository.</p>
 		 * Post v1/package#domain&repository&format&package
 		 * @param {string} domain The name of the domain that contains the repository that contains the package.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository The name of the repository that contains the package.
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format A format that specifies the type of the package to be updated.
 		 * @param {string} namespace <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package The name of the package to be updated.
+		 *     Min length: 1    Max length: 255
 		 * @return {PutPackageOriginConfigurationResult} Success
 		 */
 		PutPackageOriginConfiguration(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, requestBody: PutPackageOriginConfigurationPostBody): Observable<PutPackageOriginConfigurationResult> {
@@ -1925,11 +1976,16 @@ export namespace MyNS {
 		 * Deletes one or more versions of a package. A deleted package version cannot be restored in your repository. If you want to remove a package version from your repository and be able to restore it later, set its status to <code>Archived</code>. Archived packages cannot be downloaded from a repository and don't show up with list package APIs (for example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>), but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
 		 * Post v1/package/versions/delete#domain&repository&format&package
 		 * @param {string} domain  The name of the domain that contains the package to delete. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the package versions to delete. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  The format of the package versions to delete. 
 		 * @param {string} namespace <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package with the versions to delete. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DeletePackageVersionsResult} Success
 		 */
 		DeletePackageVersions(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, requestBody: DeletePackageVersionsPostBody): Observable<DeletePackageVersionsResult> {
@@ -1940,9 +1996,13 @@ export namespace MyNS {
 		 * <p> Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate. </p> <important> <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, Amazon Web Services users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy. </p> </important>
 		 * Delete v1/repository/permissions/policies#domain&repository
 		 * @param {string} domain  The name of the domain that contains the repository associated with the resource policy to be deleted. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that is associated with the resource policy to be deleted 
+		 *     Min length: 2    Max length: 100
 		 * @param {string} policy_revision  The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. 
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteRepositoryPermissionsPolicyResult} Success
 		 */
 		DeleteRepositoryPermissionsPolicy(domain: string, domain_owner: string | null | undefined, repository: string, policy_revision: string | null | undefined): Observable<DeleteRepositoryPermissionsPolicyResult> {
@@ -1953,12 +2013,18 @@ export namespace MyNS {
 		 * Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version.
 		 * Get v1/package/version#domain&repository&format&package&version
 		 * @param {string} domain  The name of the domain that contains the repository that contains the package version. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the package version. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  A format that specifies the type of the requested package version. 
 		 * @param {string} namespace <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the requested package version. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version  A string that contains the package version (for example, <code>3.5.2</code>). 
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribePackageVersionResult} Success
 		 */
 		DescribePackageVersion(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, version: string): Observable<DescribePackageVersionResult> {
@@ -1969,11 +2035,16 @@ export namespace MyNS {
 		 * <p> Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted. </p> <p> To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> parameter to <code>Disposed</code>. </p> <p> To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>. </p>
 		 * Post v1/package/versions/dispose#domain&repository&format&package
 		 * @param {string} domain  The name of the domain that contains the repository you want to dispose. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the package versions you want to dispose. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  A format that specifies the type of package versions you want to dispose. 
 		 * @param {string} namespace <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package with the versions you want to dispose. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DisposePackageVersionsResult} Success
 		 */
 		DisposePackageVersions(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, requestBody: DisposePackageVersionsPostBody): Observable<DisposePackageVersionsResult> {
@@ -1984,8 +2055,11 @@ export namespace MyNS {
 		 * <p> Generates a temporary authorization token for accessing repositories in the domain. This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact authentication and tokens</a>. </p> <note> <p>CodeArtifact authorization tokens are valid for a period of 12 hours when created with the <code>login</code> command. You can call <code>login</code> periodically to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code> API, you can set a custom authorization period, up to a maximum of 12 hours, with the <code>durationSeconds</code> parameter.</p> <p>The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code> is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while assuming a role, the token lifetime is independent of the maximum session duration of the role. For example, if you call <code>sts assume-role</code> and specify a session duration of 15 minutes, then generate a CodeArtifact authorization token, the token will be valid for the full authorization period even though this is longer than the 15-minute session duration.</p> <p>See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> for more information on controlling session duration. </p> </note>
 		 * Post v1/authorization-token#domain
 		 * @param {string} domain  The name of the domain that is in scope for the generated authorization token. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {number} duration The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
+		 *     Minimum: 0    Maximum: 43200
 		 * @return {GetAuthorizationTokenResult} Success
 		 */
 		GetAuthorizationToken(domain: string, domain_owner: string | null | undefined, duration: number | null | undefined): Observable<GetAuthorizationTokenResult> {
@@ -1996,14 +2070,22 @@ export namespace MyNS {
 		 * Returns an asset (or file) that is in a package. For example, for a Maven package version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file, a <code>POM</code> file, or any other assets in the package version.
 		 * Get v1/package/version/asset#domain&repository&format&package&version&asset
 		 * @param {string} domain  The name of the domain that contains the repository that contains the package version with the requested asset. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The repository that contains the package version with the requested asset. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  A format that specifies the type of the package version with the requested asset file. 
 		 * @param {string} namespace <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package that contains the requested asset. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version  A string that contains the package version (for example, <code>3.5.2</code>). 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} asset  The name of the requested asset. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} revision  The name of the package version revision that contains the requested asset. 
+		 *     Min length: 1    Max length: 50
 		 * @return {GetPackageVersionAssetResult} Success
 		 */
 		GetPackageVersionAsset(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, version: string, asset: string, revision: string | null | undefined): Observable<GetPackageVersionAssetResult> {
@@ -2014,12 +2096,18 @@ export namespace MyNS {
 		 * <p> Gets the readme file or descriptive text for a package version. </p> <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
 		 * Get v1/package/version/readme#domain&repository&format&package&version
 		 * @param {string} domain  The name of the domain that contains the repository that contains the package version with the requested readme file. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The repository that contains the package with the requested readme file. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  A format that specifies the type of the package version with the requested readme file. 
 		 * @param {string} namespace <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package version that contains the requested readme file. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version  A string that contains the package version (for example, <code>3.5.2</code>). 
+		 *     Min length: 1    Max length: 255
 		 * @return {GetPackageVersionReadmeResult} Success
 		 */
 		GetPackageVersionReadme(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, version: string): Observable<GetPackageVersionReadmeResult> {
@@ -2030,8 +2118,11 @@ export namespace MyNS {
 		 * <p> Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format: </p> <ul> <li> <p> <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> </ul>
 		 * Get v1/repository/endpoint#domain&repository&format
 		 * @param {string} domain  The name of the domain that contains the repository. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  Returns which endpoint of a repository to return. A repository has one endpoint for each package format. 
 		 * @return {GetRepositoryEndpointResult} Success
 		 */
@@ -2043,8 +2134,11 @@ export namespace MyNS {
 		 * Returns the resource policy that is set on a repository.
 		 * Get v1/repository/permissions/policy#domain&repository
 		 * @param {string} domain  The name of the domain containing the repository whose associated resource policy is to be retrieved. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository whose associated resource policy is to be retrieved. 
+		 *     Min length: 2    Max length: 100
 		 * @return {GetRepositoryPermissionsPolicyResult} Success
 		 */
 		GetRepositoryPermissionsPolicy(domain: string, domain_owner: string | null | undefined, repository: string): Observable<GetRepositoryPermissionsPolicyResult> {
@@ -2055,8 +2149,11 @@ export namespace MyNS {
 		 * <p> Sets the resource policy on a repository that specifies permissions to access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy. </p>
 		 * Put v1/repository/permissions/policy#domain&repository
 		 * @param {string} domain  The name of the domain containing the repository to set the resource policy on. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository to set the resource policy on. 
+		 *     Min length: 2    Max length: 100
 		 * @return {PutRepositoryPermissionsPolicyResult} Success
 		 */
 		PutRepositoryPermissionsPolicy(domain: string, domain_owner: string | null | undefined, repository: string, requestBody: PutRepositoryPermissionsPolicyPutBody): Observable<PutRepositoryPermissionsPolicyResult> {
@@ -2078,14 +2175,22 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects for assets in a package version.
 		 * Post v1/package/version/assets#domain&repository&format&package&version
 		 * @param {string} domain  The name of the domain that contains the repository associated with the package version assets. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the package that contains the requested package version assets. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  The format of the package that contains the requested package version assets. 
 		 * @param {string} namespace <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package that contains the requested package version assets. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version  A string that contains the package version (for example, <code>3.5.2</code>). 
+		 *     Min length: 1    Max length: 255
 		 * @param {number} max_results  The maximum number of results to return per page. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPackageVersionAssetsResult} Success
@@ -2098,13 +2203,20 @@ export namespace MyNS {
 		 * Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned.
 		 * Post v1/package/version/dependencies#domain&repository&format&package&version
 		 * @param {string} domain  The name of the domain that contains the repository that contains the requested package version dependencies. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the requested package version. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  The format of the package with the requested dependencies. 
 		 * @param {string} namespace <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package versions' package. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version  A string that contains the package version (for example, <code>3.5.2</code>). 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @return {ListPackageVersionDependenciesResult} Success
 		 */
 		ListPackageVersionDependencies(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, version: string, next_token: string | null | undefined): Observable<ListPackageVersionDependenciesResult> {
@@ -2115,15 +2227,22 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects for package versions in a repository that match the request parameters. Package versions of all statuses will be returned by default when calling <code>list-package-versions</code> with no <code>--status</code> parameter.
 		 * Post v1/package/versions#domain&repository&format&package
 		 * @param {string} domain  The name of the domain that contains the repository that contains the requested package versions. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the requested package versions. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  The format of the package versions you want to list. 
 		 * @param {string} namespace <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package for which you want to request package versions. 
+		 *     Min length: 1    Max length: 255
 		 * @param {PackageVersionStatus} status  A string that filters the requested package versions by status. 
 		 * @param {PackageVersionSortType} sortBy  How to sort the requested list of package versions. 
 		 * @param {number} max_results  The maximum number of results to return per page. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @param {PackageVersionOriginType} originType The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2137,13 +2256,20 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects for packages in a repository that match the request parameters.
 		 * Post v1/packages#domain&repository
 		 * @param {string} domain  The name of the domain that contains the repository that contains the requested packages. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The name of the repository that contains the requested packages. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format The format used to filter requested packages. Only packages from the provided format will be returned.
 		 * @param {string} namespace <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} package_prefix  A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. 
+		 *     Min length: 1    Max length: 255
 		 * @param {number} max_results  The maximum number of results to return per page. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @param {AllowPublish} publish The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.
 		 * @param {AllowPublish} upstream The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.
 		 * @param {string} maxResults Pagination limit
@@ -2158,8 +2284,11 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified Amazon Web Services account and that matches the input parameters.
 		 * Post v1/repositories
 		 * @param {string} repository_prefix  A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.
+		 *     Min length: 2    Max length: 100
 		 * @param {number} max_results  The maximum number of results to return per page. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesResult} Success
@@ -2172,11 +2301,17 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input parameters.
 		 * Post v1/domain/repositories#domain
 		 * @param {string} domain  The name of the domain that contains the returned list of repositories. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} administrator_account  Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository_prefix  A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. 
+		 *     Min length: 2    Max length: 100
 		 * @param {number} max_results  The maximum number of results to return per page. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} next_token  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
+		 *     Min length: 1    Max length: 2000
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesInDomainResult} Success
@@ -2189,6 +2324,7 @@ export namespace MyNS {
 		 * Gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in CodeArtifact.
 		 * Post v1/tags#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource to get tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResult} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResult> {
@@ -2199,13 +2335,20 @@ export namespace MyNS {
 		 * <p>Creates a new package version containing one or more assets (or files).</p> <p>The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code> state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>. Once a package version’s status is set to <code>Published</code>, it cannot change back to <code>Unfinished</code>.</p> <note> <p>Only generic packages can be published using this API. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using generic packages</a> in the <i>CodeArtifact User Guide</i>.</p> </note>
 		 * Post v1/package/version/publish#domain&repository&format&package&version&asset&x-amz-content-sha256
 		 * @param {string} domain The name of the domain that contains the repository that contains the package version to publish.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository The name of the repository that the package version will be published to.
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format <p>A format that specifies the type of the package version with the requested asset file.</p> <p>The only supported value is <code>generic</code>.</p>
 		 * @param {string} namespace The namespace of the package version to publish.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package The name of the package version to publish.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} version The package version to publish (for example, <code>3.5.2</code>).
+		 *     Min length: 1    Max length: 255
 		 * @param {string} asset The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> 
+		 *     Min length: 1    Max length: 255
 		 * @param {boolean} unfinished <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values: <code>unfinished</code> </p>
 		 * @return {PublishPackageVersionResult} Success
 		 */
@@ -2226,6 +2369,7 @@ export namespace MyNS {
 		 * Adds or updates tags for a resource in CodeArtifact.
 		 * Post v1/tag#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResult} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResult> {
@@ -2236,6 +2380,7 @@ export namespace MyNS {
 		 * Removes tags from a resource in CodeArtifact.
 		 * Post v1/untag#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @return {UntagResourceResult} Success
 		 */
 		UntagResource(resourceArn: string, requestBody: UntagResourcePostBody): Observable<UntagResourceResult> {
@@ -2246,11 +2391,16 @@ export namespace MyNS {
 		 * Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>, you can update the status of package versions to <code>Archived</code>, <code>Published</code>, or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
 		 * Post v1/package/versions/update_status#domain&repository&format&package
 		 * @param {string} domain  The name of the domain that contains the repository that contains the package versions with a status to be updated. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} domain_owner  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} repository  The repository that contains the package versions with the status you want to update. 
+		 *     Min length: 2    Max length: 100
 		 * @param {PackageFormat} format  A format that specifies the type of the package with the statuses to update. 
 		 * @param {string} namespace <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
+		 *     Min length: 1    Max length: 255
 		 * @param {string} _package  The name of the package with the version statuses to update. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdatePackageVersionsStatusResult} Success
 		 */
 		UpdatePackageVersionsStatus(domain: string, domain_owner: string | null | undefined, repository: string, format: PackageFormat, namespace: string | null | undefined, _package: string, requestBody: UpdatePackageVersionsStatusPostBody): Observable<UpdatePackageVersionsStatusResult> {
@@ -2299,8 +2449,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> </important>
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		encryptionKey?: string | null;
 
@@ -2315,8 +2465,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> </important>
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		encryptionKey: FormControl<string | null | undefined>,
 	}
@@ -2477,16 +2627,16 @@ export namespace MyNS {
 
 		/**
 		 * Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		policyRevision?: string | null;
 
 		/**
 		 * A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.
 		 * Required
-		 * Max length: 7168
 		 * Min length: 1
+		 * Max length: 7168
 		 */
 		policyDocument: string;
 	}
@@ -2494,16 +2644,16 @@ export namespace MyNS {
 
 		/**
 		 * Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		policyRevision: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.
 		 * Required
-		 * Max length: 7168
 		 * Min length: 1
+		 * Max length: 7168
 		 */
 		policyDocument: FormControl<string | null | undefined>,
 	}
@@ -2526,8 +2676,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -2542,8 +2692,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2583,30 +2733,30 @@ export namespace MyNS {
 		/**
 		 * The name of the domain on which to set the resource policy.
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		domain: string;
 
 		/**
 		 * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		domainOwner?: string | null;
 
 		/**
 		 * The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		policyRevision?: string | null;
 
 		/**
 		 * A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain.
 		 * Required
-		 * Max length: 7168
 		 * Min length: 1
+		 * Max length: 7168
 		 */
 		policyDocument: string;
 	}
@@ -2615,30 +2765,30 @@ export namespace MyNS {
 		/**
 		 * The name of the domain on which to set the resource policy.
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		domain: FormControl<string | null | undefined>,
 
 		/**
 		 * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		domainOwner: FormControl<string | null | undefined>,
 
 		/**
 		 * The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		policyRevision: FormControl<string | null | undefined>,
 
 		/**
 		 * A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain.
 		 * Required
-		 * Max length: 7168
 		 * Min length: 1
+		 * Max length: 7168
 		 */
 		policyDocument: FormControl<string | null | undefined>,
 	}

@@ -150,9 +150,13 @@ export namespace MyNS {
 		 * List all private endpoint connections on a Cosmos DB account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateEndpointConnections
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @return {PrivateEndpointConnectionListResult} Successfully retrieved private endpoint connections.
 		 */
 		PrivateEndpointConnections_ListByDatabaseAccount(subscriptionId: string, resourceGroupName: string, api_version: string, accountName: string): Observable<PrivateEndpointConnectionListResult> {
@@ -163,9 +167,13 @@ export namespace MyNS {
 		 * Gets a private endpoint connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {PrivateEndpointConnection} Successfully retrieved a specified private endpoint connection.
 		 */
@@ -177,9 +185,13 @@ export namespace MyNS {
 		 * Approve or reject a private endpoint connection with a given name.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {PrivateEndpointConnection} Successfully approved or rejected private endpoint connection.
 		 */
@@ -191,9 +203,13 @@ export namespace MyNS {
 		 * Deletes a private endpoint connection with a given name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {void} 
 		 */

@@ -1171,8 +1171,13 @@ namespace MyNS
 		/// Returns a list of all the <code>MatchingWorkflows</code> that have been created for an AWS account.
 		/// ListMatchingWorkflows matchingworkflows
 		/// </summary>
-		/// <param name="maxResults">The maximum number of objects returned per page.</param>
-		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.</param>
+		/// <param name="maxResults">The maximum number of objects returned per page.
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMatchingWorkflowsOutput> ListMatchingWorkflowsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1246,8 +1251,13 @@ namespace MyNS
 		/// Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.
 		/// ListSchemaMappings schemas
 		/// </summary>
-		/// <param name="maxResults">The maximum number of objects returned per page.</param>
-		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.</param>
+		/// <param name="maxResults">The maximum number of objects returned per page.
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSchemaMappingsOutput> ListSchemaMappingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1281,7 +1291,10 @@ namespace MyNS
 		/// Deletes the <code>MatchingWorkflow</code> with a given name. This operation will succeed even if a workflow with the given name does not exist.
 		/// DeleteMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
-		/// <param name="workflowName">The name of the workflow to be retrieved.</param>
+		/// <param name="workflowName">The name of the workflow to be retrieved.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMatchingWorkflowOutput> DeleteMatchingWorkflowAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1315,7 +1328,10 @@ namespace MyNS
 		/// Returns the <code>MatchingWorkflow</code> with a given name, if it exists.
 		/// GetMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
-		/// <param name="workflowName">The name of the workflow.</param>
+		/// <param name="workflowName">The name of the workflow.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchingWorkflowOutput> GetMatchingWorkflowAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1349,7 +1365,10 @@ namespace MyNS
 		/// Updates an existing <code>MatchingWorkflow</code>. This method is identical to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>MatchingWorkflow</code> must already exist for the method to succeed.
 		/// UpdateMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
-		/// <param name="workflowName">The name of the workflow to be retrieved.</param>
+		/// <param name="workflowName">The name of the workflow to be retrieved.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMatchingWorkflowOutput> UpdateMatchingWorkflowAsync(string workflowName, UpdateMatchingWorkflowPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1390,7 +1409,10 @@ namespace MyNS
 		/// Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.
 		/// DeleteSchemaMapping schemas/{schemaName}
 		/// </summary>
-		/// <param name="schemaName">The name of the schema to delete.</param>
+		/// <param name="schemaName">The name of the schema to delete.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSchemaMappingOutput> DeleteSchemaMappingAsync(string schemaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1424,7 +1446,10 @@ namespace MyNS
 		/// Returns the SchemaMapping of a given name.
 		/// GetSchemaMapping schemas/{schemaName}
 		/// </summary>
-		/// <param name="schemaName">The name of the schema to be retrieved.</param>
+		/// <param name="schemaName">The name of the schema to be retrieved.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSchemaMappingOutput> GetSchemaMappingAsync(string schemaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1458,7 +1483,10 @@ namespace MyNS
 		/// Returns the corresponding Match ID of a customer record if the record has been processed.
 		/// GetMatchId matchingworkflows/{workflowName}/matches
 		/// </summary>
-		/// <param name="workflowName">The name of the workflow.</param>
+		/// <param name="workflowName">The name of the workflow.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchIdOutput> GetMatchIdAsync(string workflowName, GetMatchIdPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1500,7 +1528,10 @@ namespace MyNS
 		/// GetMatchingJob matchingworkflows/{workflowName}/jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The ID of the job.</param>
-		/// <param name="workflowName">The name of the workflow.</param>
+		/// <param name="workflowName">The name of the workflow.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchingJobOutput> GetMatchingJobAsync(string jobId, string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1534,9 +1565,18 @@ namespace MyNS
 		/// Lists all jobs for a given workflow.
 		/// ListMatchingJobs matchingworkflows/{workflowName}/jobs
 		/// </summary>
-		/// <param name="maxResults">The maximum number of objects returned per page.</param>
-		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.</param>
-		/// <param name="workflowName">The name of the workflow to be retrieved.</param>
+		/// <param name="maxResults">The maximum number of objects returned per page.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
+		/// <param name="workflowName">The name of the workflow to be retrieved.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMatchingJobsOutput> ListMatchingJobsAsync(int maxResults, string nextToken, string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1570,7 +1610,10 @@ namespace MyNS
 		/// Starts the <code>MatchingJob</code> of a workflow. The workflow must have previously been created using the <code>CreateMatchingWorkflow</code> endpoint.
 		/// StartMatchingJob matchingworkflows/{workflowName}/jobs
 		/// </summary>
-		/// <param name="workflowName">The name of the matching job to be retrieved.</param>
+		/// <param name="workflowName">The name of the matching job to be retrieved.
+		/// Max length: 255
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMatchingJobOutput> StartMatchingJobAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1675,7 +1718,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource for which you want to untag.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the resource.</param>
+		/// <param name="tagKeys">The list of tag keys to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

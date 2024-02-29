@@ -1897,6 +1897,7 @@ export namespace MyNS {
 		 * Gets information about Amazon Web Services tags for the specified ARN.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource to be retrieved. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1907,6 +1908,7 @@ export namespace MyNS {
 		 * Adds or updates tags for the Amazon Web Services resource with the specified ARN.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1944,7 +1946,9 @@ export namespace MyNS {
 		 * Removes tags from the resource with the specified ARN.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} tagKeys Array of tags to be removed. Array of maps, each of the form s<code>tring:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2028,8 +2032,8 @@ export namespace MyNS {
 
 		/**
 		 * Channel name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -2038,8 +2042,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration ARN. Default: "" (empty string, recording is disabled).
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		recordingConfigurationArn?: string | null;
 
@@ -2062,8 +2066,8 @@ export namespace MyNS {
 
 		/**
 		 * Channel name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2072,8 +2076,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration ARN. Default: "" (empty string, recording is disabled).
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		recordingConfigurationArn: FormControl<string | null | undefined>,
 
@@ -2107,8 +2111,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -2132,8 +2136,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2206,8 +2210,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which to create the stream key.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
@@ -2219,8 +2223,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which to create the stream key.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
@@ -2240,8 +2244,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2250,8 +2254,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2267,8 +2271,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the key pair to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2277,8 +2281,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the key pair to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2294,8 +2298,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the recording configuration to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2304,8 +2308,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the recording configuration to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2321,8 +2325,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stream key to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2331,8 +2335,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stream key to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2348,8 +2352,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which the configuration is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2358,8 +2362,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which the configuration is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2375,8 +2379,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the key pair to be returned.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2385,8 +2389,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the key pair to be returned.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2402,8 +2406,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the recording configuration to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2412,8 +2416,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the recording configuration to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2429,8 +2433,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN for stream to be accessed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 	}
@@ -2439,8 +2443,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN for stream to be accessed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 	}
@@ -2456,8 +2460,8 @@ export namespace MyNS {
 		/**
 		 * ARN for the stream key to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -2466,8 +2470,8 @@ export namespace MyNS {
 		/**
 		 * ARN for the stream key to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2483,15 +2487,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel resource
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
 		/**
 		 * Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		streamId?: string | null;
 	}
@@ -2500,15 +2504,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel resource
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		streamId: FormControl<string | null | undefined>,
 	}
@@ -2524,8 +2528,8 @@ export namespace MyNS {
 
 		/**
 		 * Playback-key-pair name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -2542,8 +2546,8 @@ export namespace MyNS {
 
 		/**
 		 * Playback-key-pair name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2569,15 +2573,15 @@ export namespace MyNS {
 
 		/**
 		 * Filters the channel list to match the specified name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByName?: string | null;
 
 		/**
 		 * Filters the channel list to match the specified recording-configuration ARN.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByRecordingConfigurationArn?: string | null;
 
@@ -2590,8 +2594,8 @@ export namespace MyNS {
 
 		/**
 		 * The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2599,15 +2603,15 @@ export namespace MyNS {
 
 		/**
 		 * Filters the channel list to match the specified name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByName: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters the channel list to match the specified recording-configuration ARN.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByRecordingConfigurationArn: FormControl<string | null | undefined>,
 
@@ -2620,8 +2624,8 @@ export namespace MyNS {
 
 		/**
 		 * The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2646,8 +2650,8 @@ export namespace MyNS {
 
 		/**
 		 * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2662,8 +2666,8 @@ export namespace MyNS {
 
 		/**
 		 * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2686,8 +2690,8 @@ export namespace MyNS {
 
 		/**
 		 * The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2702,8 +2706,8 @@ export namespace MyNS {
 
 		/**
 		 * The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2720,8 +2724,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN used to filter the list.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
@@ -2734,8 +2738,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2744,8 +2748,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN used to filter the list.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
@@ -2758,8 +2762,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2777,8 +2781,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN used to filter the list.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
@@ -2791,8 +2795,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2801,8 +2805,8 @@ export namespace MyNS {
 		/**
 		 * Channel ARN used to filter the list.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
@@ -2815,8 +2819,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2843,8 +2847,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -2859,8 +2863,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2913,8 +2917,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel into which metadata is inserted. This channel must have an active stream.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
@@ -2930,8 +2934,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel into which metadata is inserted. This channel must have an active stream.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
@@ -2955,16 +2959,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel associated with the viewer session to revoke.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 
 		/**
 		 * The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		viewerId: string;
 
@@ -2979,16 +2983,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel associated with the viewer session to revoke.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		viewerId: FormControl<string | null | undefined>,
 
@@ -3012,8 +3016,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which the stream is to be stopped.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: string;
 	}
@@ -3022,8 +3026,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel for which the stream is to be stopped.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelArn: FormControl<string | null | undefined>,
 	}
@@ -3039,8 +3043,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 
@@ -3055,8 +3059,8 @@ export namespace MyNS {
 
 		/**
 		 * Channel name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -3065,8 +3069,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		recordingConfigurationArn?: string | null;
 
@@ -3078,8 +3082,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the channel to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 
@@ -3094,8 +3098,8 @@ export namespace MyNS {
 
 		/**
 		 * Channel name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3104,8 +3108,8 @@ export namespace MyNS {
 
 		/**
 		 * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		recordingConfigurationArn: FormControl<string | null | undefined>,
 

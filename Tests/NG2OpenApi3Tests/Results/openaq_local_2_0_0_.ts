@@ -12,7 +12,10 @@ export namespace MyNS {
 		/** Required */
 		city: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		country?: string | null;
 
@@ -22,7 +25,10 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: number;
 
 		/** Required */
@@ -33,7 +39,10 @@ export namespace MyNS {
 		/** Required */
 		city: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
 
@@ -43,7 +52,10 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: FormControl<number | null | undefined>,
 	}
 	export function CreateCitiesRowFormGroup() {
@@ -64,13 +76,19 @@ export namespace MyNS {
 
 	export interface CountriesRow {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cities: number;
 
 		/** Required */
 		code: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 
 		/** Required */
@@ -79,7 +97,10 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: number;
 
 		/** Required */
@@ -88,18 +109,27 @@ export namespace MyNS {
 		/** Required */
 		parameters: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sources: number;
 	}
 	export interface CountriesRowFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cities: FormControl<number | null | undefined>,
 
 		/** Required */
 		code: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -108,13 +138,19 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sources: FormControl<number | null | undefined>,
 	}
 	export function CreateCountriesRowFormGroup() {
@@ -182,18 +218,30 @@ export namespace MyNS {
 	export enum MeasOrder { city = 'city', country = 'country', location = 'location', datetime = 'datetime' }
 
 	export interface Meta {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		found?: number | null;
 		license?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		website?: string | null;
 	}
 	export interface MetaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		found: FormControl<number | null | undefined>,
 		license: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		website: FormControl<string | null | undefined>,
 	}
@@ -259,9 +307,14 @@ export namespace MyNS {
 		/** Required */
 		displayName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		isCore?: boolean | null;
+
+		/** Type: double */
 		maxColorValue?: number | null;
 
 		/** Required */
@@ -278,9 +331,14 @@ export namespace MyNS {
 		/** Required */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		isCore: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		maxColorValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -324,7 +382,10 @@ export namespace MyNS {
 		/** Required */
 		firstUpdated: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		isAnalysis?: boolean | null;
 		isMobile?: boolean | null;
@@ -335,10 +396,16 @@ export namespace MyNS {
 		/** Required */
 		locationIds: Array<number>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		measurements: number;
 
 		/** Required */
@@ -358,7 +425,10 @@ export namespace MyNS {
 		/** Required */
 		firstUpdated: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		isAnalysis: FormControl<boolean | null | undefined>,
 		isMobile: FormControl<boolean | null | undefined>,
@@ -366,10 +436,16 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		measurements: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -398,10 +474,16 @@ export namespace MyNS {
 
 	export interface ProjectParameterDetails {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		average: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 		displayName?: string | null;
 
@@ -411,16 +493,25 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lastValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: number;
 
 		/** Required */
 		parameter: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterId: number;
 
 		/** Required */
@@ -428,10 +519,16 @@ export namespace MyNS {
 	}
 	export interface ProjectParameterDetailsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
 
@@ -441,16 +538,25 @@ export namespace MyNS {
 		/** Required */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lastValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locations: FormControl<number | null | undefined>,
 
 		/** Required */
 		parameter: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -619,12 +725,17 @@ export namespace MyNS {
 		 * Provides a simple listing of cities within the platform
 		 * Get v1/cities
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -643,12 +754,17 @@ export namespace MyNS {
 		/**
 		 * Countries Getv1
 		 * Get v1/countries
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -662,7 +778,13 @@ export namespace MyNS {
 		/**
 		 * Countries Get
 		 * Get v1/countries/{country_id}
+		 * @param {string} country_id Min length: 2
+		 *     Max length: 2
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
@@ -678,12 +800,20 @@ export namespace MyNS {
 		 * Latest V1 Get
 		 * Get v1/latest
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -692,6 +822,7 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {LocationsOrder} order_by Order by a field
 		 * @param {boolean} isMobile Location is mobile
 		 * @param {boolean} isAnalysis Data is the product of a previous analysis/aggregation and not raw measurements
@@ -709,13 +840,22 @@ export namespace MyNS {
 		/**
 		 * Latest V1 Get
 		 * Get v1/latest/{location_id}
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -742,12 +882,20 @@ export namespace MyNS {
 		 * Locationsv1 Get
 		 * Get v1/locations
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -756,6 +904,7 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {LocationsOrder} order_by Order by a field
 		 * @param {boolean} isMobile Location is mobile
 		 * @param {boolean} isAnalysis Data is the product of a previous analysis/aggregation and not raw measurements
@@ -773,13 +922,22 @@ export namespace MyNS {
 		/**
 		 * Locationsv1 Get
 		 * Get v1/locations/{location_id}
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -806,11 +964,19 @@ export namespace MyNS {
 		 * Measurements Get V1
 		 * Get v1/measurements
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -819,6 +985,10 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} value_from Type: double
+		 * @param {number} value_to Type: double
 		 * @return {any} Successful Response
 		 */
 		Measurements_get_v1_v1_measurements_get(format: string | null | undefined, date_from: Date | null | undefined, date_to: Date | null | undefined, limit: number | null | undefined, page: number | null | undefined, offset: number | null | undefined, sort: Sort | null | undefined, has_geo: boolean | null | undefined, parameter_id: number | null | undefined, parameter: Array<string> | null | undefined, unit: Array<string> | null | undefined, coordinates: string | null | undefined, radius: number | null | undefined, country_id: string | null | undefined, country: Array<string> | null | undefined, city: Array<string> | null | undefined, location_id: number | null | undefined, location: Array<string> | null | undefined, order_by: MeasOrder | null | undefined, isMobile: boolean | null | undefined, isAnalysis: boolean | null | undefined, project: number | null | undefined, entity: EntityTypes | null | undefined, sensorType: SensorTypes | null | undefined, value_from: number | null | undefined, value_to: number | null | undefined, include_fields: string | null | undefined): Observable<HttpResponse<string>> {
@@ -829,7 +999,11 @@ export namespace MyNS {
 		 * Parameters Getv1
 		 * Get v1/parameters
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @return {OpenAQParametersResult} Successful Response
 		 */
@@ -841,7 +1015,11 @@ export namespace MyNS {
 		 * Sources V1 Get
 		 * Get v1/sources
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @return {OpenAQResult} Successful Response
 		 */
@@ -852,16 +1030,23 @@ export namespace MyNS {
 		/**
 		 * Averages V2 Get
 		 * Get v2/averages
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
 		 *         
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @return {OpenAQResult} Successful Response
 		 */
@@ -873,12 +1058,17 @@ export namespace MyNS {
 		 * Provides a simple listing of cities within the platform
 		 * Get v2/cities
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -897,12 +1087,17 @@ export namespace MyNS {
 		/**
 		 * Countries Get
 		 * Get v2/countries
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -916,7 +1111,13 @@ export namespace MyNS {
 		/**
 		 * Countries Get
 		 * Get v2/countries/{country_id}
+		 * @param {string} country_id Min length: 2
+		 *     Max length: 2
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
@@ -932,12 +1133,20 @@ export namespace MyNS {
 		 * Latest Get
 		 * Get v2/latest
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -946,6 +1155,7 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {LocationsOrder} order_by Order by a field
 		 * @param {boolean} isMobile Location is mobile
 		 * @param {boolean} isAnalysis Data is the product of a previous analysis/aggregation and not raw measurements
@@ -963,13 +1173,22 @@ export namespace MyNS {
 		/**
 		 * Latest Get
 		 * Get v2/latest/{location_id}
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -996,12 +1215,20 @@ export namespace MyNS {
 		 * Locations Get
 		 * Get v2/locations
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -1010,6 +1237,7 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {LocationsOrder} order_by Order by a field
 		 * @param {boolean} isMobile Location is mobile
 		 * @param {boolean} isAnalysis Data is the product of a previous analysis/aggregation and not raw measurements
@@ -1036,7 +1264,11 @@ export namespace MyNS {
 		/**
 		 * Get Mobilegentile
 		 * Get v2/locations/tiles/mobile-generalized/{z}/{x}/{y}.pbf
+		 * @param {number} z Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} x Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} y Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} location limit data to location id
+		 * @param {number} project Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful Response
 		 */
 		Get_mobilegentile_v2_locations_tiles_mobile_generalized__z___x___y__pbf_get(z: number, x: number, y: number, parameter: number | null | undefined, location: Array<number> | null | undefined, lastUpdatedFrom: Date | null | undefined, lastUpdatedTo: Date | null | undefined, isMobile: boolean | null | undefined, project: number | null | undefined, isAnalysis: boolean | null | undefined): Observable<HttpResponse<string>> {
@@ -1055,7 +1287,11 @@ export namespace MyNS {
 		/**
 		 * Get Mobiletile
 		 * Get v2/locations/tiles/mobile/{z}/{x}/{y}.pbf
+		 * @param {number} z Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} x Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} y Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} location limit data to location id
+		 * @param {number} project Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful Response
 		 */
 		Get_mobiletile_v2_locations_tiles_mobile__z___x___y__pbf_get(z: number, x: number, y: number, dateFrom: Date, dateTo: Date, parameter: number | null | undefined, location: Array<number> | null | undefined, lastUpdatedFrom: Date | null | undefined, lastUpdatedTo: Date | null | undefined, isMobile: boolean | null | undefined, project: number | null | undefined, isAnalysis: boolean | null | undefined): Observable<HttpResponse<string>> {
@@ -1083,7 +1319,11 @@ export namespace MyNS {
 		/**
 		 * Get Tile
 		 * Get v2/locations/tiles/{z}/{x}/{y}.pbf
+		 * @param {number} z Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} x Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} y Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} location limit data to location id
+		 * @param {number} project Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful Response
 		 */
 		Get_tile_v2_locations_tiles__z___x___y__pbf_get(z: number, x: number, y: number, parameter: number | null | undefined, location: Array<number> | null | undefined, lastUpdatedFrom: Date | null | undefined, lastUpdatedTo: Date | null | undefined, isMobile: boolean | null | undefined, project: number | null | undefined, isAnalysis: boolean | null | undefined): Observable<HttpResponse<string>> {
@@ -1093,13 +1333,22 @@ export namespace MyNS {
 		/**
 		 * Locations Get
 		 * Get v2/locations/{location_id}
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Sort Direction
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -1135,11 +1384,19 @@ export namespace MyNS {
 		 * Measurements Get
 		 * Get v2/measurements
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} radius Minimum: 0
+		 *     Maximum: 100000
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
@@ -1148,6 +1405,10 @@ export namespace MyNS {
 		 *         Limit results by a certain city or cities.
 		 *         (ex. ?city=Chicago or ?city=Chicago&city=Boston)
 		 *         
+		 * @param {number} location_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} value_from Type: double
+		 * @param {number} value_to Type: double
 		 * @return {any} Successful Response
 		 */
 		Measurements_get_v2_measurements_get(format: string | null | undefined, date_from: Date | null | undefined, date_to: Date | null | undefined, limit: number | null | undefined, page: number | null | undefined, offset: number | null | undefined, sort: Sort | null | undefined, has_geo: boolean | null | undefined, parameter_id: number | null | undefined, parameter: Array<string> | null | undefined, unit: Array<string> | null | undefined, coordinates: string | null | undefined, radius: number | null | undefined, country_id: string | null | undefined, country: Array<string> | null | undefined, city: Array<string> | null | undefined, location_id: number | null | undefined, location: Array<string> | null | undefined, order_by: MeasOrder | null | undefined, isMobile: boolean | null | undefined, isAnalysis: boolean | null | undefined, project: number | null | undefined, entity: EntityTypes | null | undefined, sensorType: SensorTypes | null | undefined, value_from: number | null | undefined, value_to: number | null | undefined, include_fields: string | null | undefined): Observable<HttpResponse<string>> {
@@ -1167,7 +1428,11 @@ export namespace MyNS {
 		 * Parameters Get
 		 * Get v2/parameters
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @return {OpenAQParametersResult} Successful Response
 		 */
@@ -1182,13 +1447,20 @@ export namespace MyNS {
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
 		 *         
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OpenAQProjectsResult} Successful Response
 		 */
 		Projects_get_v2_projects_get(country_id: string | null | undefined, country: Array<string> | null | undefined, limit: number | null | undefined, page: number | null | undefined, offset: number | null | undefined, sort: Sort | null | undefined, parameter_id: number | null | undefined, parameter: Array<string> | null | undefined, unit: Array<string> | null | undefined, project_id: number | null | undefined, project: Array<string> | null | undefined, order_by: ProjectsOrder | null | undefined, isMobile: boolean | null | undefined, isAnalysis: boolean | null | undefined, entity: string | null | undefined, sensorType: string | null | undefined, sourceName: Array<string> | null | undefined): Observable<OpenAQProjectsResult> {
@@ -1198,17 +1470,24 @@ export namespace MyNS {
 		/**
 		 * Projects Get
 		 * Get v2/projects/{project_id}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} country_id 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. /US)
 		 *         
+		 *     Min length: 2    Max length: 2
 		 * @param {Array<string>} country 
 		 *         Limit results by a certain country using two letter country code.
 		 *         (ex. ?country=US or ?country=US&country=MX)
 		 *         
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
+		 * @param {number} parameter_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OpenAQProjectsResult} Successful Response
 		 */
 		Projects_get_v2_projects__project_id__get(project_id: number, country_id: string | null | undefined, country: Array<string> | null | undefined, limit: number | null | undefined, page: number | null | undefined, offset: number | null | undefined, sort: Sort | null | undefined, parameter_id: number | null | undefined, parameter: Array<string> | null | undefined, unit: Array<string> | null | undefined, project: Array<string> | null | undefined, order_by: ProjectsOrder | null | undefined, isMobile: boolean | null | undefined, isAnalysis: boolean | null | undefined, entity: string | null | undefined, sensorType: string | null | undefined, sourceName: Array<string> | null | undefined): Observable<OpenAQProjectsResult> {
@@ -1219,7 +1498,11 @@ export namespace MyNS {
 		 * Sources Get
 		 * Get v2/sources
 		 * @param {number} limit Change the number of results returned.
+		 *     Minimum: 0    Maximum: 100000
 		 * @param {number} page Paginate through results.
+		 *     Minimum: 0    Maximum: 6000
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 10000
 		 * @param {Sort} sort Define sort order.
 		 * @return {OpenAQResult} Successful Response
 		 */

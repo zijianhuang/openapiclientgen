@@ -2144,6 +2144,7 @@ export namespace MyNS {
 		 * <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		 * Get #Action=CreateSMSSandboxPhoneNumber
 		 * @param {string} PhoneNumber The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.
+		 *     Max length: 20
 		 * @param {LanguageCodeString} LanguageCode The language to use for sending the OTP. The default value is <code>en-US</code>.
 		 * @return {void} Success
 		 */
@@ -2188,6 +2189,7 @@ export namespace MyNS {
 		 * <p>Deletes an Amazon Web Services account's verified or pending phone number from the SMS sandbox.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		 * Get #Action=DeleteSMSSandboxPhoneNumber
 		 * @param {string} PhoneNumber The destination phone number to delete.
+		 *     Max length: 20
 		 * @return {void} Success
 		 */
 		GET_DeleteSMSSandboxPhoneNumber(PhoneNumber: string, Action: GET_DeleteSMSSandboxPhoneNumberAction, Version: GET_AddPermissionVersion): Observable<HttpResponse<string>> {
@@ -2289,6 +2291,7 @@ export namespace MyNS {
 		 * Get #Action=ListOriginationNumbers
 		 * @param {string} NextToken Token that the previous <code>ListOriginationNumbers</code> request returns.
 		 * @param {number} MaxResults The maximum number of origination numbers to return.
+		 *     Minimum: 1    Maximum: 30
 		 * @return {void} Success
 		 */
 		GET_ListOriginationNumbers(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListOriginationNumbersAction, Version: GET_AddPermissionVersion): Observable<HttpResponse<string>> {
@@ -2320,6 +2323,7 @@ export namespace MyNS {
 		 * Get #Action=ListSMSSandboxPhoneNumbers
 		 * @param {string} NextToken Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.
 		 * @param {number} MaxResults The maximum number of phone numbers to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {void} Success
 		 */
 		GET_ListSMSSandboxPhoneNumbers(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListSMSSandboxPhoneNumbersAction, Version: GET_AddPermissionVersion): Observable<HttpResponse<string>> {
@@ -2351,6 +2355,7 @@ export namespace MyNS {
 		 * List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
 		 * Get #Action=ListTagsForResource
 		 * @param {string} ResourceArn The ARN of the topic for which to list tags.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} Success
 		 */
 		GET_ListTagsForResource(ResourceArn: string, Action: GET_ListTagsForResourceAction, Version: GET_AddPermissionVersion): Observable<HttpResponse<string>> {
@@ -2502,6 +2507,7 @@ export namespace MyNS {
 		 * <p>Add tags to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>When you use topic tags, keep the following guidelines in mind:</p> <ul> <li> <p>Adding more than 50 tags to a topic isn't recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.</p> </li> <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p> </li> </ul>
 		 * Get #Action=TagResource
 		 * @param {string} ResourceArn The ARN of the topic to which to add tags.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<Tag>} Tags The tags to be added to the specified topic. A tag consists of a required key and an optional value.
 		 * @return {void} Success
 		 */
@@ -2523,6 +2529,7 @@ export namespace MyNS {
 		 * Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.
 		 * Get #Action=UntagResource
 		 * @param {string} ResourceArn The ARN of the topic from which to remove tags.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} TagKeys The list of tag keys to remove from the specified topic.
 		 * @return {void} Success
 		 */
@@ -2534,7 +2541,9 @@ export namespace MyNS {
 		 * <p>Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		 * Get #Action=VerifySMSSandboxPhoneNumber
 		 * @param {string} PhoneNumber The destination phone number to verify.
+		 *     Max length: 20
 		 * @param {string} OneTimePassword The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.
+		 *     Min length: 5    Max length: 8
 		 * @return {void} Success
 		 */
 		GET_VerifySMSSandboxPhoneNumber(PhoneNumber: string, OneTimePassword: string, Action: GET_VerifySMSSandboxPhoneNumberAction, Version: GET_AddPermissionVersion): Observable<HttpResponse<string>> {

@@ -433,9 +433,15 @@ namespace MyNS
 		/// ListEventSources 2014-11-13/event-source-mappings/
 		/// </summary>
 		/// <param name="EventSource">The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</param>
-		/// <param name="FunctionName">The name of the AWS Lambda function.</param>
+		/// <param name="FunctionName">The name of the AWS Lambda function.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Optional string. An opaque pagination token returned from a previous <code>ListEventSources</code> operation. If present, specifies to continue the list from where the returning call left off. </param>
-		/// <param name="MaxItems">Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.</param>
+		/// <param name="MaxItems">Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEventSourcesResponse> ListEventSourcesAsync(string EventSource, string FunctionName, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -469,7 +475,10 @@ namespace MyNS
 		/// <p>Deletes the specified Lambda function code and configuration.</p> <p>This operation requires permission for the <code>lambda:DeleteFunction</code> action.</p>
 		/// DeleteFunction 2014-11-13/functions/{FunctionName}
 		/// </summary>
-		/// <param name="FunctionName">The Lambda function to delete.</param>
+		/// <param name="FunctionName">The Lambda function to delete.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2014-11-13/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName));
@@ -496,7 +505,10 @@ namespace MyNS
 		/// <p>Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with <a>UploadFunction</a> so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.</p> <p>This operation requires permission for the <code>lambda:GetFunction</code> action.</p>
 		/// GetFunction 2014-11-13/functions/{FunctionName}
 		/// </summary>
-		/// <param name="FunctionName">The Lambda function name.</param>
+		/// <param name="FunctionName">The Lambda function name.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionResponse> GetFunctionAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -591,7 +603,10 @@ namespace MyNS
 		/// <p>Returns the configuration information of the Lambda function. This the same information you provided as parameters when uploading the function by using <a>UploadFunction</a>.</p> <p>This operation requires permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
 		/// GetFunctionConfiguration 2014-11-13/functions/{FunctionName}/configuration
 		/// </summary>
-		/// <param name="FunctionName">The name of the Lambda function for which you want to retrieve the configuration information.</param>
+		/// <param name="FunctionName">The name of the Lambda function for which you want to retrieve the configuration information.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> GetFunctionConfigurationAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -625,12 +640,24 @@ namespace MyNS
 		/// <p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
 		/// UpdateFunctionConfiguration 2014-11-13/functions/{FunctionName}/configuration
 		/// </summary>
-		/// <param name="FunctionName">The name of the Lambda function.</param>
+		/// <param name="FunctionName">The name of the Lambda function.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="Role">The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes your function. </param>
 		/// <param name="Handler">The function that Lambda calls to begin executing your function. For Node.js, it is the <i>module-name.export</i> value in your function. </param>
-		/// <param name="Description">A short user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.</param>
-		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. </param>
-		/// <param name="MemorySize">The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, a database operation might need less memory compared to an image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.</param>
+		/// <param name="Description">A short user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
+		/// Minimum: 1
+		/// Maximum: 60
+		// </param>
+		/// <param name="MemorySize">The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, a database operation might need less memory compared to an image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.
+		/// Minimum: 128
+		/// Maximum: 1024
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> UpdateFunctionConfigurationAsync(string FunctionName, string Role, string Handler, string Description, int Timeout, int MemorySize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -659,7 +686,10 @@ namespace MyNS
 		/// <p>Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes the specified function asynchronously. To see the logs generated by the Lambda function execution, see the CloudWatch logs console.</p> <p>This operation requires permission for the <code>lambda:InvokeAsync</code> action.</p>
 		/// Invoke 2014-11-13/functions/{FunctionName}/invoke-async/
 		/// </summary>
-		/// <param name="FunctionName">The Lambda function name.</param>
+		/// <param name="FunctionName">The Lambda function name.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task InvokeAsync(string FunctionName, InvokePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2014-11-13/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/invoke-async/";
@@ -694,7 +724,10 @@ namespace MyNS
 		/// ListFunctions 2014-11-13/functions/
 		/// </summary>
 		/// <param name="Marker">Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </param>
-		/// <param name="MaxItems">Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.</param>
+		/// <param name="MaxItems">Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionsResponse> ListFunctionsAsync(string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -728,14 +761,26 @@ namespace MyNS
 		/// <p>Creates a new Lambda function or updates an existing function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the existing Lambda function is updated with the new code and metadata. </p> <p>This operation requires permission for the <code>lambda:UploadFunction</code> action.</p>
 		/// UploadFunction 2014-11-13/functions/{FunctionName}#Runtime&Role&Handler&Mode
 		/// </summary>
-		/// <param name="FunctionName">The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>InvokeAsync</a>. </param>
+		/// <param name="FunctionName">The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>InvokeAsync</a>. 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="Runtime">The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</param>
 		/// <param name="Role">The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </param>
 		/// <param name="Handler">The function that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </param>
 		/// <param name="Mode">How the Lambda function will be invoked. Lambda supports only the "event" mode. </param>
-		/// <param name="Description">A short, user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.</param>
-		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. </param>
-		/// <param name="MemorySize">The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, database operation might need less memory compared to image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.</param>
+		/// <param name="Description">A short, user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
+		/// Max length: 256
+		/// Min length: 0
+		// </param>
+		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
+		/// Minimum: 1
+		/// Maximum: 60
+		// </param>
+		/// <param name="MemorySize">The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, database operation might need less memory compared to image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.
+		/// Minimum: 128
+		/// Maximum: 1024
+		// </param>
 		public async Task UploadFunctionAsync(string FunctionName, Runtime Runtime, string Role, string Handler, UploadFunctionMode Mode, string Description, int Timeout, int MemorySize, UploadFunctionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2014-11-13/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"#Runtime&Role&Handler&Mode&Runtime=" + Runtime+"&Role=" + (Role==null? "" : System.Uri.EscapeDataString(Role))+"&Handler=" + (Handler==null? "" : System.Uri.EscapeDataString(Handler))+"&Mode=" + Mode+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&Timeout="+Timeout+"&MemorySize="+MemorySize;

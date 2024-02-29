@@ -444,6 +444,7 @@ export namespace MyNS {
 		/**
 		 * Distance to facility in decimal format.
 		 * Required
+		 * Type: double
 		 */
 		distance: number;
 
@@ -460,6 +461,7 @@ export namespace MyNS {
 		/**
 		 * Distance to facility in decimal format.
 		 * Required
+		 * Type: double
 		 */
 		distance: FormControl<number | null | undefined>,
 
@@ -522,24 +524,28 @@ export namespace MyNS {
 		/**
 		 * Current page of response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_page: number;
 
 		/**
 		 * Number of results per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		per_page: number;
 
 		/**
 		 * Total number of entries matching this query.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_entries: number;
 
 		/**
 		 * Total number of pages matching this query.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_pages: number;
 	}
@@ -550,24 +556,28 @@ export namespace MyNS {
 		/**
 		 * Current page of response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of results per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of entries matching this query.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_entries: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages matching this query.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
@@ -680,12 +690,14 @@ export namespace MyNS {
 		/**
 		 * Facility latitude.
 		 * Required
+		 * Type: float
 		 */
 		lat: number;
 
 		/**
 		 * Facility longitude.
 		 * Required
+		 * Type: float
 		 */
 		long: number;
 		mobile?: boolean | null;
@@ -743,12 +755,14 @@ export namespace MyNS {
 		/**
 		 * Facility latitude.
 		 * Required
+		 * Type: float
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Facility longitude.
 		 * Required
+		 * Type: float
 		 */
 		long: FormControl<number | null | undefined>,
 		mobile: FormControl<boolean | null | undefined>,
@@ -859,8 +873,8 @@ export namespace MyNS {
 
 		/**
 		 * Details of facility notices for visitors, such as messages about parking lot closures or floor visitation information.
-		 * Max length: 300
 		 * Min length: 0
+		 * Max length: 300
 		 */
 		additional_info?: string | null;
 
@@ -879,8 +893,8 @@ export namespace MyNS {
 
 		/**
 		 * Details of facility notices for visitors, such as messages about parking lot closures or floor visitation information.
-		 * Max length: 300
 		 * Min length: 0
+		 * Max length: 300
 		 */
 		additional_info: FormControl<string | null | undefined>,
 
@@ -1013,6 +1027,8 @@ export namespace MyNS {
 
 	/** Scores that indicate patient satisfaction at given facility per service. */
 	export interface Satisfaction {
+
+		/** Type: DateOnly */
 		effective_date?: Date | null;
 
 		/** Veteran-reported satisfaction score for health care services at VA health facilities. */
@@ -1021,6 +1037,8 @@ export namespace MyNS {
 
 	/** Scores that indicate patient satisfaction at given facility per service. */
 	export interface SatisfactionFormProperties {
+
+		/** Type: DateOnly */
 		effective_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateSatisfactionFormGroup() {
@@ -1034,32 +1052,56 @@ export namespace MyNS {
 	/** Veteran-reported satisfaction score for health care services at VA health facilities. */
 	export interface PatientSatisfaction {
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine primary care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine primary care visit.
+		 * Type: float
+		 */
 		primary_care_routine?: number | null;
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent primary care visit, NOT an urgent care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent primary care visit, NOT an urgent care visit.
+		 * Type: float
+		 */
 		primary_care_urgent?: number | null;
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine specialty care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine specialty care visit.
+		 * Type: float
+		 */
 		specialty_care_routine?: number | null;
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent specialty care visit, NOT an urgent care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent specialty care visit, NOT an urgent care visit.
+		 * Type: float
+		 */
 		specialty_care_urgent?: number | null;
 	}
 
 	/** Veteran-reported satisfaction score for health care services at VA health facilities. */
 	export interface PatientSatisfactionFormProperties {
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine primary care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine primary care visit.
+		 * Type: float
+		 */
 		primary_care_routine: FormControl<number | null | undefined>,
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent primary care visit, NOT an urgent care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a primary care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent primary care visit, NOT an urgent care visit.
+		 * Type: float
+		 */
 		primary_care_urgent: FormControl<number | null | undefined>,
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine specialty care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need routine attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for a routine specialty care visit.
+		 * Type: float
+		 */
 		specialty_care_routine: FormControl<number | null | undefined>,
 
-		/** Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent specialty care visit, NOT an urgent care visit. */
+		/**
+		 * Percentage of Veterans who say they usually or always get an appointment when they need urgent attention at a specialty care location. NOTE: Veterans are rating their satisfaction of getting an appointment for an urgent specialty care visit, NOT an urgent care visit.
+		 * Type: float
+		 */
 		specialty_care_urgent: FormControl<number | null | undefined>,
 	}
 	export function CreatePatientSatisfactionFormGroup() {
@@ -1082,7 +1124,10 @@ export namespace MyNS {
 		/** List of health services for given facility. */
 		health?: Array<string>;
 
-		/** Date of the most recent change in offered services. */
+		/**
+		 * Date of the most recent change in offered services.
+		 * Type: DateOnly
+		 */
 		last_updated?: Date | null;
 
 		/** List of other services not included in one of the other service categories. */
@@ -1092,7 +1137,10 @@ export namespace MyNS {
 	/** All services offered by a VA health or benefits facility grouped by service type. */
 	export interface ServicesFormProperties {
 
-		/** Date of the most recent change in offered services. */
+		/**
+		 * Date of the most recent change in offered services.
+		 * Type: DateOnly
+		 */
 		last_updated: FormControl<Date | null | undefined>,
 	}
 	export function CreateServicesFormGroup() {
@@ -1106,7 +1154,10 @@ export namespace MyNS {
 	/** Collection of wait times reported for various services based on access to care survey. */
 	export interface WaitTimes {
 
-		/** The effective date of when the access to care survey was carried out. */
+		/**
+		 * The effective date of when the access to care survey was carried out.
+		 * Type: DateOnly
+		 */
 		effective_date?: Date | null;
 
 		/** List of expected patient wait times for given health service. */
@@ -1116,7 +1167,10 @@ export namespace MyNS {
 	/** Collection of wait times reported for various services based on access to care survey. */
 	export interface WaitTimesFormProperties {
 
-		/** The effective date of when the access to care survey was carried out. */
+		/**
+		 * The effective date of when the access to care survey was carried out.
+		 * Type: DateOnly
+		 */
 		effective_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateWaitTimesFormGroup() {
@@ -1130,10 +1184,16 @@ export namespace MyNS {
 	/** Expected wait times for new and established patients for a given health care service at VA health facilities. */
 	export interface PatientWaitTime {
 
-		/** Average number of days a patient who has already been to this location has to wait for a non-urgent appointment. */
+		/**
+		 * Average number of days a patient who has already been to this location has to wait for a non-urgent appointment.
+		 * Type: double
+		 */
 		established?: number | null;
 
-		/** Average number of days a Veteran who hasn't been to this location has to wait for a non-urgent appointment. */
+		/**
+		 * Average number of days a Veteran who hasn't been to this location has to wait for a non-urgent appointment.
+		 * Type: double
+		 */
 		new?: number | null;
 
 		/**
@@ -1146,10 +1206,16 @@ export namespace MyNS {
 	/** Expected wait times for new and established patients for a given health care service at VA health facilities. */
 	export interface PatientWaitTimeFormProperties {
 
-		/** Average number of days a patient who has already been to this location has to wait for a non-urgent appointment. */
+		/**
+		 * Average number of days a patient who has already been to this location has to wait for a non-urgent appointment.
+		 * Type: double
+		 */
 		established: FormControl<number | null | undefined>,
 
-		/** Average number of days a Veteran who hasn't been to this location has to wait for a non-urgent appointment. */
+		/**
+		 * Average number of days a Veteran who hasn't been to this location has to wait for a non-urgent appointment.
+		 * Type: double
+		 */
 		new: FormControl<number | null | undefined>,
 
 		/**
@@ -1590,12 +1656,14 @@ export namespace MyNS {
 		/**
 		 * Maximum time to reach facility.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_time: number;
 
 		/**
 		 * Minimum time to reach facility.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min_time: number;
 	}
@@ -1604,12 +1672,14 @@ export namespace MyNS {
 		/**
 		 * Maximum time to reach facility.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_time: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum time to reach facility.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min_time: FormControl<number | null | undefined>,
 	}
@@ -1667,18 +1737,25 @@ export namespace MyNS {
 		 * @param {string} zip Zip code to search for facilities. More detailed zip codes can be passed in, but only the first five digits are used to determine facilities to return.
 		 * @param {string} state State in which to search for facilities. Except in rare cases, this is two characters.
 		 * @param {number} lat Latitude of point to search for facilities, in WGS84 coordinate reference system.
+		 *     Type: float
 		 * @param {number} long Longitude of point to search for facilities, in WGS84 coordinate reference system.
+		 *     Type: float
 		 * @param {number} radius Optional radial distance from specified latitude and longitude to filter facilities search in WGS84 coordinate reference system.
+		 *     Type: float
 		 * @param {Array<number>} bbox_ Bounding box (longitude, latitude, longitude, latitude) within which facilities will be returned. (WGS84 coordinate reference system)
+		 *     Minimum items: 4    Maximum items: 4
 		 * @param {number} visn VISN search of matching facilities.
+		 *     Type: double
 		 * @param {GetFacilitiesByLocationType} type Optional facility type search filter
 		 * @param {Array<string>} services_ Optional facility service search filter
 		 * @param {boolean} mobile Optional facility mobile search filter
-		 * @param {number} page Page of results to return per paginated response.
-		 * @param {number} per_page Number of results to return per paginated response.
+		 * @param {string} page Page of results to return per paginated response.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Number of results to return per paginated response.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {FacilitiesResponse} Success
 		 */
-		GetFacilitiesByLocation(ids: Array<string> | null | undefined, zip: string | null | undefined, state: string | null | undefined, lat: number | null | undefined, long: number | null | undefined, radius: number | null | undefined, bbox_: Array<number> | null | undefined, visn: number | null | undefined, type: GetFacilitiesByLocationType | null | undefined, services_: Array<string> | null | undefined, mobile: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<FacilitiesResponse> {
+		GetFacilitiesByLocation(ids: Array<string> | null | undefined, zip: string | null | undefined, state: string | null | undefined, lat: number | null | undefined, long: number | null | undefined, radius: number | null | undefined, bbox_: Array<number> | null | undefined, visn: number | null | undefined, type: GetFacilitiesByLocationType | null | undefined, services_: Array<string> | null | undefined, mobile: boolean | null | undefined, page: string | null | undefined, per_page: string | null | undefined): Observable<FacilitiesResponse> {
 			return this.http.get<FacilitiesResponse>(this.baseUri + 'facilities?' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&zip=' + (zip == null ? '' : encodeURIComponent(zip)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&lat=' + lat + '&long=' + long + '&radius=' + radius + '&' + bbox_?.map(z => `bbox[]=${z}`).join('&') + '&visn=' + visn + '&type=' + type + '&' + services_?.map(z => `services[]=${encodeURIComponent(z)}`).join('&') + '&mobile=' + mobile + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -1720,12 +1797,15 @@ export namespace MyNS {
 		 * To retrieve full details for nearby facilities, see the documentation for `/facilities?ids`.
 		 * Get nearby
 		 * @param {number} lat Latitude of the location from which drive time will be calculated.
+		 *     Type: float
 		 * @param {number} lng Longitude of the location from which drive time will be calculated.
+		 *     Type: float
 		 * @param {string} street_address Street address of the location from which drive time will be calculated.
 		 * @param {string} city City of the location from which drive time will be calculated.
 		 * @param {string} state Two character state code of the location from which drive time will be calculated.
 		 * @param {string} zip Zip code of the location from which drive time will be calculated.
 		 * @param {GetNearbyFacilitiesDrive_time} drive_time Filter to only include facilities that are within the specified number of drive time minutes from the requested location.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} services_ Optional facility service search filter
 		 * @return {NearbyResponse} Success
 		 */

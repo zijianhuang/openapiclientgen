@@ -1299,6 +1299,7 @@ export namespace MyNS {
 		 * Cancels the specified task.
 		 * Put quantum-task/{quantumTaskArn}/cancel
 		 * @param {string} quantumTaskArn The ARN of the task to cancel.
+		 *     Min length: 1    Max length: 256
 		 * @return {CancelQuantumTaskResponse} Success
 		 */
 		CancelQuantumTask(quantumTaskArn: string, requestBody: CancelQuantumTaskPutBody): Observable<CancelQuantumTaskResponse> {
@@ -1327,6 +1328,7 @@ export namespace MyNS {
 		 * <p>Retrieves the devices available in Amazon Braket.</p> <note> <p>For backwards compatibility with older versions of BraketSchemas, OpenQASM information is omitted from GetDevice API calls. To get this information the user-agent needs to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK automatically reports this for you. If you do not see OpenQASM results in the GetDevice response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment variable to configure user-agent. See the code examples provided below for how to do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs.</p> </note>
 		 * Get device/{deviceArn}
 		 * @param {string} deviceArn The ARN of the device to retrieve.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetDeviceResponse} Success
 		 */
 		GetDevice(deviceArn: string): Observable<GetDeviceResponse> {
@@ -1347,6 +1349,7 @@ export namespace MyNS {
 		 * Retrieves the specified quantum task.
 		 * Get quantum-task/{quantumTaskArn}
 		 * @param {string} quantumTaskArn the ARN of the task to retrieve.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetQuantumTaskResponse} Success
 		 */
 		GetQuantumTask(quantumTaskArn: string): Observable<GetQuantumTaskResponse> {
@@ -1423,8 +1426,8 @@ export namespace MyNS {
 		/**
 		 * The client token associated with the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 	}
@@ -1433,8 +1436,8 @@ export namespace MyNS {
 		/**
 		 * The client token associated with the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1459,8 +1462,8 @@ export namespace MyNS {
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1489,8 +1492,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Braket job.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		jobName: string;
 
@@ -1517,8 +1520,8 @@ export namespace MyNS {
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1528,8 +1531,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Braket job.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		jobName: FormControl<string | null | undefined>,
 
@@ -1653,46 +1656,46 @@ export namespace MyNS {
 		/**
 		 * The client token associated with the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
 		/**
 		 * The ARN of the device to run the task on.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		deviceArn: string;
 
 		/**
 		 * The parameters for the device to run the task on.
-		 * Max length: 48000
 		 * Min length: 1
+		 * Max length: 48000
 		 */
 		deviceParameters?: string | null;
 
 		/**
 		 * The token for an Amazon Braket job that associates it with the quantum task.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		jobToken?: string | null;
 
 		/**
 		 * The S3 bucket to store task result files in.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		outputS3Bucket: string;
 
 		/**
 		 * The key prefix for the location in the S3 bucket to store task results in.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		outputS3KeyPrefix: string;
 
@@ -1717,46 +1720,46 @@ export namespace MyNS {
 		/**
 		 * The client token associated with the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the device to run the task on.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		deviceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The parameters for the device to run the task on.
-		 * Max length: 48000
 		 * Min length: 1
+		 * Max length: 48000
 		 */
 		deviceParameters: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for an Amazon Braket job that associates it with the quantum task.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		jobToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 bucket to store task result files in.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		outputS3Bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * The key prefix for the location in the S3 bucket to store task results in.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		outputS3KeyPrefix: FormControl<string | null | undefined>,
 

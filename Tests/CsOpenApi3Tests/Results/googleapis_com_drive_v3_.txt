@@ -2852,7 +2852,10 @@ namespace MyNS
 		/// <param name="includePermissionsForView">Specifies which additional view's permissions to include in the response. Only 'published' is supported.</param>
 		/// <param name="includeRemoved">Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.</param>
 		/// <param name="includeTeamDriveItems">Deprecated: Use `includeItemsFromAllDrives` instead.</param>
-		/// <param name="pageSize">The maximum number of changes to return per page.</param>
+		/// <param name="pageSize">The maximum number of changes to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="restrictToMyDrive">Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.</param>
 		/// <param name="spaces">A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.</param>
 		/// <param name="supportsAllDrives">Whether the requesting application supports both My Drives and shared drives.</param>
@@ -2936,7 +2939,10 @@ namespace MyNS
 		/// <param name="includePermissionsForView">Specifies which additional view's permissions to include in the response. Only 'published' is supported.</param>
 		/// <param name="includeRemoved">Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.</param>
 		/// <param name="includeTeamDriveItems">Deprecated: Use `includeItemsFromAllDrives` instead.</param>
-		/// <param name="pageSize">The maximum number of changes to return per page.</param>
+		/// <param name="pageSize">The maximum number of changes to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="restrictToMyDrive">Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.</param>
 		/// <param name="spaces">A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.</param>
 		/// <param name="supportsAllDrives">Whether the requesting application supports both My Drives and shared drives.</param>
@@ -3032,7 +3038,10 @@ namespace MyNS
 		/// Lists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](/drive/api/guides/search-shareddrives) guide.
 		/// Drive_drives_list drives
 		/// </summary>
-		/// <param name="pageSize">Maximum number of shared drives to return per page.</param>
+		/// <param name="pageSize">Maximum number of shared drives to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">Page token for shared drives.</param>
 		/// <param name="q">Query string for searching shared drives.</param>
 		/// <param name="useDomainAdminAccess">Issue the request as a domain administrator; if set to true, then all shared drives of the domain in which the requester is an administrator are returned.</param>
@@ -3283,7 +3292,10 @@ namespace MyNS
 		/// <param name="includePermissionsForView">Specifies which additional view's permissions to include in the response. Only 'published' is supported.</param>
 		/// <param name="includeTeamDriveItems">Deprecated: Use `includeItemsFromAllDrives` instead.</param>
 		/// <param name="orderBy">A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but can be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name.</param>
-		/// <param name="pageSize">The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.</param>
+		/// <param name="pageSize">The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <param name="q">A query for filtering the file results. See the "Search for files & folders" guide for supported syntax.</param>
 		/// <param name="spaces">A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.</param>
@@ -3339,7 +3351,10 @@ namespace MyNS
 		/// Generates a set of file IDs which can be provided in create or copy requests.
 		/// Drive_files_generateIds files/generateIds
 		/// </summary>
-		/// <param name="count">The number of IDs to return.</param>
+		/// <param name="count">The number of IDs to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="space">The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'. (Default: 'drive')</param>
 		/// <param name="type">The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that 'shortcuts' are only supported in the `drive` 'space'. (Default: 'files')</param>
 		/// <returns>Successful response</returns>
@@ -3476,7 +3491,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fileId">The ID of the file.</param>
 		/// <param name="includeDeleted">Whether to include deleted comments. Deleted comments will not include their original content.</param>
-		/// <param name="pageSize">The maximum number of comments to return per page.</param>
+		/// <param name="pageSize">The maximum number of comments to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <param name="startModifiedTime">The minimum value of 'modifiedTime' for the result comments (RFC 3339 date-time).</param>
 		/// <returns>Successful response</returns>
@@ -3663,7 +3681,10 @@ namespace MyNS
 		/// <param name="fileId">The ID of the file.</param>
 		/// <param name="commentId">The ID of the comment.</param>
 		/// <param name="includeDeleted">Whether to include deleted replies. Deleted replies will not include their original content.</param>
-		/// <param name="pageSize">The maximum number of replies to return per page.</param>
+		/// <param name="pageSize">The maximum number of replies to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<ReplyList> Drive_replies_listAsync(string fileId, string commentId, bool includeDeleted, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3929,7 +3950,10 @@ namespace MyNS
 		/// Drive_files_listLabels files/{fileId}/listLabels
 		/// </summary>
 		/// <param name="fileId">The ID for the file.</param>
-		/// <param name="maxResults">The maximum number of labels to return per page. When not set, defaults to 100.</param>
+		/// <param name="maxResults">The maximum number of labels to return per page. When not set, defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<LabelList> Drive_files_listLabelsAsync(string fileId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4007,7 +4031,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fileId">The ID of the file or shared drive.</param>
 		/// <param name="includePermissionsForView">Specifies which additional view's permissions to include in the response. Only 'published' is supported.</param>
-		/// <param name="pageSize">The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.</param>
+		/// <param name="pageSize">The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <param name="supportsAllDrives">Whether the requesting application supports both My Drives and shared drives.</param>
 		/// <param name="supportsTeamDrives">Deprecated: Use `supportsAllDrives` instead.</param>
@@ -4212,7 +4239,10 @@ namespace MyNS
 		/// Drive_revisions_list files/{fileId}/revisions
 		/// </summary>
 		/// <param name="fileId">The ID of the file.</param>
-		/// <param name="pageSize">The maximum number of revisions to return per page.</param>
+		/// <param name="pageSize">The maximum number of revisions to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<RevisionList> Drive_revisions_listAsync(string fileId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4400,7 +4430,10 @@ namespace MyNS
 		/// Deprecated: Use `drives.list` instead.
 		/// Drive_teamdrives_list teamdrives
 		/// </summary>
-		/// <param name="pageSize">Maximum number of Team Drives to return.</param>
+		/// <param name="pageSize">Maximum number of Team Drives to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">Page token for Team Drives.</param>
 		/// <param name="q">Query string for searching Team Drives.</param>
 		/// <param name="useDomainAdminAccess">Issue the request as a domain administrator; if set to true, then all Team Drives of the domain in which the requester is an administrator are returned.</param>

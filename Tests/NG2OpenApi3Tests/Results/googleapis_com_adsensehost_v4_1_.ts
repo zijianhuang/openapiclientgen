@@ -768,6 +768,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/adclients
 		 * @param {string} accountId Account for which to list ad clients.
 		 * @param {number} maxResults The maximum number of ad clients to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdClients} Successful response
 		 */
@@ -793,6 +794,7 @@ export namespace MyNS {
 		 * @param {string} adClientId Ad client for which to list ad units.
 		 * @param {boolean} includeInactive Whether to include inactive ad units. Default: true.
 		 * @param {number} maxResults The maximum number of ad units to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdUnits} Successful response
 		 */
@@ -881,9 +883,11 @@ export namespace MyNS {
 		 * @param {Array<string>} filter Filters to be run on the report.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {Array<string>} metric Numeric columns to include in the report.
 		 * @param {Array<string>} sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Report} Successful response
 		 */
 		Adsensehost_accounts_reports_generate(accountId: string, startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<Report> {
@@ -894,6 +898,7 @@ export namespace MyNS {
 		 * List all host ad clients in this AdSense account.
 		 * Get adclients
 		 * @param {number} maxResults The maximum number of ad clients to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdClients} Successful response
 		 */
@@ -916,6 +921,7 @@ export namespace MyNS {
 		 * Get adclients/{adClientId}/customchannels
 		 * @param {string} adClientId Ad client for which to list custom channels.
 		 * @param {number} maxResults The maximum number of custom channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {CustomChannels} Successful response
 		 */
@@ -981,6 +987,7 @@ export namespace MyNS {
 		 * Get adclients/{adClientId}/urlchannels
 		 * @param {string} adClientId Ad client for which to list URL channels.
 		 * @param {number} maxResults The maximum number of URL channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {UrlChannels} Successful response
 		 */
@@ -1042,9 +1049,11 @@ export namespace MyNS {
 		 * @param {Array<string>} filter Filters to be run on the report.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {Array<string>} metric Numeric columns to include in the report.
 		 * @param {Array<string>} sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {Report} Successful response
 		 */
 		Adsensehost_reports_generate(startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<Report> {

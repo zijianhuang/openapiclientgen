@@ -5171,6 +5171,7 @@ export namespace MyNS {
 		 * Get v2/email/configuration-sets
 		 * @param {string} NextToken A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListConfigurationSetsResponse} Success
 		 */
 		ListConfigurationSets(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListConfigurationSetsResponse> {
@@ -5212,6 +5213,7 @@ export namespace MyNS {
 		 * Get v2/email/contact-lists/{ContactListName}/contacts
 		 * @param {string} ContactListName The name of the contact list.
 		 * @param {number} PageSize The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} NextToken A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.
 		 * @return {ListContactsResponse} Success
 		 */
@@ -5232,6 +5234,7 @@ export namespace MyNS {
 		 * Lists all of the contact lists available.
 		 * Get v2/email/contact-lists
 		 * @param {number} PageSize Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} NextToken A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.
 		 * @return {ListContactListsResponse} Success
 		 */
@@ -5253,6 +5256,7 @@ export namespace MyNS {
 		 * Get v2/email/custom-verification-email-templates
 		 * @param {string} NextToken A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 50.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListCustomVerificationEmailTemplatesResponse} Success
 		 */
 		ListCustomVerificationEmailTemplates(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListCustomVerificationEmailTemplatesResponse> {
@@ -5273,6 +5277,7 @@ export namespace MyNS {
 		 * Get v2/email/dedicated-ip-pools
 		 * @param {string} NextToken A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDedicatedIpPoolsResponse} Success
 		 */
 		ListDedicatedIpPools(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDedicatedIpPoolsResponse> {
@@ -5302,6 +5307,7 @@ export namespace MyNS {
 		 * Get v2/email/identities
 		 * @param {string} NextToken A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListEmailIdentitiesResponse} Success
 		 */
 		ListEmailIdentities(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListEmailIdentitiesResponse> {
@@ -5312,7 +5318,9 @@ export namespace MyNS {
 		 * <p>Creates the specified sending authorization policy for the given identity (an email address or a domain).</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Post v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @param {string} PolicyName <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateEmailIdentityPolicyResponse} Success
 		 */
 		CreateEmailIdentityPolicy(EmailIdentity: string, PolicyName: string, requestBody: CreateEmailIdentityPolicyPostBody): Observable<CreateEmailIdentityPolicyResponse> {
@@ -5323,7 +5331,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Delete v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @param {string} PolicyName <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteEmailIdentityPolicyResponse} Success
 		 */
 		DeleteEmailIdentityPolicy(EmailIdentity: string, PolicyName: string): Observable<DeleteEmailIdentityPolicyResponse> {
@@ -5334,7 +5344,9 @@ export namespace MyNS {
 		 * <p>Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Put v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @param {string} PolicyName <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateEmailIdentityPolicyResponse} Success
 		 */
 		UpdateEmailIdentityPolicy(EmailIdentity: string, PolicyName: string, requestBody: UpdateEmailIdentityPolicyPutBody): Observable<UpdateEmailIdentityPolicyResponse> {
@@ -5355,6 +5367,7 @@ export namespace MyNS {
 		 * Get v2/email/templates
 		 * @param {string} NextToken A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListEmailTemplatesResponse} Success
 		 */
 		ListEmailTemplates(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListEmailTemplatesResponse> {
@@ -5375,6 +5388,7 @@ export namespace MyNS {
 		 * Get v2/email/import-jobs
 		 * @param {string} NextToken A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.
 		 * @param {number} PageSize Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListImportJobsResponse} Success
 		 */
 		ListImportJobs(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListImportJobsResponse> {
@@ -5490,6 +5504,7 @@ export namespace MyNS {
 		 * <p>Deletes an existing custom verification email template.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Delete v2/email/custom-verification-email-templates/{TemplateName}
 		 * @param {string} TemplateName The name of the custom verification email template that you want to delete.
+		 *     Min length: 1
 		 * @return {DeleteCustomVerificationEmailTemplateResponse} Success
 		 */
 		DeleteCustomVerificationEmailTemplate(TemplateName: string): Observable<DeleteCustomVerificationEmailTemplateResponse> {
@@ -5500,6 +5515,7 @@ export namespace MyNS {
 		 * <p>Returns the custom email verification template for the template name you specify.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Get v2/email/custom-verification-email-templates/{TemplateName}
 		 * @param {string} TemplateName The name of the custom verification email template that you want to retrieve.
+		 *     Min length: 1
 		 * @return {GetCustomVerificationEmailTemplateResponse} Success
 		 */
 		GetCustomVerificationEmailTemplate(TemplateName: string): Observable<GetCustomVerificationEmailTemplateResponse> {
@@ -5510,6 +5526,7 @@ export namespace MyNS {
 		 * <p>Updates an existing custom verification email template.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Put v2/email/custom-verification-email-templates/{TemplateName}
 		 * @param {string} TemplateName The name of the custom verification email template that you want to update.
+		 *     Min length: 1
 		 * @return {UpdateCustomVerificationEmailTemplateResponse} Success
 		 */
 		UpdateCustomVerificationEmailTemplate(TemplateName: string, requestBody: UpdateCustomVerificationEmailTemplatePutBody): Observable<UpdateCustomVerificationEmailTemplateResponse> {
@@ -5540,6 +5557,7 @@ export namespace MyNS {
 		 * Deletes an email identity. An identity can be either an email address or a domain name.
 		 * Delete v2/email/identities/{EmailIdentity}
 		 * @param {string} EmailIdentity The identity (that is, the email address or domain) to delete.
+		 *     Min length: 1
 		 * @return {DeleteEmailIdentityResponse} Success
 		 */
 		DeleteEmailIdentity(EmailIdentity: string): Observable<DeleteEmailIdentityResponse> {
@@ -5550,6 +5568,7 @@ export namespace MyNS {
 		 * Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.
 		 * Get v2/email/identities/{EmailIdentity}
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @return {GetEmailIdentityResponse} Success
 		 */
 		GetEmailIdentity(EmailIdentity: string): Observable<GetEmailIdentityResponse> {
@@ -5560,6 +5579,7 @@ export namespace MyNS {
 		 * <p>Deletes an email template.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Delete v2/email/templates/{TemplateName}
 		 * @param {string} TemplateName The name of the template to be deleted.
+		 *     Min length: 1
 		 * @return {DeleteEmailTemplateResponse} Success
 		 */
 		DeleteEmailTemplate(TemplateName: string): Observable<DeleteEmailTemplateResponse> {
@@ -5570,6 +5590,7 @@ export namespace MyNS {
 		 * <p>Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Get v2/email/templates/{TemplateName}
 		 * @param {string} TemplateName The name of the template.
+		 *     Min length: 1
 		 * @return {GetEmailTemplateResponse} Success
 		 */
 		GetEmailTemplate(TemplateName: string): Observable<GetEmailTemplateResponse> {
@@ -5580,6 +5601,7 @@ export namespace MyNS {
 		 * <p>Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Put v2/email/templates/{TemplateName}
 		 * @param {string} TemplateName The name of the template.
+		 *     Min length: 1
 		 * @return {UpdateEmailTemplateResponse} Success
 		 */
 		UpdateEmailTemplate(TemplateName: string, requestBody: UpdateEmailTemplatePutBody): Observable<UpdateEmailTemplateResponse> {
@@ -5641,6 +5663,7 @@ export namespace MyNS {
 		 * @param {string} PoolName The name of the IP pool that the dedicated IP address is associated with.
 		 * @param {string} NextToken A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.
 		 * @param {number} PageSize The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetDedicatedIpsResponse} Success
 		 */
 		GetDedicatedIps(PoolName: string | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<GetDedicatedIpsResponse> {
@@ -5689,6 +5712,7 @@ export namespace MyNS {
 		 * Retrieve inbox placement and engagement rates for the domains that you use to send email.
 		 * Get v2/email/deliverability-dashboard/statistics-report/{Domain}#StartDate&EndDate
 		 * @param {string} Domain The domain that you want to obtain deliverability metrics for.
+		 *     Min length: 1
 		 * @param {Date} StartDate The first day (in Unix time) that you want to obtain domain deliverability metrics for.
 		 * @param {Date} EndDate The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.
 		 * @return {GetDomainStatisticsReportResponse} Success
@@ -5701,6 +5725,7 @@ export namespace MyNS {
 		 * <p>Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Get v2/email/identities/{EmailIdentity}/policies
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @return {GetEmailIdentityPoliciesResponse} Success
 		 */
 		GetEmailIdentityPolicies(EmailIdentity: string): Observable<GetEmailIdentityPoliciesResponse> {
@@ -5711,6 +5736,7 @@ export namespace MyNS {
 		 * Provides information about an import job.
 		 * Get v2/email/import-jobs/{JobId}
 		 * @param {string} JobId The ID of the import job.
+		 *     Min length: 1
 		 * @return {GetImportJobResponse} Success
 		 */
 		GetImportJob(JobId: string): Observable<GetImportJobResponse> {
@@ -5722,6 +5748,7 @@ export namespace MyNS {
 		 * Get v2/email/deliverability-dashboard/test-reports
 		 * @param {string} NextToken A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDeliverabilityTestReportsResponse} Success
 		 */
 		ListDeliverabilityTestReports(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDeliverabilityTestReportsResponse> {
@@ -5736,6 +5763,7 @@ export namespace MyNS {
 		 * @param {string} SubscribedDomain The domain to obtain deliverability data for.
 		 * @param {string} NextToken A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.
 		 * @param {number} PageSize The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDomainDeliverabilityCampaignsResponse} Success
 		 */
 		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDomainDeliverabilityCampaignsResponse> {
@@ -5761,6 +5789,7 @@ export namespace MyNS {
 		 * @param {Date} EndDate Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.
 		 * @param {string} NextToken A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListSuppressedDestinationsResponse} Success
 		 */
 		ListSuppressedDestinations(Reason: Array<SuppressionListReason> | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListSuppressedDestinationsResponse> {
@@ -5925,6 +5954,7 @@ export namespace MyNS {
 		 * Used to associate a configuration set with an email identity.
 		 * Put v2/email/identities/{EmailIdentity}/configuration-set
 		 * @param {string} EmailIdentity The email address or domain to associate with a configuration set.
+		 *     Min length: 1
 		 * @return {PutEmailIdentityConfigurationSetAttributesResponse} Success
 		 */
 		PutEmailIdentityConfigurationSetAttributes(EmailIdentity: string, requestBody: PutEmailIdentityConfigurationSetAttributesPutBody): Observable<PutEmailIdentityConfigurationSetAttributesResponse> {
@@ -5935,6 +5965,7 @@ export namespace MyNS {
 		 * Used to enable or disable DKIM authentication for an email identity.
 		 * Put v2/email/identities/{EmailIdentity}/dkim
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @return {PutEmailIdentityDkimAttributesResponse} Success
 		 */
 		PutEmailIdentityDkimAttributes(EmailIdentity: string, requestBody: PutEmailIdentityDkimAttributesPutBody): Observable<PutEmailIdentityDkimAttributesResponse> {
@@ -5945,6 +5976,7 @@ export namespace MyNS {
 		 * <p>Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:</p> <ul> <li> <p>Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).</p> </li> <li> <p>Update the key length that should be used for Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li> </ul>
 		 * Put v1/email/identities/{EmailIdentity}/dkim/signing
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @return {PutEmailIdentityDkimSigningAttributesResponse} Success
 		 */
 		PutEmailIdentityDkimSigningAttributes(EmailIdentity: string, requestBody: PutEmailIdentityDkimSigningAttributesPutBody): Observable<PutEmailIdentityDkimSigningAttributesResponse> {
@@ -5955,6 +5987,7 @@ export namespace MyNS {
 		 * <p>Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.</p> <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
 		 * Put v2/email/identities/{EmailIdentity}/feedback
 		 * @param {string} EmailIdentity The email identity.
+		 *     Min length: 1
 		 * @return {PutEmailIdentityFeedbackAttributesResponse} Success
 		 */
 		PutEmailIdentityFeedbackAttributes(EmailIdentity: string, requestBody: PutEmailIdentityFeedbackAttributesPutBody): Observable<PutEmailIdentityFeedbackAttributesResponse> {
@@ -5965,6 +5998,7 @@ export namespace MyNS {
 		 * Used to enable or disable the custom Mail-From domain configuration for an email identity.
 		 * Put v2/email/identities/{EmailIdentity}/mail-from
 		 * @param {string} EmailIdentity The verified email identity.
+		 *     Min length: 1
 		 * @return {PutEmailIdentityMailFromAttributesResponse} Success
 		 */
 		PutEmailIdentityMailFromAttributes(EmailIdentity: string, requestBody: PutEmailIdentityMailFromAttributesPutBody): Observable<PutEmailIdentityMailFromAttributesResponse> {
@@ -6011,6 +6045,7 @@ export namespace MyNS {
 		 * <p>Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.</p> <p>You can execute this operation no more than once per second.</p>
 		 * Post v2/email/templates/{TemplateName}/render
 		 * @param {string} TemplateName The name of the template.
+		 *     Min length: 1
 		 * @return {TestRenderEmailTemplateResponse} Success
 		 */
 		TestRenderEmailTemplate(TemplateName: string, requestBody: TestRenderEmailTemplatePostBody): Observable<TestRenderEmailTemplateResponse> {
@@ -6902,7 +6937,10 @@ export namespace MyNS {
 		/** A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations. */
 		NextToken?: string | null;
 
-		/** <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 100.</p> */
+		/**
+		 * <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PageSize?: number | null;
 	}
 	export interface ListRecommendationsPostBodyFormProperties {
@@ -6913,7 +6951,10 @@ export namespace MyNS {
 		/** A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations. */
 		NextToken: FormControl<string | null | undefined>,
 
-		/** <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 100.</p> */
+		/**
+		 * <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListRecommendationsPostBodyFormGroup() {
@@ -6989,8 +7030,8 @@ export namespace MyNS {
 		/**
 		 * The URL of your website. This information helps us better understand the type of content that you plan to send.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		WebsiteURL: string;
 
@@ -7000,8 +7041,8 @@ export namespace MyNS {
 		/**
 		 * A description of the types of email that you plan to send.
 		 * Required
-		 * Max length: 5000
 		 * Min length: 1
+		 * Max length: 5000
 		 */
 		UseCaseDescription: string;
 
@@ -7026,8 +7067,8 @@ export namespace MyNS {
 		/**
 		 * The URL of your website. This information helps us better understand the type of content that you plan to send.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		WebsiteURL: FormControl<string | null | undefined>,
 
@@ -7037,8 +7078,8 @@ export namespace MyNS {
 		/**
 		 * A description of the types of email that you plan to send.
 		 * Required
-		 * Max length: 5000
 		 * Min length: 1
+		 * Max length: 5000
 		 */
 		UseCaseDescription: FormControl<string | null | undefined>,
 
@@ -7281,6 +7322,7 @@ export namespace MyNS {
 		/**
 		 * The warm-up percentage that you want to associate with the dedicated IP address.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		WarmupPercentage: number;
 	}
@@ -7289,6 +7331,7 @@ export namespace MyNS {
 		/**
 		 * The warm-up percentage that you want to associate with the dedicated IP address.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		WarmupPercentage: FormControl<number | null | undefined>,
 	}

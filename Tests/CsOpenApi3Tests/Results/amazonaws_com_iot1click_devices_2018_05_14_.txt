@@ -597,7 +597,10 @@ namespace MyNS
 		/// 2018-03-28T15:45:12.880Z
 		/// </param>
 		/// <param name="maxResults">The maximum number of results to return per request. If not set, a default value of
-		/// 100 is used.</param>
+		/// 100 is used.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
 		/// <param name="toTimeStamp">The end date for the device event query, in ISO8061 format. For example,
 		/// 2018-03-28T15:45:12.880Z
@@ -637,7 +640,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="deviceType">The type of the device, such as "button".</param>
 		/// <param name="maxResults">The maximum number of results to return per request. If not set, a default value of
-		/// 100 is used.</param>
+		/// 100 is used.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesResponse> ListDevicesAsync(string deviceType, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

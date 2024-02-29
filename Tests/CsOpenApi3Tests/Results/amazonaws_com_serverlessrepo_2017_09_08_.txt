@@ -1010,7 +1010,10 @@ namespace MyNS
 		/// Lists applications owned by the requester.
 		/// ListApplications applications
 		/// </summary>
-		/// <param name="maxItems">The total number of items to return.</param>
+		/// <param name="maxItems">The total number of items to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">A token to specify where to start paginating.</param>
 		/// <param name="MaxItems">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1367,7 +1370,10 @@ namespace MyNS
 		/// ListApplicationDependencies applications/{applicationId}/dependencies
 		/// </summary>
 		/// <param name="applicationId">The Amazon Resource Name (ARN) of the application.</param>
-		/// <param name="maxItems">The total number of items to return.</param>
+		/// <param name="maxItems">The total number of items to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">A token to specify where to start paginating.</param>
 		/// <param name="semanticVersion">The semantic version of the application to get.</param>
 		/// <param name="MaxItems">Pagination limit</param>
@@ -1406,7 +1412,10 @@ namespace MyNS
 		/// ListApplicationVersions applications/{applicationId}/versions
 		/// </summary>
 		/// <param name="applicationId">The Amazon Resource Name (ARN) of the application.</param>
-		/// <param name="maxItems">The total number of items to return.</param>
+		/// <param name="maxItems">The total number of items to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">A token to specify where to start paginating.</param>
 		/// <param name="MaxItems">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>

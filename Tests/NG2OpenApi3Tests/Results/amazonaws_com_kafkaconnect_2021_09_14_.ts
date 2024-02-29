@@ -1746,6 +1746,7 @@ export namespace MyNS {
 		 * Get v1/connectors
 		 * @param {string} connectorNamePrefix The name prefix that you want to use to search for and list connectors.
 		 * @param {number} maxResults The maximum number of connectors to list in one response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
 		 * @return {ListConnectorsResponse} Success
 		 */
@@ -1766,6 +1767,7 @@ export namespace MyNS {
 		 * Returns a list of all of the custom plugins in this account and Region.
 		 * Get v1/custom-plugins
 		 * @param {number} maxResults The maximum number of custom plugins to list in one response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
 		 * @return {ListCustomPluginsResponse} Success
 		 */
@@ -1786,6 +1788,7 @@ export namespace MyNS {
 		 * Returns a list of all of the worker configurations in this account and Region.
 		 * Get v1/worker-configurations
 		 * @param {number} maxResults The maximum number of worker configurations to list in one response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
 		 * @return {ListWorkerConfigurationsResponse} Success
 		 */
@@ -1872,16 +1875,16 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the connector.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		connectorDescription?: string | null;
 
 		/**
 		 * The name of the connector.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		connectorName: string;
 
@@ -1937,16 +1940,16 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the connector.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		connectorDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the connector.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		connectorName: FormControl<string | null | undefined>,
 
@@ -2059,8 +2062,8 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the custom plugin.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -2073,8 +2076,8 @@ export namespace MyNS {
 		/**
 		 * The name of the custom plugin.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 	}
@@ -2088,16 +2091,16 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the custom plugin.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the custom plugin.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -2125,16 +2128,16 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the worker configuration.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the worker configuration.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 
@@ -2148,16 +2151,16 @@ export namespace MyNS {
 
 		/**
 		 * A summary description of the worker configuration.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the worker configuration.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 

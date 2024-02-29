@@ -27,16 +27,16 @@ export namespace MyNS {
 		/**
 		 * An internally generated unique identifier for a domain.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DomainId: string;
 
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 		Created?: boolean | null;
@@ -59,16 +59,16 @@ export namespace MyNS {
 		/**
 		 * An internally generated unique identifier for a domain.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DomainId: FormControl<string | null | undefined>,
 
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Created: FormControl<boolean | null | undefined>,
@@ -1154,8 +1154,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1164,8 +1164,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1181,8 +1181,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1197,8 +1197,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1214,8 +1214,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1230,8 +1230,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1247,8 +1247,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1257,8 +1257,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1274,16 +1274,16 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
 		/**
 		 * A string that represents the name of an index field. Field names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are reserved and cannot be specified as field or rank expression names.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		IndexFieldName: string;
 	}
@@ -1292,16 +1292,16 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
 		/**
 		 * A string that represents the name of an index field. Field names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are reserved and cannot be specified as field or rank expression names.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		IndexFieldName: FormControl<string | null | undefined>,
 	}
@@ -1318,8 +1318,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1331,8 +1331,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1373,8 +1373,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1383,8 +1383,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1411,8 +1411,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 		FieldNames?: Array<string>;
@@ -1422,8 +1422,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1439,8 +1439,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 		RankNames?: Array<string>;
@@ -1450,8 +1450,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1467,8 +1467,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1477,8 +1477,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1494,8 +1494,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1504,8 +1504,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1521,8 +1521,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1531,8 +1531,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1548,8 +1548,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1558,8 +1558,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1575,8 +1575,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1585,8 +1585,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1604,8 +1604,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1619,8 +1619,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1640,8 +1640,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1653,8 +1653,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1674,8 +1674,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1690,8 +1690,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1714,8 +1714,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1730,8 +1730,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1754,8 +1754,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1770,8 +1770,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1794,8 +1794,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1810,8 +1810,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase letters and underscores are not allowed.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1837,6 +1837,8 @@ export namespace MyNS {
 		/**
 		 * Creates a new search domain.
 		 * Get #Action=CreateDomain
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_CreateDomain(DomainName: string, Action: GET_CreateDomainAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1846,6 +1848,8 @@ export namespace MyNS {
 		/**
 		 * Configures an <code>IndexField</code> for the search domain. Used to create new fields and modify existing ones. If the field exists, the new configuration replaces the old one. You can configure a maximum of 200 index fields.
 		 * Get #Action=DefineIndexField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DefineIndexField(DomainName: string, IndexField: GET_DefineIndexFieldIndexField, Action: GET_DefineIndexFieldAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1855,6 +1859,8 @@ export namespace MyNS {
 		/**
 		 * Configures a <code>RankExpression</code> for the search domain. Used to create new rank expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.
 		 * Get #Action=DefineRankExpression
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DefineRankExpression(DomainName: string, RankExpression: GET_DefineRankExpressionRankExpression, Action: GET_DefineRankExpressionAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1864,6 +1870,8 @@ export namespace MyNS {
 		/**
 		 * Permanently deletes a search domain and all of its data.
 		 * Get #Action=DeleteDomain
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DeleteDomain(DomainName: string, Action: GET_DeleteDomainAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1873,6 +1881,10 @@ export namespace MyNS {
 		/**
 		 * Removes an <code>IndexField</code> from the search domain.
 		 * Get #Action=DeleteIndexField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
+		 * @param {string} IndexFieldName Min length: 1
+		 *     Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteIndexField(DomainName: string, IndexFieldName: string, Action: GET_DeleteIndexFieldAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1882,7 +1894,10 @@ export namespace MyNS {
 		/**
 		 * Removes a <code>RankExpression</code> from the search domain.
 		 * Get #Action=DeleteRankExpression
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} RankName The name of the <code>RankExpression</code> to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteRankExpression(DomainName: string, RankName: string, Action: GET_DeleteRankExpressionAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1893,6 +1908,7 @@ export namespace MyNS {
 		 * Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeAvailabilityOptions
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeAvailabilityOptions(DomainName: string, Action: GET_DescribeAvailabilityOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1902,6 +1918,8 @@ export namespace MyNS {
 		/**
 		 * Gets the default search field configured for the search domain.
 		 * Get #Action=DescribeDefaultSearchField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeDefaultSearchField(DomainName: string, Action: GET_DescribeDefaultSearchFieldAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1921,6 +1939,8 @@ export namespace MyNS {
 		/**
 		 * Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields by default.
 		 * Get #Action=DescribeIndexFields
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {Array<string>} FieldNames Limits the <code>DescribeIndexFields</code> response to the specified fields.
 		 * @return {void} Success
 		 */
@@ -1931,6 +1951,8 @@ export namespace MyNS {
 		/**
 		 * Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank expressions by default.
 		 * Get #Action=DescribeRankExpressions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {Array<string>} RankNames Limits the <code>DescribeRankExpressions</code> response to the specified fields.
 		 * @return {void} Success
 		 */
@@ -1941,6 +1963,8 @@ export namespace MyNS {
 		/**
 		 * Gets information about the resource-based policies that control access to the domain's document and search services.
 		 * Get #Action=DescribeServiceAccessPolicies
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeServiceAccessPolicies(DomainName: string, Action: GET_DescribeServiceAccessPoliciesAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1950,6 +1974,8 @@ export namespace MyNS {
 		/**
 		 * Gets the stemming dictionary configured for the search domain.
 		 * Get #Action=DescribeStemmingOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeStemmingOptions(DomainName: string, Action: GET_DescribeStemmingOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1959,6 +1985,8 @@ export namespace MyNS {
 		/**
 		 * Gets the stopwords configured for the search domain.
 		 * Get #Action=DescribeStopwordOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeStopwordOptions(DomainName: string, Action: GET_DescribeStopwordOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1968,6 +1996,8 @@ export namespace MyNS {
 		/**
 		 * Gets the synonym dictionary configured for the search domain.
 		 * Get #Action=DescribeSynonymOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeSynonymOptions(DomainName: string, Action: GET_DescribeSynonymOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1977,6 +2007,8 @@ export namespace MyNS {
 		/**
 		 * Tells the search domain to start indexing its documents using the latest text processing options and <code>IndexFields</code>. This operation must be invoked to make options whose <a>OptionStatus</a> has <code>OptionState</code> of <code>RequiresIndexDocuments</code> visible in search results.
 		 * Get #Action=IndexDocuments
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_IndexDocuments(DomainName: string, Action: GET_IndexDocumentsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -1986,6 +2018,8 @@ export namespace MyNS {
 		/**
 		 * Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=UpdateAvailabilityOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {boolean} MultiAZ You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. 
 		 * @return {void} Success
 		 */
@@ -1996,6 +2030,8 @@ export namespace MyNS {
 		/**
 		 * Configures the default search field for the search domain. The default search field is the text field that is searched when a search request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
 		 * Get #Action=UpdateDefaultSearchField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} DefaultSearchField The text field to search if the search request does not specify which field to search. The default search field is used when search terms are specified with the <code>q</code> parameter, or if a match expression specified with the <code>bq</code> parameter does not constrain the search to a particular field. The default is an empty string, which automatically searches all text fields.
 		 * @return {void} Success
 		 */
@@ -2006,6 +2042,8 @@ export namespace MyNS {
 		/**
 		 * Configures the policies that control access to the domain's document and search services. The maximum size of an access policy document is 100 KB.
 		 * Get #Action=UpdateServiceAccessPolicies
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_UpdateServiceAccessPolicies(DomainName: string, AccessPolicies: string, Action: GET_UpdateServiceAccessPoliciesAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -2015,6 +2053,8 @@ export namespace MyNS {
 		/**
 		 * Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search requests. The maximum size of the stemming dictionary is 500 KB.
 		 * Get #Action=UpdateStemmingOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_UpdateStemmingOptions(DomainName: string, Stems: string, Action: GET_UpdateStemmingOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -2024,6 +2064,8 @@ export namespace MyNS {
 		/**
 		 * Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size of the stopwords dictionary is 10 KB.
 		 * Get #Action=UpdateStopwordOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_UpdateStopwordOptions(DomainName: string, Stopwords: string, Action: GET_UpdateStopwordOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {
@@ -2033,6 +2075,8 @@ export namespace MyNS {
 		/**
 		 * Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms that occur in text fields. The maximum size of the synonym dictionary is 100 KB.
 		 * Get #Action=UpdateSynonymOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_UpdateSynonymOptions(DomainName: string, Synonyms: string, Action: GET_UpdateSynonymOptionsAction, Version: GET_CreateDomainVersion): Observable<HttpResponse<string>> {

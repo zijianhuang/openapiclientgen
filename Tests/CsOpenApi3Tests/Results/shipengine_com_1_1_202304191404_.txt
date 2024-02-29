@@ -9632,7 +9632,9 @@ namespace MyNS
 		/// Delete Account Image By Id
 		/// Delete_account_image_by_id v1/account/settings/images/{label_image_id}
 		/// </summary>
-		/// <param name="label_image_id">Label Image Id</param>
+		/// <param name="label_image_id">Label Image Id
+		/// Min length: 4
+		// </param>
 		public async Task Delete_account_image_by_idAsync(string label_image_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/account/settings/images/"+ (label_image_id==null? "" : System.Uri.EscapeDataString(label_image_id));
@@ -9660,7 +9662,9 @@ namespace MyNS
 		/// Retrieve information for an account image.
 		/// Get_account_settings_images_by_id v1/account/settings/images/{label_image_id}
 		/// </summary>
-		/// <param name="label_image_id">Label Image Id</param>
+		/// <param name="label_image_id">Label Image Id
+		/// Min length: 4
+		// </param>
 		/// <returns>The request was a success.</returns>
 		public async Task<Get_account_settings_images_response_body> Get_account_settings_images_by_idAsync(string label_image_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9695,7 +9699,9 @@ namespace MyNS
 		/// Update information for an account image.
 		/// Update_account_settings_images_by_id v1/account/settings/images/{label_image_id}
 		/// </summary>
-		/// <param name="label_image_id">Label Image Id</param>
+		/// <param name="label_image_id">Label Image Id
+		/// Min length: 4
+		// </param>
 		public async Task Update_account_settings_images_by_idAsync(string label_image_id, Update_account_settings_image_request_body requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/account/settings/images/"+ (label_image_id==null? "" : System.Uri.EscapeDataString(label_image_id));
@@ -9823,8 +9829,12 @@ namespace MyNS
 		/// List_batches v1/batches
 		/// </summary>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
-		/// <param name="page_size">The number of results to return per response.</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of results to return per response.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sort_dir">Controls the sort order of the query.</param>
 		/// <param name="batch_number">Batch Number</param>
 		/// <returns>The request was a success.</returns>
@@ -10056,7 +10066,10 @@ namespace MyNS
 		/// List_batch_errors v1/batches/{batch_id}/errors
 		/// </summary>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="pagesize">Minimum: 1</param>
 		/// <returns>The request was a success.</returns>
 		public async Task<List_batch_errors_response_body> List_batch_errorsAsync(int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10861,17 +10874,38 @@ namespace MyNS
 		/// </summary>
 		/// <param name="label_status">Only return labels that are currently in the specified status</param>
 		/// <param name="service_code">Only return labels for a specific [carrier service](https://www.shipengine.com/docs/shipping/use-a-carrier-service/)</param>
-		/// <param name="carrier_id">Only return labels for a specific [carrier account](https://www.shipengine.com/docs/carriers/setup/)</param>
-		/// <param name="tracking_number">Only return labels with a specific tracking number</param>
-		/// <param name="batch_id">Only return labels that were created in a specific [batch](https://www.shipengine.com/docs/labels/bulk/)</param>
-		/// <param name="rate_id">Rate ID</param>
-		/// <param name="shipment_id">Shipment ID</param>
-		/// <param name="warehouse_id">Only return labels that originate from a specific [warehouse](https://www.shipengine.com/docs/shipping/ship-from-a-warehouse/)</param>
+		/// <param name="carrier_id">Only return labels for a specific [carrier account](https://www.shipengine.com/docs/carriers/setup/)
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="tracking_number">Only return labels with a specific tracking number
+		/// Min length: 1
+		// </param>
+		/// <param name="batch_id">Only return labels that were created in a specific [batch](https://www.shipengine.com/docs/labels/bulk/)
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="rate_id">Rate ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="shipment_id">Shipment ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="warehouse_id">Only return labels that originate from a specific [warehouse](https://www.shipengine.com/docs/shipping/ship-from-a-warehouse/)
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
 		/// <param name="created_at_start">Only return labels that were created on or after a specific date/time</param>
 		/// <param name="created_at_end">Only return labels that were created on or before a specific date/time</param>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
-		/// <param name="page_size">The number of results to return per response.</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of results to return per response.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sort_dir">Controls the sort order of the query.</param>
 		/// <param name="sort_by">Controls which field the query is sorted by.</param>
 		/// <returns>The response includes a `labels` array containing a page of results (as determined by the `page_size` query parameter).  It also includes other useful information, such as the total number of labels that match the query criteria, the number of pages of results, and the URLs of the first, last, next, and previous pages of results.
@@ -11209,15 +11243,25 @@ namespace MyNS
 		/// Similar to querying shipments, we allow you to query manifests since there will likely be a large number over a long period of time.
 		/// List_manifests v1/manifests
 		/// </summary>
-		/// <param name="warehouse_id">Warehouse ID</param>
+		/// <param name="warehouse_id">Warehouse ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
 		/// <param name="ship_date_start">ship date start range</param>
 		/// <param name="ship_date_end">ship date end range</param>
 		/// <param name="created_at_start">Used to create a filter for when a resource was created (ex. A shipment that was created after a certain time)</param>
 		/// <param name="created_at_end">Used to create a filter for when a resource was created, (ex. A shipment that was created before a certain time)</param>
-		/// <param name="carrier_id">Carrier ID</param>
+		/// <param name="carrier_id">Carrier ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
-		/// <param name="page_size">The number of results to return per response.</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of results to return per response.
+		/// Minimum: 1
+		// </param>
 		/// <returns>The request was a success.</returns>
 		public async Task<List_manifests_response_body> List_manifestsAsync(string warehouse_id, System.DateTimeOffset ship_date_start, System.DateTimeOffset ship_date_end, System.DateTimeOffset created_at_start, System.DateTimeOffset created_at_end, string carrier_id, int page, int page_size, string[] label_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11533,13 +11577,23 @@ namespace MyNS
 		/// List all pickups that have been scheduled for this carrier
 		/// List_scheduled_pickups v1/pickups
 		/// </summary>
-		/// <param name="carrier_id">Carrier ID</param>
-		/// <param name="warehouse_id">Warehouse ID</param>
+		/// <param name="carrier_id">Carrier ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="warehouse_id">Warehouse ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
 		/// <param name="created_at_start">Only return scheduled pickups that were created on or after a specific date/time</param>
 		/// <param name="created_at_end">Only return scheduled pickups that were created on or before a specific date/time</param>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
-		/// <param name="page_size">The number of results to return per response.</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of results to return per response.
+		/// Minimum: 1
+		// </param>
 		/// <returns>The request was a success.</returns>
 		public async Task<Get_pickups_response_body> List_scheduled_pickupsAsync(string carrier_id, string warehouse_id, System.DateTimeOffset created_at_start, System.DateTimeOffset created_at_end, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11918,15 +11972,24 @@ namespace MyNS
 		/// Get list of Shipments
 		/// List_shipments v1/shipments
 		/// </summary>
-		/// <param name="batch_id">Batch ID</param>
-		/// <param name="tag">Search for shipments based on the custom tag added to the shipment object</param>
+		/// <param name="batch_id">Batch ID
+		/// Max length: 25
+		/// Min length: 1
+		// </param>
+		/// <param name="tag">Search for shipments based on the custom tag added to the shipment object
+		/// Min length: 1
+		// </param>
 		/// <param name="created_at_start">Used to create a filter for when a resource was created (ex. A shipment that was created after a certain time)</param>
 		/// <param name="created_at_end">Used to create a filter for when a resource was created, (ex. A shipment that was created before a certain time)</param>
 		/// <param name="modified_at_start">Used to create a filter for when a resource was modified (ex. A shipment that was modified after a certain time)</param>
 		/// <param name="modified_at_end">Used to create a filter for when a resource was modified (ex. A shipment that was modified before a certain time)</param>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
-		///</param>
-		/// <param name="page_size">The number of results to return per response.</param>
+		///
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of results to return per response.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sales_order_id">Sales Order ID</param>
 		/// <param name="sort_dir">Controls the sort order of the query.</param>
 		/// <returns>The request was a success.</returns>
@@ -12420,8 +12483,12 @@ namespace MyNS
 		/// Retrieve package tracking information
 		/// Get_tracking_log v1/tracking
 		/// </summary>
-		/// <param name="carrier_code">Carrier code used to retrieve tracking information</param>
-		/// <param name="tracking_number">The tracking number associated with a shipment</param>
+		/// <param name="carrier_code">Carrier code used to retrieve tracking information
+		/// Min length: 1
+		// </param>
+		/// <param name="tracking_number">The tracking number associated with a shipment
+		/// Min length: 1
+		// </param>
 		/// <returns>The request was a success.</returns>
 		public async Task<Get_tracking_log_response_body> Get_tracking_logAsync(string carrier_code, string tracking_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12458,8 +12525,12 @@ namespace MyNS
 		/// 
 		/// Start_tracking v1/tracking/start
 		/// </summary>
-		/// <param name="carrier_code">Carrier code used to retrieve tracking information</param>
-		/// <param name="tracking_number">The tracking number associated with a shipment</param>
+		/// <param name="carrier_code">Carrier code used to retrieve tracking information
+		/// Min length: 1
+		// </param>
+		/// <param name="tracking_number">The tracking number associated with a shipment
+		/// Min length: 1
+		// </param>
 		public async Task Start_trackingAsync(string carrier_code, string tracking_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tracking/start?carrier_code=" + (carrier_code==null? "" : System.Uri.EscapeDataString(carrier_code))+"&tracking_number=" + (tracking_number==null? "" : System.Uri.EscapeDataString(tracking_number));
@@ -12482,8 +12553,12 @@ namespace MyNS
 		/// Unsubscribe from tracking updates for a package.
 		/// Stop_tracking v1/tracking/stop
 		/// </summary>
-		/// <param name="carrier_code">Carrier code used to retrieve tracking information</param>
-		/// <param name="tracking_number">The tracking number associated with a shipment</param>
+		/// <param name="carrier_code">Carrier code used to retrieve tracking information
+		/// Min length: 1
+		// </param>
+		/// <param name="tracking_number">The tracking number associated with a shipment
+		/// Min length: 1
+		// </param>
 		public async Task Stop_trackingAsync(string carrier_code, string tracking_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tracking/stop?carrier_code=" + (carrier_code==null? "" : System.Uri.EscapeDataString(carrier_code))+"&tracking_number=" + (tracking_number==null? "" : System.Uri.EscapeDataString(tracking_number));

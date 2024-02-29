@@ -177,7 +177,9 @@ export namespace MyNS {
 		 * @param {string} namespace The element namespace. Defaults to the TEI namespace
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
+		 *     Minimum: 1
 		 * @param {number} limit Number of items to retrieve (200 max)
+		 *     Maximum: 200
 		 * @return {Array<CodeSample>} An array of documents
 		 */
 		Code_SamplesGetByElementAndNamespaceAndDocTypeAndOffsetAndLimit(element: string, namespace: string | null | undefined, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<CodeSample>> {
@@ -190,7 +192,9 @@ export namespace MyNS {
 		 * Get documents
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
+		 *     Minimum: 1
 		 * @param {number} limit Number of items to retrieve (200 max)
+		 *     Maximum: 200
 		 * @return {Array<Document>} An array of documents
 		 */
 		DocumentsGetByDocTypeAndOffsetAndLimit(docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<Document>> {
@@ -204,7 +208,9 @@ export namespace MyNS {
 		 * @param {string} authorID The author ID to search for. Accepted ID formats are WeGA, e.g. A002068 or http://weber-gesamtausgabe.de/A002068, VIAF, e.g. http://viaf.org/viaf/310642461, or  GND, e.g. http://d-nb.info/gnd/118629662
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
+		 *     Minimum: 1
 		 * @param {number} limit Number of items to retrieve (200 max)
+		 *     Maximum: 200
 		 * @return {Array<Document>} An array of documents
 		 */
 		DocumentsGetByAuthorIDAndDocTypeAndOffsetAndLimit(authorID: string, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<Document>> {
@@ -216,10 +222,14 @@ export namespace MyNS {
 		 * This endpoint returns a list of documents related to the given date – optionally filtered by document type.
 		 * Get documents/findByDate
 		 * @param {Date} fromDate The min date to search for
+		 *     Type: DateOnly
 		 * @param {Date} toDate The max date to search for
+		 *     Type: DateOnly
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
+		 *     Minimum: 1
 		 * @param {number} limit Number of items to retrieve (200 max)
+		 *     Maximum: 200
 		 * @return {Array<Document>} An array of documents
 		 */
 		DocumentsGetByFromDateAndToDateAndDocTypeAndOffsetAndLimit(fromDate: Date, toDate: Date | null | undefined, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<Document>> {
@@ -233,7 +243,9 @@ export namespace MyNS {
 		 * @param {string} docID The document ID that is to be mentioned. Accepted ID formats are WeGA, e.g. A002068 or http://weber-gesamtausgabe.de/A002068, VIAF, e.g. http://viaf.org/viaf/310642461, or  GND, e.g. http://d-nb.info/gnd/118629662
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
+		 *     Minimum: 1
 		 * @param {number} limit Number of items to retrieve (200 max)
+		 *     Maximum: 200
 		 * @return {Array<Document>} An array of documents
 		 */
 		DocumentsGetByDocIDAndDocTypeAndOffsetAndLimit(docID: string, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<Document>> {

@@ -104,7 +104,10 @@ export namespace MyNS {
 	/** A subscription resource. */
 	export interface Subscription {
 
-		/** For either push or pull delivery, the value is the maximum time after a subscriber receives a message before the subscriber should acknowledge or Nack the message. If the Ack deadline for a message passes without an Ack or a Nack, the Pub/Sub system will eventually redeliver the message. If a subscriber acknowledges after the deadline, the Pub/Sub system may accept the Ack, but it is possible that the message has been already delivered again. Multiple Acks to the message are allowed and will succeed. For push delivery, this value is used to set the request timeout for the call to the push endpoint. For pull delivery, this value is used as the initial value for the Ack deadline. It may be overridden for each message using its corresponding ack_id with ModifyAckDeadline. While a message is outstanding (i.e. it has been delivered to a pull subscriber and the subscriber has not yet Acked or Nacked), the Pub/Sub system will not deliver that message to another pull subscriber (on a best-effort basis). */
+		/**
+		 * For either push or pull delivery, the value is the maximum time after a subscriber receives a message before the subscriber should acknowledge or Nack the message. If the Ack deadline for a message passes without an Ack or a Nack, the Pub/Sub system will eventually redeliver the message. If a subscriber acknowledges after the deadline, the Pub/Sub system may accept the Ack, but it is possible that the message has been already delivered again. Multiple Acks to the message are allowed and will succeed. For push delivery, this value is used to set the request timeout for the call to the push endpoint. For pull delivery, this value is used as the initial value for the Ack deadline. It may be overridden for each message using its corresponding ack_id with ModifyAckDeadline. While a message is outstanding (i.e. it has been delivered to a pull subscriber and the subscriber has not yet Acked or Nacked), the Pub/Sub system will not deliver that message to another pull subscriber (on a best-effort basis).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ackDeadlineSeconds?: number | null;
 
 		/** Name of the subscription. */
@@ -120,7 +123,10 @@ export namespace MyNS {
 	/** A subscription resource. */
 	export interface SubscriptionFormProperties {
 
-		/** For either push or pull delivery, the value is the maximum time after a subscriber receives a message before the subscriber should acknowledge or Nack the message. If the Ack deadline for a message passes without an Ack or a Nack, the Pub/Sub system will eventually redeliver the message. If a subscriber acknowledges after the deadline, the Pub/Sub system may accept the Ack, but it is possible that the message has been already delivered again. Multiple Acks to the message are allowed and will succeed. For push delivery, this value is used to set the request timeout for the call to the push endpoint. For pull delivery, this value is used as the initial value for the Ack deadline. It may be overridden for each message using its corresponding ack_id with ModifyAckDeadline. While a message is outstanding (i.e. it has been delivered to a pull subscriber and the subscriber has not yet Acked or Nacked), the Pub/Sub system will not deliver that message to another pull subscriber (on a best-effort basis). */
+		/**
+		 * For either push or pull delivery, the value is the maximum time after a subscriber receives a message before the subscriber should acknowledge or Nack the message. If the Ack deadline for a message passes without an Ack or a Nack, the Pub/Sub system will eventually redeliver the message. If a subscriber acknowledges after the deadline, the Pub/Sub system may accept the Ack, but it is possible that the message has been already delivered again. Multiple Acks to the message are allowed and will succeed. For push delivery, this value is used to set the request timeout for the call to the push endpoint. For pull delivery, this value is used as the initial value for the Ack deadline. It may be overridden for each message using its corresponding ack_id with ModifyAckDeadline. While a message is outstanding (i.e. it has been delivered to a pull subscriber and the subscriber has not yet Acked or Nacked), the Pub/Sub system will not deliver that message to another pull subscriber (on a best-effort basis).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ackDeadlineSeconds: FormControl<number | null | undefined>,
 
 		/** Name of the subscription. */
@@ -208,7 +214,10 @@ export namespace MyNS {
 	/** Request for the ModifyAckDeadline method. */
 	export interface ModifyAckDeadlineRequest {
 
-		/** The new ack deadline with respect to the time this request was sent to the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new ack deadline will expire 10 seconds after the ModifyAckDeadline call was made. Specifying zero may immediately make the message available for another pull request. */
+		/**
+		 * The new ack deadline with respect to the time this request was sent to the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new ack deadline will expire 10 seconds after the ModifyAckDeadline call was made. Specifying zero may immediately make the message available for another pull request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ackDeadlineSeconds?: number | null;
 
 		/** The acknowledgment ID. Either this or ack_ids must be populated, not both. */
@@ -224,7 +233,10 @@ export namespace MyNS {
 	/** Request for the ModifyAckDeadline method. */
 	export interface ModifyAckDeadlineRequestFormProperties {
 
-		/** The new ack deadline with respect to the time this request was sent to the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new ack deadline will expire 10 seconds after the ModifyAckDeadline call was made. Specifying zero may immediately make the message available for another pull request. */
+		/**
+		 * The new ack deadline with respect to the time this request was sent to the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new ack deadline will expire 10 seconds after the ModifyAckDeadline call was made. Specifying zero may immediately make the message available for another pull request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ackDeadlineSeconds: FormControl<number | null | undefined>,
 
 		/** The acknowledgment ID. Either this or ack_ids must be populated, not both. */
@@ -411,7 +423,10 @@ export namespace MyNS {
 	/** Request for the PullBatch method. */
 	export interface PullBatchRequest {
 
-		/** The maximum number of PubsubEvents returned for this request. The Pub/Sub system may return fewer than the number of events specified. */
+		/**
+		 * The maximum number of PubsubEvents returned for this request. The Pub/Sub system may return fewer than the number of events specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEvents?: number | null;
 
 		/** If this is specified as true the system will respond immediately even if it is not able to return a message in the Pull response. Otherwise the system is allowed to wait until at least one message is available rather than returning no messages. The client may cancel the request if it does not wish to wait any longer for the response. */
@@ -424,7 +439,10 @@ export namespace MyNS {
 	/** Request for the PullBatch method. */
 	export interface PullBatchRequestFormProperties {
 
-		/** The maximum number of PubsubEvents returned for this request. The Pub/Sub system may return fewer than the number of events specified. */
+		/**
+		 * The maximum number of PubsubEvents returned for this request. The Pub/Sub system may return fewer than the number of events specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEvents: FormControl<number | null | undefined>,
 
 		/** If this is specified as true the system will respond immediately even if it is not able to return a message in the Pull response. Otherwise the system is allowed to wait until at least one message is available rather than returning no messages. The client may cancel the request if it does not wish to wait any longer for the response. */
@@ -520,6 +538,7 @@ export namespace MyNS {
 		 * Lists matching subscriptions.
 		 * Get v1beta1a/subscriptions
 		 * @param {number} maxResults Maximum number of subscriptions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value obtained in the last ListSubscriptionsResponse for continuation.
 		 * @param {string} query A valid label query expression.
 		 * @return {ListSubscriptionsResponse} Successful response
@@ -606,6 +625,7 @@ export namespace MyNS {
 		 * Lists matching topics.
 		 * Get v1beta1a/topics
 		 * @param {number} maxResults Maximum number of topics to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value obtained in the last ListTopicsResponse for continuation.
 		 * @param {string} query A valid label query expression.
 		 * @return {ListTopicsResponse} Successful response

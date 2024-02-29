@@ -3255,7 +3255,10 @@ namespace MyNS
 		/// <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The version list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>
 		/// BatchDeleteRecipeVersion recipes/{name}/batchDeleteRecipeVersion
 		/// </summary>
-		/// <param name="name">The name of the recipe whose versions are to be deleted.</param>
+		/// <param name="name">The name of the recipe whose versions are to be deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteRecipeVersionResponse> BatchDeleteRecipeVersionAsync(string name, BatchDeleteRecipeVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3336,8 +3339,14 @@ namespace MyNS
 		/// Lists all of the DataBrew datasets.
 		/// ListDatasets datasets
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3453,8 +3462,14 @@ namespace MyNS
 		/// Lists all of the DataBrew projects that are defined.
 		/// ListProjects projects
 		/// </summary>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3530,9 +3545,18 @@ namespace MyNS
 		/// Lists all of the DataBrew recipes that are defined.
 		/// ListRecipes recipes
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
-		/// <param name="recipeVersion"><p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p></param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
+		/// <param name="recipeVersion"><p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
+		/// Max length: 16
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3648,9 +3672,18 @@ namespace MyNS
 		/// List all rulesets available in the current account or rulesets associated with a specific resource (dataset).
 		/// ListRulesets rulesets
 		/// </summary>
-		/// <param name="targetArn">The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request.</param>
-		/// <param name="nextToken">A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</param>
+		/// <param name="targetArn">The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this request.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3726,9 +3759,18 @@ namespace MyNS
 		/// Lists the DataBrew schedules that are defined.
 		/// ListSchedules schedules
 		/// </summary>
-		/// <param name="jobName">The name of the job that these schedules apply to.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
+		/// <param name="jobName">The name of the job that these schedules apply to.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3764,7 +3806,10 @@ namespace MyNS
 		/// Deletes a dataset from DataBrew.
 		/// DeleteDataset datasets/{name}
 		/// </summary>
-		/// <param name="name">The name of the dataset to be deleted.</param>
+		/// <param name="name">The name of the dataset to be deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDatasetResponse> DeleteDatasetAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3798,7 +3843,10 @@ namespace MyNS
 		/// Returns the definition of a specific DataBrew dataset.
 		/// DescribeDataset datasets/{name}
 		/// </summary>
-		/// <param name="name">The name of the dataset to be described.</param>
+		/// <param name="name">The name of the dataset to be described.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDatasetResponse> DescribeDatasetAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3832,7 +3880,10 @@ namespace MyNS
 		/// Modifies the definition of an existing DataBrew dataset.
 		/// UpdateDataset datasets/{name}
 		/// </summary>
-		/// <param name="name">The name of the dataset to be updated.</param>
+		/// <param name="name">The name of the dataset to be updated.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDatasetResponse> UpdateDatasetAsync(string name, UpdateDatasetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3873,7 +3924,10 @@ namespace MyNS
 		/// Deletes the specified DataBrew job.
 		/// DeleteJob jobs/{name}
 		/// </summary>
-		/// <param name="name">The name of the job to be deleted.</param>
+		/// <param name="name">The name of the job to be deleted.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteJobResponse> DeleteJobAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3907,7 +3961,10 @@ namespace MyNS
 		/// Returns the definition of a specific DataBrew job.
 		/// DescribeJob jobs/{name}
 		/// </summary>
-		/// <param name="name">The name of the job to be described.</param>
+		/// <param name="name">The name of the job to be described.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobResponse> DescribeJobAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3941,7 +3998,10 @@ namespace MyNS
 		/// Deletes an existing DataBrew project.
 		/// DeleteProject projects/{name}
 		/// </summary>
-		/// <param name="name">The name of the project to be deleted.</param>
+		/// <param name="name">The name of the project to be deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProjectResponse> DeleteProjectAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3975,7 +4035,10 @@ namespace MyNS
 		/// Returns the definition of a specific DataBrew project.
 		/// DescribeProject projects/{name}
 		/// </summary>
-		/// <param name="name">The name of the project to be described.</param>
+		/// <param name="name">The name of the project to be described.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeProjectResponse> DescribeProjectAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4009,7 +4072,10 @@ namespace MyNS
 		/// Modifies the definition of an existing DataBrew project.
 		/// UpdateProject projects/{name}
 		/// </summary>
-		/// <param name="name">The name of the project to be updated.</param>
+		/// <param name="name">The name of the project to be updated.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectResponse> UpdateProjectAsync(string name, UpdateProjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4050,8 +4116,14 @@ namespace MyNS
 		/// Deletes a single version of a DataBrew recipe.
 		/// DeleteRecipeVersion recipes/{name}/recipeVersion/{recipeVersion}
 		/// </summary>
-		/// <param name="name">The name of the recipe.</param>
-		/// <param name="recipeVersion">The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</param>
+		/// <param name="name">The name of the recipe.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="recipeVersion">The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
+		/// Max length: 16
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRecipeVersionResponse> DeleteRecipeVersionAsync(string name, string recipeVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4085,7 +4157,10 @@ namespace MyNS
 		/// Deletes a ruleset.
 		/// DeleteRuleset rulesets/{name}
 		/// </summary>
-		/// <param name="name">The name of the ruleset to be deleted.</param>
+		/// <param name="name">The name of the ruleset to be deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRulesetResponse> DeleteRulesetAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4119,7 +4194,10 @@ namespace MyNS
 		/// Retrieves detailed information about the ruleset.
 		/// DescribeRuleset rulesets/{name}
 		/// </summary>
-		/// <param name="name">The name of the ruleset to be described.</param>
+		/// <param name="name">The name of the ruleset to be described.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRulesetResponse> DescribeRulesetAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4153,7 +4231,10 @@ namespace MyNS
 		/// Updates specified ruleset.
 		/// UpdateRuleset rulesets/{name}
 		/// </summary>
-		/// <param name="name">The name of the ruleset to be updated.</param>
+		/// <param name="name">The name of the ruleset to be updated.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRulesetResponse> UpdateRulesetAsync(string name, UpdateRulesetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4194,7 +4275,10 @@ namespace MyNS
 		/// Deletes the specified DataBrew schedule.
 		/// DeleteSchedule schedules/{name}
 		/// </summary>
-		/// <param name="name">The name of the schedule to be deleted.</param>
+		/// <param name="name">The name of the schedule to be deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteScheduleResponse> DeleteScheduleAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4228,7 +4312,10 @@ namespace MyNS
 		/// Returns the definition of a specific DataBrew schedule.
 		/// DescribeSchedule schedules/{name}
 		/// </summary>
-		/// <param name="name">The name of the schedule to be described.</param>
+		/// <param name="name">The name of the schedule to be described.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeScheduleResponse> DescribeScheduleAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4262,7 +4349,10 @@ namespace MyNS
 		/// Modifies the definition of an existing DataBrew schedule.
 		/// UpdateSchedule schedules/{name}
 		/// </summary>
-		/// <param name="name">The name of the schedule to update.</param>
+		/// <param name="name">The name of the schedule to update.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateScheduleResponse> UpdateScheduleAsync(string name, UpdateSchedulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4303,8 +4393,14 @@ namespace MyNS
 		/// Represents one run of a DataBrew job.
 		/// DescribeJobRun jobs/{name}/jobRun/{runId}
 		/// </summary>
-		/// <param name="name">The name of the job being processed during this run.</param>
-		/// <param name="runId">The unique identifier of the job run.</param>
+		/// <param name="name">The name of the job being processed during this run.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
+		/// <param name="runId">The unique identifier of the job run.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobRunResponse> DescribeJobRunAsync(string name, string runId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4338,8 +4434,14 @@ namespace MyNS
 		/// Returns the definition of a specific DataBrew recipe corresponding to a particular version.
 		/// DescribeRecipe recipes/{name}
 		/// </summary>
-		/// <param name="name">The name of the recipe to be described.</param>
-		/// <param name="recipeVersion">The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</param>
+		/// <param name="name">The name of the recipe to be described.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="recipeVersion">The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.
+		/// Max length: 16
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRecipeResponse> DescribeRecipeAsync(string name, string recipeVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4373,7 +4475,10 @@ namespace MyNS
 		/// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
 		/// UpdateRecipe recipes/{name}
 		/// </summary>
-		/// <param name="name">The name of the recipe to be updated.</param>
+		/// <param name="name">The name of the recipe to be updated.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRecipeResponse> UpdateRecipeAsync(string name, UpdateRecipePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4414,9 +4519,18 @@ namespace MyNS
 		/// Lists all of the previous runs of a particular DataBrew job.
 		/// ListJobRuns jobs/{name}/jobRuns
 		/// </summary>
-		/// <param name="name">The name of the job.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
+		/// <param name="name">The name of the job.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4452,10 +4566,22 @@ namespace MyNS
 		/// Lists all of the DataBrew jobs that are defined.
 		/// ListJobs jobs
 		/// </summary>
-		/// <param name="datasetName">The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </param>
-		/// <param name="projectName">The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</param>
+		/// <param name="datasetName">The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. 
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
+		/// <param name="projectName">The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4491,9 +4617,18 @@ namespace MyNS
 		/// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
 		/// ListRecipeVersions recipeVersions#name
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this request. </param>
-		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.</param>
-		/// <param name="name">The name of the recipe for which to return version information.</param>
+		/// <param name="maxResults">The maximum number of results to return in this request. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token returned by a previous call to retrieve the next set of results.
+		/// Max length: 2000
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The name of the recipe for which to return version information.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4529,7 +4664,10 @@ namespace MyNS
 		/// Lists all the tags for a DataBrew resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4563,7 +4701,10 @@ namespace MyNS
 		/// Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</param>
+		/// <param name="ResourceArn">The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4604,7 +4745,10 @@ namespace MyNS
 		/// Publishes a new version of a DataBrew recipe.
 		/// PublishRecipe recipes/{name}/publishRecipe
 		/// </summary>
-		/// <param name="name">The name of the recipe to be published.</param>
+		/// <param name="name">The name of the recipe to be published.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PublishRecipeResponse> PublishRecipeAsync(string name, PublishRecipePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4645,7 +4789,10 @@ namespace MyNS
 		/// Performs a recipe step within an interactive DataBrew session that's currently open.
 		/// SendProjectSessionAction projects/{name}/sendProjectSessionAction
 		/// </summary>
-		/// <param name="name">The name of the project to apply the action to.</param>
+		/// <param name="name">The name of the project to apply the action to.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SendProjectSessionActionResponse> SendProjectSessionActionAsync(string name, SendProjectSessionActionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4686,7 +4833,10 @@ namespace MyNS
 		/// Runs a DataBrew job.
 		/// StartJobRun jobs/{name}/startJobRun
 		/// </summary>
-		/// <param name="name">The name of the job to be run.</param>
+		/// <param name="name">The name of the job to be run.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobRunResponse> StartJobRunAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4715,7 +4865,10 @@ namespace MyNS
 		/// Creates an interactive session, enabling you to manipulate data in a DataBrew project.
 		/// StartProjectSession projects/{name}/startProjectSession
 		/// </summary>
-		/// <param name="name">The name of the project to act upon.</param>
+		/// <param name="name">The name of the project to act upon.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartProjectSessionResponse> StartProjectSessionAsync(string name, StartProjectSessionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4756,8 +4909,14 @@ namespace MyNS
 		/// Stops a particular run of a job.
 		/// StopJobRun jobs/{name}/jobRun/{runId}/stopJobRun
 		/// </summary>
-		/// <param name="name">The name of the job to be stopped.</param>
-		/// <param name="runId">The ID of the job run to be stopped.</param>
+		/// <param name="name">The name of the job to be stopped.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
+		/// <param name="runId">The ID of the job run to be stopped.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopJobRunResponse> StopJobRunAsync(string name, string runId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4786,8 +4945,14 @@ namespace MyNS
 		/// Removes metadata tags from a DataBrew resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </param>
-		/// <param name="tagKeys">The tag keys (names) of one or more tags to be removed.</param>
+		/// <param name="ResourceArn">A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">The tag keys (names) of one or more tags to be removed.
+		/// Minimum items: 1
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4821,7 +4986,10 @@ namespace MyNS
 		/// Modifies the definition of an existing profile job.
 		/// UpdateProfileJob profileJobs/{name}
 		/// </summary>
-		/// <param name="name">The name of the job to be updated.</param>
+		/// <param name="name">The name of the job to be updated.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProfileJobResponse> UpdateProfileJobAsync(string name, UpdateProfileJobPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4862,7 +5030,10 @@ namespace MyNS
 		/// Modifies the definition of an existing DataBrew recipe job.
 		/// UpdateRecipeJob recipeJobs/{name}
 		/// </summary>
-		/// <param name="name">The name of the job to update.</param>
+		/// <param name="name">The name of the job to update.
+		/// Max length: 240
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRecipeJobResponse> UpdateRecipeJobAsync(string name, UpdateRecipeJobPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

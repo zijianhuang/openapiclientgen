@@ -352,6 +352,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
 		 * @param {string} serverName The name of the server.
 		 * @param {number} skip The number of elements in the collection to skip.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} subscriptionId The subscription ID that identifies an Azure subscription.
 		 * @param {string} api_version The API version to use for the request.
 		 * @return {ElasticPoolListResult} Succeeded

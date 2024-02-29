@@ -1891,6 +1891,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllActivities activities
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivityCursorResults> GetAllActivitiesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1993,8 +1996,14 @@ namespace MyNS
 		/// Use this endpoint to get all the activities that the employee is allowed to register an entry on for a given project. Potential restrictions of registration are based on recording rules in the UI, which cannot be modified through the API. Add the employee number and project to your query parameter to obtain the allowed activities for registrations.
 		/// GetAllowedActivities activities/allowed
 		/// </summary>
-		/// <param name="employeeNumber">The employee number.</param>
-		/// <param name="projectNumber">The project number.</param>
+		/// <param name="employeeNumber">The employee number.
+		/// Minimum: 1
+		/// Maximum: 999999
+		// </param>
+		/// <param name="projectNumber">The project number.
+		/// Minimum: 1
+		/// Maximum: 999999999
+		// </param>
 		/// <returns>List of allowed activities.</returns>
 		public async Task<Activity[]> GetAllowedActivitiesAsync(int employeeNumber, int projectNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2063,6 +2072,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Activities.
 		/// GetPageOfActivities activities/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Activity[]> GetPageOfActivitiesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2131,6 +2146,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Activity Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllActivityGroups activitygroups
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivityGroupCursorResults> GetAllActivityGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2233,6 +2251,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Activity Groups.
 		/// GetPageOfActivityGroups activitygroups/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivityGroup[]> GetPageOfActivityGroupsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2301,6 +2325,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Cost Type Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllCostTypeGroups costtypegroups
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostTypeGroupCursorResults> GetAllCostTypeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2369,6 +2396,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Cost Type Groups.
 		/// GetPageOfCostTypeGroups costtypegroups/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostTypeGroup[]> GetPageOfCostTypeGroupsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2437,6 +2470,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Cost Types in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllCostTypes costtypes
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostTypeCursorResults> GetAllCostTypesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2505,6 +2541,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Cost Types.
 		/// GetPageOfCostTypes costtypes/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostType[]> GetPageOfCostTypesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2573,6 +2615,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllEmployeeGroups employeegroups
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EmployeeGroupCursorResults> GetAllEmployeeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2709,6 +2754,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Employee groups.
 		/// GetPageOfEmployeeGroups employeegroups/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EmployeeGroup[]> GetPageOfEmployeeGroupsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2804,6 +2855,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllEmployees employees
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EmployeeCursorResults> GetAllEmployeesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2940,6 +2994,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Employees.
 		/// GetPageOfEmployees employees/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Employee[]> GetPageOfEmployeesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3035,6 +3095,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Mileage entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllMileageEntryPrices mileageprices
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<MileagePricesCursorResults> GetAllMileageEntryPricesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3069,6 +3132,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Mileage entry prices.
 		/// GetPageOfMileageEntryPrices mileageprices/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<MileagePrices[]> GetPageOfMileageEntryPricesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3137,6 +3206,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Mileage entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllMileageEntries mileages
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<MileageCursorResults> GetAllMileageEntriesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3307,6 +3379,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Mileage entries.
 		/// GetPageOfMileageEntries mileages/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Mileage[]> GetPageOfMileageEntriesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3402,6 +3480,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectActivities project-activities
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectActivityCursorResults> GetAllProjectActivitiesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3538,6 +3619,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project Activities.
 		/// GetPageOfProjectActivities project-activities/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectActivity[]> GetPageOfProjectActivitiesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3633,6 +3720,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Customers in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectCustomers project-customers
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectCustomerCursorResults> GetAllProjectCustomersAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3701,6 +3791,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project Customers.
 		/// GetPageOfProjectCustomers project-customers/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectCustomer[]> GetPageOfProjectCustomersAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3769,6 +3865,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectEmployeeGroups project-employeegroups
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployeeGroupCursorResults> GetAllProjectEmployeeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3905,6 +4004,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project employee groups.
 		/// GetPageOfProjectEmployeeGroups project-employeegroups/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployeeGroup[]> GetPageOfProjectEmployeeGroupsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4000,6 +4105,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectEmployees project-employees
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployeeCursorResults> GetAllProjectEmployeesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4136,6 +4244,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project employees.
 		/// GetPageOfProjectEmployees project-employees/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployee[]> GetPageOfProjectEmployeesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4231,6 +4345,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectGroups projectgroups
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectGroupCursorResults> GetAllProjectGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4333,6 +4450,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project Groups.
 		/// GetPageOfProjectGroups projectgroups/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectGroup[]> GetPageOfProjectGroupsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4401,6 +4524,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Projects in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjects projects
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectCursorResults> GetAllProjectsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4503,7 +4629,10 @@ namespace MyNS
 		/// Use this endpoint to get all the projects that the employee is allowed to register an entry on. Potential restrictions of registration are based on recording rules in the UI, which cannot be modified through the API. Add the employee number to your query parameter to obtain the allowed projects for registrations.
 		/// GetPagedListOfProjectUnderEmployee projects/allowed
 		/// </summary>
-		/// <param name="employeeNumber">The employee number.</param>
+		/// <param name="employeeNumber">The employee number.
+		/// Minimum: 1
+		/// Maximum: 999999
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Project[]> GetPagedListOfProjectUnderEmployeeAsync(int employeeNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4572,6 +4701,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Projects.
 		/// GetPageOfProjects projects/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Project[]> GetPageOfProjectsAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4667,6 +4802,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Statuses in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectStatuses projectstatuses
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectStatusCursorResults> GetAllProjectStatusesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4735,6 +4873,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Project Statuses.
 		/// GetPageOfProjectStatuses projectstatuses/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectStatus[]> GetPageOfProjectStatusesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4803,6 +4947,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Time entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllTimeEntries timeentries
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntryCursorResults> GetAllTimeEntriesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4973,6 +5120,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Time entries.
 		/// GetPageOfTimeEntries timeentries/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntry[]> GetPageOfTimeEntriesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5068,6 +5221,9 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Time entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllTimeEntryPrices timeentryprices
 		/// </summary>
+		/// <param name="Cursor">Max length: 50
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntryPricesCursorResults> GetAllTimeEntryPricesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5102,6 +5258,12 @@ namespace MyNS
 		/// Use this endpoint to load a page of Time entry prices.
 		/// GetPageOfTimeEntryPrices timeentryprices/paged
 		/// </summary>
+		/// <param name="PageSize">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="SkipPages">Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntryPrices[]> GetPageOfTimeEntryPricesAsync(string Filter, string Sort, int PageSize, int SkipPages, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

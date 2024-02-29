@@ -8,7 +8,9 @@ export namespace MyNS {
 		address?: AddressClaimSet;
 		'allowed-origins'?: Array<string>;
 		at_hash?: string | null;
-		auth_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		auth_time?: string | null;
 		authorization?: AccessToken_Authorization;
 		azp?: string | null;
 		birthdate?: string | null;
@@ -18,17 +20,23 @@ export namespace MyNS {
 		cnf?: AccessToken_CertConf;
 		email?: string | null;
 		email_verified?: boolean | null;
-		exp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		exp?: string | null;
 		family_name?: string | null;
 		gender?: string | null;
 		given_name?: string | null;
-		iat?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		iat?: string | null;
 		iss?: string | null;
 		jti?: string | null;
 		locale?: string | null;
 		middle_name?: string | null;
 		name?: string | null;
-		nbf?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nbf?: string | null;
 		nickname?: string | null;
 		nonce?: string | null;
 		otherClaims?: string | null;
@@ -44,14 +52,18 @@ export namespace MyNS {
 		sub?: string | null;
 		'trusted-certs'?: Array<string>;
 		typ?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 		website?: string | null;
 		zoneinfo?: string | null;
 	}
 	export interface AccessTokenFormProperties {
 		acr: FormControl<string | null | undefined>,
 		at_hash: FormControl<string | null | undefined>,
-		auth_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		auth_time: FormControl<string | null | undefined>,
 		azp: FormControl<string | null | undefined>,
 		birthdate: FormControl<string | null | undefined>,
 		c_hash: FormControl<string | null | undefined>,
@@ -59,17 +71,23 @@ export namespace MyNS {
 		claims_locales: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		email_verified: FormControl<boolean | null | undefined>,
-		exp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		exp: FormControl<string | null | undefined>,
 		family_name: FormControl<string | null | undefined>,
 		gender: FormControl<string | null | undefined>,
 		given_name: FormControl<string | null | undefined>,
-		iat: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		iat: FormControl<string | null | undefined>,
 		iss: FormControl<string | null | undefined>,
 		jti: FormControl<string | null | undefined>,
 		locale: FormControl<string | null | undefined>,
 		middle_name: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		nbf: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nbf: FormControl<string | null | undefined>,
 		nickname: FormControl<string | null | undefined>,
 		nonce: FormControl<string | null | undefined>,
 		otherClaims: FormControl<string | null | undefined>,
@@ -83,7 +101,9 @@ export namespace MyNS {
 		session_state: FormControl<string | null | undefined>,
 		sub: FormControl<string | null | undefined>,
 		typ: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 		website: FormControl<string | null | undefined>,
 		zoneinfo: FormControl<string | null | undefined>,
 	}
@@ -91,7 +111,7 @@ export namespace MyNS {
 		return new FormGroup<AccessTokenFormProperties>({
 			acr: new FormControl<string | null | undefined>(undefined),
 			at_hash: new FormControl<string | null | undefined>(undefined),
-			auth_time: new FormControl<number | null | undefined>(undefined),
+			auth_time: new FormControl<string | null | undefined>(undefined),
 			azp: new FormControl<string | null | undefined>(undefined),
 			birthdate: new FormControl<string | null | undefined>(undefined),
 			c_hash: new FormControl<string | null | undefined>(undefined),
@@ -99,17 +119,17 @@ export namespace MyNS {
 			claims_locales: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			email_verified: new FormControl<boolean | null | undefined>(undefined),
-			exp: new FormControl<number | null | undefined>(undefined),
+			exp: new FormControl<string | null | undefined>(undefined),
 			family_name: new FormControl<string | null | undefined>(undefined),
 			gender: new FormControl<string | null | undefined>(undefined),
 			given_name: new FormControl<string | null | undefined>(undefined),
-			iat: new FormControl<number | null | undefined>(undefined),
+			iat: new FormControl<string | null | undefined>(undefined),
 			iss: new FormControl<string | null | undefined>(undefined),
 			jti: new FormControl<string | null | undefined>(undefined),
 			locale: new FormControl<string | null | undefined>(undefined),
 			middle_name: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			nbf: new FormControl<number | null | undefined>(undefined),
+			nbf: new FormControl<string | null | undefined>(undefined),
 			nickname: new FormControl<string | null | undefined>(undefined),
 			nonce: new FormControl<string | null | undefined>(undefined),
 			otherClaims: new FormControl<string | null | undefined>(undefined),
@@ -123,7 +143,7 @@ export namespace MyNS {
 			session_state: new FormControl<string | null | undefined>(undefined),
 			sub: new FormControl<string | null | undefined>(undefined),
 			typ: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 			website: new FormControl<string | null | undefined>(undefined),
 			zoneinfo: new FormControl<string | null | undefined>(undefined),
 		});
@@ -226,7 +246,9 @@ export namespace MyNS {
 		representation?: string | null;
 		resourcePath?: string | null;
 		resourceType?: string | null;
-		time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time?: string | null;
 	}
 	export interface AdminEventRepresentationFormProperties {
 		error: FormControl<string | null | undefined>,
@@ -235,7 +257,9 @@ export namespace MyNS {
 		representation: FormControl<string | null | undefined>,
 		resourcePath: FormControl<string | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
-		time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminEventRepresentationFormGroup() {
 		return new FormGroup<AdminEventRepresentationFormProperties>({
@@ -245,7 +269,7 @@ export namespace MyNS {
 			representation: new FormControl<string | null | undefined>(undefined),
 			resourcePath: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -278,6 +302,8 @@ export namespace MyNS {
 		authenticatorFlow?: boolean | null;
 		autheticatorFlow?: boolean | null;
 		flowAlias?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		requirement?: string | null;
 		userSetupAllowed?: boolean | null;
@@ -288,6 +314,8 @@ export namespace MyNS {
 		authenticatorFlow: FormControl<boolean | null | undefined>,
 		autheticatorFlow: FormControl<boolean | null | undefined>,
 		flowAlias: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		requirement: FormControl<string | null | undefined>,
 		userSetupAllowed: FormControl<boolean | null | undefined>,
@@ -314,7 +342,11 @@ export namespace MyNS {
 		displayName?: string | null;
 		flowId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		level?: number | null;
 		providerId?: string | null;
 		requirement?: string | null;
@@ -328,7 +360,11 @@ export namespace MyNS {
 		displayName: FormControl<string | null | undefined>,
 		flowId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		level: FormControl<number | null | undefined>,
 		providerId: FormControl<string | null | undefined>,
 		requirement: FormControl<string | null | undefined>,
@@ -358,6 +394,8 @@ export namespace MyNS {
 		flowId?: string | null;
 		id?: string | null;
 		parentFlow?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		requirement?: string | null;
 	}
@@ -369,6 +407,8 @@ export namespace MyNS {
 		flowId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		parentFlow: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		requirement: FormControl<string | null | undefined>,
 	}
@@ -507,11 +547,19 @@ export namespace MyNS {
 	}
 
 	export interface ClientInitialAccessCreatePresentation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiration?: number | null;
 	}
 	export interface ClientInitialAccessCreatePresentationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiration: FormControl<number | null | undefined>,
 	}
 	export function CreateClientInitialAccessCreatePresentationFormGroup() {
@@ -523,18 +571,34 @@ export namespace MyNS {
 	}
 
 	export interface ClientInitialAccessPresentation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiration?: number | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 		token?: string | null;
 	}
 	export interface ClientInitialAccessPresentationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiration: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 		token: FormControl<string | null | undefined>,
 	}
@@ -636,7 +700,11 @@ export namespace MyNS {
 		id?: string | null;
 		implicitFlowEnabled?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nodeReRegistrationTimeout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore?: number | null;
 		optionalClientScopes?: Array<string>;
 		origin?: string | null;
@@ -673,7 +741,11 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		implicitFlowEnabled: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nodeReRegistrationTimeout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore: FormControl<number | null | undefined>,
 		origin: FormControl<string | null | undefined>,
 		protocol: FormControl<string | null | undefined>,
@@ -961,12 +1033,20 @@ export namespace MyNS {
 
 	export interface MultivaluedHashMap {
 		empty?: boolean | null;
+
+		/** Type: float */
 		loadFactor?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		threshold?: number | null;
 	}
 	export interface MultivaluedHashMapFormProperties {
 		empty: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		loadFactor: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateMultivaluedHashMapFormGroup() {
@@ -1028,9 +1108,13 @@ export namespace MyNS {
 	}
 
 	export interface CredentialRepresentation {
-		createdDate?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdDate?: string | null;
 		credentialData?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		secretData?: string | null;
 		temporary?: boolean | null;
@@ -1039,9 +1123,13 @@ export namespace MyNS {
 		value?: string | null;
 	}
 	export interface CredentialRepresentationFormProperties {
-		createdDate: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdDate: FormControl<string | null | undefined>,
 		credentialData: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		secretData: FormControl<string | null | undefined>,
 		temporary: FormControl<boolean | null | undefined>,
@@ -1051,7 +1139,7 @@ export namespace MyNS {
 	}
 	export function CreateCredentialRepresentationFormGroup() {
 		return new FormGroup<CredentialRepresentationFormProperties>({
-			createdDate: new FormControl<number | null | undefined>(undefined),
+			createdDate: new FormControl<string | null | undefined>(undefined),
 			credentialData: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			priority: new FormControl<number | null | undefined>(undefined),
@@ -1071,7 +1159,9 @@ export namespace MyNS {
 		ipAddress?: string | null;
 		realmId?: string | null;
 		sessionId?: string | null;
-		time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time?: string | null;
 		type?: string | null;
 		userId?: string | null;
 	}
@@ -1082,7 +1172,9 @@ export namespace MyNS {
 		ipAddress: FormControl<string | null | undefined>,
 		realmId: FormControl<string | null | undefined>,
 		sessionId: FormControl<string | null | undefined>,
-		time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		time: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 	}
@@ -1094,7 +1186,7 @@ export namespace MyNS {
 			ipAddress: new FormControl<string | null | undefined>(undefined),
 			realmId: new FormControl<string | null | undefined>(undefined),
 			sessionId: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			userId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1280,7 +1372,9 @@ export namespace MyNS {
 		certificate?: string | null;
 		kid?: string | null;
 		providerId?: string | null;
-		providerPriority?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		providerPriority?: string | null;
 		publicKey?: string | null;
 		status?: string | null;
 		type?: string | null;
@@ -1290,7 +1384,9 @@ export namespace MyNS {
 		certificate: FormControl<string | null | undefined>,
 		kid: FormControl<string | null | undefined>,
 		providerId: FormControl<string | null | undefined>,
-		providerPriority: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		providerPriority: FormControl<string | null | undefined>,
 		publicKey: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -1301,7 +1397,7 @@ export namespace MyNS {
 			certificate: new FormControl<string | null | undefined>(undefined),
 			kid: new FormControl<string | null | undefined>(undefined),
 			providerId: new FormControl<string | null | undefined>(undefined),
-			providerPriority: new FormControl<number | null | undefined>(undefined),
+			providerPriority: new FormControl<string | null | undefined>(undefined),
 			publicKey: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
@@ -1343,31 +1439,47 @@ export namespace MyNS {
 	}
 
 	export interface MemoryInfoRepresentation {
-		free?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		free?: string | null;
 		freeFormated?: string | null;
-		freePercentage?: number | null;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		freePercentage?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 		totalFormated?: string | null;
-		used?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		used?: string | null;
 		usedFormated?: string | null;
 	}
 	export interface MemoryInfoRepresentationFormProperties {
-		free: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		free: FormControl<string | null | undefined>,
 		freeFormated: FormControl<string | null | undefined>,
-		freePercentage: FormControl<number | null | undefined>,
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		freePercentage: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 		totalFormated: FormControl<string | null | undefined>,
-		used: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		used: FormControl<string | null | undefined>,
 		usedFormated: FormControl<string | null | undefined>,
 	}
 	export function CreateMemoryInfoRepresentationFormGroup() {
 		return new FormGroup<MemoryInfoRepresentationFormProperties>({
-			free: new FormControl<number | null | undefined>(undefined),
+			free: new FormControl<string | null | undefined>(undefined),
 			freeFormated: new FormControl<string | null | undefined>(undefined),
-			freePercentage: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			freePercentage: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 			totalFormated: new FormControl<string | null | undefined>(undefined),
-			used: new FormControl<number | null | undefined>(undefined),
+			used: new FormControl<string | null | undefined>(undefined),
 			usedFormated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1415,7 +1527,9 @@ export namespace MyNS {
 		attributes?: string | null;
 		clientConsents?: Array<UserConsentRepresentation>;
 		clientRoles?: string | null;
-		createdTimestamp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdTimestamp?: string | null;
 		credentials?: Array<CredentialRepresentation>;
 		disableableCredentialTypes?: Array<string>;
 		email?: string | null;
@@ -1427,6 +1541,8 @@ export namespace MyNS {
 		groups?: Array<string>;
 		id?: string | null;
 		lastName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore?: number | null;
 		origin?: string | null;
 		realmRoles?: Array<string>;
@@ -1439,7 +1555,9 @@ export namespace MyNS {
 		access: FormControl<string | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
 		clientRoles: FormControl<string | null | undefined>,
-		createdTimestamp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdTimestamp: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		emailVerified: FormControl<boolean | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -1447,6 +1565,8 @@ export namespace MyNS {
 		firstName: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		lastName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore: FormControl<number | null | undefined>,
 		origin: FormControl<string | null | undefined>,
 		self: FormControl<string | null | undefined>,
@@ -1458,7 +1578,7 @@ export namespace MyNS {
 			access: new FormControl<string | null | undefined>(undefined),
 			attributes: new FormControl<string | null | undefined>(undefined),
 			clientRoles: new FormControl<string | null | undefined>(undefined),
-			createdTimestamp: new FormControl<number | null | undefined>(undefined),
+			createdTimestamp: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			emailVerified: new FormControl<boolean | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -1477,20 +1597,28 @@ export namespace MyNS {
 
 	export interface UserConsentRepresentation {
 		clientId?: string | null;
-		createdDate?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdDate?: string | null;
 		grantedClientScopes?: Array<string>;
-		lastUpdatedDate?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastUpdatedDate?: string | null;
 	}
 	export interface UserConsentRepresentationFormProperties {
 		clientId: FormControl<string | null | undefined>,
-		createdDate: FormControl<number | null | undefined>,
-		lastUpdatedDate: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdDate: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastUpdatedDate: FormControl<string | null | undefined>,
 	}
 	export function CreateUserConsentRepresentationFormGroup() {
 		return new FormGroup<UserConsentRepresentationFormProperties>({
 			clientId: new FormControl<string | null | undefined>(undefined),
-			createdDate: new FormControl<number | null | undefined>(undefined),
-			lastUpdatedDate: new FormControl<number | null | undefined>(undefined),
+			createdDate: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1538,10 +1666,14 @@ export namespace MyNS {
 
 	export interface ProviderRepresentation {
 		operationalInfo?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface ProviderRepresentationFormProperties {
 		operationalInfo: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateProviderRepresentationFormGroup() {
@@ -1557,33 +1689,51 @@ export namespace MyNS {
 		adminEventsEnabled?: boolean | null;
 		enabledEventTypes?: Array<string>;
 		eventsEnabled?: boolean | null;
-		eventsExpiration?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eventsExpiration?: string | null;
 		eventsListeners?: Array<string>;
 	}
 	export interface RealmEventsConfigRepresentationFormProperties {
 		adminEventsDetailsEnabled: FormControl<boolean | null | undefined>,
 		adminEventsEnabled: FormControl<boolean | null | undefined>,
 		eventsEnabled: FormControl<boolean | null | undefined>,
-		eventsExpiration: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eventsExpiration: FormControl<string | null | undefined>,
 	}
 	export function CreateRealmEventsConfigRepresentationFormGroup() {
 		return new FormGroup<RealmEventsConfigRepresentationFormProperties>({
 			adminEventsDetailsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			adminEventsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			eventsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			eventsExpiration: new FormControl<number | null | undefined>(undefined),
+			eventsExpiration: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface RealmRepresentation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespan?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespanLogin?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespanUserAction?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessTokenLifespan?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessTokenLifespanForImplicitFlow?: number | null;
 		accountTheme?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		actionTokenGeneratedByAdminLifespan?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		actionTokenGeneratedByUserLifespan?: number | null;
 		adminEventsDetailsEnabled?: boolean | null;
 		adminEventsEnabled?: boolean | null;
@@ -1597,7 +1747,11 @@ export namespace MyNS {
 		clientAuthenticationFlow?: string | null;
 		clientScopeMappings?: string | null;
 		clientScopes?: Array<ClientScopeRepresentation>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clientSessionIdleTimeout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clientSessionMaxLifespan?: number | null;
 		clients?: Array<ClientRepresentation>;
 		components?: MultivaluedHashMap;
@@ -1617,8 +1771,12 @@ export namespace MyNS {
 		enabled?: boolean | null;
 		enabledEventTypes?: Array<string>;
 		eventsEnabled?: boolean | null;
-		eventsExpiration?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eventsExpiration?: string | null;
 		eventsListeners?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failureFactor?: number | null;
 		federatedUsers?: Array<UserRepresentation>;
 		groups?: Array<GroupRepresentation>;
@@ -1629,25 +1787,49 @@ export namespace MyNS {
 		keycloakVersion?: string | null;
 		loginTheme?: string | null;
 		loginWithEmailAllowed?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxDeltaTimeSeconds?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxFailureWaitSeconds?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumQuickLoginWaitSeconds?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offlineSessionIdleTimeout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offlineSessionMaxLifespan?: number | null;
 		offlineSessionMaxLifespanEnabled?: boolean | null;
 		otpPolicyAlgorithm?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyDigits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyInitialCounter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyLookAheadWindow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyPeriod?: number | null;
 		otpPolicyType?: string | null;
 		otpSupportedApplications?: Array<string>;
 		passwordPolicy?: string | null;
 		permanentLockout?: boolean | null;
 		protocolMappers?: Array<ProtocolMapperRepresentation>;
-		quickLoginCheckMilliSeconds?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quickLoginCheckMilliSeconds?: string | null;
 		realm?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		refreshTokenMaxReuse?: number | null;
 		registrationAllowed?: boolean | null;
 		registrationEmailAsUsername?: boolean | null;
@@ -1661,9 +1843,17 @@ export namespace MyNS {
 		scopeMappings?: Array<ScopeMappingRepresentation>;
 		smtpServer?: string | null;
 		sslRequired?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionIdleTimeout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionIdleTimeoutRememberMe?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionMaxLifespan?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionMaxLifespanRememberMe?: number | null;
 		supportedLocales?: Array<string>;
 		userFederationMappers?: Array<UserFederationMapperRepresentation>;
@@ -1671,16 +1861,22 @@ export namespace MyNS {
 		userManagedAccessAllowed?: boolean | null;
 		users?: Array<UserRepresentation>;
 		verifyEmail?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		waitIncrementSeconds?: number | null;
 		webAuthnPolicyAcceptableAaguids?: Array<string>;
 		webAuthnPolicyAttestationConveyancePreference?: string | null;
 		webAuthnPolicyAuthenticatorAttachment?: string | null;
 		webAuthnPolicyAvoidSameAuthenticatorRegister?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webAuthnPolicyCreateTimeout?: number | null;
 		webAuthnPolicyPasswordlessAcceptableAaguids?: Array<string>;
 		webAuthnPolicyPasswordlessAttestationConveyancePreference?: string | null;
 		webAuthnPolicyPasswordlessAuthenticatorAttachment?: string | null;
 		webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webAuthnPolicyPasswordlessCreateTimeout?: number | null;
 		webAuthnPolicyPasswordlessRequireResidentKey?: string | null;
 		webAuthnPolicyPasswordlessRpEntityName?: string | null;
@@ -1694,13 +1890,27 @@ export namespace MyNS {
 		webAuthnPolicyUserVerificationRequirement?: string | null;
 	}
 	export interface RealmRepresentationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespan: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespanLogin: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessCodeLifespanUserAction: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessTokenLifespan: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessTokenLifespanForImplicitFlow: FormControl<number | null | undefined>,
 		accountTheme: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		actionTokenGeneratedByAdminLifespan: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		actionTokenGeneratedByUserLifespan: FormControl<number | null | undefined>,
 		adminEventsDetailsEnabled: FormControl<boolean | null | undefined>,
 		adminEventsEnabled: FormControl<boolean | null | undefined>,
@@ -1711,7 +1921,11 @@ export namespace MyNS {
 		bruteForceProtected: FormControl<boolean | null | undefined>,
 		clientAuthenticationFlow: FormControl<string | null | undefined>,
 		clientScopeMappings: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clientSessionIdleTimeout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clientSessionMaxLifespan: FormControl<number | null | undefined>,
 		defaultLocale: FormControl<string | null | undefined>,
 		defaultSignatureAlgorithm: FormControl<string | null | undefined>,
@@ -1724,30 +1938,58 @@ export namespace MyNS {
 		emailTheme: FormControl<string | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
 		eventsEnabled: FormControl<boolean | null | undefined>,
-		eventsExpiration: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eventsExpiration: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failureFactor: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		internationalizationEnabled: FormControl<boolean | null | undefined>,
 		keycloakVersion: FormControl<string | null | undefined>,
 		loginTheme: FormControl<string | null | undefined>,
 		loginWithEmailAllowed: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxDeltaTimeSeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxFailureWaitSeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumQuickLoginWaitSeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notBefore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offlineSessionIdleTimeout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offlineSessionMaxLifespan: FormControl<number | null | undefined>,
 		offlineSessionMaxLifespanEnabled: FormControl<boolean | null | undefined>,
 		otpPolicyAlgorithm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyDigits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyInitialCounter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyLookAheadWindow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		otpPolicyPeriod: FormControl<number | null | undefined>,
 		otpPolicyType: FormControl<string | null | undefined>,
 		passwordPolicy: FormControl<string | null | undefined>,
 		permanentLockout: FormControl<boolean | null | undefined>,
-		quickLoginCheckMilliSeconds: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quickLoginCheckMilliSeconds: FormControl<string | null | undefined>,
 		realm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		refreshTokenMaxReuse: FormControl<number | null | undefined>,
 		registrationAllowed: FormControl<boolean | null | undefined>,
 		registrationEmailAsUsername: FormControl<boolean | null | undefined>,
@@ -1758,20 +2000,34 @@ export namespace MyNS {
 		revokeRefreshToken: FormControl<boolean | null | undefined>,
 		smtpServer: FormControl<string | null | undefined>,
 		sslRequired: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionIdleTimeout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionIdleTimeoutRememberMe: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionMaxLifespan: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ssoSessionMaxLifespanRememberMe: FormControl<number | null | undefined>,
 		userManagedAccessAllowed: FormControl<boolean | null | undefined>,
 		verifyEmail: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		waitIncrementSeconds: FormControl<number | null | undefined>,
 		webAuthnPolicyAttestationConveyancePreference: FormControl<string | null | undefined>,
 		webAuthnPolicyAuthenticatorAttachment: FormControl<string | null | undefined>,
 		webAuthnPolicyAvoidSameAuthenticatorRegister: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webAuthnPolicyCreateTimeout: FormControl<number | null | undefined>,
 		webAuthnPolicyPasswordlessAttestationConveyancePreference: FormControl<string | null | undefined>,
 		webAuthnPolicyPasswordlessAuthenticatorAttachment: FormControl<string | null | undefined>,
 		webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webAuthnPolicyPasswordlessCreateTimeout: FormControl<number | null | undefined>,
 		webAuthnPolicyPasswordlessRequireResidentKey: FormControl<string | null | undefined>,
 		webAuthnPolicyPasswordlessRpEntityName: FormControl<string | null | undefined>,
@@ -1814,7 +2070,7 @@ export namespace MyNS {
 			emailTheme: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			eventsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			eventsExpiration: new FormControl<number | null | undefined>(undefined),
+			eventsExpiration: new FormControl<string | null | undefined>(undefined),
 			failureFactor: new FormControl<number | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			internationalizationEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -1836,7 +2092,7 @@ export namespace MyNS {
 			otpPolicyType: new FormControl<string | null | undefined>(undefined),
 			passwordPolicy: new FormControl<string | null | undefined>(undefined),
 			permanentLockout: new FormControl<boolean | null | undefined>(undefined),
-			quickLoginCheckMilliSeconds: new FormControl<number | null | undefined>(undefined),
+			quickLoginCheckMilliSeconds: new FormControl<string | null | undefined>(undefined),
 			realm: new FormControl<string | null | undefined>(undefined),
 			refreshTokenMaxReuse: new FormControl<number | null | undefined>(undefined),
 			registrationAllowed: new FormControl<boolean | null | undefined>(undefined),
@@ -1881,6 +2137,8 @@ export namespace MyNS {
 		defaultAction?: boolean | null;
 		enabled?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		providerId?: string | null;
 	}
@@ -1890,6 +2148,8 @@ export namespace MyNS {
 		defaultAction: FormControl<boolean | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		providerId: FormControl<string | null | undefined>,
 	}
@@ -1952,22 +2212,38 @@ export namespace MyNS {
 	}
 
 	export interface UserFederationProviderRepresentation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		changedSyncPeriod?: number | null;
 		config?: string | null;
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fullSyncPeriod?: number | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastSync?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		providerName?: string | null;
 	}
 	export interface UserFederationProviderRepresentationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		changedSyncPeriod: FormControl<number | null | undefined>,
 		config: FormControl<string | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fullSyncPeriod: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastSync: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 	}
@@ -2036,7 +2312,9 @@ export namespace MyNS {
 		osVersion?: string | null;
 		serverTime?: string | null;
 		uptime?: string | null;
-		uptimeMillis?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uptimeMillis?: string | null;
 		userDir?: string | null;
 		userLocale?: string | null;
 		userName?: string | null;
@@ -2056,7 +2334,9 @@ export namespace MyNS {
 		osVersion: FormControl<string | null | undefined>,
 		serverTime: FormControl<string | null | undefined>,
 		uptime: FormControl<string | null | undefined>,
-		uptimeMillis: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		uptimeMillis: FormControl<string | null | undefined>,
 		userDir: FormControl<string | null | undefined>,
 		userLocale: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -2077,7 +2357,7 @@ export namespace MyNS {
 			osVersion: new FormControl<string | null | undefined>(undefined),
 			serverTime: new FormControl<string | null | undefined>(undefined),
 			uptime: new FormControl<string | null | undefined>(undefined),
-			uptimeMillis: new FormControl<number | null | undefined>(undefined),
+			uptimeMillis: new FormControl<string | null | undefined>(undefined),
 			userDir: new FormControl<string | null | undefined>(undefined),
 			userLocale: new FormControl<string | null | undefined>(undefined),
 			userName: new FormControl<string | null | undefined>(undefined),
@@ -2104,19 +2384,35 @@ export namespace MyNS {
 	}
 
 	export interface SynchronizationResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failed?: number | null;
 		ignored?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		removed?: number | null;
 		status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated?: number | null;
 	}
 	export interface SynchronizationResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		added: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		failed: FormControl<number | null | undefined>,
 		ignored: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		removed: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated: FormControl<number | null | undefined>,
 	}
 	export function CreateSynchronizationResultFormGroup() {
@@ -2169,8 +2465,12 @@ export namespace MyNS {
 		clients?: string | null;
 		id?: string | null;
 		ipAddress?: string | null;
-		lastAccess?: number | null;
-		start?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastAccess?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
 		userId?: string | null;
 		username?: string | null;
 	}
@@ -2178,8 +2478,12 @@ export namespace MyNS {
 		clients: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		ipAddress: FormControl<string | null | undefined>,
-		lastAccess: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastAccess: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
 	}
@@ -2188,8 +2492,8 @@ export namespace MyNS {
 			clients: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			ipAddress: new FormControl<string | null | undefined>(undefined),
-			lastAccess: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			lastAccess: new FormControl<string | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
 			userId: new FormControl<string | null | undefined>(undefined),
 			username: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2269,7 +2573,9 @@ export namespace MyNS {
 		 * Get admin events   Returns all admin events, or filters events based on URL query parameters listed here
 		 * Get {realm}/admin-events
 		 * @param {string} authUser user id
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmAdmin_eventsGetByAuthClientAndAuthIpAddressAndAuthRealmAndAuthUserAndDateFromAndDateToAndFirstAndMaxAndOperationTypesAndResourcePathAndResourceTypes(authClient: string | null | undefined, authIpAddress: string | null | undefined, authRealm: string | null | undefined, authUser: string | null | undefined, dateFrom: string | null | undefined, dateTo: string | null | undefined, first: number | null | undefined, max: number | null | undefined, operationTypes: Array<string> | null | undefined, resourcePath: string | null | undefined, resourceTypes: Array<string> | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2867,7 +3173,9 @@ export namespace MyNS {
 		 * Get {realm}/clients
 		 * @param {string} clientId filter by clientId
 		 * @param {number} first the first result
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max the max results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} search whether this is a search query or a getClientById query
 		 * @param {boolean} viewableOnly filter clients that cannot be viewed in full by admin
 		 * @return {void} 
@@ -3156,7 +3464,9 @@ export namespace MyNS {
 		 * Get offline sessions for client   Returns a list of offline user sessions associated with this client
 		 * Get {realm}/clients/{id}/offline-sessions
 		 * @param {number} first Paging offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmClients_idOffline_sessionsGetByFirstAndMax(first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3245,6 +3555,8 @@ export namespace MyNS {
 		/**
 		 * Get all roles for the realm or client
 		 * Get {realm}/clients/{id}/roles
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmClients_idRolesGetByBriefRepresentationAndFirstAndMaxAndSearch(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, search: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3336,6 +3648,8 @@ export namespace MyNS {
 		 * Return List of Groups that have the specified role name
 		 * Get {realm}/clients/{id}/roles/{role_name}/groups
 		 * @param {boolean} briefRepresentation if false, return a full representation of the GroupRepresentation objects
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmClients_idRoles_role_nameGroupsGetByBriefRepresentationAndFirstAndMax(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3363,6 +3677,8 @@ export namespace MyNS {
 		/**
 		 * Return List of Users that have the specified role name
 		 * Get {realm}/clients/{id}/roles/{role_name}/users
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmClients_idRoles_role_nameUsersGetByFirstAndMax(first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3499,7 +3815,9 @@ export namespace MyNS {
 		 * Get user sessions for client   Returns a list of user sessions associated with this client
 		 * Get {realm}/clients/{id}/user-sessions
 		 * @param {number} first Paging offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmClients_idUser_sessionsGetByFirstAndMax(first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3654,8 +3972,10 @@ export namespace MyNS {
 		 * @param {string} dateFrom From date
 		 * @param {string} dateTo To date
 		 * @param {number} first Paging offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ipAddress IP address
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} type The types of events to return
 		 * @param {string} user User id
 		 * @return {void} 
@@ -3693,6 +4013,8 @@ export namespace MyNS {
 		/**
 		 * Get group hierarchy.
 		 * Get {realm}/groups
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmGroupsGetByBriefRepresentationAndFirstAndMaxAndSearch(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, search: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3776,7 +4098,9 @@ export namespace MyNS {
 		 *  email, enabled state, email verification state, federation link, and access.
 		 *  Note that it means that namely user attributes, required actions, and not before are not returned.)
 		 * @param {number} first Pagination offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmGroups_idMembersGetByBriefRepresentationAndFirstAndMax(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4076,6 +4400,8 @@ export namespace MyNS {
 		/**
 		 * Get all roles for the realm or client
 		 * Get {realm}/roles
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmRolesGetByBriefRepresentationAndFirstAndMaxAndSearch(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, search: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4257,6 +4583,8 @@ export namespace MyNS {
 		 * Return List of Groups that have the specified role name
 		 * Get {realm}/roles/{role_name}/groups
 		 * @param {boolean} briefRepresentation if false, return a full representation of the GroupRepresentation objects
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmRoles_role_nameGroupsGetByBriefRepresentationAndFirstAndMax(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4284,6 +4612,8 @@ export namespace MyNS {
 		/**
 		 * Return List of Users that have the specified role name
 		 * Get {realm}/roles/{role_name}/users
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmRoles_role_nameUsersGetByFirstAndMax(first: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4364,7 +4694,9 @@ export namespace MyNS {
 		/**
 		 * Get users   Returns a list of users, filtered according to query parameters
 		 * Get {realm}/users
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max Maximum results size (defaults to 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search A String contained in username, first or last name, or email
 		 * @return {void} 
 		 */
@@ -4514,6 +4846,7 @@ export namespace MyNS {
 		 * Put {realm}/users/{id}/execute-actions-email
 		 * @param {string} client_id Client id
 		 * @param {number} lifespan Number of seconds after which the generated token expires
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} redirect_uri Redirect uri
 		 * @param {Array<string>} requestBody required actions the user needs to complete
 		 * @return {void} 
@@ -4551,6 +4884,8 @@ export namespace MyNS {
 
 		/**
 		 * Get {realm}/users/{id}/groups
+		 * @param {number} first Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		_realmUsers_idGroupsGetByBriefRepresentationAndFirstAndMaxAndSearch(briefRepresentation: boolean | null | undefined, first: number | null | undefined, max: number | null | undefined, search: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

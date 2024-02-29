@@ -1141,7 +1141,10 @@ namespace MyNS
 		/// <param name="customerAuthToken">The `customerAuthToken` query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.</param>
 		/// <param name="customerId">This can be either the customer's primary domain name or the customer's unique identifier. If the domain name for a customer changes, the old domain name cannot be used to access the customer, but the customer's unique identifier (as returned by the API) can always be used. We recommend storing the unique identifier in your systems where applicable.</param>
 		/// <param name="customerNamePrefix">When retrieving all of your subscriptions and filtering for specific customers, you can enter a prefix for a customer name. Using an example customer group that includes `exam.com`, `example20.com` and `example.com`: - `exa` -- Returns all customer names that start with 'exa' which could include `exam.com`, `example20.com`, and `example.com`. A name prefix is similar to using a regular expression's asterisk, exa*. - `example` -- Returns `example20.com` and `example.com`. </param>
-		/// <param name="maxResults">When retrieving a large list, the `maxResults` is the maximum number of results per page. The `nextPageToken` value takes you to the next page. The default is 20.</param>
+		/// <param name="maxResults">When retrieving a large list, the `maxResults` is the maximum number of results per page. The `nextPageToken` value takes you to the next page. The default is 20.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">Token to specify next page in the list</param>
 		/// <returns>Successful response</returns>
 		public async Task<Subscriptions> Reseller_subscriptions_listAsync(string customerAuthToken, string customerId, string customerNamePrefix, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

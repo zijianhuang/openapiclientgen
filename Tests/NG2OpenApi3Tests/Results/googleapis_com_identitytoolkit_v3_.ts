@@ -158,7 +158,10 @@ export namespace MyNS {
 		/** The user's hashed password. */
 		passwordHash?: string | null;
 
-		/** The timestamp when the password was last updated. */
+		/**
+		 * The timestamp when the password was last updated.
+		 * Type: double
+		 */
 		passwordUpdatedAt?: number | null;
 
 		/** User's phone number. */
@@ -182,7 +185,10 @@ export namespace MyNS {
 		/** Timestamp in seconds for valid login token. */
 		validSince?: string | null;
 
-		/** Version of the user's password. */
+		/**
+		 * Version of the user's password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -219,7 +225,10 @@ export namespace MyNS {
 		/** The user's hashed password. */
 		passwordHash: FormControl<string | null | undefined>,
 
-		/** The timestamp when the password was last updated. */
+		/**
+		 * The timestamp when the password was last updated.
+		 * Type: double
+		 */
 		passwordUpdatedAt: FormControl<number | null | undefined>,
 
 		/** User's phone number. */
@@ -240,7 +249,10 @@ export namespace MyNS {
 		/** Timestamp in seconds for valid login token. */
 		validSince: FormControl<string | null | undefined>,
 
-		/** Version of the user's password. */
+		/**
+		 * Version of the user's password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateUserInfoFormGroup() {
@@ -714,7 +726,10 @@ export namespace MyNS {
 		/** GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. */
 		delegatedProjectNumber?: string | null;
 
-		/** The max number of results to return in the response. */
+		/**
+		 * The max number of results to return in the response.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxResults?: number | null;
 
 		/** The token for the next page. This should be taken from the previous response. */
@@ -730,7 +745,10 @@ export namespace MyNS {
 		/** GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. */
 		delegatedProjectNumber: FormControl<string | null | undefined>,
 
-		/** The max number of results to return in the response. */
+		/**
+		 * The max number of results to return in the response.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** The token for the next page. This should be taken from the previous response. */
@@ -901,7 +919,10 @@ export namespace MyNS {
 		/** Whether this IDP is enabled. */
 		enabled?: boolean | null;
 
-		/** Percent of users who will be prompted/redirected federated login for this IDP. */
+		/**
+		 * Percent of users who will be prompted/redirected federated login for this IDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		experimentPercent?: number | null;
 
 		/** OAuth2 provider. */
@@ -923,7 +944,10 @@ export namespace MyNS {
 		/** Whether this IDP is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Percent of users who will be prompted/redirected federated login for this IDP. */
+		/**
+		 * Percent of users who will be prompted/redirected federated login for this IDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		experimentPercent: FormControl<number | null | undefined>,
 
 		/** OAuth2 provider. */
@@ -1480,23 +1504,38 @@ export namespace MyNS {
 
 		/** Whether allow overwrite existing account when user local_id exists. */
 		allowOverwrite?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockSize?: number | null;
 
-		/** The following 4 fields are for standard scrypt algorithm. */
+		/**
+		 * The following 4 fields are for standard scrypt algorithm.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMemCost?: number | null;
 
 		/** GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. */
 		delegatedProjectNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dkLen?: number | null;
 
 		/** The password hash algorithm. */
 		hashAlgorithm?: string | null;
 
-		/** Memory cost for hash calculation. Used by scrypt similar algorithms. */
+		/**
+		 * Memory cost for hash calculation. Used by scrypt similar algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryCost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallelization?: number | null;
 
-		/** Rounds for hash calculation. Used by scrypt and similar algorithms. */
+		/**
+		 * Rounds for hash calculation. Used by scrypt and similar algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rounds?: number | null;
 
 		/** The salt separator. */
@@ -1520,23 +1559,38 @@ export namespace MyNS {
 
 		/** Whether allow overwrite existing account when user local_id exists. */
 		allowOverwrite: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockSize: FormControl<number | null | undefined>,
 
-		/** The following 4 fields are for standard scrypt algorithm. */
+		/**
+		 * The following 4 fields are for standard scrypt algorithm.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMemCost: FormControl<number | null | undefined>,
 
 		/** GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. */
 		delegatedProjectNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dkLen: FormControl<number | null | undefined>,
 
 		/** The password hash algorithm. */
 		hashAlgorithm: FormControl<string | null | undefined>,
 
-		/** Memory cost for hash calculation. Used by scrypt similar algorithms. */
+		/**
+		 * Memory cost for hash calculation. Used by scrypt similar algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryCost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallelization: FormControl<number | null | undefined>,
 
-		/** Rounds for hash calculation. Used by scrypt and similar algorithms. */
+		/**
+		 * Rounds for hash calculation. Used by scrypt and similar algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rounds: FormControl<number | null | undefined>,
 
 		/** The salt separator. */
@@ -2273,7 +2327,10 @@ export namespace MyNS {
 
 	export interface UploadAccountResponseError {
 
-		/** The index of the malformed account, starting from 0. */
+		/**
+		 * The index of the malformed account, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Detailed error message for the account info. */
@@ -2281,7 +2338,10 @@ export namespace MyNS {
 	}
 	export interface UploadAccountResponseErrorFormProperties {
 
-		/** The index of the malformed account, starting from 0. */
+		/**
+		 * The index of the malformed account, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Detailed error message for the account info. */
@@ -2377,7 +2437,10 @@ export namespace MyNS {
 		/** The OAuth2 authorization code. */
 		oauthAuthorizationCode?: string | null;
 
-		/** The lifetime in seconds of the OAuth2 access token. */
+		/**
+		 * The lifetime in seconds of the OAuth2 access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauthExpireIn?: number | null;
 
 		/** The OIDC id token. */
@@ -2498,7 +2561,10 @@ export namespace MyNS {
 		/** The OAuth2 authorization code. */
 		oauthAuthorizationCode: FormControl<string | null | undefined>,
 
-		/** The lifetime in seconds of the OAuth2 access token. */
+		/**
+		 * The lifetime in seconds of the OAuth2 access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauthExpireIn: FormControl<number | null | undefined>,
 
 		/** The OIDC id token. */
@@ -2655,7 +2721,10 @@ export namespace MyNS {
 		/** The OAuth2 authorization code. */
 		oauthAuthorizationCode?: string | null;
 
-		/** The lifetime in seconds of the OAuth2 access token. */
+		/**
+		 * The lifetime in seconds of the OAuth2 access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauthExpireIn?: number | null;
 
 		/** The URI of the user's photo at IdP */
@@ -2695,7 +2764,10 @@ export namespace MyNS {
 		/** The OAuth2 authorization code. */
 		oauthAuthorizationCode: FormControl<string | null | undefined>,
 
-		/** The lifetime in seconds of the OAuth2 access token. */
+		/**
+		 * The lifetime in seconds of the OAuth2 access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauthExpireIn: FormControl<number | null | undefined>,
 
 		/** The URI of the user's photo at IdP */

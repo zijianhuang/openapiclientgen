@@ -3522,7 +3522,10 @@ namespace MyNS
 		/// Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
 		/// BatchGetCollaborationAnalysisTemplate collaborations/{collaborationIdentifier}/batch-analysistemplates
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchGetCollaborationAnalysisTemplateOutput> BatchGetCollaborationAnalysisTemplateAsync(string collaborationIdentifier, BatchGetCollaborationAnalysisTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3563,7 +3566,10 @@ namespace MyNS
 		/// Retrieves multiple schemas by their identifiers.
 		/// BatchGetSchema collaborations/{collaborationIdentifier}/batch-schema
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchGetSchemaOutput> BatchGetSchemaAsync(string collaborationIdentifier, BatchGetSchemaPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3604,7 +3610,10 @@ namespace MyNS
 		/// Creates a new analysis template.
 		/// CreateAnalysisTemplate memberships/{membershipIdentifier}/analysistemplates
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAnalysisTemplateOutput> CreateAnalysisTemplateAsync(string membershipIdentifier, CreateAnalysisTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3645,9 +3654,18 @@ namespace MyNS
 		/// Lists analysis templates that the caller owns.
 		/// ListAnalysisTemplates memberships/{membershipIdentifier}/analysistemplates
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAnalysisTemplatesOutput> ListAnalysisTemplatesAsync(string membershipIdentifier, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3721,8 +3739,14 @@ namespace MyNS
 		/// Lists collaborations the caller owns, is active in, or has been invited to.
 		/// ListCollaborations collaborations
 		/// </summary>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="memberStatus">The caller's status in a collaboration.</param>
 		/// <returns>Success</returns>
 		public async Task<ListCollaborationsOutput> ListCollaborationsAsync(string nextToken, int maxResults, FilterableMemberStatus memberStatus, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3797,8 +3821,14 @@ namespace MyNS
 		/// Lists configured tables.
 		/// ListConfiguredTables configuredTables
 		/// </summary>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListConfiguredTablesOutput> ListConfiguredTablesAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3832,7 +3862,10 @@ namespace MyNS
 		/// Creates a new analysis rule for a configured table. Currently, only one analysis rule can be created for a given configured table.
 		/// CreateConfiguredTableAnalysisRule configuredTables/{configuredTableIdentifier}/analysisRule
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </param>
+		/// <param name="configuredTableIdentifier">The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateConfiguredTableAnalysisRuleOutput> CreateConfiguredTableAnalysisRuleAsync(string configuredTableIdentifier, CreateConfiguredTableAnalysisRulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3873,7 +3906,10 @@ namespace MyNS
 		/// Creates a configured table association. A configured table association links a configured table with a collaboration.
 		/// CreateConfiguredTableAssociation memberships/{membershipIdentifier}/configuredTableAssociations
 		/// </summary>
-		/// <param name="membershipIdentifier">A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</param>
+		/// <param name="membershipIdentifier">A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateConfiguredTableAssociationOutput> CreateConfiguredTableAssociationAsync(string membershipIdentifier, CreateConfiguredTableAssociationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3914,9 +3950,18 @@ namespace MyNS
 		/// Lists configured table associations for a membership.
 		/// ListConfiguredTableAssociations memberships/{membershipIdentifier}/configuredTableAssociations
 		/// </summary>
-		/// <param name="membershipIdentifier">A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="membershipIdentifier">A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListConfiguredTableAssociationsOutput> ListConfiguredTableAssociationsAsync(string membershipIdentifier, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3990,8 +4035,14 @@ namespace MyNS
 		/// Lists all memberships resources within the caller's account.
 		/// ListMemberships memberships
 		/// </summary>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="status">A filter which will return only memberships in the specified status.</param>
 		/// <returns>Success</returns>
 		public async Task<ListMembershipsOutput> ListMembershipsAsync(string nextToken, int maxResults, MembershipStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4026,8 +4077,14 @@ namespace MyNS
 		/// Deletes an analysis template.
 		/// DeleteAnalysisTemplate memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
-		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteAnalysisTemplateAsync(string membershipIdentifier, string analysisTemplateIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "memberships/"+ (membershipIdentifier==null? "" : System.Uri.EscapeDataString(membershipIdentifier))+"/analysistemplates/"+ (analysisTemplateIdentifier==null? "" : System.Uri.EscapeDataString(analysisTemplateIdentifier));
@@ -4054,8 +4111,14 @@ namespace MyNS
 		/// Retrieves an analysis template.
 		/// GetAnalysisTemplate memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
-		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAnalysisTemplateOutput> GetAnalysisTemplateAsync(string membershipIdentifier, string analysisTemplateIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4089,8 +4152,14 @@ namespace MyNS
 		/// Updates the analysis template metadata.
 		/// UpdateAnalysisTemplate memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
-		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="analysisTemplateIdentifier">The identifier for the analysis template resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAnalysisTemplateOutput> UpdateAnalysisTemplateAsync(string membershipIdentifier, string analysisTemplateIdentifier, UpdateAnalysisTemplatePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4131,7 +4200,10 @@ namespace MyNS
 		/// Deletes a collaboration. It can only be called by the collaboration owner.
 		/// DeleteCollaboration collaborations/{collaborationIdentifier}
 		/// </summary>
-		/// <param name="collaborationIdentifier">The identifier for the collaboration.</param>
+		/// <param name="collaborationIdentifier">The identifier for the collaboration.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteCollaborationAsync(string collaborationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "collaborations/"+ (collaborationIdentifier==null? "" : System.Uri.EscapeDataString(collaborationIdentifier));
@@ -4158,7 +4230,10 @@ namespace MyNS
 		/// Returns metadata about a collaboration.
 		/// GetCollaboration collaborations/{collaborationIdentifier}
 		/// </summary>
-		/// <param name="collaborationIdentifier">The identifier for the collaboration.</param>
+		/// <param name="collaborationIdentifier">The identifier for the collaboration.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCollaborationOutput> GetCollaborationAsync(string collaborationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4192,7 +4267,10 @@ namespace MyNS
 		/// Updates collaboration metadata and can only be called by the collaboration owner.
 		/// UpdateCollaboration collaborations/{collaborationIdentifier}
 		/// </summary>
-		/// <param name="collaborationIdentifier">The identifier for the collaboration.</param>
+		/// <param name="collaborationIdentifier">The identifier for the collaboration.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCollaborationOutput> UpdateCollaborationAsync(string collaborationIdentifier, UpdateCollaborationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4233,7 +4311,10 @@ namespace MyNS
 		/// Deletes a configured table.
 		/// DeleteConfiguredTable configuredTables/{configuredTableIdentifier}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The unique ID for the configured table to delete.</param>
+		/// <param name="configuredTableIdentifier">The unique ID for the configured table to delete.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteConfiguredTableAsync(string configuredTableIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "configuredTables/"+ (configuredTableIdentifier==null? "" : System.Uri.EscapeDataString(configuredTableIdentifier));
@@ -4260,7 +4341,10 @@ namespace MyNS
 		/// Retrieves a configured table.
 		/// GetConfiguredTable configuredTables/{configuredTableIdentifier}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The unique ID for the configured table to retrieve.</param>
+		/// <param name="configuredTableIdentifier">The unique ID for the configured table to retrieve.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConfiguredTableOutput> GetConfiguredTableAsync(string configuredTableIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4294,7 +4378,10 @@ namespace MyNS
 		/// Updates a configured table.
 		/// UpdateConfiguredTable configuredTables/{configuredTableIdentifier}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The identifier for the configured table to update. Currently accepts the configured table ID.</param>
+		/// <param name="configuredTableIdentifier">The identifier for the configured table to update. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateConfiguredTableOutput> UpdateConfiguredTableAsync(string configuredTableIdentifier, UpdateConfiguredTablePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4335,7 +4422,10 @@ namespace MyNS
 		/// Deletes a configured table analysis rule.
 		/// DeleteConfiguredTableAnalysisRule configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</param>
+		/// <param name="configuredTableIdentifier">The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="analysisRuleType">The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</param>
 		public async Task DeleteConfiguredTableAnalysisRuleAsync(string configuredTableIdentifier, AnalysisRuleType analysisRuleType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4363,7 +4453,10 @@ namespace MyNS
 		/// Retrieves a configured table analysis rule.
 		/// GetConfiguredTableAnalysisRule configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</param>
+		/// <param name="configuredTableIdentifier">The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="analysisRuleType">The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</param>
 		/// <returns>Success</returns>
 		public async Task<GetConfiguredTableAnalysisRuleOutput> GetConfiguredTableAnalysisRuleAsync(string configuredTableIdentifier, AnalysisRuleType analysisRuleType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4398,7 +4491,10 @@ namespace MyNS
 		/// Updates a configured table analysis rule.
 		/// UpdateConfiguredTableAnalysisRule configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		/// </summary>
-		/// <param name="configuredTableIdentifier">The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</param>
+		/// <param name="configuredTableIdentifier">The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="analysisRuleType">The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdateConfiguredTableAnalysisRuleOutput> UpdateConfiguredTableAnalysisRuleAsync(string configuredTableIdentifier, AnalysisRuleType analysisRuleType, UpdateConfiguredTableAnalysisRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4440,8 +4536,14 @@ namespace MyNS
 		/// Deletes a configured table association.
 		/// DeleteConfiguredTableAssociation memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		/// </summary>
-		/// <param name="configuredTableAssociationIdentifier">The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</param>
-		/// <param name="membershipIdentifier">A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</param>
+		/// <param name="configuredTableAssociationIdentifier">The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="membershipIdentifier">A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteConfiguredTableAssociationAsync(string configuredTableAssociationIdentifier, string membershipIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "memberships/"+ (membershipIdentifier==null? "" : System.Uri.EscapeDataString(membershipIdentifier))+"/configuredTableAssociations/"+ (configuredTableAssociationIdentifier==null? "" : System.Uri.EscapeDataString(configuredTableAssociationIdentifier));
@@ -4468,8 +4570,14 @@ namespace MyNS
 		/// Retrieves a configured table association.
 		/// GetConfiguredTableAssociation memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		/// </summary>
-		/// <param name="configuredTableAssociationIdentifier">The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</param>
-		/// <param name="membershipIdentifier">A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</param>
+		/// <param name="configuredTableAssociationIdentifier">The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="membershipIdentifier">A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConfiguredTableAssociationOutput> GetConfiguredTableAssociationAsync(string configuredTableAssociationIdentifier, string membershipIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4503,8 +4611,14 @@ namespace MyNS
 		/// Updates a configured table association.
 		/// UpdateConfiguredTableAssociation memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		/// </summary>
-		/// <param name="configuredTableAssociationIdentifier">The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</param>
-		/// <param name="membershipIdentifier">The unique ID for the membership that the configured table association belongs to.</param>
+		/// <param name="configuredTableAssociationIdentifier">The unique identifier for the configured table association to update. Currently accepts the configured table association ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="membershipIdentifier">The unique ID for the membership that the configured table association belongs to.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateConfiguredTableAssociationOutput> UpdateConfiguredTableAssociationAsync(string configuredTableAssociationIdentifier, string membershipIdentifier, UpdateConfiguredTableAssociationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4545,8 +4659,14 @@ namespace MyNS
 		/// Removes the specified member from a collaboration. The removed member is placed in the Removed status and can't interact with the collaboration. The removed member's data is inaccessible to active members of the collaboration.
 		/// DeleteMember collaborations/{collaborationIdentifier}/member/{accountId}
 		/// </summary>
-		/// <param name="collaborationIdentifier">The unique identifier for the associated collaboration.</param>
-		/// <param name="accountId">The account ID of the member to remove.</param>
+		/// <param name="collaborationIdentifier">The unique identifier for the associated collaboration.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="accountId">The account ID of the member to remove.
+		/// Max length: 12
+		/// Min length: 12
+		// </param>
 		public async Task DeleteMemberAsync(string collaborationIdentifier, string accountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "collaborations/"+ (collaborationIdentifier==null? "" : System.Uri.EscapeDataString(collaborationIdentifier))+"/member/"+ (accountId==null? "" : System.Uri.EscapeDataString(accountId));
@@ -4573,7 +4693,10 @@ namespace MyNS
 		/// Deletes a specified membership. All resources under a membership must be deleted.
 		/// DeleteMembership memberships/{membershipIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteMembershipAsync(string membershipIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "memberships/"+ (membershipIdentifier==null? "" : System.Uri.EscapeDataString(membershipIdentifier));
@@ -4600,7 +4723,10 @@ namespace MyNS
 		/// Retrieves a specified membership for an identifier.
 		/// GetMembership memberships/{membershipIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership resource.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership resource.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMembershipOutput> GetMembershipAsync(string membershipIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4634,7 +4760,10 @@ namespace MyNS
 		/// Updates a membership.
 		/// UpdateMembership memberships/{membershipIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The unique identifier of the membership.</param>
+		/// <param name="membershipIdentifier">The unique identifier of the membership.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMembershipOutput> UpdateMembershipAsync(string membershipIdentifier, UpdateMembershipPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4675,8 +4804,14 @@ namespace MyNS
 		/// Retrieves an analysis template within a collaboration.
 		/// GetCollaborationAnalysisTemplate collaborations/{collaborationIdentifier}/analysistemplates/{analysisTemplateArn}
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</param>
-		/// <param name="analysisTemplateArn">The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="analysisTemplateArn">The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+		/// Max length: 200
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCollaborationAnalysisTemplateOutput> GetCollaborationAnalysisTemplateAsync(string collaborationIdentifier, string analysisTemplateArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4710,8 +4845,14 @@ namespace MyNS
 		/// Returns query processing metadata.
 		/// GetProtectedQuery memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a membership in a protected query instance.</param>
-		/// <param name="protectedQueryIdentifier">The identifier for a protected query instance.</param>
+		/// <param name="membershipIdentifier">The identifier for a membership in a protected query instance.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="protectedQueryIdentifier">The identifier for a protected query instance.
+		/// Max length: 36
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProtectedQueryOutput> GetProtectedQueryAsync(string membershipIdentifier, string protectedQueryIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4745,8 +4886,14 @@ namespace MyNS
 		/// Updates the processing of a currently running query.
 		/// UpdateProtectedQuery memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for a member of a protected query instance.</param>
-		/// <param name="protectedQueryIdentifier">The identifier for a protected query instance.</param>
+		/// <param name="membershipIdentifier">The identifier for a member of a protected query instance.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="protectedQueryIdentifier">The identifier for a protected query instance.
+		/// Max length: 36
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProtectedQueryOutput> UpdateProtectedQueryAsync(string membershipIdentifier, string protectedQueryIdentifier, UpdateProtectedQueryPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4787,8 +4934,14 @@ namespace MyNS
 		/// Retrieves the schema for a relation within a collaboration.
 		/// GetSchema collaborations/{collaborationIdentifier}/schemas/{name}
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</param>
-		/// <param name="name">The name of the relation to retrieve the schema for.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="name">The name of the relation to retrieve the schema for.
+		/// Max length: 128
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSchemaOutput> GetSchemaAsync(string collaborationIdentifier, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4822,8 +4975,14 @@ namespace MyNS
 		/// Retrieves a schema analysis rule.
 		/// GetSchemaAnalysisRule collaborations/{collaborationIdentifier}/schemas/{name}/analysisRule/{type}
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</param>
-		/// <param name="name">The name of the schema to retrieve the analysis rule for.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="name">The name of the schema to retrieve the analysis rule for.
+		/// Max length: 128
+		/// Min length: 0
+		// </param>
 		/// <param name="type">The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</param>
 		/// <returns>Success</returns>
 		public async Task<GetSchemaAnalysisRuleOutput> GetSchemaAnalysisRuleAsync(string collaborationIdentifier, string name, AnalysisRuleType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4858,9 +5017,18 @@ namespace MyNS
 		/// Lists analysis templates within a collaboration.
 		/// ListCollaborationAnalysisTemplates collaborations/{collaborationIdentifier}/analysistemplates
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCollaborationAnalysisTemplatesOutput> ListCollaborationAnalysisTemplatesAsync(string collaborationIdentifier, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4894,9 +5062,18 @@ namespace MyNS
 		/// Lists all members within a collaboration.
 		/// ListMembers collaborations/{collaborationIdentifier}/members
 		/// </summary>
-		/// <param name="collaborationIdentifier">The identifier of the collaboration in which the members are listed.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="collaborationIdentifier">The identifier of the collaboration in which the members are listed.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMembersOutput> ListMembersAsync(string collaborationIdentifier, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4930,10 +5107,19 @@ namespace MyNS
 		/// Lists protected queries, sorted by the most recent query.
 		/// ListProtectedQueries memberships/{membershipIdentifier}/protectedQueries
 		/// </summary>
-		/// <param name="membershipIdentifier">The identifier for the membership in the collaboration.</param>
+		/// <param name="membershipIdentifier">The identifier for the membership in the collaboration.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="status">A filter on the status of the protected query.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProtectedQueriesOutput> ListProtectedQueriesAsync(string membershipIdentifier, ProtectedQueryStatus status, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4967,7 +5153,10 @@ namespace MyNS
 		/// Creates a protected query that is started by Clean Rooms .
 		/// StartProtectedQuery memberships/{membershipIdentifier}/protectedQueries
 		/// </summary>
-		/// <param name="membershipIdentifier">A unique identifier for the membership to run this query against. Currently accepts a membership ID.</param>
+		/// <param name="membershipIdentifier">A unique identifier for the membership to run this query against. Currently accepts a membership ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartProtectedQueryOutput> StartProtectedQueryAsync(string membershipIdentifier, StartProtectedQueryPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5008,10 +5197,19 @@ namespace MyNS
 		/// Lists the schemas for relations within a collaboration.
 		/// ListSchemas collaborations/{collaborationIdentifier}/schemas
 		/// </summary>
-		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</param>
+		/// <param name="collaborationIdentifier">A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="schemaType">If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</param>
-		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum size of the results that is returned per call.</param>
+		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.
+		/// Max length: 10240
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum size of the results that is returned per call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSchemasOutput> ListSchemasAsync(string collaborationIdentifier, SchemaType schemaType, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5045,7 +5243,10 @@ namespace MyNS
 		/// Lists all of the tags that have been added to a resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to list tags on.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5079,7 +5280,10 @@ namespace MyNS
 		/// Tags a resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to tag.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to tag.
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceOutput> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5120,7 +5324,10 @@ namespace MyNS
 		/// Removes a tag or list of tags from a resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
 		/// <param name="tagKeys">A list of key names of tags to be removed.</param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

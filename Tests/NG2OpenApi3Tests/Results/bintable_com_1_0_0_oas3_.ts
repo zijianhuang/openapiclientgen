@@ -11,7 +11,10 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result: number;
 	}
 	export interface ResponseItemFormProperties {
@@ -22,7 +25,10 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result: FormControl<number | null | undefined>,
 	}
 	export function CreateResponseItemFormGroup() {

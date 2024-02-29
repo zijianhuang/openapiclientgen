@@ -109,7 +109,10 @@ export namespace MyNS {
 		/** Extension number */
 		extension_number?: string | null;
 
-		/** Unique identifier of the assigned location */
+		/**
+		 * Unique identifier of the assigned location
+		 * Type: double
+		 */
 		location_id?: number | null;
 		user?: BasicUser;
 
@@ -130,7 +133,10 @@ export namespace MyNS {
 		/** Extension number */
 		extension_number: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the assigned location */
+		/**
+		 * Unique identifier of the assigned location
+		 * Type: double
+		 */
 		location_id: FormControl<number | null | undefined>,
 
 		/** Voicemail transcription status of the location */
@@ -187,30 +193,54 @@ export namespace MyNS {
 		_embedded?: EndUserRouteEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages?: number | null;
 	}
 	export interface EndUserRouteHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateEndUserRouteHalResponseFormGroup() {
@@ -318,7 +348,10 @@ export namespace MyNS {
 		/** Error message */
 		msg?: string | null;
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status?: number | null;
 	}
 	export interface ErrorResponseFormProperties {
@@ -326,7 +359,10 @@ export namespace MyNS {
 		/** Error message */
 		msg: FormControl<string | null | undefined>,
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorResponseFormGroup() {
@@ -362,7 +398,10 @@ export namespace MyNS {
 		/** Invalid parameters and their reason for failing */
 		invalid_parameters?: Array<DetailedInvalidParam>;
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status?: number | null;
 
 		/** Error title */
@@ -373,7 +412,10 @@ export namespace MyNS {
 		/** Error Track ID */
 		instance: FormControl<string | null | undefined>,
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Error title */
@@ -398,8 +440,11 @@ export namespace MyNS {
 		 * Get api/accounts/{account_id}/extensions
 		 * @param {string} account_id The Vonage Business Cloud account ID
 		 * @param {number} page_size Number of records per page
+		 *     Type: double
 		 * @param {number} page Current page number
+		 *     Type: double
 		 * @param {number} location_id Filter by location id
+		 *     Type: double
 		 * @param {string} phone_number Filter by phone number
 		 * @param {string} login_name Filter by login name
 		 * @param {string} email Filter by email address
@@ -414,6 +459,7 @@ export namespace MyNS {
 		 * Get api/accounts/{account_id}/extensions/{extension_number}
 		 * @param {string} account_id The Vonage Business Cloud account ID
 		 * @param {number} extension_number The extension number
+		 *     Type: double
 		 * @return {EndUserRouteHalResponse} Success
 		 */
 		ExtensionCtrl_getAccountExtensionByID(account_id: string, extension_number: number): Observable<EndUserRouteHalResponse> {

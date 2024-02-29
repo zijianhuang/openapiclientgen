@@ -1566,6 +1566,9 @@ namespace MyNS
 		/// Creates a new search domain.
 		/// GET_CreateDomain #Action=CreateDomain
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateDomainAsync(string DomainName, GET_CreateDomainAction Action, GET_CreateDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1593,6 +1596,9 @@ namespace MyNS
 		/// Configures an <code>IndexField</code> for the search domain. Used to create new fields and modify existing ones. If the field exists, the new configuration replaces the old one. You can configure a maximum of 200 index fields.
 		/// GET_DefineIndexField #Action=DefineIndexField
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DefineIndexFieldAsync(string DomainName, GET_DefineIndexFieldIndexField IndexField, GET_DefineIndexFieldAction Action, GET_DefineIndexFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1620,6 +1626,9 @@ namespace MyNS
 		/// Configures a <code>RankExpression</code> for the search domain. Used to create new rank expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.
 		/// GET_DefineRankExpression #Action=DefineRankExpression
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DefineRankExpressionAsync(string DomainName, GET_DefineRankExpressionRankExpression RankExpression, GET_DefineRankExpressionAction Action, GET_DefineRankExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1647,6 +1656,9 @@ namespace MyNS
 		/// Permanently deletes a search domain and all of its data.
 		/// GET_DeleteDomain #Action=DeleteDomain
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteDomainAsync(string DomainName, GET_DeleteDomainAction Action, GET_DeleteDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1674,6 +1686,12 @@ namespace MyNS
 		/// Removes an <code>IndexField</code> from the search domain.
 		/// GET_DeleteIndexField #Action=DeleteIndexField
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="IndexFieldName">Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteIndexFieldAsync(string DomainName, string IndexFieldName, GET_DeleteIndexFieldAction Action, GET_DeleteIndexFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1701,7 +1719,13 @@ namespace MyNS
 		/// Removes a <code>RankExpression</code> from the search domain.
 		/// GET_DeleteRankExpression #Action=DeleteRankExpression
 		/// </summary>
-		/// <param name="RankName">The name of the <code>RankExpression</code> to delete.</param>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="RankName">The name of the <code>RankExpression</code> to delete.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteRankExpressionAsync(string DomainName, string RankName, GET_DeleteRankExpressionAction Action, GET_DeleteRankExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1729,7 +1753,10 @@ namespace MyNS
 		/// Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DescribeAvailabilityOptions #Action=DescribeAvailabilityOptions
 		/// </summary>
-		/// <param name="DomainName">The name of the domain you want to describe.</param>
+		/// <param name="DomainName">The name of the domain you want to describe.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeAvailabilityOptionsAsync(string DomainName, GET_DescribeAvailabilityOptionsAction Action, GET_DescribeAvailabilityOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1757,6 +1784,9 @@ namespace MyNS
 		/// Gets the default search field configured for the search domain.
 		/// GET_DescribeDefaultSearchField #Action=DescribeDefaultSearchField
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeDefaultSearchFieldAsync(string DomainName, GET_DescribeDefaultSearchFieldAction Action, GET_DescribeDefaultSearchFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1812,6 +1842,9 @@ namespace MyNS
 		/// Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields by default.
 		/// GET_DescribeIndexFields #Action=DescribeIndexFields
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="FieldNames">Limits the <code>DescribeIndexFields</code> response to the specified fields.</param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeIndexFieldsAsync(string DomainName, string[] FieldNames, GET_DescribeIndexFieldsAction Action, GET_DescribeIndexFieldsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1840,6 +1873,9 @@ namespace MyNS
 		/// Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank expressions by default.
 		/// GET_DescribeRankExpressions #Action=DescribeRankExpressions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="RankNames">Limits the <code>DescribeRankExpressions</code> response to the specified fields.</param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeRankExpressionsAsync(string DomainName, string[] RankNames, GET_DescribeRankExpressionsAction Action, GET_DescribeRankExpressionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1868,6 +1904,9 @@ namespace MyNS
 		/// Gets information about the resource-based policies that control access to the domain's document and search services.
 		/// GET_DescribeServiceAccessPolicies #Action=DescribeServiceAccessPolicies
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeServiceAccessPoliciesAsync(string DomainName, GET_DescribeServiceAccessPoliciesAction Action, GET_DescribeServiceAccessPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1895,6 +1934,9 @@ namespace MyNS
 		/// Gets the stemming dictionary configured for the search domain.
 		/// GET_DescribeStemmingOptions #Action=DescribeStemmingOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeStemmingOptionsAsync(string DomainName, GET_DescribeStemmingOptionsAction Action, GET_DescribeStemmingOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1922,6 +1964,9 @@ namespace MyNS
 		/// Gets the stopwords configured for the search domain.
 		/// GET_DescribeStopwordOptions #Action=DescribeStopwordOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeStopwordOptionsAsync(string DomainName, GET_DescribeStopwordOptionsAction Action, GET_DescribeStopwordOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1949,6 +1994,9 @@ namespace MyNS
 		/// Gets the synonym dictionary configured for the search domain.
 		/// GET_DescribeSynonymOptions #Action=DescribeSynonymOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeSynonymOptionsAsync(string DomainName, GET_DescribeSynonymOptionsAction Action, GET_DescribeSynonymOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1976,6 +2024,9 @@ namespace MyNS
 		/// Tells the search domain to start indexing its documents using the latest text processing options and <code>IndexFields</code>. This operation must be invoked to make options whose <a>OptionStatus</a> has <code>OptionState</code> of <code>RequiresIndexDocuments</code> visible in search results.
 		/// GET_IndexDocuments #Action=IndexDocuments
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_IndexDocumentsAsync(string DomainName, GET_IndexDocumentsAction Action, GET_IndexDocumentsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2003,6 +2054,9 @@ namespace MyNS
 		/// Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_UpdateAvailabilityOptions #Action=UpdateAvailabilityOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="MultiAZ">You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateAvailabilityOptionsAsync(string DomainName, bool MultiAZ, GET_UpdateAvailabilityOptionsAction Action, GET_UpdateAvailabilityOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2031,6 +2085,9 @@ namespace MyNS
 		/// Configures the default search field for the search domain. The default search field is the text field that is searched when a search request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
 		/// GET_UpdateDefaultSearchField #Action=UpdateDefaultSearchField
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="DefaultSearchField">The text field to search if the search request does not specify which field to search. The default search field is used when search terms are specified with the <code>q</code> parameter, or if a match expression specified with the <code>bq</code> parameter does not constrain the search to a particular field. The default is an empty string, which automatically searches all text fields.</param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateDefaultSearchFieldAsync(string DomainName, string DefaultSearchField, GET_UpdateDefaultSearchFieldAction Action, GET_UpdateDefaultSearchFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2059,6 +2116,9 @@ namespace MyNS
 		/// Configures the policies that control access to the domain's document and search services. The maximum size of an access policy document is 100 KB.
 		/// GET_UpdateServiceAccessPolicies #Action=UpdateServiceAccessPolicies
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateServiceAccessPoliciesAsync(string DomainName, string AccessPolicies, GET_UpdateServiceAccessPoliciesAction Action, GET_UpdateServiceAccessPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2086,6 +2146,9 @@ namespace MyNS
 		/// Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search requests. The maximum size of the stemming dictionary is 500 KB.
 		/// GET_UpdateStemmingOptions #Action=UpdateStemmingOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateStemmingOptionsAsync(string DomainName, string Stems, GET_UpdateStemmingOptionsAction Action, GET_UpdateStemmingOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2113,6 +2176,9 @@ namespace MyNS
 		/// Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size of the stopwords dictionary is 10 KB.
 		/// GET_UpdateStopwordOptions #Action=UpdateStopwordOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateStopwordOptionsAsync(string DomainName, string Stopwords, GET_UpdateStopwordOptionsAction Action, GET_UpdateStopwordOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2140,6 +2206,9 @@ namespace MyNS
 		/// Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms that occur in text fields. The maximum size of the synonym dictionary is 100 KB.
 		/// GET_UpdateSynonymOptions #Action=UpdateSynonymOptions
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateSynonymOptionsAsync(string DomainName, string Synonyms, GET_UpdateSynonymOptionsAction Action, GET_UpdateSynonymOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -16,19 +16,31 @@ export namespace MyNS {
 		/** The base URL used in cookie match requests. */
 		cookieMatchingUrl?: string | null;
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Resource type. */
 		kind?: string | null;
 
-		/** The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumActiveCreatives?: number | null;
 
-		/** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumTotalQps?: number | null;
 
-		/** The number of creatives that this account inserted or bid with in the last 30 days. */
+		/**
+		 * The number of creatives that this account inserted or bid with in the last 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberActiveCreatives?: number | null;
 	}
 
@@ -41,19 +53,31 @@ export namespace MyNS {
 		/** The base URL used in cookie match requests. */
 		cookieMatchingUrl: FormControl<string | null | undefined>,
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumActiveCreatives: FormControl<number | null | undefined>,
 
-		/** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumTotalQps: FormControl<number | null | undefined>,
 
-		/** The number of creatives that this account inserted or bid with in the last 30 days. */
+		/**
+		 * The number of creatives that this account inserted or bid with in the last 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberActiveCreatives: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
@@ -71,7 +95,10 @@ export namespace MyNS {
 
 	export interface AccountBidderLocation {
 
-		/** The maximum queries per second the Ad Exchange will send. */
+		/**
+		 * The maximum queries per second the Ad Exchange will send.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumQps?: number | null;
 
 		/**
@@ -88,7 +115,10 @@ export namespace MyNS {
 	}
 	export interface AccountBidderLocationFormProperties {
 
-		/** The maximum queries per second the Ad Exchange will send. */
+		/**
+		 * The maximum queries per second the Ad Exchange will send.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumQps: FormControl<number | null | undefined>,
 
 		/**
@@ -140,7 +170,10 @@ export namespace MyNS {
 	/** The configuration data for an Ad Exchange billing info. */
 	export interface BillingInfo {
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId?: number | null;
 
 		/** Account name. */
@@ -156,7 +189,10 @@ export namespace MyNS {
 	/** The configuration data for an Ad Exchange billing info. */
 	export interface BillingInfoFormProperties {
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/** Account name. */
@@ -261,7 +297,10 @@ export namespace MyNS {
 		/** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. */
 		HTMLSnippet?: string | null;
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId?: number | null;
 		adTechnologyProviders?: CreativeAdTechnologyProviders;
 
@@ -295,7 +334,10 @@ export namespace MyNS {
 		/** The filtering reasons for the creative. Read-only. This field should not be set in requests. */
 		filteringReasons?: CreativeFilteringReasons;
 
-		/** Ad height. */
+		/**
+		 * Ad height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The set of urls to be called to record an impression. */
@@ -322,13 +364,19 @@ export namespace MyNS {
 		/** All vendor types for the ads that may be shown from this snippet. */
 		vendorType?: Array<number>;
 
-		/** The version for this creative. Read-only. This field should not be set in requests. */
+		/**
+		 * The version for this creative. Read-only. This field should not be set in requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 
 		/** The URL to fetch a video ad. If set, HTMLSnippet and the nativeAd should not be set. */
 		videoURL?: string | null;
 
-		/** Ad width. */
+		/**
+		 * Ad width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -338,7 +386,10 @@ export namespace MyNS {
 		/** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. */
 		HTMLSnippet: FormControl<string | null | undefined>,
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/** The name of the company being advertised in the creative. */
@@ -353,7 +404,10 @@ export namespace MyNS {
 		/** A buyer-specific id identifying the creative in this ad. */
 		buyerCreativeId: FormControl<string | null | undefined>,
 
-		/** Ad height. */
+		/**
+		 * Ad height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Resource type. */
@@ -362,13 +416,19 @@ export namespace MyNS {
 		/** Creative serving status. Read-only. This field should not be set in requests. */
 		status: FormControl<string | null | undefined>,
 
-		/** The version for this creative. Read-only. This field should not be set in requests. */
+		/**
+		 * The version for this creative. Read-only. This field should not be set in requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 
 		/** The URL to fetch a video ad. If set, HTMLSnippet and the nativeAd should not be set. */
 		videoURL: FormControl<string | null | undefined>,
 
-		/** Ad width. */
+		/**
+		 * Ad width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFormGroup() {
@@ -474,7 +534,10 @@ export namespace MyNS {
 		/** The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. */
 		filteringCount?: string | null;
 
-		/** The filtering status code. Please refer to the creative-status-codes.txt file for different statuses. */
+		/**
+		 * The filtering status code. Please refer to the creative-status-codes.txt file for different statuses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filteringStatus?: number | null;
 	}
 	export interface CreativeFilteringReasonsReasonsFormProperties {
@@ -482,7 +545,10 @@ export namespace MyNS {
 		/** The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. */
 		filteringCount: FormControl<string | null | undefined>,
 
-		/** The filtering status code. Please refer to the creative-status-codes.txt file for different statuses. */
+		/**
+		 * The filtering status code. Please refer to the creative-status-codes.txt file for different statuses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filteringStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFilteringReasonsReasonsFormGroup() {
@@ -523,7 +589,10 @@ export namespace MyNS {
 		/** The price of the promoted app including the currency info. */
 		price?: string | null;
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating?: number | null;
 	}
 	export interface CreativeNativeAdFormProperties {
@@ -544,7 +613,10 @@ export namespace MyNS {
 		/** The price of the promoted app including the currency info. */
 		price: FormControl<string | null | undefined>,
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeNativeAdFormGroup() {
@@ -561,13 +633,21 @@ export namespace MyNS {
 	}
 
 	export interface CreativeNativeAdAppIcon {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface CreativeNativeAdAppIconFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeNativeAdAppIconFormGroup() {
@@ -580,13 +660,21 @@ export namespace MyNS {
 	}
 
 	export interface CreativeNativeAdImage {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface CreativeNativeAdImageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeNativeAdImageFormGroup() {
@@ -599,13 +687,21 @@ export namespace MyNS {
 	}
 
 	export interface CreativeNativeAdLogo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface CreativeNativeAdLogoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeNativeAdLogoFormGroup() {
@@ -652,7 +748,10 @@ export namespace MyNS {
 	/** The configuration data for an Ad Exchange direct deal. */
 	export interface DirectDeal {
 
-		/** The account id of the buyer this deal is for. */
+		/**
+		 * The account id of the buyer this deal is for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId?: number | null;
 
 		/** The name of the advertiser this deal is for. */
@@ -701,7 +800,10 @@ export namespace MyNS {
 	/** The configuration data for an Ad Exchange direct deal. */
 	export interface DirectDealFormProperties {
 
-		/** The account id of the buyer this deal is for. */
+		/**
+		 * The account id of the buyer this deal is for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/** The name of the advertiser this deal is for. */
@@ -795,10 +897,16 @@ export namespace MyNS {
 	/** The configuration data for an Ad Exchange performance report list. */
 	export interface PerformanceReport {
 
-		/** The number of bid responses with an ad. */
+		/**
+		 * The number of bid responses with an ad.
+		 * Type: double
+		 */
 		bidRate?: number | null;
 
-		/** The number of bid requests sent to your bidder. */
+		/**
+		 * The number of bid requests sent to your bidder.
+		 * Type: double
+		 */
 		bidRequestRate?: number | null;
 
 		/** Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses. */
@@ -810,113 +918,197 @@ export namespace MyNS {
 		/** Rate of ads with a given status. Please refer to the creative-status-codes.txt file for different statuses. */
 		creativeStatusRate?: Array<string>;
 
-		/** The number of bid responses that were filtered due to a policy violation or other errors. */
+		/**
+		 * The number of bid responses that were filtered due to a policy violation or other errors.
+		 * Type: double
+		 */
 		filteredBidRate?: number | null;
 
 		/** Average QPS for hosted match operations. */
 		hostedMatchStatusRate?: Array<string>;
 
-		/** The number of potential queries based on your pretargeting settings. */
+		/**
+		 * The number of potential queries based on your pretargeting settings.
+		 * Type: double
+		 */
 		inventoryMatchRate?: number | null;
 
 		/** Resource type. */
 		kind?: string | null;
 
-		/** The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency50thPercentile?: number | null;
 
-		/** The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency85thPercentile?: number | null;
 
-		/** The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency95thPercentile?: number | null;
 
-		/** Rate of various quota account statuses per quota check. */
+		/**
+		 * Rate of various quota account statuses per quota check.
+		 * Type: double
+		 */
 		noQuotaInRegion?: number | null;
 
-		/** Rate of various quota account statuses per quota check. */
+		/**
+		 * Rate of various quota account statuses per quota check.
+		 * Type: double
+		 */
 		outOfQuota?: number | null;
 
-		/** Average QPS for pixel match requests from clients. */
+		/**
+		 * Average QPS for pixel match requests from clients.
+		 * Type: double
+		 */
 		pixelMatchRequests?: number | null;
 
-		/** Average QPS for pixel match responses from clients. */
+		/**
+		 * Average QPS for pixel match responses from clients.
+		 * Type: double
+		 */
 		pixelMatchResponses?: number | null;
 
-		/** The configured quota limits for this account. */
+		/**
+		 * The configured quota limits for this account.
+		 * Type: double
+		 */
 		quotaConfiguredLimit?: number | null;
 
-		/** The throttled quota limits for this account. */
+		/**
+		 * The throttled quota limits for this account.
+		 * Type: double
+		 */
 		quotaThrottledLimit?: number | null;
 
 		/** The trading location of this data. */
 		region?: string | null;
 
-		/** The number of properly formed bid responses received by our servers within the deadline. */
+		/**
+		 * The number of properly formed bid responses received by our servers within the deadline.
+		 * Type: double
+		 */
 		successfulRequestRate?: number | null;
 
 		/** The unix timestamp of the starting time of this performance data. */
 		timestamp?: string | null;
 
-		/** The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc. */
+		/**
+		 * The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc.
+		 * Type: double
+		 */
 		unsuccessfulRequestRate?: number | null;
 	}
 
 	/** The configuration data for an Ad Exchange performance report list. */
 	export interface PerformanceReportFormProperties {
 
-		/** The number of bid responses with an ad. */
+		/**
+		 * The number of bid responses with an ad.
+		 * Type: double
+		 */
 		bidRate: FormControl<number | null | undefined>,
 
-		/** The number of bid requests sent to your bidder. */
+		/**
+		 * The number of bid requests sent to your bidder.
+		 * Type: double
+		 */
 		bidRequestRate: FormControl<number | null | undefined>,
 
-		/** The number of bid responses that were filtered due to a policy violation or other errors. */
+		/**
+		 * The number of bid responses that were filtered due to a policy violation or other errors.
+		 * Type: double
+		 */
 		filteredBidRate: FormControl<number | null | undefined>,
 
-		/** The number of potential queries based on your pretargeting settings. */
+		/**
+		 * The number of potential queries based on your pretargeting settings.
+		 * Type: double
+		 */
 		inventoryMatchRate: FormControl<number | null | undefined>,
 
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency50thPercentile: FormControl<number | null | undefined>,
 
-		/** The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency85thPercentile: FormControl<number | null | undefined>,
 
-		/** The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
+		/**
+		 * The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+		 * Type: double
+		 */
 		latency95thPercentile: FormControl<number | null | undefined>,
 
-		/** Rate of various quota account statuses per quota check. */
+		/**
+		 * Rate of various quota account statuses per quota check.
+		 * Type: double
+		 */
 		noQuotaInRegion: FormControl<number | null | undefined>,
 
-		/** Rate of various quota account statuses per quota check. */
+		/**
+		 * Rate of various quota account statuses per quota check.
+		 * Type: double
+		 */
 		outOfQuota: FormControl<number | null | undefined>,
 
-		/** Average QPS for pixel match requests from clients. */
+		/**
+		 * Average QPS for pixel match requests from clients.
+		 * Type: double
+		 */
 		pixelMatchRequests: FormControl<number | null | undefined>,
 
-		/** Average QPS for pixel match responses from clients. */
+		/**
+		 * Average QPS for pixel match responses from clients.
+		 * Type: double
+		 */
 		pixelMatchResponses: FormControl<number | null | undefined>,
 
-		/** The configured quota limits for this account. */
+		/**
+		 * The configured quota limits for this account.
+		 * Type: double
+		 */
 		quotaConfiguredLimit: FormControl<number | null | undefined>,
 
-		/** The throttled quota limits for this account. */
+		/**
+		 * The throttled quota limits for this account.
+		 * Type: double
+		 */
 		quotaThrottledLimit: FormControl<number | null | undefined>,
 
 		/** The trading location of this data. */
 		region: FormControl<string | null | undefined>,
 
-		/** The number of properly formed bid responses received by our servers within the deadline. */
+		/**
+		 * The number of properly formed bid responses received by our servers within the deadline.
+		 * Type: double
+		 */
 		successfulRequestRate: FormControl<number | null | undefined>,
 
 		/** The unix timestamp of the starting time of this performance data. */
 		timestamp: FormControl<string | null | undefined>,
 
-		/** The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc. */
+		/**
+		 * The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc.
+		 * Type: double
+		 */
 		unsuccessfulRequestRate: FormControl<number | null | undefined>,
 	}
 	export function CreatePerformanceReportFormGroup() {
@@ -1183,6 +1375,7 @@ export namespace MyNS {
 		 * Gets one account by ID.
 		 * Get accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_get(id: number): Observable<Account> {
@@ -1193,6 +1386,7 @@ export namespace MyNS {
 		 * Updates an existing account. This method supports patch semantics.
 		 * Patch accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_patch(id: number, requestBody: Account): Observable<Account> {
@@ -1203,6 +1397,7 @@ export namespace MyNS {
 		 * Updates an existing account.
 		 * Put accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_update(id: number, requestBody: Account): Observable<Account> {
@@ -1222,6 +1417,7 @@ export namespace MyNS {
 		 * Returns the billing information for one account specified by account ID.
 		 * Get billinginfo/{accountId}
 		 * @param {number} accountId The account id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillingInfo} Successful response
 		 */
 		Adexchangebuyer_billingInfo_get(accountId: number): Observable<BillingInfo> {
@@ -1267,6 +1463,7 @@ export namespace MyNS {
 		 * @param {Array<number>} accountId When specified, only creatives for the given account ids are returned.
 		 * @param {Array<string>} buyerCreativeId When specified, only creatives for the given buyer creative ids are returned.
 		 * @param {number} maxResults Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
 		 * @param {Adexchangebuyer_creatives_listStatusFilter} statusFilter When specified, only creatives having the given status are returned.
 		 * @return {CreativesList} Successful response
@@ -1288,6 +1485,7 @@ export namespace MyNS {
 		 * Gets the status for a single creative. A creative will be available 30-40 minutes after submission.
 		 * Get creatives/{accountId}/{buyerCreativeId}
 		 * @param {number} accountId The id for the account that will serve this creative.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} buyerCreativeId The buyer-specific id for this creative.
 		 * @return {Creative} Successful response
 		 */
@@ -1321,6 +1519,7 @@ export namespace MyNS {
 		 * @param {string} endDateTime The end time of the report in ISO 8601 timestamp format using UTC.
 		 * @param {string} startDateTime The start time of the report in ISO 8601 timestamp format using UTC.
 		 * @param {number} maxResults Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
 		 * @return {PerformanceReportList} Successful response
 		 */

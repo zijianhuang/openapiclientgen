@@ -463,8 +463,13 @@ namespace MyNS
 		/// ListSchemaVersion v1/Schemas/{Id}/Versions
 		/// </summary>
 		/// <param name="Id">The unique identifier of the schema. Each schema can have multiple versions, that share the same id.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSchemaVersionReturn> ListSchemaVersionAsync(string Id, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -536,8 +541,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="InUse">A boolean query parameter filtering the results to return sinks used/not used by a subscription.</param>
 		/// <param name="Status">A String query parameter filtering the results by status `initialized`, `validating`, `active` or `failed`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSinkReturn> ListSinkAsync(bool InUse, string Status, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -572,7 +582,10 @@ namespace MyNS
 		/// Delete a specific Sink.
 		/// DeleteSink v1/Sinks/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteSinkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Sinks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -599,7 +612,10 @@ namespace MyNS
 		/// Fetch a specific Sink.
 		/// FetchSink v1/Sinks/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Eventsv1sink> FetchSinkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -633,7 +649,10 @@ namespace MyNS
 		/// Create a new Sink Test Event for the given Sink.
 		/// CreateSinkTest v1/Sinks/{Sid}/Test
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies the Sink to be Tested.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies the Sink to be Tested.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task CreateSinkTestAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Sinks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid))+"/Test";
@@ -655,9 +674,17 @@ namespace MyNS
 		/// Retrieve a paginated list of Subscriptions belonging to the account used to make the request.
 		/// ListSubscription v1/Subscriptions
 		/// </summary>
-		/// <param name="SinkSid">The SID of the sink that the list of Subscriptions should be filtered by.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="SinkSid">The SID of the sink that the list of Subscriptions should be filtered by.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSubscriptionReturn> ListSubscriptionAsync(string SinkSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -692,7 +719,10 @@ namespace MyNS
 		/// Delete a specific Subscription.
 		/// DeleteSubscription v1/Subscriptions/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteSubscriptionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Subscriptions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -719,7 +749,10 @@ namespace MyNS
 		/// Fetch a specific Subscription.
 		/// FetchSubscription v1/Subscriptions/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Eventsv1subscription> FetchSubscriptionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -753,9 +786,17 @@ namespace MyNS
 		/// Retrieve a list of all Subscribed Event types for a Subscription.
 		/// ListSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents
 		/// </summary>
-		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSubscribedEventReturn> ListSubscribedEventAsync(string SubscriptionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -790,7 +831,10 @@ namespace MyNS
 		/// Remove an event type from a Subscription.
 		/// DeleteSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		/// </summary>
-		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.</param>
+		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Type">Type of event being subscribed to.</param>
 		public async Task DeleteSubscribedEventAsync(string SubscriptionSid, string Type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -818,7 +862,10 @@ namespace MyNS
 		/// Read an Event for a Subscription.
 		/// FetchSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		/// </summary>
-		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.</param>
+		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Type">Type of event being subscribed to.</param>
 		/// <returns>OK</returns>
 		public async Task<Eventsv1subscriptionsubscribed_event> FetchSubscribedEventAsync(string SubscriptionSid, string Type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -854,8 +901,13 @@ namespace MyNS
 		/// ListEventType v1/Types
 		/// </summary>
 		/// <param name="SchemaId">A string parameter filtering the results to return only the Event Types using a given schema.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListEventTypeReturn> ListEventTypeAsync(string SchemaId, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

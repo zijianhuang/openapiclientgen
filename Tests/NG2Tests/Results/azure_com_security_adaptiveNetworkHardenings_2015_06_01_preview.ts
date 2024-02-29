@@ -169,6 +169,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -184,6 +185,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings/{adaptiveNetworkHardeningResourceName}
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.
@@ -200,6 +202,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings/{adaptiveNetworkHardeningResourceName}/{adaptiveNetworkHardeningEnforceAction}
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceNamespace The Namespace of the resource.
 		 * @param {string} resourceType The type of the resource.
 		 * @param {string} resourceName Name of the resource.

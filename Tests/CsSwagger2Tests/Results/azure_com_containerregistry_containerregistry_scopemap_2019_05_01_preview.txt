@@ -475,8 +475,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for generating credentials.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<GenerateCredentialsResult> Registries_GenerateCredentialsAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, GenerateCredentialsParameters requestBody)
@@ -515,8 +520,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ScopeMapListResult> ScopeMaps_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -547,9 +557,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="scopeMapName">The name of the scope map.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="scopeMapName">The name of the scope map.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ScopeMap> ScopeMaps_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string scopeMapName)
 		{
@@ -580,9 +598,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="scopeMapName">The name of the scope map.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="scopeMapName">The name of the scope map.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a scope map.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ScopeMap> ScopeMaps_CreateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string scopeMapName, ScopeMap requestBody)
@@ -621,9 +647,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="scopeMapName">The name of the scope map.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="scopeMapName">The name of the scope map.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task ScopeMaps_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string scopeMapName)
 		{
@@ -648,9 +682,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="scopeMapName">The name of the scope map.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="scopeMapName">The name of the scope map.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a scope map.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ScopeMap> ScopeMaps_UpdateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string scopeMapName, ScopeMapUpdateParameters requestBody)
@@ -689,8 +731,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<TokenListResult> Tokens_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -721,9 +768,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="tokenName">The name of the token.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="tokenName">The name of the token.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Token> Tokens_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string tokenName)
 		{
@@ -754,9 +809,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="tokenName">The name of the token.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="tokenName">The name of the token.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a token.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Token> Tokens_CreateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string tokenName, Token requestBody)
@@ -795,9 +858,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="tokenName">The name of the token.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="tokenName">The name of the token.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Tokens_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string tokenName)
 		{
@@ -822,9 +893,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="tokenName">The name of the token.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="tokenName">The name of the token.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a token.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Token> Tokens_UpdateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string tokenName, TokenUpdateParameters requestBody)

@@ -2685,7 +2685,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listBuildSourceUploadUrl
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @return {SourceUploadDefinition} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2698,10 +2700,13 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} filter The runs filter to apply on the operation. Arithmetic operators are not supported. The allowed string function is 'contains'. All logical operators except 'Not', 'Has', 'All' are allowed.
 		 * @param {number} top $top is supported for get list of runs, which limits the maximum number of runs to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RunListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Runs_List(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<RunListResult> {
@@ -2713,7 +2718,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} runId The run ID.
 		 * @return {Run} The request was successful; the request was well-formed and received properly.
@@ -2727,7 +2734,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} runId The run ID.
 		 * @param {RunUpdateParameters} requestBody The run update properties.
@@ -2742,7 +2751,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}/cancel
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} runId The run ID.
 		 * @return {void} The request was successful; the request was well-formed and received properly.
@@ -2756,7 +2767,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}/listLogSasUrl
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} runId The run ID.
 		 * @return {RunGetLogResult} The request was successful; the request was well-formed and received properly.
@@ -2770,7 +2783,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/scheduleRun
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {RunRequest} requestBody The parameters of a run that needs to scheduled.
 		 * @return {Run} The request was successful; the request was well-formed and received properly.
@@ -2784,7 +2799,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @return {TaskRunListResult} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2797,7 +2814,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskRunName The run request name.
 		 * @return {TaskRun} The request was successful; the request was well-formed and received properly.
@@ -2811,7 +2830,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskRunName The name of task run.
 		 * @param {TaskRun} requestBody The parameters of a run that needs to scheduled.
@@ -2826,7 +2847,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskRunName The task run name.
 		 * @return {void} The request was successful; the request was well-formed and received properly.
@@ -2840,7 +2863,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskRunName The task run name.
 		 * @param {TaskRunUpdateParameters} requestBody The parameters for updating a task run.
@@ -2855,7 +2880,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @return {TaskListResult} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2868,9 +2895,12 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
+		 *     Min length: 5    Max length: 50
 		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
 		Tasks_Get(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task> {
@@ -2882,9 +2912,12 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
+		 *     Min length: 5    Max length: 50
 		 * @param {Task} requestBody The parameters for creating a task.
 		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2897,9 +2930,12 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		Tasks_Delete(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<HttpResponse<string>> {
@@ -2911,9 +2947,12 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
+		 *     Min length: 5    Max length: 50
 		 * @param {TaskUpdateParameters} requestBody The parameters for updating a task.
 		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2926,9 +2965,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}/listDetails
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
+		 *     Min length: 5    Max length: 50
 		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
 		Tasks_GetDetails(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task> {

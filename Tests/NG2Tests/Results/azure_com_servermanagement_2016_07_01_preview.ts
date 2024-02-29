@@ -1342,6 +1342,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @return {GatewayResources} The operation completed successfully.
 		 */
 		Gateway_ListForResourceGroup(subscriptionId: string, api_version: string, resourceGroupName: string): Observable<GatewayResources> {
@@ -1354,7 +1355,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum)
+		 *     Min length: 1    Max length: 256
 		 * @param {Gateway_GetExpand} expand Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {GatewayResource} The operation completed successfully.
 		 */
@@ -1368,7 +1371,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {GatewayParameters} requestBody Parameters supplied to the CreateOrUpdate operation.
 		 * @return {GatewayResource} The operation completed successfully.
 		 */
@@ -1382,7 +1387,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {void} The object exists and was deleted successfully.
 		 */
 		Gateway_Delete(subscriptionId: string, api_version: string, resourceGroupName: string, gatewayName: string): Observable<HttpResponse<string>> {
@@ -1395,7 +1402,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {GatewayParameters} requestBody Parameters supplied to the Update operation.
 		 * @return {GatewayResource} Update completed successfully.
 		 */
@@ -1409,7 +1418,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {GatewayProfile} The operation completed successfully.
 		 */
 		Gateway_GetProfile(subscriptionId: string, api_version: string, resourceGroupName: string, gatewayName: string): Observable<GatewayProfile> {
@@ -1422,7 +1433,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {void} The operation completed successfully.
 		 */
 		Gateway_RegenerateProfile(subscriptionId: string, api_version: string, resourceGroupName: string, gatewayName: string): Observable<HttpResponse<string>> {
@@ -1435,7 +1448,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} gatewayName The gateway name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {void} The operation completed successfully.
 		 */
 		Gateway_Upgrade(subscriptionId: string, api_version: string, resourceGroupName: string, gatewayName: string): Observable<HttpResponse<string>> {
@@ -1448,6 +1463,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @return {NodeResources} The operation completed successfully.
 		 */
 		Node_ListForResourceGroup(subscriptionId: string, api_version: string, resourceGroupName: string): Observable<NodeResources> {
@@ -1460,7 +1476,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {NodeResource} The object exists and was deleted successfully.
 		 */
 		Node_Get(subscriptionId: string, api_version: string, resourceGroupName: string, nodeName: string): Observable<NodeResource> {
@@ -1473,7 +1491,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {NodeParameters} requestBody Parameters supplied to the CreateOrUpdate operation.
 		 * @return {NodeResource} The operation completed successfully.
 		 */
@@ -1487,7 +1507,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @return {void} The object exists and was deleted successfully.
 		 */
 		Node_Delete(subscriptionId: string, api_version: string, resourceGroupName: string, nodeName: string): Observable<HttpResponse<string>> {
@@ -1500,7 +1522,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {NodeParameters} requestBody Parameters supplied to the CreateOrUpdate operation.
 		 * @return {NodeResource} The operation completed successfully.
 		 */
@@ -1514,7 +1538,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @return {SessionResource} The operation completed successfully.
 		 */
@@ -1528,7 +1554,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {SessionParameters} requestBody Parameters supplied to the CreateOrUpdate operation.
 		 * @return {SessionResource} The operation completed successfully.
@@ -1543,7 +1571,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @return {void} The operation completed successfully.
 		 */
@@ -1557,7 +1587,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @return {PowerShellSessionResources} The operation completed successfully.
 		 */
@@ -1571,7 +1603,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @param {PowerShell_GetCommandStatusExpand} expand Gets current output from an ongoing call.
@@ -1587,7 +1621,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @return {PowerShellSessionResource} The operation completed succesfully.
@@ -1602,7 +1638,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @return {PowerShellCommandResults} The operation completed successfully.
@@ -1617,7 +1655,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @return {PowerShellCommandResults} The cancellation was completed successfully.
@@ -1632,7 +1672,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @param {PowerShellCommandParameters} requestBody Parameters supplied to the Invoke PowerShell Command operation.
@@ -1648,7 +1690,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API Version.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscriptionId.
+		 *     Min length: 3
 		 * @param {string} nodeName The node name (256 characters maximum).
+		 *     Min length: 1    Max length: 256
 		 * @param {string} session The sessionId from the user.
 		 * @param {string} pssession The PowerShell sessionId from the user.
 		 * @param {PowerShellTabCompletionParameters} requestBody Parameters supplied to the tab completion call.

@@ -140,7 +140,10 @@ export namespace MyNS {
 	/** Custom dimension. */
 	export interface CustomDimension {
 
-		/** Slot number of custom dimension. */
+		/**
+		 * Slot number of custom dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Value of the custom dimension. Default value (i.e. empty string) indicates clearing sesion/visitor scope custom dimension value. */
@@ -150,7 +153,10 @@ export namespace MyNS {
 	/** Custom dimension. */
 	export interface CustomDimensionFormProperties {
 
-		/** Slot number of custom dimension. */
+		/**
+		 * Slot number of custom dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Value of the custom dimension. Default value (i.e. empty string) indicates clearing sesion/visitor scope custom dimension value. */
@@ -206,7 +212,10 @@ export namespace MyNS {
 	/** Details of the products in an e-commerce transaction. */
 	export interface ProductData {
 
-		/** The total revenue from purchased product items. */
+		/**
+		 * The total revenue from purchased product items.
+		 * Type: double
+		 */
 		itemRevenue?: number | null;
 
 		/** The product name, supplied by the e-commerce tracking application, for the purchased items. */
@@ -222,7 +231,10 @@ export namespace MyNS {
 	/** Details of the products in an e-commerce transaction. */
 	export interface ProductDataFormProperties {
 
-		/** The total revenue from purchased product items. */
+		/**
+		 * The total revenue from purchased product items.
+		 * Type: double
+		 */
 		itemRevenue: FormControl<number | null | undefined>,
 
 		/** The product name, supplied by the e-commerce tracking application, for the purchased items. */
@@ -251,13 +263,22 @@ export namespace MyNS {
 		/** The transaction ID, supplied by the e-commerce tracking method, for the purchase in the shopping cart. */
 		transactionId?: string | null;
 
-		/** The total sale revenue (excluding shipping and tax) of the transaction. */
+		/**
+		 * The total sale revenue (excluding shipping and tax) of the transaction.
+		 * Type: double
+		 */
 		transactionRevenue?: number | null;
 
-		/** Total cost of shipping. */
+		/**
+		 * Total cost of shipping.
+		 * Type: double
+		 */
 		transactionShipping?: number | null;
 
-		/** Total tax for the transaction. */
+		/**
+		 * Total tax for the transaction.
+		 * Type: double
+		 */
 		transactionTax?: number | null;
 	}
 
@@ -267,13 +288,22 @@ export namespace MyNS {
 		/** The transaction ID, supplied by the e-commerce tracking method, for the purchase in the shopping cart. */
 		transactionId: FormControl<string | null | undefined>,
 
-		/** The total sale revenue (excluding shipping and tax) of the transaction. */
+		/**
+		 * The total sale revenue (excluding shipping and tax) of the transaction.
+		 * Type: double
+		 */
 		transactionRevenue: FormControl<number | null | undefined>,
 
-		/** Total cost of shipping. */
+		/**
+		 * Total cost of shipping.
+		 * Type: double
+		 */
 		transactionShipping: FormControl<number | null | undefined>,
 
-		/** Total tax for the transaction. */
+		/**
+		 * Total tax for the transaction.
+		 * Type: double
+		 */
 		transactionTax: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionDataFormGroup() {
@@ -362,7 +392,10 @@ export namespace MyNS {
 		/** Total number of goal completions in this activity. */
 		goalCompletions?: string | null;
 
-		/** This identifies the goal as configured for the profile. */
+		/**
+		 * This identifies the goal as configured for the profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goalIndex?: number | null;
 
 		/** Name of the goal. */
@@ -377,7 +410,10 @@ export namespace MyNS {
 		/** URL of the page three steps prior to the goal completion. */
 		goalPreviousStep3?: string | null;
 
-		/** Value in this goal. */
+		/**
+		 * Value in this goal.
+		 * Type: double
+		 */
 		goalValue?: number | null;
 	}
 
@@ -390,7 +426,10 @@ export namespace MyNS {
 		/** Total number of goal completions in this activity. */
 		goalCompletions: FormControl<string | null | undefined>,
 
-		/** This identifies the goal as configured for the profile. */
+		/**
+		 * This identifies the goal as configured for the profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goalIndex: FormControl<number | null | undefined>,
 
 		/** Name of the goal. */
@@ -405,7 +444,10 @@ export namespace MyNS {
 		/** URL of the page three steps prior to the goal completion. */
 		goalPreviousStep3: FormControl<string | null | undefined>,
 
-		/** Value in this goal. */
+		/**
+		 * Value in this goal.
+		 * Type: double
+		 */
 		goalValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoalDataFormGroup() {
@@ -612,14 +654,20 @@ export namespace MyNS {
 		/** A single pivot section header. */
 		pivotHeaderEntries?: Array<PivotHeaderEntry>;
 
-		/** The total number of groups for this pivot. */
+		/**
+		 * The total number of groups for this pivot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPivotGroupsCount?: number | null;
 	}
 
 	/** The headers for each of the pivot sections defined in the request. */
 	export interface PivotHeaderFormProperties {
 
-		/** The total number of groups for this pivot. */
+		/**
+		 * The total number of groups for this pivot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPivotGroupsCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotHeaderFormGroup() {
@@ -1136,7 +1184,10 @@ export namespace MyNS {
 		/** Sort order on output rows. To compare two rows, the elements of the following are applied in order until a difference is found. All date ranges in the output get the same row order. */
 		orderBys?: Array<OrderBy>;
 
-		/** Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren't as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can't get more than 300 rows, even if you set `pageSize` to a higher value. */
+		/**
+		 * Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren't as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can't get more than 300 rows, even if you set `pageSize` to a higher value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A continuation token to get the next page of the results. Adding this to the request will return the rows after the pageToken. The pageToken should be the value returned in the nextPageToken parameter in the response to the GetReports request. */
@@ -1170,7 +1221,10 @@ export namespace MyNS {
 		/** If set to false, the response does not include rows if all the retrieved metrics are equal to zero. The default is false which will exclude these rows. */
 		includeEmptyRows: FormControl<boolean | null | undefined>,
 
-		/** Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren't as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can't get more than 300 rows, even if you set `pageSize` to a higher value. */
+		/**
+		 * Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren't as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can't get more than 300 rows, even if you set `pageSize` to a higher value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A continuation token to get the next page of the results. Adding this to the request will return the rows after the pageToken. The pageToken should be the value returned in the nextPageToken parameter in the response to the GetReports request. */
@@ -1348,23 +1402,35 @@ export namespace MyNS {
 		/** A list of dimensions to show as pivot columns. A Pivot can have a maximum of 4 dimensions. Pivot dimensions are part of the restriction on the total number of dimensions allowed in the request. */
 		dimensions?: Array<Dimension>;
 
-		/** Specifies the maximum number of groups to return. The default value is 10, also the maximum value is 1,000. */
+		/**
+		 * Specifies the maximum number of groups to return. The default value is 10, also the maximum value is 1,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxGroupCount?: number | null;
 
 		/** The pivot metrics. Pivot metrics are part of the restriction on total number of metrics allowed in the request. */
 		metrics?: Array<Metric>;
 
-		/** If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you'd get k columns for "Firefox", k columns for "IE", k columns for "Chrome", etc. The ordering of the groups of columns is determined by descending order of "total" for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response. */
+		/**
+		 * If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you'd get k columns for "Firefox", k columns for "IE", k columns for "Chrome", etc. The ordering of the groups of columns is determined by descending order of "total" for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startGroup?: number | null;
 	}
 
 	/** The Pivot describes the pivot section in the request. The Pivot helps rearrange the information in the table for certain reports by pivoting your data on a second dimension. */
 	export interface PivotFormProperties {
 
-		/** Specifies the maximum number of groups to return. The default value is 10, also the maximum value is 1,000. */
+		/**
+		 * Specifies the maximum number of groups to return. The default value is 10, also the maximum value is 1,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxGroupCount: FormControl<number | null | undefined>,
 
-		/** If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you'd get k columns for "Firefox", k columns for "IE", k columns for "Chrome", etc. The ordering of the groups of columns is determined by descending order of "total" for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response. */
+		/**
+		 * If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you'd get k columns for "Firefox", k columns for "IE", k columns for "Chrome", etc. The ordering of the groups of columns is determined by descending order of "total" for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startGroup: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotFormGroup() {
@@ -1405,7 +1471,10 @@ export namespace MyNS {
 	/** The main response class which holds the reports from the Reporting API `batchGet` call. */
 	export interface GetReportsResponse {
 
-		/** The amount of resource quota tokens deducted to execute the query. Includes all responses. */
+		/**
+		 * The amount of resource quota tokens deducted to execute the query. Includes all responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryCost?: number | null;
 
 		/** Responses corresponding to each of the request. */
@@ -1418,7 +1487,10 @@ export namespace MyNS {
 	/** The main response class which holds the reports from the Reporting API `batchGet` call. */
 	export interface GetReportsResponseFormProperties {
 
-		/** The amount of resource quota tokens deducted to execute the query. Includes all responses. */
+		/**
+		 * The amount of resource quota tokens deducted to execute the query. Includes all responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryCost: FormControl<number | null | undefined>,
 	}
 	export function CreateGetReportsResponseFormGroup() {
@@ -1474,7 +1546,10 @@ export namespace MyNS {
 		/** Minimum and maximum values seen over all matching rows. These are both empty when `hideValueRanges` in the request is false, or when rowCount is zero. */
 		minimums?: Array<DateRangeValues>;
 
-		/** Total number of matching rows for this query. */
+		/**
+		 * Total number of matching rows for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** There's one ReportRow for every unique combination of dimensions. */
@@ -1502,7 +1577,10 @@ export namespace MyNS {
 		/** Indicates if response to this request is golden or not. Data is golden when the exact same request will not produce any new results if asked at a later point in time. */
 		isDataGolden: FormControl<boolean | null | undefined>,
 
-		/** Total number of matching rows for this query. */
+		/**
+		 * Total number of matching rows for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateReportDataFormGroup() {
@@ -1539,20 +1617,32 @@ export namespace MyNS {
 	/** The resource quota tokens remaining for the property after the request is completed. */
 	export interface ResourceQuotasRemaining {
 
-		/** Daily resource quota remaining remaining. */
+		/**
+		 * Daily resource quota remaining remaining.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dailyQuotaTokensRemaining?: number | null;
 
-		/** Hourly resource quota tokens remaining. */
+		/**
+		 * Hourly resource quota tokens remaining.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hourlyQuotaTokensRemaining?: number | null;
 	}
 
 	/** The resource quota tokens remaining for the property after the request is completed. */
 	export interface ResourceQuotasRemainingFormProperties {
 
-		/** Daily resource quota remaining remaining. */
+		/**
+		 * Daily resource quota remaining remaining.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dailyQuotaTokensRemaining: FormControl<number | null | undefined>,
 
-		/** Hourly resource quota tokens remaining. */
+		/**
+		 * Hourly resource quota tokens remaining.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hourlyQuotaTokensRemaining: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceQuotasRemainingFormGroup() {
@@ -1573,7 +1663,10 @@ export namespace MyNS {
 		/** A contiguous set of days: startDate, startDate + 1 day, ..., endDate. The start and end dates are specified in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`. */
 		dateRange?: DateRange;
 
-		/** Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn't specified, the request returns the default of 1000 rows per page. */
+		/**
+		 * Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn't specified, the request returns the default of 1000 rows per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A continuation token to get the next page of the results. Adding this to the request will return the rows after the pageToken. The pageToken should be the value returned in the nextPageToken parameter in the response to the [SearchUserActivityRequest](#SearchUserActivityRequest) request. */
@@ -1589,7 +1682,10 @@ export namespace MyNS {
 	/** The request to fetch User Report from Reporting API `userActivity:get` call. */
 	export interface SearchUserActivityRequestFormProperties {
 
-		/** Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn't specified, the request returns the default of 1000 rows per page. */
+		/**
+		 * Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn't specified, the request returns the default of 1000 rows per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A continuation token to get the next page of the results. Adding this to the request will return the rows after the pageToken. The pageToken should be the value returned in the nextPageToken parameter in the response to the [SearchUserActivityRequest](#SearchUserActivityRequest) request. */
@@ -1644,13 +1740,19 @@ export namespace MyNS {
 		/** This token should be passed to [SearchUserActivityRequest](#SearchUserActivityRequest) to retrieve the next page. */
 		nextPageToken?: string | null;
 
-		/** This field represents the [sampling rate](https://support.google.com/analytics/answer/2637192) for the given request and is a number between 0.0 to 1.0. See [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling) for details. */
+		/**
+		 * This field represents the [sampling rate](https://support.google.com/analytics/answer/2637192) for the given request and is a number between 0.0 to 1.0. See [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling) for details.
+		 * Type: double
+		 */
 		sampleRate?: number | null;
 
 		/** Each record represents a session (device details, duration, etc). */
 		sessions?: Array<UserActivitySession>;
 
-		/** Total rows returned by this query (across different pages). */
+		/**
+		 * Total rows returned by this query (across different pages).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRows?: number | null;
 	}
 
@@ -1660,10 +1762,16 @@ export namespace MyNS {
 		/** This token should be passed to [SearchUserActivityRequest](#SearchUserActivityRequest) to retrieve the next page. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** This field represents the [sampling rate](https://support.google.com/analytics/answer/2637192) for the given request and is a number between 0.0 to 1.0. See [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling) for details. */
+		/**
+		 * This field represents the [sampling rate](https://support.google.com/analytics/answer/2637192) for the given request and is a number between 0.0 to 1.0. See [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling) for details.
+		 * Type: double
+		 */
 		sampleRate: FormControl<number | null | undefined>,
 
-		/** Total rows returned by this query (across different pages). */
+		/**
+		 * Total rows returned by this query (across different pages).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRows: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchUserActivityResponseFormGroup() {

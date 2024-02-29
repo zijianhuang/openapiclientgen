@@ -426,7 +426,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. */
 		repoSlug?: string | null;
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId?: number | null;
 	}
 
@@ -439,7 +442,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. */
 		repoSlug: FormControl<string | null | undefined>,
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId: FormControl<number | null | undefined>,
 	}
 	export function CreateBitbucketServerRepositoryIdFormGroup() {
@@ -455,7 +461,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -468,7 +477,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -609,7 +621,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. example: "namespace/project-slug", namespace is usually the username or group ID */
 		id?: string | null;
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId?: number | null;
 	}
 
@@ -619,7 +634,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. example: "namespace/project-slug", namespace is usually the username or group ID */
 		id: FormControl<string | null | undefined>,
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId: FormControl<number | null | undefined>,
 	}
 	export function CreateGitLabRepositoryIdFormGroup() {
@@ -1921,7 +1939,10 @@ export namespace MyNS {
 		/** A list of environment variable definitions to be used when running a step. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE". */
 		env?: Array<string>;
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -1970,7 +1991,10 @@ export namespace MyNS {
 		/** Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used. */
 		entrypoint: FormControl<string | null | undefined>,
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -3995,6 +4019,7 @@ export namespace MyNS {
 		 * @param {string} projectId Required. ID of the project.
 		 * @param {string} filter The raw filter text to constrain the results.
 		 * @param {number} pageSize Number of results to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.
 		 * @param {string} parent The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
 		 * @return {ListBuildsResponse} Successful response
@@ -4053,6 +4078,7 @@ export namespace MyNS {
 		 * Get v1/projects/{projectId}/triggers
 		 * @param {string} projectId Required. ID of the project for which to list BuildTriggers.
 		 * @param {number} pageSize Number of results to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @param {string} parent The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`
 		 * @return {ListBuildTriggersResponse} Successful response
@@ -4269,6 +4295,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/bitbucketServerConfigs
 		 * @param {string} parent Required. Name of the parent resource.
 		 * @param {number} pageSize The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListBitbucketServerConfigsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBitbucketServerConfigsRequest` must match the call that provided the page token.
 		 * @return {ListBitbucketServerConfigsResponse} Successful response
 		 */
@@ -4293,6 +4320,7 @@ export namespace MyNS {
 		 * @param {string} parent The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The raw filter text to constrain the results.
 		 * @param {number} pageSize Number of results to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.
 		 * @param {string} projectId Required. ID of the project.
 		 * @return {ListBuildsResponse} Successful response
@@ -4327,6 +4355,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/gitLabConfigs
 		 * @param {string} parent Required. Name of the parent resource
 		 * @param {number} pageSize The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000;, values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous ‘ListGitlabConfigsRequest’ call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ‘ListGitlabConfigsRequest’ must match the call that provided the page token.
 		 * @return {ListGitLabConfigsResponse} Successful response
 		 */
@@ -4373,6 +4402,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/repos
 		 * @param {string} parent Required. Name of the parent resource.
 		 * @param {number} pageSize The maximum number of repositories to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous ListGitLabRepositoriesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGitLabRepositoriesRequest` must match the call that provided the page token.
 		 * @return {ListGitLabRepositoriesResponse} Successful response
 		 */
@@ -4385,6 +4415,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/triggers
 		 * @param {string} parent The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize Number of results to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @param {string} projectId Required. ID of the project for which to list BuildTriggers.
 		 * @return {ListBuildTriggersResponse} Successful response
@@ -4409,6 +4440,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/workerPools
 		 * @param {string} parent Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/{location}`.
 		 * @param {number} pageSize The maximum number of `WorkerPool`s to return. The service may return fewer than this value. If omitted, the server will use a sensible default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListWorkerPools` call. Provide this to retrieve the subsequent page.
 		 * @return {ListWorkerPoolsResponse} Successful response
 		 */

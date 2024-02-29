@@ -8043,6 +8043,7 @@ export namespace MyNS {
 		 * Retrieve a JSON array of up to twenty of your most recently created jobs. This array includes in-process, completed, and errored jobs. This will return the jobs themselves, not just a list of the jobs. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array.
 		 * Get 2017-08-29/jobs
 		 * @param {number} maxResults Optional. Number of jobs, up to twenty, that will be returned at one time.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
 		 * @param {Order} order Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
 		 * @param {string} queue Optional. Provide a queue name to get back only jobs from that queue.
@@ -8070,6 +8071,7 @@ export namespace MyNS {
 		 * @param {string} category Optionally, specify a job template category to limit responses to only job templates from that category.
 		 * @param {JobTemplateListBy} listBy Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
 		 * @param {number} maxResults Optional. Number of job templates, up to twenty, that will be returned at one time.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken Use this string, provided with the response to a previous request, to request the next batch of job templates.
 		 * @param {Order} order Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
 		 * @param {string} MaxResults Pagination limit
@@ -8095,6 +8097,7 @@ export namespace MyNS {
 		 * @param {string} category Optionally, specify a preset category to limit responses to only presets from that category.
 		 * @param {JobTemplateListBy} listBy Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
 		 * @param {number} maxResults Optional. Number of presets, up to twenty, that will be returned at one time
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken Use this string, provided with the response to a previous request, to request the next batch of presets.
 		 * @param {Order} order Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
 		 * @param {string} MaxResults Pagination limit
@@ -8119,6 +8122,7 @@ export namespace MyNS {
 		 * Get 2017-08-29/queues
 		 * @param {QueueListBy} listBy Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
 		 * @param {number} maxResults Optional. Number of queues, up to twenty, that will be returned at one time.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken Use this string, provided with the response to a previous request, to request the next batch of queues.
 		 * @param {Order} order Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
 		 * @param {string} MaxResults Pagination limit
@@ -8945,7 +8949,10 @@ export namespace MyNS {
 
 	export interface DescribeEndpointsPostBody {
 
-		/** Optional. Max number of endpoints, up to twenty, that will be returned at one time. */
+		/**
+		 * Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist. */
@@ -8956,7 +8963,10 @@ export namespace MyNS {
 	}
 	export interface DescribeEndpointsPostBodyFormProperties {
 
-		/** Optional. Max number of endpoints, up to twenty, that will be returned at one time. */
+		/**
+		 * Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist. */

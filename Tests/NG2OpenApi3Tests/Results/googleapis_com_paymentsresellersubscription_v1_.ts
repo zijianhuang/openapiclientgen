@@ -222,7 +222,10 @@ export namespace MyNS {
 		/** Output only. The free trial end time will be populated after the line item is successfully processed. End time of the line item free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified. */
 		lineItemFreeTrialEndTime?: string | null;
 
-		/** Output only. A unique index of the subscription line item. */
+		/**
+		 * Output only. A unique index of the subscription line item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineItemIndex?: number | null;
 
 		/** Optional. The promotions applied on the line item. It can be: - a free trial promotion, which overrides the subscription-level free trial promotion. - an introductory pricing promotion. When used as input in Create or Provision API, specify its resource name only. */
@@ -253,7 +256,10 @@ export namespace MyNS {
 		/** Output only. The free trial end time will be populated after the line item is successfully processed. End time of the line item free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified. */
 		lineItemFreeTrialEndTime: FormControl<string | null | undefined>,
 
-		/** Output only. A unique index of the subscription line item. */
+		/**
+		 * Output only. A unique index of the subscription line item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineItemIndex: FormControl<number | null | undefined>,
 
 		/** Required. Product resource name that identifies one the line item The format is 'partners/{partner_id}/products/{product_id}'. */
@@ -381,7 +387,10 @@ export namespace MyNS {
 	/** Describes the length of a period of a time. */
 	export interface GoogleCloudPaymentsResellerSubscriptionV1Duration {
 
-		/** number of duration units to be included. */
+		/**
+		 * number of duration units to be included.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The unit used for the duration */
@@ -391,7 +400,10 @@ export namespace MyNS {
 	/** Describes the length of a period of a time. */
 	export interface GoogleCloudPaymentsResellerSubscriptionV1DurationFormProperties {
 
-		/** number of duration units to be included. */
+		/**
+		 * number of duration units to be included.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The unit used for the duration */
@@ -434,7 +446,10 @@ export namespace MyNS {
 		/** Output only. The discount percentage in micros. For example, 50,000 represents 5%. */
 		discountRatioMicros?: string | null;
 
-		/** Output only. Output Only. The duration of an introductory offer in billing cycles. */
+		/**
+		 * Output only. Output Only. The duration of an introductory offer in billing cycles.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recurrenceCount?: number | null;
 
 		/** Output only. 2-letter ISO region code where the product is available in. Ex. "US". */
@@ -447,7 +462,10 @@ export namespace MyNS {
 		/** Output only. The discount percentage in micros. For example, 50,000 represents 5%. */
 		discountRatioMicros: FormControl<string | null | undefined>,
 
-		/** Output only. Output Only. The duration of an introductory offer in billing cycles. */
+		/**
+		 * Output only. Output Only. The duration of an introductory offer in billing cycles.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recurrenceCount: FormControl<number | null | undefined>,
 
 		/** Output only. 2-letter ISO region code where the product is available in. Ex. "US". */
@@ -682,7 +700,10 @@ export namespace MyNS {
 	/** The details of the line item to be entitled. */
 	export interface GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetails {
 
-		/** Required. The index of the line item to be entitled. */
+		/**
+		 * Required. The index of the line item to be entitled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineItemIndex?: number | null;
 
 		/** Optional. Only applicable if the line item corresponds to a hard bundle. Product resource names that identify the bundle elements to be entitled in the line item. If unspecified, all bundle elements will be entitled. The format is 'partners/{partner_id}/products/{product_id}'. */
@@ -692,7 +713,10 @@ export namespace MyNS {
 	/** The details of the line item to be entitled. */
 	export interface GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetailsFormProperties {
 
-		/** Required. The index of the line item to be entitled. */
+		/**
+		 * Required. The index of the line item to be entitled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineItemIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetailsFormGroup() {
@@ -799,7 +823,10 @@ export namespace MyNS {
 		/** Optional. Specifies the filters for the promotion results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `applicableProducts` - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `applicableProducts:partners/partner1/products/product1 AND regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id` */
 		filter?: string | null;
 
-		/** Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000. */
+		/**
+		 * Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A page token, received from a previous `ListPromotions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPromotions` must match the call that provided the page token. */
@@ -810,7 +837,10 @@ export namespace MyNS {
 		/** Optional. Specifies the filters for the promotion results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `applicableProducts` - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `applicableProducts:partners/partner1/products/product1 AND regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id` */
 		filter: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000. */
+		/**
+		 * Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A page token, received from a previous `ListPromotions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPromotions` must match the call that provided the page token. */
@@ -1185,6 +1215,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent, the partner that can resell. Format: partners/{partner}
 		 * @param {string} filter Optional. Specifies the filters for the product results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id`
 		 * @param {number} pageSize Optional. The maximum number of products to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListProducts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListProducts` must match the call that provided the page token.
 		 * @return {GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse} Successful response
 		 */
@@ -1198,6 +1229,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent, the partner that can resell. Format: partners/{partner}
 		 * @param {string} filter Optional. Specifies the filters for the promotion results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `applicableProducts` - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `applicableProducts:partners/partner1/products/product1 AND regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id`
 		 * @param {number} pageSize Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListPromotions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPromotions` must match the call that provided the page token.
 		 * @return {GoogleCloudPaymentsResellerSubscriptionV1ListPromotionsResponse} Successful response
 		 */

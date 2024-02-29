@@ -1737,6 +1737,7 @@ export namespace MyNS {
 		 * Returns a list of all brokers.
 		 * Get v1/brokers
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1759,6 +1760,7 @@ export namespace MyNS {
 		 * Returns a list of all configurations.
 		 * Get v1/configurations
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListConfigurationsResponse} Success
 		 */
@@ -1876,6 +1878,7 @@ export namespace MyNS {
 		 * Get v1/broker-engine-types
 		 * @param {string} engineType Filter response by engine type.
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {DescribeBrokerEngineTypesResponse} Success
 		 */
@@ -1889,6 +1892,7 @@ export namespace MyNS {
 		 * @param {string} engineType Filter response by engine type.
 		 * @param {string} hostInstanceType Filter response by host instance type.
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @param {string} storageType Filter response by storage type.
 		 * @return {DescribeBrokerInstanceOptionsResponse} Success
@@ -1933,6 +1937,7 @@ export namespace MyNS {
 		 * Get v1/configurations/{configuration_id}/revisions
 		 * @param {string} configuration_id The unique ID that Amazon MQ generates for the configuration.
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListConfigurationRevisionsResponse} Success
 		 */
@@ -1945,6 +1950,7 @@ export namespace MyNS {
 		 * Get v1/brokers/{broker_id}/users
 		 * @param {string} broker_id The unique ID that Amazon MQ generates for the broker.
 		 * @param {number} maxResults The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListUsersResponse} Success
 		 */

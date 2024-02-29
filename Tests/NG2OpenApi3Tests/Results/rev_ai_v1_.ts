@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** Rev.ai Account Model */
 	export interface Account {
 
-		/** Amount of Rev.ai API credits remaining in seconds */
+		/**
+		 * Amount of Rev.ai API credits remaining in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance_seconds?: number | null;
 
 		/** Email of developer account */
@@ -17,7 +20,10 @@ export namespace MyNS {
 	/** Rev.ai Account Model */
 	export interface AccountFormProperties {
 
-		/** Amount of Rev.ai API credits remaining in seconds */
+		/**
+		 * Amount of Rev.ai API credits remaining in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance_seconds: FormControl<number | null | undefined>,
 
 		/** Email of developer account */
@@ -101,12 +107,18 @@ export namespace MyNS {
 		/** Array of transcript elements */
 		TranscriptMonologuesElements?: Array<TranscriptMonologuesElements>;
 
-		/** Id of the speaker of the monologue */
+		/**
+		 * Id of the speaker of the monologue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speaker?: number | null;
 	}
 	export interface TranscriptMonologuesFormProperties {
 
-		/** Id of the speaker of the monologue */
+		/**
+		 * Id of the speaker of the monologue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speaker: FormControl<number | null | undefined>,
 	}
 	export function CreateTranscriptMonologuesFormGroup() {
@@ -125,10 +137,16 @@ export namespace MyNS {
 		 */
 		confidence?: number | null;
 
-		/** The timestamp of the beginning of the element relative to the beginning of the audio in seconds (centisecond precision) */
+		/**
+		 * The timestamp of the beginning of the element relative to the beginning of the audio in seconds (centisecond precision)
+		 * Type: double
+		 */
 		ts?: number | null;
 
-		/** The timestamp of the end of the element relative to the beginning of the audio in seconds (centisecond precision) */
+		/**
+		 * The timestamp of the end of the element relative to the beginning of the audio in seconds (centisecond precision)
+		 * Type: double
+		 */
 		ts_end?: number | null;
 
 		/** Type of transcript element. If Rev.ai was unable to determine the spoken word, the `type` will be `unknown`. */
@@ -146,10 +164,16 @@ export namespace MyNS {
 		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** The timestamp of the beginning of the element relative to the beginning of the audio in seconds (centisecond precision) */
+		/**
+		 * The timestamp of the beginning of the element relative to the beginning of the audio in seconds (centisecond precision)
+		 * Type: double
+		 */
 		ts: FormControl<number | null | undefined>,
 
-		/** The timestamp of the end of the element relative to the beginning of the audio in seconds (centisecond precision) */
+		/**
+		 * The timestamp of the end of the element relative to the beginning of the audio in seconds (centisecond precision)
+		 * Type: double
+		 */
 		ts_end: FormControl<number | null | undefined>,
 
 		/** Type of transcript element. If Rev.ai was unable to determine the spoken word, the `type` will be `unknown`. */
@@ -191,6 +215,7 @@ export namespace MyNS {
 		 * Gets a list of transcription jobs submitted within the last 30 days in reverse chronological order up to the provided `limit` number of jobs per call. **Note:** Jobs older than 30 days will not be listed. Pagination is supported via passing the last job `id` from a previous call into `starting_after`.
 		 * Get jobs
 		 * @param {number} limit Limits the number of jobs returned, default is 100, max is 1000
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} starting_after If specified, returns transcription jobs submitted before the job with this id, exclusive (job with this id is not included)
 		 * @return {Array<Job>} List of Rev.ai Transcription Jobs
 		 */
@@ -237,6 +262,7 @@ export namespace MyNS {
 		 * Note: For streaming jobs, transient failure of our storage during a live session may prevent the final hypothesis elements from saving properly, resulting in an incomplete caption file. This is rare, but not impossible.
 		 * Get jobs/{id}/captions
 		 * @param {number} speaker_channel Identifies which channel of the job output to caption. Default is `null` which works only for jobs with no `speaker_channels_count` provided during job submission.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Rev.ai API Captions
 		 * ***
 		 * Note: Caption output format is required in the Accept header. The supported headers are `application/x-subrip` and `text/vtt`.

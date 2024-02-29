@@ -1331,6 +1331,7 @@ export namespace MyNS {
 		 * <p>Creates a new dataset in an Amazon Lookout for Vision project. <code>CreateDataset</code> can create a training or a test dataset from a valid dataset source (<code>DatasetSource</code>).</p> <p>If you want a single dataset project, specify <code>train</code> for the value of <code>DatasetType</code>.</p> <p>To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify <code>test</code> for the value of <code>DatasetType</code>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.</p>
 		 * Post 2020-11-20/projects/{projectName}/datasets
 		 * @param {string} projectName The name of the project in which you want to create a dataset.
+		 *     Min length: 1    Max length: 255
 		 * @return {void} 
 		 */
 		CreateDataset(projectName: string, requestBody: CreateDatasetPostBody): Observable<HttpResponse<string>> {
@@ -1341,6 +1342,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of a model within an an Amazon Lookout for Vision project. <code>CreateModel</code> is an asynchronous operation in which Amazon Lookout for Vision trains, tests, and evaluates a new version of a model. </p> <p>To get the current status, check the <code>Status</code> field returned in the response from <a>DescribeModel</a>.</p> <p>If the project has a single dataset, Amazon Lookout for Vision internally splits the dataset to create a training and a test dataset. If the project has a training and a test dataset, Lookout for Vision uses the respective datasets to train and test the model. </p> <p>After training completes, the evaluation metrics are stored at the location specified in <code>OutputConfig</code>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.</p>
 		 * Post 2020-11-20/projects/{projectName}/models
 		 * @param {string} projectName The name of the project in which you want to create a model version.
+		 *     Min length: 1    Max length: 255
 		 * @return {void} 
 		 */
 		CreateModel(projectName: string, requestBody: CreateModelPostBody): Observable<HttpResponse<string>> {
@@ -1351,8 +1353,11 @@ export namespace MyNS {
 		 * <p>Lists the versions of a model in an Amazon Lookout for Vision project.</p> <p>The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code> might take a while to appear in the response from <code>ListProjects</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.</p>
 		 * Get 2020-11-20/projects/{projectName}/models
 		 * @param {string} projectName The name of the project that contains the model versions that you want to list.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of models.
+		 *     Max length: 2048
 		 * @param {number} maxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListModelsResponse} Success
@@ -1374,7 +1379,9 @@ export namespace MyNS {
 		 * <p>Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS Region in which you call <code>ListProjects</code>.</p> <p>The <code>ListProjects</code> operation is eventually consistent. Recent calls to <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear in the response from <code>ListProjects</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.</p>
 		 * Get 2020-11-20/projects
 		 * @param {string} nextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.
+		 *     Max length: 2048
 		 * @param {number} maxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProjectsResponse} Success
@@ -1387,7 +1394,9 @@ export namespace MyNS {
 		 * <p>Deletes an existing Amazon Lookout for Vision <code>dataset</code>. </p> <p>If your the project has a single dataset, you must create a new dataset before you can create a model.</p> <p>If you project has a training dataset and a test dataset consider the following. </p> <ul> <li> <p>If you delete the test dataset, your project reverts to a single dataset project. If you then train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p> </li> <li> <p>If you delete the training dataset, you must create a training dataset before you can create a model.</p> </li> </ul> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.</p>
 		 * Delete 2020-11-20/projects/{projectName}/datasets/{datasetType}
 		 * @param {string} projectName The name of the project that contains the dataset that you want to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} datasetType The type of the dataset to delete. Specify <code>train</code> to delete the training dataset. Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project, specify <code>train</code>.
+		 *     Min length: 1    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteDataset(projectName: string, datasetType: string): Observable<HttpResponse<string>> {
@@ -1398,7 +1407,9 @@ export namespace MyNS {
 		 * <p>Describe an Amazon Lookout for Vision dataset.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.</p>
 		 * Get 2020-11-20/projects/{projectName}/datasets/{datasetType}
 		 * @param {string} projectName The name of the project that contains the dataset that you want to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} datasetType The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> 
+		 *     Min length: 1    Max length: 10
 		 * @return {DescribeDatasetResponse} Success
 		 */
 		DescribeDataset(projectName: string, datasetType: string): Observable<DescribeDatasetResponse> {
@@ -1409,7 +1420,9 @@ export namespace MyNS {
 		 * <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the <a>StopModel</a> operation.</p> <p>It might take a few seconds to delete a model. To determine if a model has been deleted, call <a>ListModels</a> and check if the version of the model (<code>ModelVersion</code>) is in the <code>Models</code> array. </p> <p/> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.</p>
 		 * Delete 2020-11-20/projects/{projectName}/models/{modelVersion}
 		 * @param {string} projectName The name of the project that contains the model that you want to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} modelVersion The version of the model that you want to delete.
+		 *     Min length: 1    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteModel(projectName: string, modelVersion: string): Observable<HttpResponse<string>> {
@@ -1420,7 +1433,9 @@ export namespace MyNS {
 		 * <p>Describes a version of an Amazon Lookout for Vision model.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.</p>
 		 * Get 2020-11-20/projects/{projectName}/models/{modelVersion}
 		 * @param {string} projectName The project that contains the version of a model that you want to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} modelVersion The version of the model that you want to describe.
+		 *     Min length: 1    Max length: 10
 		 * @return {DescribeModelResponse} Success
 		 */
 		DescribeModel(projectName: string, modelVersion: string): Observable<DescribeModelResponse> {
@@ -1431,6 +1446,7 @@ export namespace MyNS {
 		 * <p>Deletes an Amazon Lookout for Vision project.</p> <p>To delete a project, you must first delete each version of the model associated with the project. To delete a model use the <a>DeleteModel</a> operation.</p> <p>You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>. The images referenced by the training and test datasets aren't deleted. </p> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.</p>
 		 * Delete 2020-11-20/projects/{projectName}
 		 * @param {string} projectName The name of the project to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteProjectResponse} Success
 		 */
 		DeleteProject(projectName: string): Observable<DeleteProjectResponse> {
@@ -1441,6 +1457,7 @@ export namespace MyNS {
 		 * <p>Describes an Amazon Lookout for Vision project.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.</p>
 		 * Get 2020-11-20/projects/{projectName}
 		 * @param {string} projectName The name of the project that you want to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeProjectResponse} Success
 		 */
 		DescribeProject(projectName: string): Observable<DescribeProjectResponse> {
@@ -1451,7 +1468,9 @@ export namespace MyNS {
 		 * <p>Describes an Amazon Lookout for Vision model packaging job. </p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code> operation.</p> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 		 * Get 2020-11-20/projects/{projectName}/modelpackagingjobs/{jobName}
 		 * @param {string} projectName The name of the project that contains the model packaging job that you want to describe. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} jobName The job name for the model packaging job. 
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeModelPackagingJobResponse} Success
 		 */
 		DescribeModelPackagingJob(projectName: string, jobName: string): Observable<DescribeModelPackagingJobResponse> {
@@ -1462,7 +1481,9 @@ export namespace MyNS {
 		 * <p>Detects anomalies in an image that you supply. </p> <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response also includes segmentation information for each type of anomaly found in the image.</p> <note> <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <a>StartModel</a> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <a>StopModel</a> operation to stop your model. </p> </note> <p>For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout for Vision developer guide.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>
 		 * Post 2020-11-20/projects/{projectName}/models/{modelVersion}/detect#Content-Type
 		 * @param {string} projectName The name of the project that contains the model version that you want to use.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} modelVersion The version of the model that you want to use.
+		 *     Min length: 1    Max length: 10
 		 * @return {DetectAnomaliesResponse} Success
 		 */
 		DetectAnomalies(projectName: string, modelVersion: string, requestBody: DetectAnomaliesPostBody): Observable<DetectAnomaliesResponse> {
@@ -1473,14 +1494,20 @@ export namespace MyNS {
 		 * <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.</p>
 		 * Get 2020-11-20/projects/{projectName}/datasets/{datasetType}/entries
 		 * @param {string} projectName The name of the project that contains the dataset that you want to list.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} datasetType The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.
+		 *     Min length: 1    Max length: 10
 		 * @param {boolean} labeled Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.
 		 * @param {string} anomalyClass Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.
+		 *     Min length: 1    Max length: 10
 		 * @param {Date} createdBefore Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.
 		 * @param {Date} createdAfter Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.
 		 * @param {string} nextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.
+		 *     Max length: 2048
 		 * @param {number} maxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} sourceRefContains Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetEntriesResponse} Success
@@ -1493,7 +1520,9 @@ export namespace MyNS {
 		 * <p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information about an image used for training or testing an Amazon Lookout for Vision model.</p> <p>To update an existing JSON Line, use the <code>source-ref</code> field to identify the JSON Line. The JSON line that you supply replaces the existing JSON line. Any existing annotations that are not in the new JSON line are removed from the dataset. </p> <p>For more information, see <i>Defining JSON lines for anomaly classification</i> in the Amazon Lookout for Vision Developer Guide. </p> <note> <p>The images you reference in the <code>source-ref</code> field of a JSON line, must be in the same S3 bucket as the existing images in the dataset. </p> </note> <p>Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and check the <code>Status</code> field in the response.</p> <p>This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.</p>
 		 * Patch 2020-11-20/projects/{projectName}/datasets/{datasetType}/entries
 		 * @param {string} projectName The name of the project that contains the dataset that you want to update.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} datasetType The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.
+		 *     Min length: 1    Max length: 10
 		 * @return {void} 
 		 */
 		UpdateDatasetEntries(projectName: string, datasetType: string, requestBody: UpdateDatasetEntriesPatchBody): Observable<HttpResponse<string>> {
@@ -1504,8 +1533,11 @@ export namespace MyNS {
 		 * <p> Lists the model packaging jobs created for an Amazon Lookout for Vision project. </p> <p>This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code> operation. </p> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 		 * Get 2020-11-20/projects/{projectName}/modelpackagingjobs
 		 * @param {string} projectName  The name of the project for which you want to list the model packaging jobs. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. 
+		 *     Max length: 2048
 		 * @param {number} maxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListModelPackagingJobsResponse} Success
@@ -1518,6 +1550,7 @@ export namespace MyNS {
 		 * <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass. </p> <p>Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.</p> <p>To deploy the component to the target device, use the component name and component version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a> API.</p> <p>This operation requires the following permissions:</p> <ul> <li> <p> <code>lookoutvision:StartModelPackagingJob</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>kms:GenerateDataKey</code> </p> </li> <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li> <li> <p> <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p> </li> </ul> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 		 * Post 2020-11-20/projects/{projectName}/modelpackagingjobs
 		 * @param {string} projectName  The name of the project which contains the version of the model that you want to package. 
+		 *     Min length: 1    Max length: 255
 		 * @return {StartModelPackagingJobResponse} Success
 		 */
 		StartModelPackagingJob(projectName: string, requestBody: StartModelPackagingJobPostBody): Observable<StartModelPackagingJobResponse> {
@@ -1528,6 +1561,7 @@ export namespace MyNS {
 		 * <p>Returns a list of tags attached to the specified Amazon Lookout for Vision model.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.</p>
 		 * Get 2020-11-20/tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the model for which you want to list tags. 
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1538,6 +1572,7 @@ export namespace MyNS {
 		 * <p>Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.</p>
 		 * Post 2020-11-20/tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the model to assign the tags.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1548,7 +1583,9 @@ export namespace MyNS {
 		 * <p>Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to complete. To check the current state of the model, use <a>DescribeModel</a>.</p> <p>A model is ready to use when its status is <code>HOSTED</code>.</p> <p>Once the model is running, you can detect custom labels in new images by calling <a>DetectAnomalies</a>.</p> <note> <p>You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.</p> </note> <p>This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.</p>
 		 * Post 2020-11-20/projects/{projectName}/models/{modelVersion}/start
 		 * @param {string} projectName The name of the project that contains the model that you want to start.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} modelVersion The version of the model that you want to start.
+		 *     Min length: 1    Max length: 10
 		 * @return {void} 
 		 */
 		StartModel(projectName: string, modelVersion: string, requestBody: StartModelPostBody): Observable<HttpResponse<string>> {
@@ -1559,7 +1596,9 @@ export namespace MyNS {
 		 * <p>Stops the hosting of a running model. The operation might take a while to complete. To check the current status, call <a>DescribeModel</a>. </p> <p>After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.</p>
 		 * Post 2020-11-20/projects/{projectName}/models/{modelVersion}/stop
 		 * @param {string} projectName The name of the project that contains the model that you want to stop.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} modelVersion The version of the model that you want to stop.
+		 *     Min length: 1    Max length: 10
 		 * @return {void} 
 		 */
 		StopModel(projectName: string, modelVersion: string): Observable<HttpResponse<string>> {
@@ -1570,7 +1609,9 @@ export namespace MyNS {
 		 * <p>Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.</p>
 		 * Delete 2020-11-20/tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the model from which you want to remove tags. 
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of the keys of the tags that you want to remove.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1583,8 +1624,8 @@ export namespace MyNS {
 		/**
 		 * The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		DatasetType: string;
 
@@ -1596,8 +1637,8 @@ export namespace MyNS {
 		/**
 		 * The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		DatasetType: FormControl<string | null | undefined>,
 	}
@@ -1623,8 +1664,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the version of the model.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
@@ -1636,8 +1677,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
@@ -1652,15 +1693,15 @@ export namespace MyNS {
 
 		/**
 		 * A description for the version of the model.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
@@ -1688,8 +1729,8 @@ export namespace MyNS {
 		/**
 		 * The name for the project.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ProjectName: string;
 	}
@@ -1698,8 +1739,8 @@ export namespace MyNS {
 		/**
 		 * The name for the project.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ProjectName: FormControl<string | null | undefined>,
 	}
@@ -1738,8 +1779,8 @@ export namespace MyNS {
 		/**
 		 * The entries to add to the dataset.
 		 * Required
-		 * Max length: 10485760
 		 * Min length: 1
+		 * Max length: 10485760
 		 */
 		Changes: string;
 	}
@@ -1748,8 +1789,8 @@ export namespace MyNS {
 		/**
 		 * The entries to add to the dataset.
 		 * Required
-		 * Max length: 10485760
 		 * Min length: 1
+		 * Max length: 10485760
 		 */
 		Changes: FormControl<string | null | undefined>,
 	}
@@ -1765,15 +1806,15 @@ export namespace MyNS {
 		/**
 		 * The version of the model within the project that you want to package.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		ModelVersion: string;
 
 		/**
 		 * A name for the model packaging job. If you don't supply a value, the service creates a job name for you.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		JobName?: string | null;
 
@@ -1785,8 +1826,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the model packaging job.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description?: string | null;
 	}
@@ -1795,22 +1836,22 @@ export namespace MyNS {
 		/**
 		 * The version of the model within the project that you want to package.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		ModelVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the model packaging job. If you don't supply a value, the service creates a job name for you.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		JobName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the model packaging job.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}

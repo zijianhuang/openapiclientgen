@@ -414,7 +414,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetEventsReturnMetaFormProperties {
@@ -422,7 +425,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetEventsReturnMetaFormGroup() {
@@ -599,7 +605,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetAccountPropertiesReturnMetaFormProperties {
@@ -607,7 +616,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAccountPropertiesReturnMetaFormGroup() {
@@ -636,7 +648,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetUserPropertiesReturnMetaFormProperties {
@@ -644,7 +659,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetUserPropertiesReturnMetaFormGroup() {
@@ -673,7 +691,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetAccountSegmentsReturnMetaFormProperties {
@@ -681,7 +702,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAccountSegmentsReturnMetaFormGroup() {
@@ -710,7 +734,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetUserSegmentsReturnMetaFormProperties {
@@ -718,7 +745,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetUserSegmentsReturnMetaFormGroup() {
@@ -848,7 +878,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetTrackingSnippetReturnMetaFormProperties {
@@ -856,7 +889,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTrackingSnippetReturnMetaFormGroup() {
@@ -932,7 +968,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: number;
 	}
 	export interface GetValidityReturnMetaFormProperties {
@@ -940,7 +979,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetValidityReturnMetaFormGroup() {

@@ -395,7 +395,10 @@ namespace MyNS
 		/// Retrieve a list of schedules.
 		/// Schedule_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -427,7 +430,10 @@ namespace MyNS
 		/// Retrieve the schedule identified by schedule name.
 		/// Schedule_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="scheduleName">The schedule name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -460,7 +466,10 @@ namespace MyNS
 		/// Create a schedule.
 		/// Schedule_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="scheduleName">The schedule name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -501,7 +510,10 @@ namespace MyNS
 		/// Delete the schedule identified by schedule name.
 		/// Schedule_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="scheduleName">The schedule name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -528,7 +540,10 @@ namespace MyNS
 		/// Update the schedule identified by schedule name.
 		/// Schedule_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="scheduleName">The schedule name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>

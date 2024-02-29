@@ -648,6 +648,10 @@ namespace MyNS
 		/// Get podcast episodes
 		/// GetPodcastEpisodes api/v2/podcasts/{podcastKey}/episodes
 		/// </summary>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Minimum: 0</param>
 		/// <returns>OK</returns>
 		public async Task GetPodcastEpisodesAsync(string podcastKey, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -810,6 +814,10 @@ namespace MyNS
 		/// List stations
 		/// GetPartnerAggregatorStations api/v2/stations/list
 		/// </summary>
+		/// <param name="page">Minimum: 1</param>
+		/// <param name="hitsPerPage">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task GetPartnerAggregatorStationsAsync(string page, string hitsPerPage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

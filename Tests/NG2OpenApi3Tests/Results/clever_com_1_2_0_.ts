@@ -738,6 +738,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of student contacts
 		 * Get contacts
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentContactsResponse} OK Response
 		 */
 		GetContacts(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<StudentContactsResponse> {
@@ -819,6 +820,7 @@ export namespace MyNS {
 		/**
 		 * Returns the schools for a district
 		 * Get districts/{id}/schools
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SchoolsResponse} OK Response
 		 */
 		GetSchoolsForDistrict(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SchoolsResponse> {
@@ -828,6 +830,7 @@ export namespace MyNS {
 		/**
 		 * Returns the sections for a district
 		 * Get districts/{id}/sections
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SectionsResponse} OK Response
 		 */
 		GetSectionsForDistrict(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SectionsResponse> {
@@ -846,6 +849,7 @@ export namespace MyNS {
 		/**
 		 * Returns the students for a district
 		 * Get districts/{id}/students
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentsResponse} OK Response
 		 */
 		GetStudentsForDistrict(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<StudentsResponse> {
@@ -855,6 +859,7 @@ export namespace MyNS {
 		/**
 		 * Returns the teachers for a district
 		 * Get districts/{id}/teachers
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TeachersResponse} OK Response
 		 */
 		GetTeachersForDistrict(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<TeachersResponse> {
@@ -864,6 +869,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of school admins
 		 * Get school_admins
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SchoolAdminsResponse} OK Response
 		 */
 		GetSchoolAdmins(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SchoolAdminsResponse> {
@@ -882,6 +888,7 @@ export namespace MyNS {
 		/**
 		 * Returns the schools for a school admin
 		 * Get school_admins/{id}/schools
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SchoolsResponse} OK Response
 		 */
 		GetSchoolsForSchoolAdmin(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<SchoolsResponse> {
@@ -891,6 +898,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of schools
 		 * Get schools
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SchoolsResponse} OK Response
 		 */
 		GetSchools(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SchoolsResponse> {
@@ -918,6 +926,7 @@ export namespace MyNS {
 		/**
 		 * Returns the sections for a school
 		 * Get schools/{id}/sections
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SectionsResponse} OK Response
 		 */
 		GetSectionsForSchool(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SectionsResponse> {
@@ -927,6 +936,7 @@ export namespace MyNS {
 		/**
 		 * Returns the students for a school
 		 * Get schools/{id}/students
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentsResponse} OK Response
 		 */
 		GetStudentsForSchool(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<StudentsResponse> {
@@ -936,6 +946,7 @@ export namespace MyNS {
 		/**
 		 * Returns the teachers for a school
 		 * Get schools/{id}/teachers
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TeachersResponse} OK Response
 		 */
 		GetTeachersForSchool(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<TeachersResponse> {
@@ -945,6 +956,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of sections
 		 * Get sections
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SectionsResponse} OK Response
 		 */
 		GetSections(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<SectionsResponse> {
@@ -981,6 +993,7 @@ export namespace MyNS {
 		/**
 		 * Returns the students for a section
 		 * Get sections/{id}/students
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentsResponse} OK Response
 		 */
 		GetStudentsForSection(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<StudentsResponse> {
@@ -999,6 +1012,7 @@ export namespace MyNS {
 		/**
 		 * Returns the teachers for a section
 		 * Get sections/{id}/teachers
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TeachersResponse} OK Response
 		 */
 		GetTeachersForSection(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<TeachersResponse> {
@@ -1008,6 +1022,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of students
 		 * Get students
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentsResponse} OK Response
 		 */
 		GetStudents(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<StudentsResponse> {
@@ -1026,6 +1041,7 @@ export namespace MyNS {
 		/**
 		 * Returns the contacts for a student
 		 * Get students/{id}/contacts
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentContactsForStudentResponse} OK Response
 		 */
 		GetContactsForStudent(id: string, limit: number | null | undefined): Observable<StudentContactsForStudentResponse> {
@@ -1053,6 +1069,7 @@ export namespace MyNS {
 		/**
 		 * Returns the sections for a student
 		 * Get students/{id}/sections
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SectionsResponse} OK Response
 		 */
 		GetSectionsForStudent(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<SectionsResponse> {
@@ -1062,6 +1079,7 @@ export namespace MyNS {
 		/**
 		 * Returns the teachers for a student
 		 * Get students/{id}/teachers
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TeachersResponse} OK Response
 		 */
 		GetTeachersForStudent(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<TeachersResponse> {
@@ -1071,6 +1089,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of teachers
 		 * Get teachers
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TeachersResponse} OK Response
 		 */
 		GetTeachers(limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined, where: string | null | undefined): Observable<TeachersResponse> {
@@ -1116,6 +1135,7 @@ export namespace MyNS {
 		/**
 		 * Returns the sections for a teacher
 		 * Get teachers/{id}/sections
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SectionsResponse} OK Response
 		 */
 		GetSectionsForTeacher(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<SectionsResponse> {
@@ -1125,6 +1145,7 @@ export namespace MyNS {
 		/**
 		 * Returns the students for a teacher
 		 * Get teachers/{id}/students
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StudentsResponse} OK Response
 		 */
 		GetStudentsForTeacher(id: string, limit: number | null | undefined, starting_after: string | null | undefined, ending_before: string | null | undefined): Observable<StudentsResponse> {

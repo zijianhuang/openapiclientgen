@@ -169,7 +169,10 @@ namespace MyNS
 		/// Retrieve a list of hybrid runbook worker groups.
 		/// HybridRunbookWorkerGroup_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="filter">The filter to apply on the operation.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -202,7 +205,10 @@ namespace MyNS
 		/// Retrieve a hybrid runbook worker group.
 		/// HybridRunbookWorkerGroup_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="hybridRunbookWorkerGroupName">The hybrid runbook worker group name</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -235,7 +241,10 @@ namespace MyNS
 		/// Delete a hybrid runbook worker group.
 		/// HybridRunbookWorkerGroup_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="hybridRunbookWorkerGroupName">The hybrid runbook worker group name</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -262,7 +271,10 @@ namespace MyNS
 		/// Update a hybrid runbook worker group.
 		/// HybridRunbookWorkerGroup_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="hybridRunbookWorkerGroupName">The hybrid runbook worker group name</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>

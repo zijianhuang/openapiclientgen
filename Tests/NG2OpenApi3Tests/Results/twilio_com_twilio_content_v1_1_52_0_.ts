@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -29,8 +29,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -47,8 +47,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -69,8 +69,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -103,15 +103,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -125,15 +125,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -157,8 +157,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -179,8 +179,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -194,8 +194,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -216,8 +216,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -246,8 +246,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -271,8 +271,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -289,8 +289,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -314,8 +314,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the Content resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -354,7 +354,9 @@ export namespace MyNS {
 		 * Retrieve a list of Contents belonging to the account used to make the request
 		 * Get v1/Content
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {V1ContentGetByPageSizeAndPageAndPageTokenReturn} OK
 		 */
@@ -366,6 +368,7 @@ export namespace MyNS {
 		 * Deletes a Content resource
 		 * Delete v1/Content/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Content resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		V1Content_SidDelete(Sid: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -376,6 +379,7 @@ export namespace MyNS {
 		 * Fetch a Content resource by its unique Content Sid
 		 * Get v1/Content/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Content resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Contentv1content} OK
 		 */
 		V1Content_SidGet(Sid: string, headersHandler?: () => HttpHeaders): Observable<Contentv1content> {
@@ -386,6 +390,7 @@ export namespace MyNS {
 		 * Fetch a Content resource's approval status by its unique Content Sid
 		 * Get v1/Content/{Sid}/ApprovalRequests
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Content resource whose approval information to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Contentv1contentapproval_fetch} OK
 		 */
 		V1Content_SidApprovalRequestsGet(Sid: string, headersHandler?: () => HttpHeaders): Observable<Contentv1contentapproval_fetch> {
@@ -396,7 +401,9 @@ export namespace MyNS {
 		 * Retrieve a list of Contents with approval statuses belonging to the account used to make the request
 		 * Get v1/ContentAndApprovals
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {V1ContentAndApprovalsGetByPageSizeAndPageAndPageTokenReturn} OK
 		 */
@@ -408,7 +415,9 @@ export namespace MyNS {
 		 * Retrieve a list of Legacy Contents belonging to the account used to make the request
 		 * Get v1/LegacyContent
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {V1LegacyContentGetByPageSizeAndPageAndPageTokenReturn} OK
 		 */
@@ -433,7 +442,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -442,7 +455,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -476,7 +493,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -485,7 +506,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -519,7 +544,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -528,7 +557,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

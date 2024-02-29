@@ -73,13 +73,22 @@ export namespace MyNS {
 		/** Output only. PSC connections for discovery of the cluster topology and accessing the cluster. */
 		pscConnections?: Array<PscConnection>;
 
-		/** Optional. The number of replica nodes per shard. */
+		/**
+		 * Optional. The number of replica nodes per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
-		/** Required. Number of shards for the Redis cluster. */
+		/**
+		 * Required. Number of shards for the Redis cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount?: number | null;
 
-		/** Output only. Redis memory size in GB for the entire cluster. */
+		/**
+		 * Output only. Redis memory size in GB for the entire cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED */
@@ -107,13 +116,22 @@ export namespace MyNS {
 		/** Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. The number of replica nodes per shard. */
+		/**
+		 * Optional. The number of replica nodes per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
-		/** Required. Number of shards for the Redis cluster. */
+		/**
+		 * Required. Number of shards for the Redis cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount: FormControl<number | null | undefined>,
 
-		/** Output only. Redis memory size in GB for the entire cluster. */
+		/**
+		 * Output only. Redis memory size in GB for the entire cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED */
@@ -149,7 +167,10 @@ export namespace MyNS {
 		/** Output only. Address of the exposed Redis endpoint used by clients to connect to the service. The address could be either IP or hostname. */
 		address?: string | null;
 
-		/** Output only. The port number of the exposed Redis endpoint. */
+		/**
+		 * Output only. The port number of the exposed Redis endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 		pscConfig?: PscConfig;
 	}
@@ -160,7 +181,10 @@ export namespace MyNS {
 		/** Output only. Address of the exposed Redis endpoint used by clients to connect to the service. The address could be either IP or hostname. */
 		address: FormControl<string | null | undefined>,
 
-		/** Output only. The port number of the exposed Redis endpoint. */
+		/**
+		 * Output only. The port number of the exposed Redis endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscoveryEndpointFormGroup() {
@@ -260,20 +284,32 @@ export namespace MyNS {
 	/** Represents information about an updating cluster. */
 	export interface UpdateInfo {
 
-		/** Target number of replica nodes per shard. */
+		/**
+		 * Target number of replica nodes per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReplicaCount?: number | null;
 
-		/** Target number of shards for redis cluster */
+		/**
+		 * Target number of shards for redis cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetShardCount?: number | null;
 	}
 
 	/** Represents information about an updating cluster. */
 	export interface UpdateInfoFormProperties {
 
-		/** Target number of replica nodes per shard. */
+		/**
+		 * Target number of replica nodes per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReplicaCount: FormControl<number | null | undefined>,
 
-		/** Target number of shards for redis cluster */
+		/**
+		 * Target number of shards for redis cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetShardCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateInfoFormGroup() {
@@ -580,7 +616,10 @@ export namespace MyNS {
 		/** Optional. The self service update maintenance version. The version is date based such as "20210712_00_00". */
 		maintenanceVersion?: string | null;
 
-		/** Required. Redis memory size in GiB. */
+		/**
+		 * Required. Redis memory size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memorySizeGb?: number | null;
 
 		/** Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details. */
@@ -595,13 +634,19 @@ export namespace MyNS {
 		/** Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation. */
 		persistenceIamIdentity?: string | null;
 
-		/** Output only. The port number of the exposed Redis endpoint. */
+		/**
+		 * Output only. The port number of the exposed Redis endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'. */
 		readEndpoint?: string | null;
 
-		/** Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'. */
+		/**
+		 * Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readEndpointPort?: number | null;
 
 		/** Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED. */
@@ -613,7 +658,10 @@ export namespace MyNS {
 		/** Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility */
 		redisVersion?: string | null;
 
-		/** Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0. */
+		/**
+		 * Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28. */
@@ -686,7 +734,10 @@ export namespace MyNS {
 		/** Optional. The self service update maintenance version. The version is date based such as "20210712_00_00". */
 		maintenanceVersion: FormControl<string | null | undefined>,
 
-		/** Required. Redis memory size in GiB. */
+		/**
+		 * Required. Redis memory size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memorySizeGb: FormControl<number | null | undefined>,
 
 		/** Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details. */
@@ -695,13 +746,19 @@ export namespace MyNS {
 		/** Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation. */
 		persistenceIamIdentity: FormControl<string | null | undefined>,
 
-		/** Output only. The port number of the exposed Redis endpoint. */
+		/**
+		 * Output only. The port number of the exposed Redis endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'. */
 		readEndpoint: FormControl<string | null | undefined>,
 
-		/** Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'. */
+		/**
+		 * Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readEndpointPort: FormControl<number | null | undefined>,
 
 		/** Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED. */
@@ -713,7 +770,10 @@ export namespace MyNS {
 		/** Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility */
 		redisVersion: FormControl<string | null | undefined>,
 
-		/** Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0. */
+		/**
+		 * Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28. */
@@ -853,32 +913,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -1285,7 +1369,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1298,7 +1385,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1519,6 +1609,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1532,6 +1623,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1604,6 +1696,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/clusters
 		 * @param {string} parent Required. The resource name of the cluster location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
 		 * @param {number} pageSize The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's `next_page_token` to determine if there are more clusters left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous ListClusters request, if any.
 		 * @return {ListClustersResponse} Successful response
 		 */
@@ -1628,6 +1721,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/instances
 		 * @param {string} parent Required. The resource name of the instance location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
 		 * @param {number} pageSize The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's `next_page_token` to determine if there are more instances left to be queried.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous ListInstances request, if any.
 		 * @return {ListInstancesResponse} Successful response
 		 */

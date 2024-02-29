@@ -613,7 +613,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid?: string | null;
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at?: number | null;
 
 		/** The URL of user's mailbox in a webmail application. */
@@ -690,7 +693,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid: FormControl<string | null | undefined>,
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at: FormControl<number | null | undefined>,
 
 		/** The URL of user's mailbox in a webmail application. */
@@ -1572,7 +1578,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid?: string | null;
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at?: number | null;
 
 		/** The URL of user's mailbox in a webmail application. */
@@ -1649,7 +1658,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid: FormControl<string | null | undefined>,
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at: FormControl<number | null | undefined>,
 
 		/** The URL of user's mailbox in a webmail application. */
@@ -1811,7 +1823,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid?: string | null;
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at?: number | null;
 
 		/** The URL of user's mailbox in a webmail application. */
@@ -1888,7 +1903,10 @@ export namespace MyNS {
 		/** The user's simplified, shortened identifier at the Issuer. */
 		uid: FormControl<string | null | undefined>,
 
-		/** The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time. */
+		/**
+		 * The time when the User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
+		 * Type: double
+		 */
 		updated_at: FormControl<number | null | undefined>,
 
 		/** The URL of user's mailbox in a webmail application. */

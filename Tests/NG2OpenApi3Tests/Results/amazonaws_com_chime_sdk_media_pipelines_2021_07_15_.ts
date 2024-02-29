@@ -2309,7 +2309,9 @@ export namespace MyNS {
 		 * Returns a list of media pipelines.
 		 * Get sdk-media-capture-pipelines
 		 * @param {string} next_token The token used to retrieve the next page of results.
+		 *     Max length: 4096
 		 * @param {number} max_results The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMediaCapturePipelinesResponse} Success
@@ -2349,7 +2351,9 @@ export namespace MyNS {
 		 * Lists the available media insights pipeline configurations.
 		 * Get media-insights-pipeline-configurations
 		 * @param {string} next_token The token used to return the next page of results.
+		 *     Max length: 4096
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMediaInsightsPipelineConfigurationsResponse} Success
@@ -2371,6 +2375,7 @@ export namespace MyNS {
 		 * Deletes the media pipeline.
 		 * Delete sdk-media-capture-pipelines/{mediaPipelineId}
 		 * @param {string} mediaPipelineId The ID of the media pipeline being deleted. 
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteMediaCapturePipeline(mediaPipelineId: string): Observable<HttpResponse<string>> {
@@ -2381,6 +2386,7 @@ export namespace MyNS {
 		 * Gets an existing media pipeline.
 		 * Get sdk-media-capture-pipelines/{mediaPipelineId}
 		 * @param {string} mediaPipelineId The ID of the pipeline that you want to get.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetMediaCapturePipelineResponse} Success
 		 */
 		GetMediaCapturePipeline(mediaPipelineId: string): Observable<GetMediaCapturePipelineResponse> {
@@ -2391,6 +2397,7 @@ export namespace MyNS {
 		 * Deletes the specified configuration settings.
 		 * Delete media-insights-pipeline-configurations/{identifier}
 		 * @param {string} identifier The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.
+		 *     Max length: 1024
 		 * @return {void} 
 		 */
 		DeleteMediaInsightsPipelineConfiguration(identifier: string): Observable<HttpResponse<string>> {
@@ -2401,6 +2408,7 @@ export namespace MyNS {
 		 * Gets the configuration settings for a media insights pipeline.
 		 * Get media-insights-pipeline-configurations/{identifier}
 		 * @param {string} identifier The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.
+		 *     Max length: 1024
 		 * @return {GetMediaInsightsPipelineConfigurationResponse} Success
 		 */
 		GetMediaInsightsPipelineConfiguration(identifier: string): Observable<GetMediaInsightsPipelineConfigurationResponse> {
@@ -2411,6 +2419,7 @@ export namespace MyNS {
 		 * Updates the media insights pipeline's configuration settings.
 		 * Put media-insights-pipeline-configurations/{identifier}
 		 * @param {string} identifier The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.
+		 *     Max length: 1024
 		 * @return {UpdateMediaInsightsPipelineConfigurationResponse} Success
 		 */
 		UpdateMediaInsightsPipelineConfiguration(identifier: string, requestBody: UpdateMediaInsightsPipelineConfigurationPutBody): Observable<UpdateMediaInsightsPipelineConfigurationResponse> {
@@ -2421,6 +2430,7 @@ export namespace MyNS {
 		 * Deletes the media pipeline.
 		 * Delete sdk-media-pipelines/{mediaPipelineId}
 		 * @param {string} mediaPipelineId The ID of the media pipeline to delete.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteMediaPipeline(mediaPipelineId: string): Observable<HttpResponse<string>> {
@@ -2431,6 +2441,7 @@ export namespace MyNS {
 		 * Gets an existing media pipeline.
 		 * Get sdk-media-pipelines/{mediaPipelineId}
 		 * @param {string} mediaPipelineId The ID of the pipeline that you want to get.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetMediaPipelineResponse} Success
 		 */
 		GetMediaPipeline(mediaPipelineId: string): Observable<GetMediaPipelineResponse> {
@@ -2441,7 +2452,9 @@ export namespace MyNS {
 		 * Returns a list of media pipelines.
 		 * Get sdk-media-pipelines
 		 * @param {string} next_token The token used to retrieve the next page of results.
+		 *     Max length: 4096
 		 * @param {number} max_results The maximum number of results to return in a single call. Valid Range: 1 - 99.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMediaPipelinesResponse} Success
@@ -2454,6 +2467,7 @@ export namespace MyNS {
 		 * Lists the tags available for a media pipeline.
 		 * Get tags#arn
 		 * @param {string} arn The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -2482,6 +2496,7 @@ export namespace MyNS {
 		 * Updates the status of a media insights pipeline.
 		 * Put media-insights-pipeline-status/{identifier}
 		 * @param {string} identifier The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.
+		 *     Max length: 1024
 		 * @return {void} Success
 		 */
 		UpdateMediaInsightsPipelineStatus(identifier: string, requestBody: UpdateMediaInsightsPipelineStatusPutBody): Observable<HttpResponse<string>> {
@@ -2500,8 +2515,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the source from which the media artifacts are captured.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SourceArn: string;
 
@@ -2514,15 +2529,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the sink type.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SinkArn: string;
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -2547,8 +2562,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the source from which the media artifacts are captured.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SourceArn: FormControl<string | null | undefined>,
 
@@ -2561,15 +2576,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the sink type.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		SinkArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2616,8 +2631,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -2632,8 +2647,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2649,8 +2664,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the pipeline's configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		MediaInsightsPipelineConfigurationArn: string;
 
@@ -2675,8 +2690,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the media insights pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -2685,8 +2700,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the pipeline's configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		MediaInsightsPipelineConfigurationArn: FormControl<string | null | undefined>,
 
@@ -2695,8 +2710,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the media insights pipeline request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2759,16 +2774,16 @@ export namespace MyNS {
 		/**
 		 * The name of the media insights pipeline configuration.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaInsightsPipelineConfigurationName: string;
 
 		/**
 		 * The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceAccessRoleArn: string;
 
@@ -2790,8 +2805,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the media insights pipeline configuration request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -2800,23 +2815,23 @@ export namespace MyNS {
 		/**
 		 * The name of the media insights pipeline configuration.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaInsightsPipelineConfigurationName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceAccessRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the media insights pipeline configuration request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2863,8 +2878,8 @@ export namespace MyNS {
 
 		/**
 		 * The token assigned to the client making the request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -2879,8 +2894,8 @@ export namespace MyNS {
 
 		/**
 		 * The token assigned to the client making the request.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2896,8 +2911,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role used by the service to access Amazon Web Services resources.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceAccessRoleArn: string;
 
@@ -2915,8 +2930,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role used by the service to access Amazon Web Services resources.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceAccessRoleArn: FormControl<string | null | undefined>,
 	}
@@ -2948,8 +2963,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -2966,8 +2981,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -2985,8 +3000,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the pipeline that you want to untag.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -3003,8 +3018,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the pipeline that you want to untag.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

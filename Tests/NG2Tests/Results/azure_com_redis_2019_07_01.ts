@@ -1553,6 +1553,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {number} history how many minutes in past to look for upgrade notifications
+		 *     Type: double
 		 * @return {NotificationListResponse} All upgrade notifications in given time range
 		 */
 		Redis_ListUpgradeNotifications(resourceGroupName: string, name: string, api_version: string, subscriptionId: string, history: number): Observable<NotificationListResponse> {

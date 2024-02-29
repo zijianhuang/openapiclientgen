@@ -16015,9 +16015,13 @@ namespace MyNS
 		/// <param name="filter_platforms">filter by attribute 'platforms'</param>
 		/// <param name="exists_parent">filter by existence or non-existence of related 'parent'</param>
 		/// <param name="fields_appCategories">the fields to include for returned resources of type appCategories</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
-		/// <param name="limit_subcategories">maximum number of related subcategories returned (when they are included)</param>
+		/// <param name="limit_subcategories">maximum number of related subcategories returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of AppCategories</returns>
 		public async Task<AppCategoriesResponse> AppCategories_get_collectionAsync(Platform[] filter_platforms, string[] exists_parent, string[] fields_appCategories, int limit, string[] include, int limit_subcategories, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16052,7 +16056,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields_appCategories">the fields to include for returned resources of type appCategories</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
-		/// <param name="limit_subcategories">maximum number of related subcategories returned (when they are included)</param>
+		/// <param name="limit_subcategories">maximum number of related subcategories returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppCategory</returns>
 		public async Task<AppCategoryResponse> AppCategories_get_instanceAsync(string[] fields_appCategories, string[] include, int limit_subcategories, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16119,7 +16125,9 @@ namespace MyNS
 		/// AppCategories_subcategories_get_to_many_related v1/appCategories/{id}/subcategories
 		/// </summary>
 		/// <param name="fields_appCategories">the fields to include for returned resources of type appCategories</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppCategoriesResponse> AppCategories_subcategories_get_to_many_relatedAsync(string[] fields_appCategories, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16156,7 +16164,9 @@ namespace MyNS
 		/// <param name="filter_app">filter by id(s) of related 'app'</param>
 		/// <param name="filter_builds">filter by id(s) of related 'builds'</param>
 		/// <param name="fields_appEncryptionDeclarations">the fields to include for returned resources of type appEncryptionDeclarations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
 		/// <returns>List of AppEncryptionDeclarations</returns>
@@ -16429,7 +16439,9 @@ namespace MyNS
 		/// <param name="fields_ageRatingDeclarations">the fields to include for returned resources of type ageRatingDeclarations</param>
 		/// <param name="fields_appCategories">the fields to include for returned resources of type appCategories</param>
 		/// <param name="fields_appInfoLocalizations">the fields to include for returned resources of type appInfoLocalizations</param>
-		/// <param name="limit_appInfoLocalizations">maximum number of related appInfoLocalizations returned (when they are included)</param>
+		/// <param name="limit_appInfoLocalizations">maximum number of related appInfoLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppInfo</returns>
 		public async Task<AppInfoResponse> AppInfos_get_instanceAsync(string[] fields_appInfos, string[] include, string[] fields_ageRatingDeclarations, string[] fields_appCategories, string[] fields_appInfoLocalizations, int limit_appInfoLocalizations, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16538,7 +16550,9 @@ namespace MyNS
 		/// <param name="filter_locale">filter by attribute 'locale'</param>
 		/// <param name="fields_appInfos">the fields to include for returned resources of type appInfos</param>
 		/// <param name="fields_appInfoLocalizations">the fields to include for returned resources of type appInfoLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppInfoLocalizationsResponse> AppInfos_appInfoLocalizations_get_to_many_relatedAsync(string[] filter_locale, string[] fields_appInfos, string[] fields_appInfoLocalizations, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16963,7 +16977,9 @@ namespace MyNS
 		/// <param name="fields_appPreviewSets">the fields to include for returned resources of type appPreviewSets</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appPreviews">the fields to include for returned resources of type appPreviews</param>
-		/// <param name="limit_appPreviews">maximum number of related appPreviews returned (when they are included)</param>
+		/// <param name="limit_appPreviews">maximum number of related appPreviews returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppPreviewSet</returns>
 		public async Task<AppPreviewSetResponse> AppPreviewSets_get_instanceAsync(string[] fields_appPreviewSets, string[] include, string[] fields_appPreviews, int limit_appPreviews, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16998,7 +17014,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields_appPreviews">the fields to include for returned resources of type appPreviews</param>
 		/// <param name="fields_appPreviewSets">the fields to include for returned resources of type appPreviewSets</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppPreviewsResponse> AppPreviewSets_appPreviews_get_to_many_relatedAsync(string[] fields_appPreviews, string[] fields_appPreviewSets, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17032,7 +17050,9 @@ namespace MyNS
 		/// <summary>
 		/// AppPreviewSets_appPreviews_get_to_many_relationship v1/appPreviewSets/{id}/relationships/appPreviews
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<AppPreviewSetAppPreviewsLinkagesResponse> AppPreviewSets_appPreviews_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17233,7 +17253,9 @@ namespace MyNS
 		/// <param name="filter_priceTier">filter by id(s) of related 'priceTier'</param>
 		/// <param name="filter_territory">filter by id(s) of related 'territory'</param>
 		/// <param name="fields_appPricePoints">the fields to include for returned resources of type appPricePoints</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_territories">the fields to include for returned resources of type territories</param>
 		/// <returns>List of AppPricePoints</returns>
@@ -17338,10 +17360,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="fields_appPriceTiers">the fields to include for returned resources of type appPriceTiers</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appPricePoints">the fields to include for returned resources of type appPricePoints</param>
-		/// <param name="limit_pricePoints">maximum number of related pricePoints returned (when they are included)</param>
+		/// <param name="limit_pricePoints">maximum number of related pricePoints returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of AppPriceTiers</returns>
 		public async Task<AppPriceTiersResponse> AppPriceTiers_get_collectionAsync(string[] filter_id, string[] fields_appPriceTiers, int limit, string[] include, string[] fields_appPricePoints, int limit_pricePoints, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17377,7 +17403,9 @@ namespace MyNS
 		/// <param name="fields_appPriceTiers">the fields to include for returned resources of type appPriceTiers</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appPricePoints">the fields to include for returned resources of type appPricePoints</param>
-		/// <param name="limit_pricePoints">maximum number of related pricePoints returned (when they are included)</param>
+		/// <param name="limit_pricePoints">maximum number of related pricePoints returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppPriceTier</returns>
 		public async Task<AppPriceTierResponse> AppPriceTiers_get_instanceAsync(string[] fields_appPriceTiers, string[] include, string[] fields_appPricePoints, int limit_pricePoints, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17411,7 +17439,9 @@ namespace MyNS
 		/// AppPriceTiers_pricePoints_get_to_many_related v1/appPriceTiers/{id}/pricePoints
 		/// </summary>
 		/// <param name="fields_appPricePoints">the fields to include for returned resources of type appPricePoints</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppPricePointsResponse> AppPriceTiers_pricePoints_get_to_many_relatedAsync(string[] fields_appPricePoints, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17539,7 +17569,9 @@ namespace MyNS
 		/// <param name="fields_appScreenshotSets">the fields to include for returned resources of type appScreenshotSets</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appScreenshots">the fields to include for returned resources of type appScreenshots</param>
-		/// <param name="limit_appScreenshots">maximum number of related appScreenshots returned (when they are included)</param>
+		/// <param name="limit_appScreenshots">maximum number of related appScreenshots returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppScreenshotSet</returns>
 		public async Task<AppScreenshotSetResponse> AppScreenshotSets_get_instanceAsync(string[] fields_appScreenshotSets, string[] include, string[] fields_appScreenshots, int limit_appScreenshots, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17574,7 +17606,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields_appScreenshotSets">the fields to include for returned resources of type appScreenshotSets</param>
 		/// <param name="fields_appScreenshots">the fields to include for returned resources of type appScreenshots</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppScreenshotsResponse> AppScreenshotSets_appScreenshots_get_to_many_relatedAsync(string[] fields_appScreenshotSets, string[] fields_appScreenshots, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17608,7 +17642,9 @@ namespace MyNS
 		/// <summary>
 		/// AppScreenshotSets_appScreenshots_get_to_many_relationship v1/appScreenshotSets/{id}/relationships/appScreenshots
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<AppScreenshotSetAppScreenshotsLinkagesResponse> AppScreenshotSets_appScreenshots_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -17974,7 +18010,9 @@ namespace MyNS
 		/// <param name="fields_appStoreReviewDetails">the fields to include for returned resources of type appStoreReviewDetails</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appStoreReviewAttachments">the fields to include for returned resources of type appStoreReviewAttachments</param>
-		/// <param name="limit_appStoreReviewAttachments">maximum number of related appStoreReviewAttachments returned (when they are included)</param>
+		/// <param name="limit_appStoreReviewAttachments">maximum number of related appStoreReviewAttachments returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppStoreReviewDetail</returns>
 		public async Task<AppStoreReviewDetailResponse> AppStoreReviewDetails_get_instanceAsync(string[] fields_appStoreReviewDetails, string[] include, string[] fields_appStoreReviewAttachments, int limit_appStoreReviewAttachments, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18049,7 +18087,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields_appStoreReviewDetails">the fields to include for returned resources of type appStoreReviewDetails</param>
 		/// <param name="fields_appStoreReviewAttachments">the fields to include for returned resources of type appStoreReviewAttachments</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppStoreReviewAttachmentsResponse> AppStoreReviewDetails_appStoreReviewAttachments_get_to_many_relatedAsync(string[] fields_appStoreReviewDetails, string[] fields_appStoreReviewAttachments, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18145,8 +18185,12 @@ namespace MyNS
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appScreenshotSets">the fields to include for returned resources of type appScreenshotSets</param>
 		/// <param name="fields_appPreviewSets">the fields to include for returned resources of type appPreviewSets</param>
-		/// <param name="limit_appPreviewSets">maximum number of related appPreviewSets returned (when they are included)</param>
-		/// <param name="limit_appScreenshotSets">maximum number of related appScreenshotSets returned (when they are included)</param>
+		/// <param name="limit_appPreviewSets">maximum number of related appPreviewSets returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_appScreenshotSets">maximum number of related appScreenshotSets returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppStoreVersionLocalization</returns>
 		public async Task<AppStoreVersionLocalizationResponse> AppStoreVersionLocalizations_get_instanceAsync(string[] fields_appStoreVersionLocalizations, string[] include, string[] fields_appScreenshotSets, string[] fields_appPreviewSets, int limit_appPreviewSets, int limit_appScreenshotSets, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18223,7 +18267,9 @@ namespace MyNS
 		/// <param name="fields_appStoreVersionLocalizations">the fields to include for returned resources of type appStoreVersionLocalizations</param>
 		/// <param name="fields_appPreviews">the fields to include for returned resources of type appPreviews</param>
 		/// <param name="fields_appPreviewSets">the fields to include for returned resources of type appPreviewSets</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppPreviewSetsResponse> AppStoreVersionLocalizations_appPreviewSets_get_to_many_relatedAsync(AppPreviewSetAttributesPreviewType[] filter_previewType, string[] fields_appStoreVersionLocalizations, string[] fields_appPreviews, string[] fields_appPreviewSets, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18261,7 +18307,9 @@ namespace MyNS
 		/// <param name="fields_appStoreVersionLocalizations">the fields to include for returned resources of type appStoreVersionLocalizations</param>
 		/// <param name="fields_appScreenshotSets">the fields to include for returned resources of type appScreenshotSets</param>
 		/// <param name="fields_appScreenshots">the fields to include for returned resources of type appScreenshots</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppScreenshotSetsResponse> AppStoreVersionLocalizations_appScreenshotSets_get_to_many_relatedAsync(AppScreenshotSetAttributesScreenshotDisplayType[] filter_screenshotDisplayType, string[] fields_appStoreVersionLocalizations, string[] fields_appScreenshotSets, string[] fields_appScreenshots, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18519,7 +18567,9 @@ namespace MyNS
 		/// <param name="fields_appStoreReviewDetails">the fields to include for returned resources of type appStoreReviewDetails</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_appStoreVersionSubmissions">the fields to include for returned resources of type appStoreVersionSubmissions</param>
-		/// <param name="limit_appStoreVersionLocalizations">maximum number of related appStoreVersionLocalizations returned (when they are included)</param>
+		/// <param name="limit_appStoreVersionLocalizations">maximum number of related appStoreVersionLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single AppStoreVersion</returns>
 		public async Task<AppStoreVersionResponse> AppStoreVersions_get_instanceAsync(string[] fields_appStoreVersions, string[] include, string[] fields_appStoreVersionLocalizations, string[] fields_idfaDeclarations, string[] fields_routingAppCoverages, string[] fields_appStoreVersionPhasedReleases, string[] fields_ageRatingDeclarations, string[] fields_appStoreReviewDetails, string[] fields_builds, string[] fields_appStoreVersionSubmissions, int limit_appStoreVersionLocalizations, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18662,7 +18712,9 @@ namespace MyNS
 		/// AppStoreVersions_appStoreVersionLocalizations_get_to_many_related v1/appStoreVersions/{id}/appStoreVersionLocalizations
 		/// </summary>
 		/// <param name="fields_appStoreVersionLocalizations">the fields to include for returned resources of type appStoreVersionLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppStoreVersionLocalizationsResponse> AppStoreVersions_appStoreVersionLocalizations_get_to_many_relatedAsync(string[] fields_appStoreVersionLocalizations, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18937,7 +18989,9 @@ namespace MyNS
 		/// <param name="exists_gameCenterEnabledVersions">filter by existence or non-existence of related 'gameCenterEnabledVersions'</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
 		/// <param name="fields_perfPowerMetrics">the fields to include for returned resources of type perfPowerMetrics</param>
@@ -18954,16 +19008,36 @@ namespace MyNS
 		/// <param name="fields_betaAppLocalizations">the fields to include for returned resources of type betaAppLocalizations</param>
 		/// <param name="fields_betaLicenseAgreements">the fields to include for returned resources of type betaLicenseAgreements</param>
 		/// <param name="fields_endUserLicenseAgreements">the fields to include for returned resources of type endUserLicenseAgreements</param>
-		/// <param name="limit_appInfos">maximum number of related appInfos returned (when they are included)</param>
-		/// <param name="limit_appStoreVersions">maximum number of related appStoreVersions returned (when they are included)</param>
-		/// <param name="limit_availableTerritories">maximum number of related availableTerritories returned (when they are included)</param>
-		/// <param name="limit_betaAppLocalizations">maximum number of related betaAppLocalizations returned (when they are included)</param>
-		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
-		/// <param name="limit_gameCenterEnabledVersions">maximum number of related gameCenterEnabledVersions returned (when they are included)</param>
-		/// <param name="limit_inAppPurchases">maximum number of related inAppPurchases returned (when they are included)</param>
-		/// <param name="limit_preReleaseVersions">maximum number of related preReleaseVersions returned (when they are included)</param>
-		/// <param name="limit_prices">maximum number of related prices returned (when they are included)</param>
+		/// <param name="limit_appInfos">maximum number of related appInfos returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_appStoreVersions">maximum number of related appStoreVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_availableTerritories">maximum number of related availableTerritories returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaAppLocalizations">maximum number of related betaAppLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_gameCenterEnabledVersions">maximum number of related gameCenterEnabledVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_inAppPurchases">maximum number of related inAppPurchases returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_preReleaseVersions">maximum number of related preReleaseVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_prices">maximum number of related prices returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of Apps</returns>
 		public async Task<AppsResponse> Apps_get_collectionAsync(
 					AppInfoAttributesAppStoreState[] filter_appStoreVersions_appStoreState, 
@@ -19051,16 +19125,36 @@ namespace MyNS
 		/// <param name="fields_betaAppLocalizations">the fields to include for returned resources of type betaAppLocalizations</param>
 		/// <param name="fields_betaLicenseAgreements">the fields to include for returned resources of type betaLicenseAgreements</param>
 		/// <param name="fields_endUserLicenseAgreements">the fields to include for returned resources of type endUserLicenseAgreements</param>
-		/// <param name="limit_appInfos">maximum number of related appInfos returned (when they are included)</param>
-		/// <param name="limit_appStoreVersions">maximum number of related appStoreVersions returned (when they are included)</param>
-		/// <param name="limit_availableTerritories">maximum number of related availableTerritories returned (when they are included)</param>
-		/// <param name="limit_betaAppLocalizations">maximum number of related betaAppLocalizations returned (when they are included)</param>
-		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
-		/// <param name="limit_gameCenterEnabledVersions">maximum number of related gameCenterEnabledVersions returned (when they are included)</param>
-		/// <param name="limit_inAppPurchases">maximum number of related inAppPurchases returned (when they are included)</param>
-		/// <param name="limit_preReleaseVersions">maximum number of related preReleaseVersions returned (when they are included)</param>
-		/// <param name="limit_prices">maximum number of related prices returned (when they are included)</param>
+		/// <param name="limit_appInfos">maximum number of related appInfos returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_appStoreVersions">maximum number of related appStoreVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_availableTerritories">maximum number of related availableTerritories returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaAppLocalizations">maximum number of related betaAppLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_gameCenterEnabledVersions">maximum number of related gameCenterEnabledVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_inAppPurchases">maximum number of related inAppPurchases returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_preReleaseVersions">maximum number of related preReleaseVersions returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_prices">maximum number of related prices returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single App</returns>
 		public async Task<AppResponse> Apps_get_instanceAsync(
 					string[] fields_apps, 
@@ -19166,7 +19260,9 @@ namespace MyNS
 		/// <param name="fields_appCategories">the fields to include for returned resources of type appCategories</param>
 		/// <param name="fields_appInfoLocalizations">the fields to include for returned resources of type appInfoLocalizations</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppInfosResponse> Apps_appInfos_get_to_many_relatedAsync(string[] fields_ageRatingDeclarations, string[] fields_appInfos, string[] fields_appCategories, string[] fields_appInfoLocalizations, string[] fields_apps, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19214,7 +19310,9 @@ namespace MyNS
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_appStoreVersionSubmissions">the fields to include for returned resources of type appStoreVersionSubmissions</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppStoreVersionsResponse> Apps_appStoreVersions_get_to_many_relatedAsync(
@@ -19266,7 +19364,9 @@ namespace MyNS
 		/// Apps_availableTerritories_get_to_many_related v1/apps/{id}/availableTerritories
 		/// </summary>
 		/// <param name="fields_territories">the fields to include for returned resources of type territories</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<TerritoriesResponse> Apps_availableTerritories_get_to_many_relatedAsync(string[] fields_territories, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19300,7 +19400,9 @@ namespace MyNS
 		/// Apps_betaAppLocalizations_get_to_many_related v1/apps/{id}/betaAppLocalizations
 		/// </summary>
 		/// <param name="fields_betaAppLocalizations">the fields to include for returned resources of type betaAppLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaAppLocalizationsResponse> Apps_betaAppLocalizations_get_to_many_relatedAsync(string[] fields_betaAppLocalizations, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19367,7 +19469,9 @@ namespace MyNS
 		/// Apps_betaGroups_get_to_many_related v1/apps/{id}/betaGroups
 		/// </summary>
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaGroupsResponse> Apps_betaGroups_get_to_many_relatedAsync(string[] fields_betaGroups, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19434,7 +19538,9 @@ namespace MyNS
 		/// Apps_builds_get_to_many_related v1/apps/{id}/builds
 		/// </summary>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BuildsResponse> Apps_builds_get_to_many_relatedAsync(string[] fields_builds, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19506,7 +19612,9 @@ namespace MyNS
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_gameCenterEnabledVersions">the fields to include for returned resources of type gameCenterEnabledVersions</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<GameCenterEnabledVersionsResponse> Apps_gameCenterEnabledVersions_get_to_many_relatedAsync(Platform[] filter_platform, string[] filter_versionString, string[] filter_id, string[] sort, string[] fields_gameCenterEnabledVersions, string[] fields_apps, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19545,7 +19653,9 @@ namespace MyNS
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_inAppPurchases">the fields to include for returned resources of type inAppPurchases</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<InAppPurchasesResponse> Apps_inAppPurchases_get_to_many_relatedAsync(InAppPurchaseAttributesInAppPurchaseType[] filter_inAppPurchaseType, string[] filter_canBeSubmitted, string[] sort, string[] fields_inAppPurchases, string[] fields_apps, int limit, AppType[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19648,7 +19758,9 @@ namespace MyNS
 		/// Apps_preReleaseVersions_get_to_many_related v1/apps/{id}/preReleaseVersions
 		/// </summary>
 		/// <param name="fields_preReleaseVersions">the fields to include for returned resources of type preReleaseVersions</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<PreReleaseVersionsResponse> Apps_preReleaseVersions_get_to_many_relatedAsync(string[] fields_preReleaseVersions, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19684,7 +19796,9 @@ namespace MyNS
 		/// <param name="fields_appPrices">the fields to include for returned resources of type appPrices</param>
 		/// <param name="fields_appPriceTiers">the fields to include for returned resources of type appPriceTiers</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppPricesResponse> Apps_prices_get_to_many_relatedAsync(string[] fields_appPrices, string[] fields_appPriceTiers, string[] fields_apps, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19746,7 +19860,9 @@ namespace MyNS
 		/// <param name="filter_locale">filter by attribute 'locale'</param>
 		/// <param name="filter_app">filter by id(s) of related 'app'</param>
 		/// <param name="fields_betaAppLocalizations">the fields to include for returned resources of type betaAppLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
 		/// <returns>List of BetaAppLocalizations</returns>
@@ -19949,7 +20065,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter_app">filter by id(s) of related 'app'</param>
 		/// <param name="fields_betaAppReviewDetails">the fields to include for returned resources of type betaAppReviewDetails</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
 		/// <returns>List of BetaAppReviewDetails</returns>
@@ -20095,7 +20213,9 @@ namespace MyNS
 		/// <param name="filter_betaReviewState">filter by attribute 'betaReviewState'</param>
 		/// <param name="filter_build">filter by id(s) of related 'build'</param>
 		/// <param name="fields_betaAppReviewSubmissions">the fields to include for returned resources of type betaAppReviewSubmissions</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <returns>List of BetaAppReviewSubmissions</returns>
@@ -20234,7 +20354,9 @@ namespace MyNS
 		/// <param name="filter_locale">filter by attribute 'locale'</param>
 		/// <param name="filter_build">filter by id(s) of related 'build'</param>
 		/// <param name="fields_betaBuildLocalizations">the fields to include for returned resources of type betaBuildLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <returns>List of BetaBuildLocalizations</returns>
@@ -20445,13 +20567,19 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_betaTesters">maximum number of related betaTesters returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_betaTesters">maximum number of related betaTesters returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 1000
+		// </param>
 		/// <returns>List of BetaGroups</returns>
 		public async Task<BetaGroupsResponse> BetaGroups_get_collectionAsync(
 					string[] filter_isInternalGroup, 
@@ -20565,8 +20693,12 @@ namespace MyNS
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_betaTesters">maximum number of related betaTesters returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_betaTesters">maximum number of related betaTesters returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Single BetaGroup</returns>
 		public async Task<BetaGroupResponse> BetaGroups_get_instanceAsync(string[] fields_betaGroups, string[] include, string[] fields_builds, string[] fields_betaTesters, string[] fields_apps, int limit_betaTesters, int limit_builds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20673,7 +20805,9 @@ namespace MyNS
 		/// BetaGroups_betaTesters_get_to_many_related v1/betaGroups/{id}/betaTesters
 		/// </summary>
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaTestersResponse> BetaGroups_betaTesters_get_to_many_relatedAsync(string[] fields_betaTesters, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20707,7 +20841,9 @@ namespace MyNS
 		/// BetaGroups_builds_get_to_many_related v1/betaGroups/{id}/builds
 		/// </summary>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BuildsResponse> BetaGroups_builds_get_to_many_relatedAsync(string[] fields_builds, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20765,7 +20901,9 @@ namespace MyNS
 		/// <summary>
 		/// BetaGroups_betaTesters_get_to_many_relationship v1/betaGroups/{id}/relationships/betaTesters
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BetaGroupBetaTestersLinkagesResponse> BetaGroups_betaTesters_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20856,7 +20994,9 @@ namespace MyNS
 		/// <summary>
 		/// BetaGroups_builds_get_to_many_relationship v1/betaGroups/{id}/relationships/builds
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BetaGroupBuildsLinkagesResponse> BetaGroups_builds_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20924,7 +21064,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter_app">filter by id(s) of related 'app'</param>
 		/// <param name="fields_betaLicenseAgreements">the fields to include for returned resources of type betaLicenseAgreements</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
 		/// <returns>List of BetaLicenseAgreements</returns>
@@ -21109,14 +21251,22 @@ namespace MyNS
 		/// <param name="filter_builds">filter by id(s) of related 'builds'</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_apps">maximum number of related apps returned (when they are included)</param>
-		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_apps">maximum number of related apps returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of BetaTesters</returns>
 		public async Task<BetaTestersResponse> BetaTesters_get_collectionAsync(
 					string[] filter_email, 
@@ -21230,9 +21380,15 @@ namespace MyNS
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_apps">maximum number of related apps returned (when they are included)</param>
-		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_apps">maximum number of related apps returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_betaGroups">maximum number of related betaGroups returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single BetaTester</returns>
 		public async Task<BetaTesterResponse> BetaTesters_get_instanceAsync(string[] fields_betaTesters, string[] include, string[] fields_betaGroups, string[] fields_builds, string[] fields_apps, int limit_apps, int limit_betaGroups, int limit_builds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21266,7 +21422,9 @@ namespace MyNS
 		/// BetaTesters_apps_get_to_many_related v1/betaTesters/{id}/apps
 		/// </summary>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppsResponse> BetaTesters_apps_get_to_many_relatedAsync(string[] fields_apps, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21300,7 +21458,9 @@ namespace MyNS
 		/// BetaTesters_betaGroups_get_to_many_related v1/betaTesters/{id}/betaGroups
 		/// </summary>
 		/// <param name="fields_betaGroups">the fields to include for returned resources of type betaGroups</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaGroupsResponse> BetaTesters_betaGroups_get_to_many_relatedAsync(string[] fields_betaGroups, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21334,7 +21494,9 @@ namespace MyNS
 		/// BetaTesters_builds_get_to_many_related v1/betaTesters/{id}/builds
 		/// </summary>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BuildsResponse> BetaTesters_builds_get_to_many_relatedAsync(string[] fields_builds, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21392,7 +21554,9 @@ namespace MyNS
 		/// <summary>
 		/// BetaTesters_apps_get_to_many_relationship v1/betaTesters/{id}/relationships/apps
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BetaTesterAppsLinkagesResponse> BetaTesters_apps_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21450,7 +21614,9 @@ namespace MyNS
 		/// <summary>
 		/// BetaTesters_betaGroups_get_to_many_relationship v1/betaTesters/{id}/relationships/betaGroups
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BetaTesterBetaGroupsLinkagesResponse> BetaTesters_betaGroups_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21541,7 +21707,9 @@ namespace MyNS
 		/// <summary>
 		/// BetaTesters_builds_get_to_many_relationship v1/betaTesters/{id}/relationships/builds
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BetaTesterBuildsLinkagesResponse> BetaTesters_builds_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21610,7 +21778,9 @@ namespace MyNS
 		/// <param name="filter_build">filter by id(s) of related 'build'</param>
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="fields_buildBetaDetails">the fields to include for returned resources of type buildBetaDetails</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <returns>List of BuildBetaDetails</returns>
@@ -21800,7 +21970,9 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_appEncryptionDeclarations">the fields to include for returned resources of type appEncryptionDeclarations</param>
 		/// <param name="fields_betaAppReviewSubmissions">the fields to include for returned resources of type betaAppReviewSubmissions</param>
@@ -21813,9 +21985,15 @@ namespace MyNS
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
 		/// <param name="fields_betaBuildLocalizations">the fields to include for returned resources of type betaBuildLocalizations</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_betaBuildLocalizations">maximum number of related betaBuildLocalizations returned (when they are included)</param>
-		/// <param name="limit_icons">maximum number of related icons returned (when they are included)</param>
-		/// <param name="limit_individualTesters">maximum number of related individualTesters returned (when they are included)</param>
+		/// <param name="limit_betaBuildLocalizations">maximum number of related betaBuildLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_icons">maximum number of related icons returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_individualTesters">maximum number of related individualTesters returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of Builds</returns>
 		public async Task<BuildsResponse> Builds_get_collectionAsync(
 					BetaAppReviewSubmissionAttributesBetaReviewState[] filter_betaAppReviewSubmission_betaReviewState, 
@@ -21892,9 +22070,15 @@ namespace MyNS
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
 		/// <param name="fields_betaBuildLocalizations">the fields to include for returned resources of type betaBuildLocalizations</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_betaBuildLocalizations">maximum number of related betaBuildLocalizations returned (when they are included)</param>
-		/// <param name="limit_icons">maximum number of related icons returned (when they are included)</param>
-		/// <param name="limit_individualTesters">maximum number of related individualTesters returned (when they are included)</param>
+		/// <param name="limit_betaBuildLocalizations">maximum number of related betaBuildLocalizations returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_icons">maximum number of related icons returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_individualTesters">maximum number of related individualTesters returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single Build</returns>
 		public async Task<BuildResponse> Builds_get_instanceAsync(
 					string[] fields_builds, 
@@ -22117,7 +22301,9 @@ namespace MyNS
 		/// Builds_betaBuildLocalizations_get_to_many_related v1/builds/{id}/betaBuildLocalizations
 		/// </summary>
 		/// <param name="fields_betaBuildLocalizations">the fields to include for returned resources of type betaBuildLocalizations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaBuildLocalizationsResponse> Builds_betaBuildLocalizations_get_to_many_relatedAsync(string[] fields_betaBuildLocalizations, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22185,7 +22371,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter_diagnosticType">filter by attribute 'diagnosticType'</param>
 		/// <param name="fields_diagnosticSignatures">the fields to include for returned resources of type diagnosticSignatures</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<DiagnosticSignaturesResponse> Builds_diagnosticSignatures_get_to_many_relatedAsync(DiagnosticSignatureAttributesDiagnosticType[] filter_diagnosticType, string[] fields_diagnosticSignatures, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22219,7 +22407,9 @@ namespace MyNS
 		/// Builds_icons_get_to_many_related v1/builds/{id}/icons
 		/// </summary>
 		/// <param name="fields_buildIcons">the fields to include for returned resources of type buildIcons</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BuildIconsResponse> Builds_icons_get_to_many_relatedAsync(string[] fields_buildIcons, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22253,7 +22443,9 @@ namespace MyNS
 		/// Builds_individualTesters_get_to_many_related v1/builds/{id}/individualTesters
 		/// </summary>
 		/// <param name="fields_betaTesters">the fields to include for returned resources of type betaTesters</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BetaTestersResponse> Builds_individualTesters_get_to_many_relatedAsync(string[] fields_betaTesters, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22502,7 +22694,9 @@ namespace MyNS
 		/// <summary>
 		/// Builds_individualTesters_get_to_many_relationship v1/builds/{id}/relationships/individualTesters
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<BuildIndividualTestersLinkagesResponse> Builds_individualTesters_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22673,13 +22867,19 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_bundleIds">the fields to include for returned resources of type bundleIds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_bundleIdCapabilities">the fields to include for returned resources of type bundleIdCapabilities</param>
 		/// <param name="fields_profiles">the fields to include for returned resources of type profiles</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_bundleIdCapabilities">maximum number of related bundleIdCapabilities returned (when they are included)</param>
-		/// <param name="limit_profiles">maximum number of related profiles returned (when they are included)</param>
+		/// <param name="limit_bundleIdCapabilities">maximum number of related bundleIdCapabilities returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_profiles">maximum number of related profiles returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of BundleIds</returns>
 		public async Task<BundleIdsResponse> BundleIds_get_collectionAsync(string[] filter_identifier, string[] filter_name, BundleIdAttributesPlatform[] filter_platform, string[] filter_seedId, string[] filter_id, string[] sort, string[] fields_bundleIds, int limit, string[] include, string[] fields_bundleIdCapabilities, string[] fields_profiles, string[] fields_apps, int limit_bundleIdCapabilities, int limit_profiles, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22775,8 +22975,12 @@ namespace MyNS
 		/// <param name="fields_bundleIdCapabilities">the fields to include for returned resources of type bundleIdCapabilities</param>
 		/// <param name="fields_profiles">the fields to include for returned resources of type profiles</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_bundleIdCapabilities">maximum number of related bundleIdCapabilities returned (when they are included)</param>
-		/// <param name="limit_profiles">maximum number of related profiles returned (when they are included)</param>
+		/// <param name="limit_bundleIdCapabilities">maximum number of related bundleIdCapabilities returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_profiles">maximum number of related profiles returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single BundleId</returns>
 		public async Task<BundleIdResponse> BundleIds_get_instanceAsync(string[] fields_bundleIds, string[] include, string[] fields_bundleIdCapabilities, string[] fields_profiles, string[] fields_apps, int limit_bundleIdCapabilities, int limit_profiles, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22883,7 +23087,9 @@ namespace MyNS
 		/// BundleIds_bundleIdCapabilities_get_to_many_related v1/bundleIds/{id}/bundleIdCapabilities
 		/// </summary>
 		/// <param name="fields_bundleIdCapabilities">the fields to include for returned resources of type bundleIdCapabilities</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BundleIdCapabilitiesResponse> BundleIds_bundleIdCapabilities_get_to_many_relatedAsync(string[] fields_bundleIdCapabilities, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22917,7 +23123,9 @@ namespace MyNS
 		/// BundleIds_profiles_get_to_many_related v1/bundleIds/{id}/profiles
 		/// </summary>
 		/// <param name="fields_profiles">the fields to include for returned resources of type profiles</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<ProfilesResponse> BundleIds_profiles_get_to_many_relatedAsync(string[] fields_profiles, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22956,7 +23164,9 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_certificates">the fields to include for returned resources of type certificates</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of Certificates</returns>
 		public async Task<CertificatesResponse> Certificates_get_collectionAsync(CertificateAttributesCertificateType[] filter_certificateType, string[] filter_displayName, string[] filter_serialNumber, string[] filter_id, string[] sort, string[] fields_certificates, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23087,7 +23297,9 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_devices">the fields to include for returned resources of type devices</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of Devices</returns>
 		public async Task<DevicesResponse> Devices_get_collectionAsync(string[] filter_name, BundleIdAttributesPlatform[] filter_platform, DeviceAttributesStatus[] filter_status, string[] filter_udid, string[] filter_id, string[] sort, string[] fields_devices, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23226,7 +23438,9 @@ namespace MyNS
 		/// <summary>
 		/// DiagnosticSignatures_logs_get_to_many_related v1/diagnosticSignatures/{id}/logs
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<DiagnosticLogsResponse> DiagnosticSignatures_logs_get_to_many_relatedAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23320,7 +23534,9 @@ namespace MyNS
 		/// <param name="fields_endUserLicenseAgreements">the fields to include for returned resources of type endUserLicenseAgreements</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_territories">the fields to include for returned resources of type territories</param>
-		/// <param name="limit_territories">maximum number of related territories returned (when they are included)</param>
+		/// <param name="limit_territories">maximum number of related territories returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single EndUserLicenseAgreement</returns>
 		public async Task<EndUserLicenseAgreementResponse> EndUserLicenseAgreements_get_instanceAsync(string[] fields_endUserLicenseAgreements, string[] include, string[] fields_territories, int limit_territories, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23394,7 +23610,9 @@ namespace MyNS
 		/// EndUserLicenseAgreements_territories_get_to_many_related v1/endUserLicenseAgreements/{id}/territories
 		/// </summary>
 		/// <param name="fields_territories">the fields to include for returned resources of type territories</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<TerritoriesResponse> EndUserLicenseAgreements_territories_get_to_many_relatedAsync(string[] fields_territories, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23464,7 +23682,9 @@ namespace MyNS
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_gameCenterEnabledVersions">the fields to include for returned resources of type gameCenterEnabledVersions</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <returns>List of related resources</returns>
 		public async Task<GameCenterEnabledVersionsResponse> GameCenterEnabledVersions_compatibleVersions_get_to_many_relatedAsync(Platform[] filter_platform, string[] filter_versionString, string[] filter_app, string[] filter_id, string[] sort, string[] fields_gameCenterEnabledVersions, string[] fields_apps, int limit, string[] include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -23523,7 +23743,9 @@ namespace MyNS
 		/// <summary>
 		/// GameCenterEnabledVersions_compatibleVersions_get_to_many_relationship v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<GameCenterEnabledVersionCompatibleVersionsLinkagesResponse> GameCenterEnabledVersions_compatibleVersions_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23722,7 +23944,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields_inAppPurchases">the fields to include for returned resources of type inAppPurchases</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
-		/// <param name="limit_apps">maximum number of related apps returned (when they are included)</param>
+		/// <param name="limit_apps">maximum number of related apps returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single InAppPurchase</returns>
 		public async Task<InAppPurchaseResponse> InAppPurchases_get_instanceAsync(string[] fields_inAppPurchases, AppType[] include, int limit_apps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23763,11 +23987,15 @@ namespace MyNS
 		/// <param name="filter_builds">filter by id(s) of related 'builds'</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_preReleaseVersions">the fields to include for returned resources of type preReleaseVersions</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of PreReleaseVersions</returns>
 		public async Task<PreReleaseVersionsResponse> PreReleaseVersions_get_collectionAsync(string[] filter_builds_expired, BuildAttributesProcessingState[] filter_builds_processingState, Platform[] filter_platform, string[] filter_version, string[] filter_app, string[] filter_builds, string[] sort, string[] fields_preReleaseVersions, int limit, string[] include, string[] fields_builds, string[] fields_apps, int limit_builds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23804,7 +24032,9 @@ namespace MyNS
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_builds">maximum number of related builds returned (when they are included)</param>
+		/// <param name="limit_builds">maximum number of related builds returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single PrereleaseVersion</returns>
 		public async Task<PrereleaseVersionResponse> PreReleaseVersions_get_instanceAsync(string[] fields_preReleaseVersions, string[] include, string[] fields_builds, string[] fields_apps, int limit_builds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23871,7 +24101,9 @@ namespace MyNS
 		/// PreReleaseVersions_builds_get_to_many_related v1/preReleaseVersions/{id}/builds
 		/// </summary>
 		/// <param name="fields_builds">the fields to include for returned resources of type builds</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<BuildsResponse> PreReleaseVersions_builds_get_to_many_relatedAsync(string[] fields_builds, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23910,13 +24142,19 @@ namespace MyNS
 		/// <param name="filter_id">filter by id(s)</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_profiles">the fields to include for returned resources of type profiles</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_certificates">the fields to include for returned resources of type certificates</param>
 		/// <param name="fields_devices">the fields to include for returned resources of type devices</param>
 		/// <param name="fields_bundleIds">the fields to include for returned resources of type bundleIds</param>
-		/// <param name="limit_certificates">maximum number of related certificates returned (when they are included)</param>
-		/// <param name="limit_devices">maximum number of related devices returned (when they are included)</param>
+		/// <param name="limit_certificates">maximum number of related certificates returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_devices">maximum number of related devices returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of Profiles</returns>
 		public async Task<ProfilesResponse> Profiles_get_collectionAsync(string[] filter_name, ProfileAttributesProfileState[] filter_profileState, ProfileAttributesProfileType[] filter_profileType, string[] filter_id, string[] sort, string[] fields_profiles, int limit, string[] include, string[] fields_certificates, string[] fields_devices, string[] fields_bundleIds, int limit_certificates, int limit_devices, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24012,8 +24250,12 @@ namespace MyNS
 		/// <param name="fields_certificates">the fields to include for returned resources of type certificates</param>
 		/// <param name="fields_devices">the fields to include for returned resources of type devices</param>
 		/// <param name="fields_bundleIds">the fields to include for returned resources of type bundleIds</param>
-		/// <param name="limit_certificates">maximum number of related certificates returned (when they are included)</param>
-		/// <param name="limit_devices">maximum number of related devices returned (when they are included)</param>
+		/// <param name="limit_certificates">maximum number of related certificates returned (when they are included)
+		/// Maximum: 50
+		// </param>
+		/// <param name="limit_devices">maximum number of related devices returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single Profile</returns>
 		public async Task<ProfileResponse> Profiles_get_instanceAsync(string[] fields_profiles, string[] include, string[] fields_certificates, string[] fields_devices, string[] fields_bundleIds, int limit_certificates, int limit_devices, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24080,7 +24322,9 @@ namespace MyNS
 		/// Profiles_certificates_get_to_many_related v1/profiles/{id}/certificates
 		/// </summary>
 		/// <param name="fields_certificates">the fields to include for returned resources of type certificates</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<CertificatesResponse> Profiles_certificates_get_to_many_relatedAsync(string[] fields_certificates, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24114,7 +24358,9 @@ namespace MyNS
 		/// Profiles_devices_get_to_many_related v1/profiles/{id}/devices
 		/// </summary>
 		/// <param name="fields_devices">the fields to include for returned resources of type devices</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<DevicesResponse> Profiles_devices_get_to_many_relatedAsync(string[] fields_devices, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24312,7 +24558,9 @@ namespace MyNS
 		/// Territories_get_collection v1/territories
 		/// </summary>
 		/// <param name="fields_territories">the fields to include for returned resources of type territories</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of Territories</returns>
 		public async Task<TerritoriesResponse> Territories_get_collectionAsync(string[] fields_territories, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24350,10 +24598,14 @@ namespace MyNS
 		/// <param name="filter_visibleApps">filter by id(s) of related 'visibleApps'</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_userInvitations">the fields to include for returned resources of type userInvitations</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)</param>
+		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of UserInvitations</returns>
 		public async Task<UserInvitationsResponse> UserInvitations_get_collectionAsync(string[] filter_email, UserRole[] filter_roles, string[] filter_visibleApps, string[] sort, string[] fields_userInvitations, int limit, string[] include, string[] fields_apps, int limit_visibleApps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24447,7 +24699,9 @@ namespace MyNS
 		/// <param name="fields_userInvitations">the fields to include for returned resources of type userInvitations</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)</param>
+		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single UserInvitation</returns>
 		public async Task<UserInvitationResponse> UserInvitations_get_instanceAsync(string[] fields_userInvitations, string[] include, string[] fields_apps, int limit_visibleApps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24481,7 +24735,9 @@ namespace MyNS
 		/// UserInvitations_visibleApps_get_to_many_related v1/userInvitations/{id}/visibleApps
 		/// </summary>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppsResponse> UserInvitations_visibleApps_get_to_many_relatedAsync(string[] fields_apps, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24519,10 +24775,14 @@ namespace MyNS
 		/// <param name="filter_visibleApps">filter by id(s) of related 'visibleApps'</param>
 		/// <param name="sort">comma-separated list of sort expressions; resources will be sorted as specified</param>
 		/// <param name="fields_users">the fields to include for returned resources of type users</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)</param>
+		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>List of Users</returns>
 		public async Task<UsersResponse> Users_get_collectionAsync(UserRole[] filter_roles, string[] filter_username, string[] filter_visibleApps, string[] sort, string[] fields_users, int limit, string[] include, string[] fields_apps, int limit_visibleApps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24583,7 +24843,9 @@ namespace MyNS
 		/// <param name="fields_users">the fields to include for returned resources of type users</param>
 		/// <param name="include">comma-separated list of relationships to include</param>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)</param>
+		/// <param name="limit_visibleApps">maximum number of related visibleApps returned (when they are included)
+		/// Maximum: 50
+		// </param>
 		/// <returns>Single User</returns>
 		public async Task<UserResponse> Users_get_instanceAsync(string[] fields_users, string[] include, string[] fields_apps, int limit_visibleApps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24681,7 +24943,9 @@ namespace MyNS
 		/// <summary>
 		/// Users_visibleApps_get_to_many_relationship v1/users/{id}/relationships/visibleApps
 		/// </summary>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related linkages</returns>
 		public async Task<UserVisibleAppsLinkagesResponse> Users_visibleApps_get_to_many_relationshipAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24781,7 +25045,9 @@ namespace MyNS
 		/// Users_visibleApps_get_to_many_related v1/users/{id}/visibleApps
 		/// </summary>
 		/// <param name="fields_apps">the fields to include for returned resources of type apps</param>
-		/// <param name="limit">maximum resources per page</param>
+		/// <param name="limit">maximum resources per page
+		/// Maximum: 200
+		// </param>
 		/// <returns>List of related resources</returns>
 		public async Task<AppsResponse> Users_visibleApps_get_to_many_relatedAsync(string[] fields_apps, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

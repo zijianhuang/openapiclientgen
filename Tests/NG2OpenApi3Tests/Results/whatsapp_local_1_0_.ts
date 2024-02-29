@@ -115,7 +115,10 @@ export namespace MyNS {
 		/** Stores callbacks on disk until they are successfully acknowledged by the Webhook or not. Restart required. */
 		callback_persist?: boolean | null;
 
-		/** Multiconnect: Interval of the Master node monitoring of Coreapp nodes in seconds */
+		/**
+		 * Multiconnect: Interval of the Master node monitoring of Coreapp nodes in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heartbeat_interval?: number | null;
 
 		/** Maximum delay for a failed callback in milliseconds */
@@ -134,7 +137,10 @@ export namespace MyNS {
 		/** Receive a notification that a message is sent to server. When true, you will receive a message indicating that a message has been sent. If false (default), you will not receive notification. */
 		sent_status?: boolean | null;
 
-		/** Multiconnect: Maximum amount of seconds a Master node waits for a Coreapp node to respond to a heartbeat before considering it unhealthy and starting the failover process. */
+		/**
+		 * Multiconnect: Maximum amount of seconds a Master node waits for a Coreapp node to respond to a heartbeat before considering it unhealthy and starting the failover process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthy_interval?: number | null;
 		webhooks?: Webhooks;
 	}
@@ -149,7 +155,10 @@ export namespace MyNS {
 		/** Stores callbacks on disk until they are successfully acknowledged by the Webhook or not. Restart required. */
 		callback_persist: FormControl<boolean | null | undefined>,
 
-		/** Multiconnect: Interval of the Master node monitoring of Coreapp nodes in seconds */
+		/**
+		 * Multiconnect: Interval of the Master node monitoring of Coreapp nodes in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heartbeat_interval: FormControl<number | null | undefined>,
 
 		/** Maximum delay for a failed callback in milliseconds */
@@ -167,7 +176,10 @@ export namespace MyNS {
 		/** Receive a notification that a message is sent to server. When true, you will receive a message indicating that a message has been sent. If false (default), you will not receive notification. */
 		sent_status: FormControl<boolean | null | undefined>,
 
-		/** Multiconnect: Maximum amount of seconds a Master node waits for a Coreapp node to respond to a heartbeat before considering it unhealthy and starting the failover process. */
+		/**
+		 * Multiconnect: Maximum amount of seconds a Master node waits for a Coreapp node to respond to a heartbeat before considering it unhealthy and starting the failover process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthy_interval: FormControl<number | null | undefined>,
 	}
 	export function CreateApplication_SettingsFormGroup() {
@@ -851,7 +863,10 @@ export namespace MyNS {
 
 	export interface Currency {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_1000: number;
 
 		/** Required */
@@ -859,7 +874,10 @@ export namespace MyNS {
 	}
 	export interface CurrencyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_1000: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -877,44 +895,74 @@ export namespace MyNS {
 	/** Date/time by component */
 	export interface Date_Time_Component {
 
-		/** The day of month */
+		/**
+		 * The day of month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day_of_month?: number | null;
 
 		/** Both strings and numbers are accepted. If different from the value derived from the date (if specified), use the derived value. */
 		day_of_week?: Date_Time_ComponentDay_of_week;
 
-		/** The hour */
+		/**
+		 * The hour
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour?: number | null;
 
-		/** The minute */
+		/**
+		 * The minute
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute?: number | null;
 
-		/** The month */
+		/**
+		 * The month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** The year */
+		/**
+		 * The year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Date/time by component */
 	export interface Date_Time_ComponentFormProperties {
 
-		/** The day of month */
+		/**
+		 * The day of month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day_of_month: FormControl<number | null | undefined>,
 
 		/** Both strings and numbers are accepted. If different from the value derived from the date (if specified), use the derived value. */
 		day_of_week: FormControl<Date_Time_ComponentDay_of_week | null | undefined>,
 
-		/** The hour */
+		/**
+		 * The hour
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** The minute */
+		/**
+		 * The minute
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 
-		/** The month */
+		/**
+		 * The month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** The year */
+		/**
+		 * The year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDate_Time_ComponentFormGroup() {
@@ -955,14 +1003,20 @@ export namespace MyNS {
 	/** Date/time by Unix epoch */
 	export interface Date_Time_Unix_Epoch {
 
-		/** Epoch timestamp in seconds */
+		/**
+		 * Epoch timestamp in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp?: number | null;
 	}
 
 	/** Date/time by Unix epoch */
 	export interface Date_Time_Unix_EpochFormProperties {
 
-		/** Epoch timestamp in seconds */
+		/**
+		 * Epoch timestamp in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateDate_Time_Unix_EpochFormGroup() {
@@ -1098,7 +1152,10 @@ export namespace MyNS {
 
 	export interface Error {
 
-		/** See the https://developers.facebook.com/docs/whatsapp/api/errors for more information. */
+		/**
+		 * See the https://developers.facebook.com/docs/whatsapp/api/errors for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** error detail */
@@ -1112,7 +1169,10 @@ export namespace MyNS {
 	}
 	export interface ErrorFormProperties {
 
-		/** See the https://developers.facebook.com/docs/whatsapp/api/errors for more information. */
+		/**
+		 * See the https://developers.facebook.com/docs/whatsapp/api/errors for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** error detail */
@@ -1278,13 +1338,19 @@ export namespace MyNS {
 
 	export interface Group {
 
-		/** timestamp */
+		/**
+		 * timestamp
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creation_time?: number | null;
 		id?: string | null;
 	}
 	export interface GroupFormProperties {
 
-		/** timestamp */
+		/**
+		 * timestamp
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creation_time: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 	}
@@ -1320,7 +1386,10 @@ export namespace MyNS {
 		 */
 		admins?: Array<string>;
 
-		/** Group creation time */
+		/**
+		 * Group creation time
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creation_time?: number | null;
 
 		/** ID of the creator of this group */
@@ -1337,7 +1406,10 @@ export namespace MyNS {
 	}
 	export interface Group_InfoFormProperties {
 
-		/** Group creation time */
+		/**
+		 * Group creation time
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creation_time: FormControl<number | null | undefined>,
 
 		/** ID of the creator of this group */
@@ -2614,10 +2686,16 @@ export namespace MyNS {
 		/** Address of the location */
 		address?: string | null;
 
-		/** Latitude of location being sent */
+		/**
+		 * Latitude of location being sent
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude of location being sent */
+		/**
+		 * Longitude of location being sent
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** Name of the location */
@@ -2631,10 +2709,16 @@ export namespace MyNS {
 		/** Address of the location */
 		address: FormControl<string | null | undefined>,
 
-		/** Latitude of location being sent */
+		/**
+		 * Latitude of location being sent
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude of location being sent */
+		/**
+		 * Longitude of location being sent
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** Name of the location */
@@ -2861,7 +2945,6 @@ export namespace MyNS {
 		/**
 		 * Download-CA-Certificate
 		 * Get certificates/external/ca
-		 * @return {string} 
 		 */
 		DownloadCaCertificate(): Observable<string> {
 			return this.http.get(this.baseUri + 'certificates/external/ca', { responseType: 'text' });
@@ -2879,7 +2962,6 @@ export namespace MyNS {
 		/**
 		 * Download Webhook CA Certificate
 		 * Get certificates/webhooks/ca
-		 * @return {string} 
 		 */
 		DownloadWebhookCaCertificate(): Observable<string> {
 			return this.http.get(this.baseUri + 'certificates/webhooks/ca', { responseType: 'text' });
@@ -2888,7 +2970,6 @@ export namespace MyNS {
 		/**
 		 * Check-Contact
 		 * Post contacts
-		 * @return {Check_Contact_Response} 
 		 */
 		CheckContact(requestBody: Check_Contact_Request_Body): Observable<Check_Contact_Response> {
 			return this.http.post<Check_Contact_Response>(this.baseUri + 'contacts', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2897,7 +2978,6 @@ export namespace MyNS {
 		/**
 		 * Get-All-Groups
 		 * Get groups
-		 * @return {Groups_Response} 
 		 */
 		GetAllGroups(): Observable<Groups_Response> {
 			return this.http.get<Groups_Response>(this.baseUri + 'groups', {});
@@ -2906,7 +2986,6 @@ export namespace MyNS {
 		/**
 		 * Create-Group
 		 * Post groups
-		 * @return {Groups_Response} 
 		 */
 		CreateGroup(requestBody: Create_Group_Request_Body): Observable<Groups_Response> {
 			return this.http.post<Groups_Response>(this.baseUri + 'groups', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2915,7 +2994,6 @@ export namespace MyNS {
 		/**
 		 * Get-Group-Info
 		 * Get groups/{GroupId}
-		 * @return {Group_Response} 
 		 */
 		GetGroupInfo(GroupId: string): Observable<Group_Response> {
 			return this.http.get<Group_Response>(this.baseUri + 'groups/' + (GroupId == null ? '' : encodeURIComponent(GroupId)), {});
@@ -2978,7 +3056,6 @@ export namespace MyNS {
 		/**
 		 * Get-Group-Invite
 		 * Get groups/{GroupId}/invite
-		 * @return {Group_Invite_Response} 
 		 */
 		GetGroupInvite(GroupId: string): Observable<Group_Invite_Response> {
 			return this.http.get<Group_Invite_Response>(this.baseUri + 'groups/' + (GroupId == null ? '' : encodeURIComponent(GroupId)) + '/invite', {});
@@ -3032,7 +3109,6 @@ export namespace MyNS {
 		/**
 		 * Send-Message
 		 * Post messages
-		 * @return {Message_Response} 
 		 */
 		SendMessage(requestBody: Send_Message_Request_Body): Observable<Message_Response> {
 			return this.http.post<Message_Response>(this.baseUri + 'messages', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -3051,7 +3127,6 @@ export namespace MyNS {
 		/**
 		 * Get-Metrics (since v2.21.3)
 		 * Get metrics
-		 * @return {string} 
 		 */
 		GetMetrics(format: string | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'metrics?format=' + (format == null ? '' : encodeURIComponent(format)), { responseType: 'text' });
@@ -3087,7 +3162,6 @@ export namespace MyNS {
 		/**
 		 * Get-Application-Settings
 		 * Get settings/application
-		 * @return {Application_Settings} 
 		 */
 		GetApplicationSettings(): Observable<Application_Settings> {
 			return this.http.get<Application_Settings>(this.baseUri + 'settings/application', {});
@@ -3097,7 +3171,6 @@ export namespace MyNS {
 		 * Update-Application-Settings
 		 * If a field is not present in the request, no change is made to that setting. For example, if on_call_pager is not sent with the request, the existing configuration for on_call_pager is unchanged.
 		 * Patch settings/application
-		 * @return {Response} 
 		 */
 		UpdateApplicationSettings(requestBody: Application_Settings): Observable<Response> {
 			return this.http.patch<Response>(this.baseUri + 'settings/application', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -3106,7 +3179,6 @@ export namespace MyNS {
 		/**
 		 * Get-Media-Providers
 		 * Get settings/application/media/providers
-		 * @return {Get_Media_Providers_Response} 
 		 */
 		GetMediaProviders(): Observable<Get_Media_Providers_Response> {
 			return this.http.get<Get_Media_Providers_Response>(this.baseUri + 'settings/application/media/providers', {});
@@ -3134,7 +3206,6 @@ export namespace MyNS {
 		/**
 		 * Backup-Settings
 		 * Post settings/backup
-		 * @return {Backup_Settings_Response} 
 		 */
 		BackupSettings(requestBody: Backup_Settings_Request_Body): Observable<Backup_Settings_Response> {
 			return this.http.post<Backup_Settings_Response>(this.baseUri + 'settings/backup', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -3143,7 +3214,6 @@ export namespace MyNS {
 		/**
 		 * Get-Business-Profile
 		 * Get settings/business/profile
-		 * @return {Get_Business_Profile_Response} 
 		 */
 		GetBusinessProfile(): Observable<Get_Business_Profile_Response> {
 			return this.http.get<Get_Business_Profile_Response>(this.baseUri + 'settings/business/profile', {});
@@ -3161,7 +3231,6 @@ export namespace MyNS {
 		/**
 		 * Get-Profile-About
 		 * Get settings/profile/about
-		 * @return {Get_Profile_About_Response} 
 		 */
 		GetProfileAbout(): Observable<Get_Profile_About_Response> {
 			return this.http.get<Get_Profile_About_Response>(this.baseUri + 'settings/profile/about', {});
@@ -3188,7 +3257,6 @@ export namespace MyNS {
 		/**
 		 * Get-Profile-Photo
 		 * Get settings/profile/photo
-		 * @return {Get_Profile_Photo_Response} 
 		 */
 		GetProfilePhoto(format: string | null | undefined): Observable<Get_Profile_Photo_Response> {
 			return this.http.get<Get_Profile_Photo_Response>(this.baseUri + 'settings/profile/photo?format=' + (format == null ? '' : encodeURIComponent(format)), {});
@@ -3206,7 +3274,6 @@ export namespace MyNS {
 		/**
 		 * Get-App-Stats
 		 * Get stats/app
-		 * @return {string} 
 		 */
 		GetAppStats(format: string | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'stats/app?format=' + (format == null ? '' : encodeURIComponent(format)), { responseType: 'text' });
@@ -3215,7 +3282,6 @@ export namespace MyNS {
 		/**
 		 * Get-DB-Stats
 		 * Get stats/db
-		 * @return {string} 
 		 */
 		GetDbStats(format: string | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'stats/db?format=' + (format == null ? '' : encodeURIComponent(format)), { responseType: 'text' });
@@ -3224,7 +3290,6 @@ export namespace MyNS {
 		/**
 		 * Get-Support-Info
 		 * Get support
-		 * @return {string} 
 		 */
 		GetSupportInfo(): Observable<string> {
 			return this.http.get(this.baseUri + 'support', { responseType: 'text' });
@@ -3233,7 +3298,6 @@ export namespace MyNS {
 		/**
 		 * Create-User
 		 * Post users
-		 * @return {User_Response} 
 		 */
 		CreateUser(requestBody: Create_User_Request_Body): Observable<User_Response> {
 			return this.http.post<User_Response>(this.baseUri + 'users', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -3260,7 +3324,6 @@ export namespace MyNS {
 		/**
 		 * Delete-User
 		 * Delete users/{UserUsername}
-		 * @return {User_Response} 
 		 */
 		DeleteUser(UserUsername: string): Observable<User_Response> {
 			return this.http.delete<User_Response>(this.baseUri + 'users/' + (UserUsername == null ? '' : encodeURIComponent(UserUsername)), {});
@@ -3269,7 +3332,6 @@ export namespace MyNS {
 		/**
 		 * Get-User
 		 * Get users/{UserUsername}
-		 * @return {Detailed_User_Response} 
 		 */
 		GetUser(UserUsername: string): Observable<Detailed_User_Response> {
 			return this.http.get<Detailed_User_Response>(this.baseUri + 'users/' + (UserUsername == null ? '' : encodeURIComponent(UserUsername)), {});
@@ -3278,7 +3340,6 @@ export namespace MyNS {
 		/**
 		 * Update-User
 		 * Put users/{UserUsername}
-		 * @return {User_Response} 
 		 */
 		UpdateUser(UserUsername: string, requestBody: Update_User_Request_Body): Observable<User_Response> {
 			return this.http.put<User_Response>(this.baseUri + 'users/' + (UserUsername == null ? '' : encodeURIComponent(UserUsername)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

@@ -5,12 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Message {
 		text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		userId?: string | null;
 		userName?: string | null;
 	}
 	export interface MessageFormProperties {
 		text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -29,12 +33,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface SessionInfoFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateSessionInfoFormGroup() {
@@ -51,12 +59,16 @@ export namespace MyNS {
 		colorId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface UserInfoFormProperties {
 		colorId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateUserInfoFormGroup() {
@@ -910,11 +922,15 @@ export namespace MyNS {
 	}
 
 	export interface AppendChatMessageUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface AppendChatMessageUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -929,11 +945,15 @@ export namespace MyNS {
 	}
 
 	export interface AppendChatMessageUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface AppendChatMessageUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -948,11 +968,15 @@ export namespace MyNS {
 	}
 
 	export interface AppendTextUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface AppendTextUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -967,11 +991,15 @@ export namespace MyNS {
 	}
 
 	export interface AppendTextUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface AppendTextUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -986,11 +1014,15 @@ export namespace MyNS {
 	}
 
 	export interface CheckTokenUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CheckTokenUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1005,11 +1037,15 @@ export namespace MyNS {
 	}
 
 	export interface CheckTokenUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CheckTokenUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1024,11 +1060,15 @@ export namespace MyNS {
 	}
 
 	export interface CopyPadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CopyPadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1043,11 +1083,15 @@ export namespace MyNS {
 	}
 
 	export interface CopyPadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CopyPadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1062,11 +1106,15 @@ export namespace MyNS {
 	}
 
 	export interface CopyPadWithoutHistoryUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CopyPadWithoutHistoryUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1081,11 +1129,15 @@ export namespace MyNS {
 	}
 
 	export interface CopyPadWithoutHistoryUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CopyPadWithoutHistoryUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1100,11 +1152,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateAuthorUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface CreateAuthorUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1130,11 +1186,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateAuthorUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface CreateAuthorUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1160,11 +1220,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorIfNotExistsForUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateAuthorIfNotExistsForUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface CreateAuthorIfNotExistsForUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1190,11 +1254,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorIfNotExistsForUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateAuthorIfNotExistsForUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface CreateAuthorIfNotExistsForUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1220,11 +1288,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateDiffHTMLUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreateDiffHTMLUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1239,11 +1311,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateDiffHTMLUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreateDiffHTMLUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1258,11 +1334,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateGroupUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface CreateGroupUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1288,11 +1368,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateGroupUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface CreateGroupUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1318,11 +1402,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupIfNotExistsForUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateGroupIfNotExistsForUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface CreateGroupIfNotExistsForUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1348,11 +1436,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupIfNotExistsForUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateGroupIfNotExistsForUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface CreateGroupIfNotExistsForUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1378,11 +1470,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupPadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreateGroupPadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1397,11 +1493,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupPadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreateGroupPadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1416,11 +1516,15 @@ export namespace MyNS {
 	}
 
 	export interface CreatePadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreatePadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1435,11 +1539,15 @@ export namespace MyNS {
 	}
 
 	export interface CreatePadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface CreatePadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1454,11 +1562,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateSessionUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateSessionUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface CreateSessionUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1484,11 +1596,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateSessionUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: CreateSessionUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface CreateSessionUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1514,11 +1630,15 @@ export namespace MyNS {
 	}
 
 	export interface DeleteGroupUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeleteGroupUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1533,11 +1653,15 @@ export namespace MyNS {
 	}
 
 	export interface DeleteGroupUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeleteGroupUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1552,11 +1676,15 @@ export namespace MyNS {
 	}
 
 	export interface DeletePadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeletePadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1571,11 +1699,15 @@ export namespace MyNS {
 	}
 
 	export interface DeletePadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeletePadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1590,11 +1722,15 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSessionUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeleteSessionUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1609,11 +1745,15 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSessionUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface DeleteSessionUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1628,11 +1768,15 @@ export namespace MyNS {
 	}
 
 	export interface GetAttributePoolUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetAttributePoolUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1647,11 +1791,15 @@ export namespace MyNS {
 	}
 
 	export interface GetAttributePoolUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetAttributePoolUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -1666,11 +1814,15 @@ export namespace MyNS {
 	}
 
 	export interface GetAuthorNameUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetAuthorNameUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetAuthorNameUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1697,12 +1849,16 @@ export namespace MyNS {
 		colorId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface GetAuthorNameUsingGETReturnDataInfoFormProperties {
 		colorId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAuthorNameUsingGETReturnDataInfoFormGroup() {
@@ -1716,11 +1872,15 @@ export namespace MyNS {
 	}
 
 	export interface GetAuthorNameUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetAuthorNameUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetAuthorNameUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1747,12 +1907,16 @@ export namespace MyNS {
 		colorId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface GetAuthorNameUsingPOSTReturnDataInfoFormProperties {
 		colorId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAuthorNameUsingPOSTReturnDataInfoFormGroup() {
@@ -1766,11 +1930,15 @@ export namespace MyNS {
 	}
 
 	export interface GetChatHeadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetChatHeadUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetChatHeadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1795,12 +1963,16 @@ export namespace MyNS {
 
 	export interface GetChatHeadUsingGETReturnDataChatHead {
 		text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		userId?: string | null;
 		userName?: string | null;
 	}
 	export interface GetChatHeadUsingGETReturnDataChatHeadFormProperties {
 		text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -1816,11 +1988,15 @@ export namespace MyNS {
 	}
 
 	export interface GetChatHeadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetChatHeadUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetChatHeadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1845,12 +2021,16 @@ export namespace MyNS {
 
 	export interface GetChatHeadUsingPOSTReturnDataChatHead {
 		text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		userId?: string | null;
 		userName?: string | null;
 	}
 	export interface GetChatHeadUsingPOSTReturnDataChatHeadFormProperties {
 		text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -1866,11 +2046,15 @@ export namespace MyNS {
 	}
 
 	export interface GetChatHistoryUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetChatHistoryUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetChatHistoryUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1895,12 +2079,16 @@ export namespace MyNS {
 
 	export interface GetChatHistoryUsingGETReturnDataMessages {
 		text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		userId?: string | null;
 		userName?: string | null;
 	}
 	export interface GetChatHistoryUsingGETReturnDataMessagesFormProperties {
 		text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -1916,11 +2104,15 @@ export namespace MyNS {
 	}
 
 	export interface GetChatHistoryUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetChatHistoryUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetChatHistoryUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1945,12 +2137,16 @@ export namespace MyNS {
 
 	export interface GetChatHistoryUsingPOSTReturnDataMessages {
 		text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		userId?: string | null;
 		userName?: string | null;
 	}
 	export interface GetChatHistoryUsingPOSTReturnDataMessagesFormProperties {
 		text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -1966,11 +2162,15 @@ export namespace MyNS {
 	}
 
 	export interface GetHTMLUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetHTMLUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetHTMLUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1996,11 +2196,15 @@ export namespace MyNS {
 	}
 
 	export interface GetHTMLUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetHTMLUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetHTMLUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2026,11 +2230,15 @@ export namespace MyNS {
 	}
 
 	export interface GetLastEditedUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetLastEditedUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetLastEditedUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2043,9 +2251,13 @@ export namespace MyNS {
 	}
 
 	export interface GetLastEditedUsingGETReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastEdited?: number | null;
 	}
 	export interface GetLastEditedUsingGETReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastEdited: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLastEditedUsingGETReturnDataFormGroup() {
@@ -2056,11 +2268,15 @@ export namespace MyNS {
 	}
 
 	export interface GetLastEditedUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetLastEditedUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetLastEditedUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2073,9 +2289,13 @@ export namespace MyNS {
 	}
 
 	export interface GetLastEditedUsingPOSTReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastEdited?: number | null;
 	}
 	export interface GetLastEditedUsingPOSTReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastEdited: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLastEditedUsingPOSTReturnDataFormGroup() {
@@ -2086,11 +2306,15 @@ export namespace MyNS {
 	}
 
 	export interface GetPadIDUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetPadIDUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2105,11 +2329,15 @@ export namespace MyNS {
 	}
 
 	export interface GetPadIDUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetPadIDUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2124,11 +2352,15 @@ export namespace MyNS {
 	}
 
 	export interface GetPublicStatusUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetPublicStatusUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetPublicStatusUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2154,11 +2386,15 @@ export namespace MyNS {
 	}
 
 	export interface GetPublicStatusUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetPublicStatusUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetPublicStatusUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2184,11 +2420,15 @@ export namespace MyNS {
 	}
 
 	export interface GetReadOnlyIDUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetReadOnlyIDUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetReadOnlyIDUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2214,11 +2454,15 @@ export namespace MyNS {
 	}
 
 	export interface GetReadOnlyIDUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetReadOnlyIDUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetReadOnlyIDUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2244,11 +2488,15 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionChangesetUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetRevisionChangesetUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2263,11 +2511,15 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionChangesetUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetRevisionChangesetUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2282,11 +2534,15 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionsCountUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetRevisionsCountUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetRevisionsCountUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2299,9 +2555,13 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionsCountUsingGETReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revisions?: number | null;
 	}
 	export interface GetRevisionsCountUsingGETReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revisions: FormControl<number | null | undefined>,
 	}
 	export function CreateGetRevisionsCountUsingGETReturnDataFormGroup() {
@@ -2312,11 +2572,15 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionsCountUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetRevisionsCountUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetRevisionsCountUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2329,9 +2593,13 @@ export namespace MyNS {
 	}
 
 	export interface GetRevisionsCountUsingPOSTReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revisions?: number | null;
 	}
 	export interface GetRevisionsCountUsingPOSTReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revisions: FormControl<number | null | undefined>,
 	}
 	export function CreateGetRevisionsCountUsingPOSTReturnDataFormGroup() {
@@ -2342,11 +2610,15 @@ export namespace MyNS {
 	}
 
 	export interface GetSavedRevisionsCountUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetSavedRevisionsCountUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2361,11 +2633,15 @@ export namespace MyNS {
 	}
 
 	export interface GetSavedRevisionsCountUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetSavedRevisionsCountUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2380,11 +2656,15 @@ export namespace MyNS {
 	}
 
 	export interface GetSessionInfoUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetSessionInfoUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetSessionInfoUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2411,12 +2691,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface GetSessionInfoUsingGETReturnDataInfoFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSessionInfoUsingGETReturnDataInfoFormGroup() {
@@ -2430,11 +2714,15 @@ export namespace MyNS {
 	}
 
 	export interface GetSessionInfoUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetSessionInfoUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetSessionInfoUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2461,12 +2749,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface GetSessionInfoUsingPOSTReturnDataInfoFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSessionInfoUsingPOSTReturnDataInfoFormGroup() {
@@ -2480,11 +2772,15 @@ export namespace MyNS {
 	}
 
 	export interface GetStatsUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetStatsUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2499,11 +2795,15 @@ export namespace MyNS {
 	}
 
 	export interface GetStatsUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface GetStatsUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2518,11 +2818,15 @@ export namespace MyNS {
 	}
 
 	export interface GetTextUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetTextUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface GetTextUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2548,11 +2852,15 @@ export namespace MyNS {
 	}
 
 	export interface GetTextUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: GetTextUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface GetTextUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2578,11 +2886,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAllGroupsUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAllGroupsUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListAllGroupsUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2606,11 +2918,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAllGroupsUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAllGroupsUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListAllGroupsUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2634,11 +2950,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAllPadsUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAllPadsUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListAllPadsUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2662,11 +2982,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAllPadsUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAllPadsUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListAllPadsUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2690,11 +3014,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAuthorsOfPadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAuthorsOfPadUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListAuthorsOfPadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2718,11 +3046,15 @@ export namespace MyNS {
 	}
 
 	export interface ListAuthorsOfPadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListAuthorsOfPadUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListAuthorsOfPadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2746,11 +3078,15 @@ export namespace MyNS {
 	}
 
 	export interface ListPadsUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListPadsUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListPadsUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2774,11 +3110,15 @@ export namespace MyNS {
 	}
 
 	export interface ListPadsUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListPadsUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListPadsUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2802,11 +3142,15 @@ export namespace MyNS {
 	}
 
 	export interface ListPadsOfAuthorUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListPadsOfAuthorUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListPadsOfAuthorUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2830,11 +3174,15 @@ export namespace MyNS {
 	}
 
 	export interface ListPadsOfAuthorUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListPadsOfAuthorUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListPadsOfAuthorUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2858,11 +3206,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSavedRevisionsUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface ListSavedRevisionsUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2877,11 +3229,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSavedRevisionsUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface ListSavedRevisionsUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -2896,11 +3252,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSessionsOfAuthorUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListSessionsOfAuthorUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListSessionsOfAuthorUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2927,12 +3287,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface ListSessionsOfAuthorUsingGETReturnDataSessionsFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateListSessionsOfAuthorUsingGETReturnDataSessionsFormGroup() {
@@ -2946,11 +3310,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSessionsOfAuthorUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListSessionsOfAuthorUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListSessionsOfAuthorUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -2977,12 +3345,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface ListSessionsOfAuthorUsingPOSTReturnDataSessionsFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateListSessionsOfAuthorUsingPOSTReturnDataSessionsFormGroup() {
@@ -2996,11 +3368,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSessionsOfGroupUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListSessionsOfGroupUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface ListSessionsOfGroupUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3027,12 +3403,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface ListSessionsOfGroupUsingGETReturnDataSessionsFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateListSessionsOfGroupUsingGETReturnDataSessionsFormGroup() {
@@ -3046,11 +3426,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSessionsOfGroupUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: ListSessionsOfGroupUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface ListSessionsOfGroupUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3077,12 +3461,16 @@ export namespace MyNS {
 		authorID?: string | null;
 		groupID?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil?: number | null;
 	}
 	export interface ListSessionsOfGroupUsingPOSTReturnDataSessionsFormProperties {
 		authorID: FormControl<string | null | undefined>,
 		groupID: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateListSessionsOfGroupUsingPOSTReturnDataSessionsFormGroup() {
@@ -3096,11 +3484,15 @@ export namespace MyNS {
 	}
 
 	export interface MovePadUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface MovePadUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3115,11 +3507,15 @@ export namespace MyNS {
 	}
 
 	export interface MovePadUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface MovePadUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3134,11 +3530,15 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: PadUsersUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface PadUsersUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3165,12 +3565,16 @@ export namespace MyNS {
 		colorId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface PadUsersUsingGETReturnDataPadUsersFormProperties {
 		colorId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreatePadUsersUsingGETReturnDataPadUsersFormGroup() {
@@ -3184,11 +3588,15 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: PadUsersUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface PadUsersUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3215,12 +3623,16 @@ export namespace MyNS {
 		colorId?: string | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface PadUsersUsingPOSTReturnDataPadUsersFormProperties {
 		colorId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreatePadUsersUsingPOSTReturnDataPadUsersFormGroup() {
@@ -3234,11 +3646,15 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersCountUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: PadUsersCountUsingGETReturnData;
 		message?: string | null;
 	}
 	export interface PadUsersCountUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3251,9 +3667,13 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersCountUsingGETReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padUsersCount?: number | null;
 	}
 	export interface PadUsersCountUsingGETReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padUsersCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePadUsersCountUsingGETReturnDataFormGroup() {
@@ -3264,11 +3684,15 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersCountUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: PadUsersCountUsingPOSTReturnData;
 		message?: string | null;
 	}
 	export interface PadUsersCountUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -3281,9 +3705,13 @@ export namespace MyNS {
 	}
 
 	export interface PadUsersCountUsingPOSTReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padUsersCount?: number | null;
 	}
 	export interface PadUsersCountUsingPOSTReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padUsersCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePadUsersCountUsingPOSTReturnDataFormGroup() {
@@ -3294,11 +3722,15 @@ export namespace MyNS {
 	}
 
 	export interface RestoreRevisionUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface RestoreRevisionUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3313,11 +3745,15 @@ export namespace MyNS {
 	}
 
 	export interface RestoreRevisionUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface RestoreRevisionUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3332,11 +3768,15 @@ export namespace MyNS {
 	}
 
 	export interface SaveRevisionUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SaveRevisionUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3351,11 +3791,15 @@ export namespace MyNS {
 	}
 
 	export interface SaveRevisionUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SaveRevisionUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3370,11 +3814,15 @@ export namespace MyNS {
 	}
 
 	export interface SendClientsMessageUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SendClientsMessageUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3389,11 +3837,15 @@ export namespace MyNS {
 	}
 
 	export interface SendClientsMessageUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SendClientsMessageUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3408,11 +3860,15 @@ export namespace MyNS {
 	}
 
 	export interface SetHTMLUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetHTMLUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3427,11 +3883,15 @@ export namespace MyNS {
 	}
 
 	export interface SetHTMLUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetHTMLUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3446,11 +3906,15 @@ export namespace MyNS {
 	}
 
 	export interface SetPublicStatusUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetPublicStatusUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3465,11 +3929,15 @@ export namespace MyNS {
 	}
 
 	export interface SetPublicStatusUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetPublicStatusUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3484,11 +3952,15 @@ export namespace MyNS {
 	}
 
 	export interface SetTextUsingGETReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetTextUsingGETReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -3503,11 +3975,15 @@ export namespace MyNS {
 	}
 
 	export interface SetTextUsingPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		data?: string | null;
 		message?: string | null;
 	}
 	export interface SetTextUsingPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		data: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,

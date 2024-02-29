@@ -242,7 +242,10 @@ export namespace MyNS {
 		/** The script project's Drive ID. */
 		scriptId?: string | null;
 
-		/** The version number on which this deployment is based. */
+		/**
+		 * The version number on which this deployment is based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber?: number | null;
 	}
 
@@ -258,7 +261,10 @@ export namespace MyNS {
 		/** The script project's Drive ID. */
 		scriptId: FormControl<string | null | undefined>,
 
-		/** The version number on which this deployment is based. */
+		/**
+		 * The version number on which this deployment is based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateDeploymentConfigFormGroup() {
@@ -522,7 +528,10 @@ export namespace MyNS {
 		/** Represents a null value. */
 		nullValue?: ValueNullValue | null;
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		numberValue?: number | null;
 
 		/** Represents a structured proto value. */
@@ -550,7 +559,10 @@ export namespace MyNS {
 		/** Represents a null value. */
 		nullValue: FormControl<ValueNullValue | null | undefined>,
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		numberValue: FormControl<number | null | undefined>,
 
 		/** Represents a structured proto value. */
@@ -650,7 +662,10 @@ export namespace MyNS {
 		/** The name of the function that failed. */
 		function?: string | null;
 
-		/** The line number where the script failed. */
+		/**
+		 * The line number where the script failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 	}
 
@@ -660,7 +675,10 @@ export namespace MyNS {
 		/** The name of the function that failed. */
 		function: FormControl<string | null | undefined>,
 
-		/** The line number where the script failed. */
+		/**
+		 * The line number where the script failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateScriptStackTraceElementFormGroup() {
@@ -917,7 +935,10 @@ export namespace MyNS {
 		/** The script project's Drive ID. */
 		scriptId?: string | null;
 
-		/** The incremental ID that is created by Apps Script when a version is created. This is system assigned number and is immutable once created. */
+		/**
+		 * The incremental ID that is created by Apps Script when a version is created. This is system assigned number and is immutable once created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber?: number | null;
 	}
 
@@ -933,7 +954,10 @@ export namespace MyNS {
 		/** The script project's Drive ID. */
 		scriptId: FormControl<string | null | undefined>,
 
-		/** The incremental ID that is created by Apps Script when a version is created. This is system assigned number and is immutable once created. */
+		/**
+		 * The incremental ID that is created by Apps Script when a version is created. This is system assigned number and is immutable once created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateVersionFormGroup() {
@@ -1039,7 +1063,10 @@ export namespace MyNS {
 	/** If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object. */
 	export interface Status {
 
-		/** The status code. For this API, this value either: - 10, indicating a `SCRIPT_TIMEOUT` error, - 3, indicating an `INVALID_ARGUMENT` error, or - 1, indicating a `CANCELLED` execution. */
+		/**
+		 * The status code. For this API, this value either: - 10, indicating a `SCRIPT_TIMEOUT` error, - 3, indicating an `INVALID_ARGUMENT` error, or - 1, indicating a `CANCELLED` execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** An array that contains a single ExecutionError object that provides information about the nature of the error. */
@@ -1052,7 +1079,10 @@ export namespace MyNS {
 	/** If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object. */
 	export interface StatusFormProperties {
 
-		/** The status code. For this API, this value either: - 10, indicating a `SCRIPT_TIMEOUT` error, - 3, indicating an `INVALID_ARGUMENT` error, or - 1, indicating a `CANCELLED` execution. */
+		/**
+		 * The status code. For this API, this value either: - 10, indicating a `SCRIPT_TIMEOUT` error, - 3, indicating an `INVALID_ARGUMENT` error, or - 1, indicating a `CANCELLED` execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the details field, or localized by the client. */
@@ -1147,6 +1177,7 @@ export namespace MyNS {
 		 * List information about processes made by or on behalf of a user, such as process type and current status.
 		 * Get v1/processes
 		 * @param {number} pageSize The maximum number of returned processes per page of results. Defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
 		 * @param {string} userProcessFilter_deploymentId Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
 		 * @param {string} userProcessFilter_endTime Optional field used to limit returned processes to those that completed on or before the given timestamp.
@@ -1167,6 +1198,7 @@ export namespace MyNS {
 		 * List information about a script's executed processes, such as process type and current status.
 		 * Get v1/processes:listScriptProcesses
 		 * @param {number} pageSize The maximum number of returned processes per page of results. Defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
 		 * @param {string} scriptId The script ID of the project whose processes are listed.
 		 * @param {string} scriptProcessFilter_deploymentId Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
@@ -1206,6 +1238,7 @@ export namespace MyNS {
 		 * Get v1/projects/{scriptId}/content
 		 * @param {string} scriptId The script project's Drive ID.
 		 * @param {number} versionNumber The version number of the project to retrieve. If not provided, the project's HEAD version is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Content} Successful response
 		 */
 		Script_projects_getContent(scriptId: string, versionNumber: number | null | undefined): Observable<Content> {
@@ -1227,6 +1260,7 @@ export namespace MyNS {
 		 * Get v1/projects/{scriptId}/deployments
 		 * @param {string} scriptId The script project's Drive ID.
 		 * @param {number} pageSize The maximum number of deployments on each returned page. Defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
 		 * @return {ListDeploymentsResponse} Successful response
 		 */
@@ -1294,6 +1328,7 @@ export namespace MyNS {
 		 * Get v1/projects/{scriptId}/versions
 		 * @param {string} scriptId The script project's Drive ID.
 		 * @param {number} pageSize The maximum number of versions on each returned page. Defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
 		 * @return {ListVersionsResponse} Successful response
 		 */
@@ -1316,6 +1351,7 @@ export namespace MyNS {
 		 * Get v1/projects/{scriptId}/versions/{versionNumber}
 		 * @param {string} scriptId The script project's Drive ID.
 		 * @param {number} versionNumber The version number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Version} Successful response
 		 */
 		Script_projects_versions_get(scriptId: string, versionNumber: number): Observable<Version> {

@@ -122,7 +122,10 @@ export namespace MyNS {
 		/** A point in a conversation that marks the start or the end of an annotation. */
 		annotationStartBoundary?: GoogleCloudContactcenterinsightsV1AnnotationBoundary;
 
-		/** The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated. */
+		/**
+		 * The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
 		/** The data for an entity mention annotation. This represents a mention of an `Entity` in the conversation. */
@@ -153,7 +156,10 @@ export namespace MyNS {
 	/** A piece of metadata that applies to a window of a call. */
 	export interface GoogleCloudContactcenterinsightsV1CallAnnotationFormProperties {
 
-		/** The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated. */
+		/**
+		 * The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1CallAnnotationFormGroup() {
@@ -167,20 +173,32 @@ export namespace MyNS {
 	/** A point in a conversation that marks the start or the end of an annotation. */
 	export interface GoogleCloudContactcenterinsightsV1AnnotationBoundary {
 
-		/** The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero. */
+		/**
+		 * The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transcriptIndex?: number | null;
 
-		/** The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero. */
+		/**
+		 * The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordIndex?: number | null;
 	}
 
 	/** A point in a conversation that marks the start or the end of an annotation. */
 	export interface GoogleCloudContactcenterinsightsV1AnnotationBoundaryFormProperties {
 
-		/** The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero. */
+		/**
+		 * The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transcriptIndex: FormControl<number | null | undefined>,
 
-		/** The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero. */
+		/**
+		 * The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1AnnotationBoundaryFormGroup() {
@@ -226,20 +244,32 @@ export namespace MyNS {
 	/** The data for a sentiment annotation. */
 	export interface GoogleCloudContactcenterinsightsV1SentimentData {
 
-		/** A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score. */
+		/**
+		 * A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score.
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** The sentiment score between -1.0 (negative) and 1.0 (positive). */
+		/**
+		 * The sentiment score between -1.0 (negative) and 1.0 (positive).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** The data for a sentiment annotation. */
 	export interface GoogleCloudContactcenterinsightsV1SentimentDataFormProperties {
 
-		/** A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score. */
+		/**
+		 * A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score.
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** The sentiment score between -1.0 (negative) and 1.0 (positive). */
+		/**
+		 * The sentiment score between -1.0 (negative) and 1.0 (positive).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1SentimentDataFormGroup() {
@@ -328,7 +358,10 @@ export namespace MyNS {
 		/** Resource name of the assigned issue. */
 		issue?: string | null;
 
-		/** Score indicating the likelihood of the issue assignment. currently bounded on [0,1]. */
+		/**
+		 * Score indicating the likelihood of the issue assignment. currently bounded on [0,1].
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
@@ -341,7 +374,10 @@ export namespace MyNS {
 		/** Resource name of the assigned issue. */
 		issue: FormControl<string | null | undefined>,
 
-		/** Score indicating the likelihood of the issue assignment. currently bounded on [0,1]. */
+		/**
+		 * Score indicating the likelihood of the issue assignment. currently bounded on [0,1].
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1IssueAssignmentFormGroup() {
@@ -405,7 +441,10 @@ export namespace MyNS {
 		/** Metadata associated with the entity. For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`), if they are available. For the metadata associated with other entity types, see the Type table below. */
 		metadata?: {[id: string]: string };
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience?: number | null;
 
 		/** The data for a sentiment annotation. */
@@ -424,7 +463,10 @@ export namespace MyNS {
 		/** Metadata associated with the entity. For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`), if they are available. For the metadata associated with other entity types, see the Type table below. */
 		metadata: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience: FormControl<number | null | undefined>,
 
 		/** The entity type. */
@@ -498,7 +540,10 @@ export namespace MyNS {
 	/** One channel of conversation-level sentiment data. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationLevelSentiment {
 
-		/** The channel of the audio that the data applies to. */
+		/**
+		 * The channel of the audio that the data applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
 		/** The data for a sentiment annotation. */
@@ -508,7 +553,10 @@ export namespace MyNS {
 	/** One channel of conversation-level sentiment data. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationLevelSentimentFormProperties {
 
-		/** The channel of the audio that the data applies to. */
+		/**
+		 * The channel of the audio that the data applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1ConversationLevelSentimentFormGroup() {
@@ -668,7 +716,10 @@ export namespace MyNS {
 	/** Agent Assist Article Suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1ArticleSuggestionData {
 
-		/** The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Article Suggestion and the document that it originates from. */
@@ -690,7 +741,10 @@ export namespace MyNS {
 	/** Agent Assist Article Suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1ArticleSuggestionDataFormProperties {
 
-		/** The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Article Suggestion and the document that it originates from. */
@@ -724,7 +778,10 @@ export namespace MyNS {
 	/** The metadata for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadata {
 
-		/** The number of requested analyses that have completed successfully so far. */
+		/**
+		 * The number of requested analyses that have completed successfully so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completedAnalysesCount?: number | null;
 
 		/** The time the operation was created. */
@@ -733,7 +790,10 @@ export namespace MyNS {
 		/** The time the operation finished running. */
 		endTime?: string | null;
 
-		/** The number of requested analyses that have failed so far. */
+		/**
+		 * The number of requested analyses that have failed so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysesCount?: number | null;
 
 		/** Output only. Partial errors during bulk analyze operation that might cause the operation output to be incomplete. */
@@ -742,14 +802,20 @@ export namespace MyNS {
 		/** The request to analyze conversations in bulk. */
 		request?: GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest;
 
-		/** Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request. */
+		/**
+		 * Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRequestedAnalysesCount?: number | null;
 	}
 
 	/** The metadata for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadataFormProperties {
 
-		/** The number of requested analyses that have completed successfully so far. */
+		/**
+		 * The number of requested analyses that have completed successfully so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completedAnalysesCount: FormControl<number | null | undefined>,
 
 		/** The time the operation was created. */
@@ -758,10 +824,16 @@ export namespace MyNS {
 		/** The time the operation finished running. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** The number of requested analyses that have failed so far. */
+		/**
+		 * The number of requested analyses that have failed so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysesCount: FormControl<number | null | undefined>,
 
-		/** Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request. */
+		/**
+		 * Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRequestedAnalysesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadataFormGroup() {
@@ -779,7 +851,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -792,7 +867,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -810,7 +888,10 @@ export namespace MyNS {
 	/** The request to analyze conversations in bulk. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest {
 
-		/** Required. Percentage of selected conversation to analyze, between [0, 100]. */
+		/**
+		 * Required. Percentage of selected conversation to analyze, between [0, 100].
+		 * Type: float
+		 */
 		analysisPercentage?: number | null;
 
 		/** Selector of all available annotators and phrase matchers to run. */
@@ -826,7 +907,10 @@ export namespace MyNS {
 	/** The request to analyze conversations in bulk. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequestFormProperties {
 
-		/** Required. Percentage of selected conversation to analyze, between [0, 100]. */
+		/**
+		 * Required. Percentage of selected conversation to analyze, between [0, 100].
+		 * Type: float
+		 */
 		analysisPercentage: FormControl<number | null | undefined>,
 
 		/** Required. Filter used to select the subset of conversations to analyze. */
@@ -848,20 +932,32 @@ export namespace MyNS {
 	/** The response for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponse {
 
-		/** Count of failed analyses. */
+		/**
+		 * Count of failed analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysisCount?: number | null;
 
-		/** Count of successful analyses. */
+		/**
+		 * Count of successful analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulAnalysisCount?: number | null;
 	}
 
 	/** The response for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponseFormProperties {
 
-		/** Count of failed analyses. */
+		/**
+		 * Count of failed analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysisCount: FormControl<number | null | undefined>,
 
-		/** Count of successful analyses. */
+		/**
+		 * Count of successful analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulAnalysisCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponseFormGroup() {
@@ -916,7 +1012,10 @@ export namespace MyNS {
 		/** If set to true, all of this conversation's analyses will also be deleted. Otherwise, the request will only succeed if the conversation has no analyses. */
 		force?: boolean | null;
 
-		/** Maximum number of conversations to delete. */
+		/**
+		 * Maximum number of conversations to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeleteCount?: number | null;
 
 		/** Required. The parent resource to delete conversations from. Format: projects/{project}/locations/{location} */
@@ -932,7 +1031,10 @@ export namespace MyNS {
 		/** If set to true, all of this conversation's analyses will also be deleted. Otherwise, the request will only succeed if the conversation has no analyses. */
 		force: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of conversations to delete. */
+		/**
+		 * Maximum number of conversations to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeleteCount: FormControl<number | null | undefined>,
 
 		/** Required. The parent resource to delete conversations from. Format: projects/{project}/locations/{location} */
@@ -1056,10 +1158,16 @@ export namespace MyNS {
 		/** The average duration of all conversations. The average is calculated using only conversations that have a time duration. */
 		averageDuration?: string | null;
 
-		/** The average number of turns per conversation. */
+		/**
+		 * The average number of turns per conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageTurnCount?: number | null;
 
-		/** The total number of conversations. */
+		/**
+		 * The total number of conversations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversationCount?: number | null;
 
 		/** A time series representing conversations over time. */
@@ -1084,10 +1192,16 @@ export namespace MyNS {
 		/** The average duration of all conversations. The average is calculated using only conversations that have a time duration. */
 		averageDuration: FormControl<string | null | undefined>,
 
-		/** The average number of turns per conversation. */
+		/**
+		 * The average number of turns per conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageTurnCount: FormControl<number | null | undefined>,
 
-		/** The total number of conversations. */
+		/**
+		 * The total number of conversations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversationCount: FormControl<number | null | undefined>,
 
 		/** A map associating each custom highlighter resource name with its respective number of matches in the set of conversations. */
@@ -1143,7 +1257,10 @@ export namespace MyNS {
 	/** A single interval in a time series. */
 	export interface GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval {
 
-		/** The number of conversations created in this interval. */
+		/**
+		 * The number of conversations created in this interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversationCount?: number | null;
 
 		/** The start time of this interval. */
@@ -1153,7 +1270,10 @@ export namespace MyNS {
 	/** A single interval in a time series. */
 	export interface GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesIntervalFormProperties {
 
-		/** The number of conversations created in this interval. */
+		/**
+		 * The number of conversations created in this interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversationCount: FormControl<number | null | undefined>,
 
 		/** The start time of this interval. */
@@ -1228,7 +1348,10 @@ export namespace MyNS {
 		/** Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time. */
 		ttl?: string | null;
 
-		/** Output only. The number of turns in the conversation. */
+		/**
+		 * Output only. The number of turns in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		turnCount?: number | null;
 
 		/** Output only. The most recent time at which the conversation was updated. */
@@ -1274,7 +1397,10 @@ export namespace MyNS {
 		/** Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time. */
 		ttl: FormControl<string | null | undefined>,
 
-		/** Output only. The number of turns in the conversation. */
+		/**
+		 * Output only. The number of turns in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		turnCount: FormControl<number | null | undefined>,
 
 		/** Output only. The most recent time at which the conversation was updated. */
@@ -1304,20 +1430,32 @@ export namespace MyNS {
 	/** Call-specific metadata. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationCallMetadata {
 
-		/** The audio channel that contains the agent. */
+		/**
+		 * The audio channel that contains the agent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel?: number | null;
 
-		/** The audio channel that contains the customer. */
+		/**
+		 * The audio channel that contains the customer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel?: number | null;
 	}
 
 	/** Call-specific metadata. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationCallMetadataFormProperties {
 
-		/** The audio channel that contains the agent. */
+		/**
+		 * The audio channel that contains the agent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel: FormControl<number | null | undefined>,
 
-		/** The audio channel that contains the customer. */
+		/**
+		 * The audio channel that contains the customer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1ConversationCallMetadataFormGroup() {
@@ -1432,7 +1570,10 @@ export namespace MyNS {
 		/** The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record} */
 		answerRecord?: string | null;
 
-		/** The confidence score of the summarization. */
+		/**
+		 * The confidence score of the summarization.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the model that generates this summary. Format: projects/{project}/locations/{location}/conversationModels/{conversation_model} */
@@ -1454,7 +1595,10 @@ export namespace MyNS {
 		/** The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record} */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** The confidence score of the summarization. */
+		/**
+		 * The confidence score of the summarization.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the model that generates this summary. Format: projects/{project}/locations/{location}/conversationModels/{conversation_model} */
@@ -1490,7 +1634,10 @@ export namespace MyNS {
 		/** Information about agents involved in the call. */
 		agentInfo?: Array<GoogleCloudContactcenterinsightsV1ConversationQualityMetadataAgentInfo>;
 
-		/** An arbitrary integer value indicating the customer's satisfaction rating. */
+		/**
+		 * An arbitrary integer value indicating the customer's satisfaction rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerSatisfactionRating?: number | null;
 
 		/** An arbitrary string value specifying the menu path the customer took. */
@@ -1503,7 +1650,10 @@ export namespace MyNS {
 	/** Conversation metadata related to quality management. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationQualityMetadataFormProperties {
 
-		/** An arbitrary integer value indicating the customer's satisfaction rating. */
+		/**
+		 * An arbitrary integer value indicating the customer's satisfaction rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerSatisfactionRating: FormControl<number | null | undefined>,
 
 		/** An arbitrary string value specifying the menu path the customer took. */
@@ -1622,7 +1772,10 @@ export namespace MyNS {
 	/** Dialogflow interaction data. */
 	export interface GoogleCloudContactcenterinsightsV1DialogflowInteractionData {
 
-		/** The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The Dialogflow intent resource path. Format: projects/{project}/agent/{agent}/intents/{intent} */
@@ -1632,7 +1785,10 @@ export namespace MyNS {
 	/** Dialogflow interaction data. */
 	export interface GoogleCloudContactcenterinsightsV1DialogflowInteractionDataFormProperties {
 
-		/** The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The Dialogflow intent resource path. Format: projects/{project}/agent/{agent}/intents/{intent} */
@@ -1653,7 +1809,10 @@ export namespace MyNS {
 		/** The piece of text from the `source` knowledge base document. */
 		answer?: string | null;
 
-		/** The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the FAQ answer and the document that it originates from. */
@@ -1675,7 +1834,10 @@ export namespace MyNS {
 		/** The piece of text from the `source` knowledge base document. */
 		answer: FormControl<string | null | undefined>,
 
-		/** The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the FAQ answer and the document that it originates from. */
@@ -1706,7 +1868,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Compose suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1SmartComposeSuggestionData {
 
-		/** The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Smart Compose suggestion and the document from which it originates. */
@@ -1722,7 +1887,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Compose suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1SmartComposeSuggestionDataFormProperties {
 
-		/** The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Smart Compose suggestion and the document from which it originates. */
@@ -1748,7 +1916,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Reply data. */
 	export interface GoogleCloudContactcenterinsightsV1SmartReplyData {
 
-		/** The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Smart Reply and the document from which it originates. */
@@ -1764,7 +1935,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Reply data. */
 	export interface GoogleCloudContactcenterinsightsV1SmartReplyDataFormProperties {
 
-		/** The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Smart Reply and the document from which it originates. */
@@ -1807,10 +1981,16 @@ export namespace MyNS {
 	/** A segment of a full transcript. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment {
 
-		/** For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono. */
+		/**
+		 * For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Metadata from Dialogflow relating to the current transcript segment. */
@@ -1838,10 +2018,16 @@ export namespace MyNS {
 	/** A segment of a full transcript. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentFormProperties {
 
-		/** For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono. */
+		/**
+		 * For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The language code of this segment as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US". */
@@ -1940,7 +2126,10 @@ export namespace MyNS {
 	/** Word-level info for words in a transcript. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo {
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset of the end of this word relative to the beginning of the total conversation. */
@@ -1956,7 +2145,10 @@ export namespace MyNS {
 	/** Word-level info for words in a transcript. */
 	export interface GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfoFormProperties {
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset of the end of this word relative to the beginning of the total conversation. */
@@ -2496,32 +2688,56 @@ export namespace MyNS {
 	/** Statistics for IngestConversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1IngestConversationsMetadataIngestConversationsStats {
 
-		/** Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested. */
+		/**
+		 * Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesSkippedCount?: number | null;
 
-		/** Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field. */
+		/**
+		 * Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedIngestCount?: number | null;
 
-		/** Output only. The number of objects processed during the ingest operation. */
+		/**
+		 * Output only. The number of objects processed during the ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processedObjectCount?: number | null;
 
-		/** Output only. The number of new conversations added during this ingest operation. */
+		/**
+		 * Output only. The number of new conversations added during this ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulIngestCount?: number | null;
 	}
 
 	/** Statistics for IngestConversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1IngestConversationsMetadataIngestConversationsStatsFormProperties {
 
-		/** Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested. */
+		/**
+		 * Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesSkippedCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field. */
+		/**
+		 * Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedIngestCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of objects processed during the ingest operation. */
+		/**
+		 * Output only. The number of objects processed during the ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processedObjectCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of new conversations added during this ingest operation. */
+		/**
+		 * Output only. The number of new conversations added during this ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulIngestCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1IngestConversationsMetadataIngestConversationsStatsFormGroup() {
@@ -2574,26 +2790,38 @@ export namespace MyNS {
 	/** Configuration that applies to all conversations. */
 	export interface GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig {
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel?: number | null;
 
 		/** An opaque, user-specified string representing the human agent who handled the conversations. */
 		agentId?: string | null;
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel?: number | null;
 	}
 
 	/** Configuration that applies to all conversations. */
 	export interface GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfigFormProperties {
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel: FormControl<number | null | undefined>,
 
 		/** An opaque, user-specified string representing the human agent who handled the conversations. */
 		agentId: FormControl<string | null | undefined>,
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfigFormGroup() {
@@ -3178,20 +3406,32 @@ export namespace MyNS {
 		/** Selector of all available annotators and phrase matchers to run. */
 		annotatorSelector?: GoogleCloudContactcenterinsightsV1AnnotatorSelector;
 
-		/** Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100]. */
+		/**
+		 * Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100].
+		 * Type: double
+		 */
 		runtimeIntegrationAnalysisPercentage?: number | null;
 
-		/** Percentage of conversations created using the UploadConversation endpoint to analyze automatically, between [0, 100]. */
+		/**
+		 * Percentage of conversations created using the UploadConversation endpoint to analyze automatically, between [0, 100].
+		 * Type: double
+		 */
 		uploadConversationAnalysisPercentage?: number | null;
 	}
 
 	/** Default configuration when creating Analyses in Insights. */
 	export interface GoogleCloudContactcenterinsightsV1SettingsAnalysisConfigFormProperties {
 
-		/** Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100]. */
+		/**
+		 * Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100].
+		 * Type: double
+		 */
 		runtimeIntegrationAnalysisPercentage: FormControl<number | null | undefined>,
 
-		/** Percentage of conversations created using the UploadConversation endpoint to analyze automatically, between [0, 100]. */
+		/**
+		 * Percentage of conversations created using the UploadConversation endpoint to analyze automatically, between [0, 100].
+		 * Type: double
+		 */
 		uploadConversationAnalysisPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1SettingsAnalysisConfigFormGroup() {
@@ -3465,7 +3705,10 @@ export namespace MyNS {
 		/** A point in a conversation that marks the start or the end of an annotation. */
 		annotationStartBoundary?: GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary;
 
-		/** The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated. */
+		/**
+		 * The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
 		/** The data for an entity mention annotation. This represents a mention of an `Entity` in the conversation. */
@@ -3496,7 +3739,10 @@ export namespace MyNS {
 	/** A piece of metadata that applies to a window of a call. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1CallAnnotationFormProperties {
 
-		/** The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated. */
+		/**
+		 * The channel of the audio where the annotation occurs. For single-channel audio, this field is not populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1CallAnnotationFormGroup() {
@@ -3510,20 +3756,32 @@ export namespace MyNS {
 	/** A point in a conversation that marks the start or the end of an annotation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary {
 
-		/** The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero. */
+		/**
+		 * The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transcriptIndex?: number | null;
 
-		/** The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero. */
+		/**
+		 * The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordIndex?: number | null;
 	}
 
 	/** A point in a conversation that marks the start or the end of an annotation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundaryFormProperties {
 
-		/** The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero. */
+		/**
+		 * The index in the sequence of transcribed pieces of the conversation where the boundary is located. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transcriptIndex: FormControl<number | null | undefined>,
 
-		/** The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero. */
+		/**
+		 * The word index of this boundary with respect to the first word in the transcript piece. This index starts at zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1AnnotationBoundaryFormGroup() {
@@ -3569,20 +3827,32 @@ export namespace MyNS {
 	/** The data for a sentiment annotation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SentimentData {
 
-		/** A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score. */
+		/**
+		 * A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score.
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** The sentiment score between -1.0 (negative) and 1.0 (positive). */
+		/**
+		 * The sentiment score between -1.0 (negative) and 1.0 (positive).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** The data for a sentiment annotation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SentimentDataFormProperties {
 
-		/** A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score. */
+		/**
+		 * A non-negative number from 0 to infinity which represents the abolute magnitude of sentiment regardless of score.
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** The sentiment score between -1.0 (negative) and 1.0 (positive). */
+		/**
+		 * The sentiment score between -1.0 (negative) and 1.0 (positive).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1SentimentDataFormGroup() {
@@ -3669,7 +3939,10 @@ export namespace MyNS {
 		/** Resource name of the assigned issue. */
 		issue?: string | null;
 
-		/** Score indicating the likelihood of the issue assignment. currently bounded on [0,1]. */
+		/**
+		 * Score indicating the likelihood of the issue assignment. currently bounded on [0,1].
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
@@ -3682,7 +3955,10 @@ export namespace MyNS {
 		/** Resource name of the assigned issue. */
 		issue: FormControl<string | null | undefined>,
 
-		/** Score indicating the likelihood of the issue assignment. currently bounded on [0,1]. */
+		/**
+		 * Score indicating the likelihood of the issue assignment. currently bounded on [0,1].
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1IssueAssignmentFormGroup() {
@@ -3746,7 +4022,10 @@ export namespace MyNS {
 		/** Metadata associated with the entity. For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`), if they are available. For the metadata associated with other entity types, see the Type table below. */
 		metadata?: {[id: string]: string };
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience?: number | null;
 
 		/** The data for a sentiment annotation. */
@@ -3765,7 +4044,10 @@ export namespace MyNS {
 		/** Metadata associated with the entity. For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`), if they are available. For the metadata associated with other entity types, see the Type table below. */
 		metadata: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience: FormControl<number | null | undefined>,
 
 		/** The entity type. */
@@ -3837,7 +4119,10 @@ export namespace MyNS {
 	/** One channel of conversation-level sentiment data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentiment {
 
-		/** The channel of the audio that the data applies to. */
+		/**
+		 * The channel of the audio that the data applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
 		/** The data for a sentiment annotation. */
@@ -3847,7 +4132,10 @@ export namespace MyNS {
 	/** One channel of conversation-level sentiment data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentimentFormProperties {
 
-		/** The channel of the audio that the data applies to. */
+		/**
+		 * The channel of the audio that the data applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentimentFormGroup() {
@@ -4003,7 +4291,10 @@ export namespace MyNS {
 	/** Agent Assist Article Suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ArticleSuggestionData {
 
-		/** The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Article Suggestion and the document that it originates from. */
@@ -4025,7 +4316,10 @@ export namespace MyNS {
 	/** Agent Assist Article Suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ArticleSuggestionDataFormProperties {
 
-		/** The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this article is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Article Suggestion and the document that it originates from. */
@@ -4059,7 +4353,10 @@ export namespace MyNS {
 	/** The metadata for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadata {
 
-		/** The number of requested analyses that have completed successfully so far. */
+		/**
+		 * The number of requested analyses that have completed successfully so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completedAnalysesCount?: number | null;
 
 		/** The time the operation was created. */
@@ -4068,7 +4365,10 @@ export namespace MyNS {
 		/** The time the operation finished running. */
 		endTime?: string | null;
 
-		/** The number of requested analyses that have failed so far. */
+		/**
+		 * The number of requested analyses that have failed so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysesCount?: number | null;
 
 		/** Output only. Partial errors during bulk analyze operation that might cause the operation output to be incomplete. */
@@ -4077,14 +4377,20 @@ export namespace MyNS {
 		/** The request to analyze conversations in bulk. */
 		request?: GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest;
 
-		/** Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request. */
+		/**
+		 * Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRequestedAnalysesCount?: number | null;
 	}
 
 	/** The metadata for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadataFormProperties {
 
-		/** The number of requested analyses that have completed successfully so far. */
+		/**
+		 * The number of requested analyses that have completed successfully so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completedAnalysesCount: FormControl<number | null | undefined>,
 
 		/** The time the operation was created. */
@@ -4093,10 +4399,16 @@ export namespace MyNS {
 		/** The time the operation finished running. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** The number of requested analyses that have failed so far. */
+		/**
+		 * The number of requested analyses that have failed so far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysesCount: FormControl<number | null | undefined>,
 
-		/** Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request. */
+		/**
+		 * Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRequestedAnalysesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadataFormGroup() {
@@ -4114,7 +4426,10 @@ export namespace MyNS {
 	/** The request to analyze conversations in bulk. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest {
 
-		/** Required. Percentage of selected conversation to analyze, between [0, 100]. */
+		/**
+		 * Required. Percentage of selected conversation to analyze, between [0, 100].
+		 * Type: float
+		 */
 		analysisPercentage?: number | null;
 
 		/** Selector of all available annotators and phrase matchers to run. */
@@ -4130,7 +4445,10 @@ export namespace MyNS {
 	/** The request to analyze conversations in bulk. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequestFormProperties {
 
-		/** Required. Percentage of selected conversation to analyze, between [0, 100]. */
+		/**
+		 * Required. Percentage of selected conversation to analyze, between [0, 100].
+		 * Type: float
+		 */
 		analysisPercentage: FormControl<number | null | undefined>,
 
 		/** Required. Filter used to select the subset of conversations to analyze. */
@@ -4152,20 +4470,32 @@ export namespace MyNS {
 	/** The response for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponse {
 
-		/** Count of failed analyses. */
+		/**
+		 * Count of failed analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysisCount?: number | null;
 
-		/** Count of successful analyses. */
+		/**
+		 * Count of successful analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulAnalysisCount?: number | null;
 	}
 
 	/** The response for a bulk analyze conversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponseFormProperties {
 
-		/** Count of failed analyses. */
+		/**
+		 * Count of failed analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAnalysisCount: FormControl<number | null | undefined>,
 
-		/** Count of successful analyses. */
+		/**
+		 * Count of successful analyses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulAnalysisCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponseFormGroup() {
@@ -4220,7 +4550,10 @@ export namespace MyNS {
 		/** If set to true, all of this conversation's analyses will also be deleted. Otherwise, the request will only succeed if the conversation has no analyses. */
 		force?: boolean | null;
 
-		/** Maximum number of conversations to delete. */
+		/**
+		 * Maximum number of conversations to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeleteCount?: number | null;
 
 		/** Required. The parent resource to delete conversations from. Format: projects/{project}/locations/{location} */
@@ -4236,7 +4569,10 @@ export namespace MyNS {
 		/** If set to true, all of this conversation's analyses will also be deleted. Otherwise, the request will only succeed if the conversation has no analyses. */
 		force: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of conversations to delete. */
+		/**
+		 * Maximum number of conversations to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeleteCount: FormControl<number | null | undefined>,
 
 		/** Required. The parent resource to delete conversations from. Format: projects/{project}/locations/{location} */
@@ -4327,7 +4663,10 @@ export namespace MyNS {
 		/** Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time. */
 		ttl?: string | null;
 
-		/** Output only. The number of turns in the conversation. */
+		/**
+		 * Output only. The number of turns in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		turnCount?: number | null;
 
 		/** Output only. The most recent time at which the conversation was updated. */
@@ -4373,7 +4712,10 @@ export namespace MyNS {
 		/** Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time. */
 		ttl: FormControl<string | null | undefined>,
 
-		/** Output only. The number of turns in the conversation. */
+		/**
+		 * Output only. The number of turns in the conversation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		turnCount: FormControl<number | null | undefined>,
 
 		/** Output only. The most recent time at which the conversation was updated. */
@@ -4403,20 +4745,32 @@ export namespace MyNS {
 	/** Call-specific metadata. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationCallMetadata {
 
-		/** The audio channel that contains the agent. */
+		/**
+		 * The audio channel that contains the agent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel?: number | null;
 
-		/** The audio channel that contains the customer. */
+		/**
+		 * The audio channel that contains the customer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel?: number | null;
 	}
 
 	/** Call-specific metadata. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationCallMetadataFormProperties {
 
-		/** The audio channel that contains the agent. */
+		/**
+		 * The audio channel that contains the agent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel: FormControl<number | null | undefined>,
 
-		/** The audio channel that contains the customer. */
+		/**
+		 * The audio channel that contains the customer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1ConversationCallMetadataFormGroup() {
@@ -4531,7 +4885,10 @@ export namespace MyNS {
 		/** The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record} */
 		answerRecord?: string | null;
 
-		/** The confidence score of the summarization. */
+		/**
+		 * The confidence score of the summarization.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the model that generates this summary. Format: projects/{project}/locations/{location}/conversationModels/{conversation_model} */
@@ -4553,7 +4910,10 @@ export namespace MyNS {
 		/** The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record} */
 		answerRecord: FormControl<string | null | undefined>,
 
-		/** The confidence score of the summarization. */
+		/**
+		 * The confidence score of the summarization.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the model that generates this summary. Format: projects/{project}/locations/{location}/conversationModels/{conversation_model} */
@@ -4587,7 +4947,10 @@ export namespace MyNS {
 		/** Information about agents involved in the call. */
 		agentInfo?: Array<GoogleCloudContactcenterinsightsV1alpha1ConversationQualityMetadataAgentInfo>;
 
-		/** An arbitrary integer value indicating the customer's satisfaction rating. */
+		/**
+		 * An arbitrary integer value indicating the customer's satisfaction rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerSatisfactionRating?: number | null;
 
 		/** An arbitrary string value specifying the menu path the customer took. */
@@ -4600,7 +4963,10 @@ export namespace MyNS {
 	/** Conversation metadata related to quality management. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationQualityMetadataFormProperties {
 
-		/** An arbitrary integer value indicating the customer's satisfaction rating. */
+		/**
+		 * An arbitrary integer value indicating the customer's satisfaction rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerSatisfactionRating: FormControl<number | null | undefined>,
 
 		/** An arbitrary string value specifying the menu path the customer took. */
@@ -4719,7 +5085,10 @@ export namespace MyNS {
 	/** Dialogflow interaction data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1DialogflowInteractionData {
 
-		/** The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The Dialogflow intent resource path. Format: projects/{project}/agent/{agent}/intents/{intent} */
@@ -4729,7 +5098,10 @@ export namespace MyNS {
 	/** Dialogflow interaction data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1DialogflowInteractionDataFormProperties {
 
-		/** The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The confidence of the match ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The Dialogflow intent resource path. Format: projects/{project}/agent/{agent}/intents/{intent} */
@@ -4750,7 +5122,10 @@ export namespace MyNS {
 		/** The piece of text from the `source` knowledge base document. */
 		answer?: string | null;
 
-		/** The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the FAQ answer and the document that it originates from. */
@@ -4772,7 +5147,10 @@ export namespace MyNS {
 		/** The piece of text from the `source` knowledge base document. */
 		answer: FormControl<string | null | undefined>,
 
-		/** The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this answer is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the FAQ answer and the document that it originates from. */
@@ -4803,7 +5181,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Compose suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SmartComposeSuggestionData {
 
-		/** The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Smart Compose suggestion and the document from which it originates. */
@@ -4819,7 +5200,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Compose suggestion data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SmartComposeSuggestionDataFormProperties {
 
-		/** The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this suggestion is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Smart Compose suggestion and the document from which it originates. */
@@ -4845,7 +5229,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Reply data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SmartReplyData {
 
-		/** The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore?: number | null;
 
 		/** Map that contains metadata about the Smart Reply and the document from which it originates. */
@@ -4861,7 +5248,10 @@ export namespace MyNS {
 	/** Agent Assist Smart Reply data. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1SmartReplyDataFormProperties {
 
-		/** The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain). */
+		/**
+		 * The system's confidence score that this reply is a good match for this conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely certain).
+		 * Type: double
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/** Map that contains metadata about the Smart Reply and the document from which it originates. */
@@ -4904,10 +5294,16 @@ export namespace MyNS {
 	/** A segment of a full transcript. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegment {
 
-		/** For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono. */
+		/**
+		 * For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag?: number | null;
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Metadata from Dialogflow relating to the current transcript segment. */
@@ -4935,10 +5331,16 @@ export namespace MyNS {
 	/** A segment of a full transcript. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegmentFormProperties {
 
-		/** For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono. */
+		/**
+		 * For conversations derived from multi-channel audio, this is the channel number corresponding to the audio from that channel. For audioChannelCount = N, its output values can range from '1' to 'N'. A channel tag of 0 indicates that the audio is mono.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelTag: FormControl<number | null | undefined>,
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The language code of this segment as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US". */
@@ -5035,7 +5437,10 @@ export namespace MyNS {
 	/** Word-level info for words in a transcript. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegmentWordInfo {
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset of the end of this word relative to the beginning of the total conversation. */
@@ -5051,7 +5456,10 @@ export namespace MyNS {
 	/** Word-level info for words in a transcript. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1ConversationTranscriptTranscriptSegmentWordInfoFormProperties {
 
-		/** A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset. */
+		/**
+		 * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A default value of 0.0 indicates that the value is unset.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset of the end of this word relative to the beginning of the total conversation. */
@@ -5634,32 +6042,56 @@ export namespace MyNS {
 	/** Statistics for IngestConversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStats {
 
-		/** Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested. */
+		/**
+		 * Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesSkippedCount?: number | null;
 
-		/** Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field. */
+		/**
+		 * Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedIngestCount?: number | null;
 
-		/** Output only. The number of objects processed during the ingest operation. */
+		/**
+		 * Output only. The number of objects processed during the ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processedObjectCount?: number | null;
 
-		/** Output only. The number of new conversations added during this ingest operation. */
+		/**
+		 * Output only. The number of new conversations added during this ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulIngestCount?: number | null;
 	}
 
 	/** Statistics for IngestConversations operation. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStatsFormProperties {
 
-		/** Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested. */
+		/**
+		 * Output only. The number of objects skipped because another conversation with the same transcript uri had already been ingested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesSkippedCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field. */
+		/**
+		 * Output only. The number of objects which were unable to be ingested due to errors. The errors are populated in the partial_errors field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedIngestCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of objects processed during the ingest operation. */
+		/**
+		 * Output only. The number of objects processed during the ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processedObjectCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of new conversations added during this ingest operation. */
+		/**
+		 * Output only. The number of new conversations added during this ingest operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulIngestCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStatsFormGroup() {
@@ -5712,26 +6144,38 @@ export namespace MyNS {
 	/** Configuration that applies to all conversations. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfig {
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel?: number | null;
 
 		/** An opaque, user-specified string representing the human agent who handled the conversations. */
 		agentId?: string | null;
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel?: number | null;
 	}
 
 	/** Configuration that applies to all conversations. */
 	export interface GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfigFormProperties {
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentChannel: FormControl<number | null | undefined>,
 
 		/** An opaque, user-specified string representing the human agent who handled the conversations. */
 		agentId: FormControl<string | null | undefined>,
 
-		/** Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed. */
+		/**
+		 * Optional. For audio conversations, this field indicates which of the channels, 1 or 2, contains the customer. Note that this must be set for audio conversations to be properly displayed and analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerChannel: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfigFormGroup() {
@@ -6147,6 +6591,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -6190,6 +6635,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource of the analyses.
 		 * @param {string} filter A filter to reduce results to a specific subset. Useful for querying conversations with specific properties.
 		 * @param {number} pageSize The maximum number of analyses to return in the response. If this value is zero, the service will select a default size. A call might return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListAnalysesResponse`; indicates that this is a continuation of a prior `ListAnalyses` call and the system should return the next page of data.
 		 * @return {GoogleCloudContactcenterinsightsV1ListAnalysesResponse} Successful response
 		 */
@@ -6213,6 +6659,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource of the conversation.
 		 * @param {string} filter A filter to reduce results to a specific subset. Useful for querying conversations with specific properties.
 		 * @param {number} pageSize The maximum number of conversations to return in the response. A valid page size ranges from 0 to 1,000 inclusive. If the page size is zero or unspecified, a default page size of 100 will be chosen. Note that a call might return fewer results than the requested page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListConversationsResponse`. This value indicates that this is a continuation of a prior `ListConversations` call and that the system should return the next page of data.
 		 * @param {Contactcenterinsights_projects_locations_views_getView} view The level of details of the conversation. Default is `BASIC`.
 		 * @return {GoogleCloudContactcenterinsightsV1ListConversationsResponse} Successful response
@@ -6318,6 +6765,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource of the phrase matcher.
 		 * @param {string} filter A filter to reduce results to a specific subset. Useful for querying phrase matchers with specific properties.
 		 * @param {number} pageSize The maximum number of phrase matchers to return in the response. If this value is zero, the service will select a default size. A call might return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListPhraseMatchersResponse`. This value indicates that this is a continuation of a prior `ListPhraseMatchers` call and that the system should return the next page of data.
 		 * @return {GoogleCloudContactcenterinsightsV1ListPhraseMatchersResponse} Successful response
 		 */
@@ -6340,6 +6788,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/views
 		 * @param {string} parent Required. The parent resource of the views.
 		 * @param {number} pageSize The maximum number of views to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListViewsResponse`; indicates that this is a continuation of a prior `ListViews` call and the system should return the next page of data.
 		 * @return {GoogleCloudContactcenterinsightsV1ListViewsResponse} Successful response
 		 */

@@ -1475,9 +1475,13 @@ export namespace MyNS {
 		 * <p>Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code> is provided. If you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system. You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both. </p> <p>This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.</p>
 		 * Get 2015-02-01/access-points
 		 * @param {number} MaxResults (Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. 
+		 *     Minimum: 1
 		 * @param {string} NextToken  <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} AccessPointId (Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.
+		 *     Max length: 128
 		 * @param {string} FileSystemId (Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.
+		 *     Max length: 128
 		 * @return {DescribeAccessPointsResponse} Success
 		 */
 		DescribeAccessPoints(MaxResults: number | null | undefined, NextToken: string | null | undefined, AccessPointId: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeAccessPointsResponse> {
@@ -1497,9 +1501,13 @@ export namespace MyNS {
 		 * <p>Returns the description of a specific Amazon EFS file system if either the file system <code>CreationToken</code> or the <code>FileSystemId</code> is provided. Otherwise, it returns descriptions of all file systems owned by the caller's Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p> <p>When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code> parameter to limit the number of descriptions in a response. This number is automatically set to 100. If more file system descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In this case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value of <code>NextMarker</code>. </p> <p>To retrieve a list of your file system descriptions, this operation is used in an iterative process, where <code>DescribeFileSystems</code> is called first without the <code>Marker</code> and then the operation continues to call it with the <code>Marker</code> parameter set to the value of the <code>NextMarker</code> from the previous response until the response has no <code>NextMarker</code>. </p> <p> The order of file systems returned in the response of one <code>DescribeFileSystems</code> call and the order of file systems returned across the responses of a multi-call iteration is unspecified. </p> <p> This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystems</code> action. </p>
 		 * Get 2015-02-01/file-systems
 		 * @param {number} MaxItems (Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. 
+		 *     Minimum: 1
 		 * @param {string} Marker (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. 
+		 *     Min length: 1    Max length: 128
 		 * @param {string} CreationToken (Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} FileSystemId (Optional) ID of the file system whose description you want to retrieve (String).
+		 *     Max length: 128
 		 * @return {DescribeFileSystemsResponse} Success
 		 */
 		DescribeFileSystems(MaxItems: number | null | undefined, Marker: string | null | undefined, CreationToken: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeFileSystemsResponse> {
@@ -1519,10 +1527,15 @@ export namespace MyNS {
 		 * <p>Returns the descriptions of all the current mount targets, or a specific mount target, for a file system. When requesting all of the current mount targets, the order of mount targets returned in the response is unspecified.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file system ID that you specify in <code>FileSystemId</code>, or on the file system of the mount target that you specify in <code>MountTargetId</code>.</p>
 		 * Get 2015-02-01/mount-targets
 		 * @param {number} MaxItems (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.
+		 *     Minimum: 1
 		 * @param {string} Marker (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} FileSystemId (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.
+		 *     Max length: 128
 		 * @param {string} MountTargetId (Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
+		 *     Min length: 13    Max length: 45
 		 * @param {string} AccessPointId (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.
+		 *     Max length: 128
 		 * @return {DescribeMountTargetsResponse} Success
 		 */
 		DescribeMountTargets(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string | null | undefined, MountTargetId: string | null | undefined, AccessPointId: string | null | undefined): Observable<DescribeMountTargetsResponse> {
@@ -1533,6 +1546,7 @@ export namespace MyNS {
 		 * <p>Creates a replication configuration that replicates an existing EFS file system to a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration specifies the following:</p> <ul> <li> <p> <b>Source file system</b> - An existing EFS file system that you want replicated. The source file system cannot be a destination file system in an existing replication configuration.</p> </li> <li> <p> <b>Destination file system configuration</b> - The configuration of the destination file system to which the source file system will be replicated. There can only be one destination file system in a replication configuration. The destination file system configuration consists of the following properties:</p> <ul> <li> <p> <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is created. Amazon EFS replication is available in all Amazon Web Services Regions that Amazon EFS is available in, except Africa (Cape Town), Asia Pacific (Hong Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East (Bahrain).</p> </li> <li> <p> <b>Availability Zone</b> - If you want the destination file system to use EFS One Zone availability and durability, you must specify the Availability Zone to create the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p> <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the Key Management Service (KMS) key that is used to encrypt the destination file system. If you don't specify a KMS key, your service-managed KMS key for Amazon EFS is used. </p> <note> <p>After the file system is created, you cannot change the KMS key.</p> </note> </li> </ul> </li> </ul> <p>The following properties are set by default:</p> <ul> <li> <p> <b>Performance mode</b> - The destination file system's performance mode matches that of the source file system, unless the destination file system uses EFS One Zone storage. In that case, the General Purpose performance mode is used. The performance mode cannot be changed.</p> </li> <li> <p> <b>Throughput mode</b> - The destination file system's throughput mode matches that of the source file system. After the file system is created, you can modify the throughput mode.</p> </li> </ul> <p>The following properties are turned off by default:</p> <ul> <li> <p> <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering are not enabled on the destination file system. After the destination file system is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.</p> </li> <li> <p> <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. After the file system is created, you can change this setting.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a> in the <i>Amazon EFS User Guide</i>.</p>
 		 * Post 2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration
 		 * @param {string} SourceFileSystemId Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.
+		 *     Max length: 128
 		 * @return {ReplicationConfigurationDescription} Success
 		 */
 		CreateReplicationConfiguration(SourceFileSystemId: string, requestBody: CreateReplicationConfigurationPostBody): Observable<ReplicationConfigurationDescription> {
@@ -1543,6 +1557,7 @@ export namespace MyNS {
 		 * Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.
 		 * Delete 2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration
 		 * @param {string} SourceFileSystemId The ID of the source file system in the replication configuration.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		DeleteReplicationConfiguration(SourceFileSystemId: string): Observable<HttpResponse<string>> {
@@ -1553,6 +1568,7 @@ export namespace MyNS {
 		 * <note> <p>DEPRECATED - <code>CreateTags</code> is deprecated and not maintained. To create tags for EFS resources, use the API action.</p> </note> <p>Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in the request already exists on the file system, this operation overwrites its value with the value provided in the request. If you add the <code>Name</code> tag to your file system, Amazon EFS returns it in the response to the <a>DescribeFileSystems</a> operation. </p> <p>This operation requires permission for the <code>elasticfilesystem:CreateTags</code> action.</p>
 		 * Post 2015-02-01/create-tags/{FileSystemId}
 		 * @param {string} FileSystemId The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		CreateTags(FileSystemId: string, requestBody: CreateTagsPostBody): Observable<HttpResponse<string>> {
@@ -1563,6 +1579,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified access point. After deletion is complete, new clients can no longer connect to the access points. Clients connected to the access point at the time of deletion will continue to function until they terminate their connection.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code> action.</p>
 		 * Delete 2015-02-01/access-points/{AccessPointId}
 		 * @param {string} AccessPointId The ID of the access point that you want to delete.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		DeleteAccessPoint(AccessPointId: string): Observable<HttpResponse<string>> {
@@ -1573,6 +1590,7 @@ export namespace MyNS {
 		 * <p>Deletes a file system, permanently severing access to its contents. Upon return, the file system no longer exists and you can't access any contents of the deleted file system.</p> <p>You need to manually delete mount targets attached to a file system before you can delete an EFS file system. This step is performed for you when you use the Amazon Web Services console to delete a file system.</p> <note> <p>You cannot delete a file system that is part of an EFS Replication configuration. You need to delete the replication configuration first.</p> </note> <p> You can't delete a file system that is in use. That is, if the file system has any mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a> and <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call returns while the file system state is still <code>deleting</code>. You can check the file system deletion status by calling the <a>DescribeFileSystems</a> operation, which returns a list of file systems in your account. If you pass file system ID or creation token for the deleted file system, the <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code> error.</p> </note> <p>This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystem</code> action.</p>
 		 * Delete 2015-02-01/file-systems/{FileSystemId}
 		 * @param {string} FileSystemId The ID of the file system you want to delete.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		DeleteFileSystem(FileSystemId: string): Observable<HttpResponse<string>> {
@@ -1583,6 +1601,7 @@ export namespace MyNS {
 		 * Updates the throughput mode or the amount of provisioned throughput of an existing file system.
 		 * Put 2015-02-01/file-systems/{FileSystemId}
 		 * @param {string} FileSystemId The ID of the file system that you want to update.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		UpdateFileSystem(FileSystemId: string, requestBody: UpdateFileSystemPutBody): Observable<HttpResponse<string>> {
@@ -1593,6 +1612,7 @@ export namespace MyNS {
 		 * <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The default <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted. For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with EFS</a>.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code> action.</p>
 		 * Delete 2015-02-01/file-systems/{FileSystemId}/policy
 		 * @param {string} FileSystemId Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.
+		 *     Max length: 128
 		 * @return {void} Success
 		 */
 		DeleteFileSystemPolicy(FileSystemId: string): Observable<HttpResponse<string>> {
@@ -1603,6 +1623,7 @@ export namespace MyNS {
 		 * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file system.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p>
 		 * Get 2015-02-01/file-systems/{FileSystemId}/policy
 		 * @param {string} FileSystemId Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.
+		 *     Max length: 128
 		 * @return {FileSystemPolicyDescription} Success
 		 */
 		DescribeFileSystemPolicy(FileSystemId: string): Observable<FileSystemPolicyDescription> {
@@ -1613,6 +1634,7 @@ export namespace MyNS {
 		 * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM resource-based policy and can contain multiple policy statements. A file system always has exactly one file system policy, which can be the default policy or an explicit policy set or updated using this API operation. EFS file system policies have a 20,000 character limit. When an explicit policy is set, it overrides the default policy. For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default EFS File System Policy</a>. </p> <note> <p>EFS file system policies have a 20,000 character limit.</p> </note> <p>This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p>
 		 * Put 2015-02-01/file-systems/{FileSystemId}/policy
 		 * @param {string} FileSystemId The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.
+		 *     Max length: 128
 		 * @return {FileSystemPolicyDescription} Success
 		 */
 		PutFileSystemPolicy(FileSystemId: string, requestBody: PutFileSystemPolicyPutBody): Observable<FileSystemPolicyDescription> {
@@ -1623,6 +1645,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any mounts of the file system by using the mount target that is being deleted, which might disrupt instances or applications using those mounts. To avoid applications getting cut off abruptly, you might consider unmounting any mounts of the mount target, if feasible. The operation also deletes the associated network interface. Uncommitted writes might be lost, but breaking a mount target using this operation does not corrupt the file system itself. The file system you created remains. You can mount an EC2 instance in your VPC by using another mount target.</p> <p>This operation requires permissions for the following action on the file system:</p> <ul> <li> <p> <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The <code>DeleteMountTarget</code> call returns while the mount target state is still <code>deleting</code>. You can check the mount target deletion by calling the <a>DescribeMountTargets</a> operation, which returns a list of mount target descriptions for the given file system. </p> </note> <p>The operation also requires permissions for the following Amazon EC2 action on the mount target's network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li> </ul>
 		 * Delete 2015-02-01/mount-targets/{MountTargetId}
 		 * @param {string} MountTargetId The ID of the mount target to delete (String).
+		 *     Min length: 13    Max length: 45
 		 * @return {void} 
 		 */
 		DeleteMountTarget(MountTargetId: string): Observable<HttpResponse<string>> {
@@ -1633,6 +1656,7 @@ export namespace MyNS {
 		 * <note> <p>DEPRECATED - <code>DeleteTags</code> is deprecated and not maintained. To remove tags from EFS resources, use the API action.</p> </note> <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code> action.</p>
 		 * Post 2015-02-01/delete-tags/{FileSystemId}
 		 * @param {string} FileSystemId The ID of the file system whose tags you want to delete (String).
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		DeleteTags(FileSystemId: string, requestBody: DeleteTagsPostBody): Observable<HttpResponse<string>> {
@@ -1661,6 +1685,7 @@ export namespace MyNS {
 		 * Returns the backup policy for the specified EFS file system.
 		 * Get 2015-02-01/file-systems/{FileSystemId}/backup-policy
 		 * @param {string} FileSystemId Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.
+		 *     Max length: 128
 		 * @return {BackupPolicyDescription} Success
 		 */
 		DescribeBackupPolicy(FileSystemId: string): Observable<BackupPolicyDescription> {
@@ -1671,6 +1696,7 @@ export namespace MyNS {
 		 * Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.
 		 * Put 2015-02-01/file-systems/{FileSystemId}/backup-policy
 		 * @param {string} FileSystemId Specifies which EFS file system to update the backup policy for.
+		 *     Max length: 128
 		 * @return {BackupPolicyDescription} Success
 		 */
 		PutBackupPolicy(FileSystemId: string, requestBody: PutBackupPolicyPutBody): Observable<BackupPolicyDescription> {
@@ -1681,6 +1707,7 @@ export namespace MyNS {
 		 * <p>Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object, the call returns an empty array in the response.</p> <p>When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of <code>AFTER_1_ACCESS</code>.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code> operation.</p>
 		 * Get 2015-02-01/file-systems/{FileSystemId}/lifecycle-configuration
 		 * @param {string} FileSystemId The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).
+		 *     Max length: 128
 		 * @return {LifecycleConfigurationDescription} Success
 		 */
 		DescribeLifecycleConfiguration(FileSystemId: string): Observable<LifecycleConfigurationDescription> {
@@ -1691,6 +1718,7 @@ export namespace MyNS {
 		 * <p>Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the following:</p> <ul> <li> <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the lower-cost EFS Infrequent Access (IA) storage class.</p> <p>To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.</p> </li> <li> <p> <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file system's primary storage class (EFS Standard or EFS One Zone Standard).</p> <p>To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Lifecycle Management</a>.</p> <p>Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system. If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS Intelligent-Tiering for the file system.</p> <p>In the request, specify the following: </p> <ul> <li> <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS Intelligent-Tiering.</p> </li> <li> <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved into IA storage, and when they are moved back to Standard storage.</p> <note> <p>Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.</p> </note> </li> </ul> <p>This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an encrypted file system, you need the same Key Management Service permissions as when you created the encrypted file system.</p>
 		 * Put 2015-02-01/file-systems/{FileSystemId}/lifecycle-configuration
 		 * @param {string} FileSystemId The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).
+		 *     Max length: 128
 		 * @return {LifecycleConfigurationDescription} Success
 		 */
 		PutLifecycleConfiguration(FileSystemId: string, requestBody: PutLifecycleConfigurationPutBody): Observable<LifecycleConfigurationDescription> {
@@ -1701,6 +1729,7 @@ export namespace MyNS {
 		 * <p>Returns the security groups currently in effect for a mount target. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>.</p> <p>This operation requires permissions for the following actions:</p> <ul> <li> <p> <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount target's file system. </p> </li> <li> <p> <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network interface. </p> </li> </ul>
 		 * Get 2015-02-01/mount-targets/{MountTargetId}/security-groups
 		 * @param {string} MountTargetId The ID of the mount target whose security groups you want to retrieve.
+		 *     Min length: 13    Max length: 45
 		 * @return {DescribeMountTargetSecurityGroupsResponse} Success
 		 */
 		DescribeMountTargetSecurityGroups(MountTargetId: string): Observable<DescribeMountTargetSecurityGroupsResponse> {
@@ -1711,6 +1740,7 @@ export namespace MyNS {
 		 * <p>Modifies the set of security groups in effect for a mount target.</p> <p>When you create a mount target, Amazon EFS also creates a new network interface. For more information, see <a>CreateMountTarget</a>. This operation replaces the security groups in effect for the network interface associated with a mount target, with the <code>SecurityGroups</code> provided in the request. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>. </p> <p>The operation requires permissions for the following actions:</p> <ul> <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system. </p> </li> <li> <p> <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface. </p> </li> </ul>
 		 * Put 2015-02-01/mount-targets/{MountTargetId}/security-groups
 		 * @param {string} MountTargetId The ID of the mount target whose security groups you want to modify.
+		 *     Min length: 13    Max length: 45
 		 * @return {void} 
 		 */
 		ModifyMountTargetSecurityGroups(MountTargetId: string, requestBody: ModifyMountTargetSecurityGroupsPutBody): Observable<HttpResponse<string>> {
@@ -1721,8 +1751,11 @@ export namespace MyNS {
 		 * Retrieves the replication configuration for a specific file system. If a file system is not specified, all of the replication configurations for the Amazon Web Services account in an Amazon Web Services Region are retrieved.
 		 * Get 2015-02-01/file-systems/replication-configurations
 		 * @param {string} FileSystemId You can retrieve the replication configuration for a specific file system by providing its file system ID.
+		 *     Max length: 128
 		 * @param {string} NextToken  <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} MaxResults (Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. 
+		 *     Minimum: 1
 		 * @return {DescribeReplicationConfigurationsResponse} Success
 		 */
 		DescribeReplicationConfigurations(FileSystemId: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeReplicationConfigurationsResponse> {
@@ -1733,8 +1766,11 @@ export namespace MyNS {
 		 * <note> <p>DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained. To view tags associated with EFS resources, use the <code>ListTagsForResource</code> API action.</p> </note> <p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration (when using pagination) is unspecified. </p> <p> This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code> action. </p>
 		 * Get 2015-02-01/tags/{FileSystemId}/
 		 * @param {number} MaxItems (Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.
+		 *     Minimum: 1
 		 * @param {string} Marker (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} FileSystemId The ID of the file system whose tag set you want to retrieve.
+		 *     Max length: 128
 		 * @return {DescribeTagsResponse} Success
 		 */
 		DescribeTags(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string): Observable<DescribeTagsResponse> {
@@ -1745,8 +1781,11 @@ export namespace MyNS {
 		 * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the resource that you want to retrieve the tags for.</p> <p>This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.</p>
 		 * Get 2015-02-01/resource-tags/{ResourceId}
 		 * @param {string} ResourceId Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.
+		 *     Max length: 128
 		 * @param {number} MaxResults (Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.
+		 *     Minimum: 1
 		 * @param {string} NextToken (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceId: string, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListTagsForResourceResponse> {
@@ -1757,6 +1796,7 @@ export namespace MyNS {
 		 * <p>Creates a tag for an EFS resource. You can create tags for EFS file systems and access points using this API operation.</p> <p>This operation requires permissions for the <code>elasticfilesystem:TagResource</code> action.</p>
 		 * Post 2015-02-01/resource-tags/{ResourceId}
 		 * @param {string} ResourceId The ID specifying the EFS resource that you want to create a tag for.
+		 *     Max length: 128
 		 * @return {void} Success
 		 */
 		TagResource(ResourceId: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -1767,7 +1807,9 @@ export namespace MyNS {
 		 * <p>Removes tags from an EFS resource. You can remove tags from EFS file systems and access points using this API operation.</p> <p>This operation requires permissions for the <code>elasticfilesystem:UntagResource</code> action.</p>
 		 * Delete 2015-02-01/resource-tags/{ResourceId}#tagKeys
 		 * @param {string} ResourceId Specifies the EFS resource that you want to remove tags from.
+		 *     Max length: 128
 		 * @param {Array<string>} tagKeys The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} Success
 		 */
 		UntagResource(ResourceId: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -1780,8 +1822,8 @@ export namespace MyNS {
 		/**
 		 * A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: string;
 
@@ -1806,8 +1848,8 @@ export namespace MyNS {
 		/**
 		 * A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -1862,8 +1904,8 @@ export namespace MyNS {
 		/**
 		 * A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CreationToken: string;
 
@@ -1890,8 +1932,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note> <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p> </note>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AvailabilityZoneName?: string | null;
 
@@ -1906,8 +1948,8 @@ export namespace MyNS {
 		/**
 		 * A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CreationToken: FormControl<string | null | undefined>,
 
@@ -1934,8 +1976,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note> <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p> </note>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AvailabilityZoneName: FormControl<string | null | undefined>,
 
@@ -1968,15 +2010,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.
 		 * Required
-		 * Max length: 47
 		 * Min length: 15
+		 * Max length: 47
 		 */
 		SubnetId: string;
 
 		/**
 		 * Valid IPv4 address within the address range of the specified subnet.
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		IpAddress?: string | null;
 
@@ -1998,15 +2040,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.
 		 * Required
-		 * Max length: 47
 		 * Min length: 15
+		 * Max length: 47
 		 */
 		SubnetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Valid IPv4 address within the address range of the specified subnet.
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		IpAddress: FormControl<string | null | undefined>,
 	}
@@ -2086,8 +2128,8 @@ export namespace MyNS {
 		/**
 		 * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
 		 * Required
-		 * Max length: 20000
 		 * Min length: 1
+		 * Max length: 20000
 		 */
 		Policy: string;
 
@@ -2099,8 +2141,8 @@ export namespace MyNS {
 		/**
 		 * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
 		 * Required
-		 * Max length: 20000
 		 * Min length: 1
+		 * Max length: 20000
 		 */
 		Policy: FormControl<string | null | undefined>,
 

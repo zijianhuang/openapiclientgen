@@ -95,7 +95,10 @@ export namespace MyNS {
 		/** Feedback for a respondent about their response to a question. */
 		feedback?: Feedback;
 
-		/** Output only. The numeric score awarded for the answer. */
+		/**
+		 * Output only. The numeric score awarded for the answer.
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
@@ -105,7 +108,10 @@ export namespace MyNS {
 		/** Output only. Whether the question was answered correctly or not. A zero-point score is not enough to infer incorrectness, since a correctly answered question could be worth zero points. */
 		correct: FormControl<boolean | null | undefined>,
 
-		/** Output only. The numeric score awarded for the answer. */
+		/**
+		 * Output only. The numeric score awarded for the answer.
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGradeFormGroup() {
@@ -448,7 +454,10 @@ export namespace MyNS {
 		/** Position of the media. */
 		alignment?: MediaPropertiesAlignment | null;
 
-		/** The width of the media in pixels. When the media is displayed, it is scaled to the smaller of this value or the width of the displayed form. The original aspect ratio of the media is preserved. If a width is not specified when the media is added to the form, it is set to the width of the media source. Width must be between 0 and 740, inclusive. Setting width to 0 or unspecified is only permitted when updating the media source. */
+		/**
+		 * The width of the media in pixels. When the media is displayed, it is scaled to the smaller of this value or the width of the displayed form. The original aspect ratio of the media is preserved. If a width is not specified when the media is added to the form, it is set to the width of the media source. Width must be between 0 and 740, inclusive. Setting width to 0 or unspecified is only permitted when updating the media source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -458,7 +467,10 @@ export namespace MyNS {
 		/** Position of the media. */
 		alignment: FormControl<MediaPropertiesAlignment | null | undefined>,
 
-		/** The width of the media in pixels. When the media is displayed, it is scaled to the smaller of this value or the width of the displayed form. The original aspect ratio of the media is preserved. If a width is not specified when the media is added to the form, it is set to the width of the media source. Width must be between 0 and 740, inclusive. Setting width to 0 or unspecified is only permitted when updating the media source. */
+		/**
+		 * The width of the media in pixels. When the media is displayed, it is scaled to the smaller of this value or the width of the displayed form. The original aspect ratio of the media is preserved. If a width is not specified when the media is added to the form, it is set to the width of the media source. Width must be between 0 and 740, inclusive. Setting width to 0 or unspecified is only permitted when updating the media source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaPropertiesFormGroup() {
@@ -702,7 +714,10 @@ export namespace MyNS {
 		/** Maximum number of bytes allowed for any single file uploaded to this question. */
 		maxFileSize?: string | null;
 
-		/** Maximum number of files that can be uploaded for this question in a single response. */
+		/**
+		 * Maximum number of files that can be uploaded for this question in a single response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFiles?: number | null;
 
 		/** File types accepted by this question. */
@@ -718,7 +733,10 @@ export namespace MyNS {
 		/** Maximum number of bytes allowed for any single file uploaded to this question. */
 		maxFileSize: FormControl<string | null | undefined>,
 
-		/** Maximum number of files that can be uploaded for this question in a single response. */
+		/**
+		 * Maximum number of files that can be uploaded for this question in a single response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFiles: FormControl<number | null | undefined>,
 	}
 	export function CreateFileUploadQuestionFormGroup() {
@@ -740,7 +758,10 @@ export namespace MyNS {
 		/** Feedback for a respondent about their response to a question. */
 		generalFeedback?: Feedback;
 
-		/** Required. The maximum number of points a respondent can automatically get for a correct answer. This must not be negative. */
+		/**
+		 * Required. The maximum number of points a respondent can automatically get for a correct answer. This must not be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointValue?: number | null;
 
 		/** Feedback for a respondent about their response to a question. */
@@ -753,7 +774,10 @@ export namespace MyNS {
 	/** Grading for a single question */
 	export interface GradingFormProperties {
 
-		/** Required. The maximum number of points a respondent can automatically get for a correct answer. This must not be negative. */
+		/**
+		 * Required. The maximum number of points a respondent can automatically get for a correct answer. This must not be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGradingFormGroup() {
@@ -826,13 +850,19 @@ export namespace MyNS {
 	/** A scale question. The user has a range of numeric values to choose from. */
 	export interface ScaleQuestion {
 
-		/** Required. The highest possible value for the scale. */
+		/**
+		 * Required. The highest possible value for the scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high?: number | null;
 
 		/** The label to display describing the highest point on the scale. */
 		highLabel?: string | null;
 
-		/** Required. The lowest possible value for the scale. */
+		/**
+		 * Required. The lowest possible value for the scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low?: number | null;
 
 		/** The label to display describing the lowest point on the scale. */
@@ -842,13 +872,19 @@ export namespace MyNS {
 	/** A scale question. The user has a range of numeric values to choose from. */
 	export interface ScaleQuestionFormProperties {
 
-		/** Required. The highest possible value for the scale. */
+		/**
+		 * Required. The highest possible value for the scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high: FormControl<number | null | undefined>,
 
 		/** The label to display describing the highest point on the scale. */
 		highLabel: FormControl<string | null | undefined>,
 
-		/** Required. The lowest possible value for the scale. */
+		/**
+		 * Required. The lowest possible value for the scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low: FormControl<number | null | undefined>,
 
 		/** The label to display describing the lowest point on the scale. */
@@ -992,14 +1028,20 @@ export namespace MyNS {
 	/** A specific location in a form. */
 	export interface Location {
 
-		/** The index of an item in the form. This must be in the range [0..*N*), where *N* is the number of items in the form. */
+		/**
+		 * The index of an item in the form. This must be in the range [0..*N*), where *N* is the number of items in the form.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 	}
 
 	/** A specific location in a form. */
 	export interface LocationFormProperties {
 
-		/** The index of an item in the form. This must be in the range [0..*N*), where *N* is the number of items in the form. */
+		/**
+		 * The index of an item in the form. This must be in the range [0..*N*), where *N* is the number of items in the form.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationFormGroup() {
@@ -1500,7 +1542,10 @@ export namespace MyNS {
 		/** Output only. The response ID. */
 		responseId?: string | null;
 
-		/** Output only. The total number of points the respondent received for their submission Only set if the form was a quiz and the response was graded. This includes points automatically awarded via autograding adjusted by any manual corrections entered by the form owner. */
+		/**
+		 * Output only. The total number of points the respondent received for their submission Only set if the form was a quiz and the response was graded. This includes points automatically awarded via autograding adjusted by any manual corrections entered by the form owner.
+		 * Type: double
+		 */
 		totalScore?: number | null;
 	}
 
@@ -1525,7 +1570,10 @@ export namespace MyNS {
 		/** Output only. The response ID. */
 		responseId: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of points the respondent received for their submission Only set if the form was a quiz and the response was graded. This includes points automatically awarded via autograding adjusted by any manual corrections entered by the form owner. */
+		/**
+		 * Output only. The total number of points the respondent received for their submission Only set if the form was a quiz and the response was graded. This includes points automatically awarded via autograding adjusted by any manual corrections entered by the form owner.
+		 * Type: double
+		 */
 		totalScore: FormControl<number | null | undefined>,
 	}
 	export function CreateFormResponseFormGroup() {
@@ -1626,6 +1674,7 @@ export namespace MyNS {
 		 * @param {string} formId Required. ID of the Form whose responses to list.
 		 * @param {string} filter Which form responses to return. Currently, the only supported filters are: * timestamp > *N* which means to get all form responses submitted after (but not at) timestamp *N*. * timestamp >= *N* which means to get all form responses submitted at and after timestamp *N*. For both supported filters, timestamp must be formatted in RFC3339 UTC "Zulu" format. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 		 * @param {number} pageSize The maximum number of responses to return. The service may return fewer than this value. If unspecified or zero, at most 5000 responses are returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token returned by a previous list response. If this field is set, the form and the values of the filter must be the same as for the original request.
 		 * @return {ListFormResponsesResponse} Successful response
 		 */

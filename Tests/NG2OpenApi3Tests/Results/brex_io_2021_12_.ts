@@ -25,6 +25,7 @@ export namespace MyNS {
 		 * Get api/v1/company/deepsearch/lei/{number}
 		 * @param {string} number lei number
 		 * @param {number} page Pagination for the ISIN number results (1000 numbers per page)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {any} Result of a lookup by LEI number
 		 */
 		CompanyDeepsearchLEI(number: string, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -135,10 +136,11 @@ export namespace MyNS {
 		 * Get api/v1/company/search/name/{country}/{name}
 		 * @param {string} country ISO_3166-1_alpha-2 representation of a country name - 2 chars
 		 * @param {string} name company name
-		 * @param {number} limit number of search results
+		 * @param {string} limit number of search results
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<CompanySearchNameReturn>} List of companies
 		 */
-		CompanySearchName(country: string, name: string, limit: number | null | undefined): Observable<Array<CompanySearchNameReturn>> {
+		CompanySearchName(country: string, name: string, limit: string | null | undefined): Observable<Array<CompanySearchNameReturn>> {
 			return this.http.get<Array<CompanySearchNameReturn>>(this.baseUri + 'api/v1/company/search/name/' + (country == null ? '' : encodeURIComponent(country)) + '/' + (name == null ? '' : encodeURIComponent(name)) + '&limit=' + limit, {});
 		}
 
@@ -148,10 +150,11 @@ export namespace MyNS {
 		 * Get api/v1/company/search/number/{country}/{number}
 		 * @param {string} country ISO_3166-1_alpha-2 representation of a country name - 2 chars
 		 * @param {string} number company registration number
-		 * @param {number} limit number of search results
+		 * @param {string} limit number of search results
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CompanySearchNumber(country: string, number: string, limit: number | null | undefined): Observable<HttpResponse<string>> {
+		CompanySearchNumber(country: string, number: string, limit: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/v1/company/search/number/' + (country == null ? '' : encodeURIComponent(country)) + '/' + (number == null ? '' : encodeURIComponent(number)) + '&limit=' + limit, { observe: 'response', responseType: 'text' });
 		}
 
@@ -161,7 +164,9 @@ export namespace MyNS {
 		 * Get api/v1/company/{id}/announcements
 		 * @param {string} id company hex ID
 		 * @param {number} limit limit of announcements in response (default 10)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset to paginate through results (default 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} data If this parameter is set to false, you will only receive ids, and no additional data about announcements and no hits to the metric will be counted. (and potentially minimizing your costs)
 		 * @return {void} 
 		 */
@@ -417,10 +422,11 @@ export namespace MyNS {
 		 * Get api/v1/tin-verification/comprehensive-check
 		 * @param {string} tin Nine letter TIN number with or without hyphens
 		 * @param {string} name Company Name
-		 * @param {number} threshold The percentage of minimum similarity threshold for company matching (optional, default: 70%)
+		 * @param {string} threshold The percentage of minimum similarity threshold for company matching (optional, default: 70%)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {any} Result of a basic TIN number check with company name and the list of matched companies
 		 */
-		TinVerificationComprehensiveCheck(tin: string, name: string, threshold: number | null | undefined): Observable<HttpResponse<string>> {
+		TinVerificationComprehensiveCheck(tin: string, name: string, threshold: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/v1/tin-verification/comprehensive-check?tin=' + (tin == null ? '' : encodeURIComponent(tin)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&threshold=' + threshold, { observe: 'response', responseType: 'text' });
 		}
 
@@ -442,6 +448,8 @@ export namespace MyNS {
 		registrationNumber?: string | null;
 		structured?: string | null;
 		text?: string | null;
+
+		/** Type: DateOnly */
 		time?: Date | null;
 		type?: string | null;
 	}
@@ -451,6 +459,8 @@ export namespace MyNS {
 		registrationNumber: FormControl<string | null | undefined>,
 		structured: FormControl<string | null | undefined>,
 		text: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		time: FormControl<Date | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -478,6 +488,8 @@ export namespace MyNS {
 		managingDirectors?: Array<string>;
 		name?: string | null;
 		registrationNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requestTime?: number | null;
 		secretaries?: Array<string>;
 		sicNaceCodes?: Array<string>;
@@ -491,6 +503,8 @@ export namespace MyNS {
 		legalForm: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		registrationNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requestTime: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -526,6 +540,8 @@ export namespace MyNS {
 		description?: string | null;
 		hasOptions?: boolean | null;
 		options?: Array<string>;
+
+		/** Type: float */
 		price?: number | null;
 		provider?: string | null;
 		sku?: string | null;
@@ -537,6 +553,8 @@ export namespace MyNS {
 		countryCode: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		hasOptions: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		price: FormControl<number | null | undefined>,
 		provider: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,

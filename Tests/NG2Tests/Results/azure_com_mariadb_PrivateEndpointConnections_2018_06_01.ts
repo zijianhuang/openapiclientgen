@@ -188,9 +188,12 @@ export namespace MyNS {
 		 * Gets all private endpoint connections on a server.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateEndpointConnections
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {PrivateEndpointConnectionListResult} Successfully retrieved private endpoint connections.
 		 */
 		PrivateEndpointConnections_ListByServer(resourceGroupName: string, serverName: string, subscriptionId: string, api_version: string): Observable<PrivateEndpointConnectionListResult> {
@@ -201,10 +204,13 @@ export namespace MyNS {
 		 * Gets a private endpoint connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {PrivateEndpointConnection} Successfully retrieved a specified private endpoint connection.
 		 */
 		PrivateEndpointConnections_Get(resourceGroupName: string, serverName: string, privateEndpointConnectionName: string, subscriptionId: string, api_version: string): Observable<PrivateEndpointConnection> {
@@ -215,9 +221,12 @@ export namespace MyNS {
 		 * Approve or reject a private endpoint connection with a given name.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {PrivateEndpointConnection} Successfully approved or rejected private endpoint connection.
 		 */
 		PrivateEndpointConnections_CreateOrUpdate(resourceGroupName: string, serverName: string, privateEndpointConnectionName: string, subscriptionId: string, api_version: string, requestBody: PrivateEndpointConnection): Observable<PrivateEndpointConnection> {
@@ -228,9 +237,12 @@ export namespace MyNS {
 		 * Deletes a private endpoint connection with a given name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {void} Successfully deleted private endpoint connection.
 		 */
 		PrivateEndpointConnections_Delete(resourceGroupName: string, serverName: string, privateEndpointConnectionName: string, subscriptionId: string, api_version: string): Observable<HttpResponse<string>> {
@@ -242,8 +254,11 @@ export namespace MyNS {
 		 * Updates private endpoint connection with the specified tags.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {TagsObject} requestBody Parameters supplied to the Update private endpoint connection Tags operation.
 		 * @return {PrivateEndpointConnection} OK

@@ -151,7 +151,10 @@ export namespace MyNS {
 		/** An optional description of the subnet. */
 		description?: string | null;
 
-		/** Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range. */
+		/**
+		 * Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength?: number | null;
 
 		/** Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`. */
@@ -179,7 +182,10 @@ export namespace MyNS {
 		/** An optional description of the subnet. */
 		description: FormControl<string | null | undefined>,
 
-		/** Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range. */
+		/**
+		 * Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength: FormControl<number | null | undefined>,
 
 		/** Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`. */
@@ -610,7 +616,10 @@ export namespace MyNS {
 		/** The address of the API backend. The scheme is used to determine the backend protocol and security. The following schemes are accepted: SCHEME PROTOCOL SECURITY http:// HTTP None https:// HTTP TLS grpc:// gRPC None grpcs:// gRPC TLS It is recommended to explicitly include a scheme. Leaving out the scheme may cause constrasting behaviors across platforms. If the port is unspecified, the default is: - 80 for schemes without TLS - 443 for schemes with TLS For HTTP backends, use protocol to specify the protocol version. */
 		address?: string | null;
 
-		/** The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment. */
+		/**
+		 * The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment.
+		 * Type: double
+		 */
 		deadline?: number | null;
 
 		/** When disable_auth is true, a JWT ID token won't be generated and the original "Authorization" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header. */
@@ -619,10 +628,16 @@ export namespace MyNS {
 		/** The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP "authorization" header, and sent to the backend. */
 		jwtAudience?: string | null;
 
-		/** Deprecated, do not use. */
+		/**
+		 * Deprecated, do not use.
+		 * Type: double
+		 */
 		minDeadline?: number | null;
 
-		/** The number of seconds to wait for the completion of a long running operation. The default is no deadline. */
+		/**
+		 * The number of seconds to wait for the completion of a long running operation. The default is no deadline.
+		 * Type: double
+		 */
 		operationDeadline?: number | null;
 
 		/** The map between request protocol and the backend address. */
@@ -642,7 +657,10 @@ export namespace MyNS {
 		/** The address of the API backend. The scheme is used to determine the backend protocol and security. The following schemes are accepted: SCHEME PROTOCOL SECURITY http:// HTTP None https:// HTTP TLS grpc:// gRPC None grpcs:// gRPC TLS It is recommended to explicitly include a scheme. Leaving out the scheme may cause constrasting behaviors across platforms. If the port is unspecified, the default is: - 80 for schemes without TLS - 443 for schemes with TLS For HTTP backends, use protocol to specify the protocol version. */
 		address: FormControl<string | null | undefined>,
 
-		/** The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment. */
+		/**
+		 * The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment.
+		 * Type: double
+		 */
 		deadline: FormControl<number | null | undefined>,
 
 		/** When disable_auth is true, a JWT ID token won't be generated and the original "Authorization" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header. */
@@ -651,10 +669,16 @@ export namespace MyNS {
 		/** The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP "authorization" header, and sent to the backend. */
 		jwtAudience: FormControl<string | null | undefined>,
 
-		/** Deprecated, do not use. */
+		/**
+		 * Deprecated, do not use.
+		 * Type: double
+		 */
 		minDeadline: FormControl<number | null | undefined>,
 
-		/** The number of seconds to wait for the completion of a long running operation. The default is no deadline. */
+		/**
+		 * The number of seconds to wait for the completion of a long running operation. The default is no deadline.
+		 * Type: double
+		 */
 		operationDeadline: FormControl<number | null | undefined>,
 
 		/** The map between request protocol and the backend address. */
@@ -1157,7 +1181,10 @@ export namespace MyNS {
 		/** The starting address of the reserved range. The address must be a valid IPv4 address in the x.x.x.x format. This value combined with the IP prefix length is the CIDR range for the reserved range. */
 		address?: string | null;
 
-		/** The prefix length of the reserved range. */
+		/**
+		 * The prefix length of the reserved range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength?: number | null;
 
 		/** The name of the reserved range. */
@@ -1170,7 +1197,10 @@ export namespace MyNS {
 		/** The starting address of the reserved range. The address must be a valid IPv4 address in the x.x.x.x format. This value combined with the IP prefix length is the CIDR range for the reserved range. */
 		address: FormControl<string | null | undefined>,
 
-		/** The prefix length of the reserved range. */
+		/**
+		 * The prefix length of the reserved range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength: FormControl<number | null | undefined>,
 
 		/** The name of the reserved range. */
@@ -1687,7 +1717,10 @@ export namespace MyNS {
 		/** Enum value name. */
 		name?: string | null;
 
-		/** Enum value number. */
+		/**
+		 * Enum value number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** Protocol buffer options. */
@@ -1700,7 +1733,10 @@ export namespace MyNS {
 		/** Enum value name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Enum value number. */
+		/**
+		 * Enum value number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateEnumValueFormGroup() {
@@ -1730,10 +1766,16 @@ export namespace MyNS {
 		/** The field name. */
 		name?: string | null;
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex?: number | null;
 
 		/** The protocol buffer options. */
@@ -1764,10 +1806,16 @@ export namespace MyNS {
 		/** The field name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex: FormControl<number | null | undefined>,
 
 		/** Whether to use alternative packed wire representation. */
@@ -2121,7 +2169,10 @@ export namespace MyNS {
 		/** Maximum time between two subsequent poll requests. Default value: 45 seconds. */
 		maxPollDelay?: string | null;
 
-		/** Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5. */
+		/**
+		 * Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5.
+		 * Type: float
+		 */
 		pollDelayMultiplier?: number | null;
 
 		/** Total polling timeout. Default value: 5 minutes. */
@@ -2137,7 +2188,10 @@ export namespace MyNS {
 		/** Maximum time between two subsequent poll requests. Default value: 45 seconds. */
 		maxPollDelay: FormControl<string | null | undefined>,
 
-		/** Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5. */
+		/**
+		 * Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5.
+		 * Type: float
+		 */
 		pollDelayMultiplier: FormControl<number | null | undefined>,
 
 		/** Total polling timeout. Default value: 5 minutes. */
@@ -2471,7 +2525,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2484,7 +2541,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2869,7 +2929,10 @@ export namespace MyNS {
 	/** Request to search for an unused range within allocated ranges. */
 	export interface SearchRangeRequest {
 
-		/** Required. The prefix length of the IP range. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. Actual range will be determined using allocated range for the consumer peered network and returned in the result. */
+		/**
+		 * Required. The prefix length of the IP range. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. Actual range will be determined using allocated range for the consumer peered network and returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength?: number | null;
 
 		/** Network name in the consumer project. This network must have been already peered with a shared VPC network using CreateConnection method. Must be in a form 'projects/{project}/global/networks/{network}'. {project} is a project number, as in '12345' {network} is network name. */
@@ -2879,7 +2942,10 @@ export namespace MyNS {
 	/** Request to search for an unused range within allocated ranges. */
 	export interface SearchRangeRequestFormProperties {
 
-		/** Required. The prefix length of the IP range. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. Actual range will be determined using allocated range for the consumer peered network and returned in the result. */
+		/**
+		 * Required. The prefix length of the IP range. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. Actual range will be determined using allocated range for the consumer peered network and returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipPrefixLength: FormControl<number | null | undefined>,
 
 		/** Network name in the consumer project. This network must have been already peered with a shared VPC network using CreateConnection method. Must be in a form 'projects/{project}/global/networks/{network}'. {project} is a project number, as in '12345' {network} is network name. */
@@ -2933,7 +2999,10 @@ export namespace MyNS {
 		/** Billing related configuration of the service. The following example shows how to configure monitored resources and metrics for billing, `consumer_destinations` is the only supported destination and the monitored resources need at least one label key `cloud.googleapis.com/location` to indicate the location of the billing usage, using different monitored resources between monitoring and billing is recommended so they can be evolved independently: monitored_resources: - type: library.googleapis.com/billing_branch labels: - key: cloud.googleapis.com/location description: | Predefined label to support billing location restriction. - key: city description: | Custom label to define the city where the library branch is located in. - key: name description: Custom label to define the name of the library branch. metrics: - name: library.googleapis.com/book/borrowed_count metric_kind: DELTA value_type: INT64 unit: "1" billing: consumer_destinations: - monitored_resource: library.googleapis.com/billing_branch metrics: - library.googleapis.com/book/borrowed_count */
 		billing?: Billing;
 
-		/** Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`. */
+		/**
+		 * Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		configVersion?: number | null;
 
 		/** `Context` defines which contexts an API requests. Example: context: rules: - selector: "*" requested: - google.rpc.context.ProjectContext - google.rpc.context.OriginContext The above specifies that all methods in the API request `google.rpc.context.ProjectContext` and `google.rpc.context.OriginContext`. Available context types are defined in package `google.rpc.context`. This also provides mechanism to allowlist any protobuf message extension that can be sent in grpc metadata using “x-goog-ext--bin” and “x-goog-ext--jspb” format. For example, list any service specific protobuf types that can appear in grpc metadata as follows in your yaml file: Example: context: rules: - selector: "google.example.library.v1.LibraryService.CreateBook" allowed_request_extensions: - google.foo.v1.NewExtension allowed_response_extensions: - google.foo.v1.NewExtension You can also specify extension ID instead of fully qualified extension name here. */
@@ -3009,7 +3078,10 @@ export namespace MyNS {
 	/** `Service` is the root object of Google API service configuration (service config). It describes the basic information about a logical service, such as the service name and the user-facing title, and delegates other aspects to sub-sections. Each sub-section is either a proto message or a repeated proto message that configures a specific aspect, such as auth. For more information, see each proto message definition. Example: type: google.api.Service name: calendar.googleapis.com title: Google Calendar API apis: - name: google.calendar.v3.Calendar visibility: rules: - selector: "google.calendar.v3.*" restriction: PREVIEW backend: rules: - selector: "google.calendar.v3.*" address: calendar.example.com authentication: providers: - id: google_calendar_auth jwks_uri: https://www.googleapis.com/oauth2/v1/certs issuer: https://securetoken.google.com rules: - selector: "*" requirements: provider_id: google_calendar_auth */
 	export interface ServiceFormProperties {
 
-		/** Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`. */
+		/**
+		 * Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		configVersion: FormControl<number | null | undefined>,
 
 		/** A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If empty, the server may choose to generate one instead. */

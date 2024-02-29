@@ -1215,9 +1215,15 @@ namespace MyNS
 		/// GetMessages messages
 		/// </summary>
 		/// <param name="limit">Tell us how many results you want us to return, up to a maximum of 50.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 999999
+		// </param>
 		/// <param name="direction">Filter your messages by direction:
 		///* **outgoing** – messages sent from your account.
 		///* **incoming** – messages sent to your account.
@@ -1308,7 +1314,10 @@ namespace MyNS
 		/// DeleteMessageById messages/{messageId}
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
-		///</param>
+		///
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task DeleteMessageByIdAsync(string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "messages/"+ (messageId==null? "" : System.Uri.EscapeDataString(messageId));
@@ -1340,7 +1349,10 @@ namespace MyNS
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the response. Use this ID to fetch, update or delete a message with the appropriate endpoints. 
 		///
 		///Incoming messages are also assigned a messageId. Use this ID with GET/ messages/{messageId} to fetch the message later.
-		///</param>
+		///
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>A 200 response means the call has been successful.
 		///</returns>
 		public async Task<MessageGet> GetMessageByIdAsync(string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1378,7 +1390,10 @@ namespace MyNS
 		/// UpdateMessageTags messages/{messageId}
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
-		///</param>
+		///
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task UpdateMessageTagsAsync(string messageId, MessageTags requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "messages/"+ (messageId==null? "" : System.Uri.EscapeDataString(messageId));
@@ -1415,7 +1430,10 @@ namespace MyNS
 		/// UpdateMessageById messages/{messageId}
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
-		///</param>
+		///
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>A 200 response means the call has been successful.
 		///</returns>
 		public async Task<MessageUpdate> UpdateMessageByIdAsync(string messageId, MessagePut requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1535,7 +1553,10 @@ namespace MyNS
 		/// GetReport reports/{reportId}
 		/// </summary>
 		/// <param name="reportId">Use the reportId returned in the POST /reports/{reportType} response.
-		///</param>
+		///
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>A 200 OK response means the call has been successful. Your download link (reportUrl) will be returned in the response.
 		///</returns>
 		public async Task<GetReportReturn> GetReportAsync(string reportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1573,9 +1594,15 @@ namespace MyNS
 		/// GetNumbers virtual-numbers
 		/// </summary>
 		/// <param name="limit">Tell us how many results you want us to return, up to a maximum of 50.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 999999
+		// </param>
 		/// <param name="filter">Filter your Virtual Numbers by tag or by number.</param>
 		/// <returns>A 200 OK response means your request has been successful. Your Virtual Number(s) will be returned in the response body.
 		///</returns>
@@ -1652,7 +1679,10 @@ namespace MyNS
 		/// DeleteNumber virtual-numbers/{virtual_number}
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
-		///</param>
+		///
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task DeleteNumberAsync(string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "virtual-numbers/{virtual_number}";
@@ -1681,7 +1711,10 @@ namespace MyNS
 		/// GetVirtualNumber virtual-numbers/{virtual_number}
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
-		///</param>
+		///
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>A 200 OK response means your request has been successful.
 		///</returns>
 		public async Task<Virtual_number> GetVirtualNumberAsync(string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1721,7 +1754,10 @@ namespace MyNS
 		/// UpdateNumber virtual-numbers/{virtual_number}
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
-		///</param>
+		///
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>A 200 OK response means metadata for the Virtual Number has been successfully updated.
 		///</returns>
 		public async Task<Virtual_number> UpdateNumberAsync(string virtual_number, NumberPut requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1768,11 +1804,20 @@ namespace MyNS
 		/// GetRecipientOptouts virtual-numbers/{virtual_number}/optouts
 		/// </summary>
 		/// <param name="limit">Tell us how many results you want us to return, up to a maximum of 50.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 999999
+		// </param>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
-		///</param>
+		///
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<string> GetRecipientOptoutsAsync(int limit, int offset, string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

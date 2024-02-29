@@ -62,32 +62,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -145,26 +169,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -314,11 +356,17 @@ export namespace MyNS {
 		 * @param {string} location Required. The location for which the time series should be fetched. Format: locations/{location_id} where location_id is an unobfuscated listing id.
 		 * @param {Array<DailyMetricTimeSeriesDailyMetric>} dailyMetrics Required. The metrics to retrieve time series for.
 		 * @param {number} dailyRange_endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {FetchMultiDailyMetricsTimeSeriesResponse} Successful response
 		 */
 		Businessprofileperformance_locations_fetchMultiDailyMetricsTimeSeries(location: string, dailyMetrics: Array<DailyMetricTimeSeriesDailyMetric> | null | undefined, dailyRange_endDate_day: number | null | undefined, dailyRange_endDate_month: number | null | undefined, dailyRange_endDate_year: number | null | undefined, dailyRange_startDate_day: number | null | undefined, dailyRange_startDate_month: number | null | undefined, dailyRange_startDate_year: number | null | undefined): Observable<FetchMultiDailyMetricsTimeSeriesResponse> {
@@ -331,16 +379,26 @@ export namespace MyNS {
 		 * @param {string} name Required. The location for which the time series should be fetched. Format: locations/{location_id} where location_id is an unobfuscated listing id.
 		 * @param {DailyMetricTimeSeriesDailyMetric} dailyMetric Required. The metric to retrieve time series.
 		 * @param {number} dailyRange_endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailyRange_startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {DailySubEntityTypeDayOfWeek} dailySubEntityType_dayOfWeek Represents the day of the week. Eg: MONDAY. Currently supported DailyMetrics = NONE.
 		 * @param {number} dailySubEntityType_timeOfDay_hours Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailySubEntityType_timeOfDay_minutes Minutes of hour of day. Must be from 0 to 59.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailySubEntityType_timeOfDay_nanos Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} dailySubEntityType_timeOfDay_seconds Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetDailyMetricsTimeSeriesResponse} Successful response
 		 */
 		Businessprofileperformance_locations_getDailyMetricsTimeSeries(name: string, dailyMetric: DailyMetricTimeSeriesDailyMetric | null | undefined, dailyRange_endDate_day: number | null | undefined, dailyRange_endDate_month: number | null | undefined, dailyRange_endDate_year: number | null | undefined, dailyRange_startDate_day: number | null | undefined, dailyRange_startDate_month: number | null | undefined, dailyRange_startDate_year: number | null | undefined, dailySubEntityType_dayOfWeek: DailySubEntityTypeDayOfWeek | null | undefined, dailySubEntityType_timeOfDay_hours: number | null | undefined, dailySubEntityType_timeOfDay_minutes: number | null | undefined, dailySubEntityType_timeOfDay_nanos: number | null | undefined, dailySubEntityType_timeOfDay_seconds: number | null | undefined): Observable<GetDailyMetricsTimeSeriesResponse> {
@@ -352,12 +410,19 @@ export namespace MyNS {
 		 * Get v1/{parent}/searchkeywords/impressions/monthly
 		 * @param {string} parent Required. The location for which the time series should be fetched. Format: locations/{location_id} where location_id is an unobfuscated listing id.
 		 * @param {number} monthlyRange_endMonth_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} monthlyRange_endMonth_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} monthlyRange_endMonth_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} monthlyRange_startMonth_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} monthlyRange_startMonth_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} monthlyRange_startMonth_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Optional. The number of results requested. The default page size is 100. Page size can be set to a maximum of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token indicating the next paginated result to be returned.
 		 * @return {ListSearchKeywordImpressionsMonthlyResponse} Successful response
 		 */

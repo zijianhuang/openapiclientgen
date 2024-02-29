@@ -631,8 +631,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Order">The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.</param>
 		/// <param name="Status">Status to filter by, with possible values `started`, `ended` or `failed`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMediaProcessorReturn> ListMediaProcessorAsync(Media_processor_enum_order Order, Mediav1media_processorStatus Status, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -667,7 +672,10 @@ namespace MyNS
 		/// Returns a single MediaProcessor resource identified by a SID.
 		/// FetchMediaProcessor v1/MediaProcessors/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the MediaProcessor resource to fetch.</param>
+		/// <param name="Sid">The SID of the MediaProcessor resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1media_processor> FetchMediaProcessorAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -703,10 +711,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Order">The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.</param>
 		/// <param name="Status">Status to filter by, with possible values `processing`, `completed`, `deleted`, or `failed`.</param>
-		/// <param name="ProcessorSid">SID of a MediaProcessor to filter by.</param>
-		/// <param name="SourceSid">SID of a MediaRecording source to filter by.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ProcessorSid">SID of a MediaProcessor to filter by.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="SourceSid">SID of a MediaRecording source to filter by.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMediaRecordingReturn> ListMediaRecordingAsync(Media_processor_enum_order Order, Mediav1media_recordingStatus Status, string ProcessorSid, string SourceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -741,7 +760,10 @@ namespace MyNS
 		/// Deletes a MediaRecording resource identified by a SID.
 		/// DeleteMediaRecording v1/MediaRecordings/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the MediaRecording resource to delete.</param>
+		/// <param name="Sid">The SID of the MediaRecording resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteMediaRecordingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/MediaRecordings/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -768,7 +790,10 @@ namespace MyNS
 		/// Returns a single MediaRecording resource identified by a SID.
 		/// FetchMediaRecording v1/MediaRecordings/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the MediaRecording resource to fetch.</param>
+		/// <param name="Sid">The SID of the MediaRecording resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1media_recording> FetchMediaRecordingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -804,8 +829,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Order">The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.</param>
 		/// <param name="Status">Status to filter by, with possible values `created`, `started`, `ended`, or `failed`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListPlayerStreamerReturn> ListPlayerStreamerAsync(Media_processor_enum_order Order, Mediav1player_streamerStatus Status, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -840,7 +870,10 @@ namespace MyNS
 		/// Returns a single PlayerStreamer resource identified by a SID.
 		/// FetchPlayerStreamer v1/PlayerStreamers/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.</param>
+		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1player_streamer> FetchPlayerStreamerAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -874,7 +907,10 @@ namespace MyNS
 		/// **This method is not enabled.** Returns a single PlaybackGrant resource identified by a SID.
 		/// FetchPlayerStreamerPlaybackGrant v1/PlayerStreamers/{Sid}/PlaybackGrant
 		/// </summary>
-		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.</param>
+		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1player_streamerplayer_streamer_playback_grant> FetchPlayerStreamerPlaybackGrantAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

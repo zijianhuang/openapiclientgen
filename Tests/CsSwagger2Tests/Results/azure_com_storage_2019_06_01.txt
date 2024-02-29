@@ -2480,7 +2480,9 @@ namespace MyNS
 		/// Lists all of the available Storage Rest API operations.
 		/// Operations_List providers/Microsoft.Storage/operations
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<OperationListResult> Operations_ListAsync(string api_version)
 		{
@@ -2509,8 +2511,12 @@ namespace MyNS
 		/// Checks that the storage account name is valid and is not already in use.
 		/// StorageAccounts_CheckNameAvailability subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
 		/// <returns>OK -- Operation to check the storage account name availability was successful.</returns>
 		public async Task<CheckNameAvailabilityResult> StorageAccounts_CheckNameAvailabilityAsync(string api_version, string subscriptionId, StorageAccountCheckNameAvailabilityParameters requestBody)
@@ -2547,8 +2553,12 @@ namespace MyNS
 		/// Gets the current usage count and the limit for the resources of the location under the subscription.
 		/// Usages_ListByLocation subscriptions/{subscriptionId}/providers/Microsoft.Storage/locations/{location}/usages
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="location">The location of the Azure Storage resource.</param>
 		/// <returns>OK -- current usage count and limit retrieved and returned successfully.</returns>
 		public async Task<UsageListResult> Usages_ListByLocationAsync(string api_version, string subscriptionId, string location)
@@ -2578,8 +2588,12 @@ namespace MyNS
 		/// Lists the available SKUs supported by Microsoft.Storage for given subscription.
 		/// Skus_List subscriptions/{subscriptionId}/providers/Microsoft.Storage/skus
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- List of storage SKUs in the given subscription retrieved and returned successfully.</returns>
 		public async Task<StorageSkuListResult> Skus_ListAsync(string api_version, string subscriptionId)
 		{
@@ -2608,8 +2622,12 @@ namespace MyNS
 		/// Lists all the storage accounts available under the subscription. Note that storage keys are not returned; use the ListKeys operation for this.
 		/// StorageAccounts_List subscriptions/{subscriptionId}/providers/Microsoft.Storage/storageAccounts
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- List of storage accounts was retrieved and returned successfully.</returns>
 		public async Task<StorageAccountListResult> StorageAccounts_ListAsync(string api_version, string subscriptionId)
 		{
@@ -2638,9 +2656,16 @@ namespace MyNS
 		/// Lists all the storage accounts available under the given resource group. Note that storage keys are not returned; use the ListKeys operation for this.
 		/// StorageAccounts_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- List of storage accounts in the given resource group retrieved and returned successfully.</returns>
 		public async Task<StorageAccountListResult> StorageAccounts_ListByResourceGroupAsync(string resourceGroupName, string api_version, string subscriptionId)
 		{
@@ -2669,10 +2694,20 @@ namespace MyNS
 		/// Returns the properties for the specified storage account including but not limited to name, SKU name, location, and account status. The ListKeys operation should be used to retrieve storage keys.
 		/// StorageAccounts_GetProperties subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="expand">May be used to expand the properties within account's properties. By default, data is not included when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.</param>
 		/// <returns>OK -- properties retrieved successfully for the storage account.</returns>
 		public async Task<StorageAccount> StorageAccounts_GetPropertiesAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, StorageAccounts_GetPropertiesExpand expand)
@@ -2702,10 +2737,20 @@ namespace MyNS
 		/// Asynchronously creates a new storage account with the specified parameters. If an account is already created and a subsequent create request is issued with different properties, the account properties will be updated. If an account is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.
 		/// StorageAccounts_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The parameters to provide for the created account.</param>
 		/// <returns>OK -- returned when the storage account was already created from a previous request with the same properties specified in the request body.</returns>
 		public async Task<StorageAccount> StorageAccounts_CreateAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, StorageAccountCreateParameters requestBody)
@@ -2742,10 +2787,20 @@ namespace MyNS
 		/// Deletes a storage account in Microsoft Azure.
 		/// StorageAccounts_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- storage account deleted successfully.</returns>
 		public async Task StorageAccounts_DeleteAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId)
 		{
@@ -2768,10 +2823,20 @@ namespace MyNS
 		/// The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It can also be used to map the account to a custom domain. Only one custom domain is supported per storage account; the replacement/change of custom domain is not supported. In order to replace an old custom domain, the old value must be cleared/unregistered before a new value can be set. The update of multiple properties is supported. This call does not change the storage keys for the account. If you want to change the storage account keys, use the regenerate keys operation. The location and name of the storage account cannot be changed after creation.
 		/// StorageAccounts_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The parameters to provide for the updated account.</param>
 		/// <returns>OK -- storage account properties updated successfully.</returns>
 		public async Task<StorageAccount> StorageAccounts_UpdateAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, StorageAccountUpdateParameters requestBody)
@@ -2808,10 +2873,20 @@ namespace MyNS
 		/// List SAS credentials of a storage account.
 		/// StorageAccounts_ListAccountSAS subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/ListAccountSas
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The parameters to provide to list SAS credentials for the storage account.</param>
 		/// <returns>OK -- returned the account SAS created for the storage account requested.</returns>
 		public async Task<ListAccountSasResponse> StorageAccounts_ListAccountSASAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, AccountSasParameters requestBody)
@@ -2848,10 +2923,20 @@ namespace MyNS
 		/// List service SAS credentials of a specific resource.
 		/// StorageAccounts_ListServiceSAS subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/ListServiceSas
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The parameters to provide to list service SAS credentials.</param>
 		/// <returns>OK -- returned the service SAS created for the storage service requested.</returns>
 		public async Task<ListServiceSasResponse> StorageAccounts_ListServiceSASAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, ServiceSasParameters requestBody)
@@ -2888,10 +2973,20 @@ namespace MyNS
 		/// Failover request can be triggered for a storage account in case of availability issues. The failover occurs from the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become primary after failover.
 		/// StorageAccounts_Failover subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/failover
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Returned when the storage account failover is completed, and the secondary cluster has become primary.</returns>
 		public async Task StorageAccounts_FailoverAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId)
 		{
@@ -2914,10 +3009,20 @@ namespace MyNS
 		/// Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
 		/// StorageAccounts_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/listKeys
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="expand">Specifies type of the key to be listed. Possible value is kerb.</param>
 		/// <returns>OK -- list of keys retrieved and returned successfully.</returns>
 		public async Task<StorageAccountListKeysResult> StorageAccounts_ListKeysAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, StorageAccounts_ListKeysExpand expand)
@@ -2947,10 +3052,20 @@ namespace MyNS
 		/// Gets the managementpolicy associated with the specified storage account.
 		/// ManagementPolicies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <returns>OK -- Get the managementpolicy successfully.</returns>
 		public async Task<ManagementPolicy> ManagementPolicies_GetAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, ManagementPolicies_GetManagementPolicyName managementPolicyName)
@@ -2980,10 +3095,20 @@ namespace MyNS
 		/// Sets the managementpolicy to the specified storage account.
 		/// ManagementPolicies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <param name="requestBody">The ManagementPolicy set to a storage account.</param>
 		/// <returns>OK -- Put managementpolicy successfully.</returns>
@@ -3021,10 +3146,20 @@ namespace MyNS
 		/// Deletes the managementpolicy associated with the specified storage account.
 		/// ManagementPolicies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <returns>OK -- Delete the managementpolicy successfully.</returns>
 		public async Task ManagementPolicies_DeleteAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, ManagementPolicies_DeleteManagementPolicyName managementPolicyName)
@@ -3048,10 +3183,20 @@ namespace MyNS
 		/// Gets the specified private endpoint connection associated with the storage account.
 		/// PrivateEndpointConnections_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection associated with the Storage Account</param>
 		/// <returns>OK -- Get the private endpoint connection properties successfully.</returns>
 		public async Task<PrivateEndpointConnection> PrivateEndpointConnections_GetAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, string privateEndpointConnectionName)
@@ -3081,10 +3226,20 @@ namespace MyNS
 		/// Update the state of specified private endpoint connection associated with the storage account.
 		/// PrivateEndpointConnections_Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection associated with the Storage Account</param>
 		/// <param name="requestBody">The private endpoint connection properties.</param>
 		/// <returns>OK -- Update the private endpoint connection properties successfully.</returns>
@@ -3122,10 +3277,20 @@ namespace MyNS
 		/// Deletes the specified private endpoint connection associated with the storage account.
 		/// PrivateEndpointConnections_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection associated with the Storage Account</param>
 		/// <returns>OK -- Delete the private endpoint connection successfully.</returns>
 		public async Task PrivateEndpointConnections_DeleteAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, string privateEndpointConnectionName)
@@ -3149,10 +3314,20 @@ namespace MyNS
 		/// Gets the private link resources that need to be created for a storage account.
 		/// PrivateLinkResources_ListByStorageAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateLinkResources
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResourceListResult> PrivateLinkResources_ListByStorageAccountAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId)
 		{
@@ -3181,10 +3356,20 @@ namespace MyNS
 		/// Regenerates one of the access keys or Kerberos keys for the specified storage account.
 		/// StorageAccounts_RegenerateKey subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/regenerateKey
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.</param>
 		/// <returns>OK -- specified key regenerated successfully.</returns>
 		public async Task<StorageAccountListKeysResult> StorageAccounts_RegenerateKeyAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, StorageAccountRegenerateKeyParameters requestBody)
@@ -3221,10 +3406,20 @@ namespace MyNS
 		/// Restore blobs in the specified blob ranges
 		/// StorageAccounts_RestoreBlobRanges subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/restoreBlobRanges
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The parameters to provide for restore blob ranges.</param>
 		/// <returns>OK -- returned when blob ranges are restored completely with the same properties specified in the request body.</returns>
 		public async Task<BlobRestoreStatus> StorageAccounts_RestoreBlobRangesAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, BlobRestoreParameters requestBody)
@@ -3261,10 +3456,20 @@ namespace MyNS
 		/// Revoke user delegation keys.
 		/// StorageAccounts_RevokeUserDelegationKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/revokeUserDelegationKeys
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- revoke user delegation keys succeeded.</returns>
 		public async Task StorageAccounts_RevokeUserDelegationKeysAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId)
 		{

@@ -172,8 +172,14 @@ namespace MyNS
 		/// 
 		/// ArchiveGetByYearAndMonth {year}/{month}.json
 		/// </summary>
-		/// <param name="year">The year (e.g. 2016).</param>
-		/// <param name="month">The month number (e.g. 1 for January).</param>
+		/// <param name="year">The year (e.g. 2016).
+		/// Minimum: 1851
+		/// Maximum: 2030
+		// </param>
+		/// <param name="month">The month number (e.g. 1 for January).
+		/// Minimum: 1
+		/// Maximum: 12
+		// </param>
 		/// <returns>The docs requested.</returns>
 		public async Task<ArchiveGetByYearAndMonthReturn> ArchiveGetByYearAndMonthAsync(int year, int month, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

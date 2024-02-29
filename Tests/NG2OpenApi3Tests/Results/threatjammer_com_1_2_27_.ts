@@ -25,7 +25,10 @@ export namespace MyNS {
 
 	export interface AclGroupOriginOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -37,12 +40,18 @@ export namespace MyNS {
 		/** Required */
 		status: AclGroupOriginOutputStatus;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface AclGroupOriginOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -54,7 +63,10 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<AclGroupOriginOutputStatus | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateAclGroupOriginOutputFormGroup() {
@@ -98,10 +110,16 @@ export namespace MyNS {
 		/** Required */
 		activities: Array<ActivityOutput>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: number;
 
 		/** Required */
@@ -109,10 +127,16 @@ export namespace MyNS {
 	}
 	export interface ActivityCollectionOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -129,7 +153,10 @@ export namespace MyNS {
 
 	export interface ActivityOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -149,7 +176,10 @@ export namespace MyNS {
 	}
 	export interface ActivityOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -186,7 +216,10 @@ export namespace MyNS {
 		/** Required */
 		method: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code: number;
 
 		/** Required */
@@ -206,7 +239,10 @@ export namespace MyNS {
 		/** Required */
 		method: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -243,6 +279,8 @@ export namespace MyNS {
 		registry: string;
 		registry_date?: string | null;
 		risk?: AutonomousSystemOutputRisk | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		self?: string | null;
 
@@ -265,6 +303,8 @@ export namespace MyNS {
 		registry: FormControl<string | null | undefined>,
 		registry_date: FormControl<string | null | undefined>,
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		self: FormControl<string | null | undefined>,
 
@@ -307,6 +347,8 @@ export namespace MyNS {
 		registry_date?: string | null;
 		registry_status?: string | null;
 		risk?: AutonomousSystemOutputRisk | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		self?: string | null;
 	}
@@ -326,6 +368,8 @@ export namespace MyNS {
 		registry_date: FormControl<string | null | undefined>,
 		registry_status: FormControl<string | null | undefined>,
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		self: FormControl<string | null | undefined>,
 	}
@@ -539,8 +583,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: string;
 
@@ -555,8 +599,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: FormControl<string | null | undefined>,
 
@@ -581,8 +625,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: string;
 
@@ -597,8 +641,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: FormControl<string | null | undefined>,
 
@@ -621,8 +665,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: string;
 
@@ -637,8 +681,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: FormControl<string | null | undefined>,
 
@@ -661,8 +705,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: string;
 
@@ -677,8 +721,8 @@ export namespace MyNS {
 		/**
 		 * The protocol and domain of the origin to change the status
 		 * Required
-		 * Max length: 2083
 		 * Min length: 1
+		 * Max length: 2083
 		 */
 		origin: FormControl<string | null | undefined>,
 
@@ -725,6 +769,8 @@ export namespace MyNS {
 
 		/** Required */
 		tags: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl?: number | null;
 	}
 	export interface PrivateAclGroupListInputFormProperties {
@@ -737,6 +783,8 @@ export namespace MyNS {
 
 		/** Required */
 		resource_type: FormControl<PrivateAclGroupListInputResource_type | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreatePrivateAclGroupListInputFormGroup() {
@@ -992,7 +1040,10 @@ export namespace MyNS {
 		/** The list of tags to associate with the list */
 		tags?: Array<string>;
 
-		/** Optional. The Time To Live (TTL) of a resource in the list in seconds. */
+		/**
+		 * Optional. The Time To Live (TTL) of a resource in the list in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__putFormProperties {
@@ -1003,7 +1054,10 @@ export namespace MyNS {
 		/** The name of the list */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. The Time To Live (TTL) of a resource in the list in seconds. */
+		/**
+		 * Optional. The Time To Live (TTL) of a resource in the list in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateBody_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__putFormGroup() {
@@ -1058,7 +1112,10 @@ export namespace MyNS {
 		/** The list of tags to associate with the list */
 		tags?: Array<string>;
 
-		/** Optional. The Time To Live (TTL) of a resource in the list in seconds. */
+		/**
+		 * Optional. The Time To Live (TTL) of a resource in the list in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__putFormProperties {
@@ -1069,7 +1126,10 @@ export namespace MyNS {
 		/** The name of the list */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. The Time To Live (TTL) of a resource in the list in seconds. */
+		/**
+		 * Optional. The Time To Live (TTL) of a resource in the list in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateBody_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__putFormGroup() {
@@ -1093,6 +1153,8 @@ export namespace MyNS {
 		/** Required */
 		prefixes: string;
 		risk?: AutonomousSystemOutputRisk | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 
 		/** Required */
@@ -1114,6 +1176,8 @@ export namespace MyNS {
 		/** Required */
 		prefixes: FormControl<string | null | undefined>,
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1144,10 +1208,18 @@ export namespace MyNS {
 
 		/** Required */
 		datacenter: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ip_abuse_total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_score?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_score?: number | null;
 		risk?: AutonomousSystemOutputRisk | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		self?: string | null;
 	}
@@ -1155,10 +1227,18 @@ export namespace MyNS {
 
 		/** Required */
 		datacenter: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ip_abuse_total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_score: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_score: FormControl<number | null | undefined>,
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		self: FormControl<string | null | undefined>,
 	}
@@ -1225,7 +1305,10 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items: number;
 
 		/** Required */
@@ -1247,7 +1330,10 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1348,13 +1434,19 @@ export namespace MyNS {
 
 	export interface GeoIPOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		accuracy_radius: number;
 
 		/** Required */
 		asn_country_iso_code: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		city_geoname_code: number;
 
 		/** Required */
@@ -1369,16 +1461,25 @@ export namespace MyNS {
 		/** Required */
 		hostnames: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 
 		/** Required */
 		postal_code: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		region_geoname_code: number;
 
 		/** Required */
@@ -1390,13 +1491,19 @@ export namespace MyNS {
 	}
 	export interface GeoIPOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		accuracy_radius: FormControl<number | null | undefined>,
 
 		/** Required */
 		asn_country_iso_code: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		city_geoname_code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1408,16 +1515,25 @@ export namespace MyNS {
 		/** Required */
 		country_iso_code: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** Required */
 		postal_code: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		region_geoname_code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1538,6 +1654,8 @@ export namespace MyNS {
 
 		/** Required */
 		risk: AutonomousSystemOutputRisk;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		self?: string | null;
 
@@ -1569,6 +1687,8 @@ export namespace MyNS {
 
 		/** Required */
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		self: FormControl<string | null | undefined>,
 	}
@@ -1613,10 +1733,16 @@ export namespace MyNS {
 		/** Required */
 		dataset: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiry: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_report: number;
 
 		/** Required */
@@ -1626,7 +1752,10 @@ export namespace MyNS {
 		self: string;
 		tags?: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_reports: number;
 	}
 	export interface IPListOutputFormProperties {
@@ -1634,10 +1763,16 @@ export namespace MyNS {
 		/** Required */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiry: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_report: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1646,7 +1781,10 @@ export namespace MyNS {
 		/** Required */
 		self: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_reports: FormControl<number | null | undefined>,
 	}
 	export function CreateIPListOutputFormGroup() {
@@ -1693,13 +1831,18 @@ export namespace MyNS {
 
 		/** Required */
 		risk: AutonomousSystemOutputRisk;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		self?: string | null;
 
 		/** Required */
 		source: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: number;
 	}
 	export interface IPLogOutputFormProperties {
@@ -1716,13 +1859,18 @@ export namespace MyNS {
 
 		/** Required */
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		self: FormControl<string | null | undefined>,
 
 		/** Required */
 		source: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateIPLogOutputFormGroup() {
@@ -1787,10 +1935,16 @@ export namespace MyNS {
 		/** Required */
 		addresses: Array<OriginAddressStatusOutput>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: number;
 
 		/** Required */
@@ -1798,10 +1952,16 @@ export namespace MyNS {
 	}
 	export interface OriginAddressStatusCollectionOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1820,24 +1980,36 @@ export namespace MyNS {
 
 		/** Required */
 		address: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiry?: number | null;
 		log_id?: string | null;
 
 		/** Required */
 		status: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated_at?: number | null;
 	}
 	export interface OriginAddressStatusOutputFormProperties {
 
 		/** Required */
 		address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiry: FormControl<number | null | undefined>,
 		log_id: FormControl<string | null | undefined>,
 
 		/** Required */
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginAddressStatusOutputFormGroup() {
@@ -1857,7 +2029,10 @@ export namespace MyNS {
 		/** Required */
 		data: Array<OriginClientAnalysisOutput>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from_timestamp: number;
 
 		/** Required */
@@ -1866,12 +2041,18 @@ export namespace MyNS {
 		/** Required */
 		self: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to_timestamp: number;
 	}
 	export interface OriginClientAnalysisCollectionOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from_timestamp: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1880,7 +2061,10 @@ export namespace MyNS {
 		/** Required */
 		self: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to_timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginClientAnalysisCollectionOutputFormGroup() {
@@ -1895,174 +2079,342 @@ export namespace MyNS {
 
 	export interface OriginClientAnalysisOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_browser: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_crawler: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_email: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_library: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_mobile_browser: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_multimedia_player: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_offline_browser: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_total: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_ua_anonymizer: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_unrecognized: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_validator: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_wap_browser: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_feed_fetcher: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_link_checker: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_marketing: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_screenshot_creator: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_search_engine_bot: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_site_monitor: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_speed_tester: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_tool: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_total: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_uncategorised: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_unrecognized: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_virus_scanner: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_vulnerability_scanner: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_web_scraper: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface OriginClientAnalysisOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_browser: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_crawler: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_email: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_library: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_mobile_browser: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_multimedia_player: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_offline_browser: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_total: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_ua_anonymizer: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_unrecognized: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_validator: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		client_wap_browser: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_feed_fetcher: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_link_checker: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_marketing: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_screenshot_creator: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_search_engine_bot: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_site_monitor: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_speed_tester: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_tool: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_total: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_uncategorised: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_unrecognized: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_virus_scanner: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_vulnerability_scanner: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crawler_web_scraper: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginClientAnalysisOutputFormGroup() {
@@ -2133,7 +2485,10 @@ export namespace MyNS {
 		/** Required */
 		cookies: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -2154,7 +2509,10 @@ export namespace MyNS {
 		/** Required */
 		token: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface OriginOutputFormProperties {
@@ -2171,7 +2529,10 @@ export namespace MyNS {
 		/** Required */
 		cookies: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2192,7 +2553,10 @@ export namespace MyNS {
 		/** Required */
 		token: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginOutputFormGroup() {
@@ -2218,10 +2582,16 @@ export namespace MyNS {
 		/** Required */
 		cookie_ids: Array<OriginCookieIdStatusOutput>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: number;
 
 		/** Required */
@@ -2229,10 +2599,16 @@ export namespace MyNS {
 	}
 	export interface OriginCookieIdStatusCollectionOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2251,24 +2627,36 @@ export namespace MyNS {
 
 		/** Required */
 		cookie_id: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiry?: number | null;
 		log_id?: string | null;
 
 		/** Required */
 		status: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated_at?: number | null;
 	}
 	export interface OriginCookieIdStatusOutputFormProperties {
 
 		/** Required */
 		cookie_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expiry: FormControl<number | null | undefined>,
 		log_id: FormControl<string | null | undefined>,
 
 		/** Required */
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginCookieIdStatusOutputFormGroup() {
@@ -2329,7 +2717,10 @@ export namespace MyNS {
 
 	export interface OriginStatusDetailsOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cardinality: number;
 
 		/** Required */
@@ -2343,7 +2734,10 @@ export namespace MyNS {
 	}
 	export interface OriginStatusDetailsOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cardinality: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2406,7 +2800,10 @@ export namespace MyNS {
 
 	export interface OriginTokenOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -2421,12 +2818,18 @@ export namespace MyNS {
 		/** Required */
 		status: DatasetTypeOutputStatus;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface OriginTokenOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2441,7 +2844,10 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<DatasetTypeOutputStatus | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginTokenOutputFormGroup() {
@@ -2478,7 +2884,10 @@ export namespace MyNS {
 		/** Required */
 		data: Array<OriginTrafficAnalysisOutput>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from_timestamp: number;
 
 		/** Required */
@@ -2487,12 +2896,18 @@ export namespace MyNS {
 		/** Required */
 		self: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to_timestamp: number;
 	}
 	export interface OriginTrafficAnalysisCollectionOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from_timestamp: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2501,7 +2916,10 @@ export namespace MyNS {
 		/** Required */
 		self: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to_timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginTrafficAnalysisCollectionOutputFormGroup() {
@@ -2516,60 +2934,114 @@ export namespace MyNS {
 
 	export interface OriginTrafficAnalysisOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asn_risky: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bots: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datacenters: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		denylists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_country_mismatches: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score_high: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webdrivers: number;
 	}
 	export interface OriginTrafficAnalysisOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asn_risky: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bots: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datacenters: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		denylists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_country_mismatches: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score_high: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webdrivers: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginTrafficAnalysisOutputFormGroup() {
@@ -2612,7 +3084,10 @@ export namespace MyNS {
 		/** Required */
 		content: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -2633,9 +3108,14 @@ export namespace MyNS {
 
 		/** Required */
 		tags: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface PrivateAclGroupListOutputFormProperties {
@@ -2643,7 +3123,10 @@ export namespace MyNS {
 		/** Required */
 		content: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2660,9 +3143,14 @@ export namespace MyNS {
 
 		/** Required */
 		self: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreatePrivateAclGroupListOutputFormGroup() {
@@ -2727,7 +3215,10 @@ export namespace MyNS {
 
 	export interface PublicAclGroupListOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
 		/** Required */
@@ -2749,14 +3240,22 @@ export namespace MyNS {
 
 		/** Required */
 		tags: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface PublicAclGroupListOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2774,9 +3273,14 @@ export namespace MyNS {
 		/** Required */
 		self: FormControl<string | null | undefined>,
 		status: FormControl<AclGroupOriginOutputStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreatePublicAclGroupListOutputFormGroup() {
@@ -2825,13 +3329,19 @@ export namespace MyNS {
 		/** Required */
 		maximum_risk: AutonomousSystemOutputRisk;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum_score: number;
 
 		/** Required */
 		minimum_risk: AutonomousSystemOutputRisk;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum_score: number;
 
 		/** Required */
@@ -2852,7 +3362,10 @@ export namespace MyNS {
 		/** Required */
 		time_ranges: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 
 		/** Required */
@@ -2869,13 +3382,19 @@ export namespace MyNS {
 		/** Required */
 		maximum_risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum_score: FormControl<number | null | undefined>,
 
 		/** Required */
 		minimum_risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum_score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2890,7 +3409,10 @@ export namespace MyNS {
 		/** Required */
 		source: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2916,7 +3438,10 @@ export namespace MyNS {
 
 	export interface SourceTimeRangeOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items: number;
 
 		/** Required */
@@ -2925,7 +3450,10 @@ export namespace MyNS {
 		/** Required */
 		risk: AutonomousSystemOutputRisk;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: number;
 
 		/** Required */
@@ -2934,12 +3462,18 @@ export namespace MyNS {
 		/** Required */
 		source: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface SourceTimeRangeOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2948,7 +3482,10 @@ export namespace MyNS {
 		/** Required */
 		risk: FormControl<AutonomousSystemOutputRisk | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2957,7 +3494,10 @@ export namespace MyNS {
 		/** Required */
 		source: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateSourceTimeRangeOutputFormGroup() {
@@ -2975,28 +3515,52 @@ export namespace MyNS {
 
 	export interface TokenOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_init_value: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_refill_ratio: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_refresh: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_value: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_init_value: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_refresh: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_value: number;
 
 		/** Required */
@@ -3008,33 +3572,60 @@ export namespace MyNS {
 		/** Required */
 		status: DatasetTypeOutputStatus;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: number;
 	}
 	export interface TokenOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_init_value: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_refill_ratio: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_refresh: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_minute_bucket_value: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_init_value: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_refresh: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_month_bucket_value: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3046,7 +3637,10 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<DatasetTypeOutputStatus | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_at: FormControl<number | null | undefined>,
 	}
 	export function CreateTokenOutputFormGroup() {
@@ -3512,7 +4106,9 @@ export namespace MyNS {
 		 * It will also return the API Global errors described in the API description.
 		 * Get v1/allowlist/private/{allowlist_id}/content
 		 * @param {number} page The page to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PrivateAclListCollectionOutput} Successful Response
 		 */
 		Get_allowlist_content_v1_allowlist_private__allowlist_id__content_get(allowlist_id: string, page: number | null | undefined, page_size: number | null | undefined): Observable<PrivateAclListCollectionOutput> {
@@ -4036,6 +4632,7 @@ export namespace MyNS {
 		 * - a `422 Unprocessable Entity` error if the AS number is malformed.
 		 * It will also return the API Global errors described in the API description.
 		 * Get v1/asn/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AutonomousSystemOutput} Successful Response
 		 */
 		Query_asn_v1_asn__number__get(number: number): Observable<AutonomousSystemOutput> {
@@ -4079,6 +4676,7 @@ export namespace MyNS {
 		 * - a `422 Unprocessable Entity` error if the AS number is malformed.
 		 * It will also return the API Global errors described in the API description.
 		 * Get v1/asn/{number}/prefixes
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AutonomousSystemPrefixesOutput} Successful Response
 		 */
 		Query_asn_prefixes_list_v1_asn__number__prefixes_get(number: number): Observable<AutonomousSystemPrefixesOutput> {
@@ -4607,7 +5205,9 @@ export namespace MyNS {
 		 * It will also return the API Global errors described in the API description.
 		 * Get v1/denylist/private/{denylist_id}/content
 		 * @param {number} page The page to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PrivateAclListCollectionOutput} Successful Response
 		 */
 		Get_denylist_content_v1_denylist_private__denylist_id__content_get(denylist_id: string, page: number | null | undefined, page_size: number | null | undefined): Observable<PrivateAclListCollectionOutput> {
@@ -4998,11 +5598,17 @@ export namespace MyNS {
 		 * Get v1/denylist/reported/ip
 		 * @param {string} dataset The dataset list type to filter for. Must be uppercase, numbers and underscore
 		 * @param {number} reported_before Restricts the result displaying only the IP addresses reported before `reported_before`. It must be a UNIX timestamp in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} reported_after Restricts the result displaying only the IP addresses reported after `reported_after`. It must be a UNIX timestamp in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} expires_before Restricts the result displaying only the IP addresses that will expire before `expires_before`. It must be a UNIX timestamp in seconds greater than the current UNIX timestamp.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} expires_after Restricts the result displaying only the IP addresses that will expire after `expires_after`. It must be a UNIX timestamp in seconds greater than the current UNIX timestamp.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} greater_than Restricts the result displaying only the IP addresses reported more times than `greater_than`. It must be an integer greater than 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} less_than Restricts the result displaying only the IP addresses reported less times than `less_than`. It must be an integer greater than 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {IPListOutputProtocol} ip_protocol_version Restrict the result displaying the IP protocol version requested (IPV4 or IPV6) or both (ALL). Some output formats MUST filter by IP protocol version first.
 		 * @param {Query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_getOutput_format} output_format The output format of the datasets.
 		 * @return {IPListCollectionOutput} Successful Response
@@ -5188,6 +5794,7 @@ export namespace MyNS {
 		 * - a `422 Unprocessable Entity` error if the ``logchange_ID`` is malformed.
 		 * It will also return the API Global errors described in the API description.
 		 * Get v1/log/ip/id/{logchange_id}
+		 * @param {number} logchange_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IPLogOutput} Successful Response
 		 */
 		Log_change_id_v1_log_ip_id__logchange_id__get(logchange_id: number): Observable<IPLogOutput> {
@@ -5220,6 +5827,7 @@ export namespace MyNS {
 		 * @param {string} ip_address The IPv4 or IPv6 address to asses the risk
 		 * @param {string} dataset The name of the dataset to restrict the query
 		 * @param {number} logged_after A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IPLogCollectionOutput} Successful Response
 		 */
 		Logchanges_ip_v1_log_ip__ip_address__get(ip_address: string, dataset: string | null | undefined, logged_after: number | null | undefined): Observable<IPLogCollectionOutput> {
@@ -5331,7 +5939,9 @@ export namespace MyNS {
 		 * Get v1/origin/addresses
 		 * @param {string} query The origin site to query
 		 * @param {number} page The page to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OriginAddressStatusCollectionOutput} Successful Response
 		 */
 		Query_origin_address_status_information_v1_origin_addresses_get(query: string, page: number | null | undefined, page_size: number | null | undefined): Observable<OriginAddressStatusCollectionOutput> {
@@ -5412,7 +6022,9 @@ export namespace MyNS {
 		 * @param {string} query The origin site to query
 		 * @param {Query_origin_traffic_client_v1_origin_client_analysis_getInterval} interval The data inteval to aggregate the result dataset
 		 * @param {number} from_timestamp A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after or equal to this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} to_timestamp A UNIX timestamp in milliseconds to restrict the results of the query to entries logged before this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OriginClientAnalysisCollectionOutput} Successful Response
 		 */
 		Query_origin_traffic_client_v1_origin_client_analysis_get(query: string, interval: Query_origin_traffic_client_v1_origin_client_analysis_getInterval, from_timestamp: number, to_timestamp: number | null | undefined): Observable<OriginClientAnalysisCollectionOutput> {
@@ -5456,7 +6068,9 @@ export namespace MyNS {
 		 * Get v1/origin/cookies
 		 * @param {string} query The origin site to query
 		 * @param {number} page The page to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OriginCookieIdStatusCollectionOutput} Successful Response
 		 */
 		Query_origin_cookie_id_status_information_v1_origin_cookies_get(query: string, page: number | null | undefined, page_size: number | null | undefined): Observable<OriginCookieIdStatusCollectionOutput> {
@@ -5691,7 +6305,9 @@ export namespace MyNS {
 		 * @param {string} query The origin site to query
 		 * @param {Query_origin_traffic_client_v1_origin_client_analysis_getInterval} interval The data inteval to aggregate the result dataset
 		 * @param {number} from_timestamp A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after or equal to this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} to_timestamp A UNIX timestamp in milliseconds to restrict the results of the query to entries logged before this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OriginTrafficAnalysisCollectionOutput} Successful Response
 		 */
 		Query_origin_traffic_analysis_v1_origin_traffic_analysis_get(query: string, interval: Query_origin_traffic_client_v1_origin_client_analysis_getInterval, from_timestamp: number, to_timestamp: number | null | undefined): Observable<OriginTrafficAnalysisCollectionOutput> {
@@ -5993,7 +6609,9 @@ export namespace MyNS {
 		 * It will return the API Global errors described in the API description.
 		 * Get v1/token/activity
 		 * @param {number} page The page to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ActivityCollectionOutput} Successful Response
 		 */
 		Query_token_activity_v1_token_activity_get(page: number | null | undefined, page_size: number | null | undefined): Observable<ActivityCollectionOutput> {

@@ -853,6 +853,7 @@ export namespace MyNS {
 		 * <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note> <p>A task might still run if it's processed from the queue before the <code>CancelTask</code> operation changes the task's state.</p> </note>
 		 * Post task/{taskId}/cancel
 		 * @param {string} taskId The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.
+		 *     Min length: 1    Max length: 64
 		 * @return {CancelTaskOutput} Success
 		 */
 		CancelTask(taskId: string): Observable<CancelTaskOutput> {
@@ -872,6 +873,7 @@ export namespace MyNS {
 		 * Checks device-specific information, such as the device type, software version, IP addresses, and lock status.
 		 * Post managed-device/{managedDeviceId}/describe
 		 * @param {string} managedDeviceId The ID of the device that you are checking the information of.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeDeviceOutput} Success
 		 */
 		DescribeDevice(managedDeviceId: string): Observable<DescribeDeviceOutput> {
@@ -882,6 +884,7 @@ export namespace MyNS {
 		 * Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields.
 		 * Post managed-device/{managedDeviceId}/resources/ec2/describe
 		 * @param {string} managedDeviceId The ID of the managed device.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeDeviceEc2Output} Success
 		 */
 		DescribeDeviceEc2Instances(managedDeviceId: string, requestBody: DescribeDeviceEc2InstancesPostBody): Observable<DescribeDeviceEc2Output> {
@@ -892,7 +895,9 @@ export namespace MyNS {
 		 * Checks the status of a remote task running on one or more target devices.
 		 * Post task/{taskId}/execution/{managedDeviceId}
 		 * @param {string} managedDeviceId The ID of the managed device.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} taskId The ID of the task that the action is describing.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeExecutionOutput} Success
 		 */
 		DescribeExecution(managedDeviceId: string, taskId: string): Observable<DescribeExecutionOutput> {
@@ -903,6 +908,7 @@ export namespace MyNS {
 		 * Checks the metadata for a given task on a device.
 		 * Post task/{taskId}
 		 * @param {string} taskId The ID of the task to be described.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeTaskOutput} Success
 		 */
 		DescribeTask(taskId: string): Observable<DescribeTaskOutput> {
@@ -913,9 +919,13 @@ export namespace MyNS {
 		 * Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.
 		 * Get managed-device/{managedDeviceId}/resources
 		 * @param {string} managedDeviceId The ID of the managed device that you are listing the resources of.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxResults The maximum number of resources per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token to continue to the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {string} type A structure used to filter the results by type of resource.
+		 *     Min length: 1    Max length: 50
 		 * @return {ListDeviceResourcesOutput} Success
 		 */
 		ListDeviceResources(managedDeviceId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, type: string | null | undefined): Observable<ListDeviceResourcesOutput> {
@@ -926,8 +936,11 @@ export namespace MyNS {
 		 * Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management enabled in the Amazon Web Services Region where the command is run.
 		 * Get managed-devices
 		 * @param {string} jobId The ID of the job used to order the device.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxResults The maximum number of devices to list per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token to continue to the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListDevicesOutput} Success
 		 */
 		ListDevices(jobId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDevicesOutput> {
@@ -938,9 +951,12 @@ export namespace MyNS {
 		 * Returns the status of tasks for one or more target devices.
 		 * Get executions#taskId
 		 * @param {number} maxResults The maximum number of tasks to list per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token to continue to the next page of tasks.
+		 *     Min length: 1    Max length: 1024
 		 * @param {ExecutionState} state A structure used to filter the tasks by their current state.
 		 * @param {string} taskId The ID of the task.
+		 *     Min length: 1    Max length: 64
 		 * @return {ListExecutionsOutput} Success
 		 */
 		ListExecutions(maxResults: number | null | undefined, nextToken: string | null | undefined, state: ExecutionState | null | undefined, taskId: string): Observable<ListExecutionsOutput> {
@@ -971,7 +987,9 @@ export namespace MyNS {
 		 * Returns a list of tasks that can be filtered by state.
 		 * Get tasks
 		 * @param {number} maxResults The maximum number of tasks per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token to continue to the next page of tasks.
+		 *     Min length: 1    Max length: 1024
 		 * @param {TaskState} state A structure used to filter the list of tasks.
 		 * @return {ListTasksOutput} Success
 		 */
@@ -995,8 +1013,8 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the action is called only once with the specified details.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -1008,8 +1026,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the task and its targets.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		description?: string | null;
 
@@ -1028,15 +1046,15 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the action is called only once with the specified details.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the task and its targets.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		description: FormControl<string | null | undefined>,
 

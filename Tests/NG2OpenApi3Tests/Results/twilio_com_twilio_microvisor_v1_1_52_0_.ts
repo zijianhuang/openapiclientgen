@@ -68,8 +68,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -85,8 +85,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this App.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -100,8 +100,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -117,8 +117,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this App.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -146,8 +146,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this App.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		app_sid?: string | null;
 
@@ -164,8 +164,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this App.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		app_sid: FormControl<string | null | undefined>,
 
@@ -192,8 +192,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -214,8 +214,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -229,8 +229,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -251,8 +251,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies this Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -282,8 +282,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies the parent Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		device_sid?: string | null;
 
@@ -301,8 +301,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies the parent Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		device_sid: FormControl<string | null | undefined>,
 
@@ -331,8 +331,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies the parent Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		device_sid?: string | null;
 
@@ -347,8 +347,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34-character string that uniquely identifies the parent Device.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		device_sid: FormControl<string | null | undefined>,
 
@@ -377,7 +377,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Apps for an Account.
 		 * Get v1/Apps
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAppReturn} OK
 		 */
@@ -419,7 +421,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Configs for an Account.
 		 * Get v1/Configs
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAccountConfigReturn} OK
 		 */
@@ -451,7 +455,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Devices registered with the Account.
 		 * Get v1/Devices
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDeviceReturn} OK
 		 */
@@ -464,7 +470,9 @@ export namespace MyNS {
 		 * Get v1/Devices/{DeviceSid}/Configs
 		 * @param {string} DeviceSid A 34-character string that uniquely identifies the Device.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDeviceConfigReturn} OK
 		 */
@@ -499,7 +507,9 @@ export namespace MyNS {
 		 * Get v1/Devices/{DeviceSid}/Secrets
 		 * @param {string} DeviceSid A 34-character string that uniquely identifies the Device.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDeviceSecretReturn} OK
 		 */
@@ -543,7 +553,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Secrets for an Account.
 		 * Get v1/Secrets
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAccountSecretReturn} OK
 		 */
@@ -588,7 +600,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -597,7 +613,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -631,7 +651,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -640,7 +664,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -674,7 +702,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -683,7 +715,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -717,7 +753,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -726,7 +766,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -760,7 +804,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -769,7 +817,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -803,7 +855,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -812,7 +868,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

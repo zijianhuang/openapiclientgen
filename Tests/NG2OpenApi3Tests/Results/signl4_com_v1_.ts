@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AlertAnnotationInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		annotationType?: number | null;
 		id?: string | null;
 		text?: string | null;
@@ -11,6 +13,8 @@ export namespace MyNS {
 		userId?: string | null;
 	}
 	export interface AlertAnnotationInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		annotationType: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		text: FormControl<string | null | undefined>,
@@ -85,29 +89,41 @@ export namespace MyNS {
 	}
 
 	export interface AlertCounts {
-		acked?: number | null;
-		closed?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		acked?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		closed?: string | null;
 		end?: Date | null;
 		lastModified?: Date | null;
 		start?: Date | null;
-		unhandled?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unhandled?: string | null;
 	}
 	export interface AlertCountsFormProperties {
-		acked: FormControl<number | null | undefined>,
-		closed: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		acked: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		closed: FormControl<string | null | undefined>,
 		end: FormControl<Date | null | undefined>,
 		lastModified: FormControl<Date | null | undefined>,
 		start: FormControl<Date | null | undefined>,
-		unhandled: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unhandled: FormControl<string | null | undefined>,
 	}
 	export function CreateAlertCountsFormGroup() {
 		return new FormGroup<AlertCountsFormProperties>({
-			acked: new FormControl<number | null | undefined>(undefined),
-			closed: new FormControl<number | null | undefined>(undefined),
+			acked: new FormControl<string | null | undefined>(undefined),
+			closed: new FormControl<string | null | undefined>(undefined),
 			end: new FormControl<Date | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined),
 			start: new FormControl<Date | null | undefined>(undefined),
-			unhandled: new FormControl<number | null | undefined>(undefined),
+			unhandled: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -264,6 +280,8 @@ export namespace MyNS {
 		eventId?: string | null;
 		eventSourceId?: string | null;
 		eventSourceType?: EventSourceTypes;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags?: number | null;
 		history?: AlertHistoryInfoDetailed;
 		id?: string | null;
@@ -282,6 +300,8 @@ export namespace MyNS {
 		eventId: FormControl<string | null | undefined>,
 		eventSourceId: FormControl<string | null | undefined>,
 		eventSourceType: FormControl<EventSourceTypes | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		lastModified: FormControl<Date | null | undefined>,
@@ -316,12 +336,16 @@ export namespace MyNS {
 
 	export interface EventParameterInfo {
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		type?: EventParameterTypes;
 		value?: string | null;
 	}
 	export interface EventParameterInfoFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		type: FormControl<EventParameterTypes | null | undefined>,
 		value: FormControl<string | null | undefined>,
@@ -408,6 +432,8 @@ export namespace MyNS {
 		optOutMode?: TeamCategoryOptOutModes;
 		persistentNotificicationMode?: PersistentNotificationModes;
 		responseMode?: AlertResponseModes;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responseTime?: number | null;
 	}
 	export interface AlertSettingsFormProperties {
@@ -416,6 +442,8 @@ export namespace MyNS {
 		optOutMode: FormControl<TeamCategoryOptOutModes | null | undefined>,
 		persistentNotificicationMode: FormControl<PersistentNotificationModes | null | undefined>,
 		responseMode: FormControl<AlertResponseModes | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		responseTime: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertSettingsFormGroup() {
@@ -469,6 +497,8 @@ export namespace MyNS {
 		lastMatch?: Date | null;
 		name?: string | null;
 		options?: CategoryInfoOptions;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface CategoryInfoFormProperties {
@@ -480,6 +510,8 @@ export namespace MyNS {
 		lastMatch: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		options: FormControl<CategoryInfoOptions | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryInfoFormGroup() {
@@ -503,20 +535,28 @@ export namespace MyNS {
 
 	export interface CategoryMetrics {
 		categoryId?: string | null;
-		last24Hours?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last24Hours?: string | null;
 		lastAlert?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscriberCount?: number | null;
 	}
 	export interface CategoryMetricsFormProperties {
 		categoryId: FormControl<string | null | undefined>,
-		last24Hours: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last24Hours: FormControl<string | null | undefined>,
 		lastAlert: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscriberCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryMetricsFormGroup() {
 		return new FormGroup<CategoryMetricsFormProperties>({
 			categoryId: new FormControl<string | null | undefined>(undefined),
-			last24Hours: new FormControl<number | null | undefined>(undefined),
+			last24Hours: new FormControl<string | null | undefined>(undefined),
 			lastAlert: new FormControl<Date | null | undefined>(undefined),
 			subscriberCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -598,11 +638,19 @@ export namespace MyNS {
 	}
 
 	export interface ChannelPriceInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsPerMessage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voicePerMinute?: number | null;
 	}
 	export interface ChannelPriceInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsPerMessage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voicePerMinute: FormControl<number | null | undefined>,
 	}
 	export function CreateChannelPriceInfoFormGroup() {
@@ -622,6 +670,8 @@ export namespace MyNS {
 		device?: Device;
 		id?: string | null;
 		lastUpdated?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		options?: number | null;
 		userId?: string | null;
 	}
@@ -631,6 +681,8 @@ export namespace MyNS {
 		created: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		lastUpdated: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		options: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 	}
@@ -726,6 +778,8 @@ export namespace MyNS {
 	}
 
 	export interface ErrorResponseContent {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		details?: string | null;
 		errors?: Array<ErrorResponseContentBase>;
@@ -733,6 +787,8 @@ export namespace MyNS {
 		requestId?: string | null;
 	}
 	export interface ErrorResponseContentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -923,10 +979,14 @@ export namespace MyNS {
 		annotations?: Array<AlertAnnotationInfo>;
 		categoryId?: string | null;
 		eventId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags?: number | null;
 		historyDetailed?: AlertHistoryInfoDetailed;
 		id?: string | null;
 		lastModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requiredAcknowledgements?: number | null;
 		status?: AlertStatusCodes;
 		subscriptionId?: string | null;
@@ -937,9 +997,13 @@ export namespace MyNS {
 	export interface OverviewAlertFormProperties {
 		categoryId: FormControl<string | null | undefined>,
 		eventId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		lastModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requiredAcknowledgements: FormControl<number | null | undefined>,
 		status: FormControl<AlertStatusCodes | null | undefined>,
 		subscriptionId: FormControl<string | null | undefined>,
@@ -1040,11 +1104,15 @@ export namespace MyNS {
 	}
 
 	export interface PrepaidBalanceInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		balance?: number | null;
 		latestTopUp?: Date | null;
 		pendingTransaction?: boolean | null;
 	}
 	export interface PrepaidBalanceInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		balance: FormControl<number | null | undefined>,
 		latestTopUp: FormControl<Date | null | undefined>,
 		pendingTransaction: FormControl<boolean | null | undefined>,
@@ -1059,13 +1127,21 @@ export namespace MyNS {
 	}
 
 	export interface PrepaidSettingsInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topUpAmount?: number | null;
 		topUpEnabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topUpLimit?: number | null;
 	}
 	export interface PrepaidSettingsInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topUpAmount: FormControl<number | null | undefined>,
 		topUpEnabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topUpLimit: FormControl<number | null | undefined>,
 	}
 	export function CreatePrepaidSettingsInfoFormGroup() {
@@ -1081,11 +1157,15 @@ export namespace MyNS {
 		autoTopUpId?: string | null;
 		created?: Date | null;
 		createdBy?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits?: number | null;
 		currency?: string | null;
 		modified?: Date | null;
 		packageCode?: string | null;
 		status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 		subscriptionId?: string | null;
 		transactionId?: string | null;
@@ -1094,11 +1174,15 @@ export namespace MyNS {
 		autoTopUpId: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		createdBy: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits: FormControl<number | null | undefined>,
 		currency: FormControl<string | null | undefined>,
 		modified: FormControl<Date | null | undefined>,
 		packageCode: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 		subscriptionId: FormControl<string | null | undefined>,
 		transactionId: FormControl<string | null | undefined>,
@@ -1124,6 +1208,8 @@ export namespace MyNS {
 		attachments?: Array<AlertAttachment>;
 		category?: string | null;
 		externalId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags?: number | null;
 		parameters?: Array<EventParameterInfo>;
 		severity?: AlertSeverities;
@@ -1133,6 +1219,8 @@ export namespace MyNS {
 	export interface RaiseAlertInfoFormProperties {
 		category: FormControl<string | null | undefined>,
 		externalId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flags: FormControl<number | null | undefined>,
 		severity: FormControl<AlertSeverities | null | undefined>,
 		text: FormControl<string | null | undefined>,
@@ -1153,6 +1241,8 @@ export namespace MyNS {
 	export interface ScheduleInfo {
 		end?: Date | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		options?: number | null;
 		start?: Date | null;
 		userId?: string | null;
@@ -1160,6 +1250,8 @@ export namespace MyNS {
 	export interface ScheduleInfoFormProperties {
 		end: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		options: FormControl<number | null | undefined>,
 		start: FormControl<Date | null | undefined>,
 		userId: FormControl<string | null | undefined>,
@@ -1272,11 +1364,15 @@ export namespace MyNS {
 
 	export interface SubscriptionFeature {
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type?: number | null;
 		value?: string | null;
 	}
 	export interface SubscriptionFeatureFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type: FormControl<number | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -1299,8 +1395,12 @@ export namespace MyNS {
 		nextBilling?: Date | null;
 		ownerId?: string | null;
 		planCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		planState?: number | null;
 		referralEnabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface SubscriptionInfoFormProperties {
@@ -1313,8 +1413,12 @@ export namespace MyNS {
 		nextBilling: FormControl<Date | null | undefined>,
 		ownerId: FormControl<string | null | undefined>,
 		planCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		planState: FormControl<number | null | undefined>,
 		referralEnabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionInfoFormGroup() {
@@ -1482,6 +1586,8 @@ export namespace MyNS {
 	}
 
 	export interface UserInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorIndex?: number | null;
 		contactAddresses?: Array<ContactAddressInfo>;
 		dutyInfo?: UserDutyInfo;
@@ -1496,6 +1602,8 @@ export namespace MyNS {
 		userImageLastModified?: Date | null;
 	}
 	export interface UserInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorIndex: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		isDeactivated: FormControl<boolean | null | undefined>,
@@ -1540,12 +1648,16 @@ export namespace MyNS {
 	}
 
 	export interface UserInvitationResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		errorCode?: number | null;
 		errorMessage?: string | null;
 		invitedUser?: InvitedUserInfo;
 		success?: boolean | null;
 	}
 	export interface UserInvitationResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		errorCode: FormControl<number | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 		success: FormControl<boolean | null | undefined>,
@@ -1576,16 +1688,24 @@ export namespace MyNS {
 	}
 
 	export interface UserLicenseInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentUsers?: number | null;
 		isFree?: boolean | null;
 		isTrial?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		licensedUsers?: number | null;
 		planCode?: string | null;
 	}
 	export interface UserLicenseInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentUsers: FormControl<number | null | undefined>,
 		isFree: FormControl<boolean | null | undefined>,
 		isTrial: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		licensedUsers: FormControl<number | null | undefined>,
 		planCode: FormControl<string | null | undefined>,
 	}
@@ -1773,6 +1893,7 @@ export namespace MyNS {
 		 * Post alerts/paged
 		 * @param {number} maxResults Defines the limit of retrieved alert details per request. 1 to 100 are allowed per request.
 		 *                 Number of alerts could be less if filtered but at least 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userId User ID of the user you want to get alerts for.
 		 * @param {AlertFilterPublic} requestBody The filter defines which alerts are supposed to be retrieved.
 		 * @return {OverviewAlertPagedResultsPublic} Returns a paged result with found alerts and continuation token if more alerts are in the database.
@@ -1875,7 +1996,9 @@ export namespace MyNS {
 		 * @param {string} alertId Id of the alert that contains the wanted attachment.
 		 * @param {string} attachmentId Id of the attachment, that you want to retrieve.
 		 * @param {number} width Optional parameter defining the wanted width of the picture that is retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional parameter defining the wanted height of the picture that is retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} scale Optional parameter defining whether it's wanted to scale the retrieved image. Default is set to
 		 * true.
 		 * @return {string} Returns the attachment image with additional meta information.
@@ -2102,6 +2225,7 @@ export namespace MyNS {
 		 * Post events/paged
 		 * @param {number} maxResults Defines the limit of retrieved alert details per request. 1 to 100 are allowed per request.
 		 *                  Number of alerts could be less if filtered but at least 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EventFilter} requestBody The filter defines which alerts are supposed to be retrieved.
 		 * @return {OverviewEventPagedResultsPublic} Returns paged result with found events and continuation token, if database holds more events.
 		 */
@@ -2568,6 +2692,7 @@ export namespace MyNS {
 		 * Returns information about all duties that belong to the team.
 		 * Get teams/{teamId}/schedules
 		 * @param {string} teamId Id of the team the schedules user belongs to
+		 * @param {number} Limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ScheduleInfo>} Success
 		 */
 		Teams_teamIdSchedulesGetByUserIdAndMinDateAndLimit(teamId: string, UserId: string | null | undefined, MinDate: Date | null | undefined, Limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ScheduleInfo>> {
@@ -2698,6 +2823,8 @@ export namespace MyNS {
 
 		/**
 		 * Get users/{userId}/image
+		 * @param {number} height Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} width Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserImage} Success
 		 */
 		Users_userIdImageGetByHeightAndWidth(userId: string, height: number | null | undefined, width: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserImage> {

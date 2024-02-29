@@ -412,7 +412,9 @@ namespace MyNS
 		/// Lists all of the available IoTSpaces service REST API operations.
 		/// Operations_List providers/Microsoft.IoTSpaces/operations
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<OperationListResult> Operations_ListAsync(Operations_ListApi_version api_version)
 		{
@@ -441,7 +443,9 @@ namespace MyNS
 		/// Get all the IoTSpaces instances in a subscription.
 		/// IoTSpaces_List subscriptions/{subscriptionId}/providers/Microsoft.IoTSpaces/Graph
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the IoTSpaces instances in the subscription.</returns>
 		public async Task<IoTSpacesDescriptionListResult> IoTSpaces_ListAsync(IoTSpaces_ListApi_version api_version, string subscriptionId)
@@ -471,7 +475,9 @@ namespace MyNS
 		/// Check if an IoTSpaces instance name is available.
 		/// IoTSpaces_CheckNameAvailability subscriptions/{subscriptionId}/providers/Microsoft.IoTSpaces/checkNameAvailability
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="requestBody">Set the name parameter in the OperationInputs structure to the name of the IoTSpaces instance to check.</param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized response that specifies whether the IoTSpaces service name is available. If the name is not available, the body contains the reason.</returns>
@@ -509,9 +515,14 @@ namespace MyNS
 		/// Get all the IoTSpaces instances in a resource group.
 		/// IoTSpaces_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the IoTSpaces instances in the resource group.</returns>
 		public async Task<IoTSpacesDescriptionListResult> IoTSpaces_ListByResourceGroupAsync(IoTSpaces_ListByResourceGroupApi_version api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -540,10 +551,18 @@ namespace MyNS
 		/// Get the metadata of a IoTSpaces instance.
 		/// IoTSpaces_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.</param>
-		/// <param name="resourceName">The name of the IoTSpaces instance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>The body contains all the non-security properties of the IoTSpaces instance. Security-related properties are set to null.</returns>
 		public async Task<IoTSpacesDescription> IoTSpaces_GetAsync(IoTSpaces_GetApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -572,10 +591,18 @@ namespace MyNS
 		/// Create or update the metadata of an IoTSpaces instance. The usual pattern to modify a property is to retrieve the IoTSpaces instance metadata and security metadata, and then combine them with the modified values in a new body to update the IoTSpaces instance.
 		/// IoTSpaces_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.</param>
-		/// <param name="resourceName">The name of the IoTSpaces instance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The IoTSpaces instance metadata and security metadata.</param>
 		/// <returns>This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<IoTSpacesDescription> IoTSpaces_CreateOrUpdateAsync(IoTSpaces_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, IoTSpacesDescription requestBody)
@@ -612,10 +639,18 @@ namespace MyNS
 		/// Delete an IoTSpaces instance.
 		/// IoTSpaces_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.</param>
-		/// <param name="resourceName">The name of the IoTSpaces instance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<IoTSpacesDescription> IoTSpaces_DeleteAsync(IoTSpaces_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -644,10 +679,18 @@ namespace MyNS
 		/// Update the metadata of a IoTSpaces instance.
 		/// IoTSpaces_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		/// </summary>
-		/// <param name="api_version">The version of the API.</param>
+		/// <param name="api_version">The version of the API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.</param>
-		/// <param name="resourceName">The name of the IoTSpaces instance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the IoTSpaces instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The IoTSpaces instance metadata and security metadata.</param>
 		/// <returns>This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<IoTSpacesDescription> IoTSpaces_UpdateAsync(IoTSpaces_UpdateApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, IoTSpacesPatchDescription requestBody)

@@ -1277,7 +1277,9 @@ export namespace MyNS {
 		 * <p> The BatchCreateTableRows API allows you to create one or more rows at the end of a table in a workbook. The API allows you to specify the values to set in some or all of the columns in the new rows. </p> <p> If a column is not explicitly set in a specific row, then the column level formula specified in the table will be applied to the new row. If there is no column level formula but the last row of the table has a formula, then that formula will be copied down to the new row. If there is no column level formula and no formula in the last row of the table, then that column will be left blank for the new rows. </p>
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/batchcreate
 		 * @param {string} workbookId <p>The ID of the workbook where the new rows are being added.</p> <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table where the new rows are being added.</p> <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchCreateTableRowsResult} Success
 		 */
 		BatchCreateTableRows(workbookId: string, tableId: string, requestBody: BatchCreateTableRowsPostBody): Observable<BatchCreateTableRowsResult> {
@@ -1288,7 +1290,9 @@ export namespace MyNS {
 		 * The BatchDeleteTableRows API allows you to delete one or more rows from a table in a workbook. You need to specify the ids of the rows that you want to delete from the table.
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/batchdelete
 		 * @param {string} workbookId <p>The ID of the workbook where the rows are being deleted.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table where the rows are being deleted.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchDeleteTableRowsResult} Success
 		 */
 		BatchDeleteTableRows(workbookId: string, tableId: string, requestBody: BatchDeleteTableRowsPostBody): Observable<BatchDeleteTableRowsResult> {
@@ -1299,7 +1303,9 @@ export namespace MyNS {
 		 * <p> The BatchUpdateTableRows API allows you to update one or more rows in a table in a workbook. </p> <p> You can specify the values to set in some or all of the columns in the table for the specified rows. If a column is not explicitly specified in a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/batchupdate
 		 * @param {string} workbookId <p>The ID of the workbook where the rows are being updated.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table where the rows are being updated.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchUpdateTableRowsResult} Success
 		 */
 		BatchUpdateTableRows(workbookId: string, tableId: string, requestBody: BatchUpdateTableRowsPostBody): Observable<BatchUpdateTableRowsResult> {
@@ -1310,7 +1316,9 @@ export namespace MyNS {
 		 * <p> The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert operation takes a filter expression as input and evaluates it to find matching rows on the destination table. If matching rows are found, it will update the cells in the matching rows to new values specified in the request. If no matching rows are found, a new row is added at the end of the table and the cells in that row are set to the new values specified in the request. </p> <p> You can specify the values to set in some or all of the columns in the table for the matching or newly appended rows. If a column is not explicitly specified for a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/batchupsert
 		 * @param {string} workbookId <p>The ID of the workbook where the rows are being upserted.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table where the rows are being upserted.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchUpsertTableRowsResult} Success
 		 */
 		BatchUpsertTableRows(workbookId: string, tableId: string, requestBody: BatchUpsertTableRowsPostBody): Observable<BatchUpsertTableRowsResult> {
@@ -1321,8 +1329,11 @@ export namespace MyNS {
 		 * The DescribeTableDataImportJob API allows you to retrieve the status and details of a table data import job.
 		 * Get workbooks/{workbookId}/tables/{tableId}/import/{jobId}
 		 * @param {string} workbookId <p>The ID of the workbook into which data was imported.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table into which data was imported.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} jobId <p>The ID of the job that was returned by the StartTableDataImportJob request.</p> <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeTableDataImportJobResult} Success
 		 */
 		DescribeTableDataImportJob(workbookId: string, tableId: string, jobId: string): Observable<DescribeTableDataImportJobResult> {
@@ -1342,9 +1353,13 @@ export namespace MyNS {
 		 * The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app. The API allows setting local variables, which can then be used in the automation being invoked. This allows automating the Honeycode app interactions to write, update or delete data in the workbook.
 		 * Post workbooks/{workbookId}/apps/{appId}/screens/{screenId}/automations/{automationId}
 		 * @param {string} workbookId The ID of the workbook that contains the screen automation.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} appId The ID of the app that contains the screen automation.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} screenId The ID of the screen that contains the screen automation.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} automationId The ID of the automation action to be performed.
+		 *     Min length: 36    Max length: 36
 		 * @return {InvokeScreenAutomationResult} Success
 		 */
 		InvokeScreenAutomation(workbookId: string, appId: string, screenId: string, automationId: string, requestBody: InvokeScreenAutomationPostBody): Observable<InvokeScreenAutomationResult> {
@@ -1355,8 +1370,11 @@ export namespace MyNS {
 		 * The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook.
 		 * Get workbooks/{workbookId}/tables/{tableId}/columns
 		 * @param {string} workbookId <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table whose columns are being retrieved.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListTableColumnsResult} Success
 		 */
 		ListTableColumns(workbookId: string, tableId: string, nextToken: string | null | undefined): Observable<ListTableColumnsResult> {
@@ -1367,7 +1385,9 @@ export namespace MyNS {
 		 * The ListTableRows API allows you to retrieve a list of all the rows in a table in a workbook.
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/list
 		 * @param {string} workbookId <p>The ID of the workbook that contains the table whose rows are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table whose rows are being retrieved.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTableRowsResult} Success
@@ -1380,8 +1400,11 @@ export namespace MyNS {
 		 * The ListTables API allows you to retrieve a list of all the tables in a workbook.
 		 * Get workbooks/{workbookId}/tables
 		 * @param {string} workbookId <p>The ID of the workbook whose tables are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {number} maxResults The maximum number of tables to return in each page of the results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListTablesResult} Success
 		 */
 		ListTables(workbookId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListTablesResult> {
@@ -1392,6 +1415,7 @@ export namespace MyNS {
 		 * The ListTagsForResource API allows you to return a resource's tags.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Min length: 1    Max length: 256
 		 * @return {ListTagsForResourceResult} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResult> {
@@ -1402,6 +1426,7 @@ export namespace MyNS {
 		 * The TagResource API allows you to add tags to an ARN-able resource. Resource includes workbook, table, screen and screen-automation.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Min length: 1    Max length: 256
 		 * @return {TagResourceResult} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResult> {
@@ -1412,7 +1437,9 @@ export namespace MyNS {
 		 * The QueryTableRows API allows you to use a filter formula to query for specific rows in a table.
 		 * Post workbooks/{workbookId}/tables/{tableId}/rows/query
 		 * @param {string} workbookId <p>The ID of the workbook whose table rows are being queried.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table whose rows are being queried.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {QueryTableRowsResult} Success
@@ -1425,7 +1452,9 @@ export namespace MyNS {
 		 * The StartTableDataImportJob API allows you to start an import job on a table. This API will only return the id of the job that was started. To find out the status of the import request, you need to call the DescribeTableDataImportJob API.
 		 * Post workbooks/{workbookId}/tables/{tableId}/import
 		 * @param {string} workbookId <p>The ID of the workbook where the rows are being imported.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @param {string} tableId <p>The ID of the table where the rows are being imported.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+		 *     Min length: 36    Max length: 36
 		 * @return {StartTableDataImportJobResult} Success
 		 */
 		StartTableDataImportJob(workbookId: string, tableId: string, requestBody: StartTableDataImportJobPostBody): Observable<StartTableDataImportJobResult> {
@@ -1436,7 +1465,9 @@ export namespace MyNS {
 		 * The UntagResource API allows you to removes tags from an ARN-able resource. Resource includes workbook, table, screen and screen-automation.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Min length: 1    Max length: 256
 		 * @param {Array<string>} tagKeys A list of tag keys to remove from the resource.
+		 *     Maximum items: 100
 		 * @return {UntagResourceResult} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResult> {
@@ -1456,8 +1487,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -1465,8 +1496,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1489,8 +1520,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -1498,8 +1529,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1522,8 +1553,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -1531,8 +1562,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1553,8 +1584,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -1562,8 +1593,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1579,24 +1610,24 @@ export namespace MyNS {
 		/**
 		 * The ID of the workbook that contains the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		workbookId: string;
 
 		/**
 		 * The ID of the app that contains the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		appId: string;
 
 		/**
 		 * The ID of the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		screenId: string;
 
@@ -1612,8 +1643,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1622,24 +1653,24 @@ export namespace MyNS {
 		/**
 		 * The ID of the workbook that contains the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		workbookId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the app that contains the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		appId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the screen.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		screenId: FormControl<string | null | undefined>,
 
@@ -1655,8 +1686,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1679,15 +1710,15 @@ export namespace MyNS {
 
 		/**
 		 * The row ID for the automation if the automation is defined inside a block with source or list.
-		 * Max length: 77
 		 * Min length: 77
+		 * Max length: 77
 		 */
 		rowId?: string | null;
 
 		/**
 		 * <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -1698,15 +1729,15 @@ export namespace MyNS {
 
 		/**
 		 * The row ID for the automation if the automation is defined inside a block with source or list.
-		 * Max length: 77
 		 * Min length: 77
+		 * Max length: 77
 		 */
 		rowId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1737,8 +1768,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1753,8 +1784,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1806,8 +1837,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1822,8 +1853,8 @@ export namespace MyNS {
 
 		/**
 		 * <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1874,8 +1905,8 @@ export namespace MyNS {
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -1890,8 +1921,8 @@ export namespace MyNS {
 		/**
 		 * <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}

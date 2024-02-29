@@ -36,10 +36,14 @@ export namespace MyNS {
 	}
 
 	export interface Isp {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface IspFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -52,20 +56,32 @@ export namespace MyNS {
 	}
 
 	export interface Location {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accuracyRadius?: number | null;
 		cityName?: string | null;
 		continent?: Continent;
 		country?: Country;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		postalCode?: string | null;
 		subdivisions?: Array<Subdivision>;
 		timezone?: string | null;
 	}
 	export interface LocationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accuracyRadius: FormControl<number | null | undefined>,
 		cityName: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 		postalCode: FormControl<string | null | undefined>,
 		timezone: FormControl<string | null | undefined>,
@@ -105,9 +121,13 @@ export namespace MyNS {
 		isp?: Isp;
 		lastTested?: string | null;
 		location?: Location;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		protocol?: string | null;
 		timings?: Timings;
+
+		/** Type: float */
 		uptime?: number | null;
 	}
 	export interface ProxyFormProperties {
@@ -115,8 +135,12 @@ export namespace MyNS {
 		address: FormControl<string | null | undefined>,
 		isSsl: FormControl<boolean | null | undefined>,
 		lastTested: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		protocol: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		uptime: FormControl<number | null | undefined>,
 	}
 	export function CreateProxyFormGroup() {
@@ -133,13 +157,25 @@ export namespace MyNS {
 	}
 
 	export interface Timings {
+
+		/** Type: float */
 		connectTime?: number | null;
+
+		/** Type: float */
 		firstByteTime?: number | null;
+
+		/** Type: float */
 		responseTime?: number | null;
 	}
 	export interface TimingsFormProperties {
+
+		/** Type: float */
 		connectTime: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		firstByteTime: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		responseTime: FormControl<number | null | undefined>,
 	}
 	export function CreateTimingsFormGroup() {

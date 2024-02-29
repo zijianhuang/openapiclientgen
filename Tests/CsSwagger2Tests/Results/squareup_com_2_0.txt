@@ -9704,7 +9704,9 @@ namespace MyNS
 		/// <param name="end_created_at">If filtering results by their created_at field, the end of the requested reporting period, in ISO 8601 format.</param>
 		/// <param name="status">If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE).</param>
 		/// <param name="external_id">If provided, the endpoint returns only employee entities with the specified external_id.</param>
-		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.</param>
+		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -9874,7 +9876,9 @@ namespace MyNS
 		/// ListEmployeeRoles v1/me/roles
 		/// </summary>
 		/// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC </param>
-		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.</param>
+		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -10022,7 +10026,9 @@ namespace MyNS
 		/// <param name="begin_updated_at">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format.</param>
 		/// <param name="end_updated_at">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format.</param>
 		/// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don't provide this parameter, both valid and deleted timecards are returned.</param>
-		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.</param>
+		/// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -10774,7 +10780,9 @@ namespace MyNS
 		/// ListInventory v1/{location_id}/inventory
 		/// </summary>
 		/// <param name="location_id">The ID of the item's associated location.</param>
-		/// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000.</param>
+		/// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000.
+		/// Maximum: 1000
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -11555,7 +11563,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="location_id">The ID of the location to list online store orders for.</param>
 		/// <param name="order">TThe order in which payments are listed in the response.</param>
-		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.</param>
+		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -11879,7 +11889,9 @@ namespace MyNS
 		/// <param name="order">The order in which payments are listed in the response.</param>
 		/// <param name="begin_time">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.</param>
 		/// <param name="end_time">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.</param>
-		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.</param>
+		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -11946,7 +11958,9 @@ namespace MyNS
 		/// <param name="order">TThe order in which payments are listed in the response.</param>
 		/// <param name="begin_time">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.</param>
 		/// <param name="end_time">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.</param>
-		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.</param>
+		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>
 		/// <returns>Success</returns>
@@ -12022,7 +12036,9 @@ namespace MyNS
 		/// <param name="order">TThe order in which payments are listed in the response.</param>
 		/// <param name="begin_time">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.</param>
 		/// <param name="end_time">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.</param>
-		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.</param>
+		/// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200.
+		/// Maximum: 200
+		// </param>
 		/// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED).</param>
 		/// <param name="batch_token">A pagination cursor to retrieve the next set of results for your
 		///original query to the endpoint.</param>

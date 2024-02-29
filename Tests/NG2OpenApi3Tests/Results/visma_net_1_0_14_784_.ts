@@ -42,6 +42,7 @@ export namespace MyNS {
 		 * Note that the behavior of the 'discountAmount' field is affected by the 'hasManualDiscount' option.
 		 * If 'hasManualDiscount' is provided and set to "false", and 'discountAmount' is provided, the system will set the discountAmount according to the predefined rules.
 		 * </remarks>
+		 * Type: double
 		 */
 		discountAmount?: number | null;
 
@@ -125,7 +126,10 @@ export namespace MyNS {
 		 */
 		purchaseOrderSource?: string | null;
 
-		/** Sets the quantity of items on the order line */
+		/**
+		 * Sets the quantity of items on the order line
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Sets the reason code for the line. This must be one of the selectable reason codes */
@@ -177,7 +181,10 @@ export namespace MyNS {
 		 */
 		supplierId?: string | null;
 
-		/** Sets the supplier price for the line item. */
+		/**
+		 * Sets the supplier price for the line item.
+		 * Type: double
+		 */
 		supplierPrice?: number | null;
 
 		/** Overrides the default tax category id (from customer's class). The value must be one of the selectable Tax Categories */
@@ -193,6 +200,7 @@ export namespace MyNS {
 		/**
 		 * Sets the unit cost of the product on the line. If no cost is set (null or omitted) the cost will be set
 		 * according to predefined rules
+		 * Type: double
 		 */
 		unitCost?: number | null;
 
@@ -207,6 +215,7 @@ export namespace MyNS {
 		 * If no price is set(null or omitted) the price will be set according to predefined rules based on the inventoryId and the customer.
 		 * Note that the behavior of the `unitPrice` field is affected by the `hasManualPrice` option.
 		 * If `hasManualPrice` is provided and set to "false", and `unitPrice` is provided, the system will set the `unitPrice` according to the predefined rules.
+		 * Type: double
 		 */
 		unitPrice?: number | null;
 
@@ -244,6 +253,7 @@ export namespace MyNS {
 		 * Note that the behavior of the 'discountAmount' field is affected by the 'hasManualDiscount' option.
 		 * If 'hasManualDiscount' is provided and set to "false", and 'discountAmount' is provided, the system will set the discountAmount according to the predefined rules.
 		 * </remarks>
+		 * Type: double
 		 */
 		discountAmount: FormControl<number | null | undefined>,
 
@@ -327,7 +337,10 @@ export namespace MyNS {
 		 */
 		purchaseOrderSource: FormControl<string | null | undefined>,
 
-		/** Sets the quantity of items on the order line */
+		/**
+		 * Sets the quantity of items on the order line
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Sets the reason code for the line. This must be one of the selectable reason codes */
@@ -379,7 +392,10 @@ export namespace MyNS {
 		 */
 		supplierId: FormControl<string | null | undefined>,
 
-		/** Sets the supplier price for the line item. */
+		/**
+		 * Sets the supplier price for the line item.
+		 * Type: double
+		 */
 		supplierPrice: FormControl<number | null | undefined>,
 
 		/** Overrides the default tax category id (from customer's class). The value must be one of the selectable Tax Categories */
@@ -395,6 +411,7 @@ export namespace MyNS {
 		/**
 		 * Sets the unit cost of the product on the line. If no cost is set (null or omitted) the cost will be set
 		 * according to predefined rules
+		 * Type: double
 		 */
 		unitCost: FormControl<number | null | undefined>,
 
@@ -409,6 +426,7 @@ export namespace MyNS {
 		 * If no price is set(null or omitted) the price will be set according to predefined rules based on the inventoryId and the customer.
 		 * Note that the behavior of the `unitPrice` field is affected by the `hasManualPrice` option.
 		 * If `hasManualPrice` is provided and set to "false", and `unitPrice` is provided, the system will set the `unitPrice` according to the predefined rules.
+		 * Type: double
 		 */
 		unitPrice: FormControl<number | null | undefined>,
 
@@ -463,7 +481,10 @@ export namespace MyNS {
 		country?: CdNamePairDto;
 		county?: CdNamePairDto;
 
-		/** The address id */
+		/**
+		 * The address id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Address line 1 */
@@ -486,7 +507,10 @@ export namespace MyNS {
 		/** The city */
 		city: FormControl<string | null | undefined>,
 
-		/** The address id */
+		/**
+		 * The address id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Address line 1 */
@@ -544,11 +568,15 @@ export namespace MyNS {
 	export interface AttachmentDto {
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision?: number | null;
 	}
 	export interface AttachmentDtoFormProperties {
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateAttachmentDtoFormGroup() {
@@ -595,7 +623,10 @@ export namespace MyNS {
 		/** The fax number of the contact */
 		fax?: string | null;
 
-		/** The id of the contact */
+		/**
+		 * The id of the contact
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The name of the contact */
@@ -621,7 +652,10 @@ export namespace MyNS {
 		/** The fax number of the contact */
 		fax: FormControl<string | null | undefined>,
 
-		/** The id of the contact */
+		/**
+		 * The id of the contact
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The name of the contact */
@@ -673,7 +707,10 @@ export namespace MyNS {
 		/** Unique id for the customer */
 		id?: string | null;
 
-		/** An internal unique id */
+		/**
+		 * An internal unique id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 
 		/** The name of the customer */
@@ -710,7 +747,10 @@ export namespace MyNS {
 		/** Unique id for the customer */
 		id: FormControl<string | null | undefined>,
 
-		/** An internal unique id */
+		/**
+		 * An internal unique id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 
 		/** The name of the customer */
@@ -756,7 +796,10 @@ export namespace MyNS {
 		/** Location id */
 		id?: string | null;
 
-		/** An internal id of the customer location */
+		/**
+		 * An internal id of the customer location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 
 		/** Location description */
@@ -782,7 +825,10 @@ export namespace MyNS {
 		/** Location id */
 		id: FormControl<string | null | undefined>,
 
-		/** An internal id of the customer location */
+		/**
+		 * An internal id of the customer location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 
 		/** Location description */
@@ -813,7 +859,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage?: string | null;
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** Gets or sets the items that are paged */
@@ -824,7 +873,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage: FormControl<string | null | undefined>,
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerDtoPagedResultFormGroup() {
@@ -857,12 +909,16 @@ export namespace MyNS {
 		/** Default Insurance */
 		insurance?: boolean | null;
 
-		/** An internal id of the customer location */
+		/**
+		 * An internal id of the customer location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 
 		/**
 		 * The number of days required for the shipped goods to reach the customer.
 		 * Used in the calculation of the scheduled shipment date
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		leadTime?: number | null;
 
@@ -875,7 +931,10 @@ export namespace MyNS {
 		/** Price class */
 		priceClassId?: string | null;
 
-		/** Default Priority */
+		/**
+		 * Default Priority
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/**
@@ -934,12 +993,16 @@ export namespace MyNS {
 		/** Default Insurance */
 		insurance: FormControl<boolean | null | undefined>,
 
-		/** An internal id of the customer location */
+		/**
+		 * An internal id of the customer location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of days required for the shipped goods to reach the customer.
 		 * Used in the calculation of the scheduled shipment date
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		leadTime: FormControl<number | null | undefined>,
 
@@ -952,7 +1015,10 @@ export namespace MyNS {
 		/** Price class */
 		priceClassId: FormControl<string | null | undefined>,
 
-		/** Default Priority */
+		/**
+		 * Default Priority
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/**
@@ -1065,7 +1131,10 @@ export namespace MyNS {
 		/** The description */
 		description?: string | null;
 
-		/** The id */
+		/**
+		 * The id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 	}
 	export interface IdDescriptionPairDtoFormProperties {
@@ -1073,7 +1142,10 @@ export namespace MyNS {
 		/** The description */
 		description: FormControl<string | null | undefined>,
 
-		/** The id */
+		/**
+		 * The id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateIdDescriptionPairDtoFormGroup() {
@@ -1104,7 +1176,10 @@ export namespace MyNS {
 		/** The description of the inventory item */
 		description?: string | null;
 
-		/** The internal Id used by the system to identify the inventory item */
+		/**
+		 * The internal Id used by the system to identify the inventory item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 
 		/** The inventory id (InventoryCd) */
@@ -1123,7 +1198,10 @@ export namespace MyNS {
 		/** The description of the inventory item */
 		description: FormControl<string | null | undefined>,
 
-		/** The internal Id used by the system to identify the inventory item */
+		/**
+		 * The internal Id used by the system to identify the inventory item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 
 		/** The inventory id (InventoryCd) */
@@ -1147,13 +1225,22 @@ export namespace MyNS {
 		/** The description of the warehouse */
 		description?: string | null;
 
-		/** The total cost for the QuantityOnHand */
+		/**
+		 * The total cost for the QuantityOnHand
+		 * Type: double
+		 */
 		estimatedTotalCost?: number | null;
 
-		/** The estimated cost per unit, calculated as EstimatedTotalCost/QuantityOnHand */
+		/**
+		 * The estimated cost per unit, calculated as EstimatedTotalCost/QuantityOnHand
+		 * Type: double
+		 */
 		estimatedUnitCost?: number | null;
 
-		/** The internal id used by the system for the warehouse */
+		/**
+		 * The internal id used by the system for the warehouse
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalWarehouseId?: number | null;
 
 		/**
@@ -1178,12 +1265,14 @@ export namespace MyNS {
 		 * transactions affect the available quantity. Thus, the available quantity may include
 		 * goods on purchase orders and exclude the goods allocated for sales orders. You can use
 		 * the available quantity as an indicator of demand
+		 * Type: double
 		 */
 		quantityAvailable?: number | null;
 
 		/**
 		 * Estimated quantity calculated by using the following formula: the QuantityOnHand minus the quantity on unreleased inventory
 		 * issues, minus the quantity allocated for shipping. Thus, the QuantityAvailableForShipment can be less than the QuantityOnHand
+		 * Type: double
 		 */
 		quantityAvailableForShipment?: number | null;
 
@@ -1192,13 +1281,20 @@ export namespace MyNS {
 		 * For each warehouse location, the 'Include in Qty. Available' check box on the
 		 * Warehouses(IN204000) screen defines whether the quantity of items stored at this
 		 * location is included in the quantity of available items.
+		 * Type: double
 		 */
 		quantityNotAvailable?: number | null;
 
-		/** Physical quantity on-hand of items in the specific warehouse */
+		/**
+		 * Physical quantity on-hand of items in the specific warehouse
+		 * Type: double
+		 */
 		quantityOnHand?: number | null;
 
-		/** The quantity of the inventory item included in open purchase orders. */
+		/**
+		 * The quantity of the inventory item included in open purchase orders.
+		 * Type: double
+		 */
 		quantityPurchaseOrders?: number | null;
 
 		/** The id (SiteCd) of the warehouse */
@@ -1211,13 +1307,22 @@ export namespace MyNS {
 		/** The description of the warehouse */
 		description: FormControl<string | null | undefined>,
 
-		/** The total cost for the QuantityOnHand */
+		/**
+		 * The total cost for the QuantityOnHand
+		 * Type: double
+		 */
 		estimatedTotalCost: FormControl<number | null | undefined>,
 
-		/** The estimated cost per unit, calculated as EstimatedTotalCost/QuantityOnHand */
+		/**
+		 * The estimated cost per unit, calculated as EstimatedTotalCost/QuantityOnHand
+		 * Type: double
+		 */
 		estimatedUnitCost: FormControl<number | null | undefined>,
 
-		/** The internal id used by the system for the warehouse */
+		/**
+		 * The internal id used by the system for the warehouse
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalWarehouseId: FormControl<number | null | undefined>,
 
 		/**
@@ -1236,12 +1341,14 @@ export namespace MyNS {
 		 * transactions affect the available quantity. Thus, the available quantity may include
 		 * goods on purchase orders and exclude the goods allocated for sales orders. You can use
 		 * the available quantity as an indicator of demand
+		 * Type: double
 		 */
 		quantityAvailable: FormControl<number | null | undefined>,
 
 		/**
 		 * Estimated quantity calculated by using the following formula: the QuantityOnHand minus the quantity on unreleased inventory
 		 * issues, minus the quantity allocated for shipping. Thus, the QuantityAvailableForShipment can be less than the QuantityOnHand
+		 * Type: double
 		 */
 		quantityAvailableForShipment: FormControl<number | null | undefined>,
 
@@ -1250,13 +1357,20 @@ export namespace MyNS {
 		 * For each warehouse location, the 'Include in Qty. Available' check box on the
 		 * Warehouses(IN204000) screen defines whether the quantity of items stored at this
 		 * location is included in the quantity of available items.
+		 * Type: double
 		 */
 		quantityNotAvailable: FormControl<number | null | undefined>,
 
-		/** Physical quantity on-hand of items in the specific warehouse */
+		/**
+		 * Physical quantity on-hand of items in the specific warehouse
+		 * Type: double
+		 */
 		quantityOnHand: FormControl<number | null | undefined>,
 
-		/** The quantity of the inventory item included in open purchase orders. */
+		/**
+		 * The quantity of the inventory item included in open purchase orders.
+		 * Type: double
+		 */
 		quantityPurchaseOrders: FormControl<number | null | undefined>,
 
 		/** The id (SiteCd) of the warehouse */
@@ -1284,7 +1398,10 @@ export namespace MyNS {
 		/** The description of the location */
 		description?: string | null;
 
-		/** The internal id used by the sytem for this location */
+		/**
+		 * The internal id used by the sytem for this location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalLocationId?: number | null;
 
 		/**
@@ -1307,6 +1424,7 @@ export namespace MyNS {
 		 * goods on purchase orders and exclude the goods allocated for sales orders. You can use
 		 * the available quantity as an indicator of demand.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration in quantityAvailable
+		 * Type: double
 		 */
 		quantityAvailable?: number | null;
 
@@ -1314,6 +1432,7 @@ export namespace MyNS {
 		 * Estimated quantity calculated by using the following formula: the QuantityOnHand minus the quantity on unreleased inventory
 		 * issues, minus the quantity allocated for shipping. Thus, the QuantityAvailableForShipment can be less than the QuantityOnHand.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration in quantityAvailableForShipment
+		 * Type: double
 		 */
 		quantityAvailableForShipment?: number | null;
 
@@ -1322,15 +1441,20 @@ export namespace MyNS {
 		 * For each warehouse location, the 'Include in Qty. Available' check box on the
 		 * Warehouses(IN204000) screen defines whether the quantity of items stored at this
 		 * location is included in the quantity of available items.
+		 * Type: double
 		 */
 		quantityNotAvailable?: number | null;
 
-		/** Physical quantity on-hand of items in the specific location */
+		/**
+		 * Physical quantity on-hand of items in the specific location
+		 * Type: double
+		 */
 		quantityOnHand?: number | null;
 
 		/**
 		 * The quantity of the inventory item included in open purchase orders.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration
+		 * Type: double
 		 */
 		quantityPurchaseOrders?: number | null;
 	}
@@ -1339,7 +1463,10 @@ export namespace MyNS {
 		/** The description of the location */
 		description: FormControl<string | null | undefined>,
 
-		/** The internal id used by the sytem for this location */
+		/**
+		 * The internal id used by the sytem for this location
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalLocationId: FormControl<number | null | undefined>,
 
 		/**
@@ -1362,6 +1489,7 @@ export namespace MyNS {
 		 * goods on purchase orders and exclude the goods allocated for sales orders. You can use
 		 * the available quantity as an indicator of demand.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration in quantityAvailable
+		 * Type: double
 		 */
 		quantityAvailable: FormControl<number | null | undefined>,
 
@@ -1369,6 +1497,7 @@ export namespace MyNS {
 		 * Estimated quantity calculated by using the following formula: the QuantityOnHand minus the quantity on unreleased inventory
 		 * issues, minus the quantity allocated for shipping. Thus, the QuantityAvailableForShipment can be less than the QuantityOnHand.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration in quantityAvailableForShipment
+		 * Type: double
 		 */
 		quantityAvailableForShipment: FormControl<number | null | undefined>,
 
@@ -1377,15 +1506,20 @@ export namespace MyNS {
 		 * For each warehouse location, the 'Include in Qty. Available' check box on the
 		 * Warehouses(IN204000) screen defines whether the quantity of items stored at this
 		 * location is included in the quantity of available items.
+		 * Type: double
 		 */
 		quantityNotAvailable: FormControl<number | null | undefined>,
 
-		/** Physical quantity on-hand of items in the specific location */
+		/**
+		 * Physical quantity on-hand of items in the specific location
+		 * Type: double
+		 */
 		quantityOnHand: FormControl<number | null | undefined>,
 
 		/**
 		 * The quantity of the inventory item included in open purchase orders.
 		 * Note: For quantities on warehouse location level, only quantities added specifically for the location are taken into consideration
+		 * Type: double
 		 */
 		quantityPurchaseOrders: FormControl<number | null | undefined>,
 	}
@@ -1409,7 +1543,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage?: string | null;
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** Gets or sets the items that are paged */
@@ -1420,7 +1557,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage: FormControl<string | null | undefined>,
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateInventoryItemAvailabilityDtoPagedResultFormGroup() {
@@ -1905,7 +2045,10 @@ export namespace MyNS {
 
 	export interface NewSalesOrderCustomerDto {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId?: number | null;
 
 		/** The unique global location number of the customer */
@@ -1940,7 +2083,10 @@ export namespace MyNS {
 	}
 	export interface NewSalesOrderCustomerDtoFormProperties {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId: FormControl<number | null | undefined>,
 
 		/** The unique global location number of the customer */
@@ -2072,10 +2218,16 @@ export namespace MyNS {
 
 	export interface NewSalesOrderFreightDto {
 
-		/** The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it. */
+		/**
+		 * The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it.
+		 * Type: double
+		 */
 		cost?: number | null;
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount?: number | null;
 
 		/**
@@ -2087,10 +2239,16 @@ export namespace MyNS {
 	}
 	export interface NewSalesOrderFreightDtoFormProperties {
 
-		/** The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it. */
+		/**
+		 * The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it.
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount: FormControl<number | null | undefined>,
 
 		/**
@@ -2208,7 +2366,10 @@ export namespace MyNS {
 		/** Sets whether insurance applies to this shipping */
 		insurance?: boolean | null;
 
-		/** Sets the intrastat transaction type id for the sales order, if not supplied the default value from the ordertype will be used. Must be a valid intrastat transaction type id. */
+		/**
+		 * Sets the intrastat transaction type id for the sales order, if not supplied the default value from the ordertype will be used. Must be a valid intrastat transaction type id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intrastatTransactionTypeId?: number | null;
 
 		/**
@@ -2217,7 +2378,10 @@ export namespace MyNS {
 		 */
 		preferredWarehouseId?: string | null;
 
-		/** Sets priority of the order */
+		/**
+		 * Sets priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Sets whether this is residential delivery */
@@ -2267,7 +2431,10 @@ export namespace MyNS {
 		/** Sets whether insurance applies to this shipping */
 		insurance: FormControl<boolean | null | undefined>,
 
-		/** Sets the intrastat transaction type id for the sales order, if not supplied the default value from the ordertype will be used. Must be a valid intrastat transaction type id. */
+		/**
+		 * Sets the intrastat transaction type id for the sales order, if not supplied the default value from the ordertype will be used. Must be a valid intrastat transaction type id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intrastatTransactionTypeId: FormControl<number | null | undefined>,
 
 		/**
@@ -2276,7 +2443,10 @@ export namespace MyNS {
 		 */
 		preferredWarehouseId: FormControl<string | null | undefined>,
 
-		/** Sets priority of the order */
+		/**
+		 * Sets priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Sets whether this is residential delivery */
@@ -2755,7 +2925,10 @@ export namespace MyNS {
 
 	export interface PatchSalesOrderCustomerDto {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId?: number | null;
 
 		/** The unique id of the the customer */
@@ -2787,7 +2960,10 @@ export namespace MyNS {
 	}
 	export interface PatchSalesOrderCustomerDtoFormProperties {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId: FormControl<number | null | undefined>,
 
 		/** The unique id of the the customer */
@@ -2915,10 +3091,16 @@ export namespace MyNS {
 
 	export interface PatchSalesOrderFreightDto {
 
-		/** The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it. */
+		/**
+		 * The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it.
+		 * Type: double
+		 */
 		cost?: number | null;
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount?: number | null;
 
 		/**
@@ -2930,10 +3112,16 @@ export namespace MyNS {
 	}
 	export interface PatchSalesOrderFreightDtoFormProperties {
 
-		/** The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it. */
+		/**
+		 * The freight cost calculated for the sales order, can be manually set if orders Ship via code allows it.
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount: FormControl<number | null | undefined>,
 
 		/**
@@ -3018,7 +3206,10 @@ export namespace MyNS {
 		/** Sets whether insurance applies to this shipping */
 		insurance?: boolean | null;
 
-		/** Sets the intrastat transaction type id for the sales order. Must be a valid intrastat transaction type id. */
+		/**
+		 * Sets the intrastat transaction type id for the sales order. Must be a valid intrastat transaction type id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intrastatTransactionTypeId?: number | null;
 
 		/**
@@ -3028,7 +3219,10 @@ export namespace MyNS {
 		 */
 		preferredWarehouseId?: string | null;
 
-		/** Sets priority of the order */
+		/**
+		 * Sets priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Sets whether this is residential delivery */
@@ -3076,7 +3270,10 @@ export namespace MyNS {
 		/** Sets whether insurance applies to this shipping */
 		insurance: FormControl<boolean | null | undefined>,
 
-		/** Sets the intrastat transaction type id for the sales order. Must be a valid intrastat transaction type id. */
+		/**
+		 * Sets the intrastat transaction type id for the sales order. Must be a valid intrastat transaction type id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intrastatTransactionTypeId: FormControl<number | null | undefined>,
 
 		/**
@@ -3086,7 +3283,10 @@ export namespace MyNS {
 		 */
 		preferredWarehouseId: FormControl<string | null | undefined>,
 
-		/** Sets priority of the order */
+		/**
+		 * Sets priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Sets whether this is residential delivery */
@@ -3168,6 +3368,7 @@ export namespace MyNS {
 		 * Note that the behavior of the 'discountAmount' field is affected by the 'hasManualDiscount' option.
 		 * If 'hasManualDiscount' is provided and set to "false", and 'discountAmount' is provided, the system will set the discountAmount according to the predefined rules.
 		 * </remarks>
+		 * Type: double
 		 */
 		discountAmount?: number | null;
 
@@ -3218,6 +3419,7 @@ export namespace MyNS {
 		/**
 		 * The line id of the line.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lineId: number;
 
@@ -3250,7 +3452,10 @@ export namespace MyNS {
 		 */
 		purchaseOrderSource?: string | null;
 
-		/** Sets the quantity of items on the order line */
+		/**
+		 * Sets the quantity of items on the order line
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Patch the reason code for the line. This must be one of the selectable reason codes */
@@ -3287,6 +3492,8 @@ export namespace MyNS {
 		 * <br>One of the following options can be set:<br><list type="bullet"><item><term>CancelRemainder: </term><description>The ordered quantity should be delivered in one shipment</description></item><item><term>BackOrderAllowed: </term><description>The ordered quantity can be delivered in multiple shipments.</description></item><item><term>ShipComplete: </term><description>The ordered quantity should be delivered in one shipment.</description></item></list>
 		 */
 		shippingRule?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 
 		/**
@@ -3298,7 +3505,10 @@ export namespace MyNS {
 		/** Sets the Purchase Order Vendor for the line, can be set if the purchase order source is `purchaseToOrder` or `dropShip`. */
 		supplierId?: string | null;
 
-		/** Sets the supplier price for the line item. */
+		/**
+		 * Sets the supplier price for the line item.
+		 * Type: double
+		 */
 		supplierPrice?: number | null;
 
 		/** Overrides the default tax category id. The value must be one of the selectable Tax Categories */
@@ -3311,7 +3521,10 @@ export namespace MyNS {
 		 */
 		undershipThreshold?: number | null;
 
-		/** Sets the unit cost of the product on the line. */
+		/**
+		 * Sets the unit cost of the product on the line.
+		 * Type: double
+		 */
 		unitCost?: number | null;
 
 		/**
@@ -3325,6 +3538,7 @@ export namespace MyNS {
 		 * If no price is set(null or omitted) the price will be set according to predefined rules based on the inventoryId and the customer.
 		 * Note that the behavior of the `unitPrice` field is affected by the `hasManualPrice` option.
 		 * If `hasManualPrice` is provided and set to "false", and `unitPrice` is provided, the system will set the `unitPrice` according to the predefined rules.
+		 * Type: double
 		 */
 		unitPrice?: number | null;
 
@@ -3363,6 +3577,7 @@ export namespace MyNS {
 		 * Note that the behavior of the 'discountAmount' field is affected by the 'hasManualDiscount' option.
 		 * If 'hasManualDiscount' is provided and set to "false", and 'discountAmount' is provided, the system will set the discountAmount according to the predefined rules.
 		 * </remarks>
+		 * Type: double
 		 */
 		discountAmount: FormControl<number | null | undefined>,
 
@@ -3413,6 +3628,7 @@ export namespace MyNS {
 		/**
 		 * The line id of the line.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lineId: FormControl<number | null | undefined>,
 
@@ -3445,7 +3661,10 @@ export namespace MyNS {
 		 */
 		purchaseOrderSource: FormControl<string | null | undefined>,
 
-		/** Sets the quantity of items on the order line */
+		/**
+		 * Sets the quantity of items on the order line
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Patch the reason code for the line. This must be one of the selectable reason codes */
@@ -3482,6 +3701,8 @@ export namespace MyNS {
 		 * <br>One of the following options can be set:<br><list type="bullet"><item><term>CancelRemainder: </term><description>The ordered quantity should be delivered in one shipment</description></item><item><term>BackOrderAllowed: </term><description>The ordered quantity can be delivered in multiple shipments.</description></item><item><term>ShipComplete: </term><description>The ordered quantity should be delivered in one shipment.</description></item></list>
 		 */
 		shippingRule: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/**
@@ -3493,7 +3714,10 @@ export namespace MyNS {
 		/** Sets the Purchase Order Vendor for the line, can be set if the purchase order source is `purchaseToOrder` or `dropShip`. */
 		supplierId: FormControl<string | null | undefined>,
 
-		/** Sets the supplier price for the line item. */
+		/**
+		 * Sets the supplier price for the line item.
+		 * Type: double
+		 */
 		supplierPrice: FormControl<number | null | undefined>,
 
 		/** Overrides the default tax category id. The value must be one of the selectable Tax Categories */
@@ -3506,7 +3730,10 @@ export namespace MyNS {
 		 */
 		undershipThreshold: FormControl<number | null | undefined>,
 
-		/** Sets the unit cost of the product on the line. */
+		/**
+		 * Sets the unit cost of the product on the line.
+		 * Type: double
+		 */
 		unitCost: FormControl<number | null | undefined>,
 
 		/**
@@ -3520,6 +3747,7 @@ export namespace MyNS {
 		 * If no price is set(null or omitted) the price will be set according to predefined rules based on the inventoryId and the customer.
 		 * Note that the behavior of the `unitPrice` field is affected by the `hasManualPrice` option.
 		 * If `hasManualPrice` is provided and set to "false", and `unitPrice` is provided, the system will set the `unitPrice` according to the predefined rules.
+		 * Type: double
 		 */
 		unitPrice: FormControl<number | null | undefined>,
 
@@ -3591,6 +3819,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -3598,6 +3828,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -3623,7 +3855,10 @@ export namespace MyNS {
 		/** The id */
 		id?: string | null;
 
-		/** An internal unique identifier of the project */
+		/**
+		 * An internal unique identifier of the project
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 	}
 
@@ -3636,7 +3871,10 @@ export namespace MyNS {
 		/** The id */
 		id: FormControl<string | null | undefined>,
 
-		/** An internal unique identifier of the project */
+		/**
+		 * An internal unique identifier of the project
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectDtoFormGroup() {
@@ -3662,13 +3900,22 @@ export namespace MyNS {
 
 	export interface SalesOrderCommissionDto {
 
-		/** The commission amount */
+		/**
+		 * The commission amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** The order's commissionable amount */
+		/**
+		 * The order's commissionable amount
+		 * Type: double
+		 */
 		commissionableAmount?: number | null;
 
-		/** The commission percent */
+		/**
+		 * The commission percent
+		 * Type: double
+		 */
 		percent?: number | null;
 
 		/** The id of the sales person that gets the commision */
@@ -3676,13 +3923,22 @@ export namespace MyNS {
 	}
 	export interface SalesOrderCommissionDtoFormProperties {
 
-		/** The commission amount */
+		/**
+		 * The commission amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The order's commissionable amount */
+		/**
+		 * The order's commissionable amount
+		 * Type: double
+		 */
 		commissionableAmount: FormControl<number | null | undefined>,
 
-		/** The commission percent */
+		/**
+		 * The commission percent
+		 * Type: double
+		 */
 		percent: FormControl<number | null | undefined>,
 
 		/** The id of the sales person that gets the commision */
@@ -3700,13 +3956,19 @@ export namespace MyNS {
 
 	export interface SalesOrderCustomerDto {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId?: number | null;
 
 		/** The unique id of the the customer */
 		id?: string | null;
 
-		/** An internal unique id of the customer */
+		/**
+		 * An internal unique id of the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId?: number | null;
 		location?: CustomerLocationDto;
 
@@ -3722,13 +3984,19 @@ export namespace MyNS {
 	}
 	export interface SalesOrderCustomerDtoFormProperties {
 
-		/** The contact id for the customer */
+		/**
+		 * The contact id for the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactId: FormControl<number | null | undefined>,
 
 		/** The unique id of the the customer */
 		id: FormControl<string | null | undefined>,
 
-		/** An internal unique id of the customer */
+		/**
+		 * An internal unique id of the customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalId: FormControl<number | null | undefined>,
 
 		/** The customer name */
@@ -3754,32 +4022,50 @@ export namespace MyNS {
 
 	export interface SalesOrderDiscountDto {
 
-		/** The amount of the discount */
+		/**
+		 * The amount of the discount
+		 * Type: double
+		 */
 		discountAmount?: number | null;
 
 		/** The identifier of the discount applied to the order */
 		discountId?: string | null;
 
-		/** The discount percent, if the discount is defined to be calculated as a percentage */
+		/**
+		 * The discount percent, if the discount is defined to be calculated as a percentage
+		 * Type: double
+		 */
 		discountPercent?: number | null;
 
 		/** The identifier of the discount sequence of the discount ID applied to the order */
 		discountSequenceId?: string | null;
 
-		/** The amount used as a base for discount calculation if the discount is based on amount. */
+		/**
+		 * The amount used as a base for discount calculation if the discount is based on amount.
+		 * Type: double
+		 */
 		discountableAmount?: number | null;
 
-		/** The quantity used as a base for discount calculation if the discount is based on quantity. */
+		/**
+		 * The quantity used as a base for discount calculation if the discount is based on quantity.
+		 * Type: double
+		 */
 		discountableQuantity?: number | null;
 		freeItem?: CdDescriptionPairDto;
 
-		/** The quantity of the free item. Used to set the quantity for the order line generate by a free item discount */
+		/**
+		 * The quantity of the free item. Used to set the quantity for the order line generate by a free item discount
+		 * Type: double
+		 */
 		freeItemQuantity?: number | null;
 
 		/** Indicates that the discount has been applied manually */
 		isManual?: boolean | null;
 
-		/** The number of discount line set for the order */
+		/**
+		 * The number of discount line set for the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualOrderIndex?: number | null;
 
 		/** Indicates if the discount has been cancelled for the order and is not applicable */
@@ -3790,31 +4076,49 @@ export namespace MyNS {
 	}
 	export interface SalesOrderDiscountDtoFormProperties {
 
-		/** The amount of the discount */
+		/**
+		 * The amount of the discount
+		 * Type: double
+		 */
 		discountAmount: FormControl<number | null | undefined>,
 
 		/** The identifier of the discount applied to the order */
 		discountId: FormControl<string | null | undefined>,
 
-		/** The discount percent, if the discount is defined to be calculated as a percentage */
+		/**
+		 * The discount percent, if the discount is defined to be calculated as a percentage
+		 * Type: double
+		 */
 		discountPercent: FormControl<number | null | undefined>,
 
 		/** The identifier of the discount sequence of the discount ID applied to the order */
 		discountSequenceId: FormControl<string | null | undefined>,
 
-		/** The amount used as a base for discount calculation if the discount is based on amount. */
+		/**
+		 * The amount used as a base for discount calculation if the discount is based on amount.
+		 * Type: double
+		 */
 		discountableAmount: FormControl<number | null | undefined>,
 
-		/** The quantity used as a base for discount calculation if the discount is based on quantity. */
+		/**
+		 * The quantity used as a base for discount calculation if the discount is based on quantity.
+		 * Type: double
+		 */
 		discountableQuantity: FormControl<number | null | undefined>,
 
-		/** The quantity of the free item. Used to set the quantity for the order line generate by a free item discount */
+		/**
+		 * The quantity of the free item. Used to set the quantity for the order line generate by a free item discount
+		 * Type: double
+		 */
 		freeItemQuantity: FormControl<number | null | undefined>,
 
 		/** Indicates that the discount has been applied manually */
 		isManual: FormControl<boolean | null | undefined>,
 
-		/** The number of discount line set for the order */
+		/**
+		 * The number of discount line set for the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualOrderIndex: FormControl<number | null | undefined>,
 
 		/** Indicates if the discount has been cancelled for the order and is not applicable */
@@ -3886,7 +4190,10 @@ export namespace MyNS {
 		/** The unique identifier of the order */
 		orderId?: string | null;
 
-		/** The total quantity of inventory items in the order */
+		/**
+		 * The total quantity of inventory items in the order
+		 * Type: double
+		 */
 		orderQty?: number | null;
 		origin?: SalesOrderOriginDto;
 
@@ -3962,7 +4269,10 @@ export namespace MyNS {
 		/** The unique identifier of the order */
 		orderId: FormControl<string | null | undefined>,
 
-		/** The total quantity of inventory items in the order */
+		/**
+		 * The total quantity of inventory items in the order
+		 * Type: double
+		 */
 		orderQty: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the original order */
@@ -4087,22 +4397,38 @@ export namespace MyNS {
 		/**
 		 * The amounts calculated based on the ship terms.
 		 * ///
+		 * Type: double
 		 */
 		amount?: number | null;
 
-		/** The amounts calculated based on the ship terms in base currency of the order. */
+		/**
+		 * The amounts calculated based on the ship terms in base currency of the order.
+		 * Type: double
+		 */
 		amountInBaseCurrency?: number | null;
 
-		/** The freight cost calculated for the sales order, */
+		/**
+		 * The freight cost calculated for the sales order,
+		 * Type: double
+		 */
 		cost?: number | null;
 
-		/** The freight cost calculated for the sales order in base currency. */
+		/**
+		 * The freight cost calculated for the sales order in base currency.
+		 * Type: double
+		 */
 		costInBaseCurrency?: number | null;
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount?: number | null;
 
-		/** The additional freight charges in base currency for handling the order. */
+		/**
+		 * The additional freight charges in base currency for handling the order.
+		 * Type: double
+		 */
 		premiumAmountInBaseCurrency?: number | null;
 
 		/**
@@ -4110,7 +4436,11 @@ export namespace MyNS {
 		 * By default, it is the tax category associated with the ship via code selected for the order.
 		 */
 		taxCategoryId?: string | null;
+
+		/** Type: double */
 		volume?: number | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 	export interface SalesOrderFreightDtoFormProperties {
@@ -4118,22 +4448,38 @@ export namespace MyNS {
 		/**
 		 * The amounts calculated based on the ship terms.
 		 * ///
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The amounts calculated based on the ship terms in base currency of the order. */
+		/**
+		 * The amounts calculated based on the ship terms in base currency of the order.
+		 * Type: double
+		 */
 		amountInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The freight cost calculated for the sales order, */
+		/**
+		 * The freight cost calculated for the sales order,
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
-		/** The freight cost calculated for the sales order in base currency. */
+		/**
+		 * The freight cost calculated for the sales order in base currency.
+		 * Type: double
+		 */
 		costInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The additional freight charges for handling the order. */
+		/**
+		 * The additional freight charges for handling the order.
+		 * Type: double
+		 */
 		premiumAmount: FormControl<number | null | undefined>,
 
-		/** The additional freight charges in base currency for handling the order. */
+		/**
+		 * The additional freight charges in base currency for handling the order.
+		 * Type: double
+		 */
 		premiumAmountInBaseCurrency: FormControl<number | null | undefined>,
 
 		/**
@@ -4141,7 +4487,11 @@ export namespace MyNS {
 		 * By default, it is the tax category associated with the ship via code selected for the order.
 		 */
 		taxCategoryId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		volume: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderFreightDtoFormGroup() {
@@ -4249,7 +4599,10 @@ export namespace MyNS {
 		intrastatTransactionType?: IdDescriptionPairDto;
 		preferredWarehouse?: CdDescriptionPairDto;
 
-		/** Priority of the order */
+		/**
+		 * Priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Whether this is residential delivery */
@@ -4278,7 +4631,10 @@ export namespace MyNS {
 		/** Whether insurance applies to this shipping */
 		insurance: FormControl<boolean | null | undefined>,
 
-		/** Priority of the order */
+		/**
+		 * Priority of the order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Whether this is residential delivery */
@@ -4349,64 +4705,122 @@ export namespace MyNS {
 		 * The total of the costs on the lines of the sales order. How the `costTotal` is calculated is dependent on the option `useReplacementCostForMarginAndProfit`.
 		 * If this option is `true` the `costTotal` will be calculated based on the `replacementUnitCost`.
 		 * If this option is `false`, the `costTotal` will be calculate based on `unitCost`
+		 * Type: double
 		 */
 		costTotal?: number | null;
 
-		/** The total of the costs on the lines of the sales order in base currency. */
+		/**
+		 * The total of the costs on the lines of the sales order in base currency.
+		 * Type: double
+		 */
 		costTotalInBaseCurrency?: number | null;
 
-		/** The discount total */
+		/**
+		 * The discount total
+		 * Type: double
+		 */
 		discountTotal?: number | null;
 
-		/** The discount total in base currency */
+		/**
+		 * The discount total in base currency
+		 * Type: double
+		 */
 		discountTotalInBaseCurrency?: number | null;
 
-		/** The freight cost calculated for the sales order. Not applicable for transfer order types. */
+		/**
+		 * The freight cost calculated for the sales order. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightCost?: number | null;
 
-		/** The freight cost calculated for the sales order in base currency. Not applicable for transfer order types. */
+		/**
+		 * The freight cost calculated for the sales order in base currency. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightCostInBaseCurrency?: number | null;
 
-		/** The freight amount calculated in accordance with the shipping terms. Not applicable for transfer order types. */
+		/**
+		 * The freight amount calculated in accordance with the shipping terms. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightTotal?: number | null;
 
-		/** The freight amount calculated in accordance with the shipping terms in base currency. Not applicable for transfer order types. */
+		/**
+		 * The freight amount calculated in accordance with the shipping terms in base currency. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightTotalInBaseCurrency?: number | null;
 
-		/** The order total */
+		/**
+		 * The order total
+		 * Type: double
+		 */
 		orderTotal?: number | null;
 
-		/** The order total in base currency */
+		/**
+		 * The order total in base currency
+		 * Type: double
+		 */
 		orderTotalInBaseCurrency?: number | null;
 
-		/** The VAT exempt total */
+		/**
+		 * The VAT exempt total
+		 * Type: double
+		 */
 		taxExemptTotal?: number | null;
 
-		/** The VAT exempt total in base currency */
+		/**
+		 * The VAT exempt total in base currency
+		 * Type: double
+		 */
 		taxExemptTotalInBaseCurrency?: number | null;
 
-		/** The tax total */
+		/**
+		 * The tax total
+		 * Type: double
+		 */
 		taxTotal?: number | null;
 
-		/** The tax total in base currency */
+		/**
+		 * The tax total in base currency
+		 * Type: double
+		 */
 		taxTotalInBaseCurrency?: number | null;
 
-		/** The VAT taxable total */
+		/**
+		 * The VAT taxable total
+		 * Type: double
+		 */
 		taxableTotal?: number | null;
 
-		/** The VAT taxable in base currency */
+		/**
+		 * The VAT taxable in base currency
+		 * Type: double
+		 */
 		taxableTotalInBaseCurrency?: number | null;
 
-		/** The sum of unbilled amounts for the lines */
+		/**
+		 * The sum of unbilled amounts for the lines
+		 * Type: double
+		 */
 		unbilledAmount?: number | null;
 
-		/** The sum of unbilled amounts for the lines in base currency */
+		/**
+		 * The sum of unbilled amounts for the lines in base currency
+		 * Type: double
+		 */
 		unbilledAmountInBaseCurrency?: number | null;
 
-		/** The sum of unshipped amounts for the lines */
+		/**
+		 * The sum of unshipped amounts for the lines
+		 * Type: double
+		 */
 		unshippedAmount?: number | null;
 
-		/** The sum of unshipped amounts for the lines in base currency */
+		/**
+		 * The sum of unshipped amounts for the lines in base currency
+		 * Type: double
+		 */
 		unshippedAmountInBaseCurrency?: number | null;
 	}
 	export interface SalesOrderTotalsDtoFormProperties {
@@ -4415,64 +4829,122 @@ export namespace MyNS {
 		 * The total of the costs on the lines of the sales order. How the `costTotal` is calculated is dependent on the option `useReplacementCostForMarginAndProfit`.
 		 * If this option is `true` the `costTotal` will be calculated based on the `replacementUnitCost`.
 		 * If this option is `false`, the `costTotal` will be calculate based on `unitCost`
+		 * Type: double
 		 */
 		costTotal: FormControl<number | null | undefined>,
 
-		/** The total of the costs on the lines of the sales order in base currency. */
+		/**
+		 * The total of the costs on the lines of the sales order in base currency.
+		 * Type: double
+		 */
 		costTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The discount total */
+		/**
+		 * The discount total
+		 * Type: double
+		 */
 		discountTotal: FormControl<number | null | undefined>,
 
-		/** The discount total in base currency */
+		/**
+		 * The discount total in base currency
+		 * Type: double
+		 */
 		discountTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The freight cost calculated for the sales order. Not applicable for transfer order types. */
+		/**
+		 * The freight cost calculated for the sales order. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightCost: FormControl<number | null | undefined>,
 
-		/** The freight cost calculated for the sales order in base currency. Not applicable for transfer order types. */
+		/**
+		 * The freight cost calculated for the sales order in base currency. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightCostInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The freight amount calculated in accordance with the shipping terms. Not applicable for transfer order types. */
+		/**
+		 * The freight amount calculated in accordance with the shipping terms. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightTotal: FormControl<number | null | undefined>,
 
-		/** The freight amount calculated in accordance with the shipping terms in base currency. Not applicable for transfer order types. */
+		/**
+		 * The freight amount calculated in accordance with the shipping terms in base currency. Not applicable for transfer order types.
+		 * Type: double
+		 */
 		freightTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The order total */
+		/**
+		 * The order total
+		 * Type: double
+		 */
 		orderTotal: FormControl<number | null | undefined>,
 
-		/** The order total in base currency */
+		/**
+		 * The order total in base currency
+		 * Type: double
+		 */
 		orderTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The VAT exempt total */
+		/**
+		 * The VAT exempt total
+		 * Type: double
+		 */
 		taxExemptTotal: FormControl<number | null | undefined>,
 
-		/** The VAT exempt total in base currency */
+		/**
+		 * The VAT exempt total in base currency
+		 * Type: double
+		 */
 		taxExemptTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The tax total */
+		/**
+		 * The tax total
+		 * Type: double
+		 */
 		taxTotal: FormControl<number | null | undefined>,
 
-		/** The tax total in base currency */
+		/**
+		 * The tax total in base currency
+		 * Type: double
+		 */
 		taxTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The VAT taxable total */
+		/**
+		 * The VAT taxable total
+		 * Type: double
+		 */
 		taxableTotal: FormControl<number | null | undefined>,
 
-		/** The VAT taxable in base currency */
+		/**
+		 * The VAT taxable in base currency
+		 * Type: double
+		 */
 		taxableTotalInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The sum of unbilled amounts for the lines */
+		/**
+		 * The sum of unbilled amounts for the lines
+		 * Type: double
+		 */
 		unbilledAmount: FormControl<number | null | undefined>,
 
-		/** The sum of unbilled amounts for the lines in base currency */
+		/**
+		 * The sum of unbilled amounts for the lines in base currency
+		 * Type: double
+		 */
 		unbilledAmountInBaseCurrency: FormControl<number | null | undefined>,
 
-		/** The sum of unshipped amounts for the lines */
+		/**
+		 * The sum of unshipped amounts for the lines
+		 * Type: double
+		 */
 		unshippedAmount: FormControl<number | null | undefined>,
 
-		/** The sum of unshipped amounts for the lines in base currency */
+		/**
+		 * The sum of unshipped amounts for the lines in base currency
+		 * Type: double
+		 */
 		unshippedAmountInBaseCurrency: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderTotalsDtoFormGroup() {
@@ -4510,10 +4982,16 @@ export namespace MyNS {
 		/** The attachments associated with this sales order line */
 		attachments?: Array<AttachmentDto>;
 
-		/** The base order quantity for this line */
+		/**
+		 * The base order quantity for this line
+		 * Type: double
+		 */
 		baseOrderQuantity?: number | null;
 
-		/** The billed quantity for this line */
+		/**
+		 * The billed quantity for this line
+		 * Type: double
+		 */
 		billedQuantity?: number | null;
 		branch?: CdDescriptionPairDto;
 
@@ -4526,19 +5004,28 @@ export namespace MyNS {
 		/** Any description for this order line */
 		description?: string | null;
 
-		/** The discount amount for this line */
+		/**
+		 * The discount amount for this line
+		 * Type: double
+		 */
 		discountAmount?: number | null;
 
 		/** Code of discount applied to this line */
 		discountCode?: string | null;
 
-		/** Discount percentage applied to this line */
+		/**
+		 * Discount percentage applied to this line
+		 * Type: double
+		 */
 		discountPercent?: number | null;
 
 		/** Id of discount sequence applied to this line */
 		discountSequenceId?: string | null;
 
-		/** The extended price for this sales order line */
+		/**
+		 * The extended price for this sales order line
+		 * Type: double
+		 */
 		extendedPrice?: number | null;
 
 		/** Any external link for this sales order line */
@@ -4555,10 +5042,16 @@ export namespace MyNS {
 		inventory?: SalesOrderLineInventoryDto;
 		inventoryAlternateId?: string | null;
 
-		/** The line number of the sales order line */
+		/**
+		 * The line number of the sales order line
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineId?: number | null;
 
-		/** The line total before any discounts are applied */
+		/**
+		 * The line total before any discounts are applied
+		 * Type: double
+		 */
 		lineTotalBeforeDiscount?: number | null;
 
 		/** The type of sales order line */
@@ -4570,7 +5063,10 @@ export namespace MyNS {
 		/** Indicates if line has quantity left to be shipped */
 		openLine?: boolean | null;
 
-		/** The open quantity for this line */
+		/**
+		 * The open quantity for this line
+		 * Type: double
+		 */
 		openQuantity?: number | null;
 
 		/** The type of operation the line represents to the order */
@@ -4582,7 +5078,10 @@ export namespace MyNS {
 		 */
 		orderDate?: Date | null;
 
-		/** The overship threshold value (%) */
+		/**
+		 * The overship threshold value (%)
+		 * Type: double
+		 */
 		overshipThreshold?: number | null;
 
 		/** The project task with which this sales order line is associated */
@@ -4591,10 +5090,16 @@ export namespace MyNS {
 		/** Information about line purchase order source */
 		purchaseOrderSource?: string | null;
 
-		/** The quantity of unit of measure this line represents */
+		/**
+		 * The quantity of unit of measure this line represents
+		 * Type: double
+		 */
 		quantity?: number | null;
 
-		/** The quantity on shipments for this line */
+		/**
+		 * The quantity on shipments for this line
+		 * Type: double
+		 */
 		quantityOnShipments?: number | null;
 
 		/** The reason code */
@@ -4604,6 +5109,7 @@ export namespace MyNS {
 		 * The replacement unit cost of an item. This is set based on the supplier price.
 		 * If no supplier price found, the last price of the item's default supplier will be used.
 		 * If no default supplier is set, the last cost of the item will be used.
+		 * Type: double
 		 */
 		replacementUnitCost?: number | null;
 
@@ -4626,27 +5132,41 @@ export namespace MyNS {
 		/** The shipping rule code for this order line */
 		shippingRule?: string | null;
 
-		/** Used to apply sort order to a set of lines */
+		/**
+		 * Used to apply sort order to a set of lines
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** The general ledger subaccount this line applies to */
 		subaccount?: {[id: string]: string };
 		supplier?: SupplierDto;
+
+		/** Type: double */
 		supplierPrice?: number | null;
 
 		/** The Tax Category Id applying to this order line */
 		taxCategoryId?: string | null;
 
-		/** The undership threshold value (%) */
+		/**
+		 * The undership threshold value (%)
+		 * Type: double
+		 */
 		undershipThreshold?: number | null;
 
-		/** The unit cost of items on this order line */
+		/**
+		 * The unit cost of items on this order line
+		 * Type: double
+		 */
 		unitCost?: number | null;
 
 		/** The unit of measure (UOM) for the sales order line */
 		unitOfMeasure?: string | null;
 
-		/** The unit price for items on this order line */
+		/**
+		 * The unit price for items on this order line
+		 * Type: double
+		 */
 		unitPrice?: number | null;
 
 		/** The Site Id for items on this line */
@@ -4657,10 +5177,16 @@ export namespace MyNS {
 	}
 	export interface SalesOrderLineDtoFormProperties {
 
-		/** The base order quantity for this line */
+		/**
+		 * The base order quantity for this line
+		 * Type: double
+		 */
 		baseOrderQuantity: FormControl<number | null | undefined>,
 
-		/** The billed quantity for this line */
+		/**
+		 * The billed quantity for this line
+		 * Type: double
+		 */
 		billedQuantity: FormControl<number | null | undefined>,
 
 		/** Indicates if line is comissionable */
@@ -4672,19 +5198,28 @@ export namespace MyNS {
 		/** Any description for this order line */
 		description: FormControl<string | null | undefined>,
 
-		/** The discount amount for this line */
+		/**
+		 * The discount amount for this line
+		 * Type: double
+		 */
 		discountAmount: FormControl<number | null | undefined>,
 
 		/** Code of discount applied to this line */
 		discountCode: FormControl<string | null | undefined>,
 
-		/** Discount percentage applied to this line */
+		/**
+		 * Discount percentage applied to this line
+		 * Type: double
+		 */
 		discountPercent: FormControl<number | null | undefined>,
 
 		/** Id of discount sequence applied to this line */
 		discountSequenceId: FormControl<string | null | undefined>,
 
-		/** The extended price for this sales order line */
+		/**
+		 * The extended price for this sales order line
+		 * Type: double
+		 */
 		extendedPrice: FormControl<number | null | undefined>,
 
 		/** Any external link for this sales order line */
@@ -4700,10 +5235,16 @@ export namespace MyNS {
 		hasManualPrice: FormControl<boolean | null | undefined>,
 		inventoryAlternateId: FormControl<string | null | undefined>,
 
-		/** The line number of the sales order line */
+		/**
+		 * The line number of the sales order line
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineId: FormControl<number | null | undefined>,
 
-		/** The line total before any discounts are applied */
+		/**
+		 * The line total before any discounts are applied
+		 * Type: double
+		 */
 		lineTotalBeforeDiscount: FormControl<number | null | undefined>,
 
 		/** The type of sales order line */
@@ -4715,7 +5256,10 @@ export namespace MyNS {
 		/** Indicates if line has quantity left to be shipped */
 		openLine: FormControl<boolean | null | undefined>,
 
-		/** The open quantity for this line */
+		/**
+		 * The open quantity for this line
+		 * Type: double
+		 */
 		openQuantity: FormControl<number | null | undefined>,
 
 		/** The type of operation the line represents to the order */
@@ -4727,7 +5271,10 @@ export namespace MyNS {
 		 */
 		orderDate: FormControl<Date | null | undefined>,
 
-		/** The overship threshold value (%) */
+		/**
+		 * The overship threshold value (%)
+		 * Type: double
+		 */
 		overshipThreshold: FormControl<number | null | undefined>,
 
 		/** The project task with which this sales order line is associated */
@@ -4736,10 +5283,16 @@ export namespace MyNS {
 		/** Information about line purchase order source */
 		purchaseOrderSource: FormControl<string | null | undefined>,
 
-		/** The quantity of unit of measure this line represents */
+		/**
+		 * The quantity of unit of measure this line represents
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** The quantity on shipments for this line */
+		/**
+		 * The quantity on shipments for this line
+		 * Type: double
+		 */
 		quantityOnShipments: FormControl<number | null | undefined>,
 
 		/** The reason code */
@@ -4749,6 +5302,7 @@ export namespace MyNS {
 		 * The replacement unit cost of an item. This is set based on the supplier price.
 		 * If no supplier price found, the last price of the item's default supplier will be used.
 		 * If no default supplier is set, the last cost of the item will be used.
+		 * Type: double
 		 */
 		replacementUnitCost: FormControl<number | null | undefined>,
 
@@ -4770,26 +5324,40 @@ export namespace MyNS {
 		/** The shipping rule code for this order line */
 		shippingRule: FormControl<string | null | undefined>,
 
-		/** Used to apply sort order to a set of lines */
+		/**
+		 * Used to apply sort order to a set of lines
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** The general ledger subaccount this line applies to */
 		subaccount: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: double */
 		supplierPrice: FormControl<number | null | undefined>,
 
 		/** The Tax Category Id applying to this order line */
 		taxCategoryId: FormControl<string | null | undefined>,
 
-		/** The undership threshold value (%) */
+		/**
+		 * The undership threshold value (%)
+		 * Type: double
+		 */
 		undershipThreshold: FormControl<number | null | undefined>,
 
-		/** The unit cost of items on this order line */
+		/**
+		 * The unit cost of items on this order line
+		 * Type: double
+		 */
 		unitCost: FormControl<number | null | undefined>,
 
 		/** The unit of measure (UOM) for the sales order line */
 		unitOfMeasure: FormControl<string | null | undefined>,
 
-		/** The unit price for items on this order line */
+		/**
+		 * The unit price for items on this order line
+		 * Type: double
+		 */
 		unitPrice: FormControl<number | null | undefined>,
 
 		/** The Site Id for items on this line */
@@ -4892,7 +5460,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage?: string | null;
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** Gets or sets the items that are paged */
@@ -4903,7 +5474,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage: FormControl<string | null | undefined>,
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderLineDtoPagedResultFormGroup() {
@@ -4952,10 +5526,16 @@ export namespace MyNS {
 		/** The order id (a.k.a OrderCd) for the order */
 		orderId?: string | null;
 
-		/** The total number of items on the order */
+		/**
+		 * The total number of items on the order
+		 * Type: double
+		 */
 		orderQty?: number | null;
 
-		/** The total amount on the order */
+		/**
+		 * The total amount on the order
+		 * Type: double
+		 */
 		orderTotal?: number | null;
 
 		/**
@@ -5014,10 +5594,16 @@ export namespace MyNS {
 		/** The order id (a.k.a OrderCd) for the order */
 		orderId: FormControl<string | null | undefined>,
 
-		/** The total number of items on the order */
+		/**
+		 * The total number of items on the order
+		 * Type: double
+		 */
 		orderQty: FormControl<number | null | undefined>,
 
-		/** The total amount on the order */
+		/**
+		 * The total amount on the order
+		 * Type: double
+		 */
 		orderTotal: FormControl<number | null | undefined>,
 
 		/**
@@ -5066,7 +5652,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage?: string | null;
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** Gets or sets the items that are paged */
@@ -5077,7 +5666,10 @@ export namespace MyNS {
 		/** Gets or sets the link to the next page with more results. If set to null then no more records are present. */
 		nextPage: FormControl<string | null | undefined>,
 
-		/** Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined */
+		/**
+		 * Gets or sets the total number of items available. If set to null, then the total number of items cannot be determined
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderListDtoPagedResultFormGroup() {
@@ -5090,13 +5682,19 @@ export namespace MyNS {
 
 	export interface SalesOrderRotRutDistributionDto {
 
-		/** The amount */
+		/**
+		 * The amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Whether this is extra or not */
 		extra?: boolean | null;
 
-		/** Reference to the order line */
+		/**
+		 * Reference to the order line
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineId?: number | null;
 
 		/** The personal id */
@@ -5104,13 +5702,19 @@ export namespace MyNS {
 	}
 	export interface SalesOrderRotRutDistributionDtoFormProperties {
 
-		/** The amount */
+		/**
+		 * The amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Whether this is extra or not */
 		extra: FormControl<boolean | null | undefined>,
 
-		/** Reference to the order line */
+		/**
+		 * Reference to the order line
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineId: FormControl<number | null | undefined>,
 
 		/** The personal id */
@@ -5196,16 +5800,25 @@ export namespace MyNS {
 		/** The type of invoice */
 		invoiceType?: string | null;
 
-		/** The quantity of goods on the shipment */
+		/**
+		 * The quantity of goods on the shipment
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** The type of the shipment */
 		type?: string | null;
 
-		/** The volume of the shipped goods */
+		/**
+		 * The volume of the shipped goods
+		 * Type: double
+		 */
 		volume?: number | null;
 
-		/** The weight of the shipped goods */
+		/**
+		 * The weight of the shipped goods
+		 * Type: double
+		 */
 		weight?: number | null;
 	}
 
@@ -5230,16 +5843,25 @@ export namespace MyNS {
 		/** The type of invoice */
 		invoiceType: FormControl<string | null | undefined>,
 
-		/** The quantity of goods on the shipment */
+		/**
+		 * The quantity of goods on the shipment
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The type of the shipment */
 		type: FormControl<string | null | undefined>,
 
-		/** The volume of the shipped goods */
+		/**
+		 * The volume of the shipped goods
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 
-		/** The weight of the shipped goods */
+		/**
+		 * The weight of the shipped goods
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderShipmentDtoFormGroup() {
@@ -5277,19 +5899,28 @@ export namespace MyNS {
 		/** Indicates if the tax calculated is treated as a statistical tax */
 		isStatisticalTax?: boolean | null;
 
-		/** The calculated tax amount for the specific tax */
+		/**
+		 * The calculated tax amount for the specific tax
+		 * Type: double
+		 */
 		taxAmount?: number | null;
 
 		/** The unique tax identifier of the specific tax applied to the document */
 		taxId?: string | null;
 
-		/** The tax rate used for the tax */
+		/**
+		 * The tax rate used for the tax
+		 * Type: double
+		 */
 		taxRate?: number | null;
 
 		/** The type of tax, which can be Sales, Use, VAT or Withholding */
 		taxType?: string | null;
 
-		/** The calculated taxable amount for the specific tax */
+		/**
+		 * The calculated taxable amount for the specific tax
+		 * Type: double
+		 */
 		taxableAmount?: number | null;
 	}
 
@@ -5311,19 +5942,28 @@ export namespace MyNS {
 		/** Indicates if the tax calculated is treated as a statistical tax */
 		isStatisticalTax: FormControl<boolean | null | undefined>,
 
-		/** The calculated tax amount for the specific tax */
+		/**
+		 * The calculated tax amount for the specific tax
+		 * Type: double
+		 */
 		taxAmount: FormControl<number | null | undefined>,
 
 		/** The unique tax identifier of the specific tax applied to the document */
 		taxId: FormControl<string | null | undefined>,
 
-		/** The tax rate used for the tax */
+		/**
+		 * The tax rate used for the tax
+		 * Type: double
+		 */
 		taxRate: FormControl<number | null | undefined>,
 
 		/** The type of tax, which can be Sales, Use, VAT or Withholding */
 		taxType: FormControl<string | null | undefined>,
 
-		/** The calculated taxable amount for the specific tax */
+		/**
+		 * The calculated taxable amount for the specific tax
+		 * Type: double
+		 */
 		taxableAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesOrderTaxDtoFormGroup() {
@@ -5351,6 +5991,8 @@ export namespace MyNS {
 		details?: Array<ValidationErrorCodeDetails>;
 		errors?: {[id: string]: Array<string> };
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -5361,6 +6003,8 @@ export namespace MyNS {
 		detail: FormControl<string | null | undefined>,
 		errors: FormControl<{[id: string]: Array<string> } | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -5430,7 +6074,9 @@ export namespace MyNS {
 		 * Get api/v3/Customers
 		 * @param {string} filter An optional text string to find customers matching (searching fields id, name, gln, tax registration id). If not specified all customers are returned.
 		 * @param {number} pageSize The number of customers retrieved per page. If not specified, the default value of 100 will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageIndex The zero based page index to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomerDtoPagedResult} Returns the list of customers found
 		 */
 		Customers_GetList_(filter: string | null | undefined, pageSize: number | null | undefined, pageIndex: number | null | undefined): Observable<CustomerDtoPagedResult> {
@@ -5466,7 +6112,9 @@ export namespace MyNS {
 		 * @param {Array<string>} attributeFilter One or more attribute filter values specified as attribute-id:attribute-value. For example "attributeFilter=WEBSHOP:1&attributeFilter=AnotherAttribute:someValue"
 		 * If two attributeFilter values have the same attribute-Id either one need to match.
 		 * @param {number} pageSize The number of inventory items retrieved per page. If not specified the default pagesize is 10000 items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageIndex Gets or sets the zero based page index to get
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {InventoryItemAvailabilityDtoPagedResult} Returns list of inventory items found
 		 */
 		Inventory_GetList_(inventoryId: Array<string> | null | undefined, warehouseId: Array<string> | null | undefined, locationId: Array<string> | null | undefined, expand: Array<InventoryAvailabilityExpansions> | null | undefined, modifiedSince: Date | null | undefined, attributeFilter: Array<string> | null | undefined, pageSize: number | null | undefined, pageIndex: number | null | undefined): Observable<InventoryItemAvailabilityDtoPagedResult> {
@@ -5485,7 +6133,9 @@ export namespace MyNS {
 		 * @param {Date} modifiedSince A date/time value for filtering when a sales order last changed.
 		 * Unless a specific time zone offset is included (e.g. '2012-12-24T12:15:14+02:00'), the date is considered to be in the UTC time zone.
 		 * @param {number} pageSize The number of customers retrieved per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageIndex The zero based page index to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderBy The field to order the list by. Can be one of `created`, `lastModified`, or `orderId` followed by an optional sort direction (`asc` or `desc`), default direction is `asc` (ascending) if not present.
 		 * @param {string} filter A filter for the list, applied to the orderId
 		 * @return {SalesOrderListDtoPagedResult} Returns a list of Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderListDto found.
@@ -5546,7 +6196,9 @@ export namespace MyNS {
 		 * @param {Date} modifiedSince A date/time value for filtering when a sales order last changed.
 		 * Unless a specific time zone offset is included (e.g. '2012-12-24T12:15:14+02:00'), the date is considered to be in the UTC time zone.
 		 * @param {number} pageSize The number of customers retrieved per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageIndex The zero based page index to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderBy The field to order the list by. Can be one of `created`, `lastModified`, or `orderId` followed by an optional sort direction (`asc` or `desc`), default direction is `asc` (ascending) if not present.
 		 * @param {string} filter A filter for the list, applied to the orderId
 		 * @return {SalesOrderListDtoPagedResult} Returns a list of Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderListDto found.
@@ -5646,7 +6298,9 @@ export namespace MyNS {
 		 * @param {string} type The type of sales order to get
 		 * @param {string} orderId The id of the sales order to get
 		 * @param {number} pageSize The number of lines retrieved per page, defaults to 1000 if not specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageIndex The zero based page index to retrieve, defaults to 0 if not specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SalesOrderLineDtoPagedResult} A Visma.net.ERP.SalesOrders.Api.Dto.PagedResult`1 object if sales order is found and accessible
 		 */
 		SalesOrders_GetItemLines_typeorderIdlines(type: string, orderId: string, pageSize: number | null | undefined, pageIndex: number | null | undefined): Observable<SalesOrderLineDtoPagedResult> {
@@ -5687,6 +6341,7 @@ export namespace MyNS {
 		 * @param {string} type The type of sales order to get
 		 * @param {string} orderId The id of the sales order to get
 		 * @param {number} lineId The id of the line to get
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SalesOrderLineDto} A Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderLineDto object if sales order line is found and accessible
 		 */
 		SalesOrders_GetItemLine_typeorderIdlineslineId(type: string, orderId: string, lineId: number): Observable<SalesOrderLineDto> {

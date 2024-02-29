@@ -6318,7 +6318,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to untag.</param>
-		/// <param name="tagKeys">The tag keys to remove from the resource.</param>
+		/// <param name="tagKeys">The tag keys to remove from the resource.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

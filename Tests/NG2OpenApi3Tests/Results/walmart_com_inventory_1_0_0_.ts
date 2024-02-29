@@ -10,6 +10,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -26,6 +27,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -127,6 +129,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -141,6 +144,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -163,6 +167,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -177,6 +182,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -199,6 +205,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -213,6 +220,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -364,6 +372,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -378,6 +387,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -400,6 +410,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -414,6 +425,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -436,6 +448,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -450,6 +463,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -498,6 +512,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -512,6 +527,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -534,6 +550,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -548,6 +565,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -570,6 +588,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -584,6 +603,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -603,24 +623,42 @@ export namespace MyNS {
 
 	export interface Headers {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 	export interface HeadersFormProperties {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateHeadersFormGroup() {
@@ -639,6 +677,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -655,6 +694,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -722,6 +762,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -736,6 +777,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -816,6 +858,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -830,6 +873,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -852,6 +896,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -866,6 +911,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -917,6 +963,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -931,6 +978,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -968,13 +1016,19 @@ export namespace MyNS {
 
 	export interface InventoryWFSShipNodes {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty?: number | null;
 
 		/** Last changes date for the item. */
 		modifiedDate?: string | null;
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty?: number | null;
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -982,13 +1036,19 @@ export namespace MyNS {
 	}
 	export interface InventoryWFSShipNodesFormProperties {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty: FormControl<number | null | undefined>,
 
 		/** Last changes date for the item. */
 		modifiedDate: FormControl<string | null | undefined>,
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty: FormControl<number | null | undefined>,
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -1009,7 +1069,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor?: string | null;
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount?: number | null;
 	}
 	export interface MetaFormProperties {
@@ -1017,7 +1080,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor: FormControl<string | null | undefined>,
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -1100,6 +1166,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1114,6 +1181,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1136,6 +1204,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1150,6 +1219,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1172,6 +1242,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1186,6 +1257,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1208,7 +1280,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor?: string | null;
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount?: number | null;
 	}
 	export interface MultiNodeInventoryFetchResponseDTOMetaFormProperties {
@@ -1216,7 +1291,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor: FormControl<string | null | undefined>,
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateMultiNodeInventoryFetchResponseDTOMetaFormGroup() {
@@ -1287,6 +1365,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1301,6 +1380,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1453,6 +1533,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1467,6 +1548,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1547,6 +1629,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1561,6 +1644,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1583,6 +1667,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1597,6 +1682,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1645,13 +1731,19 @@ export namespace MyNS {
 
 	export interface PayloadInventoryShipNodes {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty?: number | null;
 
 		/** Last changes date for the item. */
 		modifiedDate?: string | null;
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty?: number | null;
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -1659,13 +1751,19 @@ export namespace MyNS {
 	}
 	export interface PayloadInventoryShipNodesFormProperties {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty: FormControl<number | null | undefined>,
 
 		/** Last changes date for the item. */
 		modifiedDate: FormControl<string | null | undefined>,
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty: FormControl<number | null | undefined>,
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -1688,6 +1786,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1704,6 +1803,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1723,13 +1823,19 @@ export namespace MyNS {
 
 	export interface ShipNodes {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty?: number | null;
 
 		/** Last changes date for the item. */
 		modifiedDate?: string | null;
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty?: number | null;
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -1737,13 +1843,19 @@ export namespace MyNS {
 	}
 	export interface ShipNodesFormProperties {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty: FormControl<number | null | undefined>,
 
 		/** Last changes date for the item. */
 		modifiedDate: FormControl<string | null | undefined>,
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty: FormControl<number | null | undefined>,
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -1766,6 +1878,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1782,6 +1895,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1846,6 +1960,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1860,6 +1975,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1911,6 +2027,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -1925,6 +2042,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2041,24 +2159,42 @@ export namespace MyNS {
 
 	export interface WfsInventoryDTOHeaders {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 	export interface WfsInventoryDTOHeadersFormProperties {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateWfsInventoryDTOHeadersFormGroup() {
@@ -2101,13 +2237,19 @@ export namespace MyNS {
 
 	export interface WfsInventoryDTOPayloadInventoryShipNodes {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty?: number | null;
 
 		/** Last changes date for the item. */
 		modifiedDate?: string | null;
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty?: number | null;
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -2115,13 +2257,19 @@ export namespace MyNS {
 	}
 	export interface WfsInventoryDTOPayloadInventoryShipNodesFormProperties {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty: FormControl<number | null | undefined>,
 
 		/** Last changes date for the item. */
 		modifiedDate: FormControl<string | null | undefined>,
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty: FormControl<number | null | undefined>,
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -2235,24 +2383,42 @@ export namespace MyNS {
 
 	export interface GetWFSInventoryReturnHeaders {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 	export interface GetWFSInventoryReturnHeadersFormProperties {
 
-		/** Information about the quantity in inventory */
+		/**
+		 * Information about the quantity in inventory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Offset is the number of records you wish to skip before selecting results. */
+		/**
+		 * Offset is the number of records you wish to skip before selecting results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Total number of results for query. */
+		/**
+		 * Total number of results for query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetWFSInventoryReturnHeadersFormGroup() {
@@ -2295,13 +2461,19 @@ export namespace MyNS {
 
 	export interface GetWFSInventoryReturnPayloadInventoryShipNodes {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty?: number | null;
 
 		/** Last changes date for the item. */
 		modifiedDate?: string | null;
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty?: number | null;
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -2309,13 +2481,19 @@ export namespace MyNS {
 	}
 	export interface GetWFSInventoryReturnPayloadInventoryShipNodesFormProperties {
 
-		/** The available quantity is the quantity of an item that is available to be allocated to orders. */
+		/**
+		 * The available quantity is the quantity of an item that is available to be allocated to orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availToSellQty: FormControl<number | null | undefined>,
 
 		/** Last changes date for the item. */
 		modifiedDate: FormControl<string | null | undefined>,
 
-		/** The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected. */
+		/**
+		 * The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHandQty: FormControl<number | null | undefined>,
 
 		/** Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. */
@@ -2403,6 +2581,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2417,6 +2596,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2439,6 +2619,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2453,6 +2634,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2475,6 +2657,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2489,6 +2672,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2511,7 +2695,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor?: string | null;
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount?: number | null;
 	}
 	export interface GetMultiNodeInventoryForAllSkuAndAllShipNodesReturnMetaFormProperties {
@@ -2519,7 +2706,10 @@ export namespace MyNS {
 		/** Used for pagination to fetch the next set of items. */
 		nextCursor: FormControl<string | null | undefined>,
 
-		/** Total number of Skus of the Seller. Example: '235' */
+		/**
+		 * Total number of Skus of the Seller. Example: '235'
+		 * Type: double
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMultiNodeInventoryForAllSkuAndAllShipNodesReturnMetaFormGroup() {
@@ -2580,6 +2770,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2594,6 +2785,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2674,6 +2866,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2688,6 +2881,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2710,6 +2904,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2724,6 +2919,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2801,6 +2997,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2815,6 +3012,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2969,6 +3167,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2983,6 +3182,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3034,6 +3234,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -3048,6 +3249,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3099,6 +3301,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -3113,6 +3316,7 @@ export namespace MyNS {
 		/**
 		 * Inventory Count
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 

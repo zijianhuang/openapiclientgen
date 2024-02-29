@@ -880,6 +880,7 @@ export namespace MyNS {
 		 * Lists the DNS zones in all resource groups in a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Network/dnszones
 		 * @param {number} top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Specifies the API version.
 		 * @param {string} subscriptionId Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription.
 		 * @return {ZoneListResult} Success.
@@ -905,6 +906,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {number} top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Specifies the API version.
 		 * @param {string} subscriptionId Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription.
 		 * @return {ZoneListResult} Success.
@@ -973,6 +975,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} zoneName The name of the DNS zone (without a terminating dot).
 		 * @param {number} top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .<recordSetNameSuffix>
 		 * @param {string} api_version Specifies the API version.
 		 * @param {string} subscriptionId Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription.
@@ -988,6 +991,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} zoneName The name of the DNS zone (without a terminating dot).
 		 * @param {number} top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .<recordSetNameSuffix>
 		 * @param {string} api_version Specifies the API version.
 		 * @param {string} subscriptionId Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription.
@@ -1004,6 +1008,7 @@ export namespace MyNS {
 		 * @param {string} zoneName The name of the DNS zone (without a terminating dot).
 		 * @param {RecordSets_ListByTypeRecordType} recordType The type of record sets to enumerate.
 		 * @param {number} top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .<recordSetNameSuffix>
 		 * @param {string} api_version Specifies the API version.
 		 * @param {string} subscriptionId Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription.

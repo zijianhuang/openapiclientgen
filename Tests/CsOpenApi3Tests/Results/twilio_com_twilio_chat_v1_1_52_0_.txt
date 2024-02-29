@@ -1074,8 +1074,13 @@ namespace MyNS
 		/// <summary>
 		/// ListCredential v1/Credentials
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListCredentialReturn> ListCredentialAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1109,7 +1114,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Credentials/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1135,7 +1143,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1168,8 +1179,13 @@ namespace MyNS
 		/// <summary>
 		/// ListService v1/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1203,10 +1219,18 @@ namespace MyNS
 		/// <summary>
 		/// ListChannel v1/Services/{ServiceSid}/Channels
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Type">The visibility of the Channels to read. Can be: `public` or `private` and defaults to `public`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListChannelReturn> ListChannelAsync(string ServiceSid, Channel_enum_channel_type[] Type, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1240,11 +1264,19 @@ namespace MyNS
 		/// <summary>
 		/// ListInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resources to read belong to.</param>
 		/// <param name="Identity">The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInviteReturn> ListInviteAsync(string ServiceSid, string ChannelSid, string[] Identity, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1278,9 +1310,15 @@ namespace MyNS
 		/// <summary>
 		/// DeleteInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to delete belongs to.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Invites/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1306,9 +1344,15 @@ namespace MyNS
 		/// <summary>
 		/// FetchInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to fetch belongs to.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelinvite> FetchInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1341,11 +1385,19 @@ namespace MyNS
 		/// <summary>
 		/// ListMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the members to read belong to. Can be the Channel resource's `sid` or `unique_name` value.</param>
 		/// <param name="Identity">The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMemberReturn> ListMemberAsync(string ServiceSid, string ChannelSid, string[] Identity, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1379,9 +1431,15 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message belongs to.  Can be the Channel's `sid` or `unique_name`.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Members/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1407,9 +1465,15 @@ namespace MyNS
 		/// <summary>
 		/// FetchMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the member to fetch belongs to. Can be the Channel resource's `sid` or `unique_name` value.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelmember> FetchMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1442,11 +1506,22 @@ namespace MyNS
 		/// <summary>
 		/// ListMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
-		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to read belongs to. Can be the Channel's `sid` or `unique_name`.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to read belongs to. Can be the Channel's `sid` or `unique_name`.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Order">The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending) with `asc` as the default.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMessageReturn> ListMessageAsync(string ServiceSid, string ChannelSid, Message_enum_order_type Order, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1480,9 +1555,18 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
-		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to delete belongs to.  Can be the Channel resource's `sid` or `unique_name`.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to delete belongs to.  Can be the Channel resource's `sid` or `unique_name`.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Messages/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1508,9 +1592,18 @@ namespace MyNS
 		/// <summary>
 		/// FetchMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
-		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to fetch belongs to. Can be the Channel's `sid` or `unique_name`.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to fetch belongs to. Can be the Channel's `sid` or `unique_name`.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelmessage> FetchMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1543,7 +1636,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Channel resource to delete.</param>
 		public async Task DeleteChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1570,7 +1666,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Channel resource to fetch.</param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannel> FetchChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1604,9 +1703,17 @@ namespace MyNS
 		/// <summary>
 		/// ListRole v1/Services/{ServiceSid}/Roles
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListRoleReturn> ListRoleAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1640,8 +1747,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to delete.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Roles/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1667,8 +1780,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to fetch.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicerole> FetchRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1701,9 +1820,17 @@ namespace MyNS
 		/// <summary>
 		/// ListUser v1/Services/{ServiceSid}/Users
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListUserReturn> ListUserAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1737,7 +1864,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the User resource to delete.</param>
 		public async Task DeleteUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1764,7 +1894,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the User resource to fetch.</param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1serviceuser> FetchUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1799,10 +1932,18 @@ namespace MyNS
 		/// List all Channels for a given User.
 		/// ListUserChannel v1/Services/{ServiceSid}/Users/{UserSid}/Channels
 		/// </summary>
-		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.</param>
+		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="UserSid">The SID of the [User](https://www.twilio.com/docs/api/chat/rest/users) to read the User Channel resources from.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListUserChannelReturn> ListUserChannelAsync(string ServiceSid, string UserSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1836,7 +1977,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1862,7 +2006,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

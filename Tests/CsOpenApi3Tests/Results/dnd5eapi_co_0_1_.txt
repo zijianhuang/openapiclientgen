@@ -1690,6 +1690,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="index">The `index` of the class to get.
 		///</param>
+		/// <param name="class_level">Minimum: 0
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ClassLevel> ApiClasses_indexLevels_class_levelGetAsync(ApiClasses_indexGetIndex index, double class_level, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1725,6 +1728,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="index">The `index` of the class to get.
 		///</param>
+		/// <param name="class_level">Minimum: 0
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<APIReferenceList> ApiClasses_indexLevels_class_levelFeaturesGetAsync(ApiClasses_indexGetIndex index, double class_level, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1760,6 +1766,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="index">The `index` of the class to get.
 		///</param>
+		/// <param name="spell_level">Minimum: 1
+		/// Maximum: 9
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<APIReferenceList> ApiClasses_indexLevels_spell_levelSpellsGetAsync(ApiClasses_indexGetIndex index, double spell_level, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2882,6 +2891,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="index">The `index` of the subclass to get.
 		///</param>
+		/// <param name="subclass_level">Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <returns>Level resource for the subclass and level.</returns>
 		public async Task<SubclassLevel> ApiSubclasses_indexLevels_subclass_levelGetAsync(ApiSubclasses_indexLevels_subclass_levelGetIndex index, int subclass_level, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2917,6 +2929,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="index">The `index` of the subclass to get.
 		///</param>
+		/// <param name="subclass_level">Minimum: 0
+		/// Maximum: 20
+		// </param>
 		/// <returns>List of features for the subclass and level.</returns>
 		public async Task<APIReferenceList> ApiSubclasses_indexLevels_subclass_levelFeaturesGetAsync(ApiSubclasses_indexLevels_subclass_levelFeaturesGetIndex index, int subclass_level, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

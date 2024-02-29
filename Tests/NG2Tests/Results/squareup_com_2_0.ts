@@ -3213,8 +3213,8 @@ export namespace MyNS {
 		 * you are working in to generate strings for your idempotency keys.
 		 * See [Idempotency keys](#idempotencykeys) for more information.
 		 * Required
-		 * Max length: 192
 		 * Min length: 1
+		 * Max length: 192
 		 */
 		idempotency_key: string;
 
@@ -3288,8 +3288,8 @@ export namespace MyNS {
 		 * you are working in to generate strings for your idempotency keys.
 		 * See [Idempotency keys](#idempotencykeys) for more information.
 		 * Required
-		 * Max length: 192
 		 * Min length: 1
+		 * Max length: 192
 		 */
 		idempotency_key: FormControl<string | null | undefined>,
 
@@ -7483,6 +7483,7 @@ export namespace MyNS {
 		 * @param {V1EmployeeStatus} status If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE).
 		 * @param {string} external_id If provided, the endpoint returns only employee entities with the specified external_id.
 		 * @param {number} limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1Employee>} Success
@@ -7542,6 +7543,7 @@ export namespace MyNS {
 		 * Get v1/me/roles
 		 * @param {ListEmployeesOrder} order The order in which employees are listed in the response, based on their created_at field.Default value: ASC 
 		 * @param {number} limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1EmployeeRole>} Success
@@ -7599,6 +7601,7 @@ export namespace MyNS {
 		 * @param {string} end_updated_at If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format.
 		 * @param {boolean} deleted If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don't provide this parameter, both valid and deleted timecards are returned.
 		 * @param {number} limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1Timecard>} Success
@@ -7870,6 +7873,7 @@ export namespace MyNS {
 		 * Get v1/{location_id}/inventory
 		 * @param {string} location_id The ID of the item's associated location.
 		 * @param {number} limit The maximum number of inventory entries to return in a single response. This value cannot exceed 1000.
+		 *     Maximum: 1000
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1InventoryEntry>} Success
@@ -8161,6 +8165,7 @@ export namespace MyNS {
 		 * @param {string} location_id The ID of the location to list online store orders for.
 		 * @param {ListEmployeesOrder} order TThe order in which payments are listed in the response.
 		 * @param {number} limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1Order>} Success
@@ -8282,6 +8287,7 @@ export namespace MyNS {
 		 * @param {string} begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 		 * @param {string} end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 		 * @param {number} limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1Payment>} Success
@@ -8311,6 +8317,7 @@ export namespace MyNS {
 		 * @param {string} begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 		 * @param {string} end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 		 * @param {number} limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+		 *     Maximum: 200
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.
 		 * @return {Array<V1Refund>} Success
@@ -8341,6 +8348,7 @@ export namespace MyNS {
 		 * @param {string} begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 		 * @param {string} end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 		 * @param {number} limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+		 *     Maximum: 200
 		 * @param {ListSettlementsStatus} status Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED).
 		 * @param {string} batch_token A pagination cursor to retrieve the next set of results for your
 		 * original query to the endpoint.

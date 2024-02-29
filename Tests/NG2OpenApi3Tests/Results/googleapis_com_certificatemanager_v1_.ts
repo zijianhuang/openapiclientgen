@@ -307,7 +307,10 @@ export namespace MyNS {
 		/** A user-defined name of the certificate issuance config. CertificateIssuanceConfig names must be unique globally and match pattern `projects/locations/certificateIssuanceConfigs/*`. */
 		name?: string | null;
 
-		/** Required. Specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate. Must be a number between 1-99, inclusive. */
+		/**
+		 * Required. Specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate. Must be a number between 1-99, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotationWindowPercentage?: number | null;
 
 		/** Output only. The last update timestamp of a CertificateIssuanceConfig. */
@@ -335,7 +338,10 @@ export namespace MyNS {
 		/** A user-defined name of the certificate issuance config. CertificateIssuanceConfig names must be unique globally and match pattern `projects/locations/certificateIssuanceConfigs/*`. */
 		name: FormControl<string | null | undefined>,
 
-		/** Required. Specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate. Must be a number between 1-99, inclusive. */
+		/**
+		 * Required. Specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate. Must be a number between 1-99, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotationWindowPercentage: FormControl<number | null | undefined>,
 
 		/** Output only. The last update timestamp of a CertificateIssuanceConfig. */
@@ -951,7 +957,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -964,7 +973,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1211,6 +1223,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1224,6 +1237,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1248,6 +1262,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the Certificates Configs returned.
 		 * @param {string} orderBy A list of Certificate Config field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of certificate configs to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListCertificateIssuanceConfigsResponse`. Indicates that this is a continuation of a prior `ListCertificateIssuanceConfigs` call, and that the system should return the next page of data.
 		 * @return {ListCertificateIssuanceConfigsResponse} Successful response
 		 */
@@ -1273,6 +1288,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the returned Certificate Map Entries.
 		 * @param {string} orderBy A list of Certificate Map Entry field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of certificate map entries to return. The service may return fewer than this value. If unspecified, at most 50 certificate map entries will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListCertificateMapEntriesResponse`. Indicates that this is a continuation of a prior `ListCertificateMapEntries` call, and that the system should return the next page of data.
 		 * @return {ListCertificateMapEntriesResponse} Successful response
 		 */
@@ -1298,6 +1314,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the Certificates Maps returned.
 		 * @param {string} orderBy A list of Certificate Map field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of certificate maps to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListCertificateMapsResponse`. Indicates that this is a continuation of a prior `ListCertificateMaps` call, and that the system should return the next page of data.
 		 * @return {ListCertificateMapsResponse} Successful response
 		 */
@@ -1323,6 +1340,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the Certificates returned.
 		 * @param {string} orderBy A list of Certificate field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of certificates to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListCertificatesResponse`. Indicates that this is a continuation of a prior `ListCertificates` call, and that the system should return the next page of data.
 		 * @return {ListCertificatesResponse} Successful response
 		 */
@@ -1348,6 +1366,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the Dns Authorizations returned.
 		 * @param {string} orderBy A list of Dns Authorization field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of dns authorizations to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListDnsAuthorizationsResponse`. Indicates that this is a continuation of a prior `ListDnsAuthorizations` call, and that the system should return the next page of data.
 		 * @return {ListDnsAuthorizationsResponse} Successful response
 		 */
@@ -1373,6 +1392,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter expression to restrict the TrustConfigs returned.
 		 * @param {string} orderBy A list of TrustConfig field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
 		 * @param {number} pageSize Maximum number of TrustConfigs to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value returned by the last `ListTrustConfigsResponse`. Indicates that this is a continuation of a prior `ListTrustConfigs` call, and that the system should return the next page of data.
 		 * @return {ListTrustConfigsResponse} Successful response
 		 */

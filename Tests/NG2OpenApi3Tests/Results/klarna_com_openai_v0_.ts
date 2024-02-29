@@ -44,7 +44,9 @@ export namespace MyNS {
 		 * Get public/openai/v0/products
 		 * @param {string} q A precise query that matches one very small category or product that needs to be searched for to find the products the user is looking for. If the user explicitly stated what they want, use that as a query. The query is as specific as possible to the product name or category mentioned by the user in its singular form, and don't contain any clarifiers like latest, newest, cheapest, budget, premium, expensive or similar. The query is always taken from the latest topic, if there is a new topic a new query is started.
 		 * @param {number} size number of products returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} budget maximum price of the matching product in local currency, filters results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProductResponse} Products found
 		 */
 		ProductsUsingGET(q: string, size: number | null | undefined, budget: number | null | undefined): Observable<ProductResponse> {

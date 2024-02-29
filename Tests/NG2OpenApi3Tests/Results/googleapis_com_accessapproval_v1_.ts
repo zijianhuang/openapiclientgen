@@ -62,7 +62,10 @@ export namespace MyNS {
 		/** This preference is communicated to Google personnel when sending an approval request but can be overridden if necessary. */
 		preferNoBroadApprovalRequests?: boolean | null;
 
-		/** This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time. */
+		/**
+		 * This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredRequestExpirationDays?: number | null;
 	}
 
@@ -90,7 +93,10 @@ export namespace MyNS {
 		/** This preference is communicated to Google personnel when sending an approval request but can be overridden if necessary. */
 		preferNoBroadApprovalRequests: FormControl<boolean | null | undefined>,
 
-		/** This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time. */
+		/**
+		 * This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredRequestExpirationDays: FormControl<number | null | undefined>,
 	}
 	export function CreateAccessApprovalSettingsFormGroup() {
@@ -557,6 +563,7 @@ export namespace MyNS {
 		 * @param {string} parent The parent resource. This may be "projects/{project}", "folders/{folder}", or "organizations/{organization}".
 		 * @param {string} filter A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests.
 		 * @param {number} pageSize Requested page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying the page of results to return.
 		 * @return {ListApprovalRequestsResponse} Successful response
 		 */

@@ -136,9 +136,16 @@ namespace MyNS
 		/// Gets a list of ProactiveDetection configurations of an Application Insights component.
 		/// ProactiveDetectionConfigurations_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <returns>A list containing 0 or more ProactiveDetection configurations of an Application Insights component.</returns>
 		public async Task<ApplicationInsightsComponentProactiveDetectionConfiguration[]> ProactiveDetectionConfigurations_ListAsync(string resourceGroupName, string api_version, string subscriptionId, string resourceName)
@@ -168,9 +175,16 @@ namespace MyNS
 		/// Get the ProactiveDetection configuration for this configuration id.
 		/// ProactiveDetectionConfigurations_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs/{ConfigurationId}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="ConfigurationId">The ProactiveDetection configuration ID. This is unique within a Application Insights component.</param>
 		/// <returns>The ProactiveDetection configuration for this configuration id.</returns>
@@ -201,9 +215,16 @@ namespace MyNS
 		/// Update the ProactiveDetection configuration for this configuration id.
 		/// ProactiveDetectionConfigurations_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs/{ConfigurationId}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="ConfigurationId">The ProactiveDetection configuration ID. This is unique within a Application Insights component.</param>
 		/// <param name="requestBody">Properties that need to be specified to update the ProactiveDetection configuration.</param>

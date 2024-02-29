@@ -231,6 +231,7 @@ export namespace MyNS {
 		 * Retrieve a list of connections.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
@@ -244,6 +245,7 @@ export namespace MyNS {
 		 * Retrieve the connection identified by connection name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} connectionName The name of connection.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -258,6 +260,7 @@ export namespace MyNS {
 		 * Create or update a connection.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} connectionName The parameters supplied to the create or update connection operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -273,6 +276,7 @@ export namespace MyNS {
 		 * Delete the connection.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} connectionName The name of connection.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
@@ -287,6 +291,7 @@ export namespace MyNS {
 		 * Update a connection.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} connectionName The parameters supplied to the update a connection operation.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.

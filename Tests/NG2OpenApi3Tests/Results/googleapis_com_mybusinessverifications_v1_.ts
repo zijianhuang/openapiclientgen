@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** Merchant's business name. */
 		business?: string | null;
 
-		/** Expected number of days it takes to deliver a postcard to the address's region. */
+		/**
+		 * Expected number of days it takes to deliver a postcard to the address's region.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedDeliveryDaysRegion?: number | null;
 	}
 
@@ -23,7 +26,10 @@ export namespace MyNS {
 		/** Merchant's business name. */
 		business: FormControl<string | null | undefined>,
 
-		/** Expected number of days it takes to deliver a postcard to the address's region. */
+		/**
+		 * Expected number of days it takes to deliver a postcard to the address's region.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedDeliveryDaysRegion: FormControl<number | null | undefined>,
 	}
 	export function CreateAddressVerificationDataFormGroup() {
@@ -62,7 +68,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode?: string | null;
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -93,7 +102,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode: FormControl<string | null | undefined>,
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -621,6 +633,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/verifications
 		 * @param {string} parent Required. Resource name of the location that verification requests belong to.
 		 * @param {number} pageSize How many verification to include per page. Minimum is 1, and the default and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of verifications.
 		 * @return {ListVerificationsResponse} Successful response
 		 */

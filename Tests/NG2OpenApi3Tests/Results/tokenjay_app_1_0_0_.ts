@@ -42,97 +42,145 @@ export namespace MyNS {
 
 	export interface AgeUsdExchangeInfo {
 
-		/** Required */
-		bankFeeAmount: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bankFeeAmount: string;
 
 		/** Required */
 		bankFeeDescription: string;
 
-		/** Required */
-		ergAmount: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ergAmount: string;
 
 		/** Required */
 		ergAmountDescription: string;
 
-		/** Required */
-		exchangeRate: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		exchangeRate: string;
 
-		/** Required */
-		jayFeeAmount: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jayFeeAmount: string;
 
 		/** Required */
 		jayFeeDescription: string;
 
-		/** Required */
-		totalAmount: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalAmount: string;
 	}
 	export interface AgeUsdExchangeInfoFormProperties {
 
-		/** Required */
-		bankFeeAmount: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bankFeeAmount: FormControl<string | null | undefined>,
 
 		/** Required */
 		bankFeeDescription: FormControl<string | null | undefined>,
 
-		/** Required */
-		ergAmount: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ergAmount: FormControl<string | null | undefined>,
 
 		/** Required */
 		ergAmountDescription: FormControl<string | null | undefined>,
 
-		/** Required */
-		exchangeRate: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		exchangeRate: FormControl<string | null | undefined>,
 
-		/** Required */
-		jayFeeAmount: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jayFeeAmount: FormControl<string | null | undefined>,
 
 		/** Required */
 		jayFeeDescription: FormControl<string | null | undefined>,
 
-		/** Required */
-		totalAmount: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateAgeUsdExchangeInfoFormGroup() {
 		return new FormGroup<AgeUsdExchangeInfoFormProperties>({
-			bankFeeAmount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			bankFeeAmount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			bankFeeDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ergAmount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ergAmount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ergAmountDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			exchangeRate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			jayFeeAmount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			exchangeRate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jayFeeAmount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			jayFeeDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			totalAmount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			totalAmount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AgeUsdInfo {
 
-		/** Required */
-		reserveRatio: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		reserveRatio: string;
 
-		/** Required */
-		sigRsvPrice: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sigRsvPrice: string;
 
-		/** Required */
-		sigUsdPrice: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sigUsdPrice: string;
 	}
 	export interface AgeUsdInfoFormProperties {
 
-		/** Required */
-		reserveRatio: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		reserveRatio: FormControl<string | null | undefined>,
 
-		/** Required */
-		sigRsvPrice: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sigRsvPrice: FormControl<string | null | undefined>,
 
-		/** Required */
-		sigUsdPrice: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sigUsdPrice: FormControl<string | null | undefined>,
 	}
 	export function CreateAgeUsdInfoFormGroup() {
 		return new FormGroup<AgeUsdInfoFormProperties>({
-			reserveRatio: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			sigRsvPrice: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			sigUsdPrice: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			reserveRatio: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sigRsvPrice: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sigUsdPrice: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -142,6 +190,7 @@ export namespace MyNS {
 		/**
 		 * Flag with 0 unknown, 1 verified, 2 suspicious, 3 blocked (see EIP-21)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		genuine: number;
 		token?: GenuineToken;
@@ -151,6 +200,7 @@ export namespace MyNS {
 		/**
 		 * Flag with 0 unknown, 1 verified, 2 suspicious, 3 blocked (see EIP-21)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		genuine: FormControl<number | null | undefined>,
 	}
@@ -198,35 +248,45 @@ export namespace MyNS {
 	export interface CreatePaymentRequest {
 		message?: string | null;
 
-		/** Required */
-		nanoErg: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nanoErg: string;
 
 		/** Required */
 		receiverAddress: string;
 		senderAddress?: string | null;
 		tokenId?: string | null;
-		tokenRawAmount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tokenRawAmount?: string | null;
 	}
 	export interface CreatePaymentRequestFormProperties {
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
-		nanoErg: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nanoErg: FormControl<string | null | undefined>,
 
 		/** Required */
 		receiverAddress: FormControl<string | null | undefined>,
 		senderAddress: FormControl<string | null | undefined>,
 		tokenId: FormControl<string | null | undefined>,
-		tokenRawAmount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tokenRawAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePaymentRequestFormGroup() {
 		return new FormGroup<CreatePaymentRequestFormProperties>({
 			message: new FormControl<string | null | undefined>(undefined),
-			nanoErg: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nanoErg: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			receiverAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			senderAddress: new FormControl<string | null | undefined>(undefined),
 			tokenId: new FormControl<string | null | undefined>(undefined),
-			tokenRawAmount: new FormControl<number | null | undefined>(undefined),
+			tokenRawAmount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -262,9 +322,13 @@ export namespace MyNS {
 
 	export interface FetchActionResponse {
 		action?: Action;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appVersion?: number | null;
 	}
 	export interface FetchActionResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateFetchActionResponseFormGroup() {
@@ -290,7 +354,11 @@ export namespace MyNS {
 	export interface MosaikManifest {
 		appDescription?: string | null;
 		appName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appVersion?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheLifetime?: number | null;
 		errorReportUrl?: string | null;
 		iconUrl?: string | null;
@@ -298,12 +366,18 @@ export namespace MyNS {
 		onAppLoadedAction?: string | null;
 		onResizeAction?: string | null;
 		targetCanvasDimension?: MosaikManifestTargetCanvasDimension | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetMosaikVersion?: number | null;
 	}
 	export interface MosaikManifestFormProperties {
 		appDescription: FormControl<string | null | undefined>,
 		appName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appVersion: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cacheLifetime: FormControl<number | null | undefined>,
 		errorReportUrl: FormControl<string | null | undefined>,
 		iconUrl: FormControl<string | null | undefined>,
@@ -311,6 +385,8 @@ export namespace MyNS {
 		onAppLoadedAction: FormControl<string | null | undefined>,
 		onResizeAction: FormControl<string | null | undefined>,
 		targetCanvasDimension: FormControl<MosaikManifestTargetCanvasDimension | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetMosaikVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateMosaikManifestFormGroup() {
@@ -356,17 +432,26 @@ export namespace MyNS {
 
 	export interface NodePeer {
 
-		/** Required */
-		blockHeight: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		blockHeight: string;
 
 		/** Required */
 		blockchainApi: boolean;
 
-		/** Required */
-		headerHeight: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		headerHeight: string;
 
-		/** Required */
-		lastSeen: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastSeen: string;
 
 		/** Required */
 		name: string;
@@ -374,25 +459,37 @@ export namespace MyNS {
 		/** Required */
 		openRestApi: boolean;
 
-		/** Required */
-		responseTime: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		responseTime: string;
 
 		/** Required */
 		url: string;
 	}
 	export interface NodePeerFormProperties {
 
-		/** Required */
-		blockHeight: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		blockHeight: FormControl<string | null | undefined>,
 
 		/** Required */
 		blockchainApi: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		headerHeight: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		headerHeight: FormControl<string | null | undefined>,
 
-		/** Required */
-		lastSeen: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastSeen: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
@@ -400,21 +497,24 @@ export namespace MyNS {
 		/** Required */
 		openRestApi: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		responseTime: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		responseTime: FormControl<string | null | undefined>,
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateNodePeerFormGroup() {
 		return new FormGroup<NodePeerFormProperties>({
-			blockHeight: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			blockHeight: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			blockchainApi: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			headerHeight: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			lastSeen: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			headerHeight: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			lastSeen: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			openRestApi: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			responseTime: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			responseTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -422,18 +522,26 @@ export namespace MyNS {
 
 	export interface NotificationCheckResponse {
 		message?: string | null;
-		messageTs?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		messageTs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextCheck?: number | null;
 	}
 	export interface NotificationCheckResponseFormProperties {
 		message: FormControl<string | null | undefined>,
-		messageTs: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		messageTs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextCheck: FormControl<number | null | undefined>,
 	}
 	export function CreateNotificationCheckResponseFormGroup() {
 		return new FormGroup<NotificationCheckResponseFormProperties>({
 			message: new FormControl<string | null | undefined>(undefined),
-			messageTs: new FormControl<number | null | undefined>(undefined),
+			messageTs: new FormControl<string | null | undefined>(undefined),
 			nextCheck: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -470,52 +578,76 @@ export namespace MyNS {
 
 	export interface TokenPrice {
 
-		/** Required */
-		available: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		available: string;
 
 		/** Required */
 		displayName: string;
 
-		/** Required */
-		lastUpdated: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUpdated: string;
 
-		/** Required */
-		price: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		price: string;
 
 		/** Required */
 		tokenId: string;
 
-		/** Required */
-		volumeLastDay: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volumeLastDay: string;
 	}
 	export interface TokenPriceFormProperties {
 
-		/** Required */
-		available: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		available: FormControl<string | null | undefined>,
 
 		/** Required */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Required */
-		lastUpdated: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUpdated: FormControl<string | null | undefined>,
 
-		/** Required */
-		price: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		price: FormControl<string | null | undefined>,
 
 		/** Required */
 		tokenId: FormControl<string | null | undefined>,
 
-		/** Required */
-		volumeLastDay: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volumeLastDay: FormControl<string | null | undefined>,
 	}
 	export function CreateTokenPriceFormGroup() {
 		return new FormGroup<TokenPriceFormProperties>({
-			available: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			available: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			lastUpdated: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			lastUpdated: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tokenId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			volumeLastDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			volumeLastDay: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -544,9 +676,11 @@ export namespace MyNS {
 
 		/**
 		 * Get createbabel/{address}
+		 * @param {string} ergAmount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} tokenAmount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		ErgoPayCreateBabelBox(address: string, tokenId: string, ergAmount: number, tokenAmount: number): Observable<HttpResponse<string>> {
+		ErgoPayCreateBabelBox(address: string, tokenId: string, ergAmount: string, tokenAmount: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'createbabel/' + (address == null ? '' : encodeURIComponent(address)) + '&tokenId=' + (tokenId == null ? '' : encodeURIComponent(tokenId)) + '&ergAmount=' + ergAmount + '&tokenAmount=' + tokenAmount, { observe: 'response', responseType: 'text' });
 		}
 
@@ -653,6 +787,7 @@ export namespace MyNS {
 		 * Get peers/list
 		 * @param {boolean} unreachable Set to true to show unreachable peers in the list
 		 * @param {boolean} closedApi Set to true to show peers not open to be connected
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetPeersList(unreachable: boolean | null | undefined, closedApi: boolean | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -662,18 +797,22 @@ export namespace MyNS {
 		/**
 		 * Builds ErgoPayRequest for SigRSV exchange
 		 * Get sigrsv/exchange/
+		 * @param {string} amount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} checkRate Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} executionFee Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		DoSigmaRsvExchange(amount: number, address: string, checkRate: number | null | undefined, executionFee: number | null | undefined): Observable<HttpResponse<string>> {
+		DoSigmaRsvExchange(amount: string, address: string, checkRate: string | null | undefined, executionFee: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sigrsv/exchange/?amount=' + amount + '&address=' + (address == null ? '' : encodeURIComponent(address)) + '&checkRate=' + checkRate + '&executionFee=' + executionFee, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Calculates SigRSV exchange
 		 * Get sigrsv/exchange/{amount}/info
+		 * @param {string} amount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		CalcSigmaRsvExchange(amount: number): Observable<HttpResponse<string>> {
+		CalcSigmaRsvExchange(amount: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sigrsv/exchange/' + amount + '/info', { observe: 'response', responseType: 'text' });
 		}
 
@@ -689,18 +828,22 @@ export namespace MyNS {
 		/**
 		 * Builds ErgoPayRequest for SigUSD exchange
 		 * Get sigusd/exchange/
+		 * @param {string} amount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} checkRate Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} executionFee Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		DoSigmaUsdExchange(amount: number, address: string, checkRate: number | null | undefined, executionFee: number | null | undefined): Observable<HttpResponse<string>> {
+		DoSigmaUsdExchange(amount: string, address: string, checkRate: string | null | undefined, executionFee: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sigusd/exchange/?amount=' + amount + '&address=' + (address == null ? '' : encodeURIComponent(address)) + '&checkRate=' + checkRate + '&executionFee=' + executionFee, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Calculates SigUSD exchange
 		 * Get sigusd/exchange/{amount}/info
+		 * @param {string} amount Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		CalcSigmaUsdExchange(amount: number): Observable<HttpResponse<string>> {
+		CalcSigmaUsdExchange(amount: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sigusd/exchange/' + amount + '/info', { observe: 'response', responseType: 'text' });
 		}
 

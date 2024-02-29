@@ -1594,6 +1594,7 @@ export namespace MyNS {
 		 * Lists the managed application definitions in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ApplicationDefinitionListResult} OK - Returns an array of managed application definitions.
@@ -1606,7 +1607,9 @@ export namespace MyNS {
 		 * Gets the managed application definition.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationDefinitionName The name of the managed application definition.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ApplicationDefinition} OK - Returns the managed application definition.
@@ -1619,7 +1622,9 @@ export namespace MyNS {
 		 * Creates a new managed application definition.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationDefinitionName The name of the managed application definition.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {ApplicationDefinition} requestBody Parameters supplied to the create or update an managed application definition.
@@ -1633,7 +1638,9 @@ export namespace MyNS {
 		 * Deletes the managed application definition.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationDefinitionName The name of the managed application definition to delete.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} OK
@@ -1646,6 +1653,7 @@ export namespace MyNS {
 		 * Gets all the applications within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ApplicationListResult} OK - Returns an array of applications.
@@ -1658,7 +1666,9 @@ export namespace MyNS {
 		 * Gets the managed application.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationName The name of the managed application.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {Application} OK - Returns the managed application.
@@ -1671,7 +1681,9 @@ export namespace MyNS {
 		 * Creates a new managed application.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationName The name of the managed application.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Application} requestBody Parameters supplied to the create or update a managed application.
@@ -1685,7 +1697,9 @@ export namespace MyNS {
 		 * Deletes the managed application.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationName The name of the managed application.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -1698,7 +1712,9 @@ export namespace MyNS {
 		 * Updates an existing managed application. The only value that can be updated via PATCH currently is the tags.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationName The name of the managed application.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Application} requestBody Parameters supplied to update an existing managed application.
@@ -1712,7 +1728,9 @@ export namespace MyNS {
 		 * Refresh Permissions for application.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}/refreshPermissions
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} applicationName The name of the managed application.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -1725,6 +1743,7 @@ export namespace MyNS {
 		 * Retrieves all JIT requests within the resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {JitRequestDefinitionListResult} OK - Returns an array of JIT requests.
@@ -1737,6 +1756,7 @@ export namespace MyNS {
 		 * Gets the JIT request.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} jitRequestName The name of the JIT request.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -1750,6 +1770,7 @@ export namespace MyNS {
 		 * Creates or updates the JIT request.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} jitRequestName The name of the JIT request.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -1764,6 +1785,7 @@ export namespace MyNS {
 		 * Deletes the JIT request.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} jitRequestName The name of the JIT request.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -1777,6 +1799,7 @@ export namespace MyNS {
 		 * Updates the JIT request.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} jitRequestName The name of the JIT request.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.

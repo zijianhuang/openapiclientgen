@@ -127,7 +127,10 @@ export namespace MyNS {
 		/** ExecutedActionMetadata contains details about a completed execution. */
 		executionMetadata?: BuildBazelRemoteExecutionV2ExecutedActionMetadata;
 
-		/** The exit code of the command. */
+		/**
+		 * The exit code of the command.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The output directories of the action. For each output directory requested in the `output_directories` or `output_paths` field of the Action, if the corresponding directory existed after the action completed, a single entry will be present in the output list, which will contain the digest of a Tree message containing the directory tree, and the path equal exactly to the corresponding Action output_directories member. As an example, suppose the Action had an output directory `a/b/dir` and the execution produced the following contents in `a/b/dir`: a file named `bar` and a directory named `foo` with an executable file named `baz`. Then, output_directory will contain (hashes shortened for readability): ```json // OutputDirectory proto: { path: "a/b/dir" tree_digest: { hash: "4a73bc9d03...", size: 55 } } // Tree proto with hash "4a73bc9d03..." and size 55: { root: { files: [ { name: "bar", digest: { hash: "4a73bc9d03...", size: 65534 } } ], directories: [ { name: "foo", digest: { hash: "4cf2eda940...", size: 43 } } ] } children : { // (Directory proto with hash "4cf2eda940..." and size 43) files: [ { name: "baz", digest: { hash: "b2c941073e...", size: 1294, }, is_executable: true } ] } } ``` If an output of the same name as listed in `output_files` of the Command was found in `output_directories`, but was not a directory, the server will return a FAILED_PRECONDITION. */
@@ -161,7 +164,10 @@ export namespace MyNS {
 	/** An ActionResult represents the result of an Action being run. It is advised that at least one field (for example `ActionResult.execution_metadata.Worker`) have a non-default value, to ensure that the serialized value is non-empty, which can then be used as a basic data sanity check. */
 	export interface BuildBazelRemoteExecutionV2ActionResultFormProperties {
 
-		/** The exit code of the command. */
+		/**
+		 * The exit code of the command.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** The standard error buffer of the action. The server SHOULD NOT inline stderr unless requested by the client in the GetActionResultRequest message. The server MAY omit inlining, even if requested, and MUST do so if inlining would cause the response to exceed message size limits. Clients SHOULD NOT populate this field when uploading to the cache. */
@@ -345,7 +351,10 @@ export namespace MyNS {
 		/** A list of string-based NodeProperties. */
 		properties?: Array<BuildBazelRemoteExecutionV2NodeProperty>;
 
-		/** The UNIX file mode, e.g., 0755. */
+		/**
+		 * The UNIX file mode, e.g., 0755.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		unixMode?: number | null;
 	}
 
@@ -355,7 +364,10 @@ export namespace MyNS {
 		/** The file's last modification timestamp. */
 		mtime: FormControl<string | null | undefined>,
 
-		/** The UNIX file mode, e.g., 0755. */
+		/**
+		 * The UNIX file mode, e.g., 0755.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		unixMode: FormControl<number | null | undefined>,
 	}
 	export function CreateBuildBazelRemoteExecutionV2NodePropertiesFormGroup() {
@@ -732,7 +744,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -745,7 +760,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -991,10 +1009,16 @@ export namespace MyNS {
 		/** Docker Image name. */
 		dockerImageName?: string | null;
 
-		/** The input cache miss rate as a fraction of the total size of input files. */
+		/**
+		 * The input cache miss rate as a fraction of the total size of input files.
+		 * Type: float
+		 */
 		inputCacheMissBytes?: number | null;
 
-		/** The input cache miss rate as a fraction of the number of input files. */
+		/**
+		 * The input cache miss rate as a fraction of the number of input files.
+		 * Type: float
+		 */
 		inputCacheMissFiles?: number | null;
 
 		/** The number of errors reported. */
@@ -1022,10 +1046,16 @@ export namespace MyNS {
 		/** Docker Image name. */
 		dockerImageName: FormControl<string | null | undefined>,
 
-		/** The input cache miss rate as a fraction of the total size of input files. */
+		/**
+		 * The input cache miss rate as a fraction of the total size of input files.
+		 * Type: float
+		 */
 		inputCacheMissBytes: FormControl<number | null | undefined>,
 
-		/** The input cache miss rate as a fraction of the number of input files. */
+		/**
+		 * The input cache miss rate as a fraction of the number of input files.
+		 * Type: float
+		 */
 		inputCacheMissFiles: FormControl<number | null | undefined>,
 
 		/** The number of errors reported. */
@@ -1093,6 +1123,8 @@ export namespace MyNS {
 	/** ResourceUsage is the system resource usage of the host machine. */
 	export interface GoogleDevtoolsRemotebuildbotResourceUsage {
 		botState?: GoogleDevtoolsRemotebuildbotResourceUsageBotState | null;
+
+		/** Type: double */
 		cpuUsedPercent?: number | null;
 		diskUsage?: GoogleDevtoolsRemotebuildbotResourceUsageStat;
 		memoryUsage?: GoogleDevtoolsRemotebuildbotResourceUsageStat;
@@ -1102,6 +1134,8 @@ export namespace MyNS {
 	/** ResourceUsage is the system resource usage of the host machine. */
 	export interface GoogleDevtoolsRemotebuildbotResourceUsageFormProperties {
 		botState: FormControl<GoogleDevtoolsRemotebuildbotResourceUsageBotState | null | undefined>,
+
+		/** Type: double */
 		cpuUsedPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleDevtoolsRemotebuildbotResourceUsageFormGroup() {
@@ -2044,7 +2078,10 @@ export namespace MyNS {
 	/** DEPRECATED - use CommandResult instead. Describes the actual outputs from the task. */
 	export interface GoogleDevtoolsRemoteworkersV1test2CommandOutputs {
 
-		/** exit_code is only fully reliable if the status' code is OK. If the task exceeded its deadline or was cancelled, the process may still produce an exit code as it is cancelled, and this will be populated, but a successful (zero) is unlikely to be correct unless the status code is OK. */
+		/**
+		 * exit_code is only fully reliable if the status' code is OK. If the task exceeded its deadline or was cancelled, the process may still produce an exit code as it is cancelled, and this will be populated, but a successful (zero) is unlikely to be correct unless the status code is OK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The CommandTask and CommandResult messages assume the existence of a service that can serve blobs of content, identified by a hash and size known as a "digest." The method by which these blobs may be retrieved is not specified here, but a model implementation is in the Remote Execution API's "ContentAddressibleStorage" interface. In the context of the RWAPI, a Digest will virtually always refer to the contents of a file or a directory. The latter is represented by the byte-encoded Directory message. */
@@ -2054,7 +2091,10 @@ export namespace MyNS {
 	/** DEPRECATED - use CommandResult instead. Describes the actual outputs from the task. */
 	export interface GoogleDevtoolsRemoteworkersV1test2CommandOutputsFormProperties {
 
-		/** exit_code is only fully reliable if the status' code is OK. If the task exceeded its deadline or was cancelled, the process may still produce an exit code as it is cancelled, and this will be populated, but a successful (zero) is unlikely to be correct unless the status code is OK. */
+		/**
+		 * exit_code is only fully reliable if the status' code is OK. If the task exceeded its deadline or was cancelled, the process may still produce an exit code as it is cancelled, and this will be populated, but a successful (zero) is unlikely to be correct unless the status code is OK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleDevtoolsRemoteworkersV1test2CommandOutputsFormGroup() {
@@ -2099,7 +2139,10 @@ export namespace MyNS {
 		/** The elapsed time between calling Accept and Complete. The server will also have its own idea of what this should be, but this excludes the overhead of the RPCs and the bot response time. */
 		duration?: string | null;
 
-		/** The exit code of the process. An exit code of "0" should only be trusted if `status` has a code of OK (otherwise it may simply be unset). */
+		/**
+		 * The exit code of the process. An exit code of "0" should only be trusted if `status` has a code of OK (otherwise it may simply be unset).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Implementation-dependent metadata about the task. Both servers and bots may define messages which can be encoded here; bots are free to provide metadata in multiple formats, and servers are free to choose one or more of the values to process and ignore others. In particular, it is *not* considered an error for the bot to provide the server with a field that it doesn't know about. */
@@ -2121,7 +2164,10 @@ export namespace MyNS {
 		/** The elapsed time between calling Accept and Complete. The server will also have its own idea of what this should be, but this excludes the overhead of the RPCs and the bot response time. */
 		duration: FormControl<string | null | undefined>,
 
-		/** The exit code of the process. An exit code of "0" should only be trusted if `status` has a code of OK (otherwise it may simply be unset). */
+		/**
+		 * The exit code of the process. An exit code of "0" should only be trusted if `status` has a code of OK (otherwise it may simply be unset).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** The amount of time *not* spent executing the command (ie uploading/downloading files). */

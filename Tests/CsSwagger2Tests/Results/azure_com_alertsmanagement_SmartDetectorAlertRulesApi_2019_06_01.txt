@@ -402,7 +402,9 @@ namespace MyNS
 		/// List all the existing Smart Detector alert rules within the subscription.
 		/// SmartDetectorAlertRules_List subscriptions/{subscriptionId}/providers/microsoft.alertsManagement/smartDetectorAlertRules
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="expandDetector">Indicates if Smart Detector should be expanded.</param>
 		/// <returns>Successful request to list Smart Detector alert rules.</returns>
@@ -433,7 +435,9 @@ namespace MyNS
 		/// List all the existing Smart Detector alert rules within the subscription and resource group.
 		/// SmartDetectorAlertRules_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="expandDetector">Indicates if Smart Detector should be expanded.</param>
@@ -465,7 +469,9 @@ namespace MyNS
 		/// Get a specific Smart Detector alert rule.
 		/// SmartDetectorAlertRules_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="alertRuleName">The name of the alert rule.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -498,7 +504,9 @@ namespace MyNS
 		/// Create or update a Smart Detector alert rule.
 		/// SmartDetectorAlertRules_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="alertRuleName">The name of the alert rule.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -538,7 +546,9 @@ namespace MyNS
 		/// Delete an existing Smart Detector alert rule.
 		/// SmartDetectorAlertRules_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="alertRuleName">The name of the alert rule.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -564,7 +574,9 @@ namespace MyNS
 		/// Patch a specific Smart Detector alert rule.
 		/// SmartDetectorAlertRules_Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.alertsManagement/smartDetectorAlertRules/{alertRuleName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="alertRuleName">The name of the alert rule.</param>
 		/// <param name="api_version">Client Api Version.</param>

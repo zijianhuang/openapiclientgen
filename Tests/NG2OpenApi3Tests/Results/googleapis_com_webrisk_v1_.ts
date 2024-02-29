@@ -67,7 +67,10 @@ export namespace MyNS {
 	/** The uncompressed threat entries in hash format. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URI. Used for sending ThreatEntryAdditons to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression. */
 	export interface GoogleCloudWebriskV1RawHashes {
 
-		/** The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). In practice this is almost always 4, except in exceptional circumstances. */
+		/**
+		 * The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). In practice this is almost always 4, except in exceptional circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixSize?: number | null;
 
 		/** The hashes, in binary format, concatenated into one long string. Hashes are sorted in lexicographic order. For JSON API users, hashes are base64-encoded. */
@@ -77,7 +80,10 @@ export namespace MyNS {
 	/** The uncompressed threat entries in hash format. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URI. Used for sending ThreatEntryAdditons to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression. */
 	export interface GoogleCloudWebriskV1RawHashesFormProperties {
 
-		/** The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). In practice this is almost always 4, except in exceptional circumstances. */
+		/**
+		 * The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). In practice this is almost always 4, except in exceptional circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixSize: FormControl<number | null | undefined>,
 
 		/** The hashes, in binary format, concatenated into one long string. Hashes are sorted in lexicographic order. For JSON API users, hashes are base64-encoded. */
@@ -98,13 +104,19 @@ export namespace MyNS {
 		/** The encoded deltas that are encoded using the Golomb-Rice coder. */
 		encodedData?: string | null;
 
-		/** The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`. */
+		/**
+		 * The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount?: number | null;
 
 		/** The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer's value. If the field is empty or missing, assume zero. */
 		firstValue?: string | null;
 
-		/** The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero. */
+		/**
+		 * The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		riceParameter?: number | null;
 	}
 
@@ -114,13 +126,19 @@ export namespace MyNS {
 		/** The encoded deltas that are encoded using the Golomb-Rice coder. */
 		encodedData: FormControl<string | null | undefined>,
 
-		/** The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`. */
+		/**
+		 * The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount: FormControl<number | null | undefined>,
 
 		/** The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer's value. If the field is empty or missing, assume zero. */
 		firstValue: FormControl<string | null | undefined>,
 
-		/** The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero. */
+		/**
+		 * The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		riceParameter: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudWebriskV1RiceDeltaEncodingFormGroup() {
@@ -389,7 +407,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -402,7 +423,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -450,7 +474,9 @@ export namespace MyNS {
 		 * Gets the most recent threat list diffs. These diffs should be applied to a local database of hashes to keep it up-to-date. If the local database is empty or excessively out-of-date, a complete snapshot of the database will be returned. This Method only updates a single ThreatList at a time. To update multiple ThreatList databases, this method needs to be called once for each list.
 		 * Get v1/threatLists:computeDiff
 		 * @param {number} constraints_maxDatabaseEntries Sets the maximum number of entries that the client is willing to have in the local database. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} constraints_maxDiffEntries The maximum size in number of entries. The diff will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no diff size limit is set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} constraints_supportedCompressions The compression types supported by the client.
 		 * @param {Webrisk_threatLists_computeDiffThreatType} threatType Required. The threat list to update. Only a single ThreatType should be specified per request. If you want to handle multiple ThreatTypes, you must make one request per ThreatType.
 		 * @param {string} versionToken The current version token of the client for the requested list (the client version that was received from the last successful diff). If the client does not have a version token (this is the first time calling ComputeThreatListDiff), this may be left empty and a full database snapshot will be returned.
@@ -497,6 +523,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */

@@ -4992,7 +4992,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Checkout Custom Fields</returns>
 		public async Task<CheckoutCustomField[]> Checkout_custom_fields_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5723,7 +5725,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Customer Categories</returns>
 		public async Task<CustomerCategory[]> Customer_categories_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6033,7 +6037,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Orders</returns>
 		public async Task<Customer[]> Customers_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6497,7 +6503,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Fulfillments</returns>
 		public async Task<Fulfillment[]> Fulfillments_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6605,7 +6613,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Hooks</returns>
 		public async Task<Hook[]> Hooks_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6985,7 +6995,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Orders</returns>
 		public async Task<Order[]> Orders_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7335,7 +7347,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <returns>An array of Pages</returns>
 		public async Task<Page[]> Pages_jsonGetByLoginAndAuthtokenAndLimitAndPageAsync(string login, string authtoken, string limit, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7674,7 +7688,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="login">API OAuth login.</param>
 		/// <param name="authtoken">API OAuth token.</param>
-		/// <param name="limit">List restriction</param>
+		/// <param name="limit">List restriction
+		/// Maximum: 200
+		// </param>
 		/// <param name="page">List page</param>
 		/// <param name="locale">Locale code of the translation</param>
 		/// <returns>OK</returns>

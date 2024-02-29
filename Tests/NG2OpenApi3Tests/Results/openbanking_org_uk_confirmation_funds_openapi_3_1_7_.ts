@@ -53,6 +53,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages?: number | null;
 	}
 
@@ -72,6 +74,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -95,15 +99,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path?: string | null;
 
@@ -122,15 +126,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path: FormControl<string | null | undefined>,
 
@@ -154,8 +158,8 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: string;
 
@@ -167,16 +171,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id?: string | null;
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 	}
@@ -187,23 +191,23 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -234,8 +238,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -248,8 +252,8 @@ export namespace MyNS {
 		/**
 		 * Unique reference, as assigned by the CBPII, to unambiguously refer to the request related to the payment transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: string;
 	}
@@ -258,16 +262,16 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference, as assigned by the CBPII, to unambiguously refer to the request related to the payment transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -366,16 +370,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * Name of the account, as assigned by the account servicing institution.
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -388,8 +392,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -398,16 +402,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the account, as assigned by the account servicing institution.
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -420,8 +424,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -459,8 +463,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned to identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -505,8 +509,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned to identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -556,16 +560,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * Name of the account, as assigned by the account servicing institution.
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -578,8 +582,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -588,16 +592,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the account, as assigned by the account servicing institution.
 		 * Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -610,8 +614,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -651,8 +655,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -673,8 +677,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FundsConfirmationId: string;
 
@@ -687,8 +691,8 @@ export namespace MyNS {
 		/**
 		 * Unique reference, as assigned by the CBPII, to unambiguously refer to the request related to the payment transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: string;
 	}
@@ -697,8 +701,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -719,16 +723,16 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the funds confirmation resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		FundsConfirmationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference, as assigned by the CBPII, to unambiguously refer to the request related to the payment transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}

@@ -1246,7 +1246,10 @@ namespace MyNS
 		/// Lists the cells for an account.
 		/// ListCells cells
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1323,7 +1326,10 @@ namespace MyNS
 		/// Lists the cross-account readiness authorizations that are in place for an account.
 		/// ListCrossAccountAuthorizations crossaccountauthorizations
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1400,7 +1406,10 @@ namespace MyNS
 		/// Lists the readiness checks for an account.
 		/// ListReadinessChecks readinesschecks
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1477,7 +1486,10 @@ namespace MyNS
 		/// Lists the recovery groups in an account.
 		/// ListRecoveryGroups recoverygroups
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1554,7 +1566,10 @@ namespace MyNS
 		/// Lists the resource sets in an account.
 		/// ListResourceSets resourcesets
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2033,7 +2048,10 @@ namespace MyNS
 		/// Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.
 		/// GetArchitectureRecommendations recoverygroups/{recoveryGroupName}/architectureRecommendations
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="recoveryGroupName">The name of a recovery group.</param>
 		/// <returns>Success</returns>
@@ -2070,7 +2088,10 @@ namespace MyNS
 		/// GetCellReadinessSummary cellreadiness/{cellName}
 		/// </summary>
 		/// <param name="cellName">The name of the cell.</param>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2107,7 +2128,10 @@ namespace MyNS
 		/// Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.
 		/// GetReadinessCheckResourceStatus readinesschecks/{readinessCheckName}/resource/{resourceIdentifier}/status
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="readinessCheckName">Name of a readiness check.</param>
 		/// <param name="resourceIdentifier">The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</param>
@@ -2146,7 +2170,10 @@ namespace MyNS
 		/// Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.
 		/// GetReadinessCheckStatus readinesschecks/{readinessCheckName}/status
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="readinessCheckName">Name of a readiness check.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -2184,7 +2211,10 @@ namespace MyNS
 		/// Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.
 		/// GetRecoveryGroupReadinessSummary recoverygroupreadiness/{recoveryGroupName}
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="recoveryGroupName">The name of a recovery group.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -2222,7 +2252,10 @@ namespace MyNS
 		/// Lists all readiness rules, or lists the readiness rules for a specific resource type.
 		/// ListRules rules
 		/// </summary>
-		/// <param name="maxResults">The number of objects that you want to return with this call.</param>
+		/// <param name="maxResults">The number of objects that you want to return with this call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token that identifies which batch of results you want to see.</param>
 		/// <param name="resourceType">The resource type that a readiness rule applies to.</param>
 		/// <param name="MaxResults">Pagination limit</param>

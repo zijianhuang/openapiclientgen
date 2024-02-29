@@ -239,7 +239,10 @@ export namespace MyNS {
 		/** Output only. Last update timestamp: when the represented revision was last modified. */
 		revisionUpdateTime?: Date | null;
 
-		/** Output only. The size of the spec file in bytes. If the spec is gzipped, this is the size of the uncompressed spec. */
+		/**
+		 * Output only. The size of the spec file in bytes. If the spec is gzipped, this is the size of the uncompressed spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeBytes?: number | null;
 
 		/** The original source URI of the spec (if one exists). This is an external location that can be used for reference purposes but which may not be authoritative since this external resource may change after the spec is retrieved. */
@@ -285,7 +288,10 @@ export namespace MyNS {
 		/** Output only. Last update timestamp: when the represented revision was last modified. */
 		revisionUpdateTime: FormControl<Date | null | undefined>,
 
-		/** Output only. The size of the spec file in bytes. If the spec is gzipped, this is the size of the uncompressed spec. */
+		/**
+		 * Output only. The size of the spec file in bytes. If the spec is gzipped, this is the size of the uncompressed spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeBytes: FormControl<number | null | undefined>,
 
 		/** The original source URI of the spec (if one exists). This is an external location that can be used for reference purposes but which may not be authoritative since this external resource may change after the spec is retrieved. */
@@ -400,7 +406,10 @@ export namespace MyNS {
 		/** Resource name. */
 		name?: string | null;
 
-		/** Output only. The size of the artifact in bytes. If the artifact is gzipped, this is the size of the uncompressed artifact. */
+		/**
+		 * Output only. The size of the artifact in bytes. If the artifact is gzipped, this is the size of the uncompressed artifact.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeBytes?: number | null;
 
 		/** Output only. Last update timestamp. */
@@ -425,7 +434,10 @@ export namespace MyNS {
 		/** Resource name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The size of the artifact in bytes. If the artifact is gzipped, this is the size of the uncompressed artifact. */
+		/**
+		 * Output only. The size of the artifact in bytes. If the artifact is gzipped, this is the size of the uncompressed artifact.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeBytes: FormControl<number | null | undefined>,
 
 		/** Output only. Last update timestamp. */
@@ -717,7 +729,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code]. */
+		/**
+		 * The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details.  There is a common set of message types for APIs to use. */
@@ -730,7 +745,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code]. */
+		/**
+		 * The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client. */
@@ -835,6 +853,7 @@ export namespace MyNS {
 		 * @param {string} project The project id.
 		 * @param {string} location The location id.
 		 * @param {number} pageSize The maximum number of APIs to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListApis` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApis` must match the call that provided the page token.
 		 * @param {string} filter An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
 		 * @return {ListApisResponse} OK
@@ -902,6 +921,7 @@ export namespace MyNS {
 		 * @param {string} location The location id.
 		 * @param {string} api The api id.
 		 * @param {number} pageSize The maximum number of deployments to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListApiDeployments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiDeployments` must match the call that provided the page token.
 		 * @param {string} filter An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
 		 * @return {ListApiDeploymentsResponse} OK
@@ -988,6 +1008,7 @@ export namespace MyNS {
 		 * @param {string} api The api id.
 		 * @param {string} deployment The deployment id.
 		 * @param {number} pageSize The maximum number of revisions to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token, received from a previous ListApiDeploymentRevisions call. Provide this to retrieve the subsequent page.
 		 * @return {ListApiDeploymentRevisionsResponse} OK
 		 */
@@ -1030,6 +1051,7 @@ export namespace MyNS {
 		 * @param {string} location The location id.
 		 * @param {string} api The api id.
 		 * @param {number} pageSize The maximum number of versions to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListApiVersions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiVersions` must match the call that provided the page token.
 		 * @param {string} filter An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields.
 		 * @return {ListApiVersionsResponse} OK
@@ -1102,6 +1124,7 @@ export namespace MyNS {
 		 * @param {string} api The api id.
 		 * @param {string} version The version id.
 		 * @param {number} pageSize The maximum number of specs to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListApiSpecs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListApiSpecs` must match the call that provided the page token.
 		 * @param {string} filter An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
 		 * @return {ListApiSpecsResponse} OK
@@ -1211,6 +1234,7 @@ export namespace MyNS {
 		 * @param {string} version The version id.
 		 * @param {string} spec The spec id.
 		 * @param {number} pageSize The maximum number of revisions to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token, received from a previous ListApiSpecRevisions call. Provide this to retrieve the subsequent page.
 		 * @return {ListApiSpecRevisionsResponse} OK
 		 */
@@ -1253,6 +1277,7 @@ export namespace MyNS {
 		 * @param {string} project The project id.
 		 * @param {string} location The location id.
 		 * @param {number} pageSize The maximum number of artifacts to return. The service may return fewer than this value. If unspecified, at most 50 values will be returned. The maximum is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListArtifacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListArtifacts` must match the call that provided the page token.
 		 * @param {string} filter An expression that can be used to filter the list. Filters use the Common Expression Language and can refer to all message fields except contents.
 		 * @return {ListArtifactsResponse} OK

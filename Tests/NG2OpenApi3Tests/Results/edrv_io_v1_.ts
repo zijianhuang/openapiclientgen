@@ -42,6 +42,7 @@ export namespace MyNS {
 		 * @param {boolean} active Chargestations that have been activated/deactivated by the admin
 		 * @param {boolean} _public Chargestations that are public
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -119,6 +120,7 @@ export namespace MyNS {
 		 * Get Commands data
 		 * Get v1/commands
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -235,6 +237,7 @@ export namespace MyNS {
 		 * Get Configurations data
 		 * Get v1/configurations
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -273,6 +276,7 @@ export namespace MyNS {
 		 * List connectors
 		 * Get v1/connectors
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -339,6 +343,7 @@ export namespace MyNS {
 		 * Get v1/drivers
 		 * @param {boolean} active Get a list of active drivers
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -437,6 +442,7 @@ export namespace MyNS {
 		 * Get Locations data
 		 * Get v1/locations
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -466,6 +472,7 @@ export namespace MyNS {
 		 * Get an array of all Organizations
 		 * Get v1/organizations
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -516,6 +523,7 @@ export namespace MyNS {
 		 * Get Reservations data
 		 * Get v1/reservations
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -558,6 +566,7 @@ export namespace MyNS {
 		 * List tokens
 		 * Get v1/tokens
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -622,6 +631,7 @@ export namespace MyNS {
 		 * Get v1/transactions
 		 * @param {GetTransactionsStatus} status Started to get only active transactions
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -677,6 +687,7 @@ export namespace MyNS {
 		 * Get v1/vehicles
 		 * @param {boolean} active Get a list of active vehicles
 		 * @param {number} paginate_limit Number of results per page
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} paginate_page The queried page index
 		 * @param {boolean} paginate_enabled Enable pagination
 		 * @param {string} sort_by Sort data by this key
@@ -928,6 +939,8 @@ export namespace MyNS {
 	export interface PostConnectorsPostBody {
 		chargestation?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		power?: number | null;
 		power_type?: string | null;
 		rate?: string | null;
@@ -936,6 +949,8 @@ export namespace MyNS {
 	export interface PostConnectorsPostBodyFormProperties {
 		chargestation: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		power: FormControl<number | null | undefined>,
 		power_type: FormControl<string | null | undefined>,
 		rate: FormControl<string | null | undefined>,
@@ -975,6 +990,8 @@ export namespace MyNS {
 	export interface PatchConnectorPatchBody {
 		chargestation?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		power?: number | null;
 		power_type?: string | null;
 		rate?: string | null;
@@ -983,6 +1000,8 @@ export namespace MyNS {
 	export interface PatchConnectorPatchBodyFormProperties {
 		chargestation: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		power: FormControl<number | null | undefined>,
 		power_type: FormControl<string | null | undefined>,
 		rate: FormControl<string | null | undefined>,
@@ -1253,11 +1272,19 @@ export namespace MyNS {
 	}
 
 	export interface PatchLocationPatchBodyCoordinates {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface PatchLocationPatchBodyCoordinatesFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreatePatchLocationPatchBodyCoordinatesFormGroup() {
@@ -1464,11 +1491,19 @@ export namespace MyNS {
 	}
 
 	export interface PostLocationsPostBodyCoordinates {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface PostLocationsPostBodyCoordinatesFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreatePostLocationsPostBodyCoordinatesFormGroup() {
@@ -1511,6 +1546,8 @@ export namespace MyNS {
 		stripe_connected_account_id?: string | null;
 		stripe_country?: string | null;
 		stripe_currency?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stripe_reserve_amount?: number | null;
 		support?: PatchOrganizationPatchBodySupport;
 		supportChat?: PatchOrganizationPatchBodySupportChat;
@@ -1524,6 +1561,8 @@ export namespace MyNS {
 		stripe_connected_account_id: FormControl<string | null | undefined>,
 		stripe_country: FormControl<string | null | undefined>,
 		stripe_currency: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stripe_reserve_amount: FormControl<number | null | undefined>,
 	}
 	export function CreatePatchOrganizationPatchBodyFormGroup() {

@@ -989,6 +989,7 @@ export namespace MyNS {
 		 * Creates the specified schedule.
 		 * Post schedules/{Name}
 		 * @param {string} Name The name of the schedule that you are creating.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateScheduleOutput} Success
 		 */
 		CreateSchedule(Name: string, requestBody: CreateSchedulePostBody): Observable<CreateScheduleOutput> {
@@ -999,8 +1000,11 @@ export namespace MyNS {
 		 * Deletes the specified schedule.
 		 * Delete schedules/{Name}
 		 * @param {string} clientToken  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} groupName The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Name The name of the schedule to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteScheduleOutput} Success
 		 */
 		DeleteSchedule(clientToken: string | null | undefined, groupName: string | null | undefined, Name: string): Observable<DeleteScheduleOutput> {
@@ -1011,7 +1015,9 @@ export namespace MyNS {
 		 * Retrieves the specified schedule.
 		 * Get schedules/{Name}
 		 * @param {string} groupName The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Name The name of the schedule to retrieve.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetScheduleOutput} Success
 		 */
 		GetSchedule(groupName: string | null | undefined, Name: string): Observable<GetScheduleOutput> {
@@ -1022,6 +1028,7 @@ export namespace MyNS {
 		 * <p> Updates the specified schedule. When you call <code>UpdateSchedule</code>, EventBridge Scheduler uses all values, including empty values, specified in the request and overrides the existing schedule. This is by design. This means that if you do not set an optional field in your request, that field will be set to its system-default value after the update. </p> <p> Before calling this operation, we recommend that you call the <code>GetSchedule</code> API operation and make a note of all optional parameters for your <code>UpdateSchedule</code> call. </p>
 		 * Put schedules/{Name}
 		 * @param {string} Name The name of the schedule that you are updating.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateScheduleOutput} Success
 		 */
 		UpdateSchedule(Name: string, requestBody: UpdateSchedulePutBody): Observable<UpdateScheduleOutput> {
@@ -1032,6 +1039,7 @@ export namespace MyNS {
 		 * Creates the specified schedule group.
 		 * Post schedule-groups/{Name}
 		 * @param {string} Name The name of the schedule group that you are creating.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateScheduleGroupOutput} Success
 		 */
 		CreateScheduleGroup(Name: string, requestBody: CreateScheduleGroupPostBody): Observable<CreateScheduleGroupOutput> {
@@ -1042,7 +1050,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified schedule group. Deleting a schedule group results in EventBridge Scheduler deleting all schedules associated with the group. When you delete a group, it remains in a <code>DELETING</code> state until all of its associated schedules are deleted. Schedules associated with the group that are set to run while the schedule group is in the process of being deleted might continue to invoke their targets until the schedule group and its associated schedules are deleted.</p> <note> <p> This operation is eventually consistent. </p> </note>
 		 * Delete schedule-groups/{Name}
 		 * @param {string} clientToken  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Name The name of the schedule group to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteScheduleGroupOutput} Success
 		 */
 		DeleteScheduleGroup(clientToken: string | null | undefined, Name: string): Observable<DeleteScheduleGroupOutput> {
@@ -1053,6 +1063,7 @@ export namespace MyNS {
 		 * Retrieves the specified schedule group.
 		 * Get schedule-groups/{Name}
 		 * @param {string} Name The name of the schedule group to retrieve.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetScheduleGroupOutput} Success
 		 */
 		GetScheduleGroup(Name: string): Observable<GetScheduleGroupOutput> {
@@ -1063,8 +1074,11 @@ export namespace MyNS {
 		 * Returns a paginated list of your schedule groups.
 		 * Get schedule-groups
 		 * @param {number} MaxResults If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NamePrefix The name prefix that you can use to return a filtered list of your schedule groups.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} NextToken The token returned by a previous call to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListScheduleGroupsOutput} Success
 		 */
 		ListScheduleGroups(MaxResults: number | null | undefined, NamePrefix: string | null | undefined, NextToken: string | null | undefined): Observable<ListScheduleGroupsOutput> {
@@ -1075,9 +1089,13 @@ export namespace MyNS {
 		 * Returns a paginated list of your EventBridge Scheduler schedules.
 		 * Get schedules
 		 * @param {string} ScheduleGroup If specified, only lists the schedules whose associated schedule group matches the given filter.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} MaxResults If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NamePrefix Schedule name prefix to return the filtered list of resources.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} NextToken The token returned by a previous call to retrieve the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {AssignPublicIp} State If specified, only lists the schedules whose current state matches the given filter.
 		 * @return {ListSchedulesOutput} Success
 		 */
@@ -1089,6 +1107,7 @@ export namespace MyNS {
 		 * Lists the tags associated with the Scheduler resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The ARN of the EventBridge Scheduler resource for which you want to view tags.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceOutput} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceOutput> {
@@ -1099,6 +1118,7 @@ export namespace MyNS {
 		 * Assigns one or more tags (key-value pairs) to the specified EventBridge Scheduler resource. You can only assign tags to schedule groups.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the schedule group that you are adding tags to.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceOutput} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceOutput> {
@@ -1109,7 +1129,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified EventBridge Scheduler schedule group.
 		 * Delete tags/{ResourceArn}#TagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the schedule group from which you are removing tags.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} TagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(ResourceArn: string, TagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -1124,15 +1146,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description you specify for the schedule.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description?: string | null;
 
@@ -1147,30 +1169,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyArn?: string | null;
 
 		/**
 		 * <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ScheduleExpression: string;
 
 		/**
 		 * The timezone in which the scheduling expression is evaluated.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		ScheduleExpressionTimezone?: string | null;
 
@@ -1193,15 +1215,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description you specify for the schedule.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1210,30 +1232,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 
 		/**
 		 * The timezone in which the scheduling expression is evaluated.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		ScheduleExpressionTimezone: FormControl<string | null | undefined>,
 
@@ -1308,15 +1330,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description you specify for the schedule.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description?: string | null;
 
@@ -1331,30 +1353,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The ARN for the customer managed KMS key that that you want EventBridge Scheduler to use to encrypt and decrypt your data.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyArn?: string | null;
 
 		/**
 		 * <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ScheduleExpression: string;
 
 		/**
 		 * The timezone in which the scheduling expression is evaluated.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		ScheduleExpressionTimezone?: string | null;
 
@@ -1377,15 +1399,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description you specify for the schedule.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1394,30 +1416,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN for the customer managed KMS key that that you want EventBridge Scheduler to use to encrypt and decrypt your data.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 
 		/**
 		 * The timezone in which the scheduling expression is evaluated.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		ScheduleExpressionTimezone: FormControl<string | null | undefined>,
 
@@ -1489,8 +1511,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
@@ -1505,8 +1527,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}

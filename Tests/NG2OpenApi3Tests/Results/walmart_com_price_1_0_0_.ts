@@ -70,12 +70,16 @@ export namespace MyNS {
 
 	/** This is applicable only for promotions */
 	export interface ComparisonPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 
 	/** This is applicable only for promotions */
 	export interface ComparisonPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -90,10 +94,14 @@ export namespace MyNS {
 	export enum ComparisonPriceCurrency { USD = 'USD', CAD = 'CAD' }
 
 	export interface CurrentPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface CurrentPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -157,13 +165,21 @@ export namespace MyNS {
 	}
 
 	export interface FeedItemsRequestDTO {
+
+		/** Type: double */
 		maximumSellerAllowedPrice?: number | null;
+
+		/** Type: double */
 		minimumSellerAllowedPrice?: number | null;
 		repricerStrategy?: string | null;
 		sku?: string | null;
 	}
 	export interface FeedItemsRequestDTOFormProperties {
+
+		/** Type: double */
 		maximumSellerAllowedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minimumSellerAllowedPrice: FormControl<number | null | undefined>,
 		repricerStrategy: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,
@@ -202,13 +218,21 @@ export namespace MyNS {
 	}
 
 	export interface FeedUploadRequestDTOItemStrategy {
+
+		/** Type: double */
 		maximumSellerAllowedPrice?: number | null;
+
+		/** Type: double */
 		minimumSellerAllowedPrice?: number | null;
 		repricerStrategy?: string | null;
 		sku?: string | null;
 	}
 	export interface FeedUploadRequestDTOItemStrategyFormProperties {
+
+		/** Type: double */
 		maximumSellerAllowedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minimumSellerAllowedPrice: FormControl<number | null | undefined>,
 		repricerStrategy: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,
@@ -351,6 +375,8 @@ export namespace MyNS {
 
 		/** An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. */
 		sku?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 	}
 	export interface ItemPriceResponseFormProperties {
@@ -363,6 +389,8 @@ export namespace MyNS {
 
 		/** An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. */
 		sku: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateItemPriceResponseFormGroup() {
@@ -554,10 +582,14 @@ export namespace MyNS {
 	}
 
 	export interface PricePricingComparisonPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface PricePricingComparisonPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -572,10 +604,14 @@ export namespace MyNS {
 	export enum PricePricingComparisonPriceType { BASE = 'BASE' }
 
 	export interface PricePricingCurrentPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface PricePricingCurrentPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -667,10 +703,14 @@ export namespace MyNS {
 	}
 
 	export interface PricingComparisonPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface PricingComparisonPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -683,10 +723,14 @@ export namespace MyNS {
 	}
 
 	export interface PricingCurrentPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface PricingCurrentPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -700,9 +744,13 @@ export namespace MyNS {
 
 	export interface RepricerEntityCollectionResponse {
 		RepricerEntityCollectionResponseStrategyCollections?: Array<RepricerEntityCollectionResponseStrategyCollections>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalElements?: number | null;
 	}
 	export interface RepricerEntityCollectionResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalElements: FormControl<number | null | undefined>,
 	}
 	export function CreateRepricerEntityCollectionResponseFormGroup() {
@@ -713,6 +761,8 @@ export namespace MyNS {
 	}
 
 	export interface RepricerEntityCollectionResponseStrategyCollections {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount?: number | null;
 		enableRepricerForPromotion?: boolean | null;
 		enabled?: boolean | null;
@@ -721,6 +771,8 @@ export namespace MyNS {
 		strategyCollectionId?: string | null;
 	}
 	export interface RepricerEntityCollectionResponseStrategyCollectionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount: FormControl<number | null | undefined>,
 		enableRepricerForPromotion: FormControl<boolean | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -740,11 +792,15 @@ export namespace MyNS {
 
 	export interface RepricerEntityCollectionResponseStrategyCollectionsStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface RepricerEntityCollectionResponseStrategyCollectionsStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -775,6 +831,8 @@ export namespace MyNS {
 	}
 
 	export interface RepricerEntityGetResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount?: number | null;
 		enableRepricerForPromotion?: boolean | null;
 		enabled?: boolean | null;
@@ -783,6 +841,8 @@ export namespace MyNS {
 		strategyCollectionId?: string | null;
 	}
 	export interface RepricerEntityGetResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount: FormControl<number | null | undefined>,
 		enableRepricerForPromotion: FormControl<boolean | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -802,11 +862,15 @@ export namespace MyNS {
 
 	export interface RepricerEntityGetResponseStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface RepricerEntityGetResponseStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -855,11 +919,15 @@ export namespace MyNS {
 
 	export interface RepricerEntityRequestStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface RepricerEntityRequestStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -897,11 +965,15 @@ export namespace MyNS {
 
 	export interface RepricerEntityResponseStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface RepricerEntityResponseStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -916,11 +988,15 @@ export namespace MyNS {
 
 	export interface RepricerStrategyType {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface RepricerStrategyTypeFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -969,13 +1045,21 @@ export namespace MyNS {
 	}
 
 	export interface StrategyDetailsRequestDTOStrategy {
+
+		/** Type: double */
 		maximumSellerAllowedPrice?: number | null;
+
+		/** Type: double */
 		minimumSellerAllowedPrice?: number | null;
 		repricerStrategy?: string | null;
 		sku?: string | null;
 	}
 	export interface StrategyDetailsRequestDTOStrategyFormProperties {
+
+		/** Type: double */
 		maximumSellerAllowedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minimumSellerAllowedPrice: FormControl<number | null | undefined>,
 		repricerStrategy: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,
@@ -1251,10 +1335,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePricePutBodyPricingComparisonPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface UpdatePricePutBodyPricingComparisonPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -1267,10 +1355,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePricePutBodyPricingCurrentPrice {
+
+		/** Type: double */
 		amount?: number | null;
 		currency?: ComparisonPriceCurrency | null;
 	}
 	export interface UpdatePricePutBodyPricingCurrentPriceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<ComparisonPriceCurrency | null | undefined>,
 	}
@@ -1293,6 +1385,8 @@ export namespace MyNS {
 
 		/** An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. */
 		sku?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 	}
 	export interface UpdatePriceReturnFormProperties {
@@ -1305,6 +1399,8 @@ export namespace MyNS {
 
 		/** An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. */
 		sku: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdatePriceReturnFormGroup() {
@@ -1389,9 +1485,13 @@ export namespace MyNS {
 
 	export interface GetStrategiesReturn {
 		GetStrategiesReturnStrategyCollections?: Array<GetStrategiesReturnStrategyCollections>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalElements?: number | null;
 	}
 	export interface GetStrategiesReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalElements: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStrategiesReturnFormGroup() {
@@ -1402,6 +1502,8 @@ export namespace MyNS {
 	}
 
 	export interface GetStrategiesReturnStrategyCollections {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount?: number | null;
 		enableRepricerForPromotion?: boolean | null;
 		enabled?: boolean | null;
@@ -1410,6 +1512,8 @@ export namespace MyNS {
 		strategyCollectionId?: string | null;
 	}
 	export interface GetStrategiesReturnStrategyCollectionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		assignedCount: FormControl<number | null | undefined>,
 		enableRepricerForPromotion: FormControl<boolean | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
@@ -1429,11 +1533,15 @@ export namespace MyNS {
 
 	export interface GetStrategiesReturnStrategyCollectionsStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface GetStrategiesReturnStrategyCollectionsStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -1482,11 +1590,15 @@ export namespace MyNS {
 
 	export interface CreateStrategyPostBodyStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface CreateStrategyPostBodyStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -1524,11 +1636,15 @@ export namespace MyNS {
 
 	export interface CreateStrategyReturnStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface CreateStrategyReturnStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -1590,11 +1706,15 @@ export namespace MyNS {
 
 	export interface UpdateStrategyPutBodyStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface UpdateStrategyPutBodyStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -1632,11 +1752,15 @@ export namespace MyNS {
 
 	export interface UpdateStrategyReturnStrategies {
 		adjustmentType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null;
+
+		/** Type: double */
 		adjustmentValue?: number | null;
 		strategyType?: RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null;
 	}
 	export interface UpdateStrategyReturnStrategiesFormProperties {
 		adjustmentType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType | null | undefined>,
+
+		/** Type: double */
 		adjustmentValue: FormControl<number | null | undefined>,
 		strategyType: FormControl<RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType | null | undefined>,
 	}
@@ -1673,13 +1797,21 @@ export namespace MyNS {
 	}
 
 	export interface GetRepricerFeedPostBodyItemStrategy {
+
+		/** Type: double */
 		maximumSellerAllowedPrice?: number | null;
+
+		/** Type: double */
 		minimumSellerAllowedPrice?: number | null;
 		repricerStrategy?: string | null;
 		sku?: string | null;
 	}
 	export interface GetRepricerFeedPostBodyItemStrategyFormProperties {
+
+		/** Type: double */
 		maximumSellerAllowedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minimumSellerAllowedPrice: FormControl<number | null | undefined>,
 		repricerStrategy: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,

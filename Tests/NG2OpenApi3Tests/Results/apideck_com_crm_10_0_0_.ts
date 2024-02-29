@@ -82,7 +82,10 @@ export namespace MyNS {
 		/** The third-party API ID of original entity */
 		downstream_id?: string | null;
 
-		/** The duration of the activity in minutes */
+		/**
+		 * The duration of the activity in minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_minutes?: number | null;
 
 		/**
@@ -230,7 +233,10 @@ export namespace MyNS {
 		/** The third-party API ID of original entity */
 		downstream_id: FormControl<string | null | undefined>,
 
-		/** The duration of the activity in minutes */
+		/**
+		 * The duration of the activity in minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_minutes: FormControl<number | null | undefined>,
 
 		/**
@@ -739,7 +745,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -759,7 +768,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -929,7 +941,10 @@ export namespace MyNS {
 		annual_revenue?: string | null;
 		bank_accounts?: Array<BankAccount>;
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday?: Date | null;
 
 		/** Creation date */
@@ -967,7 +982,10 @@ export namespace MyNS {
 		/** The industry represents the type of business the company is in. */
 		industry?: string | null;
 
-		/** Number of interactions */
+		/**
+		 * Number of interactions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interaction_count?: number | null;
 
 		/** Last activity date */
@@ -1038,7 +1056,10 @@ export namespace MyNS {
 		/** The annual revenue of the company */
 		annual_revenue: FormControl<string | null | undefined>,
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday: FormControl<Date | null | undefined>,
 
 		/** Creation date */
@@ -1071,7 +1092,10 @@ export namespace MyNS {
 		/** The industry represents the type of business the company is in. */
 		industry: FormControl<string | null | undefined>,
 
-		/** Number of interactions */
+		/**
+		 * Number of interactions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interaction_count: FormControl<number | null | undefined>,
 
 		/** Last activity date */
@@ -1377,7 +1401,10 @@ export namespace MyNS {
 		/** The creation date of the contact. */
 		created_at?: Date | null;
 
-		/** The current balance of the contact. */
+		/**
+		 * The current balance of the contact.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 		custom_fields?: Array<CustomField>;
 
@@ -1481,7 +1508,10 @@ export namespace MyNS {
 		/** The creation date of the contact. */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The current balance of the contact. */
+		/**
+		 * The current balance of the contact.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
 		/** The department of the contact. */
@@ -1703,6 +1733,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1735,6 +1766,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1804,6 +1836,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1836,6 +1869,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1882,6 +1916,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1914,6 +1949,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1960,6 +1996,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1992,6 +2029,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2038,6 +2076,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2070,6 +2109,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2116,6 +2156,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2148,6 +2189,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2194,6 +2236,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2226,6 +2269,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2272,6 +2316,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2304,6 +2349,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2366,6 +2412,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2398,6 +2445,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2444,6 +2492,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2476,6 +2525,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2522,6 +2572,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2554,6 +2605,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2600,6 +2652,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2632,6 +2685,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2678,6 +2732,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2710,6 +2765,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2756,6 +2812,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2788,6 +2845,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2834,6 +2892,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2866,6 +2925,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2912,6 +2972,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2944,6 +3005,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2996,6 +3058,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3028,6 +3091,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3084,14 +3148,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -3164,6 +3234,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3196,6 +3267,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3248,6 +3320,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3280,6 +3353,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3326,6 +3400,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3358,6 +3433,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3404,6 +3480,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3436,6 +3513,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3488,6 +3566,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3520,6 +3599,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3566,6 +3646,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3598,6 +3679,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3659,7 +3741,10 @@ export namespace MyNS {
 		/** The source of the lead. */
 		lead_source?: string | null;
 
-		/** The monetary amount of the lead. */
+		/**
+		 * The monetary amount of the lead.
+		 * Type: double
+		 */
 		monetary_amount?: number | null;
 
 		/**
@@ -3727,7 +3812,10 @@ export namespace MyNS {
 		/** The source of the lead. */
 		lead_source: FormControl<string | null | undefined>,
 
-		/** The monetary amount of the lead. */
+		/**
+		 * The monetary amount of the lead.
+		 * Type: double
+		 */
 		monetary_amount: FormControl<number | null | undefined>,
 
 		/**
@@ -3813,6 +3901,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3845,6 +3934,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3891,6 +3981,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3923,6 +4014,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4079,6 +4171,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4111,6 +4204,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4163,6 +4257,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4195,6 +4290,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4211,7 +4307,10 @@ export namespace MyNS {
 
 	export interface Opportunity {
 
-		/** The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet. */
+		/**
+		 * The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet.
+		 * Type: DateOnly
+		 */
 		close_date?: Date | null;
 
 		/** The unique identifier of the company associated with the opportunity. */
@@ -4254,13 +4353,19 @@ export namespace MyNS {
 		/** A description of the opportunity. */
 		description?: string | null;
 
-		/** The expected revenue from the opportunity */
+		/**
+		 * The expected revenue from the opportunity
+		 * Type: double
+		 */
 		expected_revenue?: number | null;
 
 		/** A unique identifier for the opportunity. */
 		id?: string | null;
 
-		/** The number of interactions with the opportunity. */
+		/**
+		 * The number of interactions with the opportunity.
+		 * Type: double
+		 */
 		interaction_count?: number | null;
 
 		/** The date and time of the last activity associated with the opportunity. */
@@ -4278,7 +4383,10 @@ export namespace MyNS {
 		/** The unique identifier of the reason why the opportunity was lost. */
 		loss_reason_id?: string | null;
 
-		/** The monetary value associated with the opportunity */
+		/**
+		 * The monetary value associated with the opportunity
+		 * Type: double
+		 */
 		monetary_amount?: number | null;
 
 		/** The unique identifier of the user who owns the opportunity. */
@@ -4328,7 +4436,10 @@ export namespace MyNS {
 		/** The unique identifier of the user who last updated the opportunity. */
 		updated_by?: string | null;
 
-		/** The probability of winning the opportunity, expressed as a percentage. */
+		/**
+		 * The probability of winning the opportunity, expressed as a percentage.
+		 * Type: double
+		 */
 		win_probability?: number | null;
 
 		/** The reason why the opportunity was won. */
@@ -4339,7 +4450,10 @@ export namespace MyNS {
 	}
 	export interface OpportunityFormProperties {
 
-		/** The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet. */
+		/**
+		 * The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet.
+		 * Type: DateOnly
+		 */
 		close_date: FormControl<Date | null | undefined>,
 
 		/** The unique identifier of the company associated with the opportunity. */
@@ -4375,13 +4489,19 @@ export namespace MyNS {
 		/** A description of the opportunity. */
 		description: FormControl<string | null | undefined>,
 
-		/** The expected revenue from the opportunity */
+		/**
+		 * The expected revenue from the opportunity
+		 * Type: double
+		 */
 		expected_revenue: FormControl<number | null | undefined>,
 
 		/** A unique identifier for the opportunity. */
 		id: FormControl<string | null | undefined>,
 
-		/** The number of interactions with the opportunity. */
+		/**
+		 * The number of interactions with the opportunity.
+		 * Type: double
+		 */
 		interaction_count: FormControl<number | null | undefined>,
 
 		/** The date and time of the last activity associated with the opportunity. */
@@ -4399,7 +4519,10 @@ export namespace MyNS {
 		/** The unique identifier of the reason why the opportunity was lost. */
 		loss_reason_id: FormControl<string | null | undefined>,
 
-		/** The monetary value associated with the opportunity */
+		/**
+		 * The monetary value associated with the opportunity
+		 * Type: double
+		 */
 		monetary_amount: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the user who owns the opportunity. */
@@ -4448,7 +4571,10 @@ export namespace MyNS {
 		/** The unique identifier of the user who last updated the opportunity. */
 		updated_by: FormControl<string | null | undefined>,
 
-		/** The probability of winning the opportunity, expressed as a percentage. */
+		/**
+		 * The probability of winning the opportunity, expressed as a percentage.
+		 * Type: double
+		 */
 		win_probability: FormControl<number | null | undefined>,
 
 		/** The reason why the opportunity was won. */
@@ -4532,6 +4658,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4564,6 +4691,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4610,6 +4738,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4642,6 +4771,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4670,7 +4800,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency?: BankAccountCurrency | null;
 
-		/** The order in which the Pipeline is displayed in the UI. */
+		/**
+		 * The order in which the Pipeline is displayed in the UI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		display_order?: number | null;
 
 		/** The unique identifier of the Pipeline. */
@@ -4706,7 +4839,10 @@ export namespace MyNS {
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** The order in which the Pipeline is displayed in the UI. */
+		/**
+		 * The order in which the Pipeline is displayed in the UI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		display_order: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the Pipeline. */
@@ -4742,7 +4878,10 @@ export namespace MyNS {
 
 	export interface PipelineStages {
 
-		/** The order in which the Pipeline Stage is displayed in the UI. */
+		/**
+		 * The order in which the Pipeline Stage is displayed in the UI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		display_order?: number | null;
 
 		/** The unique identifier of the Pipeline Stage. */
@@ -4754,12 +4893,18 @@ export namespace MyNS {
 		/** The value of the Pipeline Stage. */
 		value?: string | null;
 
-		/** The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100]. */
+		/**
+		 * The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win_probability?: number | null;
 	}
 	export interface PipelineStagesFormProperties {
 
-		/** The order in which the Pipeline Stage is displayed in the UI. */
+		/**
+		 * The order in which the Pipeline Stage is displayed in the UI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		display_order: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the Pipeline Stage. */
@@ -4771,7 +4916,10 @@ export namespace MyNS {
 		/** The value of the Pipeline Stage. */
 		value: FormControl<string | null | undefined>,
 
-		/** The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100]. */
+		/**
+		 * The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win_probability: FormControl<number | null | undefined>,
 	}
 	export function CreatePipelineStagesFormGroup() {
@@ -4823,6 +4971,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4855,6 +5004,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4901,6 +5051,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4933,6 +5084,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5122,6 +5274,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5154,6 +5307,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5244,7 +5398,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5264,7 +5421,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5296,7 +5456,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5316,7 +5479,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5339,7 +5505,10 @@ export namespace MyNS {
 		/** Company ID to filter on */
 		company_id?: string | null;
 
-		/** Monetary amount to filter on */
+		/**
+		 * Monetary amount to filter on
+		 * Type: double
+		 */
 		monetary_amount?: number | null;
 
 		/** Status to filter on */
@@ -5348,7 +5517,10 @@ export namespace MyNS {
 		/** Title of the opportunity to filter on */
 		title?: string | null;
 
-		/** Win probability to filter on */
+		/**
+		 * Win probability to filter on
+		 * Type: double
+		 */
 		win_probability?: number | null;
 	}
 	export interface OpportunitiesFilterFormProperties {
@@ -5356,7 +5528,10 @@ export namespace MyNS {
 		/** Company ID to filter on */
 		company_id: FormControl<string | null | undefined>,
 
-		/** Monetary amount to filter on */
+		/**
+		 * Monetary amount to filter on
+		 * Type: double
+		 */
 		monetary_amount: FormControl<number | null | undefined>,
 
 		/** Status to filter on */
@@ -5365,7 +5540,10 @@ export namespace MyNS {
 		/** Title of the opportunity to filter on */
 		title: FormControl<string | null | undefined>,
 
-		/** Win probability to filter on */
+		/**
+		 * Win probability to filter on
+		 * Type: double
+		 */
 		win_probability: FormControl<number | null | undefined>,
 	}
 	export function CreateOpportunitiesFilterFormGroup() {
@@ -5436,7 +5614,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5456,7 +5637,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5490,7 +5674,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5507,7 +5694,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5554,7 +5744,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5574,7 +5767,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5606,7 +5802,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5626,7 +5825,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5658,7 +5860,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5678,7 +5883,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5728,6 +5936,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5760,6 +5969,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5806,6 +6016,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5838,6 +6049,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5884,6 +6096,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5916,6 +6129,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5962,6 +6176,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5994,6 +6209,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6040,6 +6256,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6072,6 +6289,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6118,6 +6336,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6150,6 +6369,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6196,6 +6416,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6228,6 +6449,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6274,6 +6496,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6306,6 +6529,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6332,6 +6556,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {ActivitiesFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -6396,6 +6621,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {CompaniesFilter} filter Apply filters
 		 * @param {CompaniesSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -6461,6 +6687,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {ContactsFilter} filter Apply filters
 		 * @param {ContactsSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -6526,6 +6753,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {LeadsFilter} filter Apply filters
 		 * @param {LeadsSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -6591,6 +6819,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetNotesResponse} Notes
@@ -6654,6 +6883,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {OpportunitiesFilter} filter Apply filters
 		 * @param {OpportunitiesSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -6719,6 +6949,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetPipelinesResponse} Pipelines
@@ -6782,6 +7013,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetUsersResponse} Users

@@ -101,10 +101,14 @@ export namespace MyNS {
 	}
 
 	export interface ListInflectedFormsReturnFeatures {
+
+		/** Type: double */
 		index?: number | null;
 		value?: string | null;
 	}
 	export interface ListInflectedFormsReturnFeaturesFormProperties {
+
+		/** Type: double */
 		index: FormControl<number | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -148,17 +152,29 @@ export namespace MyNS {
 	export interface ListWordSensesReturn {
 		ListWordSensesReturnFamilies?: Array<ListWordSensesReturnFamilies>;
 		ListWordSensesReturnFeatures?: Array<ListWordSensesReturnFeatures>;
+
+		/** Type: double */
 		frequency?: number | null;
 		isLemma?: boolean | null;
+
+		/** Type: double */
 		legacyMapId?: number | null;
 		lemma?: string | null;
+
+		/** Type: double */
 		lexemeId?: number | null;
 	}
 	export interface ListWordSensesReturnFormProperties {
+
+		/** Type: double */
 		frequency: FormControl<number | null | undefined>,
 		isLemma: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		legacyMapId: FormControl<number | null | undefined>,
 		lemma: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lexemeId: FormControl<number | null | undefined>,
 	}
 	export function CreateListWordSensesReturnFormGroup() {
@@ -173,11 +189,15 @@ export namespace MyNS {
 	}
 
 	export interface ListWordSensesReturnFamilies {
+
+		/** Type: double */
 		Key?: number | null;
 		Value?: string | null;
 		definition?: string | null;
 	}
 	export interface ListWordSensesReturnFamiliesFormProperties {
+
+		/** Type: double */
 		Key: FormControl<number | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 		definition: FormControl<string | null | undefined>,
@@ -192,11 +212,15 @@ export namespace MyNS {
 	}
 
 	export interface ListWordSensesReturnFeatures {
+
+		/** Type: double */
 		index?: number | null;
 		type?: string | null;
 		value?: string | null;
 	}
 	export interface ListWordSensesReturnFeaturesFormProperties {
+
+		/** Type: double */
 		index: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,

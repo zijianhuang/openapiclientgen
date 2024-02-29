@@ -51,6 +51,8 @@ export namespace MyNS {
 
 		/** Required */
 		currency: BankAccountCurrency;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Required */
@@ -66,6 +68,8 @@ export namespace MyNS {
 
 		/** Required */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -91,22 +95,38 @@ export namespace MyNS {
 
 	/** A object with a data property that contains an array of up to limit bank accounts. Each entry in the array is a separate bank account object. If no more bank accounts are available, the resulting array will be empty. */
 	export interface BankAccountList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page?: number | null;
 		data?: Array<BankAccount>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page?: number | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		prev_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 
 	/** A object with a data property that contains an array of up to limit bank accounts. Each entry in the array is a separate bank account object. If no more bank accounts are available, the resulting array will be empty. */
 	export interface BankAccountListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page: FormControl<number | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		prev_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBankAccountListFormGroup() {
@@ -146,11 +166,15 @@ export namespace MyNS {
 	}
 
 	export interface ConversationRate {
+
+		/** Type: float */
 		conversation_rate?: number | null;
 		from_currency?: BankAccountCurrency | null;
 		to_currency?: BankAccountCurrency | null;
 	}
 	export interface ConversationRateFormProperties {
+
+		/** Type: float */
 		conversation_rate: FormControl<number | null | undefined>,
 		from_currency: FormControl<BankAccountCurrency | null | undefined>,
 		to_currency: FormControl<BankAccountCurrency | null | undefined>,
@@ -172,21 +196,38 @@ export namespace MyNS {
 	/** Document object representing your invoice. */
 	export interface Document {
 
-		/** DocumentBlock's identifier. */
+		/**
+		 * DocumentBlock's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		block_id?: number | null;
 		cancelled?: boolean | null;
 		comment?: string | null;
+
+		/** Type: float */
 		conversion_rate?: number | null;
 		currency?: BankAccountCurrency | null;
+
+		/** Type: DateOnly */
 		due_date?: Date | null;
 		electronic?: boolean | null;
+
+		/** Type: DateOnly */
 		fulfillment_date?: Date | null;
 
-		/** The document's gross total price. */
+		/**
+		 * The document's gross total price.
+		 * Type: float
+		 */
 		gross_total?: number | null;
 
-		/** The document's unique identifier. */
+		/**
+		 * The document's unique identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
+
+		/** Type: DateOnly */
 		invoice_date?: Date | null;
 
 		/** The document's invoice number. */
@@ -195,6 +236,8 @@ export namespace MyNS {
 		language?: DocumentLanguage | null;
 		notification_status?: DocumentNotification_status | null;
 		organization?: DocumentOrganization;
+
+		/** Type: DateOnly */
 		paid_date?: Date | null;
 		partner?: Partner;
 		payment_method?: DocumentPayment_method | null;
@@ -208,27 +251,46 @@ export namespace MyNS {
 	/** Document object representing your invoice. */
 	export interface DocumentFormProperties {
 
-		/** DocumentBlock's identifier. */
+		/**
+		 * DocumentBlock's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		block_id: FormControl<number | null | undefined>,
 		cancelled: FormControl<boolean | null | undefined>,
 		comment: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		conversion_rate: FormControl<number | null | undefined>,
 		currency: FormControl<BankAccountCurrency | null | undefined>,
+
+		/** Type: DateOnly */
 		due_date: FormControl<Date | null | undefined>,
 		electronic: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		fulfillment_date: FormControl<Date | null | undefined>,
 
-		/** The document's gross total price. */
+		/**
+		 * The document's gross total price.
+		 * Type: float
+		 */
 		gross_total: FormControl<number | null | undefined>,
 
-		/** The document's unique identifier. */
+		/**
+		 * The document's unique identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		invoice_date: FormControl<Date | null | undefined>,
 
 		/** The document's invoice number. */
 		invoice_number: FormControl<string | null | undefined>,
 		language: FormControl<DocumentLanguage | null | undefined>,
 		notification_status: FormControl<DocumentNotification_status | null | undefined>,
+
+		/** Type: DateOnly */
 		paid_date: FormControl<Date | null | undefined>,
 		payment_method: FormControl<DocumentPayment_method | null | undefined>,
 		payment_status: FormControl<DocumentPayment_status | null | undefined>,
@@ -259,23 +321,47 @@ export namespace MyNS {
 	}
 
 	export interface DocumentItem {
+
+		/** Type: float */
 		gross_amount?: number | null;
 		name?: string | null;
+
+		/** Type: float */
 		net_amount?: number | null;
+
+		/** Type: float */
 		net_unit_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id?: number | null;
+
+		/** Type: float */
 		quantity?: number | null;
 		vat?: DocumentItemVat | null;
+
+		/** Type: float */
 		vat_amount?: number | null;
 	}
 	export interface DocumentItemFormProperties {
+
+		/** Type: float */
 		gross_amount: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		net_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		net_unit_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		quantity: FormControl<number | null | undefined>,
 		vat: FormControl<DocumentItemVat | null | undefined>,
+
+		/** Type: float */
 		vat_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentItemFormGroup() {
@@ -333,6 +419,8 @@ export namespace MyNS {
 		/** Required */
 		account_number: string;
 		account_number_iban?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Required */
@@ -344,6 +432,8 @@ export namespace MyNS {
 		/** Required */
 		account_number: FormControl<string | null | undefined>,
 		account_number_iban: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -368,6 +458,8 @@ export namespace MyNS {
 	export interface DocumentSettings {
 		mediated_service?: boolean | null;
 		online_payment?: DocumentSettingsOnline_payment | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		place_id?: number | null;
 		round?: DocumentSettingsRound | null;
 		without_financial_fulfillment?: boolean | null;
@@ -375,6 +467,8 @@ export namespace MyNS {
 	export interface DocumentSettingsFormProperties {
 		mediated_service: FormControl<boolean | null | undefined>,
 		online_payment: FormControl<DocumentSettingsOnline_payment | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		place_id: FormControl<number | null | undefined>,
 		round: FormControl<DocumentSettingsRound | null | undefined>,
 		without_financial_fulfillment: FormControl<boolean | null | undefined>,
@@ -395,18 +489,38 @@ export namespace MyNS {
 	export enum DocumentSettingsRound { five = 'five', none = 'none', one = 'one', ten = 'ten' }
 
 	export interface DocumentSummary {
+
+		/** Type: float */
 		gross_amount_local?: number | null;
+
+		/** Type: float */
 		net_amount?: number | null;
+
+		/** Type: float */
 		net_amount_local?: number | null;
+
+		/** Type: float */
 		vat_amount?: number | null;
+
+		/** Type: float */
 		vat_amount_local?: number | null;
 		vat_rate_summary?: Array<DocumentVatRateSummary>;
 	}
 	export interface DocumentSummaryFormProperties {
+
+		/** Type: float */
 		gross_amount_local: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		net_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		net_amount_local: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_amount_local: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentSummaryFormGroup() {
@@ -422,18 +536,38 @@ export namespace MyNS {
 
 	export interface DocumentVatRateSummary {
 		vat_name?: string | null;
+
+		/** Type: float */
 		vat_percentage?: number | null;
+
+		/** Type: float */
 		vat_rate_gross_amount?: number | null;
+
+		/** Type: float */
 		vat_rate_net_amount?: number | null;
+
+		/** Type: float */
 		vat_rate_vat_amount?: number | null;
+
+		/** Type: float */
 		vat_rate_vat_amount_local?: number | null;
 	}
 	export interface DocumentVatRateSummaryFormProperties {
 		vat_name: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		vat_percentage: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_rate_gross_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_rate_net_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_rate_vat_amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		vat_rate_vat_amount_local: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentVatRateSummaryFormGroup() {
@@ -453,6 +587,8 @@ export namespace MyNS {
 	export interface DocumentBlock {
 		custom_field1?: string | null;
 		custom_field2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		prefix?: string | null;
@@ -460,6 +596,8 @@ export namespace MyNS {
 	export interface DocumentBlockFormProperties {
 		custom_field1: FormControl<string | null | undefined>,
 		custom_field2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
@@ -478,22 +616,38 @@ export namespace MyNS {
 
 	/** A object with a data property that contains an array of up to limit document blocks. Each entry in the array is a separate document block object. If no more document block are available, the resulting array will be empty. */
 	export interface DocumentBlockList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page?: number | null;
 		data?: Array<DocumentBlock>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page?: number | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		prev_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 
 	/** A object with a data property that contains an array of up to limit document blocks. Each entry in the array is a separate document block object. If no more document block are available, the resulting array will be empty. */
 	export interface DocumentBlockListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page: FormControl<number | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		prev_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentBlockListFormGroup() {
@@ -509,21 +663,34 @@ export namespace MyNS {
 	}
 
 	export interface DocumentInsert {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bank_account_id?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		block_id: number;
 		comment?: string | null;
+
+		/** Type: float */
 		conversion_rate?: number | null;
 
 		/** Required */
 		currency: BankAccountCurrency;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		due_date: Date;
 		electronic?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		fulfillment_date: Date;
 		items?: Array<string>;
 
@@ -531,7 +698,10 @@ export namespace MyNS {
 		language: DocumentLanguage;
 		paid?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partner_id: number;
 
 		/** Required */
@@ -543,28 +713,44 @@ export namespace MyNS {
 		vendor_id?: string | null;
 	}
 	export interface DocumentInsertFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bank_account_id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		block_id: FormControl<number | null | undefined>,
 		comment: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		conversion_rate: FormControl<number | null | undefined>,
 
 		/** Required */
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		due_date: FormControl<Date | null | undefined>,
 		electronic: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		fulfillment_date: FormControl<Date | null | undefined>,
 
 		/** Required */
 		language: FormControl<DocumentLanguage | null | undefined>,
 		paid: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partner_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -598,18 +784,30 @@ export namespace MyNS {
 
 	export interface DocumentItemData {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		quantity: number;
 	}
 	export interface DocumentItemDataFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentItemDataFormGroup() {
@@ -623,22 +821,38 @@ export namespace MyNS {
 
 	/** A object with a data property that contains an array of up to limit documents. Each entry in the array is a separate document object. If no more documents are available, the resulting array will be empty. */
 	export interface DocumentList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page?: number | null;
 		data?: Array<Document>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page?: number | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		prev_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 
 	/** A object with a data property that contains an array of up to limit documents. Each entry in the array is a separate document object. If no more documents are available, the resulting array will be empty. */
 	export interface DocumentListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page: FormControl<number | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		prev_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentListFormGroup() {
@@ -661,13 +875,19 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		quantity: number;
 
 		/** Required */
 		unit: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		unit_price: number;
 
 		/** Required */
@@ -682,13 +902,19 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
 		unit: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		unit_price: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -726,11 +952,19 @@ export namespace MyNS {
 	}
 
 	export interface Id {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legacy_id?: number | null;
 	}
 	export interface IdFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legacy_id: FormControl<number | null | undefined>,
 	}
 	export function CreateIdFormGroup() {
@@ -793,9 +1027,13 @@ export namespace MyNS {
 	}
 
 	export interface Partner extends PartnerUpsert {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface PartnerFormProperties extends PartnerUpsertFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreatePartnerFormGroup() {
@@ -815,22 +1053,38 @@ export namespace MyNS {
 
 	/** A object with a data property that contains an array of up to limit partners. Each entry in the array is a separate partner object. If no more partners are available, the resulting array will be empty. */
 	export interface PartnerList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page?: number | null;
 		data?: Array<Partner>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page?: number | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		prev_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 
 	/** A object with a data property that contains an array of up to limit partners. Each entry in the array is a separate partner object. If no more partners are available, the resulting array will be empty. */
 	export interface PartnerListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page: FormControl<number | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		prev_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePartnerListFormGroup() {
@@ -885,28 +1139,44 @@ export namespace MyNS {
 	}
 
 	export interface PaymentHistory {
+
+		/** Type: float */
 		conversion_rate?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: Date;
 
 		/** Required */
 		payment_method: DocumentPayment_method;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		price: number;
 		voucher_number?: string | null;
 	}
 	export interface PaymentHistoryFormProperties {
+
+		/** Type: float */
 		conversion_rate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
 		/** Required */
 		payment_method: FormControl<DocumentPayment_method | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 		voucher_number: FormControl<string | null | undefined>,
 	}
@@ -932,10 +1202,14 @@ export namespace MyNS {
 		currency: BankAccountCurrency;
 		general_ledger_number?: string | null;
 		general_ledger_taxcode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Required */
 		name: string;
+
+		/** Type: float */
 		net_unit_price?: number | null;
 
 		/** Required */
@@ -951,10 +1225,14 @@ export namespace MyNS {
 		currency: FormControl<BankAccountCurrency | null | undefined>,
 		general_ledger_number: FormControl<string | null | undefined>,
 		general_ledger_taxcode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		net_unit_price: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -981,22 +1259,38 @@ export namespace MyNS {
 
 	/** A object with a data property that contains an array of up to limit products. Each entry in the array is a separate product object. If no more products are available, the resulting array will be empty. */
 	export interface ProductList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page?: number | null;
 		data?: Array<Product>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page?: number | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		prev_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 
 	/** A object with a data property that contains an array of up to limit products. Each entry in the array is a separate product object. If no more products are available, the resulting array will be empty. */
 	export interface ProductListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_page: FormControl<number | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		prev_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateProductListFormGroup() {
@@ -1098,6 +1392,9 @@ export namespace MyNS {
 		 * List all bank account
 		 * Returns a list of your bank accounts. The bank accounts are returned sorted by creation date, with the most recent bank account appearing first.
 		 * Get bank-accounts
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} per_page Minimum: 1
+		 *     Maximum: 100
 		 * @return {BankAccountList} Success response
 		 */
 		ListBankAccount(page: number | null | undefined, per_page: number | null | undefined): Observable<BankAccountList> {
@@ -1119,6 +1416,7 @@ export namespace MyNS {
 		 * Delete a bank account
 		 * Delete an existing bank account.
 		 * Delete bank-accounts/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteBankAccount(id: number): Observable<HttpResponse<string>> {
@@ -1129,6 +1427,7 @@ export namespace MyNS {
 		 * Retrieve a bank account
 		 * Retrieves the details of an existing bank account.
 		 * Get bank-accounts/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankAccount} Success response
 		 */
 		GetBankAccount(id: number): Observable<BankAccount> {
@@ -1139,6 +1438,7 @@ export namespace MyNS {
 		 * Update a bank account
 		 * Update an existing bank accounts. Returns a bank account object if the update is succeded.
 		 * Put bank-accounts/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BankAccount} requestBody Bank account object that you would like to update.
 		 * @return {BankAccount} Bank account updated successfully.
 		 */
@@ -1160,6 +1460,9 @@ export namespace MyNS {
 		 * List all document blocks
 		 * Returns a list of your document blocks. The document blocks are returned sorted by creation date, with the most recent document blocks appearing first.
 		 * Get document-blocks
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} per_page Minimum: 1
+		 *     Maximum: 100
 		 * @return {DocumentBlockList} Success response
 		 */
 		ListDocumentBlock(page: number | null | undefined, per_page: number | null | undefined): Observable<DocumentBlockList> {
@@ -1170,16 +1473,27 @@ export namespace MyNS {
 		 * List all documents
 		 * Returns a list of your documents. The documents are returned sorted by creation date, with the most recent documents appearing first.
 		 * Get documents
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} per_page Minimum: 1
+		 *     Maximum: 100
 		 * @param {number} block_id Filter documents by the identifier of your DocumentBlock.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} partner_id Filter documents by the identifier of your Partner.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {DocumentPayment_method} payment_method Filter documents by PaymentMethod value.
 		 * @param {DocumentPayment_status} payment_status Filter documents by PaymentStatus value.
 		 * @param {Date} start_date Filter documents by date.
+		 *     Type: DateOnly
 		 * @param {Date} end_date Filter documents by date.
+		 *     Type: DateOnly
 		 * @param {number} start_number Starting number of the document, should not contain year or any other formatting. Required if `start_year` given
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} end_number Ending number of the document, should not contain year or any other formatting. Required if `end_year` given
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_year Year for `start_number` parameter. Required if `start_number` given.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} end_year Year for `end_number` parameter. Required if `end_number` given.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocumentList} Success response
 		 */
 		ListDocument(page: number | null | undefined, per_page: number | null | undefined, block_id: number | null | undefined, partner_id: number | null | undefined, payment_method: DocumentPayment_method | null | undefined, payment_status: DocumentPayment_status | null | undefined, start_date: Date | null | undefined, end_date: Date | null | undefined, start_number: number | null | undefined, end_number: number | null | undefined, start_year: number | null | undefined, end_year: number | null | undefined): Observable<DocumentList> {
@@ -1201,6 +1515,7 @@ export namespace MyNS {
 		 * Retrieve a document
 		 * Retrieves the details of an existing document.
 		 * Get documents/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Document} Success response
 		 */
 		GetDocument(id: number): Observable<Document> {
@@ -1211,6 +1526,7 @@ export namespace MyNS {
 		 * Cancel a document
 		 * Cancel a document. Returns a cancellation document object if the cancellation is succeded.
 		 * Post documents/{id}/cancel
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Document} Document cancellation successfully. Cancel document returned.
 		 */
 		CancelDocument(id: number): Observable<Document> {
@@ -1221,6 +1537,7 @@ export namespace MyNS {
 		 * Create a document from proforma.
 		 * Create a new document from proforma. Returns a document object if the create is succeded.
 		 * Post documents/{id}/create-from-proforma
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		CreateDocumentFromProforma(id: number): Observable<HttpResponse<string>> {
@@ -1231,6 +1548,7 @@ export namespace MyNS {
 		 * Download a document in PDF format.
 		 * Download a document. Returns a document in PDF format.
 		 * Get documents/{id}/download
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Document PDF file.
 		 */
 		DownloadDocument(id: number): Observable<HttpResponse<string>> {
@@ -1241,6 +1559,7 @@ export namespace MyNS {
 		 * Retrieve a document Online Számla status
 		 * Retrieves the details of an existing document status.
 		 * Get documents/{id}/online-szamla
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OnlineSzamlaStatus} Success response
 		 */
 		GetOnlineSzamlaStatus(id: number): Observable<OnlineSzamlaStatus> {
@@ -1251,6 +1570,7 @@ export namespace MyNS {
 		 * Delete all payment history on document
 		 * Delete all exist payment history on document.
 		 * Delete documents/{id}/payments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<PaymentHistory>} Payment history deleted successfully.
 		 */
 		DeletePayment(id: number): Observable<Array<PaymentHistory>> {
@@ -1261,6 +1581,7 @@ export namespace MyNS {
 		 * Retrieve a payment histroy
 		 * Retrieves the details of payment history an existing document.
 		 * Get documents/{id}/payments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<PaymentHistory>} Success response
 		 */
 		GetPayment(id: number): Observable<Array<PaymentHistory>> {
@@ -1271,6 +1592,7 @@ export namespace MyNS {
 		 * Update payment history
 		 * Update payment history an existing document. Returns a payment history object if the update is succeded.
 		 * Put documents/{id}/payments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<PaymentHistory>} requestBody Payment history object that you would like to update.
 		 * @return {Array<PaymentHistory>} Payment history updated successfully.
 		 */
@@ -1282,6 +1604,7 @@ export namespace MyNS {
 		 * Retrieve a document download public url.
 		 * Retrieves public url to download an existing document.
 		 * Get documents/{id}/public-url
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocumentPublicUrl} Success response
 		 */
 		GetPublicUrl(id: number): Observable<DocumentPublicUrl> {
@@ -1292,6 +1615,7 @@ export namespace MyNS {
 		 * Send invoice to given email adresses.
 		 * Returns a list of emails, where the invoice is sent.
 		 * Post documents/{id}/send
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SendDocument} requestBody List of email-s where you want to send the invoice.
 		 * @return {SendDocument} List of email adresses where the invoice sent.
 		 */
@@ -1313,6 +1637,9 @@ export namespace MyNS {
 		 * List all partners
 		 * Returns a list of your partners. The partners are returned sorted by creation date, with the most recent partners appearing first.
 		 * Get partners
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} per_page Minimum: 1
+		 *     Maximum: 100
 		 * @return {PartnerList} Success response
 		 */
 		ListPartner(page: number | null | undefined, per_page: number | null | undefined): Observable<PartnerList> {
@@ -1334,6 +1661,7 @@ export namespace MyNS {
 		 * Delete a partner
 		 * Delete an existing partner.
 		 * Delete partners/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeletePartner(id: number): Observable<HttpResponse<string>> {
@@ -1344,6 +1672,7 @@ export namespace MyNS {
 		 * Retrieve a partner
 		 * Retrieves the details of an existing partner.
 		 * Get partners/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Partner} Success response
 		 */
 		GetPartner(id: number): Observable<Partner> {
@@ -1354,6 +1683,7 @@ export namespace MyNS {
 		 * Update a partner
 		 * Update an existing partner. Returns a partner object if the update is succeded.
 		 * Put partners/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PartnerUpsert} requestBody Partner object that you would like to update.
 		 * @return {Partner} Partner updated successfully.
 		 */
@@ -1365,6 +1695,9 @@ export namespace MyNS {
 		 * List all product
 		 * Returns a list of your products. The partners are returned sorted by creation date, with the most recent partners appearing first.
 		 * Get products
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} per_page Minimum: 1
+		 *     Maximum: 100
 		 * @return {ProductList} Success response
 		 */
 		ListProduct(page: number | null | undefined, per_page: number | null | undefined): Observable<ProductList> {
@@ -1386,6 +1719,7 @@ export namespace MyNS {
 		 * Delete a product
 		 * Delete an existing product.
 		 * Delete products/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteProduct(id: number): Observable<HttpResponse<string>> {
@@ -1396,6 +1730,7 @@ export namespace MyNS {
 		 * Retrieve a product
 		 * Retrieves the details of an existing product.
 		 * Get products/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Product} Success response
 		 */
 		GetProduct(id: number): Observable<Product> {
@@ -1406,6 +1741,7 @@ export namespace MyNS {
 		 * Update a product
 		 * Update an existing product. Returns a product object if the update is succeded.
 		 * Put products/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Product} requestBody Product object that you would like to update.
 		 * @return {Product} Product updated successfully.
 		 */
@@ -1417,6 +1753,7 @@ export namespace MyNS {
 		 * Convert legacy ID to v3 ID.
 		 * Retrieves the API v3 ID.
 		 * Get utils/convert-legacy-id/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Id} Success response
 		 */
 		GetId(id: number): Observable<Id> {

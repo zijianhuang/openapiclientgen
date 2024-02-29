@@ -1770,7 +1770,10 @@ namespace MyNS
 		/// Returns a list of all brokers.
 		/// ListBrokers v1/brokers
 		/// </summary>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1847,7 +1850,10 @@ namespace MyNS
 		/// Returns a list of all configurations.
 		/// ListConfigurations v1/configurations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <returns>Success</returns>
 		public async Task<ListConfigurationsResponse> ListConfigurationsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2242,7 +2248,10 @@ namespace MyNS
 		/// DescribeBrokerEngineTypes v1/broker-engine-types
 		/// </summary>
 		/// <param name="engineType">Filter response by engine type.</param>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(string engineType, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2279,7 +2288,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="engineType">Filter response by engine type.</param>
 		/// <param name="hostInstanceType">Filter response by host instance type.</param>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <param name="storageType">Filter response by storage type.</param>
 		/// <returns>Success</returns>
@@ -2426,7 +2438,10 @@ namespace MyNS
 		/// ListConfigurationRevisions v1/configurations/{configuration_id}/revisions
 		/// </summary>
 		/// <param name="configuration_id">The unique ID that Amazon MQ generates for the configuration.</param>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <returns>Success</returns>
 		public async Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(string configuration_id, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2462,7 +2477,10 @@ namespace MyNS
 		/// ListUsers v1/brokers/{broker_id}/users
 		/// </summary>
 		/// <param name="broker_id">The unique ID that Amazon MQ generates for the broker.</param>
-		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</param>
+		/// <param name="maxResults">The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</param>
 		/// <returns>Success</returns>
 		public async Task<ListUsersResponse> ListUsersAsync(string broker_id, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

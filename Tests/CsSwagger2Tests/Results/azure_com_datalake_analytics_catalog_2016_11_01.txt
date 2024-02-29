@@ -1533,8 +1533,12 @@ namespace MyNS
 		/// Catalog_ListAcls catalog/usql/acl
 		/// </summary>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1568,8 +1572,12 @@ namespace MyNS
 		/// Catalog_ListDatabases catalog/usql/databases
 		/// </summary>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1634,8 +1642,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1670,8 +1682,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the assembly.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1737,8 +1753,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the schema.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1904,8 +1924,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the external data sources.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -1971,8 +1995,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the schema.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2039,8 +2067,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the packages.</param>
 		/// <param name="schemaName">The name of the schema containing the packages.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2108,8 +2140,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the procedures.</param>
 		/// <param name="schemaName">The name of the schema containing the procedures.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2177,8 +2213,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the statistics.</param>
 		/// <param name="schemaName">The name of the schema containing the statistics.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2214,8 +2254,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the tables.</param>
 		/// <param name="schemaName">The name of the schema containing the tables.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2285,8 +2329,12 @@ namespace MyNS
 		/// <param name="schemaName">The name of the schema containing the partitions.</param>
 		/// <param name="tableName">The name of the table containing the partitions.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2425,8 +2473,12 @@ namespace MyNS
 		/// <param name="schemaName">The name of the schema containing the statistics.</param>
 		/// <param name="tableName">The name of the table containing the statistics.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2496,8 +2548,12 @@ namespace MyNS
 		/// <param name="schemaName">The name of the schema containing the table fragments.</param>
 		/// <param name="tableName">The name of the table containing the table fragments.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2533,8 +2589,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the table types.</param>
 		/// <param name="schemaName">The name of the schema containing the table types.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2602,8 +2662,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the table valued functions.</param>
 		/// <param name="schemaName">The name of the schema containing the table valued functions.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2671,8 +2735,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the types.</param>
 		/// <param name="schemaName">The name of the schema containing the types.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2708,8 +2776,12 @@ namespace MyNS
 		/// <param name="databaseName">The name of the database containing the views.</param>
 		/// <param name="schemaName">The name of the schema containing the views.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2922,8 +2994,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the table statistics.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2958,8 +3034,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the tables.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -2995,8 +3075,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the table valued functions.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>
@@ -3031,8 +3115,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="databaseName">The name of the database containing the views.</param>
 		/// <param name="filter">OData filter. Optional.</param>
-		/// <param name="top">The number of items to return. Optional.</param>
-		/// <param name="skip">The number of items to skip over before returning elements. Optional.</param>
+		/// <param name="top">The number of items to return. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="skip">The number of items to skip over before returning elements. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="select">OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.</param>
 		/// <param name="orderby">OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.</param>
 		/// <param name="count">The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.</param>

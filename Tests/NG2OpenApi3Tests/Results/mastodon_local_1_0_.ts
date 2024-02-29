@@ -34,10 +34,16 @@ export namespace MyNS {
 		/** Additional metadata attached to a profile as name-value pairs. */
 		fields?: Array<Field>;
 
-		/** The reported followers of this profile. */
+		/**
+		 * The reported followers of this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count?: number | null;
 
-		/** The reported follows of this profile. */
+		/**
+		 * The reported follows of this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following_count?: number | null;
 
 		/** An image banner that is shown above the profile and in profile cards. The format is URL. */
@@ -67,7 +73,10 @@ export namespace MyNS {
 		/** Represents display or publishing preferences of user's own account. Returned as an additional entity when verifying and updated credentials, as an attribute of Account. */
 		source?: Source;
 
-		/** How many statuses are attached to this account. */
+		/**
+		 * How many statuses are attached to this account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statuses_count?: number | null;
 
 		/** An extra entity returned when an account is suspended. */
@@ -104,10 +113,16 @@ export namespace MyNS {
 		/** The profile's display name. */
 		display_name: FormControl<string | null | undefined>,
 
-		/** The reported followers of this profile. */
+		/**
+		 * The reported followers of this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count: FormControl<number | null | undefined>,
 
-		/** The reported follows of this profile. */
+		/**
+		 * The reported follows of this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following_count: FormControl<number | null | undefined>,
 
 		/** An image banner that is shown above the profile and in profile cards. The format is URL. */
@@ -131,7 +146,10 @@ export namespace MyNS {
 		/** The profile's bio / description. */
 		note: FormControl<string | null | undefined>,
 
-		/** How many statuses are attached to this account. */
+		/**
+		 * How many statuses are attached to this account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statuses_count: FormControl<number | null | undefined>,
 
 		/** An extra entity returned when an account is suspended. */
@@ -284,7 +302,10 @@ export namespace MyNS {
 		/** Metadata about the account. */
 		fields?: Array<Field>;
 
-		/** The number of pending follow requests */
+		/**
+		 * The number of pending follow requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		follow_requests_count?: number | null;
 
 		/** The default posting language for new statuses, ISO 639-1 language two-letter code. */
@@ -303,7 +324,10 @@ export namespace MyNS {
 	/** Represents display or publishing preferences of user's own account. Returned as an additional entity when verifying and updated credentials, as an attribute of Account. */
 	export interface SourceFormProperties {
 
-		/** The number of pending follow requests */
+		/**
+		 * The number of pending follow requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		follow_requests_count: FormControl<number | null | undefined>,
 
 		/** The default posting language for new statuses, ISO 639-1 language two-letter code. */
@@ -584,7 +608,10 @@ export namespace MyNS {
 		/** Have you favourited this status? */
 		favourited?: boolean | null;
 
-		/** How many favourites this status has received. */
+		/**
+		 * How many favourites this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		favourites_count?: number | null;
 
 		/** ID of the status in the database. Cast from an integer but not guaranteed to be a number. */
@@ -620,10 +647,16 @@ export namespace MyNS {
 		/** Have you boosted this status? */
 		reblogged?: boolean | null;
 
-		/** How many boosts this status has received. */
+		/**
+		 * How many boosts this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reblogs_count?: number | null;
 
-		/** How many replies this status has received. */
+		/**
+		 * How many replies this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replies_count?: number | null;
 
 		/** Is this status marked as sensitive content? */
@@ -663,7 +696,10 @@ export namespace MyNS {
 		/** Have you favourited this status? */
 		favourited: FormControl<boolean | null | undefined>,
 
-		/** How many favourites this status has received. */
+		/**
+		 * How many favourites this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		favourites_count: FormControl<number | null | undefined>,
 
 		/** ID of the status in the database. Cast from an integer but not guaranteed to be a number. */
@@ -687,10 +723,16 @@ export namespace MyNS {
 		/** Have you boosted this status? */
 		reblogged: FormControl<boolean | null | undefined>,
 
-		/** How many boosts this status has received. */
+		/**
+		 * How many boosts this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reblogs_count: FormControl<number | null | undefined>,
 
-		/** How many replies this status has received. */
+		/**
+		 * How many replies this status has received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replies_count: FormControl<number | null | undefined>,
 
 		/** Is this status marked as sensitive content? */
@@ -1132,7 +1174,10 @@ export namespace MyNS {
 	/** Represents an emoji reaction to an Announcement. */
 	export interface AnnouncementReaction {
 
-		/** The total number of users who have added this reaction. */
+		/**
+		 * The total number of users who have added this reaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Whether the authorized user has added this reaction to the announcement. */
@@ -1151,7 +1196,10 @@ export namespace MyNS {
 	/** Represents an emoji reaction to an Announcement. */
 	export interface AnnouncementReactionFormProperties {
 
-		/** The total number of users who have added this reaction. */
+		/**
+		 * The total number of users who have added this reaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Whether the authorized user has added this reaction to the announcement. */
@@ -1251,7 +1299,10 @@ export namespace MyNS {
 		 */
 		description: string;
 
-		/** Height of preview, in pixels. */
+		/**
+		 * Height of preview, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** HTML to be used for generating the preview card. */
@@ -1284,7 +1335,10 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** Width of preview, in pixels. */
+		/**
+		 * Width of preview, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1306,7 +1360,10 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** Height of preview, in pixels. */
+		/**
+		 * Height of preview, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** HTML to be used for generating the preview card. */
@@ -1339,7 +1396,10 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** Width of preview, in pixels. */
+		/**
+		 * Width of preview, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCardFormGroup() {
@@ -1475,7 +1535,10 @@ export namespace MyNS {
 		/** The name of the hashtag being featured. */
 		name?: string | null;
 
-		/** The number of authored statuses containing this hashtag. */
+		/**
+		 * The number of authored statuses containing this hashtag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statuses_count?: number | null;
 
 		/** A link to all statuses by a user that contain this hashtag. */
@@ -1494,7 +1557,10 @@ export namespace MyNS {
 		/** The name of the hashtag being featured. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of authored statuses containing this hashtag. */
+		/**
+		 * The number of authored statuses containing this hashtag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statuses_count: FormControl<number | null | undefined>,
 
 		/** A link to all statuses by a user that contain this hashtag. */
@@ -1856,7 +1922,10 @@ export namespace MyNS {
 		/** The timestamp of when the marker was set. ISO 8601 Datetime. */
 		updated_at?: Date | null;
 
-		/** Used for locking to prevent write conflicts. */
+		/**
+		 * Used for locking to prevent write conflicts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -1875,7 +1944,10 @@ export namespace MyNS {
 		/** The timestamp of when the marker was set. ISO 8601 Datetime. */
 		updated_at: FormControl<Date | null | undefined>,
 
-		/** Used for locking to prevent write conflicts. */
+		/**
+		 * Used for locking to prevent write conflicts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateMarkerFormGroup() {
@@ -1981,10 +2053,16 @@ export namespace MyNS {
 		/** When called with a user token, has the authorized user voted? Boolean, or null if no current user */
 		voted?: boolean | null;
 
-		/** How many unique accounts have voted on a multiple-choice poll. Number, or null if `multiple` is false. */
+		/**
+		 * How many unique accounts have voted on a multiple-choice poll. Number, or null if `multiple` is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voters_count?: number | null;
 
-		/** How many votes have been received. */
+		/**
+		 * How many votes have been received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		votes_count?: number | null;
 	}
 
@@ -2006,10 +2084,16 @@ export namespace MyNS {
 		/** When called with a user token, has the authorized user voted? Boolean, or null if no current user */
 		voted: FormControl<boolean | null | undefined>,
 
-		/** How many unique accounts have voted on a multiple-choice poll. Number, or null if `multiple` is false. */
+		/**
+		 * How many unique accounts have voted on a multiple-choice poll. Number, or null if `multiple` is false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voters_count: FormControl<number | null | undefined>,
 
-		/** How many votes have been received. */
+		/**
+		 * How many votes have been received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		votes_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePollFormGroup() {
@@ -2517,7 +2601,10 @@ export namespace MyNS {
 		/** An OAuth token to be used for authorization. */
 		access_token?: string | null;
 
-		/** When the token was generated. UNIX Timestamp. */
+		/**
+		 * When the token was generated. UNIX Timestamp.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at?: number | null;
 
 		/** The OAuth scopes granted by this token, space-separated. */
@@ -2533,7 +2620,10 @@ export namespace MyNS {
 		/** An OAuth token to be used for authorization. */
 		access_token: FormControl<string | null | undefined>,
 
-		/** When the token was generated. UNIX Timestamp. */
+		/**
+		 * When the token was generated. UNIX Timestamp.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created_at: FormControl<number | null | undefined>,
 
 		/** The OAuth scopes granted by this token, space-separated. */
@@ -2562,7 +2652,9 @@ export namespace MyNS {
 		 * Get api/oembed
 		 * @param {string} url URL of a status
 		 * @param {number} maxwidth width of the iframe. Defaults to 400
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxheight height of the iframe. Defaults to null
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Card} Success
 		 */
 		ApiOembedGetByUrlAndMaxwidthAndMaxheight(url: string | null | undefined, maxwidth: number | null | undefined, maxheight: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Card> {
@@ -2595,6 +2687,7 @@ export namespace MyNS {
 		 * Get api/v1/accounts/search
 		 * @param {string} q What to search for
 		 * @param {number} limit Maximum number of results. Defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resolve Attempt WebFinger lookup. Defaults to false. Use this when `q` is an exact address.
 		 * @param {boolean} following Only who the user is following. Defaults to false.
 		 * @return {Array<Account>} Accounts matching `q` in username or display name
@@ -2644,6 +2737,7 @@ export namespace MyNS {
 		 * @param {string} max_id Internal parameter. Use HTTP `Link` header for pagination.
 		 * @param {string} since_id Internal parameter. Use HTTP `Link` header for pagination.
 		 * @param {number} limit Maximum number of results to return. Defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Success
 		 */
 		ApiV1Accounts_idFollowersGetByMax_idAndSince_idAndLimit(max_id: string | null | undefined, since_id: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -2656,6 +2750,7 @@ export namespace MyNS {
 		 * @param {string} max_id Internal parameter. Use HTTP `Link` header for pagination.
 		 * @param {string} since_id Internal parameter. Use HTTP `Link` header for pagination.
 		 * @param {number} limit Maximum number of results to return. Defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Success
 		 */
 		ApiV1Accounts_idFollowingGetByMax_idAndSince_idAndLimit(max_id: string | null | undefined, since_id: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -2922,6 +3017,7 @@ export namespace MyNS {
 		/**
 		 * Get blocked users.
 		 * Get api/v1/blocks
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} success
 		 */
 		ApiV1BlocksGetByLimitAndMax_idAndSince_id(limit: number | null | undefined, max_id: string | null | undefined, since_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -2931,6 +3027,7 @@ export namespace MyNS {
 		/**
 		 * Statuses the user has bookmarked.
 		 * Get api/v1/bookmarks
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Status>} success
 		 */
 		ApiV1BookmarksGetByLimitAndMax_idAndSince_idAndMin_id(limit: number | null | undefined, max_id: string | null | undefined, since_id: string | null | undefined, min_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Status>> {
@@ -2941,6 +3038,7 @@ export namespace MyNS {
 		 * Show conversation.
 		 * Get api/v1/conversations
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -2981,7 +3079,9 @@ export namespace MyNS {
 		 * List accounts visible in the directory.
 		 * Get api/v1/directory
 		 * @param {number} limit How many accounts to load. Default 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset How many accounts to skip before returning results. Default 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ApiV1DirectoryGetByLimitAndOffsetAndOrderAndLocalOrder} order the `active` to sort by most recently posted statuses (default) or `new` to sort by most recently created profiles.
 		 * @param {boolean} local Only return local accounts.
 		 * @return {Array<Account>} List of accounts
@@ -3003,6 +3103,7 @@ export namespace MyNS {
 		/**
 		 * View domains the user has blocked.
 		 * Get api/v1/domain_blocks
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} success
 		 */
 		ApiV1Domain_blocksGetByLimitAndMax_idAndSince_id(limit: number | null | undefined, max_id: string | null | undefined, since_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3013,6 +3114,7 @@ export namespace MyNS {
 		 * Accounts that the user is currently featuring on their profile.
 		 * Get api/v1/endorsements
 		 * @param {number} limit Maximum number of results to return. Defaults to 40. Paginate using the HTTP Link header.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Internal parameter. Use HTTP Link header from response for pagination
 		 * @param {string} since_id Internal parameter. Use HTTP Link header from response for pagination.
 		 * @return {Array<Account>} Success. Because endorsement ids are private, you must parse the HTTP Link header to find next and previous pages.
@@ -3096,6 +3198,7 @@ export namespace MyNS {
 		 * Pending Follows
 		 * Get api/v1/follow_requests
 		 * @param {number} limit Maximum number of results to return. Defaults to 40. Paginate using the HTTP Link header.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Accounts that are requesting a follow.
 		 */
 		ApiV1Follow_requestsGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -3206,6 +3309,7 @@ export namespace MyNS {
 		 * View accounts in List
 		 * Get api/v1/lists/{id}/accounts
 		 * @param {number} limit Maximum number of results. Defaults to 40. Max 40. Set to 0 in order to get all accounts without pagination. Pagination is done with the HTTP Link header.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @return {Array<Account>} Success
@@ -3264,6 +3368,7 @@ export namespace MyNS {
 		 * Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and id values.
 		 * Get api/v1/notifications
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3378,6 +3483,7 @@ export namespace MyNS {
 		 * View scheduled statuses
 		 * Get api/v1/scheduled_statuses
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3558,6 +3664,7 @@ export namespace MyNS {
 		 * Accounts the user has had past positive interactions with, but is not yet following.
 		 * Get api/v1/suggestions
 		 * @param {number} limit Maximum number of results to return. Defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Success.
 		 */
 		ApiV1SuggestionsGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Account> {
@@ -3578,6 +3685,7 @@ export namespace MyNS {
 		 * Get api/v1/timelines/home
 		 * @param {boolean} local Show only local statuses? Defaults to false.
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3591,6 +3699,7 @@ export namespace MyNS {
 		 * View statuses in the given list timeline.
 		 * Get api/v1/timelines/list/{list_id}
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3607,6 +3716,7 @@ export namespace MyNS {
 		 * @param {boolean} remote Show only local statuses? Defaults to false.
 		 * @param {boolean} only_media Show only statuses with media attached? Defaults to false..
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3623,6 +3733,7 @@ export namespace MyNS {
 		 * @param {boolean} remote Show only local statuses? Defaults to false.
 		 * @param {boolean} only_media Show only statuses with media attached? Defaults to false..
 		 * @param {number} limit Max number of results to return. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_id Return results older than ID
 		 * @param {string} since_id Return results newer than ID
 		 * @param {string} min_id Return results immediately newer than ID
@@ -3636,6 +3747,7 @@ export namespace MyNS {
 		 * Tags that are being used more frequently within the past week.
 		 * Get api/v1/trends
 		 * @param {number} limit Max number of results to return. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Tag>} Domains that this instance is aware of.
 		 */
 		ApiV1TrendsGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Tag>> {
@@ -3647,6 +3759,7 @@ export namespace MyNS {
 		 * Get api/v2/search
 		 * @param {string} q What to search for
 		 * @param {number} limit Maximum number of results. Defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resolve Attempt WebFinger lookup.
 		 * @param {boolean} following Only who the user is following. Defaults to false.
 		 * @param {string} account_id If provided, statuses returned will be authored only by this account
@@ -3655,6 +3768,7 @@ export namespace MyNS {
 		 * @param {ApiV2SearchGetByQAndLimitAndResolveAndFollowingAndAccount_idAndMax_idAndMin_idAndTypeAndExclude_unreviewedAndOffsetType} type Enum(accounts, hashtags, statuses)
 		 * @param {boolean} exclude_unreviewed Filter out unreviewed tags? Defaults to false. Use true when trying to find trending tags.
 		 * @param {number} offset Offset in search results. Used for pagination. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiV2SearchGetByQAndLimitAndResolveAndFollowingAndAccount_idAndMax_idAndMin_idAndTypeAndExclude_unreviewedAndOffsetReturn} Result
 		 */
 		ApiV2SearchGetByQAndLimitAndResolveAndFollowingAndAccount_idAndMax_idAndMin_idAndTypeAndExclude_unreviewedAndOffset(q: string, limit: number | null | undefined, resolve: string | null | undefined, following: boolean | null | undefined, account_id: string | null | undefined, max_id: string | null | undefined, min_id: string | null | undefined, type: ApiV2SearchGetByQAndLimitAndResolveAndFollowingAndAccount_idAndMax_idAndMin_idAndTypeAndExclude_unreviewedAndOffsetType | null | undefined, exclude_unreviewed: boolean | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ApiV2SearchGetByQAndLimitAndResolveAndFollowingAndAccount_idAndMax_idAndMin_idAndTypeAndExclude_unreviewedAndOffsetReturn> {

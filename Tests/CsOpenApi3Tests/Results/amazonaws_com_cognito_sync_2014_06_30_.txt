@@ -801,7 +801,10 @@ namespace MyNS
 		/// <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// BulkPublish identitypools/{IdentityPoolId}/bulkpublish
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BulkPublishResponse> BulkPublishAsync(string IdentityPoolId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -830,9 +833,18 @@ namespace MyNS
 		/// <p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		/// DeleteDataset identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDatasetResponse> DeleteDatasetAsync(string IdentityPoolId, string IdentityId, string DatasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -866,9 +878,18 @@ namespace MyNS
 		/// <p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 		/// DescribeDataset identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDatasetResponse> DescribeDatasetAsync(string IdentityPoolId, string IdentityId, string DatasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -902,9 +923,18 @@ namespace MyNS
 		/// <p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p><p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		/// UpdateRecords identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRecordsResponse> UpdateRecordsAsync(string IdentityPoolId, string IdentityId, string DatasetName, UpdateRecordsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -945,7 +975,10 @@ namespace MyNS
 		/// <p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// DescribeIdentityPoolUsage identitypools/{IdentityPoolId}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(string IdentityPoolId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -979,8 +1012,14 @@ namespace MyNS
 		/// <p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		/// DescribeIdentityUsage identitypools/{IdentityPoolId}/identities/{IdentityId}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(string IdentityPoolId, string IdentityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1014,7 +1053,10 @@ namespace MyNS
 		/// <p>Get the status of the last BulkPublish operation for an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// GetBulkPublishDetails identitypools/{IdentityPoolId}/getBulkPublishDetails
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBulkPublishDetailsResponse> GetBulkPublishDetailsAsync(string IdentityPoolId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1043,7 +1085,10 @@ namespace MyNS
 		/// <p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// GetCognitoEvents identitypools/{IdentityPoolId}/events
 		/// </summary>
-		/// <param name="IdentityPoolId">The Cognito Identity Pool ID for the request</param>
+		/// <param name="IdentityPoolId">The Cognito Identity Pool ID for the request
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCognitoEventsResponse> GetCognitoEventsAsync(string IdentityPoolId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1077,7 +1122,10 @@ namespace MyNS
 		/// <p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// SetCognitoEvents identitypools/{IdentityPoolId}/events
 		/// </summary>
-		/// <param name="IdentityPoolId">The Cognito Identity Pool to use when configuring Cognito Events</param>
+		/// <param name="IdentityPoolId">The Cognito Identity Pool to use when configuring Cognito Events
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task SetCognitoEventsAsync(string IdentityPoolId, SetCognitoEventsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1112,7 +1160,10 @@ namespace MyNS
 		/// <p>Gets the configuration settings of an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// GetIdentityPoolConfiguration identitypools/{IdentityPoolId}/configuration
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIdentityPoolConfigurationResponse> GetIdentityPoolConfigurationAsync(string IdentityPoolId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1146,7 +1197,10 @@ namespace MyNS
 		/// <p>Sets the necessary configuration for push sync.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		/// SetIdentityPoolConfiguration identitypools/{IdentityPoolId}/configuration
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SetIdentityPoolConfigurationResponse> SetIdentityPoolConfigurationAsync(string IdentityPoolId, SetIdentityPoolConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1187,8 +1241,14 @@ namespace MyNS
 		/// <p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>
 		/// ListDatasets identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">A pagination token for obtaining the next page of results.</param>
 		/// <param name="maxResults">The maximum number of results to be returned.</param>
 		/// <returns>Success</returns>
@@ -1259,9 +1319,18 @@ namespace MyNS
 		/// <p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 		/// ListRecords identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="lastSyncCount">The last server sync count for this record.</param>
 		/// <param name="nextToken">A pagination token for obtaining the next page of results.</param>
 		/// <param name="maxResults">The maximum number of results to be returned.</param>
@@ -1299,8 +1368,14 @@ namespace MyNS
 		/// <p>Registers a device to receive push sync notifications.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		/// RegisterDevice identitypools/{IdentityPoolId}/identity/{IdentityId}/device
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</param>
-		/// <param name="IdentityId">The unique ID for this identity.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">The unique ID for this identity.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterDeviceResponse> RegisterDeviceAsync(string IdentityPoolId, string IdentityId, RegisterDevicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1341,10 +1416,22 @@ namespace MyNS
 		/// <p>Subscribes to receive notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		/// SubscribeToDataset identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</param>
-		/// <param name="IdentityId">Unique ID for this identity.</param>
-		/// <param name="DatasetName">The name of the dataset to subcribe to.</param>
-		/// <param name="DeviceId">The unique ID generated for this device by Cognito.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">Unique ID for this identity.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">The name of the dataset to subcribe to.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="DeviceId">The unique ID generated for this device by Cognito.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SubscribeToDatasetResponse> SubscribeToDatasetAsync(string IdentityPoolId, string IdentityId, string DatasetName, string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1373,10 +1460,22 @@ namespace MyNS
 		/// <p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		/// UnsubscribeFromDataset identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}
 		/// </summary>
-		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</param>
-		/// <param name="IdentityId">Unique ID for this identity.</param>
-		/// <param name="DatasetName">The name of the dataset from which to unsubcribe.</param>
-		/// <param name="DeviceId">The unique ID generated for this device by Cognito.</param>
+		/// <param name="IdentityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="IdentityId">Unique ID for this identity.
+		/// Max length: 55
+		/// Min length: 1
+		// </param>
+		/// <param name="DatasetName">The name of the dataset from which to unsubcribe.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="DeviceId">The unique ID generated for this device by Cognito.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UnsubscribeFromDatasetResponse> UnsubscribeFromDatasetAsync(string IdentityPoolId, string IdentityId, string DatasetName, string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

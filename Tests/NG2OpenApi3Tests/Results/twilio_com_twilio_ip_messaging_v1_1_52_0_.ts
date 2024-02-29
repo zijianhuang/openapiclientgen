@@ -10,8 +10,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1credential {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		date_created?: Date | null;
@@ -20,8 +20,8 @@ export namespace MyNS {
 		sandbox?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Credential_enum_push_service | null;
@@ -30,8 +30,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1credentialFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
@@ -40,8 +40,8 @@ export namespace MyNS {
 		sandbox: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Credential_enum_push_service | null | undefined>,
@@ -64,29 +64,31 @@ export namespace MyNS {
 	export interface Ip_messagingv1service {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		consumption_report_interval?: number | null;
 		date_created?: Date | null;
 		date_updated?: Date | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_creator_role_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_role_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_service_role_sid?: string | null;
 		friendly_name?: string | null;
@@ -99,10 +101,12 @@ export namespace MyNS {
 		read_status_enabled?: boolean | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typing_indicator_timeout?: number | null;
 		url?: string | null;
 		webhook_filters?: Array<string>;
@@ -112,29 +116,31 @@ export namespace MyNS {
 	export interface Ip_messagingv1serviceFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		consumption_report_interval: FormControl<number | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
 		date_updated: FormControl<Date | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_creator_role_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_role_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_service_role_sid: FormControl<string | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
@@ -147,10 +153,12 @@ export namespace MyNS {
 		read_status_enabled: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typing_indicator_timeout: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 		webhook_method: FormControl<string | null | undefined>,
@@ -185,8 +193,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannel {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		attributes?: string | null;
@@ -195,18 +203,22 @@ export namespace MyNS {
 		date_updated?: Date | null;
 		friendly_name?: string | null;
 		links?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		members_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messages_count?: number | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Channel_enum_channel_type | null;
@@ -216,8 +228,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
@@ -226,18 +238,22 @@ export namespace MyNS {
 		date_updated: FormControl<Date | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 		links: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		members_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messages_count: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Channel_enum_channel_type | null | undefined>,
@@ -267,14 +283,14 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelinvite {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 		created_by?: string | null;
@@ -283,20 +299,20 @@ export namespace MyNS {
 		identity?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -304,14 +320,14 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelinviteFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
@@ -320,20 +336,20 @@ export namespace MyNS {
 		identity: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -357,37 +373,39 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelmember {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 		date_created?: Date | null;
 		date_updated?: Date | null;
 		identity?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_consumed_message_index?: number | null;
 		last_consumption_timestamp?: Date | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -395,37 +413,39 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelmemberFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
 		date_updated: FormControl<Date | null | undefined>,
 		identity: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_consumed_message_index: FormControl<number | null | undefined>,
 		last_consumption_timestamp: FormControl<Date | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -450,38 +470,40 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelmessage {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		attributes?: string | null;
 		body?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 		date_created?: Date | null;
 		date_updated?: Date | null;
 		from?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		to?: string | null;
 		url?: string | null;
@@ -490,38 +512,40 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicechannelmessageFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
 		body: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
 		date_updated: FormControl<Date | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		to: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -549,8 +573,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1servicerole {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		date_created?: Date | null;
@@ -559,14 +583,14 @@ export namespace MyNS {
 		permissions?: Array<string>;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Ip_messagingv1serviceroleType | null;
@@ -575,8 +599,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1serviceroleFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
@@ -584,14 +608,14 @@ export namespace MyNS {
 		friendly_name: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Ip_messagingv1serviceroleType | null | undefined>,
@@ -616,8 +640,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1serviceuser {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		attributes?: string | null;
@@ -627,24 +651,26 @@ export namespace MyNS {
 		identity?: string | null;
 		is_notifiable?: boolean | null;
 		is_online?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		joined_channels_count?: number | null;
 		links?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -652,8 +678,8 @@ export namespace MyNS {
 	export interface Ip_messagingv1serviceuserFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
@@ -663,24 +689,26 @@ export namespace MyNS {
 		identity: FormControl<string | null | undefined>,
 		is_notifiable: FormControl<boolean | null | undefined>,
 		is_online: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		joined_channels_count: FormControl<number | null | undefined>,
 		links: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -708,61 +736,69 @@ export namespace MyNS {
 	export interface Ip_messagingv1serviceuseruser_channel {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_consumed_message_index?: number | null;
 		links?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		member_sid?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 		status?: Ip_messagingv1serviceuseruser_channelStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unread_messages_count?: number | null;
 	}
 	export interface Ip_messagingv1serviceuseruser_channelFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_consumed_message_index: FormControl<number | null | undefined>,
 		links: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		member_sid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 		status: FormControl<Ip_messagingv1serviceuseruser_channelStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unread_messages_count: FormControl<number | null | undefined>,
 	}
 	export function CreateIp_messagingv1serviceuseruser_channelFormGroup() {
@@ -795,7 +831,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Credentials
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialReturn} OK
 		 */
@@ -805,6 +843,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Credentials/{Sid}
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredential(Sid: string): Observable<HttpResponse<string>> {
@@ -813,6 +853,8 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Credentials/{Sid}
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1credential} OK
 		 */
 		FetchCredential(Sid: string): Observable<Ip_messagingv1credential> {
@@ -822,7 +864,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -832,8 +876,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListChannelReturn} OK
 		 */
@@ -843,8 +891,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInviteReturn} OK
 		 */
@@ -854,6 +906,10 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInvite(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -862,6 +918,10 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1servicechannelinvite} OK
 		 */
 		FetchInvite(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Ip_messagingv1servicechannelinvite> {
@@ -870,8 +930,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMemberReturn} OK
 		 */
@@ -881,6 +945,10 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteMember(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -889,6 +957,10 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1servicechannelmember} OK
 		 */
 		FetchMember(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Ip_messagingv1servicechannelmember> {
@@ -897,8 +969,14 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} ChannelSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMessageReturn} OK
 		 */
@@ -908,6 +986,12 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} ChannelSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteMessage(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -916,6 +1000,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} ChannelSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1servicechannelmessage} OK
 		 */
 		FetchMessage(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Ip_messagingv1servicechannelmessage> {
@@ -924,6 +1014,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteChannel(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -932,6 +1024,8 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1servicechannel} OK
 		 */
 		FetchChannel(ServiceSid: string, Sid: string): Observable<Ip_messagingv1servicechannel> {
@@ -940,8 +1034,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Roles
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListRoleReturn} OK
 		 */
@@ -951,6 +1049,10 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Roles/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteRole(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -959,6 +1061,10 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Roles/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1servicerole} OK
 		 */
 		FetchRole(ServiceSid: string, Sid: string): Observable<Ip_messagingv1servicerole> {
@@ -967,8 +1073,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Users
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListUserReturn} OK
 		 */
@@ -978,6 +1088,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{ServiceSid}/Users/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteUser(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -986,6 +1098,8 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Users/{Sid}
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1serviceuser} OK
 		 */
 		FetchUser(ServiceSid: string, Sid: string): Observable<Ip_messagingv1serviceuser> {
@@ -994,8 +1108,12 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{ServiceSid}/Users/{UserSid}/Channels
+		 * @param {string} ServiceSid Min length: 34
+		 *     Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListUserChannelReturn} OK
 		 */
@@ -1005,6 +1123,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete v1/Services/{Sid}
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {void} 
 		 */
 		DeleteService(Sid: string): Observable<HttpResponse<string>> {
@@ -1013,6 +1133,8 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Services/{Sid}
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Ip_messagingv1service} OK
 		 */
 		FetchService(Sid: string): Observable<Ip_messagingv1service> {
@@ -1036,7 +1158,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1045,7 +1171,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1079,7 +1209,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1088,7 +1222,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1122,7 +1260,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1131,7 +1273,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1165,7 +1311,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1174,7 +1324,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1208,7 +1362,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1217,7 +1375,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1251,7 +1413,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1260,7 +1426,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1294,7 +1464,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1303,7 +1477,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1337,7 +1515,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1346,7 +1528,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1380,7 +1566,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1389,7 +1579,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

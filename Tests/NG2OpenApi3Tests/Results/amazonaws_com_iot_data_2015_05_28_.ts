@@ -355,7 +355,9 @@ export namespace MyNS {
 		 * <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in the IoT Developer Guide.</p>
 		 * Delete things/{thingName}/shadow
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} name The name of the shadow.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteThingShadowResponse} Success
 		 */
 		DeleteThingShadow(thingName: string, name: string | null | undefined): Observable<DeleteThingShadowResponse> {
@@ -366,7 +368,9 @@ export namespace MyNS {
 		 * <p>Gets the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the IoT Developer Guide.</p>
 		 * Get things/{thingName}/shadow
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} name The name of the shadow.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetThingShadowResponse} Success
 		 */
 		GetThingShadow(thingName: string, name: string | null | undefined): Observable<GetThingShadowResponse> {
@@ -377,7 +381,9 @@ export namespace MyNS {
 		 * <p>Updates the shadow for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingShadow</a> action.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the IoT Developer Guide.</p>
 		 * Post things/{thingName}/shadow
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} name The name of the shadow.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateThingShadowResponse} Success
 		 */
 		UpdateThingShadow(thingName: string, name: string | null | undefined, requestBody: UpdateThingShadowPostBody): Observable<UpdateThingShadowResponse> {
@@ -398,8 +404,10 @@ export namespace MyNS {
 		 * <p>Lists the shadows for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListNamedShadowsForThing</a> action.</p>
 		 * Get api/things/shadow/ListNamedShadowsForThing/{thingName}
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListNamedShadowsForThingResponse} Success
 		 */
 		ListNamedShadowsForThing(thingName: string, nextToken: string | null | undefined, pageSize: number | null | undefined): Observable<ListNamedShadowsForThingResponse> {
@@ -411,6 +419,7 @@ export namespace MyNS {
 		 * Get retainedMessage
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {ListRetainedMessagesResponse} Success
 		 */
 		ListRetainedMessages(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListRetainedMessagesResponse> {
@@ -422,10 +431,12 @@ export namespace MyNS {
 		 * Post topics/{topic}
 		 * @param {string} topic The name of the MQTT topic.
 		 * @param {number} qos The Quality of Service (QoS) level. The default QoS level is 0.
+		 *     Minimum: 0    Maximum: 1
 		 * @param {boolean} retain <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code> </p>
 		 * @param {string} contentType A UTF-8 encoded string that describes the content of the publishing message.
 		 * @param {string} responseTopic A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.
 		 * @param {number} messageExpiry A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Publish(topic: string, qos: number | null | undefined, retain: boolean | null | undefined, contentType: string | null | undefined, responseTopic: string | null | undefined, messageExpiry: number | null | undefined, requestBody: PublishPostBody): Observable<HttpResponse<string>> {

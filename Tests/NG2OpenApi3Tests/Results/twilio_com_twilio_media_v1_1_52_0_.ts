@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaProcessor resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -27,13 +27,16 @@ export namespace MyNS {
 		/** The context of the Media Extension, represented as a JSON dictionary. See the documentation for the specific [Media Extension](/docs/live/media-extensions-overview) you are using for more information about the context to send. */
 		extension_context?: string | null;
 
-		/** The maximum time, in seconds, that the MediaProcessor can run before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the MediaProcessor, regardless of whether media is still streaming. */
+		/**
+		 * The maximum time, in seconds, that the MediaProcessor can run before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the MediaProcessor, regardless of whether media is still streaming.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_duration?: number | null;
 
 		/**
 		 * The unique string generated to identify the MediaProcessor resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Mediav1media_processorStatus | null;
@@ -51,8 +54,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaProcessor resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -71,13 +74,16 @@ export namespace MyNS {
 		/** The context of the Media Extension, represented as a JSON dictionary. See the documentation for the specific [Media Extension](/docs/live/media-extensions-overview) you are using for more information about the context to send. */
 		extension_context: FormControl<string | null | undefined>,
 
-		/** The maximum time, in seconds, that the MediaProcessor can run before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the MediaProcessor, regardless of whether media is still streaming. */
+		/**
+		 * The maximum time, in seconds, that the MediaProcessor can run before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the MediaProcessor, regardless of whether media is still streaming.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_duration: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique string generated to identify the MediaProcessor resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Mediav1media_processorStatus | null | undefined>,
@@ -117,8 +123,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaRecording resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -128,20 +134,26 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
 		date_updated?: Date | null;
 
-		/** The duration of the MediaRecording in seconds. */
+		/**
+		 * The duration of the MediaRecording in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 		format?: Mediav1media_recordingFormat | null;
 
 		/** The URLs of related resources. */
 		links?: string | null;
 
-		/** The size of the recording media in bytes. */
-		media_size?: number | null;
+		/**
+		 * The size of the recording media in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		media_size?: string | null;
 
 		/**
 		 * The SID of the MediaProcessor resource which produced the MediaRecording.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		processor_sid?: string | null;
 
@@ -150,15 +162,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string generated to identify the MediaRecording resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the resource that generated the original media track(s) of the MediaRecording.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		source_sid?: string | null;
 		status?: Mediav1media_recordingStatus | null;
@@ -176,8 +188,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaRecording resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -187,20 +199,26 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
 		date_updated: FormControl<Date | null | undefined>,
 
-		/** The duration of the MediaRecording in seconds. */
+		/**
+		 * The duration of the MediaRecording in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 		format: FormControl<Mediav1media_recordingFormat | null | undefined>,
 
 		/** The URLs of related resources. */
 		links: FormControl<string | null | undefined>,
 
-		/** The size of the recording media in bytes. */
-		media_size: FormControl<number | null | undefined>,
+		/**
+		 * The size of the recording media in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		media_size: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the MediaProcessor resource which produced the MediaRecording.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		processor_sid: FormControl<string | null | undefined>,
 
@@ -209,15 +227,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string generated to identify the MediaRecording resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the resource that generated the original media track(s) of the MediaRecording.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		source_sid: FormControl<string | null | undefined>,
 		status: FormControl<Mediav1media_recordingStatus | null | undefined>,
@@ -239,7 +257,7 @@ export namespace MyNS {
 			duration: new FormControl<number | null | undefined>(undefined),
 			format: new FormControl<Mediav1media_recordingFormat | null | undefined>(undefined),
 			links: new FormControl<string | null | undefined>(undefined),
-			media_size: new FormControl<number | null | undefined>(undefined),
+			media_size: new FormControl<string | null | undefined>(undefined),
 			processor_sid: new FormControl<string | null | undefined>(undefined, [Validators.minLength(34), Validators.maxLength(34), Validators.pattern('^ZX[0-9a-fA-F]{32}$')]),
 			resolution: new FormControl<string | null | undefined>(undefined),
 			sid: new FormControl<string | null | undefined>(undefined, [Validators.minLength(34), Validators.maxLength(34), Validators.pattern('^KV[0-9a-fA-F]{32}$')]),
@@ -260,8 +278,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PlayerStreamer resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -275,13 +293,16 @@ export namespace MyNS {
 		/** The URLs of related resources. */
 		links?: string | null;
 
-		/** The maximum time, in seconds, that the PlayerStreamer is active (`created` or `started`) before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the PlayerStreamer, regardless of whether media is still streaming. */
+		/**
+		 * The maximum time, in seconds, that the PlayerStreamer is active (`created` or `started`) before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the PlayerStreamer, regardless of whether media is still streaming.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_duration?: number | null;
 
 		/**
 		 * The unique string generated to identify the PlayerStreamer resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Mediav1player_streamerStatus | null;
@@ -302,8 +323,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PlayerStreamer resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -317,13 +338,16 @@ export namespace MyNS {
 		/** The URLs of related resources. */
 		links: FormControl<string | null | undefined>,
 
-		/** The maximum time, in seconds, that the PlayerStreamer is active (`created` or `started`) before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the PlayerStreamer, regardless of whether media is still streaming. */
+		/**
+		 * The maximum time, in seconds, that the PlayerStreamer is active (`created` or `started`) before automatically ends. The default value is 300 seconds, and the maximum value is 90000 seconds. Once this maximum duration is reached, Twilio will end the PlayerStreamer, regardless of whether media is still streaming.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_duration: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique string generated to identify the PlayerStreamer resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Mediav1player_streamerStatus | null | undefined>,
@@ -366,8 +390,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -379,8 +403,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string generated to identify the PlayerStreamer resource that this PlaybackGrant authorizes views for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -391,8 +415,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -404,8 +428,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string generated to identify the PlayerStreamer resource that this PlaybackGrant authorizes views for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -454,7 +478,9 @@ export namespace MyNS {
 		 * @param {Media_processor_enum_order} Order The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.
 		 * @param {Mediav1media_processorStatus} Status Status to filter by, with possible values `started`, `ended` or `failed`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMediaProcessorReturn} OK
 		 */
@@ -466,6 +492,7 @@ export namespace MyNS {
 		 * Returns a single MediaProcessor resource identified by a SID.
 		 * Get v1/MediaProcessors/{Sid}
 		 * @param {string} Sid The SID of the MediaProcessor resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Mediav1media_processor} OK
 		 */
 		FetchMediaProcessor(Sid: string): Observable<Mediav1media_processor> {
@@ -478,9 +505,13 @@ export namespace MyNS {
 		 * @param {Media_processor_enum_order} Order The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.
 		 * @param {Mediav1media_recordingStatus} Status Status to filter by, with possible values `processing`, `completed`, `deleted`, or `failed`.
 		 * @param {string} ProcessorSid SID of a MediaProcessor to filter by.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SourceSid SID of a MediaRecording source to filter by.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMediaRecordingReturn} OK
 		 */
@@ -492,6 +523,7 @@ export namespace MyNS {
 		 * Deletes a MediaRecording resource identified by a SID.
 		 * Delete v1/MediaRecordings/{Sid}
 		 * @param {string} Sid The SID of the MediaRecording resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteMediaRecording(Sid: string): Observable<HttpResponse<string>> {
@@ -502,6 +534,7 @@ export namespace MyNS {
 		 * Returns a single MediaRecording resource identified by a SID.
 		 * Get v1/MediaRecordings/{Sid}
 		 * @param {string} Sid The SID of the MediaRecording resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Mediav1media_recording} OK
 		 */
 		FetchMediaRecording(Sid: string): Observable<Mediav1media_recording> {
@@ -514,7 +547,9 @@ export namespace MyNS {
 		 * @param {Media_processor_enum_order} Order The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.
 		 * @param {Mediav1player_streamerStatus} Status Status to filter by, with possible values `created`, `started`, `ended`, or `failed`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListPlayerStreamerReturn} OK
 		 */
@@ -526,6 +561,7 @@ export namespace MyNS {
 		 * Returns a single PlayerStreamer resource identified by a SID.
 		 * Get v1/PlayerStreamers/{Sid}
 		 * @param {string} Sid The SID of the PlayerStreamer resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Mediav1player_streamer} OK
 		 */
 		FetchPlayerStreamer(Sid: string): Observable<Mediav1player_streamer> {
@@ -536,6 +572,7 @@ export namespace MyNS {
 		 * **This method is not enabled.** Returns a single PlaybackGrant resource identified by a SID.
 		 * Get v1/PlayerStreamers/{Sid}/PlaybackGrant
 		 * @param {string} Sid The SID of the PlayerStreamer resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Mediav1player_streamerplayer_streamer_playback_grant} OK
 		 */
 		FetchPlayerStreamerPlaybackGrant(Sid: string): Observable<Mediav1player_streamerplayer_streamer_playback_grant> {
@@ -559,7 +596,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -568,7 +609,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -602,7 +647,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -611,7 +660,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -645,7 +698,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -654,7 +711,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

@@ -741,9 +741,12 @@ export namespace MyNS {
 		 * <p>Removes session information for a specified bot, alias, and user ID. </p> <p>You can use this operation to restart a conversation with a bot. When you remove a session, the entire history of the session is removed so that you can start again.</p> <p>You don't need to delete a session. Sessions have a time limit and will expire. Set the session time limit when you create the bot. The default is 5 minutes, but you can specify anything between 1 minute and 24 hours.</p> <p>If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code> </p> <p>If the locale doesn't exist in the bot, or if the locale hasn't been enables for the alias, you receive a <code>BadRequestException</code>.</p>
 		 * Delete bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		 * @param {string} botId The identifier of the bot that contains the session data.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botAliasId The alias identifier in use for the bot that contains the session data.
 		 * @param {string} localeId The locale where the session is in use.
+		 *     Min length: 1
 		 * @param {string} sessionId The identifier of the session to delete.
+		 *     Min length: 2    Max length: 100
 		 * @return {DeleteSessionResponse} Success
 		 */
 		DeleteSession(botId: string, botAliasId: string, localeId: string, sessionId: string): Observable<DeleteSessionResponse> {
@@ -754,9 +757,12 @@ export namespace MyNS {
 		 * <p>Returns session information for a specified bot, alias, and user.</p> <p>For example, you can use this operation to retrieve session information for a user that has left a long-running session in use.</p> <p>If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>. If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.</p>
 		 * Get bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		 * @param {string} botId The identifier of the bot that contains the session data.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botAliasId The alias identifier in use for the bot that contains the session data.
 		 * @param {string} localeId The locale where the session is in use.
+		 *     Min length: 1
 		 * @param {string} sessionId The identifier of the session to return.
+		 *     Min length: 2    Max length: 100
 		 * @return {GetSessionResponse} Success
 		 */
 		GetSession(botId: string, botAliasId: string, localeId: string, sessionId: string): Observable<GetSessionResponse> {
@@ -767,9 +773,12 @@ export namespace MyNS {
 		 * Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use this operation to enable your application to set the state of the bot.
 		 * Post bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		 * @param {string} botId The identifier of the bot that receives the session data.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botAliasId The alias identifier of the bot that receives the session data.
 		 * @param {string} localeId The locale where the session is in use.
+		 *     Min length: 1
 		 * @param {string} sessionId The identifier of the session that receives the session data.
+		 *     Min length: 2    Max length: 100
 		 * @return {PutSessionResponse} Success
 		 */
 		PutSession(botId: string, botAliasId: string, localeId: string, sessionId: string, requestBody: PutSessionPostBody): Observable<PutSessionResponse> {
@@ -780,9 +789,12 @@ export namespace MyNS {
 		 * <p>Sends user input to Amazon Lex V2. Client applications use this API to send requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the machine learning model that it build for the bot.</p> <p>In response, Amazon Lex V2 returns the next message to convey to the user and an optional response card to display.</p> <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p> <ul> <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li> <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li> <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
 		 * Post bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text
 		 * @param {string} botId The identifier of the bot that processes the request.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botAliasId The alias identifier in use for the bot that processes the request.
 		 * @param {string} localeId The locale where the session is in use.
+		 *     Min length: 1
 		 * @param {string} sessionId The identifier of the user session that is having the conversation.
+		 *     Min length: 2    Max length: 100
 		 * @return {RecognizeTextResponse} Success
 		 */
 		RecognizeText(botId: string, botAliasId: string, localeId: string, sessionId: string, requestBody: RecognizeTextPostBody): Observable<RecognizeTextResponse> {
@@ -793,9 +805,12 @@ export namespace MyNS {
 		 * <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.</p> <p>The following request fields must be compressed with gzip and then base64 encoded before you send them to Amazon Lex V2. </p> <ul> <li> <p>requestAttributes</p> </li> <li> <p>sessionState</p> </li> </ul> <p>The following response fields are compressed using gzip and then base64 encoded by Amazon Lex V2. Before you can use these fields, you must decode and decompress them. </p> <ul> <li> <p>inputTranscript</p> </li> <li> <p>interpretations</p> </li> <li> <p>messages</p> </li> <li> <p>requestAttributes</p> </li> <li> <p>sessionState</p> </li> </ul> <p>The example contains a Java application that compresses and encodes a Java object to send to Amazon Lex V2, and a second that decodes and decompresses a response from Amazon Lex V2.</p> <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p> <ul> <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li> <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li> <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
 		 * Post bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance#Content-Type
 		 * @param {string} botId The identifier of the bot that should receive the request.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botAliasId The alias identifier in use for the bot that should receive the request.
 		 * @param {string} localeId The locale where the session is in use.
+		 *     Min length: 1
 		 * @param {string} sessionId The identifier of the session in use.
+		 *     Min length: 2    Max length: 100
 		 * @return {RecognizeUtteranceResponse} Success
 		 */
 		RecognizeUtterance(botId: string, botAliasId: string, localeId: string, sessionId: string, requestBody: RecognizeUtterancePostBody): Observable<RecognizeUtteranceResponse> {
@@ -855,8 +870,8 @@ export namespace MyNS {
 		/**
 		 * The text that the user entered. Amazon Lex V2 interprets this text.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		text: string;
 
@@ -871,8 +886,8 @@ export namespace MyNS {
 		/**
 		 * The text that the user entered. Amazon Lex V2 interprets this text.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		text: FormControl<string | null | undefined>,
 

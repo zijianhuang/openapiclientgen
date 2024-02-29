@@ -591,8 +591,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		identifier: string;
 		isLive?: boolean | null;
@@ -606,8 +606,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		identifier: FormControl<string | null | undefined>,
 		isLive: FormControl<boolean | null | undefined>,
@@ -645,6 +645,8 @@ export namespace MyNS {
 
 		/** Max length: 250 */
 		name?: string | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		trackNumber?: number | null;
 	}
 	export interface ContentAttributesFormProperties {
@@ -661,6 +663,8 @@ export namespace MyNS {
 
 		/** Max length: 250 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		trackNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateContentAttributesFormGroup() {
@@ -704,11 +708,15 @@ export namespace MyNS {
 
 	export interface ExecutionMetrics {
 		completed?: Date | null;
+
+		/** Type: float */
 		duration?: number | null;
 		received?: Date | null;
 	}
 	export interface ExecutionMetricsFormProperties {
 		completed: FormControl<Date | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 		received: FormControl<Date | null | undefined>,
 	}
@@ -723,26 +731,58 @@ export namespace MyNS {
 
 	export interface ExplicitDateComponents {
 		calendarIdentifier?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		era?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hour?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minute?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nanosecond?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		second?: number | null;
 		timeZone?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface ExplicitDateComponentsFormProperties {
 		calendarIdentifier: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		era: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hour: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minute: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nanosecond: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		second: FormControl<number | null | undefined>,
 		timeZone: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateExplicitDateComponentsFormGroup() {
@@ -771,8 +811,8 @@ export namespace MyNS {
 		media: ExtensionConfigMedia;
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url?: string | null;
 
@@ -783,8 +823,8 @@ export namespace MyNS {
 		hdr: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -881,8 +921,8 @@ export namespace MyNS {
 		hdr?: string | null;
 
 		/**
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		url?: string | null;
 	}
@@ -890,8 +930,8 @@ export namespace MyNS {
 		hdr: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -907,8 +947,8 @@ export namespace MyNS {
 		hdr?: string | null;
 
 		/**
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		url?: string | null;
 	}
@@ -916,8 +956,8 @@ export namespace MyNS {
 		hdr: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -933,8 +973,8 @@ export namespace MyNS {
 		hdr?: string | null;
 
 		/**
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		url?: string | null;
 	}
@@ -942,8 +982,8 @@ export namespace MyNS {
 		hdr: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -1113,8 +1153,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 		playerContext?: PlayerContext;
@@ -1132,8 +1172,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 
@@ -1159,16 +1199,20 @@ export namespace MyNS {
 		activityIdentifier?: string | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		contentIdentifier?: string | null;
-		offsetInMillis?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offsetInMillis?: string | null;
+
+		/** Type: double */
 		playbackSpeed?: number | null;
 
 		/**
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		queueIdentifier?: string | null;
 	}
@@ -1178,16 +1222,20 @@ export namespace MyNS {
 		activityIdentifier: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		contentIdentifier: FormControl<string | null | undefined>,
-		offsetInMillis: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offsetInMillis: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		playbackSpeed: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		queueIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1195,7 +1243,7 @@ export namespace MyNS {
 		return new FormGroup<PlayerContextFormProperties>({
 			activityIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250)]),
 			contentIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
-			offsetInMillis: new FormControl<number | null | undefined>(undefined),
+			offsetInMillis: new FormControl<string | null | undefined>(undefined),
 			playbackSpeed: new FormControl<number | null | undefined>(undefined),
 			queueIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
@@ -1313,8 +1361,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		playlistName: string;
 	}
@@ -1325,8 +1373,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		playlistName: FormControl<string | null | undefined>,
 	}
@@ -1449,6 +1497,8 @@ export namespace MyNS {
 		playShuffled?: boolean | null;
 		playbackQueueLocation?: PlayMediaIntentPlaybackQueueLocation | null;
 		playbackRepeatMode?: PlayMediaIntentPlaybackRepeatMode | null;
+
+		/** Type: double */
 		playbackSpeed?: number | null;
 		resumePlayback?: boolean | null;
 	}
@@ -1457,6 +1507,8 @@ export namespace MyNS {
 		playShuffled: FormControl<boolean | null | undefined>,
 		playbackQueueLocation: FormControl<PlayMediaIntentPlaybackQueueLocation | null | undefined>,
 		playbackRepeatMode: FormControl<PlayMediaIntentPlaybackRepeatMode | null | undefined>,
+
+		/** Type: double */
 		playbackSpeed: FormControl<number | null | undefined>,
 		resumePlayback: FormControl<boolean | null | undefined>,
 	}
@@ -1967,29 +2019,41 @@ export namespace MyNS {
 	export enum PlaybackRepeatMode { unknown = 'unknown', none = 'none', all = 'all', one = 'one' }
 
 	export interface ProtocolException {
-		code?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code?: string | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		methodIndex?: number | null;
 		methodName?: string | null;
 
 		/** Required */
 		reason: ProtocolExceptionReason;
+
+		/** Type: float */
 		retryWithDelay?: number | null;
 
 		/** Maximum items: 64 */
 		trace?: Array<string>;
 	}
 	export interface ProtocolExceptionFormProperties {
-		code: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code: FormControl<string | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		methodIndex: FormControl<number | null | undefined>,
 		methodName: FormControl<string | null | undefined>,
 
 		/** Required */
 		reason: FormControl<ProtocolExceptionReason | null | undefined>,
+
+		/** Type: float */
 		retryWithDelay: FormControl<number | null | undefined>,
 	}
 	export function CreateProtocolExceptionFormGroup() {
 		return new FormGroup<ProtocolExceptionFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			methodIndex: new FormControl<number | null | undefined>(undefined),
 			methodName: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<ProtocolExceptionReason | null | undefined>(undefined, [Validators.required]),
@@ -2029,30 +2093,36 @@ export namespace MyNS {
 		 * Maximum items: 1000
 		 */
 		content: Array<Content>;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		contentItemsCount?: number | null;
 		controls?: QueueControlMapping;
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		identifier: string;
 		insertPointer?: QueueInsertPointer;
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		nextContentUrl?: string | null;
 		playPointer?: QueuePlayPointer;
+
+		/** Type: double */
 		prerollSeconds?: number | null;
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		previousContentUrl?: string | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		skipsRemaining?: number | null;
 
 		/**
@@ -2062,27 +2132,33 @@ export namespace MyNS {
 		version: string;
 	}
 	export interface QueueFormProperties {
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		contentItemsCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		identifier: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		nextContentUrl: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		prerollSeconds: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		previousContentUrl: FormControl<string | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		skipsRemaining: FormControl<number | null | undefined>,
 
 		/**
@@ -2120,25 +2196,29 @@ export namespace MyNS {
 	export interface QueuePlayPointer {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		contentIdentifier?: string | null;
-		offsetInMillis?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offsetInMillis?: string | null;
 	}
 	export interface QueuePlayPointerFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		contentIdentifier: FormControl<string | null | undefined>,
-		offsetInMillis: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offsetInMillis: FormControl<string | null | undefined>,
 	}
 	export function CreateQueuePlayPointerFormGroup() {
 		return new FormGroup<QueuePlayPointerFormProperties>({
 			contentIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
-			offsetInMillis: new FormControl<number | null | undefined>(undefined),
+			offsetInMillis: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2148,8 +2228,8 @@ export namespace MyNS {
 	export interface QueueInsertPointer {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		afterIdentifier?: string | null;
 		replace?: boolean | null;
@@ -2157,8 +2237,8 @@ export namespace MyNS {
 	export interface QueueInsertPointerFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		afterIdentifier: FormControl<string | null | undefined>,
 		replace: FormControl<boolean | null | undefined>,
@@ -2517,7 +2597,6 @@ export namespace MyNS {
 		/**
 		 * addMedia
 		 * Post intent/addMedia
-		 * @return {Array<AddMediaIntentHandlingInvocationResponse>} 
 		 */
 		AddMediaIntentHandling(requestBody: Array<AddMediaIntentHandlingInvocation>): Observable<Array<AddMediaIntentHandlingInvocationResponse>> {
 			return this.http.post<Array<AddMediaIntentHandlingInvocationResponse>>(this.baseUri + 'intent/addMedia', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2526,7 +2605,6 @@ export namespace MyNS {
 		/**
 		 * playMedia
 		 * Post intent/playMedia
-		 * @return {Array<PlayMediaIntentHandlingInvocationResponse>} 
 		 */
 		PlayMediaIntentHandling(requestBody: Array<PlayMediaIntentHandlingInvocation>): Observable<Array<PlayMediaIntentHandlingInvocationResponse>> {
 			return this.http.post<Array<PlayMediaIntentHandlingInvocationResponse>>(this.baseUri + 'intent/playMedia', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2535,7 +2613,6 @@ export namespace MyNS {
 		/**
 		 * updateMediaAffinity
 		 * Post intent/updateMediaAffinity
-		 * @return {Array<UpdateMediaAffinityIntentHandlingInvocationResponse>} 
 		 */
 		UpdateMediaAffinityIntentHandling(requestBody: Array<UpdateMediaAffinityIntentHandlingInvocation>): Observable<Array<UpdateMediaAffinityIntentHandlingInvocationResponse>> {
 			return this.http.post<Array<UpdateMediaAffinityIntentHandlingInvocationResponse>>(this.baseUri + 'intent/updateMediaAffinity', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2544,7 +2621,6 @@ export namespace MyNS {
 		/**
 		 * playMedia
 		 * Post queues/playMedia
-		 * @return {Queue} 
 		 */
 		PlayMediaOnQueue(requestBody: PlayMediaRequest): Observable<Queue> {
 			return this.http.post<Queue>(this.baseUri + 'queues/playMedia', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2553,7 +2629,6 @@ export namespace MyNS {
 		/**
 		 * updateActivity
 		 * Post queues/updateActivity
-		 * @return {UpdateActivityResponse} 
 		 */
 		UpdateActivityOnQueue(requestBody: UpdateActivityRequest): Observable<UpdateActivityResponse> {
 			return this.http.post<UpdateActivityResponse>(this.baseUri + 'queues/updateActivity', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

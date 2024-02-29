@@ -5208,8 +5208,12 @@ namespace MyNS
 		/// Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying Service Updates</a>.
 		/// GET_BatchApplyUpdateAction #Action=BatchApplyUpdateAction
 		/// </summary>
-		/// <param name="ReplicationGroupIds">The replication group IDs</param>
-		/// <param name="CacheClusterIds">The cache cluster IDs</param>
+		/// <param name="ReplicationGroupIds">The replication group IDs
+		/// Maximum items: 20
+		// </param>
+		/// <param name="CacheClusterIds">The cache cluster IDs
+		/// Maximum items: 20
+		// </param>
 		/// <param name="ServiceUpdateName">The unique ID of the service update</param>
 		/// <returns>Success</returns>
 		public async Task GET_BatchApplyUpdateActionAsync(string[] ReplicationGroupIds, string[] CacheClusterIds, string ServiceUpdateName, GET_BatchApplyUpdateActionAction Action, GET_BatchApplyUpdateActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5238,8 +5242,12 @@ namespace MyNS
 		/// Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping Service Updates</a>.
 		/// GET_BatchStopUpdateAction #Action=BatchStopUpdateAction
 		/// </summary>
-		/// <param name="ReplicationGroupIds">The replication group IDs</param>
-		/// <param name="CacheClusterIds">The cache cluster IDs</param>
+		/// <param name="ReplicationGroupIds">The replication group IDs
+		/// Maximum items: 20
+		// </param>
+		/// <param name="CacheClusterIds">The cache cluster IDs
+		/// Maximum items: 20
+		// </param>
 		/// <param name="ServiceUpdateName">The unique ID of the service update</param>
 		/// <returns>Success</returns>
 		public async Task GET_BatchStopUpdateActionAsync(string[] ReplicationGroupIds, string[] CacheClusterIds, string ServiceUpdateName, GET_BatchStopUpdateActionAction Action, GET_BatchStopUpdateActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5572,7 +5580,9 @@ namespace MyNS
 		/// <param name="TransitEncryptionEnabled"><p>A flag that enables in-transit encryption when set to <code>true</code>.</p> <p>This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important></param>
 		/// <param name="AtRestEncryptionEnabled"><p>A flag that enables encryption at rest when set to <code>true</code>.</p> <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p> <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p></param>
 		/// <param name="KmsKeyId">The ID of the KMS key used to encrypt the disk in the cluster.</param>
-		/// <param name="UserGroupIds">The user group to associate with the replication group.</param>
+		/// <param name="UserGroupIds">The user group to associate with the replication group.
+		/// Minimum items: 1
+		// </param>
 		/// <param name="LogDeliveryConfigurations">Specifies the destination, format and type of the logs.</param>
 		/// <param name="DataTieringEnabled">Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</param>
 		/// <param name="NetworkType">Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</param>
@@ -5679,10 +5689,16 @@ namespace MyNS
 		/// For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.
 		/// GET_CreateUser #Action=CreateUser
 		/// </summary>
-		/// <param name="UserId">The ID of the user.</param>
-		/// <param name="UserName">The username of the user.</param>
+		/// <param name="UserId">The ID of the user.
+		/// Min length: 1
+		// </param>
+		/// <param name="UserName">The username of the user.
+		/// Min length: 1
+		// </param>
 		/// <param name="Engine">The current supported value is Redis. </param>
-		/// <param name="Passwords">Passwords used for this user. You can create up to two passwords for each user.</param>
+		/// <param name="Passwords">Passwords used for this user. You can create up to two passwords for each user.
+		/// Minimum items: 1
+		// </param>
 		/// <param name="AccessString">Access permissions string used for this user.</param>
 		/// <param name="NoPasswordRequired">Indicates a password is not required for this user.</param>
 		/// <param name="Tags">A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</param>
@@ -5716,7 +5732,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserGroupId">The ID of the user group.</param>
 		/// <param name="Engine">The current supported value is Redis. </param>
-		/// <param name="UserIds">The list of user IDs that belong to the user group.</param>
+		/// <param name="UserIds">The list of user IDs that belong to the user group.
+		/// Minimum items: 1
+		// </param>
 		/// <param name="Tags">A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateUserGroupAsync(string UserGroupId, string Engine, string[] UserIds, string[] Tags, GET_CreateUserGroupAction Action, GET_CreateUserGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6009,7 +6027,9 @@ namespace MyNS
 		/// For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from all user groups and in turn removed from all replication groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.
 		/// GET_DeleteUser #Action=DeleteUser
 		/// </summary>
-		/// <param name="UserId">The ID of the user.</param>
+		/// <param name="UserId">The ID of the user.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteUserAsync(string UserId, GET_DeleteUserAction Action, GET_DeleteUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6446,7 +6466,9 @@ namespace MyNS
 		/// GET_DescribeServiceUpdates #Action=DescribeServiceUpdates
 		/// </summary>
 		/// <param name="ServiceUpdateName">The unique ID of the service update</param>
-		/// <param name="ServiceUpdateStatus">The status of the service update</param>
+		/// <param name="ServiceUpdateStatus">The status of the service update
+		/// Maximum items: 3
+		// </param>
 		/// <param name="MaxRecords">The maximum number of records to include in the response</param>
 		/// <param name="Marker">An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</param>
 		/// <returns>Success</returns>
@@ -6511,12 +6533,20 @@ namespace MyNS
 		/// GET_DescribeUpdateActions #Action=DescribeUpdateActions
 		/// </summary>
 		/// <param name="ServiceUpdateName">The unique ID of the service update</param>
-		/// <param name="ReplicationGroupIds">The replication group IDs</param>
-		/// <param name="CacheClusterIds">The cache cluster IDs</param>
+		/// <param name="ReplicationGroupIds">The replication group IDs
+		/// Maximum items: 20
+		// </param>
+		/// <param name="CacheClusterIds">The cache cluster IDs
+		/// Maximum items: 20
+		// </param>
 		/// <param name="Engine">The Elasticache engine to which the update applies. Either Redis or Memcached </param>
-		/// <param name="ServiceUpdateStatus">The status of the service update</param>
+		/// <param name="ServiceUpdateStatus">The status of the service update
+		/// Maximum items: 3
+		// </param>
 		/// <param name="ServiceUpdateTimeRange">The range of time specified to search for service updates that are in available status</param>
-		/// <param name="UpdateActionStatus">The status of the update action.</param>
+		/// <param name="UpdateActionStatus">The status of the update action.
+		/// Maximum items: 9
+		// </param>
 		/// <param name="ShowNodeLevelUpdateStatus">Dictates whether to include node level update status in the response </param>
 		/// <param name="MaxRecords">The maximum number of records to include in the response</param>
 		/// <param name="Marker">An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</param>
@@ -6578,7 +6608,9 @@ namespace MyNS
 		/// GET_DescribeUsers #Action=DescribeUsers
 		/// </summary>
 		/// <param name="Engine">The Redis engine. </param>
-		/// <param name="UserId">The ID of the user.</param>
+		/// <param name="UserId">The ID of the user.
+		/// Min length: 1
+		// </param>
 		/// <param name="Filters">Filter to determine the list of User IDs to return.</param>
 		/// <param name="MaxRecords">The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </param>
 		/// <param name="Marker">An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</param>
@@ -7074,10 +7106,14 @@ namespace MyNS
 		/// Changes user password(s) and/or access string.
 		/// GET_ModifyUser #Action=ModifyUser
 		/// </summary>
-		/// <param name="UserId">The ID of the user.</param>
+		/// <param name="UserId">The ID of the user.
+		/// Min length: 1
+		// </param>
 		/// <param name="AccessString">Access permissions string used for this user.</param>
 		/// <param name="AppendAccessString">Adds additional user permissions to the access string.</param>
-		/// <param name="Passwords">The passwords belonging to the user. You are allowed up to two.</param>
+		/// <param name="Passwords">The passwords belonging to the user. You are allowed up to two.
+		/// Minimum items: 1
+		// </param>
 		/// <param name="NoPasswordRequired">Indicates no password is required for the user.</param>
 		/// <param name="AuthenticationMode">Specifies how to authenticate the user.</param>
 		/// <returns>Success</returns>
@@ -7108,8 +7144,12 @@ namespace MyNS
 		/// GET_ModifyUserGroup #Action=ModifyUserGroup
 		/// </summary>
 		/// <param name="UserGroupId">The ID of the user group.</param>
-		/// <param name="UserIdsToAdd">The list of user IDs to add to the user group.</param>
-		/// <param name="UserIdsToRemove">The list of user IDs to remove from the user group.</param>
+		/// <param name="UserIdsToAdd">The list of user IDs to add to the user group.
+		/// Minimum items: 1
+		// </param>
+		/// <param name="UserIdsToRemove">The list of user IDs to remove from the user group.
+		/// Minimum items: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ModifyUserGroupAsync(string UserGroupId, string[] UserIdsToAdd, string[] UserIdsToRemove, GET_ModifyUserGroupAction Action, GET_ModifyUserGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7345,7 +7385,10 @@ namespace MyNS
 		/// GET_TestFailover #Action=TestFailover
 		/// </summary>
 		/// <param name="ReplicationGroupId">The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</param>
-		/// <param name="NodeGroupId">The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</param>
+		/// <param name="NodeGroupId">The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.
+		/// Max length: 4
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_TestFailoverAsync(string ReplicationGroupId, string NodeGroupId, GET_TestFailoverAction Action, GET_TestFailoverVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -624,7 +624,9 @@ namespace MyNS
 		/// Gets a list of hybrid compute operations.
 		/// Operations_List providers/Microsoft.HybridCompute/operations
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<OperationListResult> Operations_ListAsync(string api_version)
 		{
@@ -653,8 +655,12 @@ namespace MyNS
 		/// Lists all the hybrid machines in the specified subscription. Use the nextLink property in the response to get the next page of hybrid machines.
 		/// Machines_ListBySubscription subscriptions/{subscriptionId}/providers/Microsoft.HybridCompute/machines
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<MachineListResult> Machines_ListBySubscriptionAsync(string api_version, string subscriptionId)
 		{
@@ -683,8 +689,12 @@ namespace MyNS
 		/// Lists all the hybrid machines in the specified resource group. Use the nextLink property in the response to get the next page of hybrid machines.
 		/// Machines_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <returns>OK</returns>
 		public async Task<MachineListResult> Machines_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
@@ -714,8 +724,12 @@ namespace MyNS
 		/// Retrieves information about the model view or the instance view of a hybrid machine.
 		/// Machines_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the hybrid machine.</param>
 		/// <param name="expand">The expand expression to apply on the operation.</param>
@@ -747,8 +761,12 @@ namespace MyNS
 		/// The operation to create or update a hybrid machine resource identity in Azure.
 		/// Machines_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the hybrid machine.</param>
 		/// <param name="requestBody">Parameters supplied to the Create hybrid machine operation.</param>
@@ -787,8 +805,12 @@ namespace MyNS
 		/// The operation to remove a hybrid machine identity in Azure.
 		/// Machines_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the hybrid machine.</param>
 		/// <returns>OK</returns>
@@ -813,8 +835,12 @@ namespace MyNS
 		/// The operation to update a hybrid machine.
 		/// Machines_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the hybrid machine.</param>
 		/// <param name="requestBody">Parameters supplied to the Update hybrid machine operation.</param>
@@ -856,8 +882,12 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the machine containing the extension.</param>
 		/// <param name="expand">The expand expression to apply on the operation.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<MachineExtensionsListResult> MachineExtensions_ListAsync(string resourceGroupName, string name, string expand, string api_version, string subscriptionId)
 		{
@@ -889,8 +919,12 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the machine containing the extension.</param>
 		/// <param name="extensionName">The name of the machine extension.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<MachineExtension> MachineExtensions_GetAsync(string resourceGroupName, string name, string extensionName, string api_version, string subscriptionId)
 		{
@@ -922,8 +956,12 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the machine where the extension should be created or updated.</param>
 		/// <param name="extensionName">The name of the machine extension.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Parameters supplied to the Create Machine Extension operation.</param>
 		/// <returns>OK</returns>
 		public async Task<MachineExtension> MachineExtensions_CreateOrUpdateAsync(string resourceGroupName, string name, string extensionName, string api_version, string subscriptionId, MachineExtension requestBody)
@@ -963,8 +1001,12 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the machine where the extension should be deleted.</param>
 		/// <param name="extensionName">The name of the machine extension.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task MachineExtensions_DeleteAsync(string resourceGroupName, string name, string extensionName, string api_version, string subscriptionId)
 		{
@@ -990,8 +1032,12 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the machine where the extension should be created or updated.</param>
 		/// <param name="extensionName">The name of the machine extension.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Parameters supplied to the Create Machine Extension operation.</param>
 		/// <returns>OK</returns>
 		public async Task<MachineExtension> MachineExtensions_UpdateAsync(string resourceGroupName, string name, string extensionName, string api_version, string subscriptionId, MachineExtensionUpdate requestBody)
@@ -1028,8 +1074,12 @@ namespace MyNS
 		/// The operation to reconnect a hybrid machine resource to its identity in Azure.
 		/// Machines_Reconnect subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}/reconnect
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="name">The name of the hybrid machine.</param>
 		/// <param name="requestBody">Parameters supplied to the Reconnect hybrid machine operation.</param>

@@ -3698,6 +3698,9 @@ namespace MyNS
 		/// Returns a list of your bank accounts. The bank accounts are returned sorted by creation date, with the most recent bank account appearing first.
 		/// ListBankAccount bank-accounts
 		/// </summary>
+		/// <param name="per_page">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success response</returns>
 		public async Task<BankAccountList> ListBankAccountAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3904,6 +3907,9 @@ namespace MyNS
 		/// Returns a list of your document blocks. The document blocks are returned sorted by creation date, with the most recent document blocks appearing first.
 		/// ListDocumentBlock document-blocks
 		/// </summary>
+		/// <param name="per_page">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success response</returns>
 		public async Task<DocumentBlockList> ListDocumentBlockAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3938,6 +3944,9 @@ namespace MyNS
 		/// Returns a list of your documents. The documents are returned sorted by creation date, with the most recent documents appearing first.
 		/// ListDocument documents
 		/// </summary>
+		/// <param name="per_page">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="block_id">Filter documents by the identifier of your DocumentBlock.</param>
 		/// <param name="partner_id">Filter documents by the identifier of your Partner.</param>
 		/// <param name="payment_method">Filter documents by PaymentMethod value.</param>
@@ -4384,6 +4393,9 @@ namespace MyNS
 		/// Returns a list of your partners. The partners are returned sorted by creation date, with the most recent partners appearing first.
 		/// ListPartner partners
 		/// </summary>
+		/// <param name="per_page">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success response</returns>
 		public async Task<PartnerList> ListPartnerAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4556,6 +4568,9 @@ namespace MyNS
 		/// Returns a list of your products. The partners are returned sorted by creation date, with the most recent partners appearing first.
 		/// ListProduct products
 		/// </summary>
+		/// <param name="per_page">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success response</returns>
 		public async Task<ProductList> ListProductAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

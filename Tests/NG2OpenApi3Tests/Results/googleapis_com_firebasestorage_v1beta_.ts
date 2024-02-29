@@ -202,6 +202,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/buckets
 		 * @param {string} parent Required. Resource name of the parent Firebase project, `projects/{project_id_or_number}`.
 		 * @param {number} pageSize The maximum number of buckets to return. If not set, the server will use a reasonable default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListBuckets` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBuckets` must match the call that provided the page token.
 		 * @return {ListBucketsResponse} Successful response
 		 */

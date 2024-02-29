@@ -1407,8 +1407,14 @@ namespace MyNS
 		/// ListDatastores datastore
 		/// </summary>
 		/// <param name="datastoreStatus">The data store status.</param>
-		/// <param name="nextToken">The pagination token used to request the list of data stores on the next page.</param>
-		/// <param name="maxResults">Valid Range: Minimum value of 1. Maximum value of 50.</param>
+		/// <param name="nextToken">The pagination token used to request the list of data stores on the next page.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Valid Range: Minimum value of 1. Maximum value of 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDatastoresResponse> ListDatastoresAsync(DatastoreStatus datastoreStatus, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1541,7 +1547,10 @@ namespace MyNS
 		/// GetDICOMImportJob getDICOMImportJob/datastore/{datastoreId}/job/{jobId}
 		/// </summary>
 		/// <param name="datastoreId">The data store identifier.</param>
-		/// <param name="jobId">The import job identifier.</param>
+		/// <param name="jobId">The import job identifier.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDICOMImportJobResponse> GetDICOMImportJobAsync(string datastoreId, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1681,8 +1690,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="datastoreId">The data store identifier.</param>
 		/// <param name="jobStatus">The filters for listing import jobs based on status.</param>
-		/// <param name="nextToken">The pagination token used to request the list of import jobs on the next page.</param>
-		/// <param name="maxResults">The max results count. The upper bound is determined by load testing.</param>
+		/// <param name="nextToken">The pagination token used to request the list of import jobs on the next page.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The max results count. The upper bound is determined by load testing.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDICOMImportJobsResponse> ListDICOMImportJobsAsync(string datastoreId, JobStatus jobStatus, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1718,8 +1733,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="datastoreId">The data store identifier.</param>
 		/// <param name="imageSetId">The image set identifier.</param>
-		/// <param name="nextToken">The pagination token used to request the list of image set versions on the next page.</param>
-		/// <param name="maxResults">The max results count.</param>
+		/// <param name="nextToken">The pagination token used to request the list of image set versions on the next page.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The max results count.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListImageSetVersionsResponse> ListImageSetVersionsAsync(string datastoreId, string imageSetId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1824,8 +1845,14 @@ namespace MyNS
 		/// SearchImageSets datastore/{datastoreId}/searchImageSets
 		/// </summary>
 		/// <param name="datastoreId">The identifier of the data store where the image sets reside.</param>
-		/// <param name="maxResults">The maximum number of results that can be returned in a search.</param>
-		/// <param name="nextToken">The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</param>
+		/// <param name="maxResults">The maximum number of results that can be returned in a search.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchImageSetsResponse> SearchImageSetsAsync(string datastoreId, int maxResults, string nextToken, SearchImageSetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1908,7 +1935,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the medical imaging resource that tags are being removed from.</param>
-		/// <param name="tagKeys">The keys for the tags to be removed from the medical imaging resource.</param>
+		/// <param name="tagKeys">The keys for the tags to be removed from the medical imaging resource.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

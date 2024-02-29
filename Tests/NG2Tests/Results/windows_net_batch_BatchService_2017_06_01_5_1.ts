@@ -5681,7 +5681,9 @@ export namespace MyNS {
 		 * This operation returns only applications and versions that are available for use on compute nodes; that is, that can be used in an application package reference. For administrator information about applications and versions that are not yet available to compute nodes, use the Azure portal or the Azure Resource Manager API.
 		 * Get applications
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 applications can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {ApplicationListResult} A response containing the list of applications.
 		 */
@@ -5695,6 +5697,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}
 		 * @param {string} applicationId The ID of the application.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {ApplicationSummary} A response containing the application.
 		 */
@@ -5708,7 +5711,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 certificates can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CertificateListResult} A response containing the list of certificates.
 		 */
@@ -5723,6 +5728,7 @@ export namespace MyNS {
 		 * @param {string} thumbprint The thumbprint of the certificate to get.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {Certificate} A response containing the certificate.
 		 */
@@ -5737,6 +5743,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate to be deleted.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5751,6 +5758,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate being deleted.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5765,7 +5773,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJobListResult} A response containing the list of jobs.
 		 */
@@ -5780,6 +5790,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJob} A response containing the job.
 		 */
@@ -5793,6 +5804,7 @@ export namespace MyNS {
 		 * Delete jobs/{jobId}
 		 * @param {string} jobId The ID of the job to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5806,6 +5818,7 @@ export namespace MyNS {
 		 * Post jobs/{jobId}/enable
 		 * @param {string} jobId The ID of the job to enable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5821,7 +5834,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause. To get the status of the Job Preparation and Job Release tasks on a specific compute node, use "nodeId eq '{desired-node-id}'"
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJobListPreparationAndReleaseTaskStatusResult} A response containing a list of Job Preparation and Job Release task statuses.
 		 */
@@ -5835,6 +5850,7 @@ export namespace MyNS {
 		 * Get jobs/{jobId}/taskcounts
 		 * @param {string} jobId The ID of the job.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {TaskCounts} A response containing the task counts for the specified job.
 		 */
@@ -5851,7 +5867,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudTaskListResult} A response containing the list of tasks.
 		 */
@@ -5868,6 +5886,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudTask} A response containing the task.
 		 */
@@ -5882,6 +5901,7 @@ export namespace MyNS {
 		 * @param {string} jobId The ID of the job from which to delete the task.
 		 * @param {string} taskId The ID of the task to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -5897,7 +5917,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {boolean} recursive Whether to list children of the task directory. This parameter can be used in combination with the filter parameter to list specific type of files.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {NodeFileListResult} A response containing the list of files.
 		 */
@@ -5912,6 +5934,7 @@ export namespace MyNS {
 		 * @param {string} taskId The ID of the task whose file you want to retrieve.
 		 * @param {string} filePath The path to the task file that you want to get the content of.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {string} A response containing the file content.
 		 */
@@ -5927,6 +5950,7 @@ export namespace MyNS {
 		 * @param {string} filePath The path to the task file or directory that you want to delete.
 		 * @param {boolean} recursive Whether to delete children of a directory. If the filePath parameter represents a directory instead of a file, you can set recursive to true to delete the directory and all of the files and subdirectories in it. If recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -5941,6 +5965,7 @@ export namespace MyNS {
 		 * @param {string} jobId The ID of the job containing the task.
 		 * @param {string} taskId The ID of the task to reactivate.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5956,6 +5981,7 @@ export namespace MyNS {
 		 * @param {string} taskId The ID of the task.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudTaskListSubtasksResult} A response containing the list of subtasks.
 		 */
@@ -5970,6 +5996,7 @@ export namespace MyNS {
 		 * @param {string} jobId The ID of the job containing the task.
 		 * @param {string} taskId The ID of the task to terminate.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5984,7 +6011,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 job schedules can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJobScheduleListResult} A response containing the list of job schedules.
 		 */
@@ -5999,6 +6028,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJobSchedule} A response containing the job schedule.
 		 */
@@ -6012,6 +6042,7 @@ export namespace MyNS {
 		 * Delete jobschedules/{jobScheduleId}
 		 * @param {string} jobScheduleId The ID of the job schedule to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6025,6 +6056,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/disable
 		 * @param {string} jobScheduleId The ID of the job schedule to disable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6037,6 +6069,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/enable
 		 * @param {string} jobScheduleId The ID of the job schedule to enable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6052,7 +6085,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudJobListResult} A response containing the list of jobs.
 		 */
@@ -6065,6 +6100,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/terminate
 		 * @param {string} jobScheduleId The ID of the job schedule to terminates.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6077,6 +6113,7 @@ export namespace MyNS {
 		 * Statistics are aggregated across all jobs that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimejobstats
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {JobStatistics} A response containing the job statistics for the lifetime of the Batch account.
 		 */
@@ -6089,6 +6126,7 @@ export namespace MyNS {
 		 * Statistics are aggregated across all pools that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimepoolstats
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {PoolStatistics} A response containing the pool statistics for the lifetime of the Batch account.
 		 */
@@ -6101,7 +6139,9 @@ export namespace MyNS {
 		 * Get nodeagentskus
 		 * @param {string} filter An OData $filter clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {AccountListNodeAgentSkusResult} A response containing the list of node agent SKUs.
 		 */
@@ -6116,7 +6156,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 pools can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudPoolListResult} A response containing the list of pools.
 		 */
@@ -6131,6 +6173,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CloudPool} A response containing the pool.
 		 */
@@ -6144,6 +6187,7 @@ export namespace MyNS {
 		 * Delete pools/{poolId}
 		 * @param {string} poolId The ID of the pool to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6156,6 +6200,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/disableautoscale
 		 * @param {string} poolId The ID of the pool on which to disable automatic scaling.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -6170,7 +6215,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause..
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 nodes can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {ComputeNodeListResult} A response containing the list of nodes.
 		 */
@@ -6185,6 +6232,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The ID of the compute node that you want to get information about.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {ComputeNode} A response containing the compute node.
 		 */
@@ -6199,6 +6247,7 @@ export namespace MyNS {
 		 * @param {string} poolId The ID of the pool that contains the compute node.
 		 * @param {string} nodeId The ID of the compute node on which you want to enable task scheduling.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -6214,7 +6263,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {boolean} recursive Whether to list children of a directory.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {NodeFileListResult} A response containing the list of files.
 		 */
@@ -6229,6 +6280,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The ID of the compute node that contains the file.
 		 * @param {string} filePath The path to the compute node file that you want to get the content of.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {string} The file content.
 		 */
@@ -6244,6 +6296,7 @@ export namespace MyNS {
 		 * @param {string} filePath The path to the file or directory that you want to delete.
 		 * @param {boolean} recursive Whether to delete children of a directory. If the filePath parameter represents a directory instead of a file, you can set recursive to true to delete the directory and all of the files and subdirectories in it. If recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -6258,6 +6311,7 @@ export namespace MyNS {
 		 * @param {string} poolId The ID of the pool that contains the compute node.
 		 * @param {string} nodeId The ID of the compute node for which you want to get the Remote Desktop Protocol file.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {string} A response containing the RDP information.
 		 */
@@ -6272,6 +6326,7 @@ export namespace MyNS {
 		 * @param {string} poolId The ID of the pool that contains the compute node.
 		 * @param {string} nodeId The ID of the compute node for which to obtain the remote login settings.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {ComputeNodeGetRemoteLoginSettingsResult} A response containing the login settings.
 		 */
@@ -6287,6 +6342,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The ID of the machine on which you want to delete a user account.
 		 * @param {string} userName The name of the user account to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} The request to the Batch service was successful.
 		 */
@@ -6300,6 +6356,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/stopresize
 		 * @param {string} poolId The ID of the pool whose resizing you want to stop.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6315,7 +6372,9 @@ export namespace MyNS {
 		 * @param {Date} endtime The latest time from which to include metrics. This must be at least two hours before the current time. If not specified this defaults to the end time of the last aggregation interval currently available.
 		 * @param {string} filter An OData $filter clause. If this is not specified the response includes all pools that existed in the account in the time range of the returned aggregation intervals.
 		 * @param {number} maxresults The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {PoolListUsageMetricsResult} A response containing the list of pool usage details.
 		 */

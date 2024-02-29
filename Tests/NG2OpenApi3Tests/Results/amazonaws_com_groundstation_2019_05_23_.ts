@@ -2662,6 +2662,7 @@ export namespace MyNS {
 		 * Cancels a contact with a specified contact ID.
 		 * Delete contact/{contactId}
 		 * @param {string} contactId UUID of a contact.
+		 *     Min length: 1    Max length: 128
 		 * @return {ContactIdResponse} Success
 		 */
 		CancelContact(contactId: string): Observable<ContactIdResponse> {
@@ -2672,6 +2673,7 @@ export namespace MyNS {
 		 * Describes an existing contact.
 		 * Get contact/{contactId}
 		 * @param {string} contactId UUID of a contact.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeContactResponse} Success
 		 */
 		DescribeContact(contactId: string): Observable<DescribeContactResponse> {
@@ -2691,7 +2693,9 @@ export namespace MyNS {
 		 * Returns a list of <code>Config</code> objects.
 		 * Get config
 		 * @param {number} maxResults Maximum number of <code>Configs</code> returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
+		 *     Min length: 3    Max length: 1000
 		 * @return {ListConfigsResponse} Success
 		 */
 		ListConfigs(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListConfigsResponse> {
@@ -2711,7 +2715,9 @@ export namespace MyNS {
 		 * Returns a list of <code>DataflowEndpoint</code> groups.
 		 * Get dataflowEndpointGroup
 		 * @param {number} maxResults Maximum number of dataflow endpoint groups returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
+		 *     Min length: 3    Max length: 1000
 		 * @return {ListDataflowEndpointGroupsResponse} Success
 		 */
 		ListDataflowEndpointGroups(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDataflowEndpointGroupsResponse> {
@@ -2740,7 +2746,9 @@ export namespace MyNS {
 		 * Returns a list of mission profiles.
 		 * Get missionprofile
 		 * @param {number} maxResults Maximum number of mission profiles returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
+		 *     Min length: 3    Max length: 1000
 		 * @return {ListMissionProfilesResponse} Success
 		 */
 		ListMissionProfiles(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMissionProfilesResponse> {
@@ -2751,6 +2759,7 @@ export namespace MyNS {
 		 * Deletes a <code>Config</code>.
 		 * Delete config/{configType}/{configId}
 		 * @param {string} configId UUID of a <code>Config</code>.
+		 *     Min length: 1    Max length: 128
 		 * @param {ConfigCapabilityType} configType Type of a <code>Config</code>.
 		 * @return {ConfigIdResponse} Success
 		 */
@@ -2762,6 +2771,7 @@ export namespace MyNS {
 		 * <p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>
 		 * Get config/{configType}/{configId}
 		 * @param {string} configId UUID of a <code>Config</code>.
+		 *     Min length: 1    Max length: 128
 		 * @param {ConfigCapabilityType} configType Type of a <code>Config</code>.
 		 * @return {GetConfigResponse} Success
 		 */
@@ -2773,6 +2783,7 @@ export namespace MyNS {
 		 * <p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
 		 * Put config/{configType}/{configId}
 		 * @param {string} configId UUID of a <code>Config</code>.
+		 *     Min length: 1    Max length: 128
 		 * @param {ConfigCapabilityType} configType Type of a <code>Config</code>.
 		 * @return {ConfigIdResponse} Success
 		 */
@@ -2784,6 +2795,7 @@ export namespace MyNS {
 		 * Deletes a dataflow endpoint group.
 		 * Delete dataflowEndpointGroup/{dataflowEndpointGroupId}
 		 * @param {string} dataflowEndpointGroupId UUID of a dataflow endpoint group.
+		 *     Min length: 1    Max length: 128
 		 * @return {DataflowEndpointGroupIdResponse} Success
 		 */
 		DeleteDataflowEndpointGroup(dataflowEndpointGroupId: string): Observable<DataflowEndpointGroupIdResponse> {
@@ -2794,6 +2806,7 @@ export namespace MyNS {
 		 * Returns the dataflow endpoint group.
 		 * Get dataflowEndpointGroup/{dataflowEndpointGroupId}
 		 * @param {string} dataflowEndpointGroupId UUID of a dataflow endpoint group.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetDataflowEndpointGroupResponse} Success
 		 */
 		GetDataflowEndpointGroup(dataflowEndpointGroupId: string): Observable<GetDataflowEndpointGroupResponse> {
@@ -2804,6 +2817,7 @@ export namespace MyNS {
 		 * Deletes an ephemeris
 		 * Delete ephemeris/{ephemerisId}
 		 * @param {string} ephemerisId The AWS Ground Station ephemeris ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {EphemerisIdResponse} Success
 		 */
 		DeleteEphemeris(ephemerisId: string): Observable<EphemerisIdResponse> {
@@ -2814,6 +2828,7 @@ export namespace MyNS {
 		 * Describes an existing ephemeris.
 		 * Get ephemeris/{ephemerisId}
 		 * @param {string} ephemerisId The AWS Ground Station ephemeris ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeEphemerisResponse} Success
 		 */
 		DescribeEphemeris(ephemerisId: string): Observable<DescribeEphemerisResponse> {
@@ -2824,6 +2839,7 @@ export namespace MyNS {
 		 * Updates an existing ephemeris
 		 * Put ephemeris/{ephemerisId}
 		 * @param {string} ephemerisId The AWS Ground Station ephemeris ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {EphemerisIdResponse} Success
 		 */
 		UpdateEphemeris(ephemerisId: string, requestBody: UpdateEphemerisPutBody): Observable<EphemerisIdResponse> {
@@ -2834,6 +2850,7 @@ export namespace MyNS {
 		 * Deletes a mission profile.
 		 * Delete missionprofile/{missionProfileId}
 		 * @param {string} missionProfileId UUID of a mission profile.
+		 *     Min length: 1    Max length: 128
 		 * @return {MissionProfileIdResponse} Success
 		 */
 		DeleteMissionProfile(missionProfileId: string): Observable<MissionProfileIdResponse> {
@@ -2844,6 +2861,7 @@ export namespace MyNS {
 		 * Returns a mission profile.
 		 * Get missionprofile/{missionProfileId}
 		 * @param {string} missionProfileId UUID of a mission profile.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetMissionProfileResponse} Success
 		 */
 		GetMissionProfile(missionProfileId: string): Observable<GetMissionProfileResponse> {
@@ -2854,6 +2872,7 @@ export namespace MyNS {
 		 * <p>Updates a mission profile.</p> <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
 		 * Put missionprofile/{missionProfileId}
 		 * @param {string} missionProfileId UUID of a mission profile.
+		 *     Min length: 1    Max length: 128
 		 * @return {MissionProfileIdResponse} Success
 		 */
 		UpdateMissionProfile(missionProfileId: string, requestBody: UpdateMissionProfilePutBody): Observable<MissionProfileIdResponse> {
@@ -2864,6 +2883,7 @@ export namespace MyNS {
 		 * <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>
 		 * Get agent/{agentId}/configuration
 		 * @param {string} agentId UUID of agent to get configuration information for.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetAgentConfigurationResponse} Success
 		 */
 		GetAgentConfiguration(agentId: string): Observable<GetAgentConfigurationResponse> {
@@ -2883,6 +2903,7 @@ export namespace MyNS {
 		 * Returns a satellite.
 		 * Get satellite/{satelliteId}
 		 * @param {string} satelliteId UUID of a satellite.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetSatelliteResponse} Success
 		 */
 		GetSatellite(satelliteId: string): Observable<GetSatelliteResponse> {
@@ -2904,7 +2925,9 @@ export namespace MyNS {
 		 * List existing ephemerides.
 		 * Post ephemerides
 		 * @param {number} maxResults Maximum number of ephemerides to return.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Pagination token.
+		 *     Min length: 3    Max length: 1000
 		 * @return {ListEphemeridesResponse} Success
 		 */
 		ListEphemerides(maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: ListEphemeridesPostBody): Observable<ListEphemeridesResponse> {
@@ -2915,8 +2938,11 @@ export namespace MyNS {
 		 * Returns a list of ground stations.
 		 * Get groundstation
 		 * @param {number} maxResults Maximum number of ground stations returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Next token that can be supplied in the next call to get the next page of ground stations.
+		 *     Min length: 3    Max length: 1000
 		 * @param {string} satelliteId Satellite ID to retrieve on-boarded ground stations.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListGroundStationsResponse} Success
 		 */
 		ListGroundStations(maxResults: number | null | undefined, nextToken: string | null | undefined, satelliteId: string | null | undefined): Observable<ListGroundStationsResponse> {
@@ -2927,7 +2953,9 @@ export namespace MyNS {
 		 * Returns a list of satellites.
 		 * Get satellite
 		 * @param {number} maxResults Maximum number of satellites returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken Next token that can be supplied in the next call to get the next page of satellites.
+		 *     Min length: 3    Max length: 1000
 		 * @return {ListSatellitesResponse} Success
 		 */
 		ListSatellites(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSatellitesResponse> {
@@ -2938,6 +2966,7 @@ export namespace MyNS {
 		 * Returns a list of tags for a specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn ARN of a resource.
+		 *     Min length: 5    Max length: 1024
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2948,6 +2977,7 @@ export namespace MyNS {
 		 * Assigns a tag to a resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn ARN of a resource tag.
+		 *     Min length: 5    Max length: 1024
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2976,7 +3006,9 @@ export namespace MyNS {
 		 * Deassigns a resource tag.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn ARN of a resource.
+		 *     Min length: 5    Max length: 1024
 		 * @param {Array<string>} tagKeys Keys of a resource tag.
+		 *     Minimum items: 0    Maximum items: 500
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2987,6 +3019,7 @@ export namespace MyNS {
 		 * <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>
 		 * Put agent/{agentId}
 		 * @param {string} agentId UUID of agent to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateAgentStatusResponse} Success
 		 */
 		UpdateAgentStatus(agentId: string, requestBody: UpdateAgentStatusPutBody): Observable<UpdateAgentStatusResponse> {
@@ -3005,8 +3038,8 @@ export namespace MyNS {
 		/**
 		 * Name of a <code>Config</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -3018,8 +3051,8 @@ export namespace MyNS {
 		/**
 		 * Name of a <code>Config</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3123,8 +3156,8 @@ export namespace MyNS {
 		/**
 		 * A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -3138,8 +3171,8 @@ export namespace MyNS {
 		/**
 		 * AWS Ground Station satellite ID for this ephemeris.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		satelliteId: string;
 
@@ -3160,8 +3193,8 @@ export namespace MyNS {
 		/**
 		 * A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3175,8 +3208,8 @@ export namespace MyNS {
 		/**
 		 * AWS Ground Station satellite ID for this ephemeris.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		satelliteId: FormControl<string | null | undefined>,
 
@@ -3247,8 +3280,8 @@ export namespace MyNS {
 		/**
 		 * Name of a mission profile.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -3294,8 +3327,8 @@ export namespace MyNS {
 		/**
 		 * Name of a mission profile.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3351,8 +3384,8 @@ export namespace MyNS {
 		/**
 		 * Name of a <code>Config</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 	}
@@ -3361,8 +3394,8 @@ export namespace MyNS {
 		/**
 		 * Name of a <code>Config</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3400,8 +3433,8 @@ export namespace MyNS {
 
 		/**
 		 * A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 
@@ -3422,8 +3455,8 @@ export namespace MyNS {
 
 		/**
 		 * A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3475,8 +3508,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of a mission profile.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 
@@ -3514,8 +3547,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of a mission profile.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3607,8 +3640,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of a ground station.
-		 * Max length: 500
 		 * Min length: 4
+		 * Max length: 500
 		 */
 		groundStation?: string | null;
 
@@ -3624,8 +3657,8 @@ export namespace MyNS {
 
 		/**
 		 * Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		nextToken?: string | null;
 
@@ -3656,8 +3689,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of a ground station.
-		 * Max length: 500
 		 * Min length: 4
+		 * Max length: 500
 		 */
 		groundStation: FormControl<string | null | undefined>,
 
@@ -3673,8 +3706,8 @@ export namespace MyNS {
 
 		/**
 		 * Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.
-		 * Max length: 1000
 		 * Min length: 3
+		 * Max length: 1000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3711,8 +3744,8 @@ export namespace MyNS {
 		/**
 		 * The AWS Ground Station satellite ID to list ephemeris for.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		satelliteId: string;
 
@@ -3740,8 +3773,8 @@ export namespace MyNS {
 		/**
 		 * The AWS Ground Station satellite ID to list ephemeris for.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		satelliteId: FormControl<string | null | undefined>,
 
@@ -3851,8 +3884,8 @@ export namespace MyNS {
 		/**
 		 * Name of a ground station.
 		 * Required
-		 * Max length: 500
 		 * Min length: 4
+		 * Max length: 500
 		 */
 		groundStation: string;
 
@@ -3888,8 +3921,8 @@ export namespace MyNS {
 		/**
 		 * Name of a ground station.
 		 * Required
-		 * Max length: 500
 		 * Min length: 4
+		 * Max length: 500
 		 */
 		groundStation: FormControl<string | null | undefined>,
 
@@ -3945,8 +3978,8 @@ export namespace MyNS {
 		/**
 		 * GUID of agent task.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		taskId: string;
 	}
@@ -3955,8 +3988,8 @@ export namespace MyNS {
 		/**
 		 * GUID of agent task.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		taskId: FormControl<string | null | undefined>,
 	}

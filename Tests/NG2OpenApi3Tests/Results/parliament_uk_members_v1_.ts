@@ -5,12 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AnsweringBody {
 		department?: GovernmentDepartment;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		shortName?: string | null;
 		target?: string | null;
 	}
 	export interface AnsweringBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		shortName: FormControl<string | null | undefined>,
@@ -27,12 +31,16 @@ export namespace MyNS {
 	}
 
 	export interface GovernmentDepartment {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		imageUrl?: string | null;
 		name?: string | null;
 		url?: string | null;
 	}
 	export interface GovernmentDepartmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -49,25 +57,49 @@ export namespace MyNS {
 	}
 
 	export interface BiographyExperience {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endYear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		organisation?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear?: number | null;
 		title?: string | null;
 		type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface BiographyExperienceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endYear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		organisation: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateBiographyExperienceFormGroup() {
@@ -121,6 +153,8 @@ export namespace MyNS {
 		additionalInfoLink?: string | null;
 		endDate?: Date | null;
 		house?: House;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		startDate?: Date | null;
@@ -130,6 +164,8 @@ export namespace MyNS {
 		additionalInfoLink: FormControl<string | null | undefined>,
 		endDate: FormControl<Date | null | undefined>,
 		house: FormControl<House | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		startDate: FormControl<Date | null | undefined>,
@@ -152,12 +188,16 @@ export namespace MyNS {
 	export interface Constituency {
 		currentRepresentation?: ConstituencyRepresentation;
 		endDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		startDate?: Date | null;
 	}
 	export interface ConstituencyFormProperties {
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		startDate: FormControl<Date | null | undefined>,
@@ -198,6 +238,8 @@ export namespace MyNS {
 
 	export interface Member {
 		gender?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		latestHouseMembership?: HouseMembership;
 		latestParty?: Party;
@@ -209,6 +251,8 @@ export namespace MyNS {
 	}
 	export interface MemberFormProperties {
 		gender: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		nameAddressAs: FormControl<string | null | undefined>,
 		nameDisplayAs: FormControl<string | null | undefined>,
@@ -233,9 +277,13 @@ export namespace MyNS {
 		house?: House;
 		membershipEndDate?: Date | null;
 		membershipEndReason?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		membershipEndReasonId?: number | null;
 		membershipEndReasonNotes?: string | null;
 		membershipFrom?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		membershipFromId?: number | null;
 		membershipStartDate?: Date | null;
 		membershipStatus?: HouseMembershipStatus;
@@ -244,9 +292,13 @@ export namespace MyNS {
 		house: FormControl<House | null | undefined>,
 		membershipEndDate: FormControl<Date | null | undefined>,
 		membershipEndReason: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		membershipEndReasonId: FormControl<number | null | undefined>,
 		membershipEndReasonNotes: FormControl<string | null | undefined>,
 		membershipFrom: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		membershipFromId: FormControl<number | null | undefined>,
 		membershipStartDate: FormControl<Date | null | undefined>,
 	}
@@ -267,6 +319,8 @@ export namespace MyNS {
 	export interface HouseMembershipStatus {
 		status?: MemberStatus;
 		statusDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusId?: number | null;
 		statusIsActive?: boolean | null;
 		statusNotes?: string | null;
@@ -275,6 +329,8 @@ export namespace MyNS {
 	export interface HouseMembershipStatusFormProperties {
 		status: FormControl<MemberStatus | null | undefined>,
 		statusDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusId: FormControl<number | null | undefined>,
 		statusIsActive: FormControl<boolean | null | undefined>,
 		statusNotes: FormControl<string | null | undefined>,
@@ -299,6 +355,8 @@ export namespace MyNS {
 		backgroundColour?: string | null;
 		foregroundColour?: string | null;
 		governmentType?: GovernmentType;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isIndependentParty?: boolean | null;
 		isLordsMainParty?: boolean | null;
@@ -310,6 +368,8 @@ export namespace MyNS {
 		backgroundColour: FormControl<string | null | undefined>,
 		foregroundColour: FormControl<string | null | undefined>,
 		governmentType: FormControl<GovernmentType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isIndependentParty: FormControl<boolean | null | undefined>,
 		isLordsMainParty: FormControl<boolean | null | undefined>,
@@ -349,14 +409,26 @@ export namespace MyNS {
 		items?: Array<ConstituencyItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ConstituencyMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateConstituencyMembersServiceSearchResultFormGroup() {
@@ -396,6 +468,8 @@ export namespace MyNS {
 		postcode?: string | null;
 		type?: string | null;
 		typeDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 	}
 	export interface ContactInformationFormProperties {
@@ -413,6 +487,8 @@ export namespace MyNS {
 		postcode: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		typeDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 	}
 	export function CreateContactInformationFormGroup() {
@@ -449,37 +525,73 @@ export namespace MyNS {
 	}
 
 	export interface DebateContribution {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answerCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		debateId?: number | null;
 		debateTitle?: string | null;
 		debateWebsiteId?: string | null;
 		firstTimecode?: Date | null;
 		house?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interventionCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pointsOfOrderCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		questionCount?: number | null;
 		section?: string | null;
 		sittingDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speechCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statementsCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		supplementaryQuestionCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalContributions?: number | null;
 	}
 	export interface DebateContributionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answerCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		debateId: FormControl<number | null | undefined>,
 		debateTitle: FormControl<string | null | undefined>,
 		debateWebsiteId: FormControl<string | null | undefined>,
 		firstTimecode: FormControl<Date | null | undefined>,
 		house: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interventionCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pointsOfOrderCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		questionCount: FormControl<number | null | undefined>,
 		section: FormControl<string | null | undefined>,
 		sittingDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speechCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statementsCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		supplementaryQuestionCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalContributions: FormControl<number | null | undefined>,
 	}
 	export function CreateDebateContributionFormGroup() {
@@ -519,14 +631,26 @@ export namespace MyNS {
 		items?: Array<DebateContributionItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface DebateContributionMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDebateContributionMembersServiceSearchResultFormGroup() {
@@ -541,19 +665,27 @@ export namespace MyNS {
 
 	export interface EarlyDayMotion {
 		dateTabled?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isAmendment?: boolean | null;
 		isPrayer?: boolean | null;
 		number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sponsorsCount?: number | null;
 		title?: string | null;
 	}
 	export interface EarlyDayMotionFormProperties {
 		dateTabled: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isAmendment: FormControl<boolean | null | undefined>,
 		isPrayer: FormControl<boolean | null | undefined>,
 		number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sponsorsCount: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -586,14 +718,26 @@ export namespace MyNS {
 		items?: Array<EarlyDayMotionItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface EarlyDayMotionMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateEarlyDayMotionMembersServiceSearchResultFormGroup() {
@@ -607,20 +751,36 @@ export namespace MyNS {
 	}
 
 	export interface ElectionCandidate {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		name?: string | null;
 		party?: Party;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rankOrder?: number | null;
 		resultChange?: string | null;
+
+		/** Type: double */
 		voteShare?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		votes?: number | null;
 	}
 	export interface ElectionCandidateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rankOrder: FormControl<number | null | undefined>,
 		resultChange: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		voteShare: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		votes: FormControl<number | null | undefined>,
 	}
 	export function CreateElectionCandidateFormGroup() {
@@ -639,26 +799,42 @@ export namespace MyNS {
 		candidates?: Array<ElectionCandidate>;
 		constituencyName?: string | null;
 		electionDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		electionId?: number | null;
 		electionTitle?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		electorate?: number | null;
 		isGeneralElection?: boolean | null;
 		isNotional?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		majority?: number | null;
 		result?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		turnout?: number | null;
 		winningParty?: Party;
 	}
 	export interface ElectionResultFormProperties {
 		constituencyName: FormControl<string | null | undefined>,
 		electionDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		electionId: FormControl<number | null | undefined>,
 		electionTitle: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		electorate: FormControl<number | null | undefined>,
 		isGeneralElection: FormControl<boolean | null | undefined>,
 		isNotional: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		majority: FormControl<number | null | undefined>,
 		result: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		turnout: FormControl<number | null | undefined>,
 	}
 	export function CreateElectionResultFormGroup() {
@@ -703,10 +879,14 @@ export namespace MyNS {
 
 	export interface GenericReferenceData {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface GenericReferenceDataFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateGenericReferenceDataFormGroup() {
@@ -721,8 +901,12 @@ export namespace MyNS {
 		createdWhen?: Date | null;
 		governmentDepartments?: Array<GovernmentDepartment>;
 		hansardName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		postHolders?: Array<GovernmentOppositionPostHolder>;
 		type?: PostType;
@@ -730,8 +914,12 @@ export namespace MyNS {
 	export interface GovernmentOppositionPostFormProperties {
 		createdWhen: FormControl<Date | null | undefined>,
 		hansardName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		type: FormControl<PostType | null | undefined>,
 	}
@@ -815,12 +1003,16 @@ export namespace MyNS {
 	}
 
 	export interface LocationContext {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		type?: LocationType;
 		typeName?: string | null;
 	}
 	export interface LocationContextFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		type: FormControl<LocationType | null | undefined>,
@@ -839,16 +1031,32 @@ export namespace MyNS {
 	export enum LocationType { _0 = 0, _1 = 1, _2 = 2, _3 = 3 }
 
 	export interface PartySeatCount {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		female?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		male?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nonBinary?: number | null;
 		party?: Party;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface PartySeatCountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		female: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		male: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nonBinary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePartySeatCountFormGroup() {
@@ -874,16 +1082,32 @@ export namespace MyNS {
 	}
 
 	export interface LordsByType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bishop?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hereditary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		life?: number | null;
 		party?: Party;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface LordsByTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bishop: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hereditary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		life: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateLordsByTypeFormGroup() {
@@ -912,14 +1136,26 @@ export namespace MyNS {
 		items?: Array<LordsByTypeItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface LordsByTypeMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateLordsByTypeMembersServiceSearchResultFormGroup() {
@@ -990,12 +1226,16 @@ export namespace MyNS {
 
 	export interface MemberHistory {
 		houseMembershipHistory?: Array<HouseMembership>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		nameHistory?: Array<MemberName>;
 		partyHistory?: Array<MemberParty>;
 		thumbnailUrl?: string | null;
 	}
 	export interface MemberHistoryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		thumbnailUrl: FormControl<string | null | undefined>,
 	}
@@ -1068,14 +1308,26 @@ export namespace MyNS {
 		items?: Array<MemberItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface MemberMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateMemberMembersServiceSearchResultFormGroup() {
@@ -1101,14 +1353,22 @@ export namespace MyNS {
 	}
 
 	export interface RegisteredInterestCategory {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		interests?: Array<RegisteredInterest>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface RegisteredInterestCategoryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateRegisteredInterestCategoryFormGroup() {
@@ -1124,6 +1384,8 @@ export namespace MyNS {
 		childInterests?: Array<RegisteredInterest>;
 		createdWhen?: Date | null;
 		deletedWhen?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		interest?: string | null;
 		isCorrection?: boolean | null;
@@ -1132,6 +1394,8 @@ export namespace MyNS {
 	export interface RegisteredInterestFormProperties {
 		createdWhen: FormControl<Date | null | undefined>,
 		deletedWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		interest: FormControl<string | null | undefined>,
 		isCorrection: FormControl<boolean | null | undefined>,
@@ -1165,14 +1429,26 @@ export namespace MyNS {
 		items?: Array<MembersInterestsItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface MembersInterestsMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateMembersInterestsMembersServiceSearchResultFormGroup() {
@@ -1235,14 +1511,26 @@ export namespace MyNS {
 		items?: Array<MembersStaffItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface MembersStaffMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateMembersStaffMembersServiceSearchResultFormGroup() {
@@ -1271,14 +1559,26 @@ export namespace MyNS {
 		items?: Array<PartyItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface PartyMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePartyMembersServiceSearchResultFormGroup() {
@@ -1307,14 +1607,26 @@ export namespace MyNS {
 		items?: Array<PartySeatCountItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface PartySeatCountMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePartySeatCountMembersServiceSearchResultFormGroup() {
@@ -1370,22 +1682,38 @@ export namespace MyNS {
 	export interface Vote {
 		actedAsTeller?: boolean | null;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionNumber?: number | null;
 		house?: House;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		inAffirmativeLobby?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberAgainst?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberInFavour?: number | null;
 		title?: string | null;
 	}
 	export interface VoteFormProperties {
 		actedAsTeller: FormControl<boolean | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionNumber: FormControl<number | null | undefined>,
 		house: FormControl<House | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		inAffirmativeLobby: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberAgainst: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberInFavour: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -1420,14 +1748,26 @@ export namespace MyNS {
 		items?: Array<VoteItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface VoteMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateVoteMembersServiceSearchResultFormGroup() {
@@ -1445,12 +1785,22 @@ export namespace MyNS {
 		answerIsHolding?: boolean | null;
 		answerText?: string | null;
 		answeringBody?: AnsweringBody;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId?: number | null;
 		answeringMember?: Member;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringMemberId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		askingMemberId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount?: number | null;
 		correctingMember?: Member;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		correctingMemberId?: number | null;
 		dateAnswered?: Date | null;
 		dateForAnswer?: Date | null;
@@ -1459,6 +1809,8 @@ export namespace MyNS {
 		groupedQuestionsDates?: Array<GroupedQuestion>;
 		heading?: string | null;
 		house?: House;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isNamedDay?: boolean | null;
 		isWithdrawn?: boolean | null;
@@ -1470,16 +1822,28 @@ export namespace MyNS {
 		answerIsCorrection: FormControl<boolean | null | undefined>,
 		answerIsHolding: FormControl<boolean | null | undefined>,
 		answerText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringBodyId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answeringMemberId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		askingMemberId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		correctingMemberId: FormControl<number | null | undefined>,
 		dateAnswered: FormControl<Date | null | undefined>,
 		dateForAnswer: FormControl<Date | null | undefined>,
 		dateTabled: FormControl<Date | null | undefined>,
 		heading: FormControl<string | null | undefined>,
 		house: FormControl<House | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isNamedDay: FormControl<boolean | null | undefined>,
 		isWithdrawn: FormControl<boolean | null | undefined>,
@@ -1528,14 +1892,26 @@ export namespace MyNS {
 		items?: Array<WrittenQuestionItem>;
 		links?: Array<Link>;
 		resultContext?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface WrittenQuestionMembersServiceSearchResultFormProperties {
 		resultContext: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateWrittenQuestionMembersServiceSearchResultFormGroup() {
@@ -1557,6 +1933,7 @@ export namespace MyNS {
 		 * Returns a list of locations, both parent and child
 		 * Get api/Location/Browse/{locationType}/{locationName}
 		 * @param {LocationType} locationType Location by type of location
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locationName Location by name specified
 		 * @return {LocationItem} Success
 		 */
@@ -1569,7 +1946,9 @@ export namespace MyNS {
 		 * Get api/Location/Constituency/Search
 		 * @param {string} searchText Constituencies containing serach term in their name
 		 * @param {number} skip The number of records to skip from the first, default is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20. Maximum is 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConstituencyMembersServiceSearchResult} Success
 		 */
 		ApiLocationConstituencySearchGetBySearchTextAndSkipAndTake(searchText: string | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ConstituencyMembersServiceSearchResult> {
@@ -1580,6 +1959,7 @@ export namespace MyNS {
 		 * Returns a constituency by ID
 		 * Get api/Location/Constituency/{id}
 		 * @param {number} id Constituency by ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConstituencyItem} Success
 		 */
 		ApiLocationConstituency_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<ConstituencyItem> {
@@ -1590,6 +1970,7 @@ export namespace MyNS {
 		 * Returns latest election result by constituency id
 		 * Get api/Location/Constituency/{id}/ElectionResult/Latest
 		 * @param {number} id Latest election result by constituency id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ElectionResultItem} Success
 		 */
 		ApiLocationConstituency_idElectionResultLatestGet(id: number, headersHandler?: () => HttpHeaders): Observable<ElectionResultItem> {
@@ -1600,7 +1981,9 @@ export namespace MyNS {
 		 * Returns an election result by constituency and election id
 		 * Get api/Location/Constituency/{id}/ElectionResult/{electionId}
 		 * @param {number} id Election result by constituency id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} electionId Election result by election id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ElectionResultItem} Success
 		 */
 		ApiLocationConstituency_idElectionResult_electionIdGet(id: number, electionId: number, headersHandler?: () => HttpHeaders): Observable<ElectionResultItem> {
@@ -1611,6 +1994,7 @@ export namespace MyNS {
 		 * Returns a list of election results by constituency ID
 		 * Get api/Location/Constituency/{id}/ElectionResults
 		 * @param {number} id Elections results by constituency ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ElectionResultListItem} Success
 		 */
 		ApiLocationConstituency_idElectionResultsGet(id: number, headersHandler?: () => HttpHeaders): Observable<ElectionResultListItem> {
@@ -1621,6 +2005,7 @@ export namespace MyNS {
 		 * Returns geometry by constituency ID
 		 * Get api/Location/Constituency/{id}/Geometry
 		 * @param {number} id Geometry by constituency ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StringItem} Success
 		 */
 		ApiLocationConstituency_idGeometryGet(id: number, headersHandler?: () => HttpHeaders): Observable<StringItem> {
@@ -1631,6 +2016,7 @@ export namespace MyNS {
 		 * Returns a list of representations by constituency ID
 		 * Get api/Location/Constituency/{id}/Representations
 		 * @param {number} id Representations by constituency ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConstituencyRepresentationListItem} Success
 		 */
 		ApiLocationConstituency_idRepresentationsGet(id: number, headersHandler?: () => HttpHeaders): Observable<ConstituencyRepresentationListItem> {
@@ -1641,6 +2027,7 @@ export namespace MyNS {
 		 * Returns a synopsis by constituency ID
 		 * Get api/Location/Constituency/{id}/Synopsis
 		 * @param {number} id Synopsis by constituency ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StringItem} Success
 		 */
 		ApiLocationConstituency_idSynopsisGet(id: number, headersHandler?: () => HttpHeaders): Observable<StringItem> {
@@ -1652,6 +2039,7 @@ export namespace MyNS {
 		 * Get api/LordsInterests/Register
 		 * @param {string} searchTerm Registered interests containing search term
 		 * @param {number} page Page of results to return, default 0. Results per page 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDeleted Registered interests that have been deleted
 		 * @return {MembersInterestsMembersServiceSearchResult} Success
 		 */
@@ -1664,6 +2052,7 @@ export namespace MyNS {
 		 * Get api/LordsInterests/Staff
 		 * @param {string} searchTerm Staff containing search term
 		 * @param {number} page Page of results to return, default 0. Results per page 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MembersStaffMembersServiceSearchResult} Success
 		 */
 		ApiLordsInterestsStaffGetBySearchTermAndPage(searchTerm: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MembersStaffMembersServiceSearchResult> {
@@ -1687,8 +2076,11 @@ export namespace MyNS {
 		 * @param {string} Location Members where postcode or geographical location matches the term specified
 		 * @param {string} PostTitle Members which have held the post specified
 		 * @param {number} PartyId Members which are currently affiliated with party with party ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {House} House Members where their most recent house is the house specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ConstituencyId Members which currently hold the constituency with constituency id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} NameStartsWith Members with surname begining with letter(s) specified
 		 * @param {string} Gender Members with the gender specified
 		 * @param {Date} MembershipStartedSince Members who started on or after the date given
@@ -1696,12 +2088,16 @@ export namespace MyNS {
 		 * @param {Date} MembershipInDateRange_WasMemberOnOrAfter Members who were active on or after the date specified
 		 * @param {Date} MembershipInDateRange_WasMemberOnOrBefore Members who were active on or before the date specified
 		 * @param {House} MembershipInDateRange_WasMemberOfHouse Members who were active in the house specifid
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} IsEligible Members currently Eligible to sit in their House
 		 * @param {boolean} IsCurrentMember Members who are current or former members
 		 * @param {number} PolicyInterestId Members with specified policy interest
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Experience Members with specified experience
 		 * @param {number} skip The number of records to skip from the first, default is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20. Maximum is 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MemberMembersServiceSearchResult} Success
 		 */
 		ApiMembersSearchGetByNameAndLocationAndPostTitleAndPartyIdAndHouseAndConstituencyIdAndNameStartsWithAndGenderAndMembershipStartedSinceAndMembershipEnded_MembershipEndedSinceAndMembershipEnded_MembershipEndReasonIdsAndMembershipInDateRange_WasMemberOnOrAfterAndMembershipInDateRange_WasMemberOnOrBeforeAndMembershipInDateRange_WasMemberOfHouseAndIsEligibleAndIsCurrentMemberAndPolicyInterestIdAndExperienceAndSkipAndTake(Name: string | null | undefined, Location: string | null | undefined, PostTitle: string | null | undefined, PartyId: number | null | undefined, House: House | null | undefined, ConstituencyId: number | null | undefined, NameStartsWith: string | null | undefined, Gender: string | null | undefined, MembershipStartedSince: Date | null | undefined, MembershipEnded_MembershipEndedSince: Date | null | undefined, MembershipEnded_MembershipEndReasonIds: Array<number> | null | undefined, MembershipInDateRange_WasMemberOnOrAfter: Date | null | undefined, MembershipInDateRange_WasMemberOnOrBefore: Date | null | undefined, MembershipInDateRange_WasMemberOfHouse: House | null | undefined, IsEligible: boolean | null | undefined, IsCurrentMember: boolean | null | undefined, PolicyInterestId: number | null | undefined, Experience: string | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MemberMembersServiceSearchResult> {
@@ -1714,7 +2110,9 @@ export namespace MyNS {
 		 * @param {string} name Members with names containing the term specified
 		 * @param {Date} dateToSearchFor Members that were an active member of the Commons or Lords on the date specified
 		 * @param {number} skip The number of records to skip from the first, default is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20. Maximum is 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MemberMembersServiceSearchResult} Success
 		 */
 		ApiMembersSearchHistoricalGetByNameAndDateToSearchForAndSkipAndTake(name: string | null | undefined, dateToSearchFor: Date | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MemberMembersServiceSearchResult> {
@@ -1725,6 +2123,7 @@ export namespace MyNS {
 		 * Return member by ID
 		 * Get api/Members/{id}
 		 * @param {number} id Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} detailsForDate Member object will be populated with details from the date specified
 		 * @return {MemberItem} Success
 		 */
@@ -1736,6 +2135,7 @@ export namespace MyNS {
 		 * Return biography of member by ID
 		 * Get api/Members/{id}/Biography
 		 * @param {number} id Biography of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MemberBiographyItem} Success
 		 */
 		ApiMembers_idBiographyGet(id: number, headersHandler?: () => HttpHeaders): Observable<MemberBiographyItem> {
@@ -1746,6 +2146,7 @@ export namespace MyNS {
 		 * Return list of contact details of member by ID
 		 * Get api/Members/{id}/Contact
 		 * @param {number} id Contact details of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ContactInformationListItem} Success
 		 */
 		ApiMembers_idContactGet(id: number, headersHandler?: () => HttpHeaders): Observable<ContactInformationListItem> {
@@ -1756,6 +2157,8 @@ export namespace MyNS {
 		 * Return contribution summary of member by ID
 		 * Get api/Members/{id}/ContributionSummary
 		 * @param {number} id Contribution summary of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DebateContributionMembersServiceSearchResult} Success
 		 */
 		ApiMembers_idContributionSummaryGetByPage(id: number, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<DebateContributionMembersServiceSearchResult> {
@@ -1766,6 +2169,8 @@ export namespace MyNS {
 		 * Return list of early day motions of member by ID
 		 * Get api/Members/{id}/Edms
 		 * @param {number} id Early day motions of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EarlyDayMotionMembersServiceSearchResult} Success
 		 */
 		ApiMembers_idEdmsGetByPage(id: number, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<EarlyDayMotionMembersServiceSearchResult> {
@@ -1776,6 +2181,7 @@ export namespace MyNS {
 		 * Return experience of member by ID
 		 * Get api/Members/{id}/Experience
 		 * @param {number} id Experience of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BiographyExperienceListItem} Success
 		 */
 		ApiMembers_idExperienceGet(id: number, headersHandler?: () => HttpHeaders): Observable<BiographyExperienceListItem> {
@@ -1786,6 +2192,7 @@ export namespace MyNS {
 		 * Return list of areas of focus of member by ID
 		 * Get api/Members/{id}/Focus
 		 * @param {number} id Areas of focus of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MemberFocusListItem} Success
 		 */
 		ApiMembers_idFocusGet(id: number, headersHandler?: () => HttpHeaders): Observable<MemberFocusListItem> {
@@ -1796,6 +2203,7 @@ export namespace MyNS {
 		 * Return latest election result of member by ID
 		 * Get api/Members/{id}/LatestElectionResult
 		 * @param {number} id Latest election result of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ElectionResultItem} Success
 		 */
 		ApiMembers_idLatestElectionResultGet(id: number, headersHandler?: () => HttpHeaders): Observable<ElectionResultItem> {
@@ -1806,6 +2214,8 @@ export namespace MyNS {
 		 * Return portrait of member by ID
 		 * Get api/Members/{id}/Portrait
 		 * @param {number} id Portrait of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {PortraitCropEnum} cropType Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiMembers_idPortraitGetByCropTypeAndWebVersion(id: number, cropType: PortraitCropEnum | null | undefined, webVersion: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1816,6 +2226,7 @@ export namespace MyNS {
 		 * Return portrait url of member by ID
 		 * Get api/Members/{id}/PortraitUrl
 		 * @param {number} id Portrait url of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StringItem} Success
 		 */
 		ApiMembers_idPortraitUrlGet(id: number, headersHandler?: () => HttpHeaders): Observable<StringItem> {
@@ -1826,7 +2237,9 @@ export namespace MyNS {
 		 * Return list of registered interests of member by ID
 		 * Get api/Members/{id}/RegisteredInterests
 		 * @param {number} id Registered interests of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {House} house Registered interests of Member by House specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RegisteredInterestCategoryListItem} Success
 		 */
 		ApiMembers_idRegisteredInterestsGetByHouse(id: number, house: House | null | undefined, headersHandler?: () => HttpHeaders): Observable<RegisteredInterestCategoryListItem> {
@@ -1837,6 +2250,7 @@ export namespace MyNS {
 		 * Return list of staff of member by ID
 		 * Get api/Members/{id}/Staff
 		 * @param {number} id Staff of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StaffListItem} Success
 		 */
 		ApiMembers_idStaffGet(id: number, headersHandler?: () => HttpHeaders): Observable<StaffListItem> {
@@ -1847,6 +2261,7 @@ export namespace MyNS {
 		 * Return synopsis of member by ID
 		 * Get api/Members/{id}/Synopsis
 		 * @param {number} id Synopsis of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StringItem} Success
 		 */
 		ApiMembers_idSynopsisGet(id: number, headersHandler?: () => HttpHeaders): Observable<StringItem> {
@@ -1857,6 +2272,7 @@ export namespace MyNS {
 		 * Return thumbnail of member by ID
 		 * Get api/Members/{id}/Thumbnail
 		 * @param {number} id Thumbnail of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiMembers_idThumbnailGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1867,6 +2283,7 @@ export namespace MyNS {
 		 * Return thumbnail url of member by ID
 		 * Get api/Members/{id}/ThumbnailUrl
 		 * @param {number} id Thumbnail url of Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StringItem} Success
 		 */
 		ApiMembers_idThumbnailUrlGet(id: number, headersHandler?: () => HttpHeaders): Observable<StringItem> {
@@ -1877,6 +2294,9 @@ export namespace MyNS {
 		 * Return list of votes by member by ID
 		 * Get api/Members/{id}/Voting
 		 * @param {number} id Votes by Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {House} house Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VoteMembersServiceSearchResult} Success
 		 */
 		ApiMembers_idVotingGetByHouseAndPage(id: number, house: House, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<VoteMembersServiceSearchResult> {
@@ -1887,6 +2307,8 @@ export namespace MyNS {
 		 * Return list of written questions by member by ID
 		 * Get api/Members/{id}/WrittenQuestions
 		 * @param {number} id Written questions by Member by ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {WrittenQuestionMembersServiceSearchResult} Success
 		 */
 		ApiMembers_idWrittenQuestionsGetByPage(id: number, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<WrittenQuestionMembersServiceSearchResult> {
@@ -1897,6 +2319,7 @@ export namespace MyNS {
 		 * Returns a list of current parties with at least one active member.
 		 * Get api/Parties/GetActive/{house}
 		 * @param {House} house Current parties by house
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartyMembersServiceSearchResult} Success
 		 */
 		ApiPartiesGetActive_houseGet(house: House, headersHandler?: () => HttpHeaders): Observable<PartyMembersServiceSearchResult> {
@@ -1917,6 +2340,7 @@ export namespace MyNS {
 		 * Returns current state of parties
 		 * Get api/Parties/StateOfTheParties/{house}/{forDate}
 		 * @param {House} house State of parties in Commons or Lords.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} forDate State of parties for the date specified
 		 * @return {PartySeatCountMembersServiceSearchResult} Success
 		 */
@@ -1928,6 +2352,7 @@ export namespace MyNS {
 		 * Returns a list of departments.
 		 * Get api/Posts/Departments/{type}
 		 * @param {PostType} type Departments by type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GovernmentDepartment>} Success
 		 */
 		ApiPostsDepartments_typeGet(type: PostType, headersHandler?: () => HttpHeaders): Observable<Array<GovernmentDepartment>> {
@@ -1938,6 +2363,7 @@ export namespace MyNS {
 		 * Returns a list of government posts.
 		 * Get api/Posts/GovernmentPosts
 		 * @param {number} departmentId Government posts by department ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GovernmentOppositionPostItem>} Success
 		 */
 		ApiPostsGovernmentPostsGetByDepartmentId(departmentId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<GovernmentOppositionPostItem>> {
@@ -1948,6 +2374,7 @@ export namespace MyNS {
 		 * Returns a list of opposition posts.
 		 * Get api/Posts/OppositionPosts
 		 * @param {number} departmentId Opposition posts by department ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GovernmentOppositionPostItem>} Success
 		 */
 		ApiPostsOppositionPostsGetByDepartmentId(departmentId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<GovernmentOppositionPostItem>> {
@@ -1968,6 +2395,7 @@ export namespace MyNS {
 		 * Returns a list of spokespersons.
 		 * Get api/Posts/Spokespersons
 		 * @param {number} partyId Spokespersons by party ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GovernmentOppositionPostItem>} Success
 		 */
 		ApiPostsSpokespersonsGetByPartyId(partyId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<GovernmentOppositionPostItem>> {
@@ -1977,6 +2405,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of answering bodies.
 		 * Get api/Reference/AnsweringBodies
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AnsweringBody>} Success
 		 */
 		ApiReferenceAnsweringBodiesGetByIdAndNameContains(id: number | null | undefined, nameContains: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AnsweringBody>> {
@@ -1986,6 +2415,7 @@ export namespace MyNS {
 		/**
 		 * Returns a list of departments.
 		 * Get api/Reference/Departments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GovernmentDepartment>} Success
 		 */
 		ApiReferenceDepartmentsGetByIdAndNameContains(id: number | null | undefined, nameContains: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<GovernmentDepartment>> {
@@ -1996,6 +2426,7 @@ export namespace MyNS {
 		 * Returns department logo.
 		 * Get api/Reference/Departments/{id}/Logo
 		 * @param {number} id Logo by department ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiReferenceDepartments_idLogoGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

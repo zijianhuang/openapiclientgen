@@ -90,7 +90,10 @@ export namespace MyNS {
 		/** Output only. Number of reviews received. Chrome Web Store review information will always be for the latest version of an app. */
 		reviewNumber?: string | null;
 
-		/** Output only. The rating of the app (on 5 stars). Chrome Web Store review information will always be for the latest version of an app. */
+		/**
+		 * Output only. The rating of the app (on 5 stars). Chrome Web Store review information will always be for the latest version of an app.
+		 * Type: float
+		 */
 		reviewRating?: number | null;
 
 		/** Output only. App version. A new revision is committed whenever a new version of the app is published. */
@@ -145,7 +148,10 @@ export namespace MyNS {
 		/** Output only. Number of reviews received. Chrome Web Store review information will always be for the latest version of an app. */
 		reviewNumber: FormControl<string | null | undefined>,
 
-		/** Output only. The rating of the app (on 5 stars). Chrome Web Store review information will always be for the latest version of an app. */
+		/**
+		 * Output only. The rating of the app (on 5 stars). Chrome Web Store review information will always be for the latest version of an app.
+		 * Type: float
+		 */
 		reviewRating: FormControl<number | null | undefined>,
 
 		/** Output only. App version. A new revision is committed whenever a new version of the app is published. */
@@ -198,7 +204,10 @@ export namespace MyNS {
 		/** Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices */
 		kioskEnabled?: boolean | null;
 
-		/** Output only. The minimum number of users using this app. */
+		/**
+		 * Output only. The minimum number of users using this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minUserCount?: number | null;
 
 		/** Output only. Every custom permission requested by the app. Version-specific field that will only be set when the requested app version is found. */
@@ -235,7 +244,10 @@ export namespace MyNS {
 		/** Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices */
 		kioskEnabled: FormControl<boolean | null | undefined>,
 
-		/** Output only. The minimum number of users using this app. */
+		/**
+		 * Output only. The minimum number of users using this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minUserCount: FormControl<number | null | undefined>,
 
 		/** Output only. The app developer has enabled support for their app. Version-specific field that will only be set when the requested app version is found. */
@@ -321,7 +333,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -334,7 +349,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -357,7 +375,10 @@ export namespace MyNS {
 		/** Output only. Active input device's name. */
 		inputDevice?: string | null;
 
-		/** Output only. Active input device's gain in [0, 100]. */
+		/**
+		 * Output only. Active input device's gain in [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputGain?: number | null;
 
 		/** Output only. Is active input device mute or not. */
@@ -369,7 +390,10 @@ export namespace MyNS {
 		/** Output only. Is active output device mute or not. */
 		outputMute?: boolean | null;
 
-		/** Output only. Active output device's volume in [0, 100]. */
+		/**
+		 * Output only. Active output device's volume in [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputVolume?: number | null;
 
 		/** Output only. Timestamp of when the sample was collected on device. */
@@ -382,7 +406,10 @@ export namespace MyNS {
 		/** Output only. Active input device's name. */
 		inputDevice: FormControl<string | null | undefined>,
 
-		/** Output only. Active input device's gain in [0, 100]. */
+		/**
+		 * Output only. Active input device's gain in [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputGain: FormControl<number | null | undefined>,
 
 		/** Output only. Is active input device mute or not. */
@@ -394,7 +421,10 @@ export namespace MyNS {
 		/** Output only. Is active output device mute or not. */
 		outputMute: FormControl<boolean | null | undefined>,
 
-		/** Output only. Active output device's volume in [0, 100]. */
+		/**
+		 * Output only. Active output device's volume in [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputVolume: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp of when the sample was collected on device. */
@@ -420,7 +450,10 @@ export namespace MyNS {
 		/** Output only. Design capacity (mAmpere-hours). */
 		designCapacity?: string | null;
 
-		/** Output only. Designed minimum output voltage (mV) */
+		/**
+		 * Output only. Designed minimum output voltage (mV)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		designMinVoltage?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -442,7 +475,10 @@ export namespace MyNS {
 		/** Output only. Design capacity (mAmpere-hours). */
 		designCapacity: FormControl<string | null | undefined>,
 
-		/** Output only. Designed minimum output voltage (mV) */
+		/**
+		 * Output only. Designed minimum output voltage (mV)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		designMinVoltage: FormControl<number | null | undefined>,
 
 		/** Output only. Battery manufacturer. */
@@ -469,26 +505,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -504,13 +558,19 @@ export namespace MyNS {
 	/** Sampling data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A */
 	export interface GoogleChromeManagementV1BatterySampleReport {
 
-		/** Output only. Battery charge percentage. */
+		/**
+		 * Output only. Battery charge percentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chargeRate?: number | null;
 
 		/** Output only. Battery current (mA). */
 		current?: string | null;
 
-		/** Output only. The battery discharge rate measured in mW. Positive if the battery is being discharged, negative if it's being charged. */
+		/**
+		 * Output only. The battery discharge rate measured in mW. Positive if the battery is being discharged, negative if it's being charged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dischargeRate?: number | null;
 
 		/** Output only. Battery remaining capacity (mAmpere-hours). */
@@ -522,7 +582,10 @@ export namespace MyNS {
 		/** Output only. Battery status read from sysfs. Example: Discharging */
 		status?: string | null;
 
-		/** Output only. Temperature in Celsius degrees. */
+		/**
+		 * Output only. Temperature in Celsius degrees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature?: number | null;
 
 		/** Output only. Battery voltage (millivolt). */
@@ -532,13 +595,19 @@ export namespace MyNS {
 	/** Sampling data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A */
 	export interface GoogleChromeManagementV1BatterySampleReportFormProperties {
 
-		/** Output only. Battery charge percentage. */
+		/**
+		 * Output only. Battery charge percentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chargeRate: FormControl<number | null | undefined>,
 
 		/** Output only. Battery current (mA). */
 		current: FormControl<string | null | undefined>,
 
-		/** Output only. The battery discharge rate measured in mW. Positive if the battery is being discharged, negative if it's being charged. */
+		/**
+		 * Output only. The battery discharge rate measured in mW. Positive if the battery is being discharged, negative if it's being charged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dischargeRate: FormControl<number | null | undefined>,
 
 		/** Output only. Battery remaining capacity (mAmpere-hours). */
@@ -550,7 +619,10 @@ export namespace MyNS {
 		/** Output only. Battery status read from sysfs. Example: Discharging */
 		status: FormControl<string | null | undefined>,
 
-		/** Output only. Temperature in Celsius degrees. */
+		/**
+		 * Output only. Temperature in Celsius degrees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/** Output only. Battery voltage (millivolt). */
@@ -577,7 +649,10 @@ export namespace MyNS {
 		/** Output only. Battery health. */
 		batteryHealth?: GoogleChromeManagementV1BatteryStatusReportBatteryHealth | null;
 
-		/** Output only. Cycle count. */
+		/**
+		 * Output only. Cycle count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleCount?: number | null;
 
 		/** Output only. Full charge capacity (mAmpere-hours). */
@@ -599,7 +674,10 @@ export namespace MyNS {
 		/** Output only. Battery health. */
 		batteryHealth: FormControl<GoogleChromeManagementV1BatteryStatusReportBatteryHealth | null | undefined>,
 
-		/** Output only. Cycle count. */
+		/**
+		 * Output only. Cycle count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Full charge capacity (mAmpere-hours). */
@@ -808,7 +886,10 @@ export namespace MyNS {
 		/** Count of requested apps matching request. */
 		requestedApps?: Array<GoogleChromeManagementV1ChromeAppRequest>;
 
-		/** Total number of matching app requests. */
+		/**
+		 * Total number of matching app requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -818,7 +899,10 @@ export namespace MyNS {
 		/** Token to specify the next page in the list. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total number of matching app requests. */
+		/**
+		 * Total number of matching app requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1CountChromeAppRequestsResponseFormGroup() {
@@ -1045,7 +1129,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken?: string | null;
 
-		/** Total number browser versions matching request. */
+		/**
+		 * Total number browser versions matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1055,7 +1142,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total number browser versions matching request. */
+		/**
+		 * Total number browser versions matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1CountChromeVersionsResponseFormGroup() {
@@ -1076,7 +1166,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken?: string | null;
 
-		/** Total number of installed apps matching request. */
+		/**
+		 * Total number of installed apps matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1086,7 +1179,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total number of installed apps matching request. */
+		/**
+		 * Total number of installed apps matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1CountInstalledAppsResponseFormGroup() {
@@ -1370,7 +1466,10 @@ export namespace MyNS {
 		/** Output only. Whether keylocker is supported. */
 		keylockerSupported?: boolean | null;
 
-		/** Output only. The max CPU clock speed in kHz. */
+		/**
+		 * Output only. The max CPU clock speed in kHz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxClockSpeed?: number | null;
 
 		/** Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz */
@@ -1389,7 +1488,10 @@ export namespace MyNS {
 		/** Output only. Whether keylocker is supported. */
 		keylockerSupported: FormControl<boolean | null | undefined>,
 
-		/** Output only. The max CPU clock speed in kHz. */
+		/**
+		 * Output only. The max CPU clock speed in kHz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxClockSpeed: FormControl<number | null | undefined>,
 
 		/** Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz */
@@ -1415,7 +1517,10 @@ export namespace MyNS {
 		/** Output only. CPU temperature sample info per CPU core in Celsius */
 		cpuTemperatureInfo?: Array<GoogleChromeManagementV1CpuTemperatureInfo>;
 
-		/** Output only. Sample of CPU utilization (0-100 percent). */
+		/**
+		 * Output only. Sample of CPU utilization (0-100 percent).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationPct?: number | null;
 
 		/** Output only. The timestamp in milliseconds representing time at which this report was sampled. */
@@ -1428,7 +1533,10 @@ export namespace MyNS {
 	/** Provides information about the status of the CPU. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_CPU_REPORT */
 	export interface GoogleChromeManagementV1CpuStatusReportFormProperties {
 
-		/** Output only. Sample of CPU utilization (0-100 percent). */
+		/**
+		 * Output only. Sample of CPU utilization (0-100 percent).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationPct: FormControl<number | null | undefined>,
 
 		/** Output only. The timestamp in milliseconds representing time at which this report was sampled. */
@@ -1453,7 +1561,10 @@ export namespace MyNS {
 		/** Output only. CPU label. Example: Core 0 */
 		label?: string | null;
 
-		/** Output only. CPU temperature in Celsius. */
+		/**
+		 * Output only. CPU temperature in Celsius.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperatureCelsius?: number | null;
 	}
 
@@ -1463,7 +1574,10 @@ export namespace MyNS {
 		/** Output only. CPU label. Example: Core 0 */
 		label: FormControl<string | null | undefined>,
 
-		/** Output only. CPU temperature in Celsius. */
+		/**
+		 * Output only. CPU temperature in Celsius.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperatureCelsius: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1CpuTemperatureInfoFormGroup() {
@@ -1637,50 +1751,74 @@ export namespace MyNS {
 	/** Information of a display device. */
 	export interface GoogleChromeManagementV1DisplayDevice {
 
-		/** Output only. Display height in millimeters. */
+		/**
+		 * Output only. Display height in millimeters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayHeightMm?: number | null;
 
 		/** Output only. Display device name. */
 		displayName?: string | null;
 
-		/** Output only. Display width in millimeters. */
+		/**
+		 * Output only. Display width in millimeters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayWidthMm?: number | null;
 
 		/** Output only. Is display internal or not. */
 		internal?: boolean | null;
 
-		/** Output only. Year of manufacture. */
+		/**
+		 * Output only. Year of manufacture.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manufactureYear?: number | null;
 
 		/** Output only. Three letter manufacturer ID. */
 		manufacturerId?: string | null;
 
-		/** Output only. Manufacturer product code. */
+		/**
+		 * Output only. Manufacturer product code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelId?: number | null;
 	}
 
 	/** Information of a display device. */
 	export interface GoogleChromeManagementV1DisplayDeviceFormProperties {
 
-		/** Output only. Display height in millimeters. */
+		/**
+		 * Output only. Display height in millimeters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayHeightMm: FormControl<number | null | undefined>,
 
 		/** Output only. Display device name. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. Display width in millimeters. */
+		/**
+		 * Output only. Display width in millimeters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayWidthMm: FormControl<number | null | undefined>,
 
 		/** Output only. Is display internal or not. */
 		internal: FormControl<boolean | null | undefined>,
 
-		/** Output only. Year of manufacture. */
+		/**
+		 * Output only. Year of manufacture.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manufactureYear: FormControl<number | null | undefined>,
 
 		/** Output only. Three letter manufacturer ID. */
 		manufacturerId: FormControl<string | null | undefined>,
 
-		/** Output only. Manufacturer product code. */
+		/**
+		 * Output only. Manufacturer product code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelId: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1DisplayDeviceFormGroup() {
@@ -1709,13 +1847,22 @@ export namespace MyNS {
 		/** Output only. Indicates if display is internal or not. */
 		isInternal?: boolean | null;
 
-		/** Output only. Refresh rate in Hz. */
+		/**
+		 * Output only. Refresh rate in Hz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshRate?: number | null;
 
-		/** Output only. Resolution height in pixels. */
+		/**
+		 * Output only. Resolution height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resolutionHeight?: number | null;
 
-		/** Output only. Resolution width in pixels. */
+		/**
+		 * Output only. Resolution width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resolutionWidth?: number | null;
 	}
 
@@ -1731,13 +1878,22 @@ export namespace MyNS {
 		/** Output only. Indicates if display is internal or not. */
 		isInternal: FormControl<boolean | null | undefined>,
 
-		/** Output only. Refresh rate in Hz. */
+		/**
+		 * Output only. Refresh rate in Hz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshRate: FormControl<number | null | undefined>,
 
-		/** Output only. Resolution height in pixels. */
+		/**
+		 * Output only. Resolution height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resolutionHeight: FormControl<number | null | undefined>,
 
-		/** Output only. Resolution width in pixels. */
+		/**
+		 * Output only. Resolution width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resolutionWidth: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1DisplayInfoFormGroup() {
@@ -1793,13 +1949,19 @@ export namespace MyNS {
 		/** Print job completion timestamp. */
 		completeTime?: string | null;
 
-		/** Number of copies. */
+		/**
+		 * Number of copies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		copyCount?: number | null;
 
 		/** Print job creation timestamp. */
 		createTime?: string | null;
 
-		/** Number of pages in the document. */
+		/**
+		 * Number of pages in the document.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentPageCount?: number | null;
 
 		/** Duplex mode. */
@@ -1836,13 +1998,19 @@ export namespace MyNS {
 		/** Print job completion timestamp. */
 		completeTime: FormControl<string | null | undefined>,
 
-		/** Number of copies. */
+		/**
+		 * Number of copies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		copyCount: FormControl<number | null | undefined>,
 
 		/** Print job creation timestamp. */
 		createTime: FormControl<string | null | undefined>,
 
-		/** Number of pages in the document. */
+		/**
+		 * Number of pages in the document.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentPageCount: FormControl<number | null | undefined>,
 
 		/** Duplex mode. */
@@ -1904,7 +2072,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken?: string | null;
 
-		/** Total number of devices matching request. */
+		/**
+		 * Total number of devices matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1914,7 +2085,10 @@ export namespace MyNS {
 		/** Token to specify the next page of the request. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total number of devices matching request. */
+		/**
+		 * Total number of devices matching request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1FindInstalledAppDevicesResponseFormGroup() {
@@ -2024,7 +2198,10 @@ export namespace MyNS {
 		/** Output only. Touch screen device is stylus capable or not. */
 		stylusCapable?: boolean | null;
 
-		/** Output only. Number of touch points supported on the device. */
+		/**
+		 * Output only. Number of touch points supported on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		touchPointCount?: number | null;
 	}
 
@@ -2037,7 +2214,10 @@ export namespace MyNS {
 		/** Output only. Touch screen device is stylus capable or not. */
 		stylusCapable: FormControl<boolean | null | undefined>,
 
-		/** Output only. Number of touch points supported on the device. */
+		/**
+		 * Output only. Number of touch points supported on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		touchPointCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1TouchScreenDeviceFormGroup() {
@@ -2381,7 +2561,10 @@ export namespace MyNS {
 	/** Contains samples of memory status reports. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: Only at upload, SystemRamFreeByes is collected every 10 minutes * Default Data Reporting Frequency: Every 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_MEMORY_REPORT */
 	export interface GoogleChromeManagementV1MemoryStatusReport {
 
-		/** Output only. Number of page faults during this collection */
+		/**
+		 * Output only. Number of page faults during this collection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageFaults?: number | null;
 
 		/** Output only. The timestamp in milliseconds representing time at which this report was sampled. */
@@ -2397,7 +2580,10 @@ export namespace MyNS {
 	/** Contains samples of memory status reports. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: Only at upload, SystemRamFreeByes is collected every 10 minutes * Default Data Reporting Frequency: Every 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_MEMORY_REPORT */
 	export interface GoogleChromeManagementV1MemoryStatusReportFormProperties {
 
-		/** Output only. Number of page faults during this collection */
+		/**
+		 * Output only. Number of page faults during this collection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageFaults: FormControl<number | null | undefined>,
 
 		/** Output only. The timestamp in milliseconds representing time at which this report was sampled. */
@@ -2577,13 +2763,19 @@ export namespace MyNS {
 		/** Output only. Frequency the report is sampled. */
 		sampleFrequency?: string | null;
 
-		/** Output only. Signal strength for wireless networks measured in decibels. */
+		/**
+		 * Output only. Signal strength for wireless networks measured in decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalStrengthDbm?: number | null;
 
 		/** Output only. Transmission bit rate measured in Megabits per second. */
 		transmissionBitRateMbps?: string | null;
 
-		/** Output only. Transmission power measured in decibels. */
+		/**
+		 * Output only. Transmission power measured in decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transmissionPowerDbm?: number | null;
 
 		/** Output only. Wifi link quality. Value ranges from [0, 70]. 0 indicates no signal and 70 indicates a strong signal. */
@@ -2623,13 +2815,19 @@ export namespace MyNS {
 		/** Output only. Frequency the report is sampled. */
 		sampleFrequency: FormControl<string | null | undefined>,
 
-		/** Output only. Signal strength for wireless networks measured in decibels. */
+		/**
+		 * Output only. Signal strength for wireless networks measured in decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalStrengthDbm: FormControl<number | null | undefined>,
 
 		/** Output only. Transmission bit rate measured in Megabits per second. */
 		transmissionBitRateMbps: FormControl<string | null | undefined>,
 
-		/** Output only. Transmission power measured in decibels. */
+		/**
+		 * Output only. Transmission power measured in decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transmissionPowerDbm: FormControl<number | null | undefined>,
 
 		/** Output only. Wifi link quality. Value ranges from [0, 70]. 0 indicates no signal and 70 indicates a strong signal. */
@@ -2751,7 +2949,10 @@ export namespace MyNS {
 		/** Output only. Categories the device belongs to https://www.usb.org/defined-class-codes */
 		categories?: Array<string>;
 
-		/** Output only. Class ID https://www.usb.org/defined-class-codes */
+		/**
+		 * Output only. Class ID https://www.usb.org/defined-class-codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		classId?: number | null;
 
 		/** Output only. Firmware version */
@@ -2760,23 +2961,35 @@ export namespace MyNS {
 		/** Output only. Device name, model name, or product name */
 		name?: string | null;
 
-		/** Output only. Product ID */
+		/**
+		 * Output only. Product ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pid?: number | null;
 
-		/** Output only. Subclass ID https://www.usb.org/defined-class-codes */
+		/**
+		 * Output only. Subclass ID https://www.usb.org/defined-class-codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subclassId?: number | null;
 
 		/** Output only. Vendor name */
 		vendor?: string | null;
 
-		/** Output only. Vendor ID */
+		/**
+		 * Output only. Vendor ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid?: number | null;
 	}
 
 	/** USB connected peripheral report. */
 	export interface GoogleChromeManagementV1UsbPeripheralReportFormProperties {
 
-		/** Output only. Class ID https://www.usb.org/defined-class-codes */
+		/**
+		 * Output only. Class ID https://www.usb.org/defined-class-codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		classId: FormControl<number | null | undefined>,
 
 		/** Output only. Firmware version */
@@ -2785,16 +2998,25 @@ export namespace MyNS {
 		/** Output only. Device name, model name, or product name */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. Product ID */
+		/**
+		 * Output only. Product ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pid: FormControl<number | null | undefined>,
 
-		/** Output only. Subclass ID https://www.usb.org/defined-class-codes */
+		/**
+		 * Output only. Subclass ID https://www.usb.org/defined-class-codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subclassId: FormControl<number | null | undefined>,
 
 		/** Output only. Vendor name */
 		vendor: FormControl<string | null | undefined>,
 
-		/** Output only. Vendor ID */
+		/**
+		 * Output only. Vendor ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1UsbPeripheralReportFormGroup() {
@@ -3156,7 +3378,10 @@ export namespace MyNS {
 		/** Unique identifier of the network. */
 		guid?: string | null;
 
-		/** Signal strength RSSI value. */
+		/**
+		 * Signal strength RSSI value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalStrengthDbm?: number | null;
 	}
 
@@ -3166,7 +3391,10 @@ export namespace MyNS {
 		/** Unique identifier of the network. */
 		guid: FormControl<string | null | undefined>,
 
-		/** Signal strength RSSI value. */
+		/**
+		 * Signal strength RSSI value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalStrengthDbm: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChromeManagementV1TelemetryNetworkSignalStrengthEventFormGroup() {
@@ -3436,6 +3664,7 @@ export namespace MyNS {
 		 * @param {string} orderBy Field used to order results. Supported fields: * request_count * latest_request_time
 		 * @param {string} orgUnitId The ID of the organizational unit.
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 50, anything above will be coerced to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the request to be returned.
 		 * @return {GoogleChromeManagementV1CountChromeAppRequestsResponse} Successful response
 		 */
@@ -3498,6 +3727,7 @@ export namespace MyNS {
 		 * @param {string} filter Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * last_active_date
 		 * @param {string} orgUnitId The ID of the organizational unit.
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the request to be returned.
 		 * @return {GoogleChromeManagementV1CountChromeVersionsResponse} Successful response
 		 */
@@ -3513,6 +3743,7 @@ export namespace MyNS {
 		 * @param {string} orderBy Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * app_id
 		 * @param {string} orgUnitId The ID of the organizational unit.
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the request to be returned.
 		 * @return {GoogleChromeManagementV1CountInstalledAppsResponse} Successful response
 		 */
@@ -3527,6 +3758,7 @@ export namespace MyNS {
 		 * @param {string} filter Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Note: Only >= and <= comparators are supported in this filter. Supported filter fields: * complete_time
 		 * @param {string} orderBy Field used to order results. If omitted, results will be ordered in ascending order of the 'printer' field. Supported order_by fields: * printer * job_count * device_count * user_count
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the response to be returned.
 		 * @param {string} printerOrgUnitId The ID of the organizational unit for printers. If specified, only data for printers from the specified organizational unit will be returned. If omitted, data for printers from all organizational units will be returned.
 		 * @return {GoogleChromeManagementV1CountPrintJobsByPrinterResponse} Successful response
@@ -3542,6 +3774,7 @@ export namespace MyNS {
 		 * @param {string} filter Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Note: Only >= and <= comparators are supported in this filter. Supported filter fields: * complete_time
 		 * @param {string} orderBy Field used to order results. If omitted, results will be ordered in ascending order of the 'user_email' field. Supported order_by fields: * user_email * job_count * printer_count * device_count
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the response to be returned.
 		 * @param {string} printerOrgUnitId The ID of the organizational unit for printers. If specified, only print jobs initiated with printers from the specified organizational unit will be counted. If omitted, all print jobs will be counted.
 		 * @return {GoogleChromeManagementV1CountPrintJobsByUserResponse} Successful response
@@ -3557,6 +3790,7 @@ export namespace MyNS {
 		 * @param {string} filter Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Note: Only >= and <= comparators are supported for `complete_time`. Note: Only = comparator supported for `user_id` and `printer_id`. Supported filter fields: * complete_time * printer_id * user_id
 		 * @param {string} orderBy Field used to order results. If not specified, results will be ordered in descending order of the `complete_time` field. Supported order by fields: * title * state * create_time * complete_time * document_page_count * color_mode * duplex_mode * printer * user_email
 		 * @param {number} pageSize The number of print jobs in the page from 0 to 100 inclusive, if page_size is not specified or zero, the size will be 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from a previous `EnumeratePrintJobs` call. Provide this to retrieve the subsequent page. If omitted, the first page of results will be returned. When paginating, all other parameters provided to `EnumeratePrintJobs` must match the call that provided the page token.
 		 * @param {string} printerOrgUnitId The ID of the organizational unit for printers. If specified, only print jobs submitted to printers from the specified organizational unit will be returned.
 		 * @return {GoogleChromeManagementV1EnumeratePrintJobsResponse} Successful response
@@ -3575,6 +3809,7 @@ export namespace MyNS {
 		 * @param {string} orderBy Field used to order results. Supported order by fields: * machine * device_id
 		 * @param {string} orgUnitId The ID of the organizational unit.
 		 * @param {number} pageSize Maximum number of results to return. Maximum and default are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify the page of the request to be returned.
 		 * @return {GoogleChromeManagementV1FindInstalledAppDevicesResponse} Successful response
 		 */
@@ -3609,6 +3844,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Customer id or "my_customer" to use the customer associated to the account making the request.
 		 * @param {string} filter Optional. Only include resources that match the filter. Supported filter fields: - org_unit_id - serial_number - device_id - reports_timestamp The "reports_timestamp" filter accepts either the Unix Epoch milliseconds format or the RFC3339 UTC "Zulu" format with nanosecond resolution and up to nine fractional digits. Both formats should be surrounded by simple double quotes. Examples: "2014-10-02T15:01:23Z", "2014-10-02T15:01:23.045123456Z", "1679283943823".
 		 * @param {number} pageSize Maximum number of results to return. Default value is 100. Maximum value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @param {string} readMask Required. Read mask to specify which fields to return.
 		 * @return {GoogleChromeManagementV1ListTelemetryDevicesResponse} Successful response
@@ -3623,6 +3859,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Customer id or "my_customer" to use the customer associated to the account making the request.
 		 * @param {string} filter Optional. Only include resources that match the filter. Although this parameter is currently optional, this parameter will be required- please specify at least 1 event type. Supported filter fields: - device_id - user_id - device_org_unit_id - user_org_unit_id - timestamp - event_type The "timestamp" filter accepts either the Unix Epoch milliseconds format or the RFC3339 UTC "Zulu" format with nanosecond resolution and up to nine fractional digits. Both formats should be surrounded by simple double quotes. Examples: "2014-10-02T15:01:23Z", "2014-10-02T15:01:23.045123456Z", "1679283943823".
 		 * @param {number} pageSize Optional. Maximum number of results to return. Default value is 100. Maximum value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Token to specify next page in the list.
 		 * @param {string} readMask Required. Read mask to specify which fields to return. Although currently required, this field will become optional, while the filter parameter with an event type will be come required.
 		 * @return {GoogleChromeManagementV1ListTelemetryEventsResponse} Successful response
@@ -3636,6 +3873,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/telemetry/notificationConfigs
 		 * @param {string} parent Required. The parent which owns the notification configs.
 		 * @param {number} pageSize The maximum number of notification configs to return. The service may return fewer than this value. If unspecified, at most 100 notification configs will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListTelemetryNotificationConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTelemetryNotificationConfigs` must match the call that provided the page token.
 		 * @return {GoogleChromeManagementV1ListTelemetryNotificationConfigsResponse} Successful response
 		 */
@@ -3659,6 +3897,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Customer id or "my_customer" to use the customer associated to the account making the request.
 		 * @param {string} filter Only include resources that match the filter. Supported filter fields: - user_id - user_org_unit_id 
 		 * @param {number} pageSize Maximum number of results to return. Default value is 100. Maximum value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @param {string} readMask Read mask to specify which fields to return.
 		 * @return {GoogleChromeManagementV1ListTelemetryUsersResponse} Successful response

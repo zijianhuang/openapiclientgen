@@ -13173,6 +13173,9 @@ namespace MyNS
 		/// DescribeSchedule prod/channels/{channelId}/schedule
 		/// </summary>
 		/// <param name="channelId">Id of the channel whose schedule is being updated.</param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13310,6 +13313,9 @@ namespace MyNS
 		/// Produces list of channels that have been created
 		/// ListChannels prod/channels
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13378,6 +13384,9 @@ namespace MyNS
 		/// Produces list of inputs that have been created
 		/// ListInputs prod/inputs
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13453,6 +13462,9 @@ namespace MyNS
 		/// Produces a list of Input Security Groups for an account
 		/// ListInputSecurityGroups prod/inputSecurityGroups
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13521,7 +13533,10 @@ namespace MyNS
 		/// Retrieve a list of the existing multiplexes.
 		/// ListMultiplexes prod/multiplexes
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to return.</param>
+		/// <param name="maxResults">The maximum number of items to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">The token to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -13592,7 +13607,10 @@ namespace MyNS
 		/// List the programs that currently exist for a specific multiplex.
 		/// ListMultiplexPrograms prod/multiplexes/{multiplexId}/programs
 		/// </summary>
-		/// <param name="maxResults">The maximum number of items to return.</param>
+		/// <param name="maxResults">The maximum number of items to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="multiplexId">The ID of the multiplex that the programs belong to.</param>
 		/// <param name="nextToken">The token to retrieve the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -14659,6 +14677,9 @@ namespace MyNS
 		/// List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you.
 		/// ListInputDeviceTransfers prod/inputDeviceTransfers#transferType
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -14694,6 +14715,9 @@ namespace MyNS
 		/// List input devices
 		/// ListInputDevices prod/inputDevices
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -14735,6 +14759,9 @@ namespace MyNS
 		///</param>
 		/// <param name="codec">Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'</param>
 		/// <param name="duration">Filter by offering duration, e.g. '12'</param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="maximumBitrate">Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
 		///</param>
 		/// <param name="maximumFramerate">Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'</param>
@@ -14782,6 +14809,9 @@ namespace MyNS
 		/// <param name="channelClass">Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
 		///</param>
 		/// <param name="codec">Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'</param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="maximumBitrate">Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
 		///</param>
 		/// <param name="maximumFramerate">Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'</param>

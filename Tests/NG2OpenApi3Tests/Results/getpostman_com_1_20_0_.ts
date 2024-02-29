@@ -3104,15 +3104,27 @@ export namespace MyNS {
 	}
 
 	export interface ApiKeyOwnerReturnOperations {
+
+		/** Type: double */
 		limit?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		overage?: number | null;
+
+		/** Type: double */
 		usage?: number | null;
 	}
 	export interface ApiKeyOwnerReturnOperationsFormProperties {
+
+		/** Type: double */
 		limit: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		overage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateApiKeyOwnerReturnOperationsFormGroup() {
@@ -3685,11 +3697,19 @@ export namespace MyNS {
 	}
 
 	export interface SingleMonitorReturnMonitorLastRunStatsAssertions {
+
+		/** Type: double */
 		failed?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface SingleMonitorReturnMonitorLastRunStatsAssertionsFormProperties {
+
+		/** Type: double */
 		failed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSingleMonitorReturnMonitorLastRunStatsAssertionsFormGroup() {
@@ -3701,9 +3721,13 @@ export namespace MyNS {
 	}
 
 	export interface SingleMonitorReturnMonitorLastRunStatsRequests {
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface SingleMonitorReturnMonitorLastRunStatsRequestsFormProperties {
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSingleMonitorReturnMonitorLastRunStatsRequestsFormGroup() {
@@ -3753,13 +3777,21 @@ export namespace MyNS {
 
 	export interface SingleMonitorReturnMonitorOptions {
 		followRedirects?: boolean | null;
+
+		/** Type: double */
 		requestDelay?: number | null;
+
+		/** Type: double */
 		requestTimeout?: number | null;
 		strictSSL?: boolean | null;
 	}
 	export interface SingleMonitorReturnMonitorOptionsFormProperties {
 		followRedirects: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		requestDelay: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		requestTimeout: FormControl<number | null | undefined>,
 		strictSSL: FormControl<boolean | null | undefined>,
 	}
@@ -3889,12 +3921,16 @@ export namespace MyNS {
 	}
 
 	export interface RunAMonitorReturnRunExecutions {
+
+		/** Type: double */
 		id?: number | null;
 		item?: RunAMonitorReturnRunExecutionsItem;
 		request?: RunAMonitorReturnRunExecutionsRequest;
 		response?: RunAMonitorReturnRunExecutionsResponse;
 	}
 	export interface RunAMonitorReturnRunExecutionsFormProperties {
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateRunAMonitorReturnRunExecutionsFormGroup() {
@@ -3942,10 +3978,14 @@ export namespace MyNS {
 	}
 
 	export interface RunAMonitorReturnRunExecutionsRequestBody {
+
+		/** Type: double */
 		contentLength?: number | null;
 		mode?: string | null;
 	}
 	export interface RunAMonitorReturnRunExecutionsRequestBodyFormProperties {
+
+		/** Type: double */
 		contentLength: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 	}
@@ -3960,12 +4000,16 @@ export namespace MyNS {
 	export interface RunAMonitorReturnRunExecutionsRequestHeaders {
 		accept?: string | null;
 		'accept-encoding'?: string | null;
+
+		/** Type: double */
 		'content-length'?: number | null;
 		'content-type'?: string | null;
 	}
 	export interface RunAMonitorReturnRunExecutionsRequestHeadersFormProperties {
 		accept: FormControl<string | null | undefined>,
 		'accept-encoding': FormControl<string | null | undefined>,
+
+		/** Type: double */
 		'content-length': FormControl<number | null | undefined>,
 		'content-type': FormControl<string | null | undefined>,
 	}
@@ -3981,14 +4025,26 @@ export namespace MyNS {
 
 	export interface RunAMonitorReturnRunExecutionsResponse {
 		body?: RunAMonitorReturnRunExecutionsResponseBody;
+
+		/** Type: double */
 		code?: number | null;
 		headers?: RunAMonitorReturnRunExecutionsResponseHeaders;
+
+		/** Type: double */
 		responseSize?: number | null;
+
+		/** Type: double */
 		responseTime?: number | null;
 	}
 	export interface RunAMonitorReturnRunExecutionsResponseFormProperties {
+
+		/** Type: double */
 		code: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		responseSize: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		responseTime: FormControl<number | null | undefined>,
 	}
 	export function CreateRunAMonitorReturnRunExecutionsResponseFormGroup() {
@@ -4001,9 +4057,13 @@ export namespace MyNS {
 	}
 
 	export interface RunAMonitorReturnRunExecutionsResponseBody {
+
+		/** Type: double */
 		contentLength?: number | null;
 	}
 	export interface RunAMonitorReturnRunExecutionsResponseBodyFormProperties {
+
+		/** Type: double */
 		contentLength: FormControl<number | null | undefined>,
 	}
 	export function CreateRunAMonitorReturnRunExecutionsResponseBodyFormGroup() {
@@ -4040,11 +4100,15 @@ export namespace MyNS {
 
 	export interface RunAMonitorReturnRunFailures {
 		assertion?: RunAMonitorReturnRunFailuresAssertion;
+
+		/** Type: double */
 		executionId?: number | null;
 		message?: string | null;
 		name?: string | null;
 	}
 	export interface RunAMonitorReturnRunFailuresFormProperties {
+
+		/** Type: double */
 		executionId: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -4115,11 +4179,19 @@ export namespace MyNS {
 	}
 
 	export interface RunAMonitorReturnRunStatsAssertions {
+
+		/** Type: double */
 		failed?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface RunAMonitorReturnRunStatsAssertionsFormProperties {
+
+		/** Type: double */
 		failed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateRunAMonitorReturnRunStatsAssertionsFormGroup() {
@@ -4131,11 +4203,19 @@ export namespace MyNS {
 	}
 
 	export interface RunAMonitorReturnRunStatsRequests {
+
+		/** Type: double */
 		failed?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface RunAMonitorReturnRunStatsRequestsFormProperties {
+
+		/** Type: double */
 		failed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateRunAMonitorReturnRunStatsRequestsFormGroup() {

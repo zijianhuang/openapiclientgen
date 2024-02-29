@@ -66,8 +66,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource. A name must be globally unique.
 		 * Required
-		 * Max length: 24
 		 * Min length: 3
+		 * Max length: 24
 		 */
 		name: string;
 
@@ -84,8 +84,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource. A name must be globally unique.
 		 * Required
-		 * Max length: 24
 		 * Min length: 3
+		 * Max length: 24
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -518,6 +518,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @return {MediaService} Success. Returns the details of the Media Services account.
 		 */
 		MediaService_Get(subscriptionId: string, api_version: string, resourceGroupName: string, mediaServiceName: string): Observable<MediaService> {
@@ -531,6 +532,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @param {MediaService} requestBody Media Service properties needed for creation.
 		 * @return {void} 
 		 */
@@ -545,6 +547,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @return {void} Success. The Media Services account was deleted.
 		 */
 		MediaService_Delete(subscriptionId: string, api_version: string, resourceGroupName: string, mediaServiceName: string): Observable<HttpResponse<string>> {
@@ -558,6 +561,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @param {MediaService} requestBody Media Service properties needed for update.
 		 * @return {MediaService} Success. The Media Services account was updated.
 		 */
@@ -572,6 +576,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @return {ServiceKeys} Success. The keys for the Media Services account were listed.
 		 */
 		MediaService_ListKeys(subscriptionId: string, api_version: string, resourceGroupName: string, mediaServiceName: string): Observable<ServiceKeys> {
@@ -585,6 +590,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @param {RegenerateKeyInput} requestBody Properties needed to regenerate the Media Service key.
 		 * @return {RegenerateKeyOutput} Success. The Media Services key specified in the input was regenerated.
 		 */
@@ -599,6 +605,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2015-10-01.
 		 * @param {string} resourceGroupName Name of the resource group within the Azure subscription.
 		 * @param {string} mediaServiceName Name of the Media Service.
+		 *     Min length: 3    Max length: 24
 		 * @param {SyncStorageKeysInput} requestBody Properties needed to synchronize the keys for a storage account to the Media Service.
 		 * @return {void} Success. The keys for the storage account were synchronized.
 		 */

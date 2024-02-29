@@ -59,14 +59,20 @@ export namespace MyNS {
 	/** Contains annotation details specific to classification. */
 	export interface ClassificationAnnotation {
 
-		/** Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence that the annotation is positive. If a user approves an annotation as negative or positive, the score value remains unchanged. If a user creates an annotation, the score is 0 for negative or 1 for positive. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence that the annotation is positive. If a user approves an annotation as negative or positive, the score value remains unchanged. If a user creates an annotation, the score is 0 for negative or 1 for positive.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Contains annotation details specific to classification. */
 	export interface ClassificationAnnotationFormProperties {
 
-		/** Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence that the annotation is positive. If a user approves an annotation as negative or positive, the score value remains unchanged. If a user creates an annotation, the score is 0 for negative or 1 for positive. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence that the annotation is positive. If a user approves an annotation as negative or positive, the score value remains unchanged. If a user creates an annotation, the score is 0 for negative or 1 for positive.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateClassificationAnnotationFormGroup() {
@@ -83,14 +89,20 @@ export namespace MyNS {
 		/** A bounding polygon of a detected object on a plane. On output both vertices and normalized_vertices are provided. The polygon is formed by connecting vertices in the order they are listed. */
 		boundingBox?: BoundingPoly;
 
-		/** Output only. The confidence that this annotation is positive for the parent example, value in [0, 1], higher means higher positivity confidence. */
+		/**
+		 * Output only. The confidence that this annotation is positive for the parent example, value in [0, 1], higher means higher positivity confidence.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Annotation details for image object detection. */
 	export interface ImageObjectDetectionAnnotationFormProperties {
 
-		/** Output only. The confidence that this annotation is positive for the parent example, value in [0, 1], higher means higher positivity confidence. */
+		/**
+		 * Output only. The confidence that this annotation is positive for the parent example, value in [0, 1], higher means higher positivity confidence.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateImageObjectDetectionAnnotationFormGroup() {
@@ -121,20 +133,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. The normalized vertex coordinates are between 0 to 1 fractions relative to the original plane (image, video). E.g. if the plane (e.g. whole image) would have size 10 x 20 then a point with normalized coordinates (0.1, 0.3) would be at the position (1, 6) on that plane. */
 	export interface NormalizedVertex {
 
-		/** Required. Horizontal coordinate. */
+		/**
+		 * Required. Horizontal coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Required. Vertical coordinate. */
+		/**
+		 * Required. Vertical coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. The normalized vertex coordinates are between 0 to 1 fractions relative to the original plane (image, video). E.g. if the plane (e.g. whole image) would have size 10 x 20 then a point with normalized coordinates (0.1, 0.3) would be at the position (1, 6) on that plane. */
 	export interface NormalizedVertexFormProperties {
 
-		/** Required. Horizontal coordinate. */
+		/**
+		 * Required. Horizontal coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Required. Vertical coordinate. */
+		/**
+		 * Required. Vertical coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateNormalizedVertexFormGroup() {
@@ -149,13 +173,19 @@ export namespace MyNS {
 	/** Contains annotation details specific to Tables. */
 	export interface TablesAnnotation {
 
-		/** Output only. Stores the prediction score for the baseline example, which is defined as the example with all values set to their baseline values. This is used as part of the Sampled Shapley explanation of the model's prediction. This field is populated only when feature importance is requested. For regression models, this holds the baseline prediction for the baseline example. For classification models, this holds the baseline prediction for the baseline example for the argmax class. */
+		/**
+		 * Output only. Stores the prediction score for the baseline example, which is defined as the example with all values set to their baseline values. This is used as part of the Sampled Shapley explanation of the model's prediction. This field is populated only when feature importance is requested. For regression models, this holds the baseline prediction for the baseline example. For classification models, this holds the baseline prediction for the baseline example for the argmax class.
+		 * Type: float
+		 */
 		baselineScore?: number | null;
 
 		/** A range between two double numbers. */
 		predictionInterval?: DoubleRange;
 
-		/** Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher value means greater confidence in the returned value. For target_column_spec of FLOAT64 data type the score is not populated. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher value means greater confidence in the returned value. For target_column_spec of FLOAT64 data type the score is not populated.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** Output only. Auxiliary information for each of the model's input_feature_column_specs with respect to this particular prediction. If no other fields than column_spec_name and column_display_name would be populated, then this whole field is not. */
@@ -168,10 +198,16 @@ export namespace MyNS {
 	/** Contains annotation details specific to Tables. */
 	export interface TablesAnnotationFormProperties {
 
-		/** Output only. Stores the prediction score for the baseline example, which is defined as the example with all values set to their baseline values. This is used as part of the Sampled Shapley explanation of the model's prediction. This field is populated only when feature importance is requested. For regression models, this holds the baseline prediction for the baseline example. For classification models, this holds the baseline prediction for the baseline example for the argmax class. */
+		/**
+		 * Output only. Stores the prediction score for the baseline example, which is defined as the example with all values set to their baseline values. This is used as part of the Sampled Shapley explanation of the model's prediction. This field is populated only when feature importance is requested. For regression models, this holds the baseline prediction for the baseline example. For classification models, this holds the baseline prediction for the baseline example for the argmax class.
+		 * Type: float
+		 */
 		baselineScore: FormControl<number | null | undefined>,
 
-		/** Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher value means greater confidence in the returned value. For target_column_spec of FLOAT64 data type the score is not populated. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher value means greater confidence in the returned value. For target_column_spec of FLOAT64 data type the score is not populated.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The predicted value of the row's target_column. The value depends on the column's DataType: * CATEGORY - the predicted (with the above confidence `score`) CATEGORY value. * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value. */
@@ -190,20 +226,32 @@ export namespace MyNS {
 	/** A range between two double numbers. */
 	export interface DoubleRange {
 
-		/** End of the range, exclusive. */
+		/**
+		 * End of the range, exclusive.
+		 * Type: double
+		 */
 		end?: number | null;
 
-		/** Start of the range, inclusive. */
+		/**
+		 * Start of the range, inclusive.
+		 * Type: double
+		 */
 		start?: number | null;
 	}
 
 	/** A range between two double numbers. */
 	export interface DoubleRangeFormProperties {
 
-		/** End of the range, exclusive. */
+		/**
+		 * End of the range, exclusive.
+		 * Type: double
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Start of the range, inclusive. */
+		/**
+		 * Start of the range, inclusive.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateDoubleRangeFormGroup() {
@@ -224,7 +272,10 @@ export namespace MyNS {
 		/** Output only. The name of the ColumnSpec describing the column. Not populated when this proto is outputted to BigQuery. */
 		columnSpecName?: string | null;
 
-		/** Output only. When given as part of a Model (always populated): Measurement of how much model predictions correctness on the TEST data depend on values in this column. A value between 0 and 1, higher means higher influence. These values are normalized - for all input feature columns of a given model they add to 1. When given back by Predict (populated iff feature_importance param is set) or Batch Predict (populated iff feature_importance param is set): Measurement of how impactful for the prediction returned for the given row the value in this column was. Specifically, the feature importance specifies the marginal contribution that the feature made to the prediction score compared to the baseline score. These values are computed using the Sampled Shapley method. */
+		/**
+		 * Output only. When given as part of a Model (always populated): Measurement of how much model predictions correctness on the TEST data depend on values in this column. A value between 0 and 1, higher means higher influence. These values are normalized - for all input feature columns of a given model they add to 1. When given back by Predict (populated iff feature_importance param is set) or Batch Predict (populated iff feature_importance param is set): Measurement of how impactful for the prediction returned for the given row the value in this column was. Specifically, the feature importance specifies the marginal contribution that the feature made to the prediction score compared to the baseline score. These values are computed using the Sampled Shapley method.
+		 * Type: float
+		 */
 		featureImportance?: number | null;
 	}
 
@@ -237,7 +288,10 @@ export namespace MyNS {
 		/** Output only. The name of the ColumnSpec describing the column. Not populated when this proto is outputted to BigQuery. */
 		columnSpecName: FormControl<string | null | undefined>,
 
-		/** Output only. When given as part of a Model (always populated): Measurement of how much model predictions correctness on the TEST data depend on values in this column. A value between 0 and 1, higher means higher influence. These values are normalized - for all input feature columns of a given model they add to 1. When given back by Predict (populated iff feature_importance param is set) or Batch Predict (populated iff feature_importance param is set): Measurement of how impactful for the prediction returned for the given row the value in this column was. Specifically, the feature importance specifies the marginal contribution that the feature made to the prediction score compared to the baseline score. These values are computed using the Sampled Shapley method. */
+		/**
+		 * Output only. When given as part of a Model (always populated): Measurement of how much model predictions correctness on the TEST data depend on values in this column. A value between 0 and 1, higher means higher influence. These values are normalized - for all input feature columns of a given model they add to 1. When given back by Predict (populated iff feature_importance param is set) or Batch Predict (populated iff feature_importance param is set): Measurement of how impactful for the prediction returned for the given row the value in this column was. Specifically, the feature importance specifies the marginal contribution that the feature made to the prediction score compared to the baseline score. These values are computed using the Sampled Shapley method.
+		 * Type: float
+		 */
 		featureImportance: FormControl<number | null | undefined>,
 	}
 	export function CreateTablesModelColumnInfoFormGroup() {
@@ -253,7 +307,10 @@ export namespace MyNS {
 	/** Annotation for identifying spans of text. */
 	export interface TextExtractionAnnotation {
 
-		/** Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence in correctness of the annotation. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence in correctness of the annotation.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding. */
@@ -263,7 +320,10 @@ export namespace MyNS {
 	/** Annotation for identifying spans of text. */
 	export interface TextExtractionAnnotationFormProperties {
 
-		/** Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence in correctness of the annotation. */
+		/**
+		 * Output only. A confidence estimate between 0.0 and 1.0. A higher value means greater confidence in correctness of the annotation.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateTextExtractionAnnotationFormGroup() {
@@ -312,14 +372,20 @@ export namespace MyNS {
 	/** Contains annotation details specific to text sentiment. */
 	export interface TextSentimentAnnotation {
 
-		/** Output only. The sentiment with the semantic, as given to the AutoMl.ImportData when populating the dataset from which the model used for the prediction had been trained. The sentiment values are between 0 and Dataset.text_sentiment_dataset_metadata.sentiment_max (inclusive), with higher value meaning more positive sentiment. They are completely relative, i.e. 0 means least positive sentiment and sentiment_max means the most positive from the sentiments present in the train data. Therefore e.g. if train data had only negative sentiment, then sentiment_max, would be still negative (although least negative). The sentiment shouldn't be confused with "score" or "magnitude" from the previous Natural Language Sentiment Analysis API. */
+		/**
+		 * Output only. The sentiment with the semantic, as given to the AutoMl.ImportData when populating the dataset from which the model used for the prediction had been trained. The sentiment values are between 0 and Dataset.text_sentiment_dataset_metadata.sentiment_max (inclusive), with higher value meaning more positive sentiment. They are completely relative, i.e. 0 means least positive sentiment and sentiment_max means the most positive from the sentiments present in the train data. Therefore e.g. if train data had only negative sentiment, then sentiment_max, would be still negative (although least negative). The sentiment shouldn't be confused with "score" or "magnitude" from the previous Natural Language Sentiment Analysis API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment?: number | null;
 	}
 
 	/** Contains annotation details specific to text sentiment. */
 	export interface TextSentimentAnnotationFormProperties {
 
-		/** Output only. The sentiment with the semantic, as given to the AutoMl.ImportData when populating the dataset from which the model used for the prediction had been trained. The sentiment values are between 0 and Dataset.text_sentiment_dataset_metadata.sentiment_max (inclusive), with higher value meaning more positive sentiment. They are completely relative, i.e. 0 means least positive sentiment and sentiment_max means the most positive from the sentiments present in the train data. Therefore e.g. if train data had only negative sentiment, then sentiment_max, would be still negative (although least negative). The sentiment shouldn't be confused with "score" or "magnitude" from the previous Natural Language Sentiment Analysis API. */
+		/**
+		 * Output only. The sentiment with the semantic, as given to the AutoMl.ImportData when populating the dataset from which the model used for the prediction had been trained. The sentiment values are between 0 and Dataset.text_sentiment_dataset_metadata.sentiment_max (inclusive), with higher value meaning more positive sentiment. They are completely relative, i.e. 0 means least positive sentiment and sentiment_max means the most positive from the sentiments present in the train data. Therefore e.g. if train data had only negative sentiment, then sentiment_max, would be still negative (although least negative). The sentiment shouldn't be confused with "score" or "magnitude" from the previous Natural Language Sentiment Analysis API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment: FormControl<number | null | undefined>,
 	}
 	export function CreateTextSentimentAnnotationFormGroup() {
@@ -446,7 +512,10 @@ export namespace MyNS {
 		/** Optional. The instance of the object, expressed as a positive integer. Used to tell apart objects of the same type (i.e. AnnotationSpec) when multiple are present on a single example. NOTE: Instance ID prediction quality is not a part of model evaluation and is done as best effort. Especially in cases when an entity goes off-screen for a longer time (minutes), when it comes back it may be given a new instance ID. */
 		instanceId?: string | null;
 
-		/** Output only. The confidence that this annotation is positive for the video at the time_offset, value in [0, 1], higher means higher positivity confidence. For annotations created by the user the score is 1. When user approves an annotation, the original float score is kept (and not changed to 1). */
+		/**
+		 * Output only. The confidence that this annotation is positive for the video at the time_offset, value in [0, 1], higher means higher positivity confidence. For annotations created by the user the score is 1. When user approves an annotation, the original float score is kept (and not changed to 1).
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** Required. A time (frame) of a video to which this annotation pertains. Represented as the duration since the video's start. */
@@ -459,7 +528,10 @@ export namespace MyNS {
 		/** Optional. The instance of the object, expressed as a positive integer. Used to tell apart objects of the same type (i.e. AnnotationSpec) when multiple are present on a single example. NOTE: Instance ID prediction quality is not a part of model evaluation and is done as best effort. Especially in cases when an entity goes off-screen for a longer time (minutes), when it comes back it may be given a new instance ID. */
 		instanceId: FormControl<string | null | undefined>,
 
-		/** Output only. The confidence that this annotation is positive for the video at the time_offset, value in [0, 1], higher means higher positivity confidence. For annotations created by the user the score is 1. When user approves an annotation, the original float score is kept (and not changed to 1). */
+		/**
+		 * Output only. The confidence that this annotation is positive for the video at the time_offset, value in [0, 1], higher means higher positivity confidence. For annotations created by the user the score is 1. When user approves an annotation, the original float score is kept (and not changed to 1).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required. A time (frame) of a video to which this annotation pertains. Represented as the duration since the video's start. */
@@ -481,7 +553,10 @@ export namespace MyNS {
 		/** Required. The name of the annotation spec to show in the interface. The name can be up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`. */
 		displayName?: string | null;
 
-		/** Output only. The number of examples in the parent dataset labeled by the annotation spec. */
+		/**
+		 * Output only. The number of examples in the parent dataset labeled by the annotation spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount?: number | null;
 
 		/** Output only. Resource name of the annotation spec. Form: 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}' */
@@ -494,7 +569,10 @@ export namespace MyNS {
 		/** Required. The name of the annotation spec to show in the interface. The name can be up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples in the parent dataset labeled by the annotation spec. */
+		/**
+		 * Output only. The number of examples in the parent dataset labeled by the annotation spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Resource name of the annotation spec. Form: 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}' */
@@ -631,23 +709,35 @@ export namespace MyNS {
 		/** Histogram buckets of the data series. Sorted by the min value of the bucket, ascendingly, and the number of the buckets is dynamically generated. The buckets are non-overlapping and completely cover whole FLOAT64 range with min of first bucket being `"-Infinity"`, and max of the last one being `"Infinity"`. */
 		histogramBuckets?: Array<HistogramBucket>;
 
-		/** The mean of the series. */
+		/**
+		 * The mean of the series.
+		 * Type: double
+		 */
 		mean?: number | null;
 
 		/** Ordered from 0 to k k-quantile values of the data series of n values. The value at index i is, approximately, the i*n/k-th smallest value in the series; for i = 0 and i = k these are, respectively, the min and max values. */
 		quantiles?: Array<number>;
 
-		/** The standard deviation of the series. */
+		/**
+		 * The standard deviation of the series.
+		 * Type: double
+		 */
 		standardDeviation?: number | null;
 	}
 
 	/** The data statistics of a series of FLOAT64 values. */
 	export interface Float64StatsFormProperties {
 
-		/** The mean of the series. */
+		/**
+		 * The mean of the series.
+		 * Type: double
+		 */
 		mean: FormControl<number | null | undefined>,
 
-		/** The standard deviation of the series. */
+		/**
+		 * The standard deviation of the series.
+		 * Type: double
+		 */
 		standardDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateFloat64StatsFormGroup() {
@@ -665,10 +755,16 @@ export namespace MyNS {
 		/** The number of data values that are in the bucket, i.e. are between min and max values. */
 		count?: string | null;
 
-		/** The maximum value of the bucket, exclusive unless max = `"Infinity"`, in which case it's inclusive. */
+		/**
+		 * The maximum value of the bucket, exclusive unless max = `"Infinity"`, in which case it's inclusive.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** The minimum value of the bucket, inclusive. */
+		/**
+		 * The minimum value of the bucket, inclusive.
+		 * Type: double
+		 */
 		min?: number | null;
 	}
 
@@ -678,10 +774,16 @@ export namespace MyNS {
 		/** The number of data values that are in the bucket, i.e. are between min and max values. */
 		count: FormControl<string | null | undefined>,
 
-		/** The maximum value of the bucket, exclusive unless max = `"Infinity"`, in which case it's inclusive. */
+		/**
+		 * The maximum value of the bucket, exclusive unless max = `"Infinity"`, in which case it's inclusive.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** The minimum value of the bucket, inclusive. */
+		/**
+		 * The minimum value of the bucket, inclusive.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateHistogramBucketFormGroup() {
@@ -1093,20 +1195,32 @@ export namespace MyNS {
 		/** Output only. Metrics for each label-match confidence_threshold from 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall curve is derived from them. */
 		confidenceMetricsEntries?: Array<BoundingBoxMetricsEntryConfidenceMetricsEntry>;
 
-		/** Output only. The intersection-over-union threshold value used to compute this metrics entry. */
+		/**
+		 * Output only. The intersection-over-union threshold value used to compute this metrics entry.
+		 * Type: float
+		 */
 		iouThreshold?: number | null;
 
-		/** Output only. The mean average precision, most often close to au_prc. */
+		/**
+		 * Output only. The mean average precision, most often close to au_prc.
+		 * Type: float
+		 */
 		meanAveragePrecision?: number | null;
 	}
 
 	/** Bounding box matching model metrics for a single intersection-over-union threshold and multiple label match confidence thresholds. */
 	export interface BoundingBoxMetricsEntryFormProperties {
 
-		/** Output only. The intersection-over-union threshold value used to compute this metrics entry. */
+		/**
+		 * Output only. The intersection-over-union threshold value used to compute this metrics entry.
+		 * Type: float
+		 */
 		iouThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. The mean average precision, most often close to au_prc. */
+		/**
+		 * Output only. The mean average precision, most often close to au_prc.
+		 * Type: float
+		 */
 		meanAveragePrecision: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingBoxMetricsEntryFormGroup() {
@@ -1121,32 +1235,56 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface BoundingBoxMetricsEntryConfidenceMetricsEntry {
 
-		/** Output only. The confidence threshold value used to compute the metrics. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Output only. Precision under the given confidence threshold. */
+		/**
+		 * Output only. Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Output only. Recall under the given confidence threshold. */
+		/**
+		 * Output only. Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Metrics for a single confidence threshold. */
 	export interface BoundingBoxMetricsEntryConfidenceMetricsEntryFormProperties {
 
-		/** Output only. The confidence threshold value used to compute the metrics. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Output only. Precision under the given confidence threshold. */
+		/**
+		 * Output only. Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Output only. Recall under the given confidence threshold. */
+		/**
+		 * Output only. Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingBoxMetricsEntryConfidenceMetricsEntryFormGroup() {
@@ -1180,13 +1318,22 @@ export namespace MyNS {
 		/** Output only. The annotation spec ids used for this evaluation. */
 		annotationSpecId?: Array<string>;
 
-		/** Output only. The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auPrc?: number | null;
 
-		/** Output only. The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * Output only. The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auRoc?: number | null;
 
-		/** Output only. The Area Under Precision-Recall Curve metric based on priors. Micro-averaged for the overall evaluation. Deprecated. */
+		/**
+		 * Output only. The Area Under Precision-Recall Curve metric based on priors. Micro-averaged for the overall evaluation. Deprecated.
+		 * Type: float
+		 */
 		baseAuPrc?: number | null;
 
 		/** Output only. Metrics for each confidence_threshold in 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and position_threshold = INT32_MAX_VALUE. ROC and precision-recall curves, and other aggregated metrics are derived from them. The confidence metrics entries may also be supplied for additional values of position_threshold, but from these no aggregated metrics are computed. */
@@ -1195,23 +1342,38 @@ export namespace MyNS {
 		/** Confusion matrix of the model running the classification. */
 		confusionMatrix?: ConfusionMatrix;
 
-		/** Output only. The Log Loss metric. */
+		/**
+		 * Output only. The Log Loss metric.
+		 * Type: float
+		 */
 		logLoss?: number | null;
 	}
 
 	/** Model evaluation metrics for classification problems. Note: For Video Classification this metrics only describe quality of the Video Classification predictions of "segment_classification" type. */
 	export interface ClassificationEvaluationMetricsFormProperties {
 
-		/** Output only. The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auPrc: FormControl<number | null | undefined>,
 
-		/** Output only. The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * Output only. The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auRoc: FormControl<number | null | undefined>,
 
-		/** Output only. The Area Under Precision-Recall Curve metric based on priors. Micro-averaged for the overall evaluation. Deprecated. */
+		/**
+		 * Output only. The Area Under Precision-Recall Curve metric based on priors. Micro-averaged for the overall evaluation. Deprecated.
+		 * Type: float
+		 */
 		baseAuPrc: FormControl<number | null | undefined>,
 
-		/** Output only. The Log Loss metric. */
+		/**
+		 * Output only. The Log Loss metric.
+		 * Type: float
+		 */
 		logLoss: FormControl<number | null | undefined>,
 	}
 	export function CreateClassificationEvaluationMetricsFormGroup() {
@@ -1228,13 +1390,22 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface ClassificationEvaluationMetricsConfidenceMetricsEntry {
 
-		/** Output only. Metrics are computed with an assumption that the model never returns predictions with score lower than this value. */
+		/**
+		 * Output only. Metrics are computed with an assumption that the model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Output only. The harmonic mean of recall_at1 and precision_at1. */
+		/**
+		 * Output only. The harmonic mean of recall_at1 and precision_at1.
+		 * Type: float
+		 */
 		f1ScoreAt1?: number | null;
 
 		/** Output only. The number of ground truth labels that are not matched by a model created label. */
@@ -1243,25 +1414,46 @@ export namespace MyNS {
 		/** Output only. The number of model created labels that do not match a ground truth label. */
 		falsePositiveCount?: string | null;
 
-		/** Output only. False Positive Rate for the given confidence threshold. */
+		/**
+		 * Output only. False Positive Rate for the given confidence threshold.
+		 * Type: float
+		 */
 		falsePositiveRate?: number | null;
 
-		/** Output only. The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		falsePositiveRateAt1?: number | null;
 
-		/** Output only. Metrics are computed with an assumption that the model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the confidence_threshold. */
+		/**
+		 * Output only. Metrics are computed with an assumption that the model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the confidence_threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positionThreshold?: number | null;
 
-		/** Output only. Precision for the given confidence threshold. */
+		/**
+		 * Output only. Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Output only. The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		precisionAt1?: number | null;
 
-		/** Output only. Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Output only. Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** Output only. The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		recallAt1?: number | null;
 
 		/** Output only. The number of labels that were not created by the model, but if they would, they would not match a ground truth label. */
@@ -1274,13 +1466,22 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface ClassificationEvaluationMetricsConfidenceMetricsEntryFormProperties {
 
-		/** Output only. Metrics are computed with an assumption that the model never returns predictions with score lower than this value. */
+		/**
+		 * Output only. Metrics are computed with an assumption that the model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Output only. The harmonic mean of recall_at1 and precision_at1. */
+		/**
+		 * Output only. The harmonic mean of recall_at1 and precision_at1.
+		 * Type: float
+		 */
 		f1ScoreAt1: FormControl<number | null | undefined>,
 
 		/** Output only. The number of ground truth labels that are not matched by a model created label. */
@@ -1289,25 +1490,46 @@ export namespace MyNS {
 		/** Output only. The number of model created labels that do not match a ground truth label. */
 		falsePositiveCount: FormControl<string | null | undefined>,
 
-		/** Output only. False Positive Rate for the given confidence threshold. */
+		/**
+		 * Output only. False Positive Rate for the given confidence threshold.
+		 * Type: float
+		 */
 		falsePositiveRate: FormControl<number | null | undefined>,
 
-		/** Output only. The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		falsePositiveRateAt1: FormControl<number | null | undefined>,
 
-		/** Output only. Metrics are computed with an assumption that the model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the confidence_threshold. */
+		/**
+		 * Output only. Metrics are computed with an assumption that the model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the confidence_threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positionThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. Precision for the given confidence threshold. */
+		/**
+		 * Output only. Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Output only. The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		precisionAt1: FormControl<number | null | undefined>,
 
-		/** Output only. Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Output only. Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** Output only. The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each example. */
+		/**
+		 * Output only. The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each example.
+		 * Type: float
+		 */
 		recallAt1: FormControl<number | null | undefined>,
 
 		/** Output only. The number of labels that were not created by the model, but if they would, they would not match a ground truth label. */
@@ -1512,14 +1734,20 @@ export namespace MyNS {
 	/** A correlation statistics between two series of DataType values. The series may have differing DataType-s, but within a single series the DataType must be the same. */
 	export interface CorrelationStats {
 
-		/** The correlation value using the Cramer's V measure. */
+		/**
+		 * The correlation value using the Cramer's V measure.
+		 * Type: double
+		 */
 		cramersV?: number | null;
 	}
 
 	/** A correlation statistics between two series of DataType values. The series may have differing DataType-s, but within a single series the DataType must be the same. */
 	export interface CorrelationStatsFormProperties {
 
-		/** The correlation value using the Cramer's V measure. */
+		/**
+		 * The correlation value using the Cramer's V measure.
+		 * Type: double
+		 */
 		cramersV: FormControl<number | null | undefined>,
 	}
 	export function CreateCorrelationStatsFormGroup() {
@@ -1559,7 +1787,10 @@ export namespace MyNS {
 		/** Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
 		etag?: string | null;
 
-		/** Output only. The number of examples in the dataset. */
+		/**
+		 * Output only. The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount?: number | null;
 
 		/** Dataset metadata that is specific to image classification. */
@@ -1608,7 +1839,10 @@ export namespace MyNS {
 		/** Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples in the dataset. */
+		/**
+		 * Output only. The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. The resource name of the dataset. Form: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}` */
@@ -1758,14 +1992,20 @@ export namespace MyNS {
 	/** Dataset metadata for text sentiment. */
 	export interface TextSentimentDatasetMetadata {
 
-		/** Required. A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentiment_max (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. sentiment_max value must be between 1 and 10 (inclusive). */
+		/**
+		 * Required. A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentiment_max (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. sentiment_max value must be between 1 and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax?: number | null;
 	}
 
 	/** Dataset metadata for text sentiment. */
 	export interface TextSentimentDatasetMetadataFormProperties {
 
-		/** Required. A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentiment_max (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. sentiment_max value must be between 1 and 10 (inclusive). */
+		/**
+		 * Required. A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentiment_max (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. sentiment_max value must be between 1 and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax: FormControl<number | null | undefined>,
 	}
 	export function CreateTextSentimentDatasetMetadataFormGroup() {
@@ -1937,14 +2177,20 @@ export namespace MyNS {
 		/** Describes the layout of the document. Sorted by page_number. */
 		layout?: Array<Layout>;
 
-		/** Number of pages in the document. */
+		/**
+		 * Number of pages in the document.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount?: number | null;
 	}
 
 	/** A structured text document e.g. a PDF. */
 	export interface DocumentFormProperties {
 
-		/** Number of pages in the document. */
+		/**
+		 * Number of pages in the document.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentFormGroup() {
@@ -1958,26 +2204,38 @@ export namespace MyNS {
 	/** Message that describes dimension of a document. */
 	export interface DocumentDimensions {
 
-		/** Height value of the document, works together with the unit. */
+		/**
+		 * Height value of the document, works together with the unit.
+		 * Type: float
+		 */
 		height?: number | null;
 
 		/** Unit of the dimension. */
 		unit?: DocumentDimensionsUnit | null;
 
-		/** Width value of the document, works together with the unit. */
+		/**
+		 * Width value of the document, works together with the unit.
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 
 	/** Message that describes dimension of a document. */
 	export interface DocumentDimensionsFormProperties {
 
-		/** Height value of the document, works together with the unit. */
+		/**
+		 * Height value of the document, works together with the unit.
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Unit of the dimension. */
 		unit: FormControl<DocumentDimensionsUnit | null | undefined>,
 
-		/** Width value of the document, works together with the unit. */
+		/**
+		 * Width value of the document, works together with the unit.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentDimensionsFormGroup() {
@@ -2015,7 +2273,10 @@ export namespace MyNS {
 		/** A bounding polygon of a detected object on a plane. On output both vertices and normalized_vertices are provided. The polygon is formed by connecting vertices in the order they are listed. */
 		boundingPoly?: BoundingPoly;
 
-		/** Page number of the text_segment in the original document, starts from 1. */
+		/**
+		 * Page number of the text_segment in the original document, starts from 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding. */
@@ -2028,7 +2289,10 @@ export namespace MyNS {
 	/** Describes the layout information of a text_segment in the document. */
 	export interface LayoutFormProperties {
 
-		/** Page number of the text_segment in the original document, starts from 1. */
+		/**
+		 * Page number of the text_segment in the original document, starts from 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The type of the text_segment in document. */
@@ -2439,7 +2703,10 @@ export namespace MyNS {
 		/** Output only. The number of nodes this model is deployed on. A node is an abstraction of a machine resource, which can handle online prediction QPS as given in the node_qps field. */
 		nodeCount?: string | null;
 
-		/** Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed. */
+		/**
+		 * Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed.
+		 * Type: double
+		 */
 		nodeQps?: number | null;
 
 		/** Output only. The reason that this create model operation stopped, e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`. */
@@ -2464,7 +2731,10 @@ export namespace MyNS {
 		/** Output only. The number of nodes this model is deployed on. A node is an abstraction of a machine resource, which can handle online prediction QPS as given in the node_qps field. */
 		nodeCount: FormControl<string | null | undefined>,
 
-		/** Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed. */
+		/**
+		 * Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed.
+		 * Type: double
+		 */
 		nodeQps: FormControl<number | null | undefined>,
 
 		/** Output only. The reason that this create model operation stopped, e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`. */
@@ -2493,23 +2763,35 @@ export namespace MyNS {
 	/** Model evaluation metrics for image object detection problems. Evaluates prediction quality of labeled bounding boxes. */
 	export interface ImageObjectDetectionEvaluationMetrics {
 
-		/** Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries. */
+		/**
+		 * Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision?: number | null;
 
 		/** Output only. The bounding boxes match metrics for each Intersection-over-union threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair. */
 		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry>;
 
-		/** Output only. The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had. */
+		/**
+		 * Output only. The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount?: number | null;
 	}
 
 	/** Model evaluation metrics for image object detection problems. Evaluates prediction quality of labeled bounding boxes. */
 	export interface ImageObjectDetectionEvaluationMetricsFormProperties {
 
-		/** Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries. */
+		/**
+		 * Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** Output only. The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had. */
+		/**
+		 * Output only. The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount: FormControl<number | null | undefined>,
 	}
 	export function CreateImageObjectDetectionEvaluationMetricsFormGroup() {
@@ -2530,7 +2812,10 @@ export namespace MyNS {
 		/** Output only. The number of nodes this model is deployed on. A node is an abstraction of a machine resource, which can handle online prediction QPS as given in the qps_per_node field. */
 		nodeCount?: string | null;
 
-		/** Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed. */
+		/**
+		 * Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed.
+		 * Type: double
+		 */
 		nodeQps?: number | null;
 
 		/** Output only. The reason that this create model operation stopped, e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`. */
@@ -2552,7 +2837,10 @@ export namespace MyNS {
 		/** Output only. The number of nodes this model is deployed on. A node is an abstraction of a machine resource, which can handle online prediction QPS as given in the qps_per_node field. */
 		nodeCount: FormControl<string | null | undefined>,
 
-		/** Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed. */
+		/**
+		 * Output only. An approximate number of online prediction QPS that can be supported by this model per each node on which it is deployed.
+		 * Type: double
+		 */
 		nodeQps: FormControl<number | null | undefined>,
 
 		/** Output only. The reason that this create model operation stopped, e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`. */
@@ -2768,7 +3056,10 @@ export namespace MyNS {
 		/** Output only. The value of display_name at the moment when the model was trained. Because this field returns a value at model training time, for different models trained from the same dataset, the values may differ, since display names could had been changed between the two model's trainings. For Tables CLASSIFICATION prediction_type-s distinct values of the target column at the moment of the model evaluation are populated here. The display_name is empty for the overall model evaluation. */
 		displayName?: string | null;
 
-		/** Output only. The number of examples used for model evaluation, i.e. for which ground truth from time of model creation is compared against the predicted annotations created by the model. For overall ModelEvaluation (i.e. with annotation_spec_id not set) this is the total number of all examples used for evaluation. Otherwise, this is the count of examples that according to the ground truth were annotated by the annotation_spec_id. */
+		/**
+		 * Output only. The number of examples used for model evaluation, i.e. for which ground truth from time of model creation is compared against the predicted annotations created by the model. For overall ModelEvaluation (i.e. with annotation_spec_id not set) this is the total number of all examples used for evaluation. Otherwise, this is the count of examples that according to the ground truth were annotated by the annotation_spec_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedExampleCount?: number | null;
 
 		/** Model evaluation metrics for image object detection problems. Evaluates prediction quality of labeled bounding boxes. */
@@ -2805,7 +3096,10 @@ export namespace MyNS {
 		/** Output only. The value of display_name at the moment when the model was trained. Because this field returns a value at model training time, for different models trained from the same dataset, the values may differ, since display names could had been changed between the two model's trainings. For Tables CLASSIFICATION prediction_type-s distinct values of the target column at the moment of the model evaluation are populated here. The display_name is empty for the overall model evaluation. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples used for model evaluation, i.e. for which ground truth from time of model creation is compared against the predicted annotations created by the model. For overall ModelEvaluation (i.e. with annotation_spec_id not set) this is the total number of all examples used for evaluation. Otherwise, this is the count of examples that according to the ground truth were annotated by the annotation_spec_id. */
+		/**
+		 * Output only. The number of examples used for model evaluation, i.e. for which ground truth from time of model creation is compared against the predicted annotations created by the model. For overall ModelEvaluation (i.e. with annotation_spec_id not set) this is the total number of all examples used for evaluation. Otherwise, this is the count of examples that according to the ground truth were annotated by the annotation_spec_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedExampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Resource name of the model evaluation. Format: `projects/{project_id}/locations/{location_id}/models/{model_id}/modelEvaluations/{model_evaluation_id}` */
@@ -2826,38 +3120,68 @@ export namespace MyNS {
 	/** Metrics for regression problems. */
 	export interface RegressionEvaluationMetrics {
 
-		/** Output only. Mean Absolute Error (MAE). */
+		/**
+		 * Output only. Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Output only. Mean absolute percentage error. Only set if all ground truth values are are positive. */
+		/**
+		 * Output only. Mean absolute percentage error. Only set if all ground truth values are are positive.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError?: number | null;
 
-		/** Output only. R squared. */
+		/**
+		 * Output only. R squared.
+		 * Type: float
+		 */
 		rSquared?: number | null;
 
-		/** Output only. Root Mean Squared Error (RMSE). */
+		/**
+		 * Output only. Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError?: number | null;
 
-		/** Output only. Root mean squared log error. */
+		/**
+		 * Output only. Root mean squared log error.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError?: number | null;
 	}
 
 	/** Metrics for regression problems. */
 	export interface RegressionEvaluationMetricsFormProperties {
 
-		/** Output only. Mean Absolute Error (MAE). */
+		/**
+		 * Output only. Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Output only. Mean absolute percentage error. Only set if all ground truth values are are positive. */
+		/**
+		 * Output only. Mean absolute percentage error. Only set if all ground truth values are are positive.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError: FormControl<number | null | undefined>,
 
-		/** Output only. R squared. */
+		/**
+		 * Output only. R squared.
+		 * Type: float
+		 */
 		rSquared: FormControl<number | null | undefined>,
 
-		/** Output only. Root Mean Squared Error (RMSE). */
+		/**
+		 * Output only. Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError: FormControl<number | null | undefined>,
 
-		/** Output only. Root mean squared log error. */
+		/**
+		 * Output only. Root mean squared log error.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError: FormControl<number | null | undefined>,
 	}
 	export function CreateRegressionEvaluationMetricsFormGroup() {
@@ -2875,7 +3199,10 @@ export namespace MyNS {
 	/** Model evaluation metrics for text extraction problems. */
 	export interface TextExtractionEvaluationMetrics {
 
-		/** Output only. The Area under precision recall curve metric. */
+		/**
+		 * Output only. The Area under precision recall curve metric.
+		 * Type: float
+		 */
 		auPrc?: number | null;
 
 		/** Output only. Metrics that have confidence thresholds. Precision-recall curve can be derived from it. */
@@ -2885,7 +3212,10 @@ export namespace MyNS {
 	/** Model evaluation metrics for text extraction problems. */
 	export interface TextExtractionEvaluationMetricsFormProperties {
 
-		/** Output only. The Area under precision recall curve metric. */
+		/**
+		 * Output only. The Area under precision recall curve metric.
+		 * Type: float
+		 */
 		auPrc: FormControl<number | null | undefined>,
 	}
 	export function CreateTextExtractionEvaluationMetricsFormGroup() {
@@ -2899,32 +3229,56 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface TextExtractionEvaluationMetricsConfidenceMetricsEntry {
 
-		/** Output only. The confidence threshold value used to compute the metrics. Only annotations with score of at least this threshold are considered to be ones the model would return. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics. Only annotations with score of at least this threshold are considered to be ones the model would return.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Output only. Precision under the given confidence threshold. */
+		/**
+		 * Output only. Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Output only. Recall under the given confidence threshold. */
+		/**
+		 * Output only. Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Metrics for a single confidence threshold. */
 	export interface TextExtractionEvaluationMetricsConfidenceMetricsEntryFormProperties {
 
-		/** Output only. The confidence threshold value used to compute the metrics. Only annotations with score of at least this threshold are considered to be ones the model would return. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics. Only annotations with score of at least this threshold are considered to be ones the model would return.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Output only. Precision under the given confidence threshold. */
+		/**
+		 * Output only. Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Output only. Recall under the given confidence threshold. */
+		/**
+		 * Output only. Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateTextExtractionEvaluationMetricsConfidenceMetricsEntryFormGroup() {
@@ -2947,50 +3301,92 @@ export namespace MyNS {
 		/** Confusion matrix of the model running the classification. */
 		confusionMatrix?: ConfusionMatrix;
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Output only. Linear weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Linear weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		linearKappa?: number | null;
 
-		/** Output only. Mean absolute error. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Mean absolute error. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Output only. Mean squared error. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Mean squared error. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		meanSquaredError?: number | null;
 
-		/** Output only. Precision. */
+		/**
+		 * Output only. Precision.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Output only. Quadratic weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Quadratic weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		quadraticKappa?: number | null;
 
-		/** Output only. Recall. */
+		/**
+		 * Output only. Recall.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Model evaluation metrics for text sentiment problems. */
 	export interface TextSentimentEvaluationMetricsFormProperties {
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Output only. Linear weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Linear weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		linearKappa: FormControl<number | null | undefined>,
 
-		/** Output only. Mean absolute error. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Mean absolute error. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Output only. Mean squared error. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Mean squared error. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		meanSquaredError: FormControl<number | null | undefined>,
 
-		/** Output only. Precision. */
+		/**
+		 * Output only. Precision.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Output only. Quadratic weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec. */
+		/**
+		 * Output only. Quadratic weighted kappa. Only set for the overall model evaluation, not for evaluation of a single annotation spec.
+		 * Type: float
+		 */
 		quadraticKappa: FormControl<number | null | undefined>,
 
-		/** Output only. Recall. */
+		/**
+		 * Output only. Recall.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateTextSentimentEvaluationMetricsFormGroup() {
@@ -3010,20 +3406,32 @@ export namespace MyNS {
 	/** Evaluation metrics for the dataset. */
 	export interface TranslationEvaluationMetrics {
 
-		/** Output only. BLEU score for base model. */
+		/**
+		 * Output only. BLEU score for base model.
+		 * Type: double
+		 */
 		baseBleuScore?: number | null;
 
-		/** Output only. BLEU score. */
+		/**
+		 * Output only. BLEU score.
+		 * Type: double
+		 */
 		bleuScore?: number | null;
 	}
 
 	/** Evaluation metrics for the dataset. */
 	export interface TranslationEvaluationMetricsFormProperties {
 
-		/** Output only. BLEU score for base model. */
+		/**
+		 * Output only. BLEU score for base model.
+		 * Type: double
+		 */
 		baseBleuScore: FormControl<number | null | undefined>,
 
-		/** Output only. BLEU score. */
+		/**
+		 * Output only. BLEU score.
+		 * Type: double
+		 */
 		bleuScore: FormControl<number | null | undefined>,
 	}
 	export function CreateTranslationEvaluationMetricsFormGroup() {
@@ -3038,29 +3446,47 @@ export namespace MyNS {
 	/** Model evaluation metrics for video object tracking problems. Evaluates prediction quality of both labeled bounding boxes and labeled tracks (i.e. series of bounding boxes sharing same label and instance ID). */
 	export interface VideoObjectTrackingEvaluationMetrics {
 
-		/** Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries. */
+		/**
+		 * Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision?: number | null;
 
 		/** Output only. The bounding boxes match metrics for each Intersection-over-union threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair. */
 		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry>;
 
-		/** Output only. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * Output only. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount?: number | null;
 
-		/** Output only. The number of video frames used to create this evaluation. */
+		/**
+		 * Output only. The number of video frames used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedFrameCount?: number | null;
 	}
 
 	/** Model evaluation metrics for video object tracking problems. Evaluates prediction quality of both labeled bounding boxes and labeled tracks (i.e. series of bounding boxes sharing same label and instance ID). */
 	export interface VideoObjectTrackingEvaluationMetricsFormProperties {
 
-		/** Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries. */
+		/**
+		 * Output only. The single metric for bounding boxes evaluation: the mean_average_precision averaged over all bounding_box_metrics_entries.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** Output only. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * Output only. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of video frames used to create this evaluation. */
+		/**
+		 * Output only. The number of video frames used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedFrameCount: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoObjectTrackingEvaluationMetricsFormGroup() {
@@ -3133,7 +3559,10 @@ export namespace MyNS {
 		/** Model metadata that is specific to text sentiment. */
 		textSentimentModelMetadata?: TextSentimentModelMetadata;
 
-		/** Output only. The number of examples in the training set used for the model creation. */
+		/**
+		 * Output only. The number of examples in the training set used for the model creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount?: number | null;
 
 		/** Model metadata that is specific to translation. */
@@ -3142,7 +3571,10 @@ export namespace MyNS {
 		/** Output only. Timestamp when this model was last updated. */
 		updateTime?: string | null;
 
-		/** Output only. The number of examples in the validation set used for the model creation. */
+		/**
+		 * Output only. The number of examples in the validation set used for the model creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount?: number | null;
 
 		/** Model metadata specific to video classification. */
@@ -3170,13 +3602,19 @@ export namespace MyNS {
 		/** Output only. Resource name of the model. Format: `projects/{project_id}/locations/{location_id}/models/{model_id}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples in the training set used for the model creation. */
+		/**
+		 * Output only. The number of examples in the training set used for the model creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this model was last updated. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples in the validation set used for the model creation. */
+		/**
+		 * Output only. The number of examples in the validation set used for the model creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount: FormControl<number | null | undefined>,
 	}
 	export function CreateModelFormGroup() {
@@ -3208,10 +3646,16 @@ export namespace MyNS {
 		/** Objective function the model is optimizing towards. The training process creates a model that maximizes/minimizes the value of the objective function over the validation set. The supported optimization objectives depend on the prediction type. If the field is not set, a default objective function is used. CLASSIFICATION_BINARY: "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver operating characteristic (ROC) curve. "MINIMIZE_LOG_LOSS" - Minimize log loss. "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve. "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified recall value. "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified precision value. CLASSIFICATION_MULTI_CLASS : "MINIMIZE_LOG_LOSS" (default) - Minimize log loss. REGRESSION: "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE). "MINIMIZE_MAE" - Minimize mean-absolute error (MAE). "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE). */
 		optimizationObjective?: string | null;
 
-		/** Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectivePrecisionValue?: number | null;
 
-		/** Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectiveRecallValue?: number | null;
 
 		/** Output only. Auxiliary information for each of the input_feature_column_specs with respect to this particular model. */
@@ -3236,10 +3680,16 @@ export namespace MyNS {
 		/** Objective function the model is optimizing towards. The training process creates a model that maximizes/minimizes the value of the objective function over the validation set. The supported optimization objectives depend on the prediction type. If the field is not set, a default objective function is used. CLASSIFICATION_BINARY: "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver operating characteristic (ROC) curve. "MINIMIZE_LOG_LOSS" - Minimize log loss. "MAXIMIZE_AU_PRC" - Maximize the area under the precision-recall curve. "MAXIMIZE_PRECISION_AT_RECALL" - Maximize precision for a specified recall value. "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified precision value. CLASSIFICATION_MULTI_CLASS : "MINIMIZE_LOG_LOSS" (default) - Minimize log loss. REGRESSION: "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE). "MINIMIZE_MAE" - Minimize mean-absolute error (MAE). "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE). */
 		optimizationObjective: FormControl<string | null | undefined>,
 
-		/** Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectivePrecisionValue: FormControl<number | null | undefined>,
 
-		/** Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectiveRecallValue: FormControl<number | null | undefined>,
 
 		/** Required. The train budget of creating this model, expressed in milli node hours i.e. 1,000 value in this field means 1 node hour. The training cost of the model will not exceed this budget. The final cost will be attempted to be close to the budget, though may end up being (even) noticeably smaller - at the backend's discretion. This especially may happen when further model training ceases to provide any improvements. If the budget is set to a value known to be insufficient to train a model for the given dataset, the training won't be attempted and will error. The train budget must be between 1,000 and 72,000 milli node hours, inclusive. */
@@ -3452,7 +3902,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3465,7 +3918,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3596,7 +4052,10 @@ export namespace MyNS {
 		/** Output only. Partial failures encountered. E.g. single files that couldn't be read. This field should never exceed 20 entries. Status details field will contain standard GCP error details. */
 		partialFailures?: Array<Status>;
 
-		/** Output only. Progress of operation. Range: [0, 100]. Not used currently. */
+		/**
+		 * Output only. Progress of operation. Range: [0, 100]. Not used currently.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Details of UndeployModel operation. */
@@ -3612,7 +4071,10 @@ export namespace MyNS {
 		/** Output only. Time when the operation was created. */
 		createTime: FormControl<string | null | undefined>,
 
-		/** Output only. Progress of operation. Range: [0, 100]. Not used currently. */
+		/**
+		 * Output only. Progress of operation. Range: [0, 100]. Not used currently.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Output only. Time when the operation was updated for the last time. */
@@ -3651,7 +4113,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3661,7 +4126,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -3852,6 +4320,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3865,6 +4334,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter An expression for filtering the results of the request. * `operation_id` - for = or !=. * `done` - for = or !=. * `works_on` - for = or !=. Some examples of using the filter are: * `done=true` --> The operation has finished running. * `works_on = projects/my-project/locations/us-central1/datasets/5` --> The operation works on a dataset with ID 5. * `works_on = projects/my-project/locations/us-central1/models/15` --> The operation works on a model with ID 15.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3979,6 +4449,7 @@ export namespace MyNS {
 		 * @param {string} fieldMask Mask specifying which fields to read.
 		 * @param {string} filter Filter expression, see go/filtering.
 		 * @param {number} pageSize Requested page size. The server can return fewer results than requested. If unspecified, the server will pick a default size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return. Typically obtained from the ListColumnSpecsResponse.next_page_token field of the previous AutoMl.ListColumnSpecs call.
 		 * @return {ListColumnSpecsResponse} Successful response
 		 */
@@ -3992,6 +4463,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the project from which to list datasets.
 		 * @param {string} filter An expression for filtering the results of the request. * `dataset_metadata` - for existence of the case (e.g. `image_classification_dataset_metadata:*`). Some examples of using the filter are: * `translation_dataset_metadata:*` --> The dataset has `translation_dataset_metadata`.
 		 * @param {number} pageSize Requested page size. Server may return fewer results than requested. If unspecified, server will pick a default size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return Typically obtained via ListDatasetsResponse.next_page_token of the previous AutoMl.ListDatasets call.
 		 * @return {ListDatasetsResponse} Successful response
 		 */
@@ -4015,6 +4487,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name of the model to list the model evaluations for. If modelId is set as "-", this will list model evaluations from across all models of the parent location.
 		 * @param {string} filter An expression for filtering the results of the request. * `annotation_spec_id` - for =, != or existence. See example below for the last. Some examples of using the filter are: * `annotation_spec_id!=4` --> The model evaluation was done for annotation spec with ID different than 4. * `NOT annotation_spec_id:*` --> The model evaluation was done for aggregate of all annotation specs.
 		 * @param {number} pageSize Requested page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return. Typically obtained via ListModelEvaluationsResponse.next_page_token of the previous AutoMl.ListModelEvaluations call.
 		 * @return {ListModelEvaluationsResponse} Successful response
 		 */
@@ -4028,6 +4501,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name of the project, from which to list the models.
 		 * @param {string} filter An expression for filtering the results of the request. * `model_metadata` - for existence of the case (e.g. `video_classification_model_metadata:*`). * `dataset_id` - for = or !=. Some examples of using the filter are: * `image_classification_model_metadata:*` --> The model has `image_classification_model_metadata`. * `dataset_id=5` --> The model was created from a dataset with ID 5.
 		 * @param {number} pageSize Requested page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return Typically obtained via ListModelsResponse.next_page_token of the previous AutoMl.ListModels call.
 		 * @return {ListModelsResponse} Successful response
 		 */
@@ -4052,6 +4526,7 @@ export namespace MyNS {
 		 * @param {string} fieldMask Mask specifying which fields to read.
 		 * @param {string} filter Filter expression, see go/filtering.
 		 * @param {number} pageSize Requested page size. The server can return fewer results than requested. If unspecified, the server will pick a default size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return. Typically obtained from the ListTableSpecsResponse.next_page_token field of the previous AutoMl.ListTableSpecs call.
 		 * @return {ListTableSpecsResponse} Successful response
 		 */
@@ -4064,6 +4539,7 @@ export namespace MyNS {
 		 * Get v1beta1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Automl_projects_locations_models_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

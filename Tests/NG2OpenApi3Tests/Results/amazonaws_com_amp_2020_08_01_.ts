@@ -1148,6 +1148,7 @@ export namespace MyNS {
 		 * Create an alert manager definition.
 		 * Post workspaces/{workspaceId}/alertmanager/definition
 		 * @param {string} workspaceId The ID of the workspace in which to create the alert manager definition.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		CreateAlertManagerDefinition(workspaceId: string, requestBody: CreateAlertManagerDefinitionPostBody): Observable<HttpResponse<string>> {
@@ -1158,7 +1159,9 @@ export namespace MyNS {
 		 * Deletes an alert manager definition.
 		 * Delete workspaces/{workspaceId}/alertmanager/definition
 		 * @param {string} workspaceId The ID of the workspace in which to delete the alert manager definition.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteAlertManagerDefinition(workspaceId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -1169,6 +1172,7 @@ export namespace MyNS {
 		 * Describes an alert manager definition.
 		 * Get workspaces/{workspaceId}/alertmanager/definition
 		 * @param {string} workspaceId The ID of the workspace to describe.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeAlertManagerDefinitionResponse} Success
 		 */
 		DescribeAlertManagerDefinition(workspaceId: string): Observable<DescribeAlertManagerDefinitionResponse> {
@@ -1179,6 +1183,7 @@ export namespace MyNS {
 		 * Update an alert manager definition.
 		 * Put workspaces/{workspaceId}/alertmanager/definition
 		 * @param {string} workspaceId The ID of the workspace in which to update the alert manager definition.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		PutAlertManagerDefinition(workspaceId: string, requestBody: PutAlertManagerDefinitionPutBody): Observable<HttpResponse<string>> {
@@ -1189,6 +1194,7 @@ export namespace MyNS {
 		 * Create logging configuration.
 		 * Post workspaces/{workspaceId}/logging
 		 * @param {string} workspaceId The ID of the workspace to vend logs to.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		CreateLoggingConfiguration(workspaceId: string, requestBody: CreateLoggingConfigurationPostBody): Observable<HttpResponse<string>> {
@@ -1199,7 +1205,9 @@ export namespace MyNS {
 		 * Delete logging configuration.
 		 * Delete workspaces/{workspaceId}/logging
 		 * @param {string} workspaceId The ID of the workspace to vend logs to.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteLoggingConfiguration(workspaceId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -1210,6 +1218,7 @@ export namespace MyNS {
 		 * Describes logging configuration.
 		 * Get workspaces/{workspaceId}/logging
 		 * @param {string} workspaceId The ID of the workspace to vend logs to.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeLoggingConfigurationResponse} Success
 		 */
 		DescribeLoggingConfiguration(workspaceId: string): Observable<DescribeLoggingConfigurationResponse> {
@@ -1220,6 +1229,7 @@ export namespace MyNS {
 		 * Update logging configuration.
 		 * Put workspaces/{workspaceId}/logging
 		 * @param {string} workspaceId The ID of the workspace to vend logs to.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		UpdateLoggingConfiguration(workspaceId: string, requestBody: UpdateLoggingConfigurationPutBody): Observable<HttpResponse<string>> {
@@ -1230,6 +1240,7 @@ export namespace MyNS {
 		 * Create a rule group namespace.
 		 * Post workspaces/{workspaceId}/rulegroupsnamespaces
 		 * @param {string} workspaceId The ID of the workspace in which to create the rule group namespace.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		CreateRuleGroupsNamespace(workspaceId: string, requestBody: CreateRuleGroupsNamespacePostBody): Observable<HttpResponse<string>> {
@@ -1240,9 +1251,12 @@ export namespace MyNS {
 		 * Lists rule groups namespaces.
 		 * Get workspaces/{workspaceId}/rulegroupsnamespaces
 		 * @param {string} workspaceId The ID of the workspace.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} name Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} nextToken Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
 		 * @param {number} maxResults Maximum results to return in response (default=100, maximum=1000).
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListRuleGroupsNamespacesResponse} Success
 		 */
 		ListRuleGroupsNamespaces(workspaceId: string, name: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListRuleGroupsNamespacesResponse> {
@@ -1263,7 +1277,9 @@ export namespace MyNS {
 		 * Get workspaces
 		 * @param {string} nextToken Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
 		 * @param {string} alias Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+		 *     Min length: 1    Max length: 100
 		 * @param {number} maxResults Maximum results to return in response (default=100, maximum=1000).
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListWorkspacesResponse} Success
 		 */
 		ListWorkspaces(nextToken: string | null | undefined, alias: string | null | undefined, maxResults: number | null | undefined): Observable<ListWorkspacesResponse> {
@@ -1274,8 +1290,11 @@ export namespace MyNS {
 		 * Delete a rule groups namespace.
 		 * Delete workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		 * @param {string} workspaceId The ID of the workspace to delete rule group definition.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} name The rule groups namespace name.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteRuleGroupsNamespace(workspaceId: string, name: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -1286,7 +1305,9 @@ export namespace MyNS {
 		 * Describe a rule groups namespace.
 		 * Get workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		 * @param {string} workspaceId The ID of the workspace to describe.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} name The rule groups namespace.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeRuleGroupsNamespaceResponse} Success
 		 */
 		DescribeRuleGroupsNamespace(workspaceId: string, name: string): Observable<DescribeRuleGroupsNamespaceResponse> {
@@ -1297,7 +1318,9 @@ export namespace MyNS {
 		 * Update a rule groups namespace.
 		 * Put workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		 * @param {string} workspaceId The ID of the workspace in which to update the rule group namespace.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} name The rule groups namespace name.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		PutRuleGroupsNamespace(workspaceId: string, name: string, requestBody: PutRuleGroupsNamespacePutBody): Observable<HttpResponse<string>> {
@@ -1308,7 +1331,9 @@ export namespace MyNS {
 		 * Deletes an AMP workspace.
 		 * Delete workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace to delete.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteWorkspace(workspaceId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -1319,6 +1344,7 @@ export namespace MyNS {
 		 * Describes an existing AMP workspace.
 		 * Get workspaces/{workspaceId}
 		 * @param {string} workspaceId The ID of the workspace to describe.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeWorkspaceResponse} Success
 		 */
 		DescribeWorkspace(workspaceId: string): Observable<DescribeWorkspaceResponse> {
@@ -1360,6 +1386,7 @@ export namespace MyNS {
 		 * Updates an AMP workspace alias.
 		 * Post workspaces/{workspaceId}/alias
 		 * @param {string} workspaceId The ID of the workspace being updated.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		UpdateWorkspaceAlias(workspaceId: string, requestBody: UpdateWorkspaceAliasPostBody): Observable<HttpResponse<string>> {
@@ -1377,8 +1404,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1392,8 +1419,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1415,8 +1442,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1430,8 +1457,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1453,8 +1480,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1468,8 +1495,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1491,8 +1518,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1506,8 +1533,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1524,8 +1551,8 @@ export namespace MyNS {
 		/**
 		 * The namespace name that the rule group belong to.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
@@ -1537,8 +1564,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -1550,8 +1577,8 @@ export namespace MyNS {
 		/**
 		 * The namespace name that the rule group belong to.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1563,8 +1590,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1585,15 +1612,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-assigned workspace alias.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		alias?: string | null;
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -1604,15 +1631,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-assigned workspace alias.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		alias: FormControl<string | null | undefined>,
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1638,8 +1665,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1653,8 +1680,8 @@ export namespace MyNS {
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1693,15 +1720,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-assigned workspace alias.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		alias?: string | null;
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1709,15 +1736,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-assigned workspace alias.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		alias: FormControl<string | null | undefined>,
 
 		/**
 		 * An identifier used to ensure the idempotency of a write request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

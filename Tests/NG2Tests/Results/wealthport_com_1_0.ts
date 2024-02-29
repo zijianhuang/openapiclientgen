@@ -8,8 +8,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		id: string;
 	}
@@ -18,8 +18,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		id: FormControl<string | null | undefined>,
 	}

@@ -299,7 +299,10 @@ namespace MyNS
 		/// Get a list of voting records for a Member.
 		/// DataDivisionsMembervotingGetByMemberIdAndSearchTermAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAndSkipAndTake data/Divisions/membervoting
 		/// </summary>
-		/// <param name="MemberId">Id number of a Member whose voting records are to be returned</param>
+		/// <param name="MemberId">Id number of a Member whose voting records are to be returned
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="SearchTerm">Divisions containing search term within title or number</param>
 		/// <param name="IncludeWhenMemberWasTeller">Divisions where member was a teller as well as if they actually voted</param>
 		/// <param name="StartDate">Divisions where division date in one or after date provided. Date format is yyyy-MM-dd</param>

@@ -16,7 +16,10 @@ export namespace MyNS {
 
 	export interface AddProductCustomFieldFields {
 
-		/** Unique identifier of the ProductCustomField (custom_field_id) */
+		/**
+		 * Unique identifier of the ProductCustomField (custom_field_id)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The value for the ProductCustomField */
@@ -24,7 +27,10 @@ export namespace MyNS {
 	}
 	export interface AddProductCustomFieldFieldsFormProperties {
 
-		/** Unique identifier of the ProductCustomField (custom_field_id) */
+		/**
+		 * Unique identifier of the ProductCustomField (custom_field_id)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The value for the ProductCustomField */
@@ -114,7 +120,10 @@ export namespace MyNS {
 
 	export interface AttachmentFields {
 
-		/** Unique identifier of the attachment */
+		/**
+		 * Unique identifier of the attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Private URL of the attachment */
@@ -122,7 +131,10 @@ export namespace MyNS {
 	}
 	export interface AttachmentFieldsFormProperties {
 
-		/** Unique identifier of the attachment */
+		/**
+		 * Unique identifier of the attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Private URL of the attachment */
@@ -186,22 +198,38 @@ export namespace MyNS {
 
 	export interface BestSold {
 
-		/** Quantity sold. */
+		/**
+		 * Quantity sold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id?: number | null;
 		product_name?: string | null;
 
-		/** Total sold amount. */
+		/**
+		 * Total sold amount.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface BestSoldFormProperties {
 
-		/** Quantity sold. */
+		/**
+		 * Quantity sold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id: FormControl<number | null | undefined>,
 		product_name: FormControl<string | null | undefined>,
 
-		/** Total sold amount. */
+		/**
+		 * Total sold amount.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBestSoldFormGroup() {
@@ -300,13 +328,19 @@ export namespace MyNS {
 
 	export interface CategoryFields {
 
-		/** Unique identifier of the Category */
+		/**
+		 * Unique identifier of the Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the Category */
 		name?: string | null;
 
-		/** Unique identifier of the Parent Category */
+		/**
+		 * Unique identifier of the Parent Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id?: number | null;
 
 		/** Category unique URL path */
@@ -314,13 +348,19 @@ export namespace MyNS {
 	}
 	export interface CategoryFieldsFormProperties {
 
-		/** Unique identifier of the Category */
+		/**
+		 * Unique identifier of the Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the Category */
 		name: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Parent Category */
+		/**
+		 * Unique identifier of the Parent Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id: FormControl<number | null | undefined>,
 
 		/** Category unique URL path */
@@ -352,7 +392,10 @@ export namespace MyNS {
 		/** Name of the Category */
 		name?: string | null;
 
-		/** Unique identifier of the Parent Category */
+		/**
+		 * Unique identifier of the Parent Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id?: number | null;
 	}
 	export interface CategoryEditFieldsFormProperties {
@@ -360,7 +403,10 @@ export namespace MyNS {
 		/** Name of the Category */
 		name: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Parent Category */
+		/**
+		 * Unique identifier of the Parent Category
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryEditFieldsFormGroup() {
@@ -393,13 +439,19 @@ export namespace MyNS {
 		/** True if the CheckoutCustomField can be removed from the store */
 		deletable?: boolean | null;
 
-		/** Unique identifier of the CheckoutCustomField */
+		/**
+		 * Unique identifier of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Label given to the CheckoutCustomField */
 		label?: string | null;
 
-		/** Position of the CheckoutCustomField */
+		/**
+		 * Position of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** True if the CheckoutCustomField is mandatory */
@@ -416,13 +468,19 @@ export namespace MyNS {
 		/** True if the CheckoutCustomField can be removed from the store */
 		deletable: FormControl<boolean | null | undefined>,
 
-		/** Unique identifier of the CheckoutCustomField */
+		/**
+		 * Unique identifier of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Label given to the CheckoutCustomField */
 		label: FormControl<string | null | undefined>,
 
-		/** Position of the CheckoutCustomField */
+		/**
+		 * Position of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** True if the CheckoutCustomField is mandatory */
@@ -473,7 +531,10 @@ export namespace MyNS {
 		/** Label given to the CheckoutCustomField */
 		label?: string | null;
 
-		/** Position of the CheckoutCustomField */
+		/**
+		 * Position of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** True if the CheckoutCustomField is mandatory */
@@ -493,7 +554,10 @@ export namespace MyNS {
 		/** Label given to the CheckoutCustomField */
 		label: FormControl<string | null | undefined>,
 
-		/** Position of the CheckoutCustomField */
+		/**
+		 * Position of the CheckoutCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** True if the CheckoutCustomField is mandatory */
@@ -517,9 +581,13 @@ export namespace MyNS {
 	export enum CheckoutCustomFieldEditFieldsType { text = 'text', select = 'select', input = 'input', checkbox = 'checkbox', date = 'date' }
 
 	export interface Count {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 	}
 	export interface CountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCountFormGroup() {
@@ -548,7 +616,10 @@ export namespace MyNS {
 	export interface CountryOrders {
 		code?: string | null;
 
-		/** Number of country orders. */
+		/**
+		 * Number of country orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 		country?: string | null;
 
@@ -558,7 +629,10 @@ export namespace MyNS {
 	export interface CountryOrdersFormProperties {
 		code: FormControl<string | null | undefined>,
 
-		/** Number of country orders. */
+		/**
+		 * Number of country orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
 	}
@@ -573,12 +647,20 @@ export namespace MyNS {
 
 	export interface RegionOrders {
 		city?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		country?: number | null;
 	}
 	export interface RegionOrdersFormProperties {
 		city: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		country: FormControl<number | null | undefined>,
 	}
 	export function CreateRegionOrdersFormGroup() {
@@ -603,7 +685,10 @@ export namespace MyNS {
 
 	export interface CustomFieldFields {
 
-		/** Unique identifier of the Custom Field */
+		/**
+		 * Unique identifier of the Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Label given to the Custom Field */
@@ -617,7 +702,10 @@ export namespace MyNS {
 	}
 	export interface CustomFieldFieldsFormProperties {
 
-		/** Unique identifier of the Custom Field */
+		/**
+		 * Unique identifier of the Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Label given to the Custom Field */
@@ -688,7 +776,10 @@ export namespace MyNS {
 
 	export interface CustomFieldSelectOptionFields {
 
-		/** Unique identifier of the Custom Field Select Option */
+		/**
+		 * Unique identifier of the Custom Field Select Option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Value given to the Custom Field Select Option */
@@ -696,7 +787,10 @@ export namespace MyNS {
 	}
 	export interface CustomFieldSelectOptionFieldsFormProperties {
 
-		/** Unique identifier of the Custom Field Select Option */
+		/**
+		 * Unique identifier of the Custom Field Select Option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Value given to the Custom Field Select Option */
@@ -757,7 +851,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email?: string | null;
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the Customer */
@@ -778,7 +875,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the Customer */
@@ -821,13 +921,22 @@ export namespace MyNS {
 		/** Area of the Customer Additional Field */
 		area?: string | null;
 
-		/** Unique identifier of the Checkout Custom Field */
+		/**
+		 * Unique identifier of the Checkout Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkout_custom_field_id?: number | null;
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customer_id?: number | null;
 
-		/** Unique identifier of the Customer Additional Field */
+		/**
+		 * Unique identifier of the Customer Additional Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Label of the Customer Additional Field */
@@ -841,13 +950,22 @@ export namespace MyNS {
 		/** Area of the Customer Additional Field */
 		area: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Checkout Custom Field */
+		/**
+		 * Unique identifier of the Checkout Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkout_custom_field_id: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customer_id: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the Customer Additional Field */
+		/**
+		 * Unique identifier of the Customer Additional Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Label of the Customer Additional Field */
@@ -884,7 +1002,10 @@ export namespace MyNS {
 		/** Code of the CustomerCategory */
 		code?: string | null;
 
-		/** Unique identifier of the CustomerCategory */
+		/**
+		 * Unique identifier of the CustomerCategory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the CustomerCategory */
@@ -895,7 +1016,10 @@ export namespace MyNS {
 		/** Code of the CustomerCategory */
 		code: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the CustomerCategory */
+		/**
+		 * Unique identifier of the CustomerCategory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the CustomerCategory */
@@ -925,7 +1049,10 @@ export namespace MyNS {
 
 	export interface CustomerAdditionalFieldEditFields {
 
-		/** Unique identifier of the Checkout Custom Field */
+		/**
+		 * Unique identifier of the Checkout Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkout_custom_field_id?: number | null;
 
 		/** Value of the Customer Additional Field */
@@ -933,7 +1060,10 @@ export namespace MyNS {
 	}
 	export interface CustomerAdditionalFieldEditFieldsFormProperties {
 
-		/** Unique identifier of the Checkout Custom Field */
+		/**
+		 * Unique identifier of the Checkout Custom Field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkout_custom_field_id: FormControl<number | null | undefined>,
 
 		/** Value of the Customer Additional Field */
@@ -978,13 +1108,19 @@ export namespace MyNS {
 	export interface CustomerFieldsWithBillingAddressAndShippingAddressFields {
 		billing_address?: BillingAddress;
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		shipping_address?: ShippingAddress;
 	}
 	export interface CustomerFieldsWithBillingAddressAndShippingAddressFieldsFormProperties {
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerFieldsWithBillingAddressAndShippingAddressFieldsFormGroup() {
@@ -1000,7 +1136,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email?: string | null;
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Password */
@@ -1018,7 +1157,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Password */
@@ -1087,7 +1229,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email?: string | null;
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 	}
 	export interface CustomerToCustomerCategoryFormProperties {
@@ -1095,7 +1240,10 @@ export namespace MyNS {
 		/** Email of the Customer */
 		email: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Customer */
+		/**
+		 * Unique identifier of the Customer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerToCustomerCategoryFormGroup() {
@@ -1141,10 +1289,14 @@ export namespace MyNS {
 
 	export interface DailyVisits {
 		date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		visits?: number | null;
 	}
 	export interface DailyVisitsFormProperties {
 		date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		visits: FormControl<number | null | undefined>,
 	}
 	export function CreateDailyVisitsFormGroup() {
@@ -1168,10 +1320,16 @@ export namespace MyNS {
 
 	export interface DigitalProductFields {
 
-		/** Time left in seconds before the current private URL expires */
+		/**
+		 * Time left in seconds before the current private URL expires
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration_seconds?: number | null;
 
-		/** Unique identifier of the digital product */
+		/**
+		 * Unique identifier of the digital product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Private URL of the digital product */
@@ -1179,10 +1337,16 @@ export namespace MyNS {
 	}
 	export interface DigitalProductFieldsFormProperties {
 
-		/** Time left in seconds before the current private URL expires */
+		/**
+		 * Time left in seconds before the current private URL expires
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration_seconds: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the digital product */
+		/**
+		 * Unique identifier of the digital product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Private URL of the digital product */
@@ -1248,7 +1412,10 @@ export namespace MyNS {
 		/** Unique identifier of the Fulfillment used by the tracking company */
 		external_id?: string | null;
 
-		/** Unique identifier of the Fulfillment */
+		/**
+		 * Unique identifier of the Fulfillment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Order associated with the fulfillment */
@@ -1274,7 +1441,10 @@ export namespace MyNS {
 		/** Unique identifier of the Fulfillment used by the tracking company */
 		external_id: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Fulfillment */
+		/**
+		 * Unique identifier of the Fulfillment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Order associated with the fulfillment */
@@ -1500,7 +1670,10 @@ export namespace MyNS {
 		/** Event associated with Hook */
 		event?: string | null;
 
-		/** Unique identifier of the Hook */
+		/**
+		 * Unique identifier of the Hook
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Hook name */
@@ -1517,7 +1690,10 @@ export namespace MyNS {
 		/** Event associated with Hook */
 		event: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Hook */
+		/**
+		 * Unique identifier of the Hook
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Hook name */
@@ -1587,9 +1763,13 @@ export namespace MyNS {
 	export enum HookEditFieldsEvent { order_updated = 'order_updated', order_pending_payment = 'order_pending_payment', order_paid = 'order_paid', order_shipped = 'order_shipped', order_canceled = 'order_canceled', order_abandoned = 'order_abandoned', product_created = 'product_created', product_updated = 'product_updated', product_deleted = 'product_deleted', customer_created = 'customer_created', customer_updated = 'customer_updated', customer_deleted = 'customer_deleted' }
 
 	export interface Id {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface IdFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateIdFormGroup() {
@@ -1612,10 +1792,16 @@ export namespace MyNS {
 
 	export interface ImageFields {
 
-		/** Unique identifier of the image */
+		/**
+		 * Unique identifier of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Position of the image */
+		/**
+		 * Position of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** Complete URL of the image */
@@ -1623,10 +1809,16 @@ export namespace MyNS {
 	}
 	export interface ImageFieldsFormProperties {
 
-		/** Unique identifier of the image */
+		/**
+		 * Unique identifier of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Position of the image */
+		/**
+		 * Position of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** Complete URL of the image */
@@ -1791,12 +1983,20 @@ export namespace MyNS {
 
 	export interface NewVsReturning {
 		date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		returning?: number | null;
 	}
 	export interface NewVsReturningFormProperties {
 		date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		returning: FormControl<number | null | undefined>,
 	}
 	export function CreateNewVsReturningFormGroup() {
@@ -1886,7 +2086,10 @@ export namespace MyNS {
 		/** Region code of the Order's Billing Address (Use the FIPS standard - http://www.geonames.org/countries/) */
 		region?: string | null;
 
-		/** Street number of the Order's Billing Address */
+		/**
+		 * Street number of the Order's Billing Address
+		 * Type: double
+		 */
 		street_number?: number | null;
 
 		/** Surname of the Order's Billing Address */
@@ -1918,7 +2121,10 @@ export namespace MyNS {
 		/** Region code of the Order's Billing Address (Use the FIPS standard - http://www.geonames.org/countries/) */
 		region: FormControl<string | null | undefined>,
 
-		/** Street number of the Order's Billing Address */
+		/**
+		 * Street number of the Order's Billing Address
+		 * Type: double
+		 */
 		street_number: FormControl<number | null | undefined>,
 
 		/** Surname of the Order's Billing Address */
@@ -1955,13 +2161,19 @@ export namespace MyNS {
 		customer?: CustomerFieldsWithBillingAddressAndShippingAddressFields;
 		products?: Array<OrderProductOrderCreate>;
 
-		/** Shipping method id */
+		/**
+		 * Shipping method id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping_method_id?: number | null;
 
 		/** Shipping method name e.g. Royal Mail */
 		shipping_method_name?: string | null;
 
-		/** Shipping method's price (applicable if shipping_method_name is provided instead of a shipping_method_id) */
+		/**
+		 * Shipping method's price (applicable if shipping_method_name is provided instead of a shipping_method_id)
+		 * Type: float
+		 */
 		shipping_price?: number | null;
 
 		/** Status of the Order */
@@ -1969,13 +2181,19 @@ export namespace MyNS {
 	}
 	export interface OrderCreateFieldsFormProperties {
 
-		/** Shipping method id */
+		/**
+		 * Shipping method id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping_method_id: FormControl<number | null | undefined>,
 
 		/** Shipping method name e.g. Royal Mail */
 		shipping_method_name: FormControl<string | null | undefined>,
 
-		/** Shipping method's price (applicable if shipping_method_name is provided instead of a shipping_method_id) */
+		/**
+		 * Shipping method's price (applicable if shipping_method_name is provided instead of a shipping_method_id)
+		 * Type: float
+		 */
 		shipping_price: FormControl<number | null | undefined>,
 
 		/** Status of the Order */
@@ -1993,36 +2211,66 @@ export namespace MyNS {
 
 	export interface OrderProductOrderCreate {
 
-		/** Discount of the Order Product */
+		/**
+		 * Discount of the Order Product
+		 * Type: float
+		 */
 		discount?: number | null;
 
-		/** Unique identifier of the original Product */
+		/**
+		 * Unique identifier of the original Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: float
+		 */
 		price?: number | null;
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qty?: number | null;
 
-		/** Unique identifier of the original Product Variant */
+		/**
+		 * Unique identifier of the original Product Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variant_id?: number | null;
 	}
 	export interface OrderProductOrderCreateFormProperties {
 
-		/** Discount of the Order Product */
+		/**
+		 * Discount of the Order Product
+		 * Type: float
+		 */
 		discount: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the original Product */
+		/**
+		 * Unique identifier of the original Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qty: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the original Product Variant */
+		/**
+		 * Unique identifier of the original Product Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variant_id: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderProductOrderCreateFormGroup() {
@@ -2128,7 +2376,10 @@ export namespace MyNS {
 		currency?: string | null;
 		customer?: Customer;
 
-		/** Discount value for the given Order */
+		/**
+		 * Discount value for the given Order
+		 * Type: float
+		 */
 		discount?: number | null;
 
 		/** Duplicate Order URL for the given Order */
@@ -2137,7 +2388,10 @@ export namespace MyNS {
 		/** Rate id for selected External Shipping Method rate */
 		external_shipping_rate_id?: string | null;
 
-		/** Unique identifier of the Order */
+		/**
+		 * Unique identifier of the Order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Payment information for the given Order */
@@ -2156,14 +2410,23 @@ export namespace MyNS {
 		/** Shipment Status for Order Fulfillment. */
 		shipment_status?: OrderFieldsShipment_status | null;
 
-		/** Shipping value for the given Order */
+		/**
+		 * Shipping value for the given Order
+		 * Type: float
+		 */
 		shipping?: number | null;
 		shipping_address?: OrderShippingAddress;
 
-		/** Shipping Discount value for the given order */
+		/**
+		 * Shipping Discount value for the given order
+		 * Type: float
+		 */
 		shipping_discount?: number | null;
 
-		/** Shipping method e.g. Royal Mail */
+		/**
+		 * Shipping method e.g. Royal Mail
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping_method_id?: number | null;
 
 		/** Shipping method e.g. Royal Mail */
@@ -2175,7 +2438,10 @@ export namespace MyNS {
 		/** False if the order is digital. */
 		shipping_required?: boolean | null;
 
-		/** Shipping Tax value for the given order */
+		/**
+		 * Shipping Tax value for the given order
+		 * Type: float
+		 */
 		shipping_tax?: number | null;
 		shipping_taxes?: Array<OrderShippingTax>;
 		source?: TrafficSource;
@@ -2183,13 +2449,22 @@ export namespace MyNS {
 		/** Status of the Order */
 		status?: OrderCreateFieldsStatus | null;
 
-		/** Subtotal value for the given Order. Excluding taxes, shipping and discounts */
+		/**
+		 * Subtotal value for the given Order. Excluding taxes, shipping and discounts
+		 * Type: float
+		 */
 		subtotal?: number | null;
 
-		/** Tax value for the given order */
+		/**
+		 * Tax value for the given order
+		 * Type: float
+		 */
 		tax?: number | null;
 
-		/** Total value for the given Order. Including taxes, shipping and discounts */
+		/**
+		 * Total value for the given Order. Including taxes, shipping and discounts
+		 * Type: float
+		 */
 		total?: number | null;
 
 		/** Company Used for Order Fulfillment. */
@@ -2218,7 +2493,10 @@ export namespace MyNS {
 		/** Currency of the Order */
 		currency: FormControl<string | null | undefined>,
 
-		/** Discount value for the given Order */
+		/**
+		 * Discount value for the given Order
+		 * Type: float
+		 */
 		discount: FormControl<number | null | undefined>,
 
 		/** Duplicate Order URL for the given Order */
@@ -2227,7 +2505,10 @@ export namespace MyNS {
 		/** Rate id for selected External Shipping Method rate */
 		external_shipping_rate_id: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Order */
+		/**
+		 * Unique identifier of the Order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Payment information for the given Order */
@@ -2245,13 +2526,22 @@ export namespace MyNS {
 		/** Shipment Status for Order Fulfillment. */
 		shipment_status: FormControl<OrderFieldsShipment_status | null | undefined>,
 
-		/** Shipping value for the given Order */
+		/**
+		 * Shipping value for the given Order
+		 * Type: float
+		 */
 		shipping: FormControl<number | null | undefined>,
 
-		/** Shipping Discount value for the given order */
+		/**
+		 * Shipping Discount value for the given order
+		 * Type: float
+		 */
 		shipping_discount: FormControl<number | null | undefined>,
 
-		/** Shipping method e.g. Royal Mail */
+		/**
+		 * Shipping method e.g. Royal Mail
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping_method_id: FormControl<number | null | undefined>,
 
 		/** Shipping method e.g. Royal Mail */
@@ -2263,19 +2553,31 @@ export namespace MyNS {
 		/** False if the order is digital. */
 		shipping_required: FormControl<boolean | null | undefined>,
 
-		/** Shipping Tax value for the given order */
+		/**
+		 * Shipping Tax value for the given order
+		 * Type: float
+		 */
 		shipping_tax: FormControl<number | null | undefined>,
 
 		/** Status of the Order */
 		status: FormControl<OrderCreateFieldsStatus | null | undefined>,
 
-		/** Subtotal value for the given Order. Excluding taxes, shipping and discounts */
+		/**
+		 * Subtotal value for the given Order. Excluding taxes, shipping and discounts
+		 * Type: float
+		 */
 		subtotal: FormControl<number | null | undefined>,
 
-		/** Tax value for the given order */
+		/**
+		 * Tax value for the given order
+		 * Type: float
+		 */
 		tax: FormControl<number | null | undefined>,
 
-		/** Total value for the given Order. Including taxes, shipping and discounts */
+		/**
+		 * Total value for the given Order. Including taxes, shipping and discounts
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** Company Used for Order Fulfillment. */
@@ -2323,10 +2625,16 @@ export namespace MyNS {
 
 	export interface OrderProduct {
 
-		/** Discount of the Order Product */
+		/**
+		 * Discount of the Order Product
+		 * Type: float
+		 */
 		discount?: number | null;
 
-		/** Unique identifier of the original Product */
+		/**
+		 * Unique identifier of the original Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Image URL of the Order Product */
@@ -2335,28 +2643,46 @@ export namespace MyNS {
 		/** Name of the Order Product */
 		name?: string | null;
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: float
+		 */
 		price?: number | null;
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qty?: number | null;
 
 		/** Stock Keeping Unit of the Order Product */
 		sku?: string | null;
 		taxes?: Array<OrderProductTax>;
 
-		/** Unique identifier of the original Product Variant */
+		/**
+		 * Unique identifier of the original Product Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variant_id?: number | null;
 
-		/** Weight of the Order Product */
+		/**
+		 * Weight of the Order Product
+		 * Type: float
+		 */
 		weight?: number | null;
 	}
 	export interface OrderProductFormProperties {
 
-		/** Discount of the Order Product */
+		/**
+		 * Discount of the Order Product
+		 * Type: float
+		 */
 		discount: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the original Product */
+		/**
+		 * Unique identifier of the original Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Image URL of the Order Product */
@@ -2365,19 +2691,31 @@ export namespace MyNS {
 		/** Name of the Order Product */
 		name: FormControl<string | null | undefined>,
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Price of the Order Product */
+		/**
+		 * Price of the Order Product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qty: FormControl<number | null | undefined>,
 
 		/** Stock Keeping Unit of the Order Product */
 		sku: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the original Product Variant */
+		/**
+		 * Unique identifier of the original Product Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		variant_id: FormControl<number | null | undefined>,
 
-		/** Weight of the Order Product */
+		/**
+		 * Weight of the Order Product
+		 * Type: float
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderProductFormGroup() {
@@ -2400,13 +2738,19 @@ export namespace MyNS {
 		/** False if rate is a percentage and true if rate is monetary */
 		fixed?: boolean | null;
 
-		/** Unique identifier of the Order Product Tax */
+		/**
+		 * Unique identifier of the Order Product Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the category that the tax is associated with or the tax name */
 		name?: string | null;
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		rate?: number | null;
 
 		/** False if tax is not included on product price */
@@ -2417,13 +2761,19 @@ export namespace MyNS {
 		/** False if rate is a percentage and true if rate is monetary */
 		fixed: FormControl<boolean | null | undefined>,
 
-		/** Unique identifier of the Order Product Tax */
+		/**
+		 * Unique identifier of the Order Product Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the category that the tax is associated with or the tax name */
 		name: FormControl<string | null | undefined>,
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** False if tax is not included on product price */
@@ -2452,13 +2802,19 @@ export namespace MyNS {
 		/** False if rate is a percentage and true if rate is monetary */
 		fixed?: boolean | null;
 
-		/** Unique identifier of the Order Shipping Tax */
+		/**
+		 * Unique identifier of the Order Shipping Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Tax name */
 		name?: string | null;
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		rate?: number | null;
 
 		/** Code of the associated region */
@@ -2475,13 +2831,19 @@ export namespace MyNS {
 		/** False if rate is a percentage and true if rate is monetary */
 		fixed: FormControl<boolean | null | undefined>,
 
-		/** Unique identifier of the Order Shipping Tax */
+		/**
+		 * Unique identifier of the Order Shipping Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Tax name */
 		name: FormControl<string | null | undefined>,
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Code of the associated region */
@@ -2519,7 +2881,10 @@ export namespace MyNS {
 		/** Creation date of the order history */
 		created_at?: string | null;
 
-		/** Unique identifier of the Order History */
+		/**
+		 * Unique identifier of the Order History
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Message of the Order History */
@@ -2530,7 +2895,10 @@ export namespace MyNS {
 		/** Creation date of the order history */
 		created_at: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Order History */
+		/**
+		 * Unique identifier of the Order History
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Message of the Order History */
@@ -2587,10 +2955,16 @@ export namespace MyNS {
 		/** Country name of the Order's Shipping Address */
 		country_name?: string | null;
 
-		/** Latitude of the Order's Shipping Address */
+		/**
+		 * Latitude of the Order's Shipping Address
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude of the Order's Shipping Address */
+		/**
+		 * Longitude of the Order's Shipping Address
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** Municipality of the Order's Shipping Address */
@@ -2605,7 +2979,10 @@ export namespace MyNS {
 		/** Region code of the Order's Shipping Address (Use the FIPS standard - http://www.geonames.org/countries/) */
 		region?: string | null;
 
-		/** Street number of the Order's Shipping Address */
+		/**
+		 * Street number of the Order's Shipping Address
+		 * Type: double
+		 */
 		street_number?: number | null;
 
 		/** Surname of the Order's Shipping Address */
@@ -2625,10 +3002,16 @@ export namespace MyNS {
 		/** Country name of the Order's Shipping Address */
 		country_name: FormControl<string | null | undefined>,
 
-		/** Latitude of the Order's Shipping Address */
+		/**
+		 * Latitude of the Order's Shipping Address
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude of the Order's Shipping Address */
+		/**
+		 * Longitude of the Order's Shipping Address
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** Municipality of the Order's Shipping Address */
@@ -2643,7 +3026,10 @@ export namespace MyNS {
 		/** Region code of the Order's Shipping Address (Use the FIPS standard - http://www.geonames.org/countries/) */
 		region: FormControl<string | null | undefined>,
 
-		/** Street number of the Order's Shipping Address */
+		/**
+		 * Street number of the Order's Shipping Address
+		 * Type: double
+		 */
 		street_number: FormControl<number | null | undefined>,
 
 		/** Surname of the Order's Shipping Address */
@@ -2668,23 +3054,45 @@ export namespace MyNS {
 	}
 
 	export interface OrdersData {
+
+		/** Type: float */
 		average?: number | null;
+
+		/** Type: float */
 		count?: number | null;
 		date?: string | null;
 
-		/** Total amount paid. */
+		/**
+		 * Total amount paid.
+		 * Type: float
+		 */
 		paid?: number | null;
+
+		/** Type: float */
 		pending?: number | null;
+
+		/** Type: float */
 		total?: number | null;
 	}
 	export interface OrdersDataFormProperties {
+
+		/** Type: float */
 		average: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		count: FormControl<number | null | undefined>,
 		date: FormControl<string | null | undefined>,
 
-		/** Total amount paid. */
+		/**
+		 * Total amount paid.
+		 * Type: float
+		 */
 		paid: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		pending: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateOrdersDataFormGroup() {
@@ -2718,7 +3126,10 @@ export namespace MyNS {
 		/** Page categories to which the Page belongs to */
 		categories?: Array<PageCategory>;
 
-		/** Id of the Page */
+		/**
+		 * Id of the Page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Image of the Page */
@@ -2750,7 +3161,10 @@ export namespace MyNS {
 		/** Body of the Page */
 		body: FormControl<string | null | undefined>,
 
-		/** Id of the Page */
+		/**
+		 * Id of the Page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** True if it is a legal page */
@@ -2786,13 +3200,21 @@ export namespace MyNS {
 	}
 
 	export interface PageCategory {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 	}
 	export interface PageCategoryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreatePageCategoryFormGroup() {
@@ -2805,10 +3227,14 @@ export namespace MyNS {
 	}
 
 	export interface PageFieldsImage {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
 	export interface PageFieldsImageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2825,12 +3251,16 @@ export namespace MyNS {
 
 	/** Template of the Page */
 	export interface PageTemplate {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 
 	/** Template of the Page */
 	export interface PageTemplateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -2876,7 +3306,10 @@ export namespace MyNS {
 		/** Status of the Page */
 		status?: PageFieldsStatus | null;
 
-		/** ID of the Page template. Use null for the blank layout ('None') */
+		/**
+		 * ID of the Page template. Use null for the blank layout ('None')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template?: number | null;
 
 		/** Title of the Page */
@@ -2899,7 +3332,10 @@ export namespace MyNS {
 		/** Status of the Page */
 		status: FormControl<PageFieldsStatus | null | undefined>,
 
-		/** ID of the Page template. Use null for the blank layout ('None') */
+		/**
+		 * ID of the Page template. Use null for the blank layout ('None')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template: FormControl<number | null | undefined>,
 
 		/** Title of the Page */
@@ -2919,10 +3355,14 @@ export namespace MyNS {
 	}
 
 	export interface PageModifyFieldsImage {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
 	export interface PageModifyFieldsImageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -3102,7 +3542,10 @@ export namespace MyNS {
 
 	export interface PaymentMethodFields {
 
-		/** Unique identifier of the Payment Method */
+		/**
+		 * Unique identifier of the Payment Method
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the Payment Method */
@@ -3113,7 +3556,10 @@ export namespace MyNS {
 	}
 	export interface PaymentMethodFieldsFormProperties {
 
-		/** Unique identifier of the Payment Method */
+		/**
+		 * Unique identifier of the Payment Method
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the Payment Method */
@@ -3172,10 +3618,16 @@ export namespace MyNS {
 		/** Description of the product */
 		description?: string | null;
 
-		/** Diameter of the product */
+		/**
+		 * Diameter of the product
+		 * Type: float
+		 */
 		diameter?: number | null;
 
-		/** Discount of the product */
+		/**
+		 * Discount of the product
+		 * Type: float
+		 */
 		discount?: number | null;
 
 		/** True if the product is featured */
@@ -3184,14 +3636,23 @@ export namespace MyNS {
 		/** Category of a Product based on the Google product taxonomy */
 		google_product_category?: string | null;
 
-		/** Height of the product */
+		/**
+		 * Height of the product
+		 * Type: float
+		 */
 		height?: number | null;
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		images?: Array<ImageFields>;
 
-		/** Length of the product */
+		/**
+		 * Length of the product
+		 * Type: float
+		 */
 		length?: number | null;
 
 		/** Name of the product */
@@ -3203,7 +3664,10 @@ export namespace MyNS {
 		/** Product unique URL path */
 		permalink?: string | null;
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** Stock Keeping Unit of the product */
@@ -3212,17 +3676,26 @@ export namespace MyNS {
 		/** Status of the product */
 		status?: ProductFieldsStatus | null;
 
-		/** Quantity in stock for the product */
+		/**
+		 * Quantity in stock for the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock?: number | null;
 
 		/** True if the Product has unlimited stock */
 		stock_unlimited?: boolean | null;
 		variants?: Array<VariantFields>;
 
-		/** Weight of the product */
+		/**
+		 * Weight of the product
+		 * Type: float
+		 */
 		weight?: number | null;
 
-		/** Width of the product */
+		/**
+		 * Width of the product
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 	export interface ProductFieldsFormProperties {
@@ -3236,10 +3709,16 @@ export namespace MyNS {
 		/** Description of the product */
 		description: FormControl<string | null | undefined>,
 
-		/** Diameter of the product */
+		/**
+		 * Diameter of the product
+		 * Type: float
+		 */
 		diameter: FormControl<number | null | undefined>,
 
-		/** Discount of the product */
+		/**
+		 * Discount of the product
+		 * Type: float
+		 */
 		discount: FormControl<number | null | undefined>,
 
 		/** True if the product is featured */
@@ -3248,13 +3727,22 @@ export namespace MyNS {
 		/** Category of a Product based on the Google product taxonomy */
 		google_product_category: FormControl<string | null | undefined>,
 
-		/** Height of the product */
+		/**
+		 * Height of the product
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Length of the product */
+		/**
+		 * Length of the product
+		 * Type: float
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** Name of the product */
@@ -3266,7 +3754,10 @@ export namespace MyNS {
 		/** Product unique URL path */
 		permalink: FormControl<string | null | undefined>,
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Stock Keeping Unit of the product */
@@ -3275,16 +3766,25 @@ export namespace MyNS {
 		/** Status of the product */
 		status: FormControl<ProductFieldsStatus | null | undefined>,
 
-		/** Quantity in stock for the product */
+		/**
+		 * Quantity in stock for the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock: FormControl<number | null | undefined>,
 
 		/** True if the Product has unlimited stock */
 		stock_unlimited: FormControl<boolean | null | undefined>,
 
-		/** Weight of the product */
+		/**
+		 * Weight of the product
+		 * Type: float
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Width of the product */
+		/**
+		 * Width of the product
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateProductFieldsFormGroup() {
@@ -3319,18 +3819,27 @@ export namespace MyNS {
 
 	export interface VariantFields {
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		image?: ImageFields;
 		options?: Array<ProductOptionVariantEdit>;
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** Stock Keeping Unit of the Product's Variant */
 		sku?: string | null;
 
-		/** Quantity in stock for the Product's Variant */
+		/**
+		 * Quantity in stock for the Product's Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock?: number | null;
 
 		/** True if the Product's Variant has unlimited stock */
@@ -3338,16 +3847,25 @@ export namespace MyNS {
 	}
 	export interface VariantFieldsFormProperties {
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Stock Keeping Unit of the Product's Variant */
 		sku: FormControl<string | null | undefined>,
 
-		/** Quantity in stock for the Product's Variant */
+		/**
+		 * Quantity in stock for the Product's Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock: FormControl<number | null | undefined>,
 
 		/** True if the Product's Variant has unlimited stock */
@@ -3369,16 +3887,28 @@ export namespace MyNS {
 		/** Name of the product option */
 		name?: string | null;
 
-		/** Id of the product option */
+		/**
+		 * Id of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_id?: number | null;
 
-		/** position of product option */
+		/**
+		 * position of product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_position?: number | null;
 
-		/** Id of product option value */
+		/**
+		 * Id of product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_value_id?: number | null;
 
-		/** position of product option value */
+		/**
+		 * position of product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_value_position?: number | null;
 
 		/** Value of the product option */
@@ -3389,16 +3919,28 @@ export namespace MyNS {
 		/** Name of the product option */
 		name: FormControl<string | null | undefined>,
 
-		/** Id of the product option */
+		/**
+		 * Id of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_id: FormControl<number | null | undefined>,
 
-		/** position of product option */
+		/**
+		 * position of product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_position: FormControl<number | null | undefined>,
 
-		/** Id of product option value */
+		/**
+		 * Id of product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_option_value_id: FormControl<number | null | undefined>,
 
-		/** position of product option value */
+		/**
+		 * position of product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		product_value_position: FormControl<number | null | undefined>,
 
 		/** Value of the product option */
@@ -3429,10 +3971,16 @@ export namespace MyNS {
 
 	export interface ProductCustomFieldFields {
 
-		/** Unique identifier of the ProductCustomField */
+		/**
+		 * Unique identifier of the ProductCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		custom_field_id?: number | null;
 
-		/** Unique identifier of the ProductCustomField value */
+		/**
+		 * Unique identifier of the ProductCustomField value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The label for the ProductCustomField */
@@ -3449,10 +3997,16 @@ export namespace MyNS {
 	}
 	export interface ProductCustomFieldFieldsFormProperties {
 
-		/** Unique identifier of the ProductCustomField */
+		/**
+		 * Unique identifier of the ProductCustomField
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		custom_field_id: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the ProductCustomField value */
+		/**
+		 * Unique identifier of the ProductCustomField value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The label for the ProductCustomField */
@@ -3499,7 +4053,10 @@ export namespace MyNS {
 		/** Description of the product */
 		description?: string | null;
 
-		/** Diameter of the product */
+		/**
+		 * Diameter of the product
+		 * Type: float
+		 */
 		diameter?: number | null;
 
 		/** True if the product is featured */
@@ -3508,10 +4065,16 @@ export namespace MyNS {
 		/** Category of a Product based on the Google product taxonomy */
 		google_product_category?: string | null;
 
-		/** Height of the product */
+		/**
+		 * Height of the product
+		 * Type: float
+		 */
 		height?: number | null;
 
-		/** Length of the product */
+		/**
+		 * Length of the product
+		 * Type: float
+		 */
 		length?: number | null;
 
 		/** SEO meta description of the product */
@@ -3535,6 +4098,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product
 		 * Required
+		 * Type: float
 		 */
 		price: number;
 
@@ -3547,16 +4111,25 @@ export namespace MyNS {
 		/** Status of the product */
 		status?: ProductFieldsStatus | null;
 
-		/** Quantity in stock for the product */
+		/**
+		 * Quantity in stock for the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock?: number | null;
 
 		/** True if the Product has unlimited stock */
 		stock_unlimited?: boolean | null;
 
-		/** Weight of the product */
+		/**
+		 * Weight of the product
+		 * Type: float
+		 */
 		weight?: number | null;
 
-		/** Width of the product */
+		/**
+		 * Width of the product
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 	export interface ProductEditFieldsFormProperties {
@@ -3567,7 +4140,10 @@ export namespace MyNS {
 		/** Description of the product */
 		description: FormControl<string | null | undefined>,
 
-		/** Diameter of the product */
+		/**
+		 * Diameter of the product
+		 * Type: float
+		 */
 		diameter: FormControl<number | null | undefined>,
 
 		/** True if the product is featured */
@@ -3576,10 +4152,16 @@ export namespace MyNS {
 		/** Category of a Product based on the Google product taxonomy */
 		google_product_category: FormControl<string | null | undefined>,
 
-		/** Height of the product */
+		/**
+		 * Height of the product
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Length of the product */
+		/**
+		 * Length of the product
+		 * Type: float
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** SEO meta description of the product */
@@ -3603,6 +4185,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product
 		 * Required
+		 * Type: float
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -3615,16 +4198,25 @@ export namespace MyNS {
 		/** Status of the product */
 		status: FormControl<ProductFieldsStatus | null | undefined>,
 
-		/** Quantity in stock for the product */
+		/**
+		 * Quantity in stock for the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock: FormControl<number | null | undefined>,
 
 		/** True if the Product has unlimited stock */
 		stock_unlimited: FormControl<boolean | null | undefined>,
 
-		/** Weight of the product */
+		/**
+		 * Weight of the product
+		 * Type: float
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Width of the product */
+		/**
+		 * Width of the product
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateProductEditFieldsFormGroup() {
@@ -3666,7 +4258,10 @@ export namespace MyNS {
 
 	export interface ProductOptionFields {
 
-		/** Unique identifier of the product option */
+		/**
+		 * Unique identifier of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the product option */
@@ -3675,13 +4270,19 @@ export namespace MyNS {
 		/** Type of the product option */
 		option_type?: ProductOptionFieldsOption_type | null;
 
-		/** Position of the product option */
+		/**
+		 * Position of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 		values?: Array<ProductOptionValueFields>;
 	}
 	export interface ProductOptionFieldsFormProperties {
 
-		/** Unique identifier of the product option */
+		/**
+		 * Unique identifier of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the product option */
@@ -3690,7 +4291,10 @@ export namespace MyNS {
 		/** Type of the product option */
 		option_type: FormControl<ProductOptionFieldsOption_type | null | undefined>,
 
-		/** Position of the product option */
+		/**
+		 * Position of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateProductOptionFieldsFormGroup() {
@@ -3707,26 +4311,38 @@ export namespace MyNS {
 
 	export interface ProductOptionValueFields {
 
-		/** Unique identifier of the product option value */
+		/**
+		 * Unique identifier of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the product option value */
 		name?: string | null;
 
-		/** Position of the product option value */
+		/**
+		 * Position of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 		product_option?: ProductOption;
 		variants?: Array<Variant>;
 	}
 	export interface ProductOptionValueFieldsFormProperties {
 
-		/** Unique identifier of the product option value */
+		/**
+		 * Unique identifier of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the product option value */
 		name: FormControl<string | null | undefined>,
 
-		/** Position of the product option value */
+		/**
+		 * Position of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateProductOptionValueFieldsFormGroup() {
@@ -3768,7 +4384,10 @@ export namespace MyNS {
 		/** Type of the product option */
 		option_type?: ProductOptionFieldsOption_type | null;
 
-		/** Position of the product option */
+		/**
+		 * Position of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 	}
 	export interface ProductOptionEditFieldsFormProperties {
@@ -3779,7 +4398,10 @@ export namespace MyNS {
 		/** Type of the product option */
 		option_type: FormControl<ProductOptionFieldsOption_type | null | undefined>,
 
-		/** Position of the product option */
+		/**
+		 * Position of the product option
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateProductOptionEditFieldsFormGroup() {
@@ -3818,7 +4440,10 @@ export namespace MyNS {
 		/** Name of the product option value */
 		name?: string | null;
 
-		/** Position of the product option value */
+		/**
+		 * Position of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 	}
 	export interface ProductOptionValueEditFieldsFormProperties {
@@ -3826,7 +4451,10 @@ export namespace MyNS {
 		/** Name of the product option value */
 		name: FormControl<string | null | undefined>,
 
-		/** Position of the product option value */
+		/**
+		 * Position of the product option value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateProductOptionValueEditFieldsFormGroup() {
@@ -3859,10 +4487,16 @@ export namespace MyNS {
 		/** Code of the promotion */
 		code?: string | null;
 
-		/** Minimum order amount to validate the promotion */
+		/**
+		 * Minimum order amount to validate the promotion
+		 * Type: float
+		 */
 		condition_price?: number | null;
 
-		/** Minimum quantity of ordered itens to validate the promotion */
+		/**
+		 * Minimum quantity of ordered itens to validate the promotion
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		condition_qty?: number | null;
 
 		/** True if the promotion can be acumulated with others */
@@ -3871,10 +4505,16 @@ export namespace MyNS {
 		/** Customer Categories to whom the promotion will be applied (requires 'customers' param - 'categories') */
 		customer_categories?: Array<Id>;
 
-		/** Fixed discount amount of the promotion */
+		/**
+		 * Fixed discount amount of the promotion
+		 * Type: float
+		 */
 		discount_amount_fix?: number | null;
 
-		/** Percentual discount amount of the promotion */
+		/**
+		 * Percentual discount amount of the promotion
+		 * Type: float
+		 */
 		discount_amount_percent?: number | null;
 
 		/** Where the promotion will be applied ('order', 'shipping', 'categories', 'buy_x_get_y) */
@@ -3886,13 +4526,19 @@ export namespace MyNS {
 		/** Expiration date of the promotion (requires 'lasts' param - 'date') */
 		expires_at?: string | null;
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Controls when the promotion will expire ('none', 'date', 'max_times_used') */
 		lasts?: string | null;
 
-		/** Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used') */
+		/**
+		 * Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_times_used?: number | null;
 
 		/** Name of the product */
@@ -3904,13 +4550,19 @@ export namespace MyNS {
 		/** Products required to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
 		products_x?: Array<Id>;
 
-		/** Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
+		/**
+		 * Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity_x?: number | null;
 
 		/** Status of the promotion ('active', 'expired') */
 		status?: string | null;
 
-		/** Amount of times the promotion was used */
+		/**
+		 * Amount of times the promotion was used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		times_used?: number | null;
 	}
 	export interface PromotionFieldsFormProperties {
@@ -3921,19 +4573,31 @@ export namespace MyNS {
 		/** Code of the promotion */
 		code: FormControl<string | null | undefined>,
 
-		/** Minimum order amount to validate the promotion */
+		/**
+		 * Minimum order amount to validate the promotion
+		 * Type: float
+		 */
 		condition_price: FormControl<number | null | undefined>,
 
-		/** Minimum quantity of ordered itens to validate the promotion */
+		/**
+		 * Minimum quantity of ordered itens to validate the promotion
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		condition_qty: FormControl<number | null | undefined>,
 
 		/** True if the promotion can be acumulated with others */
 		cumulative: FormControl<boolean | null | undefined>,
 
-		/** Fixed discount amount of the promotion */
+		/**
+		 * Fixed discount amount of the promotion
+		 * Type: float
+		 */
 		discount_amount_fix: FormControl<number | null | undefined>,
 
-		/** Percentual discount amount of the promotion */
+		/**
+		 * Percentual discount amount of the promotion
+		 * Type: float
+		 */
 		discount_amount_percent: FormControl<number | null | undefined>,
 
 		/** Where the promotion will be applied ('order', 'shipping', 'categories', 'buy_x_get_y) */
@@ -3945,25 +4609,37 @@ export namespace MyNS {
 		/** Expiration date of the promotion (requires 'lasts' param - 'date') */
 		expires_at: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the product */
+		/**
+		 * Unique identifier of the product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Controls when the promotion will expire ('none', 'date', 'max_times_used') */
 		lasts: FormControl<string | null | undefined>,
 
-		/** Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used') */
+		/**
+		 * Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_times_used: FormControl<number | null | undefined>,
 
 		/** Name of the product */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
+		/**
+		 * Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity_x: FormControl<number | null | undefined>,
 
 		/** Status of the promotion ('active', 'expired') */
 		status: FormControl<string | null | undefined>,
 
-		/** Amount of times the promotion was used */
+		/**
+		 * Amount of times the promotion was used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		times_used: FormControl<number | null | undefined>,
 	}
 	export function CreatePromotionFieldsFormGroup() {
@@ -4014,10 +4690,16 @@ export namespace MyNS {
 		/** Code of the promotion */
 		code?: string | null;
 
-		/** Minimum order amount to validate the promotion (requires 'buys_at_least' param - 'price') */
+		/**
+		 * Minimum order amount to validate the promotion (requires 'buys_at_least' param - 'price')
+		 * Type: float
+		 */
 		condition_price?: number | null;
 
-		/** Minimum quantity of ordered itens to validate the promotion (requires 'buys_at_least' param - 'qty') */
+		/**
+		 * Minimum quantity of ordered itens to validate the promotion (requires 'buys_at_least' param - 'qty')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		condition_qty?: number | null;
 
 		/** True if the promotion can be acumulated with others */
@@ -4029,10 +4711,16 @@ export namespace MyNS {
 		/** Controls to which customers the promotion will be applied ('all', 'loggedin', 'categories', 'guests') */
 		customers?: string | null;
 
-		/** Fixed discount amount of the promotion (requires 'type' param - 'fix') */
+		/**
+		 * Fixed discount amount of the promotion (requires 'type' param - 'fix')
+		 * Type: float
+		 */
 		discount_amount_fix?: number | null;
 
-		/** Percentual discount amount of the promotion (requires 'type' param - 'percentage') */
+		/**
+		 * Percentual discount amount of the promotion (requires 'type' param - 'percentage')
+		 * Type: float
+		 */
 		discount_amount_percent?: number | null;
 
 		/** Where the promotion will be applied ('order', 'shipping', 'categories', 'buy_x_get_y) */
@@ -4047,7 +4735,10 @@ export namespace MyNS {
 		/** Controls when the promotion will expire ('none', 'date', 'max_times_used') */
 		lasts?: string | null;
 
-		/** Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used') */
+		/**
+		 * Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_times_used?: number | null;
 
 		/** Name of the product */
@@ -4059,7 +4750,10 @@ export namespace MyNS {
 		/** Products required to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
 		products_x?: Array<Id>;
 
-		/** Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
+		/**
+		 * Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity_x?: number | null;
 
 		/** Controls if the discount will be a fixed area ('fix', 'percentage') */
@@ -4076,10 +4770,16 @@ export namespace MyNS {
 		/** Code of the promotion */
 		code: FormControl<string | null | undefined>,
 
-		/** Minimum order amount to validate the promotion (requires 'buys_at_least' param - 'price') */
+		/**
+		 * Minimum order amount to validate the promotion (requires 'buys_at_least' param - 'price')
+		 * Type: float
+		 */
 		condition_price: FormControl<number | null | undefined>,
 
-		/** Minimum quantity of ordered itens to validate the promotion (requires 'buys_at_least' param - 'qty') */
+		/**
+		 * Minimum quantity of ordered itens to validate the promotion (requires 'buys_at_least' param - 'qty')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		condition_qty: FormControl<number | null | undefined>,
 
 		/** True if the promotion can be acumulated with others */
@@ -4088,10 +4788,16 @@ export namespace MyNS {
 		/** Controls to which customers the promotion will be applied ('all', 'loggedin', 'categories', 'guests') */
 		customers: FormControl<string | null | undefined>,
 
-		/** Fixed discount amount of the promotion (requires 'type' param - 'fix') */
+		/**
+		 * Fixed discount amount of the promotion (requires 'type' param - 'fix')
+		 * Type: float
+		 */
 		discount_amount_fix: FormControl<number | null | undefined>,
 
-		/** Percentual discount amount of the promotion (requires 'type' param - 'percentage') */
+		/**
+		 * Percentual discount amount of the promotion (requires 'type' param - 'percentage')
+		 * Type: float
+		 */
 		discount_amount_percent: FormControl<number | null | undefined>,
 
 		/** Where the promotion will be applied ('order', 'shipping', 'categories', 'buy_x_get_y) */
@@ -4106,13 +4812,19 @@ export namespace MyNS {
 		/** Controls when the promotion will expire ('none', 'date', 'max_times_used') */
 		lasts: FormControl<string | null | undefined>,
 
-		/** Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used') */
+		/**
+		 * Maximum amount a promotion can be used (requires 'lasts' param - 'max_times_used')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_times_used: FormControl<number | null | undefined>,
 
 		/** Name of the product */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y') */
+		/**
+		 * Number of sets of products_x needed to be able to apply the promotion (requires 'discount_target' param - 'buy_x_get_y')
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity_x: FormControl<number | null | undefined>,
 
 		/** Controls if the discount will be a fixed area ('fix', 'percentage') */
@@ -4142,10 +4854,14 @@ export namespace MyNS {
 	}
 
 	export interface Referrer {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		source?: string | null;
 	}
 	export interface ReferrerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
 	}
@@ -4261,7 +4977,10 @@ export namespace MyNS {
 		/** URL that returns available shipping services */
 		fetch_services_url?: string | null;
 
-		/** Unique identifier of the Shipping Method */
+		/**
+		 * Unique identifier of the Shipping Method
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the Shipping Method */
@@ -4288,7 +5007,10 @@ export namespace MyNS {
 		/** URL that returns available shipping services */
 		fetch_services_url: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the Shipping Method */
+		/**
+		 * Unique identifier of the Shipping Method
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the Shipping Method */
@@ -4319,7 +5041,10 @@ export namespace MyNS {
 
 	export interface ShippingService {
 
-		/** Unique identifier of the Shipping Service */
+		/**
+		 * Unique identifier of the Shipping Service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the Shipping Service */
@@ -4330,7 +5055,10 @@ export namespace MyNS {
 	}
 	export interface ShippingServiceFormProperties {
 
-		/** Unique identifier of the Shipping Service */
+		/**
+		 * Unique identifier of the Shipping Service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the Shipping Service */
@@ -4629,7 +5357,10 @@ export namespace MyNS {
 		/** Type of store traffic and its frequency. */
 		traffic_type?: Array<TrafficType>;
 
-		/** Total number of visits. */
+		/**
+		 * Total number of visits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		visits?: number | null;
 	}
 	export interface StoreStatsFormProperties {
@@ -4643,7 +5374,10 @@ export namespace MyNS {
 		/** Statistics end date. */
 		to: FormControl<string | null | undefined>,
 
-		/** Total number of visits. */
+		/**
+		 * Total number of visits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		visits: FormControl<number | null | undefined>,
 	}
 	export function CreateStoreStatsFormGroup() {
@@ -4658,24 +5392,42 @@ export namespace MyNS {
 
 	export interface StoreStatsConversions {
 
-		/** Total add to cart conversions. */
+		/**
+		 * Total add to cart conversions.
+		 * Type: float
+		 */
 		added_to_cart?: number | null;
 
-		/** Total checkout conversions. */
+		/**
+		 * Total checkout conversions.
+		 * Type: float
+		 */
 		checkout?: number | null;
 
-		/** Total paid conversions. */
+		/**
+		 * Total paid conversions.
+		 * Type: float
+		 */
 		paid?: number | null;
 	}
 	export interface StoreStatsConversionsFormProperties {
 
-		/** Total add to cart conversions. */
+		/**
+		 * Total add to cart conversions.
+		 * Type: float
+		 */
 		added_to_cart: FormControl<number | null | undefined>,
 
-		/** Total checkout conversions. */
+		/**
+		 * Total checkout conversions.
+		 * Type: float
+		 */
 		checkout: FormControl<number | null | undefined>,
 
-		/** Total paid conversions. */
+		/**
+		 * Total paid conversions.
+		 * Type: float
+		 */
 		paid: FormControl<number | null | undefined>,
 	}
 	export function CreateStoreStatsConversionsFormGroup() {
@@ -4689,7 +5441,10 @@ export namespace MyNS {
 
 	export interface StoreStatsNew_vs_returning_customers {
 
-		/** Global percentage of new vs returning customers. */
+		/**
+		 * Global percentage of new vs returning customers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		global?: number | null;
 
 		/** Numbers of new and returning customers per day. */
@@ -4697,7 +5452,10 @@ export namespace MyNS {
 	}
 	export interface StoreStatsNew_vs_returning_customersFormProperties {
 
-		/** Global percentage of new vs returning customers. */
+		/**
+		 * Global percentage of new vs returning customers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		global: FormControl<number | null | undefined>,
 	}
 	export function CreateStoreStatsNew_vs_returning_customersFormGroup() {
@@ -4709,7 +5467,10 @@ export namespace MyNS {
 
 	export interface StoreStatsNew_vs_returning_orders {
 
-		/** Global percentage of new vs returning customers. */
+		/**
+		 * Global percentage of new vs returning customers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		global?: number | null;
 
 		/** Numbers of new and returning customers per day. */
@@ -4717,7 +5478,10 @@ export namespace MyNS {
 	}
 	export interface StoreStatsNew_vs_returning_ordersFormProperties {
 
-		/** Global percentage of new vs returning customers. */
+		/**
+		 * Global percentage of new vs returning customers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		global: FormControl<number | null | undefined>,
 	}
 	export function CreateStoreStatsNew_vs_returning_ordersFormGroup() {
@@ -4729,27 +5493,45 @@ export namespace MyNS {
 
 	export interface StoreStatsOrders {
 
-		/** Average order amount. */
+		/**
+		 * Average order amount.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Total number of orders. */
+		/**
+		 * Total number of orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Orders data. */
 		data?: Array<OrdersData>;
 
-		/** Total amount from all orders. */
+		/**
+		 * Total amount from all orders.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface StoreStatsOrdersFormProperties {
 
-		/** Average order amount. */
+		/**
+		 * Average order amount.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Total number of orders. */
+		/**
+		 * Total number of orders.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Total amount from all orders. */
+		/**
+		 * Total amount from all orders.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateStoreStatsOrdersFormGroup() {
@@ -4782,10 +5564,14 @@ export namespace MyNS {
 	}
 
 	export interface TrafficType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		name?: string | null;
 	}
 	export interface TrafficTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -4810,7 +5596,10 @@ export namespace MyNS {
 
 	export interface TaxFields {
 
-		/** Unique identifier of the category of the Tax */
+		/**
+		 * Unique identifier of the category of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id?: number | null;
 
 		/** Country name where the Tax applies */
@@ -4819,7 +5608,10 @@ export namespace MyNS {
 		/** True if the tax has a fixed valued amount */
 		fixed?: boolean | null;
 
-		/** Unique identifier of the Tax */
+		/**
+		 * Unique identifier of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name that identifies tax */
@@ -4831,12 +5623,18 @@ export namespace MyNS {
 		/** True if the tax should be applied to shipping costs */
 		shipping?: boolean | null;
 
-		/** Tax value for the given Tax */
+		/**
+		 * Tax value for the given Tax
+		 * Type: float
+		 */
 		tax_amount?: number | null;
 	}
 	export interface TaxFieldsFormProperties {
 
-		/** Unique identifier of the category of the Tax */
+		/**
+		 * Unique identifier of the category of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id: FormControl<number | null | undefined>,
 
 		/** Country name where the Tax applies */
@@ -4845,7 +5643,10 @@ export namespace MyNS {
 		/** True if the tax has a fixed valued amount */
 		fixed: FormControl<boolean | null | undefined>,
 
-		/** Unique identifier of the Tax */
+		/**
+		 * Unique identifier of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name that identifies tax */
@@ -4857,7 +5658,10 @@ export namespace MyNS {
 		/** True if the tax should be applied to shipping costs */
 		shipping: FormControl<boolean | null | undefined>,
 
-		/** Tax value for the given Tax */
+		/**
+		 * Tax value for the given Tax
+		 * Type: float
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxFieldsFormGroup() {
@@ -4887,7 +5691,10 @@ export namespace MyNS {
 
 	export interface TaxEditFields {
 
-		/** Unique identifier of the category of the Tax */
+		/**
+		 * Unique identifier of the category of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id?: number | null;
 
 		/** Country where the Tax applies */
@@ -4905,12 +5712,18 @@ export namespace MyNS {
 		/** True if the tax should be applied to shipping costs */
 		shipping?: boolean | null;
 
-		/** Tax value for the given Tax */
+		/**
+		 * Tax value for the given Tax
+		 * Type: float
+		 */
 		tax?: number | null;
 	}
 	export interface TaxEditFieldsFormProperties {
 
-		/** Unique identifier of the category of the Tax */
+		/**
+		 * Unique identifier of the category of the Tax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id: FormControl<number | null | undefined>,
 
 		/** Country where the Tax applies */
@@ -4928,7 +5741,10 @@ export namespace MyNS {
 		/** True if the tax should be applied to shipping costs */
 		shipping: FormControl<boolean | null | undefined>,
 
-		/** Tax value for the given Tax */
+		/**
+		 * Tax value for the given Tax
+		 * Type: float
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxEditFieldsFormGroup() {
@@ -5030,17 +5846,26 @@ export namespace MyNS {
 
 	export interface VariantEditFields {
 
-		/** Unique identifier of the product image to associate with this variant */
+		/**
+		 * Unique identifier of the product image to associate with this variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		image_id?: number | null;
 		options?: Array<ProductOptionVariantEdit>;
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** Stock Keeping Unit of the Product's Variant */
 		sku?: string | null;
 
-		/** Quantity in stock for the Product's Variant */
+		/**
+		 * Quantity in stock for the Product's Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock?: number | null;
 
 		/** True if the Product's Variant has unlimited stock */
@@ -5048,16 +5873,25 @@ export namespace MyNS {
 	}
 	export interface VariantEditFieldsFormProperties {
 
-		/** Unique identifier of the product image to associate with this variant */
+		/**
+		 * Unique identifier of the product image to associate with this variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		image_id: FormControl<number | null | undefined>,
 
-		/** Price of the product */
+		/**
+		 * Price of the product
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Stock Keeping Unit of the Product's Variant */
 		sku: FormControl<string | null | undefined>,
 
-		/** Quantity in stock for the Product's Variant */
+		/**
+		 * Quantity in stock for the Product's Variant
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stock: FormControl<number | null | undefined>,
 
 		/** True if the Product's Variant has unlimited stock */
@@ -5138,6 +5972,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Category
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Categories_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5150,6 +5985,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Category
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Category} The selected Category.
 		 */
 		Categories_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Category> {
@@ -5162,6 +5998,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Category
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CategoryEdit} requestBody Category parameters.
 		 * @return {Category} OK
 		 */
@@ -5175,6 +6012,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<CheckoutCustomField>} An array of Checkout Custom Fields
 		 */
@@ -5201,6 +6039,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CheckoutCustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Checkout_custom_fields_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5213,6 +6052,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CheckoutCustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CheckoutCustomField} OK
 		 */
 		Checkout_custom_fields_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<CheckoutCustomField> {
@@ -5225,6 +6065,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CheckoutCustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CheckoutCustomFieldEdit} requestBody CheckoutCustomField parameters.
 		 * @return {CheckoutCustomField} OK
 		 */
@@ -5309,6 +6150,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Custom_fields_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5321,6 +6163,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomField} OK
 		 */
 		Custom_fields_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<CustomField> {
@@ -5333,6 +6176,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomFieldEdit} requestBody CustomField parameters.
 		 * @return {CustomField} OK
 		 */
@@ -5346,6 +6190,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CustomFieldSelectOption>} An array of Custom Fields Select Options
 		 */
 		Custom_fields_idSelect_options_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<CustomFieldSelectOption>> {
@@ -5371,7 +6216,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} custom_field_select_option_id Id of the CustomFieldSelectOption
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Custom_fields_idSelect_options_custom_field_select_option_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, custom_field_select_option_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5384,7 +6231,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} custom_field_select_option_id Id of the CustomFieldSelectOption
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomFieldSelectOption} OK
 		 */
 		Custom_fields_idSelect_options_custom_field_select_option_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, custom_field_select_option_id: number, headersHandler?: () => HttpHeaders): Observable<CustomFieldSelectOption> {
@@ -5397,7 +6246,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomField
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} custom_field_select_option_id Id of the CustomFieldSelectOption
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomFieldSelectOptionEdit} requestBody CustomFieldSelectOption parameters.
 		 * @return {CustomFieldSelectOption} OK
 		 */
@@ -5411,6 +6262,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<CustomerCategory>} An array of Customer Categories
 		 */
@@ -5436,6 +6288,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Customer_categories_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5448,6 +6301,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomerCategory} OK
 		 */
 		Customer_categories_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<CustomerCategory> {
@@ -5460,6 +6314,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomerCategoryEdit} requestBody CustomerCategory parameters.
 		 * @return {CustomerCategory} OK
 		 */
@@ -5473,6 +6328,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Customer_categories_idCustomers_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5485,6 +6341,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Customer>} OK
 		 */
 		Customer_categories_idCustomers_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<Customer>> {
@@ -5497,6 +6354,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the CustomerCategory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomersToCustomerCategory} requestBody Customer parameters.
 		 * @return {Array<Customer>} Array of Customers in the Customer Category
 		 */
@@ -5510,6 +6368,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<Customer>} An array of Orders
 		 */
@@ -5558,6 +6417,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Customers_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5570,6 +6430,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Customer} OK
 		 */
 		Customers_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Customer> {
@@ -5582,6 +6443,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomerWithPasswordNoID} requestBody Customer parameters.
 		 * @return {Customer} OK
 		 */
@@ -5595,6 +6457,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CustomerAdditionalField>} OK
 		 */
 		Customers_idFieldsGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<CustomerAdditionalField>> {
@@ -5607,6 +6470,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomerAdditionalFieldEdit} requestBody Customer Additional Field parameters.
 		 * @return {CustomerAdditionalField} OK
 		 */
@@ -5620,7 +6484,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} field_id Id of the Customer Additional Field
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Customers_idFields_field_idDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, field_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5633,7 +6499,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} field_id Id of the Customer Additional Field
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomerAdditionalField} OK
 		 */
 		Customers_idFields_field_idGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, field_id: number, headersHandler?: () => HttpHeaders): Observable<CustomerAdditionalField> {
@@ -5646,7 +6514,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} field_id Id of the Customer Additional Field
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CustomerAdditionalFieldEdit} requestBody Customer Additional Field parameters.
 		 * @return {CustomerAdditionalField} OK
 		 */
@@ -5660,6 +6530,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<Fulfillment>} An array of Fulfillments
 		 */
@@ -5684,6 +6555,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Fulfillment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Fulfillment} OK
 		 */
 		Fulfillments_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Fulfillment> {
@@ -5696,6 +6568,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<Hook>} An array of Hooks
 		 */
@@ -5721,6 +6594,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Hook
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Hooks_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5733,6 +6607,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Hook
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Hook} OK
 		 */
 		Hooks_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Hook> {
@@ -5745,6 +6620,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Hook
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {HookEdit} requestBody Hook parameters.
 		 * @return {Hook} OK
 		 */
@@ -5805,6 +6681,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Order
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Fulfillment>} OK
 		 */
 		Order_idFulfillments_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<Fulfillment>> {
@@ -5817,6 +6694,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<Order>} An array of Orders
 		 */
@@ -5844,6 +6722,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Order
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Order} OK
 		 */
 		OrdersAfter_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Order> {
@@ -5879,6 +6758,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Order
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Order} OK
 		 */
 		Orders_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Order> {
@@ -5892,6 +6772,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Order
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {OrderEdit} requestBody Order parameters to change
 		 * @return {Order} OK
 		 */
@@ -5905,6 +6786,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Order
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<OrderHistory>} An array with Order History
 		 */
 		Orders_idHistory_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<OrderHistory>> {
@@ -5917,6 +6799,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the OrderHistory
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {OrderHistoryEdit} requestBody Order History parameters.
 		 * @return {OrderHistory} OK
 		 */
@@ -5930,6 +6813,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @return {Array<Page>} An array of Pages
 		 */
@@ -5966,6 +6850,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Pages_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -5978,6 +6863,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Page} OK
 		 */
 		Pages_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Page> {
@@ -5990,6 +6876,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PageModify} requestBody Page parameters.
 		 * @return {Page} OK
 		 */
@@ -6028,6 +6915,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Payment Method
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PaymentMethod} OK
 		 */
 		Payment_methods_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<PaymentMethod> {
@@ -6040,6 +6928,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} limit List restriction
+		 *     Maximum: 200
 		 * @param {string} page List page
 		 * @param {string} locale Locale code of the translation
 		 * @return {Array<Product>} OK
@@ -6067,6 +6956,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale Locale code of the translation
 		 * @return {Array<Product>} OK
 		 */
@@ -6081,6 +6971,7 @@ export namespace MyNS {
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} locale Locale code of the translation
 		 * @param {number} category_id Category ID of the Product used as filter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Product>} OK
 		 */
 		ProductsCategory_category_id_jsonGetByLoginAndAuthtokenAndLocale(login: string, authtoken: string, locale: string | null | undefined, category_id: number, headersHandler?: () => HttpHeaders): Observable<Array<Product>> {
@@ -6094,6 +6985,7 @@ export namespace MyNS {
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} locale Locale code of the translation
 		 * @param {number} category_id Category ID of the Product used as filter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		ProductsCategory_category_idCount_jsonGetByLoginAndAuthtokenAndLocale(login: string, authtoken: string, locale: string | null | undefined, category_id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6161,6 +7053,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6174,6 +7067,7 @@ export namespace MyNS {
 		 * @param {string} authtoken API OAuth token.
 		 * @param {string} locale Locale code of the translation
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Product} OK
 		 */
 		Products_id_jsonGetByLoginAndAuthtokenAndLocale(login: string, authtoken: string, locale: string | null | undefined, id: number, headersHandler?: () => HttpHeaders): Observable<Product> {
@@ -6186,6 +7080,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale Locale code of the translation
 		 * @param {ProductEdit} requestBody Product parameters to change
 		 * @return {Product} OK
@@ -6200,6 +7095,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attachment>} OK
 		 */
 		Products_idAttachments_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<Attachment>> {
@@ -6212,6 +7108,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AttachmentEdit} requestBody Product Attachment parameters.
 		 * @return {Attachment} OK
 		 */
@@ -6225,6 +7122,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idAttachmentsCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6237,7 +7135,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} attachment_id Id of the Product Attachment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_idAttachments_attachment_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, attachment_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6250,7 +7150,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} attachment_id Id of the Product Attachment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attachment} OK
 		 */
 		Products_idAttachments_attachment_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, attachment_id: number, headersHandler?: () => HttpHeaders): Observable<Attachment> {
@@ -6263,6 +7165,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DigitalProduct>} OK
 		 */
 		Products_idDigital_products_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<DigitalProduct>> {
@@ -6275,6 +7178,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {DigitalProductEdit} requestBody Product DigitalProduct parameters.
 		 * @return {DigitalProduct} OK
 		 */
@@ -6288,6 +7192,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idDigital_productsCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6300,7 +7205,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} digital_product_id Id of the Product DigitalProduct
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_idDigital_products_digital_product_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, digital_product_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6313,7 +7220,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} digital_product_id Id of the Product DigitalProduct
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DigitalProduct} OK
 		 */
 		Products_idDigital_products_digital_product_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, digital_product_id: number, headersHandler?: () => HttpHeaders): Observable<DigitalProduct> {
@@ -6326,6 +7235,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProductCustomField>} OK
 		 */
 		Products_idFields_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<ProductCustomField>> {
@@ -6338,6 +7248,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AddProductCustomField} requestBody Product Custom Field parameters.
 		 * @return {Product} OK
 		 */
@@ -6351,6 +7262,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idFieldsCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6363,6 +7275,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Image>} OK
 		 */
 		Products_idImages_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<Image>> {
@@ -6375,6 +7288,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ImageEdit} requestBody Product Image parameters.
 		 * @return {Image} OK
 		 */
@@ -6388,6 +7302,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idImagesCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6400,7 +7315,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} image_id Id of the Product Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_idImages_image_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, image_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6413,7 +7330,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} image_id Id of the Product Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Image} OK
 		 */
 		Products_idImages_image_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, image_id: number, headersHandler?: () => HttpHeaders): Observable<Image> {
@@ -6426,6 +7345,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProductOption>} OK
 		 */
 		Products_idOptions_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<ProductOption>> {
@@ -6438,6 +7358,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOptionEdit} requestBody Product Option parameters.
 		 * @return {ProductOption} OK
 		 */
@@ -6451,6 +7372,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idOptionsCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6463,7 +7385,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_idOptions_option_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6476,7 +7400,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProductOption} OK
 		 */
 		Products_idOptions_option_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, headersHandler?: () => HttpHeaders): Observable<ProductOption> {
@@ -6489,7 +7415,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOptionEdit} requestBody Product option parameters to change
 		 * @return {ProductOption} OK
 		 */
@@ -6503,7 +7431,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id ID of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProductOptionValue>} OK
 		 */
 		Products_idOptions_option_idValues_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, headersHandler?: () => HttpHeaders): Observable<Array<ProductOptionValue>> {
@@ -6516,7 +7446,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOptionValueEdit} requestBody Product Option Value parameters.
 		 * @return {ProductOptionValue} OK
 		 */
@@ -6530,7 +7462,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id ID of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idOptions_option_idValuesCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6543,8 +7477,11 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} value_id ID of the Product Option Value
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Products_idOptions_option_idValues_value_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, value_id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6557,8 +7494,11 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} value_id ID of the Product Option Value
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProductOptionValue} OK
 		 */
 		Products_idOptions_option_idValues_value_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, option_id: number, value_id: number, headersHandler?: () => HttpHeaders): Observable<ProductOptionValue> {
@@ -6571,8 +7511,11 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} option_id Id of the Product Option
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} value_id Id of the Product Option Value
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOptionValueEdit} requestBody Product option value parameters to change
 		 * @return {ProductOptionValue} OK
 		 */
@@ -6586,6 +7529,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Variant>} OK
 		 */
 		Products_idVariants_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Array<Variant>> {
@@ -6598,6 +7542,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {VariantEdit} requestBody Product Variant parameters.
 		 * @return {Variant} OK
 		 */
@@ -6611,6 +7556,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id ID of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Count} OK
 		 */
 		Products_idVariantsCount_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Count> {
@@ -6623,7 +7569,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} variant_id Id of the Product Variant
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Variant} OK
 		 */
 		Products_idVariants_variant_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, variant_id: number, headersHandler?: () => HttpHeaders): Observable<Variant> {
@@ -6636,7 +7584,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Product
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} variant_id Id of the Product Variant
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {VariantEdit} requestBody Product Variant parameters to change
 		 * @return {Variant} OK
 		 */
@@ -6650,7 +7600,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} product_id Id of the Product.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} field_id Id of the Custom Field Value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MessageObject} OK
 		 */
 		Products_product_idFields_field_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, product_id: number, field_id: number, headersHandler?: () => HttpHeaders): Observable<MessageObject> {
@@ -6663,7 +7615,9 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} product_id Id of the Product.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} field_id Id of the Custom Field Value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProductCustomField} OK
 		 */
 		Products_product_idFields_field_id_jsonPutByLoginAndAuthtoken(login: string, authtoken: string, product_id: number, field_id: number, headersHandler?: () => HttpHeaders): Observable<ProductCustomField> {
@@ -6701,6 +7655,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Promotion
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Promotions_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6713,6 +7668,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Promotion
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Promotion} OK
 		 */
 		Promotions_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Promotion> {
@@ -6725,6 +7681,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Promotion
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PromotionEdit} requestBody Promotion parameters.
 		 * @return {Promotion} OK
 		 */
@@ -6761,6 +7718,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Shipping Method
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Shipping_methods_id_jsonDeleteByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -6773,6 +7731,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Shipping Method
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ShippingMethod} OK
 		 */
 		Shipping_methods_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<ShippingMethod> {
@@ -6785,6 +7744,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Shipping Method
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ShippingMethodEdit} requestBody Shipping Method parameters.
 		 * @return {ShippingMethod} OK
 		 */
@@ -6868,6 +7828,7 @@ export namespace MyNS {
 		 * @param {string} login API OAuth login.
 		 * @param {string} authtoken API OAuth token.
 		 * @param {number} id Id of the Tax
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Tax} A Tax information object
 		 */
 		Taxes_id_jsonGetByLoginAndAuthtoken(login: string, authtoken: string, id: number, headersHandler?: () => HttpHeaders): Observable<Tax> {

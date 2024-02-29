@@ -6,58 +6,78 @@ export namespace MyNS {
 	export interface APIKey {
 		client_id?: string | null;
 		comment?: string | null;
-		counter?: number | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		counter?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by?: string | null;
 
 		/** Required */
 		id: string;
 		inactive?: boolean | null;
-		last_used_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_used_at?: string | null;
 		last_used_ip?: string | null;
 		last_used_ua?: string | null;
 		organization_id?: string | null;
 		token?: string | null;
 		type?: string | null;
-		usage_limit?: number | null;
-		usage_today?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage_limit?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage_today?: string | null;
 	}
 	export interface APIKeyFormProperties {
 		client_id: FormControl<string | null | undefined>,
 		comment: FormControl<string | null | undefined>,
-		counter: FormControl<number | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		counter: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 		inactive: FormControl<boolean | null | undefined>,
-		last_used_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_used_at: FormControl<string | null | undefined>,
 		last_used_ip: FormControl<string | null | undefined>,
 		last_used_ua: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
 		token: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
-		usage_limit: FormControl<number | null | undefined>,
-		usage_today: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage_limit: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage_today: FormControl<string | null | undefined>,
 	}
 	export function CreateAPIKeyFormGroup() {
 		return new FormGroup<APIKeyFormProperties>({
 			client_id: new FormControl<string | null | undefined>(undefined),
 			comment: new FormControl<string | null | undefined>(undefined),
-			counter: new FormControl<number | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			counter: new FormControl<string | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			inactive: new FormControl<boolean | null | undefined>(undefined),
-			last_used_at: new FormControl<number | null | undefined>(undefined),
+			last_used_at: new FormControl<string | null | undefined>(undefined),
 			last_used_ip: new FormControl<string | null | undefined>(undefined),
 			last_used_ua: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
 			token: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			usage_limit: new FormControl<number | null | undefined>(undefined),
-			usage_today: new FormControl<number | null | undefined>(undefined),
+			usage_limit: new FormControl<string | null | undefined>(undefined),
+			usage_today: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -115,8 +135,12 @@ export namespace MyNS {
 		arch?: string | null;
 		client_id?: string | null;
 		connected?: boolean | null;
-		created_at?: number | null;
-		deactivated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deactivated_at?: string | null;
 		external_ip?: string | null;
 		host_id?: string | null;
 		hub_id?: string | null;
@@ -125,21 +149,29 @@ export namespace MyNS {
 		id: string;
 		inactive?: boolean | null;
 		internal_ip?: string | null;
-		last_checkin?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_checkin?: string | null;
 		name?: string | null;
 		organization_id?: string | null;
 		os?: string | null;
 		site_id?: string | null;
 		system_info?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 		version?: string | null;
 	}
 	export interface AgentFormProperties {
 		arch: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
 		connected: FormControl<boolean | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
-		deactivated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deactivated_at: FormControl<string | null | undefined>,
 		external_ip: FormControl<string | null | undefined>,
 		host_id: FormControl<string | null | undefined>,
 		hub_id: FormControl<string | null | undefined>,
@@ -148,13 +180,17 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		inactive: FormControl<boolean | null | undefined>,
 		internal_ip: FormControl<string | null | undefined>,
-		last_checkin: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_checkin: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
 		os: FormControl<string | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
 		system_info: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateAgentFormGroup() {
@@ -162,21 +198,21 @@ export namespace MyNS {
 			arch: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
 			connected: new FormControl<boolean | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
-			deactivated_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
+			deactivated_at: new FormControl<string | null | undefined>(undefined),
 			external_ip: new FormControl<string | null | undefined>(undefined),
 			host_id: new FormControl<string | null | undefined>(undefined),
 			hub_id: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			inactive: new FormControl<boolean | null | undefined>(undefined),
 			internal_ip: new FormControl<string | null | undefined>(undefined),
-			last_checkin: new FormControl<number | null | undefined>(undefined),
+			last_checkin: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
 			os: new FormControl<string | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
 			system_info: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -206,36 +242,58 @@ export namespace MyNS {
 		alive?: string | null;
 		attributes?: {[id: string]: string };
 		comments?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		credentials?: {[id: string]: string };
 		detected_by?: string | null;
 		domains?: Array<string>;
-		first_seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		first_seen?: string | null;
 		hw?: string | null;
 
 		/** Required */
 		id: string;
 		last_agent_id?: string | null;
-		last_seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen?: string | null;
 		last_task_id?: string | null;
-		lowest_rtt?: number | null;
-		lowest_ttl?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl?: string | null;
 		mac_vendors?: Array<string>;
 		macs?: Array<string>;
 		names?: Array<string>;
 		newest_mac?: string | null;
-		newest_mac_age?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		newest_mac_age?: string | null;
 		newest_mac_vendor?: string | null;
 		org_name?: string | null;
 		organization_id?: string | null;
 		os?: string | null;
 		os_version?: string | null;
 		rtts?: string | null;
-		service_count?: number | null;
-		service_count_arp?: number | null;
-		service_count_icmp?: number | null;
-		service_count_tcp?: number | null;
-		service_count_udp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp?: string | null;
 		service_ports_products?: Array<string>;
 		service_ports_protocols?: Array<string>;
 		service_ports_tcp?: Array<string>;
@@ -245,45 +303,71 @@ export namespace MyNS {
 		site_name?: string | null;
 		tags?: {[id: string]: string };
 		type?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface AssetFormProperties {
 		agent_name: FormControl<string | null | undefined>,
 		alive: FormControl<string | null | undefined>,
 		attributes: FormControl<{[id: string]: string } | null | undefined>,
 		comments: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		credentials: FormControl<{[id: string]: string } | null | undefined>,
 		detected_by: FormControl<string | null | undefined>,
-		first_seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		first_seen: FormControl<string | null | undefined>,
 		hw: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 		last_agent_id: FormControl<string | null | undefined>,
-		last_seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen: FormControl<string | null | undefined>,
 		last_task_id: FormControl<string | null | undefined>,
-		lowest_rtt: FormControl<number | null | undefined>,
-		lowest_ttl: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl: FormControl<string | null | undefined>,
 		newest_mac: FormControl<string | null | undefined>,
-		newest_mac_age: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		newest_mac_age: FormControl<string | null | undefined>,
 		newest_mac_vendor: FormControl<string | null | undefined>,
 		org_name: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
 		os: FormControl<string | null | undefined>,
 		os_version: FormControl<string | null | undefined>,
 		rtts: FormControl<string | null | undefined>,
-		service_count: FormControl<number | null | undefined>,
-		service_count_arp: FormControl<number | null | undefined>,
-		service_count_icmp: FormControl<number | null | undefined>,
-		service_count_tcp: FormControl<number | null | undefined>,
-		service_count_udp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp: FormControl<string | null | undefined>,
 		services: FormControl<{[id: string]: any } | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
 		site_name: FormControl<string | null | undefined>,
 		tags: FormControl<{[id: string]: string } | null | undefined>,
 		type: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetFormGroup() {
 		return new FormGroup<AssetFormProperties>({
@@ -291,36 +375,36 @@ export namespace MyNS {
 			alive: new FormControl<string | null | undefined>(undefined),
 			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			comments: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			credentials: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			detected_by: new FormControl<string | null | undefined>(undefined),
-			first_seen: new FormControl<number | null | undefined>(undefined),
+			first_seen: new FormControl<string | null | undefined>(undefined),
 			hw: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_agent_id: new FormControl<string | null | undefined>(undefined),
-			last_seen: new FormControl<number | null | undefined>(undefined),
+			last_seen: new FormControl<string | null | undefined>(undefined),
 			last_task_id: new FormControl<string | null | undefined>(undefined),
-			lowest_rtt: new FormControl<number | null | undefined>(undefined),
-			lowest_ttl: new FormControl<number | null | undefined>(undefined),
+			lowest_rtt: new FormControl<string | null | undefined>(undefined),
+			lowest_ttl: new FormControl<string | null | undefined>(undefined),
 			newest_mac: new FormControl<string | null | undefined>(undefined),
-			newest_mac_age: new FormControl<number | null | undefined>(undefined),
+			newest_mac_age: new FormControl<string | null | undefined>(undefined),
 			newest_mac_vendor: new FormControl<string | null | undefined>(undefined),
 			org_name: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
 			os: new FormControl<string | null | undefined>(undefined),
 			os_version: new FormControl<string | null | undefined>(undefined),
 			rtts: new FormControl<string | null | undefined>(undefined),
-			service_count: new FormControl<number | null | undefined>(undefined),
-			service_count_arp: new FormControl<number | null | undefined>(undefined),
-			service_count_icmp: new FormControl<number | null | undefined>(undefined),
-			service_count_tcp: new FormControl<number | null | undefined>(undefined),
-			service_count_udp: new FormControl<number | null | undefined>(undefined),
+			service_count: new FormControl<string | null | undefined>(undefined),
+			service_count_arp: new FormControl<string | null | undefined>(undefined),
+			service_count_icmp: new FormControl<string | null | undefined>(undefined),
+			service_count_tcp: new FormControl<string | null | undefined>(undefined),
+			service_count_udp: new FormControl<string | null | undefined>(undefined),
 			services: new FormControl<{[id: string]: any } | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
 			site_name: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -359,8 +443,12 @@ export namespace MyNS {
 		ip_address?: string | null;
 		last_discovered?: string | null;
 		last_updated?: string | null;
-		lowest_rtt?: number | null;
-		lowest_ttl?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl?: string | null;
 		mac_address?: string | null;
 		mac_manufacturer?: string | null;
 		mac_vendors?: string | null;
@@ -371,11 +459,21 @@ export namespace MyNS {
 		os_product?: string | null;
 		os_vendor?: string | null;
 		os_version?: string | null;
-		service_count?: number | null;
-		service_count_arp?: number | null;
-		service_count_icmp?: number | null;
-		service_count_tcp?: number | null;
-		service_count_udp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp?: string | null;
 		site?: string | null;
 		sys_class_name?: string | null;
 		tags?: string | null;
@@ -398,8 +496,12 @@ export namespace MyNS {
 		ip_address: FormControl<string | null | undefined>,
 		last_discovered: FormControl<string | null | undefined>,
 		last_updated: FormControl<string | null | undefined>,
-		lowest_rtt: FormControl<number | null | undefined>,
-		lowest_ttl: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl: FormControl<string | null | undefined>,
 		mac_address: FormControl<string | null | undefined>,
 		mac_manufacturer: FormControl<string | null | undefined>,
 		mac_vendors: FormControl<string | null | undefined>,
@@ -410,11 +512,21 @@ export namespace MyNS {
 		os_product: FormControl<string | null | undefined>,
 		os_vendor: FormControl<string | null | undefined>,
 		os_version: FormControl<string | null | undefined>,
-		service_count: FormControl<number | null | undefined>,
-		service_count_arp: FormControl<number | null | undefined>,
-		service_count_icmp: FormControl<number | null | undefined>,
-		service_count_tcp: FormControl<number | null | undefined>,
-		service_count_udp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp: FormControl<string | null | undefined>,
 		site: FormControl<string | null | undefined>,
 		sys_class_name: FormControl<string | null | undefined>,
 		tags: FormControl<string | null | undefined>,
@@ -436,8 +548,8 @@ export namespace MyNS {
 			ip_address: new FormControl<string | null | undefined>(undefined),
 			last_discovered: new FormControl<string | null | undefined>(undefined),
 			last_updated: new FormControl<string | null | undefined>(undefined),
-			lowest_rtt: new FormControl<number | null | undefined>(undefined),
-			lowest_ttl: new FormControl<number | null | undefined>(undefined),
+			lowest_rtt: new FormControl<string | null | undefined>(undefined),
+			lowest_ttl: new FormControl<string | null | undefined>(undefined),
 			mac_address: new FormControl<string | null | undefined>(undefined),
 			mac_manufacturer: new FormControl<string | null | undefined>(undefined),
 			mac_vendors: new FormControl<string | null | undefined>(undefined),
@@ -448,11 +560,11 @@ export namespace MyNS {
 			os_product: new FormControl<string | null | undefined>(undefined),
 			os_vendor: new FormControl<string | null | undefined>(undefined),
 			os_version: new FormControl<string | null | undefined>(undefined),
-			service_count: new FormControl<number | null | undefined>(undefined),
-			service_count_arp: new FormControl<number | null | undefined>(undefined),
-			service_count_icmp: new FormControl<number | null | undefined>(undefined),
-			service_count_tcp: new FormControl<number | null | undefined>(undefined),
-			service_count_udp: new FormControl<number | null | undefined>(undefined),
+			service_count: new FormControl<string | null | undefined>(undefined),
+			service_count_arp: new FormControl<string | null | undefined>(undefined),
+			service_count_icmp: new FormControl<string | null | undefined>(undefined),
+			service_count_tcp: new FormControl<string | null | undefined>(undefined),
+			service_count_udp: new FormControl<string | null | undefined>(undefined),
 			site: new FormControl<string | null | undefined>(undefined),
 			sys_class_name: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<string | null | undefined>(undefined),
@@ -507,17 +619,23 @@ export namespace MyNS {
 		/** Required */
 		assets: Array<Asset>;
 
-		/** Required */
-		since: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		since: string;
 	}
 	export interface AssetsWithCheckpointFormProperties {
 
-		/** Required */
-		since: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		since: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetsWithCheckpointFormGroup() {
 		return new FormGroup<AssetsWithCheckpointFormProperties>({
-			since: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			since: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -656,14 +774,18 @@ export namespace MyNS {
 		acl?: string | null;
 		cidrs?: Array<string>;
 		client_id?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by_email?: string | null;
 		created_by_id?: string | null;
 		global?: boolean | null;
 
 		/** Required */
 		id: string;
-		last_used_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_used_at?: string | null;
 		last_used_by_id?: string | null;
 		name?: string | null;
 
@@ -673,14 +795,18 @@ export namespace MyNS {
 	export interface CredentialFormProperties {
 		acl: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by_email: FormControl<string | null | undefined>,
 		created_by_id: FormControl<string | null | undefined>,
 		global: FormControl<boolean | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
-		last_used_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_used_at: FormControl<string | null | undefined>,
 		last_used_by_id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
@@ -691,12 +817,12 @@ export namespace MyNS {
 		return new FormGroup<CredentialFormProperties>({
 			acl: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by_email: new FormControl<string | null | undefined>(undefined),
 			created_by_id: new FormControl<string | null | undefined>(undefined),
 			global: new FormControl<boolean | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			last_used_at: new FormControl<number | null | undefined>(undefined),
+			last_used_at: new FormControl<string | null | undefined>(undefined),
 			last_used_by_id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<CredentialType | null | undefined>(undefined),
@@ -778,11 +904,15 @@ export namespace MyNS {
 	export interface Event {
 		action?: string | null;
 		client_id?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		details?: string | null;
 		id?: string | null;
 		organization_id?: string | null;
-		processed_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		processed_at?: string | null;
 		processor_id?: string | null;
 		site_id?: string | null;
 		source_id?: string | null;
@@ -797,11 +927,15 @@ export namespace MyNS {
 	export interface EventFormProperties {
 		action: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
-		processed_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		processed_at: FormControl<string | null | undefined>,
 		processor_id: FormControl<string | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
 		source_id: FormControl<string | null | undefined>,
@@ -817,11 +951,11 @@ export namespace MyNS {
 		return new FormGroup<EventFormProperties>({
 			action: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
-			processed_at: new FormControl<number | null | undefined>(undefined),
+			processed_at: new FormControl<string | null | undefined>(undefined),
 			processor_id: new FormControl<string | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
 			source_id: new FormControl<string | null | undefined>(undefined),
@@ -837,10 +971,14 @@ export namespace MyNS {
 	}
 
 	export interface Group {
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by_email?: string | null;
 		description?: string | null;
-		expires_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at?: string | null;
 
 		/** Required */
 		id: string;
@@ -848,14 +986,22 @@ export namespace MyNS {
 		org_default_role?: string | null;
 		org_roles?: string | null;
 		role_summary?: string | null;
-		updated_at?: number | null;
-		user_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_count?: string | null;
 	}
 	export interface GroupFormProperties {
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by_email: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		expires_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
@@ -863,28 +1009,34 @@ export namespace MyNS {
 		org_default_role: FormControl<string | null | undefined>,
 		org_roles: FormControl<string | null | undefined>,
 		role_summary: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
-		user_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_count: FormControl<string | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by_email: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			expires_at: new FormControl<number | null | undefined>(undefined),
+			expires_at: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			org_default_role: new FormControl<string | null | undefined>(undefined),
 			org_roles: new FormControl<string | null | undefined>(undefined),
 			role_summary: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
-			user_count: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
+			user_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GroupMapping {
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by_email?: string | null;
 		description?: string | null;
 
@@ -900,10 +1052,14 @@ export namespace MyNS {
 
 		/** Required */
 		sso_value: string;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface GroupMappingFormProperties {
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by_email: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
@@ -919,11 +1075,13 @@ export namespace MyNS {
 
 		/** Required */
 		sso_value: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateGroupMappingFormGroup() {
 		return new FormGroup<GroupMappingFormProperties>({
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by_email: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -931,21 +1089,25 @@ export namespace MyNS {
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sso_attribute: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sso_value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GroupPost {
 		description?: string | null;
-		expires_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at?: string | null;
 		name?: string | null;
 		org_default_role?: string | null;
 		org_roles?: string | null;
 	}
 	export interface GroupPostFormProperties {
 		description: FormControl<string | null | undefined>,
-		expires_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		org_default_role: FormControl<string | null | undefined>,
 		org_roles: FormControl<string | null | undefined>,
@@ -953,7 +1115,7 @@ export namespace MyNS {
 	export function CreateGroupPostFormGroup() {
 		return new FormGroup<GroupPostFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			expires_at: new FormControl<number | null | undefined>(undefined),
+			expires_at: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			org_default_role: new FormControl<string | null | undefined>(undefined),
 			org_roles: new FormControl<string | null | undefined>(undefined),
@@ -963,7 +1125,9 @@ export namespace MyNS {
 
 	export interface GroupPut {
 		description?: string | null;
-		expires_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at?: string | null;
 		id?: string | null;
 		name?: string | null;
 		org_default_role?: string | null;
@@ -971,7 +1135,9 @@ export namespace MyNS {
 	}
 	export interface GroupPutFormProperties {
 		description: FormControl<string | null | undefined>,
-		expires_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_at: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		org_default_role: FormControl<string | null | undefined>,
@@ -980,7 +1146,7 @@ export namespace MyNS {
 	export function CreateGroupPutFormGroup() {
 		return new FormGroup<GroupPutFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			expires_at: new FormControl<number | null | undefined>(undefined),
+			expires_at: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			org_default_role: new FormControl<string | null | undefined>(undefined),
@@ -990,18 +1156,30 @@ export namespace MyNS {
 	}
 
 	export interface License {
-		activated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		activated_at?: string | null;
 		address_city?: string | null;
 		address_country?: string | null;
 		address_postal?: string | null;
 		address_region?: string | null;
 		address_street?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		id?: string | null;
-		license_expiration?: number | null;
-		license_live_asset_count?: number | null;
-		license_max_assets?: number | null;
-		license_project_asset_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_expiration?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_live_asset_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_max_assets?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_project_asset_count?: string | null;
 		license_type?: string | null;
 		name?: string | null;
 		partner?: string | null;
@@ -1015,26 +1193,48 @@ export namespace MyNS {
 		sso_login_message?: string | null;
 		sso_mode?: string | null;
 		sso_type?: string | null;
-		subscription_cancel_at?: number | null;
-		subscription_canceled_at?: number | null;
-		subscription_period_end?: number | null;
-		subscription_period_start?: number | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_cancel_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_canceled_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_period_end?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_period_start?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 		via_reseller?: boolean | null;
 	}
 	export interface LicenseFormProperties {
-		activated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		activated_at: FormControl<string | null | undefined>,
 		address_city: FormControl<string | null | undefined>,
 		address_country: FormControl<string | null | undefined>,
 		address_postal: FormControl<string | null | undefined>,
 		address_region: FormControl<string | null | undefined>,
 		address_street: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
-		license_expiration: FormControl<number | null | undefined>,
-		license_live_asset_count: FormControl<number | null | undefined>,
-		license_max_assets: FormControl<number | null | undefined>,
-		license_project_asset_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_expiration: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_live_asset_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_max_assets: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		license_project_asset_count: FormControl<string | null | undefined>,
 		license_type: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		partner: FormControl<string | null | undefined>,
@@ -1048,27 +1248,37 @@ export namespace MyNS {
 		sso_login_message: FormControl<string | null | undefined>,
 		sso_mode: FormControl<string | null | undefined>,
 		sso_type: FormControl<string | null | undefined>,
-		subscription_cancel_at: FormControl<number | null | undefined>,
-		subscription_canceled_at: FormControl<number | null | undefined>,
-		subscription_period_end: FormControl<number | null | undefined>,
-		subscription_period_start: FormControl<number | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_cancel_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_canceled_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_period_end: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		subscription_period_start: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 		via_reseller: FormControl<boolean | null | undefined>,
 	}
 	export function CreateLicenseFormGroup() {
 		return new FormGroup<LicenseFormProperties>({
-			activated_at: new FormControl<number | null | undefined>(undefined),
+			activated_at: new FormControl<string | null | undefined>(undefined),
 			address_city: new FormControl<string | null | undefined>(undefined),
 			address_country: new FormControl<string | null | undefined>(undefined),
 			address_postal: new FormControl<string | null | undefined>(undefined),
 			address_region: new FormControl<string | null | undefined>(undefined),
 			address_street: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			license_expiration: new FormControl<number | null | undefined>(undefined),
-			license_live_asset_count: new FormControl<number | null | undefined>(undefined),
-			license_max_assets: new FormControl<number | null | undefined>(undefined),
-			license_project_asset_count: new FormControl<number | null | undefined>(undefined),
+			license_expiration: new FormControl<string | null | undefined>(undefined),
+			license_live_asset_count: new FormControl<string | null | undefined>(undefined),
+			license_max_assets: new FormControl<string | null | undefined>(undefined),
+			license_project_asset_count: new FormControl<string | null | undefined>(undefined),
 			license_type: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			partner: new FormControl<string | null | undefined>(undefined),
@@ -1082,11 +1292,11 @@ export namespace MyNS {
 			sso_login_message: new FormControl<string | null | undefined>(undefined),
 			sso_mode: new FormControl<string | null | undefined>(undefined),
 			sso_type: new FormControl<string | null | undefined>(undefined),
-			subscription_cancel_at: new FormControl<number | null | undefined>(undefined),
-			subscription_canceled_at: new FormControl<number | null | undefined>(undefined),
-			subscription_period_end: new FormControl<number | null | undefined>(undefined),
-			subscription_period_start: new FormControl<number | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			subscription_cancel_at: new FormControl<string | null | undefined>(undefined),
+			subscription_canceled_at: new FormControl<string | null | undefined>(undefined),
+			subscription_period_end: new FormControl<string | null | undefined>(undefined),
+			subscription_period_start: new FormControl<string | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 			via_reseller: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1151,20 +1361,40 @@ export namespace MyNS {
 	}
 
 	export interface Organization {
-		asset_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		asset_count?: string | null;
 		client_id?: string | null;
-		created_at?: number | null;
-		deactivated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deactivated_at?: string | null;
 		description?: string | null;
 		download_token?: string | null;
-		download_token_created_at?: number | null;
-		expiration_assets_offline?: number | null;
-		expiration_assets_stale?: number | null;
-		expiration_scans?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		download_token_created_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_assets_offline?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_assets_stale?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_scans?: string | null;
 		export_token?: string | null;
-		export_token_counter?: number | null;
-		export_token_created_at?: number | null;
-		export_token_last_used_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_counter?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_created_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_last_used_at?: string | null;
 		export_token_last_used_by?: string | null;
 
 		/** Required */
@@ -1176,28 +1406,60 @@ export namespace MyNS {
 		parent_id?: string | null;
 		permanent?: boolean | null;
 		project?: boolean | null;
-		service_count?: number | null;
-		service_count_arp?: number | null;
-		service_count_icmp?: number | null;
-		service_count_tcp?: number | null;
-		service_count_udp?: number | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface OrganizationFormProperties {
-		asset_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		asset_count: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
-		deactivated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deactivated_at: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		download_token: FormControl<string | null | undefined>,
-		download_token_created_at: FormControl<number | null | undefined>,
-		expiration_assets_offline: FormControl<number | null | undefined>,
-		expiration_assets_stale: FormControl<number | null | undefined>,
-		expiration_scans: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		download_token_created_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_assets_offline: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_assets_stale: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiration_scans: FormControl<string | null | undefined>,
 		export_token: FormControl<string | null | undefined>,
-		export_token_counter: FormControl<number | null | undefined>,
-		export_token_created_at: FormControl<number | null | undefined>,
-		export_token_last_used_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_counter: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_created_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		export_token_last_used_at: FormControl<string | null | undefined>,
 		export_token_last_used_by: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -1209,29 +1471,41 @@ export namespace MyNS {
 		parent_id: FormControl<string | null | undefined>,
 		permanent: FormControl<boolean | null | undefined>,
 		project: FormControl<boolean | null | undefined>,
-		service_count: FormControl<number | null | undefined>,
-		service_count_arp: FormControl<number | null | undefined>,
-		service_count_icmp: FormControl<number | null | undefined>,
-		service_count_tcp: FormControl<number | null | undefined>,
-		service_count_udp: FormControl<number | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateOrganizationFormGroup() {
 		return new FormGroup<OrganizationFormProperties>({
-			asset_count: new FormControl<number | null | undefined>(undefined),
+			asset_count: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
-			deactivated_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
+			deactivated_at: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			download_token: new FormControl<string | null | undefined>(undefined),
-			download_token_created_at: new FormControl<number | null | undefined>(undefined),
-			expiration_assets_offline: new FormControl<number | null | undefined>(undefined),
-			expiration_assets_stale: new FormControl<number | null | undefined>(undefined),
-			expiration_scans: new FormControl<number | null | undefined>(undefined),
+			download_token_created_at: new FormControl<string | null | undefined>(undefined),
+			expiration_assets_offline: new FormControl<string | null | undefined>(undefined),
+			expiration_assets_stale: new FormControl<string | null | undefined>(undefined),
+			expiration_scans: new FormControl<string | null | undefined>(undefined),
 			export_token: new FormControl<string | null | undefined>(undefined),
-			export_token_counter: new FormControl<number | null | undefined>(undefined),
-			export_token_created_at: new FormControl<number | null | undefined>(undefined),
-			export_token_last_used_at: new FormControl<number | null | undefined>(undefined),
+			export_token_counter: new FormControl<string | null | undefined>(undefined),
+			export_token_created_at: new FormControl<string | null | undefined>(undefined),
+			export_token_last_used_at: new FormControl<string | null | undefined>(undefined),
 			export_token_last_used_by: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			inactive: new FormControl<boolean | null | undefined>(undefined),
@@ -1239,12 +1513,12 @@ export namespace MyNS {
 			parent_id: new FormControl<string | null | undefined>(undefined),
 			permanent: new FormControl<boolean | null | undefined>(undefined),
 			project: new FormControl<boolean | null | undefined>(undefined),
-			service_count: new FormControl<number | null | undefined>(undefined),
-			service_count_arp: new FormControl<number | null | undefined>(undefined),
-			service_count_icmp: new FormControl<number | null | undefined>(undefined),
-			service_count_tcp: new FormControl<number | null | undefined>(undefined),
-			service_count_udp: new FormControl<number | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			service_count: new FormControl<string | null | undefined>(undefined),
+			service_count_arp: new FormControl<string | null | undefined>(undefined),
+			service_count_icmp: new FormControl<string | null | undefined>(undefined),
+			service_count_tcp: new FormControl<string | null | undefined>(undefined),
+			service_count_udp: new FormControl<string | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1399,7 +1673,9 @@ export namespace MyNS {
 		acl: string;
 		agent_id?: string | null;
 		client_id?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by?: string | null;
 		created_by_user_id?: string | null;
 		cruncher_id?: string | null;
@@ -1414,6 +1690,8 @@ export namespace MyNS {
 
 		/** Required */
 		id: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linked_task_count?: number | null;
 		name?: string | null;
 		organization_id?: string | null;
@@ -1421,20 +1699,34 @@ export namespace MyNS {
 		parent_id?: string | null;
 		recur?: boolean | null;
 		recur_frequency?: string | null;
-		recur_last?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_last?: string | null;
 		recur_last_task_id?: string | null;
-		recur_next?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_next?: string | null;
 		site_id?: string | null;
-		size_data?: number | null;
-		size_results?: number | null;
-		size_site?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_data?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_results?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_site?: string | null;
 		source_id?: string | null;
-		start_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time?: string | null;
 		stats?: string | null;
 		status?: string | null;
 		template_id?: string | null;
 		type?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface ScanTemplateFormProperties {
 
@@ -1442,7 +1734,9 @@ export namespace MyNS {
 		acl: FormControl<string | null | undefined>,
 		agent_id: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
 		created_by_user_id: FormControl<string | null | undefined>,
 		cruncher_id: FormControl<string | null | undefined>,
@@ -1457,6 +1751,8 @@ export namespace MyNS {
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linked_task_count: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
@@ -1464,27 +1760,41 @@ export namespace MyNS {
 		parent_id: FormControl<string | null | undefined>,
 		recur: FormControl<boolean | null | undefined>,
 		recur_frequency: FormControl<string | null | undefined>,
-		recur_last: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_last: FormControl<string | null | undefined>,
 		recur_last_task_id: FormControl<string | null | undefined>,
-		recur_next: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_next: FormControl<string | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
-		size_data: FormControl<number | null | undefined>,
-		size_results: FormControl<number | null | undefined>,
-		size_site: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_data: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_results: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size_site: FormControl<string | null | undefined>,
 		source_id: FormControl<string | null | undefined>,
-		start_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time: FormControl<string | null | undefined>,
 		stats: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		template_id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateScanTemplateFormGroup() {
 		return new FormGroup<ScanTemplateFormProperties>({
 			acl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			agent_id: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			created_by_user_id: new FormControl<string | null | undefined>(undefined),
 			cruncher_id: new FormControl<string | null | undefined>(undefined),
@@ -1502,20 +1812,20 @@ export namespace MyNS {
 			parent_id: new FormControl<string | null | undefined>(undefined),
 			recur: new FormControl<boolean | null | undefined>(undefined),
 			recur_frequency: new FormControl<string | null | undefined>(undefined),
-			recur_last: new FormControl<number | null | undefined>(undefined),
+			recur_last: new FormControl<string | null | undefined>(undefined),
 			recur_last_task_id: new FormControl<string | null | undefined>(undefined),
-			recur_next: new FormControl<number | null | undefined>(undefined),
+			recur_next: new FormControl<string | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
-			size_data: new FormControl<number | null | undefined>(undefined),
-			size_results: new FormControl<number | null | undefined>(undefined),
-			size_site: new FormControl<number | null | undefined>(undefined),
+			size_data: new FormControl<string | null | undefined>(undefined),
+			size_results: new FormControl<string | null | undefined>(undefined),
+			size_site: new FormControl<string | null | undefined>(undefined),
 			source_id: new FormControl<string | null | undefined>(undefined),
-			start_time: new FormControl<number | null | undefined>(undefined),
+			start_time: new FormControl<string | null | undefined>(undefined),
 			stats: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			template_id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1581,25 +1891,37 @@ export namespace MyNS {
 		alive?: string | null;
 		attributes?: {[id: string]: string };
 		comments?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		credentials?: {[id: string]: string };
 		detected_by?: string | null;
 		domains?: Array<string>;
-		first_seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		first_seen?: string | null;
 		hw?: string | null;
 
 		/** Required */
 		id: string;
 		last_agent_id?: string | null;
-		last_seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen?: string | null;
 		last_task_id?: string | null;
-		lowest_rtt?: number | null;
-		lowest_ttl?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl?: string | null;
 		mac_vendors?: Array<string>;
 		macs?: Array<string>;
 		names?: Array<string>;
 		newest_mac?: string | null;
-		newest_mac_age?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		newest_mac_age?: string | null;
 		newest_mac_vendor?: string | null;
 		org_name?: string | null;
 		organization_id?: string | null;
@@ -1608,12 +1930,24 @@ export namespace MyNS {
 		rtts?: string | null;
 		service_address?: string | null;
 		service_asset_id?: string | null;
-		service_count?: number | null;
-		service_count_arp?: number | null;
-		service_count_icmp?: number | null;
-		service_count_tcp?: number | null;
-		service_count_udp?: number | null;
-		service_created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_created_at?: string | null;
 		service_data?: {[id: string]: string };
 
 		/** Required */
@@ -1628,35 +1962,51 @@ export namespace MyNS {
 		service_screenshot_link?: string | null;
 		service_summary?: string | null;
 		service_transport?: string | null;
-		service_updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_updated_at?: string | null;
 		service_vhost?: string | null;
 		services?: {[id: string]: any };
 		site_id?: string | null;
 		site_name?: string | null;
 		tags?: {[id: string]: string };
 		type?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface ServiceFormProperties {
 		agent_name: FormControl<string | null | undefined>,
 		alive: FormControl<string | null | undefined>,
 		attributes: FormControl<{[id: string]: string } | null | undefined>,
 		comments: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		credentials: FormControl<{[id: string]: string } | null | undefined>,
 		detected_by: FormControl<string | null | undefined>,
-		first_seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		first_seen: FormControl<string | null | undefined>,
 		hw: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 		last_agent_id: FormControl<string | null | undefined>,
-		last_seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen: FormControl<string | null | undefined>,
 		last_task_id: FormControl<string | null | undefined>,
-		lowest_rtt: FormControl<number | null | undefined>,
-		lowest_ttl: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_rtt: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lowest_ttl: FormControl<string | null | undefined>,
 		newest_mac: FormControl<string | null | undefined>,
-		newest_mac_age: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		newest_mac_age: FormControl<string | null | undefined>,
 		newest_mac_vendor: FormControl<string | null | undefined>,
 		org_name: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
@@ -1665,12 +2015,24 @@ export namespace MyNS {
 		rtts: FormControl<string | null | undefined>,
 		service_address: FormControl<string | null | undefined>,
 		service_asset_id: FormControl<string | null | undefined>,
-		service_count: FormControl<number | null | undefined>,
-		service_count_arp: FormControl<number | null | undefined>,
-		service_count_icmp: FormControl<number | null | undefined>,
-		service_count_tcp: FormControl<number | null | undefined>,
-		service_count_udp: FormControl<number | null | undefined>,
-		service_created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_arp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_icmp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_tcp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_count_udp: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_created_at: FormControl<string | null | undefined>,
 		service_data: FormControl<{[id: string]: string } | null | undefined>,
 
 		/** Required */
@@ -1681,14 +2043,18 @@ export namespace MyNS {
 		service_screenshot_link: FormControl<string | null | undefined>,
 		service_summary: FormControl<string | null | undefined>,
 		service_transport: FormControl<string | null | undefined>,
-		service_updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		service_updated_at: FormControl<string | null | undefined>,
 		service_vhost: FormControl<string | null | undefined>,
 		services: FormControl<{[id: string]: any } | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
 		site_name: FormControl<string | null | undefined>,
 		tags: FormControl<{[id: string]: string } | null | undefined>,
 		type: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateServiceFormGroup() {
 		return new FormGroup<ServiceFormProperties>({
@@ -1696,19 +2062,19 @@ export namespace MyNS {
 			alive: new FormControl<string | null | undefined>(undefined),
 			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			comments: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			credentials: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			detected_by: new FormControl<string | null | undefined>(undefined),
-			first_seen: new FormControl<number | null | undefined>(undefined),
+			first_seen: new FormControl<string | null | undefined>(undefined),
 			hw: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_agent_id: new FormControl<string | null | undefined>(undefined),
-			last_seen: new FormControl<number | null | undefined>(undefined),
+			last_seen: new FormControl<string | null | undefined>(undefined),
 			last_task_id: new FormControl<string | null | undefined>(undefined),
-			lowest_rtt: new FormControl<number | null | undefined>(undefined),
-			lowest_ttl: new FormControl<number | null | undefined>(undefined),
+			lowest_rtt: new FormControl<string | null | undefined>(undefined),
+			lowest_ttl: new FormControl<string | null | undefined>(undefined),
 			newest_mac: new FormControl<string | null | undefined>(undefined),
-			newest_mac_age: new FormControl<number | null | undefined>(undefined),
+			newest_mac_age: new FormControl<string | null | undefined>(undefined),
 			newest_mac_vendor: new FormControl<string | null | undefined>(undefined),
 			org_name: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
@@ -1717,12 +2083,12 @@ export namespace MyNS {
 			rtts: new FormControl<string | null | undefined>(undefined),
 			service_address: new FormControl<string | null | undefined>(undefined),
 			service_asset_id: new FormControl<string | null | undefined>(undefined),
-			service_count: new FormControl<number | null | undefined>(undefined),
-			service_count_arp: new FormControl<number | null | undefined>(undefined),
-			service_count_icmp: new FormControl<number | null | undefined>(undefined),
-			service_count_tcp: new FormControl<number | null | undefined>(undefined),
-			service_count_udp: new FormControl<number | null | undefined>(undefined),
-			service_created_at: new FormControl<number | null | undefined>(undefined),
+			service_count: new FormControl<string | null | undefined>(undefined),
+			service_count_arp: new FormControl<string | null | undefined>(undefined),
+			service_count_icmp: new FormControl<string | null | undefined>(undefined),
+			service_count_tcp: new FormControl<string | null | undefined>(undefined),
+			service_count_udp: new FormControl<string | null | undefined>(undefined),
+			service_created_at: new FormControl<string | null | undefined>(undefined),
 			service_data: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			service_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			service_link: new FormControl<string | null | undefined>(undefined),
@@ -1731,20 +2097,22 @@ export namespace MyNS {
 			service_screenshot_link: new FormControl<string | null | undefined>(undefined),
 			service_summary: new FormControl<string | null | undefined>(undefined),
 			service_transport: new FormControl<string | null | undefined>(undefined),
-			service_updated_at: new FormControl<number | null | undefined>(undefined),
+			service_updated_at: new FormControl<string | null | undefined>(undefined),
 			service_vhost: new FormControl<string | null | undefined>(undefined),
 			services: new FormControl<{[id: string]: any } | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
 			site_name: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Site {
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		description?: string | null;
 		excludes?: string | null;
 
@@ -1756,10 +2124,14 @@ export namespace MyNS {
 		permanent?: boolean | null;
 		scope?: string | null;
 		subnets?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface SiteFormProperties {
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		excludes: FormControl<string | null | undefined>,
 
@@ -1771,11 +2143,13 @@ export namespace MyNS {
 		permanent: FormControl<boolean | null | undefined>,
 		scope: FormControl<string | null | undefined>,
 		subnets: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateSiteFormGroup() {
 		return new FormGroup<SiteFormProperties>({
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			excludes: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1783,7 +2157,7 @@ export namespace MyNS {
 			permanent: new FormControl<boolean | null | undefined>(undefined),
 			scope: new FormControl<string | null | undefined>(undefined),
 			subnets: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1827,7 +2201,9 @@ export namespace MyNS {
 	export interface Task {
 		agent_id?: string | null;
 		client_id?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		created_by?: string | null;
 		created_by_user_id?: string | null;
 		cruncher_id?: string | null;
@@ -1843,21 +2219,31 @@ export namespace MyNS {
 		parent_id?: string | null;
 		recur?: boolean | null;
 		recur_frequency?: string | null;
-		recur_last?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_last?: string | null;
 		recur_last_task_id?: string | null;
-		recur_next?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_next?: string | null;
 		site_id?: string | null;
-		start_time?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time?: string | null;
 		stats?: string | null;
 		status?: string | null;
 		template_id?: string | null;
 		type?: string | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface TaskFormProperties {
 		agent_id: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
 		created_by_user_id: FormControl<string | null | undefined>,
 		cruncher_id: FormControl<string | null | undefined>,
@@ -1873,22 +2259,30 @@ export namespace MyNS {
 		parent_id: FormControl<string | null | undefined>,
 		recur: FormControl<boolean | null | undefined>,
 		recur_frequency: FormControl<string | null | undefined>,
-		recur_last: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_last: FormControl<string | null | undefined>,
 		recur_last_task_id: FormControl<string | null | undefined>,
-		recur_next: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recur_next: FormControl<string | null | undefined>,
 		site_id: FormControl<string | null | undefined>,
-		start_time: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start_time: FormControl<string | null | undefined>,
 		stats: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		template_id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskFormGroup() {
 		return new FormGroup<TaskFormProperties>({
 			agent_id: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			created_by_user_id: new FormControl<string | null | undefined>(undefined),
 			cruncher_id: new FormControl<string | null | undefined>(undefined),
@@ -1902,16 +2296,16 @@ export namespace MyNS {
 			parent_id: new FormControl<string | null | undefined>(undefined),
 			recur: new FormControl<boolean | null | undefined>(undefined),
 			recur_frequency: new FormControl<string | null | undefined>(undefined),
-			recur_last: new FormControl<number | null | undefined>(undefined),
+			recur_last: new FormControl<string | null | undefined>(undefined),
 			recur_last_task_id: new FormControl<string | null | undefined>(undefined),
-			recur_next: new FormControl<number | null | undefined>(undefined),
+			recur_next: new FormControl<string | null | undefined>(undefined),
 			site_id: new FormControl<string | null | undefined>(undefined),
-			start_time: new FormControl<number | null | undefined>(undefined),
+			start_time: new FormControl<string | null | undefined>(undefined),
 			stats: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			template_id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1936,64 +2330,88 @@ export namespace MyNS {
 	export interface User {
 		client_admin?: boolean | null;
 		client_id?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		email?: string | null;
 		first_name?: string | null;
 
 		/** Required */
 		id: string;
-		invite_token_expiration?: number | null;
-		last_login_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invite_token_expiration?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_login_at?: string | null;
 		last_login_ip?: string | null;
 		last_login_ua?: string | null;
 		last_name?: string | null;
-		login_failures?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		login_failures?: string | null;
 		org_default_role?: string | null;
 		org_roles?: string | null;
-		reset_token_expiration?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		reset_token_expiration?: string | null;
 		sso_only?: boolean | null;
-		updated_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at?: string | null;
 	}
 	export interface UserFormProperties {
 		client_admin: FormControl<boolean | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		first_name: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
-		invite_token_expiration: FormControl<number | null | undefined>,
-		last_login_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invite_token_expiration: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_login_at: FormControl<string | null | undefined>,
 		last_login_ip: FormControl<string | null | undefined>,
 		last_login_ua: FormControl<string | null | undefined>,
 		last_name: FormControl<string | null | undefined>,
-		login_failures: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		login_failures: FormControl<string | null | undefined>,
 		org_default_role: FormControl<string | null | undefined>,
 		org_roles: FormControl<string | null | undefined>,
-		reset_token_expiration: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		reset_token_expiration: FormControl<string | null | undefined>,
 		sso_only: FormControl<boolean | null | undefined>,
-		updated_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updated_at: FormControl<string | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			client_admin: new FormControl<boolean | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			first_name: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			invite_token_expiration: new FormControl<number | null | undefined>(undefined),
-			last_login_at: new FormControl<number | null | undefined>(undefined),
+			invite_token_expiration: new FormControl<string | null | undefined>(undefined),
+			last_login_at: new FormControl<string | null | undefined>(undefined),
 			last_login_ip: new FormControl<string | null | undefined>(undefined),
 			last_login_ua: new FormControl<string | null | undefined>(undefined),
 			last_name: new FormControl<string | null | undefined>(undefined),
-			login_failures: new FormControl<number | null | undefined>(undefined),
+			login_failures: new FormControl<string | null | undefined>(undefined),
 			org_default_role: new FormControl<string | null | undefined>(undefined),
 			org_roles: new FormControl<string | null | undefined>(undefined),
-			reset_token_expiration: new FormControl<number | null | undefined>(undefined),
+			reset_token_expiration: new FormControl<string | null | undefined>(undefined),
 			sso_only: new FormControl<boolean | null | undefined>(undefined),
-			updated_at: new FormControl<number | null | undefined>(undefined),
+			updated_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2095,7 +2513,9 @@ export namespace MyNS {
 		authentication?: string | null;
 		bssid?: string | null;
 		channels?: string | null;
-		created_at?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at?: string | null;
 		data?: {[id: string]: string };
 		encryption?: string | null;
 		essid?: string | null;
@@ -2105,7 +2525,9 @@ export namespace MyNS {
 		id: string;
 		interface?: string | null;
 		last_agent_id?: string | null;
-		last_seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen?: string | null;
 		last_task_id?: string | null;
 		org_name?: string | null;
 		organization_id?: string | null;
@@ -2125,7 +2547,9 @@ export namespace MyNS {
 		authentication: FormControl<string | null | undefined>,
 		bssid: FormControl<string | null | undefined>,
 		channels: FormControl<string | null | undefined>,
-		created_at: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		created_at: FormControl<string | null | undefined>,
 		data: FormControl<{[id: string]: string } | null | undefined>,
 		encryption: FormControl<string | null | undefined>,
 		essid: FormControl<string | null | undefined>,
@@ -2135,7 +2559,9 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		interface: FormControl<string | null | undefined>,
 		last_agent_id: FormControl<string | null | undefined>,
-		last_seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		last_seen: FormControl<string | null | undefined>,
 		last_task_id: FormControl<string | null | undefined>,
 		org_name: FormControl<string | null | undefined>,
 		organization_id: FormControl<string | null | undefined>,
@@ -2156,7 +2582,7 @@ export namespace MyNS {
 			authentication: new FormControl<string | null | undefined>(undefined),
 			bssid: new FormControl<string | null | undefined>(undefined),
 			channels: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			data: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			encryption: new FormControl<string | null | undefined>(undefined),
 			essid: new FormControl<string | null | undefined>(undefined),
@@ -2164,7 +2590,7 @@ export namespace MyNS {
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			interface: new FormControl<string | null | undefined>(undefined),
 			last_agent_id: new FormControl<string | null | undefined>(undefined),
-			last_seen: new FormControl<number | null | undefined>(undefined),
+			last_seen: new FormControl<string | null | undefined>(undefined),
 			last_task_id: new FormControl<string | null | undefined>(undefined),
 			org_name: new FormControl<string | null | undefined>(undefined),
 			organization_id: new FormControl<string | null | undefined>(undefined),
@@ -2706,10 +3132,11 @@ export namespace MyNS {
 		 * Get export/org/assets/sync/created/assets.json
 		 * @param {string} search an optional search string for filtering results
 		 * @param {string} fields an optional list of fields to export, comma-separated
-		 * @param {number} since an optional unix timestamp to use as a checkpoint
+		 * @param {string} since an optional unix timestamp to use as a checkpoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AssetsWithCheckpoint} filtered asset results with a checkpoint wrapper
 		 */
-		SplunkAssetSyncCreatedJSON(search: string | null | undefined, fields: string | null | undefined, since: number | null | undefined): Observable<AssetsWithCheckpoint> {
+		SplunkAssetSyncCreatedJSON(search: string | null | undefined, fields: string | null | undefined, since: string | null | undefined): Observable<AssetsWithCheckpoint> {
 			return this.http.get<AssetsWithCheckpoint>(this.baseUri + 'export/org/assets/sync/created/assets.json?search=' + (search == null ? '' : encodeURIComponent(search)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&since=' + since, {});
 		}
 
@@ -2718,10 +3145,11 @@ export namespace MyNS {
 		 * Get export/org/assets/sync/updated/assets.json
 		 * @param {string} search an optional search string for filtering results
 		 * @param {string} fields an optional list of fields to export, comma-separated
-		 * @param {number} since an optional unix timestamp to use as a checkpoint
+		 * @param {string} since an optional unix timestamp to use as a checkpoint
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AssetsWithCheckpoint} filtered asset results with a checkpoint wrapper
 		 */
-		SplunkAssetSyncUpdatedJSON(search: string | null | undefined, fields: string | null | undefined, since: number | null | undefined): Observable<AssetsWithCheckpoint> {
+		SplunkAssetSyncUpdatedJSON(search: string | null | undefined, fields: string | null | undefined, since: string | null | undefined): Observable<AssetsWithCheckpoint> {
 			return this.http.get<AssetsWithCheckpoint>(this.baseUri + 'export/org/assets/sync/updated/assets.json?search=' + (search == null ? '' : encodeURIComponent(search)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&since=' + since, {});
 		}
 

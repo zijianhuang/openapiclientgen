@@ -7,10 +7,16 @@ export namespace MyNS {
 	/** Metadata for a variable font axis. */
 	export interface Axis {
 
-		/** maximum value */
+		/**
+		 * maximum value
+		 * Type: float
+		 */
 		end?: number | null;
 
-		/** minimum value */
+		/**
+		 * minimum value
+		 * Type: float
+		 */
 		start?: number | null;
 
 		/** tag name. */
@@ -20,10 +26,16 @@ export namespace MyNS {
 	/** Metadata for a variable font axis. */
 	export interface AxisFormProperties {
 
-		/** maximum value */
+		/**
+		 * maximum value
+		 * Type: float
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** minimum value */
+		/**
+		 * minimum value
+		 * Type: float
+		 */
 		start: FormControl<number | null | undefined>,
 
 		/** tag name. */

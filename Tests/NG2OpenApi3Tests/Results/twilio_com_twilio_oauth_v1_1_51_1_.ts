@@ -28,10 +28,16 @@ export namespace MyNS {
 		/** The device verification code. */
 		device_code?: string | null;
 
-		/** The expiration time of the device_code and user_code in seconds. */
-		expires_in?: number | null;
+		/**
+		 * The expiration time of the device_code and user_code in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires_in?: string | null;
 
-		/** The minimum amount of time in seconds that the client should wait between polling requests to the token endpoint. */
+		/**
+		 * The minimum amount of time in seconds that the client should wait between polling requests to the token endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 
 		/** The verification code which end user uses to verify authorization request. */
@@ -48,10 +54,16 @@ export namespace MyNS {
 		/** The device verification code. */
 		device_code: FormControl<string | null | undefined>,
 
-		/** The expiration time of the device_code and user_code in seconds. */
-		expires_in: FormControl<number | null | undefined>,
+		/**
+		 * The expiration time of the device_code and user_code in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires_in: FormControl<string | null | undefined>,
 
-		/** The minimum amount of time in seconds that the client should wait between polling requests to the token endpoint. */
+		/**
+		 * The minimum amount of time in seconds that the client should wait between polling requests to the token endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** The verification code which end user uses to verify authorization request. */
@@ -66,7 +78,7 @@ export namespace MyNS {
 	export function CreateOauthv1device_codeFormGroup() {
 		return new FormGroup<Oauthv1device_codeFormProperties>({
 			device_code: new FormControl<string | null | undefined>(undefined),
-			expires_in: new FormControl<number | null | undefined>(undefined),
+			expires_in: new FormControl<string | null | undefined>(undefined),
 			interval: new FormControl<number | null | undefined>(undefined),
 			user_code: new FormControl<string | null | undefined>(undefined),
 			verification_uri: new FormControl<string | null | undefined>(undefined),
@@ -210,8 +222,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the party that will create the token and sign it with its private key.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		user_sid?: string | null;
 	}
@@ -232,8 +244,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the party that will create the token and sign it with its private key.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		user_sid: FormControl<string | null | undefined>,
 	}

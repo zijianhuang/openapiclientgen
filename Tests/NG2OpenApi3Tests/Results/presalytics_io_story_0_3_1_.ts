@@ -78,6 +78,8 @@ export namespace MyNS {
 	/** allows for bulk updating of user_ids and active status based on a lead id or user_id */
 	export interface Collaborator_bulk_update_request {
 		active?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id?: number | null;
 		user_id?: string | null;
 	}
@@ -85,6 +87,8 @@ export namespace MyNS {
 	/** allows for bulk updating of user_ids and active status based on a lead id or user_id */
 	export interface Collaborator_bulk_update_requestFormProperties {
 		active: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id: FormControl<number | null | undefined>,
 		user_id: FormControl<string | null | undefined>,
 	}
@@ -160,6 +164,8 @@ export namespace MyNS {
 
 	/** A Base64 encoded file object */
 	export interface File_upload {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		content_length?: number | null;
 		file?: string | null;
 		file_name?: string | null;
@@ -168,6 +174,8 @@ export namespace MyNS {
 
 	/** A Base64 encoded file object */
 	export interface File_uploadFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		content_length: FormControl<number | null | undefined>,
 		file: FormControl<string | null | undefined>,
 		file_name: FormControl<string | null | undefined>,
@@ -240,6 +248,8 @@ export namespace MyNS {
 	/** Action can be either "delete" or "activate".  Either lead_id or user_id is required.  user_id takes precedence. */
 	export interface Modify_inactive_collaborator {
 		action?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id?: number | null;
 		user_id?: string | null;
 	}
@@ -247,6 +257,8 @@ export namespace MyNS {
 	/** Action can be either "delete" or "activate".  Either lead_id or user_id is required.  user_id takes precedence. */
 	export interface Modify_inactive_collaboratorFormProperties {
 		action: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id: FormControl<number | null | undefined>,
 		user_id: FormControl<string | null | undefined>,
 	}
@@ -342,6 +354,8 @@ export namespace MyNS {
 	/** Error reponse model */
 	export interface Problem_detail {
 		detail?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -350,6 +364,8 @@ export namespace MyNS {
 	/** Error reponse model */
 	export interface Problem_detailFormProperties {
 		detail: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -372,6 +388,8 @@ export namespace MyNS {
 		collaborator?: Story_collaborator;
 		collaborator_id?: string | null;
 		host?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		outline_revision?: number | null;
 		views?: Array<View>;
 	}
@@ -380,6 +398,8 @@ export namespace MyNS {
 	export interface SessionFormProperties extends Base_modelFormProperties {
 		collaborator_id: FormControl<string | null | undefined>,
 		host: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		outline_revision: FormControl<number | null | undefined>,
 	}
 	export function CreateSessionFormGroup() {
@@ -399,23 +419,35 @@ export namespace MyNS {
 
 	/** A Page view within a session-create */
 	export interface View extends Base_model {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active_msecs?: number | null;
 		additional?: string | null;
 		end_time?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_number?: number | null;
 		session_id?: string | null;
 		start_time?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_msecs?: number | null;
 	}
 
 	/** A Page view within a session-create */
 	export interface ViewFormProperties extends Base_modelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active_msecs: FormControl<number | null | undefined>,
 		additional: FormControl<string | null | undefined>,
 		end_time: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_number: FormControl<number | null | undefined>,
 		session_id: FormControl<string | null | undefined>,
 		start_time: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_msecs: FormControl<number | null | undefined>,
 	}
 	export function CreateViewFormGroup() {
@@ -492,6 +524,8 @@ export namespace MyNS {
 	export interface Story_collaborator extends Base_model {
 		active?: boolean | null;
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id?: number | null;
 		name?: string | null;
 
@@ -506,6 +540,8 @@ export namespace MyNS {
 	export interface Story_collaboratorFormProperties extends Base_modelFormProperties {
 		active: FormControl<boolean | null | undefined>,
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lead_id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		permission_type_id: FormControl<string | null | undefined>,
@@ -1031,26 +1067,36 @@ export namespace MyNS {
 	}
 
 	export interface Sessions_id_views_postPostBody {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeMSecs?: number | null;
 		additional?: string | null;
 
 		/** Required */
 		endTime: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: number;
 
 		/** Required */
 		startTime: Date;
 	}
 	export interface Sessions_id_views_postPostBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeMSecs: FormControl<number | null | undefined>,
 		additional: FormControl<string | null | undefined>,
 
 		/** Required */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** Required */

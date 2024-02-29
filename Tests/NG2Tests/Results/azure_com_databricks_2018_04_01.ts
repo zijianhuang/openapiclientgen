@@ -619,6 +619,7 @@ export namespace MyNS {
 		 * Gets all the workspaces within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {WorkspaceListResult} OK - Returns an array of workspaces.
@@ -631,7 +632,9 @@ export namespace MyNS {
 		 * Gets the workspace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} workspaceName The name of the workspace.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {Workspace} OK - Returns the workspace.
@@ -644,7 +647,9 @@ export namespace MyNS {
 		 * Creates a new workspace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} workspaceName The name of the workspace.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Workspace} requestBody Parameters supplied to the create or update a workspace.
@@ -658,7 +663,9 @@ export namespace MyNS {
 		 * Deletes the workspace.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} workspaceName The name of the workspace.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -671,7 +678,9 @@ export namespace MyNS {
 		 * Updates a workspace.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} workspaceName The name of the workspace.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {WorkspaceUpdate} requestBody The update to the workspace.

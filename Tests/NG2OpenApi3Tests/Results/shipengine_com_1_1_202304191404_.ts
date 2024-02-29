@@ -56,8 +56,8 @@ export namespace MyNS {
 
 		/**
 		 * A human readable name for the image.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		name?: string | null;
 	}
@@ -93,8 +93,8 @@ export namespace MyNS {
 
 		/**
 		 * A human readable name for the image.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3729,7 +3729,10 @@ export namespace MyNS {
 		/** The UPS invoice */
 		invoice?: Ups_invoice;
 
-		/** The invoice amount */
+		/**
+		 * The invoice amount
+		 * Type: double
+		 */
 		invoice_amount?: number | null;
 
 		/** The invoice currency code */
@@ -3854,7 +3857,10 @@ export namespace MyNS {
 		 */
 		first_name: FormControl<string | null | undefined>,
 
-		/** The invoice amount */
+		/**
+		 * The invoice amount
+		 * Type: double
+		 */
 		invoice_amount: FormControl<number | null | undefined>,
 
 		/** The invoice currency code */
@@ -5514,7 +5520,7 @@ export namespace MyNS {
 		return new FormGroup<Get_pickups_response_bodyFormProperties>({
 			page: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			request_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5557,7 +5563,11 @@ export namespace MyNS {
 		country_code?: string | null;
 		features?: Array<string>;
 		hours_of_operation?: Get_service_point_by_id_response_bodyService_pointHours_of_operation;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		long?: number | null;
 		phone_number?: string | null;
 		postal_code?: string | null;
@@ -5572,7 +5582,11 @@ export namespace MyNS {
 		city_locality: FormControl<string | null | undefined>,
 		company_name: FormControl<string | null | undefined>,
 		country_code: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		long: FormControl<number | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
 		postal_code: FormControl<string | null | undefined>,
@@ -5749,13 +5763,22 @@ export namespace MyNS {
 		/** Unstructured text to search for service points by. */
 		address_query?: string | null;
 
-		/** The latitude of the point. Represented as signed degrees. Required if long is provided. http://www.geomidpoint.com/latlon.html */
+		/**
+		 * The latitude of the point. Represented as signed degrees. Required if long is provided. http://www.geomidpoint.com/latlon.html
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** The longitude of the point. Represented as signed degrees. Required if lat is provided. http://www.geomidpoint.com/latlon.html */
+		/**
+		 * The longitude of the point. Represented as signed degrees. Required if lat is provided. http://www.geomidpoint.com/latlon.html
+		 * Type: double
+		 */
 		long?: number | null;
 
-		/** The maximum number of service points to return */
+		/**
+		 * The maximum number of service points to return
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 
 		/**
@@ -5764,7 +5787,10 @@ export namespace MyNS {
 		 */
 		Get_service_points_request_bodyProviders: Array<Get_service_points_request_bodyProviders>;
 
-		/** Search radius in kilometers */
+		/**
+		 * Search radius in kilometers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius?: number | null;
 	}
 
@@ -5774,16 +5800,28 @@ export namespace MyNS {
 		/** Unstructured text to search for service points by. */
 		address_query: FormControl<string | null | undefined>,
 
-		/** The latitude of the point. Represented as signed degrees. Required if long is provided. http://www.geomidpoint.com/latlon.html */
+		/**
+		 * The latitude of the point. Represented as signed degrees. Required if long is provided. http://www.geomidpoint.com/latlon.html
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** The longitude of the point. Represented as signed degrees. Required if lat is provided. http://www.geomidpoint.com/latlon.html */
+		/**
+		 * The longitude of the point. Represented as signed degrees. Required if lat is provided. http://www.geomidpoint.com/latlon.html
+		 * Type: double
+		 */
 		long: FormControl<number | null | undefined>,
 
-		/** The maximum number of service points to return */
+		/**
+		 * The maximum number of service points to return
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 
-		/** Search radius in kilometers */
+		/**
+		 * Search radius in kilometers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_service_points_request_bodyFormGroup() {
@@ -6340,8 +6378,8 @@ export namespace MyNS {
 
 		/**
 		 * A short description of the package content. Required for shipments moving to, from, and through Mexico.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		content_description?: string | null;
 
@@ -6374,7 +6412,10 @@ export namespace MyNS {
 		/** A string that uniquely identifies this [package type](https://www.shipengine.com/docs/reference/list-carrier-packages/) */
 		package_id?: string;
 
-		/** Package sequence */
+		/**
+		 * Package sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence?: number | null;
 
 		/**
@@ -6396,8 +6437,8 @@ export namespace MyNS {
 
 		/**
 		 * A short description of the package content. Required for shipments moving to, from, and through Mexico.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		content_description: FormControl<string | null | undefined>,
 
@@ -6415,7 +6456,10 @@ export namespace MyNS {
 		/** A string that uniquely identifies this [package type](https://www.shipengine.com/docs/reference/list-carrier-packages/) */
 		package_id: FormControl<string | null | undefined>,
 
-		/** Package sequence */
+		/**
+		 * Package sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence: FormControl<number | null | undefined>,
 
 		/**
@@ -6679,7 +6723,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: number;
+		total: string;
 	}
 
 	/** A list batch response body */
@@ -6704,13 +6748,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: FormControl<number | null | undefined>,
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateList_batches_response_bodyFormGroup() {
 		return new FormGroup<List_batches_response_bodyFormProperties>({
 			page: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -7127,7 +7171,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: number;
+		total: string;
 	}
 
 	/** A list manifests response body */
@@ -7152,13 +7196,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: FormControl<number | null | undefined>,
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateList_manifests_response_bodyFormGroup() {
 		return new FormGroup<List_manifests_response_bodyFormProperties>({
 			page: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -7215,7 +7259,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: number;
+		total: string;
 	}
 
 	/** A list pickup response body */
@@ -7240,13 +7284,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: FormControl<number | null | undefined>,
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateList_pickup_response_bodyFormGroup() {
 		return new FormGroup<List_pickup_response_bodyFormProperties>({
 			page: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -7257,14 +7301,22 @@ export namespace MyNS {
 
 		/** The errors associated with the failed API call */
 		errors?: Array<string>;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		long?: number | null;
 		List_service_points_response_bodyService_points?: Array<List_service_points_response_bodyService_points>;
 	}
 
 	/** A list service points response body */
 	export interface List_service_points_response_bodyFormProperties {
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		long: FormControl<number | null | undefined>,
 	}
 	export function CreateList_service_points_response_bodyFormGroup() {
@@ -7281,10 +7333,16 @@ export namespace MyNS {
 		city_locality?: string | null;
 		company_name?: string | null;
 		country_code?: string | null;
+
+		/** Type: double */
 		distance_in_meters?: number | null;
 		features?: Array<string>;
 		hours_of_operation?: List_service_points_response_bodyService_pointsHours_of_operation;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		long?: number | null;
 		phone_number?: string | null;
 		postal_code?: string | null;
@@ -7299,8 +7357,14 @@ export namespace MyNS {
 		city_locality: FormControl<string | null | undefined>,
 		company_name: FormControl<string | null | undefined>,
 		country_code: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		distance_in_meters: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		long: FormControl<number | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
 		postal_code: FormControl<string | null | undefined>,
@@ -7500,7 +7564,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: number;
+		total: string;
 	}
 
 	/** A list shipment response body */
@@ -7523,13 +7587,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		total: FormControl<number | null | undefined>,
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateList_shipments_response_bodyFormGroup() {
 		return new FormGroup<List_shipments_response_bodyFormProperties>({
 			page: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -9792,8 +9856,8 @@ export namespace MyNS {
 
 		/**
 		 * Amazon Standard Identification Number
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		asin?: string | null;
 
@@ -9831,8 +9895,8 @@ export namespace MyNS {
 
 		/**
 		 * Amazon Standard Identification Number
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		asin: FormControl<string | null | undefined>,
 
@@ -10946,6 +11010,7 @@ export namespace MyNS {
 		 * Delete Account Image By Id
 		 * Delete v1/account/settings/images/{label_image_id}
 		 * @param {string} label_image_id Label Image Id
+		 *     Min length: 4
 		 * @return {void} 
 		 */
 		Delete_account_image_by_id(label_image_id: string): Observable<HttpResponse<string>> {
@@ -10957,6 +11022,7 @@ export namespace MyNS {
 		 * Retrieve information for an account image.
 		 * Get v1/account/settings/images/{label_image_id}
 		 * @param {string} label_image_id Label Image Id
+		 *     Min length: 4
 		 * @return {Get_account_settings_images_response_body} The request was a success.
 		 */
 		Get_account_settings_images_by_id(label_image_id: string): Observable<Get_account_settings_images_response_body> {
@@ -10968,6 +11034,7 @@ export namespace MyNS {
 		 * Update information for an account image.
 		 * Put v1/account/settings/images/{label_image_id}
 		 * @param {string} label_image_id Label Image Id
+		 *     Min length: 4
 		 * @return {void} 
 		 */
 		Update_account_settings_images_by_id(label_image_id: string, requestBody: Update_account_settings_image_request_body): Observable<HttpResponse<string>> {
@@ -11003,7 +11070,9 @@ export namespace MyNS {
 		 * List Batches associated with your Shipengine account
 		 * Get v1/batches
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of results to return per response.
+		 *     Minimum: 1
 		 * @param {Sort_dir} sort_dir Controls the sort order of the query.
 		 * @param {string} batch_number Batch Number
 		 * @return {List_batches_response_body} The request was a success.
@@ -11078,6 +11147,8 @@ export namespace MyNS {
 		 * You must retrieve the status of your batch by [getting a batch](https://www.shipengine.com/docs/reference/get-batch-by-id/) and getting an overview of the statuses or you can list errors directly here below to get detailed information about the errors.
 		 * Get v1/batches/{batch_id}/errors
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
+		 * @param {number} pagesize Minimum: 1
 		 * @return {List_batch_errors_response_body} The request was a success.
 		 */
 		List_batch_errors(page: number | null | undefined, pagesize: number | null | undefined): Observable<List_batch_errors_response_body> {
@@ -11228,6 +11299,7 @@ export namespace MyNS {
 		 * Download File
 		 * Get File
 		 * Get v1/downloads/{dir}/{subdir}/{filename}
+		 * @param {number} rotation Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} The request was a success
 		 */
 		Download_file(download: string | null | undefined, rotation: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11313,15 +11385,23 @@ export namespace MyNS {
 		 * @param {Label_status} label_status Only return labels that are currently in the specified status
 		 * @param {string} service_code Only return labels for a specific [carrier service](https://www.shipengine.com/docs/shipping/use-a-carrier-service/)
 		 * @param {string} carrier_id Only return labels for a specific [carrier account](https://www.shipengine.com/docs/carriers/setup/)
+		 *     Min length: 1    Max length: 25
 		 * @param {string} tracking_number Only return labels with a specific tracking number
+		 *     Min length: 1
 		 * @param {string} batch_id Only return labels that were created in a specific [batch](https://www.shipengine.com/docs/labels/bulk/)
+		 *     Min length: 1    Max length: 25
 		 * @param {string} rate_id Rate ID
+		 *     Min length: 1    Max length: 25
 		 * @param {string} shipment_id Shipment ID
+		 *     Min length: 1    Max length: 25
 		 * @param {string} warehouse_id Only return labels that originate from a specific [warehouse](https://www.shipengine.com/docs/shipping/ship-from-a-warehouse/)
+		 *     Min length: 1    Max length: 25
 		 * @param {Date} created_at_start Only return labels that were created on or after a specific date/time
 		 * @param {Date} created_at_end Only return labels that were created on or before a specific date/time
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of results to return per response.
+		 *     Minimum: 1
 		 * @param {Sort_dir} sort_dir Controls the sort order of the query.
 		 * @param {Shipments_sort_by} sort_by Controls which field the query is sorted by.
 		 * @return {List_labels_response_body} The response includes a `labels` array containing a page of results (as determined by the `page_size` query parameter).  It also includes other useful information, such as the total number of labels that match the query criteria, the number of pages of results, and the URLs of the first, last, next, and previous pages of results.
@@ -11417,13 +11497,17 @@ export namespace MyNS {
 		 * Similar to querying shipments, we allow you to query manifests since there will likely be a large number over a long period of time.
 		 * Get v1/manifests
 		 * @param {string} warehouse_id Warehouse ID
+		 *     Min length: 1    Max length: 25
 		 * @param {Date} ship_date_start ship date start range
 		 * @param {Date} ship_date_end ship date end range
 		 * @param {Date} created_at_start Used to create a filter for when a resource was created (ex. A shipment that was created after a certain time)
 		 * @param {Date} created_at_end Used to create a filter for when a resource was created, (ex. A shipment that was created before a certain time)
 		 * @param {string} carrier_id Carrier ID
+		 *     Min length: 1    Max length: 25
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of results to return per response.
+		 *     Minimum: 1
 		 * @return {List_manifests_response_body} The request was a success.
 		 */
 		List_manifests(warehouse_id: string | null | undefined, ship_date_start: Date | null | undefined, ship_date_end: Date | null | undefined, created_at_start: Date | null | undefined, created_at_end: Date | null | undefined, carrier_id: string | null | undefined, page: number | null | undefined, page_size: number | null | undefined, label_ids: Array<string> | null | undefined): Observable<List_manifests_response_body> {
@@ -11516,11 +11600,15 @@ export namespace MyNS {
 		 * List all pickups that have been scheduled for this carrier
 		 * Get v1/pickups
 		 * @param {string} carrier_id Carrier ID
+		 *     Min length: 1    Max length: 25
 		 * @param {string} warehouse_id Warehouse ID
+		 *     Min length: 1    Max length: 25
 		 * @param {Date} created_at_start Only return scheduled pickups that were created on or after a specific date/time
 		 * @param {Date} created_at_end Only return scheduled pickups that were created on or before a specific date/time
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of results to return per response.
+		 *     Minimum: 1
 		 * @return {Get_pickups_response_body} The request was a success.
 		 */
 		List_scheduled_pickups(carrier_id: string | null | undefined, warehouse_id: string | null | undefined, created_at_start: Date | null | undefined, created_at_end: Date | null | undefined, page: number | null | undefined, page_size: number | null | undefined): Observable<Get_pickups_response_body> {
@@ -11623,13 +11711,17 @@ export namespace MyNS {
 		 * Get list of Shipments
 		 * Get v1/shipments
 		 * @param {string} batch_id Batch ID
+		 *     Min length: 1    Max length: 25
 		 * @param {string} tag Search for shipments based on the custom tag added to the shipment object
+		 *     Min length: 1
 		 * @param {Date} created_at_start Used to create a filter for when a resource was created (ex. A shipment that was created after a certain time)
 		 * @param {Date} created_at_end Used to create a filter for when a resource was created, (ex. A shipment that was created before a certain time)
 		 * @param {Date} modified_at_start Used to create a filter for when a resource was modified (ex. A shipment that was modified after a certain time)
 		 * @param {Date} modified_at_end Used to create a filter for when a resource was modified (ex. A shipment that was modified before a certain time)
 		 * @param {number} page Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of results to return per response.
+		 *     Minimum: 1
 		 * @param {string} sales_order_id Sales Order ID
 		 * @param {Sort_dir} sort_dir Controls the sort order of the query.
 		 * @return {List_shipments_response_body} The request was a success.
@@ -11790,7 +11882,9 @@ export namespace MyNS {
 		 * Retrieve package tracking information
 		 * Get v1/tracking
 		 * @param {string} carrier_code Carrier code used to retrieve tracking information
+		 *     Min length: 1
 		 * @param {string} tracking_number The tracking number associated with a shipment
+		 *     Min length: 1
 		 * @return {Get_tracking_log_response_body} The request was a success.
 		 */
 		Get_tracking_log(carrier_code: string | null | undefined, tracking_number: string | null | undefined): Observable<Get_tracking_log_response_body> {
@@ -11803,7 +11897,9 @@ export namespace MyNS {
 		 * and receive notifications via webhooks whenever the shipping status changes.
 		 * Post v1/tracking/start
 		 * @param {string} carrier_code Carrier code used to retrieve tracking information
+		 *     Min length: 1
 		 * @param {string} tracking_number The tracking number associated with a shipment
+		 *     Min length: 1
 		 * @return {void} 
 		 */
 		Start_tracking(carrier_code: string | null | undefined, tracking_number: string | null | undefined): Observable<HttpResponse<string>> {
@@ -11815,7 +11911,9 @@ export namespace MyNS {
 		 * Unsubscribe from tracking updates for a package.
 		 * Post v1/tracking/stop
 		 * @param {string} carrier_code Carrier code used to retrieve tracking information
+		 *     Min length: 1
 		 * @param {string} tracking_number The tracking number associated with a shipment
+		 *     Min length: 1
 		 * @return {void} 
 		 */
 		Stop_tracking(carrier_code: string | null | undefined, tracking_number: string | null | undefined): Observable<HttpResponse<string>> {

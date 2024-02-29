@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9. */
 		displayName?: string | null;
 
-		/** The number of examples in the dataset. */
+		/**
+		 * The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount?: number | null;
 
 		/** Required. The resource name of the dataset, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset_id}` */
@@ -38,7 +41,10 @@ export namespace MyNS {
 		/** The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The number of examples in the dataset. */
+		/**
+		 * The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount: FormControl<number | null | undefined>,
 
 		/** Required. The resource name of the dataset, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset_id}` */
@@ -76,7 +82,10 @@ export namespace MyNS {
 		/** The file's display name. */
 		displayName?: string | null;
 
-		/** The number of entries that the file contains. */
+		/**
+		 * The number of entries that the file contains.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount?: number | null;
 
 		/** Required. The resource name of the file, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/files/{file}` */
@@ -95,7 +104,10 @@ export namespace MyNS {
 		/** The file's display name. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The number of entries that the file contains. */
+		/**
+		 * The number of entries that the file contains.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount: FormControl<number | null | undefined>,
 
 		/** Required. The resource name of the file, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/files/{file}` */
@@ -525,7 +537,10 @@ export namespace MyNS {
 		/** The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9. */
 		displayName?: string | null;
 
-		/** Output only. The number of examples in the dataset. */
+		/**
+		 * Output only. The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount?: number | null;
 
 		/** The resource name of the dataset, in form of `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}` */
@@ -537,16 +552,25 @@ export namespace MyNS {
 		/** The BCP-47 language code of the target language. */
 		targetLanguageCode?: string | null;
 
-		/** Output only. Number of test examples (sentence pairs). */
+		/**
+		 * Output only. Number of test examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testExampleCount?: number | null;
 
-		/** Output only. Number of training examples (sentence pairs). */
+		/**
+		 * Output only. Number of training examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount?: number | null;
 
 		/** Output only. Timestamp when this dataset was last updated. */
 		updateTime?: string | null;
 
-		/** Output only. Number of validation examples (sentence pairs). */
+		/**
+		 * Output only. Number of validation examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount?: number | null;
 	}
 
@@ -559,7 +583,10 @@ export namespace MyNS {
 		/** The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. The number of examples in the dataset. */
+		/**
+		 * Output only. The number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount: FormControl<number | null | undefined>,
 
 		/** The resource name of the dataset, in form of `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}` */
@@ -571,16 +598,25 @@ export namespace MyNS {
 		/** The BCP-47 language code of the target language. */
 		targetLanguageCode: FormControl<string | null | undefined>,
 
-		/** Output only. Number of test examples (sentence pairs). */
+		/**
+		 * Output only. Number of test examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testExampleCount: FormControl<number | null | undefined>,
 
-		/** Output only. Number of training examples (sentence pairs). */
+		/**
+		 * Output only. Number of training examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this dataset was last updated. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. Number of validation examples (sentence pairs). */
+		/**
+		 * Output only. Number of validation examples (sentence pairs).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDatasetFormGroup() {
@@ -762,7 +798,10 @@ export namespace MyNS {
 	/** The response message for language detection. */
 	export interface DetectedLanguage {
 
-		/** The confidence of the detection result for this language. */
+		/**
+		 * The confidence of the detection result for this language.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The ISO-639 language code of the source content in the request, detected automatically. */
@@ -772,7 +811,10 @@ export namespace MyNS {
 	/** The response message for language detection. */
 	export interface DetectedLanguageFormProperties {
 
-		/** The confidence of the detection result for this language. */
+		/**
+		 * The confidence of the detection result for this language.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The ISO-639 language code of the source content in the request, detected automatically. */
@@ -990,7 +1032,10 @@ export namespace MyNS {
 		/** Output only. When the glossary creation was finished. */
 		endTime?: string | null;
 
-		/** Output only. The number of entries defined in the glossary. */
+		/**
+		 * Output only. The number of entries defined in the glossary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount?: number | null;
 
 		/** Input configuration for glossaries. */
@@ -1018,7 +1063,10 @@ export namespace MyNS {
 		/** Output only. When the glossary creation was finished. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of entries defined in the glossary. */
+		/**
+		 * Output only. The number of entries defined in the glossary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount: FormControl<number | null | undefined>,
 
 		/** Required. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`. */
@@ -1540,16 +1588,25 @@ export namespace MyNS {
 		/** Output only. The BCP-47 language code of the target language. */
 		targetLanguageCode?: string | null;
 
-		/** Output only. Number of examples (sentence pairs) used to test the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to test the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testExampleCount?: number | null;
 
-		/** Output only. Number of examples (sentence pairs) used to train the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to train the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount?: number | null;
 
 		/** Output only. Timestamp when this model was last updated. */
 		updateTime?: string | null;
 
-		/** Output only. Number of examples (sentence pairs) used to validate the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to validate the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount?: number | null;
 	}
 
@@ -1574,16 +1631,25 @@ export namespace MyNS {
 		/** Output only. The BCP-47 language code of the target language. */
 		targetLanguageCode: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples (sentence pairs) used to test the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to test the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testExampleCount: FormControl<number | null | undefined>,
 
-		/** Output only. Number of examples (sentence pairs) used to train the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to train the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainExampleCount: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this model was last updated. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples (sentence pairs) used to validate the model. */
+		/**
+		 * Output only. Number of examples (sentence pairs) used to validate the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validateExampleCount: FormControl<number | null | undefined>,
 	}
 	export function CreateModelFormGroup() {
@@ -1675,7 +1741,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1688,7 +1757,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2155,6 +2227,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2168,6 +2241,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2201,6 +2275,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the project from which to list the Adaptive MT datasets. `projects/{project-number-or-id}/locations/{location-id}`
 		 * @param {string} filter Optional. An expression for filtering the results of the request. Filter is not supported yet.
 		 * @param {number} pageSize Optional. Requested page size. The server may return fewer results than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtDatasetsResponse.next_page_token returned from the previous call to `ListAdaptiveMtDatasets` method. The first page is returned if `page_token`is empty or missing.
 		 * @return {ListAdaptiveMtDatasetsResponse} Successful response
 		 */
@@ -2223,6 +2298,7 @@ export namespace MyNS {
 		 * Get v3/{parent}/adaptiveMtFiles
 		 * @param {string} parent Required. The resource name of the project from which to list the Adaptive MT files. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
 		 * @param {number} pageSize Optional. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtFilesResponse.next_page_token returned from the previous call to `ListAdaptiveMtFiles` method. The first page is returned if `page_token`is empty or missing.
 		 * @return {ListAdaptiveMtFilesResponse} Successful response
 		 */
@@ -2234,6 +2310,7 @@ export namespace MyNS {
 		 * Lists all AdaptiveMtSentences under a given file/dataset.
 		 * Get v3/{parent}/adaptiveMtSentences
 		 * @param {string} parent Required. The resource name of the project from which to list the Adaptive MT files. The following format lists all sentences under a file. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}` The following format lists all sentences within a dataset. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
+		 * @param {number} pageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtSentencesRequest.next_page_token returned from the previous call to `ListTranslationMemories` method. The first page is returned if `page_token` is empty or missing.
 		 * @return {ListAdaptiveMtSentencesResponse} Successful response
 		 */
@@ -2246,6 +2323,7 @@ export namespace MyNS {
 		 * Get v3/{parent}/datasets
 		 * @param {string} parent Required. Name of the parent project. In form of `projects/{project-number-or-id}/locations/{location-id}`
 		 * @param {number} pageSize Optional. Requested page size. The server can return fewer results than requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListDatasets call.
 		 * @return {ListDatasetsResponse} Successful response
 		 */
@@ -2269,6 +2347,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the parent dataset. In form of `projects/{project-number-or-id}/locations/{location-id}/datasets/{dataset-id}`
 		 * @param {string} filter Optional. An expression for filtering the examples that will be returned. Example filter: * `usage=TRAIN`
 		 * @param {number} pageSize Optional. Requested page size. The server can return fewer results than requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListExamples call.
 		 * @return {ListExamplesResponse} Successful response
 		 */
@@ -2282,6 +2361,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the project from which to list all of the glossaries.
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation. Specify the constraint by the format of "key=value", where key must be "src" or "tgt", and the value must be a valid language code. For multiple restrictions, concatenate them by "AND" (uppercase only), such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used here, which means using 'en-US' and 'en' can lead to different results, which depends on the language code you used when you create the glossary. For the unidirectional glossaries, the "src" and "tgt" add restrictions on the source and target language code separately. For the equivalent term set glossaries, the "src" and/or "tgt" add restrictions on the term set. For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional glossaries which exactly match the source language code as "en-US" and the target language code "zh-CN", but all equivalent term set glossaries which contain "en-US" and "zh-CN" in their language set will be picked. If missing, no filtering is performed.
 		 * @param {number} pageSize Optional. Requested page size. The server may return fewer glossaries than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossariesResponse.next_page_token] returned from the previous call to `ListGlossaries` method. The first page is returned if `page_token`is empty or missing.
 		 * @return {ListGlossariesResponse} Successful response
 		 */
@@ -2304,6 +2384,7 @@ export namespace MyNS {
 		 * Get v3/{parent}/glossaryEntries
 		 * @param {string} parent Required. The parent glossary resource name for listing the glossary's entries.
 		 * @param {number} pageSize Optional. Requested page size. The server may return fewer glossary entries than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossaryEntriesResponse.next_page_token] returned from the previous call. The first page is returned if `page_token`is empty or missing.
 		 * @return {ListGlossaryEntriesResponse} Successful response
 		 */
@@ -2327,6 +2408,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the parent project. In form of `projects/{project-number-or-id}/locations/{location-id}`
 		 * @param {string} filter Optional. An expression for filtering the models that will be returned. Supported filter: `dataset_id=${dataset_id}`
 		 * @param {number} pageSize Optional. Requested page size. The server can return fewer results than requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListModels call.
 		 * @return {ListModelsResponse} Successful response
 		 */

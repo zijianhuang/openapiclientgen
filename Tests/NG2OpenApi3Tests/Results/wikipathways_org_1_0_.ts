@@ -122,6 +122,7 @@ export namespace MyNS {
 		 * Get getPathway
 		 * @param {string} pwId The pathway identifier
 		 * @param {number} revision The revision number of the pathway (use 0 for most recent)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} everything ok
 		 */
 		GetPathwayGetByPwIdAndRevisionAndFormat(pwId: string, revision: number | null | undefined, format: CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -134,6 +135,7 @@ export namespace MyNS {
 		 * @param {string} fileType The file type to convert to, e.g.
 		 * @param {string} pwId The pathway identifier
 		 * @param {number} revision The revision number of the pathway (use 0 for most recent)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} everything ok
 		 */
 		GetPathwayAsGetByFileTypeAndPwIdAndRevisionAndFormat(fileType: string, pwId: string, revision: number | null | undefined, format: CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -275,6 +277,7 @@ export namespace MyNS {
 		 * @param {string} tagName The name of the tag to apply
 		 * @param {string} text string
 		 * @param {number} revision The revision this tag applies to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} auth The authentication key
 		 * @param {string} username The user name
 		 * @return {void} everything ok
@@ -304,6 +307,7 @@ export namespace MyNS {
 		 * @param {string} description A description of the modifications
 		 * @param {string} gpml The updated GPML code
 		 * @param {number} revision The revision the GPML code is based on
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} auth The authentication key
 		 * @param {string} username The username
 		 * @return {void} everything ok

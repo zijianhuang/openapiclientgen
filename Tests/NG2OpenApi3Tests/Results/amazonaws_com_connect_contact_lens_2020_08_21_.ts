@@ -323,16 +323,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
@@ -345,8 +345,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken?: string | null;
 	}
@@ -355,16 +355,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -377,8 +377,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}

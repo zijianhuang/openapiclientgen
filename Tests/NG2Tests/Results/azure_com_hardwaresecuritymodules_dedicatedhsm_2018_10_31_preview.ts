@@ -335,6 +335,7 @@ export namespace MyNS {
 		 * The List operation gets information about the dedicated HSMs associated with the subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs
 		 * @param {number} top Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {DedicatedHsmListResult} Get information about all dedicated HSMs in the specified subscription.
@@ -348,6 +349,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs
 		 * @param {string} resourceGroupName The name of the Resource Group to which the dedicated HSM belongs.
 		 * @param {number} top Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {DedicatedHsmListResult} Get information about all dedicated HSMs in the specified resource group.

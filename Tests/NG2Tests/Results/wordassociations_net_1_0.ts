@@ -118,6 +118,7 @@ export namespace MyNS {
 		 * @param {number} limit Maximum number of results to return.
 		 * Allows to limit the number of results (associations) in response.
 		 * The value of this parameter is an integer number from 1 to 300 inclusive.
+		 *     Minimum: 1    Maximum: 300
 		 * @param {Array<string>} pos Parts of speech to return.
 		 * Allows to limit results by specified parts of speech. The value of this parameter is a list of parts of speech separated by comma.
 		 * The following parts of speech codes are supported:

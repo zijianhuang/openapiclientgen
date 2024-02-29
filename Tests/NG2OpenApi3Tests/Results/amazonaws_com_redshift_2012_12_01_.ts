@@ -8176,7 +8176,9 @@ export namespace MyNS {
 		 * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs.
 		 * Get #Action=AcceptReservedNodeExchange
 		 * @param {string} ReservedNodeId A string representing the node identifier of the DC1 Reserved Node to be exchanged.
+		 *     Max length: 2147483647
 		 * @param {string} TargetReservedNodeOfferingId The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a> 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_AcceptReservedNodeExchange(ReservedNodeId: string, TargetReservedNodeOfferingId: string, Action: GET_AcceptReservedNodeExchangeAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8187,9 +8189,13 @@ export namespace MyNS {
 		 * Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website.
 		 * Get #Action=AddPartner
 		 * @param {string} AccountId The Amazon Web Services account ID that owns the cluster.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster that receives data from the partner.
+		 *     Max length: 63
 		 * @param {string} DatabaseName The name of the database that receives data from the partner.
+		 *     Max length: 127
 		 * @param {string} PartnerName The name of the partner that is authorized to send data.
+		 *     Max length: 255
 		 * @return {void} Success
 		 */
 		GET_AddPartner(AccountId: string, ClusterIdentifier: string, DatabaseName: string, PartnerName: string, Action: GET_AddPartnerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8200,9 +8206,12 @@ export namespace MyNS {
 		 * From a datashare consumer account, associates a datashare with the account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer can consume the datashare.
 		 * Get #Action=AssociateDataShareConsumer
 		 * @param {string} DataShareArn The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.
+		 *     Max length: 2147483647
 		 * @param {boolean} AssociateEntireAccount A value that specifies whether the datashare is associated with the entire account.
 		 * @param {string} ConsumerArn The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.
+		 *     Max length: 2147483647
 		 * @param {string} ConsumerRegion From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_AssociateDataShareConsumer(DataShareArn: string, AssociateEntireAccount: boolean | null | undefined, ConsumerArn: string | null | undefined, ConsumerRegion: string | null | undefined, Action: GET_AssociateDataShareConsumerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8213,9 +8222,13 @@ export namespace MyNS {
 		 * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p> <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=AuthorizeClusterSecurityGroupIngress
 		 * @param {string} ClusterSecurityGroupName The name of the security group to which the ingress rule is added.
+		 *     Max length: 2147483647
 		 * @param {string} CIDRIP The IP range to be added the Amazon Redshift security group.
+		 *     Max length: 2147483647
 		 * @param {string} EC2SecurityGroupName The EC2 security group to be added the Amazon Redshift security group.
+		 *     Max length: 2147483647
 		 * @param {string} EC2SecurityGroupOwnerId <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_AuthorizeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_AuthorizeClusterSecurityGroupIngressAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8226,7 +8239,9 @@ export namespace MyNS {
 		 * From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions.
 		 * Get #Action=AuthorizeDataShare
 		 * @param {string} DataShareArn The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+		 *     Max length: 2147483647
 		 * @param {string} ConsumerIdentifier The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_AuthorizeDataShare(DataShareArn: string, ConsumerIdentifier: string, Action: GET_AuthorizeDataShareAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8237,7 +8252,9 @@ export namespace MyNS {
 		 * Grants access to a cluster.
 		 * Get #Action=AuthorizeEndpointAccess
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster to grant access to.
+		 *     Max length: 2147483647
 		 * @param {string} Account The Amazon Web Services account ID to grant access to.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} VpcIds The virtual private cloud (VPC) identifiers to grant access to.
 		 * @return {void} Success
 		 */
@@ -8249,9 +8266,13 @@ export namespace MyNS {
 		 * <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=AuthorizeSnapshotAccess
 		 * @param {string} SnapshotIdentifier The identifier of the snapshot the account is authorized to restore.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotArn The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+		 *     Max length: 2147483647
 		 * @param {string} AccountWithRestoreAccess <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_AuthorizeSnapshotAccess(SnapshotIdentifier: string | null | undefined, SnapshotArn: string | null | undefined, SnapshotClusterIdentifier: string | null | undefined, AccountWithRestoreAccess: string, Action: GET_AuthorizeSnapshotAccessAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8273,6 +8294,7 @@ export namespace MyNS {
 		 * Get #Action=BatchModifyClusterSnapshots
 		 * @param {Array<string>} SnapshotIdentifierList A list of snapshot identifiers you want to modify.
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> <p>The number must be either -1 or an integer between 1 and 3,653.</p> <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Force A boolean value indicating whether to override an exception if the retention period has passed. 
 		 * @return {void} Success
 		 */
@@ -8284,6 +8306,7 @@ export namespace MyNS {
 		 * Cancels a resize operation for a cluster.
 		 * Get #Action=CancelResize
 		 * @param {string} ClusterIdentifier The unique identifier for the cluster that you want to cancel a resize operation for.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_CancelResize(ClusterIdentifier: string, Action: GET_CancelResizeAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8294,9 +8317,13 @@ export namespace MyNS {
 		 * <p>Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it must be in the available state.</p> <p>When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster. Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CopyClusterSnapshot
 		 * @param {string} SourceSnapshotIdentifier <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} SourceSnapshotClusterIdentifier <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} TargetSnapshotIdentifier <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_CopyClusterSnapshot(SourceSnapshotIdentifier: string, SourceSnapshotClusterIdentifier: string | null | undefined, TargetSnapshotIdentifier: string, ManualSnapshotRetentionPeriod: number | null | undefined, Action: GET_CopyClusterSnapshotAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8307,7 +8334,9 @@ export namespace MyNS {
 		 * Creates an authentication profile with the specified parameters.
 		 * Get #Action=CreateAuthenticationProfile
 		 * @param {string} AuthenticationProfileName The name of the authentication profile to be created.
+		 *     Max length: 63
 		 * @param {string} AuthenticationProfileContent The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_CreateAuthenticationProfile(AuthenticationProfileName: string, AuthenticationProfileContent: string, Action: GET_CreateAuthenticationProfileAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8318,39 +8347,63 @@ export namespace MyNS {
 		 * <p>Creates a new cluster with the specified parameters.</p> <p>To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateCluster
 		 * @param {string} DBName <p>The name of the first database to be created when the cluster is created.</p> <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default: <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterIdentifier <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> </ul> <p>Example: <code>myexamplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterType <p>The type of the cluster. When cluster type is specified as</p> <ul> <li> <p> <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p> </li> <li> <p> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p> </li> </ul> <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p> <p>Default: <code>multi-node</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} NodeType <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} MasterUsername <p>The user name associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>Must not contain a colon (:) or a slash (/).</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} MasterUserPassword <p>The password associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} ClusterSecurityGroups <p>A list of security groups to be associated with this cluster.</p> <p>Default: The default cluster security group for Amazon Redshift.</p>
 		 * @param {Array<string>} VpcSecurityGroupIds <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p> <p>Default: The default VPC security group is associated with the cluster.</p>
 		 * @param {string} ClusterSubnetGroupName <p>The name of a cluster subnet group to be associated with this cluster.</p> <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
+		 *     Max length: 2147483647
 		 * @param {string} AvailabilityZone <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p> <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
+		 *     Max length: 2147483647
 		 * @param {string} PreferredMaintenanceWindow <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterParameterGroupName <p>The name of the parameter group to be associated with this cluster.</p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {number} AutomatedSnapshotRetentionPeriod <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to 35.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Port <p>The port number on which the cluster accepts incoming connections.</p> <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p> <p>Default: <code>5439</code> </p> <p>Valid Values: <code>1150-65535</code> </p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ClusterVersion <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p> <p>The version selected runs on all the nodes in the cluster.</p> <p>Constraints: Only version 1.0 is currently available.</p> <p>Example: <code>1.0</code> </p>
+		 *     Max length: 2147483647
 		 * @param {boolean} AllowVersionUpgrade <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p> <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p> <p>Default: <code>true</code> </p>
 		 * @param {number} NumberOfNodes <p>The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p> <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.</p> <p>Default: <code>1</code> </p> <p>Constraints: Value must be at least 1 and no more than 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} PubliclyAccessible If <code>true</code>, the cluster can be accessed from a public network. 
 		 * @param {boolean} Encrypted <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p> <p>Default: false</p>
 		 * @param {string} HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} ElasticIp <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @param {string} KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
+		 *     Max length: 2147483647
 		 * @param {boolean} EnhancedVpcRouting <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default: false</p>
 		 * @param {string} AdditionalInfo Reserved.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} IamRoles <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * @param {string} MaintenanceTrackName An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotScheduleIdentifier A unique identifier for the snapshot schedule.
+		 *     Max length: 2147483647
 		 * @param {boolean} AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.
 		 * @param {AquaConfigurationStatus} AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 		 * @param {string} DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. 
+		 *     Max length: 2147483647
 		 * @param {string} LoadSampleData A flag that specifies whether to load sample data once the cluster is created.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_CreateCluster(DBName: string | null | undefined, ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string, MasterUsername: string, MasterUserPassword: string, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ClusterSubnetGroupName: string | null | undefined, AvailabilityZone: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, Port: number | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, NumberOfNodes: number | null | undefined, PubliclyAccessible: boolean | null | undefined, Encrypted: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, ElasticIp: string | null | undefined, Tags: Array<string> | null | undefined, KmsKeyId: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, AdditionalInfo: string | null | undefined, IamRoles: Array<string> | null | undefined, MaintenanceTrackName: string | null | undefined, SnapshotScheduleIdentifier: string | null | undefined, AvailabilityZoneRelocation: boolean | null | undefined, AquaConfigurationStatus: AquaConfigurationStatus | null | undefined, DefaultIamRoleArn: string | null | undefined, LoadSampleData: string | null | undefined, Action: GET_CreateClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8361,8 +8414,11 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Redshift parameter group.</p> <p>Creating parameter groups is independent of creating clusters. You can associate a cluster with a parameter group when you create the cluster. You can also associate an existing cluster with a parameter group after the cluster is created by using <a>ModifyCluster</a>. </p> <p>Parameters in the parameter group define specific behavior that applies to the databases you create on the cluster. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateClusterParameterGroup
 		 * @param {string} ParameterGroupName <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your Amazon Web Services account.</p> </li> </ul> <note> <p>This value is stored as a lower-case string.</p> </note>
+		 *     Max length: 2147483647
 		 * @param {string} ParameterGroupFamily <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p> <p>To get a list of valid parameter group family names, you can call <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+		 *     Max length: 2147483647
 		 * @param {string} Description A description of the parameter group.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8374,7 +8430,9 @@ export namespace MyNS {
 		 * <p>Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.</p> <p> For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateClusterSecurityGroup
 		 * @param {string} ClusterSecurityGroupName <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} Description A description for the security group.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8386,8 +8444,11 @@ export namespace MyNS {
 		 * <p>Creates a manual snapshot of the specified cluster. The cluster must be in the <code>available</code> state. </p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateClusterSnapshot
 		 * @param {string} SnapshotIdentifier <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterIdentifier The cluster identifier for which you want a snapshot.
+		 *     Max length: 2147483647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8399,7 +8460,9 @@ export namespace MyNS {
 		 * <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateClusterSubnetGroup
 		 * @param {string} ClusterSubnetGroupName <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesubnetgroup</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} Description A description for the subnet group.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} SubnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
@@ -8412,8 +8475,11 @@ export namespace MyNS {
 		 * Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the custom domain is associated with, and the certificate Amazon Resource Name (ARN).
 		 * Get #Action=CreateCustomDomainAssociation
 		 * @param {string} CustomDomainName The custom domain name for a custom domain association.
+		 *     Min length: 1    Max length: 253
 		 * @param {string} CustomDomainCertificateArn The certificate Amazon Resource Name (ARN) for the custom domain name association.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} ClusterIdentifier The cluster identifier that the custom domain is associated with.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_CreateCustomDomainAssociation(CustomDomainName: string, CustomDomainCertificateArn: string, ClusterIdentifier: string, Action: GET_CreateCustomDomainAssociationAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8424,9 +8490,13 @@ export namespace MyNS {
 		 * Creates a Redshift-managed VPC endpoint.
 		 * Get #Action=CreateEndpointAccess
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster to access.
+		 *     Max length: 2147483647
 		 * @param {string} ResourceOwner The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
+		 *     Max length: 2147483647
 		 * @param {string} EndpointName <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+		 *     Max length: 2147483647
 		 * @param {string} SubnetGroupName The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} VpcSecurityGroupIds The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
 		 * @return {void} Success
 		 */
@@ -8438,11 +8508,15 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the source type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories = Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and Backup categories for the specified clusters.</p> <p>If you specify both the source type and source IDs, such as source type = cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID.</p>
 		 * Get #Action=CreateEventSubscription
 		 * @param {string} SubscriptionName <p>The name of the event subscription to be created.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} SnsTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+		 *     Max length: 2147483647
 		 * @param {string} SourceType <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p> <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} SourceIds <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p> <p>Example: my-cluster-1, my-cluster-2</p> <p>Example: my-snapshot-20131010</p>
 		 * @param {Array<string>} EventCategories <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p> <p>Values: configuration, management, monitoring, security, pending</p>
 		 * @param {string} Severity <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p> <p>Values: ERROR, INFO</p>
+		 *     Max length: 2147483647
 		 * @param {boolean} Enabled A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create the subscription but not activate it. 
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
@@ -8455,6 +8529,7 @@ export namespace MyNS {
 		 * <p>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and retrieve the keys used to encrypt the cluster databases.</p> <p>The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and use encryption keys in the HSM. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware Security Modules</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=CreateHsmClientCertificate
 		 * @param {string} HsmClientCertificateIdentifier The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8466,11 +8541,17 @@ export namespace MyNS {
 		 * <p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
 		 * Get #Action=CreateHsmConfiguration
 		 * @param {string} HsmConfigurationIdentifier The identifier to be assigned to the new Amazon Redshift HSM configuration.
+		 *     Max length: 2147483647
 		 * @param {string} Description A text description of the HSM configuration to be created.
+		 *     Max length: 2147483647
 		 * @param {string} HsmIpAddress The IP address that the Amazon Redshift cluster must use to access the HSM.
+		 *     Max length: 2147483647
 		 * @param {string} HsmPartitionName The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.
+		 *     Max length: 2147483647
 		 * @param {string} HsmPartitionPassword The password required to access the HSM partition.
+		 *     Max length: 2147483647
 		 * @param {string} HsmServerPublicCertificate The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8482,10 +8563,14 @@ export namespace MyNS {
 		 * Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation.
 		 * Get #Action=CreateScheduledAction
 		 * @param {string} ScheduledActionName The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. 
+		 *     Max length: 2147483647
 		 * @param {GET_CreateScheduledActionTargetAction} TargetAction A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. 
 		 * @param {string} Schedule The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
+		 *     Max length: 2147483647
 		 * @param {string} IamRole The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. 
+		 *     Max length: 2147483647
 		 * @param {string} ScheduledActionDescription The description of the scheduled action. 
+		 *     Max length: 2147483647
 		 * @param {Date} StartTime The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.
 		 * @param {Date} EndTime The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. 
 		 * @param {boolean} Enable If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. 
@@ -8499,7 +8584,9 @@ export namespace MyNS {
 		 * <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 		 * Get #Action=CreateSnapshotCopyGrant
 		 * @param {string} SnapshotCopyGrantName <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} KmsKeyId The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
@@ -8512,10 +8599,13 @@ export namespace MyNS {
 		 * Get #Action=CreateSnapshotSchedule
 		 * @param {Array<string>} ScheduleDefinitions The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". 
 		 * @param {string} ScheduleIdentifier A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.
+		 *     Max length: 2147483647
 		 * @param {string} ScheduleDescription The description of the snapshot schedule.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags An optional set of tags you can use to search for the schedule.
 		 * @param {boolean} DryRun <p/>
 		 * @param {number} NextInvocations <p/>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_CreateSnapshotSchedule(ScheduleDefinitions: Array<string> | null | undefined, ScheduleIdentifier: string | null | undefined, ScheduleDescription: string | null | undefined, Tags: Array<string> | null | undefined, DryRun: boolean | null | undefined, NextInvocations: number | null | undefined, Action: GET_CreateSnapshotScheduleAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8526,6 +8616,7 @@ export namespace MyNS {
 		 * <p>Adds tags to a cluster.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an error and the attempt will fail.</p> <p>If you specify a key that already exists for the resource, the value for that key will be updated with the new value.</p>
 		 * Get #Action=CreateTags
 		 * @param {string} ResourceName The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Tags One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>Key</code> and the corresponding value is passed in with the parameter <code>Value</code>. The <code>Key</code> and <code>Value</code> parameters are separated by a comma (,). Separate multiple tags with a space. For example, <code>--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. 
 		 * @return {void} Success
 		 */
@@ -8537,9 +8628,11 @@ export namespace MyNS {
 		 * Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the returned usage limit identifier.
 		 * Get #Action=CreateUsageLimit
 		 * @param {string} ClusterIdentifier The identifier of the cluster that you want to limit usage.
+		 *     Max length: 2147483647
 		 * @param {UsageLimitFeatureType} FeatureType The Amazon Redshift feature that you want to limit.
 		 * @param {UsageLimitLimitType} LimitType The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. 
 		 * @param {number} Amount The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UsageLimitPeriod} Period The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. 
 		 * @param {UsageLimitBreachAction} BreachAction The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <a>UsageLimit</a>.
 		 * @param {Array<string>} Tags A list of tag instances.
@@ -8553,7 +8646,9 @@ export namespace MyNS {
 		 * From a datashare producer account, removes authorization from the specified datashare.
 		 * Get #Action=DeauthorizeDataShare
 		 * @param {string} DataShareArn The Amazon Resource Name (ARN) of the datashare to remove authorization from.
+		 *     Max length: 2147483647
 		 * @param {string} ConsumerIdentifier The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeauthorizeDataShare(DataShareArn: string, ConsumerIdentifier: string, Action: GET_DeauthorizeDataShareAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8564,6 +8659,7 @@ export namespace MyNS {
 		 * Deletes an authentication profile.
 		 * Get #Action=DeleteAuthenticationProfile
 		 * @param {string} AuthenticationProfileName The name of the authentication profile to delete.
+		 *     Max length: 63
 		 * @return {void} Success
 		 */
 		GET_DeleteAuthenticationProfile(AuthenticationProfileName: string, Action: GET_DeleteAuthenticationProfileAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8574,9 +8670,12 @@ export namespace MyNS {
 		 * <p>Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>. You can later restore this snapshot to resume using the cluster. If a final cluster snapshot is requested, the status of the cluster will be "final-snapshot" while the snapshot is being taken, then it's "deleting" once Amazon Redshift begins deleting the cluster. </p> <p> For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=DeleteCluster
 		 * @param {string} ClusterIdentifier <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {boolean} SkipFinalClusterSnapshot <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
 		 * @param {string} FinalClusterSnapshotIdentifier <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {number} FinalClusterSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DeleteCluster(ClusterIdentifier: string, SkipFinalClusterSnapshot: boolean | null | undefined, FinalClusterSnapshotIdentifier: string | null | undefined, FinalClusterSnapshotRetentionPeriod: number | null | undefined, Action: GET_DeleteClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8587,6 +8686,7 @@ export namespace MyNS {
 		 * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot delete a parameter group if it is associated with a cluster.</p> </note>
 		 * Get #Action=DeleteClusterParameterGroup
 		 * @param {string} ParameterGroupName <p>The name of the parameter group to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li> <p>Cannot delete a default cluster parameter group.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteClusterParameterGroup(ParameterGroupName: string, Action: GET_DeleteClusterParameterGroupAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8597,6 +8697,7 @@ export namespace MyNS {
 		 * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a security group that is associated with any clusters. You cannot delete the default security group.</p> </note> <p> For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=DeleteClusterSecurityGroup
 		 * @param {string} ClusterSecurityGroupName The name of the cluster security group to be deleted.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteClusterSecurityGroup(ClusterSecurityGroupName: string, Action: GET_DeleteClusterSecurityGroupAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8607,7 +8708,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified manual snapshot. The snapshot must be in the <code>available</code> state, with no other users authorized to access the snapshot. </p> <p>Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to access the snapshot, you must revoke all of the authorizations before you can delete the snapshot.</p>
 		 * Get #Action=DeleteClusterSnapshot
 		 * @param {string} SnapshotIdentifier <p>The unique identifier of the manual snapshot to be deleted.</p> <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotClusterIdentifier <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints: Must be the name of valid cluster.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteClusterSnapshot(SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, Action: GET_DeleteClusterSnapshotAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8618,6 +8721,7 @@ export namespace MyNS {
 		 * Deletes the specified cluster subnet group.
 		 * Get #Action=DeleteClusterSubnetGroup
 		 * @param {string} ClusterSubnetGroupName The name of the cluster subnet group name to be deleted.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteClusterSubnetGroup(ClusterSubnetGroupName: string, Action: GET_DeleteClusterSubnetGroupAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8628,6 +8732,7 @@ export namespace MyNS {
 		 * Contains information about deleting a custom domain association for a cluster.
 		 * Get #Action=DeleteCustomDomainAssociation
 		 * @param {string} ClusterIdentifier The identifier of the cluster to delete a custom domain association for.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteCustomDomainAssociation(ClusterIdentifier: string, Action: GET_DeleteCustomDomainAssociationAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8638,6 +8743,7 @@ export namespace MyNS {
 		 * Deletes a Redshift-managed VPC endpoint.
 		 * Get #Action=DeleteEndpointAccess
 		 * @param {string} EndpointName The Redshift-managed VPC endpoint to delete.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteEndpointAccess(EndpointName: string, Action: GET_DeleteEndpointAccessAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8648,6 +8754,7 @@ export namespace MyNS {
 		 * Deletes an Amazon Redshift event notification subscription.
 		 * Get #Action=DeleteEventSubscription
 		 * @param {string} SubscriptionName The name of the Amazon Redshift event notification subscription to be deleted.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteEventSubscription(SubscriptionName: string, Action: GET_DeleteEventSubscriptionAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8658,6 +8765,7 @@ export namespace MyNS {
 		 * Deletes the specified HSM client certificate.
 		 * Get #Action=DeleteHsmClientCertificate
 		 * @param {string} HsmClientCertificateIdentifier The identifier of the HSM client certificate to be deleted.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteHsmClientCertificate(HsmClientCertificateIdentifier: string, Action: GET_DeleteHsmClientCertificateAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8668,6 +8776,7 @@ export namespace MyNS {
 		 * Deletes the specified Amazon Redshift HSM configuration.
 		 * Get #Action=DeleteHsmConfiguration
 		 * @param {string} HsmConfigurationIdentifier The identifier of the Amazon Redshift HSM configuration to be deleted.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteHsmConfiguration(HsmConfigurationIdentifier: string, Action: GET_DeleteHsmConfigurationAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8678,9 +8787,13 @@ export namespace MyNS {
 		 * Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.
 		 * Get #Action=DeletePartner
 		 * @param {string} AccountId The Amazon Web Services account ID that owns the cluster.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster that receives data from the partner.
+		 *     Max length: 63
 		 * @param {string} DatabaseName The name of the database that receives data from the partner.
+		 *     Max length: 127
 		 * @param {string} PartnerName The name of the partner that is authorized to send data.
+		 *     Max length: 255
 		 * @return {void} Success
 		 */
 		GET_DeletePartner(AccountId: string, ClusterIdentifier: string, DatabaseName: string, PartnerName: string, Action: GET_DeletePartnerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8691,6 +8804,7 @@ export namespace MyNS {
 		 * Deletes a scheduled action.
 		 * Get #Action=DeleteScheduledAction
 		 * @param {string} ScheduledActionName The name of the scheduled action to delete. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteScheduledAction(ScheduledActionName: string, Action: GET_DeleteScheduledActionAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8701,6 +8815,7 @@ export namespace MyNS {
 		 * Deletes the specified snapshot copy grant.
 		 * Get #Action=DeleteSnapshotCopyGrant
 		 * @param {string} SnapshotCopyGrantName The name of the snapshot copy grant to delete.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteSnapshotCopyGrant(SnapshotCopyGrantName: string, Action: GET_DeleteSnapshotCopyGrantAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8711,6 +8826,7 @@ export namespace MyNS {
 		 * Deletes a snapshot schedule.
 		 * Get #Action=DeleteSnapshotSchedule
 		 * @param {string} ScheduleIdentifier A unique identifier of the snapshot schedule to delete.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteSnapshotSchedule(ScheduleIdentifier: string, Action: GET_DeleteSnapshotScheduleAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8721,6 +8837,7 @@ export namespace MyNS {
 		 * Deletes tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags.
 		 * Get #Action=DeleteTags
 		 * @param {string} ResourceName The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys The tag key that you want to delete.
 		 * @return {void} Success
 		 */
@@ -8732,6 +8849,7 @@ export namespace MyNS {
 		 * Deletes a usage limit from a cluster.
 		 * Get #Action=DeleteUsageLimit
 		 * @param {string} UsageLimitId The identifier of the usage limit to delete.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DeleteUsageLimit(UsageLimitId: string, Action: GET_DeleteUsageLimitAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8752,6 +8870,7 @@ export namespace MyNS {
 		 * Describes an authentication profile.
 		 * Get #Action=DescribeAuthenticationProfiles
 		 * @param {string} AuthenticationProfileName The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.
+		 *     Max length: 63
 		 * @return {void} Success
 		 */
 		GET_DescribeAuthenticationProfiles(AuthenticationProfileName: string | null | undefined, Action: GET_DescribeAuthenticationProfilesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8762,8 +8881,11 @@ export namespace MyNS {
 		 * Returns an array of <code>ClusterDbRevision</code> objects.
 		 * Get #Action=DescribeClusterDbRevisions
 		 * @param {string} ClusterIdentifier A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterDbRevisions(ClusterIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterDbRevisionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8774,8 +8896,11 @@ export namespace MyNS {
 		 * <p>Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each parameter group, the response includes the parameter group name, description, and parameter group family name. You can optionally specify a name to retrieve the description of a specific parameter group.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all parameter groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all parameter groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, parameter groups are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeClusterParameterGroups
 		 * @param {string} ParameterGroupName The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterParameterGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -8788,9 +8913,13 @@ export namespace MyNS {
 		 * <p>Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.</p> <p>You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were modified by a user action such as from <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i> equal to <i>user</i>.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=DescribeClusterParameters
 		 * @param {string} ParameterGroupName The name of a cluster parameter group for which to return details.
+		 *     Max length: 2147483647
 		 * @param {string} Source <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterParameters(ParameterGroupName: string, Source: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterParametersAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8801,8 +8930,11 @@ export namespace MyNS {
 		 * <p>Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain only information about only that security group.</p> <p> For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all security groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all security groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, security groups are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeClusterSecurityGroups
 		 * @param {string} ClusterSecurityGroupName <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -8815,14 +8947,21 @@ export namespace MyNS {
 		 * <p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters.</p> <p>If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeClusterSnapshots
 		 * @param {string} ClusterIdentifier The identifier of the cluster which generated the requested snapshots.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotIdentifier The snapshot identifier of the snapshot about which to return information.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotType <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
+		 *     Max length: 2147483647
 		 * @param {Date} StartTime <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
 		 * @param {Date} EndTime <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {string} OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.
 		 * @param {boolean} ClusterExists <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>
@@ -8837,8 +8976,11 @@ export namespace MyNS {
 		 * <p>Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this operation returns information about all cluster subnet groups that are defined in your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all subnet groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all subnet groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, subnet groups are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeClusterSubnetGroups
 		 * @param {string} ClusterSubnetGroupName The name of the cluster subnet group for which information is requested.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -8851,8 +8993,11 @@ export namespace MyNS {
 		 * Returns a list of all the available maintenance tracks.
 		 * Get #Action=DescribeClusterTracks
 		 * @param {string} MaintenanceTrackName The name of the maintenance track. 
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords An integer value for the maximum number of maintenance tracks to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterTracks(MaintenanceTrackName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterTracksAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8863,9 +9008,13 @@ export namespace MyNS {
 		 * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
 		 * Get #Action=DescribeClusterVersions
 		 * @param {string} ClusterVersion <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterParameterGroupFamily <p>The name of a specific cluster parameter group family to return details for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterVersions(ClusterVersion: string | null | undefined, ClusterParameterGroupFamily: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterVersionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8876,8 +9025,11 @@ export namespace MyNS {
 		 * <p>Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all clusters that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, clusters are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeClusters
 		 * @param {string} ClusterIdentifier <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p> <p>The default is that all clusters defined for an account are returned.</p>
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusters</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -8890,9 +9042,13 @@ export namespace MyNS {
 		 * Contains information for custom domain associations for a cluster.
 		 * Get #Action=DescribeCustomDomainAssociations
 		 * @param {string} CustomDomainName The custom domain name for the custom domain association.
+		 *     Min length: 1    Max length: 253
 		 * @param {string} CustomDomainCertificateArn The certificate Amazon Resource Name (ARN) for the custom domain association.
+		 *     Min length: 20    Max length: 2048
 		 * @param {number} MaxRecords The maximum records setting for the associated custom domain.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker The marker for the custom domain association.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeCustomDomainAssociations(CustomDomainName: string | null | undefined, CustomDomainCertificateArn: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCustomDomainAssociationsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8903,8 +9059,11 @@ export namespace MyNS {
 		 * Shows the status of any inbound or outbound datashares available in the specified account.
 		 * Get #Action=DescribeDataShares
 		 * @param {string} DataShareArn The identifier of the datashare to describe details of.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeDataShares(DataShareArn: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDataSharesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8915,9 +9074,12 @@ export namespace MyNS {
 		 * Returns a list of datashares where the account identifier being called is a consumer account identifier.
 		 * Get #Action=DescribeDataSharesForConsumer
 		 * @param {string} ConsumerArn The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.
+		 *     Max length: 2147483647
 		 * @param {DataShareStatusForConsumer} Status An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
 		 * @param {number} MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeDataSharesForConsumer(ConsumerArn: string | null | undefined, Status: DataShareStatusForConsumer | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDataSharesForConsumerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8928,9 +9090,12 @@ export namespace MyNS {
 		 * Returns a list of datashares when the account identifier being called is a producer account identifier.
 		 * Get #Action=DescribeDataSharesForProducer
 		 * @param {string} ProducerArn The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+		 *     Max length: 2147483647
 		 * @param {DataShareStatusForProducer} Status An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
 		 * @param {number} MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForProducer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeDataSharesForProducer(ProducerArn: string | null | undefined, Status: DataShareStatusForProducer | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDataSharesForProducerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8941,8 +9106,11 @@ export namespace MyNS {
 		 * <p>Returns a list of parameter settings for the specified parameter group family.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=DescribeDefaultClusterParameters
 		 * @param {string} ParameterGroupFamily The name of the cluster parameter group family.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDefaultClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeDefaultClusterParameters(ParameterGroupFamily: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDefaultClusterParametersAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8953,11 +9121,17 @@ export namespace MyNS {
 		 * Describes a Redshift-managed VPC endpoint.
 		 * Get #Action=DescribeEndpointAccess
 		 * @param {string} ClusterIdentifier The cluster identifier associated with the described endpoint.
+		 *     Max length: 2147483647
 		 * @param {string} ResourceOwner The Amazon Web Services account ID of the owner of the cluster.
+		 *     Max length: 2147483647
 		 * @param {string} EndpointName The name of the endpoint to be described.
+		 *     Max length: 2147483647
 		 * @param {string} VpcId The virtual private cloud (VPC) identifier with access to the cluster.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeEndpointAccess(ClusterIdentifier: string | null | undefined, ResourceOwner: string | null | undefined, EndpointName: string | null | undefined, VpcId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEndpointAccessAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8968,10 +9142,14 @@ export namespace MyNS {
 		 * Describes an endpoint authorization.
 		 * Get #Action=DescribeEndpointAuthorization
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster to access.
+		 *     Max length: 2147483647
 		 * @param {string} Account The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.
+		 *     Max length: 2147483647
 		 * @param {boolean} Grantee Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.
 		 * @param {number} MaxRecords The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeEndpointAuthorization(ClusterIdentifier: string | null | undefined, Account: string | null | undefined, Grantee: boolean | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEndpointAuthorizationAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8982,6 +9160,7 @@ export namespace MyNS {
 		 * Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and source types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift Event Notifications</a>.
 		 * Get #Action=DescribeEventCategories
 		 * @param {string} SourceType <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p> <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeEventCategories(SourceType: string | null | undefined, Action: GET_DescribeEventCategoriesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -8992,8 +9171,11 @@ export namespace MyNS {
 		 * <p>Lists descriptions of all the Amazon Redshift event notification subscriptions for a customer account. If you specify a subscription name, lists the description for that subscription.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all event notification subscriptions that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all subscriptions that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, subscriptions are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeEventSubscriptions
 		 * @param {string} SubscriptionName The name of the Amazon Redshift event notification subscription to be described.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching event notification subscriptions that are associated with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching event notification subscriptions that are associated with the specified tag value or values. For example, suppose that you have subscriptions that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9006,12 +9188,16 @@ export namespace MyNS {
 		 * Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned.
 		 * Get #Action=DescribeEvents
 		 * @param {string} SourceIdentifier <p>The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.</p> <p>Constraints:</p> <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p> <ul> <li> <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p> </li> <li> <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p> </li> <li> <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p> </li> <li> <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {SourceType} SourceType <p>The event source to retrieve events for. If no value is specified, all events are returned.</p> <p>Constraints:</p> <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p> <ul> <li> <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p> </li> <li> <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p> </li> <li> <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p> </li> <li> <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p> </li> </ul>
 		 * @param {Date} StartTime <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2009-07-08T18:00Z</code> </p>
 		 * @param {Date} EndTime <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2009-07-08T18:00Z</code> </p>
 		 * @param {number} Duration <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p> <p>Default: <code>60</code> </p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeEvents</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: SourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9022,8 +9208,11 @@ export namespace MyNS {
 		 * <p>Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the HSM certificates owned by your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM client certificates that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all HSM client certificates that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, HSM client certificates are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeHsmClientCertificates
 		 * @param {string} HsmClientCertificateIdentifier The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmClientCertificates</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching HSM client certificates that are associated with the specified key or keys. For example, suppose that you have HSM client certificates that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9036,8 +9225,11 @@ export namespace MyNS {
 		 * <p>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all HSM connections that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeHsmConfigurations
 		 * @param {string} HsmConfigurationIdentifier The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9050,6 +9242,7 @@ export namespace MyNS {
 		 * Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster.
 		 * Get #Action=DescribeLoggingStatus
 		 * @param {string} ClusterIdentifier <p>The identifier of the cluster from which to get the logging status.</p> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeLoggingStatus(ClusterIdentifier: string, Action: GET_DescribeLoggingStatusAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9061,12 +9254,18 @@ export namespace MyNS {
 		 * Get #Action=DescribeNodeConfigurationOptions
 		 * @param {ActionType} ActionType The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. 
 		 * @param {string} ClusterIdentifier The identifier of the cluster to evaluate for possible node configurations.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotIdentifier The identifier of the snapshot to evaluate for possible node configurations.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+		 *     Max length: 2147483647
 		 * @param {string} OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Filter A set of name, operator, and value items to filter the results.
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeNodeConfigurationOptions(ActionType: ActionType, ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, SnapshotArn: string | null | undefined, OwnerAccount: string | null | undefined, Filter: Array<string> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeNodeConfigurationOptionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9077,9 +9276,13 @@ export namespace MyNS {
 		 * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
 		 * Get #Action=DescribeOrderableClusterOptions
 		 * @param {string} ClusterVersion <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p> <p>Default: All versions.</p> <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
+		 *     Max length: 2147483647
 		 * @param {string} NodeType The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeOrderableClusterOptions(ClusterVersion: string | null | undefined, NodeType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOrderableClusterOptionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9090,9 +9293,13 @@ export namespace MyNS {
 		 * Returns information about the partner integrations defined for a cluster.
 		 * Get #Action=DescribePartners
 		 * @param {string} AccountId The Amazon Web Services account ID that owns the cluster.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster whose partner integration is being described.
+		 *     Max length: 63
 		 * @param {string} DatabaseName The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.
+		 *     Max length: 127
 		 * @param {string} PartnerName The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.
+		 *     Max length: 255
 		 * @return {void} Success
 		 */
 		GET_DescribePartners(AccountId: string, ClusterIdentifier: string, DatabaseName: string | null | undefined, PartnerName: string | null | undefined, Action: GET_DescribePartnersAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9103,9 +9310,13 @@ export namespace MyNS {
 		 * Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested.
 		 * Get #Action=DescribeReservedNodeExchangeStatus
 		 * @param {string} ReservedNodeId The identifier of the source reserved node in a reserved-node exchange request.
+		 *     Max length: 2147483647
 		 * @param {string} ReservedNodeExchangeRequestId The identifier of the reserved-node exchange request.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeReservedNodeExchangeStatus(ReservedNodeId: string | null | undefined, ReservedNodeExchangeRequestId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedNodeExchangeStatusAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9116,8 +9327,11 @@ export namespace MyNS {
 		 * <p>Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which reserve node offering you want to purchase. You then use the unique offering ID in you call to <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes for your Amazon Redshift cluster. </p> <p> For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=DescribeReservedNodeOfferings
 		 * @param {string} ReservedNodeOfferingId The unique identifier for the offering.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeReservedNodeOfferings(ReservedNodeOfferingId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedNodeOfferingsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9128,8 +9342,11 @@ export namespace MyNS {
 		 * Returns the descriptions of the reserved nodes.
 		 * Get #Action=DescribeReservedNodes
 		 * @param {string} ReservedNodeId Identifier for the node reservation.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodes</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeReservedNodes(ReservedNodeId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedNodesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9140,6 +9357,7 @@ export namespace MyNS {
 		 * <p>Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a <code>HTTP 404</code> error is returned. If a resize operation was initiated and completed, the status of the resize remains as <code>SUCCEEDED</code> until the next resize. </p> <p>A resize operation can be requested using <a>ModifyCluster</a> and specifying a different number or type of nodes for the cluster. </p>
 		 * Get #Action=DescribeResize
 		 * @param {string} ClusterIdentifier <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p> <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeResize(ClusterIdentifier: string, Action: GET_DescribeResizeAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9150,13 +9368,16 @@ export namespace MyNS {
 		 * Describes properties of scheduled actions.
 		 * Get #Action=DescribeScheduledActions
 		 * @param {string} ScheduledActionName The name of the scheduled action to retrieve. 
+		 *     Max length: 2147483647
 		 * @param {ScheduledActionTypeValues} TargetActionType The type of the scheduled actions to retrieve. 
 		 * @param {Date} StartTime The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.
 		 * @param {Date} EndTime The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.
 		 * @param {boolean} Active If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. 
 		 * @param {Array<string>} Filters List of scheduled action filters. 
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeScheduledActions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeScheduledActions(ScheduledActionName: string | null | undefined, TargetActionType: ScheduledActionTypeValues | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Active: boolean | null | undefined, Filters: Array<string> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeScheduledActionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9167,8 +9388,11 @@ export namespace MyNS {
 		 * <p>Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 		 * Get #Action=DescribeSnapshotCopyGrants
 		 * @param {string} SnapshotCopyGrantName The name of the snapshot copy grant.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9181,11 +9405,15 @@ export namespace MyNS {
 		 * Returns a list of snapshot schedules.
 		 * Get #Action=DescribeSnapshotSchedules
 		 * @param {string} ClusterIdentifier The unique identifier for the cluster whose snapshot schedules you want to view.
+		 *     Max length: 2147483647
 		 * @param {string} ScheduleIdentifier A unique identifier for a snapshot schedule.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys The key value for a snapshot schedule tag.
 		 * @param {Array<string>} TagValues The value corresponding to the key of the snapshot schedule tag.
 		 * @param {string} Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeSnapshotSchedules(ClusterIdentifier: string | null | undefined, ScheduleIdentifier: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeSnapshotSchedulesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9214,9 +9442,13 @@ export namespace MyNS {
 		 * Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.
 		 * Get #Action=DescribeTableRestoreStatus
 		 * @param {string} ClusterIdentifier The Amazon Redshift cluster that the table is being restored to.
+		 *     Max length: 2147483647
 		 * @param {string} TableRestoreRequestId The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DescribeTableRestoreStatus(ClusterIdentifier: string | null | undefined, TableRestoreRequestId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeTableRestoreStatusAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9227,9 +9459,13 @@ export namespace MyNS {
 		 * <p>Returns a list of tags. You can return tags from a specific resource by specifying an ARN, or you can return all tags for a given type of resource, such as clusters, snapshots, and so on.</p> <p>The following are limitations for <code>DescribeTags</code>: </p> <ul> <li> <p>You cannot specify an ARN and a resource-type value together in the same request.</p> </li> <li> <p>You cannot use the <code>MaxRecords</code> and <code>Marker</code> parameters together with the ARN parameter.</p> </li> <li> <p>The <code>MaxRecords</code> parameter can be a range from 10 to 50 results to return in a request.</p> </li> </ul> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all resources that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all resources that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, resources are returned regardless of whether they have tag keys or values associated with them.</p>
 		 * Get #Action=DescribeTags
 		 * @param {string} ResourceName The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
+		 *     Max length: 2147483647
 		 * @param {string} ResourceType <p>The type of resource with which you want to view tags. Valid resource types are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2 security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li> <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li> <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9242,10 +9478,14 @@ export namespace MyNS {
 		 * <p>Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier, cluster identifier, and feature type parameters:</p> <ul> <li> <p>If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects for the current account in the current region are returned.</p> </li> <li> <p>If usage limit identifier is provided, then the corresponding usage limit object is returned.</p> </li> <li> <p>If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.</p> </li> <li> <p>If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster and feature are returned.</p> </li> </ul>
 		 * Get #Action=DescribeUsageLimits
 		 * @param {string} UsageLimitId The identifier of the usage limit to describe.
+		 *     Max length: 2147483647
 		 * @param {string} ClusterIdentifier The identifier of the cluster for which you want to describe usage limits.
+		 *     Max length: 2147483647
 		 * @param {UsageLimitFeatureType} FeatureType The feature type for which you want to describe usage limits.
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeUsageLimits</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
+		 *     Max length: 2147483647
 		 * @param {Array<string>} TagKeys A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.
 		 * @return {void} Success
@@ -9258,6 +9498,7 @@ export namespace MyNS {
 		 * Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 		 * Get #Action=DisableLogging
 		 * @param {string} ClusterIdentifier <p>The identifier of the cluster on which logging is to be stopped.</p> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DisableLogging(ClusterIdentifier: string, Action: GET_DisableLoggingAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9268,6 +9509,7 @@ export namespace MyNS {
 		 * <p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>
 		 * Get #Action=DisableSnapshotCopy
 		 * @param {string} ClusterIdentifier <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p> <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DisableSnapshotCopy(ClusterIdentifier: string, Action: GET_DisableSnapshotCopyAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9278,9 +9520,12 @@ export namespace MyNS {
 		 * From a datashare consumer account, remove association for the specified datashare.
 		 * Get #Action=DisassociateDataShareConsumer
 		 * @param {string} DataShareArn The Amazon Resource Name (ARN) of the datashare to remove association for. 
+		 *     Max length: 2147483647
 		 * @param {boolean} DisassociateEntireAccount A value that specifies whether association for the datashare is removed from the entire account.
 		 * @param {string} ConsumerArn The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+		 *     Max length: 2147483647
 		 * @param {string} ConsumerRegion From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_DisassociateDataShareConsumer(DataShareArn: string, DisassociateEntireAccount: boolean | null | undefined, ConsumerArn: string | null | undefined, ConsumerRegion: string | null | undefined, Action: GET_DisassociateDataShareConsumerAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9291,8 +9536,11 @@ export namespace MyNS {
 		 * Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 		 * Get #Action=EnableLogging
 		 * @param {string} ClusterIdentifier <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} BucketName <p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} S3KeyPrefix <p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {LogDestinationType} LogDestinationType The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.
 		 * @param {Array<string>} LogExports The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.
 		 * @return {void} Success
@@ -9305,10 +9553,15 @@ export namespace MyNS {
 		 * Enables the automatic copy of snapshots from one region to another region for a specified cluster.
 		 * Get #Action=EnableSnapshotCopy
 		 * @param {string} ClusterIdentifier <p>The unique identifier of the source cluster to copy snapshots from.</p> <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
+		 *     Max length: 2147483647
 		 * @param {string} DestinationRegion <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
+		 *     Max length: 2147483647
 		 * @param {number} RetentionPeriod <p>The number of days to retain automated snapshots in the destination region after they are copied from the source region.</p> <p>Default: 7.</p> <p>Constraints: Must be at least 1 and no more than 35.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} SnapshotCopyGrantName The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.
+		 *     Max length: 2147483647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_EnableSnapshotCopy(ClusterIdentifier: string, DestinationRegion: string, RetentionPeriod: number | null | undefined, SnapshotCopyGrantName: string | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, Action: GET_EnableSnapshotCopyAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9319,12 +9572,17 @@ export namespace MyNS {
 		 * <p>Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> permission.</p> <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>
 		 * Get #Action=GetClusterCredentials
 		 * @param {string} DbUser <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} DbName <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterIdentifier The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.
+		 *     Max length: 2147483647
 		 * @param {number} DurationSeconds <p>The number of seconds until the returned temporary password expires.</p> <p>Constraint: minimum 900, maximum 3600.</p> <p>Default: 900</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} AutoCreate Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
 		 * @param {Array<string>} DbGroups <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p> <p>Database group name constraints</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
 		 * @param {string} CustomDomainName The custom domain name for the cluster credentials.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_GetClusterCredentials(DbUser: string, DbName: string | null | undefined, ClusterIdentifier: string | null | undefined, DurationSeconds: number | null | undefined, AutoCreate: boolean | null | undefined, DbGroups: Array<string> | null | undefined, CustomDomainName: string | null | undefined, Action: GET_GetClusterCredentialsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9335,9 +9593,13 @@ export namespace MyNS {
 		 * <p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p> <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide. </p>
 		 * Get #Action=GetClusterCredentialsWithIAM
 		 * @param {string} DbName The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.
+		 *     Max length: 2147483647
 		 * @param {string} ClusterIdentifier The unique identifier of the cluster that contains the database for which you are requesting credentials. 
+		 *     Max length: 2147483647
 		 * @param {number} DurationSeconds <p>The number of seconds until the returned temporary password expires.</p> <p>Range: 900-3600. Default: 900.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} CustomDomainName The custom domain name for the IAM message cluster credentials.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_GetClusterCredentialsWithIAM(DbName: string | null | undefined, ClusterIdentifier: string | null | undefined, DurationSeconds: number | null | undefined, CustomDomainName: string | null | undefined, Action: GET_GetClusterCredentialsWithIAMAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9349,9 +9611,13 @@ export namespace MyNS {
 		 * Get #Action=GetReservedNodeExchangeConfigurationOptions
 		 * @param {ReservedNodeExchangeActionType} ActionType The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.
 		 * @param {string} ClusterIdentifier The identifier for the cluster that is the source for a reserved-node exchange.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotIdentifier The identifier for the snapshot that is the source for the reserved-node exchange.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_GetReservedNodeExchangeConfigurationOptions(ActionType: ReservedNodeExchangeActionType, ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_GetReservedNodeExchangeConfigurationOptionsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9362,8 +9628,11 @@ export namespace MyNS {
 		 * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.
 		 * Get #Action=GetReservedNodeExchangeOfferings
 		 * @param {string} ReservedNodeId A string representing the node identifier for the DC1 Reserved Node to be exchanged.
+		 *     Max length: 2147483647
 		 * @param {number} MaxRecords An integer setting the maximum number of ReservedNodeOfferings to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Marker A value that indicates the starting point for the next set of ReservedNodeOfferings.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_GetReservedNodeExchangeOfferings(ReservedNodeId: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_GetReservedNodeExchangeOfferingsAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9374,6 +9643,7 @@ export namespace MyNS {
 		 * This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 		 * Get #Action=ModifyAquaConfiguration
 		 * @param {string} ClusterIdentifier The identifier of the cluster to be modified.
+		 *     Max length: 2147483647
 		 * @param {AquaConfigurationStatus} AquaConfigurationStatus This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 		 * @return {void} Success
 		 */
@@ -9385,7 +9655,9 @@ export namespace MyNS {
 		 * Modifies an authentication profile.
 		 * Get #Action=ModifyAuthenticationProfile
 		 * @param {string} AuthenticationProfileName The name of the authentication profile to replace.
+		 *     Max length: 63
 		 * @param {string} AuthenticationProfileContent The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ModifyAuthenticationProfile(AuthenticationProfileName: string, AuthenticationProfileContent: string, Action: GET_ModifyAuthenticationProfileAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9396,30 +9668,48 @@ export namespace MyNS {
 		 * <p>Modifies the settings for a cluster.</p> <p>You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change.</p> <p>You can add another security or parameter group, or change the admin user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=ModifyCluster
 		 * @param {string} ClusterIdentifier <p>The unique identifier of the cluster to be modified.</p> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterType <p>The new cluster type.</p> <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <a>DescribeResize</a> to track the progress of the resize request. </p> <p>Valid Values: <code> multi-node | single-node </code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} NodeType <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p> <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+		 *     Max length: 2147483647
 		 * @param {number} NumberOfNodes <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p> <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: Integer greater than <code>0</code>.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} ClusterSecurityGroups <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p> <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
 		 * @param {Array<string>} VpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.
 		 * @param {string} MasterUserPassword <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note> <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterParameterGroupName <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <a>RebootCluster</a>. </p> <p>Default: Uses existing setting.</p> <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
+		 *     Max length: 2147483647
 		 * @param {number} AutomatedSnapshotRetentionPeriod <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} PreferredMaintenanceWindow <p>The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is necessary during the window, it may result in an outage.</p> <p>This maintenance window change is made immediately. If the new maintenance window indicates the current time, there must be at least 120 minutes between the current time and end of the window in order to ensure that pending changes are applied.</p> <p>Default: Uses existing setting.</p> <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes.</p>
+		 *     Max length: 2147483647
 		 * @param {string} ClusterVersion <p>The new version number of the Amazon Redshift engine to upgrade to.</p> <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Example: <code>1.0</code> </p>
+		 *     Max length: 2147483647
 		 * @param {boolean} AllowVersionUpgrade <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p> <p>Default: <code>false</code> </p>
 		 * @param {string} HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} NewClusterIdentifier <p>The new identifier for the cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @param {boolean} PubliclyAccessible If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.
 		 * @param {string} ElasticIp <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+		 *     Max length: 2147483647
 		 * @param {boolean} EnhancedVpcRouting <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default: false</p>
 		 * @param {string} MaintenanceTrackName The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
+		 *     Max length: 2147483647
 		 * @param {boolean} Encrypted <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
 		 * @param {string} KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
+		 *     Max length: 2147483647
 		 * @param {boolean} AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.
 		 * @param {string} AvailabilityZone The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+		 *     Max length: 2147483647
 		 * @param {number} Port The option to change the port of an Amazon Redshift cluster.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ModifyCluster(ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string | null | undefined, NumberOfNodes: number | null | undefined, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, MasterUserPassword: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, NewClusterIdentifier: string | null | undefined, PubliclyAccessible: boolean | null | undefined, ElasticIp: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, MaintenanceTrackName: string | null | undefined, Encrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, AvailabilityZoneRelocation: boolean | null | undefined, AvailabilityZone: string | null | undefined, Port: number | null | undefined, Action: GET_ModifyClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9430,7 +9720,9 @@ export namespace MyNS {
 		 * Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster.
 		 * Get #Action=ModifyClusterDbRevision
 		 * @param {string} ClusterIdentifier <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} RevisionTarget The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ModifyClusterDbRevision(ClusterIdentifier: string, RevisionTarget: string, Action: GET_ModifyClusterDbRevisionAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9441,9 +9733,11 @@ export namespace MyNS {
 		 * <p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=ModifyClusterIamRoles
 		 * @param {string} ClusterIdentifier The unique identifier of the cluster for which you want to associate or disassociate IAM roles.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} AddIamRoles Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. 
 		 * @param {Array<string>} RemoveIamRoles Zero or more IAM roles in ARN format to disassociate from the cluster. 
 		 * @param {string} DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ModifyClusterIamRoles(ClusterIdentifier: string, AddIamRoles: Array<string> | null | undefined, RemoveIamRoles: Array<string> | null | undefined, DefaultIamRoleArn: string | null | undefined, Action: GET_ModifyClusterIamRolesAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9454,11 +9748,14 @@ export namespace MyNS {
 		 * Modifies the maintenance settings of a cluster.
 		 * Get #Action=ModifyClusterMaintenance
 		 * @param {string} ClusterIdentifier A unique identifier for the cluster.
+		 *     Max length: 2147483647
 		 * @param {boolean} DeferMaintenance A boolean indicating whether to enable the deferred maintenance window. 
 		 * @param {string} DeferMaintenanceIdentifier A unique identifier for the deferred maintenance window.
+		 *     Max length: 2147483647
 		 * @param {Date} DeferMaintenanceStartTime A timestamp indicating the start time for the deferred maintenance window.
 		 * @param {Date} DeferMaintenanceEndTime A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.
 		 * @param {number} DeferMaintenanceDuration An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ModifyClusterMaintenance(ClusterIdentifier: string, DeferMaintenance: boolean | null | undefined, DeferMaintenanceIdentifier: string | null | undefined, DeferMaintenanceStartTime: Date | null | undefined, DeferMaintenanceEndTime: Date | null | undefined, DeferMaintenanceDuration: number | null | undefined, Action: GET_ModifyClusterMaintenanceAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9469,6 +9766,7 @@ export namespace MyNS {
 		 * <p>Modifies the parameters of a parameter group. For the parameters parameter, it can't contain ASCII characters.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=ModifyClusterParameterGroup
 		 * @param {string} ParameterGroupName The name of the parameter group to be modified.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} Parameters <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p> <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p> <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
 		 * @return {void} Success
 		 */
@@ -9480,7 +9778,9 @@ export namespace MyNS {
 		 * <p>Modifies the settings for a snapshot.</p> <p>This exanmple modifies the manual retention period setting for a cluster snapshot.</p>
 		 * Get #Action=ModifyClusterSnapshot
 		 * @param {string} SnapshotIdentifier The identifier of the snapshot whose setting you want to modify.
+		 *     Max length: 2147483647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Force A Boolean option to override an exception if the retention period has already passed.
 		 * @return {void} Success
 		 */
@@ -9492,7 +9792,9 @@ export namespace MyNS {
 		 * Modifies a snapshot schedule for a cluster.
 		 * Get #Action=ModifyClusterSnapshotSchedule
 		 * @param {string} ClusterIdentifier A unique identifier for the cluster whose snapshot schedule you want to modify. 
+		 *     Max length: 2147483647
 		 * @param {string} ScheduleIdentifier A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
+		 *     Max length: 2147483647
 		 * @param {boolean} DisassociateSchedule A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.
 		 * @return {void} Success
 		 */
@@ -9504,7 +9806,9 @@ export namespace MyNS {
 		 * Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.
 		 * Get #Action=ModifyClusterSubnetGroup
 		 * @param {string} ClusterSubnetGroupName The name of the subnet group to be modified.
+		 *     Max length: 2147483647
 		 * @param {string} Description A text description of the subnet group to be modified.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} SubnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
 		 * @return {void} Success
 		 */
@@ -9516,8 +9820,11 @@ export namespace MyNS {
 		 * Contains information for changing a custom domain association.
 		 * Get #Action=ModifyCustomDomainAssociation
 		 * @param {string} CustomDomainName The custom domain name for a changed custom domain association.
+		 *     Min length: 1    Max length: 253
 		 * @param {string} CustomDomainCertificateArn The certificate Amazon Resource Name (ARN) for the changed custom domain association.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} ClusterIdentifier The identifier of the cluster to change a custom domain association for.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ModifyCustomDomainAssociation(CustomDomainName: string | null | undefined, CustomDomainCertificateArn: string | null | undefined, ClusterIdentifier: string, Action: GET_ModifyCustomDomainAssociationAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9528,6 +9835,7 @@ export namespace MyNS {
 		 * Modifies a Redshift-managed VPC endpoint.
 		 * Get #Action=ModifyEndpointAccess
 		 * @param {string} EndpointName The endpoint to be modified.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} VpcSecurityGroupIds The complete list of VPC security groups associated with the endpoint after the endpoint is modified.
 		 * @return {void} Success
 		 */
@@ -9539,11 +9847,15 @@ export namespace MyNS {
 		 * Modifies an existing Amazon Redshift event notification subscription.
 		 * Get #Action=ModifyEventSubscription
 		 * @param {string} SubscriptionName The name of the modified Amazon Redshift event notification subscription.
+		 *     Max length: 2147483647
 		 * @param {string} SnsTopicArn The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.
+		 *     Max length: 2147483647
 		 * @param {string} SourceType <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p> <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} SourceIds <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p> <p>Example: my-cluster-1, my-cluster-2</p> <p>Example: my-snapshot-20131010</p>
 		 * @param {Array<string>} EventCategories <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p> <p>Values: configuration, management, monitoring, security, pending</p>
 		 * @param {string} Severity <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p> <p>Values: ERROR, INFO</p>
+		 *     Max length: 2147483647
 		 * @param {boolean} Enabled A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled 
 		 * @return {void} Success
 		 */
@@ -9555,10 +9867,14 @@ export namespace MyNS {
 		 * Modifies a scheduled action.
 		 * Get #Action=ModifyScheduledAction
 		 * @param {string} ScheduledActionName The name of the scheduled action to modify. 
+		 *     Max length: 2147483647
 		 * @param {GET_ModifyScheduledActionTargetAction} TargetAction A modified JSON format of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. 
 		 * @param {string} Schedule A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
+		 *     Max length: 2147483647
 		 * @param {string} IamRole A different IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>.
+		 *     Max length: 2147483647
 		 * @param {string} ScheduledActionDescription A modified description of the scheduled action. 
+		 *     Max length: 2147483647
 		 * @param {Date} StartTime A modified start time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. 
 		 * @param {Date} EndTime A modified end time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. 
 		 * @param {boolean} Enable A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. 
@@ -9572,7 +9888,9 @@ export namespace MyNS {
 		 * Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period.
 		 * Get #Action=ModifySnapshotCopyRetentionPeriod
 		 * @param {string} ClusterIdentifier <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+		 *     Max length: 2147483647
 		 * @param {number} RetentionPeriod <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p> <p>By default, this only changes the retention period of copied automated snapshots. </p> <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p> <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p> <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p> <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p> <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Manual Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.
 		 * @return {void} Success
 		 */
@@ -9584,6 +9902,7 @@ export namespace MyNS {
 		 * Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
 		 * Get #Action=ModifySnapshotSchedule
 		 * @param {string} ScheduleIdentifier A unique alphanumeric identifier of the schedule to modify.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} ScheduleDefinitions An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".
 		 * @return {void} Success
 		 */
@@ -9595,7 +9914,9 @@ export namespace MyNS {
 		 * Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.
 		 * Get #Action=ModifyUsageLimit
 		 * @param {string} UsageLimitId The identifier of the usage limit to modify.
+		 *     Max length: 2147483647
 		 * @param {number} Amount The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UsageLimitBreachAction} BreachAction The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. 
 		 * @return {void} Success
 		 */
@@ -9607,6 +9928,7 @@ export namespace MyNS {
 		 * Pauses a cluster.
 		 * Get #Action=PauseCluster
 		 * @param {string} ClusterIdentifier The identifier of the cluster to be paused.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_PauseCluster(ClusterIdentifier: string, Action: GET_PauseClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9617,7 +9939,9 @@ export namespace MyNS {
 		 * <p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve. </p> <p> For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=PurchaseReservedNodeOffering
 		 * @param {string} ReservedNodeOfferingId The unique identifier of the reserved node offering you want to purchase.
+		 *     Max length: 2147483647
 		 * @param {number} NodeCount <p>The number of reserved nodes that you want to purchase.</p> <p>Default: <code>1</code> </p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_PurchaseReservedNodeOffering(ReservedNodeOfferingId: string, NodeCount: number | null | undefined, Action: GET_PurchaseReservedNodeOfferingAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9628,6 +9952,7 @@ export namespace MyNS {
 		 * Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the cluster status is set to <code>rebooting</code>. A cluster event is created when the reboot is completed. Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this reboot. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
 		 * Get #Action=RebootCluster
 		 * @param {string} ClusterIdentifier The cluster identifier.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_RebootCluster(ClusterIdentifier: string, Action: GET_RebootClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9638,6 +9963,7 @@ export namespace MyNS {
 		 * From a datashare consumer account, rejects the specified datashare.
 		 * Get #Action=RejectDataShare
 		 * @param {string} DataShareArn The Amazon Resource Name (ARN) of the datashare to reject.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_RejectDataShare(DataShareArn: string, Action: GET_RejectDataShareAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9648,6 +9974,7 @@ export namespace MyNS {
 		 * Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters.
 		 * Get #Action=ResetClusterParameterGroup
 		 * @param {string} ParameterGroupName The name of the cluster parameter group to be reset.
+		 *     Max length: 2147483647
 		 * @param {boolean} ResetAllParameters <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code> </p>
 		 * @param {Array<string>} Parameters <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
 		 * @return {void} Success
@@ -9660,12 +9987,18 @@ export namespace MyNS {
 		 * <p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>
 		 * Get #Action=ResizeCluster
 		 * @param {string} ClusterIdentifier The unique identifier for the cluster to resize.
+		 *     Max length: 2147483647
 		 * @param {string} ClusterType The new cluster type for the specified cluster.
+		 *     Max length: 2147483647
 		 * @param {string} NodeType The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.
+		 *     Max length: 2147483647
 		 * @param {number} NumberOfNodes The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Classic A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. 
 		 * @param {string} ReservedNodeId The identifier of the reserved node.
+		 *     Max length: 2147483647
 		 * @param {string} TargetReservedNodeOfferingId The identifier of the target reserved node offering.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ResizeCluster(ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string | null | undefined, NumberOfNodes: number | null | undefined, Classic: boolean | null | undefined, ReservedNodeId: string | null | undefined, TargetReservedNodeOfferingId: string | null | undefined, Action: GET_ResizeClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9676,37 +10009,61 @@ export namespace MyNS {
 		 * <p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which the snapshot was created, except that the new cluster is created with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use the <a>ModifyCluster</a> API to associate a different security group and different parameter group with the restored cluster. If you are using a DS node type, you can also choose to change to another DS node type of the same size during restore.</p> <p>If you restore a cluster into a VPC, you must provide a cluster subnet group where you want the cluster restored.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=RestoreFromClusterSnapshot
 		 * @param {string} ClusterIdentifier <p>The identifier of the cluster that will be created from restoring the snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotIdentifier <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p> <p>Example: <code>my-snapshot-id</code> </p>
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotClusterIdentifier The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+		 *     Max length: 2147483647
 		 * @param {number} Port <p>The port number on which the cluster accepts connections.</p> <p>Default: The same port as the original cluster.</p> <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} AvailabilityZone <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-2a</code> </p>
+		 *     Max length: 2147483647
 		 * @param {boolean} AllowVersionUpgrade <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p> <p>Default: <code>true</code> </p>
 		 * @param {string} ClusterSubnetGroupName <p>The name of the subnet group where you want to cluster restored.</p> <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
+		 *     Max length: 2147483647
 		 * @param {boolean} PubliclyAccessible If <code>true</code>, the cluster can be accessed from a public network. 
 		 * @param {string} OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+		 *     Max length: 2147483647
 		 * @param {string} HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+		 *     Max length: 2147483647
 		 * @param {string} ElasticIp The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.
+		 *     Max length: 2147483647
 		 * @param {string} ClusterParameterGroupName <p>The name of the parameter group to be associated with this cluster.</p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+		 *     Max length: 2147483647
 		 * @param {Array<string>} ClusterSecurityGroups <p>A list of security groups to be associated with this cluster.</p> <p>Default: The default cluster security group for Amazon Redshift.</p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
 		 * @param {Array<string>} VpcSecurityGroupIds <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p> <p>Default: The default VPC security group is associated with the cluster.</p> <p>VPC security groups only apply to clusters in VPCs.</p>
 		 * @param {string} PreferredMaintenanceWindow <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+		 *     Max length: 2147483647
 		 * @param {number} AutomatedSnapshotRetentionPeriod <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: The value selected for the cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} KmsKeyId The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.
+		 *     Max length: 2147483647
 		 * @param {string} NodeType <p>The node type that the restored cluster will be provisioned with.</p> <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+		 *     Max length: 2147483647
 		 * @param {boolean} EnhancedVpcRouting <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default: false</p>
 		 * @param {string} AdditionalInfo Reserved.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} IamRoles <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * @param {string} MaintenanceTrackName The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotScheduleIdentifier A unique identifier for the snapshot schedule.
+		 *     Max length: 2147483647
 		 * @param {number} NumberOfNodes The number of nodes specified when provisioning the restored cluster.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.
 		 * @param {AquaConfigurationStatus} AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 		 * @param {string} DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.
+		 *     Max length: 2147483647
 		 * @param {string} ReservedNodeId The identifier of the target reserved node offering.
+		 *     Max length: 2147483647
 		 * @param {string} TargetReservedNodeOfferingId The identifier of the target reserved node offering.
+		 *     Max length: 2147483647
 		 * @param {boolean} Encrypted Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.
 		 * @return {void} Success
 		 */
@@ -9718,13 +10075,21 @@ export namespace MyNS {
 		 * <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>
 		 * Get #Action=RestoreTableFromClusterSnapshot
 		 * @param {string} ClusterIdentifier The identifier of the Amazon Redshift cluster to restore the table to.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotIdentifier The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.
+		 *     Max length: 2147483647
 		 * @param {string} SourceDatabaseName The name of the source database that contains the table to restore from.
+		 *     Max length: 2147483647
 		 * @param {string} SourceSchemaName The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
+		 *     Max length: 2147483647
 		 * @param {string} SourceTableName The name of the source table to restore from.
+		 *     Max length: 2147483647
 		 * @param {string} TargetDatabaseName The name of the database to restore the table to.
+		 *     Max length: 2147483647
 		 * @param {string} TargetSchemaName The name of the schema to restore the table to.
+		 *     Max length: 2147483647
 		 * @param {string} NewTableName The name of the table to create as a result of the current request.
+		 *     Max length: 2147483647
 		 * @param {boolean} EnableCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
 		 * @return {void} Success
 		 */
@@ -9736,6 +10101,7 @@ export namespace MyNS {
 		 * Resumes a paused cluster.
 		 * Get #Action=ResumeCluster
 		 * @param {string} ClusterIdentifier The identifier of the cluster to be resumed.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_ResumeCluster(ClusterIdentifier: string, Action: GET_ResumeClusterAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9746,9 +10112,13 @@ export namespace MyNS {
 		 * Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
 		 * Get #Action=RevokeClusterSecurityGroupIngress
 		 * @param {string} ClusterSecurityGroupName The name of the security Group from which to revoke the ingress rule.
+		 *     Max length: 2147483647
 		 * @param {string} CIDRIP The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. 
+		 *     Max length: 2147483647
 		 * @param {string} EC2SecurityGroupName The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. 
+		 *     Max length: 2147483647
 		 * @param {string} EC2SecurityGroupOwnerId <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_RevokeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_RevokeClusterSecurityGroupIngressAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9759,7 +10129,9 @@ export namespace MyNS {
 		 * Revokes access to a cluster.
 		 * Get #Action=RevokeEndpointAccess
 		 * @param {string} ClusterIdentifier The cluster to revoke access from.
+		 *     Max length: 2147483647
 		 * @param {string} Account The Amazon Web Services account ID whose access is to be revoked.
+		 *     Max length: 2147483647
 		 * @param {Array<string>} VpcIds The virtual private cloud (VPC) identifiers for which access is to be revoked.
 		 * @param {boolean} Force Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
 		 * @return {void} Success
@@ -9772,9 +10144,13 @@ export namespace MyNS {
 		 * <p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 		 * Get #Action=RevokeSnapshotAccess
 		 * @param {string} SnapshotIdentifier The identifier of the snapshot that the account can no longer access.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+		 *     Max length: 2147483647
 		 * @param {string} SnapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+		 *     Max length: 2147483647
 		 * @param {string} AccountWithRestoreAccess The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_RevokeSnapshotAccess(SnapshotIdentifier: string | null | undefined, SnapshotArn: string | null | undefined, SnapshotClusterIdentifier: string | null | undefined, AccountWithRestoreAccess: string, Action: GET_RevokeSnapshotAccessAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9785,6 +10161,7 @@ export namespace MyNS {
 		 * Rotates the encryption keys for a cluster.
 		 * Get #Action=RotateEncryptionKey
 		 * @param {string} ClusterIdentifier <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p> <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+		 *     Max length: 2147483647
 		 * @return {void} Success
 		 */
 		GET_RotateEncryptionKey(ClusterIdentifier: string, Action: GET_RotateEncryptionKeyAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {
@@ -9795,11 +10172,16 @@ export namespace MyNS {
 		 * Updates the status of a partner integration.
 		 * Get #Action=UpdatePartnerStatus
 		 * @param {string} AccountId The Amazon Web Services account ID that owns the cluster.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ClusterIdentifier The cluster identifier of the cluster whose partner integration status is being updated.
+		 *     Max length: 63
 		 * @param {string} DatabaseName The name of the database whose partner integration status is being updated.
+		 *     Max length: 127
 		 * @param {string} PartnerName The name of the partner whose integration status is being updated.
+		 *     Max length: 255
 		 * @param {PartnerIntegrationStatus} Status The value of the updated status.
 		 * @param {string} StatusMessage The status message provided by the partner.
+		 *     Max length: 262144
 		 * @return {void} Success
 		 */
 		GET_UpdatePartnerStatus(AccountId: string, ClusterIdentifier: string, DatabaseName: string, PartnerName: string, Status: PartnerIntegrationStatus, StatusMessage: string | null | undefined, Action: GET_UpdatePartnerStatusAction, Version: GET_AcceptReservedNodeExchangeVersion): Observable<HttpResponse<string>> {

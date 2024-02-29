@@ -14,6 +14,8 @@ export namespace MyNS {
 		link?: string | null;
 		procedureStepId?: string | null;
 		procedureStepUri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		stepName?: string | null;
 		treatyId?: string | null;
@@ -30,6 +32,8 @@ export namespace MyNS {
 		link: FormControl<string | null | undefined>,
 		procedureStepId: FormControl<string | null | undefined>,
 		procedureStepUri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		stepName: FormControl<string | null | undefined>,
 		treatyId: FormControl<string | null | undefined>,
@@ -107,12 +111,20 @@ export namespace MyNS {
 
 	export interface BusinessItemResourceCollection {
 		items?: Array<BusinessItemResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface BusinessItemResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBusinessItemResourceCollectionFormGroup() {
@@ -124,10 +136,14 @@ export namespace MyNS {
 	}
 
 	export interface Department {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface DepartmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -140,10 +156,14 @@ export namespace MyNS {
 	}
 
 	export interface GovernmentOrganisation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface GovernmentOrganisationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -169,12 +189,20 @@ export namespace MyNS {
 
 	export interface GovernmentOrganisationResourceCollection {
 		items?: Array<GovernmentOrganisationResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface GovernmentOrganisationResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGovernmentOrganisationResourceCollectionFormGroup() {
@@ -193,10 +221,14 @@ export namespace MyNS {
 
 	export interface SeriesMembership {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface SeriesMembershipFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesMembershipFormGroup() {
@@ -221,12 +253,20 @@ export namespace MyNS {
 
 	export interface SeriesMembershipResourceCollection {
 		items?: Array<SeriesMembershipResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface SeriesMembershipResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesMembershipResourceCollectionFormGroup() {
@@ -240,6 +280,8 @@ export namespace MyNS {
 	export enum SeriesMembershipType { CountrySeriesMembership = 'CountrySeriesMembership', EuropeanUnionSeriesMembership = 'EuropeanUnionSeriesMembership', MiscellaneousSeriesMembership = 'MiscellaneousSeriesMembership' }
 
 	export interface Treaty {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commandPaperNumber?: number | null;
 		commandPaperPrefix?: string | null;
 		commonsLayingDate?: Date | null;
@@ -250,9 +292,13 @@ export namespace MyNS {
 		europeanUnionSeriesMembership?: string | null;
 		id?: string | null;
 		layingBodyDepartment?: Department;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		layingBodyDepartmentId?: number | null;
 		layingBodyName?: string | null;
 		leadDepartment?: Department;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadGovernmentOrganisationDepartmentId?: number | null;
 		leadGovernmentOrganisationGroupName?: string | null;
 		lordsLayingDate?: Date | null;
@@ -265,6 +311,8 @@ export namespace MyNS {
 		webLink?: string | null;
 	}
 	export interface TreatyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commandPaperNumber: FormControl<number | null | undefined>,
 		commandPaperPrefix: FormControl<string | null | undefined>,
 		commonsLayingDate: FormControl<Date | null | undefined>,
@@ -274,8 +322,12 @@ export namespace MyNS {
 		europeanSeriesItemCitation: FormControl<string | null | undefined>,
 		europeanUnionSeriesMembership: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		layingBodyDepartmentId: FormControl<number | null | undefined>,
 		layingBodyName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadGovernmentOrganisationDepartmentId: FormControl<number | null | undefined>,
 		leadGovernmentOrganisationGroupName: FormControl<string | null | undefined>,
 		lordsLayingDate: FormControl<Date | null | undefined>,
@@ -345,12 +397,20 @@ export namespace MyNS {
 
 	export interface TreatyResourceCollection {
 		items?: Array<TreatyResource>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface TreatyResourceCollectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateTreatyResourceCollectionFormGroup() {
@@ -399,6 +459,7 @@ export namespace MyNS {
 		 * Get api/Treaty
 		 * @param {string} SearchText Treaties which contains the search text specified
 		 * @param {number} GovernmentOrganisationId Treaties with the government organisation id specified
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {SeriesMembershipType} Series Treaties with the series membership type specified
 		 * @param {ParliamentaryProcess} ParliamentaryProcess Treaties where the parliamentary process is concluded or notconcluded
 		 * @param {boolean} DebateScheduled Treaties which contain a scheduled debate
@@ -406,7 +467,9 @@ export namespace MyNS {
 		 * @param {boolean} RecommendedNotRatify Treaties which are recommended to not ratify
 		 * @param {BusinessItemHouseHouse} House Treaties which are laid in the specified house
 		 * @param {number} Skip The number of records to skip from the first, default is 0
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @param {number} Take The number of records to return, default is 20
+		 *     Minimum: 0    Maximum: 2147483647
 		 * @return {TreatyResourceCollection} A list of treaties
 		 */
 		GetTreaties(SearchText: string | null | undefined, GovernmentOrganisationId: number | null | undefined, Series: SeriesMembershipType | null | undefined, ParliamentaryProcess: ParliamentaryProcess | null | undefined, DebateScheduled: boolean | null | undefined, MotionToNotRatify: boolean | null | undefined, RecommendedNotRatify: boolean | null | undefined, House: BusinessItemHouseHouse | null | undefined, Skip: number | null | undefined, Take: number | null | undefined): Observable<TreatyResourceCollection> {

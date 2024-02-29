@@ -316,8 +316,13 @@ namespace MyNS
 		/// Retrieve a list of Contents belonging to the account used to make the request
 		/// V1ContentGetByPageSizeAndPageAndPageToken v1/Content
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<V1ContentGetByPageSizeAndPageAndPageTokenReturn> V1ContentGetByPageSizeAndPageAndPageTokenAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -352,7 +357,10 @@ namespace MyNS
 		/// Deletes a Content resource
 		/// V1Content_SidDelete v1/Content/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task V1Content_SidDeleteAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Content/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -379,7 +387,10 @@ namespace MyNS
 		/// Fetch a Content resource by its unique Content Sid
 		/// V1Content_SidGet v1/Content/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Contentv1content> V1Content_SidGetAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -413,7 +424,10 @@ namespace MyNS
 		/// Fetch a Content resource's approval status by its unique Content Sid
 		/// V1Content_SidApprovalRequestsGet v1/Content/{Sid}/ApprovalRequests
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource whose approval information to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Content resource whose approval information to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Contentv1contentapproval_fetch> V1Content_SidApprovalRequestsGetAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -447,8 +461,13 @@ namespace MyNS
 		/// Retrieve a list of Contents with approval statuses belonging to the account used to make the request
 		/// V1ContentAndApprovalsGetByPageSizeAndPageAndPageToken v1/ContentAndApprovals
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<V1ContentAndApprovalsGetByPageSizeAndPageAndPageTokenReturn> V1ContentAndApprovalsGetByPageSizeAndPageAndPageTokenAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -483,8 +502,13 @@ namespace MyNS
 		/// Retrieve a list of Legacy Contents belonging to the account used to make the request
 		/// V1LegacyContentGetByPageSizeAndPageAndPageToken v1/LegacyContent
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<V1LegacyContentGetByPageSizeAndPageAndPageTokenReturn> V1LegacyContentGetByPageSizeAndPageAndPageTokenAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

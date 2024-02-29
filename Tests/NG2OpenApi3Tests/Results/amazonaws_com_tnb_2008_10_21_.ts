@@ -2327,6 +2327,7 @@ export namespace MyNS {
 		 * <p>Lists information about function packages.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 		 * Get sol/vnfpkgm/v1/vnf_packages
 		 * @param {number} max_results The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextpage_opaque_marker The token for the next page of results.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2349,6 +2350,7 @@ export namespace MyNS {
 		 * <p>Lists your network instances.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 		 * Get sol/nslcm/v1/ns_instances
 		 * @param {number} max_results The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextpage_opaque_marker The token for the next page of results.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2371,6 +2373,7 @@ export namespace MyNS {
 		 * <p>Lists network packages.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 		 * Get sol/nsd/v1/ns_descriptors
 		 * @param {number} max_results The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextpage_opaque_marker The token for the next page of results.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2535,6 +2538,7 @@ export namespace MyNS {
 		 * <p>Lists network function instances.</p> <p>A network function instance is a function in a function package .</p>
 		 * Get sol/vnflcm/v1/vnf_instances
 		 * @param {number} max_results The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextpage_opaque_marker The token for the next page of results.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2548,6 +2552,7 @@ export namespace MyNS {
 		 * <p>Lists details for a network operation, including when the operation started and the status of the operation.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 		 * Get sol/nslcm/v1/ns_lcm_op_occs
 		 * @param {number} max_results The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextpage_opaque_marker The token for the next page of results.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2612,6 +2617,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn Resource ARN.
 		 * @param {Array<string>} tagKeys Tag keys.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -2670,16 +2676,16 @@ export namespace MyNS {
 
 		/**
 		 * Network instance description.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		nsDescription?: string | null;
 
 		/**
 		 * Network instance name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		nsName: string;
 
@@ -2696,16 +2702,16 @@ export namespace MyNS {
 
 		/**
 		 * Network instance description.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		nsDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * Network instance name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		nsName: FormControl<string | null | undefined>,
 

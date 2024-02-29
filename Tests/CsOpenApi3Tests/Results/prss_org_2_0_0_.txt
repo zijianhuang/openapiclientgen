@@ -921,8 +921,13 @@ namespace MyNS
 		/// Gets broadcast services matching the given criteria.
 		/// ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderById api/v2/broadcastservices
 		/// </summary>
-		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderById">The sort order of the list of broadcast services, based on broadcast service ID. If unspecified, the broadcast services are returned in random order. If using paging to iterate through the results, sort order should be specified.</param>
 		/// <returns>The matching broadcast services.</returns>
 		public async Task<Episode[]> ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdAsync(int pageStart, int pageSize, ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById orderById, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1143,7 +1148,10 @@ namespace MyNS
 		/// ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimit api/v2/cddrive/folders/{folder_id}/items
 		/// </summary>
 		/// <param name="offset">The offset into the items to begin the response.</param>
-		/// <param name="limit">The maximum number of items to return in the response.</param>
+		/// <param name="limit">The maximum number of items to return in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>The folder information.</returns>
 		public async Task<ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitReturn> ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1181,8 +1189,13 @@ namespace MyNS
 		/// <param name="beginAirDateAfter">Matches on the begin air date of the episode (inclusive).</param>
 		/// <param name="endAirDateBefore">Matches on the end air date of the episode (inclusive).</param>
 		/// <param name="programId">Matches on the ID of the program that owns the episode.</param>
-		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderById">The sort order of the list of episodes, based on episode ID. If unspecified, the episodes are returned in random order. If using paging to iterate through the results, sort order should be specified.</param>
 		/// <returns>The matching episode.</returns>
 		public async Task<Episode[]> ApiV2EpisodesGetByIdAndBeginAirDateAfterAndEndAirDateBeforeAndProgramIdAndPageStartAndPageSizeAndOrderByIdAsync(long id, System.DateTimeOffset beginAirDateAfter, System.DateTimeOffset endAirDateBefore, long programId, int pageStart, int pageSize, ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById orderById, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1449,8 +1462,13 @@ namespace MyNS
 		/// ApiV2ProgramsSearchGetByKeywordsAndPageStartAndPageSize api/v2/programs/search
 		/// </summary>
 		/// <param name="keywords">Free text search that matches against the program title or description.</param>
-		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <returns>Programs matching the search request sorted by relevance.</returns>
 		public async Task<Program[]> ApiV2ProgramsSearchGetByKeywordsAndPageStartAndPageSizeAsync(string keywords, int pageStart, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1518,8 +1536,13 @@ namespace MyNS
 		/// ApiV2SegmentsGetByEpisodeIdAndSegmentNumberAndPageStartAndPageSizeAndOrderById api/v2/segments
 		/// </summary>
 		/// <param name="episodeId">The ID of the episode that owns the segment.</param>
-		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderById">The sort order of the list of segments, based on segment ID. If unspecified, the segments are returned in random order. If using paging to iterate through the results, sort order should be specified.</param>
 		/// <returns>The segments matching the query parameters</returns>
 		public async Task<Segment[]> ApiV2SegmentsGetByEpisodeIdAndSegmentNumberAndPageStartAndPageSizeAndOrderByIdAsync(long episodeId, int segmentNumber, int pageStart, int pageSize, ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById orderById, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1641,8 +1664,13 @@ namespace MyNS
 		/// Returns the spot insertions matching the query parameters.
 		/// ApiV2SpotinsertionsGetByPageStartAndPageSizeAndOrderById api/v2/spotinsertions
 		/// </summary>
-		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the results to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderById">The sort order of the list of spot insertions, based on ID. If unspecified, the spot insertions are returned in random order. If using paging to iterate through the results, sort order should be specified.</param>
 		/// <returns>The spot insertions matching the query parameters</returns>
 		public async Task<SpotInsertion[]> ApiV2SpotinsertionsGetByPageStartAndPageSizeAndOrderByIdAsync(int pageStart, int pageSize, ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById orderById, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1770,8 +1798,13 @@ namespace MyNS
 		/// Returns the spots matching the query parameters.
 		/// ApiV2SpotsGetByPageStartAndPageSizeAndOrderById api/v2/spots
 		/// </summary>
-		/// <param name="pageStart">The start page of the spot to return. The first item is indexed at 0.</param>
-		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.</param>
+		/// <param name="pageStart">The start page of the spot to return. The first item is indexed at 0.
+		/// Minimum: 0
+		// </param>
+		/// <param name="pageSize">The number of items to return. Must be between 0 and 500, inclusive.
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="orderById">The sort order of the list of spots, based on spot ID. If unspecified, the spots are returned in random order. If using paging to iterate through the results, sort order should be specified.</param>
 		/// <returns>The spots matching the query parameters</returns>
 		public async Task<Spot[]> ApiV2SpotsGetByPageStartAndPageSizeAndOrderByIdAsync(int pageStart, int pageSize, ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById orderById, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

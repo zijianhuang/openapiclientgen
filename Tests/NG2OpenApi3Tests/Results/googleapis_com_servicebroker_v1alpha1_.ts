@@ -1255,6 +1255,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version?: number | null;
 	}
@@ -1350,6 +1351,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -1501,6 +1503,7 @@ export namespace MyNS {
 		 * @param {number} pageSize Specifies the number of results to return per page. If there are fewer
 		 * elements than the specified number, returns all elements.
 		 * Optional. If unset or 0, all the results will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to a `nextPageToken`
 		 * returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
@@ -1518,6 +1521,7 @@ export namespace MyNS {
 		 * @param {number} pageSize Specifies the number of results to return per page. If there are fewer
 		 * elements than the specified number, returns all elements.
 		 * Optional. If unset or 0, all the results will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to a `nextPageToken`
 		 * returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
@@ -1535,6 +1539,7 @@ export namespace MyNS {
 		 * @param {number} pageSize Specifies the number of results to return per page. If there are fewer
 		 * elements than the specified number, returns all elements.
 		 * Optional. If unset or 0, all the results will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to a `nextPageToken`
 		 * returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
@@ -1684,6 +1689,7 @@ export namespace MyNS {
 		 * Requests for policies with any conditional bindings must specify version 3.
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Servicebroker_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {

@@ -26,12 +26,14 @@ export namespace MyNS {
 		/**
 		 * current day number of the week, where sunday is 0
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		day_of_week: number;
 
 		/**
 		 * ordinal date of the current year
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		day_of_year: number;
 
@@ -47,13 +49,17 @@ export namespace MyNS {
 		/**
 		 * the difference in seconds between the current local time and daylight saving time for the location
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dst_offset: number;
 
 		/** an ISO8601-valid string representing the datetime when daylight savings will end for this timezone */
 		dst_until?: string | null;
 
-		/** the difference in seconds between the current local time and the time in UTC, excluding any daylight saving difference (see dst_offset) */
+		/**
+		 * the difference in seconds between the current local time and the time in UTC, excluding any daylight saving difference (see dst_offset)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		raw_offset?: number | null;
 
 		/**
@@ -65,6 +71,7 @@ export namespace MyNS {
 		/**
 		 * number of seconds since the Epoch
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		unixtime: number;
 
@@ -83,6 +90,7 @@ export namespace MyNS {
 		/**
 		 * the current week number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		week_number: number;
 	}
@@ -109,12 +117,14 @@ export namespace MyNS {
 		/**
 		 * current day number of the week, where sunday is 0
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		day_of_week: FormControl<number | null | undefined>,
 
 		/**
 		 * ordinal date of the current year
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		day_of_year: FormControl<number | null | undefined>,
 
@@ -130,13 +140,17 @@ export namespace MyNS {
 		/**
 		 * the difference in seconds between the current local time and daylight saving time for the location
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dst_offset: FormControl<number | null | undefined>,
 
 		/** an ISO8601-valid string representing the datetime when daylight savings will end for this timezone */
 		dst_until: FormControl<string | null | undefined>,
 
-		/** the difference in seconds between the current local time and the time in UTC, excluding any daylight saving difference (see dst_offset) */
+		/**
+		 * the difference in seconds between the current local time and the time in UTC, excluding any daylight saving difference (see dst_offset)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		raw_offset: FormControl<number | null | undefined>,
 
 		/**
@@ -148,6 +162,7 @@ export namespace MyNS {
 		/**
 		 * number of seconds since the Epoch
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		unixtime: FormControl<number | null | undefined>,
 
@@ -166,6 +181,7 @@ export namespace MyNS {
 		/**
 		 * the current week number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		week_number: FormControl<number | null | undefined>,
 	}

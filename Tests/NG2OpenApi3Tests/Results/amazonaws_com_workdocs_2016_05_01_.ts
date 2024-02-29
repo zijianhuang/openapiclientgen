@@ -2105,7 +2105,9 @@ export namespace MyNS {
 		 * Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.
 		 * Delete api/v1/documents/{DocumentId}/versions/{VersionId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The ID of the version.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		AbortDocumentVersionUpload(DocumentId: string, VersionId: string): Observable<HttpResponse<string>> {
@@ -2116,8 +2118,11 @@ export namespace MyNS {
 		 * Retrieves version metadata for the specified document.
 		 * Get api/v1/documents/{DocumentId}/versions/{VersionId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The version ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} fields A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.
+		 *     Min length: 1    Max length: 256
 		 * @param {boolean} includeCustomMetadata Set this to TRUE to include custom metadata in the response.
 		 * @return {GetDocumentVersionResponse} Success
 		 */
@@ -2129,7 +2134,9 @@ export namespace MyNS {
 		 * <p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>
 		 * Patch api/v1/documents/{DocumentId}/versions/{VersionId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The version ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateDocumentVersion(DocumentId: string, VersionId: string, requestBody: UpdateDocumentVersionPatchBody): Observable<HttpResponse<string>> {
@@ -2140,6 +2147,7 @@ export namespace MyNS {
 		 * Activates the specified user. Only active users can access Amazon WorkDocs.
 		 * Post api/v1/users/{UserId}/activation
 		 * @param {string} UserId The ID of the user.
+		 *     Min length: 1    Max length: 256
 		 * @return {ActivateUserResponse} Success
 		 */
 		ActivateUser(UserId: string): Observable<ActivateUserResponse> {
@@ -2150,6 +2158,7 @@ export namespace MyNS {
 		 * Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.
 		 * Delete api/v1/users/{UserId}/activation
 		 * @param {string} UserId The ID of the user.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		DeactivateUser(UserId: string): Observable<HttpResponse<string>> {
@@ -2160,6 +2169,7 @@ export namespace MyNS {
 		 * Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.
 		 * Post api/v1/resources/{ResourceId}/permissions
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		AddResourcePermissions(ResourceId: string, requestBody: AddResourcePermissionsPostBody): Observable<HttpResponse<string>> {
@@ -2170,9 +2180,13 @@ export namespace MyNS {
 		 * Describes the permissions of a specified resource.
 		 * Get api/v1/resources/{ResourceId}/permissions
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} principalId The ID of the principal to filter permissions by.
+		 *     Min length: 1    Max length: 256
 		 * @param {number} limit The maximum number of items to return with this call.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call)
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeResourcePermissionsResponse} Success
@@ -2185,6 +2199,7 @@ export namespace MyNS {
 		 * Removes all the permissions from the specified resource.
 		 * Delete api/v1/resources/{ResourceId}/permissions
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		RemoveAllResourcePermissions(ResourceId: string): Observable<HttpResponse<string>> {
@@ -2195,7 +2210,9 @@ export namespace MyNS {
 		 * Adds a new comment to the specified document version.
 		 * Post api/v1/documents/{DocumentId}/versions/{VersionId}/comment
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The ID of the document version.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		CreateComment(DocumentId: string, VersionId: string, requestBody: CreateCommentPostBody): Observable<HttpResponse<string>> {
@@ -2206,7 +2223,9 @@ export namespace MyNS {
 		 * Adds one or more custom properties to the specified resource (a folder, document, or version).
 		 * Put api/v1/resources/{ResourceId}/customMetadata
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionid The ID of the version, if the custom metadata is being added to a document version.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateCustomMetadataResponse} Success
 		 */
 		CreateCustomMetadata(ResourceId: string, versionid: string | null | undefined, requestBody: CreateCustomMetadataPutBody): Observable<CreateCustomMetadataResponse> {
@@ -2217,8 +2236,11 @@ export namespace MyNS {
 		 * Deletes custom metadata from the specified resource.
 		 * Delete api/v1/resources/{ResourceId}/customMetadata
 		 * @param {string} ResourceId The ID of the resource, either a document or folder.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionId The ID of the version, if the custom metadata is being deleted from a document version.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} keys List of properties to remove.
+		 *     Maximum items: 8
 		 * @param {boolean} deleteAll Flag to indicate removal of all custom metadata properties from the specified resource.
 		 * @return {DeleteCustomMetadataResponse} Success
 		 */
@@ -2239,6 +2261,7 @@ export namespace MyNS {
 		 * Adds the specified list of labels to the given resource (a document or folder)
 		 * Put api/v1/resources/{ResourceId}/labels
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateLabelsResponse} Success
 		 */
 		CreateLabels(ResourceId: string, requestBody: CreateLabelsPutBody): Observable<CreateLabelsResponse> {
@@ -2249,7 +2272,9 @@ export namespace MyNS {
 		 * Deletes the specified list of labels from a resource.
 		 * Delete api/v1/resources/{ResourceId}/labels
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} labels List of labels to delete from the resource.
+		 *     Maximum items: 20
 		 * @param {boolean} deleteAll Flag to request removal of all labels from the specified resource.
 		 * @return {DeleteLabelsResponse} Success
 		 */
@@ -2261,6 +2286,7 @@ export namespace MyNS {
 		 * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
 		 * Post api/v1/organizations/{OrganizationId}/subscriptions
 		 * @param {string} OrganizationId The ID of the organization.
+		 *     Min length: 1    Max length: 256
 		 * @return {CreateNotificationSubscriptionResponse} Success
 		 */
 		CreateNotificationSubscription(OrganizationId: string, requestBody: CreateNotificationSubscriptionPostBody): Observable<CreateNotificationSubscriptionResponse> {
@@ -2271,8 +2297,11 @@ export namespace MyNS {
 		 * Lists the specified notification subscriptions.
 		 * Get api/v1/organizations/{OrganizationId}/subscriptions
 		 * @param {string} OrganizationId The ID of the organization.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} limit The maximum number of items to return with this call.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeNotificationSubscriptionsResponse} Success
@@ -2294,14 +2323,20 @@ export namespace MyNS {
 		 * <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>
 		 * Get api/v1/users
 		 * @param {string} organizationId The ID of the organization.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} userIds The IDs of the users.
+		 *     Min length: 1    Max length: 2000
 		 * @param {string} query <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>
+		 *     Min length: 1    Max length: 512
 		 * @param {UserFilterType} include The state of the users. Specify "ALL" to include inactive users.
 		 * @param {OrderType} order The order for the results.
 		 * @param {UserSortType} sort The sorting criteria.
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} limit The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} fields A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeUsersResponse} Success
@@ -2314,8 +2349,11 @@ export namespace MyNS {
 		 * Deletes the specified comment from the document version.
 		 * Delete api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The ID of the document version.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} CommentId The ID of the comment.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteComment(DocumentId: string, VersionId: string, CommentId: string): Observable<HttpResponse<string>> {
@@ -2326,6 +2364,7 @@ export namespace MyNS {
 		 * Permanently deletes the specified document and its associated metadata.
 		 * Delete api/v1/documents/{DocumentId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteDocument(DocumentId: string): Observable<HttpResponse<string>> {
@@ -2336,6 +2375,7 @@ export namespace MyNS {
 		 * Retrieves details of a document.
 		 * Get api/v1/documents/{DocumentId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} includeCustomMetadata Set this to <code>TRUE</code> to include custom metadata in the response.
 		 * @return {GetDocumentResponse} Success
 		 */
@@ -2347,6 +2387,7 @@ export namespace MyNS {
 		 * Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.
 		 * Patch api/v1/documents/{DocumentId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateDocument(DocumentId: string, requestBody: UpdateDocumentPatchBody): Observable<HttpResponse<string>> {
@@ -2357,7 +2398,9 @@ export namespace MyNS {
 		 * Deletes a specific version of a document.
 		 * Delete api/v1/documentVersions/{DocumentId}/versions/{VersionId}#deletePriorVersions
 		 * @param {string} DocumentId The ID of the document associated with the version being deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The ID of the version being deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} deletePriorVersions Deletes all versions of a document prior to the current version.
 		 * @return {void} 
 		 */
@@ -2369,6 +2412,7 @@ export namespace MyNS {
 		 * Permanently deletes the specified folder and its contents.
 		 * Delete api/v1/folders/{FolderId}
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteFolder(FolderId: string): Observable<HttpResponse<string>> {
@@ -2379,6 +2423,7 @@ export namespace MyNS {
 		 * Retrieves the metadata of the specified folder.
 		 * Get api/v1/folders/{FolderId}
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} includeCustomMetadata Set to TRUE to include custom metadata in the response.
 		 * @return {GetFolderResponse} Success
 		 */
@@ -2390,6 +2435,7 @@ export namespace MyNS {
 		 * Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.
 		 * Patch api/v1/folders/{FolderId}
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateFolder(FolderId: string, requestBody: UpdateFolderPatchBody): Observable<HttpResponse<string>> {
@@ -2400,6 +2446,7 @@ export namespace MyNS {
 		 * Deletes the contents of the specified folder.
 		 * Delete api/v1/folders/{FolderId}/contents
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteFolderContents(FolderId: string): Observable<HttpResponse<string>> {
@@ -2410,12 +2457,16 @@ export namespace MyNS {
 		 * <p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>
 		 * Get api/v1/folders/{FolderId}/contents
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 128
 		 * @param {ResourceSortType} sort The sorting criteria.
 		 * @param {OrderType} order The order for the contents of the folder.
 		 * @param {number} limit The maximum number of items to return with this call.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
+		 *     Min length: 1    Max length: 2048
 		 * @param {FolderContentType} type The type of items.
 		 * @param {string} include The contents to include. Specify "INITIALIZED" to include initialized documents.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeFolderContentsResponse} Success
@@ -2428,7 +2479,9 @@ export namespace MyNS {
 		 * Deletes the specified subscription from the specified organization.
 		 * Delete api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}
 		 * @param {string} SubscriptionId The ID of the subscription.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OrganizationId The ID of the organization.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteNotificationSubscription(SubscriptionId: string, OrganizationId: string): Observable<HttpResponse<string>> {
@@ -2439,6 +2492,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p> <important> <p>Deleting a user immediately and permanently deletes all content in that user's folder structure. Site retention policies do NOT apply to this type of deletion.</p> </important>
 		 * Delete api/v1/users/{UserId}
 		 * @param {string} UserId The ID of the user.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		DeleteUser(UserId: string): Observable<HttpResponse<string>> {
@@ -2449,6 +2503,7 @@ export namespace MyNS {
 		 * Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.
 		 * Patch api/v1/users/{UserId}
 		 * @param {string} UserId The ID of the user.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateUserResponse} Success
 		 */
 		UpdateUser(UserId: string, requestBody: UpdateUserPatchBody): Observable<UpdateUserResponse> {
@@ -2461,12 +2516,18 @@ export namespace MyNS {
 		 * @param {Date} startTime The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.
 		 * @param {Date} endTime The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.
 		 * @param {string} organizationId The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.
+		 *     Min length: 1    Max length: 1024
 		 * @param {string} resourceId The document or folder ID for which to describe activity types.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} userId The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.
+		 *     Min length: 1    Max length: 256
 		 * @param {boolean} includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).
 		 * @param {number} limit The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results.
+		 *     Min length: 1    Max length: 12288
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeActivitiesResponse} Success
@@ -2479,9 +2540,13 @@ export namespace MyNS {
 		 * List all the comments for the specified document version.
 		 * Get api/v1/documents/{DocumentId}/versions/{VersionId}/comments
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VersionId The ID of the document version.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} limit The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeCommentsResponse} Success
@@ -2494,10 +2559,15 @@ export namespace MyNS {
 		 * <p>Retrieves the document versions for the specified document.</p> <p>By default, only active versions are returned.</p>
 		 * Get api/v1/documents/{DocumentId}/versions
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} limit The maximum number of versions to return with this call.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} include A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} fields Specify "SOURCE" to include initialized versions and a URL for the source document.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeDocumentVersionsResponse} Success
@@ -2510,9 +2580,13 @@ export namespace MyNS {
 		 * Describes the groups specified by the query. Groups are defined by the underlying Active Directory.
 		 * Get api/v1/groups#searchQuery
 		 * @param {string} searchQuery A query to describe groups by group name.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} organizationId The ID of the organization.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} limit The maximum number of items to return with this call.
+		 *     Minimum: 1
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeGroupsResponse} Success
@@ -2525,7 +2599,9 @@ export namespace MyNS {
 		 * <p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p> <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
 		 * Get api/v1/me/root#Authentication
 		 * @param {number} limit The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} Limit Pagination limit
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeRootFoldersResponse} Success
@@ -2547,9 +2623,13 @@ export namespace MyNS {
 		 * <p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>
 		 * Get api/v1/documents/{DocumentId}/path
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 256
 		 * @param {number} limit The maximum number of levels in the hierarchy to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} fields A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} marker This value is not supported.
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetDocumentPathResponse} Success
 		 */
 		GetDocumentPath(DocumentId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetDocumentPathResponse> {
@@ -2560,9 +2640,13 @@ export namespace MyNS {
 		 * <p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>
 		 * Get api/v1/folders/{FolderId}/path
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 256
 		 * @param {number} limit The maximum number of levels in the hierarchy to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} fields A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} marker This value is not supported.
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetFolderPathResponse} Success
 		 */
 		GetFolderPath(FolderId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetFolderPathResponse> {
@@ -2573,9 +2657,12 @@ export namespace MyNS {
 		 * Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.
 		 * Get api/v1/resources
 		 * @param {string} userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.
+		 *     Min length: 1    Max length: 256
 		 * @param {ResourceCollectionType} collectionType The collection type.
 		 * @param {number} limit The maximum number of resources to return.
+		 *     Minimum: 1    Maximum: 999
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetResourcesResponse} Success
 		 */
 		GetResources(userId: string | null | undefined, collectionType: ResourceCollectionType | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<GetResourcesResponse> {
@@ -2595,7 +2682,9 @@ export namespace MyNS {
 		 * Removes the permission for the specified principal from the specified resource.
 		 * Delete api/v1/resources/{ResourceId}/permissions/{PrincipalId}
 		 * @param {string} ResourceId The ID of the resource.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} PrincipalId The principal ID of the resource.
+		 *     Min length: 1    Max length: 256
 		 * @param {PrincipalType} type The principal type of the resource.
 		 * @return {void} 
 		 */
@@ -2607,6 +2696,7 @@ export namespace MyNS {
 		 * Recovers a deleted version of an Amazon WorkDocs document.
 		 * Post api/v1/documentVersions/restore/{DocumentId}
 		 * @param {string} DocumentId The ID of the document.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		RestoreDocumentVersions(DocumentId: string): Observable<HttpResponse<string>> {
@@ -2681,23 +2771,23 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the parent comment.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentId?: string | null;
 
 		/**
 		 * The ID of the root comment in the thread.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ThreadId?: string | null;
 
 		/**
 		 * The text of the comment.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Text: string;
 
@@ -2711,23 +2801,23 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the parent comment.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the root comment in the thread.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ThreadId: FormControl<string | null | undefined>,
 
 		/**
 		 * The text of the comment.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Text: FormControl<string | null | undefined>,
 
@@ -2775,16 +2865,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the new folder.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId: string;
 	}
@@ -2792,16 +2882,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the new folder.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the parent folder.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId: FormControl<string | null | undefined>,
 	}
@@ -2835,8 +2925,8 @@ export namespace MyNS {
 		/**
 		 * The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Endpoint: string;
 
@@ -2857,8 +2947,8 @@ export namespace MyNS {
 		/**
 		 * The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Endpoint: FormControl<string | null | undefined>,
 
@@ -2887,54 +2977,54 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the organization.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OrganizationId?: string | null;
 
 		/**
 		 * The login name of the user.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username: string;
 
 		/**
 		 * The email address of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		EmailAddress?: string | null;
 
 		/**
 		 * The given name of the user.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GivenName: string;
 
 		/**
 		 * The surname of the user.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Surname: string;
 
 		/**
 		 * The password of the user.
 		 * Required
-		 * Max length: 32
 		 * Min length: 4
+		 * Max length: 32
 		 */
 		Password: string;
 
 		/**
 		 * The time zone ID of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TimeZoneId?: string | null;
 
@@ -2945,54 +3035,54 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the organization.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * The login name of the user.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username: FormControl<string | null | undefined>,
 
 		/**
 		 * The email address of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The given name of the user.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GivenName: FormControl<string | null | undefined>,
 
 		/**
 		 * The surname of the user.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Surname: FormControl<string | null | undefined>,
 
 		/**
 		 * The password of the user.
 		 * Required
-		 * Max length: 32
 		 * Min length: 4
+		 * Max length: 32
 		 */
 		Password: FormControl<string | null | undefined>,
 
 		/**
 		 * The time zone ID of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TimeZoneId: FormControl<string | null | undefined>,
 	}
@@ -3029,15 +3119,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the document.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId?: string | null;
 
@@ -3048,15 +3138,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the document.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId: FormControl<string | null | undefined>,
 
@@ -3076,15 +3166,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the folder.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId?: string | null;
 
@@ -3095,15 +3185,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the folder.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId: FormControl<string | null | undefined>,
 
@@ -3123,15 +3213,15 @@ export namespace MyNS {
 
 		/**
 		 * The given name of the user.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GivenName?: string | null;
 
 		/**
 		 * The surname of the user.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Surname?: string | null;
 
@@ -3143,8 +3233,8 @@ export namespace MyNS {
 
 		/**
 		 * The time zone ID of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TimeZoneId?: string | null;
 
@@ -3158,15 +3248,15 @@ export namespace MyNS {
 
 		/**
 		 * The given name of the user.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		GivenName: FormControl<string | null | undefined>,
 
 		/**
 		 * The surname of the user.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Surname: FormControl<string | null | undefined>,
 
@@ -3175,8 +3265,8 @@ export namespace MyNS {
 
 		/**
 		 * The time zone ID of the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TimeZoneId: FormControl<string | null | undefined>,
 
@@ -3218,15 +3308,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the document.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Id?: string | null;
 
 		/**
 		 * The name of the document.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
@@ -3238,18 +3328,21 @@ export namespace MyNS {
 
 		/**
 		 * The content type of the document.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ContentType?: string | null;
 
-		/** The size of the document, in bytes. */
+		/**
+		 * The size of the document, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DocumentSizeInBytes?: number | null;
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId?: string | null;
 	}
@@ -3257,15 +3350,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the document.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the document.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3277,18 +3370,21 @@ export namespace MyNS {
 
 		/**
 		 * The content type of the document.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ContentType: FormControl<string | null | undefined>,
 
-		/** The size of the document, in bytes. */
+		/**
+		 * The size of the document, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DocumentSizeInBytes: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the parent folder.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ParentFolderId: FormControl<string | null | undefined>,
 	}
@@ -3309,8 +3405,8 @@ export namespace MyNS {
 
 		/**
 		 * The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QueryText?: string | null;
 
@@ -3322,8 +3418,8 @@ export namespace MyNS {
 
 		/**
 		 * Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OrganizationId?: string | null;
 
@@ -3348,8 +3444,8 @@ export namespace MyNS {
 
 		/**
 		 * The marker for the next set of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Marker?: string | null;
 	}
@@ -3357,15 +3453,15 @@ export namespace MyNS {
 
 		/**
 		 * The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		QueryText: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OrganizationId: FormControl<string | null | undefined>,
 
@@ -3378,8 +3474,8 @@ export namespace MyNS {
 
 		/**
 		 * The marker for the next set of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Marker: FormControl<string | null | undefined>,
 	}

@@ -41,7 +41,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -54,7 +57,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -269,16 +275,25 @@ export namespace MyNS {
 	/** Raw pose measurement for an entity. */
 	export interface Pose {
 
-		/** The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations. */
+		/**
+		 * The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations.
+		 * Type: float
+		 */
 		accuracyMeters?: number | null;
 
-		/** Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity. */
+		/**
+		 * Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		altitude?: number | null;
 
 		/** Time of the GPS record since UTC epoch. */
 		gpsRecordTimestampUnixEpoch?: string | null;
 
-		/** The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity. */
+		/**
+		 * The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		heading?: number | null;
 
 		/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
@@ -287,32 +302,53 @@ export namespace MyNS {
 		/** Level information containing level number and its corresponding name. */
 		level?: Level;
 
-		/** Pitch, measured at the center of the photo in degrees. Value must be >=-90 and <= 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity. */
+		/**
+		 * Pitch, measured at the center of the photo in degrees. Value must be >=-90 and <= 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		pitch?: number | null;
 
-		/** Roll, measured in degrees. Value must be >= 0 and <360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity. */
+		/**
+		 * Roll, measured in degrees. Value must be >= 0 and <360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		roll?: number | null;
 	}
 
 	/** Raw pose measurement for an entity. */
 	export interface PoseFormProperties {
 
-		/** The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations. */
+		/**
+		 * The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations.
+		 * Type: float
+		 */
 		accuracyMeters: FormControl<number | null | undefined>,
 
-		/** Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity. */
+		/**
+		 * Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		altitude: FormControl<number | null | undefined>,
 
 		/** Time of the GPS record since UTC epoch. */
 		gpsRecordTimestampUnixEpoch: FormControl<string | null | undefined>,
 
-		/** The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity. */
+		/**
+		 * The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		heading: FormControl<number | null | undefined>,
 
-		/** Pitch, measured at the center of the photo in degrees. Value must be >=-90 and <= 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity. */
+		/**
+		 * Pitch, measured at the center of the photo in degrees. Value must be >=-90 and <= 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		pitch: FormControl<number | null | undefined>,
 
-		/** Roll, measured in degrees. Value must be >= 0 and <360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity. */
+		/**
+		 * Roll, measured in degrees. Value must be >= 0 and <360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity.
+		 * Type: double
+		 */
 		roll: FormControl<number | null | undefined>,
 	}
 	export function CreatePoseFormGroup() {
@@ -331,20 +367,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -362,7 +410,10 @@ export namespace MyNS {
 		/** Required. A name assigned to this Level, restricted to 3 characters. Consider how the elevator buttons would be labeled for this level if there was an elevator. */
 		name?: string | null;
 
-		/** Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK. */
+		/**
+		 * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK.
+		 * Type: double
+		 */
 		number?: number | null;
 	}
 
@@ -372,7 +423,10 @@ export namespace MyNS {
 		/** Required. A name assigned to this Level, restricted to 3 characters. Consider how the elevator buttons would be labeled for this level if there was an elevator. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK. */
+		/**
+		 * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK.
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateLevelFormGroup() {
@@ -536,13 +590,22 @@ export namespace MyNS {
 		/** The timestamp of the IMU measurement. */
 		captureTime?: string | null;
 
-		/** The sensor measurement in the x axis. */
+		/**
+		 * The sensor measurement in the x axis.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** The sensor measurement in the y axis. */
+		/**
+		 * The sensor measurement in the y axis.
+		 * Type: float
+		 */
 		y?: number | null;
 
-		/** The sensor measurement in the z axis. */
+		/**
+		 * The sensor measurement in the z axis.
+		 * Type: float
+		 */
 		z?: number | null;
 	}
 
@@ -552,13 +615,22 @@ export namespace MyNS {
 		/** The timestamp of the IMU measurement. */
 		captureTime: FormControl<string | null | undefined>,
 
-		/** The sensor measurement in the x axis. */
+		/**
+		 * The sensor measurement in the x axis.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** The sensor measurement in the y axis. */
+		/**
+		 * The sensor measurement in the y axis.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** The sensor measurement in the z axis. */
+		/**
+		 * The sensor measurement in the z axis.
+		 * Type: float
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateMeasurement3dFormGroup() {
@@ -603,14 +675,20 @@ export namespace MyNS {
 	/** Details related to ProcessingFailureReason#INSUFFICIENT_GPS. */
 	export interface InsufficientGpsFailureDetails {
 
-		/** The number of GPS points that were found in the video. */
+		/**
+		 * The number of GPS points that were found in the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gpsPointsFound?: number | null;
 	}
 
 	/** Details related to ProcessingFailureReason#INSUFFICIENT_GPS. */
 	export interface InsufficientGpsFailureDetailsFormProperties {
 
-		/** The number of GPS points that were found in the video. */
+		/**
+		 * The number of GPS points that were found in the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gpsPointsFound: FormControl<number | null | undefined>,
 	}
 	export function CreateInsufficientGpsFailureDetailsFormGroup() {
@@ -803,7 +881,10 @@ export namespace MyNS {
 		/** Optional. Absolute time when the photo sequence starts to be captured. If the photo sequence is a video, this is the start time of the video. If this field is populated in input, it overrides the capture time in the video or XDM file. */
 		captureTimeOverride?: string | null;
 
-		/** Output only. The computed distance of the photo sequence in meters. */
+		/**
+		 * Output only. The computed distance of the photo sequence in meters.
+		 * Type: double
+		 */
 		distanceMeters?: number | null;
 
 		/** Additional details to accompany the ProcessingFailureReason enum. This message is always expected to be used in conjunction with ProcessingFailureReason, and the oneof value set in this message should match the FailureReason. */
@@ -852,7 +933,10 @@ export namespace MyNS {
 		/** Optional. Absolute time when the photo sequence starts to be captured. If the photo sequence is a video, this is the start time of the video. If this field is populated in input, it overrides the capture time in the video or XDM file. */
 		captureTimeOverride: FormControl<string | null | undefined>,
 
-		/** Output only. The computed distance of the photo sequence in meters. */
+		/**
+		 * Output only. The computed distance of the photo sequence in meters.
+		 * Type: double
+		 */
 		distanceMeters: FormControl<number | null | undefined>,
 
 		/** Output only. If this sequence has processing_state = FAILED, this will contain the reason why it failed. If the processing_state is any other value, this field will be unset. */
@@ -1028,6 +1112,7 @@ export namespace MyNS {
 		 * Get v1/photoSequences
 		 * @param {string} filter Optional. The filter expression. For example: `imagery_type=SPHERICAL`. The filters supported are: `imagery_type`, `processing_state`, `min_latitude`, `max_latitude`, `min_longitude`, `max_longitude`, `filename_query`, `min_capture_time_seconds`, `max_capture_time_seconds. See https://google.aip.dev/160 for more information. Filename queries should sent as a Phrase in order to support multiple words and special characters by adding escaped quotes. Ex: filename_query="example of a phrase.mp4"
 		 * @param {number} pageSize Optional. The maximum number of photo sequences to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photo sequences returned in the response may be less than `pageSize` if the number of matches is less than `pageSize`. This is currently unimplemented but is in process.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The nextPageToken value returned from a previous ListPhotoSequences request, if any.
 		 * @return {ListPhotoSequencesResponse} Successful response
 		 */
@@ -1041,6 +1126,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`. The filters supported are: `placeId`, `min_latitude`, `max_latitude`, `min_longitude`, `max_longitude`. See https://google.aip.dev/160 for more information.
 		 * @param {string} languageCode Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used.
 		 * @param {number} pageSize Optional. The maximum number of photos to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photos returned in the response may be less than `pageSize` if the number of photos that belong to the user is less than `pageSize`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The nextPageToken value returned from a previous ListPhotos request, if any.
 		 * @param {Streetviewpublish_photo_getView} view Required. Specifies if a download URL for the photos bytes should be returned in the Photos response.
 		 * @return {ListPhotosResponse} Successful response

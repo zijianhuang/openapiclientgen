@@ -2016,6 +2016,7 @@ export namespace MyNS {
 		 * <p>Associates a list of client devices with a core device. Use this API operation to specify which client devices can discover a core device through cloud discovery. With cloud discovery, client devices connect to IoT Greengrass to retrieve associated core devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> <note> <p>Client devices are local IoT devices that connect to and communicate with an IoT Greengrass core device over MQTT. You can connect client devices to a core device to sync MQTT messages and data to Amazon Web Services IoT Core and interact with client devices in Greengrass components. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </note>
 		 * Post greengrass/v2/coreDevices/{coreDeviceThingName}/associateClientDevices
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {BatchAssociateClientDeviceWithCoreDeviceResponse} Success
 		 */
 		BatchAssociateClientDeviceWithCoreDevice(coreDeviceThingName: string, requestBody: BatchAssociateClientDeviceWithCoreDevicePostBody): Observable<BatchAssociateClientDeviceWithCoreDeviceResponse> {
@@ -2026,6 +2027,7 @@ export namespace MyNS {
 		 * Disassociates a list of client devices from a core device. After you disassociate a client device from a core device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity information and certificates.
 		 * Post greengrass/v2/coreDevices/{coreDeviceThingName}/disassociateClientDevices
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {BatchDisassociateClientDeviceFromCoreDeviceResponse} Success
 		 */
 		BatchDisassociateClientDeviceFromCoreDevice(coreDeviceThingName: string, requestBody: BatchDisassociateClientDeviceFromCoreDevicePostBody): Observable<BatchDisassociateClientDeviceFromCoreDeviceResponse> {
@@ -2036,6 +2038,7 @@ export namespace MyNS {
 		 * Cancels a deployment. This operation cancels the deployment for devices that haven't yet received it. If a device already received the deployment, this operation doesn't change anything for that device.
 		 * Post greengrass/v2/deployments/{deploymentId}/cancel
 		 * @param {string} deploymentId The ID of the deployment.
+		 *     Min length: 1
 		 * @return {CancelDeploymentResponse} Success
 		 */
 		CancelDeployment(deploymentId: string): Observable<CancelDeploymentResponse> {
@@ -2067,6 +2070,7 @@ export namespace MyNS {
 		 * @param {DeploymentHistoryFilter} historyFilter <p>The filter for the list of deployments. Choose one of the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li> <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li> </ul> <p>Default: <code>LATEST_ONLY</code> </p>
 		 * @param {string} parentTargetArn The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListDeploymentsResponse} Success
 		 */
@@ -2099,6 +2103,7 @@ export namespace MyNS {
 		 * Deletes a Greengrass core device, which is an IoT thing. This operation removes the core device from the list of core devices. This operation doesn't delete the IoT thing. For more information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a> in the <i>IoT API Reference</i>.
 		 * Delete greengrass/v2/coreDevices/{coreDeviceThingName}
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteCoreDevice(coreDeviceThingName: string): Observable<HttpResponse<string>> {
@@ -2109,6 +2114,7 @@ export namespace MyNS {
 		 * <p>Retrieves metadata for a Greengrass core device.</p> <note> <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p> <p>Core devices send status updates at the following times:</p> <ul> <li> <p>When the IoT Greengrass Core software starts</p> </li> <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li> <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li> <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li> <li> <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p> </li> </ul> </note>
 		 * Get greengrass/v2/coreDevices/{coreDeviceThingName}
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetCoreDeviceResponse} Success
 		 */
 		GetCoreDevice(coreDeviceThingName: string): Observable<GetCoreDeviceResponse> {
@@ -2119,6 +2125,7 @@ export namespace MyNS {
 		 * <p>Deletes a deployment. To delete an active deployment, you must first cancel it. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.</p> <p>Deleting a deployment doesn't affect core devices that run that deployment, because core devices store the deployment's configuration on the device. Additionally, core devices can roll back to a previous deployment that has been deleted.</p>
 		 * Delete greengrass/v2/deployments/{deploymentId}
 		 * @param {string} deploymentId The ID of the deployment.
+		 *     Min length: 1
 		 * @return {void} 
 		 */
 		DeleteDeployment(deploymentId: string): Observable<HttpResponse<string>> {
@@ -2129,6 +2136,7 @@ export namespace MyNS {
 		 * Gets a deployment. Deployments define the components that run on Greengrass core devices.
 		 * Get greengrass/v2/deployments/{deploymentId}
 		 * @param {string} deploymentId The ID of the deployment.
+		 *     Min length: 1
 		 * @return {GetDeploymentResponse} Success
 		 */
 		GetDeployment(deploymentId: string): Observable<GetDeploymentResponse> {
@@ -2150,6 +2158,7 @@ export namespace MyNS {
 		 * Get greengrass/v2/components/{arn}/artifacts/{artifactName}
 		 * @param {string} arn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.
 		 * @param {string} artifactName <p>The name of the artifact.</p> <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
+		 *     Min length: 1
 		 * @return {GetComponentVersionArtifactResponse} Success
 		 */
 		GetComponentVersionArtifact(arn: string, artifactName: string): Observable<GetComponentVersionArtifactResponse> {
@@ -2160,6 +2169,7 @@ export namespace MyNS {
 		 * <p>Retrieves connectivity information for a Greengrass core device.</p> <p>Connectivity information includes endpoints and ports where client devices can connect to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT Greengrass discovery API</a>, IoT Greengrass returns connectivity information for all of the core devices where the client device can connect. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.</p>
 		 * Get greengrass/things/{thingName}/connectivityInfo
 		 * @param {string} thingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetConnectivityInfoResponse} Success
 		 */
 		GetConnectivityInfo(thingName: string): Observable<GetConnectivityInfoResponse> {
@@ -2170,6 +2180,7 @@ export namespace MyNS {
 		 * <p>Updates connectivity information for a Greengrass core device.</p> <p>Connectivity information includes endpoints and ports where client devices can connect to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT Greengrass discovery API</a>, IoT Greengrass returns connectivity information for all of the core devices where the client device can connect. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.</p>
 		 * Put greengrass/things/{thingName}/connectivityInfo
 		 * @param {string} thingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateConnectivityInfoResponse} Success
 		 */
 		UpdateConnectivityInfo(thingName: string, requestBody: UpdateConnectivityInfoPutBody): Observable<UpdateConnectivityInfoResponse> {
@@ -2180,7 +2191,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of client devices that are associated with a core device.
 		 * Get greengrass/v2/coreDevices/{coreDeviceThingName}/associatedClientDevices
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListClientDevicesAssociatedWithCoreDeviceResponse} Success
 		 */
@@ -2193,6 +2206,7 @@ export namespace MyNS {
 		 * Get greengrass/v2/components/{arn}/versions
 		 * @param {string} arn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListComponentVersionsResponse} Success
 		 */
@@ -2205,6 +2219,7 @@ export namespace MyNS {
 		 * Get greengrass/v2/components
 		 * @param {ComponentVisibilityScope} scope <p>The scope of the components to list.</p> <p>Default: <code>PRIVATE</code> </p>
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListComponentsResponse} Success
 		 */
@@ -2218,6 +2233,7 @@ export namespace MyNS {
 		 * @param {string} thingGroupArn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.
 		 * @param {CoreDeviceStatus} status <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li> </ul>
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListCoreDevicesResponse} Success
 		 */
@@ -2229,7 +2245,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass core devices.
 		 * Get greengrass/v2/coreDevices/{coreDeviceThingName}/effectiveDeployments
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @return {ListEffectiveDeploymentsResponse} Success
 		 */
@@ -2241,7 +2259,9 @@ export namespace MyNS {
 		 * <p>Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't include components that are deployed as dependencies of other components. To include dependencies in the response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.</p> <note> <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p> <p>Core devices send status updates at the following times:</p> <ul> <li> <p>When the IoT Greengrass Core software starts</p> </li> <li> <p>When the core device receives a deployment from the Amazon Web Services Cloud</p> </li> <li> <p>When the status of any component on the core device becomes <code>BROKEN</code> </p> </li> <li> <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p> </li> <li> <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p> </li> </ul> </note>
 		 * Get greengrass/v2/coreDevices/{coreDeviceThingName}/installedComponents
 		 * @param {string} coreDeviceThingName The name of the core device. This is also the name of the IoT thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
 		 * @param {InstalledComponentTopologyFilter} topologyFilter <p>The filter for the list of components. Choose from the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li> <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li> </ul> <p>Default: <code>ROOT</code> </p>
 		 * @return {ListInstalledComponentsResponse} Success
@@ -2284,6 +2304,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.
 		 * @param {Array<string>} tagKeys A list of keys for tags to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2361,8 +2382,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -2376,8 +2397,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2422,8 +2443,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the deployment.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		deploymentName?: string | null;
 
@@ -2444,8 +2465,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -2459,8 +2480,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the deployment.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		deploymentName: FormControl<string | null | undefined>,
 
@@ -2475,8 +2496,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

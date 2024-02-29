@@ -40,9 +40,13 @@ export namespace MyNS {
 		 * **txs**: tokenBalances + list of transaction with details, subject to from, to filter and paging
 		 * Get {blockchain}/v2/address/{address}
 		 * @param {number} page specifies page of returned transactions, starting from 1. If out of range, Blockbook returns the closest possible page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize number of transactions returned by call (default and maximum 1000)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromBlock filter of the returned transactions from block height to block height (default no filter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toBlock filter of the returned transactions from block height to block height (default no filter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetAddressV2Details} details specifies level of details returned by request
 		 * @param {string} contract return only transactions which affect specified contract (applicable only to coins which support contracts)
 		 * @param {string} secondary specifies secondary (fiat) currency in which the token and total balances are returned in addition to crypto values
@@ -61,6 +65,7 @@ export namespace MyNS {
 		 * @param {string} toDate specifies an end date as a Unix timestamp
 		 * @param {string} fiatcurrency if specified, the response will contain secondary (fiat) rate at the time of transaction. If not, all available currencies will be returned
 		 * @param {number} groupBy an interval in seconds, to group results by. Default is 3600 seconds
+		 *     Type: double
 		 * @return {Array<GetBalanceHistoryV2Return>} OK
 		 */
 		GetBalanceHistoryV2(fromDate: string | null | undefined, toDate: string | null | undefined, fiatcurrency: string | null | undefined, groupBy: number | null | undefined): Observable<Array<GetBalanceHistoryV2Return>> {
@@ -84,7 +89,9 @@ export namespace MyNS {
 		 * Note: Blockbook always follows the main chain of the backend it is attached to. If there is a rollback-reorg in the backend, Blockbook will also do rollback. When you ask for block by height, you will always get the main chain block. If you ask for block by hash, you may get the block from another fork but it is not guaranteed (backend may not keep it)
 		 * Get {blockchain}/v2/block/{blockHashOrHeight}
 		 * @param {number} page specifies page of returned transactions, starting from 1. If out of range, Blockbook returns the closest possible page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize number of transactions returned by call (default and maximum 1000)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetBlockV2Return} OK
 		 */
 		GetBlockV2(page: number | null | undefined, pageSize: number | null | undefined): Observable<GetBlockV2Return> {
@@ -108,7 +115,9 @@ export namespace MyNS {
 		 * Note: this route was implemented by us and is therefore not yet supported by existing blockbook clients.
 		 * Get {blockchain}/v2/mempool/
 		 * @param {number} page specifies page of returned transactions, starting from 1. If out of range, Blockbook returns the closest possible page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize number of transactions returned by call (default and maximum 1000)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetMempoolV2Return} OK
 		 */
 		GetMempoolV2(page: number | null | undefined, pageSize: number | null | undefined): Observable<GetMempoolV2Return> {
@@ -217,9 +226,13 @@ export namespace MyNS {
 		 * Detailed documentation found here: https://github.com/trezor/blockbook/blob/master/docs/api.md#get-xpub
 		 * Get {blockchain}/v2/xpub/{xpub}
 		 * @param {number} page specifies page of returned transactions, starting from 1. If out of range, Blockbook returns the closest possible page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize number of transactions returned by call (default and maximum 1000)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromBlock filter of the returned transactions from block height to block height (default no filter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toBlock filter of the returned transactions from block height to block height (default no filter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetAddressV2Details} details specifies level of details returned by request
 		 * @param {GetXpubV2Tokens} tokens specifies what tokens (xpub addresses) are returned by the request (default nonzero)
 		 * @param {string} secondary specifies secondary (fiat) currency in which the token and total balances are returned in addition to crypto values
@@ -244,22 +257,34 @@ export namespace MyNS {
 
 	export interface GetBlockchainReturnBackend {
 		bestBlockHash?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blocks?: number | null;
 		chain?: string | null;
 		difficulty?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headers?: number | null;
 		protocolVersion?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sizeOnDisk?: number | null;
 		subversion?: string | null;
 		version?: string | null;
 	}
 	export interface GetBlockchainReturnBackendFormProperties {
 		bestBlockHash: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blocks: FormControl<number | null | undefined>,
 		chain: FormControl<string | null | undefined>,
 		difficulty: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		headers: FormControl<number | null | undefined>,
 		protocolVersion: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sizeOnDisk: FormControl<number | null | undefined>,
 		subversion: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,
@@ -281,11 +306,17 @@ export namespace MyNS {
 
 	export interface GetBlockchainReturnBlockbook {
 		about?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bestHeight?: number | null;
 		buildTime?: string | null;
 		coin?: string | null;
 		currentFiatRatesTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dbSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals?: number | null;
 		gitCommit?: string | null;
 		hasFiatRates?: boolean | null;
@@ -296,17 +327,25 @@ export namespace MyNS {
 		initialSync?: boolean | null;
 		lastBlockTime?: string | null;
 		lastMempoolTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mempoolSize?: number | null;
 		syncMode?: boolean | null;
 		version?: string | null;
 	}
 	export interface GetBlockchainReturnBlockbookFormProperties {
 		about: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bestHeight: FormControl<number | null | undefined>,
 		buildTime: FormControl<string | null | undefined>,
 		coin: FormControl<string | null | undefined>,
 		currentFiatRatesTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dbSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals: FormControl<number | null | undefined>,
 		gitCommit: FormControl<string | null | undefined>,
 		hasFiatRates: FormControl<boolean | null | undefined>,
@@ -317,6 +356,8 @@ export namespace MyNS {
 		initialSync: FormControl<boolean | null | undefined>,
 		lastBlockTime: FormControl<string | null | undefined>,
 		lastMempoolTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mempoolSize: FormControl<number | null | undefined>,
 		syncMode: FormControl<boolean | null | undefined>,
 		version: FormControl<string | null | undefined>,
@@ -353,7 +394,11 @@ export namespace MyNS {
 		received?: string | null;
 		sent?: string | null;
 		sentToSelf?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txs?: number | null;
 	}
 	export interface GetBalanceHistoryV2ReturnFormProperties {
@@ -361,7 +406,11 @@ export namespace MyNS {
 		received: FormControl<string | null | undefined>,
 		sent: FormControl<string | null | undefined>,
 		sentToSelf: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txs: FormControl<number | null | undefined>,
 	}
 	export function CreateGetBalanceHistoryV2ReturnFormGroup() {
@@ -391,39 +440,75 @@ export namespace MyNS {
 
 	export interface GetBlockV2Return {
 		bits?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations?: number | null;
 		difficulty?: string | null;
 		hash?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage?: number | null;
 		merkleRoot?: string | null;
 		nextBlockHash?: string | null;
 		nonce?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previousBlockHash?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txCount?: number | null;
 		GetBlockV2ReturnTxs?: Array<GetBlockV2ReturnTxs>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface GetBlockV2ReturnFormProperties {
 		bits: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations: FormControl<number | null | undefined>,
 		difficulty: FormControl<string | null | undefined>,
 		hash: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage: FormControl<number | null | undefined>,
 		merkleRoot: FormControl<string | null | undefined>,
 		nextBlockHash: FormControl<string | null | undefined>,
 		nonce: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previousBlockHash: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGetBlockV2ReturnFormGroup() {
@@ -450,8 +535,14 @@ export namespace MyNS {
 
 	export interface GetBlockV2ReturnTxs {
 		blockHash?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockHeight?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockTime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations?: number | null;
 		fees?: string | null;
 		txid?: string | null;
@@ -462,8 +553,14 @@ export namespace MyNS {
 	}
 	export interface GetBlockV2ReturnTxsFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockHeight: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockTime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations: FormControl<number | null | undefined>,
 		fees: FormControl<string | null | undefined>,
 		txid: FormControl<string | null | undefined>,
@@ -486,11 +583,15 @@ export namespace MyNS {
 
 	export interface GetBlockV2ReturnTxsVin {
 		isAddress?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n?: number | null;
 		value?: string | null;
 	}
 	export interface GetBlockV2ReturnTxsVinFormProperties {
 		isAddress: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n: FormControl<number | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -506,11 +607,15 @@ export namespace MyNS {
 	export interface GetBlockV2ReturnTxsVout {
 		addresses?: Array<string>;
 		isAddress?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n?: number | null;
 		value?: string | null;
 	}
 	export interface GetBlockV2ReturnTxsVoutFormProperties {
 		isAddress: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n: FormControl<number | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -537,16 +642,32 @@ export namespace MyNS {
 	}
 
 	export interface GetMempoolV2Return {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage?: number | null;
 		GetMempoolV2ReturnMempool?: Array<GetMempoolV2ReturnMempool>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mempoolSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
 	}
 	export interface GetMempoolV2ReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mempoolSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMempoolV2ReturnFormGroup() {
@@ -560,10 +681,14 @@ export namespace MyNS {
 	}
 
 	export interface GetMempoolV2ReturnMempool {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		txid?: string | null;
 	}
 	export interface GetMempoolV2ReturnMempoolFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		txid: FormControl<string | null | undefined>,
 	}
@@ -594,6 +719,8 @@ export namespace MyNS {
 
 	export interface GetNFTMetaV2ReturnContractInfo {
 		contract?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals?: number | null;
 		name?: string | null;
 		symbol?: string | null;
@@ -601,6 +728,8 @@ export namespace MyNS {
 	}
 	export interface GetNFTMetaV2ReturnContractInfoFormProperties {
 		contract: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -645,9 +774,13 @@ export namespace MyNS {
 
 	export interface GetTickersListV2Return {
 		available_currencies?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ts?: number | null;
 	}
 	export interface GetTickersListV2ReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTickersListV2ReturnFormGroup() {
@@ -659,10 +792,14 @@ export namespace MyNS {
 
 	export interface GetTickersV2Return {
 		rates?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ts?: number | null;
 	}
 	export interface GetTickersV2ReturnFormProperties {
 		rates: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTickersV2ReturnFormGroup() {
@@ -675,32 +812,56 @@ export namespace MyNS {
 
 	export interface GetTransactionV2Return {
 		blockHash?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockHeight?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockTime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations?: number | null;
 		fees?: string | null;
 		hex?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		txid?: string | null;
 		value?: string | null;
 		valueIn?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		GetTransactionV2ReturnVin?: Array<GetTransactionV2ReturnVin>;
 		GetTransactionV2ReturnVout?: Array<GetTransactionV2ReturnVout>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vsize?: number | null;
 	}
 	export interface GetTransactionV2ReturnFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockHeight: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		blockTime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmations: FormControl<number | null | undefined>,
 		fees: FormControl<string | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		txid: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 		valueIn: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vsize: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTransactionV2ReturnFormGroup() {
@@ -725,19 +886,31 @@ export namespace MyNS {
 		addresses?: Array<string>;
 		hex?: string | null;
 		isAddress?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		txid?: string | null;
 		value?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vout?: number | null;
 	}
 	export interface GetTransactionV2ReturnVinFormProperties {
 		hex: FormControl<string | null | undefined>,
 		isAddress: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		txid: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTransactionV2ReturnVinFormGroup() {
@@ -757,12 +930,16 @@ export namespace MyNS {
 		addresses?: Array<string>;
 		hex?: string | null;
 		isAddress?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n?: number | null;
 		value?: string | null;
 	}
 	export interface GetTransactionV2ReturnVoutFormProperties {
 		hex: FormControl<string | null | undefined>,
 		isAddress: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n: FormControl<number | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -781,31 +958,59 @@ export namespace MyNS {
 	export interface GetXpubV2Return {
 		address?: string | null;
 		balance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: double */
 		secondaryValue?: number | null;
 		GetXpubV2ReturnTokens?: Array<GetXpubV2ReturnTokens>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
 		totalReceived?: string | null;
 		totalSent?: string | null;
 		txids?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txs?: number | null;
 		unconfirmedBalance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unconfirmedTxs?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usedTokens?: number | null;
 	}
 	export interface GetXpubV2ReturnFormProperties {
 		address: FormControl<string | null | undefined>,
 		balance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsOnPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		secondaryValue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
 		totalReceived: FormControl<string | null | undefined>,
 		totalSent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		txs: FormControl<number | null | undefined>,
 		unconfirmedBalance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unconfirmedTxs: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usedTokens: FormControl<number | null | undefined>,
 	}
 	export function CreateGetXpubV2ReturnFormGroup() {
@@ -828,21 +1033,29 @@ export namespace MyNS {
 
 	export interface GetXpubV2ReturnTokens {
 		balance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals?: number | null;
 		name?: string | null;
 		path?: string | null;
 		totalReceived?: string | null;
 		totalSent?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		transfers?: number | null;
 		type?: string | null;
 	}
 	export interface GetXpubV2ReturnTokensFormProperties {
 		balance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		totalReceived: FormControl<string | null | undefined>,
 		totalSent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		transfers: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}

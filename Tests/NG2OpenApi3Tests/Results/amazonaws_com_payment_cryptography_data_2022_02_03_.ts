@@ -2032,6 +2032,7 @@ export namespace MyNS {
 		 * <p>Decrypts ciphertext data to plaintext using symmetric, asymmetric, or DUKPT data encryption key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/decrypt-data.html">Decrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p> <p>You can use an encryption key generated within Amazon Web Services Payment Cryptography, or you can import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>. For this operation, the key must have <code>KeyModesOfUse</code> set to <code>Decrypt</code>. In asymmetric decryption, Amazon Web Services Payment Cryptography decrypts the ciphertext using the private component of the asymmetric encryption key pair. For data encryption outside of Amazon Web Services Payment Cryptography, you can export the public component of the asymmetric key pair by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>.</p> <p>For symmetric and DUKPT decryption, Amazon Web Services Payment Cryptography supports <code>TDES</code> and <code>AES</code> algorithms. For asymmetric decryption, Amazon Web Services Payment Cryptography supports <code>RSA</code>. When you use DUKPT, for <code>TDES</code> algorithm, the ciphertext data length must be a multiple of 16 bytes. For <code>AES</code> algorithm, the ciphertext data length must be a multiple of 32 bytes.</p> <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>EncryptData</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a> </p> </li> </ul>
 		 * Post keys/{KeyIdentifier}/decrypt
 		 * @param {string} KeyIdentifier The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.
+		 *     Min length: 7    Max length: 322
 		 * @return {DecryptDataOutput} Success
 		 */
 		DecryptData(KeyIdentifier: string, requestBody: DecryptDataPostBody): Observable<DecryptDataOutput> {
@@ -2042,6 +2043,7 @@ export namespace MyNS {
 		 * <p>Encrypts plaintext data to ciphertext using symmetric, asymmetric, or DUKPT data encryption key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p> <p>You can generate an encryption key within Amazon Web Services Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>. You can import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>. For this operation, the key must have <code>KeyModesOfUse</code> set to <code>Encrypt</code>. In asymmetric encryption, plaintext is encrypted using public component. You can import the public component of an asymmetric key pair created outside Amazon Web Services Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>). </p> <p>for symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography supports <code>TDES</code> and <code>AES</code> algorithms. For asymmetric encryption, Amazon Web Services Payment Cryptography supports <code>RSA</code>. To encrypt using DUKPT, you must already have a DUKPT key in your account with <code>KeyModesOfUse</code> set to <code>DeriveKey</code>, or you can generate a new DUKPT key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.</p> <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p> <p> <b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>DecryptData</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a> </p> </li> <li> <p> <a>ReEncryptData</a> </p> </li> </ul>
 		 * Post keys/{KeyIdentifier}/encrypt
 		 * @param {string} KeyIdentifier The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.
+		 *     Min length: 7    Max length: 322
 		 * @return {EncryptDataOutput} Success
 		 */
 		EncryptData(KeyIdentifier: string, requestBody: EncryptDataPostBody): Observable<EncryptDataOutput> {
@@ -2079,6 +2081,7 @@ export namespace MyNS {
 		 * <p>Re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption Keys. </p> <p>You can either generate an encryption key within Amazon Web Services Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a> or import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>. The <code>KeyArn</code> for use with this operation must be in a compatible key state with <code>KeyModesOfUse</code> set to <code>Encrypt</code>. In asymmetric encryption, ciphertext is encrypted using public component (imported by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>) of the asymmetric key pair created outside of Amazon Web Services Payment Cryptography. </p> <p>For symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography supports <code>TDES</code> and <code>AES</code> algorithms. For asymmetric encryption, Amazon Web Services Payment Cryptography supports <code>RSA</code>. To encrypt using DUKPT, a DUKPT key must already exist within your account with <code>KeyModesOfUse</code> set to <code>DeriveKey</code> or a new DUKPT can be generated by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.</p> <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>DecryptData</a> </p> </li> <li> <p> <a>EncryptData</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a> </p> </li> </ul>
 		 * Post keys/{IncomingKeyIdentifier}/reencrypt
 		 * @param {string} IncomingKeyIdentifier The <code>keyARN</code> of the encryption key of incoming ciphertext data.
+		 *     Min length: 7    Max length: 322
 		 * @return {ReEncryptDataOutput} Success
 		 */
 		ReEncryptData(IncomingKeyIdentifier: string, requestBody: ReEncryptDataPostBody): Observable<ReEncryptDataOutput> {
@@ -2136,8 +2139,8 @@ export namespace MyNS {
 		/**
 		 * The ciphertext to decrypt.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 16
+		 * Max length: 4096
 		 */
 		CipherText: string;
 
@@ -2152,8 +2155,8 @@ export namespace MyNS {
 		/**
 		 * The ciphertext to decrypt.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 16
+		 * Max length: 4096
 		 */
 		CipherText: FormControl<string | null | undefined>,
 	}
@@ -2192,8 +2195,8 @@ export namespace MyNS {
 		/**
 		 * The plaintext to be encrypted.
 		 * Required
-		 * Max length: 4064
 		 * Min length: 16
+		 * Max length: 4064
 		 */
 		PlainText: string;
 	}
@@ -2202,8 +2205,8 @@ export namespace MyNS {
 		/**
 		 * The plaintext to be encrypted.
 		 * Required
-		 * Max length: 4064
 		 * Min length: 16
+		 * Max length: 4064
 		 */
 		PlainText: FormControl<string | null | undefined>,
 	}
@@ -2242,16 +2245,16 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: string;
 
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: string;
 
@@ -2267,16 +2270,16 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: FormControl<string | null | undefined>,
 
@@ -2326,8 +2329,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the MAC generation encryption key.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: string;
 
@@ -2341,8 +2344,8 @@ export namespace MyNS {
 		/**
 		 * The data for which a MAC is under generation.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 2
+		 * Max length: 4096
 		 */
 		MessageData: string;
 	}
@@ -2351,8 +2354,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the MAC generation encryption key.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: FormControl<string | null | undefined>,
 
@@ -2366,8 +2369,8 @@ export namespace MyNS {
 		/**
 		 * The data for which a MAC is under generation.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 2
+		 * Max length: 4096
 		 */
 		MessageData: FormControl<string | null | undefined>,
 	}
@@ -2402,8 +2405,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		EncryptionKeyIdentifier: string;
 
@@ -2416,8 +2419,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		GenerationKeyIdentifier: string;
 
@@ -2437,8 +2440,8 @@ export namespace MyNS {
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: string;
 	}
@@ -2447,16 +2450,16 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		EncryptionKeyIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		GenerationKeyIdentifier: FormControl<string | null | undefined>,
 
@@ -2476,8 +2479,8 @@ export namespace MyNS {
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: FormControl<string | null | undefined>,
 	}
@@ -2513,8 +2516,8 @@ export namespace MyNS {
 		/**
 		 * Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 16
+		 * Max length: 4096
 		 */
 		CipherText: string;
 
@@ -2533,8 +2536,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		OutgoingKeyIdentifier: string;
 	}
@@ -2543,16 +2546,16 @@ export namespace MyNS {
 		/**
 		 * Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 16
+		 * Max length: 4096
 		 */
 		CipherText: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		OutgoingKeyIdentifier: FormControl<string | null | undefined>,
 	}
@@ -2597,8 +2600,8 @@ export namespace MyNS {
 		/**
 		 * The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.
 		 * Required
-		 * Max length: 32
 		 * Min length: 16
+		 * Max length: 32
 		 */
 		EncryptedPinBlock: string;
 
@@ -2608,8 +2611,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		IncomingKeyIdentifier: string;
 
@@ -2625,8 +2628,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		OutgoingKeyIdentifier: string;
 
@@ -2641,24 +2644,24 @@ export namespace MyNS {
 		/**
 		 * The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.
 		 * Required
-		 * Max length: 32
 		 * Min length: 16
+		 * Max length: 32
 		 */
 		EncryptedPinBlock: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		IncomingKeyIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		OutgoingKeyIdentifier: FormControl<string | null | undefined>,
 	}
@@ -2742,8 +2745,8 @@ export namespace MyNS {
 		/**
 		 * The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		AuthRequestCryptogram: string;
 
@@ -2753,8 +2756,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: string;
 
@@ -2773,8 +2776,8 @@ export namespace MyNS {
 		/**
 		 * The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 2
+		 * Max length: 1024
 		 */
 		TransactionData: string;
 	}
@@ -2783,16 +2786,16 @@ export namespace MyNS {
 		/**
 		 * The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		AuthRequestCryptogram: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: FormControl<string | null | undefined>,
 
@@ -2805,8 +2808,8 @@ export namespace MyNS {
 		/**
 		 * The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 2
+		 * Max length: 1024
 		 */
 		TransactionData: FormControl<string | null | undefined>,
 	}
@@ -2852,24 +2855,24 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: string;
 
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: string;
 
 		/**
 		 * The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 5
 		 * Min length: 3
+		 * Max length: 5
 		 */
 		ValidationData: string;
 
@@ -2884,24 +2887,24 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.
 		 * Required
-		 * Max length: 5
 		 * Min length: 3
+		 * Max length: 5
 		 */
 		ValidationData: FormControl<string | null | undefined>,
 	}
@@ -2939,16 +2942,16 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: string;
 
 		/**
 		 * The MAC being verified.
 		 * Required
-		 * Max length: 128
 		 * Min length: 4
+		 * Max length: 128
 		 */
 		Mac: string;
 
@@ -2962,8 +2965,8 @@ export namespace MyNS {
 		/**
 		 * The data on for which MAC is under verification.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 2
+		 * Max length: 4096
 		 */
 		MessageData: string;
 
@@ -2978,16 +2981,16 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		KeyIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The MAC being verified.
 		 * Required
-		 * Max length: 128
 		 * Min length: 4
+		 * Max length: 128
 		 */
 		Mac: FormControl<string | null | undefined>,
 
@@ -3001,8 +3004,8 @@ export namespace MyNS {
 		/**
 		 * The data on for which MAC is under verification.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 2
+		 * Max length: 4096
 		 */
 		MessageData: FormControl<string | null | undefined>,
 	}
@@ -3041,16 +3044,16 @@ export namespace MyNS {
 		/**
 		 * The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.
 		 * Required
-		 * Max length: 32
 		 * Min length: 16
+		 * Max length: 32
 		 */
 		EncryptedPinBlock: string;
 
 		/**
 		 * The <code>keyARN</code> of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		EncryptionKeyIdentifier: string;
 
@@ -3070,8 +3073,8 @@ export namespace MyNS {
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: string;
 
@@ -3084,8 +3087,8 @@ export namespace MyNS {
 		/**
 		 * The <code>keyARN</code> of the PIN verification key.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		VerificationKeyIdentifier: string;
 	}
@@ -3094,16 +3097,16 @@ export namespace MyNS {
 		/**
 		 * The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.
 		 * Required
-		 * Max length: 32
 		 * Min length: 16
+		 * Max length: 32
 		 */
 		EncryptedPinBlock: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		EncryptionKeyIdentifier: FormControl<string | null | undefined>,
 
@@ -3123,16 +3126,16 @@ export namespace MyNS {
 		/**
 		 * The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
 		 * Required
-		 * Max length: 19
 		 * Min length: 12
+		 * Max length: 19
 		 */
 		PrimaryAccountNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>keyARN</code> of the PIN verification key.
 		 * Required
-		 * Max length: 322
 		 * Min length: 7
+		 * Max length: 322
 		 */
 		VerificationKeyIdentifier: FormControl<string | null | undefined>,
 	}

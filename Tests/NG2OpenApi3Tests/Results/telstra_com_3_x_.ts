@@ -8,30 +8,30 @@ export namespace MyNS {
 		/**
 		 * Unique code of the error
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		code: string;
 
 		/**
 		 * The field that caused the error
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		field?: string | null;
 
 		/**
 		 * The reason for the error
 		 * Required
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		issue: string;
 
 		/**
 		 * URI for detailed information related to this error for the developer.
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		link?: string | null;
 
@@ -41,15 +41,15 @@ export namespace MyNS {
 		/**
 		 * Suggest practical actions for this particular issue.
 		 * Required
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		suggested_action: string;
 
 		/**
 		 * The value of the field that caused the error
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		value?: string | null;
 	}
@@ -58,30 +58,30 @@ export namespace MyNS {
 		/**
 		 * Unique code of the error
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		code: FormControl<string | null | undefined>,
 
 		/**
 		 * The field that caused the error
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		field: FormControl<string | null | undefined>,
 
 		/**
 		 * The reason for the error
 		 * Required
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		issue: FormControl<string | null | undefined>,
 
 		/**
 		 * URI for detailed information related to this error for the developer.
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		link: FormControl<string | null | undefined>,
 
@@ -91,15 +91,15 @@ export namespace MyNS {
 		/**
 		 * Suggest practical actions for this particular issue.
 		 * Required
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		suggested_action: FormControl<string | null | undefined>,
 
 		/**
 		 * The value of the field that caused the error
-		 * Max length: 99999
 		 * Min length: 1
+		 * Max length: 99999
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -156,8 +156,8 @@ export namespace MyNS {
 
 		/**
 		 * The time you submitted the message to the queue for sending.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		createTimestamp?: Date | null;
 
@@ -172,22 +172,22 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from?: string | null;
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent?: string | null;
 
 		/**
 		 * Use this UUID with our other endpoints to fetch, update or delete the message.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		messageId?: string | null;
 
@@ -207,8 +207,8 @@ export namespace MyNS {
 
 		/**
 		 * The time the message was received by the recipient's device.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		receivedTimestamp?: Date | null;
 
@@ -221,15 +221,15 @@ export namespace MyNS {
 
 		/**
 		 * The time the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend?: Date | null;
 
 		/**
 		 * The time the message was sent from the server.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		sentTimestamp?: Date | null;
 
@@ -248,8 +248,8 @@ export namespace MyNS {
 
 		/**
 		 * The recipient's mobile number.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to?: string | null;
 	}
@@ -257,8 +257,8 @@ export namespace MyNS {
 
 		/**
 		 * The time you submitted the message to the queue for sending.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		createTimestamp: FormControl<Date | null | undefined>,
 
@@ -273,22 +273,22 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: FormControl<string | null | undefined>,
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent: FormControl<string | null | undefined>,
 
 		/**
 		 * Use this UUID with our other endpoints to fetch, update or delete the message.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		messageId: FormControl<string | null | undefined>,
 
@@ -301,8 +301,8 @@ export namespace MyNS {
 
 		/**
 		 * The time the message was received by the recipient's device.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		receivedTimestamp: FormControl<Date | null | undefined>,
 
@@ -315,15 +315,15 @@ export namespace MyNS {
 
 		/**
 		 * The time the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend: FormControl<Date | null | undefined>,
 
 		/**
 		 * The time the message was sent from the server.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		sentTimestamp: FormControl<Date | null | undefined>,
 
@@ -335,8 +335,8 @@ export namespace MyNS {
 
 		/**
 		 * The recipient's mobile number.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to: FormControl<string | null | undefined>,
 	}
@@ -367,16 +367,16 @@ export namespace MyNS {
 		/**
 		 * The name of the multimedia file.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		fileName: string;
 
 		/**
 		 * The type of multimedia content (image, audio or video) followed by the type (e.g. jpeg, png, text).
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		type: string;
 	}
@@ -385,16 +385,16 @@ export namespace MyNS {
 		/**
 		 * The name of the multimedia file.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		fileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of multimedia content (image, audio or video) followed by the type (e.g. jpeg, png, text).
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		type: FormControl<string | null | undefined>,
 	}
@@ -415,15 +415,15 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from?: string | null;
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent?: string | null;
 
@@ -446,8 +446,8 @@ export namespace MyNS {
 
 		/**
 		 * The time (in Central Standard Time) the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend?: Date | null;
 
@@ -474,15 +474,15 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: FormControl<string | null | undefined>,
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent: FormControl<string | null | undefined>,
 
@@ -495,8 +495,8 @@ export namespace MyNS {
 
 		/**
 		 * The time (in Central Standard Time) the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend: FormControl<Date | null | undefined>,
 
@@ -526,22 +526,22 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from?: string | null;
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent?: string | null;
 
 		/**
 		 * Use this UUID with our other endpoints to fetch, update or delete the message.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		messageId?: string | null;
 
@@ -568,8 +568,8 @@ export namespace MyNS {
 
 		/**
 		 * The time the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend?: Date | null;
 
@@ -588,8 +588,8 @@ export namespace MyNS {
 
 		/**
 		 * The recipient's mobile number.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to?: string | null;
 	}
@@ -600,22 +600,22 @@ export namespace MyNS {
 
 		/**
 		 * This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: FormControl<string | null | undefined>,
 
 		/**
 		 * The content of the message.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent: FormControl<string | null | undefined>,
 
 		/**
 		 * Use this UUID with our other endpoints to fetch, update or delete the message.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		messageId: FormControl<string | null | undefined>,
 
@@ -635,8 +635,8 @@ export namespace MyNS {
 
 		/**
 		 * The time the message is scheduled to send.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend: FormControl<Date | null | undefined>,
 
@@ -648,8 +648,8 @@ export namespace MyNS {
 
 		/**
 		 * The recipient's mobile number.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to: FormControl<string | null | undefined>,
 	}
@@ -674,24 +674,24 @@ export namespace MyNS {
 		/**
 		 * The name of the multimedia file.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		fileName: string;
 
 		/**
 		 * The base64 encoded content. You can use [this online tool](https://elmah.io/tools/base64-image-encoder/) to encode an image, or [Base64 Guru](https://base64.guru/) to encode a video or audio file.
 		 * Required
-		 * Max length: 999999
 		 * Min length: 1
+		 * Max length: 999999
 		 */
 		payload: string;
 
 		/**
 		 * the type of multimedia content file you're sending (image, audio or video) followed by the file type. Use the format "multimedia type/file type", e.g. "image/PNG" or "audio/MP3". Supported file types:JPEG, BMP, GIF87a, GIF89a, PNG, MP3, WAV, MPEG, MPG, MP4, 3GP and US-ASCII.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		type: string;
 	}
@@ -700,24 +700,24 @@ export namespace MyNS {
 		/**
 		 * The name of the multimedia file.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		fileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The base64 encoded content. You can use [this online tool](https://elmah.io/tools/base64-image-encoder/) to encode an image, or [Base64 Guru](https://base64.guru/) to encode a video or audio file.
 		 * Required
-		 * Max length: 999999
 		 * Min length: 1
+		 * Max length: 999999
 		 */
 		payload: FormControl<string | null | undefined>,
 
 		/**
 		 * the type of multimedia content file you're sending (image, audio or video) followed by the file type. Use the format "multimedia type/file type", e.g. "image/PNG" or "audio/MP3". Supported file types:JPEG, BMP, GIF87a, GIF89a, PNG, MP3, WAV, MPEG, MPG, MP4, 3GP and US-ASCII.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		type: FormControl<string | null | undefined>,
 	}
@@ -734,15 +734,15 @@ export namespace MyNS {
 
 		/**
 		 * The date and time we received the optout request.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		createTimestamp?: Date | null;
 
 		/**
 		 * The mobile number that sent the optout request.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		optoutNumber?: string | null;
 	}
@@ -750,15 +750,15 @@ export namespace MyNS {
 
 		/**
 		 * The date and time we received the optout request.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		createTimestamp: FormControl<Date | null | undefined>,
 
 		/**
 		 * The mobile number that sent the optout request.
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		optoutNumber: FormControl<string | null | undefined>,
 	}
@@ -774,8 +774,8 @@ export namespace MyNS {
 
 		/**
 		 * The last time the Virtual Number was used to send a message.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		lastUse?: Date | null;
 
@@ -791,8 +791,8 @@ export namespace MyNS {
 
 		/**
 		 * The Virtual Number assigned to your account.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		virtualNumber?: string | null;
 	}
@@ -800,8 +800,8 @@ export namespace MyNS {
 
 		/**
 		 * The last time the Virtual Number was used to send a message.
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		lastUse: FormControl<Date | null | undefined>,
 
@@ -810,8 +810,8 @@ export namespace MyNS {
 
 		/**
 		 * The Virtual Number assigned to your account.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		virtualNumber: FormControl<string | null | undefined>,
 	}
@@ -837,16 +837,16 @@ export namespace MyNS {
 		 * * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You'll also be able to receive SMS replies to this number.
 		 * * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		 * Required
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: string;
 
 		/**
 		 * Use this field to send an SMS. Your text message goes here.
 		 * Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent?: string | null;
 
@@ -873,8 +873,8 @@ export namespace MyNS {
 		 * Don't want to send the message right away? Tell us what time you want to add it to the queue for sending instead.
 		 * Set the time in London Greenwich Mean Time (adjusting for any time difference) and use ISO format, e.g. "2019-08-24T15:39:00Z".
 		 * You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend?: Date | null;
 
@@ -925,16 +925,16 @@ export namespace MyNS {
 		 * * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You'll also be able to receive SMS replies to this number.
 		 * * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		 * Required
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: FormControl<string | null | undefined>,
 
 		/**
 		 * Use this field to send an SMS. Your text message goes here.
 		 * Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent: FormControl<string | null | undefined>,
 
@@ -949,8 +949,8 @@ export namespace MyNS {
 		 * Don't want to send the message right away? Tell us what time you want to add it to the queue for sending instead.
 		 * Set the time in London Greenwich Mean Time (adjusting for any time difference) and use ISO format, e.g. "2019-08-24T15:39:00Z".
 		 * You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend: FormControl<Date | null | undefined>,
 
@@ -999,16 +999,16 @@ export namespace MyNS {
 		 * * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You'll also be able to receive SMS replies to this number.
 		 * * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		 * Required
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: string;
 
 		/**
 		 * Use this field to send an SMS. Your text message goes here.
 		 * Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent?: string | null;
 
@@ -1035,8 +1035,8 @@ export namespace MyNS {
 		 * Don't want to send the message right away? Tell us what time you want to add it to the queue for sending instead.
 		 * Set the time in London Greenwich Mean Time (adjusting for any time difference) and use ISO format, e.g. "2019-08-24T15:39:00Z".
 		 * You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend?: Date | null;
 
@@ -1071,8 +1071,8 @@ export namespace MyNS {
 		 * This is the mobile number you want to send your message to. Write Australian numbers in national format (e.g. 0412345678) and international numbers (paid plans only) in E.164 format (e.g. +441234567890).
 		 * Use a string for a single recipient, and an array of strings for multiple recipients, e.g. "to": ["0412345678", "+441234567890"]. If you're using the Free Trial, you can include up to 5 recipient numbers in the array. If you're using a paid plan, you can bulk send up to 500 messages at once.
 		 * Required
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to: string;
 	}
@@ -1089,16 +1089,16 @@ export namespace MyNS {
 		 * * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You'll also be able to receive SMS replies to this number.
 		 * * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		 * Required
-		 * Max length: 13
 		 * Min length: 1
+		 * Max length: 13
 		 */
 		from: FormControl<string | null | undefined>,
 
 		/**
 		 * Use this field to send an SMS. Your text message goes here.
 		 * Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		messageContent: FormControl<string | null | undefined>,
 
@@ -1113,8 +1113,8 @@ export namespace MyNS {
 		 * Don't want to send the message right away? Tell us what time you want to add it to the queue for sending instead.
 		 * Set the time in London Greenwich Mean Time (adjusting for any time difference) and use ISO format, e.g. "2019-08-24T15:39:00Z".
 		 * You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
-		 * Max length: 24
 		 * Min length: 10
+		 * Max length: 24
 		 */
 		scheduleSend: FormControl<Date | null | undefined>,
 
@@ -1142,8 +1142,8 @@ export namespace MyNS {
 		 * This is the mobile number you want to send your message to. Write Australian numbers in national format (e.g. 0412345678) and international numbers (paid plans only) in E.164 format (e.g. +441234567890).
 		 * Use a string for a single recipient, and an array of strings for multiple recipients, e.g. "to": ["0412345678", "+441234567890"]. If you're using the Free Trial, you can include up to 5 recipient numbers in the array. If you're using a paid plan, you can bulk send up to 500 messages at once.
 		 * Required
-		 * Max length: 16
 		 * Min length: 5
+		 * Max length: 16
 		 */
 		to: FormControl<string | null | undefined>,
 	}
@@ -1349,7 +1349,9 @@ export namespace MyNS {
 		 * Fetch messages that have been sent from/to your account in the last 30 days.
 		 * Get messages
 		 * @param {number} limit Tell us how many results you want us to return, up to a maximum of 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} offset Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
+		 *     Minimum: 0    Maximum: 999999
 		 * @param {MessageGetDirection} direction Filter your messages by direction:
 		 * * **outgoing** – messages sent from your account.
 		 * * **incoming** – messages sent to your account.
@@ -1383,6 +1385,7 @@ export namespace MyNS {
 		 * Use this endpoint to delete a message that's been scheduled for sending, but hasn't yet sent.
 		 * Delete messages/{messageId}
 		 * @param {string} messageId When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteMessageById(messageId: string): Observable<HttpResponse<string>> {
@@ -1395,6 +1398,7 @@ export namespace MyNS {
 		 * Get messages/{messageId}
 		 * @param {string} messageId When you sent the original message, this is the UUID that was returned in the response. Use this ID to fetch, update or delete a message with the appropriate endpoints. 
 		 * Incoming messages are also assigned a messageId. Use this ID with GET/ messages/{messageId} to fetch the message later.
+		 *     Min length: 36    Max length: 36
 		 * @return {MessageGet} A 200 response means the call has been successful.
 		 */
 		GetMessageById(messageId: string): Observable<MessageGet> {
@@ -1406,6 +1410,7 @@ export namespace MyNS {
 		 * Use the **messageId** to update the tag(s) assigned to a message. You can use this endpoint any time, even after your message has been delivered.
 		 * Patch messages/{messageId}
 		 * @param {string} messageId When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdateMessageTags(messageId: string, requestBody: MessageTags): Observable<HttpResponse<string>> {
@@ -1417,6 +1422,7 @@ export namespace MyNS {
 		 * Need to update a message that's scheduled for sending? You can change any of the below parameters, as long as the message hasn't been sent yet. This request body will override the original POST/ messages call.
 		 * Put messages/{messageId}
 		 * @param {string} messageId When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
+		 *     Min length: 36    Max length: 36
 		 * @return {MessageUpdate} A 200 response means the call has been successful.
 		 */
 		UpdateMessageById(messageId: string, requestBody: MessagePut): Observable<MessageUpdate> {
@@ -1450,6 +1456,7 @@ export namespace MyNS {
 		 * Fetch a download link for a report generated with POST /reports/{reportId} using the **reportId** returned in the response. Once ready, your report will be available for download for one week.
 		 * Get reports/{reportId}
 		 * @param {string} reportId Use the reportId returned in the POST /reports/{reportType} response.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetReportReturn} A 200 OK response means the call has been successful. Your download link (reportUrl) will be returned in the response.
 		 */
 		GetReport(reportId: string): Observable<GetReportReturn> {
@@ -1461,7 +1468,9 @@ export namespace MyNS {
 		 * Use this endpoint to fetch all Virtual Numbers currently assigned to your account.
 		 * Get virtual-numbers
 		 * @param {number} limit Tell us how many results you want us to return, up to a maximum of 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} offset Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
+		 *     Minimum: 0    Maximum: 999999
 		 * @param {string} filter Filter your Virtual Numbers by tag or by number.
 		 * @return {string} A 200 OK response means your request has been successful. Your Virtual Number(s) will be returned in the response body.
 		 */
@@ -1486,6 +1495,7 @@ export namespace MyNS {
 		 * Use **virtual-number** to remove a Virtual Number that's been assigned to your account.
 		 * Delete virtual-numbers/{virtual_number}
 		 * @param {string} virtual_number Write the Virtual Number here, using national format (e.g. 0412345678).
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteNumber(virtual_number: string): Observable<HttpResponse<string>> {
@@ -1497,6 +1507,7 @@ export namespace MyNS {
 		 * Fetch the tags, replyCallbackUrl and lastUse date for a Virtual Number.
 		 * Get virtual-numbers/{virtual_number}
 		 * @param {string} virtual_number Write the Virtual Number here, using national format (e.g. 0412345678).
+		 *     Min length: 10    Max length: 10
 		 * @return {Virtual_number} A 200 OK response means your request has been successful.
 		 */
 		GetVirtualNumber(virtual_number: string): Observable<Virtual_number> {
@@ -1509,6 +1520,7 @@ export namespace MyNS {
 		 * This request body will override the original POST/ virtual-numbers call.
 		 * Put virtual-numbers/{virtual_number}
 		 * @param {string} virtual_number Write the Virtual Number here, using national format (e.g. 0412345678).
+		 *     Min length: 10    Max length: 10
 		 * @return {Virtual_number} A 200 OK response means metadata for the Virtual Number has been successfully updated.
 		 */
 		UpdateNumber(virtual_number: string, requestBody: NumberPut): Observable<Virtual_number> {
@@ -1521,8 +1533,11 @@ export namespace MyNS {
 		 * Recipients can opt out at any time by sending a message with industry standard keywords such as STOP, STOPALL, UNSUBSCRIBE, QUIT, END and CANCEL.
 		 * Get virtual-numbers/{virtual_number}/optouts
 		 * @param {number} limit Tell us how many results you want us to return, up to a maximum of 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} offset Use the offset to navigate between the response results. An offset of 0 will display the first page of results, and so on.
+		 *     Minimum: 0    Maximum: 999999
 		 * @param {string} virtual_number Write the Virtual Number here, using national format (e.g. 0412345678).
+		 *     Min length: 10    Max length: 10
 		 * @return {string} Successful Response
 		 */
 		GetRecipientOptouts(limit: number | null | undefined, offset: number | null | undefined, virtual_number: string): Observable<string> {
@@ -1574,7 +1589,10 @@ export namespace MyNS {
 		/** The previous page of results. */
 		previousPage?: string | null;
 
-		/** The total number of pages. */
+		/**
+		 * The total number of pages.
+		 * Type: double
+		 */
 		totalCount?: number | null;
 	}
 	export interface GetMessagesReturnPagingFormProperties {
@@ -1588,7 +1606,10 @@ export namespace MyNS {
 		/** The previous page of results. */
 		previousPage: FormControl<string | null | undefined>,
 
-		/** The total number of pages. */
+		/**
+		 * The total number of pages.
+		 * Type: double
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMessagesReturnPagingFormGroup() {
@@ -1607,8 +1628,8 @@ export namespace MyNS {
 		 * Type the end date (inclusive) of your reporting period here.
 		 * Your endDate must be a date in the past, and less than three months from your startDate. Use ISO format(yyyy-mm-dd).
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		endDate: Date;
 
@@ -1635,8 +1656,8 @@ export namespace MyNS {
 		 * Note that we only retain data for three months, so please ensure your startDate is not more than three months old.
 		 * Use ISO format(yyyy-mm-dd), e.g. 2019-08-24.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		startDate: Date;
 	}
@@ -1646,8 +1667,8 @@ export namespace MyNS {
 		 * Type the end date (inclusive) of your reporting period here.
 		 * Your endDate must be a date in the past, and less than three months from your startDate. Use ISO format(yyyy-mm-dd).
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
@@ -1674,8 +1695,8 @@ export namespace MyNS {
 		 * Note that we only retain data for three months, so please ensure your startDate is not more than three months old.
 		 * Use ISO format(yyyy-mm-dd), e.g. 2019-08-24.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		startDate: FormControl<Date | null | undefined>,
 	}
@@ -1693,8 +1714,8 @@ export namespace MyNS {
 
 		/**
 		 * The UUID assigned to your report.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		reportId?: string | null;
 
@@ -1713,8 +1734,8 @@ export namespace MyNS {
 
 		/**
 		 * The UUID assigned to your report.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		reportId: FormControl<string | null | undefined>,
 

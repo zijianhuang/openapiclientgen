@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** Obsolete in favor of ApproximateReportedProgress and ApproximateSplitRequest. */
 	export interface ApproximateProgress {
 
-		/** Obsolete. */
+		/**
+		 * Obsolete.
+		 * Type: float
+		 */
 		percentComplete?: number | null;
 
 		/** Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index. */
@@ -20,7 +23,10 @@ export namespace MyNS {
 	/** Obsolete in favor of ApproximateReportedProgress and ApproximateSplitRequest. */
 	export interface ApproximateProgressFormProperties {
 
-		/** Obsolete. */
+		/**
+		 * Obsolete.
+		 * Type: float
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** Obsolete. */
@@ -90,7 +96,10 @@ export namespace MyNS {
 	/** A position that encapsulates an inner position and an index for the inner position. A ConcatPosition can be used by a reader of a source that encapsulates a set of other sources. */
 	export interface ConcatPosition {
 
-		/** Index of the inner source. */
+		/**
+		 * Index of the inner source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index. */
@@ -100,7 +109,10 @@ export namespace MyNS {
 	/** A position that encapsulates an inner position and an index for the inner position. A ConcatPosition can be used by a reader of a source that encapsulates a set of other sources. */
 	export interface ConcatPositionFormProperties {
 
-		/** Index of the inner source. */
+		/**
+		 * Index of the inner source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateConcatPositionFormGroup() {
@@ -117,7 +129,10 @@ export namespace MyNS {
 		/** Represents the level of parallelism in a WorkItem's input, reported by the worker. */
 		consumedParallelism?: ReportedParallelism;
 
-		/** Completion as fraction of the input consumed, from 0.0 (beginning, nothing consumed), to 1.0 (end of the input, entire input consumed). */
+		/**
+		 * Completion as fraction of the input consumed, from 0.0 (beginning, nothing consumed), to 1.0 (end of the input, entire input consumed).
+		 * Type: double
+		 */
 		fractionConsumed?: number | null;
 
 		/** Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index. */
@@ -130,7 +145,10 @@ export namespace MyNS {
 	/** A progress measurement of a WorkItem by a worker. */
 	export interface ApproximateReportedProgressFormProperties {
 
-		/** Completion as fraction of the input consumed, from 0.0 (beginning, nothing consumed), to 1.0 (end of the input, entire input consumed). */
+		/**
+		 * Completion as fraction of the input consumed, from 0.0 (beginning, nothing consumed), to 1.0 (end of the input, entire input consumed).
+		 * Type: double
+		 */
 		fractionConsumed: FormControl<number | null | undefined>,
 	}
 	export function CreateApproximateReportedProgressFormGroup() {
@@ -147,7 +165,10 @@ export namespace MyNS {
 		/** Specifies whether the parallelism is infinite. If true, "value" is ignored. Infinite parallelism means the service will assume that the work item can always be split into more non-empty work items by dynamic splitting. This is a work-around for lack of support for infinity by the current JSON-based Java RPC stack. */
 		isInfinite?: boolean | null;
 
-		/** Specifies the level of parallelism in case it is finite. */
+		/**
+		 * Specifies the level of parallelism in case it is finite.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -157,7 +178,10 @@ export namespace MyNS {
 		/** Specifies whether the parallelism is infinite. If true, "value" is ignored. Infinite parallelism means the service will assume that the work item can always be split into more non-empty work items by dynamic splitting. This is a work-around for lack of support for infinity by the current JSON-based Java RPC stack. */
 		isInfinite: FormControl<boolean | null | undefined>,
 
-		/** Specifies the level of parallelism in case it is finite. */
+		/**
+		 * Specifies the level of parallelism in case it is finite.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateReportedParallelismFormGroup() {
@@ -172,10 +196,16 @@ export namespace MyNS {
 	/** A suggestion by the service to the worker to dynamically split the WorkItem. */
 	export interface ApproximateSplitRequest {
 
-		/** A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input). */
+		/**
+		 * A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input).
+		 * Type: double
+		 */
 		fractionConsumed?: number | null;
 
-		/** The fraction of the remainder of work to split the work item at, from 0.0 (split at the current position) to 1.0 (end of the input). */
+		/**
+		 * The fraction of the remainder of work to split the work item at, from 0.0 (split at the current position) to 1.0 (end of the input).
+		 * Type: double
+		 */
 		fractionOfRemainder?: number | null;
 
 		/** Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index. */
@@ -185,10 +215,16 @@ export namespace MyNS {
 	/** A suggestion by the service to the worker to dynamically split the WorkItem. */
 	export interface ApproximateSplitRequestFormProperties {
 
-		/** A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input). */
+		/**
+		 * A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input).
+		 * Type: double
+		 */
 		fractionConsumed: FormControl<number | null | undefined>,
 
-		/** The fraction of the remainder of work to split the work item at, from 0.0 (split at the current position) to 1.0 (end of the input). */
+		/**
+		 * The fraction of the remainder of work to split the work item at, from 0.0 (split at the current position) to 1.0 (end of the input).
+		 * Type: double
+		 */
 		fractionOfRemainder: FormControl<number | null | undefined>,
 	}
 	export function CreateApproximateSplitRequestFormGroup() {
@@ -319,7 +355,10 @@ export namespace MyNS {
 		/** The algorithm to use for autoscaling. */
 		algorithm?: AutoscalingSettingsAlgorithm | null;
 
-		/** The maximum number of workers to cap scaling at. */
+		/**
+		 * The maximum number of workers to cap scaling at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumWorkers?: number | null;
 	}
 
@@ -329,7 +368,10 @@ export namespace MyNS {
 		/** The algorithm to use for autoscaling. */
 		algorithm: FormControl<AutoscalingSettingsAlgorithm | null | undefined>,
 
-		/** The maximum number of workers to cap scaling at. */
+		/**
+		 * The maximum number of workers to cap scaling at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumWorkers: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoscalingSettingsFormGroup() {
@@ -346,20 +388,32 @@ export namespace MyNS {
 	/** Exponential buckets where the growth factor between buckets is `2**(2**-scale)`. e.g. for `scale=1` growth factor is `2**(2**(-1))=sqrt(2)`. `n` buckets will have the following boundaries. - 0th: [0, gf) - i in [1, n-1]: [gf^(i), gf^(i+1)) */
 	export interface Base2Exponent {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfBuckets?: number | null;
 
-		/** Must be between -3 and 3. This forces the growth factor of the bucket boundaries to be between `2^(1/8)` and `256`. */
+		/**
+		 * Must be between -3 and 3. This forces the growth factor of the bucket boundaries to be between `2^(1/8)` and `256`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale?: number | null;
 	}
 
 	/** Exponential buckets where the growth factor between buckets is `2**(2**-scale)`. e.g. for `scale=1` growth factor is `2**(2**(-1))=sqrt(2)`. `n` buckets will have the following boundaries. - 0th: [0, gf) - i in [1, n-1]: [gf^(i), gf^(i+1)) */
 	export interface Base2ExponentFormProperties {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfBuckets: FormControl<number | null | undefined>,
 
-		/** Must be between -3 and 3. This forces the growth factor of the bucket boundaries to be between `2^(1/8)` and `256`. */
+		/**
+		 * Must be between -3 and 3. This forces the growth factor of the bucket boundaries to be between `2^(1/8)` and `256`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateBase2ExponentFormGroup() {
@@ -471,26 +525,44 @@ export namespace MyNS {
 	/** Linear buckets with the following boundaries for indices in 0 to n-1. - i in [0, n-1]: [start + (i)*width, start + (i+1)*width) */
 	export interface Linear {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfBuckets?: number | null;
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		start?: number | null;
 
-		/** Distance between bucket boundaries. Must be greater than 0. */
+		/**
+		 * Distance between bucket boundaries. Must be greater than 0.
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
 	/** Linear buckets with the following boundaries for indices in 0 to n-1. - i in [0, n-1]: [start + (i)*width, start + (i+1)*width) */
 	export interface LinearFormProperties {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfBuckets: FormControl<number | null | undefined>,
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 
-		/** Distance between bucket boundaries. Must be greater than 0. */
+		/**
+		 * Distance between bucket boundaries. Must be greater than 0.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateLinearFormGroup() {
@@ -506,7 +578,10 @@ export namespace MyNS {
 	/** Modeled after information exposed by /proc/stat. */
 	export interface CPUTime {
 
-		/** Average CPU utilization rate (% non-idle cpu / second) since previous sample. */
+		/**
+		 * Average CPU utilization rate (% non-idle cpu / second) since previous sample.
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** Timestamp of the measurement. */
@@ -519,7 +594,10 @@ export namespace MyNS {
 	/** Modeled after information exposed by /proc/stat. */
 	export interface CPUTimeFormProperties {
 
-		/** Average CPU utilization rate (% non-idle cpu / second) since previous sample. */
+		/**
+		 * Average CPU utilization rate (% non-idle cpu / second) since previous sample.
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Timestamp of the measurement. */
@@ -954,7 +1032,10 @@ export namespace MyNS {
 		/** The algorithm to use for autoscaling */
 		autoscalingAlgorithm?: AutoscalingSettingsAlgorithm | null;
 
-		/** Worker disk size, in gigabytes. */
+		/**
+		 * Worker disk size, in gigabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** If true, when processing time is spent almost entirely on garbage collection (GC), saves a heap dump before ending the thread or process. If false, ends the thread or process without saving a heap dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an out of memory error during processing. The location of the heap file is either echoed back to the user, or the user is given the opportunity to download the heap file. */
@@ -981,13 +1062,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType?: string | null;
 
-		/** The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers?: number | null;
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network?: string | null;
 
-		/** The initial number of Google Compute Engine instances for the job. */
+		/**
+		 * The initial number of Google Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers?: number | null;
 
 		/** Cloud Storage bucket (directory) to upload heap dumps to. Enabling this field implies that `dump_heap_on_oom` is set to true. */
@@ -1027,7 +1114,10 @@ export namespace MyNS {
 		/** The algorithm to use for autoscaling */
 		autoscalingAlgorithm: FormControl<AutoscalingSettingsAlgorithm | null | undefined>,
 
-		/** Worker disk size, in gigabytes. */
+		/**
+		 * Worker disk size, in gigabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** If true, when processing time is spent almost entirely on garbage collection (GC), saves a heap dump before ending the thread or process. If false, ends the thread or process without saving a heap dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an out of memory error during processing. The location of the heap file is either echoed back to the user, or the user is given the opportunity to download the heap file. */
@@ -1054,13 +1144,19 @@ export namespace MyNS {
 		/** The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. */
+		/**
+		 * The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers: FormControl<number | null | undefined>,
 
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network: FormControl<string | null | undefined>,
 
-		/** The initial number of Google Compute Engine instances for the job. */
+		/**
+		 * The initial number of Google Compute Engine instances for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers: FormControl<number | null | undefined>,
 
 		/** Cloud Storage bucket (directory) to upload heap dumps to. Enabling this field implies that `dump_heap_on_oom` is set to true. */
@@ -1363,7 +1459,10 @@ export namespace MyNS {
 		/** Name of the stage. An execution step contains multiple component steps. */
 		executionStepName?: string | null;
 
-		/** Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them. */
+		/**
+		 * Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputIndex?: number | null;
 
 		/** Counter name. Not necessarily globally-unique, but unique within the context of the other fields. Required. */
@@ -1397,7 +1496,10 @@ export namespace MyNS {
 		/** Name of the stage. An execution step contains multiple component steps. */
 		executionStepName: FormControl<string | null | undefined>,
 
-		/** Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them. */
+		/**
+		 * Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputIndex: FormControl<number | null | undefined>,
 
 		/** Counter name. Not necessarily globally-unique, but unique within the context of the other fields. Required. */
@@ -1474,7 +1576,10 @@ export namespace MyNS {
 		/** A metric value representing a distribution. */
 		distribution?: DistributionUpdate;
 
-		/** Floating point value for Sum, Max, Min. */
+		/**
+		 * Floating point value for Sum, Max, Min.
+		 * Type: double
+		 */
 		floatingPoint?: number | null;
 
 		/** A metric value representing a list of floating point numbers. */
@@ -1520,7 +1625,10 @@ export namespace MyNS {
 		/** True if this counter is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this counter is reported as a delta. */
 		cumulative: FormControl<boolean | null | undefined>,
 
-		/** Floating point value for Sum, Max, Min. */
+		/**
+		 * Floating point value for Sum, Max, Min.
+		 * Type: double
+		 */
 		floatingPoint: FormControl<number | null | undefined>,
 
 		/** Value for internally-defined counters used by the Dataflow service. */
@@ -1559,14 +1667,20 @@ export namespace MyNS {
 		/** A representation of an int64, n, that is immune to precision loss when encoded in JSON. */
 		sum?: SplitInt64;
 
-		/** Use a double since the sum of squares is likely to overflow int64. */
+		/**
+		 * Use a double since the sum of squares is likely to overflow int64.
+		 * Type: double
+		 */
 		sumOfSquares?: number | null;
 	}
 
 	/** A metric value representing a distribution. */
 	export interface DistributionUpdateFormProperties {
 
-		/** Use a double since the sum of squares is likely to overflow int64. */
+		/**
+		 * Use a double since the sum of squares is likely to overflow int64.
+		 * Type: double
+		 */
 		sumOfSquares: FormControl<number | null | undefined>,
 	}
 	export function CreateDistributionUpdateFormGroup() {
@@ -1580,20 +1694,32 @@ export namespace MyNS {
 	/** A representation of an int64, n, that is immune to precision loss when encoded in JSON. */
 	export interface SplitInt64 {
 
-		/** The high order bits, including the sign: n >> 32. */
+		/**
+		 * The high order bits, including the sign: n >> 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highBits?: number | null;
 
-		/** The low order bits: n & 0xffffffff. */
+		/**
+		 * The low order bits: n & 0xffffffff.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		lowBits?: number | null;
 	}
 
 	/** A representation of an int64, n, that is immune to precision loss when encoded in JSON. */
 	export interface SplitInt64FormProperties {
 
-		/** The high order bits, including the sign: n >> 32. */
+		/**
+		 * The high order bits, including the sign: n >> 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highBits: FormControl<number | null | undefined>,
 
-		/** The low order bits: n & 0xffffffff. */
+		/**
+		 * The low order bits: n & 0xffffffff.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		lowBits: FormControl<number | null | undefined>,
 	}
 	export function CreateSplitInt64FormGroup() {
@@ -1611,14 +1737,20 @@ export namespace MyNS {
 		/** Counts of values in each bucket. For efficiency, prefix and trailing buckets with count = 0 are elided. Buckets can store the full range of values of an unsigned long, with ULLONG_MAX falling into the 59th bucket with range [1e19, 2e19). */
 		bucketCounts?: Array<string>;
 
-		/** Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3] */
+		/**
+		 * Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstBucketOffset?: number | null;
 	}
 
 	/** Histogram of value counts for a distribution. Buckets have an inclusive lower bound and exclusive upper bound and use "1,2,5 bucketing": The first bucket range is from [0,1) and all subsequent bucket boundaries are powers of ten multiplied by 1, 2, or 5. Thus, bucket boundaries are 0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, ... Negative values are not supported. */
 	export interface HistogramFormProperties {
 
-		/** Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3] */
+		/**
+		 * Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3]
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstBucketOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateHistogramFormGroup() {
@@ -1652,14 +1784,20 @@ export namespace MyNS {
 		/** A representation of an int64, n, that is immune to precision loss when encoded in JSON. */
 		count?: SplitInt64;
 
-		/** The sum of all values being aggregated. */
+		/**
+		 * The sum of all values being aggregated.
+		 * Type: double
+		 */
 		sum?: number | null;
 	}
 
 	/** A representation of a floating point mean metric contribution. */
 	export interface FloatingPointMeanFormProperties {
 
-		/** The sum of all values being aggregated. */
+		/**
+		 * The sum of all values being aggregated.
+		 * Type: double
+		 */
 		sum: FormControl<number | null | undefined>,
 	}
 	export function CreateFloatingPointMeanFormGroup() {
@@ -1833,7 +1971,10 @@ export namespace MyNS {
 		/** Optional. Whether to bypass the safety checks for the job's temporary directory. Use with caution. */
 		bypassTempDirValidation?: boolean | null;
 
-		/** Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance. */
+		/**
+		 * Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** Optional. Whether to enable Streaming Engine for the job. */
@@ -1848,13 +1989,19 @@ export namespace MyNS {
 		/** Optional. The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType?: string | null;
 
-		/** Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1. */
+		/**
+		 * Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers?: number | null;
 
 		/** Optional. Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network?: string | null;
 
-		/** Optional. The initial number of Google Compute Engine instances for the job. The default value is 11. */
+		/**
+		 * Optional. The initial number of Google Compute Engine instances for the job. The default value is 11.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers?: number | null;
 
 		/** Optional. The email address of the service account to run the job as. */
@@ -1885,7 +2032,10 @@ export namespace MyNS {
 		/** Optional. Whether to bypass the safety checks for the job's temporary directory. Use with caution. */
 		bypassTempDirValidation: FormControl<boolean | null | undefined>,
 
-		/** Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance. */
+		/**
+		 * Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** Optional. Whether to enable Streaming Engine for the job. */
@@ -1900,13 +2050,19 @@ export namespace MyNS {
 		/** Optional. The machine type to use for the job. Defaults to the value from the template if not specified. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1. */
+		/**
+		 * Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxWorkers: FormControl<number | null | undefined>,
 
 		/** Optional. Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network: FormControl<string | null | undefined>,
 
-		/** Optional. The initial number of Google Compute Engine instances for the job. The default value is 11. */
+		/**
+		 * Optional. The initial number of Google Compute Engine instances for the job. The default value is 11.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers: FormControl<number | null | undefined>,
 
 		/** Optional. The email address of the service account to run the job as. */
@@ -2090,13 +2246,19 @@ export namespace MyNS {
 		/** Number of values that are larger than the upper bound of the largest bucket. */
 		overflowCount?: string | null;
 
-		/** Mean of values in the overflow bucket. */
+		/**
+		 * Mean of values in the overflow bucket.
+		 * Type: double
+		 */
 		overflowMean?: number | null;
 
 		/** Number of values that are smaller than the lower bound of the smallest bucket. */
 		underflowCount?: string | null;
 
-		/** Mean of values in the undeflow bucket. */
+		/**
+		 * Mean of values in the undeflow bucket.
+		 * Type: double
+		 */
 		underflowMean?: number | null;
 	}
 
@@ -2106,13 +2268,19 @@ export namespace MyNS {
 		/** Number of values that are larger than the upper bound of the largest bucket. */
 		overflowCount: FormControl<string | null | undefined>,
 
-		/** Mean of values in the overflow bucket. */
+		/**
+		 * Mean of values in the overflow bucket.
+		 * Type: double
+		 */
 		overflowMean: FormControl<number | null | undefined>,
 
 		/** Number of values that are smaller than the lower bound of the smallest bucket. */
 		underflowCount: FormControl<string | null | undefined>,
 
-		/** Mean of values in the undeflow bucket. */
+		/**
+		 * Mean of values in the undeflow bucket.
+		 * Type: double
+		 */
 		underflowMean: FormControl<number | null | undefined>,
 	}
 	export function CreateOutlierStatsFormGroup() {
@@ -2303,7 +2471,10 @@ export namespace MyNS {
 		/** Directory in a VM where disk is mounted. */
 		mountPoint?: string | null;
 
-		/** Size of disk in GB. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Size of disk in GB. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 	}
 
@@ -2316,7 +2487,10 @@ export namespace MyNS {
 		/** Directory in a VM where disk is mounted. */
 		mountPoint: FormControl<string | null | undefined>,
 
-		/** Size of disk in GB. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Size of disk in GB. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskFormGroup() {
@@ -2338,7 +2512,10 @@ export namespace MyNS {
 		/** Contains value if the data is of duration type. */
 		durationValue?: string | null;
 
-		/** Contains value if the data is of float type. */
+		/**
+		 * Contains value if the data is of float type.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
 		/** Contains value if the data is of int64 type. */
@@ -2378,7 +2555,10 @@ export namespace MyNS {
 		/** Contains value if the data is of duration type. */
 		durationValue: FormControl<string | null | undefined>,
 
-		/** Contains value if the data is of float type. */
+		/**
+		 * Contains value if the data is of float type.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
 		/** Contains value if the data is of int64 type. */
@@ -2594,7 +2774,10 @@ export namespace MyNS {
 		/** The default package set to install. This allows the service to select a default set of packages which are useful to worker harnesses written in a particular language. */
 		defaultPackageSet?: WorkerPoolDefaultPackageSet | null;
 
-		/** Size of root disk for VMs, in GB. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Size of root disk for VMs, in GB. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** Fully qualified source image for disks. */
@@ -2618,10 +2801,16 @@ export namespace MyNS {
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network?: string | null;
 
-		/** The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming). */
+		/**
+		 * The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numThreadsPerWorker?: number | null;
 
-		/** Number of Google Compute Engine workers in this pool needed to execute the job. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Number of Google Compute Engine workers in this pool needed to execute the job. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers?: number | null;
 
 		/** The action to take on host maintenance, as defined by the Google Compute Engine API. */
@@ -2658,7 +2847,10 @@ export namespace MyNS {
 		/** The default package set to install. This allows the service to select a default set of packages which are useful to worker harnesses written in a particular language. */
 		defaultPackageSet: FormControl<WorkerPoolDefaultPackageSet | null | undefined>,
 
-		/** Size of root disk for VMs, in GB. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Size of root disk for VMs, in GB. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** Fully qualified source image for disks. */
@@ -2682,10 +2874,16 @@ export namespace MyNS {
 		/** Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default". */
 		network: FormControl<string | null | undefined>,
 
-		/** The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming). */
+		/**
+		 * The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numThreadsPerWorker: FormControl<number | null | undefined>,
 
-		/** Number of Google Compute Engine workers in this pool needed to execute the job. If zero or unspecified, the service will attempt to choose a reasonable default. */
+		/**
+		 * Number of Google Compute Engine workers in this pool needed to execute the job. If zero or unspecified, the service will attempt to choose a reasonable default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numWorkers: FormControl<number | null | undefined>,
 
 		/** The action to take on host maintenance, as defined by the Google Compute Engine API. */
@@ -3188,20 +3386,32 @@ export namespace MyNS {
 	/** An input of an instruction, as a reference to an output of a producer instruction. */
 	export interface InstructionInput {
 
-		/** The output index (origin zero) within the producer. */
+		/**
+		 * The output index (origin zero) within the producer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputNum?: number | null;
 
-		/** The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask. */
+		/**
+		 * The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		producerInstructionIndex?: number | null;
 	}
 
 	/** An input of an instruction, as a reference to an output of a producer instruction. */
 	export interface InstructionInputFormProperties {
 
-		/** The output index (origin zero) within the producer. */
+		/**
+		 * The output index (origin zero) within the producer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputNum: FormControl<number | null | undefined>,
 
-		/** The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask. */
+		/**
+		 * The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		producerInstructionIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateInstructionInputFormGroup() {
@@ -3322,7 +3532,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3335,7 +3548,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3969,26 +4185,44 @@ export namespace MyNS {
 	/** Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation. */
 	export interface RuntimeUpdatableParams {
 
-		/** The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs. */
+		/**
+		 * The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumWorkers?: number | null;
 
-		/** The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs. */
+		/**
+		 * The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNumWorkers?: number | null;
 
-		/** Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog. */
+		/**
+		 * Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog.
+		 * Type: double
+		 */
 		workerUtilizationHint?: number | null;
 	}
 
 	/** Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation. */
 	export interface RuntimeUpdatableParamsFormProperties {
 
-		/** The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs. */
+		/**
+		 * The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumWorkers: FormControl<number | null | undefined>,
 
-		/** The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs. */
+		/**
+		 * The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNumWorkers: FormControl<number | null | undefined>,
 
-		/** Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog. */
+		/**
+		 * Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog.
+		 * Type: double
+		 */
 		workerUtilizationHint: FormControl<number | null | undefined>,
 	}
 	export function CreateRuntimeUpdatableParamsFormGroup() {
@@ -4238,7 +4472,10 @@ export namespace MyNS {
 	/** Information about the progress of some component of job execution. */
 	export interface ProgressTimeseries {
 
-		/** The current progress of the component, in the range [0,1]. */
+		/**
+		 * The current progress of the component, in the range [0,1].
+		 * Type: double
+		 */
 		currentProgress?: number | null;
 
 		/** History of progress for the component. Points are sorted by time. */
@@ -4248,7 +4485,10 @@ export namespace MyNS {
 	/** Information about the progress of some component of job execution. */
 	export interface ProgressTimeseriesFormProperties {
 
-		/** The current progress of the component, in the range [0,1]. */
+		/**
+		 * The current progress of the component, in the range [0,1].
+		 * Type: double
+		 */
 		currentProgress: FormControl<number | null | undefined>,
 	}
 	export function CreateProgressTimeseriesFormGroup() {
@@ -4265,7 +4505,10 @@ export namespace MyNS {
 		/** The timestamp of the point. */
 		time?: string | null;
 
-		/** The value of the point. */
+		/**
+		 * The value of the point.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -4275,7 +4518,10 @@ export namespace MyNS {
 		/** The timestamp of the point. */
 		time: FormControl<string | null | undefined>,
 
-		/** The value of the point. */
+		/**
+		 * The value of the point.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePointFormGroup() {
@@ -4968,7 +5214,10 @@ export namespace MyNS {
 		/** Information about each of the outputs, if user_fn is a MultiDoFn. */
 		multiOutputInfos?: Array<MultiOutputInfo>;
 
-		/** The number of outputs. */
+		/**
+		 * The number of outputs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numOutputs?: number | null;
 
 		/** Zero or more side inputs. */
@@ -4981,7 +5230,10 @@ export namespace MyNS {
 	/** An instruction that does a ParDo operation. Takes one main input and zero or more side inputs, and produces zero or more outputs. Runs user code. */
 	export interface ParDoInstructionFormProperties {
 
-		/** The number of outputs. */
+		/**
+		 * The number of outputs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numOutputs: FormControl<number | null | undefined>,
 
 		/** The user function to invoke. */
@@ -5239,7 +5491,10 @@ export namespace MyNS {
 		/** The shell command to run. */
 		command?: string | null;
 
-		/** Exit code for the task. */
+		/**
+		 * Exit code for the task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 	}
 
@@ -5249,7 +5504,10 @@ export namespace MyNS {
 		/** The shell command to run. */
 		command: FormControl<string | null | undefined>,
 
-		/** Exit code for the task. */
+		/**
+		 * Exit code for the task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateShellTaskFormGroup() {
@@ -5558,7 +5816,10 @@ export namespace MyNS {
 		/** The user has requested drain. */
 		drain?: boolean | null;
 
-		/** The TCP port on which the worker should listen for messages from other streaming computation workers. */
+		/**
+		 * The TCP port on which the worker should listen for messages from other streaming computation workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receiveWorkPort?: number | null;
 
 		/** Streaming appliance snapshot configuration. */
@@ -5567,7 +5828,10 @@ export namespace MyNS {
 		/** Global topology of the streaming Dataflow job, including all computations and their sharded locations. */
 		streamingComputationTopology?: TopologyConfig;
 
-		/** The TCP port used by the worker to communicate with the Dataflow worker harness. */
+		/**
+		 * The TCP port used by the worker to communicate with the Dataflow worker harness.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerHarnessPort?: number | null;
 	}
 
@@ -5577,10 +5841,16 @@ export namespace MyNS {
 		/** The user has requested drain. */
 		drain: FormControl<boolean | null | undefined>,
 
-		/** The TCP port on which the worker should listen for messages from other streaming computation workers. */
+		/**
+		 * The TCP port on which the worker should listen for messages from other streaming computation workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receiveWorkPort: FormControl<number | null | undefined>,
 
-		/** The TCP port used by the worker to communicate with the Dataflow worker harness. */
+		/**
+		 * The TCP port used by the worker to communicate with the Dataflow worker harness.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerHarnessPort: FormControl<number | null | undefined>,
 	}
 	export function CreateStreamingSetupTaskFormGroup() {
@@ -5630,10 +5900,16 @@ export namespace MyNS {
 		/** The disks assigned to a streaming Dataflow job. */
 		dataDiskAssignments?: Array<DataDiskAssignment>;
 
-		/** The size (in bits) of keys that will be assigned to source messages. */
+		/**
+		 * The size (in bits) of keys that will be assigned to source messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forwardingKeyBits?: number | null;
 
-		/** Version number for persistent state. */
+		/**
+		 * Version number for persistent state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		persistentStateVersion?: number | null;
 
 		/** Maps user stage names to stable computation names. */
@@ -5643,10 +5919,16 @@ export namespace MyNS {
 	/** Global topology of the streaming Dataflow job, including all computations and their sharded locations. */
 	export interface TopologyConfigFormProperties {
 
-		/** The size (in bits) of keys that will be assigned to source messages. */
+		/**
+		 * The size (in bits) of keys that will be assigned to source messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forwardingKeyBits: FormControl<number | null | undefined>,
 
-		/** Version number for persistent state. */
+		/**
+		 * Version number for persistent state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		persistentStateVersion: FormControl<number | null | undefined>,
 
 		/** Maps user stage names to stable computation names. */
@@ -5902,7 +6184,10 @@ export namespace MyNS {
 	/** The metric short id is returned to the user alongside an offset into ReportWorkItemStatusRequest */
 	export interface MetricShortId {
 
-		/** The index of the corresponding metric in the ReportWorkItemStatusRequest. Required. */
+		/**
+		 * The index of the corresponding metric in the ReportWorkItemStatusRequest. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metricIndex?: number | null;
 
 		/** The service-generated short identifier for the metric. */
@@ -5912,7 +6197,10 @@ export namespace MyNS {
 	/** The metric short id is returned to the user alongside an offset into ReportWorkItemStatusRequest */
 	export interface MetricShortIdFormProperties {
 
-		/** The index of the corresponding metric in the ReportWorkItemStatusRequest. Required. */
+		/**
+		 * The index of the corresponding metric in the ReportWorkItemStatusRequest. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metricIndex: FormControl<number | null | undefined>,
 
 		/** The service-generated short identifier for the metric. */
@@ -6097,7 +6385,10 @@ export namespace MyNS {
 		/** Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index. */
 		stopPosition?: Position;
 
-		/** Total time the worker spent being throttled by external systems. */
+		/**
+		 * Total time the worker spent being throttled by external systems.
+		 * Type: double
+		 */
 		totalThrottlerWaitTimeSeconds?: number | null;
 
 		/** Identifies the WorkItem. */
@@ -6116,7 +6407,10 @@ export namespace MyNS {
 		/** Amount of time the worker requests for its lease. */
 		requestedLeaseDuration: FormControl<string | null | undefined>,
 
-		/** Total time the worker spent being throttled by external systems. */
+		/**
+		 * Total time the worker spent being throttled by external systems.
+		 * Type: double
+		 */
 		totalThrottlerWaitTimeSeconds: FormControl<number | null | undefined>,
 
 		/** Identifies the WorkItem. */
@@ -6522,44 +6816,80 @@ export namespace MyNS {
 	/** Contains per-user worker telemetry used in streaming autoscaling. */
 	export interface StreamingScalingReport {
 
-		/** Current acive bundle count. */
+		/**
+		 * Current acive bundle count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeBundleCount?: number | null;
 
-		/** Current acive thread count. */
+		/**
+		 * Current acive thread count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeThreadCount?: number | null;
 
-		/** Maximum bundle count limit. */
+		/**
+		 * Maximum bundle count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBundleCount?: number | null;
 
-		/** Maximum bytes count limit. */
+		/**
+		 * Maximum bytes count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBytesCount?: number | null;
 
-		/** Maximum thread count limit. */
+		/**
+		 * Maximum thread count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumThreadCount?: number | null;
 
-		/** Current outstanding bytes count. */
+		/**
+		 * Current outstanding bytes count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outstandingBytesCount?: number | null;
 	}
 
 	/** Contains per-user worker telemetry used in streaming autoscaling. */
 	export interface StreamingScalingReportFormProperties {
 
-		/** Current acive bundle count. */
+		/**
+		 * Current acive bundle count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeBundleCount: FormControl<number | null | undefined>,
 
-		/** Current acive thread count. */
+		/**
+		 * Current acive thread count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeThreadCount: FormControl<number | null | undefined>,
 
-		/** Maximum bundle count limit. */
+		/**
+		 * Maximum bundle count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBundleCount: FormControl<number | null | undefined>,
 
-		/** Maximum bytes count limit. */
+		/**
+		 * Maximum bytes count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumBytesCount: FormControl<number | null | undefined>,
 
-		/** Maximum thread count limit. */
+		/**
+		 * Maximum thread count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumThreadCount: FormControl<number | null | undefined>,
 
-		/** Current outstanding bytes count. */
+		/**
+		 * Current outstanding bytes count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outstandingBytesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateStreamingScalingReportFormGroup() {
@@ -6723,14 +7053,20 @@ export namespace MyNS {
 	/** Contains information about the thread scaling information of a worker. */
 	export interface WorkerThreadScalingReport {
 
-		/** Current number of active threads in a worker. */
+		/**
+		 * Current number of active threads in a worker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentThreadCount?: number | null;
 	}
 
 	/** Contains information about the thread scaling information of a worker. */
 	export interface WorkerThreadScalingReportFormProperties {
 
-		/** Current number of active threads in a worker. */
+		/**
+		 * Current number of active threads in a worker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentThreadCount: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkerThreadScalingReportFormGroup() {
@@ -6822,14 +7158,20 @@ export namespace MyNS {
 	/** Contains the thread scaling recommendation for a worker from the backend. */
 	export interface WorkerThreadScalingReportResponse {
 
-		/** Recommended number of threads for a worker. */
+		/**
+		 * Recommended number of threads for a worker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recommendedThreadCount?: number | null;
 	}
 
 	/** Contains the thread scaling recommendation for a worker from the backend. */
 	export interface WorkerThreadScalingReportResponseFormProperties {
 
-		/** Recommended number of threads for a worker. */
+		/**
+		 * Recommended number of threads for a worker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recommendedThreadCount: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkerThreadScalingReportResponseFormGroup() {
@@ -7010,6 +7352,7 @@ export namespace MyNS {
 		 * @param {string} location The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
 		 * @param {string} name Optional. The job name.
 		 * @param {number} pageSize If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
 		 * @param {Dataflow_projects_jobs_listView} view Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
 		 * @return {ListJobsResponse} Successful response
@@ -7088,6 +7431,7 @@ export namespace MyNS {
 		 * @param {string} location The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
 		 * @param {JobMessageMessageImportance} minimumImportance Filter to only get messages with importance >= level
 		 * @param {number} pageSize If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
 		 * @param {string} startTime If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).
 		 * @return {ListJobMessagesResponse} Successful response
@@ -7150,6 +7494,7 @@ export namespace MyNS {
 		 * @param {string} location The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
 		 * @param {string} name Optional. The job name.
 		 * @param {number} pageSize If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
 		 * @param {Dataflow_projects_jobs_listView} view Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
 		 * @return {ListJobsResponse} Successful response
@@ -7188,6 +7533,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listFilter} filter The kind of filter to use.
 		 * @param {string} name Optional. The job name.
 		 * @param {number} pageSize If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
 		 * @param {Dataflow_projects_jobs_listView} view Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
 		 * @return {ListJobsResponse} Successful response
@@ -7266,6 +7612,7 @@ export namespace MyNS {
 		 * @param {string} location The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
 		 * @param {string} jobId The job to get execution details for.
 		 * @param {number} pageSize If specified, determines the maximum number of stages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
 		 * @return {JobExecutionDetails} Successful response
 		 */
@@ -7282,6 +7629,7 @@ export namespace MyNS {
 		 * @param {string} endTime Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available).
 		 * @param {JobMessageMessageImportance} minimumImportance Filter to only get messages with importance >= level
 		 * @param {number} pageSize If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
 		 * @param {string} startTime If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).
 		 * @return {ListJobMessagesResponse} Successful response
@@ -7324,6 +7672,7 @@ export namespace MyNS {
 		 * @param {string} stageId The stage for which to fetch information.
 		 * @param {string} endTime Upper time bound of work items to include, by start time.
 		 * @param {number} pageSize If specified, determines the maximum number of work items to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
 		 * @param {string} startTime Lower time bound of work items to include, by start time.
 		 * @return {StageExecutionDetails} Successful response

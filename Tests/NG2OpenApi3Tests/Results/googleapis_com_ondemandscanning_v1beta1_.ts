@@ -1577,10 +1577,17 @@ export namespace MyNS {
 		authentication?: CVSSAuthentication | null;
 		availabilityImpact?: CVSSAvailabilityImpact | null;
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: float
+		 */
 		baseScore?: number | null;
 		confidentialityImpact?: CVSSAvailabilityImpact | null;
+
+		/** Type: float */
 		exploitabilityScore?: number | null;
+
+		/** Type: float */
 		impactScore?: number | null;
 		integrityImpact?: CVSSAvailabilityImpact | null;
 		privilegesRequired?: CVSSPrivilegesRequired | null;
@@ -1597,10 +1604,17 @@ export namespace MyNS {
 		authentication: FormControl<CVSSAuthentication | null | undefined>,
 		availabilityImpact: FormControl<CVSSAvailabilityImpact | null | undefined>,
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: float
+		 */
 		baseScore: FormControl<number | null | undefined>,
 		confidentialityImpact: FormControl<CVSSAvailabilityImpact | null | undefined>,
+
+		/** Type: float */
 		exploitabilityScore: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		impactScore: FormControl<number | null | undefined>,
 		integrityImpact: FormControl<CVSSAvailabilityImpact | null | undefined>,
 		privilegesRequired: FormControl<CVSSPrivilegesRequired | null | undefined>,
@@ -1903,7 +1917,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1916,7 +1933,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2034,7 +2054,10 @@ export namespace MyNS {
 	/** The unique identifier of the update. */
 	export interface Identity {
 
-		/** The revision number of the update. */
+		/**
+		 * The revision number of the update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** The revision independent identifier of the update. */
@@ -2044,7 +2067,10 @@ export namespace MyNS {
 	/** The unique identifier of the update. */
 	export interface IdentityFormProperties {
 
-		/** The revision number of the update. */
+		/**
+		 * The revision number of the update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The revision independent identifier of the update. */
@@ -2065,7 +2091,10 @@ export namespace MyNS {
 		/** Output only. This contains the base image URL for the derived image occurrence. */
 		baseResourceUrl?: string | null;
 
-		/** Output only. The number of layers by which this image differs from the associated image basis. */
+		/**
+		 * Output only. The number of layers by which this image differs from the associated image basis.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distance?: number | null;
 
 		/** A set of properties that uniquely identify a given Docker image. */
@@ -2081,7 +2110,10 @@ export namespace MyNS {
 		/** Output only. This contains the base image URL for the derived image occurrence. */
 		baseResourceUrl: FormControl<string | null | undefined>,
 
-		/** Output only. The number of layers by which this image differs from the associated image basis. */
+		/**
+		 * Output only. The number of layers by which this image differs from the associated image basis.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distance: FormControl<number | null | undefined>,
 	}
 	export function CreateImageOccurrenceFormGroup() {
@@ -2460,7 +2492,10 @@ export namespace MyNS {
 	/** Version contains structured information about the version of a package. */
 	export interface Version {
 
-		/** Used to correct mistakes in the version numbering scheme. */
+		/**
+		 * Used to correct mistakes in the version numbering scheme.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epoch?: number | null;
 
 		/** Human readable version string. This string is of the form :- and is only set when kind is NORMAL. */
@@ -2482,7 +2517,10 @@ export namespace MyNS {
 	/** Version contains structured information about the version of a package. */
 	export interface VersionFormProperties {
 
-		/** Used to correct mistakes in the version numbering scheme. */
+		/**
+		 * Used to correct mistakes in the version numbering scheme.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epoch: FormControl<number | null | undefined>,
 
 		/** Human readable version string. This string is of the form :- and is only set when kind is NORMAL. */
@@ -2740,7 +2778,10 @@ export namespace MyNS {
 	/** An occurrence of a severity vulnerability on a resource. */
 	export interface VulnerabilityOccurrence {
 
-		/** Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssScore?: number | null;
 
 		/** Common Vulnerability Scoring System. For details, see https://www.first.org/cvss/specification-document This is a message we will try to use for storing various versions of CVSS rather than making a separate proto for storing a specific version. */
@@ -2786,7 +2827,10 @@ export namespace MyNS {
 	/** An occurrence of a severity vulnerability on a resource. */
 	export interface VulnerabilityOccurrenceFormProperties {
 
-		/** Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssScore: FormControl<number | null | undefined>,
 
 		/** Output only. CVSS version used to populate cvss_score and severity. */
@@ -3052,6 +3096,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3095,6 +3140,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/vulnerabilities
 		 * @param {string} parent Required. The parent of the collection of Vulnerabilities being requested. Format: projects/[project_name]/locations/[location]/scans/[scan_id]
 		 * @param {number} pageSize The number of vulnerabilities to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token, resulting from a previous call to ListVulnerabilities.
 		 * @return {ListVulnerabilitiesResponse} Successful response
 		 */

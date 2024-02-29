@@ -193,7 +193,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -224,7 +227,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */

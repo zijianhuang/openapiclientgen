@@ -233,7 +233,10 @@ namespace MyNS
 		/// SoftwareUpdateConfigurationRuns_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/softwareUpdateConfigurationRuns
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="filter">The filter to apply on the operation. You can use the following filters: 'properties/osType', 'properties/status', 'properties/startTime', and 'properties/softwareUpdateConfiguration/name'</param>
@@ -268,7 +271,10 @@ namespace MyNS
 		/// SoftwareUpdateConfigurationRuns_GetById subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/softwareUpdateConfigurationRuns/{softwareUpdateConfigurationRunId}
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="softwareUpdateConfigurationRunId">The Id of the software update configuration run.</param>
 		/// <param name="api_version">Client Api Version.</param>

@@ -11,6 +11,8 @@ export namespace MyNS {
 		input?: Array<InputImage>;
 		message?: string | null;
 		output?: Search_Results;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		progress?: number | null;
 	}
 	export interface BrowserJsonResponseFormProperties {
@@ -19,6 +21,8 @@ export namespace MyNS {
 		hasEmptyImages: FormControl<boolean | null | undefined>,
 		id_search: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		progress: FormControl<number | null | undefined>,
 	}
 	export function CreateBrowserJsonResponseFormGroup() {
@@ -57,29 +61,65 @@ export namespace MyNS {
 
 	export interface Search_Results {
 		demo?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		face_per_sec?: number | null;
+
+		/** Type: double */
 		freeRam?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		images_in_bundle?: number | null;
 		items?: Array<SearchItem>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_score?: number | null;
 		performance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scaned_till_index?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searchedFaces?: number | null;
+
+		/** Type: double */
 		tookSeconds?: number | null;
+
+		/** Type: double */
 		tookSecondsDownload?: number | null;
+
+		/** Type: double */
 		tookSecondsQueue?: number | null;
 	}
 	export interface Search_ResultsFormProperties {
 		demo: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		face_per_sec: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		freeRam: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		images_in_bundle: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_score: FormControl<number | null | undefined>,
 		performance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scaned_till_index: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searchedFaces: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tookSeconds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tookSecondsDownload: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tookSecondsQueue: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_ResultsFormGroup() {
@@ -101,22 +141,42 @@ export namespace MyNS {
 
 	export interface SearchItem {
 		base64?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		group?: number | null;
 		guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
-		indexDB?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		indexDB?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
-		seen?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		seen?: string | null;
 		url?: string | null;
 	}
 	export interface SearchItemFormProperties {
 		base64: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		group: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
-		indexDB: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		indexDB: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
-		seen: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		seen: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchItemFormGroup() {
@@ -125,24 +185,32 @@ export namespace MyNS {
 			group: new FormControl<number | null | undefined>(undefined),
 			guid: new FormControl<string | null | undefined>(undefined),
 			index: new FormControl<number | null | undefined>(undefined),
-			indexDB: new FormControl<number | null | undefined>(undefined),
+			indexDB: new FormControl<string | null | undefined>(undefined),
 			score: new FormControl<number | null | undefined>(undefined),
-			seen: new FormControl<number | null | undefined>(undefined),
+			seen: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface InfoResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		faces?: number | null;
 		has_credits_to_search?: boolean | null;
 		is_online?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining_credits?: number | null;
 	}
 	export interface InfoResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		faces: FormControl<number | null | undefined>,
 		has_credits_to_search: FormControl<boolean | null | undefined>,
 		is_online: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining_credits: FormControl<number | null | undefined>,
 	}
 	export function CreateInfoResponseFormGroup() {

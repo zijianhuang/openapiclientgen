@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Article {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ArticleID?: number | null;
 		Author?: string | null;
 		Content?: string | null;
@@ -15,6 +17,8 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 	export interface ArticleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ArticleID: FormControl<number | null | undefined>,
 		Author: FormControl<string | null | undefined>,
 		Content: FormControl<string | null | undefined>,
@@ -40,16 +44,24 @@ export namespace MyNS {
 
 	export interface PlayerInfo {
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
 		Position?: string | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
 	}
 	export interface PlayerInfoFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
 		Position: FormControl<string | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerInfoFormGroup() {
@@ -72,7 +84,6 @@ export namespace MyNS {
 		 * RotoBaller Articles
 		 * Get {format}/RotoBallerArticles
 		 * @param {RotoballerArticlesFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Article>} 
 		 */
 		RotoballerArticles(format: RotoballerArticlesFormat): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + format + '/RotoBallerArticles', {});
@@ -84,7 +95,6 @@ export namespace MyNS {
 		 * @param {RotoballerArticlesFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the news.
 		 * <br>Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.
-		 * @return {Array<Article>} 
 		 */
 		RotoballerArticlesByDate(format: RotoballerArticlesFormat, date: string): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + format + '/RotoBallerArticlesByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -96,7 +106,6 @@ export namespace MyNS {
 		 * @param {RotoballerArticlesFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>10000507</code>.
-		 * @return {Array<Article>} 
 		 */
 		RotoballerArticlesByPlayer(format: RotoballerArticlesFormat, playerid: string): Observable<Array<Article>> {
 			return this.http.get<Array<Article>>(this.baseUri + format + '/RotoBallerArticlesByPlayerID/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});

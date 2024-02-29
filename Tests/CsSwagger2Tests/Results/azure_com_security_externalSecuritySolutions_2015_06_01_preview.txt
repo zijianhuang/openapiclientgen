@@ -265,7 +265,10 @@ namespace MyNS
 		/// ExternalSecuritySolutions_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions/{externalSecuritySolutionsName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="externalSecuritySolutionsName">Name of an external security solution.</param>
 		/// <param name="api_version">API version for the operation</param>

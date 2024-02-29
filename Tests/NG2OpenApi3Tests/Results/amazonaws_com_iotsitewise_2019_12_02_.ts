@@ -5721,6 +5721,7 @@ export namespace MyNS {
 		 * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Post assets/{assetId}/associate
 		 * @param {string} assetId The ID of the parent asset.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		AssociateAssets(assetId: string, requestBody: AssociateAssetsPostBody): Observable<HttpResponse<string>> {
@@ -5731,8 +5732,11 @@ export namespace MyNS {
 		 * Associates a time series (data stream) with an asset property.
 		 * Post timeseries/associate/#alias&assetId&propertyId
 		 * @param {string} alias The alias that identifies the time series.
+		 *     Min length: 1
 		 * @param {string} assetId The ID of the asset in which the asset property was created.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		AssociateTimeSeriesToAssetProperty(alias: string, assetId: string, propertyId: string, requestBody: AssociateTimeSeriesToAssetPropertyPostBody): Observable<HttpResponse<string>> {
@@ -5743,6 +5747,7 @@ export namespace MyNS {
 		 * Associates a group (batch) of assets with an IoT SiteWise Monitor project.
 		 * Post projects/{projectId}/assets/associate
 		 * @param {string} projectId The ID of the project to which to associate the assets.
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchAssociateProjectAssetsResponse} Success
 		 */
 		BatchAssociateProjectAssets(projectId: string, requestBody: BatchAssociateProjectAssetsPostBody): Observable<BatchAssociateProjectAssetsResponse> {
@@ -5753,6 +5758,7 @@ export namespace MyNS {
 		 * Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
 		 * Post projects/{projectId}/assets/disassociate
 		 * @param {string} projectId The ID of the project from which to disassociate the assets.
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchDisassociateProjectAssetsResponse} Success
 		 */
 		BatchDisassociateProjectAssets(projectId: string, requestBody: BatchDisassociateProjectAssetsPostBody): Observable<BatchDisassociateProjectAssetsResponse> {
@@ -5814,11 +5820,16 @@ export namespace MyNS {
 		 * Get access-policies
 		 * @param {IdentityType} identityType The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.
 		 * @param {string} identityId The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.
+		 *     Min length: 1    Max length: 256
 		 * @param {ResourceType} resourceType The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
 		 * @param {string} resourceId The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} iamArn The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
+		 *     Min length: 1    Max length: 1600
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAccessPoliciesResponse} Success
 		 */
 		ListAccessPolicies(identityType: IdentityType | null | undefined, identityId: string | null | undefined, resourceType: ResourceType | null | undefined, resourceId: string | null | undefined, iamArn: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAccessPoliciesResponse> {
@@ -5838,8 +5849,11 @@ export namespace MyNS {
 		 * <p>Retrieves a paginated list of asset summaries.</p> <p>You can use this operation to do the following:</p> <ul> <li> <p>List assets based on a specific asset model.</p> </li> <li> <p>List top-level assets.</p> </li> </ul> <p>You can't use this operation to list all assets. To retrieve summaries for all of your assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.</p>
 		 * Get assets
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} assetModelId The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+		 *     Min length: 36    Max length: 36
 		 * @param {ListAssetsFilter} filter <p>The filter for the requested list of assets. Choose one of the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li> </ul> <p>Default: <code>ALL</code> </p>
 		 * @return {ListAssetsResponse} Success
 		 */
@@ -5860,7 +5874,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of summaries of all asset models.
 		 * Get asset-models
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAssetModelsResponse} Success
 		 */
 		ListAssetModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssetModelsResponse> {
@@ -5880,7 +5896,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Get jobs
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {ListBulkImportJobsFilter} filter You can use a filter to select the bulk import jobs that you want to retrieve.
 		 * @return {ListBulkImportJobsResponse} Success
 		 */
@@ -5910,7 +5928,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of gateways.
 		 * Get 20200301/gateways
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListGatewaysResponse} Success
 		 */
 		ListGateways(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListGatewaysResponse> {
@@ -5930,7 +5950,9 @@ export namespace MyNS {
 		 * Retrieves a paginated list of IoT SiteWise Monitor portals.
 		 * Get portals
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListPortalsResponse} Success
 		 */
 		ListPortals(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPortalsResponse> {
@@ -5950,7 +5972,9 @@ export namespace MyNS {
 		 * Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.
 		 * Delete access-policies/{accessPolicyId}
 		 * @param {string} accessPolicyId The ID of the access policy to be deleted.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteAccessPolicy(accessPolicyId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5961,6 +5985,7 @@ export namespace MyNS {
 		 * Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.
 		 * Get access-policies/{accessPolicyId}
 		 * @param {string} accessPolicyId The ID of the access policy.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeAccessPolicyResponse} Success
 		 */
 		DescribeAccessPolicy(accessPolicyId: string): Observable<DescribeAccessPolicyResponse> {
@@ -5971,6 +5996,7 @@ export namespace MyNS {
 		 * Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource.
 		 * Put access-policies/{accessPolicyId}
 		 * @param {string} accessPolicyId The ID of the access policy.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAccessPolicyResponse} Success
 		 */
 		UpdateAccessPolicy(accessPolicyId: string, requestBody: UpdateAccessPolicyPutBody): Observable<UpdateAccessPolicyResponse> {
@@ -5981,7 +6007,9 @@ export namespace MyNS {
 		 * <p>Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p> <note> <p>You can't delete an asset that's associated to another asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p> </note>
 		 * Delete assets/{assetId}
 		 * @param {string} assetId The ID of the asset to delete.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteAsset(assetId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5992,6 +6020,7 @@ export namespace MyNS {
 		 * Retrieves information about an asset.
 		 * Get assets/{assetId}
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {boolean} excludeProperties  Whether or not to exclude asset properties from the response. 
 		 * @return {DescribeAssetResponse} Success
 		 */
@@ -6003,6 +6032,7 @@ export namespace MyNS {
 		 * Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Put assets/{assetId}
 		 * @param {string} assetId The ID of the asset to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdateAsset(assetId: string, requestBody: UpdateAssetPutBody): Observable<HttpResponse<string>> {
@@ -6013,7 +6043,9 @@ export namespace MyNS {
 		 * Deletes an asset model. This action can't be undone. You must delete all assets created from an asset model before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Delete asset-models/{assetModelId}
 		 * @param {string} assetModelId The ID of the asset model to delete.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteAssetModel(assetModelId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -6024,6 +6056,7 @@ export namespace MyNS {
 		 * Retrieves information about an asset model.
 		 * Get asset-models/{assetModelId}
 		 * @param {string} assetModelId The ID of the asset model.
+		 *     Min length: 36    Max length: 36
 		 * @param {boolean} excludeProperties  Whether or not to exclude asset model properties from the response. 
 		 * @return {DescribeAssetModelResponse} Success
 		 */
@@ -6035,6 +6068,7 @@ export namespace MyNS {
 		 * <p>Updates an asset model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> <important> <p>This operation overwrites the existing model with the provided model. To avoid deleting your asset model's properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p> <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing property.</p> </important>
 		 * Put asset-models/{assetModelId}
 		 * @param {string} assetModelId The ID of the asset model to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdateAssetModel(assetModelId: string, requestBody: UpdateAssetModelPutBody): Observable<HttpResponse<string>> {
@@ -6045,7 +6079,9 @@ export namespace MyNS {
 		 * Deletes a dashboard from IoT SiteWise Monitor.
 		 * Delete dashboards/{dashboardId}
 		 * @param {string} dashboardId The ID of the dashboard to delete.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteDashboard(dashboardId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -6056,6 +6092,7 @@ export namespace MyNS {
 		 * Retrieves information about a dashboard.
 		 * Get dashboards/{dashboardId}
 		 * @param {string} dashboardId The ID of the dashboard.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeDashboardResponse} Success
 		 */
 		DescribeDashboard(dashboardId: string): Observable<DescribeDashboardResponse> {
@@ -6066,6 +6103,7 @@ export namespace MyNS {
 		 * Updates an IoT SiteWise Monitor dashboard.
 		 * Put dashboards/{dashboardId}
 		 * @param {string} dashboardId The ID of the dashboard to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateDashboardResponse} Success
 		 */
 		UpdateDashboard(dashboardId: string, requestBody: UpdateDashboardPutBody): Observable<UpdateDashboardResponse> {
@@ -6076,6 +6114,7 @@ export namespace MyNS {
 		 * Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system.
 		 * Delete 20200301/gateways/{gatewayId}
 		 * @param {string} gatewayId The ID of the gateway to delete.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		DeleteGateway(gatewayId: string): Observable<HttpResponse<string>> {
@@ -6086,6 +6125,7 @@ export namespace MyNS {
 		 * Retrieves information about a gateway.
 		 * Get 20200301/gateways/{gatewayId}
 		 * @param {string} gatewayId The ID of the gateway device.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeGatewayResponse} Success
 		 */
 		DescribeGateway(gatewayId: string): Observable<DescribeGatewayResponse> {
@@ -6096,6 +6136,7 @@ export namespace MyNS {
 		 * Updates a gateway's name.
 		 * Put 20200301/gateways/{gatewayId}
 		 * @param {string} gatewayId The ID of the gateway to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		UpdateGateway(gatewayId: string, requestBody: UpdateGatewayPutBody): Observable<HttpResponse<string>> {
@@ -6106,7 +6147,9 @@ export namespace MyNS {
 		 * Deletes a portal from IoT SiteWise Monitor.
 		 * Delete portals/{portalId}
 		 * @param {string} portalId The ID of the portal to delete.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeletePortal(portalId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -6117,6 +6160,7 @@ export namespace MyNS {
 		 * Retrieves information about a portal.
 		 * Get portals/{portalId}
 		 * @param {string} portalId The ID of the portal.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribePortalResponse} Success
 		 */
 		DescribePortal(portalId: string): Observable<DescribePortalResponse> {
@@ -6127,6 +6171,7 @@ export namespace MyNS {
 		 * Updates an IoT SiteWise Monitor portal.
 		 * Put portals/{portalId}
 		 * @param {string} portalId The ID of the portal to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdatePortal(portalId: string, requestBody: UpdatePortalPutBody): Observable<HttpResponse<string>> {
@@ -6137,7 +6182,9 @@ export namespace MyNS {
 		 * Deletes a project from IoT SiteWise Monitor.
 		 * Delete projects/{projectId}
 		 * @param {string} projectId The ID of the project.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteProject(projectId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -6148,6 +6195,7 @@ export namespace MyNS {
 		 * Retrieves information about a project.
 		 * Get projects/{projectId}
 		 * @param {string} projectId The ID of the project.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeProjectResponse} Success
 		 */
 		DescribeProject(projectId: string): Observable<DescribeProjectResponse> {
@@ -6158,6 +6206,7 @@ export namespace MyNS {
 		 * Updates an IoT SiteWise Monitor project.
 		 * Put projects/{projectId}
 		 * @param {string} projectId The ID of the project to update.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateProjectResponse} Success
 		 */
 		UpdateProject(projectId: string, requestBody: UpdateProjectPutBody): Observable<UpdateProjectResponse> {
@@ -6168,8 +6217,11 @@ export namespace MyNS {
 		 * <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code> of the time series.</p> </li> <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> </ul> </li> </ul>
 		 * Post timeseries/delete/
 		 * @param {string} alias The alias that identifies the time series.
+		 *     Min length: 1
 		 * @param {string} assetId The ID of the asset in which the asset property was created.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		DeleteTimeSeries(alias: string | null | undefined, assetId: string | null | undefined, propertyId: string | null | undefined, requestBody: DeleteTimeSeriesPostBody): Observable<HttpResponse<string>> {
@@ -6180,7 +6232,9 @@ export namespace MyNS {
 		 * <p>Retrieves information about an asset property.</p> <note> <p>When you call this operation for an attribute property, this response includes the default attribute value that you define in the asset model. If you update the default value in the model, this operation's response includes the new default value.</p> </note> <p>This operation doesn't return the value of the asset property. To get the value of an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
 		 * Get assets/{assetId}/properties/{propertyId}
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeAssetPropertyResponse} Success
 		 */
 		DescribeAssetProperty(assetId: string, propertyId: string): Observable<DescribeAssetPropertyResponse> {
@@ -6191,7 +6245,9 @@ export namespace MyNS {
 		 * <p>Updates an asset property's alias and notification state.</p> <important> <p>This operation overwrites the property's existing alias and notification state. To keep your existing property's alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p> </important>
 		 * Put assets/{assetId}/properties/{propertyId}
 		 * @param {string} assetId The ID of the asset to be updated.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property to be updated.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		UpdateAssetProperty(assetId: string, propertyId: string, requestBody: UpdateAssetPropertyPutBody): Observable<HttpResponse<string>> {
@@ -6202,6 +6258,7 @@ export namespace MyNS {
 		 * Retrieves information about a bulk import job request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
 		 * Get jobs/{jobId}
 		 * @param {string} jobId The ID of the job.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeBulkImportJobResponse} Success
 		 */
 		DescribeBulkImportJob(jobId: string): Observable<DescribeBulkImportJobResponse> {
@@ -6230,7 +6287,9 @@ export namespace MyNS {
 		 * Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
 		 * Get 20200301/gateways/{gatewayId}/capability/{capabilityNamespace}
 		 * @param {string} gatewayId The ID of the gateway that defines the capability configuration.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} capabilityNamespace The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeGatewayCapabilityConfigurationResponse} Success
 		 */
 		DescribeGatewayCapabilityConfiguration(gatewayId: string, capabilityNamespace: string): Observable<DescribeGatewayCapabilityConfigurationResponse> {
@@ -6277,8 +6336,11 @@ export namespace MyNS {
 		 * <p>Retrieves information about a time series (data stream).</p> <p>To identify a time series, do one of the following:</p> <ul> <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> <li> <p>If the time series is associated with an asset property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code> of the time series.</p> </li> <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> </ul> </li> </ul>
 		 * Get timeseries/describe/
 		 * @param {string} alias The alias that identifies the time series.
+		 *     Min length: 1
 		 * @param {string} assetId The ID of the asset in which the asset property was created.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeTimeSeriesResponse} Success
 		 */
 		DescribeTimeSeries(alias: string | null | undefined, assetId: string | null | undefined, propertyId: string | null | undefined): Observable<DescribeTimeSeriesResponse> {
@@ -6289,6 +6351,7 @@ export namespace MyNS {
 		 * Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.
 		 * Post assets/{assetId}/disassociate
 		 * @param {string} assetId The ID of the parent asset from which to disassociate the child asset.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		DisassociateAssets(assetId: string, requestBody: DisassociateAssetsPostBody): Observable<HttpResponse<string>> {
@@ -6299,8 +6362,11 @@ export namespace MyNS {
 		 * Disassociates a time series (data stream) from an asset property.
 		 * Post timeseries/disassociate/#alias&assetId&propertyId
 		 * @param {string} alias The alias that identifies the time series.
+		 *     Min length: 1
 		 * @param {string} assetId The ID of the asset in which the asset property was created.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} Success
 		 */
 		DisassociateTimeSeriesFromAssetProperty(alias: string, assetId: string, propertyId: string, requestBody: DisassociateTimeSeriesFromAssetPropertyPostBody): Observable<HttpResponse<string>> {
@@ -6311,16 +6377,24 @@ export namespace MyNS {
 		 * <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
 		 * Get properties/aggregates#aggregateTypes&resolution&startDate&endDate
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyAlias The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<AggregateType>} aggregateTypes The data aggregating function.
+		 *     Minimum items: 1
 		 * @param {string} resolution The time interval over which to aggregate data.
+		 *     Min length: 2    Max length: 3
 		 * @param {Array<Quality>} qualities The quality by which to filter asset data.
+		 *     Minimum items: 1    Maximum items: 1
 		 * @param {Date} startDate The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.
 		 * @param {Date} endDate The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.
 		 * @param {TimeOrdering} timeOrdering <p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
+		 *     Minimum: 1
 		 * @return {GetAssetPropertyAggregatesResponse} Success
 		 */
 		GetAssetPropertyAggregates(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality> | null | undefined, startDate: Date, endDate: Date, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyAggregatesResponse> {
@@ -6331,8 +6405,11 @@ export namespace MyNS {
 		 * <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
 		 * Get properties/latest
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyAlias The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetAssetPropertyValueResponse} Success
 		 */
 		GetAssetPropertyValue(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined): Observable<GetAssetPropertyValueResponse> {
@@ -6343,14 +6420,20 @@ export namespace MyNS {
 		 * <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
 		 * Get properties/history
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyAlias The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Date} startDate The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.
 		 * @param {Date} endDate The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.
 		 * @param {Array<Quality>} qualities The quality by which to filter asset data.
+		 *     Minimum items: 1    Maximum items: 1
 		 * @param {TimeOrdering} timeOrdering <p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p>
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 4 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> </ul>
+		 *     Minimum: 1
 		 * @return {GetAssetPropertyValueHistoryResponse} Success
 		 */
 		GetAssetPropertyValueHistory(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, qualities: Array<Quality> | null | undefined, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyValueHistoryResponse> {
@@ -6361,18 +6444,30 @@ export namespace MyNS {
 		 * <p>Get interpolated values for an asset property for a specified time interval, during a period of time. If your time series is missing data points during the specified time interval, you can use interpolation to estimate the missing data.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.</p> <p>To identify an asset property, you must specify one of the following:</p> <ul> <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> </ul>
 		 * Get properties/interpolated#startTimeInSeconds&endTimeInSeconds&quality&intervalInSeconds&type
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyId The ID of the asset property.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} propertyAlias The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} startTimeInSeconds The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.
+		 *     Minimum: 1    Maximum: 9223372036854774
 		 * @param {number} startTimeOffsetInNanos The nanosecond offset converted from <code>startTimeInSeconds</code>.
+		 *     Minimum: 0    Maximum: 999999999
 		 * @param {number} endTimeInSeconds The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.
+		 *     Minimum: 1    Maximum: 9223372036854774
 		 * @param {number} endTimeOffsetInNanos The nanosecond offset converted from <code>endTimeInSeconds</code>.
+		 *     Minimum: 0    Maximum: 999999999
 		 * @param {Quality} quality The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.
 		 * @param {number} intervalInSeconds The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.
+		 *     Minimum: 1    Maximum: 320000000
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request. If not specified, the default value is 10.
+		 *     Minimum: 1
 		 * @param {string} type <p>The interpolation type.</p> <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p> <ul> <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li> </ul>
+		 *     Min length: 1    Max length: 256
 		 * @param {number} intervalWindowInSeconds <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note> <ul> <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li> </ul> </note> <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
+		 *     Minimum: 1    Maximum: 320000000
 		 * @return {GetInterpolatedAssetPropertyValuesResponse} Success
 		 */
 		GetInterpolatedAssetPropertyValues(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, startTimeInSeconds: number, startTimeOffsetInNanos: number | null | undefined, endTimeInSeconds: number, endTimeOffsetInNanos: number | null | undefined, quality: Quality, intervalInSeconds: number, nextToken: string | null | undefined, maxResults: number | null | undefined, type: string, intervalWindowInSeconds: number | null | undefined): Observable<GetInterpolatedAssetPropertyValuesResponse> {
@@ -6383,8 +6478,11 @@ export namespace MyNS {
 		 * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.
 		 * Get asset-models/{assetModelId}/properties
 		 * @param {string} assetModelId The ID of the asset model.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request. If not specified, the default value is 50.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {ListAssetModelPropertiesFilter} filter <p> Filters the requested list of asset model properties. You can choose one of the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li> <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li> </ul> <p>Default: <code>BASE</code> </p>
 		 * @return {ListAssetModelPropertiesResponse} Success
 		 */
@@ -6396,8 +6494,11 @@ export namespace MyNS {
 		 * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.
 		 * Get assets/{assetId}/properties
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request. If not specified, the default value is 50.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {ListAssetModelPropertiesFilter} filter <p> Filters the requested list of asset properties. You can choose one of the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li> <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li> </ul> <p>Default: <code>BASE</code> </p>
 		 * @return {ListAssetPropertiesResponse} Success
 		 */
@@ -6409,9 +6510,12 @@ export namespace MyNS {
 		 * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's root asset and all associated assets between that asset and its root.
 		 * Get assets/{assetId}/assetRelationships#traversalType
 		 * @param {string} assetId The ID of the asset.
+		 *     Min length: 36    Max length: 36
 		 * @param {TraversalType} traversalType <p>The type of traversal to use to identify asset relationships. Choose the following option:</p> <ul> <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li> </ul>
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAssetRelationshipsResponse} Success
 		 */
 		ListAssetRelationships(assetId: string, traversalType: TraversalType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssetRelationshipsResponse> {
@@ -6422,10 +6526,14 @@ export namespace MyNS {
 		 * <p>Retrieves a paginated list of associated assets.</p> <p>You can use this operation to do the following:</p> <ul> <li> <p>List child assets associated to a parent asset by a hierarchy that you specify.</p> </li> <li> <p>List an asset's parent asset.</p> </li> </ul>
 		 * Get assets/{assetId}/hierarchies
 		 * @param {string} assetId The ID of the asset to query.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} hierarchyId <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+		 *     Min length: 36    Max length: 36
 		 * @param {TraversalDirection} traversalDirection <p>The direction to list associated assets. Choose one of the following options:</p> <ul> <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li> <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li> </ul> <p>Default: <code>CHILD</code> </p>
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAssociatedAssetsResponse} Success
 		 */
 		ListAssociatedAssets(assetId: string, hierarchyId: string | null | undefined, traversalDirection: TraversalDirection | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssociatedAssetsResponse> {
@@ -6436,8 +6544,11 @@ export namespace MyNS {
 		 * Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
 		 * Get dashboards#projectId
 		 * @param {string} projectId The ID of the project.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDashboardsResponse} Success
 		 */
 		ListDashboards(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDashboardsResponse> {
@@ -6448,8 +6559,11 @@ export namespace MyNS {
 		 * Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.
 		 * Get projects/{projectId}/assets
 		 * @param {string} projectId The ID of the project.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListProjectAssetsResponse} Success
 		 */
 		ListProjectAssets(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectAssetsResponse> {
@@ -6460,8 +6574,11 @@ export namespace MyNS {
 		 * Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
 		 * Get projects#portalId
 		 * @param {string} portalId The ID of the portal.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults <p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListProjectsResponse} Success
 		 */
 		ListProjects(portalId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectsResponse> {
@@ -6472,6 +6589,7 @@ export namespace MyNS {
 		 * Retrieves the list of tags for an IoT SiteWise resource.
 		 * Get tags#resourceArn
 		 * @param {string} resourceArn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -6482,6 +6600,7 @@ export namespace MyNS {
 		 * Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's value.
 		 * Post tags#resourceArn
 		 * @param {string} resourceArn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -6492,9 +6611,13 @@ export namespace MyNS {
 		 * Retrieves a paginated list of time series (data streams).
 		 * Get timeseries/
 		 * @param {string} nextToken The token to be used for the next set of paginated results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return for each paginated request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} assetId The ID of the asset in which the asset property was created.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} aliasPrefix The alias prefix of the time series.
+		 *     Min length: 1
 		 * @param {ListTimeSeriesType} timeSeriesType <p>The type of the time series. The time series type can be one of the following values:</p> <ul> <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> </ul>
 		 * @return {ListTimeSeriesResponse} Success
 		 */
@@ -6506,7 +6629,9 @@ export namespace MyNS {
 		 * Removes a tag from an IoT SiteWise resource.
 		 * Delete tags#resourceArn&tagKeys
 		 * @param {string} resourceArn The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of keys for tags to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -6517,6 +6642,7 @@ export namespace MyNS {
 		 * Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
 		 * Post 20200301/gateways/{gatewayId}/capability
 		 * @param {string} gatewayId The ID of the gateway to be updated.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdateGatewayCapabilityConfiguration(gatewayId: string, requestBody: UpdateGatewayCapabilityConfigurationPostBody): Observable<HttpResponse<string>> {
@@ -6529,23 +6655,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		hierarchyId: string;
 
 		/**
 		 * The ID of the child asset to be associated.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		childAssetId: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -6554,23 +6680,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		hierarchyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the child asset to be associated.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		childAssetId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6587,8 +6713,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -6596,8 +6722,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6620,8 +6746,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -6629,8 +6755,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6653,8 +6779,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -6662,8 +6788,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6684,8 +6810,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken?: string | null;
 
@@ -6699,8 +6825,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -6728,8 +6854,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken?: string | null;
 	}
@@ -6737,8 +6863,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6759,8 +6885,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken?: string | null;
 
@@ -6774,8 +6900,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to be used for the next set of paginated results.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -6831,8 +6957,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -6849,8 +6975,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6897,23 +7023,23 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the asset.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetName: string;
 
 		/**
 		 * The ID of the asset model from which to create the asset.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		assetModelId: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -6922,8 +7048,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the asset.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetDescription?: string | null;
 	}
@@ -6932,23 +7058,23 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the asset.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the asset model from which to create the asset.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		assetModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6957,8 +7083,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the asset.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetDescription: FormControl<string | null | undefined>,
 	}
@@ -6978,15 +7104,15 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the asset model.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetModelName: string;
 
 		/**
 		 * A description for the asset model.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetModelDescription?: string | null;
 
@@ -7001,8 +7127,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7014,22 +7140,22 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the asset model.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetModelName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the asset model.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetModelDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -7051,16 +7177,16 @@ export namespace MyNS {
 		/**
 		 * The unique name that helps identify the job request.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		jobName: string;
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		jobRoleArn: string;
 
@@ -7087,16 +7213,16 @@ export namespace MyNS {
 		/**
 		 * The unique name that helps identify the job request.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		jobName: FormControl<string | null | undefined>,
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		jobRoleArn: FormControl<string | null | undefined>,
 	}
@@ -7140,38 +7266,38 @@ export namespace MyNS {
 		/**
 		 * The ID of the project in which to create the dashboard.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		projectId: string;
 
 		/**
 		 * A friendly name for the dashboard.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		dashboardName: string;
 
 		/**
 		 * A description for the dashboard.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		dashboardDescription?: string | null;
 
 		/**
 		 * The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 204800
 		 * Min length: 0
+		 * Max length: 204800
 		 */
 		dashboardDefinition: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7183,38 +7309,38 @@ export namespace MyNS {
 		/**
 		 * The ID of the project in which to create the dashboard.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		projectId: FormControl<string | null | undefined>,
 
 		/**
 		 * A friendly name for the dashboard.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		dashboardName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the dashboard.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		dashboardDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 204800
 		 * Min length: 0
+		 * Max length: 204800
 		 */
 		dashboardDefinition: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -7238,8 +7364,8 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the gateway.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		gatewayName: string;
 
@@ -7257,8 +7383,8 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the gateway.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		gatewayName: FormControl<string | null | undefined>,
 
@@ -7290,30 +7416,30 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the portal.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		portalName: string;
 
 		/**
 		 * A description for the portal.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		portalDescription?: string | null;
 
 		/**
 		 * The Amazon Web Services administrator's contact email address.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		portalContactEmail: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7323,8 +7449,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: string;
 
@@ -7336,8 +7462,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The email address that sends alarm notifications.</p> <important> <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> </important>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		notificationSenderEmail?: string | null;
 
@@ -7349,38 +7475,38 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the portal.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		portalName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the portal.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		portalDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services administrator's contact email address.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		portalContactEmail: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -7392,8 +7518,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The email address that sends alarm notifications.</p> <important> <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> </important>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		notificationSenderEmail: FormControl<string | null | undefined>,
 	}
@@ -7448,30 +7574,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the portal in which to create the project.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		portalId: string;
 
 		/**
 		 * A friendly name for the project.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		projectName: string;
 
 		/**
 		 * A description for the project.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		projectDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7483,30 +7609,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the portal in which to create the project.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		portalId: FormControl<string | null | undefined>,
 
 		/**
 		 * A friendly name for the project.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		projectName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the project.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		projectDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -7546,8 +7672,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -7561,8 +7687,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7605,22 +7731,22 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the asset.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetName: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * A description for the asset.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetDescription?: string | null;
 	}
@@ -7629,22 +7755,22 @@ export namespace MyNS {
 		/**
 		 * A friendly name for the asset.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetName: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the asset.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetDescription: FormControl<string | null | undefined>,
 	}
@@ -7662,15 +7788,15 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the asset model.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetModelName: string;
 
 		/**
 		 * A description for the asset model.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetModelDescription?: string | null;
 
@@ -7685,8 +7811,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -7695,22 +7821,22 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the asset model.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		assetModelName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the asset model.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		assetModelDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7728,30 +7854,30 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the dashboard.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		dashboardName: string;
 
 		/**
 		 * A new description for the dashboard.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		dashboardDescription?: string | null;
 
 		/**
 		 * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 204800
 		 * Min length: 0
+		 * Max length: 204800
 		 */
 		dashboardDefinition: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -7760,30 +7886,30 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the dashboard.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		dashboardName: FormControl<string | null | undefined>,
 
 		/**
 		 * A new description for the dashboard.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		dashboardDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 204800
 		 * Min length: 0
+		 * Max length: 204800
 		 */
 		dashboardDefinition: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7802,8 +7928,8 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the gateway.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		gatewayName: string;
 	}
@@ -7812,8 +7938,8 @@ export namespace MyNS {
 		/**
 		 * A unique, friendly name for the gateway.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		gatewayName: FormControl<string | null | undefined>,
 	}
@@ -7829,23 +7955,23 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the portal.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		portalName: string;
 
 		/**
 		 * A new description for the portal.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		portalDescription?: string | null;
 
 		/**
 		 * The Amazon Web Services administrator's contact email address.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		portalContactEmail: string;
 
@@ -7855,22 +7981,22 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The email address that sends alarm notifications.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		notificationSenderEmail?: string | null;
 
@@ -7882,45 +8008,45 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the portal.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		portalName: FormControl<string | null | undefined>,
 
 		/**
 		 * A new description for the portal.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		portalDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services administrator's contact email address.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		portalContactEmail: FormControl<string | null | undefined>,
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The email address that sends alarm notifications.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		notificationSenderEmail: FormControl<string | null | undefined>,
 	}
@@ -7973,22 +8099,22 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the project.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		projectName: string;
 
 		/**
 		 * A new description for the project.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		projectDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -7997,22 +8123,22 @@ export namespace MyNS {
 		/**
 		 * A new friendly name for the project.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		projectName: FormControl<string | null | undefined>,
 
 		/**
 		 * A new description for the project.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		projectDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8029,8 +8155,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -8038,8 +8164,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8063,15 +8189,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		propertyUnit?: string | null;
 	}
@@ -8088,15 +8214,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		propertyUnit: FormControl<string | null | undefined>,
 	}
@@ -8120,8 +8246,8 @@ export namespace MyNS {
 
 		/**
 		 * The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		kmsKeyId?: string | null;
 	}
@@ -8135,8 +8261,8 @@ export namespace MyNS {
 
 		/**
 		 * The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		kmsKeyId: FormControl<string | null | undefined>,
 	}
@@ -8245,23 +8371,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		hierarchyId: string;
 
 		/**
 		 * The ID of the child asset to disassociate.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		childAssetId: string;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -8270,23 +8396,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		hierarchyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the child asset to disassociate.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		childAssetId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8303,8 +8429,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -8312,8 +8438,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -8352,16 +8478,16 @@ export namespace MyNS {
 		/**
 		 * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		capabilityNamespace: string;
 
 		/**
 		 * The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 104857600
 		 * Min length: 1
+		 * Max length: 104857600
 		 */
 		capabilityConfiguration: string;
 	}
@@ -8370,16 +8496,16 @@ export namespace MyNS {
 		/**
 		 * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		capabilityNamespace: FormControl<string | null | undefined>,
 
 		/**
 		 * The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		 * Required
-		 * Max length: 104857600
 		 * Min length: 1
+		 * Max length: 104857600
 		 */
 		capabilityConfiguration: FormControl<string | null | undefined>,
 	}

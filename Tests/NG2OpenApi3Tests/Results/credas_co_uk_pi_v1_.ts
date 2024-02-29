@@ -477,20 +477,32 @@ export namespace MyNS {
 
 	export interface CredasApiModelsDataCheckPepSanctionsSanctionDate {
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
 
 		/** Unknown = 0, Birth = 1, Death = 2 */
 		type?: CredasApiModelsDataCheckPepSanctionsSanctionDateType;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface CredasApiModelsDataCheckPepSanctionsSanctionDateFormProperties {
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
 
 		/** Unknown = 0, Birth = 1, Death = 2 */
 		type: FormControl<CredasApiModelsDataCheckPepSanctionsSanctionDateType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateCredasApiModelsDataCheckPepSanctionsSanctionDateFormGroup() {
@@ -1117,21 +1129,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: string;
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName?: string | null;
 		parameters?: Array<CredasApiModelsRegistrationsKeyValueItem>;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId?: string | null;
 
@@ -1142,8 +1154,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: string;
 	}
@@ -1160,20 +1172,20 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: FormControl<string | null | undefined>,
 
@@ -1184,8 +1196,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: FormControl<string | null | undefined>,
 	}
@@ -1270,42 +1282,42 @@ export namespace MyNS {
 	export interface CredasApiModelsRegistrationsAddRegistrationRequest {
 
 		/**
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		diallingCode?: string | null;
 		duplicateAcknowledgement?: boolean | null;
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		emailAddress?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: string;
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName?: string | null;
 		parameters?: Array<CredasApiModelsRegistrationsKeyValueItem>;
 
 		/**
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		phoneNumber?: string | null;
 		provideWebJourneyLink?: boolean | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId?: string | null;
 
@@ -1321,49 +1333,49 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: string;
 	}
 	export interface CredasApiModelsRegistrationsAddRegistrationRequestFormProperties {
 
 		/**
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		diallingCode: FormControl<string | null | undefined>,
 		duplicateAcknowledgement: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		emailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		phoneNumber: FormControl<string | null | undefined>,
 		provideWebJourneyLink: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: FormControl<string | null | undefined>,
 
@@ -1377,8 +1389,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: FormControl<string | null | undefined>,
 	}
@@ -1742,9 +1754,13 @@ export namespace MyNS {
 
 	export interface CredasApiModelsRegistrationsPagedRegistrationSummary {
 		registrationSummaries?: Array<CredasApiModelsRegistrationsRegistrationSummary>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface CredasApiModelsRegistrationsPagedRegistrationSummaryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCredasApiModelsRegistrationsPagedRegistrationSummaryFormGroup() {
@@ -1768,6 +1784,8 @@ export namespace MyNS {
 		creditStatusCheck?: CredasApiModelsStatusChecksStatusCheck;
 		customTermsAccepted?: boolean | null;
 		customTermsAcceptedDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		customTermsAcceptedVersion?: number | null;
 
 		/**
@@ -1813,8 +1831,8 @@ export namespace MyNS {
 		proofOfOwnershipCheck?: CredasApiModelsPropertyRegisterPropertyRegisterCheckResponse;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId?: string | null;
 
@@ -1856,6 +1874,8 @@ export namespace MyNS {
 		createdByAgencyUserId: FormControl<string | null | undefined>,
 		customTermsAccepted: FormControl<boolean | null | undefined>,
 		customTermsAcceptedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		customTermsAcceptedVersion: FormControl<number | null | undefined>,
 
 		/**
@@ -1896,8 +1916,8 @@ export namespace MyNS {
 		phoneNumber: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: FormControl<string | null | undefined>,
 
@@ -2375,40 +2395,40 @@ export namespace MyNS {
 		deliveryMethod?: CredasApiModelsRegistrationsUpdateContactDetailsRequestDeliveryMethod;
 
 		/**
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		diallingCode?: string | null;
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		email?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: string;
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName?: string | null;
 
 		/**
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		phoneNumber?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: string;
 	}
@@ -2418,40 +2438,40 @@ export namespace MyNS {
 		deliveryMethod: FormControl<CredasApiModelsRegistrationsUpdateContactDetailsRequestDeliveryMethod | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		diallingCode: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		forename: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		middleName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		phoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		surname: FormControl<string | null | undefined>,
 	}
@@ -2501,14 +2521,14 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: string;
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		user?: string | null;
 	}
@@ -2518,14 +2538,14 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		user: FormControl<string | null | undefined>,
 	}
@@ -2547,8 +2567,8 @@ export namespace MyNS {
 		registrationId: string;
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		user?: string | null;
 	}
@@ -2560,8 +2580,8 @@ export namespace MyNS {
 		registrationId: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		user: FormControl<string | null | undefined>,
 	}
@@ -2682,8 +2702,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: string;
 		returnUrls?: CredasApiModelsRegistrationsReturnUrls;
@@ -2692,8 +2712,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		referenceId: FormControl<string | null | undefined>,
 	}
@@ -2956,7 +2976,9 @@ export namespace MyNS {
 		 * Maximum page size is 50.
 		 * Get api/registrations/search
 		 * @param {number} pageNum Zero-based page number to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Number of records to return on each request (Maximum value is 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} forename Search by forename.
 		 * @param {string} surname Search by surname.
 		 * @param {string} email Search by user email.

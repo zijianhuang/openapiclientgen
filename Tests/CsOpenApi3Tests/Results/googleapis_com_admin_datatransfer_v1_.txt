@@ -255,7 +255,10 @@ namespace MyNS
 		/// Datatransfer_applications_list admin/datatransfer/v1/applications
 		/// </summary>
 		/// <param name="customerId">Immutable ID of the Google Workspace account.</param>
-		/// <param name="maxResults">Maximum number of results to return. Default is 100.</param>
+		/// <param name="maxResults">Maximum number of results to return. Default is 100.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="pageToken">Token to specify next page in the list.</param>
 		/// <returns>Successful response</returns>
 		public async Task<ApplicationsListResponse> Datatransfer_applications_listAsync(string customerId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -325,7 +328,10 @@ namespace MyNS
 		/// Datatransfer_transfers_list admin/datatransfer/v1/transfers
 		/// </summary>
 		/// <param name="customerId">Immutable ID of the Google Workspace account.</param>
-		/// <param name="maxResults">Maximum number of results to return. Default is 100.</param>
+		/// <param name="maxResults">Maximum number of results to return. Default is 100.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="newOwnerUserId">Destination user's profile ID.</param>
 		/// <param name="oldOwnerUserId">Source user's profile ID.</param>
 		/// <param name="pageToken">Token to specify the next page in the list.</param>

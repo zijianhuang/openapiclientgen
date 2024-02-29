@@ -20,6 +20,7 @@ export namespace MyNS {
 		/**
 		 * Annual Percentage Rate applied.
 		 * Required
+		 * Type: double
 		 */
 		apr_percentage: number;
 
@@ -32,12 +33,14 @@ export namespace MyNS {
 		/**
 		 * Amount of money that is subjected to the APR if a balance was carried beyond payment due date. How it is calculated can vary by card issuer. It is often calculated as an average daily balance.
 		 * Required
+		 * Type: double
 		 */
 		balance_subject_to_apr: number;
 
 		/**
 		 * Amount of money charged due to interest from last statement.
 		 * Required
+		 * Type: double
 		 */
 		interest_charge_amount: number;
 	}
@@ -48,6 +51,7 @@ export namespace MyNS {
 		/**
 		 * Annual Percentage Rate applied.
 		 * Required
+		 * Type: double
 		 */
 		apr_percentage: FormControl<number | null | undefined>,
 
@@ -60,12 +64,14 @@ export namespace MyNS {
 		/**
 		 * Amount of money that is subjected to the APR if a balance was carried beyond payment due date. How it is calculated can vary by card issuer. It is often calculated as an average daily balance.
 		 * Required
+		 * Type: double
 		 */
 		balance_subject_to_apr: FormControl<number | null | undefined>,
 
 		/**
 		 * Amount of money charged due to interest from last statement.
 		 * Required
+		 * Type: double
 		 */
 		interest_charge_amount: FormControl<number | null | undefined>,
 	}
@@ -122,7 +128,10 @@ export namespace MyNS {
 	/** Asset information about an account */
 	export interface AccountAssets extends AccountBase {
 
-		/** The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints. */
+		/**
+		 * The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints.
+		 * Type: double
+		 */
 		days_available?: number | null;
 
 		/** Calculated data about the historical balances on the account. Only returned by Assets endpoints and currently not supported by `brokerage` or `investment` accounts. */
@@ -147,7 +156,10 @@ export namespace MyNS {
 	/** Asset information about an account */
 	export interface AccountAssetsFormProperties extends AccountBaseFormProperties {
 
-		/** The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints. */
+		/**
+		 * The duration of transaction history available for this Item, typically defined as the time since the date of the earliest transaction in that account. Only returned by Assets endpoints.
+		 * Type: double
+		 */
 		days_available: FormControl<number | null | undefined>,
 
 		/**
@@ -183,12 +195,14 @@ export namespace MyNS {
 		 * The total amount of funds in the account, calculated from the `current` balance in the `balance` object by subtracting inflows and adding back outflows according to the posted date of each transaction.
 		 * If the account has any pending transactions, historical balance amounts on or after the date of the earliest pending transaction may differ if retrieved in subsequent Asset Reports as a result of those pending transactions posting.
 		 * Required
+		 * Type: double
 		 */
 		current: number;
 
 		/**
 		 * The date of the calculated historical balance, in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -213,12 +227,14 @@ export namespace MyNS {
 		 * The total amount of funds in the account, calculated from the `current` balance in the `balance` object by subtracting inflows and adding back outflows according to the posted date of each transaction.
 		 * If the account has any pending transactions, historical balance amounts on or after the date of the earliest pending transaction may differ if retrieved in subsequent Asset Reports as a result of those pending transactions posting.
 		 * Required
+		 * Type: double
 		 */
 		current: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the calculated historical balance, in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -607,6 +623,7 @@ export namespace MyNS {
 		 * Available balance may be cached and is not guaranteed to be up-to-date in realtime unless the value was returned by `/accounts/balance/get`.
 		 * If `current` is `null` this field is guaranteed not to be `null`.
 		 * Required
+		 * Type: double
 		 */
 		available: number;
 
@@ -618,6 +635,7 @@ export namespace MyNS {
 		 * Note that balance information may be cached unless the value was returned by `/accounts/balance/get`; if the Item is enabled for Transactions, the balance will be at least as recent as the most recent Transaction update. If you require realtime balance information, use the `available` balance as provided by `/accounts/balance/get`.
 		 * When returned by `/accounts/balance/get`, this field may be `null`. When this happens, `available` is guaranteed not to be `null`.
 		 * Required
+		 * Type: double
 		 */
 		current: number;
 
@@ -638,6 +656,7 @@ export namespace MyNS {
 		 * For `depository`-type accounts, this represents the pre-arranged overdraft limit, which is common for current (checking) accounts in Europe.
 		 * In North America, this field is typically only available for `credit`-type accounts.
 		 * Required
+		 * Type: double
 		 */
 		limit: number;
 
@@ -661,6 +680,7 @@ export namespace MyNS {
 		 * Available balance may be cached and is not guaranteed to be up-to-date in realtime unless the value was returned by `/accounts/balance/get`.
 		 * If `current` is `null` this field is guaranteed not to be `null`.
 		 * Required
+		 * Type: double
 		 */
 		available: FormControl<number | null | undefined>,
 
@@ -672,6 +692,7 @@ export namespace MyNS {
 		 * Note that balance information may be cached unless the value was returned by `/accounts/balance/get`; if the Item is enabled for Transactions, the balance will be at least as recent as the most recent Transaction update. If you require realtime balance information, use the `available` balance as provided by `/accounts/balance/get`.
 		 * When returned by `/accounts/balance/get`, this field may be `null`. When this happens, `available` is guaranteed not to be `null`.
 		 * Required
+		 * Type: double
 		 */
 		current: FormControl<number | null | undefined>,
 
@@ -692,6 +713,7 @@ export namespace MyNS {
 		 * For `depository`-type accounts, this represents the pre-arranged overdraft limit, which is common for current (checking) accounts in Europe.
 		 * In North America, this field is typically only available for `credit`-type accounts.
 		 * Required
+		 * Type: double
 		 */
 		limit: FormControl<number | null | undefined>,
 
@@ -1085,7 +1107,10 @@ export namespace MyNS {
 		/** postal code was provided for both and was a match */
 		is_postal_code_match?: boolean | null;
 
-		/** Match score for address. The score can range from 0 to 100 where 100 is a perfect match and 0 is a no match. If the address is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for address. The score can range from 0 to 100 where 100 is a perfect match and 0 is a no match. If the address is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 
@@ -1095,7 +1120,10 @@ export namespace MyNS {
 		/** postal code was provided for both and was a match */
 		is_postal_code_match: FormControl<boolean | null | undefined>,
 
-		/** Match score for address. The score can range from 0 to 100 where 100 is a perfect match and 0 is a no match. If the address is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for address. The score can range from 0 to 100 where 100 is a perfect match and 0 is a no match. If the address is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateAddressMatchScoreFormGroup() {
@@ -1110,14 +1138,20 @@ export namespace MyNS {
 	/** Score found by matching email provided by the API with the email on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled. */
 	export interface EmailAddressMatchScore {
 
-		/** Match score for normalized email. 100 is a perfect match and 0 is a no match. If the email is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for normalized email. 100 is a perfect match and 0 is a no match. If the email is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 
 	/** Score found by matching email provided by the API with the email on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled. */
 	export interface EmailAddressMatchScoreFormProperties {
 
-		/** Match score for normalized email. 100 is a perfect match and 0 is a no match. If the email is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for normalized email. 100 is a perfect match and 0 is a no match. If the email is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateEmailAddressMatchScoreFormGroup() {
@@ -1140,7 +1174,10 @@ export namespace MyNS {
 		/** nickname matched, example Jennifer and Jenn. */
 		is_nickname_match?: boolean | null;
 
-		/** Represents the match score for name. 100 is a perfect score, 85-99 means a strong match, 50-84 is a partial match, less than 50 is a weak match and 0 is a complete mismatch. If the name is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Represents the match score for name. 100 is a perfect score, 85-99 means a strong match, 50-84 is a partial match, less than 50 is a weak match and 0 is a complete mismatch. If the name is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 
@@ -1156,7 +1193,10 @@ export namespace MyNS {
 		/** nickname matched, example Jennifer and Jenn. */
 		is_nickname_match: FormControl<boolean | null | undefined>,
 
-		/** Represents the match score for name. 100 is a perfect score, 85-99 means a strong match, 50-84 is a partial match, less than 50 is a weak match and 0 is a complete mismatch. If the name is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Represents the match score for name. 100 is a perfect score, 85-99 means a strong match, 50-84 is a partial match, less than 50 is a weak match and 0 is a complete mismatch. If the name is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateNameMatchScoreFormGroup() {
@@ -1173,14 +1213,20 @@ export namespace MyNS {
 	/** Score found by matching phone number provided by the API with the phone number on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled. */
 	export interface PhoneNumberMatchScore {
 
-		/** Match score for normalized phone number. 100 is a perfect match and 0 is a no match. If the phone number is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for normalized phone number. 100 is a perfect match and 0 is a no match. If the phone number is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 
 	/** Score found by matching phone number provided by the API with the phone number on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled. */
 	export interface PhoneNumberMatchScoreFormProperties {
 
-		/** Match score for normalized phone number. 100 is a perfect match and 0 is a no match. If the phone number is missing from either the API or financial institution, this is empty. */
+		/**
+		 * Match score for normalized phone number. 100 is a perfect match and 0 is a no match. If the phone number is missing from either the API or financial institution, this is empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreatePhoneNumberMatchScoreFormGroup() {
@@ -1618,7 +1664,10 @@ export namespace MyNS {
 		/** A unique ID identifying the request, to be used for troubleshooting purposes. This field will be omitted in errors provided by webhooks. */
 		request_id?: string | null;
 
-		/** The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook. */
+		/**
+		 * The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook.
+		 * Type: double
+		 */
 		status?: number | null;
 
 		/** Suggested steps for resolving the error */
@@ -1659,7 +1708,10 @@ export namespace MyNS {
 		/** A unique ID identifying the request, to be used for troubleshooting purposes. This field will be omitted in errors provided by webhooks. */
 		request_id: FormControl<string | null | undefined>,
 
-		/** The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook. */
+		/**
+		 * The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook.
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Suggested steps for resolving the error */
@@ -1866,6 +1918,7 @@ export namespace MyNS {
 		/**
 		 * The date this application was granted production access at Plaid in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.
 		 * Required
+		 * Type: DateOnly
 		 */
 		join_date: Date;
 
@@ -1948,6 +2001,7 @@ export namespace MyNS {
 		/**
 		 * The date this application was granted production access at Plaid in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.
 		 * Required
+		 * Type: DateOnly
 		 */
 		join_date: FormControl<Date | null | undefined>,
 
@@ -2155,18 +2209,21 @@ export namespace MyNS {
 		/**
 		 * Asset Account Available Balance.
 		 * Required
+		 * Type: double
 		 */
 		AssetAvailableBalanceAmount: number;
 
 		/**
 		 * A vendor created unique Identifier
 		 * Required
+		 * Type: double
 		 */
 		AssetCurrentBalanceAmount: number;
 
 		/**
 		 * The Number of days requested made to the Financial Institution. Example When looking for 3 months of data from the FI, pass in 90 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AssetDaysRequestedCount: number;
 
@@ -2219,18 +2276,21 @@ export namespace MyNS {
 		/**
 		 * Asset Account Available Balance.
 		 * Required
+		 * Type: double
 		 */
 		AssetAvailableBalanceAmount: FormControl<number | null | undefined>,
 
 		/**
 		 * A vendor created unique Identifier
 		 * Required
+		 * Type: double
 		 */
 		AssetCurrentBalanceAmount: FormControl<number | null | undefined>,
 
 		/**
 		 * The Number of days requested made to the Financial Institution. Example When looking for 3 months of data from the FI, pass in 90 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AssetDaysRequestedCount: FormControl<number | null | undefined>,
 
@@ -2453,6 +2513,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Amount.
 		 * Required
+		 * Type: double
 		 */
 		AssetTransactionAmount: number;
 
@@ -2465,6 +2526,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionDate: Date;
 
@@ -2477,6 +2539,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Post Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionPostDate: Date;
 
@@ -2511,6 +2574,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Amount.
 		 * Required
+		 * Type: double
 		 */
 		AssetTransactionAmount: FormControl<number | null | undefined>,
 
@@ -2523,6 +2587,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionDate: FormControl<Date | null | undefined>,
 
@@ -2535,6 +2600,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Post Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionPostDate: FormControl<Date | null | undefined>,
 
@@ -2666,6 +2732,7 @@ export namespace MyNS {
 		/**
 		 * The duration of transaction history you requested
 		 * Required
+		 * Type: double
 		 */
 		days_requested: number;
 
@@ -2706,6 +2773,7 @@ export namespace MyNS {
 		/**
 		 * The duration of transaction history you requested
 		 * Required
+		 * Type: double
 		 */
 		days_requested: FormControl<number | null | undefined>,
 	}
@@ -4034,6 +4102,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Assets (aka VOA or Freddie Mac Schema) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: number;
 
@@ -4050,6 +4119,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Assets (aka VOA or Freddie Mac Schema) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: FormControl<number | null | undefined>,
 
@@ -7256,6 +7326,7 @@ export namespace MyNS {
 		/**
 		 * The value of the transaction, denominated in the account's currency, as stated in `iso_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -7290,6 +7361,7 @@ export namespace MyNS {
 		/**
 		 * The value of the transaction, denominated in the account's currency, as stated in `iso_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -7533,12 +7605,14 @@ export namespace MyNS {
 		/**
 		 * The latitude where the transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * The longitude where the transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		lon: number;
 
@@ -7585,12 +7659,14 @@ export namespace MyNS {
 		/**
 		 * The latitude where the transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * The longitude where the transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		lon: FormControl<number | null | undefined>,
 
@@ -7681,6 +7757,7 @@ export namespace MyNS {
 		/**
 		 * The absolute value of the transaction (>= 0)
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -7722,6 +7799,7 @@ export namespace MyNS {
 		/**
 		 * The absolute value of the transaction (>= 0)
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -7945,6 +8023,7 @@ export namespace MyNS {
 		 * Negative (-) for credits (e.g., incoming transfers, refunds)
 		 * Positive (+) for debits (e.g., purchases, fees, outgoing transfers)
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -7975,6 +8054,7 @@ export namespace MyNS {
 		 * Negative (-) for credits (e.g., incoming transfers, refunds)
 		 * Positive (+) for debits (e.g., purchases, fees, outgoing transfers)
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -8013,10 +8093,14 @@ export namespace MyNS {
 		/**
 		 * The absolute value of the transaction (>= 0). When testing Enrich, note that `amount` data should be realistic. Unrealistic or inaccurate `amount` data may result in reduced quality output.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
-		/** The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. */
+		/**
+		 * The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format.
+		 * Type: DateOnly
+		 */
 		date_posted?: Date | null;
 
 		/**
@@ -8061,10 +8145,14 @@ export namespace MyNS {
 		/**
 		 * The absolute value of the transaction (>= 0). When testing Enrich, note that `amount` data should be realistic. Unrealistic or inaccurate `amount` data may result in reduced quality output.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. */
+		/**
+		 * The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format.
+		 * Type: DateOnly
+		 */
 		date_posted: FormControl<Date | null | undefined>,
 
 		/**
@@ -8180,6 +8268,7 @@ export namespace MyNS {
 		/**
 		 * The date this application was linked in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.
 		 * Required
+		 * Type: DateOnly
 		 */
 		created_at: Date;
 
@@ -8217,6 +8306,7 @@ export namespace MyNS {
 		/**
 		 * The date this application was linked in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.
 		 * Required
+		 * Type: DateOnly
 		 */
 		created_at: FormControl<Date | null | undefined>,
 
@@ -8256,19 +8346,34 @@ export namespace MyNS {
 	/** An object representing an end user's 1099 tax form */
 	export interface Credit1099 {
 
-		/** Amount reported for April. */
+		/**
+		 * Amount reported for April.
+		 * Type: double
+		 */
 		april_amount?: number | null;
 
-		/** Amount reported for August. */
+		/**
+		 * Amount reported for August.
+		 * Type: double
+		 */
 		august_amount?: number | null;
 
-		/** Amount in card not present transactions. */
+		/**
+		 * Amount in card not present transactions.
+		 * Type: double
+		 */
 		card_not_present_transaction?: number | null;
 
-		/** Amount of crop insurance proceeds. */
+		/**
+		 * Amount of crop insurance proceeds.
+		 * Type: double
+		 */
 		crop_insurance_proceeds?: number | null;
 
-		/** Amount reported for December. */
+		/**
+		 * Amount reported for December.
+		 * Type: double
+		 */
 		december_amount?: number | null;
 
 		/**
@@ -8280,64 +8385,112 @@ export namespace MyNS {
 		/** Object representing metadata pertaining to the document. */
 		document_metadata?: CreditDocumentMetadata;
 
-		/** Amount of golden parachute payments made by payer. */
+		/**
+		 * Amount of golden parachute payments made by payer.
+		 * Type: double
+		 */
 		excess_golden_parachute_payments?: number | null;
 
-		/** Amount reported for February. */
+		/**
+		 * Amount reported for February.
+		 * Type: double
+		 */
 		february_amount?: number | null;
 
-		/** Amount of federal income tax withheld from payer. */
+		/**
+		 * Amount of federal income tax withheld from payer.
+		 * Type: double
+		 */
 		federal_income_tax_withheld?: number | null;
 
 		/** An object representing a filer used by 1099-K tax documents. */
 		filer?: Credit1099Filer;
 
-		/** Amount of fishing boat proceeds from payer. */
+		/**
+		 * Amount of fishing boat proceeds from payer.
+		 * Type: double
+		 */
 		fishing_boat_proceeds?: number | null;
 
 		/** Form 1099 Type */
 		form_1099_type?: Credit1099Form_1099_type | null;
 
-		/** Gross amount reported. */
+		/**
+		 * Gross amount reported.
+		 * Type: double
+		 */
 		gross_amount?: number | null;
 
-		/** Amount of gross proceeds paid to an attorney by payer. */
+		/**
+		 * Amount of gross proceeds paid to an attorney by payer.
+		 * Type: double
+		 */
 		gross_proceeds_paid_to_an_attorney?: number | null;
 
-		/** Amount reported for January. */
+		/**
+		 * Amount reported for January.
+		 * Type: double
+		 */
 		january_amount?: number | null;
 
-		/** Amount reported for July. */
+		/**
+		 * Amount reported for July.
+		 * Type: double
+		 */
 		july_amount?: number | null;
 
-		/** Amount reported for June. */
+		/**
+		 * Amount reported for June.
+		 * Type: double
+		 */
 		june_amount?: number | null;
 
-		/** Amount reported for March. */
+		/**
+		 * Amount reported for March.
+		 * Type: double
+		 */
 		march_amount?: number | null;
 
-		/** Amount reported for May. */
+		/**
+		 * Amount reported for May.
+		 * Type: double
+		 */
 		may_amount?: number | null;
 
-		/** Amount of medical and healthcare payments from payer. */
+		/**
+		 * Amount of medical and healthcare payments from payer.
+		 * Type: double
+		 */
 		medical_and_healthcare_payments?: number | null;
 
 		/** Merchant category of filer. */
 		merchant_category_code?: string | null;
 
-		/** Amount of nonemployee compensation from payer. */
+		/**
+		 * Amount of nonemployee compensation from payer.
+		 * Type: double
+		 */
 		nonemployee_compensation?: number | null;
 
-		/** Amount reported for November. */
+		/**
+		 * Amount reported for November.
+		 * Type: double
+		 */
 		november_amount?: number | null;
 
 		/** Number of payment transactions made. */
 		number_of_payment_transactions?: string | null;
 
-		/** Amount reported for October. */
+		/**
+		 * Amount reported for October.
+		 * Type: double
+		 */
 		october_amount?: number | null;
 
-		/** Amount in other income by payer. */
+		/**
+		 * Amount in other income by payer.
+		 * Type: double
+		 */
 		other_income?: number | null;
 
 		/** An object representing a payer used by 1099-MISC tax documents. */
@@ -8358,7 +8511,10 @@ export namespace MyNS {
 		/** Primary state ID. */
 		primary_state_id?: string | null;
 
-		/** State income tax reported for primary state. */
+		/**
+		 * State income tax reported for primary state.
+		 * Type: double
+		 */
 		primary_state_income_tax?: number | null;
 
 		/** Name of the PSE (Payment Settlement Entity). */
@@ -8370,10 +8526,16 @@ export namespace MyNS {
 		/** An object representing a recipient used in both 1099-K and 1099-MISC tax documents. */
 		recipient?: Credit1099Recipient;
 
-		/** Amount in rent by payer. */
+		/**
+		 * Amount in rent by payer.
+		 * Type: double
+		 */
 		rents?: number | null;
 
-		/** Amount in royalties by payer. */
+		/**
+		 * Amount in royalties by payer.
+		 * Type: double
+		 */
 		royalties?: number | null;
 
 		/** Secondary state of business. */
@@ -8382,31 +8544,58 @@ export namespace MyNS {
 		/** Secondary state ID. */
 		secondary_state_id?: string | null;
 
-		/** State income tax reported for secondary state. */
+		/**
+		 * State income tax reported for secondary state.
+		 * Type: double
+		 */
 		secondary_state_income_tax?: number | null;
 
-		/** Amount of 409A deferrals earned by payer. */
+		/**
+		 * Amount of 409A deferrals earned by payer.
+		 * Type: double
+		 */
 		section_409a_deferrals?: number | null;
 
-		/** Amount of 409A income earned by payer. */
+		/**
+		 * Amount of 409A income earned by payer.
+		 * Type: double
+		 */
 		section_409a_income?: number | null;
 
-		/** Amount reported for September. */
+		/**
+		 * Amount reported for September.
+		 * Type: double
+		 */
 		september_amount?: number | null;
 
-		/** State income reported for primary state. */
+		/**
+		 * State income reported for primary state.
+		 * Type: double
+		 */
 		state_income?: number | null;
 
-		/** State income reported for secondary state. */
+		/**
+		 * State income reported for secondary state.
+		 * Type: double
+		 */
 		state_income_lower?: number | null;
 
-		/** Amount of state tax withheld of payer for primary state. */
+		/**
+		 * Amount of state tax withheld of payer for primary state.
+		 * Type: double
+		 */
 		state_tax_withheld?: number | null;
 
-		/** Amount of state tax withheld of payer for secondary state. */
+		/**
+		 * Amount of state tax withheld of payer for secondary state.
+		 * Type: double
+		 */
 		state_tax_withheld_lower?: number | null;
 
-		/** Amount of substitute payments made by payer. */
+		/**
+		 * Amount of substitute payments made by payer.
+		 * Type: double
+		 */
 		substitute_payments_in_lieu_of_dividends_or_interest?: number | null;
 
 		/** Tax year of the tax form. */
@@ -8419,19 +8608,34 @@ export namespace MyNS {
 	/** An object representing an end user's 1099 tax form */
 	export interface Credit1099FormProperties {
 
-		/** Amount reported for April. */
+		/**
+		 * Amount reported for April.
+		 * Type: double
+		 */
 		april_amount: FormControl<number | null | undefined>,
 
-		/** Amount reported for August. */
+		/**
+		 * Amount reported for August.
+		 * Type: double
+		 */
 		august_amount: FormControl<number | null | undefined>,
 
-		/** Amount in card not present transactions. */
+		/**
+		 * Amount in card not present transactions.
+		 * Type: double
+		 */
 		card_not_present_transaction: FormControl<number | null | undefined>,
 
-		/** Amount of crop insurance proceeds. */
+		/**
+		 * Amount of crop insurance proceeds.
+		 * Type: double
+		 */
 		crop_insurance_proceeds: FormControl<number | null | undefined>,
 
-		/** Amount reported for December. */
+		/**
+		 * Amount reported for December.
+		 * Type: double
+		 */
 		december_amount: FormControl<number | null | undefined>,
 
 		/**
@@ -8440,61 +8644,109 @@ export namespace MyNS {
 		 */
 		document_id: FormControl<string | null | undefined>,
 
-		/** Amount of golden parachute payments made by payer. */
+		/**
+		 * Amount of golden parachute payments made by payer.
+		 * Type: double
+		 */
 		excess_golden_parachute_payments: FormControl<number | null | undefined>,
 
-		/** Amount reported for February. */
+		/**
+		 * Amount reported for February.
+		 * Type: double
+		 */
 		february_amount: FormControl<number | null | undefined>,
 
-		/** Amount of federal income tax withheld from payer. */
+		/**
+		 * Amount of federal income tax withheld from payer.
+		 * Type: double
+		 */
 		federal_income_tax_withheld: FormControl<number | null | undefined>,
 
-		/** Amount of fishing boat proceeds from payer. */
+		/**
+		 * Amount of fishing boat proceeds from payer.
+		 * Type: double
+		 */
 		fishing_boat_proceeds: FormControl<number | null | undefined>,
 
 		/** Form 1099 Type */
 		form_1099_type: FormControl<Credit1099Form_1099_type | null | undefined>,
 
-		/** Gross amount reported. */
+		/**
+		 * Gross amount reported.
+		 * Type: double
+		 */
 		gross_amount: FormControl<number | null | undefined>,
 
-		/** Amount of gross proceeds paid to an attorney by payer. */
+		/**
+		 * Amount of gross proceeds paid to an attorney by payer.
+		 * Type: double
+		 */
 		gross_proceeds_paid_to_an_attorney: FormControl<number | null | undefined>,
 
-		/** Amount reported for January. */
+		/**
+		 * Amount reported for January.
+		 * Type: double
+		 */
 		january_amount: FormControl<number | null | undefined>,
 
-		/** Amount reported for July. */
+		/**
+		 * Amount reported for July.
+		 * Type: double
+		 */
 		july_amount: FormControl<number | null | undefined>,
 
-		/** Amount reported for June. */
+		/**
+		 * Amount reported for June.
+		 * Type: double
+		 */
 		june_amount: FormControl<number | null | undefined>,
 
-		/** Amount reported for March. */
+		/**
+		 * Amount reported for March.
+		 * Type: double
+		 */
 		march_amount: FormControl<number | null | undefined>,
 
-		/** Amount reported for May. */
+		/**
+		 * Amount reported for May.
+		 * Type: double
+		 */
 		may_amount: FormControl<number | null | undefined>,
 
-		/** Amount of medical and healthcare payments from payer. */
+		/**
+		 * Amount of medical and healthcare payments from payer.
+		 * Type: double
+		 */
 		medical_and_healthcare_payments: FormControl<number | null | undefined>,
 
 		/** Merchant category of filer. */
 		merchant_category_code: FormControl<string | null | undefined>,
 
-		/** Amount of nonemployee compensation from payer. */
+		/**
+		 * Amount of nonemployee compensation from payer.
+		 * Type: double
+		 */
 		nonemployee_compensation: FormControl<number | null | undefined>,
 
-		/** Amount reported for November. */
+		/**
+		 * Amount reported for November.
+		 * Type: double
+		 */
 		november_amount: FormControl<number | null | undefined>,
 
 		/** Number of payment transactions made. */
 		number_of_payment_transactions: FormControl<string | null | undefined>,
 
-		/** Amount reported for October. */
+		/**
+		 * Amount reported for October.
+		 * Type: double
+		 */
 		october_amount: FormControl<number | null | undefined>,
 
-		/** Amount in other income by payer. */
+		/**
+		 * Amount in other income by payer.
+		 * Type: double
+		 */
 		other_income: FormControl<number | null | undefined>,
 
 		/** Whether or not payer made direct sales over $5000 of consumer products. */
@@ -8512,7 +8764,10 @@ export namespace MyNS {
 		/** Primary state ID. */
 		primary_state_id: FormControl<string | null | undefined>,
 
-		/** State income tax reported for primary state. */
+		/**
+		 * State income tax reported for primary state.
+		 * Type: double
+		 */
 		primary_state_income_tax: FormControl<number | null | undefined>,
 
 		/** Name of the PSE (Payment Settlement Entity). */
@@ -8521,10 +8776,16 @@ export namespace MyNS {
 		/** Formatted (XXX) XXX-XXXX. Phone number of the PSE (Payment Settlement Entity). */
 		pse_telephone_number: FormControl<string | null | undefined>,
 
-		/** Amount in rent by payer. */
+		/**
+		 * Amount in rent by payer.
+		 * Type: double
+		 */
 		rents: FormControl<number | null | undefined>,
 
-		/** Amount in royalties by payer. */
+		/**
+		 * Amount in royalties by payer.
+		 * Type: double
+		 */
 		royalties: FormControl<number | null | undefined>,
 
 		/** Secondary state of business. */
@@ -8533,31 +8794,58 @@ export namespace MyNS {
 		/** Secondary state ID. */
 		secondary_state_id: FormControl<string | null | undefined>,
 
-		/** State income tax reported for secondary state. */
+		/**
+		 * State income tax reported for secondary state.
+		 * Type: double
+		 */
 		secondary_state_income_tax: FormControl<number | null | undefined>,
 
-		/** Amount of 409A deferrals earned by payer. */
+		/**
+		 * Amount of 409A deferrals earned by payer.
+		 * Type: double
+		 */
 		section_409a_deferrals: FormControl<number | null | undefined>,
 
-		/** Amount of 409A income earned by payer. */
+		/**
+		 * Amount of 409A income earned by payer.
+		 * Type: double
+		 */
 		section_409a_income: FormControl<number | null | undefined>,
 
-		/** Amount reported for September. */
+		/**
+		 * Amount reported for September.
+		 * Type: double
+		 */
 		september_amount: FormControl<number | null | undefined>,
 
-		/** State income reported for primary state. */
+		/**
+		 * State income reported for primary state.
+		 * Type: double
+		 */
 		state_income: FormControl<number | null | undefined>,
 
-		/** State income reported for secondary state. */
+		/**
+		 * State income reported for secondary state.
+		 * Type: double
+		 */
 		state_income_lower: FormControl<number | null | undefined>,
 
-		/** Amount of state tax withheld of payer for primary state. */
+		/**
+		 * Amount of state tax withheld of payer for primary state.
+		 * Type: double
+		 */
 		state_tax_withheld: FormControl<number | null | undefined>,
 
-		/** Amount of state tax withheld of payer for secondary state. */
+		/**
+		 * Amount of state tax withheld of payer for secondary state.
+		 * Type: double
+		 */
 		state_tax_withheld_lower: FormControl<number | null | undefined>,
 
-		/** Amount of substitute payments made by payer. */
+		/**
+		 * Amount of substitute payments made by payer.
+		 * Type: double
+		 */
 		substitute_payments_in_lieu_of_dividends_or_interest: FormControl<number | null | undefined>,
 
 		/** Tax year of the tax form. */
@@ -8961,7 +9249,10 @@ export namespace MyNS {
 	/** This contains an amount, denominated in the currency specified by either `iso_currency_code` or `unofficial_currency_code` */
 	export interface CreditAmountWithCurrency {
 
-		/** Value of amount with up to 2 decimal places. */
+		/**
+		 * Value of amount with up to 2 decimal places.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The ISO 4217 currency code of the amount or balance. */
@@ -8977,7 +9268,10 @@ export namespace MyNS {
 	/** This contains an amount, denominated in the currency specified by either `iso_currency_code` or `unofficial_currency_code` */
 	export interface CreditAmountWithCurrencyFormProperties {
 
-		/** Value of amount with up to 2 decimal places. */
+		/**
+		 * Value of amount with up to 2 decimal places.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The ISO 4217 currency code of the amount or balance. */
@@ -9286,6 +9580,7 @@ export namespace MyNS {
 		/**
 		 * The date of the earliest deposit from this employer from within the period of the days requested.
 		 * Required
+		 * Type: DateOnly
 		 */
 		earliest_deposit_date: Date;
 
@@ -9298,6 +9593,7 @@ export namespace MyNS {
 		/**
 		 * The date of the most recent deposit from this employer.
 		 * Required
+		 * Type: DateOnly
 		 */
 		latest_deposit_date: Date;
 	}
@@ -9320,12 +9616,14 @@ export namespace MyNS {
 		/**
 		 * The date of the earliest deposit from this employer from within the period of the days requested.
 		 * Required
+		 * Type: DateOnly
 		 */
 		earliest_deposit_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date of the most recent deposit from this employer.
 		 * Required
+		 * Type: DateOnly
 		 */
 		latest_deposit_date: FormControl<Date | null | undefined>,
 	}
@@ -9426,6 +9724,7 @@ export namespace MyNS {
 		/**
 		 * The number of days requested by the customer for the Bank Employment Report.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_requested: number;
 
@@ -9460,6 +9759,7 @@ export namespace MyNS {
 		/**
 		 * The number of days requested by the customer for the Bank Employment Report.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_requested: FormControl<number | null | undefined>,
 
@@ -9815,7 +10115,10 @@ export namespace MyNS {
 		/** Summary for bank income across all income sources and items (max history of 730 days). */
 		bank_income_summary?: CreditBankIncomeSummary;
 
-		/** The number of days requested by the customer for the Bank Income Report. */
+		/**
+		 * The number of days requested by the customer for the Bank Income Report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested?: number | null;
 
 		/** The time when the Bank Income Report was generated. */
@@ -9834,7 +10137,10 @@ export namespace MyNS {
 		/** The unique identifier associated with the Bank Income Report. */
 		bank_income_id: FormControl<string | null | undefined>,
 
-		/** The number of days requested by the customer for the Bank Income Report. */
+		/**
+		 * The number of days requested by the customer for the Bank Income Report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested: FormControl<number | null | undefined>,
 
 		/** The time when the Bank Income Report was generated. */
@@ -9856,17 +10162,27 @@ export namespace MyNS {
 		/**
 		 * The latest date in which all income sources identified by Plaid appear in the user's account.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date?: Date | null;
 		historical_summary?: Array<CreditBankIncomeHistoricalSummary>;
 
-		/** Number of income categories per end user. */
+		/**
+		 * Number of income categories per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_categories_count?: number | null;
 
-		/** Number of income sources per end user. */
+		/**
+		 * Number of income sources per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_sources_count?: number | null;
 
-		/** Number of income transactions per end user. */
+		/**
+		 * Number of income transactions per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_transactions_count?: number | null;
 
 		/**
@@ -9878,6 +10194,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date within the days requested in which all income sources identified by Plaid appear in a user's account.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date?: Date | null;
 
@@ -9885,6 +10202,7 @@ export namespace MyNS {
 		 * Total amount of earnings across all the income sources in the end user's Items for the days requested by the client.
 		 * This may return an incorrect value if the summary includes income sources in multiple currencies.
 		 * Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-bank-income-summary-total-amounts) instead.
+		 * Type: double
 		 */
 		total_amount?: number | null;
 
@@ -9908,16 +10226,26 @@ export namespace MyNS {
 		/**
 		 * The latest date in which all income sources identified by Plaid appear in the user's account.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** Number of income categories per end user. */
+		/**
+		 * Number of income categories per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_categories_count: FormControl<number | null | undefined>,
 
-		/** Number of income sources per end user. */
+		/**
+		 * Number of income sources per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_sources_count: FormControl<number | null | undefined>,
 
-		/** Number of income transactions per end user. */
+		/**
+		 * Number of income transactions per end user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		income_transactions_count: FormControl<number | null | undefined>,
 
 		/**
@@ -9929,6 +10257,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date within the days requested in which all income sources identified by Plaid appear in a user's account.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -9936,6 +10265,7 @@ export namespace MyNS {
 		 * Total amount of earnings across all the income sources in the end user's Items for the days requested by the client.
 		 * This may return an incorrect value if the summary includes income sources in multiple currencies.
 		 * Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-bank-income-summary-total-amounts) instead.
+		 * Type: double
 		 */
 		total_amount: FormControl<number | null | undefined>,
 
@@ -9968,6 +10298,7 @@ export namespace MyNS {
 		 * The end date of the period included in this monthly summary.
 		 * This date will be the last day of the month, unless the month being covered is a partial month because it is the last month included in the summary and the date range being requested does not end with the last day of the month.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date?: Date | null;
 
@@ -9981,6 +10312,7 @@ export namespace MyNS {
 		 * The start date of the period covered in this monthly summary.
 		 * This date will be the first day of the month, unless the month being covered is a partial month because it is the first month included in the summary and the date range being requested does not begin with the first day of the month.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date?: Date | null;
 
@@ -9988,6 +10320,7 @@ export namespace MyNS {
 		 * Total amount of earnings for the income source(s) of the user for the month in the summary.
 		 * This may return an incorrect value if the summary includes income sources in multiple currencies.
 		 * Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-items-bank-income-sources-historical-summary-total-amounts) instead.
+		 * Type: double
 		 */
 		total_amount?: number | null;
 
@@ -10013,6 +10346,7 @@ export namespace MyNS {
 		 * The end date of the period included in this monthly summary.
 		 * This date will be the last day of the month, unless the month being covered is a partial month because it is the last month included in the summary and the date range being requested does not end with the last day of the month.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -10026,6 +10360,7 @@ export namespace MyNS {
 		 * The start date of the period covered in this monthly summary.
 		 * This date will be the first day of the month, unless the month being covered is a partial month because it is the first month included in the summary and the date range being requested does not begin with the first day of the month.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -10033,6 +10368,7 @@ export namespace MyNS {
 		 * Total amount of earnings for the income source(s) of the user for the month in the summary.
 		 * This may return an incorrect value if the summary includes income sources in multiple currencies.
 		 * Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-items-bank-income-sources-historical-summary-total-amounts) instead.
+		 * Type: double
 		 */
 		total_amount: FormControl<number | null | undefined>,
 
@@ -10062,6 +10398,7 @@ export namespace MyNS {
 		 * The settled value of the transaction, denominated in the transactions's currency as stated in `iso_currency_code` or `unofficial_currency_code`.
 		 * Positive values when money moves out of the account; negative values when money moves in.
 		 * For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.
+		 * Type: double
 		 */
 		amount?: number | null;
 
@@ -10071,6 +10408,7 @@ export namespace MyNS {
 		/**
 		 * For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted.
 		 * Both dates are returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		date?: Date | null;
 
@@ -10106,6 +10444,7 @@ export namespace MyNS {
 		 * The settled value of the transaction, denominated in the transactions's currency as stated in `iso_currency_code` or `unofficial_currency_code`.
 		 * Positive values when money moves out of the account; negative values when money moves in.
 		 * For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -10115,6 +10454,7 @@ export namespace MyNS {
 		/**
 		 * For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted.
 		 * Both dates are returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -10215,6 +10555,7 @@ export namespace MyNS {
 		/**
 		 * Maximum of all dates within the specific income sources in the user’s bank account for days requested by the client.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date?: Date | null;
 		historical_summary?: Array<CreditBankIncomeHistoricalSummary>;
@@ -10234,13 +10575,20 @@ export namespace MyNS {
 		/**
 		 * Minimum of all dates within the specific income sources in the user's bank account for days requested by the client.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date?: Date | null;
 
-		/** Total amount of earnings in the user’s bank account for the specific income source for days requested by the client. */
+		/**
+		 * Total amount of earnings in the user’s bank account for the specific income source for days requested by the client.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
-		/** Number of transactions for the income source within the start and end date. */
+		/**
+		 * Number of transactions for the income source within the start and end date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transaction_count?: number | null;
 	}
 
@@ -10253,6 +10601,7 @@ export namespace MyNS {
 		/**
 		 * Maximum of all dates within the specific income sources in the user’s bank account for days requested by the client.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -10271,13 +10620,20 @@ export namespace MyNS {
 		/**
 		 * Minimum of all dates within the specific income sources in the user's bank account for days requested by the client.
 		 * The date will be returned in an ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
-		/** Total amount of earnings in the user’s bank account for the specific income source for days requested by the client. */
+		/**
+		 * Total amount of earnings in the user’s bank account for the specific income source for days requested by the client.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
-		/** Number of transactions for the income source within the start and end date. */
+		/**
+		 * Number of transactions for the income source within the start and end date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transaction_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCreditBankIncomeSourceFormGroup() {
@@ -10396,14 +10752,20 @@ export namespace MyNS {
 	/** An optional object for `/credit/bank_income/get` request options. */
 	export interface CreditBankIncomeGetRequestOptions {
 
-		/** How many Bank Income Reports should be fetched. Multiple reports may be available if the report has been re-created or refreshed. If more than one report is available, the most recent reports will be returned first. */
+		/**
+		 * How many Bank Income Reports should be fetched. Multiple reports may be available if the report has been re-created or refreshed. If more than one report is available, the most recent reports will be returned first.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 
 	/** An optional object for `/credit/bank_income/get` request options. */
 	export interface CreditBankIncomeGetRequestOptionsFormProperties {
 
-		/** How many Bank Income Reports should be fetched. Multiple reports may be available if the report has been re-created or refreshed. If more than one report is available, the most recent reports will be returned first. */
+		/**
+		 * How many Bank Income Reports should be fetched. Multiple reports may be available if the report has been re-created or refreshed. If more than one report is available, the most recent reports will be returned first.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCreditBankIncomeGetRequestOptionsFormGroup() {
@@ -10534,7 +10896,10 @@ export namespace MyNS {
 	/** An optional object for `/credit/bank_income/refresh` request options. */
 	export interface CreditBankIncomeRefreshRequestOptions {
 
-		/** How many days of data to include in the refresh. If not specified, this will default to the days requested in the most recently generated bank income report for the user. */
+		/**
+		 * How many days of data to include in the refresh. If not specified, this will default to the days requested in the most recently generated bank income report for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested?: number | null;
 
 		/** The URL where Plaid will send the bank income webhook. */
@@ -10544,7 +10909,10 @@ export namespace MyNS {
 	/** An optional object for `/credit/bank_income/refresh` request options. */
 	export interface CreditBankIncomeRefreshRequestOptionsFormProperties {
 
-		/** How many days of data to include in the refresh. If not specified, this will default to the days requested in the most recently generated bank income report for the user. */
+		/**
+		 * How many days of data to include in the refresh. If not specified, this will default to the days requested in the most recently generated bank income report for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested: FormControl<number | null | undefined>,
 
 		/** The URL where Plaid will send the bank income webhook. */
@@ -10625,36 +10993,42 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: number;
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Availability for this field is limited.
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: Date;
 
 		/**
 		 * The total amount owed as of the last statement issued
 		 * Required
+		 * Type: double
 		 */
 		last_statement_balance: number;
 
 		/**
 		 * The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_statement_issue_date: Date;
 
 		/**
 		 * The minimum payment due for the next billing cycle.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: number;
 
 		/**
 		 * The due date for the next payment. The due date is `null` if a payment is not expected. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: Date;
 	}
@@ -10677,36 +11051,42 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Availability for this field is limited.
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The total amount owed as of the last statement issued
 		 * Required
+		 * Type: double
 		 */
 		last_statement_balance: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_statement_issue_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The minimum payment due for the next billing cycle.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The due date for the next payment. The due date is `null` if a payment is not expected. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: FormControl<Date | null | undefined>,
 	}
@@ -10892,12 +11272,14 @@ export namespace MyNS {
 		/**
 		 * End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
 		/**
 		 * The date of the employee's most recent paystub in ISO 8601 format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_paystub_date: Date;
 
@@ -10910,6 +11292,7 @@ export namespace MyNS {
 		/**
 		 * Start of employment in ISO 8601 format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 
@@ -10949,18 +11332,21 @@ export namespace MyNS {
 		/**
 		 * End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date of the employee's most recent paystub in ISO 8601 format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_paystub_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * Start of employment in ISO 8601 format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -11061,6 +11447,7 @@ export namespace MyNS {
 		/**
 		 * The Number of days requested made to the Financial Institution. Example When looking for 3 months of data from the FI, pass in 90 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AssetDaysRequestedCount: number;
 
@@ -11113,6 +11500,7 @@ export namespace MyNS {
 		/**
 		 * The Number of days requested made to the Financial Institution. Example When looking for 3 months of data from the FI, pass in 90 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AssetDaysRequestedCount: FormControl<number | null | undefined>,
 
@@ -11173,6 +11561,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionDate: Date;
 
@@ -11191,6 +11580,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Post Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionPostDate: Date;
 
@@ -11231,6 +11621,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionDate: FormControl<Date | null | undefined>,
 
@@ -11249,6 +11640,7 @@ export namespace MyNS {
 		/**
 		 * Asset Transaction Post Date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		AssetTransactionPostDate: FormControl<Date | null | undefined>,
 
@@ -11819,6 +12211,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Assets (VOA) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: number;
 	}
@@ -11829,6 +12222,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Assets (VOA) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: FormControl<number | null | undefined>,
 	}
@@ -11979,6 +12373,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Employment (VOE) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: number;
 	}
@@ -11989,6 +12384,7 @@ export namespace MyNS {
 		/**
 		 * The Verification Of Employment (VOE) schema version.
 		 * Required
+		 * Type: double
 		 */
 		SchemaVersion: FormControl<number | null | undefined>,
 	}
@@ -12225,6 +12621,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
@@ -12250,6 +12647,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: number;
 	}
@@ -12260,6 +12658,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
@@ -12285,6 +12684,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
@@ -12306,6 +12706,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
@@ -12325,6 +12726,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date total amount of the deductions
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: number;
 	}
@@ -12335,6 +12737,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the deduction
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
@@ -12354,6 +12757,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date total amount of the deductions
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
@@ -12403,6 +12807,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the earning line item.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
@@ -12415,6 +12820,7 @@ export namespace MyNS {
 		/**
 		 * Number of hours applicable for this earning.
 		 * Required
+		 * Type: double
 		 */
 		hours: number;
 
@@ -12427,6 +12833,7 @@ export namespace MyNS {
 		/**
 		 * Hourly rate applicable for this earning.
 		 * Required
+		 * Type: double
 		 */
 		rate: number;
 
@@ -12440,6 +12847,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the deduction.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: number;
 	}
@@ -12456,6 +12864,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the earning line item.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
@@ -12468,6 +12877,7 @@ export namespace MyNS {
 		/**
 		 * Number of hours applicable for this earning.
 		 * Required
+		 * Type: double
 		 */
 		hours: FormControl<number | null | undefined>,
 
@@ -12480,6 +12890,7 @@ export namespace MyNS {
 		/**
 		 * Hourly rate applicable for this earning.
 		 * Required
+		 * Type: double
 		 */
 		rate: FormControl<number | null | undefined>,
 
@@ -12493,6 +12904,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the deduction.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
@@ -12517,12 +12929,14 @@ export namespace MyNS {
 		/**
 		 * Total amount of the earnings for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
 		/**
 		 * Total number of hours worked for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		hours: number;
 
@@ -12542,6 +12956,7 @@ export namespace MyNS {
 		/**
 		 * The total year-to-date amount of the earnings.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: number;
 	}
@@ -12552,12 +12967,14 @@ export namespace MyNS {
 		/**
 		 * Total amount of the earnings for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of hours worked for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		hours: FormControl<number | null | undefined>,
 
@@ -12577,6 +12994,7 @@ export namespace MyNS {
 		/**
 		 * The total year-to-date amount of the earnings.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
@@ -12723,6 +13141,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the net pay for the pay period.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
@@ -12748,6 +13167,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the net pay.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: number;
 	}
@@ -12758,6 +13178,7 @@ export namespace MyNS {
 		/**
 		 * Raw amount of the net pay for the pay period.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
@@ -12783,6 +13204,7 @@ export namespace MyNS {
 		/**
 		 * The year-to-date amount of the net pay.
 		 * Required
+		 * Type: double
 		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
@@ -12807,12 +13229,14 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay period ended, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
 		/**
 		 * Total earnings before tax/deductions.
 		 * Required
+		 * Type: double
 		 */
 		gross_earnings: number;
 
@@ -12825,6 +13249,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the paycheck.
 		 * Required
+		 * Type: double
 		 */
 		pay_amount: number;
 
@@ -12834,6 +13259,7 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay stub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		pay_date: Date;
 
@@ -12846,6 +13272,7 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay period started, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 
@@ -12863,12 +13290,14 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay period ended, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * Total earnings before tax/deductions.
 		 * Required
+		 * Type: double
 		 */
 		gross_earnings: FormControl<number | null | undefined>,
 
@@ -12881,6 +13310,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the paycheck.
 		 * Required
+		 * Type: double
 		 */
 		pay_amount: FormControl<number | null | undefined>,
 
@@ -12890,6 +13320,7 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay stub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		pay_date: FormControl<Date | null | undefined>,
 
@@ -12902,6 +13333,7 @@ export namespace MyNS {
 		/**
 		 * The date on which the pay period started, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -12946,6 +13378,7 @@ export namespace MyNS {
 		/**
 		 * The amount distributed to this account.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: number;
 
@@ -12993,6 +13426,7 @@ export namespace MyNS {
 		/**
 		 * The amount distributed to this account.
 		 * Required
+		 * Type: double
 		 */
 		current_amount: FormControl<number | null | undefined>,
 
@@ -13239,7 +13673,10 @@ export namespace MyNS {
 	/** An object representing the rate at which an individual is paid. */
 	export interface PayrollIncomeRateOfPay {
 
-		/** The amount at which an employee is paid. */
+		/**
+		 * The amount at which an employee is paid.
+		 * Type: double
+		 */
 		pay_amount?: number | null;
 
 		/** The rate at which an employee is paid. */
@@ -13249,7 +13686,10 @@ export namespace MyNS {
 	/** An object representing the rate at which an individual is paid. */
 	export interface PayrollIncomeRateOfPayFormProperties {
 
-		/** The amount at which an employee is paid. */
+		/**
+		 * The amount at which an employee is paid.
+		 * Type: double
+		 */
 		pay_amount: FormControl<number | null | undefined>,
 
 		/** The rate at which an employee is paid. */
@@ -14256,6 +14696,7 @@ export namespace MyNS {
 		/**
 		 * The relevant page associated with the risk signal
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page_number: number;
 
@@ -14302,6 +14743,7 @@ export namespace MyNS {
 		/**
 		 * The relevant page associated with the risk signal
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page_number: FormControl<number | null | undefined>,
 
@@ -14396,6 +14838,7 @@ export namespace MyNS {
 		/**
 		 * A number between 0 and 100, inclusive, where a score closer to 0 indicates a document is likely to be trustworthy and a score closer to 100 indicates a document is likely to be fraudulent
 		 * Required
+		 * Type: double
 		 */
 		risk_score: number;
 	}
@@ -14406,6 +14849,7 @@ export namespace MyNS {
 		/**
 		 * A number between 0 and 100, inclusive, where a score closer to 0 indicates a document is likely to be trustworthy and a score closer to 100 indicates a document is likely to be fraudulent
 		 * Required
+		 * Type: double
 		 */
 		risk_score: FormControl<number | null | undefined>,
 	}
@@ -14955,12 +15399,14 @@ export namespace MyNS {
 		/**
 		 * The number of paystubs uploaded by the user.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_paystubs_uploaded: number;
 
 		/**
 		 * The number of w2s uploaded by the user.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_w2s_uploaded: number;
 	}
@@ -14971,12 +15417,14 @@ export namespace MyNS {
 		/**
 		 * The number of paystubs uploaded by the user.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_paystubs_uploaded: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of w2s uploaded by the user.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_w2s_uploaded: FormControl<number | null | undefined>,
 	}
@@ -15033,10 +15481,16 @@ export namespace MyNS {
 		/** The Institution Name associated with the Item. */
 		institution_name?: string | null;
 
-		/** The number of paystubs retrieved from a payroll provider. */
+		/**
+		 * The number of paystubs retrieved from a payroll provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_paystubs_retrieved?: number | null;
 
-		/** The number of w2s retrieved from a payroll provider. */
+		/**
+		 * The number of w2s retrieved from a payroll provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_w2s_retrieved?: number | null;
 	}
 
@@ -15049,10 +15503,16 @@ export namespace MyNS {
 		/** The Institution Name associated with the Item. */
 		institution_name: FormControl<string | null | undefined>,
 
-		/** The number of paystubs retrieved from a payroll provider. */
+		/**
+		 * The number of paystubs retrieved from a payroll provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_paystubs_retrieved: FormControl<number | null | undefined>,
 
-		/** The number of w2s retrieved from a payroll provider. */
+		/**
+		 * The number of w2s retrieved from a payroll provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_w2s_retrieved: FormControl<number | null | undefined>,
 	}
 	export function CreateCreditSessionPayrollIncomeResultFormGroup() {
@@ -15490,12 +15950,14 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		beginning: Date;
 
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		ending: Date;
 	}
@@ -15506,12 +15968,14 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		beginning: FormControl<Date | null | undefined>,
 
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		ending: FormControl<Date | null | undefined>,
 	}
@@ -15552,7 +16016,10 @@ export namespace MyNS {
 	/** An object representing the deduction line items for the pay period */
 	export interface DeductionsBreakdown {
 
-		/** Raw amount of the deduction */
+		/**
+		 * Raw amount of the deduction
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** Description of the deduction line item */
@@ -15567,14 +16034,20 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code?: string | null;
 
-		/** The year-to-date amount of the deduction */
+		/**
+		 * The year-to-date amount of the deduction
+		 * Type: double
+		 */
 		ytd_amount?: number | null;
 	}
 
 	/** An object representing the deduction line items for the pay period */
 	export interface DeductionsBreakdownFormProperties {
 
-		/** Raw amount of the deduction */
+		/**
+		 * Raw amount of the deduction
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/** Description of the deduction line item */
@@ -15589,7 +16062,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code: FormControl<string | null | undefined>,
 
-		/** The year-to-date amount of the deduction */
+		/**
+		 * The year-to-date amount of the deduction
+		 * Type: double
+		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateDeductionsBreakdownFormGroup() {
@@ -15643,7 +16119,10 @@ export namespace MyNS {
 	/** An object representing a monetary amount. */
 	export interface Pay {
 
-		/** A numerical amount of a specific currency. */
+		/**
+		 * A numerical amount of a specific currency.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Currency code, e.g. USD */
@@ -15653,7 +16132,10 @@ export namespace MyNS {
 	/** An object representing a monetary amount. */
 	export interface PayFormProperties {
 
-		/** A numerical amount of a specific currency. */
+		/**
+		 * A numerical amount of a specific currency.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Currency code, e.g. USD */
@@ -15671,7 +16153,10 @@ export namespace MyNS {
 	/** An object representing the total deductions for the pay period */
 	export interface DeductionsTotal {
 
-		/** Raw amount of the deduction */
+		/**
+		 * Raw amount of the deduction
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
@@ -15683,14 +16168,20 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code?: string | null;
 
-		/** The year-to-date total amount of the deductions */
+		/**
+		 * The year-to-date total amount of the deductions
+		 * Type: double
+		 */
 		ytd_amount?: number | null;
 	}
 
 	/** An object representing the total deductions for the pay period */
 	export interface DeductionsTotalFormProperties {
 
-		/** Raw amount of the deduction */
+		/**
+		 * Raw amount of the deduction
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
@@ -15702,7 +16193,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code: FormControl<string | null | undefined>,
 
-		/** The year-to-date total amount of the deductions */
+		/**
+		 * The year-to-date total amount of the deductions
+		 * Type: double
+		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateDeductionsTotalFormGroup() {
@@ -15740,6 +16234,7 @@ export namespace MyNS {
 		/**
 		 * The number of new transactions detected since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: number;
 
@@ -15777,6 +16272,7 @@ export namespace MyNS {
 		/**
 		 * The number of new transactions detected since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: FormControl<number | null | undefined>,
 
@@ -16312,18 +16808,21 @@ export namespace MyNS {
 		/**
 		 * The dollar amount of direct deposit allocated to the target account. Always `null` if the target account is not allocated an amount or if the deposit switch has not been completed.
 		 * Required
+		 * Type: double
 		 */
 		amount_allocated: number;
 
 		/**
 		 * [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date the deposit switch was completed. Always `null` if the deposit switch has not been completed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_completed: Date;
 
 		/**
 		 * [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date the deposit switch was created.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_created: Date;
 
@@ -16354,6 +16853,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of direct deposit allocated to the target account. Always `null` if the target account is not allocated a percentage or if the deposit switch has not been completed or if `is_allocated_remainder` is true.
 		 * Required
+		 * Type: double
 		 */
 		percent_allocated: number;
 
@@ -16406,18 +16906,21 @@ export namespace MyNS {
 		/**
 		 * The dollar amount of direct deposit allocated to the target account. Always `null` if the target account is not allocated an amount or if the deposit switch has not been completed.
 		 * Required
+		 * Type: double
 		 */
 		amount_allocated: FormControl<number | null | undefined>,
 
 		/**
 		 * [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date the deposit switch was completed. Always `null` if the deposit switch has not been completed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_completed: FormControl<Date | null | undefined>,
 
 		/**
 		 * [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date the deposit switch was created.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_created: FormControl<Date | null | undefined>,
 
@@ -16448,6 +16951,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of direct deposit allocated to the target account. Always `null` if the target account is not allocated a percentage or if the deposit switch has not been completed or if `is_allocated_remainder` is true.
 		 * Required
+		 * Type: double
 		 */
 		percent_allocated: FormControl<number | null | undefined>,
 
@@ -16860,7 +17364,10 @@ export namespace MyNS {
 		/** The name of the bank that the payment is being deposited to. */
 		bank_name?: string | null;
 
-		/** The amount distributed to this account. */
+		/**
+		 * The amount distributed to this account.
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** An object representing a monetary amount. */
@@ -16891,7 +17398,10 @@ export namespace MyNS {
 		/** The name of the bank that the payment is being deposited to. */
 		bank_name: FormControl<string | null | undefined>,
 
-		/** The amount distributed to this account. */
+		/**
+		 * The amount distributed to this account.
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/** The ISO-4217 currency code of the net pay. Always `null` if `unofficial_currency_code` is non-null. */
@@ -17227,6 +17737,7 @@ export namespace MyNS {
 		/**
 		 * The `attempt` field begins with 1 and increments with each subsequent document upload.
 		 * Required
+		 * Type: double
 		 */
 		attempt: number;
 
@@ -17261,6 +17772,7 @@ export namespace MyNS {
 		/**
 		 * The `attempt` field begins with 1 and increments with each subsequent document upload.
 		 * Required
+		 * Type: double
 		 */
 		attempt: FormControl<number | null | undefined>,
 
@@ -17304,6 +17816,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -17345,6 +17858,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -17486,19 +18000,28 @@ export namespace MyNS {
 		/** Commonly used term to describe the earning line item. */
 		canonical_description?: EarningsBreakdownCanonical_description | null;
 
-		/** Raw amount of the earning line item. */
+		/**
+		 * Raw amount of the earning line item.
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** Description of the earning line item. */
 		description?: string | null;
 
-		/** Number of hours applicable for this earning. */
+		/**
+		 * Number of hours applicable for this earning.
+		 * Type: double
+		 */
 		hours?: number | null;
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
 		iso_currency_code?: string | null;
 
-		/** Hourly rate applicable for this earning. */
+		/**
+		 * Hourly rate applicable for this earning.
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/**
@@ -17507,7 +18030,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code?: string | null;
 
-		/** The year-to-date amount of the deduction. */
+		/**
+		 * The year-to-date amount of the deduction.
+		 * Type: double
+		 */
 		ytd_amount?: number | null;
 	}
 
@@ -17517,19 +18043,28 @@ export namespace MyNS {
 		/** Commonly used term to describe the earning line item. */
 		canonical_description: FormControl<EarningsBreakdownCanonical_description | null | undefined>,
 
-		/** Raw amount of the earning line item. */
+		/**
+		 * Raw amount of the earning line item.
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/** Description of the earning line item. */
 		description: FormControl<string | null | undefined>,
 
-		/** Number of hours applicable for this earning. */
+		/**
+		 * Number of hours applicable for this earning.
+		 * Type: double
+		 */
 		hours: FormControl<number | null | undefined>,
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
 		iso_currency_code: FormControl<string | null | undefined>,
 
-		/** Hourly rate applicable for this earning. */
+		/**
+		 * Hourly rate applicable for this earning.
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/**
@@ -17538,7 +18073,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code: FormControl<string | null | undefined>,
 
-		/** The year-to-date amount of the deduction. */
+		/**
+		 * The year-to-date amount of the deduction.
+		 * Type: double
+		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateEarningsBreakdownFormGroup() {
@@ -17561,13 +18099,19 @@ export namespace MyNS {
 	/** An object representing both the current pay period and year to date amount for an earning category. */
 	export interface EarningsTotal {
 
-		/** Total amount of the earnings for this pay period */
+		/**
+		 * Total amount of the earnings for this pay period
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** An object representing a monetary amount. */
 		current_pay?: Pay;
 
-		/** Total number of hours worked for this pay period */
+		/**
+		 * Total number of hours worked for this pay period
+		 * Type: double
+		 */
 		hours?: number | null;
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
@@ -17579,7 +18123,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code?: string | null;
 
-		/** The total year-to-date amount of the earnings */
+		/**
+		 * The total year-to-date amount of the earnings
+		 * Type: double
+		 */
 		ytd_amount?: number | null;
 
 		/** An object representing a monetary amount. */
@@ -17589,10 +18136,16 @@ export namespace MyNS {
 	/** An object representing both the current pay period and year to date amount for an earning category. */
 	export interface EarningsTotalFormProperties {
 
-		/** Total amount of the earnings for this pay period */
+		/**
+		 * Total amount of the earnings for this pay period
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
-		/** Total number of hours worked for this pay period */
+		/**
+		 * Total number of hours worked for this pay period
+		 * Type: double
+		 */
 		hours: FormControl<number | null | undefined>,
 
 		/** The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null. */
@@ -17604,7 +18157,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code: FormControl<string | null | undefined>,
 
-		/** The total year-to-date amount of the earnings */
+		/**
+		 * The total year-to-date amount of the earnings
+		 * Type: double
+		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateEarningsTotalFormGroup() {
@@ -17759,8 +18315,8 @@ export namespace MyNS {
 
 		/**
 		 * Last 4 digits of unique number of ID.
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		last_4_digits?: string | null;
 	}
@@ -17776,8 +18332,8 @@ export namespace MyNS {
 
 		/**
 		 * Last 4 digits of unique number of ID.
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		last_4_digits: FormControl<string | null | undefined>,
 	}
@@ -17819,6 +18375,7 @@ export namespace MyNS {
 		/**
 		 * A number from 0 to 1 indicating Plaid's level of confidence in the pairing between the employer and the institution (not yet implemented).
 		 * Required
+		 * Type: double
 		 */
 		confidence_score: number;
 
@@ -17841,6 +18398,7 @@ export namespace MyNS {
 		/**
 		 * A number from 0 to 1 indicating Plaid's level of confidence in the pairing between the employer and the institution (not yet implemented).
 		 * Required
+		 * Type: double
 		 */
 		confidence_score: FormControl<number | null | undefined>,
 
@@ -17989,14 +18547,20 @@ export namespace MyNS {
 		/** An object representing a monetary amount. */
 		annual_salary?: Pay;
 
-		/** Date on which the employee was hired, in the YYYY-MM-DD format. */
+		/**
+		 * Date on which the employee was hired, in the YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		hire_date?: Date | null;
 	}
 
 	/** An object representing employment details found on a paystub. */
 	export interface EmploymentDetailsFormProperties {
 
-		/** Date on which the employee was hired, in the YYYY-MM-DD format. */
+		/**
+		 * Date on which the employee was hired, in the YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		hire_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateEmploymentDetailsFormGroup() {
@@ -18017,13 +18581,19 @@ export namespace MyNS {
 		/** An object containing employer data. */
 		employer?: EmployerVerification;
 
-		/** End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD). */
+		/**
+		 * End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD).
+		 * Type: DateOnly
+		 */
 		end_date?: Date | null;
 
 		/** An object containing a set of ids related to an employee */
 		platform_ids?: PlatformIds;
 
-		/** Start of employment in ISO 8601 format (YYYY-MM-DD). */
+		/**
+		 * Start of employment in ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
+		 */
 		start_date?: Date | null;
 
 		/** Current employment status. */
@@ -18036,10 +18606,16 @@ export namespace MyNS {
 	/** An object containing proof of employment data for an individual */
 	export interface EmploymentVerificationFormProperties {
 
-		/** End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD). */
+		/**
+		 * End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD).
+		 * Type: DateOnly
+		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** Start of employment in ISO 8601 format (YYYY-MM-DD). */
+		/**
+		 * Start of employment in ISO 8601 format (YYYY-MM-DD).
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 
 		/** Current employment status. */
@@ -18290,6 +18866,7 @@ export namespace MyNS {
 		/**
 		 * The version of the entity screening's `search_terms` that were compared when the entity screening hit was added. entity screening hits are immutable once they have been reviewed. If changes are detected due to updates to the entity screening's `search_terms`, the associated entity program, or the list's source data prior to review, the entity screening hit will be updated to reflect those changes.
 		 * Required
+		 * Type: double
 		 */
 		search_terms_version: number;
 
@@ -18360,6 +18937,7 @@ export namespace MyNS {
 		/**
 		 * The version of the entity screening's `search_terms` that were compared when the entity screening hit was added. entity screening hits are immutable once they have been reviewed. If changes are detected due to updates to the entity screening's `search_terms`, the associated entity program, or the list's source data prior to review, the entity screening hit will be updated to reflect those changes.
 		 * Required
+		 * Type: double
 		 */
 		search_terms_version: FormControl<number | null | undefined>,
 
@@ -19143,6 +19721,7 @@ export namespace MyNS {
 		/**
 		 * The current version of the search terms. Starts at `1` and increments with each edit to `search_terms`.
 		 * Required
+		 * Type: double
 		 */
 		version: number;
 	}
@@ -19198,6 +19777,7 @@ export namespace MyNS {
 		/**
 		 * The current version of the search terms. Starts at `1` and increments with each edit to `search_terms`.
 		 * Required
+		 * Type: double
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -19516,8 +20096,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to set up payment consent using only the specified bank account if provided.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban?: string | null;
 
@@ -19530,8 +20110,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to set up payment consent using only the specified bank account if provided.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: FormControl<string | null | undefined>,
 
@@ -19555,8 +20135,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to send payments only from the specified bank account if provided.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban?: string | null;
 
@@ -19578,8 +20158,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to send payments only from the specified bank account if provided.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: FormControl<string | null | undefined>,
 
@@ -19656,12 +20236,16 @@ export namespace MyNS {
 	/** The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once. */
 	export interface ExternalPaymentScheduleBase {
 
-		/** The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, this field will be `null`. */
+		/**
+		 * The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, this field will be `null`.
+		 * Type: DateOnly
+		 */
 		adjusted_start_date?: Date | null;
 
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will end on the last `interval_execution_day` on or before the `end_date`.
 		 * If the only `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		end_date?: Date | null;
 
@@ -19675,12 +20259,14 @@ export namespace MyNS {
 		 * The day of the interval on which to schedule the payment.
 		 * If the payment interval is weekly, `interval_execution_day` should be an integer from 1 (Monday) to 7 (Sunday).
 		 * If the payment interval is monthly, `interval_execution_day` should be an integer indicating which day of the month to make the payment on. Integers from 1 to 28 can be used to make a payment on that day of the month. Negative integers from -1 to -5 can be used to make a payment relative to the end of the month. To make a payment on the last day of the month, use -1; to make the payment on the second-to-last day, use -2, and so on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_execution_day?: number | null;
 
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will begin on the first `interval_execution_day` on or after the `start_date`.
 		 * If the first `interval_execution_day` on or after the start date is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		start_date?: Date | null;
 	}
@@ -19688,12 +20274,16 @@ export namespace MyNS {
 	/** The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once. */
 	export interface ExternalPaymentScheduleBaseFormProperties {
 
-		/** The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, this field will be `null`. */
+		/**
+		 * The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, this field will be `null`.
+		 * Type: DateOnly
+		 */
 		adjusted_start_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will end on the last `interval_execution_day` on or before the `end_date`.
 		 * If the only `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -19707,12 +20297,14 @@ export namespace MyNS {
 		 * The day of the interval on which to schedule the payment.
 		 * If the payment interval is weekly, `interval_execution_day` should be an integer from 1 (Monday) to 7 (Sunday).
 		 * If the payment interval is monthly, `interval_execution_day` should be an integer indicating which day of the month to make the payment on. Integers from 1 to 28 can be used to make a payment on that day of the month. Negative integers from -1 to -5 can be used to make a payment relative to the end of the month. To make a payment on the last day of the month, use -1; to make the payment on the second-to-last day, use -2, and so on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_execution_day: FormControl<number | null | undefined>,
 
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will begin on the first `interval_execution_day` on or after the `start_date`.
 		 * If the first `interval_execution_day` on or after the start date is also the same day that `/payment_initiation/payment/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
@@ -20354,6 +20946,7 @@ export namespace MyNS {
 		/**
 		 * The number of new, unfetched transactions available
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: number;
 
@@ -20391,6 +20984,7 @@ export namespace MyNS {
 		/**
 		 * The number of new, unfetched transactions available
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: FormControl<number | null | undefined>,
 
@@ -20430,16 +21024,21 @@ export namespace MyNS {
 		/**
 		 * The original total value of the holding. This field is calculated by Plaid as the sum of the purchase price of all of the shares in the holding.
 		 * Required
+		 * Type: double
 		 */
 		cost_basis: number;
 
 		/**
 		 * The last price given by the institution for this security.
 		 * Required
+		 * Type: double
 		 */
 		institution_price: number;
 
-		/** The date at which `institution_price` was current. */
+		/**
+		 * The date at which `institution_price` was current.
+		 * Type: DateOnly
+		 */
 		institution_price_as_of?: Date | null;
 
 		/**
@@ -20451,6 +21050,7 @@ export namespace MyNS {
 		/**
 		 * The value of the holding, as reported by the institution.
 		 * Required
+		 * Type: double
 		 */
 		institution_value: number;
 
@@ -20463,6 +21063,7 @@ export namespace MyNS {
 		/**
 		 * The total quantity of the asset held, as reported by the financial institution. If the security is an option, `quantity` will reflect the total number of options (typically the number of contracts multiplied by 100), not the number of contracts.
 		 * Required
+		 * Type: double
 		 */
 		quantity: number;
 
@@ -20492,16 +21093,21 @@ export namespace MyNS {
 		/**
 		 * The original total value of the holding. This field is calculated by Plaid as the sum of the purchase price of all of the shares in the holding.
 		 * Required
+		 * Type: double
 		 */
 		cost_basis: FormControl<number | null | undefined>,
 
 		/**
 		 * The last price given by the institution for this security.
 		 * Required
+		 * Type: double
 		 */
 		institution_price: FormControl<number | null | undefined>,
 
-		/** The date at which `institution_price` was current. */
+		/**
+		 * The date at which `institution_price` was current.
+		 * Type: DateOnly
+		 */
 		institution_price_as_of: FormControl<Date | null | undefined>,
 
 		/**
@@ -20513,6 +21119,7 @@ export namespace MyNS {
 		/**
 		 * The value of the holding, as reported by the institution.
 		 * Required
+		 * Type: double
 		 */
 		institution_value: FormControl<number | null | undefined>,
 
@@ -20525,6 +21132,7 @@ export namespace MyNS {
 		/**
 		 * The total quantity of the asset held, as reported by the financial institution. If the security is an option, `quantity` will reflect the total number of options (typically the number of contracts multiplied by 100), not the number of contracts.
 		 * Required
+		 * Type: double
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -20579,12 +21187,14 @@ export namespace MyNS {
 		/**
 		 * The number of new holdings reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_holdings: number;
 
 		/**
 		 * The number of updated holdings reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		updated_holdings: number;
 
@@ -20619,12 +21229,14 @@ export namespace MyNS {
 		/**
 		 * The number of new holdings reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_holdings: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of updated holdings reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		updated_holdings: FormControl<number | null | undefined>,
 
@@ -20656,7 +21268,10 @@ export namespace MyNS {
 	/** Specify the holdings on the account. */
 	export interface HoldingsOverride {
 
-		/** The average original value of the holding. Multiple cost basis values for the same security purchased at different prices are not supported. */
+		/**
+		 * The average original value of the holding. Multiple cost basis values for the same security purchased at different prices are not supported.
+		 * Type: double
+		 */
 		cost_basis?: number | null;
 
 		/**
@@ -20668,15 +21283,20 @@ export namespace MyNS {
 		/**
 		 * The last price given by the institution for this security
 		 * Required
+		 * Type: double
 		 */
 		institution_price: number;
 
-		/** The date at which `institution_price` was current. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date. */
+		/**
+		 * The date at which `institution_price` was current. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date.
+		 * Type: DateOnly
+		 */
 		institution_price_as_of?: Date | null;
 
 		/**
 		 * The total quantity of the asset held, as reported by the financial institution.
 		 * Required
+		 * Type: double
 		 */
 		quantity: number;
 
@@ -20690,7 +21310,10 @@ export namespace MyNS {
 	/** Specify the holdings on the account. */
 	export interface HoldingsOverrideFormProperties {
 
-		/** The average original value of the holding. Multiple cost basis values for the same security purchased at different prices are not supported. */
+		/**
+		 * The average original value of the holding. Multiple cost basis values for the same security purchased at different prices are not supported.
+		 * Type: double
+		 */
 		cost_basis: FormControl<number | null | undefined>,
 
 		/**
@@ -20702,15 +21325,20 @@ export namespace MyNS {
 		/**
 		 * The last price given by the institution for this security
 		 * Required
+		 * Type: double
 		 */
 		institution_price: FormControl<number | null | undefined>,
 
-		/** The date at which `institution_price` was current. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date. */
+		/**
+		 * The date at which `institution_price` was current. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date.
+		 * Type: DateOnly
+		 */
 		institution_price_as_of: FormControl<Date | null | undefined>,
 
 		/**
 		 * The total quantity of the asset held, as reported by the financial institution.
 		 * Required
+		 * Type: double
 		 */
 		quantity: FormControl<number | null | undefined>,
 	}
@@ -21727,6 +22355,7 @@ export namespace MyNS {
 		/**
 		 * Count of spam lists the IP address is associated with if known.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ip_spam_list_count: number;
 
@@ -21754,6 +22383,7 @@ export namespace MyNS {
 		/**
 		 * Count of spam lists the IP address is associated with if known.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ip_spam_list_count: FormControl<number | null | undefined>,
 
@@ -21781,6 +22411,7 @@ export namespace MyNS {
 		/**
 		 * Count of all known breaches of this email address if known.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		breach_count: number;
 
@@ -21805,12 +22436,14 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		domain_registered_at: Date;
 
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		first_breached_at: Date;
 
@@ -21823,6 +22456,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_breached_at: Date;
 
@@ -21842,6 +22476,7 @@ export namespace MyNS {
 		/**
 		 * Count of all known breaches of this email address if known.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		breach_count: FormControl<number | null | undefined>,
 
@@ -21866,12 +22501,14 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		domain_registered_at: FormControl<Date | null | undefined>,
 
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		first_breached_at: FormControl<Date | null | undefined>,
 
@@ -21884,6 +22521,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_breached_at: FormControl<Date | null | undefined>,
 
@@ -22077,6 +22715,7 @@ export namespace MyNS {
 		/**
 		 * Version of the associated Identity Verification template.
 		 * Required
+		 * Type: double
 		 */
 		version: number;
 	}
@@ -22093,6 +22732,7 @@ export namespace MyNS {
 		/**
 		 * Version of the associated Identity Verification template.
 		 * Required
+		 * Type: double
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -22119,6 +22759,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -22156,6 +22797,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -22488,7 +23130,10 @@ export namespace MyNS {
 		 */
 		client_user_id: string;
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth?: Date | null;
 
 		/** A valid email address. */
@@ -22525,7 +23170,10 @@ export namespace MyNS {
 		 */
 		client_user_id: FormControl<string | null | undefined>,
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/** A valid email address. */
@@ -23826,18 +24474,21 @@ export namespace MyNS {
 		/**
 		 * The number of hours logged for this income for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		hours: number;
 
 		/**
 		 * The hourly rate at which the income is paid.
 		 * Required
+		 * Type: double
 		 */
 		rate: number;
 
 		/**
 		 * The total pay for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -23857,18 +24508,21 @@ export namespace MyNS {
 		/**
 		 * The number of hours logged for this income for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		hours: FormControl<number | null | undefined>,
 
 		/**
 		 * The hourly rate at which the income is paid.
 		 * Required
+		 * Type: double
 		 */
 		rate: FormControl<number | null | undefined>,
 
 		/**
 		 * The total pay for this pay period.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -24044,51 +24698,87 @@ export namespace MyNS {
 	/** Details about the pay period. */
 	export interface PayPeriodDetails {
 
-		/** The amount of the paycheck. */
+		/**
+		 * The amount of the paycheck.
+		 * Type: double
+		 */
 		check_amount?: number | null;
 		distribution_breakdown?: Array<DistributionBreakdown>;
 
-		/** The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd". */
+		/**
+		 * The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd".
+		 * Type: DateOnly
+		 */
 		end_date?: Date | null;
 
-		/** Total earnings before tax/deductions. */
+		/**
+		 * Total earnings before tax/deductions.
+		 * Type: double
+		 */
 		gross_earnings?: number | null;
 
-		/** The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd"). */
+		/**
+		 * The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
+		 * Type: DateOnly
+		 */
 		pay_date?: Date | null;
 
-		/** The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd"). */
+		/**
+		 * The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
+		 * Type: DateOnly
+		 */
 		pay_day?: Date | null;
 
 		/** The frequency at which an individual is paid. */
 		pay_frequency?: PayPeriodDetailsPay_frequency | null;
 
-		/** The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd". */
+		/**
+		 * The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd".
+		 * Type: DateOnly
+		 */
 		start_date?: Date | null;
 	}
 
 	/** Details about the pay period. */
 	export interface PayPeriodDetailsFormProperties {
 
-		/** The amount of the paycheck. */
+		/**
+		 * The amount of the paycheck.
+		 * Type: double
+		 */
 		check_amount: FormControl<number | null | undefined>,
 
-		/** The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd". */
+		/**
+		 * The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd".
+		 * Type: DateOnly
+		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** Total earnings before tax/deductions. */
+		/**
+		 * Total earnings before tax/deductions.
+		 * Type: double
+		 */
 		gross_earnings: FormControl<number | null | undefined>,
 
-		/** The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd"). */
+		/**
+		 * The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
+		 * Type: DateOnly
+		 */
 		pay_date: FormControl<Date | null | undefined>,
 
-		/** The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd"). */
+		/**
+		 * The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
+		 * Type: DateOnly
+		 */
 		pay_day: FormControl<Date | null | undefined>,
 
 		/** The frequency at which an individual is paid. */
 		pay_frequency: FormControl<PayPeriodDetailsPay_frequency | null | undefined>,
 
-		/** The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd". */
+		/**
+		 * The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: "yyyy-mm-dd".
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
 	export function CreatePayPeriodDetailsFormGroup() {
@@ -24229,12 +24919,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the transaction.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
 		/**
 		 * The date of the transaction, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -24263,12 +24955,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the transaction.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the transaction, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ("yyyy-mm-dd").
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -24302,6 +24996,7 @@ export namespace MyNS {
 		/**
 		 * The value of the field.
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 
@@ -24323,6 +25018,7 @@ export namespace MyNS {
 		/**
 		 * The value of the field.
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 
@@ -24741,7 +25437,10 @@ export namespace MyNS {
 	/** An object representing information about the net pay amount on the paystub. */
 	export interface NetPay {
 
-		/** Raw amount of the net pay for the pay period */
+		/**
+		 * Raw amount of the net pay for the pay period
+		 * Type: double
+		 */
 		current_amount?: number | null;
 
 		/** Description of the net pay */
@@ -24759,14 +25458,20 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code?: string | null;
 
-		/** The year-to-date amount of the net pay */
+		/**
+		 * The year-to-date amount of the net pay
+		 * Type: double
+		 */
 		ytd_amount?: number | null;
 	}
 
 	/** An object representing information about the net pay amount on the paystub. */
 	export interface NetPayFormProperties {
 
-		/** Raw amount of the net pay for the pay period */
+		/**
+		 * Raw amount of the net pay for the pay period
+		 * Type: double
+		 */
 		current_amount: FormControl<number | null | undefined>,
 
 		/** Description of the net pay */
@@ -24781,7 +25486,10 @@ export namespace MyNS {
 		 */
 		unofficial_currency_code: FormControl<string | null | undefined>,
 
-		/** The year-to-date amount of the net pay */
+		/**
+		 * The year-to-date amount of the net pay
+		 * Type: double
+		 */
 		ytd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateNetPayFormGroup() {
@@ -24799,16 +25507,25 @@ export namespace MyNS {
 	/** An object representing details that can be found on the paystub. */
 	export interface PaystubDetails {
 
-		/** Pay date on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Pay date on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_date?: Date | null;
 
 		/** The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`. */
 		pay_frequency?: PaystubDetailsPay_frequency | null;
 
-		/** Ending date of the pay period on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Ending date of the pay period on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_period_end_date?: Date | null;
 
-		/** Beginning date of the pay period on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Beginning date of the pay period on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_period_start_date?: Date | null;
 
 		/** The name of the payroll provider that generated the paystub, e.g. ADP */
@@ -24818,16 +25535,25 @@ export namespace MyNS {
 	/** An object representing details that can be found on the paystub. */
 	export interface PaystubDetailsFormProperties {
 
-		/** Pay date on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Pay date on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_date: FormControl<Date | null | undefined>,
 
 		/** The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`. */
 		pay_frequency: FormControl<PaystubDetailsPay_frequency | null | undefined>,
 
-		/** Ending date of the pay period on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Ending date of the pay period on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_period_end_date: FormControl<Date | null | undefined>,
 
-		/** Beginning date of the pay period on the paystub in the 'YYYY-MM-DD' format. */
+		/**
+		 * Beginning date of the pay period on the paystub in the 'YYYY-MM-DD' format.
+		 * Type: DateOnly
+		 */
 		pay_period_start_date: FormControl<Date | null | undefined>,
 
 		/** The name of the payroll provider that generated the paystub, e.g. ADP */
@@ -24850,20 +25576,32 @@ export namespace MyNS {
 	/** The amount of income earned year to date, as based on paystub data. */
 	export interface PaystubYTDDetails {
 
-		/** Year-to-date gross earnings. */
+		/**
+		 * Year-to-date gross earnings.
+		 * Type: double
+		 */
 		gross_earnings?: number | null;
 
-		/** Year-to-date net (take home) earnings. */
+		/**
+		 * Year-to-date net (take home) earnings.
+		 * Type: double
+		 */
 		net_earnings?: number | null;
 	}
 
 	/** The amount of income earned year to date, as based on paystub data. */
 	export interface PaystubYTDDetailsFormProperties {
 
-		/** Year-to-date gross earnings. */
+		/**
+		 * Year-to-date gross earnings.
+		 * Type: double
+		 */
 		gross_earnings: FormControl<number | null | undefined>,
 
-		/** Year-to-date net (take home) earnings. */
+		/**
+		 * Year-to-date net (take home) earnings.
+		 * Type: double
+		 */
 		net_earnings: FormControl<number | null | undefined>,
 	}
 	export function CreatePaystubYTDDetailsFormGroup() {
@@ -25694,12 +26432,14 @@ export namespace MyNS {
 		/**
 		 * Amount of income per month. This value is required if `type` is `monthly-income`.
 		 * Required
+		 * Type: double
 		 */
 		income_amount: number;
 
 		/**
 		 * Number between 1 and 28, or `last` meaning the last day of the month. The day of the month on which the income transaction will appear. The name of the income transaction. This field is required if `type` is `monthly-income`, `monthly-balance-payment` or `monthly-interest-only-payment`.
 		 * Required
+		 * Type: double
 		 */
 		payment_day_of_month: number;
 
@@ -25732,12 +26472,14 @@ export namespace MyNS {
 		/**
 		 * Amount of income per month. This value is required if `type` is `monthly-income`.
 		 * Required
+		 * Type: double
 		 */
 		income_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Number between 1 and 28, or `last` meaning the last day of the month. The day of the month on which the income transaction will appear. The name of the income transaction. This field is required if `type` is `monthly-income`, `monthly-balance-payment` or `monthly-interest-only-payment`.
 		 * Required
+		 * Type: double
 		 */
 		payment_day_of_month: FormControl<number | null | undefined>,
 
@@ -25799,6 +26541,7 @@ export namespace MyNS {
 		/**
 		 * The number of new, unfetched transactions available.
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: number;
 
@@ -25839,6 +26582,7 @@ export namespace MyNS {
 		/**
 		 * The number of new, unfetched transactions available.
 		 * Required
+		 * Type: double
 		 */
 		new_transactions: FormControl<number | null | undefined>,
 
@@ -26215,12 +26959,14 @@ export namespace MyNS {
 		/**
 		 * The percentage of logins that are failing due to an issue in the institution's system, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		error_institution: number;
 
 		/**
 		 * The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		error_plaid: number;
 
@@ -26230,6 +26976,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of login attempts that are successful, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		success: number;
 	}
@@ -26240,12 +26987,14 @@ export namespace MyNS {
 		/**
 		 * The percentage of logins that are failing due to an issue in the institution's system, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		error_institution: FormControl<number | null | undefined>,
 
 		/**
 		 * The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		error_plaid: FormControl<number | null | undefined>,
 
@@ -26255,6 +27004,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of login attempts that are successful, expressed as a decimal.
 		 * Required
+		 * Type: double
 		 */
 		success: FormControl<number | null | undefined>,
 	}
@@ -26593,6 +27343,7 @@ export namespace MyNS {
 		/**
 		 * The total number of institutions available via this endpoint
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -26609,6 +27360,7 @@ export namespace MyNS {
 		/**
 		 * The total number of institutions available via this endpoint
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -27484,6 +28236,7 @@ export namespace MyNS {
 		/**
 		 * The complete value of the transaction. Positive values when cash is debited, e.g. purchases of stock; negative values when cash is credited, e.g. sales of stock. Treatment remains the same for cash-only movements unassociated with securities.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -27493,12 +28246,14 @@ export namespace MyNS {
 		/**
 		 * The [ISO 8601](https://wikipedia.org/wiki/ISO_8601) posting date for the transaction.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
 		/**
 		 * The combined value of all fees applied to this transaction
 		 * Required
+		 * Type: double
 		 */
 		fees: number;
 
@@ -27523,12 +28278,14 @@ export namespace MyNS {
 		/**
 		 * The price of the security at which this transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
 		/**
 		 * The number of units of the security involved in this transaction. Positive for buy transactions; negative for sell transactions.
 		 * Required
+		 * Type: double
 		 */
 		quantity: number;
 
@@ -27577,6 +28334,7 @@ export namespace MyNS {
 		/**
 		 * The complete value of the transaction. Positive values when cash is debited, e.g. purchases of stock; negative values when cash is credited, e.g. sales of stock. Treatment remains the same for cash-only movements unassociated with securities.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27586,12 +28344,14 @@ export namespace MyNS {
 		/**
 		 * The [ISO 8601](https://wikipedia.org/wiki/ISO_8601) posting date for the transaction.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The combined value of all fees applied to this transaction
 		 * Required
+		 * Type: double
 		 */
 		fees: FormControl<number | null | undefined>,
 
@@ -27616,12 +28376,14 @@ export namespace MyNS {
 		/**
 		 * The price of the security at which this transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of units of the security involved in this transaction. Positive for buy transactions; negative for sell transactions.
 		 * Required
+		 * Type: double
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -27688,6 +28450,7 @@ export namespace MyNS {
 		/**
 		 * The number of canceled transactions reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		canceled_investments_transactions: number;
 
@@ -27709,6 +28472,7 @@ export namespace MyNS {
 		/**
 		 * The number of new transactions reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_investments_transactions: number;
 
@@ -27731,6 +28495,7 @@ export namespace MyNS {
 		/**
 		 * The number of canceled transactions reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		canceled_investments_transactions: FormControl<number | null | undefined>,
 
@@ -27749,6 +28514,7 @@ export namespace MyNS {
 		/**
 		 * The number of new transactions reported since the last time this webhook was fired.
 		 * Required
+		 * Type: double
 		 */
 		new_investments_transactions: FormControl<number | null | undefined>,
 
@@ -27880,12 +28646,14 @@ export namespace MyNS {
 		 * If the security is a foreign currency this field will be updated daily and will be priced in USD.
 		 * If the security is a cryptocurrency, this field will be updated multiple times a day. As crypto prices can fluctuate quickly and data may become stale sooner than other asset classes, refer to `update_datetime` with the time when the price was last updated.
 		 * Required
+		 * Type: double
 		 */
 		close_price: number;
 
 		/**
 		 * Date for which `close_price` is accurate. Always `null` if `close_price` is `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		close_price_as_of: Date;
 
@@ -27989,12 +28757,14 @@ export namespace MyNS {
 		 * If the security is a foreign currency this field will be updated daily and will be priced in USD.
 		 * If the security is a cryptocurrency, this field will be updated multiple times a day. As crypto prices can fluctuate quickly and data may become stale sooner than other asset classes, refer to `update_datetime` with the time when the price was last updated.
 		 * Required
+		 * Type: double
 		 */
 		close_price: FormControl<number | null | undefined>,
 
 		/**
 		 * Date for which `close_price` is accurate. Always `null` if `close_price` is `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		close_price_as_of: FormControl<Date | null | undefined>,
 
@@ -28127,6 +28897,7 @@ export namespace MyNS {
 		/**
 		 * The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
@@ -28139,6 +28910,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 	}
@@ -28158,6 +28930,7 @@ export namespace MyNS {
 		/**
 		 * The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -28167,6 +28940,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
@@ -28263,6 +29037,7 @@ export namespace MyNS {
 		/**
 		 * The total number of transactions available within the date range specified. If `total_investment_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_investment_transactions: number;
 	}
@@ -28279,6 +29054,7 @@ export namespace MyNS {
 		/**
 		 * The total number of transactions available within the date range specified. If `total_investment_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_investment_transactions: FormControl<number | null | undefined>,
 	}
@@ -28303,10 +29079,14 @@ export namespace MyNS {
 		/**
 		 * Posting date for the transaction. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
-		/** The combined value of all fees applied to this transaction. */
+		/**
+		 * The combined value of all fees applied to this transaction.
+		 * Type: double
+		 */
 		fees?: number | null;
 
 		/**
@@ -28318,12 +29098,14 @@ export namespace MyNS {
 		/**
 		 * The price of the security at which this transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
 		/**
 		 * The number of units of the security involved in this transaction. Must be positive if the type is a buy and negative if the type is a sell.
 		 * Required
+		 * Type: double
 		 */
 		quantity: number;
 
@@ -28354,10 +29136,14 @@ export namespace MyNS {
 		/**
 		 * Posting date for the transaction. Must be formatted as an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
-		/** The combined value of all fees applied to this transaction. */
+		/**
+		 * The combined value of all fees applied to this transaction.
+		 * Type: double
+		 */
 		fees: FormControl<number | null | undefined>,
 
 		/**
@@ -28369,12 +29155,14 @@ export namespace MyNS {
 		/**
 		 * The price of the security at which this transaction occurred.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of units of the security involved in this transaction. Must be positive if the type is a buy and negative if the type is a sell.
 		 * Required
+		 * Type: double
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -29915,6 +30703,7 @@ export namespace MyNS {
 		/**
 		 * The timestamp when the key was created, in Unix time.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		created_at: number;
 
@@ -29927,6 +30716,7 @@ export namespace MyNS {
 		/**
 		 * The timestamp when the key expired, in Unix time.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expired_at: number;
 
@@ -29973,6 +30763,7 @@ export namespace MyNS {
 		/**
 		 * The timestamp when the key was created, in Unix time.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		created_at: FormControl<number | null | undefined>,
 
@@ -29985,6 +30776,7 @@ export namespace MyNS {
 		/**
 		 * The timestamp when the key expired, in Unix time.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expired_at: FormControl<number | null | undefined>,
 
@@ -30319,12 +31111,14 @@ export namespace MyNS {
 		/**
 		 * The current outstanding amount charged for late payment.
 		 * Required
+		 * Type: double
 		 */
 		current_late_fee: number;
 
 		/**
 		 * Total amount held in escrow to pay taxes and insurance on behalf of the borrower.
 		 * Required
+		 * Type: double
 		 */
 		escrow_balance: number;
 
@@ -30349,12 +31143,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: number;
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: Date;
 
@@ -30373,36 +31169,42 @@ export namespace MyNS {
 		/**
 		 * Original date on which mortgage is due in full. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		maturity_date: Date;
 
 		/**
 		 * The amount of the next payment.
 		 * Required
+		 * Type: double
 		 */
 		next_monthly_payment: number;
 
 		/**
 		 * The due date for the next payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: Date;
 
 		/**
 		 * The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: Date;
 
 		/**
 		 * The original principal balance of the mortgage.
 		 * Required
+		 * Type: double
 		 */
 		origination_principal_amount: number;
 
 		/**
 		 * Amount of loan (principal + interest) past due for payment.
 		 * Required
+		 * Type: double
 		 */
 		past_due_amount: number;
 
@@ -30415,12 +31217,14 @@ export namespace MyNS {
 		/**
 		 * The year to date (YTD) interest paid.
 		 * Required
+		 * Type: double
 		 */
 		ytd_interest_paid: number;
 
 		/**
 		 * The YTD principal paid.
 		 * Required
+		 * Type: double
 		 */
 		ytd_principal_paid: number;
 	}
@@ -30443,12 +31247,14 @@ export namespace MyNS {
 		/**
 		 * The current outstanding amount charged for late payment.
 		 * Required
+		 * Type: double
 		 */
 		current_late_fee: FormControl<number | null | undefined>,
 
 		/**
 		 * Total amount held in escrow to pay taxes and insurance on behalf of the borrower.
 		 * Required
+		 * Type: double
 		 */
 		escrow_balance: FormControl<number | null | undefined>,
 
@@ -30467,12 +31273,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: FormControl<Date | null | undefined>,
 
@@ -30491,48 +31299,56 @@ export namespace MyNS {
 		/**
 		 * Original date on which mortgage is due in full. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		maturity_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The amount of the next payment.
 		 * Required
+		 * Type: double
 		 */
 		next_monthly_payment: FormControl<number | null | undefined>,
 
 		/**
 		 * The due date for the next payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The original principal balance of the mortgage.
 		 * Required
+		 * Type: double
 		 */
 		origination_principal_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Amount of loan (principal + interest) past due for payment.
 		 * Required
+		 * Type: double
 		 */
 		past_due_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The year to date (YTD) interest paid.
 		 * Required
+		 * Type: double
 		 */
 		ytd_interest_paid: FormControl<number | null | undefined>,
 
 		/**
 		 * The YTD principal paid.
 		 * Required
+		 * Type: double
 		 */
 		ytd_principal_paid: FormControl<number | null | undefined>,
 	}
@@ -30567,6 +31383,7 @@ export namespace MyNS {
 		/**
 		 * Percentage value (interest rate of current mortgage, not APR) of interest payable on a loan.
 		 * Required
+		 * Type: double
 		 */
 		percentage: number;
 
@@ -30583,6 +31400,7 @@ export namespace MyNS {
 		/**
 		 * Percentage value (interest rate of current mortgage, not APR) of interest payable on a loan.
 		 * Required
+		 * Type: double
 		 */
 		percentage: FormControl<number | null | undefined>,
 
@@ -30704,6 +31522,7 @@ export namespace MyNS {
 		/**
 		 * The date when the student loan is expected to be paid off. Availability for this field is limited. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_payoff_date: Date;
 
@@ -30716,6 +31535,7 @@ export namespace MyNS {
 		/**
 		 * The interest rate on the loan as a percentage.
 		 * Required
+		 * Type: double
 		 */
 		interest_rate_percentage: number;
 
@@ -30728,18 +31548,21 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: number;
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: Date;
 
 		/**
 		 * The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_statement_issue_date: Date;
 
@@ -30760,30 +31583,35 @@ export namespace MyNS {
 		 * Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Nelnet (`ins_116528`), EdFinancial Services (`ins_116304`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`).
 		 * Firstmark (`ins_116295` ) and Navient (`ins_116248`) will display as $0 if there is an autopay program in effect.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: number;
 
 		/**
 		 * The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in_school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: Date;
 
 		/**
 		 * The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: Date;
 
 		/**
 		 * The original principal balance of the loan.
 		 * Required
+		 * Type: double
 		 */
 		origination_principal_amount: number;
 
 		/**
 		 * The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`.
 		 * Required
+		 * Type: double
 		 */
 		outstanding_interest_amount: number;
 
@@ -30820,12 +31648,14 @@ export namespace MyNS {
 		/**
 		 * The year to date (YTD) interest paid. Availability for this field is limited.
 		 * Required
+		 * Type: double
 		 */
 		ytd_interest_paid: number;
 
 		/**
 		 * The year to date (YTD) principal paid. Availability for this field is limited.
 		 * Required
+		 * Type: double
 		 */
 		ytd_principal_paid: number;
 	}
@@ -30848,6 +31678,7 @@ export namespace MyNS {
 		/**
 		 * The date when the student loan is expected to be paid off. Availability for this field is limited. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_payoff_date: FormControl<Date | null | undefined>,
 
@@ -30860,6 +31691,7 @@ export namespace MyNS {
 		/**
 		 * The interest rate on the loan as a percentage.
 		 * Required
+		 * Type: double
 		 */
 		interest_rate_percentage: FormControl<number | null | undefined>,
 
@@ -30872,18 +31704,21 @@ export namespace MyNS {
 		/**
 		 * The amount of the last payment.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_payment_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_statement_issue_date: FormControl<Date | null | undefined>,
 
@@ -30898,30 +31733,35 @@ export namespace MyNS {
 		 * Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Nelnet (`ins_116528`), EdFinancial Services (`ins_116304`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`).
 		 * Firstmark (`ins_116295` ) and Navient (`ins_116248`) will display as $0 if there is an autopay program in effect.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in_school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_payment_due_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The original principal balance of the loan.
 		 * Required
+		 * Type: double
 		 */
 		origination_principal_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`.
 		 * Required
+		 * Type: double
 		 */
 		outstanding_interest_amount: FormControl<number | null | undefined>,
 
@@ -30940,12 +31780,14 @@ export namespace MyNS {
 		/**
 		 * The year to date (YTD) interest paid. Availability for this field is limited.
 		 * Required
+		 * Type: double
 		 */
 		ytd_interest_paid: FormControl<number | null | undefined>,
 
 		/**
 		 * The year to date (YTD) principal paid. Availability for this field is limited.
 		 * Required
+		 * Type: double
 		 */
 		ytd_principal_paid: FormControl<number | null | undefined>,
 	}
@@ -30981,6 +31823,7 @@ export namespace MyNS {
 		/**
 		 * The date until which the loan will be in its current status. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
@@ -30997,6 +31840,7 @@ export namespace MyNS {
 		/**
 		 * The date until which the loan will be in its current status. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -31023,18 +31867,21 @@ export namespace MyNS {
 		/**
 		 * The estimated date borrower will have completed 120 qualifying monthly payments. Returned in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		estimated_eligibility_date: Date;
 
 		/**
 		 * The number of qualifying payments that have been made.
 		 * Required
+		 * Type: double
 		 */
 		payments_made: number;
 
 		/**
 		 * The number of qualifying payments remaining.
 		 * Required
+		 * Type: double
 		 */
 		payments_remaining: number;
 	}
@@ -31045,18 +31892,21 @@ export namespace MyNS {
 		/**
 		 * The estimated date borrower will have completed 120 qualifying monthly payments. Returned in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * Required
+		 * Type: DateOnly
 		 */
 		estimated_eligibility_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The number of qualifying payments that have been made.
 		 * Required
+		 * Type: double
 		 */
 		payments_made: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of qualifying payments remaining.
 		 * Required
+		 * Type: double
 		 */
 		payments_remaining: FormControl<number | null | undefined>,
 	}
@@ -31201,18 +32051,21 @@ export namespace MyNS {
 		/**
 		 * The balance transfer APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		balance_transfer_apr: number;
 
 		/**
 		 * The cash APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		cash_apr: number;
 
 		/**
 		 * Override the `expected_payoff_date` field. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_payoff_date: Date;
 
@@ -31225,6 +32078,7 @@ export namespace MyNS {
 		/**
 		 * If set, interest capitalization begins at the given number of months after loan origination. By default interest is never capitalized. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		interest_capitalization_grace_period_months: number;
 
@@ -31243,6 +32097,7 @@ export namespace MyNS {
 		/**
 		 * Override the `last_payment_amount` field. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: number;
 
@@ -31261,18 +32116,21 @@ export namespace MyNS {
 		/**
 		 * Override the `minimum_payment_amount` field. Can only be set if `type` is `credit` or `student`.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: number;
 
 		/**
 		 * The interest rate on the loan as a percentage. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		nominal_apr: number;
 
 		/**
 		 * The date on which the loan was initially lent, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: Date;
 
@@ -31285,6 +32143,7 @@ export namespace MyNS {
 		/**
 		 * The original loan principal. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		principal: number;
 
@@ -31297,6 +32156,7 @@ export namespace MyNS {
 		/**
 		 * The purchase APR percentage value. For simplicity, this is the only interest rate used to calculate interest charges. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		purchase_apr: number;
 
@@ -31333,6 +32193,7 @@ export namespace MyNS {
 		/**
 		 * The special APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		special_apr: number;
 
@@ -31349,18 +32210,21 @@ export namespace MyNS {
 		/**
 		 * The balance transfer APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		balance_transfer_apr: FormControl<number | null | undefined>,
 
 		/**
 		 * The cash APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		cash_apr: FormControl<number | null | undefined>,
 
 		/**
 		 * Override the `expected_payoff_date` field. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_payoff_date: FormControl<Date | null | undefined>,
 
@@ -31373,6 +32237,7 @@ export namespace MyNS {
 		/**
 		 * If set, interest capitalization begins at the given number of months after loan origination. By default interest is never capitalized. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		interest_capitalization_grace_period_months: FormControl<number | null | undefined>,
 
@@ -31391,6 +32256,7 @@ export namespace MyNS {
 		/**
 		 * Override the `last_payment_amount` field. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		last_payment_amount: FormControl<number | null | undefined>,
 
@@ -31403,18 +32269,21 @@ export namespace MyNS {
 		/**
 		 * Override the `minimum_payment_amount` field. Can only be set if `type` is `credit` or `student`.
 		 * Required
+		 * Type: double
 		 */
 		minimum_payment_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The interest rate on the loan as a percentage. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		nominal_apr: FormControl<number | null | undefined>,
 
 		/**
 		 * The date on which the loan was initially lent, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		origination_date: FormControl<Date | null | undefined>,
 
@@ -31427,12 +32296,14 @@ export namespace MyNS {
 		/**
 		 * The original loan principal. Can only be set if `type` is `student`.
 		 * Required
+		 * Type: double
 		 */
 		principal: FormControl<number | null | undefined>,
 
 		/**
 		 * The purchase APR percentage value. For simplicity, this is the only interest rate used to calculate interest charges. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		purchase_apr: FormControl<number | null | undefined>,
 
@@ -31457,6 +32328,7 @@ export namespace MyNS {
 		/**
 		 * The special APR percentage value. Can only be set if `type` is `credit`.
 		 * Required
+		 * Type: double
 		 */
 		special_apr: FormControl<number | null | undefined>,
 
@@ -31499,12 +32371,14 @@ export namespace MyNS {
 		/**
 		 * Configures the number of months before repayment starts.
 		 * Required
+		 * Type: double
 		 */
 		non_repayment_months: number;
 
 		/**
 		 * Configures the number of months of repayments before the loan is paid off.
 		 * Required
+		 * Type: double
 		 */
 		repayment_months: number;
 
@@ -31521,12 +32395,14 @@ export namespace MyNS {
 		/**
 		 * Configures the number of months before repayment starts.
 		 * Required
+		 * Type: double
 		 */
 		non_repayment_months: FormControl<number | null | undefined>,
 
 		/**
 		 * Configures the number of months of repayments before the loan is paid off.
 		 * Required
+		 * Type: double
 		 */
 		repayment_months: FormControl<number | null | undefined>,
 
@@ -32649,6 +33525,7 @@ export namespace MyNS {
 		/**
 		 * The number of days of data to request for the Bank Employment product.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_requested: number;
 	}
@@ -32659,6 +33536,7 @@ export namespace MyNS {
 		/**
 		 * The number of days of data to request for the Bank Employment product.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		days_requested: FormControl<number | null | undefined>,
 	}
@@ -32865,13 +33743,19 @@ export namespace MyNS {
 		/** The employer corresponding to an income source specified by the user */
 		employer?: string | null;
 
-		/** The income amount paid annually for a specified income source */
+		/**
+		 * The income amount paid annually for a specified income source
+		 * Type: double
+		 */
 		pay_annual?: number | null;
 
 		/** The pay frequency of a specified income source */
 		pay_frequency?: LinkTokenCreateRequestUserStatedIncomeSourcePay_frequency | null;
 
-		/** The income amount paid per cycle for a specified income source */
+		/**
+		 * The income amount paid per cycle for a specified income source
+		 * Type: double
+		 */
 		pay_per_cycle?: number | null;
 
 		/** The pay type - `GROSS`, `NET`, or `UNKNOWN` for a specified income source */
@@ -32887,13 +33771,19 @@ export namespace MyNS {
 		/** The employer corresponding to an income source specified by the user */
 		employer: FormControl<string | null | undefined>,
 
-		/** The income amount paid annually for a specified income source */
+		/**
+		 * The income amount paid annually for a specified income source
+		 * Type: double
+		 */
 		pay_annual: FormControl<number | null | undefined>,
 
 		/** The pay frequency of a specified income source */
 		pay_frequency: FormControl<LinkTokenCreateRequestUserStatedIncomeSourcePay_frequency | null | undefined>,
 
-		/** The income amount paid per cycle for a specified income source */
+		/**
+		 * The income amount paid per cycle for a specified income source
+		 * Type: double
+		 */
 		pay_per_cycle: FormControl<number | null | undefined>,
 
 		/** The pay type - `GROSS`, `NET`, or `UNKNOWN` for a specified income source */
@@ -33028,7 +33918,10 @@ export namespace MyNS {
 		 */
 		client_user_id: string;
 
-		/** To be provided in the format "yyyy-mm-dd". Not currently used. */
+		/**
+		 * To be provided in the format "yyyy-mm-dd". Not currently used.
+		 * Type: DateOnly
+		 */
 		date_of_birth?: Date | null;
 
 		/** The user's email address. This field is optional, but required to enable the [pre-authenticated returning user flow](https://plaid.com/docs/link/returning-user/#pre-authenticated-rux). */
@@ -33071,7 +33964,10 @@ export namespace MyNS {
 		 */
 		client_user_id: FormControl<string | null | undefined>,
 
-		/** To be provided in the format "yyyy-mm-dd". Not currently used. */
+		/**
+		 * To be provided in the format "yyyy-mm-dd". Not currently used.
+		 * Type: DateOnly
+		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/** The user's email address. This field is optional, but required to enable the [pre-authenticated returning user flow](https://plaid.com/docs/link/returning-user/#pre-authenticated-rux). */
@@ -33653,24 +34549,28 @@ export namespace MyNS {
 		/**
 		 * Number of rounds of questions. Required if value of `type` is `questions`.
 		 * Required
+		 * Type: double
 		 */
 		question_rounds: number;
 
 		/**
 		 * Number of questions per round. Required if value of `type` is `questions`. If value of type is `selections`, default value is 2.
 		 * Required
+		 * Type: double
 		 */
 		questions_per_round: number;
 
 		/**
 		 * Number of rounds of selections, used if `type` is `selections`. Defaults to 1.
 		 * Required
+		 * Type: double
 		 */
 		selection_rounds: number;
 
 		/**
 		 * Number of available answers per question, used if `type` is `selection`. Defaults to 2.
 		 * Required
+		 * Type: double
 		 */
 		selections_per_question: number;
 
@@ -33690,24 +34590,28 @@ export namespace MyNS {
 		/**
 		 * Number of rounds of questions. Required if value of `type` is `questions`.
 		 * Required
+		 * Type: double
 		 */
 		question_rounds: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of questions per round. Required if value of `type` is `questions`. If value of type is `selections`, default value is 2.
 		 * Required
+		 * Type: double
 		 */
 		questions_per_round: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of rounds of selections, used if `type` is `selections`. Defaults to 1.
 		 * Required
+		 * Type: double
 		 */
 		selection_rounds: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of available answers per question, used if `type` is `selection`. Defaults to 2.
 		 * Required
+		 * Type: double
 		 */
 		selections_per_question: FormControl<number | null | undefined>,
 
@@ -33749,14 +34653,15 @@ export namespace MyNS {
 		/**
 		 * The account's limit
 		 * Required
+		 * Type: double
 		 */
 		limit: number;
 
 		/**
 		 * The account's mask. Should be a string of 2-4 alphanumeric characters. This allows you to model a mask which does not match the account number (such as with a virtual account number).
 		 * Required
-		 * Max length: 4
 		 * Min length: 2
+		 * Max length: 4
 		 */
 		mask: string;
 
@@ -33779,14 +34684,15 @@ export namespace MyNS {
 		/**
 		 * The account's limit
 		 * Required
+		 * Type: double
 		 */
 		limit: FormControl<number | null | undefined>,
 
 		/**
 		 * The account's mask. Should be a string of 2-4 alphanumeric characters. This allows you to model a mask which does not match the account number (such as with a virtual account number).
 		 * Required
-		 * Max length: 4
 		 * Min length: 2
+		 * Max length: 4
 		 */
 		mask: FormControl<string | null | undefined>,
 
@@ -33989,16 +34895,16 @@ export namespace MyNS {
 		/**
 		 * The Business Identifier Code, also known as SWIFT code, for this bank account.
 		 * Required
-		 * Max length: 11
 		 * Min length: 8
+		 * Max length: 11
 		 */
 		bic: string;
 
 		/**
 		 * International Bank Account Number (IBAN).
 		 * Required
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: string;
 	}
@@ -34009,16 +34915,16 @@ export namespace MyNS {
 		/**
 		 * The Business Identifier Code, also known as SWIFT code, for this bank account.
 		 * Required
-		 * Max length: 11
 		 * Min length: 8
+		 * Max length: 11
 		 */
 		bic: FormControl<string | null | undefined>,
 
 		/**
 		 * International Bank Account Number (IBAN).
 		 * Required
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: FormControl<string | null | undefined>,
 	}
@@ -34112,6 +35018,7 @@ export namespace MyNS {
 		/**
 		 * If provided, the account will always have this amount as its  available balance, regardless of current balance or changes in transactions over time.
 		 * Required
+		 * Type: double
 		 */
 		force_available_balance: number;
 
@@ -34157,6 +35064,7 @@ export namespace MyNS {
 		/**
 		 * If provided, the account will start with this amount as the current balance.
 		 * Required
+		 * Type: double
 		 */
 		starting_balance: number;
 
@@ -34197,12 +35105,14 @@ export namespace MyNS {
 		/**
 		 * If provided, the account will always have this amount as its  available balance, regardless of current balance or changes in transactions over time.
 		 * Required
+		 * Type: double
 		 */
 		force_available_balance: FormControl<number | null | undefined>,
 
 		/**
 		 * If provided, the account will start with this amount as the current balance.
 		 * Required
+		 * Type: double
 		 */
 		starting_balance: FormControl<number | null | undefined>,
 
@@ -34282,6 +35192,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount. Can be negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -34291,12 +35202,14 @@ export namespace MyNS {
 		/**
 		 * The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Posted dates in the past or present will result in posted transactions; posted dates in the future will result in pending transactions.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_posted: Date;
 
 		/**
 		 * The date of the transaction, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Transactions in Sandbox will move from pending to posted once their transaction date has been reached. If a `date_transacted` is not provided by the institution, a transaction date may be available in the [`authorized_date`](https://plaid.com/docs/api/products/transactions/#transactions-get-response-transactions-authorized-date) field.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_transacted: Date;
 
@@ -34313,6 +35226,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount. Can be negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -34322,12 +35236,14 @@ export namespace MyNS {
 		/**
 		 * The date the transaction posted, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Posted dates in the past or present will result in posted transactions; posted dates in the future will result in pending transactions.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_posted: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date of the transaction, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format. Transactions in Sandbox will move from pending to posted once their transaction date has been reached. If a `date_transacted` is not provided by the institution, a transaction date may be available in the [`authorized_date`](https://plaid.com/docs/api/products/transactions/#transactions-get-response-transactions-authorized-date) field.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_transacted: FormControl<Date | null | undefined>,
 
@@ -34546,7 +35462,10 @@ export namespace MyNS {
 	/** Assets under management for the given end customer. Required for end customers with monthly service commitments. */
 	export interface PartnerEndCustomerAssetsUnderManagement {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Required */
@@ -34556,7 +35475,10 @@ export namespace MyNS {
 	/** Assets under management for the given end customer. Required for end customers with monthly service commitments. */
 	export interface PartnerEndCustomerAssetsUnderManagementFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -35203,14 +36125,15 @@ export namespace MyNS {
 		/**
 		 * The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: PaymentAmountCurrency;
 
 		/**
 		 * The amount of the payment. Must contain at most two digits of precision e.g. `1.23`. Minimum accepted value is `1`.
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -35221,14 +36144,15 @@ export namespace MyNS {
 		/**
 		 * The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: FormControl<PaymentAmountCurrency | null | undefined>,
 
 		/**
 		 * The amount of the payment. Must contain at most two digits of precision e.g. `1.23`. Minimum accepted value is `1`.
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -35249,8 +36173,8 @@ export namespace MyNS {
 		/**
 		 * The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: PaymentAmountCurrency;
 
@@ -35268,8 +36192,8 @@ export namespace MyNS {
 		/**
 		 * The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: FormControl<PaymentAmountCurrency | null | undefined>,
 
@@ -35456,24 +36380,24 @@ export namespace MyNS {
 		/**
 		 * The city where the recipient is located. Maximum of 35 characters.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		city: string;
 
 		/**
 		 * The ISO 3166-1 alpha-2 country code where the recipient is located.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: string;
 
 		/**
 		 * The postal code where the recipient is located. Maximum of 16 characters.
 		 * Required
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		postal_code: string;
 
@@ -35491,24 +36415,24 @@ export namespace MyNS {
 		/**
 		 * The city where the recipient is located. Maximum of 35 characters.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The ISO 3166-1 alpha-2 country code where the recipient is located.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The postal code where the recipient is located. Maximum of 16 characters.
 		 * Required
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		postal_code: FormControl<string | null | undefined>,
 	}
@@ -35691,8 +36615,8 @@ export namespace MyNS {
 		/**
 		 * A reference for the payment consent. This must be an alphanumeric string with at most 18 characters and must not contain any special characters.
 		 * Required
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		reference: string;
 
@@ -35722,8 +36646,8 @@ export namespace MyNS {
 		/**
 		 * A reference for the payment consent. This must be an alphanumeric string with at most 18 characters and must not contain any special characters.
 		 * Required
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -35881,8 +36805,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique consent payment. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a consent payment fails due to a network connection error, you can retry the request with the same idempotency key to guarantee that only a single payment is created. If the request was successfully processed, it will prevent any payment that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: string;
 
@@ -35906,8 +36830,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique consent payment. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a consent payment fails due to a network connection error, you can retry the request with the same idempotency key to guarantee that only a single payment is created. If the request was successfully processed, it will prevent any payment that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: FormControl<string | null | undefined>,
 
@@ -36334,8 +37258,8 @@ export namespace MyNS {
 		 * In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.
 		 * Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.
 		 * Required
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		reference: string;
 
@@ -36363,8 +37287,8 @@ export namespace MyNS {
 		 * In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.
 		 * Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.
 		 * Required
-		 * Max length: 18
 		 * Min length: 1
+		 * Max length: 18
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -36636,8 +37560,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: string;
 
@@ -36650,8 +37574,8 @@ export namespace MyNS {
 		/**
 		 * A reference for the refund. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		 * Required
-		 * Max length: 18
 		 * Min length: 6
+		 * Max length: 18
 		 */
 		reference: string;
 
@@ -36669,8 +37593,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: FormControl<string | null | undefined>,
 
@@ -36683,8 +37607,8 @@ export namespace MyNS {
 		/**
 		 * A reference for the refund. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		 * Required
-		 * Max length: 18
 		 * Min length: 6
+		 * Max length: 18
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -36953,8 +37877,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban?: string | null;
 
@@ -36977,8 +37901,8 @@ export namespace MyNS {
 
 		/**
 		 * The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: FormControl<string | null | undefined>,
 
@@ -37585,6 +38509,7 @@ export namespace MyNS {
 		/**
 		 * The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, or if the payment is not a standing order, this field will be `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		adjusted_start_date: Date;
 
@@ -37650,6 +38575,7 @@ export namespace MyNS {
 		/**
 		 * The original value of the `start_date` provided during the creation of a standing order. If the payment is not a standing order, this field will be `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		original_start_date: Date;
 
@@ -37690,6 +38616,7 @@ export namespace MyNS {
 		/**
 		 * The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, or if the payment is not a standing order, this field will be `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		adjusted_start_date: FormControl<Date | null | undefined>,
 
@@ -37752,6 +38679,7 @@ export namespace MyNS {
 		/**
 		 * The original value of the `start_date` provided during the creation of a standing order. If the payment is not a standing order, this field will be `null`.
 		 * Required
+		 * Type: DateOnly
 		 */
 		original_start_date: FormControl<Date | null | undefined>,
 
@@ -37813,6 +38741,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the deduction.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -37835,6 +38764,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the deduction.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -38513,7 +39443,10 @@ export namespace MyNS {
 	/** ProcessorSignalDecisionReportRequest defines the request schema for `/processor/signal/decision/report` */
 	export interface ProcessorSignalDecisionReportRequest {
 
-		/** The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05). */
+		/**
+		 * The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).
+		 * Type: double
+		 */
 		amount_instantly_available?: number | null;
 
 		/** Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. */
@@ -38522,8 +39455,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -38577,7 +39510,10 @@ export namespace MyNS {
 	/** ProcessorSignalDecisionReportRequest defines the request schema for `/processor/signal/decision/report` */
 	export interface ProcessorSignalDecisionReportRequestFormProperties {
 
-		/** The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05). */
+		/**
+		 * The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).
+		 * Type: double
+		 */
 		amount_instantly_available: FormControl<number | null | undefined>,
 
 		/** Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. */
@@ -38586,8 +39522,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -38690,6 +39626,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount, in USD (e.g. `102.05`)
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -38699,8 +39636,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -38750,6 +39687,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount, in USD (e.g. `102.05`)
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -38759,8 +39697,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -38979,199 +39917,385 @@ export namespace MyNS {
 	 */
 	export interface SignalEvaluateCoreAttributes {
 
-		/** The number of times the account's addresses on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's addresses on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		address_change_count_28d?: number | null;
 
-		/** The number of times the account's addresses on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's addresses on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		address_change_count_90d?: number | null;
 
-		/** Available balance, as of the `balance_last_updated` time. The available balance is the current balance less any outstanding holds or debits that have not yet posted to the account. */
+		/**
+		 * Available balance, as of the `balance_last_updated` time. The available balance is the current balance less any outstanding holds or debits that have not yet posted to the account.
+		 * Type: double
+		 */
 		available_balance?: number | null;
 
 		/** Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DDTHH:mm:ssZ) indicating the last time that the balance for the given account has been updated. */
 		balance_last_updated?: Date | null;
 
-		/** The total number of credit (inflow) transactions over the past 10 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 10 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_10d?: number | null;
 
-		/** The total number of credit (inflow) transactions over the past 30 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 30 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_30d?: number | null;
 
-		/** The total number of credit (inflow) transactions over the past 60 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 60 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_60d?: number | null;
 
-		/** The total number of credit (inflow) transactions over the past 90 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 90 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_90d?: number | null;
 
-		/** Current balance, as of the `balance_last_updated` time. The current balance is the total amount of funds in the account. */
+		/**
+		 * Current balance, as of the `balance_last_updated` time. The current balance is the total amount of funds in the account.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 
-		/** The number of days since the first time the Item was connected to an application via Plaid */
+		/**
+		 * The number of days since the first time the Item was connected to an application via Plaid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_since_first_plaid_connection?: number | null;
 
-		/** The number of days within the past 90 days when the account that will be debited had a negative end-of-day available balance */
+		/**
+		 * The number of days within the past 90 days when the account that will be debited had a negative end-of-day available balance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_with_negative_balance_count_90d?: number | null;
 
-		/** The total number of debit (outflow) transactions over the past 10 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 10 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_10d?: number | null;
 
-		/** The total number of debit (outflow) transactions over the past 30 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 30 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_30d?: number | null;
 
-		/** The total number of debit (outflow) transactions over the past 60 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 60 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_60d?: number | null;
 
-		/** The total number of debit (outflow) transactions over the past 90 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 90 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_90d?: number | null;
 
-		/** The number of times the account's email addresses on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's email addresses on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		email_change_count_28d?: number | null;
 
-		/** The number of times the account's email addresses on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's email addresses on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		email_change_count_90d?: number | null;
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 30 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_30d?: number | null;
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 3 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 3 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_3d?: number | null;
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_7d?: number | null;
 
 		/** Indicates if the ACH transaction funding account is a savings/money market account */
 		is_savings_or_money_market_account?: boolean | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 30 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 30 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_30d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 60 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 60 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_60d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 7 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 7 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_7d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 90 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 90 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_90d?: number | null;
 
-		/** The 10th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_30d?: number | null;
 
-		/** The 10th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_31d_to_60d?: number | null;
 
-		/** The 10th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_60d?: number | null;
 
-		/** The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_61d_to_90d?: number | null;
 
-		/** The 10th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_90d?: number | null;
 
-		/** The 50th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 50th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p50_credit_transactions_amount_28d?: number | null;
 
-		/** The 50th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 50th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p50_debit_transactions_amount_28d?: number | null;
 
-		/** The 50th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_30d?: number | null;
 
-		/** The 50th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_31d_to_60d?: number | null;
 
-		/** The 50th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_60d?: number | null;
 
-		/** The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_61d_to_90d?: number | null;
 
-		/** The 50th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_90d?: number | null;
 
-		/** The 90th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_30d?: number | null;
 
-		/** The 90th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_31d_to_60d?: number | null;
 
-		/** The 90th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_60d?: number | null;
 
-		/** The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_61d_to_90d?: number | null;
 
-		/** The 90th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_90d?: number | null;
 
-		/** The 95th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 95th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p95_credit_transactions_amount_28d?: number | null;
 
-		/** The 95th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 95th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p95_debit_transactions_amount_28d?: number | null;
 
-		/** The number of times the account's phone numbers on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's phone numbers on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phone_change_count_28d?: number | null;
 
-		/** The number of times the account's phone numbers on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's phone numbers on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phone_change_count_90d?: number | null;
 
-		/** The number of times the Item has been connected to applications via Plaid over the past 30 days */
+		/**
+		 * The number of times the Item has been connected to applications via Plaid over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_connections_count_30d?: number | null;
 
-		/** The number of times the Item has been connected to applications via Plaid over the past 7 days */
+		/**
+		 * The number of times the Item has been connected to applications via Plaid over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_connections_count_7d?: number | null;
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 30 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_30d?: number | null;
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 3 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 3 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_3d?: number | null;
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_7d?: number | null;
 
-		/** The total credit (inflow) transaction amount over the past 10 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 10 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_10d?: number | null;
 
-		/** The total credit (inflow) transaction amount over the past 30 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 30 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_30d?: number | null;
 
-		/** The total credit (inflow) transaction amount over the past 60 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 60 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_60d?: number | null;
 
-		/** The total credit (inflow) transaction amount over the past 90 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 90 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_90d?: number | null;
 
-		/** The total debit (outflow) transaction amount over the past 10 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 10 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_10d?: number | null;
 
-		/** The total debit (outflow) transaction amount over the past 30 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 30 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_30d?: number | null;
 
-		/** The total debit (outflow) transaction amount over the past 60 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 60 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_60d?: number | null;
 
-		/** The total debit (outflow) transaction amount over the past 90 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 90 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_90d?: number | null;
 
-		/** The total number of times the Item has been connected to applications via Plaid */
+		/**
+		 * The total number of times the Item has been connected to applications via Plaid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_plaid_connections_count?: number | null;
 
 		/** Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DDTHH:mm:ssZ) indicating the last time that the transactions for the given account have been updated. */
 		transactions_last_updated?: Date | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 30 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 30 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_30d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 60 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 60 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_60d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 7 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 7 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_7d?: number | null;
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 90 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 90 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_90d?: number | null;
 	}
 
@@ -39186,199 +40310,385 @@ export namespace MyNS {
 	 */
 	export interface SignalEvaluateCoreAttributesFormProperties {
 
-		/** The number of times the account's addresses on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's addresses on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		address_change_count_28d: FormControl<number | null | undefined>,
 
-		/** The number of times the account's addresses on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's addresses on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		address_change_count_90d: FormControl<number | null | undefined>,
 
-		/** Available balance, as of the `balance_last_updated` time. The available balance is the current balance less any outstanding holds or debits that have not yet posted to the account. */
+		/**
+		 * Available balance, as of the `balance_last_updated` time. The available balance is the current balance less any outstanding holds or debits that have not yet posted to the account.
+		 * Type: double
+		 */
 		available_balance: FormControl<number | null | undefined>,
 
 		/** Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DDTHH:mm:ssZ) indicating the last time that the balance for the given account has been updated. */
 		balance_last_updated: FormControl<Date | null | undefined>,
 
-		/** The total number of credit (inflow) transactions over the past 10 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 10 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_10d: FormControl<number | null | undefined>,
 
-		/** The total number of credit (inflow) transactions over the past 30 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 30 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_30d: FormControl<number | null | undefined>,
 
-		/** The total number of credit (inflow) transactions over the past 60 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 60 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_60d: FormControl<number | null | undefined>,
 
-		/** The total number of credit (inflow) transactions over the past 90 days from the account that will be debited */
+		/**
+		 * The total number of credit (inflow) transactions over the past 90 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		credit_transactions_count_90d: FormControl<number | null | undefined>,
 
-		/** Current balance, as of the `balance_last_updated` time. The current balance is the total amount of funds in the account. */
+		/**
+		 * Current balance, as of the `balance_last_updated` time. The current balance is the total amount of funds in the account.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
-		/** The number of days since the first time the Item was connected to an application via Plaid */
+		/**
+		 * The number of days since the first time the Item was connected to an application via Plaid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_since_first_plaid_connection: FormControl<number | null | undefined>,
 
-		/** The number of days within the past 90 days when the account that will be debited had a negative end-of-day available balance */
+		/**
+		 * The number of days within the past 90 days when the account that will be debited had a negative end-of-day available balance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_with_negative_balance_count_90d: FormControl<number | null | undefined>,
 
-		/** The total number of debit (outflow) transactions over the past 10 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 10 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_10d: FormControl<number | null | undefined>,
 
-		/** The total number of debit (outflow) transactions over the past 30 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 30 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_30d: FormControl<number | null | undefined>,
 
-		/** The total number of debit (outflow) transactions over the past 60 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 60 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_60d: FormControl<number | null | undefined>,
 
-		/** The total number of debit (outflow) transactions over the past 90 days from the account that will be debited */
+		/**
+		 * The total number of debit (outflow) transactions over the past 90 days from the account that will be debited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		debit_transactions_count_90d: FormControl<number | null | undefined>,
 
-		/** The number of times the account's email addresses on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's email addresses on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		email_change_count_28d: FormControl<number | null | undefined>,
 
-		/** The number of times the account's email addresses on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's email addresses on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		email_change_count_90d: FormControl<number | null | undefined>,
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 30 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_30d: FormControl<number | null | undefined>,
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 3 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 3 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_3d: FormControl<number | null | undefined>,
 
-		/** The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days */
+		/**
+		 * The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed_plaid_non_oauth_authentication_attempts_count_7d: FormControl<number | null | undefined>,
 
 		/** Indicates if the ACH transaction funding account is a savings/money market account */
 		is_savings_or_money_market_account: FormControl<boolean | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 30 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 30 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_30d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 60 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 60 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_60d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 7 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 7 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_7d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 90 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to non-sufficient funds/overdrafts over the past 90 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nsf_overdraft_transactions_count_90d: FormControl<number | null | undefined>,
 
-		/** The 10th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_30d: FormControl<number | null | undefined>,
 
-		/** The 10th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_31d_to_60d: FormControl<number | null | undefined>,
 
-		/** The 10th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_60d: FormControl<number | null | undefined>,
 
-		/** The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_61d_to_90d: FormControl<number | null | undefined>,
 
-		/** The 10th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 10th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p10_eod_balance_90d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 50th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p50_credit_transactions_amount_28d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 50th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p50_debit_transactions_amount_28d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_30d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_31d_to_60d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_60d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_61d_to_90d: FormControl<number | null | undefined>,
 
-		/** The 50th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 50th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p50_eod_balance_90d: FormControl<number | null | undefined>,
 
-		/** The 90th percentile of the end-of-day available balance over the past 30 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 30 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_30d: FormControl<number | null | undefined>,
 
-		/** The 90th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance between day 31 and day 60 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_31d_to_60d: FormControl<number | null | undefined>,
 
-		/** The 90th percentile of the end-of-day available balance over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_60d: FormControl<number | null | undefined>,
 
-		/** The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_61d_to_90d: FormControl<number | null | undefined>,
 
-		/** The 90th percentile of the end-of-day available balance over the past 90 days of the account that will be debited */
+		/**
+		 * The 90th percentile of the end-of-day available balance over the past 90 days of the account that will be debited
+		 * Type: double
+		 */
 		p90_eod_balance_90d: FormControl<number | null | undefined>,
 
-		/** The 95th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 95th percentile of all credit (inflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p95_credit_transactions_amount_28d: FormControl<number | null | undefined>,
 
-		/** The 95th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited */
+		/**
+		 * The 95th percentile of all debit (outflow) transaction amounts over the past 28 days from the account that will be debited
+		 * Type: double
+		 */
 		p95_debit_transactions_amount_28d: FormControl<number | null | undefined>,
 
-		/** The number of times the account's phone numbers on file have changed over the past 28 days */
+		/**
+		 * The number of times the account's phone numbers on file have changed over the past 28 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phone_change_count_28d: FormControl<number | null | undefined>,
 
-		/** The number of times the account's phone numbers on file have changed over the past 90 days */
+		/**
+		 * The number of times the account's phone numbers on file have changed over the past 90 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		phone_change_count_90d: FormControl<number | null | undefined>,
 
-		/** The number of times the Item has been connected to applications via Plaid over the past 30 days */
+		/**
+		 * The number of times the Item has been connected to applications via Plaid over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_connections_count_30d: FormControl<number | null | undefined>,
 
-		/** The number of times the Item has been connected to applications via Plaid over the past 7 days */
+		/**
+		 * The number of times the Item has been connected to applications via Plaid over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_connections_count_7d: FormControl<number | null | undefined>,
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 30 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 30 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_30d: FormControl<number | null | undefined>,
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 3 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 3 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_3d: FormControl<number | null | undefined>,
 
-		/** The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days */
+		/**
+		 * The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plaid_non_oauth_authentication_attempts_count_7d: FormControl<number | null | undefined>,
 
-		/** The total credit (inflow) transaction amount over the past 10 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 10 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_10d: FormControl<number | null | undefined>,
 
-		/** The total credit (inflow) transaction amount over the past 30 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 30 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_30d: FormControl<number | null | undefined>,
 
-		/** The total credit (inflow) transaction amount over the past 60 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 60 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_60d: FormControl<number | null | undefined>,
 
-		/** The total credit (inflow) transaction amount over the past 90 days from the account that will be debited */
+		/**
+		 * The total credit (inflow) transaction amount over the past 90 days from the account that will be debited
+		 * Type: double
+		 */
 		total_credit_transactions_amount_90d: FormControl<number | null | undefined>,
 
-		/** The total debit (outflow) transaction amount over the past 10 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 10 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_10d: FormControl<number | null | undefined>,
 
-		/** The total debit (outflow) transaction amount over the past 30 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 30 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_30d: FormControl<number | null | undefined>,
 
-		/** The total debit (outflow) transaction amount over the past 60 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 60 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_60d: FormControl<number | null | undefined>,
 
-		/** The total debit (outflow) transaction amount over the past 90 days from the account that will be debited */
+		/**
+		 * The total debit (outflow) transaction amount over the past 90 days from the account that will be debited
+		 * Type: double
+		 */
 		total_debit_transactions_amount_90d: FormControl<number | null | undefined>,
 
-		/** The total number of times the Item has been connected to applications via Plaid */
+		/**
+		 * The total number of times the Item has been connected to applications via Plaid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_plaid_connections_count: FormControl<number | null | undefined>,
 
 		/** Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DDTHH:mm:ssZ) indicating the last time that the transactions for the given account have been updated. */
 		transactions_last_updated: FormControl<Date | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 30 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 30 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_30d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 60 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 60 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_60d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 7 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 7 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_7d: FormControl<number | null | undefined>,
 
-		/** We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 90 days from the account that will be debited. */
+		/**
+		 * We parse and analyze historical transaction metadata to identify the number of possible past returns due to unauthorized transactions over the past 90 days from the account that will be debited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unauthorized_transactions_count_90d: FormControl<number | null | undefined>,
 	}
 	export function CreateSignalEvaluateCoreAttributesFormGroup() {
@@ -39482,8 +40792,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/processor/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -39516,8 +40826,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/processor/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -39926,15 +41236,15 @@ export namespace MyNS {
 
 		/**
 		 * The account number of the account. Maximum of 10 characters.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		account?: string | null;
 
 		/**
 		 * The 6-character sort code of the account.
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		sort_code?: string | null;
 	}
@@ -39944,15 +41254,15 @@ export namespace MyNS {
 
 		/**
 		 * The account number of the account. Maximum of 10 characters.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		account: FormControl<string | null | undefined>,
 
 		/**
 		 * The 6-character sort code of the account.
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		sort_code: FormControl<string | null | undefined>,
 	}
@@ -40275,6 +41585,7 @@ export namespace MyNS {
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * The next transfer origination date after bank holiday adjustment.
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_origination_date: Date;
 
@@ -40383,6 +41694,7 @@ export namespace MyNS {
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).
 		 * The next transfer origination date after bank holiday adjustment.
 		 * Required
+		 * Type: DateOnly
 		 */
 		next_origination_date: FormControl<Date | null | undefined>,
 
@@ -40445,6 +41757,7 @@ export namespace MyNS {
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). The recurring transfer will end on the last `interval_execution_day` on or before the `end_date`.
 		 * If the `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/transfer/recurring/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		end_date?: Date | null;
 
@@ -40452,6 +41765,7 @@ export namespace MyNS {
 		 * The number of recurring `interval_units` between originations. The recurring interval(before holiday adjustment) is calculated by multiplying `interval_unit` and `interval_count`.
 		 * For instance, to schedule a recurring transfer which originates once every two weeks, set `interval_unit` = `week` and `interval_count` = 2.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_count: number;
 
@@ -40461,6 +41775,7 @@ export namespace MyNS {
 		 * If the `interval_unit` is `month`, `interval_execution_day` should be an integer indicating which day of the month to make the transfer on. Integers from 1 to 28 can be used to make a transfer on that day of the month. Negative integers from -1 to -5 can be used to make a transfer relative to the end of the month. To make a transfer on the last day of the month, use -1; to make the transfer on the second-to-last day, use -2, and so on.
 		 * The transfer will be originated on next available banking day if the designated day is a non banking day.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_execution_day: number;
 
@@ -40475,6 +41790,7 @@ export namespace MyNS {
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). The recurring transfer will begin on the first `interval_execution_day` on or after the `start_date`.
 		 * If the first `interval_execution_day` on or after the start date is also the same day that `/transfer/recurring/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 	}
@@ -40485,6 +41801,7 @@ export namespace MyNS {
 		/**
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). The recurring transfer will end on the last `interval_execution_day` on or before the `end_date`.
 		 * If the `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/transfer/recurring/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -40492,6 +41809,7 @@ export namespace MyNS {
 		 * The number of recurring `interval_units` between originations. The recurring interval(before holiday adjustment) is calculated by multiplying `interval_unit` and `interval_count`.
 		 * For instance, to schedule a recurring transfer which originates once every two weeks, set `interval_unit` = `week` and `interval_count` = 2.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_count: FormControl<number | null | undefined>,
 
@@ -40501,6 +41819,7 @@ export namespace MyNS {
 		 * If the `interval_unit` is `month`, `interval_execution_day` should be an integer indicating which day of the month to make the transfer on. Integers from 1 to 28 can be used to make a transfer on that day of the month. Negative integers from -1 to -5 can be used to make a transfer relative to the end of the month. To make a transfer on the last day of the month, use -1; to make the transfer on the second-to-last day, use -2, and so on.
 		 * The transfer will be originated on next available banking day if the designated day is a non banking day.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval_execution_day: FormControl<number | null | undefined>,
 
@@ -40515,6 +41834,7 @@ export namespace MyNS {
 		 * A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). The recurring transfer will begin on the first `interval_execution_day` on or after the `start_date`.
 		 * If the first `interval_execution_day` on or after the start date is also the same day that `/transfer/recurring/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
@@ -40725,6 +42045,7 @@ export namespace MyNS {
 		/**
 		 * The planned date on which Plaid is unable to originate a new ACH transaction of the recurring transfer. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		skipped_origination_date: Date;
 
@@ -40780,6 +42101,7 @@ export namespace MyNS {
 		/**
 		 * The planned date on which Plaid is unable to originate a new ACH transaction of the recurring transfer. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		skipped_origination_date: FormControl<Date | null | undefined>,
 
@@ -41788,14 +43110,20 @@ export namespace MyNS {
 	/** Specifies options for Bank Income. This field is required if `income_verification` is included in the `initial_products` array and `bank` is specified in `income_source_types`. */
 	export interface SandboxPublicTokenCreateRequestIncomeVerificationBankIncome {
 
-		/** The number of days of data to request for the Bank Income product */
+		/**
+		 * The number of days of data to request for the Bank Income product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested?: number | null;
 	}
 
 	/** Specifies options for Bank Income. This field is required if `income_verification` is included in the `initial_products` array and `bank` is specified in `income_source_types`. */
 	export interface SandboxPublicTokenCreateRequestIncomeVerificationBankIncomeFormProperties {
 
-		/** The number of days of data to request for the Bank Income product */
+		/**
+		 * The number of days of data to request for the Bank Income product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_requested: FormControl<number | null | undefined>,
 	}
 	export function CreateSandboxPublicTokenCreateRequestIncomeVerificationBankIncomeFormGroup() {
@@ -41809,20 +43137,32 @@ export namespace MyNS {
 	/** An optional set of parameters corresponding to transactions options. */
 	export interface SandboxPublicTokenCreateRequestOptionsTransactions {
 
-		/** The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. */
+		/**
+		 * The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		end_date?: Date | null;
 
-		/** The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. */
+		/**
+		 * The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		start_date?: Date | null;
 	}
 
 	/** An optional set of parameters corresponding to transactions options. */
 	export interface SandboxPublicTokenCreateRequestOptionsTransactionsFormProperties {
 
-		/** The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. */
+		/**
+		 * The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD. */
+		/**
+		 * The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateSandboxPublicTokenCreateRequestOptionsTransactionsFormGroup() {
@@ -42634,6 +43974,7 @@ export namespace MyNS {
 		/**
 		 * The version of the screening's `search_terms` that were compared when the screening hit was added. screening hits are immutable once they have been reviewed. If changes are detected due to updates to the screening's `search_terms`, the associated program, or the list's source data prior to review, the screening hit will be updated to reflect those changes.
 		 * Required
+		 * Type: double
 		 */
 		search_terms_version: number;
 	}
@@ -42684,6 +44025,7 @@ export namespace MyNS {
 		/**
 		 * The version of the screening's `search_terms` that were compared when the screening hit was added. screening hits are immutable once they have been reviewed. If changes are detected due to updates to the screening's `search_terms`, the associated program, or the list's source data prior to review, the screening hit will be updated to reflect those changes.
 		 * Required
+		 * Type: double
 		 */
 		search_terms_version: FormControl<number | null | undefined>,
 	}
@@ -42956,7 +44298,10 @@ export namespace MyNS {
 	/** SignalDecisionReportRequest defines the request schema for `/signal/decision/report` */
 	export interface SignalDecisionReportRequest {
 
-		/** The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05). */
+		/**
+		 * The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).
+		 * Type: double
+		 */
 		amount_instantly_available?: number | null;
 
 		/** Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. */
@@ -42965,8 +44310,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -43014,7 +44359,10 @@ export namespace MyNS {
 	/** SignalDecisionReportRequest defines the request schema for `/signal/decision/report` */
 	export interface SignalDecisionReportRequestFormProperties {
 
-		/** The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05). */
+		/**
+		 * The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).
+		 * Type: double
+		 */
 		amount_instantly_available: FormControl<number | null | undefined>,
 
 		/** Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body. */
@@ -43023,8 +44371,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -43129,6 +44477,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount, in USD (e.g. `102.05`)
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -43138,8 +44487,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -43196,6 +44545,7 @@ export namespace MyNS {
 		/**
 		 * The transaction amount, in USD (e.g. `102.05`)
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -43205,8 +44555,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -43426,8 +44776,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: string;
 
@@ -43454,8 +44804,8 @@ export namespace MyNS {
 		/**
 		 * Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		client_transaction_id: FormControl<string | null | undefined>,
 
@@ -44380,6 +45730,7 @@ export namespace MyNS {
 		/**
 		 * The date that the transaction was authorized. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).
 		 * Required
+		 * Type: DateOnly
 		 */
 		authorized_date: Date;
 
@@ -44445,6 +45796,7 @@ export namespace MyNS {
 		/**
 		 * The date that the transaction was authorized. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).
 		 * Required
+		 * Type: DateOnly
 		 */
 		authorized_date: FormControl<Date | null | undefined>,
 
@@ -44617,6 +45969,7 @@ export namespace MyNS {
 		/**
 		 * The settled value of the transaction, denominated in the transactions's currency, as stated in `iso_currency_code` or `unofficial_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -44638,6 +45991,7 @@ export namespace MyNS {
 		/**
 		 * For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -44721,6 +46075,7 @@ export namespace MyNS {
 		/**
 		 * The settled value of the transaction, denominated in the transactions's currency, as stated in `iso_currency_code` or `unofficial_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -44736,6 +46091,7 @@ export namespace MyNS {
 		/**
 		 * For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -44875,6 +46231,7 @@ export namespace MyNS {
 		/**
 		 * The posted date of the earliest transaction in the stream.
 		 * Required
+		 * Type: DateOnly
 		 */
 		first_date: Date;
 
@@ -44905,6 +46262,7 @@ export namespace MyNS {
 		/**
 		 * The posted date of the latest transaction in the stream.
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_date: Date;
 
@@ -44967,6 +46325,7 @@ export namespace MyNS {
 		/**
 		 * The posted date of the earliest transaction in the stream.
 		 * Required
+		 * Type: DateOnly
 		 */
 		first_date: FormControl<Date | null | undefined>,
 
@@ -44991,6 +46350,7 @@ export namespace MyNS {
 		/**
 		 * The posted date of the latest transaction in the stream.
 		 * Required
+		 * Type: DateOnly
 		 */
 		last_date: FormControl<Date | null | undefined>,
 
@@ -45036,7 +46396,10 @@ export namespace MyNS {
 	/** Object with data pertaining to an amount on the transaction stream. */
 	export interface TransactionStreamAmount {
 
-		/** Represents the numerical value of an amount. */
+		/**
+		 * Represents the numerical value of an amount.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/**
@@ -45052,7 +46415,10 @@ export namespace MyNS {
 	/** Object with data pertaining to an amount on the transaction stream. */
 	export interface TransactionStreamAmountFormProperties {
 
-		/** Represents the numerical value of an amount. */
+		/**
+		 * Represents the numerical value of an amount.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -45376,6 +46742,7 @@ export namespace MyNS {
 		/**
 		 * The latest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
@@ -45388,6 +46755,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 	}
@@ -45407,6 +46775,7 @@ export namespace MyNS {
 		/**
 		 * The latest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -45416,6 +46785,7 @@ export namespace MyNS {
 		/**
 		 * The earliest date for which data should be returned. Dates should be formatted as YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
@@ -45539,6 +46909,7 @@ export namespace MyNS {
 		/**
 		 * The total number of transactions available within the date range specified. If `total_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_transactions: number;
 
@@ -45561,6 +46932,7 @@ export namespace MyNS {
 		/**
 		 * The total number of transactions available within the date range specified. If `total_transactions` is larger than the size of the `transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_transactions: FormControl<number | null | undefined>,
 	}
@@ -46343,6 +47715,7 @@ export namespace MyNS {
 		/**
 		 * The expected date when the full amount of the transfer settles at the consumers’ account, if the transfer is credit; or at the customer's business checking account, if the transfer is debit. Only set for ACH transfers and is null for non-ACH transfers. Only set for ACH transfers. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_settlement_date: Date;
 
@@ -46433,6 +47806,7 @@ export namespace MyNS {
 		/**
 		 * The date 3 business days from settlement date indicating the following ACH returns can no longer happen: R01, R02, R03, R29. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		standard_return_window: Date;
 
@@ -46467,6 +47841,7 @@ export namespace MyNS {
 		/**
 		 * The date 61 business days from settlement date indicating the following ACH returns can no longer happen: R05, R07, R10, R11, R51, R33, R37, R38, R51, R52, R53. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		unauthorized_return_window: Date;
 
@@ -46519,6 +47894,7 @@ export namespace MyNS {
 		/**
 		 * The expected date when the full amount of the transfer settles at the consumers’ account, if the transfer is credit; or at the customer's business checking account, if the transfer is debit. Only set for ACH transfers and is null for non-ACH transfers. Only set for ACH transfers. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expected_settlement_date: FormControl<Date | null | undefined>,
 
@@ -46577,6 +47953,7 @@ export namespace MyNS {
 		/**
 		 * The date 3 business days from settlement date indicating the following ACH returns can no longer happen: R01, R02, R03, R29. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		standard_return_window: FormControl<Date | null | undefined>,
 
@@ -46611,6 +47988,7 @@ export namespace MyNS {
 		/**
 		 * The date 61 business days from settlement date indicating the following ACH returns can no longer happen: R05, R07, R10, R11, R51, R33, R37, R38, R51, R52, R53. This will be of the form YYYY-MM-DD.
 		 * Required
+		 * Type: DateOnly
 		 */
 		unauthorized_return_window: FormControl<Date | null | undefined>,
 	}
@@ -46654,6 +48032,7 @@ export namespace MyNS {
 		/**
 		 * The settlement date of a sweep for this transfer.
 		 * Required
+		 * Type: DateOnly
 		 */
 		settlement_date: Date;
 	}
@@ -46670,6 +48049,7 @@ export namespace MyNS {
 		/**
 		 * The settlement date of a sweep for this transfer.
 		 * Required
+		 * Type: DateOnly
 		 */
 		settlement_date: FormControl<Date | null | undefined>,
 	}
@@ -48892,8 +50272,8 @@ export namespace MyNS {
 		/**
 		 * A description for the underlying transfer. Maximum of 8 characters.
 		 * Required
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		description: string;
 
@@ -48970,8 +50350,8 @@ export namespace MyNS {
 		/**
 		 * A description for the underlying transfer. Maximum of 8 characters.
 		 * Required
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -51338,6 +52718,7 @@ export namespace MyNS {
 		/**
 		 * The date when the sweep settled, in the YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		settled: Date;
 	}
@@ -51384,6 +52765,7 @@ export namespace MyNS {
 		/**
 		 * The date when the sweep settled, in the YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		settled: FormControl<Date | null | undefined>,
 	}
@@ -52009,7 +53391,10 @@ export namespace MyNS {
 		 */
 		country?: string | null;
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth?: Date | null;
 
 		/**
@@ -52037,7 +53422,10 @@ export namespace MyNS {
 		 */
 		country: FormControl<string | null | undefined>,
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
@@ -52076,8 +53464,8 @@ export namespace MyNS {
 		/**
 		 * A unique ID representing the end user. Maximum of 128 characters. Typically this will be a user ID number from your application. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		client_user_id: string;
 
@@ -52094,8 +53482,8 @@ export namespace MyNS {
 		/**
 		 * A unique ID representing the end user. Maximum of 128 characters. Typically this will be a user ID number from your application. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		client_user_id: FormControl<string | null | undefined>,
 
@@ -52516,6 +53904,7 @@ export namespace MyNS {
 		/**
 		 * The total amount of funds in the account
 		 * Required
+		 * Type: double
 		 */
 		current: number;
 
@@ -52532,6 +53921,7 @@ export namespace MyNS {
 		/**
 		 * The total amount of funds in the account
 		 * Required
+		 * Type: double
 		 */
 		current: FormControl<number | null | undefined>,
 
@@ -52581,8 +53971,8 @@ export namespace MyNS {
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code: WalletCreateRequestIso_currency_code;
 
@@ -52599,8 +53989,8 @@ export namespace MyNS {
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code: FormControl<WalletCreateRequestIso_currency_code | null | undefined>,
 
@@ -52715,8 +54105,8 @@ export namespace MyNS {
 
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code?: WalletCreateRequestIso_currency_code | null;
 
@@ -52745,8 +54135,8 @@ export namespace MyNS {
 
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code: FormControl<WalletCreateRequestIso_currency_code | null | undefined>,
 
@@ -52957,8 +54347,8 @@ export namespace MyNS {
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code: WalletCreateRequestIso_currency_code;
 
@@ -52976,8 +54366,8 @@ export namespace MyNS {
 		/**
 		 * An ISO-4217 currency code, used with e-wallets and transactions.
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		iso_currency_code: FormControl<WalletCreateRequestIso_currency_code | null | undefined>,
 
@@ -53057,8 +54447,8 @@ export namespace MyNS {
 
 		/**
 		 * International Bank Account Number (IBAN).
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban?: string | null;
 	}
@@ -53068,8 +54458,8 @@ export namespace MyNS {
 
 		/**
 		 * International Bank Account Number (IBAN).
-		 * Max length: 34
 		 * Min length: 15
+		 * Max length: 34
 		 */
 		iban: FormControl<string | null | undefined>,
 	}
@@ -53121,8 +54511,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: string;
 
@@ -53130,8 +54520,8 @@ export namespace MyNS {
 		 * A reference for the transaction. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		 * Ensure that the `reference` field is unique for each transaction.
 		 * Required
-		 * Max length: 18
 		 * Min length: 6
+		 * Max length: 18
 		 */
 		reference: string;
 
@@ -53156,8 +54546,8 @@ export namespace MyNS {
 		 * A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.
 		 * The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		idempotency_key: FormControl<string | null | undefined>,
 
@@ -53165,8 +54555,8 @@ export namespace MyNS {
 		 * A reference for the transaction. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		 * Ensure that the `reference` field is unique for each transaction.
 		 * Required
-		 * Max length: 18
 		 * Min length: 6
+		 * Max length: 18
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -55150,6 +56540,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -55170,6 +56561,7 @@ export namespace MyNS {
 		/**
 		 * The current version of the search terms. Starts at `1` and increments with each edit to `search_terms`.
 		 * Required
+		 * Type: double
 		 */
 		version: number;
 
@@ -55193,6 +56585,7 @@ export namespace MyNS {
 		/**
 		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -55213,6 +56606,7 @@ export namespace MyNS {
 		/**
 		 * The current version of the search terms. Starts at `1` and increments with each edit to `search_terms`.
 		 * Required
+		 * Type: double
 		 */
 		version: FormControl<number | null | undefined>,
 
@@ -55291,7 +56685,10 @@ export namespace MyNS {
 		 */
 		country?: string | null;
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth?: Date | null;
 
 		/**
@@ -55323,7 +56720,10 @@ export namespace MyNS {
 		 */
 		country: FormControl<string | null | undefined>,
 
-		/** A date in the format YYYY-MM-DD (RFC 3339 Section 5.6). */
+		/**
+		 * A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).
+		 * Type: DateOnly
+		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**

@@ -403,18 +403,30 @@ export namespace MyNS {
 
 	export interface PagingInformationPaging {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PagingInformationPagingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePagingInformationPagingFormGroup() {
@@ -2846,11 +2858,19 @@ export namespace MyNS {
 	}
 
 	export interface AppPreOrderAttributes {
+
+		/** Type: DateOnly */
 		appReleaseDate?: Date | null;
+
+		/** Type: DateOnly */
 		preOrderAvailableDate?: Date | null;
 	}
 	export interface AppPreOrderAttributesFormProperties {
+
+		/** Type: DateOnly */
 		appReleaseDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		preOrderAvailableDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAppPreOrderAttributesFormGroup() {
@@ -2959,9 +2979,13 @@ export namespace MyNS {
 	}
 
 	export interface AppPreOrderCreateRequestDataAttributes {
+
+		/** Type: DateOnly */
 		appReleaseDate?: Date | null;
 	}
 	export interface AppPreOrderCreateRequestDataAttributesFormProperties {
+
+		/** Type: DateOnly */
 		appReleaseDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAppPreOrderCreateRequestDataAttributesFormGroup() {
@@ -3076,9 +3100,13 @@ export namespace MyNS {
 	}
 
 	export interface AppPreOrderUpdateRequestDataAttributes {
+
+		/** Type: DateOnly */
 		appReleaseDate?: Date | null;
 	}
 	export interface AppPreOrderUpdateRequestDataAttributesFormProperties {
+
+		/** Type: DateOnly */
 		appReleaseDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAppPreOrderUpdateRequestDataAttributesFormGroup() {
@@ -3120,6 +3148,8 @@ export namespace MyNS {
 	export interface AppPreviewAttributes {
 		assetDeliveryState?: AppMediaAssetState;
 		fileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize?: number | null;
 		mimeType?: string | null;
 		previewFrameTimeCode?: string | null;
@@ -3130,6 +3160,8 @@ export namespace MyNS {
 	}
 	export interface AppPreviewAttributesFormProperties {
 		fileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize: FormControl<number | null | undefined>,
 		mimeType: FormControl<string | null | undefined>,
 		previewFrameTimeCode: FormControl<string | null | undefined>,
@@ -3149,13 +3181,21 @@ export namespace MyNS {
 	}
 
 	export interface ImageAsset {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		templateUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface ImageAssetFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		templateUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageAssetFormGroup() {
@@ -3168,15 +3208,23 @@ export namespace MyNS {
 	}
 
 	export interface UploadOperation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		method?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 		requestHeaders?: Array<UploadOperationHeader>;
 		url?: string | null;
 	}
 	export interface UploadOperationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		method: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -3314,7 +3362,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: number;
 		mimeType?: string | null;
 		previewFrameTimeCode?: string | null;
@@ -3324,7 +3375,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 		mimeType: FormControl<string | null | undefined>,
 		previewFrameTimeCode: FormControl<string | null | undefined>,
@@ -4454,6 +4508,8 @@ export namespace MyNS {
 		assetToken?: string | null;
 		assetType?: string | null;
 		fileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize?: number | null;
 		imageAsset?: ImageAsset;
 		sourceFileChecksum?: string | null;
@@ -4463,6 +4519,8 @@ export namespace MyNS {
 		assetToken: FormControl<string | null | undefined>,
 		assetType: FormControl<string | null | undefined>,
 		fileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize: FormControl<number | null | undefined>,
 		sourceFileChecksum: FormControl<string | null | undefined>,
 	}
@@ -4585,7 +4643,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: number;
 	}
 	export interface AppScreenshotCreateRequestDataAttributesFormProperties {
@@ -4593,7 +4654,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 	}
 	export function CreateAppScreenshotCreateRequestDataAttributesFormGroup() {
@@ -5152,12 +5216,16 @@ export namespace MyNS {
 	export interface AppStoreReviewAttachmentAttributes {
 		assetDeliveryState?: AppMediaAssetState;
 		fileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize?: number | null;
 		sourceFileChecksum?: string | null;
 		uploadOperations?: Array<UploadOperation>;
 	}
 	export interface AppStoreReviewAttachmentAttributesFormProperties {
 		fileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize: FormControl<number | null | undefined>,
 		sourceFileChecksum: FormControl<string | null | undefined>,
 	}
@@ -5278,7 +5346,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: number;
 	}
 	export interface AppStoreReviewAttachmentCreateRequestDataAttributesFormProperties {
@@ -5286,7 +5357,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 	}
 	export function CreateAppStoreReviewAttachmentCreateRequestDataAttributesFormGroup() {
@@ -7102,15 +7176,23 @@ export namespace MyNS {
 	}
 
 	export interface AppStoreVersionPhasedReleaseAttributes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDayNumber?: number | null;
 		phasedReleaseState?: AppStoreVersionPhasedReleaseAttributesPhasedReleaseState | null;
 		startDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPauseDuration?: number | null;
 	}
 	export interface AppStoreVersionPhasedReleaseAttributesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDayNumber: FormControl<number | null | undefined>,
 		phasedReleaseState: FormControl<AppStoreVersionPhasedReleaseAttributesPhasedReleaseState | null | undefined>,
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPauseDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateAppStoreVersionPhasedReleaseAttributesFormGroup() {
@@ -9482,6 +9564,8 @@ export namespace MyNS {
 		publicLink?: string | null;
 		publicLinkEnabled?: boolean | null;
 		publicLinkId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit?: number | null;
 		publicLinkLimitEnabled?: boolean | null;
 	}
@@ -9493,6 +9577,8 @@ export namespace MyNS {
 		publicLink: FormControl<string | null | undefined>,
 		publicLinkEnabled: FormControl<boolean | null | undefined>,
 		publicLinkId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit: FormControl<number | null | undefined>,
 		publicLinkLimitEnabled: FormControl<boolean | null | undefined>,
 	}
@@ -9880,6 +9966,8 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 		publicLinkEnabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit?: number | null;
 		publicLinkLimitEnabled?: boolean | null;
 	}
@@ -9889,6 +9977,8 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 		publicLinkEnabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit: FormControl<number | null | undefined>,
 		publicLinkLimitEnabled: FormControl<boolean | null | undefined>,
 	}
@@ -10084,6 +10174,8 @@ export namespace MyNS {
 		feedbackEnabled?: boolean | null;
 		name?: string | null;
 		publicLinkEnabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit?: number | null;
 		publicLinkLimitEnabled?: boolean | null;
 	}
@@ -10091,6 +10183,8 @@ export namespace MyNS {
 		feedbackEnabled: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		publicLinkEnabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicLinkLimit: FormControl<number | null | undefined>,
 		publicLinkLimitEnabled: FormControl<boolean | null | undefined>,
 	}
@@ -12133,6 +12227,8 @@ export namespace MyNS {
 		description?: string | null;
 		enabledByDefault?: boolean | null;
 		key?: CapabilitySettingKey | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minInstances?: number | null;
 		name?: string | null;
 		options?: Array<CapabilityOption>;
@@ -12143,6 +12239,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		enabledByDefault: FormControl<boolean | null | undefined>,
 		key: FormControl<CapabilitySettingKey | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minInstances: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		visible: FormControl<boolean | null | undefined>,
@@ -12969,11 +13067,15 @@ export namespace MyNS {
 	export interface DiagnosticSignatureAttributes {
 		diagnosticType?: DiagnosticSignatureAttributesDiagnosticType | null;
 		signature?: string | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 	export interface DiagnosticSignatureAttributesFormProperties {
 		diagnosticType: FormControl<DiagnosticSignatureAttributesDiagnosticType | null | undefined>,
 		signature: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateDiagnosticSignatureAttributesFormGroup() {
@@ -14985,12 +15087,16 @@ export namespace MyNS {
 	export interface RoutingAppCoverageAttributes {
 		assetDeliveryState?: AppMediaAssetState;
 		fileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize?: number | null;
 		sourceFileChecksum?: string | null;
 		uploadOperations?: Array<UploadOperation>;
 	}
 	export interface RoutingAppCoverageAttributesFormProperties {
 		fileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fileSize: FormControl<number | null | undefined>,
 		sourceFileChecksum: FormControl<string | null | undefined>,
 	}
@@ -15107,7 +15213,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: number;
 	}
 	export interface RoutingAppCoverageCreateRequestDataAttributesFormProperties {
@@ -15115,7 +15224,10 @@ export namespace MyNS {
 		/** Required */
 		fileName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 	}
 	export function CreateRoutingAppCoverageCreateRequestDataAttributesFormGroup() {
@@ -15918,8 +16030,10 @@ export namespace MyNS {
 		 * @param {Array<string>} exists_parent filter by existence or non-existence of related 'parent'
 		 * @param {Array<string>} fields_appCategories the fields to include for returned resources of type appCategories
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {number} limit_subcategories maximum number of related subcategories returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppCategoriesResponse} List of AppCategories
 		 */
 		AppCategories_get_collection(filter_platforms: Array<Platform> | null | undefined, exists_parent: Array<string> | null | undefined, fields_appCategories: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, limit_subcategories: number | null | undefined): Observable<AppCategoriesResponse> {
@@ -15931,6 +16045,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appCategories the fields to include for returned resources of type appCategories
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {number} limit_subcategories maximum number of related subcategories returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppCategoryResponse} Single AppCategory
 		 */
 		AppCategories_get_instance(fields_appCategories: Array<string> | null | undefined, include: Array<string> | null | undefined, limit_subcategories: number | null | undefined): Observable<AppCategoryResponse> {
@@ -15950,6 +16065,7 @@ export namespace MyNS {
 		 * Get v1/appCategories/{id}/subcategories
 		 * @param {Array<string>} fields_appCategories the fields to include for returned resources of type appCategories
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppCategoriesResponse} List of related resources
 		 */
 		AppCategories_subcategories_get_to_many_related(fields_appCategories: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppCategoriesResponse> {
@@ -15963,6 +16079,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_builds filter by id(s) of related 'builds'
 		 * @param {Array<string>} fields_appEncryptionDeclarations the fields to include for returned resources of type appEncryptionDeclarations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @return {AppEncryptionDeclarationsResponse} List of AppEncryptionDeclarations
@@ -16044,6 +16161,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appCategories the fields to include for returned resources of type appCategories
 		 * @param {Array<string>} fields_appInfoLocalizations the fields to include for returned resources of type appInfoLocalizations
 		 * @param {number} limit_appInfoLocalizations maximum number of related appInfoLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppInfoResponse} Single AppInfo
 		 */
 		AppInfos_get_instance(fields_appInfos: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_ageRatingDeclarations: Array<string> | null | undefined, fields_appCategories: Array<string> | null | undefined, fields_appInfoLocalizations: Array<string> | null | undefined, limit_appInfoLocalizations: number | null | undefined): Observable<AppInfoResponse> {
@@ -16074,6 +16192,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appInfos the fields to include for returned resources of type appInfos
 		 * @param {Array<string>} fields_appInfoLocalizations the fields to include for returned resources of type appInfoLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppInfoLocalizationsResponse} List of related resources
 		 */
@@ -16194,6 +16313,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appPreviews the fields to include for returned resources of type appPreviews
 		 * @param {number} limit_appPreviews maximum number of related appPreviews returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppPreviewSetResponse} Single AppPreviewSet
 		 */
 		AppPreviewSets_get_instance(fields_appPreviewSets: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appPreviews: Array<string> | null | undefined, limit_appPreviews: number | null | undefined): Observable<AppPreviewSetResponse> {
@@ -16205,6 +16325,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appPreviews the fields to include for returned resources of type appPreviews
 		 * @param {Array<string>} fields_appPreviewSets the fields to include for returned resources of type appPreviewSets
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppPreviewsResponse} List of related resources
 		 */
@@ -16215,6 +16336,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/appPreviewSets/{id}/relationships/appPreviews
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppPreviewSetAppPreviewsLinkagesResponse} List of related linkages
 		 */
 		AppPreviewSets_appPreviews_get_to_many_relationship(limit: number | null | undefined): Observable<AppPreviewSetAppPreviewsLinkagesResponse> {
@@ -16272,6 +16394,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_territory filter by id(s) of related 'territory'
 		 * @param {Array<string>} fields_appPricePoints the fields to include for returned resources of type appPricePoints
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_territories the fields to include for returned resources of type territories
 		 * @return {AppPricePointsResponse} List of AppPricePoints
@@ -16305,9 +16428,11 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_id filter by id(s)
 		 * @param {Array<string>} fields_appPriceTiers the fields to include for returned resources of type appPriceTiers
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appPricePoints the fields to include for returned resources of type appPricePoints
 		 * @param {number} limit_pricePoints maximum number of related pricePoints returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppPriceTiersResponse} List of AppPriceTiers
 		 */
 		AppPriceTiers_get_collection(filter_id: Array<string> | null | undefined, fields_appPriceTiers: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_appPricePoints: Array<string> | null | undefined, limit_pricePoints: number | null | undefined): Observable<AppPriceTiersResponse> {
@@ -16320,6 +16445,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appPricePoints the fields to include for returned resources of type appPricePoints
 		 * @param {number} limit_pricePoints maximum number of related pricePoints returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppPriceTierResponse} Single AppPriceTier
 		 */
 		AppPriceTiers_get_instance(fields_appPriceTiers: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appPricePoints: Array<string> | null | undefined, limit_pricePoints: number | null | undefined): Observable<AppPriceTierResponse> {
@@ -16330,6 +16456,7 @@ export namespace MyNS {
 		 * Get v1/appPriceTiers/{id}/pricePoints
 		 * @param {Array<string>} fields_appPricePoints the fields to include for returned resources of type appPricePoints
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppPricePointsResponse} List of related resources
 		 */
 		AppPriceTiers_pricePoints_get_to_many_related(fields_appPricePoints: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppPricePointsResponse> {
@@ -16369,6 +16496,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appScreenshots the fields to include for returned resources of type appScreenshots
 		 * @param {number} limit_appScreenshots maximum number of related appScreenshots returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppScreenshotSetResponse} Single AppScreenshotSet
 		 */
 		AppScreenshotSets_get_instance(fields_appScreenshotSets: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appScreenshots: Array<string> | null | undefined, limit_appScreenshots: number | null | undefined): Observable<AppScreenshotSetResponse> {
@@ -16380,6 +16508,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appScreenshotSets the fields to include for returned resources of type appScreenshotSets
 		 * @param {Array<string>} fields_appScreenshots the fields to include for returned resources of type appScreenshots
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppScreenshotsResponse} List of related resources
 		 */
@@ -16390,6 +16519,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/appScreenshotSets/{id}/relationships/appScreenshots
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppScreenshotSetAppScreenshotsLinkagesResponse} List of related linkages
 		 */
 		AppScreenshotSets_appScreenshots_get_to_many_relationship(limit: number | null | undefined): Observable<AppScreenshotSetAppScreenshotsLinkagesResponse> {
@@ -16492,6 +16622,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appStoreReviewAttachments the fields to include for returned resources of type appStoreReviewAttachments
 		 * @param {number} limit_appStoreReviewAttachments maximum number of related appStoreReviewAttachments returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppStoreReviewDetailResponse} Single AppStoreReviewDetail
 		 */
 		AppStoreReviewDetails_get_instance(fields_appStoreReviewDetails: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appStoreReviewAttachments: Array<string> | null | undefined, limit_appStoreReviewAttachments: number | null | undefined): Observable<AppStoreReviewDetailResponse> {
@@ -16512,6 +16643,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appStoreReviewDetails the fields to include for returned resources of type appStoreReviewDetails
 		 * @param {Array<string>} fields_appStoreReviewAttachments the fields to include for returned resources of type appStoreReviewAttachments
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppStoreReviewAttachmentsResponse} List of related resources
 		 */
@@ -16543,7 +16675,9 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appScreenshotSets the fields to include for returned resources of type appScreenshotSets
 		 * @param {Array<string>} fields_appPreviewSets the fields to include for returned resources of type appPreviewSets
 		 * @param {number} limit_appPreviewSets maximum number of related appPreviewSets returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_appScreenshotSets maximum number of related appScreenshotSets returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppStoreVersionLocalizationResponse} Single AppStoreVersionLocalization
 		 */
 		AppStoreVersionLocalizations_get_instance(fields_appStoreVersionLocalizations: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appScreenshotSets: Array<string> | null | undefined, fields_appPreviewSets: Array<string> | null | undefined, limit_appPreviewSets: number | null | undefined, limit_appScreenshotSets: number | null | undefined): Observable<AppStoreVersionLocalizationResponse> {
@@ -16566,6 +16700,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appPreviews the fields to include for returned resources of type appPreviews
 		 * @param {Array<string>} fields_appPreviewSets the fields to include for returned resources of type appPreviewSets
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppPreviewSetsResponse} List of related resources
 		 */
@@ -16580,6 +16715,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appScreenshotSets the fields to include for returned resources of type appScreenshotSets
 		 * @param {Array<string>} fields_appScreenshots the fields to include for returned resources of type appScreenshots
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppScreenshotSetsResponse} List of related resources
 		 */
@@ -16660,6 +16796,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_appStoreVersionSubmissions the fields to include for returned resources of type appStoreVersionSubmissions
 		 * @param {number} limit_appStoreVersionLocalizations maximum number of related appStoreVersionLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppStoreVersionResponse} Single AppStoreVersion
 		 */
 		AppStoreVersions_get_instance(fields_appStoreVersions: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appStoreVersionLocalizations: Array<string> | null | undefined, fields_idfaDeclarations: Array<string> | null | undefined, fields_routingAppCoverages: Array<string> | null | undefined, fields_appStoreVersionPhasedReleases: Array<string> | null | undefined, fields_ageRatingDeclarations: Array<string> | null | undefined, fields_appStoreReviewDetails: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_appStoreVersionSubmissions: Array<string> | null | undefined, limit_appStoreVersionLocalizations: number | null | undefined): Observable<AppStoreVersionResponse> {
@@ -16700,6 +16837,7 @@ export namespace MyNS {
 		 * Get v1/appStoreVersions/{id}/appStoreVersionLocalizations
 		 * @param {Array<string>} fields_appStoreVersionLocalizations the fields to include for returned resources of type appStoreVersionLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppStoreVersionLocalizationsResponse} List of related resources
 		 */
 		AppStoreVersions_appStoreVersionLocalizations_get_to_many_related(fields_appStoreVersionLocalizations: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppStoreVersionLocalizationsResponse> {
@@ -16783,6 +16921,7 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_betaGroups the fields to include for returned resources of type betaGroups
 		 * @param {Array<string>} fields_perfPowerMetrics the fields to include for returned resources of type perfPowerMetrics
@@ -16800,15 +16939,25 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_betaLicenseAgreements the fields to include for returned resources of type betaLicenseAgreements
 		 * @param {Array<string>} fields_endUserLicenseAgreements the fields to include for returned resources of type endUserLicenseAgreements
 		 * @param {number} limit_appInfos maximum number of related appInfos returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_appStoreVersions maximum number of related appStoreVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_availableTerritories maximum number of related availableTerritories returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaAppLocalizations maximum number of related betaAppLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaGroups maximum number of related betaGroups returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_gameCenterEnabledVersions maximum number of related gameCenterEnabledVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_inAppPurchases maximum number of related inAppPurchases returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_preReleaseVersions maximum number of related preReleaseVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_prices maximum number of related prices returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppsResponse} List of Apps
 		 */
 		Apps_get_collection(filter_appStoreVersions_appStoreState: Array<AppInfoAttributesAppStoreState> | null | undefined, filter_appStoreVersions_platform: Array<Platform> | null | undefined, filter_bundleId: Array<string> | null | undefined, filter_name: Array<string> | null | undefined, filter_sku: Array<string> | null | undefined, filter_appStoreVersions: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, exists_gameCenterEnabledVersions: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_betaGroups: Array<string> | null | undefined, fields_perfPowerMetrics: Array<string> | null | undefined, fields_appInfos: Array<string> | null | undefined, fields_appPreOrders: Array<string> | null | undefined, fields_preReleaseVersions: Array<string> | null | undefined, fields_appPrices: Array<string> | null | undefined, fields_inAppPurchases: Array<string> | null | undefined, fields_betaAppReviewDetails: Array<string> | null | undefined, fields_territories: Array<string> | null | undefined, fields_gameCenterEnabledVersions: Array<string> | null | undefined, fields_appStoreVersions: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_betaAppLocalizations: Array<string> | null | undefined, fields_betaLicenseAgreements: Array<string> | null | undefined, fields_endUserLicenseAgreements: Array<string> | null | undefined, limit_appInfos: number | null | undefined, limit_appStoreVersions: number | null | undefined, limit_availableTerritories: number | null | undefined, limit_betaAppLocalizations: number | null | undefined, limit_betaGroups: number | null | undefined, limit_builds: number | null | undefined, limit_gameCenterEnabledVersions: number | null | undefined, limit_inAppPurchases: number | null | undefined, limit_preReleaseVersions: number | null | undefined, limit_prices: number | null | undefined): Observable<AppsResponse> {
@@ -16835,15 +16984,25 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_betaLicenseAgreements the fields to include for returned resources of type betaLicenseAgreements
 		 * @param {Array<string>} fields_endUserLicenseAgreements the fields to include for returned resources of type endUserLicenseAgreements
 		 * @param {number} limit_appInfos maximum number of related appInfos returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_appStoreVersions maximum number of related appStoreVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_availableTerritories maximum number of related availableTerritories returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaAppLocalizations maximum number of related betaAppLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaGroups maximum number of related betaGroups returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_gameCenterEnabledVersions maximum number of related gameCenterEnabledVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_inAppPurchases maximum number of related inAppPurchases returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_preReleaseVersions maximum number of related preReleaseVersions returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_prices maximum number of related prices returned (when they are included)
+		 *     Maximum: 50
 		 * @return {AppResponse} Single App
 		 */
 		Apps_get_instance(fields_apps: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_betaGroups: Array<string> | null | undefined, fields_perfPowerMetrics: Array<string> | null | undefined, fields_appInfos: Array<string> | null | undefined, fields_appPreOrders: Array<string> | null | undefined, fields_preReleaseVersions: Array<string> | null | undefined, fields_appPrices: Array<string> | null | undefined, fields_inAppPurchases: Array<string> | null | undefined, fields_betaAppReviewDetails: Array<string> | null | undefined, fields_territories: Array<string> | null | undefined, fields_gameCenterEnabledVersions: Array<string> | null | undefined, fields_appStoreVersions: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_betaAppLocalizations: Array<string> | null | undefined, fields_betaLicenseAgreements: Array<string> | null | undefined, fields_endUserLicenseAgreements: Array<string> | null | undefined, limit_appInfos: number | null | undefined, limit_appStoreVersions: number | null | undefined, limit_availableTerritories: number | null | undefined, limit_betaAppLocalizations: number | null | undefined, limit_betaGroups: number | null | undefined, limit_builds: number | null | undefined, limit_gameCenterEnabledVersions: number | null | undefined, limit_inAppPurchases: number | null | undefined, limit_preReleaseVersions: number | null | undefined, limit_prices: number | null | undefined): Observable<AppResponse> {
@@ -16867,6 +17026,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appInfoLocalizations the fields to include for returned resources of type appInfoLocalizations
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppInfosResponse} List of related resources
 		 */
@@ -16891,6 +17051,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appStoreVersionSubmissions the fields to include for returned resources of type appStoreVersionSubmissions
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppStoreVersionsResponse} List of related resources
 		 */
@@ -16902,6 +17063,7 @@ export namespace MyNS {
 		 * Get v1/apps/{id}/availableTerritories
 		 * @param {Array<string>} fields_territories the fields to include for returned resources of type territories
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {TerritoriesResponse} List of related resources
 		 */
 		Apps_availableTerritories_get_to_many_related(fields_territories: Array<string> | null | undefined, limit: number | null | undefined): Observable<TerritoriesResponse> {
@@ -16912,6 +17074,7 @@ export namespace MyNS {
 		 * Get v1/apps/{id}/betaAppLocalizations
 		 * @param {Array<string>} fields_betaAppLocalizations the fields to include for returned resources of type betaAppLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaAppLocalizationsResponse} List of related resources
 		 */
 		Apps_betaAppLocalizations_get_to_many_related(fields_betaAppLocalizations: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaAppLocalizationsResponse> {
@@ -16931,6 +17094,7 @@ export namespace MyNS {
 		 * Get v1/apps/{id}/betaGroups
 		 * @param {Array<string>} fields_betaGroups the fields to include for returned resources of type betaGroups
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaGroupsResponse} List of related resources
 		 */
 		Apps_betaGroups_get_to_many_related(fields_betaGroups: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaGroupsResponse> {
@@ -16950,6 +17114,7 @@ export namespace MyNS {
 		 * Get v1/apps/{id}/builds
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildsResponse} List of related resources
 		 */
 		Apps_builds_get_to_many_related(fields_builds: Array<string> | null | undefined, limit: number | null | undefined): Observable<BuildsResponse> {
@@ -16974,6 +17139,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_gameCenterEnabledVersions the fields to include for returned resources of type gameCenterEnabledVersions
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {GameCenterEnabledVersionsResponse} List of related resources
 		 */
@@ -16989,6 +17155,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_inAppPurchases the fields to include for returned resources of type inAppPurchases
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<AppType>} include comma-separated list of relationships to include
 		 * @return {InAppPurchasesResponse} List of related resources
 		 */
@@ -17020,6 +17187,7 @@ export namespace MyNS {
 		 * Get v1/apps/{id}/preReleaseVersions
 		 * @param {Array<string>} fields_preReleaseVersions the fields to include for returned resources of type preReleaseVersions
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {PreReleaseVersionsResponse} List of related resources
 		 */
 		Apps_preReleaseVersions_get_to_many_related(fields_preReleaseVersions: Array<string> | null | undefined, limit: number | null | undefined): Observable<PreReleaseVersionsResponse> {
@@ -17032,6 +17200,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_appPriceTiers the fields to include for returned resources of type appPriceTiers
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {AppPricesResponse} List of related resources
 		 */
@@ -17053,6 +17222,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_app filter by id(s) of related 'app'
 		 * @param {Array<string>} fields_betaAppLocalizations the fields to include for returned resources of type betaAppLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @return {BetaAppLocalizationsResponse} List of BetaAppLocalizations
@@ -17112,6 +17282,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_app filter by id(s) of related 'app'
 		 * @param {Array<string>} fields_betaAppReviewDetails the fields to include for returned resources of type betaAppReviewDetails
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @return {BetaAppReviewDetailsResponse} List of BetaAppReviewDetails
@@ -17155,6 +17326,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_build filter by id(s) of related 'build'
 		 * @param {Array<string>} fields_betaAppReviewSubmissions the fields to include for returned resources of type betaAppReviewSubmissions
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @return {BetaAppReviewSubmissionsResponse} List of BetaAppReviewSubmissions
@@ -17198,6 +17370,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_build filter by id(s) of related 'build'
 		 * @param {Array<string>} fields_betaBuildLocalizations the fields to include for returned resources of type betaBuildLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @return {BetaBuildLocalizationsResponse} List of BetaBuildLocalizations
@@ -17265,12 +17438,15 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_betaGroups the fields to include for returned resources of type betaGroups
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_betaTesters the fields to include for returned resources of type betaTesters
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_betaTesters maximum number of related betaTesters returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 1000
 		 * @return {BetaGroupsResponse} List of BetaGroups
 		 */
 		BetaGroups_get_collection(filter_isInternalGroup: Array<string> | null | undefined, filter_name: Array<string> | null | undefined, filter_publicLink: Array<string> | null | undefined, filter_publicLinkEnabled: Array<string> | null | undefined, filter_publicLinkLimitEnabled: Array<string> | null | undefined, filter_app: Array<string> | null | undefined, filter_builds: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_betaGroups: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_betaTesters: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_betaTesters: number | null | undefined, limit_builds: number | null | undefined): Observable<BetaGroupsResponse> {
@@ -17302,7 +17478,9 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_betaTesters the fields to include for returned resources of type betaTesters
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_betaTesters maximum number of related betaTesters returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 1000
 		 * @return {BetaGroupResponse} Single BetaGroup
 		 */
 		BetaGroups_get_instance(fields_betaGroups: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_betaTesters: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_betaTesters: number | null | undefined, limit_builds: number | null | undefined): Observable<BetaGroupResponse> {
@@ -17331,6 +17509,7 @@ export namespace MyNS {
 		 * Get v1/betaGroups/{id}/betaTesters
 		 * @param {Array<string>} fields_betaTesters the fields to include for returned resources of type betaTesters
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaTestersResponse} List of related resources
 		 */
 		BetaGroups_betaTesters_get_to_many_related(fields_betaTesters: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaTestersResponse> {
@@ -17341,6 +17520,7 @@ export namespace MyNS {
 		 * Get v1/betaGroups/{id}/builds
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildsResponse} List of related resources
 		 */
 		BetaGroups_builds_get_to_many_related(fields_builds: Array<string> | null | undefined, limit: number | null | undefined): Observable<BuildsResponse> {
@@ -17358,6 +17538,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/betaGroups/{id}/relationships/betaTesters
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaGroupBetaTestersLinkagesResponse} List of related linkages
 		 */
 		BetaGroups_betaTesters_get_to_many_relationship(limit: number | null | undefined): Observable<BetaGroupBetaTestersLinkagesResponse> {
@@ -17384,6 +17565,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/betaGroups/{id}/relationships/builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaGroupBuildsLinkagesResponse} List of related linkages
 		 */
 		BetaGroups_builds_get_to_many_relationship(limit: number | null | undefined): Observable<BetaGroupBuildsLinkagesResponse> {
@@ -17404,6 +17586,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_app filter by id(s) of related 'app'
 		 * @param {Array<string>} fields_betaLicenseAgreements the fields to include for returned resources of type betaLicenseAgreements
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @return {BetaLicenseAgreementsResponse} List of BetaLicenseAgreements
@@ -17462,13 +17645,17 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_betaTesters the fields to include for returned resources of type betaTesters
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_betaGroups the fields to include for returned resources of type betaGroups
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_apps maximum number of related apps returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaGroups maximum number of related betaGroups returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BetaTestersResponse} List of BetaTesters
 		 */
 		BetaTesters_get_collection(filter_email: Array<string> | null | undefined, filter_firstName: Array<string> | null | undefined, filter_inviteType: Array<BetaInviteType> | null | undefined, filter_lastName: Array<string> | null | undefined, filter_apps: Array<string> | null | undefined, filter_betaGroups: Array<string> | null | undefined, filter_builds: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_betaTesters: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_betaGroups: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_apps: number | null | undefined, limit_betaGroups: number | null | undefined, limit_builds: number | null | undefined): Observable<BetaTestersResponse> {
@@ -17500,8 +17687,11 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_apps maximum number of related apps returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_betaGroups maximum number of related betaGroups returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BetaTesterResponse} Single BetaTester
 		 */
 		BetaTesters_get_instance(fields_betaTesters: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_betaGroups: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_apps: number | null | undefined, limit_betaGroups: number | null | undefined, limit_builds: number | null | undefined): Observable<BetaTesterResponse> {
@@ -17512,6 +17702,7 @@ export namespace MyNS {
 		 * Get v1/betaTesters/{id}/apps
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppsResponse} List of related resources
 		 */
 		BetaTesters_apps_get_to_many_related(fields_apps: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppsResponse> {
@@ -17522,6 +17713,7 @@ export namespace MyNS {
 		 * Get v1/betaTesters/{id}/betaGroups
 		 * @param {Array<string>} fields_betaGroups the fields to include for returned resources of type betaGroups
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaGroupsResponse} List of related resources
 		 */
 		BetaTesters_betaGroups_get_to_many_related(fields_betaGroups: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaGroupsResponse> {
@@ -17532,6 +17724,7 @@ export namespace MyNS {
 		 * Get v1/betaTesters/{id}/builds
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildsResponse} List of related resources
 		 */
 		BetaTesters_builds_get_to_many_related(fields_builds: Array<string> | null | undefined, limit: number | null | undefined): Observable<BuildsResponse> {
@@ -17549,6 +17742,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/betaTesters/{id}/relationships/apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaTesterAppsLinkagesResponse} List of related linkages
 		 */
 		BetaTesters_apps_get_to_many_relationship(limit: number | null | undefined): Observable<BetaTesterAppsLinkagesResponse> {
@@ -17566,6 +17760,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/betaTesters/{id}/relationships/betaGroups
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaTesterBetaGroupsLinkagesResponse} List of related linkages
 		 */
 		BetaTesters_betaGroups_get_to_many_relationship(limit: number | null | undefined): Observable<BetaTesterBetaGroupsLinkagesResponse> {
@@ -17592,6 +17787,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/betaTesters/{id}/relationships/builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaTesterBuildsLinkagesResponse} List of related linkages
 		 */
 		BetaTesters_builds_get_to_many_relationship(limit: number | null | undefined): Observable<BetaTesterBuildsLinkagesResponse> {
@@ -17613,6 +17809,7 @@ export namespace MyNS {
 		 * @param {Array<string>} filter_id filter by id(s)
 		 * @param {Array<string>} fields_buildBetaDetails the fields to include for returned resources of type buildBetaDetails
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @return {BuildBetaDetailsResponse} List of BuildBetaDetails
@@ -17676,6 +17873,7 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_appEncryptionDeclarations the fields to include for returned resources of type appEncryptionDeclarations
 		 * @param {Array<string>} fields_betaAppReviewSubmissions the fields to include for returned resources of type betaAppReviewSubmissions
@@ -17689,8 +17887,11 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_betaBuildLocalizations the fields to include for returned resources of type betaBuildLocalizations
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_betaBuildLocalizations maximum number of related betaBuildLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_icons maximum number of related icons returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_individualTesters maximum number of related individualTesters returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BuildsResponse} List of Builds
 		 */
 		Builds_get_collection(filter_betaAppReviewSubmission_betaReviewState: Array<BetaAppReviewSubmissionAttributesBetaReviewState> | null | undefined, filter_expired: Array<string> | null | undefined, filter_preReleaseVersion_platform: Array<Platform> | null | undefined, filter_preReleaseVersion_version: Array<string> | null | undefined, filter_processingState: Array<BuildAttributesProcessingState> | null | undefined, filter_usesNonExemptEncryption: Array<string> | null | undefined, filter_version: Array<string> | null | undefined, filter_app: Array<string> | null | undefined, filter_appStoreVersion: Array<string> | null | undefined, filter_betaGroups: Array<string> | null | undefined, filter_preReleaseVersion: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_appEncryptionDeclarations: Array<string> | null | undefined, fields_betaAppReviewSubmissions: Array<string> | null | undefined, fields_buildBetaDetails: Array<string> | null | undefined, fields_buildIcons: Array<string> | null | undefined, fields_perfPowerMetrics: Array<string> | null | undefined, fields_preReleaseVersions: Array<string> | null | undefined, fields_appStoreVersions: Array<string> | null | undefined, fields_diagnosticSignatures: Array<string> | null | undefined, fields_betaTesters: Array<string> | null | undefined, fields_betaBuildLocalizations: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_betaBuildLocalizations: number | null | undefined, limit_icons: number | null | undefined, limit_individualTesters: number | null | undefined): Observable<BuildsResponse> {
@@ -17713,8 +17914,11 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_betaBuildLocalizations the fields to include for returned resources of type betaBuildLocalizations
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_betaBuildLocalizations maximum number of related betaBuildLocalizations returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_icons maximum number of related icons returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_individualTesters maximum number of related individualTesters returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BuildResponse} Single Build
 		 */
 		Builds_get_instance(fields_builds: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_appEncryptionDeclarations: Array<string> | null | undefined, fields_betaAppReviewSubmissions: Array<string> | null | undefined, fields_buildBetaDetails: Array<string> | null | undefined, fields_buildIcons: Array<string> | null | undefined, fields_perfPowerMetrics: Array<string> | null | undefined, fields_preReleaseVersions: Array<string> | null | undefined, fields_appStoreVersions: Array<string> | null | undefined, fields_diagnosticSignatures: Array<string> | null | undefined, fields_betaTesters: Array<string> | null | undefined, fields_betaBuildLocalizations: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_betaBuildLocalizations: number | null | undefined, limit_icons: number | null | undefined, limit_individualTesters: number | null | undefined): Observable<BuildResponse> {
@@ -17770,6 +17974,7 @@ export namespace MyNS {
 		 * Get v1/builds/{id}/betaBuildLocalizations
 		 * @param {Array<string>} fields_betaBuildLocalizations the fields to include for returned resources of type betaBuildLocalizations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaBuildLocalizationsResponse} List of related resources
 		 */
 		Builds_betaBuildLocalizations_get_to_many_related(fields_betaBuildLocalizations: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaBuildLocalizationsResponse> {
@@ -17790,6 +17995,7 @@ export namespace MyNS {
 		 * @param {Array<DiagnosticSignatureAttributesDiagnosticType>} filter_diagnosticType filter by attribute 'diagnosticType'
 		 * @param {Array<string>} fields_diagnosticSignatures the fields to include for returned resources of type diagnosticSignatures
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {DiagnosticSignaturesResponse} List of related resources
 		 */
 		Builds_diagnosticSignatures_get_to_many_related(filter_diagnosticType: Array<DiagnosticSignatureAttributesDiagnosticType> | null | undefined, fields_diagnosticSignatures: Array<string> | null | undefined, limit: number | null | undefined): Observable<DiagnosticSignaturesResponse> {
@@ -17800,6 +18006,7 @@ export namespace MyNS {
 		 * Get v1/builds/{id}/icons
 		 * @param {Array<string>} fields_buildIcons the fields to include for returned resources of type buildIcons
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildIconsResponse} List of related resources
 		 */
 		Builds_icons_get_to_many_related(fields_buildIcons: Array<string> | null | undefined, limit: number | null | undefined): Observable<BuildIconsResponse> {
@@ -17810,6 +18017,7 @@ export namespace MyNS {
 		 * Get v1/builds/{id}/individualTesters
 		 * @param {Array<string>} fields_betaTesters the fields to include for returned resources of type betaTesters
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BetaTestersResponse} List of related resources
 		 */
 		Builds_individualTesters_get_to_many_related(fields_betaTesters: Array<string> | null | undefined, limit: number | null | undefined): Observable<BetaTestersResponse> {
@@ -17881,6 +18089,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/builds/{id}/relationships/individualTesters
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildIndividualTestersLinkagesResponse} List of related linkages
 		 */
 		Builds_individualTesters_get_to_many_relationship(limit: number | null | undefined): Observable<BuildIndividualTestersLinkagesResponse> {
@@ -17932,12 +18141,15 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_bundleIds the fields to include for returned resources of type bundleIds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_bundleIdCapabilities the fields to include for returned resources of type bundleIdCapabilities
 		 * @param {Array<string>} fields_profiles the fields to include for returned resources of type profiles
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_bundleIdCapabilities maximum number of related bundleIdCapabilities returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_profiles maximum number of related profiles returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BundleIdsResponse} List of BundleIds
 		 */
 		BundleIds_get_collection(filter_identifier: Array<string> | null | undefined, filter_name: Array<string> | null | undefined, filter_platform: Array<BundleIdAttributesPlatform> | null | undefined, filter_seedId: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_bundleIds: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_bundleIdCapabilities: Array<string> | null | undefined, fields_profiles: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_bundleIdCapabilities: number | null | undefined, limit_profiles: number | null | undefined): Observable<BundleIdsResponse> {
@@ -17969,7 +18181,9 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_profiles the fields to include for returned resources of type profiles
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_bundleIdCapabilities maximum number of related bundleIdCapabilities returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_profiles maximum number of related profiles returned (when they are included)
+		 *     Maximum: 50
 		 * @return {BundleIdResponse} Single BundleId
 		 */
 		BundleIds_get_instance(fields_bundleIds: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_bundleIdCapabilities: Array<string> | null | undefined, fields_profiles: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_bundleIdCapabilities: number | null | undefined, limit_profiles: number | null | undefined): Observable<BundleIdResponse> {
@@ -17998,6 +18212,7 @@ export namespace MyNS {
 		 * Get v1/bundleIds/{id}/bundleIdCapabilities
 		 * @param {Array<string>} fields_bundleIdCapabilities the fields to include for returned resources of type bundleIdCapabilities
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BundleIdCapabilitiesResponse} List of related resources
 		 */
 		BundleIds_bundleIdCapabilities_get_to_many_related(fields_bundleIdCapabilities: Array<string> | null | undefined, limit: number | null | undefined): Observable<BundleIdCapabilitiesResponse> {
@@ -18008,6 +18223,7 @@ export namespace MyNS {
 		 * Get v1/bundleIds/{id}/profiles
 		 * @param {Array<string>} fields_profiles the fields to include for returned resources of type profiles
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {ProfilesResponse} List of related resources
 		 */
 		BundleIds_profiles_get_to_many_related(fields_profiles: Array<string> | null | undefined, limit: number | null | undefined): Observable<ProfilesResponse> {
@@ -18023,6 +18239,7 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_certificates the fields to include for returned resources of type certificates
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {CertificatesResponse} List of Certificates
 		 */
 		Certificates_get_collection(filter_certificateType: Array<CertificateAttributesCertificateType> | null | undefined, filter_displayName: Array<string> | null | undefined, filter_serialNumber: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_certificates: Array<string> | null | undefined, limit: number | null | undefined): Observable<CertificatesResponse> {
@@ -18065,6 +18282,7 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_devices the fields to include for returned resources of type devices
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {DevicesResponse} List of Devices
 		 */
 		Devices_get_collection(filter_name: Array<string> | null | undefined, filter_platform: Array<BundleIdAttributesPlatform> | null | undefined, filter_status: Array<DeviceAttributesStatus> | null | undefined, filter_udid: Array<string> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_devices: Array<string> | null | undefined, limit: number | null | undefined): Observable<DevicesResponse> {
@@ -18101,6 +18319,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/diagnosticSignatures/{id}/logs
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {DiagnosticLogsResponse} List of related resources
 		 */
 		DiagnosticSignatures_logs_get_to_many_related(limit: number | null | undefined): Observable<DiagnosticLogsResponse> {
@@ -18130,6 +18349,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_territories the fields to include for returned resources of type territories
 		 * @param {number} limit_territories maximum number of related territories returned (when they are included)
+		 *     Maximum: 50
 		 * @return {EndUserLicenseAgreementResponse} Single EndUserLicenseAgreement
 		 */
 		EndUserLicenseAgreements_get_instance(fields_endUserLicenseAgreements: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_territories: Array<string> | null | undefined, limit_territories: number | null | undefined): Observable<EndUserLicenseAgreementResponse> {
@@ -18149,6 +18369,7 @@ export namespace MyNS {
 		 * Get v1/endUserLicenseAgreements/{id}/territories
 		 * @param {Array<string>} fields_territories the fields to include for returned resources of type territories
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {TerritoriesResponse} List of related resources
 		 */
 		EndUserLicenseAgreements_territories_get_to_many_related(fields_territories: Array<string> | null | undefined, limit: number | null | undefined): Observable<TerritoriesResponse> {
@@ -18177,6 +18398,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_gameCenterEnabledVersions the fields to include for returned resources of type gameCenterEnabledVersions
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @return {GameCenterEnabledVersionsResponse} List of related resources
 		 */
@@ -18195,6 +18417,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {GameCenterEnabledVersionCompatibleVersionsLinkagesResponse} List of related linkages
 		 */
 		GameCenterEnabledVersions_compatibleVersions_get_to_many_relationship(limit: number | null | undefined): Observable<GameCenterEnabledVersionCompatibleVersionsLinkagesResponse> {
@@ -18250,6 +18473,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_inAppPurchases the fields to include for returned resources of type inAppPurchases
 		 * @param {Array<AppType>} include comma-separated list of relationships to include
 		 * @param {number} limit_apps maximum number of related apps returned (when they are included)
+		 *     Maximum: 50
 		 * @return {InAppPurchaseResponse} Single InAppPurchase
 		 */
 		InAppPurchases_get_instance(fields_inAppPurchases: Array<string> | null | undefined, include: Array<AppType> | null | undefined, limit_apps: number | null | undefined): Observable<InAppPurchaseResponse> {
@@ -18267,10 +18491,12 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_preReleaseVersions the fields to include for returned resources of type preReleaseVersions
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @return {PreReleaseVersionsResponse} List of PreReleaseVersions
 		 */
 		PreReleaseVersions_get_collection(filter_builds_expired: Array<string> | null | undefined, filter_builds_processingState: Array<BuildAttributesProcessingState> | null | undefined, filter_platform: Array<Platform> | null | undefined, filter_version: Array<string> | null | undefined, filter_app: Array<string> | null | undefined, filter_builds: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_preReleaseVersions: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_builds: number | null | undefined): Observable<PreReleaseVersionsResponse> {
@@ -18284,6 +18510,7 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_builds maximum number of related builds returned (when they are included)
+		 *     Maximum: 50
 		 * @return {PrereleaseVersionResponse} Single PrereleaseVersion
 		 */
 		PreReleaseVersions_get_instance(fields_preReleaseVersions: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_builds: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_builds: number | null | undefined): Observable<PrereleaseVersionResponse> {
@@ -18303,6 +18530,7 @@ export namespace MyNS {
 		 * Get v1/preReleaseVersions/{id}/builds
 		 * @param {Array<string>} fields_builds the fields to include for returned resources of type builds
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {BuildsResponse} List of related resources
 		 */
 		PreReleaseVersions_builds_get_to_many_related(fields_builds: Array<string> | null | undefined, limit: number | null | undefined): Observable<BuildsResponse> {
@@ -18318,12 +18546,15 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_profiles the fields to include for returned resources of type profiles
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_certificates the fields to include for returned resources of type certificates
 		 * @param {Array<string>} fields_devices the fields to include for returned resources of type devices
 		 * @param {Array<string>} fields_bundleIds the fields to include for returned resources of type bundleIds
 		 * @param {number} limit_certificates maximum number of related certificates returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_devices maximum number of related devices returned (when they are included)
+		 *     Maximum: 50
 		 * @return {ProfilesResponse} List of Profiles
 		 */
 		Profiles_get_collection(filter_name: Array<string> | null | undefined, filter_profileState: Array<ProfileAttributesProfileState> | null | undefined, filter_profileType: Array<ProfileAttributesProfileType> | null | undefined, filter_id: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_profiles: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_certificates: Array<string> | null | undefined, fields_devices: Array<string> | null | undefined, fields_bundleIds: Array<string> | null | undefined, limit_certificates: number | null | undefined, limit_devices: number | null | undefined): Observable<ProfilesResponse> {
@@ -18355,7 +18586,9 @@ export namespace MyNS {
 		 * @param {Array<string>} fields_devices the fields to include for returned resources of type devices
 		 * @param {Array<string>} fields_bundleIds the fields to include for returned resources of type bundleIds
 		 * @param {number} limit_certificates maximum number of related certificates returned (when they are included)
+		 *     Maximum: 50
 		 * @param {number} limit_devices maximum number of related devices returned (when they are included)
+		 *     Maximum: 50
 		 * @return {ProfileResponse} Single Profile
 		 */
 		Profiles_get_instance(fields_profiles: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_certificates: Array<string> | null | undefined, fields_devices: Array<string> | null | undefined, fields_bundleIds: Array<string> | null | undefined, limit_certificates: number | null | undefined, limit_devices: number | null | undefined): Observable<ProfileResponse> {
@@ -18375,6 +18608,7 @@ export namespace MyNS {
 		 * Get v1/profiles/{id}/certificates
 		 * @param {Array<string>} fields_certificates the fields to include for returned resources of type certificates
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {CertificatesResponse} List of related resources
 		 */
 		Profiles_certificates_get_to_many_related(fields_certificates: Array<string> | null | undefined, limit: number | null | undefined): Observable<CertificatesResponse> {
@@ -18385,6 +18619,7 @@ export namespace MyNS {
 		 * Get v1/profiles/{id}/devices
 		 * @param {Array<string>} fields_devices the fields to include for returned resources of type devices
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {DevicesResponse} List of related resources
 		 */
 		Profiles_devices_get_to_many_related(fields_devices: Array<string> | null | undefined, limit: number | null | undefined): Observable<DevicesResponse> {
@@ -18445,6 +18680,7 @@ export namespace MyNS {
 		 * Get v1/territories
 		 * @param {Array<string>} fields_territories the fields to include for returned resources of type territories
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {TerritoriesResponse} List of Territories
 		 */
 		Territories_get_collection(fields_territories: Array<string> | null | undefined, limit: number | null | undefined): Observable<TerritoriesResponse> {
@@ -18459,9 +18695,11 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_userInvitations the fields to include for returned resources of type userInvitations
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_visibleApps maximum number of related visibleApps returned (when they are included)
+		 *     Maximum: 50
 		 * @return {UserInvitationsResponse} List of UserInvitations
 		 */
 		UserInvitations_get_collection(filter_email: Array<string> | null | undefined, filter_roles: Array<UserRole> | null | undefined, filter_visibleApps: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_userInvitations: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_visibleApps: number | null | undefined): Observable<UserInvitationsResponse> {
@@ -18491,6 +18729,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_visibleApps maximum number of related visibleApps returned (when they are included)
+		 *     Maximum: 50
 		 * @return {UserInvitationResponse} Single UserInvitation
 		 */
 		UserInvitations_get_instance(fields_userInvitations: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_visibleApps: number | null | undefined): Observable<UserInvitationResponse> {
@@ -18501,6 +18740,7 @@ export namespace MyNS {
 		 * Get v1/userInvitations/{id}/visibleApps
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppsResponse} List of related resources
 		 */
 		UserInvitations_visibleApps_get_to_many_related(fields_apps: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppsResponse> {
@@ -18515,9 +18755,11 @@ export namespace MyNS {
 		 * @param {Array<string>} sort comma-separated list of sort expressions; resources will be sorted as specified
 		 * @param {Array<string>} fields_users the fields to include for returned resources of type users
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_visibleApps maximum number of related visibleApps returned (when they are included)
+		 *     Maximum: 50
 		 * @return {UsersResponse} List of Users
 		 */
 		Users_get_collection(filter_roles: Array<UserRole> | null | undefined, filter_username: Array<string> | null | undefined, filter_visibleApps: Array<string> | null | undefined, sort: Array<string> | null | undefined, fields_users: Array<string> | null | undefined, limit: number | null | undefined, include: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_visibleApps: number | null | undefined): Observable<UsersResponse> {
@@ -18538,6 +18780,7 @@ export namespace MyNS {
 		 * @param {Array<string>} include comma-separated list of relationships to include
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit_visibleApps maximum number of related visibleApps returned (when they are included)
+		 *     Maximum: 50
 		 * @return {UserResponse} Single User
 		 */
 		Users_get_instance(fields_users: Array<string> | null | undefined, include: Array<string> | null | undefined, fields_apps: Array<string> | null | undefined, limit_visibleApps: number | null | undefined): Observable<UserResponse> {
@@ -18564,6 +18807,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/users/{id}/relationships/visibleApps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {UserVisibleAppsLinkagesResponse} List of related linkages
 		 */
 		Users_visibleApps_get_to_many_relationship(limit: number | null | undefined): Observable<UserVisibleAppsLinkagesResponse> {
@@ -18592,6 +18836,7 @@ export namespace MyNS {
 		 * Get v1/users/{id}/visibleApps
 		 * @param {Array<string>} fields_apps the fields to include for returned resources of type apps
 		 * @param {number} limit maximum resources per page
+		 *     Maximum: 200
 		 * @return {AppsResponse} List of related resources
 		 */
 		Users_visibleApps_get_to_many_related(fields_apps: Array<string> | null | undefined, limit: number | null | undefined): Observable<AppsResponse> {

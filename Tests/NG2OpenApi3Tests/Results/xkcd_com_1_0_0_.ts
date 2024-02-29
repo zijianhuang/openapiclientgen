@@ -10,6 +10,8 @@ export namespace MyNS {
 		link?: string | null;
 		month?: string | null;
 		news?: string | null;
+
+		/** Type: double */
 		num?: number | null;
 		safe_title?: string | null;
 		title?: string | null;
@@ -23,6 +25,8 @@ export namespace MyNS {
 		link: FormControl<string | null | undefined>,
 		month: FormControl<string | null | undefined>,
 		news: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num: FormControl<number | null | undefined>,
 		safe_title: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -63,6 +67,7 @@ export namespace MyNS {
 		/**
 		 * Fetch comics and metadata  by comic id.
 		 * Get {comicId}/info.0.json
+		 * @param {number} comicId Type: double
 		 * @return {void} OK
 		 */
 		_comicIdInfo_0_jsonGet(comicId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

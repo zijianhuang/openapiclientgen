@@ -7,6 +7,8 @@ export namespace MyNS {
 		attribute?: string | null;
 		description?: string | null;
 		expression?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** String|Number|Boolean */
@@ -16,6 +18,8 @@ export namespace MyNS {
 		attribute: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		expression: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** String|Number|Boolean */
@@ -37,6 +41,8 @@ export namespace MyNS {
 
 		/** base64 encoded in iCalendar format */
 		data?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
@@ -45,6 +51,8 @@ export namespace MyNS {
 
 		/** base64 encoded in iCalendar format */
 		data: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -61,14 +69,22 @@ export namespace MyNS {
 	export interface Command {
 		attributes?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		type?: string | null;
 	}
 	export interface CommandFormProperties {
 		attributes: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -102,7 +118,11 @@ export namespace MyNS {
 		contact?: string | null;
 		disabled?: boolean | null;
 		geofenceIds?: Array<number>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -110,6 +130,8 @@ export namespace MyNS {
 		model?: string | null;
 		name?: string | null;
 		phone?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		positionId?: number | null;
 		status?: string | null;
 		uniqueId?: string | null;
@@ -119,7 +141,11 @@ export namespace MyNS {
 		category: FormControl<string | null | undefined>,
 		contact: FormControl<string | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -127,6 +153,8 @@ export namespace MyNS {
 		model: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		positionId: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		uniqueId: FormControl<string | null | undefined>,
@@ -151,17 +179,31 @@ export namespace MyNS {
 	}
 
 	export interface DeviceAccumulators {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
+
+		/** Type: double */
 		hours?: number | null;
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		totalDistance?: number | null;
 	}
 	export interface DeviceAccumulatorsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		hours: FormControl<number | null | undefined>,
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		totalDistance: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceAccumulatorsFormGroup() {
@@ -175,12 +217,16 @@ export namespace MyNS {
 
 	export interface Driver {
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		uniqueId?: string | null;
 	}
 	export interface DriverFormProperties {
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		uniqueId: FormControl<string | null | undefined>,
@@ -197,25 +243,45 @@ export namespace MyNS {
 
 	export interface Event {
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		eventTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		geofenceId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maintenanceId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		positionId?: number | null;
 		type?: string | null;
 	}
 	export interface EventFormProperties {
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		eventTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		geofenceId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maintenanceId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		positionId: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -236,16 +302,24 @@ export namespace MyNS {
 	export interface Geofence {
 		area?: string | null;
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarId?: number | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface GeofenceFormProperties {
 		area: FormControl<string | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarId: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -263,13 +337,21 @@ export namespace MyNS {
 
 	export interface Group {
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface GroupFormProperties {
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -285,17 +367,29 @@ export namespace MyNS {
 
 	export interface Maintenance {
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		period?: number | null;
+
+		/** Type: double */
 		start?: number | null;
 		type?: string | null;
 	}
 	export interface MaintenanceFormProperties {
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -314,7 +408,11 @@ export namespace MyNS {
 	export interface Notification {
 		always?: boolean | null;
 		attributes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mail?: boolean | null;
 		sms?: boolean | null;
@@ -324,7 +422,11 @@ export namespace MyNS {
 	export interface NotificationFormProperties {
 		always: FormControl<boolean | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		mail: FormControl<boolean | null | undefined>,
 		sms: FormControl<boolean | null | undefined>,
@@ -362,62 +464,116 @@ export namespace MyNS {
 	/** This is a permission map that contain two object indexes. It is used to link/unlink objects. Order is important. Example: { deviceId:8, geofenceId: 16 } */
 	export interface Permission {
 
-		/** Computed Attribute Id, can be second parameter only */
+		/**
+		 * Computed Attribute Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeId?: number | null;
 
-		/** Calendar Id, can be second parameter only and only in combination with userId */
+		/**
+		 * Calendar Id, can be second parameter only and only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calendarId?: number | null;
 
-		/** Device Id, can be first parameter or second only in combination with userId */
+		/**
+		 * Device Id, can be first parameter or second only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deviceId?: number | null;
 
-		/** Driver Id, can be second parameter only */
+		/**
+		 * Driver Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		driverId?: number | null;
 
-		/** Geofence Id, can be second parameter only */
+		/**
+		 * Geofence Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		geofenceId?: number | null;
 
-		/** Group Id, can be first parameter or second only in combination with userId */
+		/**
+		 * Group Id, can be first parameter or second only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupId?: number | null;
 
-		/** User Id, can be second parameter only and only in combination with userId */
+		/**
+		 * User Id, can be second parameter only and only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedUserId?: number | null;
 
-		/** Notification Id, can be second parameter only */
+		/**
+		 * Notification Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		notificationId?: number | null;
 
-		/** User Id, can be only first parameter */
+		/**
+		 * User Id, can be only first parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId?: number | null;
 	}
 
 	/** This is a permission map that contain two object indexes. It is used to link/unlink objects. Order is important. Example: { deviceId:8, geofenceId: 16 } */
 	export interface PermissionFormProperties {
 
-		/** Computed Attribute Id, can be second parameter only */
+		/**
+		 * Computed Attribute Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeId: FormControl<number | null | undefined>,
 
-		/** Calendar Id, can be second parameter only and only in combination with userId */
+		/**
+		 * Calendar Id, can be second parameter only and only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calendarId: FormControl<number | null | undefined>,
 
-		/** Device Id, can be first parameter or second only in combination with userId */
+		/**
+		 * Device Id, can be first parameter or second only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deviceId: FormControl<number | null | undefined>,
 
-		/** Driver Id, can be second parameter only */
+		/**
+		 * Driver Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		driverId: FormControl<number | null | undefined>,
 
-		/** Geofence Id, can be second parameter only */
+		/**
+		 * Geofence Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		geofenceId: FormControl<number | null | undefined>,
 
-		/** Group Id, can be first parameter or second only in combination with userId */
+		/**
+		 * Group Id, can be first parameter or second only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupId: FormControl<number | null | undefined>,
 
-		/** User Id, can be second parameter only and only in combination with userId */
+		/**
+		 * User Id, can be second parameter only and only in combination with userId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedUserId: FormControl<number | null | undefined>,
 
-		/** Notification Id, can be second parameter only */
+		/**
+		 * Notification Id, can be second parameter only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		notificationId: FormControl<number | null | undefined>,
 
-		/** User Id, can be only first parameter */
+		/**
+		 * User Id, can be only first parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId: FormControl<number | null | undefined>,
 	}
 	export function CreatePermissionFormGroup() {
@@ -436,11 +592,19 @@ export namespace MyNS {
 	}
 
 	export interface Position {
+
+		/** Type: double */
 		accuracy?: number | null;
 		address?: string | null;
+
+		/** Type: double */
 		altitude?: number | null;
 		attributes?: string | null;
+
+		/** Type: double */
 		course?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -448,8 +612,14 @@ export namespace MyNS {
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		fixTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		network?: string | null;
 		outdated?: boolean | null;
@@ -458,16 +628,27 @@ export namespace MyNS {
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		serverTime?: Date | null;
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		speed?: number | null;
 		valid?: boolean | null;
 	}
 	export interface PositionFormProperties {
+
+		/** Type: double */
 		accuracy: FormControl<number | null | undefined>,
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		altitude: FormControl<number | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		course: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -475,8 +656,14 @@ export namespace MyNS {
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		fixTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		network: FormControl<string | null | undefined>,
 		outdated: FormControl<boolean | null | undefined>,
@@ -485,7 +672,10 @@ export namespace MyNS {
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		serverTime: FormControl<Date | null | undefined>,
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 		valid: FormControl<boolean | null | undefined>,
 	}
@@ -514,17 +704,30 @@ export namespace MyNS {
 
 	export interface ReportStops {
 		address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
 		deviceName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		endTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		engineHours?: number | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -532,17 +735,30 @@ export namespace MyNS {
 	}
 	export interface ReportStopsFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
 		deviceName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		endTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		engineHours: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -566,36 +782,68 @@ export namespace MyNS {
 
 	export interface ReportSummary {
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		averageSpeed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
 		deviceName?: string | null;
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		distance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		engineHours?: number | null;
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		maxSpeed?: number | null;
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel?: number | null;
 	}
 	export interface ReportSummaryFormProperties {
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		averageSpeed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
 		deviceName: FormControl<string | null | undefined>,
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		engineHours: FormControl<number | null | undefined>,
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		maxSpeed: FormControl<number | null | undefined>,
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel: FormControl<number | null | undefined>,
 	}
 	export function CreateReportSummaryFormGroup() {
@@ -613,30 +861,56 @@ export namespace MyNS {
 
 	export interface ReportTrips {
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		averageSpeed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId?: number | null;
 		deviceName?: string | null;
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		distance?: number | null;
 		driverName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		driverUniqueId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		endAddress?: string | null;
+
+		/** Type: double */
 		endLat?: number | null;
+
+		/** Type: double */
 		endLon?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		endTime?: Date | null;
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		maxSpeed?: number | null;
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel?: number | null;
 		startAddress?: string | null;
+
+		/** Type: double */
 		startLat?: number | null;
+
+		/** Type: double */
 		startLon?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -644,30 +918,56 @@ export namespace MyNS {
 	}
 	export interface ReportTripsFormProperties {
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		averageSpeed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceId: FormControl<number | null | undefined>,
 		deviceName: FormControl<string | null | undefined>,
 
-		/** in meters */
+		/**
+		 * in meters
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 		driverName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		driverUniqueId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		endAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		endLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		endLon: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** in knots */
+		/**
+		 * in knots
+		 * Type: double
+		 */
 		maxSpeed: FormControl<number | null | undefined>,
 
-		/** in liters */
+		/**
+		 * in liters
+		 * Type: double
+		 */
 		spentFuel: FormControl<number | null | undefined>,
 		startAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		startLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		startLon: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
@@ -702,9 +1002,15 @@ export namespace MyNS {
 		coordinateFormat?: string | null;
 		deviceReadonly?: boolean | null;
 		forceSettings?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
 		limitCommands?: boolean | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		map?: string | null;
 		mapUrl?: string | null;
@@ -713,6 +1019,8 @@ export namespace MyNS {
 		registration?: boolean | null;
 		twelveHourFormat?: boolean | null;
 		version?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		zoom?: number | null;
 	}
 	export interface ServerFormProperties {
@@ -721,9 +1029,15 @@ export namespace MyNS {
 		coordinateFormat: FormControl<string | null | undefined>,
 		deviceReadonly: FormControl<boolean | null | undefined>,
 		forceSettings: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
 		limitCommands: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		map: FormControl<string | null | undefined>,
 		mapUrl: FormControl<string | null | undefined>,
@@ -732,6 +1046,8 @@ export namespace MyNS {
 		registration: FormControl<boolean | null | undefined>,
 		twelveHourFormat: FormControl<boolean | null | undefined>,
 		version: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		zoom: FormControl<number | null | undefined>,
 	}
 	export function CreateServerFormGroup() {
@@ -758,23 +1074,43 @@ export namespace MyNS {
 	}
 
 	export interface Statistics {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeDevices?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeUsers?: number | null;
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		captureTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesReceived?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesStored?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requests?: number | null;
 	}
 	export interface StatisticsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeDevices: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeUsers: FormControl<number | null | undefined>,
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		captureTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesReceived: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesStored: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requests: FormControl<number | null | undefined>,
 	}
 	export function CreateStatisticsFormGroup() {
@@ -793,6 +1129,8 @@ export namespace MyNS {
 		administrator?: boolean | null;
 		attributes?: string | null;
 		coordinateFormat?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceLimit?: number | null;
 		deviceReadonly?: boolean | null;
 		disabled?: boolean | null;
@@ -800,9 +1138,15 @@ export namespace MyNS {
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		expirationTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
 		limitCommands?: boolean | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		map?: string | null;
 		name?: string | null;
@@ -811,13 +1155,19 @@ export namespace MyNS {
 		poiLayer?: string | null;
 		readonly?: boolean | null;
 		twelveHourFormat?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userLimit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		zoom?: number | null;
 	}
 	export interface UserFormProperties {
 		administrator: FormControl<boolean | null | undefined>,
 		attributes: FormControl<string | null | undefined>,
 		coordinateFormat: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deviceLimit: FormControl<number | null | undefined>,
 		deviceReadonly: FormControl<boolean | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
@@ -825,9 +1175,15 @@ export namespace MyNS {
 
 		/** in IS0 8601 format. eg. `1963-11-22T18:30:00Z` */
 		expirationTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
 		limitCommands: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		map: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -836,7 +1192,11 @@ export namespace MyNS {
 		poiLayer: FormControl<string | null | undefined>,
 		readonly: FormControl<boolean | null | undefined>,
 		twelveHourFormat: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userLimit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		zoom: FormControl<number | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
@@ -877,8 +1237,11 @@ export namespace MyNS {
 		 * Get attributes/computed
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attribute>} OK
 		 */
 		AttributesComputedGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Attribute>> {
@@ -897,6 +1260,7 @@ export namespace MyNS {
 		/**
 		 * Delete an Attribute
 		 * Delete attributes/computed/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AttributesComputed_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -906,6 +1270,7 @@ export namespace MyNS {
 		/**
 		 * Update an Attribute
 		 * Put attributes/computed/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attribute} OK
 		 */
 		AttributesComputed_idPut(id: number, requestBody: Attribute, headersHandler?: () => HttpHeaders): Observable<Attribute> {
@@ -918,6 +1283,7 @@ export namespace MyNS {
 		 * Get calendars
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Calendar>} OK
 		 */
 		CalendarsGetByAllAndUserId(all: boolean | null | undefined, userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Calendar>> {
@@ -936,6 +1302,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Calendar
 		 * Delete calendars/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Calendars_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -945,6 +1312,7 @@ export namespace MyNS {
 		/**
 		 * Update a Calendar
 		 * Put calendars/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Calendar} OK
 		 */
 		Calendars_idPut(id: number, requestBody: Calendar, headersHandler?: () => HttpHeaders): Observable<Calendar> {
@@ -957,8 +1325,11 @@ export namespace MyNS {
 		 * Get commands
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Command>} OK
 		 */
 		CommandsGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Command>> {
@@ -979,6 +1350,7 @@ export namespace MyNS {
 		 * Return a list of saved commands linked to Device and its groups, filtered by current Device protocol support
 		 * Get commands/send
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Command>} OK
 		 */
 		CommandsSendGetByDeviceId(deviceId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Command>> {
@@ -999,6 +1371,7 @@ export namespace MyNS {
 		 * Fetch a list of available Commands for the Device or all possible Commands if Device ommited
 		 * Get commands/types
 		 * @param {number} deviceId Internal device identifier. Only works if device has already reported some locations
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} protocol Protocol name. Can be used instead of device id
 		 * @param {boolean} textChannel When `true` return SMS commands. If not specified or `false` return data commands
 		 * @return {Array<CommandType>} OK
@@ -1010,6 +1383,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Saved Command
 		 * Delete commands/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Commands_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1019,6 +1393,7 @@ export namespace MyNS {
 		/**
 		 * Update a Saved Command
 		 * Put commands/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Command} OK
 		 */
 		Commands_idPut(id: number, requestBody: Command, headersHandler?: () => HttpHeaders): Observable<Command> {
@@ -1031,7 +1406,9 @@ export namespace MyNS {
 		 * Get devices
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} id To fetch one or more devices. Multiple params can be passed like `id=31&id=42`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} uniqueId To fetch one or more devices. Multiple params can be passed like `uniqueId=333331&uniqieId=44442`
 		 * @return {Array<Device>} OK
 		 */
@@ -1051,6 +1428,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Device
 		 * Delete devices/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Devices_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1060,6 +1438,7 @@ export namespace MyNS {
 		/**
 		 * Update a Device
 		 * Put devices/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Device} OK
 		 */
 		Devices_idPut(id: number, requestBody: Device, headersHandler?: () => HttpHeaders): Observable<Device> {
@@ -1069,6 +1448,7 @@ export namespace MyNS {
 		/**
 		 * Update total distance and hours of the Device
 		 * Put devices/{id}/accumulators
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Devices_idAccumulatorsPut(id: number, requestBody: DeviceAccumulators, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1081,8 +1461,11 @@ export namespace MyNS {
 		 * Get drivers
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Driver>} OK
 		 */
 		DriversGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Driver>> {
@@ -1101,6 +1484,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Driver
 		 * Delete drivers/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Drivers_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1110,6 +1494,7 @@ export namespace MyNS {
 		/**
 		 * Update a Driver
 		 * Put drivers/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Driver} OK
 		 */
 		Drivers_idPut(id: number, requestBody: Driver, headersHandler?: () => HttpHeaders): Observable<Driver> {
@@ -1118,6 +1503,7 @@ export namespace MyNS {
 
 		/**
 		 * Get events/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Event} OK
 		 */
 		Events_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Event> {
@@ -1130,8 +1516,11 @@ export namespace MyNS {
 		 * Get geofences
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Geofence>} OK
 		 */
 		GeofencesGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Geofence>> {
@@ -1150,6 +1539,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Geofence
 		 * Delete geofences/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Geofences_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1159,6 +1549,7 @@ export namespace MyNS {
 		/**
 		 * Update a Geofence
 		 * Put geofences/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Geofence} OK
 		 */
 		Geofences_idPut(id: number, requestBody: Geofence, headersHandler?: () => HttpHeaders): Observable<Geofence> {
@@ -1171,6 +1562,7 @@ export namespace MyNS {
 		 * Get groups
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Group>} OK
 		 */
 		GroupsGetByAllAndUserId(all: boolean | null | undefined, userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Group>> {
@@ -1189,6 +1581,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Group
 		 * Delete groups/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Groups_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1198,6 +1591,7 @@ export namespace MyNS {
 		/**
 		 * Update a Group
 		 * Put groups/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Group} OK
 		 */
 		Groups_idPut(id: number, requestBody: Group, headersHandler?: () => HttpHeaders): Observable<Group> {
@@ -1210,8 +1604,11 @@ export namespace MyNS {
 		 * Get maintenance
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Maintenance>} OK
 		 */
 		MaintenanceGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Maintenance>> {
@@ -1230,6 +1627,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Maintenance
 		 * Delete maintenance/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Maintenance_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1239,6 +1637,7 @@ export namespace MyNS {
 		/**
 		 * Update a Maintenance
 		 * Put maintenance/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Maintenance} OK
 		 */
 		Maintenance_idPut(id: number, requestBody: Maintenance, headersHandler?: () => HttpHeaders): Observable<Maintenance> {
@@ -1251,8 +1650,11 @@ export namespace MyNS {
 		 * Get notifications
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Notification>} OK
 		 */
 		NotificationsGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Notification>> {
@@ -1289,6 +1691,7 @@ export namespace MyNS {
 		/**
 		 * Delete a Notification
 		 * Delete notifications/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Notifications_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1298,6 +1701,7 @@ export namespace MyNS {
 		/**
 		 * Update a Notification
 		 * Put notifications/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Notification} OK
 		 */
 		Notifications_idPut(id: number, requestBody: Notification, headersHandler?: () => HttpHeaders): Observable<Notification> {
@@ -1327,9 +1731,11 @@ export namespace MyNS {
 		 * We strongly recommend using [Traccar WebSocket API](https://www.traccar.org/traccar-api/) instead of periodically polling positions endpoint. Without any params, it returns a list of last known positions for all the user's Devices. _from_ and _to_ fields are not required with _id_.
 		 * Get positions
 		 * @param {number} deviceId _deviceId_ is optional, but requires the _from_ and _to_ parameters when used
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} from in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
 		 * @param {Date} to in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
 		 * @param {number} id To fetch one or more positions. Multiple params can be passed like `id=31&id=42`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Position>} OK
 		 */
 		PositionsGetByDeviceIdAndFromAndToAndId(deviceId: number | null | undefined, from: Date | null | undefined, to: Date | null | undefined, id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Position>> {
@@ -1466,6 +1872,7 @@ export namespace MyNS {
 		/**
 		 * Delete a User
 		 * Delete users/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1475,6 +1882,7 @@ export namespace MyNS {
 		/**
 		 * Update a User
 		 * Put users/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} OK
 		 */
 		Users_idPut(id: number, requestBody: User, headersHandler?: () => HttpHeaders): Observable<User> {

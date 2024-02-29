@@ -197,6 +197,8 @@ export namespace MyNS {
 		content?: string | null;
 		documents?: Array<Document>;
 		dueDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMinutes?: number | null;
 		filename?: string | null;
 		hidden?: boolean | null;
@@ -207,6 +209,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		markType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxAttempts?: number | null;
 		offeringId?: string | null;
 		offeringName?: string | null;
@@ -215,7 +219,11 @@ export namespace MyNS {
 		points?: string | null;
 		themes?: Array<ThemeResponse>;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalQuestions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalThemes?: number | null;
 		type?: string | null;
 		users?: Array<User>;
@@ -223,6 +231,8 @@ export namespace MyNS {
 	export interface AssessmentPendingSubmissionFormProperties {
 		content: FormControl<string | null | undefined>,
 		dueDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMinutes: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
@@ -233,6 +243,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		markType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxAttempts: FormControl<number | null | undefined>,
 		offeringId: FormControl<string | null | undefined>,
 		offeringName: FormControl<string | null | undefined>,
@@ -240,7 +252,11 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 		points: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalQuestions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalThemes: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -273,7 +289,9 @@ export namespace MyNS {
 		filename?: string | null;
 		id?: string | null;
 		mimetype?: string | null;
-		size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size?: string | null;
 		url?: string | null;
 	}
 	export interface DocumentFormProperties {
@@ -281,7 +299,9 @@ export namespace MyNS {
 		filename: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		mimetype: FormControl<string | null | undefined>,
-		size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentFormGroup() {
@@ -290,7 +310,7 @@ export namespace MyNS {
 			filename: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			mimetype: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -383,6 +403,8 @@ export namespace MyNS {
 		content?: string | null;
 		documents?: Array<Document>;
 		dueDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMinutes?: number | null;
 		filename?: string | null;
 		hidden?: boolean | null;
@@ -393,19 +415,27 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		markType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxAttempts?: number | null;
 		openDate?: Date | null;
 		pid?: string | null;
 		points?: string | null;
 		themes?: Array<ThemeResponse>;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalQuestions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalThemes?: number | null;
 		type?: string | null;
 	}
 	export interface AssessmentResponseFormProperties {
 		content: FormControl<string | null | undefined>,
 		dueDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMinutes: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
@@ -416,12 +446,18 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		markType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxAttempts: FormControl<number | null | undefined>,
 		openDate: FormControl<Date | null | undefined>,
 		pid: FormControl<string | null | undefined>,
 		points: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalQuestions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalThemes: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -628,6 +664,8 @@ export namespace MyNS {
 		expirationDate?: Date | null;
 		expires?: boolean | null;
 		expiryType?: BadgeExpiryExpiryType | null;
+
+		/** Type: double */
 		timeframeAmount?: number | null;
 		timeframeUnit?: BadgeExpiryTimeframeUnit | null;
 	}
@@ -635,6 +673,8 @@ export namespace MyNS {
 		expirationDate: FormControl<Date | null | undefined>,
 		expires: FormControl<boolean | null | undefined>,
 		expiryType: FormControl<BadgeExpiryExpiryType | null | undefined>,
+
+		/** Type: double */
 		timeframeAmount: FormControl<number | null | undefined>,
 		timeframeUnit: FormControl<BadgeExpiryTimeframeUnit | null | undefined>,
 	}
@@ -927,20 +967,24 @@ export namespace MyNS {
 	export interface DocumentResponse {
 		id?: string | null;
 		mimetype?: string | null;
-		size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size?: string | null;
 		url?: string | null;
 	}
 	export interface DocumentResponseFormProperties {
 		id: FormControl<string | null | undefined>,
 		mimetype: FormControl<string | null | undefined>,
-		size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentResponseFormGroup() {
 		return new FormGroup<DocumentResponseFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
 			mimetype: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1212,14 +1256,20 @@ export namespace MyNS {
 	export interface OfferingActivitiesResponse {
 		activityId?: string | null;
 
-		/** expected minutes to complete */
+		/**
+		 * expected minutes to complete
+		 * Type: double
+		 */
 		time?: number | null;
 		title?: string | null;
 	}
 	export interface OfferingActivitiesResponseFormProperties {
 		activityId: FormControl<string | null | undefined>,
 
-		/** expected minutes to complete */
+		/**
+		 * expected minutes to complete
+		 * Type: double
+		 */
 		time: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -1245,6 +1295,8 @@ export namespace MyNS {
 		description?: string | null;
 		earlyCloseOffDate?: Date | null;
 		end?: Date | null;
+
+		/** Type: double */
 		enrollmentLimit?: number | null;
 		hasEarlyCloseOff?: boolean | null;
 		id?: string | null;
@@ -1260,6 +1312,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		overview?: string | null;
+
+		/** Type: double */
 		price?: number | null;
 		start?: Date | null;
 		tasksEnabled?: boolean | null;
@@ -1281,6 +1335,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		earlyCloseOffDate: FormControl<Date | null | undefined>,
 		end: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		enrollmentLimit: FormControl<number | null | undefined>,
 		hasEarlyCloseOff: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -1295,6 +1351,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		overview: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 		start: FormControl<Date | null | undefined>,
 		tasksEnabled: FormControl<boolean | null | undefined>,
@@ -1461,6 +1519,8 @@ export namespace MyNS {
 		description?: string | null;
 		earlyCloseOffDate?: Date | null;
 		end?: Date | null;
+
+		/** Type: double */
 		enrollmentLimit?: number | null;
 		hasEarlyCloseOff?: boolean | null;
 		id?: string | null;
@@ -1469,6 +1529,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		name?: string | null;
+
+		/** Type: double */
 		price?: number | null;
 		start?: Date | null;
 		tasksEnabled?: boolean | null;
@@ -1489,6 +1551,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		earlyCloseOffDate: FormControl<Date | null | undefined>,
 		end: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		enrollmentLimit: FormControl<number | null | undefined>,
 		hasEarlyCloseOff: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -1497,6 +1561,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 		start: FormControl<Date | null | undefined>,
 		tasksEnabled: FormControl<boolean | null | undefined>,
@@ -1759,7 +1825,10 @@ export namespace MyNS {
 		id?: string | null;
 		info?: string | null;
 
-		/** number of learners in the offering, excluding facilitators and coaches */
+		/**
+		 * number of learners in the offering, excluding facilitators and coaches
+		 * Type: double
+		 */
 		learnersCount?: number | null;
 		metadata?: PortfolioActivationsMetadata;
 		name?: string | null;
@@ -1771,7 +1840,10 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		info: FormControl<string | null | undefined>,
 
-		/** number of learners in the offering, excluding facilitators and coaches */
+		/**
+		 * number of learners in the offering, excluding facilitators and coaches
+		 * Type: double
+		 */
 		learnersCount: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		start: FormControl<Date | null | undefined>,
@@ -1869,10 +1941,14 @@ export namespace MyNS {
 
 	export interface PulseSpatialOption {
 		option?: string | null;
+
+		/** Type: float */
 		value?: number | null;
 	}
 	export interface PulseSpatialOptionFormProperties {
 		option: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePulseSpatialOptionFormGroup() {
@@ -1890,6 +1966,8 @@ export namespace MyNS {
 		pulseBaseId?: string | null;
 		pulseInstanceId?: string | null;
 		pulseQuestion?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pulseRunDurationMinutes?: number | null;
 		pulseRunStart?: Date | null;
 		pulseType?: string | null;
@@ -1903,6 +1981,8 @@ export namespace MyNS {
 		pulseBaseId: FormControl<string | null | undefined>,
 		pulseInstanceId: FormControl<string | null | undefined>,
 		pulseQuestion: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pulseRunDurationMinutes: FormControl<number | null | undefined>,
 		pulseRunStart: FormControl<Date | null | undefined>,
 		pulseType: FormControl<string | null | undefined>,
@@ -1925,6 +2005,8 @@ export namespace MyNS {
 	}
 
 	export interface QuizMarkResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attempts?: number | null;
 		lastAttemptAt?: Date | null;
 		learnerEmail?: string | null;
@@ -1935,6 +2017,8 @@ export namespace MyNS {
 		quizTitle?: string | null;
 	}
 	export interface QuizMarkResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attempts: FormControl<number | null | undefined>,
 		lastAttemptAt: FormControl<Date | null | undefined>,
 		learnerEmail: FormControl<string | null | undefined>,
@@ -2106,11 +2190,19 @@ export namespace MyNS {
 	}
 
 	export interface UnitReactionsFeedback {
+
+		/** Type: double */
 		'thumbs-down'?: number | null;
+
+		/** Type: double */
 		'thumbs-up'?: number | null;
 	}
 	export interface UnitReactionsFeedbackFormProperties {
+
+		/** Type: double */
 		'thumbs-down': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'thumbs-up': FormControl<number | null | undefined>,
 	}
 	export function CreateUnitReactionsFeedbackFormGroup() {

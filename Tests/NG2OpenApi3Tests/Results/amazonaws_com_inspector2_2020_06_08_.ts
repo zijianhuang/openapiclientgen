@@ -5154,6 +5154,7 @@ export namespace MyNS {
 		 * Lists all tags attached to a given resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon resource number (ARN) of the resource to list tags of.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -5164,6 +5165,7 @@ export namespace MyNS {
 		 * Adds tags to a resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource to apply a tag to.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -5204,7 +5206,9 @@ export namespace MyNS {
 		 * Removes tags from a resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) for the resource to remove tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys The tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -5271,8 +5275,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to be associated.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: string;
 	}
@@ -5281,8 +5285,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to be associated.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: FormControl<string | null | undefined>,
 	}
@@ -5455,8 +5459,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description?: string | null;
 
@@ -5469,15 +5473,15 @@ export namespace MyNS {
 		/**
 		 * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 
 		/**
 		 * The reason for creating the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		reason?: string | null;
 
@@ -5494,23 +5498,23 @@ export namespace MyNS {
 
 		/**
 		 * A description of the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The reason for creating the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		reason: FormControl<string | null | undefined>,
 
@@ -5757,8 +5761,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of the filter to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -5767,8 +5771,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of the filter to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -5808,8 +5812,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccountId: string;
 	}
@@ -5818,8 +5822,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccountId: FormControl<string | null | undefined>,
 	}
@@ -5835,8 +5839,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to disassociate.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: string;
 	}
@@ -5845,8 +5849,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to disassociate.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: FormControl<string | null | undefined>,
 	}
@@ -5868,8 +5872,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -5885,8 +5889,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5901,16 +5905,16 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccountId: string;
 	}
@@ -5918,16 +5922,16 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token for the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccountId: FormControl<string | null | undefined>,
 	}
@@ -5961,8 +5965,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to retrieve information on.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: string;
 	}
@@ -5971,8 +5975,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account ID of the member account to retrieve information on.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountId: FormControl<string | null | undefined>,
 	}
@@ -6017,8 +6021,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 
@@ -6036,8 +6040,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -6067,8 +6071,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6083,8 +6087,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6129,8 +6133,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6141,8 +6145,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6188,8 +6192,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6204,8 +6208,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6234,8 +6238,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6253,8 +6257,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6294,8 +6298,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6316,8 +6320,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6365,8 +6369,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 
@@ -6384,8 +6388,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6476,8 +6480,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 
@@ -6495,8 +6499,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -6626,8 +6630,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken?: string | null;
 	}
@@ -6635,8 +6639,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		 * Max length: 1000000
 		 * Min length: 0
+		 * Max length: 1000000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6767,16 +6771,16 @@ export namespace MyNS {
 
 		/**
 		 * A description of the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description?: string | null;
 
 		/**
 		 * The Amazon Resource Number (ARN) of the filter to update.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		filterArn: string;
 
@@ -6785,15 +6789,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the filter.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * The reason the filter was updated.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		reason?: string | null;
 	}
@@ -6804,30 +6808,30 @@ export namespace MyNS {
 
 		/**
 		 * A description of the filter.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Number (ARN) of the filter to update.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		filterArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the filter.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The reason the filter was updated.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		reason: FormControl<string | null | undefined>,
 	}

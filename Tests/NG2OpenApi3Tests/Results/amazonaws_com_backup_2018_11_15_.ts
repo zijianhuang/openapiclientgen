@@ -3428,6 +3428,7 @@ export namespace MyNS {
 		 * @param {string} legalHoldId Legal hold ID required to remove the specified legal hold on a recovery point.
 		 * @param {string} cancelDescription String describing the reason for removing the legal hold.
 		 * @param {number} retainRecordInDays The integer amount in days specifying amount of days after this API operation to remove legal hold.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		CancelLegalHold(legalHoldId: string, cancelDescription: string, retainRecordInDays: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3448,6 +3449,7 @@ export namespace MyNS {
 		 * Get backup/plans/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {boolean} includeDeleted A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3473,6 +3475,7 @@ export namespace MyNS {
 		 * @param {string} backupPlanId Uniquely identifies a backup plan.
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupSelectionsOutput} Success
@@ -3524,6 +3527,7 @@ export namespace MyNS {
 		 * Returns a list of all frameworks for an Amazon Web Services account and Amazon Web Services Region.
 		 * Get audit/frameworks
 		 * @param {number} MaxResults The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
 		 * @return {ListFrameworksOutput} Success
 		 */
@@ -3545,6 +3549,7 @@ export namespace MyNS {
 		 * Get legal-holds/
 		 * @param {string} nextToken The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of resource list items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLegalHoldsOutput} Success
@@ -3566,6 +3571,7 @@ export namespace MyNS {
 		 * Returns a list of your report plans. For detailed information about a single report plan, use <code>DescribeReportPlan</code>.
 		 * Get audit/report-plans
 		 * @param {number} MaxResults The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
 		 * @return {ListReportPlansOutput} Success
 		 */
@@ -3699,6 +3705,7 @@ export namespace MyNS {
 		 * Deletes the framework specified by a framework name.
 		 * Delete audit/frameworks/{frameworkName}
 		 * @param {string} frameworkName The unique name of a framework.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteFramework(frameworkName: string): Observable<HttpResponse<string>> {
@@ -3709,6 +3716,7 @@ export namespace MyNS {
 		 * Returns the framework details for the specified <code>FrameworkName</code>.
 		 * Get audit/frameworks/{frameworkName}
 		 * @param {string} frameworkName The unique name of a framework.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeFrameworkOutput} Success
 		 */
 		DescribeFramework(frameworkName: string): Observable<DescribeFrameworkOutput> {
@@ -3719,6 +3727,7 @@ export namespace MyNS {
 		 * Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.
 		 * Put audit/frameworks/{frameworkName}
 		 * @param {string} frameworkName The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateFrameworkOutput} Success
 		 */
 		UpdateFramework(frameworkName: string, requestBody: UpdateFrameworkPutBody): Observable<UpdateFrameworkOutput> {
@@ -3762,6 +3771,7 @@ export namespace MyNS {
 		 * Deletes the report plan specified by a report plan name.
 		 * Delete audit/report-plans/{reportPlanName}
 		 * @param {string} reportPlanName The unique name of a report plan.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteReportPlan(reportPlanName: string): Observable<HttpResponse<string>> {
@@ -3772,6 +3782,7 @@ export namespace MyNS {
 		 * Returns a list of all report plans for an Amazon Web Services account and Amazon Web Services Region.
 		 * Get audit/report-plans/{reportPlanName}
 		 * @param {string} reportPlanName The unique name of a report plan.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeReportPlanOutput} Success
 		 */
 		DescribeReportPlan(reportPlanName: string): Observable<DescribeReportPlanOutput> {
@@ -3782,6 +3793,7 @@ export namespace MyNS {
 		 * Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.
 		 * Put audit/report-plans/{reportPlanName}
 		 * @param {string} reportPlanName The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateReportPlanOutput} Success
 		 */
 		UpdateReportPlan(reportPlanName: string, requestBody: UpdateReportPlanPutBody): Observable<UpdateReportPlanOutput> {
@@ -3981,6 +3993,7 @@ export namespace MyNS {
 		 * Get backup-jobs/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} resourceArn Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).
 		 * @param {BackupJobState} state Returns only backup jobs that are in the specified state.
 		 * @param {string} backupVaultName Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.
@@ -4004,6 +4017,7 @@ export namespace MyNS {
 		 * Get backup/template/plans
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanTemplatesOutput} Success
@@ -4018,6 +4032,7 @@ export namespace MyNS {
 		 * @param {string} backupPlanId Uniquely identifies a backup plan.
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanVersionsOutput} Success
@@ -4031,6 +4046,7 @@ export namespace MyNS {
 		 * Get backup-vaults/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupVaultsOutput} Success
@@ -4044,6 +4060,7 @@ export namespace MyNS {
 		 * Get copy-jobs/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. 
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} resourceArn Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). 
 		 * @param {CopyJobState} state Returns only copy jobs that are in the specified state.
 		 * @param {Date} createdBefore Returns only copy jobs that were created before the specified date.
@@ -4067,6 +4084,7 @@ export namespace MyNS {
 		 * Get resources/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProtectedResourcesOutput} Success
@@ -4081,6 +4099,7 @@ export namespace MyNS {
 		 * @param {string} backupVaultName <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note> <p>Backup vault name might not be available when a supported service creates the backup.</p> </note>
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} resourceArn Returns only recovery points that match the specified resource Amazon Resource Name (ARN).
 		 * @param {string} resourceType Returns only recovery points that match the specified resource type.
 		 * @param {string} backupPlanId Returns only recovery points that match the specified backup plan ID.
@@ -4101,6 +4120,7 @@ export namespace MyNS {
 		 * @param {string} legalHoldId This is the ID of the legal hold.
 		 * @param {string} nextToken This is the next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults This is the maximum number of resource list items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByLegalHoldOutput} Success
@@ -4115,6 +4135,7 @@ export namespace MyNS {
 		 * @param {string} resourceArn An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults <p>The maximum number of items to be returned.</p> <note> <p>Amazon RDS requires a value of at least 20.</p> </note>
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByResourceOutput} Success
@@ -4127,10 +4148,12 @@ export namespace MyNS {
 		 * Returns details about your report jobs.
 		 * Get audit/report-jobs
 		 * @param {string} ReportPlanName Returns only report jobs with the specified report plan name.
+		 *     Min length: 1    Max length: 256
 		 * @param {Date} CreationBefore Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.
 		 * @param {Date} CreationAfter Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.
 		 * @param {string} Status <p>Returns only report jobs that are in the specified status. The statuses are:</p> <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
 		 * @param {number} MaxResults The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
 		 * @return {ListReportJobsOutput} Success
 		 */
@@ -4143,6 +4166,7 @@ export namespace MyNS {
 		 * Get restore-jobs/
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} accountId The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
 		 * @param {Date} createdBefore Returns only restore jobs that were created before the specified date.
 		 * @param {Date} createdAfter Returns only restore jobs that were created after the specified date.
@@ -4163,6 +4187,7 @@ export namespace MyNS {
 		 * @param {string} resourceArn An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.
 		 * @param {string} nextToken The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.
 		 * @param {number} maxResults The maximum number of items to be returned.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsOutput} Success
@@ -4193,6 +4218,7 @@ export namespace MyNS {
 		 * Starts an on-demand report job for the specified report plan.
 		 * Post audit/report-jobs/{reportPlanName}
 		 * @param {string} reportPlanName The unique name of a report plan.
+		 *     Min length: 1    Max length: 256
 		 * @return {StartReportJobOutput} Success
 		 */
 		StartReportJob(reportPlanName: string, requestBody: StartReportJobPostBody): Observable<StartReportJobOutput> {
@@ -4353,15 +4379,15 @@ export namespace MyNS {
 		/**
 		 * The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		FrameworkName: string;
 
 		/**
 		 * An optional description of the framework with a maximum of 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		FrameworkDescription?: string | null;
 
@@ -4382,15 +4408,15 @@ export namespace MyNS {
 		/**
 		 * The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		FrameworkName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the framework with a maximum of 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		FrameworkDescription: FormControl<string | null | undefined>,
 
@@ -4483,15 +4509,15 @@ export namespace MyNS {
 		/**
 		 * The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ReportPlanName: string;
 
 		/**
 		 * An optional description of the report plan with a maximum of 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		ReportPlanDescription?: string | null;
 
@@ -4518,15 +4544,15 @@ export namespace MyNS {
 		/**
 		 * The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ReportPlanName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the report plan with a maximum of 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		ReportPlanDescription: FormControl<string | null | undefined>,
 
@@ -4633,24 +4659,42 @@ export namespace MyNS {
 
 	export interface PutBackupVaultLockConfigurationPutBody {
 
-		/** <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p> <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p> <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinRetentionDays?: number | null;
 
-		/** <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p> <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p> <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxRetentionDays?: number | null;
 
-		/** <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p> <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p> <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p> <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p> <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p> <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p> <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ChangeableForDays?: number | null;
 	}
 	export interface PutBackupVaultLockConfigurationPutBodyFormProperties {
 
-		/** <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p> <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p> <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinRetentionDays: FormControl<number | null | undefined>,
 
-		/** <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p> <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p> <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p> <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxRetentionDays: FormControl<number | null | undefined>,
 
-		/** <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p> <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p> <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p> <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p> */
+		/**
+		 * <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p> <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p> <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p> <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ChangeableForDays: FormControl<number | null | undefined>,
 	}
 	export function CreatePutBackupVaultLockConfigurationPutBodyFormGroup() {
@@ -4695,8 +4739,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the framework with a maximum 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		FrameworkDescription?: string | null;
 
@@ -4710,8 +4754,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the framework with a maximum 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		FrameworkDescription: FormControl<string | null | undefined>,
 
@@ -4759,8 +4803,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the report plan with a maximum 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		ReportPlanDescription?: string | null;
 
@@ -4777,8 +4821,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the report plan with a maximum 1,024 characters.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		ReportPlanDescription: FormControl<string | null | undefined>,
 
@@ -4917,10 +4961,16 @@ export namespace MyNS {
 		/** A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken. */
 		IdempotencyToken?: string | null;
 
-		/** <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p> <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p> */
+		/**
+		 * <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p> <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartWindowMinutes?: number | null;
 
-		/** A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled. */
+		/**
+		 * A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CompleteWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p> */
@@ -4955,10 +5005,16 @@ export namespace MyNS {
 		/** A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken. */
 		IdempotencyToken: FormControl<string | null | undefined>,
 
-		/** <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p> <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p> */
+		/**
+		 * <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p> <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartWindowMinutes: FormControl<number | null | undefined>,
 
-		/** A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled. */
+		/**
+		 * A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CompleteWindowMinutes: FormControl<number | null | undefined>,
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. */

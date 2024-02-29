@@ -728,7 +728,10 @@ export namespace MyNS {
 		/** Contains settings for relations of type `INCREMENTAL_TABLE`. */
 		incrementalTableConfig?: IncrementalTableConfig;
 
-		/** Sets the partition expiration in days. */
+		/**
+		 * Sets the partition expiration in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partitionExpirationDays?: number | null;
 
 		/** The SQL expression used to partition the relation. */
@@ -765,7 +768,10 @@ export namespace MyNS {
 		/** Whether this action is disabled (i.e. should not be run). */
 		disabled: FormControl<boolean | null | undefined>,
 
-		/** Sets the partition expiration in days. */
+		/**
+		 * Sets the partition expiration in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partitionExpirationDays: FormControl<number | null | undefined>,
 
 		/** The SQL expression used to partition the relation. */
@@ -997,20 +1003,32 @@ export namespace MyNS {
 	/** `FetchGitAheadBehind` response message. */
 	export interface FetchGitAheadBehindResponse {
 
-		/** The number of commits in the remote branch that are not in the workspace. */
+		/**
+		 * The number of commits in the remote branch that are not in the workspace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commitsAhead?: number | null;
 
-		/** The number of commits in the workspace that are not in the remote branch. */
+		/**
+		 * The number of commits in the workspace that are not in the remote branch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commitsBehind?: number | null;
 	}
 
 	/** `FetchGitAheadBehind` response message. */
 	export interface FetchGitAheadBehindResponseFormProperties {
 
-		/** The number of commits in the remote branch that are not in the workspace. */
+		/**
+		 * The number of commits in the remote branch that are not in the workspace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commitsAhead: FormControl<number | null | undefined>,
 
-		/** The number of commits in the workspace that are not in the remote branch. */
+		/**
+		 * The number of commits in the workspace that are not in the remote branch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commitsBehind: FormControl<number | null | undefined>,
 	}
 	export function CreateFetchGitAheadBehindResponseFormGroup() {
@@ -1484,7 +1502,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1497,7 +1518,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2065,7 +2089,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2075,7 +2102,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -2557,6 +2587,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2620,6 +2651,7 @@ export namespace MyNS {
 		 * Get v1beta1/{name}:fetchHistory
 		 * @param {string} name Required. The repository's name.
 		 * @param {number} pageSize Optional. Maximum number of commits to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `FetchRepositoryHistory` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `FetchRepositoryHistory` must match the call that provided the page token.
 		 * @return {FetchRepositoryHistoryResponse} Successful response
 		 */
@@ -2662,6 +2694,7 @@ export namespace MyNS {
 		 * Get v1beta1/{name}:query
 		 * @param {string} name Required. The workflow invocation's name.
 		 * @param {number} pageSize Optional. Maximum number of workflow invocations to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `QueryWorkflowInvocationActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryWorkflowInvocationActions` must match the call that provided the page token.
 		 * @return {QueryWorkflowInvocationActionsResponse} Successful response
 		 */
@@ -2675,6 +2708,7 @@ export namespace MyNS {
 		 * @param {string} name Required. The repository's name.
 		 * @param {string} commitSha Optional. The Commit SHA for the commit to query from. If unset, the directory will be queried from HEAD.
 		 * @param {number} pageSize Optional. Maximum number of paths to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `QueryRepositoryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryRepositoryDirectoryContents` must match the call that provided the page token.
 		 * @param {string} path Optional. The directory's full path including directory name, relative to root. If left unset, the root is used.
 		 * @return {QueryRepositoryDirectoryContentsResponse} Successful response
@@ -2710,6 +2744,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/compilationResults
 		 * @param {string} parent Required. The repository in which to list compilation results. Must be in the format `projects/locations/repositories/*`.
 		 * @param {number} pageSize Optional. Maximum number of compilation results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListCompilationResults` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCompilationResults` must match the call that provided the page token.
 		 * @return {ListCompilationResultsResponse} Successful response
 		 */
@@ -2732,6 +2767,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/releaseConfigs
 		 * @param {string} parent Required. The repository in which to list release configs. Must be in the format `projects/locations/repositories/*`.
 		 * @param {number} pageSize Optional. Maximum number of release configs to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListReleaseConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReleaseConfigs` must match the call that provided the page token.
 		 * @return {ListReleaseConfigsResponse} Successful response
 		 */
@@ -2757,6 +2793,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter for the returned list.
 		 * @param {string} orderBy Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
 		 * @param {number} pageSize Optional. Maximum number of repositories to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListRepositories` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRepositories` must match the call that provided the page token.
 		 * @return {ListRepositoriesResponse} Successful response
 		 */
@@ -2780,6 +2817,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/workflowConfigs
 		 * @param {string} parent Required. The repository in which to list workflow configs. Must be in the format `projects/locations/repositories/*`.
 		 * @param {number} pageSize Optional. Maximum number of workflow configs to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListWorkflowConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowConfigs` must match the call that provided the page token.
 		 * @return {ListWorkflowConfigsResponse} Successful response
 		 */
@@ -2805,6 +2843,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter for the returned list.
 		 * @param {string} orderBy Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
 		 * @param {number} pageSize Optional. Maximum number of workflow invocations to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListWorkflowInvocations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowInvocations` must match the call that provided the page token.
 		 * @return {ListWorkflowInvocationsResponse} Successful response
 		 */
@@ -2829,6 +2868,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter for the returned list.
 		 * @param {string} orderBy Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
 		 * @param {number} pageSize Optional. Maximum number of workspaces to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `ListWorkspaces` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkspaces` must match the call that provided the page token.
 		 * @return {ListWorkspacesResponse} Successful response
 		 */
@@ -2852,6 +2892,7 @@ export namespace MyNS {
 		 * Get v1beta1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Dataform_projects_locations_repositories_workspaces_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {
@@ -2934,6 +2975,7 @@ export namespace MyNS {
 		 * Get v1beta1/{workspace}:queryDirectoryContents
 		 * @param {string} workspace Required. The workspace's name.
 		 * @param {number} pageSize Optional. Maximum number of paths to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `QueryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryDirectoryContents` must match the call that provided the page token.
 		 * @param {string} path Optional. The directory's full path including directory name, relative to the workspace root. If left unset, the workspace root is used.
 		 * @return {QueryDirectoryContentsResponse} Successful response
@@ -2979,6 +3021,7 @@ export namespace MyNS {
 		 * @param {string} workspace Required. The workspace's name.
 		 * @param {string} filter Optional. Optional filter for the returned list in filtering format. Filtering is only currently supported on the `path` field. See https://google.aip.dev/160 for details.
 		 * @param {number} pageSize Optional. Maximum number of search results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous `SearchFilesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchFilesRequest` must match the call that provided the page token.
 		 * @return {SearchFilesResponse} Successful response
 		 */

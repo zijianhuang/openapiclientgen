@@ -2650,7 +2650,10 @@ namespace MyNS
 		/// <param name="iterationId">The iteration id. Defaults to workspace.</param>
 		/// <param name="tagIds">A list of tags ids to filter the images. Defaults to all tagged images when null. Limited to 20.</param>
 		/// <param name="orderBy">The ordering. Defaults to newest.</param>
-		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.</param>
+		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.
+		/// Minimum: 0
+		/// Maximum: 256
+		// </param>
 		/// <param name="skip">Number of images to skip before beginning the image batch. Defaults to 0.</param>
 		/// <returns>OK</returns>
 		public async Task<Image[]> GetTaggedImagesAsync(string projectId, string iterationId, string[] tagIds, GetTaggedImagesOrderBy orderBy, int take, int skip)
@@ -2779,7 +2782,10 @@ namespace MyNS
 		/// <param name="projectId">The project id.</param>
 		/// <param name="iterationId">The iteration id. Defaults to workspace.</param>
 		/// <param name="orderBy">The ordering. Defaults to newest.</param>
-		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.</param>
+		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.
+		/// Minimum: 0
+		/// Maximum: 256
+		// </param>
 		/// <param name="skip">Number of images to skip before beginning the image batch. Defaults to 0.</param>
 		/// <returns>OK</returns>
 		public async Task<Image[]> GetUntaggedImagesAsync(string projectId, string iterationId, GetTaggedImagesOrderBy orderBy, int take, int skip)
@@ -3132,7 +3138,10 @@ namespace MyNS
 		/// <param name="iterationId">The iteration id. Defaults to workspace.</param>
 		/// <param name="tagIds">A list of tags ids to filter the images. Defaults to all tagged images when null. Limited to 20.</param>
 		/// <param name="orderBy">The ordering. Defaults to newest.</param>
-		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.</param>
+		/// <param name="take">Maximum number of images to return. Defaults to 50, limited to 256.
+		/// Minimum: 0
+		/// Maximum: 256
+		// </param>
 		/// <param name="skip">Number of images to skip before beginning the image batch. Defaults to 0.</param>
 		/// <returns>OK</returns>
 		public async Task<ImagePerformance[]> GetImagePerformancesAsync(string projectId, string iterationId, string[] tagIds, GetTaggedImagesOrderBy orderBy, int take, int skip)

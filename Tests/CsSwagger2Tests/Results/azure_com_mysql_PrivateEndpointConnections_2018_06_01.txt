@@ -165,10 +165,17 @@ namespace MyNS
 		/// Gets all private endpoint connections on a server.
 		/// PrivateEndpointConnections_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully retrieved private endpoint connections.</returns>
 		public async Task<PrivateEndpointConnectionListResult> PrivateEndpointConnections_ListByServerAsync(string resourceGroupName, string serverName, string subscriptionId, string api_version)
 		{
@@ -197,11 +204,18 @@ namespace MyNS
 		/// Gets a private endpoint connection.
 		/// PrivateEndpointConnections_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully retrieved a specified private endpoint connection.</returns>
 		public async Task<PrivateEndpointConnection> PrivateEndpointConnections_GetAsync(string resourceGroupName, string serverName, string privateEndpointConnectionName, string subscriptionId, string api_version)
 		{
@@ -230,10 +244,17 @@ namespace MyNS
 		/// Approve or reject a private endpoint connection with a given name.
 		/// PrivateEndpointConnections_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully approved or rejected private endpoint connection.</returns>
 		public async Task<PrivateEndpointConnection> PrivateEndpointConnections_CreateOrUpdateAsync(string resourceGroupName, string serverName, string privateEndpointConnectionName, string subscriptionId, string api_version, PrivateEndpointConnection requestBody)
 		{
@@ -269,10 +290,17 @@ namespace MyNS
 		/// Deletes a private endpoint connection with a given name.
 		/// PrivateEndpointConnections_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully deleted private endpoint connection.</returns>
 		public async Task PrivateEndpointConnections_DeleteAsync(string resourceGroupName, string serverName, string privateEndpointConnectionName, string subscriptionId, string api_version)
 		{
@@ -296,9 +324,16 @@ namespace MyNS
 		/// Updates private endpoint connection with the specified tags.
 		/// PrivateEndpointConnections_UpdateTags subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="requestBody">Parameters supplied to the Update private endpoint connection Tags operation.</param>
 		/// <returns>OK</returns>

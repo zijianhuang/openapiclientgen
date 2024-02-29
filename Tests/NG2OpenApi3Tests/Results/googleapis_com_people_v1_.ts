@@ -482,26 +482,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1318,7 +1336,10 @@ export namespace MyNS {
 		/** Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale. */
 		formattedType?: string | null;
 
-		/** The person's full-time equivalent millipercent within the organization (100000 = 100%). */
+		/**
+		 * The person's full-time equivalent millipercent within the organization (100000 = 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullTimeEquivalentMillipercent?: number | null;
 
 		/** The person's job description at the organization. */
@@ -1367,7 +1388,10 @@ export namespace MyNS {
 		/** Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale. */
 		formattedType: FormControl<string | null | undefined>,
 
-		/** The person's full-time equivalent millipercent within the organization (100000 = 100%). */
+		/**
+		 * The person's full-time equivalent millipercent within the organization (100000 = 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullTimeEquivalentMillipercent: FormControl<number | null | undefined>,
 
 		/** The person's job description at the organization. */
@@ -1786,7 +1810,10 @@ export namespace MyNS {
 	/** The response for a single person */
 	export interface PersonResponse {
 
-		/** **DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). */
+		/**
+		 * **DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatusCode?: number | null;
 
 		/** Information about a person merged from various data sources such as the authenticated user's contacts and profile data. Most fields can have multiple items. The items in a field have no guaranteed order, but each non-empty field is guaranteed to have exactly one field with `metadata.primary` set to true. */
@@ -1802,7 +1829,10 @@ export namespace MyNS {
 	/** The response for a single person */
 	export interface PersonResponseFormProperties {
 
-		/** **DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). */
+		/**
+		 * **DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatusCode: FormControl<number | null | undefined>,
 
 		/** The original requested resource name. May be different than the resource name on the returned person. The resource name can change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or a profile URL. */
@@ -1820,7 +1850,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1833,7 +1866,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1924,7 +1960,10 @@ export namespace MyNS {
 		/** Output only. The contact group type. */
 		groupType?: ContactGroupGroupType | null;
 
-		/** Output only. The total number of contacts in the group irrespective of max members in specified in the request. */
+		/**
+		 * Output only. The total number of contacts in the group irrespective of max members in specified in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberCount?: number | null;
 
 		/** Output only. The list of contact person resource names that are members of the contact group. The field is only populated for GET requests and will only return as many members as `maxMembers` in the get request. */
@@ -1952,7 +1991,10 @@ export namespace MyNS {
 		/** Output only. The contact group type. */
 		groupType: FormControl<ContactGroupGroupType | null | undefined>,
 
-		/** Output only. The total number of contacts in the group irrespective of max members in specified in the request. */
+		/**
+		 * Output only. The total number of contacts in the group irrespective of max members in specified in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberCount: FormControl<number | null | undefined>,
 
 		/** The contact group name set by the group owner or a system provided name for system groups. For [`contactGroups.create`](/people/api/rest/v1/contactGroups/create) or [`contactGroups.update`](/people/api/rest/v1/contactGroups/update) the name must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. */
@@ -2206,10 +2248,16 @@ export namespace MyNS {
 		/** A token, which can be sent as `sync_token` to retrieve changes since the last request. Request must set `request_sync_token` to return the sync token. When the response is paginated, only the last page will contain `nextSyncToken`. */
 		nextSyncToken?: string | null;
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 
-		/** **DEPRECATED** (Please use totalItems) The total number of people in the list without pagination. */
+		/**
+		 * **DEPRECATED** (Please use totalItems) The total number of people in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPeople?: number | null;
 	}
 
@@ -2222,10 +2270,16 @@ export namespace MyNS {
 		/** A token, which can be sent as `sync_token` to retrieve changes since the last request. Request must set `request_sync_token` to return the sync token. When the response is paginated, only the last page will contain `nextSyncToken`. */
 		nextSyncToken: FormControl<string | null | undefined>,
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 
-		/** **DEPRECATED** (Please use totalItems) The total number of people in the list without pagination. */
+		/**
+		 * **DEPRECATED** (Please use totalItems) The total number of people in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPeople: FormControl<number | null | undefined>,
 	}
 	export function CreateListConnectionsResponseFormGroup() {
@@ -2251,7 +2305,10 @@ export namespace MyNS {
 		/** The token that can be used to retrieve changes since the last request. */
 		nextSyncToken?: string | null;
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 
@@ -2264,7 +2321,10 @@ export namespace MyNS {
 		/** The token that can be used to retrieve changes since the last request. */
 		nextSyncToken: FormControl<string | null | undefined>,
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListContactGroupsResponseFormGroup() {
@@ -2320,7 +2380,10 @@ export namespace MyNS {
 		/** The list of "Other contacts" returned as Person resources. "Other contacts" support a limited subset of fields. See ListOtherContactsRequest.request_mask for more detailed information. */
 		otherContacts?: Array<Person>;
 
-		/** The total number of other contacts in the list without pagination. */
+		/**
+		 * The total number of other contacts in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -2333,7 +2396,10 @@ export namespace MyNS {
 		/** A token, which can be sent as `sync_token` to retrieve changes since the last request. Request must set `request_sync_token` to return the sync token. */
 		nextSyncToken: FormControl<string | null | undefined>,
 
-		/** The total number of other contacts in the list without pagination. */
+		/**
+		 * The total number of other contacts in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListOtherContactsResponseFormGroup() {
@@ -2395,7 +2461,10 @@ export namespace MyNS {
 		/** The list of people in the domain directory that match the query. */
 		people?: Array<Person>;
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -2405,7 +2474,10 @@ export namespace MyNS {
 		/** A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of items in the list without pagination. */
+		/**
+		 * The total number of items in the list without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchDirectoryPeopleResponseFormGroup() {
@@ -2539,6 +2611,7 @@ export namespace MyNS {
 		 * Get v1/contactGroups
 		 * @param {string} groupFields Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
 		 * @param {number} pageSize Optional. The maximum number of resources to return. Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or set to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
 		 * @param {string} syncToken Optional. A sync token, returned by a previous call to `contactgroups.list`. Only resources changed since the sync token was created will be returned.
 		 * @return {ListContactGroupsResponse} Successful response
@@ -2561,6 +2634,7 @@ export namespace MyNS {
 		 * Get v1/contactGroups:batchGet
 		 * @param {string} groupFields Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
 		 * @param {number} maxMembers Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if not set, which will return zero members.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} resourceNames Required. The resource names of the contact groups to get. There is a maximum of 200 resource names.
 		 * @return {BatchGetContactGroupsResponse} Successful response
 		 */
@@ -2572,6 +2646,7 @@ export namespace MyNS {
 		 * List all "Other contacts", that is contacts that are not in a contact group. "Other contacts" are typically auto created contacts from interactions. Sync tokens expire 7 days after the full sync. A request with an expired sync token will get an error with an [google.rpc.ErrorInfo](https://cloud.google.com/apis/design/errors#error_info) with reason "EXPIRED_SYNC_TOKEN". In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's other contacts that have changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed).
 		 * Get v1/otherContacts
 		 * @param {number} pageSize Optional. The number of "Other contacts" to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `otherContacts.list` must match the first call that provided the page token.
 		 * @param {string} readMask Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. What values are valid depend on what ReadSourceType is used. If READ_SOURCE_TYPE_CONTACT is used, valid values are: * emailAddresses * metadata * names * phoneNumbers * photos If READ_SOURCE_TYPE_PROFILE is used, valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
 		 * @param {boolean} requestSyncToken Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `otherContacts.list`.
@@ -2587,6 +2662,7 @@ export namespace MyNS {
 		 * Provides a list of contacts in the authenticated user's other contacts that matches the search query. The query matches on a contact's `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/other-contacts#search_the_users_other_contacts
 		 * Get v1/otherContacts:search
 		 * @param {number} pageSize Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo", "foo n", "nam", etc., but not "oo n".
 		 * @param {string} readMask Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * metadata * names * phoneNumbers
 		 * @return {SearchResponse} Successful response
@@ -2651,6 +2727,7 @@ export namespace MyNS {
 		 * Get v1/people:listDirectoryPeople
 		 * @param {Array<string>} mergeSources Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
 		 * @param {number} pageSize Optional. The number of people to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the page token.
 		 * @param {string} readMask Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
 		 * @param {boolean} requestSyncToken Optional. Whether the response should return `next_sync_token`. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.listDirectoryPeople`.
@@ -2666,6 +2743,7 @@ export namespace MyNS {
 		 * Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. The query matches on a contact's `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/contacts#search_the_users_contacts
 		 * Get v1/people:searchContacts
 		 * @param {number} pageSize Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name "foo name" matches queries such as "f", "fo", "foo", "foo n", "nam", etc., but not "oo n".
 		 * @param {string} readMask Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
 		 * @param {Array<string>} sources Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set.
@@ -2680,6 +2758,7 @@ export namespace MyNS {
 		 * Get v1/people:searchDirectoryPeople
 		 * @param {Array<string>} mergeSources Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
 		 * @param {number} pageSize Optional. The number of people to include in the response. Valid values are between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the first call that provided the page token.
 		 * @param {string} query Required. Prefix query that matches fields in the person. Does NOT use the read_mask for determining what fields to match.
 		 * @param {string} readMask Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
@@ -2729,6 +2808,7 @@ export namespace MyNS {
 		 * Get v1/{resourceName}/connections
 		 * @param {string} resourceName Required. The resource name to return connections for. Only `people/me` is valid.
 		 * @param {number} pageSize Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.connections.list` must match the first call that provided the page token.
 		 * @param {string} personFields Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
 		 * @param {string} requestMask_includeField Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.

@@ -27,26 +27,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -466,7 +484,10 @@ export namespace MyNS {
 	/** The number of impressions with the specified dimension values where the corresponding bid request or bid response was not successful, as described by the specified callout status. */
 	export interface CalloutStatusRow {
 
-		/** The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes). */
+		/**
+		 * The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calloutStatusId?: number | null;
 
 		/** A metric value, with an expected value and a variance; represents a count that may be either exact or estimated (for example, when sampled). */
@@ -479,7 +500,10 @@ export namespace MyNS {
 	/** The number of impressions with the specified dimension values where the corresponding bid request or bid response was not successful, as described by the specified callout status. */
 	export interface CalloutStatusRowFormProperties {
 
-		/** The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes). */
+		/**
+		 * The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calloutStatusId: FormControl<number | null | undefined>,
 	}
 	export function CreateCalloutStatusRowFormGroup() {
@@ -901,7 +925,10 @@ export namespace MyNS {
 		/** All vendor IDs for the ads that may be shown from this creative. See https://storage.googleapis.com/adx-rtb-dictionaries/vendors.txt for possible values. */
 		vendorIds?: Array<number>;
 
-		/** Output only. The version of this creative. */
+		/**
+		 * Output only. The version of this creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 
 		/** Video content for a creative. */
@@ -935,7 +962,10 @@ export namespace MyNS {
 		/** Output only. The top-level open auction status of this creative. If disapproved, an entry for 'auctionType = OPEN_AUCTION' (or 'ALL') in serving_restrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case, it may be preferable to read from serving_restrictions directly. Can be used to filter the response of the creatives.list method. */
 		openAuctionStatus: FormControl<CreativeDealsStatus | null | undefined>,
 
-		/** Output only. The version of this creative. */
+		/**
+		 * Output only. The version of this creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFormGroup() {
@@ -959,26 +989,38 @@ export namespace MyNS {
 	/** HTML content for a creative. */
 	export interface HtmlContent {
 
-		/** The height of the HTML snippet in pixels. */
+		/**
+		 * The height of the HTML snippet in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The HTML snippet that displays the ad when inserted in the web page. */
 		snippet?: string | null;
 
-		/** The width of the HTML snippet in pixels. */
+		/**
+		 * The width of the HTML snippet in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** HTML content for a creative. */
 	export interface HtmlContentFormProperties {
 
-		/** The height of the HTML snippet in pixels. */
+		/**
+		 * The height of the HTML snippet in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The HTML snippet that displays the ad when inserted in the web page. */
 		snippet: FormControl<string | null | undefined>,
 
-		/** The width of the HTML snippet in pixels. */
+		/**
+		 * The width of the HTML snippet in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateHtmlContentFormGroup() {
@@ -1024,7 +1066,10 @@ export namespace MyNS {
 		/** The price of the promoted app including currency info. */
 		priceDisplayText?: string | null;
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating?: number | null;
 
 		/** The URL to the app store to purchase/download the promoted app. */
@@ -1058,7 +1103,10 @@ export namespace MyNS {
 		/** The price of the promoted app including currency info. */
 		priceDisplayText: FormControl<string | null | undefined>,
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating: FormControl<number | null | undefined>,
 
 		/** The URL to the app store to purchase/download the promoted app. */
@@ -1087,26 +1135,38 @@ export namespace MyNS {
 	/** An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved. */
 	export interface Image {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The URL of the image. */
 		url?: string | null;
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved. */
 	export interface ImageFormProperties {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The URL of the image. */
 		url: FormControl<string | null | undefined>,
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -1305,20 +1365,32 @@ export namespace MyNS {
 	/** Message depicting the size of the creative. The units of width and height depend on the type of the targeting. */
 	export interface Size {
 
-		/** The height of the creative. */
+		/**
+		 * The height of the creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The width of the creative */
+		/**
+		 * The width of the creative
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Message depicting the size of the creative. The units of width and height depend on the type of the targeting. */
 	export interface SizeFormProperties {
 
-		/** The height of the creative. */
+		/**
+		 * The height of the creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The width of the creative */
+		/**
+		 * The width of the creative
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeFormGroup() {
@@ -1342,7 +1414,10 @@ export namespace MyNS {
 		/** A metric value, with an expected value and a variance; represents a count that may be either exact or estimated (for example, when sampled). */
 		bidCount?: MetricValue;
 
-		/** The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). */
+		/**
+		 * The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creativeStatusId?: number | null;
 
 		/** A response may include multiple rows, breaking down along various dimensions. Encapsulates the values of all dimensions for a given row. */
@@ -1352,7 +1427,10 @@ export namespace MyNS {
 	/** The number of bids with the specified dimension values that did not win the auction (either were filtered pre-auction or lost the auction), as described by the specified creative status. */
 	export interface CreativeStatusRowFormProperties {
 
-		/** The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). */
+		/**
+		 * The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creativeStatusId: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeStatusRowFormGroup() {
@@ -1415,32 +1493,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -1814,7 +1916,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -1827,7 +1932,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2008,10 +2116,16 @@ export namespace MyNS {
 	/** Frequency cap. */
 	export interface FrequencyCap {
 
-		/** The maximum number of impressions that can be served to a user within the specified time period. */
+		/**
+		 * The maximum number of impressions that can be served to a user within the specified time period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxImpressions?: number | null;
 
-		/** The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped. */
+		/**
+		 * The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeUnits?: number | null;
 
 		/** The time unit. Along with num_time_units defines the amount of time over which impressions per user are counted and capped. */
@@ -2021,10 +2135,16 @@ export namespace MyNS {
 	/** Frequency cap. */
 	export interface FrequencyCapFormProperties {
 
-		/** The maximum number of impressions that can be served to a user within the specified time period. */
+		/**
+		 * The maximum number of impressions that can be served to a user within the specified time period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxImpressions: FormControl<number | null | undefined>,
 
-		/** The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped. */
+		/**
+		 * The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeUnits: FormControl<number | null | undefined>,
 
 		/** The time unit. Along with num_time_units defines the amount of time over which impressions per user are counted and capped. */
@@ -2418,20 +2538,32 @@ export namespace MyNS {
 	/** A relative date range, specified by an offset and a duration. The supported range of dates begins 30 days before today and ends today, for example, the limits for these values are: offset_days >= 0 duration_days >= 1 offset_days + duration_days <= 30 */
 	export interface RelativeDateRange {
 
-		/** The number of days in the requested date range, for example, for a range spanning today: 1. For a range spanning the last 7 days: 7. */
+		/**
+		 * The number of days in the requested date range, for example, for a range spanning today: 1. For a range spanning the last 7 days: 7.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationDays?: number | null;
 
-		/** The end date of the filter set, specified as the number of days before today, for example, for a range where the last date is today: 0. */
+		/**
+		 * The end date of the filter set, specified as the number of days before today, for example, for a range where the last date is today: 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetDays?: number | null;
 	}
 
 	/** A relative date range, specified by an offset and a duration. The supported range of dates begins 30 days before today and ends today, for example, the limits for these values are: offset_days >= 0 duration_days >= 1 offset_days + duration_days <= 30 */
 	export interface RelativeDateRangeFormProperties {
 
-		/** The number of days in the requested date range, for example, for a range spanning today: 1. For a range spanning the last 7 days: 7. */
+		/**
+		 * The number of days in the requested date range, for example, for a range spanning today: 1. For a range spanning the last 7 days: 7.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationDays: FormControl<number | null | undefined>,
 
-		/** The end date of the filter set, specified as the number of days before today, for example, for a range where the last date is today: 0. */
+		/**
+		 * The end date of the filter set, specified as the number of days before today, for example, for a range where the last date is today: 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetDays: FormControl<number | null | undefined>,
 	}
 	export function CreateRelativeDateRangeFormGroup() {
@@ -2481,7 +2613,10 @@ export namespace MyNS {
 		/** The ID of the detail, can be numeric or text. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message. */
 		detail?: string | null;
 
-		/** Note: this field will be deprecated, use "detail" field instead. When "detail" field represents an integer value, this field is populated as the same integer value "detail" field represents, otherwise this field will be 0. The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message. */
+		/**
+		 * Note: this field will be deprecated, use "detail" field instead. When "detail" field represents an integer value, this field is populated as the same integer value "detail" field represents, otherwise this field will be 0. The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		detailId?: number | null;
 
 		/** A response may include multiple rows, breaking down along various dimensions. Encapsulates the values of all dimensions for a given row. */
@@ -2494,7 +2629,10 @@ export namespace MyNS {
 		/** The ID of the detail, can be numeric or text. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message. */
 		detail: FormControl<string | null | undefined>,
 
-		/** Note: this field will be deprecated, use "detail" field instead. When "detail" field represents an integer value, this field is populated as the same integer value "detail" field represents, otherwise this field will be 0. The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message. */
+		/**
+		 * Note: this field will be deprecated, use "detail" field instead. When "detail" field represents an integer value, this field is populated as the same integer value "detail" field represents, otherwise this field will be 0. The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		detailId: FormControl<number | null | undefined>,
 	}
 	export function CreateFilteredBidDetailRowFormGroup() {
@@ -3559,6 +3697,7 @@ export namespace MyNS {
 		 * Get v2beta1/accounts/{accountId}/clients
 		 * @param {string} accountId Unique numerical account ID of the sponsor buyer to list the clients for.
 		 * @param {number} pageSize Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the accounts.clients.list method.
 		 * @param {string} partnerClientId Optional unique identifier (from the standpoint of an Ad Exchange sponsor buyer partner) of the client to return. If specified, at most one client will be returned in the response.
 		 * @return {ListClientsResponse} Successful response
@@ -3605,6 +3744,7 @@ export namespace MyNS {
 		 * @param {string} accountId Numerical account ID of the client's sponsor buyer. (required)
 		 * @param {string} clientAccountId Numerical account ID of the client buyer to list invitations for. (required) You must either specify a string representation of a numerical account identifier or the `-` character to list all the invitations for all the clients of a given sponsor buyer.
 		 * @param {number} pageSize Requested page size. Server may return fewer clients than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListClientUserInvitationsResponse.nextPageToken returned from the previous call to the clients.invitations.list method.
 		 * @return {ListClientUserInvitationsResponse} Successful response
 		 */
@@ -3641,6 +3781,7 @@ export namespace MyNS {
 		 * @param {string} accountId Numerical account ID of the sponsor buyer of the client to list users for. (required)
 		 * @param {string} clientAccountId The account ID of the client buyer to list users for. (required) You must specify either a string representation of a numerical account identifier or the `-` character to list all the client users for all the clients of a given sponsor buyer.
 		 * @param {number} pageSize Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the accounts.clients.users.list method.
 		 * @return {ListClientUsersResponse} Successful response
 		 */
@@ -3677,6 +3818,7 @@ export namespace MyNS {
 		 * Get v2beta1/accounts/{accountId}/creatives
 		 * @param {string} accountId The account to list the creatives from. Specify "-" to list all creatives the current user has access to.
 		 * @param {number} pageSize Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available through another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to 'ListCreatives' method.
 		 * @param {string} query An optional query string to filter creatives. If no filter is specified, all active creatives will be returned. Supported queries are: - accountId=*account_id_string* - creativeId=*creative_id_string* - dealsStatus: {approved, conditionally_approved, disapproved, not_checked} - openAuctionStatus: {approved, conditionally_approved, disapproved, not_checked} - attribute: {a numeric attribute from the list of attributes} - disapprovalReason: {a reason from DisapprovalReason} Example: 'accountId=12345 AND (dealsStatus:disapproved AND disapprovalReason:unacceptable_content) OR attribute:47'
 		 * @return {ListCreativesResponse} Successful response
@@ -3724,6 +3866,7 @@ export namespace MyNS {
 		 * @param {string} accountId The account to list the associations from. Specify "-" to list all creatives the current user has access to.
 		 * @param {string} creativeId The creative ID to list the associations from. Specify "-" to list all creatives under the above account.
 		 * @param {number} pageSize Requested page size. Server may return fewer associations than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to 'ListDealAssociations' method.
 		 * @param {string} query An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: - accountId=*account_id_string* - creativeId=*creative_id_string* - dealsId=*deals_id_string* - dealsStatus:{approved, conditionally_approved, disapproved, not_checked} - openAuctionStatus:{approved, conditionally_approved, disapproved, not_checked} Example: 'dealsId=12345 AND dealsStatus:disapproved'
 		 * @return {ListDealAssociationsResponse} Successful response
@@ -3783,6 +3926,7 @@ export namespace MyNS {
 		 * @param {string} filter An optional PQL filter query used to query for proposals. Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
 		 * @param {Adexchangebuyer2_accounts_finalizedProposals_listFilterSyntax} filterSyntax Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListProposalsResponse.
 		 * @return {ListProposalsResponse} Successful response
 		 */
@@ -3818,6 +3962,7 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID of the buyer.
 		 * @param {string} filter An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples. Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListProductsResponse.
 		 * @return {ListProductsResponse} Successful response
 		 */
@@ -3843,6 +3988,7 @@ export namespace MyNS {
 		 * @param {string} filter An optional PQL filter query used to query for proposals. Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
 		 * @param {Adexchangebuyer2_accounts_finalizedProposals_listFilterSyntax} filterSyntax Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListProposalsResponse.
 		 * @return {ListProposalsResponse} Successful response
 		 */
@@ -3953,6 +4099,7 @@ export namespace MyNS {
 		 * Get v2beta1/accounts/{accountId}/publisherProfiles
 		 * @param {string} accountId Account ID of the buyer.
 		 * @param {number} pageSize Specify the number of results to include per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as return from ListPublisherProfilesResponse.
 		 * @return {ListPublisherProfilesResponse} Successful response
 		 */
@@ -3976,6 +4123,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/bidMetrics
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListBidMetricsResponse.nextPageToken returned from the previous call to the bidMetrics.list method.
 		 * @return {ListBidMetricsResponse} Successful response
 		 */
@@ -3988,6 +4136,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/bidResponseErrors
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListBidResponseErrorsResponse.nextPageToken returned from the previous call to the bidResponseErrors.list method.
 		 * @return {ListBidResponseErrorsResponse} Successful response
 		 */
@@ -4000,6 +4149,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/bidResponsesWithoutBids
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListBidResponsesWithoutBidsResponse.nextPageToken returned from the previous call to the bidResponsesWithoutBids.list method.
 		 * @return {ListBidResponsesWithoutBidsResponse} Successful response
 		 */
@@ -4012,6 +4162,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/filteredBidRequests
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidRequestsResponse.nextPageToken returned from the previous call to the filteredBidRequests.list method.
 		 * @return {ListFilteredBidRequestsResponse} Successful response
 		 */
@@ -4024,6 +4175,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/filteredBids
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidsResponse.nextPageToken returned from the previous call to the filteredBids.list method.
 		 * @return {ListFilteredBidsResponse} Successful response
 		 */
@@ -4036,7 +4188,9 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/filteredBids/{creativeStatusId}/creatives
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} creativeStatusId The ID of the creative status for which to retrieve a breakdown by creative. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByCreativeResponse.nextPageToken returned from the previous call to the filteredBids.creatives.list method.
 		 * @return {ListCreativeStatusBreakdownByCreativeResponse} Successful response
 		 */
@@ -4049,7 +4203,9 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/filteredBids/{creativeStatusId}/details
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} creativeStatusId The ID of the creative status for which to retrieve a breakdown by detail. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByDetailResponse.nextPageToken returned from the previous call to the filteredBids.details.list method.
 		 * @return {ListCreativeStatusBreakdownByDetailResponse} Successful response
 		 */
@@ -4062,6 +4218,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/impressionMetrics
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListImpressionMetricsResponse.nextPageToken returned from the previous call to the impressionMetrics.list method.
 		 * @return {ListImpressionMetricsResponse} Successful response
 		 */
@@ -4074,6 +4231,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/losingBids
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListLosingBidsResponse.nextPageToken returned from the previous call to the losingBids.list method.
 		 * @return {ListLosingBidsResponse} Successful response
 		 */
@@ -4086,6 +4244,7 @@ export namespace MyNS {
 		 * Get v2beta1/{filterSetName}/nonBillableWinningBids
 		 * @param {string} filterSetName Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListNonBillableWinningBidsResponse.nextPageToken returned from the previous call to the nonBillableWinningBids.list method.
 		 * @return {ListNonBillableWinningBidsResponse} Successful response
 		 */
@@ -4118,6 +4277,7 @@ export namespace MyNS {
 		 * Get v2beta1/{ownerName}/filterSets
 		 * @param {string} ownerName Name of the owner (bidder or account) of the filter sets to be listed. For example: - For a bidder-level filter set for bidder 123: `bidders/123` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListFilterSetsResponse.nextPageToken returned from the previous call to the accounts.filterSets.list method.
 		 * @return {ListFilterSetsResponse} Successful response
 		 */

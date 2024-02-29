@@ -197,7 +197,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -217,7 +220,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -267,6 +273,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -299,6 +306,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -368,6 +376,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -400,6 +409,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -446,6 +456,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -478,6 +489,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -524,6 +536,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -556,6 +569,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -602,6 +616,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -634,6 +649,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -680,6 +696,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -712,6 +729,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -758,6 +776,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -790,6 +809,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -836,6 +856,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -868,6 +889,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -914,6 +936,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -946,6 +969,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1050,6 +1074,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1082,6 +1107,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1128,6 +1154,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1160,6 +1187,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1206,6 +1234,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1238,6 +1267,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1284,6 +1314,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1316,6 +1347,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1362,6 +1394,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1394,6 +1427,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1440,6 +1474,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1472,6 +1507,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1518,6 +1554,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1550,6 +1587,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1596,6 +1634,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1628,6 +1667,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1674,6 +1714,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1706,6 +1747,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1793,6 +1835,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1825,6 +1868,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1851,6 +1895,8 @@ export namespace MyNS {
 
 		/** Product code, e.g. UPC or EAN */
 		code?: string | null;
+
+		/** Type: double */
 		cost?: number | null;
 
 		/** The date and time when the object was created. */
@@ -1884,6 +1930,8 @@ export namespace MyNS {
 		/** List of options pertaining to this item's attribute variation */
 		ItemOptions?: Array<ItemOptions>;
 		present_at_all_locations?: boolean | null;
+
+		/** Type: double */
 		price_amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -1916,6 +1964,8 @@ export namespace MyNS {
 
 		/** Product code, e.g. UPC or EAN */
 		code: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cost: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was created. */
@@ -1942,6 +1992,8 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 		present_at_all_locations: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -2066,11 +2118,15 @@ export namespace MyNS {
 		item_id?: string | null;
 		name?: string | null;
 		present_at_all_locations?: boolean | null;
+
+		/** Type: double */
 		price_amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		price_currency?: Currency | null;
 		pricing_type?: ItemVariationsPricing_type | null;
+
+		/** Type: double */
 		sequence?: number | null;
 		sku?: string | null;
 		stockable?: boolean | null;
@@ -2093,11 +2149,15 @@ export namespace MyNS {
 		item_id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		present_at_all_locations: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
 		price_currency: FormControl<Currency | null | undefined>,
 		pricing_type: FormControl<ItemVariationsPricing_type | null | undefined>,
+
+		/** Type: double */
 		sequence: FormControl<number | null | undefined>,
 		sku: FormControl<string | null | undefined>,
 		stockable: FormControl<boolean | null | undefined>,
@@ -2167,6 +2227,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2199,6 +2260,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2255,14 +2317,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -2335,6 +2403,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2367,6 +2436,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2501,6 +2571,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2533,6 +2604,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2579,6 +2651,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2611,6 +2684,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2715,6 +2789,8 @@ export namespace MyNS {
 
 	export interface ServiceCharge {
 		active?: boolean | null;
+
+		/** Type: double */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -2726,7 +2802,10 @@ export namespace MyNS {
 		/** Service charge name */
 		name?: string | null;
 
-		/** Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time. */
+		/**
+		 * Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time.
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** The type of the service charge. */
@@ -2734,6 +2813,8 @@ export namespace MyNS {
 	}
 	export interface ServiceChargeFormProperties {
 		active: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -2745,7 +2826,10 @@ export namespace MyNS {
 		/** Service charge name */
 		name: FormControl<string | null | undefined>,
 
-		/** Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time. */
+		/**
+		 * Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time.
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** The type of the service charge. */
@@ -2804,6 +2888,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2836,6 +2921,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2882,6 +2968,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2914,6 +3001,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2945,7 +3033,11 @@ export namespace MyNS {
 
 		/** A unique identifier for an object. */
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximum_allowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_required?: number | null;
 		ModifierGroupModifiers?: Array<ModifierGroupModifiers>;
 		name?: string | null;
@@ -2975,7 +3067,11 @@ export namespace MyNS {
 
 		/** A unique identifier for an object. */
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximum_allowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_required: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		present_at_all_locations: FormControl<boolean | null | undefined>,
@@ -3017,6 +3113,8 @@ export namespace MyNS {
 		currency?: Currency | null;
 		id?: string | null;
 		name?: string | null;
+
+		/** Type: double */
 		price_amount?: number | null;
 	}
 	export interface ModifierGroupModifiersFormProperties {
@@ -3027,6 +3125,8 @@ export namespace MyNS {
 		currency: FormControl<Currency | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateModifierGroupModifiersFormGroup() {
@@ -3081,6 +3181,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3113,6 +3214,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3159,6 +3261,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3191,6 +3294,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3235,6 +3339,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: double */
 		price_amount?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -3270,6 +3376,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price_amount: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -3334,6 +3442,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3366,6 +3475,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3412,6 +3522,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3444,6 +3555,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3459,6 +3571,8 @@ export namespace MyNS {
 	}
 
 	export interface Order {
+
+		/** Type: DateOnly */
 		closed_date?: Date | null;
 
 		/** The date and time when the object was created. */
@@ -3496,6 +3610,8 @@ export namespace MyNS {
 
 		/** A note with information about this order, may be printed on the order receipt and displayed in apps */
 		note?: string | null;
+
+		/** Type: DateOnly */
 		order_date?: Date | null;
 		order_number?: string | null;
 		order_type_id?: string | null;
@@ -3522,11 +3638,23 @@ export namespace MyNS {
 		OrderTaxes?: Array<OrderTaxes>;
 		OrderTenders?: Array<OrderTenders>;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_refund?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_service_charge?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tip?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -3539,6 +3667,8 @@ export namespace MyNS {
 		voided_at?: Date | null;
 	}
 	export interface OrderFormProperties {
+
+		/** Type: DateOnly */
 		closed_date: FormControl<Date | null | undefined>,
 
 		/** The date and time when the object was created. */
@@ -3569,6 +3699,8 @@ export namespace MyNS {
 
 		/** A note with information about this order, may be printed on the order receipt and displayed in apps */
 		note: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		order_date: FormControl<Date | null | undefined>,
 		order_number: FormControl<string | null | undefined>,
 		order_type_id: FormControl<string | null | undefined>,
@@ -3588,11 +3720,23 @@ export namespace MyNS {
 		status: FormControl<OrderStatus | null | undefined>,
 		table: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_refund: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_service_charge: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tip: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -3730,6 +3874,8 @@ export namespace MyNS {
 	export enum PhoneNumberType { primary = 'primary', secondary = 'secondary', home = 'home', work = 'work', office = 'office', mobile = 'mobile', assistant = 'assistant', fax = 'fax', 'direct-dial-in' = 'direct-dial-in', personal = 'personal', other = 'other' }
 
 	export interface OrderDiscounts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -3747,6 +3893,8 @@ export namespace MyNS {
 		type: OrderDiscountsType;
 	}
 	export interface OrderDiscountsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4077,10 +4225,20 @@ export namespace MyNS {
 		/** Customizable options – toppings, add-ons, or special requests – create item modifiers. Modifiers that are applied to items will display on your customers’ digital receipts */
 		OrderLine_itemsModifiers?: Array<OrderLine_itemsModifiers>;
 		name?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax?: number | null;
+
+		/** Type: double */
 		unit_price?: number | null;
 	}
 	export interface OrderLine_itemsFormProperties {
@@ -4089,10 +4247,20 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		item: FormControl<any | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderLine_itemsFormGroup() {
@@ -4110,6 +4278,8 @@ export namespace MyNS {
 	}
 
 	export interface OrderLine_itemsApplied_discounts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4120,6 +4290,8 @@ export namespace MyNS {
 		id?: string | null;
 	}
 	export interface OrderLine_itemsApplied_discountsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4140,6 +4312,8 @@ export namespace MyNS {
 	}
 
 	export interface OrderLine_itemsApplied_taxes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4150,6 +4324,8 @@ export namespace MyNS {
 		tax_id?: string | null;
 	}
 	export interface OrderLine_itemsApplied_taxesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4171,6 +4347,8 @@ export namespace MyNS {
 
 	export interface OrderLine_itemsModifiers {
 		alternate_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4181,6 +4359,8 @@ export namespace MyNS {
 	}
 	export interface OrderLine_itemsModifiersFormProperties {
 		alternate_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4204,6 +4384,8 @@ export namespace MyNS {
 	export enum OrderPayment_status { open = 'open', paid = 'paid', refunded = 'refunded', credited = 'credited', partially_paid = 'partially_paid', partially_refunded = 'partially_refunded', unknown = 'unknown' }
 
 	export interface OrderPayments {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4213,6 +4395,8 @@ export namespace MyNS {
 		id?: string | null;
 	}
 	export interface OrderPaymentsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4231,6 +4415,8 @@ export namespace MyNS {
 	}
 
 	export interface OrderRefunds {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4251,6 +4437,8 @@ export namespace MyNS {
 		transaction_id?: string | null;
 	}
 	export interface OrderRefundsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4291,6 +4479,8 @@ export namespace MyNS {
 	export enum OrderStatus { open = 'open', draft = 'draft', delivered = 'delivered', delayed = 'delayed', voided = 'voided', completed = 'completed', hidden = 'hidden' }
 
 	export interface OrderTaxes {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 
 		/** Square-only: Determines whether the tax was automatically applied to the order based on the catalog configuration. For an example, see Automatically Apply Taxes to an Order. [https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts/auto-apply-taxes]() */
@@ -4302,11 +4492,15 @@ export namespace MyNS {
 
 		/** The tax's name. */
 		name?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 		scope?: OrderDiscountsScope | null;
 		type?: OrderTaxesType | null;
 	}
 	export interface OrderTaxesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Square-only: Determines whether the tax was automatically applied to the order based on the catalog configuration. For an example, see Automatically Apply Taxes to an Order. [https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts/auto-apply-taxes]() */
@@ -4318,6 +4512,8 @@ export namespace MyNS {
 
 		/** The tax's name. */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 		scope: FormControl<OrderDiscountsScope | null | undefined>,
 		type: FormControl<OrderTaxesType | null | undefined>,
@@ -4339,9 +4535,14 @@ export namespace MyNS {
 	export enum OrderTaxesType { unknown = 'unknown', additive = 'additive', inclusive = 'inclusive' }
 
 	export interface OrderTenders {
+
+		/** Type: double */
 		amount?: number | null;
 
-		/** The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash. */
+		/**
+		 * The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		buyer_tendered_cash_amount?: number | null;
 
 		/** A card's non-confidential details. */
@@ -4353,7 +4554,10 @@ export namespace MyNS {
 		/** The status of the card. Only applicable when the tender type is card. */
 		card_status?: OrderTendersCard_status | null;
 
-		/** The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash. */
+		/**
+		 * The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		change_back_cash_amount?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4369,13 +4573,29 @@ export namespace MyNS {
 
 		/** A unique identifier for an object. */
 		payment_id?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_processing_fee?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_refund?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_service_charge?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tip?: number | null;
 
 		/** A unique identifier for an object. */
@@ -4383,9 +4603,14 @@ export namespace MyNS {
 		type?: OrderTendersType | null;
 	}
 	export interface OrderTendersFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
-		/** The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash. */
+		/**
+		 * The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		buyer_tendered_cash_amount: FormControl<number | null | undefined>,
 
 		/** The entry method of the card. Only applicable when the tender type is card. */
@@ -4394,7 +4619,10 @@ export namespace MyNS {
 		/** The status of the card. Only applicable when the tender type is card. */
 		card_status: FormControl<OrderTendersCard_status | null | undefined>,
 
-		/** The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash. */
+		/**
+		 * The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		change_back_cash_amount: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -4410,13 +4638,29 @@ export namespace MyNS {
 
 		/** A unique identifier for an object. */
 		payment_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_discount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_processing_fee: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_refund: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_service_charge: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tax: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_tip: FormControl<number | null | undefined>,
 
 		/** A unique identifier for an object. */
@@ -4474,7 +4718,10 @@ export namespace MyNS {
 		 */
 		exp_month?: number | null;
 
-		/** The four-digit year of the card's expiration date. */
+		/**
+		 * The four-digit year of the card's expiration date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exp_year?: number | null;
 		fingerprint?: string | null;
 
@@ -4511,7 +4758,10 @@ export namespace MyNS {
 		 */
 		exp_month: FormControl<number | null | undefined>,
 
-		/** The four-digit year of the card's expiration date. */
+		/**
+		 * The four-digit year of the card's expiration date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exp_year: FormControl<number | null | undefined>,
 		fingerprint: FormControl<string | null | undefined>,
 
@@ -4590,6 +4840,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4622,6 +4873,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4725,6 +4977,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4757,6 +5010,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4809,6 +5063,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4841,6 +5096,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4887,6 +5143,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4919,6 +5176,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4935,13 +5193,22 @@ export namespace MyNS {
 
 	export interface PosPayment {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
-		/** The amount the developer is taking as a fee for facilitating the payment on behalf of the seller. */
+		/**
+		 * The amount the developer is taking as a fee for facilitating the payment on behalf of the seller.
+		 * Type: double
+		 */
 		app_fee?: number | null;
 
-		/** The initial amount of money approved for this payment. */
+		/**
+		 * The initial amount of money approved for this payment.
+		 * Type: double
+		 */
 		approved?: number | null;
 
 		/** Card details for this payment. This field is currently not available. Reach out to our team for more info. */
@@ -4950,6 +5217,8 @@ export namespace MyNS {
 
 		/** Cash details for this payment */
 		cash?: PosPaymentCash;
+
+		/** Type: double */
 		change_back_cash_amount?: number | null;
 
 		/** The date and time when the object was created. */
@@ -4991,7 +5260,10 @@ export namespace MyNS {
 		order_id: string;
 		PosPaymentProcessing_fees?: Array<PosPaymentProcessing_fees>;
 
-		/** The initial amount of money approved for this payment. */
+		/**
+		 * The initial amount of money approved for this payment.
+		 * Type: double
+		 */
 		refunded?: number | null;
 
 		/** Optional service charges or gratuity tip applied to the order. */
@@ -5008,11 +5280,17 @@ export namespace MyNS {
 
 		/** Status of this payment. */
 		status?: PosPaymentStatus | null;
+
+		/** Type: double */
 		tax?: number | null;
 
 		/** Required */
 		tender_id: string;
+
+		/** Type: double */
 		tip?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 
 		/** The date and time when the object was last updated. */
@@ -5026,14 +5304,25 @@ export namespace MyNS {
 	}
 	export interface PosPaymentFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The amount the developer is taking as a fee for facilitating the payment on behalf of the seller. */
+		/**
+		 * The amount the developer is taking as a fee for facilitating the payment on behalf of the seller.
+		 * Type: double
+		 */
 		app_fee: FormControl<number | null | undefined>,
 
-		/** The initial amount of money approved for this payment. */
+		/**
+		 * The initial amount of money approved for this payment.
+		 * Type: double
+		 */
 		approved: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		change_back_cash_amount: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was created. */
@@ -5068,7 +5357,10 @@ export namespace MyNS {
 		/** Required */
 		order_id: FormControl<string | null | undefined>,
 
-		/** The initial amount of money approved for this payment. */
+		/**
+		 * The initial amount of money approved for this payment.
+		 * Type: double
+		 */
 		refunded: FormControl<number | null | undefined>,
 
 		/** Source of this payment. */
@@ -5082,11 +5374,17 @@ export namespace MyNS {
 
 		/** Status of this payment. */
 		status: FormControl<PosPaymentStatus | null | undefined>,
+
+		/** Type: double */
 		tax: FormControl<number | null | undefined>,
 
 		/** Required */
 		tender_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tip: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 
 		/** The date and time when the object was last updated. */
@@ -5149,8 +5447,8 @@ export namespace MyNS {
 
 		/**
 		 * Country code according to ISO 3166-1 alpha-2.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country?: string | null;
 
@@ -5192,8 +5490,8 @@ export namespace MyNS {
 
 		/**
 		 * Country code according to ISO 3166-1 alpha-2.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
@@ -5326,7 +5624,10 @@ export namespace MyNS {
 		 */
 		source: string;
 
-		/** The fees paid to the source. The amount minus this field is the net amount seller receives. */
+		/**
+		 * The fees paid to the source. The amount minus this field is the net amount seller receives.
+		 * Type: double
+		 */
 		source_fee_amount?: number | null;
 
 		/**
@@ -5364,7 +5665,10 @@ export namespace MyNS {
 		 */
 		source: FormControl<string | null | undefined>,
 
-		/** The fees paid to the source. The amount minus this field is the net amount seller receives. */
+		/**
+		 * The fees paid to the source. The amount minus this field is the net amount seller receives.
+		 * Type: double
+		 */
 		source_fee_amount: FormControl<number | null | undefined>,
 
 		/**
@@ -5405,11 +5709,15 @@ export namespace MyNS {
 	export enum PosPaymentExternal_detailsType { check = 'check', bank_transfer = 'bank_transfer', other_gift_card = 'other_gift_card', crypto = 'crypto', square_cash = 'square_cash', social = 'social', external = 'external', emoney = 'emoney', card = 'card', stored_balance = 'stored_balance', food_voucher = 'food_voucher', other = 'other' }
 
 	export interface PosPaymentProcessing_fees {
+
+		/** Type: double */
 		amount?: number | null;
 		effective_at?: Date | null;
 		processing_type?: PosPaymentProcessing_feesProcessing_type | null;
 	}
 	export interface PosPaymentProcessing_feesFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		effective_at: FormControl<Date | null | undefined>,
 		processing_type: FormControl<PosPaymentProcessing_feesProcessing_type | null | undefined>,
@@ -5492,6 +5800,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5524,6 +5833,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5570,6 +5880,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5602,6 +5913,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5731,6 +6043,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5763,6 +6076,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5808,7 +6122,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5828,7 +6145,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5860,7 +6180,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5880,7 +6203,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -5912,7 +6238,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -5932,7 +6261,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -6011,7 +6343,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -6028,7 +6363,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -6075,7 +6413,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -6095,7 +6436,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -6127,7 +6471,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -6147,7 +6494,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -6179,7 +6529,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -6199,7 +6552,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -6249,6 +6605,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6281,6 +6638,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6327,6 +6685,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6359,6 +6718,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6405,6 +6765,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6437,6 +6798,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6483,6 +6845,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6515,6 +6878,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6561,6 +6925,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6593,6 +6958,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6639,6 +7005,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6671,6 +7038,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6717,6 +7085,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6749,6 +7118,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6795,6 +7165,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6827,6 +7198,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6873,6 +7245,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -6905,6 +7278,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -6972,6 +7346,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetItemsResponse} Items
 		 */
@@ -7034,6 +7409,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetLocationsResponse} Locations
 		 */
@@ -7096,6 +7472,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetMerchantsResponse} Merchants
 		 */
@@ -7158,6 +7535,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetModifierGroupsResponse} ModifierGroups
 		 */
@@ -7220,6 +7598,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetModifiersResponse} Modifiers
 		 */
@@ -7284,6 +7663,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetOrderTypesResponse} OrderTypes
 		 */
@@ -7346,6 +7726,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} location_id ID of the location.
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetOrdersResponse} Orders
@@ -7422,6 +7803,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetPosPaymentsResponse} PosPayments
 		 */
@@ -7484,6 +7866,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetTendersResponse} Tenders
 		 */

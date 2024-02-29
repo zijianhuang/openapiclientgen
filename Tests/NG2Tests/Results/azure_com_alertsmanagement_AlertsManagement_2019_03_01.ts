@@ -956,6 +956,7 @@ export namespace MyNS {
 		 * @param {EssentialsAlertState} smartGroupState Filter by state of the smart group. Default value is to select all.
 		 * @param {SmartGroups_GetAllTimeRange} timeRange Filter by time range by below listed values. Default value is 1 day.
 		 * @param {number} pageCount Determines number of alerts returned per page in response. Permissible value is between 1 to 250. When the "includeContent"  filter is selected, maximum value allowed is 25. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SmartGroups_GetAllSortBy} sortBy Sort the query results by input field. Default value is sort by 'lastModifiedDateTime'.
 		 * @param {SmartGroups_GetAllSortOrder} sortOrder Sort the query results order in either ascending or descending.  Default value is 'desc' for time fields and 'asc' for others.
 		 * @param {Operations_ListApi_version} api_version API version.
@@ -1019,6 +1020,7 @@ export namespace MyNS {
 		 * @param {boolean} includeContext Include context which has contextual data specific to the monitor service. Default value is false'
 		 * @param {boolean} includeEgressConfig Include egress config which would be used for displaying the content in portal.  Default value is 'false'.
 		 * @param {number} pageCount Determines number of alerts returned per page in response. Permissible value is between 1 to 250. When the "includeContent"  filter is selected, maximum value allowed is 25. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Alerts_GetAllSortBy} sortBy Sort the query results by input field,  Default value is 'lastModifiedDateTime'.
 		 * @param {SmartGroups_GetAllSortOrder} sortOrder Sort the query results order in either ascending or descending.  Default value is 'desc' for time fields and 'asc' for others.
 		 * @param {string} select This filter allows to selection of the fields(comma separated) which would  be part of the essential section. This would allow to project only the  required fields rather than getting entire content.  Default is to fetch all the fields in the essentials section.

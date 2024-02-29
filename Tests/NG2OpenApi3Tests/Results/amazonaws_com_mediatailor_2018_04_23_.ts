@@ -3103,6 +3103,7 @@ export namespace MyNS {
 		 * @param {string} ChannelName The name of the channel associated with this Channel Schedule.
 		 * @param {string} durationMinutes The duration in minutes of the channel schedule.
 		 * @param {number} maxResults The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3116,6 +3117,7 @@ export namespace MyNS {
 		 * Lists the alerts that are associated with a MediaTailor channel assembly resource.
 		 * Get alerts#resourceArn
 		 * @param {number} maxResults The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
 		 * @param {string} MaxResults Pagination limit
@@ -3130,6 +3132,7 @@ export namespace MyNS {
 		 * Retrieves information about the channels that are associated with the current AWS account.
 		 * Get channels
 		 * @param {number} maxResults The maximum number of channels that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3143,6 +3146,7 @@ export namespace MyNS {
 		 * Lists the live sources contained in a source location. A source represents a piece of content.
 		 * Get sourceLocation/{SourceLocationName}/liveSources
 		 * @param {number} maxResults The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @param {string} SourceLocationName The name of the source location associated with this Live Sources list.
 		 * @param {string} MaxResults Pagination limit
@@ -3157,6 +3161,7 @@ export namespace MyNS {
 		 * Retrieves existing playback configurations. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with Configurations in AWS Elemental MediaTailor</a>.
 		 * Get playbackConfigurations
 		 * @param {number} MaxResults The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @return {ListPlaybackConfigurationsResponse} Success
 		 */
@@ -3180,6 +3185,7 @@ export namespace MyNS {
 		 * Lists the source locations for a channel. A source location defines the host server URL, and contains a list of sources.
 		 * Get sourceLocations
 		 * @param {number} maxResults  The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3213,6 +3219,7 @@ export namespace MyNS {
 		 * Lists the VOD sources contained in a source location. A source represents a piece of content.
 		 * Get sourceLocation/{SourceLocationName}/vodSources
 		 * @param {number} maxResults  The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @param {string} SourceLocationName The name of the source location associated with this VOD Source list.
 		 * @param {string} MaxResults Pagination limit
@@ -3298,6 +3305,7 @@ export namespace MyNS {
 		/**
 		 * <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PercentEnabled: number;
 
@@ -3312,6 +3320,7 @@ export namespace MyNS {
 		/**
 		 * <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PercentEnabled: FormControl<number | null | undefined>,
 

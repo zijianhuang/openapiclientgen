@@ -213,13 +213,22 @@ export namespace MyNS {
 		/** Three-letter code indicating the currency in which `itemPrice` and `refundAmount` are displayed */
 		currencyCode?: string | null;
 
-		/** The merchant net price at the time this product was booked */
+		/**
+		 * The merchant net price at the time this product was booked
+		 * Type: double
+		 */
 		itemPrice?: number | null;
 
-		/** Numeric currency amount that will be refunded if this booking is cancelled now */
+		/**
+		 * Numeric currency amount that will be refunded if this booking is cancelled now
+		 * Type: double
+		 */
 		refundAmount?: number | null;
 
-		/** Percentage of the item price that will be refunded if this booking is cancelled now */
+		/**
+		 * Percentage of the item price that will be refunded if this booking is cancelled now
+		 * Type: double
+		 */
 		refundPercentage?: number | null;
 	}
 
@@ -232,13 +241,22 @@ export namespace MyNS {
 		/** Three-letter code indicating the currency in which `itemPrice` and `refundAmount` are displayed */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** The merchant net price at the time this product was booked */
+		/**
+		 * The merchant net price at the time this product was booked
+		 * Type: double
+		 */
 		itemPrice: FormControl<number | null | undefined>,
 
-		/** Numeric currency amount that will be refunded if this booking is cancelled now */
+		/**
+		 * Numeric currency amount that will be refunded if this booking is cancelled now
+		 * Type: double
+		 */
 		refundAmount: FormControl<number | null | undefined>,
 
-		/** Percentage of the item price that will be refunded if this booking is cancelled now */
+		/**
+		 * Percentage of the item price that will be refunded if this booking is cancelled now
+		 * Type: double
+		 */
 		refundPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateRefundDetailsFormGroup() {
@@ -357,7 +375,10 @@ export namespace MyNS {
 		 */
 		searchType?: SearchFreetextResponseSearchType | null;
 
-		/** **sort order** for *this* data object */
+		/**
+		 * **sort order** for *this* data object
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 	}
 	export interface SearchFreetextResponseFormProperties {
@@ -371,7 +392,10 @@ export namespace MyNS {
 		 */
 		searchType: FormControl<SearchFreetextResponseSearchType | null | undefined>,
 
-		/** **sort order** for *this* data object */
+		/**
+		 * **sort order** for *this* data object
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchFreetextResponseFormGroup() {
@@ -401,19 +425,34 @@ export namespace MyNS {
 
 	export interface SearchFreetextResponseAttractionData {
 
-		/** City in which this attraction is located */
+		/**
+		 * City in which this attraction is located
+		 * Type: double
+		 */
 		attractionCity?: number | null;
 
-		/** Latitude of this attraction's location */
+		/**
+		 * Latitude of this attraction's location
+		 * Type: double
+		 */
 		attractionLatitude?: number | null;
 
-		/** Longitude of this attraction's location */
+		/**
+		 * Longitude of this attraction's location
+		 * Type: double
+		 */
 		attractionLongitude?: number | null;
 
-		/** State in which this attraction is located */
+		/**
+		 * State in which this attraction is located
+		 * Type: double
+		 */
 		attractionState?: number | null;
 
-		/** Street address of this attraction */
+		/**
+		 * Street address of this attraction
+		 * Type: double
+		 */
 		attractionStreetAddress?: number | null;
 
 		/** Description introduction text */
@@ -422,13 +461,19 @@ export namespace MyNS {
 		/** Description of this attraction */
 		descriptionText?: string | null;
 
-		/** Destination ID for the destination in which this attraction is located */
+		/**
+		 * Destination ID for the destination in which this attraction is located
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationId?: number | null;
 
 		/** ignore (Viator only) */
 		editorsPick?: boolean | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keywordCount?: number | null;
 
 		/** ignore (Viator only) */
@@ -446,13 +491,22 @@ export namespace MyNS {
 		/** URL path fragment for attraction */
 		pageUrlName?: string | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount?: number | null;
 
-		/** Number of photos available for this attraction */
+		/**
+		 * Number of photos available for this attraction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount?: number | null;
 
-		/** Primary destination ID for the destination in which this attraction is located */
+		/**
+		 * Primary destination ID for the destination in which this attraction is located
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId?: number | null;
 
 		/** Primary destination ID for the destination in which this attraction is located */
@@ -461,19 +515,31 @@ export namespace MyNS {
 		/** Name of primary destination for this attraction */
 		primaryDestinationUrlName?: string | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount?: number | null;
 
 		/** ignore (Viator only) */
 		publishedDate?: string | null;
 
-		/** Numeric rating for this attraction */
+		/**
+		 * Numeric rating for this attraction
+		 * Type: double
+		 */
 		rating?: number | null;
 
-		/** Number of reviews for this attraction */
+		/**
+		 * Number of reviews for this attraction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seoId?: number | null;
 
 		/** Type of result; i.e. `"ATTRACTION"` */
@@ -485,7 +551,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		showReviews?: boolean | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** Tab title for this attraction */
@@ -508,19 +577,34 @@ export namespace MyNS {
 	}
 	export interface SearchFreetextResponseAttractionDataFormProperties {
 
-		/** City in which this attraction is located */
+		/**
+		 * City in which this attraction is located
+		 * Type: double
+		 */
 		attractionCity: FormControl<number | null | undefined>,
 
-		/** Latitude of this attraction's location */
+		/**
+		 * Latitude of this attraction's location
+		 * Type: double
+		 */
 		attractionLatitude: FormControl<number | null | undefined>,
 
-		/** Longitude of this attraction's location */
+		/**
+		 * Longitude of this attraction's location
+		 * Type: double
+		 */
 		attractionLongitude: FormControl<number | null | undefined>,
 
-		/** State in which this attraction is located */
+		/**
+		 * State in which this attraction is located
+		 * Type: double
+		 */
 		attractionState: FormControl<number | null | undefined>,
 
-		/** Street address of this attraction */
+		/**
+		 * Street address of this attraction
+		 * Type: double
+		 */
 		attractionStreetAddress: FormControl<number | null | undefined>,
 
 		/** Description introduction text */
@@ -529,13 +613,19 @@ export namespace MyNS {
 		/** Description of this attraction */
 		descriptionText: FormControl<string | null | undefined>,
 
-		/** Destination ID for the destination in which this attraction is located */
+		/**
+		 * Destination ID for the destination in which this attraction is located
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationId: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
 		editorsPick: FormControl<boolean | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keywordCount: FormControl<number | null | undefined>,
 
 		/** HTML-formatted summary overview of this attraction */
@@ -550,13 +640,22 @@ export namespace MyNS {
 		/** URL path fragment for attraction */
 		pageUrlName: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount: FormControl<number | null | undefined>,
 
-		/** Number of photos available for this attraction */
+		/**
+		 * Number of photos available for this attraction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount: FormControl<number | null | undefined>,
 
-		/** Primary destination ID for the destination in which this attraction is located */
+		/**
+		 * Primary destination ID for the destination in which this attraction is located
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId: FormControl<number | null | undefined>,
 
 		/** Primary destination ID for the destination in which this attraction is located */
@@ -565,19 +664,31 @@ export namespace MyNS {
 		/** Name of primary destination for this attraction */
 		primaryDestinationUrlName: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
 		publishedDate: FormControl<string | null | undefined>,
 
-		/** Numeric rating for this attraction */
+		/**
+		 * Numeric rating for this attraction
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
-		/** Number of reviews for this attraction */
+		/**
+		 * Number of reviews for this attraction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seoId: FormControl<number | null | undefined>,
 
 		/** Type of result; i.e. `"ATTRACTION"` */
@@ -589,7 +700,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		showReviews: FormControl<boolean | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** Tab title for this attraction */
@@ -673,6 +787,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** of the destination
 		 * - use this value as the `destId` input field for other Viator API services
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destinationId?: number | null;
 
@@ -698,10 +813,16 @@ export namespace MyNS {
 		 */
 		iataCode?: string | null;
 
-		/** **latitude component** of the destination's geolocation */
+		/**
+		 * **latitude component** of the destination's geolocation
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** **longitude component** of the destination's geolocation */
+		/**
+		 * **longitude component** of the destination's geolocation
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/**
@@ -711,13 +832,19 @@ export namespace MyNS {
 		 */
 		lookupId?: string | null;
 
-		/** **unique numeric identifier** of the destination's parent destination */
+		/**
+		 * **unique numeric identifier** of the destination's parent destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentId?: number | null;
 
 		/** ignore - (Viator only) */
 		selectable?: boolean | null;
 
-		/** **sort order** for this response */
+		/**
+		 * **sort order** for this response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** **time zone** of the destination */
@@ -731,6 +858,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** of the destination
 		 * - use this value as the `destId` input field for other Viator API services
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destinationId: FormControl<number | null | undefined>,
 
@@ -756,10 +884,16 @@ export namespace MyNS {
 		 */
 		iataCode: FormControl<string | null | undefined>,
 
-		/** **latitude component** of the destination's geolocation */
+		/**
+		 * **latitude component** of the destination's geolocation
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** **longitude component** of the destination's geolocation */
+		/**
+		 * **longitude component** of the destination's geolocation
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/**
@@ -769,13 +903,19 @@ export namespace MyNS {
 		 */
 		lookupId: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of the destination's parent destination */
+		/**
+		 * **unique numeric identifier** of the destination's parent destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentId: FormControl<number | null | undefined>,
 
 		/** ignore - (Viator only) */
 		selectable: FormControl<boolean | null | undefined>,
 
-		/** **sort order** for this response */
+		/**
+		 * **sort order** for this response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** **time zone** of the destination */
@@ -869,6 +1009,7 @@ export namespace MyNS {
 		/**
 		 * Numeric 'from' (lowest possible) price that Viator will invoice the merchant for the sale of this product, excluding the transaction fee; i.e. the merchant net rate
 		 * For more information, see: [Merchant pricing](#section/Key-concepts/Merchant-pricing)
+		 * Type: double
 		 */
 		merchantNetPriceFrom?: number | null;
 
@@ -883,6 +1024,7 @@ export namespace MyNS {
 		 * - this field will contain a value if the `bookingEngineId` is `'FreesaleOnRequestBE'`
 		 * - an `onRequestPeriod` of 48 hours means that *this* product is freesale up until 48 hours before the travel date, and is on-request for 48 hours or less until the travel date
 		 * - **note**: 'hours in advance' (the number of hours a product is available for booking before the travel date) may also affect this; however, this value is not available in the API
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		onRequestPeriod?: number | null;
 
@@ -891,7 +1033,10 @@ export namespace MyNS {
 		 */
 		onSale?: boolean | null;
 
-		/** **number** of panoramic images available for *this* product */
+		/**
+		 * **number** of panoramic images available for *this* product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount?: number | null;
 
 		/**
@@ -900,12 +1045,16 @@ export namespace MyNS {
 		 */
 		pas?: string | null;
 
-		/** **number** of user photos published for *this* product */
+		/**
+		 * **number** of user photos published for *this* product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount?: number | null;
 
 		/**
 		 * **suggested sell ('from') price** for this product in the currency set in the `currencyCode` parameter. This is the cheapest sell price, taking into consideration off-peak periods and discounts on larger groups.
 		 * - For more information, see: [Merchant pricing](#section/Merchant-APIs/Merchant-pricing)
+		 * Type: double
 		 */
 		price?: number | null;
 
@@ -915,7 +1064,10 @@ export namespace MyNS {
 		 */
 		priceFormatted?: string | null;
 
-		/** **unique numeric identifier** of *this* product's primary destination */
+		/**
+		 * **unique numeric identifier** of *this* product's primary destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId?: number | null;
 
 		/** **natural-language name** of *this* product's primary destination */
@@ -937,16 +1089,21 @@ export namespace MyNS {
 		 * **average user rating** of *this* product
 		 * users rate products by assigning a star-rating from 1-5; this value shows the average of the star ratings provided by users;
 		 * the `ratingCounts` associative array in this response provides a breakdown of how many submissions for each star rating have been received
+		 * Type: double
 		 */
 		rating?: number | null;
 
 		/**
 		 * **number** of user reviews that have been submitted by users for *this* product
 		 * If your account has been configured to limit the number of reviews you can receive, this value will never be higher than that. Otherwise, this value will show the total number of reviews available for this product. If there are more than 24 reviews available, you will need to use the [/product/reviews](#operation/productReviews) service to retrieve the remainder of the reviews.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reviewCount?: number | null;
 
-		/** **numeric original price** for this product if the product is on special / a discount has been applied. `0` if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
+		/**
+		 * **numeric original price** for this product if the product is on special / a discount has been applied. `0` if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrp?: number | null;
 
 		/** **currency-formatted original price** for this product if the product is on special / a discount has been applied. Empty string if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
@@ -968,7 +1125,10 @@ export namespace MyNS {
 		/** **natural-language title** (shortened) of *this* product */
 		shortTitle?: string | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** **indicator**: `true` if a special offer is available for *this* product. If `true` the `specialOffer` field will contain a text string providing details of the special offer which you may wish to display in your product search results. E.g. 'Book by May 27 to save 34% off our previously offered price!'. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
@@ -1016,7 +1176,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		uniqueShortDescription?: string | null;
 
-		/** ignore (Viator only) – videos are not available to partners */
+		/**
+		 * ignore (Viator only) – videos are not available to partners
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		videoCount?: number | null;
 
 		/** ignore (Viator only) */
@@ -1068,6 +1231,7 @@ export namespace MyNS {
 		/**
 		 * Numeric 'from' (lowest possible) price that Viator will invoice the merchant for the sale of this product, excluding the transaction fee; i.e. the merchant net rate
 		 * For more information, see: [Merchant pricing](#section/Key-concepts/Merchant-pricing)
+		 * Type: double
 		 */
 		merchantNetPriceFrom: FormControl<number | null | undefined>,
 
@@ -1082,6 +1246,7 @@ export namespace MyNS {
 		 * - this field will contain a value if the `bookingEngineId` is `'FreesaleOnRequestBE'`
 		 * - an `onRequestPeriod` of 48 hours means that *this* product is freesale up until 48 hours before the travel date, and is on-request for 48 hours or less until the travel date
 		 * - **note**: 'hours in advance' (the number of hours a product is available for booking before the travel date) may also affect this; however, this value is not available in the API
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		onRequestPeriod: FormControl<number | null | undefined>,
 
@@ -1090,7 +1255,10 @@ export namespace MyNS {
 		 */
 		onSale: FormControl<boolean | null | undefined>,
 
-		/** **number** of panoramic images available for *this* product */
+		/**
+		 * **number** of panoramic images available for *this* product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1099,12 +1267,16 @@ export namespace MyNS {
 		 */
 		pas: FormControl<string | null | undefined>,
 
-		/** **number** of user photos published for *this* product */
+		/**
+		 * **number** of user photos published for *this* product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount: FormControl<number | null | undefined>,
 
 		/**
 		 * **suggested sell ('from') price** for this product in the currency set in the `currencyCode` parameter. This is the cheapest sell price, taking into consideration off-peak periods and discounts on larger groups.
 		 * - For more information, see: [Merchant pricing](#section/Merchant-APIs/Merchant-pricing)
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -1114,7 +1286,10 @@ export namespace MyNS {
 		 */
 		priceFormatted: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of *this* product's primary destination */
+		/**
+		 * **unique numeric identifier** of *this* product's primary destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId: FormControl<number | null | undefined>,
 
 		/** **natural-language name** of *this* product's primary destination */
@@ -1136,16 +1311,21 @@ export namespace MyNS {
 		 * **average user rating** of *this* product
 		 * users rate products by assigning a star-rating from 1-5; this value shows the average of the star ratings provided by users;
 		 * the `ratingCounts` associative array in this response provides a breakdown of how many submissions for each star rating have been received
+		 * Type: double
 		 */
 		rating: FormControl<number | null | undefined>,
 
 		/**
 		 * **number** of user reviews that have been submitted by users for *this* product
 		 * If your account has been configured to limit the number of reviews you can receive, this value will never be higher than that. Otherwise, this value will show the total number of reviews available for this product. If there are more than 24 reviews available, you will need to use the [/product/reviews](#operation/productReviews) service to retrieve the remainder of the reviews.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reviewCount: FormControl<number | null | undefined>,
 
-		/** **numeric original price** for this product if the product is on special / a discount has been applied. `0` if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
+		/**
+		 * **numeric original price** for this product if the product is on special / a discount has been applied. `0` if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrp: FormControl<number | null | undefined>,
 
 		/** **currency-formatted original price** for this product if the product is on special / a discount has been applied. Empty string if there is no discount on this product. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
@@ -1167,7 +1347,10 @@ export namespace MyNS {
 		/** **natural-language title** (shortened) of *this* product */
 		shortTitle: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** **indicator**: `true` if a special offer is available for *this* product. If `true` the `specialOffer` field will contain a text string providing details of the special offer which you may wish to display in your product search results. E.g. 'Book by May 27 to save 34% off our previously offered price!'. See [Special offers and on-sale pricing](#section/Key-concepts/Special-offers-and-on-sale-pricing) for more information. */
@@ -1209,7 +1392,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		uniqueShortDescription: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) – videos are not available to partners */
+		/**
+		 * ignore (Viator only) – videos are not available to partners
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		videoCount: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
@@ -1300,10 +1486,16 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		attractionCity?: string | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: double
+		 */
 		attractionLatitude?: number | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: double
+		 */
 		attractionLongitude?: number | null;
 
 		/** ignore (Viator only) */
@@ -1318,13 +1510,19 @@ export namespace MyNS {
 		/** Text for this recommendation */
 		descriptionText?: string | null;
 
-		/** Destination Id for the destination of this recommendation */
+		/**
+		 * Destination Id for the destination of this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationId?: number | null;
 
 		/** ignore (Viator only) */
 		editorsPick?: boolean | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keywordCount?: number | null;
 
 		/** ignore (Viator only) */
@@ -1342,13 +1540,22 @@ export namespace MyNS {
 		/** URL path fragment for this recommendation */
 		pageUrlName?: string | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount?: number | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount?: number | null;
 
-		/** Destination Id for the primary destination of this recommendation */
+		/**
+		 * Destination Id for the primary destination of this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId?: number | null;
 
 		/** Name of primary destination for this recommendation */
@@ -1357,19 +1564,31 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		primaryDestinationUrlName?: string | null;
 
-		/** Number of products that this recommendation refers to */
+		/**
+		 * Number of products that this recommendation refers to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount?: number | null;
 
 		/** ignore (Viator only) */
 		publishedDate?: string | null;
 
-		/** Numeric average rating for this recommendation */
+		/**
+		 * Numeric average rating for this recommendation
+		 * Type: double
+		 */
 		rating?: number | null;
 
-		/** number of reviews for this recommendation */
+		/**
+		 * number of reviews for this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seoId?: number | null;
 
 		/** Type of response; i.e. `"RECOMMENDATION"` */
@@ -1381,7 +1600,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		showReviews?: boolean | null;
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** Tab-title for this recommendation */
@@ -1407,10 +1629,16 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		attractionCity: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: double
+		 */
 		attractionLatitude: FormControl<number | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: double
+		 */
 		attractionLongitude: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
@@ -1425,13 +1653,19 @@ export namespace MyNS {
 		/** Text for this recommendation */
 		descriptionText: FormControl<string | null | undefined>,
 
-		/** Destination Id for the destination of this recommendation */
+		/**
+		 * Destination Id for the destination of this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationId: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
 		editorsPick: FormControl<boolean | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keywordCount: FormControl<number | null | undefined>,
 
 		/** HTML-formatted overview of recommendation */
@@ -1446,13 +1680,22 @@ export namespace MyNS {
 		/** URL path fragment for this recommendation */
 		pageUrlName: FormControl<string | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		panoramaCount: FormControl<number | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoCount: FormControl<number | null | undefined>,
 
-		/** Destination Id for the primary destination of this recommendation */
+		/**
+		 * Destination Id for the primary destination of this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDestinationId: FormControl<number | null | undefined>,
 
 		/** Name of primary destination for this recommendation */
@@ -1461,19 +1704,31 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		primaryDestinationUrlName: FormControl<string | null | undefined>,
 
-		/** Number of products that this recommendation refers to */
+		/**
+		 * Number of products that this recommendation refers to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
 		publishedDate: FormControl<string | null | undefined>,
 
-		/** Numeric average rating for this recommendation */
+		/**
+		 * Numeric average rating for this recommendation
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
-		/** number of reviews for this recommendation */
+		/**
+		 * number of reviews for this recommendation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seoId: FormControl<number | null | undefined>,
 
 		/** Type of response; i.e. `"RECOMMENDATION"` */
@@ -1485,7 +1740,10 @@ export namespace MyNS {
 		/** ignore (Viator only) */
 		showReviews: FormControl<boolean | null | undefined>,
 
-		/** ignore (Viator only) */
+		/**
+		 * ignore (Viator only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** Tab-title for this recommendation */
@@ -1587,6 +1845,7 @@ export namespace MyNS {
 
 		/**
 		 * **number** of results available for *this* service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount?: number | null;
 
@@ -1625,6 +1884,7 @@ export namespace MyNS {
 
 		/**
 		 * **number** of results available for *this* service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
@@ -1691,7 +1951,10 @@ export namespace MyNS {
 		/** **indicator**: `true` if *this* item's booking is pending */
 		pending?: boolean | null;
 
-		/** **numeric identifier** of *this* item's booking status */
+		/**
+		 * **numeric identifier** of *this* item's booking status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** **natural-language description** of *this* item's booking status; e.g., 'Waiting to be booked' */
@@ -1725,7 +1988,10 @@ export namespace MyNS {
 		/** **indicator**: `true` if *this* item's booking is pending */
 		pending: FormControl<boolean | null | undefined>,
 
-		/** **numeric identifier** of *this* item's booking status */
+		/**
+		 * **numeric identifier** of *this* item's booking status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** **natural-language description** of *this* item's booking status; e.g., 'Waiting to be booked' */
@@ -1778,7 +2044,10 @@ export namespace MyNS {
 		/** **indicator**: `true` if *this* itinerary's booking is pending */
 		pending?: boolean | null;
 
-		/** **numeric identifier** of *this* itinerary's booking status */
+		/**
+		 * **numeric identifier** of *this* itinerary's booking status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** **natural-language description** of *this* itinerary's booking status */
@@ -1812,7 +2081,10 @@ export namespace MyNS {
 		/** **indicator**: `true` if *this* itinerary's booking is pending */
 		pending: FormControl<boolean | null | undefined>,
 
-		/** **numeric identifier** of *this* itinerary's booking status */
+		/**
+		 * **numeric identifier** of *this* itinerary's booking status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** **natural-language description** of *this* itinerary's booking status */
@@ -1869,7 +2141,10 @@ export namespace MyNS {
 		/** **country** in which the owner of *this* photograph is located */
 		ownerCountry?: string | null;
 
-		/** **unique numeric identifier** of the user that owns the photograph */
+		/**
+		 * **unique numeric identifier** of the user that owns the photograph
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ownerId?: number | null;
 
 		/** **handle** of the user that submitted *this* photograph; e.g., 'Husker1k' */
@@ -1878,7 +2153,10 @@ export namespace MyNS {
 		/** **URL** of the high-resolution version of *this* photograph */
 		photoHiResURL?: string | null;
 
-		/** **unique numeric identifier** of *this* photograph */
+		/**
+		 * **unique numeric identifier** of *this* photograph
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoId?: number | null;
 
 		/** **URL** of the medium-resolution version of *this* photograph */
@@ -1896,7 +2174,10 @@ export namespace MyNS {
 		/** **URL-formatted title** of the product associated with *this* photograph; e.g., `Sydney-and-Bondi-Hop-on-Hop-off-Tour` */
 		productUrlName?: string | null;
 
-		/** **sort order** for *this* photograph; e.g., `3` */
+		/**
+		 * **sort order** for *this* photograph; e.g., `3`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** ignore (Viator only) */
@@ -1930,7 +2211,10 @@ export namespace MyNS {
 		/** **country** in which the owner of *this* photograph is located */
 		ownerCountry: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of the user that owns the photograph */
+		/**
+		 * **unique numeric identifier** of the user that owns the photograph
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ownerId: FormControl<number | null | undefined>,
 
 		/** **handle** of the user that submitted *this* photograph; e.g., 'Husker1k' */
@@ -1939,7 +2223,10 @@ export namespace MyNS {
 		/** **URL** of the high-resolution version of *this* photograph */
 		photoHiResURL: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of *this* photograph */
+		/**
+		 * **unique numeric identifier** of *this* photograph
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		photoId: FormControl<number | null | undefined>,
 
 		/** **URL** of the medium-resolution version of *this* photograph */
@@ -1957,7 +2244,10 @@ export namespace MyNS {
 		/** **URL-formatted title** of the product associated with *this* photograph; e.g., `Sydney-and-Bondi-Hop-on-Hop-off-Tour` */
 		productUrlName: FormControl<string | null | undefined>,
 
-		/** **sort order** for *this* photograph; e.g., `3` */
+		/**
+		 * **sort order** for *this* photograph; e.g., `3`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
@@ -2004,19 +2294,34 @@ export namespace MyNS {
 	 */
 	export interface RatingCounts {
 
-		/** Number of reviews with a one star rating */
+		/**
+		 * Number of reviews with a one star rating
+		 * Type: double
+		 */
 		'1'?: number | null;
 
-		/** Number of reviews with a two star rating */
+		/**
+		 * Number of reviews with a two star rating
+		 * Type: double
+		 */
 		'2'?: number | null;
 
-		/** Number of reviews with a three star rating */
+		/**
+		 * Number of reviews with a three star rating
+		 * Type: double
+		 */
 		'3'?: number | null;
 
-		/** Number of reviews with a four star rating */
+		/**
+		 * Number of reviews with a four star rating
+		 * Type: double
+		 */
 		'4'?: number | null;
 
-		/** Number of reviews with a five star rating */
+		/**
+		 * Number of reviews with a five star rating
+		 * Type: double
+		 */
 		'5'?: number | null;
 	}
 
@@ -2027,19 +2332,34 @@ export namespace MyNS {
 	 */
 	export interface RatingCountsFormProperties {
 
-		/** Number of reviews with a one star rating */
+		/**
+		 * Number of reviews with a one star rating
+		 * Type: double
+		 */
 		'1': FormControl<number | null | undefined>,
 
-		/** Number of reviews with a two star rating */
+		/**
+		 * Number of reviews with a two star rating
+		 * Type: double
+		 */
 		'2': FormControl<number | null | undefined>,
 
-		/** Number of reviews with a three star rating */
+		/**
+		 * Number of reviews with a three star rating
+		 * Type: double
+		 */
 		'3': FormControl<number | null | undefined>,
 
-		/** Number of reviews with a four star rating */
+		/**
+		 * Number of reviews with a four star rating
+		 * Type: double
+		 */
 		'4': FormControl<number | null | undefined>,
 
-		/** Number of reviews with a five star rating */
+		/**
+		 * Number of reviews with a five star rating
+		 * Type: double
+		 */
 		'5': FormControl<number | null | undefined>,
 	}
 	export function CreateRatingCountsFormGroup() {
@@ -2063,7 +2383,10 @@ export namespace MyNS {
 		/** **country** in which the reviewer is located */
 		ownerCountry?: string | null;
 
-		/** **unique numeric identifier** of the user that submitted *this* review */
+		/**
+		 * **unique numeric identifier** of the user that submitted *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ownerId?: number | null;
 
 		/** **name** of the user that submitted *this* review */
@@ -2081,7 +2404,10 @@ export namespace MyNS {
 		/** **date** that *this* review was published */
 		publishedDate?: string | null;
 
-		/** **rating** given by the reviewer */
+		/**
+		 * **rating** given by the reviewer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rating?: number | null;
 
 		/**
@@ -2090,10 +2416,16 @@ export namespace MyNS {
 		 */
 		review?: string | null;
 
-		/** **unique numeric identifier** of *this* review */
+		/**
+		 * **unique numeric identifier** of *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewId?: number | null;
 
-		/** **sort order** for *this* review */
+		/**
+		 * **sort order** for *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** ignore (Viator only) */
@@ -2118,7 +2450,10 @@ export namespace MyNS {
 		/** **country** in which the reviewer is located */
 		ownerCountry: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of the user that submitted *this* review */
+		/**
+		 * **unique numeric identifier** of the user that submitted *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ownerId: FormControl<number | null | undefined>,
 
 		/** **name** of the user that submitted *this* review */
@@ -2136,7 +2471,10 @@ export namespace MyNS {
 		/** **date** that *this* review was published */
 		publishedDate: FormControl<string | null | undefined>,
 
-		/** **rating** given by the reviewer */
+		/**
+		 * **rating** given by the reviewer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/**
@@ -2145,10 +2483,16 @@ export namespace MyNS {
 		 */
 		review: FormControl<string | null | undefined>,
 
-		/** **unique numeric identifier** of *this* review */
+		/**
+		 * **unique numeric identifier** of *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewId: FormControl<number | null | undefined>,
 
-		/** **sort order** for *this* review */
+		/**
+		 * **sort order** for *this* review
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** ignore (Viator only) */
@@ -2309,6 +2653,7 @@ export namespace MyNS {
 		 * Get booking/hotels
 		 * @param {string} productCode **unique alphanumeric identifier** of the product
 		 * @param {number} destId **unique numeric identifier** of the destination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BasicErrorModel} Success
 		 */
 		BookingHotels(productCode: string | null | undefined, destId: number | null | undefined): Observable<BasicErrorModel> {
@@ -2427,6 +2772,7 @@ export namespace MyNS {
 		 * @param {string} leadLastName **surname** of *this* lead traveler
 		 * @param {number} itemId Booking-reference number generated by Viator
 		 *   - **Note**: For more information, see: [Booking references](#section/Key-concepts/Booking-references)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} embeddedResources ignore (Viator only)
 		 * @param {string} voucherKey **identifier** for the voucher
 		 * - **note**: use &lt;u&gt;either&lt;/u&gt; `voucherKey` &lt;u&gt;or&lt;/u&gt; the three separate parameters
@@ -2707,6 +3053,7 @@ export namespace MyNS {
 		 * Get taxonomy/categories
 		 * @param {number} destId **unique numeric identifier** of the destination to enquire about (optional)
 		 * - `destinationId` is returned by [/taxonomy/destinations](#operation/taxonomyDestinations)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BasicErrorModel} Success
 		 */
 		TaxonomyCategories(destId: number | null | undefined): Observable<BasicErrorModel> {
@@ -2741,6 +3088,7 @@ export namespace MyNS {
 		/**
 		 * **number of adult travelers** who wish to participate
 		 * - default: `1`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numAdults?: number | null;
 
@@ -2767,6 +3115,7 @@ export namespace MyNS {
 		/**
 		 * **number of adult travelers** who wish to participate
 		 * - default: `1`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numAdults: FormControl<number | null | undefined>,
 
@@ -2829,10 +3178,14 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId?: number | null;
 
-		/** **number of people** in *this* age band */
+		/**
+		 * **number of people** in *this* age band
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface BookingAvailabilityPostBodyAgeBandsFormProperties {
@@ -2840,10 +3193,14 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId: FormControl<number | null | undefined>,
 
-		/** **number of people** in *this* age band */
+		/**
+		 * **number of people** in *this* age band
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateBookingAvailabilityPostBodyAgeBandsFormGroup() {
@@ -2889,10 +3246,14 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId?: number | null;
 
-		/** **numeric count** of number of travelers in *this* age band */
+		/**
+		 * **numeric count** of number of travelers in *this* age band
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface BookingAvailabilityTourgradesPostBodyAgeBandsFormProperties {
@@ -2900,10 +3261,14 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId: FormControl<number | null | undefined>,
 
-		/** **numeric count** of number of travelers in *this* age band */
+		/**
+		 * **numeric count** of number of travelers in *this* age band
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateBookingAvailabilityTourgradesPostBodyAgeBandsFormGroup() {
@@ -3172,7 +3537,10 @@ export namespace MyNS {
 		 */
 		answer?: string | null;
 
-		/** **numeric identifier** for the question (**note**: `questionId` can be retrieved from the [/product](#operation/product) service) */
+		/**
+		 * **numeric identifier** for the question (**note**: `questionId` can be retrieved from the [/product](#operation/product) service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		questionId?: number | null;
 	}
 	export interface BookingBookPostBodyItemsBookingQuestionAnswersFormProperties {
@@ -3183,7 +3551,10 @@ export namespace MyNS {
 		 */
 		answer: FormControl<string | null | undefined>,
 
-		/** **numeric identifier** for the question (**note**: `questionId` can be retrieved from the [/product](#operation/product) service) */
+		/**
+		 * **numeric identifier** for the question (**note**: `questionId` can be retrieved from the [/product](#operation/product) service)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		questionId: FormControl<number | null | undefined>,
 	}
 	export function CreateBookingBookPostBodyItemsBookingQuestionAnswersFormGroup() {
@@ -3222,6 +3593,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId?: number | null;
 
@@ -3242,6 +3614,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId: FormControl<number | null | undefined>,
 
@@ -3352,6 +3725,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId?: number | null;
 	}
@@ -3360,6 +3734,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** for the age band
 		 * - See: [Working with age bands](#section/Appendices/Working-with-age-bands)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bandId: FormControl<number | null | undefined>,
 	}
@@ -3588,7 +3963,10 @@ export namespace MyNS {
 		/** **itinerary reference identifier** (partner defined) for the booking to cancel */
 		distributorRef?: string | null;
 
-		/** **numeric identifier** for the itinerary */
+		/**
+		 * **numeric identifier** for the itinerary
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itineraryId?: number | null;
 	}
 	export interface MerchantCancellationPostBodyFormProperties {
@@ -3596,7 +3974,10 @@ export namespace MyNS {
 		/** **itinerary reference identifier** (partner defined) for the booking to cancel */
 		distributorRef: FormControl<string | null | undefined>,
 
-		/** **numeric identifier** for the itinerary */
+		/**
+		 * **numeric identifier** for the itinerary
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itineraryId: FormControl<number | null | undefined>,
 	}
 	export function CreateMerchantCancellationPostBodyFormGroup() {
@@ -3621,7 +4002,10 @@ export namespace MyNS {
 		/** **alphanumeric reference code** of the distributor item */
 		distributorItemRef?: string | null;
 
-		/** **numeric identifier** of item to cancel in itinerary */
+		/**
+		 * **numeric identifier** of item to cancel in itinerary
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemId?: number | null;
 	}
 	export interface MerchantCancellationPostBodyCancelItemsFormProperties {
@@ -3638,7 +4022,10 @@ export namespace MyNS {
 		/** **alphanumeric reference code** of the distributor item */
 		distributorItemRef: FormControl<string | null | undefined>,
 
-		/** **numeric identifier** of item to cancel in itinerary */
+		/**
+		 * **numeric identifier** of item to cancel in itinerary
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemId: FormControl<number | null | undefined>,
 	}
 	export function CreateMerchantCancellationPostBodyCancelItemsFormGroup() {
@@ -3663,6 +4050,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** of the destination to search within
 		 * - `destinationId` can be retrieved from the [/taxonomy/destinations](#operation/taxonomyDestinations) service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destId?: number | null;
 
@@ -3705,6 +4093,7 @@ export namespace MyNS {
 		/**
 		 * **unique numeric identifier** of the destination to search within
 		 * - `destinationId` can be retrieved from the [/taxonomy/destinations](#operation/taxonomyDestinations) service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destId: FormControl<number | null | undefined>,
 
@@ -3747,6 +4136,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of *this* product category to search within
 		 * - `categoryId` can be retrieved from the [/taxonomy/categories](#operation/taxonomyCategories) service
 		 * - at present, it is not possible to use `catId` in conjunction with `seoId`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		catId?: number | null;
 
@@ -3757,6 +4147,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of the destination in which to search for products
 		 * - `destinationId` is available from the [/taxonomy/destinations](#operation/taxonomyDestinations) service
 		 * - use **EITHER** `destId` **OR** `seoId`, but not both
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destId?: number | null;
 
@@ -3792,6 +4183,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of *this* product subcategory to search within
 		 * - `subcategoryId` can be retrieved from the [/taxonomy/categories](#operation/taxonomyCategories) service
 		 * - at present, it is not possible to use `subCatId` in conjunction with `seoId`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subCatId?: number | null;
 
@@ -3810,6 +4202,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of *this* product category to search within
 		 * - `categoryId` can be retrieved from the [/taxonomy/categories](#operation/taxonomyCategories) service
 		 * - at present, it is not possible to use `catId` in conjunction with `seoId`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		catId: FormControl<number | null | undefined>,
 
@@ -3820,6 +4213,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of the destination in which to search for products
 		 * - `destinationId` is available from the [/taxonomy/destinations](#operation/taxonomyDestinations) service
 		 * - use **EITHER** `destId` **OR** `seoId`, but not both
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destId: FormControl<number | null | undefined>,
 
@@ -3855,6 +4249,7 @@ export namespace MyNS {
 		 * **unique numeric identifier** of *this* product subcategory to search within
 		 * - `subcategoryId` can be retrieved from the [/taxonomy/categories](#operation/taxonomyCategories) service
 		 * - at present, it is not possible to use `subCatId` in conjunction with `seoId`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subCatId: FormControl<number | null | undefined>,
 
@@ -3904,7 +4299,10 @@ export namespace MyNS {
 
 	export interface TaxonomyAttractionsPostBody {
 
-		/** **unique numeric identifier** of the destination in which to search for attractions */
+		/**
+		 * **unique numeric identifier** of the destination in which to search for attractions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destId?: number | null;
 
 		/**
@@ -3928,7 +4326,10 @@ export namespace MyNS {
 	}
 	export interface TaxonomyAttractionsPostBodyFormProperties {
 
-		/** **unique numeric identifier** of the destination in which to search for attractions */
+		/**
+		 * **unique numeric identifier** of the destination in which to search for attractions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destId: FormControl<number | null | undefined>,
 
 		/**

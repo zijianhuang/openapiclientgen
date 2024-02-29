@@ -192,7 +192,10 @@ namespace MyNS
 		/// Retrieve a list of variables.
 		/// Variable_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -224,7 +227,10 @@ namespace MyNS
 		/// Retrieve the variable identified by variable name.
 		/// Variable_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="variableName">The name of variable.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -257,7 +263,10 @@ namespace MyNS
 		/// Create a variable.
 		/// Variable_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="variableName">The variable name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -298,7 +307,10 @@ namespace MyNS
 		/// Delete the variable.
 		/// Variable_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="variableName">The name of variable.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -325,7 +337,10 @@ namespace MyNS
 		/// Update a variable.
 		/// Variable_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure Resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure Resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="variableName">The variable name.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>

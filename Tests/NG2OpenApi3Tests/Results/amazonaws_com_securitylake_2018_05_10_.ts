@@ -1654,6 +1654,7 @@ export namespace MyNS {
 		 * List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.
 		 * Get v1/subscribers
 		 * @param {number} maxResults The maximum number of accounts for which the configuration is displayed.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.
 		 * @return {ListSubscribersResponse} Success
 		 */
@@ -1704,7 +1705,9 @@ export namespace MyNS {
 		 * Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security Lake.
 		 * Delete v1/datalake/logsources/custom/{sourceName}
 		 * @param {string} sourceName The source name of custom log source that you want to delete.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} sourceVersion The source version for the third-party custom source. You can limit the custom source removal to the specified source version.
+		 *     Min length: 1    Max length: 32
 		 * @return {DeleteCustomLogSourceResponse} Success
 		 */
 		DeleteCustomLogSource(sourceName: string, sourceVersion: string | null | undefined): Observable<DeleteCustomLogSourceResponse> {
@@ -1824,6 +1827,7 @@ export namespace MyNS {
 		 * Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
 		 * Get v1/tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1834,6 +1838,7 @@ export namespace MyNS {
 		 * Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria. For more information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
 		 * Post v1/tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the Amazon Security Lake resource to add or update the tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1844,7 +1849,9 @@ export namespace MyNS {
 		 * Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
 		 * Delete v1/tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the Amazon Security Lake resource to remove one or more tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of one or more tag keys. For each value in the list, specify the tag key for a tag to remove from the Amazon Security Lake resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1881,15 +1888,15 @@ export namespace MyNS {
 		/**
 		 * Specify the name for a third-party custom source. This must be a Regionally unique value.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		sourceName: string;
 
 		/**
 		 * Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		sourceVersion?: string | null;
 	}
@@ -1898,15 +1905,15 @@ export namespace MyNS {
 		/**
 		 * Specify the name for a third-party custom source. This must be a Regionally unique value.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		sourceName: FormControl<string | null | undefined>,
 
 		/**
 		 * Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		sourceVersion: FormControl<string | null | undefined>,
 	}
@@ -2119,8 +2126,8 @@ export namespace MyNS {
 		/**
 		 * The name of your Security Lake subscriber account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		subscriberName: string;
 
@@ -2139,8 +2146,8 @@ export namespace MyNS {
 		/**
 		 * The name of your Security Lake subscriber account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		subscriberName: FormControl<string | null | undefined>,
 	}
@@ -2287,8 +2294,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Security Lake account subscriber.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		subscriberName?: string | null;
 	}
@@ -2299,8 +2306,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Security Lake account subscriber.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		subscriberName: FormControl<string | null | undefined>,
 	}

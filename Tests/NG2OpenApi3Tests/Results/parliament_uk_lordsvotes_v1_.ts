@@ -7,19 +7,35 @@ export namespace MyNS {
 
 	export interface DivisionGroupByPartyViewModel {
 		content?: Array<PartyVoteResultViewModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contentCount?: number | null;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionId?: number | null;
 		notContent?: Array<PartyVoteResultViewModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notContentCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		title?: string | null;
 	}
 	export interface DivisionGroupByPartyViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contentCount: FormControl<number | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notContentCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -37,10 +53,14 @@ export namespace MyNS {
 
 	export interface PartyVoteResultViewModel {
 		partyName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voteCount?: number | null;
 	}
 	export interface PartyVoteResultViewModelFormProperties {
 		partyName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voteCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartyVoteResultViewModelFormGroup() {
@@ -54,10 +74,16 @@ export namespace MyNS {
 	export interface DivisionViewModel {
 		amendmentMotionNotes?: string | null;
 
-		/** Authoritative content count is the official count. This is the teller content count when tellers are present, but member content count when there are no tellers. */
+		/**
+		 * Authoritative content count is the official count. This is the teller content count when tellers are present, but member content count when there are no tellers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authoritativeContentCount?: number | null;
 
-		/** Authoritative not content count is the official count. This is the teller not content count when tellers are present, but member not content count when there are no tellers. */
+		/**
+		 * Authoritative not content count is the official count. This is the teller not content count when tellers are present, but member not content count when there are no tellers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authoritativeNotContentCount?: number | null;
 		contentTellers?: Array<MemberViewModel>;
 		contents?: Array<MemberViewModel>;
@@ -65,6 +91,8 @@ export namespace MyNS {
 
 		/** Whether the division had tellers or not */
 		divisionHadTellers?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionId?: number | null;
 		divisionWasExclusivelyRemote?: boolean | null;
 		isGovernmentContent?: boolean | null;
@@ -72,38 +100,62 @@ export namespace MyNS {
 		isHouse?: boolean | null;
 		isWhipped?: boolean | null;
 
-		/** Member content count is the total tally of all members that voted content */
+		/**
+		 * Member content count is the total tally of all members that voted content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberContentCount?: number | null;
 
-		/** Member not content count is the total tally of all members that voted not content */
+		/**
+		 * Member not content count is the total tally of all members that voted not content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberNotContentCount?: number | null;
 		notContentTellers?: Array<MemberViewModel>;
 		notContents?: Array<MemberViewModel>;
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		remoteVotingEnd?: Date | null;
 		remoteVotingStart?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sponsoringMemberId?: number | null;
 
-		/** Content count is count recorded by the tellers */
+		/**
+		 * Content count is count recorded by the tellers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tellerContentCount?: number | null;
 
-		/** Not Content count recorded by the tellers */
+		/**
+		 * Not Content count recorded by the tellers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tellerNotContentCount?: number | null;
 		title?: string | null;
 	}
 	export interface DivisionViewModelFormProperties {
 		amendmentMotionNotes: FormControl<string | null | undefined>,
 
-		/** Authoritative content count is the official count. This is the teller content count when tellers are present, but member content count when there are no tellers. */
+		/**
+		 * Authoritative content count is the official count. This is the teller content count when tellers are present, but member content count when there are no tellers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authoritativeContentCount: FormControl<number | null | undefined>,
 
-		/** Authoritative not content count is the official count. This is the teller not content count when tellers are present, but member not content count when there are no tellers. */
+		/**
+		 * Authoritative not content count is the official count. This is the teller not content count when tellers are present, but member not content count when there are no tellers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authoritativeNotContentCount: FormControl<number | null | undefined>,
 		date: FormControl<Date | null | undefined>,
 
 		/** Whether the division had tellers or not */
 		divisionHadTellers: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		divisionId: FormControl<number | null | undefined>,
 		divisionWasExclusivelyRemote: FormControl<boolean | null | undefined>,
 		isGovernmentContent: FormControl<boolean | null | undefined>,
@@ -111,21 +163,37 @@ export namespace MyNS {
 		isHouse: FormControl<boolean | null | undefined>,
 		isWhipped: FormControl<boolean | null | undefined>,
 
-		/** Member content count is the total tally of all members that voted content */
+		/**
+		 * Member content count is the total tally of all members that voted content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberContentCount: FormControl<number | null | undefined>,
 
-		/** Member not content count is the total tally of all members that voted not content */
+		/**
+		 * Member not content count is the total tally of all members that voted not content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberNotContentCount: FormControl<number | null | undefined>,
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		remoteVotingEnd: FormControl<Date | null | undefined>,
 		remoteVotingStart: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sponsoringMemberId: FormControl<number | null | undefined>,
 
-		/** Content count is count recorded by the tellers */
+		/**
+		 * Content count is count recorded by the tellers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tellerContentCount: FormControl<number | null | undefined>,
 
-		/** Not Content count recorded by the tellers */
+		/**
+		 * Not Content count recorded by the tellers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tellerNotContentCount: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -159,6 +227,8 @@ export namespace MyNS {
 	export interface MemberViewModel {
 		listAs?: string | null;
 		memberFrom?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		name?: string | null;
 		party?: string | null;
@@ -169,6 +239,8 @@ export namespace MyNS {
 	export interface MemberViewModelFormProperties {
 		listAs: FormControl<string | null | undefined>,
 		memberFrom: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		party: FormControl<string | null | undefined>,
@@ -191,12 +263,16 @@ export namespace MyNS {
 	}
 
 	export interface MemberVotingRecordViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		memberWasContent?: boolean | null;
 		memberWasTeller?: boolean | null;
 		publishedDivision?: DivisionViewModel;
 	}
 	export interface MemberVotingRecordViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		memberWasContent: FormControl<boolean | null | undefined>,
 		memberWasTeller: FormControl<boolean | null | undefined>,
@@ -221,14 +297,18 @@ export namespace MyNS {
 		 * Get data/Divisions/groupedbyparty
 		 * @param {string} SearchTerm Divisions containing search term within title or number
 		 * @param {number} MemberId Divisions returning Member with Member ID voting records
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} IncludeWhenMemberWasTeller Divisions where member was a teller as well as if they actually voted
 		 * @param {Date} StartDate Divisions where division date in one or after date provided. Date format is yyyy-MM-dd
 		 * @param {Date} EndDate Divisions where division date in one or before date provided. Date format is yyyy-MM-dd
 		 * @param {number} DivisionNumber Division Number - as specified by the House, unique within a session. This is different to the division id which uniquely identifies a division in this system and is passed to the GET division endpoint
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} TotalVotesCast_Comparator comparison operator to use
 		 * @param {number} TotalVotesCast_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} Majority_Comparator comparison operator to use
 		 * @param {number} Majority_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DivisionGroupByPartyViewModel} List of divisions with votes grouped by party
 		 */
 		DataDivisionsGroupedbypartyGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompare(SearchTerm: string | null | undefined, MemberId: number | null | undefined, IncludeWhenMemberWasTeller: boolean | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, DivisionNumber: number | null | undefined, TotalVotesCast_Comparator: Comparators | null | undefined, TotalVotesCast_ValueToCompare: number | null | undefined, Majority_Comparator: Comparators | null | undefined, Majority_ValueToCompare: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<DivisionGroupByPartyViewModel> {
@@ -240,17 +320,23 @@ export namespace MyNS {
 		 * Get a list of voting records for a Member.
 		 * Get data/Divisions/membervoting
 		 * @param {number} MemberId Id number of a Member whose voting records are to be returned
+		 *     Minimum: 1    Maximum: 2147483647
 		 * @param {string} SearchTerm Divisions containing search term within title or number
 		 * @param {boolean} IncludeWhenMemberWasTeller Divisions where member was a teller as well as if they actually voted
 		 * @param {Date} StartDate Divisions where division date in one or after date provided. Date format is yyyy-MM-dd
 		 * @param {Date} EndDate Divisions where division date in one or before date provided. Date format is yyyy-MM-dd
 		 * @param {number} DivisionNumber Division Number - as specified by the House, unique within a session. This is different to the division id which uniquely identifies a division in this system and is passed to the GET division endpoint
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} TotalVotesCast_Comparator comparison operator to use
 		 * @param {number} TotalVotesCast_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} Majority_Comparator comparison operator to use
 		 * @param {number} Majority_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip The number of records to skip. Must be a positive integer. Default is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return per page. Must be more than 0. Default is 25
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MemberVotingRecordViewModel} List of voting records for a member
 		 */
 		DataDivisionsMembervotingGetByMemberIdAndSearchTermAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAndSkipAndTake(MemberId: number, SearchTerm: string | null | undefined, IncludeWhenMemberWasTeller: boolean | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, DivisionNumber: number | null | undefined, TotalVotesCast_Comparator: Comparators | null | undefined, TotalVotesCast_ValueToCompare: number | null | undefined, Majority_Comparator: Comparators | null | undefined, Majority_ValueToCompare: number | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MemberVotingRecordViewModel> {
@@ -263,16 +349,22 @@ export namespace MyNS {
 		 * Get data/Divisions/search
 		 * @param {string} SearchTerm Divisions containing search term within title or number
 		 * @param {number} MemberId Divisions returning Member with Member ID voting records
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} IncludeWhenMemberWasTeller Divisions where member was a teller as well as if they actually voted
 		 * @param {Date} StartDate Divisions where division date in one or after date provided. Date format is yyyy-MM-dd
 		 * @param {Date} EndDate Divisions where division date in one or before date provided. Date format is yyyy-MM-dd
 		 * @param {number} DivisionNumber Division Number - as specified by the House, unique within a session. This is different to the division id which uniquely identifies a division in this system and is passed to the GET division endpoint
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} TotalVotesCast_Comparator comparison operator to use
 		 * @param {number} TotalVotesCast_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} Majority_Comparator comparison operator to use
 		 * @param {number} Majority_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip The number of records to skip. Must be a positive integer. Default is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return per page. Must be more than 0. Default is 25
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DivisionViewModel>} List of divisions matching specified parameters
 		 */
 		DataDivisionsSearchGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAndSkipAndTake(SearchTerm: string | null | undefined, MemberId: number | null | undefined, IncludeWhenMemberWasTeller: boolean | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, DivisionNumber: number | null | undefined, TotalVotesCast_Comparator: Comparators | null | undefined, TotalVotesCast_ValueToCompare: number | null | undefined, Majority_Comparator: Comparators | null | undefined, Majority_ValueToCompare: number | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<DivisionViewModel>> {
@@ -285,15 +377,20 @@ export namespace MyNS {
 		 * Get data/Divisions/searchTotalResults
 		 * @param {string} SearchTerm Divisions containing search term within title or number
 		 * @param {number} MemberId Divisions returning Member with Member ID voting records
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} IncludeWhenMemberWasTeller Divisions where member was a teller as well as if they actually voted
 		 * @param {Date} StartDate Divisions where division date in one or after date provided. Date format is yyyy-MM-dd
 		 * @param {Date} EndDate Divisions where division date in one or before date provided. Date format is yyyy-MM-dd
 		 * @param {number} DivisionNumber Division Number - as specified by the House, unique within a session. This is different to the division id which uniquely identifies a division in this system and is passed to the GET division endpoint
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} TotalVotesCast_Comparator comparison operator to use
 		 * @param {number} TotalVotesCast_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Comparators} Majority_Comparator comparison operator to use
 		 * @param {number} Majority_ValueToCompare value to compare to with the operator provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} Division with id matching given divisionId
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DataDivisionsSearchTotalResultsGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompare(SearchTerm: string | null | undefined, MemberId: number | null | undefined, IncludeWhenMemberWasTeller: boolean | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, DivisionNumber: number | null | undefined, TotalVotesCast_Comparator: Comparators | null | undefined, TotalVotesCast_ValueToCompare: number | null | undefined, Majority_Comparator: Comparators | null | undefined, Majority_ValueToCompare: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'data/Divisions/searchTotalResults?SearchTerm=' + (SearchTerm == null ? '' : encodeURIComponent(SearchTerm)) + '&MemberId=' + MemberId + '&IncludeWhenMemberWasTeller=' + IncludeWhenMemberWasTeller + '&StartDate=' + StartDate?.toISOString() + '&EndDate=' + EndDate?.toISOString() + '&DivisionNumber=' + DivisionNumber + '&TotalVotesCast_Comparator=' + TotalVotesCast_Comparator + '&TotalVotesCast_ValueToCompare=' + TotalVotesCast_ValueToCompare + '&Majority_Comparator=' + Majority_Comparator + '&Majority_ValueToCompare=' + Majority_ValueToCompare, { headers: headersHandler ? headersHandler() : undefined });
@@ -304,6 +401,7 @@ export namespace MyNS {
 		 * Get a single Division which has the Id specified.
 		 * Get data/Divisions/{divisionId}
 		 * @param {number} divisionId Division with ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DivisionViewModel} Division with id matching given divisionId
 		 */
 		DataDivisions_divisionIdGet(divisionId: number, headersHandler?: () => HttpHeaders): Observable<DivisionViewModel> {

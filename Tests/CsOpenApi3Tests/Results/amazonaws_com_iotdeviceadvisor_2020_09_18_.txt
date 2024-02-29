@@ -826,8 +826,13 @@ namespace MyNS
 		/// <p>Lists the Device Advisor test suites you have created.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a> action.</p>
 		/// ListSuiteDefinitions suiteDefinitions
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return at once.</param>
-		/// <param name="nextToken">A token used to get the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return at once.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">A token used to get the next set of results.
+		/// Max length: 2000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSuiteDefinitionsResponse> ListSuiteDefinitionsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -861,7 +866,10 @@ namespace MyNS
 		/// <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a> action.</p>
 		/// DeleteSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be deleted.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be deleted.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSuiteDefinitionResponse> DeleteSuiteDefinitionAsync(string suiteDefinitionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -895,8 +903,14 @@ namespace MyNS
 		/// <p>Gets information about a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a> action.</p>
 		/// GetSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to get.</param>
-		/// <param name="suiteDefinitionVersion">Suite definition version of the test suite to get.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to get.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
+		/// <param name="suiteDefinitionVersion">Suite definition version of the test suite to get.
+		/// Max length: 255
+		/// Min length: 2
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteDefinitionResponse> GetSuiteDefinitionAsync(string suiteDefinitionId, string suiteDefinitionVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -930,7 +944,10 @@ namespace MyNS
 		/// <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a> action.</p>
 		/// UpdateSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be updated.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be updated.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSuiteDefinitionResponse> UpdateSuiteDefinitionAsync(string suiteDefinitionId, UpdateSuiteDefinitionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -971,9 +988,18 @@ namespace MyNS
 		/// Gets information about an Device Advisor endpoint.
 		/// GetEndpoint endpoint
 		/// </summary>
-		/// <param name="thingArn">The thing ARN of the device. This is an optional parameter.</param>
-		/// <param name="certificateArn">The certificate ARN of the device. This is an optional parameter.</param>
-		/// <param name="deviceRoleArn">The device role ARN of the device. This is an optional parameter.</param>
+		/// <param name="thingArn">The thing ARN of the device. This is an optional parameter.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="certificateArn">The certificate ARN of the device. This is an optional parameter.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="deviceRoleArn">The device role ARN of the device. This is an optional parameter.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <param name="authenticationMethod">The authentication method used during the device connection.</param>
 		/// <returns>Success</returns>
 		public async Task<GetEndpointResponse> GetEndpointAsync(string thingArn, string certificateArn, string deviceRoleArn, AuthenticationMethod authenticationMethod, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1008,8 +1034,14 @@ namespace MyNS
 		/// <p>Gets information about a Device Advisor test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a> action.</p>
 		/// GetSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID for the test suite run.</param>
-		/// <param name="suiteRunId">Suite run ID for the test suite run.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID for the test suite run.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
+		/// <param name="suiteRunId">Suite run ID for the test suite run.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteRunResponse> GetSuiteRunAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1043,8 +1075,14 @@ namespace MyNS
 		/// <p>Gets a report download link for a successful Device Advisor qualifying test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a> action.</p>
 		/// GetSuiteRunReport suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/report
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.</param>
-		/// <param name="suiteRunId">Suite run ID of the test suite run.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
+		/// <param name="suiteRunId">Suite run ID of the test suite run.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteRunReportResponse> GetSuiteRunReportAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1078,10 +1116,21 @@ namespace MyNS
 		/// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
 		/// ListSuiteRuns suiteRuns
 		/// </summary>
-		/// <param name="suiteDefinitionId">Lists the test suite runs of the specified test suite based on suite definition ID.</param>
-		/// <param name="suiteDefinitionVersion">Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</param>
-		/// <param name="maxResults">The maximum number of results to return at once.</param>
-		/// <param name="nextToken">A token to retrieve the next set of results.</param>
+		/// <param name="suiteDefinitionId">Lists the test suite runs of the specified test suite based on suite definition ID.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
+		/// <param name="suiteDefinitionVersion">Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.
+		/// Max length: 255
+		/// Min length: 2
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return at once.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">A token to retrieve the next set of results.
+		/// Max length: 2000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSuiteRunsResponse> ListSuiteRunsAsync(string suiteDefinitionId, string suiteDefinitionVersion, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1115,7 +1164,10 @@ namespace MyNS
 		/// <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a> action.</p>
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</param>
+		/// <param name="resourceArn">The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1149,7 +1201,10 @@ namespace MyNS
 		/// <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a> action.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</param>
+		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1190,7 +1245,10 @@ namespace MyNS
 		/// <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a> action.</p>
 		/// StartSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartSuiteRunResponse> StartSuiteRunAsync(string suiteDefinitionId, StartSuiteRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1231,8 +1289,14 @@ namespace MyNS
 		/// <p>Stops a Device Advisor test suite run that is currently running.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a> action.</p>
 		/// StopSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/stop
 		/// </summary>
-		/// <param name="suiteDefinitionId">Suite definition ID of the test suite run to be stopped.</param>
-		/// <param name="suiteRunId">Suite run ID of the test suite run to be stopped.</param>
+		/// <param name="suiteDefinitionId">Suite definition ID of the test suite run to be stopped.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
+		/// <param name="suiteRunId">Suite run ID of the test suite run to be stopped.
+		/// Max length: 36
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopSuiteRunResponse> StopSuiteRunAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1261,8 +1325,14 @@ namespace MyNS
 		/// <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a> action.</p>
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.</param>
-		/// <param name="tagKeys">List of tag keys to remove from the IoT Device Advisor resource.</param>
+		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">List of tag keys to remove from the IoT Device Advisor resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

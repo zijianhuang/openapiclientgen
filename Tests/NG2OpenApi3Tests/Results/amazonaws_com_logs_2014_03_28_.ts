@@ -733,7 +733,10 @@ export namespace MyNS {
 		logGroupName?: string;
 		creationTime?: number | null;
 
-		/** <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p> */
+		/**
+		 * <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionInDays?: number | null;
 		metricFilterCount?: number | null;
 		arn?: string;
@@ -748,7 +751,10 @@ export namespace MyNS {
 		logGroupName: FormControl<string | null | undefined>,
 		creationTime: FormControl<number | null | undefined>,
 
-		/** <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p> */
+		/**
+		 * <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionInDays: FormControl<number | null | undefined>,
 		metricFilterCount: FormControl<number | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -926,8 +932,8 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern?: string | null;
 		metricTransformations?: Array<MetricTransformation>;
@@ -941,8 +947,8 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern: FormControl<string | null | undefined>,
 		creationTime: FormControl<number | null | undefined>,
@@ -1312,8 +1318,8 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern?: string | null;
 		destinationArn?: string;
@@ -1331,8 +1337,8 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern: FormControl<string | null | undefined>,
 		destinationArn: FormControl<string | null | undefined>,
@@ -2247,6 +2253,7 @@ export namespace MyNS {
 		/**
 		 * <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays: number;
 	}
@@ -2258,6 +2265,7 @@ export namespace MyNS {
 		/**
 		 * <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p> <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays: FormControl<number | null | undefined>,
 	}
@@ -2506,8 +2514,8 @@ export namespace MyNS {
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern: string;
 
@@ -2519,8 +2527,8 @@ export namespace MyNS {
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		filterPattern: FormControl<string | null | undefined>,
 	}

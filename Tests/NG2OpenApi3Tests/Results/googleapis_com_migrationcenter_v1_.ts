@@ -271,10 +271,16 @@ export namespace MyNS {
 		/** Count of items in the bucket. */
 		count?: string | null;
 
-		/** Lower bound - inclusive. */
+		/**
+		 * Lower bound - inclusive.
+		 * Type: double
+		 */
 		lowerBound?: number | null;
 
-		/** Upper bound - exclusive. */
+		/**
+		 * Upper bound - exclusive.
+		 * Type: double
+		 */
 		upperBound?: number | null;
 	}
 
@@ -284,10 +290,16 @@ export namespace MyNS {
 		/** Count of items in the bucket. */
 		count: FormControl<string | null | undefined>,
 
-		/** Lower bound - inclusive. */
+		/**
+		 * Lower bound - inclusive.
+		 * Type: double
+		 */
 		lowerBound: FormControl<number | null | undefined>,
 
-		/** Upper bound - exclusive. */
+		/**
+		 * Upper bound - exclusive.
+		 * Type: double
+		 */
 		upperBound: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregationResultHistogramBucketFormGroup() {
@@ -302,11 +314,15 @@ export namespace MyNS {
 
 	/** The result of a sum aggregation. */
 	export interface AggregationResultSum {
+
+		/** Type: double */
 		value?: number | null;
 	}
 
 	/** The result of a sum aggregation. */
 	export interface AggregationResultSumFormProperties {
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregationResultSumFormGroup() {
@@ -496,16 +512,25 @@ export namespace MyNS {
 	/** Compute Engine target shape descriptor. */
 	export interface ComputeEngineShapeDescriptor {
 
-		/** Number of logical cores. */
+		/**
+		 * Number of logical cores.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logicalCoreCount?: number | null;
 
 		/** Compute Engine machine type. */
 		machineType?: string | null;
 
-		/** Memory in mebibytes. */
+		/**
+		 * Memory in mebibytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb?: number | null;
 
-		/** Number of physical cores. */
+		/**
+		 * Number of physical cores.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		physicalCoreCount?: number | null;
 
 		/** Compute Engine machine series. */
@@ -518,16 +543,25 @@ export namespace MyNS {
 	/** Compute Engine target shape descriptor. */
 	export interface ComputeEngineShapeDescriptorFormProperties {
 
-		/** Number of logical cores. */
+		/**
+		 * Number of logical cores.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logicalCoreCount: FormControl<number | null | undefined>,
 
 		/** Compute Engine machine type. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** Memory in mebibytes. */
+		/**
+		 * Memory in mebibytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb: FormControl<number | null | undefined>,
 
-		/** Number of physical cores. */
+		/**
+		 * Number of physical cores.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		physicalCoreCount: FormControl<number | null | undefined>,
 
 		/** Compute Engine machine series. */
@@ -548,7 +582,10 @@ export namespace MyNS {
 	/** Compute Engine storage option descriptor. */
 	export interface ComputeStorageDescriptor {
 
-		/** Disk size in GiB. */
+		/**
+		 * Disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** Disk type backing the storage. */
@@ -558,7 +595,10 @@ export namespace MyNS {
 	/** Compute Engine storage option descriptor. */
 	export interface ComputeStorageDescriptorFormProperties {
 
-		/** Disk size in GiB. */
+		/**
+		 * Disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Disk type backing the storage. */
@@ -604,7 +644,10 @@ export namespace MyNS {
 		/** Details of the machine architecture. */
 		architecture?: MachineArchitectureDetails;
 
-		/** Number of CPU cores in the machine. Must be non-negative. */
+		/**
+		 * Number of CPU cores in the machine. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount?: number | null;
 
 		/** Machine creation time. */
@@ -619,7 +662,10 @@ export namespace MyNS {
 		/** Machine name. */
 		machineName?: string | null;
 
-		/** The amount of memory in the machine. Must be non-negative. */
+		/**
+		 * The amount of memory in the machine. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb?: number | null;
 
 		/** Details of network adapters and settings. */
@@ -638,7 +684,10 @@ export namespace MyNS {
 	/** Details of a machine. */
 	export interface MachineDetailsFormProperties {
 
-		/** Number of CPU cores in the machine. Must be non-negative. */
+		/**
+		 * Number of CPU cores in the machine. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount: FormControl<number | null | undefined>,
 
 		/** Machine creation time. */
@@ -647,7 +696,10 @@ export namespace MyNS {
 		/** Machine name. */
 		machineName: FormControl<string | null | undefined>,
 
-		/** The amount of memory in the machine. Must be non-negative. */
+		/**
+		 * The amount of memory in the machine. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb: FormControl<number | null | undefined>,
 
 		/** Power state of the machine. */
@@ -681,10 +733,16 @@ export namespace MyNS {
 		/** CPU name, e.g., "Intel Xeon E5-2690", "AMD EPYC 7571" etc. */
 		cpuName?: string | null;
 
-		/** Number of processor sockets allocated to the machine. */
+		/**
+		 * Number of processor sockets allocated to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuSocketCount?: number | null;
 
-		/** Number of CPU threads allocated to the machine. */
+		/**
+		 * Number of CPU threads allocated to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuThreadCount?: number | null;
 
 		/** Firmware type. */
@@ -706,10 +764,16 @@ export namespace MyNS {
 		/** CPU name, e.g., "Intel Xeon E5-2690", "AMD EPYC 7571" etc. */
 		cpuName: FormControl<string | null | undefined>,
 
-		/** Number of processor sockets allocated to the machine. */
+		/**
+		 * Number of processor sockets allocated to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuSocketCount: FormControl<number | null | undefined>,
 
-		/** Number of CPU threads allocated to the machine. */
+		/**
+		 * Number of CPU threads allocated to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuThreadCount: FormControl<number | null | undefined>,
 
 		/** Firmware type. */
@@ -790,26 +854,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1163,13 +1245,19 @@ export namespace MyNS {
 		/** The mount point for the filesystem. */
 		file?: string | null;
 
-		/** Used by dump to determine which filesystems need to be dumped. */
+		/**
+		 * Used by dump to determine which filesystems need to be dumped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freq?: number | null;
 
 		/** Mount options associated with the filesystem. */
 		mntops?: string | null;
 
-		/** Used by the fsck(8) program to determine the order in which filesystem checks are done at reboot time. */
+		/**
+		 * Used by the fsck(8) program to determine the order in which filesystem checks are done at reboot time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passno?: number | null;
 
 		/** The block special device or remote filesystem to be mounted. */
@@ -1185,13 +1273,19 @@ export namespace MyNS {
 		/** The mount point for the filesystem. */
 		file: FormControl<string | null | undefined>,
 
-		/** Used by dump to determine which filesystems need to be dumped. */
+		/**
+		 * Used by dump to determine which filesystems need to be dumped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freq: FormControl<number | null | undefined>,
 
 		/** Mount options associated with the filesystem. */
 		mntops: FormControl<string | null | undefined>,
 
-		/** Used by the fsck(8) program to determine the order in which filesystem checks are done at reboot time. */
+		/**
+		 * Used by the fsck(8) program to determine the order in which filesystem checks are done at reboot time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passno: FormControl<number | null | undefined>,
 
 		/** The block special device or remote filesystem to be mounted. */
@@ -1463,7 +1557,10 @@ export namespace MyNS {
 		/** Local IP address. */
 		localIpAddress?: string | null;
 
-		/** Local port. */
+		/**
+		 * Local port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localPort?: number | null;
 
 		/** Process ID. */
@@ -1478,7 +1575,10 @@ export namespace MyNS {
 		/** Remote IP address. */
 		remoteIpAddress?: string | null;
 
-		/** Remote port. */
+		/**
+		 * Remote port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remotePort?: number | null;
 
 		/** Network connection state. */
@@ -1489,7 +1589,10 @@ export namespace MyNS {
 		/** Local IP address. */
 		localIpAddress: FormControl<string | null | undefined>,
 
-		/** Local port. */
+		/**
+		 * Local port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localPort: FormControl<number | null | undefined>,
 
 		/** Process ID. */
@@ -1504,7 +1607,10 @@ export namespace MyNS {
 		/** Remote IP address. */
 		remoteIpAddress: FormControl<string | null | undefined>,
 
-		/** Remote port. */
+		/**
+		 * Remote port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remotePort: FormControl<number | null | undefined>,
 
 		/** Network connection state. */
@@ -2141,32 +2247,56 @@ export namespace MyNS {
 	/** Statistical aggregation of samples for a single resource usage. */
 	export interface DailyResourceUsageAggregationStats {
 
-		/** Average usage value. */
+		/**
+		 * Average usage value.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Median usage value. */
+		/**
+		 * Median usage value.
+		 * Type: float
+		 */
 		median?: number | null;
 
-		/** 95th percentile usage value. */
+		/**
+		 * 95th percentile usage value.
+		 * Type: float
+		 */
 		ninteyFifthPercentile?: number | null;
 
-		/** Peak usage value. */
+		/**
+		 * Peak usage value.
+		 * Type: float
+		 */
 		peak?: number | null;
 	}
 
 	/** Statistical aggregation of samples for a single resource usage. */
 	export interface DailyResourceUsageAggregationStatsFormProperties {
 
-		/** Average usage value. */
+		/**
+		 * Average usage value.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Median usage value. */
+		/**
+		 * Median usage value.
+		 * Type: float
+		 */
 		median: FormControl<number | null | undefined>,
 
-		/** 95th percentile usage value. */
+		/**
+		 * 95th percentile usage value.
+		 * Type: float
+		 */
 		ninteyFifthPercentile: FormControl<number | null | undefined>,
 
-		/** Peak usage value. */
+		/**
+		 * Peak usage value.
+		 * Type: float
+		 */
 		peak: FormControl<number | null | undefined>,
 	}
 	export function CreateDailyResourceUsageAggregationStatsFormGroup() {
@@ -2318,14 +2448,20 @@ export namespace MyNS {
 	/** CPU usage sample. */
 	export interface CpuUsageSample {
 
-		/** Percentage of total CPU capacity utilized. Must be in the interval [0, 100]. On most systems can be calculated using 100 - idle percentage. */
+		/**
+		 * Percentage of total CPU capacity utilized. Must be in the interval [0, 100]. On most systems can be calculated using 100 - idle percentage.
+		 * Type: float
+		 */
 		utilizedPercentage?: number | null;
 	}
 
 	/** CPU usage sample. */
 	export interface CpuUsageSampleFormProperties {
 
-		/** Percentage of total CPU capacity utilized. Must be in the interval [0, 100]. On most systems can be calculated using 100 - idle percentage. */
+		/**
+		 * Percentage of total CPU capacity utilized. Must be in the interval [0, 100]. On most systems can be calculated using 100 - idle percentage.
+		 * Type: float
+		 */
 		utilizedPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCpuUsageSampleFormGroup() {
@@ -2339,14 +2475,20 @@ export namespace MyNS {
 	/** Disk usage sample. Values are across all disks. */
 	export interface DiskUsageSample {
 
-		/** Average IOPS sampled over a short window. Must be non-negative. */
+		/**
+		 * Average IOPS sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageIops?: number | null;
 	}
 
 	/** Disk usage sample. Values are across all disks. */
 	export interface DiskUsageSampleFormProperties {
 
-		/** Average IOPS sampled over a short window. Must be non-negative. */
+		/**
+		 * Average IOPS sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageIops: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskUsageSampleFormGroup() {
@@ -2360,14 +2502,20 @@ export namespace MyNS {
 	/** Memory usage sample. */
 	export interface MemoryUsageSample {
 
-		/** Percentage of system memory utilized. Must be in the interval [0, 100]. */
+		/**
+		 * Percentage of system memory utilized. Must be in the interval [0, 100].
+		 * Type: float
+		 */
 		utilizedPercentage?: number | null;
 	}
 
 	/** Memory usage sample. */
 	export interface MemoryUsageSampleFormProperties {
 
-		/** Percentage of system memory utilized. Must be in the interval [0, 100]. */
+		/**
+		 * Percentage of system memory utilized. Must be in the interval [0, 100].
+		 * Type: float
+		 */
 		utilizedPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateMemoryUsageSampleFormGroup() {
@@ -2381,20 +2529,32 @@ export namespace MyNS {
 	/** Network usage sample. Values are across all network interfaces. */
 	export interface NetworkUsageSample {
 
-		/** Average network egress in B/s sampled over a short window. Must be non-negative. */
+		/**
+		 * Average network egress in B/s sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageEgressBps?: number | null;
 
-		/** Average network ingress in B/s sampled over a short window. Must be non-negative. */
+		/**
+		 * Average network ingress in B/s sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageIngressBps?: number | null;
 	}
 
 	/** Network usage sample. Values are across all network interfaces. */
 	export interface NetworkUsageSampleFormProperties {
 
-		/** Average network egress in B/s sampled over a short window. Must be non-negative. */
+		/**
+		 * Average network egress in B/s sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageEgressBps: FormControl<number | null | undefined>,
 
-		/** Average network ingress in B/s sampled over a short window. Must be non-negative. */
+		/**
+		 * Average network ingress in B/s sampled over a short window. Must be non-negative.
+		 * Type: float
+		 */
 		averageIngressBps: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkUsageSampleFormGroup() {
@@ -2655,20 +2815,32 @@ export namespace MyNS {
 		/** A resource that aggregates errors across import job files. */
 		executionErrors?: ValidationReport;
 
-		/** Total number of asset frames reported for the import job. */
+		/**
+		 * Total number of asset frames reported for the import job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		framesReported?: number | null;
 
-		/** Output only. Total number of rows in the import job. */
+		/**
+		 * Output only. Total number of rows in the import job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRowsCount?: number | null;
 	}
 
 	/** A resource that reports result of the import job execution. */
 	export interface ExecutionReportFormProperties {
 
-		/** Total number of asset frames reported for the import job. */
+		/**
+		 * Total number of asset frames reported for the import job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		framesReported: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of rows in the import job. */
+		/**
+		 * Output only. Total number of rows in the import job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRowsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateExecutionReportFormGroup() {
@@ -2770,7 +2942,10 @@ export namespace MyNS {
 		/** The list of errors detected in the row. */
 		errors?: Array<ImportError>;
 
-		/** The row number where the error was detected. */
+		/**
+		 * The row number where the error was detected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowNumber?: number | null;
 
 		/** The name of the VM in the row. */
@@ -2783,7 +2958,10 @@ export namespace MyNS {
 	/** A resource that reports the import job errors at row level. */
 	export interface ImportRowErrorFormProperties {
 
-		/** The row number where the error was detected. */
+		/**
+		 * The row number where the error was detected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowNumber: FormControl<number | null | undefined>,
 
 		/** The name of the VM in the row. */
@@ -3324,7 +3502,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3337,7 +3518,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3505,7 +3689,10 @@ export namespace MyNS {
 		/** Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with. */
 		commitmentPlan?: SoleTenancyPreferencesCommitmentPlan | null;
 
-		/** CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive. */
+		/**
+		 * CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive.
+		 * Type: double
+		 */
 		cpuOvercommitRatio?: number | null;
 
 		/** Sole Tenancy nodes maintenance policy. */
@@ -3521,7 +3708,10 @@ export namespace MyNS {
 		/** Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with. */
 		commitmentPlan: FormControl<SoleTenancyPreferencesCommitmentPlan | null | undefined>,
 
-		/** CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive. */
+		/**
+		 * CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive.
+		 * Type: double
+		 */
 		cpuOvercommitRatio: FormControl<number | null | undefined>,
 
 		/** Sole Tenancy nodes maintenance policy. */
@@ -3570,13 +3760,22 @@ export namespace MyNS {
 		/** Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with. */
 		commitmentPlan?: VmwareEnginePreferencesCommitmentPlan | null;
 
-		/** CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment. */
+		/**
+		 * CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment.
+		 * Type: double
+		 */
 		cpuOvercommitRatio?: number | null;
 
-		/** Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0. */
+		/**
+		 * Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0.
+		 * Type: double
+		 */
 		memoryOvercommitRatio?: number | null;
 
-		/** The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0. */
+		/**
+		 * The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0.
+		 * Type: double
+		 */
 		storageDeduplicationCompressionRatio?: number | null;
 	}
 
@@ -3586,13 +3785,22 @@ export namespace MyNS {
 		/** Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with. */
 		commitmentPlan: FormControl<VmwareEnginePreferencesCommitmentPlan | null | undefined>,
 
-		/** CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment. */
+		/**
+		 * CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment.
+		 * Type: double
+		 */
 		cpuOvercommitRatio: FormControl<number | null | undefined>,
 
-		/** Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0. */
+		/**
+		 * Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0.
+		 * Type: double
+		 */
 		memoryOvercommitRatio: FormControl<number | null | undefined>,
 
-		/** The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0. */
+		/**
+		 * The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0.
+		 * Type: double
+		 */
 		storageDeduplicationCompressionRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateVmwareEnginePreferencesFormGroup() {
@@ -3993,7 +4201,10 @@ export namespace MyNS {
 		/** The X-axis label for this data point. */
 		label?: string | null;
 
-		/** The Y-axis value for this data point. */
+		/**
+		 * The Y-axis value for this data point.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -4003,7 +4214,10 @@ export namespace MyNS {
 		/** The X-axis label for this data point. */
 		label: FormControl<string | null | undefined>,
 
-		/** The Y-axis value for this data point. */
+		/**
+		 * The Y-axis value for this data point.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateReportSummaryChartDataDataPointFormGroup() {
@@ -4174,7 +4388,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -4187,7 +4404,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -4381,7 +4601,10 @@ export namespace MyNS {
 		/** User-friendly display name. */
 		displayName?: string | null;
 
-		/** Output only. The number of frames that were reported by the source and contained errors. */
+		/**
+		 * Output only. The number of frames that were reported by the source and contained errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorFrameCount?: number | null;
 
 		/** If `true`, the source is managed by other service(s). */
@@ -4390,10 +4613,16 @@ export namespace MyNS {
 		/** Output only. The full name of the source. */
 		name?: string | null;
 
-		/** Output only. Number of frames that are still being processed. */
+		/**
+		 * Output only. Number of frames that are still being processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingFrameCount?: number | null;
 
-		/** The information confidence of the source. The higher the value, the higher the confidence. */
+		/**
+		 * The information confidence of the source. The higher the value, the higher the confidence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Output only. The state of the source. */
@@ -4418,7 +4647,10 @@ export namespace MyNS {
 		/** User-friendly display name. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. The number of frames that were reported by the source and contained errors. */
+		/**
+		 * Output only. The number of frames that were reported by the source and contained errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorFrameCount: FormControl<number | null | undefined>,
 
 		/** If `true`, the source is managed by other service(s). */
@@ -4427,10 +4659,16 @@ export namespace MyNS {
 		/** Output only. The full name of the source. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. Number of frames that are still being processed. */
+		/**
+		 * Output only. Number of frames that are still being processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingFrameCount: FormControl<number | null | undefined>,
 
-		/** The information confidence of the source. The higher the value, the higher the confidence. */
+		/**
+		 * The information confidence of the source. The higher the value, the higher the confidence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Output only. The state of the source. */
@@ -4713,6 +4951,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -4726,6 +4965,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -4770,6 +5010,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Migrationcenter_projects_locations_assets_listView} view View of the assets. Defaults to BASIC.
 		 * @return {ListAssetsResponse} Successful response
@@ -4824,6 +5065,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/errorFrames
 		 * @param {string} parent Required. Parent value (the source) for `ListErrorFramesRequest`.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Migrationcenter_projects_locations_sources_errorFrames_listView} view Optional. An optional view mode to control the level of details of each error frame. The default is a BASIC frame view.
 		 * @return {ListErrorFramesResponse} Successful response
@@ -4839,6 +5081,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListGroupsResponse} Successful response
 		 */
@@ -4865,6 +5108,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize The maximum number of data files to return. The service may return fewer than this value. If unspecified, at most 500 data files will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListImportDataFiles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListImportDataFiles` must match the call that provided the page token.
 		 * @return {ListImportDataFilesResponse} Successful response
 		 */
@@ -4891,6 +5135,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Migrationcenter_projects_locations_importJobs_listView} view Optional. The level of details of each import job. Default value is BASIC.
 		 * @return {ListImportJobsResponse} Successful response
@@ -4917,6 +5162,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent value for `ListPreferenceSetsRequest`.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, at most 500 preference sets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListPreferenceSetsResponse} Successful response
 		 */
@@ -4943,6 +5189,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListReportConfigsResponse} Successful response
 		 */
@@ -4969,6 +5216,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results that the server should return.
 		 * @param {Migrationcenter_projects_locations_reportConfigs_reports_listView} view Determines what information to retrieve for each Report.
 		 * @return {ListReportsResponse} Successful response
@@ -4996,6 +5244,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results.
 		 * @param {string} orderBy Field to sort by. See https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize Requested page size. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results that the server should return.
 		 * @return {ListSourcesResponse} Successful response
 		 */

@@ -75,8 +75,11 @@ export namespace MyNS {
 		 * Get generate/integers
 		 * @param {string} gameCode Identifier that indicates the game for which the RNG (Random Number Generator) has been used.
 		 * @param {number} highest Highest possible value to be returned.
+		 *     Minimum: 1    Maximum: 9999999999
 		 * @param {number} lowest Lowest possible value to be returned.
+		 *     Minimum: 1    Maximum: 9999999999
 		 * @param {number} count Number of values to be returned.
+		 *     Minimum: 1    Maximum: 99
 		 * @param {boolean} unique Should the numbers returned be unique
 		 * @return {Success} Success
 		 */

@@ -3272,6 +3272,7 @@ export namespace MyNS {
 		 * Deletes the insight along with the associated anomalies, events and recommendations.
 		 * Delete insights/{Id}
 		 * @param {string} Id The ID of the insight.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteInsightResponse} Success
 		 */
 		DeleteInsight(Id: string): Observable<DeleteInsightResponse> {
@@ -3282,7 +3283,9 @@ export namespace MyNS {
 		 * Returns details about an insight that you specify using its ID.
 		 * Get insights/{Id}
 		 * @param {string} Id  The ID of the insight. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AccountId The ID of the member account in the organization.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeInsightResponse} Success
 		 */
 		DescribeInsight(Id: string, AccountId: string | null | undefined): Observable<DescribeInsightResponse> {
@@ -3311,7 +3314,9 @@ export namespace MyNS {
 		 * Returns details about an anomaly that you specify using its ID.
 		 * Get anomalies/{Id}
 		 * @param {string} Id  The ID of the anomaly. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AccountId The ID of the member account.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeAnomalyResponse} Success
 		 */
 		DescribeAnomaly(Id: string, AccountId: string | null | undefined): Observable<DescribeAnomalyResponse> {
@@ -3387,6 +3392,7 @@ export namespace MyNS {
 		 * Get accounts/health/resource-collection/{ResourceCollectionType}
 		 * @param {ResourceCollectionType} ResourceCollectionType  An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. 
 		 * @param {string} NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeResourceCollectionHealthResponse} Success
 		 */
 		DescribeResourceCollectionHealth(ResourceCollectionType: ResourceCollectionType, NextToken: string | null | undefined): Observable<DescribeResourceCollectionHealthResponse> {
@@ -3415,6 +3421,7 @@ export namespace MyNS {
 		 * Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.
 		 * Get cost-estimation
 		 * @param {string} NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetCostEstimationResponse} Success
 		 */
 		GetCostEstimation(NextToken: string | null | undefined): Observable<GetCostEstimationResponse> {
@@ -3435,6 +3442,7 @@ export namespace MyNS {
 		 * Get resource-collections/{ResourceCollectionType}
 		 * @param {ResourceCollectionType} ResourceCollectionType  The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. 
 		 * @param {string} NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetResourceCollectionResponse} Success
 		 */
 		GetResourceCollection(ResourceCollectionType: ResourceCollectionType, NextToken: string | null | undefined): Observable<GetResourceCollectionResponse> {
@@ -3445,6 +3453,7 @@ export namespace MyNS {
 		 * Returns a list of the anomalies that belong to an insight that you specify using its ID.
 		 * Post anomalies/insight/{InsightId}
 		 * @param {string} InsightId  The ID of the insight. The returned anomalies belong to this insight. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAnomaliesForInsightResponse} Success
@@ -3522,6 +3531,7 @@ export namespace MyNS {
 		 * Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations.
 		 * Delete channels/{Id}
 		 * @param {string} Id  The ID of the notification channel to be removed. 
+		 *     Min length: 36    Max length: 36
 		 * @return {RemoveNotificationChannelResponse} Success
 		 */
 		RemoveNotificationChannel(Id: string): Observable<RemoveNotificationChannelResponse> {
@@ -3592,8 +3602,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 	}
@@ -3601,8 +3611,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3671,8 +3681,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the insight for which the feedback was provided.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId?: string | null;
 	}
@@ -3680,8 +3690,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the insight for which the feedback was provided.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId: FormControl<string | null | undefined>,
 	}
@@ -3813,8 +3823,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
@@ -3835,8 +3845,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3897,8 +3907,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to identify each cost estimate request.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ClientToken?: string | null;
 	}
@@ -3906,8 +3916,8 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to identify each cost estimate request.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -3944,15 +3954,15 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId?: string | null;
 
@@ -3970,15 +3980,15 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
@@ -4025,8 +4035,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the insight containing the log groups.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId: string;
 
@@ -4039,8 +4049,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 	}
@@ -4049,8 +4059,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the insight containing the log groups.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId: FormControl<string | null | undefined>,
 
@@ -4063,8 +4073,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4094,15 +4104,15 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId?: string | null;
 	}
@@ -4117,15 +4127,15 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
@@ -4181,8 +4191,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 	}
@@ -4197,8 +4207,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4237,8 +4247,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 	}
@@ -4253,8 +4263,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4311,8 +4321,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 	}
@@ -4327,8 +4337,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4358,15 +4368,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the requested insight.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId: string;
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
@@ -4375,8 +4385,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId?: string | null;
 	}
@@ -4385,15 +4395,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the requested insight.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InsightId: FormControl<string | null | undefined>,
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -4402,8 +4412,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
@@ -4437,8 +4447,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
@@ -4459,8 +4469,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -4539,8 +4549,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken?: string | null;
 
@@ -4561,8 +4571,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		NextToken: FormControl<string | null | undefined>,
 

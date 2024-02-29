@@ -54,7 +54,10 @@ export namespace MyNS {
 
 	export interface Pipe {
 
-		/** The mode for the Pipe. Not applicable for abstract sockets. */
+		/**
+		 * The mode for the Pipe. Not applicable for abstract sockets.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		mode?: number | null;
 
 		/** Unix Domain Socket path. On Linux, paths starting with '@' will use the abstract namespace. The starting '@' is replaced by a null byte by Envoy. Paths starting with '@' will result in an error in environments other than Linux. */
@@ -62,7 +65,10 @@ export namespace MyNS {
 	}
 	export interface PipeFormProperties {
 
-		/** The mode for the Pipe. Not applicable for abstract sockets. */
+		/**
+		 * The mode for the Pipe. Not applicable for abstract sockets.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		mode: FormControl<number | null | undefined>,
 
 		/** Unix Domain Socket path. On Linux, paths starting with '@' will use the abstract namespace. The starting '@' is replaced by a null byte by Envoy. Paths starting with '@' will result in an error in environments other than Linux. */
@@ -88,6 +94,8 @@ export namespace MyNS {
 
 		/** This is only valid if :ref:`resolver_name ` is specified below and the named resolver is capable of named port resolution. */
 		namedPort?: string | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		portValue?: number | null;
 		protocol?: SocketAddressProtocol | null;
 
@@ -106,6 +114,8 @@ export namespace MyNS {
 
 		/** This is only valid if :ref:`resolver_name ` is specified below and the named resolver is capable of named port resolution. */
 		namedPort: FormControl<string | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		portValue: FormControl<number | null | undefined>,
 		protocol: FormControl<SocketAddressProtocol | null | undefined>,
 
@@ -153,15 +163,27 @@ export namespace MyNS {
 
 	/** Envoy uses SemVer (https://semver.org/). Major/minor versions indicate expected behaviors and APIs, the patch version field is used only for security fixes and can be generally ignored. */
 	export interface SemanticVersion {
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		majorNumber?: number | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		minorNumber?: number | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		patch?: number | null;
 	}
 
 	/** Envoy uses SemVer (https://semver.org/). Major/minor versions indicate expected behaviors and APIs, the patch version field is used only for security fixes and can be generally ignored. */
 	export interface SemanticVersionFormProperties {
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		majorNumber: FormControl<number | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		minorNumber: FormControl<number | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		patch: FormControl<number | null | undefined>,
 	}
 	export function CreateSemanticVersionFormGroup() {
@@ -1138,14 +1160,20 @@ export namespace MyNS {
 	/** Google's `RE2 `_ regex engine. The regex string must adhere to the documented `syntax `_. The engine is designed to complete execution in linear time as well as limit the amount of memory used. Envoy supports program size checking via runtime. The runtime keys ``re2.max_program_size.error_level`` and ``re2.max_program_size.warn_level`` can be set to integers as the maximum program size or complexity that a compiled regex can have before an exception is thrown or a warning is logged, respectively. ``re2.max_program_size.error_level`` defaults to 100, and ``re2.max_program_size.warn_level`` has no default if unset (will not check/log a warning). Envoy emits two stats for tracking the program size of regexes: the histogram ``re2.program_size``, which records the program size, and the counter ``re2.exceeded_warn_level``, which is incremented each time the program size exceeds the warn level threshold. */
 	export interface GoogleRE2 {
 
-		/** This field controls the RE2 "program size" which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client. .. note:: Although this field is deprecated, the program size will still be checked against the global ``re2.max_program_size.error_level`` runtime value. */
+		/**
+		 * This field controls the RE2 "program size" which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client. .. note:: Although this field is deprecated, the program size will still be checked against the global ``re2.max_program_size.error_level`` runtime value.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxProgramSize?: number | null;
 	}
 
 	/** Google's `RE2 `_ regex engine. The regex string must adhere to the documented `syntax `_. The engine is designed to complete execution in linear time as well as limit the amount of memory used. Envoy supports program size checking via runtime. The runtime keys ``re2.max_program_size.error_level`` and ``re2.max_program_size.warn_level`` can be set to integers as the maximum program size or complexity that a compiled regex can have before an exception is thrown or a warning is logged, respectively. ``re2.max_program_size.error_level`` defaults to 100, and ``re2.max_program_size.warn_level`` has no default if unset (will not check/log a warning). Envoy emits two stats for tracking the program size of regexes: the histogram ``re2.program_size``, which records the program size, and the counter ``re2.exceeded_warn_level``, which is incremented each time the program size exceeds the warn level threshold. */
 	export interface GoogleRE2FormProperties {
 
-		/** This field controls the RE2 "program size" which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client. .. note:: Although this field is deprecated, the program size will still be checked against the global ``re2.max_program_size.error_level`` runtime value. */
+		/**
+		 * This field controls the RE2 "program size" which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client. .. note:: Although this field is deprecated, the program size will still be checked against the global ``re2.max_program_size.error_level`` runtime value.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxProgramSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleRE2FormGroup() {
@@ -1243,7 +1271,10 @@ export namespace MyNS {
 	/** Specifies the way to match a double value. */
 	export interface DoubleMatcher {
 
-		/** If specified, the input double value must be equal to the value specified here. */
+		/**
+		 * If specified, the input double value must be equal to the value specified here.
+		 * Type: double
+		 */
 		exact?: number | null;
 
 		/** Specifies the double start and end of the range using half-open interval semantics [start, end). */
@@ -1253,7 +1284,10 @@ export namespace MyNS {
 	/** Specifies the way to match a double value. */
 	export interface DoubleMatcherFormProperties {
 
-		/** If specified, the input double value must be equal to the value specified here. */
+		/**
+		 * If specified, the input double value must be equal to the value specified here.
+		 * Type: double
+		 */
 		exact: FormControl<number | null | undefined>,
 	}
 	export function CreateDoubleMatcherFormGroup() {
@@ -1267,20 +1301,32 @@ export namespace MyNS {
 	/** Specifies the double start and end of the range using half-open interval semantics [start, end). */
 	export interface DoubleRange {
 
-		/** end of the range (exclusive) */
+		/**
+		 * end of the range (exclusive)
+		 * Type: double
+		 */
 		end?: number | null;
 
-		/** start of the range (inclusive) */
+		/**
+		 * start of the range (inclusive)
+		 * Type: double
+		 */
 		start?: number | null;
 	}
 
 	/** Specifies the double start and end of the range using half-open interval semantics [start, end). */
 	export interface DoubleRangeFormProperties {
 
-		/** end of the range (exclusive) */
+		/**
+		 * end of the range (exclusive)
+		 * Type: double
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** start of the range (inclusive) */
+		/**
+		 * start of the range (inclusive)
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateDoubleRangeFormGroup() {

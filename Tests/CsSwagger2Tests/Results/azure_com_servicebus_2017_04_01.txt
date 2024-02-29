@@ -1755,7 +1755,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="sku">The sku type.</param>
+		/// <param name="sku">The sku type.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <returns>Regions successfully returned.</returns>
 		public async Task<PremiumMessagingRegionsListResult> Regions_ListBySkuAsync(string api_version, string subscriptionId, string sku)
 		{
@@ -1784,7 +1787,10 @@ namespace MyNS
 		/// Gets the available namespaces within a resource group.
 		/// Namespaces_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespaces successfully returned.</returns>
@@ -1815,8 +1821,14 @@ namespace MyNS
 		/// Gets a description for the specified namespace.
 		/// Namespaces_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace successfully returned.</returns>
@@ -1847,7 +1859,10 @@ namespace MyNS
 		/// Creates or updates a service namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
 		/// Namespaces_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="namespaceName">The namespace name.</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1887,8 +1902,14 @@ namespace MyNS
 		/// Deletes an existing namespace. This operation also removes all associated resources under the namespace.
 		/// Namespaces_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace successfully deleted.</returns>
@@ -1913,8 +1934,14 @@ namespace MyNS
 		/// Updates a service namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
 		/// Namespaces_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to update a namespace resource.</param>
@@ -1953,8 +1980,14 @@ namespace MyNS
 		/// Gets the authorization rules for a namespace.
 		/// Namespaces_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace authorization rules returned successfully.</returns>
@@ -1985,9 +2018,18 @@ namespace MyNS
 		/// Gets an authorization rule for a namespace by rule name.
 		/// Namespaces_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace authorization rule returned successfully.</returns>
@@ -2018,9 +2060,18 @@ namespace MyNS
 		/// Creates or updates an authorization rule for a namespace.
 		/// Namespaces_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">The shared access authorization rule.</param>
@@ -2059,9 +2110,18 @@ namespace MyNS
 		/// Deletes a namespace authorization rule.
 		/// Namespaces_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace authorization rule successfully deleted.</returns>
@@ -2086,9 +2146,18 @@ namespace MyNS
 		/// Gets the primary and secondary connection strings for the namespace.
 		/// Namespaces_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/listKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Connection strings successfully returned.</returns>
@@ -2119,9 +2188,18 @@ namespace MyNS
 		/// Regenerates the primary or secondary connection strings for the namespace.
 		/// Namespaces_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to regenerate the authorization rule.</param>
@@ -2160,8 +2238,14 @@ namespace MyNS
 		/// Gets all Alias(Disaster Recovery configurations)
 		/// DisasterRecoveryConfigs_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved the list of Alias(Disaster Recovery configurations) for servicebus namespace</returns>
@@ -2192,8 +2276,14 @@ namespace MyNS
 		/// Check the give namespace name availability.
 		/// DisasterRecoveryConfigs_CheckNameAvailability subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/CheckNameAvailability
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters to check availability of the given namespace name</param>
@@ -2232,9 +2322,18 @@ namespace MyNS
 		/// Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace
 		/// DisasterRecoveryConfigs_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved the Alias(Disaster Recovery configurations)</returns>
@@ -2265,9 +2364,18 @@ namespace MyNS
 		/// Creates or updates a new Alias(Disaster Recovery configuration)
 		/// DisasterRecoveryConfigs_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters required to create an Alias(Disaster Recovery configuration)</param>
@@ -2306,9 +2414,18 @@ namespace MyNS
 		/// Deletes an Alias(Disaster Recovery configuration)
 		/// DisasterRecoveryConfigs_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Delete Alias(Disaster Recovery configuration) request accepted</returns>
@@ -2333,9 +2450,18 @@ namespace MyNS
 		/// Gets the authorization rules for a namespace.
 		/// DisasterRecoveryConfigs_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}/AuthorizationRules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>DisasterRecoveryConfigs authorization rules returned successfully.</returns>
@@ -2366,10 +2492,22 @@ namespace MyNS
 		/// Gets an authorization rule for a namespace by rule name.
 		/// DisasterRecoveryConfigs_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}/AuthorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>DisasterRecoveryConfigs authorization rule returned successfully.</returns>
@@ -2400,10 +2538,22 @@ namespace MyNS
 		/// Gets the primary and secondary connection strings for the namespace.
 		/// DisasterRecoveryConfigs_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}/AuthorizationRules/{authorizationRuleName}/listKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Connection strings successfully returned.</returns>
@@ -2434,9 +2584,18 @@ namespace MyNS
 		/// This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces
 		/// DisasterRecoveryConfigs_BreakPairing subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}/breakPairing
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Break-Pairing operation is successful.</returns>
@@ -2461,9 +2620,18 @@ namespace MyNS
 		/// Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace
 		/// DisasterRecoveryConfigs_FailOver subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/disasterRecoveryConfigs/{alias}/failover
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="alias">The Disaster Recovery configuration name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="alias">The Disaster Recovery configuration name
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Failover operation is successful.</returns>
@@ -2488,8 +2656,14 @@ namespace MyNS
 		/// Gets all the Event Hubs in a service bus Namespace.
 		/// EventHubs_ListByNamespace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/eventhubs
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved the list of Event Hubs.</returns>
@@ -2520,8 +2694,14 @@ namespace MyNS
 		/// This operation Migrate the given namespace to provided name type
 		/// Namespaces_Migrate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrate
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to migrate namespace type.</param>
@@ -2554,8 +2734,14 @@ namespace MyNS
 		/// Gets all migrationConfigurations
 		/// MigrationConfigs_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved the list of migrationConfigurations for servicebus namespace</returns>
@@ -2586,8 +2772,14 @@ namespace MyNS
 		/// Retrieves Migration Config
 		/// MigrationConfigs_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations/{configName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="configName">The configuration name. Should always be "$default".</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -2619,8 +2811,14 @@ namespace MyNS
 		/// Creates Migration configuration and starts migration of entities from Standard to Premium namespace
 		/// MigrationConfigs_CreateAndStartMigration subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations/{configName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="configName">The configuration name. Should always be "$default".</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -2660,8 +2858,14 @@ namespace MyNS
 		/// Deletes a MigrationConfiguration
 		/// MigrationConfigs_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations/{configName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="configName">The configuration name. Should always be "$default".</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -2687,8 +2891,14 @@ namespace MyNS
 		/// This operation reverts Migration
 		/// MigrationConfigs_Revert subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations/{configName}/revert
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="configName">The configuration name. Should always be "$default".</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -2714,8 +2924,14 @@ namespace MyNS
 		/// This operation Completes Migration of entities by pointing the connection strings to Premium namespace and any entities created after the operation will be under Premium Namespace. CompleteMigration operation will fail when entity migration is in-progress.
 		/// MigrationConfigs_CompleteMigration subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/migrationConfigurations/{configName}/upgrade
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="configName">The configuration name. Should always be "$default".</param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -2741,8 +2957,14 @@ namespace MyNS
 		/// Gets list of NetworkRuleSet for a Namespace.
 		/// Namespaces_ListNetworkRuleSets subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/networkRuleSets
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>List of NetworkRuleSets for Namespace successfully returned.</returns>
@@ -2773,8 +2995,14 @@ namespace MyNS
 		/// Gets NetworkRuleSet for a Namespace.
 		/// Namespaces_GetNetworkRuleSet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/networkRuleSets/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Namespace NetworkRuleSet successfully returned.</returns>
@@ -2805,8 +3033,14 @@ namespace MyNS
 		/// Create or update NetworkRuleSet for a Namespace.
 		/// Namespaces_CreateOrUpdateNetworkRuleSet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/networkRuleSets/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">The Namespace IpFilterRule.</param>
@@ -2845,12 +3079,24 @@ namespace MyNS
 		/// Gets the queues within a namespace.
 		/// Queues_ListByNamespace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.</param>
-		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.</param>
+		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
+		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Queues successfully returned.</returns>
 		public async Task<SBQueueListResult> Queues_ListByNamespaceAsync(string resourceGroupName, string namespaceName, string api_version, string subscriptionId, int skip, int top)
 		{
@@ -2879,9 +3125,17 @@ namespace MyNS
 		/// Returns a description for the specified queue.
 		/// Queues_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Queue description successfully returned.</returns>
@@ -2912,9 +3166,17 @@ namespace MyNS
 		/// Creates or updates a Service Bus queue. This operation is idempotent.
 		/// Queues_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to create or update a queue resource.</param>
@@ -2953,9 +3215,17 @@ namespace MyNS
 		/// Deletes a queue from the specified namespace in a resource group.
 		/// Queues_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Queue successfully deleted.</returns>
@@ -2980,9 +3250,17 @@ namespace MyNS
 		/// Gets all authorization rules for a queue.
 		/// Queues_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Authorization rules successfully returned.</returns>
@@ -3013,10 +3291,21 @@ namespace MyNS
 		/// Gets an authorization rule for a queue by rule name.
 		/// Queues_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Authorization rule successfully returned.</returns>
@@ -3047,10 +3336,21 @@ namespace MyNS
 		/// Creates an authorization rule for a queue.
 		/// Queues_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">The shared access authorization rule.</param>
@@ -3089,10 +3389,21 @@ namespace MyNS
 		/// Deletes a queue authorization rule.
 		/// Queues_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Authorization rule successfully deleted.</returns>
@@ -3117,10 +3428,21 @@ namespace MyNS
 		/// Primary and secondary connection strings to the queue.
 		/// Queues_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules/{authorizationRuleName}/ListKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Connection strings successfully returned.</returns>
@@ -3151,10 +3473,21 @@ namespace MyNS
 		/// Regenerates the primary or secondary connection strings to the queue.
 		/// Queues_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues/{queueName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="queueName">The queue name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="queueName">The queue name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to regenerate the authorization rule.</param>
@@ -3193,12 +3526,24 @@ namespace MyNS
 		/// Gets all the topics in a namespace.
 		/// Topics_ListByNamespace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.</param>
-		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.</param>
+		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
+		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Successfully retrieved list of topics.</returns>
 		public async Task<SBTopicListResult> Topics_ListByNamespaceAsync(string resourceGroupName, string namespaceName, string api_version, string subscriptionId, int skip, int top)
 		{
@@ -3227,9 +3572,17 @@ namespace MyNS
 		/// Returns a description for the specified topic.
 		/// Topics_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Topic description successfully retrieved.</returns>
@@ -3260,9 +3613,17 @@ namespace MyNS
 		/// Creates a topic in the specified namespace.
 		/// Topics_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to create a topic resource.</param>
@@ -3301,9 +3662,17 @@ namespace MyNS
 		/// Deletes a topic from the specified namespace and resource group.
 		/// Topics_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Topic successfully deleted.</returns>
@@ -3328,9 +3697,17 @@ namespace MyNS
 		/// Gets authorization rules for a topic.
 		/// Topics_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Authorization rules successfully returned.</returns>
@@ -3361,10 +3738,21 @@ namespace MyNS
 		/// Returns the specified authorization rule.
 		/// Topics_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Topic authorization rule returned successfully.</returns>
@@ -3395,10 +3783,21 @@ namespace MyNS
 		/// Creates an authorization rule for the specified topic.
 		/// Topics_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">The shared access authorization rule.</param>
@@ -3437,10 +3836,21 @@ namespace MyNS
 		/// Deletes a topic authorization rule.
 		/// Topics_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Topic authorization rule successfully deleted.</returns>
@@ -3465,10 +3875,21 @@ namespace MyNS
 		/// Gets the primary and secondary connection strings for the topic.
 		/// Topics_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules/{authorizationRuleName}/ListKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Connection strings successfully retrieved.</returns>
@@ -3499,10 +3920,21 @@ namespace MyNS
 		/// Regenerates primary or secondary connection strings for the topic.
 		/// Topics_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="authorizationRuleName">The authorization rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="authorizationRuleName">The authorization rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to regenerate the authorization rule.</param>
@@ -3541,13 +3973,27 @@ namespace MyNS
 		/// List all the subscriptions under a specified topic.
 		/// Subscriptions_ListByTopic subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.</param>
-		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.</param>
+		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
+		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Successfully retrieved list of subscriptions.</returns>
 		public async Task<SBSubscriptionListResult> Subscriptions_ListByTopicAsync(string resourceGroupName, string namespaceName, string topicName, string api_version, string subscriptionId, int skip, int top)
 		{
@@ -3576,10 +4022,21 @@ namespace MyNS
 		/// Returns a subscription description for the specified topic.
 		/// Subscriptions_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved subscription description.</returns>
@@ -3610,10 +4067,21 @@ namespace MyNS
 		/// Creates a topic subscription.
 		/// Subscriptions_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to create a subscription resource.</param>
@@ -3652,10 +4120,21 @@ namespace MyNS
 		/// Deletes a subscription from the specified topic.
 		/// Subscriptions_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Subscription successfully deleted.</returns>
@@ -3680,14 +4159,31 @@ namespace MyNS
 		/// List all the rules within given topic-subscription
 		/// Rules_ListBySubscriptions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}/rules
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.</param>
-		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.</param>
+		/// <param name="skip">Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
+		/// <param name="top">May be used to limit the number of results to the most recent N usageDetails.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Successfully retrieved list of Rules.</returns>
 		public async Task<RuleListResult> Rules_ListBySubscriptionsAsync(string resourceGroupName, string namespaceName, string topicName, string subscriptionName, string api_version, string subscriptionId, int skip, int top)
 		{
@@ -3716,11 +4212,25 @@ namespace MyNS
 		/// Retrieves the description for the specified rule.
 		/// Rules_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}/rules/{ruleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
-		/// <param name="ruleName">The rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
+		/// <param name="ruleName">The rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Successfully retrieved rule description.</returns>
@@ -3751,11 +4261,25 @@ namespace MyNS
 		/// Creates a new rule and updates an existing rule
 		/// Rules_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}/rules/{ruleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
-		/// <param name="ruleName">The rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
+		/// <param name="ruleName">The rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="requestBody">Parameters supplied to create a rule.</param>
@@ -3794,11 +4318,25 @@ namespace MyNS
 		/// Deletes an existing rule.
 		/// Rules_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions/{subscriptionName}/rules/{ruleName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="namespaceName">The namespace name</param>
-		/// <param name="topicName">The topic name.</param>
-		/// <param name="subscriptionName">The subscription name.</param>
-		/// <param name="ruleName">The rule name.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="namespaceName">The namespace name
+		/// Max length: 50
+		/// Min length: 6
+		// </param>
+		/// <param name="topicName">The topic name.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionName">The subscription name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
+		/// <param name="ruleName">The rule name.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>Rule deleted.</returns>

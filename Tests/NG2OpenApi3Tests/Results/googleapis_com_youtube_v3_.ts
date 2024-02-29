@@ -620,26 +620,38 @@ export namespace MyNS {
 	/** A thumbnail is an image representing a YouTube resource. */
 	export interface Thumbnail {
 
-		/** (Optional) Height of the thumbnail image. */
+		/**
+		 * (Optional) Height of the thumbnail image.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height?: number | null;
 
 		/** The thumbnail image's URL. */
 		url?: string | null;
 
-		/** (Optional) Width of the thumbnail image. */
+		/**
+		 * (Optional) Width of the thumbnail image.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width?: number | null;
 	}
 
 	/** A thumbnail is an image representing a YouTube resource. */
 	export interface ThumbnailFormProperties {
 
-		/** (Optional) Height of the thumbnail image. */
+		/**
+		 * (Optional) Height of the thumbnail image.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The thumbnail image's URL. */
 		url: FormControl<string | null | undefined>,
 
-		/** (Optional) Width of the thumbnail image. */
+		/**
+		 * (Optional) Width of the thumbnail image.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateThumbnailFormGroup() {
@@ -716,20 +728,32 @@ export namespace MyNS {
 	/** Paging details for lists of resources, including total number of items available and number of resources returned in a single page. */
 	export interface PageInfo {
 
-		/** The number of results included in the API response. */
+		/**
+		 * The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultsPerPage?: number | null;
 
-		/** The total number of results in the result set. */
+		/**
+		 * The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** Paging details for lists of resources, including total number of items available and number of resources returned in a single page. */
 	export interface PageInfoFormProperties {
 
-		/** The number of results included in the API response. */
+		/**
+		 * The number of results included in the API response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultsPerPage: FormControl<number | null | undefined>,
 
-		/** The total number of results in the result set. */
+		/**
+		 * The total number of results in the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePageInfoFormGroup() {
@@ -2086,7 +2110,10 @@ export namespace MyNS {
 		/** ChannelSection localization setting */
 		localized?: ChannelSectionLocalization;
 
-		/** The position of the channel section in the channel. */
+		/**
+		 * The position of the channel section in the channel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		position?: number | null;
 
 		/** The style of the channel section. */
@@ -2108,7 +2135,10 @@ export namespace MyNS {
 		/** The language of the channel section's default title and description. */
 		defaultLanguage: FormControl<string | null | undefined>,
 
-		/** The position of the channel section in the channel. */
+		/**
+		 * The position of the channel section in the channel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** The style of the channel section. */
@@ -2295,7 +2325,10 @@ export namespace MyNS {
 		/** The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel. */
 		channelId?: string | null;
 
-		/** The total number of likes this comment has received. */
+		/**
+		 * The total number of likes this comment has received.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		likeCount?: number | null;
 
 		/** The comment's moderation status. Will not be set if the comments were requested through the id filter. */
@@ -2341,7 +2374,10 @@ export namespace MyNS {
 		/** The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel. */
 		channelId: FormControl<string | null | undefined>,
 
-		/** The total number of likes this comment has received. */
+		/**
+		 * The total number of likes this comment has received.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		likeCount: FormControl<number | null | undefined>,
 
 		/** The comment's moderation status. Will not be set if the comments were requested through the id filter. */
@@ -2537,7 +2573,10 @@ export namespace MyNS {
 		/** A *comment* represents a single YouTube comment. */
 		topLevelComment?: Comment;
 
-		/** The total number of replies (not including the top level comment). */
+		/**
+		 * The total number of replies (not including the top level comment).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalReplyCount?: number | null;
 
 		/** The ID of the video the comments refer to, if any. No video_id implies a channel discussion comment. */
@@ -2556,7 +2595,10 @@ export namespace MyNS {
 		/** Whether the thread (and therefore all its comments) is visible to all YouTube users. */
 		isPublic: FormControl<boolean | null | undefined>,
 
-		/** The total number of replies (not including the top level comment). */
+		/**
+		 * The total number of replies (not including the top level comment).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalReplyCount: FormControl<number | null | undefined>,
 
 		/** The ID of the video the comments refer to, if any. No video_id implies a channel discussion comment. */
@@ -3273,7 +3315,10 @@ export namespace MyNS {
 	export interface Cuepoint {
 		cueType?: CuepointCueType | null;
 
-		/** The duration of this cuepoint. */
+		/**
+		 * The duration of this cuepoint.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		durationSecs?: number | null;
 		etag?: string | null;
 
@@ -3291,7 +3336,10 @@ export namespace MyNS {
 	export interface CuepointFormProperties {
 		cueType: FormControl<CuepointCueType | null | undefined>,
 
-		/** The duration of this cuepoint. */
+		/**
+		 * The duration of this cuepoint.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		durationSecs: FormControl<number | null | undefined>,
 		etag: FormControl<string | null | undefined>,
 
@@ -3328,7 +3376,10 @@ export namespace MyNS {
 		/** If set, automatic cuepoint insertion is paused until this timestamp ("No Ad Zone"). The value is specified in ISO 8601 format. */
 		pauseAdsUntil?: string | null;
 
-		/** Interval frequency in seconds that api uses to insert cuepoints automatically. */
+		/**
+		 * Interval frequency in seconds that api uses to insert cuepoints automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatIntervalSecs?: number | null;
 
 		/** The strategy to use when scheduling cuepoints. */
@@ -3344,7 +3395,10 @@ export namespace MyNS {
 		/** If set, automatic cuepoint insertion is paused until this timestamp ("No Ad Zone"). The value is specified in ISO 8601 format. */
 		pauseAdsUntil: FormControl<string | null | undefined>,
 
-		/** Interval frequency in seconds that api uses to insert cuepoints automatically. */
+		/**
+		 * Interval frequency in seconds that api uses to insert cuepoints automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatIntervalSecs: FormControl<number | null | undefined>,
 
 		/** The strategy to use when scheduling cuepoints. */
@@ -3366,26 +3420,44 @@ export namespace MyNS {
 	/** Geographical coordinates of a point, in WGS84. */
 	export interface GeoPoint {
 
-		/** Altitude above the reference ellipsoid, in meters. */
+		/**
+		 * Altitude above the reference ellipsoid, in meters.
+		 * Type: double
+		 */
 		altitude?: number | null;
 
-		/** Latitude in degrees. */
+		/**
+		 * Latitude in degrees.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude in degrees. */
+		/**
+		 * Longitude in degrees.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** Geographical coordinates of a point, in WGS84. */
 	export interface GeoPointFormProperties {
 
-		/** Altitude above the reference ellipsoid, in meters. */
+		/**
+		 * Altitude above the reference ellipsoid, in meters.
+		 * Type: double
+		 */
 		altitude: FormControl<number | null | undefined>,
 
-		/** Latitude in degrees. */
+		/**
+		 * Latitude in degrees.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude in degrees. */
+		/**
+		 * Longitude in degrees.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoPointFormGroup() {
@@ -3921,7 +3993,10 @@ export namespace MyNS {
 	/** Settings and Info of the monitor stream */
 	export interface MonitorStreamInfo {
 
-		/** If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay. */
+		/**
+		 * If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		broadcastStreamDelayMs?: number | null;
 
 		/** HTML code that embeds a player that plays the monitor stream. */
@@ -3934,7 +4009,10 @@ export namespace MyNS {
 	/** Settings and Info of the monitor stream */
 	export interface MonitorStreamInfoFormProperties {
 
-		/** If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay. */
+		/**
+		 * If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		broadcastStreamDelayMs: FormControl<number | null | undefined>,
 
 		/** HTML code that embeds a player that plays the monitor stream. */
@@ -4348,7 +4426,10 @@ export namespace MyNS {
 		/** The name of the Level at which the viever is a member. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled. */
 		memberLevelName?: string | null;
 
-		/** The total amount of months (rounded up) the viewer has been a member that granted them this Member Milestone Chat. This is the same number of months as is being displayed to YouTube users. */
+		/**
+		 * The total amount of months (rounded up) the viewer has been a member that granted them this Member Milestone Chat. This is the same number of months as is being displayed to YouTube users.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		memberMonth?: number | null;
 
 		/** The comment added by the member to this Member Milestone Chat. This field is empty for messages without a comment from the member. */
@@ -4359,7 +4440,10 @@ export namespace MyNS {
 		/** The name of the Level at which the viever is a member. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled. */
 		memberLevelName: FormControl<string | null | undefined>,
 
-		/** The total amount of months (rounded up) the viewer has been a member that granted them this Member Milestone Chat. This is the same number of months as is being displayed to YouTube users. */
+		/**
+		 * The total amount of months (rounded up) the viewer has been a member that granted them this Member Milestone Chat. This is the same number of months as is being displayed to YouTube users.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		memberMonth: FormControl<number | null | undefined>,
 
 		/** The comment added by the member to this Member Milestone Chat. This field is empty for messages without a comment from the member. */
@@ -4376,7 +4460,10 @@ export namespace MyNS {
 
 	export interface LiveChatMembershipGiftingDetails {
 
-		/** The number of gift memberships purchased by the user. */
+		/**
+		 * The number of gift memberships purchased by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		giftMembershipsCount?: number | null;
 
 		/** The name of the level of the gift memberships purchased by the user. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled. */
@@ -4384,7 +4471,10 @@ export namespace MyNS {
 	}
 	export interface LiveChatMembershipGiftingDetailsFormProperties {
 
-		/** The number of gift memberships purchased by the user. */
+		/**
+		 * The number of gift memberships purchased by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		giftMembershipsCount: FormControl<number | null | undefined>,
 
 		/** The name of the level of the gift memberships purchased by the user. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled. */
@@ -4627,7 +4717,10 @@ export namespace MyNS {
 		/** The currency in which the purchase was made. */
 		currency?: string | null;
 
-		/** The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1. */
+		/**
+		 * The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		tier?: number | null;
 
 		/** The comment added by the user to this Super Chat event. */
@@ -4644,7 +4737,10 @@ export namespace MyNS {
 		/** The currency in which the purchase was made. */
 		currency: FormControl<string | null | undefined>,
 
-		/** The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1. */
+		/**
+		 * The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		tier: FormControl<number | null | undefined>,
 
 		/** The comment added by the user to this Super Chat event. */
@@ -4673,7 +4769,10 @@ export namespace MyNS {
 		currency?: string | null;
 		superStickerMetadata?: SuperStickerMetadata;
 
-		/** The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1. */
+		/**
+		 * The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		tier?: number | null;
 	}
 	export interface LiveChatSuperStickerDetailsFormProperties {
@@ -4687,7 +4786,10 @@ export namespace MyNS {
 		/** The currency in which the purchase was made. */
 		currency: FormControl<string | null | undefined>,
 
-		/** The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1. */
+		/**
+		 * The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		tier: FormControl<number | null | undefined>,
 	}
 	export function CreateLiveChatSuperStickerDetailsFormGroup() {
@@ -4796,7 +4898,10 @@ export namespace MyNS {
 		/** Paging details for lists of resources, including total number of items available and number of resources returned in a single page. */
 		pageInfo?: PageInfo;
 
-		/** The amount of time the client should wait before polling again. */
+		/**
+		 * The amount of time the client should wait before polling again.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		pollingIntervalMillis?: number | null;
 
 		/** Stub token pagination template to suppress results. */
@@ -4820,7 +4925,10 @@ export namespace MyNS {
 		/** The date and time when the underlying stream went offline. */
 		offlineAt: FormControl<Date | null | undefined>,
 
-		/** The amount of time the client should wait before polling again. */
+		/**
+		 * The amount of time the client should wait before polling again.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		pollingIntervalMillis: FormControl<number | null | undefined>,
 
 		/** The visitorId identifies the visitor. */
@@ -5304,7 +5412,10 @@ export namespace MyNS {
 		/** The date and time when the user became a continuous member across all levels. */
 		memberSince?: string | null;
 
-		/** The cumulative time the user has been a member across all levels in complete months (the time is rounded down to the nearest integer). */
+		/**
+		 * The cumulative time the user has been a member across all levels in complete months (the time is rounded down to the nearest integer).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberTotalDurationMonths?: number | null;
 	}
 	export interface MembershipsDurationFormProperties {
@@ -5312,7 +5423,10 @@ export namespace MyNS {
 		/** The date and time when the user became a continuous member across all levels. */
 		memberSince: FormControl<string | null | undefined>,
 
-		/** The cumulative time the user has been a member across all levels in complete months (the time is rounded down to the nearest integer). */
+		/**
+		 * The cumulative time the user has been a member across all levels in complete months (the time is rounded down to the nearest integer).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberTotalDurationMonths: FormControl<number | null | undefined>,
 	}
 	export function CreateMembershipsDurationFormGroup() {
@@ -5331,7 +5445,10 @@ export namespace MyNS {
 		/** The date and time when the user became a continuous member for the given level. */
 		memberSince?: string | null;
 
-		/** The cumulative time the user has been a member for the given level in complete months (the time is rounded down to the nearest integer). */
+		/**
+		 * The cumulative time the user has been a member for the given level in complete months (the time is rounded down to the nearest integer).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberTotalDurationMonths?: number | null;
 	}
 	export interface MembershipsDurationAtLevelFormProperties {
@@ -5342,7 +5459,10 @@ export namespace MyNS {
 		/** The date and time when the user became a continuous member for the given level. */
 		memberSince: FormControl<string | null | undefined>,
 
-		/** The cumulative time the user has been a member for the given level in complete months (the time is rounded down to the nearest integer). */
+		/**
+		 * The cumulative time the user has been a member for the given level in complete months (the time is rounded down to the nearest integer).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memberTotalDurationMonths: FormControl<number | null | undefined>,
 	}
 	export function CreateMembershipsDurationAtLevelFormGroup() {
@@ -5553,12 +5673,18 @@ export namespace MyNS {
 
 	export interface PlaylistContentDetails {
 
-		/** The number of videos in the playlist. */
+		/**
+		 * The number of videos in the playlist.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		itemCount?: number | null;
 	}
 	export interface PlaylistContentDetailsFormProperties {
 
-		/** The number of videos in the playlist. */
+		/**
+		 * The number of videos in the playlist.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		itemCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylistContentDetailsFormGroup() {
@@ -5733,7 +5859,10 @@ export namespace MyNS {
 	/** A *playlistImage* resource identifies another resource, such as a image, that is associated with a playlist. In addition, the playlistImage resource contains details about the included resource that pertain specifically to how that resource is used in that playlist. YouTube uses playlists to identify special collections of videos for a channel, such as: - uploaded videos - favorite videos - positively rated (liked) videos - watch history To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company's videos, playlists, and other YouTube information. You can retrieve the playlist IDs for each of these lists from the channel resource for a given channel. You can then use the playlistImages.list method to retrieve image data for any of those playlists. You can also add or remove images from those lists by calling the playlistImages.insert and playlistImages.delete methods. */
 	export interface PlaylistImageSnippet {
 
-		/** The image height. */
+		/**
+		 * The image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The Playlist ID of the playlist this image is associated with. */
@@ -5742,14 +5871,20 @@ export namespace MyNS {
 		/** The image type. */
 		type?: PlaylistImageSnippetType | null;
 
-		/** The image width. */
+		/**
+		 * The image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** A *playlistImage* resource identifies another resource, such as a image, that is associated with a playlist. In addition, the playlistImage resource contains details about the included resource that pertain specifically to how that resource is used in that playlist. YouTube uses playlists to identify special collections of videos for a channel, such as: - uploaded videos - favorite videos - positively rated (liked) videos - watch history To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company's videos, playlists, and other YouTube information. You can retrieve the playlist IDs for each of these lists from the channel resource for a given channel. You can then use the playlistImages.list method to retrieve image data for any of those playlists. You can also add or remove images from those lists by calling the playlistImages.insert and playlistImages.delete methods. */
 	export interface PlaylistImageSnippetFormProperties {
 
-		/** The image height. */
+		/**
+		 * The image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The Playlist ID of the playlist this image is associated with. */
@@ -5758,7 +5893,10 @@ export namespace MyNS {
 		/** The image type. */
 		type: FormControl<PlaylistImageSnippetType | null | undefined>,
 
-		/** The image width. */
+		/**
+		 * The image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylistImageSnippetFormGroup() {
@@ -5911,7 +6049,10 @@ export namespace MyNS {
 		/** The ID that YouTube uses to uniquely identify thGe playlist that the playlist item is in. */
 		playlistId?: string | null;
 
-		/** The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth. */
+		/**
+		 * The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		position?: number | null;
 
 		/** The date and time that the item was added to the playlist. */
@@ -5948,7 +6089,10 @@ export namespace MyNS {
 		/** The ID that YouTube uses to uniquely identify thGe playlist that the playlist item is in. */
 		playlistId: FormControl<string | null | undefined>,
 
-		/** The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth. */
+		/**
+		 * The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** The date and time that the item was added to the playlist. */
@@ -6327,10 +6471,16 @@ export namespace MyNS {
 		/** The type of activity this subscription is for (only uploads, everything). */
 		activityType?: SubscriptionContentDetailsActivityType | null;
 
-		/** The number of new items in the subscription since its content was last read. */
+		/**
+		 * The number of new items in the subscription since its content was last read.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		newItemCount?: number | null;
 
-		/** The approximate number of items that the subscription points to. */
+		/**
+		 * The approximate number of items that the subscription points to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItemCount?: number | null;
 	}
 
@@ -6340,10 +6490,16 @@ export namespace MyNS {
 		/** The type of activity this subscription is for (only uploads, everything). */
 		activityType: FormControl<SubscriptionContentDetailsActivityType | null | undefined>,
 
-		/** The number of new items in the subscription since its content was last read. */
+		/**
+		 * The number of new items in the subscription since its content was last read.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		newItemCount: FormControl<number | null | undefined>,
 
-		/** The approximate number of items that the subscription points to. */
+		/**
+		 * The approximate number of items that the subscription points to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionContentDetailsFormGroup() {
@@ -6570,7 +6726,10 @@ export namespace MyNS {
 		/** True if this event is a Super Sticker event. */
 		isSuperStickerEvent?: boolean | null;
 
-		/** The tier for the paid message, which is based on the amount of money spent to purchase the message. */
+		/**
+		 * The tier for the paid message, which is based on the amount of money spent to purchase the message.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		messageType?: number | null;
 		superStickerMetadata?: SuperStickerMetadata;
 		supporterDetails?: ChannelProfileDetails;
@@ -6598,7 +6757,10 @@ export namespace MyNS {
 		/** True if this event is a Super Sticker event. */
 		isSuperStickerEvent: FormControl<boolean | null | undefined>,
 
-		/** The tier for the paid message, which is based on the amount of money spent to purchase the message. */
+		/**
+		 * The tier for the paid message, which is based on the amount of money spent to purchase the message.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		messageType: FormControl<number | null | undefined>,
 	}
 	export function CreateSuperChatEventSnippetFormGroup() {
@@ -7140,7 +7302,10 @@ export namespace MyNS {
 		/** The audio stream's bitrate, in bits per second. */
 		bitrateBps?: string | null;
 
-		/** The number of audio channels that the stream contains. */
+		/**
+		 * The number of audio channels that the stream contains.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		channelCount?: number | null;
 
 		/** The audio codec that the stream uses. */
@@ -7156,7 +7321,10 @@ export namespace MyNS {
 		/** The audio stream's bitrate, in bits per second. */
 		bitrateBps: FormControl<string | null | undefined>,
 
-		/** The number of audio channels that the stream contains. */
+		/**
+		 * The number of audio channels that the stream contains.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		channelCount: FormControl<number | null | undefined>,
 
 		/** The audio codec that the stream uses. */
@@ -7181,7 +7349,10 @@ export namespace MyNS {
 	/** Information about a video stream. */
 	export interface VideoFileDetailsVideoStream {
 
-		/** The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed. */
+		/**
+		 * The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed.
+		 * Type: double
+		 */
 		aspectRatio?: number | null;
 
 		/** The video stream's bitrate, in bits per second. */
@@ -7190,10 +7361,16 @@ export namespace MyNS {
 		/** The video codec that the stream uses. */
 		codec?: string | null;
 
-		/** The video stream's frame rate, in frames per second. */
+		/**
+		 * The video stream's frame rate, in frames per second.
+		 * Type: double
+		 */
 		frameRateFps?: number | null;
 
-		/** The encoded video content's height in pixels. */
+		/**
+		 * The encoded video content's height in pixels.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		heightPixels?: number | null;
 
 		/** The amount that YouTube needs to rotate the original source content to properly display the video. */
@@ -7202,14 +7379,20 @@ export namespace MyNS {
 		/** A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code. */
 		vendor?: string | null;
 
-		/** The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels. */
+		/**
+		 * The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		widthPixels?: number | null;
 	}
 
 	/** Information about a video stream. */
 	export interface VideoFileDetailsVideoStreamFormProperties {
 
-		/** The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed. */
+		/**
+		 * The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed.
+		 * Type: double
+		 */
 		aspectRatio: FormControl<number | null | undefined>,
 
 		/** The video stream's bitrate, in bits per second. */
@@ -7218,10 +7401,16 @@ export namespace MyNS {
 		/** The video codec that the stream uses. */
 		codec: FormControl<string | null | undefined>,
 
-		/** The video stream's frame rate, in frames per second. */
+		/**
+		 * The video stream's frame rate, in frames per second.
+		 * Type: double
+		 */
 		frameRateFps: FormControl<number | null | undefined>,
 
-		/** The encoded video content's height in pixels. */
+		/**
+		 * The encoded video content's height in pixels.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
 		/** The amount that YouTube needs to rotate the original source content to properly display the video. */
@@ -7230,7 +7419,10 @@ export namespace MyNS {
 		/** A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code. */
 		vendor: FormControl<string | null | undefined>,
 
-		/** The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels. */
+		/**
+		 * The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoFileDetailsVideoStreamFormGroup() {
@@ -8276,6 +8468,7 @@ export namespace MyNS {
 		 * Get youtube/v3/activities
 		 * @param {Array<string>} part The *part* parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set *part=snippet*, the API response will also contain all of those nested properties.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {ActivityListResponse} Successful response
 		 */
@@ -8380,6 +8573,7 @@ export namespace MyNS {
 		 * @param {Array<string>} id Return the channels with the specified IDs.
 		 * @param {boolean} managedByMe Return the channels managed by the authenticated user.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {boolean} mine Return the ids of channels owned by the authenticated user.
 		 * @param {boolean} mySubscribers Return the channels subscribed to the authenticated user
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
@@ -8409,6 +8603,7 @@ export namespace MyNS {
 		 * @param {string} channelId Returns the comment threads for all the channel comments (ie does not include comments left on videos).
 		 * @param {Array<string>} id Returns the comment threads with the given IDs for Stubby or Apiary.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {CommentSnippetModerationStatus} moderationStatus Limits the returned comment threads to those with the specified moderation status. Not compatible with the 'id' filter. Valid values: published, heldForReview, likelySpam.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @param {string} searchTerms Limits the returned comment threads to those matching the specified key words. Not compatible with the 'id' filter.
@@ -8455,6 +8650,7 @@ export namespace MyNS {
 		 * @param {Array<string>} part The *part* parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.
 		 * @param {Array<string>} id Returns the comments with the given IDs for One Platform.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @param {string} parentId Returns replies to the specified comment. Note, currently YouTube features only one level of replies (ie replies to top level comments). However replies to replies may be supported in the future.
 		 * @param {Youtube_commentThreads_listTextFormat} textFormat The requested text format for the returned comments.
@@ -8546,6 +8742,7 @@ export namespace MyNS {
 		 * @param {Youtube_liveBroadcasts_listBroadcastType} broadcastType Return only broadcasts with the selected type.
 		 * @param {Array<string>} id Return broadcasts with the given ids from Stubby or Apiary.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} onBehalfOfContentOwnerChannel This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
@@ -8655,8 +8852,10 @@ export namespace MyNS {
 		 * @param {Array<string>} part The *part* parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet.
 		 * @param {string} hl Specifies the localization language in which the system messages should be returned.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 200    Maximum: 2000
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identify other pages that could be retrieved.
 		 * @param {number} profileImageSize Specifies the size of the profile image that should be returned for each user.
+		 *     Minimum: 16    Maximum: 720
 		 * @return {LiveChatMessageListResponse} Successful response
 		 */
 		Youtube_liveChatMessages_list(liveChatId: string, part: Array<string>, hl: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, profileImageSize: number | null | undefined): Observable<LiveChatMessageListResponse> {
@@ -8688,6 +8887,7 @@ export namespace MyNS {
 		 * @param {string} liveChatId The id of the live chat for which moderators should be returned.
 		 * @param {Array<string>} part The *part* parameter specifies the liveChatModerator resource parts that the API response will include. Supported values are id and snippet.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {LiveChatModeratorListResponse} Successful response
 		 */
@@ -8722,6 +8922,7 @@ export namespace MyNS {
 		 * @param {Array<string>} part The *part* parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.
 		 * @param {Array<string>} id Return LiveStreams with the given ids from Stubby or Apiary.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} onBehalfOfContentOwnerChannel This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
@@ -8762,6 +8963,7 @@ export namespace MyNS {
 		 * @param {string} filterByMemberChannelId Comma separated list of channel IDs. Only data about members that are part of this list will be included in the response.
 		 * @param {string} hasAccessToLevel Filter members in the results set to the ones that have access to a level.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 1000
 		 * @param {Youtube_members_listMode} mode Parameter that specifies which channel members to return.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {MemberListResponse} Successful response
@@ -8795,6 +8997,7 @@ export namespace MyNS {
 		 * Retrieves a list of resources, possibly filtered.
 		 * Get youtube/v3/playlistImages
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} onBehalfOfContentOwnerChannel This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
@@ -8844,6 +9047,7 @@ export namespace MyNS {
 		 * Get youtube/v3/playlistItems
 		 * @param {Array<string>} part The *part* parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set *part=snippet*, the API response will contain all of those properties.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @param {string} playlistId Return the playlist items within the given playlist.
@@ -8894,6 +9098,7 @@ export namespace MyNS {
 		 * @param {string} hl Return content in specified language
 		 * @param {Array<string>} id Return the playlists with the given IDs for Stubby or Apiary.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {boolean} mine Return the playlists owned by the authenticated user.
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} onBehalfOfContentOwnerChannel This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
@@ -8940,6 +9145,7 @@ export namespace MyNS {
 		 * @param {string} location Filter on location of the video
 		 * @param {string} locationRadius Filter on distance from the location (specified above).
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {Youtube_search_listOrder} order Sort order of the results.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
@@ -8983,6 +9189,7 @@ export namespace MyNS {
 		 * @param {string} forChannelId Return the subscriptions to the subset of these channels that the authenticated user is subscribed to.
 		 * @param {Array<string>} id Return the subscriptions with the given IDs for Stubby or Apiary.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 0    Maximum: 50
 		 * @param {boolean} mine Flag for returning the subscriptions of the authenticated user.
 		 * @param {boolean} mySubscribers Return the subscribers of the given channel owner.
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
@@ -9011,6 +9218,7 @@ export namespace MyNS {
 		 * @param {Array<string>} part The *part* parameter specifies the superChatEvent resource parts that the API response will include. This parameter is currently not supported.
 		 * @param {string} hl Return rendered funding amounts in specified language.
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {SuperChatEventListResponse} Successful response
 		 */
@@ -9124,8 +9332,12 @@ export namespace MyNS {
 		 * @param {Youtube_videos_listChart} chart Return the videos that are in the specified chart.
 		 * @param {string} hl Stands for "host language". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX).
 		 * @param {Array<string>} id Return videos with the given ids.
+		 * @param {number} maxHeight Minimum: 72
+		 *     Maximum: 8192
 		 * @param {number} maxResults The *maxResults* parameter specifies the maximum number of items that should be returned in the result set. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} maxWidth Return the player with maximum height specified in
+		 *     Minimum: 72    Maximum: 8192
 		 * @param {CommentSnippetViewerRating} myRating Return videos liked/disliked by the authenticated user. Does not support RateType.RATED_TYPE_NONE.
 		 * @param {string} onBehalfOfContentOwner *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @param {string} pageToken The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.

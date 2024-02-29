@@ -103,12 +103,17 @@ export namespace MyNS {
 
 		/** Encoding of the file. */
 		encoding?: string | null;
-		expiresAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiresAt?: string | null;
 
 		/** Extension of the file. ex: .jpg, .png, .gif, .pdf, etc. */
 		extension?: string | null;
 
-		/** For image and video files, the height of the content. */
+		/**
+		 * For image and video files, the height of the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/**
@@ -129,8 +134,11 @@ export namespace MyNS {
 		/** Path of the file in the file manager. */
 		path?: string | null;
 
-		/** Size of the file in bytes. */
-		size?: number | null;
+		/**
+		 * Size of the file in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER. */
 		type?: string | null;
@@ -144,7 +152,10 @@ export namespace MyNS {
 		/** URL of the given file. This URL can change depending on the domain settings of the account. Will use the select file hosting domain. */
 		url?: string | null;
 
-		/** For image and video files, the width of the content. */
+		/**
+		 * For image and video files, the width of the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -177,12 +188,17 @@ export namespace MyNS {
 
 		/** Encoding of the file. */
 		encoding: FormControl<string | null | undefined>,
-		expiresAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiresAt: FormControl<string | null | undefined>,
 
 		/** Extension of the file. ex: .jpg, .png, .gif, .pdf, etc. */
 		extension: FormControl<string | null | undefined>,
 
-		/** For image and video files, the height of the content. */
+		/**
+		 * For image and video files, the height of the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
@@ -203,8 +219,11 @@ export namespace MyNS {
 		/** Path of the file in the file manager. */
 		path: FormControl<string | null | undefined>,
 
-		/** Size of the file in bytes. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Size of the file in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER. */
 		type: FormControl<string | null | undefined>,
@@ -218,7 +237,10 @@ export namespace MyNS {
 		/** URL of the given file. This URL can change depending on the domain settings of the account. Will use the select file hosting domain. */
 		url: FormControl<string | null | undefined>,
 
-		/** For image and video files, the width of the content. */
+		/**
+		 * For image and video files, the width of the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateFileFormGroup() {
@@ -229,7 +251,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			defaultHostingUrl: new FormControl<string | null | undefined>(undefined),
 			encoding: new FormControl<string | null | undefined>(undefined),
-			expiresAt: new FormControl<number | null | undefined>(undefined),
+			expiresAt: new FormControl<string | null | undefined>(undefined),
 			extension: new FormControl<string | null | undefined>(undefined),
 			height: new FormControl<number | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -237,7 +259,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			parentFolderId: new FormControl<string | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -490,7 +512,10 @@ export namespace MyNS {
 		/** Link to check the status of the requested task. */
 		links?: {[id: string]: string };
 
-		/** Number of errors resulting from the task. */
+		/**
+		 * Number of errors resulting from the task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numErrors?: number | null;
 
 		/** Timestamp of when the task was requested. */
@@ -528,7 +553,10 @@ export namespace MyNS {
 		/** Link to check the status of the requested task. */
 		links: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Number of errors resulting from the task. */
+		/**
+		 * Number of errors resulting from the task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numErrors: FormControl<number | null | undefined>,
 
 		/** Timestamp of when the task was requested. */
@@ -643,7 +671,9 @@ export namespace MyNS {
 		 * NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload a new file and return the found duplicate instead.
 		 */
 		access?: FileAccess | null;
-		expiresAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiresAt?: string | null;
 
 		/** Mark whether the file should be used in new content or not. */
 		isUsableInContent?: boolean | null;
@@ -665,7 +695,9 @@ export namespace MyNS {
 		 * NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload a new file and return the found duplicate instead.
 		 */
 		access: FormControl<FileAccess | null | undefined>,
-		expiresAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expiresAt: FormControl<string | null | undefined>,
 
 		/** Mark whether the file should be used in new content or not. */
 		isUsableInContent: FormControl<boolean | null | undefined>,
@@ -682,7 +714,7 @@ export namespace MyNS {
 	export function CreateFileUpdateInputFormGroup() {
 		return new FormGroup<FileUpdateInputFormProperties>({
 			access: new FormControl<FileAccess | null | undefined>(undefined),
-			expiresAt: new FormControl<number | null | undefined>(undefined),
+			expiresAt: new FormControl<string | null | undefined>(undefined),
 			isUsableInContent: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			parentFolderId: new FormControl<string | null | undefined>(undefined),
@@ -705,7 +737,10 @@ export namespace MyNS {
 		/** Link to check the status of the task. */
 		links?: {[id: string]: string };
 
-		/** Number of errors resulting from the requested changes. */
+		/**
+		 * Number of errors resulting from the requested changes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numErrors?: number | null;
 
 		/** Timestamp representing when the task was requested. */
@@ -741,7 +776,10 @@ export namespace MyNS {
 		/** Link to check the status of the task. */
 		links: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Number of errors resulting from the requested changes. */
+		/**
+		 * Number of errors resulting from the requested changes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numErrors: FormControl<number | null | undefined>,
 
 		/** Timestamp representing when the task was requested. */
@@ -832,8 +870,11 @@ export namespace MyNS {
 		/** New name. If specified the folder's name and fullPath will change. All children of the folder will be updated accordingly. */
 		name?: string | null;
 
-		/** New parent folderId. If changed, the folder and all it's children will be moved into the specified folder. parentFolderId and parentFolderPath cannot be specified at the same time. */
-		parentFolderId?: number | null;
+		/**
+		 * New parent folderId. If changed, the folder and all it's children will be moved into the specified folder. parentFolderId and parentFolderPath cannot be specified at the same time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentFolderId?: string | null;
 	}
 
 	/** Object for updating folders. */
@@ -848,14 +889,17 @@ export namespace MyNS {
 		/** New name. If specified the folder's name and fullPath will change. All children of the folder will be updated accordingly. */
 		name: FormControl<string | null | undefined>,
 
-		/** New parent folderId. If changed, the folder and all it's children will be moved into the specified folder. parentFolderId and parentFolderPath cannot be specified at the same time. */
-		parentFolderId: FormControl<number | null | undefined>,
+		/**
+		 * New parent folderId. If changed, the folder and all it's children will be moved into the specified folder. parentFolderId and parentFolderPath cannot be specified at the same time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentFolderId: FormControl<string | null | undefined>,
 	}
 	export function CreateFolderUpdateInputFormGroup() {
 		return new FormGroup<FolderUpdateInputFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
-			parentFolderId: new FormControl<number | null | undefined>(undefined),
+			parentFolderId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1053,7 +1097,10 @@ export namespace MyNS {
 		 */
 		extension: string;
 
-		/** For image and video files. The height of the file. */
+		/**
+		 * For image and video files. The height of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/**
@@ -1065,6 +1112,7 @@ export namespace MyNS {
 		/**
 		 * Size in bytes of the requested file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
@@ -1080,7 +1128,10 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** For image and video files. The width of the file. */
+		/**
+		 * For image and video files. The width of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1099,7 +1150,10 @@ export namespace MyNS {
 		 */
 		extension: FormControl<string | null | undefined>,
 
-		/** For image and video files. The height of the file. */
+		/**
+		 * For image and video files. The height of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
@@ -1111,6 +1165,7 @@ export namespace MyNS {
 		/**
 		 * Size in bytes of the requested file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -1126,7 +1181,10 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** For image and video files. The width of the file. */
+		/**
+		 * For image and video files. The width of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSignedUrlFormGroup() {
@@ -1176,16 +1234,21 @@ export namespace MyNS {
 		 * @param {Array<string>} properties Desired file properties in the return object.
 		 * @param {string} after The maximum offset of items for a given search is 10000. Narrow your search down if you are reaching this limit.
 		 * @param {number} limit Number of items to return. Maximum limit is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort Sort files by a given field.
 		 * @param {string} id Search files by given ID.
 		 * @param {Date} createdAt Search files by time of creation.
 		 * @param {Date} updatedAt Search files by time of latest updated.
 		 * @param {string} name Search for files containing the given name.
 		 * @param {string} path Search files by path.
-		 * @param {number} parentFolderId Search files within given folderId.
-		 * @param {number} size Query by file size.
+		 * @param {string} parentFolderId Search files within given folderId.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} size Query by file size.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} height Search files by height of image or video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width Search files by width of image or video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} encoding Search files with specified encoding.
 		 * @param {string} type Filter by provided file type.
 		 * @param {string} extension Search files by given extension.
@@ -1194,7 +1257,7 @@ export namespace MyNS {
 		 * @param {boolean} allowsAnonymousAccess If 'true' will show private files; if 'false' will show public files
 		 * @return {CollectionResponseFile} successful operation
 		 */
-		Get_SlashfilesSlashv3SlashfilesSlashsearch_doSearch(properties: Array<string> | null | undefined, after: string | null | undefined, before: string | null | undefined, limit: number | null | undefined, sort: Array<string> | null | undefined, id: string | null | undefined, createdAt: Date | null | undefined, createdAtLte: Date | null | undefined, createdAtGte: Date | null | undefined, updatedAt: Date | null | undefined, updatedAtLte: Date | null | undefined, updatedAtGte: Date | null | undefined, name: string | null | undefined, path: string | null | undefined, parentFolderId: number | null | undefined, size: number | null | undefined, height: number | null | undefined, width: number | null | undefined, encoding: string | null | undefined, type: string | null | undefined, extension: string | null | undefined, url: string | null | undefined, isUsableInContent: boolean | null | undefined, allowsAnonymousAccess: boolean | null | undefined): Observable<CollectionResponseFile> {
+		Get_SlashfilesSlashv3SlashfilesSlashsearch_doSearch(properties: Array<string> | null | undefined, after: string | null | undefined, before: string | null | undefined, limit: number | null | undefined, sort: Array<string> | null | undefined, id: string | null | undefined, createdAt: Date | null | undefined, createdAtLte: Date | null | undefined, createdAtGte: Date | null | undefined, updatedAt: Date | null | undefined, updatedAtLte: Date | null | undefined, updatedAtGte: Date | null | undefined, name: string | null | undefined, path: string | null | undefined, parentFolderId: string | null | undefined, size: string | null | undefined, height: number | null | undefined, width: number | null | undefined, encoding: string | null | undefined, type: string | null | undefined, extension: string | null | undefined, url: string | null | undefined, isUsableInContent: boolean | null | undefined, allowsAnonymousAccess: boolean | null | undefined): Observable<CollectionResponseFile> {
 			return this.http.get<CollectionResponseFile>(this.baseUri + 'files/v3/files/search?' + properties?.map(z => `properties=${encodeURIComponent(z)}`).join('&') + '&after=' + (after == null ? '' : encodeURIComponent(after)) + '&before=' + (before == null ? '' : encodeURIComponent(before)) + '&limit=' + limit + '&' + sort?.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&createdAt=' + createdAt?.toISOString() + '&createdAtLte=' + createdAtLte?.toISOString() + '&createdAtGte=' + createdAtGte?.toISOString() + '&updatedAt=' + updatedAt?.toISOString() + '&updatedAtLte=' + updatedAtLte?.toISOString() + '&updatedAtGte=' + updatedAtGte?.toISOString() + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&path=' + (path == null ? '' : encodeURIComponent(path)) + '&parentFolderId=' + parentFolderId + '&size=' + size + '&height=' + height + '&width=' + width + '&encoding=' + (encoding == null ? '' : encodeURIComponent(encoding)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '&extension=' + (extension == null ? '' : encodeURIComponent(extension)) + '&url=' + (url == null ? '' : encodeURIComponent(url)) + '&isUsableInContent=' + isUsableInContent + '&allowsAnonymousAccess=' + allowsAnonymousAccess, {});
 		}
 
@@ -1257,11 +1320,12 @@ export namespace MyNS {
 		 * Get files/v3/files/{fileId}/signed-url
 		 * @param {string} fileId ID of file.
 		 * @param {Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize} size For image files. This will resize the image to the desired size before sharing. Does not affect the original file, just the file served by this signed URL.
-		 * @param {number} expirationSeconds How long in seconds the link will provide access to the file.
+		 * @param {string} expirationSeconds How long in seconds the link will provide access to the file.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} upscale If size is provided, this will upscale the image to fit the size dimensions.
 		 * @return {SignedUrl} successful operation
 		 */
-		Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrl(fileId: string, size: Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize | null | undefined, expirationSeconds: number | null | undefined, upscale: boolean | null | undefined): Observable<SignedUrl> {
+		Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrl(fileId: string, size: Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize | null | undefined, expirationSeconds: string | null | undefined, upscale: boolean | null | undefined): Observable<SignedUrl> {
 			return this.http.get<SignedUrl>(this.baseUri + 'files/v3/files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/signed-url&size=' + size + '&expirationSeconds=' + expirationSeconds + '&upscale=' + upscale, {});
 		}
 
@@ -1283,16 +1347,18 @@ export namespace MyNS {
 		 * @param {Array<string>} properties Properties that should be included in the returned folders.
 		 * @param {string} after The maximum offset of items for a given search is 10000. Narrow your search down if you are reaching this limit.
 		 * @param {number} limit Limit of results to return. Max limit is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort Sort results by given property. For example -name sorts by name field descending, name sorts by name field ascending.
 		 * @param {string} id Search folder by given ID.
 		 * @param {Date} createdAt Search for folders with the given creation timestamp.
 		 * @param {Date} updatedAt Search for folder at given update timestamp.
 		 * @param {string} name Search for folders containing the specified name.
 		 * @param {string} path Search for folders by path.
-		 * @param {number} parentFolderId Search for folders with the given parent folderId.
+		 * @param {string} parentFolderId Search for folders with the given parent folderId.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CollectionResponseFolder} successful operation
 		 */
-		Get_SlashfilesSlashv3SlashfoldersSlashsearch_doSearch(properties: Array<string> | null | undefined, after: string | null | undefined, before: string | null | undefined, limit: number | null | undefined, sort: Array<string> | null | undefined, id: string | null | undefined, createdAt: Date | null | undefined, createdAtLte: Date | null | undefined, createdAtGte: Date | null | undefined, updatedAt: Date | null | undefined, updatedAtLte: Date | null | undefined, updatedAtGte: Date | null | undefined, name: string | null | undefined, path: string | null | undefined, parentFolderId: number | null | undefined): Observable<CollectionResponseFolder> {
+		Get_SlashfilesSlashv3SlashfoldersSlashsearch_doSearch(properties: Array<string> | null | undefined, after: string | null | undefined, before: string | null | undefined, limit: number | null | undefined, sort: Array<string> | null | undefined, id: string | null | undefined, createdAt: Date | null | undefined, createdAtLte: Date | null | undefined, createdAtGte: Date | null | undefined, updatedAt: Date | null | undefined, updatedAtLte: Date | null | undefined, updatedAtGte: Date | null | undefined, name: string | null | undefined, path: string | null | undefined, parentFolderId: string | null | undefined): Observable<CollectionResponseFolder> {
 			return this.http.get<CollectionResponseFolder>(this.baseUri + 'files/v3/folders/search?' + properties?.map(z => `properties=${encodeURIComponent(z)}`).join('&') + '&after=' + (after == null ? '' : encodeURIComponent(after)) + '&before=' + (before == null ? '' : encodeURIComponent(before)) + '&limit=' + limit + '&' + sort?.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&createdAt=' + createdAt?.toISOString() + '&createdAtLte=' + createdAtLte?.toISOString() + '&createdAtGte=' + createdAtGte?.toISOString() + '&updatedAt=' + updatedAt?.toISOString() + '&updatedAtLte=' + updatedAtLte?.toISOString() + '&updatedAtGte=' + updatedAtGte?.toISOString() + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&path=' + (path == null ? '' : encodeURIComponent(path)) + '&parentFolderId=' + parentFolderId, {});
 		}
 

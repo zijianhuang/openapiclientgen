@@ -354,7 +354,10 @@ export namespace MyNS {
 		/** The entire email message in an RFC 2822 formatted and base64url encoded string. Returned in `messages.get` and `drafts.get` responses when the `format=RAW` parameter is supplied. */
 		raw?: string | null;
 
-		/** Estimated size in bytes of the message. */
+		/**
+		 * Estimated size in bytes of the message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeEstimate?: number | null;
 
 		/** A short part of the message text. */
@@ -379,7 +382,10 @@ export namespace MyNS {
 		/** The entire email message in an RFC 2822 formatted and base64url encoded string. Returned in `messages.get` and `drafts.get` responses when the `format=RAW` parameter is supplied. */
 		raw: FormControl<string | null | undefined>,
 
-		/** Estimated size in bytes of the message. */
+		/**
+		 * Estimated size in bytes of the message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeEstimate: FormControl<number | null | undefined>,
 
 		/** A short part of the message text. */
@@ -455,7 +461,10 @@ export namespace MyNS {
 		/** The body data of a MIME message part as a base64url encoded string. May be empty for MIME container types that have no message body or when the body data is sent as a separate attachment. An attachment ID is present if the body data is contained in a separate attachment. */
 		data?: string | null;
 
-		/** Number of bytes for the message part data (encoding notwithstanding). */
+		/**
+		 * Number of bytes for the message part data (encoding notwithstanding).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 
@@ -468,7 +477,10 @@ export namespace MyNS {
 		/** The body data of a MIME message part as a base64url encoded string. May be empty for MIME container types that have no message body or when the body data is sent as a separate attachment. An attachment ID is present if the body data is contained in a separate attachment. */
 		data: FormControl<string | null | undefined>,
 
-		/** Number of bytes for the message part data (encoding notwithstanding). */
+		/**
+		 * Number of bytes for the message part data (encoding notwithstanding).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateMessagePartBodyFormGroup() {
@@ -591,7 +603,10 @@ export namespace MyNS {
 		/** Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. */
 		query?: string | null;
 
-		/** The size of the entire RFC822 message in bytes, including all headers and attachments. */
+		/**
+		 * The size of the entire RFC822 message in bytes, including all headers and attachments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
 		/** How the message size in bytes should be in relation to the size field. */
@@ -622,7 +637,10 @@ export namespace MyNS {
 		/** Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. */
 		query: FormControl<string | null | undefined>,
 
-		/** The size of the entire RFC822 message in bytes, including all headers and attachments. */
+		/**
+		 * The size of the entire RFC822 message in bytes, including all headers and attachments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** How the message size in bytes should be in relation to the size field. */
@@ -788,7 +806,10 @@ export namespace MyNS {
 		/** The action that will be executed on a message when it is marked as deleted and expunged from the last visible IMAP folder. */
 		expungeBehavior?: ImapSettingsExpungeBehavior | null;
 
-		/** An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit. */
+		/**
+		 * An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFolderSize?: number | null;
 	}
 
@@ -804,7 +825,10 @@ export namespace MyNS {
 		/** The action that will be executed on a message when it is marked as deleted and expunged from the last visible IMAP folder. */
 		expungeBehavior: FormControl<ImapSettingsExpungeBehavior | null | undefined>,
 
-		/** An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit. */
+		/**
+		 * An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFolderSize: FormControl<number | null | undefined>,
 	}
 	export function CreateImapSettingsFormGroup() {
@@ -833,19 +857,31 @@ export namespace MyNS {
 		/** The visibility of messages with this label in the message list in the Gmail web interface. */
 		messageListVisibility?: LabelMessageListVisibility | null;
 
-		/** The total number of messages with the label. */
+		/**
+		 * The total number of messages with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesTotal?: number | null;
 
-		/** The number of unread messages with the label. */
+		/**
+		 * The number of unread messages with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesUnread?: number | null;
 
 		/** The display name of the label. */
 		name?: string | null;
 
-		/** The total number of threads with the label. */
+		/**
+		 * The total number of threads with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsTotal?: number | null;
 
-		/** The number of unread threads with the label. */
+		/**
+		 * The number of unread threads with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsUnread?: number | null;
 
 		/** The owner type for the label. User labels are created by the user and can be modified and deleted by the user and can be applied to any message or thread. System labels are internally created and cannot be added, modified, or deleted. System labels may be able to be applied to or removed from messages and threads under some circumstances but this is not guaranteed. For example, users can apply and remove the `INBOX` and `UNREAD` labels from messages and threads, but cannot apply or remove the `DRAFTS` or `SENT` labels from messages or threads. */
@@ -864,19 +900,31 @@ export namespace MyNS {
 		/** The visibility of messages with this label in the message list in the Gmail web interface. */
 		messageListVisibility: FormControl<LabelMessageListVisibility | null | undefined>,
 
-		/** The total number of messages with the label. */
+		/**
+		 * The total number of messages with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesTotal: FormControl<number | null | undefined>,
 
-		/** The number of unread messages with the label. */
+		/**
+		 * The number of unread messages with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesUnread: FormControl<number | null | undefined>,
 
 		/** The display name of the label. */
 		name: FormControl<string | null | undefined>,
 
-		/** The total number of threads with the label. */
+		/**
+		 * The total number of threads with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsTotal: FormControl<number | null | undefined>,
 
-		/** The number of unread threads with the label. */
+		/**
+		 * The number of unread threads with the label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsUnread: FormControl<number | null | undefined>,
 
 		/** The owner type for the label. User labels are created by the user and can be modified and deleted by the user and can be applied to any message or thread. System labels are internally created and cannot be added, modified, or deleted. System labels may be able to be applied to or removed from messages and threads under some circumstances but this is not guaranteed. For example, users can apply and remove the `INBOX` and `UNREAD` labels from messages and threads, but cannot apply or remove the `DRAFTS` or `SENT` labels from messages or threads. */
@@ -1013,7 +1061,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results in the list. */
 		nextPageToken?: string | null;
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate?: number | null;
 	}
 	export interface ListDraftsResponseFormProperties {
@@ -1021,7 +1072,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results in the list. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreateListDraftsResponseFormGroup() {
@@ -1114,7 +1168,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results in the list. */
 		nextPageToken?: string | null;
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate?: number | null;
 	}
 	export interface ListMessagesResponseFormProperties {
@@ -1122,7 +1179,10 @@ export namespace MyNS {
 		/** Token to retrieve the next page of results in the list. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreateListMessagesResponseFormGroup() {
@@ -1233,7 +1293,10 @@ export namespace MyNS {
 		/** The password that will be used for authentication with the SMTP service. This is a write-only field that can be specified in requests to create or update SendAs settings; it is never populated in responses. */
 		password?: string | null;
 
-		/** The port of the SMTP service. Required. */
+		/**
+		 * The port of the SMTP service. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The protocol that will be used to secure communication with the SMTP service. Required. */
@@ -1252,7 +1315,10 @@ export namespace MyNS {
 		/** The password that will be used for authentication with the SMTP service. This is a write-only field that can be specified in requests to create or update SendAs settings; it is never populated in responses. */
 		password: FormControl<string | null | undefined>,
 
-		/** The port of the SMTP service. Required. */
+		/**
+		 * The port of the SMTP service. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol that will be used to secure communication with the SMTP service. Required. */
@@ -1355,7 +1421,10 @@ export namespace MyNS {
 		/** Page token to retrieve the next page of results in the list. */
 		nextPageToken?: string | null;
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate?: number | null;
 
 		/** List of threads. Note that each thread resource does not contain a list of `messages`. The list of `messages` for a given thread can be fetched using the threads.get method. */
@@ -1366,7 +1435,10 @@ export namespace MyNS {
 		/** Page token to retrieve the next page of results in the list. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Estimated total number of results. */
+		/**
+		 * Estimated total number of results.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		resultSizeEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreateListThreadsResponseFormGroup() {
@@ -1501,10 +1573,16 @@ export namespace MyNS {
 		/** The ID of the mailbox's current history record. */
 		historyId?: string | null;
 
-		/** The total number of messages in the mailbox. */
+		/**
+		 * The total number of messages in the mailbox.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesTotal?: number | null;
 
-		/** The total number of threads in the mailbox. */
+		/**
+		 * The total number of threads in the mailbox.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsTotal?: number | null;
 	}
 
@@ -1517,10 +1595,16 @@ export namespace MyNS {
 		/** The ID of the mailbox's current history record. */
 		historyId: FormControl<string | null | undefined>,
 
-		/** The total number of messages in the mailbox. */
+		/**
+		 * The total number of messages in the mailbox.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messagesTotal: FormControl<number | null | undefined>,
 
-		/** The total number of threads in the mailbox. */
+		/**
+		 * The total number of threads in the mailbox.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsTotal: FormControl<number | null | undefined>,
 	}
 	export function CreateProfileFormGroup() {
@@ -1682,6 +1766,7 @@ export namespace MyNS {
 		 * @param {string} userId The user's email address. The special value `me` can be used to indicate the authenticated user.
 		 * @param {boolean} includeSpamTrash Include drafts from `SPAM` and `TRASH` in the results.
 		 * @param {number} maxResults Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to retrieve a specific page of results in the list.
 		 * @param {string} q Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`.
 		 * @return {ListDraftsResponse} Successful response
@@ -1720,6 +1805,7 @@ export namespace MyNS {
 		 * @param {Array<string>} historyTypes History types to be returned by the function
 		 * @param {string} labelId Only return messages with a label matching the ID.
 		 * @param {number} maxResults Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to retrieve a specific page of results in the list.
 		 * @param {string} startHistoryId Required. Returns history records after the specified `startHistoryId`. The supplied `startHistoryId` should be obtained from the `historyId` of a message, thread, or previous `list` response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date `startHistoryId` typically returns an `HTTP 404` error code. A `historyId` is typically valid for at least a week, but in some rare circumstances may be valid for only a few hours. If you receive an `HTTP 404` error response, your application should perform a full sync. If you receive no `nextPageToken` in the response, there are no updates to retrieve and you can store the returned `historyId` for a future request.
 		 * @return {ListHistoryResponse} Successful response
@@ -1799,6 +1885,7 @@ export namespace MyNS {
 		 * @param {boolean} includeSpamTrash Include messages from `SPAM` and `TRASH` in the results.
 		 * @param {Array<string>} labelIds Only return messages with labels that match all of the specified label IDs. Messages in a thread might have labels that other messages in the same thread don't have. To learn more, see [Manage labels on messages and threads](https://developers.google.com/gmail/api/guides/labels#manage_labels_on_messages_threads).
 		 * @param {number} maxResults Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to retrieve a specific page of results in the list.
 		 * @param {string} q Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
 		 * @return {ListMessagesResponse} Successful response
@@ -1931,6 +2018,7 @@ export namespace MyNS {
 		 * Get gmail/v1/users/{userId}/settings/cse/identities
 		 * @param {string} userId The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
 		 * @param {number} pageSize The number of identities to return. If not provided, the page size will default to 20 entries.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token indicating which page of identities to return. If the token is not supplied, then the API will return the first page of results.
 		 * @return {ListCseIdentitiesResponse} Successful response
 		 */
@@ -1986,6 +2074,7 @@ export namespace MyNS {
 		 * Get gmail/v1/users/{userId}/settings/cse/keypairs
 		 * @param {string} userId The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
 		 * @param {number} pageSize The number of key pairs to return. If not provided, the page size will default to 20 entries.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token indicating which page of key pairs to return. If the token is not supplied, then the API will return the first page of results.
 		 * @return {ListCseKeyPairsResponse} Successful response
 		 */
@@ -2403,6 +2492,7 @@ export namespace MyNS {
 		 * @param {boolean} includeSpamTrash Include threads from `SPAM` and `TRASH` in the results.
 		 * @param {Array<string>} labelIds Only return threads with labels that match all of the specified label IDs.
 		 * @param {number} maxResults Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to retrieve a specific page of results in the list.
 		 * @param {string} q Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
 		 * @return {ListThreadsResponse} Successful response

@@ -49,8 +49,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw application activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: number;
+		length: string;
 
 		/**
 		 * The start time of the application activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -87,8 +88,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw application activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: FormControl<number | null | undefined>,
+		length: FormControl<string | null | undefined>,
 
 		/**
 		 * The start time of the application activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -107,7 +109,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -141,7 +143,10 @@ export namespace MyNS {
 	/** Area with units. Units are always "hectare". */
 	export interface Area {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		q: number;
 
 		/** Required */
@@ -151,7 +156,10 @@ export namespace MyNS {
 	/** Area with units. Units are always "hectare". */
 	export interface AreaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		q: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -437,8 +445,11 @@ export namespace MyNS {
 		/** Message indicating reason for validation failure. */
 		error?: string | null;
 
-		/** Size of the export's contents in bytes. */
-		size?: number | null;
+		/**
+		 * Size of the export's contents in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * Current status of the export request:
@@ -472,8 +483,11 @@ export namespace MyNS {
 		/** Message indicating reason for validation failure. */
 		error: FormControl<string | null | undefined>,
 
-		/** Size of the export's contents in bytes. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Size of the export's contents in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * Current status of the export request:
@@ -503,7 +517,7 @@ export namespace MyNS {
 		return new FormGroup<ExportStatusFormProperties>({
 			checksum: new FormControl<string | null | undefined>(undefined),
 			error: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ExportStatusStatus | null | undefined>(undefined, [Validators.required]),
 			xNextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -728,8 +742,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw harvest activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: number;
+		length: string;
 
 		/**
 		 * The start time of the harvest activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -766,8 +781,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw harvest activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: FormControl<number | null | undefined>,
+		length: FormControl<string | null | undefined>,
 
 		/**
 		 * The start time of the harvest activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -786,7 +802,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -982,8 +998,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw planting activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: number;
+		length: string;
 
 		/**
 		 * The start time of the planting activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -1020,8 +1037,9 @@ export namespace MyNS {
 		/**
 		 * The size in bytes of the raw planting activity file.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: FormControl<number | null | undefined>,
+		length: FormControl<string | null | undefined>,
 
 		/**
 		 * The start time of the planting activity. Time in ISO 8601 format with UTC timezone, 3 fractional seconds (https://tools.ietf.org/html/rfc3339).
@@ -1040,7 +1058,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1322,8 +1340,9 @@ export namespace MyNS {
 		/**
 		 * The number of bytes in the attachment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: number;
+		length: string;
 
 		/**
 		 * The status of the attachment. For example : ACTIVE, DELETED
@@ -1356,8 +1375,9 @@ export namespace MyNS {
 		/**
 		 * The number of bytes in the attachment.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: FormControl<number | null | undefined>,
+		length: FormControl<string | null | undefined>,
 
 		/**
 		 * The status of the attachment. For example : ACTIVE, DELETED
@@ -1377,7 +1397,7 @@ export namespace MyNS {
 		return new FormGroup<ScoutingObservationAttachmentFormProperties>({
 			contentType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<ScoutingObservationStatus | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1516,8 +1536,9 @@ export namespace MyNS {
 		/**
 		 * Content size in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: number;
+		length: string;
 
 		/**
 		 * Base64 encoded md5 hash of the content
@@ -1539,8 +1560,9 @@ export namespace MyNS {
 		/**
 		 * Content size in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		length: FormControl<number | null | undefined>,
+		length: FormControl<string | null | undefined>,
 
 		/**
 		 * Base64 encoded md5 hash of the content
@@ -1551,7 +1573,7 @@ export namespace MyNS {
 	export function CreateUploadFormGroup() {
 		return new FormGroup<UploadFormProperties>({
 			contentType: new FormControl<UploadContentType | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			md5: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 

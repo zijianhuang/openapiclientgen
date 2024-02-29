@@ -1476,8 +1476,14 @@ namespace MyNS
 		/// Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application.
 		/// ConnectAppAuthorization appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}/connect
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</param>
-		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ConnectAppAuthorizationResponse> ConnectAppAuthorizationAsync(string appBundleIdentifier, string appAuthorizationIdentifier, ConnectAppAuthorizationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1518,7 +1524,10 @@ namespace MyNS
 		/// Creates an app authorization within an app bundle, which allows AppFabric to connect to an application.
 		/// CreateAppAuthorization appbundles/{appBundleIdentifier}/appauthorizations
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task CreateAppAuthorizationAsync(string appBundleIdentifier, CreateAppAuthorizationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/appauthorizations";
@@ -1552,9 +1561,18 @@ namespace MyNS
 		/// Returns a list of all app authorizations configured for an app bundle.
 		/// ListAppAuthorizations appbundles/{appBundleIdentifier}/appauthorizations
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p></param>
-		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAppAuthorizationsResponse> ListAppAuthorizationsAsync(string appBundleIdentifier, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1621,8 +1639,14 @@ namespace MyNS
 		/// Returns a list of app bundles.
 		/// ListAppBundles appbundles
 		/// </summary>
-		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p></param>
-		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</param>
+		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAppBundlesResponse> ListAppBundlesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1656,7 +1680,10 @@ namespace MyNS
 		/// Creates a data ingestion for an application.
 		/// CreateIngestion appbundles/{appBundleIdentifier}/ingestions
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task CreateIngestionAsync(string appBundleIdentifier, CreateIngestionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/ingestions";
@@ -1690,8 +1717,14 @@ namespace MyNS
 		/// Returns a list of all ingestions configured for an app bundle.
 		/// ListIngestions appbundles/{appBundleIdentifier}/ingestions
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p></param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</param>
 		/// <returns>Success</returns>
 		public async Task<ListIngestionsResponse> ListIngestionsAsync(string appBundleIdentifier, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1726,8 +1759,14 @@ namespace MyNS
 		/// Creates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 		/// CreateIngestionDestination appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task CreateIngestionDestinationAsync(string appBundleIdentifier, string ingestionIdentifier, CreateIngestionDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/ingestions/"+ (ingestionIdentifier==null? "" : System.Uri.EscapeDataString(ingestionIdentifier))+"/ingestiondestinations";
@@ -1761,9 +1800,18 @@ namespace MyNS
 		/// Returns a list of all ingestion destinations configured for an ingestion.
 		/// ListIngestionDestinations appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p></param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</param>
 		/// <returns>Success</returns>
 		public async Task<ListIngestionDestinationsResponse> ListIngestionDestinationsAsync(string appBundleIdentifier, string ingestionIdentifier, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1798,8 +1846,14 @@ namespace MyNS
 		/// Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization.
 		/// DeleteAppAuthorization appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task DeleteAppAuthorizationAsync(string appBundleIdentifier, string appAuthorizationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/appauthorizations/"+ (appAuthorizationIdentifier==null? "" : System.Uri.EscapeDataString(appAuthorizationIdentifier));
@@ -1826,8 +1880,14 @@ namespace MyNS
 		/// Returns information about an app authorization.
 		/// GetAppAuthorization appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppAuthorizationResponse> GetAppAuthorizationAsync(string appBundleIdentifier, string appAuthorizationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1861,8 +1921,14 @@ namespace MyNS
 		/// <p>Updates an app authorization within an app bundle, which allows AppFabric to connect to an application.</p> <p>If the app authorization was in a <code>connected</code> state, updating the app authorization will set it back to a <code>PendingConnect</code> state.</p>
 		/// UpdateAppAuthorization appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appAuthorizationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppAuthorizationResponse> UpdateAppAuthorizationAsync(string appBundleIdentifier, string appAuthorizationIdentifier, UpdateAppAuthorizationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1903,7 +1969,10 @@ namespace MyNS
 		/// Deletes an app bundle. You must delete all associated app authorizations before you can delete an app bundle.
 		/// DeleteAppBundle appbundles/{appBundleIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</param>
+		/// <param name="appBundleIdentifier">The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task DeleteAppBundleAsync(string appBundleIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier));
@@ -1930,7 +1999,10 @@ namespace MyNS
 		/// Returns information about an app bundle.
 		/// GetAppBundle appbundles/{appBundleIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppBundleResponse> GetAppBundleAsync(string appBundleIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1964,8 +2036,14 @@ namespace MyNS
 		/// Deletes an ingestion. You must stop (disable) the ingestion and you must delete all associated ingestion destinations before you can delete an app ingestion.
 		/// DeleteIngestion appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task DeleteIngestionAsync(string appBundleIdentifier, string ingestionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/ingestions/"+ (ingestionIdentifier==null? "" : System.Uri.EscapeDataString(ingestionIdentifier));
@@ -1992,8 +2070,14 @@ namespace MyNS
 		/// Returns information about an ingestion.
 		/// GetIngestion appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIngestionResponse> GetIngestionAsync(string appBundleIdentifier, string ingestionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2027,9 +2111,18 @@ namespace MyNS
 		/// <p>Deletes an ingestion destination.</p> <p>This deletes the association between an ingestion and it's destination. It doesn't delete previously ingested data or the storage destination, such as the Amazon S3 bucket where the data is delivered. If the ingestion destination is deleted while the associated ingestion is enabled, the ingestion will fail and is eventually disabled.</p>
 		/// DeleteIngestionDestination appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task DeleteIngestionDestinationAsync(string appBundleIdentifier, string ingestionIdentifier, string ingestionDestinationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "appbundles/"+ (appBundleIdentifier==null? "" : System.Uri.EscapeDataString(appBundleIdentifier))+"/ingestions/"+ (ingestionIdentifier==null? "" : System.Uri.EscapeDataString(ingestionIdentifier))+"/ingestiondestinations/"+ (ingestionDestinationIdentifier==null? "" : System.Uri.EscapeDataString(ingestionDestinationIdentifier));
@@ -2056,9 +2149,18 @@ namespace MyNS
 		/// Returns information about an ingestion destination.
 		/// GetIngestionDestination appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIngestionDestinationResponse> GetIngestionDestinationAsync(string appBundleIdentifier, string ingestionIdentifier, string ingestionDestinationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2092,9 +2194,18 @@ namespace MyNS
 		/// Updates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 		/// UpdateIngestionDestination appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		/// </summary>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="ingestionDestinationIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIngestionDestinationResponse> UpdateIngestionDestinationAsync(string appBundleIdentifier, string ingestionIdentifier, string ingestionDestinationIdentifier, UpdateIngestionDestinationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2135,7 +2246,10 @@ namespace MyNS
 		/// Returns a list of tags for a resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2169,7 +2283,10 @@ namespace MyNS
 		/// Assigns one or more tags (key-value pairs) to the specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to tag.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to tag.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2210,8 +2327,14 @@ namespace MyNS
 		/// Starts (enables) an ingestion, which collects data from an application.
 		/// StartIngestion appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/start
 		/// </summary>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartIngestionResponse> StartIngestionAsync(string ingestionIdentifier, string appBundleIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2273,8 +2396,14 @@ namespace MyNS
 		/// Stops (disables) an ingestion.
 		/// StopIngestion appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/stop
 		/// </summary>
-		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</param>
-		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</param>
+		/// <param name="ingestionIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="appBundleIdentifier">The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopIngestionResponse> StopIngestionAsync(string ingestionIdentifier, string appBundleIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2303,8 +2432,14 @@ namespace MyNS
 		/// Removes a tag or tags from a resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to untag.</param>
-		/// <param name="tagKeys">The keys of the key-value pairs for the tag or tags you want to remove from the specified resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to untag.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The keys of the key-value pairs for the tag or tags you want to remove from the specified resource.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

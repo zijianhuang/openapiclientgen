@@ -90,8 +90,11 @@ export namespace MyNS {
 		 * @param {string} q query term
 		 * @param {string} s first hit (start index)
 		 * @param {number} e last hit (end index)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} nFrag number of fragment snippets to return (< 10)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lFrag length of fragment snippets (< 200)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of metadata available for the specified aspect and search term
 		 */
 		Search_aspectIdFullsearchGetByQAndSAndEAndNFragAndLFrag(aspectId: Content_aspectIdGetAspectId, q: string, s: string, e: number, nFrag: number, lFrag: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

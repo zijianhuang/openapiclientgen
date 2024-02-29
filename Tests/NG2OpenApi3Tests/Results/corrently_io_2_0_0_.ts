@@ -5,13 +5,22 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Balance {
 
-		/** Sum owned - sum due by account */
+		/**
+		 * Sum owned - sum due by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
-		/** Sum owned by account */
+		/**
+		 * Sum owned by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		haben?: number | null;
 
-		/** Sum due by account */
+		/**
+		 * Sum due by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		soll?: number | null;
 		txs?: Array<Transactions>;
 
@@ -20,13 +29,22 @@ export namespace MyNS {
 	}
 	export interface BalanceFormProperties {
 
-		/** Sum owned - sum due by account */
+		/**
+		 * Sum owned - sum due by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
-		/** Sum owned by account */
+		/**
+		 * Sum owned by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		haben: FormControl<number | null | undefined>,
 
-		/** Sum due by account */
+		/**
+		 * Sum due by account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		soll: FormControl<number | null | undefined>,
 
 		/** Type of subbalance (sub account) */
@@ -47,7 +65,10 @@ export namespace MyNS {
 		/** Pretty print of counter signing party */
 		cashier?: string | null;
 
-		/** Cross signed timestamp of transaction */
+		/**
+		 * Cross signed timestamp of transaction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp?: number | null;
 
 		/** Unique hash of this transaction as provided by counter signing party */
@@ -56,7 +77,10 @@ export namespace MyNS {
 		/** Type of transaction per cashier implementation and schema */
 		txtype?: string | null;
 
-		/** Amount covered by transaction */
+		/**
+		 * Amount covered by transaction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface TransactionsFormProperties {
@@ -64,7 +88,10 @@ export namespace MyNS {
 		/** Pretty print of counter signing party */
 		cashier: FormControl<string | null | undefined>,
 
-		/** Cross signed timestamp of transaction */
+		/**
+		 * Cross signed timestamp of transaction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp: FormControl<number | null | undefined>,
 
 		/** Unique hash of this transaction as provided by counter signing party */
@@ -73,7 +100,10 @@ export namespace MyNS {
 		/** Type of transaction per cashier implementation and schema */
 		txtype: FormControl<string | null | undefined>,
 
-		/** Amount covered by transaction */
+		/**
+		 * Amount covered by transaction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionsFormGroup() {
@@ -91,7 +121,10 @@ export namespace MyNS {
 
 	export interface DispatchLocation {
 
-		/** Percentage of energy */
+		/**
+		 * Percentage of energy
+		 * Type: double
+		 */
 		energy?: number | null;
 
 		/** GeoJSON encoded location of target or source of green energy. */
@@ -99,7 +132,10 @@ export namespace MyNS {
 	}
 	export interface DispatchLocationFormProperties {
 
-		/** Percentage of energy */
+		/**
+		 * Percentage of energy
+		 * Type: double
+		 */
 		energy: FormControl<number | null | undefined>,
 
 		/** GeoJSON encoded location of target or source of green energy. */
@@ -115,48 +151,84 @@ export namespace MyNS {
 
 	export interface ForecastItem {
 
-		/** CO2 footprint in Gramm per kwh (only Green Power) */
+		/**
+		 * CO2 footprint in Gramm per kwh (only Green Power)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom?: number | null;
 
-		/** Local/regional energyprice modification (cent per kWh or euro per MWh). */
+		/**
+		 * Local/regional energyprice modification (cent per kWh or euro per MWh).
+		 * Type: double
+		 */
 		energyprice?: number | null;
 
-		/** Timestamps in Seconds */
+		/**
+		 * Timestamps in Seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epochtime?: number | null;
 
-		/** Actual GreenPowerIndex for given Timestamp (between 0-100) */
+		/**
+		 * Actual GreenPowerIndex for given Timestamp (between 0-100)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gsi?: number | null;
 
 		/** Indicates if scaling is in operation to predict values */
 		scaled?: boolean | null;
 
-		/** Subindex just for Solar Energy */
+		/**
+		 * Subindex just for Solar Energy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sci?: number | null;
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp?: number | null;
 	}
 	export interface ForecastItemFormProperties {
 
-		/** CO2 footprint in Gramm per kwh (only Green Power) */
+		/**
+		 * CO2 footprint in Gramm per kwh (only Green Power)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom: FormControl<number | null | undefined>,
 
-		/** Local/regional energyprice modification (cent per kWh or euro per MWh). */
+		/**
+		 * Local/regional energyprice modification (cent per kWh or euro per MWh).
+		 * Type: double
+		 */
 		energyprice: FormControl<number | null | undefined>,
 
-		/** Timestamps in Seconds */
+		/**
+		 * Timestamps in Seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epochtime: FormControl<number | null | undefined>,
 
-		/** Actual GreenPowerIndex for given Timestamp (between 0-100) */
+		/**
+		 * Actual GreenPowerIndex for given Timestamp (between 0-100)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gsi: FormControl<number | null | undefined>,
 
 		/** Indicates if scaling is in operation to predict values */
 		scaled: FormControl<boolean | null | undefined>,
 
-		/** Subindex just for Solar Energy */
+		/**
+		 * Subindex just for Solar Energy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sci: FormControl<number | null | undefined>,
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp: FormControl<number | null | undefined>,
 	}
 	export function CreateForecastItemFormGroup() {
@@ -174,24 +246,42 @@ export namespace MyNS {
 
 	export interface MarketData {
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_timestamp?: number | null;
 
-		/** Actual Marketprice for regional green power in EUR per MWh */
+		/**
+		 * Actual Marketprice for regional green power in EUR per MWh
+		 * Type: double
+		 */
 		marketprice?: number | null;
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_timestamp?: number | null;
 	}
 	export interface MarketDataFormProperties {
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_timestamp: FormControl<number | null | undefined>,
 
-		/** Actual Marketprice for regional green power in EUR per MWh */
+		/**
+		 * Actual Marketprice for regional green power in EUR per MWh
+		 * Type: double
+		 */
 		marketprice: FormControl<number | null | undefined>,
 
-		/** Timestamp in Standard Milliseconds */
+		/**
+		 * Timestamp in Standard Milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateMarketDataFormGroup() {
@@ -205,18 +295,30 @@ export namespace MyNS {
 
 	export interface Tariffh0 {
 
-		/** Energy price in cent per kwh. (Arbeitspreis) including all taxes and fees. */
+		/**
+		 * Energy price in cent per kwh. (Arbeitspreis) including all taxes and fees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ap?: number | null;
 
-		/** Base price in euro per montah (Grundpreis) including all taxes and fees. */
+		/**
+		 * Base price in euro per montah (Grundpreis) including all taxes and fees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gp?: number | null;
 	}
 	export interface Tariffh0FormProperties {
 
-		/** Energy price in cent per kwh. (Arbeitspreis) including all taxes and fees. */
+		/**
+		 * Energy price in cent per kwh. (Arbeitspreis) including all taxes and fees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ap: FormControl<number | null | undefined>,
 
-		/** Base price in euro per montah (Grundpreis) including all taxes and fees. */
+		/**
+		 * Base price in euro per montah (Grundpreis) including all taxes and fees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gp: FormControl<number | null | undefined>,
 	}
 	export function CreateTariffh0FormGroup() {
@@ -238,10 +340,16 @@ export namespace MyNS {
 		/** Frequency/dependency of component */
 		mutlityplier?: string | null;
 
-		/** Single unit price multiyplier is based on */
+		/**
+		 * Single unit price multiyplier is based on
+		 * Type: double
+		 */
 		per?: number | null;
 
-		/** Total sum in Euro for this price component. */
+		/**
+		 * Total sum in Euro for this price component.
+		 * Type: double
+		 */
 		sum?: number | null;
 	}
 	export interface Componentsh0FormProperties {
@@ -252,10 +360,16 @@ export namespace MyNS {
 		/** Frequency/dependency of component */
 		mutlityplier: FormControl<string | null | undefined>,
 
-		/** Single unit price multiyplier is based on */
+		/**
+		 * Single unit price multiyplier is based on
+		 * Type: double
+		 */
 		per: FormControl<number | null | undefined>,
 
-		/** Total sum in Euro for this price component. */
+		/**
+		 * Total sum in Euro for this price component.
+		 * Type: double
+		 */
 		sum: FormControl<number | null | undefined>,
 	}
 	export function CreateComponentsh0FormGroup() {
@@ -301,7 +415,10 @@ export namespace MyNS {
 
 	export interface Ommeters {
 
-		/** Factor imposed on metered current by a transducer */
+		/**
+		 * Factor imposed on metered current by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentScalingFactor?: number | null;
 
 		/** Metering load profile type associated with the meter */
@@ -322,18 +439,27 @@ export namespace MyNS {
 		/** identifier to be used in other methods like readings or activities. */
 		meterId?: string | null;
 
-		/** Factor imposed on metered current AND voltage by a transducer */
+		/**
+		 * Factor imposed on metered current AND voltage by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scalingFactor?: number | null;
 
 		/** Device type of the meter */
 		type?: string | null;
 
-		/** Factor imposed on metered voltage by a transducer */
+		/**
+		 * Factor imposed on metered voltage by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voltageScalingFactor?: number | null;
 	}
 	export interface OmmetersFormProperties {
 
-		/** Factor imposed on metered current by a transducer */
+		/**
+		 * Factor imposed on metered current by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentScalingFactor: FormControl<number | null | undefined>,
 
 		/** Metering load profile type associated with the meter */
@@ -354,13 +480,19 @@ export namespace MyNS {
 		/** identifier to be used in other methods like readings or activities. */
 		meterId: FormControl<string | null | undefined>,
 
-		/** Factor imposed on metered current AND voltage by a transducer */
+		/**
+		 * Factor imposed on metered current AND voltage by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scalingFactor: FormControl<number | null | undefined>,
 
 		/** Device type of the meter */
 		type: FormControl<string | null | undefined>,
 
-		/** Factor imposed on metered voltage by a transducer */
+		/**
+		 * Factor imposed on metered voltage by a transducer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voltageScalingFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateOmmetersFormGroup() {
@@ -444,7 +576,9 @@ export namespace MyNS {
 		 * @param {string} zip Zipcode (Postleitzahl) of a city in Germany.
 		 * @param {string} key Any valid Stromkonto account (address).
 		 * @param {number} timeframe Number of hours to check (default 24 hours from now).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} hours How many hours in row do you need the device turned on?
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {boolean} Success
 		 */
 		GsiBesthour(zip: string | null | undefined, key: string | null | undefined, timeframe: number | null | undefined, hours: number | null | undefined): Observable<boolean> {
@@ -644,8 +778,11 @@ export namespace MyNS {
 		 * @param {string} zipcode Zipcode (Postzleitzahl) of a city in Germany.
 		 * @param {string} email Valid email address to assign request to (pre offer generation). Ensure GDPR (DSGVO) at any time
 		 * @param {number} kwha Total amount of energy in kilo-watt-hours per year. (sample 2100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} milliseconds If provided all results will be scaled to this timeframe
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} wh If provided together with milliseconds, a cost component stament for a particular event (like charging a car) will be created.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Componentsh0} Success
 		 */
 		Tariffcomponents(zipcode: string | null | undefined, email: string | null | undefined, kwha: number | null | undefined, milliseconds: number | null | undefined, wh: number | null | undefined): Observable<Componentsh0> {
@@ -677,7 +814,10 @@ export namespace MyNS {
 
 	export interface GsiDispatchReturn {
 
-		/** Averaged geospatial distance in kilometers between energy generation and usage at requested location. */
+		/**
+		 * Averaged geospatial distance in kilometers between energy generation and usage at requested location.
+		 * Type: double
+		 */
 		avg_distance_km?: number | null;
 
 		/** List of current sources of green energy (into requested location) */
@@ -697,7 +837,10 @@ export namespace MyNS {
 	}
 	export interface GsiDispatchReturnFormProperties {
 
-		/** Averaged geospatial distance in kilometers between energy generation and usage at requested location. */
+		/**
+		 * Averaged geospatial distance in kilometers between energy generation and usage at requested location.
+		 * Type: double
+		 */
 		avg_distance_km: FormControl<number | null | undefined>,
 
 		/** Green Energy Mix after dispatch of given city */
@@ -717,18 +860,30 @@ export namespace MyNS {
 
 	export interface GsiDispatchReturnTimeframe {
 
-		/** Ending time of window evaluated for this request/dispatches. */
+		/**
+		 * Ending time of window evaluated for this request/dispatches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** Starting time of window evaluated in order to get dispatches */
+		/**
+		 * Starting time of window evaluated in order to get dispatches
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 	export interface GsiDispatchReturnTimeframeFormProperties {
 
-		/** Ending time of window evaluated for this request/dispatches. */
+		/**
+		 * Ending time of window evaluated for this request/dispatches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Starting time of window evaluated in order to get dispatches */
+		/**
+		 * Starting time of window evaluated in order to get dispatches
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateGsiDispatchReturnTimeframeFormGroup() {
@@ -841,66 +996,114 @@ export namespace MyNS {
 
 	export interface MeteringGetReturn {
 
-		/** Reading as provided as input in Wh */
+		/**
+		 * Reading as provided as input in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0'?: number | null;
 
-		/** Green energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Green energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.1'?: number | null;
 
-		/** Grey energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Grey energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.2'?: number | null;
 
-		/** Time this reading got imported into consensus (e.q. signed timestamp). */
+		/**
+		 * Time this reading got imported into consensus (e.q. signed timestamp).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		_processingTime?: number | null;
 
 		/** Stromkonto/Metering address allocated (this is not the MELOID!) */
 		account?: string | null;
 
-		/** CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif) */
+		/**
+		 * CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom?: number | null;
 
-		/** CO2 Emission of metered energy in a standard mix */
+		/**
+		 * CO2 Emission of metered energy in a standard mix
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_standard?: number | null;
 
 		/** Update credits this meter has. Gets refilled automtically to prevent too frequent updates */
 		credits?: any;
 
-		/** API Consensus time this reading was fully received */
+		/**
+		 * API Consensus time this reading was fully received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp?: number | null;
 
-		/** Time to Live for this reader. If no update is provided it gets decommissioned. */
+		/**
+		 * Time to Live for this reader. If no update is provided it gets decommissioned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface MeteringGetReturnFormProperties {
 
-		/** Reading as provided as input in Wh */
+		/**
+		 * Reading as provided as input in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0': FormControl<number | null | undefined>,
 
-		/** Green energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Green energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.1': FormControl<number | null | undefined>,
 
-		/** Grey energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Grey energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.2': FormControl<number | null | undefined>,
 
-		/** Time this reading got imported into consensus (e.q. signed timestamp). */
+		/**
+		 * Time this reading got imported into consensus (e.q. signed timestamp).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		_processingTime: FormControl<number | null | undefined>,
 
 		/** Stromkonto/Metering address allocated (this is not the MELOID!) */
 		account: FormControl<string | null | undefined>,
 
-		/** CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif) */
+		/**
+		 * CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom: FormControl<number | null | undefined>,
 
-		/** CO2 Emission of metered energy in a standard mix */
+		/**
+		 * CO2 Emission of metered energy in a standard mix
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_standard: FormControl<number | null | undefined>,
 
 		/** Update credits this meter has. Gets refilled automtically to prevent too frequent updates */
 		credits: FormControl<any | null | undefined>,
 
-		/** API Consensus time this reading was fully received */
+		/**
+		 * API Consensus time this reading was fully received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp: FormControl<number | null | undefined>,
 
-		/** Time to Live for this reader. If no update is provided it gets decommissioned. */
+		/**
+		 * Time to Live for this reader. If no update is provided it gets decommissioned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateMeteringGetReturnFormGroup() {
@@ -921,19 +1124,28 @@ export namespace MyNS {
 
 	export interface MeteringPostPostBody {
 
-		/** Meter Reading (prefered in Wh) */
+		/**
+		 * Meter Reading (prefered in Wh)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0'?: number | null;
 
 		/** Stromkonto account (address) associated with this metering. */
 		account?: string | null;
 
-		/** Alias for 1.8.0 */
+		/**
+		 * Alias for 1.8.0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		energy?: number | null;
 
 		/** Some private password you might choose on first update. However you need to use the same secret on every further posts. */
 		secret?: string | null;
 
-		/** Alias for 1.8.0 */
+		/**
+		 * Alias for 1.8.0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 
 		/** Zipcode (Postleitzahl) of metered location */
@@ -941,19 +1153,28 @@ export namespace MyNS {
 	}
 	export interface MeteringPostPostBodyFormProperties {
 
-		/** Meter Reading (prefered in Wh) */
+		/**
+		 * Meter Reading (prefered in Wh)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0': FormControl<number | null | undefined>,
 
 		/** Stromkonto account (address) associated with this metering. */
 		account: FormControl<string | null | undefined>,
 
-		/** Alias for 1.8.0 */
+		/**
+		 * Alias for 1.8.0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		energy: FormControl<number | null | undefined>,
 
 		/** Some private password you might choose on first update. However you need to use the same secret on every further posts. */
 		secret: FormControl<string | null | undefined>,
 
-		/** Alias for 1.8.0 */
+		/**
+		 * Alias for 1.8.0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 
 		/** Zipcode (Postleitzahl) of metered location */
@@ -973,54 +1194,96 @@ export namespace MyNS {
 
 	export interface MeteringPostReturn {
 
-		/** Reading as provided as input in Wh */
+		/**
+		 * Reading as provided as input in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0'?: number | null;
 
-		/** Green energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Green energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.1'?: number | null;
 
-		/** Grey energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Grey energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.2'?: number | null;
 
-		/** Time this reading got imported into consensus (e.q. signed timestamp). */
+		/**
+		 * Time this reading got imported into consensus (e.q. signed timestamp).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		_processingTime?: number | null;
 
 		/** Stromkonto/Metering address allocated (this is not the MELOID!) */
 		account?: string | null;
 
-		/** CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif) */
+		/**
+		 * CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom?: number | null;
 
-		/** CO2 Emission of metered energy in a standard mix */
+		/**
+		 * CO2 Emission of metered energy in a standard mix
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_standard?: number | null;
 
-		/** API Consensus time this reading was fully received */
+		/**
+		 * API Consensus time this reading was fully received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp?: number | null;
 	}
 	export interface MeteringPostReturnFormProperties {
 
-		/** Reading as provided as input in Wh */
+		/**
+		 * Reading as provided as input in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.0': FormControl<number | null | undefined>,
 
-		/** Green energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Green energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.1': FormControl<number | null | undefined>,
 
-		/** Grey energy calculated using Green Power Index (GrünstromIndex) in Wh */
+		/**
+		 * Grey energy calculated using Green Power Index (GrünstromIndex) in Wh
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1.8.2': FormControl<number | null | undefined>,
 
-		/** Time this reading got imported into consensus (e.q. signed timestamp). */
+		/**
+		 * Time this reading got imported into consensus (e.q. signed timestamp).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		_processingTime: FormControl<number | null | undefined>,
 
 		/** Stromkonto/Metering address allocated (this is not the MELOID!) */
 		account: FormControl<string | null | undefined>,
 
-		/** CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif) */
+		/**
+		 * CO2 Emission of metered energy in a green energy mix (e.q. Ökostromtarif)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_oekostrom: FormControl<number | null | undefined>,
 
-		/** CO2 Emission of metered energy in a standard mix */
+		/**
+		 * CO2 Emission of metered energy in a standard mix
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		co2_g_standard: FormControl<number | null | undefined>,
 
-		/** API Consensus time this reading was fully received */
+		/**
+		 * API Consensus time this reading was fully received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeStamp: FormControl<number | null | undefined>,
 	}
 	export function CreateMeteringPostReturnFormGroup() {
@@ -1157,7 +1420,10 @@ export namespace MyNS {
 		/** Stromkonto account address of reciever */
 		to?: string | null;
 
-		/** Amount to transfer (in Watthours for electricity, or pcs for trees) */
+		/**
+		 * Amount to transfer (in Watthours for electricity, or pcs for trees)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 		variation?: BalanceVariation | null;
 	}
@@ -1172,7 +1438,10 @@ export namespace MyNS {
 		/** Stromkonto account address of reciever */
 		to: FormControl<string | null | undefined>,
 
-		/** Amount to transfer (in Watthours for electricity, or pcs for trees) */
+		/**
+		 * Amount to transfer (in Watthours for electricity, or pcs for trees)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 		variation: FormControl<BalanceVariation | null | undefined>,
 	}
@@ -1211,7 +1480,10 @@ export namespace MyNS {
 
 	export interface WimstatusReturn {
 
-		/** Starting time of process */
+		/**
+		 * Starting time of process
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wim_started?: number | null;
 
 		/** Latest Status */
@@ -1219,7 +1491,10 @@ export namespace MyNS {
 	}
 	export interface WimstatusReturnFormProperties {
 
-		/** Starting time of process */
+		/**
+		 * Starting time of process
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wim_started: FormControl<number | null | undefined>,
 
 		/** Latest Status */

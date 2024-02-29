@@ -3565,7 +3565,10 @@ namespace MyNS
 		/// Factories_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<FactoryListResponse> Factories_ListByResourceGroupAsync(string subscriptionId, string resourceGroupName, string api_version)
@@ -3596,8 +3599,14 @@ namespace MyNS
 		/// Factories_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<Factory> Factories_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -3628,8 +3637,14 @@ namespace MyNS
 		/// Factories_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Factory resource definition.</param>
 		/// <returns>OK.</returns>
@@ -3668,8 +3683,14 @@ namespace MyNS
 		/// Factories_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task Factories_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -3694,8 +3715,14 @@ namespace MyNS
 		/// Factories_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating a factory.</param>
 		/// <returns>OK.</returns>
@@ -3734,8 +3761,14 @@ namespace MyNS
 		/// DataFlowDebugSession_AddDataFlow subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/addDataFlowToDebugSession
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition with debug content.</param>
 		/// <returns>OK.</returns>
@@ -3774,8 +3807,14 @@ namespace MyNS
 		/// DataFlowDebugSession_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/createDataFlowDebugSession
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition</param>
 		/// <returns>OK.</returns>
@@ -3814,8 +3853,14 @@ namespace MyNS
 		/// DataFlows_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<DataFlowListResponse> DataFlows_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -3846,9 +3891,18 @@ namespace MyNS
 		/// DataFlows_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="dataFlowName">The data flow name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="dataFlowName">The data flow name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<DataFlowResource> DataFlows_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string dataFlowName, string api_version)
@@ -3879,9 +3933,18 @@ namespace MyNS
 		/// DataFlows_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="dataFlowName">The data flow name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="dataFlowName">The data flow name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow resource definition.</param>
 		/// <returns>OK.</returns>
@@ -3920,9 +3983,18 @@ namespace MyNS
 		/// DataFlows_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/dataflows/{dataFlowName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="dataFlowName">The data flow name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="dataFlowName">The data flow name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task DataFlows_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string dataFlowName, string api_version)
@@ -3947,8 +4019,14 @@ namespace MyNS
 		/// Datasets_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<DatasetListResponse> Datasets_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -3979,9 +4057,18 @@ namespace MyNS
 		/// Datasets_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="datasetName">The dataset name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="datasetName">The dataset name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<DatasetResource> Datasets_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string datasetName, string api_version)
@@ -4012,9 +4099,18 @@ namespace MyNS
 		/// Datasets_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="datasetName">The dataset name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="datasetName">The dataset name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Dataset resource definition.</param>
 		/// <returns>OK.</returns>
@@ -4053,9 +4149,18 @@ namespace MyNS
 		/// Datasets_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/datasets/{datasetName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="datasetName">The dataset name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="datasetName">The dataset name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task Datasets_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string datasetName, string api_version)
@@ -4080,8 +4185,14 @@ namespace MyNS
 		/// DataFlowDebugSession_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/deleteDataFlowDebugSession
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition for deletion</param>
 		/// <returns>OK.</returns>
@@ -4114,8 +4225,14 @@ namespace MyNS
 		/// DataFlowDebugSession_ExecuteCommand subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/executeDataFlowDebugCommand
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug command definition.</param>
 		/// <returns>OK.</returns>
@@ -4154,8 +4271,14 @@ namespace MyNS
 		/// Factories_GetDataPlaneAccess subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getDataPlaneAccess
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data Plane user access policy definition.</param>
 		/// <returns>OK.</returns>
@@ -4194,8 +4317,14 @@ namespace MyNS
 		/// ExposureControl_GetFeatureValueByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getFeatureValue
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The exposure control request.</param>
 		/// <returns>OK.</returns>
@@ -4234,8 +4363,14 @@ namespace MyNS
 		/// Factories_GetGitHubAccessToken subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/getGitHubAccessToken
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Get GitHub access token request definition.</param>
 		/// <returns>OK.</returns>
@@ -4274,8 +4409,14 @@ namespace MyNS
 		/// IntegrationRuntimes_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimeListResponse> IntegrationRuntimes_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -4306,9 +4447,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimeResource> IntegrationRuntimes_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4339,9 +4489,18 @@ namespace MyNS
 		/// IntegrationRuntimes_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Integration runtime resource definition.</param>
 		/// <returns>OK.</returns>
@@ -4380,9 +4539,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task IntegrationRuntimes_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4407,9 +4575,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating an integration runtime.</param>
 		/// <returns>OK.</returns>
@@ -4448,9 +4625,18 @@ namespace MyNS
 		/// IntegrationRuntimes_GetConnectionInfo subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getConnectionInfo
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimes_GetConnectionInfoReturn> IntegrationRuntimes_GetConnectionInfoAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4481,9 +4667,18 @@ namespace MyNS
 		/// IntegrationRuntimeObjectMetadata_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getObjectMetadata
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for getting a SSIS object metadata.</param>
 		/// <returns>OK.</returns>
@@ -4522,9 +4717,18 @@ namespace MyNS
 		/// IntegrationRuntimes_GetStatus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/getStatus
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimeStatusResponse> IntegrationRuntimes_GetStatusAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4555,9 +4759,18 @@ namespace MyNS
 		/// IntegrationRuntimes_CreateLinkedIntegrationRuntime subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/linkedIntegrationRuntime
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The linked integration runtime properties.</param>
 		/// <returns>OK.</returns>
@@ -4596,9 +4809,18 @@ namespace MyNS
 		/// IntegrationRuntimes_ListAuthKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/listAuthKeys
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimes_ListAuthKeysReturn> IntegrationRuntimes_ListAuthKeysAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4629,9 +4851,18 @@ namespace MyNS
 		/// IntegrationRuntimes_GetMonitoringData subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/monitoringData
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimes_GetMonitoringDataReturn> IntegrationRuntimes_GetMonitoringDataAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4662,10 +4893,22 @@ namespace MyNS
 		/// IntegrationRuntimeNodes_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
-		/// <param name="nodeName">The integration runtime node name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="nodeName">The integration runtime node name.
+		/// Max length: 150
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<object> IntegrationRuntimeNodes_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string nodeName, string api_version)
@@ -4696,10 +4939,22 @@ namespace MyNS
 		/// IntegrationRuntimeNodes_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
-		/// <param name="nodeName">The integration runtime node name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="nodeName">The integration runtime node name.
+		/// Max length: 150
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task IntegrationRuntimeNodes_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string nodeName, string api_version)
@@ -4724,10 +4979,22 @@ namespace MyNS
 		/// IntegrationRuntimeNodes_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
-		/// <param name="nodeName">The integration runtime node name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="nodeName">The integration runtime node name.
+		/// Max length: 150
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating an integration runtime node.</param>
 		/// <returns>OK.</returns>
@@ -4766,10 +5033,22 @@ namespace MyNS
 		/// IntegrationRuntimeNodes_GetIpAddress subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}/ipAddress
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
-		/// <param name="nodeName">The integration runtime node name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="nodeName">The integration runtime node name.
+		/// Max length: 150
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimeNodes_GetIpAddressReturn> IntegrationRuntimeNodes_GetIpAddressAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string nodeName, string api_version)
@@ -4800,9 +5079,18 @@ namespace MyNS
 		/// IntegrationRuntimeObjectMetadata_Refresh subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/refreshObjectMetadata
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<SsisObjectMetadataStatusResponse> IntegrationRuntimeObjectMetadata_RefreshAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4833,9 +5121,18 @@ namespace MyNS
 		/// IntegrationRuntimes_RegenerateAuthKey subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/regenerateAuthKey
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for regenerating integration runtime authentication key.</param>
 		/// <returns>OK.</returns>
@@ -4874,9 +5171,18 @@ namespace MyNS
 		/// IntegrationRuntimes_RemoveLinks subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/removeLinks
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The data factory name for the linked integration runtime.</param>
 		/// <returns>OK.</returns>
@@ -4909,9 +5215,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Start subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<IntegrationRuntimeStatusResponse> IntegrationRuntimes_StartAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4942,9 +5257,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Stop subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task IntegrationRuntimes_StopAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4969,9 +5293,18 @@ namespace MyNS
 		/// IntegrationRuntimes_SyncCredentials subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/syncCredentials
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task IntegrationRuntimes_SyncCredentialsAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -4996,9 +5329,18 @@ namespace MyNS
 		/// IntegrationRuntimes_Upgrade subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/upgrade
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="integrationRuntimeName">The integration runtime name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="integrationRuntimeName">The integration runtime name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task IntegrationRuntimes_UpgradeAsync(string subscriptionId, string resourceGroupName, string factoryName, string integrationRuntimeName, string api_version)
@@ -5023,8 +5365,14 @@ namespace MyNS
 		/// LinkedServices_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<LinkedServiceListResponse> LinkedServices_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -5055,9 +5403,18 @@ namespace MyNS
 		/// LinkedServices_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="linkedServiceName">The linked service name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="linkedServiceName">The linked service name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<LinkedServiceResource> LinkedServices_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string linkedServiceName, string api_version)
@@ -5088,9 +5445,18 @@ namespace MyNS
 		/// LinkedServices_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="linkedServiceName">The linked service name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="linkedServiceName">The linked service name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Linked service resource definition.</param>
 		/// <returns>OK.</returns>
@@ -5129,9 +5495,18 @@ namespace MyNS
 		/// LinkedServices_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices/{linkedServiceName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="linkedServiceName">The linked service name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="linkedServiceName">The linked service name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task LinkedServices_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string linkedServiceName, string api_version)
@@ -5156,8 +5531,14 @@ namespace MyNS
 		/// PipelineRuns_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5189,8 +5570,14 @@ namespace MyNS
 		/// PipelineRuns_Cancel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}/cancel
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="isRecursive">If true, cancel all the Child pipelines that are triggered by the current pipeline.</param>
 		/// <param name="api_version">The API version.</param>
@@ -5217,8 +5604,14 @@ namespace MyNS
 		/// ActivityRuns_QueryByPipelineRun subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelineruns/{runId}/queryActivityruns
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Parameters to filter the activity runs.</param>
@@ -5258,8 +5651,14 @@ namespace MyNS
 		/// Pipelines_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<PipelineListResponse> Pipelines_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -5290,9 +5689,18 @@ namespace MyNS
 		/// Pipelines_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="pipelineName">The pipeline name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="pipelineName">The pipeline name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<PipelineResource> Pipelines_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string pipelineName, string api_version)
@@ -5323,9 +5731,18 @@ namespace MyNS
 		/// Pipelines_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="pipelineName">The pipeline name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="pipelineName">The pipeline name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Pipeline resource definition.</param>
 		/// <returns>OK.</returns>
@@ -5364,9 +5781,18 @@ namespace MyNS
 		/// Pipelines_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="pipelineName">The pipeline name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="pipelineName">The pipeline name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task Pipelines_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string pipelineName, string api_version)
@@ -5391,9 +5817,18 @@ namespace MyNS
 		/// Pipelines_CreateRun subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines/{pipelineName}/createRun
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="pipelineName">The pipeline name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="pipelineName">The pipeline name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="referencePipelineRunId">The pipeline run identifier. If run ID is specified the parameters of the specified run will be used to create a new run.</param>
 		/// <param name="isRecovery">Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</param>
@@ -5435,8 +5870,14 @@ namespace MyNS
 		/// DataFlowDebugSession_QueryByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryDataFlowDebugSessions
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<QueryDataFlowDebugSessionsResponse> DataFlowDebugSession_QueryByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -5467,8 +5908,14 @@ namespace MyNS
 		/// PipelineRuns_QueryByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryPipelineRuns
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Parameters to filter the pipeline run.</param>
 		/// <returns>OK.</returns>
@@ -5507,8 +5954,14 @@ namespace MyNS
 		/// TriggerRuns_QueryByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/queryTriggerRuns
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Parameters to filter the pipeline run.</param>
 		/// <returns>OK.</returns>
@@ -5547,8 +6000,14 @@ namespace MyNS
 		/// Triggers_ListByFactory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<TriggerListResponse> Triggers_ListByFactoryAsync(string subscriptionId, string resourceGroupName, string factoryName, string api_version)
@@ -5579,9 +6038,18 @@ namespace MyNS
 		/// Triggers_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<TriggerResource> Triggers_GetAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5612,9 +6080,18 @@ namespace MyNS
 		/// Triggers_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Trigger resource definition.</param>
 		/// <returns>OK.</returns>
@@ -5653,9 +6130,18 @@ namespace MyNS
 		/// Triggers_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task Triggers_DeleteAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5680,9 +6166,18 @@ namespace MyNS
 		/// Triggers_GetEventSubscriptionStatus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/getEventSubscriptionStatus
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger event subscription state.</returns>
 		public async Task<TriggerSubscriptionOperationStatus> Triggers_GetEventSubscriptionStatusAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5713,9 +6208,18 @@ namespace MyNS
 		/// RerunTriggers_ListByTrigger subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
 		public async Task<RerunTriggerListResponse> RerunTriggers_ListByTriggerAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5746,10 +6250,22 @@ namespace MyNS
 		/// RerunTriggers_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
-		/// <param name="rerunTriggerName">The rerun trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
+		/// <param name="rerunTriggerName">The rerun trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Rerun tumbling window trigger action parameters.</param>
 		/// <returns>OK.</returns>
@@ -5788,10 +6304,22 @@ namespace MyNS
 		/// RerunTriggers_Cancel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/cancel
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
-		/// <param name="rerunTriggerName">The rerun trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
+		/// <param name="rerunTriggerName">The rerun trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been canceled successfully.</returns>
 		public async Task RerunTriggers_CancelAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string rerunTriggerName, string api_version)
@@ -5816,10 +6344,22 @@ namespace MyNS
 		/// RerunTriggers_Start subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/start
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
-		/// <param name="rerunTriggerName">The rerun trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
+		/// <param name="rerunTriggerName">The rerun trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been started successfully.</returns>
 		public async Task RerunTriggers_StartAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string rerunTriggerName, string api_version)
@@ -5844,10 +6384,22 @@ namespace MyNS
 		/// RerunTriggers_Stop subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/rerunTriggers/{rerunTriggerName}/stop
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
-		/// <param name="rerunTriggerName">The rerun trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
+		/// <param name="rerunTriggerName">The rerun trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been stopped successfully.</returns>
 		public async Task RerunTriggers_StopAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string rerunTriggerName, string api_version)
@@ -5872,9 +6424,18 @@ namespace MyNS
 		/// Triggers_Start subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/start
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been started successfully.</returns>
 		public async Task Triggers_StartAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5899,9 +6460,18 @@ namespace MyNS
 		/// Triggers_Stop subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/stop
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been stopped successfully.</returns>
 		public async Task Triggers_StopAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5926,9 +6496,18 @@ namespace MyNS
 		/// Triggers_SubscribeToEvents subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/subscribeToEvents
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger is subscribed to events.</returns>
 		public async Task<TriggerSubscriptionOperationStatus> Triggers_SubscribeToEventsAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)
@@ -5959,9 +6538,18 @@ namespace MyNS
 		/// TriggerRuns_Rerun subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/triggerRuns/{runId}/rerun
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>TriggerRun has been restarted.</returns>
@@ -5987,9 +6575,18 @@ namespace MyNS
 		/// Triggers_UnsubscribeFromEvents subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/triggers/{triggerName}/unsubscribeFromEvents
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The resource group name.</param>
-		/// <param name="factoryName">The factory name.</param>
-		/// <param name="triggerName">The trigger name.</param>
+		/// <param name="resourceGroupName">The resource group name.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="factoryName">The factory name.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="triggerName">The trigger name.
+		/// Max length: 260
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger is unsubscribed from events.</returns>
 		public async Task<TriggerSubscriptionOperationStatus> Triggers_UnsubscribeFromEventsAsync(string subscriptionId, string resourceGroupName, string factoryName, string triggerName, string api_version)

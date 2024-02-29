@@ -148,6 +148,7 @@ export namespace MyNS {
 		 * 64-bit integer.  For example, for an Australian dollar value of $10.56,
 		 * this field will be `1056`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		valueInBaseUnits: number;
 	}
@@ -176,6 +177,7 @@ export namespace MyNS {
 		 * 64-bit integer.  For example, for an Australian dollar value of $10.56,
 		 * this field will be `1056`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		valueInBaseUnits: FormControl<number | null | undefined>,
 	}
@@ -2355,6 +2357,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code received in the response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: number;
 	}
@@ -2369,6 +2372,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code received in the response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
@@ -3030,6 +3034,7 @@ export namespace MyNS {
 		 * by following the `prev` and `next` links where present.
 		 * Get accounts
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AccountTypeEnum} filter_accountType The type of account for which to return records. This
 		 * can be used to filter Savers from spending accounts.
 		 * @param {OwnershipTypeEnum} filter_ownershipType The account ownership structure for which to return
@@ -3053,6 +3058,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/transactions
 		 * @param {string} accountId The unique identifier for the account.
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionStatusEnum} filter_status The transaction status for which to return records. This
 		 * can be used to filter `HELD` transactions from those
 		 * that are `SETTLED`.
@@ -3120,6 +3126,7 @@ export namespace MyNS {
 		 * to get the transactions with the given tag.
 		 * Get tags
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListTagsResponse} Successful Response
 		 */
 		TagsGetByPage_size(page_size: number | null | undefined): Observable<ListTagsResponse> {
@@ -3137,6 +3144,7 @@ export namespace MyNS {
 		 * newest first to oldest last.
 		 * Get transactions
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionStatusEnum} filter_status The transaction status for which to return records. This
 		 * can be used to filter `HELD` transactions from those
 		 * that are `SETTLED`.
@@ -3240,6 +3248,7 @@ export namespace MyNS {
 		 * newest last.
 		 * Get webhooks
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListWebhooksResponse} Successful Response
 		 */
 		WebhooksGetByPage_size(page_size: number | null | undefined): Observable<ListWebhooksResponse> {
@@ -3306,6 +3315,7 @@ export namespace MyNS {
 		 * Get webhooks/{webhookId}/logs
 		 * @param {string} webhookId The unique identifier for the webhook.
 		 * @param {number} page_size The number of records to return in each page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListWebhookDeliveryLogsResponse} Successful response
 		 */
 		WebhooksGetByWebhookIdAndPage_size(webhookId: string, page_size: number | null | undefined): Observable<ListWebhookDeliveryLogsResponse> {

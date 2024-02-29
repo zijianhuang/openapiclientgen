@@ -57,8 +57,8 @@ export namespace MyNS {
 		resources?: Array<string>;
 
 		/**
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		targetResourceGroup?: string | null;
 	}
@@ -67,8 +67,8 @@ export namespace MyNS {
 	export interface CsmMoveResourceEnvelopeFormProperties {
 
 		/**
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		targetResourceGroup: FormControl<string | null | undefined>,
 	}
@@ -1655,6 +1655,7 @@ export namespace MyNS {
 		 * Description for Move resources between resource groups.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/moveResources
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
 		 * @param {CsmMoveResourceEnvelope} requestBody Object that represents the resource to move.
@@ -1669,6 +1670,7 @@ export namespace MyNS {
 		 * Description for Validate if a resource can be created.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
 		 * @param {ValidateRequest} requestBody Request with the resources to validate.
@@ -1683,6 +1685,7 @@ export namespace MyNS {
 		 * Description for Validate whether a resource can be moved.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/validateMoveResources
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
 		 * @param {CsmMoveResourceEnvelope} requestBody Object that represents the resource to move.

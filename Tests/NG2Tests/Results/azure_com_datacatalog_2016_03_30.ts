@@ -288,6 +288,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {ADCCatalogsListResult} HTTP 200 (OK) if the operation was successful.
 		 */
 		ADCCatalogs_ListtByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<ADCCatalogsListResult> {
@@ -301,6 +302,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} catalogName The name of the data catalog in the specified subscription and resource group.
 		 * @return {ADCCatalog} HTTP 200 (OK) if the operation was successful.
 		 */
@@ -315,6 +317,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} catalogName The name of the data catalog in the specified subscription and resource group.
 		 * @param {ADCCatalog} requestBody Properties supplied to the Create or Update a data catalog.
 		 * @return {ADCCatalog} HTTP 200 (OK) if the operation was successful.
@@ -330,6 +333,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} catalogName The name of the data catalog in the specified subscription and resource group.
 		 * @return {void} OK. An existing annotation was updated.
 		 */
@@ -344,6 +348,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} catalogName The name of the data catalog in the specified subscription and resource group.
 		 * @param {ADCCatalog} requestBody Properties supplied to the Update a data catalog.
 		 * @return {ADCCatalog} HTTP 200 (OK) if the operation was successful.

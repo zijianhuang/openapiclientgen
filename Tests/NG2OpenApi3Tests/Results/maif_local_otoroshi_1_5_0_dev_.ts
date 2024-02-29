@@ -31,8 +31,11 @@ export namespace MyNS {
 		 */
 		clientSecret: string;
 
-		/** Authorized number of calls per day */
-		dailyQuota?: number | null;
+		/**
+		 * Authorized number of calls per day
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dailyQuota?: string | null;
 
 		/**
 		 * Whether or not the key is enabled. If disabled, resources won't be available to calls using this key
@@ -43,11 +46,17 @@ export namespace MyNS {
 		/** Bunch of metadata for the key */
 		metadata?: {[id: string]: string };
 
-		/** Authorized number of calls per month */
-		monthlyQuota?: number | null;
+		/**
+		 * Authorized number of calls per month
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		monthlyQuota?: string | null;
 
-		/** Authorized number of calls per second, measured on 10 seconds */
-		throttlingQuota?: number | null;
+		/**
+		 * Authorized number of calls per second, measured on 10 seconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		throttlingQuota?: string | null;
 	}
 
 	/** An Otoroshi Api Key. An Api Key is defined for a group of services to allow usage of the same Api Key for multiple services. */
@@ -71,8 +80,11 @@ export namespace MyNS {
 		 */
 		clientSecret: FormControl<string | null | undefined>,
 
-		/** Authorized number of calls per day */
-		dailyQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per day
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dailyQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the key is enabled. If disabled, resources won't be available to calls using this key
@@ -83,22 +95,28 @@ export namespace MyNS {
 		/** Bunch of metadata for the key */
 		metadata: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Authorized number of calls per month */
-		monthlyQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per month
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		monthlyQuota: FormControl<string | null | undefined>,
 
-		/** Authorized number of calls per second, measured on 10 seconds */
-		throttlingQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per second, measured on 10 seconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		throttlingQuota: FormControl<string | null | undefined>,
 	}
 	export function CreateApiKeyFormGroup() {
 		return new FormGroup<ApiKeyFormProperties>({
 			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			dailyQuota: new FormControl<number | null | undefined>(undefined),
+			dailyQuota: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			monthlyQuota: new FormControl<number | null | undefined>(undefined),
-			throttlingQuota: new FormControl<number | null | undefined>(undefined),
+			monthlyQuota: new FormControl<string | null | undefined>(undefined),
+			throttlingQuota: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -188,6 +206,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status for the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -210,6 +229,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status for the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -229,6 +249,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: number;
 
@@ -245,6 +266,7 @@ export namespace MyNS {
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: FormControl<number | null | undefined>,
 	}
@@ -280,6 +302,7 @@ export namespace MyNS {
 		/**
 		 * Ratio of traffic that will be sent to canary targets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		traffic: number;
 	}
@@ -302,6 +325,7 @@ export namespace MyNS {
 		/**
 		 * Ratio of traffic that will be sent to canary targets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		traffic: FormControl<number | null | undefined>,
 	}
@@ -570,12 +594,14 @@ export namespace MyNS {
 		/**
 		 * The size added to the request body in bytes. Added payload will be spaces only.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		additionalRequestSize: number;
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: number;
 	}
@@ -586,12 +612,14 @@ export namespace MyNS {
 		/**
 		 * The size added to the request body in bytes. Added payload will be spaces only.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		additionalRequestSize: FormControl<number | null | undefined>,
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: FormControl<number | null | undefined>,
 	}
@@ -607,12 +635,16 @@ export namespace MyNS {
 	/** Config for large response injection fault */
 	export interface LargeResponseFaultConfig {
 
-		/** The size added to the response body in bytes. Added payload will be spaces only. */
+		/**
+		 * The size added to the response body in bytes. Added payload will be spaces only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additionalRequestSize?: number | null;
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: number;
 	}
@@ -620,12 +652,16 @@ export namespace MyNS {
 	/** Config for large response injection fault */
 	export interface LargeResponseFaultConfigFormProperties {
 
-		/** The size added to the response body in bytes. Added payload will be spaces only. */
+		/**
+		 * The size added to the response body in bytes. Added payload will be spaces only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additionalRequestSize: FormControl<number | null | undefined>,
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: FormControl<number | null | undefined>,
 	}
@@ -644,18 +680,21 @@ export namespace MyNS {
 		/**
 		 * The start range of latency added to the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: number;
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: number;
 
 		/**
 		 * The end range of latency added to the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: number;
 	}
@@ -666,18 +705,21 @@ export namespace MyNS {
 		/**
 		 * The start range of latency added to the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: FormControl<number | null | undefined>,
 
 		/**
 		 * The percentage of requests affected by this fault. Value should be between 0.0 and 1.0
 		 * Required
+		 * Type: double
 		 */
 		ratio: FormControl<number | null | undefined>,
 
 		/**
 		 * The end range of latency added to the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: FormControl<number | null | undefined>,
 	}
@@ -776,42 +818,49 @@ export namespace MyNS {
 		/**
 		 * Specify the factor to multiply the delay for each retry
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backoffFactor: number;
 
 		/**
 		 * Specify how long each call should last at most in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		callTimeout: number;
 
 		/**
 		 * Specify how long the global call (with retries) should last at most in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		globalTimeout: number;
 
 		/**
 		 * Specify how many errors can pass before opening the circuit breaker
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxErrors: number;
 
 		/**
 		 * Specify how many times the client will try to fetch the result of the request after an error before giving up.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Specify the delay between two retries. Each retry, the delay is multiplied by the backoff factor
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryInitialDelay: number;
 
 		/**
 		 * Specify the sliding window time for the circuit breaker in milliseconds, after this time, error count will be reseted
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sampleInterval: number;
 
@@ -828,42 +877,49 @@ export namespace MyNS {
 		/**
 		 * Specify the factor to multiply the delay for each retry
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backoffFactor: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify how long each call should last at most in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		callTimeout: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify how long the global call (with retries) should last at most in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		globalTimeout: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify how many errors can pass before opening the circuit breaker
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxErrors: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify how many times the client will try to fetch the result of the request after an error before giving up.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify the delay between two retries. Each retry, the delay is multiplied by the backoff factor
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryInitialDelay: FormControl<number | null | undefined>,
 
 		/**
 		 * Specify the sliding window time for the circuit breaker in milliseconds, after this time, error count will be reseted
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sampleInterval: FormControl<number | null | undefined>,
 
@@ -946,6 +1002,7 @@ export namespace MyNS {
 		/**
 		 * Cors max age
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxAge: number;
 	}
@@ -974,6 +1031,7 @@ export namespace MyNS {
 		/**
 		 * Cors max age
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxAge: FormControl<number | null | undefined>,
 	}
@@ -1027,7 +1085,10 @@ export namespace MyNS {
 	/** Settings to export Otorshi events */
 	export interface DataExporterConfig {
 
-		/** buffer size */
+		/**
+		 * buffer size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bufferSize?: number | null;
 
 		/** Data Exporter config */
@@ -1040,16 +1101,25 @@ export namespace MyNS {
 		enabled?: string | null;
 		filtering?: Filtering;
 
-		/** duration */
-		groupDuration?: number | null;
+		/**
+		 * duration
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		groupDuration?: string | null;
 
-		/** Group size */
+		/**
+		 * Group size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupSize?: number | null;
 
 		/** Id */
 		id?: string | null;
 
-		/** nb workers */
+		/**
+		 * nb workers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jsonWorkers?: number | null;
 		location?: Location;
 
@@ -1062,7 +1132,10 @@ export namespace MyNS {
 		/** projection */
 		projection?: {[id: string]: string };
 
-		/** send workers */
+		/**
+		 * send workers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sendWorkers?: number | null;
 
 		/** Type of data exporter */
@@ -1072,7 +1145,10 @@ export namespace MyNS {
 	/** Settings to export Otorshi events */
 	export interface DataExporterConfigFormProperties {
 
-		/** buffer size */
+		/**
+		 * buffer size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bufferSize: FormControl<number | null | undefined>,
 
 		/** Description */
@@ -1081,16 +1157,25 @@ export namespace MyNS {
 		/** Boolean */
 		enabled: FormControl<string | null | undefined>,
 
-		/** duration */
-		groupDuration: FormControl<number | null | undefined>,
+		/**
+		 * duration
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		groupDuration: FormControl<string | null | undefined>,
 
-		/** Group size */
+		/**
+		 * Group size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupSize: FormControl<number | null | undefined>,
 
 		/** Id */
 		id: FormControl<string | null | undefined>,
 
-		/** nb workers */
+		/**
+		 * nb workers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jsonWorkers: FormControl<number | null | undefined>,
 
 		/** Metadata */
@@ -1102,7 +1187,10 @@ export namespace MyNS {
 		/** projection */
 		projection: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** send workers */
+		/**
+		 * send workers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sendWorkers: FormControl<number | null | undefined>,
 
 		/** Type of data exporter */
@@ -1113,7 +1201,7 @@ export namespace MyNS {
 			bufferSize: new FormControl<number | null | undefined>(undefined),
 			desc: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<string | null | undefined>(undefined),
-			groupDuration: new FormControl<number | null | undefined>(undefined),
+			groupDuration: new FormControl<string | null | undefined>(undefined),
 			groupSize: new FormControl<number | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			jsonWorkers: new FormControl<number | null | undefined>(undefined),
@@ -1315,6 +1403,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
@@ -1340,6 +1429,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -1608,6 +1698,7 @@ export namespace MyNS {
 		/**
 		 * Max age of the session
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sessionMaxAge: number;
 
@@ -1732,6 +1823,7 @@ export namespace MyNS {
 		/**
 		 * Max age of the session
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sessionMaxAge: FormControl<number | null | undefined>,
 
@@ -1801,6 +1893,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
@@ -1823,6 +1916,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -1914,13 +2008,20 @@ export namespace MyNS {
 		/**
 		 * The number of authorized request processed at the same time
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maxConcurrentRequests: number;
+		maxConcurrentRequests: string;
 
-		/** The max size in bytes of an HTTP 1.0 response */
-		maxHttp10ResponseSize?: number | null;
+		/**
+		 * The max size in bytes of an HTTP 1.0 response
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxHttp10ResponseSize?: string | null;
 
-		/** Number of events kept locally */
+		/**
+		 * Number of events kept locally
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLogsSize?: number | null;
 
 		/** Use middle finger emoji as a response character for endless HTTP responses */
@@ -1929,8 +2030,9 @@ export namespace MyNS {
 		/**
 		 * Authorized number of calls per second globally per IP address, measured on 10 seconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		perIpThrottlingQuota: number;
+		perIpThrottlingQuota: string;
 
 		/** Configuration for Auth0 domain */
 		privateAppsAuth0Config?: Auth0Config;
@@ -1944,8 +2046,9 @@ export namespace MyNS {
 		/**
 		 * Authorized number of calls per second globally, measured on 10 seconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		throttlingQuota: number;
+		throttlingQuota: string;
 
 		/**
 		 * If enabled, login to backoffice through Auth0 will be disabled
@@ -1984,13 +2087,20 @@ export namespace MyNS {
 		/**
 		 * The number of authorized request processed at the same time
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maxConcurrentRequests: FormControl<number | null | undefined>,
+		maxConcurrentRequests: FormControl<string | null | undefined>,
 
-		/** The max size in bytes of an HTTP 1.0 response */
-		maxHttp10ResponseSize: FormControl<number | null | undefined>,
+		/**
+		 * The max size in bytes of an HTTP 1.0 response
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxHttp10ResponseSize: FormControl<string | null | undefined>,
 
-		/** Number of events kept locally */
+		/**
+		 * Number of events kept locally
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLogsSize: FormControl<number | null | undefined>,
 
 		/** Use middle finger emoji as a response character for endless HTTP responses */
@@ -1999,8 +2109,9 @@ export namespace MyNS {
 		/**
 		 * Authorized number of calls per second globally per IP address, measured on 10 seconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		perIpThrottlingQuota: FormControl<number | null | undefined>,
+		perIpThrottlingQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * HTTP will be streamed only. Doesn't work with old browsers
@@ -2011,8 +2122,9 @@ export namespace MyNS {
 		/**
 		 * Authorized number of calls per second globally, measured on 10 seconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		throttlingQuota: FormControl<number | null | undefined>,
+		throttlingQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * If enabled, login to backoffice through Auth0 will be disabled
@@ -2031,13 +2143,13 @@ export namespace MyNS {
 			apiReadOnly: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			autoLinkToDefaultGroup: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			limitConcurrentRequests: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			maxConcurrentRequests: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			maxHttp10ResponseSize: new FormControl<number | null | undefined>(undefined),
+			maxConcurrentRequests: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			maxHttp10ResponseSize: new FormControl<string | null | undefined>(undefined),
 			maxLogsSize: new FormControl<number | null | undefined>(undefined),
 			middleFingers: new FormControl<boolean | null | undefined>(undefined),
-			perIpThrottlingQuota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			perIpThrottlingQuota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			streamEntityOnly: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			throttlingQuota: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			throttlingQuota: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			u2fLoginOnly: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			useCircuitBreakers: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2489,18 +2601,21 @@ export namespace MyNS {
 		/**
 		 * Size of the GZip buffer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		bufferSize: number;
+		bufferSize: string;
 
 		/**
 		 * Threshold for chunking data
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		chunkedThreshold: number;
+		chunkedThreshold: string;
 
 		/**
 		 * Compression level. From 0 to 9
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		compressionLevel: number;
 
@@ -2529,18 +2644,21 @@ export namespace MyNS {
 		/**
 		 * Size of the GZip buffer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		bufferSize: FormControl<number | null | undefined>,
+		bufferSize: FormControl<string | null | undefined>,
 
 		/**
 		 * Threshold for chunking data
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		chunkedThreshold: FormControl<number | null | undefined>,
+		chunkedThreshold: FormControl<string | null | undefined>,
 
 		/**
 		 * Compression level. From 0 to 9
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		compressionLevel: FormControl<number | null | undefined>,
 
@@ -2552,8 +2670,8 @@ export namespace MyNS {
 	}
 	export function CreateGzipFormGroup() {
 		return new FormGroup<GzipFormProperties>({
-			bufferSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			chunkedThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			bufferSize: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			chunkedThreshold: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			compressionLevel: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2622,8 +2740,11 @@ export namespace MyNS {
 		/** Required */
 		date: Date;
 
-		/** Required */
-		dateRaw: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRaw: string;
 
 		/**
 		 * Current error templates at the time of export
@@ -2668,8 +2789,11 @@ export namespace MyNS {
 		/** Required */
 		date: FormControl<Date | null | undefined>,
 
-		/** Required */
-		dateRaw: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRaw: FormControl<string | null | undefined>,
 
 		/** Required */
 		label: FormControl<string | null | undefined>,
@@ -2678,7 +2802,7 @@ export namespace MyNS {
 		return new FormGroup<ImportExportFormProperties>({
 			appConfig: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			dateRaw: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			dateRaw: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2689,8 +2813,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: number;
+		createdAt: string;
 
 		/**
 		 * The label for the user
@@ -2721,8 +2846,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: FormControl<number | null | undefined>,
+		createdAt: FormControl<string | null | undefined>,
 
 		/**
 		 * The label for the user
@@ -2750,7 +2876,7 @@ export namespace MyNS {
 	}
 	export function CreateImportExportAdminsFormGroup() {
 		return new FormGroup<ImportExportAdminsFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			registration: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
@@ -2785,8 +2911,11 @@ export namespace MyNS {
 		 */
 		clientSecret: string;
 
-		/** Authorized number of calls per day */
-		dailyQuota?: number | null;
+		/**
+		 * Authorized number of calls per day
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dailyQuota?: string | null;
 
 		/**
 		 * Whether or not the key is enabled. If disabled, resources won't be available to calls using this key
@@ -2797,11 +2926,17 @@ export namespace MyNS {
 		/** Bunch of metadata for the key */
 		metadata?: {[id: string]: string };
 
-		/** Authorized number of calls per month */
-		monthlyQuota?: number | null;
+		/**
+		 * Authorized number of calls per month
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		monthlyQuota?: string | null;
 
-		/** Authorized number of calls per second, measured on 10 seconds */
-		throttlingQuota?: number | null;
+		/**
+		 * Authorized number of calls per second, measured on 10 seconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		throttlingQuota?: string | null;
 	}
 	export interface ImportExportApiKeysFormProperties {
 
@@ -2823,8 +2958,11 @@ export namespace MyNS {
 		 */
 		clientSecret: FormControl<string | null | undefined>,
 
-		/** Authorized number of calls per day */
-		dailyQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per day
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dailyQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the key is enabled. If disabled, resources won't be available to calls using this key
@@ -2835,22 +2973,28 @@ export namespace MyNS {
 		/** Bunch of metadata for the key */
 		metadata: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Authorized number of calls per month */
-		monthlyQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per month
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		monthlyQuota: FormControl<string | null | undefined>,
 
-		/** Authorized number of calls per second, measured on 10 seconds */
-		throttlingQuota: FormControl<number | null | undefined>,
+		/**
+		 * Authorized number of calls per second, measured on 10 seconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		throttlingQuota: FormControl<string | null | undefined>,
 	}
 	export function CreateImportExportApiKeysFormGroup() {
 		return new FormGroup<ImportExportApiKeysFormProperties>({
 			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			dailyQuota: new FormControl<number | null | undefined>(undefined),
+			dailyQuota: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			monthlyQuota: new FormControl<number | null | undefined>(undefined),
-			throttlingQuota: new FormControl<number | null | undefined>(undefined),
+			monthlyQuota: new FormControl<string | null | undefined>(undefined),
+			throttlingQuota: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3336,6 +3480,7 @@ export namespace MyNS {
 		/**
 		 * The http redirect code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -3358,6 +3503,7 @@ export namespace MyNS {
 		/**
 		 * The http redirect code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -3401,6 +3547,7 @@ export namespace MyNS {
 		/**
 		 * The port of the StatsD agent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 	}
@@ -3423,6 +3570,7 @@ export namespace MyNS {
 		/**
 		 * The port of the StatsD agent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 	}
@@ -3483,8 +3631,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: number;
+		createdAt: string;
 
 		/**
 		 * The label for the user
@@ -3509,8 +3658,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: FormControl<number | null | undefined>,
+		createdAt: FormControl<string | null | undefined>,
 
 		/**
 		 * The label for the user
@@ -3532,7 +3682,7 @@ export namespace MyNS {
 	}
 	export function CreateImportExportSimpleAdminsFormGroup() {
 		return new FormGroup<ImportExportSimpleAdminsFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			username: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -3547,20 +3697,23 @@ export namespace MyNS {
 		/**
 		 * Number of calls to Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		calls: number;
+		calls: string;
 
 		/**
 		 * The amount of data sent to Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataIn: number;
+		dataIn: string;
 
 		/**
 		 * The amount of data sent from Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataOut: number;
+		dataOut: string;
 	}
 
 	/** Global stats for the current Otoroshi instances */
@@ -3569,26 +3722,29 @@ export namespace MyNS {
 		/**
 		 * Number of calls to Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		calls: FormControl<number | null | undefined>,
+		calls: FormControl<string | null | undefined>,
 
 		/**
 		 * The amount of data sent to Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataIn: FormControl<number | null | undefined>,
+		dataIn: FormControl<string | null | undefined>,
 
 		/**
 		 * The amount of data sent from Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataOut: FormControl<number | null | undefined>,
+		dataOut: FormControl<string | null | undefined>,
 	}
 	export function CreateImportExportStatsFormGroup() {
 		return new FormGroup<ImportExportStatsFormProperties>({
-			calls: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			dataIn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			dataOut: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			calls: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			dataIn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			dataOut: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3847,11 +4003,17 @@ export namespace MyNS {
 		/** The type of key: RSA or EC */
 		kty?: string | null;
 
-		/** The timeout of the http call */
-		timeout?: number | null;
+		/**
+		 * The timeout of the http call
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timeout?: string | null;
 
-		/** The ttl of the keyset */
-		ttl?: number | null;
+		/**
+		 * The ttl of the keyset
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ttl?: string | null;
 
 		/**
 		 * String with value JWKSAlgoSettings
@@ -3872,11 +4034,17 @@ export namespace MyNS {
 		/** The type of key: RSA or EC */
 		kty: FormControl<string | null | undefined>,
 
-		/** The timeout of the http call */
-		timeout: FormControl<number | null | undefined>,
+		/**
+		 * The timeout of the http call
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timeout: FormControl<string | null | undefined>,
 
-		/** The ttl of the keyset */
-		ttl: FormControl<number | null | undefined>,
+		/**
+		 * The ttl of the keyset
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ttl: FormControl<string | null | undefined>,
 
 		/**
 		 * String with value JWKSAlgoSettings
@@ -3891,8 +4059,8 @@ export namespace MyNS {
 		return new FormGroup<JWKSAlgoSettingsFormProperties>({
 			headers: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			kty: new FormControl<string | null | undefined>(undefined),
-			timeout: new FormControl<number | null | undefined>(undefined),
-			ttl: new FormControl<number | null | undefined>(undefined),
+			timeout: new FormControl<string | null | undefined>(undefined),
+			ttl: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4023,6 +4191,7 @@ export namespace MyNS {
 		/**
 		 * Max age of the session
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sessionMaxAge: number;
 
@@ -4114,6 +4283,7 @@ export namespace MyNS {
 		/**
 		 * Max age of the session
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sessionMaxAge: FormControl<number | null | undefined>,
 
@@ -4439,6 +4609,7 @@ export namespace MyNS {
 		/**
 		 * The duration of the outage
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration: number;
 
@@ -4467,6 +4638,7 @@ export namespace MyNS {
 		/**
 		 * The duration of the outage
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration: FormControl<number | null | undefined>,
 
@@ -4583,56 +4755,65 @@ export namespace MyNS {
 		/**
 		 * The number of authorized calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerDay: number;
+		authorizedCallsPerDay: string;
 
 		/**
 		 * The number of authorized calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerMonth: number;
+		authorizedCallsPerMonth: string;
 
 		/**
 		 * The number of authorized calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerSec: number;
+		authorizedCallsPerSec: string;
 
 		/**
 		 * The current number of calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerDay: number;
+		currentCallsPerDay: string;
 
 		/**
 		 * The current number of calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerMonth: number;
+		currentCallsPerMonth: string;
 
 		/**
 		 * The current number of calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerSec: number;
+		currentCallsPerSec: string;
 
 		/**
 		 * The remaining number of calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerDay: number;
+		remainingCallsPerDay: string;
 
 		/**
 		 * The number of authorized calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerMonth: number;
+		remainingCallsPerMonth: string;
 
 		/**
 		 * The remaining number of calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerSec: number;
+		remainingCallsPerSec: string;
 	}
 
 	/** Quotas state for an api key on a service group */
@@ -4641,68 +4822,77 @@ export namespace MyNS {
 		/**
 		 * The number of authorized calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerDay: FormControl<number | null | undefined>,
+		authorizedCallsPerDay: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of authorized calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerMonth: FormControl<number | null | undefined>,
+		authorizedCallsPerMonth: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of authorized calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authorizedCallsPerSec: FormControl<number | null | undefined>,
+		authorizedCallsPerSec: FormControl<string | null | undefined>,
 
 		/**
 		 * The current number of calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerDay: FormControl<number | null | undefined>,
+		currentCallsPerDay: FormControl<string | null | undefined>,
 
 		/**
 		 * The current number of calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerMonth: FormControl<number | null | undefined>,
+		currentCallsPerMonth: FormControl<string | null | undefined>,
 
 		/**
 		 * The current number of calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		currentCallsPerSec: FormControl<number | null | undefined>,
+		currentCallsPerSec: FormControl<string | null | undefined>,
 
 		/**
 		 * The remaining number of calls per day
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerDay: FormControl<number | null | undefined>,
+		remainingCallsPerDay: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of authorized calls per month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerMonth: FormControl<number | null | undefined>,
+		remainingCallsPerMonth: FormControl<string | null | undefined>,
 
 		/**
 		 * The remaining number of calls per second
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		remainingCallsPerSec: FormControl<number | null | undefined>,
+		remainingCallsPerSec: FormControl<string | null | undefined>,
 	}
 	export function CreateQuotasFormGroup() {
 		return new FormGroup<QuotasFormProperties>({
-			authorizedCallsPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			authorizedCallsPerMonth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			authorizedCallsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			currentCallsPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			currentCallsPerMonth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			currentCallsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			remainingCallsPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			remainingCallsPerMonth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			remainingCallsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			authorizedCallsPerDay: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			authorizedCallsPerMonth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			authorizedCallsPerSec: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			currentCallsPerDay: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			currentCallsPerMonth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			currentCallsPerSec: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			remainingCallsPerDay: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			remainingCallsPerMonth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			remainingCallsPerSec: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4723,6 +4913,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
@@ -4748,6 +4939,7 @@ export namespace MyNS {
 		/**
 		 * Size for SHA function. can be 256, 384 or 512
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -5366,8 +5558,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: number;
+		createdAt: string;
 
 		/**
 		 * The label for the user
@@ -5394,8 +5587,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: FormControl<number | null | undefined>,
+		createdAt: FormControl<string | null | undefined>,
 
 		/**
 		 * The label for the user
@@ -5417,7 +5611,7 @@ export namespace MyNS {
 	}
 	export function CreateSimpleAdminFormGroup() {
 		return new FormGroup<SimpleAdminFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			username: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -5456,12 +5650,14 @@ export namespace MyNS {
 		/**
 		 * Start of outage duration range
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outageDurationFrom: number;
 
 		/**
 		 * End of outage duration range
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outageDurationTo: number;
 
@@ -5489,6 +5685,7 @@ export namespace MyNS {
 		/**
 		 * Number of time per day each service will be outage
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timesPerDay: number;
 	}
@@ -5517,12 +5714,14 @@ export namespace MyNS {
 		/**
 		 * Start of outage duration range
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outageDurationFrom: FormControl<number | null | undefined>,
 
 		/**
 		 * End of outage duration range
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outageDurationTo: FormControl<number | null | undefined>,
 
@@ -5544,6 +5743,7 @@ export namespace MyNS {
 		/**
 		 * Number of time per day each service will be outage
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timesPerDay: FormControl<number | null | undefined>,
 	}
@@ -5569,54 +5769,63 @@ export namespace MyNS {
 		/**
 		 * Number of calls on the specified service or globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		calls: number;
+		calls: string;
 
 		/**
 		 * The number of concurrent request currently
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		concurrentHandledRequests: number;
+		concurrentHandledRequests: string;
 
 		/**
 		 * The amount of data sent to the specified service or Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataIn: number;
+		dataIn: string;
 
 		/**
 		 * The rate of data sent to the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		dataInRate: number;
 
 		/**
 		 * The amount of data sent from the specified service or Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataOut: number;
+		dataOut: string;
 
 		/**
 		 * The rate of data sent from the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		dataOutRate: number;
 
 		/**
 		 * The average duration for a call
 		 * Required
+		 * Type: double
 		 */
 		duration: number;
 
 		/**
 		 * The average overhead time induced by Otoroshi for each call
 		 * Required
+		 * Type: double
 		 */
 		overhead: number;
 
 		/**
 		 * The rate of data sent from and to the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		rate: number;
 	}
@@ -5627,64 +5836,73 @@ export namespace MyNS {
 		/**
 		 * Number of calls on the specified service or globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		calls: FormControl<number | null | undefined>,
+		calls: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of concurrent request currently
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		concurrentHandledRequests: FormControl<number | null | undefined>,
+		concurrentHandledRequests: FormControl<string | null | undefined>,
 
 		/**
 		 * The amount of data sent to the specified service or Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataIn: FormControl<number | null | undefined>,
+		dataIn: FormControl<string | null | undefined>,
 
 		/**
 		 * The rate of data sent to the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		dataInRate: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of data sent from the specified service or Otoroshi globally
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		dataOut: FormControl<number | null | undefined>,
+		dataOut: FormControl<string | null | undefined>,
 
 		/**
 		 * The rate of data sent from the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		dataOutRate: FormControl<number | null | undefined>,
 
 		/**
 		 * The average duration for a call
 		 * Required
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
 		/**
 		 * The average overhead time induced by Otoroshi for each call
 		 * Required
+		 * Type: double
 		 */
 		overhead: FormControl<number | null | undefined>,
 
 		/**
 		 * The rate of data sent from and to the specified service or Otoroshi globally
 		 * Required
+		 * Type: double
 		 */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateStatsFormGroup() {
 		return new FormGroup<StatsFormProperties>({
-			calls: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			concurrentHandledRequests: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			dataIn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			calls: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			concurrentHandledRequests: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			dataIn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			dataInRate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			dataOut: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			dataOut: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			dataOutRate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			overhead: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -5762,8 +5980,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: number;
+		createdAt: string;
 
 		/**
 		 * The label for the user
@@ -5796,8 +6015,9 @@ export namespace MyNS {
 		/**
 		 * The creation date of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdAt: FormControl<number | null | undefined>,
+		createdAt: FormControl<string | null | undefined>,
 
 		/**
 		 * The label for the user
@@ -5825,7 +6045,7 @@ export namespace MyNS {
 	}
 	export function CreateU2FAdminFormGroup() {
 		return new FormGroup<U2FAdminFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			registration: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
@@ -5847,8 +6067,9 @@ export namespace MyNS {
 		/**
 		 * The TTL for invalid access response caching
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		badTtl: number;
+		badTtl: string;
 
 		/**
 		 * The description of the settings
@@ -5859,8 +6080,9 @@ export namespace MyNS {
 		/**
 		 * The TTL for valid access response caching
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		goodTtl: number;
+		goodTtl: string;
 
 		/**
 		 * HTTP call headers
@@ -5907,8 +6129,9 @@ export namespace MyNS {
 		/**
 		 * The call timeout
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		timeout: number;
+		timeout: string;
 
 		/**
 		 * The URL of the server
@@ -5929,8 +6152,9 @@ export namespace MyNS {
 		/**
 		 * The TTL for invalid access response caching
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		badTtl: FormControl<number | null | undefined>,
+		badTtl: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the settings
@@ -5941,8 +6165,9 @@ export namespace MyNS {
 		/**
 		 * The TTL for valid access response caching
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		goodTtl: FormControl<number | null | undefined>,
+		goodTtl: FormControl<string | null | undefined>,
 
 		/**
 		 * HTTP call headers
@@ -5989,8 +6214,9 @@ export namespace MyNS {
 		/**
 		 * The call timeout
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		timeout: FormControl<number | null | undefined>,
+		timeout: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL of the server
@@ -6001,9 +6227,9 @@ export namespace MyNS {
 	export function CreateValidationAuthorityFormGroup() {
 		return new FormGroup<ValidationAuthorityFormProperties>({
 			alwaysValid: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			badTtl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			badTtl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			goodTtl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			goodTtl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			headers: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 			host: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -6011,7 +6237,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			noCache: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			path: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			timeout: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			timeout: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 

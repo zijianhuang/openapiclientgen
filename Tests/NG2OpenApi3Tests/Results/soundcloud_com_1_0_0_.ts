@@ -108,7 +108,10 @@ export namespace MyNS {
 		/** Created timestamp. */
 		created_at?: string | null;
 
-		/** Identifier. */
+		/**
+		 * Identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Kind (comment). */
@@ -117,7 +120,10 @@ export namespace MyNS {
 		/** Timestamp. */
 		timestamp?: string | null;
 
-		/** Track's identifier. */
+		/**
+		 * Track's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_id?: number | null;
 
 		/** Comment's URL. */
@@ -126,7 +132,10 @@ export namespace MyNS {
 		/** SoundCloud User object */
 		user?: CommentUser;
 
-		/** User's identifier. */
+		/**
+		 * User's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id?: number | null;
 	}
 
@@ -139,7 +148,10 @@ export namespace MyNS {
 		/** Created timestamp. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** Identifier. */
+		/**
+		 * Identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Kind (comment). */
@@ -148,13 +160,19 @@ export namespace MyNS {
 		/** Timestamp. */
 		timestamp: FormControl<string | null | undefined>,
 
-		/** Track's identifier. */
+		/**
+		 * Track's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_id: FormControl<number | null | undefined>,
 
 		/** Comment's URL. */
 		uri: FormControl<string | null | undefined>,
 
-		/** User's identifier. */
+		/**
+		 * User's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentFormGroup() {
@@ -176,13 +194,22 @@ export namespace MyNS {
 		/** URL to a JPEG image. */
 		avatar_url?: string | null;
 
-		/** number of followers. */
+		/**
+		 * number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count?: number | null;
 
-		/** number of followed users. */
+		/**
+		 * number of followed users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count?: number | null;
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** kind of resource. */
@@ -197,7 +224,10 @@ export namespace MyNS {
 		/** URL to the SoundCloud.com page. */
 		permalink_url?: string | null;
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count?: number | null;
 
 		/** API resource URL. */
@@ -211,13 +241,22 @@ export namespace MyNS {
 		/** URL to a JPEG image. */
 		avatar_url: FormControl<string | null | undefined>,
 
-		/** number of followers. */
+		/**
+		 * number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count: FormControl<number | null | undefined>,
 
-		/** number of followed users. */
+		/**
+		 * number of followed users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count: FormControl<number | null | undefined>,
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** kind of resource. */
@@ -232,7 +271,10 @@ export namespace MyNS {
 		/** URL to the SoundCloud.com page. */
 		permalink_url: FormControl<string | null | undefined>,
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count: FormControl<number | null | undefined>,
 
 		/** API resource URL. */
@@ -294,16 +336,25 @@ export namespace MyNS {
 		/** first name. */
 		first_name?: string | null;
 
-		/** number of followers. */
+		/**
+		 * number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count?: number | null;
 
-		/** number of followed users. */
+		/**
+		 * number of followed users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count?: number | null;
 
 		/** first and last name. */
 		full_name?: string | null;
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** kind of resource. */
@@ -330,31 +381,49 @@ export namespace MyNS {
 		/** subscription plan of the user. */
 		plan?: string | null;
 
-		/** number of public playlists. */
+		/**
+		 * number of public playlists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count?: number | null;
 
 		/** boolean if email is confirmed. */
 		primary_email_confirmed?: boolean | null;
 
-		/** number of private playlists. */
+		/**
+		 * number of private playlists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_playlists_count?: number | null;
 
-		/** number of private tracks. */
+		/**
+		 * number of private tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_tracks_count?: number | null;
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count?: number | null;
 
 		/** user's upload quota */
 		quota?: CompleteUserQuota;
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count?: number | null;
 
 		/** a list subscriptions associated with the user */
 		subscriptions?: any;
 
-		/** number of public tracks. */
+		/**
+		 * number of public tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count?: number | null;
 
 		/** API resource URL. */
@@ -391,16 +460,25 @@ export namespace MyNS {
 		/** first name. */
 		first_name: FormControl<string | null | undefined>,
 
-		/** number of followers. */
+		/**
+		 * number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count: FormControl<number | null | undefined>,
 
-		/** number of followed users. */
+		/**
+		 * number of followed users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count: FormControl<number | null | undefined>,
 
 		/** first and last name. */
 		full_name: FormControl<string | null | undefined>,
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** kind of resource. */
@@ -427,28 +505,46 @@ export namespace MyNS {
 		/** subscription plan of the user. */
 		plan: FormControl<string | null | undefined>,
 
-		/** number of public playlists. */
+		/**
+		 * number of public playlists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count: FormControl<number | null | undefined>,
 
 		/** boolean if email is confirmed. */
 		primary_email_confirmed: FormControl<boolean | null | undefined>,
 
-		/** number of private playlists. */
+		/**
+		 * number of private playlists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_playlists_count: FormControl<number | null | undefined>,
 
-		/** number of private tracks. */
+		/**
+		 * number of private tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_tracks_count: FormControl<number | null | undefined>,
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count: FormControl<number | null | undefined>,
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count: FormControl<number | null | undefined>,
 
 		/** a list subscriptions associated with the user */
 		subscriptions: FormControl<any | null | undefined>,
 
-		/** number of public tracks. */
+		/**
+		 * number of public tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count: FormControl<number | null | undefined>,
 
 		/** API resource URL. */
@@ -504,7 +600,10 @@ export namespace MyNS {
 		/** unlimited upload quota. */
 		unlimited_upload_quota?: boolean | null;
 
-		/** upload seconds used. */
+		/**
+		 * upload seconds used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upload_seconds_used?: number | null;
 	}
 	export interface CompleteUserQuotaFormProperties {
@@ -512,7 +611,10 @@ export namespace MyNS {
 		/** unlimited upload quota. */
 		unlimited_upload_quota: FormControl<boolean | null | undefined>,
 
-		/** upload seconds used. */
+		/**
+		 * upload seconds used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upload_seconds_used: FormControl<number | null | undefined>,
 	}
 	export function CreateCompleteUserQuotaFormGroup() {
@@ -531,7 +633,10 @@ export namespace MyNS {
 		/** Full Name. */
 		display_name?: string | null;
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Kind of resource. */
@@ -556,7 +661,10 @@ export namespace MyNS {
 		/** Full Name. */
 		display_name: FormControl<string | null | undefined>,
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Kind of resource. */
@@ -659,6 +767,8 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		error?: string | null;
 		errors?: Array<string>;
@@ -667,6 +777,8 @@ export namespace MyNS {
 		status?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		error: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
@@ -718,7 +830,10 @@ export namespace MyNS {
 		/** profile creation datetime */
 		created_at?: Date | null;
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** kind of resource */
@@ -749,7 +864,10 @@ export namespace MyNS {
 		/** profile creation datetime */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** kind of resource */
@@ -865,7 +983,10 @@ export namespace MyNS {
 		/** is downloadable. */
 		downloadable?: boolean | null;
 
-		/** Playlist duration. */
+		/**
+		 * Playlist duration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** European Article Number. */
@@ -877,7 +998,10 @@ export namespace MyNS {
 		/** Playlist genre. */
 		genre?: string | null;
 
-		/** Playlist identifier. */
+		/**
+		 * Playlist identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Type of Soundcloud object (playlist). */
@@ -886,7 +1010,10 @@ export namespace MyNS {
 		/** SoundCloud User object. */
 		label?: MetaUser;
 
-		/** Label user identifier. */
+		/**
+		 * Label user identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		label_id?: number | null;
 
 		/** Label name. */
@@ -898,7 +1025,10 @@ export namespace MyNS {
 		/** License. */
 		license?: string | null;
 
-		/** Count of playlist likes. */
+		/**
+		 * Count of playlist likes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		likes_count?: number | null;
 
 		/** Playlist permalink. */
@@ -919,13 +1049,22 @@ export namespace MyNS {
 		/** Release. */
 		release?: string | null;
 
-		/** Day of release. */
+		/**
+		 * Day of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_day?: number | null;
 
-		/** Month of release. */
+		/**
+		 * Month of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_month?: number | null;
 
-		/** Year of release. */
+		/**
+		 * Year of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_year?: number | null;
 
 		/** Type of sharing (private/public). */
@@ -943,7 +1082,10 @@ export namespace MyNS {
 		/** Playlist title. */
 		title?: string | null;
 
-		/** Count of tracks. */
+		/**
+		 * Count of tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count?: number | null;
 
 		/** List of tracks. */
@@ -961,7 +1103,10 @@ export namespace MyNS {
 		/** SoundCloud User object. */
 		user?: MetaUser;
 
-		/** User identifier. */
+		/**
+		 * User identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id?: number | null;
 	}
 
@@ -980,7 +1125,10 @@ export namespace MyNS {
 		/** is downloadable. */
 		downloadable: FormControl<boolean | null | undefined>,
 
-		/** Playlist duration. */
+		/**
+		 * Playlist duration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** European Article Number. */
@@ -992,13 +1140,19 @@ export namespace MyNS {
 		/** Playlist genre. */
 		genre: FormControl<string | null | undefined>,
 
-		/** Playlist identifier. */
+		/**
+		 * Playlist identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Type of Soundcloud object (playlist). */
 		kind: FormControl<string | null | undefined>,
 
-		/** Label user identifier. */
+		/**
+		 * Label user identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		label_id: FormControl<number | null | undefined>,
 
 		/** Label name. */
@@ -1010,7 +1164,10 @@ export namespace MyNS {
 		/** License. */
 		license: FormControl<string | null | undefined>,
 
-		/** Count of playlist likes. */
+		/**
+		 * Count of playlist likes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		likes_count: FormControl<number | null | undefined>,
 
 		/** Playlist permalink. */
@@ -1031,13 +1188,22 @@ export namespace MyNS {
 		/** Release. */
 		release: FormControl<string | null | undefined>,
 
-		/** Day of release. */
+		/**
+		 * Day of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_day: FormControl<number | null | undefined>,
 
-		/** Month of release. */
+		/**
+		 * Month of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_month: FormControl<number | null | undefined>,
 
-		/** Year of release. */
+		/**
+		 * Year of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_year: FormControl<number | null | undefined>,
 
 		/** Type of sharing (private/public). */
@@ -1055,7 +1221,10 @@ export namespace MyNS {
 		/** Playlist title. */
 		title: FormControl<string | null | undefined>,
 
-		/** Count of tracks. */
+		/**
+		 * Count of tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count: FormControl<number | null | undefined>,
 
 		/** tracks URI. */
@@ -1067,7 +1236,10 @@ export namespace MyNS {
 		/** Playlist URI. */
 		uri: FormControl<string | null | undefined>,
 
-		/** User identifier. */
+		/**
+		 * User identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylistFormGroup() {
@@ -1128,10 +1300,16 @@ export namespace MyNS {
 		/** List of countries where track is available. */
 		available_country_codes?: string | null;
 
-		/** Tempo. */
+		/**
+		 * Tempo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bpm?: number | null;
 
-		/** Number of comments. */
+		/**
+		 * Number of comments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count?: number | null;
 
 		/** Is commentable. */
@@ -1143,7 +1321,10 @@ export namespace MyNS {
 		/** Track description. */
 		description?: string | null;
 
-		/** NUmber of downloads. */
+		/**
+		 * NUmber of downloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		download_count?: number | null;
 
 		/** URL to download a track. */
@@ -1152,19 +1333,28 @@ export namespace MyNS {
 		/** Is downloadable. */
 		downloadable?: string | null;
 
-		/** Track duration. */
+		/**
+		 * Track duration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Embeddable by. */
 		embeddable_by?: string | null;
 
-		/** Number of favoritings. */
+		/**
+		 * Number of favoritings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		favoritings_count?: number | null;
 
 		/** Genre */
 		genre?: string | null;
 
-		/** Track identifier. */
+		/**
+		 * Track identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** ISRC code. */
@@ -1185,7 +1375,10 @@ export namespace MyNS {
 		/** Permalink URL. */
 		permalink_url?: string | null;
 
-		/** Number of plays. */
+		/**
+		 * Number of plays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_count?: number | null;
 
 		/** Purchase title. */
@@ -1197,16 +1390,28 @@ export namespace MyNS {
 		/** Release. */
 		release?: string | null;
 
-		/** Day of release. */
+		/**
+		 * Day of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_day?: number | null;
 
-		/** Month of release. */
+		/**
+		 * Month of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_month?: number | null;
 
-		/** Year of release. */
+		/**
+		 * Year of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_year?: number | null;
 
-		/** Number of reposts. */
+		/**
+		 * Number of reposts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count?: number | null;
 
 		/** Secret URL. */
@@ -1236,7 +1441,10 @@ export namespace MyNS {
 		/** Is user's favourite. */
 		user_favorite?: boolean | null;
 
-		/** Number of plays by a user. */
+		/**
+		 * Number of plays by a user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_playback_count?: number | null;
 
 		/** Waveform URL. */
@@ -1260,10 +1468,16 @@ export namespace MyNS {
 		/** List of countries where track is available. */
 		available_country_codes: FormControl<string | null | undefined>,
 
-		/** Tempo. */
+		/**
+		 * Tempo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bpm: FormControl<number | null | undefined>,
 
-		/** Number of comments. */
+		/**
+		 * Number of comments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count: FormControl<number | null | undefined>,
 
 		/** Is commentable. */
@@ -1275,7 +1489,10 @@ export namespace MyNS {
 		/** Track description. */
 		description: FormControl<string | null | undefined>,
 
-		/** NUmber of downloads. */
+		/**
+		 * NUmber of downloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		download_count: FormControl<number | null | undefined>,
 
 		/** URL to download a track. */
@@ -1284,19 +1501,28 @@ export namespace MyNS {
 		/** Is downloadable. */
 		downloadable: FormControl<string | null | undefined>,
 
-		/** Track duration. */
+		/**
+		 * Track duration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Embeddable by. */
 		embeddable_by: FormControl<string | null | undefined>,
 
-		/** Number of favoritings. */
+		/**
+		 * Number of favoritings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		favoritings_count: FormControl<number | null | undefined>,
 
 		/** Genre */
 		genre: FormControl<string | null | undefined>,
 
-		/** Track identifier. */
+		/**
+		 * Track identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** ISRC code. */
@@ -1317,7 +1543,10 @@ export namespace MyNS {
 		/** Permalink URL. */
 		permalink_url: FormControl<string | null | undefined>,
 
-		/** Number of plays. */
+		/**
+		 * Number of plays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_count: FormControl<number | null | undefined>,
 
 		/** Purchase title. */
@@ -1329,16 +1558,28 @@ export namespace MyNS {
 		/** Release. */
 		release: FormControl<string | null | undefined>,
 
-		/** Day of release. */
+		/**
+		 * Day of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_day: FormControl<number | null | undefined>,
 
-		/** Month of release. */
+		/**
+		 * Month of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_month: FormControl<number | null | undefined>,
 
-		/** Year of release. */
+		/**
+		 * Year of release.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		release_year: FormControl<number | null | undefined>,
 
-		/** Number of reposts. */
+		/**
+		 * Number of reposts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count: FormControl<number | null | undefined>,
 
 		/** Secret URL. */
@@ -1365,7 +1606,10 @@ export namespace MyNS {
 		/** Is user's favourite. */
 		user_favorite: FormControl<boolean | null | undefined>,
 
-		/** Number of plays by a user. */
+		/**
+		 * Number of plays by a user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_playback_count: FormControl<number | null | undefined>,
 
 		/** Waveform URL. */
@@ -1724,16 +1968,25 @@ export namespace MyNS {
 		/** first name */
 		first_name?: string | null;
 
-		/** number of followers */
+		/**
+		 * number of followers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count?: number | null;
 
-		/** number of followed users */
+		/**
+		 * number of followed users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count?: number | null;
 
 		/** first and last name */
 		full_name?: string | null;
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** kind of resource */
@@ -1757,19 +2010,31 @@ export namespace MyNS {
 		/** subscription plan of the user */
 		plan?: string | null;
 
-		/** number of public playlists */
+		/**
+		 * number of public playlists
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count?: number | null;
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count?: number | null;
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count?: number | null;
 
 		/** a list subscriptions associated with the user */
 		subscriptions?: any;
 
-		/** number of public tracks */
+		/**
+		 * number of public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count?: number | null;
 
 		/** API resource URL */
@@ -1809,16 +2074,25 @@ export namespace MyNS {
 		/** first name */
 		first_name: FormControl<string | null | undefined>,
 
-		/** number of followers */
+		/**
+		 * number of followers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count: FormControl<number | null | undefined>,
 
-		/** number of followed users */
+		/**
+		 * number of followed users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count: FormControl<number | null | undefined>,
 
 		/** first and last name */
 		full_name: FormControl<string | null | undefined>,
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** kind of resource */
@@ -1842,19 +2116,31 @@ export namespace MyNS {
 		/** subscription plan of the user */
 		plan: FormControl<string | null | undefined>,
 
-		/** number of public playlists */
+		/**
+		 * number of public playlists
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count: FormControl<number | null | undefined>,
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count: FormControl<number | null | undefined>,
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count: FormControl<number | null | undefined>,
 
 		/** a list subscriptions associated with the user */
 		subscriptions: FormControl<any | null | undefined>,
 
-		/** number of public tracks */
+		/**
+		 * number of public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count: FormControl<number | null | undefined>,
 
 		/** API resource URL */
@@ -1938,16 +2224,25 @@ export namespace MyNS {
 		/** first name */
 		first_name?: string | null;
 
-		/** number of followers */
+		/**
+		 * number of followers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count?: number | null;
 
-		/** number of followed users */
+		/**
+		 * number of followed users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count?: number | null;
 
 		/** first and last name */
 		full_name?: string | null;
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** kind of resource */
@@ -1971,19 +2266,31 @@ export namespace MyNS {
 		/** subscription plan of the user */
 		plan?: string | null;
 
-		/** number of public playlists */
+		/**
+		 * number of public playlists
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count?: number | null;
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count?: number | null;
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count?: number | null;
 
 		/** a list subscriptions associated with the user */
 		subscriptions?: any;
 
-		/** number of public tracks */
+		/**
+		 * number of public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count?: number | null;
 
 		/** API resource URL */
@@ -2020,16 +2327,25 @@ export namespace MyNS {
 		/** first name */
 		first_name: FormControl<string | null | undefined>,
 
-		/** number of followers */
+		/**
+		 * number of followers
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers_count: FormControl<number | null | undefined>,
 
-		/** number of followed users */
+		/**
+		 * number of followed users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followings_count: FormControl<number | null | undefined>,
 
 		/** first and last name */
 		full_name: FormControl<string | null | undefined>,
 
-		/** unique identifier */
+		/**
+		 * unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** kind of resource */
@@ -2053,19 +2369,31 @@ export namespace MyNS {
 		/** subscription plan of the user */
 		plan: FormControl<string | null | undefined>,
 
-		/** number of public playlists */
+		/**
+		 * number of public playlists
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playlist_count: FormControl<number | null | undefined>,
 
-		/** number of favorited public tracks */
+		/**
+		 * number of favorited public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_favorites_count: FormControl<number | null | undefined>,
 
-		/** number of reposts from user */
+		/**
+		 * number of reposts from user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reposts_count: FormControl<number | null | undefined>,
 
 		/** a list subscriptions associated with the user */
 		subscriptions: FormControl<any | null | undefined>,
 
-		/** number of public tracks */
+		/**
+		 * number of public tracks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_count: FormControl<number | null | undefined>,
 
 		/** API resource URL */
@@ -2117,7 +2445,10 @@ export namespace MyNS {
 		/** Timestamp of when the link was added to the profile. */
 		created_at?: string | null;
 
-		/** Id */
+		/**
+		 * Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Kind */
@@ -2140,7 +2471,10 @@ export namespace MyNS {
 		/** Timestamp of when the link was added to the profile. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** Id */
+		/**
+		 * Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Kind */
@@ -2197,6 +2531,7 @@ export namespace MyNS {
 		 * Unlikes a playlist.
 		 * Delete likes/playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		LikesPlaylists_playlist_idDelete(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2207,6 +2542,7 @@ export namespace MyNS {
 		 * Likes a playlist.
 		 * Post likes/playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		LikesPlaylists_playlist_idPost(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2217,6 +2553,7 @@ export namespace MyNS {
 		 * Unlikes a track.
 		 * Delete likes/tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		LikesTracks_track_idDelete(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2227,6 +2564,7 @@ export namespace MyNS {
 		 * Likes a track.
 		 * Post likes/tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		LikesTracks_track_idPost(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2247,6 +2585,7 @@ export namespace MyNS {
 		 * Get me/activities
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MeActivitiesGetByAccessAndLimit(access: Array<string> | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2258,6 +2597,7 @@ export namespace MyNS {
 		 * Get me/activities/all/own
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MeActivitiesAllOwnGetByAccessAndLimit(access: Array<string> | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2269,6 +2609,7 @@ export namespace MyNS {
 		 * Get me/activities/tracks
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MeActivitiesTracksGetByAccessAndLimit(access: Array<string> | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2279,7 +2620,9 @@ export namespace MyNS {
 		 * Returns a list of the authenticated user's connected social accounts.
 		 * Get me/connections
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeConnectionsGetByLimitAndOffset(limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2290,6 +2633,7 @@ export namespace MyNS {
 		 * Returns the authenticated user's connected social account.
 		 * Get me/connections/{connection_id}
 		 * @param {number} connection_id SoundCloud connection id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeConnections_connection_idGet(connection_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2300,6 +2644,7 @@ export namespace MyNS {
 		 * Returns user’s favorites ids. (use /me/likes/tracks instead to fetch the authenticated user's likes)
 		 * Get me/favorites/ids
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MeFavoritesIdsGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2310,6 +2655,7 @@ export namespace MyNS {
 		 * Returns a list of users who are following the authenticated user.
 		 * Get me/followers
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MeFollowersGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2320,6 +2666,7 @@ export namespace MyNS {
 		 * Returns a user who is following the authenticated user. (use /users/{user_id} instead, to fetch the user details)
 		 * Get me/followers/{follower_id}
 		 * @param {number} follower_id SoundCloud User id to denote a Follower
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowers_follower_idGet(follower_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2330,7 +2677,9 @@ export namespace MyNS {
 		 * Returns a list of users who are followed by the authenticated user.
 		 * Get me/followings
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowingsGetByLimitAndOffset(limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2342,7 +2691,9 @@ export namespace MyNS {
 		 * Get me/followings/tracks
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowingsTracksGetByAccessAndLimitAndOffset(access: Array<string> | null | undefined, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2353,6 +2704,7 @@ export namespace MyNS {
 		 * Deletes a user who is followed by the authenticated user.
 		 * Delete me/followings/{user_id}
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowings_user_idDelete(user_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2363,6 +2715,7 @@ export namespace MyNS {
 		 * Returns a user who is followed by the authenticated user. (use /users/{user_id} instead, to fetch the user details)
 		 * Get me/followings/{user_id}
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowings_user_idGet(user_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2373,6 +2726,7 @@ export namespace MyNS {
 		 * Follows a user.
 		 * Put me/followings/{user_id}
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeFollowings_user_idPut(user_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2383,6 +2737,7 @@ export namespace MyNS {
 		 * Returns a list of favorited or liked tracks of the authenticated user.
 		 * Get me/likes/tracks
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2395,6 +2750,7 @@ export namespace MyNS {
 		 * Returns playlist info, playlist tracks and tracks owner info.
 		 * Get me/playlists
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		MePlaylistsGetByLimit(limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2405,6 +2761,7 @@ export namespace MyNS {
 		 * Returns playlist. (use /playlists/{playlist_id} instead, to fetch the playlist details)
 		 * Get me/playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MePlaylists_playlist_idGet(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2415,6 +2772,7 @@ export namespace MyNS {
 		 * Returns a list of user's tracks.
 		 * Get me/tracks
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2426,6 +2784,7 @@ export namespace MyNS {
 		 * Returns a specified track. (use /tracks/{track_id} instead, to fetch the track details)
 		 * Get me/tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		MeTracks_track_idGet(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2438,7 +2797,9 @@ export namespace MyNS {
 		 * @param {string} q search
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2460,6 +2821,7 @@ export namespace MyNS {
 		 * Deletes a playlist.
 		 * Delete playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Playlists_playlist_idDelete(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2470,6 +2832,7 @@ export namespace MyNS {
 		 * Returns a playlist.
 		 * Get playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} secret_token A secret token to fetch private playlists/tracks
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @return {void} Success
@@ -2482,6 +2845,7 @@ export namespace MyNS {
 		 * Updates a playlist.
 		 * Put playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreateUpdatePlaylistRequest} requestBody Playlist payload
 		 * @return {void} Success
 		 */
@@ -2493,7 +2857,9 @@ export namespace MyNS {
 		 * Returns a collection of playlist's reposters.
 		 * Get playlists/{playlist_id}/reposters
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		Playlists_playlist_idRepostersGetByLimit(playlist_id: number, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2504,6 +2870,7 @@ export namespace MyNS {
 		 * Returns tracks under a playlist.
 		 * Get playlists/{playlist_id}/tracks
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} secret_token A secret token to fetch private playlists/tracks
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
@@ -2517,6 +2884,7 @@ export namespace MyNS {
 		 * Removes a repost on a playlist as the authenticated user
 		 * Delete reposts/playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		RepostsPlaylists_playlist_idDelete(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2527,6 +2895,7 @@ export namespace MyNS {
 		 * Reposts a playlist as the authenticated user
 		 * Post reposts/playlists/{playlist_id}
 		 * @param {number} playlist_id SoundCloud playlist id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		RepostsPlaylists_playlist_idPost(playlist_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2537,6 +2906,7 @@ export namespace MyNS {
 		 * Removes a repost on a track as the authenticated user
 		 * Delete reposts/tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		RepostsTracks_track_idDelete(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2547,6 +2917,7 @@ export namespace MyNS {
 		 * Reposts a track as the authenticated user
 		 * Post reposts/tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		RepostsTracks_track_idPost(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2575,7 +2946,9 @@ export namespace MyNS {
 		 * @param {TracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningCreated_at} created_at (yyyy-mm-dd hh:mm:ss) return tracks created within the specified dates
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2587,6 +2960,7 @@ export namespace MyNS {
 		 * Deletes a track.
 		 * Delete tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Tracks_track_idDelete(track_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2597,6 +2971,7 @@ export namespace MyNS {
 		 * Returns a track.
 		 * Get tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} secret_token A secret token to fetch private playlists/tracks
 		 * @return {void} Success
 		 */
@@ -2608,6 +2983,7 @@ export namespace MyNS {
 		 * Updates a track's information.
 		 * Put tracks/{track_id}
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TrackMetadataRequest} requestBody Track payload
 		 * @return {void} Success
 		 */
@@ -2619,8 +2995,11 @@ export namespace MyNS {
 		 * Returns the comments posted on the track(track_id).
 		 * Get tracks/{track_id}/comments
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2632,8 +3011,11 @@ export namespace MyNS {
 		 * Returns a list of users who have favorited or liked the track.
 		 * Get tracks/{track_id}/favoriters
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Tracks_track_idFavoritersGetByLimitAndOffset(track_id: number, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2644,9 +3026,12 @@ export namespace MyNS {
 		 * Returns all related tracks of track on SoundCloud.
 		 * Get tracks/{track_id}/related
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2658,7 +3043,9 @@ export namespace MyNS {
 		 * Returns a collection of track's reposters.
 		 * Get tracks/{track_id}/reposters
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		Tracks_track_idRepostersGetByLimit(track_id: number, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2669,6 +3056,7 @@ export namespace MyNS {
 		 * Returns a track's streamable URLs
 		 * Get tracks/{track_id}/streams
 		 * @param {number} track_id SoundCloud Track id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} secret_token A secret token to fetch private playlists/tracks
 		 * @return {void} Success
 		 */
@@ -2682,7 +3070,9 @@ export namespace MyNS {
 		 * @param {string} q search
 		 * @param {string} ids A comma separated list of track ids to filter on
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2694,6 +3084,7 @@ export namespace MyNS {
 		 * Returns a user.
 		 * Get users/{user_id}
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Users_user_idGet(user_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2704,8 +3095,11 @@ export namespace MyNS {
 		 * Returns a list of user's comments.
 		 * Get users/{user_id}/comments
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {number} offset Offset of first result. Deprecated, use `linked_partitioning` instead.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Users_user_idCommentsGetByLimitAndOffset(user_id: number, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2716,7 +3110,9 @@ export namespace MyNS {
 		 * Returns a list of user's favorited or liked tracks. (use /users/:userId/likes/tracks instead, to fetch a user's likes)
 		 * Get users/{user_id}/favorites
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2729,7 +3125,9 @@ export namespace MyNS {
 		 * Returns a list of users that follows (user_id).
 		 * Get users/{user_id}/followers
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		Users_user_idFollowersGetByLimit(user_id: number, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2741,7 +3139,9 @@ export namespace MyNS {
 		 * Returns list of users that (user_id) follows.
 		 * Get users/{user_id}/followings
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		Users_user_idFollowingsGetByLimit(user_id: number, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2753,7 +3153,9 @@ export namespace MyNS {
 		 * Returns (following_id) that is followed by (user_id).
 		 * Get users/{user_id}/followings/{following_id}
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} following_id SoundCloud User id to denote a Following of a user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Users_user_idFollowings_following_idGet(user_id: number, following_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2764,8 +3166,10 @@ export namespace MyNS {
 		 * Returns a list of user's liked tracks.
 		 * Get users/{user_id}/likes/tracks
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2777,8 +3181,10 @@ export namespace MyNS {
 		 * Returns a list of user's playlists.
 		 * Get users/{user_id}/playlists
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2790,8 +3196,10 @@ export namespace MyNS {
 		 * Returns a list of user's tracks.
 		 * Get users/{user_id}/tracks
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} access Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {boolean} linked_partitioning Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)
 		 * @return {void} Success
 		 */
@@ -2803,7 +3211,9 @@ export namespace MyNS {
 		 * Returns list of user's links added to their profile (website, facebook, instagram).
 		 * Get users/{user_id}/web-profiles
 		 * @param {number} user_id SoundCloud User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results to return in the collection.
+		 *     Minimum: 1    Maximum: 200
 		 * @return {void} Success
 		 */
 		Users_user_idWeb_profilesGetByLimit(user_id: number, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2815,18 +3225,30 @@ export namespace MyNS {
 
 	export interface TracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningBpm {
 
-		/** Return tracks with at least this bpm value */
+		/**
+		 * Return tracks with at least this bpm value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** Return tracks with at most this bpm value */
+		/**
+		 * Return tracks with at most this bpm value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 	}
 	export interface TracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningBpmFormProperties {
 
-		/** Return tracks with at least this bpm value */
+		/**
+		 * Return tracks with at least this bpm value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** Return tracks with at most this bpm value */
+		/**
+		 * Return tracks with at most this bpm value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 	}
 	export function CreateTracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningBpmFormGroup() {
@@ -2839,18 +3261,30 @@ export namespace MyNS {
 
 	export interface TracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningDuration {
 
-		/** Return tracks with at least this duration value */
+		/**
+		 * Return tracks with at least this duration value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** Return tracks with at most this duration value */
+		/**
+		 * Return tracks with at most this duration value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 	}
 	export interface TracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningDurationFormProperties {
 
-		/** Return tracks with at least this duration value */
+		/**
+		 * Return tracks with at least this duration value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** Return tracks with at most this duration value */
+		/**
+		 * Return tracks with at most this duration value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 	}
 	export function CreateTracksGetByQAndIdsAndGenresAndTagsAndBpmAndDurationAndCreated_atAndAccessAndLimitAndOffsetAndLinked_partitioningDurationFormGroup() {

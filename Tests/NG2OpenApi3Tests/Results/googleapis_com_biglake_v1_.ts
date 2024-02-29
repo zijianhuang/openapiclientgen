@@ -441,6 +441,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/catalogs
 		 * @param {string} parent Required. The parent, which owns this collection of catalogs. Format: projects/{project_id_or_number}/locations/{location_id}
 		 * @param {number} pageSize The maximum number of catalogs to return. The service may return fewer than this value. If unspecified, at most 50 catalogs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCatalogs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCatalogs` must match the call that provided the page token.
 		 * @return {ListCatalogsResponse} Successful response
 		 */
@@ -464,6 +465,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/databases
 		 * @param {string} parent Required. The parent, which owns this collection of databases. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
 		 * @param {number} pageSize The maximum number of databases to return. The service may return fewer than this value. If unspecified, at most 50 databases will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDatabases` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDatabases` must match the call that provided the page token.
 		 * @return {ListDatabasesResponse} Successful response
 		 */
@@ -487,6 +489,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/tables
 		 * @param {string} parent Required. The parent, which owns this collection of tables. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
 		 * @param {number} pageSize The maximum number of tables to return. The service may return fewer than this value. If unspecified, at most 50 tables will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListTables` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTables` must match the call that provided the page token.
 		 * @param {Biglake_projects_locations_catalogs_databases_tables_listView} view The view for the returned tables.
 		 * @return {ListTablesResponse} Successful response

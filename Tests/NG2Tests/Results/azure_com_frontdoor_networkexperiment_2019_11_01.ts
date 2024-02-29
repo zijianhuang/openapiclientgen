@@ -737,6 +737,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @return {ProfileList} successful operation
 		 */
 		NetworkExperimentProfiles_ListByResourceGroup(subscriptionId: string, api_version: string, resourceGroupName: string): Observable<ProfileList> {
@@ -749,6 +750,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @return {Profile} successful operation
 		 */
@@ -763,6 +765,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {Profile} requestBody An Network Experiment Profile
 		 * @return {Profile} OK. The request has succeeded.
 		 */
@@ -776,6 +779,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @return {void} Delete successful.
 		 */
@@ -790,6 +794,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {ProfileUpdateModel} requestBody The Profile Update Model
 		 * @return {Profile} OK. successful operation
@@ -804,6 +809,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @return {ExperimentList} successful operation
 		 */
@@ -817,6 +823,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @return {Experiment} successful operation
@@ -831,6 +838,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @param {Experiment} requestBody The Experiment resource
@@ -846,6 +854,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @return {void} Delete successful.
@@ -861,6 +870,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @param {ExperimentUpdateModel} requestBody The Experiment Update Model
@@ -876,6 +886,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @param {string} endDateTimeUTC The end DateTime of the Latency Scorecard in UTC
@@ -893,6 +904,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @param {string} experimentName The Experiment identifier associated with the Experiment
 		 * @param {Date} startDateTimeUTC The start DateTime of the Timeseries in UTC
@@ -913,6 +925,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} profileName The Profile identifier associated with the Tenant and Partner
 		 * @return {PreconfiguredEndpointList} OK. The request has succeeded.
 		 */

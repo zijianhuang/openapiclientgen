@@ -1035,7 +1035,10 @@ export namespace MyNS {
 	/** Request message for KeyManagementService.GenerateRandomBytes. */
 	export interface GenerateRandomBytesRequest {
 
-		/** The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes. */
+		/**
+		 * The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthBytes?: number | null;
 
 		/** The ProtectionLevel to use when generating the random data. Currently, only HSM protection level is supported. */
@@ -1045,7 +1048,10 @@ export namespace MyNS {
 	/** Request message for KeyManagementService.GenerateRandomBytes. */
 	export interface GenerateRandomBytesRequestFormProperties {
 
-		/** The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes. */
+		/**
+		 * The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthBytes: FormControl<number | null | undefined>,
 
 		/** The ProtectionLevel to use when generating the random data. Currently, only HSM protection level is supported. */
@@ -1275,7 +1281,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListCryptoKeyVersionsRequest.page_token to retrieve the next page of results. */
 		nextPageToken?: string | null;
 
-		/** The total number of CryptoKeyVersions that matched the query. */
+		/**
+		 * The total number of CryptoKeyVersions that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1285,7 +1294,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListCryptoKeyVersionsRequest.page_token to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of CryptoKeyVersions that matched the query. */
+		/**
+		 * The total number of CryptoKeyVersions that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListCryptoKeyVersionsResponseFormGroup() {
@@ -1306,7 +1318,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListCryptoKeysRequest.page_token to retrieve the next page of results. */
 		nextPageToken?: string | null;
 
-		/** The total number of CryptoKeys that matched the query. */
+		/**
+		 * The total number of CryptoKeys that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1316,7 +1331,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListCryptoKeysRequest.page_token to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of CryptoKeys that matched the query. */
+		/**
+		 * The total number of CryptoKeys that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListCryptoKeysResponseFormGroup() {
@@ -1337,7 +1355,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListEkmConnectionsRequest.page_token to retrieve the next page of results. */
 		nextPageToken?: string | null;
 
-		/** The total number of EkmConnections that matched the query. */
+		/**
+		 * The total number of EkmConnections that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1347,7 +1368,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListEkmConnectionsRequest.page_token to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of EkmConnections that matched the query. */
+		/**
+		 * The total number of EkmConnections that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListEkmConnectionsResponseFormGroup() {
@@ -1368,7 +1392,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListImportJobsRequest.page_token to retrieve the next page of results. */
 		nextPageToken?: string | null;
 
-		/** The total number of ImportJobs that matched the query. */
+		/**
+		 * The total number of ImportJobs that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1378,7 +1405,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListImportJobsRequest.page_token to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of ImportJobs that matched the query. */
+		/**
+		 * The total number of ImportJobs that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListImportJobsResponseFormGroup() {
@@ -1399,7 +1429,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListKeyRingsRequest.page_token to retrieve the next page of results. */
 		nextPageToken?: string | null;
 
-		/** The total number of KeyRings that matched the query. */
+		/**
+		 * The total number of KeyRings that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1409,7 +1442,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in ListKeyRingsRequest.page_token to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of KeyRings that matched the query. */
+		/**
+		 * The total number of KeyRings that matched the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListKeyRingsResponseFormGroup() {
@@ -1709,7 +1745,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -1719,7 +1758,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -1801,7 +1843,10 @@ export namespace MyNS {
 		/** Optional. An optional CRC32C checksum of the RawDecryptRequest.initialization_vector. If specified, KeyManagementService will verify the integrity of the received initialization_vector using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(initialization_vector) is equal to initialization_vector_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. */
 		initializationVectorCrc32c?: string | null;
 
-		/** The length of the authentication tag that is appended to the end of the ciphertext. If unspecified (0), the default value for the key's algorithm will be used (for AES-GCM, the default value is 16). */
+		/**
+		 * The length of the authentication tag that is appended to the end of the ciphertext. If unspecified (0), the default value for the key's algorithm will be used (for AES-GCM, the default value is 16).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagLength?: number | null;
 	}
 
@@ -1826,7 +1871,10 @@ export namespace MyNS {
 		/** Optional. An optional CRC32C checksum of the RawDecryptRequest.initialization_vector. If specified, KeyManagementService will verify the integrity of the received initialization_vector using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(initialization_vector) is equal to initialization_vector_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. */
 		initializationVectorCrc32c: FormControl<string | null | undefined>,
 
-		/** The length of the authentication tag that is appended to the end of the ciphertext. If unspecified (0), the default value for the key's algorithm will be used (for AES-GCM, the default value is 16). */
+		/**
+		 * The length of the authentication tag that is appended to the end of the ciphertext. If unspecified (0), the default value for the key's algorithm will be used (for AES-GCM, the default value is 16).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagLength: FormControl<number | null | undefined>,
 	}
 	export function CreateRawDecryptRequestFormGroup() {
@@ -1976,7 +2024,10 @@ export namespace MyNS {
 		/** The ProtectionLevel of the CryptoKeyVersion used in encryption. */
 		protectionLevel?: AsymmetricDecryptResponseProtectionLevel | null;
 
-		/** The length of the authentication tag that is appended to the end of the ciphertext. */
+		/**
+		 * The length of the authentication tag that is appended to the end of the ciphertext.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagLength?: number | null;
 
 		/** Integrity verification field. A flag indicating whether RawEncryptRequest.additional_authenticated_data_crc32c was received by KeyManagementService and used for the integrity verification of additional_authenticated_data. A false value of this field indicates either that // RawEncryptRequest.additional_authenticated_data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set RawEncryptRequest.additional_authenticated_data_crc32c but this field is still false, discard the response and perform a limited number of retries. */
@@ -2010,7 +2061,10 @@ export namespace MyNS {
 		/** The ProtectionLevel of the CryptoKeyVersion used in encryption. */
 		protectionLevel: FormControl<AsymmetricDecryptResponseProtectionLevel | null | undefined>,
 
-		/** The length of the authentication tag that is appended to the end of the ciphertext. */
+		/**
+		 * The length of the authentication tag that is appended to the end of the ciphertext.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagLength: FormControl<number | null | undefined>,
 
 		/** Integrity verification field. A flag indicating whether RawEncryptRequest.additional_authenticated_data_crc32c was received by KeyManagementService and used for the integrity verification of additional_authenticated_data. A false value of this field indicates either that // RawEncryptRequest.additional_authenticated_data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set RawEncryptRequest.additional_authenticated_data_crc32c but this field is still false, discard the response and perform a limited number of retries. */
@@ -2187,6 +2241,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2331,6 +2386,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {string} orderBy Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {number} pageSize Optional. Optional limit on the number of CryptoKeyVersions to include in the response. Further CryptoKeyVersions can subsequently be obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Optional pagination token, returned earlier via ListCryptoKeyVersionsResponse.next_page_token.
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} view The fields to include in the response.
 		 * @return {ListCryptoKeyVersionsResponse} Successful response
@@ -2366,6 +2422,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {string} orderBy Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {number} pageSize Optional. Optional limit on the number of CryptoKeys to include in the response. Further CryptoKeys can subsequently be obtained by including the ListCryptoKeysResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Optional pagination token, returned earlier via ListCryptoKeysResponse.next_page_token.
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} versionView The fields of the primary version to include in the response.
 		 * @return {ListCryptoKeysResponse} Successful response
@@ -2393,6 +2450,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {string} orderBy Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {number} pageSize Optional. Optional limit on the number of EkmConnections to include in the response. Further EkmConnections can subsequently be obtained by including the ListEkmConnectionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Optional pagination token, returned earlier via ListEkmConnectionsResponse.next_page_token.
 		 * @return {ListEkmConnectionsResponse} Successful response
 		 */
@@ -2418,6 +2476,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {string} orderBy Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {number} pageSize Optional. Optional limit on the number of ImportJobs to include in the response. Further ImportJobs can subsequently be obtained by including the ListImportJobsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Optional pagination token, returned earlier via ListImportJobsResponse.next_page_token.
 		 * @return {ListImportJobsResponse} Successful response
 		 */
@@ -2443,6 +2502,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {string} orderBy Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
 		 * @param {number} pageSize Optional. Optional limit on the number of KeyRings to include in the response. Further KeyRings can subsequently be obtained by including the ListKeyRingsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Optional pagination token, returned earlier via ListKeyRingsResponse.next_page_token.
 		 * @return {ListKeyRingsResponse} Successful response
 		 */
@@ -2466,6 +2526,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Cloudkms_projects_locations_keyRings_importJobs_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

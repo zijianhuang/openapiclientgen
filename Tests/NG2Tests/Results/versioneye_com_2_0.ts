@@ -118,6 +118,7 @@ export namespace MyNS {
 		 * shows comments of authorized user
 		 * Get me/comments
 		 * @param {number} page page number for pagination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} shows comments of authorized user
 		 */
 		GetMeComments(page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -129,6 +130,7 @@ export namespace MyNS {
 		 * shows the packages you are following
 		 * Get me/favorites
 		 * @param {number} page page number for pagination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} shows the packages you are following
 		 */
 		GetMeFavorites(page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -142,6 +144,7 @@ export namespace MyNS {
 		 * each new version is a new **notification** for your account.
 		 * Get me/notifications
 		 * @param {number} page Specify page for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} shows unread notifications of authorized user
 		 */
 		GetMeNotifications(page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -231,6 +234,7 @@ export namespace MyNS {
 		 *                                 
 		 * @param {string} g Filter by GroupID. This is Java/Maven specific
 		 * @param {number} page Specify page for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} search packages
 		 */
 		GetProductsSearchQ(q: string, lang: string | null | undefined, g: string | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -325,6 +329,7 @@ export namespace MyNS {
 		 * @param {string} lang Language
 		 * @param {string} prod_key Product Key
 		 * @param {number} page Page for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} references
 		 */
 		GetProductsLangProdKeyReferences(lang: string, prod_key: string, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -538,6 +543,7 @@ export namespace MyNS {
 		 * @param {string} language Filter by programming languages
 		 * @param {string} prod_key prod_key of the package
 		 * @param {number} page Specify page for paging
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} asc_sort Asc sort by value
 		 * @param {string} desc_sort Desc sort by value
 		 * @return {void} Security Vulnerabilities
@@ -615,6 +621,7 @@ export namespace MyNS {
 		 * Get users/{username}/comments
 		 * @param {string} username VersionEye users' nickname
 		 * @param {number} page pagination number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} shows user's comments
 		 */
 		GetUsersUsernameComments(username: string, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -627,6 +634,7 @@ export namespace MyNS {
 		 * Get users/{username}/favorites
 		 * @param {string} username username
 		 * @param {number} page Pagination number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} shows user's favorite packages
 		 */
 		GetUsersUsernameFavorites(username: string, page: number | null | undefined): Observable<HttpResponse<string>> {

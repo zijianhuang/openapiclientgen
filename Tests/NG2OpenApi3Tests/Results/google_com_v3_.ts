@@ -239,14 +239,20 @@ export namespace MyNS {
 		/** Reconciliation report (Hotel Ads only). Covers the Reconciliation Reports functionality in pre-v3.0 API versions. Lets you see the status, validate, and upload your Commissions reconciliation reports. This only applies if you are in the Google Hotel Ads Commissions Program (GHACP). For more information about working with reconciliation reports in Hotel Center, refer to [Reconciliation reports](//support.google.com/hotelprices/answer/7019060#sending). */
 		reconciliationReport?: ReconciliationReport;
 
-		/** The number of commission records that were successfully saved. */
+		/**
+		 * The number of commission records that were successfully saved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulRecordCount?: number | null;
 	}
 
 	/** Response message for ReconciliationReportService.CreateReconciliationReport. */
 	export interface CreateReconciliationReportResponseFormProperties {
 
-		/** The number of commission records that were successfully saved. */
+		/**
+		 * The number of commission records that were successfully saved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateReconciliationReportResponseFormGroup() {
@@ -266,7 +272,10 @@ export namespace MyNS {
 		/** Name of the invalid field. If no field name is given, this issue applies to the whole line (or file). */
 		fieldName?: string | null;
 
-		/** The line number on which the issue was detected. If this field is 0, the issue applies to the whole file. */
+		/**
+		 * The line number on which the issue was detected. If this field is 0, the issue applies to the whole file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNum?: number | null;
 	}
 
@@ -279,7 +288,10 @@ export namespace MyNS {
 		/** Name of the invalid field. If no field name is given, this issue applies to the whole line (or file). */
 		fieldName: FormControl<string | null | undefined>,
 
-		/** The line number on which the issue was detected. If this field is 0, the issue applies to the whole file. */
+		/**
+		 * The line number on which the issue was detected. If this field is 0, the issue applies to the whole file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNum: FormControl<number | null | undefined>,
 	}
 	export function CreateReconciliationReportValidationIssueFormGroup() {
@@ -369,26 +381,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -478,16 +508,28 @@ export namespace MyNS {
 		/** Currency for `price`, `taxes`, and `fees`. */
 		currencyCode?: string | null;
 
-		/** Fees for this itinerary. */
+		/**
+		 * Fees for this itinerary.
+		 * Type: float
+		 */
 		fees?: number | null;
 
-		/** Number of nights for the itinerary. */
+		/**
+		 * Number of nights for the itinerary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays?: number | null;
 
-		/** Hotel price for this itinerary. */
+		/**
+		 * Hotel price for this itinerary.
+		 * Type: float
+		 */
 		price?: number | null;
 
-		/** Taxes for this itinerary. */
+		/**
+		 * Taxes for this itinerary.
+		 * Type: float
+		 */
 		taxes?: number | null;
 
 		/** Update timestamp for this hotel price. */
@@ -500,16 +542,28 @@ export namespace MyNS {
 		/** Currency for `price`, `taxes`, and `fees`. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Fees for this itinerary. */
+		/**
+		 * Fees for this itinerary.
+		 * Type: float
+		 */
 		fees: FormControl<number | null | undefined>,
 
-		/** Number of nights for the itinerary. */
+		/**
+		 * Number of nights for the itinerary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays: FormControl<number | null | undefined>,
 
-		/** Hotel price for this itinerary. */
+		/**
+		 * Hotel price for this itinerary.
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Taxes for this itinerary. */
+		/**
+		 * Taxes for this itinerary.
+		 * Type: float
+		 */
 		taxes: FormControl<number | null | undefined>,
 
 		/** Update timestamp for this hotel price. */
@@ -700,7 +754,10 @@ export namespace MyNS {
 	/** Key of a result. */
 	export interface Key {
 
-		/** The number of days in advance the user wants to book the itinerary. If `advanceBookingWindow` is not a value of the `aggregateBy` parameter in the request call, then the `advanceBookingWindow` field is not returned in the `Key`. */
+		/**
+		 * The number of days in advance the user wants to book the itinerary. If `advanceBookingWindow` is not a value of the `aggregateBy` parameter in the request call, then the `advanceBookingWindow` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		advanceBookingWindow?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -715,10 +772,16 @@ export namespace MyNS {
 		/** CLDR region code of the country/region of the hotel. If `hotelRegionCode` is not a value of the `aggregateBy` parameter in the request call, then the `hotelRegionCode` field is not returned in the `Key`. */
 		hotelRegionCode?: string | null;
 
-		/** The number of nights for the itinerary. If `lengthOfStayDays` is not a value of the `aggregateBy` parameter in the request call, then the `lengthOfStayDays` field is not returned in the `Key`. */
+		/**
+		 * The number of nights for the itinerary. If `lengthOfStayDays` is not a value of the `aggregateBy` parameter in the request call, then the `lengthOfStayDays` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays?: number | null;
 
-		/** The total occupancy of the itinerary. If `occupancy` is not a value of the `aggregateBy` parameter in the request call, then the `occupancy` field is not returned in the `Key`. */
+		/**
+		 * The total occupancy of the itinerary. If `occupancy` is not a value of the `aggregateBy` parameter in the request call, then the `occupancy` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occupancy?: number | null;
 
 		/** Partner's hotel ID. If `partnerHotelId` is not a value of the `aggregateBy` parameter in the request call, then the `partnerHotelId` field is not returned in the `Key`. */
@@ -731,7 +794,10 @@ export namespace MyNS {
 	/** Key of a result. */
 	export interface KeyFormProperties {
 
-		/** The number of days in advance the user wants to book the itinerary. If `advanceBookingWindow` is not a value of the `aggregateBy` parameter in the request call, then the `advanceBookingWindow` field is not returned in the `Key`. */
+		/**
+		 * The number of days in advance the user wants to book the itinerary. If `advanceBookingWindow` is not a value of the `aggregateBy` parameter in the request call, then the `advanceBookingWindow` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		advanceBookingWindow: FormControl<number | null | undefined>,
 
 		/** The user’s device type. If `deviceType` is not a value of the `aggregateBy` parameter in the request call, then the `deviceType` field is not returned in the `Key`. */
@@ -740,10 +806,16 @@ export namespace MyNS {
 		/** CLDR region code of the country/region of the hotel. If `hotelRegionCode` is not a value of the `aggregateBy` parameter in the request call, then the `hotelRegionCode` field is not returned in the `Key`. */
 		hotelRegionCode: FormControl<string | null | undefined>,
 
-		/** The number of nights for the itinerary. If `lengthOfStayDays` is not a value of the `aggregateBy` parameter in the request call, then the `lengthOfStayDays` field is not returned in the `Key`. */
+		/**
+		 * The number of nights for the itinerary. If `lengthOfStayDays` is not a value of the `aggregateBy` parameter in the request call, then the `lengthOfStayDays` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays: FormControl<number | null | undefined>,
 
-		/** The total occupancy of the itinerary. If `occupancy` is not a value of the `aggregateBy` parameter in the request call, then the `occupancy` field is not returned in the `Key`. */
+		/**
+		 * The total occupancy of the itinerary. If `occupancy` is not a value of the `aggregateBy` parameter in the request call, then the `occupancy` field is not returned in the `Key`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occupancy: FormControl<number | null | undefined>,
 
 		/** Partner's hotel ID. If `partnerHotelId` is not a value of the `aggregateBy` parameter in the request call, then the `partnerHotelId` field is not returned in the `Key`. */
@@ -769,20 +841,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -913,7 +997,10 @@ export namespace MyNS {
 	/** A price accuracy row. */
 	export interface PriceAccuracyRow {
 
-		/** The number of adults in the occupancy details of the validation query. */
+		/**
+		 * The number of adults in the occupancy details of the validation query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adultOccupancy?: number | null;
 
 		/** True if this row affects the placement of a price. This field has been renamed to “Affects placement” in Hotel Center. */
@@ -925,7 +1012,10 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		checkinDate?: Date;
 
-		/** The number of children in the occupancy details of the validation query. */
+		/**
+		 * The number of children in the occupancy details of the validation query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childOccupancy?: number | null;
 
 		/** Time at which an incorrect price is updated to a correct price. */
@@ -946,7 +1036,10 @@ export namespace MyNS {
 		/** The country of the hotel (based on address). */
 		hotelCountryCode?: string | null;
 
-		/** Length of stay. */
+		/**
+		 * Length of stay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays?: number | null;
 
 		/** The reason why the fetched price didn't match the cached price. */
@@ -968,13 +1061,19 @@ export namespace MyNS {
 	/** A price accuracy row. */
 	export interface PriceAccuracyRowFormProperties {
 
-		/** The number of adults in the occupancy details of the validation query. */
+		/**
+		 * The number of adults in the occupancy details of the validation query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adultOccupancy: FormControl<number | null | undefined>,
 
 		/** True if this row affects the placement of a price. This field has been renamed to “Affects placement” in Hotel Center. */
 		affectsScore: FormControl<boolean | null | undefined>,
 
-		/** The number of children in the occupancy details of the validation query. */
+		/**
+		 * The number of children in the occupancy details of the validation query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childOccupancy: FormControl<number | null | undefined>,
 
 		/** Time at which an incorrect price is updated to a correct price. */
@@ -992,7 +1091,10 @@ export namespace MyNS {
 		/** The country of the hotel (based on address). */
 		hotelCountryCode: FormControl<string | null | undefined>,
 
-		/** Length of stay. */
+		/**
+		 * Length of stay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lengthOfStayDays: FormControl<number | null | undefined>,
 
 		/** The reason why the fetched price didn't match the cached price. */
@@ -1034,13 +1136,19 @@ export namespace MyNS {
 	/** A price record. */
 	export interface PriceRecord {
 
-		/** Base price. */
+		/**
+		 * Base price.
+		 * Type: float
+		 */
 		basePrice?: number | null;
 
 		/** ISO 4217 currency code. */
 		currencyCode?: string | null;
 
-		/** Taxes and fees. */
+		/**
+		 * Taxes and fees.
+		 * Type: float
+		 */
 		taxesAndFees?: number | null;
 
 		/** Timestamp of this price record. */
@@ -1050,13 +1158,19 @@ export namespace MyNS {
 	/** A price record. */
 	export interface PriceRecordFormProperties {
 
-		/** Base price. */
+		/**
+		 * Base price.
+		 * Type: float
+		 */
 		basePrice: FormControl<number | null | undefined>,
 
 		/** ISO 4217 currency code. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Taxes and fees. */
+		/**
+		 * Taxes and fees.
+		 * Type: float
+		 */
 		taxesAndFees: FormControl<number | null | undefined>,
 
 		/** Timestamp of this price record. */
@@ -1100,29 +1214,47 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		calculationDate?: Date;
 
-		/** The total number of properties that have prices for the given itineraries. */
+		/**
+		 * The total number of properties that have prices for the given itineraries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchedPropertyCount?: number | null;
 
-		/** The ratio between the number of hotels which have at least one price for the calculation period and `matched_property_count`. */
+		/**
+		 * The ratio between the number of hotels which have at least one price for the calculation period and `matched_property_count`.
+		 * Type: double
+		 */
 		priceCoverageBinaryPercent?: number | null;
 
 		/** Price coverage stats for combinations of advance booking window and length of stay ranges. */
 		priceCoverageBuckets?: Array<PriceCoverageBucket>;
 
-		/** The overall price coverage for an account. This value is the ratio between the number of hotel prices for the calculation booking window and length of stay range divided by the number of all possible prices, which is `matched_property_count` times 330 (for advance book window) times 30 (for length of stay). */
+		/**
+		 * The overall price coverage for an account. This value is the ratio between the number of hotel prices for the calculation booking window and length of stay range divided by the number of all possible prices, which is `matched_property_count` times 330 (for advance book window) times 30 (for length of stay).
+		 * Type: double
+		 */
 		priceCoveragePercent?: number | null;
 	}
 
 	/** A price coverage view. Covers the `price_coverage_stats` Scorecard functionality in pre-v3.0 API versions. For more information, refer to Price Coverage for Push and Hint partners. */
 	export interface PriceCoverageViewFormProperties {
 
-		/** The total number of properties that have prices for the given itineraries. */
+		/**
+		 * The total number of properties that have prices for the given itineraries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchedPropertyCount: FormControl<number | null | undefined>,
 
-		/** The ratio between the number of hotels which have at least one price for the calculation period and `matched_property_count`. */
+		/**
+		 * The ratio between the number of hotels which have at least one price for the calculation period and `matched_property_count`.
+		 * Type: double
+		 */
 		priceCoverageBinaryPercent: FormControl<number | null | undefined>,
 
-		/** The overall price coverage for an account. This value is the ratio between the number of hotel prices for the calculation booking window and length of stay range divided by the number of all possible prices, which is `matched_property_count` times 330 (for advance book window) times 30 (for length of stay). */
+		/**
+		 * The overall price coverage for an account. This value is the ratio between the number of hotel prices for the calculation booking window and length of stay range divided by the number of all possible prices, which is `matched_property_count` times 330 (for advance book window) times 30 (for length of stay).
+		 * Type: double
+		 */
 		priceCoveragePercent: FormControl<number | null | undefined>,
 	}
 	export function CreatePriceCoverageViewFormGroup() {
@@ -1147,7 +1279,10 @@ export namespace MyNS {
 		/** Length of stay range. */
 		lengthOfStayRange?: PriceCoverageBucketLengthOfStayRange | null;
 
-		/** The percent of itineraries for which you have coverage for this advance booking window bucket and length of stay bucket. */
+		/**
+		 * The percent of itineraries for which you have coverage for this advance booking window bucket and length of stay bucket.
+		 * Type: double
+		 */
 		priceCoveragePercent?: number | null;
 	}
 
@@ -1163,7 +1298,10 @@ export namespace MyNS {
 		/** Length of stay range. */
 		lengthOfStayRange: FormControl<PriceCoverageBucketLengthOfStayRange | null | undefined>,
 
-		/** The percent of itineraries for which you have coverage for this advance booking window bucket and length of stay bucket. */
+		/**
+		 * The percent of itineraries for which you have coverage for this advance booking window bucket and length of stay bucket.
+		 * Type: double
+		 */
 		priceCoveragePercent: FormControl<number | null | undefined>,
 	}
 	export function CreatePriceCoverageBucketFormGroup() {
@@ -1480,7 +1618,10 @@ export namespace MyNS {
 		/** Images associated with this listing, localized. */
 		image?: Array<Image>;
 
-		/** Represents the accuracy of the location. The listing can be anywhere within the defined circular area. */
+		/**
+		 * Represents the accuracy of the location. The listing can be anywhere within the defined circular area.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imprecisionRadiusMeters?: number | null;
 
 		/** Whether the listing can be served based on non image data alone. */
@@ -1511,7 +1652,10 @@ export namespace MyNS {
 		/** If not empty, it indicates that this listing belongs to a brand of the feed. */
 		brand: FormControl<string | null | undefined>,
 
-		/** Represents the accuracy of the location. The listing can be anywhere within the defined circular area. */
+		/**
+		 * Represents the accuracy of the location. The listing can be anywhere within the defined circular area.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imprecisionRadiusMeters: FormControl<number | null | undefined>,
 
 		/** Whether the listing can be served based on non image data alone. */
@@ -1615,10 +1759,16 @@ export namespace MyNS {
 	/** A rating within a vacation rentals Listing. NEXT ID: 4 */
 	export interface Rating {
 
-		/** Maximum rating possible. */
+		/**
+		 * Maximum rating possible.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingScale?: number | null;
 
-		/** The rating score. (e.g. 8.5) */
+		/**
+		 * The rating score. (e.g. 8.5)
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The type of the rating. */
@@ -1628,10 +1778,16 @@ export namespace MyNS {
 	/** A rating within a vacation rentals Listing. NEXT ID: 4 */
 	export interface RatingFormProperties {
 
-		/** Maximum rating possible. */
+		/**
+		 * Maximum rating possible.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingScale: FormControl<number | null | undefined>,
 
-		/** The rating score. (e.g. 8.5) */
+		/**
+		 * The rating score. (e.g. 8.5)
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The type of the rating. */
@@ -1669,7 +1825,10 @@ export namespace MyNS {
 		/** The total number of opportunities for which you were eligible to enter in the Google Ads auction process. */
 		participationCount?: string | null;
 
-		/** The percentage rate of participation where the number of successfully participated opportunities is divided by the total number of opportunities. For example, if a property was eligible to enter the Google Ads auction 90 times out of 100 opportunities, the participation rate is 90%. */
+		/**
+		 * The percentage rate of participation where the number of successfully participated opportunities is divided by the total number of opportunities. For example, if a property was eligible to enter the Google Ads auction 90 times out of 100 opportunities, the participation rate is 90%.
+		 * Type: double
+		 */
 		participationPercent?: number | null;
 
 		/** Partner's hotel display name. This field is only populated when the result is aggregated by `partnerHotelId`. */
@@ -1688,7 +1847,10 @@ export namespace MyNS {
 		/** The total number of opportunities for which you were eligible to enter in the Google Ads auction process. */
 		participationCount: FormControl<string | null | undefined>,
 
-		/** The percentage rate of participation where the number of successfully participated opportunities is divided by the total number of opportunities. For example, if a property was eligible to enter the Google Ads auction 90 times out of 100 opportunities, the participation rate is 90%. */
+		/**
+		 * The percentage rate of participation where the number of successfully participated opportunities is divided by the total number of opportunities. For example, if a property was eligible to enter the Google Ads auction 90 times out of 100 opportunities, the participation rate is 90%.
+		 * Type: double
+		 */
 		participationPercent: FormControl<number | null | undefined>,
 
 		/** Partner's hotel display name. This field is only populated when the result is aggregated by `partnerHotelId`. */
@@ -1736,7 +1898,10 @@ export namespace MyNS {
 		/** The total number of ad clicks that were recorded for this result. */
 		adsClickCount?: string | null;
 
-		/** Equal to `ads_click_count` divided by `ads_impression_count`. */
+		/**
+		 * Equal to `ads_click_count` divided by `ads_impression_count`.
+		 * Type: double
+		 */
 		adsClickthroughRate?: number | null;
 
 		/** The total number of ad impressions that were recorded for this result. */
@@ -1751,7 +1916,10 @@ export namespace MyNS {
 		/** The total number of free booking link clicks that were recorded for this result. */
 		clickCount?: string | null;
 
-		/** Equal to `click_count` divided by `impression_count`. */
+		/**
+		 * Equal to `click_count` divided by `impression_count`.
+		 * Type: double
+		 */
 		clickthroughRate?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -1794,7 +1962,10 @@ export namespace MyNS {
 		/** The total number of ad clicks that were recorded for this result. */
 		adsClickCount: FormControl<string | null | undefined>,
 
-		/** Equal to `ads_click_count` divided by `ads_impression_count`. */
+		/**
+		 * Equal to `ads_click_count` divided by `ads_impression_count`.
+		 * Type: double
+		 */
 		adsClickthroughRate: FormControl<number | null | undefined>,
 
 		/** The total number of ad impressions that were recorded for this result. */
@@ -1809,7 +1980,10 @@ export namespace MyNS {
 		/** The total number of free booking link clicks that were recorded for this result. */
 		clickCount: FormControl<string | null | undefined>,
 
-		/** Equal to `click_count` divided by `impression_count`. */
+		/**
+		 * Equal to `click_count` divided by `impression_count`.
+		 * Type: double
+		 */
 		clickthroughRate: FormControl<number | null | undefined>,
 
 		/** The user’s device type. Only present if `deviceType` is specified in `aggregateBy` in the request. */
@@ -2143,14 +2317,20 @@ export namespace MyNS {
 		/** Issues that were encountered when validating the file. */
 		issues?: Array<ReconciliationReportValidationIssue>;
 
-		/** The number of commission records that were successfully validated. */
+		/**
+		 * The number of commission records that were successfully validated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulRecordCount?: number | null;
 	}
 
 	/** Response message for ReconciliationReportService.ValidateReconciliationReport. */
 	export interface ValidateReconciliationReportResponseFormProperties {
 
-		/** The number of commission records that were successfully validated. */
+		/**
+		 * The number of commission records that were successfully validated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateValidateReconciliationReportResponseFormGroup() {
@@ -2255,6 +2435,7 @@ export namespace MyNS {
 		 * @param {string} aggregateBy Specifies how to segment the metrics returned by the query. For example, if `userRegionCode` is specified, the `freeBookingLinksResult` will provide metrics aggregated by user region. The string value is a comma-separated list of fields. Valid fields are: `date`, `userRegionCode`, `deviceType`, `partnerHotelId`, and `partnerHotelDisplayName`. Only fields specified here are included in the FreeBookingLinksResult.
 		 * @param {string} filter The conditions (fields and expressions) used to filter the free booking link metrics for the account being queried. The syntax requires spaces surrounding the `in` operator. Otherwise, spaces can be omitted. Conditions can be joined using the `and` operator. The `date` field is required. All other fields are optional. The `date` field values are inclusive and must be in YYYY-MM-DD format. The earliest acceptable date is 2021-03-09; earlier date values will be coerced to 2021-03-09. Values for `partnerHotelDisplayName` are matched case-insensitively. Examples of valid conditions are as follows: * `date = '2021-12-03'` * `date between '2021-12-03' and '2021-12-08'` * `deviceType = 'TABLET'` * `deviceType in ('MOBILE', 'TABLET')` * `partnerHotelId = 'AAA'` * `partnerHotelId in ('AAA', 'BBB')` * `partnerHotelDisplayName = 'hotel A'` * `partnerHotelDisplayName in ('Hotel A', 'HOTEL b')` * `userRegionCode = 'US'` * `userRegionCode in ('US', 'CA')`
 		 * @param {number} pageSize The maximum number of participation results to return. The service may return fewer than this value. If unspecified, at most 10,000 results will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous QueryParticipationReport request. Provide this to receive the subsequent page. When paginating, all other parameters provided to QueryParticipationReport must match the call that provided the page token.
 		 * @return {QueryFreeBookingLinksReportResponse} Successful response
 		 */
@@ -2269,6 +2450,7 @@ export namespace MyNS {
 		 * @param {string} aggregateBy Specifies how to segment the metrics returned by the query. For example, if `userRegionCode` is specified as the `aggregate_by` value, the `participationResult` will provide metrics aggregated by user region. The string value is a comma-separated list of fields. Valid fields are: `date`, `userRegionCode`, `deviceType`, `partnerHotelId`, `hotelRegionCode`, `advanceBookingWindow`, `lengthOfStayDays`, `checkinDate`, and `occupancy`. Fields that are not specified are not included in the ParticipationResult. Using an `aggregateBy` specification that produces a large number of rows will cause an error. This is especially true when aggregating by `partnerHotelId` or more than two fields. To reduce the possibiliy of an error, filter by `partnerHotelId` and `date` to only include a select number of hotels and dates. Accounts with a large number of hotels will need to further reduce data with more filtering.
 		 * @param {string} filter The conditions (fields and expressions) used to filter the participation metrics for the account being queried. The syntax requires spaces surrounding the `in` operator. Otherwise, spaces can be omitted. Conditions can be joined using the `and` operator. The `date` field is required. All other fields are optional. Examples of valid conditions are as follows: * `advanceBookingWindow = 2` * `advanceBookingWindow >= 0` * `advanceBookingWindow <= 5` * `advanceBookingWindow between 1 and 5` * `checkinDate = '2020-10-01'` * `checkinDate >= '2020-10-01'` * `checkinDate <= '2020-10-01'` * `checkinDate between '2020-10-01' and '2020-10-05'` * `date = '2020-02-04'` * `date between '2020-02-04' and '2020-02-09'` * `deviceType = 'TABLET'` * `deviceType in ('MOBILE', 'TABLET')` * `hotelRegionCode = 'US'` * `hotelRegionCode in ('US', 'CA')` * `lengthOfStayDays = 2` * `lengthOfStayDays >= 0` * `lengthOfStayDays <= 5` * `lengthOfStayDays between 1 and 5` * `occupancy = 2` * `occupancy >= 0` * `occupancy <= 5` * `occupancy between 1 and 5` * `partnerHotelId = 'AAA'` * `partnerHotelId in ('AAA', 'BBB')` * `userRegionCode = 'US'` * `userRegionCode in ('US', 'CA')`
 		 * @param {number} pageSize The maximum number of participation results to return. The service may return fewer than this value. If unspecified, at most 10,000 results will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous QueryParticipationReport request. Provide this to receive the subsequent page. When paginating, all other parameters provided to QueryParticipationReport must match the call that provided the page token.
 		 * @return {QueryParticipationReportResponse} Successful response
 		 */
@@ -2283,6 +2465,7 @@ export namespace MyNS {
 		 * @param {string} aggregateBy Specifies how to segment the metrics returned by the query. For example, if `userRegionCode` is specified, the `PropertyPerformanceResult` will provide metrics aggregated by user region. The string value is a comma-separated list of fields. Valid fields are: `advanceBookingWindow`, `brand`, `date`, `deviceType`, `highIntentUsers`, `lengthOfStay`, `propertyRegionCode`, `occupancy`, `partnerPropertyId`, `partnerPropertyDisplayName`, and `userRegionCode`. Only fields specified here are included in the PropertyPerformanceResult.
 		 * @param {string} filter The conditions (fields and expressions) used to filter the property performance metrics for the account being queried. The syntax requires spaces surrounding the `in` operator. Otherwise, spaces can be omitted. Conditions can be joined using the `and` operator. The `date` field is required. All other fields are optional. The `date` field values are inclusive and must be in YYYY-MM-DD format. The earliest acceptable date is 2021-03-09; earlier date values will be coerced to 2021-03-09. Values for `partnerPropertyDisplayName` and `brand` are matched case-insensitively. Examples of valid conditions are as follows: * `advanceBookingWindow = 'ADVANCE_BOOKING_WINDOW_SAME_DAY'` * `advanceBookingWindow in ('ADVANCE_BOOKING_WINDOW_SAME_DAY', 'ADVANCE_BOOKING_WINDOW_DAYS_61_TO_90')` * `brand = 'Brand A'` * `brand in ('Brand A', 'brand B')` * `date = '2021-12-03'` * `date between '2021-12-03' and '2021-12-08'` * `deviceType = 'TABLET'` * `deviceType in ('MOBILE', 'TABLET')` * `highIntentUsers = 'TRUE'` * `highIntentUsers = 'FALSE'` * `lengthOfStay = 'LENGTH_OF_STAY_NIGHTS_2'` * `lengthOfStay in ('LENGTH_OF_STAY_NIGHTS_2', 'LENGTH_OF_STAY_NIGHTS_4_TO_7')` * `propertyRegionCode = 'US'` * `propertyRegionCode in ('US', 'CA')` * `occupancy = 'OCCUPANCY_2'` * `occupancy in ('OCCUPANCY_2', 'OCCUPANCY_OVER_4')` * `partnerPropertyId = 'AAA'` * `partnerPropertyId in ('AAA', 'BBB')` * `partnerPropertyDisplayName = 'hotel A'` * `partnerPropertyDisplayName in ('Hotel A', 'HOTEL b')` * `userRegionCode = 'US'` * `userRegionCode in ('US', 'CA')`
 		 * @param {number} pageSize The maximum number of participation results to return. The service may return fewer than this value. If unspecified, at most 10,000 results will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous QueryParticipationReport request. Provide this to receive the subsequent page. When paginating, all other parameters provided to QueryParticipationReport must match the call that provided the page token.
 		 * @return {QueryPropertyPerformanceReportResponse} Successful response
 		 */
@@ -2337,6 +2520,7 @@ export namespace MyNS {
 		 * @param {string} parent The resource name of the account being queried. The format is `accounts/{account_id}`.
 		 * @param {string} filter Optional. The conditions (fields and expressions) used to filter HotelViews. The syntax requires spaces surrounding the `in` operator. Otherwise, spaces can be omitted. Conditions cannot be joined. The `hotelId` field can be used to select specific hotels. The `liveOnGoogle` field can select properties that Google shows, or properties that are omitted in google search results. The `matchStatus` field can be used to filter the list of HotelViews returned for the account. Examples of valid conditions and their syntax are as follows: * `hotelId = 'hotel_ABC'` * `hotelId in ('hotel_ABC', 'hotel_XYZ')` * `liveOnGoogle = 'TRUE'` * `liveOnGoogle = 'FALSE'` * `matchStatus = 'NOT_MATCHED'` * `matchStatus in ('NOT_MATCHED', 'MATCHED', 'MAP_OVERLAP')`
 		 * @param {number} pageSize Number of elements to retrieve in a single page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token of the page to retrieve.
 		 * @return {ListHotelViewsResponse} Successful response
 		 */

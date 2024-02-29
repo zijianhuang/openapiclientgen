@@ -1797,7 +1797,9 @@ namespace MyNS
 		/// 
 		/// FaceList_Get facelists/{faceListId}
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns the face list's information.</returns>
 		public async Task<FaceList> FaceList_GetAsync(string faceListId, bool returnRecognitionModel)
@@ -1834,7 +1836,9 @@ namespace MyNS
 		/// * 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.
 		/// FaceList_Create facelists/{faceListId}
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating a face list.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task FaceList_CreateAsync(string faceListId, MetaDataContract requestBody)
@@ -1865,7 +1869,9 @@ namespace MyNS
 		/// Delete a specified face list.
 		/// FaceList_Delete facelists/{faceListId}
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task FaceList_DeleteAsync(string faceListId)
 		{
@@ -1888,7 +1894,9 @@ namespace MyNS
 		/// Update information of a face list.
 		/// FaceList_Update facelists/{faceListId}
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for updating a face list.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task FaceList_UpdateAsync(string faceListId, NameAndUserDataContract requestBody)
@@ -1932,8 +1940,12 @@ namespace MyNS
 		/// | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		/// FaceList_AddFaceFromUrl facelists/{faceListId}/persistedfaces
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
-		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
+		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.
+		/// Max length: 1024
+		// </param>
 		/// <param name="targetFace">A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.</param>
 		/// <param name="detectionModel">Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.</param>
 		/// <param name="requestBody">A JSON document with a URL pointing to the image that is to be analyzed.</param>
@@ -1973,7 +1985,9 @@ namespace MyNS
 		/// <br /> Adding/deleting faces to/from a same face list are processed sequentially and to/from different face lists are in parallel.
 		/// FaceList_DeleteFace facelists/{faceListId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="faceListId">Id referencing a particular face list.</param>
+		/// <param name="faceListId">Id referencing a particular face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task FaceList_DeleteFaceAsync(string faceListId, string persistedFaceId)
@@ -2163,7 +2177,9 @@ namespace MyNS
 		/// Retrieve a large face list’s largeFaceListId, name, userData and recognitionModel.
 		/// LargeFaceList_Get largefacelists/{largeFaceListId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns the large face list's information.</returns>
 		public async Task<LargeFaceList> LargeFaceList_GetAsync(string largeFaceListId, bool returnRecognitionModel)
@@ -2203,7 +2219,9 @@ namespace MyNS
 		/// * S0-tier subscription quota: 1,000,000 large face lists.
 		/// LargeFaceList_Create largefacelists/{largeFaceListId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating a large face list.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargeFaceList_CreateAsync(string largeFaceListId, MetaDataContract requestBody)
@@ -2234,7 +2252,9 @@ namespace MyNS
 		/// Delete a specified large face list.
 		/// LargeFaceList_Delete largefacelists/{largeFaceListId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargeFaceList_DeleteAsync(string largeFaceListId)
 		{
@@ -2257,7 +2277,9 @@ namespace MyNS
 		/// Update information of a large face list.
 		/// LargeFaceList_Update largefacelists/{largeFaceListId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for updating a large face list.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargeFaceList_UpdateAsync(string largeFaceListId, NameAndUserDataContract requestBody)
@@ -2288,9 +2310,14 @@ namespace MyNS
 		/// List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).
 		/// LargeFaceList_ListFaces largefacelists/{largeFaceListId}/persistedfaces
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="start">Starting face id to return (used to list a range of faces).</param>
-		/// <param name="top">Number of faces to return starting with the face id indicated by the 'start' parameter.</param>
+		/// <param name="top">Number of faces to return starting with the face id indicated by the 'start' parameter.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A successful call returns an array of face information that belong to the large face list.</returns>
 		public async Task<PersistedFace[]> LargeFaceList_ListFacesAsync(string largeFaceListId, string start, int top)
 		{
@@ -2336,8 +2363,12 @@ namespace MyNS
 		/// * S0-tier subscription quota: 1,000,000 faces per large face list.
 		/// LargeFaceList_AddFaceFromUrl largefacelists/{largeFaceListId}/persistedfaces
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
-		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
+		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.
+		/// Max length: 1024
+		// </param>
 		/// <param name="targetFace">A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.</param>
 		/// <param name="detectionModel">Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.</param>
 		/// <param name="requestBody">A JSON document with a URL pointing to the image that is to be analyzed.</param>
@@ -2376,7 +2407,9 @@ namespace MyNS
 		/// Retrieve information about a persisted face (specified by persistedFaceId and its belonging largeFaceListId).
 		/// LargeFaceList_GetFace largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns target persisted face's information (persistedFaceId and userData).</returns>
 		public async Task<PersistedFace> LargeFaceList_GetFaceAsync(string largeFaceListId, string persistedFaceId)
@@ -2407,7 +2440,9 @@ namespace MyNS
 		/// <br /> Adding/deleting faces to/from a same large face list are processed sequentially and to/from different large face lists are in parallel.
 		/// LargeFaceList_DeleteFace largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargeFaceList_DeleteFaceAsync(string largeFaceListId, string persistedFaceId)
@@ -2431,7 +2466,9 @@ namespace MyNS
 		/// Update a persisted face's userData field.
 		/// LargeFaceList_UpdateFace largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <param name="requestBody">Request body for updating persisted face.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
@@ -2463,7 +2500,9 @@ namespace MyNS
 		/// Queue a large face list training task, the training task may not be started immediately.
 		/// LargeFaceList_Train largefacelists/{largeFaceListId}/train
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		public async Task LargeFaceList_TrainAsync(string largeFaceListId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/train";
@@ -2485,7 +2524,9 @@ namespace MyNS
 		/// Retrieve the training status of a large face list (completed or ongoing).
 		/// LargeFaceList_GetTrainingStatus largefacelists/{largeFaceListId}/training
 		/// </summary>
-		/// <param name="largeFaceListId">Id referencing a particular large face list.</param>
+		/// <param name="largeFaceListId">Id referencing a particular large face list.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns the large face list's training status.</returns>
 		public async Task<TrainingStatus> LargeFaceList_GetTrainingStatusAsync(string largeFaceListId)
 		{
@@ -2523,8 +2564,13 @@ namespace MyNS
 		/// 
 		/// LargePersonGroup_List largepersongroups
 		/// </summary>
-		/// <param name="start">List large person groups from the least largePersonGroupId greater than the "start".</param>
-		/// <param name="top">The number of large person groups to list.</param>
+		/// <param name="start">List large person groups from the least largePersonGroupId greater than the "start".
+		/// Max length: 64
+		// </param>
+		/// <param name="top">The number of large person groups to list.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns an array of large person groups and their information.</returns>
 		public async Task<LargePersonGroup[]> LargePersonGroup_ListAsync(string start, int top, bool returnRecognitionModel)
@@ -2555,7 +2601,9 @@ namespace MyNS
 		/// 
 		/// LargePersonGroup_Get largepersongroups/{largePersonGroupId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns the large person group's information.</returns>
 		public async Task<LargePersonGroup> LargePersonGroup_GetAsync(string largePersonGroupId, bool returnRecognitionModel)
@@ -2596,7 +2644,9 @@ namespace MyNS
 		/// * S0-tier subscription quota: 1,000,000 large person groups.
 		/// LargePersonGroup_Create largepersongroups/{largePersonGroupId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating new large person group.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargePersonGroup_CreateAsync(string largePersonGroupId, MetaDataContract requestBody)
@@ -2627,7 +2677,9 @@ namespace MyNS
 		/// Delete an existing large person group. Persisted face features of all people in the large person group will also be deleted.
 		/// LargePersonGroup_Delete largepersongroups/{largePersonGroupId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargePersonGroup_DeleteAsync(string largePersonGroupId)
 		{
@@ -2650,7 +2702,9 @@ namespace MyNS
 		/// Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.
 		/// LargePersonGroup_Update largepersongroups/{largePersonGroupId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for updating large person group.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargePersonGroup_UpdateAsync(string largePersonGroupId, NameAndUserDataContract requestBody)
@@ -2681,9 +2735,14 @@ namespace MyNS
 		/// List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
 		/// LargePersonGroupPerson_List largepersongroups/{largePersonGroupId}/persons
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="start">Starting person id to return (used to list a range of persons).</param>
-		/// <param name="top">Number of persons to return starting with the person id indicated by the 'start' parameter.</param>
+		/// <param name="top">Number of persons to return starting with the person id indicated by the 'start' parameter.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A successful call returns an array of person information that belong to the large person group.</returns>
 		public async Task<Person[]> LargePersonGroupPerson_ListAsync(string largePersonGroupId, string start, int top)
 		{
@@ -2712,7 +2771,9 @@ namespace MyNS
 		/// Create a new person in a specified large person group.
 		/// LargePersonGroupPerson_Create largepersongroups/{largePersonGroupId}/persons
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating new person.</param>
 		/// <returns>A successful call returns a new personId created.</returns>
 		public async Task<Person> LargePersonGroupPerson_CreateAsync(string largePersonGroupId, NameAndUserDataContract requestBody)
@@ -2749,7 +2810,9 @@ namespace MyNS
 		/// Retrieve a person's name and userData, and the persisted faceIds representing the registered person face feature.
 		/// LargePersonGroupPerson_Get largepersongroups/{largePersonGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <returns>A successful call returns the person's information.</returns>
 		public async Task<Person> LargePersonGroupPerson_GetAsync(string largePersonGroupId, string personId)
@@ -2779,7 +2842,9 @@ namespace MyNS
 		/// Delete an existing person from a large person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.
 		/// LargePersonGroupPerson_Delete largepersongroups/{largePersonGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task LargePersonGroupPerson_DeleteAsync(string largePersonGroupId, string personId)
@@ -2803,7 +2868,9 @@ namespace MyNS
 		/// Update name or userData of a person.
 		/// LargePersonGroupPerson_Update largepersongroups/{largePersonGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="requestBody">Request body for person update operation.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
@@ -2848,9 +2915,13 @@ namespace MyNS
 		/// | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		/// LargePersonGroupPerson_AddFaceFromUrl largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
-		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.</param>
+		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.
+		/// Max length: 1024
+		// </param>
 		/// <param name="targetFace">A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.</param>
 		/// <param name="detectionModel">Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.</param>
 		/// <param name="requestBody">A JSON document with a URL pointing to the image that is to be analyzed.</param>
@@ -2889,7 +2960,9 @@ namespace MyNS
 		/// Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging largePersonGroupId).
 		/// LargePersonGroupPerson_GetFace largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns target persisted face's information (persistedFaceId and userData).</returns>
@@ -2921,7 +2994,9 @@ namespace MyNS
 		/// <br /> Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		/// LargePersonGroupPerson_DeleteFace largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
@@ -2946,7 +3021,9 @@ namespace MyNS
 		/// Update a person persisted face's userData field.
 		/// LargePersonGroupPerson_UpdateFace largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <param name="requestBody">Request body for updating persisted face.</param>
@@ -2979,7 +3056,9 @@ namespace MyNS
 		/// Queue a large person group training task, the training task may not be started immediately.
 		/// LargePersonGroup_Train largepersongroups/{largePersonGroupId}/train
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		public async Task LargePersonGroup_TrainAsync(string largePersonGroupId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/train";
@@ -3001,7 +3080,9 @@ namespace MyNS
 		/// Retrieve the training status of a large person group (completed or ongoing).
 		/// LargePersonGroup_GetTrainingStatus largepersongroups/{largePersonGroupId}/training
 		/// </summary>
-		/// <param name="largePersonGroupId">Id referencing a particular large person group.</param>
+		/// <param name="largePersonGroupId">Id referencing a particular large person group.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns the large person group's training status.</returns>
 		public async Task<TrainingStatus> LargePersonGroup_GetTrainingStatusAsync(string largePersonGroupId)
 		{
@@ -3068,8 +3149,13 @@ namespace MyNS
 		/// 
 		/// PersonGroup_List persongroups
 		/// </summary>
-		/// <param name="start">List person groups from the least personGroupId greater than the "start".</param>
-		/// <param name="top">The number of person groups to list.</param>
+		/// <param name="start">List person groups from the least personGroupId greater than the "start".
+		/// Max length: 64
+		// </param>
+		/// <param name="top">The number of person groups to list.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns an array of person groups and their information.</returns>
 		public async Task<PersonGroup[]> PersonGroup_ListAsync(string start, int top, bool returnRecognitionModel)
@@ -3099,7 +3185,9 @@ namespace MyNS
 		/// Retrieve person group name, userData and recognitionModel. To get person information under this personGroup, use [PersonGroup Person - List](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395241).
 		/// PersonGroup_Get persongroups/{personGroupId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="returnRecognitionModel">A value indicating whether the operation should return 'recognitionModel' in response.</param>
 		/// <returns>A successful call returns the person group's information.</returns>
 		public async Task<PersonGroup> PersonGroup_GetAsync(string personGroupId, bool returnRecognitionModel)
@@ -3140,7 +3228,9 @@ namespace MyNS
 		/// * to handle larger scale face identification problem, please consider using [LargePersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d).
 		/// PersonGroup_Create persongroups/{personGroupId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating new person group.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task PersonGroup_CreateAsync(string personGroupId, MetaDataContract requestBody)
@@ -3171,7 +3261,9 @@ namespace MyNS
 		/// Delete an existing person group. Persisted face features of all people in the person group will also be deleted.
 		/// PersonGroup_Delete persongroups/{personGroupId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task PersonGroup_DeleteAsync(string personGroupId)
 		{
@@ -3194,7 +3286,9 @@ namespace MyNS
 		/// Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
 		/// PersonGroup_Update persongroups/{personGroupId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for updating person group.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task PersonGroup_UpdateAsync(string personGroupId, NameAndUserDataContract requestBody)
@@ -3225,9 +3319,14 @@ namespace MyNS
 		/// List all persons in a person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
 		/// PersonGroupPerson_List persongroups/{personGroupId}/persons
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="start">Starting person id to return (used to list a range of persons).</param>
-		/// <param name="top">Number of persons to return starting with the person id indicated by the 'start' parameter.</param>
+		/// <param name="top">Number of persons to return starting with the person id indicated by the 'start' parameter.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>A successful call returns an array of person information that belong to the person group.</returns>
 		public async Task<Person[]> PersonGroupPerson_ListAsync(string personGroupId, string start, int top)
 		{
@@ -3256,7 +3355,9 @@ namespace MyNS
 		/// Create a new person in a specified person group.
 		/// PersonGroupPerson_Create persongroups/{personGroupId}/persons
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="requestBody">Request body for creating new person.</param>
 		/// <returns>A successful call returns a new personId created.</returns>
 		public async Task<Person> PersonGroupPerson_CreateAsync(string personGroupId, NameAndUserDataContract requestBody)
@@ -3293,7 +3394,9 @@ namespace MyNS
 		/// Retrieve a person's information, including registered persisted faces, name and userData.
 		/// PersonGroupPerson_Get persongroups/{personGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <returns>A successful call returns the person's information.</returns>
 		public async Task<Person> PersonGroupPerson_GetAsync(string personGroupId, string personId)
@@ -3323,7 +3426,9 @@ namespace MyNS
 		/// Delete an existing person from a person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.
 		/// PersonGroupPerson_Delete persongroups/{personGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
 		public async Task PersonGroupPerson_DeleteAsync(string personGroupId, string personId)
@@ -3347,7 +3452,9 @@ namespace MyNS
 		/// Update name or userData of a person.
 		/// PersonGroupPerson_Update persongroups/{personGroupId}/persons/{personId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="requestBody">Request body for person update operation.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
@@ -3392,9 +3499,13 @@ namespace MyNS
 		/// | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		/// PersonGroupPerson_AddFaceFromUrl persongroups/{personGroupId}/persons/{personId}/persistedfaces
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
-		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.</param>
+		/// <param name="userData">User-specified data about the face for any purpose. The maximum length is 1KB.
+		/// Max length: 1024
+		// </param>
 		/// <param name="targetFace">A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.</param>
 		/// <param name="detectionModel">Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.</param>
 		/// <param name="requestBody">A JSON document with a URL pointing to the image that is to be analyzed.</param>
@@ -3433,7 +3544,9 @@ namespace MyNS
 		/// Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging personGroupId).
 		/// PersonGroupPerson_GetFace persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns target persisted face's information (persistedFaceId and userData).</returns>
@@ -3465,7 +3578,9 @@ namespace MyNS
 		/// <br /> Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		/// PersonGroupPerson_DeleteFace persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <returns>A successful call returns an empty response body.</returns>
@@ -3497,7 +3612,9 @@ namespace MyNS
 		/// * Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		/// PersonGroupPerson_UpdateFace persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <param name="personId">Id referencing a particular person.</param>
 		/// <param name="persistedFaceId">Id referencing a particular persistedFaceId of an existing face.</param>
 		/// <param name="requestBody">Request body for updating persisted face.</param>
@@ -3530,7 +3647,9 @@ namespace MyNS
 		/// Queue a person group training task, the training task may not be started immediately.
 		/// PersonGroup_Train persongroups/{personGroupId}/train
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		public async Task PersonGroup_TrainAsync(string personGroupId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/train";
@@ -3552,7 +3671,9 @@ namespace MyNS
 		/// Retrieve the training status of a person group (completed or ongoing).
 		/// PersonGroup_GetTrainingStatus persongroups/{personGroupId}/training
 		/// </summary>
-		/// <param name="personGroupId">Id referencing a particular person group.</param>
+		/// <param name="personGroupId">Id referencing a particular person group.
+		/// Max length: 64
+		// </param>
 		/// <returns>A successful call returns the person group's training status.</returns>
 		public async Task<TrainingStatus> PersonGroup_GetTrainingStatusAsync(string personGroupId)
 		{

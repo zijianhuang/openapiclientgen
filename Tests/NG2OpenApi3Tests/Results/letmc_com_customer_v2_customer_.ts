@@ -119,7 +119,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning BranchModel values */
 	export interface BranchModelResults {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** The resulting data returned from the paged query range */
@@ -129,7 +132,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning BranchModel values */
 	export interface BranchModelResultsFormProperties {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateBranchModelResultsFormGroup() {
@@ -159,7 +165,10 @@ export namespace MyNS {
 	/** Landlord Accounting - Finance Entry */
 	export interface LandlordAccountingEntryModel {
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 
 		/** Payment Date */
@@ -168,14 +177,20 @@ export namespace MyNS {
 		/** Description. */
 		Description?: string | null;
 
-		/** Transaction Number */
+		/**
+		 * Transaction Number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TransactionNumber?: number | null;
 	}
 
 	/** Landlord Accounting - Finance Entry */
 	export interface LandlordAccountingEntryModelFormProperties {
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		Amount: FormControl<number | null | undefined>,
 
 		/** Payment Date */
@@ -184,7 +199,10 @@ export namespace MyNS {
 		/** Description. */
 		Description: FormControl<string | null | undefined>,
 
-		/** Transaction Number */
+		/**
+		 * Transaction Number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TransactionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateLandlordAccountingEntryModelFormGroup() {
@@ -236,7 +254,10 @@ export namespace MyNS {
 	/** Landlord Accounting */
 	export interface LandlordAccountingModel {
 
-		/** Account Balance */
+		/**
+		 * Account Balance
+		 * Type: double
+		 */
 		AccountBalance?: number | null;
 
 		/** Last Payment Made */
@@ -252,7 +273,10 @@ export namespace MyNS {
 	/** Landlord Accounting */
 	export interface LandlordAccountingModelFormProperties {
 
-		/** Account Balance */
+		/**
+		 * Account Balance
+		 * Type: double
+		 */
 		AccountBalance: FormControl<number | null | undefined>,
 
 		/** Last Payment Made */
@@ -470,7 +494,10 @@ export namespace MyNS {
 		/** File Name */
 		FileName?: string | null;
 
-		/** File Size Bytes */
+		/**
+		 * File Size Bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FileSize?: number | null;
 
 		/** ID */
@@ -489,7 +516,10 @@ export namespace MyNS {
 		/** File Name */
 		FileName: FormControl<string | null | undefined>,
 
-		/** File Size Bytes */
+		/**
+		 * File Size Bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FileSize: FormControl<number | null | undefined>,
 
 		/** ID */
@@ -704,7 +734,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning LandlordPhotoModel values */
 	export interface LandlordPhotoModelResults {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** The resulting data returned from the paged query range */
@@ -714,7 +747,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning LandlordPhotoModel values */
 	export interface LandlordPhotoModelResultsFormProperties {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateLandlordPhotoModelResultsFormGroup() {
@@ -809,23 +845,35 @@ export namespace MyNS {
 		/** Chase Notes */
 		ChaseNotes?: Array<LandlordChaseNoteModel>;
 
-		/** Rent Collected */
+		/**
+		 * Rent Collected
+		 * Type: double
+		 */
 		RentCollected?: number | null;
 
 		/** Outstanding Rent */
 		RentOutstanding?: Array<LandlordRentOustandingItem>;
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		TotalRentArrears?: number | null;
 	}
 
 	/** Landlord Rent Arrears. */
 	export interface LandlordRentArrearsModelFormProperties {
 
-		/** Rent Collected */
+		/**
+		 * Rent Collected
+		 * Type: double
+		 */
 		RentCollected: FormControl<number | null | undefined>,
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		TotalRentArrears: FormControl<number | null | undefined>,
 	}
 	export function CreateLandlordRentArrearsModelFormGroup() {
@@ -840,10 +888,16 @@ export namespace MyNS {
 	/** Outstanding Rent */
 	export interface LandlordRentOustandingItem {
 
-		/** Days since the tenant went into arrears */
+		/**
+		 * Days since the tenant went into arrears
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DebtDays?: number | null;
 
-		/** Outstanding Rent */
+		/**
+		 * Outstanding Rent
+		 * Type: double
+		 */
 		OutstandingRent?: number | null;
 
 		/** Property */
@@ -859,10 +913,16 @@ export namespace MyNS {
 	/** Outstanding Rent */
 	export interface LandlordRentOustandingItemFormProperties {
 
-		/** Days since the tenant went into arrears */
+		/**
+		 * Days since the tenant went into arrears
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DebtDays: FormControl<number | null | undefined>,
 
-		/** Outstanding Rent */
+		/**
+		 * Outstanding Rent
+		 * Type: double
+		 */
 		OutstandingRent: FormControl<number | null | undefined>,
 
 		/** Property */
@@ -906,7 +966,10 @@ export namespace MyNS {
 	/** Landlord Summary - Landing Page. */
 	export interface LandlordSummaryModel {
 
-		/** Account Balance */
+		/**
+		 * Account Balance
+		 * Type: double
+		 */
 		AccountBalance?: number | null;
 
 		/** Last Payment Made */
@@ -915,20 +978,29 @@ export namespace MyNS {
 		/** Tenancies */
 		Tenancies?: Array<LandlordSummaryTenancyModel>;
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		TotalRentArrears?: number | null;
 	}
 
 	/** Landlord Summary - Landing Page. */
 	export interface LandlordSummaryModelFormProperties {
 
-		/** Account Balance */
+		/**
+		 * Account Balance
+		 * Type: double
+		 */
 		AccountBalance: FormControl<number | null | undefined>,
 
 		/** Last Payment Made */
 		LastPayment: FormControl<Date | null | undefined>,
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		TotalRentArrears: FormControl<number | null | undefined>,
 	}
 	export function CreateLandlordSummaryModelFormGroup() {
@@ -944,7 +1016,10 @@ export namespace MyNS {
 	/** Landlord Summary - Landing Page. */
 	export interface LandlordSummaryTenancyModel {
 
-		/** Bomd */
+		/**
+		 * Bomd
+		 * Type: double
+		 */
 		Bond?: number | null;
 
 		/** The Tenancy Branch ID */
@@ -959,7 +1034,10 @@ export namespace MyNS {
 		/** ID */
 		ID?: string | null;
 
-		/** Maintenance Jobs. */
+		/**
+		 * Maintenance Jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaintenanceJobs?: number | null;
 
 		/** State of the tenancy */
@@ -971,10 +1049,16 @@ export namespace MyNS {
 		/** Rent */
 		Rent?: string | null;
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		RentArrears?: number | null;
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		RentCollected?: number | null;
 
 		/** Tenancy Property */
@@ -987,7 +1071,10 @@ export namespace MyNS {
 	/** Landlord Summary - Landing Page. */
 	export interface LandlordSummaryTenancyModelFormProperties {
 
-		/** Bomd */
+		/**
+		 * Bomd
+		 * Type: double
+		 */
 		Bond: FormControl<number | null | undefined>,
 
 		/** The Tenancy Branch ID */
@@ -1002,7 +1089,10 @@ export namespace MyNS {
 		/** ID */
 		ID: FormControl<string | null | undefined>,
 
-		/** Maintenance Jobs. */
+		/**
+		 * Maintenance Jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaintenanceJobs: FormControl<number | null | undefined>,
 
 		/** State of the tenancy */
@@ -1014,10 +1104,16 @@ export namespace MyNS {
 		/** Rent */
 		Rent: FormControl<string | null | undefined>,
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		RentArrears: FormControl<number | null | undefined>,
 
-		/** Rent Arrears */
+		/**
+		 * Rent Arrears
+		 * Type: double
+		 */
 		RentCollected: FormControl<number | null | undefined>,
 
 		/** Tenancy Property */
@@ -1052,10 +1148,16 @@ export namespace MyNS {
 		/** Actual End Date */
 		ActualEndDate?: Date | null;
 
-		/** Beds */
+		/**
+		 * Beds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Beds?: number | null;
 
-		/** Bond */
+		/**
+		 * Bond
+		 * Type: double
+		 */
 		Bond?: number | null;
 
 		/** The tenancy branch ID:- */
@@ -1085,7 +1187,10 @@ export namespace MyNS {
 		/** Maintenance Preferences. */
 		Preferences?: Array<LandlordMaintenancePreferenceModel>;
 
-		/** Previous Rent Amount */
+		/**
+		 * Previous Rent Amount
+		 * Type: double
+		 */
 		PreviousRentAmount?: number | null;
 
 		/** Display Property Address */
@@ -1094,7 +1199,10 @@ export namespace MyNS {
 		/** Rent */
 		Rent?: string | null;
 
-		/** Rent Amount */
+		/**
+		 * Rent Amount
+		 * Type: double
+		 */
 		RentAmount?: number | null;
 
 		/** Start Date */
@@ -1116,10 +1224,16 @@ export namespace MyNS {
 		/** Actual End Date */
 		ActualEndDate: FormControl<Date | null | undefined>,
 
-		/** Beds */
+		/**
+		 * Beds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Beds: FormControl<number | null | undefined>,
 
-		/** Bond */
+		/**
+		 * Bond
+		 * Type: double
+		 */
 		Bond: FormControl<number | null | undefined>,
 
 		/** The tenancy branch ID:- */
@@ -1137,7 +1251,10 @@ export namespace MyNS {
 		/** State of the tenancy */
 		ManagedRent: FormControl<boolean | null | undefined>,
 
-		/** Previous Rent Amount */
+		/**
+		 * Previous Rent Amount
+		 * Type: double
+		 */
 		PreviousRentAmount: FormControl<number | null | undefined>,
 
 		/** Display Property Address */
@@ -1146,7 +1263,10 @@ export namespace MyNS {
 		/** Rent */
 		Rent: FormControl<string | null | undefined>,
 
-		/** Rent Amount */
+		/**
+		 * Rent Amount
+		 * Type: double
+		 */
 		RentAmount: FormControl<number | null | undefined>,
 
 		/** Start Date */
@@ -1199,7 +1319,9 @@ export namespace MyNS {
 		 * Get v2/customer/{shortName}/branch/branches
 		 * @param {string} shortName The unique client short-name
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BranchModelResults} OK
 		 */
 		BranchController_GetBranches(shortName: string, offset: number, count: number): Observable<BranchModelResults> {
@@ -1314,6 +1436,7 @@ export namespace MyNS {
 		 * @param {string} shortName The unique client short-name
 		 * @param {string} token The login token returned from the /session POST call
 		 * @param {number} yearEnd The Tax Year End.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Object} OK
 		 */
 		LandlordController_GetSASReport(shortName: string, token: string, yearEnd: number): Observable<Object> {
@@ -1387,7 +1510,9 @@ export namespace MyNS {
 		 * @param {string} token The login token returned from the /session POST call
 		 * @param {string} photoID The unique ID of the photo on the property
 		 * @param {number} width An optional parameter specifying the image width
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height An optional parameter specifying the image height
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Object} OK
 		 */
 		PhotoController_GetPhotoDownload(shortName: string, token: string, photoID: string, width: number | null | undefined, height: number | null | undefined): Observable<Object> {
@@ -1401,7 +1526,9 @@ export namespace MyNS {
 		 * @param {string} token The login token returned from the /session POST call
 		 * @param {string} propertyID The unique ID of the Property
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LandlordPhotoModelResults} OK
 		 */
 		PropertyController_GetPropertiesPhotos(shortName: string, token: string, propertyID: string, offset: number, count: number): Observable<LandlordPhotoModelResults> {

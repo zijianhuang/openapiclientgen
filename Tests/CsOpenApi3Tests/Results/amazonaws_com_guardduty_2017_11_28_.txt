@@ -5834,7 +5834,10 @@ namespace MyNS
 		/// Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent the invitation.
 		/// AcceptAdministratorInvitation detector/{detectorId}/administrator
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptAdministratorInvitationResponse> AcceptAdministratorInvitationAsync(string detectorId, AcceptAdministratorInvitationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5875,7 +5878,10 @@ namespace MyNS
 		/// Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.
 		/// GetAdministratorAccount detector/{detectorId}/administrator
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5909,7 +5915,10 @@ namespace MyNS
 		/// Accepts the invitation to be monitored by a GuardDuty administrator account.
 		/// AcceptInvitation detector/{detectorId}/master
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptInvitationResponse> AcceptInvitationAsync(string detectorId, AcceptInvitationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5950,7 +5959,10 @@ namespace MyNS
 		/// Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.
 		/// GetMasterAccount detector/{detectorId}/master
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMasterAccountResponse> GetMasterAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5984,7 +5996,10 @@ namespace MyNS
 		/// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note> <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p> </note>
 		/// ArchiveFindings detector/{detectorId}/findings/archive
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</param>
+		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to archive.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ArchiveFindingsResponse> ArchiveFindingsAsync(string detectorId, ArchiveFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6065,7 +6080,10 @@ namespace MyNS
 		/// Lists detectorIds of all the existing Amazon GuardDuty detector resources.
 		/// ListDetectors detector
 		/// </summary>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6102,7 +6120,10 @@ namespace MyNS
 		/// Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web Services account per Region is 100. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas for GuardDuty</a>.
 		/// CreateFilter detector/{detectorId}/filter
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</param>
+		/// <param name="detectorId">The ID of the detector belonging to the GuardDuty account that you want to create a filter for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFilterResponse> CreateFilterAsync(string detectorId, CreateFilterPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6143,8 +6164,14 @@ namespace MyNS
 		/// Returns a paginated list of the current filters.
 		/// ListFilters detector/{detectorId}/filter
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.</param>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6181,7 +6208,10 @@ namespace MyNS
 		/// Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.
 		/// CreateIPSet detector/{detectorId}/ipset
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateIPSetResponse> CreateIPSetAsync(string detectorId, CreateIPSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6222,8 +6252,14 @@ namespace MyNS
 		/// Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.
 		/// ListIPSets detector/{detectorId}/ipset
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.</param>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6260,7 +6296,10 @@ namespace MyNS
 		/// <p>Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p> <p>As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account. A delegated administrator must enable GuardDuty prior to being added as a member.</p> <p>If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>, use <code>CreateMembers</code> after GuardDuty has been enabled in potential member accounts.</p> <p>If you disassociate a member from a GuardDuty delegated administrator, the member account details obtained from this API, including the associated email addresses, will be retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p>
 		/// CreateMembers detector/{detectorId}/member
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMembersResponse> CreateMembersAsync(string detectorId, CreateMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6301,8 +6340,14 @@ namespace MyNS
 		/// Lists details about all member accounts for the current GuardDuty administrator account.
 		/// ListMembers detector/{detectorId}/member
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector the member is associated with.</param>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="detectorId">The unique ID of the detector the member is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="onlyAssociated">Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -6340,7 +6385,10 @@ namespace MyNS
 		/// Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.
 		/// CreatePublishingDestination detector/{detectorId}/publishingDestination
 		/// </summary>
-		/// <param name="detectorId">The ID of the GuardDuty detector associated with the publishing destination.</param>
+		/// <param name="detectorId">The ID of the GuardDuty detector associated with the publishing destination.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePublishingDestinationResponse> CreatePublishingDestinationAsync(string detectorId, CreatePublishingDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6381,8 +6429,14 @@ namespace MyNS
 		/// Returns a list of publishing destinations associated with the specified <code>detectorId</code>.
 		/// ListPublishingDestinations detector/{detectorId}/publishingDestination
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector to retrieve publishing destinations for.</param>
-		/// <param name="maxResults">The maximum number of results to return in the response.</param>
+		/// <param name="detectorId">The ID of the detector to retrieve publishing destinations for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in the response.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6419,7 +6473,10 @@ namespace MyNS
 		/// Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates sample findings of all supported finding types.
 		/// CreateSampleFindings detector/{detectorId}/findings/create
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector to create sample findings for.</param>
+		/// <param name="detectorId">The ID of the detector to create sample findings for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(string detectorId, CreateSampleFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6460,7 +6517,10 @@ namespace MyNS
 		/// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.
 		/// CreateThreatIntelSet detector/{detectorId}/threatintelset
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThreatIntelSetResponse> CreateThreatIntelSetAsync(string detectorId, CreateThreatIntelSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6501,8 +6561,14 @@ namespace MyNS
 		/// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.
 		/// ListThreatIntelSets detector/{detectorId}/threatintelset
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.</param>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6579,7 +6645,10 @@ namespace MyNS
 		/// Deletes an Amazon GuardDuty detector that is specified by the detector ID.
 		/// DeleteDetector detector/{detectorId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that you want to delete.</param>
+		/// <param name="detectorId">The unique ID of the detector that you want to delete.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDetectorResponse> DeleteDetectorAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6613,7 +6682,10 @@ namespace MyNS
 		/// <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// GetDetector detector/{detectorId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that you want to get.</param>
+		/// <param name="detectorId">The unique ID of the detector that you want to get.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDetectorResponse> GetDetectorAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6647,7 +6719,10 @@ namespace MyNS
 		/// <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// UpdateDetector detector/{detectorId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector to update.</param>
+		/// <param name="detectorId">The unique ID of the detector to update.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDetectorResponse> UpdateDetectorAsync(string detectorId, UpdateDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6688,7 +6763,10 @@ namespace MyNS
 		/// Deletes the filter specified by the filter name.
 		/// DeleteFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="filterName">The name of the filter that you want to delete.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteFilterResponse> DeleteFilterAsync(string detectorId, string filterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6723,7 +6801,10 @@ namespace MyNS
 		/// Returns the details of the filter specified by the filter name.
 		/// GetFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="filterName">The name of the filter you want to get.</param>
 		/// <returns>Success</returns>
 		public async Task<GetFilterResponse> GetFilterAsync(string detectorId, string filterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6758,7 +6839,10 @@ namespace MyNS
 		/// Updates the filter specified by the filter name.
 		/// UpdateFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</param>
+		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="filterName">The name of the filter.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFilterResponse> UpdateFilterAsync(string detectorId, string filterName, UpdateFilterPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6800,7 +6884,10 @@ namespace MyNS
 		/// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface.
 		/// DeleteIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector associated with the IPSet.</param>
+		/// <param name="detectorId">The unique ID of the detector associated with the IPSet.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="ipSetId">The unique ID of the IPSet to delete.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteIPSetResponse> DeleteIPSetAsync(string detectorId, string ipSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6835,7 +6922,10 @@ namespace MyNS
 		/// Retrieves the IPSet specified by the <code>ipSetId</code>.
 		/// GetIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="ipSetId">The unique ID of the IPSet to retrieve.</param>
 		/// <returns>Success</returns>
 		public async Task<GetIPSetResponse> GetIPSetAsync(string detectorId, string ipSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6870,7 +6960,10 @@ namespace MyNS
 		/// Updates the IPSet specified by the IPSet ID.
 		/// UpdateIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
-		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose IPSet you want to update.</param>
+		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="ipSetId">The unique ID that specifies the IPSet that you want to update.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIPSetResponse> UpdateIPSetAsync(string detectorId, string ipSetId, UpdateIPSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6952,7 +7045,10 @@ namespace MyNS
 		/// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.</p>
 		/// DeleteMembers detector/{detectorId}/member/delete
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to delete.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to delete.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMembersResponse> DeleteMembersAsync(string detectorId, DeleteMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6993,7 +7089,10 @@ namespace MyNS
 		/// Deletes the publishing definition with the specified <code>destinationId</code>.
 		/// DeletePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to delete.</param>
+		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to delete.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to delete.</param>
 		/// <returns>Success</returns>
 		public async Task<DeletePublishingDestinationResponse> DeletePublishingDestinationAsync(string detectorId, string destinationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7028,7 +7127,10 @@ namespace MyNS
 		/// Returns information about the publishing destination specified by the provided <code>destinationId</code>.
 		/// DescribePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to retrieve.</param>
+		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to retrieve.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribePublishingDestinationResponse> DescribePublishingDestinationAsync(string detectorId, string destinationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7063,7 +7165,10 @@ namespace MyNS
 		/// Updates information about the publishing destination specified by the <code>destinationId</code>.
 		/// UpdatePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector associated with the publishing destinations to update.</param>
+		/// <param name="detectorId">The ID of the detector associated with the publishing destinations to update.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to update.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePublishingDestinationResponse> UpdatePublishingDestinationAsync(string detectorId, string destinationId, UpdatePublishingDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7105,7 +7210,10 @@ namespace MyNS
 		/// Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
 		/// DeleteThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="threatIntelSetId">The unique ID of the threatIntelSet that you want to delete.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteThreatIntelSetResponse> DeleteThreatIntelSetAsync(string detectorId, string threatIntelSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7140,7 +7248,10 @@ namespace MyNS
 		/// Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
 		/// GetThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="threatIntelSetId">The unique ID of the threatIntelSet that you want to get.</param>
 		/// <returns>Success</returns>
 		public async Task<GetThreatIntelSetResponse> GetThreatIntelSetAsync(string detectorId, string threatIntelSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7175,7 +7286,10 @@ namespace MyNS
 		/// Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
 		/// UpdateThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
-		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</param>
+		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="threatIntelSetId">The unique ID that specifies the ThreatIntelSet that you want to update.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThreatIntelSetResponse> UpdateThreatIntelSetAsync(string detectorId, string threatIntelSetId, UpdateThreatIntelSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7217,7 +7331,10 @@ namespace MyNS
 		/// <p>Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all the member accounts.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// DescribeMalwareScans detector/{detectorId}/malware-scans
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the request is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the request is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7260,8 +7377,14 @@ namespace MyNS
 		/// <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// DescribeOrganizationConfiguration detector/{detectorId}/admin
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector to retrieve information about the delegated administrator from.</param>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response.</param>
+		/// <param name="detectorId">The ID of the detector to retrieve information about the delegated administrator from.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7298,7 +7421,10 @@ namespace MyNS
 		/// <p>Configures the delegated administrator account with the provided values. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// UpdateOrganizationConfiguration detector/{detectorId}/admin
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that configures the delegated administrator.</param>
+		/// <param name="detectorId">The ID of the detector that configures the delegated administrator.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(string detectorId, UpdateOrganizationConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7379,7 +7505,10 @@ namespace MyNS
 		/// <p>Disassociates the current GuardDuty member account from its administrator account.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty in a member account.</p>
 		/// DisassociateFromAdministratorAccount detector/{detectorId}/administrator/disassociate
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7408,7 +7537,10 @@ namespace MyNS
 		/// <p>Disassociates the current GuardDuty member account from its administrator account.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.</p>
 		/// DisassociateFromMasterAccount detector/{detectorId}/master/disassociate
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7437,7 +7569,10 @@ namespace MyNS
 		/// <p>Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.</p> <p>When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a member account before removing them from your Amazon Web Services organization.</p>
 		/// DisassociateMembers detector/{detectorId}/member/disassociate
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateMembersResponse> DisassociateMembersAsync(string detectorId, DisassociateMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7518,7 +7653,10 @@ namespace MyNS
 		/// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes.
 		/// GetCoverageStatistics detector/{detectorId}/coverage/statistics
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the GuardDuty detector associated to the coverage statistics.</param>
+		/// <param name="detectorId">The unique ID of the GuardDuty detector associated to the coverage statistics.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCoverageStatisticsResponse> GetCoverageStatisticsAsync(string detectorId, GetCoverageStatisticsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7559,7 +7697,10 @@ namespace MyNS
 		/// Describes Amazon GuardDuty findings specified by finding IDs.
 		/// GetFindings detector/{detectorId}/findings/get
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</param>
+		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFindingsResponse> GetFindingsAsync(string detectorId, GetFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7600,7 +7741,10 @@ namespace MyNS
 		/// Lists Amazon GuardDuty findings statistics for the specified detector ID.
 		/// GetFindingsStatistics detector/{detectorId}/findings/statistics
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</param>
+		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(string detectorId, GetFindingsStatisticsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7674,7 +7818,10 @@ namespace MyNS
 		/// <p>Returns the details of the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// GetMalwareScanSettings detector/{detectorId}/malware-scan-settings
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that the scan setting is associated with.</param>
+		/// <param name="detectorId">The unique ID of the detector that the scan setting is associated with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMalwareScanSettingsResponse> GetMalwareScanSettingsAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7708,7 +7855,10 @@ namespace MyNS
 		/// <p>Updates the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// UpdateMalwareScanSettings detector/{detectorId}/malware-scan-settings
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</param>
+		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMalwareScanSettingsResponse> UpdateMalwareScanSettingsAsync(string detectorId, UpdateMalwareScanSettingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7749,7 +7899,10 @@ namespace MyNS
 		/// <p>Describes which data sources are enabled for the member account's detector.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// GetMemberDetectors detector/{detectorId}/member/detector/get
 		/// </summary>
-		/// <param name="detectorId">The detector ID for the administrator account.</param>
+		/// <param name="detectorId">The detector ID for the administrator account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMemberDetectorsResponse> GetMemberDetectorsAsync(string detectorId, GetMemberDetectorsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7790,7 +7943,10 @@ namespace MyNS
 		/// Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.
 		/// GetMembers detector/{detectorId}/member/get
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMembersResponse> GetMembersAsync(string detectorId, GetMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7831,7 +7987,10 @@ namespace MyNS
 		/// Provides the number of days left for each data source used in the free trial period.
 		/// GetRemainingFreeTrialDays detector/{detectorId}/freeTrial/daysRemaining
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRemainingFreeTrialDaysResponse> GetRemainingFreeTrialDaysAsync(string detectorId, GetRemainingFreeTrialDaysPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7872,7 +8031,10 @@ namespace MyNS
 		/// Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.
 		/// GetUsageStatistics detector/{detectorId}/usage/statistics
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</param>
+		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7915,7 +8077,10 @@ namespace MyNS
 		/// <p>Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services account that invokes this API. If you are using Amazon Web Services Organizations to manager your GuardDuty environment, this step is not needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing accounts with Amazon Web Services Organizations</a>.</p> <p>To invite Amazon Web Services accounts, the first step is to ensure that GuardDuty has been enabled in the potential member accounts. You can now invoke this API to add accounts by invitation. The invited accounts can either accept or decline the invitation from their GuardDuty accounts. Each invited Amazon Web Services account can choose to accept the invitation from only one Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing GuardDuty accounts by invitation</a>.</p> <p>After the invite has been accepted and you choose to disassociate a member account (by using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html">DisassociateMembers</a>) from your account, the details of the member account obtained by invoking <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>, including the associated email addresses, will be retained. This is done so that you can invoke InviteMembers without the need to invoke <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> again. To remove the details associated with a member account, you must also invoke <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>. </p>
 		/// InviteMembers detector/{detectorId}/member/invite
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to invite members with.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to invite members with.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<InviteMembersResponse> InviteMembersAsync(string detectorId, InviteMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7956,7 +8121,10 @@ namespace MyNS
 		/// <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all resources associated with the active member accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running on their EKS nodes.</p>
 		/// ListCoverage detector/{detectorId}/coverage
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector whose coverage details you want to retrieve.</param>
+		/// <param name="detectorId">The unique ID of the detector whose coverage details you want to retrieve.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7999,7 +8167,10 @@ namespace MyNS
 		/// Lists Amazon GuardDuty findings for the specified detector ID.
 		/// ListFindings detector/{detectorId}/findings
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to list.</param>
+		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -8042,7 +8213,10 @@ namespace MyNS
 		/// Lists all GuardDuty membership invitations that were sent to the current Amazon Web Services account.
 		/// ListInvitations invitation
 		/// </summary>
-		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</param>
+		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8079,7 +8253,10 @@ namespace MyNS
 		/// Lists the accounts configured as GuardDuty delegated administrators.
 		/// ListOrganizationAdminAccounts admin
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in the response.</param>
+		/// <param name="maxResults">The maximum number of results to return in the response.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="nextToken">A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8224,7 +8401,10 @@ namespace MyNS
 		/// Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a> operation.
 		/// StartMonitoringMembers detector/{detectorId}/member/start
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</param>
+		/// <param name="detectorId">The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMonitoringMembersResponse> StartMonitoringMembersAsync(string detectorId, StartMonitoringMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8265,7 +8445,10 @@ namespace MyNS
 		/// <p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring the member accounts in your organization.</p>
 		/// StopMonitoringMembers detector/{detectorId}/member/stop
 		/// </summary>
-		/// <param name="detectorId">The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</param>
+		/// <param name="detectorId">The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopMonitoringMembersResponse> StopMonitoringMembersAsync(string detectorId, StopMonitoringMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8306,7 +8489,10 @@ namespace MyNS
 		/// Unarchives GuardDuty findings specified by the <code>findingIds</code>.
 		/// UnarchiveFindings detector/{detectorId}/findings/unarchive
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector associated with the findings to unarchive.</param>
+		/// <param name="detectorId">The ID of the detector associated with the findings to unarchive.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(string detectorId, UnarchiveFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8348,7 +8534,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) for the resource to remove tags from.</param>
-		/// <param name="tagKeys">The tag keys to remove from the resource.</param>
+		/// <param name="tagKeys">The tag keys to remove from the resource.
+		/// Minimum items: 1
+		/// Maximum items: 200
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
@@ -8375,7 +8564,10 @@ namespace MyNS
 		/// Marks the specified GuardDuty findings as useful or not useful.
 		/// UpdateFindingsFeedback detector/{detectorId}/findings/feedback
 		/// </summary>
-		/// <param name="detectorId">The ID of the detector associated with the findings to update feedback for.</param>
+		/// <param name="detectorId">The ID of the detector associated with the findings to update feedback for.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFindingsFeedbackResponse> UpdateFindingsFeedbackAsync(string detectorId, UpdateFindingsFeedbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8416,7 +8608,10 @@ namespace MyNS
 		/// <p>Contains information on member accounts to be updated.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 		/// UpdateMemberDetectors detector/{detectorId}/member/detector/update
 		/// </summary>
-		/// <param name="detectorId">The detector ID of the administrator account.</param>
+		/// <param name="detectorId">The detector ID of the administrator account.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMemberDetectorsResponse> UpdateMemberDetectorsAsync(string detectorId, UpdateMemberDetectorsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

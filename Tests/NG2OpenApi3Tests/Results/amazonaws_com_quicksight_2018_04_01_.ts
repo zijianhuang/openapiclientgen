@@ -23048,8 +23048,10 @@ export namespace MyNS {
 		 * Cancels an ongoing ingestion of data into SPICE.
 		 * Delete accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset used in the ingestion.
 		 * @param {string} IngestionId An ID for the ingestion.
+		 *     Min length: 1    Max length: 128
 		 * @return {CancelIngestionResponse} Success
 		 */
 		CancelIngestion(AwsAccountId: string, DataSetId: string, IngestionId: string): Observable<CancelIngestionResponse> {
@@ -23061,7 +23063,9 @@ export namespace MyNS {
 		 * Put accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}
 		 * @param {string} DataSetId The ID of the dataset used in the ingestion.
 		 * @param {string} IngestionId An ID for the ingestion.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateIngestionResponse} Success
 		 */
 		CreateIngestion(DataSetId: string, IngestionId: string, AwsAccountId: string, requestBody: CreateIngestionPutBody): Observable<CreateIngestionResponse> {
@@ -23072,8 +23076,10 @@ export namespace MyNS {
 		 * Describes a SPICE ingestion.
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset used in the ingestion.
 		 * @param {string} IngestionId An ID for the ingestion.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeIngestionResponse} Success
 		 */
 		DescribeIngestion(AwsAccountId: string, DataSetId: string, IngestionId: string): Observable<DescribeIngestionResponse> {
@@ -23084,7 +23090,9 @@ export namespace MyNS {
 		 * <p>Creates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can create customizations for your Amazon Web Services account or, if you specify a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace always override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.</p> <p>Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default, make sure that you first share the theme with the namespace. If you don't share it with the namespace, the theme isn't visible to your users even if you make it the default theme. To check if the theme is shared, view the current permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a> </code> API operation. To share the theme, grant permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a> </code> API operation. </p>
 		 * Post accounts/{AwsAccountId}/customizations
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} namespace The Amazon QuickSight namespace that you want to add customizations to.
+		 *     Max length: 64
 		 * @return {CreateAccountCustomizationResponse} Success
 		 */
 		CreateAccountCustomization(AwsAccountId: string, namespace: string | null | undefined, requestBody: CreateAccountCustomizationPostBody): Observable<CreateAccountCustomizationResponse> {
@@ -23095,7 +23103,9 @@ export namespace MyNS {
 		 * Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web Services account and Amazon QuickSight namespace.
 		 * Delete accounts/{AwsAccountId}/customizations
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} namespace The Amazon QuickSight namespace that you're deleting the customizations from.
+		 *     Max length: 64
 		 * @return {DeleteAccountCustomizationResponse} Success
 		 */
 		DeleteAccountCustomization(AwsAccountId: string, namespace: string | null | undefined): Observable<DeleteAccountCustomizationResponse> {
@@ -23106,7 +23116,9 @@ export namespace MyNS {
 		 * <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon QuickSight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included. </p> <p>To determine what customizations display when you run this command, it can help to visualize the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web Services account</code> - The Amazon Web Services account exists at the top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you subscribe to Amazon QuickSight, you choose one Amazon Web Services Region to use as your home Region. That's where your free SPICE capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services Region. </p> </li> <li> <p> <code>Amazon Web Services Region</code> - In each Amazon Web Services Region where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US East (N. Virginia). Generally speaking, these users have access to Amazon QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace. </p> <p>To run the command in a different Amazon Web Services Region, you change your Region settings. If you're using the CLI, you can use one of the following options:</p> <ul> <li> <p>Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line options</a>. </p> </li> <li> <p>Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your default Amazon Web Services Region. Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources, datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also be part of the same namespace. People who share a namespace are completely isolated from users and assets in other namespaces, even if they are in the same Amazon Web Services account and Amazon Web Services Region.</p> </li> <li> <p> <code>Applied customizations</code> - Within an Amazon Web Services Region, a set of Amazon QuickSight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account. All settings are isolated to a single Amazon Web Services Region. To apply them in other Amazon Web Services Regions, run the <code>CreateAccountCustomization</code> command in each Amazon Web Services Region where you want to apply the same customizations. </p> </li> </ul>
 		 * Get accounts/{AwsAccountId}/customizations
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} namespace The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.
+		 *     Max length: 64
 		 * @param {boolean} resolved The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. 
 		 * @return {DescribeAccountCustomizationResponse} Success
 		 */
@@ -23118,7 +23130,9 @@ export namespace MyNS {
 		 * <p>Updates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, the only customization that you can use is a theme.</p> <p>You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon QuickSight namespace instead. Customizations that apply to a namespace override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation. </p>
 		 * Put accounts/{AwsAccountId}/customizations
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} namespace The namespace that you want to update Amazon QuickSight customizations for.
+		 *     Max length: 64
 		 * @return {UpdateAccountCustomizationResponse} Success
 		 */
 		UpdateAccountCustomization(AwsAccountId: string, namespace: string | null | undefined, requestBody: UpdateAccountCustomizationPutBody): Observable<UpdateAccountCustomizationResponse> {
@@ -23129,6 +23143,7 @@ export namespace MyNS {
 		 * <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.</p> <p>The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. </p> <p>Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you don't have an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to have the correct Identity and Access Management (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions, make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call fails.</p> <p>You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default resource access from the Amazon QuickSight console. For more information about setting default resource access to Amazon Web Services services, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 		 * Post account/{AwsAccountId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateAccountSubscriptionResponse} Success
 		 */
 		CreateAccountSubscription(AwsAccountId: string, requestBody: CreateAccountSubscriptionPostBody): Observable<CreateAccountSubscriptionResponse> {
@@ -23139,6 +23154,7 @@ export namespace MyNS {
 		 * Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code> API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make another call to the <code>DeleteAccountSubscription</code> API.
 		 * Delete account/{AwsAccountId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account that you want to delete.
+		 *     Min length: 12    Max length: 12
 		 * @return {DeleteAccountSubscriptionResponse} Success
 		 */
 		DeleteAccountSubscription(AwsAccountId: string): Observable<DeleteAccountSubscriptionResponse> {
@@ -23149,6 +23165,7 @@ export namespace MyNS {
 		 * Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.
 		 * Get account/{AwsAccountId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID associated with your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeAccountSubscriptionResponse} Success
 		 */
 		DescribeAccountSubscription(AwsAccountId: string): Observable<DescribeAccountSubscriptionResponse> {
@@ -23159,7 +23176,9 @@ export namespace MyNS {
 		 * Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an <code>AnalysisDefinition</code>.
 		 * Post accounts/{AwsAccountId}/analyses/{AnalysisId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account where you are creating an analysis.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID for the analysis that you're creating. This ID displays in the URL of the analysis.
+		 *     Min length: 1    Max length: 512
 		 * @return {CreateAnalysisResponse} Success
 		 */
 		CreateAnalysis(AwsAccountId: string, AnalysisId: string, requestBody: CreateAnalysisPostBody): Observable<CreateAnalysisResponse> {
@@ -23170,8 +23189,11 @@ export namespace MyNS {
 		 * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of the recovery window, Amazon QuickSight deletes the analysis permanently.</p> <p>At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API until it's deleted, so you can describe it but you can't make a template from it.</p> <p>An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight console. To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.</p>
 		 * Delete accounts/{AwsAccountId}/analyses/{AnalysisId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account where you want to delete an analysis.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis that you're deleting.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} recovery_window_in_days A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.
+		 *     Minimum: 7    Maximum: 30
 		 * @param {boolean} force_delete_without_recovery This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. 
 		 * @return {DeleteAnalysisResponse} Success
 		 */
@@ -23183,7 +23205,9 @@ export namespace MyNS {
 		 * Provides a summary of the metadata for an analysis.
 		 * Get accounts/{AwsAccountId}/analyses/{AnalysisId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis that you're describing. The ID is part of the URL of the analysis.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeAnalysisResponse} Success
 		 */
 		DescribeAnalysis(AwsAccountId: string, AnalysisId: string): Observable<DescribeAnalysisResponse> {
@@ -23194,7 +23218,9 @@ export namespace MyNS {
 		 * Updates an analysis in Amazon QuickSight
 		 * Put accounts/{AwsAccountId}/analyses/{AnalysisId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID for the analysis that you're updating. This ID displays in the URL of the analysis.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateAnalysisResponse} Success
 		 */
 		UpdateAnalysis(AwsAccountId: string, AnalysisId: string, requestBody: UpdateAnalysisPutBody): Observable<UpdateAnalysisResponse> {
@@ -23205,7 +23231,9 @@ export namespace MyNS {
 		 * <p>Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation.</p> <p>A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports, created from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have the correct permissions, you can create a dashboard from a template that exists in a different Amazon Web Services account.</p>
 		 * Post accounts/{AwsAccountId}/dashboards/{DashboardId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account where you want to create the dashboard.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard, also added to the IAM policy.
+		 *     Min length: 1    Max length: 512
 		 * @return {CreateDashboardResponse} Success
 		 */
 		CreateDashboard(AwsAccountId: string, DashboardId: string, requestBody: CreateDashboardPostBody): Observable<CreateDashboardResponse> {
@@ -23216,8 +23244,11 @@ export namespace MyNS {
 		 * Deletes a dashboard.
 		 * Delete accounts/{AwsAccountId}/dashboards/{DashboardId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're deleting.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.
+		 *     Minimum: 1
 		 * @return {DeleteDashboardResponse} Success
 		 */
 		DeleteDashboard(AwsAccountId: string, DashboardId: string, version_number: number | null | undefined): Observable<DeleteDashboardResponse> {
@@ -23228,9 +23259,13 @@ export namespace MyNS {
 		 * Provides a summary for a dashboard.
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. 
+		 *     Minimum: 1
 		 * @param {string} alias_name The alias name.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeDashboardResponse} Success
 		 */
 		DescribeDashboard(AwsAccountId: string, DashboardId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeDashboardResponse> {
@@ -23241,7 +23276,9 @@ export namespace MyNS {
 		 * <p>Updates a dashboard in an Amazon Web Services account.</p> <note> <p>Updating a Dashboard creates a new dashboard version but does not immediately publish the new version. You can update the published version of a dashboard by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a> </code> API operation.</p> </note>
 		 * Put accounts/{AwsAccountId}/dashboards/{DashboardId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateDashboardResponse} Success
 		 */
 		UpdateDashboard(AwsAccountId: string, DashboardId: string, requestBody: UpdateDashboardPutBody): Observable<UpdateDashboardResponse> {
@@ -23252,6 +23289,7 @@ export namespace MyNS {
 		 * Creates a dataset. This operation doesn't support datasets that include uploaded files as a source.
 		 * Post accounts/{AwsAccountId}/data-sets
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateDataSetResponse} Success
 		 */
 		CreateDataSet(AwsAccountId: string, requestBody: CreateDataSetPostBody): Observable<CreateDataSetResponse> {
@@ -23262,8 +23300,10 @@ export namespace MyNS {
 		 * <p>Lists all of the datasets belonging to the current Amazon Web Services account in an Amazon Web Services Region.</p> <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.</p>
 		 * Get accounts/{AwsAccountId}/data-sets
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSetsResponse} Success
@@ -23276,6 +23316,7 @@ export namespace MyNS {
 		 * Creates a data source.
 		 * Post accounts/{AwsAccountId}/data-sources
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateDataSourceResponse} Success
 		 */
 		CreateDataSource(AwsAccountId: string, requestBody: CreateDataSourcePostBody): Observable<CreateDataSourceResponse> {
@@ -23286,8 +23327,10 @@ export namespace MyNS {
 		 * Lists data sources in current Amazon Web Services Region that belong to this Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/data-sources
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSourcesResponse} Success
@@ -23300,7 +23343,9 @@ export namespace MyNS {
 		 * Creates an empty shared folder.
 		 * Post accounts/{AwsAccountId}/folders/{FolderId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account where you want to create the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {CreateFolderResponse} Success
 		 */
 		CreateFolder(AwsAccountId: string, FolderId: string, requestBody: CreateFolderPostBody): Observable<CreateFolderResponse> {
@@ -23311,7 +23356,9 @@ export namespace MyNS {
 		 * Deletes an empty folder.
 		 * Delete accounts/{AwsAccountId}/folders/{FolderId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DeleteFolderResponse} Success
 		 */
 		DeleteFolder(AwsAccountId: string, FolderId: string): Observable<DeleteFolderResponse> {
@@ -23322,7 +23369,9 @@ export namespace MyNS {
 		 * Describes a folder.
 		 * Get accounts/{AwsAccountId}/folders/{FolderId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeFolderResponse} Success
 		 */
 		DescribeFolder(AwsAccountId: string, FolderId: string): Observable<DescribeFolderResponse> {
@@ -23333,7 +23382,9 @@ export namespace MyNS {
 		 * Updates the name of a folder.
 		 * Put accounts/{AwsAccountId}/folders/{FolderId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder to update.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {UpdateFolderResponse} Success
 		 */
 		UpdateFolder(AwsAccountId: string, FolderId: string, requestBody: UpdateFolderPutBody): Observable<UpdateFolderResponse> {
@@ -23344,8 +23395,11 @@ export namespace MyNS {
 		 * Adds an asset, such as a dashboard, analysis, or dataset into a folder.
 		 * Put accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MemberId The ID of the asset (the dashboard, analysis, or dataset).
+		 *     Min length: 1    Max length: 2048
 		 * @param {MemberType} MemberType The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.
 		 * @return {CreateFolderMembershipResponse} Success
 		 */
@@ -23357,8 +23411,11 @@ export namespace MyNS {
 		 * Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
 		 * Delete accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The Folder ID.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MemberId The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+		 *     Min length: 1    Max length: 2048
 		 * @param {MemberType} MemberType The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> 
 		 * @return {DeleteFolderMembershipResponse} Success
 		 */
@@ -23370,7 +23427,9 @@ export namespace MyNS {
 		 * <p>Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.</p> <p>The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.</p> <p>The response is a group object.</p>
 		 * Post accounts/{AwsAccountId}/namespaces/{Namespace}/groups
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that you want the group to be a part of.
+		 *     Max length: 64
 		 * @return {CreateGroupResponse} Success
 		 */
 		CreateGroup(AwsAccountId: string, Namespace: string, requestBody: CreateGroupPostBody): Observable<CreateGroupResponse> {
@@ -23381,9 +23440,12 @@ export namespace MyNS {
 		 * Lists all user groups in Amazon QuickSight.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/groups
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} Namespace The namespace that you want a list of groups from.
+		 *     Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsResponse} Success
@@ -23396,9 +23458,13 @@ export namespace MyNS {
 		 * Adds an Amazon QuickSight user to an Amazon QuickSight group.
 		 * Put accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		 * @param {string} MemberName The name of the user that you want to add to the group membership.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} GroupName The name of the group that you want to add the user to.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that you want the user to be a part of.
+		 *     Max length: 64
 		 * @return {CreateGroupMembershipResponse} Success
 		 */
 		CreateGroupMembership(MemberName: string, GroupName: string, AwsAccountId: string, Namespace: string): Observable<CreateGroupMembershipResponse> {
@@ -23409,9 +23475,13 @@ export namespace MyNS {
 		 * Removes a user from a group so that the user is no longer a member of the group.
 		 * Delete accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		 * @param {string} MemberName The name of the user that you want to delete from the group membership.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} GroupName The name of the group that you want to delete the user from.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace of the group that you want to remove a user from.
+		 *     Max length: 64
 		 * @return {DeleteGroupMembershipResponse} Success
 		 */
 		DeleteGroupMembership(MemberName: string, GroupName: string, AwsAccountId: string, Namespace: string): Observable<DeleteGroupMembershipResponse> {
@@ -23422,9 +23492,13 @@ export namespace MyNS {
 		 * Use the <code>DescribeGroupMembership</code> operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated <code>GroupMember</code> object is returned.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		 * @param {string} MemberName The user name of the user that you want to search for.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} GroupName The name of the group that you want to search.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that includes the group you are searching within.
+		 *     Max length: 64
 		 * @return {DescribeGroupMembershipResponse} Success
 		 */
 		DescribeGroupMembership(MemberName: string, GroupName: string, AwsAccountId: string, Namespace: string): Observable<DescribeGroupMembershipResponse> {
@@ -23435,7 +23509,9 @@ export namespace MyNS {
 		 * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
 		 * Post accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that contains the assignment.
+		 *     Max length: 64
 		 * @return {CreateIAMPolicyAssignmentResponse} Success
 		 */
 		CreateIAMPolicyAssignment(AwsAccountId: string, Namespace: string, requestBody: CreateIAMPolicyAssignmentPostBody): Observable<CreateIAMPolicyAssignmentResponse> {
@@ -23446,6 +23522,7 @@ export namespace MyNS {
 		 * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.</p> <p>A namespace allows you to isolate the Amazon QuickSight users and groups that are registered for that namespace. Users that access the namespace can share assets only with other users or groups in the same namespace. They can't see users and groups in other namespaces. You can create a namespace after your Amazon Web Services account is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon Web Services account. By default, there is a limit of 100 namespaces per Amazon Web Services account. To increase your limit, create a ticket with Amazon Web Services Support. </p>
 		 * Post accounts/{AwsAccountId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateNamespaceResponse} Success
 		 */
 		CreateNamespace(AwsAccountId: string, requestBody: CreateNamespacePostBody): Observable<CreateNamespaceResponse> {
@@ -23457,6 +23534,7 @@ export namespace MyNS {
 		 * Post accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateRefreshScheduleResponse} Success
 		 */
 		CreateRefreshSchedule(DataSetId: string, AwsAccountId: string, requestBody: CreateRefreshSchedulePostBody): Observable<CreateRefreshScheduleResponse> {
@@ -23467,6 +23545,7 @@ export namespace MyNS {
 		 * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @return {ListRefreshSchedulesResponse} Success
 		 */
@@ -23479,6 +23558,7 @@ export namespace MyNS {
 		 * Put accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @return {UpdateRefreshScheduleResponse} Success
 		 */
 		UpdateRefreshSchedule(DataSetId: string, AwsAccountId: string, requestBody: UpdateRefreshSchedulePutBody): Observable<UpdateRefreshScheduleResponse> {
@@ -23489,7 +23569,9 @@ export namespace MyNS {
 		 * <p>Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis or template. You can use the resulting template to create additional dashboards, templates, or analyses.</p> <p>A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis and that you can use to create s dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p>
 		 * Post accounts/{AwsAccountId}/templates/{TemplateId}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.
+		 *     Min length: 1    Max length: 512
 		 * @return {CreateTemplateResponse} Success
 		 */
 		CreateTemplate(AwsAccountId: string, TemplateId: string, requestBody: CreateTemplatePostBody): Observable<CreateTemplateResponse> {
@@ -23500,8 +23582,11 @@ export namespace MyNS {
 		 * Deletes a template.
 		 * Delete accounts/{AwsAccountId}/templates/{TemplateId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template that you're deleting.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId An ID for the template you want to delete.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. 
+		 *     Minimum: 1
 		 * @return {DeleteTemplateResponse} Success
 		 */
 		DeleteTemplate(AwsAccountId: string, TemplateId: string, version_number: number | null | undefined): Observable<DeleteTemplateResponse> {
@@ -23512,9 +23597,13 @@ export namespace MyNS {
 		 * Describes a template's metadata.
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.
+		 *     Minimum: 1
 		 * @param {string} alias_name The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeTemplateResponse} Success
 		 */
 		DescribeTemplate(AwsAccountId: string, TemplateId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeTemplateResponse> {
@@ -23525,7 +23614,9 @@ export namespace MyNS {
 		 * Updates a template from an existing Amazon QuickSight analysis or another template.
 		 * Put accounts/{AwsAccountId}/templates/{TemplateId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateTemplateResponse} Success
 		 */
 		UpdateTemplate(AwsAccountId: string, TemplateId: string, requestBody: UpdateTemplatePutBody): Observable<UpdateTemplateResponse> {
@@ -23536,8 +23627,11 @@ export namespace MyNS {
 		 * Creates a template alias for a template.
 		 * Post accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template that you creating an alias for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId An ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {CreateTemplateAliasResponse} Success
 		 */
 		CreateTemplateAlias(AwsAccountId: string, TemplateId: string, AliasName: string, requestBody: CreateTemplateAliasPostBody): Observable<CreateTemplateAliasResponse> {
@@ -23548,8 +23642,11 @@ export namespace MyNS {
 		 * Deletes the item that the specified template alias points to. If you provide a specific alias, you delete the version of the template that the alias points to.
 		 * Delete accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the item to delete.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template that the specified alias is for.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {DeleteTemplateAliasResponse} Success
 		 */
 		DeleteTemplateAlias(AwsAccountId: string, TemplateId: string, AliasName: string): Observable<DeleteTemplateAliasResponse> {
@@ -23560,8 +23657,11 @@ export namespace MyNS {
 		 * Describes the template alias for a template.
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template alias that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeTemplateAliasResponse} Success
 		 */
 		DescribeTemplateAlias(AwsAccountId: string, TemplateId: string, AliasName: string): Observable<DescribeTemplateAliasResponse> {
@@ -23572,8 +23672,11 @@ export namespace MyNS {
 		 * Updates the template alias of a template.
 		 * Put accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template alias that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
+		 *     Min length: 1    Max length: 2048
 		 * @return {UpdateTemplateAliasResponse} Success
 		 */
 		UpdateTemplateAlias(AwsAccountId: string, TemplateId: string, AliasName: string, requestBody: UpdateTemplateAliasPutBody): Observable<UpdateTemplateAliasResponse> {
@@ -23584,7 +23687,9 @@ export namespace MyNS {
 		 * <p>Creates a theme.</p> <p>A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 		 * Post accounts/{AwsAccountId}/themes/{ThemeId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account where you want to store the new theme. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.
+		 *     Min length: 1    Max length: 512
 		 * @return {CreateThemeResponse} Success
 		 */
 		CreateTheme(AwsAccountId: string, ThemeId: string, requestBody: CreateThemePostBody): Observable<CreateThemeResponse> {
@@ -23595,8 +23700,11 @@ export namespace MyNS {
 		 * Deletes a theme.
 		 * Delete accounts/{AwsAccountId}/themes/{ThemeId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme that you're deleting.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId An ID for the theme that you want to delete.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number <p>The version of the theme that you want to delete. </p> <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+		 *     Minimum: 1
 		 * @return {DeleteThemeResponse} Success
 		 */
 		DeleteTheme(AwsAccountId: string, ThemeId: string, version_number: number | null | undefined): Observable<DeleteThemeResponse> {
@@ -23608,8 +23716,11 @@ export namespace MyNS {
 		 * Get accounts/{AwsAccountId}/themes/{ThemeId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme that you're describing.
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.
+		 *     Minimum: 1
 		 * @param {string} alias_name The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeThemeResponse} Success
 		 */
 		DescribeTheme(AwsAccountId: string, ThemeId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeThemeResponse> {
@@ -23620,7 +23731,9 @@ export namespace MyNS {
 		 * Updates a theme.
 		 * Put accounts/{AwsAccountId}/themes/{ThemeId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateThemeResponse} Success
 		 */
 		UpdateTheme(AwsAccountId: string, ThemeId: string, requestBody: UpdateThemePutBody): Observable<UpdateThemeResponse> {
@@ -23631,8 +23744,11 @@ export namespace MyNS {
 		 * Creates a theme alias for a theme.
 		 * Post accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme for the new theme alias.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId An ID for the theme alias.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {CreateThemeAliasResponse} Success
 		 */
 		CreateThemeAlias(AwsAccountId: string, ThemeId: string, AliasName: string, requestBody: CreateThemeAliasPostBody): Observable<CreateThemeAliasResponse> {
@@ -23643,8 +23759,11 @@ export namespace MyNS {
 		 * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you delete the version of the theme that the alias points to.
 		 * Delete accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme alias to delete.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme that the specified alias is for.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The unique name for the theme alias to delete.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DeleteThemeAliasResponse} Success
 		 */
 		DeleteThemeAlias(AwsAccountId: string, ThemeId: string, AliasName: string): Observable<DeleteThemeAliasResponse> {
@@ -23655,8 +23774,11 @@ export namespace MyNS {
 		 * Describes the alias for a theme.
 		 * Get accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme alias that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name of the theme alias that you want to describe.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeThemeAliasResponse} Success
 		 */
 		DescribeThemeAlias(AwsAccountId: string, ThemeId: string, AliasName: string): Observable<DescribeThemeAliasResponse> {
@@ -23667,8 +23789,11 @@ export namespace MyNS {
 		 * Updates an alias of a theme.
 		 * Put accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme alias that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} AliasName The name of the theme alias that you want to update.
+		 *     Min length: 1    Max length: 2048
 		 * @return {UpdateThemeAliasResponse} Success
 		 */
 		UpdateThemeAlias(AwsAccountId: string, ThemeId: string, AliasName: string, requestBody: UpdateThemeAliasPutBody): Observable<UpdateThemeAliasResponse> {
@@ -23679,6 +23804,7 @@ export namespace MyNS {
 		 * Creates a new Q topic.
 		 * Post accounts/{AwsAccountId}/topics
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that you want to create a topic in.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateTopicResponse} Success
 		 */
 		CreateTopic(AwsAccountId: string, requestBody: CreateTopicPostBody): Observable<CreateTopicResponse> {
@@ -23689,8 +23815,10 @@ export namespace MyNS {
 		 * Lists all of the topics within an account.
 		 * Get accounts/{AwsAccountId}/topics
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topics that you want to list.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTopicsResponse} Success
@@ -23703,7 +23831,9 @@ export namespace MyNS {
 		 * Creates a topic refresh schedule.
 		 * Post accounts/{AwsAccountId}/topics/{TopicId}/schedules
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {CreateTopicRefreshScheduleResponse} Success
 		 */
 		CreateTopicRefreshSchedule(AwsAccountId: string, TopicId: string, requestBody: CreateTopicRefreshSchedulePostBody): Observable<CreateTopicRefreshScheduleResponse> {
@@ -23714,7 +23844,9 @@ export namespace MyNS {
 		 * Lists all of the refresh schedules for a topic.
 		 * Get accounts/{AwsAccountId}/topics/{TopicId}/schedules
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {ListTopicRefreshSchedulesResponse} Success
 		 */
 		ListTopicRefreshSchedules(AwsAccountId: string, TopicId: string): Observable<ListTopicRefreshSchedulesResponse> {
@@ -23725,6 +23857,7 @@ export namespace MyNS {
 		 * Creates a new VPC connection.
 		 * Post accounts/{AwsAccountId}/vpc-connections
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account where you want to create a new VPC connection.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateVPCConnectionResponse} Success
 		 */
 		CreateVPCConnection(AwsAccountId: string, requestBody: CreateVPCConnectionPostBody): Observable<CreateVPCConnectionResponse> {
@@ -23735,8 +23868,10 @@ export namespace MyNS {
 		 * Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/vpc-connections
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVPCConnectionsResponse} Success
@@ -23749,6 +23884,7 @@ export namespace MyNS {
 		 * Deletes a dataset.
 		 * Delete accounts/{AwsAccountId}/data-sets/{DataSetId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DeleteDataSetResponse} Success
 		 */
@@ -23760,6 +23896,7 @@ export namespace MyNS {
 		 * Describes a dataset. This operation doesn't support datasets that include uploaded files as a source.
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DescribeDataSetResponse} Success
 		 */
@@ -23771,6 +23908,7 @@ export namespace MyNS {
 		 * Updates a dataset. This operation doesn't support datasets that include uploaded files as a source. Partial updates are not supported by this operation.
 		 * Put accounts/{AwsAccountId}/data-sets/{DataSetId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {UpdateDataSetResponse} Success
 		 */
@@ -23782,6 +23920,7 @@ export namespace MyNS {
 		 * Deletes the dataset refresh properties of the dataset.
 		 * Delete accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @return {DeleteDataSetRefreshPropertiesResponse} Success
 		 */
@@ -23793,6 +23932,7 @@ export namespace MyNS {
 		 * Describes the refresh properties of a dataset.
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @return {DescribeDataSetRefreshPropertiesResponse} Success
 		 */
@@ -23804,6 +23944,7 @@ export namespace MyNS {
 		 * Creates or updates the dataset refresh properties for the dataset.
 		 * Put accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @return {PutDataSetRefreshPropertiesResponse} Success
 		 */
@@ -23815,6 +23956,7 @@ export namespace MyNS {
 		 * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data source.
 		 * Delete accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSourceId The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DeleteDataSourceResponse} Success
 		 */
@@ -23826,6 +23968,7 @@ export namespace MyNS {
 		 * Describes a data source.
 		 * Get accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSourceId The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DescribeDataSourceResponse} Success
 		 */
@@ -23837,6 +23980,7 @@ export namespace MyNS {
 		 * Updates a data source.
 		 * Put accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSourceId The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. 
 		 * @return {UpdateDataSourceResponse} Success
 		 */
@@ -23848,8 +23992,11 @@ export namespace MyNS {
 		 * Removes a user group from Amazon QuickSight.
 		 * Delete accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}
 		 * @param {string} GroupName The name of the group that you want to delete.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace of the group that you want to delete.
+		 *     Max length: 64
 		 * @return {DeleteGroupResponse} Success
 		 */
 		DeleteGroup(GroupName: string, AwsAccountId: string, Namespace: string): Observable<DeleteGroupResponse> {
@@ -23860,8 +24007,11 @@ export namespace MyNS {
 		 * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}
 		 * @param {string} GroupName The name of the group that you want to describe.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace of the group that you want described.
+		 *     Max length: 64
 		 * @return {DescribeGroupResponse} Success
 		 */
 		DescribeGroup(GroupName: string, AwsAccountId: string, Namespace: string): Observable<DescribeGroupResponse> {
@@ -23872,8 +24022,11 @@ export namespace MyNS {
 		 * Changes a group description.
 		 * Put accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}
 		 * @param {string} GroupName The name of the group that you want to update.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace of the group that you want to update.
+		 *     Max length: 64
 		 * @return {UpdateGroupResponse} Success
 		 */
 		UpdateGroup(GroupName: string, AwsAccountId: string, Namespace: string, requestBody: UpdateGroupPutBody): Observable<UpdateGroupResponse> {
@@ -23884,8 +24037,11 @@ export namespace MyNS {
 		 * Deletes an existing IAM policy assignment.
 		 * Delete accounts/{AwsAccountId}/namespace/{Namespace}/iam-policy-assignments/{AssignmentName}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID where you want to delete the IAM policy assignment.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AssignmentName The name of the assignment. 
+		 *     Min length: 1
 		 * @param {string} Namespace The namespace that contains the assignment.
+		 *     Max length: 64
 		 * @return {DeleteIAMPolicyAssignmentResponse} Success
 		 */
 		DeleteIAMPolicyAssignment(AwsAccountId: string, AssignmentName: string, Namespace: string): Observable<DeleteIAMPolicyAssignmentResponse> {
@@ -23896,7 +24052,9 @@ export namespace MyNS {
 		 * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these assets, you use the API operations for the relevant asset.
 		 * Delete accounts/{AwsAccountId}/namespaces/{Namespace}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that you want to delete.
+		 *     Max length: 64
 		 * @return {DeleteNamespaceResponse} Success
 		 */
 		DeleteNamespace(AwsAccountId: string, Namespace: string): Observable<DeleteNamespaceResponse> {
@@ -23907,7 +24065,9 @@ export namespace MyNS {
 		 * Describes the current namespace.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace that you want to describe.
+		 *     Max length: 64
 		 * @return {DescribeNamespaceResponse} Success
 		 */
 		DescribeNamespace(AwsAccountId: string, Namespace: string): Observable<DescribeNamespaceResponse> {
@@ -23919,6 +24079,7 @@ export namespace MyNS {
 		 * Delete accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules/{ScheduleId}
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ScheduleId The ID of the refresh schedule.
 		 * @return {DeleteRefreshScheduleResponse} Success
 		 */
@@ -23930,6 +24091,7 @@ export namespace MyNS {
 		 * Provides a summary of a refresh schedule.
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules/{ScheduleId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID of the dataset.
 		 * @param {string} ScheduleId The ID of the refresh schedule.
 		 * @return {DescribeRefreshScheduleResponse} Success
@@ -23942,7 +24104,9 @@ export namespace MyNS {
 		 * Deletes a topic.
 		 * Delete accounts/{AwsAccountId}/topics/{TopicId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic that you want to delete.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {DeleteTopicResponse} Success
 		 */
 		DeleteTopic(AwsAccountId: string, TopicId: string): Observable<DeleteTopicResponse> {
@@ -23953,7 +24117,9 @@ export namespace MyNS {
 		 * Describes a topic.
 		 * Get accounts/{AwsAccountId}/topics/{TopicId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {DescribeTopicResponse} Success
 		 */
 		DescribeTopic(AwsAccountId: string, TopicId: string): Observable<DescribeTopicResponse> {
@@ -23964,7 +24130,9 @@ export namespace MyNS {
 		 * Updates a topic.
 		 * Put accounts/{AwsAccountId}/topics/{TopicId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic that you want to update.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {UpdateTopicResponse} Success
 		 */
 		UpdateTopic(AwsAccountId: string, TopicId: string, requestBody: UpdateTopicPutBody): Observable<UpdateTopicResponse> {
@@ -23975,7 +24143,9 @@ export namespace MyNS {
 		 * Deletes a topic refresh schedule.
 		 * Delete accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @param {string} DatasetId The ID of the dataset.
 		 * @return {DeleteTopicRefreshScheduleResponse} Success
 		 */
@@ -23987,7 +24157,9 @@ export namespace MyNS {
 		 * Deletes a topic refresh schedule.
 		 * Get accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @param {string} DatasetId The ID of the dataset.
 		 * @return {DescribeTopicRefreshScheduleResponse} Success
 		 */
@@ -23999,7 +24171,9 @@ export namespace MyNS {
 		 * Updates a topic refresh schedule.
 		 * Put accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @param {string} DatasetId The ID of the dataset.
 		 * @return {UpdateTopicRefreshScheduleResponse} Success
 		 */
@@ -24011,8 +24185,11 @@ export namespace MyNS {
 		 * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the call. The IAM user isn't deleted as a result of this call.
 		 * Delete accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}
 		 * @param {string} UserName The name of the user that you want to delete.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @return {DeleteUserResponse} Success
 		 */
 		DeleteUser(UserName: string, AwsAccountId: string, Namespace: string): Observable<DeleteUserResponse> {
@@ -24023,8 +24200,11 @@ export namespace MyNS {
 		 * Returns information about a user, given the user name.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}
 		 * @param {string} UserName The name of the user that you want to describe.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @return {DescribeUserResponse} Success
 		 */
 		DescribeUser(UserName: string, AwsAccountId: string, Namespace: string): Observable<DescribeUserResponse> {
@@ -24035,8 +24215,11 @@ export namespace MyNS {
 		 * Updates an Amazon QuickSight user.
 		 * Put accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}
 		 * @param {string} UserName The Amazon QuickSight user name that you want to update.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @return {UpdateUserResponse} Success
 		 */
 		UpdateUser(UserName: string, AwsAccountId: string, Namespace: string, requestBody: UpdateUserPutBody): Observable<UpdateUserResponse> {
@@ -24048,7 +24231,9 @@ export namespace MyNS {
 		 * Delete accounts/{AwsAccountId}/namespaces/{Namespace}/user-principals/{PrincipalId}
 		 * @param {string} PrincipalId The principal ID of the user.
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @return {DeleteUserByPrincipalIdResponse} Success
 		 */
 		DeleteUserByPrincipalId(PrincipalId: string, AwsAccountId: string, Namespace: string): Observable<DeleteUserByPrincipalIdResponse> {
@@ -24059,7 +24244,9 @@ export namespace MyNS {
 		 * Deletes a VPC connection.
 		 * Delete accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account where you want to delete a VPC connection.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} VPCConnectionId The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
+		 *     Min length: 1    Max length: 1000
 		 * @return {DeleteVPCConnectionResponse} Success
 		 */
 		DeleteVPCConnection(AwsAccountId: string, VPCConnectionId: string): Observable<DeleteVPCConnectionResponse> {
@@ -24070,7 +24257,9 @@ export namespace MyNS {
 		 * Describes a VPC connection.
 		 * Get accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account that contains the VPC connection that you want described.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} VPCConnectionId The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
+		 *     Min length: 1    Max length: 1000
 		 * @return {DescribeVPCConnectionResponse} Success
 		 */
 		DescribeVPCConnection(AwsAccountId: string, VPCConnectionId: string): Observable<DescribeVPCConnectionResponse> {
@@ -24081,7 +24270,9 @@ export namespace MyNS {
 		 * Updates a VPC connection.
 		 * Put accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		 * @param {string} AwsAccountId The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} VPCConnectionId The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
+		 *     Min length: 1    Max length: 1000
 		 * @return {UpdateVPCConnectionResponse} Success
 		 */
 		UpdateVPCConnection(AwsAccountId: string, VPCConnectionId: string, requestBody: UpdateVPCConnectionPutBody): Observable<UpdateVPCConnectionResponse> {
@@ -24092,6 +24283,7 @@ export namespace MyNS {
 		 * Describes the settings that were used when your Amazon QuickSight subscription was first created in this Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/settings
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the settings that you want to list.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeAccountSettingsResponse} Success
 		 */
 		DescribeAccountSettings(AwsAccountId: string): Observable<DescribeAccountSettingsResponse> {
@@ -24102,6 +24294,7 @@ export namespace MyNS {
 		 * Updates the Amazon QuickSight settings in your Amazon Web Services account.
 		 * Put accounts/{AwsAccountId}/settings
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.
+		 *     Min length: 12    Max length: 12
 		 * @return {UpdateAccountSettingsResponse} Success
 		 */
 		UpdateAccountSettings(AwsAccountId: string, requestBody: UpdateAccountSettingsPutBody): Observable<UpdateAccountSettingsResponse> {
@@ -24112,7 +24305,9 @@ export namespace MyNS {
 		 * <p>Provides a detailed description of the definition of an analysis.</p> <note> <p>If you do not need to know details about the content of an Analysis, for instance if you are trying to check the status of a recently created or updated Analysis, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html"> <code>DescribeAnalysis</code> </a> instead. </p> </note>
 		 * Get accounts/{AwsAccountId}/analyses/{AnalysisId}/definition
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis that you're describing. The ID is part of the URL of the analysis.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeAnalysisDefinitionResponse} Success
 		 */
 		DescribeAnalysisDefinition(AwsAccountId: string, AnalysisId: string): Observable<DescribeAnalysisDefinitionResponse> {
@@ -24123,7 +24318,9 @@ export namespace MyNS {
 		 * Provides the read and write permissions for an analysis.
 		 * Get accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeAnalysisPermissionsResponse} Success
 		 */
 		DescribeAnalysisPermissions(AwsAccountId: string, AnalysisId: string): Observable<DescribeAnalysisPermissionsResponse> {
@@ -24134,7 +24331,9 @@ export namespace MyNS {
 		 * Updates the read and write permissions for an analysis.
 		 * Put accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateAnalysisPermissionsResponse} Success
 		 */
 		UpdateAnalysisPermissions(AwsAccountId: string, AnalysisId: string, requestBody: UpdateAnalysisPermissionsPutBody): Observable<UpdateAnalysisPermissionsResponse> {
@@ -24145,7 +24344,9 @@ export namespace MyNS {
 		 * <p>Describes an existing export job.</p> <p>Poll job descriptions after a job starts to know the status of the job. When a job succeeds, a URL is provided to download the exported assets' data from. Download URLs are valid for five minutes after they are generated. You can call the <code>DescribeAssetBundleExportJob</code> API for a new download URL as needed.</p> <p>Job descriptions are available for 14 days after the job starts.</p>
 		 * Get accounts/{AwsAccountId}/asset-bundle-export-jobs/{AssetBundleExportJobId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account the export job is executed in. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AssetBundleExportJobId The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeAssetBundleExportJobResponse} Success
 		 */
 		DescribeAssetBundleExportJob(AwsAccountId: string, AssetBundleExportJobId: string): Observable<DescribeAssetBundleExportJobResponse> {
@@ -24156,7 +24357,9 @@ export namespace MyNS {
 		 * <p>Describes an existing import job.</p> <p>Poll job descriptions after starting a job to know when it has succeeded or failed. Job descriptions are available for 14 days after job starts.</p>
 		 * Get accounts/{AwsAccountId}/asset-bundle-import-jobs/{AssetBundleImportJobId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account the import job was executed in. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AssetBundleImportJobId The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeAssetBundleImportJobResponse} Success
 		 */
 		DescribeAssetBundleImportJob(AwsAccountId: string, AssetBundleImportJobId: string): Observable<DescribeAssetBundleImportJobResponse> {
@@ -24167,9 +24370,13 @@ export namespace MyNS {
 		 * <p>Provides a detailed description of the definition of a dashboard.</p> <note> <p>If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html"> <code>DescribeDashboard</code> </a> instead. </p> </note>
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/definition
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. 
+		 *     Minimum: 1
 		 * @param {string} alias_name The alias name.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeDashboardDefinitionResponse} Success
 		 */
 		DescribeDashboardDefinition(AwsAccountId: string, DashboardId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeDashboardDefinitionResponse> {
@@ -24180,7 +24387,9 @@ export namespace MyNS {
 		 * Describes read and write permissions for a dashboard.
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard, also added to the IAM policy.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeDashboardPermissionsResponse} Success
 		 */
 		DescribeDashboardPermissions(AwsAccountId: string, DashboardId: string): Observable<DescribeDashboardPermissionsResponse> {
@@ -24191,7 +24400,9 @@ export namespace MyNS {
 		 * Updates read and write permissions on a dashboard.
 		 * Put accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateDashboardPermissionsResponse} Success
 		 */
 		UpdateDashboardPermissions(AwsAccountId: string, DashboardId: string, requestBody: UpdateDashboardPermissionsPutBody): Observable<UpdateDashboardPermissionsResponse> {
@@ -24202,8 +24413,11 @@ export namespace MyNS {
 		 * <p>Describes an existing snapshot job.</p> <p>Poll job descriptions after a job starts to know the status of the job. For information on available status codes, see <code>JobStatus</code>.</p>
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs/{SnapshotJobId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID of the dashboard that you have started a snapshot job for.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} SnapshotJobId The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeDashboardSnapshotJobResponse} Success
 		 */
 		DescribeDashboardSnapshotJob(AwsAccountId: string, DashboardId: string, SnapshotJobId: string): Observable<DescribeDashboardSnapshotJobResponse> {
@@ -24214,8 +24428,11 @@ export namespace MyNS {
 		 * <p>Describes the result of an existing snapshot job that has finished running.</p> <p>A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code> status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API call.</p> <p>If the job has not finished running, this operation returns a message that says <code>Dashboard Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.</p>
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs/{SnapshotJobId}/result
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID of the dashboard that you have started a snapshot job for.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} SnapshotJobId The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeDashboardSnapshotJobResultResponse} Success
 		 */
 		DescribeDashboardSnapshotJobResult(AwsAccountId: string, DashboardId: string, SnapshotJobId: string): Observable<DescribeDashboardSnapshotJobResultResponse> {
@@ -24226,6 +24443,7 @@ export namespace MyNS {
 		 * <p>Describes the permissions on a dataset.</p> <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
 		 * Get accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DescribeDataSetPermissionsResponse} Success
 		 */
@@ -24237,6 +24455,7 @@ export namespace MyNS {
 		 * <p>Updates the permissions on a dataset.</p> <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
 		 * Post accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSetId The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {UpdateDataSetPermissionsResponse} Success
 		 */
@@ -24248,6 +24467,7 @@ export namespace MyNS {
 		 * Describes the resource permissions for a data source.
 		 * Get accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSourceId The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		 * @return {DescribeDataSourcePermissionsResponse} Success
 		 */
@@ -24259,6 +24479,7 @@ export namespace MyNS {
 		 * Updates the permissions to a data source.
 		 * Post accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DataSourceId The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. 
 		 * @return {UpdateDataSourcePermissionsResponse} Success
 		 */
@@ -24270,7 +24491,9 @@ export namespace MyNS {
 		 * Describes permissions for a folder.
 		 * Get accounts/{AwsAccountId}/folders/{FolderId}/permissions
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeFolderPermissionsResponse} Success
 		 */
 		DescribeFolderPermissions(AwsAccountId: string, FolderId: string): Observable<DescribeFolderPermissionsResponse> {
@@ -24281,7 +24504,9 @@ export namespace MyNS {
 		 * Updates permissions of a folder.
 		 * Put accounts/{AwsAccountId}/folders/{FolderId}/permissions
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder to update.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {UpdateFolderPermissionsResponse} Success
 		 */
 		UpdateFolderPermissions(AwsAccountId: string, FolderId: string, requestBody: UpdateFolderPermissionsPutBody): Observable<UpdateFolderPermissionsResponse> {
@@ -24292,7 +24517,9 @@ export namespace MyNS {
 		 * Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the inherited permissions from the ancestor folders.
 		 * Get accounts/{AwsAccountId}/folders/{FolderId}/resolved-permissions
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeFolderResolvedPermissionsResponse} Success
 		 */
 		DescribeFolderResolvedPermissions(AwsAccountId: string, FolderId: string): Observable<DescribeFolderResolvedPermissionsResponse> {
@@ -24303,8 +24530,11 @@ export namespace MyNS {
 		 * Describes an existing IAM policy assignment, as specified by the assignment name.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the assignment that you want to describe.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AssignmentName The name of the assignment, also called a rule.
+		 *     Min length: 1
 		 * @param {string} Namespace The namespace that contains the assignment.
+		 *     Max length: 64
 		 * @return {DescribeIAMPolicyAssignmentResponse} Success
 		 */
 		DescribeIAMPolicyAssignment(AwsAccountId: string, AssignmentName: string, Namespace: string): Observable<DescribeIAMPolicyAssignmentResponse> {
@@ -24315,8 +24545,11 @@ export namespace MyNS {
 		 * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>.
 		 * Put accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the IAM policy assignment. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AssignmentName The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
+		 *     Min length: 1
 		 * @param {string} Namespace The namespace of the assignment.
+		 *     Max length: 64
 		 * @return {UpdateIAMPolicyAssignmentResponse} Success
 		 */
 		UpdateIAMPolicyAssignment(AwsAccountId: string, AssignmentName: string, Namespace: string, requestBody: UpdateIAMPolicyAssignmentPutBody): Observable<UpdateIAMPolicyAssignmentResponse> {
@@ -24327,6 +24560,7 @@ export namespace MyNS {
 		 * Provides a summary and status of IP rules.
 		 * Get accounts/{AwsAccountId}/ip-restriction
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the IP rules.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeIpRestrictionResponse} Success
 		 */
 		DescribeIpRestriction(AwsAccountId: string): Observable<DescribeIpRestrictionResponse> {
@@ -24337,6 +24571,7 @@ export namespace MyNS {
 		 * Updates the content and status of IP rules. To use this operation, you must provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
 		 * Post accounts/{AwsAccountId}/ip-restriction
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the IP rules.
+		 *     Min length: 12    Max length: 12
 		 * @return {UpdateIpRestrictionResponse} Success
 		 */
 		UpdateIpRestriction(AwsAccountId: string, requestBody: UpdateIpRestrictionPostBody): Observable<UpdateIpRestrictionResponse> {
@@ -24347,9 +24582,13 @@ export namespace MyNS {
 		 * <p>Provides a detailed description of the definition of a template.</p> <note> <p>If you do not need to know details about the content of a template, for instance if you are trying to check the status of a recently created or updated template, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html"> <code>DescribeTemplate</code> </a> instead. </p> </note>
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}/definition
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID of the template that you're describing.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} version_number The version number of the template.
+		 *     Minimum: 1
 		 * @param {string} alias_name The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
+		 *     Min length: 1    Max length: 2048
 		 * @return {DescribeTemplateDefinitionResponse} Success
 		 */
 		DescribeTemplateDefinition(AwsAccountId: string, TemplateId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeTemplateDefinitionResponse> {
@@ -24360,7 +24599,9 @@ export namespace MyNS {
 		 * Describes read and write permissions on a template.
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeTemplatePermissionsResponse} Success
 		 */
 		DescribeTemplatePermissions(AwsAccountId: string, TemplateId: string): Observable<DescribeTemplatePermissionsResponse> {
@@ -24371,7 +24612,9 @@ export namespace MyNS {
 		 * Updates the resource permissions for a template.
 		 * Put accounts/{AwsAccountId}/templates/{TemplateId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateTemplatePermissionsResponse} Success
 		 */
 		UpdateTemplatePermissions(AwsAccountId: string, TemplateId: string, requestBody: UpdateTemplatePermissionsPutBody): Observable<UpdateTemplatePermissionsResponse> {
@@ -24382,7 +24625,9 @@ export namespace MyNS {
 		 * Describes the read and write permissions for a theme.
 		 * Get accounts/{AwsAccountId}/themes/{ThemeId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme that you're describing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme that you want to describe permissions for.
+		 *     Min length: 1    Max length: 512
 		 * @return {DescribeThemePermissionsResponse} Success
 		 */
 		DescribeThemePermissions(AwsAccountId: string, ThemeId: string): Observable<DescribeThemePermissionsResponse> {
@@ -24393,7 +24638,9 @@ export namespace MyNS {
 		 * <p>Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.</p> <p>Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions, which are user, owner, or no permissions: </p> <ul> <li> <p>User</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li> <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li> </ul> </li> <li> <p>Owner</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li> <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li> <li> <p> <code>"quicksight:DeleteTheme"</code> </p> </li> <li> <p> <code>"quicksight:UpdateTheme"</code> </p> </li> <li> <p> <code>"quicksight:CreateThemeAlias"</code> </p> </li> <li> <p> <code>"quicksight:DeleteThemeAlias"</code> </p> </li> <li> <p> <code>"quicksight:UpdateThemeAlias"</code> </p> </li> <li> <p> <code>"quicksight:UpdateThemePermissions"</code> </p> </li> <li> <p> <code>"quicksight:DescribeThemePermissions"</code> </p> </li> </ul> </li> <li> <p>To specify no permissions, omit the permissions list.</p> </li> </ul>
 		 * Put accounts/{AwsAccountId}/themes/{ThemeId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateThemePermissionsResponse} Success
 		 */
 		UpdateThemePermissions(AwsAccountId: string, ThemeId: string, requestBody: UpdateThemePermissionsPutBody): Observable<UpdateThemePermissionsResponse> {
@@ -24404,7 +24651,9 @@ export namespace MyNS {
 		 * Describes the permissions of a topic.
 		 * Get accounts/{AwsAccountId}/topics/{TopicId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic that you want described.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {DescribeTopicPermissionsResponse} Success
 		 */
 		DescribeTopicPermissions(AwsAccountId: string, TopicId: string): Observable<DescribeTopicPermissionsResponse> {
@@ -24415,7 +24664,9 @@ export namespace MyNS {
 		 * Updates the permissions of a topic.
 		 * Put accounts/{AwsAccountId}/topics/{TopicId}/permissions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @return {UpdateTopicPermissionsResponse} Success
 		 */
 		UpdateTopicPermissions(AwsAccountId: string, TopicId: string, requestBody: UpdateTopicPermissionsPutBody): Observable<UpdateTopicPermissionsResponse> {
@@ -24426,7 +24677,9 @@ export namespace MyNS {
 		 * Describes the status of a topic refresh.
 		 * Get accounts/{AwsAccountId}/topics/{TopicId}/refresh/{RefreshId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TopicId The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
+		 *     Max length: 256
 		 * @param {string} RefreshId The ID of the refresh, which is performed when the topic is created or updated.
 		 * @return {DescribeTopicRefreshResponse} Success
 		 */
@@ -24438,6 +24691,7 @@ export namespace MyNS {
 		 * <p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 		 * Post accounts/{AwsAccountId}/embed-url/anonymous-user
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
+		 *     Min length: 12    Max length: 12
 		 * @return {GenerateEmbedUrlForAnonymousUserResponse} Success
 		 */
 		GenerateEmbedUrlForAnonymousUser(AwsAccountId: string, requestBody: GenerateEmbedUrlForAnonymousUserPostBody): Observable<GenerateEmbedUrlForAnonymousUserResponse> {
@@ -24448,6 +24702,7 @@ export namespace MyNS {
 		 * <p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 		 * Post accounts/{AwsAccountId}/embed-url/registered-user
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
+		 *     Min length: 12    Max length: 12
 		 * @return {GenerateEmbedUrlForRegisteredUserResponse} Success
 		 */
 		GenerateEmbedUrlForRegisteredUser(AwsAccountId: string, requestBody: GenerateEmbedUrlForRegisteredUserPostBody): Observable<GenerateEmbedUrlForRegisteredUserResponse> {
@@ -24458,15 +24713,20 @@ export namespace MyNS {
 		 * <p>Generates a temporary session URL and authorization code(bearer token) that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the generated URL:</p> <ul> <li> <p>They must be used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> <li> <p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize session duration.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url#creds-type
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
+		 *     Min length: 1    Max length: 512
 		 * @param {EmbeddingIdentityType} creds_type The authentication method that the user uses to sign in.
 		 * @param {number} session_lifetime How many minutes the session is valid. The session lifetime must be 15-600 minutes.
+		 *     Minimum: 15    Maximum: 600
 		 * @param {boolean} undo_redo_disabled Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.
 		 * @param {boolean} reset_disabled Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.
 		 * @param {boolean} state_persistence_enabled Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
 		 * @param {string} user_arn <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
 		 * @param {string} namespace The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.
+		 *     Max length: 64
 		 * @param {Array<string>} additional_dashboard_ids A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.
+		 *     Minimum items: 1    Maximum items: 20
 		 * @return {GetDashboardEmbedUrlResponse} Success
 		 */
 		GetDashboardEmbedUrl(AwsAccountId: string, DashboardId: string, creds_type: EmbeddingIdentityType, session_lifetime: number | null | undefined, undo_redo_disabled: boolean | null | undefined, reset_disabled: boolean | null | undefined, state_persistence_enabled: boolean | null | undefined, user_arn: string | null | undefined, namespace: string | null | undefined, additional_dashboard_ids: Array<string> | null | undefined): Observable<GetDashboardEmbedUrlResponse> {
@@ -24477,8 +24737,11 @@ export namespace MyNS {
 		 * <p>Generates a session URL and authorization code that you can use to embed the Amazon Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding Analytics</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li> </ul>
 		 * Get accounts/{AwsAccountId}/session-embed-url
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} entry_point <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p> <ul> <li> <p> <code>/start</code> </p> </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p> <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code> </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li> </ul>
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} session_lifetime How many minutes the session is valid. The session lifetime must be 15-600 minutes.
+		 *     Minimum: 15    Maximum: 600
 		 * @param {string} user_arn <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
 		 * @return {GetSessionEmbedUrlResponse} Success
 		 */
@@ -24490,8 +24753,10 @@ export namespace MyNS {
 		 * Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/analyses
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analyses.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAnalysesResponse} Success
@@ -24504,8 +24769,10 @@ export namespace MyNS {
 		 * Lists all asset bundle export jobs that have been taken place in the last 14 days. Jobs created more than 14 days ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs, <code>ListAssetBundleExportJobs</code> only returns the most recent job that uses the repeated job ID.
 		 * Get accounts/{AwsAccountId}/asset-bundle-export-jobs
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that the export jobs were executed in. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssetBundleExportJobsResponse} Success
@@ -24518,8 +24785,10 @@ export namespace MyNS {
 		 * Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only returns the most recent job that uses the repeated job ID.
 		 * Get accounts/{AwsAccountId}/asset-bundle-import-jobs
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that the import jobs were executed in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssetBundleImportJobsResponse} Success
@@ -24532,9 +24801,12 @@ export namespace MyNS {
 		 * Lists all the versions of the dashboards in the Amazon QuickSight subscription.
 		 * Get accounts/{AwsAccountId}/dashboards/{DashboardId}/versions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDashboardVersionsResponse} Success
@@ -24547,8 +24819,10 @@ export namespace MyNS {
 		 * Lists dashboards in an Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/dashboards
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboards that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDashboardsResponse} Success
@@ -24561,9 +24835,12 @@ export namespace MyNS {
 		 * List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.
 		 * Get accounts/{AwsAccountId}/folders/{FolderId}/members
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} FolderId The ID of the folder.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListFolderMembersResponse} Success
 		 */
 		ListFolderMembers(AwsAccountId: string, FolderId: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListFolderMembersResponse> {
@@ -24574,8 +24851,10 @@ export namespace MyNS {
 		 * Lists all folders in an account.
 		 * Get accounts/{AwsAccountId}/folders
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListFoldersResponse} Success
 		 */
 		ListFolders(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListFoldersResponse> {
@@ -24586,10 +24865,14 @@ export namespace MyNS {
 		 * Lists member users in a group.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members
 		 * @param {string} GroupName The name of the group that you want to see a membership list of.
+		 *     Min length: 1
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return from this request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace of the group that you want a list of users from.
+		 *     Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupMembershipsResponse} Success
@@ -24602,10 +24885,13 @@ export namespace MyNS {
 		 * Lists the IAM policy assignments in the current Amazon QuickSight account.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/v2/iam-policy-assignments
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains these IAM policy assignments.
+		 *     Min length: 12    Max length: 12
 		 * @param {AssignmentStatus} assignment_status The status of the assignments.
 		 * @param {string} Namespace The namespace for the assignments.
+		 *     Max length: 64
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIAMPolicyAssignmentsResponse} Success
@@ -24618,10 +24904,14 @@ export namespace MyNS {
 		 * Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies assigned to the specified user and group, or groups that the user belongs to.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/iam-policy-assignments
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the assignments.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} UserName The name of the user.
+		 *     Min length: 1
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} Namespace The namespace of the assignment.
+		 *     Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIAMPolicyAssignmentsForUserResponse} Success
@@ -24636,7 +24926,9 @@ export namespace MyNS {
 		 * @param {string} DataSetId The ID of the dataset used in the ingestion.
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIngestionsResponse} Success
@@ -24649,8 +24941,10 @@ export namespace MyNS {
 		 * Lists the namespaces for the specified Amazon Web Services account. This operation doesn't list deleted namespaces.
 		 * Get accounts/{AwsAccountId}/namespaces
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.
 		 * @param {number} max_results The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNamespacesResponse} Success
@@ -24683,9 +24977,12 @@ export namespace MyNS {
 		 * Lists all the aliases of a template.
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}/aliases
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the template aliases that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_result The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplateAliasesResponse} Success
@@ -24698,9 +24995,12 @@ export namespace MyNS {
 		 * Lists all the versions of the templates in the current Amazon QuickSight account.
 		 * Get accounts/{AwsAccountId}/templates/{TemplateId}/versions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the templates that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} TemplateId The ID for the template.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplateVersionsResponse} Success
@@ -24713,8 +25013,10 @@ export namespace MyNS {
 		 * Lists all the templates in the current Amazon QuickSight account.
 		 * Get accounts/{AwsAccountId}/templates
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the templates that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_result The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplatesResponse} Success
@@ -24727,9 +25029,12 @@ export namespace MyNS {
 		 * Lists all the aliases of a theme.
 		 * Get accounts/{AwsAccountId}/themes/{ThemeId}/aliases
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the theme aliases that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_result The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListThemeAliasesResponse} Success
 		 */
 		ListThemeAliases(AwsAccountId: string, ThemeId: string, next_token: string | null | undefined, max_result: number | null | undefined): Observable<ListThemeAliasesResponse> {
@@ -24740,9 +25045,12 @@ export namespace MyNS {
 		 * Lists all the versions of the themes in the current Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/themes/{ThemeId}/versions
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the themes that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} ThemeId The ID for the theme.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListThemeVersionsResponse} Success
@@ -24755,8 +25063,10 @@ export namespace MyNS {
 		 * Lists all the themes in the current Amazon Web Services account.
 		 * Get accounts/{AwsAccountId}/themes
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the themes that you're listing.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token The token for the next set of results, or null if there are no more results.
 		 * @param {number} max_results The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {ThemeType} type <p>The type of themes that you want to list. Valid options include the following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -24770,10 +25080,14 @@ export namespace MyNS {
 		 * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/groups
 		 * @param {string} UserName The Amazon QuickSight user name that you want to list group memberships for.
+		 *     Min length: 1
 		 * @param {string} AwsAccountId The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return from this request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUserGroupsResponse} Success
@@ -24786,9 +25100,12 @@ export namespace MyNS {
 		 * Returns a list of all of the Amazon QuickSight users belonging to this account.
 		 * Get accounts/{AwsAccountId}/namespaces/{Namespace}/users
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return from this request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
@@ -24801,7 +25118,9 @@ export namespace MyNS {
 		 * Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon QuickSight doesn't send a registration email to users who are registered from the Amazon QuickSight API. If you want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more information on registering a new user in the Amazon QuickSight console, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to access Amazon QuickSight</a>.
 		 * Post accounts/{AwsAccountId}/namespaces/{Namespace}/users
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
+		 *     Max length: 64
 		 * @return {RegisterUserResponse} Success
 		 */
 		RegisterUser(AwsAccountId: string, Namespace: string, requestBody: RegisterUserPostBody): Observable<RegisterUserResponse> {
@@ -24812,7 +25131,9 @@ export namespace MyNS {
 		 * Restores an analysis.
 		 * Post accounts/{AwsAccountId}/restore/analyses/{AnalysisId}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analysis.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} AnalysisId The ID of the analysis that you're restoring.
+		 *     Min length: 1    Max length: 512
 		 * @return {RestoreAnalysisResponse} Success
 		 */
 		RestoreAnalysis(AwsAccountId: string, AnalysisId: string): Observable<RestoreAnalysisResponse> {
@@ -24823,6 +25144,7 @@ export namespace MyNS {
 		 * <p>Searches for analyses that belong to the user specified in the filter.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>
 		 * Post accounts/{AwsAccountId}/search/analyses
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the analyses that you're searching for.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchAnalysesResponse} Success
@@ -24835,6 +25157,7 @@ export namespace MyNS {
 		 * <p>Searches for dashboards that belong to a user. </p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>
 		 * Post accounts/{AwsAccountId}/search/dashboards
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. 
+		 *     Min length: 12    Max length: 12
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchDashboardsResponse} Success
@@ -24847,6 +25170,7 @@ export namespace MyNS {
 		 * Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.
 		 * Post accounts/{AwsAccountId}/search/data-sets
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchDataSetsResponse} Success
@@ -24859,6 +25183,7 @@ export namespace MyNS {
 		 * Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.
 		 * Post accounts/{AwsAccountId}/search/data-sources
 		 * @param {string} AwsAccountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchDataSourcesResponse} Success
@@ -24871,6 +25196,7 @@ export namespace MyNS {
 		 * Searches the subfolders in a folder.
 		 * Post accounts/{AwsAccountId}/search/folders
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that contains the folder.
+		 *     Min length: 12    Max length: 12
 		 * @return {SearchFoldersResponse} Success
 		 */
 		SearchFolders(AwsAccountId: string, requestBody: SearchFoldersPostBody): Observable<SearchFoldersResponse> {
@@ -24881,9 +25207,12 @@ export namespace MyNS {
 		 * Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.
 		 * Post accounts/{AwsAccountId}/namespaces/{Namespace}/groups-search
 		 * @param {string} AwsAccountId The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} next_token A pagination token that can be used in a subsequent request.
 		 * @param {number} max_results The maximum number of results to return from this request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} Namespace The namespace that you want to search.
+		 *     Max length: 64
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchGroupsResponse} Success
@@ -24896,6 +25225,7 @@ export namespace MyNS {
 		 * <p>Starts an Asset Bundle export job.</p> <p>An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset dependencies in the same job. Export jobs run asynchronously and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.</p> <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
 		 * Post accounts/{AwsAccountId}/asset-bundle-export-jobs/export
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account to export assets from.
+		 *     Min length: 12    Max length: 12
 		 * @return {StartAssetBundleExportJobResponse} Success
 		 */
 		StartAssetBundleExportJob(AwsAccountId: string, requestBody: StartAssetBundleExportJobPostBody): Observable<StartAssetBundleExportJobResponse> {
@@ -24906,6 +25236,7 @@ export namespace MyNS {
 		 * <p>Starts an Asset Bundle import job.</p> <p>An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon QuickSight account. You can also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the bundle file that you provide are used to create or update a new or existing asset in your Amazon QuickSight account. Each Amazon QuickSight account can run up to 5 import jobs concurrently.</p> <p>The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>, and <code>"update"</code> permissions in their IAM role to access each resource type that is contained in the bundle file before the resources can be imported.</p>
 		 * Post accounts/{AwsAccountId}/asset-bundle-import-jobs/import
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account to import assets into. 
+		 *     Min length: 12    Max length: 12
 		 * @return {StartAssetBundleImportJobResponse} Success
 		 */
 		StartAssetBundleImportJob(AwsAccountId: string, requestBody: StartAssetBundleImportJobPostBody): Observable<StartAssetBundleImportJobResponse> {
@@ -24916,7 +25247,9 @@ export namespace MyNS {
 		 * <p>Starts an asynchronous job that generates a dashboard snapshot. You can request up to one paginated PDF and up to five CSVs per API call.</p> <p>Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download URIs that the job generates.</p>
 		 * Post accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID of the dashboard that you want to start a snapshot job for. 
+		 *     Min length: 1    Max length: 512
 		 * @return {StartDashboardSnapshotJobResponse} Success
 		 */
 		StartDashboardSnapshotJob(AwsAccountId: string, DashboardId: string, requestBody: StartDashboardSnapshotJobPostBody): Observable<StartDashboardSnapshotJobResponse> {
@@ -24928,6 +25261,7 @@ export namespace MyNS {
 		 * Delete resources/{ResourceArn}/tags#keys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource that you want to untag.
 		 * @param {Array<string>} keys The keys of the key-value pairs for the resource tag or tags assigned to the resource.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, keys: Array<string>): Observable<UntagResourceResponse> {
@@ -24938,8 +25272,11 @@ export namespace MyNS {
 		 * Updates the published version of a dashboard.
 		 * Put accounts/{AwsAccountId}/dashboards/{DashboardId}/versions/{VersionNumber}
 		 * @param {string} AwsAccountId The ID of the Amazon Web Services account that contains the dashboard that you're updating.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} DashboardId The ID for the dashboard.
+		 *     Min length: 1    Max length: 512
 		 * @param {number} VersionNumber The version number of the dashboard.
+		 *     Minimum: 1
 		 * @return {UpdateDashboardPublishedVersionResponse} Success
 		 */
 		UpdateDashboardPublishedVersion(AwsAccountId: string, DashboardId: string, VersionNumber: number): Observable<UpdateDashboardPublishedVersionResponse> {
@@ -24950,6 +25287,7 @@ export namespace MyNS {
 		 * <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an Amazon QuickSight dashboard.</p> <p>To use this operation, turn on session capacity pricing for your Amazon QuickSight account.</p> <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 		 * Put accounts/{AwsAccountId}/public-sharing-settings
 		 * @param {string} AwsAccountId The Amazon Web Services account ID associated with your Amazon QuickSight subscription.
+		 *     Min length: 12    Max length: 12
 		 * @return {UpdatePublicSharingSettingsResponse} Success
 		 */
 		UpdatePublicSharingSettings(AwsAccountId: string, requestBody: UpdatePublicSharingSettingsPutBody): Observable<UpdatePublicSharingSettingsResponse> {
@@ -25170,8 +25508,8 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: string;
 
@@ -25206,8 +25544,8 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -25271,8 +25609,8 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: string;
 
@@ -25293,8 +25631,8 @@ export namespace MyNS {
 		/**
 		 * A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -25358,8 +25696,8 @@ export namespace MyNS {
 		/**
 		 * The display name of the dashboard.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: string;
 
@@ -25385,8 +25723,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the first version of the dashboard being created.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
@@ -25404,15 +25742,15 @@ export namespace MyNS {
 		/**
 		 * The display name of the dashboard.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the first version of the dashboard being created.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 
@@ -25498,8 +25836,8 @@ export namespace MyNS {
 		/**
 		 * The display name of the dashboard.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: string;
 
@@ -25511,8 +25849,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the first version of the dashboard being created.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
@@ -25530,15 +25868,15 @@ export namespace MyNS {
 		/**
 		 * The display name of the dashboard.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the first version of the dashboard being created.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 
@@ -25630,8 +25968,8 @@ export namespace MyNS {
 		/**
 		 * The display name for the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -25707,8 +26045,8 @@ export namespace MyNS {
 		/**
 		 * The display name for the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -25809,8 +26147,8 @@ export namespace MyNS {
 		/**
 		 * A display name for the data source.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -25857,8 +26195,8 @@ export namespace MyNS {
 		/**
 		 * A display name for the data source.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -25957,8 +26295,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the folder.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name?: string | null;
 
@@ -25986,8 +26324,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the folder.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -26011,8 +26349,8 @@ export namespace MyNS {
 		/**
 		 * The name of the folder.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: string;
 	}
@@ -26021,8 +26359,8 @@ export namespace MyNS {
 		/**
 		 * The name of the folder.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -26044,8 +26382,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the group that you want to create.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Description?: string | null;
 	}
@@ -26060,8 +26398,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the group that you want to create.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -26252,8 +26590,8 @@ export namespace MyNS {
 
 		/**
 		 * A display name for the template.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name?: string | null;
 
@@ -26276,8 +26614,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
@@ -26288,15 +26626,15 @@ export namespace MyNS {
 
 		/**
 		 * A display name for the template.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 	}
@@ -26346,15 +26684,15 @@ export namespace MyNS {
 
 		/**
 		 * A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
 		/**
 		 * The name for the template.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name?: string | null;
 
@@ -26365,15 +26703,15 @@ export namespace MyNS {
 
 		/**
 		 * A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the template.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -26471,23 +26809,23 @@ export namespace MyNS {
 		/**
 		 * A display name for the theme.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: string;
 
 		/**
 		 * The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		BaseThemeId: string;
 
 		/**
 		 * A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
@@ -26516,23 +26854,23 @@ export namespace MyNS {
 		/**
 		 * A display name for the theme.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		BaseThemeId: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 	}
@@ -26565,23 +26903,23 @@ export namespace MyNS {
 
 		/**
 		 * The name for the theme.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name?: string | null;
 
 		/**
 		 * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		BaseThemeId: string;
 
 		/**
 		 * A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription?: string | null;
 
@@ -26592,23 +26930,23 @@ export namespace MyNS {
 
 		/**
 		 * The name for the theme.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		BaseThemeId: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		VersionDescription: FormControl<string | null | undefined>,
 	}
@@ -26811,16 +27149,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		VPCConnectionId: string;
 
 		/**
 		 * The display name for the VPC connection.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -26849,8 +27187,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role to associate with the VPC connection.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: string;
 
@@ -26866,24 +27204,24 @@ export namespace MyNS {
 		/**
 		 * The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		VPCConnectionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The display name for the VPC connection.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The IAM role to associate with the VPC connection.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
@@ -26901,8 +27239,8 @@ export namespace MyNS {
 		/**
 		 * The display name for the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -26958,8 +27296,8 @@ export namespace MyNS {
 		/**
 		 * The display name for the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -27080,8 +27418,8 @@ export namespace MyNS {
 		/**
 		 * A display name for the data source.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -27102,8 +27440,8 @@ export namespace MyNS {
 		/**
 		 * A display name for the data source.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -27194,8 +27532,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the group that you want to update.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Description?: string | null;
 	}
@@ -27203,8 +27541,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the group that you want to update.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -27308,8 +27646,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CustomPermissionsName?: string | null;
 
@@ -27341,8 +27679,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CustomPermissionsName: FormControl<string | null | undefined>,
 
@@ -27376,8 +27714,8 @@ export namespace MyNS {
 		/**
 		 * The display name for the VPC connection.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -27406,8 +27744,8 @@ export namespace MyNS {
 		/**
 		 * An IAM role associated with the VPC connection.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: string;
 	}
@@ -27416,16 +27754,16 @@ export namespace MyNS {
 		/**
 		 * The display name for the VPC connection.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * An IAM role associated with the VPC connection.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
@@ -27904,8 +28242,8 @@ export namespace MyNS {
 
 		/**
 		 * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i>
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		SessionName?: string | null;
 
@@ -27917,8 +28255,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CustomPermissionsName?: string | null;
 
@@ -27956,8 +28294,8 @@ export namespace MyNS {
 
 		/**
 		 * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i>
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		SessionName: FormControl<string | null | undefined>,
 
@@ -27969,8 +28307,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CustomPermissionsName: FormControl<string | null | undefined>,
 
@@ -28221,8 +28559,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		AssetBundleExportJobId: string;
 
@@ -28251,8 +28589,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		AssetBundleExportJobId: FormControl<string | null | undefined>,
 
@@ -28297,8 +28635,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		AssetBundleImportJobId: string;
 
@@ -28319,8 +28657,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		AssetBundleImportJobId: FormControl<string | null | undefined>,
 
@@ -28374,8 +28712,8 @@ export namespace MyNS {
 		/**
 		 * An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		SnapshotJobId: string;
 
@@ -28396,8 +28734,8 @@ export namespace MyNS {
 		/**
 		 * An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		SnapshotJobId: FormControl<string | null | undefined>,
 	}

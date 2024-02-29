@@ -986,6 +986,7 @@ export namespace MyNS {
 		 * @param {string} expand May be used to expand the properties/data within a dimension category. By default, data is not included when listing dimensions.
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
 		 * @param {number} top May be used to limit the number of results to the most recent N dimension data.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {DimensionsListResult} OK. The request has succeeded.
 		 */
 		Dimensions_List(scope: string, api_version: string, filter: string | null | undefined, expand: string | null | undefined, skiptoken: string | null | undefined, top: number | null | undefined): Observable<DimensionsListResult> {

@@ -17,7 +17,10 @@ export namespace MyNS {
 		/** Required */
 		click: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clicks: number;
 
 		/** Required */
@@ -29,7 +32,10 @@ export namespace MyNS {
 		/** Required */
 		contact: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: number;
 
 		/** Required */
@@ -44,7 +50,10 @@ export namespace MyNS {
 		/** Required */
 		'deal name': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		delay: number;
 
 		/** Required */
@@ -92,7 +101,10 @@ export namespace MyNS {
 		/** Required */
 		resolution: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		revenue: number;
 
 		/** Required */
@@ -110,7 +122,10 @@ export namespace MyNS {
 		/** Required */
 		timestamp: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: number;
 
 		/** Required */
@@ -133,7 +148,10 @@ export namespace MyNS {
 		/** Required */
 		click: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clicks: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -145,7 +163,10 @@ export namespace MyNS {
 		/** Required */
 		contact: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -160,7 +181,10 @@ export namespace MyNS {
 		/** Required */
 		'deal name': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		delay: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -208,7 +232,10 @@ export namespace MyNS {
 		/** Required */
 		resolution: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		revenue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -226,7 +253,10 @@ export namespace MyNS {
 		/** Required */
 		timestamp: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** Required */

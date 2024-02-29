@@ -10283,7 +10283,9 @@ export namespace MyNS {
 		 * Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchcreate
 		 * @param {string} botId The identifier of the bot associated with this custom vocabulary.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The identifier of the version of the bot associated with this custom vocabulary.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.
 		 * @return {BatchCreateCustomVocabularyItemResponse} Success
 		 */
@@ -10295,7 +10297,9 @@ export namespace MyNS {
 		 * Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchdelete
 		 * @param {string} botId The identifier of the bot associated with this custom vocabulary.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The identifier of the version of the bot associated with this custom vocabulary.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.
 		 * @return {BatchDeleteCustomVocabularyItemResponse} Success
 		 */
@@ -10307,7 +10311,9 @@ export namespace MyNS {
 		 * Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchupdate
 		 * @param {string} botId The identifier of the bot associated with this custom vocabulary
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The identifier of the version of the bot associated with this custom vocabulary.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.
 		 * @return {BatchUpdateCustomVocabularyItemResponse} Success
 		 */
@@ -10319,7 +10325,9 @@ export namespace MyNS {
 		 * Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		 * @param {string} botId The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to build. This can only be the draft version of the bot.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {void} 
 		 */
@@ -10331,7 +10339,9 @@ export namespace MyNS {
 		 * <p>Removes a locale from a bot.</p> <p>When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted.</p>
 		 * Delete bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		 * @param {string} botId The unique identifier of the bot that contains the locale.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the locale. 
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {void} 
 		 */
@@ -10343,7 +10353,9 @@ export namespace MyNS {
 		 * Describes the settings that a bot has for a specific locale.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		 * @param {string} botId The identifier of the bot associated with the locale.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the locale.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. 
 		 * @return {DescribeBotLocaleResponse} Success
 		 */
@@ -10355,7 +10367,9 @@ export namespace MyNS {
 		 * Updates the settings that a bot has for a specific locale.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		 * @param {string} botId The unique identifier of the bot that contains the locale.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {void} 
 		 */
@@ -10387,6 +10401,7 @@ export namespace MyNS {
 		 * <p>Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.</p> <p>For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot. </p>
 		 * Put bots/{botId}/botaliases/
 		 * @param {string} botId The unique identifier of the bot that the alias applies to.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		CreateBotAlias(botId: string, requestBody: CreateBotAliasPutBody): Observable<HttpResponse<string>> {
@@ -10397,6 +10412,7 @@ export namespace MyNS {
 		 * Gets a list of aliases for the specified bot.
 		 * Post bots/{botId}/botaliases/
 		 * @param {string} botId The identifier of the bot to list aliases for.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBotAliasesResponse} Success
@@ -10409,7 +10425,9 @@ export namespace MyNS {
 		 * Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/
 		 * @param {string} botId The identifier of the bot to create the locale for.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to create the locale for. This can only be the draft version of the bot.
+		 *     Min length: 5    Max length: 5
 		 * @return {void} 
 		 */
 		CreateBotLocale(botId: string, botVersion: string, requestBody: CreateBotLocalePutBody): Observable<HttpResponse<string>> {
@@ -10420,7 +10438,9 @@ export namespace MyNS {
 		 * Gets a list of locales for the specified bot.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/
 		 * @param {string} botId The identifier of the bot to list locales for.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to list locales for.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBotLocalesResponse} Success
@@ -10433,6 +10453,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it returns the last created version.</p> <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.</p>
 		 * Put bots/{botId}/botversions/
 		 * @param {string} botId The identifier of the bot to create the version for.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		CreateBotVersion(botId: string, requestBody: CreateBotVersionPutBody): Observable<HttpResponse<string>> {
@@ -10443,6 +10464,7 @@ export namespace MyNS {
 		 * <p>Gets information about all of the versions of a bot.</p> <p>The <code>ListBotVersions</code> operation returns a summary of each version of a bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code> operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code> version.</p> <p>The <code>ListBotVersions</code> operation always returns at least one version, the <code>DRAFT</code> version.</p>
 		 * Post bots/{botId}/botversions/
 		 * @param {string} botId The identifier of the bot to list versions for.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBotVersionsResponse} Success
@@ -10475,7 +10497,9 @@ export namespace MyNS {
 		 * <p>Creates an intent.</p> <p>To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an <code>OrderPizza</code> intent.</p> <p>When you create an intent, you must provide a name. You can optionally provide the following:</p> <ul> <li> <p>Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can't provide utterances for built-in intents.</p> </li> <li> <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p> </li> <li> <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p> </li> <li> <p>A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li> <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p> </li> <li> <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p> </li> </ul>
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/
 		 * @param {string} botId The identifier of the bot associated with this intent.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with this intent.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {CreateIntentResponse} Success
 		 */
@@ -10487,7 +10511,9 @@ export namespace MyNS {
 		 * Get a list of intents that meet the specified criteria.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/
 		 * @param {string} botId The unique identifier of the bot that contains the intent.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the intent.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -10501,6 +10527,7 @@ export namespace MyNS {
 		 * Creates a new resource policy with the specified policy statements.
 		 * Post policy/{resourceArn}/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		 *     Min length: 1    Max length: 1011
 		 * @return {CreateResourcePolicyResponse} Success
 		 */
 		CreateResourcePolicy(resourceArn: string, requestBody: CreateResourcePolicyPostBody): Observable<CreateResourcePolicyResponse> {
@@ -10511,7 +10538,9 @@ export namespace MyNS {
 		 * Removes an existing policy from a bot or bot alias. If the resource doesn't have a policy attached, Amazon Lex returns an exception.
 		 * Delete policy/{resourceArn}/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} expectedRevisionId <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
+		 *     Min length: 1    Max length: 5
 		 * @return {void} 
 		 */
 		DeleteResourcePolicy(resourceArn: string, expectedRevisionId: string | null | undefined): Observable<HttpResponse<string>> {
@@ -10522,6 +10551,7 @@ export namespace MyNS {
 		 * Gets the resource policy and policy revision for a bot or bot alias.
 		 * Get policy/{resourceArn}/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		 *     Min length: 1    Max length: 1011
 		 * @return {DescribeResourcePolicyResponse} Success
 		 */
 		DescribeResourcePolicy(resourceArn: string): Observable<DescribeResourcePolicyResponse> {
@@ -10532,7 +10562,9 @@ export namespace MyNS {
 		 * Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception.
 		 * Put policy/{resourceArn}/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} expectedRevisionId <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+		 *     Min length: 1    Max length: 5
 		 * @return {UpdateResourcePolicyResponse} Success
 		 */
 		UpdateResourcePolicy(resourceArn: string, expectedRevisionId: string | null | undefined, requestBody: UpdateResourcePolicyPutBody): Observable<UpdateResourcePolicyResponse> {
@@ -10543,7 +10575,9 @@ export namespace MyNS {
 		 * <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p> <p>You can't create a resource policy statement that allows cross-account access.</p>
 		 * Post policy/{resourceArn}/statements/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} expectedRevisionId <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+		 *     Min length: 1    Max length: 5
 		 * @return {CreateResourcePolicyStatementResponse} Success
 		 */
 		CreateResourcePolicyStatement(resourceArn: string, expectedRevisionId: string | null | undefined, requestBody: CreateResourcePolicyStatementPostBody): Observable<CreateResourcePolicyStatementResponse> {
@@ -10554,9 +10588,12 @@ export namespace MyNS {
 		 * Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/
 		 * @param {string} botId The identifier of the bot associated with the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the slot.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} intentId The identifier of the intent that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @return {CreateSlotResponse} Success
 		 */
 		CreateSlot(botId: string, botVersion: string, localeId: string, intentId: string, requestBody: CreateSlotPutBody): Observable<CreateSlotResponse> {
@@ -10567,9 +10604,12 @@ export namespace MyNS {
 		 * Gets a list of slots that match the specified criteria.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/
 		 * @param {string} botId The identifier of the bot that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the slot.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} intentId The unique identifier of the intent that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSlotsResponse} Success
@@ -10582,7 +10622,9 @@ export namespace MyNS {
 		 * <p>Creates a custom slot type</p> <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/
 		 * @param {string} botId The identifier of the bot associated with this slot type.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The identifier of the bot version associated with this slot type.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {CreateSlotTypeResponse} Success
 		 */
@@ -10594,7 +10636,9 @@ export namespace MyNS {
 		 * Gets a list of slot types that match the specified criteria.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/
 		 * @param {string} botId The unique identifier of the bot that contains the slot types.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the slot type.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -10608,6 +10652,7 @@ export namespace MyNS {
 		 * Create a report that describes the differences between the bot and the test set.
 		 * Post testsets/{testSetId}/testsetdiscrepancy
 		 * @param {string} testSetId The test set Id for the test set discrepancy report.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		CreateTestSetDiscrepancyReport(testSetId: string, requestBody: CreateTestSetDiscrepancyReportPostBody): Observable<HttpResponse<string>> {
@@ -10627,6 +10672,7 @@ export namespace MyNS {
 		 * <p>Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the <code>DeleteBotVersion</code> operation.</p> <p>When you delete a bot, all of the resources contained in the bot are also deleted. Deleting a bot removes all locales, intents, slot, and slot types defined for the bot.</p> <p>If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
 		 * Delete bots/{botId}/
 		 * @param {string} botId The identifier of the bot to delete. 
+		 *     Min length: 10    Max length: 10
 		 * @param {boolean} skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is being used by another resource.
 		 * @return {void} 
 		 */
@@ -10638,6 +10684,7 @@ export namespace MyNS {
 		 * Provides metadata information about a bot.
 		 * Get bots/{botId}/
 		 * @param {string} botId The unique identifier of the bot to describe.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeBotResponse} Success
 		 */
 		DescribeBot(botId: string): Observable<DescribeBotResponse> {
@@ -10648,6 +10695,7 @@ export namespace MyNS {
 		 * Updates the configuration of an existing bot.
 		 * Put bots/{botId}/
 		 * @param {string} botId The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		UpdateBot(botId: string, requestBody: UpdateBotPutBody): Observable<HttpResponse<string>> {
@@ -10658,7 +10706,9 @@ export namespace MyNS {
 		 * Deletes the specified bot alias.
 		 * Delete bots/{botId}/botaliases/{botAliasId}/
 		 * @param {string} botAliasId The unique identifier of the bot alias to delete.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The unique identifier of the bot associated with the alias to delete.
+		 *     Min length: 10    Max length: 10
 		 * @param {boolean} skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.
 		 * @return {void} 
 		 */
@@ -10670,7 +10720,9 @@ export namespace MyNS {
 		 * Get information about a specific bot alias.
 		 * Get bots/{botId}/botaliases/{botAliasId}/
 		 * @param {string} botAliasId The identifier of the bot alias to describe.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the bot alias to describe.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeBotAliasResponse} Success
 		 */
 		DescribeBotAlias(botAliasId: string, botId: string): Observable<DescribeBotAliasResponse> {
@@ -10681,7 +10733,9 @@ export namespace MyNS {
 		 * Updates the configuration of an existing bot alias.
 		 * Put bots/{botId}/botaliases/{botAliasId}/
 		 * @param {string} botAliasId The unique identifier of the bot alias.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot with the updated alias.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		UpdateBotAlias(botAliasId: string, botId: string, requestBody: UpdateBotAliasPutBody): Observable<HttpResponse<string>> {
@@ -10692,7 +10746,9 @@ export namespace MyNS {
 		 * Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.
 		 * Delete bots/{botId}/botversions/{botVersion}/
 		 * @param {string} botId The identifier of the bot that contains the version.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to delete.
+		 *     Min length: 1    Max length: 5
 		 * @param {boolean} skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.
 		 * @return {void} 
 		 */
@@ -10704,7 +10760,9 @@ export namespace MyNS {
 		 * Provides metadata about a version of a bot.
 		 * Get bots/{botId}/botversions/{botVersion}/
 		 * @param {string} botId The identifier of the bot containing the version to return metadata for.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to return metadata for.
+		 *     Min length: 1    Max length: 5
 		 * @return {DescribeBotVersionResponse} Success
 		 */
 		DescribeBotVersion(botId: string, botVersion: string): Observable<DescribeBotVersionResponse> {
@@ -10715,7 +10773,9 @@ export namespace MyNS {
 		 * Removes a custom vocabulary from the specified locale in the specified bot.
 		 * Delete bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary
 		 * @param {string} botId The unique identifier of the bot to remove the custom vocabulary from.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot to remove the custom vocabulary from.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The locale identifier for the locale that contains the custom vocabulary to remove.
 		 * @return {void} 
 		 */
@@ -10727,6 +10787,7 @@ export namespace MyNS {
 		 * Removes a previous export and the associated files stored in an S3 bucket.
 		 * Delete exports/{exportId}/
 		 * @param {string} exportId The unique identifier of the export to delete.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteExport(exportId: string): Observable<HttpResponse<string>> {
@@ -10737,6 +10798,7 @@ export namespace MyNS {
 		 * Gets information about a specific export.
 		 * Get exports/{exportId}/
 		 * @param {string} exportId The unique identifier of the export to describe.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeExportResponse} Success
 		 */
 		DescribeExport(exportId: string): Observable<DescribeExportResponse> {
@@ -10747,6 +10809,7 @@ export namespace MyNS {
 		 * <p>Updates the password used to protect an export zip archive.</p> <p>The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation.</p>
 		 * Put exports/{exportId}/
 		 * @param {string} exportId The unique identifier Amazon Lex assigned to the export.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		UpdateExport(exportId: string, requestBody: UpdateExportPutBody): Observable<HttpResponse<string>> {
@@ -10757,6 +10820,7 @@ export namespace MyNS {
 		 * Removes a previous import and the associated file stored in an S3 bucket.
 		 * Delete imports/{importId}/
 		 * @param {string} importId The unique identifier of the import to delete.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteImport(importId: string): Observable<HttpResponse<string>> {
@@ -10767,6 +10831,7 @@ export namespace MyNS {
 		 * Gets information about a specific import.
 		 * Get imports/{importId}/
 		 * @param {string} importId The unique identifier of the import to describe.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeImportResponse} Success
 		 */
 		DescribeImport(importId: string): Observable<DescribeImportResponse> {
@@ -10777,8 +10842,11 @@ export namespace MyNS {
 		 * <p>Removes the specified intent.</p> <p>Deleting an intent also deletes the slots associated with the intent.</p>
 		 * Delete bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		 * @param {string} intentId The unique identifier of the intent to delete.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the intent.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the intent.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {void} 
 		 */
@@ -10790,8 +10858,11 @@ export namespace MyNS {
 		 * Returns metadata about an intent.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		 * @param {string} intentId The identifier of the intent to describe.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the intent.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the intent.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {DescribeIntentResponse} Success
 		 */
@@ -10803,8 +10874,11 @@ export namespace MyNS {
 		 * Updates the settings for an intent.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		 * @param {string} intentId The unique identifier of the intent to update.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot that contains the intent.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the intent. Must be <code>DRAFT</code>.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {UpdateIntentResponse} Success
 		 */
@@ -10816,8 +10890,11 @@ export namespace MyNS {
 		 * Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.
 		 * Delete policy/{resourceArn}/statements/{statementId}/
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} statementId The name of the statement (SID) to delete from the policy.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} expectedRevisionId <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+		 *     Min length: 1    Max length: 5
 		 * @return {void} 
 		 */
 		DeleteResourcePolicyStatement(resourceArn: string, statementId: string, expectedRevisionId: string | null | undefined): Observable<HttpResponse<string>> {
@@ -10828,10 +10905,14 @@ export namespace MyNS {
 		 * Deletes the specified slot from an intent.
 		 * Delete bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		 * @param {string} slotId The identifier of the slot to delete. 
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the slot to delete.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the slot to delete.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} intentId The identifier of the intent associated with the slot.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteSlot(slotId: string, botId: string, botVersion: string, localeId: string, intentId: string): Observable<HttpResponse<string>> {
@@ -10842,10 +10923,14 @@ export namespace MyNS {
 		 * Gets metadata information about a slot.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		 * @param {string} slotId The unique identifier for the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the slot.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} intentId The identifier of the intent that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeSlotResponse} Success
 		 */
 		DescribeSlot(slotId: string, botId: string, botVersion: string, localeId: string, intentId: string): Observable<DescribeSlotResponse> {
@@ -10856,10 +10941,14 @@ export namespace MyNS {
 		 * Updates the settings for a slot.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		 * @param {string} slotId The unique identifier for the slot to update.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The unique identifier of the bot that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the slot. Must always be <code>DRAFT</code>.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} intentId The identifier of the intent that contains the slot.
+		 *     Min length: 10    Max length: 10
 		 * @return {UpdateSlotResponse} Success
 		 */
 		UpdateSlot(slotId: string, botId: string, botVersion: string, localeId: string, intentId: string, requestBody: UpdateSlotPutBody): Observable<UpdateSlotResponse> {
@@ -10870,8 +10959,11 @@ export namespace MyNS {
 		 * <p>Deletes a slot type from a bot locale.</p> <p>If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code> exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
 		 * Delete bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		 * @param {string} slotTypeId The identifier of the slot type to delete.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the slot type.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the slot type.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {boolean} skipResourceInUseCheck By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.
 		 * @return {void} 
@@ -10884,8 +10976,11 @@ export namespace MyNS {
 		 * Gets metadata information about a slot type.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		 * @param {string} slotTypeId The identifier of the slot type.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot associated with the slot type.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the slot type.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {DescribeSlotTypeResponse} Success
 		 */
@@ -10897,8 +10992,11 @@ export namespace MyNS {
 		 * Updates the configuration of an existing slot type.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		 * @param {string} slotTypeId The unique identifier of the slot type to update.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botId The identifier of the bot that contains the slot type.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the slot type. Must be <code>DRAFT</code>.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @return {void} 
 		 */
@@ -10910,6 +11008,7 @@ export namespace MyNS {
 		 * The action to delete the selected test set.
 		 * Delete testsets/{testSetId}
 		 * @param {string} testSetId The test set Id of the test set to be deleted.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		DeleteTestSet(testSetId: string): Observable<HttpResponse<string>> {
@@ -10920,6 +11019,7 @@ export namespace MyNS {
 		 * Gets metadata information about the test set.
 		 * Get testsets/{testSetId}
 		 * @param {string} testSetId The test set Id for the test set request.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeTestSetResponse} Success
 		 */
 		DescribeTestSet(testSetId: string): Observable<DescribeTestSetResponse> {
@@ -10930,6 +11030,7 @@ export namespace MyNS {
 		 * The action to update the test set.
 		 * Put testsets/{testSetId}
 		 * @param {string} testSetId The test set Id for which update test operation to be performed.
+		 *     Min length: 10    Max length: 10
 		 * @return {UpdateTestSetResponse} Success
 		 */
 		UpdateTestSet(testSetId: string, requestBody: UpdateTestSetPutBody): Observable<UpdateTestSetResponse> {
@@ -10940,8 +11041,10 @@ export namespace MyNS {
 		 * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>ListAggregatedUtterances</code> operation are deleted after 15 days.</p>
 		 * Delete bots/{botId}/utterances/
 		 * @param {string} botId The unique identifier of the bot that contains the utterances.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} localeId The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} sessionId The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.
+		 *     Min length: 2    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteUtterances(botId: string, localeId: string | null | undefined, sessionId: string | null | undefined): Observable<HttpResponse<string>> {
@@ -10952,9 +11055,12 @@ export namespace MyNS {
 		 * Provides metadata information about a bot recommendation. This information will enable you to get a description on the request inputs, to download associated transcripts after processing is complete, and to download intents and slot-types generated by the bot recommendation.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/
 		 * @param {string} botId The unique identifier of the bot associated with the bot recommendation.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot associated with the bot recommendation.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
 		 * @param {string} botRecommendationId The identifier of the bot recommendation to describe.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeBotRecommendationResponse} Success
 		 */
 		DescribeBotRecommendation(botId: string, botVersion: string, localeId: string, botRecommendationId: string): Observable<DescribeBotRecommendationResponse> {
@@ -10965,9 +11071,12 @@ export namespace MyNS {
 		 * Updates an existing bot recommendation request.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/
 		 * @param {string} botId The unique identifier of the bot containing the bot recommendation to be updated.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot containing the bot recommendation to be updated.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> 
 		 * @param {string} botRecommendationId The unique identifier of the bot recommendation to be updated.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		UpdateBotRecommendation(botId: string, botVersion: string, localeId: string, botRecommendationId: string, requestBody: UpdateBotRecommendationPutBody): Observable<HttpResponse<string>> {
@@ -10978,7 +11087,9 @@ export namespace MyNS {
 		 * Provides metadata information about a custom vocabulary.
 		 * Get bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/metadata
 		 * @param {string} botId The unique identifier of the bot that contains the custom vocabulary.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The bot version of the bot to return metadata for.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.
 		 * @return {DescribeCustomVocabularyMetadataResponse} Success
 		 */
@@ -10990,6 +11101,7 @@ export namespace MyNS {
 		 * Gets metadata information about the test execution.
 		 * Get testexecutions/{testExecutionId}
 		 * @param {string} testExecutionId The execution Id of the test set execution.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeTestExecutionResponse} Success
 		 */
 		DescribeTestExecution(testExecutionId: string): Observable<DescribeTestExecutionResponse> {
@@ -11000,6 +11112,7 @@ export namespace MyNS {
 		 * Gets metadata information about the test set discrepancy report.
 		 * Get testsetdiscrepancy/{testSetDiscrepancyReportId}
 		 * @param {string} testSetDiscrepancyReportId The unique identifier of the test set discrepancy report.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeTestSetDiscrepancyReportResponse} Success
 		 */
 		DescribeTestSetDiscrepancyReport(testSetDiscrepancyReportId: string): Observable<DescribeTestSetDiscrepancyReportResponse> {
@@ -11010,6 +11123,7 @@ export namespace MyNS {
 		 * Gets metadata information about the test set generation.
 		 * Get testsetgenerations/{testSetGenerationId}
 		 * @param {string} testSetGenerationId The unique identifier of the test set generation.
+		 *     Min length: 10    Max length: 10
 		 * @return {DescribeTestSetGenerationResponse} Success
 		 */
 		DescribeTestSetGeneration(testSetGenerationId: string): Observable<DescribeTestSetGenerationResponse> {
@@ -11020,6 +11134,7 @@ export namespace MyNS {
 		 * The pre-signed Amazon S3 URL to download the test execution result artifacts.
 		 * Get testexecutions/{testExecutionId}/artifacturl
 		 * @param {string} testExecutionId The unique identifier of the completed test execution.
+		 *     Min length: 10    Max length: 10
 		 * @return {GetTestExecutionArtifactsUrlResponse} Success
 		 */
 		GetTestExecutionArtifactsUrl(testExecutionId: string): Observable<GetTestExecutionArtifactsUrlResponse> {
@@ -11030,6 +11145,7 @@ export namespace MyNS {
 		 * <p>Provides a list of utterances that users have sent to the bot.</p> <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response.</p> <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p> <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p> <p>Utterances statistics are not generated under the following conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation with one or more slots.</p> </li> <li> <p>You opted out of participating in improving Amazon Lex.</p> </li> </ul>
 		 * Post bots/{botId}/aggregatedutterances/
 		 * @param {string} botId The unique identifier of the bot associated with this request.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAggregatedUtterancesResponse} Success
@@ -11042,7 +11158,9 @@ export namespace MyNS {
 		 * Get a list of bot recommendations that meet the specified criteria.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/
 		 * @param {string} botId The unique identifier of the bot that contains the bot recommendation list.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the bot recommendation list.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the bot recommendation list.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -11056,7 +11174,9 @@ export namespace MyNS {
 		 * Use this to provide your transcript data, and to start the bot recommendation process.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/
 		 * @param {string} botId The unique identifier of the bot containing the bot recommendation.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot containing the bot recommendation.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> 
 		 * @return {void} 
 		 */
@@ -11092,7 +11212,9 @@ export namespace MyNS {
 		 * Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/list
 		 * @param {string} botId The identifier of the version of the bot associated with this custom vocabulary.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The bot version of the bot to the list custom vocabulary request.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -11126,6 +11248,7 @@ export namespace MyNS {
 		 * <p>Retrieves summary metrics for the intents in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify only one <code>order</code> in a given request.</p>
 		 * Post bots/{botId}/analytics/intentmetrics
 		 * @param {string} botId The identifier for the bot for which you want to retrieve intent metrics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListIntentMetricsResponse} Success
@@ -11138,6 +11261,7 @@ export namespace MyNS {
 		 * <p>Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following fields are required:</p> <ul> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> <li> <p> <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in the path with a forward slash. For example, populate the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code> intents in that order.</p> </li> </ul> <p>Use the optional <code>filters</code> field to filter the results.</p>
 		 * Post bots/{botId}/analytics/intentpaths
 		 * @param {string} botId The identifier for the bot for which you want to retrieve intent path metrics.
+		 *     Min length: 10    Max length: 10
 		 * @return {ListIntentPathsResponse} Success
 		 */
 		ListIntentPaths(botId: string, requestBody: ListIntentPathsPostBody): Observable<ListIntentPathsResponse> {
@@ -11148,6 +11272,7 @@ export namespace MyNS {
 		 * <p>Retrieves summary metrics for the stages within intents in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only specify one <code>order</code> in a given request.</p>
 		 * Post bots/{botId}/analytics/intentstagemetrics
 		 * @param {string} botId The identifier for the bot for which you want to retrieve intent stage metrics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListIntentStageMetricsResponse} Success
@@ -11160,9 +11285,12 @@ export namespace MyNS {
 		 * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/intents
 		 * @param {string} botId The unique identifier of the bot associated with the recommended intents.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot that contains the recommended intents.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the recommended intents.
 		 * @param {string} botRecommendationId The identifier of the bot recommendation that contains the recommended intents.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRecommendedIntentsResponse} Success
@@ -11175,6 +11303,7 @@ export namespace MyNS {
 		 * <p>Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve results. Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values by which to sort the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul>
 		 * Post bots/{botId}/analytics/sessions
 		 * @param {string} botId The identifier for the bot for which you want to retrieve session analytics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSessionAnalyticsDataResponse} Success
@@ -11187,6 +11316,7 @@ export namespace MyNS {
 		 * <p>Retrieves summary metrics for the user sessions with your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can specify it in either field, but not in both.</p>
 		 * Post bots/{botId}/analytics/sessionmetrics
 		 * @param {string} botId The identifier for the bot for which you want to retrieve session metrics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSessionMetricsResponse} Success
@@ -11199,6 +11329,7 @@ export namespace MyNS {
 		 * Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them.
 		 * Get tags/{resourceARN}
 		 * @param {string} resourceARN The Amazon Resource Name (ARN) of the resource to get a list of tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceARN: string): Observable<ListTagsForResourceResponse> {
@@ -11209,6 +11340,7 @@ export namespace MyNS {
 		 * Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.
 		 * Post tags/{resourceARN}
 		 * @param {string} resourceARN The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceARN: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -11219,6 +11351,7 @@ export namespace MyNS {
 		 * Gets a list of test execution result items.
 		 * Post testexecutions/{testExecutionId}/results
 		 * @param {string} testExecutionId The unique identifier of the test execution to list the result items.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestExecutionResultItemsResponse} Success
@@ -11242,6 +11375,7 @@ export namespace MyNS {
 		 * The list of test set records.
 		 * Post testsets/{testSetId}/records
 		 * @param {string} testSetId The identifier of the test set to list its test set records.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestSetRecordsResponse} Success
@@ -11265,6 +11399,7 @@ export namespace MyNS {
 		 * <note> <p>To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a> for the IAM policy to apply to the IAM role.</p> </note> <p>Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:</p> <ul> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values by which to sort the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul>
 		 * Post bots/{botId}/analytics/utterances
 		 * @param {string} botId The identifier for the bot for which you want to retrieve utterance analytics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUtteranceAnalyticsDataResponse} Success
@@ -11277,6 +11412,7 @@ export namespace MyNS {
 		 * <note> <p>To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a> for the IAM policy to apply to the IAM role.</p> </note> <p>Retrieves summary metrics for the utterances in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can specify it in either field, but not in both.</p>
 		 * Post bots/{botId}/analytics/utterancemetrics
 		 * @param {string} botId The identifier for the bot for which you want to retrieve utterance metrics.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUtteranceMetricsResponse} Success
@@ -11289,9 +11425,12 @@ export namespace MyNS {
 		 * Search for associated transcripts that meet the specified criteria.
 		 * Post bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/associatedtranscripts
 		 * @param {string} botId The unique identifier of the bot associated with the transcripts that you are searching.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot containing the transcripts that you are searching.
+		 *     Min length: 1    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> 
 		 * @param {string} botRecommendationId The unique identifier of the bot recommendation associated with the transcripts to search.
+		 *     Min length: 10    Max length: 10
 		 * @return {SearchAssociatedTranscriptsResponse} Success
 		 */
 		SearchAssociatedTranscripts(botId: string, botVersion: string, localeId: string, botRecommendationId: string, requestBody: SearchAssociatedTranscriptsPostBody): Observable<SearchAssociatedTranscriptsResponse> {
@@ -11302,6 +11441,7 @@ export namespace MyNS {
 		 * The action to start test set execution.
 		 * Post testsets/{testSetId}/testexecutions
 		 * @param {string} testSetId The test set Id for the test set execution.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		StartTestExecution(testSetId: string, requestBody: StartTestExecutionPostBody): Observable<HttpResponse<string>> {
@@ -11321,9 +11461,12 @@ export namespace MyNS {
 		 * Stop an already running Bot Recommendation request.
 		 * Put bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/stopbotrecommendation
 		 * @param {string} botId The unique identifier of the bot containing the bot recommendation to be stopped.
+		 *     Min length: 10    Max length: 10
 		 * @param {string} botVersion The version of the bot containing the bot recommendation.
+		 *     Min length: 5    Max length: 5
 		 * @param {string} localeId The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> 
 		 * @param {string} botRecommendationId The unique identifier of the bot recommendation to be stopped.
+		 *     Min length: 10    Max length: 10
 		 * @return {void} 
 		 */
 		StopBotRecommendation(botId: string, botVersion: string, localeId: string, botRecommendationId: string): Observable<HttpResponse<string>> {
@@ -11334,7 +11477,9 @@ export namespace MyNS {
 		 * Removes tags from a bot, bot alias, or bot channel.
 		 * Delete tags/{resourceARN}#tagKeys
 		 * @param {string} resourceARN The Amazon Resource Name (ARN) of the resource to remove the tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceARN: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -11400,8 +11545,8 @@ export namespace MyNS {
 
 		/**
 		 * The new description of the locale.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -11420,8 +11565,8 @@ export namespace MyNS {
 
 		/**
 		 * The new description of the locale.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -11462,23 +11607,23 @@ export namespace MyNS {
 		/**
 		 * The name of the bot. The bot name must be unique in the account that creates the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botName: string;
 
 		/**
 		 * A description of the bot. It appears in lists to help you identify a particular bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -11517,23 +11662,23 @@ export namespace MyNS {
 		/**
 		 * The name of the bot. The bot name must be unique in the account that creates the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the bot. It appears in lists to help you identify a particular bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -11643,22 +11788,22 @@ export namespace MyNS {
 		/**
 		 * The alias to create. The name must be unique for the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botAliasName: string;
 
 		/**
 		 * A description of the alias. Use this description to help identify the alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion?: string | null;
 
@@ -11679,22 +11824,22 @@ export namespace MyNS {
 		/**
 		 * The alias to create. The name must be unique for the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botAliasName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the alias. Use this description to help identify the alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -11782,8 +11927,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the bot locale. Use this to help identify the bot locale in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -11808,8 +11953,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the bot locale. Use this to help identify the bot locale in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -11908,8 +12053,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the version. Use the description to help identify the version in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -11923,8 +12068,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the version. Use the description to help identify the version in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -12009,8 +12154,8 @@ export namespace MyNS {
 
 		/**
 		 * An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword?: string | null;
 	}
@@ -12024,8 +12169,8 @@ export namespace MyNS {
 
 		/**
 		 * An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword: FormControl<string | null | undefined>,
 	}
@@ -12055,15 +12200,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier that Amazon Lex assigned to the bot.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botId?: string | null;
 
 		/**
 		 * The version of the bot to list exports for.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion?: string | null;
 
@@ -12094,15 +12239,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier that Amazon Lex assigned to the bot.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botId: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the bot to list exports for.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -12151,15 +12296,15 @@ export namespace MyNS {
 		/**
 		 * The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		intentName: string;
 
 		/**
 		 * A description of the intent. Use the description to help identify the intent in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -12206,15 +12351,15 @@ export namespace MyNS {
 		/**
 		 * The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		intentName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the intent. Use the description to help identify the intent in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -12460,8 +12605,8 @@ export namespace MyNS {
 		/**
 		 * The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		statementId: string;
 
@@ -12491,8 +12636,8 @@ export namespace MyNS {
 		/**
 		 * The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		statementId: FormControl<string | null | undefined>,
 
@@ -12519,22 +12664,22 @@ export namespace MyNS {
 		/**
 		 * The name of the slot. Slot names must be unique within the bot that contains the slot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotName: string;
 
 		/**
 		 * A description of the slot. Use this to help identify the slot in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		slotTypeId?: string | null;
 
@@ -12558,22 +12703,22 @@ export namespace MyNS {
 		/**
 		 * The name of the slot. Slot names must be unique within the bot that contains the slot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the slot. Use this to help identify the slot in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		slotTypeId: FormControl<string | null | undefined>,
 	}
@@ -12709,15 +12854,15 @@ export namespace MyNS {
 		/**
 		 * The name for the slot. A slot type name must be unique within the intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotTypeName: string;
 
 		/**
 		 * A description of the slot type. Use the description to help identify the slot type in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -12745,15 +12890,15 @@ export namespace MyNS {
 		/**
 		 * The name for the slot. A slot type name must be unique within the intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotTypeName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the slot type. Use the description to help identify the slot type in lists.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -12896,23 +13041,23 @@ export namespace MyNS {
 		/**
 		 * The new name of the bot. The name must be unique in the account that creates the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botName: string;
 
 		/**
 		 * A description of the bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -12945,23 +13090,23 @@ export namespace MyNS {
 		/**
 		 * The new name of the bot. The name must be unique in the account that creates the bot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -13005,22 +13150,22 @@ export namespace MyNS {
 		/**
 		 * The new name to assign to the bot alias.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botAliasName: string;
 
 		/**
 		 * The new description to assign to the bot alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The new bot version to assign to the bot alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion?: string | null;
 
@@ -13038,22 +13183,22 @@ export namespace MyNS {
 		/**
 		 * The new name to assign to the bot alias.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		botAliasName: FormControl<string | null | undefined>,
 
 		/**
 		 * The new description to assign to the bot alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The new bot version to assign to the bot alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -13099,8 +13244,8 @@ export namespace MyNS {
 
 		/**
 		 * The new password to use to encrypt the export zip archive.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword?: string | null;
 	}
@@ -13108,8 +13253,8 @@ export namespace MyNS {
 
 		/**
 		 * The new password to use to encrypt the export zip archive.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword: FormControl<string | null | undefined>,
 	}
@@ -13125,15 +13270,15 @@ export namespace MyNS {
 		/**
 		 * The new name for the intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		intentName: string;
 
 		/**
 		 * The new description of the intent.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -13183,15 +13328,15 @@ export namespace MyNS {
 		/**
 		 * The new name for the intent.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		intentName: FormControl<string | null | undefined>,
 
 		/**
 		 * The new description of the intent.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -13329,22 +13474,22 @@ export namespace MyNS {
 		/**
 		 * The new name for the slot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotName: string;
 
 		/**
 		 * The new description for the slot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The unique identifier of the new slot type to associate with this slot.
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		slotTypeId?: string | null;
 
@@ -13368,22 +13513,22 @@ export namespace MyNS {
 		/**
 		 * The new name for the slot.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotName: FormControl<string | null | undefined>,
 
 		/**
 		 * The new description for the slot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier of the new slot type to associate with this slot.
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		slotTypeId: FormControl<string | null | undefined>,
 	}
@@ -13461,15 +13606,15 @@ export namespace MyNS {
 		/**
 		 * The new name of the slot type.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotTypeName: string;
 
 		/**
 		 * The new description of the slot type.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -13497,15 +13642,15 @@ export namespace MyNS {
 		/**
 		 * The new name of the slot type.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		slotTypeName: FormControl<string | null | undefined>,
 
 		/**
 		 * The new description of the slot type.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -13563,15 +13708,15 @@ export namespace MyNS {
 		/**
 		 * The new test set name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		testSetName: string;
 
 		/**
 		 * The new test set description.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 	}
@@ -13580,15 +13725,15 @@ export namespace MyNS {
 		/**
 		 * The new test set name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		testSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * The new test set description.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -13639,15 +13784,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botAliasId?: string | null;
 
 		/**
 		 * The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion?: string | null;
 
@@ -13687,15 +13832,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botAliasId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -13972,15 +14117,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier that Amazon Lex assigned to the bot.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botId?: string | null;
 
 		/**
 		 * The version of the bot to list imports for.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		botVersion?: string | null;
 
@@ -14011,15 +14156,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier that Amazon Lex assigned to the bot.
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		botId: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the bot to list imports for.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -14068,8 +14213,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		importId: string;
 
@@ -14087,8 +14232,8 @@ export namespace MyNS {
 
 		/**
 		 * The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword?: string | null;
 	}
@@ -14097,8 +14242,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		importId: FormControl<string | null | undefined>,
 
@@ -14110,8 +14255,8 @@ export namespace MyNS {
 
 		/**
 		 * The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		filePassword: FormControl<string | null | undefined>,
 	}
@@ -14244,8 +14389,8 @@ export namespace MyNS {
 		/**
 		 * <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p> <ul> <li> <p>/BookCar</p> </li> <li> <p>/BookCar/BookHotel</p> </li> <li> <p>/BookHotel/BookCar</p> </li> </ul>
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		intentPath: string;
 
@@ -14273,8 +14418,8 @@ export namespace MyNS {
 		/**
 		 * <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p> <ul> <li> <p>/BookCar</p> </li> <li> <p>/BookCar/BookHotel</p> </li> <li> <p>/BookHotel/BookCar</p> </li> </ul>
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		intentPath: FormControl<string | null | undefined>,
 	}
@@ -15071,15 +15216,15 @@ export namespace MyNS {
 		/**
 		 * The test set name for the test set generation request.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		testSetName: string;
 
 		/**
 		 * The test set description for the test set generation request.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -15098,8 +15243,8 @@ export namespace MyNS {
 		/**
 		 * The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -15111,23 +15256,23 @@ export namespace MyNS {
 		/**
 		 * The test set name for the test set generation request.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		testSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * The test set description for the test set generation request.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 32
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 

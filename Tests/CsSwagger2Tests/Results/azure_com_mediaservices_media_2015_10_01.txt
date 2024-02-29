@@ -515,7 +515,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <returns>Success. Returns the details of the Media Services account.</returns>
 		public async Task<MediaService> MediaService_GetAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName)
 		{
@@ -547,7 +550,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="requestBody">Media Service properties needed for creation.</param>
 		public async Task MediaService_CreateAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName, MediaService requestBody)
 		{
@@ -580,7 +586,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <returns>Success. The Media Services account was deleted.</returns>
 		public async Task MediaService_DeleteAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName)
 		{
@@ -606,7 +615,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="requestBody">Media Service properties needed for update.</param>
 		/// <returns>Success. The Media Services account was updated.</returns>
 		public async Task<MediaService> MediaService_UpdateAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName, MediaService requestBody)
@@ -646,7 +658,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <returns>Success. The keys for the Media Services account were listed.</returns>
 		public async Task<ServiceKeys> MediaService_ListKeysAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName)
 		{
@@ -678,7 +693,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="requestBody">Properties needed to regenerate the Media Service key.</param>
 		/// <returns>Success. The Media Services key specified in the input was regenerated.</returns>
 		public async Task<RegenerateKeyOutput> MediaService_RegenerateKeyAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName, RegenerateKeyInput requestBody)
@@ -718,7 +736,10 @@ namespace MyNS
 		/// <param name="subscriptionId">The unique identifier for a Microsoft Azure subscription.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2015-10-01.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.</param>
-		/// <param name="mediaServiceName">Name of the Media Service.</param>
+		/// <param name="mediaServiceName">Name of the Media Service.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="requestBody">Properties needed to synchronize the keys for a storage account to the Media Service.</param>
 		/// <returns>Success. The keys for the storage account were synchronized.</returns>
 		public async Task MediaService_SyncStorageKeysAsync(string subscriptionId, string api_version, string resourceGroupName, string mediaServiceName, SyncStorageKeysInput requestBody)

@@ -13,8 +13,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -32,8 +32,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Flow_enum_status | null;
@@ -41,15 +41,18 @@ export namespace MyNS {
 		/** The absolute URL of the resource. */
 		url?: string | null;
 
-		/** The latest version number of the Flow's definition. */
+		/**
+		 * The latest version number of the Flow's definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface Studiov1flowFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -67,8 +70,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Flow_enum_status | null | undefined>,
@@ -76,7 +79,10 @@ export namespace MyNS {
 		/** The absolute URL of the resource. */
 		url: FormControl<string | null | undefined>,
 
-		/** The latest version number of the Flow's definition. */
+		/**
+		 * The latest version number of the Flow's definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateStudiov1flowFormGroup() {
@@ -98,8 +104,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Engagement resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -108,8 +114,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Contact.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		contact_sid?: string | null;
 
@@ -124,8 +130,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -134,8 +140,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Engagement resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Engagement_enum_status | null;
@@ -147,8 +153,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Engagement resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -157,8 +163,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Contact.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		contact_sid: FormControl<string | null | undefined>,
 
@@ -173,8 +179,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -183,8 +189,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Engagement resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Engagement_enum_status | null | undefined>,
@@ -213,8 +219,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -223,15 +229,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -242,8 +248,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -252,15 +258,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -282,8 +288,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Step resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -298,15 +304,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -318,8 +324,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Step resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -336,8 +342,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Step resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -352,15 +358,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -372,8 +378,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Step resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -408,8 +414,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the StepContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -418,22 +424,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
 		/**
 		 * The SID of the Step the context is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		step_sid?: string | null;
 
@@ -444,8 +450,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the StepContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -454,22 +460,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Engagement.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		engagement_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Step the context is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		step_sid: FormControl<string | null | undefined>,
 
@@ -492,8 +498,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -502,8 +508,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Contact.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		contact_sid?: string | null;
 
@@ -518,8 +524,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -528,8 +534,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Engagement_enum_status | null;
@@ -541,8 +547,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -551,8 +557,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Contact.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		contact_sid: FormControl<string | null | undefined>,
 
@@ -567,8 +573,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -577,8 +583,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Engagement_enum_status | null | undefined>,
@@ -607,8 +613,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -617,15 +623,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the context's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -636,8 +642,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -646,15 +652,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the context's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -676,8 +682,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionStep resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -692,15 +698,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Step's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
@@ -712,8 +718,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the ExecutionStep resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -730,8 +736,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionStep resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -746,15 +752,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Step's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
@@ -766,8 +772,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the ExecutionStep resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -802,8 +808,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionStepContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -812,22 +818,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the context's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid?: string | null;
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid?: string | null;
 
 		/**
 		 * The SID of the Step that the context is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		step_sid?: string | null;
 
@@ -838,8 +844,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ExecutionStepContext resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -848,22 +854,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the context's Execution resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		execution_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flow_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Step that the context is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		step_sid: FormControl<string | null | undefined>,
 
@@ -891,7 +897,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Flows.
 		 * Get v1/Flows
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFlowReturn} OK
 		 */
@@ -903,8 +911,11 @@ export namespace MyNS {
 		 * Retrieve a list of all Engagements for the Flow.
 		 * Get v1/Flows/{FlowSid}/Engagements
 		 * @param {string} FlowSid The SID of the Flow to read Engagements from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListEngagementReturn} OK
 		 */
@@ -916,7 +927,9 @@ export namespace MyNS {
 		 * Retrieve the most recent context for an Engagement.
 		 * Get v1/Flows/{FlowSid}/Engagements/{EngagementSid}/Context
 		 * @param {string} FlowSid The SID of the Flow.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} EngagementSid The SID of the Engagement.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowengagementengagement_context} OK
 		 */
 		FetchEngagementContext(FlowSid: string, EngagementSid: string): Observable<Studiov1flowengagementengagement_context> {
@@ -927,9 +940,13 @@ export namespace MyNS {
 		 * Retrieve a list of all Steps for an Engagement.
 		 * Get v1/Flows/{FlowSid}/Engagements/{EngagementSid}/Steps
 		 * @param {string} FlowSid The SID of the Flow with the Step to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} EngagementSid The SID of the Engagement with the Step to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListStepReturn} OK
 		 */
@@ -941,8 +958,11 @@ export namespace MyNS {
 		 * Retrieve a Step.
 		 * Get v1/Flows/{FlowSid}/Engagements/{EngagementSid}/Steps/{Sid}
 		 * @param {string} FlowSid The SID of the Flow with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} EngagementSid The SID of the Engagement with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Step resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowengagementstep} OK
 		 */
 		FetchStep(FlowSid: string, EngagementSid: string, Sid: string): Observable<Studiov1flowengagementstep> {
@@ -953,8 +973,11 @@ export namespace MyNS {
 		 * Retrieve the context for an Engagement Step.
 		 * Get v1/Flows/{FlowSid}/Engagements/{EngagementSid}/Steps/{StepSid}/Context
 		 * @param {string} FlowSid The SID of the Flow with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} EngagementSid The SID of the Engagement with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} StepSid The SID of the Step to fetch
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowengagementstepstep_context} OK
 		 */
 		FetchStepContext(FlowSid: string, EngagementSid: string, StepSid: string): Observable<Studiov1flowengagementstepstep_context> {
@@ -965,7 +988,9 @@ export namespace MyNS {
 		 * Delete this Engagement and all Steps relating to it.
 		 * Delete v1/Flows/{FlowSid}/Engagements/{Sid}
 		 * @param {string} FlowSid The SID of the Flow to delete Engagements from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Engagement resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteEngagement(FlowSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -976,7 +1001,9 @@ export namespace MyNS {
 		 * Retrieve an Engagement
 		 * Get v1/Flows/{FlowSid}/Engagements/{Sid}
 		 * @param {string} FlowSid The SID of the Flow.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Engagement resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowengagement} OK
 		 */
 		FetchEngagement(FlowSid: string, Sid: string): Observable<Studiov1flowengagement> {
@@ -987,10 +1014,13 @@ export namespace MyNS {
 		 * Retrieve a list of all Executions for the Flow.
 		 * Get v1/Flows/{FlowSid}/Executions
 		 * @param {string} FlowSid The SID of the Flow with the Execution resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {Date} DateCreatedFrom Only show Execution resources starting on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`.
 		 * @param {Date} DateCreatedTo Only show Execution resources starting before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListExecutionReturn} OK
 		 */
@@ -1002,7 +1032,9 @@ export namespace MyNS {
 		 * Retrieve the most recent context for an Execution.
 		 * Get v1/Flows/{FlowSid}/Executions/{ExecutionSid}/Context
 		 * @param {string} FlowSid The SID of the Flow with the Execution context to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ExecutionSid The SID of the Execution context to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowexecutionexecution_context} OK
 		 */
 		FetchExecutionContext(FlowSid: string, ExecutionSid: string): Observable<Studiov1flowexecutionexecution_context> {
@@ -1013,9 +1045,13 @@ export namespace MyNS {
 		 * Retrieve a list of all Steps for an Execution.
 		 * Get v1/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps
 		 * @param {string} FlowSid The SID of the Flow with the Steps to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ExecutionSid The SID of the Execution with the Steps to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListExecutionStepReturn} OK
 		 */
@@ -1027,8 +1063,11 @@ export namespace MyNS {
 		 * Retrieve a Step.
 		 * Get v1/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps/{Sid}
 		 * @param {string} FlowSid The SID of the Flow with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ExecutionSid The SID of the Execution resource with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the ExecutionStep resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowexecutionexecution_step} OK
 		 */
 		FetchExecutionStep(FlowSid: string, ExecutionSid: string, Sid: string): Observable<Studiov1flowexecutionexecution_step> {
@@ -1039,8 +1078,11 @@ export namespace MyNS {
 		 * Retrieve the context for an Execution Step.
 		 * Get v1/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps/{StepSid}/Context
 		 * @param {string} FlowSid The SID of the Flow with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ExecutionSid The SID of the Execution resource with the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} StepSid The SID of the Step to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowexecutionexecution_stepexecution_step_context} OK
 		 */
 		FetchExecutionStepContext(FlowSid: string, ExecutionSid: string, StepSid: string): Observable<Studiov1flowexecutionexecution_stepexecution_step_context> {
@@ -1051,7 +1093,9 @@ export namespace MyNS {
 		 * Delete the Execution and all Steps relating to it.
 		 * Delete v1/Flows/{FlowSid}/Executions/{Sid}
 		 * @param {string} FlowSid The SID of the Flow with the Execution resources to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Execution resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteExecution(FlowSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1062,7 +1106,9 @@ export namespace MyNS {
 		 * Retrieve an Execution
 		 * Get v1/Flows/{FlowSid}/Executions/{Sid}
 		 * @param {string} FlowSid The SID of the Flow with the Execution resource to fetch
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Execution resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flowexecution} OK
 		 */
 		FetchExecution(FlowSid: string, Sid: string): Observable<Studiov1flowexecution> {
@@ -1073,6 +1119,7 @@ export namespace MyNS {
 		 * Delete a specific Flow.
 		 * Delete v1/Flows/{Sid}
 		 * @param {string} Sid The SID of the Flow resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteFlow(Sid: string): Observable<HttpResponse<string>> {
@@ -1083,6 +1130,7 @@ export namespace MyNS {
 		 * Retrieve a specific Flow.
 		 * Get v1/Flows/{Sid}
 		 * @param {string} Sid The SID of the Flow resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Studiov1flow} OK
 		 */
 		FetchFlow(Sid: string): Observable<Studiov1flow> {
@@ -1106,7 +1154,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1115,7 +1167,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1149,7 +1205,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1158,7 +1218,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1192,7 +1256,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1201,7 +1269,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1235,7 +1307,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1244,7 +1320,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1278,7 +1358,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1287,7 +1371,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

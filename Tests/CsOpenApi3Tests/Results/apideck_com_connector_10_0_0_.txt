@@ -2292,7 +2292,10 @@ namespace MyNS
 		/// ApisAll connector/apis
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="filter">Apply filters</param>
 		/// <returns>Apis</returns>
 		public async Task<GetApisResponse> ApisAllAsync(string cursor, int limit, ApisFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2436,7 +2439,10 @@ namespace MyNS
 		/// ConnectorsAll connector/connectors
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="filter">Apply filters</param>
 		/// <returns>Connectors</returns>
 		public async Task<GetConnectorsResponse> ConnectorsAllAsync(string cursor, int limit, ConnectorsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

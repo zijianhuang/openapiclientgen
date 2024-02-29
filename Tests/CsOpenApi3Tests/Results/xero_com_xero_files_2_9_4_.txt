@@ -687,8 +687,12 @@ namespace MyNS
 		/// Retrieves files
 		/// GetFiles Files
 		/// </summary>
-		/// <param name="pagesize">pass an optional page size value</param>
-		/// <param name="page">number of records to skip for pagination</param>
+		/// <param name="pagesize">pass an optional page size value
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">number of records to skip for pagination
+		/// Minimum: 1
+		// </param>
 		/// <param name="sort">values to sort by</param>
 		/// <returns>search results matching criteria</returns>
 		public async Task<Files> GetFilesAsync(int pagesize, int page, GetFilesSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

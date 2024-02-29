@@ -5,24 +5,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcEntryDto {
 		accountCode?: string | null;
-		analysisCategoryId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		analysisCategoryId?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface AcEntryDtoFormProperties {
 		accountCode: FormControl<string | null | undefined>,
-		analysisCategoryId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		analysisCategoryId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAcEntryDtoFormGroup() {
 		return new FormGroup<AcEntryDtoFormProperties>({
 			accountCode: new FormControl<string | null | undefined>(undefined),
-			analysisCategoryId: new FormControl<number | null | undefined>(undefined),
+			analysisCategoryId: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -33,14 +45,18 @@ export namespace MyNS {
 		accountType?: string | null;
 		code?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface AccountDtoFormProperties {
 		accountGroup: FormControl<string | null | undefined>,
 		accountType: FormControl<string | null | undefined>,
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountDtoFormGroup() {
 		return new FormGroup<AccountDtoFormProperties>({
@@ -48,40 +64,60 @@ export namespace MyNS {
 			accountType: new FormControl<string | null | undefined>(undefined),
 			code: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AccountTranDto {
-		bookTranId?: number | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		bookTransactionReference?: string | null;
 		bookTypeDesc?: string | null;
+
+		/** Type: double */
 		credit?: number | null;
+
+		/** Type: double */
 		debit?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		procDate?: Date | null;
 	}
 	export interface AccountTranDtoFormProperties {
-		bookTranId: FormControl<number | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
 		bookTransactionReference: FormControl<string | null | undefined>,
 		bookTypeDesc: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		credit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		debit: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAccountTranDtoFormGroup() {
 		return new FormGroup<AccountTranDtoFormProperties>({
-			bookTranId: new FormControl<number | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bookTranId: new FormControl<string | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			bookTransactionReference: new FormControl<string | null | undefined>(undefined),
 			bookTypeDesc: new FormControl<string | null | undefined>(undefined),
 			credit: new FormControl<number | null | undefined>(undefined),
 			debit: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -89,21 +125,29 @@ export namespace MyNS {
 
 	export interface AcudfValueDto {
 		description?: string | null;
-		id?: number | null;
-		userDefinedFieldId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userDefinedFieldId?: string | null;
 		value?: string | null;
 	}
 	export interface AcudfValueDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		userDefinedFieldId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userDefinedFieldId: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateAcudfValueDtoFormGroup() {
 		return new FormGroup<AcudfValueDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			userDefinedFieldId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			userDefinedFieldId: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -111,27 +155,43 @@ export namespace MyNS {
 
 	export interface AnalysisCategoryDto {
 		accountCode?: string | null;
-		accountId?: number | null;
-		categoryTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryTypeId?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex?: number | null;
 	}
 	export interface AnalysisCategoryDtoFormProperties {
 		accountCode: FormControl<string | null | undefined>,
-		accountId: FormControl<number | null | undefined>,
-		categoryTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryTypeId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisCategoryDtoFormGroup() {
 		return new FormGroup<AnalysisCategoryDtoFormProperties>({
 			accountCode: new FormControl<string | null | undefined>(undefined),
-			accountId: new FormControl<number | null | undefined>(undefined),
-			categoryTypeId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			categoryTypeId: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			orderIndex: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -142,16 +202,24 @@ export namespace MyNS {
 		accountName?: string | null;
 		accountNumber?: string | null;
 		address?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bankFeedSource?: number | null;
 		businessIdentifierCodes?: string | null;
-		categoryId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryId?: string | null;
 		creditorScheme?: string | null;
 		details?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
 		isDefaultBank?: boolean | null;
 		lastChq?: string | null;
 		nominalAcCode?: string | null;
+
+		/** Type: double */
 		oBalance?: number | null;
 		sortCode?: string | null;
 		timestamp?: string | null;
@@ -160,16 +228,24 @@ export namespace MyNS {
 		acCode: FormControl<string | null | undefined>,
 		accountName: FormControl<string | null | undefined>,
 		accountNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bankFeedSource: FormControl<number | null | undefined>,
 		businessIdentifierCodes: FormControl<string | null | undefined>,
-		categoryId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryId: FormControl<string | null | undefined>,
 		creditorScheme: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
 		isDefaultBank: FormControl<boolean | null | undefined>,
 		lastChq: FormControl<string | null | undefined>,
 		nominalAcCode: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		oBalance: FormControl<number | null | undefined>,
 		sortCode: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
@@ -181,10 +257,10 @@ export namespace MyNS {
 			accountNumber: new FormControl<string | null | undefined>(undefined),
 			bankFeedSource: new FormControl<number | null | undefined>(undefined),
 			businessIdentifierCodes: new FormControl<string | null | undefined>(undefined),
-			categoryId: new FormControl<number | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
 			creditorScheme: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			isDefaultBank: new FormControl<boolean | null | undefined>(undefined),
 			lastChq: new FormControl<string | null | undefined>(undefined),
@@ -201,12 +277,18 @@ export namespace MyNS {
 		accountName?: string | null;
 		accountNumber?: string | null;
 		address?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bankFeedSource?: number | null;
 		businessIdentifierCodes?: string | null;
-		categoryId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryId?: string | null;
 		creditorScheme?: string | null;
 		details?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
 		isDefaultBank?: boolean | null;
 		lastChq?: string | null;
@@ -218,12 +300,18 @@ export namespace MyNS {
 		acCode: FormControl<string | null | undefined>,
 		accountName: FormControl<string | null | undefined>,
 		accountNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bankFeedSource: FormControl<number | null | undefined>,
 		businessIdentifierCodes: FormControl<string | null | undefined>,
-		categoryId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryId: FormControl<string | null | undefined>,
 		creditorScheme: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
 		isDefaultBank: FormControl<boolean | null | undefined>,
 		lastChq: FormControl<string | null | undefined>,
@@ -238,10 +326,10 @@ export namespace MyNS {
 			accountNumber: new FormControl<string | null | undefined>(undefined),
 			bankFeedSource: new FormControl<number | null | undefined>(undefined),
 			businessIdentifierCodes: new FormControl<string | null | undefined>(undefined),
-			categoryId: new FormControl<number | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
 			creditorScheme: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			isDefaultBank: new FormControl<boolean | null | undefined>(undefined),
 			lastChq: new FormControl<string | null | undefined>(undefined),
@@ -310,54 +398,86 @@ export namespace MyNS {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
 		bankAccountCode?: string | null;
-		bankAccountId?: number | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		ledger?: number | null;
+
+		/** Type: double */
 		lodgement?: number | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface CashPaymentDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
 		bankAccountCode: FormControl<string | null | undefined>,
-		bankAccountId: FormControl<number | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledger: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lodgement: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCashPaymentDtoFormGroup() {
 		return new FormGroup<CashPaymentDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
 			bankAccountCode: new FormControl<string | null | undefined>(undefined),
-			bankAccountId: new FormControl<number | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bankAccountId: new FormControl<string | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			ledger: new FormControl<number | null | undefined>(undefined),
 			lodgement: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 		});
@@ -395,47 +515,79 @@ export namespace MyNS {
 	export interface CashReceiptDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		ledger?: number | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		unallocated?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface CashReceiptDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledger: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateCashReceiptDtoFormGroup() {
 		return new FormGroup<CashReceiptDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			ledger: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
@@ -443,29 +595,45 @@ export namespace MyNS {
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface VatEntryDto {
+
+		/** Type: double */
 		amount?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface VatEntryDtoFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateVatEntryDtoFormGroup() {
 		return new FormGroup<VatEntryDtoFormProperties>({
 			amount: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			percentage: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -512,20 +680,30 @@ export namespace MyNS {
 		eFTReference?: string | null;
 		email?: string | null;
 		fax?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
+
+		/** Type: double */
 		ledgerBalance?: number | null;
 		mobile?: string | null;
 		name?: string | null;
 		openingBalance?: OwnerOpeningBalanceInPeriodsDto;
 		openingBalances?: Array<OwnerOpeningBalanceDto>;
 		ourCode?: string | null;
-		ownerTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId?: string | null;
 		phone?: string | null;
 		timestamp?: string | null;
-		vatAnalysisTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
 		vatReg?: string | null;
-		vatType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType?: string | null;
 	}
 	export interface CustomerDtoFormProperties {
 		accountName: FormControl<string | null | undefined>,
@@ -537,18 +715,28 @@ export namespace MyNS {
 		eFTReference: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		fax: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledgerBalance: FormControl<number | null | undefined>,
 		mobile: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ourCode: FormControl<string | null | undefined>,
-		ownerTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
 		vatReg: FormControl<string | null | undefined>,
-		vatType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomerDtoFormGroup() {
 		return new FormGroup<CustomerDtoFormProperties>({
@@ -561,38 +749,42 @@ export namespace MyNS {
 			eFTReference: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			fax: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			ledgerBalance: new FormControl<number | null | undefined>(undefined),
 			mobile: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			ourCode: new FormControl<string | null | undefined>(undefined),
-			ownerTypeId: new FormControl<number | null | undefined>(undefined),
+			ownerTypeId: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
 			vatReg: new FormControl<string | null | undefined>(undefined),
-			vatType: new FormControl<number | null | undefined>(undefined),
+			vatType: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface EFTBankDto {
 		branch?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		sortCode?: string | null;
 	}
 	export interface EFTBankDtoFormProperties {
 		branch: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		sortCode: FormControl<string | null | undefined>,
 	}
 	export function CreateEFTBankDtoFormGroup() {
 		return new FormGroup<EFTBankDtoFormProperties>({
 			branch: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			sortCode: new FormControl<string | null | undefined>(undefined),
 		});
@@ -600,15 +792,31 @@ export namespace MyNS {
 	}
 
 	export interface OwnerOpeningBalanceInPeriodsDto {
+
+		/** Type: double */
 		currentMonth?: number | null;
+
+		/** Type: double */
 		oneMonthOld?: number | null;
+
+		/** Type: double */
 		threeMonthsOld?: number | null;
+
+		/** Type: double */
 		twoMonthsOld?: number | null;
 	}
 	export interface OwnerOpeningBalanceInPeriodsDtoFormProperties {
+
+		/** Type: double */
 		currentMonth: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		oneMonthOld: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		threeMonthsOld: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		twoMonthsOld: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerOpeningBalanceInPeriodsDtoFormGroup() {
@@ -623,31 +831,47 @@ export namespace MyNS {
 
 	export interface OwnerOpeningBalanceDto {
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isChanged?: boolean | null;
 		procDate?: Date | null;
 		reference?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<OwnerOpeningBalanceVatEntryDto>;
 	}
 	export interface OwnerOpeningBalanceDtoFormProperties {
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isChanged: FormControl<boolean | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerOpeningBalanceDtoFormGroup() {
 		return new FormGroup<OwnerOpeningBalanceDtoFormProperties>({
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isChanged: new FormControl<boolean | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
@@ -660,17 +884,25 @@ export namespace MyNS {
 	}
 
 	export interface OwnerOpeningBalanceVatEntryDto {
+
+		/** Type: double */
 		amount?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface OwnerOpeningBalanceVatEntryDtoFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateOwnerOpeningBalanceVatEntryDtoFormGroup() {
 		return new FormGroup<OwnerOpeningBalanceVatEntryDtoFormProperties>({
 			amount: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -707,61 +939,93 @@ export namespace MyNS {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
 		bankAccountCode?: string | null;
-		bankAccountId?: number | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
 		reference?: string | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 		transferBankCode?: string | null;
-		transferBankId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		transferBankId?: string | null;
+
+		/** Type: double */
 		unallocated?: number | null;
 	}
 	export interface PaymentDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
 		bankAccountCode: FormControl<string | null | undefined>,
-		bankAccountId: FormControl<number | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		transferBankCode: FormControl<string | null | undefined>,
-		transferBankId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		transferBankId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentDtoFormGroup() {
 		return new FormGroup<PaymentDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
 			bankAccountCode: new FormControl<string | null | undefined>(undefined),
-			bankAccountId: new FormControl<number | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bankAccountId: new FormControl<string | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			transferBankCode: new FormControl<string | null | undefined>(undefined),
-			transferBankId: new FormControl<number | null | undefined>(undefined),
+			transferBankId: new FormControl<string | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -799,36 +1063,56 @@ export namespace MyNS {
 		details?: Array<string>;
 		grossUnitPrice?: boolean | null;
 		hasDefaultVatRate?: boolean | null;
-		id?: number | null;
-		productTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productTypeId?: string | null;
 		stockCode?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		unitPrice?: number | null;
-		vatAnalysisTypeId?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface ProductDtoFormProperties {
 		grossUnitPrice: FormControl<boolean | null | undefined>,
 		hasDefaultVatRate: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		productTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productTypeId: FormControl<string | null | undefined>,
 		stockCode: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unitPrice: FormControl<number | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateProductDtoFormGroup() {
 		return new FormGroup<ProductDtoFormProperties>({
 			grossUnitPrice: new FormControl<boolean | null | undefined>(undefined),
 			hasDefaultVatRate: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			productTypeId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			productTypeId: new FormControl<string | null | undefined>(undefined),
 			stockCode: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			unitPrice: new FormControl<number | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -864,55 +1148,99 @@ export namespace MyNS {
 	export interface PurchaseDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isDiscrepancyAccepted?: boolean | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		postponedAccounting?: boolean | null;
 		procDate?: Date | null;
 		reference?: string | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unallocated?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface PurchaseDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isDiscrepancyAccepted: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		postponedAccounting: FormControl<boolean | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreatePurchaseDtoFormGroup() {
 		return new FormGroup<PurchaseDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isDiscrepancyAccepted: new FormControl<boolean | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
@@ -920,14 +1248,14 @@ export namespace MyNS {
 			postponedAccounting: new FormControl<boolean | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -964,152 +1292,252 @@ export namespace MyNS {
 		acCode?: string | null;
 		closedDate?: Date | null;
 		comments?: string | null;
-		companyId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerOwnerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerOwnerId?: string | null;
 		customerOwnerName?: string | null;
 		ddNumber?: string | null;
 		deliveryList?: string | null;
 		deliveryTo?: Array<string>;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		layoutType?: number | null;
 		note?: string | null;
 		poNumber?: string | null;
 		procDate?: Date | null;
 		productTrans?: Array<QuoteProductTransDto>;
 		reference?: string | null;
-		saleInvoiceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleInvoiceId?: string | null;
 		saleRepCode?: string | null;
-		saleRepId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId?: string | null;
 		timeStamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVat?: number | null;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface QuoteDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
 		closedDate: FormControl<Date | null | undefined>,
 		comments: FormControl<string | null | undefined>,
-		companyId: FormControl<number | null | undefined>,
-		customerOwnerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerOwnerId: FormControl<string | null | undefined>,
 		customerOwnerName: FormControl<string | null | undefined>,
 		ddNumber: FormControl<string | null | undefined>,
 		deliveryList: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		layoutType: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		poNumber: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
-		saleInvoiceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleInvoiceId: FormControl<string | null | undefined>,
 		saleRepCode: FormControl<string | null | undefined>,
-		saleRepId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId: FormControl<string | null | undefined>,
 		timeStamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVat: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateQuoteDtoFormGroup() {
 		return new FormGroup<QuoteDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
 			closedDate: new FormControl<Date | null | undefined>(undefined),
 			comments: new FormControl<string | null | undefined>(undefined),
-			companyId: new FormControl<number | null | undefined>(undefined),
-			customerOwnerId: new FormControl<number | null | undefined>(undefined),
+			companyId: new FormControl<string | null | undefined>(undefined),
+			customerOwnerId: new FormControl<string | null | undefined>(undefined),
 			customerOwnerName: new FormControl<string | null | undefined>(undefined),
 			ddNumber: new FormControl<string | null | undefined>(undefined),
 			deliveryList: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			layoutType: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			poNumber: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
-			saleInvoiceId: new FormControl<number | null | undefined>(undefined),
+			saleInvoiceId: new FormControl<string | null | undefined>(undefined),
 			saleRepCode: new FormControl<string | null | undefined>(undefined),
-			saleRepId: new FormControl<number | null | undefined>(undefined),
+			saleRepId: new FormControl<string | null | undefined>(undefined),
 			timeStamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVat: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface QuoteProductTransDto {
 		acEntries?: Array<QuoteAcEntriesDto>;
+
+		/** Type: double */
 		amount?: number | null;
-		companyId?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 		productCode?: string | null;
-		productId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		tranNotes?: Array<string>;
+
+		/** Type: double */
 		unitPrice?: number | null;
+
+		/** Type: double */
 		vatAmount?: number | null;
-		vatAnalysisTypeId?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface QuoteProductTransDtoFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
-		companyId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 		productCode: FormControl<string | null | undefined>,
-		productId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatAmount: FormControl<number | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateQuoteProductTransDtoFormGroup() {
 		return new FormGroup<QuoteProductTransDtoFormProperties>({
 			amount: new FormControl<number | null | undefined>(undefined),
-			companyId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			companyId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			percentage: new FormControl<number | null | undefined>(undefined),
 			productCode: new FormControl<string | null | undefined>(undefined),
-			productId: new FormControl<number | null | undefined>(undefined),
+			productId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			unitPrice: new FormControl<number | null | undefined>(undefined),
 			vatAmount: new FormControl<number | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface QuoteAcEntriesDto {
 		accountCode?: string | null;
-		analysisCategoryId?: number | null;
-		companyId?: number | null;
-		id?: number | null;
-		quoteProductTranId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		analysisCategoryId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteProductTranId?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface QuoteAcEntriesDtoFormProperties {
 		accountCode: FormControl<string | null | undefined>,
-		analysisCategoryId: FormControl<number | null | undefined>,
-		companyId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		quoteProductTranId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		analysisCategoryId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteProductTranId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateQuoteAcEntriesDtoFormGroup() {
 		return new FormGroup<QuoteAcEntriesDtoFormProperties>({
 			accountCode: new FormControl<string | null | undefined>(undefined),
-			analysisCategoryId: new FormControl<number | null | undefined>(undefined),
-			companyId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			quoteProductTranId: new FormControl<number | null | undefined>(undefined),
+			analysisCategoryId: new FormControl<string | null | undefined>(undefined),
+			companyId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			quoteProductTranId: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1145,18 +1573,26 @@ export namespace MyNS {
 
 	export interface SaleRepsDto {
 		code?: string | null;
-		companyId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId?: string | null;
 		email?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		phone?: string | null;
 		timeStamp?: string | null;
 	}
 	export interface SaleRepsDtoFormProperties {
 		code: FormControl<string | null | undefined>,
-		companyId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		companyId: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		timeStamp: FormControl<string | null | undefined>,
@@ -1164,9 +1600,9 @@ export namespace MyNS {
 	export function CreateSaleRepsDtoFormGroup() {
 		return new FormGroup<SaleRepsDtoFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
-			companyId: new FormControl<number | null | undefined>(undefined),
+			companyId: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			timeStamp: new FormControl<string | null | undefined>(undefined),
@@ -1205,53 +1641,93 @@ export namespace MyNS {
 	export interface SalesEntryDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		detailCollection?: Array<string>;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		procDate?: Date | null;
 		reference?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface SalesEntryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesEntryDtoFormGroup() {
 		return new FormGroup<SalesEntryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
@@ -1262,7 +1738,7 @@ export namespace MyNS {
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1297,81 +1773,129 @@ export namespace MyNS {
 
 	export interface SalesInvoiceCreditNoteDto {
 		acCode?: string | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		deliveryTo?: Array<string>;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		loType?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		ourReference?: string | null;
 		procDate?: Date | null;
 		productTrans?: Array<ProductTranDto>;
-		quoteId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId?: string | null;
 		reference?: string | null;
 		saleRepCode?: string | null;
-		saleRepId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 		yourReference?: string | null;
 	}
 	export interface SalesInvoiceCreditNoteDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		loType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
-		quoteId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId: FormControl<string | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		saleRepCode: FormControl<string | null | undefined>,
-		saleRepId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 		yourReference: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesInvoiceCreditNoteDtoFormGroup() {
 		return new FormGroup<SalesInvoiceCreditNoteDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loType: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			ourReference: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
-			quoteId: new FormControl<number | null | undefined>(undefined),
+			quoteId: new FormControl<string | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
 			saleRepCode: new FormControl<string | null | undefined>(undefined),
-			saleRepId: new FormControl<number | null | undefined>(undefined),
+			saleRepId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 			yourReference: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1379,49 +1903,91 @@ export namespace MyNS {
 
 	export interface ProductTranDto {
 		acEntries?: Array<AcEntryDto>;
+
+		/** Type: double */
 		amount?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amountNet: number;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 		productCode?: string | null;
-		productId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		tranNotes?: Array<string>;
+
+		/** Type: double */
 		unitPrice?: number | null;
+
+		/** Type: double */
 		vat?: number | null;
-		vatAnalysisTypeId?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface ProductTranDtoFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amountNet: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 		productCode: FormControl<string | null | undefined>,
-		productId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vat: FormControl<number | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateProductTranDtoFormGroup() {
 		return new FormGroup<ProductTranDtoFormProperties>({
 			amount: new FormControl<number | null | undefined>(undefined),
 			amountNet: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			percentage: new FormControl<number | null | undefined>(undefined),
 			productCode: new FormControl<string | null | undefined>(undefined),
-			productId: new FormControl<number | null | undefined>(undefined),
+			productId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			unitPrice: new FormControl<number | null | undefined>(undefined),
 			vat: new FormControl<number | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1467,21 +2033,31 @@ export namespace MyNS {
 		eFTReference?: string | null;
 		email?: string | null;
 		fax?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
+
+		/** Type: double */
 		ledgerBalance?: number | null;
 		mobile?: string | null;
 		name?: string | null;
 		openingBalance?: OwnerOpeningBalanceInPeriodsDto;
 		openingBalances?: Array<OwnerOpeningBalanceDto>;
 		ourCode?: string | null;
-		ownerTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId?: string | null;
 		phone?: string | null;
 		postponedAccounting?: boolean | null;
 		timestamp?: string | null;
-		vatAnalysisTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
 		vatReg?: string | null;
-		vatType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType?: string | null;
 	}
 	export interface SupplierDtoFormProperties {
 		accountName: FormControl<string | null | undefined>,
@@ -1493,19 +2069,29 @@ export namespace MyNS {
 		eFTReference: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		fax: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledgerBalance: FormControl<number | null | undefined>,
 		mobile: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ourCode: FormControl<string | null | undefined>,
-		ownerTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		postponedAccounting: FormControl<boolean | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
 		vatReg: FormControl<string | null | undefined>,
-		vatType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType: FormControl<string | null | undefined>,
 	}
 	export function CreateSupplierDtoFormGroup() {
 		return new FormGroup<SupplierDtoFormProperties>({
@@ -1518,19 +2104,19 @@ export namespace MyNS {
 			eFTReference: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			fax: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			ledgerBalance: new FormControl<number | null | undefined>(undefined),
 			mobile: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			ourCode: new FormControl<string | null | undefined>(undefined),
-			ownerTypeId: new FormControl<number | null | undefined>(undefined),
+			ownerTypeId: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			postponedAccounting: new FormControl<boolean | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
 			vatReg: new FormControl<string | null | undefined>(undefined),
-			vatType: new FormControl<number | null | undefined>(undefined),
+			vatType: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1540,18 +2126,22 @@ export namespace MyNS {
 	export interface BookTranTypeDto {
 		code?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface BookTranTypeDtoFormProperties {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateBookTranTypeDtoFormGroup() {
 		return new FormGroup<BookTranTypeDtoFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1560,56 +2150,92 @@ export namespace MyNS {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
 		bankAccountCode?: string | null;
-		bankAccountId?: number | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		ledger?: number | null;
+
+		/** Type: double */
 		lodgement?: number | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		unallocated?: number | null;
 	}
 	export interface CashPaymentQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
 		bankAccountCode: FormControl<string | null | undefined>,
-		bankAccountId: FormControl<number | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledger: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lodgement: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
 	}
 	export function CreateCashPaymentQueryDtoFormGroup() {
 		return new FormGroup<CashPaymentQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
 			bankAccountCode: new FormControl<string | null | undefined>(undefined),
-			bankAccountId: new FormControl<number | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bankAccountId: new FormControl<string | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			ledger: new FormControl<number | null | undefined>(undefined),
 			lodgement: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
@@ -1620,47 +2246,79 @@ export namespace MyNS {
 	export interface CashReceiptQueryDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		ledger?: number | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		unallocated?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface CashReceiptQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ledger: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateCashReceiptQueryDtoFormGroup() {
 		return new FormGroup<CashReceiptQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			ledger: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
@@ -1668,35 +2326,51 @@ export namespace MyNS {
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CategoryTypeDto {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface CategoryTypeDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoryTypeDtoFormGroup() {
 		return new FormGroup<CategoryTypeDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CompanyFinancialYearViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		firstMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear?: number | null;
 	}
 	export interface CompanyFinancialYearViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		firstMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear: FormControl<number | null | undefined>,
 	}
 	export function CreateCompanyFinancialYearViewModelFormGroup() {
@@ -1713,23 +2387,31 @@ export namespace MyNS {
 		companyName?: string | null;
 		currencyCode?: string | null;
 		currencyDescription?: string | null;
-		currencyId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		currencyId?: string | null;
 		currentcySymbol?: string | null;
 		emails?: Array<string>;
 		faxes?: Array<string>;
 		phones?: Array<string>;
 		regionDescription?: string | null;
-		regionId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		regionId?: string | null;
 		vatReg?: string | null;
 	}
 	export interface CompanyGeneralDetaisViewModelFormProperties {
 		companyName: FormControl<string | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 		currencyDescription: FormControl<string | null | undefined>,
-		currencyId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		currencyId: FormControl<string | null | undefined>,
 		currentcySymbol: FormControl<string | null | undefined>,
 		regionDescription: FormControl<string | null | undefined>,
-		regionId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		regionId: FormControl<string | null | undefined>,
 		vatReg: FormControl<string | null | undefined>,
 	}
 	export function CreateCompanyGeneralDetaisViewModelFormGroup() {
@@ -1737,10 +2419,10 @@ export namespace MyNS {
 			companyName: new FormControl<string | null | undefined>(undefined),
 			currencyCode: new FormControl<string | null | undefined>(undefined),
 			currencyDescription: new FormControl<string | null | undefined>(undefined),
-			currencyId: new FormControl<number | null | undefined>(undefined),
+			currencyId: new FormControl<string | null | undefined>(undefined),
 			currentcySymbol: new FormControl<string | null | undefined>(undefined),
 			regionDescription: new FormControl<string | null | undefined>(undefined),
-			regionId: new FormControl<number | null | undefined>(undefined),
+			regionId: new FormControl<string | null | undefined>(undefined),
 			vatReg: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1750,13 +2432,21 @@ export namespace MyNS {
 		allowEntryOfGrossPriceInInvoicing?: boolean | null;
 		creditInputForReverseChargeVAT?: boolean | null;
 		creditNoteJournalAgeingName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditNoteJournalAgeingValue?: number | null;
+
+		/** Type: double */
 		discrepancyAllowed?: number | null;
 		enableVOCRReporting?: boolean | null;
 		marginVatScheme?: boolean | null;
 		printOSItemsOnly?: boolean | null;
-		purchasesVatAnalysisType?: number | null;
-		salesVatAnalysisType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		purchasesVatAnalysisType?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesVatAnalysisType?: string | null;
 		useAllocations?: boolean | null;
 		useNominal?: boolean | null;
 		useNominalCode?: boolean | null;
@@ -1766,13 +2456,21 @@ export namespace MyNS {
 		allowEntryOfGrossPriceInInvoicing: FormControl<boolean | null | undefined>,
 		creditInputForReverseChargeVAT: FormControl<boolean | null | undefined>,
 		creditNoteJournalAgeingName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditNoteJournalAgeingValue: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		discrepancyAllowed: FormControl<number | null | undefined>,
 		enableVOCRReporting: FormControl<boolean | null | undefined>,
 		marginVatScheme: FormControl<boolean | null | undefined>,
 		printOSItemsOnly: FormControl<boolean | null | undefined>,
-		purchasesVatAnalysisType: FormControl<number | null | undefined>,
-		salesVatAnalysisType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		purchasesVatAnalysisType: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesVatAnalysisType: FormControl<string | null | undefined>,
 		useAllocations: FormControl<boolean | null | undefined>,
 		useNominal: FormControl<boolean | null | undefined>,
 		useNominalCode: FormControl<boolean | null | undefined>,
@@ -1788,8 +2486,8 @@ export namespace MyNS {
 			enableVOCRReporting: new FormControl<boolean | null | undefined>(undefined),
 			marginVatScheme: new FormControl<boolean | null | undefined>(undefined),
 			printOSItemsOnly: new FormControl<boolean | null | undefined>(undefined),
-			purchasesVatAnalysisType: new FormControl<number | null | undefined>(undefined),
-			salesVatAnalysisType: new FormControl<number | null | undefined>(undefined),
+			purchasesVatAnalysisType: new FormControl<string | null | undefined>(undefined),
+			salesVatAnalysisType: new FormControl<string | null | undefined>(undefined),
 			useAllocations: new FormControl<boolean | null | undefined>(undefined),
 			useNominal: new FormControl<boolean | null | undefined>(undefined),
 			useNominalCode: new FormControl<boolean | null | undefined>(undefined),
@@ -1802,13 +2500,21 @@ export namespace MyNS {
 		allowEntryOfGrossPriceInInvoicing?: boolean | null;
 		creditInputForReverseChargeVAT?: boolean | null;
 		creditNoteJournalAgeingName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditNoteJournalAgeingValue?: number | null;
+
+		/** Type: double */
 		discrepancyAllowed?: number | null;
 		enableVOCRReporting?: boolean | null;
 		marginVatScheme?: boolean | null;
 		printOSItemsOnly?: boolean | null;
-		purchasesVatAnalysisType?: number | null;
-		salesVatAnalysisType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		purchasesVatAnalysisType?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesVatAnalysisType?: string | null;
 		useAllocations?: boolean | null;
 		useNominal?: boolean | null;
 		useNominalCode?: boolean | null;
@@ -1818,13 +2524,21 @@ export namespace MyNS {
 		allowEntryOfGrossPriceInInvoicing: FormControl<boolean | null | undefined>,
 		creditInputForReverseChargeVAT: FormControl<boolean | null | undefined>,
 		creditNoteJournalAgeingName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditNoteJournalAgeingValue: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		discrepancyAllowed: FormControl<number | null | undefined>,
 		enableVOCRReporting: FormControl<boolean | null | undefined>,
 		marginVatScheme: FormControl<boolean | null | undefined>,
 		printOSItemsOnly: FormControl<boolean | null | undefined>,
-		purchasesVatAnalysisType: FormControl<number | null | undefined>,
-		salesVatAnalysisType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		purchasesVatAnalysisType: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesVatAnalysisType: FormControl<string | null | undefined>,
 		useAllocations: FormControl<boolean | null | undefined>,
 		useNominal: FormControl<boolean | null | undefined>,
 		useNominalCode: FormControl<boolean | null | undefined>,
@@ -1840,8 +2554,8 @@ export namespace MyNS {
 			enableVOCRReporting: new FormControl<boolean | null | undefined>(undefined),
 			marginVatScheme: new FormControl<boolean | null | undefined>(undefined),
 			printOSItemsOnly: new FormControl<boolean | null | undefined>(undefined),
-			purchasesVatAnalysisType: new FormControl<number | null | undefined>(undefined),
-			salesVatAnalysisType: new FormControl<number | null | undefined>(undefined),
+			purchasesVatAnalysisType: new FormControl<string | null | undefined>(undefined),
+			salesVatAnalysisType: new FormControl<string | null | undefined>(undefined),
 			useAllocations: new FormControl<boolean | null | undefined>(undefined),
 			useNominal: new FormControl<boolean | null | undefined>(undefined),
 			useNominalCode: new FormControl<boolean | null | undefined>(undefined),
@@ -1874,14 +2588,18 @@ export namespace MyNS {
 
 	export interface CompanySettingDto {
 		enableVOCRReporting?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		useAllocations?: boolean | null;
 		value?: string | null;
 		vocrSettingValue?: boolean | null;
 	}
 	export interface CompanySettingDtoFormProperties {
 		enableVOCRReporting: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		useAllocations: FormControl<boolean | null | undefined>,
 		value: FormControl<string | null | undefined>,
 		vocrSettingValue: FormControl<boolean | null | undefined>,
@@ -1889,7 +2607,7 @@ export namespace MyNS {
 	export function CreateCompanySettingDtoFormGroup() {
 		return new FormGroup<CompanySettingDtoFormProperties>({
 			enableVOCRReporting: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			useAllocations: new FormControl<boolean | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
 			vocrSettingValue: new FormControl<boolean | null | undefined>(undefined),
@@ -1925,17 +2643,25 @@ export namespace MyNS {
 		eFTReference?: string | null;
 		email?: string | null;
 		fax?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
 		mobile?: string | null;
 		name?: string | null;
 		ourCode?: string | null;
-		ownerTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId?: string | null;
 		phone?: string | null;
 		timestamp?: string | null;
-		vatAnalysisTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
 		vatReg?: string | null;
-		vatType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType?: string | null;
 	}
 	export interface CustomerQueryDtoFormProperties {
 		accountName: FormControl<string | null | undefined>,
@@ -1947,17 +2673,25 @@ export namespace MyNS {
 		eFTReference: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		fax: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
 		mobile: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ourCode: FormControl<string | null | undefined>,
-		ownerTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
 		vatReg: FormControl<string | null | undefined>,
-		vatType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomerQueryDtoFormGroup() {
 		return new FormGroup<CustomerQueryDtoFormProperties>({
@@ -1970,17 +2704,17 @@ export namespace MyNS {
 			eFTReference: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			fax: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			mobile: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			ourCode: new FormControl<string | null | undefined>(undefined),
-			ownerTypeId: new FormControl<number | null | undefined>(undefined),
+			ownerTypeId: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
 			vatReg: new FormControl<string | null | undefined>(undefined),
-			vatType: new FormControl<number | null | undefined>(undefined),
+			vatType: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1988,18 +2722,22 @@ export namespace MyNS {
 	export interface EmailQuoteDto {
 		bccAddresses?: Array<string>;
 		messageBody?: string | null;
-		quoteId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId?: string | null;
 		toAddress?: string | null;
 	}
 	export interface EmailQuoteDtoFormProperties {
 		messageBody: FormControl<string | null | undefined>,
-		quoteId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId: FormControl<string | null | undefined>,
 		toAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateEmailQuoteDtoFormGroup() {
 		return new FormGroup<EmailQuoteDtoFormProperties>({
 			messageBody: new FormControl<string | null | undefined>(undefined),
-			quoteId: new FormControl<number | null | undefined>(undefined),
+			quoteId: new FormControl<string | null | undefined>(undefined),
 			toAddress: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2007,24 +2745,32 @@ export namespace MyNS {
 
 	export interface EmailStatementDto {
 		bccAddresses?: Array<string>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		fromPeriod?: Date | null;
 		messageBody?: string | null;
+
+		/** Type: double */
 		minimumBalance?: number | null;
 		toAddress?: string | null;
 		toPeriod?: Date | null;
 	}
 	export interface EmailStatementDtoFormProperties {
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		fromPeriod: FormControl<Date | null | undefined>,
 		messageBody: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		minimumBalance: FormControl<number | null | undefined>,
 		toAddress: FormControl<string | null | undefined>,
 		toPeriod: FormControl<Date | null | undefined>,
 	}
 	export function CreateEmailStatementDtoFormGroup() {
 		return new FormGroup<EmailStatementDtoFormProperties>({
-			customerId: new FormControl<number | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			fromPeriod: new FormControl<Date | null | undefined>(undefined),
 			messageBody: new FormControl<string | null | undefined>(undefined),
 			minimumBalance: new FormControl<number | null | undefined>(undefined),
@@ -2093,11 +2839,15 @@ export namespace MyNS {
 	export enum IEdmTypeTypeKind { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _7 = 7 }
 
 	export interface RangeVariable {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Kind?: number | null;
 		Name?: string | null;
 		TypeReference?: IEdmTypeReference;
 	}
 	export interface RangeVariableFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Kind: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2247,13 +2997,25 @@ export namespace MyNS {
 	}
 
 	export interface FinancialYearDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		firstMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear?: number | null;
 	}
 	export interface FinancialYearDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		firstMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startMonth: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startYear: FormControl<number | null | undefined>,
 	}
 	export function CreateFinancialYearDtoFormGroup() {
@@ -2467,10 +3229,14 @@ export namespace MyNS {
 		Context?: ODataQueryContext;
 		RawValue?: string | null;
 		Validator?: SkipQueryValidator;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Value?: number | null;
 	}
 	export interface SkipQueryOptionFormProperties {
 		RawValue: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateSkipQueryOptionFormGroup() {
@@ -2495,10 +3261,14 @@ export namespace MyNS {
 		Context?: ODataQueryContext;
 		RawValue?: string | null;
 		Validator?: TopQueryValidator;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Value?: number | null;
 	}
 	export interface TopQueryOptionFormProperties {
 		RawValue: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateTopQueryOptionFormGroup() {
@@ -3231,238 +4001,298 @@ export namespace MyNS {
 
 	export interface OwnerTypeDto {
 		description?: string | null;
-		id?: number | null;
-		recordTypeGroupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordTypeGroupId?: string | null;
 	}
 	export interface OwnerTypeDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		recordTypeGroupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordTypeGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateOwnerTypeDtoFormGroup() {
 		return new FormGroup<OwnerTypeDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			recordTypeGroupId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			recordTypeGroupId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface OwnerTypeGroupDto {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface OwnerTypeGroupDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateOwnerTypeGroupDtoFormGroup() {
 		return new FormGroup<OwnerTypeGroupDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_AccountDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<AccountDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_AccountDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_AccountDto_FormGroup() {
 		return new FormGroup<PageResult_AccountDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_AnalysisCategoryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<AnalysisCategoryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_AnalysisCategoryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_AnalysisCategoryDto_FormGroup() {
 		return new FormGroup<PageResult_AnalysisCategoryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_BankAccountQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<BankAccountQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_BankAccountQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_BankAccountQueryDto_FormGroup() {
 		return new FormGroup<PageResult_BankAccountQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_BookTranTypeDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<BookTranTypeDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_BookTranTypeDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_BookTranTypeDto_FormGroup() {
 		return new FormGroup<PageResult_BookTranTypeDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_CashPaymentQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<CashPaymentQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_CashPaymentQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_CashPaymentQueryDto_FormGroup() {
 		return new FormGroup<PageResult_CashPaymentQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_CashReceiptQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<CashReceiptQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_CashReceiptQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_CashReceiptQueryDto_FormGroup() {
 		return new FormGroup<PageResult_CashReceiptQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_CategoryTypeDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<CategoryTypeDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_CategoryTypeDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_CategoryTypeDto_FormGroup() {
 		return new FormGroup<PageResult_CategoryTypeDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_CompanySettingDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<CompanySettingDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_CompanySettingDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_CompanySettingDto_FormGroup() {
 		return new FormGroup<PageResult_CompanySettingDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_CustomerQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<CustomerQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_CustomerQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_CustomerQueryDto_FormGroup() {
 		return new FormGroup<PageResult_CustomerQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_OwnerTypeDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<OwnerTypeDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_OwnerTypeDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_OwnerTypeDto_FormGroup() {
 		return new FormGroup<PageResult_OwnerTypeDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_OwnerTypeGroupDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<OwnerTypeGroupDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_OwnerTypeGroupDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_OwnerTypeGroupDto_FormGroup() {
 		return new FormGroup<PageResult_OwnerTypeGroupDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_PaymentQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<PaymentQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_PaymentQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_PaymentQueryDto_FormGroup() {
 		return new FormGroup<PageResult_PaymentQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3472,95 +4302,135 @@ export namespace MyNS {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
 		bankAccountCode?: string | null;
-		bankAccountId?: number | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
+
+		/** Type: double */
 		discount?: number | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		note?: string | null;
 		plaidTransactionId?: string | null;
 		procDate?: Date | null;
 		reference?: string | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 		transferBankCode?: string | null;
-		transferBankId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		transferBankId?: string | null;
+
+		/** Type: double */
 		unallocated?: number | null;
 	}
 	export interface PaymentQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
 		bankAccountCode: FormControl<string | null | undefined>,
-		bankAccountId: FormControl<number | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bankAccountId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		discount: FormControl<number | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		plaidTransactionId: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		transferBankCode: FormControl<string | null | undefined>,
-		transferBankId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		transferBankId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentQueryDtoFormGroup() {
 		return new FormGroup<PaymentQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
 			bankAccountCode: new FormControl<string | null | undefined>(undefined),
-			bankAccountId: new FormControl<number | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bankAccountId: new FormControl<string | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			discount: new FormControl<number | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			plaidTransactionId: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			transferBankCode: new FormControl<string | null | undefined>(undefined),
-			transferBankId: new FormControl<number | null | undefined>(undefined),
+			transferBankId: new FormControl<string | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_ProductDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<ProductDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_ProductDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_ProductDto_FormGroup() {
 		return new FormGroup<PageResult_ProductDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_PurchaseQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<PurchaseQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_PurchaseQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_PurchaseQueryDto_FormGroup() {
 		return new FormGroup<PageResult_PurchaseQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3569,117 +4439,173 @@ export namespace MyNS {
 	export interface PurchaseQueryDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
 		detailCollection?: Array<string>;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		postponedAccounting?: boolean | null;
 		procDate?: Date | null;
 		reference?: string | null;
-		supplierId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unallocated?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface PurchaseQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		postponedAccounting: FormControl<boolean | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
-		supplierId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		supplierId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unallocated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreatePurchaseQueryDtoFormGroup() {
 		return new FormGroup<PurchaseQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			postponedAccounting: new FormControl<boolean | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
-			supplierId: new FormControl<number | null | undefined>(undefined),
+			supplierId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unallocated: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_QuoteDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<QuoteDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_QuoteDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_QuoteDto_FormGroup() {
 		return new FormGroup<PageResult_QuoteDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SaleRepsDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SaleRepsDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SaleRepsDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SaleRepsDto_FormGroup() {
 		return new FormGroup<PageResult_SaleRepsDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SalesCreditNoteQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SalesCreditNoteQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SalesCreditNoteQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SalesCreditNoteQueryDto_FormGroup() {
 		return new FormGroup<PageResult_SalesCreditNoteQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3687,81 +4613,129 @@ export namespace MyNS {
 
 	export interface SalesCreditNoteQueryDto {
 		acCode?: string | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		deliveryTo?: Array<string>;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		loType?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		ourReference?: string | null;
 		procDate?: Date | null;
 		productTrans?: Array<ProductTranQueryDto>;
-		quoteId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId?: string | null;
 		reference?: string | null;
 		saleRepCode?: string | null;
-		saleRepId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 		yourReference?: string | null;
 	}
 	export interface SalesCreditNoteQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		loType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
-		quoteId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId: FormControl<string | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		saleRepCode: FormControl<string | null | undefined>,
-		saleRepId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 		yourReference: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesCreditNoteQueryDtoFormGroup() {
 		return new FormGroup<SalesCreditNoteQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loType: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			ourReference: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
-			quoteId: new FormControl<number | null | undefined>(undefined),
+			quoteId: new FormControl<string | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
 			saleRepCode: new FormControl<string | null | undefined>(undefined),
-			saleRepId: new FormControl<number | null | undefined>(undefined),
+			saleRepId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 			yourReference: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3769,61 +4743,105 @@ export namespace MyNS {
 
 	export interface ProductTranQueryDto {
 		acEntries?: Array<AcEntryDto>;
+
+		/** Type: double */
 		amount?: number | null;
+
+		/** Type: double */
 		amountNet?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 		productCode?: string | null;
-		productId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		tranNotes?: Array<string>;
+
+		/** Type: double */
 		unitPrice?: number | null;
+
+		/** Type: double */
 		vat?: number | null;
-		vatAnalysisTypeId?: number | null;
-		vatRateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId?: string | null;
 	}
 	export interface ProductTranQueryDtoFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		amountNet: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 		productCode: FormControl<string | null | undefined>,
-		productId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		productId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vat: FormControl<number | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
-		vatRateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatRateId: FormControl<string | null | undefined>,
 	}
 	export function CreateProductTranQueryDtoFormGroup() {
 		return new FormGroup<ProductTranQueryDtoFormProperties>({
 			amount: new FormControl<number | null | undefined>(undefined),
 			amountNet: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			percentage: new FormControl<number | null | undefined>(undefined),
 			productCode: new FormControl<string | null | undefined>(undefined),
-			productId: new FormControl<number | null | undefined>(undefined),
+			productId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			unitPrice: new FormControl<number | null | undefined>(undefined),
 			vat: new FormControl<number | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
-			vatRateId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
+			vatRateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SalesEntryQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SalesEntryQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SalesEntryQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SalesEntryQueryDto_FormGroup() {
 		return new FormGroup<PageResult_SalesEntryQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3832,53 +4850,93 @@ export namespace MyNS {
 	export interface SalesEntryQueryDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		detailCollection?: Array<string>;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		procDate?: Date | null;
 		reference?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface SalesEntryQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesEntryQueryDtoFormGroup() {
 		return new FormGroup<SalesEntryQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
@@ -3889,23 +4947,27 @@ export namespace MyNS {
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SalesInvoiceQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SalesInvoiceQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SalesInvoiceQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SalesInvoiceQueryDto_FormGroup() {
 		return new FormGroup<PageResult_SalesInvoiceQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3913,98 +4975,150 @@ export namespace MyNS {
 
 	export interface SalesInvoiceQueryDto {
 		acCode?: string | null;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		deliveryTo?: Array<string>;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		loType?: string | null;
+
+		/** Type: double */
 		netGoods?: number | null;
+
+		/** Type: double */
 		netServices?: number | null;
 		note?: string | null;
 		ourReference?: string | null;
 		procDate?: Date | null;
 		productTrans?: Array<ProductTranQueryDto>;
-		quoteId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId?: string | null;
 		reference?: string | null;
 		saleRepCode?: string | null;
-		saleRepId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 		yourReference?: string | null;
 	}
 	export interface SalesInvoiceQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		loType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		netGoods: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		netServices: FormControl<number | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
-		quoteId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId: FormControl<string | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		saleRepCode: FormControl<string | null | undefined>,
-		saleRepId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		saleRepId: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 		yourReference: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesInvoiceQueryDtoFormGroup() {
 		return new FormGroup<SalesInvoiceQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loType: new FormControl<string | null | undefined>(undefined),
 			netGoods: new FormControl<number | null | undefined>(undefined),
 			netServices: new FormControl<number | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			ourReference: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
-			quoteId: new FormControl<number | null | undefined>(undefined),
+			quoteId: new FormControl<string | null | undefined>(undefined),
 			reference: new FormControl<string | null | undefined>(undefined),
 			saleRepCode: new FormControl<string | null | undefined>(undefined),
-			saleRepId: new FormControl<number | null | undefined>(undefined),
+			saleRepId: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 			yourReference: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SalesQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SalesQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SalesQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SalesQueryDto_FormGroup() {
 		return new FormGroup<PageResult_SalesQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4013,50 +5127,82 @@ export namespace MyNS {
 	export interface SalesQueryDto {
 		acCode?: string | null;
 		acEntries?: Array<AcEntryDto>;
-		bookTranTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId?: string | null;
 		customFields?: Array<AcudfValueDto>;
-		customerId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId?: string | null;
 		details?: string | null;
 		entryDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		loType?: string | null;
 		note?: string | null;
 		procDate?: Date | null;
 		reference?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		total?: number | null;
+
+		/** Type: double */
 		totalNet?: number | null;
+
+		/** Type: double */
 		totalVAT?: number | null;
+
+		/** Type: double */
 		unpaid?: number | null;
 		vatEntries?: Array<VatEntryDto>;
-		vatTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId?: string | null;
 	}
 	export interface SalesQueryDtoFormProperties {
 		acCode: FormControl<string | null | undefined>,
-		bookTranTypeId: FormControl<number | null | undefined>,
-		customerId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bookTranTypeId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		customerId: FormControl<string | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		entryDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		loType: FormControl<string | null | undefined>,
 		note: FormControl<string | null | undefined>,
 		procDate: FormControl<Date | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalNet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalVAT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unpaid: FormControl<number | null | undefined>,
-		vatTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatTypeId: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesQueryDtoFormGroup() {
 		return new FormGroup<SalesQueryDtoFormProperties>({
 			acCode: new FormControl<string | null | undefined>(undefined),
-			bookTranTypeId: new FormControl<number | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
+			bookTranTypeId: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
 			entryDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loType: new FormControl<string | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			procDate: new FormControl<Date | null | undefined>(undefined),
@@ -4066,23 +5212,27 @@ export namespace MyNS {
 			totalNet: new FormControl<number | null | undefined>(undefined),
 			totalVAT: new FormControl<number | null | undefined>(undefined),
 			unpaid: new FormControl<number | null | undefined>(undefined),
-			vatTypeId: new FormControl<number | null | undefined>(undefined),
+			vatTypeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_SupplierQueryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<SupplierQueryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_SupplierQueryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_SupplierQueryDto_FormGroup() {
 		return new FormGroup<PageResult_SupplierQueryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4101,18 +5251,26 @@ export namespace MyNS {
 		eFTReference?: string | null;
 		email?: string | null;
 		fax?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		internationalBankAccountNumber?: string | null;
 		mobile?: string | null;
 		name?: string | null;
 		ourCode?: string | null;
-		ownerTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId?: string | null;
 		phone?: string | null;
 		postponedAccounting?: boolean | null;
 		timestamp?: string | null;
-		vatAnalysisTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId?: string | null;
 		vatReg?: string | null;
-		vatType?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType?: string | null;
 	}
 	export interface SupplierQueryDtoFormProperties {
 		accountName: FormControl<string | null | undefined>,
@@ -4124,18 +5282,26 @@ export namespace MyNS {
 		eFTReference: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		fax: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		internationalBankAccountNumber: FormControl<string | null | undefined>,
 		mobile: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ourCode: FormControl<string | null | undefined>,
-		ownerTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		ownerTypeId: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		postponedAccounting: FormControl<boolean | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		vatAnalysisTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatAnalysisTypeId: FormControl<string | null | undefined>,
 		vatReg: FormControl<string | null | undefined>,
-		vatType: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatType: FormControl<string | null | undefined>,
 	}
 	export function CreateSupplierQueryDtoFormGroup() {
 		return new FormGroup<SupplierQueryDtoFormProperties>({
@@ -4148,73 +5314,93 @@ export namespace MyNS {
 			eFTReference: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			fax: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			internationalBankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			mobile: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			ourCode: new FormControl<string | null | undefined>(undefined),
-			ownerTypeId: new FormControl<number | null | undefined>(undefined),
+			ownerTypeId: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			postponedAccounting: new FormControl<boolean | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			vatAnalysisTypeId: new FormControl<number | null | undefined>(undefined),
+			vatAnalysisTypeId: new FormControl<string | null | undefined>(undefined),
 			vatReg: new FormControl<string | null | undefined>(undefined),
-			vatType: new FormControl<number | null | undefined>(undefined),
+			vatType: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_UserDefinedFieldDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<UserDefinedFieldDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_UserDefinedFieldDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_UserDefinedFieldDto_FormGroup() {
 		return new FormGroup<PageResult_UserDefinedFieldDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserDefinedFieldDto {
-		categoryTypeId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryTypeId?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex?: number | null;
 	}
 	export interface UserDefinedFieldDtoFormProperties {
-		categoryTypeId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		categoryTypeId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateUserDefinedFieldDtoFormGroup() {
 		return new FormGroup<UserDefinedFieldDtoFormProperties>({
-			categoryTypeId: new FormControl<number | null | undefined>(undefined),
+			categoryTypeId: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			orderIndex: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_VatAnalysisTypeDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<VatAnalysisTypeDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_VatAnalysisTypeDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_VatAnalysisTypeDto_FormGroup() {
 		return new FormGroup<PageResult_VatAnalysisTypeDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4222,32 +5408,40 @@ export namespace MyNS {
 
 	export interface VatAnalysisTypeDto {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface VatAnalysisTypeDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateVatAnalysisTypeDtoFormGroup() {
 		return new FormGroup<VatAnalysisTypeDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_VatCategoryDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<VatCategoryDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_VatCategoryDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_VatCategoryDto_FormGroup() {
 		return new FormGroup<PageResult_VatCategoryDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4255,80 +5449,108 @@ export namespace MyNS {
 
 	export interface VatCategoryDto {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface VatCategoryDtoFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateVatCategoryDtoFormGroup() {
 		return new FormGroup<VatCategoryDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_VatRateDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<VatRateDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_VatRateDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_VatRateDto_FormGroup() {
 		return new FormGroup<PageResult_VatRateDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface VatRateDto {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isActive?: boolean | null;
 		isDefault?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex?: number | null;
+
+		/** Type: double */
 		percentage?: number | null;
 		timestamp?: string | null;
-		vatCategoryId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatCategoryId?: string | null;
 	}
 	export interface VatRateDtoFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		isDefault: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orderIndex: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		vatCategoryId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatCategoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateVatRateDtoFormGroup() {
 		return new FormGroup<VatRateDtoFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
 			isDefault: new FormControl<boolean | null | undefined>(undefined),
 			orderIndex: new FormControl<number | null | undefined>(undefined),
 			percentage: new FormControl<number | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			vatCategoryId: new FormControl<number | null | undefined>(undefined),
+			vatCategoryId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PageResult_VatTypeDto_ {
-		Count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count?: string | null;
 		Items?: Array<VatTypeDto>;
 		NextPageLink?: string | null;
 	}
 	export interface PageResult_VatTypeDto_FormProperties {
-		Count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Count: FormControl<string | null | undefined>,
 		NextPageLink: FormControl<string | null | undefined>,
 	}
 	export function CreatePageResult_VatTypeDto_FormGroup() {
 		return new FormGroup<PageResult_VatTypeDto_FormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<string | null | undefined>(undefined),
 			NextPageLink: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4337,14 +5559,18 @@ export namespace MyNS {
 	export interface VatTypeDto {
 		code?: string | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isNotApplicable?: boolean | null;
 		isOnlyZero?: boolean | null;
 	}
 	export interface VatTypeDtoFormProperties {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isNotApplicable: FormControl<boolean | null | undefined>,
 		isOnlyZero: FormControl<boolean | null | undefined>,
 	}
@@ -4352,7 +5578,7 @@ export namespace MyNS {
 		return new FormGroup<VatTypeDtoFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isNotApplicable: new FormControl<boolean | null | undefined>(undefined),
 			isOnlyZero: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -4360,15 +5586,19 @@ export namespace MyNS {
 	}
 
 	export interface QuoteGeneratingInvoiceDto {
-		quoteId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId?: string | null;
 		saleInvoice?: SalesInvoiceCreditNoteDto;
 	}
 	export interface QuoteGeneratingInvoiceDtoFormProperties {
-		quoteId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		quoteId: FormControl<string | null | undefined>,
 	}
 	export function CreateQuoteGeneratingInvoiceDtoFormGroup() {
 		return new FormGroup<QuoteGeneratingInvoiceDtoFormProperties>({
-			quoteId: new FormControl<number | null | undefined>(undefined),
+			quoteId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4376,33 +5606,41 @@ export namespace MyNS {
 	export interface SalesInvoiceEmailInfoDto {
 		bccAddresses?: Array<string>;
 		messageBody?: string | null;
-		salesInvoiceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesInvoiceId?: string | null;
 		toAddress?: string | null;
 	}
 	export interface SalesInvoiceEmailInfoDtoFormProperties {
 		messageBody: FormControl<string | null | undefined>,
-		salesInvoiceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		salesInvoiceId: FormControl<string | null | undefined>,
 		toAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesInvoiceEmailInfoDtoFormGroup() {
 		return new FormGroup<SalesInvoiceEmailInfoDtoFormProperties>({
 			messageBody: new FormControl<string | null | undefined>(undefined),
-			salesInvoiceId: new FormControl<number | null | undefined>(undefined),
+			salesInvoiceId: new FormControl<string | null | undefined>(undefined),
 			toAddress: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface VatRatesByVatCategoryDto {
-		vatCategoryId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatCategoryId?: string | null;
 		vatRates?: Array<VatRateDto>;
 	}
 	export interface VatRatesByVatCategoryDtoFormProperties {
-		vatCategoryId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vatCategoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateVatRatesByVatCategoryDtoFormGroup() {
 		return new FormGroup<VatRatesByVatCategoryDtoFormProperties>({
-			vatCategoryId: new FormControl<number | null | undefined>(undefined),
+			vatCategoryId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4468,32 +5706,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Bank Account.
 		 * Delete v1/bankAccounts/{id}
-		 * @param {number} id Id of Bank Account to remove.
+		 * @param {string} id Id of Bank Account to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Bank Account to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		BankAccounts_Delete(id: number, timestamp: string): Observable<string> {
+		BankAccounts_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/bankAccounts/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Bank Account.
 		 * Get v1/bankAccounts/{id}
-		 * @param {number} id Id of Bank Account to return.
+		 * @param {string} id Id of Bank Account to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BankAccountDto} OK
 		 */
-		BankAccountsGetById(id: number): Observable<BankAccountDto> {
+		BankAccountsGetById(id: string): Observable<BankAccountDto> {
 			return this.http.get<BankAccountDto>(this.baseUri + 'v1/bankAccounts/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Bank Account.
 		 * Put v1/bankAccounts/{id}
-		 * @param {number} id Id of Bank Account to update.
+		 * @param {string} id Id of Bank Account to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {BankAccountDto} requestBody Information of Bank Account to update.
 		 * @return {string} OK
 		 */
-		BankAccounts_Put(id: number, requestBody: BankAccountDto): Observable<string> {
+		BankAccounts_Put(id: string, requestBody: BankAccountDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/bankAccounts/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -4542,32 +5783,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Cash Payment.
 		 * Delete v1/cashPayments/{id}
-		 * @param {number} id Id of Cash Receipt to remove.
+		 * @param {string} id Id of Cash Receipt to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Cash Receipt to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		CashPayments_Delete(id: number, timestamp: string): Observable<string> {
+		CashPayments_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/cashPayments/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Cash Payment.
 		 * Get v1/cashPayments/{id}
-		 * @param {number} id Id of Cash Receipt to return.
+		 * @param {string} id Id of Cash Receipt to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CashPaymentDto} OK
 		 */
-		CashPaymentsGetById(id: number): Observable<CashPaymentDto> {
+		CashPaymentsGetById(id: string): Observable<CashPaymentDto> {
 			return this.http.get<CashPaymentDto>(this.baseUri + 'v1/cashPayments/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Cash Payment.
 		 * Put v1/cashPayments/{id}
-		 * @param {number} id Id of Cash Receipt to update.
+		 * @param {string} id Id of Cash Receipt to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {CashPaymentDto} requestBody Information of Cash Receipt to update.
 		 * @return {string} OK
 		 */
-		CashPayments_Put(id: number, requestBody: CashPaymentDto): Observable<string> {
+		CashPayments_Put(id: string, requestBody: CashPaymentDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/cashPayments/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -4605,32 +5849,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Cash Receipt.
 		 * Delete v1/cashReceipts/{id}
-		 * @param {number} id Id of Cash Receipt to remove.
+		 * @param {string} id Id of Cash Receipt to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Cash Receipt to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		CashReceipts_Delete(id: number, timestamp: string): Observable<string> {
+		CashReceipts_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/cashReceipts/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Cash Receipt.
 		 * Get v1/cashReceipts/{id}
-		 * @param {number} id Id of Cash Receipt to return.
+		 * @param {string} id Id of Cash Receipt to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CashReceiptDto} OK
 		 */
-		CashReceiptsGetById(id: number): Observable<CashReceiptDto> {
+		CashReceiptsGetById(id: string): Observable<CashReceiptDto> {
 			return this.http.get<CashReceiptDto>(this.baseUri + 'v1/cashReceipts/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Cash Receipt.
 		 * Put v1/cashReceipts/{id}
-		 * @param {number} id Id of Cash Receipt to update.
+		 * @param {string} id Id of Cash Receipt to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {CashReceiptDto} requestBody Information of Cash Receipt to update.
 		 * @return {string} OK
 		 */
-		CashReceipts_Put(id: number, requestBody: CashReceiptDto): Observable<string> {
+		CashReceipts_Put(id: string, requestBody: CashReceiptDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/cashReceipts/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -4716,73 +5963,80 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Customer.
 		 * Delete v1/customers/{id}
-		 * @param {number} id Id of Customer to remove.
+		 * @param {string} id Id of Customer to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Customer to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Customers_Delete(id: number, timestamp: string): Observable<string> {
+		Customers_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/customers/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Customer. You may specify that Customer's ledger balance should be calculated.
 		 * Get v1/customers/{id}
-		 * @param {number} id Id of Customer to return.
+		 * @param {string} id Id of Customer to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} needBalance If "true" then Customer's ledger balance will be calculated; otherwise balance will be returned as 0.
 		 * @return {CustomerDto} OK
 		 */
-		CustomersGetByIdAndNeedBalance(id: number, needBalance: boolean | null | undefined): Observable<CustomerDto> {
+		CustomersGetByIdAndNeedBalance(id: string, needBalance: boolean | null | undefined): Observable<CustomerDto> {
 			return this.http.get<CustomerDto>(this.baseUri + 'v1/customers/' + id + '?needBalance=' + needBalance, {});
 		}
 
 		/**
 		 * Updates an existing Customer.
 		 * Put v1/customers/{id}
-		 * @param {number} id Id of Customer to update.
+		 * @param {string} id Id of Customer to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {CustomerDto} requestBody Information of Customer to update.
 		 * @return {string} OK
 		 */
-		Customers_Put(id: number, requestBody: CustomerDto): Observable<string> {
+		Customers_Put(id: string, requestBody: CustomerDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/customers/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
 		 * Returns a list of Customer's account transactions.
 		 * Get v1/customers/{itemId}/accountTrans
-		 * @param {number} itemId Id of Customer to return account transaction.
+		 * @param {string} itemId Id of Customer to return account transaction.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<AccountTranDto>} OK
 		 */
-		Customers_GetAccountTrans(itemId: number): Observable<Array<AccountTranDto>> {
+		Customers_GetAccountTrans(itemId: string): Observable<Array<AccountTranDto>> {
 			return this.http.get<Array<AccountTranDto>>(this.baseUri + 'v1/customers/' + itemId + '/accountTrans', {});
 		}
 
 		/**
 		 * Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.
 		 * Get v1/customers/{itemId}/openingBalance
-		 * @param {number} itemId Id of Customer to return opening balances.
+		 * @param {string} itemId Id of Customer to return opening balances.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OwnerOpeningBalanceInPeriodsDto} OK
 		 */
-		Customers_GetOpeningBalance(itemId: number): Observable<OwnerOpeningBalanceInPeriodsDto> {
+		Customers_GetOpeningBalance(itemId: string): Observable<OwnerOpeningBalanceInPeriodsDto> {
 			return this.http.get<OwnerOpeningBalanceInPeriodsDto>(this.baseUri + 'v1/customers/' + itemId + '/openingBalance', {});
 		}
 
 		/**
 		 * Returns a list of Customer's opening balance transactions.
 		 * Get v1/customers/{itemId}/openingBalanceList
-		 * @param {number} itemId Id of Customer to return opening balances transaction.
+		 * @param {string} itemId Id of Customer to return opening balances transaction.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<OwnerOpeningBalanceDto>} OK
 		 */
-		Customers_GetOpeningBalanceList(itemId: number): Observable<Array<OwnerOpeningBalanceDto>> {
+		Customers_GetOpeningBalanceList(itemId: string): Observable<Array<OwnerOpeningBalanceDto>> {
 			return this.http.get<Array<OwnerOpeningBalanceDto>>(this.baseUri + 'v1/customers/' + itemId + '/openingBalanceList', {});
 		}
 
 		/**
 		 * Returns a list of Customer's quotes.
 		 * Get v1/customers/{itemId}/quotes
-		 * @param {number} itemId Id of Customer to return quotes.
+		 * @param {string} itemId Id of Customer to return quotes.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<QuoteDto>} OK
 		 */
-		Customers_GetQuotes(itemId: number): Observable<Array<QuoteDto>> {
+		Customers_GetQuotes(itemId: string): Observable<Array<QuoteDto>> {
 			return this.http.get<Array<QuoteDto>>(this.baseUri + 'v1/customers/' + itemId + '/quotes', {});
 		}
 
@@ -4872,32 +6126,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Payment.
 		 * Delete v1/payments/{id}
-		 * @param {number} id Id of Payment to remove.
+		 * @param {string} id Id of Payment to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Payment to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Payments_Delete(id: number, timestamp: string): Observable<string> {
+		Payments_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/payments/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Payments.
 		 * Get v1/payments/{id}
-		 * @param {number} id Id of Payment to return.
+		 * @param {string} id Id of Payment to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PaymentDto} OK
 		 */
-		PaymentsGetById(id: number): Observable<PaymentDto> {
+		PaymentsGetById(id: string): Observable<PaymentDto> {
 			return this.http.get<PaymentDto>(this.baseUri + 'v1/payments/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Payment.
 		 * Put v1/payments/{id}
-		 * @param {number} id Id of Payment to update.
+		 * @param {string} id Id of Payment to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {PaymentDto} requestBody Information of Payment to update.
 		 * @return {string} OK
 		 */
-		Payments_Put(id: number, requestBody: PaymentDto): Observable<string> {
+		Payments_Put(id: string, requestBody: PaymentDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/payments/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -4946,32 +6203,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Product.
 		 * Delete v1/products/{id}
-		 * @param {number} id Id of Product to remove.
+		 * @param {string} id Id of Product to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Product to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Products_Delete(id: number, timestamp: string): Observable<string> {
+		Products_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/products/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Product.
 		 * Get v1/products/{id}
-		 * @param {number} id Id of Product to return.
+		 * @param {string} id Id of Product to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProductDto} OK
 		 */
-		ProductsGetById(id: number): Observable<ProductDto> {
+		ProductsGetById(id: string): Observable<ProductDto> {
 			return this.http.get<ProductDto>(this.baseUri + 'v1/products/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Product.
 		 * Put v1/products/{id}
-		 * @param {number} id Id of Product to update.
+		 * @param {string} id Id of Product to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ProductDto} requestBody Information of Product to update.
 		 * @return {string} OK
 		 */
-		Products_Put(id: number, requestBody: ProductDto): Observable<string> {
+		Products_Put(id: string, requestBody: ProductDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/products/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5009,32 +6269,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Purchase.
 		 * Delete v1/purchases/{id}
-		 * @param {number} id Id of Purchase to remove.
+		 * @param {string} id Id of Purchase to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Purchase to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Purchases_Delete(id: number, timestamp: string): Observable<string> {
+		Purchases_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/purchases/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Purchases.
 		 * Get v1/purchases/{id}
-		 * @param {number} id Id of Purchase to return.
+		 * @param {string} id Id of Purchase to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PurchaseDto} OK
 		 */
-		PurchasesGetById(id: number): Observable<PurchaseDto> {
+		PurchasesGetById(id: string): Observable<PurchaseDto> {
 			return this.http.get<PurchaseDto>(this.baseUri + 'v1/purchases/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Purchase.
 		 * Put v1/purchases/{id}
-		 * @param {number} id Id of Purchase to update.
+		 * @param {string} id Id of Purchase to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {PurchaseDto} requestBody Information of Purchase to update.
 		 * @return {string} OK
 		 */
-		Purchases_Put(id: number, requestBody: PurchaseDto): Observable<string> {
+		Purchases_Put(id: string, requestBody: PurchaseDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/purchases/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5072,10 +6335,11 @@ export namespace MyNS {
 		/**
 		 * Close a Quote.
 		 * Put v1/quotes/close/{id}
-		 * @param {number} id Id of Quote to close
+		 * @param {string} id Id of Quote to close
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} OK
 		 */
-		Quote_Close(id: number): Observable<string> {
+		Quote_Close(id: string): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/quotes/close/' + id, null, { responseType: 'text' });
 		}
 
@@ -5103,42 +6367,46 @@ export namespace MyNS {
 		/**
 		 * Reopen a Quote.
 		 * Put v1/quotes/reopen/{id}
-		 * @param {number} id Id of Quote to reopen
+		 * @param {string} id Id of Quote to reopen
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} OK
 		 */
-		Quote_Reopen(id: number): Observable<string> {
+		Quote_Reopen(id: string): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/quotes/reopen/' + id, null, { responseType: 'text' });
 		}
 
 		/**
 		 * Removes an existing Quote.
 		 * Delete v1/quotes/{id}
-		 * @param {number} id Id of Quote to remove.
+		 * @param {string} id Id of Quote to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Quote to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Quote_Delete(id: number, timestamp: string): Observable<string> {
+		Quote_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/quotes/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Quote.
 		 * Get v1/quotes/{id}
-		 * @param {number} id Id of Sale Rep to return.
+		 * @param {string} id Id of Sale Rep to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {QuoteDto} OK
 		 */
-		QuoteGetById(id: number): Observable<QuoteDto> {
+		QuoteGetById(id: string): Observable<QuoteDto> {
 			return this.http.get<QuoteDto>(this.baseUri + 'v1/quotes/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Quote.
 		 * Put v1/quotes/{id}
-		 * @param {number} id Id of Quote to update.
+		 * @param {string} id Id of Quote to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {QuoteDto} requestBody Information of Quote to update.
 		 * @return {string} OK
 		 */
-		Quote_Put(id: number, requestBody: QuoteDto): Observable<string> {
+		Quote_Put(id: string, requestBody: QuoteDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/quotes/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5187,32 +6455,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Sales Credit Note.
 		 * Delete v1/salesCreditNotes/{id}
-		 * @param {number} id Id of Sales Credit Note to remove.
+		 * @param {string} id Id of Sales Credit Note to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Sales Credit Note to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		SalesCreditNotes_Delete(id: number, timestamp: string): Observable<string> {
+		SalesCreditNotes_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/salesCreditNotes/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Sales Credit Note.
 		 * Get v1/salesCreditNotes/{id}
-		 * @param {number} id Id of Sales Credit Note to return.
+		 * @param {string} id Id of Sales Credit Note to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SalesInvoiceCreditNoteDto} OK
 		 */
-		SalesCreditNotesGetById(id: number): Observable<SalesInvoiceCreditNoteDto> {
+		SalesCreditNotesGetById(id: string): Observable<SalesInvoiceCreditNoteDto> {
 			return this.http.get<SalesInvoiceCreditNoteDto>(this.baseUri + 'v1/salesCreditNotes/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Sales Credit Note.
 		 * Put v1/salesCreditNotes/{id}
-		 * @param {number} id Id of Sales Credit Note to update.
+		 * @param {string} id Id of Sales Credit Note to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {SalesInvoiceCreditNoteDto} requestBody Information of Sales Credit Note to update.
 		 * @return {string} OK
 		 */
-		SalesCreditNotes_Put(id: number, requestBody: SalesInvoiceCreditNoteDto): Observable<string> {
+		SalesCreditNotes_Put(id: string, requestBody: SalesInvoiceCreditNoteDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/salesCreditNotes/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5250,32 +6521,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Sales Entry.
 		 * Delete v1/salesEntries/{id}
-		 * @param {number} id Id of Sales Entry to remove.
+		 * @param {string} id Id of Sales Entry to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Sales Entry to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		SalesEntries_Delete(id: number, timestamp: string): Observable<string> {
+		SalesEntries_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/salesEntries/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Sales Entry.
 		 * Get v1/salesEntries/{id}
-		 * @param {number} id Id of Sales Entry to return.
+		 * @param {string} id Id of Sales Entry to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SalesEntryDto} OK
 		 */
-		SalesEntriesGetById(id: number): Observable<SalesEntryDto> {
+		SalesEntriesGetById(id: string): Observable<SalesEntryDto> {
 			return this.http.get<SalesEntryDto>(this.baseUri + 'v1/salesEntries/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Sales Entry.
 		 * Put v1/salesEntries/{id}
-		 * @param {number} id Id of Sales Entry to update.
+		 * @param {string} id Id of Sales Entry to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {SalesEntryDto} requestBody Information of Sales Entry to update.
 		 * @return {string} OK
 		 */
-		SalesEntries_Put(id: number, requestBody: SalesEntryDto): Observable<string> {
+		SalesEntries_Put(id: string, requestBody: SalesEntryDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/salesEntries/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5323,32 +6597,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Sales Invoice.
 		 * Delete v1/salesInvoices/{id}
-		 * @param {number} id Id of Sales Invoice to remove.
+		 * @param {string} id Id of Sales Invoice to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Sales Invoice to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		SalesInvoices_Delete(id: number, timestamp: string): Observable<string> {
+		SalesInvoices_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/salesInvoices/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Sales Invoice.
 		 * Get v1/salesInvoices/{id}
-		 * @param {number} id Id of Sales Invoice to return.
+		 * @param {string} id Id of Sales Invoice to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SalesInvoiceCreditNoteDto} OK
 		 */
-		SalesInvoicesGetById(id: number): Observable<SalesInvoiceCreditNoteDto> {
+		SalesInvoicesGetById(id: string): Observable<SalesInvoiceCreditNoteDto> {
 			return this.http.get<SalesInvoiceCreditNoteDto>(this.baseUri + 'v1/salesInvoices/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Sales Invoice.
 		 * Put v1/salesInvoices/{id}
-		 * @param {number} id Id of Sales Invoice to update.
+		 * @param {string} id Id of Sales Invoice to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {SalesInvoiceCreditNoteDto} requestBody Information of Sales Invoice to update.
 		 * @return {string} OK
 		 */
-		SalesInvoices_Put(id: number, requestBody: SalesInvoiceCreditNoteDto): Observable<string> {
+		SalesInvoices_Put(id: string, requestBody: SalesInvoiceCreditNoteDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/salesInvoices/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5386,32 +6663,35 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Sale Rep.
 		 * Delete v1/salesReps/{id}
-		 * @param {number} id Id of Sale Rep to remove.
+		 * @param {string} id Id of Sale Rep to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Sale Rep to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		SalesRep_Delete(id: number, timestamp: string): Observable<string> {
+		SalesRep_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/salesReps/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single SaleRep.
 		 * Get v1/salesReps/{id}
-		 * @param {number} id Id of Sale Rep to return.
+		 * @param {string} id Id of Sale Rep to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SaleRepsDto} OK
 		 */
-		SalesRepGetById(id: number): Observable<SaleRepsDto> {
+		SalesRepGetById(id: string): Observable<SaleRepsDto> {
 			return this.http.get<SaleRepsDto>(this.baseUri + 'v1/salesReps/' + id, {});
 		}
 
 		/**
 		 * Updates an existing Sale Rep.
 		 * Put v1/salesReps/{id}
-		 * @param {number} id Id of Sale Rep to update.
+		 * @param {string} id Id of Sale Rep to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {SaleRepsDto} requestBody Information of Sale Rep to update.
 		 * @return {string} OK
 		 */
-		SalesRep_Put(id: number, requestBody: SaleRepsDto): Observable<string> {
+		SalesRep_Put(id: string, requestBody: SaleRepsDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/salesReps/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
@@ -5449,63 +6729,69 @@ export namespace MyNS {
 		/**
 		 * Removes an existing Supplier.
 		 * Delete v1/suppliers/{id}
-		 * @param {number} id Id of Supplier to remove.
+		 * @param {string} id Id of Supplier to remove.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} timestamp Timestamp of Supplier to remove. Should be encoded in Base64.
 		 * @return {string} OK
 		 */
-		Suppliers_Delete(id: number, timestamp: string): Observable<string> {
+		Suppliers_Delete(id: string, timestamp: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'v1/suppliers/' + id + '?timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)), { responseType: 'text' });
 		}
 
 		/**
 		 * Returns information about a single Supplier. You may specify that Supplier's ledger balance should be calculated.
 		 * Get v1/suppliers/{id}
-		 * @param {number} id Id of Supplier to return.
+		 * @param {string} id Id of Supplier to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} needBalance If "true" then Supplier's ledger balance will be calculated; otherwise balance will be returned as 0.
 		 * @return {SupplierDto} OK
 		 */
-		SuppliersGetByIdAndNeedBalance(id: number, needBalance: boolean | null | undefined): Observable<SupplierDto> {
+		SuppliersGetByIdAndNeedBalance(id: string, needBalance: boolean | null | undefined): Observable<SupplierDto> {
 			return this.http.get<SupplierDto>(this.baseUri + 'v1/suppliers/' + id + '?needBalance=' + needBalance, {});
 		}
 
 		/**
 		 * Updates an existing Supplier.
 		 * Put v1/suppliers/{id}
-		 * @param {number} id Id of Supplier to update.
+		 * @param {string} id Id of Supplier to update.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {SupplierDto} requestBody Information of Supplier to update.
 		 * @return {string} OK
 		 */
-		Suppliers_Put(id: number, requestBody: SupplierDto): Observable<string> {
+		Suppliers_Put(id: string, requestBody: SupplierDto): Observable<string> {
 			return this.http.put(this.baseUri + 'v1/suppliers/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
 		 * Returns a list of Supplier's account transactions.
 		 * Get v1/suppliers/{itemId}/accountTrans
-		 * @param {number} itemId Id of Supplier to return account transaction.
+		 * @param {string} itemId Id of Supplier to return account transaction.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<AccountTranDto>} OK
 		 */
-		Suppliers_GetAccountTrans(itemId: number): Observable<Array<AccountTranDto>> {
+		Suppliers_GetAccountTrans(itemId: string): Observable<Array<AccountTranDto>> {
 			return this.http.get<Array<AccountTranDto>>(this.baseUri + 'v1/suppliers/' + itemId + '/accountTrans', {});
 		}
 
 		/**
 		 * Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.
 		 * Get v1/suppliers/{itemId}/openingBalance
-		 * @param {number} itemId Id of Supplier to return opening balances.
+		 * @param {string} itemId Id of Supplier to return opening balances.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OwnerOpeningBalanceInPeriodsDto} OK
 		 */
-		Suppliers_GetOpeningBalance(itemId: number): Observable<OwnerOpeningBalanceInPeriodsDto> {
+		Suppliers_GetOpeningBalance(itemId: string): Observable<OwnerOpeningBalanceInPeriodsDto> {
 			return this.http.get<OwnerOpeningBalanceInPeriodsDto>(this.baseUri + 'v1/suppliers/' + itemId + '/openingBalance', {});
 		}
 
 		/**
 		 * Returns a list of Supplier's opening balance transactions.
 		 * Get v1/suppliers/{itemId}/openingBalanceList
-		 * @param {number} itemId Id of Supplier to return opening balances transaction.
+		 * @param {string} itemId Id of Supplier to return opening balances transaction.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<OwnerOpeningBalanceDto>} OK
 		 */
-		Suppliers_GetOpeningBalanceList(itemId: number): Observable<Array<OwnerOpeningBalanceDto>> {
+		Suppliers_GetOpeningBalanceList(itemId: string): Observable<Array<OwnerOpeningBalanceDto>> {
 			return this.http.get<Array<OwnerOpeningBalanceDto>>(this.baseUri + 'v1/suppliers/' + itemId + '/openingBalanceList', {});
 		}
 

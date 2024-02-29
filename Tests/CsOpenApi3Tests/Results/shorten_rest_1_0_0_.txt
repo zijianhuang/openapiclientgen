@@ -484,7 +484,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="domainName">The domain name to get the aliases for (string without `http/https` or `/`)</param>
 		/// <param name="continueFrom">An ID returned by a previous query to continue aliases retrieval (see lastId in response)</param>
-		/// <param name="limit">Number of results to return per request</param>
+		/// <param name="limit">Number of results to return per request
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>returns Array of aliases with lastId</returns>
 		public async Task<GetAliasesModel> GetAliasesAsync(string domainName, string continueFrom, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -522,7 +525,10 @@ namespace MyNS
 		/// GetClicks clicks
 		/// </summary>
 		/// <param name="continueFrom">An ID returned by a previous query to continue clicks retrieval (see lastId in response)</param>
-		/// <param name="limit">Number of results to return per request</param>
+		/// <param name="limit">Number of results to return per request
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>returns Array of Click models, also returns lastId</returns>
 		public async Task<GetClicksModel> GetClicksAsync(string continueFrom, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

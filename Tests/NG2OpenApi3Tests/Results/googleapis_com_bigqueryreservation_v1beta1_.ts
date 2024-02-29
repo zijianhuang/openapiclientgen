@@ -199,7 +199,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -212,7 +215,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -544,6 +550,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/assignments
 		 * @param {string} parent Required. The parent resource name e.g.: `projects/myproject/locations/US/reservations/team1-prod` Or: `projects/myproject/locations/US/reservations/-`
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListAssignmentsResponse} Successful response
 		 */
@@ -567,6 +574,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/capacityCommitments
 		 * @param {string} parent Required. Resource name of the parent reservation. E.g., `projects/myproject/locations/US`
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListCapacityCommitmentsResponse} Successful response
 		 */
@@ -602,6 +610,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name containing project and location, e.g.: `projects/myproject/locations/US`
 		 * @param {string} filter Can be used to filter out reservations based on names, capacity, etc, e.g.: filter="reservation.slot_capacity > 200" filter="reservation.name = \"*dev/*\"" Advanced filtering syntax can be [here](https://cloud.google.com/logging/docs/view/advanced-filters).
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListReservationsResponse} Successful response
 		 */
@@ -625,6 +634,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}:searchAssignments
 		 * @param {string} parent Required. The resource name of the admin project(containing project and location), e.g.: `projects/myproject/locations/US`.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @param {string} query Please specify resource name as assignee in the query. Examples: * `assignee=projects/myproject` * `assignee=folders/123` * `assignee=organizations/456`
 		 * @return {SearchAssignmentsResponse} Successful response

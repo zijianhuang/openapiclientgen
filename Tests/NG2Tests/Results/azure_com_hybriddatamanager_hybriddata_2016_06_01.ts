@@ -1494,6 +1494,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataManager} Data Manager Resource object.
 		 */
@@ -1508,6 +1509,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {DataManager} requestBody Data manager resource details from request body.
 		 * @return {DataManager} Data Manager Resource object.
@@ -1522,6 +1524,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -1535,6 +1538,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {DataManagerUpdateParameter} requestBody Data manager resource details from request body.
 		 * @return {DataManager} Data Manager Resource object.
@@ -1549,6 +1553,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataServiceList} The list of data services.
 		 */
@@ -1563,6 +1568,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataService} The data service that matches the name.
 		 */
@@ -1577,6 +1583,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {JobDefinitionList} The list of job definitions of the given data service type.
@@ -1593,6 +1600,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {JobDefinition} The job definition that matches the criteria.
 		 */
@@ -1608,6 +1616,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {JobDefinition} requestBody Job Definition object to be created or updated.
 		 * @return {JobDefinition} JobDefinition object.
@@ -1624,6 +1633,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -1639,6 +1649,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {JobList} The list of jobs.
@@ -1656,6 +1667,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} expand $expand is supported on details parameter for job, which provides details on the job stages.
 		 * @return {Job} The job that matches the given criteria.
@@ -1673,6 +1685,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -1689,6 +1702,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -1704,6 +1718,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {RunParameters} requestBody Run time parameters for the job definition.
 		 * @return {void} 
@@ -1719,6 +1734,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {JobList} The list of jobs that match the service and resource.
@@ -1733,6 +1749,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataStoreTypeList} The list of data store types that are supported.
 		 */
@@ -1747,6 +1764,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataStoreType} The data store/repository type.
 		 */
@@ -1760,6 +1778,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {DataStoreList} The list of data stores/repositories in the given resource.
@@ -1775,6 +1794,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {DataStore} The data store/repository which matches the name given.
 		 */
@@ -1789,6 +1809,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {DataStore} requestBody The data store/repository object to be created or updated.
 		 * @return {DataStore} The data store/repository object.
@@ -1804,6 +1825,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -1817,6 +1839,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {JobDefinitionList} The list of job definitions in that resource.OK
@@ -1831,6 +1854,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} filter OData Filter options
 		 * @return {JobList} The list of jobs in the resource specified.
@@ -1845,6 +1869,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {PublicKeyList} The list of public keys.
 		 */
@@ -1859,6 +1884,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} dataManagerName The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {PublicKey} The public keys.
 		 */

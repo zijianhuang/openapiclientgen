@@ -3211,7 +3211,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maxResults of the query.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The nextToken of the query.</p>
 		///         </param>
@@ -3299,7 +3302,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -3391,7 +3397,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -3477,7 +3486,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -4192,7 +4204,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -4235,7 +4250,10 @@ namespace MyNS
 		/// ListClusterOperationsV2 api/v2/clusters/{clusterArn}/operations
 		/// </summary>
 		/// <param name="clusterArn">The arn of the cluster whose operations are being requested.</param>
-		/// <param name="maxResults">The maxResults of the query.</param>
+		/// <param name="maxResults">The maxResults of the query.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The nextToken of the query.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -4279,7 +4297,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -4322,7 +4343,10 @@ namespace MyNS
 		/// ListKafkaVersions v1/kafka-versions
 		/// </summary>
 		/// <param name="maxResults">
-		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p></param>
+		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p></param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -4367,7 +4391,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -4490,7 +4517,10 @@ namespace MyNS
 		///         </param>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>
@@ -4534,7 +4564,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="maxResults">
 		///            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-		///         </param>
+		///         
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">
 		///            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		///            To get the next batch, provide this token in your next request.</p>

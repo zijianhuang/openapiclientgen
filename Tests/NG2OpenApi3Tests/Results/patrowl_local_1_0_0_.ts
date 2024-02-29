@@ -22,6 +22,8 @@ export namespace MyNS {
 	export interface FindingsElement {
 		confidence?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue_id?: number | null;
 		meta_links?: Array<string>;
 		meta_risk?: FindingsElementMeta_risk;
@@ -39,6 +41,8 @@ export namespace MyNS {
 	export interface FindingsElementFormProperties {
 		confidence: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue_id: FormControl<number | null | undefined>,
 		raw: FormControl<string | null | undefined>,
 		severity: FormControl<FindingsElementSeverity | null | undefined>,
@@ -96,10 +100,14 @@ export namespace MyNS {
 	export interface ScanDefinition {
 		ScanDefinitionAssets?: Array<ScanDefinitionAssets>;
 		options?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scan_id?: number | null;
 	}
 	export interface ScanDefinitionFormProperties {
 		options: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scan_id: FormControl<number | null | undefined>,
 	}
 	export function CreateScanDefinitionFormGroup() {
@@ -166,6 +174,7 @@ export namespace MyNS {
 		 * Clean scan identified by id.
 		 * Get clean/{scanId}
 		 * @param {number} scanId Numeric ID of the scan to clean
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse} successful operation
 		 */
 		CleanScanPage(scanId: number): Observable<ApiResponse> {
@@ -177,6 +186,7 @@ export namespace MyNS {
 		 * Get findings on finished scans.
 		 * Get getfindings/{scanId}
 		 * @param {number} scanId Numeric ID of the scan to get findings
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetFindingPageReturn>} successful operation
 		 */
 		GetFindingPage(scanId: number): Observable<Array<GetFindingPageReturn>> {
@@ -248,6 +258,7 @@ export namespace MyNS {
 		 * Status of a scan identified by id.
 		 * Get status/{scanId}
 		 * @param {number} scanId Numeric ID of the scan to get status
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse} successful operation
 		 */
 		StatusScanPage(scanId: number): Observable<ApiResponse> {
@@ -259,6 +270,7 @@ export namespace MyNS {
 		 * Stop a scan identified by id.
 		 * Get stop/{scanId}
 		 * @param {number} scanId Numeric ID of the scan to stop
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse} successful operation
 		 */
 		StopScanPage(scanId: number): Observable<ApiResponse> {
@@ -289,6 +301,8 @@ export namespace MyNS {
 	export interface GetFindingPageReturn {
 		confidence?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue_id?: number | null;
 		meta_links?: Array<string>;
 		meta_risk?: GetFindingPageReturnMeta_risk;
@@ -306,6 +320,8 @@ export namespace MyNS {
 	export interface GetFindingPageReturnFormProperties {
 		confidence: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue_id: FormControl<number | null | undefined>,
 		raw: FormControl<string | null | undefined>,
 		severity: FormControl<FindingsElementSeverity | null | undefined>,

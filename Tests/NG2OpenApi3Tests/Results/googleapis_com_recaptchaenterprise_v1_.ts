@@ -189,7 +189,10 @@ export namespace MyNS {
 		/** Optional. The reason or standardized code that corresponds with this transaction event, if one exists. For example, a CHARGEBACK event with code 6005. */
 		reason?: string | null;
 
-		/** Optional. The value that corresponds with this transaction event, if one exists. For example, a refund event where $5.00 was refunded. Currency is obtained from the original transaction data. */
+		/**
+		 * Optional. The value that corresponds with this transaction event, if one exists. For example, a refund event where $5.00 was refunded. Currency is obtained from the original transaction data.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -205,7 +208,10 @@ export namespace MyNS {
 		/** Optional. The reason or standardized code that corresponds with this transaction event, if one exists. For example, a CHARGEBACK event with code 6005. */
 		reason: FormControl<string | null | undefined>,
 
-		/** Optional. The value that corresponds with this transaction event, if one exists. For example, a refund event where $5.00 was refunded. Currency is obtained from the original transaction data. */
+		/**
+		 * Optional. The value that corresponds with this transaction event, if one exists. For example, a refund event where $5.00 was refunded. Currency is obtained from the original transaction data.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1TransactionEventFormGroup() {
@@ -448,7 +454,10 @@ export namespace MyNS {
 		/** Structured address format for billing and shipping addresses. */
 		shippingAddress?: GoogleCloudRecaptchaenterpriseV1TransactionDataAddress;
 
-		/** Optional. The value of shipping in the specified currency. 0 for free or no shipping. */
+		/**
+		 * Optional. The value of shipping in the specified currency. 0 for free or no shipping.
+		 * Type: double
+		 */
 		shippingValue?: number | null;
 
 		/** Unique identifier for the transaction. This custom identifier can be used to reference this transaction in the future, for example, labeling a refund or chargeback event. Two attempts at the same transaction should use the same transaction id. */
@@ -457,7 +466,10 @@ export namespace MyNS {
 		/** Details about a user's account involved in the transaction. */
 		user?: GoogleCloudRecaptchaenterpriseV1TransactionDataUser;
 
-		/** Optional. The decimal value of the transaction in the specified currency. */
+		/**
+		 * Optional. The decimal value of the transaction in the specified currency.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -476,13 +488,19 @@ export namespace MyNS {
 		/** Optional. The payment method for the transaction. The allowed values are: * credit-card * debit-card * gift-card * processor-{name} (If a third-party is used, for example, processor-paypal) * custom-{name} (If an alternative method is used, for example, custom-crypto) */
 		paymentMethod: FormControl<string | null | undefined>,
 
-		/** Optional. The value of shipping in the specified currency. 0 for free or no shipping. */
+		/**
+		 * Optional. The value of shipping in the specified currency. 0 for free or no shipping.
+		 * Type: double
+		 */
 		shippingValue: FormControl<number | null | undefined>,
 
 		/** Unique identifier for the transaction. This custom identifier can be used to reference this transaction in the future, for example, labeling a refund or chargeback event. Two attempts at the same transaction should use the same transaction id. */
 		transactionId: FormControl<string | null | undefined>,
 
-		/** Optional. The decimal value of the transaction in the specified currency. */
+		/**
+		 * Optional. The decimal value of the transaction in the specified currency.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1TransactionDataFormGroup() {
@@ -605,7 +623,10 @@ export namespace MyNS {
 		/** Optional. The quantity of this item that is being purchased. */
 		quantity?: string | null;
 
-		/** Optional. The value per item that the user is paying, in the transaction currency, after discounts. */
+		/**
+		 * Optional. The value per item that the user is paying, in the transaction currency, after discounts.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -621,7 +642,10 @@ export namespace MyNS {
 		/** Optional. The quantity of this item that is being purchased. */
 		quantity: FormControl<string | null | undefined>,
 
-		/** Optional. The value per item that the user is paying, in the transaction currency, after discounts. */
+		/**
+		 * Optional. The value per item that the user is paying, in the transaction currency, after discounts.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1TransactionDataItemFormGroup() {
@@ -780,7 +804,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -793,7 +820,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -985,14 +1015,20 @@ export namespace MyNS {
 		/** Information about stolen instrument fraud, where the user is not the legitimate owner of the instrument being used for the purchase. */
 		stolenInstrumentVerdict?: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdict;
 
-		/** Output only. Probability of this transaction being fraudulent. Summarizes the combined risk of attack vectors below. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction being fraudulent. Summarizes the combined risk of attack vectors below. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		transactionRisk?: number | null;
 	}
 
 	/** Assessment for Fraud Prevention. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentFormProperties {
 
-		/** Output only. Probability of this transaction being fraudulent. Summarizes the combined risk of attack vectors below. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction being fraudulent. Summarizes the combined risk of attack vectors below. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		transactionRisk: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentFormGroup() {
@@ -1006,14 +1042,20 @@ export namespace MyNS {
 	/** Information about behavioral trust of the transaction. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentBehavioralTrustVerdict {
 
-		/** Output only. Probability of this transaction attempt being executed in a behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction attempt being executed in a behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		trust?: number | null;
 	}
 
 	/** Information about behavioral trust of the transaction. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentBehavioralTrustVerdictFormProperties {
 
-		/** Output only. Probability of this transaction attempt being executed in a behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction attempt being executed in a behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		trust: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentBehavioralTrustVerdictFormGroup() {
@@ -1027,14 +1069,20 @@ export namespace MyNS {
 	/** Information about card testing fraud, where an adversary is testing fraudulently obtained cards or brute forcing their details. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentCardTestingVerdict {
 
-		/** Output only. Probability of this transaction attempt being part of a card testing attack. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction attempt being part of a card testing attack. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		risk?: number | null;
 	}
 
 	/** Information about card testing fraud, where an adversary is testing fraudulently obtained cards or brute forcing their details. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentCardTestingVerdictFormProperties {
 
-		/** Output only. Probability of this transaction attempt being part of a card testing attack. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction attempt being part of a card testing attack. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		risk: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentCardTestingVerdictFormGroup() {
@@ -1048,14 +1096,20 @@ export namespace MyNS {
 	/** Information about stolen instrument fraud, where the user is not the legitimate owner of the instrument being used for the purchase. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdict {
 
-		/** Output only. Probability of this transaction being executed with a stolen instrument. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction being executed with a stolen instrument. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		risk?: number | null;
 	}
 
 	/** Information about stolen instrument fraud, where the user is not the legitimate owner of the instrument being used for the purchase. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdictFormProperties {
 
-		/** Output only. Probability of this transaction being executed with a stolen instrument. Values are from 0.0 (lowest) to 1.0 (highest). */
+		/**
+		 * Output only. Probability of this transaction being executed with a stolen instrument. Values are from 0.0 (lowest) to 1.0 (highest).
+		 * Type: float
+		 */
 		risk: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdictFormGroup() {
@@ -1106,20 +1160,32 @@ export namespace MyNS {
 	/** Signals describing the user involved in this transaction. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignals {
 
-		/** Output only. This user (based on email, phone, and other identifiers) has been seen on the internet for at least this number of days. */
+		/**
+		 * Output only. This user (based on email, phone, and other identifiers) has been seen on the internet for at least this number of days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeDaysLowerBound?: number | null;
 
-		/** Output only. Likelihood (from 0.0 to 1.0) this user includes synthetic components in their identity, such as a randomly generated email address, temporary phone number, or fake shipping address. */
+		/**
+		 * Output only. Likelihood (from 0.0 to 1.0) this user includes synthetic components in their identity, such as a randomly generated email address, temporary phone number, or fake shipping address.
+		 * Type: float
+		 */
 		syntheticRisk?: number | null;
 	}
 
 	/** Signals describing the user involved in this transaction. */
 	export interface GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignalsFormProperties {
 
-		/** Output only. This user (based on email, phone, and other identifiers) has been seen on the internet for at least this number of days. */
+		/**
+		 * Output only. This user (based on email, phone, and other identifiers) has been seen on the internet for at least this number of days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeDaysLowerBound: FormControl<number | null | undefined>,
 
-		/** Output only. Likelihood (from 0.0 to 1.0) this user includes synthetic components in their identity, such as a randomly generated email address, temporary phone number, or fake shipping address. */
+		/**
+		 * Output only. Likelihood (from 0.0 to 1.0) this user includes synthetic components in their identity, such as a randomly generated email address, temporary phone number, or fake shipping address.
+		 * Type: float
+		 */
 		syntheticRisk: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignalsFormGroup() {
@@ -1178,14 +1244,20 @@ export namespace MyNS {
 		/** Output only. Reasons contributing to the risk analysis verdict. */
 		reasons?: Array<string>;
 
-		/** Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic). */
+		/**
+		 * Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Risk analysis result for an event. */
 	export interface GoogleCloudRecaptchaenterpriseV1RiskAnalysisFormProperties {
 
-		/** Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic). */
+		/**
+		 * Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely legitimate traffic while 0.0 means very likely non-legitimate traffic).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1RiskAnalysisFormGroup() {
@@ -1393,7 +1465,10 @@ export namespace MyNS {
 		/** Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site will return nocaptcha if NOCAPTCHA, or an unsolvable challenge if CHALLENGE. */
 		testingChallenge?: GoogleCloudRecaptchaenterpriseV1TestingOptionsTestingChallenge | null;
 
-		/** Optional. All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive. */
+		/**
+		 * Optional. All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
+		 * Type: float
+		 */
 		testingScore?: number | null;
 	}
 
@@ -1403,7 +1478,10 @@ export namespace MyNS {
 		/** Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site will return nocaptcha if NOCAPTCHA, or an unsolvable challenge if CHALLENGE. */
 		testingChallenge: FormControl<GoogleCloudRecaptchaenterpriseV1TestingOptionsTestingChallenge | null | undefined>,
 
-		/** Optional. All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive. */
+		/**
+		 * Optional. All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
+		 * Type: float
+		 */
 		testingScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRecaptchaenterpriseV1TestingOptionsFormGroup() {
@@ -1780,7 +1858,10 @@ export namespace MyNS {
 		/** Optional. Deprecated: use `account_id` instead. The unique stable hashed account identifier used to search connections. The identifier should correspond to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call. Either hashed_account_id or account_id must be set, but not both. */
 		hashedAccountId?: string | null;
 
-		/** Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000. */
+		/**
+		 * Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A page token, received from a previous `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchRelatedAccountGroupMemberships` must match the call that provided the page token. */
@@ -1796,7 +1877,10 @@ export namespace MyNS {
 		/** Optional. Deprecated: use `account_id` instead. The unique stable hashed account identifier used to search connections. The identifier should correspond to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call. Either hashed_account_id or account_id must be set, but not both. */
 		hashedAccountId: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000. */
+		/**
+		 * Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A page token, received from a previous `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchRelatedAccountGroupMemberships` must match the call that provided the page token. */
@@ -1931,6 +2015,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/firewallpolicies
 		 * @param {string} parent Required. The name of the project to list the policies for, in the format `projects/{project}`.
 		 * @param {number} pageSize Optional. The maximum number of policies to return. Default is 10. Max limit is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous. ListFirewallPoliciesRequest, if any.
 		 * @return {GoogleCloudRecaptchaenterpriseV1ListFirewallPoliciesResponse} Successful response
 		 */
@@ -1953,6 +2038,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/keys
 		 * @param {string} parent Required. The name of the project that contains the keys that will be listed, in the format `projects/{project}`.
 		 * @param {number} pageSize Optional. The maximum number of keys to return. Default is 10. Max limit is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from a previous. ListKeysRequest, if any.
 		 * @return {GoogleCloudRecaptchaenterpriseV1ListKeysResponse} Successful response
 		 */
@@ -1975,6 +2061,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/memberships
 		 * @param {string} parent Required. The resource name for the related account group in the format `projects/{project}/relatedaccountgroups/{relatedaccountgroup}`.
 		 * @param {number} pageSize Optional. The maximum number of accounts to return. The service might return fewer than this value. If unspecified, at most 50 accounts are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListRelatedAccountGroupMemberships` call. When paginating, all other parameters provided to `ListRelatedAccountGroupMemberships` must match the call that provided the page token.
 		 * @return {GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupMembershipsResponse} Successful response
 		 */
@@ -1987,6 +2074,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/relatedaccountgroups
 		 * @param {string} parent Required. The name of the project to list related account groups from, in the format `projects/{project}`.
 		 * @param {number} pageSize Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListRelatedAccountGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRelatedAccountGroups` must match the call that provided the page token.
 		 * @return {GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupsResponse} Successful response
 		 */

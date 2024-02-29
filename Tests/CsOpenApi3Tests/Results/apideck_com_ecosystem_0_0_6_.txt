@@ -1575,7 +1575,10 @@ namespace MyNS
 		/// CategoriesAll ecosystems/{ecosystem_id}/categories
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Categories</returns>
 		public async Task<GetCategoriesResponse> CategoriesAllAsync(string ecosystem_id, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1647,7 +1650,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">ID of the record you are acting upon.</param>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Listings</returns>
 		public async Task<GetListingsResponse> CategoryListingsAllAsync(string ecosystem_id, string id, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1683,7 +1689,10 @@ namespace MyNS
 		/// CollectionsAll ecosystems/{ecosystem_id}/collections
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Collections</returns>
 		public async Task<GetCollectionsResponse> CollectionsAllAsync(string ecosystem_id, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1755,7 +1764,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">ID of the record you are acting upon.</param>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Listings</returns>
 		public async Task<GetListingsResponse> CollectionListingsAllAsync(string ecosystem_id, string id, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1791,7 +1803,10 @@ namespace MyNS
 		/// ListingsAll ecosystems/{ecosystem_id}/listings
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="external_id">Filter on external_id</param>
 		/// <returns>Listings</returns>
 		public async Task<GetListingsResponse> ListingsAllAsync(string ecosystem_id, string cursor, int limit, string external_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1933,7 +1948,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">ID of the record you are acting upon.</param>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of records to return</param>
+		/// <param name="limit">Number of records to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Listings</returns>
 		public async Task<GetListingsResponse> ProductListingsAllAsync(string ecosystem_id, string id, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

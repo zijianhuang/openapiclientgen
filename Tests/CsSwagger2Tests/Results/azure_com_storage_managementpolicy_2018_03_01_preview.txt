@@ -86,10 +86,20 @@ namespace MyNS
 		/// Gets the data policy rules associated with the specified storage account.
 		/// ManagementPolicies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <returns>OK -- Get management policies successfully.</returns>
 		public async Task<StorageAccountManagementPolicies> ManagementPolicies_GetAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, ManagementPolicies_GetManagementPolicyName managementPolicyName)
@@ -119,10 +129,20 @@ namespace MyNS
 		/// Sets the data policy rules associated with the specified storage account.
 		/// ManagementPolicies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <param name="requestBody">The data policy rules to set to a storage account.</param>
 		/// <returns>OK -- Get management policies successfully.</returns>
@@ -160,10 +180,20 @@ namespace MyNS
 		/// Deletes the data policy rules associated with the specified storage account.
 		/// ManagementPolicies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="managementPolicyName">The name of the Storage Account Management Policy. It should always be 'default'</param>
 		/// <returns>OK -- Delete management policies successfully.</returns>
 		public async Task ManagementPolicies_DeleteAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, ManagementPolicies_DeleteManagementPolicyName managementPolicyName)

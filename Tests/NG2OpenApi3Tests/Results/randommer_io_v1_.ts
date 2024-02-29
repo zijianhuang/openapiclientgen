@@ -15,15 +15,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		country: string;
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		number: string;
 	}
@@ -31,15 +31,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -103,6 +103,7 @@ export namespace MyNS {
 		/**
 		 * Get crypto address
 		 * Get api/Finance/CryptoAddress
+		 * @param {string} cryptoType Max length: 100
 		 * @return {void} Success
 		 */
 		ApiFinanceCryptoAddressGetByCryptoType(cryptoType: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -121,6 +122,7 @@ export namespace MyNS {
 		/**
 		 * Get IBAN by countryCode
 		 * Get api/Finance/Iban/{countryCode}
+		 * @param {string} countryCode Max length: 2
 		 * @return {void} Success
 		 */
 		ApiFinanceIban_countryCodeGet(countryCode: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -145,6 +147,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/Misc/Random-Address
+		 * @param {number} number Minimum: 1
+		 *     Maximum: 1000
+		 * @param {string} culture Max length: 100
 		 * @return {void} Success
 		 */
 		ApiMiscRandom_AddressGetByNumberAndCulture(number: number, culture: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -154,6 +159,8 @@ export namespace MyNS {
 		/**
 		 * Get name
 		 * Get api/Name
+		 * @param {number} quantity Minimum: 1
+		 *     Maximum: 5000
 		 * @return {void} Success
 		 */
 		ApiNameGetByNameTypeAndQuantity(nameType: NameType, quantity: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -163,6 +170,7 @@ export namespace MyNS {
 		/**
 		 * Generate brand name suggestions
 		 * Post api/Name/BrandName
+		 * @param {string} startingWords Max length: 100
 		 * @return {void} Success
 		 */
 		ApiNameBrandNamePostByStartingWords(startingWords: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -172,6 +180,8 @@ export namespace MyNS {
 		/**
 		 * Get business names for a specific culture
 		 * Post api/Name/BusinessName
+		 * @param {number} number Minimum: 1
+		 *     Maximum: 1000
 		 * @return {void} Success
 		 */
 		ApiNameBusinessNamePostByNumberAndCultureCode(number: number, cultureCode: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -190,6 +200,7 @@ export namespace MyNS {
 		/**
 		 * Get business name suggestions
 		 * Get api/Name/Suggestions
+		 * @param {string} startingWords Max length: 100
 		 * @return {void} Success
 		 */
 		ApiNameSuggestionsGetByStartingWords(startingWords: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -208,6 +219,9 @@ export namespace MyNS {
 		/**
 		 * Get bulk telephone numbers for a country
 		 * Get api/Phone/Generate
+		 * @param {string} CountryCode Max length: 2
+		 * @param {number} Quantity Minimum: 1
+		 *     Maximum: 1000
 		 * @return {void} Success
 		 */
 		ApiPhoneGenerateGetByCountryCodeAndQuantity(CountryCode: string, Quantity: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -217,6 +231,8 @@ export namespace MyNS {
 		/**
 		 * Get bulk imeis
 		 * Get api/Phone/IMEI
+		 * @param {number} Quantity Minimum: 1
+		 *     Maximum: 1000
 		 * @return {void} Success
 		 */
 		ApiPhoneIMEIGetByQuantity(Quantity: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -226,6 +242,8 @@ export namespace MyNS {
 		/**
 		 * Validate a phone number
 		 * Get api/Phone/Validate
+		 * @param {string} telephone Max length: 25
+		 * @param {string} CountryCode Max length: 2
 		 * @return {void} Success
 		 */
 		ApiPhoneValidateGetByTelephoneAndCountryCode(telephone: string, CountryCode: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -262,6 +280,8 @@ export namespace MyNS {
 		/**
 		 * Generate lorem ipsum
 		 * Get api/Text/LoremIpsum
+		 * @param {number} number Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {void} Success
 		 */
 		ApiTextLoremIpsumGetByLoremTypeAndTypeAndNumber(loremType: LoremType, type: TextType, number: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -271,6 +291,8 @@ export namespace MyNS {
 		/**
 		 * Generate password
 		 * Get api/Text/Password
+		 * @param {number} length Minimum: 3
+		 *     Maximum: 250
 		 * @return {void} Success
 		 */
 		ApiTextPasswordGetByLengthAndHasDigitsAndHasUppercaseAndHasSpecial(length: number, hasDigits: boolean, hasUppercase: boolean, hasSpecial: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -280,6 +302,9 @@ export namespace MyNS {
 		/**
 		 * Get reviews (max quantity=500)
 		 * Post api/Text/Review
+		 * @param {string} product Max length: 50
+		 * @param {number} quantity Minimum: 1
+		 *     Maximum: 500
 		 * @return {void} Success
 		 */
 		ApiTextReviewPostByProductAndQuantity(product: string, quantity: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

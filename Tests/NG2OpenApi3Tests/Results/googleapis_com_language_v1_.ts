@@ -110,7 +110,10 @@ export namespace MyNS {
 		/** The representative name for the entity. */
 		name?: string | null;
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience?: number | null;
 
 		/** Represents the feeling associated with the entire text or entities in the text. */
@@ -129,7 +132,10 @@ export namespace MyNS {
 		/** The representative name for the entity. */
 		name: FormControl<string | null | undefined>,
 
-		/** The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. */
+		/**
+		 * The salience score associated with the entity in the [0, 1.0] range. The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient.
+		 * Type: float
+		 */
 		salience: FormControl<number | null | undefined>,
 
 		/** The entity type. */
@@ -176,20 +182,32 @@ export namespace MyNS {
 	/** Represents the feeling associated with the entire text or entities in the text. */
 	export interface Sentiment {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude?: number | null;
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Represents the feeling associated with the entire text or entities in the text. */
 	export interface SentimentFormProperties {
 
-		/** A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative). */
+		/**
+		 * A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative).
+		 * Type: float
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
-		/** Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment). */
+		/**
+		 * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateSentimentFormGroup() {
@@ -204,7 +222,10 @@ export namespace MyNS {
 	/** Represents a text span in the input document. */
 	export interface TextSpan {
 
-		/** The API calculates the beginning offset of the content in the original document according to the EncodingType specified in the API request. */
+		/**
+		 * The API calculates the beginning offset of the content in the original document according to the EncodingType specified in the API request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		beginOffset?: number | null;
 
 		/** The content of the text span, which is a substring of the document. */
@@ -214,7 +235,10 @@ export namespace MyNS {
 	/** Represents a text span in the input document. */
 	export interface TextSpanFormProperties {
 
-		/** The API calculates the beginning offset of the content in the original document according to the EncodingType specified in the API request. */
+		/**
+		 * The API calculates the beginning offset of the content in the original document according to the EncodingType specified in the API request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		beginOffset: FormControl<number | null | undefined>,
 
 		/** The content of the text span, which is a substring of the document. */
@@ -436,7 +460,10 @@ export namespace MyNS {
 	/** Represents dependency parse tree information for a token. (For more information on dependency labels, see http://www.aclweb.org/anthology/P13-2017 */
 	export interface DependencyEdge {
 
-		/** Represents the head of this token in the dependency tree. This is the index of the token which has an arc going to this token. The index is the position of the token in the array of tokens returned by the API method. If this token is a root token, then the `head_token_index` is its own index. */
+		/**
+		 * Represents the head of this token in the dependency tree. This is the index of the token which has an arc going to this token. The index is the position of the token in the array of tokens returned by the API method. If this token is a root token, then the `head_token_index` is its own index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headTokenIndex?: number | null;
 
 		/** The parse label for the token. */
@@ -446,7 +473,10 @@ export namespace MyNS {
 	/** Represents dependency parse tree information for a token. (For more information on dependency labels, see http://www.aclweb.org/anthology/P13-2017 */
 	export interface DependencyEdgeFormProperties {
 
-		/** Represents the head of this token in the dependency tree. This is the index of the token which has an arc going to this token. The index is the position of the token in the array of tokens returned by the API method. If this token is a root token, then the `head_token_index` is its own index. */
+		/**
+		 * Represents the head of this token in the dependency tree. This is the index of the token which has an arc going to this token. The index is the position of the token in the array of tokens returned by the API method. If this token is a root token, then the `head_token_index` is its own index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headTokenIndex: FormControl<number | null | undefined>,
 
 		/** The parse label for the token. */
@@ -770,7 +800,10 @@ export namespace MyNS {
 	/** Represents a category returned from the text classifier. */
 	export interface ClassificationCategory {
 
-		/** The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text. */
+		/**
+		 * The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the category representing the document. */
@@ -780,7 +813,10 @@ export namespace MyNS {
 	/** Represents a category returned from the text classifier. */
 	export interface ClassificationCategoryFormProperties {
 
-		/** The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text. */
+		/**
+		 * The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the category representing the document. */
@@ -869,7 +905,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -882,7 +921,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */

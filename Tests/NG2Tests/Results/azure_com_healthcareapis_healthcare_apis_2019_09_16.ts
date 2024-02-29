@@ -651,6 +651,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the service instance.
+		 *     Min length: 1    Max length: 90
 		 * @return {ServicesDescriptionListResult} This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the service instances in the resource group.
 		 */
 		Services_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<ServicesDescriptionListResult> {
@@ -663,7 +664,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the service instance.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceName The name of the service instance.
+		 *     Min length: 3    Max length: 24
 		 * @return {ServicesDescription} The body contains all of the properties of the service instance.
 		 */
 		Services_Get(api_version: string, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<ServicesDescription> {
@@ -676,7 +679,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the service instance.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceName The name of the service instance.
+		 *     Min length: 3    Max length: 24
 		 * @param {ServicesDescription} requestBody The service instance metadata.
 		 * @return {ServicesDescription} Updated - Put request accepted and an existing resource is being updated; the operation will complete asynchronously.
 		 */
@@ -690,7 +695,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the service instance.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceName The name of the service instance.
+		 *     Min length: 3    Max length: 24
 		 * @return {void} 
 		 */
 		Services_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<HttpResponse<string>> {
@@ -703,7 +710,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the service instance.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceName The name of the service instance.
+		 *     Min length: 3    Max length: 24
 		 * @param {ServicesPatchDescription} requestBody The service instance metadata and security metadata.
 		 * @return {ServicesDescription} The tags for the resource were updated successfully.
 		 */

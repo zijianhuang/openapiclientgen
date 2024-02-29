@@ -119,20 +119,28 @@ export namespace MyNS {
 		caption?: string | null;
 		copyright?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		subtype?: string | null;
 		type?: string | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface DocMultimediaFormProperties {
 		caption: FormControl<string | null | undefined>,
 		copyright: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		subtype: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDocMultimediaFormGroup() {
@@ -159,7 +167,9 @@ export namespace MyNS {
 		 * The Archive API provides lists of NYT articles by month going back to 1851.  Simply pass in the year and month you want and it returns a JSON object with all articles for that month.
 		 * Get {year}/{month}.json
 		 * @param {number} year The year (e.g. 2016).
+		 *     Minimum: 1851    Maximum: 2030
 		 * @param {number} month The month number (e.g. 1 for January).
+		 *     Minimum: 1    Maximum: 12
 		 * @return {ArchiveGetByYearAndMonthReturn} The docs requested.
 		 */
 		ArchiveGetByYearAndMonth(year: number, month: number): Observable<ArchiveGetByYearAndMonthReturn> {
@@ -191,13 +201,25 @@ export namespace MyNS {
 	}
 
 	export interface ArchiveGetByYearAndMonthReturnResponseMeta {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 	}
 	export interface ArchiveGetByYearAndMonthReturnResponseMetaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 	}
 	export function CreateArchiveGetByYearAndMonthReturnResponseMetaFormGroup() {

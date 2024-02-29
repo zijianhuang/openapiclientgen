@@ -516,10 +516,20 @@ namespace MyNS
 		/// List blob services of storage account. It returns a collection of one object named default.
 		/// BlobServices_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- List blob services operation completed successfully.</returns>
 		public async Task<BlobServiceItems> BlobServices_ListAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId)
 		{
@@ -548,10 +558,20 @@ namespace MyNS
 		/// Lists all containers and does not support a prefix like data plane. Also SRP today does not return continuation token.
 		/// BlobContainers_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="maxpagesize">Optional. Specified maximum number of containers that can be included in the list.</param>
 		/// <param name="filter">Optional. When specified, only container names starting with the filter will be listed.</param>
 		/// <returns>OK -- List Container operation completed successfully.</returns>
@@ -582,11 +602,24 @@ namespace MyNS
 		/// Gets properties of a specified container.
 		/// BlobContainers_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Get Container operation completed successfully.</returns>
 		public async Task<BlobContainer> BlobContainers_GetAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId)
 		{
@@ -615,11 +648,24 @@ namespace MyNS
 		/// Creates a new container under the specified account as described by request body. The container resource includes metadata and properties for that container. It does not include a list of the blobs contained by the container.
 		/// BlobContainers_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Properties of the blob container to create.</param>
 		/// <returns>OK -- The Container is already created.</returns>
 		public async Task<BlobContainer> BlobContainers_CreateAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, BlobContainer requestBody)
@@ -656,11 +702,24 @@ namespace MyNS
 		/// Deletes specified container under its account.
 		/// BlobContainers_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Delete Container operation completed successfully.</returns>
 		public async Task BlobContainers_DeleteAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId)
 		{
@@ -683,11 +742,24 @@ namespace MyNS
 		/// Updates container properties as specified in request body. Properties not mentioned in the request will be unchanged. Update fails if the specified container doesn't already exist.
 		/// BlobContainers_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Properties to update for the blob container.</param>
 		/// <returns>OK -- Update Container operation completed successfully.</returns>
 		public async Task<BlobContainer> BlobContainers_UpdateAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, BlobContainer requestBody)
@@ -724,11 +796,24 @@ namespace MyNS
 		/// Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold clears out only the specified tags in the request.
 		/// BlobContainers_ClearLegalHold subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/clearLegalHold
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The LegalHold property that will be clear from a blob container.</param>
 		/// <returns>OK -- Clear legal hold tags for Container completed successfully.</returns>
 		public async Task<LegalHold> BlobContainers_ClearLegalHoldAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, LegalHold requestBody)
@@ -765,11 +850,24 @@ namespace MyNS
 		/// Extends the immutabilityPeriodSinceCreationInDays of a locked immutabilityPolicy. The only action allowed on a Locked policy will be this action. ETag in If-Match is required for this operation.
 		/// BlobContainers_ExtendImmutabilityPolicy subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/default/extend
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The ImmutabilityPolicy Properties that will be extended for a blob container.</param>
 		/// <returns>OK -- Extends container ImmutabilityPolicy operation completed successfully..</returns>
 		public async Task<ImmutabilityPolicy> BlobContainers_ExtendImmutabilityPolicyAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, ImmutabilityPolicy requestBody)
@@ -806,11 +904,24 @@ namespace MyNS
 		/// Sets the ImmutabilityPolicy to Locked state. The only action allowed on a Locked policy is ExtendImmutabilityPolicy action. ETag in If-Match is required for this operation.
 		/// BlobContainers_LockImmutabilityPolicy subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/default/lock
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Locks container ImmutabilityPolicy operation completed successfully.</returns>
 		public async Task<ImmutabilityPolicy> BlobContainers_LockImmutabilityPolicyAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId)
 		{
@@ -839,12 +950,25 @@ namespace MyNS
 		/// Gets the existing immutability policy along with the corresponding ETag in response headers and body.
 		/// BlobContainers_GetImmutabilityPolicy subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/{immutabilityPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="immutabilityPolicyName">The name of the blob container immutabilityPolicy within the specified storage account. ImmutabilityPolicy Name must be 'default'</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Gets container ImmutabilityPolicy operation completed successfully.</returns>
 		public async Task<ImmutabilityPolicy> BlobContainers_GetImmutabilityPolicyAsync(string resourceGroupName, string accountName, string containerName, BlobContainers_GetImmutabilityPolicyImmutabilityPolicyName immutabilityPolicyName, string api_version, string subscriptionId)
 		{
@@ -873,12 +997,25 @@ namespace MyNS
 		/// Creates or updates an unlocked immutability policy. ETag in If-Match is honored if given but not required for this operation.
 		/// BlobContainers_CreateOrUpdateImmutabilityPolicy subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/{immutabilityPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="immutabilityPolicyName">The name of the blob container immutabilityPolicy within the specified storage account. ImmutabilityPolicy Name must be 'default'</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The ImmutabilityPolicy Properties that will be created or updated to a blob container.</param>
 		/// <returns>OK -- Creates or updates container ImmutabilityPolicy operation completed successfully.</returns>
 		public async Task<ImmutabilityPolicy> BlobContainers_CreateOrUpdateImmutabilityPolicyAsync(string resourceGroupName, string accountName, string containerName, BlobContainers_CreateOrUpdateImmutabilityPolicyImmutabilityPolicyName immutabilityPolicyName, string api_version, string subscriptionId, ImmutabilityPolicy requestBody)
@@ -915,12 +1052,25 @@ namespace MyNS
 		/// Aborts an unlocked immutability policy. The response of delete has immutabilityPeriodSinceCreationInDays set to 0. ETag in If-Match is required for this operation. Deleting a locked immutability policy is not allowed, only way is to delete the container after deleting all blobs inside the container.
 		/// BlobContainers_DeleteImmutabilityPolicy subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/{immutabilityPolicyName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
 		/// <param name="immutabilityPolicyName">The name of the blob container immutabilityPolicy within the specified storage account. ImmutabilityPolicy Name must be 'default'</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK -- Deletes container ImmutabilityPolicy operation completed successfully.</returns>
 		public async Task<ImmutabilityPolicy> BlobContainers_DeleteImmutabilityPolicyAsync(string resourceGroupName, string accountName, string containerName, BlobContainers_DeleteImmutabilityPolicyImmutabilityPolicyName immutabilityPolicyName, string api_version, string subscriptionId)
 		{
@@ -949,11 +1099,24 @@ namespace MyNS
 		/// The Lease Container operation establishes and manages a lock on a container for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
 		/// BlobContainers_Lease subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/lease
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">Lease Container request body.</param>
 		/// <returns>OK -- Lease Container operation completed successfully.</returns>
 		public async Task<LeaseContainerResponse> BlobContainers_LeaseAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, LeaseContainerRequest requestBody)
@@ -990,11 +1153,24 @@ namespace MyNS
 		/// Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append pattern and does not clear out the existing tags that are not specified in the request.
 		/// BlobContainers_SetLegalHold subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/setLegalHold
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="containerName">The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		/// Max length: 63
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The LegalHold property that will be set to a blob container.</param>
 		/// <returns>OK -- Set legal hold tags for Container completed successfully.</returns>
 		public async Task<LegalHold> BlobContainers_SetLegalHoldAsync(string resourceGroupName, string accountName, string containerName, string api_version, string subscriptionId, LegalHold requestBody)
@@ -1031,10 +1207,20 @@ namespace MyNS
 		/// Gets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
 		/// BlobServices_GetServiceProperties subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/{BlobServicesName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="BlobServicesName">The name of the blob Service within the specified storage account. Blob Service Name must be 'default'</param>
 		/// <returns>OK -- returned the properties of a storage account’s Blob service.</returns>
 		public async Task<BlobServiceProperties> BlobServices_GetServicePropertiesAsync(string resourceGroupName, string accountName, string api_version, string subscriptionId, BlobServices_GetServicePropertiesBlobServicesName BlobServicesName)
@@ -1064,10 +1250,20 @@ namespace MyNS
 		/// Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
 		/// BlobServices_SetServiceProperties subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/{BlobServicesName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
-		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="BlobServicesName">The name of the blob Service within the specified storage account. Blob Service Name must be 'default'</param>
 		/// <param name="requestBody">The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.</param>
 		/// <returns>OK -- Sets The properties of a storage account’s Blob service successfully.</returns>

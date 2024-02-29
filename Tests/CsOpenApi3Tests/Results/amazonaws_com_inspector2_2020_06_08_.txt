@@ -7019,7 +7019,10 @@ namespace MyNS
 		/// Lists all tags attached to a given resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon resource number (ARN) of the resource to list tags of.</param>
+		/// <param name="resourceArn">The Amazon resource number (ARN) of the resource to list tags of.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7053,7 +7056,10 @@ namespace MyNS
 		/// Adds tags to a resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to apply a tag to.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to apply a tag to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7217,8 +7223,14 @@ namespace MyNS
 		/// Removes tags from a resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) for the resource to remove tags from.</param>
-		/// <param name="tagKeys">The tag keys to remove from the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) for the resource to remove tags from.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The tag keys to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

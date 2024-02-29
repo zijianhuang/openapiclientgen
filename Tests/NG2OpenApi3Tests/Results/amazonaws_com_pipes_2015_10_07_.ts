@@ -1969,6 +1969,7 @@ export namespace MyNS {
 		 * Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.
 		 * Post v1/pipes/{Name}
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreatePipeResponse} Success
 		 */
 		CreatePipe(Name: string, requestBody: CreatePipePostBody): Observable<CreatePipeResponse> {
@@ -1979,6 +1980,7 @@ export namespace MyNS {
 		 * Delete an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.
 		 * Delete v1/pipes/{Name}
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeletePipeResponse} Success
 		 */
 		DeletePipe(Name: string): Observable<DeletePipeResponse> {
@@ -1989,6 +1991,7 @@ export namespace MyNS {
 		 * Get the information about an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.
 		 * Get v1/pipes/{Name}
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribePipeResponse} Success
 		 */
 		DescribePipe(Name: string): Observable<DescribePipeResponse> {
@@ -1999,6 +2002,7 @@ export namespace MyNS {
 		 * <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that are included in the request are changed, the rest are unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields in these objects are updated atomically as one and override existing values. This is by design and means that if you don't specify an optional field in one of these Parameters objects, that field will be set to its system-default value after the update.</p> <p>For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"> Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
 		 * Put v1/pipes/{Name}
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdatePipeResponse} Success
 		 */
 		UpdatePipe(Name: string, requestBody: UpdatePipePutBody): Observable<UpdatePipeResponse> {
@@ -2011,10 +2015,15 @@ export namespace MyNS {
 		 * @param {PipeState} CurrentState The state the pipe is in.
 		 * @param {RequestedPipeState} DesiredState The state the pipe should be in.
 		 * @param {number} Limit The maximum number of pipes to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NamePrefix A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} NextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} SourcePrefix The prefix matching the pipe source.
+		 *     Min length: 1    Max length: 1600
 		 * @param {string} TargetPrefix The prefix matching the pipe target.
+		 *     Min length: 1    Max length: 1600
 		 * @return {ListPipesResponse} Success
 		 */
 		ListPipes(CurrentState: PipeState | null | undefined, DesiredState: RequestedPipeState | null | undefined, Limit: number | null | undefined, NamePrefix: string | null | undefined, NextToken: string | null | undefined, SourcePrefix: string | null | undefined, TargetPrefix: string | null | undefined): Observable<ListPipesResponse> {
@@ -2025,6 +2034,7 @@ export namespace MyNS {
 		 * Displays the tags associated with a pipe.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the pipe for which you want to view tags.
+		 *     Min length: 1    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2035,6 +2045,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified pipe. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> <p>You can use the <code>TagResource</code> action with a pipe that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the pipe. If you specify a tag key that is already associated with the pipe, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a pipe.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the pipe.
+		 *     Min length: 1    Max length: 1600
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2045,6 +2056,7 @@ export namespace MyNS {
 		 * Start an existing pipe.
 		 * Post v1/pipes/{Name}/start
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {StartPipeResponse} Success
 		 */
 		StartPipe(Name: string): Observable<StartPipeResponse> {
@@ -2055,6 +2067,7 @@ export namespace MyNS {
 		 * Stop an existing pipe.
 		 * Post v1/pipes/{Name}/stop
 		 * @param {string} Name The name of the pipe.
+		 *     Min length: 1    Max length: 64
 		 * @return {StopPipeResponse} Success
 		 */
 		StopPipe(Name: string): Observable<StopPipeResponse> {
@@ -2065,7 +2078,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified pipes.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the pipe.
+		 *     Min length: 1    Max length: 1600
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the pipe.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2077,8 +2092,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the pipe.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description?: string | null;
 
@@ -2087,8 +2102,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the enrichment resource.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Enrichment?: string | null;
 
@@ -2098,16 +2113,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role that allows the pipe to send data to the target.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RoleArn: string;
 
 		/**
 		 * The ARN of the source resource.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Source: string;
 
@@ -2120,8 +2135,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the target resource.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Target: string;
 
@@ -2132,8 +2147,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the pipe.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2142,24 +2157,24 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the enrichment resource.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Enrichment: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the role that allows the pipe to send data to the target.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the source resource.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Source: FormControl<string | null | undefined>,
 
@@ -2169,8 +2184,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the target resource.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Target: FormControl<string | null | undefined>,
 	}
@@ -2247,8 +2262,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the pipe.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description?: string | null;
 
@@ -2257,8 +2272,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the enrichment resource.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Enrichment?: string | null;
 
@@ -2268,8 +2283,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role that allows the pipe to send data to the target.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RoleArn: string;
 
@@ -2278,8 +2293,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the target resource.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Target?: string | null;
 
@@ -2290,8 +2305,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the pipe.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2300,23 +2315,23 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the enrichment resource.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Enrichment: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the role that allows the pipe to send data to the target.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the target resource.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Target: FormControl<string | null | undefined>,
 	}

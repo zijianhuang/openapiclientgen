@@ -4203,7 +4203,10 @@ namespace MyNS
 		/// AssociatePackage 2015-01-01/packages/associate/{PackageID}/{DomainName}
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</param>
-		/// <param name="DomainName">Name of the domain that you want to associate the package with.</param>
+		/// <param name="DomainName">Name of the domain that you want to associate the package with.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociatePackageResponse> AssociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4232,7 +4235,10 @@ namespace MyNS
 		/// Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		/// AuthorizeVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/authorizeVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain to provide access to.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain to provide access to.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(string DomainName, AuthorizeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4507,7 +4513,10 @@ namespace MyNS
 		/// Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.
 		/// DeleteElasticsearchDomain 2015-01-01/es/domain/{DomainName}
 		/// </summary>
-		/// <param name="DomainName">The name of the Elasticsearch domain that you want to permanently delete.</param>
+		/// <param name="DomainName">The name of the Elasticsearch domain that you want to permanently delete.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4541,7 +4550,10 @@ namespace MyNS
 		/// Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.
 		/// DescribeElasticsearchDomain 2015-01-01/es/domain/{DomainName}
 		/// </summary>
-		/// <param name="DomainName">The name of the Elasticsearch domain for which you want information.</param>
+		/// <param name="DomainName">The name of the Elasticsearch domain for which you want information.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4704,7 +4716,10 @@ namespace MyNS
 		/// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
 		/// DeleteVpcEndpoint 2015-01-01/es/vpcEndpoints/{VpcEndpointId}
 		/// </summary>
-		/// <param name="VpcEndpointId">The unique identifier of the endpoint to be deleted.</param>
+		/// <param name="VpcEndpointId">The unique identifier of the endpoint to be deleted.
+		/// Max length: 256
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(string VpcEndpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4738,7 +4753,10 @@ namespace MyNS
 		/// Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.
 		/// DescribeDomainAutoTunes 2015-01-01/es/domain/{DomainName}/autoTunes
 		/// </summary>
-		/// <param name="DomainName">Specifies the domain name for which you want Auto-Tune action details.</param>
+		/// <param name="DomainName">Specifies the domain name for which you want Auto-Tune action details.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4774,7 +4792,10 @@ namespace MyNS
 		/// Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.
 		/// DescribeDomainChangeProgress 2015-01-01/es/domain/{DomainName}/progress
 		/// </summary>
-		/// <param name="DomainName">The domain you want to get the progress information about.</param>
+		/// <param name="DomainName">The domain you want to get the progress information about.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="changeid">The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(string DomainName, string changeid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4809,7 +4830,10 @@ namespace MyNS
 		/// Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.
 		/// DescribeElasticsearchDomainConfig 2015-01-01/es/domain/{DomainName}/config
 		/// </summary>
-		/// <param name="DomainName">The Elasticsearch domain that you want to get information about.</param>
+		/// <param name="DomainName">The Elasticsearch domain that you want to get information about.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4843,7 +4867,10 @@ namespace MyNS
 		/// Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances.
 		/// UpdateElasticsearchDomainConfig 2015-01-01/es/domain/{DomainName}/config
 		/// </summary>
-		/// <param name="DomainName">The name of the Elasticsearch domain that you are updating. </param>
+		/// <param name="DomainName">The name of the Elasticsearch domain that you are updating. 
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(string DomainName, UpdateElasticsearchDomainConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4924,7 +4951,10 @@ namespace MyNS
 		/// Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
 		/// DescribeElasticsearchInstanceTypeLimits 2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}
 		/// </summary>
-		/// <param name="domainName"> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. </param>
+		/// <param name="domainName"> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. 
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="InstanceType"> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed. </param>
 		/// <param name="ElasticsearchVersion"> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. </param>
 		/// <returns>Success</returns>
@@ -5087,7 +5117,9 @@ namespace MyNS
 		/// DescribeReservedElasticsearchInstanceOfferings 2015-01-01/es/reservedInstanceOfferings
 		/// </summary>
 		/// <param name="offeringId">The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</param>
-		/// <param name="maxResults">Set this value to limit the number of results returned. If not specified, defaults to 100.</param>
+		/// <param name="maxResults">Set this value to limit the number of results returned. If not specified, defaults to 100.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5125,7 +5157,9 @@ namespace MyNS
 		/// DescribeReservedElasticsearchInstances 2015-01-01/es/reservedInstances
 		/// </summary>
 		/// <param name="reservationId">The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</param>
-		/// <param name="maxResults">Set this value to limit the number of results returned. If not specified, defaults to 100.</param>
+		/// <param name="maxResults">Set this value to limit the number of results returned. If not specified, defaults to 100.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5203,7 +5237,10 @@ namespace MyNS
 		/// DissociatePackage 2015-01-01/packages/dissociate/{PackageID}/{DomainName}
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</param>
-		/// <param name="DomainName">Name of the domain that you want to associate the package with.</param>
+		/// <param name="DomainName">Name of the domain that you want to associate the package with.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DissociatePackageResponse> DissociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5232,6 +5269,9 @@ namespace MyNS
 		/// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
 		/// GetCompatibleElasticsearchVersions 2015-01-01/es/compatibleVersions
 		/// </summary>
+		/// <param name="domainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5266,7 +5306,9 @@ namespace MyNS
 		/// GetPackageVersionHistory 2015-01-01/packages/{PackageID}/history
 		/// </summary>
 		/// <param name="PackageID">Returns an audit history of versions of the package.</param>
-		/// <param name="maxResults">Limits results to a maximum number of versions.</param>
+		/// <param name="maxResults">Limits results to a maximum number of versions.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5303,6 +5345,10 @@ namespace MyNS
 		/// Retrieves the complete history of the last 10 upgrades that were performed on the domain.
 		/// GetUpgradeHistory 2015-01-01/es/upgradeDomain/{DomainName}/history
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">Maximum: 100</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5338,6 +5384,9 @@ namespace MyNS
 		/// Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
 		/// GetUpgradeStatus 2015-01-01/es/upgradeDomain/{DomainName}/status
 		/// </summary>
+		/// <param name="DomainName">Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5406,7 +5455,9 @@ namespace MyNS
 		/// ListDomainsForPackage 2015-01-01/packages/{PackageID}/domains
 		/// </summary>
 		/// <param name="PackageID">The package for which to list domains.</param>
-		/// <param name="maxResults">Limits results to a maximum number of domains.</param>
+		/// <param name="maxResults">Limits results to a maximum number of domains.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5444,8 +5495,13 @@ namespace MyNS
 		/// ListElasticsearchInstanceTypes 2015-01-01/es/instanceTypes/{ElasticsearchVersion}
 		/// </summary>
 		/// <param name="ElasticsearchVersion">Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </param>
-		/// <param name="domainName">DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </param>
-		/// <param name="maxResults"> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </param>
+		/// <param name="domainName">DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. 
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults"> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. 
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5482,7 +5538,9 @@ namespace MyNS
 		/// List all supported Elasticsearch versions
 		/// ListElasticsearchVersions 2015-01-01/es/versions
 		/// </summary>
-		/// <param name="maxResults"> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </param>
+		/// <param name="maxResults"> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. 
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5518,8 +5576,13 @@ namespace MyNS
 		/// Lists all packages associated with the Amazon ES domain.
 		/// ListPackagesForDomain 2015-01-01/domain/{DomainName}/packages
 		/// </summary>
-		/// <param name="DomainName">The name of the domain for which you want to list associated packages.</param>
-		/// <param name="maxResults">Limits results to a maximum number of packages.</param>
+		/// <param name="DomainName">The name of the domain for which you want to list associated packages.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
+		/// <param name="maxResults">Limits results to a maximum number of packages.
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5590,7 +5653,10 @@ namespace MyNS
 		/// Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		/// ListVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/listVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain to retrieve access information for.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain to retrieve access information for.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="nextToken">Provides an identifier to allow retrieval of paginated results.</param>
 		/// <returns>Success</returns>
 		public async Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(string DomainName, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5625,7 +5691,10 @@ namespace MyNS
 		/// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
 		/// ListVpcEndpointsForDomain 2015-01-01/es/domain/{DomainName}/vpcEndpoints
 		/// </summary>
-		/// <param name="DomainName">Name of the ElasticSearch domain whose VPC endpoints are to be listed.</param>
+		/// <param name="DomainName">Name of the ElasticSearch domain whose VPC endpoints are to be listed.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <param name="nextToken">Provides an identifier to allow retrieval of paginated results.</param>
 		/// <returns>Success</returns>
 		public async Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(string DomainName, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5763,7 +5832,10 @@ namespace MyNS
 		/// Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 		/// RevokeVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/revokeVpcEndpointAccess
 		/// </summary>
-		/// <param name="DomainName">The name of the OpenSearch Service domain.</param>
+		/// <param name="DomainName">The name of the OpenSearch Service domain.
+		/// Max length: 28
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(string DomainName, RevokeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

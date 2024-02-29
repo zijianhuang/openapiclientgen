@@ -447,8 +447,10 @@ export namespace MyNS {
 		 * Get 2014-11-13/event-source-mappings/
 		 * @param {string} EventSource The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
 		 * @param {string} FunctionName The name of the AWS Lambda function.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Marker Optional string. An opaque pagination token returned from a previous <code>ListEventSources</code> operation. If present, specifies to continue the list from where the returning call left off. 
 		 * @param {number} MaxItems Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.
+		 *     Minimum: 1    Maximum: 10000
 		 * @return {ListEventSourcesResponse} Success
 		 */
 		ListEventSources(EventSource: string | null | undefined, FunctionName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListEventSourcesResponse> {
@@ -459,6 +461,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified Lambda function code and configuration.</p> <p>This operation requires permission for the <code>lambda:DeleteFunction</code> action.</p>
 		 * Delete 2014-11-13/functions/{FunctionName}
 		 * @param {string} FunctionName The Lambda function to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteFunction(FunctionName: string): Observable<HttpResponse<string>> {
@@ -469,6 +472,7 @@ export namespace MyNS {
 		 * <p>Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with <a>UploadFunction</a> so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.</p> <p>This operation requires permission for the <code>lambda:GetFunction</code> action.</p>
 		 * Get 2014-11-13/functions/{FunctionName}
 		 * @param {string} FunctionName The Lambda function name.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetFunctionResponse} Success
 		 */
 		GetFunction(FunctionName: string): Observable<GetFunctionResponse> {
@@ -499,6 +503,7 @@ export namespace MyNS {
 		 * <p>Returns the configuration information of the Lambda function. This the same information you provided as parameters when uploading the function by using <a>UploadFunction</a>.</p> <p>This operation requires permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
 		 * Get 2014-11-13/functions/{FunctionName}/configuration
 		 * @param {string} FunctionName The name of the Lambda function for which you want to retrieve the configuration information.
+		 *     Min length: 1    Max length: 64
 		 * @return {FunctionConfiguration} Success
 		 */
 		GetFunctionConfiguration(FunctionName: string): Observable<FunctionConfiguration> {
@@ -509,11 +514,15 @@ export namespace MyNS {
 		 * <p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
 		 * Put 2014-11-13/functions/{FunctionName}/configuration
 		 * @param {string} FunctionName The name of the Lambda function.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} Role The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes your function. 
 		 * @param {string} Handler The function that Lambda calls to begin executing your function. For Node.js, it is the <i>module-name.export</i> value in your function. 
 		 * @param {string} Description A short user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
+		 *     Min length: 0    Max length: 256
 		 * @param {number} Timeout The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
+		 *     Minimum: 1    Maximum: 60
 		 * @param {number} MemorySize The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, a database operation might need less memory compared to an image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.
+		 *     Minimum: 128    Maximum: 1024
 		 * @return {FunctionConfiguration} Success
 		 */
 		UpdateFunctionConfiguration(FunctionName: string, Role: string | null | undefined, Handler: string | null | undefined, Description: string | null | undefined, Timeout: number | null | undefined, MemorySize: number | null | undefined): Observable<FunctionConfiguration> {
@@ -524,6 +533,7 @@ export namespace MyNS {
 		 * <p>Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes the specified function asynchronously. To see the logs generated by the Lambda function execution, see the CloudWatch logs console.</p> <p>This operation requires permission for the <code>lambda:InvokeAsync</code> action.</p>
 		 * Post 2014-11-13/functions/{FunctionName}/invoke-async/
 		 * @param {string} FunctionName The Lambda function name.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		InvokeAsync(FunctionName: string, requestBody: InvokeAsyncPostBody): Observable<HttpResponse<string>> {
@@ -535,6 +545,7 @@ export namespace MyNS {
 		 * Get 2014-11-13/functions/
 		 * @param {string} Marker Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. 
 		 * @param {number} MaxItems Optional integer. Specifies the maximum number of AWS Lambda functions to return in response. This parameter value must be greater than 0.
+		 *     Minimum: 1    Maximum: 10000
 		 * @return {ListFunctionsResponse} Success
 		 */
 		ListFunctions(Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListFunctionsResponse> {
@@ -545,13 +556,17 @@ export namespace MyNS {
 		 * <p>Creates a new Lambda function or updates an existing function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the existing Lambda function is updated with the new code and metadata. </p> <p>This operation requires permission for the <code>lambda:UploadFunction</code> action.</p>
 		 * Put 2014-11-13/functions/{FunctionName}#Runtime&Role&Handler&Mode
 		 * @param {string} FunctionName The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>InvokeAsync</a>. 
+		 *     Min length: 1    Max length: 64
 		 * @param {Runtime} Runtime The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.
 		 * @param {string} Role The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. 
 		 * @param {string} Handler The function that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. 
 		 * @param {Mode} Mode How the Lambda function will be invoked. Lambda supports only the "event" mode. 
 		 * @param {string} Description A short, user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
+		 *     Min length: 0    Max length: 256
 		 * @param {number} Timeout The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
+		 *     Minimum: 1    Maximum: 60
 		 * @param {number} MemorySize The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, database operation might need less memory compared to image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.
+		 *     Minimum: 128    Maximum: 1024
 		 * @return {void} 
 		 */
 		UploadFunction(FunctionName: string, Runtime: Runtime, Role: string, Handler: string, Mode: Mode, Description: string | null | undefined, Timeout: number | null | undefined, MemorySize: number | null | undefined, requestBody: UploadFunctionPutBody): Observable<HttpResponse<string>> {
@@ -570,8 +585,8 @@ export namespace MyNS {
 		/**
 		 * The Lambda function to invoke when AWS Lambda detects an event on the stream.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		FunctionName: string;
 
@@ -581,7 +596,10 @@ export namespace MyNS {
 		 */
 		Role: string;
 
-		/** The largest number of records that AWS Lambda will give to your function in a single event. The default is 100 records. */
+		/**
+		 * The largest number of records that AWS Lambda will give to your function in a single event. The default is 100 records.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BatchSize?: number | null;
 
 		/** A map (key-value pairs) defining the configuration for AWS Lambda to use when reading the event source. Currently, AWS Lambda supports only the <code>InitialPositionInStream</code> key. The valid values are: "TRIM_HORIZON" and "LATEST". The default value is "TRIM_HORIZON". For more information, go to <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a> in the Amazon Kinesis Service API Reference. */
@@ -598,8 +616,8 @@ export namespace MyNS {
 		/**
 		 * The Lambda function to invoke when AWS Lambda detects an event on the stream.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 
@@ -609,7 +627,10 @@ export namespace MyNS {
 		 */
 		Role: FormControl<string | null | undefined>,
 
-		/** The largest number of records that AWS Lambda will give to your function in a single event. The default is 100 records. */
+		/**
+		 * The largest number of records that AWS Lambda will give to your function in a single event. The default is 100 records.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BatchSize: FormControl<number | null | undefined>,
 
 		/** A map (key-value pairs) defining the configuration for AWS Lambda to use when reading the event source. Currently, AWS Lambda supports only the <code>InitialPositionInStream</code> key. The valid values are: "TRIM_HORIZON" and "LATEST". The default value is "TRIM_HORIZON". For more information, go to <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a> in the Amazon Kinesis Service API Reference. */

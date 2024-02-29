@@ -131,8 +131,11 @@ export namespace MyNS {
 	/** The status of a subscription for a contact. */
 	export interface PublicSubscriptionStatus {
 
-		/** The ID of the brand that the subscription is associated with, if there is one. */
-		brandId?: number | null;
+		/**
+		 * The ID of the brand that the subscription is associated with, if there is one.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		brandId?: string | null;
 
 		/**
 		 * A description of the subscription.
@@ -177,8 +180,11 @@ export namespace MyNS {
 	/** The status of a subscription for a contact. */
 	export interface PublicSubscriptionStatusFormProperties {
 
-		/** The ID of the brand that the subscription is associated with, if there is one. */
-		brandId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the brand that the subscription is associated with, if there is one.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		brandId: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the subscription.
@@ -221,7 +227,7 @@ export namespace MyNS {
 	}
 	export function CreatePublicSubscriptionStatusFormGroup() {
 		return new FormGroup<PublicSubscriptionStatusFormProperties>({
-			brandId: new FormControl<number | null | undefined>(undefined),
+			brandId: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			legalBasis: new FormControl<PublicSubscriptionStatusLegalBasis | null | undefined>(undefined),

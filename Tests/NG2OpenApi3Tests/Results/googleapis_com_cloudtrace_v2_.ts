@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: "/instance_id": { "string_value": { "value": "my-instance" } } "/http/request_bytes": { "int_value": 300 } "example.com/myattribute": { "bool_value": false } */
 		attributeMap?: {[id: string]: AttributeValue };
 
-		/** The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid. */
+		/**
+		 * The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAttributesCount?: number | null;
 	}
 
@@ -40,7 +43,10 @@ export namespace MyNS {
 		/** A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: "/instance_id": { "string_value": { "value": "my-instance" } } "/http/request_bytes": { "int_value": 300 } "example.com/myattribute": { "bool_value": false } */
 		attributeMap: FormControl<{[id: string]: AttributeValue } | null | undefined>,
 
-		/** The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid. */
+		/**
+		 * The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAttributesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAttributesFormGroup() {
@@ -86,7 +92,10 @@ export namespace MyNS {
 	/** Represents a string that might be shortened to a specified length. */
 	export interface TruncatableString {
 
-		/** The number of bytes removed from the original string. If this value is 0, then the string was not shortened. */
+		/**
+		 * The number of bytes removed from the original string. If this value is 0, then the string was not shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truncatedByteCount?: number | null;
 
 		/** The shortened string. For example, if the original string is 500 bytes long and the limit of the string is 128 bytes, then `value` contains the first 128 bytes of the 500-byte string. Truncation always happens on a UTF8 character boundary. If there are multi-byte characters in the string, then the length of the shortened string might be less than the size limit. */
@@ -96,7 +105,10 @@ export namespace MyNS {
 	/** Represents a string that might be shortened to a specified length. */
 	export interface TruncatableStringFormProperties {
 
-		/** The number of bytes removed from the original string. If this value is 0, then the string was not shortened. */
+		/**
+		 * The number of bytes removed from the original string. If this value is 0, then the string was not shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truncatedByteCount: FormControl<number | null | undefined>,
 
 		/** The shortened string. For example, if the original string is 500 bytes long and the limit of the string is 128 bytes, then `value` contains the first 128 bytes of the 500-byte string. Truncation always happens on a UTF8 character boundary. If there are multi-byte characters in the string, then the length of the shortened string might be less than the size limit. */
@@ -134,7 +146,10 @@ export namespace MyNS {
 		/** A set of attributes as key-value pairs. */
 		attributes?: Attributes;
 
-		/** Optional. The number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans. */
+		/**
+		 * Optional. The number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childSpanCount?: number | null;
 
 		/** Represents a string that might be shortened to a specified length. */
@@ -177,7 +192,10 @@ export namespace MyNS {
 	/** A span represents a single operation within a trace. Spans can be nested to form a trace tree. Often, a trace contains a root span that describes the end-to-end latency, and one or more subspans for its sub-operations. A trace can also contain multiple root spans, or none at all. Spans do not need to be contiguous. There might be gaps or overlaps between spans in a trace. */
 	export interface SpanFormProperties {
 
-		/** Optional. The number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans. */
+		/**
+		 * Optional. The number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childSpanCount: FormControl<number | null | undefined>,
 
 		/** Required. The end time of the span. On the client side, this is the time kept by the local machine where the span execution ends. On the server side, this is the time when the server application handler stops running. */
@@ -219,7 +237,10 @@ export namespace MyNS {
 	/** A collection of links, which are references from this span to a span in the same or different trace. */
 	export interface Links {
 
-		/** The number of dropped links after the maximum size was enforced. If this value is 0, then no links were dropped. */
+		/**
+		 * The number of dropped links after the maximum size was enforced. If this value is 0, then no links were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedLinksCount?: number | null;
 
 		/** A collection of links. */
@@ -229,7 +250,10 @@ export namespace MyNS {
 	/** A collection of links, which are references from this span to a span in the same or different trace. */
 	export interface LinksFormProperties {
 
-		/** The number of dropped links after the maximum size was enforced. If this value is 0, then no links were dropped. */
+		/**
+		 * The number of dropped links after the maximum size was enforced. If this value is 0, then no links were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedLinksCount: FormControl<number | null | undefined>,
 	}
 	export function CreateLinksFormGroup() {
@@ -309,7 +333,10 @@ export namespace MyNS {
 	/** A collection of stack frames, which can be truncated. */
 	export interface StackFrames {
 
-		/** The number of stack frames that were dropped because there were too many stack frames. If this value is 0, then no stack frames were dropped. */
+		/**
+		 * The number of stack frames that were dropped because there were too many stack frames. If this value is 0, then no stack frames were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedFramesCount?: number | null;
 
 		/** Stack frames in this call stack. */
@@ -319,7 +346,10 @@ export namespace MyNS {
 	/** A collection of stack frames, which can be truncated. */
 	export interface StackFramesFormProperties {
 
-		/** The number of stack frames that were dropped because there were too many stack frames. If this value is 0, then no stack frames were dropped. */
+		/**
+		 * The number of stack frames that were dropped because there were too many stack frames. If this value is 0, then no stack frames were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedFramesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateStackFramesFormGroup() {
@@ -396,7 +426,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -409,7 +442,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -427,10 +463,16 @@ export namespace MyNS {
 	/** A collection of `TimeEvent`s. A `TimeEvent` is a time-stamped annotation on the span, consisting of either user-supplied key:value pairs, or details of a message sent/received between Spans. */
 	export interface TimeEvents {
 
-		/** The number of dropped annotations in all the included time events. If the value is 0, then no annotations were dropped. */
+		/**
+		 * The number of dropped annotations in all the included time events. If the value is 0, then no annotations were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAnnotationsCount?: number | null;
 
-		/** The number of dropped message events in all the included time events. If the value is 0, then no message events were dropped. */
+		/**
+		 * The number of dropped message events in all the included time events. If the value is 0, then no message events were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedMessageEventsCount?: number | null;
 
 		/** A collection of `TimeEvent`s. */
@@ -440,10 +482,16 @@ export namespace MyNS {
 	/** A collection of `TimeEvent`s. A `TimeEvent` is a time-stamped annotation on the span, consisting of either user-supplied key:value pairs, or details of a message sent/received between Spans. */
 	export interface TimeEventsFormProperties {
 
-		/** The number of dropped annotations in all the included time events. If the value is 0, then no annotations were dropped. */
+		/**
+		 * The number of dropped annotations in all the included time events. If the value is 0, then no annotations were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAnnotationsCount: FormControl<number | null | undefined>,
 
-		/** The number of dropped message events in all the included time events. If the value is 0, then no message events were dropped. */
+		/**
+		 * The number of dropped message events in all the included time events. If the value is 0, then no message events were dropped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedMessageEventsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeEventsFormGroup() {

@@ -257,7 +257,9 @@ export namespace MyNS {
 		 * @param {string} status The parameters of disk state.
 		 * @param {string} sharePath The source share which the resource belongs to.
 		 * @param {number} count The maximum number of disks to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start The start index of disks in query.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {Disks_ListReturn} OK -- The list of disks has been returned.
 		 */

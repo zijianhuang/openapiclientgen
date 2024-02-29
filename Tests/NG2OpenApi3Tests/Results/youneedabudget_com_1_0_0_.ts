@@ -8,14 +8,16 @@ export namespace MyNS {
 		/**
 		 * The current balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: number;
+		balance: string;
 
 		/**
 		 * The current cleared balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		cleared_balance: number;
+		cleared_balance: string;
 
 		/**
 		 * Whether this account is closed or not
@@ -26,8 +28,11 @@ export namespace MyNS {
 		debt_interest_rates?: LoanAccountPeriodicValue;
 		debt_minimum_payments?: LoanAccountPeriodicValue;
 
-		/** The original debt/loan account balance, specified in milliunits format. */
-		debt_original_balance?: number | null;
+		/**
+		 * The original debt/loan account balance, specified in milliunits format.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		debt_original_balance?: string | null;
 
 		/**
 		 * Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.
@@ -72,22 +77,25 @@ export namespace MyNS {
 		/**
 		 * The current uncleared balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uncleared_balance: number;
+		uncleared_balance: string;
 	}
 	export interface AccountFormProperties {
 
 		/**
 		 * The current balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: FormControl<number | null | undefined>,
+		balance: FormControl<string | null | undefined>,
 
 		/**
 		 * The current cleared balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		cleared_balance: FormControl<number | null | undefined>,
+		cleared_balance: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether this account is closed or not
@@ -95,8 +103,11 @@ export namespace MyNS {
 		 */
 		closed: FormControl<boolean | null | undefined>,
 
-		/** The original debt/loan account balance, specified in milliunits format. */
-		debt_original_balance: FormControl<number | null | undefined>,
+		/**
+		 * The original debt/loan account balance, specified in milliunits format.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		debt_original_balance: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.
@@ -141,15 +152,16 @@ export namespace MyNS {
 		/**
 		 * The current uncleared balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uncleared_balance: FormControl<number | null | undefined>,
+		uncleared_balance: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			balance: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			cleared_balance: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			balance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			cleared_balance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			closed: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			debt_original_balance: new FormControl<number | null | undefined>(undefined),
+			debt_original_balance: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			direct_import_in_error: new FormControl<boolean | null | undefined>(undefined),
 			direct_import_linked: new FormControl<boolean | null | undefined>(undefined),
@@ -160,7 +172,7 @@ export namespace MyNS {
 			on_budget: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			transfer_payee_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<AccountType | null | undefined>(undefined, [Validators.required]),
-			uncleared_balance: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uncleared_balance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -224,20 +236,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface AccountsResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountsResponseDataFormGroup() {
 		return new FormGroup<AccountsResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -272,20 +286,23 @@ export namespace MyNS {
 		/**
 		 * Activity amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		activity: number;
+		activity: string;
 
 		/**
 		 * Balance in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: number;
+		balance: string;
 
 		/**
 		 * Budgeted amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: number;
+		budgeted: string;
 
 		/** Required */
 		category_group_id: string;
@@ -296,41 +313,74 @@ export namespace MyNS {
 		 */
 		deleted: boolean;
 
-		/** The goal cadence */
+		/**
+		 * The goal cadence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_cadence?: number | null;
 
-		/** The goal cadence frequency */
+		/**
+		 * The goal cadence frequency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_cadence_frequency?: number | null;
 
-		/** The month a goal was created */
+		/**
+		 * The month a goal was created
+		 * Type: DateOnly
+		 */
 		goal_creation_month?: Date | null;
 
-		/** The day of the goal */
+		/**
+		 * The day of the goal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_day?: number | null;
 
-		/** The number of months, including the current month, left in the current goal period. */
+		/**
+		 * The number of months, including the current month, left in the current goal period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_months_to_budget?: number | null;
 
-		/** The total amount funded towards the goal within the current goal period. */
-		goal_overall_funded?: number | null;
+		/**
+		 * The total amount funded towards the goal within the current goal period.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_overall_funded?: string | null;
 
-		/** The amount of funding still needed to complete the goal within the current goal period. */
-		goal_overall_left?: number | null;
+		/**
+		 * The amount of funding still needed to complete the goal within the current goal period.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_overall_left?: string | null;
 
-		/** The percentage completion of the goal */
+		/**
+		 * The percentage completion of the goal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_percentage_complete?: number | null;
 
-		/** The goal target amount in milliunits */
-		goal_target?: number | null;
+		/**
+		 * The goal target amount in milliunits
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_target?: string | null;
 
-		/** The original target month for the goal to be completed.  Only some goal types specify this date. */
+		/**
+		 * The original target month for the goal to be completed.  Only some goal types specify this date.
+		 * Type: DateOnly
+		 */
 		goal_target_month?: Date | null;
 
 		/** The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending') */
 		goal_type?: CategoryGoal_type | null;
 
-		/** The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month. */
-		goal_under_funded?: number | null;
+		/**
+		 * The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_under_funded?: string | null;
 
 		/**
 		 * Whether or not the category is hidden
@@ -353,20 +403,23 @@ export namespace MyNS {
 		/**
 		 * Activity amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		activity: FormControl<number | null | undefined>,
+		activity: FormControl<string | null | undefined>,
 
 		/**
 		 * Balance in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: FormControl<number | null | undefined>,
+		balance: FormControl<string | null | undefined>,
 
 		/**
 		 * Budgeted amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: FormControl<number | null | undefined>,
+		budgeted: FormControl<string | null | undefined>,
 
 		/** Required */
 		category_group_id: FormControl<string | null | undefined>,
@@ -377,41 +430,74 @@ export namespace MyNS {
 		 */
 		deleted: FormControl<boolean | null | undefined>,
 
-		/** The goal cadence */
+		/**
+		 * The goal cadence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_cadence: FormControl<number | null | undefined>,
 
-		/** The goal cadence frequency */
+		/**
+		 * The goal cadence frequency
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_cadence_frequency: FormControl<number | null | undefined>,
 
-		/** The month a goal was created */
+		/**
+		 * The month a goal was created
+		 * Type: DateOnly
+		 */
 		goal_creation_month: FormControl<Date | null | undefined>,
 
-		/** The day of the goal */
+		/**
+		 * The day of the goal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_day: FormControl<number | null | undefined>,
 
-		/** The number of months, including the current month, left in the current goal period. */
+		/**
+		 * The number of months, including the current month, left in the current goal period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_months_to_budget: FormControl<number | null | undefined>,
 
-		/** The total amount funded towards the goal within the current goal period. */
-		goal_overall_funded: FormControl<number | null | undefined>,
+		/**
+		 * The total amount funded towards the goal within the current goal period.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_overall_funded: FormControl<string | null | undefined>,
 
-		/** The amount of funding still needed to complete the goal within the current goal period. */
-		goal_overall_left: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funding still needed to complete the goal within the current goal period.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_overall_left: FormControl<string | null | undefined>,
 
-		/** The percentage completion of the goal */
+		/**
+		 * The percentage completion of the goal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goal_percentage_complete: FormControl<number | null | undefined>,
 
-		/** The goal target amount in milliunits */
-		goal_target: FormControl<number | null | undefined>,
+		/**
+		 * The goal target amount in milliunits
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_target: FormControl<string | null | undefined>,
 
-		/** The original target month for the goal to be completed.  Only some goal types specify this date. */
+		/**
+		 * The original target month for the goal to be completed.  Only some goal types specify this date.
+		 * Type: DateOnly
+		 */
 		goal_target_month: FormControl<Date | null | undefined>,
 
 		/** The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending') */
 		goal_type: FormControl<CategoryGoal_type | null | undefined>,
 
-		/** The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month. */
-		goal_under_funded: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		goal_under_funded: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the category is hidden
@@ -431,9 +517,9 @@ export namespace MyNS {
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			activity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			balance: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			activity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			balance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_group_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			goal_cadence: new FormControl<number | null | undefined>(undefined),
@@ -441,13 +527,13 @@ export namespace MyNS {
 			goal_creation_month: new FormControl<Date | null | undefined>(undefined),
 			goal_day: new FormControl<number | null | undefined>(undefined),
 			goal_months_to_budget: new FormControl<number | null | undefined>(undefined),
-			goal_overall_funded: new FormControl<number | null | undefined>(undefined),
-			goal_overall_left: new FormControl<number | null | undefined>(undefined),
+			goal_overall_funded: new FormControl<string | null | undefined>(undefined),
+			goal_overall_left: new FormControl<string | null | undefined>(undefined),
 			goal_percentage_complete: new FormControl<number | null | undefined>(undefined),
-			goal_target: new FormControl<number | null | undefined>(undefined),
+			goal_target: new FormControl<string | null | undefined>(undefined),
 			goal_target_month: new FormControl<Date | null | undefined>(undefined),
 			goal_type: new FormControl<CategoryGoal_type | null | undefined>(undefined),
-			goal_under_funded: new FormControl<number | null | undefined>(undefined),
+			goal_under_funded: new FormControl<string | null | undefined>(undefined),
 			hidden: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -521,14 +607,14 @@ export namespace MyNS {
 	}
 	export function CreateMonthDetailFormGroup() {
 		return new FormGroup<MonthDetailFormProperties>({
-			activity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			activity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			age_of_money: new FormControl<number | null | undefined>(undefined),
-			budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			income: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			income: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			month: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			note: new FormControl<string | null | undefined>(undefined),
-			to_be_budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			to_be_budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -633,8 +719,9 @@ export namespace MyNS {
 		/**
 		 * The scheduled subtransaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: number;
+		amount: string;
 		category_id?: string | null;
 
 		/**
@@ -659,8 +746,9 @@ export namespace MyNS {
 		/**
 		 * The scheduled subtransaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 		category_id: FormControl<string | null | undefined>,
 
 		/**
@@ -682,7 +770,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduledSubTransactionFormGroup() {
 		return new FormGroup<ScheduledSubTransactionFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -702,19 +790,22 @@ export namespace MyNS {
 		/**
 		 * The scheduled transaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: number;
+		amount: string;
 		category_id?: string | null;
 
 		/**
 		 * The first date for which the Scheduled Transaction was scheduled.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_first: Date;
 
 		/**
 		 * The next date for which the Scheduled Transaction is scheduled.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_next: Date;
 
@@ -746,19 +837,22 @@ export namespace MyNS {
 		/**
 		 * The scheduled transaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 		category_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The first date for which the Scheduled Transaction was scheduled.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_first: FormControl<Date | null | undefined>,
 
 		/**
 		 * The next date for which the Scheduled Transaction is scheduled.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_next: FormControl<Date | null | undefined>,
 
@@ -785,7 +879,7 @@ export namespace MyNS {
 	export function CreateScheduledTransactionSummaryFormGroup() {
 		return new FormGroup<ScheduledTransactionSummaryFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			date_first: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			date_next: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -809,8 +903,9 @@ export namespace MyNS {
 		/**
 		 * The subtransaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: number;
+		amount: string;
 		category_id?: string | null;
 		category_name?: string | null;
 
@@ -840,8 +935,9 @@ export namespace MyNS {
 		/**
 		 * The subtransaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 		category_id: FormControl<string | null | undefined>,
 		category_name: FormControl<string | null | undefined>,
 
@@ -868,7 +964,7 @@ export namespace MyNS {
 	}
 	export function CreateSubTransactionFormGroup() {
 		return new FormGroup<SubTransactionFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			category_name: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
@@ -891,8 +987,9 @@ export namespace MyNS {
 		/**
 		 * The transaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: number;
+		amount: string;
 
 		/**
 		 * Whether or not the transaction is approved
@@ -910,6 +1007,7 @@ export namespace MyNS {
 		/**
 		 * The transaction date in ISO format (e.g. 2016-12-01)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -956,8 +1054,9 @@ export namespace MyNS {
 		/**
 		 * The transaction amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the transaction is approved
@@ -975,6 +1074,7 @@ export namespace MyNS {
 		/**
 		 * The transaction date in ISO format (e.g. 2016-12-01)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -1016,7 +1116,7 @@ export namespace MyNS {
 	export function CreateTransactionSummaryFormGroup() {
 		return new FormGroup<TransactionSummaryFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			approved: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			cleared: new FormControl<TransactionSummaryCleared | null | undefined>(undefined, [Validators.required]),
@@ -1064,20 +1164,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface BudgetDetailResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateBudgetDetailResponseDataFormGroup() {
 		return new FormGroup<BudgetDetailResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1111,7 +1213,10 @@ export namespace MyNS {
 		/** Required */
 		currency_symbol: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		decimal_digits: number;
 
 		/** Required */
@@ -1139,7 +1244,10 @@ export namespace MyNS {
 		/** Required */
 		currency_symbol: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		decimal_digits: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1232,7 +1340,10 @@ export namespace MyNS {
 		/** The date format setting for the budget.  In some cases the format will not be available and will be specified as null. */
 		date_format?: DateFormat;
 
-		/** The earliest budget month */
+		/**
+		 * The earliest budget month
+		 * Type: DateOnly
+		 */
 		first_month?: Date | null;
 
 		/** Required */
@@ -1241,7 +1352,10 @@ export namespace MyNS {
 		/** The last time any changes were made to the budget from either a web or mobile client */
 		last_modified_on?: Date | null;
 
-		/** The latest budget month */
+		/**
+		 * The latest budget month
+		 * Type: DateOnly
+		 */
 		last_month?: Date | null;
 
 		/** Required */
@@ -1249,7 +1363,10 @@ export namespace MyNS {
 	}
 	export interface BudgetSummaryFormProperties {
 
-		/** The earliest budget month */
+		/**
+		 * The earliest budget month
+		 * Type: DateOnly
+		 */
 		first_month: FormControl<Date | null | undefined>,
 
 		/** Required */
@@ -1258,7 +1375,10 @@ export namespace MyNS {
 		/** The last time any changes were made to the budget from either a web or mobile client */
 		last_modified_on: FormControl<Date | null | undefined>,
 
-		/** The latest budget month */
+		/**
+		 * The latest budget month
+		 * Type: DateOnly
+		 */
 		last_month: FormControl<Date | null | undefined>,
 
 		/** Required */
@@ -1394,20 +1514,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface CategoriesResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoriesResponseDataFormGroup() {
 		return new FormGroup<CategoriesResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1541,7 +1663,7 @@ export namespace MyNS {
 	export function CreateHybridTransactionFormGroup() {
 		return new FormGroup<HybridTransactionFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			approved: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			cleared: new FormControl<TransactionSummaryCleared | null | undefined>(undefined, [Validators.required]),
@@ -1584,20 +1706,26 @@ export namespace MyNS {
 
 	export interface HybridTransactionsResponseData {
 
-		/** The knowledge of the server */
-		server_knowledge?: number | null;
+		/**
+		 * The knowledge of the server
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		server_knowledge?: string | null;
 
 		/** Required */
 		transactions: Array<HybridTransaction>;
 	}
 	export interface HybridTransactionsResponseDataFormProperties {
 
-		/** The knowledge of the server */
-		server_knowledge: FormControl<number | null | undefined>,
+		/**
+		 * The knowledge of the server
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateHybridTransactionsResponseDataFormGroup() {
 		return new FormGroup<HybridTransactionsResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined),
+			server_knowledge: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1649,20 +1777,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface MonthSummariesResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateMonthSummariesResponseDataFormGroup() {
 		return new FormGroup<MonthSummariesResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1672,17 +1802,22 @@ export namespace MyNS {
 		/**
 		 * The total amount of transactions in the month, excluding those categorized to 'Inflow: Ready to Assign'
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		activity: number;
+		activity: string;
 
-		/** The Age of Money as of the month */
+		/**
+		 * The Age of Money as of the month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age_of_money?: number | null;
 
 		/**
 		 * The total amount budgeted in the month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: number;
+		budgeted: string;
 
 		/**
 		 * Whether or not the month has been deleted.  Deleted months will only be included in delta requests.
@@ -1693,35 +1828,45 @@ export namespace MyNS {
 		/**
 		 * The total amount of transactions categorized to 'Inflow: Ready to Assign' in the month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		income: number;
+		income: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		month: Date;
 		note?: string | null;
 
 		/**
 		 * The available amount for 'Ready to Assign'
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		to_be_budgeted: number;
+		to_be_budgeted: string;
 	}
 	export interface MonthSummaryFormProperties {
 
 		/**
 		 * The total amount of transactions in the month, excluding those categorized to 'Inflow: Ready to Assign'
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		activity: FormControl<number | null | undefined>,
+		activity: FormControl<string | null | undefined>,
 
-		/** The Age of Money as of the month */
+		/**
+		 * The Age of Money as of the month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age_of_money: FormControl<number | null | undefined>,
 
 		/**
 		 * The total amount budgeted in the month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: FormControl<number | null | undefined>,
+		budgeted: FormControl<string | null | undefined>,
 
 		/**
 		 * Whether or not the month has been deleted.  Deleted months will only be included in delta requests.
@@ -1732,29 +1877,34 @@ export namespace MyNS {
 		/**
 		 * The total amount of transactions categorized to 'Inflow: Ready to Assign' in the month
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		income: FormControl<number | null | undefined>,
+		income: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		month: FormControl<Date | null | undefined>,
 		note: FormControl<string | null | undefined>,
 
 		/**
 		 * The available amount for 'Ready to Assign'
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		to_be_budgeted: FormControl<number | null | undefined>,
+		to_be_budgeted: FormControl<string | null | undefined>,
 	}
 	export function CreateMonthSummaryFormGroup() {
 		return new FormGroup<MonthSummaryFormProperties>({
-			activity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			activity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			age_of_money: new FormControl<number | null | undefined>(undefined),
-			budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			deleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			income: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			income: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			month: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			note: new FormControl<string | null | undefined>(undefined),
-			to_be_budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			to_be_budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1777,20 +1927,22 @@ export namespace MyNS {
 		/**
 		 * Budgeted amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: number;
+		budgeted: string;
 	}
 	export interface SaveMonthCategoryFormProperties {
 
 		/**
 		 * Budgeted amount in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		budgeted: FormControl<number | null | undefined>,
+		budgeted: FormControl<string | null | undefined>,
 	}
 	export function CreateSaveMonthCategoryFormGroup() {
 		return new FormGroup<SaveMonthCategoryFormProperties>({
-			budgeted: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			budgeted: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1917,20 +2069,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface PayeesResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreatePayeesResponseDataFormGroup() {
 		return new FormGroup<PayeesResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1953,8 +2107,9 @@ export namespace MyNS {
 		/**
 		 * The current balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: number;
+		balance: string;
 
 		/**
 		 * The name of the account
@@ -1973,8 +2128,9 @@ export namespace MyNS {
 		/**
 		 * The current balance of the account in milliunits format
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		balance: FormControl<number | null | undefined>,
+		balance: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the account
@@ -1990,7 +2146,7 @@ export namespace MyNS {
 	}
 	export function CreateSaveAccountFormGroup() {
 		return new FormGroup<SaveAccountFormProperties>({
-			balance: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			balance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<AccountType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2043,20 +2199,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface SaveCategoryResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateSaveCategoryResponseDataFormGroup() {
 		return new FormGroup<SaveCategoryResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2066,8 +2224,9 @@ export namespace MyNS {
 		/**
 		 * The subtransaction amount in milliunits format.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: number;
+		amount: string;
 
 		/** The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied. */
 		category_id?: string | null;
@@ -2089,8 +2248,9 @@ export namespace MyNS {
 		/**
 		 * The subtransaction amount in milliunits format.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 
 		/** The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied. */
 		category_id: FormControl<string | null | undefined>,
@@ -2109,7 +2269,7 @@ export namespace MyNS {
 	}
 	export function CreateSaveSubTransactionFormGroup() {
 		return new FormGroup<SaveSubTransactionFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			memo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			payee_id: new FormControl<string | null | undefined>(undefined),
@@ -2121,8 +2281,11 @@ export namespace MyNS {
 	export interface SaveTransactionWithOptionalFields {
 		account_id?: string | null;
 
-		/** The transaction amount in milliunits format.  Split transaction amounts cannot be changed and if a different amount is supplied it will be ignored. */
-		amount?: number | null;
+		/**
+		 * The transaction amount in milliunits format.  Split transaction amounts cannot be changed and if a different amount is supplied it will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** Whether or not the transaction is approved.  If not supplied, transaction will be unapproved by default. */
 		approved?: boolean | null;
@@ -2133,7 +2296,10 @@ export namespace MyNS {
 		/** The cleared status of the transaction */
 		cleared?: TransactionSummaryCleared | null;
 
-		/** The transaction date in ISO format (e.g. 2016-12-01).  Future dates (scheduled transactions) are not permitted.  Split transaction dates cannot be changed and if a different date is supplied it will be ignored. */
+		/**
+		 * The transaction date in ISO format (e.g. 2016-12-01).  Future dates (scheduled transactions) are not permitted.  Split transaction dates cannot be changed and if a different date is supplied it will be ignored.
+		 * Type: DateOnly
+		 */
 		date?: Date | null;
 
 		/** The transaction flag */
@@ -2163,8 +2329,11 @@ export namespace MyNS {
 	export interface SaveTransactionWithOptionalFieldsFormProperties {
 		account_id: FormControl<string | null | undefined>,
 
-		/** The transaction amount in milliunits format.  Split transaction amounts cannot be changed and if a different amount is supplied it will be ignored. */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The transaction amount in milliunits format.  Split transaction amounts cannot be changed and if a different amount is supplied it will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** Whether or not the transaction is approved.  If not supplied, transaction will be unapproved by default. */
 		approved: FormControl<boolean | null | undefined>,
@@ -2175,7 +2344,10 @@ export namespace MyNS {
 		/** The cleared status of the transaction */
 		cleared: FormControl<TransactionSummaryCleared | null | undefined>,
 
-		/** The transaction date in ISO format (e.g. 2016-12-01).  Future dates (scheduled transactions) are not permitted.  Split transaction dates cannot be changed and if a different date is supplied it will be ignored. */
+		/**
+		 * The transaction date in ISO format (e.g. 2016-12-01).  Future dates (scheduled transactions) are not permitted.  Split transaction dates cannot be changed and if a different date is supplied it will be ignored.
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
 		/** The transaction flag */
@@ -2202,7 +2374,7 @@ export namespace MyNS {
 	export function CreateSaveTransactionWithOptionalFieldsFormGroup() {
 		return new FormGroup<SaveTransactionWithOptionalFieldsFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined),
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			approved: new FormControl<boolean | null | undefined>(undefined),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			cleared: new FormControl<TransactionSummaryCleared | null | undefined>(undefined),
@@ -2239,8 +2411,9 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 		transaction?: TransactionDetail;
 
 		/**
@@ -2257,12 +2430,13 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateSaveTransactionsResponseDataFormGroup() {
 		return new FormGroup<SaveTransactionsResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2294,7 +2468,7 @@ export namespace MyNS {
 	export function CreateTransactionDetailFormGroup() {
 		return new FormGroup<TransactionDetailFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			approved: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			cleared: new FormControl<TransactionSummaryCleared | null | undefined>(undefined, [Validators.required]),
@@ -2345,7 +2519,7 @@ export namespace MyNS {
 	export function CreateScheduledTransactionDetailFormGroup() {
 		return new FormGroup<ScheduledTransactionDetailFormProperties>({
 			account_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category_id: new FormControl<string | null | undefined>(undefined),
 			date_first: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			date_next: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -2410,20 +2584,22 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 	}
 	export interface ScheduledTransactionsResponseDataFormProperties {
 
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduledTransactionsResponseDataFormGroup() {
 		return new FormGroup<ScheduledTransactionsResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2501,8 +2677,9 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: number;
+		server_knowledge: string;
 
 		/** Required */
 		transactions: Array<TransactionDetail>;
@@ -2512,12 +2689,13 @@ export namespace MyNS {
 		/**
 		 * The knowledge of the server
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		server_knowledge: FormControl<number | null | undefined>,
+		server_knowledge: FormControl<string | null | undefined>,
 	}
 	export function CreateTransactionsResponseDataFormGroup() {
 		return new FormGroup<TransactionsResponseDataFormProperties>({
-			server_knowledge: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			server_knowledge: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2586,10 +2764,11 @@ export namespace MyNS {
 		 * Returns a single budget with all related entities.  This resource is effectively a full budget export.
 		 * Get budgets/{budget_id}
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BudgetDetailResponse} The requested budget
 		 */
-		GetBudgetById(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<BudgetDetailResponse> {
+		GetBudgetById(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<BudgetDetailResponse> {
 			return this.http.get<BudgetDetailResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2598,10 +2777,11 @@ export namespace MyNS {
 		 * Returns all accounts
 		 * Get budgets/{budget_id}/accounts
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AccountsResponse} The list of requested accounts
 		 */
-		GetAccounts(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<AccountsResponse> {
+		GetAccounts(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<AccountsResponse> {
 			return this.http.get<AccountsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/accounts&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2636,11 +2816,13 @@ export namespace MyNS {
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {string} account_id The id of the account
 		 * @param {Date} since_date If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
+		 *     Type: DateOnly
 		 * @param {GetTransactionsByAccountType} type If specified, only transactions of the specified type will be included. "uncategorized" and "unapproved" are currently supported.
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TransactionsResponse} The list of requested transactions
 		 */
-		GetTransactionsByAccount(budget_id: string, account_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: number | null | undefined): Observable<TransactionsResponse> {
+		GetTransactionsByAccount(budget_id: string, account_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: string | null | undefined): Observable<TransactionsResponse> {
 			return this.http.get<TransactionsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/accounts/' + (account_id == null ? '' : encodeURIComponent(account_id)) + '/transactions&since_date=' + since_date?.toISOString() + '&type=' + type + '&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2649,10 +2831,11 @@ export namespace MyNS {
 		 * Returns all categories grouped by category group.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).
 		 * Get budgets/{budget_id}/categories
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CategoriesResponse} The categories grouped by category group
 		 */
-		GetCategories(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<CategoriesResponse> {
+		GetCategories(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<CategoriesResponse> {
 			return this.http.get<CategoriesResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/categories&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2675,11 +2858,13 @@ export namespace MyNS {
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {string} category_id The id of the category
 		 * @param {Date} since_date If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
+		 *     Type: DateOnly
 		 * @param {GetTransactionsByAccountType} type If specified, only transactions of the specified type will be included. "uncategorized" and "unapproved" are currently supported.
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {HybridTransactionsResponse} The list of requested transactions
 		 */
-		GetTransactionsByCategory(budget_id: string, category_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: number | null | undefined): Observable<HybridTransactionsResponse> {
+		GetTransactionsByCategory(budget_id: string, category_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: string | null | undefined): Observable<HybridTransactionsResponse> {
 			return this.http.get<HybridTransactionsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/categories/' + (category_id == null ? '' : encodeURIComponent(category_id)) + '/transactions&since_date=' + since_date?.toISOString() + '&type=' + type + '&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2688,10 +2873,11 @@ export namespace MyNS {
 		 * Returns all budget months
 		 * Get budgets/{budget_id}/months
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {MonthSummariesResponse} The list of budget months
 		 */
-		GetBudgetMonths(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<MonthSummariesResponse> {
+		GetBudgetMonths(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<MonthSummariesResponse> {
 			return this.http.get<MonthSummariesResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/months&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2701,6 +2887,7 @@ export namespace MyNS {
 		 * Get budgets/{budget_id}/months/{month}
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {Date} month The budget month in ISO format (e.g. 2016-12-01) ("current" can also be used to specify the current calendar month (UTC))
+		 *     Type: DateOnly
 		 * @return {MonthDetailResponse} The budget month detail
 		 */
 		GetBudgetMonth(budget_id: string, month: Date): Observable<MonthDetailResponse> {
@@ -2713,6 +2900,7 @@ export namespace MyNS {
 		 * Get budgets/{budget_id}/months/{month}/categories/{category_id}
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {Date} month The budget month in ISO format (e.g. 2016-12-01) ("current" can also be used to specify the current calendar month (UTC))
+		 *     Type: DateOnly
 		 * @param {string} category_id The id of the category
 		 * @return {CategoryResponse} The requested month category
 		 */
@@ -2726,6 +2914,7 @@ export namespace MyNS {
 		 * Patch budgets/{budget_id}/months/{month}/categories/{category_id}
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {Date} month The budget month in ISO format (e.g. 2016-12-01) ("current" can also be used to specify the current calendar month (UTC))
+		 *     Type: DateOnly
 		 * @param {string} category_id The id of the category
 		 * @param {PatchMonthCategoryWrapper} requestBody The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
 		 * @return {SaveCategoryResponse} The month category was successfully updated
@@ -2762,10 +2951,11 @@ export namespace MyNS {
 		 * Returns all payees
 		 * Get budgets/{budget_id}/payees
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PayeesResponse} The requested list of payees
 		 */
-		GetPayees(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<PayeesResponse> {
+		GetPayees(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<PayeesResponse> {
 			return this.http.get<PayeesResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/payees&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2800,11 +2990,13 @@ export namespace MyNS {
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {string} payee_id The id of the payee
 		 * @param {Date} since_date If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
+		 *     Type: DateOnly
 		 * @param {GetTransactionsByAccountType} type If specified, only transactions of the specified type will be included. "uncategorized" and "unapproved" are currently supported.
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {HybridTransactionsResponse} The list of requested transactions
 		 */
-		GetTransactionsByPayee(budget_id: string, payee_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: number | null | undefined): Observable<HybridTransactionsResponse> {
+		GetTransactionsByPayee(budget_id: string, payee_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: string | null | undefined): Observable<HybridTransactionsResponse> {
 			return this.http.get<HybridTransactionsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/payees/' + (payee_id == null ? '' : encodeURIComponent(payee_id)) + '/transactions&since_date=' + since_date?.toISOString() + '&type=' + type + '&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2813,10 +3005,11 @@ export namespace MyNS {
 		 * Returns all scheduled transactions
 		 * Get budgets/{budget_id}/scheduled_transactions
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ScheduledTransactionsResponse} The list of requested scheduled transactions
 		 */
-		GetScheduledTransactions(budget_id: string, last_knowledge_of_server: number | null | undefined): Observable<ScheduledTransactionsResponse> {
+		GetScheduledTransactions(budget_id: string, last_knowledge_of_server: string | null | undefined): Observable<ScheduledTransactionsResponse> {
 			return this.http.get<ScheduledTransactionsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/scheduled_transactions&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 
@@ -2849,11 +3042,13 @@ export namespace MyNS {
 		 * Get budgets/{budget_id}/transactions
 		 * @param {string} budget_id The id of the budget. "last-used" can be used to specify the last used budget and "default" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 		 * @param {Date} since_date If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
+		 *     Type: DateOnly
 		 * @param {GetTransactionsByAccountType} type If specified, only transactions of the specified type will be included. "uncategorized" and "unapproved" are currently supported.
-		 * @param {number} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 * @param {string} last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TransactionsResponse} The list of requested transactions
 		 */
-		GetTransactions(budget_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: number | null | undefined): Observable<TransactionsResponse> {
+		GetTransactions(budget_id: string, since_date: Date | null | undefined, type: GetTransactionsByAccountType | null | undefined, last_knowledge_of_server: string | null | undefined): Observable<TransactionsResponse> {
 			return this.http.get<TransactionsResponse>(this.baseUri + 'budgets/' + (budget_id == null ? '' : encodeURIComponent(budget_id)) + '/transactions&since_date=' + since_date?.toISOString() + '&type=' + type + '&last_knowledge_of_server=' + last_knowledge_of_server, {});
 		}
 

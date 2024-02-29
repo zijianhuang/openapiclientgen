@@ -516,26 +516,38 @@ export namespace MyNS {
 	/** Message contains details about publisher-set frequency caps of the delivery. */
 	export interface FrequencyCap {
 
-		/** The maximum number of impressions that can be served to a user within the specified time period. */
+		/**
+		 * The maximum number of impressions that can be served to a user within the specified time period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxImpressions?: number | null;
 
 		/** The time unit. Along with num_time_units defines the amount of time over which impressions per user are counted and capped. */
 		timeUnitType?: FrequencyCapTimeUnitType | null;
 
-		/** The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped. */
+		/**
+		 * The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeUnitsCount?: number | null;
 	}
 
 	/** Message contains details about publisher-set frequency caps of the delivery. */
 	export interface FrequencyCapFormProperties {
 
-		/** The maximum number of impressions that can be served to a user within the specified time period. */
+		/**
+		 * The maximum number of impressions that can be served to a user within the specified time period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxImpressions: FormControl<number | null | undefined>,
 
 		/** The time unit. Along with num_time_units defines the amount of time over which impressions per user are counted and capped. */
 		timeUnitType: FormControl<FrequencyCapTimeUnitType | null | undefined>,
 
-		/** The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped. */
+		/**
+		 * The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeUnitsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateFrequencyCapFormGroup() {
@@ -558,7 +570,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -571,7 +586,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -830,32 +848,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -1353,7 +1395,10 @@ export namespace MyNS {
 		/** Ad impressions in last 7 days. */
 		adImpressions7Days?: string | null;
 
-		/** Bid rate in last 7 days, calculated by (bids / bid requests). */
+		/**
+		 * Bid rate in last 7 days, calculated by (bids / bid requests).
+		 * Type: double
+		 */
 		bidRate7Days?: number | null;
 
 		/** Bid requests in last 7 days. */
@@ -1362,10 +1407,16 @@ export namespace MyNS {
 		/** Bids in last 7 days. */
 		bids7Days?: string | null;
 
-		/** Filtered bid rate in last 7 days, calculated by (filtered bids / bids). */
+		/**
+		 * Filtered bid rate in last 7 days, calculated by (filtered bids / bids).
+		 * Type: double
+		 */
 		filteredBidRate7Days?: number | null;
 
-		/** Must bid rate for current month. */
+		/**
+		 * Must bid rate for current month.
+		 * Type: double
+		 */
 		mustBidRateCurrentMonth?: number | null;
 	}
 
@@ -1375,7 +1426,10 @@ export namespace MyNS {
 		/** Ad impressions in last 7 days. */
 		adImpressions7Days: FormControl<string | null | undefined>,
 
-		/** Bid rate in last 7 days, calculated by (bids / bid requests). */
+		/**
+		 * Bid rate in last 7 days, calculated by (bids / bid requests).
+		 * Type: double
+		 */
 		bidRate7Days: FormControl<number | null | undefined>,
 
 		/** Bid requests in last 7 days. */
@@ -1384,10 +1438,16 @@ export namespace MyNS {
 		/** Bids in last 7 days. */
 		bids7Days: FormControl<string | null | undefined>,
 
-		/** Filtered bid rate in last 7 days, calculated by (filtered bids / bids). */
+		/**
+		 * Filtered bid rate in last 7 days, calculated by (filtered bids / bids).
+		 * Type: double
+		 */
 		filteredBidRate7Days: FormControl<number | null | undefined>,
 
-		/** Must bid rate for current month. */
+		/**
+		 * Must bid rate for current month.
+		 * Type: double
+		 */
 		mustBidRateCurrentMonth: FormControl<number | null | undefined>,
 	}
 	export function CreateRtbMetricsFormGroup() {
@@ -2214,6 +2274,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/auctionPackages
 		 * @param {string} parent Required. Name of the parent buyer that can access the auction package. Format: `buyers/{accountId}`
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. Max allowed page size is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned. ListAuctionPackagesResponse.nextPageToken
 		 * @return {ListAuctionPackagesResponse} Successful response
 		 */
@@ -2227,6 +2288,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the buyer. Format: `buyers/{accountId}`
 		 * @param {string} filter Query string using the [Filtering Syntax](https://developers.google.com/authorized-buyers/apis/guides/list-filters) Supported fields for filtering are: * partnerClientId Use this field to filter the clients by the partnerClientId. For example, if the partnerClientId of the client is "1234", the value of this field should be `partnerClientId = "1234"`, in order to get only the client whose partnerClientId is "1234" in the response.
 		 * @param {number} pageSize Requested page size. If left blank, a default page size of 500 will be applied.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the list method.
 		 * @return {ListClientsResponse} Successful response
 		 */
@@ -2249,6 +2311,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/deals
 		 * @param {string} parent Required. The name of the proposal containing the deals to retrieve. Format: buyers/{accountId}/proposals/{proposalId}
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If requested more than 500, the server will return 500 results per page. If unspecified, the server will pick a default page size of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListDealsResponse.
 		 * @return {ListDealsResponse} Successful response
 		 */
@@ -2273,6 +2336,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional query string using the [Cloud API list filtering syntax](https://developers.google.com/authorized-buyers/apis/guides/list-filters) Supported columns for filtering are: * deal.displayName * deal.dealType * deal.createTime * deal.updateTime * deal.flightStartTime * deal.flightEndTime * dealServingStatus
 		 * @param {string} orderBy An optional query string to sort finalized deals using the [Cloud API sorting syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order). If no sort order is specified, results will be returned in an arbitrary order. Supported columns for sorting are: * deal.displayName * deal.createTime * deal.updateTime * deal.flightStartTime * deal.flightEndTime * rtbMetrics.bidRequests7Days * rtbMetrics.bids7Days * rtbMetrics.adImpressions7Days * rtbMetrics.bidRate7Days * rtbMetrics.filteredBidRate7Days * rtbMetrics.mustBidRateCurrentMonth Example: 'deal.displayName, deal.updateTime desc'
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If requested more than 500, the server will return 500 results per page. If unspecified, the server will pick a default page size of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListFinalizedDealsResponse.
 		 * @return {ListFinalizedDealsResponse} Successful response
 		 */
@@ -2286,6 +2350,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent that owns the collection of proposals Format: `buyers/{accountId}`
 		 * @param {string} filter Optional query string using the [Cloud API list filtering syntax](https://developers.google.com/authorized-buyers/apis/guides/list-filters) Supported columns for filtering are: * displayName * dealType * updateTime * state
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If unspecified, the server will put a size of 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from ListProposalsResponse.
 		 * @return {ListProposalsResponse} Successful response
 		 */
@@ -2299,6 +2364,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent that owns the collection of publisher profiles Format: `buyers/{buyerId}`
 		 * @param {string} filter Optional query string using the [Cloud API list filtering] (https://developers.google.com/authorized-buyers/apis/guides/list-filters) syntax.
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested. If requested more than 500, the server will return 500 results per page. If unspecified, the server will pick a default page size of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token as returned from a previous ListPublisherProfilesResponse.
 		 * @return {ListPublisherProfilesResponse} Successful response
 		 */
@@ -2311,6 +2377,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/users
 		 * @param {string} parent Required. The name of the client. Format: `buyers/{buyerAccountId}/clients/{clientAccountId}`
 		 * @param {number} pageSize Requested page size. If left blank, a default page size of 500 will be applied.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the list method.
 		 * @return {ListClientUsersResponse} Successful response
 		 */

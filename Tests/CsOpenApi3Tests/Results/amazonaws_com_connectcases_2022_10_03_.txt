@@ -1907,7 +1907,10 @@ namespace MyNS
 		/// Returns the description for the list of fields in the request parameters.
 		/// BatchGetField domains/{domainId}/fields-batch
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchGetFieldResponse> BatchGetFieldAsync(string domainId, BatchGetFieldPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1948,8 +1951,14 @@ namespace MyNS
 		/// Creates and updates a set of field options for a single select field in a Cases domain.
 		/// BatchPutFieldOptions domains/{domainId}/fields/{fieldId}/options
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="fieldId">The unique identifier of a field.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldId">The unique identifier of a field.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchPutFieldOptionsResponse> BatchPutFieldOptionsAsync(string domainId, string fieldId, BatchPutFieldOptionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1990,7 +1999,10 @@ namespace MyNS
 		/// <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note> <p>The following fields are required when creating a case:</p> <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code></pre>
 		/// CreateCase domains/{domainId}/cases
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCaseResponse> CreateCaseAsync(string domainId, CreateCasePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2071,7 +2083,10 @@ namespace MyNS
 		/// Creates a field in the Cases domain. This field is used to define the case object model (that is, defines what data can be captured on cases) in a Cases domain.
 		/// CreateField domains/{domainId}/fields
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFieldResponse> CreateFieldAsync(string domainId, CreateFieldPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2112,7 +2127,10 @@ namespace MyNS
 		/// <p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p> <ul> <li> <p>Fields to display to the users</p> </li> <li> <p>Field ordering</p> </li> </ul> <note> <p>Title and Status fields cannot be part of layouts since they are not configurable.</p> </note>
 		/// CreateLayout domains/{domainId}/layouts
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLayoutResponse> CreateLayoutAsync(string domainId, CreateLayoutPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2153,8 +2171,14 @@ namespace MyNS
 		/// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </note>
 		/// CreateRelatedItem domains/{domainId}/cases/{caseId}/related-items/
 		/// </summary>
-		/// <param name="caseId">A unique identifier of the case.</param>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="caseId">A unique identifier of the case.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRelatedItemResponse> CreateRelatedItemAsync(string caseId, string domainId, CreateRelatedItemPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2195,7 +2219,10 @@ namespace MyNS
 		/// Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases.
 		/// CreateTemplate domains/{domainId}/templates
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTemplateResponse> CreateTemplateAsync(string domainId, CreateTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2236,7 +2263,10 @@ namespace MyNS
 		/// <p>Deletes a Cases domain.</p> <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; </code></pre>
 		/// DeleteDomain domains/{domainId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2270,7 +2300,10 @@ namespace MyNS
 		/// Returns information about a specific domain if it exists.
 		/// GetDomain domains/{domainId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainResponse> GetDomainAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2299,8 +2332,14 @@ namespace MyNS
 		/// Returns information about a specific case if it exists.
 		/// GetCase domains/{domainId}/cases/{caseId}
 		/// </summary>
-		/// <param name="caseId">A unique identifier of the case.</param>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="caseId">A unique identifier of the case.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
 		public async Task<GetCaseResponse> GetCaseAsync(string caseId, string domainId, string nextToken, GetCasePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2342,8 +2381,14 @@ namespace MyNS
 		/// <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 		/// UpdateCase domains/{domainId}/cases/{caseId}
 		/// </summary>
-		/// <param name="caseId">A unique identifier of the case.</param>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="caseId">A unique identifier of the case.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCaseResponse> UpdateCaseAsync(string caseId, string domainId, UpdateCasePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2384,7 +2429,10 @@ namespace MyNS
 		/// Returns the case event publishing configuration.
 		/// GetCaseEventConfiguration domains/{domainId}/case-event-configuration
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCaseEventConfigurationResponse> GetCaseEventConfigurationAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2413,7 +2461,10 @@ namespace MyNS
 		/// API for adding case event publishing configuration
 		/// PutCaseEventConfiguration domains/{domainId}/case-event-configuration
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutCaseEventConfigurationResponse> PutCaseEventConfigurationAsync(string domainId, PutCaseEventConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2454,8 +2505,14 @@ namespace MyNS
 		/// Returns the details for the requested layout.
 		/// GetLayout domains/{domainId}/layouts/{layoutId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="layoutId">The unique identifier of the layout.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="layoutId">The unique identifier of the layout.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLayoutResponse> GetLayoutAsync(string domainId, string layoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2484,8 +2541,14 @@ namespace MyNS
 		/// <p>Updates the attributes of an existing layout.</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p> <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note> <p>Title and Status fields cannot be part of layouts because they are not configurable.</p> </note>
 		/// UpdateLayout domains/{domainId}/layouts/{layoutId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="layoutId">The unique identifier of the layout.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="layoutId">The unique identifier of the layout.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLayoutResponse> UpdateLayoutAsync(string domainId, string layoutId, UpdateLayoutPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2526,8 +2589,14 @@ namespace MyNS
 		/// Returns the details for the requested template.
 		/// GetTemplate domains/{domainId}/templates/{templateId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="templateId">A unique identifier of a template.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="templateId">A unique identifier of a template.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateResponse> GetTemplateAsync(string domainId, string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2556,8 +2625,14 @@ namespace MyNS
 		/// Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.
 		/// UpdateTemplate domains/{domainId}/templates/{templateId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="templateId">A unique identifier for the template.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="templateId">A unique identifier for the template.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplateResponse> UpdateTemplateAsync(string domainId, string templateId, UpdateTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2598,7 +2673,10 @@ namespace MyNS
 		/// Lists cases for a given contact.
 		/// ListCasesForContact domains/{domainId}/list-cases-for-contact
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2641,8 +2719,14 @@ namespace MyNS
 		/// Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain.
 		/// ListDomains domains-list
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 10
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 9000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDomainsResponse> ListDomainsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2671,11 +2755,26 @@ namespace MyNS
 		/// Lists all of the field options for a field identifier in the domain.
 		/// ListFieldOptions domains/{domainId}/fields/{fieldId}/options-list
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="fieldId">The unique identifier of a field.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
-		/// <param name="values">A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldId">The unique identifier of a field.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 9000
+		/// Min length: 0
+		// </param>
+		/// <param name="values">A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.
+		/// Minimum items: 0
+		/// Maximum items: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFieldOptionsResponse> ListFieldOptionsAsync(string domainId, string fieldId, int maxResults, string nextToken, string[] values, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2704,9 +2803,18 @@ namespace MyNS
 		/// Lists all fields in a Cases domain.
 		/// ListFields domains/{domainId}/fields-list
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 9000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFieldsResponse> ListFieldsAsync(string domainId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2735,9 +2843,18 @@ namespace MyNS
 		/// Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout.
 		/// ListLayouts domains/{domainId}/layouts-list
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 9000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLayoutsResponse> ListLayoutsAsync(string domainId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2766,7 +2883,10 @@ namespace MyNS
 		/// Lists tags for a resource.
 		/// ListTagsForResource tags/{arn}
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN)</param>
+		/// <param name="arn">The Amazon Resource Name (ARN)
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2800,7 +2920,10 @@ namespace MyNS
 		/// Adds tags to a resource.
 		/// TagResource tags/{arn}
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN)</param>
+		/// <param name="arn">The Amazon Resource Name (ARN)
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2835,10 +2958,22 @@ namespace MyNS
 		/// Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template.
 		/// ListTemplates domains/{domainId}/templates-list
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
-		/// <param name="status">A list of status values to filter on.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 9000
+		/// Min length: 0
+		// </param>
+		/// <param name="status">A list of status values to filter on.
+		/// Minimum items: 1
+		/// Maximum items: 2
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTemplatesResponse> ListTemplatesAsync(string domainId, int maxResults, string nextToken, TemplateStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2867,7 +3002,10 @@ namespace MyNS
 		/// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note> <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>. </p> </note>
 		/// SearchCases domains/{domainId}/cases-search
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2910,8 +3048,14 @@ namespace MyNS
 		/// <p>Searches for related items that are associated with a case.</p> <note> <p>If no filters are provided, this returns all related items associated with a case.</p> </note>
 		/// SearchRelatedItems domains/{domainId}/cases/{caseId}/related-items-search
 		/// </summary>
-		/// <param name="caseId">A unique identifier of the case.</param>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
+		/// <param name="caseId">A unique identifier of the case.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2954,8 +3098,14 @@ namespace MyNS
 		/// Untags a resource.
 		/// UntagResource tags/{arn}#tagKeys
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN)</param>
-		/// <param name="tagKeys">List of tag keys.</param>
+		/// <param name="arn">The Amazon Resource Name (ARN)
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">List of tag keys.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UntagResourceAsync(string arn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2983,8 +3133,14 @@ namespace MyNS
 		/// Updates the properties of an existing field.
 		/// UpdateField domains/{domainId}/fields/{fieldId}
 		/// </summary>
-		/// <param name="domainId">The unique identifier of the Cases domain. </param>
-		/// <param name="fieldId">The unique identifier of a field.</param>
+		/// <param name="domainId">The unique identifier of the Cases domain. 
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldId">The unique identifier of a field.
+		/// Max length: 500
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFieldResponse> UpdateFieldAsync(string domainId, string fieldId, UpdateFieldPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

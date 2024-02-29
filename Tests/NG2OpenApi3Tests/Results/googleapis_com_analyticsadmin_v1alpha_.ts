@@ -27,7 +27,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1alphaNumericValue {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Integer value */
@@ -37,7 +40,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1alphaNumericValueFormProperties {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Integer value */
@@ -510,20 +516,32 @@ export namespace MyNS {
 	/** Current state for a particular quota group. */
 	export interface GoogleAnalyticsAdminV1alphaAccessQuotaStatus {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed?: number | null;
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining?: number | null;
 	}
 
 	/** Current state for a particular quota group. */
 	export interface GoogleAnalyticsAdminV1alphaAccessQuotaStatusFormProperties {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed: FormControl<number | null | undefined>,
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1alphaAccessQuotaStatusFormGroup() {
@@ -963,7 +981,10 @@ export namespace MyNS {
 		/** Required. Immutable. Unordered list. Filter clauses that define the Audience. All clauses will be AND’ed together. */
 		filterClauses?: Array<GoogleAnalyticsAdminV1alphaAudienceFilterClause>;
 
-		/** Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days. */
+		/**
+		 * Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		membershipDurationDays?: number | null;
 
 		/** Output only. The resource name for this Audience resource. Format: properties/{propertyId}/audiences/{audienceId} */
@@ -985,7 +1006,10 @@ export namespace MyNS {
 		/** Immutable. Specifies how long an exclusion lasts for users that meet the exclusion filter. It is applied to all EXCLUDE filter clauses and is ignored when there is no EXCLUDE filter clause in the Audience. */
 		exclusionDurationMode: FormControl<GoogleAnalyticsAdminV1alphaAudienceExclusionDurationMode | null | undefined>,
 
-		/** Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days. */
+		/**
+		 * Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		membershipDurationDays: FormControl<number | null | undefined>,
 
 		/** Output only. The resource name for this Audience resource. Format: properties/{propertyId}/audiences/{audienceId} */
@@ -1194,7 +1218,10 @@ export namespace MyNS {
 		/** Required. Immutable. The dimension name or metric name to filter. If the field name refers to a custom dimension or metric, a scope prefix will be added to the front of the custom dimensions or metric name. For more on scope prefixes or custom dimensions/metrics, reference the [Google Analytics Data API documentation] (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions). */
 		fieldName?: string | null;
 
-		/** Optional. If set, specifies the time window for which to evaluate data in number of days. If not set, then audience data is evaluated against lifetime data (For example, infinite time window). For example, if set to 1 day, only the current day's data is evaluated. The reference point is the current day when at_any_point_in_time is unset or false. It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be greater than 60 days. */
+		/**
+		 * Optional. If set, specifies the time window for which to evaluate data in number of days. If not set, then audience data is evaluated against lifetime data (For example, infinite time window). For example, if set to 1 day, only the current day's data is evaluated. The reference point is the current day when at_any_point_in_time is unset or false. It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be greater than 60 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAnyNDayPeriod?: number | null;
 
 		/** A filter for a string dimension that matches a particular list of options. */
@@ -1216,7 +1243,10 @@ export namespace MyNS {
 		/** Required. Immutable. The dimension name or metric name to filter. If the field name refers to a custom dimension or metric, a scope prefix will be added to the front of the custom dimensions or metric name. For more on scope prefixes or custom dimensions/metrics, reference the [Google Analytics Data API documentation] (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions). */
 		fieldName: FormControl<string | null | undefined>,
 
-		/** Optional. If set, specifies the time window for which to evaluate data in number of days. If not set, then audience data is evaluated against lifetime data (For example, infinite time window). For example, if set to 1 day, only the current day's data is evaluated. The reference point is the current day when at_any_point_in_time is unset or false. It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be greater than 60 days. */
+		/**
+		 * Optional. If set, specifies the time window for which to evaluate data in number of days. If not set, then audience data is evaluated against lifetime data (For example, infinite time window). For example, if set to 1 day, only the current day's data is evaluated. The reference point is the current day when at_any_point_in_time is unset or false. It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be greater than 60 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAnyNDayPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterFormGroup() {
@@ -1252,7 +1282,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericValue {
 
-		/** Double value. */
+		/**
+		 * Double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Integer value. */
@@ -1262,7 +1295,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericValueFormProperties {
 
-		/** Double value. */
+		/**
+		 * Double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Integer value. */
@@ -2032,7 +2068,10 @@ export namespace MyNS {
 		/** When a conversion event for this event_name has no set currency, this currency will be applied as the default. Must be in ISO 4217 currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for more information. */
 		currencyCode?: string | null;
 
-		/** This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset. */
+		/**
+		 * This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -2042,7 +2081,10 @@ export namespace MyNS {
 		/** When a conversion event for this event_name has no set currency, this currency will be applied as the default. Must be in ISO 4217 currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for more information. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset. */
+		/**
+		 * This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1alphaConversionEventDefaultConversionValueFormGroup() {
@@ -3306,7 +3348,10 @@ export namespace MyNS {
 		/** Event conditions that must be met for this Conversion Value to be achieved. The conditions in this list are ANDed together. It must have minimum of 1 entry and maximum of 3 entries, if the postback window is enabled. */
 		eventMappings?: Array<GoogleAnalyticsAdminV1alphaEventMapping>;
 
-		/** The fine-grained conversion value. This is applicable only to the first postback window. Its valid values are [0,63], both inclusive. It must be set for postback window 1, and must not be set for postback window 2 & 3. This value is not guaranteed to be unique. If the configuration for the first postback window is re-used for second or third postback windows this field has no effect. */
+		/**
+		 * The fine-grained conversion value. This is applicable only to the first postback window. Its valid values are [0,63], both inclusive. It must be set for postback window 1, and must not be set for postback window 2 & 3. This value is not guaranteed to be unique. If the configuration for the first postback window is re-used for second or third postback windows this field has no effect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fineValue?: number | null;
 
 		/** If true, the SDK should lock to this conversion value for the current postback window. */
@@ -3322,7 +3367,10 @@ export namespace MyNS {
 		/** Display name of the SKAdNetwork conversion value. The max allowed display name length is 50 UTF-16 code units. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The fine-grained conversion value. This is applicable only to the first postback window. Its valid values are [0,63], both inclusive. It must be set for postback window 1, and must not be set for postback window 2 & 3. This value is not guaranteed to be unique. If the configuration for the first postback window is re-used for second or third postback windows this field has no effect. */
+		/**
+		 * The fine-grained conversion value. This is applicable only to the first postback window. Its valid values are [0,63], both inclusive. It must be set for postback window 1, and must not be set for postback window 2 & 3. This value is not guaranteed to be unique. If the configuration for the first postback window is re-used for second or third postback windows this field has no effect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fineValue: FormControl<number | null | undefined>,
 
 		/** If true, the SDK should lock to this conversion value for the current postback window. */
@@ -3350,13 +3398,19 @@ export namespace MyNS {
 		/** The maximum number of times the event occurred. If not set, maximum event count won't be checked. */
 		maxEventCount?: string | null;
 
-		/** The maximum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, maximum event value won't be checked. */
+		/**
+		 * The maximum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, maximum event value won't be checked.
+		 * Type: double
+		 */
 		maxEventValue?: number | null;
 
 		/** At least one of the following four min/max values must be set. The values set will be ANDed together to qualify an event. The minimum number of times the event occurred. If not set, minimum event count won't be checked. */
 		minEventCount?: string | null;
 
-		/** The minimum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, minimum event value won't be checked. */
+		/**
+		 * The minimum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, minimum event value won't be checked.
+		 * Type: double
+		 */
 		minEventValue?: number | null;
 	}
 
@@ -3369,13 +3423,19 @@ export namespace MyNS {
 		/** The maximum number of times the event occurred. If not set, maximum event count won't be checked. */
 		maxEventCount: FormControl<string | null | undefined>,
 
-		/** The maximum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, maximum event value won't be checked. */
+		/**
+		 * The maximum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, maximum event value won't be checked.
+		 * Type: double
+		 */
 		maxEventValue: FormControl<number | null | undefined>,
 
 		/** At least one of the following four min/max values must be set. The values set will be ANDed together to qualify an event. The minimum number of times the event occurred. If not set, minimum event count won't be checked. */
 		minEventCount: FormControl<string | null | undefined>,
 
-		/** The minimum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, minimum event value won't be checked. */
+		/**
+		 * The minimum revenue generated due to the event. Revenue currency will be defined at the property level. If not set, minimum event value won't be checked.
+		 * Type: double
+		 */
 		minEventValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1alphaEventMappingFormGroup() {
@@ -4684,7 +4744,10 @@ export namespace MyNS {
 		/** Current state of all quotas for this Analytics property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors. */
 		quota?: GoogleAnalyticsAdminV1alphaAccessQuota;
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** Rows of dimension value combinations and metric values in the report. */
@@ -4694,7 +4757,10 @@ export namespace MyNS {
 	/** The customized Data Access Record Report response. */
 	export interface GoogleAnalyticsAdminV1alphaRunAccessReportResponseFormProperties {
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1alphaRunAccessReportResponseFormGroup() {
@@ -4720,7 +4786,10 @@ export namespace MyNS {
 		/** Optional. If set, only return changes made before this time (inclusive). */
 		latestChangeTime?: string | null;
 
-		/** Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum). */
+		/**
+		 * Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A page token, received from a previous `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchChangeHistoryEvents` must match the call that provided the page token. */
@@ -4742,7 +4811,10 @@ export namespace MyNS {
 		/** Optional. If set, only return changes made before this time (inclusive). */
 		latestChangeTime: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum). */
+		/**
+		 * Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A page token, received from a previous `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchChangeHistoryEvents` must match the call that provided the page token. */
@@ -4851,6 +4923,7 @@ export namespace MyNS {
 		 * Returns summaries of all accounts accessible by the caller.
 		 * Get v1alpha/accountSummaries
 		 * @param {number} pageSize The maximum number of AccountSummary resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccountSummaries` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccountSummaries` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListAccountSummariesResponse} Successful response
 		 */
@@ -4862,6 +4935,7 @@ export namespace MyNS {
 		 * Returns all accounts accessible by the caller. Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.
 		 * Get v1alpha/accounts
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccounts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccounts` must match the call that provided the page token.
 		 * @param {boolean} showDeleted Whether to include soft-deleted (ie: "trashed") Accounts in the results. Accounts can be inspected to determine whether they are deleted or not.
 		 * @return {GoogleAnalyticsAdminV1alphaListAccountsResponse} Successful response
@@ -4884,6 +4958,7 @@ export namespace MyNS {
 		 * Get v1alpha/properties
 		 * @param {string} filter Required. An expression for filtering the results of the request. Fields eligible for filtering are: `parent:`(The resource name of the parent account/property) or `ancestor:`(The resource name of the parent account) or `firebase_project:`(The id or number of the linked firebase project). Some examples of filters: ``` | Filter | Description | |-----------------------------|-------------------------------------------| | parent:accounts/123 | The account with account id: 123. | | parent:properties/123 | The property with property id: 123. | | ancestor:accounts/123 | The account with account id: 123. | | firebase_project:project-id | The firebase project with id: project-id. | | firebase_project:123 | The firebase project with number: 123. | ```
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListProperties` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListProperties` must match the call that provided the page token.
 		 * @param {boolean} showDeleted Whether to include soft-deleted (ie: "trashed") Properties in the results. Properties can be inspected to determine whether they are deleted or not.
 		 * @return {GoogleAnalyticsAdminV1alphaListPropertiesResponse} Successful response
@@ -5060,6 +5135,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/accessBindings
 		 * @param {string} parent Required. Formats: - accounts/{account} - properties/{property}
 		 * @param {number} pageSize The maximum number of access bindings to return. The service may return fewer than this value. If unspecified, at most 200 access bindings will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccessBindings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccessBindings` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListAccessBindingsResponse} Successful response
 		 */
@@ -5123,6 +5199,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/adSenseLinks
 		 * @param {string} parent Required. Resource name of the parent property. Format: properties/{propertyId} Example: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from a previous `ListAdSenseLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAdSenseLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListAdSenseLinksResponse} Successful response
 		 */
@@ -5145,6 +5222,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/audiences
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAudiences` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAudiences` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListAudiencesResponse} Successful response
 		 */
@@ -5167,6 +5245,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/bigQueryLinks
 		 * @param {string} parent Required. The name of the property to list BigQuery links under. Format: properties/{property_id} Example: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListBigQueryLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBigQueryLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListBigQueryLinksResponse} Successful response
 		 */
@@ -5179,6 +5258,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/channelGroups
 		 * @param {string} parent Required. The property for which to list ChannelGroups. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListChannelGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListChannelGroups` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListChannelGroupsResponse} Successful response
 		 */
@@ -5201,6 +5281,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/conversionEvents
 		 * @param {string} parent Required. The resource name of the parent property. Example: 'properties/123'
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListConversionEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConversionEvents` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListConversionEventsResponse} Successful response
 		 */
@@ -5223,6 +5304,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/customDimensions
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCustomDimensions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomDimensions` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListCustomDimensionsResponse} Successful response
 		 */
@@ -5245,6 +5327,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/customMetrics
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCustomMetrics` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomMetrics` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListCustomMetricsResponse} Successful response
 		 */
@@ -5267,6 +5350,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/dataStreams
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDataStreams` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDataStreams` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListDataStreamsResponse} Successful response
 		 */
@@ -5289,6 +5373,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/displayVideo360AdvertiserLinkProposals
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDisplayVideo360AdvertiserLinkProposals` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDisplayVideo360AdvertiserLinkProposals` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinkProposalsResponse} Successful response
 		 */
@@ -5311,6 +5396,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/displayVideo360AdvertiserLinks
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDisplayVideo360AdvertiserLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDisplayVideo360AdvertiserLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinksResponse} Successful response
 		 */
@@ -5333,6 +5419,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/eventCreateRules
 		 * @param {string} parent Required. Example format: properties/123/dataStreams/456
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListEventCreateRules` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListEventCreateRules` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListEventCreateRulesResponse} Successful response
 		 */
@@ -5355,6 +5442,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/expandedDataSets
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListExpandedDataSets` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListExpandedDataSet` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListExpandedDataSetsResponse} Successful response
 		 */
@@ -5377,6 +5465,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/firebaseLinks
 		 * @param {string} parent Required. Format: properties/{property_id} Example: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListFirebaseLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListFirebaseLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListFirebaseLinksResponse} Successful response
 		 */
@@ -5399,6 +5488,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/googleAdsLinks
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListGoogleAdsLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGoogleAdsLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse} Successful response
 		 */
@@ -5421,6 +5511,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/measurementProtocolSecrets
 		 * @param {string} parent Required. The resource name of the parent stream. Format: properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 10 resources will be returned. The maximum value is 10. Higher values will be coerced to the maximum.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListMeasurementProtocolSecrets` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMeasurementProtocolSecrets` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListMeasurementProtocolSecretsResponse} Successful response
 		 */
@@ -5443,6 +5534,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/rollupPropertySourceLinks
 		 * @param {string} parent Required. The name of the roll-up property to list roll-up property source links under. Format: properties/{property_id} Example: properties/1234
 		 * @param {number} pageSize Optional. The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListRollupPropertySourceLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRollupPropertySourceLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListRollupPropertySourceLinksResponse} Successful response
 		 */
@@ -5465,6 +5557,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/sKAdNetworkConversionValueSchema
 		 * @param {string} parent Required. The DataStream resource to list schemas for. Format: properties/{property_id}/dataStreams/{dataStream} Example: properties/1234/dataStreams/5678
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSKAdNetworkConversionValueSchemas` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSKAdNetworkConversionValueSchema` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListSKAdNetworkConversionValueSchemasResponse} Successful response
 		 */
@@ -5487,6 +5580,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/searchAds360Links
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSearchAds360Links` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSearchAds360Links` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListSearchAds360LinksResponse} Successful response
 		 */
@@ -5509,6 +5603,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/subpropertyEventFilters
 		 * @param {string} parent Required. Resource name of the ordinary property. Format: properties/property_id Example: properties/123
 		 * @param {number} pageSize Optional. The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListSubpropertyEventFilters` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubpropertyEventFilters` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1alphaListSubpropertyEventFiltersResponse} Successful response
 		 */

@@ -757,7 +757,9 @@ export namespace MyNS {
 		 * <p>Lists the Device Advisor test suites you have created.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a> action.</p>
 		 * Get suiteDefinitions
 		 * @param {number} maxResults The maximum number of results to return at once.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken A token used to get the next set of results.
+		 *     Max length: 2000
 		 * @return {ListSuiteDefinitionsResponse} Success
 		 */
 		ListSuiteDefinitions(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSuiteDefinitionsResponse> {
@@ -768,6 +770,7 @@ export namespace MyNS {
 		 * <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a> action.</p>
 		 * Delete suiteDefinitions/{suiteDefinitionId}
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite to be deleted.
+		 *     Min length: 12    Max length: 36
 		 * @return {DeleteSuiteDefinitionResponse} Success
 		 */
 		DeleteSuiteDefinition(suiteDefinitionId: string): Observable<DeleteSuiteDefinitionResponse> {
@@ -778,7 +781,9 @@ export namespace MyNS {
 		 * <p>Gets information about a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a> action.</p>
 		 * Get suiteDefinitions/{suiteDefinitionId}
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite to get.
+		 *     Min length: 12    Max length: 36
 		 * @param {string} suiteDefinitionVersion Suite definition version of the test suite to get.
+		 *     Min length: 2    Max length: 255
 		 * @return {GetSuiteDefinitionResponse} Success
 		 */
 		GetSuiteDefinition(suiteDefinitionId: string, suiteDefinitionVersion: string | null | undefined): Observable<GetSuiteDefinitionResponse> {
@@ -789,6 +794,7 @@ export namespace MyNS {
 		 * <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a> action.</p>
 		 * Patch suiteDefinitions/{suiteDefinitionId}
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite to be updated.
+		 *     Min length: 12    Max length: 36
 		 * @return {UpdateSuiteDefinitionResponse} Success
 		 */
 		UpdateSuiteDefinition(suiteDefinitionId: string, requestBody: UpdateSuiteDefinitionPatchBody): Observable<UpdateSuiteDefinitionResponse> {
@@ -799,8 +805,11 @@ export namespace MyNS {
 		 * Gets information about an Device Advisor endpoint.
 		 * Get endpoint
 		 * @param {string} thingArn The thing ARN of the device. This is an optional parameter.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} certificateArn The certificate ARN of the device. This is an optional parameter.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} deviceRoleArn The device role ARN of the device. This is an optional parameter.
+		 *     Min length: 20    Max length: 2048
 		 * @param {AuthenticationMethod} authenticationMethod The authentication method used during the device connection.
 		 * @return {GetEndpointResponse} Success
 		 */
@@ -812,7 +821,9 @@ export namespace MyNS {
 		 * <p>Gets information about a Device Advisor test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a> action.</p>
 		 * Get suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}
 		 * @param {string} suiteDefinitionId Suite definition ID for the test suite run.
+		 *     Min length: 12    Max length: 36
 		 * @param {string} suiteRunId Suite run ID for the test suite run.
+		 *     Min length: 12    Max length: 36
 		 * @return {GetSuiteRunResponse} Success
 		 */
 		GetSuiteRun(suiteDefinitionId: string, suiteRunId: string): Observable<GetSuiteRunResponse> {
@@ -823,7 +834,9 @@ export namespace MyNS {
 		 * <p>Gets a report download link for a successful Device Advisor qualifying test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a> action.</p>
 		 * Get suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/report
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite.
+		 *     Min length: 12    Max length: 36
 		 * @param {string} suiteRunId Suite run ID of the test suite run.
+		 *     Min length: 12    Max length: 36
 		 * @return {GetSuiteRunReportResponse} Success
 		 */
 		GetSuiteRunReport(suiteDefinitionId: string, suiteRunId: string): Observable<GetSuiteRunReportResponse> {
@@ -834,9 +847,13 @@ export namespace MyNS {
 		 * <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
 		 * Get suiteRuns
 		 * @param {string} suiteDefinitionId Lists the test suite runs of the specified test suite based on suite definition ID.
+		 *     Min length: 12    Max length: 36
 		 * @param {string} suiteDefinitionVersion Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.
+		 *     Min length: 2    Max length: 255
 		 * @param {number} maxResults The maximum number of results to return at once.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken A token to retrieve the next set of results.
+		 *     Max length: 2000
 		 * @return {ListSuiteRunsResponse} Success
 		 */
 		ListSuiteRuns(suiteDefinitionId: string | null | undefined, suiteDefinitionVersion: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSuiteRunsResponse> {
@@ -847,6 +864,7 @@ export namespace MyNS {
 		 * <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a> action.</p>
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -857,6 +875,7 @@ export namespace MyNS {
 		 * <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a> action.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -867,6 +886,7 @@ export namespace MyNS {
 		 * <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a> action.</p>
 		 * Post suiteDefinitions/{suiteDefinitionId}/suiteRuns
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite.
+		 *     Min length: 12    Max length: 36
 		 * @return {StartSuiteRunResponse} Success
 		 */
 		StartSuiteRun(suiteDefinitionId: string, requestBody: StartSuiteRunPostBody): Observable<StartSuiteRunResponse> {
@@ -877,7 +897,9 @@ export namespace MyNS {
 		 * <p>Stops a Device Advisor test suite run that is currently running.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a> action.</p>
 		 * Post suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/stop
 		 * @param {string} suiteDefinitionId Suite definition ID of the test suite run to be stopped.
+		 *     Min length: 12    Max length: 36
 		 * @param {string} suiteRunId Suite run ID of the test suite run to be stopped.
+		 *     Min length: 12    Max length: 36
 		 * @return {StopSuiteRunResponse} Success
 		 */
 		StopSuiteRun(suiteDefinitionId: string, suiteRunId: string): Observable<StopSuiteRunResponse> {
@@ -888,7 +910,9 @@ export namespace MyNS {
 		 * <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a> action.</p>
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys List of tag keys to remove from the IoT Device Advisor resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1020,8 +1044,8 @@ export namespace MyNS {
 
 		/**
 		 * Suite definition version of the test suite.
-		 * Max length: 255
 		 * Min length: 2
+		 * Max length: 255
 		 */
 		suiteDefinitionVersion?: string | null;
 
@@ -1038,8 +1062,8 @@ export namespace MyNS {
 
 		/**
 		 * Suite definition version of the test suite.
-		 * Max length: 255
 		 * Min length: 2
+		 * Max length: 255
 		 */
 		suiteDefinitionVersion: FormControl<string | null | undefined>,
 

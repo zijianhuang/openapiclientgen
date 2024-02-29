@@ -9524,6 +9524,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription id.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IntegrationAccountListResult} OK
 		 */
 		IntegrationAccounts_ListBySubscription(subscriptionId: string, api_version: string, top: number | null | undefined): Observable<IntegrationAccountListResult> {
@@ -9536,6 +9537,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription id.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IntegrationServiceEnvironmentListResult} OK
 		 */
 		IntegrationServiceEnvironments_ListBySubscription(subscriptionId: string, api_version: string, top: number | null | undefined): Observable<IntegrationServiceEnvironmentListResult> {
@@ -9548,6 +9550,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The subscription id.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: State, Trigger, and ReferencedResourceId.
 		 * @return {WorkflowListResult} OK
 		 */
@@ -9562,6 +9565,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The resource group name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IntegrationAccountListResult} OK
 		 */
 		IntegrationAccounts_ListByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string, top: number | null | undefined): Observable<IntegrationAccountListResult> {
@@ -9630,6 +9634,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: AgreementType.
 		 * @return {IntegrationAccountAgreementListResult} OK
 		 */
@@ -9828,6 +9833,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IntegrationAccountCertificateListResult} OK
 		 */
 		IntegrationAccountCertificates_List(subscriptionId: string, resourceGroupName: string, integrationAccountName: string, api_version: string, top: number | null | undefined): Observable<IntegrationAccountCertificateListResult> {
@@ -9927,6 +9933,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: MapType.
 		 * @return {IntegrationAccountMapListResult} OK
 		 */
@@ -9999,6 +10006,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: PartnerType.
 		 * @return {IntegrationAccountPartnerListResult} OK
 		 */
@@ -10085,6 +10093,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: SchemaType.
 		 * @return {IntegrationAccountSchemaListResult} OK
 		 */
@@ -10157,6 +10166,7 @@ export namespace MyNS {
 		 * @param {string} integrationAccountName The integration account name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: ChangedTime.
 		 * @return {IntegrationAccountSessionListResult} OK
 		 */
@@ -10228,6 +10238,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The resource group name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: State, Trigger, and ReferencedResourceId.
 		 * @return {WorkflowListResult} OK
 		 */
@@ -10392,6 +10403,7 @@ export namespace MyNS {
 		 * @param {string} workflowName The workflow name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
 		 * @return {WorkflowRunListResult} OK
 		 */
@@ -10422,6 +10434,7 @@ export namespace MyNS {
 		 * @param {string} runName The workflow run name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: Status.
 		 * @return {WorkflowRunActionListResult} OK
 		 */
@@ -10638,6 +10651,7 @@ export namespace MyNS {
 		 * @param {string} workflowName The workflow name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation.
 		 * @return {WorkflowTriggerListResult} OK
 		 */
@@ -10668,6 +10682,7 @@ export namespace MyNS {
 		 * @param {string} triggerName The workflow trigger name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
 		 * @return {WorkflowTriggerHistoryListResult} OK
 		 */
@@ -10798,6 +10813,7 @@ export namespace MyNS {
 		 * @param {string} workflowName The workflow name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {WorkflowVersionListResult} OK
 		 */
 		WorkflowVersions_List(subscriptionId: string, resourceGroupName: string, workflowName: string, api_version: string, top: number | null | undefined): Observable<WorkflowVersionListResult> {
@@ -10841,6 +10857,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroup The resource group.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of items to be included in the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IntegrationServiceEnvironmentListResult} OK
 		 */
 		IntegrationServiceEnvironments_ListByResourceGroup(subscriptionId: string, resourceGroup: string, api_version: string, top: number | null | undefined): Observable<IntegrationServiceEnvironmentListResult> {

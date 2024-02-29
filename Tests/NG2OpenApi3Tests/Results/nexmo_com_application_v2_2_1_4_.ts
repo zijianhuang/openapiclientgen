@@ -344,7 +344,10 @@ export namespace MyNS {
 	/** Voice related configuration */
 	export interface VoiceCapability {
 
-		/** ttl used by the NCCO in case you’re using a conversation action (is set in hours and is 48 by default) */
+		/**
+		 * ttl used by the NCCO in case you’re using a conversation action (is set in hours and is 48 by default)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversation_ttl?: number | null;
 
 		/** encompass all the payment related fields */
@@ -358,7 +361,10 @@ export namespace MyNS {
 	/** Voice related configuration */
 	export interface VoiceCapabilityFormProperties {
 
-		/** ttl used by the NCCO in case you’re using a conversation action (is set in hours and is 48 by default) */
+		/**
+		 * ttl used by the NCCO in case you’re using a conversation action (is set in hours and is 48 by default)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversation_ttl: FormControl<number | null | undefined>,
 
 		/** verify that a request is coming from Vonage servers (a jwt token will be sent on the callback authorization header) */
@@ -623,30 +629,54 @@ export namespace MyNS {
 		/** A list of applications matching your existing filters */
 		_embedded?: ApplicationResponseCollection_embedded;
 
-		/** The current page number (starts at 1) */
+		/**
+		 * The current page number (starts at 1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of applications per page */
+		/**
+		 * The number of applications per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size?: number | null;
 
-		/** The total number of applications */
+		/**
+		 * The total number of applications
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_items?: number | null;
 
-		/** The total number of pages returned */
+		/**
+		 * The total number of pages returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pages?: number | null;
 	}
 	export interface ApplicationResponseCollectionFormProperties {
 
-		/** The current page number (starts at 1) */
+		/**
+		 * The current page number (starts at 1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of applications per page */
+		/**
+		 * The number of applications per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** The total number of applications */
+		/**
+		 * The total number of applications
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** The total number of pages returned */
+		/**
+		 * The total number of pages returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateApplicationResponseCollectionFormGroup() {
@@ -679,7 +709,9 @@ export namespace MyNS {
 		 * List available applications
 		 * Get 
 		 * @param {number} page_size The number of applications per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page The current page number (starts at 1)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApplicationResponseCollection} Success
 		 */
 		ListApplication(page_size: number | null | undefined, page: number | null | undefined): Observable<ApplicationResponseCollection> {

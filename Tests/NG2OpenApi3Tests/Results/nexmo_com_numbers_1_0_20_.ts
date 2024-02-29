@@ -29,7 +29,10 @@ export namespace MyNS {
 
 	export interface Available_numbers {
 
-		/** The total amount of numbers available in the pool. */
+		/**
+		 * The total amount of numbers available in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** A paginated array of available numbers and their details. */
@@ -37,7 +40,10 @@ export namespace MyNS {
 	}
 	export interface Available_numbersFormProperties {
 
-		/** The total amount of numbers available in the pool. */
+		/**
+		 * The total amount of numbers available in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailable_numbersFormGroup() {
@@ -54,8 +60,8 @@ export namespace MyNS {
 
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country?: string | null;
 
@@ -75,8 +81,8 @@ export namespace MyNS {
 
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
@@ -98,7 +104,10 @@ export namespace MyNS {
 
 	export interface Inbound_numbers {
 
-		/** The total amount of numbers owned by the account */
+		/**
+		 * The total amount of numbers owned by the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** A paginated array of numbers and their details */
@@ -106,7 +115,10 @@ export namespace MyNS {
 	}
 	export interface Inbound_numbersFormProperties {
 
-		/** The total amount of numbers owned by the account */
+		/**
+		 * The total amount of numbers owned by the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateInbound_numbersFormGroup() {
@@ -120,8 +132,8 @@ export namespace MyNS {
 
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country?: string | null;
 
@@ -153,8 +165,8 @@ export namespace MyNS {
 
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
@@ -198,8 +210,8 @@ export namespace MyNS {
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: string;
 
@@ -217,8 +229,8 @@ export namespace MyNS {
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
@@ -248,8 +260,8 @@ export namespace MyNS {
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: string;
 
@@ -302,8 +314,8 @@ export namespace MyNS {
 		/**
 		 * The two character country code in ISO 3166-1 alpha-2 format
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
@@ -455,13 +467,18 @@ export namespace MyNS {
 		 * find all numbers not associated with any Application. Omit the field
 		 * to avoid filtering on whether or not the number is assigned to an
 		 * Application.
+		 * @param {string} country Min length: 2
+		 *     Max length: 2
 		 * @param {string} pattern The number pattern you want to search for. Use in conjunction with `search_pattern`.
 		 * @param {GetOwnedNumbersSearch_pattern} search_pattern The strategy you want to use for matching:
 		 * * `0` - Search for numbers that start with `pattern` (Note: all numbers are in E.164 format, so the starting pattern includes the country code, such as 1 for USA)
 		 * * `1` - Search for numbers that contain `pattern`
 		 * * `2` - Search for numbers that end with `pattern`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page size
+		 *     Maximum: 100
 		 * @param {number} index Page index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Inbound_numbers} OK
 		 */
 		GetOwnedNumbers(application_id: string | null | undefined, has_application: boolean | null | undefined, country: string | null | undefined, pattern: string | null | undefined, search_pattern: GetOwnedNumbersSearch_pattern | null | undefined, size: number | null | undefined, index: number | null | undefined): Observable<Inbound_numbers> {
@@ -473,15 +490,19 @@ export namespace MyNS {
 		 * Retrieve inbound numbers that are available for the specified country.
 		 * Get number/search
 		 * @param {string} country The two character country code to filter on (in ISO 3166-1 alpha-2 format)
+		 *     Min length: 2    Max length: 2
 		 * @param {GetAvailableNumbersType} type Set this parameter to filter the type of number, such as mobile or landline
 		 * @param {string} pattern The number pattern you want to search for. Use in conjunction with `search_pattern`.
 		 * @param {GetAvailableNumbersSearch_pattern} search_pattern The strategy you want to use for matching:
 		 * * `0` - Search for numbers that start with `pattern` (Note: all numbers are in E.164 format, so the starting pattern includes the country code, such as 1 for USA)
 		 * * `1` - Search for numbers that contain `pattern`
 		 * * `2` - Search for numbers that end with `pattern`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetAvailableNumbersFeatures} features Available features are `SMS`, `VOICE` and `MMS`. To look for numbers that support multiple features, use a comma-separated value: `SMS,MMS,VOICE`.
 		 * @param {number} size Page size
+		 *     Maximum: 100
 		 * @param {number} index Page index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Available_numbers} OK
 		 */
 		GetAvailableNumbers(country: string, type: GetAvailableNumbersType | null | undefined, pattern: string | null | undefined, search_pattern: GetAvailableNumbersSearch_pattern | null | undefined, features: GetAvailableNumbersFeatures | null | undefined, size: number | null | undefined, index: number | null | undefined): Observable<Available_numbers> {

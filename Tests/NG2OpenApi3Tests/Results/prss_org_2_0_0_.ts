@@ -15,8 +15,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the broadcast service.
-		 * Max length: 1200
 		 * Min length: 0
+		 * Max length: 1200
 		 */
 		description?: string | null;
 
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The date the broadcast service was last modified.
@@ -36,8 +36,8 @@ export namespace MyNS {
 		/**
 		 * The name of the broadcast service.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: string;
 	}
@@ -53,8 +53,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the broadcast service.
-		 * Max length: 1200
 		 * Min length: 0
+		 * Max length: 1200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -63,7 +63,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The date the broadcast service was last modified.
@@ -74,8 +74,8 @@ export namespace MyNS {
 		/**
 		 * The name of the broadcast service.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -83,7 +83,7 @@ export namespace MyNS {
 		return new FormGroup<BroadcastServiceFormProperties>({
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1200)]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 		});
@@ -105,7 +105,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The date and time the file was last modified.
@@ -116,8 +116,8 @@ export namespace MyNS {
 		/**
 		 * The name of the file including the extension.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -126,10 +126,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		parentId: number;
+		parentId: string;
 
-		/** The size of the file in bytes. */
-		size?: number | null;
+		/**
+		 * The size of the file in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 	}
 
 	/** A file in the CD Drive that contains content. */
@@ -146,7 +149,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time the file was last modified.
@@ -157,8 +160,8 @@ export namespace MyNS {
 		/**
 		 * The name of the file including the extension.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -167,19 +170,22 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
-		/** The size of the file in bytes. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * The size of the file in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreateCDDriveFileFormGroup() {
 		return new FormGroup<CDDriveFileFormProperties>({
 			createdDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			lastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9 \._]*[a-zA-Z0-9]$')]),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			size: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			size: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -199,7 +205,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * The date and time the folder was last modified. This may only represent a modification to to the folder metadata itself, not to the contents of the folder.
@@ -210,8 +216,8 @@ export namespace MyNS {
 		/**
 		 * The name of the folder.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -220,7 +226,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		parentId: number;
+		parentId: string;
 	}
 
 	/** A folder in the CD Drive that can contain other items such as files or folders. */
@@ -237,7 +243,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time the folder was last modified. This may only represent a modification to to the folder metadata itself, not to the contents of the folder.
@@ -248,8 +254,8 @@ export namespace MyNS {
 		/**
 		 * The name of the folder.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -258,15 +264,15 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 	}
 	export function CreateCDDriveFolderFormGroup() {
 		return new FormGroup<CDDriveFolderFormProperties>({
 			createdDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			lastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9 \._]*[a-zA-Z0-9]$')]),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -279,7 +285,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: number;
+		id: string;
 
 		/** Required */
 		name: string;
@@ -295,7 +301,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
@@ -305,7 +311,7 @@ export namespace MyNS {
 	}
 	export function CreateCDDriveItemFormGroup() {
 		return new FormGroup<CDDriveItemFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<CDDriveItemType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -334,7 +340,7 @@ export namespace MyNS {
 		 * The ID of the customer that owns this programs.
 		 * Minimum: 0
 		 */
-		customerId?: number | null;
+		customerId?: string | null;
 
 		/**
 		 * The date the air window closes for the episode.
@@ -349,7 +355,7 @@ export namespace MyNS {
 		 * The unique ID of the episode. Generated at creation.
 		 * Minimum: 0
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/** The date the segment was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate?: Date | null;
@@ -359,7 +365,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		programId: number;
+		programId: string;
 
 		/**
 		 * The title of the program.
@@ -387,7 +393,7 @@ export namespace MyNS {
 		 * The ID of the customer that owns this programs.
 		 * Minimum: 0
 		 */
-		customerId: FormControl<number | null | undefined>,
+		customerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date the air window closes for the episode.
@@ -402,7 +408,7 @@ export namespace MyNS {
 		 * The unique ID of the episode. Generated at creation.
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The date the segment was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate: FormControl<Date | null | undefined>,
@@ -412,7 +418,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		programId: FormControl<number | null | undefined>,
+		programId: FormControl<string | null | undefined>,
 
 		/**
 		 * The title of the program.
@@ -425,12 +431,12 @@ export namespace MyNS {
 			beginAirDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			beginTransmissionDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			customerId: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			endAirDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTransmissionDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
-			programId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			programId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -443,7 +449,10 @@ export namespace MyNS {
 		/** The occurrence-specific problem description. */
 		detail?: string | null;
 
-		/** The status code of the error. */
+		/**
+		 * The status code of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The general problem description. */
@@ -456,7 +465,10 @@ export namespace MyNS {
 		/** The occurrence-specific problem description. */
 		detail: FormControl<string | null | undefined>,
 
-		/** The status code of the error. */
+		/**
+		 * The status code of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The general problem description. */
@@ -495,7 +507,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		episodeId: number;
+		episodeId: string;
 
 		/**
 		 * The long description of the piece.
@@ -507,7 +519,7 @@ export namespace MyNS {
 		 * The unique ID of the piece. Generated at creation.
 		 * Minimum: 0
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/** The URI to the piece image content in CD Drive. Format should be 'cddrive:id:{value}' or 'cddrive://{path}'. This property is only used on modification and is not returned. */
 		imageCdDriveUri?: string | null;
@@ -515,8 +527,11 @@ export namespace MyNS {
 		/** The name of the piece image file. Generated at creation. */
 		imageFileName?: string | null;
 
-		/** The size of the piece image file in bytes. Generated at creation. */
-		imageFileSize?: number | null;
+		/**
+		 * The size of the piece image file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		imageFileSize?: string | null;
 
 		/** The user's original name of the piece image file. */
 		imageOriginalFileName?: string | null;
@@ -527,12 +542,14 @@ export namespace MyNS {
 		/**
 		 * Seconds relative to the start of the episode.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relativeEndTime: number;
 
 		/**
 		 * Seconds relative to the start of the episode.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relativeStartTime: number;
 
@@ -573,7 +590,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		episodeId: FormControl<number | null | undefined>,
+		episodeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The long description of the piece.
@@ -585,7 +602,7 @@ export namespace MyNS {
 		 * The unique ID of the piece. Generated at creation.
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The URI to the piece image content in CD Drive. Format should be 'cddrive:id:{value}' or 'cddrive://{path}'. This property is only used on modification and is not returned. */
 		imageCdDriveUri: FormControl<string | null | undefined>,
@@ -593,8 +610,11 @@ export namespace MyNS {
 		/** The name of the piece image file. Generated at creation. */
 		imageFileName: FormControl<string | null | undefined>,
 
-		/** The size of the piece image file in bytes. Generated at creation. */
-		imageFileSize: FormControl<number | null | undefined>,
+		/**
+		 * The size of the piece image file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		imageFileSize: FormControl<string | null | undefined>,
 
 		/** The user's original name of the piece image file. */
 		imageOriginalFileName: FormControl<string | null | undefined>,
@@ -605,12 +625,14 @@ export namespace MyNS {
 		/**
 		 * Seconds relative to the start of the episode.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relativeEndTime: FormControl<number | null | undefined>,
 
 		/**
 		 * Seconds relative to the start of the episode.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relativeStartTime: FormControl<number | null | undefined>,
 
@@ -632,12 +654,12 @@ export namespace MyNS {
 			contributor: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(26)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(180)]),
-			episodeId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			episodeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			fullDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1200)]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			imageCdDriveUri: new FormControl<string | null | undefined>(undefined),
 			imageFileName: new FormControl<string | null | undefined>(undefined),
-			imageFileSize: new FormControl<number | null | undefined>(undefined),
+			imageFileSize: new FormControl<string | null | undefined>(undefined),
 			imageOriginalFileName: new FormControl<string | null | undefined>(undefined),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			relativeEndTime: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -659,13 +681,13 @@ export namespace MyNS {
 		 * The ID of the customer that owns this program.
 		 * Minimum: 0
 		 */
-		customerId?: number | null;
+		customerId?: string | null;
 
 		/**
 		 * The unique ID of the program. Generated at creation.
 		 * Minimum: 0
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/** The date the program was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate?: Date | null;
@@ -687,13 +709,13 @@ export namespace MyNS {
 		 * The ID of the customer that owns this program.
 		 * Minimum: 0
 		 */
-		customerId: FormControl<number | null | undefined>,
+		customerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the program. Generated at creation.
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The date the program was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate: FormControl<Date | null | undefined>,
@@ -707,8 +729,8 @@ export namespace MyNS {
 	export function CreateProgramFormGroup() {
 		return new FormGroup<ProgramFormProperties>({
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			customerId: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -739,7 +761,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: number;
+		id: string;
 
 		/** The human readable success or failure message. */
 		message?: string | null;
@@ -783,7 +805,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The human readable success or failure message. */
 		message: FormControl<string | null | undefined>,
@@ -805,7 +827,7 @@ export namespace MyNS {
 			createdDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			finishedDate: new FormControl<string | null | undefined>(undefined),
 			format: new FormControl<ProgramInformationBatchFormat | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			message: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ProgramInformationBatchStatus | null | undefined>(undefined, [Validators.required]),
@@ -858,7 +880,10 @@ export namespace MyNS {
 	/** An audio segment in an episode. */
 	export interface Segment {
 
-		/** The number of audio channels in the segment. Generated at creation. */
+		/**
+		 * The number of audio channels in the segment. Generated at creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channels?: number | null;
 
 		/** The date the segment was created. Generated at creation. */
@@ -869,19 +894,22 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		episodeId: number;
+		episodeId: string;
 
 		/** The name of the audio content file. Generated at creation. */
 		fileName?: string | null;
 
-		/** The size of the audio content file in bytes. Generated at creation. */
-		fileSize?: number | null;
+		/**
+		 * The size of the audio content file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileSize?: string | null;
 
 		/**
 		 * The unique ID of the segment. Generated at creation.
 		 * Minimum: 0
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/** The in-cue copy that signals the start of the segment to a board operator. */
 		inCue?: string | null;
@@ -889,7 +917,10 @@ export namespace MyNS {
 		/** The date the segment was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate?: Date | null;
 
-		/** The length (duration) of the segment in seconds. */
+		/**
+		 * The length (duration) of the segment in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** The original name of the audio content file. */
@@ -909,7 +940,10 @@ export namespace MyNS {
 	/** An audio segment in an episode. */
 	export interface SegmentFormProperties {
 
-		/** The number of audio channels in the segment. Generated at creation. */
+		/**
+		 * The number of audio channels in the segment. Generated at creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channels: FormControl<number | null | undefined>,
 
 		/** The date the segment was created. Generated at creation. */
@@ -920,19 +954,22 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		episodeId: FormControl<number | null | undefined>,
+		episodeId: FormControl<string | null | undefined>,
 
 		/** The name of the audio content file. Generated at creation. */
 		fileName: FormControl<string | null | undefined>,
 
-		/** The size of the audio content file in bytes. Generated at creation. */
-		fileSize: FormControl<number | null | undefined>,
+		/**
+		 * The size of the audio content file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileSize: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the segment. Generated at creation.
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The in-cue copy that signals the start of the segment to a board operator. */
 		inCue: FormControl<string | null | undefined>,
@@ -940,7 +977,10 @@ export namespace MyNS {
 		/** The date the segment was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate: FormControl<Date | null | undefined>,
 
-		/** The length (duration) of the segment in seconds. */
+		/**
+		 * The length (duration) of the segment in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** The original name of the audio content file. */
@@ -960,10 +1000,10 @@ export namespace MyNS {
 		return new FormGroup<SegmentFormProperties>({
 			channels: new FormControl<number | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			episodeId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			episodeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			fileName: new FormControl<string | null | undefined>(undefined),
-			fileSize: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			fileSize: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			inCue: new FormControl<string | null | undefined>(undefined),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			length: new FormControl<number | null | undefined>(undefined),
@@ -981,20 +1021,26 @@ export namespace MyNS {
 		/** The date the spot was created. Generated at creation. */
 		createdDate?: Date | null;
 
-		/** The length (duration) of the spot in seconds. */
+		/**
+		 * The length (duration) of the spot in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The name of the audio content file. Generated at creation. */
 		fileName?: string | null;
 
-		/** The size of the audio content file in bytes. Generated at creation. */
-		fileSize?: number | null;
+		/**
+		 * The size of the audio content file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileSize?: string | null;
 
 		/**
 		 * The unique ID of the spot. Generated at creation.
 		 * Minimum: 1
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/** The date the spot was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate?: Date | null;
@@ -1024,20 +1070,26 @@ export namespace MyNS {
 		/** The date the spot was created. Generated at creation. */
 		createdDate: FormControl<Date | null | undefined>,
 
-		/** The length (duration) of the spot in seconds. */
+		/**
+		 * The length (duration) of the spot in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The name of the audio content file. Generated at creation. */
 		fileName: FormControl<string | null | undefined>,
 
-		/** The size of the audio content file in bytes. Generated at creation. */
-		fileSize: FormControl<number | null | undefined>,
+		/**
+		 * The size of the audio content file in bytes. Generated at creation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileSize: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the spot. Generated at creation.
 		 * Minimum: 1
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The date the spot was last modified/updated. Automatically updated on any write operation. */
 		lastModifiedDate: FormControl<Date | null | undefined>,
@@ -1065,8 +1117,8 @@ export namespace MyNS {
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			duration: new FormControl<number | null | undefined>(undefined),
 			fileName: new FormControl<string | null | undefined>(undefined),
-			fileSize: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			fileSize: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(1)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			lastUploadedDate: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -1085,7 +1137,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		broadcastServiceId: number;
+		broadcastServiceId: string;
 
 		/** The date and time the spot insertion was created. Generated at creation. */
 		createdDate?: Date | null;
@@ -1100,17 +1152,19 @@ export namespace MyNS {
 		 * The ID of the customer who owns the spot insertion. Set to the logged-in customer at creation.
 		 * Minimum: 0
 		 */
-		customerId?: number | null;
+		customerId?: string | null;
 
 		/**
 		 * The duration of the spot insertion.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration: number;
 
 		/**
 		 * The date the spot insertion ends. The time will be set to midnight Eastern Time.
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: Date;
 
@@ -1118,14 +1172,14 @@ export namespace MyNS {
 		 * The unique ID of the spot insertion. Generated at creation.
 		 * Minimum: 0
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * The ID of the program for the spot insertion.
 		 * Required
 		 * Minimum: 0
 		 */
-		programId: number;
+		programId: string;
 
 		/**
 		 * The ordered list of spot IDs to play.
@@ -1136,6 +1190,7 @@ export namespace MyNS {
 		/**
 		 * The date the spot insertion can start. The time will be set to midnight Eastern Time.
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: Date;
 	}
@@ -1148,7 +1203,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		broadcastServiceId: FormControl<number | null | undefined>,
+		broadcastServiceId: FormControl<string | null | undefined>,
 
 		/** The date and time the spot insertion was created. Generated at creation. */
 		createdDate: FormControl<Date | null | undefined>,
@@ -1163,17 +1218,19 @@ export namespace MyNS {
 		 * The ID of the customer who owns the spot insertion. Set to the logged-in customer at creation.
 		 * Minimum: 0
 		 */
-		customerId: FormControl<number | null | undefined>,
+		customerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The duration of the spot insertion.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration: FormControl<number | null | undefined>,
 
 		/**
 		 * The date the spot insertion ends. The time will be set to midnight Eastern Time.
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
@@ -1181,31 +1238,32 @@ export namespace MyNS {
 		 * The unique ID of the spot insertion. Generated at creation.
 		 * Minimum: 0
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the program for the spot insertion.
 		 * Required
 		 * Minimum: 0
 		 */
-		programId: FormControl<number | null | undefined>,
+		programId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date the spot insertion can start. The time will be set to midnight Eastern Time.
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSpotInsertionFormGroup() {
 		return new FormGroup<SpotInsertionFormProperties>({
-			broadcastServiceId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			broadcastServiceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			cue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^S:[A-F0-9]{3,4}_[A-Za-z0-9_-]*$')]),
-			customerId: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			customerId: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			programId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			programId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1220,7 +1278,9 @@ export namespace MyNS {
 		 * Gets broadcast services matching the given criteria.
 		 * Get api/v2/broadcastservices
 		 * @param {number} pageStart The start page of the results to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById} orderById The sort order of the list of broadcast services, based on broadcast service ID. If unspecified, the broadcast services are returned in random order. If using paging to iterate through the results, sort order should be specified.
 		 * @return {Array<Episode>} The matching broadcast services.
 		 */
@@ -1293,7 +1353,9 @@ export namespace MyNS {
 		 * Get the information about a folder in the customer's private CD Drive.
 		 * Get api/v2/cddrive/folders/{folder_id}/items
 		 * @param {number} offset The offset into the items to begin the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of items to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitReturn} The folder information.
 		 */
 		ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitReturn> {
@@ -1303,16 +1365,20 @@ export namespace MyNS {
 		/**
 		 * Gets episodes matching the given criteria.
 		 * Get api/v2/episodes
-		 * @param {number} id Matches on the ID of the episode.
+		 * @param {string} id Matches on the ID of the episode.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Date} beginAirDateAfter Matches on the begin air date of the episode (inclusive).
 		 * @param {Date} endAirDateBefore Matches on the end air date of the episode (inclusive).
-		 * @param {number} programId Matches on the ID of the program that owns the episode.
+		 * @param {string} programId Matches on the ID of the program that owns the episode.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} pageStart The start page of the results to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById} orderById The sort order of the list of episodes, based on episode ID. If unspecified, the episodes are returned in random order. If using paging to iterate through the results, sort order should be specified.
 		 * @return {Array<Episode>} The matching episode.
 		 */
-		ApiV2EpisodesGetByIdAndBeginAirDateAfterAndEndAirDateBeforeAndProgramIdAndPageStartAndPageSizeAndOrderById(id: number | null | undefined, beginAirDateAfter: Date | null | undefined, endAirDateBefore: Date | null | undefined, programId: number, pageStart: number | null | undefined, pageSize: number | null | undefined, orderById: ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Episode>> {
+		ApiV2EpisodesGetByIdAndBeginAirDateAfterAndEndAirDateBeforeAndProgramIdAndPageStartAndPageSizeAndOrderById(id: string | null | undefined, beginAirDateAfter: Date | null | undefined, endAirDateBefore: Date | null | undefined, programId: string, pageStart: number | null | undefined, pageSize: number | null | undefined, orderById: ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Episode>> {
 			return this.http.get<Array<Episode>>(this.baseUri + 'api/v2/episodes?id=' + id + '&beginAirDateAfter=' + beginAirDateAfter?.toISOString() + '&endAirDateBefore=' + endAirDateBefore?.toISOString() + '&programId=' + programId + '&pageStart=' + pageStart + '&pageSize=' + pageSize + '&orderById=' + orderById, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1349,10 +1415,11 @@ export namespace MyNS {
 		/**
 		 * Returns the pieces matching the query parameters.
 		 * Get api/v2/pieces
-		 * @param {number} episodeId The ID of the episode that owns the piece.
+		 * @param {string} episodeId The ID of the episode that owns the piece.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Piece>} The pieces matching the query parameters
 		 */
-		ApiV2PiecesGetByEpisodeId(episodeId: number, headersHandler?: () => HttpHeaders): Observable<Array<Piece>> {
+		ApiV2PiecesGetByEpisodeId(episodeId: string, headersHandler?: () => HttpHeaders): Observable<Array<Piece>> {
 			return this.http.get<Array<Piece>>(this.baseUri + 'api/v2/pieces?episodeId=' + episodeId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1388,7 +1455,9 @@ export namespace MyNS {
 		 * Get api/v2/programs/search
 		 * @param {string} keywords Free text search that matches against the program title or description.
 		 * @param {number} pageStart The start page of the results to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @return {Array<Program>} Programs matching the search request sorted by relevance.
 		 */
 		ApiV2ProgramsSearchGetByKeywordsAndPageStartAndPageSize(keywords: string | null | undefined, pageStart: number | null | undefined, pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Program>> {
@@ -1407,13 +1476,17 @@ export namespace MyNS {
 		/**
 		 * Returns the segments matching the query parameters.
 		 * Get api/v2/segments
-		 * @param {number} episodeId The ID of the episode that owns the segment.
+		 * @param {string} episodeId The ID of the episode that owns the segment.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {number} segmentNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageStart The start page of the results to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById} orderById The sort order of the list of segments, based on segment ID. If unspecified, the segments are returned in random order. If using paging to iterate through the results, sort order should be specified.
 		 * @return {Array<Segment>} The segments matching the query parameters
 		 */
-		ApiV2SegmentsGetByEpisodeIdAndSegmentNumberAndPageStartAndPageSizeAndOrderById(episodeId: number, segmentNumber: number | null | undefined, pageStart: number | null | undefined, pageSize: number | null | undefined, orderById: ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Segment>> {
+		ApiV2SegmentsGetByEpisodeIdAndSegmentNumberAndPageStartAndPageSizeAndOrderById(episodeId: string, segmentNumber: number | null | undefined, pageStart: number | null | undefined, pageSize: number | null | undefined, orderById: ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Segment>> {
 			return this.http.get<Array<Segment>>(this.baseUri + 'api/v2/segments?episodeId=' + episodeId + '&segmentNumber=' + segmentNumber + '&pageStart=' + pageStart + '&pageSize=' + pageSize + '&orderById=' + orderById, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1448,7 +1521,9 @@ export namespace MyNS {
 		 * Returns the spot insertions matching the query parameters.
 		 * Get api/v2/spotinsertions
 		 * @param {number} pageStart The start page of the results to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById} orderById The sort order of the list of spot insertions, based on ID. If unspecified, the spot insertions are returned in random order. If using paging to iterate through the results, sort order should be specified.
 		 * @return {Array<SpotInsertion>} The spot insertions matching the query parameters
 		 */
@@ -1487,7 +1562,9 @@ export namespace MyNS {
 		 * Returns the spots matching the query parameters.
 		 * Get api/v2/spots
 		 * @param {number} pageStart The start page of the spot to return. The first item is indexed at 0.
+		 *     Minimum: 0
 		 * @param {number} pageSize The number of items to return. Must be between 0 and 500, inclusive.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {ApiV2BroadcastservicesGetByPageStartAndPageSizeAndOrderByIdOrderById} orderById The sort order of the list of spots, based on spot ID. If unspecified, the spots are returned in random order. If using paging to iterate through the results, sort order should be specified.
 		 * @return {Array<Spot>} The spots matching the query parameters
 		 */
@@ -1581,24 +1658,42 @@ export namespace MyNS {
 		/** The item instances. */
 		entries?: Array<CDDriveItem>;
 
-		/** The maximum number of items to return. */
+		/**
+		 * The maximum number of items to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** The start offset into the items. */
+		/**
+		 * The start offset into the items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
-		/** The total number of entries available. */
+		/**
+		 * The total number of entries available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 	export interface ApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitReturnFormProperties {
 
-		/** The maximum number of items to return. */
+		/**
+		 * The maximum number of items to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The start offset into the items. */
+		/**
+		 * The start offset into the items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** The total number of entries available. */
+		/**
+		 * The total number of entries available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2CddriveFolders_folder_idItemsGetByOffsetAndLimitReturnFormGroup() {

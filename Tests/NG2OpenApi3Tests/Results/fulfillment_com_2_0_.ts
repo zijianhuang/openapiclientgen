@@ -15,7 +15,9 @@ export namespace MyNS {
 		 * @param {string} fromDate Orders invoice date. Date-time in ISO 8601 format for selecting orders after, or at, the specified time
 		 * @param {string} toDate Orders invoice date. Date-time in ISO 8601 format for selecting orders before, or at, the specified time
 		 * @param {number} page A multiplier of the number of items (limit parameter) to skip before returning results
+		 *     Minimum: 1
 		 * @param {number} limit The numbers of items to return
+		 *     Minimum: 1    Maximum: 200
 		 * @param {Array<number>} warehouseIds A CSV of warehouse id, '123' or '1,2,3'
 		 * @param {Array<number>} orderIds A CSV of FDC order id, '123' or '1,2,3'
 		 * @param {Array<string>} hydrate Adds additional information to the response, uses a CSV format for multiple values.
@@ -30,7 +32,9 @@ export namespace MyNS {
 		 * Retrieve inventory for one or more items. This API requires elevated permissions, please speak to your success manager.
 		 * Get inventory
 		 * @param {number} page A multiplier of the number of items (limit parameter) to skip before returning results
+		 *     Minimum: 1
 		 * @param {number} limit The numbers of items to return
+		 *     Minimum: 1    Maximum: 200
 		 * @param {Array<number>} merchantIds A CSV of merchant id, '123' or '1,2,3'
 		 * @param {Array<number>} warehouseIds A CSV of warehouse id, '123' or '1,2,3'
 		 * @param {Array<string>} externalSkuNames A CSV of sku reference names, 'skuName1' or 'skuName1,skuName2,skuName3'
@@ -60,7 +64,9 @@ export namespace MyNS {
 		 * @param {Array<number>} merchantIds A CSV of merchant id, '123' or '1,2,3'
 		 * @param {Array<number>} warehouseIds A CSV of warehouse id, '123' or '1,2,3'
 		 * @param {number} page A multiplier of the number of items (limit parameter) to skip before returning results
+		 *     Minimum: 1
 		 * @param {number} limit The numbers of items to return
+		 *     Minimum: 1    Maximum: 200
 		 * @param {Array<string>} hydrate Adds additional information to the response, uses a CSV format for multiple values.'
 		 * @return {any} OK
 		 */
@@ -85,6 +91,7 @@ export namespace MyNS {
 		 * Request an order is canceled to prevent shipment.
 		 * Delete orders/{id}
 		 * @param {number} id ID of order that needs to be canceled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Your order was successfully canceled
 		 */
 		Delete_orders_id(id: number): Observable<HttpResponse<string>> {
@@ -97,6 +104,7 @@ export namespace MyNS {
 		 * Get orders/{id}
 		 * @param {string} id The FDC order Id
 		 * @param {number} merchantId Providing your `merchantId` indicates the `id` is your `merchantOrderId`. Although it is not necessary to provide this it will speed up your results when using your `merchantOrderId` however it will slow your results when using the FDC provided `id`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} hydrate Adds additional information to the response, uses a CSV format for multiple values.'
 		 * @return {void} Order Found
 		 */
@@ -109,6 +117,7 @@ export namespace MyNS {
 		 * Note, this API is used to update orders and is reserved for our shipping partners.
 		 * Put orders/{id}/ship
 		 * @param {number} id The FDC order Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Put_orders_id_shipPutBody} requestBody Shipping Details
 		 * @return {void} Order Found
 		 */
@@ -121,6 +130,7 @@ export namespace MyNS {
 		 * Note, this API is used to update orders and is reserved for our shipping partners.
 		 * Put orders/{id}/status
 		 * @param {number} id The FDC order Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Put_orders_id_statusPutBody} requestBody New status event
 		 * @return {void} Order Found
 		 */
@@ -135,7 +145,9 @@ export namespace MyNS {
 		 * @param {string} fromDate Date-time in ISO 8601 format for selecting orders after, or at, the specified time
 		 * @param {string} toDate Date-time in ISO 8601 format for selecting orders before, or at, the specified time
 		 * @param {number} page A multiplier of the number of items (limit parameter) to skip before returning results
+		 *     Minimum: 1
 		 * @param {number} limit The numbers of items to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {Get_returnsReturn} Returns
 		 */
 		Get_returns(fromDate: string, toDate: string, page: number | null | undefined, limit: number | null | undefined): Observable<Get_returnsReturn> {
@@ -189,7 +201,10 @@ export namespace MyNS {
 	export interface Get_accountingReturnData {
 		fees?: Get_accountingReturnDataFees;
 
-		/** Total number of items accounted for */
+		/**
+		 * Total number of items accounted for
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount?: number | null;
 		Get_accountingReturnDataItems?: Array<Get_accountingReturnDataItems>;
 		merchant?: Get_accountingReturnDataMerchant;
@@ -198,7 +213,10 @@ export namespace MyNS {
 	}
 	export interface Get_accountingReturnDataFormProperties {
 
-		/** Total number of items accounted for */
+		/**
+		 * Total number of items accounted for
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_accountingReturnDataFormGroup() {
@@ -209,25 +227,61 @@ export namespace MyNS {
 	}
 
 	export interface Get_accountingReturnDataFees {
+
+		/** Type: float */
 		box?: number | null;
+
+		/** Type: float */
 		envelope?: number | null;
+
+		/** Type: float */
 		fulfillment?: number | null;
+
+		/** Type: float */
 		insert?: number | null;
+
+		/** Type: float */
 		kitting?: number | null;
+
+		/** Type: float */
 		picking?: number | null;
+
+		/** Type: float */
 		postage?: number | null;
+
+		/** Type: float */
 		print?: number | null;
+
+		/** Type: float */
 		total?: number | null;
 	}
 	export interface Get_accountingReturnDataFeesFormProperties {
+
+		/** Type: float */
 		box: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		envelope: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		fulfillment: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		insert: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		kitting: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		picking: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		postage: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		print: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_accountingReturnDataFeesFormGroup() {
@@ -276,12 +330,16 @@ export namespace MyNS {
 	}
 
 	export interface Get_accountingReturnDataMerchant {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Name of the merchant */
 		name?: string | null;
 	}
 	export interface Get_accountingReturnDataMerchantFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the merchant */
@@ -297,30 +355,54 @@ export namespace MyNS {
 
 	export interface Get_accountingReturnDataOrder {
 
-		/** FDC order id */
+		/**
+		 * FDC order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Date of the order when it was recorded by accounting. */
+		/**
+		 * Date of the order when it was recorded by accounting.
+		 * Type: DateOnly
+		 */
 		invoiceDate?: Date | null;
 
-		/** Merchant order id */
+		/**
+		 * Merchant order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merchantOrderId?: number | null;
 
-		/** Date of the order when it was initially received. */
+		/**
+		 * Date of the order when it was initially received.
+		 * Type: DateOnly
+		 */
 		recordedDate?: Date | null;
 	}
 	export interface Get_accountingReturnDataOrderFormProperties {
 
-		/** FDC order id */
+		/**
+		 * FDC order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Date of the order when it was recorded by accounting. */
+		/**
+		 * Date of the order when it was recorded by accounting.
+		 * Type: DateOnly
+		 */
 		invoiceDate: FormControl<Date | null | undefined>,
 
-		/** Merchant order id */
+		/**
+		 * Merchant order id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merchantOrderId: FormControl<number | null | undefined>,
 
-		/** Date of the order when it was initially received. */
+		/**
+		 * Date of the order when it was initially received.
+		 * Type: DateOnly
+		 */
 		recordedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGet_accountingReturnDataOrderFormGroup() {
@@ -334,12 +416,16 @@ export namespace MyNS {
 	}
 
 	export interface Get_accountingReturnDataWarehouse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Name of the merchant */
 		shortName?: string | null;
 	}
 	export interface Get_accountingReturnDataWarehouseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the merchant */
@@ -366,30 +452,54 @@ export namespace MyNS {
 
 	export interface Get_accountingReturnMetaPagination {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage?: number | null;
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 	export interface Get_accountingReturnMetaPaginationFormProperties {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage: FormControl<number | null | undefined>,
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_accountingReturnMetaPaginationFormGroup() {
@@ -433,7 +543,10 @@ export namespace MyNS {
 
 	export interface Get_inventoryReturnDataItem {
 
-		/** FDC ID for this Item */
+		/**
+		 * FDC ID for this Item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Sku reference name for this item */
@@ -441,7 +554,10 @@ export namespace MyNS {
 	}
 	export interface Get_inventoryReturnDataItemFormProperties {
 
-		/** FDC ID for this Item */
+		/**
+		 * FDC ID for this Item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Sku reference name for this item */
@@ -485,12 +601,18 @@ export namespace MyNS {
 
 	export interface Get_inventoryReturnDataQuantityTotal {
 
-		/** Number of items that are available to be used in an order */
+		/**
+		 * Number of items that are available to be used in an order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableToPromise?: number | null;
 	}
 	export interface Get_inventoryReturnDataQuantityTotalFormProperties {
 
-		/** Number of items that are available to be used in an order */
+		/**
+		 * Number of items that are available to be used in an order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableToPromise: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_inventoryReturnDataQuantityTotalFormGroup() {
@@ -513,30 +635,54 @@ export namespace MyNS {
 
 	export interface Get_inventoryReturnMetaPagination {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage?: number | null;
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 	export interface Get_inventoryReturnMetaPaginationFormProperties {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage: FormControl<number | null | undefined>,
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_inventoryReturnMetaPaginationFormGroup() {
@@ -575,12 +721,16 @@ export namespace MyNS {
 
 	export interface Post_oauth_access_tokenReturn {
 		access_token?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 		refresh_token?: string | null;
 		token_type?: string | null;
 	}
 	export interface Post_oauth_access_tokenReturnFormProperties {
 		access_token: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 		refresh_token: FormControl<string | null | undefined>,
 		token_type: FormControl<string | null | undefined>,
@@ -603,7 +753,10 @@ export namespace MyNS {
 		/** Required */
 		Post_ordersPostBodyItems: Array<Post_ordersPostBodyItems>;
 
-		/** Necessary if you have a multitenancy account, otherwise we will associate the order with your account */
+		/**
+		 * Necessary if you have a multitenancy account, otherwise we will associate the order with your account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merchantId?: number | null;
 
 		/**
@@ -630,7 +783,10 @@ export namespace MyNS {
 		/** Use of this property requires special permission and must be discussed with your account executive; values are restricted while custom values need to be accepted by your AE. */
 		integrator: FormControl<Post_ordersPostBodyIntegrator | null | undefined>,
 
-		/** Necessary if you have a multitenancy account, otherwise we will associate the order with your account */
+		/**
+		 * Necessary if you have a multitenancy account, otherwise we will associate the order with your account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merchantId: FormControl<number | null | undefined>,
 
 		/**
@@ -822,9 +978,13 @@ export namespace MyNS {
 	}
 
 	export interface Post_ordersPostBodyWarehouse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface Post_ordersPostBodyWarehouseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreatePost_ordersPostBodyWarehouseFormGroup() {
@@ -842,7 +1002,10 @@ export namespace MyNS {
 		 */
 		trackingNumber: string;
 
-		/** Override predicted weight of package */
+		/**
+		 * Override predicted weight of package
+		 * Type: float
+		 */
 		weightOverride?: number | null;
 	}
 	export interface Put_orders_id_shipPutBodyFormProperties {
@@ -853,7 +1016,10 @@ export namespace MyNS {
 		 */
 		trackingNumber: FormControl<string | null | undefined>,
 
-		/** Override predicted weight of package */
+		/**
+		 * Override predicted weight of package
+		 * Type: float
+		 */
 		weightOverride: FormControl<number | null | undefined>,
 	}
 	export function CreatePut_orders_id_shipPutBodyFormGroup() {
@@ -932,30 +1098,54 @@ export namespace MyNS {
 
 	export interface Get_returnsReturnMetaPagination {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage?: number | null;
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 	export interface Get_returnsReturnMetaPaginationFormProperties {
 
-		/** Count of records returned in response, this will be equal to or less then the limit parameter */
+		/**
+		 * Count of records returned in response, this will be equal to or less then the limit parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Current page of the response, this will match the page parameter */
+		/**
+		 * Current page of the response, this will match the page parameter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage: FormControl<number | null | undefined>,
 
-		/** Total number of records available to request */
+		/**
+		 * Total number of records available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Total number of pages available to request */
+		/**
+		 * Total number of pages available to request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_returnsReturnMetaPaginationFormGroup() {
@@ -976,7 +1166,10 @@ export namespace MyNS {
 		createDate?: Date | null;
 		deptLeader?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		merchant?: Get_users_meReturnMerchant;
 		name?: string | null;
@@ -993,7 +1186,10 @@ export namespace MyNS {
 		createDate: FormControl<Date | null | undefined>,
 		deptLeader: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<boolean | null | undefined>,
@@ -1018,9 +1214,13 @@ export namespace MyNS {
 	}
 
 	export interface Get_users_meReturnMerchant {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface Get_users_meReturnMerchantFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_users_meReturnMerchantFormGroup() {

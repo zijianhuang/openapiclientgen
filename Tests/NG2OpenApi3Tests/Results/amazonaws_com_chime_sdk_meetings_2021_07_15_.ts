@@ -985,7 +985,9 @@ export namespace MyNS {
 		 * Get meetings/{MeetingId}/attendees
 		 * @param {string} MeetingId The Amazon Chime SDK meeting ID.
 		 * @param {string} next_token The token to use to retrieve the next page of results.
+		 *     Max length: 4096
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttendeesResponse} Success
@@ -1058,6 +1060,7 @@ export namespace MyNS {
 		 * Returns a list of the tags available for the specified resource.
 		 * Get tags#arn
 		 * @param {string} arn The ARN of the resource.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -1184,8 +1187,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalUserId: string;
 
@@ -1197,8 +1200,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalUserId: FormControl<string | null | undefined>,
 	}
@@ -1233,31 +1236,31 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaRegion: string;
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId?: string | null;
 
 		/**
 		 * <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: string;
 
@@ -1269,8 +1272,8 @@ export namespace MyNS {
 
 		/**
 		 * When specified, replicates the media from the primary meeting to the new meeting.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		PrimaryMeetingId?: string | null;
 
@@ -1293,38 +1296,38 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaRegion: FormControl<string | null | undefined>,
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
 
 		/**
 		 * When specified, replicates the media from the primary meeting to the new meeting.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		PrimaryMeetingId: FormControl<string | null | undefined>,
 	}
@@ -1376,31 +1379,31 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaRegion: string;
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId?: string | null;
 
 		/**
 		 * <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: string;
 
@@ -1420,8 +1423,8 @@ export namespace MyNS {
 
 		/**
 		 * When specified, replicates the media from the primary meeting to the new meeting.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		PrimaryMeetingId?: string | null;
 
@@ -1444,38 +1447,38 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MediaRegion: FormControl<string | null | undefined>,
 
 		/**
 		 * Reserved.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		MeetingHostId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
 
 		/**
 		 * When specified, replicates the media from the primary meeting to the new meeting.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		PrimaryMeetingId: FormControl<string | null | undefined>,
 	}
@@ -1559,8 +1562,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -1577,8 +1580,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -1596,8 +1599,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource that you're removing tags from.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -1614,8 +1617,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource that you're removing tags from.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

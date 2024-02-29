@@ -46,6 +46,7 @@ export namespace MyNS {
 		/**
 		 * Numeric value to calculate
 		 * Required
+		 * Type: double
 		 */
 		input: number;
 	}
@@ -61,6 +62,7 @@ export namespace MyNS {
 		/**
 		 * Numeric value to calculate
 		 * Required
+		 * Type: double
 		 */
 		input: FormControl<number | null | undefined>,
 	}
@@ -84,12 +86,14 @@ export namespace MyNS {
 		/**
 		 * Numeric value
 		 * Required
+		 * Type: double
 		 */
 		input: number;
 
 		/**
 		 * Addend, subtrahend, factor, divisor or radicand
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -105,12 +109,14 @@ export namespace MyNS {
 		/**
 		 * Numeric value
 		 * Required
+		 * Type: double
 		 */
 		input: FormControl<number | null | undefined>,
 
 		/**
 		 * Addend, subtrahend, factor, divisor or radicand
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -135,12 +141,14 @@ export namespace MyNS {
 		/**
 		 * Number to raise
 		 * Required
+		 * Type: double
 		 */
 		input: number;
 
 		/**
 		 * Power
 		 * Required
+		 * Type: double
 		 */
 		power: number;
 	}
@@ -156,12 +164,14 @@ export namespace MyNS {
 		/**
 		 * Number to raise
 		 * Required
+		 * Type: double
 		 */
 		input: FormControl<number | null | undefined>,
 
 		/**
 		 * Power
 		 * Required
+		 * Type: double
 		 */
 		power: FormControl<number | null | undefined>,
 	}
@@ -518,6 +528,7 @@ export namespace MyNS {
 		/**
 		 * Number to match
 		 * Required
+		 * Type: double
 		 */
 		match: number;
 
@@ -529,6 +540,7 @@ export namespace MyNS {
 		/**
 		 * Number to match
 		 * Required
+		 * Type: double
 		 */
 		match: FormControl<number | null | undefined>,
 
@@ -608,7 +620,10 @@ export namespace MyNS {
 
 	export interface InputConvertAngle {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -619,7 +634,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertAngleFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -641,7 +659,10 @@ export namespace MyNS {
 
 	export interface InputConvertArea {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -652,7 +673,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertAreaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -674,7 +698,10 @@ export namespace MyNS {
 
 	export interface InputConvertDistance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -685,7 +712,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertDistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -707,7 +737,10 @@ export namespace MyNS {
 
 	export interface InputConvertDuration {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -718,7 +751,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertDurationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -740,7 +776,10 @@ export namespace MyNS {
 
 	export interface InputConvertEnergy {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -751,7 +790,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertEnergyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -773,7 +815,10 @@ export namespace MyNS {
 
 	export interface InputConvertPower {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -784,7 +829,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertPowerFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -806,7 +854,10 @@ export namespace MyNS {
 
 	export interface InputConvertSpeed {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -817,7 +868,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertSpeedFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -839,7 +893,10 @@ export namespace MyNS {
 
 	export interface InputConvertTemperature {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -850,7 +907,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertTemperatureFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -872,7 +932,10 @@ export namespace MyNS {
 
 	export interface InputConvertVolume {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -883,7 +946,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertVolumeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -905,7 +971,10 @@ export namespace MyNS {
 
 	export interface InputConvertWeight {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: number;
 
 		/** Required */
@@ -916,7 +985,10 @@ export namespace MyNS {
 	}
 	export interface InputConvertWeightFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		input: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -979,6 +1051,7 @@ export namespace MyNS {
 		/**
 		 * Amount to convert
 		 * Required
+		 * Type: double
 		 */
 		input: number;
 
@@ -993,6 +1066,7 @@ export namespace MyNS {
 		/**
 		 * Amount to convert
 		 * Required
+		 * Type: double
 		 */
 		input: FormControl<number | null | undefined>,
 
@@ -1018,6 +1092,7 @@ export namespace MyNS {
 		/**
 		 * Amount to format
 		 * Required
+		 * Type: double
 		 */
 		input: number;
 
@@ -1029,6 +1104,7 @@ export namespace MyNS {
 		/**
 		 * Amount to format
 		 * Required
+		 * Type: double
 		 */
 		input: FormControl<number | null | undefined>,
 
@@ -2193,7 +2269,10 @@ export namespace MyNS {
 
 	export interface OutputCollectionNumber {
 
-		/** First Value */
+		/**
+		 * First Value
+		 * Type: double
+		 */
 		item?: number | null;
 
 		/** All Values */
@@ -2204,7 +2283,10 @@ export namespace MyNS {
 	}
 	export interface OutputCollectionNumberFormProperties {
 
-		/** First Value */
+		/**
+		 * First Value
+		 * Type: double
+		 */
 		item: FormControl<number | null | undefined>,
 
 		/** Success */
@@ -2260,90 +2342,174 @@ export namespace MyNS {
 
 	export interface OutputDateDifference {
 
-		/** Days */
+		/**
+		 * Days
+		 * Type: double
+		 */
 		days?: number | null;
 
-		/** Hours */
+		/**
+		 * Hours
+		 * Type: double
+		 */
 		hours?: number | null;
 
-		/** Milliseconds */
+		/**
+		 * Milliseconds
+		 * Type: double
+		 */
 		milliseconds?: number | null;
 
-		/** Minutes */
+		/**
+		 * Minutes
+		 * Type: double
+		 */
 		minutes?: number | null;
 
-		/** Months */
+		/**
+		 * Months
+		 * Type: double
+		 */
 		months?: number | null;
 
-		/** Ticks */
+		/**
+		 * Ticks
+		 * Type: double
+		 */
 		ticks?: number | null;
 
-		/** Total Days */
+		/**
+		 * Total Days
+		 * Type: double
+		 */
 		totalDays?: number | null;
 
-		/** Total Hours */
+		/**
+		 * Total Hours
+		 * Type: double
+		 */
 		totalHours?: number | null;
 
-		/** Total Milliseconds */
+		/**
+		 * Total Milliseconds
+		 * Type: double
+		 */
 		totalMilliseconds?: number | null;
 
-		/** Total Minutes */
+		/**
+		 * Total Minutes
+		 * Type: double
+		 */
 		totalMinutes?: number | null;
 
-		/** Total Months */
+		/**
+		 * Total Months
+		 * Type: double
+		 */
 		totalMonths?: number | null;
 
-		/** Total Seconds */
+		/**
+		 * Total Seconds
+		 * Type: double
+		 */
 		totalSeconds?: number | null;
 
-		/** Total Years */
+		/**
+		 * Total Years
+		 * Type: double
+		 */
 		totalYears?: number | null;
 
-		/** Years */
+		/**
+		 * Years
+		 * Type: double
+		 */
 		years?: number | null;
 	}
 	export interface OutputDateDifferenceFormProperties {
 
-		/** Days */
+		/**
+		 * Days
+		 * Type: double
+		 */
 		days: FormControl<number | null | undefined>,
 
-		/** Hours */
+		/**
+		 * Hours
+		 * Type: double
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Milliseconds */
+		/**
+		 * Milliseconds
+		 * Type: double
+		 */
 		milliseconds: FormControl<number | null | undefined>,
 
-		/** Minutes */
+		/**
+		 * Minutes
+		 * Type: double
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Months */
+		/**
+		 * Months
+		 * Type: double
+		 */
 		months: FormControl<number | null | undefined>,
 
-		/** Ticks */
+		/**
+		 * Ticks
+		 * Type: double
+		 */
 		ticks: FormControl<number | null | undefined>,
 
-		/** Total Days */
+		/**
+		 * Total Days
+		 * Type: double
+		 */
 		totalDays: FormControl<number | null | undefined>,
 
-		/** Total Hours */
+		/**
+		 * Total Hours
+		 * Type: double
+		 */
 		totalHours: FormControl<number | null | undefined>,
 
-		/** Total Milliseconds */
+		/**
+		 * Total Milliseconds
+		 * Type: double
+		 */
 		totalMilliseconds: FormControl<number | null | undefined>,
 
-		/** Total Minutes */
+		/**
+		 * Total Minutes
+		 * Type: double
+		 */
 		totalMinutes: FormControl<number | null | undefined>,
 
-		/** Total Months */
+		/**
+		 * Total Months
+		 * Type: double
+		 */
 		totalMonths: FormControl<number | null | undefined>,
 
-		/** Total Seconds */
+		/**
+		 * Total Seconds
+		 * Type: double
+		 */
 		totalSeconds: FormControl<number | null | undefined>,
 
-		/** Total Years */
+		/**
+		 * Total Years
+		 * Type: double
+		 */
 		totalYears: FormControl<number | null | undefined>,
 
-		/** Years */
+		/**
+		 * Years
+		 * Type: double
+		 */
 		years: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputDateDifferenceFormGroup() {
@@ -2368,42 +2534,78 @@ export namespace MyNS {
 
 	export interface OutputDateInfo {
 
-		/** DayOfWeek */
+		/**
+		 * DayOfWeek
+		 * Type: double
+		 */
 		DayOfWeek?: number | null;
 
-		/** DayOfYear */
+		/**
+		 * DayOfYear
+		 * Type: double
+		 */
 		DayOfYear?: number | null;
 
-		/** MinutesInDay */
+		/**
+		 * MinutesInDay
+		 * Type: double
+		 */
 		MinutesInDay?: number | null;
 
-		/** SecondsInDay */
+		/**
+		 * SecondsInDay
+		 * Type: double
+		 */
 		SecondsInDay?: number | null;
 
-		/** Ticks */
+		/**
+		 * Ticks
+		 * Type: double
+		 */
 		Ticks?: number | null;
 
-		/** WeekOfYear */
+		/**
+		 * WeekOfYear
+		 * Type: double
+		 */
 		WeekOfYear?: number | null;
 	}
 	export interface OutputDateInfoFormProperties {
 
-		/** DayOfWeek */
+		/**
+		 * DayOfWeek
+		 * Type: double
+		 */
 		DayOfWeek: FormControl<number | null | undefined>,
 
-		/** DayOfYear */
+		/**
+		 * DayOfYear
+		 * Type: double
+		 */
 		DayOfYear: FormControl<number | null | undefined>,
 
-		/** MinutesInDay */
+		/**
+		 * MinutesInDay
+		 * Type: double
+		 */
 		MinutesInDay: FormControl<number | null | undefined>,
 
-		/** SecondsInDay */
+		/**
+		 * SecondsInDay
+		 * Type: double
+		 */
 		SecondsInDay: FormControl<number | null | undefined>,
 
-		/** Ticks */
+		/**
+		 * Ticks
+		 * Type: double
+		 */
 		Ticks: FormControl<number | null | undefined>,
 
-		/** WeekOfYear */
+		/**
+		 * WeekOfYear
+		 * Type: double
+		 */
 		WeekOfYear: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputDateInfoFormGroup() {
@@ -2437,22 +2639,40 @@ export namespace MyNS {
 
 	export interface OutputMarketIndex {
 
-		/** Adjusted close value */
+		/**
+		 * Adjusted close value
+		 * Type: double
+		 */
 		adj_close?: number | null;
 
-		/** Adjusted high value */
+		/**
+		 * Adjusted high value
+		 * Type: double
+		 */
 		adj_high?: number | null;
 
-		/** Adjusted low value */
+		/**
+		 * Adjusted low value
+		 * Type: double
+		 */
 		adj_low?: number | null;
 
-		/** Adjusted open value */
+		/**
+		 * Adjusted open value
+		 * Type: double
+		 */
 		adj_open?: number | null;
 
-		/** Adjusted trading volume */
+		/**
+		 * Adjusted trading volume
+		 * Type: double
+		 */
 		adj_volume?: number | null;
 
-		/** Close value */
+		/**
+		 * Close value
+		 * Type: double
+		 */
 		close?: number | null;
 
 		/** Date */
@@ -2461,39 +2681,69 @@ export namespace MyNS {
 		/** Market exchange */
 		exchange?: string | null;
 
-		/** High value */
+		/**
+		 * High value
+		 * Type: double
+		 */
 		high?: number | null;
 
-		/** Low value */
+		/**
+		 * Low value
+		 * Type: double
+		 */
 		low?: number | null;
 
-		/** Open value */
+		/**
+		 * Open value
+		 * Type: double
+		 */
 		open?: number | null;
 
 		/** Index symbol */
 		symbol?: string | null;
 
-		/** Trading volume */
+		/**
+		 * Trading volume
+		 * Type: double
+		 */
 		volume?: number | null;
 	}
 	export interface OutputMarketIndexFormProperties {
 
-		/** Adjusted close value */
+		/**
+		 * Adjusted close value
+		 * Type: double
+		 */
 		adj_close: FormControl<number | null | undefined>,
 
-		/** Adjusted high value */
+		/**
+		 * Adjusted high value
+		 * Type: double
+		 */
 		adj_high: FormControl<number | null | undefined>,
 
-		/** Adjusted low value */
+		/**
+		 * Adjusted low value
+		 * Type: double
+		 */
 		adj_low: FormControl<number | null | undefined>,
 
-		/** Adjusted open value */
+		/**
+		 * Adjusted open value
+		 * Type: double
+		 */
 		adj_open: FormControl<number | null | undefined>,
 
-		/** Adjusted trading volume */
+		/**
+		 * Adjusted trading volume
+		 * Type: double
+		 */
 		adj_volume: FormControl<number | null | undefined>,
 
-		/** Close value */
+		/**
+		 * Close value
+		 * Type: double
+		 */
 		close: FormControl<number | null | undefined>,
 
 		/** Date */
@@ -2502,19 +2752,31 @@ export namespace MyNS {
 		/** Market exchange */
 		exchange: FormControl<string | null | undefined>,
 
-		/** High value */
+		/**
+		 * High value
+		 * Type: double
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Low value */
+		/**
+		 * Low value
+		 * Type: double
+		 */
 		low: FormControl<number | null | undefined>,
 
-		/** Open value */
+		/**
+		 * Open value
+		 * Type: double
+		 */
 		open: FormControl<number | null | undefined>,
 
 		/** Index symbol */
 		symbol: FormControl<string | null | undefined>,
 
-		/** Trading volume */
+		/**
+		 * Trading volume
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputMarketIndexFormGroup() {
@@ -2554,12 +2816,18 @@ export namespace MyNS {
 
 	export interface OutputNumber {
 
-		/** Result */
+		/**
+		 * Result
+		 * Type: double
+		 */
 		result?: number | null;
 	}
 	export interface OutputNumberFormProperties {
 
-		/** Result */
+		/**
+		 * Result
+		 * Type: double
+		 */
 		result: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputNumberFormGroup() {
@@ -2584,7 +2852,10 @@ export namespace MyNS {
 
 	export interface OutputStockPriceResult {
 
-		/** Close */
+		/**
+		 * Close
+		 * Type: double
+		 */
 		close?: number | null;
 
 		/** Date */
@@ -2593,24 +2864,39 @@ export namespace MyNS {
 		/** Stock exchange */
 		exchange?: string | null;
 
-		/** High */
+		/**
+		 * High
+		 * Type: double
+		 */
 		high?: number | null;
 
-		/** Low */
+		/**
+		 * Low
+		 * Type: double
+		 */
 		low?: number | null;
 
-		/** Open */
+		/**
+		 * Open
+		 * Type: double
+		 */
 		open?: number | null;
 
 		/** Ticker symbol */
 		symbol?: string | null;
 
-		/** Volume */
+		/**
+		 * Volume
+		 * Type: double
+		 */
 		volume?: number | null;
 	}
 	export interface OutputStockPriceResultFormProperties {
 
-		/** Close */
+		/**
+		 * Close
+		 * Type: double
+		 */
 		close: FormControl<number | null | undefined>,
 
 		/** Date */
@@ -2619,19 +2905,31 @@ export namespace MyNS {
 		/** Stock exchange */
 		exchange: FormControl<string | null | undefined>,
 
-		/** High */
+		/**
+		 * High
+		 * Type: double
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Low */
+		/**
+		 * Low
+		 * Type: double
+		 */
 		low: FormControl<number | null | undefined>,
 
-		/** Open */
+		/**
+		 * Open
+		 * Type: double
+		 */
 		open: FormControl<number | null | undefined>,
 
 		/** Ticker symbol */
 		symbol: FormControl<string | null | undefined>,
 
-		/** Volume */
+		/**
+		 * Volume
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputStockPriceResultFormGroup() {

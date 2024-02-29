@@ -45,13 +45,19 @@ export namespace MyNS {
 
 	export interface PartialSkinInfo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time: number;
 
 		/** Required */
@@ -59,13 +65,19 @@ export namespace MyNS {
 	}
 	export interface PartialSkinInfoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -115,14 +127,23 @@ export namespace MyNS {
 	}
 
 	export interface SkinInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accountId?: number | null;
 
 		/** Required */
 		data: SkinData;
+
+		/** Type: double */
 		duration?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		idStr?: string | null;
 
@@ -131,17 +152,30 @@ export namespace MyNS {
 		name?: string | null;
 		private?: boolean | null;
 		server?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 		uuid?: string | null;
 		variant?: GenerateOptionsVariant | null;
+
+		/** Type: double */
 		views?: number | null;
 	}
 	export interface SkinInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accountId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		duration: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		idStr: FormControl<string | null | undefined>,
 
@@ -150,9 +184,13 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		private: FormControl<boolean | null | undefined>,
 		server: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		uuid: FormControl<string | null | undefined>,
 		variant: FormControl<GenerateOptionsVariant | null | undefined>,
+
+		/** Type: double */
 		views: FormControl<number | null | undefined>,
 	}
 	export function CreateSkinInfoFormGroup() {
@@ -177,10 +215,14 @@ export namespace MyNS {
 	export enum SkinInfoModel { slim = 'slim', steve = 'steve', unknown = 'unknown' }
 
 	export interface Stats {
+
+		/** Type: double */
 		delay?: number | null;
 		server?: string | null;
 	}
 	export interface StatsFormProperties {
+
+		/** Type: double */
 		delay: FormControl<number | null | undefined>,
 		server: FormControl<string | null | undefined>,
 	}

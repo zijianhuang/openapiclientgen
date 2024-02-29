@@ -735,7 +735,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="projectName">The project ID for this request.</param>
 		/// <param name="zone">The zone for this replica pool.</param>
-		/// <param name="maxResults">Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)</param>
+		/// <param name="maxResults">Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.</param>
 		/// <returns>Successful response</returns>
 		public async Task Replicapool_pools_listAsync(string projectName, string zone, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -870,7 +873,10 @@ namespace MyNS
 		/// <param name="projectName">The project ID for this request.</param>
 		/// <param name="zone">The zone where the replica pool lives.</param>
 		/// <param name="poolName">The replica pool name for this request.</param>
-		/// <param name="maxResults">Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)</param>
+		/// <param name="maxResults">Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.</param>
 		/// <returns>Successful response</returns>
 		public async Task Replicapool_replicas_listAsync(string projectName, string zone, string poolName, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

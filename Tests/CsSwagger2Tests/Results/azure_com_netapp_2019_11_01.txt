@@ -1468,7 +1468,10 @@ namespace MyNS
 		/// Accounts_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<NetAppAccountList> Accounts_ListAsync(string subscriptionId, string resourceGroupName, string api_version)
@@ -1500,7 +1503,10 @@ namespace MyNS
 		/// Accounts_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
@@ -1533,7 +1539,10 @@ namespace MyNS
 		/// Accounts_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">NetApp Account object supplied in the body of the operation.</param>
@@ -1574,7 +1583,10 @@ namespace MyNS
 		/// Accounts_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		public async Task Accounts_DeleteAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -1600,7 +1612,10 @@ namespace MyNS
 		/// Accounts_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">NetApp Account object supplied in the body of the operation.</param>
@@ -1641,7 +1656,10 @@ namespace MyNS
 		/// Pools_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
@@ -1674,9 +1692,15 @@ namespace MyNS
 		/// Pools_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<CapacityPool> Pools_GetAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string api_version)
@@ -1708,9 +1732,15 @@ namespace MyNS
 		/// Pools_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Capacity pool object supplied in the body of the operation.</param>
 		/// <returns>OK - pool updated</returns>
@@ -1750,9 +1780,15 @@ namespace MyNS
 		/// Pools_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		public async Task Pools_DeleteAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string api_version)
 		{
@@ -1777,9 +1813,15 @@ namespace MyNS
 		/// Pools_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Capacity pool object supplied in the body of the operation.</param>
 		/// <returns>OK</returns>
@@ -1819,9 +1861,15 @@ namespace MyNS
 		/// Volumes_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<VolumeList> Volumes_ListAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string api_version)
@@ -1853,10 +1901,19 @@ namespace MyNS
 		/// Volumes_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<Volume> Volumes_GetAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -1888,10 +1945,19 @@ namespace MyNS
 		/// Volumes_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Volume object supplied in the body of the operation.</param>
 		/// <returns>Ok - volume updated</returns>
@@ -1931,10 +1997,19 @@ namespace MyNS
 		/// Volumes_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		public async Task Volumes_DeleteAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
 		{
@@ -1959,10 +2034,19 @@ namespace MyNS
 		/// Volumes_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Volume object supplied in the body of the operation.</param>
 		/// <returns>OK</returns>
@@ -2002,10 +2086,19 @@ namespace MyNS
 		/// Volumes_AuthorizeReplication subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/authorizeReplication
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Authorize request object supplied in the body of the operation.</param>
 		/// <returns>OK - terminal state</returns>
@@ -2039,10 +2132,19 @@ namespace MyNS
 		/// Volumes_BreakReplication subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/breakReplication
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK - terminal state</returns>
 		public async Task Volumes_BreakReplicationAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -2068,10 +2170,19 @@ namespace MyNS
 		/// Volumes_DeleteReplication subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/deleteReplication
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK - terminal state</returns>
 		public async Task Volumes_DeleteReplicationAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -2097,10 +2208,19 @@ namespace MyNS
 		/// Volumes_ReplicationStatus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/replicationStatus
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<ReplicationStatus> Volumes_ReplicationStatusAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -2132,10 +2252,19 @@ namespace MyNS
 		/// Volumes_ResyncReplication subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/resyncReplication
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK - terminal state</returns>
 		public async Task Volumes_ResyncReplicationAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -2161,10 +2290,19 @@ namespace MyNS
 		/// Volumes_Revert subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/revert
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Object for snapshot to revert supplied in the body of the operation.</param>
 		/// <returns>OK - terminal state</returns>
@@ -2198,10 +2336,19 @@ namespace MyNS
 		/// Snapshots_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
 		public async Task<SnapshotsList> Snapshots_ListAsync(string subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string api_version)
@@ -2233,10 +2380,19 @@ namespace MyNS
 		/// Snapshots_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="snapshotName">The name of the mount target</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
@@ -2269,10 +2425,19 @@ namespace MyNS
 		/// Snapshots_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="snapshotName">The name of the mount target</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Snapshot object supplied in the body of the operation.</param>
@@ -2306,10 +2471,19 @@ namespace MyNS
 		/// Snapshots_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="snapshotName">The name of the mount target</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>OK</returns>
@@ -2336,10 +2510,19 @@ namespace MyNS
 		/// Snapshots_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the NetApp account</param>
-		/// <param name="poolName">The name of the capacity pool</param>
-		/// <param name="volumeName">The name of the volume</param>
+		/// <param name="poolName">The name of the capacity pool
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="volumeName">The name of the volume
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="snapshotName">The name of the mount target</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="requestBody">Snapshot object supplied in the body of the operation.</param>

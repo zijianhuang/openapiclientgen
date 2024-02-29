@@ -513,6 +513,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/constraints
 		 * @param {string} parent Required. The Google Cloud resource that parents the constraint. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
 		 * @param {number} pageSize Size of the pages to be returned. This is currently unsupported and will be ignored. The server may at any point start using this field to limit page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token used to retrieve the next page. This is currently unsupported and will be ignored. The server may at any point start using this field.
 		 * @return {GoogleCloudOrgpolicyV2ListConstraintsResponse} Successful response
 		 */
@@ -525,6 +526,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/customConstraints
 		 * @param {string} parent Required. The target Google Cloud resource that parents the set of custom constraints that will be returned from this call. Must be in one of the following forms: * `organizations/{organization_id}`
 		 * @param {number} pageSize Size of the pages to be returned. This is currently unsupported and will be ignored. The server may at any point start using this field to limit page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token used to retrieve the next page. This is currently unsupported and will be ignored. The server may at any point start using this field.
 		 * @return {GoogleCloudOrgpolicyV2ListCustomConstraintsResponse} Successful response
 		 */
@@ -547,6 +549,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/policies
 		 * @param {string} parent Required. The target Google Cloud resource that parents the set of constraints and policies that will be returned from this call. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
 		 * @param {number} pageSize Size of the pages to be returned. This is currently unsupported and will be ignored. The server may at any point start using this field to limit page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token used to retrieve the next page. This is currently unsupported and will be ignored. The server may at any point start using this field.
 		 * @return {GoogleCloudOrgpolicyV2ListPoliciesResponse} Successful response
 		 */

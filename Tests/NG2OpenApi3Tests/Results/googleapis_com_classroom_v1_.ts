@@ -669,7 +669,10 @@ export namespace MyNS {
 	/** Details for a grade category in a course. Coursework may have zero or one grade category, and the category may be used in computing the overall grade. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details. */
 	export interface GradeCategory {
 
-		/** Default value of denominator. Only applicable when grade calculation type is TOTAL_POINTS. */
+		/**
+		 * Default value of denominator. Only applicable when grade calculation type is TOTAL_POINTS.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultGradeDenominator?: number | null;
 
 		/** ID of the grade category. */
@@ -678,14 +681,20 @@ export namespace MyNS {
 		/** Name of the grade category. */
 		name?: string | null;
 
-		/** The weight of the category average as part of overall average. A weight of 12.34% is represented as 123400 (100% is 1,000,000). The last two digits should always be zero since we use two decimal precision. Only applicable when grade calculation type is WEIGHTED_CATEGORIES. */
+		/**
+		 * The weight of the category average as part of overall average. A weight of 12.34% is represented as 123400 (100% is 1,000,000). The last two digits should always be zero since we use two decimal precision. Only applicable when grade calculation type is WEIGHTED_CATEGORIES.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
 	/** Details for a grade category in a course. Coursework may have zero or one grade category, and the category may be used in computing the overall grade. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details. */
 	export interface GradeCategoryFormProperties {
 
-		/** Default value of denominator. Only applicable when grade calculation type is TOTAL_POINTS. */
+		/**
+		 * Default value of denominator. Only applicable when grade calculation type is TOTAL_POINTS.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultGradeDenominator: FormControl<number | null | undefined>,
 
 		/** ID of the grade category. */
@@ -694,7 +703,10 @@ export namespace MyNS {
 		/** Name of the grade category. */
 		name: FormControl<string | null | undefined>,
 
-		/** The weight of the category average as part of overall average. A weight of 12.34% is represented as 123400 (100% is 1,000,000). The last two digits should always be zero since we use two decimal precision. Only applicable when grade calculation type is WEIGHTED_CATEGORIES. */
+		/**
+		 * The weight of the category average as part of overall average. A weight of 12.34% is represented as 123400 (100% is 1,000,000). The last two digits should always be zero since we use two decimal precision. Only applicable when grade calculation type is WEIGHTED_CATEGORIES.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateGradeCategoryFormGroup() {
@@ -795,7 +807,10 @@ export namespace MyNS {
 		/** Additional materials. CourseWork must have no more than 20 material items. */
 		materials?: Array<Material>;
 
-		/** Maximum grade for this course work. If zero or unspecified, this assignment is considered ungraded. This must be a non-negative integer value. */
+		/**
+		 * Maximum grade for this course work. If zero or unspecified, this assignment is considered ungraded. This must be a non-negative integer value.
+		 * Type: double
+		 */
 		maxPoints?: number | null;
 
 		/** Additional details for multiple-choice questions. */
@@ -850,7 +865,10 @@ export namespace MyNS {
 		/** Classroom-assigned identifier of this course work, unique per course. Read-only. */
 		id: FormControl<string | null | undefined>,
 
-		/** Maximum grade for this course work. If zero or unspecified, this assignment is considered ungraded. This must be a non-negative integer value. */
+		/**
+		 * Maximum grade for this course work. If zero or unspecified, this assignment is considered ungraded. This must be a non-negative integer value.
+		 * Type: double
+		 */
 		maxPoints: FormControl<number | null | undefined>,
 
 		/** Optional timestamp when this course work is scheduled to be published. */
@@ -900,26 +918,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -935,32 +971,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -1202,10 +1262,16 @@ export namespace MyNS {
 		/** When the grade of the submission was changed. */
 		gradeTimestamp?: string | null;
 
-		/** The denominator of the grade at this time in the submission grade history. */
+		/**
+		 * The denominator of the grade at this time in the submission grade history.
+		 * Type: double
+		 */
 		maxPoints?: number | null;
 
-		/** The numerator of the grade at this time in the submission grade history. */
+		/**
+		 * The numerator of the grade at this time in the submission grade history.
+		 * Type: double
+		 */
 		pointsEarned?: number | null;
 	}
 
@@ -1221,10 +1287,16 @@ export namespace MyNS {
 		/** When the grade of the submission was changed. */
 		gradeTimestamp: FormControl<string | null | undefined>,
 
-		/** The denominator of the grade at this time in the submission grade history. */
+		/**
+		 * The denominator of the grade at this time in the submission grade history.
+		 * Type: double
+		 */
 		maxPoints: FormControl<number | null | undefined>,
 
-		/** The numerator of the grade at this time in the submission grade history. */
+		/**
+		 * The numerator of the grade at this time in the submission grade history.
+		 * Type: double
+		 */
 		pointsEarned: FormControl<number | null | undefined>,
 	}
 	export function CreateGradeHistoryFormGroup() {
@@ -1679,7 +1751,10 @@ export namespace MyNS {
 		/** Absolute link to the submission in the Classroom web UI. Read-only. */
 		alternateLink?: string | null;
 
-		/** Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This may be modified only by course teachers. */
+		/**
+		 * Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This may be modified only by course teachers.
+		 * Type: double
+		 */
 		assignedGrade?: number | null;
 
 		/** Student work for an assignment. */
@@ -1700,7 +1775,10 @@ export namespace MyNS {
 		/** Creation time of this submission. This may be unset if the student has not accessed this item. Read-only. */
 		creationTime?: string | null;
 
-		/** Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This is only visible to and modifiable by course teachers. */
+		/**
+		 * Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This is only visible to and modifiable by course teachers.
+		 * Type: double
+		 */
 		draftGrade?: number | null;
 
 		/** Classroom-assigned Identifier for the student submission. This is unique among submissions for the relevant course work. Read-only. */
@@ -1734,7 +1812,10 @@ export namespace MyNS {
 		/** Absolute link to the submission in the Classroom web UI. Read-only. */
 		alternateLink: FormControl<string | null | undefined>,
 
-		/** Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This may be modified only by course teachers. */
+		/**
+		 * Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This may be modified only by course teachers.
+		 * Type: double
+		 */
 		assignedGrade: FormControl<number | null | undefined>,
 
 		/** Whether this student submission is associated with the Developer Console project making the request. See CreateCourseWork for more details. Read-only. */
@@ -1752,7 +1833,10 @@ export namespace MyNS {
 		/** Creation time of this submission. This may be unset if the student has not accessed this item. Read-only. */
 		creationTime: FormControl<string | null | undefined>,
 
-		/** Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This is only visible to and modifiable by course teachers. */
+		/**
+		 * Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This is only visible to and modifiable by course teachers.
+		 * Type: double
+		 */
 		draftGrade: FormControl<number | null | undefined>,
 
 		/** Classroom-assigned Identifier for the student submission. This is unique among submissions for the relevant course work. Read-only. */
@@ -2240,6 +2324,7 @@ export namespace MyNS {
 		 * Get v1/courses
 		 * @param {Array<CourseCourseState>} courseStates Restricts returned courses to those in one of the specified states The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @param {string} studentId Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
 		 * @param {string} teacherId Restricts returned courses to those having a teacher with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
@@ -2263,6 +2348,7 @@ export namespace MyNS {
 		 * Get v1/courses/{courseId}/aliases
 		 * @param {string} courseId The identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListCourseAliasesResponse} Successful response
 		 */
@@ -2298,6 +2384,7 @@ export namespace MyNS {
 		 * @param {Array<AnnouncementState>} announcementStates Restriction on the `state` of announcements returned. If this argument is left unspecified, the default value is `PUBLISHED`.
 		 * @param {string} orderBy Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is `updateTime`. Supported direction keywords are `asc` and `desc`. If not specified, `updateTime desc` is the default behavior. Examples: `updateTime asc`, `updateTime`
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListAnnouncementsResponse} Successful response
 		 */
@@ -2367,6 +2454,7 @@ export namespace MyNS {
 		 * @param {Array<CourseWorkState>} courseWorkStates Restriction on the work status to return. Only courseWork that matches is returned. If unspecified, items with a work status of `PUBLISHED` is returned.
 		 * @param {string} orderBy Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are `updateTime` and `dueDate`. Supported direction keywords are `asc` and `desc`. If not specified, `updateTime desc` is the default behavior. Examples: `dueDate asc,updateTime desc`, `updateTime,dueDate desc`
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListCourseWorkResponse} Successful response
 		 */
@@ -2391,6 +2479,7 @@ export namespace MyNS {
 		 * @param {string} courseWorkId Identifier of the student work to request. This may be set to the string literal `"-"` to request student work for all course work in the specified course.
 		 * @param {Classroom_courses_courseWork_studentSubmissions_listLate} late Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of `late` value.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @param {Array<StudentSubmissionState>} states Requested submission states. If specified, returned student submissions match one of the specified submission states.
 		 * @param {string} userId Optional argument to restrict returned student work to those owned by the student with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
@@ -2527,6 +2616,7 @@ export namespace MyNS {
 		 * @param {string} materialLink Optional filtering for course work material with at least one link material whose URL partially matches the provided string.
 		 * @param {string} orderBy Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is `updateTime`. Supported direction keywords are `asc` and `desc`. If not specified, `updateTime desc` is the default behavior. Examples: `updateTime asc`, `updateTime`
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListCourseWorkMaterialResponse} Successful response
 		 */
@@ -2583,6 +2673,7 @@ export namespace MyNS {
 		 * Get v1/courses/{courseId}/students
 		 * @param {string} courseId Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
 		 * @param {number} pageSize Maximum number of items to return. The default is 30 if unspecified or `0`. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListStudentsResponse} Successful response
 		 */
@@ -2628,6 +2719,7 @@ export namespace MyNS {
 		 * Get v1/courses/{courseId}/teachers
 		 * @param {string} courseId Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
 		 * @param {number} pageSize Maximum number of items to return. The default is 30 if unspecified or `0`. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListTeachersResponse} Successful response
 		 */
@@ -2672,6 +2764,7 @@ export namespace MyNS {
 		 * Get v1/courses/{courseId}/topics
 		 * @param {string} courseId Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListTopicResponse} Successful response
 		 */
@@ -2769,6 +2862,7 @@ export namespace MyNS {
 		 * Get v1/invitations
 		 * @param {string} courseId Restricts returned invitations to those for a course with the specified identifier.
 		 * @param {number} pageSize Maximum number of items to return. The default is 500 if unspecified or `0`. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @param {string} userId Restricts returned invitations to those for a specific user. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
 		 * @return {ListInvitationsResponse} Successful response
@@ -2841,6 +2935,7 @@ export namespace MyNS {
 		 * @param {string} studentId The ID of the student whose guardian invitations are to be returned. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user * the string literal `"-"`, indicating that results should be returned for all students that the requesting user is permitted to view guardian invitations.
 		 * @param {string} invitedEmailAddress If specified, only results with the specified `invited_email_address` are returned.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @param {Array<GuardianInvitationState>} states If specified, only results with the specified `state` values are returned. Otherwise, results with a `state` of `PENDING` are returned.
 		 * @return {ListGuardianInvitationsResponse} Successful response
@@ -2888,6 +2983,7 @@ export namespace MyNS {
 		 * @param {string} studentId Filter results by the student who the guardian is linked to. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user * the string literal `"-"`, indicating that results should be returned for all students that the requesting user has access to view.
 		 * @param {string} invitedEmailAddress Filter results by the email address that the original invitation was sent to, resulting in this guardian link. This filter can only be used by domain administrators.
 		 * @param {number} pageSize Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
 		 * @return {ListGuardiansResponse} Successful response
 		 */

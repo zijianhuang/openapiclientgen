@@ -2699,6 +2699,7 @@ export namespace MyNS {
 		 * <p>This operation assigns feature variation to user sessions. For each user session, you pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p> <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p> <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p> <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p> <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 		 * Post projects/{project}/evaluations
 		 * @param {string} project The name or ARN of the project that contains the feature being evaluated.
+		 *     Min length: 0    Max length: 2048
 		 * @return {BatchEvaluateFeatureResponse} Success
 		 */
 		BatchEvaluateFeature(project: string, requestBody: BatchEvaluateFeaturePostBody): Observable<BatchEvaluateFeatureResponse> {
@@ -2709,6 +2710,7 @@ export namespace MyNS {
 		 * <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you must create the feature to use for the experiment.</p> <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p> <p>You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in the experiment, such as using only user sessions from a certain location or who use a certain internet browser.</p> <p>Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
 		 * Post projects/{project}/experiments
 		 * @param {string} project The name or ARN of the project that you want to create the new experiment in.
+		 *     Min length: 0    Max length: 2048
 		 * @return {CreateExperimentResponse} Success
 		 */
 		CreateExperiment(project: string, requestBody: CreateExperimentPostBody): Observable<CreateExperimentResponse> {
@@ -2719,8 +2721,11 @@ export namespace MyNS {
 		 * Returns configuration details about all the experiments in the specified project.
 		 * Get projects/{project}/experiments
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @param {string} project The name or ARN of the project to return the experiment list from.
+		 *     Min length: 0    Max length: 2048
 		 * @param {ExperimentStatus} status Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.
 		 * @return {ListExperimentsResponse} Success
 		 */
@@ -2732,6 +2737,7 @@ export namespace MyNS {
 		 * <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p> <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
 		 * Post projects/{project}/features
 		 * @param {string} project The name or ARN of the project that is to contain the new feature.
+		 *     Min length: 0    Max length: 2048
 		 * @return {CreateFeatureResponse} Success
 		 */
 		CreateFeature(project: string, requestBody: CreateFeaturePostBody): Observable<CreateFeatureResponse> {
@@ -2742,8 +2748,11 @@ export namespace MyNS {
 		 * Returns configuration details about all the features in the specified project.
 		 * Get projects/{project}/features
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @param {string} project The name or ARN of the project to return the feature list from.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListFeaturesResponse} Success
 		 */
 		ListFeatures(maxResults: number | null | undefined, nextToken: string | null | undefined, project: string): Observable<ListFeaturesResponse> {
@@ -2754,6 +2763,7 @@ export namespace MyNS {
 		 * <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p> <p>You can use a launch to safely validate new features by serving them to a specified percentage of your users while you roll out the feature. You can monitor the performance of the new feature to help you decide when to ramp up traffic to more users. This helps you reduce risk and identify unintended consequences before you fully launch the feature.</p> <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
 		 * Post projects/{project}/launches
 		 * @param {string} project The name or ARN of the project that you want to create the launch in.
+		 *     Min length: 0    Max length: 2048
 		 * @return {CreateLaunchResponse} Success
 		 */
 		CreateLaunch(project: string, requestBody: CreateLaunchPostBody): Observable<CreateLaunchResponse> {
@@ -2764,8 +2774,11 @@ export namespace MyNS {
 		 * Returns configuration details about all the launches in the specified project.
 		 * Get projects/{project}/launches
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @param {string} project The name or ARN of the project to return the launch list from.
+		 *     Min length: 0    Max length: 2048
 		 * @param {ExperimentStatus} status Use this optional parameter to limit the returned results to only the launches with the status that you specify here.
 		 * @return {ListLaunchesResponse} Success
 		 */
@@ -2786,7 +2799,9 @@ export namespace MyNS {
 		 * Returns configuration details about all the projects in the current Region in your account.
 		 * Get projects
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @return {ListProjectsResponse} Success
 		 */
 		ListProjects(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProjectsResponse> {
@@ -2806,7 +2821,9 @@ export namespace MyNS {
 		 * Returns a list of audience segments that you have created in your account in this Region.
 		 * Get segments
 		 * @param {number} maxResults The maximum number of results to include in the response. If you omit this, the default of 50 is used.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @return {ListSegmentsResponse} Success
 		 */
 		ListSegments(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSegmentsResponse> {
@@ -2817,7 +2834,9 @@ export namespace MyNS {
 		 * <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p> <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>. </p>
 		 * Delete projects/{project}/experiments/{experiment}
 		 * @param {string} experiment The name of the experiment to delete.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteExperimentResponse} Success
 		 */
 		DeleteExperiment(experiment: string, project: string): Observable<DeleteExperimentResponse> {
@@ -2828,7 +2847,9 @@ export namespace MyNS {
 		 * Returns the details about one experiment. You must already know the experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.
 		 * Get projects/{project}/experiments/{experiment}
 		 * @param {string} experiment The name of the experiment that you want to see the details of.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetExperimentResponse} Success
 		 */
 		GetExperiment(experiment: string, project: string): Observable<GetExperimentResponse> {
@@ -2839,7 +2860,9 @@ export namespace MyNS {
 		 * <p>Updates an Evidently experiment. </p> <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		 * Patch projects/{project}/experiments/{experiment}
 		 * @param {string} experiment The name of the experiment to update.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment that you want to update.
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateExperimentResponse} Success
 		 */
 		UpdateExperiment(experiment: string, project: string, requestBody: UpdateExperimentPatchBody): Observable<UpdateExperimentResponse> {
@@ -2850,7 +2873,9 @@ export namespace MyNS {
 		 * Deletes an Evidently feature.
 		 * Delete projects/{project}/features/{feature}
 		 * @param {string} feature The name of the feature to delete.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the feature to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteFeatureResponse} Success
 		 */
 		DeleteFeature(feature: string, project: string): Observable<DeleteFeatureResponse> {
@@ -2861,7 +2886,9 @@ export namespace MyNS {
 		 * Returns the details about one feature. You must already know the feature name. To retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.
 		 * Get projects/{project}/features/{feature}
 		 * @param {string} feature The name of the feature that you want to retrieve information for.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the feature.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetFeatureResponse} Success
 		 */
 		GetFeature(feature: string, project: string): Observable<GetFeatureResponse> {
@@ -2872,7 +2899,9 @@ export namespace MyNS {
 		 * <p>Updates an existing feature.</p> <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		 * Patch projects/{project}/features/{feature}
 		 * @param {string} feature The name of the feature to be updated.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the feature to be updated.
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateFeatureResponse} Success
 		 */
 		UpdateFeature(feature: string, project: string, requestBody: UpdateFeaturePatchBody): Observable<UpdateFeatureResponse> {
@@ -2883,7 +2912,9 @@ export namespace MyNS {
 		 * <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p> <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>. </p>
 		 * Delete projects/{project}/launches/{launch}
 		 * @param {string} launch The name of the launch to delete.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the launch to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteLaunchResponse} Success
 		 */
 		DeleteLaunch(launch: string, project: string): Observable<DeleteLaunchResponse> {
@@ -2894,7 +2925,9 @@ export namespace MyNS {
 		 * Returns the details about one launch. You must already know the launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.
 		 * Get projects/{project}/launches/{launch}
 		 * @param {string} launch The name of the launch that you want to see the details of.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the launch.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetLaunchResponse} Success
 		 */
 		GetLaunch(launch: string, project: string): Observable<GetLaunchResponse> {
@@ -2905,7 +2938,9 @@ export namespace MyNS {
 		 * <p>Updates a launch of a given feature. </p> <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		 * Patch projects/{project}/launches/{launch}
 		 * @param {string} launch The name of the launch that is to be updated.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the launch that you want to update.
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateLaunchResponse} Success
 		 */
 		UpdateLaunch(launch: string, project: string, requestBody: UpdateLaunchPatchBody): Observable<UpdateLaunchResponse> {
@@ -2916,6 +2951,7 @@ export namespace MyNS {
 		 * Deletes an Evidently project. Before you can delete a project, you must delete all the features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.
 		 * Delete projects/{project}
 		 * @param {string} project The name or ARN of the project to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteProjectResponse} Success
 		 */
 		DeleteProject(project: string): Observable<DeleteProjectResponse> {
@@ -2926,6 +2962,7 @@ export namespace MyNS {
 		 * Returns the details about one launch. You must already know the project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.
 		 * Get projects/{project}
 		 * @param {string} project The name or ARN of the project that you want to see the details of.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetProjectResponse} Success
 		 */
 		GetProject(project: string): Observable<GetProjectResponse> {
@@ -2936,6 +2973,7 @@ export namespace MyNS {
 		 * <p>Updates the description of an existing project.</p> <p>To create a new project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p> <p>Don't use this operation to update the data storage options of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>. </p> <p>Don't use this operation to update the tags of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		 * Patch projects/{project}
 		 * @param {string} project The name or ARN of the project to update.
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateProjectResponse} Success
 		 */
 		UpdateProject(project: string, requestBody: UpdateProjectPatchBody): Observable<UpdateProjectResponse> {
@@ -2946,6 +2984,7 @@ export namespace MyNS {
 		 * Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch or experiment is not currently running.
 		 * Delete segments/{segment}
 		 * @param {string} segment Specifies the segment to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteSegmentResponse} Success
 		 */
 		DeleteSegment(segment: string): Observable<DeleteSegmentResponse> {
@@ -2956,6 +2995,7 @@ export namespace MyNS {
 		 * Returns information about the specified segment. Specify the segment you want to view by specifying its ARN.
 		 * Get segments/{segment}
 		 * @param {string} segment The ARN of the segment to return information for.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetSegmentResponse} Success
 		 */
 		GetSegment(segment: string): Observable<GetSegmentResponse> {
@@ -2966,7 +3006,9 @@ export namespace MyNS {
 		 * <p>This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p> <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p> <p>If there is a current launch with this feature that uses segment overrides, and if the user session's <code>evaluationContext</code> matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p> <p>If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p> <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.</p> <p>If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match the segment rule are used in the experiment.</p> <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p> <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 		 * Post projects/{project}/evaluations/{feature}
 		 * @param {string} feature The name of the feature being evaluated.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains this feature.
+		 *     Min length: 0    Max length: 2048
 		 * @return {EvaluateFeatureResponse} Success
 		 */
 		EvaluateFeature(feature: string, project: string, requestBody: EvaluateFeaturePostBody): Observable<EvaluateFeatureResponse> {
@@ -2977,7 +3019,9 @@ export namespace MyNS {
 		 * <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p> <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
 		 * Post projects/{project}/experiments/{experiment}/results
 		 * @param {string} experiment The name of the experiment to retrieve the results of.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment that you want to see the results of.
+		 *     Min length: 0    Max length: 2048
 		 * @return {GetExperimentResultsResponse} Success
 		 */
 		GetExperimentResults(experiment: string, project: string, requestBody: GetExperimentResultsPostBody): Observable<GetExperimentResultsResponse> {
@@ -2988,8 +3032,11 @@ export namespace MyNS {
 		 * Use this operation to find which experiments or launches are using a specified segment.
 		 * Get segments/{segment}/references#type
 		 * @param {number} maxResults The maximum number of results to include in the response. If you omit this, the default of 50 is used.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.
+		 *     Min length: 1    Max length: 8192
 		 * @param {string} segment The ARN of the segment that you want to view information for.
+		 *     Min length: 0    Max length: 2048
 		 * @param {SegmentReferenceResourceType} type Specifies whether to return information about launches or experiments that use this segment.
 		 * @return {ListSegmentReferencesResponse} Success
 		 */
@@ -3001,6 +3048,7 @@ export namespace MyNS {
 		 * Displays the tags associated with an Evidently resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource that you want to see the tags of.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3011,6 +3059,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource. Projects, features, launches, and experiments can be tagged.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the CloudWatch Evidently resource that you're adding tags to.
+		 *     Min length: 0    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -3021,6 +3070,7 @@ export namespace MyNS {
 		 * Sends performance events to Evidently. These events can be used to evaluate a launch or an experiment.
 		 * Post events/projects/{project}
 		 * @param {string} project The name or ARN of the project to write the events to.
+		 *     Min length: 0    Max length: 2048
 		 * @return {PutProjectEventsResponse} Success
 		 */
 		PutProjectEvents(project: string, requestBody: PutProjectEventsPostBody): Observable<PutProjectEventsResponse> {
@@ -3031,7 +3081,9 @@ export namespace MyNS {
 		 * Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.
 		 * Post projects/{project}/experiments/{experiment}/start
 		 * @param {string} experiment The name of the experiment to start.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment to start.
+		 *     Min length: 0    Max length: 2048
 		 * @return {StartExperimentResponse} Success
 		 */
 		StartExperiment(experiment: string, project: string, requestBody: StartExperimentPostBody): Observable<StartExperimentResponse> {
@@ -3042,7 +3094,9 @@ export namespace MyNS {
 		 * Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.
 		 * Post projects/{project}/launches/{launch}/start
 		 * @param {string} launch The name of the launch to start.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the launch to start.
+		 *     Min length: 0    Max length: 2048
 		 * @return {StartLaunchResponse} Success
 		 */
 		StartLaunch(launch: string, project: string): Observable<StartLaunchResponse> {
@@ -3053,7 +3107,9 @@ export namespace MyNS {
 		 * Stops an experiment that is currently running. If you stop an experiment, you can't resume it or restart it.
 		 * Post projects/{project}/experiments/{experiment}/cancel
 		 * @param {string} experiment The name of the experiment to stop.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the experiment to stop.
+		 *     Min length: 0    Max length: 2048
 		 * @return {StopExperimentResponse} Success
 		 */
 		StopExperiment(experiment: string, project: string, requestBody: StopExperimentPostBody): Observable<StopExperimentResponse> {
@@ -3064,7 +3120,9 @@ export namespace MyNS {
 		 * Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.
 		 * Post projects/{project}/launches/{launch}/cancel
 		 * @param {string} launch The name of the launch to stop.
+		 *     Min length: 1    Max length: 127
 		 * @param {string} project The name or ARN of the project that contains the launch that you want to stop.
+		 *     Min length: 0    Max length: 2048
 		 * @return {StopLaunchResponse} Success
 		 */
 		StopLaunch(launch: string, project: string, requestBody: StopLaunchPostBody): Observable<StopLaunchResponse> {
@@ -3084,7 +3142,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the CloudWatch Evidently resource that you're removing tags from.
+		 *     Min length: 0    Max length: 2048
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -3095,6 +3155,7 @@ export namespace MyNS {
 		 * <p>Updates the data storage options for this project. If you store evaluation events, you an keep them and analyze them on your own. If you choose not to store evaluation events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p> <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
 		 * Patch projects/{project}/data-delivery
 		 * @param {string} project The name or ARN of the project that you want to modify the data storage options for.
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateProjectDataDeliveryResponse} Success
 		 */
 		UpdateProjectDataDelivery(project: string, requestBody: UpdateProjectDataDeliveryPatchBody): Observable<UpdateProjectDataDeliveryResponse> {
@@ -3124,8 +3185,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3140,8 +3201,8 @@ export namespace MyNS {
 		/**
 		 * A name for the new experiment.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -3150,8 +3211,8 @@ export namespace MyNS {
 
 		/**
 		 * When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt?: string | null;
 
@@ -3164,8 +3225,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		segment?: string | null;
 
@@ -3184,23 +3245,23 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the new experiment.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt: FormControl<string | null | undefined>,
 
@@ -3213,8 +3274,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		segment: FormControl<string | null | undefined>,
 
@@ -3251,15 +3312,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p> <p>This variation must also be listed in the <code>variations</code> structure.</p> <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		defaultVariation?: string | null;
 
 		/**
 		 * An optional description of the feature.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3272,8 +3333,8 @@ export namespace MyNS {
 		/**
 		 * The name for the new feature.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -3292,15 +3353,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p> <p>This variation must also be listed in the <code>variations</code> structure.</p> <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		defaultVariation: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the feature.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3313,8 +3374,8 @@ export namespace MyNS {
 		/**
 		 * The name for the new feature.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3337,8 +3398,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3360,15 +3421,15 @@ export namespace MyNS {
 		/**
 		 * The name for the new launch.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
 		/**
 		 * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt?: string | null;
 
@@ -3382,23 +3443,23 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the new launch.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt: FormControl<string | null | undefined>,
 
@@ -3436,16 +3497,16 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the project.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
 		/**
 		 * The name for the project.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -3456,16 +3517,16 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the project.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name for the project.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3513,24 +3574,24 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for this segment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
 		/**
 		 * A name for the segment.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		pattern: string;
 
@@ -3541,24 +3602,24 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for this segment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the segment.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		pattern: FormControl<string | null | undefined>,
 
@@ -3579,8 +3640,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3596,8 +3657,8 @@ export namespace MyNS {
 
 		/**
 		 * When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt?: string | null;
 
@@ -3613,8 +3674,8 @@ export namespace MyNS {
 
 		/**
 		 * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		segment?: string | null;
 
@@ -3629,15 +3690,15 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt: FormControl<string | null | undefined>,
 
@@ -3653,8 +3714,8 @@ export namespace MyNS {
 
 		/**
 		 * Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		segment: FormControl<string | null | undefined>,
 	}
@@ -3694,15 +3755,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		defaultVariation?: string | null;
 
 		/**
 		 * An optional description of the feature.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3723,15 +3784,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		defaultVariation: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the feature.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3755,8 +3816,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 
@@ -3776,8 +3837,8 @@ export namespace MyNS {
 
 		/**
 		 * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt?: string | null;
 
@@ -3788,15 +3849,15 @@ export namespace MyNS {
 
 		/**
 		 * An optional description for the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.
-		 * Max length: 127
 		 * Min length: 0
+		 * Max length: 127
 		 */
 		randomizationSalt: FormControl<string | null | undefined>,
 	}
@@ -3826,8 +3887,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the project.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description?: string | null;
 	}
@@ -3835,8 +3896,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional description of the project.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -3868,8 +3929,8 @@ export namespace MyNS {
 		/**
 		 * An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		entityId: string;
 
@@ -3881,8 +3942,8 @@ export namespace MyNS {
 		/**
 		 * An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		entityId: FormControl<string | null | undefined>,
 
@@ -4044,8 +4105,8 @@ export namespace MyNS {
 
 		/**
 		 * A string that describes why you are stopping the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		reason?: string | null;
 	}
@@ -4056,8 +4117,8 @@ export namespace MyNS {
 
 		/**
 		 * A string that describes why you are stopping the experiment.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		reason: FormControl<string | null | undefined>,
 	}
@@ -4076,8 +4137,8 @@ export namespace MyNS {
 
 		/**
 		 * A string that describes why you are stopping the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		reason?: string | null;
 	}
@@ -4088,8 +4149,8 @@ export namespace MyNS {
 
 		/**
 		 * A string that describes why you are stopping the launch.
-		 * Max length: 160
 		 * Min length: 0
+		 * Max length: 160
 		 */
 		reason: FormControl<string | null | undefined>,
 	}
@@ -4106,8 +4167,8 @@ export namespace MyNS {
 		/**
 		 * The pattern to test.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		pattern: string;
 
@@ -4122,8 +4183,8 @@ export namespace MyNS {
 		/**
 		 * The pattern to test.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		pattern: FormControl<string | null | undefined>,
 

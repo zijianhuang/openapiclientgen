@@ -7,12 +7,16 @@ export namespace MyNS {
 	/** Specify _Next link_ paginator on pages containing a link pointing to the next page. The next page link is extracted from a document by querying href attribute of a given element's CSS selector. */
 	export interface Paginator {
 		nextPageSelector?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNum?: number | null;
 	}
 
 	/** Specify _Next link_ paginator on pages containing a link pointing to the next page. The next page link is extracted from a document by querying href attribute of a given element's CSS selector. */
 	export interface PaginatorFormProperties {
 		nextPageSelector: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNum: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginatorFormGroup() {
@@ -62,7 +66,10 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. _(Chrome fetcher type only)_ */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. _(Chrome fetcher type only)_
+		 * Type: double
+		 */
 		waitDelay?: number | null;
 	}
 	export interface FetchrequestFormProperties {
@@ -88,7 +95,10 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. _(Chrome fetcher type only)_ */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. _(Chrome fetcher type only)_
+		 * Type: double
+		 */
 		waitDelay: FormControl<number | null | undefined>,
 	}
 	export function CreateFetchrequestFormGroup() {
@@ -107,9 +117,13 @@ export namespace MyNS {
 	/** InitialCookie structure keep cookies that optionally can be passed to the new fetcher crawl a website that requires a login. Generate Cookies array with EditThisCookie chrome extension. */
 	export interface InitialCookie {
 		domain?: string | null;
+
+		/** Type: double */
 		expirationDate?: number | null;
 		hostOnly?: boolean | null;
 		httpOnly?: boolean | null;
+
+		/** Type: double */
 		id?: number | null;
 		name?: string | null;
 		path?: string | null;
@@ -123,9 +137,13 @@ export namespace MyNS {
 	/** InitialCookie structure keep cookies that optionally can be passed to the new fetcher crawl a website that requires a login. Generate Cookies array with EditThisCookie chrome extension. */
 	export interface InitialCookieFormProperties {
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		expirationDate: FormControl<number | null | undefined>,
 		hostOnly: FormControl<boolean | null | undefined>,
 		httpOnly: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
@@ -304,7 +322,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Specify number of pages to crawl. */
+		/**
+		 * Specify number of pages to crawl.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNum?: number | null;
 
 		/**
@@ -339,7 +360,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Specify number of pages to crawl. */
+		/**
+		 * Specify number of pages to crawl.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNum: FormControl<number | null | undefined>,
 
 		/**
@@ -386,16 +410,28 @@ export namespace MyNS {
 		/** Paper orientation. Parameter landscape = false means portrait orientation. Set landscape to true for landscape page oriantation. */
 		landscape?: boolean | null;
 
-		/** Bottom Margin of the PDF (in inches) */
+		/**
+		 * Bottom Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginBottom?: number | null;
 
-		/** Left Margin of the PDF (in inches) */
+		/**
+		 * Left Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginLeft?: number | null;
 
-		/** Right Margin of the PDF (in inches) */
+		/**
+		 * Right Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginRight?: number | null;
 
-		/** Top Margin of the PDF (in inches) */
+		/**
+		 * Top Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginTop?: number | null;
 
 		/** If set to _file_, the resulted PDF is uploaded to Dataflow Kit Storage first. Then the link to this file is returned. Overwise, PDF content is returned in the response body. */
@@ -416,7 +452,10 @@ export namespace MyNS {
 		/** Specify proxy by adding [country ISO code](https://en.wikipedia.org/wiki/ISO_3166-2) to `country-` value to send requests through a proxy in the specified country. Use `country-any` to use random geo-targets. */
 		proxy?: string | null;
 
-		/** By default, PDF document content is generated according to dimensions of the original web page content. Using the `scale` parameter, you can specify a custom zoom factor from 0.1 to 5.0 of the webpage rendering. */
+		/**
+		 * By default, PDF document content is generated according to dimensions of the original web page content. Using the `scale` parameter, you can specify a custom zoom factor from 0.1 to 5.0 of the webpage rendering.
+		 * Type: double
+		 */
 		scale?: number | null;
 
 		/**
@@ -425,7 +464,10 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load.
+		 * Type: double
+		 */
 		waitDelay?: number | null;
 	}
 	export interface Url2pdfrequestFormProperties {
@@ -436,16 +478,28 @@ export namespace MyNS {
 		/** Paper orientation. Parameter landscape = false means portrait orientation. Set landscape to true for landscape page oriantation. */
 		landscape: FormControl<boolean | null | undefined>,
 
-		/** Bottom Margin of the PDF (in inches) */
+		/**
+		 * Bottom Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginBottom: FormControl<number | null | undefined>,
 
-		/** Left Margin of the PDF (in inches) */
+		/**
+		 * Left Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginLeft: FormControl<number | null | undefined>,
 
-		/** Right Margin of the PDF (in inches) */
+		/**
+		 * Right Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginRight: FormControl<number | null | undefined>,
 
-		/** Top Margin of the PDF (in inches) */
+		/**
+		 * Top Margin of the PDF (in inches)
+		 * Type: double
+		 */
 		marginTop: FormControl<number | null | undefined>,
 
 		/** If set to _file_, the resulted PDF is uploaded to Dataflow Kit Storage first. Then the link to this file is returned. Overwise, PDF content is returned in the response body. */
@@ -466,7 +520,10 @@ export namespace MyNS {
 		/** Specify proxy by adding [country ISO code](https://en.wikipedia.org/wiki/ISO_3166-2) to `country-` value to send requests through a proxy in the specified country. Use `country-any` to use random geo-targets. */
 		proxy: FormControl<string | null | undefined>,
 
-		/** By default, PDF document content is generated according to dimensions of the original web page content. Using the `scale` parameter, you can specify a custom zoom factor from 0.1 to 5.0 of the webpage rendering. */
+		/**
+		 * By default, PDF document content is generated according to dimensions of the original web page content. Using the `scale` parameter, you can specify a custom zoom factor from 0.1 to 5.0 of the webpage rendering.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 
 		/**
@@ -475,7 +532,10 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load.
+		 * Type: double
+		 */
 		waitDelay: FormControl<number | null | undefined>,
 	}
 	export function CreateUrl2pdfrequestFormGroup() {
@@ -515,7 +575,10 @@ export namespace MyNS {
 		/** takes a screenshot of a full web page. It ignores offsetX, offsety, width and height argument values. */
 		fullPage?: boolean | null;
 
-		/** Rectangle height in device independent pixels (dip). */
+		/**
+		 * Rectangle height in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The HTTP 200 OK success status response code indicates that the request has succeeded. Sometimes a server returns normal HTML content even with an erroneous Non-200 HTTP response status code. The IgnoreHTTPStatusCode option is useful when you need to force the return of HTML content. Defaults to "false." */
@@ -524,10 +587,16 @@ export namespace MyNS {
 		/** The "Initial Cookies" option is useful for crawling websites that require a login. The simplest solution to get an array of cookies for specific websites is to use a web browser "EditThisCookie" extension. Copy a cookie array with "EditThisCookie" and paste it into the "Initial cookie" field. */
 		initialCookies?: Array<InitialCookie>;
 
-		/** X offset in device independent pixels (dip). */
+		/**
+		 * X offset in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetx?: number | null;
 
-		/** Y offset in device independent pixels (dip). */
+		/**
+		 * Y offset in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsety?: number | null;
 
 		/** If set to _file_, the resulted screenshot is uploaded to Dataflow Kit Storage first. Then the link to this file is returned. Overwise, web site screenshot is returned in the response body. */
@@ -539,10 +608,16 @@ export namespace MyNS {
 		/** Specify proxy by adding [country ISO code](https://en.wikipedia.org/wiki/ISO_3166-2) to `country-` value to send requests through a proxy in the specified country. Use `country-any` to use random geo-targets. */
 		proxy?: string | null;
 
-		/** Sets the Quality of output image. Compression quality from range [0..100] (jpeg only). */
+		/**
+		 * Sets the Quality of output image. Compression quality from range [0..100] (jpeg only).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quality?: number | null;
 
-		/** Image scale factor. range [0.1 .. 3] */
+		/**
+		 * Image scale factor. range [0.1 .. 3]
+		 * Type: double
+		 */
 		scale?: number | null;
 
 		/**
@@ -551,10 +626,16 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load.
+		 * Type: double
+		 */
 		waitDelay?: number | null;
 
-		/** Rectangle width in device independent pixels (dip). */
+		/**
+		 * Rectangle width in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface Url2screenshotrequestFormProperties {
@@ -568,16 +649,25 @@ export namespace MyNS {
 		/** takes a screenshot of a full web page. It ignores offsetX, offsety, width and height argument values. */
 		fullPage: FormControl<boolean | null | undefined>,
 
-		/** Rectangle height in device independent pixels (dip). */
+		/**
+		 * Rectangle height in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The HTTP 200 OK success status response code indicates that the request has succeeded. Sometimes a server returns normal HTML content even with an erroneous Non-200 HTTP response status code. The IgnoreHTTPStatusCode option is useful when you need to force the return of HTML content. Defaults to "false." */
 		ignoreHTTPStatusErrCodes: FormControl<boolean | null | undefined>,
 
-		/** X offset in device independent pixels (dip). */
+		/**
+		 * X offset in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetx: FormControl<number | null | undefined>,
 
-		/** Y offset in device independent pixels (dip). */
+		/**
+		 * Y offset in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsety: FormControl<number | null | undefined>,
 
 		/** If set to _file_, the resulted screenshot is uploaded to Dataflow Kit Storage first. Then the link to this file is returned. Overwise, web site screenshot is returned in the response body. */
@@ -589,10 +679,16 @@ export namespace MyNS {
 		/** Specify proxy by adding [country ISO code](https://en.wikipedia.org/wiki/ISO_3166-2) to `country-` value to send requests through a proxy in the specified country. Use `country-any` to use random geo-targets. */
 		proxy: FormControl<string | null | undefined>,
 
-		/** Sets the Quality of output image. Compression quality from range [0..100] (jpeg only). */
+		/**
+		 * Sets the Quality of output image. Compression quality from range [0..100] (jpeg only).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quality: FormControl<number | null | undefined>,
 
-		/** Image scale factor. range [0.1 .. 3] */
+		/**
+		 * Image scale factor. range [0.1 .. 3]
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 
 		/**
@@ -601,10 +697,16 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load. */
+		/**
+		 * Specify a wait delay (in seconds). This may be useful if certain elements of the web site need to be rendered after the initial page load.
+		 * Type: double
+		 */
 		waitDelay: FormControl<number | null | undefined>,
 
-		/** Rectangle width in device independent pixels (dip). */
+		/**
+		 * Rectangle width in device independent pixels (dip).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateUrl2screenshotrequestFormGroup() {

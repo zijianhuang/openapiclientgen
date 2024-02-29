@@ -944,6 +944,7 @@ export namespace MyNS {
 		 * Returns all active and completed jobs in a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.ImportExport/jobs
 		 * @param {number} top An integer value that specifies how many jobs at most should be returned. The value cannot exceed 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Can be used to restrict the results to certain conditions.
 		 * @param {string} subscriptionId The subscription ID for the Azure user.
 		 * @param {Locations_ListApi_version} api_version Specifies the API version to use for this request.
@@ -957,6 +958,7 @@ export namespace MyNS {
 		 * Returns all active and completed jobs in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ImportExport/jobs
 		 * @param {number} top An integer value that specifies how many jobs at most should be returned. The value cannot exceed 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Can be used to restrict the results to certain conditions.
 		 * @param {string} subscriptionId The subscription ID for the Azure user.
 		 * @param {string} resourceGroupName The resource group name uniquely identifies the resource group within the user subscription.

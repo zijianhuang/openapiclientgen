@@ -4587,7 +4587,9 @@ export namespace MyNS {
 		 * All broadcasts
 		 * Get broadcasts
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} service_id Filter by Service ID. E.g. bbc_radio_fourfm
 		 * @param {string} date Filter by date. E.g. 2016-06-17
 		 * @param {BroadcastsGetByOffsetAndLimitAndService_idAndDateAndSortSort} sort Sort by provided query. E.g. 'start_at' sorts in ascending order, and '-start_at' sorts in descending order
@@ -4602,7 +4604,9 @@ export namespace MyNS {
 		 * Broadcasts for the current day
 		 * Get broadcasts/latest
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} service_id Filter by Service ID. E.g. bbc_radio_fourfm
 		 * @param {BroadcastsGetByOffsetAndLimitAndService_idAndOn_airAndNextAndPreviousAndSortOn_air} on_air Filter what is on air. E.g. 'now' returns current programme being broadcasted.
 		 * @param {string} next Filter what will be on air next in minutes. E.g. '240' returns programmes broadcasted in the next four hurs
@@ -4653,7 +4657,9 @@ export namespace MyNS {
 		 * Get collections/{pid}/members
 		 * @param {string} pid pid
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProgrammesResponse} OK
 		 */
 		GetCollectionMembers(pid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<ProgrammesResponse> {
@@ -4678,7 +4684,9 @@ export namespace MyNS {
 		 * @param {string} until ISO 8601 Date yyyy-mm-dd.  Returns items between given 'since' and 'until' date params
 		 * @param {boolean} decomposed In addition to the overall score, return a list of scores broken down by day N.B Must be used in conjunction with since and/or until and since is >= 31 days
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MusicPopularityArtists} OK
 		 */
 		GetMusicPopularArtists(since: string | null | undefined, until: string | null | undefined, decomposed: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<MusicPopularityArtists> {
@@ -4707,7 +4715,9 @@ export namespace MyNS {
 		 * @param {string} until ISO 8601 Date yyyy-mm-dd.  Returns items between given 'since' and 'until' date params
 		 * @param {boolean} decomposed In addition to the overall score, return a list of scores broken down by day N.B Must be used in conjunction with since and/or until and since is >= 31 days
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MusicPopularityPlaylists} OK
 		 */
 		GetMusicPopularPlaylists(since: string | null | undefined, until: string | null | undefined, decomposed: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<MusicPopularityPlaylists> {
@@ -4739,7 +4749,9 @@ export namespace MyNS {
 		 * @param {string} artist MusicBrainz artist ID
 		 * @param {boolean} decomposed In addition to the overall score, return a list of scores broken down by day N.B Must be used in conjunction with since and/or until and since is >= 31 days
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MusicPopularityTracks} OK
 		 */
 		GetMusicPopularTracks(since: string | null | undefined, until: string | null | undefined, network: string | null | undefined, programme: string | null | undefined, artist: string | null | undefined, decomposed: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<MusicPopularityTracks> {
@@ -4768,7 +4780,9 @@ export namespace MyNS {
 		 * List of followed categories for a given user.
 		 * Get my/categories/follows
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedCategoriesResponse} OK
 		 */
 		Personalised_CategoriesGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedCategoriesResponse> {
@@ -4798,7 +4812,9 @@ export namespace MyNS {
 		 * Returns status of all previous third party export actions for a given BBC Music user.
 		 * Get my/music/export
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MusicExportJob} OK
 		 */
 		GetMusicExport(offset: number | null | undefined, limit: number | null | undefined): Observable<MusicExportJob> {
@@ -4835,7 +4851,9 @@ export namespace MyNS {
 		 * Get my/music/exports/tracks
 		 * @param {boolean} over16 Boolean age check
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetMusicExportJobsVendor} vendor Specify Vendor Tracks
 		 * @param {GetMusicExportTracksStatus} status Specify Track status
 		 * @return {MusicExportJob} OK
@@ -4849,7 +4867,9 @@ export namespace MyNS {
 		 * List of favourited tracks and clips for a given user for BBC Music.
 		 * Get my/music/favourites
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetPersonalisedMusicFavouritesAction} action Filters activities based on the type of action
 		 * @param {boolean} music_data Omits music data from the response, defaults to true
 		 * @return {PersonalisedMusicResponse} OK
@@ -4889,7 +4909,9 @@ export namespace MyNS {
 		 * @param {GetPersonalisedMusicFavouritesByTypeType} type Supported Music favourite types: Clips or Tracks
 		 * @param {GetPersonalisedMusicFavouritesAction} action Filters activities based on the type of action
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedMusicResponse} OK
 		 */
 		GetPersonalisedMusicFavouritesByType(type: GetPersonalisedMusicFavouritesByTypeType, action: GetPersonalisedMusicFavouritesAction | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedMusicResponse> {
@@ -4957,7 +4979,9 @@ export namespace MyNS {
 		 * @param {GetPersonalisedMusicFollowsMusic_context} music_context Specify context to be passed to Music API
 		 * @param {boolean} music_within_uk Specify location to be passed to Music API
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedMusicResponse} OK
 		 */
 		GetPersonalisedMusicFollows(action: GetPersonalisedMusicFollowsAction | null | undefined, music_data: boolean | null | undefined, music_context: GetPersonalisedMusicFollowsMusic_context | null | undefined, music_within_uk: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedMusicResponse> {
@@ -5006,7 +5030,9 @@ export namespace MyNS {
 		 * @param {GetPersonalisedMusicFollowsMusic_context} music_context Specify context to be passed to Music API
 		 * @param {boolean} music_within_uk Specify location to be passed to Music API
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedMusicResponse} OK
 		 */
 		GetPersonalisedMusicFollowsByType(type: GetPersonalisedMusicFollowsByTypeType, action: GetPersonalisedMusicFollowsAction | null | undefined, music_data: boolean | null | undefined, music_context: GetPersonalisedMusicFollowsMusic_context | null | undefined, music_within_uk: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedMusicResponse> {
@@ -5156,7 +5182,9 @@ export namespace MyNS {
 		 * List of followed networks for a given user.
 		 * Get my/networks/follows
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedNetworksResponse} OK
 		 */
 		Personalised_NetworksGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedNetworksResponse> {
@@ -5167,7 +5195,9 @@ export namespace MyNS {
 		 * Follow network
 		 * Post my/networks/follows
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Personalised_NetworksPostByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, requestBody: Body_2): Observable<HttpResponse<string>> {
@@ -5178,7 +5208,9 @@ export namespace MyNS {
 		 * Unfollow network
 		 * Delete my/networks/follows
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Personalised_NetworksDeleteByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5222,7 +5254,9 @@ export namespace MyNS {
 		 * Recommended Programmes from the Audience Platforms' Recomendations Service
 		 * Get my/programmes/recommendations
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetRecommendationsRights} rights Only return available results for the web/mobile.
 		 * @return {ProgrammesResponse} OK
 		 */
@@ -5238,7 +5272,9 @@ export namespace MyNS {
 		 * anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification
 		 * Get my/radio/favourites
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetPersonalisedRadioFavouritesSort} sort Sort order for Personalised Radio results
 		 * @param {boolean} show_all_activity Include items which have been 'soft' unfavourited in response. I.e items with UAS type of 'unfavourited'
 		 * @return {PersonalisedRadioResponse} OK
@@ -5282,7 +5318,9 @@ export namespace MyNS {
 		 * @param {GetPersonalisedRadioFavouritesSort} sort Sort order for Personalised Radio results
 		 * @param {boolean} show_all_activity Include items which have been 'soft' unfavourited in response. I.e items with UAS type of 'unfavourited'
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PersonalisedRadioResponse} OK
 		 */
 		GetPersonalisedRadioFavouritesByType(type: GetPersonalisedRadioFavouritesByTypeType, sort: GetPersonalisedRadioFavouritesSort | null | undefined, show_all_activity: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<PersonalisedRadioResponse> {
@@ -5353,7 +5391,9 @@ export namespace MyNS {
 		 * anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification
 		 * Get my/radio/follows
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetPersonalisedRadioFavouritesSort} sort Sort order for Personalised Radio results
 		 * @param {boolean} show_all_activity Include items which have been 'soft' unfollowed in response. I.e items with UAS type of 'unfollowed'
 		 * @return {PersonalisedRadioResponse} OK
@@ -5396,7 +5436,9 @@ export namespace MyNS {
 		 * @param {GetPersonalisedRadioFollowsByTypeType} type Supported Radio follows types: Brands or Series
 		 * @param {GetPersonalisedRadioFavouritesSort} sort Sort order for Personalised Radio results
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} show_all_activity Include items which have been 'soft' unfollowed in response. I.e items with UAS type of 'unfollowed'
 		 * @return {PersonalisedRadioResponse} OK
 		 */
@@ -5464,7 +5506,9 @@ export namespace MyNS {
 		 * anyOf https://www.openapis.org/blog/2017/01/24/a-new-year-a-new-specification
 		 * Get my/radio/plays
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetPersonalisedRadioFavouritesSort} sort Sort order for Personalised Radio results
 		 * @param {boolean} show_all_activity Include expired/unavailable items
 		 * @return {PersonalisedRadioResponse} OK
@@ -5478,7 +5522,9 @@ export namespace MyNS {
 		 * Retrieve all Podcasts
 		 * Get podcasts
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetPodcastsSort} sort Sort order for Podcasts results
 		 * @param {string} network Network Master Brand ID (mid)
 		 * @param {string} network_url_key Network URL key
@@ -5507,7 +5553,9 @@ export namespace MyNS {
 		 * Get podcasts/{pid}
 		 * @param {string} pid pid
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PodcastsResponse} OK
 		 */
 		GetPodcastByPid(pid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<PodcastsResponse> {
@@ -5520,7 +5568,9 @@ export namespace MyNS {
 		 * Get podcasts/{pid}/episodes
 		 * @param {string} pid pid
 		 * @param {number} offset Paginated results offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Paginated results limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PodcastEpisodesResponse} OK
 		 */
 		GetPodcastEpisodes(pid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<PodcastEpisodesResponse> {

@@ -175,7 +175,10 @@ export namespace MyNS {
 		/** Primary phone number for the contact. This can be a fully-qualified number, with country calling code and area code, or a local number. */
 		phoneNumber?: string | null;
 
-		/** Priority for the contact to determine ordering in a list of contacts. Contacts with higher priorities will be shown before ones with lower priorities. */
+		/**
+		 * Priority for the contact to determine ordering in a list of contacts. Contacts with higher priorities will be shown before ones with lower priorities.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		priority?: number | null;
 
 		/**
@@ -213,7 +216,10 @@ export namespace MyNS {
 		/** Primary phone number for the contact. This can be a fully-qualified number, with country calling code and area code, or a local number. */
 		phoneNumber: FormControl<string | null | undefined>,
 
-		/** Priority for the contact to determine ordering in a list of contacts. Contacts with higher priorities will be shown before ones with lower priorities. */
+		/**
+		 * Priority for the contact to determine ordering in a list of contacts. Contacts with higher priorities will be shown before ones with lower priorities.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** The ID of the application that created this contact. This is populated by the API */
@@ -271,7 +277,10 @@ export namespace MyNS {
 	/** A geographic location that can be associated with a timeline item. */
 	export interface Location {
 
-		/** The accuracy of the location fix in meters. */
+		/**
+		 * The accuracy of the location fix in meters.
+		 * Type: double
+		 */
 		accuracy?: number | null;
 
 		/** The full address of the location. */
@@ -286,10 +295,16 @@ export namespace MyNS {
 		/** The type of resource. This is always mirror#location. */
 		kind?: string | null;
 
-		/** The latitude, in degrees. */
+		/**
+		 * The latitude, in degrees.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude, in degrees. */
+		/**
+		 * The longitude, in degrees.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** The time at which this location was captured, formatted according to RFC 3339. */
@@ -299,7 +314,10 @@ export namespace MyNS {
 	/** A geographic location that can be associated with a timeline item. */
 	export interface LocationFormProperties {
 
-		/** The accuracy of the location fix in meters. */
+		/**
+		 * The accuracy of the location fix in meters.
+		 * Type: double
+		 */
 		accuracy: FormControl<number | null | undefined>,
 
 		/** The full address of the location. */
@@ -314,10 +332,16 @@ export namespace MyNS {
 		/** The type of resource. This is always mirror#location. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The latitude, in degrees. */
+		/**
+		 * The latitude, in degrees.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude, in degrees. */
+		/**
+		 * The longitude, in degrees.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** The time at which this location was captured, formatted according to RFC 3339. */
@@ -878,7 +902,10 @@ export namespace MyNS {
 		/** Controls how notifications for a timeline item are presented to the user. */
 		notification?: NotificationConfig;
 
-		/** For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported. */
+		/**
+		 * For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pinScore?: number | null;
 
 		/** A list of users or groups that this item has been shared with. */
@@ -975,7 +1002,10 @@ export namespace MyNS {
 		/** The type of resource. This is always mirror#timelineItem. */
 		kind: FormControl<string | null | undefined>,
 
-		/** For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported. */
+		/**
+		 * For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pinScore: FormControl<number | null | undefined>,
 
 		/** A URL that can be used to retrieve this item. */
@@ -1213,6 +1243,7 @@ export namespace MyNS {
 		 * @param {string} bundleId If provided, only items with the given bundleId will be returned.
 		 * @param {boolean} includeDeleted If true, tombstone records for deleted items will be returned.
 		 * @param {number} maxResults The maximum number of items to include in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Mirror_timeline_listOrderBy} orderBy Controls the order in which timeline items are returned.
 		 * @param {string} pageToken Token for the page of results to return.
 		 * @param {boolean} pinnedOnly If true, only pinned items will be returned.

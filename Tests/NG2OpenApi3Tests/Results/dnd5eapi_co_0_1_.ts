@@ -48,7 +48,10 @@ export namespace MyNS {
 	 */
 	export interface APIReferenceList {
 
-		/** Total number of resources available. */
+		/**
+		 * Total number of resources available.
+		 * Type: double
+		 */
 		count?: number | null;
 		results?: Array<APIReference>;
 	}
@@ -58,7 +61,10 @@ export namespace MyNS {
 	 */
 	export interface APIReferenceListFormProperties {
 
-		/** Total number of resources available. */
+		/**
+		 * Total number of resources available.
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateAPIReferenceListFormGroup() {
@@ -75,12 +81,18 @@ export namespace MyNS {
 		 */
 		ability_score?: APIReference;
 
-		/** Bonus amount for this ability score. */
+		/**
+		 * Bonus amount for this ability score.
+		 * Type: double
+		 */
 		bonus?: number | null;
 	}
 	export interface AbilityBonusFormProperties {
 
-		/** Bonus amount for this ability score. */
+		/**
+		 * Bonus amount for this ability score.
+		 * Type: double
+		 */
 		bonus: FormControl<number | null | undefined>,
 	}
 	export function CreateAbilityBonusFormGroup() {
@@ -150,10 +162,14 @@ export namespace MyNS {
 	}
 
 	export interface AreaOfEffect {
+
+		/** Type: double */
 		size?: number | null;
 		type?: AreaOfEffectType | null;
 	}
 	export interface AreaOfEffectFormProperties {
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<AreaOfEffectType | null | undefined>,
 	}
@@ -259,7 +275,10 @@ export namespace MyNS {
 	 */
 	export interface Choice {
 
-		/** Number of items to pick from the list. */
+		/**
+		 * Number of items to pick from the list.
+		 * Type: double
+		 */
 		choose?: number | null;
 
 		/** Description of the choice to be made. */
@@ -279,7 +298,10 @@ export namespace MyNS {
 	 */
 	export interface ChoiceFormProperties {
 
-		/** Number of items to pick from the list. */
+		/**
+		 * Number of items to pick from the list.
+		 * Type: double
+		 */
 		choose: FormControl<number | null | undefined>,
 
 		/** Description of the choice to be made. */
@@ -320,7 +342,10 @@ export namespace MyNS {
 		/** URL of the level resource for the class. */
 		class_levels?: string | null;
 
-		/** Hit die of the class. (ex: 12 == 1d12). */
+		/**
+		 * Hit die of the class. (ex: 12 == 1d12).
+		 * Type: double
+		 */
 		hit_die?: number | null;
 
 		/**
@@ -363,7 +388,10 @@ export namespace MyNS {
 		/** URL of the level resource for the class. */
 		class_levels: FormControl<string | null | undefined>,
 
-		/** Hit die of the class. (ex: 12 == 1d12). */
+		/**
+		 * Hit die of the class. (ex: 12 == 1d12).
+		 * Type: double
+		 */
 		hit_die: FormControl<number | null | undefined>,
 
 		/** URL of the spell resource list for the class. */
@@ -418,7 +446,10 @@ export namespace MyNS {
 	export interface Prerequisite {
 		ability_score?: APIReference;
 
-		/** Minimum score to meet the prerequisite. */
+		/**
+		 * Minimum score to meet the prerequisite.
+		 * Type: double
+		 */
 		minimum_score?: number | null;
 	}
 
@@ -427,7 +458,10 @@ export namespace MyNS {
 	 */
 	export interface PrerequisiteFormProperties {
 
-		/** Minimum score to meet the prerequisite. */
+		/**
+		 * Minimum score to meet the prerequisite.
+		 * Type: double
+		 */
 		minimum_score: FormControl<number | null | undefined>,
 	}
 	export function CreatePrerequisiteFormGroup() {
@@ -446,7 +480,10 @@ export namespace MyNS {
 		/** Descriptions of the class' ability to cast spells. */
 		SpellcastingInfo?: Array<SpellcastingInfo>;
 
-		/** Level at which the class can start using its spellcasting abilities. */
+		/**
+		 * Level at which the class can start using its spellcasting abilities.
+		 * Type: double
+		 */
 		level?: number | null;
 
 		/** Reference to the `AbilityScore` used for spellcasting by the class. */
@@ -458,7 +495,10 @@ export namespace MyNS {
 	 */
 	export interface SpellcastingFormProperties {
 
-		/** Level at which the class can start using its spellcasting abilities. */
+		/**
+		 * Level at which the class can start using its spellcasting abilities.
+		 * Type: double
+		 */
 		level: FormControl<number | null | undefined>,
 	}
 	export function CreateSpellcastingFormGroup() {
@@ -494,9 +534,13 @@ export namespace MyNS {
 		 * `APIReference`
 		 */
 		equipment?: APIReference;
+
+		/** Type: double */
 		quantity?: number | null;
 	}
 	export interface ClassStarting_equipmentFormProperties {
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateClassStarting_equipmentFormGroup() {
@@ -512,7 +556,10 @@ export namespace MyNS {
 	 */
 	export interface ClassLevel {
 
-		/** Total number of ability score bonuses gained, added from previous levels. */
+		/**
+		 * Total number of ability score bonuses gained, added from previous levels.
+		 * Type: double
+		 */
 		ability_score_bonuses?: number | null;
 
 		/** Class specific information such as dice values for bard songs and number of warlock invocations. */
@@ -524,10 +571,16 @@ export namespace MyNS {
 		/** Resource index for shorthand searching. */
 		index?: string | null;
 
-		/** The number value for the current level object. */
+		/**
+		 * The number value for the current level object.
+		 * Type: double
+		 */
 		level?: number | null;
 
-		/** Proficiency bonus for this class at the specified level. */
+		/**
+		 * Proficiency bonus for this class at the specified level.
+		 * Type: double
+		 */
 		prof_bonus?: number | null;
 
 		/** Summary of spells known at this level. */
@@ -542,16 +595,25 @@ export namespace MyNS {
 	 */
 	export interface ClassLevelFormProperties {
 
-		/** Total number of ability score bonuses gained, added from previous levels. */
+		/**
+		 * Total number of ability score bonuses gained, added from previous levels.
+		 * Type: double
+		 */
 		ability_score_bonuses: FormControl<number | null | undefined>,
 
 		/** Resource index for shorthand searching. */
 		index: FormControl<string | null | undefined>,
 
-		/** The number value for the current level object. */
+		/**
+		 * The number value for the current level object.
+		 * Type: double
+		 */
 		level: FormControl<number | null | undefined>,
 
-		/** Proficiency bonus for this class at the specified level. */
+		/**
+		 * Proficiency bonus for this class at the specified level.
+		 * Type: double
+		 */
 		prof_bonus: FormControl<number | null | undefined>,
 
 		/** URL of the referenced resource. */
@@ -569,13 +631,25 @@ export namespace MyNS {
 	}
 
 	export interface ClassLevelClass_specific {
+
+		/** Type: double */
 		brutal_critical_dice?: number | null;
+
+		/** Type: double */
 		rage_count?: number | null;
+
+		/** Type: double */
 		rage_damage_bonus?: number | null;
 	}
 	export interface ClassLevelClass_specificFormProperties {
+
+		/** Type: double */
 		brutal_critical_dice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		rage_count: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		rage_damage_bonus: FormControl<number | null | undefined>,
 	}
 	export function CreateClassLevelClass_specificFormGroup() {
@@ -588,29 +662,73 @@ export namespace MyNS {
 	}
 
 	export interface ClassLevelSpellcasting {
+
+		/** Type: double */
 		cantrips_known?: number | null;
+
+		/** Type: double */
 		spell_slots_level_1?: number | null;
+
+		/** Type: double */
 		spell_slots_level_2?: number | null;
+
+		/** Type: double */
 		spell_slots_level_3?: number | null;
+
+		/** Type: double */
 		spell_slots_level_4?: number | null;
+
+		/** Type: double */
 		spell_slots_level_5?: number | null;
+
+		/** Type: double */
 		spell_slots_level_6?: number | null;
+
+		/** Type: double */
 		spell_slots_level_7?: number | null;
+
+		/** Type: double */
 		spell_slots_level_8?: number | null;
+
+		/** Type: double */
 		spell_slots_level_9?: number | null;
+
+		/** Type: double */
 		spells_known?: number | null;
 	}
 	export interface ClassLevelSpellcastingFormProperties {
+
+		/** Type: double */
 		cantrips_known: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_1: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_2: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_3: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_4: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_5: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_6: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_7: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_8: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_9: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spells_known: FormControl<number | null | undefined>,
 	}
 	export function CreateClassLevelSpellcastingFormGroup() {
@@ -660,7 +778,10 @@ export namespace MyNS {
 	 */
 	export interface Cost {
 
-		/** Numerical amount of coins. */
+		/**
+		 * Numerical amount of coins.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Unit of coinage. */
@@ -672,7 +793,10 @@ export namespace MyNS {
 	 */
 	export interface CostFormProperties {
 
-		/** Numerical amount of coins. */
+		/**
+		 * Numerical amount of coins.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Unit of coinage. */
@@ -697,7 +821,10 @@ export namespace MyNS {
 		 */
 		dc_type?: APIReference;
 
-		/** Value to beat */
+		/**
+		 * Value to beat
+		 * Type: double
+		 */
 		dc_value?: number | null;
 
 		/** Result of a successful save. Can be \"none\", \"half\", or \"other\" */
@@ -709,7 +836,10 @@ export namespace MyNS {
 	 */
 	export interface DCFormProperties {
 
-		/** Value to beat */
+		/**
+		 * Value to beat
+		 * Type: double
+		 */
 		dc_value: FormControl<number | null | undefined>,
 
 		/** Result of a successful save. Can be \"none\", \"half\", or \"other\" */
@@ -1184,7 +1314,10 @@ export namespace MyNS {
 		/** Flavor description of height and weight for this race. */
 		size_description?: string | null;
 
-		/** Base move speed for this race (in feet per round). */
+		/**
+		 * Base move speed for this race (in feet per round).
+		 * Type: double
+		 */
 		speed?: number | null;
 
 		/** Starting proficiencies for all new characters of this race. */
@@ -1222,7 +1355,10 @@ export namespace MyNS {
 		/** Flavor description of height and weight for this race. */
 		size_description: FormControl<string | null | undefined>,
 
-		/** Base move speed for this race (in feet per round). */
+		/**
+		 * Base move speed for this race (in feet per round).
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreateRaceFormGroup() {
@@ -1418,7 +1554,10 @@ export namespace MyNS {
 	 */
 	export interface SubclassLevel {
 
-		/** Total number of ability score bonuses gained, added from previous levels. */
+		/**
+		 * Total number of ability score bonuses gained, added from previous levels.
+		 * Type: double
+		 */
 		ability_score_bonuses?: number | null;
 
 		/** Class specific information such as dice values for bard songs and number of warlock invocations. */
@@ -1430,10 +1569,16 @@ export namespace MyNS {
 		/** Resource index for shorthand searching. */
 		index?: string | null;
 
-		/** Number value for the current level object. */
+		/**
+		 * Number value for the current level object.
+		 * Type: double
+		 */
 		level?: number | null;
 
-		/** Proficiency bonus for this class at the specified level. */
+		/**
+		 * Proficiency bonus for this class at the specified level.
+		 * Type: double
+		 */
 		prof_bonus?: number | null;
 
 		/** Summary of spells known at this level. */
@@ -1448,7 +1593,10 @@ export namespace MyNS {
 	 */
 	export interface SubclassLevelFormProperties {
 
-		/** Total number of ability score bonuses gained, added from previous levels. */
+		/**
+		 * Total number of ability score bonuses gained, added from previous levels.
+		 * Type: double
+		 */
 		ability_score_bonuses: FormControl<number | null | undefined>,
 
 		/** Class specific information such as dice values for bard songs and number of warlock invocations. */
@@ -1457,10 +1605,16 @@ export namespace MyNS {
 		/** Resource index for shorthand searching. */
 		index: FormControl<string | null | undefined>,
 
-		/** Number value for the current level object. */
+		/**
+		 * Number value for the current level object.
+		 * Type: double
+		 */
 		level: FormControl<number | null | undefined>,
 
-		/** Proficiency bonus for this class at the specified level. */
+		/**
+		 * Proficiency bonus for this class at the specified level.
+		 * Type: double
+		 */
 		prof_bonus: FormControl<number | null | undefined>,
 
 		/** URL of the referenced resource. */
@@ -1479,29 +1633,73 @@ export namespace MyNS {
 	}
 
 	export interface SubclassLevelSpellcasting {
+
+		/** Type: double */
 		cantrips_known?: number | null;
+
+		/** Type: double */
 		spell_slots_level_1?: number | null;
+
+		/** Type: double */
 		spell_slots_level_2?: number | null;
+
+		/** Type: double */
 		spell_slots_level_3?: number | null;
+
+		/** Type: double */
 		spell_slots_level_4?: number | null;
+
+		/** Type: double */
 		spell_slots_level_5?: number | null;
+
+		/** Type: double */
 		spell_slots_level_6?: number | null;
+
+		/** Type: double */
 		spell_slots_level_7?: number | null;
+
+		/** Type: double */
 		spell_slots_level_8?: number | null;
+
+		/** Type: double */
 		spell_slots_level_9?: number | null;
+
+		/** Type: double */
 		spells_known?: number | null;
 	}
 	export interface SubclassLevelSpellcastingFormProperties {
+
+		/** Type: double */
 		cantrips_known: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_1: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_2: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_3: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_4: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_5: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_6: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_7: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_8: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spell_slots_level_9: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		spells_known: FormControl<number | null | undefined>,
 	}
 	export function CreateSubclassLevelSpellcastingFormGroup() {
@@ -1529,6 +1727,8 @@ export namespace MyNS {
 		class?: APIReference;
 		features?: Array<APIReference>;
 		index?: string | null;
+
+		/** Type: double */
 		level?: number | null;
 
 		/**
@@ -1539,6 +1739,8 @@ export namespace MyNS {
 	}
 	export interface SubclassLevelResourceFormProperties {
 		index: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		level: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -1776,6 +1978,8 @@ export namespace MyNS {
 		 * Get level resource for a class and level.
 		 * Get api/classes/{index}/levels/{class_level}
 		 * @param {ApiClasses_indexGetIndex} index The `index` of the class to get.
+		 * @param {number} class_level Minimum: 0
+		 *     Maximum: 20
 		 * @return {ClassLevel} OK
 		 */
 		ApiClasses_indexLevels_class_levelGet(index: ApiClasses_indexGetIndex, class_level: number, headersHandler?: () => HttpHeaders): Observable<ClassLevel> {
@@ -1786,6 +1990,8 @@ export namespace MyNS {
 		 * Get features available to a class at the requested level.
 		 * Get api/classes/{index}/levels/{class_level}/features
 		 * @param {ApiClasses_indexGetIndex} index The `index` of the class to get.
+		 * @param {number} class_level Minimum: 0
+		 *     Maximum: 20
 		 * @return {APIReferenceList} OK
 		 */
 		ApiClasses_indexLevels_class_levelFeaturesGet(index: ApiClasses_indexGetIndex, class_level: number, headersHandler?: () => HttpHeaders): Observable<APIReferenceList> {
@@ -1796,6 +2002,8 @@ export namespace MyNS {
 		 * Get spells of the requested level available to the class.
 		 * Get api/classes/{index}/levels/{spell_level}/spells
 		 * @param {ApiClasses_indexGetIndex} index The `index` of the class to get.
+		 * @param {number} spell_level Minimum: 1
+		 *     Maximum: 9
 		 * @return {APIReferenceList} OK
 		 */
 		ApiClasses_indexLevels_spell_levelSpellsGet(index: ApiClasses_indexGetIndex, spell_level: number, headersHandler?: () => HttpHeaders): Observable<APIReferenceList> {
@@ -2144,6 +2352,8 @@ export namespace MyNS {
 		 * Get level resources for a subclass and level.
 		 * Get api/subclasses/{index}/levels/{subclass_level}
 		 * @param {ApiSubclasses_indexGetIndex} index The `index` of the subclass to get.
+		 * @param {number} subclass_level Minimum: 1
+		 *     Maximum: 20
 		 * @return {SubclassLevel} Level resource for the subclass and level.
 		 */
 		ApiSubclasses_indexLevels_subclass_levelGet(index: ApiSubclasses_indexGetIndex, subclass_level: number, headersHandler?: () => HttpHeaders): Observable<SubclassLevel> {
@@ -2154,6 +2364,8 @@ export namespace MyNS {
 		 * Get features of the requested spell level available to the class.
 		 * Get api/subclasses/{index}/levels/{subclass_level}/features
 		 * @param {ApiSubclasses_indexGetIndex} index The `index` of the subclass to get.
+		 * @param {number} subclass_level Minimum: 0
+		 *     Maximum: 20
 		 * @return {APIReferenceList} List of features for the subclass and level.
 		 */
 		ApiSubclasses_indexLevels_subclass_levelFeaturesGet(index: ApiSubclasses_indexGetIndex, subclass_level: number, headersHandler?: () => HttpHeaders): Observable<APIReferenceList> {

@@ -360,7 +360,10 @@ namespace MyNS
 		/// Gets policy assignments for the resource group.
 		/// PolicyAssignments_ListForResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/policyAssignments
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group that contains policy assignments.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains policy assignments.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="filter">The filter to apply on the operation.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -392,7 +395,10 @@ namespace MyNS
 		/// Gets policy assignments for a resource.
 		/// PolicyAssignments_ListForResource subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/policyassignments
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the resource. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group containing the resource. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource path.</param>
 		/// <param name="resourceType">The resource type.</param>

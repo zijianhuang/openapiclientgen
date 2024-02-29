@@ -52,6 +52,8 @@ export namespace MyNS {
 		format?: string | null;
 		Amqp_external_rule_patchTargetHeaders?: Array<Amqp_external_rule_patchTargetHeaders>;
 		mandatoryRoute?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl?: number | null;
 		persistentMessages?: boolean | null;
 		routingKey?: string | null;
@@ -62,6 +64,8 @@ export namespace MyNS {
 		exchange: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
 		mandatoryRoute: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl: FormControl<number | null | undefined>,
 		persistentMessages: FormControl<boolean | null | undefined>,
 		routingKey: FormControl<string | null | undefined>,
@@ -162,6 +166,8 @@ export namespace MyNS {
 
 		/** Required */
 		mandatoryRoute: boolean;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl?: number | null;
 
 		/** Required */
@@ -180,6 +186,8 @@ export namespace MyNS {
 
 		/** Required */
 		mandatoryRoute: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -224,8 +232,12 @@ export namespace MyNS {
 	export interface Amqp_external_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -245,8 +257,12 @@ export namespace MyNS {
 	export interface Amqp_external_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -280,6 +296,8 @@ export namespace MyNS {
 
 		/** Required */
 		mandatoryRoute: boolean;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl?: number | null;
 
 		/** Required */
@@ -298,6 +316,8 @@ export namespace MyNS {
 
 		/** Required */
 		mandatoryRoute: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageTtl: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -478,8 +498,12 @@ export namespace MyNS {
 	export interface Amqp_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -499,8 +523,12 @@ export namespace MyNS {
 	export interface Amqp_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -660,8 +688,12 @@ export namespace MyNS {
 		_links?: string | null;
 		accountId?: string | null;
 		apnsUseSandboxEndpoint?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified?: number | null;
 		name?: string | null;
 		status?: string | null;
@@ -671,8 +703,12 @@ export namespace MyNS {
 		_links: FormControl<string | null | undefined>,
 		accountId: FormControl<string | null | undefined>,
 		apnsUseSandboxEndpoint: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
@@ -893,8 +929,12 @@ export namespace MyNS {
 	export interface Aws_kinesis_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -914,8 +954,12 @@ export namespace MyNS {
 	export interface Aws_kinesis_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1108,8 +1152,12 @@ export namespace MyNS {
 	export interface Aws_lambda_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -1129,8 +1177,12 @@ export namespace MyNS {
 	export interface Aws_lambda_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1318,8 +1370,12 @@ export namespace MyNS {
 	export interface Aws_sqs_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -1339,8 +1395,12 @@ export namespace MyNS {
 	export interface Aws_sqs_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1561,8 +1621,12 @@ export namespace MyNS {
 	export interface Azure_function_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -1582,8 +1646,12 @@ export namespace MyNS {
 	export interface Azure_function_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1792,8 +1860,12 @@ export namespace MyNS {
 	export interface Cloudflare_worker_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -1813,8 +1885,12 @@ export namespace MyNS {
 	export interface Cloudflare_worker_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1879,7 +1955,10 @@ export namespace MyNS {
 
 	export interface Error {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 		details?: string | null;
 
@@ -1889,12 +1968,18 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: number;
 	}
 	export interface ErrorFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 		details: FormControl<string | null | undefined>,
 
@@ -1904,7 +1989,10 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
@@ -2083,8 +2171,12 @@ export namespace MyNS {
 	export interface Google_cloud_function_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -2104,8 +2196,12 @@ export namespace MyNS {
 	export interface Google_cloud_function_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2337,8 +2433,12 @@ export namespace MyNS {
 	export interface Http_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -2358,8 +2458,12 @@ export namespace MyNS {
 	export interface Http_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2535,8 +2639,12 @@ export namespace MyNS {
 	export interface Ifttt_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -2556,8 +2664,12 @@ export namespace MyNS {
 	export interface Ifttt_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2782,8 +2894,12 @@ export namespace MyNS {
 	export interface Kafka_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -2803,8 +2919,12 @@ export namespace MyNS {
 	export interface Kafka_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2932,21 +3052,33 @@ export namespace MyNS {
 	export interface Key_response {
 		appId?: string | null;
 		capability?: {[id: string]: Array<string> };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created?: number | null;
 		id?: string | null;
 		key?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified?: number | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface Key_responseFormProperties {
 		appId: FormControl<string | null | undefined>,
 		capability: FormControl<{[id: string]: Array<string> } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateKey_responseFormGroup() {
@@ -3032,7 +3164,10 @@ export namespace MyNS {
 		/** Required */
 		email: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 	}
 	export interface MeUserFormProperties {
@@ -3040,7 +3175,10 @@ export namespace MyNS {
 		/** Required */
 		email: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateMeUserFormGroup() {
@@ -3117,9 +3255,13 @@ export namespace MyNS {
 	export interface Namespace_response {
 		appId?: string | null;
 		authenticated?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created?: number | null;
 		exposeTimeserial?: boolean | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified?: number | null;
 		persistLast?: boolean | null;
 		persisted?: boolean | null;
@@ -3129,9 +3271,13 @@ export namespace MyNS {
 	export interface Namespace_responseFormProperties {
 		appId: FormControl<string | null | undefined>,
 		authenticated: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created: FormControl<number | null | undefined>,
 		exposeTimeserial: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		modified: FormControl<number | null | undefined>,
 		persistLast: FormControl<boolean | null | undefined>,
 		persisted: FormControl<boolean | null | undefined>,
@@ -3307,8 +3453,12 @@ export namespace MyNS {
 	export interface Pulsar_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -3328,8 +3478,12 @@ export namespace MyNS {
 	export interface Pulsar_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3384,7 +3538,10 @@ export namespace MyNS {
 
 	export interface Queue {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: number;
 
 		/** Required */
@@ -3393,12 +3550,18 @@ export namespace MyNS {
 		/** Required */
 		region: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: number;
 	}
 	export interface QueueFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3407,7 +3570,10 @@ export namespace MyNS {
 		/** Required */
 		region: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateQueueFormGroup() {
@@ -3426,6 +3592,8 @@ export namespace MyNS {
 		deadletter?: boolean | null;
 		deadletterId?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxLength?: number | null;
 		messages?: Queue_responseMessages;
 		name?: string | null;
@@ -3433,6 +3601,8 @@ export namespace MyNS {
 		state?: string | null;
 		stats?: Queue_responseStats;
 		stomp?: Queue_responseStomp;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl?: number | null;
 	}
 	export interface Queue_responseFormProperties {
@@ -3440,10 +3610,14 @@ export namespace MyNS {
 		deadletter: FormControl<boolean | null | undefined>,
 		deadletterId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxLength: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		region: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseFormGroup() {
@@ -3478,13 +3652,25 @@ export namespace MyNS {
 	}
 
 	export interface Queue_responseMessages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ready?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unacknowledged?: number | null;
 	}
 	export interface Queue_responseMessagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ready: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		unacknowledged: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseMessagesFormGroup() {
@@ -3497,13 +3683,25 @@ export namespace MyNS {
 	}
 
 	export interface Queue_responseStats {
+
+		/** Type: double */
 		acknowledgementRate?: number | null;
+
+		/** Type: double */
 		deliveryRate?: number | null;
+
+		/** Type: double */
 		publishRate?: number | null;
 	}
 	export interface Queue_responseStatsFormProperties {
+
+		/** Type: double */
 		acknowledgementRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		deliveryRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		publishRate: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseStatsFormGroup() {
@@ -3567,8 +3765,12 @@ export namespace MyNS {
 	export interface Unsupported_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -3588,8 +3790,12 @@ export namespace MyNS {
 	export interface Unsupported_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3767,8 +3973,12 @@ export namespace MyNS {
 	export interface Zapier_rule_response {
 		_links?: string | null;
 		appId?: string | null;
+
+		/** Type: double */
 		created?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		modified?: number | null;
 
 		/** Required */
@@ -3788,8 +3998,12 @@ export namespace MyNS {
 	export interface Zapier_rule_responseFormProperties {
 		_links: FormControl<string | null | undefined>,
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		modified: FormControl<number | null | undefined>,
 
 		/** Required */

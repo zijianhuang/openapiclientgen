@@ -3212,7 +3212,10 @@ namespace MyNS
 		/// ListBackupPlans backup/plans/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="includeDeleted">A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3292,7 +3295,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="backupPlanId">Uniquely identifies a backup plan.</param>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3471,7 +3477,10 @@ namespace MyNS
 		/// Returns a list of all frameworks for an Amazon Web Services account and Amazon Web Services Region.
 		/// ListFrameworks audit/frameworks
 		/// </summary>
-		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</param>
+		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="NextToken">An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</param>
 		/// <returns>Success</returns>
 		public async Task<ListFrameworksOutput> ListFrameworksAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3547,7 +3556,10 @@ namespace MyNS
 		/// ListLegalHolds legal-holds/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of resource list items to be returned.</param>
+		/// <param name="maxResults">The maximum number of resource list items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3623,7 +3635,10 @@ namespace MyNS
 		/// Returns a list of your report plans. For detailed information about a single report plan, use <code>DescribeReportPlan</code>.
 		/// ListReportPlans audit/report-plans
 		/// </summary>
-		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</param>
+		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="NextToken">An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</param>
 		/// <returns>Success</returns>
 		public async Task<ListReportPlansOutput> ListReportPlansAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4054,7 +4069,10 @@ namespace MyNS
 		/// Deletes the framework specified by a framework name.
 		/// DeleteFramework audit/frameworks/{frameworkName}
 		/// </summary>
-		/// <param name="frameworkName">The unique name of a framework.</param>
+		/// <param name="frameworkName">The unique name of a framework.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteFrameworkAsync(string frameworkName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4082,7 +4100,10 @@ namespace MyNS
 		/// Returns the framework details for the specified <code>FrameworkName</code>.
 		/// DescribeFramework audit/frameworks/{frameworkName}
 		/// </summary>
-		/// <param name="frameworkName">The unique name of a framework.</param>
+		/// <param name="frameworkName">The unique name of a framework.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFrameworkOutput> DescribeFrameworkAsync(string frameworkName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4116,7 +4137,10 @@ namespace MyNS
 		/// Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.
 		/// UpdateFramework audit/frameworks/{frameworkName}
 		/// </summary>
-		/// <param name="frameworkName">The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</param>
+		/// <param name="frameworkName">The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFrameworkOutput> UpdateFrameworkAsync(string frameworkName, UpdateFrameworkPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4263,7 +4287,10 @@ namespace MyNS
 		/// Deletes the report plan specified by a report plan name.
 		/// DeleteReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
-		/// <param name="reportPlanName">The unique name of a report plan.</param>
+		/// <param name="reportPlanName">The unique name of a report plan.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteReportPlanAsync(string reportPlanName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4291,7 +4318,10 @@ namespace MyNS
 		/// Returns a list of all report plans for an Amazon Web Services account and Amazon Web Services Region.
 		/// DescribeReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
-		/// <param name="reportPlanName">The unique name of a report plan.</param>
+		/// <param name="reportPlanName">The unique name of a report plan.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeReportPlanOutput> DescribeReportPlanAsync(string reportPlanName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4325,7 +4355,10 @@ namespace MyNS
 		/// Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.
 		/// UpdateReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
-		/// <param name="reportPlanName">The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</param>
+		/// <param name="reportPlanName">The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateReportPlanOutput> UpdateReportPlanAsync(string reportPlanName, UpdateReportPlanPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4991,7 +5024,10 @@ namespace MyNS
 		/// ListBackupJobs backup-jobs/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="resourceArn">Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</param>
 		/// <param name="state">Returns only backup jobs that are in the specified state.</param>
 		/// <param name="backupVaultName">Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</param>
@@ -5038,7 +5074,10 @@ namespace MyNS
 		/// ListBackupPlanTemplates backup/template/plans
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5076,7 +5115,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="backupPlanId">Uniquely identifies a backup plan.</param>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5113,7 +5155,10 @@ namespace MyNS
 		/// ListBackupVaults backup-vaults/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5150,7 +5195,10 @@ namespace MyNS
 		/// ListCopyJobs copy-jobs/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="resourceArn">Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </param>
 		/// <param name="state">Returns only copy jobs that are in the specified state.</param>
 		/// <param name="createdBefore">Returns only copy jobs that were created before the specified date.</param>
@@ -5197,7 +5245,10 @@ namespace MyNS
 		/// ListProtectedResources resources/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5235,7 +5286,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="backupVaultName"><p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note> <p>Backup vault name might not be available when a supported service creates the backup.</p> </note></param>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="resourceArn">Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</param>
 		/// <param name="resourceType">Returns only recovery points that match the specified resource type.</param>
 		/// <param name="backupPlanId">Returns only recovery points that match the specified backup plan ID.</param>
@@ -5279,7 +5333,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="legalHoldId">This is the ID of the legal hold.</param>
 		/// <param name="nextToken">This is the next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">This is the maximum number of resource list items to be returned.</param>
+		/// <param name="maxResults">This is the maximum number of resource list items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5317,7 +5374,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceArn">An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</param>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults"><p>The maximum number of items to be returned.</p> <note> <p>Amazon RDS requires a value of at least 20.</p> </note></param>
+		/// <param name="maxResults"><p>The maximum number of items to be returned.</p> <note> <p>Amazon RDS requires a value of at least 20.</p> </note>
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5353,11 +5413,17 @@ namespace MyNS
 		/// Returns details about your report jobs.
 		/// ListReportJobs audit/report-jobs
 		/// </summary>
-		/// <param name="ReportPlanName">Returns only report jobs with the specified report plan name.</param>
+		/// <param name="ReportPlanName">Returns only report jobs with the specified report plan name.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="CreationBefore">Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</param>
 		/// <param name="CreationAfter">Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</param>
 		/// <param name="Status"><p>Returns only report jobs that are in the specified status. The statuses are:</p> <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p></param>
-		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</param>
+		/// <param name="MaxResults">The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="NextToken">An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</param>
 		/// <returns>Success</returns>
 		public async Task<ListReportJobsOutput> ListReportJobsAsync(string ReportPlanName, System.DateTimeOffset CreationBefore, System.DateTimeOffset CreationAfter, string Status, int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5393,7 +5459,10 @@ namespace MyNS
 		/// ListRestoreJobs restore-jobs/
 		/// </summary>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="accountId">The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</param>
 		/// <param name="createdBefore">Returns only restore jobs that were created before the specified date.</param>
 		/// <param name="createdAfter">Returns only restore jobs that were created after the specified date.</param>
@@ -5437,7 +5506,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceArn">An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</param>
 		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
-		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5553,7 +5625,10 @@ namespace MyNS
 		/// Starts an on-demand report job for the specified report plan.
 		/// StartReportJob audit/report-jobs/{reportPlanName}
 		/// </summary>
-		/// <param name="reportPlanName">The unique name of a report plan.</param>
+		/// <param name="reportPlanName">The unique name of a report plan.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReportJobOutput> StartReportJobAsync(string reportPlanName, StartReportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

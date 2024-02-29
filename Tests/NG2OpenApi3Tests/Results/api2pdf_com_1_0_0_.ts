@@ -29,13 +29,22 @@ export namespace MyNS {
 
 	export interface ApiResponseSuccess {
 
-		/** Cost of the operation (mbIn + mbOut) * $.001 */
+		/**
+		 * Cost of the operation (mbIn + mbOut) * $.001
+		 * Type: double
+		 */
 		cost?: number | null;
 
-		/** The amount of megabytes of bandwidth used to process the pdf */
+		/**
+		 * The amount of megabytes of bandwidth used to process the pdf
+		 * Type: double
+		 */
 		mbIn?: number | null;
 
-		/** The amount of megabytes of bandwidth generated from the resulting pdf */
+		/**
+		 * The amount of megabytes of bandwidth generated from the resulting pdf
+		 * Type: double
+		 */
 		mbOut?: number | null;
 
 		/** A url to the PDF that will exist only for 24 hours */
@@ -46,13 +55,22 @@ export namespace MyNS {
 	}
 	export interface ApiResponseSuccessFormProperties {
 
-		/** Cost of the operation (mbIn + mbOut) * $.001 */
+		/**
+		 * Cost of the operation (mbIn + mbOut) * $.001
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
-		/** The amount of megabytes of bandwidth used to process the pdf */
+		/**
+		 * The amount of megabytes of bandwidth used to process the pdf
+		 * Type: double
+		 */
 		mbIn: FormControl<number | null | undefined>,
 
-		/** The amount of megabytes of bandwidth generated from the resulting pdf */
+		/**
+		 * The amount of megabytes of bandwidth generated from the resulting pdf
+		 * Type: double
+		 */
 		mbOut: FormControl<number | null | undefined>,
 
 		/** A url to the PDF that will exist only for 24 hours */
@@ -391,7 +409,9 @@ export namespace MyNS {
 		 * @param {string} value Specify the text value you want to convert
 		 * @param {boolean} showlabel Show label of text below barcode
 		 * @param {number} height Height of the barcode generated image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width Width of the barcode generated image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} An image of the generated barcode or QR code
 		 */
 		ZebraGET(format: string, value: string, showlabel: boolean | null | undefined, height: number | null | undefined, width: number | null | undefined): Observable<HttpResponse<string>> {

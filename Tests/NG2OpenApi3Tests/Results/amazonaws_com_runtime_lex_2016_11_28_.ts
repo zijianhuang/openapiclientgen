@@ -583,6 +583,7 @@ export namespace MyNS {
 		 * @param {string} botName The name of the bot that contains the session data.
 		 * @param {string} botAlias The alias in use for the bot that contains the session data.
 		 * @param {string} userId The identifier of the user associated with the session data.
+		 *     Min length: 2    Max length: 100
 		 * @return {DeleteSessionResponse} Success
 		 */
 		DeleteSession(botName: string, botAlias: string, userId: string): Observable<DeleteSessionResponse> {
@@ -595,6 +596,7 @@ export namespace MyNS {
 		 * @param {string} botName The name of the bot that contains the session data.
 		 * @param {string} botAlias The alias in use for the bot that contains the session data.
 		 * @param {string} userId The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. 
+		 *     Min length: 2    Max length: 100
 		 * @return {PutSessionResponse} Success
 		 */
 		PutSession(botName: string, botAlias: string, userId: string, requestBody: PutSessionPostBody): Observable<PutSessionResponse> {
@@ -607,7 +609,9 @@ export namespace MyNS {
 		 * @param {string} botName The name of the bot that contains the session data.
 		 * @param {string} botAlias The alias in use for the bot that contains the session data.
 		 * @param {string} userId The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. 
+		 *     Min length: 2    Max length: 100
 		 * @param {string} checkpointLabelFilter <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
+		 *     Min length: 1    Max length: 255
 		 * @return {GetSessionResponse} Success
 		 */
 		GetSession(botName: string, botAlias: string, userId: string, checkpointLabelFilter: string | null | undefined): Observable<GetSessionResponse> {
@@ -620,6 +624,7 @@ export namespace MyNS {
 		 * @param {string} botName Name of the Amazon Lex bot.
 		 * @param {string} botAlias Alias of the Amazon Lex bot.
 		 * @param {string} userId <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p> <p>To decide the user ID to use for your application, consider the following factors.</p> <ul> <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li> <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li> <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li> <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li> </ul>
+		 *     Min length: 2    Max length: 100
 		 * @return {PostContentResponse} Success
 		 */
 		PostContent(botName: string, botAlias: string, userId: string, requestBody: PostContentPostBody): Observable<PostContentResponse> {
@@ -632,6 +637,7 @@ export namespace MyNS {
 		 * @param {string} botName The name of the Amazon Lex bot.
 		 * @param {string} botAlias The alias of the Amazon Lex bot.
 		 * @param {string} userId <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p> <p>To decide the user ID to use for your application, consider the following factors.</p> <ul> <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li> <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li> <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li> <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li> </ul>
+		 *     Min length: 2    Max length: 100
 		 * @return {PostTextResponse} Success
 		 */
 		PostText(botName: string, botAlias: string, userId: string, requestBody: PostTextPostBody): Observable<PostTextResponse> {
@@ -736,8 +742,8 @@ export namespace MyNS {
 		/**
 		 * The text that the user entered (Amazon Lex interprets this text).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputText: string;
 
@@ -759,8 +765,8 @@ export namespace MyNS {
 		/**
 		 * The text that the user entered (Amazon Lex interprets this text).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputText: FormControl<string | null | undefined>,
 	}

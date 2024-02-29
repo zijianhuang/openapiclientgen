@@ -53,7 +53,10 @@ export namespace MyNS {
 
 	export interface Language_stats {
 
-		/** The number of alerts for this language. */
+		/**
+		 * The number of alerts for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alerts?: number | null;
 
 		/** The time the commit was analyzed. */
@@ -68,7 +71,10 @@ export namespace MyNS {
 		/** The short name for the language. */
 		language?: string | null;
 
-		/** The number of lines of code for this language. */
+		/**
+		 * The number of lines of code for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lines?: number | null;
 
 		/** The status of the analysis of this language. */
@@ -76,7 +82,10 @@ export namespace MyNS {
 	}
 	export interface Language_statsFormProperties {
 
-		/** The number of alerts for this language. */
+		/**
+		 * The number of alerts for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alerts: FormControl<number | null | undefined>,
 
 		/** The time the commit was analyzed. */
@@ -91,7 +100,10 @@ export namespace MyNS {
 		/** The short name for the language. */
 		language: FormControl<string | null | undefined>,
 
-		/** The number of lines of code for this language. */
+		/**
+		 * The number of lines of code for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lines: FormControl<number | null | undefined>,
 
 		/** The status of the analysis of this language. */
@@ -114,8 +126,11 @@ export namespace MyNS {
 
 	export interface Project {
 
-		/** The numeric identifier of the project. */
-		id?: number | null;
+		/**
+		 * The numeric identifier of the project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The display name of the project. */
 		name?: string | null;
@@ -128,8 +143,11 @@ export namespace MyNS {
 	}
 	export interface ProjectFormProperties {
 
-		/** The numeric identifier of the project. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The numeric identifier of the project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The display name of the project. */
 		name: FormControl<string | null | undefined>,
@@ -142,7 +160,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 			'url-identifier': new FormControl<string | null | undefined>(undefined),
@@ -196,13 +214,19 @@ export namespace MyNS {
 		/** The list of added and fixed alerts per query for this language. */
 		alerts?: Array<Codereview_alerts>;
 
-		/** The total number of alerts fixed by the patch for this language. */
+		/**
+		 * The total number of alerts fixed by the patch for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed?: number | null;
 
 		/** The language analyzed. */
 		language?: string | null;
 
-		/** The total number of alerts introduced by the patch for this language. */
+		/**
+		 * The total number of alerts introduced by the patch for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new?: number | null;
 
 		/** The status for analysis of this language. */
@@ -213,13 +237,19 @@ export namespace MyNS {
 	}
 	export interface Codereview_languagesFormProperties {
 
-		/** The total number of alerts fixed by the patch for this language. */
+		/**
+		 * The total number of alerts fixed by the patch for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed: FormControl<number | null | undefined>,
 
 		/** The language analyzed. */
 		language: FormControl<string | null | undefined>,
 
-		/** The total number of alerts introduced by the patch for this language. */
+		/**
+		 * The total number of alerts introduced by the patch for this language.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new: FormControl<number | null | undefined>,
 
 		/** The status for analysis of this language. */
@@ -241,19 +271,31 @@ export namespace MyNS {
 
 	export interface Codereview_alerts {
 
-		/** The number of alerts fixed by the patch for this query. */
+		/**
+		 * The number of alerts fixed by the patch for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed?: number | null;
 
-		/** The number of alerts introduced by the patch for this query. */
+		/**
+		 * The number of alerts introduced by the patch for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new?: number | null;
 		query?: Query;
 	}
 	export interface Codereview_alertsFormProperties {
 
-		/** The number of alerts fixed by the patch for this query. */
+		/**
+		 * The number of alerts fixed by the patch for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed: FormControl<number | null | undefined>,
 
-		/** The number of alerts introduced by the patch for this query. */
+		/**
+		 * The number of alerts introduced by the patch for this query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new: FormControl<number | null | undefined>,
 	}
 	export function CreateCodereview_alertsFormGroup() {
@@ -266,8 +308,11 @@ export namespace MyNS {
 
 	export interface Query {
 
-		/** The numeric identifier of the query. */
-		id?: number | null;
+		/**
+		 * The numeric identifier of the query.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The [language code](https://lgtm.com/help/lgtm/analysis-faqs#which-languages-are-supported) of the query. */
 		language?: string | null;
@@ -284,8 +329,11 @@ export namespace MyNS {
 	}
 	export interface QueryFormProperties {
 
-		/** The numeric identifier of the query. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The numeric identifier of the query.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The [language code](https://lgtm.com/help/lgtm/analysis-faqs#which-languages-are-supported) of the query. */
 		language: FormControl<string | null | undefined>,
@@ -301,7 +349,7 @@ export namespace MyNS {
 	}
 	export function CreateQueryFormGroup() {
 		return new FormGroup<QueryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			pack: new FormControl<string | null | undefined>(undefined),
@@ -384,7 +432,10 @@ export namespace MyNS {
 		/** The date and time when this metric was computed. */
 		timestamp?: Date | null;
 
-		/** The value of this metric at the timestamp reported. */
+		/**
+		 * The value of this metric at the timestamp reported.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface MeasurementFormProperties {
@@ -392,7 +443,10 @@ export namespace MyNS {
 		/** The date and time when this metric was computed. */
 		timestamp: FormControl<Date | null | undefined>,
 
-		/** The value of this metric at the timestamp reported. */
+		/**
+		 * The value of this metric at the timestamp reported.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMeasurementFormGroup() {
@@ -462,8 +516,11 @@ export namespace MyNS {
 
 	export interface Operation {
 
-		/** The identifier for the operation. */
-		id?: number | null;
+		/**
+		 * The identifier for the operation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Status of the operation. */
 		status?: OperationStatus | null;
@@ -478,8 +535,11 @@ export namespace MyNS {
 	}
 	export interface OperationFormProperties {
 
-		/** The identifier for the operation. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The identifier for the operation.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Status of the operation. */
 		status: FormControl<OperationStatus | null | undefined>,
@@ -493,7 +553,7 @@ export namespace MyNS {
 	}
 	export function CreateOperationFormGroup() {
 		return new FormGroup<OperationFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<OperationStatus | null | undefined>(undefined),
 			'task-result-url': new FormControl<string | null | undefined>(undefined),
 			'task-type': new FormControl<OperationTask_type | null | undefined>(undefined, [Validators.required]),
@@ -539,7 +599,7 @@ export namespace MyNS {
 	}
 	export function CreateProject_detailsFormGroup() {
 		return new FormGroup<Project_detailsFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 			'url-identifier': new FormControl<string | null | undefined>(undefined),
@@ -595,12 +655,16 @@ export namespace MyNS {
 
 	export interface Query_result_entry {
 		file?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line?: number | null;
 		url?: string | null;
 		value?: string | null;
 	}
 	export interface Query_result_entryFormProperties {
 		file: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
@@ -642,43 +706,65 @@ export namespace MyNS {
 
 	export interface Queryjob_stats {
 
-		/** The number of projects for which the query failed. */
+		/**
+		 * The number of projects for which the query failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed?: number | null;
 
 		/**
 		 * The number of projects scheduled for execution but pending. For very large jobs, not all projects are scheduled at the same time. Therefore, this number might increase as more projects are scheduled. This means that `successful + failed + pending` might be smaller than the total number of project that will be analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pending?: number | null;
 
-		/** The number of projects for which the query returned results. */
+		/**
+		 * The number of projects for which the query returned results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'success-with-result'?: number | null;
 
-		/** The number of projects for which the query was successful but returned no results. */
+		/**
+		 * The number of projects for which the query was successful but returned no results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'success-without-result'?: number | null;
 
 		/**
 		 * The number of projects for which the query completed succesfully. These are broken down further between the ones that have results (`success-with-result`) and the ones that do not (`success-without-result`): `successful = success-with-result + success-without-result`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		successful?: number | null;
 	}
 	export interface Queryjob_statsFormProperties {
 
-		/** The number of projects for which the query failed. */
+		/**
+		 * The number of projects for which the query failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of projects scheduled for execution but pending. For very large jobs, not all projects are scheduled at the same time. Therefore, this number might increase as more projects are scheduled. This means that `successful + failed + pending` might be smaller than the total number of project that will be analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pending: FormControl<number | null | undefined>,
 
-		/** The number of projects for which the query returned results. */
+		/**
+		 * The number of projects for which the query returned results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'success-with-result': FormControl<number | null | undefined>,
 
-		/** The number of projects for which the query was successful but returned no results. */
+		/**
+		 * The number of projects for which the query was successful but returned no results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'success-without-result': FormControl<number | null | undefined>,
 
 		/**
 		 * The number of projects for which the query completed succesfully. These are broken down further between the ones that have results (`success-with-result`) and the ones that do not (`success-without-result`): `successful = success-with-result + success-without-result`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		successful: FormControl<number | null | undefined>,
 	}
@@ -736,10 +822,16 @@ export namespace MyNS {
 		/** Error message. Only applies if `status` is `error`. */
 		error?: string | null;
 
-		/** Number of results that refer to elements outside the source tree (e.g., libraries). Only applies if `status` is `success`. */
+		/**
+		 * Number of results that refer to elements outside the source tree (e.g., libraries). Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		external?: number | null;
 
-		/** Number of results that refer to elements within the source tree. Only applies if `status` is `success`. */
+		/**
+		 * Number of results that refer to elements within the source tree. Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internal?: number | null;
 		project?: Project;
 
@@ -748,6 +840,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of results returned by the query. This is broken down further into `internal` and `external` results. Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -756,10 +849,16 @@ export namespace MyNS {
 		/** Error message. Only applies if `status` is `error`. */
 		error: FormControl<string | null | undefined>,
 
-		/** Number of results that refer to elements outside the source tree (e.g., libraries). Only applies if `status` is `success`. */
+		/**
+		 * Number of results that refer to elements outside the source tree (e.g., libraries). Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		external: FormControl<number | null | undefined>,
 
-		/** Number of results that refer to elements within the source tree. Only applies if `status` is `success`. */
+		/**
+		 * Number of results that refer to elements within the source tree. Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internal: FormControl<number | null | undefined>,
 
 		/** Describes whether the query was sucessfully executed against the project. */
@@ -767,6 +866,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of results returned by the query. This is broken down further into `internal` and `external` results. Only applies if `status` is `success`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -822,6 +922,7 @@ export namespace MyNS {
 		 * This endpoint reports the commit analyzed and a summary of the results for each language. Alternatively, you can use this identifier to download full details  of all the alerts found by the analysis. For more information, see [Get detailed alert information](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAlerts).
 		 * Get analyses/{analysis_id}
 		 * @param {string} analysis_id The analysis identifier.
+		 *     Min length: 40    Max length: 40
 		 * @return {Analysis} Success. Requested data returned.
 		 */
 		GetAnalysis(analysis_id: string): Observable<Analysis> {
@@ -861,13 +962,15 @@ export namespace MyNS {
 		 * - `status`: initially pending.
 		 * - `task-result`: containing information about the progress and results of the analysis.
 		 * Post analyses/{project_id}
-		 * @param {number} project_id The numeric project identifier.
+		 * @param {string} project_id The numeric project identifier.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} commit The identifier of the commit to analyze.
 		 * @param {Array<string>} language The language codes of the languages to analyze.
 		 * For a list of available languages, see [Supported languages](https://lgtm.com/help/lgtm/analysis-faqs#which-languages-are-supported). To specify more than one language, this parameter can be repeated. If no language is specified, all the project's languages will be analyzed.
+		 *     Maximum items: 10
 		 * @return {void} 
 		 */
-		RequestAnalysis(project_id: number, commit: string, language: Array<string> | null | undefined): Observable<HttpResponse<string>> {
+		RequestAnalysis(project_id: string, commit: string, language: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'analyses/{project_id}?commit=' + (commit == null ? '' : encodeURIComponent(commit)) + '&' + language?.map(z => `language=${encodeURIComponent(z)}`).join('&'), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -876,11 +979,12 @@ export namespace MyNS {
 		 * Get a summary of the analysis results for a specific commit, or the latest commit, to a project. (For projects configured for sparse or upload analysis, only `latest` is supported.)
 		 * This endpoint reports a summary of results for each language, and also the analysis identifier. You can use the analysis identifier to download full details of all the alerts  found by the analysis. For more information, see [Get detailed alert information](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAlerts).
 		 * Get analyses/{project_id}/commits/{commit_id}
-		 * @param {number} project_id The numeric project identifier.
+		 * @param {string} project_id The numeric project identifier.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} commit_id The identifier of a specific commit. Alternatively, use `latest` for the most recent analyzed commit.
 		 * @return {Analysis} Success. Data returned.
 		 */
-		GetAnalysisForCommit(project_id: number, commit_id: string): Observable<Analysis> {
+		GetAnalysisForCommit(project_id: string, commit_id: string): Observable<Analysis> {
 			return this.http.get<Analysis>(this.baseUri + 'analyses/{project_id}/commits/{commit_id}', {});
 		}
 
@@ -901,7 +1005,8 @@ export namespace MyNS {
 		 * Get detailed alert information for an issue
 		 * Fetch the alert information for an issue in [SARIF](https://lgtm.com/help/lgtm/sarif-results-file) format.
 		 * Get issues/{project_id}/{alert_key}
-		 * @param {number} project_id The numeric project identifier.
+		 * @param {string} project_id The numeric project identifier.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} alert_key The alert key is generated by LGTM when it posts an issue `create` webhook request 
 		 *  to an external system using the [issue tracker Webhook API](https://lgtm.com/admin/help/issuetracker-webhook-api).
 		 *  This key is an opaque identifier that tracks the alert's location over time. For example, if a file containing the alert
@@ -909,7 +1014,7 @@ export namespace MyNS {
 		 *  Note that the key needs to be URL encoded as it may contain characters that are not web-safe.  
 		 * @return {void} Success. Requested data returned.
 		 */
-		GetIssue(project_id: number, alert_key: string): Observable<HttpResponse<string>> {
+		GetIssue(project_id: string, alert_key: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'issues/{project_id}/{alert_key}', { observe: 'response', responseType: 'text' });
 		}
 
@@ -927,10 +1032,11 @@ export namespace MyNS {
 		 * Get operation status
 		 * Track progress of a long-running operation using the operations identifier returned when you  created the operation. For example, by triggering the analysis of a commit, or the code review of a patch. For both LGTM.com and LGTM Enterprise, you must include an access token with the `operations:read` scope.
 		 * Get operations/{operation_id}
-		 * @param {number} operation_id The operation identifier returned on creating the task.
+		 * @param {string} operation_id The operation identifier returned on creating the task.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Operation} Success. Requested data returned.
 		 */
-		GetOperation(operation_id: number): Observable<Operation> {
+		GetOperation(operation_id: string): Observable<Operation> {
 			return this.http.get<Operation>(this.baseUri + 'operations/{operation_id}', {});
 		}
 
@@ -942,6 +1048,7 @@ export namespace MyNS {
 		 * When more than one page of results is available, each response includes a `nextPageUrl` response parameter. You can use this URL to request the next page of results. The `nextPageUrl` includes an automatically generated `start` parameter, which specifies the projects to return in the next page of results.
 		 * Get projects
 		 * @param {number} limit The maximum number of projects to return in each response (1-100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} start An opaque identifier generated by the API.
 		 * @return {Project_list} Success. Requested data returned.
 		 */
@@ -954,10 +1061,11 @@ export namespace MyNS {
 		 * Delete a project with a particular numeric project identifier.
 		 * In addition to access to the project, administrative access to LGTM or the LGTM Enterprise instance is required to delete projects.
 		 * Delete projects/{project_id}
-		 * @param {number} project_id The numeric project identifier
+		 * @param {string} project_id The numeric project identifier
+		 *     Minimum: 1
 		 * @return {Project_details} Success. Details of the deleted project returned.
 		 */
-		DeleteProject(project_id: number): Observable<Project_details> {
+		DeleteProject(project_id: string): Observable<Project_details> {
 			return this.http.delete<Project_details>(this.baseUri + 'projects/{project_id}', {});
 		}
 
@@ -966,10 +1074,11 @@ export namespace MyNS {
 		 * Get the latest summary for a specific project using the numeric project identifier.
 		 * To find the LGTM identifier for a project, list all projects using the `/projects`  endpoint and look up the project by name. Alternatively, use the `/projects/{provider}/{org}/{name}` endpoint. If you have administration access, the project identifier is also displayed in  the administration page for the project.
 		 * Get projects/{project_id}
-		 * @param {number} project_id The numeric project identifier
+		 * @param {string} project_id The numeric project identifier
+		 *     Minimum: 1
 		 * @return {Project_details} Success. Requested data returned.
 		 */
-		GetProject(project_id: number): Observable<Project_details> {
+		GetProject(project_id: string): Observable<Project_details> {
 			return this.http.get<Project_details>(this.baseUri + 'projects/{project_id}', {});
 		}
 
@@ -977,7 +1086,8 @@ export namespace MyNS {
 		 * Get configuration for a project identified by numeric identifier
 		 * Get the latest configuration for a specific project using the numeric project identifier.
 		 * Get projects/{project_id}/settings/analysis-configuration
-		 * @param {number} project_id The numeric project identifier
+		 * @param {string} project_id The numeric project identifier
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {GetProjectConfigSource} source The type of project configuration to retrieve.
 		 * If this parameter isn't specified, the request retrieves the effective configuration. That is, the configuration that is actually applied to the project, which may be from:
 		 * * the repository
@@ -988,7 +1098,7 @@ export namespace MyNS {
 		 *  * `administrator` to retrieve the administrator-set, project configuration. A 404 status is returned if there is no administrator configuration.
 		 * @return {void} Success. Requested data returned.
 		 */
-		GetProjectConfig(project_id: number, source: GetProjectConfigSource | null | undefined): Observable<HttpResponse<string>> {
+		GetProjectConfig(project_id: string, source: GetProjectConfigSource | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/{project_id}/settings/analysis-configuration?source=' + source, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1029,6 +1139,7 @@ export namespace MyNS {
 		 * @param {string} start An opaque identifier generated by the API used for pagination. 
 		 * This identifier will be included as part of the response for this endpoint whenever more than one page of results is available. 
 		 * @param {number} limit The number of results to return. Useful for pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Only return a subset of results. Legal values are `w-results`, `wo-results`, `error`.
 		 * @return {Queryjob_results_overview} Success. Requested data returned.
 		 */
@@ -1043,7 +1154,9 @@ export namespace MyNS {
 		 * @param {string} queryjob_id The identifier of the query job, from the `task-result` given in the response to the initial `POST /queryjobs` request.
 		 * @param {string} project_id The identifier for the project.
 		 * @param {number} start Start point for the page of results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to display (less than 100).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} nofilter Include results that are not part of the source tree. These results are filtered out by default.
 		 * @return {Queryjob_project_results} Success. The result contains three items: column headers, data, and pagination information.
 		 */
@@ -1081,11 +1194,12 @@ export namespace MyNS {
 		 * This endpoint works for projects that have been successfully analyzed for the language specified in the request.  A successful request redirects you to a URL for downloading a database that represents the code snapshot, as specified in the `Location:` header in the response. Therefore, your HTTP client should be configured to follow redirects. For example, if you are using `curl`, you can add the`-L` flag to the command.
 		 * The database is downloaded as a zip file that can be imported into an IDE equipped with a  CodeQL extension. The extension must be up to date to analyze databases downloaded from LGTM. For more information on running queries locally in your IDE, see [Runnning queries in your IDE](https://lgtm.com/help/lgtm/running-queries-ide).
 		 * Get snapshots/{project_id}/{language}
-		 * @param {number} project_id The numeric project identifier.
+		 * @param {string} project_id The numeric project identifier.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language The language of the database to download.
 		 * @return {void} 
 		 */
-		GetSnapshot(project_id: number, language: string): Observable<HttpResponse<string>> {
+		GetSnapshot(project_id: string, language: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'snapshots/{project_id}/' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1096,13 +1210,14 @@ export namespace MyNS {
 		 * If your database was generated using a version of the  command line that is older than LGTM,  LGTM will try to upgrade and analyze it when the upload is complete. You can include cached predicates in the upload, but they are ignored as the cache is  repopulated after the database has been upgraded and analyzed. However, if you want to include results with your database, make sure the database is  compatible before you start the upload session.  Incompatible databases with results won't be upgraded and therefore cannot be uploaded.  For further information on externally-built databases,  see [Preparing snapshots to upload to LGTM using the QL command-line tools](https://help.semmle.com/wiki/display/SD/Preparing+snapshots+to+upload+to+LGTM).
 		 * When the upload session has been successfully started, upload the database to the  upload URL returned in the response. The database can be uploaded to the upload URL in parts using  the [`PUT /snapshots/uploads/{session-id}`](https://lgtm.com/help/lgtm/api/api-v1#opIduploadPart) endpoint. After uploading all the parts you must call  the [`POST /snapshots/uploads/{session-id}`](https://lgtm.com/help/lgtm/api/api-v1#opIdcompleteUpload) endpoint to complete the upload session.
 		 * Post snapshots/{project_id}/{language}
-		 * @param {number} project_id The numeric project identifier.
+		 * @param {string} project_id The numeric project identifier.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language The language of the database to upload.
 		 * @param {string} commit The identifier of the analyzed commit.
 		 * @param {Date} date The date and time of the analyzed commit (default the current time).
 		 * @return {Upload_session} Success.
 		 */
-		InitSnapshotUpload(project_id: number, language: string, commit: string, date: Date | null | undefined): Observable<Upload_session> {
+		InitSnapshotUpload(project_id: string, language: string, commit: string, date: Date | null | undefined): Observable<Upload_session> {
 			return this.http.post<Upload_session>(this.baseUri + 'snapshots/{project_id}/' + (language == null ? '' : encodeURIComponent(language)) + '&commit=' + (commit == null ? '' : encodeURIComponent(commit)) + '&date=' + date?.toISOString(), null, {});
 		}
 

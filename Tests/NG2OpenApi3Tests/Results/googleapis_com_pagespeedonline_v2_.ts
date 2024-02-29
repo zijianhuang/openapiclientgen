@@ -62,30 +62,54 @@ export namespace MyNS {
 
 	export interface PagespeedApiFormatStringV2ArgsRects {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PagespeedApiFormatStringV2ArgsRectsFormProperties {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiFormatStringV2ArgsRectsFormGroup() {
@@ -100,30 +124,54 @@ export namespace MyNS {
 
 	export interface PagespeedApiFormatStringV2ArgsSecondary_rects {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PagespeedApiFormatStringV2ArgsSecondary_rectsFormProperties {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiFormatStringV2ArgsSecondary_rectsFormGroup() {
@@ -141,7 +189,10 @@ export namespace MyNS {
 		/** Image data base64 encoded. */
 		data?: string | null;
 
-		/** Height of screenshot in pixels. */
+		/**
+		 * Height of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Unique string key, if any, identifying this image. */
@@ -153,7 +204,10 @@ export namespace MyNS {
 		/** The region of the page that is captured by this image, with dimensions measured in CSS pixels. */
 		page_rect?: PagespeedApiImageV2Page_rect;
 
-		/** Width of screenshot in pixels. */
+		/**
+		 * Width of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PagespeedApiImageV2FormProperties {
@@ -161,7 +215,10 @@ export namespace MyNS {
 		/** Image data base64 encoded. */
 		data: FormControl<string | null | undefined>,
 
-		/** Height of screenshot in pixels. */
+		/**
+		 * Height of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Unique string key, if any, identifying this image. */
@@ -170,7 +227,10 @@ export namespace MyNS {
 		/** Mime type of image data (e.g. "image/jpeg"). */
 		mime_type: FormControl<string | null | undefined>,
 
-		/** Width of screenshot in pixels. */
+		/**
+		 * Width of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiImageV2FormGroup() {
@@ -186,30 +246,54 @@ export namespace MyNS {
 
 	export interface PagespeedApiImageV2Page_rect {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PagespeedApiImageV2Page_rectFormProperties {
 
-		/** The height of the rect. */
+		/**
+		 * The height of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The left coordinate of the rect, in page coordinates. */
+		/**
+		 * The left coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** The top coordinate of the rect, in page coordinates. */
+		/**
+		 * The top coordinate of the rect, in page coordinates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** The width of the rect. */
+		/**
+		 * The width of the rect.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiImageV2Page_rectFormGroup() {
@@ -242,7 +326,10 @@ export namespace MyNS {
 		/** Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc. */
 		pageStats?: ResultPageStats;
 
-		/** Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error. */
+		/**
+		 * Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode?: number | null;
 
 		/** A map with one entry for each rule group in these results. */
@@ -266,7 +353,10 @@ export namespace MyNS {
 		/** Kind of result. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error. */
+		/**
+		 * Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode: FormControl<number | null | undefined>,
 
 		/** A map with one entry for each rule group in these results. */
@@ -319,7 +409,10 @@ export namespace MyNS {
 		/** Localized name of the rule, intended for presentation to a user. */
 		localizedRuleName?: string | null;
 
-		/** The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal. */
+		/**
+		 * The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal.
+		 * Type: double
+		 */
 		ruleImpact?: number | null;
 		summary?: PagespeedApiFormatStringV2;
 
@@ -331,7 +424,10 @@ export namespace MyNS {
 		/** Localized name of the rule, intended for presentation to a user. */
 		localizedRuleName: FormControl<string | null | undefined>,
 
-		/** The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal. */
+		/**
+		 * The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal.
+		 * Type: double
+		 */
 		ruleImpact: FormControl<number | null | undefined>,
 	}
 	export function CreateResultFormattedResultsRuleResultsFormGroup() {
@@ -387,19 +483,34 @@ export namespace MyNS {
 		/** Number of uncompressed response bytes for JS resources on the page. */
 		javascriptResponseBytes?: string | null;
 
-		/** Number of CSS resources referenced by the page. */
+		/**
+		 * Number of CSS resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberCssResources?: number | null;
 
-		/** Number of unique hosts referenced by the page. */
+		/**
+		 * Number of unique hosts referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberHosts?: number | null;
 
-		/** Number of JavaScript resources referenced by the page. */
+		/**
+		 * Number of JavaScript resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberJsResources?: number | null;
 
-		/** Number of HTTP resources loaded by the page. */
+		/**
+		 * Number of HTTP resources loaded by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberResources?: number | null;
 
-		/** Number of static (i.e. cacheable) resources on the page. */
+		/**
+		 * Number of static (i.e. cacheable) resources on the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberStaticResources?: number | null;
 
 		/** Number of response bytes for other resources on the page. */
@@ -428,19 +539,34 @@ export namespace MyNS {
 		/** Number of uncompressed response bytes for JS resources on the page. */
 		javascriptResponseBytes: FormControl<string | null | undefined>,
 
-		/** Number of CSS resources referenced by the page. */
+		/**
+		 * Number of CSS resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberCssResources: FormControl<number | null | undefined>,
 
-		/** Number of unique hosts referenced by the page. */
+		/**
+		 * Number of unique hosts referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberHosts: FormControl<number | null | undefined>,
 
-		/** Number of JavaScript resources referenced by the page. */
+		/**
+		 * Number of JavaScript resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberJsResources: FormControl<number | null | undefined>,
 
-		/** Number of HTTP resources loaded by the page. */
+		/**
+		 * Number of HTTP resources loaded by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberResources: FormControl<number | null | undefined>,
 
-		/** Number of static (i.e. cacheable) resources on the page. */
+		/**
+		 * Number of static (i.e. cacheable) resources on the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberStaticResources: FormControl<number | null | undefined>,
 
 		/** Number of response bytes for other resources on the page. */
@@ -473,12 +599,18 @@ export namespace MyNS {
 
 	export interface ResultRuleGroups {
 
-		/** The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable). A high score indicates little room for improvement, while a lower score indicates more room for improvement. */
+		/**
+		 * The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable). A high score indicates little room for improvement, while a lower score indicates more room for improvement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface ResultRuleGroupsFormProperties {
 
-		/** The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable). A high score indicates little room for improvement, while a lower score indicates more room for improvement. */
+		/**
+		 * The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable). A high score indicates little room for improvement, while a lower score indicates more room for improvement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateResultRuleGroupsFormGroup() {
@@ -490,18 +622,30 @@ export namespace MyNS {
 
 	export interface ResultVersion {
 
-		/** The major version number of PageSpeed used to generate these results. */
+		/**
+		 * The major version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** The minor version number of PageSpeed used to generate these results. */
+		/**
+		 * The minor version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 	}
 	export interface ResultVersionFormProperties {
 
-		/** The major version number of PageSpeed used to generate these results. */
+		/**
+		 * The major version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** The minor version number of PageSpeed used to generate these results. */
+		/**
+		 * The minor version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 	}
 	export function CreateResultVersionFormGroup() {

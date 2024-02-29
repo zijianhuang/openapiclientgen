@@ -1787,7 +1787,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<RegistryListResult> Registries_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -1818,8 +1820,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Registry> Registries_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -1850,8 +1857,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a container registry.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Registry> Registries_CreateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, Registry requestBody)
@@ -1890,8 +1902,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Registries_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -1916,8 +1933,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a container registry.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Registry> Registries_UpdateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, RegistryUpdateParameters requestBody)
@@ -1956,8 +1978,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters specifying the image to copy and the source container registry.</param>
 		/// <returns>The request was successful; the operation has completed successfully.</returns>
 		public async Task Registries_ImportImageAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, ImportImageParameters requestBody)
@@ -1990,8 +2017,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the list of credentials retrieved and returned successfully.</returns>
 		public async Task<RegistryListCredentialsResult> Registries_ListCredentialsAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -2022,8 +2054,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the registry usages retrieved and returned successfully.</returns>
 		public async Task<RegistryUsageListResult> Registries_ListUsagesAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -2054,8 +2091,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">Specifies name of the password which should be regenerated -- password or password2.</param>
 		/// <returns>The request was successful; the specified credential regenerated successfully.</returns>
 		public async Task<RegistryListCredentialsResult> Registries_RegenerateCredentialAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, RegenerateCredentialParameters requestBody)
@@ -2094,8 +2136,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ReplicationListResult> Replications_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -2126,9 +2173,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="replicationName">The name of the replication.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="replicationName">The name of the replication.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Replication> Replications_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName)
 		{
@@ -2159,9 +2214,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="replicationName">The name of the replication.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="replicationName">The name of the replication.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a replication.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Replication> Replications_CreateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName, Replication requestBody)
@@ -2200,9 +2263,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="replicationName">The name of the replication.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="replicationName">The name of the replication.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Replications_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName)
 		{
@@ -2227,9 +2298,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="replicationName">The name of the replication.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="replicationName">The name of the replication.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a replication.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Replication> Replications_UpdateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName, ReplicationUpdateParameters requestBody)
@@ -2268,8 +2347,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<WebhookListResult> Webhooks_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
 		{
@@ -2300,9 +2384,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Webhook> Webhooks_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
 		{
@@ -2333,9 +2425,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a webhook.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Webhook> Webhooks_CreateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName, WebhookCreateParameters requestBody)
@@ -2374,9 +2474,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Webhooks_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
 		{
@@ -2401,9 +2509,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a webhook.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Webhook> Webhooks_UpdateAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName, WebhookUpdateParameters requestBody)
@@ -2442,9 +2558,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<CallbackConfig> Webhooks_GetCallbackConfigAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
 		{
@@ -2475,9 +2599,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<EventListResult> Webhooks_ListEventsAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
 		{
@@ -2508,9 +2640,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
-		/// <param name="webhookName">The name of the webhook.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
+		/// <param name="webhookName">The name of the webhook.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<EventInfo> Webhooks_PingAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
 		{

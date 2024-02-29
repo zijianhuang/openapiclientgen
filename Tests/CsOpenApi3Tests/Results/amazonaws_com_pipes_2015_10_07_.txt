@@ -2018,7 +2018,10 @@ namespace MyNS
 		/// Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.
 		/// CreatePipe v1/pipes/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePipeResponse> CreatePipeAsync(string Name, CreatePipePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2059,7 +2062,10 @@ namespace MyNS
 		/// Delete an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.
 		/// DeletePipe v1/pipes/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePipeResponse> DeletePipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2093,7 +2099,10 @@ namespace MyNS
 		/// Get the information about an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.
 		/// DescribePipe v1/pipes/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePipeResponse> DescribePipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2127,7 +2136,10 @@ namespace MyNS
 		/// <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that are included in the request are changed, the rest are unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields in these objects are updated atomically as one and override existing values. This is by design and means that if you don't specify an optional field in one of these Parameters objects, that field will be set to its system-default value after the update.</p> <p>For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"> Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
 		/// UpdatePipe v1/pipes/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePipeResponse> UpdatePipeAsync(string Name, UpdatePipePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2170,11 +2182,26 @@ namespace MyNS
 		/// </summary>
 		/// <param name="CurrentState">The state the pipe is in.</param>
 		/// <param name="DesiredState">The state the pipe should be in.</param>
-		/// <param name="Limit">The maximum number of pipes to include in the response.</param>
-		/// <param name="NamePrefix">A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</param>
-		/// <param name="NextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</param>
-		/// <param name="SourcePrefix">The prefix matching the pipe source.</param>
-		/// <param name="TargetPrefix">The prefix matching the pipe target.</param>
+		/// <param name="Limit">The maximum number of pipes to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="NamePrefix">A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="NextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="SourcePrefix">The prefix matching the pipe source.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
+		/// <param name="TargetPrefix">The prefix matching the pipe target.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPipesResponse> ListPipesAsync(PipeState CurrentState, RequestedPipeState DesiredState, int Limit, string NamePrefix, string NextToken, string SourcePrefix, string TargetPrefix, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2208,7 +2235,10 @@ namespace MyNS
 		/// Displays the tags associated with a pipe.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the pipe for which you want to view tags.</param>
+		/// <param name="resourceArn">The ARN of the pipe for which you want to view tags.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2242,7 +2272,10 @@ namespace MyNS
 		/// <p>Assigns one or more tags (key-value pairs) to the specified pipe. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> <p>You can use the <code>TagResource</code> action with a pipe that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the pipe. If you specify a tag key that is already associated with the pipe, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a pipe.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the pipe.</param>
+		/// <param name="resourceArn">The ARN of the pipe.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2283,7 +2316,10 @@ namespace MyNS
 		/// Start an existing pipe.
 		/// StartPipe v1/pipes/{Name}/start
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartPipeResponse> StartPipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2312,7 +2348,10 @@ namespace MyNS
 		/// Stop an existing pipe.
 		/// StopPipe v1/pipes/{Name}/stop
 		/// </summary>
-		/// <param name="Name">The name of the pipe.</param>
+		/// <param name="Name">The name of the pipe.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopPipeResponse> StopPipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2341,8 +2380,14 @@ namespace MyNS
 		/// Removes one or more tags from the specified pipes.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the pipe.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the pipe.</param>
+		/// <param name="resourceArn">The ARN of the pipe.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove from the pipe.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

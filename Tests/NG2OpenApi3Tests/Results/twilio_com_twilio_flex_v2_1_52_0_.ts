@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string representing the [Conversation resource](https://www.twilio.com/docs/conversations/api/conversation-resource) created.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conversation_sid?: string | null;
 
@@ -19,8 +19,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string representing the [Conversation resource](https://www.twilio.com/docs/conversations/api/conversation-resource) created.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conversation_sid: FormControl<string | null | undefined>,
 

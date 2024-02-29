@@ -1691,7 +1691,9 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -1746,7 +1748,9 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the Azure resource group.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count A Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.

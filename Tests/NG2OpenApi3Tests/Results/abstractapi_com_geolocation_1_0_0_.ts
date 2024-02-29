@@ -5,22 +5,34 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Inline_response_200 {
 		city?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		city_geoname_id?: number | null;
 		connection?: Inline_response_200Connection;
 		continent?: string | null;
 		continent_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		continent_geoname_id?: number | null;
 		country?: string | null;
 		country_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		country_geoname_id?: number | null;
 		country_is_eu?: boolean | null;
 		currency?: Inline_response_200Currency;
 		flag?: Inline_response_200Flag;
 		ip_address?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		postal_code?: string | null;
 		region?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		region_geoname_id?: number | null;
 		region_iso_code?: string | null;
 		security?: Inline_response_200Security;
@@ -28,19 +40,31 @@ export namespace MyNS {
 	}
 	export interface Inline_response_200FormProperties {
 		city: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		city_geoname_id: FormControl<number | null | undefined>,
 		continent: FormControl<string | null | undefined>,
 		continent_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		continent_geoname_id: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
 		country_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		country_geoname_id: FormControl<number | null | undefined>,
 		country_is_eu: FormControl<boolean | null | undefined>,
 		ip_address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		postal_code: FormControl<string | null | undefined>,
 		region: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		region_geoname_id: FormControl<number | null | undefined>,
 		region_iso_code: FormControl<string | null | undefined>,
 	}
@@ -67,6 +91,8 @@ export namespace MyNS {
 	}
 
 	export interface Inline_response_200Connection {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autonomous_system_number?: number | null;
 		autonomous_system_organization?: string | null;
 		connection_type?: string | null;
@@ -74,6 +100,8 @@ export namespace MyNS {
 		organization_name?: string | null;
 	}
 	export interface Inline_response_200ConnectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autonomous_system_number: FormControl<number | null | undefined>,
 		autonomous_system_organization: FormControl<string | null | undefined>,
 		connection_type: FormControl<string | null | undefined>,
@@ -145,6 +173,8 @@ export namespace MyNS {
 	export interface Inline_response_200Timezone {
 		abbreviation?: string | null;
 		current_time?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gmt_offset?: number | null;
 		is_dst?: boolean | null;
 		name?: string | null;
@@ -152,6 +182,8 @@ export namespace MyNS {
 	export interface Inline_response_200TimezoneFormProperties {
 		abbreviation: FormControl<string | null | undefined>,
 		current_time: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gmt_offset: FormControl<number | null | undefined>,
 		is_dst: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,

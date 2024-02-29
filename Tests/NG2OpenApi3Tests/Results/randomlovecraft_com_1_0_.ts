@@ -47,7 +47,6 @@ export namespace MyNS {
 		/**
 		 * List all books
 		 * Get books
-		 * @return {Get_booksReturn} 
 		 */
 		Get_books(): Observable<Get_booksReturn> {
 			return this.http.get<Get_booksReturn>(this.baseUri + 'books', {});
@@ -56,7 +55,6 @@ export namespace MyNS {
 		/**
 		 * Random sentences from a specific book
 		 * Get books/{id}/sentences
-		 * @return {Get_sentences_from_bookReturn} 
 		 */
 		Get_sentences_from_book(): Observable<Get_sentences_from_bookReturn> {
 			return this.http.get<Get_sentences_from_bookReturn>(this.baseUri + 'books/{id}/sentences', {});
@@ -65,7 +63,6 @@ export namespace MyNS {
 		/**
 		 * A random sentence
 		 * Get sentences
-		 * @return {Get_sentencesReturn} 
 		 */
 		Get_sentences(): Observable<Get_sentencesReturn> {
 			return this.http.get<Get_sentencesReturn>(this.baseUri + 'sentences', {});
@@ -74,7 +71,6 @@ export namespace MyNS {
 		/**
 		 * A specific sentence
 		 * Get sentences/{id}
-		 * @return {Get_specific_sentenceReturn} 
 		 */
 		Get_specific_sentence(): Observable<Get_specific_sentenceReturn> {
 			return this.http.get<Get_specific_sentenceReturn>(this.baseUri + 'sentences/{id}', {});

@@ -902,7 +902,10 @@ namespace MyNS
 		/// <p>Lists all profiles in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. </p>
 		/// ListProfiles profiles
 		/// </summary>
-		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</param>
+		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfilesResponse> ListProfilesAsync(string nextToken, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -970,7 +973,10 @@ namespace MyNS
 		/// <p>Lists the trust anchors in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. </p>
 		/// ListTrustAnchors trustanchors
 		/// </summary>
-		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</param>
+		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
 		public async Task<ListTrustAnchorsResponse> ListTrustAnchorsAsync(string nextToken, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1005,7 +1011,10 @@ namespace MyNS
 		/// <p>Deletes a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>
 		/// DeleteCrl crl/{crlId}
 		/// </summary>
-		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).</param>
+		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> DeleteCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1039,7 +1048,10 @@ namespace MyNS
 		/// <p>Gets a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. </p>
 		/// GetCrl crl/{crlId}
 		/// </summary>
-		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).</param>
+		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> GetCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1073,7 +1085,10 @@ namespace MyNS
 		/// <p>Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>
 		/// UpdateCrl crl/{crlId}
 		/// </summary>
-		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).</param>
+		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> UpdateCrlAsync(string crlId, UpdateCrlPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1114,7 +1129,10 @@ namespace MyNS
 		/// <p>Deletes a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. </p>
 		/// DeleteProfile profile/{profileId}
 		/// </summary>
-		/// <param name="profileId">The unique identifier of the profile.</param>
+		/// <param name="profileId">The unique identifier of the profile.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> DeleteProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1148,7 +1166,10 @@ namespace MyNS
 		/// <p>Gets a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. </p>
 		/// GetProfile profile/{profileId}
 		/// </summary>
-		/// <param name="profileId">The unique identifier of the profile.</param>
+		/// <param name="profileId">The unique identifier of the profile.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> GetProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1182,7 +1203,10 @@ namespace MyNS
 		/// <p>Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. </p>
 		/// UpdateProfile profile/{profileId}
 		/// </summary>
-		/// <param name="profileId">The unique identifier of the profile.</param>
+		/// <param name="profileId">The unique identifier of the profile.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> UpdateProfileAsync(string profileId, UpdateProfilePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1223,7 +1247,10 @@ namespace MyNS
 		/// <p>Deletes a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. </p>
 		/// DeleteTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
-		/// <param name="trustAnchorId">The unique identifier of the trust anchor.</param>
+		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> DeleteTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1257,7 +1284,10 @@ namespace MyNS
 		/// <p>Gets a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. </p>
 		/// GetTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
-		/// <param name="trustAnchorId">The unique identifier of the trust anchor.</param>
+		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> GetTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1291,7 +1321,10 @@ namespace MyNS
 		/// <p>Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. </p>
 		/// UpdateTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
-		/// <param name="trustAnchorId">The unique identifier of the trust anchor.</param>
+		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> UpdateTrustAnchorAsync(string trustAnchorId, UpdateTrustAnchorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1332,7 +1365,10 @@ namespace MyNS
 		/// <p>Disables a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. </p>
 		/// DisableCrl crl/{crlId}/disable
 		/// </summary>
-		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).</param>
+		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> DisableCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1361,7 +1397,10 @@ namespace MyNS
 		/// <p>Disables a profile. When disabled, temporary credential requests with this profile fail.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. </p>
 		/// DisableProfile profile/{profileId}/disable
 		/// </summary>
-		/// <param name="profileId">The unique identifier of the profile.</param>
+		/// <param name="profileId">The unique identifier of the profile.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> DisableProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1390,7 +1429,10 @@ namespace MyNS
 		/// <p>Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>
 		/// DisableTrustAnchor trustanchor/{trustAnchorId}/disable
 		/// </summary>
-		/// <param name="trustAnchorId">The unique identifier of the trust anchor.</param>
+		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> DisableTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1419,7 +1461,10 @@ namespace MyNS
 		/// <p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. </p>
 		/// EnableCrl crl/{crlId}/enable
 		/// </summary>
-		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).</param>
+		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> EnableCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1448,7 +1493,10 @@ namespace MyNS
 		/// <p>Enables temporary credential requests for a profile. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. </p>
 		/// EnableProfile profile/{profileId}/enable
 		/// </summary>
-		/// <param name="profileId">The unique identifier of the profile.</param>
+		/// <param name="profileId">The unique identifier of the profile.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> EnableProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1477,7 +1525,10 @@ namespace MyNS
 		/// <p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. </p>
 		/// EnableTrustAnchor trustanchor/{trustAnchorId}/enable
 		/// </summary>
-		/// <param name="trustAnchorId">The unique identifier of the trust anchor.</param>
+		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> EnableTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1506,7 +1557,10 @@ namespace MyNS
 		/// <p>Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>
 		/// GetSubject subject/{subjectId}
 		/// </summary>
-		/// <param name="subjectId">The unique identifier of the subject. </param>
+		/// <param name="subjectId">The unique identifier of the subject. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SubjectDetailResponse> GetSubjectAsync(string subjectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1573,7 +1627,10 @@ namespace MyNS
 		/// <p>Lists all certificate revocation lists (CRL) in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. </p>
 		/// ListCrls crls
 		/// </summary>
-		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</param>
+		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
 		public async Task<ListCrlsResponse> ListCrlsAsync(string nextToken, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1608,7 +1665,10 @@ namespace MyNS
 		/// <p>Lists the subjects in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListSubjects</code>. </p>
 		/// ListSubjects subjects
 		/// </summary>
-		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</param>
+		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
 		public async Task<ListSubjectsResponse> ListSubjectsAsync(string nextToken, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1643,7 +1703,10 @@ namespace MyNS
 		/// <p>Lists the tags attached to the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. </p>
 		/// ListTagsForResource ListTagsForResource#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

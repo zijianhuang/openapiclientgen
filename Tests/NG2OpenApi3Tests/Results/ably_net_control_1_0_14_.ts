@@ -92,7 +92,10 @@ export namespace MyNS {
 		/** Reject delivery of the message if the route does not exist, otherwise fail silently. */
 		mandatoryRoute?: boolean | null;
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl?: number | null;
 
 		/** Marks the message as persistent, instructing the broker to write it to disk if it is in a durable queue. */
@@ -111,7 +114,10 @@ export namespace MyNS {
 		/** Reject delivery of the message if the route does not exist, otherwise fail silently. */
 		mandatoryRoute: FormControl<boolean | null | undefined>,
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl: FormControl<number | null | undefined>,
 
 		/** Marks the message as persistent, instructing the broker to write it to disk if it is in a durable queue. */
@@ -215,7 +221,10 @@ export namespace MyNS {
 		 */
 		mandatoryRoute: boolean;
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl?: number | null;
 
 		/**
@@ -245,7 +254,10 @@ export namespace MyNS {
 		 */
 		mandatoryRoute: FormControl<boolean | null | undefined>,
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl: FormControl<number | null | undefined>,
 
 		/**
@@ -306,13 +318,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -345,13 +363,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -402,7 +426,10 @@ export namespace MyNS {
 		 */
 		mandatoryRoute: boolean;
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl?: number | null;
 
 		/**
@@ -432,7 +459,10 @@ export namespace MyNS {
 		 */
 		mandatoryRoute: FormControl<boolean | null | undefined>,
 
-		/** You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used. */
+		/**
+		 * You can optionally override the default TTL on a queue and specify a TTL in minutes for messages to be persisted. It is unusual to change the default TTL, so if this field is left empty, the default TTL for the queue will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageTtl: FormControl<number | null | undefined>,
 
 		/**
@@ -681,13 +711,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -720,13 +756,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -1346,13 +1388,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -1385,13 +1433,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -1697,13 +1751,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -1736,13 +1796,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -2021,13 +2087,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -2060,13 +2132,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -2412,13 +2490,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -2451,13 +2535,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -2765,13 +2855,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -2804,13 +2900,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -2902,6 +3004,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -2923,6 +3026,7 @@ export namespace MyNS {
 		/**
 		 * The Ably error code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: number;
 	}
@@ -2931,6 +3035,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -2952,6 +3057,7 @@ export namespace MyNS {
 		/**
 		 * The Ably error code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
@@ -3225,13 +3331,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -3264,13 +3376,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -3633,13 +3751,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -3672,13 +3796,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -3876,13 +4006,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -3915,13 +4051,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -4058,7 +4200,10 @@ export namespace MyNS {
 		/** The capabilities that this key has. More information on capabilities can be found in the <a href="https://ably.com/documentation/core-features/authentication#capabilities-explained">Ably documentation</a>. */
 		capability?: {[id: string]: Array<string> };
 
-		/** Unix timestamp representing the date and time of creation of the key. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created?: number | null;
 
 		/** The key ID. */
@@ -4067,7 +4212,10 @@ export namespace MyNS {
 		/** The complete API key including API secret. */
 		key?: string | null;
 
-		/** Unix timestamp representing the date and time of the last modification of the key. */
+		/**
+		 * Unix timestamp representing the date and time of the last modification of the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modified?: number | null;
 
 		/** The name of the application this key is associated with. */
@@ -4081,7 +4229,10 @@ export namespace MyNS {
 		/** The capabilities that this key has. More information on capabilities can be found in the <a href="https://ably.com/documentation/core-features/authentication#capabilities-explained">Ably documentation</a>. */
 		capability: FormControl<{[id: string]: Array<string> } | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the key. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The key ID. */
@@ -4090,7 +4241,10 @@ export namespace MyNS {
 		/** The complete API key including API secret. */
 		key: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of the last modification of the key. */
+		/**
+		 * Unix timestamp representing the date and time of the last modification of the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/** The name of the application this key is associated with. */
@@ -4169,6 +4323,7 @@ export namespace MyNS {
 		/**
 		 * The token ID. This is a UUID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -4183,6 +4338,7 @@ export namespace MyNS {
 		/**
 		 * The token ID. This is a UUID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -4211,6 +4367,7 @@ export namespace MyNS {
 		/**
 		 * The user ID associated with the account. This is a UUID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4225,6 +4382,7 @@ export namespace MyNS {
 		/**
 		 * The user ID associated with the account. This is a UUID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4344,13 +4502,19 @@ export namespace MyNS {
 		/** If `true`, clients will not be permitted to use (including to attach, publish, or subscribe) any channels within this namespace unless they are identified, that is, authenticated using a client ID. See the <a href="https://knowledge.ably.com/authenticated-and-identified-clients">Ably knowledge base</a> for more details. */
 		authenticated?: boolean | null;
 
-		/** Unix timestamp representing the date and time of creation of the namespace. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the namespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created?: number | null;
 
 		/** The namespace or channel name that the channel rule will apply to. For example, if you specify `namespace` the namespace will be set to `namespace` and will match with channels `namespace:*` and `namespace`. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the namespace. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the namespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modified?: number | null;
 
 		/** If `true`, the last message published on a channel will be stored for 365 days. You can access the stored message only by using the channel rewind mechanism and attaching with rewind=1. Please note that for each message stored, an additional message is deducted from your monthly allocation. */
@@ -4370,13 +4534,19 @@ export namespace MyNS {
 		/** If `true`, clients will not be permitted to use (including to attach, publish, or subscribe) any channels within this namespace unless they are identified, that is, authenticated using a client ID. See the <a href="https://knowledge.ably.com/authenticated-and-identified-clients">Ably knowledge base</a> for more details. */
 		authenticated: FormControl<boolean | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the namespace. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the namespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The namespace or channel name that the channel rule will apply to. For example, if you specify `namespace` the namespace will be set to `namespace` and will match with channels `namespace:*` and `namespace`. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the namespace. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the namespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/** If `true`, the last message published on a channel will be stored for 365 days. You can access the stored message only by using the channel rewind mechanism and attaching with rewind=1. Please note that for each message stored, an additional message is deducted from your monthly allocation. */
@@ -4410,6 +4580,7 @@ export namespace MyNS {
 		/**
 		 * Message limit in number of messages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxLength: number;
 
@@ -4428,6 +4599,7 @@ export namespace MyNS {
 		/**
 		 * TTL in minutes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: number;
 	}
@@ -4436,6 +4608,7 @@ export namespace MyNS {
 		/**
 		 * Message limit in number of messages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxLength: FormControl<number | null | undefined>,
 
@@ -4454,6 +4627,7 @@ export namespace MyNS {
 		/**
 		 * TTL in minutes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: FormControl<number | null | undefined>,
 	}
@@ -4480,7 +4654,10 @@ export namespace MyNS {
 		/** The ID of the Ably queue */
 		id?: string | null;
 
-		/** Message limit in number of messages. */
+		/**
+		 * Message limit in number of messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength?: number | null;
 
 		/** Details of messages in the queue. */
@@ -4497,7 +4674,10 @@ export namespace MyNS {
 		stats?: Queue_responseStats;
 		stomp?: Queue_responseStomp;
 
-		/** TTL in minutes. */
+		/**
+		 * TTL in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface Queue_responseFormProperties {
@@ -4512,7 +4692,10 @@ export namespace MyNS {
 		/** The ID of the Ably queue */
 		id: FormControl<string | null | undefined>,
 
-		/** Message limit in number of messages. */
+		/**
+		 * Message limit in number of messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
 		/** The friendly name of the queue. */
@@ -4524,7 +4707,10 @@ export namespace MyNS {
 		/** The current state of the queue. */
 		state: FormControl<string | null | undefined>,
 
-		/** TTL in minutes. */
+		/**
+		 * TTL in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseFormGroup() {
@@ -4568,24 +4754,42 @@ export namespace MyNS {
 
 	export interface Queue_responseMessages {
 
-		/** The number of ready messages in the queue. */
+		/**
+		 * The number of ready messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ready?: number | null;
 
-		/** The total number of messages in the queue. */
+		/**
+		 * The total number of messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
-		/** The number of unacknowledged messages in the queue. */
+		/**
+		 * The number of unacknowledged messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unacknowledged?: number | null;
 	}
 	export interface Queue_responseMessagesFormProperties {
 
-		/** The number of ready messages in the queue. */
+		/**
+		 * The number of ready messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ready: FormControl<number | null | undefined>,
 
-		/** The total number of messages in the queue. */
+		/**
+		 * The total number of messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** The number of unacknowledged messages in the queue. */
+		/**
+		 * The number of unacknowledged messages in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unacknowledged: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseMessagesFormGroup() {
@@ -4599,24 +4803,42 @@ export namespace MyNS {
 
 	export interface Queue_responseStats {
 
-		/** The rate at which messages are acknowledged. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are acknowledged. Rate is messages per minute.
+		 * Type: double
+		 */
 		acknowledgementRate?: number | null;
 
-		/** The rate at which messages are delivered from the queue. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are delivered from the queue. Rate is messages per minute.
+		 * Type: double
+		 */
 		deliveryRate?: number | null;
 
-		/** The rate at which messages are published to the queue. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are published to the queue. Rate is messages per minute.
+		 * Type: double
+		 */
 		publishRate?: number | null;
 	}
 	export interface Queue_responseStatsFormProperties {
 
-		/** The rate at which messages are acknowledged. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are acknowledged. Rate is messages per minute.
+		 * Type: double
+		 */
 		acknowledgementRate: FormControl<number | null | undefined>,
 
-		/** The rate at which messages are delivered from the queue. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are delivered from the queue. Rate is messages per minute.
+		 * Type: double
+		 */
 		deliveryRate: FormControl<number | null | undefined>,
 
-		/** The rate at which messages are published to the queue. Rate is messages per minute. */
+		/**
+		 * The rate at which messages are published to the queue. Rate is messages per minute.
+		 * Type: double
+		 */
 		publishRate: FormControl<number | null | undefined>,
 	}
 	export function CreateQueue_responseStatsFormGroup() {
@@ -4664,13 +4886,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/** The status of the rule. Rules can be enabled or disabled. */
@@ -4684,13 +4912,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/** The status of the rule. Rules can be enabled or disabled. */
@@ -4771,13 +5005,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -4810,13 +5050,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**
@@ -5059,13 +5305,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId?: string | null;
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created?: number | null;
 
 		/** The rule ID. */
 		id?: string | null;
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified?: number | null;
 
 		/**
@@ -5098,13 +5350,19 @@ export namespace MyNS {
 		/** The Ably application ID. */
 		appId: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of creation of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of creation of the rule.
+		 * Type: double
+		 */
 		created: FormControl<number | null | undefined>,
 
 		/** The rule ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Unix timestamp representing the date and time of last modification of the rule. */
+		/**
+		 * Unix timestamp representing the date and time of last modification of the rule.
+		 * Type: double
+		 */
 		modified: FormControl<number | null | undefined>,
 
 		/**

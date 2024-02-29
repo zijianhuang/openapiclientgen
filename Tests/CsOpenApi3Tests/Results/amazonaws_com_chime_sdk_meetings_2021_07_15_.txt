@@ -1203,8 +1203,13 @@ namespace MyNS
 		/// ListAttendees meetings/{MeetingId}/attendees
 		/// </summary>
 		/// <param name="MeetingId">The Amazon Chime SDK meeting ID.</param>
-		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="next_token">The token to use to retrieve the next page of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1444,7 +1449,10 @@ namespace MyNS
 		/// Returns a list of the tags available for the specified resource.
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The ARN of the resource.</param>
+		/// <param name="arn">The ARN of the resource.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

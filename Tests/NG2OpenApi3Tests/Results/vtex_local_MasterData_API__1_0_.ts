@@ -8,7 +8,10 @@ export namespace MyNS {
 		/** Required */
 		Date: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Point: number;
 
 		/** Required */
@@ -19,7 +22,10 @@ export namespace MyNS {
 		/** Required */
 		Date: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Point: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -63,7 +69,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: number;
 
 		/** Required */
@@ -72,19 +81,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: number;
 
 		/** Required */
 		Email: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: number;
 
 		/** Required */
@@ -116,7 +137,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -125,19 +149,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: FormControl<number | null | undefined>,
 
 		/** Required */
 		Email: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -192,7 +228,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: number;
 
 		/** Required */
@@ -201,19 +240,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: number;
 
 		/** Required */
 		Email: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: number;
 
 		/** Required */
@@ -248,7 +299,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -257,19 +311,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: FormControl<number | null | undefined>,
 
 		/** Required */
 		Email: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -670,7 +736,10 @@ export namespace MyNS {
 		/** Required */
 		key: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: number;
 
 		/** Required */
@@ -681,7 +750,10 @@ export namespace MyNS {
 		/** Required */
 		key: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -704,7 +776,10 @@ export namespace MyNS {
 		/** Required */
 		key: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: number;
 
 		/** Required */
@@ -718,7 +793,10 @@ export namespace MyNS {
 		/** Required */
 		key: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -763,7 +841,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: number;
 
 		/** Required */
@@ -772,19 +853,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: number;
 
 		/** Required */
 		Email: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: number;
 
 		/** Required */
@@ -816,7 +909,10 @@ export namespace MyNS {
 		/** Required */
 		Boolean: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Currency: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -825,19 +921,31 @@ export namespace MyNS {
 		/** Required */
 		Date_Time: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Decimal: FormControl<number | null | undefined>,
 
 		/** Required */
 		Email: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Integer: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Long: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Percent: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -912,7 +1020,10 @@ export namespace MyNS {
 		/** Required */
 		campo2: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		campo3: number;
 	}
 	export interface UsingfiltersFormProperties {
@@ -923,7 +1034,10 @@ export namespace MyNS {
 		/** Required */
 		campo2: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		campo3: FormControl<number | null | undefined>,
 	}
 	export function CreateUsingfiltersFormGroup() {
@@ -972,7 +1086,6 @@ export namespace MyNS {
 		 * 2. Status Code `200`: Retrieves data entity list
 		 * > All headers listed below are required.
 		 * Get api/dataentities
-		 * @return {Array<Listdataentity>} 
 		 */
 		Listdataentities(): Observable<Array<Listdataentity>> {
 			return this.http.get<Array<Listdataentity>>(this.baseUri + 'api/dataentities', {});
@@ -987,7 +1100,6 @@ export namespace MyNS {
 		 * > All headers listed below are required.
 		 * Get api/dataentities/{acronym}
 		 * @param {string} acronym Identifies the kind of data
-		 * @return {Getdataentityfields} 
 		 */
 		Getdataentitystructure(acronym: string): Observable<Getdataentityfields> {
 			return this.http.get<Getdataentityfields>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)), {});
@@ -1008,7 +1120,6 @@ export namespace MyNS {
 		 * Creates documents through a JSON object where the key is the name of the field.
 		 * Post api/dataentities/{acronym}/documents
 		 * @param {string} acronym Identifies the kind of data
-		 * @return {Createnewdocument} 
 		 */
 		Createnewdocument(acronym: string, requestBody: string): Observable<Createnewdocument> {
 			return this.http.post<Createnewdocument>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)) + '/documents', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1043,7 +1154,6 @@ export namespace MyNS {
 		 * Get api/dataentities/{acronym}/documents/{id}
 		 * @param {string} acronym Two letter word that identifies the data structure
 		 * @param {string} id Id of the document
-		 * @return {Usingfilters} 
 		 */
 		Getdocument(acronym: string, id: string): Observable<Usingfilters> {
 			return this.http.get<Usingfilters>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)) + '/documents/' + (id == null ? '' : encodeURIComponent(id)), {});
@@ -1126,7 +1236,6 @@ export namespace MyNS {
 		 * Get api/dataentities/{acronym}/documents/{id}/versions
 		 * @param {string} acronym Two letter word that identifies the data structure
 		 * @param {string} id Id of the document
-		 * @return {Array<Listversion>} 
 		 */
 		Listversions(acronym: string, id: string): Observable<Array<Listversion>> {
 			return this.http.get<Array<Listversion>>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)) + '/documents/' + (id == null ? '' : encodeURIComponent(id)) + '/versions', {});
@@ -1139,7 +1248,6 @@ export namespace MyNS {
 		 * @param {string} acronym Two letter word that identifies the data structure
 		 * @param {string} id Id of the document
 		 * @param {string} versionId Id of the version to get
-		 * @return {Getversion} 
 		 */
 		Getversion(acronym: string, id: string, versionId: string): Observable<Getversion> {
 			return this.http.get<Getversion>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)) + '/documents/' + (id == null ? '' : encodeURIComponent(id)) + '/versions/' + (versionId == null ? '' : encodeURIComponent(versionId)), {});
@@ -1152,7 +1260,6 @@ export namespace MyNS {
 		 * @param {string} acronym Two letter word that identifies the data structure
 		 * @param {string} id Id of the document
 		 * @param {string} versionId Id of the version to update
-		 * @return {Putversion} 
 		 */
 		Putversion(acronym: string, id: string, versionId: string): Observable<Putversion> {
 			return this.http.put<Putversion>(this.baseUri + 'api/dataentities/' + (acronym == null ? '' : encodeURIComponent(acronym)) + '/documents/' + (id == null ? '' : encodeURIComponent(id)) + '/versions/' + (versionId == null ? '' : encodeURIComponent(versionId)), null, {});

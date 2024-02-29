@@ -5392,8 +5392,13 @@ namespace MyNS
 		/// <p>Creates the specified sending authorization policy for the given identity (an email address or a domain).</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// CreateEmailIdentityPolicy v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
-		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p></param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
+		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEmailIdentityPolicyResponse> CreateEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, CreateEmailIdentityPolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5434,8 +5439,13 @@ namespace MyNS
 		/// <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// DeleteEmailIdentityPolicy v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
-		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p></param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
+		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEmailIdentityPolicyResponse> DeleteEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5469,8 +5479,13 @@ namespace MyNS
 		/// <p>Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// UpdateEmailIdentityPolicy v2/email/identities/{EmailIdentity}/policies/{PolicyName}
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
-		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p></param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
+		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEmailIdentityPolicyResponse> UpdateEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, UpdateEmailIdentityPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6027,7 +6042,9 @@ namespace MyNS
 		/// <p>Deletes an existing custom verification email template.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// DeleteCustomVerificationEmailTemplate v2/email/custom-verification-email-templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the custom verification email template that you want to delete.</param>
+		/// <param name="TemplateName">The name of the custom verification email template that you want to delete.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCustomVerificationEmailTemplateResponse> DeleteCustomVerificationEmailTemplateAsync(string TemplateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6061,7 +6078,9 @@ namespace MyNS
 		/// <p>Returns the custom email verification template for the template name you specify.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// GetCustomVerificationEmailTemplate v2/email/custom-verification-email-templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the custom verification email template that you want to retrieve.</param>
+		/// <param name="TemplateName">The name of the custom verification email template that you want to retrieve.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCustomVerificationEmailTemplateResponse> GetCustomVerificationEmailTemplateAsync(string TemplateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6095,7 +6114,9 @@ namespace MyNS
 		/// <p>Updates an existing custom verification email template.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// UpdateCustomVerificationEmailTemplate v2/email/custom-verification-email-templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the custom verification email template that you want to update.</param>
+		/// <param name="TemplateName">The name of the custom verification email template that you want to update.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCustomVerificationEmailTemplateResponse> UpdateCustomVerificationEmailTemplateAsync(string TemplateName, UpdateCustomVerificationEmailTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6204,7 +6225,9 @@ namespace MyNS
 		/// Deletes an email identity. An identity can be either an email address or a domain name.
 		/// DeleteEmailIdentity v2/email/identities/{EmailIdentity}
 		/// </summary>
-		/// <param name="EmailIdentity">The identity (that is, the email address or domain) to delete.</param>
+		/// <param name="EmailIdentity">The identity (that is, the email address or domain) to delete.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEmailIdentityResponse> DeleteEmailIdentityAsync(string EmailIdentity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6238,7 +6261,9 @@ namespace MyNS
 		/// Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.
 		/// GetEmailIdentity v2/email/identities/{EmailIdentity}
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEmailIdentityResponse> GetEmailIdentityAsync(string EmailIdentity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6272,7 +6297,9 @@ namespace MyNS
 		/// <p>Deletes an email template.</p> <p>You can execute this operation no more than once per second.</p>
 		/// DeleteEmailTemplate v2/email/templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the template to be deleted.</param>
+		/// <param name="TemplateName">The name of the template to be deleted.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEmailTemplateResponse> DeleteEmailTemplateAsync(string TemplateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6306,7 +6333,9 @@ namespace MyNS
 		/// <p>Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.</p> <p>You can execute this operation no more than once per second.</p>
 		/// GetEmailTemplate v2/email/templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the template.</param>
+		/// <param name="TemplateName">The name of the template.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEmailTemplateResponse> GetEmailTemplateAsync(string TemplateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6340,7 +6369,9 @@ namespace MyNS
 		/// <p>Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// UpdateEmailTemplate v2/email/templates/{TemplateName}
 		/// </summary>
-		/// <param name="TemplateName">The name of the template.</param>
+		/// <param name="TemplateName">The name of the template.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEmailTemplateResponse> UpdateEmailTemplateAsync(string TemplateName, UpdateEmailTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6727,7 +6758,9 @@ namespace MyNS
 		/// Retrieve inbox placement and engagement rates for the domains that you use to send email.
 		/// GetDomainStatisticsReport v2/email/deliverability-dashboard/statistics-report/{Domain}#StartDate&EndDate
 		/// </summary>
-		/// <param name="Domain">The domain that you want to obtain deliverability metrics for.</param>
+		/// <param name="Domain">The domain that you want to obtain deliverability metrics for.
+		/// Min length: 1
+		// </param>
 		/// <param name="StartDate">The first day (in Unix time) that you want to obtain domain deliverability metrics for.</param>
 		/// <param name="EndDate">The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</param>
 		/// <returns>Success</returns>
@@ -6763,7 +6796,9 @@ namespace MyNS
 		/// <p>Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note> <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p> </note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <p>You can execute this operation no more than once per second.</p>
 		/// GetEmailIdentityPolicies v2/email/identities/{EmailIdentity}/policies
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEmailIdentityPoliciesResponse> GetEmailIdentityPoliciesAsync(string EmailIdentity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6797,7 +6832,9 @@ namespace MyNS
 		/// Provides information about an import job.
 		/// GetImportJob v2/email/import-jobs/{JobId}
 		/// </summary>
-		/// <param name="JobId">The ID of the import job.</param>
+		/// <param name="JobId">The ID of the import job.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetImportJobResponse> GetImportJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7627,7 +7664,9 @@ namespace MyNS
 		/// Used to associate a configuration set with an email identity.
 		/// PutEmailIdentityConfigurationSetAttributes v2/email/identities/{EmailIdentity}/configuration-set
 		/// </summary>
-		/// <param name="EmailIdentity">The email address or domain to associate with a configuration set.</param>
+		/// <param name="EmailIdentity">The email address or domain to associate with a configuration set.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutEmailIdentityConfigurationSetAttributesResponse> PutEmailIdentityConfigurationSetAttributesAsync(string EmailIdentity, PutEmailIdentityConfigurationSetAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7668,7 +7707,9 @@ namespace MyNS
 		/// Used to enable or disable DKIM authentication for an email identity.
 		/// PutEmailIdentityDkimAttributes v2/email/identities/{EmailIdentity}/dkim
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutEmailIdentityDkimAttributesResponse> PutEmailIdentityDkimAttributesAsync(string EmailIdentity, PutEmailIdentityDkimAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7709,7 +7750,9 @@ namespace MyNS
 		/// <p>Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:</p> <ul> <li> <p>Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).</p> </li> <li> <p>Update the key length that should be used for Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li> </ul>
 		/// PutEmailIdentityDkimSigningAttributes v1/email/identities/{EmailIdentity}/dkim/signing
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutEmailIdentityDkimSigningAttributesResponse> PutEmailIdentityDkimSigningAttributesAsync(string EmailIdentity, PutEmailIdentityDkimSigningAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7750,7 +7793,9 @@ namespace MyNS
 		/// <p>Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.</p> <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
 		/// PutEmailIdentityFeedbackAttributes v2/email/identities/{EmailIdentity}/feedback
 		/// </summary>
-		/// <param name="EmailIdentity">The email identity.</param>
+		/// <param name="EmailIdentity">The email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutEmailIdentityFeedbackAttributesResponse> PutEmailIdentityFeedbackAttributesAsync(string EmailIdentity, PutEmailIdentityFeedbackAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7791,7 +7836,9 @@ namespace MyNS
 		/// Used to enable or disable the custom Mail-From domain configuration for an email identity.
 		/// PutEmailIdentityMailFromAttributes v2/email/identities/{EmailIdentity}/mail-from
 		/// </summary>
-		/// <param name="EmailIdentity">The verified email identity.</param>
+		/// <param name="EmailIdentity">The verified email identity.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutEmailIdentityMailFromAttributesResponse> PutEmailIdentityMailFromAttributesAsync(string EmailIdentity, PutEmailIdentityMailFromAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7992,7 +8039,9 @@ namespace MyNS
 		/// <p>Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.</p> <p>You can execute this operation no more than once per second.</p>
 		/// TestRenderEmailTemplate v2/email/templates/{TemplateName}/render
 		/// </summary>
-		/// <param name="TemplateName">The name of the template.</param>
+		/// <param name="TemplateName">The name of the template.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TestRenderEmailTemplateResponse> TestRenderEmailTemplateAsync(string TemplateName, TestRenderEmailTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

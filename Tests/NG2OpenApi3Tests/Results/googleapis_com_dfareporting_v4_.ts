@@ -177,20 +177,32 @@ export namespace MyNS {
 	/** Lookback configuration settings. */
 	export interface LookbackConfiguration {
 
-		/** Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		/**
+		 * Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clickDuration?: number | null;
 
-		/** Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		/**
+		 * Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		postImpressionActivitiesDuration?: number | null;
 	}
 
 	/** Lookback configuration settings. */
 	export interface LookbackConfigurationFormProperties {
 
-		/** Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		/**
+		 * Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clickDuration: FormControl<number | null | undefined>,
 
-		/** Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		/**
+		 * Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		postImpressionActivitiesDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateLookbackConfigurationFormGroup() {
@@ -1070,14 +1082,20 @@ export namespace MyNS {
 		/** Rich media exit overrides for this creative assignment. Applicable when the creative type is any of the following: - DISPLAY - RICH_MEDIA_INPAGE - RICH_MEDIA_INPAGE_FLOATING - RICH_MEDIA_IM_EXPAND - RICH_MEDIA_EXPANDING - RICH_MEDIA_INTERSTITIAL_FLOAT - RICH_MEDIA_MOBILE_IN_APP - RICH_MEDIA_MULTI_FLOATING - RICH_MEDIA_PEEL_DOWN - VPAID_LINEAR - VPAID_NON_LINEAR */
 		richMediaExitOverrides?: Array<RichMediaExitOverride>;
 
-		/** Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive. */
+		/**
+		 * Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence?: number | null;
 
 		/** Whether the creative to be assigned is SSL-compliant. This is a read-only field that is auto-generated when the ad is inserted or updated. */
 		sslCompliant?: boolean | null;
 		startTime?: Date | null;
 
-		/** Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1. */
+		/**
+		 * Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -1094,14 +1112,20 @@ export namespace MyNS {
 		creativeId: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive. */
+		/**
+		 * Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence: FormControl<number | null | undefined>,
 
 		/** Whether the creative to be assigned is SSL-compliant. This is a read-only field that is auto-generated when the ad is inserted or updated. */
 		sslCompliant: FormControl<boolean | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 
-		/** Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1. */
+		/**
+		 * Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeAssignmentFormGroup() {
@@ -1801,7 +1825,10 @@ export namespace MyNS {
 	/** Represents the dimensions of ads, placements, creatives, or creative assets. */
 	export interface Size {
 
-		/** Height of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Height of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** IAB standard size. This is a read-only, auto-generated field. */
@@ -1813,14 +1840,20 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#size". */
 		kind?: string | null;
 
-		/** Width of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Width of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Represents the dimensions of ads, placements, creatives, or creative assets. */
 	export interface SizeFormProperties {
 
-		/** Height of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Height of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** IAB standard size. This is a read-only, auto-generated field. */
@@ -1832,7 +1865,10 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#size". */
 		kind: FormControl<string | null | undefined>,
 
-		/** Width of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Width of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeFormGroup() {
@@ -2933,7 +2969,10 @@ export namespace MyNS {
 	/** Audience Segment. */
 	export interface AudienceSegment {
 
-		/** Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive. */
+		/**
+		 * Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allocation?: number | null;
 
 		/** ID of this audience segment. This is a read-only, auto-generated field. */
@@ -2946,7 +2985,10 @@ export namespace MyNS {
 	/** Audience Segment. */
 	export interface AudienceSegmentFormProperties {
 
-		/** Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive. */
+		/**
+		 * Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allocation: FormControl<number | null | undefined>,
 
 		/** ID of this audience segment. This is a read-only, auto-generated field. */
@@ -3418,6 +3460,8 @@ export namespace MyNS {
 
 		/** The default landing page ID for this campaign. */
 		defaultLandingPageId?: string | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** Overrides that can be used to activate or deactivate advertiser event tags. */
@@ -3441,6 +3485,8 @@ export namespace MyNS {
 
 		/** Name of this campaign. This is a required field and must be less than 512 characters long and unique among campaigns of the same advertiser. */
 		name?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** Subaccount ID of this campaign. This is a read-only field that can be left blank. */
@@ -3470,6 +3516,8 @@ export namespace MyNS {
 
 		/** The default landing page ID for this campaign. */
 		defaultLandingPageId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** External ID for this campaign. */
@@ -3483,6 +3531,8 @@ export namespace MyNS {
 
 		/** Name of this campaign. This is a required field and must be less than 512 characters long and unique among campaigns of the same advertiser. */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** Subaccount ID of this campaign. This is a read-only field that can be left blank. */
@@ -3556,7 +3606,10 @@ export namespace MyNS {
 		/** Represents a DimensionValue resource. */
 		floodlightActivityIdDimensionValue?: DimensionValue;
 
-		/** Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1. */
+		/**
+		 * Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -3566,7 +3619,10 @@ export namespace MyNS {
 		/** Floodlight activity ID of this optimization activity. This is a required field. */
 		floodlightActivityId: FormControl<string | null | undefined>,
 
-		/** Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1. */
+		/**
+		 * Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateOptimizationActivityFormGroup() {
@@ -4625,7 +4681,10 @@ export namespace MyNS {
 		/** The user identifiers to enhance the conversion. The maximum number of user identifiers for each conversion is 5. */
 		userIdentifiers?: Array<UserIdentifier>;
 
-		/** The value of the conversion. This is a required field. */
+		/**
+		 * The value of the conversion. This is a required field.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -4680,7 +4739,10 @@ export namespace MyNS {
 		/** Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union's General Data Protection Regulation (GDPR). */
 		treatmentForUnderage: FormControl<boolean | null | undefined>,
 
-		/** The value of the conversion. This is a required field. */
+		/**
+		 * The value of the conversion. This is a required field.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateConversionFormGroup() {
@@ -5205,7 +5267,10 @@ export namespace MyNS {
 		/** Description of the audio or video ad. Applicable to the following creative types: all INSTREAM_VIDEO, INSTREAM_AUDIO, and all VPAID. */
 		mediaDescription?: string | null;
 
-		/** Creative audio or video duration in seconds. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO, INSTREAM_AUDIO, all RICH_MEDIA, and all VPAID. */
+		/**
+		 * Creative audio or video duration in seconds. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO, INSTREAM_AUDIO, all RICH_MEDIA, and all VPAID.
+		 * Type: float
+		 */
 		mediaDuration?: number | null;
 
 		/** Required. Name of the creative. This must be less than 256 characters long. Applicable to all creative types. */
@@ -5232,7 +5297,10 @@ export namespace MyNS {
 		/** The minimum required Flash plugin version for this creative. For example, 11.2.202.235. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
 		requiredFlashPluginVersion?: string | null;
 
-		/** The internal Flash version for this creative as calculated by Studio. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		/**
+		 * The internal Flash version for this creative as calculated by Studio. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requiredFlashVersion?: number | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
@@ -5283,7 +5351,10 @@ export namespace MyNS {
 		/** A Universal Ad ID as per the VAST 4.0 spec. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID. */
 		universalAdId?: UniversalAdId;
 
-		/** The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types. */
+		/**
+		 * The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -5353,7 +5424,10 @@ export namespace MyNS {
 		/** Description of the audio or video ad. Applicable to the following creative types: all INSTREAM_VIDEO, INSTREAM_AUDIO, and all VPAID. */
 		mediaDescription: FormControl<string | null | undefined>,
 
-		/** Creative audio or video duration in seconds. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO, INSTREAM_AUDIO, all RICH_MEDIA, and all VPAID. */
+		/**
+		 * Creative audio or video duration in seconds. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO, INSTREAM_AUDIO, all RICH_MEDIA, and all VPAID.
+		 * Type: float
+		 */
 		mediaDuration: FormControl<number | null | undefined>,
 
 		/** Required. Name of the creative. This must be less than 256 characters long. Applicable to all creative types. */
@@ -5371,7 +5445,10 @@ export namespace MyNS {
 		/** The minimum required Flash plugin version for this creative. For example, 11.2.202.235. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
 		requiredFlashPluginVersion: FormControl<string | null | undefined>,
 
-		/** The internal Flash version for this creative as calculated by Studio. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		/**
+		 * The internal Flash version for this creative as calculated by Studio. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requiredFlashVersion: FormControl<number | null | undefined>,
 
 		/** Whether the user can choose to skip the creative. Applicable to the following creative types: all INSTREAM_VIDEO and all VPAID. */
@@ -5407,7 +5484,10 @@ export namespace MyNS {
 		/** Required. Type of this creative. Applicable to all creative types. *Note:* FLASH_INPAGE, HTML5_BANNER, and IMAGE are only used for existing creatives. New creatives should use DISPLAY as a replacement for these types. */
 		type: FormControl<CreativeType | null | undefined>,
 
-		/** The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types. */
+		/**
+		 * The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFormGroup() {
@@ -5643,20 +5723,32 @@ export namespace MyNS {
 	/** Offset Position. */
 	export interface OffsetPosition {
 
-		/** Offset distance from left side of an asset or a window. */
+		/**
+		 * Offset distance from left side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** Offset distance from top side of an asset or a window. */
+		/**
+		 * Offset distance from top side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 	}
 
 	/** Offset Position. */
 	export interface OffsetPositionFormProperties {
 
-		/** Offset distance from left side of an asset or a window. */
+		/**
+		 * Offset distance from left side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Offset distance from top side of an asset or a window. */
+		/**
+		 * Offset distance from top side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateOffsetPositionFormGroup() {
@@ -5752,16 +5844,25 @@ export namespace MyNS {
 		/** Creative Asset ID. */
 		assetIdentifier?: CreativeAssetId;
 
-		/** Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audioBitRate?: number | null;
 
-		/** Audio sample bit rate in hertz. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Audio sample bit rate in hertz. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audioSampleRate?: number | null;
 
 		/** Creative Custom Event. */
 		backupImageExit?: CreativeCustomEvent;
 
-		/** Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitRate?: number | null;
 
 		/** Rich media child asset type. This is a read-only field. Applicable to the following creative types: all VPAID. */
@@ -5773,7 +5874,10 @@ export namespace MyNS {
 		/** List of companion creatives assigned to an in-stream video creative asset. Acceptable values include IDs of existing flash and image creatives. Applicable to INSTREAM_VIDEO creative type with dynamicAssetSelection set to true. */
 		companionCreativeIds?: Array<string>;
 
-		/** Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0. */
+		/**
+		 * Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customStartTimeValue?: number | null;
 
 		/** List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field. Applicable to the following creative types: HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
@@ -5782,7 +5886,10 @@ export namespace MyNS {
 		/** Type of rich media asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
 		displayType?: CreativeAssetDisplayType | null;
 
-		/** Duration in seconds for which an asset will be displayed. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID_LINEAR_VIDEO. Value must be greater than or equal to 1. */
+		/**
+		 * Duration in seconds for which an asset will be displayed. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID_LINEAR_VIDEO. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Duration type for which an asset will be displayed. Applicable to the following creative types: all RICH_MEDIA. */
@@ -5794,10 +5901,16 @@ export namespace MyNS {
 		/** File size associated with this creative asset. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
 		fileSize?: string | null;
 
-		/** Flash version of the asset. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		/**
+		 * Flash version of the asset. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flashVersion?: number | null;
 
-		/** Video frame rate for video asset in frames per second. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Video frame rate for video asset in frames per second. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID.
+		 * Type: float
+		 */
 		frameRate?: number | null;
 
 		/** Whether to hide Flash objects flag for an asset. Applicable to the following creative types: all RICH_MEDIA. */
@@ -5815,7 +5928,10 @@ export namespace MyNS {
 		/** Represents a DimensionValue resource. */
 		idDimensionValue?: DimensionValue;
 
-		/** Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: float
+		 */
 		mediaDuration?: number | null;
 
 		/** Detected MIME type for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
@@ -5848,7 +5964,10 @@ export namespace MyNS {
 		/** Whether the asset pushes down other content. Applicable to the following creative types: all RICH_MEDIA. Additionally, only applicable when the asset offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. */
 		pushdown?: boolean | null;
 
-		/** Pushdown duration in seconds for an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable when the asset pushdown field is true, the offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. Acceptable values are 0 to 9.99, inclusive. */
+		/**
+		 * Pushdown duration in seconds for an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable when the asset pushdown field is true, the offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. Acceptable values are 0 to 9.99, inclusive.
+		 * Type: float
+		 */
 		pushdownDuration?: number | null;
 
 		/** Role of the asset in relation to creative. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. This is a required field. PRIMARY applies to DISPLAY, FLASH_INPAGE, HTML5_BANNER, IMAGE, DISPLAY_IMAGE_GALLERY, all RICH_MEDIA (which may contain multiple primary assets), and all VPAID creatives. BACKUP_IMAGE applies to FLASH_INPAGE, HTML5_BANNER, all RICH_MEDIA, and all VPAID creatives. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. ADDITIONAL_IMAGE and ADDITIONAL_FLASH apply to FLASH_INPAGE creatives. OTHER refers to assets from sources other than Campaign Manager, such as Studio uploaded assets, applicable to all RICH_MEDIA and all VPAID creatives. PARENT_VIDEO refers to videos uploaded by the user in Campaign Manager and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives. TRANSCODED_VIDEO refers to videos transcoded by Campaign Manager from PARENT_VIDEO assets and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives. ALTERNATE_VIDEO refers to the Campaign Manager representation of child asset videos from Studio, and is applicable to VPAID_LINEAR_VIDEO creatives. These cannot be added or removed within Campaign Manager. For VPAID_LINEAR_VIDEO creatives, PARENT_VIDEO, TRANSCODED_VIDEO and ALTERNATE_VIDEO assets that are marked active serve as backup in case the VPAID creative cannot be served. Only PARENT_VIDEO assets can be added or removed for an INSTREAM_VIDEO or VPAID_LINEAR_VIDEO creative. PARENT_AUDIO refers to audios uploaded by the user in Campaign Manager and is applicable to INSTREAM_AUDIO creatives. TRANSCODED_AUDIO refers to audios transcoded by Campaign Manager from PARENT_AUDIO assets and is applicable to INSTREAM_AUDIO creatives. */
@@ -5875,7 +5994,10 @@ export namespace MyNS {
 		/** Window mode options for flash assets. Applicable to the following creative types: FLASH_INPAGE, RICH_MEDIA_DISPLAY_EXPANDING, RICH_MEDIA_IM_EXPAND, RICH_MEDIA_DISPLAY_BANNER, and RICH_MEDIA_INPAGE_FLOATING. */
 		windowMode?: CreativeAssetWindowMode | null;
 
-		/** zIndex value of an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable to assets whose displayType is NOT one of the following types: ASSET_DISPLAY_TYPE_INPAGE or ASSET_DISPLAY_TYPE_OVERLAY. Acceptable values are -999999999 to 999999999, inclusive. */
+		/**
+		 * zIndex value of an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable to assets whose displayType is NOT one of the following types: ASSET_DISPLAY_TYPE_INPAGE or ASSET_DISPLAY_TYPE_OVERLAY. Acceptable values are -999999999 to 999999999, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zIndex?: number | null;
 
 		/** File name of zip file. This is a read-only field. Applicable to the following creative types: HTML5_BANNER. */
@@ -5900,25 +6022,40 @@ export namespace MyNS {
 		/** Artwork type of rich media creative. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
 		artworkType: FormControl<CreativeArtworkType | null | undefined>,
 
-		/** Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audioBitRate: FormControl<number | null | undefined>,
 
-		/** Audio sample bit rate in hertz. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Audio sample bit rate in hertz. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audioSampleRate: FormControl<number | null | undefined>,
 
-		/** Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitRate: FormControl<number | null | undefined>,
 
 		/** Rich media child asset type. This is a read-only field. Applicable to the following creative types: all VPAID. */
 		childAssetType: FormControl<CreativeAssetChildAssetType | null | undefined>,
 
-		/** Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0. */
+		/**
+		 * Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customStartTimeValue: FormControl<number | null | undefined>,
 
 		/** Type of rich media asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
 		displayType: FormControl<CreativeAssetDisplayType | null | undefined>,
 
-		/** Duration in seconds for which an asset will be displayed. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID_LINEAR_VIDEO. Value must be greater than or equal to 1. */
+		/**
+		 * Duration in seconds for which an asset will be displayed. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID_LINEAR_VIDEO. Value must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Duration type for which an asset will be displayed. Applicable to the following creative types: all RICH_MEDIA. */
@@ -5927,10 +6064,16 @@ export namespace MyNS {
 		/** File size associated with this creative asset. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
 		fileSize: FormControl<string | null | undefined>,
 
-		/** Flash version of the asset. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		/**
+		 * Flash version of the asset. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flashVersion: FormControl<number | null | undefined>,
 
-		/** Video frame rate for video asset in frames per second. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Video frame rate for video asset in frames per second. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID.
+		 * Type: float
+		 */
 		frameRate: FormControl<number | null | undefined>,
 
 		/** Whether to hide Flash objects flag for an asset. Applicable to the following creative types: all RICH_MEDIA. */
@@ -5945,7 +6088,10 @@ export namespace MyNS {
 		/** Numeric ID of this creative asset. This is a required field and should not be modified. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
 		id: FormControl<string | null | undefined>,
 
-		/** Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		/**
+		 * Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID.
+		 * Type: float
+		 */
 		mediaDuration: FormControl<number | null | undefined>,
 
 		/** Detected MIME type for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
@@ -5972,7 +6118,10 @@ export namespace MyNS {
 		/** Whether the asset pushes down other content. Applicable to the following creative types: all RICH_MEDIA. Additionally, only applicable when the asset offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. */
 		pushdown: FormControl<boolean | null | undefined>,
 
-		/** Pushdown duration in seconds for an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable when the asset pushdown field is true, the offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. Acceptable values are 0 to 9.99, inclusive. */
+		/**
+		 * Pushdown duration in seconds for an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable when the asset pushdown field is true, the offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. Acceptable values are 0 to 9.99, inclusive.
+		 * Type: float
+		 */
 		pushdownDuration: FormControl<number | null | undefined>,
 
 		/** Role of the asset in relation to creative. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. This is a required field. PRIMARY applies to DISPLAY, FLASH_INPAGE, HTML5_BANNER, IMAGE, DISPLAY_IMAGE_GALLERY, all RICH_MEDIA (which may contain multiple primary assets), and all VPAID creatives. BACKUP_IMAGE applies to FLASH_INPAGE, HTML5_BANNER, all RICH_MEDIA, and all VPAID creatives. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. ADDITIONAL_IMAGE and ADDITIONAL_FLASH apply to FLASH_INPAGE creatives. OTHER refers to assets from sources other than Campaign Manager, such as Studio uploaded assets, applicable to all RICH_MEDIA and all VPAID creatives. PARENT_VIDEO refers to videos uploaded by the user in Campaign Manager and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives. TRANSCODED_VIDEO refers to videos transcoded by Campaign Manager from PARENT_VIDEO assets and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives. ALTERNATE_VIDEO refers to the Campaign Manager representation of child asset videos from Studio, and is applicable to VPAID_LINEAR_VIDEO creatives. These cannot be added or removed within Campaign Manager. For VPAID_LINEAR_VIDEO creatives, PARENT_VIDEO, TRANSCODED_VIDEO and ALTERNATE_VIDEO assets that are marked active serve as backup in case the VPAID creative cannot be served. Only PARENT_VIDEO assets can be added or removed for an INSTREAM_VIDEO or VPAID_LINEAR_VIDEO creative. PARENT_AUDIO refers to audios uploaded by the user in Campaign Manager and is applicable to INSTREAM_AUDIO creatives. TRANSCODED_AUDIO refers to audios transcoded by Campaign Manager from PARENT_AUDIO assets and is applicable to INSTREAM_AUDIO creatives. */
@@ -5996,7 +6145,10 @@ export namespace MyNS {
 		/** Window mode options for flash assets. Applicable to the following creative types: FLASH_INPAGE, RICH_MEDIA_DISPLAY_EXPANDING, RICH_MEDIA_IM_EXPAND, RICH_MEDIA_DISPLAY_BANNER, and RICH_MEDIA_INPAGE_FLOATING. */
 		windowMode: FormControl<CreativeAssetWindowMode | null | undefined>,
 
-		/** zIndex value of an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable to assets whose displayType is NOT one of the following types: ASSET_DISPLAY_TYPE_INPAGE or ASSET_DISPLAY_TYPE_OVERLAY. Acceptable values are -999999999 to 999999999, inclusive. */
+		/**
+		 * zIndex value of an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable to assets whose displayType is NOT one of the following types: ASSET_DISPLAY_TYPE_INPAGE or ASSET_DISPLAY_TYPE_OVERLAY. Acceptable values are -999999999 to 999999999, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zIndex: FormControl<number | null | undefined>,
 
 		/** File name of zip file. This is a read-only field. Applicable to the following creative types: HTML5_BANNER. */
@@ -6130,38 +6282,62 @@ export namespace MyNS {
 	/** FsCommand. */
 	export interface FsCommand {
 
-		/** Distance from the left of the browser.Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		/**
+		 * Distance from the left of the browser.Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
 		/** Position in the browser where the window will open. */
 		positionOption?: FsCommandPositionOption | null;
 
-		/** Distance from the top of the browser. Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		/**
+		 * Distance from the top of the browser. Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** Height of the window. */
+		/**
+		 * Height of the window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowHeight?: number | null;
 
-		/** Width of the window. */
+		/**
+		 * Width of the window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowWidth?: number | null;
 	}
 
 	/** FsCommand. */
 	export interface FsCommandFormProperties {
 
-		/** Distance from the left of the browser.Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		/**
+		 * Distance from the left of the browser.Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
 		/** Position in the browser where the window will open. */
 		positionOption: FormControl<FsCommandPositionOption | null | undefined>,
 
-		/** Distance from the top of the browser. Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		/**
+		 * Distance from the top of the browser. Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** Height of the window. */
+		/**
+		 * Height of the window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowHeight: FormControl<number | null | undefined>,
 
-		/** Width of the window. */
+		/**
+		 * Width of the window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowWidth: FormControl<number | null | undefined>,
 	}
 	export function CreateFsCommandFormGroup() {
@@ -6247,20 +6423,32 @@ export namespace MyNS {
 	/** Video Offset */
 	export interface VideoOffset {
 
-		/** Duration, as a percentage of video duration. Do not set when offsetSeconds is set. Acceptable values are 0 to 100, inclusive. */
+		/**
+		 * Duration, as a percentage of video duration. Do not set when offsetSeconds is set. Acceptable values are 0 to 100, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetPercentage?: number | null;
 
-		/** Duration, in seconds. Do not set when offsetPercentage is set. Acceptable values are 0 to 86399, inclusive. */
+		/**
+		 * Duration, in seconds. Do not set when offsetPercentage is set. Acceptable values are 0 to 86399, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetSeconds?: number | null;
 	}
 
 	/** Video Offset */
 	export interface VideoOffsetFormProperties {
 
-		/** Duration, as a percentage of video duration. Do not set when offsetSeconds is set. Acceptable values are 0 to 100, inclusive. */
+		/**
+		 * Duration, as a percentage of video duration. Do not set when offsetSeconds is set. Acceptable values are 0 to 100, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetPercentage: FormControl<number | null | undefined>,
 
-		/** Duration, in seconds. Do not set when offsetPercentage is set. Acceptable values are 0 to 86399, inclusive. */
+		/**
+		 * Duration, in seconds. Do not set when offsetPercentage is set. Acceptable values are 0 to 86399, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoOffsetFormGroup() {
@@ -6561,7 +6749,10 @@ export namespace MyNS {
 		/** Represents a DimensionValue resource. */
 		advertiserIdDimensionValue?: DimensionValue;
 
-		/** Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive. */
+		/**
+		 * Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupNumber?: number | null;
 
 		/** ID of this creative group. This is a read-only, auto-generated field. */
@@ -6586,7 +6777,10 @@ export namespace MyNS {
 		/** Advertiser ID of this creative group. This is a required field on insertion. */
 		advertiserId: FormControl<string | null | undefined>,
 
-		/** Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive. */
+		/**
+		 * Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupNumber: FormControl<number | null | undefined>,
 
 		/** ID of this creative group. This is a read-only, auto-generated field. */
@@ -6738,13 +6932,22 @@ export namespace MyNS {
 		/** Whether the video must be audible to count an impression. */
 		audible?: boolean | null;
 
-		/** The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used. */
+		/**
+		 * The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeMillis?: number | null;
 
-		/** The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used. */
+		/**
+		 * The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timePercent?: number | null;
 
-		/** The percentage of video that must be on screen for the Custom Viewability Metric to count an impression. */
+		/**
+		 * The percentage of video that must be on screen for the Custom Viewability Metric to count an impression.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		viewabilityPercent?: number | null;
 	}
 
@@ -6754,13 +6957,22 @@ export namespace MyNS {
 		/** Whether the video must be audible to count an impression. */
 		audible: FormControl<boolean | null | undefined>,
 
-		/** The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used. */
+		/**
+		 * The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeMillis: FormControl<number | null | undefined>,
 
-		/** The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used. */
+		/**
+		 * The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timePercent: FormControl<number | null | undefined>,
 
-		/** The percentage of video that must be on screen for the Custom Viewability Metric to count an impression. */
+		/**
+		 * The percentage of video that must be on screen for the Custom Viewability Metric to count an impression.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		viewabilityPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomViewabilityMetricConfigurationFormGroup() {
@@ -6776,6 +6988,8 @@ export namespace MyNS {
 
 	/** Represents a date range. */
 	export interface DateRange {
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** The kind of resource this is, in this case dfareporting#dateRange. */
@@ -6783,11 +6997,15 @@ export namespace MyNS {
 
 		/** The date range relative to the date of when the report is run. */
 		relativeDateRange?: DateRangeRelativeDateRange | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 
 	/** Represents a date range. */
 	export interface DateRangeFormProperties {
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** The kind of resource this is, in this case dfareporting#dateRange. */
@@ -6795,6 +7013,8 @@ export namespace MyNS {
 
 		/** The date range relative to the date of when the report is run. */
 		relativeDateRange: FormControl<DateRangeRelativeDateRange | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDateRangeFormGroup() {
@@ -6937,6 +7157,8 @@ export namespace MyNS {
 
 		/** The name of the dimension for which values should be requested. */
 		dimensionName?: string | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** The list of filters by which to filter values. The filters are ANDed. */
@@ -6944,6 +7166,8 @@ export namespace MyNS {
 
 		/** The kind of request this is, in this case dfareporting#dimensionValueRequest . */
 		kind?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 
@@ -6952,10 +7176,14 @@ export namespace MyNS {
 
 		/** The name of the dimension for which values should be requested. */
 		dimensionName: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** The kind of request this is, in this case dfareporting#dimensionValueRequest . */
 		kind: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDimensionValueRequestFormGroup() {
@@ -7214,7 +7442,10 @@ export namespace MyNS {
 		/** Payload URL for this event tag. The URL on a click-through event tag should have a landing page URL appended to the end of it. This field is required on insertion. */
 		url?: string | null;
 
-		/** Number of times the landing page URL should be URL-escaped before being appended to the click-through event tag URL. Only applies to click-through event tags as specified by the event tag type. */
+		/**
+		 * Number of times the landing page URL should be URL-escaped before being appended to the click-through event tag URL. Only applies to click-through event tags as specified by the event tag type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		urlEscapeLevels?: number | null;
 	}
 
@@ -7263,7 +7494,10 @@ export namespace MyNS {
 		/** Payload URL for this event tag. The URL on a click-through event tag should have a landing page URL appended to the end of it. This field is required on insertion. */
 		url: FormControl<string | null | undefined>,
 
-		/** Number of times the landing page URL should be URL-escaped before being appended to the click-through event tag URL. Only applies to click-through event tags as specified by the event tag type. */
+		/**
+		 * Number of times the landing page URL should be URL-escaped before being appended to the click-through event tag URL. Only applies to click-through event tags as specified by the event tag type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		urlEscapeLevels: FormControl<number | null | undefined>,
 	}
 	export function CreateEventTagFormGroup() {
@@ -7462,10 +7696,14 @@ export namespace MyNS {
 
 	/** Flight */
 	export interface Flight {
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** Rate or cost of this flight. */
 		rateOrCost?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** Units of this flight. */
@@ -7474,10 +7712,14 @@ export namespace MyNS {
 
 	/** Flight */
 	export interface FlightFormProperties {
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Rate or cost of this flight. */
 		rateOrCost: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** Units of this flight. */
@@ -8361,6 +8603,8 @@ export namespace MyNS {
 
 		/** Cap cost type of this inventory item. */
 		capCostType?: PricingCapCostType | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** Flights of this inventory item. A flight (a.k.a. pricing period) represents the inventory item pricing information for a specific period of time. */
@@ -8371,12 +8615,16 @@ export namespace MyNS {
 
 		/** Pricing type of this inventory item. */
 		pricingType?: PricingPricingType | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface PricingFormProperties {
 
 		/** Cap cost type of this inventory item. */
 		capCostType: FormControl<PricingCapCostType | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Group type of this inventory item if it represents a placement group. Is null otherwise. There are two type of placement groups: PLANNING_PLACEMENT_GROUP_TYPE_PACKAGE is a simple group of inventory items that acts as a single pricing point for a group of tags. PLANNING_PLACEMENT_GROUP_TYPE_ROADBLOCK is a group of inventory items that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned inventory items to be marked as primary. */
@@ -8384,6 +8632,8 @@ export namespace MyNS {
 
 		/** Pricing type of this inventory item. */
 		pricingType: FormControl<PricingPricingType | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePricingFormGroup() {
@@ -9259,6 +9509,8 @@ export namespace MyNS {
 
 		/** Placement cap cost option. */
 		capCostOption?: PricingScheduleCapCostOption | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** Whether this placement is flighted. If true, pricing periods will be computed automatically. */
@@ -9272,7 +9524,11 @@ export namespace MyNS {
 
 		/** Placement pricing type. This field is required on insertion. */
 		pricingType?: PricingSchedulePricingType | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
+
+		/** Type: DateOnly */
 		testingStartDate?: Date | null;
 	}
 
@@ -9281,6 +9537,8 @@ export namespace MyNS {
 
 		/** Placement cap cost option. */
 		capCostOption: FormControl<PricingScheduleCapCostOption | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Whether this placement is flighted. If true, pricing periods will be computed automatically. */
@@ -9291,7 +9549,11 @@ export namespace MyNS {
 
 		/** Placement pricing type. This field is required on insertion. */
 		pricingType: FormControl<PricingSchedulePricingType | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		testingStartDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePricingScheduleFormGroup() {
@@ -9312,6 +9574,8 @@ export namespace MyNS {
 
 	/** Pricing Period */
 	export interface PricingSchedulePricingPeriod {
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** Comments for this pricing period. */
@@ -9319,6 +9583,8 @@ export namespace MyNS {
 
 		/** Rate or cost of this pricing period in nanos (i.e., multiplied by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive. */
 		rateOrCostNanos?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive. */
@@ -9327,6 +9593,8 @@ export namespace MyNS {
 
 	/** Pricing Period */
 	export interface PricingSchedulePricingPeriodFormProperties {
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Comments for this pricing period. */
@@ -9334,6 +9602,8 @@ export namespace MyNS {
 
 		/** Rate or cost of this pricing period in nanos (i.e., multiplied by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive. */
 		rateOrCostNanos: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive. */
@@ -9405,7 +9675,10 @@ export namespace MyNS {
 		/** Companion Settings */
 		companionSettings?: CompanionSetting;
 
-		/** Duration of a video placement in seconds. */
+		/**
+		 * Duration of a video placement in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationSeconds?: number | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings". */
@@ -9433,7 +9706,10 @@ export namespace MyNS {
 	/** Video Settings */
 	export interface VideoSettingsFormProperties {
 
-		/** Duration of a video placement in seconds. */
+		/**
+		 * Duration of a video placement in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationSeconds: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings". */
@@ -9985,6 +10261,8 @@ export namespace MyNS {
 
 		/** Name of the project client. */
 		clientName?: string | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 
 		/** ID of this project. This is a read-only, auto-generated field. */
@@ -10001,6 +10279,8 @@ export namespace MyNS {
 
 		/** Overview of this project. */
 		overview?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** Subaccount ID of this project. */
@@ -10051,6 +10331,8 @@ export namespace MyNS {
 
 		/** Name of the project client. */
 		clientName: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** ID of this project. This is a read-only, auto-generated field. */
@@ -10064,6 +10346,8 @@ export namespace MyNS {
 
 		/** Overview of this project. */
 		overview: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** Subaccount ID of this project. */
@@ -10798,10 +11082,16 @@ export namespace MyNS {
 
 	export interface ReportPathToConversionCriteriaReportProperties {
 
-		/** CM360 checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		/**
+		 * CM360 checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clicksLookbackWindow?: number | null;
 
-		/** CM360 checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		/**
+		 * CM360 checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impressionsLookbackWindow?: number | null;
 
 		/** Deprecated: has no effect. */
@@ -10813,13 +11103,22 @@ export namespace MyNS {
 		/** Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion. */
 		includeUnattributedIPConversions?: boolean | null;
 
-		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		/**
+		 * The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumClickInteractions?: number | null;
 
-		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		/**
+		 * The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumImpressionInteractions?: number | null;
 
-		/** The maximum amount of time that can take place between interactions (clicks or impressions) by the same user. Valid values: 1-90. */
+		/**
+		 * The maximum amount of time that can take place between interactions (clicks or impressions) by the same user. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumInteractionGap?: number | null;
 
 		/** Enable pivoting on interaction path. */
@@ -10827,10 +11126,16 @@ export namespace MyNS {
 	}
 	export interface ReportPathToConversionCriteriaReportPropertiesFormProperties {
 
-		/** CM360 checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		/**
+		 * CM360 checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clicksLookbackWindow: FormControl<number | null | undefined>,
 
-		/** CM360 checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		/**
+		 * CM360 checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impressionsLookbackWindow: FormControl<number | null | undefined>,
 
 		/** Deprecated: has no effect. */
@@ -10842,13 +11147,22 @@ export namespace MyNS {
 		/** Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion. */
 		includeUnattributedIPConversions: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		/**
+		 * The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumClickInteractions: FormControl<number | null | undefined>,
 
-		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		/**
+		 * The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumImpressionInteractions: FormControl<number | null | undefined>,
 
-		/** The maximum amount of time that can take place between interactions (clicks or impressions) by the same user. Valid values: 1-90. */
+		/**
+		 * The maximum amount of time that can take place between interactions (clicks or impressions) by the same user. Valid values: 1-90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumInteractionGap: FormControl<number | null | undefined>,
 
 		/** Enable pivoting on interaction path. */
@@ -10912,8 +11226,13 @@ export namespace MyNS {
 		/** Whether the schedule is active or not. Must be set to either true or false. */
 		active?: boolean | null;
 
-		/** Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY". */
+		/**
+		 * Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		every?: number | null;
+
+		/** Type: DateOnly */
 		expirationDate?: Date | null;
 
 		/** The interval for which the report is repeated. Note: - "DAILY" also requires field "every" to be set. - "WEEKLY" also requires fields "every" and "repeatsOnWeekDays" to be set. - "MONTHLY" also requires fields "every" and "runsOnDayOfMonth" to be set. */
@@ -10924,6 +11243,8 @@ export namespace MyNS {
 
 		/** Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month. Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month. */
 		runsOnDayOfMonth?: ReportScheduleRunsOnDayOfMonth | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** The timezone when the report will run. */
@@ -10934,8 +11255,13 @@ export namespace MyNS {
 		/** Whether the schedule is active or not. Must be set to either true or false. */
 		active: FormControl<boolean | null | undefined>,
 
-		/** Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY". */
+		/**
+		 * Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY".
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		every: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		expirationDate: FormControl<Date | null | undefined>,
 
 		/** The interval for which the report is repeated. Note: - "DAILY" also requires field "every" to be set. - "WEEKLY" also requires fields "every" and "repeatsOnWeekDays" to be set. - "MONTHLY" also requires fields "every" and "runsOnDayOfMonth" to be set. */
@@ -10943,6 +11269,8 @@ export namespace MyNS {
 
 		/** Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month. Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month. */
 		runsOnDayOfMonth: FormControl<ReportScheduleRunsOnDayOfMonth | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** The timezone when the report will run. */
@@ -12065,7 +12393,10 @@ export namespace MyNS {
 		/** File type of the video format. */
 		fileType?: VideoFormatFileType | null;
 
-		/** ID of the video format. */
+		/**
+		 * ID of the video format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormat". */
@@ -12074,7 +12405,10 @@ export namespace MyNS {
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
 		resolution?: Size;
 
-		/** The target bit rate of this video format. */
+		/**
+		 * The target bit rate of this video format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetBitRate?: number | null;
 	}
 
@@ -12084,13 +12418,19 @@ export namespace MyNS {
 		/** File type of the video format. */
 		fileType: FormControl<VideoFormatFileType | null | undefined>,
 
-		/** ID of the video format. */
+		/**
+		 * ID of the video format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormat". */
 		kind: FormControl<string | null | undefined>,
 
-		/** The target bit rate of this video format. */
+		/**
+		 * The target bit rate of this video format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetBitRate: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoFormatFormGroup() {
@@ -12224,6 +12564,7 @@ export namespace MyNS {
 		 * @param {boolean} active Select only active user profiles.
 		 * @param {Array<string>} ids Select only user profiles with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name, ID or email. Wildcards (*) are allowed. For example, "user profile*2015" will return objects with names like "user profile June 2015", "user profile April 2015", or simply "user profile 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "user profile" will match objects with name "my user profile", "user profile 2015", or simply "user profile".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -12285,6 +12626,7 @@ export namespace MyNS {
 		 * @param {boolean} active Select only active accounts. Don't set this field to select both active and non-active accounts.
 		 * @param {Array<string>} ids Select only accounts with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "account*2015" will return objects with names like "account June 2015", "account April 2015", or simply "account 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "account" will match objects with name "my account", "account 2015", or simply "account".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -12343,6 +12685,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only ads with these IDs.
 		 * @param {Array<string>} landingPageIds Select only ads with these landing page IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} overriddenEventTagId Select only ads with this event tag override ID.
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {Array<string>} placementIds Select only ads with these placement IDs assigned.
@@ -12408,6 +12751,7 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {Array<string>} ids Select only advertiser groups with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "advertiser*2015" will return objects with names like "advertiser group June 2015", "advertiser group April 2015", or simply "advertiser group 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "advertisergroup" will match objects with name "my advertisergroup", "advertisergroup 2015", or simply "advertisergroup".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -12480,6 +12824,7 @@ export namespace MyNS {
 		 * @param {Array<string>} campaignIds Select only landing pages that are associated with these campaigns.
 		 * @param {Array<string>} ids Select only landing pages with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for landing pages by name or ID. Wildcards (*) are allowed. For example, "landingpage*2017" will return landing pages with names like "landingpage July 2017", "landingpage March 2017", or simply "landingpage 2017". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "landingpage" will match campaigns with name "my landingpage", "landingpage 2015", or simply "landingpage".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -12542,6 +12887,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only advertisers with these IDs.
 		 * @param {boolean} includeAdvertisersWithoutGroupsOnly Select only advertisers which do not belong to any advertiser group.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} onlyParent Select only advertisers which use another advertiser's floodlight configuration.
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "advertiser*2015" will return objects with names like "advertiser June 2015", "advertiser April 2015", or simply "advertiser 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "advertiser" will match objects with name "my advertiser", "advertiser 2015", or simply "advertiser" .
@@ -12593,6 +12939,7 @@ export namespace MyNS {
 		 * @param {string} advertiserId Advertiser ID of this invoice.
 		 * @param {string} issueMonth Month for which invoices are needed in the format YYYYMM. Required field
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @return {AdvertiserInvoicesListResponse} Successful response
 		 */
@@ -12618,6 +12965,7 @@ export namespace MyNS {
 		 * @param {string} currency_code Select only billing profile with currency.
 		 * @param {Array<string>} ids Select only billing profile with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Allows searching for billing profiles by name. Wildcards (*) are allowed. For example, "profile*2020" will return objects with names like "profile June 2020", "profile April 2020", or simply "profile 2020". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "profile" will match objects with name "my profile", "profile 2021", or simply "profile".
 		 * @param {boolean} onlySuggestion Select only billing profile which is suggested for the currency_code & subaccount_id using the Billing Suggestion API.
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
@@ -12706,6 +13054,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludedIds Exclude campaigns with these IDs.
 		 * @param {Array<string>} ids Select only campaigns with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} overriddenEventTagId Select only campaigns that have overridden this event tag ID.
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for campaigns by name or ID. Wildcards (*) are allowed. For example, "campaign*2015" will return campaigns with names like "campaign June 2015", "campaign April 2015", or simply "campaign 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "campaign" will match campaigns with name "my campaign", "campaign 2015", or simply "campaign".
@@ -12755,6 +13104,7 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {string} campaignId Campaign ID in this association.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {CampaignCreativeAssociationsListResponse} Successful response
@@ -12793,6 +13143,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only change logs with these IDs.
 		 * @param {string} maxChangeTime Select only change logs whose change time is before the specified maxChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is "2015-07-18T22:54:00-04:00". In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} minChangeTime Select only change logs whose change time is after the specified minChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is "2015-07-18T22:54:00-04:00". In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset.
 		 * @param {Array<string>} objectIds Select only change logs with these object IDs.
 		 * @param {Dfareporting_changeLogs_listObjectType} objectType Select only change logs with the specified object type.
@@ -12857,6 +13208,7 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {Array<string>} ids Select only content categories with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "contentcategory*2015" will return objects with names like "contentcategory June 2015", "contentcategory April 2015", or simply "contentcategory 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "contentcategory" will match objects with name "my contentcategory", "contentcategory 2015", or simply "contentcategory".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -12968,6 +13320,7 @@ export namespace MyNS {
 		 * @param {Array<string>} advertiserIds Select only creative fields that belong to these advertisers.
 		 * @param {Array<string>} ids Select only creative fields with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for creative fields by name or ID. Wildcards (*) are allowed. For example, "creativefield*2015" will return creative fields with names like "creativefield June 2015", "creativefield April 2015", or simply "creativefield 2015". Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of "creativefield" will match creative fields with the name "my creativefield", "creativefield 2015", or simply "creativefield".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13016,6 +13369,7 @@ export namespace MyNS {
 		 * @param {string} creativeFieldId Creative field ID for this creative field value.
 		 * @param {Array<string>} ids Select only creative field values with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for creative field values by their values. Wildcards (e.g. *) are not allowed.
 		 * @param {Dfareporting_creativeFieldValues_listSortField} sortField Field by which to sort the list.
@@ -13112,8 +13466,10 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {Array<string>} advertiserIds Select only creative groups that belong to these advertisers.
 		 * @param {number} groupNumber Select only creative groups that belong to this subgroup.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} ids Select only creative groups with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for creative groups by name or ID. Wildcards (*) are allowed. For example, "creativegroup*2015" will return creative groups with names like "creativegroup June 2015", "creativegroup April 2015", or simply "creativegroup 2015". Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of "creativegroup" will match creative groups with the name "my creativegroup", "creativegroup 2015", or simply "creativegroup".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13178,6 +13534,7 @@ export namespace MyNS {
 		 * @param {Array<string>} creativeFieldIds Select only creatives with these creative field IDs.
 		 * @param {Array<string>} ids Select only creatives with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {Array<string>} renderingIds Select only creatives with these rendering IDs.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "creative*2015" will return objects with names like "creative June 2015", "creative April 2015", or simply "creative 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "creative" will match objects with name "my creative", "creative 2015", or simply "creative".
@@ -13239,6 +13596,7 @@ export namespace MyNS {
 		 * Post userprofiles/{profileId}/dimensionvalues/query
 		 * @param {string} profileId The Campaign Manager 360 user profile ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous result page.
 		 * @return {DimensionValueList} Successful response
 		 */
@@ -13257,6 +13615,7 @@ export namespace MyNS {
 		 * @param {string} dfpNetworkCode Select only directory sites with this Ad Manager network code.
 		 * @param {Array<string>} ids Select only directory sites with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name, ID or URL. Wildcards (*) are allowed. For example, "directory site*2015" will return objects with names like "directory site June 2015", "directory site April 2015", or simply "directory site 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "directory site" will match objects with name "my directory site", "directory site 2015" or simply, "directory site".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13403,6 +13762,7 @@ export namespace MyNS {
 		 * Get userprofiles/{profileId}/files
 		 * @param {string} profileId The Campaign Manager 360 user profile ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous result page.
 		 * @param {Dfareporting_files_listScope} scope The scope that defines which results are returned.
 		 * @param {Dfareporting_files_listSortField} sortField The field by which to sort the list.
@@ -13425,6 +13785,7 @@ export namespace MyNS {
 		 * @param {string} floodlightConfigurationId Select only floodlight activities for the specified floodlight configuration ID. Must specify either ids, advertiserId, or floodlightConfigurationId for a non-empty result.
 		 * @param {Array<string>} ids Select only floodlight activities with the specified IDs. Must specify either ids, advertiserId, or floodlightConfigurationId for a non-empty result.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "floodlightactivity*2015" will return objects with names like "floodlightactivity June 2015", "floodlightactivity April 2015", or simply "floodlightactivity 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "floodlightactivity" will match objects with name "my floodlightactivity activity", "floodlightactivity 2015", or simply "floodlightactivity".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13508,6 +13869,7 @@ export namespace MyNS {
 		 * @param {string} floodlightConfigurationId Select only floodlight activity groups with the specified floodlight configuration ID. Must specify either advertiserId, or floodlightConfigurationId for a non-empty result.
 		 * @param {Array<string>} ids Select only floodlight activity groups with the specified IDs. Must specify either advertiserId or floodlightConfigurationId for a non-empty result.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "floodlightactivitygroup*2015" will return objects with names like "floodlightactivitygroup June 2015", "floodlightactivitygroup April 2015", or simply "floodlightactivitygroup 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "floodlightactivitygroup" will match objects with name "my floodlightactivitygroup activity", "floodlightactivitygroup 2015", or simply "floodlightactivitygroup".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13631,6 +13993,7 @@ export namespace MyNS {
 		 * @param {Array<MobileAppDirectory>} directories Select only apps from these directories.
 		 * @param {Array<string>} ids Select only apps with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "app*2015" will return objects with names like "app Jan 2018", "app Jan 2018", or simply "app 2018". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "app" will match objects with name "my app", "app 2018", or simply "app".
 		 * @return {MobileAppsListResponse} Successful response
@@ -13725,6 +14088,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only placement groups with these IDs.
 		 * @param {string} maxEndDate Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} maxStartDate Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {string} minEndDate Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {string} minStartDate Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as "yyyy-MM-dd".
@@ -13790,6 +14154,7 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {Array<string>} ids Select only placement strategies with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "placementstrategy*2015" will return objects with names like "placementstrategy June 2015", "placementstrategy April 2015", or simply "placementstrategy 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "placementstrategy" will match objects with name "my placementstrategy", "placementstrategy 2015", or simply "placementstrategy".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -13867,6 +14232,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only placements with these IDs.
 		 * @param {string} maxEndDate Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} maxStartDate Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {string} minEndDate Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as "yyyy-MM-dd".
 		 * @param {string} minStartDate Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as "yyyy-MM-dd".
@@ -13989,6 +14355,7 @@ export namespace MyNS {
 		 * @param {Array<string>} advertiserIds Select only projects with these advertiser IDs.
 		 * @param {Array<string>} ids Select only projects with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for projects by name or ID. Wildcards (*) are allowed. For example, "project*2015" will return projects with names like "project June 2015", "project April 2015", or simply "project 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "project" will match projects with name "my project", "project 2015", or simply "project".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14018,6 +14385,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only inventory items with these IDs.
 		 * @param {boolean} inPlan Select only inventory items that are in plan.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} orderId Select only inventory items that belong to specified orders.
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {Array<string>} siteId Select only inventory items that are associated with these sites.
@@ -14049,6 +14417,7 @@ export namespace MyNS {
 		 * @param {string} projectId Project ID for orders.
 		 * @param {Array<string>} ids Select only orders with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for orders by name or ID. Wildcards (*) are allowed. For example, "order*2015" will return orders with names like "order June 2015", "order April 2015", or simply "order 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "order" will match orders with name "my order", "order 2015", or simply "order".
 		 * @param {Array<string>} siteId Select only orders that are associated with these site IDs.
@@ -14122,6 +14491,7 @@ export namespace MyNS {
 		 * @param {boolean} active Select only active or only inactive remarketing lists.
 		 * @param {string} floodlightActivityId Select only remarketing lists that have this floodlight activity ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "remarketing list*2015" will return objects with names like "remarketing list June 2015", "remarketing list April 2015", or simply "remarketing list 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "remarketing list" will match objects with name "my remarketing list", "remarketing list 2015", or simply "remarketing list".
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14179,6 +14549,7 @@ export namespace MyNS {
 		 * Get userprofiles/{profileId}/reports
 		 * @param {string} profileId The Campaign Manager 360 user profile ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous result page.
 		 * @param {Dfareporting_reports_listScope} scope The scope that defines which results are returned.
 		 * @param {Dfareporting_reports_listSortField} sortField The field by which to sort the list.
@@ -14259,6 +14630,7 @@ export namespace MyNS {
 		 * @param {string} profileId The Campaign Manager 360 user profile ID.
 		 * @param {string} reportId The ID of the parent report.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous result page.
 		 * @param {Dfareporting_files_listSortField} sortField The field by which to sort the list.
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
@@ -14305,6 +14677,7 @@ export namespace MyNS {
 		 * @param {Array<string>} directorySiteIds Select only sites with these directory site IDs.
 		 * @param {Array<string>} ids Select only sites with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name, ID or keyName. Wildcards (*) are allowed. For example, "site*2015" will return objects with names like "site June 2015", "site April 2015", or simply "site 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "site" will match objects with name "my site", "site 2015", or simply "site".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14364,9 +14737,11 @@ export namespace MyNS {
 		 * Get userprofiles/{profileId}/sizes
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {number} height Select only sizes with this height.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} iabStandard Select only IAB standard sizes.
 		 * @param {Array<string>} ids Select only sizes with these IDs.
 		 * @param {number} width Select only sizes with this width.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SizesListResponse} Successful response
 		 */
 		Dfareporting_sizes_list(profileId: string, height: number | null | undefined, iabStandard: boolean | null | undefined, ids: Array<string> | null | undefined, width: number | null | undefined): Observable<SizesListResponse> {
@@ -14400,6 +14775,7 @@ export namespace MyNS {
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {Array<string>} ids Select only subaccounts with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "subaccount*2015" will return objects with names like "subaccount June 2015", "subaccount April 2015", or simply "subaccount 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "subaccount" will match objects with name "my subaccount", "subaccount 2015", or simply "subaccount" .
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14459,6 +14835,7 @@ export namespace MyNS {
 		 * @param {string} advertiserId Required. Select only targetable remarketing lists targetable by these advertisers.
 		 * @param {boolean} active Select only active or only inactive targetable remarketing lists.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "remarketing list*2015" will return objects with names like "remarketing list June 2015", "remarketing list April 2015", or simply "remarketing list 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "remarketing list" will match objects with name "my remarketing list", "remarketing list 2015", or simply "remarketing list".
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14487,6 +14864,7 @@ export namespace MyNS {
 		 * @param {string} advertiserId Select only targeting templates with this advertiser ID.
 		 * @param {Array<string>} ids Select only targeting templates with these IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "template*2015" will return objects with names like "template June 2015", "template April 2015", or simply "template 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "template" will match objects with name "my template", "template 2015", or simply "template".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14589,6 +14967,7 @@ export namespace MyNS {
 		 * @param {boolean} accountUserRoleOnly Select only account level user roles not associated with any specific subaccount.
 		 * @param {Array<string>} ids Select only user roles with the specified IDs.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Value of the nextPageToken from the previous result page.
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "userrole*2015" will return objects with names like "userrole June 2015", "userrole April 2015", or simply "userrole 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "userrole" will match objects with name "my userrole", "userrole 2015", or simply "userrole".
 		 * @param {Dfareporting_accountUserProfiles_listSortField} sortField Field by which to sort the list.
@@ -14668,6 +15047,7 @@ export namespace MyNS {
 		 * Get userprofiles/{profileId}/videoFormats/{id}
 		 * @param {string} profileId User profile ID associated with this request.
 		 * @param {number} id Video format ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VideoFormat} Successful response
 		 */
 		Dfareporting_videoFormats_get(profileId: string, id: number): Observable<VideoFormat> {

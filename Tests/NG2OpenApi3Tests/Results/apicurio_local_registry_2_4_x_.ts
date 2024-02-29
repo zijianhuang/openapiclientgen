@@ -72,8 +72,11 @@ export namespace MyNS {
 
 	export interface ArtifactMetaData {
 
-		/** Required */
-		contentId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: string;
 
 		/** Required */
 		createdBy: string;
@@ -82,8 +85,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 
 		/** An ID of a single artifact group. */
 		groupId?: string | null;
@@ -124,8 +130,11 @@ export namespace MyNS {
 	}
 	export interface ArtifactMetaDataFormProperties {
 
-		/** Required */
-		contentId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: FormControl<string | null | undefined>,
 
 		/** Required */
 		createdBy: FormControl<string | null | undefined>,
@@ -134,8 +143,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 
 		/** An ID of a single artifact group. */
 		groupId: FormControl<string | null | undefined>,
@@ -171,11 +183,11 @@ export namespace MyNS {
 	}
 	export function CreateArtifactMetaDataFormGroup() {
 		return new FormGroup<ArtifactMetaDataFormProperties>({
-			contentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			contentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			groupId: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modifiedBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -235,6 +247,7 @@ export namespace MyNS {
 		 * The total number of artifacts that matched the query that produced the result set (may be
 		 * more than the number of artifacts in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 	}
@@ -246,6 +259,7 @@ export namespace MyNS {
 		 * The total number of artifacts that matched the query that produced the result set (may be
 		 * more than the number of artifacts in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -490,7 +504,10 @@ export namespace MyNS {
 		/** Full details about the error.  This might contain a server stack trace, for example. */
 		detail?: string | null;
 
-		/** The server-side error code. */
+		/**
+		 * The server-side error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code?: number | null;
 
 		/** The short error message. */
@@ -509,7 +526,10 @@ export namespace MyNS {
 		/** Full details about the error.  This might contain a server stack trace, for example. */
 		detail: FormControl<string | null | undefined>,
 
-		/** The server-side error code. */
+		/**
+		 * The server-side error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/** The short error message. */
@@ -600,6 +620,7 @@ export namespace MyNS {
 		 * The total number of groups that matched the query that produced the result set (may be
 		 * more than the number of groups in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -617,6 +638,7 @@ export namespace MyNS {
 		 * The total number of groups that matched the query that produced the result set (may be
 		 * more than the number of groups in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -698,18 +720,42 @@ export namespace MyNS {
 	 * Values are integers. Only non-negative values are allowed, with the exception of -1, which means that the limit is not applied.
 	 */
 	export interface Limits {
-		maxArtifactDescriptionLengthChars?: number | null;
-		maxArtifactLabelsCount?: number | null;
-		maxArtifactNameLengthChars?: number | null;
-		maxArtifactPropertiesCount?: number | null;
-		maxArtifactsCount?: number | null;
-		maxLabelSizeBytes?: number | null;
-		maxPropertyKeySizeBytes?: number | null;
-		maxPropertyValueSizeBytes?: number | null;
-		maxRequestsPerSecondCount?: number | null;
-		maxSchemaSizeBytes?: number | null;
-		maxTotalSchemasCount?: number | null;
-		maxVersionsPerArtifactCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactDescriptionLengthChars?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactLabelsCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactNameLengthChars?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactPropertiesCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactsCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxLabelSizeBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxPropertyKeySizeBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxPropertyValueSizeBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxRequestsPerSecondCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxSchemaSizeBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxTotalSchemasCount?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxVersionsPerArtifactCount?: string | null;
 	}
 
 	/**
@@ -718,33 +764,57 @@ export namespace MyNS {
 	 * Values are integers. Only non-negative values are allowed, with the exception of -1, which means that the limit is not applied.
 	 */
 	export interface LimitsFormProperties {
-		maxArtifactDescriptionLengthChars: FormControl<number | null | undefined>,
-		maxArtifactLabelsCount: FormControl<number | null | undefined>,
-		maxArtifactNameLengthChars: FormControl<number | null | undefined>,
-		maxArtifactPropertiesCount: FormControl<number | null | undefined>,
-		maxArtifactsCount: FormControl<number | null | undefined>,
-		maxLabelSizeBytes: FormControl<number | null | undefined>,
-		maxPropertyKeySizeBytes: FormControl<number | null | undefined>,
-		maxPropertyValueSizeBytes: FormControl<number | null | undefined>,
-		maxRequestsPerSecondCount: FormControl<number | null | undefined>,
-		maxSchemaSizeBytes: FormControl<number | null | undefined>,
-		maxTotalSchemasCount: FormControl<number | null | undefined>,
-		maxVersionsPerArtifactCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactDescriptionLengthChars: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactLabelsCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactNameLengthChars: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactPropertiesCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxArtifactsCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxLabelSizeBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxPropertyKeySizeBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxPropertyValueSizeBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxRequestsPerSecondCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxSchemaSizeBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxTotalSchemasCount: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxVersionsPerArtifactCount: FormControl<string | null | undefined>,
 	}
 	export function CreateLimitsFormGroup() {
 		return new FormGroup<LimitsFormProperties>({
-			maxArtifactDescriptionLengthChars: new FormControl<number | null | undefined>(undefined),
-			maxArtifactLabelsCount: new FormControl<number | null | undefined>(undefined),
-			maxArtifactNameLengthChars: new FormControl<number | null | undefined>(undefined),
-			maxArtifactPropertiesCount: new FormControl<number | null | undefined>(undefined),
-			maxArtifactsCount: new FormControl<number | null | undefined>(undefined),
-			maxLabelSizeBytes: new FormControl<number | null | undefined>(undefined),
-			maxPropertyKeySizeBytes: new FormControl<number | null | undefined>(undefined),
-			maxPropertyValueSizeBytes: new FormControl<number | null | undefined>(undefined),
-			maxRequestsPerSecondCount: new FormControl<number | null | undefined>(undefined),
-			maxSchemaSizeBytes: new FormControl<number | null | undefined>(undefined),
-			maxTotalSchemasCount: new FormControl<number | null | undefined>(undefined),
-			maxVersionsPerArtifactCount: new FormControl<number | null | undefined>(undefined),
+			maxArtifactDescriptionLengthChars: new FormControl<string | null | undefined>(undefined),
+			maxArtifactLabelsCount: new FormControl<string | null | undefined>(undefined),
+			maxArtifactNameLengthChars: new FormControl<string | null | undefined>(undefined),
+			maxArtifactPropertiesCount: new FormControl<string | null | undefined>(undefined),
+			maxArtifactsCount: new FormControl<string | null | undefined>(undefined),
+			maxLabelSizeBytes: new FormControl<string | null | undefined>(undefined),
+			maxPropertyKeySizeBytes: new FormControl<string | null | undefined>(undefined),
+			maxPropertyValueSizeBytes: new FormControl<string | null | undefined>(undefined),
+			maxRequestsPerSecondCount: new FormControl<string | null | undefined>(undefined),
+			maxSchemaSizeBytes: new FormControl<string | null | undefined>(undefined),
+			maxTotalSchemasCount: new FormControl<string | null | undefined>(undefined),
+			maxVersionsPerArtifactCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -881,8 +951,11 @@ export namespace MyNS {
 	/** Models a single artifact from the result set returned when searching for artifacts. */
 	export interface SearchedVersion {
 
-		/** Required */
-		contentId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: string;
 
 		/** Required */
 		createdBy: string;
@@ -891,8 +964,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 		labels?: Array<string>;
 		name?: string | null;
 
@@ -922,8 +998,11 @@ export namespace MyNS {
 	/** Models a single artifact from the result set returned when searching for artifacts. */
 	export interface SearchedVersionFormProperties {
 
-		/** Required */
-		contentId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: FormControl<string | null | undefined>,
 
 		/** Required */
 		createdBy: FormControl<string | null | undefined>,
@@ -932,8 +1011,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -954,11 +1036,11 @@ export namespace MyNS {
 	}
 	export function CreateSearchedVersionFormGroup() {
 		return new FormGroup<SearchedVersionFormProperties>({
-			contentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			contentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ArtifactMetaDataState | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1089,8 +1171,11 @@ export namespace MyNS {
 
 	export interface VersionMetaData {
 
-		/** Required */
-		contentId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: string;
 
 		/** Required */
 		createdBy: string;
@@ -1099,8 +1184,11 @@ export namespace MyNS {
 		createdOn: Date;
 		description?: string | null;
 
-		/** Required */
-		globalId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: string;
 
 		/** An ID of a single artifact group. */
 		groupId?: string | null;
@@ -1133,8 +1221,11 @@ export namespace MyNS {
 	}
 	export interface VersionMetaDataFormProperties {
 
-		/** Required */
-		contentId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentId: FormControl<string | null | undefined>,
 
 		/** Required */
 		createdBy: FormControl<string | null | undefined>,
@@ -1143,8 +1234,11 @@ export namespace MyNS {
 		createdOn: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		globalId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		globalId: FormControl<string | null | undefined>,
 
 		/** An ID of a single artifact group. */
 		groupId: FormControl<string | null | undefined>,
@@ -1173,11 +1267,11 @@ export namespace MyNS {
 	}
 	export function CreateVersionMetaDataFormGroup() {
 		return new FormGroup<VersionMetaDataFormProperties>({
-			contentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			contentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdOn: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			globalId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			globalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			groupId: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -1196,6 +1290,7 @@ export namespace MyNS {
 		 * The total number of versions that matched the query (may be more than the number of versions
 		 * returned in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1213,6 +1308,7 @@ export namespace MyNS {
 		 * The total number of versions that matched the query (may be more than the number of versions
 		 * returned in the result set).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -1497,7 +1593,9 @@ export namespace MyNS {
 		 * Returns a list of all groups.  This list is paged.
 		 * Get groups
 		 * @param {number} limit The number of groups to return.  Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The number of groups to skip before starting the result set.  Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SortOrder} order Sort order, ascending (`asc`) or descending (`desc`).
 		 * @param {SortBy} orderby The field to sort by.  Can be one of:
 		 * * `name`
@@ -1562,7 +1660,9 @@ export namespace MyNS {
 		 * Returns a list of all artifacts in the group.  This list is paged.
 		 * Get groups/{groupId}/artifacts
 		 * @param {number} limit The number of artifacts to return.  Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The number of artifacts to skip before starting the result set.  Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SortOrder} order Sort order, ascending (`asc`) or descending (`desc`).
 		 * @param {SortBy} orderby The field to sort by.  Can be one of:
 		 * * `name`
@@ -1775,7 +1875,9 @@ export namespace MyNS {
 		 * * A server error occurred (HTTP error `500`)
 		 * Get groups/{groupId}/artifacts/{artifactId}/versions
 		 * @param {number} offset The number of versions to skip before starting to collect the result set.  Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of versions to return.  Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VersionSearchResults} List of all artifact versions.
 		 */
 		ListArtifactVersions(offset: number | null | undefined, limit: number | null | undefined): Observable<VersionSearchResults> {
@@ -1983,7 +2085,9 @@ export namespace MyNS {
 		 * Get search/artifacts
 		 * @param {string} name Filter by artifact name.
 		 * @param {number} offset The number of artifacts to skip before starting to collect the result set.  Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of artifacts to return.  Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SortOrder} order Sort order, ascending (`asc`) or descending (`desc`).
 		 * @param {SortBy} orderby The field to sort by.  Can be one of:
 		 * * `name`
@@ -1995,12 +2099,14 @@ export namespace MyNS {
 		 * and value `bar`.
 		 * @param {string} description Filter by description.
 		 * @param {string} group Filter by artifact group.
-		 * @param {number} globalId Filter by globalId.
-		 * @param {number} contentId Filter by contentId.
+		 * @param {string} globalId Filter by globalId.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} contentId Filter by contentId.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ArtifactSearchResults} On a successful response, returns a result set of artifacts - one for each artifact
 		 * in the registry that matches the criteria.
 		 */
-		SearchArtifacts(name: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, order: SortOrder | null | undefined, orderby: SortBy | null | undefined, labels: Array<string> | null | undefined, properties: Array<string> | null | undefined, description: string | null | undefined, group: string | null | undefined, globalId: number | null | undefined, contentId: number | null | undefined): Observable<ArtifactSearchResults> {
+		SearchArtifacts(name: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, order: SortOrder | null | undefined, orderby: SortBy | null | undefined, labels: Array<string> | null | undefined, properties: Array<string> | null | undefined, description: string | null | undefined, group: string | null | undefined, globalId: string | null | undefined, contentId: string | null | undefined): Observable<ArtifactSearchResults> {
 			return this.http.get<ArtifactSearchResults>(this.baseUri + 'search/artifacts?name=' + (name == null ? '' : encodeURIComponent(name)) + '&offset=' + offset + '&limit=' + limit + '&order=' + order + '&orderby=' + orderby + '&' + labels?.map(z => `labels=${encodeURIComponent(z)}`).join('&') + '&' + properties?.map(z => `properties=${encodeURIComponent(z)}`).join('&') + '&description=' + (description == null ? '' : encodeURIComponent(description)) + '&group=' + (group == null ? '' : encodeURIComponent(group)) + '&globalId=' + globalId + '&contentId=' + contentId, {});
 		}
 

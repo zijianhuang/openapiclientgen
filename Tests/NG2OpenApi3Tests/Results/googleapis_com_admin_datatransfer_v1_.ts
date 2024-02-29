@@ -255,6 +255,7 @@ export namespace MyNS {
 		 * Get admin/datatransfer/v1/applications
 		 * @param {string} customerId Immutable ID of the Google Workspace account.
 		 * @param {number} maxResults Maximum number of results to return. Default is 100.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @return {ApplicationsListResponse} Successful response
 		 */
@@ -277,6 +278,7 @@ export namespace MyNS {
 		 * Get admin/datatransfer/v1/transfers
 		 * @param {string} customerId Immutable ID of the Google Workspace account.
 		 * @param {number} maxResults Maximum number of results to return. Default is 100.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} newOwnerUserId Destination user's profile ID.
 		 * @param {string} oldOwnerUserId Source user's profile ID.
 		 * @param {string} pageToken Token to specify the next page in the list.

@@ -608,6 +608,7 @@ export namespace MyNS {
 		 * Description for Get all domains in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
 		 * @return {DomainCollection} OK
@@ -621,6 +622,7 @@ export namespace MyNS {
 		 * Description for Get a domain.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of the domain.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -635,6 +637,7 @@ export namespace MyNS {
 		 * Description for Creates or updates a domain.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of the domain.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -650,6 +653,7 @@ export namespace MyNS {
 		 * Description for Delete a domain.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of the domain.
 		 * @param {boolean} forceHardDeleteDomain Specify <code>true</code> to delete the domain immediately. The default is <code>false</code> which deletes the domain after 24 hours.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -665,6 +669,7 @@ export namespace MyNS {
 		 * Description for Creates or updates a domain.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of the domain.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -680,6 +685,7 @@ export namespace MyNS {
 		 * Description for Lists domain ownership identifiers.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of domain.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -694,6 +700,7 @@ export namespace MyNS {
 		 * Description for Get ownership identifier for domain
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of domain.
 		 * @param {string} name Name of identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -709,6 +716,7 @@ export namespace MyNS {
 		 * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifer
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of domain.
 		 * @param {string} name Name of identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -725,6 +733,7 @@ export namespace MyNS {
 		 * Description for Delete ownership identifier for domain
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of domain.
 		 * @param {string} name Name of identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -740,6 +749,7 @@ export namespace MyNS {
 		 * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifer
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of domain.
 		 * @param {string} name Name of identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -756,6 +766,7 @@ export namespace MyNS {
 		 * Description for Renew a domain.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/renew
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainName Name of the domain.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version

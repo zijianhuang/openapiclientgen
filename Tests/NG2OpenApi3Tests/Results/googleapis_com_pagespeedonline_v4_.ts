@@ -61,15 +61,31 @@ export namespace MyNS {
 	}
 
 	export interface PagespeedApiFormatStringV4ArgsRects {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PagespeedApiFormatStringV4ArgsRectsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiFormatStringV4ArgsRectsFormGroup() {
@@ -83,15 +99,31 @@ export namespace MyNS {
 	}
 
 	export interface PagespeedApiFormatStringV4ArgsSecondary_rects {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PagespeedApiFormatStringV4ArgsSecondary_rectsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiFormatStringV4ArgsSecondary_rectsFormGroup() {
@@ -109,7 +141,10 @@ export namespace MyNS {
 		/** Image data base64 encoded. */
 		data?: string | null;
 
-		/** Height of screenshot in pixels. */
+		/**
+		 * Height of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Unique string key, if any, identifying this image. */
@@ -119,7 +154,10 @@ export namespace MyNS {
 		mime_type?: string | null;
 		page_rect?: PagespeedApiImageV4Page_rect;
 
-		/** Width of screenshot in pixels. */
+		/**
+		 * Width of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PagespeedApiImageV4FormProperties {
@@ -127,7 +165,10 @@ export namespace MyNS {
 		/** Image data base64 encoded. */
 		data: FormControl<string | null | undefined>,
 
-		/** Height of screenshot in pixels. */
+		/**
+		 * Height of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Unique string key, if any, identifying this image. */
@@ -136,7 +177,10 @@ export namespace MyNS {
 		/** Mime type of image data (e.g. "image/jpeg"). */
 		mime_type: FormControl<string | null | undefined>,
 
-		/** Width of screenshot in pixels. */
+		/**
+		 * Width of screenshot in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiImageV4FormGroup() {
@@ -151,15 +195,31 @@ export namespace MyNS {
 	}
 
 	export interface PagespeedApiImageV4Page_rect {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PagespeedApiImageV4Page_rectFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		left: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiImageV4Page_rectFormGroup() {
@@ -195,7 +255,10 @@ export namespace MyNS {
 		/** Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc. */
 		pageStats?: PagespeedApiPagespeedResponseV4PageStats;
 
-		/** Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error. */
+		/**
+		 * Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode?: number | null;
 
 		/** A map with one entry for each rule group in these results. */
@@ -222,7 +285,10 @@ export namespace MyNS {
 		/** Kind of result. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error. */
+		/**
+		 * Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode: FormControl<number | null | undefined>,
 
 		/** A map with one entry for each rule group in these results. */
@@ -278,7 +344,10 @@ export namespace MyNS {
 		/** Localized name of the rule, intended for presentation to a user. */
 		localizedRuleName?: string | null;
 
-		/** The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal. */
+		/**
+		 * The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal.
+		 * Type: double
+		 */
 		ruleImpact?: number | null;
 		summary?: PagespeedApiFormatStringV4;
 
@@ -293,7 +362,10 @@ export namespace MyNS {
 		/** Localized name of the rule, intended for presentation to a user. */
 		localizedRuleName: FormControl<string | null | undefined>,
 
-		/** The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal. */
+		/**
+		 * The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule's suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal.
+		 * Type: double
+		 */
 		ruleImpact: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiPagespeedResponseV4FormattedResultsRuleResultsFormGroup() {
@@ -362,10 +434,14 @@ export namespace MyNS {
 	export interface PagespeedApiPagespeedResponseV4LoadingExperienceMetrics {
 		category?: string | null;
 		PagespeedApiPagespeedResponseV4LoadingExperienceMetricsDistributions?: Array<PagespeedApiPagespeedResponseV4LoadingExperienceMetricsDistributions>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median?: number | null;
 	}
 	export interface PagespeedApiPagespeedResponseV4LoadingExperienceMetricsFormProperties {
 		category: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		median: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiPagespeedResponseV4LoadingExperienceMetricsFormGroup() {
@@ -377,13 +453,25 @@ export namespace MyNS {
 	}
 
 	export interface PagespeedApiPagespeedResponseV4LoadingExperienceMetricsDistributions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min?: number | null;
+
+		/** Type: double */
 		proportion?: number | null;
 	}
 	export interface PagespeedApiPagespeedResponseV4LoadingExperienceMetricsDistributionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		proportion: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiPagespeedResponseV4LoadingExperienceMetricsDistributionsFormGroup() {
@@ -415,31 +503,58 @@ export namespace MyNS {
 		/** Number of uncompressed response bytes for JS resources on the page. */
 		javascriptResponseBytes?: string | null;
 
-		/** The needed round trips to load render blocking resources */
+		/**
+		 * The needed round trips to load render blocking resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numRenderBlockingRoundTrips?: number | null;
 
-		/** The needed round trips to load the full page */
+		/**
+		 * The needed round trips to load the full page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTotalRoundTrips?: number | null;
 
-		/** Number of CSS resources referenced by the page. */
+		/**
+		 * Number of CSS resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberCssResources?: number | null;
 
-		/** Number of unique hosts referenced by the page. */
+		/**
+		 * Number of unique hosts referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberHosts?: number | null;
 
-		/** Number of JavaScript resources referenced by the page. */
+		/**
+		 * Number of JavaScript resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberJsResources?: number | null;
 
-		/** Number of HTTP resources loaded by the page. */
+		/**
+		 * Number of HTTP resources loaded by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberResources?: number | null;
 
-		/** Number of roboted resources. */
+		/**
+		 * Number of roboted resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberRobotedResources?: number | null;
 
-		/** Number of static (i.e. cacheable) resources on the page. */
+		/**
+		 * Number of static (i.e. cacheable) resources on the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberStaticResources?: number | null;
 
-		/** Number of transient-failed resources. */
+		/**
+		 * Number of transient-failed resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberTransientFetchFailureResources?: number | null;
 
 		/** Number of response bytes for other resources on the page. */
@@ -480,31 +595,58 @@ export namespace MyNS {
 		/** Number of uncompressed response bytes for JS resources on the page. */
 		javascriptResponseBytes: FormControl<string | null | undefined>,
 
-		/** The needed round trips to load render blocking resources */
+		/**
+		 * The needed round trips to load render blocking resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numRenderBlockingRoundTrips: FormControl<number | null | undefined>,
 
-		/** The needed round trips to load the full page */
+		/**
+		 * The needed round trips to load the full page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTotalRoundTrips: FormControl<number | null | undefined>,
 
-		/** Number of CSS resources referenced by the page. */
+		/**
+		 * Number of CSS resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberCssResources: FormControl<number | null | undefined>,
 
-		/** Number of unique hosts referenced by the page. */
+		/**
+		 * Number of unique hosts referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberHosts: FormControl<number | null | undefined>,
 
-		/** Number of JavaScript resources referenced by the page. */
+		/**
+		 * Number of JavaScript resources referenced by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberJsResources: FormControl<number | null | undefined>,
 
-		/** Number of HTTP resources loaded by the page. */
+		/**
+		 * Number of HTTP resources loaded by the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberResources: FormControl<number | null | undefined>,
 
-		/** Number of roboted resources. */
+		/**
+		 * Number of roboted resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberRobotedResources: FormControl<number | null | undefined>,
 
-		/** Number of static (i.e. cacheable) resources on the page. */
+		/**
+		 * Number of static (i.e. cacheable) resources on the page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberStaticResources: FormControl<number | null | undefined>,
 
-		/** Number of transient-failed resources. */
+		/**
+		 * Number of transient-failed resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberTransientFetchFailureResources: FormControl<number | null | undefined>,
 
 		/** Number of response bytes for other resources on the page. */
@@ -547,13 +689,19 @@ export namespace MyNS {
 	export interface PagespeedApiPagespeedResponseV4RuleGroups {
 		pass?: boolean | null;
 
-		/** The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable, or how much more secure). A high score indicates little room for improvement, while a lower score indicates more room for improvement. */
+		/**
+		 * The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable, or how much more secure). A high score indicates little room for improvement, while a lower score indicates more room for improvement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface PagespeedApiPagespeedResponseV4RuleGroupsFormProperties {
 		pass: FormControl<boolean | null | undefined>,
 
-		/** The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable, or how much more secure). A high score indicates little room for improvement, while a lower score indicates more room for improvement. */
+		/**
+		 * The score (0-100) for this rule group, which indicates how much better a page could be in that category (e.g. how much faster, or how much more usable, or how much more secure). A high score indicates little room for improvement, while a lower score indicates more room for improvement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiPagespeedResponseV4RuleGroupsFormGroup() {
@@ -566,18 +714,30 @@ export namespace MyNS {
 
 	export interface PagespeedApiPagespeedResponseV4Version {
 
-		/** The major version number of PageSpeed used to generate these results. */
+		/**
+		 * The major version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** The minor version number of PageSpeed used to generate these results. */
+		/**
+		 * The minor version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 	}
 	export interface PagespeedApiPagespeedResponseV4VersionFormProperties {
 
-		/** The major version number of PageSpeed used to generate these results. */
+		/**
+		 * The major version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** The minor version number of PageSpeed used to generate these results. */
+		/**
+		 * The minor version number of PageSpeed used to generate these results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 	}
 	export function CreatePagespeedApiPagespeedResponseV4VersionFormGroup() {

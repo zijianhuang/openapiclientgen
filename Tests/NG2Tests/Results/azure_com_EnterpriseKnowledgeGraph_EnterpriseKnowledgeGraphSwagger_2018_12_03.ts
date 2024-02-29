@@ -360,6 +360,7 @@ export namespace MyNS {
 		 * Returns all the resources of a particular type belonging to a resource group
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services
 		 * @param {string} resourceGroupName The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {EnterpriseKnowledgeGraphResponseList} The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -380,7 +381,9 @@ export namespace MyNS {
 		 * Returns a EnterpriseKnowledgeGraph service specified by the parameters.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		 * @param {string} resourceGroupName The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the EnterpriseKnowledgeGraph resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {EnterpriseKnowledgeGraph} The resource provider should return 200 (OK) to indicate that the operation completed successfully. 
@@ -393,7 +396,9 @@ export namespace MyNS {
 		 * Creates a EnterpriseKnowledgeGraph Service. EnterpriseKnowledgeGraph Service is a resource group wide resource type.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		 * @param {string} resourceGroupName The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the EnterpriseKnowledgeGraph resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {EnterpriseKnowledgeGraph} requestBody The parameters to provide for the created EnterpriseKnowledgeGraph.
@@ -407,7 +412,9 @@ export namespace MyNS {
 		 * Deletes a EnterpriseKnowledgeGraph Service from the resource group.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		 * @param {string} resourceGroupName The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the EnterpriseKnowledgeGraph resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @return {void} A 200 (OK) should be returned if the object exists and was deleted successfully;
@@ -420,7 +427,9 @@ export namespace MyNS {
 		 * Updates a EnterpriseKnowledgeGraph Service
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		 * @param {string} resourceGroupName The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} resourceName The name of the EnterpriseKnowledgeGraph resource.
+		 *     Min length: 2    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {EnterpriseKnowledgeGraph} requestBody The parameters to provide for the created EnterpriseKnowledgeGraph.

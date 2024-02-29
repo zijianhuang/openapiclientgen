@@ -4108,7 +4108,10 @@ namespace MyNS
 		/// GET_DeleteIdentityPolicy #Action=DeleteIdentityPolicy
 		/// </summary>
 		/// <param name="Identity"><p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p></param>
-		/// <param name="PolicyName">The name of the policy to be deleted.</param>
+		/// <param name="PolicyName">The name of the policy to be deleted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteIdentityPolicyAsync(string Identity, string PolicyName, GET_DeleteIdentityPolicyAction Action, GET_DeleteIdentityPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4764,7 +4767,10 @@ namespace MyNS
 		/// GET_ListCustomVerificationEmailTemplates #Action=ListCustomVerificationEmailTemplates
 		/// </summary>
 		/// <param name="NextToken">An array the contains the name and creation time stamp for each template in your Amazon SES account.</param>
-		/// <param name="MaxResults">The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</param>
+		/// <param name="MaxResults">The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListCustomVerificationEmailTemplatesAsync(string NextToken, int MaxResults, GET_ListCustomVerificationEmailTemplatesAction Action, GET_ListCustomVerificationEmailTemplatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5013,8 +5019,13 @@ namespace MyNS
 		/// GET_PutIdentityPolicy #Action=PutIdentityPolicy
 		/// </summary>
 		/// <param name="Identity"><p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p></param>
-		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p></param>
-		/// <param name="Policy"><p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p> <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p></param>
+		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="Policy"><p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p> <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_PutIdentityPolicyAsync(string Identity, string PolicyName, string Policy, GET_PutIdentityPolicyAction Action, GET_PutIdentityPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5113,7 +5124,9 @@ namespace MyNS
 		/// <param name="DefaultTags">A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</param>
 		/// <param name="Template">The template to use when sending this email.</param>
 		/// <param name="TemplateArn">The ARN of the template to use when sending this email.</param>
-		/// <param name="DefaultTemplateData"><p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p> <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p></param>
+		/// <param name="DefaultTemplateData"><p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p> <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+		/// Max length: 262144
+		// </param>
 		/// <param name="Destinations">One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</param>
 		/// <returns>Success</returns>
 		public async Task GET_SendBulkTemplatedEmailAsync(string Source, string SourceArn, string[] ReplyToAddresses, string ReturnPath, string ReturnPathArn, string ConfigurationSetName, MessageTag[] DefaultTags, string Template, string TemplateArn, string DefaultTemplateData, BulkEmailDestination[] Destinations, GET_SendBulkTemplatedEmailAction Action, GET_SendBulkTemplatedEmailVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5253,7 +5266,9 @@ namespace MyNS
 		/// <param name="ConfigurationSetName">The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</param>
 		/// <param name="Template">The template to use when sending this email.</param>
 		/// <param name="TemplateArn">The ARN of the template to use when sending this email.</param>
-		/// <param name="TemplateData">A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</param>
+		/// <param name="TemplateData">A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
+		/// Max length: 262144
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_SendTemplatedEmailAsync(string Source, GET_SendTemplatedEmailDestination Destination, string[] ReplyToAddresses, string ReturnPath, string SourceArn, string ReturnPathArn, MessageTag[] Tags, string ConfigurationSetName, string Template, string TemplateArn, string TemplateData, GET_SendTemplatedEmailAction Action, GET_SendTemplatedEmailVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5488,7 +5503,9 @@ namespace MyNS
 		/// GET_TestRenderTemplate #Action=TestRenderTemplate
 		/// </summary>
 		/// <param name="TemplateName">The name of the template that you want to render.</param>
-		/// <param name="TemplateData">A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</param>
+		/// <param name="TemplateData">A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
+		/// Max length: 262144
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_TestRenderTemplateAsync(string TemplateName, string TemplateData, GET_TestRenderTemplateAction Action, GET_TestRenderTemplateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

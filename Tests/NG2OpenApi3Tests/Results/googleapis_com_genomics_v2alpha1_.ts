@@ -279,7 +279,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -292,7 +295,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -418,14 +424,20 @@ export namespace MyNS {
 	/** An event generated when a container is forcibly terminated by the worker. Currently, this only occurs when the container outlives the timeout specified by the user. */
 	export interface ContainerKilledEvent {
 
-		/** The numeric ID of the action that started the container. */
+		/**
+		 * The numeric ID of the action that started the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId?: number | null;
 	}
 
 	/** An event generated when a container is forcibly terminated by the worker. Currently, this only occurs when the container outlives the timeout specified by the user. */
 	export interface ContainerKilledEventFormProperties {
 
-		/** The numeric ID of the action that started the container. */
+		/**
+		 * The numeric ID of the action that started the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerKilledEventFormGroup() {
@@ -439,7 +451,10 @@ export namespace MyNS {
 	/** An event generated when a container starts. */
 	export interface ContainerStartedEvent {
 
-		/** The numeric ID of the action that started this container. */
+		/**
+		 * The numeric ID of the action that started this container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId?: number | null;
 
 		/** The public IP address that can be used to connect to the container. This field is only populated when at least one port mapping is present. If the instance was created with a private address, this field will be empty even if port mappings exist. */
@@ -452,7 +467,10 @@ export namespace MyNS {
 	/** An event generated when a container starts. */
 	export interface ContainerStartedEventFormProperties {
 
-		/** The numeric ID of the action that started this container. */
+		/**
+		 * The numeric ID of the action that started this container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId: FormControl<number | null | undefined>,
 
 		/** The public IP address that can be used to connect to the container. This field is only populated when at least one port mapping is present. If the instance was created with a private address, this field will be empty even if port mappings exist. */
@@ -474,10 +492,16 @@ export namespace MyNS {
 	/** An event generated when a container exits. */
 	export interface ContainerStoppedEvent {
 
-		/** The numeric ID of the action that started this container. */
+		/**
+		 * The numeric ID of the action that started this container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId?: number | null;
 
-		/** The exit status of the container. */
+		/**
+		 * The exit status of the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitStatus?: number | null;
 
 		/** The tail end of any content written to standard error by the container. If the content emits large amounts of debugging noise or contains sensitive information, you can prevent the content from being printed by setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag. Note that only a small amount of the end of the stream is captured here. The entire stream is stored in the `/google/logs` directory mounted into each action, and can be copied off the machine as described elsewhere. */
@@ -487,10 +511,16 @@ export namespace MyNS {
 	/** An event generated when a container exits. */
 	export interface ContainerStoppedEventFormProperties {
 
-		/** The numeric ID of the action that started this container. */
+		/**
+		 * The numeric ID of the action that started this container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId: FormControl<number | null | undefined>,
 
-		/** The exit status of the container. */
+		/**
+		 * The exit status of the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitStatus: FormControl<number | null | undefined>,
 
 		/** The tail end of any content written to standard error by the container. If the content emits large amounts of debugging noise or contains sensitive information, you can prevent the content from being printed by setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag. Note that only a small amount of the end of the stream is captured here. The entire stream is stored in the `/google/logs` directory mounted into each action, and can be copied off the machine as described elsewhere. */
@@ -536,7 +566,10 @@ export namespace MyNS {
 		/** A user-supplied name for the disk. Used when mounting the disk into actions. The name must contain only upper and lowercase alphanumeric characters and hyphens and cannot start with a hyphen. */
 		name?: string | null;
 
-		/** The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance. */
+		/**
+		 * The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** An optional image to put on the disk before attaching it to the VM. */
@@ -552,7 +585,10 @@ export namespace MyNS {
 		/** A user-supplied name for the disk. Used when mounting the disk into actions. The name must contain only upper and lowercase alphanumeric characters and hyphens and cannot start with a hyphen. */
 		name: FormControl<string | null | undefined>,
 
-		/** The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance. */
+		/**
+		 * The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** An optional image to put on the disk before attaching it to the VM. */
@@ -848,7 +884,10 @@ export namespace MyNS {
 		/** The list of accelerators to attach to the VM. */
 		accelerators?: Array<Accelerator>;
 
-		/** The size of the boot disk, in GB. The boot disk must be large enough to accommodate all of the Docker images from each action in the pipeline at the same time. If not specified, a small but reasonable default value is used. */
+		/**
+		 * The size of the boot disk, in GB. The boot disk must be large enough to accommodate all of the Docker images from each action in the pipeline at the same time. If not specified, a small but reasonable default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb?: number | null;
 
 		/** The host operating system image to use. Currently, only Container-Optimized OS images can be used. The default value is `projects/cos-cloud/global/images/family/cos-stable`, which selects the latest stable release of Container-Optimized OS. This option is provided to allow testing against the beta release of the operating system to ensure that the new version does not interact negatively with production pipelines. To test a pipeline against the beta release of Container-Optimized OS, use the value `projects/cos-cloud/global/images/family/cos-beta`. */
@@ -894,7 +933,10 @@ export namespace MyNS {
 	/** Carries information about a Compute Engine VM resource. */
 	export interface VirtualMachineFormProperties {
 
-		/** The size of the boot disk, in GB. The boot disk must be large enough to accommodate all of the Docker images from each action in the pipeline at the same time. If not specified, a small but reasonable default value is used. */
+		/**
+		 * The size of the boot disk, in GB. The boot disk must be large enough to accommodate all of the Docker images from each action in the pipeline at the same time. If not specified, a small but reasonable default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb: FormControl<number | null | undefined>,
 
 		/** The host operating system image to use. Currently, only Container-Optimized OS images can be used. The default value is `projects/cos-cloud/global/images/family/cos-stable`, which selects the latest stable release of Container-Optimized OS. This option is provided to allow testing against the beta release of the operating system to ensure that the new version does not interact negatively with production pipelines. To test a pipeline against the beta release of Container-Optimized OS, use the value `projects/cos-cloud/global/images/family/cos-beta`. */
@@ -1050,7 +1092,10 @@ export namespace MyNS {
 	/** Configuration for a persistent disk to be attached to the VM. See https://cloud.google.com/compute/docs/disks/performance for more information about disk type, size, and performance considerations. */
 	export interface PersistentDisk {
 
-		/** The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance. */
+		/**
+		 * The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** An image to put on the disk before attaching it to the VM. */
@@ -1063,7 +1108,10 @@ export namespace MyNS {
 	/** Configuration for a persistent disk to be attached to the VM. See https://cloud.google.com/compute/docs/disks/performance for more information about disk type, size, and performance considerations. */
 	export interface PersistentDiskFormProperties {
 
-		/** The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance. */
+		/**
+		 * The size, in GB, of the disk to attach. If the size is not specified, a default is chosen to ensure reasonable I/O performance. If the disk type is specified as `local-ssd`, multiple local drives are automatically combined to provide the requested size. Note, however, that each physical SSD is 375GB in size, and no more than 8 drives can be attached to a single instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** An image to put on the disk before attaching it to the VM. */
@@ -1172,20 +1220,32 @@ export namespace MyNS {
 	/** An event generated when the execution of a container results in a non-zero exit status that was not otherwise ignored. Execution will continue, but only actions that are flagged as `ALWAYS_RUN` will be executed. Other actions will be skipped. */
 	export interface UnexpectedExitStatusEvent {
 
-		/** The numeric ID of the action that started the container. */
+		/**
+		 * The numeric ID of the action that started the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId?: number | null;
 
-		/** The exit status of the container. */
+		/**
+		 * The exit status of the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitStatus?: number | null;
 	}
 
 	/** An event generated when the execution of a container results in a non-zero exit status that was not otherwise ignored. Execution will continue, but only actions that are flagged as `ALWAYS_RUN` will be executed. Other actions will be skipped. */
 	export interface UnexpectedExitStatusEventFormProperties {
 
-		/** The numeric ID of the action that started the container. */
+		/**
+		 * The numeric ID of the action that started the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId: FormControl<number | null | undefined>,
 
-		/** The exit status of the container. */
+		/**
+		 * The exit status of the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateUnexpectedExitStatusEventFormGroup() {
@@ -1299,6 +1359,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter A string for filtering Operations. In v2alpha1, the following filter fields are supported: * createTime: The time this job was created * events: The set of event (names) that have occurred while running the pipeline. The : operator can be used to determine if a particular event has occurred. * error: If the pipeline is running, this value is NULL. Once the pipeline finishes, the value is the standard Google error code. * labels.key or labels."key with space" where key is a label key. * done: If the pipeline is running, this value is false. Once the pipeline finishes, the value is true. Examples: * `projectId = my-project AND createTime >= 1432140000` * `projectId = my-project AND createTime >= 1432140000 AND createTime <= 1432150000 AND status = RUNNING` * `projectId = my-project AND labels.color = *` * `projectId = my-project AND labels.color = red`
 		 * @param {number} pageSize The maximum number of results to return. The maximum value is 256.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

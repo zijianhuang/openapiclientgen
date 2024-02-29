@@ -691,14 +691,22 @@ export namespace MyNS {
 	export interface AddOrReplaceDocumentsPostBody {
 		author?: string | null;
 		genre?: string | null;
+
+		/** Type: double */
 		id?: number | null;
+
+		/** Type: double */
 		price?: number | null;
 		title?: string | null;
 	}
 	export interface AddOrReplaceDocumentsPostBodyFormProperties {
 		author: FormControl<string | null | undefined>,
 		genre: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -716,11 +724,15 @@ export namespace MyNS {
 	export interface AddOrUpdateDocumentsPutBody {
 		author?: string | null;
 		date?: string | null;
+
+		/** Type: double */
 		id?: number | null;
 	}
 	export interface AddOrUpdateDocumentsPutBodyFormProperties {
 		author: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateAddOrUpdateDocumentsPutBodyFormGroup() {
@@ -762,9 +774,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFacetingPatchBody {
+
+		/** Type: double */
 		maxValuesPerFacet?: number | null;
 	}
 	export interface UpdateFacetingPatchBodyFormProperties {
+
+		/** Type: double */
 		maxValuesPerFacet: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFacetingPatchBodyFormGroup() {
@@ -775,9 +791,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePaginationPatchBody {
+
+		/** Type: double */
 		maxTotalHits?: number | null;
 	}
 	export interface UpdatePaginationPatchBodyFormProperties {
+
+		/** Type: double */
 		maxTotalHits: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdatePaginationPatchBodyFormGroup() {
@@ -813,11 +833,19 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTypoTolerancePatchBodyMinWordSizeForTypos {
+
+		/** Type: double */
 		oneTypo?: number | null;
+
+		/** Type: double */
 		twoTypos?: number | null;
 	}
 	export interface UpdateTypoTolerancePatchBodyMinWordSizeForTyposFormProperties {
+
+		/** Type: double */
 		oneTypo: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		twoTypos: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateTypoTolerancePatchBodyMinWordSizeForTyposFormGroup() {

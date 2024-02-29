@@ -340,7 +340,9 @@ export namespace MyNS {
 		 * @param {Array<number>} typeid TypeID. Multiple TypeIDs can be specified in the following format (up to 200 TypeIDs per request):
 		 * typeid=34&typeid=35 or typeid=34,35
 		 * @param {number} regionlimit Limit the statistics to a single region.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} usesystem Limit the statistics to a single solar system.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful Request
 		 */
 		MarketstatGetByTypeidAndRegionlimitAndUsesystem(typeid: Array<number>, regionlimit: number | null | undefined, usesystem: number | null | undefined): Observable<HttpResponse<string>> {
@@ -362,7 +364,9 @@ export namespace MyNS {
 		 * @param {Array<number>} typeid TypeID. Multiple TypeIDs can be specified in the following format (up to 200 TypeIDs per request):
 		 * typeid=34&typeid=35 or typeid=34,35
 		 * @param {number} regionlimit Limit the statistics to a single region.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} usesystem Limit the statistics to a single region.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Type>} Successful Request
 		 */
 		MarketstatPostByTypeidAndRegionlimitAndUsesystem(typeid: Array<number>, regionlimit: number | null | undefined, usesystem: number | null | undefined): Observable<Array<Type>> {

@@ -285,10 +285,16 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sort_order: number;
 
 		/** Required */
@@ -321,10 +327,16 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sort_order: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -385,7 +397,9 @@ export namespace MyNS {
 		 * Get a list of all combined submissions
 		 * Get combined_submissions
 		 * @param {number} page Default: 1
+		 *     Minimum: 1
 		 * @param {number} per_page Default: 50
+		 *     Minimum: 1    Maximum: 50
 		 * @return {Array<ListCombinedSubmissionsReturn>} enumerate all combined submissions
 		 */
 		ListCombinedSubmissions(page: number | null | undefined, per_page: number | null | undefined): Observable<Array<ListCombinedSubmissionsReturn>> {
@@ -513,6 +527,7 @@ export namespace MyNS {
 		/**
 		 * List all submissions
 		 * Get submissions
+		 * @param {number} limit Type: double
 		 * @return {ListSubmissionsReturn} listing submissions
 		 */
 		ListSubmissions(cursor: string | null | undefined, limit: number | null | undefined, created_after: string | null | undefined, created_before: string | null | undefined, type: string | null | undefined, include_data: boolean | null | undefined): Observable<ListSubmissionsReturn> {
@@ -561,7 +576,9 @@ export namespace MyNS {
 		 * @param {string} query Search By Name
 		 * @param {string} parent_folder_id Filter By Folder Id
 		 * @param {number} page Default: 1
+		 *     Minimum: 1
 		 * @param {number} per_page Default: 50
+		 *     Minimum: 1    Maximum: 50
 		 * @return {Array<ListTemplatesReturn>} enumerate all templates
 		 */
 		ListTemplates(query: string | null | undefined, parent_folder_id: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<Array<ListTemplatesReturn>> {
@@ -625,6 +642,7 @@ export namespace MyNS {
 		/**
 		 * List all submissions for a given template
 		 * Get templates/{template_id}/submissions
+		 * @param {number} limit Type: double
 		 * @return {PDFGetByTemplate_idAndCursorAndLimitAndCreated_afterAndCreated_beforeAndTypeAndInclude_dataReturn} listing submissions
 		 */
 		PDFGetByTemplate_idAndCursorAndLimitAndCreated_afterAndCreated_beforeAndTypeAndInclude_data(template_id: string, cursor: string | null | undefined, limit: number | null | undefined, created_after: string | null | undefined, created_before: string | null | undefined, type: string | null | undefined, include_data: boolean | null | undefined): Observable<PDFGetByTemplate_idAndCursorAndLimitAndCreated_afterAndCreated_beforeAndTypeAndInclude_dataReturn> {
@@ -713,6 +731,8 @@ export namespace MyNS {
 		/** Required */
 		expired: boolean;
 		expires_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 
 		/** Required */
@@ -737,6 +757,8 @@ export namespace MyNS {
 		/** Required */
 		expired: FormControl<boolean | null | undefined>,
 		expires_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -767,6 +789,8 @@ export namespace MyNS {
 	export enum ListCombinedSubmissionsReturnState { pending = 'pending', processed = 'processed', error = 'error' }
 
 	export interface CombineSubmissionsPostBody {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 		metadata?: string | null;
 		password?: string | null;
@@ -776,6 +800,8 @@ export namespace MyNS {
 		test?: boolean | null;
 	}
 	export interface CombineSubmissionsPostBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 		metadata: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
@@ -799,6 +825,8 @@ export namespace MyNS {
 		/** Required */
 		expired: boolean;
 		expires_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 
 		/** Required */
@@ -823,6 +851,8 @@ export namespace MyNS {
 		/** Required */
 		expired: FormControl<boolean | null | undefined>,
 		expires_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -858,6 +888,8 @@ export namespace MyNS {
 		/** Required */
 		expired: boolean;
 		expires_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 
 		/** Required */
@@ -882,6 +914,8 @@ export namespace MyNS {
 		/** Required */
 		expired: FormControl<boolean | null | undefined>,
 		expires_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -911,6 +945,8 @@ export namespace MyNS {
 
 	export interface CombinePdfsPostBody {
 		delete_custom_files?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 		metadata?: string | null;
 		password?: string | null;
@@ -921,6 +957,8 @@ export namespace MyNS {
 	}
 	export interface CombinePdfsPostBodyFormProperties {
 		delete_custom_files: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 		metadata: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
@@ -973,6 +1011,8 @@ export namespace MyNS {
 		fields?: Array<string>;
 		metadata?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface UpdateDataRequestPutBodyFormProperties {
@@ -987,6 +1027,8 @@ export namespace MyNS {
 		email: FormControl<string | null | undefined>,
 		metadata: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDataRequestPutBodyFormGroup() {
@@ -1183,7 +1225,10 @@ export namespace MyNS {
 
 	export interface ListSubmissionsReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: number;
 
 		/** Required */
@@ -1194,7 +1239,10 @@ export namespace MyNS {
 	}
 	export interface ListSubmissionsReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1295,10 +1343,16 @@ export namespace MyNS {
 
 	export interface BatchGeneratePdfsReturnSubmission_batch {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completion_percentage: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_count: number;
 
 		/** Required */
@@ -1307,7 +1361,10 @@ export namespace MyNS {
 		/** Required */
 		metadata: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending_count: number;
 
 		/** Required */
@@ -1317,15 +1374,24 @@ export namespace MyNS {
 		state: ListCombinedSubmissionsReturnState;
 		submissions?: Array<Submission>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface BatchGeneratePdfsReturnSubmission_batchFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completion_percentage: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1334,7 +1400,10 @@ export namespace MyNS {
 		/** Required */
 		metadata: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1343,7 +1412,10 @@ export namespace MyNS {
 		/** Required */
 		state: FormControl<ListCombinedSubmissionsReturnState | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchGeneratePdfsReturnSubmission_batchFormGroup() {
@@ -1383,10 +1455,16 @@ export namespace MyNS {
 
 	export interface GetSubmissionBatchReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completion_percentage: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_count: number;
 
 		/** Required */
@@ -1395,7 +1473,10 @@ export namespace MyNS {
 		/** Required */
 		metadata: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending_count: number;
 
 		/** Required */
@@ -1405,15 +1486,24 @@ export namespace MyNS {
 		state: ListCombinedSubmissionsReturnState;
 		submissions?: Array<Submission>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface GetSubmissionBatchReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completion_percentage: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1422,7 +1512,10 @@ export namespace MyNS {
 		/** Required */
 		metadata: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pending_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1431,7 +1524,10 @@ export namespace MyNS {
 		/** Required */
 		state: FormControl<ListCombinedSubmissionsReturnState | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSubmissionBatchReturnFormGroup() {
@@ -1465,7 +1561,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: ListTemplatesReturnExpiration_interval;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: number;
 
 		/** Required */
@@ -1527,7 +1626,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1613,7 +1715,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: ListTemplatesReturnExpiration_interval;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: number;
 
 		/** Required */
@@ -1675,7 +1780,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1760,6 +1868,8 @@ export namespace MyNS {
 		description?: string | null;
 		editable_submissions?: boolean | null;
 		expiration_interval?: ListTemplatesReturnExpiration_interval | null;
+
+		/** Type: double */
 		expire_after?: number | null;
 		expire_submissions?: boolean | null;
 		footer_html?: string | null;
@@ -1778,6 +1888,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		editable_submissions: FormControl<boolean | null | undefined>,
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
+
+		/** Type: double */
 		expire_after: FormControl<number | null | undefined>,
 		expire_submissions: FormControl<boolean | null | undefined>,
 		footer_html: FormControl<string | null | undefined>,
@@ -1852,6 +1964,8 @@ export namespace MyNS {
 		backgroundColorFieldRequired?: boolean | null;
 		barcodeSymbology?: string | null;
 		bold?: boolean | null;
+
+		/** Type: double */
 		characterSpacing?: number | null;
 		checkCharacter?: AddFieldsToTemplatePutBodyFieldsCheckCharacter | null;
 		checkColor?: string | null;
@@ -1864,6 +1978,8 @@ export namespace MyNS {
 
 		/** Minimum: 0 */
 		combNumberOfCells?: number | null;
+
+		/** Type: double */
 		combValueOffset?: number | null;
 		combinedFieldFormat?: string | null;
 		combinedFieldNames?: string | null;
@@ -1896,10 +2012,18 @@ export namespace MyNS {
 		includeTime?: boolean | null;
 		integer?: boolean | null;
 		invertBooleanCondition?: boolean | null;
+
+		/** Type: double */
 		maxLength?: number | null;
+
+		/** Type: double */
 		maximum?: number | null;
 		metadata?: string | null;
+
+		/** Type: double */
 		minLength?: number | null;
+
+		/** Type: double */
 		minimum?: number | null;
 		multiline?: boolean | null;
 
@@ -1910,7 +2034,11 @@ export namespace MyNS {
 		name: string;
 		numberConditionRangeExclusiveMax?: boolean | null;
 		numberConditionRangeExclusiveMin?: boolean | null;
+
+		/** Type: double */
 		numberConditionRangeMax?: number | null;
+
+		/** Type: double */
 		numberConditionRangeMin?: number | null;
 		numberConditionType?: AddFieldsToTemplatePutBodyFieldsNumberConditionType | null;
 
@@ -1977,6 +2105,8 @@ export namespace MyNS {
 		backgroundColorFieldRequired: FormControl<boolean | null | undefined>,
 		barcodeSymbology: FormControl<string | null | undefined>,
 		bold: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		characterSpacing: FormControl<number | null | undefined>,
 		checkCharacter: FormControl<AddFieldsToTemplatePutBodyFieldsCheckCharacter | null | undefined>,
 		checkColor: FormControl<string | null | undefined>,
@@ -1989,6 +2119,8 @@ export namespace MyNS {
 
 		/** Minimum: 0 */
 		combNumberOfCells: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		combValueOffset: FormControl<number | null | undefined>,
 		combinedFieldFormat: FormControl<string | null | undefined>,
 		combinedFieldNames: FormControl<string | null | undefined>,
@@ -2021,10 +2153,18 @@ export namespace MyNS {
 		includeTime: FormControl<boolean | null | undefined>,
 		integer: FormControl<boolean | null | undefined>,
 		invertBooleanCondition: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		maxLength: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maximum: FormControl<number | null | undefined>,
 		metadata: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		minLength: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minimum: FormControl<number | null | undefined>,
 		multiline: FormControl<boolean | null | undefined>,
 
@@ -2035,7 +2175,11 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		numberConditionRangeExclusiveMax: FormControl<boolean | null | undefined>,
 		numberConditionRangeExclusiveMin: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		numberConditionRangeMax: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		numberConditionRangeMin: FormControl<number | null | undefined>,
 		numberConditionType: FormControl<AddFieldsToTemplatePutBodyFieldsNumberConditionType | null | undefined>,
 
@@ -2264,7 +2408,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: ListTemplatesReturnExpiration_interval;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: number;
 
 		/** Required */
@@ -2326,7 +2473,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2427,7 +2577,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: ListTemplatesReturnExpiration_interval;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: number;
 
 		/** Required */
@@ -2489,7 +2642,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2593,7 +2749,10 @@ export namespace MyNS {
 
 	export interface PDFGetByTemplate_idAndCursorAndLimitAndCreated_afterAndCreated_beforeAndTypeAndInclude_dataReturn {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: number;
 
 		/** Required */
@@ -2604,7 +2763,10 @@ export namespace MyNS {
 	}
 	export interface PDFGetByTemplate_idAndCursorAndLimitAndCreated_afterAndCreated_beforeAndTypeAndInclude_dataReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2624,6 +2786,8 @@ export namespace MyNS {
 		/** Required */
 		data: string;
 		GeneratePDFPostBodyData_requests?: Array<GeneratePDFPostBodyData_requests>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in?: number | null;
 		field_overrides?: string | null;
 		html?: string | null;
@@ -2636,6 +2800,8 @@ export namespace MyNS {
 
 		/** Required */
 		data: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_in: FormControl<number | null | undefined>,
 		field_overrides: FormControl<string | null | undefined>,
 		html: FormControl<string | null | undefined>,
@@ -2674,6 +2840,8 @@ export namespace MyNS {
 		fields?: Array<string>;
 		metadata?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface GeneratePDFPostBodyData_requestsFormProperties {
@@ -2692,6 +2860,8 @@ export namespace MyNS {
 		email: FormControl<string | null | undefined>,
 		metadata: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateGeneratePDFPostBodyData_requestsFormGroup() {
@@ -2759,7 +2929,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: ListTemplatesReturnExpiration_interval;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: number;
 
 		/** Required */
@@ -2792,7 +2965,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page_count: number;
 
 		/** Required */
@@ -2872,7 +3048,10 @@ export namespace MyNS {
 		/** Required */
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		expire_after: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2902,7 +3081,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2984,7 +3166,10 @@ export namespace MyNS {
 		/** Required */
 		color: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		fontSize: number;
 
 		/** Required */
@@ -2995,7 +3180,10 @@ export namespace MyNS {
 		/** Required */
 		color: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		fontSize: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3029,6 +3217,8 @@ export namespace MyNS {
 		document?: CreatePDFTemplateFromUploadPostBodyTemplateDocument;
 		editable_submissions?: boolean | null;
 		expiration_interval?: ListTemplatesReturnExpiration_interval | null;
+
+		/** Type: double */
 		expire_after?: number | null;
 		expire_submissions?: boolean | null;
 		footer_html?: string | null;
@@ -3050,6 +3240,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		editable_submissions: FormControl<boolean | null | undefined>,
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
+
+		/** Type: double */
 		expire_after: FormControl<number | null | undefined>,
 		expire_submissions: FormControl<boolean | null | undefined>,
 		footer_html: FormControl<string | null | undefined>,
@@ -3124,7 +3316,10 @@ export namespace MyNS {
 		/** Required */
 		mime_type: CreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataMime_type;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 	}
 	export interface CreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataFormProperties {
@@ -3135,7 +3330,10 @@ export namespace MyNS {
 		/** Required */
 		mime_type: FormControl<CreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataMime_type | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateCreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataFormGroup() {
@@ -3171,6 +3369,8 @@ export namespace MyNS {
 		description?: string | null;
 		editable_submissions?: boolean | null;
 		expiration_interval?: ListTemplatesReturnExpiration_interval | null;
+
+		/** Type: double */
 		expire_after?: number | null;
 		expire_submissions?: boolean | null;
 		footer_html?: string | null;
@@ -3192,6 +3392,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		editable_submissions: FormControl<boolean | null | undefined>,
 		expiration_interval: FormControl<ListTemplatesReturnExpiration_interval | null | undefined>,
+
+		/** Type: double */
 		expire_after: FormControl<number | null | undefined>,
 		expire_submissions: FormControl<boolean | null | undefined>,
 		footer_html: FormControl<string | null | undefined>,

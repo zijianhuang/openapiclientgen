@@ -1832,7 +1832,10 @@ namespace MyNS
 		/// Deletes the specified network. You must delete network sites before you delete the network. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html">DeleteNetworkSite</a> in the <i>API Reference for Amazon Web Services Private 5G</i>.
 		/// DeleteNetwork v1/networks/{networkArn}
 		/// </summary>
-		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</param>
+		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="networkArn">The Amazon Resource Name (ARN) of the network.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteNetworkResponse> DeleteNetworkAsync(string clientToken, string networkArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1901,7 +1904,10 @@ namespace MyNS
 		/// Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>.
 		/// DeleteNetworkSite v1/network-sites/{networkSiteArn}
 		/// </summary>
-		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</param>
+		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="networkSiteArn">The Amazon Resource Name (ARN) of the network site.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteNetworkSiteResponse> DeleteNetworkSiteAsync(string clientToken, string networkSiteArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2431,7 +2437,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
-		/// <param name="tagKeys">The tag keys.</param>
+		/// <param name="tagKeys">The tag keys.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

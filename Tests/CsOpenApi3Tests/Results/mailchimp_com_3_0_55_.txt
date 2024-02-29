@@ -421,7 +421,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetAccountExportsReturn> GetAccountExportsAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -532,7 +534,9 @@ namespace MyNS
 		/// Return the Chimp Chatter for this account ordered by most recent.
 		/// GetActivityFeedChimpChatter activity-feed/chimp-chatter
 		/// </summary>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <returns>ChimpChatter Collection</returns>
 		public async Task<GetActivityFeedChimpChatterReturn> GetActivityFeedChimpChatterAsync(int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -570,7 +574,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetAuthorizedAppsReturn> GetAuthorizedAppsAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -641,7 +647,9 @@ namespace MyNS
 		/// Get a summary of an account's classic automations.
 		/// GetAutomations automations
 		/// </summary>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
@@ -1241,7 +1249,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetBatchWebhooksReturn> GetBatchWebhooksAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1423,7 +1433,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetBatchesReturn> GetBatchesAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1564,7 +1576,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetCampaignFoldersReturn> GetCampaignFoldersAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1746,7 +1760,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">The campaign type.</param>
 		/// <param name="status">The status of the campaign.</param>
@@ -2496,7 +2512,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetConnectedSitesReturn> GetConnectedSitesAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2660,7 +2678,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="has_unread_messages">Whether the conversation has any unread messages.</param>
 		/// <param name="list_id">The unique id for the list.</param>
@@ -2848,7 +2868,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">Restrict results to orders with a specific `campaign_id` value.</param>
 		/// <param name="outreach_id">Restrict results to orders with a specific `outreach_id` value.</param>
@@ -2889,7 +2911,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetEcommerceStoresReturn> GetEcommerceStoresAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3071,7 +3095,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		public async Task<GetEcommerceStoresIdCartsReturn> GetEcommerceStoresIdCartsAsync(string[] fields, string[] exclude_fields, int count, int offset, string store_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3258,7 +3284,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="cart_id">The id for the cart.</param>
@@ -3450,7 +3478,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="email_address">Restrict the response to customers with the email address.</param>
@@ -3680,7 +3710,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="customer_id">Restrict results to orders made by a specific customer.</param>
@@ -3871,7 +3903,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="order_id">The id for the order in a store.</param>
@@ -4063,7 +4097,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		public async Task<GetEcommerceStoresIdProductsReturn> GetEcommerceStoresIdProductsAsync(string[] fields, string[] exclude_fields, int count, int offset, string store_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4250,7 +4286,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="product_id">The id for the product of a store.</param>
@@ -4442,7 +4480,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		/// <param name="product_id">The id for the product of a store.</param>
@@ -4677,7 +4717,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="store_id">The store id.</param>
 		public async Task<GetEcommerceStoresIdPromorulesReturn> GetEcommerceStoresIdPromorulesAsync(string[] fields, string[] exclude_fields, int count, int offset, string store_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4864,7 +4906,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="promo_rule_id">The id for the promo rule of a store.</param>
 		/// <param name="store_id">The store id.</param>
@@ -5056,7 +5100,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
 		/// <param name="sort_dir">Determines the order direction for sorted results.</param>
@@ -5133,7 +5179,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">The file type for the File Manager file.</param>
 		/// <param name="created_by">The Mailchimp account user who created the File Manager file.</param>
@@ -5321,7 +5369,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="created_by">The Mailchimp account user who created the File Manager file.</param>
 		/// <param name="before_created_at">Restrict the response to files created before the set date. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
@@ -5507,7 +5557,9 @@ namespace MyNS
 		/// <param name="folder_id">The unique id for the File Manager folder.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">The file type for the File Manager file.</param>
 		/// <param name="created_by">The Mailchimp account user who created the File Manager file.</param>
@@ -5552,7 +5604,9 @@ namespace MyNS
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Landing Pages Collection</returns>
 		public async Task<GetAllLandingPagesReturn> GetAllLandingPagesAsync(GetCampaignsSort_dir sort_dir, GetAllLandingPagesSort_field sort_field, string[] fields, string[] exclude_fields, int count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5818,7 +5872,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="before_date_created">Restrict response to lists created before the set date. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
 		/// <param name="since_date_created">Restrict results to lists created after the set date. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
@@ -6053,7 +6109,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		public async Task<GetListsIdAbuseReportsReturn> GetListsIdAbuseReportsAsync(string[] fields, string[] exclude_fields, int count, int offset, string list_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6091,7 +6149,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="report_id">The id for the abuse report.</param>
@@ -6128,7 +6188,9 @@ namespace MyNS
 		/// Get up to the previous 180 days of daily detailed aggregated activity stats for a list, not including Automation activity.
 		/// GetListsIdActivity lists/{list_id}/activity
 		/// </summary>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
@@ -6204,7 +6266,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
@@ -6282,7 +6346,9 @@ namespace MyNS
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">Restrict results a type of interest group</param>
 		public async Task<GetListsIdInterestCategoriesReturn> GetListsIdInterestCategoriesAsync(string list_id, string[] fields, string[] exclude_fields, int count, int offset, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6471,7 +6537,9 @@ namespace MyNS
 		/// <param name="interest_category_id">The unique ID for the interest category.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetListsIdInterestCategoriesIdInterestsReturn> GetListsIdInterestCategoriesIdInterestsAsync(string list_id, string interest_category_id, string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6697,7 +6765,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="email_type">The email type.</param>
@@ -7029,7 +7099,9 @@ namespace MyNS
 		/// <param name="subscriber_hash">The MD5 hash of the lowercase version of the list member's email address.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="activity_filters">A comma-separated list of activity filters that correspond to a set of activity types, e.g "?activity_filters=open,bounce,click".</param>
 		public async Task<GetListsIdMembersIdActivityFeedReturn> GetListsIdMembersIdActivityFeedAsync(string list_id, string subscriber_hash, string[] fields, string[] exclude_fields, int count, int offset, string[] activity_filters, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7067,7 +7139,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="subscriber_hash">The MD5 hash of the lowercase version of the list member's email address. This endpoint also accepts a list member's email address or contact_id.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
@@ -7183,7 +7257,9 @@ namespace MyNS
 		/// <param name="sort_dir">Determines the order direction for sorted results.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetListsIdMembersIdNotesReturn> GetListsIdMembersIdNotesAsync(string list_id, string subscriber_hash, GetListsIdMembersIdNotesSort_field sort_field, GetCampaignsSort_dir sort_dir, string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7375,7 +7451,9 @@ namespace MyNS
 		/// <param name="subscriber_hash">The MD5 hash of the lowercase version of the list member's email address. This endpoint also accepts a list member's email address or contact_id.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetListMemberTagsReturn> GetListMemberTagsAsync(string list_id, string subscriber_hash, string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7449,7 +7527,9 @@ namespace MyNS
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">The merge field type.</param>
 		/// <param name="required">Whether it's a required merge field.</param>
@@ -7637,7 +7717,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="type">Limit results based on segment type.</param>
@@ -7877,7 +7959,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="list_id">The unique ID for the list.</param>
 		/// <param name="segment_id">The unique id for the segment.</param>
@@ -8453,7 +8537,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
 		/// <param name="sort_dir">Determines the order direction for sorted results.</param>
@@ -8530,7 +8616,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="outreach_id">The outreach id.</param>
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
@@ -8570,7 +8658,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <returns>List of Landing Page Report Instances</returns>
 		public async Task<GetReportingLandingPagesReturn> GetReportingLandingPagesAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8645,7 +8735,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <returns>List of Survey Report Instances</returns>
 		public async Task<GetReportingSurveysReturn> GetReportingSurveysAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8910,7 +9002,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="type">The campaign type.</param>
 		/// <param name="before_send_time">Restrict the response to campaigns sent before the set time. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
@@ -9095,7 +9189,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		/// <param name="sort_field">Returns click reports sorted by the specified field.</param>
@@ -9172,7 +9268,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		/// <param name="link_id">The id for the link.</param>
@@ -9285,7 +9383,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		/// <param name="sort_field">Returns files sorted by the specified field.</param>
@@ -9361,7 +9461,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		/// <param name="since">Restrict results to email activity events that occur after a specific time. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
@@ -9439,7 +9541,9 @@ namespace MyNS
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetReportsIdLocationsReturn> GetReportsIdLocationsAsync(string[] fields, string[] exclude_fields, string campaign_id, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9476,7 +9580,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		/// <param name="since">Restrict results to campaign open events that occur after a specific time. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>
@@ -9554,7 +9660,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		public async Task<GetReportsIdSentToReturn> GetReportsIdSentToAsync(string[] fields, string[] exclude_fields, int count, int offset, string campaign_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9665,7 +9773,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="campaign_id">The unique id for the campaign.</param>
 		public async Task<GetReportsIdUnsubscribedReturn> GetReportsIdUnsubscribedAsync(string[] fields, string[] exclude_fields, int count, int offset, string campaign_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9813,7 +9923,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		public async Task<GetTemplateFoldersReturn> GetTemplateFoldersAsync(string[] fields, string[] exclude_fields, int count, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9995,7 +10107,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fields">A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.</param>
 		/// <param name="exclude_fields">A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.</param>
-		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000</param>
+		/// <param name="count">The number of records to return. Default value is 10. Maximum value is 1000
+		/// Maximum: 1000
+		// </param>
 		/// <param name="offset">Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0.</param>
 		/// <param name="created_by">The Mailchimp account user who created the template.</param>
 		/// <param name="since_date_created">Restrict the response to templates created after the set date. Uses ISO 8601 time format: 2015-10-21T15:41:36+00:00.</param>

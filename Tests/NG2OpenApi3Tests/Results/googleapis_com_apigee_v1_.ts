@@ -422,7 +422,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -435,7 +438,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -526,7 +532,10 @@ export namespace MyNS {
 		/** X.509 `notBefore` validity period in milliseconds since epoch. */
 		validFrom?: string | null;
 
-		/** X.509 version. */
+		/**
+		 * X.509 version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -560,7 +569,10 @@ export namespace MyNS {
 		/** X.509 `notBefore` validity period in milliseconds since epoch. */
 		validFrom: FormControl<string | null | undefined>,
 
-		/** X.509 version. */
+		/**
+		 * X.509 version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1CertInfoFormGroup() {
@@ -1331,20 +1343,32 @@ export namespace MyNS {
 	/** Version of the API proxy configuration schema. Currently, only 4.0 is supported. */
 	export interface GoogleCloudApigeeV1ConfigVersion {
 
-		/** Major version of the API proxy configuration schema. */
+		/**
+		 * Major version of the API proxy configuration schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorVersion?: number | null;
 
-		/** Minor version of the API proxy configuration schema. */
+		/**
+		 * Minor version of the API proxy configuration schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorVersion?: number | null;
 	}
 
 	/** Version of the API proxy configuration schema. Currently, only 4.0 is supported. */
 	export interface GoogleCloudApigeeV1ConfigVersionFormProperties {
 
-		/** Major version of the API proxy configuration schema. */
+		/**
+		 * Major version of the API proxy configuration schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorVersion: FormControl<number | null | undefined>,
 
-		/** Minor version of the API proxy configuration schema. */
+		/**
+		 * Minor version of the API proxy configuration schema.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1ConfigVersionFormGroup() {
@@ -2040,7 +2064,10 @@ export namespace MyNS {
 
 	export interface GoogleCloudApigeeV1AsyncQueryResultView {
 
-		/** Error code when there is a failure. */
+		/**
+		 * Error code when there is a failure.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Error message when there is a failure. */
@@ -2055,7 +2082,10 @@ export namespace MyNS {
 	}
 	export interface GoogleCloudApigeeV1AsyncQueryResultViewFormProperties {
 
-		/** Error code when there is a failure. */
+		/**
+		 * Error code when there is a failure.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Error message when there is a failure. */
@@ -2356,7 +2386,10 @@ export namespace MyNS {
 		/** Optional. Filters are used to filter scored components. Return all the components if no filter is mentioned. Example: [{ "scorePath": "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source" }, { "scorePath": "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/target", }] This will return components with path: "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source" OR "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/target" */
 		filters?: Array<GoogleCloudApigeeV1ComputeEnvironmentScoresRequestFilter>;
 
-		/** Optional. The maximum number of subcomponents to be returned in a single page. The service may return fewer than this value. If unspecified, at most 100 subcomponents will be returned in a single page. */
+		/**
+		 * Optional. The maximum number of subcomponents to be returned in a single page. The service may return fewer than this value. If unspecified, at most 100 subcomponents will be returned in a single page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
@@ -2369,7 +2402,10 @@ export namespace MyNS {
 	/** Request for ComputeEnvironmentScores. */
 	export interface GoogleCloudApigeeV1ComputeEnvironmentScoresRequestFormProperties {
 
-		/** Optional. The maximum number of subcomponents to be returned in a single page. The service may return fewer than this value. If unspecified, at most 100 subcomponents will be returned in a single page. */
+		/**
+		 * Optional. The maximum number of subcomponents to be returned in a single page. The service may return fewer than this value. If unspecified, at most 100 subcomponents will be returned in a single page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
@@ -2495,7 +2531,10 @@ export namespace MyNS {
 		/** List of recommendations to improve API security. */
 		recommendations?: Array<GoogleCloudApigeeV1ScoreComponentRecommendation>;
 
-		/** Score for the component. */
+		/**
+		 * Score for the component.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 
 		/** Path of the component. Example: /org@myorg/envgroup@myenvgroup/proxies/proxy@myproxy */
@@ -2511,7 +2550,10 @@ export namespace MyNS {
 		/** Time in the requested time period when data was last captured to compute the score. */
 		dataCaptureTime: FormControl<string | null | undefined>,
 
-		/** Score for the component. */
+		/**
+		 * Score for the component.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Path of the component. Example: /org@myorg/envgroup@myenvgroup/proxies/proxy@myproxy */
@@ -2537,7 +2579,10 @@ export namespace MyNS {
 		/** Description of the recommendation. */
 		description?: string | null;
 
-		/** Potential impact of this recommendation on the overall score. This denotes how important this recommendation is to improve the score. */
+		/**
+		 * Potential impact of this recommendation on the overall score. This denotes how important this recommendation is to improve the score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impact?: number | null;
 
 		/** Title represents recommendation title. */
@@ -2550,7 +2595,10 @@ export namespace MyNS {
 		/** Description of the recommendation. */
 		description: FormControl<string | null | undefined>,
 
-		/** Potential impact of this recommendation on the overall score. This denotes how important this recommendation is to improve the score. */
+		/**
+		 * Potential impact of this recommendation on the overall score. This denotes how important this recommendation is to improve the score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impact: FormControl<number | null | undefined>,
 
 		/** Title represents recommendation title. */
@@ -3084,7 +3132,10 @@ export namespace MyNS {
 
 	export interface GoogleCloudApigeeV1DebugSession {
 
-		/** Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10. */
+		/**
+		 * Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Output only. The first transaction creation timestamp, recorded by UAP. */
@@ -3099,15 +3150,24 @@ export namespace MyNS {
 		/** Optional. The time in seconds after which this DebugSession should end. This value will override the value in query param, if both are provided. */
 		timeout?: string | null;
 
-		/** Optional. The maximum number of bytes captured from the response payload. Min = 0, Max = 5120, Default = 5120. */
+		/**
+		 * Optional. The maximum number of bytes captured from the response payload. Min = 0, Max = 5120, Default = 5120.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracesize?: number | null;
 
-		/** Optional. The length of time, in seconds, that this debug session is valid, starting from when it's received in the control plane. Min = 1, Max = 15, Default = 10. */
+		/**
+		 * Optional. The length of time, in seconds, that this debug session is valid, starting from when it's received in the control plane. Min = 1, Max = 15, Default = 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validity?: number | null;
 	}
 	export interface GoogleCloudApigeeV1DebugSessionFormProperties {
 
-		/** Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10. */
+		/**
+		 * Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Output only. The first transaction creation timestamp, recorded by UAP. */
@@ -3122,10 +3182,16 @@ export namespace MyNS {
 		/** Optional. The time in seconds after which this DebugSession should end. This value will override the value in query param, if both are provided. */
 		timeout: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of bytes captured from the response payload. Min = 0, Max = 5120, Default = 5120. */
+		/**
+		 * Optional. The maximum number of bytes captured from the response payload. Min = 0, Max = 5120, Default = 5120.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracesize: FormControl<number | null | undefined>,
 
-		/** Optional. The length of time, in seconds, that this debug session is valid, starting from when it's received in the control plane. Min = 1, Max = 15, Default = 10. */
+		/**
+		 * Optional. The length of time, in seconds, that this debug session is valid, starting from when it's received in the control plane. Min = 1, Max = 15, Default = 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validity: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1DebugSessionFormGroup() {
@@ -3447,7 +3513,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3460,7 +3529,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3505,7 +3577,10 @@ export namespace MyNS {
 	/** Revisions deployed in the MPs. */
 	export interface GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRevision {
 
-		/** Percentage of MP replicas reporting this revision. */
+		/**
+		 * Percentage of MP replicas reporting this revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 
 		/** API proxy revision reported as deployed. */
@@ -3515,7 +3590,10 @@ export namespace MyNS {
 	/** Revisions deployed in the MPs. */
 	export interface GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRevisionFormProperties {
 
-		/** Percentage of MP replicas reporting this revision. */
+		/**
+		 * Percentage of MP replicas reporting this revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** API proxy revision reported as deployed. */
@@ -3542,7 +3620,10 @@ export namespace MyNS {
 		/** Destination environment. This will be empty if the route is not yet reported. */
 		environment?: string | null;
 
-		/** Percentage of ingress replicas reporting this route. */
+		/**
+		 * Percentage of ingress replicas reporting this route.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 
@@ -3558,7 +3639,10 @@ export namespace MyNS {
 		/** Destination environment. This will be empty if the route is not yet reported. */
 		environment: FormControl<string | null | undefined>,
 
-		/** Percentage of ingress replicas reporting this route. */
+		/**
+		 * Percentage of ingress replicas reporting this route.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1InstanceDeploymentStatusDeployedRouteFormGroup() {
@@ -4932,7 +5016,10 @@ export namespace MyNS {
 		/** Target server revision name in the following format: `organizations/{org}/environments/{env}/targetservers/{targetserver}/revisions/{rev}` */
 		name?: string | null;
 
-		/** Port number for the target server. */
+		/**
+		 * Port number for the target server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The protocol used by this target server. */
@@ -4950,7 +5037,10 @@ export namespace MyNS {
 		/** Target server revision name in the following format: `organizations/{org}/environments/{env}/targetservers/{targetserver}/revisions/{rev}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Port number for the target server. */
+		/**
+		 * Port number for the target server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol used by this target server. */
@@ -5162,7 +5252,10 @@ export namespace MyNS {
 		/** Sampler of distributed tracing. OFF is the default value. */
 		sampler?: GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler | null;
 
-		/** Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5. */
+		/**
+		 * Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5.
+		 * Type: float
+		 */
 		samplingRate?: number | null;
 	}
 
@@ -5172,7 +5265,10 @@ export namespace MyNS {
 		/** Sampler of distributed tracing. OFF is the default value. */
 		sampler: FormControl<GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler | null | undefined>,
 
-		/** Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5. */
+		/**
+		 * Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5.
+		 * Type: float
+		 */
 		samplingRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1RuntimeTraceSamplingConfigFormGroup() {
@@ -6075,7 +6171,10 @@ export namespace MyNS {
 		/** Token that can be sent as `next_page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken?: string | null;
 
-		/** Total count of AppGroups. */
+		/**
+		 * Total count of AppGroups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -6085,7 +6184,10 @@ export namespace MyNS {
 		/** Token that can be sent as `next_page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total count of AppGroups. */
+		/**
+		 * Total count of AppGroups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1ListAppGroupsResponseFormGroup() {
@@ -6102,7 +6204,10 @@ export namespace MyNS {
 		/** Token that can be sent as `next_page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken?: string | null;
 
-		/** Total count of Apps. */
+		/**
+		 * Total count of Apps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 	export interface GoogleCloudApigeeV1ListAppsResponseFormProperties {
@@ -6110,7 +6215,10 @@ export namespace MyNS {
 		/** Token that can be sent as `next_page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total count of Apps. */
+		/**
+		 * Total count of Apps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1ListAppsResponseFormGroup() {
@@ -6703,7 +6811,10 @@ export namespace MyNS {
 		/** Time when the rate plan will expire in milliseconds since epoch. Set to 0 or `null` to indicate that the rate plan should never expire. */
 		endTime?: string | null;
 
-		/** Frequency at which the fixed fee is charged. */
+		/**
+		 * Frequency at which the fixed fee is charged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedFeeFrequency?: number | null;
 
 		/** Represents an amount of money with its currency type. */
@@ -6761,7 +6872,10 @@ export namespace MyNS {
 		/** Time when the rate plan will expire in milliseconds since epoch. Set to 0 or `null` to indicate that the rate plan should never expire. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Frequency at which the fixed fee is charged. */
+		/**
+		 * Frequency at which the fixed fee is charged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedFeeFrequency: FormControl<number | null | undefined>,
 
 		/** Output only. Time the rate plan was last modified in milliseconds since epoch. */
@@ -6847,7 +6961,10 @@ export namespace MyNS {
 		/** Ending value of the range. Set to 0 or `null` for the last range of values. */
 		end?: string | null;
 
-		/** Percentage of the revenue to be shared with the developer. For example, to share 21 percent of the total revenue with the developer, set this value to 21. Specify a decimal number with a maximum of two digits following the decimal point. */
+		/**
+		 * Percentage of the revenue to be shared with the developer. For example, to share 21 percent of the total revenue with the developer, set this value to 21. Specify a decimal number with a maximum of two digits following the decimal point.
+		 * Type: double
+		 */
 		sharePercentage?: number | null;
 
 		/** Starting value of the range. Set to 0 or `null` for the initial range of values. */
@@ -6860,7 +6977,10 @@ export namespace MyNS {
 		/** Ending value of the range. Set to 0 or `null` for the last range of values. */
 		end: FormControl<string | null | undefined>,
 
-		/** Percentage of the revenue to be shared with the developer. For example, to share 21 percent of the total revenue with the developer, set this value to 21. Specify a decimal number with a maximum of two digits following the decimal point. */
+		/**
+		 * Percentage of the revenue to be shared with the developer. For example, to share 21 percent of the total revenue with the developer, set this value to 21. Specify a decimal number with a maximum of two digits following the decimal point.
+		 * Type: double
+		 */
 		sharePercentage: FormControl<number | null | undefined>,
 
 		/** Starting value of the range. Set to 0 or `null` for the initial range of values. */
@@ -7016,14 +7136,20 @@ export namespace MyNS {
 	/** Message that should be set in case of a Deny Action. */
 	export interface GoogleCloudApigeeV1SecurityActionDeny {
 
-		/** Optional. The HTTP response code if the Action = DENY. */
+		/**
+		 * Optional. The HTTP response code if the Action = DENY.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode?: number | null;
 	}
 
 	/** Message that should be set in case of a Deny Action. */
 	export interface GoogleCloudApigeeV1SecurityActionDenyFormProperties {
 
-		/** Optional. The HTTP response code if the Action = DENY. */
+		/**
+		 * Optional. The HTTP response code if the Action = DENY.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1SecurityActionDenyFormGroup() {
@@ -7141,10 +7267,16 @@ export namespace MyNS {
 		/** List of environments attached to security profile. */
 		environments?: Array<GoogleCloudApigeeV1SecurityProfileEnvironment>;
 
-		/** Output only. Maximum security score that can be generated by this profile. */
+		/**
+		 * Output only. Maximum security score that can be generated by this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScore?: number | null;
 
-		/** Output only. Minimum security score that can be generated by this profile. */
+		/**
+		 * Output only. Minimum security score that can be generated by this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minScore?: number | null;
 
 		/** Immutable. Name of the security profile resource. Format: organizations/{org}/securityProfiles/{profile} */
@@ -7178,10 +7310,16 @@ export namespace MyNS {
 		/** DEPRECATED: DO NOT USE Display name of the security profile. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. Maximum security score that can be generated by this profile. */
+		/**
+		 * Output only. Maximum security score that can be generated by this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScore: FormControl<number | null | undefined>,
 
-		/** Output only. Minimum security score that can be generated by this profile. */
+		/**
+		 * Output only. Minimum security score that can be generated by this profile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minScore: FormControl<number | null | undefined>,
 
 		/** Immutable. Name of the security profile resource. Format: organizations/{org}/securityProfiles/{profile} */
@@ -7742,7 +7880,10 @@ export namespace MyNS {
 		/** Sampler of distributed tracing. OFF is the default value. */
 		sampler?: GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler | null;
 
-		/** Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5. */
+		/**
+		 * Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5.
+		 * Type: float
+		 */
 		samplingRate?: number | null;
 	}
 
@@ -7752,7 +7893,10 @@ export namespace MyNS {
 		/** Sampler of distributed tracing. OFF is the default value. */
 		sampler: FormControl<GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler | null | undefined>,
 
-		/** Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5. */
+		/**
+		 * Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5.
+		 * Type: float
+		 */
 		samplingRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudApigeeV1TraceSamplingConfigFormGroup() {
@@ -7867,7 +8011,10 @@ export namespace MyNS {
 		/** The additional details of the progress. */
 		details?: {[id: string]: any };
 
-		/** The percentage of the operation progress. */
+		/**
+		 * The percentage of the operation progress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentDone?: number | null;
 
 		/** State of the operation. */
@@ -7883,7 +8030,10 @@ export namespace MyNS {
 		/** The additional details of the progress. */
 		details: FormControl<{[id: string]: any } | null | undefined>,
 
-		/** The percentage of the operation progress. */
+		/**
+		 * The percentage of the operation progress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentDone: FormControl<number | null | undefined>,
 
 		/** State of the operation. */
@@ -8218,7 +8368,10 @@ export namespace MyNS {
 		/** Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision. */
 		groupByTimeUnit?: string | null;
 
-		/** Maximum number of rows that can be returned in the result. */
+		/**
+		 * Maximum number of rows that can be returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** A list of Metrics. */
@@ -8250,7 +8403,10 @@ export namespace MyNS {
 		/** Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision. */
 		groupByTimeUnit: FormControl<string | null | undefined>,
 
-		/** Maximum number of rows that can be returned in the result. */
+		/**
+		 * Maximum number of rows that can be returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Asynchronous Query Name. */
@@ -8342,7 +8498,10 @@ export namespace MyNS {
 		/** Required. List of metrics and their aggregations. */
 		metrics?: Array<GoogleCloudApigeeV1MetricAggregation>;
 
-		/** Page size represents the number of rows. */
+		/**
+		 * Page size represents the number of rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Identifies a sequence of rows. */
@@ -8358,7 +8517,10 @@ export namespace MyNS {
 		/** Filter further on specific dimension values. Follows the same grammar as custom report's filter expressions. Example, apiproxy eq 'foobar'. https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference#filters */
 		filter: FormControl<string | null | undefined>,
 
-		/** Page size represents the number of rows. */
+		/**
+		 * Page size represents the number of rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Identifies a sequence of rows. */
@@ -8413,7 +8575,10 @@ export namespace MyNS {
 		/** Required. List of metrics and their aggregations. */
 		metrics?: Array<GoogleCloudApigeeV1MetricAggregation>;
 
-		/** Page size represents the number of time series sequences, one per unique set of dimensions and their values. */
+		/**
+		 * Page size represents the number of time series sequences, one per unique set of dimensions and their values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Page token stands for a specific collection of time series sequences. */
@@ -8435,7 +8600,10 @@ export namespace MyNS {
 		/** Filter further on specific dimension values. Follows the same grammar as custom report's filter expressions. Example, apiproxy eq 'foobar'. https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference#filters */
 		filter: FormControl<string | null | undefined>,
 
-		/** Page size represents the number of time series sequences, one per unique set of dimensions and their values. */
+		/**
+		 * Page size represents the number of time series sequences, one per unique set of dimensions and their values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Page token stands for a specific collection of time series sequences. */
@@ -8594,7 +8762,10 @@ export namespace MyNS {
 		/** Revisions of the resource currently deployed in the instance. */
 		revisions?: Array<GoogleCloudApigeeV1RevisionStatus>;
 
-		/** The total number of replicas that should have this resource. */
+		/**
+		 * The total number of replicas that should have this resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReplicas?: number | null;
 
 		/** The uid of the resource. In the unexpected case that the instance has multiple uids for the same name, they should be reported under separate ResourceStatuses. */
@@ -8607,7 +8778,10 @@ export namespace MyNS {
 		/** The resource name. Currently only two resources are supported: EnvironmentGroup - organizations/{org}/envgroups/{envgroup} EnvironmentConfig - organizations/{org}/environments/{environment}/deployedConfig */
 		resource: FormControl<string | null | undefined>,
 
-		/** The total number of replicas that should have this resource. */
+		/**
+		 * The total number of replicas that should have this resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReplicas: FormControl<number | null | undefined>,
 
 		/** The uid of the resource. In the unexpected case that the instance has multiple uids for the same name, they should be reported under separate ResourceStatuses. */
@@ -8632,7 +8806,10 @@ export namespace MyNS {
 		/** The json content of the resource revision. Large specs should be sent individually via the spec field to avoid hitting request size limits. */
 		jsonSpec?: string | null;
 
-		/** The number of replicas that have successfully loaded this revision. */
+		/**
+		 * The number of replicas that have successfully loaded this revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicas?: number | null;
 
 		/** The revision of the resource. */
@@ -8645,7 +8822,10 @@ export namespace MyNS {
 		/** The json content of the resource revision. Large specs should be sent individually via the spec field to avoid hitting request size limits. */
 		jsonSpec: FormControl<string | null | undefined>,
 
-		/** The number of replicas that have successfully loaded this revision. */
+		/**
+		 * The number of replicas that have successfully loaded this revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicas: FormControl<number | null | undefined>,
 
 		/** The revision of the resource. */
@@ -8934,7 +9114,10 @@ export namespace MyNS {
 		/** Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision. */
 		groupByTimeUnit?: string | null;
 
-		/** Maximum number of rows that can be returned in the result. */
+		/**
+		 * Maximum number of rows that can be returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** A list of Metrics. */
@@ -8968,7 +9151,10 @@ export namespace MyNS {
 		/** Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision. */
 		groupByTimeUnit: FormControl<string | null | undefined>,
 
-		/** Maximum number of rows that can be returned in the result. */
+		/**
+		 * Maximum number of rows that can be returned in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the csvDelimiter property. */
@@ -9048,7 +9234,10 @@ export namespace MyNS {
 	/** The response for security report result view APIs. */
 	export interface GoogleCloudApigeeV1SecurityReportResultView {
 
-		/** Error code when there is a failure. */
+		/**
+		 * Error code when there is a failure.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Error message when there is a failure. */
@@ -9067,7 +9256,10 @@ export namespace MyNS {
 	/** The response for security report result view APIs. */
 	export interface GoogleCloudApigeeV1SecurityReportResultViewFormProperties {
 
-		/** Error code when there is a failure. */
+		/**
+		 * Error code when there is a failure.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Error message when there is a failure. */
@@ -9384,7 +9576,10 @@ export namespace MyNS {
 		/** Required. The resource id of this target server. Values must match the regular expression */
 		name?: string | null;
 
-		/** Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive. */
+		/**
+		 * Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Immutable. The protocol used by this TargetServer. */
@@ -9409,7 +9604,10 @@ export namespace MyNS {
 		/** Required. The resource id of this target server. Values must match the regular expression */
 		name: FormControl<string | null | undefined>,
 
-		/** Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive. */
+		/**
+		 * Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Immutable. The protocol used by this TargetServer. */
@@ -9732,7 +9930,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -9742,7 +9943,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -10088,6 +10292,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -10190,6 +10395,7 @@ export namespace MyNS {
 		 * Get v1/{name}:listRevisions
 		 * @param {string} name Required. For a specific profile, list all the revisions. Format: `organizations/{org}/securityProfiles/{profile}`
 		 * @param {number} pageSize The maximum number of profile revisions to return. The service may return fewer than this value. If unspecified, at most 50 revisions will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSecurityProfileRevisions` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudApigeeV1ListSecurityProfileRevisionsResponse} Successful response
 		 */
@@ -10399,6 +10605,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the Apigee organization. Use the following structure in your request: `organizations/{org}`.
 		 * @param {string} filter The filter expression to be used to get the list of AppGroups, where filtering can be done on status, channelId or channelUri of the app group. Examples: filter=status=active", filter=channelId=, filter=channelUri=
 		 * @param {number} pageSize Count of AppGroups a single page can have in the response. If unspecified, at most 1000 AppGroups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The starting index record for listing the AppGroups.
 		 * @return {GoogleCloudApigeeV1ListAppGroupsResponse} Successful response
 		 */
@@ -10428,6 +10635,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCred Optional. Flag that specifies whether to include credentials in the response.
 		 * @param {string} keyStatus Optional. Key status of the app. Valid values include `approved` or `revoked`. Defaults to `approved`.
 		 * @param {number} pageSize Optional. Count of apps a single page can have in the response. If unspecified, at most 100 apps will be returned. The maximum value is 100; values above 100 will be coerced to 100. "page_size" is supported from ver 1.10.0 and above.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The starting index record for listing the developers. "page_token" is supported from ver 1.10.0 and above.
 		 * @param {string} rows Optional. Maximum number of app IDs to return. Defaults to 10000.
 		 * @param {string} status Optional. Filter by the status of the app. Valid values are `approved` or `revoked`. Defaults to `approved`.
@@ -10453,6 +10661,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the Environment for which to list Archive Deployments in the format: `organizations/{org}/environments/{env}`.
 		 * @param {string} filter Optional. An optional query used to return a subset of Archive Deployments using the semantics defined in https://google.aip.dev/160.
 		 * @param {number} pageSize Optional. Maximum number of Archive Deployments to return. If unspecified, at most 25 deployments will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token, returned from a previous ListArchiveDeployments call, that you can use to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListArchiveDeploymentsResponse} Successful response
 		 */
@@ -10485,6 +10694,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/attachments
 		 * @param {string} parent Required. Name of the organization. Use the following structure in your request: `organizations/{org}/instances/{instance}`
 		 * @param {number} pageSize Maximum number of instance attachments to return. Defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned by a previous ListInstanceAttachments call, that you can use to retrieve the next page of content.
 		 * @return {GoogleCloudApigeeV1ListInstanceAttachmentsResponse} Successful response
 		 */
@@ -10537,6 +10747,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/datacollectors
 		 * @param {string} parent Required. Name of the organization for which to list data collectors in the following format: `organizations/{org}`.
 		 * @param {number} pageSize Maximum number of data collectors to return. The page size defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned from a previous ListDataCollectors call, that you can use to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListDataCollectorsResponse} Successful response
 		 */
@@ -10560,6 +10771,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/debugsessions
 		 * @param {string} parent Required. The name of the API Proxy revision deployment for which to list debug sessions. Must be of the form: `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}`.
 		 * @param {number} pageSize Maximum number of debug sessions to return. The page size defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned from a previous ListDebugSessions call, that you can use to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListDebugSessionsResponse} Successful response
 		 */
@@ -10620,6 +10832,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/endpointAttachments
 		 * @param {string} parent Required. Name of the organization for which to list endpoint attachments. Use the following structure in your request: `organizations/{org}`
 		 * @param {number} pageSize Optional. Maximum number of endpoint attachments to return. If unspecified, at most 25 attachments will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token, returned from a previous `ListEndpointAttachments` call, that you can use to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListEndpointAttachmentsResponse} Successful response
 		 */
@@ -10643,6 +10856,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/entries
 		 * @param {string} parent Required. Scope as indicated by the URI in which to list key value maps. Use **one** of the following structures in your request: * `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`. * `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}` * `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
 		 * @param {number} pageSize Optional. Maximum number of key value entries to return. If unspecified, at most 100 entries will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token. If provides, must be a valid key value entry returned from a previous call that can be used to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListKeyValueEntriesResponse} Successful response
 		 */
@@ -10665,6 +10879,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/envgroups
 		 * @param {string} parent Required. Name of the organization for which to list environment groups in the following format: `organizations/{org}`.
 		 * @param {number} pageSize Maximum number of environment groups to return. The page size defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned from a previous ListEnvironmentGroups call, that you can use to retrieve the next page.
 		 * @return {GoogleCloudApigeeV1ListEnvironmentGroupsResponse} Successful response
 		 */
@@ -10729,6 +10944,7 @@ export namespace MyNS {
 		 * @param {string} envgroupHostname Required. Filter response list by hostname.
 		 * @param {string} from Filter response list by returning security reports that created after this date time. Time must be in ISO date-time format like '2011-12-03T10:15:30Z'.
 		 * @param {number} pageSize The maximum number of security report to return in the list response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token returned from the previous list response to fetch the next page.
 		 * @param {string} status Filter response list by security report status.
 		 * @param {string} submittedBy Filter response list by user who submitted queries.
@@ -10754,6 +10970,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/instances
 		 * @param {string} parent Required. Name of the organization. Use the following structure in your request: `organizations/{org}`.
 		 * @param {number} pageSize Maximum number of instances to return. Defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned from a previous ListInstances call, that you can use to retrieve the next page of content.
 		 * @return {GoogleCloudApigeeV1ListInstancesResponse} Successful response
 		 */
@@ -10817,6 +11034,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/natAddresses
 		 * @param {string} parent Required. Name of the instance. Use the following structure in your request: `organizations/{org}/instances/{instance}`
 		 * @param {number} pageSize Maximum number of natAddresses to return. Defaults to 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token, returned from a previous ListNatAddresses call, that you can use to retrieve the next page of content.
 		 * @return {GoogleCloudApigeeV1ListNatAddressesResponse} Successful response
 		 */
@@ -10839,6 +11057,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/overrides
 		 * @param {string} parent Required. Parent resource of the trace configuration override. Use the following structure in your request: "organizations/environments/traceConfig".
 		 * @param {number} pageSize Maximum number of trace configuration overrides to return. If not specified, the maximum number returned is 25. The maximum number cannot exceed 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, returned from a previous `ListTraceConfigOverrides` call. Token value that can be used to retrieve the subsequent page. When paginating, all other parameters provided to `ListTraceConfigOverrides` must match those specified in the call to obtain the page token.
 		 * @return {GoogleCloudApigeeV1ListTraceConfigOverridesResponse} Successful response
 		 */
@@ -10887,6 +11106,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/rateplans
 		 * @param {string} parent Required. Name of the API product. Use the following structure in your request: `organizations/{org}/apiproducts/{apiproduct}` Use `organizations/{org}/apiproducts/-` to return rate plans for all API products within the organization.
 		 * @param {number} count Number of rate plans to return in the API call. Use with the `startKey` parameter to provide more targeted filtering. The maximum limit is 1000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} expand Flag that specifies whether to expand the results. Set to `true` to get expanded details about each API. Defaults to `false`.
 		 * @param {string} orderBy Name of the attribute used for sorting. Valid values include: * `name`: Name of the rate plan. * `state`: State of the rate plan (`DRAFT`, `PUBLISHED`). * `startTime`: Time when the rate plan becomes active. * `endTime`: Time when the rate plan expires. **Note**: Not supported by Apigee at this time.
 		 * @param {string} startKey Name of the rate plan from which to start displaying the list of rate plans. If omitted, the list starts from the first item. For example, to view the rate plans from 51-150, set the value of `startKey` to the name of the 51st rate plan and set the value of `count` to 100.
@@ -11014,6 +11234,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent, which owns this collection of SecurityActions. Format: organizations/{org}/environments/{env}
 		 * @param {string} filter The filter expression to filter List results. https://google.aip.dev/160. Allows for filtering over: state and api_proxies. E.g.: state = ACTIVE AND apiProxies:foo. Filtering by action is not supported https://github.com/aip-dev/google.aip.dev/issues/624
 		 * @param {number} pageSize The maximum number of SecurityActions to return. If unspecified, at most 50 SecurityActions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSecurityActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSecurityActions` must match the call that provided the page token.
 		 * @return {GoogleCloudApigeeV1ListSecurityActionsResponse} Successful response
 		 */
@@ -11038,6 +11259,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. For a specific organization, list of all the security incidents. Format: `organizations/{org}/environments/{environment}`
 		 * @param {string} filter The filter expression to be used to get the list of security incidents, where filtering can be done on API Proxies. Example: filter = "api_proxy = /", "first_detected_time >", "last_detected_time <"
 		 * @param {number} pageSize Optional. The maximum number of incidents to return. The service may return fewer than this value. If unspecified, at most 50 incidents will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListSecurityIncident` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudApigeeV1ListSecurityIncidentsResponse} Successful response
 		 */
@@ -11060,6 +11282,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/securityProfiles
 		 * @param {string} parent Required. For a specific organization, list of all the security profiles. Format: `organizations/{org}`
 		 * @param {number} pageSize The maximum number of profiles to return. The service may return fewer than this value. If unspecified, at most 50 profiles will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSecurityProfiles` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudApigeeV1ListSecurityProfilesResponse} Successful response
 		 */
@@ -11085,6 +11308,7 @@ export namespace MyNS {
 		 * @param {string} dataset Filter response list by dataset. Example: `api`, `mint`
 		 * @param {string} from Filter response list by returning security reports that created after this date time. Time must be in ISO date-time format like '2011-12-03T10:15:30Z'.
 		 * @param {number} pageSize The maximum number of security report to return in the list response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token returned from the previous list response to fetch the next page.
 		 * @param {string} status Filter response list by security reports status.
 		 * @param {string} submittedBy Filter response list by user who submitted queries.
@@ -11134,6 +11358,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/subscriptions
 		 * @param {string} parent Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
 		 * @param {number} count Number of API product subscriptions to return in the API call. Use with `startKey` to provide more targeted filtering. Defaults to 100. The maximum limit is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startKey Name of the API product subscription from which to start displaying the list of subscriptions. If omitted, the list starts from the first item. For example, to view the API product subscriptions from 51-150, set the value of `startKey` to the name of the 51st subscription and set the value of `count` to 100.
 		 * @return {GoogleCloudApigeeV1ListDeveloperSubscriptionsResponse} Successful response
 		 */
@@ -11207,6 +11432,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleIamV1Policy} Successful response
 		 */
 		Apigee_organizations_environments_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<GoogleIamV1Policy> {

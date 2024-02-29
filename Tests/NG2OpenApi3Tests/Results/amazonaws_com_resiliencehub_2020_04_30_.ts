@@ -4294,9 +4294,11 @@ export namespace MyNS {
 		 * @param {string} appArn Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
 		 * @param {string} assessmentName The name for the assessment.
 		 * @param {Array<AssessmentStatus>} assessmentStatus The current status of the assessment for the resiliency policy.
+		 *     Minimum items: 1    Maximum items: 10
 		 * @param {ComplianceStatus} complianceStatus The current status of compliance for the resiliency policy.
 		 * @param {AssessmentInvoker} invoker Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.
 		 * @param {number} maxResults Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Null, or the token from a previous call to get the next set of results.
 		 * @param {boolean} reverseOrder The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.
 		 * @return {ListAppAssessmentsResponse} Success
@@ -4387,6 +4389,7 @@ export namespace MyNS {
 		 * Get list-apps
 		 * @param {string} appArn Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
 		 * @param {number} maxResults Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} name The name for the one of the listed applications.
 		 * @param {string} nextToken Null, or the token from a previous call to get the next set of results.
 		 * @return {ListAppsResponse} Success
@@ -4400,11 +4403,13 @@ export namespace MyNS {
 		 * Get list-recommendation-templates#assessmentArn
 		 * @param {string} assessmentArn Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
 		 * @param {number} maxResults Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} name The name for one of the listed recommendation templates.
 		 * @param {string} nextToken Null, or the token from a previous call to get the next set of results.
 		 * @param {string} recommendationTemplateArn The Amazon Resource Name (ARN) for a recommendation template.
 		 * @param {boolean} reverseOrder The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.
 		 * @param {Array<RecommendationTemplateStatus>} status Status of the action.
+		 *     Minimum items: 1    Maximum items: 4
 		 * @return {ListRecommendationTemplatesResponse} Success
 		 */
 		ListRecommendationTemplates(assessmentArn: string, maxResults: number | null | undefined, name: string | null | undefined, nextToken: string | null | undefined, recommendationTemplateArn: string | null | undefined, reverseOrder: boolean | null | undefined, status: Array<RecommendationTemplateStatus> | null | undefined): Observable<ListRecommendationTemplatesResponse> {
@@ -4415,6 +4420,7 @@ export namespace MyNS {
 		 * Lists the resiliency policies for the Resilience Hub applications.
 		 * Get list-resiliency-policies
 		 * @param {number} maxResults Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Null, or the token from a previous call to get the next set of results.
 		 * @param {string} policyName The name of the policy
 		 * @return {ListResiliencyPoliciesResponse} Success
@@ -4438,6 +4444,7 @@ export namespace MyNS {
 		 * Lists the suggested resiliency policies for the Resilience Hub applications.
 		 * Get list-suggested-resiliency-policies
 		 * @param {number} maxResults Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Null, or the token from a previous call to get the next set of results.
 		 * @return {ListSuggestedResiliencyPoliciesResponse} Success
 		 */
@@ -4537,6 +4544,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn Amazon Resource Name (ARN) of the resource. 
 		 * @param {Array<string>} tagKeys The keys of the tags you want to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -4656,15 +4664,15 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The optional description for an app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -4697,15 +4705,15 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The optional description for an app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4763,31 +4771,31 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Identifier of the Application Component.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id?: string | null;
 
 		/**
 		 * Name of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: string;
 	}
@@ -4804,31 +4812,31 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier of the Application Component.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: FormControl<string | null | undefined>,
 	}
@@ -4869,8 +4877,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -4883,8 +4891,8 @@ export namespace MyNS {
 		/**
 		 * Physical identifier of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId: string;
 
@@ -4894,8 +4902,8 @@ export namespace MyNS {
 		/**
 		 * Type of resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resourceType: string;
 	}
@@ -4918,16 +4926,16 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Physical identifier of the resource.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId: FormControl<string | null | undefined>,
 
@@ -4937,8 +4945,8 @@ export namespace MyNS {
 		/**
 		 * Type of resource.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resourceType: FormControl<string | null | undefined>,
 	}
@@ -4994,8 +5002,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5038,8 +5046,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5071,8 +5079,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5087,8 +5095,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		policyDescription?: string | null;
 
@@ -5111,8 +5119,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5127,8 +5135,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		policyDescription: FormControl<string | null | undefined>,
 
@@ -5170,8 +5178,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5188,8 +5196,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5215,8 +5223,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 	}
@@ -5230,8 +5238,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5253,8 +5261,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5277,8 +5285,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5333,16 +5341,16 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 	}
@@ -5356,16 +5364,16 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -5394,8 +5402,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5404,8 +5412,8 @@ export namespace MyNS {
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId?: string | null;
 
@@ -5428,15 +5436,15 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId: FormControl<string | null | undefined>,
 
@@ -5484,8 +5492,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5499,8 +5507,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5522,8 +5530,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -5537,8 +5545,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -5655,8 +5663,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 	}
@@ -5677,8 +5685,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -5716,8 +5724,8 @@ export namespace MyNS {
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId?: string | null;
 
@@ -5746,8 +5754,8 @@ export namespace MyNS {
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId: FormControl<string | null | undefined>,
 
@@ -5807,8 +5815,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId?: string | null;
 	}
@@ -5828,8 +5836,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId: FormControl<string | null | undefined>,
 	}
@@ -6343,8 +6351,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId?: string | null;
 	}
@@ -6374,8 +6382,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId: FormControl<string | null | undefined>,
 	}
@@ -6588,8 +6596,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId?: string | null;
 	}
@@ -6619,8 +6627,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for a specific resolution.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resolutionId: FormControl<string | null | undefined>,
 	}
@@ -6676,8 +6684,8 @@ export namespace MyNS {
 		/**
 		 * <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p> <p>The <code>appTemplateBody</code> JSON string has the following structure:</p> <ul> <li> <p> <b> <code>resources</code> </b> </p> <p>The list of logical resources that must be included in the Resilience Hub application.</p> <p>Type: Array</p> <note> <p>Don't add the resources that you want to exclude.</p> </note> <p>Each <code>resources</code> array item includes the following fields:</p> <ul> <li> <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note> <p>This parameter accepts values in "eks-cluster/namespace" format.</p> </note> <p>Type: String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code> </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul> </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p> <code>resourceNames</code> </p> <p>The list of included resources that are assigned to the Application Component.</p> <p>Type: Array of strings</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul> </li> <li> <p> <b> <code>excludedResources</code> </b> </p> <p>The list of logical resource identifiers to be excluded from the application.</p> <p>Type: Array</p> <note> <p>Don't add the resources that you want to include.</p> </note> <p>Each <code>excludedResources</code> array item includes the following fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>Logical identifier of the resource.</p> <p>Type: Object</p> <note> <p>You can configure only one of the following fields:</p> <ul> <li> <p> <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code> </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p> <code>eksSourceName</code> </p> </li> </ul> </note> <p>Each <code>logicalResourceIds</code> object includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note> <p>This parameter accepts values in "eks-cluster/namespace" format.</p> </note> <p>Type: String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b> </p> <p>Resilience Hub application version.</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul>
 		 * Required
-		 * Max length: 409600
 		 * Min length: 0
+		 * Max length: 409600
 		 */
 		appTemplateBody: string;
 	}
@@ -6692,8 +6700,8 @@ export namespace MyNS {
 		/**
 		 * <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p> <p>The <code>appTemplateBody</code> JSON string has the following structure:</p> <ul> <li> <p> <b> <code>resources</code> </b> </p> <p>The list of logical resources that must be included in the Resilience Hub application.</p> <p>Type: Array</p> <note> <p>Don't add the resources that you want to exclude.</p> </note> <p>Each <code>resources</code> array item includes the following fields:</p> <ul> <li> <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note> <p>This parameter accepts values in "eks-cluster/namespace" format.</p> </note> <p>Type: String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code> </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul> </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p> <code>resourceNames</code> </p> <p>The list of included resources that are assigned to the Application Component.</p> <p>Type: Array of strings</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul> </li> <li> <p> <b> <code>excludedResources</code> </b> </p> <p>The list of logical resource identifiers to be excluded from the application.</p> <p>Type: Array</p> <note> <p>Don't add the resources that you want to include.</p> </note> <p>Each <code>excludedResources</code> array item includes the following fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>Logical identifier of the resource.</p> <p>Type: Object</p> <note> <p>You can configure only one of the following fields:</p> <ul> <li> <p> <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code> </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p> <code>eksSourceName</code> </p> </li> </ul> </note> <p>Each <code>logicalResourceIds</code> object includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file this resource belongs to.</p> <p>Type: String</p> </li> <li> <p> <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note> <p>This parameter accepts values in "eks-cluster/namespace" format.</p> </note> <p>Type: String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b> </p> <p>Resilience Hub application version.</p> </li> <li> <p> <code>additionalInfo</code> </p> <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note> <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p> <p>Key: <code>"failover-regions"</code> </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> </note> </li> </ul>
 		 * Required
-		 * Max length: 409600
 		 * Min length: 0
+		 * Max length: 409600
 		 */
 		appTemplateBody: FormControl<string | null | undefined>,
 	}
@@ -6804,8 +6812,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken?: string | null;
 
@@ -6834,8 +6842,8 @@ export namespace MyNS {
 
 		/**
 		 * Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -6869,8 +6877,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for an app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -6903,8 +6911,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional description for an app.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6983,22 +6991,22 @@ export namespace MyNS {
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: string;
 
 		/**
 		 * Name of the Application Component.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type?: string | null;
 	}
@@ -7016,22 +7024,22 @@ export namespace MyNS {
 		/**
 		 * Identifier of the Application Component.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the Application Component.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: FormControl<string | null | undefined>,
 	}
@@ -7074,8 +7082,8 @@ export namespace MyNS {
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId?: string | null;
 
@@ -7084,8 +7092,8 @@ export namespace MyNS {
 
 		/**
 		 * Type of resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resourceType?: string | null;
 	}
@@ -7111,8 +7119,8 @@ export namespace MyNS {
 
 		/**
 		 * Physical identifier of the resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		physicalResourceId: FormControl<string | null | undefined>,
 
@@ -7121,8 +7129,8 @@ export namespace MyNS {
 
 		/**
 		 * Type of resource.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		resourceType: FormControl<string | null | undefined>,
 	}
@@ -7181,8 +7189,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		policyDescription?: string | null;
 
@@ -7208,8 +7216,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		policyDescription: FormControl<string | null | undefined>,
 

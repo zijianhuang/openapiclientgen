@@ -204,7 +204,10 @@ export namespace MyNS {
 		/** Output only. [Output only] Name of a range. */
 		rangeName?: string | null;
 
-		/** Output only. [Output only] The utilization of the range. */
+		/**
+		 * Output only. [Output only] The utilization of the range.
+		 * Type: double
+		 */
 		utilization?: number | null;
 	}
 
@@ -214,7 +217,10 @@ export namespace MyNS {
 		/** Output only. [Output only] Name of a range. */
 		rangeName: FormControl<string | null | undefined>,
 
-		/** Output only. [Output only] The utilization of the range. */
+		/**
+		 * Output only. [Output only] The utilization of the range.
+		 * Type: double
+		 */
 		utilization: FormControl<number | null | undefined>,
 	}
 	export function CreateRangeInfoFormGroup() {
@@ -732,7 +738,10 @@ export namespace MyNS {
 		/** The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption */
 		bootDiskKmsKey?: string | null;
 
-		/** Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB. */
+		/**
+		 * Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard' */
@@ -769,7 +778,10 @@ export namespace MyNS {
 		/** The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption */
 		bootDiskKmsKey: FormControl<string | null | undefined>,
 
-		/** Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB. */
+		/**
+		 * Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard' */
@@ -866,10 +878,16 @@ export namespace MyNS {
 		/** Settings for blue-green upgrade. */
 		blueGreenSettings?: BlueGreenSettings;
 
-		/** The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. */
+		/**
+		 * The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSurge?: number | null;
 
-		/** The maximum number of nodes that can be simultaneously unavailable during the upgrade process. A node is considered available if its status is Ready. */
+		/**
+		 * The maximum number of nodes that can be simultaneously unavailable during the upgrade process. A node is considered available if its status is Ready.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUnavailable?: number | null;
 
 		/** Update strategy of the node pool. */
@@ -879,10 +897,16 @@ export namespace MyNS {
 	/** These upgrade settings control the level of parallelism and the level of disruption caused by an upgrade. maxUnavailable controls the number of nodes that can be simultaneously unavailable. maxSurge controls the number of additional nodes that can be added to the node pool temporarily for the time of the upgrade to increase the number of available nodes. (maxUnavailable + maxSurge) determines the level of parallelism (how many nodes are being upgraded at the same time). Note: upgrades inevitably introduce some disruption since workloads need to be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0, this holds true. (Disruption stays within the limits of PodDisruptionBudget, if it is configured.) Consider a hypothetical node pool with 5 nodes having maxSurge=2, maxUnavailable=1. This means the upgrade process upgrades 3 nodes simultaneously. It creates 2 additional (upgraded) nodes, then it brings down 3 old (not yet upgraded) nodes at the same time. This ensures that there are always at least 4 nodes available. These upgrade settings configure the upgrade strategy for the node pool. Use strategy to switch between the strategies applied to the node pool. If the strategy is ROLLING, use max_surge and max_unavailable to control the level of parallelism and the level of disruption caused by upgrade. 1. maxSurge controls the number of additional nodes that can be added to the node pool temporarily for the time of the upgrade to increase the number of available nodes. 2. maxUnavailable controls the number of nodes that can be simultaneously unavailable. 3. (maxUnavailable + maxSurge) determines the level of parallelism (how many nodes are being upgraded at the same time). If the strategy is BLUE_GREEN, use blue_green_settings to configure the blue-green upgrade related settings. 1. standard_rollout_policy is the default policy. The policy is used to control the way blue pool gets drained. The draining is executed in the batch mode. The batch size could be specified as either percentage of the node pool size or the number of nodes. batch_soak_duration is the soak time after each batch gets drained. 2. node_pool_soak_duration is the soak time after all blue nodes are drained. After this period, the blue pool nodes will be deleted. */
 	export interface UpgradeSettingsFormProperties {
 
-		/** The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. */
+		/**
+		 * The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSurge: FormControl<number | null | undefined>,
 
-		/** The maximum number of nodes that can be simultaneously unavailable during the upgrade process. A node is considered available if its status is Ready. */
+		/**
+		 * The maximum number of nodes that can be simultaneously unavailable during the upgrade process. A node is considered available if its status is Ready.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUnavailable: FormControl<number | null | undefined>,
 
 		/** Update strategy of the node pool. */
@@ -925,10 +949,16 @@ export namespace MyNS {
 	/** Standard rollout policy is the default policy for blue-green. */
 	export interface StandardRolloutPolicy {
 
-		/** Number of blue nodes to drain in a batch. */
+		/**
+		 * Number of blue nodes to drain in a batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchNodeCount?: number | null;
 
-		/** Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0]. */
+		/**
+		 * Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0].
+		 * Type: float
+		 */
 		batchPercentage?: number | null;
 
 		/** Soak time after each batch gets drained. Default to zero. */
@@ -938,10 +968,16 @@ export namespace MyNS {
 	/** Standard rollout policy is the default policy for blue-green. */
 	export interface StandardRolloutPolicyFormProperties {
 
-		/** Number of blue nodes to drain in a batch. */
+		/**
+		 * Number of blue nodes to drain in a batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchNodeCount: FormControl<number | null | undefined>,
 
-		/** Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0]. */
+		/**
+		 * Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0].
+		 * Type: float
+		 */
 		batchPercentage: FormControl<number | null | undefined>,
 
 		/** Soak time after each batch gets drained. Default to zero. */
@@ -965,7 +1001,10 @@ export namespace MyNS {
 		/** When this is enabled, cluster/node pool creations will ignore non-fatal errors like stockout to best provision as many nodes as possible right now and eventually bring up all target number of nodes */
 		enabled?: boolean | null;
 
-		/** Minimum number of nodes to be provisioned to be considered as succeeded, and the rest of nodes will be provisioned gradually and eventually when stockout issue has been resolved. */
+		/**
+		 * Minimum number of nodes to be provisioned to be considered as succeeded, and the rest of nodes will be provisioned gradually and eventually when stockout issue has been resolved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProvisionNodes?: number | null;
 	}
 
@@ -975,7 +1014,10 @@ export namespace MyNS {
 		/** When this is enabled, cluster/node pool creations will ignore non-fatal errors like stockout to best provision as many nodes as possible right now and eventually bring up all target number of nodes */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Minimum number of nodes to be provisioned to be considered as succeeded, and the rest of nodes will be provisioned gradually and eventually when stockout issue has been resolved. */
+		/**
+		 * Minimum number of nodes to be provisioned to be considered as succeeded, and the rest of nodes will be provisioned gradually and eventually when stockout issue has been resolved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProvisionNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateBestEffortProvisioningFormGroup() {
@@ -1232,7 +1274,10 @@ export namespace MyNS {
 		/** [Output only] The current software version of the master endpoint. */
 		currentMasterVersion?: string | null;
 
-		/** [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information. */
+		/**
+		 * [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNodeCount?: number | null;
 
 		/** [Output only] Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes. */
@@ -1280,7 +1325,10 @@ export namespace MyNS {
 		/** The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version */
 		initialClusterVersion?: string | null;
 
-		/** The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead. */
+		/**
+		 * The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount?: number | null;
 
 		/** Deprecated. Use node_pools.instance_group_urls. */
@@ -1340,7 +1388,10 @@ export namespace MyNS {
 		/** Parameters that describe the nodes in a cluster. GKE Autopilot clusters do not recognize parameters in `NodeConfig`. Use AutoprovisioningNodePoolDefaults instead. */
 		nodeConfig?: NodeConfig;
 
-		/** [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode. */
+		/**
+		 * [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeIpv4CidrSize?: number | null;
 
 		/** Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. */
@@ -1416,7 +1467,10 @@ export namespace MyNS {
 		/** [Output only] The current software version of the master endpoint. */
 		currentMasterVersion: FormControl<string | null | undefined>,
 
-		/** [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information. */
+		/**
+		 * [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNodeCount: FormControl<number | null | undefined>,
 
 		/** [Output only] Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes. */
@@ -1446,7 +1500,10 @@ export namespace MyNS {
 		/** The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version */
 		initialClusterVersion: FormControl<string | null | undefined>,
 
-		/** The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead. */
+		/**
+		 * The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount: FormControl<number | null | undefined>,
 
 		/** The fingerprint of the set of labels for this cluster. */
@@ -1467,7 +1524,10 @@ export namespace MyNS {
 		/** The name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the `default` network will be used. */
 		network: FormControl<string | null | undefined>,
 
-		/** [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode. */
+		/**
+		 * [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeIpv4CidrSize: FormControl<number | null | undefined>,
 
 		/** The resource labels for the cluster to use to annotate any related Google Compute Engine resources. */
@@ -1829,7 +1889,10 @@ export namespace MyNS {
 		/** Whether a new subnetwork will be created automatically for the cluster. This field is only applicable when `use_ip_aliases` is true. */
 		createSubnetwork?: boolean | null;
 
-		/** Output only. [Output only] The utilization of the cluster default IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode. */
+		/**
+		 * Output only. [Output only] The utilization of the cluster default IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode.
+		 * Type: double
+		 */
 		defaultPodIpv4RangeUtilization?: number | null;
 
 		/** The ipv6 access type (internal or external) when create_subnetwork is true */
@@ -1890,7 +1953,10 @@ export namespace MyNS {
 		/** Whether a new subnetwork will be created automatically for the cluster. This field is only applicable when `use_ip_aliases` is true. */
 		createSubnetwork: FormControl<boolean | null | undefined>,
 
-		/** Output only. [Output only] The utilization of the cluster default IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode. */
+		/**
+		 * Output only. [Output only] The utilization of the cluster default IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode.
+		 * Type: double
+		 */
 		defaultPodIpv4RangeUtilization: FormControl<number | null | undefined>,
 
 		/** The ipv6 access type (internal or external) when create_subnetwork is true */
@@ -2620,7 +2686,10 @@ export namespace MyNS {
 		/** ConfidentialNodes is configuration for the confidential nodes feature, which makes nodes run on confidential VMs. */
 		confidentialNodes?: ConfidentialNodes;
 
-		/** Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB. */
+		/**
+		 * Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard' */
@@ -2653,7 +2722,10 @@ export namespace MyNS {
 		/** LocalNvmeSsdBlockConfig contains configuration for using raw-block local NVMe SSDs */
 		localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig;
 
-		/** The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. */
+		/**
+		 * The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount?: number | null;
 
 		/** NodePoolLoggingConfig specifies logging configuration for nodepools. */
@@ -2720,7 +2792,10 @@ export namespace MyNS {
 		/** The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption */
 		bootDiskKmsKey: FormControl<string | null | undefined>,
 
-		/** Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB. */
+		/**
+		 * Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard' */
@@ -2732,7 +2807,10 @@ export namespace MyNS {
 		/** The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. In case of conflict in label keys, the applied set may differ depending on the Kubernetes version -- it's best to assume the behavior is undefined and conflicts should be avoided. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/ */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. */
+		/**
+		 * The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount: FormControl<number | null | undefined>,
 
 		/** The name of a Google Compute Engine [machine type](https://cloud.google.com/compute/docs/machine-types) If unspecified, the default machine type is `e2-medium`. */
@@ -2783,14 +2861,20 @@ export namespace MyNS {
 	/** EphemeralStorageLocalSsdConfig contains configuration for the node ephemeral storage using Local SSDs. */
 	export interface EphemeralStorageLocalSsdConfig {
 
-		/** Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info. */
+		/**
+		 * Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount?: number | null;
 	}
 
 	/** EphemeralStorageLocalSsdConfig contains configuration for the node ephemeral storage using Local SSDs. */
 	export interface EphemeralStorageLocalSsdConfigFormProperties {
 
-		/** Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info. */
+		/**
+		 * Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount: FormControl<number | null | undefined>,
 	}
 	export function CreateEphemeralStorageLocalSsdConfigFormGroup() {
@@ -2946,14 +3030,20 @@ export namespace MyNS {
 	/** LocalNvmeSsdBlockConfig contains configuration for using raw-block local NVMe SSDs */
 	export interface LocalNvmeSsdBlockConfig {
 
-		/** Number of local NVMe SSDs to use. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info. */
+		/**
+		 * Number of local NVMe SSDs to use. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount?: number | null;
 	}
 
 	/** LocalNvmeSsdBlockConfig contains configuration for using raw-block local NVMe SSDs */
 	export interface LocalNvmeSsdBlockConfigFormProperties {
 
-		/** Number of local NVMe SSDs to use. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info. */
+		/**
+		 * Number of local NVMe SSDs to use. The limit for this value is dependent upon the maximum number of disk available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information. A zero (or unset) value has different meanings depending on machine type being used: 1. For pre-Gen3 machines, which support flexible numbers of local ssds, zero (or unset) means to disable using local SSDs as ephemeral storage. 2. For Gen3 machines which dictate a specific number of local ssds, zero (or unset) means to use the default number of local ssds that goes with that machine type. For example, for a c3-standard-8-lssd machine, 2 local ssds would be provisioned. For c3-standard-8 (which doesn't support local ssds), 0 will be provisioned. See https://cloud.google.com/compute/docs/disks/local-ssd#choose_number_local_ssds for more info.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localSsdCount: FormControl<number | null | undefined>,
 	}
 	export function CreateLocalNvmeSsdBlockConfigFormGroup() {
@@ -3306,7 +3396,10 @@ export namespace MyNS {
 		/** This checksum is computed by the server based on the value of node pool fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. */
 		etag?: string | null;
 
-		/** The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. */
+		/**
+		 * The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount?: number | null;
 
 		/** [Output only] The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. During the node pool blue-green upgrade operation, the URLs contain both blue and green resources. */
@@ -3330,7 +3423,10 @@ export namespace MyNS {
 		/** PlacementPolicy defines the placement policy used by the node pool. */
 		placementPolicy?: PlacementPolicy;
 
-		/** [Output only] The pod CIDR block size per node in this node pool. */
+		/**
+		 * [Output only] The pod CIDR block size per node in this node pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podIpv4CidrSize?: number | null;
 
 		/** QueuedProvisioning defines the queued provisioning used by the node pool. */
@@ -3361,13 +3457,19 @@ export namespace MyNS {
 		/** This checksum is computed by the server based on the value of node pool fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. */
 		etag: FormControl<string | null | undefined>,
 
-		/** The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. */
+		/**
+		 * The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount: FormControl<number | null | undefined>,
 
 		/** The name of the node pool. */
 		name: FormControl<string | null | undefined>,
 
-		/** [Output only] The pod CIDR block size per node in this node pool. */
+		/**
+		 * [Output only] The pod CIDR block size per node in this node pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podIpv4CidrSize: FormControl<number | null | undefined>,
 
 		/** [Output only] Server-defined URL for the resource. */
@@ -3409,16 +3511,28 @@ export namespace MyNS {
 		/** Location policy used when scaling up a nodepool. */
 		locationPolicy?: NodePoolAutoscalingLocationPolicy | null;
 
-		/** Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster. */
+		/**
+		 * Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount?: number | null;
 
-		/** Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count. */
+		/**
+		 * Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount?: number | null;
 
-		/** Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields. */
+		/**
+		 * Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMaxNodeCount?: number | null;
 
-		/** Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields. */
+		/**
+		 * Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMinNodeCount?: number | null;
 	}
 
@@ -3434,16 +3548,28 @@ export namespace MyNS {
 		/** Location policy used when scaling up a nodepool. */
 		locationPolicy: FormControl<NodePoolAutoscalingLocationPolicy | null | undefined>,
 
-		/** Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster. */
+		/**
+		 * Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount: FormControl<number | null | undefined>,
 
-		/** Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count. */
+		/**
+		 * Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount: FormControl<number | null | undefined>,
 
-		/** Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields. */
+		/**
+		 * Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMaxNodeCount: FormControl<number | null | undefined>,
 
-		/** Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields. */
+		/**
+		 * Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total_*_node_count fields are mutually exclusive with the *_node_count fields.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMinNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNodePoolAutoscalingFormGroup() {
@@ -3486,7 +3612,10 @@ export namespace MyNS {
 		/** The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created. */
 		podIpv4CidrBlock?: string | null;
 
-		/** Output only. [Output only] The utilization of the IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode. */
+		/**
+		 * Output only. [Output only] The utilization of the IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode.
+		 * Type: double
+		 */
 		podIpv4RangeUtilization?: number | null;
 
 		/** The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created. */
@@ -3505,7 +3634,10 @@ export namespace MyNS {
 		/** The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created. */
 		podIpv4CidrBlock: FormControl<string | null | undefined>,
 
-		/** Output only. [Output only] The utilization of the IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode. */
+		/**
+		 * Output only. [Output only] The utilization of the IPv4 range for the pod. The ratio is Usage/[Total number of IPs in the secondary range], Usage=numNodes*numZones*podIPsPerNode.
+		 * Type: double
+		 */
 		podIpv4RangeUtilization: FormControl<number | null | undefined>,
 
 		/** The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created. */
@@ -4720,7 +4852,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -4733,7 +4868,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -4787,7 +4925,10 @@ export namespace MyNS {
 	/** Progress metric is (string, int|float|string) pair. */
 	export interface Metric {
 
-		/** For metrics with floating point value. */
+		/**
+		 * For metrics with floating point value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** For metrics with integer value. */
@@ -4803,7 +4944,10 @@ export namespace MyNS {
 	/** Progress metric is (string, int|float|string) pair. */
 	export interface MetricFormProperties {
 
-		/** For metrics with floating point value. */
+		/**
+		 * For metrics with floating point value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** For metrics with integer value. */
@@ -5742,7 +5886,10 @@ export namespace MyNS {
 		/** The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format `projects/locations/clusters/nodePools/*`. */
 		name?: string | null;
 
-		/** Required. The desired node count for the pool. */
+		/**
+		 * Required. The desired node count for the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** Deprecated. The name of the node pool to update. This field has been deprecated and replaced by the name field. */
@@ -5764,7 +5911,10 @@ export namespace MyNS {
 		/** The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format `projects/locations/clusters/nodePools/*`. */
 		name: FormControl<string | null | undefined>,
 
-		/** Required. The desired node count for the pool. */
+		/**
+		 * Required. The desired node count for the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** Deprecated. The name of the node pool to update. This field has been deprecated and replaced by the name field. */
@@ -6801,6 +6951,7 @@ export namespace MyNS {
 		 * @param {string} parent The parent project where subnetworks are usable. Specified in the format `projects/*`.
 		 * @param {string} filter Filtering currently only supports equality on the networkProjectId and must be in the form: "networkProjectId=[PROJECTID]", where `networkProjectId` is the project which owns the listed subnetworks. This defaults to the parent project ID.
 		 * @param {number} pageSize The max number of results per page that should be returned. If the number of available results is larger than `page_size`, a `next_page_token` is returned which can be used to get the next page of results in subsequent requests. Acceptable values are 0 to 500, inclusive. (Default: 500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a page token to use. Set this to the nextPageToken returned by previous list requests to get the next page of results.
 		 * @return {ListUsableSubnetworksResponse} Successful response
 		 */

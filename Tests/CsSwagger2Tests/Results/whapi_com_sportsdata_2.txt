@@ -1059,7 +1059,10 @@ namespace MyNS
 		/// <param name="headlineSummary">Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.</param>
 		/// <param name="includeAllDescendants">Include every descendant in the below heirarchy</param>
 		/// <param name="isInPlay">Show only events that are in-play</param>
-		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.</param>
+		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		/// Minimum: 1
+		/// Maximum: 3
+		// </param>
 		/// <param name="date">Return only events for the specified date (yyyy-MM-dd).</param>
 		/// <param name="dateFrom">The UTC datetime from the events to be returned. (yyyy-MM-ddTHH:mm:ss)</param>
 		/// <param name="dateTo">The UTC datetime TO the events to be returned. (yyyy-MM-ddTHH:mm:ss)</param>
@@ -1184,7 +1187,10 @@ namespace MyNS
 		/// <param name="headlineSummary">Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.</param>
 		/// <param name="includeAllDescendants">Include every descendant in the below heirarchy</param>
 		/// <param name="isInPlay">Show only events that are in-play</param>
-		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.</param>
+		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		/// Minimum: 1
+		/// Maximum: 3
+		// </param>
 		/// <param name="date">Return only events for the specified date (yyyy-MM-dd).</param>
 		/// <param name="dateFrom">The UTC datetime from the events to be returned. (yyyy-MM-ddTHH:mm:ss)</param>
 		/// <param name="dateTo">The UTC datetime TO the events to be returned. (yyyy-MM-ddTHH:mm:ss)</param>
@@ -1344,7 +1350,10 @@ namespace MyNS
 		/// <param name="settled">Specify wether only settled entities should be returned</param>
 		/// <param name="includeEmpty">When declared as false it should exclude markets and events that have no selections / markets</param>
 		/// <param name="headlineSummary">Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.</param>
-		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.</param>
+		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		/// Minimum: 1
+		/// Maximum: 3
+		// </param>
 		/// <param name="sort">The field to order the response by, followed by the order. For example: name,desc</param>
 		/// <param name="offset">Skip over a number of elements by specifying a start value for the query</param>
 		/// <param name="limit">Specify the number of results to return</param>
@@ -1419,7 +1428,10 @@ namespace MyNS
 		/// <param name="include">Specify fields in addition to the default to return (Comma-Separated List)</param>
 		/// <param name="exclude">Specify fields from the default to exclude (Comma-Separated List)</param>
 		/// <param name="headlineSummary">Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.</param>
-		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.</param>
+		/// <param name="marketCount">Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		/// Minimum: 1
+		/// Maximum: 3
+		// </param>
 		/// <param name="marketIds">Comma-seaerated list of market IDs to filter by</param>
 		/// <param name="includeEmpty">When declared as false it should exclude markets and events that have no selections / markets</param>
 		/// <param name="culture">Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR</param>

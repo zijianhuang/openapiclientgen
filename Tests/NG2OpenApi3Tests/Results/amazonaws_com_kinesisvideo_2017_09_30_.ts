@@ -2106,8 +2106,8 @@ export namespace MyNS {
 		/**
 		 * A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: string;
 
@@ -2129,8 +2129,8 @@ export namespace MyNS {
 		/**
 		 * A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
@@ -2162,30 +2162,30 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DeviceName?: string | null;
 
 		/**
 		 * <p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: string;
 
 		/**
 		 * <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p> <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		MediaType?: string | null;
 
 		/**
 		 * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
@@ -2202,30 +2202,30 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p> <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		MediaType: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
@@ -2254,15 +2254,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to delete the edge configuration. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 	}
@@ -2270,15 +2270,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to delete the edge configuration. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -2295,15 +2295,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
 		/**
 		 * The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -2312,15 +2312,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
@@ -2337,15 +2337,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to delete.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: string;
 
 		/**
 		 * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -2354,15 +2354,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to delete.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
@@ -2378,15 +2378,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 	}
@@ -2394,15 +2394,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -2418,15 +2418,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 	}
@@ -2434,15 +2434,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -2458,15 +2458,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -2479,8 +2479,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to provide in your next request, to get another batch of results.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 	}
@@ -2488,15 +2488,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2509,8 +2509,8 @@ export namespace MyNS {
 
 		/**
 		 * The token to provide in your next request, to get another batch of results.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2528,15 +2528,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the channel.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN?: string | null;
 	}
@@ -2544,15 +2544,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the channel.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
@@ -2568,15 +2568,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 	}
@@ -2584,15 +2584,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -2608,15 +2608,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the signaling channel that you want to describe.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName?: string | null;
 
 		/**
 		 * The ARN of the signaling channel that you want to describe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN?: string | null;
 	}
@@ -2624,15 +2624,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the signaling channel that you want to describe.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the signaling channel that you want to describe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
@@ -2648,15 +2648,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 	}
@@ -2664,15 +2664,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -2688,15 +2688,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -2710,15 +2710,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2742,8 +2742,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
@@ -2755,8 +2755,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
@@ -2786,8 +2786,8 @@ export namespace MyNS {
 		/**
 		 * The "Internet of Things (IoT) Thing" Arn of the edge agent.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		HubDeviceArn: string;
 
@@ -2800,8 +2800,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 	}
@@ -2810,8 +2810,8 @@ export namespace MyNS {
 		/**
 		 * The "Internet of Things (IoT) Thing" Arn of the edge agent.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		HubDeviceArn: FormControl<string | null | undefined>,
 
@@ -2824,8 +2824,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2849,8 +2849,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
@@ -2868,8 +2868,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2908,8 +2908,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
@@ -2927,8 +2927,8 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2960,16 +2960,16 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 	}
@@ -2977,16 +2977,16 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -3002,22 +3002,22 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to list tags for.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 	}
@@ -3025,22 +3025,22 @@ export namespace MyNS {
 
 		/**
 		 * If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the stream that you want to list tags for.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
@@ -3057,15 +3057,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -3079,15 +3079,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -3120,8 +3120,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -3138,8 +3138,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -3154,15 +3154,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to add the tag or tags to.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
@@ -3176,15 +3176,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the stream that you want to add the tag or tags to.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -3208,8 +3208,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -3226,8 +3226,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -3242,15 +3242,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to remove tags from.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
@@ -3266,15 +3266,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the stream that you want to remove tags from.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
@@ -3290,23 +3290,23 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose retention period you want to change.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: string;
 
@@ -3327,23 +3327,23 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream whose retention period you want to change.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
@@ -3375,15 +3375,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -3394,15 +3394,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -3449,8 +3449,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the channel.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
@@ -3465,8 +3465,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the channel.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
@@ -3497,15 +3497,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -3516,15 +3516,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -3555,16 +3555,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
 		/**
 		 * The current version of the signaling channel that you want to update.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: string;
 
@@ -3576,16 +3576,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The current version of the signaling channel that you want to update.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
@@ -3614,37 +3614,37 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The ARN of the stream whose metadata you want to update.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * The version of the stream whose metadata you want to update.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: string;
 
 		/**
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DeviceName?: string | null;
 
 		/**
 		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		MediaType?: string | null;
 	}
@@ -3652,37 +3652,37 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the stream whose metadata you want to update.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the stream whose metadata you want to update.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		MediaType: FormControl<string | null | undefined>,
 	}

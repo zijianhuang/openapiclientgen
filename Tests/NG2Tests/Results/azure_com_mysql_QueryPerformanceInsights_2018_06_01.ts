@@ -522,8 +522,11 @@ export namespace MyNS {
 		 * Retrieve the Query-Store query texts for specified queryIds.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/queryTexts
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {Array<string>} queryIds The query identifiers
 		 * @return {QueryTextsResultList} OK
@@ -536,8 +539,11 @@ export namespace MyNS {
 		 * Retrieve the Query-Store query texts for the queryId.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/queryTexts/{queryId}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} queryId The Query-Store query identifier.
 		 * @return {QueryText} OK
@@ -550,8 +556,11 @@ export namespace MyNS {
 		 * Retrieve the Query-Store top queries for specified metric and aggregation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/topQueryStatistics
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @return {TopQueryStatisticsResultList} OK
 		 */
@@ -563,8 +572,11 @@ export namespace MyNS {
 		 * Retrieve the query statistic for specified identifier.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/topQueryStatistics/{queryStatisticId}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} queryStatisticId The Query Statistic identifier.
 		 * @return {QueryStatistic} OK
@@ -577,8 +589,11 @@ export namespace MyNS {
 		 * Retrieve wait statistics for specified aggregation window.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/waitStatistics
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @return {WaitStatisticsResultList} OK
 		 */
@@ -590,8 +605,11 @@ export namespace MyNS {
 		 * Retrieve wait statistics for specified identifier.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/waitStatistics/{waitStatisticsId}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} waitStatisticsId The Wait Statistic identifier.
 		 * @return {WaitStatistic} OK

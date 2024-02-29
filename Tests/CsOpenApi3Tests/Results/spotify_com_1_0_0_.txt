@@ -3971,6 +3971,9 @@ namespace MyNS
 		/// 
 		/// Get_an_albums_tracks albums/{id}/tracks
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of tracks</returns>
 		public async Task<PagingSimplifiedTrackObject> Get_an_albums_tracksAsync(string id, string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4079,6 +4082,9 @@ namespace MyNS
 		/// 
 		/// Get_an_artists_albums artists/{id}/albums
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of albums</returns>
 		public async Task<PagingSimplifiedAlbumObject> Get_an_artists_albumsAsync(string id, string include_groups, string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4371,6 +4377,9 @@ namespace MyNS
 		/// 
 		/// Get_audiobook_chapters audiobooks/{id}/chapters
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of chapters</returns>
 		public async Task<PagingSimplifiedChapterObject> Get_audiobook_chaptersAsync(string id, string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4407,6 +4416,9 @@ namespace MyNS
 		/// 
 		/// Get_categories browse/categories
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of categories</returns>
 		public async Task<Get_categoriesReturn> Get_categoriesAsync(string country, string locale, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4479,6 +4491,9 @@ namespace MyNS
 		/// 
 		/// Get_a_categories_playlists browse/categories/{category_id}/playlists
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of playlists</returns>
 		public async Task<PagingFeaturedPlaylistObject> Get_a_categories_playlistsAsync(string category_id, string country, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4515,6 +4530,9 @@ namespace MyNS
 		/// 
 		/// Get_featured_playlists browse/featured-playlists
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of playlists</returns>
 		public async Task<PagingFeaturedPlaylistObject> Get_featured_playlistsAsync(string country, string locale, string timestamp, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4551,6 +4569,9 @@ namespace MyNS
 		/// 
 		/// Get_new_releases browse/new-releases
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of albums</returns>
 		public async Task<Get_new_releasesReturn> Get_new_releasesAsync(string country, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4837,6 +4858,9 @@ namespace MyNS
 		/// 
 		/// Get_users_saved_albums me/albums
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of albums</returns>
 		public async Task<PagingSavedAlbumObject> Get_users_saved_albumsAsync(int limit, int offset, string market, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4976,6 +5000,9 @@ namespace MyNS
 		/// 
 		/// Get_users_saved_audiobooks me/audiobooks
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of audiobooks</returns>
 		public async Task<PagingSimplifiedAudiobookObject> Get_users_saved_audiobooksAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5105,6 +5132,9 @@ namespace MyNS
 		/// 
 		/// Get_users_saved_episodes me/episodes
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of episodes</returns>
 		public async Task<PagingSavedEpisodeObject> Get_users_saved_episodesAsync(string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5246,6 +5276,9 @@ namespace MyNS
 		/// 
 		/// Get_followed me/following
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of artists</returns>
 		public async Task<Get_followedReturn> Get_followedAsync(ArtistObjectType type, string after, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5667,6 +5700,9 @@ namespace MyNS
 		/// 
 		/// Get_recently_played me/player/recently-played
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of tracks</returns>
 		public async Task<CursorPagingPlayHistoryObject> Get_recently_playedAsync(int limit, int after, int before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5801,6 +5837,9 @@ namespace MyNS
 		/// 
 		/// Get_a_list_of_current_users_playlists me/playlists
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of playlists</returns>
 		public async Task<PagingPlaylistObject> Get_a_list_of_current_users_playlistsAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5867,6 +5906,9 @@ namespace MyNS
 		/// 
 		/// Get_users_saved_shows me/shows
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of shows</returns>
 		public async Task<PagingSavedShowObject> Get_users_saved_showsAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5964,6 +6006,9 @@ namespace MyNS
 		/// 
 		/// Get_users_top_artists_and_tracks me/top/{type}
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of artists or tracks</returns>
 		public async Task<string> Get_users_top_artists_and_tracksAsync(Get_users_top_artists_and_tracksType type, string time_range, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6029,6 +6074,9 @@ namespace MyNS
 		/// 
 		/// Get_users_saved_tracks me/tracks
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of tracks</returns>
 		public async Task<PagingSavedTrackObject> Get_users_saved_tracksAsync(string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6387,6 +6435,9 @@ namespace MyNS
 		/// 
 		/// Get_playlists_tracks playlists/{playlist_id}/tracks
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of tracks</returns>
 		public async Task<PagingPlaylistTrackObject> Get_playlists_tracksAsync(string playlist_id, string market, string fields, int limit, int offset, string additional_types, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6510,6 +6561,100 @@ namespace MyNS
 		/// 
 		/// Get_recommendations recommendations
 		/// </summary>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="min_acousticness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_acousticness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_acousticness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_danceability">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_danceability">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_danceability">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_energy">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_energy">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_energy">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_instrumentalness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_instrumentalness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_instrumentalness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_key">Minimum: 0
+		/// Maximum: 11
+		// </param>
+		/// <param name="max_key">Minimum: 0
+		/// Maximum: 11
+		// </param>
+		/// <param name="target_key">Minimum: 0
+		/// Maximum: 11
+		// </param>
+		/// <param name="min_liveness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_liveness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_liveness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_mode">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_mode">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_mode">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_popularity">Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="max_popularity">Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="target_popularity">Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="min_speechiness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_speechiness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_speechiness">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="min_time_signature">Maximum: 11</param>
+		/// <param name="min_valence">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="max_valence">Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="target_valence">Minimum: 0
+		/// Maximum: 1
+		// </param>
 		/// <returns>A set of recommendations</returns>
 		public async Task<RecommendationsObject> Get_recommendationsAsync(
 					int limit, 
@@ -6632,6 +6777,12 @@ namespace MyNS
 		/// 
 		/// Search search
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Search response</returns>
 		public async Task<SearchReturn> SearchAsync(string q, string[] type, string market, int limit, int offset, SearchInclude_external include_external, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6741,6 +6892,9 @@ namespace MyNS
 		/// 
 		/// Get_a_shows_episodes shows/{id}/episodes
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>Pages of episodes</returns>
 		public async Task<PagingSimplifiedEpisodeObject> Get_a_shows_episodesAsync(string id, string market, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6886,6 +7040,9 @@ namespace MyNS
 		/// 
 		/// Get_list_users_playlists users/{user_id}/playlists
 		/// </summary>
+		/// <param name="limit">Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <returns>A paged set of playlists</returns>
 		public async Task<PagingPlaylistObject> Get_list_users_playlistsAsync(string user_id, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

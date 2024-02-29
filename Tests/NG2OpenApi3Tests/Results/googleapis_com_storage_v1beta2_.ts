@@ -214,7 +214,10 @@ export namespace MyNS {
 
 	export interface BucketCors {
 
-		/** The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses. */
+		/**
+		 * The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAgeSeconds?: number | null;
 
 		/** The list of HTTP methods on which to include CORS response headers: GET, OPTIONS, POST, etc. Note, "*" is permitted in the list of methods, and means "any method". */
@@ -228,7 +231,10 @@ export namespace MyNS {
 	}
 	export interface BucketCorsFormProperties {
 
-		/** The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses. */
+		/**
+		 * The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAgeSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketCorsFormGroup() {
@@ -408,30 +414,48 @@ export namespace MyNS {
 
 	export interface BucketLifecycleRuleCondition {
 
-		/** Age of an object (in days). This condition is satisfied when an object reaches the specified age. */
+		/**
+		 * Age of an object (in days). This condition is satisfied when an object reaches the specified age.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age?: number | null;
 
-		/** A date in RFC 3339 format with only the date part, e.g. "2013-01-15". This condition is satisfied when an object is created before midnight of the specified date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part, e.g. "2013-01-15". This condition is satisfied when an object is created before midnight of the specified date in UTC.
+		 * Type: DateOnly
+		 */
 		createdBefore?: Date | null;
 
 		/** Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. */
 		isLive?: boolean | null;
 
-		/** Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. */
+		/**
+		 * Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNewerVersions?: number | null;
 	}
 	export interface BucketLifecycleRuleConditionFormProperties {
 
-		/** Age of an object (in days). This condition is satisfied when an object reaches the specified age. */
+		/**
+		 * Age of an object (in days). This condition is satisfied when an object reaches the specified age.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age: FormControl<number | null | undefined>,
 
-		/** A date in RFC 3339 format with only the date part, e.g. "2013-01-15". This condition is satisfied when an object is created before midnight of the specified date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part, e.g. "2013-01-15". This condition is satisfied when an object is created before midnight of the specified date in UTC.
+		 * Type: DateOnly
+		 */
 		createdBefore: FormControl<Date | null | undefined>,
 
 		/** Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. */
 		isLive: FormControl<boolean | null | undefined>,
 
-		/** Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. */
+		/**
+		 * Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNewerVersions: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketLifecycleRuleConditionFormGroup() {
@@ -712,7 +736,10 @@ export namespace MyNS {
 		/** Cache-Control directive for the object data. */
 		cacheControl?: string | null;
 
-		/** Number of underlying components that make up this object. Components are accumulated by compose operations and are limited to a count of 32. */
+		/**
+		 * Number of underlying components that make up this object. Components are accumulated by compose operations and are limited to a count of 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		componentCount?: number | null;
 
 		/** Content-Disposition of the object data. */
@@ -785,7 +812,10 @@ export namespace MyNS {
 		/** Cache-Control directive for the object data. */
 		cacheControl: FormControl<string | null | undefined>,
 
-		/** Number of underlying components that make up this object. Components are accumulated by compose operations and are limited to a count of 32. */
+		/**
+		 * Number of underlying components that make up this object. Components are accumulated by compose operations and are limited to a count of 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		componentCount: FormControl<number | null | undefined>,
 
 		/** Content-Disposition of the object data. */
@@ -1009,6 +1039,7 @@ export namespace MyNS {
 		 * Get b
 		 * @param {string} project A valid API project identifier.
 		 * @param {number} maxResults Maximum number of buckets to return.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
 		 * @return {Buckets} Successful response
@@ -1215,6 +1246,7 @@ export namespace MyNS {
 		 * @param {string} bucket Name of the bucket in which to look for objects.
 		 * @param {string} delimiter Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
 		 * @param {number} maxResults Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to objects whose names begin with this prefix.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
@@ -1231,6 +1263,7 @@ export namespace MyNS {
 		 * @param {string} bucket Name of the bucket in which to look for objects.
 		 * @param {string} delimiter Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
 		 * @param {number} maxResults Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to objects whose names begin with this prefix.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.

@@ -633,6 +633,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {number} top May be used to limit the number of results in a page for list queries.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
 		 * @return {ManagedNetworkListResult} Get successful. The operation returns all Managed Network resources under the current subscription in a paginated format.
 		 */
@@ -647,6 +648,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {number} top May be used to limit the number of results in a page for list queries.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
 		 * @return {ManagedNetworkListResult} Get successful. The operation returns all Managed Network resources under the specified resource group in a paginated format
 		 */
@@ -716,6 +718,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} managedNetworkName The name of the Managed Network.
 		 * @param {number} top May be used to limit the number of results in a page for list queries.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
 		 * @return {ManagedNetworkGroupListResult} Get successful. The operation returns all Managed Network Group resources under the specified Managed Network in a paginated format.
 		 */
@@ -774,6 +777,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} managedNetworkName The name of the Managed Network.
 		 * @param {number} top May be used to limit the number of results in a page for list queries.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
 		 * @return {ManagedNetworkPeeringPolicyListResult} Get successful. The operation returns all Managed Network Peering Policy resources in the specified Managed Network, in a paginated format
 		 */

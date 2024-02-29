@@ -17936,6 +17936,7 @@ export namespace MyNS {
 		 * Get members
 		 * @param {boolean} OnlyAssociated <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
 		 * @param {number} MaxResults The maximum number of items to return in the response. 
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListMembersResponse} Success
 		 */
@@ -18091,6 +18092,7 @@ export namespace MyNS {
 		 * Get products
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @param {number} MaxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} ProductArn The ARN of the integration to return.
 		 * @return {DescribeProductsResponse} Success
 		 */
@@ -18103,6 +18105,7 @@ export namespace MyNS {
 		 * Get standards
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @param {number} MaxResults The maximum number of standards to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {DescribeStandardsResponse} Success
 		 */
 		DescribeStandards(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsResponse> {
@@ -18115,6 +18118,7 @@ export namespace MyNS {
 		 * @param {string} StandardsSubscriptionArn The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @param {number} MaxResults The maximum number of security standard controls to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {DescribeStandardsControlsResponse} Success
 		 */
 		DescribeStandardsControls(StandardsSubscriptionArn: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsControlsResponse> {
@@ -18181,6 +18185,7 @@ export namespace MyNS {
 		 * Get productSubscriptions
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @param {number} MaxResults The maximum number of items to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListEnabledProductsForImportResponse} Success
 		 */
 		ListEnabledProductsForImport(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListEnabledProductsForImportResponse> {
@@ -18301,6 +18306,7 @@ export namespace MyNS {
 		 * Get automationrules/list
 		 * @param {string} NextToken  A token to specify where to start paginating the response. This is the <code>NextToken</code> from a previously truncated response. On your first call to the <code>ListAutomationRules</code> API, set the value of this parameter to <code>NULL</code>. 
 		 * @param {number} MaxResults  The maximum number of rules to return in the response. This currently ranges from 1 to 100. 
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAutomationRulesResponse} Success
 		 */
 		ListAutomationRules(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListAutomationRulesResponse> {
@@ -18312,6 +18318,7 @@ export namespace MyNS {
 		 * Get findingAggregator/list
 		 * @param {string} NextToken The token returned with the previous set of results. Identifies the next set of results to return.
 		 * @param {number} MaxResults The maximum number of results to return. This operation currently only returns a single result.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListFindingAggregatorsResponse} Success
 		 */
 		ListFindingAggregators(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListFindingAggregatorsResponse> {
@@ -18322,6 +18329,7 @@ export namespace MyNS {
 		 * <p>Lists all Security Hub membership invitations that were sent to the current Amazon Web Services account.</p> <p>This operation is only used by accounts that are managed by invitation. Accounts that are managed using the integration with Organizations do not receive invitations.</p>
 		 * Get invitations
 		 * @param {number} MaxResults The maximum number of items to return in the response. 
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListInvitationsResponse} Success
 		 */
@@ -18333,6 +18341,7 @@ export namespace MyNS {
 		 * Lists the Security Hub administrator accounts. Can only be called by the organization management account.
 		 * Get organization/admin
 		 * @param {number} MaxResults The maximum number of items to return in the response.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} NextToken The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. 
 		 * @return {ListOrganizationAdminAccountsResponse} Success
 		 */
@@ -18346,6 +18355,7 @@ export namespace MyNS {
 		 * @param {string} StandardsArn  The Amazon Resource Name (ARN) of the standard that you want to view controls for. 
 		 * @param {string} NextToken  Optional pagination parameter. 
 		 * @param {number} MaxResults  An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. 
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListSecurityControlDefinitionsResponse} Success
 		 */
 		ListSecurityControlDefinitions(StandardsArn: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListSecurityControlDefinitionsResponse> {
@@ -18358,6 +18368,7 @@ export namespace MyNS {
 		 * @param {string} SecurityControlId  The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. 
 		 * @param {string} NextToken  Optional pagination parameter. 
 		 * @param {number} MaxResults  An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 standard and control associations. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 associations. This repeats until all associations for the specified control are returned. The number of results is limited by the number of supported Security Hub standards that you've enabled in the calling account. 
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListStandardsControlAssociationsResponse} Success
 		 */
 		ListStandardsControlAssociations(SecurityControlId: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListStandardsControlAssociationsResponse> {
@@ -18389,6 +18400,7 @@ export namespace MyNS {
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The ARN of the resource to remove the tags from.
 		 * @param {Array<string>} tagKeys The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {

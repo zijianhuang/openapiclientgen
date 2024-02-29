@@ -1287,6 +1287,7 @@ export namespace MyNS {
 		 * <p>Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p> <p>You must run this operation in the Region where the canary exists.</p>
 		 * Patch group/{groupIdentifier}/associate
 		 * @param {string} groupIdentifier Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
+		 *     Min length: 1    Max length: 128
 		 * @return {AssociateResourceResponse} Success
 		 */
 		AssociateResource(groupIdentifier: string, requestBody: AssociateResourcePatchBody): Observable<AssociateResourceResponse> {
@@ -1315,6 +1316,7 @@ export namespace MyNS {
 		 * <p>Permanently deletes the specified canary.</p> <p>If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics also deletes the Lambda functions and layers that are used by the canary.</p> <p>Other resources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to use again, you should also delete the following:</p> <ul> <li> <p>The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i> </code>.</p> </li> <li> <p>Amazon S3 objects and buckets, such as the canary's artifact location.</p> </li> <li> <p>IAM roles created for the canary. If they were created in the console, these roles have the name <code> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </code>.</p> </li> <li> <p>CloudWatch Logs log groups created for the canary. These logs groups have the name <code>/aws/lambda/cwsyn-<i>MyCanaryName</i> </code>. </p> </li> </ul> <p>Before you delete a canary, you might want to use <code>GetCanary</code> to display the information about this canary. Make note of the information returned by this operation so that you can delete these resources after you delete the canary.</p>
 		 * Delete canary/{name}
 		 * @param {string} name The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
+		 *     Min length: 1    Max length: 21
 		 * @param {boolean} deleteLambda <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p> <p>Type: Boolean</p>
 		 * @return {DeleteCanaryResponse} Success
 		 */
@@ -1326,6 +1328,7 @@ export namespace MyNS {
 		 * Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a list of canaries and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
 		 * Get canary/{name}
 		 * @param {string} name The name of the canary that you want details for.
+		 *     Min length: 1    Max length: 21
 		 * @return {GetCanaryResponse} Success
 		 */
 		GetCanary(name: string): Observable<GetCanaryResponse> {
@@ -1336,6 +1339,7 @@ export namespace MyNS {
 		 * <p>Updates the configuration of a canary that has already been created.</p> <p>You can't use this operation to update the tags of an existing canary. To change the tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 		 * Patch canary/{name}
 		 * @param {string} name <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p> <p>You cannot change the name of a canary that has already been created.</p>
+		 *     Min length: 1    Max length: 21
 		 * @return {UpdateCanaryResponse} Success
 		 */
 		UpdateCanary(name: string, requestBody: UpdateCanaryPatchBody): Observable<UpdateCanaryResponse> {
@@ -1346,6 +1350,7 @@ export namespace MyNS {
 		 * <p>Deletes a group. The group doesn't need to be empty to be deleted. If there are canaries in the group, they are not deleted when you delete the group. </p> <p>Groups are a global resource that appear in all Regions, but the request to delete a group must be made from its home Region. You can find the home Region of a group within its ARN.</p>
 		 * Delete group/{groupIdentifier}
 		 * @param {string} groupIdentifier Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteGroupResponse} Success
 		 */
 		DeleteGroup(groupIdentifier: string): Observable<DeleteGroupResponse> {
@@ -1356,6 +1361,7 @@ export namespace MyNS {
 		 * Returns information about one group. Groups are a global resource, so you can use this operation from any Region.
 		 * Get group/{groupIdentifier}
 		 * @param {string} groupIdentifier Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetGroupResponse} Success
 		 */
 		GetGroup(groupIdentifier: string): Observable<GetGroupResponse> {
@@ -1399,6 +1405,7 @@ export namespace MyNS {
 		 * Removes a canary from a group. You must run this operation in the Region where the canary exists.
 		 * Patch group/{groupIdentifier}/disassociate
 		 * @param {string} groupIdentifier Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
+		 *     Min length: 1    Max length: 128
 		 * @return {DisassociateResourceResponse} Success
 		 */
 		DisassociateResource(groupIdentifier: string, requestBody: DisassociateResourcePatchBody): Observable<DisassociateResourceResponse> {
@@ -1409,6 +1416,7 @@ export namespace MyNS {
 		 * Retrieves a list of runs for a specified canary.
 		 * Post canary/{name}/runs
 		 * @param {string} name The name of the canary that you want to see runs for.
+		 *     Min length: 1    Max length: 21
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCanaryRunsResponse} Success
@@ -1421,6 +1429,7 @@ export namespace MyNS {
 		 * Returns a list of the groups that the specified canary is associated with. The canary that you specify must be in the current Region.
 		 * Post resource/{resourceArn}/groups
 		 * @param {string} resourceArn The ARN of the canary that you want to view groups for.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssociatedGroupsResponse} Success
@@ -1433,6 +1442,7 @@ export namespace MyNS {
 		 * This operation returns a list of the ARNs of the canaries that are associated with the specified group.
 		 * Post group/{groupIdentifier}/resources
 		 * @param {string} groupIdentifier Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupResourcesResponse} Success
@@ -1456,6 +1466,7 @@ export namespace MyNS {
 		 * Displays the tags associated with a canary or group.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn <p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1466,6 +1477,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified canary or group. </p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p> <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a canary or group.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn <p>The ARN of the canary or group that you're adding tags to.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+		 *     Min length: 1    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1476,6 +1488,7 @@ export namespace MyNS {
 		 * Use this operation to run a canary that has already been created. The frequency of the canary runs is determined by the value of the canary's <code>Schedule</code>. To see a canary's schedule, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.
 		 * Post canary/{name}/start
 		 * @param {string} name The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
+		 *     Min length: 1    Max length: 21
 		 * @return {StartCanaryResponse} Success
 		 */
 		StartCanary(name: string): Observable<StartCanaryResponse> {
@@ -1486,6 +1499,7 @@ export namespace MyNS {
 		 * <p>Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.</p> <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future. </p>
 		 * Post canary/{name}/stop
 		 * @param {string} name The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.
+		 *     Min length: 1    Max length: 21
 		 * @return {StopCanaryResponse} Success
 		 */
 		StopCanary(name: string): Observable<StopCanaryResponse> {
@@ -1496,7 +1510,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn <p>The ARN of the canary or group that you're removing tags from.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1509,8 +1525,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the canary that you want to associate with the specified group.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ResourceArn: string;
 	}
@@ -1519,8 +1535,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the canary that you want to associate with the specified group.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
@@ -1536,8 +1552,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
 		 * Required
-		 * Max length: 21
 		 * Min length: 1
+		 * Max length: 21
 		 */
 		Name: string;
 
@@ -1550,16 +1566,16 @@ export namespace MyNS {
 		/**
 		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ArtifactS3Location: string;
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:PutLogEvents</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
@@ -1589,8 +1605,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RuntimeVersion: string;
 
@@ -1608,24 +1624,24 @@ export namespace MyNS {
 		/**
 		 * <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
 		 * Required
-		 * Max length: 21
 		 * Min length: 1
+		 * Max length: 21
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:PutLogEvents</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
@@ -1646,8 +1662,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RuntimeVersion: FormControl<string | null | undefined>,
 
@@ -1756,8 +1772,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name for the group. It can include any Unicode characters.</p> <p>The names for all groups in your account, across all Regions, must be unique.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -1769,8 +1785,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name for the group. It can include any Unicode characters.</p> <p>The names for all groups in your account, across all Regions, must be unique.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1792,15 +1808,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn?: string | null;
 
 		/**
 		 * Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RuntimeVersion?: string | null;
 
@@ -1832,8 +1848,8 @@ export namespace MyNS {
 
 		/**
 		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ArtifactS3Location?: string | null;
 
@@ -1844,15 +1860,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RuntimeVersion: FormControl<string | null | undefined>,
 
@@ -1872,8 +1888,8 @@ export namespace MyNS {
 
 		/**
 		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
 	}
@@ -1990,8 +2006,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken?: string | null;
 
@@ -2013,8 +2029,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2037,8 +2053,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken?: string | null;
 
@@ -2060,8 +2076,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2084,8 +2100,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken?: string | null;
 
@@ -2100,8 +2116,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2125,8 +2141,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the canary that you want to remove from the specified group.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ResourceArn: string;
 	}
@@ -2135,8 +2151,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the canary that you want to remove from the specified group.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
@@ -2151,8 +2167,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken?: string | null;
 
@@ -2167,8 +2183,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
-		 * Max length: 252
 		 * Min length: 4
+		 * Max length: 252
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2191,8 +2207,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
@@ -2207,8 +2223,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2231,8 +2247,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
@@ -2247,8 +2263,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2271,8 +2287,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken?: string | null;
 
@@ -2287,8 +2303,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		NextToken: FormControl<string | null | undefined>,
 

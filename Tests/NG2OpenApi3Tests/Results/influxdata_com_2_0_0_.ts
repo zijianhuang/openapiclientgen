@@ -236,14 +236,26 @@ export namespace MyNS {
 	}
 
 	export interface AnalyzeQueryResponseErrors {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		character?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		column?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line?: number | null;
 		message?: string | null;
 	}
 	export interface AnalyzeQueryResponseErrorsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		character: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		column: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -689,7 +701,11 @@ export namespace MyNS {
 		hoverDimension?: BandViewPropertiesHoverDimension | null;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 		lowerColumn?: string | null;
 		mainColumn?: string | null;
@@ -717,12 +733,24 @@ export namespace MyNS {
 		type: BandViewPropertiesType;
 		upperColumn?: string | null;
 		xColumn?: string | null;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 		yColumn?: string | null;
+
+		/** Type: float */
 		yTickStart?: number | null;
+
+		/** Type: float */
 		yTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks?: number | null;
 	}
 	export interface BandViewPropertiesFormProperties {
@@ -732,7 +760,11 @@ export namespace MyNS {
 		hoverDimension: FormControl<BandViewPropertiesHoverDimension | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 		lowerColumn: FormControl<string | null | undefined>,
 		mainColumn: FormControl<string | null | undefined>,
@@ -754,12 +786,24 @@ export namespace MyNS {
 		type: FormControl<BandViewPropertiesType | null | undefined>,
 		upperColumn: FormControl<string | null | undefined>,
 		xColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 		yColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		yTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		yTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks: FormControl<number | null | undefined>,
 	}
 	export function CreateBandViewPropertiesFormGroup() {
@@ -797,8 +841,8 @@ export namespace MyNS {
 		/**
 		 * The hex number of the color
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		hex: string;
 
@@ -823,6 +867,7 @@ export namespace MyNS {
 		/**
 		 * The data value mapped to this color.
 		 * Required
+		 * Type: float
 		 */
 		value: number;
 	}
@@ -833,8 +878,8 @@ export namespace MyNS {
 		/**
 		 * The hex number of the color
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		hex: FormControl<string | null | undefined>,
 
@@ -859,6 +904,7 @@ export namespace MyNS {
 		/**
 		 * The data value mapped to this color.
 		 * Required
+		 * Type: float
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -973,22 +1019,38 @@ export namespace MyNS {
 	/** StaticLegend represents the options specific to the static legend */
 	export interface StaticLegend {
 		colorizeRows?: boolean | null;
+
+		/** Type: float */
 		heightRatio?: number | null;
 		hide?: boolean | null;
+
+		/** Type: float */
 		opacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orientationThreshold?: number | null;
 		valueAxis?: string | null;
+
+		/** Type: float */
 		widthRatio?: number | null;
 	}
 
 	/** StaticLegend represents the options specific to the static legend */
 	export interface StaticLegendFormProperties {
 		colorizeRows: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		heightRatio: FormControl<number | null | undefined>,
 		hide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		opacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		orientationThreshold: FormControl<number | null | undefined>,
 		valueAxis: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		widthRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateStaticLegendFormGroup() {
@@ -1214,10 +1276,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		everySeconds: number;
+		everySeconds: string;
 
-		/** Shard duration measured in seconds. */
-		shardGroupDurationSeconds?: number | null;
+		/**
+		 * Shard duration measured in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		shardGroupDurationSeconds?: string | null;
 
 		/** Required */
 		type: RetentionRuleType;
@@ -1229,18 +1294,21 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		everySeconds: FormControl<number | null | undefined>,
+		everySeconds: FormControl<string | null | undefined>,
 
-		/** Shard duration measured in seconds. */
-		shardGroupDurationSeconds: FormControl<number | null | undefined>,
+		/**
+		 * Shard duration measured in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		shardGroupDurationSeconds: FormControl<string | null | undefined>,
 
 		/** Required */
 		type: FormControl<RetentionRuleType | null | undefined>,
 	}
 	export function CreateRetentionRuleFormGroup() {
 		return new FormGroup<RetentionRuleFormProperties>({
-			everySeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			shardGroupDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			everySeconds: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			shardGroupDurationSeconds: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<RetentionRuleType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1316,24 +1384,40 @@ export namespace MyNS {
 	}
 
 	export interface Cell {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h?: number | null;
 		id?: string | null;
 		links?: CellLinks;
 
 		/** The reference to a view from the views API. */
 		viewID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y?: number | null;
 	}
 	export interface CellFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 
 		/** The reference to a view from the views API. */
 		viewID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateCellFormGroup() {
@@ -1365,15 +1449,31 @@ export namespace MyNS {
 	}
 
 	export interface CellUpdate {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y?: number | null;
 	}
 	export interface CellUpdateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateCellUpdateFormGroup() {
@@ -1580,7 +1680,11 @@ export namespace MyNS {
 		colors: Array<DashboardColor>;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -1598,7 +1702,11 @@ export namespace MyNS {
 		checkID: FormControl<string | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1675,23 +1783,39 @@ export namespace MyNS {
 	export enum ConstantVariablePropertiesType { constant = 'constant' }
 
 	export interface CreateCell {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h?: number | null;
 		name?: string | null;
 
 		/** Makes a copy of the provided view. */
 		usingView?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y?: number | null;
 	}
 	export interface CreateCellFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		h: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
 		/** Makes a copy of the provided view. */
 		usingView: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateCellFormGroup() {
@@ -2038,7 +2162,10 @@ export namespace MyNS {
 	/** Indicates whether decimal places should be enforced, and how many digits it should show. */
 	export interface DecimalPlaces {
 
-		/** The number of digits after decimal to display */
+		/**
+		 * The number of digits after decimal to display
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		digits?: number | null;
 
 		/** Indicates whether decimal point setting should be enforced */
@@ -2048,7 +2175,10 @@ export namespace MyNS {
 	/** Indicates whether decimal places should be enforced, and how many digits it should show. */
 	export interface DecimalPlacesFormProperties {
 
-		/** The number of digits after decimal to display */
+		/**
+		 * The number of digits after decimal to display
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		digits: FormControl<number | null | undefined>,
 
 		/** Indicates whether decimal point setting should be enforced */
@@ -2118,8 +2248,8 @@ export namespace MyNS {
 
 		/**
 		 * Character prefixed to comment strings
-		 * Max length: 1
 		 * Min length: 0
+		 * Max length: 1
 		 */
 		commentPrefix?: string | null;
 
@@ -2128,8 +2258,8 @@ export namespace MyNS {
 
 		/**
 		 * Separator between cells; the default is ,
-		 * Max length: 1
 		 * Min length: 1
+		 * Max length: 1
 		 */
 		delimiter?: string | null;
 
@@ -2142,8 +2272,8 @@ export namespace MyNS {
 
 		/**
 		 * Character prefixed to comment strings
-		 * Max length: 1
 		 * Min length: 0
+		 * Max length: 1
 		 */
 		commentPrefix: FormControl<string | null | undefined>,
 
@@ -2152,8 +2282,8 @@ export namespace MyNS {
 
 		/**
 		 * Separator between cells; the default is ,
-		 * Max length: 1
 		 * Min length: 1
+		 * Max length: 1
 		 */
 		delimiter: FormControl<string | null | undefined>,
 
@@ -2408,6 +2538,8 @@ export namespace MyNS {
 
 	/** A pair consisting of length of time and the unit of time measured. It is the atomic unit from which all duration literals are composed. */
 	export interface Duration {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		magnitude?: number | null;
 
 		/** Type of AST node */
@@ -2417,6 +2549,8 @@ export namespace MyNS {
 
 	/** A pair consisting of length of time and the unit of time measured. It is the atomic unit from which all duration literals are composed. */
 	export interface DurationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		magnitude: FormControl<number | null | undefined>,
 
 		/** Type of AST node */
@@ -2582,6 +2716,8 @@ export namespace MyNS {
 
 		/** Type of AST node */
 		type?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 
@@ -2590,6 +2726,8 @@ export namespace MyNS {
 
 		/** Type of AST node */
 		type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateFloatLiteralFormGroup() {
@@ -2804,7 +2942,10 @@ export namespace MyNS {
 		/** Interpolate circle color based on displayed value */
 		interpolateColors?: boolean | null;
 
-		/** Maximum radius size in pixels */
+		/**
+		 * Maximum radius size in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius?: number | null;
 
 		/**
@@ -2830,7 +2971,10 @@ export namespace MyNS {
 		/** Interpolate circle color based on displayed value */
 		interpolateColors: FormControl<boolean | null | undefined>,
 
-		/** Maximum radius size in pixels */
+		/**
+		 * Maximum radius size in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius: FormControl<number | null | undefined>,
 
 		/**
@@ -2855,6 +2999,7 @@ export namespace MyNS {
 		/**
 		 * Blur for heatmap points
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		blur: number;
 
@@ -2879,6 +3024,7 @@ export namespace MyNS {
 		/**
 		 * Radius size in pixels
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		radius: number;
 	}
@@ -2887,6 +3033,7 @@ export namespace MyNS {
 		/**
 		 * Blur for heatmap points
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		blur: FormControl<number | null | undefined>,
 
@@ -2899,6 +3046,7 @@ export namespace MyNS {
 		/**
 		 * Radius size in pixels
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		radius: FormControl<number | null | undefined>,
 	}
@@ -2963,10 +3111,16 @@ export namespace MyNS {
 		/** Assign different colors to different tracks */
 		randomColors?: boolean | null;
 
-		/** Speed of the track animation */
+		/**
+		 * Speed of the track animation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed?: number | null;
 
-		/** Width of the track */
+		/**
+		 * Width of the track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trackWidth?: number | null;
 	}
 	export interface GeoTrackMapViewLayerFormProperties extends GeoViewLayerPropertiesFormProperties {
@@ -2974,10 +3128,16 @@ export namespace MyNS {
 		/** Assign different colors to different tracks */
 		randomColors: FormControl<boolean | null | undefined>,
 
-		/** Speed of the track animation */
+		/**
+		 * Speed of the track animation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed: FormControl<number | null | undefined>,
 
-		/** Width of the track */
+		/**
+		 * Width of the track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trackWidth: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoTrackMapViewLayerFormGroup() {
@@ -3136,12 +3296,14 @@ export namespace MyNS {
 		/**
 		 * Latitude of the center of the map
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * Longitude of the center of the map
 		 * Required
+		 * Type: double
 		 */
 		lon: number;
 	}
@@ -3150,12 +3312,14 @@ export namespace MyNS {
 		/**
 		 * Latitude of the center of the map
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the center of the map
 		 * Required
+		 * Type: double
 		 */
 		lon: FormControl<number | null | undefined>,
 	}
@@ -3174,7 +3338,10 @@ export namespace MyNS {
 		/** Required */
 		type: GreaterThresholdType;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: number;
 	}
 	export interface GreaterThresholdFormProperties extends ThresholdBaseFormProperties {
@@ -3182,7 +3349,10 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<GreaterThresholdType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGreaterThresholdFormGroup() {
@@ -3306,7 +3476,10 @@ export namespace MyNS {
 
 	export interface HeatmapViewProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		binSize: number;
 
 		/**
@@ -3318,7 +3491,11 @@ export namespace MyNS {
 		generateYAxisTicks?: Array<string>;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -3357,8 +3534,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: string;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 
 		/** Required */
@@ -3378,17 +3561,30 @@ export namespace MyNS {
 
 		/** Required */
 		ySuffix: string;
+
+		/** Type: float */
 		yTickStart?: number | null;
+
+		/** Type: float */
 		yTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks?: number | null;
 	}
 	export interface HeatmapViewPropertiesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		binSize: FormControl<number | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3418,8 +3614,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3433,8 +3635,14 @@ export namespace MyNS {
 
 		/** Required */
 		ySuffix: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		yTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		yTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks: FormControl<number | null | undefined>,
 	}
 	export function CreateHeatmapViewPropertiesFormGroup() {
@@ -3471,7 +3679,10 @@ export namespace MyNS {
 
 	export interface HistogramViewProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		binCount: number;
 
 		/**
@@ -3484,7 +3695,11 @@ export namespace MyNS {
 		fillColumns: Array<string>;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -3519,11 +3734,18 @@ export namespace MyNS {
 	}
 	export interface HistogramViewPropertiesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		binCount: FormControl<number | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3799,7 +4021,10 @@ export namespace MyNS {
 		/** Required */
 		type: LesserThresholdType;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: number;
 	}
 	export interface LesserThresholdFormProperties extends ThresholdBaseFormProperties {
@@ -3807,7 +4032,10 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<LesserThresholdType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateLesserThresholdFormGroup() {
@@ -3846,7 +4074,11 @@ export namespace MyNS {
 		hoverDimension?: BandViewPropertiesHoverDimension | null;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -3881,19 +4113,35 @@ export namespace MyNS {
 		/** Required */
 		type: LinePlusSingleStatPropertiesType;
 		xColumn?: string | null;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 		yColumn?: string | null;
+
+		/** Type: float */
 		yTickStart?: number | null;
+
+		/** Type: float */
 		yTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks?: number | null;
 	}
 	export interface LinePlusSingleStatPropertiesFormProperties {
 		hoverDimension: FormControl<BandViewPropertiesHoverDimension | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3922,12 +4170,24 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<LinePlusSingleStatPropertiesType | null | undefined>,
 		xColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 		yColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		yTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		yTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks: FormControl<number | null | undefined>,
 	}
 	export function CreateLinePlusSingleStatPropertiesFormGroup() {
@@ -3974,7 +4234,10 @@ export namespace MyNS {
 		 */
 		err: string;
 
-		/** First line within sent body containing malformed data */
+		/**
+		 * First line within sent body containing malformed data
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/**
@@ -4003,7 +4266,10 @@ export namespace MyNS {
 		 */
 		err: FormControl<string | null | undefined>,
 
-		/** First line within sent body containing malformed data */
+		/**
+		 * First line within sent body containing malformed data
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/**
@@ -4042,6 +4308,7 @@ export namespace MyNS {
 		/**
 		 * Max length in bytes for a body of line-protocol.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxLength: number;
 
@@ -4062,6 +4329,7 @@ export namespace MyNS {
 		/**
 		 * Max length in bytes for a body of line-protocol.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxLength: FormControl<number | null | undefined>,
 
@@ -4263,7 +4531,11 @@ export namespace MyNS {
 		hoverDimension?: BandViewPropertiesHoverDimension | null;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -4302,8 +4574,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: string;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 
 		/** Required */
@@ -4330,7 +4608,11 @@ export namespace MyNS {
 		hoverDimension: FormControl<BandViewPropertiesHoverDimension | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4360,8 +4642,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4590,10 +4878,16 @@ export namespace MyNS {
 		/** Timestamp of latest scheduled, completed run, RFC3339. */
 		latestCompleted?: Date | null;
 
-		/** Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limitEvery cannot be empty. */
+		/**
+		 * Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limitEvery cannot be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limit cannot be empty. */
+		/**
+		 * Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limit cannot be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitEvery?: number | null;
 		links?: NotificationRuleBaseLinks;
 
@@ -4652,10 +4946,16 @@ export namespace MyNS {
 		/** Timestamp of latest scheduled, completed run, RFC3339. */
 		latestCompleted: FormControl<Date | null | undefined>,
 
-		/** Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limitEvery cannot be empty. */
+		/**
+		 * Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limitEvery cannot be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limit cannot be empty. */
+		/**
+		 * Don't notify me more than &lt;limit&gt; times every &lt;limitEvery&gt; seconds. If set, limit cannot be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitEvery: FormControl<number | null | undefined>,
 
 		/**
@@ -4756,6 +5056,8 @@ export namespace MyNS {
 	}
 
 	export interface StatusRule {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 
 		/** The state to record if check matches a criteria. */
@@ -4766,6 +5068,8 @@ export namespace MyNS {
 		previousLevel?: StatusRuleCurrentLevel | null;
 	}
 	export interface StatusRuleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 
 		/** The state to record if check matches a criteria. */
@@ -4884,9 +5188,12 @@ export namespace MyNS {
 
 		/**
 		 * Retention period *in nanoseconds* for the new bucket. This key's name has been misleading since OSS 2.0 GA, please transition to use `retentionPeriodSeconds`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriodHrs?: number | null;
-		retentionPeriodSeconds?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		retentionPeriodSeconds?: string | null;
 
 		/**
 		 * Authentication token to set on the initial user. If not specified, the server will generate a token.
@@ -4907,9 +5214,12 @@ export namespace MyNS {
 
 		/**
 		 * Retention period *in nanoseconds* for the new bucket. This key's name has been misleading since OSS 2.0 GA, please transition to use `retentionPeriodSeconds`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriodHrs: FormControl<number | null | undefined>,
-		retentionPeriodSeconds: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		retentionPeriodSeconds: FormControl<string | null | undefined>,
 
 		/**
 		 * Authentication token to set on the initial user. If not specified, the server will generate a token.
@@ -4925,7 +5235,7 @@ export namespace MyNS {
 			org: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined),
 			retentionPeriodHrs: new FormControl<number | null | undefined>(undefined),
-			retentionPeriodSeconds: new FormControl<number | null | undefined>(undefined),
+			retentionPeriodSeconds: new FormControl<string | null | undefined>(undefined),
 			token: new FormControl<string | null | undefined>(undefined),
 			username: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -5257,10 +5567,13 @@ export namespace MyNS {
 		 * Duration in seconds for how long data will be kept in the database. 0 means infinite.
 		 * Minimum: 0
 		 */
-		everySeconds?: number | null;
+		everySeconds?: string | null;
 
-		/** Shard duration measured in seconds. */
-		shardGroupDurationSeconds?: number | null;
+		/**
+		 * Shard duration measured in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		shardGroupDurationSeconds?: string | null;
 
 		/** Required */
 		type: RetentionRuleType;
@@ -5273,18 +5586,21 @@ export namespace MyNS {
 		 * Duration in seconds for how long data will be kept in the database. 0 means infinite.
 		 * Minimum: 0
 		 */
-		everySeconds: FormControl<number | null | undefined>,
+		everySeconds: FormControl<string | null | undefined>,
 
-		/** Shard duration measured in seconds. */
-		shardGroupDurationSeconds: FormControl<number | null | undefined>,
+		/**
+		 * Shard duration measured in seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		shardGroupDurationSeconds: FormControl<string | null | undefined>,
 
 		/** Required */
 		type: FormControl<RetentionRuleType | null | undefined>,
 	}
 	export function CreatePatchRetentionRuleFormGroup() {
 		return new FormGroup<PatchRetentionRuleFormProperties>({
-			everySeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			shardGroupDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			everySeconds: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			shardGroupDurationSeconds: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<RetentionRuleType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5555,10 +5871,16 @@ export namespace MyNS {
 
 	export interface RangeThreshold extends ThresholdBase {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		max: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		min: number;
 
 		/** Required */
@@ -5569,10 +5891,16 @@ export namespace MyNS {
 	}
 	export interface RangeThresholdFormProperties extends ThresholdBaseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		min: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6105,7 +6433,11 @@ export namespace MyNS {
 		generateYAxisTicks?: Array<string>;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -6147,8 +6479,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: string;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 
 		/** Required */
@@ -6168,14 +6506,24 @@ export namespace MyNS {
 
 		/** Required */
 		ySuffix: string;
+
+		/** Type: float */
 		yTickStart?: number | null;
+
+		/** Type: float */
 		yTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks?: number | null;
 	}
 	export interface ScatterViewPropertiesFormProperties {
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6205,8 +6553,14 @@ export namespace MyNS {
 
 		/** Required */
 		xSuffix: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6220,8 +6574,14 @@ export namespace MyNS {
 
 		/** Required */
 		ySuffix: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		yTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		yTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks: FormControl<number | null | undefined>,
 	}
 	export function CreateScatterViewPropertiesFormGroup() {
@@ -7516,16 +7876,32 @@ export namespace MyNS {
 	}
 
 	export interface TemplateChart {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		properties?: ViewProperties;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xPos?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yPos?: number | null;
 	}
 	export interface TemplateChartFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xPos: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yPos: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateChartFormGroup() {
@@ -8426,6 +8802,8 @@ export namespace MyNS {
 		labelAssociations?: Array<TemplateSummaryLabel>;
 		name?: string | null;
 		orgID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retentionPeriod?: number | null;
 		templateMetaName?: string | null;
 	}
@@ -8435,6 +8813,8 @@ export namespace MyNS {
 		kind: FormControl<StackEventsResourcesAssociationsKind | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		orgID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retentionPeriod: FormControl<number | null | undefined>,
 		templateMetaName: FormControl<string | null | undefined>,
 	}
@@ -9160,7 +9540,11 @@ export namespace MyNS {
 		hoverDimension?: BandViewPropertiesHoverDimension | null;
 		legendColorizeRows?: boolean | null;
 		legendHide?: boolean | null;
+
+		/** Type: float */
 		legendOpacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold?: number | null;
 
 		/** Required */
@@ -9189,12 +9573,24 @@ export namespace MyNS {
 		/** Required */
 		type: XYViewPropertiesType;
 		xColumn?: string | null;
+
+		/** Type: float */
 		xTickStart?: number | null;
+
+		/** Type: float */
 		xTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks?: number | null;
 		yColumn?: string | null;
+
+		/** Type: float */
 		yTickStart?: number | null;
+
+		/** Type: float */
 		yTickStep?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks?: number | null;
 	}
 	export interface XYViewPropertiesFormProperties {
@@ -9204,7 +9600,11 @@ export namespace MyNS {
 		hoverDimension: FormControl<BandViewPropertiesHoverDimension | null | undefined>,
 		legendColorizeRows: FormControl<boolean | null | undefined>,
 		legendHide: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		legendOpacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		legendOrientationThreshold: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9227,12 +9627,24 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<XYViewPropertiesType | null | undefined>,
 		xColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		xTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		xTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xTotalTicks: FormControl<number | null | undefined>,
 		yColumn: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		yTickStart: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		yTickStep: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		yTotalTicks: FormControl<number | null | undefined>,
 	}
 	export function CreateXYViewPropertiesFormGroup() {
@@ -9335,6 +9747,9 @@ export namespace MyNS {
 		/**
 		 * List all buckets
 		 * Get buckets
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} after The last resource ID from which to seek from (but not including). This is to be used instead of `offset`.
 		 * @param {string} org The name of the organization.
 		 * @param {string} orgID The organization ID.
@@ -9486,6 +9901,9 @@ export namespace MyNS {
 		/**
 		 * List all checks
 		 * Get checks
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} orgID Only show checks that belong to a specific organization ID.
 		 * @return {Checks} A list of checks
 		 */
@@ -9590,6 +10008,9 @@ export namespace MyNS {
 		/**
 		 * List all dashboards
 		 * Get dashboards
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} owner A user identifier. Returns only dashboards where this user has the `owner` role.
 		 * @param {GetDashboardsSortBy} sortBy The column to sort by.
 		 * @param {Array<string>} id A list of dashboard identifiers. Returns only the listed dashboards. If both `id` and `owner` are specified, only `id` is used.
@@ -10054,6 +10475,9 @@ export namespace MyNS {
 		/**
 		 * List all notification endpoints
 		 * Get notificationEndpoints
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} orgID Only show notification endpoints that belong to specific organization ID.
 		 * @return {NotificationEndpoints} A list of notification endpoints
 		 */
@@ -10148,6 +10572,9 @@ export namespace MyNS {
 		/**
 		 * List all notification rules
 		 * Get notificationRules
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} orgID Only show notification rules that belong to a specific organization ID.
 		 * @param {string} checkID Only show notifications that belong to the specific check ID.
 		 * @param {string} tag Only return notification rules that "would match" statuses which contain the tag key value pairs provided.
@@ -10254,6 +10681,9 @@ export namespace MyNS {
 		/**
 		 * List all organizations
 		 * Get orgs
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} org Filter organizations to a specific organization name.
 		 * @param {string} orgID Filter organizations to a specific organization ID.
 		 * @param {string} userID Filter organizations to a specific user ID.
@@ -10796,6 +11226,7 @@ export namespace MyNS {
 		 * @param {string} orgID Filter tasks to a specific organization ID.
 		 * @param {AuthorizationUpdateRequestStatus} status Filter tasks by a status--"inactive" or "active".
 		 * @param {number} limit The number of tasks to return
+		 *     Minimum: 1    Maximum: 500
 		 * @return {Tasks} A list of tasks
 		 */
 		GetTasks(name: string | null | undefined, after: string | null | undefined, user: string | null | undefined, org: string | null | undefined, orgID: string | null | undefined, status: AuthorizationUpdateRequestStatus | null | undefined, limit: number | null | undefined): Observable<Tasks> {
@@ -10957,6 +11388,7 @@ export namespace MyNS {
 		 * @param {string} taskID The ID of the task to get runs for.
 		 * @param {string} after Returns runs after a specific ID.
 		 * @param {number} limit The number of runs to return
+		 *     Minimum: 1    Maximum: 500
 		 * @param {Date} afterTime Filter runs to those scheduled after this time, RFC3339
 		 * @param {Date} beforeTime Filter runs to those scheduled before this time, RFC3339
 		 * @return {Runs} A list of task runs
@@ -11186,6 +11618,9 @@ export namespace MyNS {
 		/**
 		 * List all users
 		 * Get users
+		 * @param {number} offset Minimum: 0
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
 		 * @param {string} after The last resource ID from which to seek from (but not including). This is to be used instead of `offset`.
 		 * @return {Users} A list of users
 		 */

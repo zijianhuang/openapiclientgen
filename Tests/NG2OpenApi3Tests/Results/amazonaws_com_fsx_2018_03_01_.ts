@@ -46,8 +46,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -63,8 +63,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -224,15 +224,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		SourceBackupId?: string | null;
 		SourceBackupRegion?: string;
@@ -268,15 +268,15 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		SourceBackupId: FormControl<string | null | undefined>,
 		SourceBackupRegion: FormControl<string | null | undefined>,
@@ -578,8 +578,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 
@@ -605,8 +605,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 
@@ -677,8 +677,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message?: string | null;
 	}
@@ -688,8 +688,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -820,8 +820,8 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId?: string | null;
 		Lifecycle?: VolumeLifecycle;
@@ -832,8 +832,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 
@@ -858,8 +858,8 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 		Lifecycle: FormControl<VolumeLifecycle | null | undefined>,
@@ -867,8 +867,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 		VolumeId: FormControl<string | null | undefined>,
@@ -1081,8 +1081,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message?: string | null;
 	}
@@ -1092,8 +1092,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -1162,8 +1162,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		SnapshotARN?: string | null;
 		CopyStrategy?: OpenZFSCopyStrategy;
@@ -1174,8 +1174,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		SnapshotARN: FormControl<string | null | undefined>,
 		CopyStrategy: FormControl<OpenZFSCopyStrategy | null | undefined>,
@@ -1274,8 +1274,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 		SnapshotId?: string;
@@ -1303,8 +1303,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 		SnapshotId: FormControl<string | null | undefined>,
@@ -1342,8 +1342,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		DeploymentType?: OntapDeploymentType;
@@ -1353,8 +1353,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i>
-		 * Max length: 24
 		 * Min length: 15
+		 * Max length: 24
 		 */
 		PreferredSubnetId?: string | null;
 		RouteTableIds?: Array<string>;
@@ -1368,8 +1368,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 		FsxAdminPassword?: string;
@@ -1387,8 +1387,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		DeploymentType: FormControl<OntapDeploymentType | null | undefined>,
@@ -1396,8 +1396,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i>
-		 * Max length: 24
 		 * Min length: 15
+		 * Max length: 24
 		 */
 		PreferredSubnetId: FormControl<string | null | undefined>,
 
@@ -1410,8 +1410,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 		FsxAdminPassword: FormControl<string | null | undefined>,
@@ -1454,8 +1454,8 @@ export namespace MyNS {
 
 		/**
 		 * The file system's DNS name. You can mount your file system using its DNS name.
-		 * Max length: 275
 		 * Min length: 16
+		 * Max length: 275
 		 */
 		DNSName?: string | null;
 		IpAddresses?: Array<string>;
@@ -1466,8 +1466,8 @@ export namespace MyNS {
 
 		/**
 		 * The file system's DNS name. You can mount your file system using its DNS name.
-		 * Max length: 275
 		 * Min length: 16
+		 * Max length: 275
 		 */
 		DNSName: FormControl<string | null | undefined>,
 	}
@@ -1515,8 +1515,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		DeploymentType?: OpenZFSDeploymentType;
@@ -1524,8 +1524,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 
@@ -1548,8 +1548,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		DeploymentType: FormControl<OpenZFSDeploymentType | null | undefined>,
@@ -1557,8 +1557,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 		RootVolumeId: FormControl<string | null | undefined>,
@@ -1587,8 +1587,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 	}
@@ -1600,8 +1600,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -1620,8 +1620,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -1631,8 +1631,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 		CopyTags?: boolean | null;
@@ -1648,8 +1648,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -1659,8 +1659,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 		CopyTags: FormControl<boolean | null | undefined>,
@@ -1833,15 +1833,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId?: string | null;
 		Lifecycle?: DataRepositoryLifecycle;
@@ -1875,15 +1875,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 		Lifecycle: FormControl<DataRepositoryLifecycle | null | undefined>,
@@ -1992,8 +1992,8 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: string;
 		FileSystemPath?: string;
@@ -2006,8 +2006,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -2023,8 +2023,8 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 		FileSystemPath: FormControl<string | null | undefined>,
@@ -2036,8 +2036,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2087,8 +2087,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 
@@ -2131,8 +2131,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 		FileSystemId: FormControl<string | null | undefined>,
@@ -2163,8 +2163,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message?: string | null;
 	}
@@ -2174,8 +2174,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed error message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -2258,8 +2258,8 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: string;
 
@@ -2268,8 +2268,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -2289,15 +2289,15 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		CapacityToRelease: FormControl<number | null | undefined>,
@@ -2339,8 +2339,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
@@ -2355,8 +2355,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId?: string | null;
 
@@ -2376,8 +2376,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 
@@ -2397,8 +2397,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
@@ -2412,8 +2412,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId: FormControl<string | null | undefined>,
 		DNSName: FormControl<string | null | undefined>,
@@ -2421,8 +2421,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 		CopyTagsToDataRepositoryAssociations: FormControl<boolean | null | undefined>,
@@ -2475,8 +2475,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 		MetadataConfiguration?: FileCacheLustreMetadataConfiguration;
@@ -2491,8 +2491,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -2598,8 +2598,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 
@@ -2618,8 +2618,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -2748,8 +2748,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 		WindowsConfiguration?: CreateFileSystemWindowsConfiguration;
@@ -2776,8 +2776,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 		FileSystemTypeVersion: FormControl<string | null | undefined>,
@@ -2929,8 +2929,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		AutomaticBackupRetentionDays?: number | null;
@@ -2953,8 +2953,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		AutomaticBackupRetentionDays: FormControl<number | null | undefined>,
@@ -3017,8 +3017,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 
@@ -3035,8 +3035,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 	}
@@ -3053,8 +3053,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 
@@ -3069,8 +3069,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -3103,8 +3103,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 
@@ -3116,8 +3116,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 
@@ -3140,8 +3140,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 
@@ -3153,8 +3153,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -3261,8 +3261,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
 		 * Required
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		BackupId: string;
 		ClientRequestToken?: string;
@@ -3279,8 +3279,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 		FileSystemTypeVersion?: string;
@@ -3294,8 +3294,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
 		 * Required
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		BackupId: FormControl<string | null | undefined>,
 		ClientRequestToken: FormControl<string | null | undefined>,
@@ -3303,8 +3303,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p> <ul> <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File Server</p> </li> </ul> <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 		FileSystemTypeVersion: FormControl<string | null | undefined>,
@@ -3337,8 +3337,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -3359,8 +3359,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -3401,8 +3401,8 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId?: string | null;
 		Lifecycle?: StorageVirtualMachineLifecycle;
@@ -3410,8 +3410,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 		StorageVirtualMachineId?: string;
@@ -3436,8 +3436,8 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 		Lifecycle: FormControl<StorageVirtualMachineLifecycle | null | undefined>,
@@ -3445,8 +3445,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 		StorageVirtualMachineId: FormControl<string | null | undefined>,
@@ -3513,8 +3513,8 @@ export namespace MyNS {
 
 		/**
 		 * The file system's DNS name. You can mount your file system using its DNS name.
-		 * Max length: 275
 		 * Min length: 16
+		 * Max length: 275
 		 */
 		DNSName?: string | null;
 		IpAddresses?: Array<string>;
@@ -3525,8 +3525,8 @@ export namespace MyNS {
 
 		/**
 		 * The file system's DNS name. You can mount your file system using its DNS name.
-		 * Max length: 275
 		 * Min length: 16
+		 * Max length: 275
 		 */
 		DNSName: FormControl<string | null | undefined>,
 	}
@@ -3546,16 +3546,16 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: string;
 
@@ -3575,16 +3575,16 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 
@@ -3643,8 +3643,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -3667,8 +3667,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -3820,8 +3820,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
 		 * Required
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		SnapshotARN: string;
 
@@ -3835,8 +3835,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
 		 * Required
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		SnapshotARN: FormControl<string | null | undefined>,
 
@@ -3887,15 +3887,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
 		 * Required
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		BackupId: string;
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -3915,15 +3915,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
 		 * Required
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		BackupId: FormControl<string | null | undefined>,
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -4029,8 +4029,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 		DeleteDataInFileSystem?: boolean | null;
@@ -4042,8 +4042,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		DeleteDataInFileSystem: FormControl<boolean | null | undefined>,
@@ -4090,8 +4090,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -4102,8 +4102,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -4194,8 +4194,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		FinalBackupId?: string | null;
 
@@ -4212,8 +4212,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		FinalBackupId: FormControl<string | null | undefined>,
 	}
@@ -4332,8 +4332,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -4344,8 +4344,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -4390,8 +4390,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -4402,8 +4402,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -4441,8 +4441,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		FinalBackupId?: string | null;
 
@@ -4459,8 +4459,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the source backup. Specifies the backup that you are copying.
-		 * Max length: 128
 		 * Min length: 12
+		 * Max length: 128
 		 */
 		FinalBackupId: FormControl<string | null | undefined>,
 	}
@@ -4475,8 +4475,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -4489,8 +4489,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -4616,8 +4616,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4625,8 +4625,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4649,8 +4649,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4659,8 +4659,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4687,8 +4687,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4696,8 +4696,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4721,8 +4721,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4737,8 +4737,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4775,8 +4775,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4784,8 +4784,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4802,8 +4802,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
@@ -4818,8 +4818,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId?: string | null;
 
@@ -4839,8 +4839,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN?: string | null;
 		LustreConfiguration?: FileCacheLustreConfiguration;
@@ -4852,8 +4852,8 @@ export namespace MyNS {
 
 		/**
 		 * An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
@@ -4867,8 +4867,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId: FormControl<string | null | undefined>,
 		DNSName: FormControl<string | null | undefined>,
@@ -4876,8 +4876,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		 * Max length: 512
 		 * Min length: 8
+		 * Max length: 512
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -4910,8 +4910,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -4926,8 +4926,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4963,8 +4963,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -4979,8 +4979,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -5043,8 +5043,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5052,8 +5052,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5077,8 +5077,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5093,8 +5093,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5131,8 +5131,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5140,8 +5140,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5165,8 +5165,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5181,8 +5181,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5219,8 +5219,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5228,8 +5228,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5253,8 +5253,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -5269,8 +5269,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -5323,8 +5323,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -5340,8 +5340,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -5449,15 +5449,15 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: string;
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -5466,15 +5466,15 @@ export namespace MyNS {
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
 		 * Required
-		 * Max length: 21
 		 * Min length: 11
+		 * Max length: 21
 		 */
 		FileSystemId: FormControl<string | null | undefined>,
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -5507,8 +5507,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -5523,8 +5523,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -5639,8 +5639,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 		ImportedFileChunkSize?: number | null;
@@ -5653,8 +5653,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		ImportedFileChunkSize: FormControl<number | null | undefined>,
@@ -5686,8 +5686,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 		LustreConfiguration?: UpdateFileCacheLustreConfiguration;
@@ -5699,8 +5699,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -5718,8 +5718,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 	}
@@ -5729,8 +5729,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -5856,8 +5856,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		AutomaticBackupRetentionDays?: number | null;
@@ -5873,8 +5873,8 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		AutomaticBackupRetentionDays: FormControl<number | null | undefined>,
@@ -5905,16 +5905,16 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		FsxAdminPassword?: string;
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 		DiskIopsConfiguration?: DiskIopsConfiguration;
@@ -5935,16 +5935,16 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		FsxAdminPassword: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 		ThroughputCapacity: FormControl<number | null | undefined>,
@@ -5975,16 +5975,16 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime?: string | null;
 		ThroughputCapacity?: number | null;
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
 
@@ -6006,16 +6006,16 @@ export namespace MyNS {
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
 		ThroughputCapacity: FormControl<number | null | undefined>,
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 	}
@@ -6046,8 +6046,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -6061,8 +6061,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -6099,8 +6099,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -6112,8 +6112,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -6165,8 +6165,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken?: string | null;
 
@@ -6180,8 +6180,8 @@ export namespace MyNS {
 
 		/**
 		 * (Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 

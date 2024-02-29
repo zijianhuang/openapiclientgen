@@ -1901,7 +1901,10 @@ namespace MyNS
 		/// Cancels the specified order for an Outpost.
 		/// CancelOrder orders/{OrderId}/cancel
 		/// </summary>
-		/// <param name="OrderId"> The ID of the order. </param>
+		/// <param name="OrderId"> The ID of the order. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelOrderOutput> CancelOrderAsync(string OrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2010,9 +2013,24 @@ namespace MyNS
 		/// <p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		/// ListOutposts outposts
 		/// </summary>
-		/// <param name="LifeCycleStatusFilter">Filters the results by the lifecycle status.</param>
-		/// <param name="AvailabilityZoneFilter">Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</param>
-		/// <param name="AvailabilityZoneIdFilter">Filters the results by AZ ID (for example, <code>use1-az1</code>).</param>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="LifeCycleStatusFilter">Filters the results by the lifecycle status.
+		/// Minimum items: 1
+		/// Maximum items: 5
+		// </param>
+		/// <param name="AvailabilityZoneFilter">Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
+		/// Minimum items: 1
+		/// Maximum items: 5
+		// </param>
+		/// <param name="AvailabilityZoneIdFilter">Filters the results by AZ ID (for example, <code>use1-az1</code>).
+		/// Minimum items: 1
+		/// Maximum items: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListOutpostsOutput> ListOutpostsAsync(string NextToken, int MaxResults, string[] LifeCycleStatusFilter, string[] AvailabilityZoneFilter, string[] AvailabilityZoneIdFilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2086,6 +2104,12 @@ namespace MyNS
 		/// <p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		/// ListSites sites
 		/// </summary>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="OperatingAddressCountryCodeFilter">Filters the results by country code.</param>
 		/// <param name="OperatingAddressStateOrRegionFilter">Filters the results by state or region.</param>
 		/// <param name="OperatingAddressCityFilter">Filters the results by city.</param>
@@ -2122,7 +2146,10 @@ namespace MyNS
 		/// Deletes the specified Outpost.
 		/// DeleteOutpost outposts/{OutpostId}
 		/// </summary>
-		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteOutpostOutput> DeleteOutpostAsync(string OutpostId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2156,7 +2183,10 @@ namespace MyNS
 		/// Gets information about the specified Outpost.
 		/// GetOutpost outposts/{OutpostId}
 		/// </summary>
-		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOutpostOutput> GetOutpostAsync(string OutpostId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2190,7 +2220,10 @@ namespace MyNS
 		/// Updates an Outpost.
 		/// UpdateOutpost outposts/{OutpostId}
 		/// </summary>
-		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateOutpostOutput> UpdateOutpostAsync(string OutpostId, UpdateOutpostPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2231,7 +2264,10 @@ namespace MyNS
 		/// Deletes the specified site.
 		/// DeleteSite sites/{SiteId}
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSiteOutput> DeleteSiteAsync(string SiteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2265,7 +2301,10 @@ namespace MyNS
 		/// Gets information about the specified Outpost site.
 		/// GetSite sites/{SiteId}
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSiteOutput> GetSiteAsync(string SiteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2299,7 +2338,10 @@ namespace MyNS
 		/// Updates the specified site.
 		/// UpdateSite sites/{SiteId}
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSiteOutput> UpdateSiteAsync(string SiteId, UpdateSitePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2340,7 +2382,10 @@ namespace MyNS
 		/// Gets information about the specified catalog item.
 		/// GetCatalogItem catalog/item/{CatalogItemId}
 		/// </summary>
-		/// <param name="CatalogItemId">The ID of the catalog item.</param>
+		/// <param name="CatalogItemId">The ID of the catalog item.
+		/// Max length: 10
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCatalogItemOutput> GetCatalogItemAsync(string CatalogItemId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2374,7 +2419,10 @@ namespace MyNS
 		/// <note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about the specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
 		/// GetConnection connections/{ConnectionId}
 		/// </summary>
-		/// <param name="ConnectionId"> The ID of the connection. </param>
+		/// <param name="ConnectionId"> The ID of the connection. 
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectionResponse> GetConnectionAsync(string ConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2408,7 +2456,10 @@ namespace MyNS
 		/// Gets information about the specified order.
 		/// GetOrder orders/{OrderId}
 		/// </summary>
-		/// <param name="OrderId">The ID of the order.</param>
+		/// <param name="OrderId">The ID of the order.
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOrderOutput> GetOrderAsync(string OrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2442,7 +2493,16 @@ namespace MyNS
 		/// Gets the instance types for the specified Outpost.
 		/// GetOutpostInstanceTypes outposts/{OutpostId}/instanceTypes
 		/// </summary>
-		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOutpostInstanceTypesOutput> GetOutpostInstanceTypesAsync(string OutpostId, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2476,7 +2536,10 @@ namespace MyNS
 		/// Gets the site address of the specified site.
 		/// GetSiteAddress sites/{SiteId}/address#AddressType
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="AddressType">The type of the address you request. </param>
 		/// <returns>Success</returns>
 		public async Task<GetSiteAddressOutput> GetSiteAddressAsync(string SiteId, AddressType AddressType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2511,9 +2574,21 @@ namespace MyNS
 		/// <p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		/// ListAssets outposts/{OutpostId}/assets
 		/// </summary>
-		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostId"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
 		/// <param name="HostIdFilter">Filters the results by the host ID of a Dedicated Host.</param>
-		/// <param name="StatusFilter">Filters the results by state.</param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="StatusFilter">Filters the results by state.
+		/// Minimum items: 1
+		/// Maximum items: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssetsOutput> ListAssetsAsync(string OutpostId, string[] HostIdFilter, int MaxResults, string NextToken, AssetState[] StatusFilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2547,6 +2622,12 @@ namespace MyNS
 		/// <p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		/// ListCatalogItems catalog/items
 		/// </summary>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="ItemClassFilter">Filters the results by item class.</param>
 		/// <param name="SupportedStorageFilter">Filters the results by storage option.</param>
 		/// <param name="EC2FamilyFilter">Filters the results by EC2 family (for example, M5).</param>
@@ -2583,7 +2664,16 @@ namespace MyNS
 		/// Lists the Outpost orders for your Amazon Web Services account.
 		/// ListOrders list-orders
 		/// </summary>
-		/// <param name="OutpostIdentifierFilter"> The ID or the Amazon Resource Name (ARN) of the Outpost. </param>
+		/// <param name="OutpostIdentifierFilter"> The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		/// Max length: 180
+		/// Min length: 1
+		// </param>
+		/// <param name="NextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListOrdersOutput> ListOrdersAsync(string OutpostIdentifierFilter, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2617,7 +2707,9 @@ namespace MyNS
 		/// Lists the tags for the specified resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1011
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2651,7 +2743,9 @@ namespace MyNS
 		/// Adds tags to the specified resource.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1011
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2732,8 +2826,13 @@ namespace MyNS
 		/// Removes tags from the specified resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.</param>
-		/// <param name="tagKeys">The tag keys.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 1011
+		// </param>
+		/// <param name="tagKeys">The tag keys.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2767,7 +2866,10 @@ namespace MyNS
 		/// <p>Updates the address of the specified site.</p> <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>
 		/// UpdateSiteAddress sites/{SiteId}/address
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSiteAddressOutput> UpdateSiteAddressAsync(string SiteId, UpdateSiteAddressPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2808,7 +2910,10 @@ namespace MyNS
 		/// <p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p> <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order.</p>
 		/// UpdateSiteRackPhysicalProperties sites/{SiteId}/rackPhysicalProperties
 		/// </summary>
-		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. </param>
+		/// <param name="SiteId"> The ID or the Amazon Resource Name (ARN) of the site. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSiteRackPhysicalPropertiesOutput> UpdateSiteRackPhysicalPropertiesAsync(string SiteId, UpdateSiteRackPhysicalPropertiesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -885,6 +885,8 @@ namespace MyNS
 		/// <summary>
 		/// SendFeedback seldon/{namespace}/{deployment}/api/v1.0/feedback
 		/// </summary>
+		/// <param name="_namespace">Max length: 2097152</param>
+		/// <param name="deployment">Max length: 2097152</param>
 		/// <returns>A successful response.</returns>
 		public async Task<SeldonMessage> SendFeedbackAsync(string _namespace, string deployment, Feedback requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -924,6 +926,8 @@ namespace MyNS
 		/// <summary>
 		/// Predict seldon/{namespace}/{deployment}/api/v1.0/predictions
 		/// </summary>
+		/// <param name="_namespace">Max length: 2097152</param>
+		/// <param name="deployment">Max length: 2097152</param>
 		/// <returns>A successful response.</returns>
 		public async Task<SeldonMessage> PredictAsync(string _namespace, string deployment, SeldonMessage requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

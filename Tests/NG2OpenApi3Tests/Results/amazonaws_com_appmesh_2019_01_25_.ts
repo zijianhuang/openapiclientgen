@@ -4929,8 +4929,11 @@ export namespace MyNS {
 		 * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p> <p>For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.</p>
 		 * Put v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes
 		 * @param {string} meshName The name of the service mesh to create the gateway route in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateGatewayRouteOutput} Success
 		 */
 		CreateGatewayRoute(meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string, requestBody: CreateGatewayRoutePutBody): Observable<CreateGatewayRouteOutput> {
@@ -4941,10 +4944,14 @@ export namespace MyNS {
 		 * Returns a list of existing gateway routes that are associated to a virtual gateway.
 		 * Get v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes
 		 * @param {number} limit The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list gateway routes in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @param {string} virtualGatewayName The name of the virtual gateway to list gateway routes in.
+		 *     Min length: 1    Max length: 255
 		 * @return {ListGatewayRoutesOutput} Success
 		 */
 		ListGatewayRoutes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined, virtualGatewayName: string): Observable<ListGatewayRoutesOutput> {
@@ -4964,6 +4971,7 @@ export namespace MyNS {
 		 * Returns a list of existing service meshes.
 		 * Get v20190125/meshes
 		 * @param {number} limit The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListMeshesOutput} Success
 		 */
@@ -4975,8 +4983,11 @@ export namespace MyNS {
 		 * <p>Creates a route that is associated with a virtual router.</p> <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p> <p>For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p>
 		 * Put v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
 		 * @param {string} meshName The name of the service mesh to create the route in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualRouterName The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateRouteOutput} Success
 		 */
 		CreateRoute(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
@@ -4987,10 +4998,14 @@ export namespace MyNS {
 		 * Returns a list of existing routes in a service mesh.
 		 * Get v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
 		 * @param {number} limit The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list routes in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @param {string} virtualRouterName The name of the virtual router to list routes in.
+		 *     Min length: 1    Max length: 255
 		 * @return {ListRoutesOutput} Success
 		 */
 		ListRoutes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined, virtualRouterName: string): Observable<ListRoutesOutput> {
@@ -5001,7 +5016,9 @@ export namespace MyNS {
 		 * <p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway represents Envoy deployed by itself.</p> <p>For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual gateways</a>. </p>
 		 * Put v20190125/meshes/{meshName}/virtualGateways
 		 * @param {string} meshName The name of the service mesh to create the virtual gateway in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateVirtualGatewayOutput} Success
 		 */
 		CreateVirtualGateway(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualGatewayPutBody): Observable<CreateVirtualGatewayOutput> {
@@ -5012,8 +5029,11 @@ export namespace MyNS {
 		 * Returns a list of existing virtual gateways in a service mesh.
 		 * Get v20190125/meshes/{meshName}/virtualGateways
 		 * @param {number} limit The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list virtual gateways in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualGatewaysOutput} Success
 		 */
@@ -5025,7 +5045,9 @@ export namespace MyNS {
 		 * <p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS).</p> <p>You define a <code>listener</code> for any inbound traffic that your virtual node expects. Any virtual service that your virtual node expects to communicate to is specified as a <code>backend</code>.</p> <p>The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual node. Set this value to the full ARN; for example, <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>) as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p> <note> <p>By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself in metrics and traces. You can override this behavior by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.</p> </note> <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in the App Mesh User Guide.</p>
 		 * Put v20190125/meshes/{meshName}/virtualNodes
 		 * @param {string} meshName The name of the service mesh to create the virtual node in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateVirtualNodeOutput} Success
 		 */
 		CreateVirtualNode(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
@@ -5036,8 +5058,11 @@ export namespace MyNS {
 		 * Returns a list of existing virtual nodes.
 		 * Get v20190125/meshes/{meshName}/virtualNodes
 		 * @param {number} limit The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list virtual nodes in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualNodesOutput} Success
 		 */
@@ -5049,7 +5074,9 @@ export namespace MyNS {
 		 * <p>Creates a virtual router within a service mesh.</p> <p>Specify a <code>listener</code> for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.</p> <p>For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual routers</a>.</p>
 		 * Put v20190125/meshes/{meshName}/virtualRouters
 		 * @param {string} meshName The name of the service mesh to create the virtual router in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateVirtualRouterOutput} Success
 		 */
 		CreateVirtualRouter(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
@@ -5060,8 +5087,11 @@ export namespace MyNS {
 		 * Returns a list of existing virtual routers in a service mesh.
 		 * Get v20190125/meshes/{meshName}/virtualRouters
 		 * @param {number} limit The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list virtual routers in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualRoutersOutput} Success
 		 */
@@ -5073,7 +5103,9 @@ export namespace MyNS {
 		 * <p>Creates a virtual service within a service mesh.</p> <p>A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.</p> <p>For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual services</a>.</p>
 		 * Put v20190125/meshes/{meshName}/virtualServices
 		 * @param {string} meshName The name of the service mesh to create the virtual service in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @return {CreateVirtualServiceOutput} Success
 		 */
 		CreateVirtualService(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualServicePutBody): Observable<CreateVirtualServiceOutput> {
@@ -5084,8 +5116,11 @@ export namespace MyNS {
 		 * Returns a list of existing virtual services in a service mesh.
 		 * Get v20190125/meshes/{meshName}/virtualServices
 		 * @param {number} limit The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} meshName The name of the service mesh to list virtual services in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualServicesOutput} Success
 		 */
@@ -5097,9 +5132,13 @@ export namespace MyNS {
 		 * Deletes an existing gateway route.
 		 * Delete v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		 * @param {string} gatewayRouteName The name of the gateway route to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshName The name of the service mesh to delete the gateway route from.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway to delete the route from.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteGatewayRouteOutput} Success
 		 */
 		DeleteGatewayRoute(gatewayRouteName: string, meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string): Observable<DeleteGatewayRouteOutput> {
@@ -5110,9 +5149,13 @@ export namespace MyNS {
 		 * Describes an existing gateway route.
 		 * Get v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		 * @param {string} gatewayRouteName The name of the gateway route to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshName The name of the service mesh that the gateway route resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway that the gateway route is associated with.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeGatewayRouteOutput} Success
 		 */
 		DescribeGatewayRoute(gatewayRouteName: string, meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string): Observable<DescribeGatewayRouteOutput> {
@@ -5123,9 +5166,13 @@ export namespace MyNS {
 		 * Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh.
 		 * Put v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		 * @param {string} gatewayRouteName The name of the gateway route to update.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshName The name of the service mesh that the gateway route resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway that the gateway route is associated with.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateGatewayRouteOutput} Success
 		 */
 		UpdateGatewayRoute(gatewayRouteName: string, meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string, requestBody: UpdateGatewayRoutePutBody): Observable<UpdateGatewayRouteOutput> {
@@ -5136,6 +5183,7 @@ export namespace MyNS {
 		 * <p>Deletes an existing service mesh.</p> <p>You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself.</p>
 		 * Delete v20190125/meshes/{meshName}
 		 * @param {string} meshName The name of the service mesh to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteMeshOutput} Success
 		 */
 		DeleteMesh(meshName: string): Observable<DeleteMeshOutput> {
@@ -5146,7 +5194,9 @@ export namespace MyNS {
 		 * Describes an existing service mesh.
 		 * Get v20190125/meshes/{meshName}
 		 * @param {string} meshName The name of the service mesh to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @return {DescribeMeshOutput} Success
 		 */
 		DescribeMesh(meshName: string, meshOwner: string | null | undefined): Observable<DescribeMeshOutput> {
@@ -5157,6 +5207,7 @@ export namespace MyNS {
 		 * Updates an existing service mesh.
 		 * Put v20190125/meshes/{meshName}
 		 * @param {string} meshName The name of the service mesh to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateMeshOutput} Success
 		 */
 		UpdateMesh(meshName: string, requestBody: UpdateMeshPutBody): Observable<UpdateMeshOutput> {
@@ -5167,9 +5218,13 @@ export namespace MyNS {
 		 * Deletes an existing route.
 		 * Delete v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh to delete the route in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} routeName The name of the route to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router to delete the route in.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteRouteOutput} Success
 		 */
 		DeleteRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
@@ -5180,9 +5235,13 @@ export namespace MyNS {
 		 * Describes an existing route.
 		 * Get v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh that the route resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} routeName The name of the route to describe.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeRouteOutput} Success
 		 */
 		DescribeRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
@@ -5193,9 +5252,13 @@ export namespace MyNS {
 		 * Updates an existing route for a specified service mesh and virtual router.
 		 * Put v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		 * @param {string} meshName The name of the service mesh that the route resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} routeName The name of the route to update.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateRouteOutput} Success
 		 */
 		UpdateRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
@@ -5206,8 +5269,11 @@ export namespace MyNS {
 		 * Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it.
 		 * Delete v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		 * @param {string} meshName The name of the service mesh to delete the virtual gateway from.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteVirtualGatewayOutput} Success
 		 */
 		DeleteVirtualGateway(meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string): Observable<DeleteVirtualGatewayOutput> {
@@ -5218,8 +5284,11 @@ export namespace MyNS {
 		 * Describes an existing virtual gateway.
 		 * Get v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		 * @param {string} meshName The name of the service mesh that the gateway route resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeVirtualGatewayOutput} Success
 		 */
 		DescribeVirtualGateway(meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string): Observable<DescribeVirtualGatewayOutput> {
@@ -5230,8 +5299,11 @@ export namespace MyNS {
 		 * Updates an existing virtual gateway in a specified service mesh.
 		 * Put v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		 * @param {string} meshName The name of the service mesh that the virtual gateway resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualGatewayName The name of the virtual gateway to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateVirtualGatewayOutput} Success
 		 */
 		UpdateVirtualGateway(meshName: string, meshOwner: string | null | undefined, virtualGatewayName: string, requestBody: UpdateVirtualGatewayPutBody): Observable<UpdateVirtualGatewayOutput> {
@@ -5242,8 +5314,11 @@ export namespace MyNS {
 		 * <p>Deletes an existing virtual node.</p> <p>You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself.</p>
 		 * Delete v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh to delete the virtual node in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualNodeName The name of the virtual node to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteVirtualNodeOutput} Success
 		 */
 		DeleteVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
@@ -5254,8 +5329,11 @@ export namespace MyNS {
 		 * Describes an existing virtual node.
 		 * Get v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh that the virtual node resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualNodeName The name of the virtual node to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeVirtualNodeOutput} Success
 		 */
 		DescribeVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
@@ -5266,8 +5344,11 @@ export namespace MyNS {
 		 * Updates an existing virtual node in a specified service mesh.
 		 * Put v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		 * @param {string} meshName The name of the service mesh that the virtual node resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualNodeName The name of the virtual node to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateVirtualNodeOutput} Success
 		 */
 		UpdateVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
@@ -5278,8 +5359,11 @@ export namespace MyNS {
 		 * <p>Deletes an existing virtual router.</p> <p>You must delete any routes associated with the virtual router before you can delete the router itself.</p>
 		 * Delete v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh to delete the virtual router in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualRouterName The name of the virtual router to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteVirtualRouterOutput} Success
 		 */
 		DeleteVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
@@ -5290,8 +5374,11 @@ export namespace MyNS {
 		 * Describes an existing virtual router.
 		 * Get v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh that the virtual router resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualRouterName The name of the virtual router to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeVirtualRouterOutput} Success
 		 */
 		DescribeVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
@@ -5302,8 +5389,11 @@ export namespace MyNS {
 		 * Updates an existing virtual router in a specified service mesh.
 		 * Put v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		 * @param {string} meshName The name of the service mesh that the virtual router resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualRouterName The name of the virtual router to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateVirtualRouterOutput} Success
 		 */
 		UpdateVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
@@ -5314,7 +5404,9 @@ export namespace MyNS {
 		 * Deletes an existing virtual service.
 		 * Delete v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		 * @param {string} meshName The name of the service mesh to delete the virtual service in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualServiceName The name of the virtual service to delete.
 		 * @return {DeleteVirtualServiceOutput} Success
 		 */
@@ -5326,7 +5418,9 @@ export namespace MyNS {
 		 * Describes an existing virtual service.
 		 * Get v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		 * @param {string} meshName The name of the service mesh that the virtual service resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualServiceName The name of the virtual service to describe.
 		 * @return {DescribeVirtualServiceOutput} Success
 		 */
@@ -5338,7 +5432,9 @@ export namespace MyNS {
 		 * Updates an existing virtual service in a specified service mesh.
 		 * Put v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		 * @param {string} meshName The name of the service mesh that the virtual service resides in.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} meshOwner The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} virtualServiceName The name of the virtual service to update.
 		 * @return {UpdateVirtualServiceOutput} Success
 		 */
@@ -5350,6 +5446,7 @@ export namespace MyNS {
 		 * List the tags for an App Mesh resource.
 		 * Get v20190125/tags#resourceArn
 		 * @param {number} limit The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
 		 * @return {ListTagsForResourceOutput} Success
@@ -5387,8 +5484,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the gateway route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		gatewayRouteName: string;
 
@@ -5413,8 +5510,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the gateway route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		gatewayRouteName: FormControl<string | null | undefined>,
 	}
@@ -5450,8 +5547,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the service mesh.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		meshName: string;
 
@@ -5473,8 +5570,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the service mesh.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		meshName: FormControl<string | null | undefined>,
 	}
@@ -5508,8 +5605,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		routeName: string;
 
@@ -5534,8 +5631,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the route.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		routeName: FormControl<string | null | undefined>,
 	}
@@ -5585,8 +5682,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual gateway.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualGatewayName: string;
 	}
@@ -5598,8 +5695,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual gateway.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualGatewayName: FormControl<string | null | undefined>,
 	}
@@ -5647,8 +5744,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualNodeName: string;
 	}
@@ -5660,8 +5757,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
@@ -5709,8 +5806,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual router.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualRouterName: string;
 	}
@@ -5722,8 +5819,8 @@ export namespace MyNS {
 		/**
 		 * The name to use for the virtual router.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}

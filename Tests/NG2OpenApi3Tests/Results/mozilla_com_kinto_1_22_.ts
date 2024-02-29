@@ -58,6 +58,16 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets
+		 * @param {number} _limit Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _since Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _to Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _before Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} last_modified Minimum: 0
+		 *     Maximum: 9223372036854776000
 		 * @return {Get_bucketsReturn} Return a list of matching objects.
 		 */
 		Get_buckets(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_bucketsReturn> {
@@ -66,6 +76,16 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets/monitor/collections/changes/records
+		 * @param {number} _limit Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _since Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _to Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _before Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} last_modified Minimum: 0
+		 *     Maximum: 9223372036854776000
 		 * @return {Get_changessReturn} Return a list of matching objects.
 		 */
 		Get_changess(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_changessReturn> {
@@ -74,6 +94,7 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets/{bid}/collections/{cid}/changeset
+		 * @param {number} _limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Get_collection_changeset(_since: string | null | undefined, _expected: string, _limit: number | null | undefined, bucket: string | null | undefined, collection: string | null | undefined): Observable<HttpResponse<string>> {
@@ -82,6 +103,16 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets/{bucket_id}/collections
+		 * @param {number} _limit Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _since Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _to Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _before Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} last_modified Minimum: 0
+		 *     Maximum: 9223372036854776000
 		 * @return {Get_collectionsReturn} Return a list of matching objects.
 		 */
 		Get_collections(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_collectionsReturn> {
@@ -90,6 +121,16 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets/{bucket_id}/collections/{collection_id}/records
+		 * @param {number} _limit Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _since Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _to Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _before Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} last_modified Minimum: 0
+		 *     Maximum: 9223372036854776000
 		 * @return {Get_recordsReturn} Return a list of matching objects.
 		 */
 		Get_records(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_recordsReturn> {
@@ -130,6 +171,16 @@ export namespace MyNS {
 
 		/**
 		 * Get buckets/{bucket_id}/groups
+		 * @param {number} _limit Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _since Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _to Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} _before Minimum: 0
+		 *     Maximum: 9223372036854776000
+		 * @param {number} last_modified Minimum: 0
+		 *     Maximum: 9223372036854776000
 		 * @return {Get_groupsReturn} Return a list of matching objects.
 		 */
 		Get_groups(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_groupsReturn> {
@@ -245,7 +296,10 @@ export namespace MyNS {
 		/** Required */
 		path: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface BatchReturnResponsesFormProperties {
@@ -255,7 +309,10 @@ export namespace MyNS {
 		/** Required */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchReturnResponsesFormGroup() {
@@ -352,10 +409,14 @@ export namespace MyNS {
 	}
 
 	export interface Get_collectionsReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires?: number | null;
 		schema?: {[id: string]: any };
 	}
 	export interface Get_collectionsReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires: FormControl<number | null | undefined>,
 		schema: FormControl<{[id: string]: any } | null | undefined>,
 	}
@@ -417,10 +478,14 @@ export namespace MyNS {
 	}
 
 	export interface Get_collectionReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires?: number | null;
 		schema?: {[id: string]: any };
 	}
 	export interface Get_collectionReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires: FormControl<number | null | undefined>,
 		schema: FormControl<{[id: string]: any } | null | undefined>,
 	}

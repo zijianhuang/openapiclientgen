@@ -208,12 +208,16 @@ export namespace MyNS {
 	}
 
 	export interface StatusGetReturn {
+
+		/** Type: double */
 		code?: number | null;
 		message?: string | null;
 		success?: boolean | null;
 		version?: string | null;
 	}
 	export interface StatusGetReturnFormProperties {
+
+		/** Type: double */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		success: FormControl<boolean | null | undefined>,

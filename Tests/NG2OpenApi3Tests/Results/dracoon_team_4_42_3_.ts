@@ -16,6 +16,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -38,6 +39,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -105,12 +107,14 @@ export namespace MyNS {
 		 * &#128679; Deprecated since v4.10.0
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent?: number | null;
+		homeFolderParent?: string | null;
 
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -123,8 +127,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup?: number | null;
+		sdsImportGroup?: string | null;
 
 		/**
 		 * Distinguished Name (DN) of Active Directory administrative account
@@ -201,12 +206,14 @@ export namespace MyNS {
 		 * &#128679; Deprecated since v4.10.0
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent: FormControl<number | null | undefined>,
+		homeFolderParent: FormControl<string | null | undefined>,
 
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -219,8 +226,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup: FormControl<number | null | undefined>,
+		sdsImportGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Distinguished Name (DN) of Active Directory administrative account
@@ -273,10 +281,10 @@ export namespace MyNS {
 			adExportGroup: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			alias: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createHomeFolder: new FormControl<boolean | null | undefined>(undefined),
-			homeFolderParent: new FormControl<number | null | undefined>(undefined),
+			homeFolderParent: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ldapUsersDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			sdsImportGroup: new FormControl<number | null | undefined>(undefined),
+			sdsImportGroup: new FormControl<string | null | undefined>(undefined),
 			serverAdminName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serverIp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serverPort: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65535)]),
@@ -464,20 +472,23 @@ export namespace MyNS {
 		/**
 		 * Range limit. Maximum 500.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		limit: number;
+		limit: string;
 
 		/**
 		 * Range offset
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		offset: number;
+		offset: string;
 
 		/**
 		 * Total items available
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		total: number;
+		total: string;
 	}
 
 	/** Range information */
@@ -486,26 +497,29 @@ export namespace MyNS {
 		/**
 		 * Range limit. Maximum 500.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		limit: FormControl<number | null | undefined>,
+		limit: FormControl<string | null | undefined>,
 
 		/**
 		 * Range offset
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		offset: FormControl<number | null | undefined>,
+		offset: FormControl<string | null | undefined>,
 
 		/**
 		 * Total items available
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		total: FormControl<number | null | undefined>,
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateRangeFormGroup() {
 		return new FormGroup<RangeFormProperties>({
-			limit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			offset: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			limit: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			offset: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			total: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -517,14 +531,16 @@ export namespace MyNS {
 		/**
 		 * Number of direct children
 		 * (no recursion; for rooms only)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		countChildren?: number | null;
+		countChildren?: string | null;
 
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: number;
+		nodeId: string;
 
 		/** Encryption state */
 		nodeIsEncrypted?: boolean | null;
@@ -535,8 +551,11 @@ export namespace MyNS {
 		 */
 		nodeName: string;
 
-		/** Parent room ID */
-		nodeParentId?: number | null;
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeParentId?: string | null;
 
 		/**
 		 * Parent node path
@@ -552,14 +571,16 @@ export namespace MyNS {
 		/**
 		 * Number of direct children
 		 * (no recursion; for rooms only)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		countChildren: FormControl<number | null | undefined>,
+		countChildren: FormControl<string | null | undefined>,
 
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: FormControl<number | null | undefined>,
+		nodeId: FormControl<string | null | undefined>,
 
 		/** Encryption state */
 		nodeIsEncrypted: FormControl<boolean | null | undefined>,
@@ -570,8 +591,11 @@ export namespace MyNS {
 		 */
 		nodeName: FormControl<string | null | undefined>,
 
-		/** Parent room ID */
-		nodeParentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -582,11 +606,11 @@ export namespace MyNS {
 	}
 	export function CreateAuditNodeInfoFormGroup() {
 		return new FormGroup<AuditNodeInfoFormProperties>({
-			countChildren: new FormControl<number | null | undefined>(undefined),
-			nodeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			countChildren: new FormControl<string | null | undefined>(undefined),
+			nodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nodeIsEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			nodeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			nodeParentId: new FormControl<number | null | undefined>(undefined),
+			nodeParentId: new FormControl<string | null | undefined>(undefined),
 			nodeParentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -628,6 +652,7 @@ export namespace MyNS {
 		 * Number of direct children
 		 * (no recursion; for rooms only)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodeCntChildren: number;
 
@@ -650,8 +675,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: number;
+		nodeId: string;
 
 		/** Encryption state */
 		nodeIsEncrypted?: boolean | null;
@@ -662,8 +688,11 @@ export namespace MyNS {
 		 */
 		nodeName: string;
 
-		/** Parent node ID (room or folder) */
-		nodeParentId?: number | null;
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeParentId?: string | null;
 
 		/**
 		 * Parent node path
@@ -672,8 +701,11 @@ export namespace MyNS {
 		 */
 		nodeParentPath: string;
 
-		/** Quota in byte */
-		nodeQuota?: number | null;
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeQuota?: string | null;
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -682,8 +714,11 @@ export namespace MyNS {
 		 */
 		nodeRecycleBinRetentionPeriod?: number | null;
 
-		/** Node size in byte */
-		nodeSize?: number | null;
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeSize?: string | null;
 
 		/** Modification date */
 		nodeUpdatedAt?: Date | null;
@@ -699,6 +734,7 @@ export namespace MyNS {
 		 * Number of direct children
 		 * (no recursion; for rooms only)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodeCntChildren: FormControl<number | null | undefined>,
 
@@ -718,8 +754,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: FormControl<number | null | undefined>,
+		nodeId: FormControl<string | null | undefined>,
 
 		/** Encryption state */
 		nodeIsEncrypted: FormControl<boolean | null | undefined>,
@@ -730,8 +767,11 @@ export namespace MyNS {
 		 */
 		nodeName: FormControl<string | null | undefined>,
 
-		/** Parent node ID (room or folder) */
-		nodeParentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -740,8 +780,11 @@ export namespace MyNS {
 		 */
 		nodeParentPath: FormControl<string | null | undefined>,
 
-		/** Quota in byte */
-		nodeQuota: FormControl<number | null | undefined>,
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -750,8 +793,11 @@ export namespace MyNS {
 		 */
 		nodeRecycleBinRetentionPeriod: FormControl<number | null | undefined>,
 
-		/** Node size in byte */
-		nodeSize: FormControl<number | null | undefined>,
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nodeSize: FormControl<string | null | undefined>,
 
 		/** Modification date */
 		nodeUpdatedAt: FormControl<Date | null | undefined>,
@@ -762,14 +808,14 @@ export namespace MyNS {
 			nodeCreatedAt: new FormControl<Date | null | undefined>(undefined),
 			nodeHasActivitiesLog: new FormControl<boolean | null | undefined>(undefined),
 			nodeHasRecycleBin: new FormControl<boolean | null | undefined>(undefined),
-			nodeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nodeIsEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			nodeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			nodeParentId: new FormControl<number | null | undefined>(undefined),
+			nodeParentId: new FormControl<string | null | undefined>(undefined),
 			nodeParentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			nodeQuota: new FormControl<number | null | undefined>(undefined),
+			nodeQuota: new FormControl<string | null | undefined>(undefined),
 			nodeRecycleBinRetentionPeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(9999)]),
-			nodeSize: new FormControl<number | null | undefined>(undefined),
+			nodeSize: new FormControl<string | null | undefined>(undefined),
 			nodeUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -794,8 +840,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 
 		/**
 		 * User last name
@@ -822,8 +869,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 
 		/**
 		 * User last name
@@ -840,7 +888,7 @@ export namespace MyNS {
 	export function CreateAuditUserPermissionFormGroup() {
 		return new FormGroup<AuditUserPermissionFormProperties>({
 			userFirstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userLastName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userLogin: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1027,8 +1075,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -1095,8 +1144,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -1135,7 +1185,7 @@ export namespace MyNS {
 			displayName: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			firstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined),
 			userName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1189,6 +1239,7 @@ export namespace MyNS {
 		/**
 		 * Priority (smaller values have higher priority)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: number;
 	}
@@ -1215,6 +1266,7 @@ export namespace MyNS {
 		/**
 		 * Priority (smaller values have higher priority)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 	}
@@ -1234,12 +1286,14 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth access token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accessTokenValidity?: number | null;
 
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth refresh token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refreshTokenValidity?: number | null;
 
@@ -1256,12 +1310,14 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth access token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accessTokenValidity: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth refresh token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refreshTokenValidity: FormControl<number | null | undefined>,
 
@@ -1478,8 +1534,9 @@ export namespace MyNS {
 		/**
 		 * Chunk size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 	}
 
 	/** Chunk upload response */
@@ -1491,13 +1548,14 @@ export namespace MyNS {
 		/**
 		 * Chunk size
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreateChunkUploadResponseFormGroup() {
 		return new FormGroup<ChunkUploadResponseFormProperties>({
 			hash: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1567,8 +1625,9 @@ export namespace MyNS {
 		/**
 		 * Comment ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Determines whether comment was edited or not
@@ -1613,8 +1672,9 @@ export namespace MyNS {
 		/**
 		 * Comment ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Determines whether comment was edited or not
@@ -1643,7 +1703,7 @@ export namespace MyNS {
 	export function CreateCommentFormGroup() {
 		return new FormGroup<CommentFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isChanged: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			isDeleted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1813,6 +1873,7 @@ export namespace MyNS {
 		/**
 		 * Corresponding part number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partNumber: number;
 	}
@@ -1829,6 +1890,7 @@ export namespace MyNS {
 		/**
 		 * Corresponding part number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partNumber: FormControl<number | null | undefined>,
 	}
@@ -1878,8 +1940,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 	}
 
 	/** User file key */
@@ -1888,12 +1951,13 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserFileKeyFormGroup() {
 		return new FormGroup<UserFileKeyFormProperties>({
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2111,8 +2175,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/** New node name */
 		name?: string | null;
@@ -2138,8 +2203,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** New node name */
 		name: FormControl<string | null | undefined>,
@@ -2160,7 +2226,7 @@ export namespace MyNS {
 	}
 	export function CreateCopyNodeFormGroup() {
 		return new FormGroup<CopyNodeFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
@@ -2242,8 +2308,9 @@ export namespace MyNS {
 		/**
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent?: number | null;
+		homeFolderParent?: string | null;
 
 		/**
 		 * Search scope of Active Directory; only users below this node can log on.
@@ -2254,8 +2321,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup?: number | null;
+		sdsImportGroup?: string | null;
 
 		/**
 		 * Distinguished Name (DN) of Active Directory administrative account
@@ -2278,6 +2346,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: number;
 
@@ -2329,8 +2398,9 @@ export namespace MyNS {
 		/**
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent: FormControl<number | null | undefined>,
+		homeFolderParent: FormControl<string | null | undefined>,
 
 		/**
 		 * Search scope of Active Directory; only users below this node can log on.
@@ -2341,8 +2411,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup: FormControl<number | null | undefined>,
+		sdsImportGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Distinguished Name (DN) of Active Directory administrative account
@@ -2365,6 +2436,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: FormControl<number | null | undefined>,
 
@@ -2395,9 +2467,9 @@ export namespace MyNS {
 			adExportGroup: new FormControl<string | null | undefined>(undefined),
 			alias: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createHomeFolder: new FormControl<boolean | null | undefined>(undefined),
-			homeFolderParent: new FormControl<number | null | undefined>(undefined),
+			homeFolderParent: new FormControl<string | null | undefined>(undefined),
 			ldapUsersDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			sdsImportGroup: new FormControl<number | null | undefined>(undefined),
+			sdsImportGroup: new FormControl<string | null | undefined>(undefined),
 			serverAdminName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serverAdminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serverIp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -2454,7 +2526,10 @@ export namespace MyNS {
 		 */
 		mailSubject?: string | null;
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads?: number | null;
 
 		/**
@@ -2466,8 +2541,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: number;
+		nodeId: string;
 
 		/**
 		 * User notes
@@ -2555,7 +2631,10 @@ export namespace MyNS {
 		 */
 		mailSubject: FormControl<string | null | undefined>,
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads: FormControl<number | null | undefined>,
 
 		/**
@@ -2567,8 +2646,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: FormControl<number | null | undefined>,
+		nodeId: FormControl<string | null | undefined>,
 
 		/**
 		 * User notes
@@ -2623,7 +2703,7 @@ export namespace MyNS {
 			mailSubject: new FormControl<string | null | undefined>(undefined),
 			maxDownloads: new FormControl<number | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			nodeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
 			notifyCreator: new FormControl<boolean | null | undefined>(undefined),
 			password: new FormControl<string | null | undefined>(undefined),
@@ -2710,8 +2790,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.24.0
 		 * Created by user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdBy?: number | null;
+		createdBy?: string | null;
 
 		/**
 		 * Private key
@@ -2738,8 +2819,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.24.0
 		 * Created by user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdBy: FormControl<number | null | undefined>,
+		createdBy: FormControl<string | null | undefined>,
 
 		/**
 		 * Private key
@@ -2756,7 +2838,7 @@ export namespace MyNS {
 	export function CreatePrivateKeyContainerFormGroup() {
 		return new FormGroup<PrivateKeyContainerFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			createdBy: new FormControl<number | null | undefined>(undefined),
+			createdBy: new FormControl<string | null | undefined>(undefined),
 			privateKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2776,8 +2858,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.24.0
 		 * Created by user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdBy?: number | null;
+		createdBy?: string | null;
 
 		/**
 		 * Public key
@@ -2804,8 +2887,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.24.0
 		 * Created by user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdBy: FormControl<number | null | undefined>,
+		createdBy: FormControl<string | null | undefined>,
 
 		/**
 		 * Public key
@@ -2822,7 +2906,7 @@ export namespace MyNS {
 	export function CreatePublicKeyContainerFormGroup() {
 		return new FormGroup<PublicKeyContainerFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			createdBy: new FormControl<number | null | undefined>(undefined),
+			createdBy: new FormControl<string | null | undefined>(undefined),
 			publicKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2867,11 +2951,15 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: number;
+		parentId: string;
 
-		/** File size in byte */
-		size?: number | null;
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -2922,11 +3010,15 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
-		/** File size in byte */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -2948,8 +3040,8 @@ export namespace MyNS {
 			directS3Upload: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3042,8 +3134,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: number;
+		parentId: string;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -3090,8 +3183,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -3112,7 +3206,7 @@ export namespace MyNS {
 			classification: new FormControl<CreateFolderRequestClassification | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3214,12 +3308,16 @@ export namespace MyNS {
 	/** Request model for creating an OAuth client */
 	export interface CreateOAuthClientRequest {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity?: number | null;
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity?: number | null;
 
@@ -3256,19 +3354,26 @@ export namespace MyNS {
 		 */
 		redirectUris: Array<string>;
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity?: number | null;
 	}
 
 	/** Request model for creating an OAuth client */
 	export interface CreateOAuthClientRequestFormProperties {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity: FormControl<number | null | undefined>,
 
@@ -3287,7 +3392,10 @@ export namespace MyNS {
 		/** Determines whether client is a confidential or public client. */
 		clientType: FormControl<CreateOAuthClientRequestClientType | null | undefined>,
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateOAuthClientRequestFormGroup() {
@@ -3400,8 +3508,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup?: number | null;
+		userImportGroup?: string | null;
 
 		/**
 		 * URL of the user info endpoint
@@ -3510,8 +3619,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup: FormControl<number | null | undefined>,
+		userImportGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * URL of the user info endpoint
@@ -3552,7 +3662,7 @@ export namespace MyNS {
 			pkceEnabled: new FormControl<boolean | null | undefined>(undefined),
 			tokenEndPointUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userImportEnabled: new FormControl<boolean | null | undefined>(undefined),
-			userImportGroup: new FormControl<number | null | undefined>(undefined),
+			userImportGroup: new FormControl<string | null | undefined>(undefined),
 			userInfoEndPointUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userInfoSource: new FormControl<CreateOpenIdIdpConfigRequestUserInfoSource | null | undefined>(undefined),
 			userManagementUrl: new FormControl<string | null | undefined>(undefined),
@@ -3628,11 +3738,17 @@ export namespace MyNS {
 		 */
 		notes?: string | null;
 
-		/** Parent room ID or `null` (not 0) to create a top level room */
-		parentId?: number | null;
+		/**
+		 * Parent room ID or `null` (not 0) to create a top level room
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
-		/** Quota in byte */
-		quota?: number | null;
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota?: string | null;
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -3706,11 +3822,17 @@ export namespace MyNS {
 		 */
 		notes: FormControl<string | null | undefined>,
 
-		/** Parent room ID or `null` (not 0) to create a top level room */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent room ID or `null` (not 0) to create a top level room
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
-		/** Quota in byte */
-		quota: FormControl<number | null | undefined>,
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -3742,8 +3864,8 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			newGroupMemberAcceptance: new FormControl<ConfigRoomRequestNewGroupMemberAcceptance | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined),
-			quota: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
+			quota: new FormControl<string | null | undefined>(undefined),
 			recycleBinRetentionPeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(9999)]),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
@@ -3772,8 +3894,11 @@ export namespace MyNS {
 		/** Password */
 		password?: string | null;
 
-		/** File size in byte */
-		size?: number | null;
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -3808,8 +3933,11 @@ export namespace MyNS {
 		/** Password */
 		password: FormControl<string | null | undefined>,
 
-		/** File size in byte */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -3830,7 +3958,7 @@ export namespace MyNS {
 			directS3Upload: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3890,7 +4018,10 @@ export namespace MyNS {
 		/** Expiration information */
 		expiration?: ObjectExpiration;
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod?: number | null;
 
 		/**
@@ -3918,10 +4049,16 @@ export namespace MyNS {
 		 */
 		mailSubject?: string | null;
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize?: number | null;
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize?: string | null;
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots?: number | null;
 
 		/**
@@ -3986,8 +4123,9 @@ export namespace MyNS {
 		/**
 		 * Target room or folder ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		targetId: number;
+		targetId: string;
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -4006,7 +4144,10 @@ export namespace MyNS {
 		 */
 		creatorLanguage: FormControl<string | null | undefined>,
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod: FormControl<number | null | undefined>,
 
 		/**
@@ -4034,10 +4175,16 @@ export namespace MyNS {
 		 */
 		mailSubject: FormControl<string | null | undefined>,
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize: FormControl<number | null | undefined>,
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize: FormControl<string | null | undefined>,
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots: FormControl<number | null | undefined>,
 
 		/**
@@ -4102,8 +4249,9 @@ export namespace MyNS {
 		/**
 		 * Target room or folder ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		targetId: FormControl<number | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUploadShareRequestFormGroup() {
 		return new FormGroup<CreateUploadShareRequestFormProperties>({
@@ -4113,7 +4261,7 @@ export namespace MyNS {
 			mailBody: new FormControl<string | null | undefined>(undefined),
 			mailRecipients: new FormControl<string | null | undefined>(undefined),
 			mailSubject: new FormControl<string | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<string | null | undefined>(undefined),
 			maxSlots: new FormControl<number | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
@@ -4126,7 +4274,7 @@ export namespace MyNS {
 			showCreatorUsername: new FormControl<boolean | null | undefined>(undefined),
 			showUploadedFiles: new FormControl<boolean | null | undefined>(undefined),
 			smsRecipients: new FormControl<string | null | undefined>(undefined),
-			targetId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			targetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4330,7 +4478,10 @@ export namespace MyNS {
 	/** User Authentication Data */
 	export interface UserAuthData {
 
-		/** ID of the user's Active Directory. */
+		/**
+		 * ID of the user's Active Directory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adConfigId?: number | null;
 
 		/** User login name */
@@ -4354,7 +4505,10 @@ export namespace MyNS {
 		 */
 		mustChangePassword?: boolean | null;
 
-		/** ID of the user's OIDC provider. */
+		/**
+		 * ID of the user's OIDC provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oidConfigId?: number | null;
 
 		/**
@@ -4367,7 +4521,10 @@ export namespace MyNS {
 	/** User Authentication Data */
 	export interface UserAuthDataFormProperties {
 
-		/** ID of the user's Active Directory. */
+		/**
+		 * ID of the user's Active Directory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adConfigId: FormControl<number | null | undefined>,
 
 		/** User login name */
@@ -4391,7 +4548,10 @@ export namespace MyNS {
 		 */
 		mustChangePassword: FormControl<boolean | null | undefined>,
 
-		/** ID of the user's OIDC provider. */
+		/**
+		 * ID of the user's OIDC provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oidConfigId: FormControl<number | null | undefined>,
 
 		/**
@@ -4564,12 +4724,14 @@ export namespace MyNS {
 		/**
 		 * Number of guest user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntGuestUser: number;
 
 		/**
 		 * Number of internal user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntInternalUser: number;
 
@@ -4604,8 +4766,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Customer is locked:
@@ -4635,18 +4798,21 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: number;
+		quotaMax: string;
 
 		/**
 		 * Used amount of disc space in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaUsed: number;
+		quotaUsed: string;
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDaysLeft?: number | null;
 
@@ -4656,20 +4822,23 @@ export namespace MyNS {
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: number;
 
 		/**
 		 * Number of users which are already allocated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userUsed: number;
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax?: number | null;
+		webhooksMax?: string | null;
 	}
 
 	/** Customer information */
@@ -4686,12 +4855,14 @@ export namespace MyNS {
 		/**
 		 * Number of guest user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntGuestUser: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of internal user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntInternalUser: FormControl<number | null | undefined>,
 
@@ -4723,8 +4894,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer is locked:
@@ -4754,18 +4926,21 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: FormControl<number | null | undefined>,
+		quotaMax: FormControl<string | null | undefined>,
 
 		/**
 		 * Used amount of disc space in bytes
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaUsed: FormControl<number | null | undefined>,
+		quotaUsed: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDaysLeft: FormControl<number | null | undefined>,
 
@@ -4775,20 +4950,23 @@ export namespace MyNS {
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of users which are already allocated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userUsed: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax: FormControl<number | null | undefined>,
+		webhooksMax: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomerFormGroup() {
 		return new FormGroup<CustomerFormProperties>({
@@ -4799,18 +4977,18 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			customerContractType: new FormControl<CustomerCustomerContractType | null | undefined>(undefined, [Validators.required]),
 			customerUuid: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isLocked: new FormControl<boolean | null | undefined>(undefined),
 			lastLoginAt: new FormControl<Date | null | undefined>(undefined),
 			lockStatus: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			providerCustomerId: new FormControl<string | null | undefined>(undefined),
-			quotaMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			quotaUsed: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quotaMax: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			quotaUsed: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trialDaysLeft: new FormControl<number | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 			userMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			userUsed: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			webhooksMax: new FormControl<number | null | undefined>(undefined),
+			webhooksMax: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4844,24 +5022,28 @@ export namespace MyNS {
 		/**
 		 * User accounts limit
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountsLimit: number;
 
 		/**
 		 * User accounts used
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountsUsed: number;
 
 		/**
 		 * Number of guest user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntGuestUser: number;
 
 		/**
 		 * Number of internal user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntInternalUser: number;
 
@@ -4874,8 +5056,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Customer is Provider Customer
@@ -4892,14 +5075,16 @@ export namespace MyNS {
 		/**
 		 * Space limit (in bytes). -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		spaceLimit: number;
+		spaceLimit: string;
 
 		/**
 		 * Space used (in bytes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		spaceUsed: number;
+		spaceUsed: string;
 	}
 
 	/** Customer information */
@@ -4908,24 +5093,28 @@ export namespace MyNS {
 		/**
 		 * User accounts limit
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountsLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * User accounts used
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountsUsed: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of guest user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntGuestUser: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of internal user accounts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntInternalUser: FormControl<number | null | undefined>,
 
@@ -4938,8 +5127,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer is Provider Customer
@@ -4956,14 +5146,16 @@ export namespace MyNS {
 		/**
 		 * Space limit (in bytes). -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		spaceLimit: FormControl<number | null | undefined>,
+		spaceLimit: FormControl<string | null | undefined>,
 
 		/**
 		 * Space used (in bytes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		spaceUsed: FormControl<number | null | undefined>,
+		spaceUsed: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomerDataFormGroup() {
 		return new FormGroup<CustomerDataFormProperties>({
@@ -4972,11 +5164,11 @@ export namespace MyNS {
 			cntGuestUser: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			cntInternalUser: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			customerEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isProviderCustomer: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			spaceLimit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			spaceUsed: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			spaceLimit: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			spaceUsed: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5014,8 +5206,11 @@ export namespace MyNS {
 		/** Homeroom Parent Name */
 		homeRoomParentName?: string | null;
 
-		/** Homeroom Quota in bytes */
-		homeRoomQuota?: number | null;
+		/**
+		 * Homeroom Quota in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomQuota?: string | null;
 
 		/** Homerooms active */
 		homeRoomsActive?: boolean | null;
@@ -5027,8 +5222,11 @@ export namespace MyNS {
 		/** Homeroom Parent Name */
 		homeRoomParentName: FormControl<string | null | undefined>,
 
-		/** Homeroom Quota in bytes */
-		homeRoomQuota: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom Quota in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomQuota: FormControl<string | null | undefined>,
 
 		/** Homerooms active */
 		homeRoomsActive: FormControl<boolean | null | undefined>,
@@ -5036,7 +5234,7 @@ export namespace MyNS {
 	export function CreateCustomerSettingsRequestFormGroup() {
 		return new FormGroup<CustomerSettingsRequestFormProperties>({
 			homeRoomParentName: new FormControl<string | null | undefined>(undefined),
-			homeRoomQuota: new FormControl<number | null | undefined>(undefined),
+			homeRoomQuota: new FormControl<string | null | undefined>(undefined),
 			homeRoomsActive: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5046,14 +5244,20 @@ export namespace MyNS {
 	/** Customer settings */
 	export interface CustomerSettingsResponse {
 
-		/** Homeroom Parent ID */
-		homeRoomParentId?: number | null;
+		/**
+		 * Homeroom Parent ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomParentId?: string | null;
 
 		/** Homeroom Parent Name */
 		homeRoomParentName?: string | null;
 
-		/** Homeroom Quota in bytes */
-		homeRoomQuota?: number | null;
+		/**
+		 * Homeroom Quota in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomQuota?: string | null;
 
 		/**
 		 * Homerooms active
@@ -5065,14 +5269,20 @@ export namespace MyNS {
 	/** Customer settings */
 	export interface CustomerSettingsResponseFormProperties {
 
-		/** Homeroom Parent ID */
-		homeRoomParentId: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom Parent ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomParentId: FormControl<string | null | undefined>,
 
 		/** Homeroom Parent Name */
 		homeRoomParentName: FormControl<string | null | undefined>,
 
-		/** Homeroom Quota in bytes */
-		homeRoomQuota: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom Quota in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomQuota: FormControl<string | null | undefined>,
 
 		/**
 		 * Homerooms active
@@ -5082,9 +5292,9 @@ export namespace MyNS {
 	}
 	export function CreateCustomerSettingsResponseFormGroup() {
 		return new FormGroup<CustomerSettingsResponseFormProperties>({
-			homeRoomParentId: new FormControl<number | null | undefined>(undefined),
+			homeRoomParentId: new FormControl<string | null | undefined>(undefined),
 			homeRoomParentName: new FormControl<string | null | undefined>(undefined),
-			homeRoomQuota: new FormControl<number | null | undefined>(undefined),
+			homeRoomQuota: new FormControl<string | null | undefined>(undefined),
 			homeRoomsActive: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5202,8 +5412,11 @@ export namespace MyNS {
 		/** Expiration date */
 		expireAt?: Date | null;
 
-		/** Node ID */
-		id?: number | null;
+		/**
+		 * Node ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Encryption state */
 		isEncrypted?: boolean | null;
@@ -5223,8 +5436,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: number;
+		parentId: string;
 
 		/**
 		 * Parent node path
@@ -5236,11 +5450,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId?: number | null;
+		referenceId?: string | null;
 
-		/** Node size in byte */
-		size?: number | null;
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * Node type
@@ -5280,8 +5498,11 @@ export namespace MyNS {
 		/** Expiration date */
 		expireAt: FormControl<Date | null | undefined>,
 
-		/** Node ID */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Node ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Encryption state */
 		isEncrypted: FormControl<boolean | null | undefined>,
@@ -5301,8 +5522,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -5314,11 +5536,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId: FormControl<number | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
 
-		/** Node size in byte */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * Node type
@@ -5336,14 +5562,14 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			deletedAt: new FormControl<Date | null | undefined>(undefined),
 			expireAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			parentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			referenceId: new FormControl<number | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<DeletedNodeType | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -5361,6 +5587,7 @@ export namespace MyNS {
 		/**
 		 * Number of deleted versions of this file
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntVersions: number;
 
@@ -5379,8 +5606,9 @@ export namespace MyNS {
 		/**
 		 * Node ID of last deleted version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastDeletedNodeId: number;
+		lastDeletedNodeId: string;
 
 		/**
 		 * Node name
@@ -5391,8 +5619,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: number;
+		parentId: string;
 
 		/**
 		 * Parent node path
@@ -5404,8 +5633,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId?: number | null;
+		referenceId?: string | null;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -5432,6 +5662,7 @@ export namespace MyNS {
 		/**
 		 * Number of deleted versions of this file
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntVersions: FormControl<number | null | undefined>,
 
@@ -5450,8 +5681,9 @@ export namespace MyNS {
 		/**
 		 * Node ID of last deleted version
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastDeletedNodeId: FormControl<number | null | undefined>,
+		lastDeletedNodeId: FormControl<string | null | undefined>,
 
 		/**
 		 * Node name
@@ -5462,8 +5694,9 @@ export namespace MyNS {
 		/**
 		 * Parent node ID (room or folder)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -5475,8 +5708,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId: FormControl<number | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -5501,11 +5735,11 @@ export namespace MyNS {
 			cntVersions: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			firstDeletedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastDeletedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			lastDeletedNodeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			lastDeletedNodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			parentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			parentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			referenceId: new FormControl<number | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<DeletedNodeType | null | undefined>(undefined, [Validators.required]),
@@ -5589,6 +5823,7 @@ export namespace MyNS {
 		/**
 		 * Downloads counter (incremented on each download)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntDownloads: number;
 
@@ -5613,8 +5848,9 @@ export namespace MyNS {
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -5632,7 +5868,10 @@ export namespace MyNS {
 		/** Is share protected by password */
 		isProtected?: boolean | null;
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads?: number | null;
 
 		/**
@@ -5644,8 +5883,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: number;
+		nodeId: string;
 
 		/** Path to shared download node */
 		nodePath?: string | null;
@@ -5714,6 +5954,7 @@ export namespace MyNS {
 		/**
 		 * Downloads counter (incremented on each download)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntDownloads: FormControl<number | null | undefined>,
 
@@ -5732,8 +5973,9 @@ export namespace MyNS {
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -5751,7 +5993,10 @@ export namespace MyNS {
 		/** Is share protected by password */
 		isProtected: FormControl<boolean | null | undefined>,
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads: FormControl<number | null | undefined>,
 
 		/**
@@ -5763,8 +6008,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		nodeId: FormControl<number | null | undefined>,
+		nodeId: FormControl<string | null | undefined>,
 
 		/** Path to shared download node */
 		nodePath: FormControl<string | null | undefined>,
@@ -5814,13 +6060,13 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			dataUrl: new FormControl<string | null | undefined>(undefined),
 			expireAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			internalNotes: new FormControl<string | null | undefined>(undefined),
 			isEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			isProtected: new FormControl<boolean | null | undefined>(undefined),
 			maxDownloads: new FormControl<number | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			nodeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nodePath: new FormControl<string | null | undefined>(undefined),
 			nodeType: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
@@ -6150,13 +6396,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
 		/** Debug information */
 		debugInfo?: string | null;
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/**
@@ -6172,13 +6422,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Debug information */
 		debugInfo: FormControl<string | null | undefined>,
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/**
@@ -6204,6 +6458,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6244,6 +6499,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6323,6 +6579,7 @@ export namespace MyNS {
 		 * Retention period (in days) of event log entries.
 		 * After that period, all entries are deleted.
 		 * Recommended value: 7
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriod?: number | null;
 	}
@@ -6340,6 +6597,7 @@ export namespace MyNS {
 		 * Retention period (in days) of event log entries.
 		 * After that period, all entries are deleted.
 		 * Recommended value: 7
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriod: FormControl<number | null | undefined>,
 	}
@@ -6373,6 +6631,7 @@ export namespace MyNS {
 		 * RADIUS Failover Server Port
 		 * Required if failover server is enabled.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		failoverPort: number;
 	}
@@ -6397,6 +6656,7 @@ export namespace MyNS {
 		 * RADIUS Failover Server Port
 		 * Required if failover server is enabled.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		failoverPort: FormControl<number | null | undefined>,
 	}
@@ -6416,6 +6676,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		featureId: number;
 
@@ -6438,6 +6699,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		featureId: FormControl<number | null | undefined>,
 
@@ -6499,19 +6761,25 @@ export namespace MyNS {
 		/** File key container */
 		fileKeyContainer?: FileKeyContainer;
 
-		/** File ID */
-		id?: number | null;
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 	}
 
 	/** File key information */
 	export interface FileFileKeysFormProperties {
 
-		/** File ID */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateFileFileKeysFormGroup() {
 		return new FormGroup<FileFileKeysFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6590,8 +6858,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Name
@@ -6599,14 +6868,18 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Parent node ID (room or folder) */
-		parentId?: number | null;
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/**
 		 * Reference ID. Identical across all versions of a file
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId: number;
+		referenceId: string;
 	}
 
 	/** List of File Versions */
@@ -6616,8 +6889,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Name
@@ -6625,22 +6899,26 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Parent node ID (room or folder) */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Reference ID. Identical across all versions of a file
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId: FormControl<number | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
 	}
 	export function CreateFileVersionFormGroup() {
 		return new FormGroup<FileVersionFormProperties>({
 			deleted: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined),
-			referenceId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			parentId: new FormControl<string | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7021,8 +7299,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.10.0
 		 * Homeroom Parent ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeRoomParentId?: number | null;
+		homeRoomParentId?: string | null;
 
 		/**
 		 * &#128640; Since v4.10.0
@@ -7050,6 +7329,7 @@ export namespace MyNS {
 		 * &#128640; Since v4.30.0
 		 * Subscription Plan
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlan: number;
 
@@ -7094,8 +7374,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.10.0
 		 * Homeroom Parent ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeRoomParentId: FormControl<number | null | undefined>,
+		homeRoomParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.10.0
@@ -7123,6 +7404,7 @@ export namespace MyNS {
 		 * &#128640; Since v4.30.0
 		 * Subscription Plan
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlan: FormControl<number | null | undefined>,
 
@@ -7148,7 +7430,7 @@ export namespace MyNS {
 			emailNotificationButtonEnabled: new FormControl<boolean | null | undefined>(undefined),
 			eulaEnabled: new FormControl<boolean | null | undefined>(undefined),
 			hideLoginInputFields: new FormControl<boolean | null | undefined>(undefined),
-			homeRoomParentId: new FormControl<number | null | undefined>(undefined),
+			homeRoomParentId: new FormControl<string | null | undefined>(undefined),
 			homeRoomsActive: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			mediaServerEnabled: new FormControl<boolean | null | undefined>(undefined),
 			s3TagsEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -7167,12 +7449,14 @@ export namespace MyNS {
 		/**
 		 * First part number of a range of requested presigned URLs (for S3 it is: `1`)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		firstPartNumber: number;
 
 		/**
 		 * Last part number of a range of requested presigned URLs
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lastPartNumber: number;
 
@@ -7180,8 +7464,9 @@ export namespace MyNS {
 		 * `Content-Length` header size for each presigned URL (in bytes)
 		 * *MUST* be >= 5 MB except the last part.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 	}
 
 	/** Request model for generating presigned URLs */
@@ -7190,12 +7475,14 @@ export namespace MyNS {
 		/**
 		 * First part number of a range of requested presigned URLs (for S3 it is: `1`)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		firstPartNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Last part number of a range of requested presigned URLs
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lastPartNumber: FormControl<number | null | undefined>,
 
@@ -7203,14 +7490,15 @@ export namespace MyNS {
 		 * `Content-Length` header size for each presigned URL (in bytes)
 		 * *MUST* be >= 5 MB except the last part.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreateGeneratePresignedUrlsRequestFormGroup() {
 		return new FormGroup<GeneratePresignedUrlsRequestFormProperties>({
 			firstPartNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lastPartNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7222,6 +7510,7 @@ export namespace MyNS {
 		/**
 		 * Amount of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntUsers: number;
 
@@ -7246,8 +7535,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Group name
@@ -7268,6 +7558,7 @@ export namespace MyNS {
 		/**
 		 * Amount of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntUsers: FormControl<number | null | undefined>,
 
@@ -7283,8 +7574,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group name
@@ -7300,7 +7592,7 @@ export namespace MyNS {
 			cntUsers: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			expireAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -7340,6 +7632,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the role
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7365,6 +7658,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the role
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7396,6 +7690,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the right
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7418,6 +7713,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the right
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7463,8 +7759,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Group name
@@ -7479,8 +7776,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group name
@@ -7490,7 +7788,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupInfoFormGroup() {
 		return new FormGroup<GroupInfoFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -7547,8 +7845,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Determines whether user is a member of the group or not
@@ -7594,8 +7893,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Determines whether user is a member of the group or not
@@ -7614,7 +7914,7 @@ export namespace MyNS {
 		return new FormGroup<GroupUserFormProperties>({
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isMember: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			login: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -7755,8 +8055,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Room name
@@ -7764,8 +8065,11 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Parent room ID */
-		parentId?: number | null;
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/**
 		 * Parent node path
@@ -7781,8 +8085,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Room name
@@ -7790,8 +8095,11 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Parent room ID */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -7802,9 +8110,9 @@ export namespace MyNS {
 	}
 	export function CreateLastAdminGroupRoomFormGroup() {
 		return new FormGroup<LastAdminGroupRoomFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
 			parentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -7837,8 +8145,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Determines whether user is last admin of a room due to being the last member of last admin group
@@ -7849,8 +8158,9 @@ export namespace MyNS {
 		/**
 		 * ID of the last admin group where the user is the only remaining member
 		 * (returned only if `lastAdminInGroup` is `true`)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastAdminInGroupId?: number | null;
+		lastAdminInGroupId?: string | null;
 
 		/**
 		 * Room name
@@ -7858,8 +8168,11 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Parent room ID */
-		parentId?: number | null;
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/**
 		 * Parent node path
@@ -7875,8 +8188,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Determines whether user is last admin of a room due to being the last member of last admin group
@@ -7887,8 +8201,9 @@ export namespace MyNS {
 		/**
 		 * ID of the last admin group where the user is the only remaining member
 		 * (returned only if `lastAdminInGroup` is `true`)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastAdminInGroupId: FormControl<number | null | undefined>,
+		lastAdminInGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Room name
@@ -7896,8 +8211,11 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Parent room ID */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -7908,11 +8226,11 @@ export namespace MyNS {
 	}
 	export function CreateLastAdminUserRoomFormGroup() {
 		return new FormGroup<LastAdminUserRoomFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastAdminInGroup: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			lastAdminInGroupId: new FormControl<number | null | undefined>(undefined),
+			lastAdminInGroupId: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
 			parentPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -7957,14 +8275,18 @@ export namespace MyNS {
 		/** Auth parent target ID */
 		authParentTarget?: string | null;
 
-		/** Unique identifier for the customer */
-		customerId?: number | null;
+		/**
+		 * Unique identifier for the customer
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId?: string | null;
 
 		/**
 		 * Event ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Event description
@@ -7972,11 +8294,17 @@ export namespace MyNS {
 		 */
 		message: string;
 
-		/** Object ID 1 */
-		objectId1?: number | null;
+		/**
+		 * Object ID 1
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		objectId1?: string | null;
 
-		/** Object ID 2 */
-		objectId2?: number | null;
+		/**
+		 * Object ID 2
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		objectId2?: string | null;
 
 		/** Object name 1 */
 		objectName1?: string | null;
@@ -7984,13 +8312,22 @@ export namespace MyNS {
 		/** Object name 2 */
 		objectName2?: string | null;
 
-		/** Object type 1 */
+		/**
+		 * Object type 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectType1?: number | null;
 
-		/** Object type 2 */
+		/**
+		 * Object type 2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectType2?: number | null;
 
-		/** Operation type ID */
+		/**
+		 * Operation type ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationId?: number | null;
 
 		/** Operation name */
@@ -8015,8 +8352,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 
 		/** User IP */
 		userIp?: string | null;
@@ -8043,14 +8381,18 @@ export namespace MyNS {
 		/** Auth parent target ID */
 		authParentTarget: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the customer */
-		customerId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the customer
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		customerId: FormControl<string | null | undefined>,
 
 		/**
 		 * Event ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Event description
@@ -8058,11 +8400,17 @@ export namespace MyNS {
 		 */
 		message: FormControl<string | null | undefined>,
 
-		/** Object ID 1 */
-		objectId1: FormControl<number | null | undefined>,
+		/**
+		 * Object ID 1
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		objectId1: FormControl<string | null | undefined>,
 
-		/** Object ID 2 */
-		objectId2: FormControl<number | null | undefined>,
+		/**
+		 * Object ID 2
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		objectId2: FormControl<string | null | undefined>,
 
 		/** Object name 1 */
 		objectName1: FormControl<string | null | undefined>,
@@ -8070,13 +8418,22 @@ export namespace MyNS {
 		/** Object name 2 */
 		objectName2: FormControl<string | null | undefined>,
 
-		/** Object type 1 */
+		/**
+		 * Object type 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectType1: FormControl<number | null | undefined>,
 
-		/** Object type 2 */
+		/**
+		 * Object type 2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectType2: FormControl<number | null | undefined>,
 
-		/** Operation type ID */
+		/**
+		 * Operation type ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationId: FormControl<number | null | undefined>,
 
 		/** Operation name */
@@ -8101,8 +8458,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 
 		/** User IP */
 		userIp: FormControl<string | null | undefined>,
@@ -8117,11 +8475,11 @@ export namespace MyNS {
 			attribute3: new FormControl<string | null | undefined>(undefined),
 			authParentSource: new FormControl<string | null | undefined>(undefined),
 			authParentTarget: new FormControl<string | null | undefined>(undefined),
-			customerId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			objectId1: new FormControl<number | null | undefined>(undefined),
-			objectId2: new FormControl<number | null | undefined>(undefined),
+			objectId1: new FormControl<string | null | undefined>(undefined),
+			objectId2: new FormControl<string | null | undefined>(undefined),
 			objectName1: new FormControl<string | null | undefined>(undefined),
 			objectName2: new FormControl<string | null | undefined>(undefined),
 			objectType1: new FormControl<number | null | undefined>(undefined),
@@ -8131,7 +8489,7 @@ export namespace MyNS {
 			status: new FormControl<LogEventStatus | null | undefined>(undefined),
 			time: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			userClient: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userIp: new FormControl<string | null | undefined>(undefined),
 			userName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8173,6 +8531,7 @@ export namespace MyNS {
 		/**
 		 * Operation type ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8195,6 +8554,7 @@ export namespace MyNS {
 		/**
 		 * Operation type ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8377,7 +8737,10 @@ export namespace MyNS {
 		 */
 		enabled: boolean;
 
-		/** Maximum allowed password age (in days) */
+		/**
+		 * Maximum allowed password age (in days)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordAge?: number | null;
 	}
 
@@ -8390,7 +8753,10 @@ export namespace MyNS {
 		 */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Maximum allowed password age (in days) */
+		/**
+		 * Maximum allowed password age (in days)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordAge: FormControl<number | null | undefined>,
 	}
 	export function CreatePasswordExpirationFormGroup() {
@@ -8411,10 +8777,16 @@ export namespace MyNS {
 		 */
 		enabled: boolean;
 
-		/** Amount of minutes a user has to wait to make another login attempt after `maxNumberOfLoginFailures` has been exceeded */
+		/**
+		 * Amount of minutes a user has to wait to make another login attempt after `maxNumberOfLoginFailures` has been exceeded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lockoutPeriod?: number | null;
 
-		/** Maximum allowed number of failed login attempts */
+		/**
+		 * Maximum allowed number of failed login attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfLoginFailures?: number | null;
 	}
 
@@ -8427,10 +8799,16 @@ export namespace MyNS {
 		 */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Amount of minutes a user has to wait to make another login attempt after `maxNumberOfLoginFailures` has been exceeded */
+		/**
+		 * Amount of minutes a user has to wait to make another login attempt after `maxNumberOfLoginFailures` has been exceeded
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lockoutPeriod: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of failed login attempts */
+		/**
+		 * Maximum allowed number of failed login attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfLoginFailures: FormControl<number | null | undefined>,
 	}
 	export function CreateUserLockoutFormGroup() {
@@ -8604,8 +8982,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Type of second factor authentication
@@ -8632,8 +9011,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Type of second factor authentication
@@ -8650,7 +9030,7 @@ export namespace MyNS {
 	export function CreateMfaSetupStatusFormGroup() {
 		return new FormGroup<MfaSetupStatusFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mfaType: new FormControl<MfaSetupStatusMfaType | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -8664,8 +9044,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Generated valid OTP
@@ -8678,8 +9059,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Generated valid OTP
@@ -8689,7 +9071,7 @@ export namespace MyNS {
 	}
 	export function CreateMfaTotpConfirmationRequestFormGroup() {
 		return new FormGroup<MfaTotpConfirmationRequestFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			otp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -8725,26 +9107,38 @@ export namespace MyNS {
 	/** User ID and file ID mapping */
 	export interface UserIdFileIdItem {
 
-		/** File ID */
-		fileId?: number | null;
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileId?: string | null;
 
-		/** Unique identifier for the user */
-		userId?: number | null;
+		/**
+		 * Unique identifier for the user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId?: string | null;
 	}
 
 	/** User ID and file ID mapping */
 	export interface UserIdFileIdItemFormProperties {
 
-		/** File ID */
-		fileId: FormControl<number | null | undefined>,
+		/**
+		 * File ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileId: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the user */
-		userId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserIdFileIdItemFormGroup() {
 		return new FormGroup<UserIdFileIdItemFormProperties>({
-			fileId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			fileId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8753,8 +9147,11 @@ export namespace MyNS {
 	/** Public key information */
 	export interface UserUserPublicKey {
 
-		/** Unique identifier for the user */
-		id?: number | null;
+		/**
+		 * Unique identifier for the user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Public key container */
 		publicKeyContainer?: PublicKeyContainer;
@@ -8763,12 +9160,15 @@ export namespace MyNS {
 	/** Public key information */
 	export interface UserUserPublicKeyFormProperties {
 
-		/** Unique identifier for the user */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the user
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateUserUserPublicKeyFormGroup() {
 		return new FormGroup<UserUserPublicKeyFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8780,8 +9180,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/** New node name */
 		name?: string | null;
@@ -8807,8 +9208,9 @@ export namespace MyNS {
 		/**
 		 * Source node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** New node name */
 		name: FormControl<string | null | undefined>,
@@ -8829,7 +9231,7 @@ export namespace MyNS {
 	}
 	export function CreateMoveNodeFormGroup() {
 		return new FormGroup<MoveNodeFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
@@ -8939,26 +9341,30 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: number;
+		quotaMax: string;
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays?: number | null;
 
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: number;
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax?: number | null;
+		webhooksMax?: string | null;
 	}
 
 	/** Request model for creating a customer */
@@ -9005,26 +9411,30 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: FormControl<number | null | undefined>,
+		quotaMax: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax: FormControl<number | null | undefined>,
+		webhooksMax: FormControl<string | null | undefined>,
 	}
 	export function CreateNewCustomerRequestFormGroup() {
 		return new FormGroup<NewCustomerRequestFormProperties>({
@@ -9034,10 +9444,10 @@ export namespace MyNS {
 			isLocked: new FormControl<boolean | null | undefined>(undefined),
 			lockStatus: new FormControl<boolean | null | undefined>(undefined),
 			providerCustomerId: new FormControl<string | null | undefined>(undefined),
-			quotaMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quotaMax: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trialDays: new FormControl<number | null | undefined>(undefined),
 			userMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			webhooksMax: new FormControl<number | null | undefined>(undefined),
+			webhooksMax: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -9085,8 +9495,11 @@ export namespace MyNS {
 		 */
 		firstAdminUser: FirstAdminUser;
 
-		/** Unique identifier for the customer */
-		id?: number | null;
+		/**
+		 * Unique identifier for the customer
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * Customer is locked:
@@ -9113,26 +9526,30 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: number;
+		quotaMax: string;
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays?: number | null;
 
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: number;
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax?: number | null;
+		webhooksMax?: string | null;
 	}
 
 	/** Customer information */
@@ -9168,8 +9585,11 @@ export namespace MyNS {
 		 */
 		customerUuid: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the customer */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the customer
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer is locked:
@@ -9196,26 +9616,30 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: FormControl<number | null | undefined>,
+		quotaMax: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax: FormControl<number | null | undefined>,
+		webhooksMax: FormControl<string | null | undefined>,
 	}
 	export function CreateNewCustomerResponseFormGroup() {
 		return new FormGroup<NewCustomerResponseFormProperties>({
@@ -9224,14 +9648,14 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			customerContractType: new FormControl<CustomerCustomerContractType | null | undefined>(undefined, [Validators.required]),
 			customerUuid: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isLocked: new FormControl<boolean | null | undefined>(undefined),
 			lockStatus: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			providerCustomerId: new FormControl<string | null | undefined>(undefined),
-			quotaMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quotaMax: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trialDays: new FormControl<number | null | undefined>(undefined),
 			userMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			webhooksMax: new FormControl<number | null | undefined>(undefined),
+			webhooksMax: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -9243,11 +9667,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.15.0
 		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authParentId?: number | null;
+		authParentId?: string | null;
 
-		/** Version of last change in this node or a node further down the tree. */
-		branchVersion?: number | null;
+		/**
+		 * Version of last change in this node or a node further down the tree.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		branchVersion?: string | null;
 
 		/**
 		 * &#128679; Deprecated since v4.10.0
@@ -9269,25 +9697,34 @@ export namespace MyNS {
 		 * &#128679; Deprecated since v4.11.0
 		 * Number of direct children
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntChildren?: number | null;
 
-		/** Returns the number of comments of this node. */
+		/**
+		 * Returns the number of comments of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntComments?: number | null;
 
 		/**
 		 * Number of deleted versions of this file / folder
 		 * (for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntDeletedVersions?: number | null;
 
-		/** Returns the number of Download Shares of this node. */
+		/**
+		 * Returns the number of Download Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntDownloadShares?: number | null;
 
 		/**
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child files where this node is the parent node
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntFiles?: number | null;
 
@@ -9295,6 +9732,7 @@ export namespace MyNS {
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child folders where this node is the parent node
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntFolders?: number | null;
 
@@ -9302,10 +9740,14 @@ export namespace MyNS {
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child rooms where this node is the parent node
 		 * (no recursion; for rooms only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntRooms?: number | null;
 
-		/** Returns the number of Upload Shares of this node. */
+		/**
+		 * Returns the number of Upload Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploadShares?: number | null;
 
 		/** Creation date */
@@ -9332,8 +9774,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Inherit permissions from parent room
@@ -9371,8 +9814,11 @@ export namespace MyNS {
 		 */
 		notes?: string | null;
 
-		/** Parent node ID (room or folder) */
-		parentId?: number | null;
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/**
 		 * Parent node path
@@ -9383,8 +9829,11 @@ export namespace MyNS {
 		/** Node permissions */
 		permissions?: NodePermissions;
 
-		/** Quota in byte */
-		quota?: number | null;
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota?: string | null;
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -9396,11 +9845,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId?: number | null;
+		referenceId?: string | null;
 
-		/** Node size in byte */
-		size?: number | null;
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -9433,11 +9886,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.15.0
 		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		authParentId: FormControl<number | null | undefined>,
+		authParentId: FormControl<string | null | undefined>,
 
-		/** Version of last change in this node or a node further down the tree. */
-		branchVersion: FormControl<number | null | undefined>,
+		/**
+		 * Version of last change in this node or a node further down the tree.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		branchVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Classification ID:
@@ -9452,25 +9909,34 @@ export namespace MyNS {
 		 * &#128679; Deprecated since v4.11.0
 		 * Number of direct children
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntChildren: FormControl<number | null | undefined>,
 
-		/** Returns the number of comments of this node. */
+		/**
+		 * Returns the number of comments of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntComments: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of deleted versions of this file / folder
 		 * (for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntDeletedVersions: FormControl<number | null | undefined>,
 
-		/** Returns the number of Download Shares of this node. */
+		/**
+		 * Returns the number of Download Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntDownloadShares: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child files where this node is the parent node
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntFiles: FormControl<number | null | undefined>,
 
@@ -9478,6 +9944,7 @@ export namespace MyNS {
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child folders where this node is the parent node
 		 * (no recursion; for rooms / folders only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntFolders: FormControl<number | null | undefined>,
 
@@ -9485,10 +9952,14 @@ export namespace MyNS {
 		 * &#128640; Since v4.11.0
 		 * Amount of direct child rooms where this node is the parent node
 		 * (no recursion; for rooms only)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cntRooms: FormControl<number | null | undefined>,
 
-		/** Returns the number of Upload Shares of this node. */
+		/**
+		 * Returns the number of Upload Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploadShares: FormControl<number | null | undefined>,
 
 		/** Creation date */
@@ -9509,8 +9980,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Inherit permissions from parent room
@@ -9548,8 +10020,11 @@ export namespace MyNS {
 		 */
 		notes: FormControl<string | null | undefined>,
 
-		/** Parent node ID (room or folder) */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Parent node path
@@ -9557,8 +10032,11 @@ export namespace MyNS {
 		 */
 		parentPath: FormControl<string | null | undefined>,
 
-		/** Quota in byte */
-		quota: FormControl<number | null | undefined>,
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -9570,11 +10048,15 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.37.0
 		 * Reference ID. Identical across all versions of a file
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		referenceId: FormControl<number | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
 
-		/** Node size in byte */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Node size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -9599,8 +10081,8 @@ export namespace MyNS {
 	}
 	export function CreateNodeFormGroup() {
 		return new FormGroup<NodeFormProperties>({
-			authParentId: new FormControl<number | null | undefined>(undefined),
-			branchVersion: new FormControl<number | null | undefined>(undefined),
+			authParentId: new FormControl<string | null | undefined>(undefined),
+			branchVersion: new FormControl<string | null | undefined>(undefined),
 			classification: new FormControl<NodeClassification | null | undefined>(undefined),
 			cntChildren: new FormControl<number | null | undefined>(undefined),
 			cntComments: new FormControl<number | null | undefined>(undefined),
@@ -9615,7 +10097,7 @@ export namespace MyNS {
 			fileType: new FormControl<string | null | undefined>(undefined),
 			hasActivitiesLog: new FormControl<boolean | null | undefined>(undefined),
 			hash: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			inheritPermissions: new FormControl<boolean | null | undefined>(undefined),
 			isBrowsable: new FormControl<boolean | null | undefined>(undefined),
 			isEncrypted: new FormControl<boolean | null | undefined>(undefined),
@@ -9624,12 +10106,12 @@ export namespace MyNS {
 			mediaType: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
 			parentPath: new FormControl<string | null | undefined>(undefined),
-			quota: new FormControl<number | null | undefined>(undefined),
+			quota: new FormControl<string | null | undefined>(undefined),
 			recycleBinRetentionPeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(9999)]),
-			referenceId: new FormControl<number | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<NodeType | null | undefined>(undefined, [Validators.required]),
@@ -9675,8 +10157,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Node name
@@ -9684,8 +10167,11 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Parent node ID (room or folder) */
-		parentId?: number | null;
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/**
 		 * Node type
@@ -9700,8 +10186,9 @@ export namespace MyNS {
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Node name
@@ -9709,8 +10196,11 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Parent node ID (room or folder) */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Node type
@@ -9720,9 +10210,9 @@ export namespace MyNS {
 	}
 	export function CreateNodeParentFormGroup() {
 		return new FormGroup<NodeParentFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -9752,12 +10242,14 @@ export namespace MyNS {
 		/**
 		 * Channel frequency (aggregation window size in minutes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		frequency: number;
+		frequency: string;
 
 		/**
 		 * Channel ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9786,12 +10278,14 @@ export namespace MyNS {
 		/**
 		 * Channel frequency (aggregation window size in minutes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		frequency: FormControl<number | null | undefined>,
+		frequency: FormControl<string | null | undefined>,
 
 		/**
 		 * Channel ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9815,7 +10309,7 @@ export namespace MyNS {
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			frequency: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			frequency: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			isEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -9831,6 +10325,7 @@ export namespace MyNS {
 		/**
 		 * Channel ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		channelId: number;
 
@@ -9847,6 +10342,7 @@ export namespace MyNS {
 		/**
 		 * Channel ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		channelId: FormControl<number | null | undefined>,
 
@@ -9903,12 +10399,14 @@ export namespace MyNS {
 		/**
 		 * Notification configuration ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Scope ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		scopeId: number;
 	}
@@ -9925,19 +10423,21 @@ export namespace MyNS {
 		/**
 		 * Notification configuration ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Scope ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		scopeId: FormControl<number | null | undefined>,
 	}
 	export function CreateNotificationConfigFormGroup() {
 		return new FormGroup<NotificationConfigFormProperties>({
 			eventTypeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			scopeId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -9991,6 +10491,7 @@ export namespace MyNS {
 		/**
 		 * Scope ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -10007,6 +10508,7 @@ export namespace MyNS {
 		/**
 		 * Scope ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10119,8 +10621,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.12.0
 		 * ID of the OAuth authorization
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * &#128640; Since v4.25.0
@@ -10194,8 +10697,9 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.12.0
 		 * ID of the OAuth authorization
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.25.0
@@ -10247,7 +10751,7 @@ export namespace MyNS {
 			clientName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			expiresAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isCurrentAuthorization: new FormControl<boolean | null | undefined>(undefined),
 			isStandard: new FormControl<boolean | null | undefined>(undefined),
 			usedAt: new FormControl<Date | null | undefined>(undefined),
@@ -10265,12 +10769,16 @@ export namespace MyNS {
 	/** OAuth client information */
 	export interface OAuthClient {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity?: number | null;
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity?: number | null;
 
@@ -10313,19 +10821,26 @@ export namespace MyNS {
 		/** URIs, to which a user is redirected after authorization. */
 		redirectUris?: Array<string>;
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity?: number | null;
 	}
 
 	/** OAuth client information */
 	export interface OAuthClientFormProperties {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity: FormControl<number | null | undefined>,
 
@@ -10353,7 +10868,10 @@ export namespace MyNS {
 		/** Determines whether client is a standard client. */
 		isStandard: FormControl<boolean | null | undefined>,
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity: FormControl<number | null | undefined>,
 	}
 	export function CreateOAuthClientFormGroup() {
@@ -10399,6 +10917,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -10440,6 +10959,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10511,6 +11031,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -10562,8 +11083,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup?: number | null;
+		userImportGroup?: string | null;
 
 		/** URL of the user info endpoint */
 		userInfoEndPointUrl?: string | null;
@@ -10611,6 +11133,7 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10653,8 +11176,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup: FormControl<number | null | undefined>,
+		userImportGroup: FormControl<string | null | undefined>,
 
 		/** URL of the user info endpoint */
 		userInfoEndPointUrl: FormControl<string | null | undefined>,
@@ -10693,7 +11217,7 @@ export namespace MyNS {
 			pkceEnabled: new FormControl<boolean | null | undefined>(undefined),
 			tokenEndPointUrl: new FormControl<string | null | undefined>(undefined),
 			userImportEnabled: new FormControl<boolean | null | undefined>(undefined),
-			userImportGroup: new FormControl<number | null | undefined>(undefined),
+			userImportGroup: new FormControl<string | null | undefined>(undefined),
 			userInfoEndPointUrl: new FormControl<string | null | undefined>(undefined),
 			userInfoSource: new FormControl<CreateOpenIdIdpConfigRequestUserInfoSource | null | undefined>(undefined),
 			userManagementUrl: new FormControl<string | null | undefined>(undefined),
@@ -10801,13 +11325,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
 		/** Debug information */
 		debugInfo?: string | null;
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/**
@@ -10826,13 +11354,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Debug information */
 		debugInfo: FormControl<string | null | undefined>,
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/**
@@ -10886,14 +11418,16 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupId: number;
+		groupId: string;
 
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		roomId: number;
+		roomId: string;
 
 		/**
 		 * Room name
@@ -10913,8 +11447,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 	}
 
 	/** Pending assignment information */
@@ -10923,14 +11458,16 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupId: FormControl<number | null | undefined>,
+		groupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		roomId: FormControl<number | null | undefined>,
+		roomId: FormControl<string | null | undefined>,
 
 		/**
 		 * Room name
@@ -10950,16 +11487,17 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreatePendingAssignmentFormGroup() {
 		return new FormGroup<PendingAssignmentFormProperties>({
-			groupId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			roomId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			groupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			roomId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			roomName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<PendingAssignmentState | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10991,8 +11529,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		roomId: number;
+		roomId: string;
 
 		/**
 		 * Room name
@@ -11022,8 +11561,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		roomId: FormControl<number | null | undefined>,
+		roomId: FormControl<string | null | undefined>,
 
 		/**
 		 * Room name
@@ -11042,7 +11582,7 @@ export namespace MyNS {
 	}
 	export function CreatePendingAssignmentDataFormGroup() {
 		return new FormGroup<PendingAssignmentDataFormProperties>({
-			roomId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			roomId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			roomName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<PendingAssignmentState | null | undefined>(undefined, [Validators.required]),
 		});
@@ -11057,8 +11597,9 @@ export namespace MyNS {
 		 * Unique identifier for the group
 		 * use `id` from `GroupInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Group name
@@ -11075,8 +11616,9 @@ export namespace MyNS {
 		 * Unique identifier for the group
 		 * use `id` from `GroupInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Group name
@@ -11087,7 +11629,7 @@ export namespace MyNS {
 	}
 	export function CreatePendingGroupDataFormGroup() {
 		return new FormGroup<PendingGroupDataFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -11114,8 +11656,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * User login name
@@ -11144,8 +11687,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * User login name
@@ -11157,7 +11701,7 @@ export namespace MyNS {
 		return new FormGroup<PendingUserDataFormProperties>({
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			login: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -11213,6 +11757,7 @@ export namespace MyNS {
 		/**
 		 * Corresponding part number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partNumber: number;
 
@@ -11229,6 +11774,7 @@ export namespace MyNS {
 		/**
 		 * Corresponding part number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partNumber: FormControl<number | null | undefined>,
 
@@ -11285,8 +11831,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		productPackageId: number;
+		productPackageId: string;
 
 		/**
 		 * Name
@@ -11301,8 +11848,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		productPackageId: FormControl<number | null | undefined>,
+		productPackageId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name
@@ -11312,7 +11860,7 @@ export namespace MyNS {
 	}
 	export function CreateProductPackageResponseFormGroup() {
 		return new FormGroup<ProductPackageResponseFormProperties>({
-			productPackageId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			productPackageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			productPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -11460,8 +12008,9 @@ export namespace MyNS {
 		/**
 		 * File size or container size not compressed (in bytes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 	}
 
 	/** Download Share information */
@@ -11533,8 +12082,9 @@ export namespace MyNS {
 		/**
 		 * File size or container size not compressed (in bytes)
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreatePublicDownloadShareFormGroup() {
 		return new FormGroup<PublicDownloadShareFormProperties>({
@@ -11550,7 +12100,7 @@ export namespace MyNS {
 			mediaType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -11641,10 +12191,16 @@ export namespace MyNS {
 		 */
 		notes?: string | null;
 
-		/** Remaining size */
-		remainingSize?: number | null;
+		/**
+		 * Remaining size
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		remainingSize?: string | null;
 
-		/** Remaining slots */
+		/**
+		 * Remaining slots
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingSlots?: number | null;
 
 		/** Allow display of already uploaded files */
@@ -11700,10 +12256,16 @@ export namespace MyNS {
 		 */
 		notes: FormControl<string | null | undefined>,
 
-		/** Remaining size */
-		remainingSize: FormControl<number | null | undefined>,
+		/**
+		 * Remaining size
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		remainingSize: FormControl<string | null | undefined>,
 
-		/** Remaining slots */
+		/**
+		 * Remaining slots
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingSlots: FormControl<number | null | undefined>,
 
 		/** Allow display of already uploaded files */
@@ -11719,7 +12281,7 @@ export namespace MyNS {
 			isProtected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
-			remainingSize: new FormControl<number | null | undefined>(undefined),
+			remainingSize: new FormControl<string | null | undefined>(undefined),
 			remainingSlots: new FormControl<number | null | undefined>(undefined),
 			showUploadedFiles: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -11748,8 +12310,9 @@ export namespace MyNS {
 		/**
 		 * File size in byte
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: number;
+		size: string;
 	}
 
 	/** File information */
@@ -11773,15 +12336,16 @@ export namespace MyNS {
 		/**
 		 * File size in byte
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreatePublicUploadedFileDataFormGroup() {
 		return new FormGroup<PublicUploadedFileDataFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			hash: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -11813,13 +12377,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
 		/** Debug information */
 		debugInfo?: string | null;
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/**
@@ -11849,13 +12417,17 @@ export namespace MyNS {
 		/**
 		 * HTTP status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Debug information */
 		debugInfo: FormControl<string | null | undefined>,
 
-		/** Internal error code */
+		/**
+		 * Internal error code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/**
@@ -11912,6 +12484,7 @@ export namespace MyNS {
 		/**
 		 * RADIUS Server Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -11940,6 +12513,7 @@ export namespace MyNS {
 		/**
 		 * RADIUS Server Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -11978,6 +12552,7 @@ export namespace MyNS {
 		/**
 		 * RADIUS Server Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -12003,6 +12578,7 @@ export namespace MyNS {
 		/**
 		 * RADIUS Server Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -12035,7 +12611,10 @@ export namespace MyNS {
 		/** Sequence order of concatenated PIN and one-time token */
 		otpPinFirst?: boolean | null;
 
-		/** RADIUS Server Port */
+		/**
+		 * RADIUS Server Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Shared Secret to access the RADIUS server */
@@ -12051,7 +12630,10 @@ export namespace MyNS {
 		/** Sequence order of concatenated PIN and one-time token */
 		otpPinFirst: FormControl<boolean | null | undefined>,
 
-		/** RADIUS Server Port */
+		/**
+		 * RADIUS Server Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Shared Secret to access the RADIUS server */
@@ -12288,8 +12870,9 @@ export namespace MyNS {
 		/**
 		 * Node parent ID
 		 * (default: previous parent ID)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId?: number | null;
+		parentId?: string | null;
 
 		/**
 		 * Node conflict resolution strategy:
@@ -12309,8 +12892,9 @@ export namespace MyNS {
 		/**
 		 * Node parent ID
 		 * (default: previous parent ID)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		parentId: FormControl<number | null | undefined>,
+		parentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Node conflict resolution strategy:
@@ -12323,7 +12907,7 @@ export namespace MyNS {
 	export function CreateRestoreDeletedNodesRequestFormGroup() {
 		return new FormGroup<RestoreDeletedNodesRequestFormProperties>({
 			keepShareLinks: new FormControl<boolean | null | undefined>(undefined),
-			parentId: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
 			resolutionStrategy: new FormControl<CompleteS3FileUploadRequestResolutionStrategy | null | undefined>(undefined),
 		});
 
@@ -12336,8 +12920,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Is group member of the role
@@ -12358,8 +12943,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is group member of the role
@@ -12375,7 +12961,7 @@ export namespace MyNS {
 	}
 	export function CreateRoleGroupFormGroup() {
 		return new FormGroup<RoleGroupFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isMember: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -12425,8 +13011,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Is user member of the role
@@ -12457,8 +13044,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is user member of the role
@@ -12469,7 +13057,7 @@ export namespace MyNS {
 	export function CreateRoleUserFormGroup() {
 		return new FormGroup<RoleUserFormProperties>({
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isMember: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -12511,10 +13099,16 @@ export namespace MyNS {
 		 */
 		children?: Array<RoomData>;
 
-		/** Returns the number of Download Shares of this node. */
+		/**
+		 * Returns the number of Download Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntDownloadShares?: number | null;
 
-		/** Returns the number of Upload Shares of this node. */
+		/**
+		 * Returns the number of Upload Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploadShares?: number | null;
 
 		/** Expiration date */
@@ -12534,8 +13128,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Encryption state
@@ -12558,14 +13153,20 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Parent node ID (room or folder) */
-		parentId?: number | null;
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId?: string | null;
 
 		/** Node permissions */
 		permissions?: NodePermissions;
 
-		/** Quota in byte */
-		quota?: number | null;
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota?: string | null;
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -12575,8 +13176,11 @@ export namespace MyNS {
 		 */
 		recycleBinRetentionPeriod: number;
 
-		/** Room size */
-		size?: number | null;
+		/**
+		 * Room size
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** Node type */
 		type?: RoomDataType | null;
@@ -12591,10 +13195,16 @@ export namespace MyNS {
 	/** Room information */
 	export interface RoomDataFormProperties {
 
-		/** Returns the number of Download Shares of this node. */
+		/**
+		 * Returns the number of Download Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntDownloadShares: FormControl<number | null | undefined>,
 
-		/** Returns the number of Upload Shares of this node. */
+		/**
+		 * Returns the number of Upload Shares of this node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploadShares: FormControl<number | null | undefined>,
 
 		/** Expiration date */
@@ -12611,8 +13221,9 @@ export namespace MyNS {
 		/**
 		 * Room ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Encryption state
@@ -12635,11 +13246,17 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Parent node ID (room or folder) */
-		parentId: FormControl<number | null | undefined>,
+		/**
+		 * Parent node ID (room or folder)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentId: FormControl<string | null | undefined>,
 
-		/** Quota in byte */
-		quota: FormControl<number | null | undefined>,
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * Retention period for deleted nodes in days
@@ -12649,8 +13266,11 @@ export namespace MyNS {
 		 */
 		recycleBinRetentionPeriod: FormControl<number | null | undefined>,
 
-		/** Room size */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Room size
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** Node type */
 		type: FormControl<RoomDataType | null | undefined>,
@@ -12664,15 +13284,15 @@ export namespace MyNS {
 			cntUploadShares: new FormControl<number | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			hasRecycleBin: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isEncrypted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			isFavorite: new FormControl<boolean | null | undefined>(undefined),
 			isGranted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentId: new FormControl<number | null | undefined>(undefined),
-			quota: new FormControl<number | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
+			quota: new FormControl<string | null | undefined>(undefined),
 			recycleBinRetentionPeriod: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(9999)]),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<RoomDataType | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -12688,8 +13308,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Is user granted room permissions
@@ -12721,8 +13342,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is user granted room permissions
@@ -12746,7 +13368,7 @@ export namespace MyNS {
 	}
 	export function CreateRoomGroupFormGroup() {
 		return new FormGroup<RoomGroupFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isGranted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			newGroupMemberAcceptance: new FormControl<ConfigRoomRequestNewGroupMemberAcceptance | null | undefined>(undefined),
@@ -12807,8 +13429,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Behaviour when new users are added to the group:
@@ -12831,8 +13454,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Behaviour when new users are added to the group:
@@ -12844,7 +13468,7 @@ export namespace MyNS {
 	}
 	export function CreateRoomGroupsAddBatchRequestItemFormGroup() {
 		return new FormGroup<RoomGroupsAddBatchRequestItemFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			newGroupMemberAcceptance: new FormControl<ConfigRoomRequestNewGroupMemberAcceptance | null | undefined>(undefined),
 		});
 
@@ -12952,6 +13576,7 @@ export namespace MyNS {
 		 * All files in a room will have their expiration date set to this period after their respective upload.
 		 * 0 means no default expiration policy is set.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultExpirationPeriod: number;
 	}
@@ -12964,6 +13589,7 @@ export namespace MyNS {
 		 * All files in a room will have their expiration date set to this period after their respective upload.
 		 * 0 means no default expiration policy is set.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultExpirationPeriod: FormControl<number | null | undefined>,
 	}
@@ -12982,6 +13608,7 @@ export namespace MyNS {
 		 * Default policy room expiration period in seconds.
 		 * All files in a room will have their expiration date set to this period after their respective upload.
 		 * 0 means no default expiration policy is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultExpirationPeriod?: number | null;
 	}
@@ -12993,6 +13620,7 @@ export namespace MyNS {
 		 * Default policy room expiration period in seconds.
 		 * All files in a room will have their expiration date set to this period after their respective upload.
 		 * 0 means no default expiration policy is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultExpirationPeriod: FormControl<number | null | undefined>,
 	}
@@ -13054,8 +13682,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Is user granted room permissions
@@ -13107,8 +13736,9 @@ export namespace MyNS {
 		 * Unique identifier for the user
 		 * use `id` from `UserInfo` instead
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is user granted room permissions
@@ -13127,7 +13757,7 @@ export namespace MyNS {
 		return new FormGroup<RoomUserFormProperties>({
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isGranted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			login: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -13187,8 +13817,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Node permissions
@@ -13203,12 +13834,13 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateRoomUsersAddBatchRequestItemFormGroup() {
 		return new FormGroup<RoomUsersAddBatchRequestItemFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -13291,14 +13923,18 @@ export namespace MyNS {
 		 */
 		expireAt: Date;
 
-		/** Last HTTP status code when a webhook is disabled due to delivery failures */
+		/**
+		 * Last HTTP status code when a webhook is disabled due to delivery failures
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failStatus?: number | null;
 
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Is enabled
@@ -13346,14 +13982,18 @@ export namespace MyNS {
 		 */
 		expireAt: FormControl<Date | null | undefined>,
 
-		/** Last HTTP status code when a webhook is disabled due to delivery failures */
+		/**
+		 * Last HTTP status code when a webhook is disabled due to delivery failures
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failStatus: FormControl<number | null | undefined>,
 
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Is enabled
@@ -13387,7 +14027,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			expireAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			failStatus: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			secret: new FormControl<string | null | undefined>(undefined),
@@ -13410,8 +14050,9 @@ export namespace MyNS {
 		/**
 		 * Webhook ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhookId: number;
+		webhookId: string;
 	}
 
 	/** Request model for handling webhook assignments */
@@ -13426,13 +14067,14 @@ export namespace MyNS {
 		/**
 		 * Webhook ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhookId: FormControl<number | null | undefined>,
+		webhookId: FormControl<string | null | undefined>,
 	}
 	export function CreateRoomWebhookAssignmentFormGroup() {
 		return new FormGroup<RoomWebhookAssignmentFormProperties>({
 			isAssigned: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			webhookId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			webhookId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -13763,8 +14405,11 @@ export namespace MyNS {
 		 */
 		fileName: string;
 
-		/** File size in byte */
-		size?: number | null;
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/**
 		 * S3 file upload status:
@@ -13786,8 +14431,11 @@ export namespace MyNS {
 		 */
 		fileName: FormControl<string | null | undefined>,
 
-		/** File size in byte */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * File size in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * S3 file upload status:
@@ -13802,7 +14450,7 @@ export namespace MyNS {
 	export function CreateS3ShareUploadStatusFormGroup() {
 		return new FormGroup<S3ShareUploadStatusFormProperties>({
 			fileName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -13812,8 +14460,11 @@ export namespace MyNS {
 	/** S3 tag information */
 	export interface S3Tag {
 
-		/** S3 tag ID */
-		id?: number | null;
+		/**
+		 * S3 tag ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Determines whether S3 is mandatory or not */
 		isMandatory?: boolean | null;
@@ -13828,8 +14479,11 @@ export namespace MyNS {
 	/** S3 tag information */
 	export interface S3TagFormProperties {
 
-		/** S3 tag ID */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * S3 tag ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Determines whether S3 is mandatory or not */
 		isMandatory: FormControl<boolean | null | undefined>,
@@ -13842,7 +14496,7 @@ export namespace MyNS {
 	}
 	export function CreateS3TagFormGroup() {
 		return new FormGroup<S3TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isMandatory: new FormControl<boolean | null | undefined>(undefined),
 			key: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
@@ -14038,32 +14692,40 @@ export namespace MyNS {
 	/** Subscribed download share information */
 	export interface SubscribedDownloadShare {
 
-		/** Auth parent room ID */
-		authParentId?: number | null;
+		/**
+		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		authParentId?: string | null;
 
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 	}
 
 	/** Subscribed download share information */
 	export interface SubscribedDownloadShareFormProperties {
 
-		/** Auth parent room ID */
-		authParentId: FormControl<number | null | undefined>,
+		/**
+		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		authParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribedDownloadShareFormGroup() {
 		return new FormGroup<SubscribedDownloadShareFormProperties>({
-			authParentId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			authParentId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14098,14 +14760,18 @@ export namespace MyNS {
 	/** Subscribed node information */
 	export interface SubscribedNode {
 
-		/** Auth parent room ID */
-		authParentId?: number | null;
+		/**
+		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		authParentId?: string | null;
 
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/** Node type */
 		type?: NodeType | null;
@@ -14114,22 +14780,26 @@ export namespace MyNS {
 	/** Subscribed node information */
 	export interface SubscribedNodeFormProperties {
 
-		/** Auth parent room ID */
-		authParentId: FormControl<number | null | undefined>,
+		/**
+		 * Auth parent room ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		authParentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Node ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Node type */
 		type: FormControl<NodeType | null | undefined>,
 	}
 	export function CreateSubscribedNodeFormGroup() {
 		return new FormGroup<SubscribedNodeFormProperties>({
-			authParentId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			authParentId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<NodeType | null | undefined>(undefined),
 		});
 
@@ -14168,11 +14838,15 @@ export namespace MyNS {
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
-		/** Target room or folder ID */
-		targetNodeId?: number | null;
+		/**
+		 * Target room or folder ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetNodeId?: string | null;
 	}
 
 	/** Subscribed upload share information */
@@ -14181,16 +14855,20 @@ export namespace MyNS {
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
-		/** Target room or folder ID */
-		targetNodeId: FormControl<number | null | undefined>,
+		/**
+		 * Target room or folder ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetNodeId: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribedUploadShareFormGroup() {
 		return new FormGroup<SubscribedUploadShareFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			targetNodeId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetNodeId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -14226,6 +14904,7 @@ export namespace MyNS {
 		/**
 		 * subscription plan id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlanId: number;
 	}
@@ -14234,6 +14913,7 @@ export namespace MyNS {
 		/**
 		 * subscription plan id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlanId: FormControl<number | null | undefined>,
 	}
@@ -14249,6 +14929,7 @@ export namespace MyNS {
 		/**
 		 * subscription plan id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlanId: number;
 	}
@@ -14257,6 +14938,7 @@ export namespace MyNS {
 		/**
 		 * subscription plan id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subscriptionPlanId: FormControl<number | null | undefined>,
 	}
@@ -14280,7 +14962,10 @@ export namespace MyNS {
 		/** Determines whether user’s IP address is logged. */
 		logIpEnabled?: boolean | null;
 
-		/** Syslog server port */
+		/**
+		 * Syslog server port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Protocol to connect to syslog server */
@@ -14299,7 +14984,10 @@ export namespace MyNS {
 		/** Determines whether user’s IP address is logged. */
 		logIpEnabled: FormControl<boolean | null | undefined>,
 
-		/** Syslog server port */
+		/**
+		 * Syslog server port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Protocol to connect to syslog server */
@@ -14322,10 +15010,16 @@ export namespace MyNS {
 	/** System defaults */
 	export interface SystemDefaults {
 
-		/** Default expiration period for Download Shares in days. */
+		/**
+		 * Default expiration period for Download Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadShareDefaultExpirationPeriod?: number | null;
 
-		/** Default expiration period for all uploaded files in days. */
+		/**
+		 * Default expiration period for all uploaded files in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileDefaultExpirationPeriod?: number | null;
 
 		/**
@@ -14343,17 +15037,26 @@ export namespace MyNS {
 		 */
 		nonmemberViewerDefault?: boolean | null;
 
-		/** Default expiration period for Upload Shares in days. */
+		/**
+		 * Default expiration period for Upload Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadShareDefaultExpirationPeriod?: number | null;
 	}
 
 	/** System defaults */
 	export interface SystemDefaultsFormProperties {
 
-		/** Default expiration period for Download Shares in days. */
+		/**
+		 * Default expiration period for Download Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadShareDefaultExpirationPeriod: FormControl<number | null | undefined>,
 
-		/** Default expiration period for all uploaded files in days. */
+		/**
+		 * Default expiration period for all uploaded files in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileDefaultExpirationPeriod: FormControl<number | null | undefined>,
 
 		/**
@@ -14371,7 +15074,10 @@ export namespace MyNS {
 		 */
 		nonmemberViewerDefault: FormControl<boolean | null | undefined>,
 
-		/** Default expiration period for Upload Shares in days. */
+		/**
+		 * Default expiration period for Upload Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadShareDefaultExpirationPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateSystemDefaultsFormGroup() {
@@ -14510,6 +15216,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: number;
 
@@ -14554,6 +15261,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: FormControl<number | null | undefined>,
 
@@ -14611,6 +15319,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: number;
 
@@ -14658,6 +15367,7 @@ export namespace MyNS {
 		/**
 		 * Port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		serverPort: FormControl<number | null | undefined>,
 
@@ -14818,8 +15528,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * URI containing secret key, issuer and account information
@@ -14846,8 +15557,9 @@ export namespace MyNS {
 		/**
 		 * ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * URI containing secret key, issuer and account information
@@ -14869,7 +15581,7 @@ export namespace MyNS {
 	}
 	export function CreateTotpSetupResponseFormGroup() {
 		return new FormGroup<TotpSetupResponseFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			otpUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			qrCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			secret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -14900,8 +15612,9 @@ export namespace MyNS {
 		/**
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent?: number | null;
+		homeFolderParent?: string | null;
 
 		/** Search scope of Active Directory; only users below this node can log on. */
 		ldapUsersDomain?: string | null;
@@ -14909,8 +15622,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup?: number | null;
+		sdsImportGroup?: string | null;
 
 		/** Distinguished Name (DN) of Active Directory administrative account */
 		serverAdminName?: string | null;
@@ -14921,7 +15635,10 @@ export namespace MyNS {
 		/** IPv4 or IPv6 address or host name */
 		serverIp?: string | null;
 
-		/** Port */
+		/**
+		 * Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverPort?: number | null;
 
 		/**
@@ -14966,8 +15683,9 @@ export namespace MyNS {
 		/**
 		 * DEPRECATED, will be ignored
 		 * ID of the room in which the individual rooms for users will be created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		homeFolderParent: FormControl<number | null | undefined>,
+		homeFolderParent: FormControl<string | null | undefined>,
 
 		/** Search scope of Active Directory; only users below this node can log on. */
 		ldapUsersDomain: FormControl<string | null | undefined>,
@@ -14975,8 +15693,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		sdsImportGroup: FormControl<number | null | undefined>,
+		sdsImportGroup: FormControl<string | null | undefined>,
 
 		/** Distinguished Name (DN) of Active Directory administrative account */
 		serverAdminName: FormControl<string | null | undefined>,
@@ -14987,7 +15706,10 @@ export namespace MyNS {
 		/** IPv4 or IPv6 address or host name */
 		serverIp: FormControl<string | null | undefined>,
 
-		/** Port */
+		/**
+		 * Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverPort: FormControl<number | null | undefined>,
 
 		/**
@@ -15014,9 +15736,9 @@ export namespace MyNS {
 			adExportGroup: new FormControl<string | null | undefined>(undefined),
 			alias: new FormControl<string | null | undefined>(undefined),
 			createHomeFolder: new FormControl<boolean | null | undefined>(undefined),
-			homeFolderParent: new FormControl<number | null | undefined>(undefined),
+			homeFolderParent: new FormControl<string | null | undefined>(undefined),
 			ldapUsersDomain: new FormControl<string | null | undefined>(undefined),
-			sdsImportGroup: new FormControl<number | null | undefined>(undefined),
+			sdsImportGroup: new FormControl<string | null | undefined>(undefined),
 			serverAdminName: new FormControl<string | null | undefined>(undefined),
 			serverAdminPassword: new FormControl<string | null | undefined>(undefined),
 			serverIp: new FormControl<string | null | undefined>(undefined),
@@ -15036,6 +15758,7 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth access token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accessTokenValidity?: number | null;
 
@@ -15049,6 +15772,7 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth refresh token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refreshTokenValidity?: number | null;
 	}
@@ -15059,6 +15783,7 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth access token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accessTokenValidity: FormControl<number | null | undefined>,
 
@@ -15072,6 +15797,7 @@ export namespace MyNS {
 		/**
 		 * &#128640; Since v4.13.0
 		 * Restricted OAuth refresh token validity (in seconds)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refreshTokenValidity: FormControl<number | null | undefined>,
 	}
@@ -15135,17 +15861,24 @@ export namespace MyNS {
 		/** Provider customer ID */
 		providerCustomerId?: string | null;
 
-		/** Maximal disc space which can be allocated by customer in bytes. -1 for unlimited */
-		quotaMax?: number | null;
+		/**
+		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quotaMax?: string | null;
 
-		/** Maximal number of users */
+		/**
+		 * Maximal number of users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userMax?: number | null;
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax?: number | null;
+		webhooksMax?: string | null;
 	}
 
 	/** Request model for updating a customer */
@@ -15181,17 +15914,24 @@ export namespace MyNS {
 		/** Provider customer ID */
 		providerCustomerId: FormControl<string | null | undefined>,
 
-		/** Maximal disc space which can be allocated by customer in bytes. -1 for unlimited */
-		quotaMax: FormControl<number | null | undefined>,
+		/**
+		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quotaMax: FormControl<string | null | undefined>,
 
-		/** Maximal number of users */
+		/**
+		 * Maximal number of users
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userMax: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax: FormControl<number | null | undefined>,
+		webhooksMax: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCustomerRequestFormGroup() {
 		return new FormGroup<UpdateCustomerRequestFormProperties>({
@@ -15200,9 +15940,9 @@ export namespace MyNS {
 			isLocked: new FormControl<boolean | null | undefined>(undefined),
 			lockStatus: new FormControl<boolean | null | undefined>(undefined),
 			providerCustomerId: new FormControl<string | null | undefined>(undefined),
-			quotaMax: new FormControl<number | null | undefined>(undefined),
+			quotaMax: new FormControl<string | null | undefined>(undefined),
 			userMax: new FormControl<number | null | undefined>(undefined),
-			webhooksMax: new FormControl<number | null | undefined>(undefined),
+			webhooksMax: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -15247,8 +15987,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Customer is locked:
@@ -15275,12 +16016,14 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: number;
+		quotaMax: string;
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays?: number | null;
 
@@ -15290,14 +16033,16 @@ export namespace MyNS {
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: number;
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax?: number | null;
+		webhooksMax?: string | null;
 	}
 
 	/** Customer information */
@@ -15336,8 +16081,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the customer
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer is locked:
@@ -15364,12 +16110,14 @@ export namespace MyNS {
 		/**
 		 * Maximal disc space which can be allocated by customer in bytes. -1 for unlimited
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		quotaMax: FormControl<number | null | undefined>,
+		quotaMax: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of days left for trial period (relevant only for type `demo`)
 		 * (not used)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trialDays: FormControl<number | null | undefined>,
 
@@ -15379,14 +16127,16 @@ export namespace MyNS {
 		/**
 		 * Maximal number of users
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userMax: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.19.0
 		 * Maximal number of webhooks
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		webhooksMax: FormControl<number | null | undefined>,
+		webhooksMax: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCustomerResponseFormGroup() {
 		return new FormGroup<UpdateCustomerResponseFormProperties>({
@@ -15395,15 +16145,15 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			customerContractType: new FormControl<CustomerCustomerContractType | null | undefined>(undefined, [Validators.required]),
 			customerUuid: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isLocked: new FormControl<boolean | null | undefined>(undefined),
 			lockStatus: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			providerCustomerId: new FormControl<string | null | undefined>(undefined),
-			quotaMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			quotaMax: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trialDays: new FormControl<number | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 			userMax: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			webhooksMax: new FormControl<number | null | undefined>(undefined),
+			webhooksMax: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -15425,7 +16175,10 @@ export namespace MyNS {
 		 */
 		internalNotes?: string | null;
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads?: number | null;
 
 		/** Alias name */
@@ -15481,7 +16234,10 @@ export namespace MyNS {
 		 */
 		internalNotes: FormControl<string | null | undefined>,
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads: FormControl<number | null | undefined>,
 
 		/** Alias name */
@@ -15542,7 +16298,10 @@ export namespace MyNS {
 		/** Expiration information */
 		expiration?: ObjectExpiration;
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads?: number | null;
 
 		/**
@@ -15564,7 +16323,10 @@ export namespace MyNS {
 	/** Request model for updating a list of Download Shares */
 	export interface UpdateDownloadSharesBulkRequestFormProperties {
 
-		/** Max allowed downloads */
+		/**
+		 * Max allowed downloads
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloads: FormControl<number | null | undefined>,
 
 		/** Set 'true' to reset 'maxDownloads' for Download Share. */
@@ -15652,6 +16414,7 @@ export namespace MyNS {
 		 * Retention period (in days) of event log entries.
 		 * After that period, all entries are deleted.
 		 * Recommended value: 7
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriod?: number | null;
 	}
@@ -15669,6 +16432,7 @@ export namespace MyNS {
 		 * Retention period (in days) of event log entries.
 		 * After that period, all entries are deleted.
 		 * Recommended value: 7
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriod: FormControl<number | null | undefined>,
 	}
@@ -15724,6 +16488,7 @@ export namespace MyNS {
 		 * * `2` - internal
 		 * * `3` - confidential
 		 * * `4` - strictly confidential
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		classification?: number | null;
 
@@ -15763,6 +16528,7 @@ export namespace MyNS {
 		 * * `2` - internal
 		 * * `3` - confidential
 		 * * `4` - strictly confidential
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		classification: FormControl<number | null | undefined>,
 
@@ -15810,6 +16576,7 @@ export namespace MyNS {
 		 * * `2` - internal
 		 * * `3` - confidential
 		 * * `4` - strictly confidential
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		classification?: number | null;
 
@@ -15832,6 +16599,7 @@ export namespace MyNS {
 		 * * `2` - internal
 		 * * `3` - confidential
 		 * * `4` - strictly confidential
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		classification: FormControl<number | null | undefined>,
 	}
@@ -16229,12 +16997,16 @@ export namespace MyNS {
 	/** Request model for updating an OAuth client */
 	export interface UpdateOAuthClientRequest {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity?: number | null;
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity?: number | null;
 
@@ -16265,19 +17037,26 @@ export namespace MyNS {
 		/** URIs, to which a user is redirected after authorization. */
 		redirectUris?: Array<string>;
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity?: number | null;
 	}
 
 	/** Request model for updating an OAuth client */
 	export interface UpdateOAuthClientRequestFormProperties {
 
-		/** Validity of the access token in seconds. */
+		/**
+		 * Validity of the access token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessTokenValidity: FormControl<number | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
 		 * Validity of the approval interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		approvalValidity: FormControl<number | null | undefined>,
 
@@ -16293,7 +17072,10 @@ export namespace MyNS {
 		/** Determines whether client is enabled. */
 		isEnabled: FormControl<boolean | null | undefined>,
 
-		/** Validity of the refresh token in seconds. */
+		/**
+		 * Validity of the refresh token in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshTokenValidity: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOAuthClientRequestFormGroup() {
@@ -16382,8 +17164,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup?: number | null;
+		userImportGroup?: string | null;
 
 		/** URL of the user info endpoint */
 		userInfoEndPointUrl?: string | null;
@@ -16470,8 +17253,9 @@ export namespace MyNS {
 		/**
 		 * User group that is assigned to users who are created by automatic import.
 		 * Reset with `0`
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userImportGroup: FormControl<number | null | undefined>,
+		userImportGroup: FormControl<string | null | undefined>,
 
 		/** URL of the user info endpoint */
 		userInfoEndPointUrl: FormControl<string | null | undefined>,
@@ -16510,7 +17294,7 @@ export namespace MyNS {
 			resetFallbackMappingClaim: new FormControl<boolean | null | undefined>(undefined),
 			tokenEndPointUrl: new FormControl<string | null | undefined>(undefined),
 			userImportEnabled: new FormControl<boolean | null | undefined>(undefined),
-			userImportGroup: new FormControl<number | null | undefined>(undefined),
+			userImportGroup: new FormControl<string | null | undefined>(undefined),
 			userInfoEndPointUrl: new FormControl<string | null | undefined>(undefined),
 			userInfoSource: new FormControl<CreateOpenIdIdpConfigRequestUserInfoSource | null | undefined>(undefined),
 			userManagementUrl: new FormControl<string | null | undefined>(undefined),
@@ -16614,8 +17398,11 @@ export namespace MyNS {
 		 */
 		notes?: string | null;
 
-		/** Quota in byte */
-		quota?: number | null;
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota?: string | null;
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -16642,8 +17429,11 @@ export namespace MyNS {
 		 */
 		notes: FormControl<string | null | undefined>,
 
-		/** Quota in byte */
-		quota: FormControl<number | null | undefined>,
+		/**
+		 * Quota in byte
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quota: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.22.0
@@ -16661,7 +17451,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateRoomRequestFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
-			quota: new FormControl<number | null | undefined>(undefined),
+			quota: new FormControl<string | null | undefined>(undefined),
 			timestampCreation: new FormControl<Date | null | undefined>(undefined),
 			timestampModification: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -16734,7 +17524,10 @@ export namespace MyNS {
 		/** Determines whether user’s IP address is logged. */
 		logIpEnabled?: boolean | null;
 
-		/** Syslog server port */
+		/**
+		 * Syslog server port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Protocol to connect to syslog server */
@@ -16753,7 +17546,10 @@ export namespace MyNS {
 		/** Determines whether user’s IP address is logged. */
 		logIpEnabled: FormControl<boolean | null | undefined>,
 
-		/** Syslog server port */
+		/**
+		 * Syslog server port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Protocol to connect to syslog server */
@@ -16774,10 +17570,16 @@ export namespace MyNS {
 	/** Request model for updating system defaults */
 	export interface UpdateSystemDefaults {
 
-		/** Default expiration period for Download Shares in days. */
+		/**
+		 * Default expiration period for Download Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadShareDefaultExpirationPeriod?: number | null;
 
-		/** Default expiration period for all uploaded files in days. */
+		/**
+		 * Default expiration period for all uploaded files in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileDefaultExpirationPeriod?: number | null;
 
 		/** Define which language should be default. */
@@ -16789,17 +17591,26 @@ export namespace MyNS {
 		 */
 		nonmemberViewerDefault?: boolean | null;
 
-		/** Default expiration period for Upload Shares in days. */
+		/**
+		 * Default expiration period for Upload Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadShareDefaultExpirationPeriod?: number | null;
 	}
 
 	/** Request model for updating system defaults */
 	export interface UpdateSystemDefaultsFormProperties {
 
-		/** Default expiration period for Download Shares in days. */
+		/**
+		 * Default expiration period for Download Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadShareDefaultExpirationPeriod: FormControl<number | null | undefined>,
 
-		/** Default expiration period for all uploaded files in days. */
+		/**
+		 * Default expiration period for all uploaded files in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileDefaultExpirationPeriod: FormControl<number | null | undefined>,
 
 		/** Define which language should be default. */
@@ -16811,7 +17622,10 @@ export namespace MyNS {
 		 */
 		nonmemberViewerDefault: FormControl<boolean | null | undefined>,
 
-		/** Default expiration period for Upload Shares in days. */
+		/**
+		 * Default expiration period for Upload Shares in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadShareDefaultExpirationPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemDefaultsFormGroup() {
@@ -16835,7 +17649,10 @@ export namespace MyNS {
 		/** Expiration information */
 		expiration?: ObjectExpiration;
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod?: number | null;
 
 		/**
@@ -16845,10 +17662,16 @@ export namespace MyNS {
 		 */
 		internalNotes?: string | null;
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize?: number | null;
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize?: string | null;
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots?: number | null;
 
 		/** Alias name */
@@ -16906,7 +17729,10 @@ export namespace MyNS {
 		/** Country shorthand symbol (cf. ISO 3166-2) */
 		defaultCountry: FormControl<string | null | undefined>,
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod: FormControl<number | null | undefined>,
 
 		/**
@@ -16916,10 +17742,16 @@ export namespace MyNS {
 		 */
 		internalNotes: FormControl<string | null | undefined>,
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize: FormControl<number | null | undefined>,
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize: FormControl<string | null | undefined>,
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots: FormControl<number | null | undefined>,
 
 		/** Alias name */
@@ -16969,7 +17801,7 @@ export namespace MyNS {
 			defaultCountry: new FormControl<string | null | undefined>(undefined),
 			filesExpiryPeriod: new FormControl<number | null | undefined>(undefined),
 			internalNotes: new FormControl<string | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<string | null | undefined>(undefined),
 			maxSlots: new FormControl<number | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
@@ -16994,13 +17826,22 @@ export namespace MyNS {
 		/** Expiration information */
 		expiration?: ObjectExpiration;
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod?: number | null;
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize?: number | null;
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize?: string | null;
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots?: number | null;
 
 		/**
@@ -17031,13 +17872,22 @@ export namespace MyNS {
 	/** Request model for updating a list of Download Shares */
 	export interface UpdateUploadSharesBulkRequestFormProperties {
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod: FormControl<number | null | undefined>,
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize: FormControl<number | null | undefined>,
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize: FormControl<string | null | undefined>,
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots: FormControl<number | null | undefined>,
 
 		/** Set 'true' to reset 'filesExpiryPeriod' for Upload Share */
@@ -17061,7 +17911,7 @@ export namespace MyNS {
 	export function CreateUpdateUploadSharesBulkRequestFormGroup() {
 		return new FormGroup<UpdateUploadSharesBulkRequestFormProperties>({
 			filesExpiryPeriod: new FormControl<number | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<string | null | undefined>(undefined),
 			maxSlots: new FormControl<number | null | undefined>(undefined),
 			resetFilesExpiryPeriod: new FormControl<boolean | null | undefined>(undefined),
 			resetMaxSize: new FormControl<boolean | null | undefined>(undefined),
@@ -17251,6 +18101,7 @@ export namespace MyNS {
 		 * * `1` - Web access allowed
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus?: number | null;
 
@@ -17310,6 +18161,7 @@ export namespace MyNS {
 		 * * `1` - Web access allowed
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: FormControl<number | null | undefined>,
 
@@ -17351,7 +18203,10 @@ export namespace MyNS {
 	/** User Authentication Data Update Request */
 	export interface UserAuthDataUpdateRequest {
 
-		/** ID of the user's Active Directory. */
+		/**
+		 * ID of the user's Active Directory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adConfigId?: number | null;
 
 		/** User login name */
@@ -17367,14 +18222,20 @@ export namespace MyNS {
 		 */
 		method?: string | null;
 
-		/** ID of the user's OIDC provider. */
+		/**
+		 * ID of the user's OIDC provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oidConfigId?: number | null;
 	}
 
 	/** User Authentication Data Update Request */
 	export interface UserAuthDataUpdateRequestFormProperties {
 
-		/** ID of the user's Active Directory. */
+		/**
+		 * ID of the user's Active Directory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adConfigId: FormControl<number | null | undefined>,
 
 		/** User login name */
@@ -17390,7 +18251,10 @@ export namespace MyNS {
 		 */
 		method: FormControl<string | null | undefined>,
 
-		/** ID of the user's OIDC provider. */
+		/**
+		 * ID of the user's OIDC provider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oidConfigId: FormControl<number | null | undefined>,
 	}
 	export function CreateUserAuthDataUpdateRequestFormGroup() {
@@ -17465,10 +18329,16 @@ export namespace MyNS {
 		 */
 		accessKey: string;
 
-		/** Total amount of existing files uploaded with this share. */
+		/**
+		 * Total amount of existing files uploaded with this share.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntFiles?: number | null;
 
-		/** Total amount of uploads conducted with this share. */
+		/**
+		 * Total amount of uploads conducted with this share.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploads?: number | null;
 
 		/**
@@ -17489,14 +18359,18 @@ export namespace MyNS {
 		/** Expiration date */
 		expireAt?: Date | null;
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod?: number | null;
 
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -17514,10 +18388,16 @@ export namespace MyNS {
 		 */
 		isProtected: boolean;
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize?: number | null;
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize?: string | null;
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots?: number | null;
 
 		/**
@@ -17569,8 +18449,9 @@ export namespace MyNS {
 		/**
 		 * Target room or folder ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		targetId: number;
+		targetId: string;
 
 		/** Path to shared upload node */
 		targetPath?: string | null;
@@ -17594,10 +18475,16 @@ export namespace MyNS {
 		 */
 		accessKey: FormControl<string | null | undefined>,
 
-		/** Total amount of existing files uploaded with this share. */
+		/**
+		 * Total amount of existing files uploaded with this share.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntFiles: FormControl<number | null | undefined>,
 
-		/** Total amount of uploads conducted with this share. */
+		/**
+		 * Total amount of uploads conducted with this share.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cntUploads: FormControl<number | null | undefined>,
 
 		/**
@@ -17612,14 +18499,18 @@ export namespace MyNS {
 		/** Expiration date */
 		expireAt: FormControl<Date | null | undefined>,
 
-		/** Number of days after which uploaded files expire */
+		/**
+		 * Number of days after which uploaded files expire
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesExpiryPeriod: FormControl<number | null | undefined>,
 
 		/**
 		 * Share ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * &#128640; Since v4.11.0
@@ -17637,10 +18528,16 @@ export namespace MyNS {
 		 */
 		isProtected: FormControl<boolean | null | undefined>,
 
-		/** Maximal total size of uploaded files (in bytes) */
-		maxSize: FormControl<number | null | undefined>,
+		/**
+		 * Maximal total size of uploaded files (in bytes)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSize: FormControl<string | null | undefined>,
 
-		/** Maximal amount of files to upload */
+		/**
+		 * Maximal amount of files to upload
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSlots: FormControl<number | null | undefined>,
 
 		/**
@@ -17692,8 +18589,9 @@ export namespace MyNS {
 		/**
 		 * Target room or folder ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		targetId: FormControl<number | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
 
 		/** Path to shared upload node */
 		targetPath: FormControl<string | null | undefined>,
@@ -17713,11 +18611,11 @@ export namespace MyNS {
 			dataUrl: new FormControl<string | null | undefined>(undefined),
 			expireAt: new FormControl<Date | null | undefined>(undefined),
 			filesExpiryPeriod: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			internalNotes: new FormControl<string | null | undefined>(undefined),
 			isEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			isProtected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			maxSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<string | null | undefined>(undefined),
 			maxSlots: new FormControl<number | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			notes: new FormControl<string | null | undefined>(undefined),
@@ -17727,7 +18625,7 @@ export namespace MyNS {
 			showCreatorUsername: new FormControl<boolean | null | undefined>(undefined),
 			showUploadedFiles: new FormControl<boolean | null | undefined>(undefined),
 			smsRecipients: new FormControl<string | null | undefined>(undefined),
-			targetId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			targetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			targetPath: new FormControl<string | null | undefined>(undefined),
 			targetType: new FormControl<string | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -17846,14 +18744,18 @@ export namespace MyNS {
 		 */
 		hasManageableRooms: boolean;
 
-		/** Homeroom ID */
-		homeRoomId?: number | null;
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId?: string | null;
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * User has generated private key.
@@ -17909,6 +18811,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: number;
 
@@ -18000,14 +18903,18 @@ export namespace MyNS {
 		 */
 		hasManageableRooms: FormControl<boolean | null | undefined>,
 
-		/** Homeroom ID */
-		homeRoomId: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * User has generated private key.
@@ -18063,6 +18970,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: FormControl<number | null | undefined>,
 
@@ -18121,8 +19029,8 @@ export namespace MyNS {
 			firstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gender: new FormControl<string | null | undefined>(undefined),
 			hasManageableRooms: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			homeRoomId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			homeRoomId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isLocked: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			language: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -18171,8 +19079,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Determines whether user is a member of the group or not
@@ -18193,8 +19102,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the group
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Determines whether user is a member of the group or not
@@ -18210,7 +19120,7 @@ export namespace MyNS {
 	}
 	export function CreateUserGroupFormGroup() {
 		return new FormGroup<UserGroupFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isMember: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -18266,14 +19176,18 @@ export namespace MyNS {
 		/** User has manageable rooms */
 		hasManageableRooms?: boolean | null;
 
-		/** Homeroom ID */
-		homeRoomId?: number | null;
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId?: string | null;
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * User has generated private key.
@@ -18313,6 +19227,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: number;
 
@@ -18379,14 +19294,18 @@ export namespace MyNS {
 		/** User has manageable rooms */
 		hasManageableRooms: FormControl<boolean | null | undefined>,
 
-		/** Homeroom ID */
-		homeRoomId: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * User has generated private key.
@@ -18426,6 +19345,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: FormControl<number | null | undefined>,
 
@@ -18459,8 +19379,8 @@ export namespace MyNS {
 			firstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gender: new FormControl<string | null | undefined>(undefined),
 			hasManageableRooms: new FormControl<boolean | null | undefined>(undefined),
-			homeRoomId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			homeRoomId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isLocked: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			isMfaEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -18503,8 +19423,9 @@ export namespace MyNS {
 		/**
 		 * File ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		fileId: number;
+		fileId: string;
 
 		/**
 		 * File key information
@@ -18515,8 +19436,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 	}
 
 	/** Request model for setting a user file key */
@@ -18525,19 +19447,21 @@ export namespace MyNS {
 		/**
 		 * File ID
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		fileId: FormControl<number | null | undefined>,
+		fileId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserFileKeySetRequestFormGroup() {
 		return new FormGroup<UserFileKeySetRequestFormProperties>({
-			fileId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			fileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -18626,14 +19550,18 @@ export namespace MyNS {
 		 */
 		hasManageableRooms?: boolean | null;
 
-		/** Homeroom ID */
-		homeRoomId?: number | null;
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId?: string | null;
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * User has generated private key.
@@ -18667,6 +19595,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: number;
 
@@ -18737,14 +19666,18 @@ export namespace MyNS {
 		 */
 		hasManageableRooms: FormControl<boolean | null | undefined>,
 
-		/** Homeroom ID */
-		homeRoomId: FormControl<number | null | undefined>,
+		/**
+		 * Homeroom ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		homeRoomId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * User has generated private key.
@@ -18778,6 +19711,7 @@ export namespace MyNS {
 		 * * `2` - Web and mobile access allowed
 		 * Please use `isLocked` instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lockStatus: FormControl<number | null | undefined>,
 
@@ -18813,8 +19747,8 @@ export namespace MyNS {
 			firstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gender: new FormControl<string | null | undefined>(undefined),
 			hasManageableRooms: new FormControl<boolean | null | undefined>(undefined),
-			homeRoomId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			homeRoomId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isLocked: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			lastLoginSuccessAt: new FormControl<Date | null | undefined>(undefined),
@@ -19510,11 +20444,12 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/downloads/avatar/{user_id}/{uuid}
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} uuid UUID of the avatar
 		 * @return {void} OK
 		 */
-		DownloadAvatar(user_id: number, uuid: string): Observable<HttpResponse<string>> {
+		DownloadAvatar(user_id: string, uuid: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/downloads/avatar/' + user_id + '/' + (uuid == null ? '' : encodeURIComponent(uuid)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -19603,18 +20538,21 @@ export namespace MyNS {
 		 * | `nodeName` | Node name |
 		 * </details>
 		 * Get v4/eventlog/audits/node_info
-		 * @param {number} parent_id Parent node ID.
+		 * @param {string} parent_id Parent node ID.
 		 * Only rooms can be parents.
 		 * Parent ID `0` or empty is the root node.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {AuditNodeInfoResponse} OK
 		 */
-		RequestAuditNodeInfo(parent_id: number | null | undefined, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AuditNodeInfoResponse> {
+		RequestAuditNodeInfo(parent_id: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AuditNodeInfoResponse> {
 			return this.http.get<AuditNodeInfoResponse>(this.baseUri + 'v4/eventlog/audits/node_info?parent_id=' + parent_id + '&offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -19685,9 +20623,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/eventlog/audits/nodes
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {Array<AuditNodeResponse>} OK
@@ -19730,23 +20670,27 @@ export namespace MyNS {
 		 * Get v4/eventlog/events
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} date_start Filter events from given date 
 		 * e.g. `2015-12-31T23:59:00`
 		 * @param {string} date_end Filter events until given date 
 		 * e.g. `2015-12-31T23:59:00`
 		 * @param {number} type Operation ID 
 		 * cf. `GET /eventlog/operations`
-		 * @param {number} user_id User ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {LogEventStatus} status Operation status:
 		 * * `0` - Success
 		 * * `2` - Error
 		 * @param {string} user_client User client
 		 * @return {LogEventList} OK
 		 */
-		RequestLogEventsAsJson(sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, date_start: string | null | undefined, date_end: string | null | undefined, type: number | null | undefined, user_id: number | null | undefined, status: LogEventStatus | null | undefined, user_client: string | null | undefined): Observable<LogEventList> {
+		RequestLogEventsAsJson(sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, date_start: string | null | undefined, date_end: string | null | undefined, type: number | null | undefined, user_id: string | null | undefined, status: LogEventStatus | null | undefined, user_client: string | null | undefined): Observable<LogEventList> {
 			return this.http.get<LogEventList>(this.baseUri + 'v4/eventlog/events?sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit + '&date_start=' + (date_start == null ? '' : encodeURIComponent(date_start)) + '&date_end=' + (date_end == null ? '' : encodeURIComponent(date_end)) + '&type=' + type + '&user_id=' + user_id + '&status=' + status + '&user_client=' + (user_client == null ? '' : encodeURIComponent(user_client)), {});
 		}
 
@@ -19816,9 +20760,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/groups
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {GroupList} OK
@@ -19857,10 +20803,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/groups/{group_id}
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveGroup(group_id: number): Observable<HttpResponse<string>> {
+		RemoveGroup(group_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/groups/' + group_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -19875,10 +20822,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/groups/{group_id}
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Group} OK
 		 */
-		RequestGroup(group_id: number): Observable<Group> {
+		RequestGroup(group_id: string): Observable<Group> {
 			return this.http.get<Group>(this.baseUri + 'v4/groups/' + group_id, {});
 		}
 
@@ -19895,10 +20843,11 @@ export namespace MyNS {
 		 * * Group names are limited to **150** characters
 		 * * **All** characters are allowed.
 		 * Put v4/groups/{group_id}
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Group} OK
 		 */
-		UpdateGroup(group_id: number, requestBody: UpdateGroupRequest): Observable<Group> {
+		UpdateGroup(group_id: string, requestBody: UpdateGroupRequest): Observable<Group> {
 			return this.http.put<Group>(this.baseUri + 'v4/groups/' + group_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -19914,10 +20863,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * An empty list is returned if no rooms were found where the group is defined as last admin group.
 		 * Get v4/groups/{group_id}/last_admin_rooms
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {LastAdminGroupRoomList} OK
 		 */
-		RequestLastAdminRoomsGroups(group_id: number): Observable<LastAdminGroupRoomList> {
+		RequestLastAdminRoomsGroups(group_id: string): Observable<LastAdminGroupRoomList> {
 			return this.http.get<LastAdminGroupRoomList>(this.baseUri + 'v4/groups/' + group_id + '/last_admin_rooms', {});
 		}
 
@@ -19932,10 +20882,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/groups/{group_id}/roles
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {RoleList} OK
 		 */
-		RequestGroupRoles(group_id: number): Observable<RoleList> {
+		RequestGroupRoles(group_id: string): Observable<RoleList> {
 			return this.http.get<RoleList>(this.baseUri + 'v4/groups/' + group_id + '/roles', {});
 		}
 
@@ -19967,15 +20918,18 @@ export namespace MyNS {
 		 * | `effectivePerm` | Filter rooms with DIRECT or DIRECT **AND** EFFECTIVE permissions<ul><li>`false`: DIRECT permissions</li><li>`true`:  DIRECT **AND** EFFECTIVE permissions</li></ul>DIRECT means: e.g. room administrator grants `read` permissions to group of users **directly** on desired room.<br>EFFECTIVE means: e.g. group of users gets `read` permissions on desired room through **inheritance**. | `eq` |  | `true or false`<br>default: `true` |
 		 * </details>
 		 * Get v4/groups/{group_id}/rooms
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {RoomTreeDataList} OK
 		 */
-		RequestGroupRooms(group_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomTreeDataList> {
+		RequestGroupRooms(group_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomTreeDataList> {
 			return this.http.get<RoomTreeDataList>(this.baseUri + 'v4/groups/' + group_id + '/rooms?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 
@@ -19991,10 +20945,11 @@ export namespace MyNS {
 		 * Batch function.
 		 * The provided users are removed from the user group. Maximum number of users to remove in one request is 200.
 		 * Delete v4/groups/{group_id}/users
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Group} OK
 		 */
-		RemoveGroupMembers(group_id: number): Observable<Group> {
+		RemoveGroupMembers(group_id: string): Observable<Group> {
 			return this.http.delete<Group>(this.baseUri + 'v4/groups/' + group_id + '/users', {});
 		}
 
@@ -20031,15 +20986,18 @@ export namespace MyNS {
 		 * | <del>`displayName`</del> | User display name filter (use `user` filter) | `cn` | User display name contains value (`firstName` **OR** `lastName` **OR** `email`). | `search String` |
 		 * </details>
 		 * Get v4/groups/{group_id}/users
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {GroupUserList} OK
 		 */
-		RequestGroupMembers(group_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<GroupUserList> {
+		RequestGroupMembers(group_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<GroupUserList> {
 			return this.http.get<GroupUserList>(this.baseUri + 'v4/groups/' + group_id + '/users?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 
@@ -20055,10 +21013,11 @@ export namespace MyNS {
 		 * Batch function.
 		 * The newly provided members will be added to the existing ones.
 		 * Post v4/groups/{group_id}/users
-		 * @param {number} group_id Group ID
+		 * @param {string} group_id Group ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Group} OK
 		 */
-		AddGroupMembers(group_id: number, requestBody: ChangeGroupMembersRequest): Observable<Group> {
+		AddGroupMembers(group_id: string, requestBody: ChangeGroupMembersRequest): Observable<Group> {
 			return this.http.post<Group>(this.baseUri + 'v4/groups/' + group_id + '/users', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20188,21 +21147,25 @@ export namespace MyNS {
 		 * Get v4/nodes
 		 * @param {number} depth_level * `0` - top level nodes only
 		 * * `n` (any positive number) - include `n` levels starting from the current node
-		 * @param {number} parent_id Parent node ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} parent_id Parent node ID.
 		 * Only rooms and folders can be parents.
 		 * Parent ID `0` or empty is the root node.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} room_manager Show all rooms for management perspective.
 		 * Only possible for _Rooms Managers_ / _Room Admins_.
 		 * For all other users, it will be ignored.
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {NodeList} OK
 		 */
-		RequestNodes(depth_level: number | null | undefined, parent_id: number | null | undefined, room_manager: boolean | null | undefined, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<NodeList> {
+		RequestNodes(depth_level: number | null | undefined, parent_id: string | null | undefined, room_manager: boolean | null | undefined, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<NodeList> {
 			return this.http.get<NodeList>(this.baseUri + 'v4/nodes?depth_level=' + depth_level + '&parent_id=' + parent_id + '&room_manager=' + room_manager + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -20218,10 +21181,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/nodes/comments/{comment_id}
-		 * @param {number} comment_id Comment ID
+		 * @param {string} comment_id Comment ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveNodeComment(comment_id: number): Observable<HttpResponse<string>> {
+		RemoveNodeComment(comment_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/comments/' + comment_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20237,10 +21201,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Maximum allowed text length: **65535** characters.
 		 * Put v4/nodes/comments/{comment_id}
-		 * @param {number} comment_id Comment ID
+		 * @param {string} comment_id Comment ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Comment} OK
 		 */
-		UpdateNodeComment(comment_id: number, requestBody: ChangeNodeCommentRequest): Observable<Comment> {
+		UpdateNodeComment(comment_id: string, requestBody: ChangeNodeCommentRequest): Observable<Comment> {
 			return this.http.put<Comment>(this.baseUri + 'v4/nodes/comments/' + comment_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20295,10 +21260,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/deleted_nodes/{deleted_node_id}
-		 * @param {number} deleted_node_id Deleted node ID
+		 * @param {string} deleted_node_id Deleted node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DeletedNode} OK
 		 */
-		RequestDeletedNode(deleted_node_id: number): Observable<DeletedNode> {
+		RequestDeletedNode(deleted_node_id: string): Observable<DeletedNode> {
 			return this.http.get<DeletedNode>(this.baseUri + 'v4/nodes/deleted_nodes/' + deleted_node_id, {});
 		}
 
@@ -20537,14 +21503,17 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Maximum number of file versions is 500. The list is sorted by ID DESC.
 		 * Get v4/nodes/files/versions/{reference_id}
-		 * @param {number} reference_id Reference ID
+		 * @param {string} reference_id Reference ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {FileVersionList} OK
 		 */
-		RequestFileVersionList(reference_id: number, offset: number | null | undefined, limit: number | null | undefined): Observable<FileVersionList> {
+		RequestFileVersionList(reference_id: string, offset: number | null | undefined, limit: number | null | undefined): Observable<FileVersionList> {
 			return this.http.get<FileVersionList>(this.baseUri + 'v4/nodes/files/versions/' + reference_id + '?offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -20557,10 +21526,11 @@ export namespace MyNS {
 		 * ### Postcondition:
 		 * File's metadata is changed.
 		 * Put v4/nodes/files/{file_id}
-		 * @param {number} file_id File ID
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		UpdateFile(file_id: number, requestBody: UpdateFileRequest): Observable<Node> {
+		UpdateFile(file_id: string, requestBody: UpdateFileRequest): Observable<Node> {
 			return this.http.put<Node>(this.baseUri + 'v4/nodes/files/' + file_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20576,11 +21546,12 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/files/{file_id}/data_room_file_key
-		 * @param {number} file_id File ID
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} version Version (NEW)
 		 * @return {FileKey} OK
 		 */
-		RequestRoomRescueKey(file_id: number, version: string | null | undefined): Observable<FileKey> {
+		RequestRoomRescueKey(file_id: string, version: string | null | undefined): Observable<FileKey> {
 			return this.http.get<FileKey>(this.baseUri + 'v4/nodes/files/' + file_id + '/data_room_file_key?version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -20596,11 +21567,12 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/files/{file_id}/data_space_file_key
-		 * @param {number} file_id File ID
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} version Version (NEW)
 		 * @return {FileKey} OK
 		 */
-		RequestSystemRescueKey(file_id: number, version: string | null | undefined): Observable<FileKey> {
+		RequestSystemRescueKey(file_id: string, version: string | null | undefined): Observable<FileKey> {
 			return this.http.get<FileKey>(this.baseUri + 'v4/nodes/files/' + file_id + '/data_space_file_key?version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -20615,10 +21587,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * The token is necessary to access `downloads` ressources.
 		 * Post v4/nodes/files/{file_id}/downloads
-		 * @param {number} file_id File ID
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DownloadTokenGenerateResponse} OK
 		 */
-		GenerateDownloadUrl(file_id: number): Observable<DownloadTokenGenerateResponse> {
+		GenerateDownloadUrl(file_id: string): Observable<DownloadTokenGenerateResponse> {
 			return this.http.post<DownloadTokenGenerateResponse>(this.baseUri + 'v4/nodes/files/' + file_id + '/downloads', null, {});
 		}
 
@@ -20634,11 +21607,12 @@ export namespace MyNS {
 		 * The symmetric file key is encrypted with the user's public key.
 		 * File keys are generated with the workflow _"Generate file keys"_ that starts at `GET /nodes/missingFileKeys`.
 		 * Get v4/nodes/files/{file_id}/user_file_key
-		 * @param {number} file_id File ID
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} version Version (NEW)
 		 * @return {FileKey} OK
 		 */
-		RequestUserFileKey(file_id: number, version: string | null | undefined): Observable<FileKey> {
+		RequestUserFileKey(file_id: string, version: string | null | undefined): Observable<FileKey> {
 			return this.http.get<FileKey>(this.baseUri + 'v4/nodes/files/' + file_id + '/user_file_key?version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -20683,10 +21657,11 @@ export namespace MyNS {
 		 * * Illegal characters in names:
 		 * `'\\', '<','>', ':', '\"', '|', '?', '*', '/', leading '-', trailing '.' `
 		 * Put v4/nodes/folders/{folder_id}
-		 * @param {number} folder_id Folder ID
+		 * @param {string} folder_id Folder ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		UpdateFolder(folder_id: number, requestBody: UpdateFolderRequest): Observable<Node> {
+		UpdateFolder(folder_id: string, requestBody: UpdateFolderRequest): Observable<Node> {
 			return this.http.put<Node>(this.baseUri + 'v4/nodes/folders/' + folder_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20707,16 +21682,21 @@ export namespace MyNS {
 		 * number of total items.
 		 * Get v4/nodes/missingFileKeys
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
-		 * @param {number} room_id Room ID
-		 * @param {number} file_id File ID
-		 * @param {number} user_id User ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} file_id File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {RequestMissingFileKeysUse_key} use_key Determines which key should be used (NEW)
 		 * @return {MissingKeysResponse} OK
 		 */
-		RequestMissingFileKeys(offset: number | null | undefined, limit: number | null | undefined, room_id: number | null | undefined, file_id: number | null | undefined, user_id: number | null | undefined, use_key: RequestMissingFileKeysUse_key | null | undefined): Observable<MissingKeysResponse> {
+		RequestMissingFileKeys(offset: number | null | undefined, limit: number | null | undefined, room_id: string | null | undefined, file_id: string | null | undefined, user_id: string | null | undefined, use_key: RequestMissingFileKeysUse_key | null | undefined): Observable<MissingKeysResponse> {
 			return this.http.get<MissingKeysResponse>(this.baseUri + 'v4/nodes/missingFileKeys?offset=' + offset + '&limit=' + limit + '&room_id=' + room_id + '&file_id=' + file_id + '&user_id=' + user_id + '&use_key=' + use_key, {});
 		}
 
@@ -20805,9 +21785,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/nodes/rooms/pending
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {PendingAssignmentList} OK
@@ -20851,10 +21833,11 @@ export namespace MyNS {
 		 * * Illegal characters in names:
 		 * `'\\', '<','>', ':', '\"', '|', '?', '*', '/', leading '-', trailing '.' `
 		 * Put v4/nodes/rooms/{room_id}
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		UpdateRoom(room_id: number, requestBody: UpdateRoomRequest): Observable<Node> {
+		UpdateRoom(room_id: string, requestBody: UpdateRoomRequest): Observable<Node> {
 			return this.http.put<Node>(this.baseUri + 'v4/nodes/rooms/' + room_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20873,10 +21856,11 @@ export namespace MyNS {
 		 * * `PUT /nodes/rooms/{room_id}/users `
 		 * APIs.
 		 * Put v4/nodes/rooms/{room_id}/config
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		ConfigureRoom(room_id: number, requestBody: ConfigRoomRequest): Observable<Node> {
+		ConfigureRoom(room_id: string, requestBody: ConfigRoomRequest): Observable<Node> {
 			return this.http.put<Node>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/config', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20892,10 +21876,11 @@ export namespace MyNS {
 		 * Only empty rooms at the top level may be encrypted.
 		 * This endpoint may also be used to disable encryption of an empty room.
 		 * Put v4/nodes/rooms/{room_id}/encrypt
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		EncryptRoom(room_id: number, requestBody: EncryptRoomRequest): Observable<Node> {
+		EncryptRoom(room_id: string, requestBody: EncryptRoomRequest): Observable<Node> {
 			return this.http.put<Node>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/encrypt', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -20927,25 +21912,31 @@ export namespace MyNS {
 		 * | `time` | Event timestamp |
 		 * </details>
 		 * Get v4/nodes/rooms/{room_id}/events
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} date_start Filter events from given date 
 		 * e.g. `2015-12-31T23:59:00`
 		 * @param {string} date_end Filter events until given date 
 		 * e.g. `2015-12-31T23:59:00`
 		 * @param {number} type Operation ID 
 		 * cf. `GET /eventlog/operations`
-		 * @param {number} user_id User ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} status Operation status:
 		 * * `0` - Success
 		 * * `2` - Error
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LogEventList} OK
 		 */
-		RequestRoomActivitiesLogAsJson(room_id: number, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, date_start: string | null | undefined, date_end: string | null | undefined, type: number | null | undefined, user_id: number | null | undefined, status: number | null | undefined): Observable<LogEventList> {
+		RequestRoomActivitiesLogAsJson(room_id: string, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, date_start: string | null | undefined, date_end: string | null | undefined, type: number | null | undefined, user_id: string | null | undefined, status: number | null | undefined): Observable<LogEventList> {
 			return this.http.get<LogEventList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/events?sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit + '&date_start=' + (date_start == null ? '' : encodeURIComponent(date_start)) + '&date_end=' + (date_end == null ? '' : encodeURIComponent(date_end)) + '&type=' + type + '&user_id=' + user_id + '&status=' + status, {});
 		}
 
@@ -20960,10 +21951,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Batch function.
 		 * Delete v4/nodes/rooms/{room_id}/groups
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RevokeRoomGroups(room_id: number): Observable<HttpResponse<string>> {
+		RevokeRoomGroups(room_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/rooms/' + room_id + '/groups', { observe: 'response', responseType: 'text' });
 		}
 
@@ -21014,16 +22006,19 @@ export namespace MyNS {
 		 * | `name` | Group name |
 		 * </details>
 		 * Get v4/nodes/rooms/{room_id}/groups
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {RoomGroupList} OK
 		 */
-		RequestRoomGroups(room_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<RoomGroupList> {
+		RequestRoomGroups(room_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<RoomGroupList> {
 			return this.http.get<RoomGroupList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/groups?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -21038,10 +22033,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Batch function.
 		 * Put v4/nodes/rooms/{room_id}/groups
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UpdateRoomGroups(room_id: number, requestBody: RoomGroupsAddBatchRequest): Observable<HttpResponse<string>> {
+		UpdateRoomGroups(room_id: string, requestBody: RoomGroupsAddBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v4/nodes/rooms/' + room_id + '/groups', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21057,10 +22053,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Batch function.
 		 * Put v4/nodes/rooms/{room_id}/guest_users
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		AddRoomGuestUsers(room_id: number, requestBody: RoomGuestUserAddRequest): Observable<HttpResponse<string>> {
+		AddRoomGuestUsers(room_id: string, requestBody: RoomGuestUserAddRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v4/nodes/rooms/' + room_id + '/guest_users', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21078,11 +22075,12 @@ export namespace MyNS {
 		 * If no version is set, deleted key pair with lowest preference value.
 		 * Although, `version` **SHOULD** be set.
 		 * Delete v4/nodes/rooms/{room_id}/keypair
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} version Version (NEW)
 		 * @return {void} 
 		 */
-		RemoveRoomRescueKeyPair(room_id: number, version: string | null | undefined): Observable<HttpResponse<string>> {
+		RemoveRoomRescueKeyPair(room_id: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/rooms/' + room_id + '/keypair?version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -21097,11 +22095,12 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/rooms/{room_id}/keypair
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} version Version (NEW)
 		 * @return {UserKeyPairContainer} OK
 		 */
-		RequestRoomRescueKeyPair(room_id: number, version: string | null | undefined): Observable<UserKeyPairContainer> {
+		RequestRoomRescueKeyPair(room_id: string, version: string | null | undefined): Observable<UserKeyPairContainer> {
 			return this.http.get<UserKeyPairContainer>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/keypair?version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -21117,10 +22116,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Room rescue key pair can be used to upgrade algorithm.
 		 * Post v4/nodes/rooms/{room_id}/keypair
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SetRoomRescueKeyPair(room_id: number, requestBody: UserKeyPairContainer): Observable<HttpResponse<string>> {
+		SetRoomRescueKeyPair(room_id: string, requestBody: UserKeyPairContainer): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/rooms/' + room_id + '/keypair', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21137,10 +22137,11 @@ export namespace MyNS {
 		 * In the case of an algorithm migration to a room rescue key pair, one should create the new key pair before deleting the old one. This allows re-encrypting file keys with the new key pair, using the old one.
 		 * This API allows to retrieve both key pairs, in contrast to `GET /nodes/rooms/{room_id}/keypair`, which only delivers the preferred one.
 		 * Get v4/nodes/rooms/{room_id}/keypairs
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<UserKeyPairContainer>} OK
 		 */
-		RequestRoomRescueKeyPairs(room_id: number): Observable<Array<UserKeyPairContainer>> {
+		RequestRoomRescueKeyPairs(room_id: string): Observable<Array<UserKeyPairContainer>> {
 			return this.http.get<Array<UserKeyPairContainer>>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/keypairs', {});
 		}
 
@@ -21158,10 +22159,11 @@ export namespace MyNS {
 		 * You can submit your old private key, encrypted with your current password.
 		 * This allows migrating file keys encrypted with your old key pair to the new one.
 		 * Post v4/nodes/rooms/{room_id}/keypairs
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CreateAndPreserveRoomRescueKeyPair(room_id: number, requestBody: CreateKeyPairRequest): Observable<HttpResponse<string>> {
+		CreateAndPreserveRoomRescueKeyPair(room_id: string, requestBody: CreateKeyPairRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/rooms/' + room_id + '/keypairs', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21181,10 +22183,11 @@ export namespace MyNS {
 		 * Existing files can be set to expire earlier afterwards.
 		 * `0` means no default expiration policy will be enforced.
 		 * Get v4/nodes/rooms/{room_id}/policies
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {RoomPolicies} OK
 		 */
-		RequestRoomPolicies(room_id: number): Observable<RoomPolicies> {
+		RequestRoomPolicies(room_id: string): Observable<RoomPolicies> {
 			return this.http.get<RoomPolicies>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/policies', {});
 		}
 
@@ -21204,10 +22207,11 @@ export namespace MyNS {
 		 * Existing files can be set to expire earlier afterwards.
 		 * `0` means no default expiration policy will be enforced. This removes all expiration dates from existing files.
 		 * Put v4/nodes/rooms/{room_id}/policies
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SetRoomPolicies(room_id: number, requestBody: RoomPoliciesRequest): Observable<HttpResponse<string>> {
+		SetRoomPolicies(room_id: string, requestBody: RoomPoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v4/nodes/rooms/' + room_id + '/policies', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21223,10 +22227,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/rooms/{room_id}/s3_tags
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {S3TagList} OK
 		 */
-		RequestRoomS3Tags(room_id: number): Observable<S3TagList> {
+		RequestRoomS3Tags(room_id: string): Observable<S3TagList> {
 			return this.http.get<S3TagList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/s3_tags', {});
 		}
 
@@ -21243,10 +22248,11 @@ export namespace MyNS {
 		 * Every request overrides current S3 tags.
 		 * Mandatory S3 tag IDs **MUST** be sent.
 		 * Post v4/nodes/rooms/{room_id}/s3_tags
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SetRoomS3Tags(room_id: number, requestBody: S3TagIds): Observable<HttpResponse<string>> {
+		SetRoomS3Tags(room_id: string, requestBody: S3TagIds): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/rooms/' + room_id + '/s3_tags', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21261,10 +22267,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Batch function.
 		 * Delete v4/nodes/rooms/{room_id}/users
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RevokeRoomUsers(room_id: number): Observable<HttpResponse<string>> {
+		RevokeRoomUsers(room_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/rooms/' + room_id + '/users', { observe: 'response', responseType: 'text' });
 		}
 
@@ -21324,16 +22331,19 @@ export namespace MyNS {
 		 * | **`user`** | User - sort by `firstName`, `lastName`, `username`, `email` (in this order) |
 		 * </details>
 		 * Get v4/nodes/rooms/{room_id}/users
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {RoomUserList} OK
 		 */
-		RequestRoomUsers(room_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<RoomUserList> {
+		RequestRoomUsers(room_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<RoomUserList> {
 			return this.http.get<RoomUserList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/users?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -21348,10 +22358,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Batch function.
 		 * Put v4/nodes/rooms/{room_id}/users
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UpdateRoomUsers(room_id: number, requestBody: RoomUsersAddBatchRequest): Observable<HttpResponse<string>> {
+		UpdateRoomUsers(room_id: string, requestBody: RoomUsersAddBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v4/nodes/rooms/' + room_id + '/users', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21381,15 +22392,18 @@ export namespace MyNS {
 		 * | **`isAssigned`** | Assigned/unassigned webhooks filter | `eq` |  | `true or false` |
 		 * </details>
 		 * Get v4/nodes/rooms/{room_id}/webhooks
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {RoomWebhookList} OK
 		 */
-		RequestListOfWebhooksForRoom(room_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomWebhookList> {
+		RequestListOfWebhooksForRoom(room_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomWebhookList> {
 			return this.http.get<RoomWebhookList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/webhooks?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 
@@ -21423,10 +22437,11 @@ export namespace MyNS {
 		 * | **`room.deleted`** | Triggered when a room is deleted in affected room | Node Webhook |
 		 * </details>
 		 * Put v4/nodes/rooms/{room_id}/webhooks
-		 * @param {number} room_id Room ID
+		 * @param {string} room_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {RoomWebhookList} OK
 		 */
-		HandleRoomWebhookAssignments(room_id: number, requestBody: UpdateRoomWebhookRequest): Observable<RoomWebhookList> {
+		HandleRoomWebhookAssignments(room_id: string, requestBody: UpdateRoomWebhookRequest): Observable<RoomWebhookList> {
 			return this.http.put<RoomWebhookList>(this.baseUri + 'v4/nodes/rooms/' + room_id + '/webhooks', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -21516,18 +22531,22 @@ export namespace MyNS {
 		 * @param {number} depth_level * `0` - top level nodes only (default)
 		 * * `-1` - full tree
 		 * * `n` (any positive number) - include `n` levels starting from the current node
-		 * @param {number} parent_id Parent node ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} parent_id Parent node ID.
 		 * Only rooms and folders can be parents.
 		 * Parent ID `0` or empty is the root node.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {NodeList} OK
 		 */
-		SearchNodes(search_string: string, depth_level: number | null | undefined, parent_id: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<NodeList> {
+		SearchNodes(search_string: string, depth_level: number | null | undefined, parent_id: string | null | undefined, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<NodeList> {
 			return this.http.get<NodeList>(this.baseUri + 'v4/nodes/search?search_string=' + (search_string == null ? '' : encodeURIComponent(search_string)) + '&depth_level=' + depth_level + '&parent_id=' + parent_id + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -21577,10 +22596,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/nodes/{node_id}
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveNode(node_id: number): Observable<HttpResponse<string>> {
+		RemoveNode(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/' + node_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -21595,10 +22615,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/{node_id}
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		RequestNode(node_id: number): Observable<Node> {
+		RequestNode(node_id: string): Observable<Node> {
 			return this.http.get<Node>(this.baseUri + 'v4/nodes/' + node_id, {});
 		}
 
@@ -21617,14 +22638,17 @@ export namespace MyNS {
 		 * For more results please use filter criteria and paging (`offset` + `limit`).
 		 * Get v4/nodes/{node_id}/comments
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
-		 * @param {number} node_id Node ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} hide_deleted Hide deleted comments (default: false)
 		 * @return {CommentList} OK
 		 */
-		RequestNodeComments(offset: number | null | undefined, limit: number | null | undefined, node_id: number, hide_deleted: boolean | null | undefined): Observable<CommentList> {
+		RequestNodeComments(offset: number | null | undefined, limit: number | null | undefined, node_id: string, hide_deleted: boolean | null | undefined): Observable<CommentList> {
 			return this.http.get<CommentList>(this.baseUri + 'v4/nodes/' + node_id + '/comments?offset=' + offset + '&limit=' + limit + '&hide_deleted=' + hide_deleted, {});
 		}
 
@@ -21640,10 +22664,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Maximum allowed text length: **65535** characters.
 		 * Post v4/nodes/{node_id}/comments
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CreateNodeComment(node_id: number, requestBody: CreateNodeCommentRequest): Observable<HttpResponse<string>> {
+		CreateNodeComment(node_id: string, requestBody: CreateNodeCommentRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/' + node_id + '/comments', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21669,10 +22694,11 @@ export namespace MyNS {
 		 * * Illegal characters in names:
 		 * `'\\', '<','>', ':', '\"', '|', '?', '*', '/', leading '-', trailing '.' `
 		 * Post v4/nodes/{node_id}/copy_to
-		 * @param {number} node_id Target parent node ID
+		 * @param {string} node_id Target parent node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CopyNodes(node_id: number, requestBody: CopyNodesRequest): Observable<HttpResponse<string>> {
+		CopyNodes(node_id: string, requestBody: CopyNodesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/' + node_id + '/copy_to', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21688,10 +22714,11 @@ export namespace MyNS {
 		 * Actually removes the previously deleted files from the system.
 		 * **This action is irreversible.**
 		 * Delete v4/nodes/{node_id}/deleted_nodes
-		 * @param {number} node_id Room ID
+		 * @param {string} node_id Room ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		EmptyDeletedNodes(node_id: number): Observable<HttpResponse<string>> {
+		EmptyDeletedNodes(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/' + node_id + '/deleted_nodes', { observe: 'response', responseType: 'text' });
 		}
 
@@ -21750,16 +22777,19 @@ export namespace MyNS {
 		 * | `timestampModification` | Modification timestamp |
 		 * </details>
 		 * Get v4/nodes/{node_id}/deleted_nodes
-		 * @param {number} node_id Parent ID (can only be a room ID)
+		 * @param {string} node_id Parent ID (can only be a room ID)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeletedNodeSummaryList} OK
 		 */
-		RequestDeletedNodesSummary(node_id: number, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<DeletedNodeSummaryList> {
+		RequestDeletedNodesSummary(node_id: string, filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<DeletedNodeSummaryList> {
 			return this.http.get<DeletedNodeSummaryList>(this.baseUri + 'v4/nodes/' + node_id + '/deleted_nodes?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -21802,17 +22832,20 @@ export namespace MyNS {
 		 * | `deletedBy` | Deleter first name, last name |
 		 * </details>
 		 * Get v4/nodes/{node_id}/deleted_nodes/versions
-		 * @param {number} node_id Parent ID (room or folder ID)
+		 * @param {string} node_id Parent ID (room or folder ID)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} type Node type
 		 * @param {string} name Node name
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeletedNodeVersionsList} OK
 		 */
-		RequestDeletedNodeVersions(node_id: number, type: string, name: string, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<DeletedNodeVersionsList> {
+		RequestDeletedNodeVersions(node_id: string, type: string, name: string, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<DeletedNodeVersionsList> {
 			return this.http.get<DeletedNodeVersionsList>(this.baseUri + 'v4/nodes/' + node_id + '/deleted_nodes/versions?type=' + (type == null ? '' : encodeURIComponent(type)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -21827,10 +22860,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/nodes/{node_id}/favorite
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveFavorite(node_id: number): Observable<HttpResponse<string>> {
+		RemoveFavorite(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/nodes/' + node_id + '/favorite', { observe: 'response', responseType: 'text' });
 		}
 
@@ -21845,10 +22879,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/nodes/{node_id}/favorite
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		AddFavorite(node_id: number): Observable<HttpResponse<string>> {
+		AddFavorite(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/nodes/' + node_id + '/favorite', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -21874,10 +22909,11 @@ export namespace MyNS {
 		 * * Illegal characters in names:
 		 * `'\\', '<','>', ':', '\"', '|', '?', '*', '/', leading '-', trailing '.' `
 		 * Post v4/nodes/{node_id}/move_to
-		 * @param {number} node_id Target parent node ID
+		 * @param {string} node_id Target parent node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Node} OK
 		 */
-		MoveNodes(node_id: number, requestBody: MoveNodesRequest): Observable<Node> {
+		MoveNodes(node_id: string, requestBody: MoveNodesRequest): Observable<Node> {
 			return this.http.post<Node>(this.baseUri + 'v4/nodes/' + node_id + '/move_to', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -21893,10 +22929,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/nodes/{node_id}/parents
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {NodeParentList} OK
 		 */
-		RequestNodeParents(node_id: number): Observable<NodeParentList> {
+		RequestNodeParents(node_id: string): Observable<NodeParentList> {
 			return this.http.get<NodeParentList>(this.baseUri + 'v4/nodes/' + node_id + '/parents', {});
 		}
 
@@ -21986,9 +23023,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/provisioning/customers
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {boolean} include_attributes Include custom customer attributes.
@@ -22042,10 +23081,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/provisioning/customers/{customer_id}
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveCustomer(customer_id: number): Observable<HttpResponse<string>> {
+		RemoveCustomer(customer_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/provisioning/customers/' + customer_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -22060,11 +23100,12 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/provisioning/customers/{customer_id}
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} include_attributes Include custom customer attributes.
 		 * @return {Customer} OK
 		 */
-		RequestCustomer(customer_id: number, include_attributes: boolean | null | undefined): Observable<Customer> {
+		RequestCustomer(customer_id: string, include_attributes: boolean | null | undefined): Observable<Customer> {
 			return this.http.get<Customer>(this.baseUri + 'v4/provisioning/customers/' + customer_id + '?include_attributes=' + include_attributes, {});
 		}
 
@@ -22079,10 +23120,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Put v4/provisioning/customers/{customer_id}
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UpdateCustomerResponse} OK
 		 */
-		UpdateCustomer(customer_id: number, requestBody: UpdateCustomerRequest): Observable<UpdateCustomerResponse> {
+		UpdateCustomer(customer_id: string, requestBody: UpdateCustomerRequest): Observable<UpdateCustomerResponse> {
 			return this.http.put<UpdateCustomerResponse>(this.baseUri + 'v4/provisioning/customers/' + customer_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -22133,16 +23175,19 @@ export namespace MyNS {
 		 * | `value` | Customer attribute value |
 		 * </details>
 		 * Get v4/provisioning/customers/{customer_id}/customerAttributes
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {AttributesResponse} OK
 		 */
-		RequestCustomerAttributes(customer_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AttributesResponse> {
+		RequestCustomerAttributes(customer_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AttributesResponse> {
 			return this.http.get<AttributesResponse>(this.baseUri + 'v4/provisioning/customers/' + customer_id + '/customerAttributes?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -22161,10 +23206,11 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Post v4/provisioning/customers/{customer_id}/customerAttributes
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SetCustomerAttributes(customer_id: number, requestBody: CustomerAttributes): Observable<HttpResponse<string>> {
+		SetCustomerAttributes(customer_id: string, requestBody: CustomerAttributes): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/provisioning/customers/' + customer_id + '/customerAttributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -22184,10 +23230,11 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Put v4/provisioning/customers/{customer_id}/customerAttributes
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Customer} OK **(DEPRECATED: WILL BE REPLACED BY 204: "No content")**
 		 */
-		UpdateCustomerAttributes(customer_id: number, requestBody: CustomerAttributes): Observable<Customer> {
+		UpdateCustomerAttributes(customer_id: string, requestBody: CustomerAttributes): Observable<Customer> {
 			return this.http.put<Customer>(this.baseUri + 'v4/provisioning/customers/' + customer_id + '/customerAttributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -22204,11 +23251,12 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Delete v4/provisioning/customers/{customer_id}/customerAttributes/{key}
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} key Key
 		 * @return {void} 
 		 */
-		RemoveCustomerAttribute(customer_id: number, key: string): Observable<HttpResponse<string>> {
+		RemoveCustomerAttribute(customer_id: string, key: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/provisioning/customers/' + customer_id + '/customerAttributes/' + (key == null ? '' : encodeURIComponent(key)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -22288,11 +23336,14 @@ export namespace MyNS {
 		 * | <del>`login`</del> | User login |
 		 * </details>
 		 * Get v4/provisioning/customers/{customer_id}/users
-		 * @param {number} customer_id Customer ID
+		 * @param {string} customer_id Customer ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {boolean} include_attributes Include custom user attributes.
@@ -22300,7 +23351,7 @@ export namespace MyNS {
 		 * @param {boolean} include_manageable_rooms Include hasManageableRooms (deprecated)
 		 * @return {UserList} OK
 		 */
-		RequestCustomerUsers(customer_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined, include_attributes: boolean | null | undefined, include_roles: boolean | null | undefined, include_manageable_rooms: boolean | null | undefined): Observable<UserList> {
+		RequestCustomerUsers(customer_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined, include_attributes: boolean | null | undefined, include_roles: boolean | null | undefined, include_manageable_rooms: boolean | null | undefined): Observable<UserList> {
 			return this.http.get<UserList>(this.baseUri + 'v4/provisioning/customers/' + customer_id + '/users?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&include_attributes=' + include_attributes + '&include_roles=' + include_roles + '&include_manageable_rooms=' + include_manageable_rooms, {});
 		}
 
@@ -22364,9 +23415,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/provisioning/webhooks
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {WebhookList} OK
@@ -22433,10 +23486,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/provisioning/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveTenantWebhook(webhook_id: number): Observable<HttpResponse<string>> {
+		RemoveTenantWebhook(webhook_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/provisioning/webhooks/' + webhook_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -22452,10 +23506,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/provisioning/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		RequestTenantWebhook(webhook_id: number): Observable<Webhook> {
+		RequestTenantWebhook(webhook_id: string): Observable<Webhook> {
 			return this.http.get<Webhook>(this.baseUri + 'v4/provisioning/webhooks/' + webhook_id, {});
 		}
 
@@ -22481,10 +23536,11 @@ export namespace MyNS {
 		 * | **`webhook.expiring`** | Triggered 30/20/10/1 days before a webhook expires |  Tenant Webhook |
 		 * </details>
 		 * Put v4/provisioning/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		UpdateTenantWebhook(webhook_id: number, requestBody: UpdateWebhookRequest): Observable<Webhook> {
+		UpdateTenantWebhook(webhook_id: string, requestBody: UpdateWebhookRequest): Observable<Webhook> {
 			return this.http.put<Webhook>(this.baseUri + 'v4/provisioning/webhooks/' + webhook_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -22500,10 +23556,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/provisioning/webhooks/{webhook_id}/reset_lifetime
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		ResetTenantWebhookLifetime(webhook_id: number): Observable<Webhook> {
+		ResetTenantWebhookLifetime(webhook_id: string): Observable<Webhook> {
 			return this.http.post<Webhook>(this.baseUri + 'v4/provisioning/webhooks/' + webhook_id + '/reset_lifetime', null, {});
 		}
 
@@ -22908,10 +23965,11 @@ export namespace MyNS {
 		 * None.
 		 * Get v4/resources/users/{user_id}/avatar/{uuid}
 		 * @param {string} uuid UUID of the avatar
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Avatar} OK
 		 */
-		RequestUserAvatar(uuid: string, user_id: number): Observable<Avatar> {
+		RequestUserAvatar(uuid: string, user_id: string): Observable<Avatar> {
 			return this.http.get<Avatar>(this.baseUri + 'v4/resources/users/' + user_id + '/avatar/' + (uuid == null ? '' : encodeURIComponent(uuid)), {});
 		}
 
@@ -22945,6 +24003,7 @@ export namespace MyNS {
 		 * None.
 		 * Delete v4/roles/{role_id}/groups
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RoleGroupList} OK
 		 */
 		RevokeRoleGroups(role_id: number): Observable<RoleGroupList> {
@@ -22978,10 +24037,13 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/roles/{role_id}/groups
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {RoleGroupList} OK
 		 */
@@ -23001,6 +24063,7 @@ export namespace MyNS {
 		 * None.
 		 * Post v4/roles/{role_id}/groups
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RoleGroupList} OK
 		 */
 		AddRoleGroups(role_id: number, requestBody: GroupIds): Observable<RoleGroupList> {
@@ -23020,6 +24083,7 @@ export namespace MyNS {
 		 * None.
 		 * Delete v4/roles/{role_id}/users
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RoleUserList} OK
 		 */
 		RevokeRoleUsers(role_id: number): Observable<RoleUserList> {
@@ -23060,10 +24124,13 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/roles/{role_id}/users
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {RoleUserList} OK
 		 */
@@ -23083,6 +24150,7 @@ export namespace MyNS {
 		 * None.
 		 * Post v4/roles/{role_id}/users
 		 * @param {number} role_id Role ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RoleUserList} OK
 		 */
 		AddRoleUsers(role_id: number, requestBody: UserIds): Observable<RoleUserList> {
@@ -23343,9 +24411,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/settings/webhooks
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {WebhookList} OK
@@ -23427,10 +24497,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/settings/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveWebhook(webhook_id: number): Observable<HttpResponse<string>> {
+		RemoveWebhook(webhook_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/settings/webhooks/' + webhook_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -23446,10 +24517,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/settings/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		RequestWebhook(webhook_id: number): Observable<Webhook> {
+		RequestWebhook(webhook_id: string): Observable<Webhook> {
 			return this.http.get<Webhook>(this.baseUri + 'v4/settings/webhooks/' + webhook_id, {});
 		}
 
@@ -23491,10 +24563,11 @@ export namespace MyNS {
 		 * | **`room.deleted`** | Triggered when a room is deleted in affected room | Node Webhook |
 		 * </details>
 		 * Put v4/settings/webhooks/{webhook_id}
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		UpdateWebhook(webhook_id: number, requestBody: UpdateWebhookRequest): Observable<Webhook> {
+		UpdateWebhook(webhook_id: string, requestBody: UpdateWebhookRequest): Observable<Webhook> {
 			return this.http.put<Webhook>(this.baseUri + 'v4/settings/webhooks/' + webhook_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -23510,10 +24583,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/settings/webhooks/{webhook_id}/reset_lifetime
-		 * @param {number} webhook_id Webhook ID
+		 * @param {string} webhook_id Webhook ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Webhook} OK
 		 */
-		ResetWebhookLifetime(webhook_id: number): Observable<Webhook> {
+		ResetWebhookLifetime(webhook_id: string): Observable<Webhook> {
 			return this.http.post<Webhook>(this.baseUri + 'v4/settings/webhooks/' + webhook_id + '/reset_lifetime', null, {});
 		}
 
@@ -23599,9 +24673,11 @@ export namespace MyNS {
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DownloadShareList} OK
 		 */
 		RequestDownloadShares(filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<DownloadShareList> {
@@ -23661,10 +24737,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Only the Download Share is removed; the referenced file or container persists.
 		 * Delete v4/shares/downloads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveDownloadShare(share_id: number): Observable<HttpResponse<string>> {
+		RemoveDownloadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/shares/downloads/' + share_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -23679,10 +24756,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/shares/downloads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DownloadShare} OK
 		 */
-		RequestDownloadShare(share_id: number): Observable<DownloadShare> {
+		RequestDownloadShare(share_id: string): Observable<DownloadShare> {
 			return this.http.get<DownloadShare>(this.baseUri + 'v4/shares/downloads/' + share_id, {});
 		}
 
@@ -23703,10 +24781,11 @@ export namespace MyNS {
 		 * Please keep in mind that due to various restrictions of different telecommunication providers, non-ASCII characters
 		 * may not be displayed correctly in short messages (SMS).
 		 * Put v4/shares/downloads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DownloadShare} OK
 		 */
-		UpdateDownloadShare(share_id: number, requestBody: UpdateDownloadShareRequest): Observable<DownloadShare> {
+		UpdateDownloadShare(share_id: string, requestBody: UpdateDownloadShareRequest): Observable<DownloadShare> {
 			return this.http.put<DownloadShare>(this.baseUri + 'v4/shares/downloads/' + share_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -23722,10 +24801,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * * Forbidden characters in the email body: [`<`, `>`]
 		 * Post v4/shares/downloads/{share_id}/email
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SendDownloadShareLinkViaEmail(share_id: number, requestBody: DownloadShareLinkEmail): Observable<HttpResponse<string>> {
+		SendDownloadShareLinkViaEmail(share_id: string, requestBody: DownloadShareLinkEmail): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/shares/downloads/' + share_id + '/email', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -23740,10 +24820,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/shares/downloads/{share_id}/qr
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DownloadShare} OK
 		 */
-		RequestDownloadShareQr(share_id: number): Observable<DownloadShare> {
+		RequestDownloadShareQr(share_id: string): Observable<DownloadShare> {
 			return this.http.get<DownloadShare>(this.baseUri + 'v4/shares/downloads/' + share_id + '/qr', {});
 		}
 
@@ -23829,9 +24910,11 @@ export namespace MyNS {
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UploadShareList} OK
 		 */
 		RequestUploadShares(filter: string | null | undefined, sort: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<UploadShareList> {
@@ -23890,10 +24973,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Only the Upload Share is removed; already uploaded files and the target container persist.
 		 * Delete v4/shares/uploads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveUploadShare(share_id: number): Observable<HttpResponse<string>> {
+		RemoveUploadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/shares/uploads/' + share_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -23908,10 +24992,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/shares/uploads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UploadShare} OK
 		 */
-		RequestUploadShare(share_id: number): Observable<UploadShare> {
+		RequestUploadShare(share_id: string): Observable<UploadShare> {
 			return this.http.get<UploadShare>(this.baseUri + 'v4/shares/uploads/' + share_id, {});
 		}
 
@@ -23932,10 +25017,11 @@ export namespace MyNS {
 		 * Please keep in mind that due to various restrictions of different telecommunication providers, non-ASCII characters
 		 * may not be displayed correctly in short messages (SMS).
 		 * Put v4/shares/uploads/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UploadShare} OK
 		 */
-		UpdateUploadShare(share_id: number, requestBody: UpdateUploadShareRequest): Observable<UploadShare> {
+		UpdateUploadShare(share_id: string, requestBody: UpdateUploadShareRequest): Observable<UploadShare> {
 			return this.http.put<UploadShare>(this.baseUri + 'v4/shares/uploads/' + share_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -23951,10 +25037,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * * Forbidden characters in the email body: [`<`, `>`]
 		 * Post v4/shares/uploads/{share_id}/email
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SendUploadShareLinkViaEmail(share_id: number, requestBody: UploadShareLinkEmail): Observable<HttpResponse<string>> {
+		SendUploadShareLinkViaEmail(share_id: string, requestBody: UploadShareLinkEmail): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/shares/uploads/' + share_id + '/email', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -23969,10 +25056,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/shares/uploads/{share_id}/qr
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UploadShare} OK
 		 */
-		RequestUploadShareQr(share_id: number): Observable<UploadShare> {
+		RequestUploadShareQr(share_id: string): Observable<UploadShare> {
 			return this.http.get<UploadShare>(this.baseUri + 'v4/shares/uploads/' + share_id + '/qr', {});
 		}
 
@@ -24056,6 +25144,7 @@ export namespace MyNS {
 		 * None.
 		 * Delete v4/system/config/auth/ads/{ad_id}
 		 * @param {number} ad_id Active Directory ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		RemoveAdConfig(ad_id: number): Observable<HttpResponse<string>> {
@@ -24074,6 +25163,7 @@ export namespace MyNS {
 		 * None.
 		 * Get v4/system/config/auth/ads/{ad_id}
 		 * @param {number} ad_id Active Directory ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ActiveDirectoryConfig} OK
 		 */
 		RequestAdConfig(ad_id: number): Observable<ActiveDirectoryConfig> {
@@ -24092,6 +25182,7 @@ export namespace MyNS {
 		 * None.
 		 * Put v4/system/config/auth/ads/{ad_id}
 		 * @param {number} ad_id Active Directory ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ActiveDirectoryConfig} OK
 		 */
 		UpdateAdConfig(ad_id: number, requestBody: UpdateActiveDirectoryConfigRequest): Observable<ActiveDirectoryConfig> {
@@ -24147,6 +25238,7 @@ export namespace MyNS {
 		 * None.
 		 * Delete v4/system/config/auth/openid/idps/{idp_id}
 		 * @param {number} idp_id OpenID Connect IDP configuration ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		RemoveOpenIdIdpConfig(idp_id: number): Observable<HttpResponse<string>> {
@@ -24166,6 +25258,7 @@ export namespace MyNS {
 		 * None.
 		 * Get v4/system/config/auth/openid/idps/{idp_id}
 		 * @param {number} idp_id OpenID Connect IDP configuration ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OpenIdIdpConfig} OK
 		 */
 		RequestOpenIdIdpConfig(idp_id: number): Observable<OpenIdIdpConfig> {
@@ -24185,6 +25278,7 @@ export namespace MyNS {
 		 * None.
 		 * Put v4/system/config/auth/openid/idps/{idp_id}
 		 * @param {number} idp_id OpenID Connect IDP configuration ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OpenIdIdpConfig} OK
 		 */
 		UpdateOpenIdIdpConfig(idp_id: number, requestBody: UpdateOpenIdIdpConfigRequest): Observable<OpenIdIdpConfig> {
@@ -25183,10 +26277,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/system/config/storage/s3/tags/{id}
-		 * @param {number} id S3 tag ID
+		 * @param {string} id S3 tag ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveS3Tag(id: number): Observable<HttpResponse<string>> {
+		RemoveS3Tag(id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/system/config/storage/s3/tags/' + id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -25203,10 +26298,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/system/config/storage/s3/tags/{id}
-		 * @param {number} id S3 tag ID
+		 * @param {string} id S3 tag ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {S3Tag} OK
 		 */
-		RequestS3Tag(id: number): Observable<S3Tag> {
+		RequestS3Tag(id: string): Observable<S3Tag> {
 			return this.http.get<S3Tag>(this.baseUri + 'v4/system/config/storage/s3/tags/' + id, {});
 		}
 
@@ -25572,9 +26668,10 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/user/account/mfa/totp/{id}
+		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeleteMfaTotpSetup(id: number, valid_otp: string): Observable<HttpResponse<string>> {
+		DeleteMfaTotpSetup(id: string, valid_otp: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/user/account/mfa/totp/' + id + '?valid_otp=' + (valid_otp == null ? '' : encodeURIComponent(valid_otp)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -25646,10 +26743,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Leave `channelIds` empty to disable notifications.
 		 * Put v4/user/notifications/config/{id}
-		 * @param {number} id Unique identifier for a notification configuration
+		 * @param {string} id Unique identifier for a notification configuration
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {NotificationConfig} OK
 		 */
-		UpdateNotificationConfig(id: number, requestBody: NotificationConfigChangeRequest): Observable<NotificationConfig> {
+		UpdateNotificationConfig(id: string, requestBody: NotificationConfigChangeRequest): Observable<NotificationConfig> {
 			return this.http.put<NotificationConfig>(this.baseUri + 'v4/user/notifications/config/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -25789,10 +26887,11 @@ export namespace MyNS {
 		 * None.
 		 * Delete v4/user/oauth/authorizations/{client_id}/{authorization_id}
 		 * @param {string} client_id OAuth client ID
-		 * @param {number} authorization_id OAuth authorization ID
+		 * @param {string} authorization_id OAuth authorization ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveOAuthAuthorization(client_id: string, authorization_id: number): Observable<HttpResponse<string>> {
+		RemoveOAuthAuthorization(client_id: string, authorization_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/user/oauth/authorizations/' + (client_id == null ? '' : encodeURIComponent(client_id)) + '/' + authorization_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -25859,9 +26958,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/user/profileAttributes
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {AttributesResponse} OK
@@ -25988,7 +27089,9 @@ export namespace MyNS {
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Sort string
 		 * @return {SubscribedDownloadShareList} OK
 		 */
@@ -26028,10 +27131,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/user/subscriptions/download_shares/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UnsubscribeDownloadShare(share_id: number): Observable<HttpResponse<string>> {
+		UnsubscribeDownloadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/user/subscriptions/download_shares/' + share_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26048,10 +27152,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/user/subscriptions/download_shares/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SubscribeDownloadShare(share_id: number): Observable<HttpResponse<string>> {
+		SubscribeDownloadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/user/subscriptions/download_shares/' + share_id, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26106,7 +27211,9 @@ export namespace MyNS {
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Sort string
 		 * @return {SubscribedNodeList} OK
 		 */
@@ -26146,10 +27253,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/user/subscriptions/nodes/{node_id}
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UnsubscribeNode(node_id: number): Observable<HttpResponse<string>> {
+		UnsubscribeNode(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/user/subscriptions/nodes/' + node_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26166,10 +27274,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/user/subscriptions/nodes/{node_id}
-		 * @param {number} node_id Node ID
+		 * @param {string} node_id Node ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SubscribeNode(node_id: number): Observable<HttpResponse<string>> {
+		SubscribeNode(node_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/user/subscriptions/nodes/' + node_id, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26224,7 +27333,9 @@ export namespace MyNS {
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Sort string
 		 * @return {SubscribedUploadShareList} OK
 		 */
@@ -26264,10 +27375,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Delete v4/user/subscriptions/upload_shares/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UnsubscribeUploadShare(share_id: number): Observable<HttpResponse<string>> {
+		UnsubscribeUploadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/user/subscriptions/upload_shares/' + share_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26284,10 +27396,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Post v4/user/subscriptions/upload_shares/{share_id}
-		 * @param {number} share_id Share ID
+		 * @param {string} share_id Share ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SubscribeUploadShare(share_id: number): Observable<HttpResponse<string>> {
+		SubscribeUploadShare(share_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/user/subscriptions/upload_shares/' + share_id, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26368,9 +27481,11 @@ export namespace MyNS {
 		 * </details>
 		 * Get v4/users
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @param {boolean} include_attributes Include custom user attributes.
@@ -26425,10 +27540,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * User **CANNOT** be deleted if he is a last room administrator of any room.
 		 * Delete v4/users/{user_id}
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RemoveUser(user_id: number): Observable<HttpResponse<string>> {
+		RemoveUser(user_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/users/' + user_id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -26455,7 +27571,8 @@ export namespace MyNS {
 		 * |  | `username` | OpenID Connect username according to authentication setting `mappingClaim` |
 		 * </details>
 		 * Get v4/users/{user_id}
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} effective_roles Filter users with DIRECT or DIRECT **AND** EFFECTIVE roles.
 		 * * `false`: DIRECT roles
 		 * * `true`: DIRECT **AND** EFFECTIVE roles
@@ -26463,7 +27580,7 @@ export namespace MyNS {
 		 * EFFECTIVE means: e.g. user gets role through **group membership**.
 		 * @return {UserData} OK
 		 */
-		RequestUser(user_id: number, effective_roles: boolean | null | undefined): Observable<UserData> {
+		RequestUser(user_id: string, effective_roles: boolean | null | undefined): Observable<UserData> {
 			return this.http.get<UserData>(this.baseUri + 'v4/users/' + user_id + '?effective_roles=' + effective_roles, {});
 		}
 
@@ -26492,10 +27609,11 @@ export namespace MyNS {
 		 * |  | `username` | OpenID Connect username according to authentication setting `mappingClaim` |
 		 * </details>
 		 * Put v4/users/{user_id}
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserData} OK
 		 */
-		UpdateUser(user_id: number, requestBody: UpdateUserRequest): Observable<UserData> {
+		UpdateUser(user_id: string, requestBody: UpdateUserRequest): Observable<UserData> {
 			return this.http.put<UserData>(this.baseUri + 'v4/users/' + user_id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -26525,15 +27643,18 @@ export namespace MyNS {
 		 * | `isMember` | Filter the groups which the user is (not) member of | `eq` |  | <ul><li>`true`</li><li>`false`</li><li>`any`</li></ul>default: `true` |
 		 * </details>
 		 * Get v4/users/{user_id}/groups
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {UserGroupList} OK
 		 */
-		RequestUserGroups(user_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<UserGroupList> {
+		RequestUserGroups(user_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<UserGroupList> {
 			return this.http.get<UserGroupList>(this.baseUri + 'v4/users/' + user_id + '/groups?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 
@@ -26549,10 +27670,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * An empty list is returned if no rooms were found where the user is last admin.
 		 * Get v4/users/{user_id}/last_admin_rooms
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {LastAdminUserRoomList} OK
 		 */
-		RequestLastAdminRoomsUsers(user_id: number): Observable<LastAdminUserRoomList> {
+		RequestLastAdminRoomsUsers(user_id: string): Observable<LastAdminUserRoomList> {
 			return this.http.get<LastAdminUserRoomList>(this.baseUri + 'v4/users/' + user_id + '/last_admin_rooms', {});
 		}
 
@@ -26568,9 +27690,10 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * Emergency code can be used instead of standard MFA authentication to disable all MFA setups.
 		 * Post v4/users/{user_id}/mfa/emergency_code
+		 * @param {string} user_id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {EmergencyMfaCodeResponse} OK
 		 */
-		RequestEmergencyMfaCode(user_id: number): Observable<EmergencyMfaCodeResponse> {
+		RequestEmergencyMfaCode(user_id: string): Observable<EmergencyMfaCodeResponse> {
 			return this.http.post<EmergencyMfaCodeResponse>(this.baseUri + 'v4/users/' + user_id + '/mfa/emergency_code', null, {});
 		}
 
@@ -26585,10 +27708,11 @@ export namespace MyNS {
 		 * ### Further Information:
 		 * None.
 		 * Get v4/users/{user_id}/roles
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {RoleList} OK
 		 */
-		RequestUserRoles(user_id: number): Observable<RoleList> {
+		RequestUserRoles(user_id: string): Observable<RoleList> {
 			return this.http.get<RoleList>(this.baseUri + 'v4/users/' + user_id + '/roles', {});
 		}
 
@@ -26621,15 +27745,18 @@ export namespace MyNS {
 		 * | `effectivePerm` | Filter rooms with DIRECT or DIRECT **AND** EFFECTIVE permissions<ul><li>`false`: DIRECT permissions</li><li>`true`: DIRECT **AND** EFFECTIVE permissions</li><li>`any`: DIRECT **AND** EFFECTIVE **AND** OVER GROUP permissions</li></ul>DIRECT means: e.g. room administrator grants `read` permissions to group of users **directly** on desired room.<br>EFFECTIVE means: e.g. group of users gets `read` permissions on desired room through **inheritance**.<br>OVER GROUP means: e.g. user gets `read` permissions on desired room through **group membership**. | `eq` |  | <ul><li>`true`</li><li>`false`</li><li>`any`</li></ul>default: `false` |
 		 * </details>
 		 * Get v4/users/{user_id}/rooms
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @return {RoomTreeDataList} OK
 		 */
-		RequestUsersRooms(user_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomTreeDataList> {
+		RequestUsersRooms(user_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined): Observable<RoomTreeDataList> {
 			return this.http.get<RoomTreeDataList>(this.baseUri + 'v4/users/' + user_id + '/rooms?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 
@@ -26678,16 +27805,19 @@ export namespace MyNS {
 		 * | `value` | User attribute value |
 		 * </details>
 		 * Get v4/users/{user_id}/userAttributes
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} offset Range offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Range limit.
 		 * Maximum 500.
 		 *  For more results please use paging (`offset` + `limit`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter string
 		 * @param {string} sort Sort string
 		 * @return {AttributesResponse} OK
 		 */
-		RequestUserAttributes(user_id: number, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AttributesResponse> {
+		RequestUserAttributes(user_id: string, offset: number | null | undefined, limit: number | null | undefined, filter: string | null | undefined, sort: string | null | undefined): Observable<AttributesResponse> {
 			return this.http.get<AttributesResponse>(this.baseUri + 'v4/users/' + user_id + '/userAttributes?offset=' + offset + '&limit=' + limit + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -26706,10 +27836,11 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Post v4/users/{user_id}/userAttributes
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SetUserAttributes(user_id: number, requestBody: UserAttributes): Observable<HttpResponse<string>> {
+		SetUserAttributes(user_id: string, requestBody: UserAttributes): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/users/' + user_id + '/userAttributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -26728,10 +27859,11 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Put v4/users/{user_id}/userAttributes
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserData} OK **(DEPRECATED: WILL BE REPLACED BY 204: "No content")**
 		 */
-		UpdateUserAttributes(user_id: number, requestBody: UserAttributes): Observable<UserData> {
+		UpdateUserAttributes(user_id: string, requestBody: UserAttributes): Observable<UserData> {
 			return this.http.put<UserData>(this.baseUri + 'v4/users/' + user_id + '/userAttributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -26747,11 +27879,12 @@ export namespace MyNS {
 		 * * Allowed characters for keys are: `[a-zA-Z0-9_-]`
 		 * * Characters are **case-insensitive**.
 		 * Delete v4/users/{user_id}/userAttributes/{key}
-		 * @param {number} user_id User ID
+		 * @param {string} user_id User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} key Key
 		 * @return {void} No Content
 		 */
-		RemoveUserAttribute(user_id: number, key: string): Observable<HttpResponse<string>> {
+		RemoveUserAttribute(user_id: string, key: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v4/users/' + user_id + '/userAttributes/' + (key == null ? '' : encodeURIComponent(key)), { observe: 'response', responseType: 'text' });
 		}
 	}

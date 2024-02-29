@@ -1979,8 +1979,14 @@ namespace MyNS
 		/// Associates a browser settings resource with a web portal.
 		/// AssociateBrowserSettings portals/{portalArn}/browserSettings#browserSettingsArn
 		/// </summary>
-		/// <param name="browserSettingsArn">The ARN of the browser settings.</param>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="browserSettingsArn">The ARN of the browser settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateBrowserSettingsResponse> AssociateBrowserSettingsAsync(string browserSettingsArn, string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2009,8 +2015,14 @@ namespace MyNS
 		/// Associates an IP access settings resource with a web portal.
 		/// AssociateIpAccessSettings portals/{portalArn}/ipAccessSettings#ipAccessSettingsArn
 		/// </summary>
-		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.</param>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateIpAccessSettingsResponse> AssociateIpAccessSettingsAsync(string ipAccessSettingsArn, string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2039,8 +2051,14 @@ namespace MyNS
 		/// Associates a network settings resource with a web portal.
 		/// AssociateNetworkSettings portals/{portalArn}/networkSettings#networkSettingsArn
 		/// </summary>
-		/// <param name="networkSettingsArn">The ARN of the network settings.</param>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="networkSettingsArn">The ARN of the network settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateNetworkSettingsResponse> AssociateNetworkSettingsAsync(string networkSettingsArn, string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2069,8 +2087,14 @@ namespace MyNS
 		/// Associates a trust store with a web portal.
 		/// AssociateTrustStore portals/{portalArn}/trustStores#trustStoreArn
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
-		/// <param name="trustStoreArn">The ARN of the trust store.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="trustStoreArn">The ARN of the trust store.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateTrustStoreResponse> AssociateTrustStoreAsync(string portalArn, string trustStoreArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2099,8 +2123,14 @@ namespace MyNS
 		/// Associates a user access logging settings resource with a web portal.
 		/// AssociateUserAccessLoggingSettings portals/{portalArn}/userAccessLoggingSettings#userAccessLoggingSettingsArn
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
-		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateUserAccessLoggingSettingsResponse> AssociateUserAccessLoggingSettingsAsync(string portalArn, string userAccessLoggingSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2129,8 +2159,14 @@ namespace MyNS
 		/// Associates a user settings resource with a web portal.
 		/// AssociateUserSettings portals/{portalArn}/userSettings#userSettingsArn
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
-		/// <param name="userSettingsArn">The ARN of the user settings.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="userSettingsArn">The ARN of the user settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateUserSettingsResponse> AssociateUserSettingsAsync(string portalArn, string userSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2199,8 +2235,13 @@ namespace MyNS
 		/// Retrieves a list of browser settings.
 		/// ListBrowserSettings browserSettings
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListBrowserSettingsResponse> ListBrowserSettingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2314,8 +2355,13 @@ namespace MyNS
 		/// Retrieves a list of IP access settings.
 		/// ListIpAccessSettings ipAccessSettings
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListIpAccessSettingsResponse> ListIpAccessSettingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2389,8 +2435,13 @@ namespace MyNS
 		/// Retrieves a list of network settings.
 		/// ListNetworkSettings networkSettings
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListNetworkSettingsResponse> ListNetworkSettingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2464,8 +2515,13 @@ namespace MyNS
 		/// Retrieves a list or web portals.
 		/// ListPortals portals
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation. </param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation. 
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPortalsResponse> ListPortalsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2539,8 +2595,13 @@ namespace MyNS
 		/// Retrieves a list of trust stores.
 		/// ListTrustStores trustStores
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTrustStoresResponse> ListTrustStoresAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2614,8 +2675,13 @@ namespace MyNS
 		/// Retrieves a list of user access logging settings.
 		/// ListUserAccessLoggingSettings userAccessLoggingSettings
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListUserAccessLoggingSettingsResponse> ListUserAccessLoggingSettingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2689,8 +2755,13 @@ namespace MyNS
 		/// Retrieves a list of user settings.
 		/// ListUserSettings userSettings
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation. </param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation. 
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListUserSettingsResponse> ListUserSettingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2724,7 +2795,10 @@ namespace MyNS
 		/// Deletes browser settings.
 		/// DeleteBrowserSettings browserSettings/{browserSettingsArn}
 		/// </summary>
-		/// <param name="browserSettingsArn">The ARN of the browser settings.</param>
+		/// <param name="browserSettingsArn">The ARN of the browser settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteBrowserSettingsResponse> DeleteBrowserSettingsAsync(string browserSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2758,7 +2832,10 @@ namespace MyNS
 		/// Gets browser settings.
 		/// GetBrowserSettings browserSettings/{browserSettingsArn}
 		/// </summary>
-		/// <param name="browserSettingsArn">The ARN of the browser settings.</param>
+		/// <param name="browserSettingsArn">The ARN of the browser settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBrowserSettingsResponse> GetBrowserSettingsAsync(string browserSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2792,7 +2869,10 @@ namespace MyNS
 		/// Updates browser settings.
 		/// UpdateBrowserSettings browserSettings/{browserSettingsArn}
 		/// </summary>
-		/// <param name="browserSettingsArn">The ARN of the browser settings.</param>
+		/// <param name="browserSettingsArn">The ARN of the browser settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateBrowserSettingsResponse> UpdateBrowserSettingsAsync(string browserSettingsArn, UpdateBrowserSettingsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2833,7 +2913,10 @@ namespace MyNS
 		/// Deletes the identity provider.
 		/// DeleteIdentityProvider identityProviders/{identityProviderArn}
 		/// </summary>
-		/// <param name="identityProviderArn">The ARN of the identity provider.</param>
+		/// <param name="identityProviderArn">The ARN of the identity provider.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteIdentityProviderResponse> DeleteIdentityProviderAsync(string identityProviderArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2867,7 +2950,10 @@ namespace MyNS
 		/// Gets the identity provider.
 		/// GetIdentityProvider identityProviders/{identityProviderArn}
 		/// </summary>
-		/// <param name="identityProviderArn">The ARN of the identity provider.</param>
+		/// <param name="identityProviderArn">The ARN of the identity provider.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIdentityProviderResponse> GetIdentityProviderAsync(string identityProviderArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2901,7 +2987,10 @@ namespace MyNS
 		/// Updates the identity provider.
 		/// UpdateIdentityProvider identityProviders/{identityProviderArn}
 		/// </summary>
-		/// <param name="identityProviderArn">The ARN of the identity provider.</param>
+		/// <param name="identityProviderArn">The ARN of the identity provider.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIdentityProviderResponse> UpdateIdentityProviderAsync(string identityProviderArn, UpdateIdentityProviderPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2942,7 +3031,10 @@ namespace MyNS
 		/// Deletes IP access settings.
 		/// DeleteIpAccessSettings ipAccessSettings/{ipAccessSettingsArn}
 		/// </summary>
-		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.</param>
+		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteIpAccessSettingsResponse> DeleteIpAccessSettingsAsync(string ipAccessSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2976,7 +3068,10 @@ namespace MyNS
 		/// Gets the IP access settings.
 		/// GetIpAccessSettings ipAccessSettings/{ipAccessSettingsArn}
 		/// </summary>
-		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.</param>
+		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIpAccessSettingsResponse> GetIpAccessSettingsAsync(string ipAccessSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3010,7 +3105,10 @@ namespace MyNS
 		/// Updates IP access settings.
 		/// UpdateIpAccessSettings ipAccessSettings/{ipAccessSettingsArn}
 		/// </summary>
-		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.</param>
+		/// <param name="ipAccessSettingsArn">The ARN of the IP access settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIpAccessSettingsResponse> UpdateIpAccessSettingsAsync(string ipAccessSettingsArn, UpdateIpAccessSettingsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3051,7 +3149,10 @@ namespace MyNS
 		/// Deletes network settings.
 		/// DeleteNetworkSettings networkSettings/{networkSettingsArn}
 		/// </summary>
-		/// <param name="networkSettingsArn">The ARN of the network settings.</param>
+		/// <param name="networkSettingsArn">The ARN of the network settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteNetworkSettingsResponse> DeleteNetworkSettingsAsync(string networkSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3085,7 +3186,10 @@ namespace MyNS
 		/// Gets the network settings.
 		/// GetNetworkSettings networkSettings/{networkSettingsArn}
 		/// </summary>
-		/// <param name="networkSettingsArn">The ARN of the network settings.</param>
+		/// <param name="networkSettingsArn">The ARN of the network settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkSettingsResponse> GetNetworkSettingsAsync(string networkSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3119,7 +3223,10 @@ namespace MyNS
 		/// Updates network settings.
 		/// UpdateNetworkSettings networkSettings/{networkSettingsArn}
 		/// </summary>
-		/// <param name="networkSettingsArn">The ARN of the network settings.</param>
+		/// <param name="networkSettingsArn">The ARN of the network settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateNetworkSettingsResponse> UpdateNetworkSettingsAsync(string networkSettingsArn, UpdateNetworkSettingsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3160,7 +3267,10 @@ namespace MyNS
 		/// Deletes a web portal.
 		/// DeletePortal portals/{portalArn}
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePortalResponse> DeletePortalAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3194,7 +3304,10 @@ namespace MyNS
 		/// Gets the web portal.
 		/// GetPortal portals/{portalArn}
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPortalResponse> GetPortalAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3228,7 +3341,10 @@ namespace MyNS
 		/// Updates a web portal.
 		/// UpdatePortal portals/{portalArn}
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePortalResponse> UpdatePortalAsync(string portalArn, UpdatePortalPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3269,7 +3385,10 @@ namespace MyNS
 		/// Deletes the trust store.
 		/// DeleteTrustStore trustStores/{trustStoreArn}
 		/// </summary>
-		/// <param name="trustStoreArn">The ARN of the trust store.</param>
+		/// <param name="trustStoreArn">The ARN of the trust store.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTrustStoreResponse> DeleteTrustStoreAsync(string trustStoreArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3303,7 +3422,10 @@ namespace MyNS
 		/// Gets the trust store.
 		/// GetTrustStore trustStores/{trustStoreArn}
 		/// </summary>
-		/// <param name="trustStoreArn">The ARN of the trust store.</param>
+		/// <param name="trustStoreArn">The ARN of the trust store.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTrustStoreResponse> GetTrustStoreAsync(string trustStoreArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3337,7 +3459,10 @@ namespace MyNS
 		/// Updates the trust store.
 		/// UpdateTrustStore trustStores/{trustStoreArn}
 		/// </summary>
-		/// <param name="trustStoreArn">The ARN of the trust store.</param>
+		/// <param name="trustStoreArn">The ARN of the trust store.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTrustStoreResponse> UpdateTrustStoreAsync(string trustStoreArn, UpdateTrustStorePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3378,7 +3503,10 @@ namespace MyNS
 		/// Deletes user access logging settings.
 		/// DeleteUserAccessLoggingSettings userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		/// </summary>
-		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.</param>
+		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteUserAccessLoggingSettingsResponse> DeleteUserAccessLoggingSettingsAsync(string userAccessLoggingSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3412,7 +3540,10 @@ namespace MyNS
 		/// Gets user access logging settings.
 		/// GetUserAccessLoggingSettings userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		/// </summary>
-		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.</param>
+		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUserAccessLoggingSettingsResponse> GetUserAccessLoggingSettingsAsync(string userAccessLoggingSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3446,7 +3577,10 @@ namespace MyNS
 		/// Updates the user access logging settings.
 		/// UpdateUserAccessLoggingSettings userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		/// </summary>
-		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.</param>
+		/// <param name="userAccessLoggingSettingsArn">The ARN of the user access logging settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateUserAccessLoggingSettingsResponse> UpdateUserAccessLoggingSettingsAsync(string userAccessLoggingSettingsArn, UpdateUserAccessLoggingSettingsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3487,7 +3621,10 @@ namespace MyNS
 		/// Deletes user settings.
 		/// DeleteUserSettings userSettings/{userSettingsArn}
 		/// </summary>
-		/// <param name="userSettingsArn">The ARN of the user settings.</param>
+		/// <param name="userSettingsArn">The ARN of the user settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteUserSettingsResponse> DeleteUserSettingsAsync(string userSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3521,7 +3658,10 @@ namespace MyNS
 		/// Gets user settings.
 		/// GetUserSettings userSettings/{userSettingsArn}
 		/// </summary>
-		/// <param name="userSettingsArn">The ARN of the user settings.</param>
+		/// <param name="userSettingsArn">The ARN of the user settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUserSettingsResponse> GetUserSettingsAsync(string userSettingsArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3555,7 +3695,10 @@ namespace MyNS
 		/// Updates the user settings.
 		/// UpdateUserSettings userSettings/{userSettingsArn}
 		/// </summary>
-		/// <param name="userSettingsArn">The ARN of the user settings.</param>
+		/// <param name="userSettingsArn">The ARN of the user settings.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateUserSettingsResponse> UpdateUserSettingsAsync(string userSettingsArn, UpdateUserSettingsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3596,7 +3739,10 @@ namespace MyNS
 		/// Disassociates browser settings from a web portal.
 		/// DisassociateBrowserSettings portals/{portalArn}/browserSettings
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateBrowserSettingsResponse> DisassociateBrowserSettingsAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3630,7 +3776,10 @@ namespace MyNS
 		/// Disassociates IP access settings from a web portal.
 		/// DisassociateIpAccessSettings portals/{portalArn}/ipAccessSettings
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateIpAccessSettingsResponse> DisassociateIpAccessSettingsAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3664,7 +3813,10 @@ namespace MyNS
 		/// Disassociates network settings from a web portal.
 		/// DisassociateNetworkSettings portals/{portalArn}/networkSettings
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateNetworkSettingsResponse> DisassociateNetworkSettingsAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3698,7 +3850,10 @@ namespace MyNS
 		/// Disassociates a trust store from a web portal.
 		/// DisassociateTrustStore portals/{portalArn}/trustStores
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateTrustStoreResponse> DisassociateTrustStoreAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3732,7 +3887,10 @@ namespace MyNS
 		/// Disassociates user access logging settings from a web portal.
 		/// DisassociateUserAccessLoggingSettings portals/{portalArn}/userAccessLoggingSettings
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateUserAccessLoggingSettingsResponse> DisassociateUserAccessLoggingSettingsAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3766,7 +3924,10 @@ namespace MyNS
 		/// Disassociates user settings from a web portal.
 		/// DisassociateUserSettings portals/{portalArn}/userSettings
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateUserSettingsResponse> DisassociateUserSettingsAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3800,7 +3961,10 @@ namespace MyNS
 		/// Gets the service provider metadata.
 		/// GetPortalServiceProviderMetadata portalIdp/{portalArn}
 		/// </summary>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPortalServiceProviderMetadataResponse> GetPortalServiceProviderMetadataAsync(string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3834,8 +3998,14 @@ namespace MyNS
 		/// Gets the trust store certificate.
 		/// GetTrustStoreCertificate trustStores/{trustStoreArn}/certificate#thumbprint
 		/// </summary>
-		/// <param name="thumbprint">The thumbprint of the trust store certificate.</param>
-		/// <param name="trustStoreArn">The ARN of the trust store certificate.</param>
+		/// <param name="thumbprint">The thumbprint of the trust store certificate.
+		/// Max length: 64
+		/// Min length: 64
+		// </param>
+		/// <param name="trustStoreArn">The ARN of the trust store certificate.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTrustStoreCertificateResponse> GetTrustStoreCertificateAsync(string thumbprint, string trustStoreArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3869,9 +4039,17 @@ namespace MyNS
 		/// Retrieves a list of identity providers for a specific web portal.
 		/// ListIdentityProviders portals/{portalArn}/identityProviders
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
-		/// <param name="portalArn">The ARN of the web portal.</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="portalArn">The ARN of the web portal.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListIdentityProvidersResponse> ListIdentityProvidersAsync(int maxResults, string nextToken, string portalArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3905,7 +4083,10 @@ namespace MyNS
 		/// Retrieves a list of tags for a resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3939,7 +4120,10 @@ namespace MyNS
 		/// Adds or overwrites one or more tags for the specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3980,9 +4164,17 @@ namespace MyNS
 		/// Retrieves a list of trust store certificates.
 		/// ListTrustStoreCertificates trustStores/{trustStoreArn}/certificates
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to be included in the next page.</param>
-		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.</param>
-		/// <param name="trustStoreArn">The ARN of the trust store</param>
+		/// <param name="maxResults">The maximum number of results to be included in the next page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="nextToken">The pagination token used to retrieve the next page of results for this operation.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="trustStoreArn">The ARN of the trust store
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTrustStoreCertificatesResponse> ListTrustStoreCertificatesAsync(int maxResults, string nextToken, string trustStoreArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4016,8 +4208,14 @@ namespace MyNS
 		/// Removes one or more tags from the specified resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

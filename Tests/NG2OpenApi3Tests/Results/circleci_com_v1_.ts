@@ -4,12 +4,16 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Artifact {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		node_index?: number | null;
 		path?: string | null;
 		pretty_path?: string | null;
 		url?: string | null;
 	}
 	export interface ArtifactFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		node_index: FormControl<number | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		pretty_path: FormControl<string | null | undefined>,
@@ -43,6 +47,8 @@ export namespace MyNS {
 		/** commit message body */
 		body?: string | null;
 		branch?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_time_millis?: number | null;
 		build_url?: string | null;
 		committer_email?: string | null;
@@ -59,7 +65,10 @@ export namespace MyNS {
 		queued_at?: Date | null;
 		reponame?: string | null;
 
-		/** build_num of the build this is a retry of */
+		/**
+		 * build_num of the build this is a retry of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retry_of?: number | null;
 
 		/** time build started */
@@ -79,6 +88,8 @@ export namespace MyNS {
 		/** commit message body */
 		body: FormControl<string | null | undefined>,
 		branch: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_time_millis: FormControl<number | null | undefined>,
 		build_url: FormControl<string | null | undefined>,
 		committer_email: FormControl<string | null | undefined>,
@@ -92,7 +103,10 @@ export namespace MyNS {
 		queued_at: FormControl<Date | null | undefined>,
 		reponame: FormControl<string | null | undefined>,
 
-		/** build_num of the build this is a retry of */
+		/**
+		 * build_num of the build this is a retry of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retry_of: FormControl<number | null | undefined>,
 
 		/** time build started */
@@ -135,14 +149,22 @@ export namespace MyNS {
 
 	/** previous build */
 	export interface PreviousBuild {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_num?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_time_millis?: number | null;
 		status?: PreviousBuildStatus | null;
 	}
 
 	/** previous build */
 	export interface PreviousBuildFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_num: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_time_millis: FormControl<number | null | undefined>,
 		status: FormControl<PreviousBuildStatus | null | undefined>,
 	}
@@ -249,26 +271,40 @@ export namespace MyNS {
 		analytics_id?: string | null;
 		avatar_url?: string | null;
 		basic_email_prefs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bitbucket?: number | null;
 		bitbucket_authorized?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		containers?: number | null;
 		created_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		days_left_in_trial?: number | null;
 		dev_admin?: boolean | null;
 		enrolled_betas?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		github_id?: number | null;
 		github_oauth_scopes?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gravatar_id?: number | null;
 		heroku_api_key?: string | null;
 		in_beta_program?: boolean | null;
 		login?: string | null;
 		name?: string | null;
 		organization_prefs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallelism?: number | null;
 		plan?: string | null;
 		projects?: string | null;
 		pusher_id?: string | null;
 		selected_email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sign_in_count?: number | null;
 		trial_end?: Date | null;
 	}
@@ -277,24 +313,38 @@ export namespace MyNS {
 		analytics_id: FormControl<string | null | undefined>,
 		avatar_url: FormControl<string | null | undefined>,
 		basic_email_prefs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bitbucket: FormControl<number | null | undefined>,
 		bitbucket_authorized: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		containers: FormControl<number | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		days_left_in_trial: FormControl<number | null | undefined>,
 		dev_admin: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		github_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gravatar_id: FormControl<number | null | undefined>,
 		heroku_api_key: FormControl<string | null | undefined>,
 		in_beta_program: FormControl<boolean | null | undefined>,
 		login: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		organization_prefs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallelism: FormControl<number | null | undefined>,
 		plan: FormControl<string | null | undefined>,
 		projects: FormControl<string | null | undefined>,
 		pusher_id: FormControl<string | null | undefined>,
 		selected_email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sign_in_count: FormControl<number | null | undefined>,
 		trial_end: FormControl<Date | null | undefined>,
 	}
@@ -348,6 +398,8 @@ export namespace MyNS {
 
 	export interface BuildSummary {
 		added_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_num?: number | null;
 		outcome?: BuildSummaryOutcome | null;
 		pushed_at?: Date | null;
@@ -356,6 +408,8 @@ export namespace MyNS {
 	}
 	export interface BuildSummaryFormProperties {
 		added_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		build_num: FormControl<number | null | undefined>,
 		outcome: FormControl<BuildSummaryOutcome | null | undefined>,
 		pushed_at: FormControl<Date | null | undefined>,
@@ -463,6 +517,8 @@ export namespace MyNS {
 		irc_username?: string | null;
 		language?: string | null;
 		oss?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallel?: number | null;
 		reponame?: string | null;
 		scopes?: Array<Scope>;
@@ -505,6 +561,8 @@ export namespace MyNS {
 		irc_username: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		oss: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parallel: FormControl<number | null | undefined>,
 		reponame: FormControl<string | null | undefined>,
 		setup: FormControl<string | null | undefined>,
@@ -615,6 +673,8 @@ export namespace MyNS {
 		message?: string | null;
 		name?: string | null;
 		result?: PreviousBuildStatus | null;
+
+		/** Type: double */
 		run_time?: number | null;
 		source?: string | null;
 	}
@@ -624,6 +684,8 @@ export namespace MyNS {
 		message: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		result: FormControl<PreviousBuildStatus | null | undefined>,
+
+		/** Type: double */
 		run_time: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
 	}
@@ -658,7 +720,9 @@ export namespace MyNS {
 		 * Build summary for each of the last 30 builds for a single git repo.
 		 * Get project/{username}/{project}
 		 * @param {number} limit The number of builds to return. Maximum 100, defaults to 30.
+		 *     Maximum: 100
 		 * @param {number} offset The API returns builds starting from this offset, defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Project_username_projectGetByLimitAndOffsetAndFilterFilter} filter Restricts which builds are returned.
 		 * Set to "completed", "successful", "failed", "running", or defaults to no filter.
 		 * @return {Array<Build>} Build summary for each of the last 30 builds
@@ -839,7 +903,9 @@ export namespace MyNS {
 		 * Build summary for each of the last 30 recent builds, ordered by build_num.
 		 * Get recent-builds
 		 * @param {number} limit The number of builds to return. Maximum 100, defaults to 30.
+		 *     Maximum: 100
 		 * @param {number} offset The API returns builds starting from this offset, defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Build>} Build summary for each of the last 30 recent builds
 		 */
 		Recent_buildsGetByLimitAndOffset(limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Build>> {

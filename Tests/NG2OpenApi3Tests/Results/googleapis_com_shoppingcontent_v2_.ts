@@ -432,6 +432,8 @@ export namespace MyNS {
 		id?: string | null;
 		lastChecked?: string | null;
 		location?: string | null;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		numItems?: number | null;
 
 		/** Acceptable values are: - "`critical`" - "`error`" - "`suggestion`" */
@@ -446,6 +448,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		lastChecked: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		numItems: FormControl<number | null | undefined>,
 
 		/** Acceptable values are: - "`critical`" - "`error`" - "`suggestion`" */
@@ -772,7 +776,10 @@ export namespace MyNS {
 		/** The ID of the targeted account. Only defined if the method is not `insert`. */
 		accountId?: string | null;
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** Whether the account should be deleted if the account has offers. Only applicable if the method is `delete`. */
@@ -798,7 +805,10 @@ export namespace MyNS {
 		/** The ID of the targeted account. Only defined if the method is not `insert`. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Whether the account should be deleted if the account has offers. Only applicable if the method is `delete`. */
@@ -883,7 +893,10 @@ export namespace MyNS {
 		/** Account data. After the creation of a new account it may take a few minutes before it is fully operational. The methods delete, insert, and update require the admin role. */
 		account?: Account;
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -899,7 +912,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch accounts response. */
 	export interface AccountsCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#accountsCustomBatchResponseEntry`" */
@@ -921,7 +937,10 @@ export namespace MyNS {
 	/** A list of errors returned by a failed batch entry. */
 	export interface Errors {
 
-		/** The HTTP status of the first error in `errors`. */
+		/**
+		 * The HTTP status of the first error in `errors`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		code?: number | null;
 
 		/** A list of errors. */
@@ -934,7 +953,10 @@ export namespace MyNS {
 	/** A list of errors returned by a failed batch entry. */
 	export interface ErrorsFormProperties {
 
-		/** The HTTP status of the first error in `errors`. */
+		/**
+		 * The HTTP status of the first error in `errors`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** The message of the first error in `errors`. */
@@ -1076,7 +1098,10 @@ export namespace MyNS {
 		/** The ID of the (sub-)account whose status to get. */
 		accountId?: string | null;
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination. */
@@ -1095,7 +1120,10 @@ export namespace MyNS {
 		/** The ID of the (sub-)account whose status to get. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the managing account. */
@@ -1141,7 +1169,10 @@ export namespace MyNS {
 		/** The status of an account, i.e., information about its products, which is computed offline and not returned immediately at insertion time. */
 		accountStatus?: AccountStatus;
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -1151,7 +1182,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch accountstatuses response. */
 	export interface AccountstatusesCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountstatusesCustomBatchResponseEntryFormGroup() {
@@ -1209,7 +1243,10 @@ export namespace MyNS {
 		/** The tax settings of a merchant account. All methods require the admin role. */
 		accountTax?: AccountTax;
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The ID of the managing account. */
@@ -1225,7 +1262,10 @@ export namespace MyNS {
 		/** The ID of the account for which to get/update account tax settings. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the managing account. */
@@ -1271,7 +1311,10 @@ export namespace MyNS {
 		/** The tax settings of a merchant account. All methods require the admin role. */
 		accountTax?: AccountTax;
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -1284,7 +1327,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch accounttax response. */
 	export interface AccounttaxCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#accounttaxCustomBatchResponseEntry`" */
@@ -1577,10 +1623,16 @@ export namespace MyNS {
 
 	export interface CutoffTime {
 
-		/** Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
+		/**
+		 * Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		hour?: number | null;
 
-		/** Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
+		/**
+		 * Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minute?: number | null;
 
 		/** Timezone identifier for the cutoff time. A list of identifiers can be found in the AdWords API documentation. E.g. "Europe/Zurich". Required. */
@@ -1588,10 +1640,16 @@ export namespace MyNS {
 	}
 	export interface CutoffTimeFormProperties {
 
-		/** Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
+		/**
+		 * Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
+		/**
+		 * Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minute: FormControl<number | null | undefined>,
 
 		/** Timezone identifier for the cutoff time. A list of identifiers can be found in the AdWords API documentation. E.g. "Europe/Zurich". Required. */
@@ -1690,16 +1748,25 @@ export namespace MyNS {
 	/** The required fields vary based on the frequency of fetching. For a monthly fetch schedule, day_of_month and hour are required. For a weekly fetch schedule, weekday and hour are required. For a daily fetch schedule, only hour is required. */
 	export interface DatafeedFetchSchedule {
 
-		/** The day of the month the feed file should be fetched (1-31). */
+		/**
+		 * The day of the month the feed file should be fetched (1-31).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		dayOfMonth?: number | null;
 
 		/** The URL where the feed file can be fetched. Google Merchant Center will support automatic scheduled uploads using the HTTP, HTTPS, FTP, or SFTP protocols, so the value will need to be a valid link using one of those four protocols. */
 		fetchUrl?: string | null;
 
-		/** The hour of the day the feed file should be fetched (0-23). */
+		/**
+		 * The hour of the day the feed file should be fetched (0-23).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		hour?: number | null;
 
-		/** The minute of the hour the feed file should be fetched (0-59). Read-only. */
+		/**
+		 * The minute of the hour the feed file should be fetched (0-59). Read-only.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minuteOfHour?: number | null;
 
 		/** An optional password for fetch_url. */
@@ -1721,16 +1788,25 @@ export namespace MyNS {
 	/** The required fields vary based on the frequency of fetching. For a monthly fetch schedule, day_of_month and hour are required. For a weekly fetch schedule, weekday and hour are required. For a daily fetch schedule, only hour is required. */
 	export interface DatafeedFetchScheduleFormProperties {
 
-		/** The day of the month the feed file should be fetched (1-31). */
+		/**
+		 * The day of the month the feed file should be fetched (1-31).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		dayOfMonth: FormControl<number | null | undefined>,
 
 		/** The URL where the feed file can be fetched. Google Merchant Center will support automatic scheduled uploads using the HTTP, HTTPS, FTP, or SFTP protocols, so the value will need to be a valid link using one of those four protocols. */
 		fetchUrl: FormControl<string | null | undefined>,
 
-		/** The hour of the day the feed file should be fetched (0-23). */
+		/**
+		 * The hour of the day the feed file should be fetched (0-23).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** The minute of the hour the feed file should be fetched (0-59). Read-only. */
+		/**
+		 * The minute of the hour the feed file should be fetched (0-59). Read-only.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minuteOfHour: FormControl<number | null | undefined>,
 
 		/** An optional password for fetch_url. */
@@ -1990,7 +2066,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeeds request. */
 	export interface DatafeedsCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** Datafeed configuration data. */
@@ -2009,7 +2088,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeeds request. */
 	export interface DatafeedsCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the data feed to get, delete or fetch. */
@@ -2055,7 +2137,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeeds response. */
 	export interface DatafeedsCustomBatchResponseEntry {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** Datafeed configuration data. */
@@ -2068,7 +2153,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeeds response. */
 	export interface DatafeedsCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 	}
 	export function CreateDatafeedsCustomBatchResponseEntryFormGroup() {
@@ -2137,7 +2225,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeedstatuses request. */
 	export interface DatafeedstatusesCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required. */
@@ -2159,7 +2250,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeedstatuses request. */
 	export interface DatafeedstatusesCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required. */
@@ -2213,7 +2307,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeedstatuses response. */
 	export interface DatafeedstatusesCustomBatchResponseEntry {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The status of a datafeed, i.e., the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished. */
@@ -2226,7 +2323,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch datafeedstatuses response. */
 	export interface DatafeedstatusesCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 	}
 	export function CreateDatafeedstatusesCustomBatchResponseEntryFormGroup() {
@@ -2268,16 +2368,28 @@ export namespace MyNS {
 		/** Holiday cutoff definitions. If configured, they specify order cutoff times for holiday-specific shipping. */
 		holidayCutoffs?: Array<HolidayCutoff>;
 
-		/** Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`. */
+		/**
+		 * Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxHandlingTimeInDays?: number | null;
 
-		/** Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`. */
+		/**
+		 * Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxTransitTimeInDays?: number | null;
 
-		/** Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. */
+		/**
+		 * Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minHandlingTimeInDays?: number | null;
 
-		/** Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both. */
+		/**
+		 * Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minTransitTimeInDays?: number | null;
 		transitBusinessDayConfig?: BusinessDayConfig;
 		transitTimeTable?: TransitTable;
@@ -2287,16 +2399,28 @@ export namespace MyNS {
 	}
 	export interface DeliveryTimeFormProperties {
 
-		/** Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`. */
+		/**
+		 * Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxHandlingTimeInDays: FormControl<number | null | undefined>,
 
-		/** Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`. */
+		/**
+		 * Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxTransitTimeInDays: FormControl<number | null | undefined>,
 
-		/** Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. */
+		/**
+		 * Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minHandlingTimeInDays: FormControl<number | null | undefined>,
 
-		/** Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both. */
+		/**
+		 * Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minTransitTimeInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateDeliveryTimeFormGroup() {
@@ -2314,7 +2438,10 @@ export namespace MyNS {
 		/** Date of the order deadline, in ISO 8601 format. E.g. "2016-11-29" for 29th November 2016. Required. */
 		deadlineDate?: string | null;
 
-		/** Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required. */
+		/**
+		 * Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		deadlineHour?: number | null;
 
 		/** Timezone identifier for the deadline hour. A list of identifiers can be found in the AdWords API documentation. E.g. "Europe/Zurich". Required. */
@@ -2331,7 +2458,10 @@ export namespace MyNS {
 		/** Date of the order deadline, in ISO 8601 format. E.g. "2016-11-29" for 29th November 2016. Required. */
 		deadlineDate: FormControl<string | null | undefined>,
 
-		/** Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required. */
+		/**
+		 * Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		deadlineHour: FormControl<number | null | undefined>,
 
 		/** Timezone identifier for the deadline hour. A list of identifiers can be found in the AdWords API documentation. E.g. "Europe/Zurich". Required. */
@@ -2384,18 +2514,30 @@ export namespace MyNS {
 
 	export interface TransitTableTransitTimeRowTransitTimeValue {
 
-		/** Must be greater than or equal to `minTransitTimeInDays`. */
+		/**
+		 * Must be greater than or equal to `minTransitTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxTransitTimeInDays?: number | null;
 
-		/** Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery. */
+		/**
+		 * Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minTransitTimeInDays?: number | null;
 	}
 	export interface TransitTableTransitTimeRowTransitTimeValueFormProperties {
 
-		/** Must be greater than or equal to `minTransitTimeInDays`. */
+		/**
+		 * Must be greater than or equal to `minTransitTimeInDays`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxTransitTimeInDays: FormControl<number | null | undefined>,
 
-		/** Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery. */
+		/**
+		 * Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minTransitTimeInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateTransitTableTransitTimeRowTransitTimeValueFormGroup() {
@@ -2916,7 +3058,10 @@ export namespace MyNS {
 		/** The ID of the account for which to get/update account LIA settings. */
 		accountId?: string | null;
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** Inventory validation contact email. Required only for SetInventoryValidationContact. */
@@ -2951,7 +3096,10 @@ export namespace MyNS {
 		/** The ID of the account for which to get/update account LIA settings. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Inventory validation contact email. Required only for SetInventoryValidationContact. */
@@ -3016,7 +3164,10 @@ export namespace MyNS {
 
 	export interface LiasettingsCustomBatchResponseEntry {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -3034,7 +3185,10 @@ export namespace MyNS {
 	}
 	export interface LiasettingsCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsCustomBatchResponseEntry`" */
@@ -3247,7 +3401,10 @@ export namespace MyNS {
 		/** The retailer's loyalty points in absolute value. */
 		pointsValue?: string | null;
 
-		/** The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0. */
+		/**
+		 * The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0.
+		 * Type: double
+		 */
 		ratio?: number | null;
 	}
 	export interface LoyaltyPointsFormProperties {
@@ -3258,7 +3415,10 @@ export namespace MyNS {
 		/** The retailer's loyalty points in absolute value. */
 		pointsValue: FormControl<string | null | undefined>,
 
-		/** The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0. */
+		/**
+		 * The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0.
+		 * Type: double
+		 */
 		ratio: FormControl<number | null | undefined>,
 	}
 	export function CreateLoyaltyPointsFormGroup() {
@@ -3895,25 +4055,46 @@ export namespace MyNS {
 		price?: Price;
 		product?: OrderLineItemProduct;
 
-		/** Number of items canceled. */
+		/**
+		 * Number of items canceled.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityCanceled?: number | null;
 
-		/** Number of items delivered. */
+		/**
+		 * Number of items delivered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityDelivered?: number | null;
 
-		/** Number of items ordered. */
+		/**
+		 * Number of items ordered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityOrdered?: number | null;
 
-		/** Number of items pending. */
+		/**
+		 * Number of items pending.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityPending?: number | null;
 
-		/** Number of items ready for pickup. */
+		/**
+		 * Number of items ready for pickup.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityReadyForPickup?: number | null;
 
-		/** Number of items returned. */
+		/**
+		 * Number of items returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityReturned?: number | null;
 
-		/** Number of items shipped. */
+		/**
+		 * Number of items shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityShipped?: number | null;
 		returnInfo?: OrderLineItemReturnInfo;
 
@@ -3927,25 +4108,46 @@ export namespace MyNS {
 		/** The ID of the line item. */
 		id: FormControl<string | null | undefined>,
 
-		/** Number of items canceled. */
+		/**
+		 * Number of items canceled.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityCanceled: FormControl<number | null | undefined>,
 
-		/** Number of items delivered. */
+		/**
+		 * Number of items delivered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityDelivered: FormControl<number | null | undefined>,
 
-		/** Number of items ordered. */
+		/**
+		 * Number of items ordered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityOrdered: FormControl<number | null | undefined>,
 
-		/** Number of items pending. */
+		/**
+		 * Number of items pending.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityPending: FormControl<number | null | undefined>,
 
-		/** Number of items ready for pickup. */
+		/**
+		 * Number of items ready for pickup.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityReadyForPickup: FormControl<number | null | undefined>,
 
-		/** Number of items returned. */
+		/**
+		 * Number of items returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityReturned: FormControl<number | null | undefined>,
 
-		/** Number of items shipped. */
+		/**
+		 * Number of items shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityShipped: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderLineItemFormGroup() {
@@ -3994,7 +4196,10 @@ export namespace MyNS {
 		/** Date on which the cancellation has been created, in ISO 8601 format. */
 		creationDate?: string | null;
 
-		/** The quantity that was canceled. */
+		/**
+		 * The quantity that was canceled.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Buy on Google until you make an update to that product. This will not affect your Shopping ads. Acceptable values are: - "`autoPostInternal`" - "`autoPostInvalidBillingAddress`" - "`autoPostNoInventory`" - "`autoPostPriceError`" - "`autoPostUndeliverableShippingAddress`" - "`couponAbuse`" - "`customerCanceled`" - "`customerInitiatedCancel`" - "`customerSupportRequested`" - "`failToPushOrderGoogleError`" - "`failToPushOrderMerchantError`" - "`failToPushOrderMerchantFulfillmentError`" - "`failToPushOrderToMerchant`" - "`failToPushOrderToMerchantOutOfStock`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`merchantDidNotShipOnTime`" - "`noInventory`" - "`orderTimeout`" - "`other`" - "`paymentAbuse`" - "`paymentDeclined`" - "`priceError`" - "`returnRefundAbuse`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -4011,7 +4216,10 @@ export namespace MyNS {
 		/** Date on which the cancellation has been created, in ISO 8601 format. */
 		creationDate: FormControl<string | null | undefined>,
 
-		/** The quantity that was canceled. */
+		/**
+		 * The quantity that was canceled.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Buy on Google until you make an update to that product. This will not affect your Shopping ads. Acceptable values are: - "`autoPostInternal`" - "`autoPostInvalidBillingAddress`" - "`autoPostNoInventory`" - "`autoPostPriceError`" - "`autoPostUndeliverableShippingAddress`" - "`couponAbuse`" - "`customerCanceled`" - "`customerInitiatedCancel`" - "`customerSupportRequested`" - "`failToPushOrderGoogleError`" - "`failToPushOrderMerchantError`" - "`failToPushOrderMerchantFulfillmentError`" - "`failToPushOrderToMerchant`" - "`failToPushOrderToMerchantOutOfStock`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`merchantDidNotShipOnTime`" - "`noInventory`" - "`orderTimeout`" - "`other`" - "`paymentAbuse`" - "`paymentDeclined`" - "`priceError`" - "`returnRefundAbuse`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -4033,7 +4241,10 @@ export namespace MyNS {
 
 	export interface OrderLineItemReturnInfo {
 
-		/** Required. How many days later the item can be returned. */
+		/**
+		 * Required. How many days later the item can be returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysToReturn?: number | null;
 
 		/** Required. Whether the item is returnable. */
@@ -4044,7 +4255,10 @@ export namespace MyNS {
 	}
 	export interface OrderLineItemReturnInfoFormProperties {
 
-		/** Required. How many days later the item can be returned. */
+		/**
+		 * Required. How many days later the item can be returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysToReturn: FormControl<number | null | undefined>,
 
 		/** Required. Whether the item is returnable. */
@@ -4070,7 +4284,10 @@ export namespace MyNS {
 		/** Date on which the item has been created, in ISO 8601 format. */
 		creationDate?: string | null;
 
-		/** Quantity that is returned. */
+		/**
+		 * Quantity that is returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -4087,7 +4304,10 @@ export namespace MyNS {
 		/** Date on which the item has been created, in ISO 8601 format. */
 		creationDate: FormControl<string | null | undefined>,
 
-		/** Quantity that is returned. */
+		/**
+		 * Quantity that is returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -4144,13 +4364,19 @@ export namespace MyNS {
 		/** The carrier for the shipping. Optional. See `shipments[].carrier` for a list of acceptable values. */
 		carrier?: string | null;
 
-		/** Required. Maximum transit time. */
+		/**
+		 * Required. Maximum transit time.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxDaysInTransit?: number | null;
 
 		/** Required. The name of the shipping method. */
 		methodName?: string | null;
 
-		/** Required. Minimum transit time. */
+		/**
+		 * Required. Minimum transit time.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minDaysInTransit?: number | null;
 	}
 	export interface OrderLineItemShippingDetailsMethodFormProperties {
@@ -4158,13 +4384,19 @@ export namespace MyNS {
 		/** The carrier for the shipping. Optional. See `shipments[].carrier` for a list of acceptable values. */
 		carrier: FormControl<string | null | undefined>,
 
-		/** Required. Maximum transit time. */
+		/**
+		 * Required. Maximum transit time.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		maxDaysInTransit: FormControl<number | null | undefined>,
 
 		/** Required. The name of the shipping method. */
 		methodName: FormControl<string | null | undefined>,
 
-		/** Required. Minimum transit time. */
+		/**
+		 * Required. Minimum transit time.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		minDaysInTransit: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderLineItemShippingDetailsMethodFormGroup() {
@@ -4180,10 +4412,16 @@ export namespace MyNS {
 	export interface OrderPaymentMethod {
 		billingAddress?: OrderAddress;
 
-		/** The card expiration month (January = 1, February = 2 etc.). */
+		/**
+		 * The card expiration month (January = 1, February = 2 etc.).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationMonth?: number | null;
 
-		/** The card expiration year (4-digit, e.g. 2015). */
+		/**
+		 * The card expiration year (4-digit, e.g. 2015).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationYear?: number | null;
 
 		/** The last four digits of the card number. */
@@ -4197,10 +4435,16 @@ export namespace MyNS {
 	}
 	export interface OrderPaymentMethodFormProperties {
 
-		/** The card expiration month (January = 1, February = 2 etc.). */
+		/**
+		 * The card expiration month (January = 1, February = 2 etc.).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationMonth: FormControl<number | null | undefined>,
 
-		/** The card expiration year (4-digit, e.g. 2015). */
+		/**
+		 * The card expiration year (4-digit, e.g. 2015).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationYear: FormControl<number | null | undefined>,
 
 		/** The last four digits of the card number. */
@@ -4453,7 +4697,10 @@ export namespace MyNS {
 		/** The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity that is shipped. */
+		/**
+		 * The quantity that is shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 	}
 	export interface OrderShipmentLineItemShipmentFormProperties {
@@ -4464,7 +4711,10 @@ export namespace MyNS {
 		/** The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity that is shipped. */
+		/**
+		 * The quantity that is shipped.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderShipmentLineItemShipmentFormGroup() {
@@ -5044,7 +5294,10 @@ export namespace MyNS {
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to cancel. */
+		/**
+		 * The quantity to cancel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -5064,7 +5317,10 @@ export namespace MyNS {
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to cancel. */
+		/**
+		 * The quantity to cancel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -5344,7 +5600,10 @@ export namespace MyNS {
 	export interface TestOrderLineItem {
 		product?: TestOrderLineItemProduct;
 
-		/** Required. Number of items ordered. */
+		/**
+		 * Required. Number of items ordered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityOrdered?: number | null;
 		returnInfo?: OrderLineItemReturnInfo;
 		shippingDetails?: OrderLineItemShippingDetails;
@@ -5352,7 +5611,10 @@ export namespace MyNS {
 	}
 	export interface TestOrderLineItemFormProperties {
 
-		/** Required. Number of items ordered. */
+		/**
+		 * Required. Number of items ordered.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantityOrdered: FormControl<number | null | undefined>,
 	}
 	export function CreateTestOrderLineItemFormGroup() {
@@ -5458,10 +5720,16 @@ export namespace MyNS {
 
 	export interface TestOrderPaymentMethod {
 
-		/** The card expiration month (January = 1, February = 2 etc.). */
+		/**
+		 * The card expiration month (January = 1, February = 2 etc.).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationMonth?: number | null;
 
-		/** The card expiration year (4-digit, e.g. 2015). */
+		/**
+		 * The card expiration year (4-digit, e.g. 2015).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationYear?: number | null;
 
 		/** The last four digits of the card number. */
@@ -5475,10 +5743,16 @@ export namespace MyNS {
 	}
 	export interface TestOrderPaymentMethodFormProperties {
 
-		/** The card expiration month (January = 1, February = 2 etc.). */
+		/**
+		 * The card expiration month (January = 1, February = 2 etc.).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationMonth: FormControl<number | null | undefined>,
 
-		/** The card expiration year (4-digit, e.g. 2015). */
+		/**
+		 * The card expiration year (4-digit, e.g. 2015).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expirationYear: FormControl<number | null | undefined>,
 
 		/** The last four digits of the card number. */
@@ -5543,7 +5817,10 @@ export namespace MyNS {
 		/** The ID of the line item to return. */
 		lineItemId?: string | null;
 
-		/** Quantity that is returned. */
+		/**
+		 * Quantity that is returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 	}
 	export interface OrdersCustomBatchRequestEntryCreateTestReturnReturnItemFormProperties {
@@ -5551,7 +5828,10 @@ export namespace MyNS {
 		/** The ID of the line item to return. */
 		lineItemId: FormControl<string | null | undefined>,
 
-		/** Quantity that is returned. */
+		/**
+		 * Quantity that is returned.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOrdersCustomBatchRequestEntryCreateTestReturnReturnItemFormGroup() {
@@ -5601,7 +5881,10 @@ export namespace MyNS {
 
 	export interface OrdersCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 		cancel?: OrdersCustomBatchRequestEntryCancel;
 		cancelLineItem?: OrdersCustomBatchRequestEntryCancelLineItem;
@@ -5632,7 +5915,10 @@ export namespace MyNS {
 	}
 	export interface OrdersCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the managing account. */
@@ -5697,7 +5983,10 @@ export namespace MyNS {
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to cancel. */
+		/**
+		 * The quantity to cancel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -5714,7 +6003,10 @@ export namespace MyNS {
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to cancel. */
+		/**
+		 * The quantity to cancel.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" */
@@ -5744,7 +6036,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -5761,7 +6056,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -5816,7 +6114,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`damagedOrUsed`" - "`missingComponent`" - "`notEligible`" - "`other`" - "`outOfReturnWindow`" */
@@ -5833,7 +6134,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`damagedOrUsed`" - "`missingComponent`" - "`notEligible`" - "`other`" - "`outOfReturnWindow`" */
@@ -5861,7 +6165,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return. */
+		/**
+		 * The quantity to return.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -5878,7 +6185,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return. */
+		/**
+		 * The quantity to return.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -5908,7 +6218,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -5925,7 +6238,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6150,7 +6466,10 @@ export namespace MyNS {
 
 	export interface OrdersCustomBatchResponseEntry {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -6167,7 +6486,10 @@ export namespace MyNS {
 	}
 	export interface OrdersCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The status of the execution. Only defined if 1. the request was successful; and 2. the method is not `get`, `getByMerchantOrderId`, or one of the test methods. Acceptable values are: - "`duplicate`" - "`executed`" */
@@ -6236,7 +6558,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6256,7 +6581,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6395,7 +6723,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`damagedOrUsed`" - "`missingComponent`" - "`notEligible`" - "`other`" - "`outOfReturnWindow`" */
@@ -6415,7 +6746,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. */
+		/**
+		 * The quantity to return and refund.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`damagedOrUsed`" - "`missingComponent`" - "`notEligible`" - "`other`" - "`outOfReturnWindow`" */
@@ -6471,7 +6805,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return. */
+		/**
+		 * The quantity to return.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6491,7 +6828,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return. */
+		/**
+		 * The quantity to return.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6549,7 +6889,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId?: string | null;
 
-		/** The quantity to return and refund. Quantity is required. */
+		/**
+		 * The quantity to return and refund. Quantity is required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity?: number | null;
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -6569,7 +6912,10 @@ export namespace MyNS {
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
 		productId: FormControl<string | null | undefined>,
 
-		/** The quantity to return and refund. Quantity is required. */
+		/**
+		 * The quantity to return and refund. Quantity is required.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" */
@@ -7008,7 +7354,10 @@ export namespace MyNS {
 
 	export interface PosCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The absolute quantity of an item available at the given store. */
@@ -7034,7 +7383,10 @@ export namespace MyNS {
 	}
 	export interface PosCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the POS data provider. */
@@ -7297,7 +7649,10 @@ export namespace MyNS {
 
 	export interface PosCustomBatchResponseEntry {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -7317,7 +7672,10 @@ export namespace MyNS {
 	}
 	export interface PosCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#posCustomBatchResponseEntry`" */
@@ -7760,7 +8118,10 @@ export namespace MyNS {
 		/** Title of an item for dynamic remarketing campaigns. */
 		displayAdsTitle?: string | null;
 
-		/** Offer margin for dynamic remarketing campaigns. */
+		/**
+		 * Offer margin for dynamic remarketing campaigns.
+		 * Type: double
+		 */
 		displayAdsValue?: number | null;
 
 		/** The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - "`A`" - "`A+`" - "`A++`" - "`A+++`" - "`B`" - "`C`" - "`D`" - "`E`" - "`F`" - "`G`" */
@@ -7954,7 +8315,10 @@ export namespace MyNS {
 		/** Title of an item for dynamic remarketing campaigns. */
 		displayAdsTitle: FormControl<string | null | undefined>,
 
-		/** Offer margin for dynamic remarketing campaigns. */
+		/**
+		 * Offer margin for dynamic remarketing campaigns.
+		 * Type: double
+		 */
 		displayAdsValue: FormControl<number | null | undefined>,
 
 		/** The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - "`A`" - "`A+`" - "`A++`" - "`A+++`" - "`B`" - "`C`" - "`D`" - "`E`" - "`F`" - "`G`" */
@@ -8226,7 +8590,10 @@ export namespace MyNS {
 		/** The unit of value. */
 		unit?: string | null;
 
-		/** The dimension of the product used to calculate the shipping cost of the item. */
+		/**
+		 * The dimension of the product used to calculate the shipping cost of the item.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface ProductShippingDimensionFormProperties {
@@ -8234,7 +8601,10 @@ export namespace MyNS {
 		/** The unit of value. */
 		unit: FormControl<string | null | undefined>,
 
-		/** The dimension of the product used to calculate the shipping cost of the item. */
+		/**
+		 * The dimension of the product used to calculate the shipping cost of the item.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateProductShippingDimensionFormGroup() {
@@ -8250,7 +8620,10 @@ export namespace MyNS {
 		/** The unit of value. */
 		unit?: string | null;
 
-		/** The weight of the product used to calculate the shipping cost of the item. */
+		/**
+		 * The weight of the product used to calculate the shipping cost of the item.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface ProductShippingWeightFormProperties {
@@ -8258,7 +8631,10 @@ export namespace MyNS {
 		/** The unit of value. */
 		unit: FormControl<string | null | undefined>,
 
-		/** The weight of the product used to calculate the shipping cost of the item. */
+		/**
+		 * The weight of the product used to calculate the shipping cost of the item.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateProductShippingWeightFormGroup() {
@@ -8280,7 +8656,10 @@ export namespace MyNS {
 		/** The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. */
 		postalCode?: string | null;
 
-		/** The percentage of tax rate that applies to the item price. */
+		/**
+		 * The percentage of tax rate that applies to the item price.
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** The geographic region to which the tax rate applies. */
@@ -8300,7 +8679,10 @@ export namespace MyNS {
 		/** The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. */
 		postalCode: FormControl<string | null | undefined>,
 
-		/** The percentage of tax rate that applies to the item price. */
+		/**
+		 * The percentage of tax rate that applies to the item price.
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** The geographic region to which the tax rate applies. */
@@ -8350,7 +8732,10 @@ export namespace MyNS {
 		/** The unit of the measure. */
 		unit?: string | null;
 
-		/** The measure of an item. */
+		/**
+		 * The measure of an item.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface ProductUnitPricingMeasureFormProperties {
@@ -8358,7 +8743,10 @@ export namespace MyNS {
 		/** The unit of the measure. */
 		unit: FormControl<string | null | undefined>,
 
-		/** The measure of an item. */
+		/**
+		 * The measure of an item.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateProductUnitPricingMeasureFormGroup() {
@@ -8602,7 +8990,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch products request. */
 	export interface ProductsCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The ID of the managing account. */
@@ -8621,7 +9012,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch products request. */
 	export interface ProductsCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the managing account. */
@@ -8667,7 +9061,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch products response. */
 	export interface ProductsCustomBatchResponseEntry {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -8683,7 +9080,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch products response. */
 	export interface ProductsCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#productsCustomBatchResponseEntry`" */
@@ -8739,7 +9139,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch productstatuses request. */
 	export interface ProductstatusesCustomBatchRequestEntry {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination. */
@@ -8759,7 +9162,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch productstatuses request. */
 	export interface ProductstatusesCustomBatchRequestEntryFormProperties {
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 		includeAttributes: FormControl<boolean | null | undefined>,
 
@@ -8807,7 +9213,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch productstatuses response. */
 	export interface ProductstatusesCustomBatchResponseEntry {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -8823,7 +9232,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch productstatuses response. */
 	export interface ProductstatusesCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry this entry responds to. */
+		/**
+		 * The ID of the request entry this entry responds to.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#productstatusesCustomBatchResponseEntry`" */
@@ -9096,18 +9508,30 @@ export namespace MyNS {
 
 	export interface WarehouseCutoffTime {
 
-		/** Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse. */
+		/**
+		 * Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour?: number | null;
 
-		/** Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse. */
+		/**
+		 * Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute?: number | null;
 	}
 	export interface WarehouseCutoffTimeFormProperties {
 
-		/** Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse. */
+		/**
+		 * Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse. */
+		/**
+		 * Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 	}
 	export function CreateWarehouseCutoffTimeFormGroup() {
@@ -9138,7 +9562,10 @@ export namespace MyNS {
 		/** The ID of the account for which to get/update account shipping settings. */
 		accountId?: string | null;
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** The ID of the managing account. */
@@ -9157,7 +9584,10 @@ export namespace MyNS {
 		/** The ID of the account for which to get/update account shipping settings. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** An entry ID, unique within the batch request. */
+		/**
+		 * An entry ID, unique within the batch request.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** The ID of the managing account. */
@@ -9200,7 +9630,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch shipping settings response. */
 	export interface ShippingsettingsCustomBatchResponseEntry {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId?: number | null;
 
 		/** A list of errors returned by a failed batch entry. */
@@ -9216,7 +9649,10 @@ export namespace MyNS {
 	/** A batch entry encoding a single non-batch shipping settings response. */
 	export interface ShippingsettingsCustomBatchResponseEntryFormProperties {
 
-		/** The ID of the request entry to which this entry responds. */
+		/**
+		 * The ID of the request entry to which this entry responds.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		batchId: FormControl<number | null | undefined>,
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#shippingsettingsCustomBatchResponseEntry`" */
@@ -9450,6 +9886,7 @@ export namespace MyNS {
 		 * Get {merchantId}/accounts
 		 * @param {string} merchantId The ID of the managing account. This must be a multi-client account.
 		 * @param {number} maxResults The maximum number of accounts to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {AccountsListResponse} Successful response
 		 */
@@ -9533,6 +9970,7 @@ export namespace MyNS {
 		 * @param {string} merchantId The ID of the managing account. This must be a multi-client account.
 		 * @param {Array<string>} destinations If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
 		 * @param {number} maxResults The maximum number of account statuses to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {AccountstatusesListResponse} Successful response
 		 */
@@ -9557,6 +9995,7 @@ export namespace MyNS {
 		 * Get {merchantId}/accounttax
 		 * @param {string} merchantId The ID of the managing account. This must be a multi-client account.
 		 * @param {number} maxResults The maximum number of tax settings to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {AccounttaxListResponse} Successful response
 		 */
@@ -9592,6 +10031,7 @@ export namespace MyNS {
 		 * Get {merchantId}/datafeeds
 		 * @param {string} merchantId The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
 		 * @param {number} maxResults The maximum number of products to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {DatafeedsListResponse} Successful response
 		 */
@@ -9662,6 +10102,7 @@ export namespace MyNS {
 		 * Get {merchantId}/datafeedstatuses
 		 * @param {string} merchantId The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
 		 * @param {number} maxResults The maximum number of products to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {DatafeedstatusesListResponse} Successful response
 		 */
@@ -9687,6 +10128,7 @@ export namespace MyNS {
 		 * Get {merchantId}/liasettings
 		 * @param {string} merchantId The ID of the managing account. This must be a multi-client account.
 		 * @param {number} maxResults The maximum number of LIA settings to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {LiasettingsListResponse} Successful response
 		 */
@@ -9810,6 +10252,7 @@ export namespace MyNS {
 		 * @param {string} disbursementEndDate The last date which disbursements occurred. In ISO 8601 format. Default: current date.
 		 * @param {string} disbursementStartDate The first date which disbursements occurred. In ISO 8601 format.
 		 * @param {number} maxResults The maximum number of disbursements to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {OrderreportsListDisbursementsResponse} Successful response
 		 */
@@ -9823,6 +10266,7 @@ export namespace MyNS {
 		 * @param {string} merchantId The ID of the account that manages the order. This cannot be a multi-client account.
 		 * @param {string} disbursementId The Google-provided ID of the disbursement (found in Wallet).
 		 * @param {number} maxResults The maximum number of disbursements to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @param {string} transactionEndDate The last date in which transaction occurred. In ISO 8601 format. Default: current date.
 		 * @param {string} transactionStartDate The first date in which transaction occurred. In ISO 8601 format.
@@ -9839,6 +10283,7 @@ export namespace MyNS {
 		 * @param {string} createdEndDate Obtains order returns created before this date (inclusively), in ISO 8601 format.
 		 * @param {string} createdStartDate Obtains order returns created after this date (inclusively), in ISO 8601 format.
 		 * @param {number} maxResults The maximum number of order returns to return in the response, used for paging. The default value is 25 returns per page, and the maximum allowed value is 250 returns per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Content_orderreturns_listOrderBy} orderBy Return the results in the specified order.
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {OrderreturnsListResponse} Successful response
@@ -9864,6 +10309,7 @@ export namespace MyNS {
 		 * @param {string} merchantId The ID of the account that manages the order. This cannot be a multi-client account.
 		 * @param {boolean} acknowledged Obtains orders that match the acknowledgement status. When set to true, obtains orders that have been acknowledged. When false, obtains orders that have not been acknowledged. We recommend using this filter set to `false`, in conjunction with the `acknowledge` call, such that only un-acknowledged orders are returned. 
 		 * @param {number} maxResults The maximum number of orders to return in the response, used for paging. The default value is 25 orders per page, and the maximum allowed value is 250 orders per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderBy Order results by placement date in descending or ascending order. Acceptable values are: - placedDateAsc - placedDateDesc 
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @param {string} placedDateEnd Obtains orders placed before this date (exclusively), in ISO 8601 format.
@@ -10129,6 +10575,7 @@ export namespace MyNS {
 		 * @param {string} merchantId The ID of the account that contains the products. This account cannot be a multi-client account.
 		 * @param {boolean} includeInvalidInsertedItems Flag to include the invalid inserted items in the result of the list request. By default the invalid items are not shown (the default value is false).
 		 * @param {number} maxResults The maximum number of products to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {ProductsListResponse} Successful response
 		 */
@@ -10178,6 +10625,7 @@ export namespace MyNS {
 		 * @param {boolean} includeAttributes Flag to include full product data in the results of the list request. The default value is false.
 		 * @param {boolean} includeInvalidInsertedItems Flag to include the invalid inserted items in the result of the list request. By default the invalid items are not shown (the default value is false).
 		 * @param {number} maxResults The maximum number of product statuses to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {ProductstatusesListResponse} Successful response
 		 */
@@ -10203,6 +10651,7 @@ export namespace MyNS {
 		 * Get {merchantId}/shippingsettings
 		 * @param {string} merchantId The ID of the managing account. This must be a multi-client account.
 		 * @param {number} maxResults The maximum number of shipping settings to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {ShippingsettingsListResponse} Successful response
 		 */

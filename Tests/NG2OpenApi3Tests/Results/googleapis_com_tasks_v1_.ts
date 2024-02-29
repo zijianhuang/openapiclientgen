@@ -289,6 +289,7 @@ export namespace MyNS {
 		 * @param {string} dueMax Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
 		 * @param {string} dueMin Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
 		 * @param {number} maxResults Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token specifying the result page to return. Optional.
 		 * @param {boolean} showCompleted Flag indicating whether completed tasks are returned in the result. Optional. The default is True. Note that showHidden must also be True to show tasks completed in first party clients, such as the web UI and Google's mobile apps.
 		 * @param {boolean} showDeleted Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.
@@ -373,6 +374,7 @@ export namespace MyNS {
 		 * Returns all the authenticated user's task lists.
 		 * Get tasks/v1/users/@me/lists
 		 * @param {number} maxResults Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token specifying the result page to return. Optional.
 		 * @return {TaskLists} Successful response
 		 */

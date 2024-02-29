@@ -22,7 +22,9 @@ export namespace MyNS {
 		 * * error - an error message
 		 * Get bng2latlong/{easting}/{northing}
 		 * @param {number} easting An OSGB36 (British National Grid) easting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} northing An OSGB36 (British National Grid) northing.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Bng2latlong_easting_northingGetReturn} A JSON object containing the original easting and northing, and the converted latitude and longitude.
 		 */
 		Bng2latlong_easting_northingGet(easting: number, northing: number, headersHandler?: () => HttpHeaders): Observable<Bng2latlong_easting_northingGetReturn> {
@@ -31,18 +33,34 @@ export namespace MyNS {
 	}
 
 	export interface Bng2latlong_easting_northingGetReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		easting?: number | null;
 		error?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		northing?: number | null;
 		status?: Bng2latlong_easting_northingGetReturnStatus | null;
 	}
 	export interface Bng2latlong_easting_northingGetReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		easting: FormControl<number | null | undefined>,
 		error: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		northing: FormControl<number | null | undefined>,
 		status: FormControl<Bng2latlong_easting_northingGetReturnStatus | null | undefined>,
 	}

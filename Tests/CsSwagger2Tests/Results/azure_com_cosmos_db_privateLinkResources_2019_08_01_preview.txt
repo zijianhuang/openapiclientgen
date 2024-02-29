@@ -89,9 +89,15 @@ namespace MyNS
 		/// PrivateLinkResources_ListByDatabaseAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateLinkResources
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResourceListResult> PrivateLinkResources_ListByDatabaseAccountAsync(string subscriptionId, string resourceGroupName, string api_version, string accountName)
 		{
@@ -121,9 +127,15 @@ namespace MyNS
 		/// PrivateLinkResources_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateLinkResources/{groupName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="groupName">The name of the private link resource.</param>
 		/// <returns>Successfully retrieved a specified private link resource.</returns>
 		public async Task<PrivateLinkResource> PrivateLinkResources_GetAsync(string subscriptionId, string resourceGroupName, string api_version, string accountName, string groupName)

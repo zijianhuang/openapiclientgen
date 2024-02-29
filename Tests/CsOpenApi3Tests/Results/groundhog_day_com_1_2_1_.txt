@@ -339,7 +339,9 @@ namespace MyNS
 		/// Get all predictions for a given year.
 		/// Predictions api/v1/predictions
 		/// </summary>
-		/// <param name="year">A calendar year</param>
+		/// <param name="year">A calendar year
+		/// Minimum: 1886
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<PredictionsReturn> PredictionsAsync(int year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -17,8 +17,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -60,8 +60,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		transfer_caller_id?: Trunk_enum_transfer_caller_id | null;
@@ -74,8 +74,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -114,8 +114,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		transfer_caller_id: FormControl<Trunk_enum_transfer_caller_id | null | undefined>,
@@ -152,8 +152,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the CredentialList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -168,15 +168,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the CredentialList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the Trunk the credential list in associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid?: string | null;
 
@@ -187,8 +187,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the CredentialList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -203,15 +203,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the CredentialList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Trunk the credential list in associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid: FormControl<string | null | undefined>,
 
@@ -235,8 +235,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IpAccessControlList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -251,15 +251,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the IpAccessControlList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the Trunk the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid?: string | null;
 
@@ -270,8 +270,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IpAccessControlList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -286,15 +286,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the IpAccessControlList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Trunk the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid: FormControl<string | null | undefined>,
 
@@ -318,8 +318,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the OriginationUrl resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -335,13 +335,16 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name?: string | null;
 
-		/** The relative importance of the URI. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important URI. */
+		/**
+		 * The relative importance of the URI. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important URI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/**
 		 * The unique string that we created to identify the OriginationUrl resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -350,23 +353,26 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Trunk that owns the Origination URL.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid?: string | null;
 
 		/** The absolute URL of the resource. */
 		url?: string | null;
 
-		/** The value that determines the relative share of the load the URI should receive compared to other URIs with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. URLs with higher values receive more load than those with lower ones with the same priority. */
+		/**
+		 * The value that determines the relative share of the load the URI should receive compared to other URIs with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. URLs with higher values receive more load than those with lower ones with the same priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 	export interface Trunkingv1trunkorigination_urlFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the OriginationUrl resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -382,13 +388,16 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name: FormControl<string | null | undefined>,
 
-		/** The relative importance of the URI. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important URI. */
+		/**
+		 * The relative importance of the URI. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important URI.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the OriginationUrl resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -397,15 +406,18 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Trunk that owns the Origination URL.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid: FormControl<string | null | undefined>,
 
 		/** The absolute URL of the resource. */
 		url: FormControl<string | null | undefined>,
 
-		/** The value that determines the relative share of the load the URI should receive compared to other URIs with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. URLs with higher values receive more load than those with lower ones with the same priority. */
+		/**
+		 * The value that determines the relative share of the load the URI should receive compared to other URIs with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. URLs with higher values receive more load than those with lower ones with the same priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateTrunkingv1trunkorigination_urlFormGroup() {
@@ -429,8 +441,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		address_requirements?: Phone_number_enum_address_requirement | null;
@@ -461,15 +473,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the application that handles SMS messages sent to the phone number. If an `sms_application_sid` is present, we ignore all `sms_*_url` values and use those of the application.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sms_application_sid?: string | null;
 
@@ -493,8 +505,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Trunk that handles calls to the phone number. If a `trunk_sid` is present, we ignore all of the voice URLs and voice applications and use those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid?: string | null;
 
@@ -503,8 +515,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the application that handles calls to the phone number. If a `voice_application_sid` is present, we ignore all of the voice URLs and use those set on the application. Setting a `voice_application_sid` will automatically delete your `trunk_sid` and vice versa.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		voice_application_sid?: string | null;
 
@@ -527,8 +539,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		address_requirements: FormControl<Phone_number_enum_address_requirement | null | undefined>,
@@ -559,15 +571,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the application that handles SMS messages sent to the phone number. If an `sms_application_sid` is present, we ignore all `sms_*_url` values and use those of the application.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sms_application_sid: FormControl<string | null | undefined>,
 
@@ -591,8 +603,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Trunk that handles calls to the phone number. If a `trunk_sid` is present, we ignore all of the voice URLs and voice applications and use those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		trunk_sid: FormControl<string | null | undefined>,
 
@@ -601,8 +613,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the application that handles calls to the phone number. If a `voice_application_sid` is present, we ignore all of the voice URLs and use those set on the application. Setting a `voice_application_sid` will automatically delete your `trunk_sid` and vice versa.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		voice_application_sid: FormControl<string | null | undefined>,
 
@@ -677,7 +689,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListTrunkReturn} OK
 		 */
@@ -688,6 +702,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Trunks/{Sid}
 		 * @param {string} Sid The unique string that we created to identify the Trunk resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteTrunk(Sid: string): Observable<HttpResponse<string>> {
@@ -697,6 +712,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{Sid}
 		 * @param {string} Sid The unique string that we created to identify the Trunk resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunk} OK
 		 */
 		FetchTrunk(Sid: string): Observable<Trunkingv1trunk> {
@@ -706,8 +722,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/CredentialLists
 		 * @param {string} TrunkSid The SID of the Trunk from which to read the credential lists.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialListReturn} OK
 		 */
@@ -718,7 +737,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to delete the credential list.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the CredentialList resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredentialList(TrunkSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -728,7 +749,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to fetch the credential list.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the CredentialList resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunkcredential_list} OK
 		 */
 		FetchCredentialList(TrunkSid: string, Sid: string): Observable<Trunkingv1trunkcredential_list> {
@@ -739,8 +762,11 @@ export namespace MyNS {
 		 * List all IP Access Control Lists for a Trunk
 		 * Get v1/Trunks/{TrunkSid}/IpAccessControlLists
 		 * @param {string} TrunkSid The SID of the Trunk from which to read the IP Access Control Lists.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListIpAccessControlListReturn} OK
 		 */
@@ -752,7 +778,9 @@ export namespace MyNS {
 		 * Remove an associated IP Access Control List from a Trunk
 		 * Delete v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to delete the IP Access Control List.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the IpAccessControlList resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteIpAccessControlList(TrunkSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -762,7 +790,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to fetch the IP Access Control List.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the IpAccessControlList resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunkip_access_control_list} OK
 		 */
 		FetchIpAccessControlList(TrunkSid: string, Sid: string): Observable<Trunkingv1trunkip_access_control_list> {
@@ -772,8 +802,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/OriginationUrls
 		 * @param {string} TrunkSid The SID of the Trunk from which to read the OriginationUrl.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListOriginationUrlReturn} OK
 		 */
@@ -784,7 +817,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to delete the OriginationUrl.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the OriginationUrl resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteOriginationUrl(TrunkSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -794,7 +829,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to fetch the OriginationUrl.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the OriginationUrl resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunkorigination_url} OK
 		 */
 		FetchOriginationUrl(TrunkSid: string, Sid: string): Observable<Trunkingv1trunkorigination_url> {
@@ -804,8 +841,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/PhoneNumbers
 		 * @param {string} TrunkSid The SID of the Trunk from which to read the PhoneNumber resources.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListPhoneNumberReturn} OK
 		 */
@@ -816,7 +856,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to delete the PhoneNumber resource.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the PhoneNumber resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeletePhoneNumber(TrunkSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -826,7 +868,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		 * @param {string} TrunkSid The SID of the Trunk from which to fetch the PhoneNumber resource.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the PhoneNumber resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunkphone_number} OK
 		 */
 		FetchPhoneNumber(TrunkSid: string, Sid: string): Observable<Trunkingv1trunkphone_number> {
@@ -836,6 +880,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Trunks/{TrunkSid}/Recording
 		 * @param {string} TrunkSid The SID of the Trunk from which to fetch the recording settings.
+		 *     Min length: 34    Max length: 34
 		 * @return {Trunkingv1trunkrecording} OK
 		 */
 		FetchRecording(TrunkSid: string): Observable<Trunkingv1trunkrecording> {
@@ -859,7 +904,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -868,7 +917,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -902,7 +955,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -911,7 +968,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -945,7 +1006,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -954,7 +1019,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -988,7 +1057,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -997,7 +1070,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1031,7 +1108,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1040,7 +1121,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

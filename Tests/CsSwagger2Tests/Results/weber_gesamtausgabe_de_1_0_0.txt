@@ -201,8 +201,12 @@ namespace MyNS
 		/// <param name="element">The XML element to search for</param>
 		/// <param name="_namespace">The element namespace. Defaults to the TEI namespace</param>
 		/// <param name="docType">The WeGA document type</param>
-		/// <param name="offset">Position of first item to retrieve (starting from 1)</param>
-		/// <param name="limit">Number of items to retrieve (200 max)</param>
+		/// <param name="offset">Position of first item to retrieve (starting from 1)
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">Number of items to retrieve (200 max)
+		/// Maximum: 200
+		// </param>
 		/// <returns>An array of documents</returns>
 		public async Task<CodeSample[]> Code_SamplesGetByElementAnd_namespaceAndDocTypeAndOffsetAndLimitAsync(string element, string _namespace, string[] docType, int offset, int limit)
 		{
@@ -234,8 +238,12 @@ namespace MyNS
 		/// DocumentsGetByDocTypeAndOffsetAndLimit documents
 		/// </summary>
 		/// <param name="docType">The WeGA document type</param>
-		/// <param name="offset">Position of first item to retrieve (starting from 1)</param>
-		/// <param name="limit">Number of items to retrieve (200 max)</param>
+		/// <param name="offset">Position of first item to retrieve (starting from 1)
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">Number of items to retrieve (200 max)
+		/// Maximum: 200
+		// </param>
 		/// <returns>An array of documents</returns>
 		public async Task<Document[]> DocumentsGetByDocTypeAndOffsetAndLimitAsync(string[] docType, int offset, int limit)
 		{
@@ -269,8 +277,12 @@ namespace MyNS
 		/// <param name="authorID">The author ID to search for. Accepted ID formats are WeGA, e.g. A002068 or http://weber-gesamtausgabe.de/A002068, VIAF, e.g. http://viaf.org/viaf/310642461, or  GND, e.g. http://d-nb.info/gnd/118629662
 		///</param>
 		/// <param name="docType">The WeGA document type</param>
-		/// <param name="offset">Position of first item to retrieve (starting from 1)</param>
-		/// <param name="limit">Number of items to retrieve (200 max)</param>
+		/// <param name="offset">Position of first item to retrieve (starting from 1)
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">Number of items to retrieve (200 max)
+		/// Maximum: 200
+		// </param>
 		/// <returns>An array of documents</returns>
 		public async Task<Document[]> DocumentsGetByAuthorIDAndDocTypeAndOffsetAndLimitAsync(string authorID, string[] docType, int offset, int limit)
 		{
@@ -304,8 +316,12 @@ namespace MyNS
 		/// <param name="fromDate">The min date to search for</param>
 		/// <param name="toDate">The max date to search for</param>
 		/// <param name="docType">The WeGA document type</param>
-		/// <param name="offset">Position of first item to retrieve (starting from 1)</param>
-		/// <param name="limit">Number of items to retrieve (200 max)</param>
+		/// <param name="offset">Position of first item to retrieve (starting from 1)
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">Number of items to retrieve (200 max)
+		/// Maximum: 200
+		// </param>
 		/// <returns>An array of documents</returns>
 		public async Task<Document[]> DocumentsGetByFromDateAndToDateAndDocTypeAndOffsetAndLimitAsync(System.DateOnly fromDate, System.DateOnly toDate, string[] docType, int offset, int limit)
 		{
@@ -339,8 +355,12 @@ namespace MyNS
 		/// <param name="docID">The document ID that is to be mentioned. Accepted ID formats are WeGA, e.g. A002068 or http://weber-gesamtausgabe.de/A002068, VIAF, e.g. http://viaf.org/viaf/310642461, or  GND, e.g. http://d-nb.info/gnd/118629662
 		///</param>
 		/// <param name="docType">The WeGA document type</param>
-		/// <param name="offset">Position of first item to retrieve (starting from 1)</param>
-		/// <param name="limit">Number of items to retrieve (200 max)</param>
+		/// <param name="offset">Position of first item to retrieve (starting from 1)
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">Number of items to retrieve (200 max)
+		/// Maximum: 200
+		// </param>
 		/// <returns>An array of documents</returns>
 		public async Task<Document[]> DocumentsGetByDocIDAndDocTypeAndOffsetAndLimitAsync(string docID, string[] docType, int offset, int limit)
 		{

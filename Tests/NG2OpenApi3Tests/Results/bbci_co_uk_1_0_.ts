@@ -35,7 +35,10 @@ export namespace MyNS {
 		/** Required */
 		categories: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		count: number;
 
 		/** Required */
@@ -70,7 +73,10 @@ export namespace MyNS {
 	}
 	export interface ProgrammeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -165,9 +171,13 @@ export namespace MyNS {
 		/** Required */
 		master_brand: Master_brand;
 		next_broadcast?: EpisodeNext_broadcast;
+
+		/** Type: double */
 		numeric_tleo_position?: number | null;
 		original_title?: string | null;
 		parent_id?: string | null;
+
+		/** Type: double */
 		parent_position?: number | null;
 		preview_id?: string | null;
 		programme_type?: EpisodeProgramme_type | null;
@@ -232,9 +242,13 @@ export namespace MyNS {
 		live: FormControl<boolean | null | undefined>,
 		live_subtitle: FormControl<string | null | undefined>,
 		live_title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		numeric_tleo_position: FormControl<number | null | undefined>,
 		original_title: FormControl<string | null | undefined>,
 		parent_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		parent_position: FormControl<number | null | undefined>,
 		preview_id: FormControl<string | null | undefined>,
 		programme_type: FormControl<EpisodeProgramme_type | null | undefined>,
@@ -820,7 +834,11 @@ export namespace MyNS {
 	export enum BroadcastType { broadcast = 'broadcast' }
 
 	export interface Category {
+
+		/** Type: double */
 		child_episode_count?: number | null;
+
+		/** Type: double */
 		child_programme_count?: number | null;
 		contextual_title?: string | null;
 
@@ -839,7 +857,11 @@ export namespace MyNS {
 		type: CategoryType;
 	}
 	export interface CategoryFormProperties {
+
+		/** Type: double */
 		child_episode_count: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		child_programme_count: FormControl<number | null | undefined>,
 		contextual_title: FormControl<string | null | undefined>,
 
@@ -1084,6 +1106,8 @@ export namespace MyNS {
 
 		/** Required */
 		availability: ClipVersionsAvailability;
+
+		/** Type: double */
 		credits_start?: number | null;
 
 		/** Required */
@@ -1115,6 +1139,8 @@ export namespace MyNS {
 		uhd: boolean;
 	}
 	export interface ClipVersionsFormProperties {
+
+		/** Type: double */
 		credits_start: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1288,18 +1314,30 @@ export namespace MyNS {
 
 	export interface InteractionInteraction_points {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		show_from: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		skip_to: number;
 	}
 	export interface InteractionInteraction_pointsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		show_from: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		skip_to: FormControl<number | null | undefined>,
 	}
 	export function CreateInteractionInteraction_pointsFormGroup() {
@@ -1379,6 +1417,8 @@ export namespace MyNS {
 	export enum ClipVersionsType { version = 'version', version_large = 'version_large' }
 
 	export interface Group {
+
+		/** Type: double */
 		count?: number | null;
 		episode_sort_direction?: string | null;
 		group_type?: GroupGroup_type | null;
@@ -1398,6 +1438,8 @@ export namespace MyNS {
 		type: GroupType;
 	}
 	export interface GroupFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		episode_sort_direction: FormControl<string | null | undefined>,
 		group_type: FormControl<GroupGroup_type | null | undefined>,
@@ -1829,6 +1871,8 @@ export namespace MyNS {
 	}
 
 	export interface Store_versionStore_session {
+
+		/** Type: double */
 		ceiling?: number | null;
 
 		/** Required */
@@ -1838,6 +1882,8 @@ export namespace MyNS {
 		token: string;
 	}
 	export interface Store_versionStore_sessionFormProperties {
+
+		/** Type: double */
 		ceiling: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1976,6 +2022,8 @@ export namespace MyNS {
 
 		/** Required */
 		availability: VersionAvailability;
+
+		/** Type: double */
 		credits_start?: number | null;
 
 		/** Required */
@@ -2007,6 +2055,8 @@ export namespace MyNS {
 		uhd: boolean;
 	}
 	export interface VersionFormProperties {
+
+		/** Type: double */
 		credits_start: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2199,11 +2249,17 @@ export namespace MyNS {
 
 		/** Required */
 		has_next: boolean;
+
+		/** Type: double */
 		offset?: number | null;
 
 		/** Required */
 		programme: Programme;
+
+		/** Type: double */
 		progress?: number | null;
+
+		/** Type: double */
 		remaining?: number | null;
 		status?: WatchingStatus | null;
 
@@ -2220,8 +2276,14 @@ export namespace MyNS {
 
 		/** Required */
 		has_next: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		remaining: FormControl<number | null | undefined>,
 		status: FormControl<WatchingStatus | null | undefined>,
 
@@ -2259,15 +2321,18 @@ export namespace MyNS {
 		 * Get atoz/{letter}/programmes
 		 * @param {string} letter Letter to search by, a to z or the string '0-9'
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} initial_child_count The depth to return child entities.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {Get_Programmes_AtoZ_search_Sort} sort The sort order of the results.
 		 * @param {Get_Programmes_AtoZ_search_Sort_direction} sort_direction Whether to sort ascending or descending
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @return {Ibl} Default response
 		 */
-		Get_Programmes_AtoZ_search_(letter: string, rights: Get_Programmes_AtoZ_search_Rights, page: number, per_page: number, initial_child_count: number, sort: Get_Programmes_AtoZ_search_Sort, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability): Observable<Ibl> {
+		Get_Programmes_AtoZ_search_(letter: string, rights: Get_Programmes_AtoZ_search_Rights, page: string, per_page: string, initial_child_count: number, sort: Get_Programmes_AtoZ_search_Sort, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'atoz/' + (letter == null ? '' : encodeURIComponent(letter)) + '/programmes&rights=' + rights + '&page=' + page + '&per_page=' + per_page + '&initial_child_count=' + initial_child_count + '&sort=' + sort + '&sort_direction=' + sort_direction + '&availability=' + availability, {});
 		}
 
@@ -2302,12 +2367,14 @@ export namespace MyNS {
 		 * @param {Get_Categories_Lang} lang The language for any applicable localised strings.
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Get_Episodes_by_category_Sort} sort The sort order of the results.
 		 * @return {Ibl} Default response
 		 */
-		Get_Episodes_by_category_(category: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: number, per_page: number, sort: Get_Episodes_by_category_Sort | null | undefined): Observable<Ibl> {
+		Get_Episodes_by_category_(category: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: string, per_page: string, sort: Get_Episodes_by_category_Sort | null | undefined): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'categories/' + (category == null ? '' : encodeURIComponent(category)) + '/episodes&lang=' + lang + '&rights=' + rights + '&availability=' + availability + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -2334,11 +2401,13 @@ export namespace MyNS {
 		 * @param {Get_Categories_Lang} lang The language for any applicable localised strings.
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Ibl} Default response
 		 */
-		Get_Programmes_by_category_(category: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: number, per_page: number): Observable<Ibl> {
+		Get_Programmes_by_category_(category: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: string, per_page: string): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'categories/' + (category == null ? '' : encodeURIComponent(category)) + '/programmes&lang=' + lang + '&rights=' + rights + '&availability=' + availability + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -2363,11 +2432,12 @@ export namespace MyNS {
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {Array<string>} mixin Request additional data in the output
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} from Time to return results from, e.g. -3h
 		 * @return {Ibl} Default response
 		 */
-		Get_Broadcasts_by_channel_(channel: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined, per_page: number, from: string | null | undefined): Observable<Ibl> {
+		Get_Broadcasts_by_channel_(channel: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined, per_page: string, from: string | null | undefined): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'channels/' + (channel == null ? '' : encodeURIComponent(channel)) + '/broadcasts&lang=' + lang + '&rights=' + rights + '&availability=' + availability + '&' + mixin?.map(z => `mixin=${encodeURIComponent(z)}`).join('&') + '&per_page=' + per_page + '&from=' + (from == null ? '' : encodeURIComponent(from)), {});
 		}
 
@@ -2395,11 +2465,13 @@ export namespace MyNS {
 		 * @param {Get_Categories_Lang} lang The language for any applicable localised strings.
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Ibl} Default response
 		 */
-		Get_Programmes_by_channel_(channel: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: number, per_page: number): Observable<Ibl> {
+		Get_Programmes_by_channel_(channel: string, lang: Get_Categories_Lang, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: string, per_page: string): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'channels/' + (channel == null ? '' : encodeURIComponent(channel)) + '/programmes&lang=' + lang + '&rights=' + rights + '&availability=' + availability + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -2423,6 +2495,7 @@ export namespace MyNS {
 		 * Get Clips
 		 * Get clips/{pid}
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @return {Ibl} Default response
@@ -2436,6 +2509,7 @@ export namespace MyNS {
 		 * Get the episode for a given episode identifier.
 		 * Get episodes/{pid}
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {Array<string>} mixin Request additional data in the output
@@ -2450,6 +2524,7 @@ export namespace MyNS {
 		 * Get Onward Journey (next programme)
 		 * Get episodes/{pid}/next
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @return {Ibl} Default response
@@ -2463,6 +2538,7 @@ export namespace MyNS {
 		 * Get Follow-ups (post-rolls)
 		 * Get episodes/{pid}/postrolls
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @return {Ibl} Default response
@@ -2476,6 +2552,7 @@ export namespace MyNS {
 		 * Get Trailers (pre-rolls)
 		 * Get episodes/{pid}/prerolls
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @return {Ibl} Default response
@@ -2489,13 +2566,16 @@ export namespace MyNS {
 		 * Get programme recommendations
 		 * Get episodes/{pid}/recommendations
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Ibl} Default response
 		 */
-		Get_Programme_recommendations_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: number, per_page: number): Observable<Ibl> {
+		Get_Programme_recommendations_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, page: string, per_page: string): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'episodes/' + (pid == null ? '' : encodeURIComponent(pid)) + '/recommendations&rights=' + rights + '&availability=' + availability + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -2504,16 +2584,19 @@ export namespace MyNS {
 		 * Get programmes popular
 		 * Get groups/popular/episodes
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} initial_child_count The depth to return child entities.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {string} sort The sort order of the results.
 		 * @param {Get_Programmes_AtoZ_search_Sort_direction} sort_direction Whether to sort ascending or descending
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {Array<string>} mixin Request additional data in the output
 		 * @return {Ibl} Default response
 		 */
-		Get_Programmes_popular_(rights: Get_Programmes_AtoZ_search_Rights, page: number, per_page: number, initial_child_count: number, sort: string, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined): Observable<Ibl> {
+		Get_Programmes_popular_(rights: Get_Programmes_AtoZ_search_Rights, page: string, per_page: string, initial_child_count: number, sort: string, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'groups/popular/episodes?rights=' + rights + '&page=' + page + '&per_page=' + per_page + '&initial_child_count=' + initial_child_count + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&sort_direction=' + sort_direction + '&availability=' + availability + '&' + mixin?.map(z => `mixin=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -2522,17 +2605,21 @@ export namespace MyNS {
 		 * Get episodes by group, brand or series
 		 * Get groups/{pid}/episodes
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
-		 * @param {number} page The page index.
-		 * @param {number} per_page The number of results to return.
+		 * @param {string} page The page index.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page The number of results to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} initial_child_count The depth to return child entities.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {string} sort The sort order of the results.
 		 * @param {Get_Programmes_AtoZ_search_Sort_direction} sort_direction Whether to sort ascending or descending
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {Array<string>} mixin Request additional data in the output
 		 * @return {Ibl} Default response
 		 */
-		Get_Episodes_by_group_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, page: number, per_page: number, initial_child_count: number, sort: string, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined): Observable<Ibl> {
+		Get_Episodes_by_group_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, page: string, per_page: string, initial_child_count: number, sort: string, sort_direction: Get_Programmes_AtoZ_search_Sort_direction, availability: Get_Programmes_AtoZ_search_Availability, mixin: Array<string> | null | undefined): Observable<Ibl> {
 			return this.http.get<Ibl>(this.baseUri + 'groups/' + (pid == null ? '' : encodeURIComponent(pid)) + '/episodes&rights=' + rights + '&page=' + page + '&per_page=' + per_page + '&initial_child_count=' + initial_child_count + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&sort_direction=' + sort_direction + '&availability=' + availability + '&' + mixin?.map(z => `mixin=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -2555,9 +2642,11 @@ export namespace MyNS {
 		 * Get the programme for a given programme identifier.
 		 * Get programmes/{pid}
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {number} initial_child_count The depth to return child entities.
+		 *     Minimum: 1    Maximum: 4
 		 * @return {Ibl} Default response
 		 */
 		Get_Programmes_by_parent_PID_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, initial_child_count: number): Observable<Ibl> {
@@ -2569,9 +2658,11 @@ export namespace MyNS {
 		 * Get the child episodes belonging to a given programme identifier.
 		 * Get programmes/{pid}/episodes
 		 * @param {string} pid The programme identifier.
+		 *     Min length: 8
 		 * @param {Get_Programmes_AtoZ_search_Rights} rights The rights group to limit results to.
 		 * @param {Get_Programmes_AtoZ_search_Availability} availability Whether to return all, or available programmes
 		 * @param {number} initial_child_count The depth to return child entities.
+		 *     Minimum: 1    Maximum: 4
 		 * @return {Ibl} Default response
 		 */
 		Get_Episodes_by_parent_PID_(pid: string, rights: Get_Programmes_AtoZ_search_Rights, availability: Get_Programmes_AtoZ_search_Availability, initial_child_count: number): Observable<Ibl> {
@@ -2642,6 +2733,7 @@ export namespace MyNS {
 		 * Get user store purchases
 		 * Get user/purchases
 		 * @param {number} identity_cookie The BBC-id cookie value
+		 *     Type: double
 		 * @return {Ibl} Default response
 		 */
 		Get_User_store_purchases_(identity_cookie: number): Observable<Ibl> {
@@ -2653,6 +2745,7 @@ export namespace MyNS {
 		 * Get user store recommendations
 		 * Get user/recommendations
 		 * @param {number} identity_cookie The BBC-id cookie value
+		 *     Type: double
 		 * @return {Ibl} Default response
 		 */
 		Get_User_store_recommendations_(identity_cookie: number): Observable<Ibl> {
@@ -2664,6 +2757,7 @@ export namespace MyNS {
 		 * Get user watching
 		 * Get user/watching
 		 * @param {number} identity_cookie The BBC-id cookie value
+		 *     Type: double
 		 * @return {Ibl} Default response
 		 */
 		Get_User_watching_(identity_cookie: number): Observable<Ibl> {

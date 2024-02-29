@@ -14,7 +14,10 @@ export namespace MyNS {
 		/** Required */
 		gravatar_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -34,7 +37,10 @@ export namespace MyNS {
 		/** Required */
 		gravatar_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -77,7 +83,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -109,7 +118,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -157,7 +169,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -218,7 +233,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -307,10 +325,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the GitHub app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
-		/** The number of installations associated with the GitHub app */
+		/**
+		 * The number of installations associated with the GitHub app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installations_count?: number | null;
 
 		/**
@@ -363,10 +385,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the GitHub app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The number of installations associated with the GitHub app */
+		/**
+		 * The number of installations associated with the GitHub app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installations_count: FormControl<number | null | undefined>,
 
 		/**
@@ -432,7 +458,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -493,7 +522,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -585,11 +617,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		previous_column_name?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: number;
 
 		/** Required */
@@ -603,11 +641,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		previous_column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -903,7 +947,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -925,7 +972,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1009,7 +1059,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -1040,7 +1093,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1089,10 +1145,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the GitHub app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
-		/** The number of installations associated with the GitHub app */
+		/**
+		 * The number of installations associated with the GitHub app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installations_count?: number | null;
 
 		/**
@@ -1145,10 +1205,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the GitHub app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The number of installations associated with the GitHub app */
+		/**
+		 * The number of installations associated with the GitHub app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installations_count: FormControl<number | null | undefined>,
 
 		/**
@@ -1233,7 +1297,10 @@ export namespace MyNS {
 		/** Required */
 		hashed_token: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		installation?: Nullable_scoped_installation;
 
@@ -1277,7 +1344,10 @@ export namespace MyNS {
 		/** Required */
 		hashed_token: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1404,7 +1474,10 @@ export namespace MyNS {
 	/** Base Gist */
 	export interface Base_gist {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
@@ -1465,7 +1538,10 @@ export namespace MyNS {
 	/** Base Gist */
 	export interface Base_gistFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1537,6 +1613,8 @@ export namespace MyNS {
 		filename?: string | null;
 		language?: string | null;
 		raw_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		type?: string | null;
 	}
@@ -1544,6 +1622,8 @@ export namespace MyNS {
 		filename: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		raw_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -1601,7 +1681,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -1624,7 +1707,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1844,7 +1930,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -1886,7 +1975,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1944,6 +2036,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -1999,6 +2092,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2207,6 +2301,8 @@ export namespace MyNS {
 		events?: Array<string>;
 		external_url?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		node_id?: string | null;
@@ -2220,6 +2316,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		external_url: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
@@ -2251,6 +2349,8 @@ export namespace MyNS {
 		gravatar_id?: string | null;
 		hooks_url?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		issues_url?: string | null;
 		login?: string | null;
@@ -2276,6 +2376,8 @@ export namespace MyNS {
 		gravatar_id: FormControl<string | null | undefined>,
 		hooks_url: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		issues_url: FormControl<string | null | undefined>,
 		login: FormControl<string | null | undefined>,
@@ -2345,6 +2447,8 @@ export namespace MyNS {
 	export interface Branch_restriction_policyTeams {
 		description?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		members_url?: string | null;
 		name?: string | null;
@@ -2359,6 +2463,8 @@ export namespace MyNS {
 	export interface Branch_restriction_policyTeamsFormProperties {
 		description: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		members_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -2396,6 +2502,8 @@ export namespace MyNS {
 		gists_url?: string | null;
 		gravatar_id?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		login?: string | null;
 		node_id?: string | null;
@@ -2416,6 +2524,8 @@ export namespace MyNS {
 		gists_url: FormControl<string | null | undefined>,
 		gravatar_id: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		login: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
@@ -2535,6 +2645,8 @@ export namespace MyNS {
 
 		/** Required */
 		protection_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		required_approving_review_count?: number | null;
 	}
 
@@ -2550,6 +2662,8 @@ export namespace MyNS {
 
 		/** Required */
 		protection_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		required_approving_review_count: FormControl<number | null | undefined>,
 	}
 	export function CreateBranch_with_protectionFormGroup() {
@@ -2664,7 +2778,10 @@ export namespace MyNS {
 		 */
 		author: Nullable_git_user;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count: number;
 
 		/**
@@ -2685,7 +2802,10 @@ export namespace MyNS {
 	}
 	export interface CommitCommitFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2789,10 +2909,16 @@ export namespace MyNS {
 	}
 
 	export interface CommitFiles {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions?: number | null;
 		blob_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		changes?: number | null;
 		contents_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions?: number | null;
 		filename?: string | null;
 		patch?: string | null;
@@ -2802,10 +2928,16 @@ export namespace MyNS {
 		status?: string | null;
 	}
 	export interface CommitFilesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions: FormControl<number | null | undefined>,
 		blob_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		changes: FormControl<number | null | undefined>,
 		contents_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		patch: FormControl<string | null | undefined>,
@@ -2859,13 +2991,25 @@ export namespace MyNS {
 	}
 
 	export interface CommitStats {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface CommitStatsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitStatsFormGroup() {
@@ -2887,10 +3031,16 @@ export namespace MyNS {
 		/** Required */
 		blob_href: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_line: number;
 
 		/** Required */
@@ -2902,10 +3052,16 @@ export namespace MyNS {
 		/** Required */
 		raw_details: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line: number;
 
 		/** Required */
@@ -2921,10 +3077,16 @@ export namespace MyNS {
 		/** Required */
 		blob_href: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_line: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2936,10 +3098,16 @@ export namespace MyNS {
 		/** Required */
 		raw_details: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3001,6 +3169,7 @@ export namespace MyNS {
 		/**
 		 * The id of the check.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3059,6 +3228,7 @@ export namespace MyNS {
 		/**
 		 * The id of the check.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3107,12 +3277,18 @@ export namespace MyNS {
 
 	export interface Check_runCheck_suite {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 	}
 	export interface Check_runCheck_suiteFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateCheck_runCheck_suiteFormGroup() {
@@ -3143,6 +3319,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the deployment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3196,6 +3373,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the deployment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3248,7 +3426,10 @@ export namespace MyNS {
 
 	export interface Check_runOutput {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotations_count: number;
 
 		/** Required */
@@ -3265,7 +3446,10 @@ export namespace MyNS {
 	}
 	export interface Check_runOutputFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotations_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3333,10 +3517,16 @@ export namespace MyNS {
 		 */
 		head_sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latest_check_runs_count: number;
 
 		/** Required */
@@ -3388,10 +3578,16 @@ export namespace MyNS {
 		 */
 		head_sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latest_check_runs_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3529,10 +3725,16 @@ export namespace MyNS {
 		/** Required */
 		head: Pull_request_minimalHead;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** Required */
@@ -3540,10 +3742,16 @@ export namespace MyNS {
 	}
 	export interface Pull_request_minimalFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3587,7 +3795,10 @@ export namespace MyNS {
 
 	export interface Pull_request_minimalBaseRepo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -3598,7 +3809,10 @@ export namespace MyNS {
 	}
 	export interface Pull_request_minimalBaseRepoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3645,7 +3859,10 @@ export namespace MyNS {
 
 	export interface Pull_request_minimalHeadRepo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -3656,7 +3873,10 @@ export namespace MyNS {
 	}
 	export interface Pull_request_minimalHeadRepoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3733,7 +3953,11 @@ export namespace MyNS {
 
 		/** Required */
 		fork: boolean;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count?: number | null;
 
 		/** Required */
@@ -3764,7 +3988,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		is_template?: boolean | null;
 
@@ -3797,6 +4024,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 
 		/** Required */
@@ -3804,7 +4033,11 @@ export namespace MyNS {
 
 		/** Required */
 		notifications_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count?: number | null;
 
 		/**
@@ -3823,8 +4056,12 @@ export namespace MyNS {
 
 		/** Required */
 		releases_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		ssh_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count?: number | null;
 
 		/** Required */
@@ -3832,6 +4069,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 
 		/** Required */
@@ -3858,7 +4097,11 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 		visibility?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count?: number | null;
 	}
 
@@ -3917,7 +4160,11 @@ export namespace MyNS {
 
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3948,7 +4195,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		is_template: FormControl<boolean | null | undefined>,
 
@@ -3980,6 +4230,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3987,7 +4239,11 @@ export namespace MyNS {
 
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3999,8 +4255,12 @@ export namespace MyNS {
 
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		ssh_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4008,6 +4268,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4030,7 +4292,11 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 		visibility: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateMinimal_repositoryFormGroup() {
@@ -4301,10 +4567,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -4364,6 +4636,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -4412,6 +4685,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 
 		/** Required */
@@ -4420,10 +4695,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/** Simple User */
@@ -4451,13 +4732,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -4466,6 +4753,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 
 		/** Required */
@@ -4497,10 +4786,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 
@@ -4592,10 +4887,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4655,6 +4956,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -4697,6 +4999,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4705,10 +5009,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/**
@@ -4726,13 +5036,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4741,6 +5057,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4770,10 +5088,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateNullable_repositoryFormGroup() {
@@ -4980,6 +5304,8 @@ export namespace MyNS {
 		downloads_url?: string | null;
 		events_url?: string | null;
 		fork?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count?: number | null;
 		forks_url?: string | null;
 		full_name?: string | null;
@@ -4995,6 +5321,8 @@ export namespace MyNS {
 		homepage?: string | null;
 		hooks_url?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		is_template?: boolean | null;
 		issue_comment_url?: string | null;
@@ -5008,9 +5336,13 @@ export namespace MyNS {
 		milestones_url?: string | null;
 		mirror_url?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 		node_id?: string | null;
 		notifications_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count?: number | null;
 		owner?: Nullable_repositoryTemplate_repositoryOwner;
 		permissions?: Nullable_repositoryTemplate_repositoryPermissions;
@@ -5018,11 +5350,17 @@ export namespace MyNS {
 		pulls_url?: string | null;
 		pushed_at?: string | null;
 		releases_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		ssh_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count?: number | null;
 		stargazers_url?: string | null;
 		statuses_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 		subscribers_url?: string | null;
 		subscription_url?: string | null;
@@ -5034,6 +5372,8 @@ export namespace MyNS {
 		updated_at?: string | null;
 		url?: string | null;
 		visibility?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count?: number | null;
 	}
 	export interface Nullable_repositoryTemplate_repositoryFormProperties {
@@ -5062,6 +5402,8 @@ export namespace MyNS {
 		downloads_url: FormControl<string | null | undefined>,
 		events_url: FormControl<string | null | undefined>,
 		fork: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count: FormControl<number | null | undefined>,
 		forks_url: FormControl<string | null | undefined>,
 		full_name: FormControl<string | null | undefined>,
@@ -5077,6 +5419,8 @@ export namespace MyNS {
 		homepage: FormControl<string | null | undefined>,
 		hooks_url: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		is_template: FormControl<boolean | null | undefined>,
 		issue_comment_url: FormControl<string | null | undefined>,
@@ -5090,19 +5434,29 @@ export namespace MyNS {
 		milestones_url: FormControl<string | null | undefined>,
 		mirror_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
 		notifications_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count: FormControl<number | null | undefined>,
 		private: FormControl<boolean | null | undefined>,
 		pulls_url: FormControl<string | null | undefined>,
 		pushed_at: FormControl<string | null | undefined>,
 		releases_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		ssh_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count: FormControl<number | null | undefined>,
 		stargazers_url: FormControl<string | null | undefined>,
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 		subscribers_url: FormControl<string | null | undefined>,
 		subscription_url: FormControl<string | null | undefined>,
@@ -5113,6 +5467,8 @@ export namespace MyNS {
 		updated_at: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 		visibility: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateNullable_repositoryTemplate_repositoryFormGroup() {
@@ -5206,6 +5562,8 @@ export namespace MyNS {
 		gists_url?: string | null;
 		gravatar_id?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		login?: string | null;
 		node_id?: string | null;
@@ -5226,6 +5584,8 @@ export namespace MyNS {
 		gists_url: FormControl<string | null | undefined>,
 		gravatar_id: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		login: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
@@ -5323,7 +5683,10 @@ export namespace MyNS {
 
 	export interface Check_suite_preferencePreferencesAuto_trigger_checks {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: number;
 
 		/** Required */
@@ -5331,7 +5694,10 @@ export namespace MyNS {
 	}
 	export interface Check_suite_preferencePreferencesAuto_trigger_checksFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5390,6 +5756,8 @@ export namespace MyNS {
 
 	/** Code Search Result Item */
 	export interface Code_search_result_item {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_size?: number | null;
 
 		/** Required */
@@ -5413,7 +5781,10 @@ export namespace MyNS {
 		 */
 		repository: Minimal_repository;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -5426,6 +5797,8 @@ export namespace MyNS {
 
 	/** Code Search Result Item */
 	export interface Code_search_result_itemFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5442,7 +5815,10 @@ export namespace MyNS {
 		/** Required */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5530,7 +5906,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -5591,7 +5970,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5710,7 +6092,10 @@ export namespace MyNS {
 		/** Required */
 		statuses: Array<Simple_commit_status>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 
 		/** Required */
@@ -5729,7 +6114,10 @@ export namespace MyNS {
 		/** Required */
 		state: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5760,7 +6148,10 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -5793,7 +6184,10 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5836,20 +6230,32 @@ export namespace MyNS {
 		/** Required */
 		days: Array<number>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week: number;
 	}
 
 	/** Commit Activity */
 	export interface Commit_activityFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week: FormControl<number | null | undefined>,
 	}
 	export function CreateCommit_activityFormGroup() {
@@ -5882,10 +6288,16 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: number;
 
 		/** Required */
@@ -5894,7 +6306,10 @@ export namespace MyNS {
 		/** Required */
 		path: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: number;
 		reactions?: Reaction_rollup;
 
@@ -5932,10 +6347,16 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5944,7 +6365,10 @@ export namespace MyNS {
 		/** Required */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5973,31 +6397,58 @@ export namespace MyNS {
 
 	export interface Reaction_rollup {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'+1': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'-1': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confused: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eyes: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heart: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hooray: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		laugh: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rocket: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 
 		/** Required */
@@ -6005,31 +6456,58 @@ export namespace MyNS {
 	}
 	export interface Reaction_rollupFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'+1': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'-1': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confused: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eyes: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heart: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hooray: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		laugh: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rocket: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6055,7 +6533,10 @@ export namespace MyNS {
 	/** Commit Comparison */
 	export interface Commit_comparison {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ahead_by: number;
 
 		/**
@@ -6064,7 +6545,10 @@ export namespace MyNS {
 		 */
 		base_commit: Commit;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		behind_by: number;
 
 		/** Required */
@@ -6092,7 +6576,10 @@ export namespace MyNS {
 		/** Required */
 		status: Commit_comparisonStatus;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_commits: number;
 
 		/** Required */
@@ -6102,10 +6589,16 @@ export namespace MyNS {
 	/** Commit Comparison */
 	export interface Commit_comparisonFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ahead_by: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		behind_by: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6123,7 +6616,10 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<Commit_comparisonStatus | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_commits: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6148,19 +6644,28 @@ export namespace MyNS {
 	/** Diff Entry */
 	export interface Diff_entry {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additions: number;
 
 		/** Required */
 		blob_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changes: number;
 
 		/** Required */
 		contents_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletions: number;
 
 		/** Required */
@@ -6181,19 +6686,28 @@ export namespace MyNS {
 	/** Diff Entry */
 	export interface Diff_entryFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additions: FormControl<number | null | undefined>,
 
 		/** Required */
 		blob_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changes: FormControl<number | null | undefined>,
 
 		/** Required */
 		contents_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletions: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6268,7 +6782,10 @@ export namespace MyNS {
 		 */
 		repository: Minimal_repository;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -6291,7 +6808,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6317,7 +6837,10 @@ export namespace MyNS {
 		/** Required */
 		author: Commit_search_result_itemCommitAuthor;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count: number;
 
 		/**
@@ -6338,7 +6861,10 @@ export namespace MyNS {
 	}
 	export interface Commit_search_result_itemCommitFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comment_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6529,7 +7055,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -6559,7 +7088,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6646,7 +7178,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 		submodule_git_url?: string | null;
 		target?: string | null;
@@ -6685,7 +7220,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 		submodule_git_url: FormControl<string | null | undefined>,
 		target: FormControl<string | null | undefined>,
@@ -6760,6 +7298,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the attachment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6787,6 +7326,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the attachment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6835,7 +7375,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -6869,7 +7412,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6953,7 +7499,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -6987,7 +7536,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7072,7 +7624,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -7103,7 +7658,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7182,7 +7740,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -7212,7 +7773,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7273,7 +7837,10 @@ export namespace MyNS {
 	export interface Contributor {
 		avatar_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contributions: number;
 		email?: string | null;
 		events_url?: string | null;
@@ -7282,6 +7849,8 @@ export namespace MyNS {
 		gists_url?: string | null;
 		gravatar_id?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		login?: string | null;
 		name?: string | null;
@@ -7302,7 +7871,10 @@ export namespace MyNS {
 	export interface ContributorFormProperties {
 		avatar_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contributions: FormControl<number | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		events_url: FormControl<string | null | undefined>,
@@ -7311,6 +7883,8 @@ export namespace MyNS {
 		gists_url: FormControl<string | null | undefined>,
 		gravatar_id: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		login: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -7363,7 +7937,10 @@ export namespace MyNS {
 		 */
 		author: Nullable_simple_user;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 
 		/** Required */
@@ -7373,7 +7950,10 @@ export namespace MyNS {
 	/** Contributor Activity */
 	export interface Contributor_activityFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateContributor_activityFormGroup() {
@@ -7384,15 +7964,31 @@ export namespace MyNS {
 	}
 
 	export interface Contributor_activityWeeks {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		a?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		c?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		d?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w?: number | null;
 	}
 	export interface Contributor_activityWeeksFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		a: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		c: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		d: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		w: FormControl<number | null | undefined>,
 	}
 	export function CreateContributor_activityWeeksFormGroup() {
@@ -7427,7 +8023,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -7459,7 +8058,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7486,11 +8088,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		previous_column_name?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: number;
 
 		/** Required */
@@ -7504,11 +8112,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		previous_column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7551,7 +8165,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -7585,7 +8202,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7631,7 +8251,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -7656,7 +8279,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -7712,6 +8338,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the deployment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7777,6 +8404,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the deployment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7871,7 +8499,10 @@ export namespace MyNS {
 		/** The URL for accessing your environment. */
 		environment_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** The URL to associate with this status. */
@@ -7927,7 +8558,10 @@ export namespace MyNS {
 		/** The URL for accessing your environment. */
 		environment_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The URL to associate with this status. */
@@ -8039,6 +8673,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the enterprise
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8082,6 +8717,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the enterprise
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8124,30 +8760,54 @@ export namespace MyNS {
 
 	export interface Enterprise_comment_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_commit_comments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_gist_comments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_issue_comments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pull_request_comments: number;
 	}
 	export interface Enterprise_comment_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_commit_comments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_gist_comments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_issue_comments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pull_request_comments: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_comment_overviewFormGroup() {
@@ -8162,24 +8822,42 @@ export namespace MyNS {
 
 	export interface Enterprise_gist_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_gists: number;
 	}
 	export interface Enterprise_gist_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_gists: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_gist_overviewFormGroup() {
@@ -8193,24 +8871,42 @@ export namespace MyNS {
 
 	export interface Enterprise_hook_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_hooks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inactive_hooks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_hooks: number;
 	}
 	export interface Enterprise_hook_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_hooks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inactive_hooks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_hooks: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_hook_overviewFormGroup() {
@@ -8224,24 +8920,42 @@ export namespace MyNS {
 
 	export interface Enterprise_issue_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_issues: number;
 	}
 	export interface Enterprise_issue_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_issues: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_issue_overviewFormGroup() {
@@ -8255,24 +8969,42 @@ export namespace MyNS {
 
 	export interface Enterprise_milestone_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_milestones: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_milestones: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_milestones: number;
 	}
 	export interface Enterprise_milestone_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_milestones: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_milestones: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_milestones: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_milestone_overviewFormGroup() {
@@ -8286,30 +9018,54 @@ export namespace MyNS {
 
 	export interface Enterprise_organization_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disabled_orgs: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_orgs: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_team_members: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_teams: number;
 	}
 	export interface Enterprise_organization_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disabled_orgs: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_orgs: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_team_members: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_teams: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_organization_overviewFormGroup() {
@@ -8344,12 +9100,18 @@ export namespace MyNS {
 
 	export interface Enterprise_page_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pages: number;
 	}
 	export interface Enterprise_page_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_page_overviewFormGroup() {
@@ -8361,30 +9123,54 @@ export namespace MyNS {
 
 	export interface Enterprise_pull_request_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mergeable_pulls: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merged_pulls: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pulls: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unmergeable_pulls: number;
 	}
 	export interface Enterprise_pull_request_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mergeable_pulls: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		merged_pulls: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pulls: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unmergeable_pulls: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_pull_request_overviewFormGroup() {
@@ -8399,42 +9185,78 @@ export namespace MyNS {
 
 	export interface Enterprise_repository_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fork_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		org_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		root_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pushes: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_wikis: number;
 	}
 	export interface Enterprise_repository_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fork_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		org_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		root_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_pushes: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_wikis: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_repository_overviewFormGroup() {
@@ -8451,24 +9273,42 @@ export namespace MyNS {
 
 	export interface Enterprise_user_overview {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		admin_users: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suspended_users: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_users: number;
 	}
 	export interface Enterprise_user_overviewFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		admin_users: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suspended_users: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_users: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprise_user_overviewFormGroup() {
@@ -8499,7 +9339,11 @@ export namespace MyNS {
 		avatar?: Enterprise_settingsEnterpriseAvatar;
 		cas?: Enterprise_settingsEnterpriseCas;
 		collectd?: Enterprise_settingsEnterpriseCollectd;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		configuration_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		configuration_run_count?: number | null;
 		customer?: Enterprise_settingsEnterpriseCustomer;
 		expire_sessions?: boolean | null;
@@ -8528,7 +9372,11 @@ export namespace MyNS {
 		admin_password: FormControl<string | null | undefined>,
 		assets: FormControl<string | null | undefined>,
 		auth_mode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		configuration_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		configuration_run_count: FormControl<number | null | undefined>,
 		expire_sessions: FormControl<boolean | null | undefined>,
 		github_hostname: FormControl<string | null | undefined>,
@@ -8595,6 +9443,8 @@ export namespace MyNS {
 		enabled?: boolean | null;
 		encryption?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		server?: string | null;
 		username?: string | null;
@@ -8603,6 +9453,8 @@ export namespace MyNS {
 		enabled: FormControl<boolean | null | undefined>,
 		encryption: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		server: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
@@ -8692,6 +9544,8 @@ export namespace MyNS {
 		host?: string | null;
 		method?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		posix_support?: boolean | null;
 		profile?: Enterprise_settingsEnterpriseLdapProfile;
@@ -8699,10 +9553,14 @@ export namespace MyNS {
 		recursive_group_search?: boolean | null;
 		search_strategy?: string | null;
 		sync_enabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		team_sync_interval?: number | null;
 		uid?: string | null;
 		user_groups?: Array<string>;
 		user_sync_emails?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_sync_interval?: number | null;
 		user_sync_keys?: boolean | null;
 		virtual_attribute_enabled?: boolean | null;
@@ -8713,14 +9571,20 @@ export namespace MyNS {
 		host: FormControl<string | null | undefined>,
 		method: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		posix_support: FormControl<boolean | null | undefined>,
 		recursive_group_search: FormControl<boolean | null | undefined>,
 		search_strategy: FormControl<string | null | undefined>,
 		sync_enabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		team_sync_interval: FormControl<number | null | undefined>,
 		uid: FormControl<string | null | undefined>,
 		user_sync_emails: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_sync_interval: FormControl<number | null | undefined>,
 		user_sync_keys: FormControl<boolean | null | undefined>,
 		virtual_attribute_enabled: FormControl<boolean | null | undefined>,
@@ -8790,6 +9654,8 @@ export namespace MyNS {
 		evaluation?: boolean | null;
 		expire_at?: string | null;
 		perpetual?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats?: number | null;
 		ssh_allowed?: boolean | null;
 		support_key?: string | null;
@@ -8800,6 +9666,8 @@ export namespace MyNS {
 		evaluation: FormControl<boolean | null | undefined>,
 		expire_at: FormControl<string | null | undefined>,
 		perpetual: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats: FormControl<number | null | undefined>,
 		ssh_allowed: FormControl<boolean | null | undefined>,
 		support_key: FormControl<string | null | undefined>,
@@ -9083,6 +9951,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the issue comment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9135,6 +10004,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the issue comment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9194,7 +10064,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
@@ -9209,7 +10082,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -9230,7 +10106,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub. */
@@ -9279,7 +10158,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9294,7 +10176,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9306,7 +10191,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9369,8 +10257,11 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/**
 		 * The name of the label.
@@ -9403,8 +10294,11 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the label.
@@ -9426,7 +10320,7 @@ export namespace MyNS {
 			color: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			default: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			node_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -9441,7 +10335,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: number;
 
 		/** Required */
@@ -9462,7 +10359,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -9474,10 +10374,14 @@ export namespace MyNS {
 		/**
 		 * The number of the milestone.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
 		/**
@@ -9505,7 +10409,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9520,7 +10427,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -9532,10 +10442,14 @@ export namespace MyNS {
 		/**
 		 * The number of the milestone.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
 		/**
@@ -9709,10 +10623,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -9772,6 +10692,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9820,6 +10741,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 
 		/** Required */
@@ -9828,10 +10751,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/** Simple User */
@@ -9859,13 +10788,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -9874,6 +10809,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 
 		/** Required */
@@ -9905,10 +10842,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 
@@ -10000,10 +10943,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10063,6 +11012,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10105,6 +11055,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10113,10 +11065,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/**
@@ -10134,13 +11092,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10149,6 +11113,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10178,10 +11144,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateRepositoryFormGroup() {
@@ -10336,6 +11308,8 @@ export namespace MyNS {
 		downloads_url?: string | null;
 		events_url?: string | null;
 		fork?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count?: number | null;
 		forks_url?: string | null;
 		full_name?: string | null;
@@ -10351,6 +11325,8 @@ export namespace MyNS {
 		homepage?: string | null;
 		hooks_url?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		is_template?: boolean | null;
 		issue_comment_url?: string | null;
@@ -10364,9 +11340,13 @@ export namespace MyNS {
 		milestones_url?: string | null;
 		mirror_url?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 		node_id?: string | null;
 		notifications_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count?: number | null;
 		owner?: RepositoryTemplate_repositoryOwner;
 		permissions?: RepositoryTemplate_repositoryPermissions;
@@ -10374,11 +11354,17 @@ export namespace MyNS {
 		pulls_url?: string | null;
 		pushed_at?: string | null;
 		releases_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		ssh_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count?: number | null;
 		stargazers_url?: string | null;
 		statuses_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 		subscribers_url?: string | null;
 		subscription_url?: string | null;
@@ -10390,6 +11376,8 @@ export namespace MyNS {
 		updated_at?: string | null;
 		url?: string | null;
 		visibility?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count?: number | null;
 	}
 	export interface RepositoryTemplate_repositoryFormProperties {
@@ -10418,6 +11406,8 @@ export namespace MyNS {
 		downloads_url: FormControl<string | null | undefined>,
 		events_url: FormControl<string | null | undefined>,
 		fork: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		forks_count: FormControl<number | null | undefined>,
 		forks_url: FormControl<string | null | undefined>,
 		full_name: FormControl<string | null | undefined>,
@@ -10433,6 +11423,8 @@ export namespace MyNS {
 		homepage: FormControl<string | null | undefined>,
 		hooks_url: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		is_template: FormControl<boolean | null | undefined>,
 		issue_comment_url: FormControl<string | null | undefined>,
@@ -10446,19 +11438,29 @@ export namespace MyNS {
 		milestones_url: FormControl<string | null | undefined>,
 		mirror_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
 		notifications_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_issues_count: FormControl<number | null | undefined>,
 		private: FormControl<boolean | null | undefined>,
 		pulls_url: FormControl<string | null | undefined>,
 		pushed_at: FormControl<string | null | undefined>,
 		releases_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		ssh_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stargazers_count: FormControl<number | null | undefined>,
 		stargazers_url: FormControl<string | null | undefined>,
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 		subscribers_url: FormControl<string | null | undefined>,
 		subscription_url: FormControl<string | null | undefined>,
@@ -10469,6 +11471,8 @@ export namespace MyNS {
 		updated_at: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 		visibility: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateRepositoryTemplate_repositoryFormGroup() {
@@ -10562,6 +11566,8 @@ export namespace MyNS {
 		gists_url?: string | null;
 		gravatar_id?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		login?: string | null;
 		node_id?: string | null;
@@ -10582,6 +11588,8 @@ export namespace MyNS {
 		gists_url: FormControl<string | null | undefined>,
 		gravatar_id: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		login: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
@@ -10673,7 +11681,10 @@ export namespace MyNS {
 
 	export interface EventRepo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -10684,7 +11695,10 @@ export namespace MyNS {
 	}
 	export interface EventRepoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10965,6 +11979,8 @@ export namespace MyNS {
 		name?: string | null;
 		path?: string | null;
 		sha?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		type?: string | null;
 		url?: string | null;
@@ -10976,6 +11992,8 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		sha: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -11092,10 +12110,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -11140,7 +12164,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		is_template?: boolean | null;
 
@@ -11184,7 +12211,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_count: number;
 
 		/** Required */
@@ -11193,10 +12223,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/** Simple User */
@@ -11224,7 +12260,10 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** A git repository */
@@ -11233,7 +12272,10 @@ export namespace MyNS {
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -11242,7 +12284,10 @@ export namespace MyNS {
 		/** Required */
 		statuses_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribers_count: number;
 
 		/** Required */
@@ -11276,10 +12321,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 
@@ -11357,10 +12408,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11405,7 +12462,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		is_template: FormControl<boolean | null | undefined>,
 
@@ -11443,7 +12503,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11452,10 +12515,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11470,13 +12539,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11485,7 +12560,10 @@ export namespace MyNS {
 		/** Required */
 		statuses_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11515,10 +12593,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateFull_repositoryFormGroup() {
@@ -11666,7 +12750,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -11704,7 +12791,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -11774,13 +12864,25 @@ export namespace MyNS {
 	}
 
 	export interface Gist_commitChange_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface Gist_commitChange_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGist_commitChange_statusFormGroup() {
@@ -11820,13 +12922,25 @@ export namespace MyNS {
 	}
 
 	export interface Gist_historyChange_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface Gist_historyChange_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		additions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deletions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGist_historyChange_statusFormGroup() {
@@ -11841,6 +12955,8 @@ export namespace MyNS {
 
 	/** Gist Simple */
 	export interface Gist_simple {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments?: number | null;
 		comments_url?: string | null;
 		commits_url?: string | null;
@@ -11870,6 +12986,8 @@ export namespace MyNS {
 
 	/** Gist Simple */
 	export interface Gist_simpleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments: FormControl<number | null | undefined>,
 		comments_url: FormControl<string | null | undefined>,
 		commits_url: FormControl<string | null | undefined>,
@@ -11916,6 +13034,8 @@ export namespace MyNS {
 		filename?: string | null;
 		language?: string | null;
 		raw_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		truncated?: boolean | null;
 		type?: string | null;
@@ -11925,6 +13045,8 @@ export namespace MyNS {
 		filename: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		raw_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		truncated: FormControl<boolean | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -11944,7 +13066,10 @@ export namespace MyNS {
 
 	export interface Gist_simpleFork_of {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
@@ -12003,7 +13128,10 @@ export namespace MyNS {
 	}
 	export interface Gist_simpleFork_ofFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12075,6 +13203,8 @@ export namespace MyNS {
 		filename?: string | null;
 		language?: string | null;
 		raw_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		type?: string | null;
 	}
@@ -12082,6 +13212,8 @@ export namespace MyNS {
 		filename: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		raw_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -12133,6 +13265,8 @@ export namespace MyNS {
 
 		/** Required */
 		blog: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collaborators?: number | null;
 
 		/** Required */
@@ -12140,6 +13274,8 @@ export namespace MyNS {
 
 		/** Required */
 		created_at: Date;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk_usage?: number | null;
 
 		/** Required */
@@ -12148,13 +13284,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: number;
 
 		/** Required */
 		followers_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: number;
 
 		/** Required */
@@ -12172,7 +13314,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -12189,14 +13334,24 @@ export namespace MyNS {
 
 		/** Required */
 		organizations_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owned_private_repos?: number | null;
 		plan?: Public_userPlan;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		private_gists?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: number;
 
 		/** Required */
@@ -12214,6 +13369,8 @@ export namespace MyNS {
 		/** Required */
 		subscriptions_url: string;
 		suspended_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_private_repos?: number | null;
 
 		/** Required */
@@ -12237,6 +13394,8 @@ export namespace MyNS {
 
 		/** Required */
 		blog: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12244,6 +13403,8 @@ export namespace MyNS {
 
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk_usage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12252,13 +13413,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: FormControl<number | null | undefined>,
 
 		/** Required */
 		followers_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12276,7 +13443,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12293,13 +13463,23 @@ export namespace MyNS {
 
 		/** Required */
 		organizations_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owned_private_repos: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		private_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12317,6 +13497,8 @@ export namespace MyNS {
 		/** Required */
 		subscriptions_url: FormControl<string | null | undefined>,
 		suspended_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_private_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -12373,30 +13555,48 @@ export namespace MyNS {
 
 	export interface Public_userPlan {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: number;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: number;
 	}
 	export interface Public_userPlanFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: FormControl<number | null | undefined>,
 	}
 	export function CreatePublic_userPlanFormGroup() {
@@ -12737,8 +13937,8 @@ export namespace MyNS {
 		/**
 		 * SHA for the reference
 		 * Required
-		 * Max length: 40
 		 * Min length: 40
+		 * Max length: 40
 		 */
 		sha: string;
 
@@ -12753,8 +13953,8 @@ export namespace MyNS {
 		/**
 		 * SHA for the reference
 		 * Required
-		 * Max length: 40
 		 * Min length: 40
+		 * Max length: 40
 		 */
 		sha: FormControl<string | null | undefined>,
 
@@ -12954,6 +14154,8 @@ export namespace MyNS {
 		mode?: string | null;
 		path?: string | null;
 		sha?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		type?: string | null;
 		url?: string | null;
@@ -12962,6 +14164,8 @@ export namespace MyNS {
 		mode: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		sha: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -13011,6 +14215,8 @@ export namespace MyNS {
 		config?: Global_hookConfig;
 		created_at?: string | null;
 		events?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		ping_url?: string | null;
@@ -13021,6 +14227,8 @@ export namespace MyNS {
 	export interface Global_hookFormProperties {
 		active: FormControl<boolean | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ping_url: FormControl<string | null | undefined>,
@@ -13069,6 +14277,8 @@ export namespace MyNS {
 		config?: Global_hook_2Config;
 		created_at?: string | null;
 		events?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		ping_url?: string | null;
@@ -13079,6 +14289,8 @@ export namespace MyNS {
 	export interface Global_hook_2FormProperties {
 		active: FormControl<boolean | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		ping_url: FormControl<string | null | undefined>,
@@ -13144,13 +14356,19 @@ export namespace MyNS {
 		/** Required */
 		expires_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
 		key_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primary_key_id: number;
 
 		/** Required */
@@ -13184,13 +14402,19 @@ export namespace MyNS {
 		/** Required */
 		expires_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
 		key_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primary_key_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13240,8 +14464,12 @@ export namespace MyNS {
 		created_at?: string | null;
 		emails?: Array<string>;
 		expires_at?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		key_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_key_id?: number | null;
 		public_key?: string | null;
 		raw_key?: string | null;
@@ -13254,8 +14482,12 @@ export namespace MyNS {
 		can_sign: FormControl<boolean | null | undefined>,
 		created_at: FormControl<string | null | undefined>,
 		expires_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		key_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_key_id: FormControl<number | null | undefined>,
 		public_key: FormControl<string | null | undefined>,
 		raw_key: FormControl<string | null | undefined>,
@@ -13302,6 +14534,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the webhook.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -13345,6 +14578,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the webhook.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -13436,7 +14670,10 @@ export namespace MyNS {
 
 	export interface Hook_response {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 
 		/** Required */
@@ -13447,7 +14684,10 @@ export namespace MyNS {
 	}
 	export interface Hook_responseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13516,7 +14756,10 @@ export namespace MyNS {
 		/** Required */
 		account: Simple_user;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: number;
 
 		/** Required */
@@ -13535,6 +14778,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the installation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -13560,6 +14804,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the user or organization this token is being scoped to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		target_id: number;
 
@@ -13576,7 +14821,10 @@ export namespace MyNS {
 		/** Required */
 		access_tokens_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13592,6 +14840,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the installation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -13611,6 +14860,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the user or organization this token is being scoped to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		target_id: FormControl<number | null | undefined>,
 
@@ -13745,7 +14995,10 @@ export namespace MyNS {
 		/** Simple User */
 		closed_by?: Nullable_simple_user;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
@@ -13760,7 +15013,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/**
@@ -13787,6 +15043,7 @@ export namespace MyNS {
 		/**
 		 * Number uniquely identifying the issue within its repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
@@ -13848,7 +15105,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13863,7 +15123,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13878,6 +15141,7 @@ export namespace MyNS {
 		/**
 		 * Number uniquely identifying the issue within its repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -14007,7 +15271,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Issue Simple */
@@ -14063,7 +15330,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		lock_reason: FormControl<string | null | undefined>,
 
@@ -14094,7 +15364,10 @@ export namespace MyNS {
 		/** Required */
 		dismissal_message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_id: number;
 
 		/** Required */
@@ -14106,7 +15379,10 @@ export namespace MyNS {
 		/** Required */
 		dismissal_message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14178,11 +15454,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		previous_column_name?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: number;
 
 		/** Required */
@@ -14198,11 +15480,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		previous_column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14289,7 +15577,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
@@ -14305,7 +15596,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -14326,7 +15620,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub. */
@@ -14339,7 +15636,10 @@ export namespace MyNS {
 		/** Required */
 		repository_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -14379,7 +15679,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14395,7 +15698,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14407,13 +15713,19 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Required */
 		repository_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14463,7 +15775,9 @@ export namespace MyNS {
 		color?: string | null;
 		default?: boolean | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		node_id?: string | null;
 		url?: string | null;
@@ -14472,7 +15786,9 @@ export namespace MyNS {
 		color: FormControl<string | null | undefined>,
 		default: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -14482,7 +15798,7 @@ export namespace MyNS {
 			color: new FormControl<string | null | undefined>(undefined),
 			default: new FormControl<boolean | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			node_id: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -14575,7 +15891,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -14600,7 +15919,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14635,7 +15957,10 @@ export namespace MyNS {
 	/** Key Simple */
 	export interface Key_simple {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -14645,7 +15970,10 @@ export namespace MyNS {
 	/** Key Simple */
 	export interface Key_simpleFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14672,7 +16000,10 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -14681,7 +16012,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 		Label_search_result_itemText_matches?: Array<Label_search_result_itemText_matches>;
 
@@ -14701,7 +16035,10 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14710,7 +16047,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14789,7 +16129,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -14823,7 +16166,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -14886,6 +16232,8 @@ export namespace MyNS {
 	export interface Ldap_mapping_team {
 		description?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		ldap_dn?: string | null;
 		members_url?: string | null;
@@ -14901,6 +16249,8 @@ export namespace MyNS {
 	export interface Ldap_mapping_teamFormProperties {
 		description: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		ldap_dn: FormControl<string | null | undefined>,
 		members_url: FormControl<string | null | undefined>,
@@ -14946,7 +16296,10 @@ export namespace MyNS {
 		blog: string;
 		business_plus?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: number;
 
 		/** Required */
@@ -14955,7 +16308,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_usage: number;
 
 		/** Required */
@@ -14964,13 +16320,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: number;
 
 		/** Required */
 		followers_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: number;
 
 		/** Required */
@@ -14988,7 +16350,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		ldap_dn?: string | null;
 
@@ -15007,17 +16372,29 @@ export namespace MyNS {
 		/** Required */
 		organizations_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		owned_private_repos: number;
 		plan?: Ldap_mapping_userPlan;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: number;
 
 		/** Required */
@@ -15036,7 +16413,10 @@ export namespace MyNS {
 		subscriptions_url: string;
 		suspended_at?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_private_repos: number;
 		twitter_username?: string | null;
 
@@ -15066,7 +16446,10 @@ export namespace MyNS {
 		blog: FormControl<string | null | undefined>,
 		business_plus: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15075,7 +16458,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_usage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15084,13 +16470,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: FormControl<number | null | undefined>,
 
 		/** Required */
 		followers_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15108,7 +16500,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		ldap_dn: FormControl<string | null | undefined>,
 
@@ -15127,16 +16522,28 @@ export namespace MyNS {
 		/** Required */
 		organizations_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		owned_private_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15155,7 +16562,10 @@ export namespace MyNS {
 		subscriptions_url: FormControl<string | null | undefined>,
 		suspended_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_private_repos: FormControl<number | null | undefined>,
 		twitter_username: FormControl<string | null | undefined>,
 
@@ -15220,30 +16630,48 @@ export namespace MyNS {
 
 	export interface Ldap_mapping_userPlan {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: number;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: number;
 	}
 	export interface Ldap_mapping_userPlanFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: FormControl<number | null | undefined>,
 	}
 	export function CreateLdap_mapping_userPlanFormGroup() {
@@ -15386,7 +16814,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -15423,7 +16854,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15481,19 +16915,27 @@ export namespace MyNS {
 	}
 
 	export interface License_info {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		days_until_expiration?: number | null;
 		expire_at?: string | null;
 		kind?: string | null;
 		seats?: string;
 		seats_available?: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats_used?: number | null;
 	}
 	export interface License_infoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		days_until_expiration: FormControl<number | null | undefined>,
 		expire_at: FormControl<string | null | undefined>,
 		kind: FormControl<string | null | undefined>,
 		seats: FormControl<string | null | undefined>,
 		seats_available: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats_used: FormControl<number | null | undefined>,
 	}
 	export function CreateLicense_infoFormGroup() {
@@ -15603,7 +17045,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -15637,7 +17082,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15685,7 +17133,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 	}
 	export interface Maintenance_statusConnection_servicesFormProperties {
@@ -15693,7 +17144,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateMaintenance_statusConnection_servicesFormGroup() {
@@ -15711,7 +17165,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: number;
 
 		/** Required */
@@ -15732,7 +17189,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -15744,10 +17204,14 @@ export namespace MyNS {
 		/**
 		 * The number of the milestone.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
 		/**
@@ -15775,7 +17239,10 @@ export namespace MyNS {
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closed_issues: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15790,7 +17257,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15802,10 +17272,14 @@ export namespace MyNS {
 		/**
 		 * The number of the milestone.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
 		/**
@@ -15869,7 +17343,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -15903,7 +17380,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -15964,7 +17444,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -15996,7 +17479,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16023,11 +17509,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		previous_column_name?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: number;
 
 		/** Required */
@@ -16041,11 +17533,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		previous_column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16082,7 +17580,10 @@ export namespace MyNS {
 		/** Required */
 		hashed_token: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		installation?: Nullable_scoped_installation;
 
@@ -16126,7 +17627,10 @@ export namespace MyNS {
 		/** Required */
 		hashed_token: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16210,7 +17714,10 @@ export namespace MyNS {
 		/** Required */
 		events: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -16238,7 +17745,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16375,7 +17885,10 @@ export namespace MyNS {
 		/** Required */
 		hooks_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -16415,7 +17928,10 @@ export namespace MyNS {
 		/** Required */
 		hooks_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16482,6 +17998,8 @@ export namespace MyNS {
 		allow_downstream_configuration?: boolean | null;
 		configuration_url?: string | null;
 		enforcement?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
@@ -16489,6 +18007,8 @@ export namespace MyNS {
 		allow_downstream_configuration: FormControl<boolean | null | undefined>,
 		configuration_url: FormControl<string | null | undefined>,
 		enforcement: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -16511,6 +18031,8 @@ export namespace MyNS {
 		avatar_url: string;
 		billing_email?: string | null;
 		blog?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collaborators?: number | null;
 		company?: string | null;
 
@@ -16520,16 +18042,24 @@ export namespace MyNS {
 
 		/** Required */
 		description: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk_usage?: number | null;
 		email?: string | null;
 
 		/** Required */
 		events_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: number;
 
 		/** Required */
@@ -16544,7 +18074,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -16568,21 +18101,33 @@ export namespace MyNS {
 
 		/** Required */
 		node_id: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owned_private_repos?: number | null;
 		plan?: Organization_fullPlan;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		private_gists?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: number;
 
 		/** Required */
 		public_members_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: number;
 
 		/** Required */
 		repos_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_private_repos?: number | null;
 		two_factor_requirement_enabled?: boolean | null;
 
@@ -16603,6 +18148,8 @@ export namespace MyNS {
 		avatar_url: FormControl<string | null | undefined>,
 		billing_email: FormControl<string | null | undefined>,
 		blog: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collaborators: FormControl<number | null | undefined>,
 		company: FormControl<string | null | undefined>,
 
@@ -16612,16 +18159,24 @@ export namespace MyNS {
 
 		/** Required */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk_usage: FormControl<number | null | undefined>,
 		email: FormControl<string | null | undefined>,
 
 		/** Required */
 		events_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16636,7 +18191,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16660,20 +18218,32 @@ export namespace MyNS {
 
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owned_private_repos: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		private_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: FormControl<number | null | undefined>,
 
 		/** Required */
 		public_members_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: FormControl<number | null | undefined>,
 
 		/** Required */
 		repos_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_private_repos: FormControl<number | null | undefined>,
 		two_factor_requirement_enabled: FormControl<boolean | null | undefined>,
 
@@ -16736,29 +18306,49 @@ export namespace MyNS {
 	}
 
 	export interface Organization_fullPlan {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		filled_seats?: number | null;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: number;
 	}
 	export interface Organization_fullPlanFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		filled_seats: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seats: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: FormControl<number | null | undefined>,
 	}
 	export function CreateOrganization_fullPlanFormGroup() {
@@ -16877,6 +18467,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		domains: Array<string>;
+
+		/** Type: DateOnly */
 		expires_at?: Date | null;
 
 		/** Required */
@@ -16886,6 +18478,8 @@ export namespace MyNS {
 
 		/** Required */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		expires_at: FormControl<Date | null | undefined>,
 
 		/** Required */
@@ -16938,7 +18532,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: number;
 
 		/** Required */
@@ -16969,7 +18566,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17058,8 +18658,12 @@ export namespace MyNS {
 		created_at?: string | null;
 		default_environment?: boolean | null;
 		download?: Pre_receive_environmentDownload;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hooks_count?: number | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image_url?: string | null;
 		name?: string | null;
@@ -17068,8 +18672,12 @@ export namespace MyNS {
 	export interface Pre_receive_environmentFormProperties {
 		created_at: FormControl<string | null | undefined>,
 		default_environment: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hooks_count: FormControl<number | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -17137,6 +18745,8 @@ export namespace MyNS {
 		allow_downstream_configuration?: boolean | null;
 		enforcement?: string | null;
 		environment?: Pre_receive_hookEnvironment;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		script?: string | null;
@@ -17145,6 +18755,8 @@ export namespace MyNS {
 	export interface Pre_receive_hookFormProperties {
 		allow_downstream_configuration: FormControl<boolean | null | undefined>,
 		enforcement: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		script: FormControl<string | null | undefined>,
@@ -17164,8 +18776,12 @@ export namespace MyNS {
 		created_at?: string | null;
 		default_environment?: boolean | null;
 		download?: Pre_receive_hookEnvironmentDownload;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hooks_count?: number | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image_url?: string | null;
 		name?: string | null;
@@ -17174,8 +18790,12 @@ export namespace MyNS {
 	export interface Pre_receive_hookEnvironmentFormProperties {
 		created_at: FormControl<string | null | undefined>,
 		default_environment: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hooks_count: FormControl<number | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -17220,12 +18840,16 @@ export namespace MyNS {
 	export interface Pre_receive_hookScript_repository {
 		full_name?: string | null;
 		html_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
 	export interface Pre_receive_hookScript_repositoryFormProperties {
 		full_name: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -17253,7 +18877,10 @@ export namespace MyNS {
 		blog: string;
 		business_plus?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: number;
 
 		/** Required */
@@ -17262,7 +18889,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_usage: number;
 
 		/** Required */
@@ -17271,13 +18901,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: number;
 
 		/** Required */
 		followers_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: number;
 
 		/** Required */
@@ -17295,7 +18931,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		ldap_dn?: string | null;
 
@@ -17314,17 +18953,29 @@ export namespace MyNS {
 		/** Required */
 		organizations_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		owned_private_repos: number;
 		plan?: Private_userPlan;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: number;
 
 		/** Required */
@@ -17343,7 +18994,10 @@ export namespace MyNS {
 		subscriptions_url: string;
 		suspended_at?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_private_repos: number;
 
 		/** Required */
@@ -17372,7 +19026,10 @@ export namespace MyNS {
 		blog: FormControl<string | null | undefined>,
 		business_plus: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17381,7 +19038,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_usage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17390,13 +19050,19 @@ export namespace MyNS {
 		/** Required */
 		events_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followers: FormControl<number | null | undefined>,
 
 		/** Required */
 		followers_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		following: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17414,7 +19080,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		ldap_dn: FormControl<string | null | undefined>,
 
@@ -17433,16 +19102,28 @@ export namespace MyNS {
 		/** Required */
 		organizations_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		owned_private_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_gists: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17461,7 +19142,10 @@ export namespace MyNS {
 		subscriptions_url: FormControl<string | null | undefined>,
 		suspended_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_private_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -17524,30 +19208,48 @@ export namespace MyNS {
 
 	export interface Private_userPlan {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: number;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: number;
 	}
 	export interface Private_userPlanFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collaborators: FormControl<number | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		private_repos: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: FormControl<number | null | undefined>,
 	}
 	export function CreatePrivate_userPlanFormGroup() {
@@ -17585,7 +19287,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/**
@@ -17597,7 +19302,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** The baseline permission that all organization members have on this project. Only present if owner is an organization. */
@@ -17640,7 +19348,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -17652,7 +19363,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The baseline permission that all organization members have on this project. Only present if owner is an organization. */
@@ -17722,6 +19436,7 @@ export namespace MyNS {
 		/**
 		 * The project card's ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17759,6 +19474,7 @@ export namespace MyNS {
 		/**
 		 * The project card's ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -17809,6 +19525,7 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the project column
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17843,6 +19560,7 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the project column
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -18004,6 +19722,8 @@ export namespace MyNS {
 		dismiss_stale_reviews?: boolean | null;
 		dismissal_restrictions?: Protected_branchRequired_pull_request_reviewsDismissal_restrictions;
 		require_code_owner_reviews?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		required_approving_review_count?: number | null;
 
 		/** Required */
@@ -18012,6 +19732,8 @@ export namespace MyNS {
 	export interface Protected_branchRequired_pull_request_reviewsFormProperties {
 		dismiss_stale_reviews: FormControl<boolean | null | undefined>,
 		require_code_owner_reviews: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		required_approving_review_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18131,7 +19853,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -18143,7 +19868,10 @@ export namespace MyNS {
 		/** Required */
 		read_only: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repository_id: number;
 
 		/** Required */
@@ -18152,7 +19880,10 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: number;
 
 		/** Required */
@@ -18163,7 +19894,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18175,7 +19909,10 @@ export namespace MyNS {
 		/** Required */
 		read_only: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repository_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18184,7 +19921,10 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18214,7 +19954,10 @@ export namespace MyNS {
 		_links: Pull_request_links;
 		active_lock_reason?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additions: number;
 
 		/**
@@ -18236,19 +19979,28 @@ export namespace MyNS {
 		/** Required */
 		body: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changed_files: number;
 
 		/** Required */
 		closed_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: number;
 
 		/** Required */
 		comments_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commits: number;
 
 		/** Required */
@@ -18257,7 +20009,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletions: number;
 
 		/** Required */
@@ -18272,7 +20027,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -18323,6 +20081,7 @@ export namespace MyNS {
 		/**
 		 * Number uniquely identifying the pull request within its repository.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
@@ -18335,7 +20094,10 @@ export namespace MyNS {
 		/** Required */
 		review_comment_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_comments: number;
 
 		/** Required */
@@ -18373,7 +20135,10 @@ export namespace MyNS {
 	export interface Pull_requestFormProperties {
 		active_lock_reason: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additions: FormControl<number | null | undefined>,
 
 		/**
@@ -18385,19 +20150,28 @@ export namespace MyNS {
 		/** Required */
 		body: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changed_files: FormControl<number | null | undefined>,
 
 		/** Required */
 		closed_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments: FormControl<number | null | undefined>,
 
 		/** Required */
 		comments_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commits: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18406,7 +20180,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletions: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18418,7 +20195,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18454,6 +20234,7 @@ export namespace MyNS {
 		/**
 		 * Number uniquely identifying the pull request within its repository.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -18464,7 +20245,10 @@ export namespace MyNS {
 		/** Required */
 		review_comment_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_comments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18695,10 +20479,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -18743,7 +20533,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -18792,10 +20585,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/** Required */
@@ -18814,13 +20613,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -18854,10 +20659,16 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 	export interface Pull_requestBaseRepoFormProperties {
@@ -18927,10 +20738,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18975,7 +20792,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19018,10 +20838,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19036,13 +20862,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19075,10 +20907,16 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePull_requestBaseRepoFormGroup() {
@@ -19187,7 +21025,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -19243,7 +21084,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19360,7 +21204,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -19416,7 +21263,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19577,10 +21427,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -19625,7 +21481,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -19671,10 +21530,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/** Required */
@@ -19693,13 +21558,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -19733,10 +21604,16 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 	export interface Pull_requestHeadRepoFormProperties {
@@ -19806,10 +21683,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19854,7 +21737,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19897,10 +21783,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19915,13 +21807,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -19954,10 +21852,16 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePull_requestHeadRepoFormGroup() {
@@ -20111,7 +22015,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -20167,7 +22074,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -20284,7 +22194,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -20340,7 +22253,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -20401,7 +22317,9 @@ export namespace MyNS {
 		color?: string | null;
 		default?: boolean | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		node_id?: string | null;
 		url?: string | null;
@@ -20410,7 +22328,9 @@ export namespace MyNS {
 		color: FormControl<string | null | undefined>,
 		default: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -20420,7 +22340,7 @@ export namespace MyNS {
 			color: new FormControl<string | null | undefined>(undefined),
 			default: new FormControl<boolean | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			node_id: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -20444,6 +22364,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -20499,6 +22420,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -20624,6 +22546,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the review
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -20673,6 +22596,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the review
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -20798,13 +22722,20 @@ export namespace MyNS {
 		/**
 		 * The ID of the pull request review comment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
-		/** The comment ID to reply to. */
+		/**
+		 * The comment ID to reply to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		in_reply_to_id?: number | null;
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/**
@@ -20819,16 +22750,23 @@ export namespace MyNS {
 		 */
 		original_commit_id: string;
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_line?: number | null;
 
 		/**
 		 * The index of the original line in the diff to which the comment applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		original_position: number;
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_start_line?: number | null;
 
 		/**
@@ -20840,12 +22778,14 @@ export namespace MyNS {
 		/**
 		 * The line index in the diff to which the comment applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: number;
 
 		/**
 		 * The ID of the pull request review to which the comment belongs.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pull_request_review_id: number;
 
@@ -20859,7 +22799,10 @@ export namespace MyNS {
 		/** The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment */
 		side?: Pull_request_review_commentSide | null;
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line?: number | null;
 
 		/** The side of the first line of the range for a multi-line comment. */
@@ -20922,13 +22865,20 @@ export namespace MyNS {
 		/**
 		 * The ID of the pull request review comment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The comment ID to reply to. */
+		/**
+		 * The comment ID to reply to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		in_reply_to_id: FormControl<number | null | undefined>,
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/**
@@ -20943,16 +22893,23 @@ export namespace MyNS {
 		 */
 		original_commit_id: FormControl<string | null | undefined>,
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_line: FormControl<number | null | undefined>,
 
 		/**
 		 * The index of the original line in the diff to which the comment applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		original_position: FormControl<number | null | undefined>,
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_start_line: FormControl<number | null | undefined>,
 
 		/**
@@ -20964,12 +22921,14 @@ export namespace MyNS {
 		/**
 		 * The line index in the diff to which the comment applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the pull request review to which the comment belongs.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pull_request_review_id: FormControl<number | null | undefined>,
 
@@ -20982,7 +22941,10 @@ export namespace MyNS {
 		/** The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment */
 		side: FormControl<Pull_request_review_commentSide | null | undefined>,
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line: FormControl<number | null | undefined>,
 
 		/** The side of the first line of the range for a multi-line comment. */
@@ -21171,7 +23133,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -21198,7 +23163,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** Required */
@@ -21268,7 +23236,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -21286,7 +23257,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -21492,7 +23466,9 @@ export namespace MyNS {
 		color?: string | null;
 		default?: boolean | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		node_id?: string | null;
 		url?: string | null;
@@ -21501,7 +23477,9 @@ export namespace MyNS {
 		color: FormControl<string | null | undefined>,
 		default: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		node_id: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -21511,7 +23489,7 @@ export namespace MyNS {
 			color: new FormControl<string | null | undefined>(undefined),
 			default: new FormControl<boolean | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			node_id: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -21521,30 +23499,54 @@ export namespace MyNS {
 
 	export interface Rate_limit {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reset: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		used: number;
 	}
 	export interface Rate_limitFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		used: FormControl<number | null | undefined>,
 	}
 	export function CreateRate_limitFormGroup() {
@@ -21610,7 +23612,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -21635,7 +23640,10 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -21684,7 +23692,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -21749,7 +23760,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -21828,10 +23842,16 @@ export namespace MyNS {
 		/** Required */
 		created_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		download_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -21846,7 +23866,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/**
@@ -21880,10 +23903,16 @@ export namespace MyNS {
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		download_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -21898,7 +23927,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
@@ -21955,7 +23987,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -21987,7 +24022,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22014,11 +24052,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		previous_column_name?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: number;
 
 		/** Required */
@@ -22032,11 +24076,17 @@ export namespace MyNS {
 		/** Required */
 		column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		previous_column_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		project_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22079,7 +24129,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -22113,7 +24166,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22231,10 +24287,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -22279,7 +24341,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -22328,10 +24393,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/**
@@ -22353,16 +24424,25 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -22398,10 +24478,16 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 
@@ -22476,10 +24562,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22524,7 +24616,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22567,10 +24662,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22585,16 +24686,25 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22628,10 +24738,16 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateRepo_search_result_itemFormGroup() {
@@ -22836,6 +24952,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository invitation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -22888,6 +25005,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository invitation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -22924,12 +25042,16 @@ export namespace MyNS {
 	export interface Repository_pre_receive_hook {
 		configuration_url?: string | null;
 		enforcement?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface Repository_pre_receive_hookFormProperties {
 		configuration_url: FormControl<string | null | undefined>,
 		enforcement: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -23041,11 +25163,19 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		in_reply_to_id?: number | null;
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/** Required */
@@ -23054,22 +25184,37 @@ export namespace MyNS {
 		/** Required */
 		original_commit_id: string;
 
-		/** The original line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_line?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_position: number;
 
-		/** The original first line of the range for a multi-line comment. */
+		/**
+		 * The original first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_start_line?: number | null;
 
 		/** Required */
 		path: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pull_request_review_id: number;
 
 		/** Required */
@@ -23079,7 +25224,10 @@ export namespace MyNS {
 		/** The side of the first line of the range for a multi-line comment. */
 		side?: Pull_request_review_commentSide | null;
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line?: number | null;
 
 		/** The side of the first line of the range for a multi-line comment. */
@@ -23124,11 +25272,19 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		in_reply_to_id: FormControl<number | null | undefined>,
 
-		/** The line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23137,22 +25293,37 @@ export namespace MyNS {
 		/** Required */
 		original_commit_id: FormControl<string | null | undefined>,
 
-		/** The original line of the blob to which the comment applies. The last line of the range for a multi-line comment */
+		/**
+		 * The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_line: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_position: FormControl<number | null | undefined>,
 
-		/** The original first line of the range for a multi-line comment. */
+		/**
+		 * The original first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_start_line: FormControl<number | null | undefined>,
 
 		/** Required */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pull_request_review_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23161,7 +25332,10 @@ export namespace MyNS {
 		/** The side of the first line of the range for a multi-line comment. */
 		side: FormControl<Pull_request_review_commentSide | null | undefined>,
 
-		/** The first line of the range for a multi-line comment. */
+		/**
+		 * The first line of the range for a multi-line comment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line: FormControl<number | null | undefined>,
 
 		/** The side of the first line of the range for a multi-line comment. */
@@ -23257,7 +25431,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -23288,7 +25465,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23316,7 +25496,10 @@ export namespace MyNS {
 		/** Required */
 		dismissal_message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_id: number;
 
 		/** Required */
@@ -23328,7 +25511,10 @@ export namespace MyNS {
 		/** Required */
 		dismissal_message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		review_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23366,7 +25552,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -23409,7 +25598,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23453,7 +25645,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -23496,7 +25691,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23526,6 +25724,8 @@ export namespace MyNS {
 		message?: string | null;
 		schemas?: Array<string>;
 		scimType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 
@@ -23535,6 +25735,8 @@ export namespace MyNS {
 		documentation_url: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		scimType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateScim_errorFormGroup() {
@@ -23766,7 +25968,10 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -23800,7 +26005,10 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -23928,7 +26136,10 @@ export namespace MyNS {
 		 */
 		body_version: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments_count: number;
 
 		/** Required */
@@ -23949,6 +26160,7 @@ export namespace MyNS {
 		/**
 		 * The unique sequence number of a team discussion.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
@@ -23999,7 +26211,10 @@ export namespace MyNS {
 		 */
 		body_version: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		comments_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -24020,6 +26235,7 @@ export namespace MyNS {
 		/**
 		 * The unique sequence number of a team discussion.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -24115,6 +26331,7 @@ export namespace MyNS {
 		/**
 		 * The unique sequence number of a team discussion comment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 		reactions?: Reaction_rollup;
@@ -24162,6 +26379,7 @@ export namespace MyNS {
 		/**
 		 * The unique sequence number of a team discussion comment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -24204,13 +26422,17 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/** Distinguished Name (DN) that team maps to within LDAP environment */
 		ldap_dn?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		members_count: number;
 
 		/** Required */
@@ -24243,7 +26465,10 @@ export namespace MyNS {
 		/** The level of privacy this team should have */
 		privacy?: Team_fullPrivacy | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repos_count: number;
 
 		/** Required */
@@ -24277,13 +26502,17 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the team
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Distinguished Name (DN) that team maps to within LDAP environment */
 		ldap_dn: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		members_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -24307,7 +26536,10 @@ export namespace MyNS {
 		/** The level of privacy this team should have */
 		privacy: FormControl<Team_fullPrivacy | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repos_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -24420,7 +26652,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -24429,7 +26664,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: number;
 
 		/** The organization permission for this project. Only present when owner is an organization. */
@@ -24469,7 +26707,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -24478,7 +26719,10 @@ export namespace MyNS {
 		/** Required */
 		node_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The organization permission for this project. Only present when owner is an organization. */
@@ -24639,10 +26883,16 @@ export namespace MyNS {
 		/** Required */
 		fork: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: number;
 
 		/** Required */
@@ -24702,6 +26952,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -24750,6 +27001,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count?: number | null;
 
 		/** Required */
@@ -24758,10 +27011,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: number;
 
 		/**
@@ -24786,13 +27045,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
 		ssh_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: number;
 
 		/** Required */
@@ -24800,6 +27065,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count?: number | null;
 
 		/** Required */
@@ -24833,10 +27100,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: number;
 	}
 
@@ -24928,10 +27201,16 @@ export namespace MyNS {
 		/** Required */
 		fork: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		forks_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -24991,6 +27270,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the repository
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -25033,6 +27313,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -25041,10 +27323,16 @@ export namespace MyNS {
 		/** Required */
 		notifications_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		open_issues_count: FormControl<number | null | undefined>,
 
 		/**
@@ -25062,13 +27350,19 @@ export namespace MyNS {
 		/** Required */
 		releases_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssh_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stargazers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -25076,6 +27370,8 @@ export namespace MyNS {
 
 		/** Required */
 		statuses_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscribers_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -25105,10 +27401,16 @@ export namespace MyNS {
 		/** The repository visibility: public, private, or internal. */
 		visibility: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watchers_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTeam_repositoryFormGroup() {
@@ -25429,7 +27731,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -25460,7 +27765,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -25515,6 +27823,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the issue comment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -25570,6 +27879,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the issue comment
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26046,6 +28356,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the review
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26098,6 +28409,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the review
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26207,7 +28519,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -26238,7 +28553,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26307,9 +28625,14 @@ export namespace MyNS {
 
 		/** Required */
 		released: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		repository_count?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -26347,9 +28670,14 @@ export namespace MyNS {
 
 		/** Required */
 		released: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		repository_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26389,15 +28717,23 @@ export namespace MyNS {
 	}
 
 	export interface Topic_search_result_itemAliasesTopic_relation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		relation_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topic_id?: number | null;
 	}
 	export interface Topic_search_result_itemAliasesTopic_relationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		relation_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topic_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTopic_search_result_itemAliasesTopic_relationFormGroup() {
@@ -26422,15 +28758,23 @@ export namespace MyNS {
 	}
 
 	export interface Topic_search_result_itemRelatedTopic_relation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		relation_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topic_id?: number | null;
 	}
 	export interface Topic_search_result_itemRelatedTopic_relationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		relation_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topic_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTopic_search_result_itemRelatedTopic_relationFormGroup() {
@@ -26477,7 +28821,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -26508,7 +28855,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26552,7 +28902,10 @@ export namespace MyNS {
 		/** Required */
 		event: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -26586,7 +28939,10 @@ export namespace MyNS {
 		/** Required */
 		event: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26646,10 +29002,14 @@ export namespace MyNS {
 
 		/** Required */
 		events_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers?: number | null;
 
 		/** Required */
 		followers_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		following?: number | null;
 
 		/** Required */
@@ -26665,7 +29025,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 		location?: string | null;
 
@@ -26678,7 +29041,11 @@ export namespace MyNS {
 
 		/** Required */
 		organizations_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		public_gists?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		public_repos?: number | null;
 
 		/** Required */
@@ -26687,7 +29054,10 @@ export namespace MyNS {
 		/** Required */
 		repos_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -26722,10 +29092,14 @@ export namespace MyNS {
 
 		/** Required */
 		events_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		followers: FormControl<number | null | undefined>,
 
 		/** Required */
 		followers_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		following: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26741,7 +29115,10 @@ export namespace MyNS {
 		/** Required */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		location: FormControl<string | null | undefined>,
 
@@ -26754,7 +29131,11 @@ export namespace MyNS {
 
 		/** Required */
 		organizations_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		public_gists: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		public_repos: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26763,7 +29144,10 @@ export namespace MyNS {
 		/** Required */
 		repos_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26856,6 +29240,8 @@ export namespace MyNS {
 		/** Required */
 		code: string;
 		field?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		message?: string | null;
 		resource?: string | null;
@@ -26866,6 +29252,8 @@ export namespace MyNS {
 		/** Required */
 		code: FormControl<string | null | undefined>,
 		field: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		resource: FormControl<string | null | undefined>,
@@ -26941,7 +29329,9 @@ export namespace MyNS {
 		 * List global webhooks
 		 * Get admin/hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Global_hook>} Response
 		 */
 		Enterprise_adminSlashlist_global_webhooks(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Global_hook>> {
@@ -26960,6 +29350,7 @@ export namespace MyNS {
 		/**
 		 * Delete a global webhook
 		 * Delete admin/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashdelete_global_webhook(hook_id: number): Observable<HttpResponse<string>> {
@@ -26969,6 +29360,7 @@ export namespace MyNS {
 		/**
 		 * Get a global webhook
 		 * Get admin/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Global_hook} Response
 		 */
 		Enterprise_adminSlashget_global_webhook(hook_id: number): Observable<Global_hook> {
@@ -26979,6 +29371,7 @@ export namespace MyNS {
 		 * Update a global webhook
 		 * Parameters that are not provided will be overwritten with the default value or removed if no default exists.
 		 * Patch admin/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Global_hook_2} Response
 		 */
 		Enterprise_adminSlashupdate_global_webhook(hook_id: number, requestBody: Enterprise_adminSlashupdate_global_webhookPatchBody): Observable<Global_hook_2> {
@@ -26989,6 +29382,7 @@ export namespace MyNS {
 		 * Ping a global webhook
 		 * This will trigger a [ping event](https://docs.github.com/enterprise-server@2.21/webhooks/#ping-event) to be sent to the webhook.
 		 * Post admin/hooks/{hook_id}/pings
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashping_global_webhook(hook_id: number): Observable<HttpResponse<string>> {
@@ -26999,7 +29393,9 @@ export namespace MyNS {
 		 * List public keys
 		 * Get admin/keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {string} since Only show public keys accessed after the given time.
 		 * @return {Array<Public_key_full>} Response
@@ -27022,6 +29418,7 @@ export namespace MyNS {
 		 * Updates the [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team. [LDAP synchronization](https://help.github.com/enterprise/admin/guides/user-management/using-ldap/#enabling-ldap-sync) must be enabled to map LDAP entries to a team. Use the [Create a team](https://docs.github.com/enterprise-server@2.21/rest/reference/teams/#create-a-team) endpoint to create a team with LDAP mapping.
 		 * You can also update the LDAP mapping of a child team.
 		 * Patch admin/ldap/teams/{team_id}/mapping
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Ldap_mapping_team} Response
 		 */
 		Enterprise_adminSlashupdate_ldap_mapping_for_team(team_id: number, requestBody: Enterprise_adminSlashupdate_ldap_mapping_for_teamPatchBody): Observable<Ldap_mapping_team> {
@@ -27032,6 +29429,7 @@ export namespace MyNS {
 		 * Sync LDAP mapping for a team
 		 * Note that this API call does not automatically initiate an LDAP sync. Rather, if a `201` is returned, the sync job is queued successfully, and is performed when the instance is ready.
 		 * Post admin/ldap/teams/{team_id}/sync
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashsync_ldap_mapping_for_team(team_id: number): Observable<HttpResponse<string>> {
@@ -27079,7 +29477,9 @@ export namespace MyNS {
 		 * List pre-receive environments
 		 * Get admin/pre-receive-environments
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @return {Array<Pre_receive_environment>} Response
 		 */
@@ -27104,6 +29504,7 @@ export namespace MyNS {
 		 * *   _Cannot delete environment that has hooks_
 		 * *   _Cannot delete environment when download is in progress_
 		 * Delete admin/pre-receive-environments/{pre_receive_environment_id}
+		 * @param {number} pre_receive_environment_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashdelete_pre_receive_environment(pre_receive_environment_id: number): Observable<HttpResponse<string>> {
@@ -27113,6 +29514,7 @@ export namespace MyNS {
 		/**
 		 * Get a pre-receive environment
 		 * Get admin/pre-receive-environments/{pre_receive_environment_id}
+		 * @param {number} pre_receive_environment_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pre_receive_environment} Response
 		 */
 		Enterprise_adminSlashget_pre_receive_environment(pre_receive_environment_id: number): Observable<Pre_receive_environment> {
@@ -27123,6 +29525,7 @@ export namespace MyNS {
 		 * Update a pre-receive environment
 		 * You cannot modify the default environment. If you attempt to modify the default environment, you will receive a `422 Unprocessable Entity` response.
 		 * Patch admin/pre-receive-environments/{pre_receive_environment_id}
+		 * @param {number} pre_receive_environment_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pre_receive_environment} Response
 		 */
 		Enterprise_adminSlashupdate_pre_receive_environment(pre_receive_environment_id: number, requestBody: Enterprise_adminSlashupdate_pre_receive_environmentPatchBody): Observable<Pre_receive_environment> {
@@ -27137,6 +29540,7 @@ export namespace MyNS {
 		 * * _Cannot modify or delete the default environment_
 		 * * _Can not start a new download when a download is in progress_
 		 * Post admin/pre-receive-environments/{pre_receive_environment_id}/downloads
+		 * @param {number} pre_receive_environment_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashstart_pre_receive_environment_download(pre_receive_environment_id: number): Observable<HttpResponse<string>> {
@@ -27147,6 +29551,7 @@ export namespace MyNS {
 		 * Get the download status for a pre-receive environment
 		 * In addition to seeing the download status at the "[Get a pre-receive environment](#get-a-pre-receive-environment)" endpoint, there is also this separate endpoint for just the download status.
 		 * Get admin/pre-receive-environments/{pre_receive_environment_id}/downloads/latest
+		 * @param {number} pre_receive_environment_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pre_receive_environment_download_status} Response
 		 */
 		Enterprise_adminSlashget_download_status_for_pre_receive_environment(pre_receive_environment_id: number): Observable<Pre_receive_environment_download_status> {
@@ -27157,7 +29562,9 @@ export namespace MyNS {
 		 * List pre-receive hooks
 		 * Get admin/pre-receive-hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Enterprise_adminSlashlist_pre_receive_environmentsSort} sort One of `created` (when the repository was starred) or `updated` (when it was last pushed to) or `name`.
 		 * @return {Array<Pre_receive_hook>} Response
@@ -27179,6 +29586,7 @@ export namespace MyNS {
 		 * Delete a pre-receive hook
 		 * Delete admin/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashdelete_pre_receive_hook(pre_receive_hook_id: number): Observable<HttpResponse<string>> {
@@ -27189,6 +29597,7 @@ export namespace MyNS {
 		 * Get a pre-receive hook
 		 * Get admin/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashget_pre_receive_hook(pre_receive_hook_id: number): Observable<Pre_receive_hook> {
@@ -27199,6 +29608,7 @@ export namespace MyNS {
 		 * Update a pre-receive hook
 		 * Patch admin/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashupdate_pre_receive_hook(pre_receive_hook_id: number, requestBody: Enterprise_adminSlashupdate_pre_receive_hookPatchBody): Observable<Pre_receive_hook> {
@@ -27210,7 +29620,9 @@ export namespace MyNS {
 		 * Lists personal access tokens for all users, including admin users.
 		 * Get admin/tokens
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Authorization>} Response
 		 */
 		Enterprise_adminSlashlist_personal_access_tokens(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Authorization>> {
@@ -27221,6 +29633,7 @@ export namespace MyNS {
 		 * Delete a personal access token
 		 * Deletes a personal access token. Returns a `403 - Forbidden` status when a personal access token is in use. For example, if you access this endpoint with the same personal access token that you are trying to delete, you will receive this error.
 		 * Delete admin/tokens/{token_id}
+		 * @param {number} token_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Enterprise_adminSlashdelete_personal_access_token(token_id: number): Observable<HttpResponse<string>> {
@@ -27304,7 +29717,9 @@ export namespace MyNS {
 		 * The permissions the installation has are included under the `permissions` key.
 		 * Get app/installations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Installation_ghes_2>} The permissions the installation has are included under the `permissions` key.
 		 */
 		AppsSlashlist_installations(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Installation_ghes_2>> {
@@ -27316,6 +29731,7 @@ export namespace MyNS {
 		 * Uninstalls a GitHub App on a user, organization, or business account. You must use a [JWT](https://docs.github.com/enterprise-server@2.21/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 		 * Delete app/installations/{installation_id}
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AppsSlashdelete_installation(installation_id: number): Observable<HttpResponse<string>> {
@@ -27328,6 +29744,7 @@ export namespace MyNS {
 		 * You must use a [JWT](https://docs.github.com/enterprise-server@2.21/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 		 * Get app/installations/{installation_id}
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Installation_ghes_2} Response
 		 */
 		AppsSlashget_installation(installation_id: number): Observable<Installation_ghes_2> {
@@ -27340,6 +29757,7 @@ export namespace MyNS {
 		 * You must use a [JWT](https://docs.github.com/enterprise-server@2.21/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 		 * Post app/installations/{installation_id}/access_tokens
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AppsSlashcreate_installation_access_token(installation_id: number, requestBody: AppsSlashcreate_installation_access_tokenPostBody): Observable<HttpResponse<string>> {
@@ -27352,7 +29770,9 @@ export namespace MyNS {
 		 * You can use this API to list the set of OAuth applications that have been granted access to your account. Unlike the [list your authorizations](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations#list-your-authorizations) API, this API does not manage individual tokens. This API will return one entry for each OAuth application that has been granted access to your account, regardless of the number of tokens an application has generated for your user. The list of OAuth applications returned matches what is shown on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized). The `scopes` returned are the union of scopes authorized for the application. For example, if an application has one token with `repo` scope and another token with `user` scope, the grant will return `["repo", "user"]`.
 		 * Get applications/grants
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} client_id The client ID of your GitHub app.
 		 * @return {Array<Application_grant>} Response
 		 */
@@ -27366,6 +29786,7 @@ export namespace MyNS {
 		 * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for your user. Once deleted, the application has no access to your account and is no longer listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
 		 * Delete applications/grants/{grant_id}
 		 * @param {number} grant_id grant_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Oauth_authorizationsSlashdelete_grant(grant_id: number): Observable<HttpResponse<string>> {
@@ -27377,6 +29798,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** GitHub Enterprise Server will discontinue the [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). The [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations) will be removed on November, 13, 2020. For more information, including scheduled brownouts, see the [blog post](https://developer.github.com/changes/2020-02-14-deprecating-oauth-auth-endpoint/).
 		 * Get applications/grants/{grant_id}
 		 * @param {number} grant_id grant_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Application_grant} Response
 		 */
 		Oauth_authorizationsSlashget_grant(grant_id: number): Observable<Application_grant> {
@@ -27493,7 +29915,9 @@ export namespace MyNS {
 		 * **Deprecation Notice:** GitHub Enterprise Server will discontinue the [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). The [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations) will be removed on November, 13, 2020. For more information, including scheduled brownouts, see the [blog post](https://developer.github.com/changes/2020-02-14-deprecating-oauth-auth-endpoint/).
 		 * Get authorizations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} client_id The client ID of your GitHub app.
 		 * @return {Array<Authorization>} Response
 		 */
@@ -27550,6 +29974,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** GitHub Enterprise Server will discontinue the [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). The [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations) will be removed on November, 13, 2020. For more information, including scheduled brownouts, see the [blog post](https://developer.github.com/changes/2020-02-14-deprecating-oauth-auth-endpoint/).
 		 * Delete authorizations/{authorization_id}
 		 * @param {number} authorization_id authorization_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Oauth_authorizationsSlashdelete_authorization(authorization_id: number): Observable<HttpResponse<string>> {
@@ -27561,6 +29986,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** GitHub Enterprise Server will discontinue the [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). The [OAuth Authorizations API](https://docs.github.com/enterprise-server@2.21/rest/reference/oauth-authorizations) will be removed on November, 13, 2020. For more information, including scheduled brownouts, see the [blog post](https://developer.github.com/changes/2020-02-14-deprecating-oauth-auth-endpoint/).
 		 * Get authorizations/{authorization_id}
 		 * @param {number} authorization_id authorization_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Authorization} Response
 		 */
 		Oauth_authorizationsSlashget_authorization(authorization_id: number): Observable<Authorization> {
@@ -27574,6 +30000,7 @@ export namespace MyNS {
 		 * You can only send one of these scope keys at a time.
 		 * Patch authorizations/{authorization_id}
 		 * @param {number} authorization_id authorization_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Authorization} Response
 		 */
 		Oauth_authorizationsSlashupdate_authorization(authorization_id: number, requestBody: Oauth_authorizationsSlashupdate_authorizationPatchBody): Observable<Authorization> {
@@ -27721,7 +30148,9 @@ export namespace MyNS {
 		 * We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
 		 * Get events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_public_events(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -27752,7 +30181,9 @@ export namespace MyNS {
 		 * Get gists
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Base_gist>} Response
 		 */
 		GistsSlashlist(since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Base_gist>> {
@@ -27777,7 +30208,9 @@ export namespace MyNS {
 		 * Get gists/public
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Base_gist>} Response
 		 */
 		GistsSlashlist_public(since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Base_gist>> {
@@ -27790,7 +30223,9 @@ export namespace MyNS {
 		 * Get gists/starred
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Base_gist>} Response
 		 */
 		GistsSlashlist_starred(since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Base_gist>> {
@@ -27833,7 +30268,9 @@ export namespace MyNS {
 		 * Get gists/{gist_id}/comments
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Gist_comment>} Response
 		 */
 		GistsSlashlist_comments(gist_id: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Gist_comment>> {
@@ -27855,6 +30292,7 @@ export namespace MyNS {
 		 * Delete gists/{gist_id}/comments/{comment_id}
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GistsSlashdelete_comment(gist_id: string, comment_id: number): Observable<HttpResponse<string>> {
@@ -27866,6 +30304,7 @@ export namespace MyNS {
 		 * Get gists/{gist_id}/comments/{comment_id}
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Gist_comment} Response
 		 */
 		GistsSlashget_comment(gist_id: string, comment_id: number): Observable<Gist_comment> {
@@ -27877,6 +30316,7 @@ export namespace MyNS {
 		 * Patch gists/{gist_id}/comments/{comment_id}
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Gist_comment} Response
 		 */
 		GistsSlashupdate_comment(gist_id: string, comment_id: number, requestBody: GistsSlashupdate_commentPatchBody): Observable<Gist_comment> {
@@ -27888,7 +30328,9 @@ export namespace MyNS {
 		 * Get gists/{gist_id}/commits
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Gist_commit>} Response
 		 */
 		GistsSlashlist_commits(gist_id: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Gist_commit>> {
@@ -27900,7 +30342,9 @@ export namespace MyNS {
 		 * Get gists/{gist_id}/forks
 		 * @param {string} gist_id gist_id parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Gist_simple>} Response
 		 */
 		GistsSlashlist_forks(gist_id: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Gist_simple>> {
@@ -27986,7 +30430,9 @@ export namespace MyNS {
 		 * You must use an [installation access token](https://docs.github.com/enterprise-server@2.21/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 		 * Get installation/repositories
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AppsSlashlist_repos_accessible_to_installationReturn} Response
 		 */
 		AppsSlashlist_repos_accessible_to_installation(per_page: number | null | undefined, page: number | null | undefined): Observable<AppsSlashlist_repos_accessible_to_installationReturn> {
@@ -28027,7 +30473,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue>} Response
 		 */
 		IssuesSlashlist(filter: IssuesSlashlistFilter | null | undefined, state: IssuesSlashlistState | null | undefined, labels: string | null | undefined, sort: IssuesSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, collab: boolean | null | undefined, orgs: boolean | null | undefined, owned: boolean | null | undefined, pulls: boolean | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue>> {
@@ -28038,7 +30486,9 @@ export namespace MyNS {
 		 * Get all commonly used licenses
 		 * Get licenses
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<License_simple>} Response
 		 */
 		LicensesSlashget_all_commonly_used(featured: boolean | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<License_simple>> {
@@ -28076,7 +30526,9 @@ export namespace MyNS {
 		 * List public events for a network of repositories
 		 * Get networks/{owner}/{repo}/events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_public_events_for_repo_network(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -28092,7 +30544,9 @@ export namespace MyNS {
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {Date} before Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Thread>} Response
 		 */
 		ActivitySlashlist_notifications_for_authenticated_user(all: boolean | null | undefined, participating: boolean | null | undefined, since: Date | null | undefined, before: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Thread>> {
@@ -28113,6 +30567,7 @@ export namespace MyNS {
 		 * Get a thread
 		 * Get notifications/threads/{thread_id}
 		 * @param {number} thread_id thread_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Thread} Response
 		 */
 		ActivitySlashget_thread(thread_id: number): Observable<Thread> {
@@ -28123,6 +30578,7 @@ export namespace MyNS {
 		 * Mark a thread as read
 		 * Patch notifications/threads/{thread_id}
 		 * @param {number} thread_id thread_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ActivitySlashmark_thread_as_read(thread_id: number): Observable<HttpResponse<string>> {
@@ -28134,6 +30590,7 @@ export namespace MyNS {
 		 * Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/enterprise-server@2.21/rest/reference/activity#set-a-thread-subscription) endpoint and set `ignore` to `true`.
 		 * Delete notifications/threads/{thread_id}/subscription
 		 * @param {number} thread_id thread_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ActivitySlashdelete_thread_subscription(thread_id: number): Observable<HttpResponse<string>> {
@@ -28146,6 +30603,7 @@ export namespace MyNS {
 		 * Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 		 * Get notifications/threads/{thread_id}/subscription
 		 * @param {number} thread_id thread_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Thread_subscription} Response
 		 */
 		ActivitySlashget_thread_subscription_for_authenticated_user(thread_id: number): Observable<Thread_subscription> {
@@ -28159,6 +30617,7 @@ export namespace MyNS {
 		 * Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/enterprise-server@2.21/rest/reference/activity#delete-a-thread-subscription) endpoint.
 		 * Put notifications/threads/{thread_id}/subscription
 		 * @param {number} thread_id thread_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Thread_subscription} Response
 		 */
 		ActivitySlashset_thread_subscription(thread_id: number, requestBody: ActivitySlashset_thread_subscriptionPutBody): Observable<Thread_subscription> {
@@ -28182,7 +30641,9 @@ export namespace MyNS {
 		 * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
 		 * Get organizations
 		 * @param {number} since An organization ID. Only return organizations with an ID greater than this ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Organization_simple>} Response
 		 */
 		OrgsSlashlist(since: number | null | undefined, per_page: number | null | undefined): Observable<Array<Organization_simple>> {
@@ -28215,7 +30676,9 @@ export namespace MyNS {
 		 * List public organization events
 		 * Get orgs/{org}/events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_public_org_events(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -28226,7 +30689,9 @@ export namespace MyNS {
 		 * List organization webhooks
 		 * Get orgs/{org}/hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Org_hook>} Response
 		 */
 		OrgsSlashlist_webhooks(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Org_hook>> {
@@ -28246,6 +30711,7 @@ export namespace MyNS {
 		/**
 		 * Delete an organization webhook
 		 * Delete orgs/{org}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		OrgsSlashdelete_webhook(org: string, hook_id: number): Observable<HttpResponse<string>> {
@@ -28256,6 +30722,7 @@ export namespace MyNS {
 		 * Get an organization webhook
 		 * Returns a webhook configured in an organization. To get only the webhook `config` properties, see "[Get a webhook configuration for an organization](/rest/reference/orgs#get-a-webhook-configuration-for-an-organization)."
 		 * Get orgs/{org}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Org_hook} Response
 		 */
 		OrgsSlashget_webhook(org: string, hook_id: number): Observable<Org_hook> {
@@ -28266,6 +30733,7 @@ export namespace MyNS {
 		 * Update an organization webhook
 		 * Updates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for an organization](/rest/reference/orgs#update-a-webhook-configuration-for-an-organization)."
 		 * Patch orgs/{org}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Org_hook} Response
 		 */
 		OrgsSlashupdate_webhook(org: string, hook_id: number, requestBody: OrgsSlashupdate_webhookPatchBody): Observable<Org_hook> {
@@ -28276,6 +30744,7 @@ export namespace MyNS {
 		 * Ping an organization webhook
 		 * This will trigger a [ping event](https://docs.github.com/enterprise-server@2.21/webhooks/#ping-event) to be sent to the hook.
 		 * Post orgs/{org}/hooks/{hook_id}/pings
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		OrgsSlashping_webhook(org: string, hook_id: number): Observable<HttpResponse<string>> {
@@ -28298,7 +30767,9 @@ export namespace MyNS {
 		 * Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
 		 * Get orgs/{org}/installations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OrgsSlashlist_app_installationsReturn} Response
 		 */
 		OrgsSlashlist_app_installations(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<OrgsSlashlist_app_installationsReturn> {
@@ -28325,7 +30796,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue>} Response
 		 */
 		IssuesSlashlist_for_org(org: string, filter: IssuesSlashlistFilter | null | undefined, state: IssuesSlashlistState | null | undefined, labels: string | null | undefined, sort: IssuesSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue>> {
@@ -28344,7 +30817,9 @@ export namespace MyNS {
 		 * \* `admin` - Organization owners.  
 		 * \* `member` - Non-owner organization members.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		OrgsSlashlist_members(org: string, filter: OrgsSlashlist_membersFilter | null | undefined, role: OrgsSlashlist_membersRole | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -28414,7 +30889,9 @@ export namespace MyNS {
 		 * \* `2fa_disabled`: Outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled.  
 		 * \* `all`: All outside collaborators.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		OrgsSlashlist_outside_collaborators(org: string, filter: OrgsSlashlist_membersFilter | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -28446,7 +30923,9 @@ export namespace MyNS {
 		 * List all pre-receive hooks that are enabled or testing for this organization as well as any disabled hooks that can be configured at the organization level. Globally disabled pre-receive hooks that do not allow downstream configuration are not listed.
 		 * Get orgs/{org}/pre-receive-hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Enterprise_adminSlashlist_pre_receive_environmentsSort} sort The sort order for the response collection.
 		 * @return {Array<Org_pre_receive_hook>} Response
@@ -28460,6 +30939,7 @@ export namespace MyNS {
 		 * Removes any overrides for this hook at the org level for this org.
 		 * Delete orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Org_pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashremove_pre_receive_hook_enforcement_for_org(org: string, pre_receive_hook_id: number): Observable<Org_pre_receive_hook> {
@@ -28470,6 +30950,7 @@ export namespace MyNS {
 		 * Get a pre-receive hook for an organization
 		 * Get orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Org_pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashget_pre_receive_hook_for_org(org: string, pre_receive_hook_id: number): Observable<Org_pre_receive_hook> {
@@ -28481,6 +30962,7 @@ export namespace MyNS {
 		 * For pre-receive hooks which are allowed to be configured at the org level, you can set `enforcement` and `allow_downstream_configuration`
 		 * Patch orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Org_pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_org(org: string, pre_receive_hook_id: number, requestBody: Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_orgPatchBody): Observable<Org_pre_receive_hook> {
@@ -28493,7 +30975,9 @@ export namespace MyNS {
 		 * Get orgs/{org}/projects
 		 * @param {IssuesSlashlistState} state Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Project>} Response
 		 */
 		ProjectsSlashlist_for_org(org: string, state: IssuesSlashlistState | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Project>> {
@@ -28515,7 +30999,9 @@ export namespace MyNS {
 		 * Members of an organization can choose to have their membership publicized or not.
 		 * Get orgs/{org}/public_members
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		OrgsSlashlist_public_members(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -28559,7 +31045,9 @@ export namespace MyNS {
 		 * @param {ReposSlashlist_for_orgSort} sort Can be one of `created`, `updated`, `pushed`, `full_name`.
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Can be one of `asc` or `desc`. Default: when using `full_name`: `asc`, otherwise `desc`
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		ReposSlashlist_for_org(org: string, type: ReposSlashlist_for_orgType | null | undefined, sort: ReposSlashlist_for_orgSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -28585,7 +31073,9 @@ export namespace MyNS {
 		 * Lists all teams in an organization that are visible to the authenticated user.
 		 * Get orgs/{org}/teams
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} Response
 		 */
 		TeamsSlashlist(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team>> {
@@ -28648,7 +31138,9 @@ export namespace MyNS {
 		 * @param {string} team_slug team_slug parameter
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pinned Pinned discussions only filter
 		 * @return {Array<Team_discussion>} Response
 		 */
@@ -28675,6 +31167,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 		 * Delete orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashdelete_discussion_in_org(org: string, team_slug: string, discussion_number: number): Observable<HttpResponse<string>> {
@@ -28687,6 +31180,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 		 * Get orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion} Response
 		 */
 		TeamsSlashget_discussion_in_org(org: string, team_slug: string, discussion_number: number): Observable<Team_discussion> {
@@ -28699,6 +31193,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 		 * Patch orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion} Response
 		 */
 		TeamsSlashupdate_discussion_in_org(org: string, team_slug: string, discussion_number: number, requestBody: TeamsSlashupdate_discussion_in_orgPatchBody): Observable<Team_discussion> {
@@ -28711,9 +31206,12 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.
 		 * Get orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_discussion_comment>} Response
 		 */
 		TeamsSlashlist_discussion_comments_in_org(org: string, team_slug: string, discussion_number: number, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_discussion_comment>> {
@@ -28727,6 +31225,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.
 		 * Post orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashcreate_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, requestBody: TeamsSlashcreate_discussion_comment_in_orgPostBody): Observable<HttpResponse<string>> {
@@ -28739,6 +31238,8 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 		 * Delete orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashdelete_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, comment_number: number): Observable<HttpResponse<string>> {
@@ -28751,6 +31252,8 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 		 * Get orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion_comment} Response
 		 */
 		TeamsSlashget_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, comment_number: number): Observable<Team_discussion_comment> {
@@ -28763,6 +31266,8 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 		 * Patch orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion_comment} Response
 		 */
 		TeamsSlashupdate_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, comment_number: number, requestBody: TeamsSlashupdate_discussion_comment_in_orgPatchBody): Observable<Team_discussion_comment> {
@@ -28775,9 +31280,13 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
 		 * Get orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_team_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, comment_number: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -28790,6 +31299,8 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
 		 * Post orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Response
 		 */
 		ReactionsSlashcreate_for_team_discussion_comment_in_org(org: string, team_slug: string, discussion_number: number, comment_number: number, requestBody: ReactionsSlashcreate_for_team_discussion_comment_in_orgPostBody): Observable<Reaction> {
@@ -28802,6 +31313,9 @@ export namespace MyNS {
 		 * Delete a reaction to a [team discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_team_discussion_comment(org: string, team_slug: string, discussion_number: number, comment_number: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -28814,9 +31328,12 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
 		 * Get orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_team_discussion_in_org(org: string, team_slug: string, discussion_number: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -28829,6 +31346,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
 		 * Post orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Response
 		 */
 		ReactionsSlashcreate_for_team_discussion_in_org(org: string, team_slug: string, discussion_number: number, requestBody: ReactionsSlashcreate_for_team_discussion_in_orgPostBody): Observable<Reaction> {
@@ -28841,6 +31359,8 @@ export namespace MyNS {
 		 * Delete a reaction to a [team discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_team_discussion(org: string, team_slug: string, discussion_number: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -28858,7 +31378,9 @@ export namespace MyNS {
 		 * \* `maintainer` - team maintainers.  
 		 * \* `all` - all members of the team.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		TeamsSlashlist_members_in_org(org: string, team_slug: string, role: TeamsSlashlist_members_in_orgRole | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -28918,7 +31440,9 @@ export namespace MyNS {
 		 * Get orgs/{org}/teams/{team_slug}/projects
 		 * @param {string} team_slug team_slug parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_project>} Response
 		 */
 		TeamsSlashlist_projects_in_org(org: string, team_slug: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_project>> {
@@ -28931,6 +31455,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
 		 * Delete orgs/{org}/teams/{team_slug}/projects/{project_id}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashremove_project_in_org(org: string, team_slug: string, project_id: number): Observable<HttpResponse<string>> {
@@ -28943,6 +31468,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
 		 * Get orgs/{org}/teams/{team_slug}/projects/{project_id}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_project} Response
 		 */
 		TeamsSlashcheck_permissions_for_project_in_org(org: string, team_slug: string, project_id: number): Observable<Team_project> {
@@ -28955,6 +31481,7 @@ export namespace MyNS {
 		 * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
 		 * Put orgs/{org}/teams/{team_slug}/projects/{project_id}
 		 * @param {string} team_slug team_slug parameter
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashadd_or_update_project_permissions_in_org(org: string, team_slug: string, project_id: number, requestBody: TeamsSlashadd_or_update_project_permissions_in_orgPutBody): Observable<HttpResponse<string>> {
@@ -28968,7 +31495,9 @@ export namespace MyNS {
 		 * Get orgs/{org}/teams/{team_slug}/repos
 		 * @param {string} team_slug team_slug parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		TeamsSlashlist_repos_in_org(org: string, team_slug: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -29021,7 +31550,9 @@ export namespace MyNS {
 		 * Get orgs/{org}/teams/{team_slug}/teams
 		 * @param {string} team_slug team_slug parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} if child teams exist
 		 */
 		TeamsSlashlist_child_in_org(org: string, team_slug: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team>> {
@@ -29032,6 +31563,7 @@ export namespace MyNS {
 		 * Delete a project card
 		 * Delete projects/columns/cards/{card_id}
 		 * @param {number} card_id card_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashdelete_card(card_id: number): Observable<HttpResponse<string>> {
@@ -29042,6 +31574,7 @@ export namespace MyNS {
 		 * Get a project card
 		 * Get projects/columns/cards/{card_id}
 		 * @param {number} card_id card_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project_card} Response
 		 */
 		ProjectsSlashget_card(card_id: number): Observable<Project_card> {
@@ -29052,6 +31585,7 @@ export namespace MyNS {
 		 * Update an existing project card
 		 * Patch projects/columns/cards/{card_id}
 		 * @param {number} card_id card_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project_card} Response
 		 */
 		ProjectsSlashupdate_card(card_id: number, requestBody: ProjectsSlashupdate_cardPatchBody): Observable<Project_card> {
@@ -29062,6 +31596,7 @@ export namespace MyNS {
 		 * Move a project card
 		 * Post projects/columns/cards/{card_id}/moves
 		 * @param {number} card_id card_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashmove_card(card_id: number, requestBody: ProjectsSlashmove_cardPostBody): Observable<HttpResponse<string>> {
@@ -29072,6 +31607,7 @@ export namespace MyNS {
 		 * Delete a project column
 		 * Delete projects/columns/{column_id}
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashdelete_column(column_id: number): Observable<HttpResponse<string>> {
@@ -29082,6 +31618,7 @@ export namespace MyNS {
 		 * Get a project column
 		 * Get projects/columns/{column_id}
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project_column} Response
 		 */
 		ProjectsSlashget_column(column_id: number): Observable<Project_column> {
@@ -29092,6 +31629,7 @@ export namespace MyNS {
 		 * Update an existing project column
 		 * Patch projects/columns/{column_id}
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project_column} Response
 		 */
 		ProjectsSlashupdate_column(column_id: number, requestBody: ProjectsSlashupdate_columnPatchBody): Observable<Project_column> {
@@ -29102,9 +31640,12 @@ export namespace MyNS {
 		 * List project cards
 		 * Get projects/columns/{column_id}/cards
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProjectsSlashlist_cardsArchived_state} archived_state Filters the project cards that are returned by the card's state. Can be one of `all`,`archived`, or `not_archived`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Project_card>} Response
 		 */
 		ProjectsSlashlist_cards(column_id: number, archived_state: ProjectsSlashlist_cardsArchived_state | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Project_card>> {
@@ -29115,6 +31656,7 @@ export namespace MyNS {
 		 * Create a project card
 		 * Post projects/columns/{column_id}/cards
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashcreate_card(column_id: number, requestBody: ProjectsSlashcreate_cardPostBody): Observable<HttpResponse<string>> {
@@ -29125,6 +31667,7 @@ export namespace MyNS {
 		 * Move a project column
 		 * Post projects/columns/{column_id}/moves
 		 * @param {number} column_id column_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashmove_column(column_id: number, requestBody: ProjectsSlashmove_columnPostBody): Observable<HttpResponse<string>> {
@@ -29135,6 +31678,7 @@ export namespace MyNS {
 		 * Delete a project
 		 * Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
 		 * Delete projects/{project_id}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashdelete(project_id: number): Observable<HttpResponse<string>> {
@@ -29145,6 +31689,7 @@ export namespace MyNS {
 		 * Get a project
 		 * Gets a project by its `id`. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
 		 * Get projects/{project_id}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project} Response
 		 */
 		ProjectsSlashget(project_id: number): Observable<Project> {
@@ -29155,6 +31700,7 @@ export namespace MyNS {
 		 * Update a project
 		 * Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
 		 * Patch projects/{project_id}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project} Response
 		 */
 		ProjectsSlashupdate(project_id: number, requestBody: ProjectsSlashupdatePatchBody): Observable<Project> {
@@ -29165,12 +31711,15 @@ export namespace MyNS {
 		 * List project collaborators
 		 * Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
 		 * Get projects/{project_id}/collaborators
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProjectsSlashlist_collaboratorsAffiliation} affiliation Filters the collaborators by their affiliation. Can be one of:  
 		 * \* `outside`: Outside collaborators of a project that are not a member of the project's organization.  
 		 * \* `direct`: Collaborators with permissions to a project, regardless of organization membership status.  
 		 * \* `all`: All collaborators the authenticated user can see.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		ProjectsSlashlist_collaborators(project_id: number, affiliation: ProjectsSlashlist_collaboratorsAffiliation | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -29181,6 +31730,7 @@ export namespace MyNS {
 		 * Remove user as a collaborator
 		 * Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
 		 * Delete projects/{project_id}/collaborators/{username}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashremove_collaborator(project_id: number, username: string): Observable<HttpResponse<string>> {
@@ -29191,6 +31741,7 @@ export namespace MyNS {
 		 * Add project collaborator
 		 * Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
 		 * Put projects/{project_id}/collaborators/{username}
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashadd_collaborator(project_id: number, username: string, requestBody: ProjectsSlashadd_collaboratorPutBody): Observable<HttpResponse<string>> {
@@ -29201,6 +31752,7 @@ export namespace MyNS {
 		 * Get project permission for a user
 		 * Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
 		 * Get projects/{project_id}/collaborators/{username}/permission
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Repository_collaborator_permission} Response
 		 */
 		ProjectsSlashget_permission_for_user(project_id: number, username: string): Observable<Repository_collaborator_permission> {
@@ -29210,8 +31762,11 @@ export namespace MyNS {
 		/**
 		 * List project columns
 		 * Get projects/{project_id}/columns
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Project_column>} Response
 		 */
 		ProjectsSlashlist_columns(project_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Project_column>> {
@@ -29221,6 +31776,7 @@ export namespace MyNS {
 		/**
 		 * Create a project column
 		 * Post projects/{project_id}/columns
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ProjectsSlashcreate_column(project_id: number, requestBody: ProjectsSlashcreate_columnPostBody): Observable<HttpResponse<string>> {
@@ -29243,6 +31799,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).
 		 * OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussions) or [team discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussion-comments).
 		 * Delete reactions/{reaction_id}
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_legacy(reaction_id: number): Observable<HttpResponse<string>> {
@@ -29287,7 +31844,9 @@ export namespace MyNS {
 		 * Lists the [available assignees](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 		 * Get repos/{owner}/{repo}/assignees
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		IssuesSlashlist_assignees(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -29311,7 +31870,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/branches
 		 * @param {boolean} _protected Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Short_branch>} Response
 		 */
 		ReposSlashlist_branches(owner: string, repo: string, _protected: boolean | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Short_branch>> {
@@ -29763,6 +32324,7 @@ export namespace MyNS {
 		 * Gets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 		 * Get repos/{owner}/{repo}/check-runs/{check_run_id}
 		 * @param {number} check_run_id check_run_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Check_run} Response
 		 */
 		ChecksSlashget(owner: string, repo: string, check_run_id: number): Observable<Check_run> {
@@ -29775,6 +32337,7 @@ export namespace MyNS {
 		 * Updates a check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to edit check runs.
 		 * Patch repos/{owner}/{repo}/check-runs/{check_run_id}
 		 * @param {number} check_run_id check_run_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Check_run} Response
 		 */
 		ChecksSlashupdate(owner: string, repo: string, check_run_id: number, requestBody: ChecksSlashupdatePatchBody): Observable<Check_run> {
@@ -29786,8 +32349,11 @@ export namespace MyNS {
 		 * Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth Apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
 		 * Get repos/{owner}/{repo}/check-runs/{check_run_id}/annotations
 		 * @param {number} check_run_id check_run_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Check_annotation>} Response
 		 */
 		ChecksSlashlist_annotations(owner: string, repo: string, check_run_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Check_annotation>> {
@@ -29821,6 +32387,7 @@ export namespace MyNS {
 		 * Gets a single check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.
 		 * Get repos/{owner}/{repo}/check-suites/{check_suite_id}
 		 * @param {number} check_suite_id check_suite_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Check_suite} Response
 		 */
 		ChecksSlashget_suite(owner: string, repo: string, check_suite_id: number): Observable<Check_suite> {
@@ -29833,11 +32400,14 @@ export namespace MyNS {
 		 * Lists check runs for a check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 		 * Get repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs
 		 * @param {number} check_suite_id check_suite_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} check_name Returns check runs with the specified `name`.
 		 * @param {Check_runStatus} status Returns check runs with the specified `status`. Can be one of `queued`, `in_progress`, or `completed`.
 		 * @param {ChecksSlashlist_for_suiteFilter} filter Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChecksSlashlist_for_suiteReturn} Response
 		 */
 		ChecksSlashlist_for_suite(owner: string, repo: string, check_suite_id: number, check_name: string | null | undefined, status: Check_runStatus | null | undefined, filter: ChecksSlashlist_for_suiteFilter | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<ChecksSlashlist_for_suiteReturn> {
@@ -29850,6 +32420,7 @@ export namespace MyNS {
 		 * To rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
 		 * Post repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest
 		 * @param {number} check_suite_id check_suite_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ChecksSlashrerequest_suite(owner: string, repo: string, check_suite_id: number): Observable<HttpResponse<string>> {
@@ -29866,7 +32437,9 @@ export namespace MyNS {
 		 * \* `direct`: All collaborators with permissions to an organization-owned repository, regardless of organization membership status.  
 		 * \* `all`: All collaborators the authenticated user can see.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Collaborator>} Response
 		 */
 		ReposSlashlist_collaborators(owner: string, repo: string, affiliation: ProjectsSlashlist_collaboratorsAffiliation | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Collaborator>> {
@@ -29924,7 +32497,9 @@ export namespace MyNS {
 		 * Comments are ordered by ascending ID.
 		 * Get repos/{owner}/{repo}/comments
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Commit_comment>} Response
 		 */
 		ReposSlashlist_commit_comments_for_repo(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Commit_comment>> {
@@ -29935,6 +32510,7 @@ export namespace MyNS {
 		 * Delete a commit comment
 		 * Delete repos/{owner}/{repo}/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_commit_comment(owner: string, repo: string, comment_id: number): Observable<HttpResponse<string>> {
@@ -29945,6 +32521,7 @@ export namespace MyNS {
 		 * Get a commit comment
 		 * Get repos/{owner}/{repo}/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Commit_comment} Response
 		 */
 		ReposSlashget_commit_comment(owner: string, repo: string, comment_id: number): Observable<Commit_comment> {
@@ -29955,6 +32532,7 @@ export namespace MyNS {
 		 * Update a commit comment
 		 * Patch repos/{owner}/{repo}/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Commit_comment} Response
 		 */
 		ReposSlashupdate_commit_comment(owner: string, repo: string, comment_id: number, requestBody: ReposSlashupdate_commit_commentPatchBody): Observable<Commit_comment> {
@@ -29966,9 +32544,12 @@ export namespace MyNS {
 		 * List the reactions to a [commit comment](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#comments).
 		 * Get repos/{owner}/{repo}/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a commit comment.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_commit_comment(owner: string, repo: string, comment_id: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -29980,6 +32561,7 @@ export namespace MyNS {
 		 * Create a reaction to a [commit comment](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#comments). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
 		 * Post repos/{owner}/{repo}/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Reaction exists
 		 */
 		ReactionsSlashcreate_for_commit_comment(owner: string, repo: string, comment_id: number, requestBody: ReactionsSlashcreate_for_commit_commentPostBody): Observable<Reaction> {
@@ -29992,6 +32574,8 @@ export namespace MyNS {
 		 * Delete a reaction to a [commit comment](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#comments).
 		 * Delete repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_commit_comment(owner: string, repo: string, comment_id: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -30031,7 +32615,9 @@ export namespace MyNS {
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {Date} until Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Commit>} Response
 		 */
 		ReposSlashlist_commits(owner: string, repo: string, sha: string | null | undefined, path: string | null | undefined, author: string | null | undefined, since: Date | null | undefined, until: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Commit>> {
@@ -30056,7 +32642,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{commit_sha}/comments
 		 * @param {string} commit_sha commit_sha parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Commit_comment>} Response
 		 */
 		ReposSlashlist_comments_for_commit(owner: string, repo: string, commit_sha: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Commit_comment>> {
@@ -30081,7 +32669,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{commit_sha}/pulls
 		 * @param {string} commit_sha commit_sha parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pull_request_simple>} Response
 		 */
 		ReposSlashlist_pull_requests_associated_with_commit(owner: string, repo: string, commit_sha: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_simple>> {
@@ -30120,7 +32710,9 @@ export namespace MyNS {
 		 * | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 		 * Get repos/{owner}/{repo}/commits/{ref}
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ref ref parameter
 		 * @return {Commit} Response
 		 */
@@ -30138,7 +32730,10 @@ export namespace MyNS {
 		 * @param {Check_runStatus} status Returns check runs with the specified `status`. Can be one of `queued`, `in_progress`, or `completed`.
 		 * @param {ChecksSlashlist_for_suiteFilter} filter Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} app_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChecksSlashlist_for_refReturn} Response
 		 */
 		ChecksSlashlist_for_ref(owner: string, repo: string, ref: string, check_name: string | null | undefined, status: Check_runStatus | null | undefined, filter: ChecksSlashlist_for_suiteFilter | null | undefined, per_page: number | null | undefined, page: number | null | undefined, app_id: number | null | undefined): Observable<ChecksSlashlist_for_refReturn> {
@@ -30152,9 +32747,12 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/check-suites
 		 * @param {string} ref ref parameter
 		 * @param {number} app_id Filters check suites by GitHub App `id`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} check_name Returns check runs with the specified `name`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ChecksSlashlist_suites_for_refReturn} Response
 		 */
 		ChecksSlashlist_suites_for_ref(owner: string, repo: string, ref: string, app_id: number | null | undefined, check_name: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<ChecksSlashlist_suites_for_refReturn> {
@@ -30172,7 +32770,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/status
 		 * @param {string} ref ref parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Combined_commit_status} Response
 		 */
 		ReposSlashget_combined_status_for_ref(owner: string, repo: string, ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Combined_commit_status> {
@@ -30186,7 +32786,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/statuses
 		 * @param {string} ref ref parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Status>} Response
 		 */
 		ReposSlashlist_commit_statuses_for_ref(owner: string, repo: string, ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Status>> {
@@ -30243,6 +32845,7 @@ export namespace MyNS {
 		 * @param {string} owner The owner of the repository. Determined from the `repository` `full_name` of the `content_reference` event.
 		 * @param {string} repo The name of the repository. Determined from the `repository` `full_name` of the `content_reference` event.
 		 * @param {number} content_reference_id The `id` of the `content_reference` event.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Content_reference_attachment} Response
 		 */
 		AppsSlashcreate_content_attachment(owner: string, repo: string, content_reference_id: number, requestBody: AppsSlashcreate_content_attachmentPostBody): Observable<Content_reference_attachment> {
@@ -30318,7 +32921,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/contributors
 		 * @param {string} anon Set to `1` or `true` to include anonymous contributors in results.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Contributor>} if repository contains content
 		 */
 		ReposSlashlist_contributors(owner: string, repo: string, anon: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Contributor>> {
@@ -30334,7 +32939,9 @@ export namespace MyNS {
 		 * @param {string} task The name of the task for the deployment (e.g., `deploy` or `deploy:migrations`).
 		 * @param {string} environment The name of the environment that was deployed to (e.g., `staging` or `production`).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Deployment>} Response
 		 */
 		ReposSlashlist_deployments(owner: string, repo: string, sha: string | null | undefined, ref: string | null | undefined, task: string | null | undefined, environment: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Deployment>> {
@@ -30393,6 +33000,7 @@ export namespace MyNS {
 		 * For more information, see "[Create a deployment](https://docs.github.com/enterprise-server@2.21/rest/reference/repos/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#create-a-deployment-status)."
 		 * Delete repos/{owner}/{repo}/deployments/{deployment_id}
 		 * @param {number} deployment_id deployment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_deployment(owner: string, repo: string, deployment_id: number): Observable<HttpResponse<string>> {
@@ -30403,6 +33011,7 @@ export namespace MyNS {
 		 * Get a deployment
 		 * Get repos/{owner}/{repo}/deployments/{deployment_id}
 		 * @param {number} deployment_id deployment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Deployment} Response
 		 */
 		ReposSlashget_deployment(owner: string, repo: string, deployment_id: number): Observable<Deployment> {
@@ -30414,8 +33023,11 @@ export namespace MyNS {
 		 * Users with pull access can view deployment statuses for a deployment:
 		 * Get repos/{owner}/{repo}/deployments/{deployment_id}/statuses
 		 * @param {number} deployment_id deployment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Deployment_status>} Response
 		 */
 		ReposSlashlist_deployment_statuses(owner: string, repo: string, deployment_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Deployment_status>> {
@@ -30428,6 +33040,7 @@ export namespace MyNS {
 		 * GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
 		 * Post repos/{owner}/{repo}/deployments/{deployment_id}/statuses
 		 * @param {number} deployment_id deployment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashcreate_deployment_status(owner: string, repo: string, deployment_id: number, requestBody: ReposSlashcreate_deployment_statusPostBody): Observable<HttpResponse<string>> {
@@ -30439,6 +33052,8 @@ export namespace MyNS {
 		 * Users with pull access can view a deployment status for a deployment:
 		 * Get repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}
 		 * @param {number} deployment_id deployment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} status_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Deployment_status} Response
 		 */
 		ReposSlashget_deployment_status(owner: string, repo: string, deployment_id: number, status_id: number): Observable<Deployment_status> {
@@ -30464,7 +33079,9 @@ export namespace MyNS {
 		 * List repository events
 		 * Get repos/{owner}/{repo}/events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_repo_events(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -30476,7 +33093,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/forks
 		 * @param {ReposSlashlist_forksSort} sort The sort order. Can be either `newest`, `oldest`, or `stargazers`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		ReposSlashlist_forks(owner: string, repo: string, sort: ReposSlashlist_forksSort | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -30592,7 +33211,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/git/matching-refs/{ref}
 		 * @param {string} ref ref parameter
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Git_ref>} Response
 		 */
 		GitSlashlist_matching_refs(owner: string, repo: string, ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Git_ref>> {
@@ -30735,7 +33356,9 @@ export namespace MyNS {
 		 * List repository webhooks
 		 * Get repos/{owner}/{repo}/hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Hook>} Response
 		 */
 		ReposSlashlist_webhooks(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Hook>> {
@@ -30756,6 +33379,7 @@ export namespace MyNS {
 		/**
 		 * Delete a repository webhook
 		 * Delete repos/{owner}/{repo}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_webhook(owner: string, repo: string, hook_id: number): Observable<HttpResponse<string>> {
@@ -30766,6 +33390,7 @@ export namespace MyNS {
 		 * Get a repository webhook
 		 * Returns a webhook configured in a repository. To get only the webhook `config` properties, see "[Get a webhook configuration for a repository](/rest/reference/repos#get-a-webhook-configuration-for-a-repository)."
 		 * Get repos/{owner}/{repo}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Hook} Response
 		 */
 		ReposSlashget_webhook(owner: string, repo: string, hook_id: number): Observable<Hook> {
@@ -30776,6 +33401,7 @@ export namespace MyNS {
 		 * Update a repository webhook
 		 * Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/reference/repos#update-a-webhook-configuration-for-a-repository)."
 		 * Patch repos/{owner}/{repo}/hooks/{hook_id}
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Hook} Response
 		 */
 		ReposSlashupdate_webhook(owner: string, repo: string, hook_id: number, requestBody: ReposSlashupdate_webhookPatchBody): Observable<Hook> {
@@ -30786,6 +33412,7 @@ export namespace MyNS {
 		 * Ping a repository webhook
 		 * This will trigger a [ping event](https://docs.github.com/enterprise-server@2.21/webhooks/#ping-event) to be sent to the hook.
 		 * Post repos/{owner}/{repo}/hooks/{hook_id}/pings
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashping_webhook(owner: string, repo: string, hook_id: number): Observable<HttpResponse<string>> {
@@ -30797,6 +33424,7 @@ export namespace MyNS {
 		 * This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
 		 * **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 		 * Post repos/{owner}/{repo}/hooks/{hook_id}/tests
+		 * @param {number} hook_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashtest_push_webhook(owner: string, repo: string, hook_id: number): Observable<HttpResponse<string>> {
@@ -30819,7 +33447,9 @@ export namespace MyNS {
 		 * When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
 		 * Get repos/{owner}/{repo}/invitations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Repository_invitation>} Response
 		 */
 		ReposSlashlist_invitations(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Repository_invitation>> {
@@ -30830,6 +33460,7 @@ export namespace MyNS {
 		 * Delete a repository invitation
 		 * Delete repos/{owner}/{repo}/invitations/{invitation_id}
 		 * @param {number} invitation_id invitation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_invitation(owner: string, repo: string, invitation_id: number): Observable<HttpResponse<string>> {
@@ -30840,6 +33471,7 @@ export namespace MyNS {
 		 * Update a repository invitation
 		 * Patch repos/{owner}/{repo}/invitations/{invitation_id}
 		 * @param {number} invitation_id invitation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Repository_invitation} Response
 		 */
 		ReposSlashupdate_invitation(owner: string, repo: string, invitation_id: number, requestBody: ReposSlashupdate_invitationPatchBody): Observable<Repository_invitation> {
@@ -30864,7 +33496,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue_simple>} Response
 		 */
 		IssuesSlashlist_for_repo(owner: string, repo: string, milestone: string | null | undefined, state: IssuesSlashlistState | null | undefined, assignee: string | null | undefined, creator: string | null | undefined, mentioned: string | null | undefined, labels: string | null | undefined, sort: IssuesSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue_simple>> {
@@ -30890,7 +33524,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Either `asc` or `desc`. Ignored without the `sort` parameter.
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue_comment>} Response
 		 */
 		IssuesSlashlist_comments_for_repo(owner: string, repo: string, sort: IssuesSlashlist_comments_for_repoSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue_comment>> {
@@ -30901,6 +33537,7 @@ export namespace MyNS {
 		 * Delete an issue comment
 		 * Delete repos/{owner}/{repo}/issues/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashdelete_comment(owner: string, repo: string, comment_id: number): Observable<HttpResponse<string>> {
@@ -30911,6 +33548,7 @@ export namespace MyNS {
 		 * Get an issue comment
 		 * Get repos/{owner}/{repo}/issues/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue_comment} Response
 		 */
 		IssuesSlashget_comment(owner: string, repo: string, comment_id: number): Observable<Issue_comment> {
@@ -30921,6 +33559,7 @@ export namespace MyNS {
 		 * Update an issue comment
 		 * Patch repos/{owner}/{repo}/issues/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue_comment} Response
 		 */
 		IssuesSlashupdate_comment(owner: string, repo: string, comment_id: number, requestBody: IssuesSlashupdate_commentPatchBody): Observable<Issue_comment> {
@@ -30932,9 +33571,12 @@ export namespace MyNS {
 		 * List the reactions to an [issue comment](https://docs.github.com/enterprise-server@2.21/rest/reference/issues#comments).
 		 * Get repos/{owner}/{repo}/issues/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue comment.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_issue_comment(owner: string, repo: string, comment_id: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -30946,6 +33588,7 @@ export namespace MyNS {
 		 * Create a reaction to an [issue comment](https://docs.github.com/enterprise-server@2.21/rest/reference/issues#comments). A response with an HTTP `200` status means that you already added the reaction type to this issue comment.
 		 * Post repos/{owner}/{repo}/issues/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Reaction exists
 		 */
 		ReactionsSlashcreate_for_issue_comment(owner: string, repo: string, comment_id: number, requestBody: ReactionsSlashcreate_for_issue_commentPostBody): Observable<Reaction> {
@@ -30958,6 +33601,8 @@ export namespace MyNS {
 		 * Delete a reaction to an [issue comment](https://docs.github.com/enterprise-server@2.21/rest/reference/issues#comments).
 		 * Delete repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_issue_comment(owner: string, repo: string, comment_id: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -30968,7 +33613,9 @@ export namespace MyNS {
 		 * List issue events for a repository
 		 * Get repos/{owner}/{repo}/issues/events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue_event>} Response
 		 */
 		IssuesSlashlist_events_for_repo(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue_event>> {
@@ -30978,6 +33625,7 @@ export namespace MyNS {
 		/**
 		 * Get an issue event
 		 * Get repos/{owner}/{repo}/issues/events/{event_id}
+		 * @param {number} event_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue_event} Response
 		 */
 		IssuesSlashget_event(owner: string, repo: string, event_id: number): Observable<Issue_event> {
@@ -30998,6 +33646,7 @@ export namespace MyNS {
 		 * request id, use the "[List pull requests](https://docs.github.com/enterprise-server@2.21/rest/reference/pulls#list-pull-requests)" endpoint.
 		 * Get repos/{owner}/{repo}/issues/{issue_number}
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue} Response
 		 */
 		IssuesSlashget(owner: string, repo: string, issue_number: number): Observable<Issue> {
@@ -31009,6 +33658,7 @@ export namespace MyNS {
 		 * Issue owners and users with push access can edit an issue.
 		 * Patch repos/{owner}/{repo}/issues/{issue_number}
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue} Response
 		 */
 		IssuesSlashupdate(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashupdatePatchBody): Observable<Issue> {
@@ -31020,6 +33670,7 @@ export namespace MyNS {
 		 * Removes one or more assignees from an issue.
 		 * Delete repos/{owner}/{repo}/issues/{issue_number}/assignees
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Issue_simple} Response
 		 */
 		IssuesSlashremove_assignees(owner: string, repo: string, issue_number: number): Observable<Issue_simple> {
@@ -31031,6 +33682,7 @@ export namespace MyNS {
 		 * Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
 		 * Post repos/{owner}/{repo}/issues/{issue_number}/assignees
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashadd_assignees(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashadd_assigneesPostBody): Observable<HttpResponse<string>> {
@@ -31042,9 +33694,12 @@ export namespace MyNS {
 		 * Issue Comments are ordered by ascending ID.
 		 * Get repos/{owner}/{repo}/issues/{issue_number}/comments
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue_comment>} Response
 		 */
 		IssuesSlashlist_comments(owner: string, repo: string, issue_number: number, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue_comment>> {
@@ -31056,6 +33711,7 @@ export namespace MyNS {
 		 * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post repos/{owner}/{repo}/issues/{issue_number}/comments
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashcreate_comment(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashcreate_commentPostBody): Observable<HttpResponse<string>> {
@@ -31066,8 +33722,11 @@ export namespace MyNS {
 		 * List issue events
 		 * Get repos/{owner}/{repo}/issues/{issue_number}/events
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue_event_for_issue>} Response
 		 */
 		IssuesSlashlist_events(owner: string, repo: string, issue_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue_event_for_issue>> {
@@ -31078,6 +33737,7 @@ export namespace MyNS {
 		 * Remove all labels from an issue
 		 * Delete repos/{owner}/{repo}/issues/{issue_number}/labels
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashremove_all_labels(owner: string, repo: string, issue_number: number): Observable<HttpResponse<string>> {
@@ -31088,8 +33748,11 @@ export namespace MyNS {
 		 * List labels for an issue
 		 * Get repos/{owner}/{repo}/issues/{issue_number}/labels
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashlist_labels_on_issue(owner: string, repo: string, issue_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Label>> {
@@ -31100,6 +33763,7 @@ export namespace MyNS {
 		 * Add labels to an issue
 		 * Post repos/{owner}/{repo}/issues/{issue_number}/labels
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashadd_labels(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashadd_labelsPostBody): Observable<Array<Label>> {
@@ -31111,6 +33775,7 @@ export namespace MyNS {
 		 * Removes any previous labels and sets the new labels for an issue.
 		 * Put repos/{owner}/{repo}/issues/{issue_number}/labels
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashset_labels(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashset_labelsPutBody): Observable<Array<Label>> {
@@ -31122,6 +33787,7 @@ export namespace MyNS {
 		 * Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
 		 * Delete repos/{owner}/{repo}/issues/{issue_number}/labels/{name}
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashremove_label(owner: string, repo: string, issue_number: number, name: string): Observable<Array<Label>> {
@@ -31133,6 +33799,7 @@ export namespace MyNS {
 		 * Users with push access can unlock an issue's conversation.
 		 * Delete repos/{owner}/{repo}/issues/{issue_number}/lock
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashunlock(owner: string, repo: string, issue_number: number): Observable<HttpResponse<string>> {
@@ -31145,6 +33812,7 @@ export namespace MyNS {
 		 * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#http-verbs)."
 		 * Put repos/{owner}/{repo}/issues/{issue_number}/lock
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashlock(owner: string, repo: string, issue_number: number, requestBody: IssuesSlashlockPutBody): Observable<HttpResponse<string>> {
@@ -31156,9 +33824,12 @@ export namespace MyNS {
 		 * List the reactions to an [issue](https://docs.github.com/enterprise-server@2.21/rest/reference/issues).
 		 * Get repos/{owner}/{repo}/issues/{issue_number}/reactions
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_issue(owner: string, repo: string, issue_number: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -31170,6 +33841,7 @@ export namespace MyNS {
 		 * Create a reaction to an [issue](https://docs.github.com/enterprise-server@2.21/rest/reference/issues/). A response with an HTTP `200` status means that you already added the reaction type to this issue.
 		 * Post repos/{owner}/{repo}/issues/{issue_number}/reactions
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Response
 		 */
 		ReactionsSlashcreate_for_issue(owner: string, repo: string, issue_number: number, requestBody: ReactionsSlashcreate_for_issuePostBody): Observable<Reaction> {
@@ -31182,6 +33854,8 @@ export namespace MyNS {
 		 * Delete a reaction to an [issue](https://docs.github.com/enterprise-server@2.21/rest/reference/issues/).
 		 * Delete repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_issue(owner: string, repo: string, issue_number: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -31192,8 +33866,11 @@ export namespace MyNS {
 		 * List timeline events for an issue
 		 * Get repos/{owner}/{repo}/issues/{issue_number}/timeline
 		 * @param {number} issue_number issue_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Timeline_issue_events>} Response
 		 */
 		IssuesSlashlist_events_for_timeline(owner: string, repo: string, issue_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Timeline_issue_events>> {
@@ -31204,7 +33881,9 @@ export namespace MyNS {
 		 * List deploy keys
 		 * Get repos/{owner}/{repo}/keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Deploy_key>} Response
 		 */
 		ReposSlashlist_deploy_keys(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Deploy_key>> {
@@ -31226,6 +33905,7 @@ export namespace MyNS {
 		 * Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.
 		 * Delete repos/{owner}/{repo}/keys/{key_id}
 		 * @param {number} key_id key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_deploy_key(owner: string, repo: string, key_id: number): Observable<HttpResponse<string>> {
@@ -31236,6 +33916,7 @@ export namespace MyNS {
 		 * Get a deploy key
 		 * Get repos/{owner}/{repo}/keys/{key_id}
 		 * @param {number} key_id key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Deploy_key} Response
 		 */
 		ReposSlashget_deploy_key(owner: string, repo: string, key_id: number): Observable<Deploy_key> {
@@ -31246,7 +33927,9 @@ export namespace MyNS {
 		 * List labels for a repository
 		 * Get repos/{owner}/{repo}/labels
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashlist_labels_for_repo(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Label>> {
@@ -31326,7 +34009,9 @@ export namespace MyNS {
 		 * @param {IssuesSlashlist_milestonesSort} sort What to sort results by. Either `due_on` or `completeness`.
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction The direction of the sort. Either `asc` or `desc`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Milestone>} Response
 		 */
 		IssuesSlashlist_milestones(owner: string, repo: string, state: IssuesSlashlistState | null | undefined, sort: IssuesSlashlist_milestonesSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Milestone>> {
@@ -31346,6 +34031,7 @@ export namespace MyNS {
 		 * Delete a milestone
 		 * Delete repos/{owner}/{repo}/milestones/{milestone_number}
 		 * @param {number} milestone_number milestone_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		IssuesSlashdelete_milestone(owner: string, repo: string, milestone_number: number): Observable<HttpResponse<string>> {
@@ -31356,6 +34042,7 @@ export namespace MyNS {
 		 * Get a milestone
 		 * Get repos/{owner}/{repo}/milestones/{milestone_number}
 		 * @param {number} milestone_number milestone_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Milestone} Response
 		 */
 		IssuesSlashget_milestone(owner: string, repo: string, milestone_number: number): Observable<Milestone> {
@@ -31366,6 +34053,7 @@ export namespace MyNS {
 		 * Update a milestone
 		 * Patch repos/{owner}/{repo}/milestones/{milestone_number}
 		 * @param {number} milestone_number milestone_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Milestone} Response
 		 */
 		IssuesSlashupdate_milestone(owner: string, repo: string, milestone_number: number, requestBody: IssuesSlashupdate_milestonePatchBody): Observable<Milestone> {
@@ -31376,8 +34064,11 @@ export namespace MyNS {
 		 * List labels for issues in a milestone
 		 * Get repos/{owner}/{repo}/milestones/{milestone_number}/labels
 		 * @param {number} milestone_number milestone_number parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Label>} Response
 		 */
 		IssuesSlashlist_labels_for_milestone(owner: string, repo: string, milestone_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Label>> {
@@ -31393,7 +34084,9 @@ export namespace MyNS {
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {Date} before Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Thread>} Response
 		 */
 		ActivitySlashlist_repo_notifications_for_authenticated_user(owner: string, repo: string, all: boolean | null | undefined, participating: boolean | null | undefined, since: Date | null | undefined, before: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Thread>> {
@@ -31452,7 +34145,9 @@ export namespace MyNS {
 		 * List GitHub Enterprise Server Pages builds
 		 * Get repos/{owner}/{repo}/pages/builds
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Page_build>} Response
 		 */
 		ReposSlashlist_pages_builds(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Page_build>> {
@@ -31482,6 +34177,7 @@ export namespace MyNS {
 		/**
 		 * Get GitHub Enterprise Server Pages build
 		 * Get repos/{owner}/{repo}/pages/builds/{build_id}
+		 * @param {number} build_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Page_build} Response
 		 */
 		ReposSlashget_pages_build(owner: string, repo: string, build_id: number): Observable<Page_build> {
@@ -31493,7 +34189,9 @@ export namespace MyNS {
 		 * List all pre-receive hooks that are enabled or testing for this repository as well as any disabled hooks that are allowed to be enabled at the repository level. Pre-receive hooks that are disabled at a higher level and are not configurable will not be listed.
 		 * Get repos/{owner}/{repo}/pre-receive-hooks
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @return {Array<Repository_pre_receive_hook>} Response
 		 */
@@ -31507,6 +34205,7 @@ export namespace MyNS {
 		 * Responds with effective values inherited from owner and/or global level.
 		 * Delete repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Repository_pre_receive_hook} Responds with effective values inherited from owner and/or global level.
 		 */
 		Enterprise_adminSlashremove_pre_receive_hook_enforcement_for_repo(owner: string, repo: string, pre_receive_hook_id: number): Observable<Repository_pre_receive_hook> {
@@ -31517,6 +34216,7 @@ export namespace MyNS {
 		 * Get a pre-receive hook for a repository
 		 * Get repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Repository_pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashget_pre_receive_hook_for_repo(owner: string, repo: string, pre_receive_hook_id: number): Observable<Repository_pre_receive_hook> {
@@ -31528,6 +34228,7 @@ export namespace MyNS {
 		 * For pre-receive hooks which are allowed to be configured at the repo level, you can set `enforcement`
 		 * Patch repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}
 		 * @param {number} pre_receive_hook_id pre_receive_hook_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Repository_pre_receive_hook} Response
 		 */
 		Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_repo(owner: string, repo: string, pre_receive_hook_id: number, requestBody: Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_repoPatchBody): Observable<Repository_pre_receive_hook> {
@@ -31540,7 +34241,9 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/projects
 		 * @param {IssuesSlashlistState} state Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Project>} Response
 		 */
 		ProjectsSlashlist_for_repo(owner: string, repo: string, state: IssuesSlashlistState | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Project>> {
@@ -31567,7 +34270,9 @@ export namespace MyNS {
 		 * @param {PullsSlashlistSort} sort What to sort results by. Can be either `created`, `updated`, `popularity` (comment count) or `long-running` (age, filtering by pulls updated in the last month).
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction The direction of the sort. Can be either `asc` or `desc`. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pull_request_simple>} Response
 		 */
 		PullsSlashlist(owner: string, repo: string, state: IssuesSlashlistState | null | undefined, head: string | null | undefined, base: string | null | undefined, sort: PullsSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_simple>> {
@@ -31591,7 +34296,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Can be either `asc` or `desc`. Ignored without `sort` parameter.
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pull_request_review_comment>} Response
 		 */
 		PullsSlashlist_review_comments_for_repo(owner: string, repo: string, sort: PullsSlashlist_review_comments_for_repoSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_review_comment>> {
@@ -31603,6 +34310,7 @@ export namespace MyNS {
 		 * Deletes a review comment.
 		 * Delete repos/{owner}/{repo}/pulls/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashdelete_review_comment(owner: string, repo: string, comment_id: number): Observable<HttpResponse<string>> {
@@ -31614,6 +34322,7 @@ export namespace MyNS {
 		 * Provides details for a review comment.
 		 * Get repos/{owner}/{repo}/pulls/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review_comment} Response
 		 */
 		PullsSlashget_review_comment(owner: string, repo: string, comment_id: number): Observable<Pull_request_review_comment> {
@@ -31625,6 +34334,7 @@ export namespace MyNS {
 		 * Enables you to edit a review comment.
 		 * Patch repos/{owner}/{repo}/pulls/comments/{comment_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review_comment} Response
 		 */
 		PullsSlashupdate_review_comment(owner: string, repo: string, comment_id: number, requestBody: PullsSlashupdate_review_commentPatchBody): Observable<Pull_request_review_comment> {
@@ -31636,9 +34346,12 @@ export namespace MyNS {
 		 * List the reactions to a [pull request review comment](https://docs.github.com/enterprise-server@2.21/rest/reference/pulls#review-comments).
 		 * Get repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_pull_request_review_comment(owner: string, repo: string, comment_id: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -31650,6 +34363,7 @@ export namespace MyNS {
 		 * Create a reaction to a [pull request review comment](https://docs.github.com/enterprise-server@2.21/rest/reference/pulls#comments). A response with an HTTP `200` status means that you already added the reaction type to this pull request review comment.
 		 * Post repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reaction} Reaction exists
 		 */
 		ReactionsSlashcreate_for_pull_request_review_comment(owner: string, repo: string, comment_id: number, requestBody: ReactionsSlashcreate_for_pull_request_review_commentPostBody): Observable<Reaction> {
@@ -31662,6 +34376,8 @@ export namespace MyNS {
 		 * Delete a reaction to a [pull request review comment](https://docs.github.com/enterprise-server@2.21/rest/reference/pulls#review-comments).
 		 * Delete repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reaction_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashdelete_for_pull_request_comment(owner: string, repo: string, comment_id: number, reaction_id: number): Observable<HttpResponse<string>> {
@@ -31680,6 +34396,7 @@ export namespace MyNS {
 		 * *   If [rebased](https://help.github.com/articles/about-merge-methods-on-github/#rebasing-and-merging-your-commits), `merge_commit_sha` represents the commit that the base branch was updated to.
 		 * Pass the appropriate [media type](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request} Pass the appropriate [media type](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 		 */
 		PullsSlashget(owner: string, repo: string, pull_number: number): Observable<Pull_request> {
@@ -31690,6 +34407,7 @@ export namespace MyNS {
 		 * Update a pull request
 		 * Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team, GitHub Enterprise Server 2.17+, and GitHub Enterprise Cloud.
 		 * Patch repos/{owner}/{repo}/pulls/{pull_number}
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request} Response
 		 */
 		PullsSlashupdate(owner: string, repo: string, pull_number: number, requestBody: PullsSlashupdatePatchBody): Observable<Pull_request> {
@@ -31700,11 +34418,14 @@ export namespace MyNS {
 		 * List review comments on a pull request
 		 * Lists all review comments for a pull request. By default, review comments are in ascending order by ID.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/comments
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {IssuesSlashlist_comments_for_repoSort} sort One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Can be either `asc` or `desc`. Ignored without `sort` parameter.
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pull_request_review_comment>} Response
 		 */
 		PullsSlashlist_review_comments(owner: string, repo: string, pull_number: number, sort: IssuesSlashlist_comments_for_repoSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_review_comment>> {
@@ -31718,6 +34439,7 @@ export namespace MyNS {
 		 * **Note:** The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 		 * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post repos/{owner}/{repo}/pulls/{pull_number}/comments
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashcreate_review_comment(owner: string, repo: string, pull_number: number, requestBody: PullsSlashcreate_review_commentPostBody): Observable<HttpResponse<string>> {
@@ -31729,7 +34451,9 @@ export namespace MyNS {
 		 * Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
 		 * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} comment_id comment_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashcreate_reply_for_review_comment(owner: string, repo: string, pull_number: number, comment_id: number, requestBody: PullsSlashcreate_reply_for_review_commentPostBody): Observable<HttpResponse<string>> {
@@ -31740,8 +34464,11 @@ export namespace MyNS {
 		 * List commits on a pull request
 		 * Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [List commits](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#list-commits) endpoint.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/commits
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Commit>} Response
 		 */
 		PullsSlashlist_commits(owner: string, repo: string, pull_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Commit>> {
@@ -31752,8 +34479,11 @@ export namespace MyNS {
 		 * List pull requests files
 		 * **Note:** Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/files
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Diff_entry>} Response
 		 */
 		PullsSlashlist_files(owner: string, repo: string, pull_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Diff_entry>> {
@@ -31763,6 +34493,7 @@ export namespace MyNS {
 		/**
 		 * Check if a pull request has been merged
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/merge
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashcheck_if_merged(owner: string, repo: string, pull_number: number): Observable<HttpResponse<string>> {
@@ -31773,6 +34504,7 @@ export namespace MyNS {
 		 * Merge a pull request
 		 * This endpoint triggers [notifications](https://docs.github.com/enterprise-server@2.21/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Put repos/{owner}/{repo}/pulls/{pull_number}/merge
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_merge_result} if merge was successful
 		 */
 		PullsSlashmerge(owner: string, repo: string, pull_number: number, requestBody: PullsSlashmergePutBody): Observable<Pull_request_merge_result> {
@@ -31782,6 +34514,7 @@ export namespace MyNS {
 		/**
 		 * Remove requested reviewers from a pull request
 		 * Delete repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_simple} Response
 		 */
 		PullsSlashremove_requested_reviewers(owner: string, repo: string, pull_number: number): Observable<Pull_request_simple> {
@@ -31791,8 +34524,11 @@ export namespace MyNS {
 		/**
 		 * List requested reviewers for a pull request
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review_request} Response
 		 */
 		PullsSlashlist_requested_reviewers(owner: string, repo: string, pull_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Pull_request_review_request> {
@@ -31803,6 +34539,7 @@ export namespace MyNS {
 		 * Request reviewers for a pull request
 		 * This endpoint triggers [notifications](https://docs.github.com/enterprise-server@2.21/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashrequest_reviewers(owner: string, repo: string, pull_number: number, requestBody: PullsSlashrequest_reviewersPostBody): Observable<HttpResponse<string>> {
@@ -31813,8 +34550,11 @@ export namespace MyNS {
 		 * List reviews for a pull request
 		 * The list of reviews returns in chronological order.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/reviews
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pull_request_review>} The list of reviews returns in chronological order.
 		 */
 		PullsSlashlist_reviews(owner: string, repo: string, pull_number: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_review>> {
@@ -31828,6 +34568,7 @@ export namespace MyNS {
 		 * **Note:** To comment on a specific line in a file, you need to first determine the _position_ of that line in the diff. The GitHub REST API v3 offers the `application/vnd.github.v3.diff` [media type](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types#commits-commit-comparison-and-pull-requests). To see a pull request diff, add this media type to the `Accept` header of a call to the [single pull request](https://docs.github.com/enterprise-server@2.21/rest/reference/pulls#get-a-pull-request) endpoint.
 		 * The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 		 * Post repos/{owner}/{repo}/pulls/{pull_number}/reviews
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashcreate_review(owner: string, repo: string, pull_number: number, requestBody: PullsSlashcreate_reviewPostBody): Observable<Pull_request_review> {
@@ -31837,7 +34578,9 @@ export namespace MyNS {
 		/**
 		 * Delete a pending review for a pull request
 		 * Delete repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashdelete_pending_review(owner: string, repo: string, pull_number: number, review_id: number): Observable<Pull_request_review> {
@@ -31847,7 +34590,9 @@ export namespace MyNS {
 		/**
 		 * Get a review for a pull request
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashget_review(owner: string, repo: string, pull_number: number, review_id: number): Observable<Pull_request_review> {
@@ -31858,7 +34603,9 @@ export namespace MyNS {
 		 * Update a review for a pull request
 		 * Update the review summary comment with new text.
 		 * Put repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashupdate_review(owner: string, repo: string, pull_number: number, review_id: number, requestBody: PullsSlashupdate_reviewPutBody): Observable<Pull_request_review> {
@@ -31869,9 +34616,13 @@ export namespace MyNS {
 		 * List comments for a pull request review
 		 * List comments for a specific pull request review.
 		 * Get repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Review_comment>} Response
 		 */
 		PullsSlashlist_comments_for_review(owner: string, repo: string, pull_number: number, review_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Review_comment>> {
@@ -31882,7 +34633,9 @@ export namespace MyNS {
 		 * Dismiss a review for a pull request
 		 * **Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/enterprise-server@2.21/rest/reference/repos#branches), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
 		 * Put repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashdismiss_review(owner: string, repo: string, pull_number: number, review_id: number, requestBody: PullsSlashdismiss_reviewPutBody): Observable<Pull_request_review> {
@@ -31892,7 +34645,9 @@ export namespace MyNS {
 		/**
 		 * Submit a review for a pull request
 		 * Post repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} review_id review_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Pull_request_review} Response
 		 */
 		PullsSlashsubmit_review(owner: string, repo: string, pull_number: number, review_id: number, requestBody: PullsSlashsubmit_reviewPostBody): Observable<Pull_request_review> {
@@ -31903,6 +34658,7 @@ export namespace MyNS {
 		 * Update a pull request branch
 		 * Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
 		 * Put repos/{owner}/{repo}/pulls/{pull_number}/update-branch
+		 * @param {number} pull_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PullsSlashupdate_branch(owner: string, repo: string, pull_number: number, requestBody: PullsSlashupdate_branchPutBody): Observable<HttpResponse<string>> {
@@ -31940,7 +34696,9 @@ export namespace MyNS {
 		 * Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 		 * Get repos/{owner}/{repo}/releases
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Release>} Response
 		 */
 		ReposSlashlist_releases(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Release>> {
@@ -31962,6 +34720,7 @@ export namespace MyNS {
 		 * Delete a release asset
 		 * Delete repos/{owner}/{repo}/releases/assets/{asset_id}
 		 * @param {number} asset_id asset_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_release_asset(owner: string, repo: string, asset_id: number): Observable<HttpResponse<string>> {
@@ -31973,6 +34732,7 @@ export namespace MyNS {
 		 * To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
 		 * Get repos/{owner}/{repo}/releases/assets/{asset_id}
 		 * @param {number} asset_id asset_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Release_asset} To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
 		 */
 		ReposSlashget_release_asset(owner: string, repo: string, asset_id: number): Observable<Release_asset> {
@@ -31984,6 +34744,7 @@ export namespace MyNS {
 		 * Users with push access to the repository can edit a release asset.
 		 * Patch repos/{owner}/{repo}/releases/assets/{asset_id}
 		 * @param {number} asset_id asset_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Release_asset} Response
 		 */
 		ReposSlashupdate_release_asset(owner: string, repo: string, asset_id: number, requestBody: ReposSlashupdate_release_assetPatchBody): Observable<Release_asset> {
@@ -32017,6 +34778,7 @@ export namespace MyNS {
 		 * Users with push access to the repository can delete a release.
 		 * Delete repos/{owner}/{repo}/releases/{release_id}
 		 * @param {number} release_id release_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdelete_release(owner: string, repo: string, release_id: number): Observable<HttpResponse<string>> {
@@ -32028,6 +34790,7 @@ export namespace MyNS {
 		 * **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#hypermedia).
 		 * Get repos/{owner}/{repo}/releases/{release_id}
 		 * @param {number} release_id release_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Release} **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#hypermedia).
 		 */
 		ReposSlashget_release(owner: string, repo: string, release_id: number): Observable<Release> {
@@ -32039,6 +34802,7 @@ export namespace MyNS {
 		 * Users with push access to the repository can edit a release.
 		 * Patch repos/{owner}/{repo}/releases/{release_id}
 		 * @param {number} release_id release_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Release} Response
 		 */
 		ReposSlashupdate_release(owner: string, repo: string, release_id: number, requestBody: ReposSlashupdate_releasePatchBody): Observable<Release> {
@@ -32049,8 +34813,11 @@ export namespace MyNS {
 		 * List release assets
 		 * Get repos/{owner}/{repo}/releases/{release_id}/assets
 		 * @param {number} release_id release_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Release_asset>} Response
 		 */
 		ReposSlashlist_release_assets(owner: string, repo: string, release_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Release_asset>> {
@@ -32063,7 +34830,9 @@ export namespace MyNS {
 		 * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types/) via the `Accept` header:
 		 * Get repos/{owner}/{repo}/stargazers
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		ActivitySlashlist_stargazers_for_repo(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -32148,7 +34917,9 @@ export namespace MyNS {
 		 * Lists the people watching the specified repository.
 		 * Get repos/{owner}/{repo}/subscribers
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		ActivitySlashlist_watchers_for_repo(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -32188,7 +34959,9 @@ export namespace MyNS {
 		 * List repository tags
 		 * Get repos/{owner}/{repo}/tags
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Tag>} Response
 		 */
 		ReposSlashlist_tags(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Tag>> {
@@ -32212,7 +34985,9 @@ export namespace MyNS {
 		 * List repository teams
 		 * Get repos/{owner}/{repo}/teams
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} Response
 		 */
 		ReposSlashlist_teams(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team>> {
@@ -32223,7 +34998,9 @@ export namespace MyNS {
 		 * Get all repository topics
 		 * Get repos/{owner}/{repo}/topics
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Topic} Response
 		 */
 		ReposSlashget_all_topics(owner: string, repo: string, page: number | null | undefined, per_page: number | null | undefined): Observable<Topic> {
@@ -32284,6 +35061,7 @@ export namespace MyNS {
 		 * - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
 		 * Get repositories
 		 * @param {number} since A repository ID. Only return repositories with an ID greater than this ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReposSlashlist_publicVisibility} visibility Specifies the types of repositories to return. Can be one of `all` or `public`. Default: `public`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise.
 		 * @return {Array<Minimal_repository>} Response
 		 */
@@ -32309,7 +35087,9 @@ export namespace MyNS {
 		 * @param {SearchSlashcodeSort} sort Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub Enterprise Server search infrastructure. Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashcodeReturn} Response
 		 */
 		SearchSlashcode(q: string, sort: SearchSlashcodeSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashcodeReturn> {
@@ -32328,7 +35108,9 @@ export namespace MyNS {
 		 * @param {SearchSlashcommitsSort} sort Sorts the results of your query by `author-date` or `committer-date`. Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashcommitsReturn} Response
 		 */
 		SearchSlashcommits(q: string, sort: SearchSlashcommitsSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashcommitsReturn> {
@@ -32349,7 +35131,9 @@ export namespace MyNS {
 		 * @param {SearchSlashissues_and_pull_requestsSort} sort Sorts the results of your query by the number of `comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, or `interactions`. You can also sort results by how recently the items were `created` or `updated`, Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashissues_and_pull_requestsReturn} Response
 		 */
 		SearchSlashissues_and_pull_requests(q: string, sort: SearchSlashissues_and_pull_requestsSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashissues_and_pull_requestsReturn> {
@@ -32365,11 +35149,14 @@ export namespace MyNS {
 		 * The labels that best match the query appear first in the search results.
 		 * Get search/labels
 		 * @param {number} repository_id The id of the repository.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} q The search keywords. This endpoint does not accept qualifiers in the query. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/enterprise-server@2.21/rest/reference/search#constructing-a-search-query).
 		 * @param {IssuesSlashlist_comments_for_repoSort} sort Sorts the results of your query by when the label was `created` or `updated`. Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashlabelsReturn} Response
 		 */
 		SearchSlashlabels(repository_id: number, q: string, sort: IssuesSlashlist_comments_for_repoSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashlabelsReturn> {
@@ -32390,7 +35177,9 @@ export namespace MyNS {
 		 * @param {SearchSlashreposSort} sort Sorts the results of your query by number of `stars`, `forks`, or `help-wanted-issues` or how recently the items were `updated`. Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashreposReturn} Response
 		 */
 		SearchSlashrepos(q: string, sort: SearchSlashreposSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashreposReturn> {
@@ -32407,7 +35196,9 @@ export namespace MyNS {
 		 * Get search/topics
 		 * @param {string} q The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/enterprise-server@2.21/rest/reference/search#constructing-a-search-query).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashtopicsReturn} Response
 		 */
 		SearchSlashtopics(q: string, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashtopicsReturn> {
@@ -32426,7 +35217,9 @@ export namespace MyNS {
 		 * @param {SearchSlashusersSort} sort Sorts the results of your query by number of `followers` or `repositories`, or when the person `joined` GitHub Enterprise Server. Default: [best match](https://docs.github.com/enterprise-server@2.21/rest/reference/search#ranking-search-results)
 		 * @param {SearchSlashcodeOrder} order Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchSlashusersReturn} Response
 		 */
 		SearchSlashusers(q: string, sort: SearchSlashusersSort | null | undefined, order: SearchSlashcodeOrder | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<SearchSlashusersReturn> {
@@ -32505,6 +35298,7 @@ export namespace MyNS {
 		 * To delete a team, the authenticated user must be an organization owner or team maintainer.
 		 * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 		 * Delete teams/{team_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashdelete_legacy(team_id: number): Observable<HttpResponse<string>> {
@@ -32515,6 +35309,7 @@ export namespace MyNS {
 		 * Get a team (Legacy)
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#get-a-team-by-name) endpoint.
 		 * Get teams/{team_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_full} Response
 		 */
 		TeamsSlashget_legacy(team_id: number): Observable<Team_full> {
@@ -32527,6 +35322,7 @@ export namespace MyNS {
 		 * To edit a team, the authenticated user must either be an organization owner or a team maintainer.
 		 * **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
 		 * Patch teams/{team_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_full} Response
 		 */
 		TeamsSlashupdate_legacy(team_id: number, requestBody: TeamsSlashupdate_legacyPatchBody): Observable<Team_full> {
@@ -32538,9 +35334,12 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List discussions`](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-discussions) endpoint.
 		 * List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_discussion>} Response
 		 */
 		TeamsSlashlist_discussions_legacy(team_id: number, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_discussion>> {
@@ -32553,6 +35352,7 @@ export namespace MyNS {
 		 * Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post teams/{team_id}/discussions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashcreate_discussion_legacy(team_id: number, requestBody: TeamsSlashcreate_discussion_legacyPostBody): Observable<HttpResponse<string>> {
@@ -32564,6 +35364,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#delete-a-discussion) endpoint.
 		 * Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete teams/{team_id}/discussions/{discussion_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashdelete_discussion_legacy(team_id: number, discussion_number: number): Observable<HttpResponse<string>> {
@@ -32575,6 +35377,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#get-a-discussion) endpoint.
 		 * Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions/{discussion_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion} Response
 		 */
 		TeamsSlashget_discussion_legacy(team_id: number, discussion_number: number): Observable<Team_discussion> {
@@ -32586,6 +35390,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#update-a-discussion) endpoint.
 		 * Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Patch teams/{team_id}/discussions/{discussion_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion} Response
 		 */
 		TeamsSlashupdate_discussion_legacy(team_id: number, discussion_number: number, requestBody: TeamsSlashupdate_discussion_legacyPatchBody): Observable<Team_discussion> {
@@ -32597,9 +35403,13 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List discussion comments](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-discussion-comments) endpoint.
 		 * List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions/{discussion_number}/comments
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_discussion_comment>} Response
 		 */
 		TeamsSlashlist_discussion_comments_legacy(team_id: number, discussion_number: number, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_discussion_comment>> {
@@ -32612,6 +35422,8 @@ export namespace MyNS {
 		 * Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-server@2.21/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 		 * Post teams/{team_id}/discussions/{discussion_number}/comments
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashcreate_discussion_comment_legacy(team_id: number, discussion_number: number, requestBody: TeamsSlashcreate_discussion_comment_legacyPostBody): Observable<HttpResponse<string>> {
@@ -32623,6 +35435,9 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#delete-a-discussion-comment) endpoint.
 		 * Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashdelete_discussion_comment_legacy(team_id: number, discussion_number: number, comment_number: number): Observable<HttpResponse<string>> {
@@ -32634,6 +35449,9 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#get-a-discussion-comment) endpoint.
 		 * Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion_comment} Response
 		 */
 		TeamsSlashget_discussion_comment_legacy(team_id: number, discussion_number: number, comment_number: number): Observable<Team_discussion_comment> {
@@ -32645,6 +35463,9 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#update-a-discussion-comment) endpoint.
 		 * Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Patch teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_discussion_comment} Response
 		 */
 		TeamsSlashupdate_discussion_comment_legacy(team_id: number, discussion_number: number, comment_number: number, requestBody: TeamsSlashupdate_discussion_comment_legacyPatchBody): Observable<Team_discussion_comment> {
@@ -32656,9 +35477,14 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#list-reactions-for-a-team-discussion-comment) endpoint.
 		 * List the reactions to a [team discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussion-comments). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_team_discussion_comment_legacy(team_id: number, discussion_number: number, comment_number: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -32670,6 +35496,9 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new "[Create reaction for a team discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#create-reaction-for-a-team-discussion-comment)" endpoint.
 		 * Create a reaction to a [team discussion comment](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with an HTTP `200` status means that you already added the reaction type to this team discussion comment.
 		 * Post teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} comment_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashcreate_for_team_discussion_comment_legacy(team_id: number, discussion_number: number, comment_number: number, requestBody: ReactionsSlashcreate_for_team_discussion_comment_legacyPostBody): Observable<HttpResponse<string>> {
@@ -32681,9 +35510,13 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#list-reactions-for-a-team-discussion) endpoint.
 		 * List the reactions to a [team discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussions). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get teams/{team_id}/discussions/{discussion_number}/reactions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReactionContent} content Returns a single [reaction type](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Reaction>} Response
 		 */
 		ReactionsSlashlist_for_team_discussion_legacy(team_id: number, discussion_number: number, content: ReactionContent | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Reaction>> {
@@ -32695,6 +35528,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/enterprise-server@2.21/rest/reference/reactions#create-reaction-for-a-team-discussion) endpoint.
 		 * Create a reaction to a [team discussion](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with an HTTP `200` status means that you already added the reaction type to this team discussion.
 		 * Post teams/{team_id}/discussions/{discussion_number}/reactions
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discussion_number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReactionsSlashcreate_for_team_discussion_legacy(team_id: number, discussion_number: number, requestBody: ReactionsSlashcreate_for_team_discussion_legacyPostBody): Observable<HttpResponse<string>> {
@@ -32706,12 +35541,15 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-team-members) endpoint.
 		 * Team members will include the members of child teams.
 		 * Get teams/{team_id}/members
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TeamsSlashlist_members_in_orgRole} role Filters members returned by their role in the team. Can be one of:  
 		 * \* `member` - normal members of the team.  
 		 * \* `maintainer` - team maintainers.  
 		 * \* `all` - all members of the team.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		TeamsSlashlist_members_legacy(team_id: number, role: TeamsSlashlist_members_in_orgRole | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -32726,6 +35564,7 @@ export namespace MyNS {
 		 * To remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.
 		 * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub Enterprise Server team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub Enterprise Server](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 		 * Delete teams/{team_id}/members/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashremove_member_legacy(team_id: number, username: string): Observable<HttpResponse<string>> {
@@ -32738,6 +35577,7 @@ export namespace MyNS {
 		 * We recommend using the [Get team membership for a user](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#get-team-membership-for-a-user) endpoint instead. It allows you to get both active and pending memberships.
 		 * To list members in a team, the team must be visible to the authenticated user.
 		 * Get teams/{team_id}/members/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashget_member_legacy(team_id: number, username: string): Observable<HttpResponse<string>> {
@@ -32753,6 +35593,7 @@ export namespace MyNS {
 		 * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub Enterprise Server team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub Enterprise Server](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 		 * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#http-verbs)."
 		 * Put teams/{team_id}/members/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashadd_member_legacy(team_id: number, username: string): Observable<HttpResponse<string>> {
@@ -32766,6 +35607,7 @@ export namespace MyNS {
 		 * To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
 		 * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub Enterprise Server team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub Enterprise Server](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 		 * Delete teams/{team_id}/memberships/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashremove_membership_for_user_legacy(team_id: number, username: string): Observable<HttpResponse<string>> {
@@ -32781,6 +35623,7 @@ export namespace MyNS {
 		 * The response contains the `state` of the membership and the member's `role`.
 		 * The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#create-a-team).
 		 * Get teams/{team_id}/memberships/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_membership} Response
 		 */
 		TeamsSlashget_membership_for_user_legacy(team_id: number, username: string): Observable<Team_membership> {
@@ -32796,6 +35639,7 @@ export namespace MyNS {
 		 * If the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the "pending" state until the user accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.
 		 * If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
 		 * Put teams/{team_id}/memberships/{username}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_membership} Response
 		 */
 		TeamsSlashadd_or_update_membership_for_user_legacy(team_id: number, username: string, requestBody: TeamsSlashadd_or_update_membership_for_user_legacyPutBody): Observable<Team_membership> {
@@ -32807,8 +35651,11 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-team-projects) endpoint.
 		 * Lists the organization projects for a team.
 		 * Get teams/{team_id}/projects
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_project>} Response
 		 */
 		TeamsSlashlist_projects_legacy(team_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_project>> {
@@ -32820,6 +35667,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a project from a team](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#remove-a-project-from-a-team) endpoint.
 		 * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.
 		 * Delete teams/{team_id}/projects/{project_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashremove_project_legacy(team_id: number, project_id: number): Observable<HttpResponse<string>> {
@@ -32831,6 +35680,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a project](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#check-team-permissions-for-a-project) endpoint.
 		 * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
 		 * Get teams/{team_id}/projects/{project_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_project} Response
 		 */
 		TeamsSlashcheck_permissions_for_project_legacy(team_id: number, project_id: number): Observable<Team_project> {
@@ -32842,6 +35693,8 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team project permissions](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#add-or-update-team-project-permissions) endpoint.
 		 * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
 		 * Put teams/{team_id}/projects/{project_id}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} project_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashadd_or_update_project_permissions_legacy(team_id: number, project_id: number, requestBody: TeamsSlashadd_or_update_project_permissions_legacyPutBody): Observable<HttpResponse<string>> {
@@ -32852,8 +35705,11 @@ export namespace MyNS {
 		 * List team repositories (Legacy)
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-team-repositories) endpoint.
 		 * Get teams/{team_id}/repos
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		TeamsSlashlist_repos_legacy(team_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -32865,6 +35721,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a repository from a team](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#remove-a-repository-from-a-team) endpoint.
 		 * If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
 		 * Delete teams/{team_id}/repos/{owner}/{repo}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashremove_repo_legacy(team_id: number, owner: string, repo: string): Observable<HttpResponse<string>> {
@@ -32877,6 +35734,7 @@ export namespace MyNS {
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a repository](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#check-team-permissions-for-a-repository) endpoint.
 		 * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/enterprise-server@2.21/rest/overview/media-types/) via the `Accept` header:
 		 * Get teams/{team_id}/repos/{owner}/{repo}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Team_repository} Alternative response with extra repository information
 		 */
 		TeamsSlashcheck_permissions_for_repo_legacy(team_id: number, owner: string, repo: string): Observable<Team_repository> {
@@ -32889,6 +35747,7 @@ export namespace MyNS {
 		 * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.
 		 * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#http-verbs)."
 		 * Put teams/{team_id}/repos/{owner}/{repo}
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TeamsSlashadd_or_update_repo_permissions_legacy(team_id: number, owner: string, repo: string, requestBody: TeamsSlashadd_or_update_repo_permissions_legacyPutBody): Observable<HttpResponse<string>> {
@@ -32899,8 +35758,11 @@ export namespace MyNS {
 		 * List child teams (Legacy)
 		 * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://docs.github.com/enterprise-server@2.21/rest/reference/teams#list-child-teams) endpoint.
 		 * Get teams/{team_id}/teams
+		 * @param {number} team_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} if child teams exist
 		 */
 		TeamsSlashlist_child_legacy(team_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team>> {
@@ -32943,7 +35805,9 @@ export namespace MyNS {
 		 * Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
 		 * Get user/emails
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Email>} Response
 		 */
 		UsersSlashlist_emails_for_authenticated(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Email>> {
@@ -32965,7 +35829,9 @@ export namespace MyNS {
 		 * Lists the people following the authenticated user.
 		 * Get user/followers
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		UsersSlashlist_followers_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -32977,7 +35843,9 @@ export namespace MyNS {
 		 * Lists the people who the authenticated user follows.
 		 * Get user/following
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		UsersSlashlist_followed_by_authenticated(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -33019,7 +35887,9 @@ export namespace MyNS {
 		 * Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get user/gpg_keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Gpg_key>} Response
 		 */
 		UsersSlashlist_gpg_keys_for_authenticated(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Gpg_key>> {
@@ -33041,6 +35911,7 @@ export namespace MyNS {
 		 * Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete user/gpg_keys/{gpg_key_id}
 		 * @param {number} gpg_key_id gpg_key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UsersSlashdelete_gpg_key_for_authenticated(gpg_key_id: number): Observable<HttpResponse<string>> {
@@ -33052,6 +35923,7 @@ export namespace MyNS {
 		 * View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get user/gpg_keys/{gpg_key_id}
 		 * @param {number} gpg_key_id gpg_key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Gpg_key} Response
 		 */
 		UsersSlashget_gpg_key_for_authenticated(gpg_key_id: number): Observable<Gpg_key> {
@@ -33066,7 +35938,9 @@ export namespace MyNS {
 		 * You can find the permissions for the installation under the `permissions` key.
 		 * Get user/installations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AppsSlashlist_installations_for_authenticated_userReturn} You can find the permissions for the installation under the `permissions` key.
 		 */
 		AppsSlashlist_installations_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<AppsSlashlist_installations_for_authenticated_userReturn> {
@@ -33081,8 +35955,11 @@ export namespace MyNS {
 		 * The access the user has to each repository is included in the hash under the `permissions` key.
 		 * Get user/installations/{installation_id}/repositories
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AppsSlashlist_installation_repos_for_authenticated_userReturn} The access the user has to each repository is included in the hash under the `permissions` key.
 		 */
 		AppsSlashlist_installation_repos_for_authenticated_user(installation_id: number, per_page: number | null | undefined, page: number | null | undefined): Observable<AppsSlashlist_installation_repos_for_authenticated_userReturn> {
@@ -33095,6 +35972,8 @@ export namespace MyNS {
 		 * You must use a personal access token (which you can create via the [command line](https://docs.github.com/enterprise-server@2.21/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/enterprise-server@2.21/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
 		 * Delete user/installations/{installation_id}/repositories/{repository_id}
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} repository_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AppsSlashremove_repo_from_installation(installation_id: number, repository_id: number): Observable<HttpResponse<string>> {
@@ -33107,6 +35986,8 @@ export namespace MyNS {
 		 * You must use a personal access token (which you can create via the [command line](https://docs.github.com/enterprise-server@2.21/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/enterprise-server@2.21/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
 		 * Put user/installations/{installation_id}/repositories/{repository_id}
 		 * @param {number} installation_id installation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} repository_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AppsSlashadd_repo_to_installation(installation_id: number, repository_id: number): Observable<HttpResponse<string>> {
@@ -33133,7 +36014,9 @@ export namespace MyNS {
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Issue>} Response
 		 */
 		IssuesSlashlist_for_authenticated_user(filter: IssuesSlashlistFilter | null | undefined, state: IssuesSlashlistState | null | undefined, labels: string | null | undefined, sort: IssuesSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Issue>> {
@@ -33145,7 +36028,9 @@ export namespace MyNS {
 		 * Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get user/keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Key>} Response
 		 */
 		UsersSlashlist_public_ssh_keys_for_authenticated(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Key>> {
@@ -33167,6 +36052,7 @@ export namespace MyNS {
 		 * Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Delete user/keys/{key_id}
 		 * @param {number} key_id key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UsersSlashdelete_public_ssh_key_for_authenticated(key_id: number): Observable<HttpResponse<string>> {
@@ -33178,6 +36064,7 @@ export namespace MyNS {
 		 * View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 		 * Get user/keys/{key_id}
 		 * @param {number} key_id key_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Key} Response
 		 */
 		UsersSlashget_public_ssh_key_for_authenticated(key_id: number): Observable<Key> {
@@ -33189,7 +36076,9 @@ export namespace MyNS {
 		 * Get user/memberships/orgs
 		 * @param {Org_membershipState} state Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Org_membership>} Response
 		 */
 		OrgsSlashlist_memberships_for_authenticated_user(state: Org_membershipState | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Org_membership>> {
@@ -33221,7 +36110,9 @@ export namespace MyNS {
 		 * This only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope. OAuth requests with insufficient scope receive a `403 Forbidden` response.
 		 * Get user/orgs
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Organization_simple>} Response
 		 */
 		OrgsSlashlist_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Organization_simple>> {
@@ -33242,7 +36133,9 @@ export namespace MyNS {
 		 * Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/enterprise-server@2.21/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
 		 * Get user/public_emails
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Email>} Response
 		 */
 		UsersSlashlist_public_emails_for_authenticated(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Email>> {
@@ -33265,7 +36158,9 @@ export namespace MyNS {
 		 * @param {ReposSlashlist_for_orgSort} sort Can be one of `created`, `updated`, `pushed`, `full_name`.
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {Date} before Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @return {Array<Repository>} Response
@@ -33293,7 +36188,9 @@ export namespace MyNS {
 		 * When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
 		 * Get user/repository_invitations
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Repository_invitation>} Response
 		 */
 		ReposSlashlist_invitations_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Repository_invitation>> {
@@ -33304,6 +36201,7 @@ export namespace MyNS {
 		 * Decline a repository invitation
 		 * Delete user/repository_invitations/{invitation_id}
 		 * @param {number} invitation_id invitation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashdecline_invitation(invitation_id: number): Observable<HttpResponse<string>> {
@@ -33314,6 +36212,7 @@ export namespace MyNS {
 		 * Accept a repository invitation
 		 * Patch user/repository_invitations/{invitation_id}
 		 * @param {number} invitation_id invitation_id parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReposSlashaccept_invitation(invitation_id: number): Observable<HttpResponse<string>> {
@@ -33328,7 +36227,9 @@ export namespace MyNS {
 		 * @param {IssuesSlashlist_comments_for_repoSort} sort One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Repository>} Response
 		 */
 		ActivitySlashlist_repos_starred_by_authenticated_user(sort: IssuesSlashlist_comments_for_repoSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Repository>> {
@@ -33368,7 +36269,9 @@ export namespace MyNS {
 		 * Lists repositories the authenticated user is watching.
 		 * Get user/subscriptions
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		ActivitySlashlist_watched_repos_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -33380,7 +36283,9 @@ export namespace MyNS {
 		 * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://docs.github.com/enterprise-server@2.21/apps/building-oauth-apps/).
 		 * Get user/teams
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_full>} Response
 		 */
 		TeamsSlashlist_for_authenticated_user(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Team_full>> {
@@ -33393,7 +36298,9 @@ export namespace MyNS {
 		 * Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/enterprise-server@2.21/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
 		 * Get users
 		 * @param {number} since A user ID. Only return users with an ID greater than this ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		UsersSlashlist(since: number | null | undefined, per_page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -33418,7 +36325,9 @@ export namespace MyNS {
 		 * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
 		 * Get users/{username}/events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_events_for_authenticated_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -33430,7 +36339,9 @@ export namespace MyNS {
 		 * This is the user's organization dashboard. You must be authenticated as the user to view this.
 		 * Get users/{username}/events/orgs/{org}
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_org_events_for_authenticated_user(username: string, org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -33441,7 +36352,9 @@ export namespace MyNS {
 		 * List public events for a user
 		 * Get users/{username}/events/public
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -33453,7 +36366,9 @@ export namespace MyNS {
 		 * Lists the people following the specified user.
 		 * Get users/{username}/followers
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		UsersSlashlist_followers_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -33465,7 +36380,9 @@ export namespace MyNS {
 		 * Lists the people who the specified user follows.
 		 * Get users/{username}/following
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Simple_user>} Response
 		 */
 		UsersSlashlist_following_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Simple_user>> {
@@ -33487,7 +36404,9 @@ export namespace MyNS {
 		 * Get users/{username}/gists
 		 * @param {Date} since Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Base_gist>} Response
 		 */
 		GistsSlashlist_for_user(username: string, since: Date | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Base_gist>> {
@@ -33499,7 +36418,9 @@ export namespace MyNS {
 		 * Lists the GPG keys for a user. This information is accessible by anyone.
 		 * Get users/{username}/gpg_keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Gpg_key>} Response
 		 */
 		UsersSlashlist_gpg_keys_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Gpg_key>> {
@@ -33539,7 +36460,9 @@ export namespace MyNS {
 		 * Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
 		 * Get users/{username}/keys
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Key_simple>} Response
 		 */
 		UsersSlashlist_public_keys_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Key_simple>> {
@@ -33552,7 +36475,9 @@ export namespace MyNS {
 		 * This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/enterprise-server@2.21/rest/reference/orgs#list-organizations-for-the-authenticated-user) API instead.
 		 * Get users/{username}/orgs
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Organization_simple>} Response
 		 */
 		OrgsSlashlist_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Organization_simple>> {
@@ -33564,7 +36489,9 @@ export namespace MyNS {
 		 * Get users/{username}/projects
 		 * @param {IssuesSlashlistState} state Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Project>} Response
 		 */
 		ProjectsSlashlist_for_user(username: string, state: IssuesSlashlistState | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Project>> {
@@ -33576,7 +36503,9 @@ export namespace MyNS {
 		 * These are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
 		 * Get users/{username}/received_events
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_received_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -33587,7 +36516,9 @@ export namespace MyNS {
 		 * List public events received by a user
 		 * Get users/{username}/received_events/public
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Response
 		 */
 		ActivitySlashlist_received_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
@@ -33602,7 +36533,9 @@ export namespace MyNS {
 		 * @param {ReposSlashlist_for_orgSort} sort Can be one of `created`, `updated`, `pushed`, `full_name`.
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		ReposSlashlist_for_user(username: string, type: ReposSlashlist_for_userType | null | undefined, sort: ReposSlashlist_for_orgSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -33637,7 +36570,9 @@ export namespace MyNS {
 		 * @param {IssuesSlashlist_comments_for_repoSort} sort One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction One of `asc` (ascending) or `desc` (descending).
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Starred_repository>} Response
 		 */
 		ActivitySlashlist_repos_starred_by_user(username: string, sort: IssuesSlashlist_comments_for_repoSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Starred_repository>> {
@@ -33649,7 +36584,9 @@ export namespace MyNS {
 		 * Lists repositories a user is watching.
 		 * Get users/{username}/subscriptions
 		 * @param {number} per_page Results per page (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number of the results to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Minimal_repository>} Response
 		 */
 		ActivitySlashlist_repos_watched_by_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Minimal_repository>> {
@@ -34852,13 +37789,19 @@ export namespace MyNS {
 		repositories: Array<Repository>;
 		repository_selection?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface AppsSlashlist_repos_accessible_to_installationReturnFormProperties {
 		repository_selection: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAppsSlashlist_repos_accessible_to_installationReturnFormGroup() {
@@ -35293,12 +38236,18 @@ export namespace MyNS {
 		/** Required */
 		installations: Array<Installation_ghes_2>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface OrgsSlashlist_app_installationsReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateOrgsSlashlist_app_installationsReturnFormGroup() {
@@ -35447,7 +38396,10 @@ export namespace MyNS {
 		/** Whether the repository is private. */
 		private?: boolean | null;
 
-		/** The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization. */
+		/**
+		 * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		team_id?: number | null;
 
 		/**
@@ -35506,7 +38458,10 @@ export namespace MyNS {
 		/** Whether the repository is private. */
 		private: FormControl<boolean | null | undefined>,
 
-		/** The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization. */
+		/**
+		 * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		team_id: FormControl<number | null | undefined>,
 
 		/**
@@ -35554,7 +38509,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id?: number | null;
 
 		/**
@@ -35591,7 +38549,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id: FormControl<number | null | undefined>,
 
 		/**
@@ -35637,7 +38598,10 @@ export namespace MyNS {
 		/** The name of the team. */
 		name?: string | null;
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id?: number | null;
 
 		/**
@@ -35666,7 +38630,10 @@ export namespace MyNS {
 		/** The name of the team. */
 		name: FormControl<string | null | undefined>,
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id: FormControl<number | null | undefined>,
 
 		/**
@@ -35974,7 +38941,10 @@ export namespace MyNS {
 
 	export interface ProjectsSlashmove_cardPostBody {
 
-		/** The unique identifier of the column the card should be moved to */
+		/**
+		 * The unique identifier of the column the card should be moved to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column_id?: number | null;
 
 		/**
@@ -35985,7 +38955,10 @@ export namespace MyNS {
 	}
 	export interface ProjectsSlashmove_cardPostBodyFormProperties {
 
-		/** The unique identifier of the column the card should be moved to */
+		/**
+		 * The unique identifier of the column the card should be moved to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column_id: FormControl<number | null | undefined>,
 
 		/**
@@ -36368,7 +39341,10 @@ export namespace MyNS {
 		/** Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) review them. */
 		require_code_owner_reviews?: boolean | null;
 
-		/** Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6. */
+		/**
+		 * Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		required_approving_review_count?: number | null;
 	}
 	export interface ReposSlashupdate_branch_protectionPutBodyRequired_pull_request_reviewsFormProperties {
@@ -36379,7 +39355,10 @@ export namespace MyNS {
 		/** Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) review them. */
 		require_code_owner_reviews: FormControl<boolean | null | undefined>,
 
-		/** Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6. */
+		/**
+		 * Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		required_approving_review_count: FormControl<number | null | undefined>,
 	}
 	export function CreateReposSlashupdate_branch_protectionPutBodyRequired_pull_request_reviewsFormGroup() {
@@ -36472,7 +39451,10 @@ export namespace MyNS {
 		/** Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed. */
 		require_code_owner_reviews?: boolean | null;
 
-		/** Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6. */
+		/**
+		 * Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		required_approving_review_count?: number | null;
 	}
 	export interface ReposSlashupdate_pull_request_review_protectionPatchBodyFormProperties {
@@ -36483,7 +39465,10 @@ export namespace MyNS {
 		/** Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed. */
 		require_code_owner_reviews: FormControl<boolean | null | undefined>,
 
-		/** Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6. */
+		/**
+		 * Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		required_approving_review_count: FormControl<number | null | undefined>,
 	}
 	export function CreateReposSlashupdate_pull_request_review_protectionPatchBodyFormGroup() {
@@ -36877,12 +39862,16 @@ export namespace MyNS {
 		 */
 		annotation_level: ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level;
 
-		/** The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column?: number | null;
 
 		/**
 		 * The end line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end_line: number;
 
@@ -36901,12 +39890,16 @@ export namespace MyNS {
 		/** Details about this annotation. The maximum size is 64 KB. */
 		raw_details?: string | null;
 
-		/** The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column?: number | null;
 
 		/**
 		 * The start line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start_line: number;
 
@@ -36921,12 +39914,16 @@ export namespace MyNS {
 		 */
 		annotation_level: FormControl<ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level | null | undefined>,
 
-		/** The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column: FormControl<number | null | undefined>,
 
 		/**
 		 * The end line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end_line: FormControl<number | null | undefined>,
 
@@ -36945,12 +39942,16 @@ export namespace MyNS {
 		/** Details about this annotation. The maximum size is 64 KB. */
 		raw_details: FormControl<string | null | undefined>,
 
-		/** The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column: FormControl<number | null | undefined>,
 
 		/**
 		 * The start line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start_line: FormControl<number | null | undefined>,
 
@@ -37208,12 +40209,16 @@ export namespace MyNS {
 		 */
 		annotation_level: ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level;
 
-		/** The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column?: number | null;
 
 		/**
 		 * The end line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end_line: number;
 
@@ -37232,12 +40237,16 @@ export namespace MyNS {
 		/** Details about this annotation. The maximum size is 64 KB. */
 		raw_details?: string | null;
 
-		/** The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column?: number | null;
 
 		/**
 		 * The start line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start_line: number;
 
@@ -37252,12 +40261,16 @@ export namespace MyNS {
 		 */
 		annotation_level: FormControl<ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level | null | undefined>,
 
-		/** The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_column: FormControl<number | null | undefined>,
 
 		/**
 		 * The end line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end_line: FormControl<number | null | undefined>,
 
@@ -37276,12 +40289,16 @@ export namespace MyNS {
 		/** Details about this annotation. The maximum size is 64 KB. */
 		raw_details: FormControl<string | null | undefined>,
 
-		/** The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. */
+		/**
+		 * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_column: FormControl<number | null | undefined>,
 
 		/**
 		 * The start line of the annotation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start_line: FormControl<number | null | undefined>,
 
@@ -37387,6 +40404,7 @@ export namespace MyNS {
 		/**
 		 * The `id` of the GitHub App.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		app_id: number;
 
@@ -37401,6 +40419,7 @@ export namespace MyNS {
 		/**
 		 * The `id` of the GitHub App.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		app_id: FormControl<number | null | undefined>,
 
@@ -37425,12 +40444,18 @@ export namespace MyNS {
 		/** Required */
 		check_runs: Array<Check_run>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface ChecksSlashlist_for_suiteReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateChecksSlashlist_for_suiteReturnFormGroup() {
@@ -37530,13 +40555,19 @@ export namespace MyNS {
 		 */
 		body: string;
 
-		/** **Deprecated**. Use **position** parameter instead. Line number in the file to comment on. */
+		/**
+		 * **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/** Relative path of the file to comment on. */
 		path?: string | null;
 
-		/** Line index in the diff to comment on. */
+		/**
+		 * Line index in the diff to comment on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 	}
 	export interface ReposSlashcreate_commit_commentPostBodyFormProperties {
@@ -37547,13 +40578,19 @@ export namespace MyNS {
 		 */
 		body: FormControl<string | null | undefined>,
 
-		/** **Deprecated**. Use **position** parameter instead. Line number in the file to comment on. */
+		/**
+		 * **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/** Relative path of the file to comment on. */
 		path: FormControl<string | null | undefined>,
 
-		/** Line index in the diff to comment on. */
+		/**
+		 * Line index in the diff to comment on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateReposSlashcreate_commit_commentPostBodyFormGroup() {
@@ -37571,12 +40608,18 @@ export namespace MyNS {
 		/** Required */
 		check_runs: Array<Check_run>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface ChecksSlashlist_for_refReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateChecksSlashlist_for_refReturnFormGroup() {
@@ -37591,12 +40634,18 @@ export namespace MyNS {
 		/** Required */
 		check_suites: Array<Check_suite>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface ChecksSlashlist_suites_for_refReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateChecksSlashlist_suites_for_refReturnFormGroup() {
@@ -37670,7 +40719,10 @@ export namespace MyNS {
 		/** Required */
 		sha: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
 		/** Required */
@@ -37700,7 +40752,10 @@ export namespace MyNS {
 		/** Required */
 		sha: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -38070,8 +41125,8 @@ export namespace MyNS {
 		/**
 		 * A custom webhook event name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		event_type: string;
 	}
@@ -38083,8 +41138,8 @@ export namespace MyNS {
 		/**
 		 * A custom webhook event name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		event_type: FormControl<string | null | undefined>,
 	}
@@ -39371,6 +42426,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		head: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue?: number | null;
 
 		/** Indicates whether [maintainers can modify](https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request. */
@@ -39398,6 +42455,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		head: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issue: FormControl<number | null | undefined>,
 
 		/** Indicates whether [maintainers can modify](https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request. */
@@ -39522,21 +42581,32 @@ export namespace MyNS {
 
 		/** The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`. */
 		commit_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		in_reply_to?: number | null;
 
-		/** **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to. */
+		/**
+		 * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/** The relative path to the file that necessitates a comment. */
 		path?: string | null;
 
-		/** **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above. */
+		/**
+		 * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation. */
 		side?: Pull_request_review_commentSide | null;
 
-		/** **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. */
+		/**
+		 * **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line?: number | null;
 
 		/** **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context. */
@@ -39552,21 +42622,32 @@ export namespace MyNS {
 
 		/** The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`. */
 		commit_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		in_reply_to: FormControl<number | null | undefined>,
 
-		/** **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to. */
+		/**
+		 * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/** The relative path to the file that necessitates a comment. */
 		path: FormControl<string | null | undefined>,
 
-		/** **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above. */
+		/**
+		 * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation. */
 		side: FormControl<Pull_request_review_commentSide | null | undefined>,
 
-		/** **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. */
+		/**
+		 * **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_line: FormControl<number | null | undefined>,
 
 		/** **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context. */
@@ -39709,6 +42790,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		body: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line?: number | null;
 
 		/**
@@ -39717,9 +42800,14 @@ export namespace MyNS {
 		 */
 		path: string;
 
-		/** The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below. */
+		/**
+		 * The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 		side?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start_line?: number | null;
 		start_side?: string | null;
 	}
@@ -39730,6 +42818,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		body: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		line: FormControl<number | null | undefined>,
 
 		/**
@@ -39738,9 +42828,14 @@ export namespace MyNS {
 		 */
 		path: FormControl<string | null | undefined>,
 
-		/** The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below. */
+		/**
+		 * The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 		side: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start_line: FormControl<number | null | undefined>,
 		start_side: FormControl<string | null | undefined>,
 	}
@@ -40177,7 +43272,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Code_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashcodeReturnFormProperties {
@@ -40185,7 +43283,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashcodeReturnFormGroup() {
@@ -40206,7 +43307,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Commit_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashcommitsReturnFormProperties {
@@ -40214,7 +43318,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashcommitsReturnFormGroup() {
@@ -40235,7 +43342,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Issue_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashissues_and_pull_requestsReturnFormProperties {
@@ -40243,7 +43353,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashissues_and_pull_requestsReturnFormGroup() {
@@ -40262,7 +43375,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Label_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashlabelsReturnFormProperties {
@@ -40270,7 +43386,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashlabelsReturnFormGroup() {
@@ -40291,7 +43410,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Repo_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashreposReturnFormProperties {
@@ -40299,7 +43421,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashreposReturnFormGroup() {
@@ -40318,7 +43443,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<Topic_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashtopicsReturnFormProperties {
@@ -40326,7 +43454,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashtopicsReturnFormGroup() {
@@ -40347,7 +43478,10 @@ export namespace MyNS {
 		/** Required */
 		items: Array<User_search_result_item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface SearchSlashusersReturnFormProperties {
@@ -40355,7 +43489,10 @@ export namespace MyNS {
 		/** Required */
 		incomplete_results: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSlashusersReturnFormGroup() {
@@ -40377,7 +43514,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id?: number | null;
 
 		/**
@@ -40409,7 +43549,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The ID of a team to set as the parent team. */
+		/**
+		 * The ID of a team to set as the parent team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_team_id: FormControl<number | null | undefined>,
 
 		/**
@@ -40793,12 +43936,18 @@ export namespace MyNS {
 		/** Required */
 		installations: Array<Installation_ghes_2>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface AppsSlashlist_installations_for_authenticated_userReturnFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAppsSlashlist_installations_for_authenticated_userReturnFormGroup() {
@@ -40814,13 +43963,19 @@ export namespace MyNS {
 		repositories: Array<Repository>;
 		repository_selection?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: number;
 	}
 	export interface AppsSlashlist_installation_repos_for_authenticated_userReturnFormProperties {
 		repository_selection: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAppsSlashlist_installation_repos_for_authenticated_userReturnFormGroup() {
@@ -40973,7 +44128,10 @@ export namespace MyNS {
 		/** Whether the repository is private. */
 		private?: boolean | null;
 
-		/** The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization. */
+		/**
+		 * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		team_id?: number | null;
 	}
 	export interface ReposSlashcreate_for_authenticated_userPostBodyFormProperties {
@@ -41029,7 +44187,10 @@ export namespace MyNS {
 		/** Whether the repository is private. */
 		private: FormControl<boolean | null | undefined>,
 
-		/** The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization. */
+		/**
+		 * The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		team_id: FormControl<number | null | undefined>,
 	}
 	export function CreateReposSlashcreate_for_authenticated_userPostBodyFormGroup() {

@@ -52,16 +52,22 @@ export namespace MyNS {
 		domain_velocity?: string | null;
 		first_name?: string | null;
 		first_seen?: EmailValidationReturnFirst_seen;
+
+		/** Type: double */
 		fraud_score?: number | null;
 		frequent_complainer?: boolean | null;
 		generic?: boolean | null;
 		honeypot?: boolean | null;
 		leaked?: boolean | null;
 		message?: string | null;
+
+		/** Type: double */
 		overall_score?: number | null;
 		recent_abuse?: boolean | null;
 		request_id?: string | null;
 		sanitized_email?: string | null;
+
+		/** Type: double */
 		smtp_score?: number | null;
 		spam_trap_score?: string | null;
 		success?: boolean | null;
@@ -79,16 +85,22 @@ export namespace MyNS {
 		dns_valid: FormControl<boolean | null | undefined>,
 		domain_velocity: FormControl<string | null | undefined>,
 		first_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		fraud_score: FormControl<number | null | undefined>,
 		frequent_complainer: FormControl<boolean | null | undefined>,
 		generic: FormControl<boolean | null | undefined>,
 		honeypot: FormControl<boolean | null | undefined>,
 		leaked: FormControl<boolean | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		overall_score: FormControl<number | null | undefined>,
 		recent_abuse: FormControl<boolean | null | undefined>,
 		request_id: FormControl<string | null | undefined>,
 		sanitized_email: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		smtp_score: FormControl<number | null | undefined>,
 		spam_trap_score: FormControl<string | null | undefined>,
 		success: FormControl<boolean | null | undefined>,
@@ -160,11 +172,15 @@ export namespace MyNS {
 	export interface EmailValidationReturnDomain_age {
 		human?: string | null;
 		iso?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface EmailValidationReturnDomain_ageFormProperties {
 		human: FormControl<string | null | undefined>,
 		iso: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateEmailValidationReturnDomain_ageFormGroup() {
@@ -179,11 +195,15 @@ export namespace MyNS {
 	export interface EmailValidationReturnFirst_seen {
 		human?: string | null;
 		iso?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface EmailValidationReturnFirst_seenFormProperties {
 		human: FormControl<string | null | undefined>,
 		iso: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateEmailValidationReturnFirst_seenFormGroup() {
@@ -203,9 +223,13 @@ export namespace MyNS {
 		carrier?: string | null;
 		city?: string | null;
 		country?: string | null;
+
+		/** Type: double */
 		dialing_code?: number | null;
 		do_not_call?: boolean | null;
 		formatted?: string | null;
+
+		/** Type: double */
 		fraud_score?: number | null;
 		leaked?: boolean | null;
 		line_type?: string | null;
@@ -235,9 +259,13 @@ export namespace MyNS {
 		carrier: FormControl<string | null | undefined>,
 		city: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		dialing_code: FormControl<number | null | undefined>,
 		do_not_call: FormControl<boolean | null | undefined>,
 		formatted: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		fraud_score: FormControl<number | null | undefined>,
 		leaked: FormControl<boolean | null | undefined>,
 		line_type: FormControl<string | null | undefined>,
@@ -317,17 +345,25 @@ export namespace MyNS {
 		dns_valid?: boolean | null;
 		domain?: string | null;
 		domain_age?: MaliciousUrlScannerReturnDomain_age;
+
+		/** Type: double */
 		domain_rank?: number | null;
 		ip_address?: string | null;
 		malware?: boolean | null;
 		message?: string | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		parking?: boolean | null;
 		phishing?: boolean | null;
 		request_id?: string | null;
+
+		/** Type: double */
 		risk_score?: number | null;
 		server?: string | null;
 		spamming?: boolean | null;
+
+		/** Type: double */
 		status_code?: number | null;
 		success?: boolean | null;
 		suspicious?: boolean | null;
@@ -339,17 +375,25 @@ export namespace MyNS {
 		content_type: FormControl<string | null | undefined>,
 		dns_valid: FormControl<boolean | null | undefined>,
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		domain_rank: FormControl<number | null | undefined>,
 		ip_address: FormControl<string | null | undefined>,
 		malware: FormControl<boolean | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		parking: FormControl<boolean | null | undefined>,
 		phishing: FormControl<boolean | null | undefined>,
 		request_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		risk_score: FormControl<number | null | undefined>,
 		server: FormControl<string | null | undefined>,
 		spamming: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status_code: FormControl<number | null | undefined>,
 		success: FormControl<boolean | null | undefined>,
 		suspicious: FormControl<boolean | null | undefined>,
@@ -384,11 +428,15 @@ export namespace MyNS {
 	export interface MaliciousUrlScannerReturnDomain_age {
 		human?: string | null;
 		iso?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface MaliciousUrlScannerReturnDomain_ageFormProperties {
 		human: FormControl<string | null | undefined>,
 		iso: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateMaliciousUrlScannerReturnDomain_ageFormGroup() {

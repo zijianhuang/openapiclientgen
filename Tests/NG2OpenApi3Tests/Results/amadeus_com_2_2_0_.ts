@@ -49,10 +49,16 @@ export namespace MyNS {
 	/** baggageAllowance */
 	export interface BaggageAllowance {
 
-		/** Total number of units */
+		/**
+		 * Total number of units
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Weight of the baggage allowance */
+		/**
+		 * Weight of the baggage allowance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 
 		/** Code to qualify unit as pounds or kilos */
@@ -62,10 +68,16 @@ export namespace MyNS {
 	/** baggageAllowance */
 	export interface BaggageAllowanceFormProperties {
 
-		/** Total number of units */
+		/**
+		 * Total number of units
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Weight of the baggage allowance */
+		/**
+		 * Weight of the baggage allowance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
 		/** Code to qualify unit as pounds or kilos */
@@ -98,7 +110,10 @@ export namespace MyNS {
 		/** quality of service offered in the cabin where the seat is located in this flight. Economy, premium economy, business or first class */
 		cabin?: Co2EmissionCabin | null;
 
-		/** Weight of Co2 emitted for the concerned segment */
+		/**
+		 * Weight of Co2 emitted for the concerned segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 
 		/** Code to qualify unit as pounds or kilos */
@@ -109,7 +124,10 @@ export namespace MyNS {
 		/** quality of service offered in the cabin where the seat is located in this flight. Economy, premium economy, business or first class */
 		cabin: FormControl<Co2EmissionCabin | null | undefined>,
 
-		/** Weight of Co2 emitted for the concerned segment */
+		/**
+		 * Weight of Co2 emitted for the concerned segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
 		/** Code to qualify unit as pounds or kilos */
@@ -127,10 +145,14 @@ export namespace MyNS {
 	export enum Co2EmissionCabin { ECONOMY = 'ECONOMY', PREMIUM_ECONOMY = 'PREMIUM_ECONOMY', BUSINESS = 'BUSINESS', FIRST = 'FIRST' }
 
 	export interface Collection_Meta {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		Collection_MetaOneWayCombinations?: Array<Collection_MetaOneWayCombinations>;
 	}
 	export interface Collection_MetaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCollection_MetaFormGroup() {
@@ -155,10 +177,14 @@ export namespace MyNS {
 	}
 
 	export interface Collection_Meta_Link {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		links?: any;
 	}
 	export interface Collection_Meta_LinkFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		links: FormControl<any | null | undefined>,
 	}
@@ -196,6 +222,7 @@ export namespace MyNS {
 		/**
 		 * Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format, e.g. 2018-12-25
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -219,6 +246,7 @@ export namespace MyNS {
 		/**
 		 * Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format, e.g. 2018-12-25
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -276,8 +304,11 @@ export namespace MyNS {
 
 	export interface Issue {
 
-		/** an application-specific error code */
-		code?: number | null;
+		/**
+		 * an application-specific error code
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		code?: string | null;
 
 		/** explanation of the error */
 		detail?: string | null;
@@ -285,7 +316,10 @@ export namespace MyNS {
 		/** an object containing references to the source of the error */
 		source?: IssueSource;
 
-		/** the HTTP status code applicable to this error */
+		/**
+		 * the HTTP status code applicable to this error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** a short summary of the error */
@@ -293,13 +327,19 @@ export namespace MyNS {
 	}
 	export interface IssueFormProperties {
 
-		/** an application-specific error code */
-		code: FormControl<number | null | undefined>,
+		/**
+		 * an application-specific error code
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		code: FormControl<string | null | undefined>,
 
 		/** explanation of the error */
 		detail: FormControl<string | null | undefined>,
 
-		/** the HTTP status code applicable to this error */
+		/**
+		 * the HTTP status code applicable to this error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** a short summary of the error */
@@ -307,7 +347,7 @@ export namespace MyNS {
 	}
 	export function CreateIssueFormGroup() {
 		return new FormGroup<IssueFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			detail: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<number | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
@@ -843,8 +883,8 @@ export namespace MyNS {
 
 		/**
 		 * providing the airline / carrier code
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		carrierCode?: string | null;
 
@@ -856,8 +896,8 @@ export namespace MyNS {
 
 		/**
 		 * the flight number as assigned by the carrier
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		number?: string | null;
 
@@ -873,8 +913,8 @@ export namespace MyNS {
 
 		/**
 		 * providing the airline / carrier code
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		carrierCode: FormControl<string | null | undefined>,
 
@@ -883,8 +923,8 @@ export namespace MyNS {
 
 		/**
 		 * the flight number as assigned by the carrier
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -903,8 +943,8 @@ export namespace MyNS {
 
 		/**
 		 * providing the airline / carrier code
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		carrierCode?: string | null;
 	}
@@ -914,8 +954,8 @@ export namespace MyNS {
 
 		/**
 		 * providing the airline / carrier code
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		carrierCode: FormControl<string | null | undefined>,
 	}
@@ -1020,6 +1060,7 @@ export namespace MyNS {
 		/**
 		 * Include other possible locations around the point, located less than this distance in kilometers away. Max:300
 		 * Can not be combined with "dateWindow" or "timeWindow".
+		 * Type: double
 		 */
 		destinationRadius?: number | null;
 
@@ -1044,6 +1085,7 @@ export namespace MyNS {
 		/**
 		 * Include other possible locations around the point, located less than this distance in kilometers away. Max:300
 		 * Can not be combined with "dateWindow" or "timeWindow".
+		 * Type: double
 		 */
 		originRadius?: number | null;
 	}
@@ -1055,6 +1097,7 @@ export namespace MyNS {
 		/**
 		 * Include other possible locations around the point, located less than this distance in kilometers away. Max:300
 		 * Can not be combined with "dateWindow" or "timeWindow".
+		 * Type: double
 		 */
 		destinationRadius: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
@@ -1065,6 +1108,7 @@ export namespace MyNS {
 		/**
 		 * Include other possible locations around the point, located less than this distance in kilometers away. Max:300
 		 * Can not be combined with "dateWindow" or "timeWindow".
+		 * Type: double
 		 */
 		originRadius: FormControl<number | null | undefined>,
 	}
@@ -1092,10 +1136,16 @@ export namespace MyNS {
 		excludeAllotments?: boolean | null;
 		flightFilters?: SearchCriteriaFlightFilters;
 
-		/** Maximum number of flight offers returned (Max 250) */
+		/**
+		 * Maximum number of flight offers returned (Max 250)
+		 * Type: double
+		 */
 		maxFlightOffers?: number | null;
 
-		/** maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals */
+		/**
+		 * maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPrice?: number | null;
 
 		/** Requests the system to find at least one flight-offer per day, if possible, when a range of dates is specified. Default is false. */
@@ -1115,10 +1165,16 @@ export namespace MyNS {
 		/** This option allows to exclude the isAllotment flag associated to a booking class in the search response when it exist. */
 		excludeAllotments: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of flight offers returned (Max 250) */
+		/**
+		 * Maximum number of flight offers returned (Max 250)
+		 * Type: double
+		 */
 		maxFlightOffers: FormControl<number | null | undefined>,
 
-		/** maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals */
+		/**
+		 * maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPrice: FormControl<number | null | undefined>,
 
 		/** Requests the system to find at least one flight-offer per day, if possible, when a range of dates is specified. Default is false. */
@@ -1181,7 +1237,10 @@ export namespace MyNS {
 		/** Allows to search a location outside the borders when a radius around a location is specified. Default is false. */
 		crossBorderAllowed?: boolean | null;
 
-		/** This option allows to modify the value for the Elapsed Flying Time (EFT) masterPricer option */
+		/**
+		 * This option allows to modify the value for the Elapsed Flying Time (EFT) masterPricer option
+		 * Type: double
+		 */
 		maxFlightTime?: number | null;
 
 		/** This flag enables/disables the possibility to have more overnight flights in Low Fare Search */
@@ -1201,7 +1260,10 @@ export namespace MyNS {
 		/** Allows to search a location outside the borders when a radius around a location is specified. Default is false. */
 		crossBorderAllowed: FormControl<boolean | null | undefined>,
 
-		/** This option allows to modify the value for the Elapsed Flying Time (EFT) masterPricer option */
+		/**
+		 * This option allows to modify the value for the Elapsed Flying Time (EFT) masterPricer option
+		 * Type: double
+		 */
 		maxFlightTime: FormControl<number | null | undefined>,
 
 		/** This flag enables/disables the possibility to have more overnight flights in Low Fare Search */
@@ -1288,7 +1350,10 @@ export namespace MyNS {
 		/** Allow to change airport during connection */
 		airportChangeAllowed?: boolean | null;
 
-		/** The maximal number of connections for each itinerary. Value can be 0, 1 or 2. */
+		/**
+		 * The maximal number of connections for each itinerary. Value can be 0, 1 or 2.
+		 * Type: double
+		 */
 		maxNumberOfConnections?: number | null;
 
 		/** This option allows the single segment to have one or more intermediate stops (technical stops). */
@@ -1299,7 +1364,10 @@ export namespace MyNS {
 		/** Allow to change airport during connection */
 		airportChangeAllowed: FormControl<boolean | null | undefined>,
 
-		/** The maximal number of connections for each itinerary. Value can be 0, 1 or 2. */
+		/**
+		 * The maximal number of connections for each itinerary. Value can be 0, 1 or 2.
+		 * Type: double
+		 */
 		maxNumberOfConnections: FormControl<number | null | undefined>,
 
 		/** This option allows the single segment to have one or more intermediate stops (technical stops). */
@@ -1541,10 +1609,15 @@ export namespace MyNS {
 		 * @param {string} originLocationCode city/airport [IATA code](http://www.iata.org/publications/Pages/code-search.aspx) from which the traveler will depart, e.g. BOS for Boston
 		 * @param {string} destinationLocationCode city/airport [IATA code](http://www.iata.org/publications/Pages/code-search.aspx) to which the traveler is going, e.g. PAR for Paris
 		 * @param {Date} departureDate the date on which the traveler will depart from the origin to go to the destination. Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format, e.g. 2017-12-25
+		 *     Type: DateOnly
 		 * @param {Date} returnDate the date on which the traveler will depart from the destination to return to the origin. If this parameter is not specified, only one-way itineraries are found. If this parameter is specified, only round-trip itineraries are found. Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format, e.g. 2018-02-28
+		 *     Type: DateOnly
 		 * @param {number} adults the number of adult travelers (age 12 or older on date of departure).
+		 *     Minimum: 1    Maximum: 9
 		 * @param {number} children the number of child travelers (older than age 2 and younger than age 12 on date of departure) who will each have their own separate seat. If specified, this number should be greater than or equal to 0
+		 *     Minimum: 0    Maximum: 9
 		 * @param {number} infants the number of infant travelers (whose age is less or equal to 2 on date of departure). Infants travel on the lap of an adult traveler, and thus the number of infants must not exceed the number of adults. If specified, this number should be greater than or equal to 0
+		 *     Minimum: 0    Maximum: 9
 		 * @param {Co2EmissionCabin} travelClass most of the flight time should be spent in a cabin of this quality or higher. The accepted travel class is economy, premium economy, business or first class. If no travel class is specified, the search considers any travel class
 		 * @param {string} includedAirlineCodes This option ensures that the system will only consider these airlines. This can not be cumulated with parameter excludedAirlineCodes.
 		 * Airlines are specified as [IATA airline codes](http://www.iata.org/publications/Pages/code-search.aspx) and are comma-separated, e.g. 6X,7X,8X
@@ -1553,7 +1626,9 @@ export namespace MyNS {
 		 * @param {boolean} nonStop if set to true, the search will find only flights going from the origin to the destination with no stop in between
 		 * @param {string} currencyCode the preferred currency for the flight offers. Currency is specified in the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format, e.g. EUR for Euro
 		 * @param {number} maxPrice maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals
+		 *     Minimum: 1
 		 * @param {number} max maximum number of flight offers to return. If specified, the value should be greater than or equal to 1
+		 *     Minimum: 1
 		 * @return {void} Successful Operation
 		 */
 		GetFlightOffers(originLocationCode: string, destinationLocationCode: string, departureDate: Date, returnDate: Date | null | undefined, adults: number, children: number | null | undefined, infants: number | null | undefined, travelClass: Co2EmissionCabin | null | undefined, includedAirlineCodes: string | null | undefined, excludedAirlineCodes: string | null | undefined, nonStop: boolean | null | undefined, currencyCode: string | null | undefined, maxPrice: number | null | undefined, max: number | null | undefined): Observable<HttpResponse<string>> {

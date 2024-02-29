@@ -1193,7 +1193,9 @@ export namespace MyNS {
 		 * Fetches WordList objects for the logged-in user.
 		 * Get account.json/wordLists
 		 * @param {number} skip Results to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetWordListsForLoggedInUser(skip: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1219,6 +1221,7 @@ export namespace MyNS {
 		 * @param {string} word Word to get audio for.
 		 * @param {string} useCanonical Use the canonical form of the word
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetAudio(word: string, useCanonical: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1230,6 +1233,7 @@ export namespace MyNS {
 		 * Get word.json/{word}/definitions
 		 * @param {string} word Word to return definitions for
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} partOfSpeech CSV list of part-of-speech types
 		 * @param {string} includeRelated Return related words with definitions
 		 * @param {Array<string>} sourceDictionaries Source dictionary to return definitions from.  If 'all' is received, results are returned from all sources. If multiple values are received (e.g. 'century,wiktionary'), results are returned from the first specified dictionary that has definitions. If left blank, results are returned from the first dictionary that has definitions. By default, dictionaries are searched in this order: ahd, wiktionary, webster, century, wordnet
@@ -1259,7 +1263,9 @@ export namespace MyNS {
 		 * @param {string} includeDuplicates Show duplicate examples from different sources
 		 * @param {string} useCanonical If true will try to return the correct word root ('cats' -> 'cat'). If false returns exactly what was requested.
 		 * @param {number} skip Results to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetExamples(word: string, includeDuplicates: string | null | undefined, useCanonical: string | null | undefined, skip: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1272,7 +1278,9 @@ export namespace MyNS {
 		 * @param {string} word Word to return
 		 * @param {string} useCanonical If true will try to return the correct word root ('cats' -> 'cat'). If false returns exactly what was requested.
 		 * @param {number} startYear Starting Year
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endYear Ending Year
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetWordFrequency(word: string, useCanonical: string | null | undefined, startYear: number | null | undefined, endYear: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1286,6 +1294,7 @@ export namespace MyNS {
 		 * @param {string} useCanonical If true will try to return a correct word root ('cats' -> 'cat'). If false returns exactly what was requested.
 		 * @param {string} sourceDictionary Get from a single dictionary. Valid options: ahd, century, wiktionary, webster, and wordnet.
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetHyphenation(word: string, useCanonical: string | null | undefined, sourceDictionary: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1297,7 +1306,9 @@ export namespace MyNS {
 		 * Get word.json/{word}/phrases
 		 * @param {string} word Word to fetch phrases for
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} wlmi Minimum WLMI for the phrase
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} useCanonical If true will try to return the correct word root ('cats' -> 'cat'). If false returns exactly what was requested.
 		 * @return {void} No response was specified
 		 */
@@ -1313,6 +1324,7 @@ export namespace MyNS {
 		 * @param {string} sourceDictionary Get from a single dictionary
 		 * @param {string} typeFormat Text pronunciation type
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetTextPronunciations(word: string, useCanonical: string | null | undefined, sourceDictionary: string | null | undefined, typeFormat: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1326,6 +1338,7 @@ export namespace MyNS {
 		 * @param {string} useCanonical If true will try to return the correct word root ('cats' -> 'cat'). If false returns exactly what was requested.
 		 * @param {string} relationshipTypes Limits the total results per type of relationship type
 		 * @param {number} limitPerRelationshipType Restrict to the supplied relationship types
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetRelatedWords(word: string, useCanonical: string | null | undefined, relationshipTypes: string | null | undefined, limitPerRelationshipType: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1392,7 +1405,9 @@ export namespace MyNS {
 		 * @param {string} sortBy Field to sort by
 		 * @param {string} sortOrder Direction to sort
 		 * @param {number} skip Results to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetWordListWords(permalink: string, sortBy: string | null | undefined, sortOrder: string | null | undefined, skip: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1427,11 +1442,17 @@ export namespace MyNS {
 		 * @param {string} includePartOfSpeech CSV part-of-speech values to include
 		 * @param {string} excludePartOfSpeech CSV part-of-speech values to exclude
 		 * @param {number} minCorpusCount Minimum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxCorpusCount Maximum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minDictionaryCount Minimum dictionary count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxDictionaryCount Maximum dictionary count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minLength Minimum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxLength Maximum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetRandomWord(hasDictionaryDef: string | null | undefined, includePartOfSpeech: string | null | undefined, excludePartOfSpeech: string | null | undefined, minCorpusCount: number | null | undefined, maxCorpusCount: number | null | undefined, minDictionaryCount: number | null | undefined, maxDictionaryCount: number | null | undefined, minLength: number | null | undefined, maxLength: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1445,14 +1466,21 @@ export namespace MyNS {
 		 * @param {string} includePartOfSpeech CSV part-of-speech values to include
 		 * @param {string} excludePartOfSpeech CSV part-of-speech values to exclude
 		 * @param {number} minCorpusCount Minimum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxCorpusCount Maximum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minDictionaryCount Minimum dictionary count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxDictionaryCount Maximum dictionary count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minLength Minimum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxLength Maximum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sortBy Attribute to sort by
 		 * @param {string} sortOrder Sort direction
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetRandomWords(hasDictionaryDef: string | null | undefined, includePartOfSpeech: string | null | undefined, excludePartOfSpeech: string | null | undefined, minCorpusCount: number | null | undefined, maxCorpusCount: number | null | undefined, minDictionaryCount: number | null | undefined, maxDictionaryCount: number | null | undefined, minLength: number | null | undefined, maxLength: number | null | undefined, sortBy: string | null | undefined, sortOrder: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1469,15 +1497,20 @@ export namespace MyNS {
 		 * @param {string} includePartOfSpeech Only include these comma-delimited parts of speech
 		 * @param {string} excludePartOfSpeech Exclude these comma-delimited parts of speech
 		 * @param {number} minCorpusCount Minimum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxCorpusCount Maximum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minLength Minimum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxLength Maximum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} expandTerms Expand terms
 		 * @param {string} includeTags Return a closed set of XML tags in response
 		 * @param {string} sortBy Attribute to sort by
 		 * @param {string} sortOrder Sort direction
 		 * @param {string} skip Results to skip
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		ReverseDictionary(query: string, findSenseForWord: string | null | undefined, includeSourceDictionaries: string | null | undefined, excludeSourceDictionaries: string | null | undefined, includePartOfSpeech: string | null | undefined, excludePartOfSpeech: string | null | undefined, minCorpusCount: number | null | undefined, maxCorpusCount: number | null | undefined, minLength: number | null | undefined, maxLength: number | null | undefined, expandTerms: string | null | undefined, includeTags: string | null | undefined, sortBy: string | null | undefined, sortOrder: string | null | undefined, skip: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1492,13 +1525,21 @@ export namespace MyNS {
 		 * @param {string} includePartOfSpeech Only include these comma-delimited parts of speech
 		 * @param {string} excludePartOfSpeech Exclude these comma-delimited parts of speech
 		 * @param {number} minCorpusCount Minimum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxCorpusCount Maximum corpus frequency for terms
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minDictionaryCount Minimum number of dictionary entries for words returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxDictionaryCount Maximum dictionary definition count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minLength Minimum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxLength Maximum word length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Results to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		SearchWords(query: string, caseSensitive: string | null | undefined, includePartOfSpeech: string | null | undefined, excludePartOfSpeech: string | null | undefined, minCorpusCount: number | null | undefined, maxCorpusCount: number | null | undefined, minDictionaryCount: number | null | undefined, maxDictionaryCount: number | null | undefined, minLength: number | null | undefined, maxLength: number | null | undefined, skip: number | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {

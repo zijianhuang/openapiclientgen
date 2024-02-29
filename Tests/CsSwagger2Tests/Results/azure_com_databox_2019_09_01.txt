@@ -2841,7 +2841,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="expand">$expand is supported on details parameter for job, which provides details on the job stages.</param>
 		/// <returns>Job object.</returns>
@@ -2874,7 +2877,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Job details from request body.</param>
 		/// <returns>Job object.</returns>
@@ -2914,7 +2920,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task Jobs_DeleteAsync(string subscriptionId, string resourceGroupName, string jobName, string api_version)
 		{
@@ -2939,7 +2948,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Job update parameters from request body.</param>
 		/// <returns>Job object.</returns>
@@ -2979,7 +2991,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Details of shipment pick up request.</param>
 		/// <returns>Booked shipment pick up successfully.</returns>
@@ -3019,7 +3034,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Reason for cancellation.</param>
 		public async Task Jobs_CancelAsync(string subscriptionId, string resourceGroupName, string jobName, string api_version, CancellationReason requestBody)
@@ -3052,7 +3070,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
-		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only</param>
+		/// <param name="jobName">The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		/// Max length: 24
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>List of unencrypted credentials of the job.</returns>
 		public async Task<UnencryptedCredentialsList> Jobs_ListCredentialsAsync(string subscriptionId, string resourceGroupName, string jobName, string api_version)

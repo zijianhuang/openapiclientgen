@@ -1103,9 +1103,14 @@ namespace MyNS
 		/// GetShortCodeMessages shortcode/incoming
 		/// </summary>
 		/// <param name="offset">***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
-		///</param>
+		///
+		/// Minimum: 0
+		// </param>
 		/// <param name="limit">***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ShortcodeMessageResponse> GetShortCodeMessagesAsync(int offset, int limit)
 		{
@@ -1139,9 +1144,14 @@ namespace MyNS
 		/// GetIncomingMessages sms/incoming
 		/// </summary>
 		/// <param name="offset">***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
-		///</param>
+		///
+		/// Minimum: 0
+		// </param>
 		/// <param name="limit">***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<IncomingMessageResponse> GetIncomingMessagesAsync(int offset, int limit)
 		{
@@ -1329,9 +1339,14 @@ namespace MyNS
 		/// GetScheduledMessages sms/scheduled
 		/// </summary>
 		/// <param name="offset">***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
-		///</param>
+		///
+		/// Minimum: 0
+		// </param>
 		/// <param name="limit">***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ScheduledMessageResponse> GetScheduledMessagesAsync(int offset, int limit)
 		{

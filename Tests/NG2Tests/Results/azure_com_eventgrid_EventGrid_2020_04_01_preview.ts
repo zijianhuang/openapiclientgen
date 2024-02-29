@@ -2007,6 +2007,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DomainsListResult} OK
 		 */
 		Domains_ListBySubscription(subscriptionId: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<DomainsListResult> {
@@ -2021,6 +2022,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListGlobalBySubscription(subscriptionId: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2036,6 +2038,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListRegionalBySubscription(subscriptionId: string, location: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2052,6 +2055,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListRegionalBySubscriptionForTopicType(subscriptionId: string, location: string, topicTypeName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2067,6 +2071,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListGlobalBySubscriptionForTopicType(subscriptionId: string, topicTypeName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2081,6 +2086,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TopicsListResult} OK
 		 */
 		Topics_ListBySubscription(subscriptionId: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<TopicsListResult> {
@@ -2096,6 +2102,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DomainsListResult} OK
 		 */
 		Domains_ListByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<DomainsListResult> {
@@ -2199,6 +2206,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DomainTopicsListResult} OK
 		 */
 		DomainTopics_ListByDomain(subscriptionId: string, resourceGroupName: string, domainName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<DomainTopicsListResult> {
@@ -2261,6 +2269,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListByDomainTopic(subscriptionId: string, resourceGroupName: string, domainName: string, topicName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2276,6 +2285,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListGlobalByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2292,6 +2302,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListRegionalByResourceGroup(subscriptionId: string, resourceGroupName: string, location: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2309,6 +2320,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListRegionalByResourceGroupForTopicType(subscriptionId: string, resourceGroupName: string, location: string, topicTypeName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2325,6 +2337,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListGlobalByResourceGroupForTopicType(subscriptionId: string, resourceGroupName: string, topicTypeName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {
@@ -2340,6 +2353,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TopicsListResult} OK
 		 */
 		Topics_ListByResourceGroup(subscriptionId: string, resourceGroupName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<TopicsListResult> {
@@ -2445,6 +2459,7 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {string} filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
 		 * @param {number} top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventSubscriptionsListResult} OK
 		 */
 		EventSubscriptions_ListByResource(subscriptionId: string, resourceGroupName: string, providerNamespace: string, resourceTypeName: string, resourceName: string, api_version: string, filter: string | null | undefined, top: number | null | undefined): Observable<EventSubscriptionsListResult> {

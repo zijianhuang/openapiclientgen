@@ -316,7 +316,10 @@ namespace MyNS
 		/// Returns Canadian public holidays. Each holiday lists the regions that observe it.
 		/// Holidays api/v1/holidays
 		/// </summary>
-		/// <param name="year">A calendar year</param>
+		/// <param name="year">A calendar year
+		/// Minimum: 2016
+		/// Maximum: 2029
+		// </param>
 		/// <param name="federal">A boolean parameter. If true or 1, will return only federal holidays. If false or 0, will return no federal holidays.</param>
 		/// <param name="optional">A boolean parameter. If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.</param>
 		/// <returns>OK</returns>
@@ -353,7 +356,10 @@ namespace MyNS
 		/// Returns one Canadian statutory holiday by integer id. Returns a 404 response for invalid ids.
 		/// Holiday api/v1/holidays/{holidayId}
 		/// </summary>
-		/// <param name="year">A calendar year</param>
+		/// <param name="year">A calendar year
+		/// Minimum: 2016
+		/// Maximum: 2029
+		// </param>
 		/// <param name="optional">A boolean parameter. If false or 0 (default), will return provinces for which this is a legislated holiday. If true or 1, will return provinces which optionally celebrate this holiday.</param>
 		/// <returns>OK</returns>
 		public async Task<HolidayReturn> HolidayAsync(int year, HolidayOptional optional, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -389,7 +395,10 @@ namespace MyNS
 		/// Returns provinces and territories in Canada. Each province or territory lists its associated holidays.
 		/// Provinces api/v1/provinces
 		/// </summary>
-		/// <param name="year">A calendar year</param>
+		/// <param name="year">A calendar year
+		/// Minimum: 2016
+		/// Maximum: 2029
+		// </param>
 		/// <param name="optional">A boolean parameter. If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.</param>
 		/// <returns>OK</returns>
 		public async Task<ProvincesReturn> ProvincesAsync(int year, ProvincesOptional optional, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -425,7 +434,10 @@ namespace MyNS
 		/// Returns a Canadian province or territory with its associated holidays. Returns a 404 response for invalid abbreviations.
 		/// Province api/v1/provinces/{provinceId}
 		/// </summary>
-		/// <param name="year">A calendar year</param>
+		/// <param name="year">A calendar year
+		/// Minimum: 2016
+		/// Maximum: 2029
+		// </param>
 		/// <param name="optional">A boolean parameter (AB and BC only). If false or 0 (default), will return only legislated holidays. If true or 1, will return optional holidays from Alberta and BC.</param>
 		/// <returns>OK</returns>
 		public async Task<ProvinceReturn> ProvinceAsync(int year, ProvinceOptional optional, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

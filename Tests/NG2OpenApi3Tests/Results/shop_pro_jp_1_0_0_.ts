@@ -8,13 +8,22 @@ export namespace MyNS {
 		/** 課金ID */
 		id?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** ポイント請求額(税抜) */
+		/**
+		 * ポイント請求額(税抜)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point?: number | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface ApplicationChargeFormProperties {
@@ -22,13 +31,22 @@ export namespace MyNS {
 		/** 課金ID */
 		id: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** ポイント請求額(税抜) */
+		/**
+		 * ポイント請求額(税抜)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: FormControl<number | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateApplicationChargeFormGroup() {
@@ -46,22 +64,34 @@ export namespace MyNS {
 		/** アカウントID */
 		account_id?: string | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface CartScriptTagFormProperties {
@@ -69,22 +99,34 @@ export namespace MyNS {
 		/** アカウントID */
 		account_id: FormControl<string | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateCartScriptTagFormGroup() {
@@ -113,13 +155,22 @@ export namespace MyNS {
 		 */
 		display_scope?: InlineScriptTagDisplay_scope | null;
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** インラインスクリプト */
@@ -131,7 +182,10 @@ export namespace MyNS {
 		 */
 		trigger_event?: InlineScriptTagTrigger_event | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface InlineScriptTagFormProperties {
@@ -147,13 +201,22 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<InlineScriptTagDisplay_scope | null | undefined>,
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** インラインスクリプト */
@@ -165,7 +228,10 @@ export namespace MyNS {
 		 */
 		trigger_event: FormControl<InlineScriptTagTrigger_event | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateInlineScriptTagFormGroup() {
@@ -197,16 +263,25 @@ export namespace MyNS {
 		 */
 		display_scope?: ScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface ScriptTagFormProperties {
@@ -220,16 +295,25 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateScriptTagFormGroup() {
@@ -257,22 +341,34 @@ export namespace MyNS {
 		 */
 		display_scope?: ShopScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface ShopScriptTagFormProperties {
@@ -287,22 +383,34 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ShopScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateShopScriptTagFormGroup() {
@@ -329,13 +437,22 @@ export namespace MyNS {
 		/** 従量課金ID */
 		id?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** ポイント請求額(税抜) */
+		/**
+		 * ポイント請求額(税抜)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point?: number | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface UsageChargeFormProperties {
@@ -346,13 +463,22 @@ export namespace MyNS {
 		/** 従量課金ID */
 		id: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** ポイント請求額(税抜) */
+		/**
+		 * ポイント請求額(税抜)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		point: FormControl<number | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateUsageChargeFormGroup() {
@@ -517,7 +643,6 @@ export namespace MyNS {
 		/**
 		 * スクリプトタグの取得
 		 * Get appstore/v1/script_tags.json
-		 * @return {GetShopScriptTagsReturn} 
 		 */
 		GetShopScriptTags(): Observable<GetShopScriptTagsReturn> {
 			return this.http.get<GetShopScriptTagsReturn>(this.baseUri + 'appstore/v1/script_tags.json', {});
@@ -527,7 +652,6 @@ export namespace MyNS {
 		 * スクリプトタグの作成
 		 * Post appstore/v1/script_tags.json
 		 * @param {CreateShopScriptTagScriptTag} requestBody 作成するスクリプトタグの情報
-		 * @return {CreateShopScriptTagReturn} 
 		 */
 		CreateShopScriptTag(requestBody: CreateShopScriptTagScriptTag): Observable<CreateShopScriptTagReturn> {
 			return this.http.post<CreateShopScriptTagReturn>(this.baseUri + 'appstore/v1/script_tags.json', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -537,6 +661,7 @@ export namespace MyNS {
 		 * スクリプトタグの削除
 		 * Delete appstore/v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteScriptTag(scriptTagId: number): Observable<HttpResponse<string>> {
@@ -547,7 +672,7 @@ export namespace MyNS {
 		 * スクリプトタグの取得
 		 * Get appstore/v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
-		 * @return {GetShopScriptTagReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetShopScriptTag(scriptTagId: number): Observable<GetShopScriptTagReturn> {
 			return this.http.get<GetShopScriptTagReturn>(this.baseUri + 'appstore/v1/script_tags/' + scriptTagId + '.json', {});
@@ -557,8 +682,8 @@ export namespace MyNS {
 		 * スクリプトタグの更新
 		 * Put appstore/v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreateShopScriptTagScriptTag} requestBody 作成するスクリプトタグの情報
-		 * @return {UpdateShopScriptTagReturn} 
 		 */
 		UpdateShopScriptTag(scriptTagId: number, requestBody: CreateShopScriptTagScriptTag): Observable<UpdateShopScriptTagReturn> {
 			return this.http.put<UpdateShopScriptTagReturn>(this.baseUri + 'appstore/v1/script_tags/' + scriptTagId + '.json', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -567,7 +692,6 @@ export namespace MyNS {
 		/**
 		 * インラインスクリプトタグの取得
 		 * Get v1/inline_script_tags.json
-		 * @return {GetInlineScriptTagsReturn} 
 		 */
 		GetInlineScriptTags(): Observable<GetInlineScriptTagsReturn> {
 			return this.http.get<GetInlineScriptTagsReturn>(this.baseUri + 'v1/inline_script_tags.json', {});
@@ -587,6 +711,7 @@ export namespace MyNS {
 		 * インラインスクリプトタグの削除
 		 * Delete v1/inline_script_tags/{inlineScriptTagId}.json
 		 * @param {number} inlineScriptTagId インラインスクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteInlineScriptTag(inlineScriptTagId: number): Observable<HttpResponse<string>> {
@@ -597,7 +722,7 @@ export namespace MyNS {
 		 * インラインスクリプトタグの取得
 		 * Get v1/inline_script_tags/{inlineScriptTagId}.json
 		 * @param {number} inlineScriptTagId インラインスクリプトタグID
-		 * @return {GetInlineScriptTagReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetInlineScriptTag(inlineScriptTagId: number): Observable<GetInlineScriptTagReturn> {
 			return this.http.get<GetInlineScriptTagReturn>(this.baseUri + 'v1/inline_script_tags/' + inlineScriptTagId + '.json', {});
@@ -607,8 +732,8 @@ export namespace MyNS {
 		 * インラインスクリプトタグの更新
 		 * Put v1/inline_script_tags/{inlineScriptTagId}.json
 		 * @param {number} inlineScriptTagId インラインスクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UpdateInlineScriptTagPutBody} requestBody 更新するスクリプトタグの情報
-		 * @return {UpdateInlineScriptTagReturn} 
 		 */
 		UpdateInlineScriptTag(inlineScriptTagId: number, requestBody: UpdateInlineScriptTagPutBody): Observable<UpdateInlineScriptTagReturn> {
 			return this.http.put<UpdateInlineScriptTagReturn>(this.baseUri + 'v1/inline_script_tags/' + inlineScriptTagId + '.json', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -617,7 +742,6 @@ export namespace MyNS {
 		/**
 		 * スクリプトタグの取得
 		 * Get v1/script_tags.json
-		 * @return {GetScriptTagsReturn} 
 		 */
 		GetScriptTags(): Observable<GetScriptTagsReturn> {
 			return this.http.get<GetScriptTagsReturn>(this.baseUri + 'v1/script_tags.json', {});
@@ -627,7 +751,6 @@ export namespace MyNS {
 		 * スクリプトタグの作成
 		 * Post v1/script_tags.json
 		 * @param {CreateScriptTagScriptTag} requestBody 作成するスクリプトタグの情報
-		 * @return {CreateScriptTagReturn} 
 		 */
 		CreateScriptTag(requestBody: CreateScriptTagScriptTag): Observable<CreateScriptTagReturn> {
 			return this.http.post<CreateScriptTagReturn>(this.baseUri + 'v1/script_tags.json', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -637,6 +760,7 @@ export namespace MyNS {
 		 * スクリプトタグの削除
 		 * Delete v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ScriptdeprecatedDeleteByScriptTagId(scriptTagId: number): Observable<HttpResponse<string>> {
@@ -647,7 +771,7 @@ export namespace MyNS {
 		 * スクリプトタグの取得
 		 * Get v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
-		 * @return {GetScriptTagReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetScriptTag(scriptTagId: number): Observable<GetScriptTagReturn> {
 			return this.http.get<GetScriptTagReturn>(this.baseUri + 'v1/script_tags/' + scriptTagId + '.json', {});
@@ -657,8 +781,8 @@ export namespace MyNS {
 		 * スクリプトタグの更新
 		 * Put v1/script_tags/{scriptTagId}.json
 		 * @param {number} scriptTagId スクリプトタグID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreateScriptTagScriptTag} requestBody 作成するスクリプトタグの情報
-		 * @return {UpdateScriptTagReturn} 
 		 */
 		UpdateScriptTag(scriptTagId: number, requestBody: CreateScriptTagScriptTag): Observable<UpdateScriptTagReturn> {
 			return this.http.put<UpdateScriptTagReturn>(this.baseUri + 'v1/script_tags/' + scriptTagId + '.json', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -704,7 +828,10 @@ export namespace MyNS {
 		/** （買い切り以外の課金の場合）課金契約ID */
 		recurring_application_charge_id?: string | null;
 
-		/** アンインストール日時 */
+		/**
+		 * アンインストール日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uninstalled_at?: number | null;
 
 		/** （従量課金の場合）従量課金アンインストール情報 */
@@ -721,7 +848,10 @@ export namespace MyNS {
 		/** （買い切り以外の課金の場合）課金契約ID */
 		recurring_application_charge_id: FormControl<string | null | undefined>,
 
-		/** アンインストール日時 */
+		/**
+		 * アンインストール日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uninstalled_at: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteInstallationReturnFormGroup() {
@@ -739,7 +869,10 @@ export namespace MyNS {
 		/** アンインストール後に従量課金APIを利用いただくために必要な情報 */
 		api_token?: string | null;
 
-		/** ポイント締め日 */
+		/**
+		 * ポイント締め日
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closing_on?: number | null;
 	}
 	export interface DeleteInstallationReturnUsage_chargeFormProperties {
@@ -747,7 +880,10 @@ export namespace MyNS {
 		/** アンインストール後に従量課金APIを利用いただくために必要な情報 */
 		api_token: FormControl<string | null | undefined>,
 
-		/** ポイント締め日 */
+		/**
+		 * ポイント締め日
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closing_on: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteInstallationReturnUsage_chargeFormGroup() {
@@ -781,6 +917,7 @@ export namespace MyNS {
 		/**
 		 * ポイント数（税抜）。100 円以上 100 万円以下が指定可能。このポイントに消費税を加算してショップオーナーに請求します。
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		point: number;
 	}
@@ -796,6 +933,7 @@ export namespace MyNS {
 		/**
 		 * ポイント数（税抜）。100 円以上 100 万円以下が指定可能。このポイントに消費税を加算してショップオーナーに請求します。
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		point: FormControl<number | null | undefined>,
 	}
@@ -830,22 +968,34 @@ export namespace MyNS {
 		 */
 		display_scope?: ShopScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetShopScriptTagsReturnScript_tagsFormProperties {
@@ -860,22 +1010,34 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ShopScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetShopScriptTagsReturnScript_tagsFormGroup() {
@@ -915,22 +1077,34 @@ export namespace MyNS {
 		 */
 		display_scope?: ShopScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface CreateShopScriptTagReturnScript_tagFormProperties {
@@ -945,22 +1119,34 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ShopScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateShopScriptTagReturnScript_tagFormGroup() {
@@ -1000,22 +1186,34 @@ export namespace MyNS {
 		 */
 		display_scope?: ShopScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetShopScriptTagReturnScript_tagFormProperties {
@@ -1030,22 +1228,34 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ShopScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetShopScriptTagReturnScript_tagFormGroup() {
@@ -1085,22 +1295,34 @@ export namespace MyNS {
 		 */
 		display_scope?: ShopScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity?: string | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface UpdateShopScriptTagReturnScript_tagFormProperties {
@@ -1115,22 +1337,34 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ShopScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** スクリプトファイルのハッシュ値（script tagのintegrity属性） */
 		integrity: FormControl<string | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** OAuthアプリケーションID */
+		/**
+		 * OAuthアプリケーションID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateShopScriptTagReturnScript_tagFormGroup() {
@@ -1171,13 +1405,22 @@ export namespace MyNS {
 		 */
 		display_scope?: InlineScriptTagDisplay_scope | null;
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** インラインスクリプト */
@@ -1189,7 +1432,10 @@ export namespace MyNS {
 		 */
 		trigger_event?: InlineScriptTagTrigger_event | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetInlineScriptTagsReturnInline_script_tagsFormProperties {
@@ -1205,13 +1451,22 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<InlineScriptTagDisplay_scope | null | undefined>,
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** インラインスクリプト */
@@ -1223,7 +1478,10 @@ export namespace MyNS {
 		 */
 		trigger_event: FormControl<InlineScriptTagTrigger_event | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetInlineScriptTagsReturnInline_script_tagsFormGroup() {
@@ -1322,13 +1580,22 @@ export namespace MyNS {
 		 */
 		display_scope?: InlineScriptTagDisplay_scope | null;
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** インラインスクリプト */
@@ -1340,7 +1607,10 @@ export namespace MyNS {
 		 */
 		trigger_event?: InlineScriptTagTrigger_event | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetInlineScriptTagReturnInline_script_tagFormProperties {
@@ -1356,13 +1626,22 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<InlineScriptTagDisplay_scope | null | undefined>,
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** インラインスクリプト */
@@ -1374,7 +1653,10 @@ export namespace MyNS {
 		 */
 		trigger_event: FormControl<InlineScriptTagTrigger_event | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetInlineScriptTagReturnInline_script_tagFormGroup() {
@@ -1473,13 +1755,22 @@ export namespace MyNS {
 		 */
 		display_scope?: InlineScriptTagDisplay_scope | null;
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id?: number | null;
 
 		/** インラインスクリプト */
@@ -1491,7 +1782,10 @@ export namespace MyNS {
 		 */
 		trigger_event?: InlineScriptTagTrigger_event | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface UpdateInlineScriptTagReturnInline_script_tagFormProperties {
@@ -1507,13 +1801,22 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<InlineScriptTagDisplay_scope | null | undefined>,
 
-		/** インラインスクリプトタグID */
+		/**
+		 * インラインスクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
-		/** アプリID */
+		/**
+		 * アプリID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oauth_application_id: FormControl<number | null | undefined>,
 
 		/** インラインスクリプト */
@@ -1525,7 +1828,10 @@ export namespace MyNS {
 		 */
 		trigger_event: FormControl<InlineScriptTagTrigger_event | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateInlineScriptTagReturnInline_script_tagFormGroup() {
@@ -1564,16 +1870,25 @@ export namespace MyNS {
 		 */
 		display_scope?: ScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetScriptTagsReturnScript_tagsFormProperties {
@@ -1587,16 +1902,25 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetScriptTagsReturnScript_tagsFormGroup() {
@@ -1632,16 +1956,25 @@ export namespace MyNS {
 		 */
 		display_scope?: ScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface CreateScriptTagReturnScript_tagFormProperties {
@@ -1655,16 +1988,25 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateScriptTagReturnScript_tagFormGroup() {
@@ -1700,16 +2042,25 @@ export namespace MyNS {
 		 */
 		display_scope?: ScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface GetScriptTagReturnScript_tagFormProperties {
@@ -1723,16 +2074,25 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateGetScriptTagReturnScript_tagFormGroup() {
@@ -1768,16 +2128,25 @@ export namespace MyNS {
 		 */
 		display_scope?: ScriptTagDisplay_scope | null;
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date?: number | null;
 
 		/** スクリプトURL */
 		src?: string | null;
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date?: number | null;
 	}
 	export interface UpdateScriptTagReturnScript_tagFormProperties {
@@ -1791,16 +2160,25 @@ export namespace MyNS {
 		 */
 		display_scope: FormControl<ScriptTagDisplay_scope | null | undefined>,
 
-		/** スクリプトタグID */
+		/**
+		 * スクリプトタグID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** 作成日時 */
+		/**
+		 * 作成日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		make_date: FormControl<number | null | undefined>,
 
 		/** スクリプトURL */
 		src: FormControl<string | null | undefined>,
 
-		/** 更新日時 */
+		/**
+		 * 更新日時
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_date: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateScriptTagReturnScript_tagFormGroup() {

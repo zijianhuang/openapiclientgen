@@ -1521,7 +1521,9 @@ export namespace MyNS {
 		 * Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application.
 		 * Post appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}/connect
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appAuthorizationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ConnectAppAuthorizationResponse} Success
 		 */
 		ConnectAppAuthorization(appBundleIdentifier: string, appAuthorizationIdentifier: string, requestBody: ConnectAppAuthorizationPostBody): Observable<ConnectAppAuthorizationResponse> {
@@ -1532,6 +1534,7 @@ export namespace MyNS {
 		 * Creates an app authorization within an app bundle, which allows AppFabric to connect to an application.
 		 * Post appbundles/{appBundleIdentifier}/appauthorizations
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		CreateAppAuthorization(appBundleIdentifier: string, requestBody: CreateAppAuthorizationPostBody): Observable<HttpResponse<string>> {
@@ -1542,8 +1545,11 @@ export namespace MyNS {
 		 * Returns a list of all app authorizations configured for an app bundle.
 		 * Get appbundles/{appBundleIdentifier}/appauthorizations
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {number} maxResults <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListAppAuthorizationsResponse} Success
 		 */
 		ListAppAuthorizations(appBundleIdentifier: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListAppAuthorizationsResponse> {
@@ -1563,7 +1569,9 @@ export namespace MyNS {
 		 * Returns a list of app bundles.
 		 * Get appbundles
 		 * @param {number} maxResults <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListAppBundlesResponse} Success
 		 */
 		ListAppBundles(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListAppBundlesResponse> {
@@ -1574,6 +1582,7 @@ export namespace MyNS {
 		 * Creates a data ingestion for an application.
 		 * Post appbundles/{appBundleIdentifier}/ingestions
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		CreateIngestion(appBundleIdentifier: string, requestBody: CreateIngestionPostBody): Observable<HttpResponse<string>> {
@@ -1584,7 +1593,9 @@ export namespace MyNS {
 		 * Returns a list of all ingestions configured for an app bundle.
 		 * Get appbundles/{appBundleIdentifier}/ingestions
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {number} maxResults <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
 		 * @return {ListIngestionsResponse} Success
 		 */
@@ -1596,7 +1607,9 @@ export namespace MyNS {
 		 * Creates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 		 * Post appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		CreateIngestionDestination(appBundleIdentifier: string, ingestionIdentifier: string, requestBody: CreateIngestionDestinationPostBody): Observable<HttpResponse<string>> {
@@ -1607,8 +1620,11 @@ export namespace MyNS {
 		 * Returns a list of all ingestion destinations configured for an ingestion.
 		 * Get appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {number} maxResults <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.
 		 * @return {ListIngestionDestinationsResponse} Success
 		 */
@@ -1620,7 +1636,9 @@ export namespace MyNS {
 		 * Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization.
 		 * Delete appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appAuthorizationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		DeleteAppAuthorization(appBundleIdentifier: string, appAuthorizationIdentifier: string): Observable<HttpResponse<string>> {
@@ -1631,7 +1649,9 @@ export namespace MyNS {
 		 * Returns information about an app authorization.
 		 * Get appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appAuthorizationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {GetAppAuthorizationResponse} Success
 		 */
 		GetAppAuthorization(appBundleIdentifier: string, appAuthorizationIdentifier: string): Observable<GetAppAuthorizationResponse> {
@@ -1642,7 +1662,9 @@ export namespace MyNS {
 		 * <p>Updates an app authorization within an app bundle, which allows AppFabric to connect to an application.</p> <p>If the app authorization was in a <code>connected</code> state, updating the app authorization will set it back to a <code>PendingConnect</code> state.</p>
 		 * Patch appbundles/{appBundleIdentifier}/appauthorizations/{appAuthorizationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appAuthorizationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {UpdateAppAuthorizationResponse} Success
 		 */
 		UpdateAppAuthorization(appBundleIdentifier: string, appAuthorizationIdentifier: string, requestBody: UpdateAppAuthorizationPatchBody): Observable<UpdateAppAuthorizationResponse> {
@@ -1653,6 +1675,7 @@ export namespace MyNS {
 		 * Deletes an app bundle. You must delete all associated app authorizations before you can delete an app bundle.
 		 * Delete appbundles/{appBundleIdentifier}
 		 * @param {string} appBundleIdentifier The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		DeleteAppBundle(appBundleIdentifier: string): Observable<HttpResponse<string>> {
@@ -1663,6 +1686,7 @@ export namespace MyNS {
 		 * Returns information about an app bundle.
 		 * Get appbundles/{appBundleIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {GetAppBundleResponse} Success
 		 */
 		GetAppBundle(appBundleIdentifier: string): Observable<GetAppBundleResponse> {
@@ -1673,7 +1697,9 @@ export namespace MyNS {
 		 * Deletes an ingestion. You must stop (disable) the ingestion and you must delete all associated ingestion destinations before you can delete an app ingestion.
 		 * Delete appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		DeleteIngestion(appBundleIdentifier: string, ingestionIdentifier: string): Observable<HttpResponse<string>> {
@@ -1684,7 +1710,9 @@ export namespace MyNS {
 		 * Returns information about an ingestion.
 		 * Get appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {GetIngestionResponse} Success
 		 */
 		GetIngestion(appBundleIdentifier: string, ingestionIdentifier: string): Observable<GetIngestionResponse> {
@@ -1695,8 +1723,11 @@ export namespace MyNS {
 		 * <p>Deletes an ingestion destination.</p> <p>This deletes the association between an ingestion and it's destination. It doesn't delete previously ingested data or the storage destination, such as the Amazon S3 bucket where the data is delivered. If the ingestion destination is deleted while the associated ingestion is enabled, the ingestion will fail and is eventually disabled.</p>
 		 * Delete appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionDestinationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		DeleteIngestionDestination(appBundleIdentifier: string, ingestionIdentifier: string, ingestionDestinationIdentifier: string): Observable<HttpResponse<string>> {
@@ -1707,8 +1738,11 @@ export namespace MyNS {
 		 * Returns information about an ingestion destination.
 		 * Get appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionDestinationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {GetIngestionDestinationResponse} Success
 		 */
 		GetIngestionDestination(appBundleIdentifier: string, ingestionIdentifier: string, ingestionDestinationIdentifier: string): Observable<GetIngestionDestinationResponse> {
@@ -1719,8 +1753,11 @@ export namespace MyNS {
 		 * Updates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 		 * Patch appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/ingestiondestinations/{ingestionDestinationIdentifier}
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} ingestionDestinationIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {UpdateIngestionDestinationResponse} Success
 		 */
 		UpdateIngestionDestination(appBundleIdentifier: string, ingestionIdentifier: string, ingestionDestinationIdentifier: string, requestBody: UpdateIngestionDestinationPatchBody): Observable<UpdateIngestionDestinationResponse> {
@@ -1731,6 +1768,7 @@ export namespace MyNS {
 		 * Returns a list of tags for a resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1741,6 +1779,7 @@ export namespace MyNS {
 		 * Assigns one or more tags (key-value pairs) to the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource that you want to tag.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1751,7 +1790,9 @@ export namespace MyNS {
 		 * Starts (enables) an ingestion, which collects data from an application.
 		 * Post appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/start
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {StartIngestionResponse} Success
 		 */
 		StartIngestion(ingestionIdentifier: string, appBundleIdentifier: string): Observable<StartIngestionResponse> {
@@ -1771,7 +1812,9 @@ export namespace MyNS {
 		 * Stops (disables) an ingestion.
 		 * Post appbundles/{appBundleIdentifier}/ingestions/{ingestionIdentifier}/stop
 		 * @param {string} ingestionIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @param {string} appBundleIdentifier The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+		 *     Min length: 1    Max length: 1011
 		 * @return {StopIngestionResponse} Success
 		 */
 		StopIngestion(ingestionIdentifier: string, appBundleIdentifier: string): Observable<StopIngestionResponse> {
@@ -1782,7 +1825,9 @@ export namespace MyNS {
 		 * Removes a tag or tags from a resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource that you want to untag.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys The keys of the key-value pairs for the tag or tags you want to remove from the specified resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1795,8 +1840,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		appBundleIdentifier: string;
 
@@ -1813,8 +1858,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		appBundleIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1859,8 +1904,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the application.</p> <p>Valid values are:</p> <ul> <li> <p> <code>SLACK</code> </p> </li> <li> <p> <code>ASANA</code> </p> </li> <li> <p> <code>JIRA</code> </p> </li> <li> <p> <code>M365</code> </p> </li> <li> <p> <code>M365AUDITLOGS</code> </p> </li> <li> <p> <code>ZOOM</code> </p> </li> <li> <p> <code>ZENDESK</code> </p> </li> <li> <p> <code>OKTA</code> </p> </li> <li> <p> <code>GOOGLE</code> </p> </li> <li> <p> <code>DROPBOX</code> </p> </li> <li> <p> <code>SMARTSHEET</code> </p> </li> <li> <p> <code>CISCO</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		app: string;
 
@@ -1897,8 +1942,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the application.</p> <p>Valid values are:</p> <ul> <li> <p> <code>SLACK</code> </p> </li> <li> <p> <code>ASANA</code> </p> </li> <li> <p> <code>JIRA</code> </p> </li> <li> <p> <code>M365</code> </p> </li> <li> <p> <code>M365AUDITLOGS</code> </p> </li> <li> <p> <code>ZOOM</code> </p> </li> <li> <p> <code>ZENDESK</code> </p> </li> <li> <p> <code>OKTA</code> </p> </li> <li> <p> <code>GOOGLE</code> </p> </li> <li> <p> <code>DROPBOX</code> </p> </li> <li> <p> <code>SMARTSHEET</code> </p> </li> <li> <p> <code>CISCO</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		app: FormControl<string | null | undefined>,
 
@@ -1955,8 +2000,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		customerManagedKeyIdentifier?: string | null;
 
@@ -1974,8 +2019,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		customerManagedKeyIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1992,16 +2037,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the application.</p> <p>Valid values are:</p> <ul> <li> <p> <code>SLACK</code> </p> </li> <li> <p> <code>ASANA</code> </p> </li> <li> <p> <code>JIRA</code> </p> </li> <li> <p> <code>M365</code> </p> </li> <li> <p> <code>M365AUDITLOGS</code> </p> </li> <li> <p> <code>ZOOM</code> </p> </li> <li> <p> <code>ZENDESK</code> </p> </li> <li> <p> <code>OKTA</code> </p> </li> <li> <p> <code>GOOGLE</code> </p> </li> <li> <p> <code>DROPBOX</code> </p> </li> <li> <p> <code>SMARTSHEET</code> </p> </li> <li> <p> <code>CISCO</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		app: string;
 
 		/**
 		 * The ID of the application tenant.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		tenantId: string;
 
@@ -2026,16 +2071,16 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the application.</p> <p>Valid values are:</p> <ul> <li> <p> <code>SLACK</code> </p> </li> <li> <p> <code>ASANA</code> </p> </li> <li> <p> <code>JIRA</code> </p> </li> <li> <p> <code>M365</code> </p> </li> <li> <p> <code>M365AUDITLOGS</code> </p> </li> <li> <p> <code>ZOOM</code> </p> </li> <li> <p> <code>ZENDESK</code> </p> </li> <li> <p> <code>OKTA</code> </p> </li> <li> <p> <code>GOOGLE</code> </p> </li> <li> <p> <code>DROPBOX</code> </p> </li> <li> <p> <code>SMARTSHEET</code> </p> </li> <li> <p> <code>CISCO</code> </p> </li> </ul>
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		app: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the application tenant.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		tenantId: FormControl<string | null | undefined>,
 
@@ -2210,16 +2255,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		appBundleIdentifier: string;
 
 		/**
 		 * The email address of the target user.
 		 * Required
-		 * Max length: 320
 		 * Min length: 0
+		 * Max length: 320
 		 */
 		email: string;
 	}
@@ -2228,16 +2273,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		appBundleIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The email address of the target user.
 		 * Required
-		 * Max length: 320
 		 * Min length: 0
+		 * Max length: 320
 		 */
 		email: FormControl<string | null | undefined>,
 	}

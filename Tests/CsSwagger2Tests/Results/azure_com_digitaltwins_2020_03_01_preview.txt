@@ -663,7 +663,9 @@ namespace MyNS
 		/// Lists all of the available DigitalTwins service REST API operations.
 		/// Operations_List providers/Microsoft.DigitalTwins/operations
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<OperationListResult> Operations_ListAsync(Operations_ListApi_version api_version)
 		{
@@ -692,7 +694,9 @@ namespace MyNS
 		/// Get all the DigitalTwinsInstances in a subscription.
 		/// DigitalTwins_List subscriptions/{subscriptionId}/providers/Microsoft.DigitalTwins/digitalTwinsInstances
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the DigitalTwinsInstances in the subscription.</returns>
 		public async Task<DigitalTwinsDescriptionListResult> DigitalTwins_ListAsync(DigitalTwins_ListApi_version api_version, string subscriptionId)
@@ -722,9 +726,13 @@ namespace MyNS
 		/// Check if a DigitalTwinsInstance name is available.
 		/// DigitalTwins_CheckNameAvailability subscriptions/{subscriptionId}/providers/Microsoft.DigitalTwins/locations/{location}/checkNameAvailability
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="location">Location of DigitalTwinsInstance.</param>
+		/// <param name="location">Location of DigitalTwinsInstance.
+		/// Min length: 3
+		// </param>
 		/// <param name="requestBody">Set the name parameter in the DigitalTwinsInstanceCheckName structure to the name of the DigitalTwinsInstance to check.</param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized response that specifies whether the DigitalTwins service name is available. If the name is not available, the body contains the reason.</returns>
 		public async Task<CheckNameResult> DigitalTwins_CheckNameAvailabilityAsync(DigitalTwins_CheckNameAvailabilityApi_version api_version, string subscriptionId, string location, CheckNameRequest requestBody)
@@ -761,9 +769,14 @@ namespace MyNS
 		/// Get all the DigitalTwinsInstances in a resource group.
 		/// DigitalTwins_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the DigitalTwinsInstances in the resource group.</returns>
 		public async Task<DigitalTwinsDescriptionListResult> DigitalTwins_ListByResourceGroupAsync(DigitalTwins_ListByResourceGroupApi_version api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -792,10 +805,18 @@ namespace MyNS
 		/// Get DigitalTwinsInstances resource.
 		/// DigitalTwins_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.</returns>
 		public async Task<DigitalTwinsDescription> DigitalTwins_GetAsync(DigitalTwins_GetApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -824,10 +845,18 @@ namespace MyNS
 		/// Create or update the metadata of a DigitalTwinsInstance. The usual pattern to modify a property is to retrieve the DigitalTwinsInstance and security metadata, and then combine them with the modified values in a new body to update the DigitalTwinsInstance.
 		/// DigitalTwins_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The DigitalTwinsInstance and security metadata.</param>
 		/// <returns>This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<DigitalTwinsDescription> DigitalTwins_CreateOrUpdateAsync(DigitalTwins_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, DigitalTwinsDescription requestBody)
@@ -864,10 +893,18 @@ namespace MyNS
 		/// Delete a DigitalTwinsInstance.
 		/// DigitalTwins_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task DigitalTwins_DeleteAsync(DigitalTwins_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -890,10 +927,18 @@ namespace MyNS
 		/// Update metadata of DigitalTwinsInstance.
 		/// DigitalTwins_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The DigitalTwinsInstance and security metadata.</param>
 		/// <returns>This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<DigitalTwinsDescription> DigitalTwins_UpdateAsync(DigitalTwins_UpdateApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, DigitalTwinsPatchDescription requestBody)
@@ -930,10 +975,18 @@ namespace MyNS
 		/// Get DigitalTwinsInstance Endpoints.
 		/// DigitalTwinsEndpoint_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.</returns>
 		public async Task<DigitalTwinsEndpointResourceListResult> DigitalTwinsEndpoint_ListAsync(DigitalTwinsEndpoint_ListApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -962,11 +1015,22 @@ namespace MyNS
 		/// Get DigitalTwinsInstances Endpoint.
 		/// DigitalTwinsEndpoint_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
-		/// <param name="endpointName">Name of Endpoint Resource.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="endpointName">Name of Endpoint Resource.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.</returns>
 		public async Task<DigitalTwinsEndpointResource> DigitalTwinsEndpoint_GetAsync(DigitalTwinsEndpoint_GetApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, string endpointName)
 		{
@@ -995,11 +1059,22 @@ namespace MyNS
 		/// Create or update DigitalTwinsInstance endpoint.
 		/// DigitalTwinsEndpoint_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
-		/// <param name="endpointName">Name of Endpoint Resource.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="endpointName">Name of Endpoint Resource.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The DigitalTwinsInstance endpoint metadata and security metadata.</param>
 		/// <returns>This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task<DigitalTwinsEndpointResource> DigitalTwinsEndpoint_CreateOrUpdateAsync(DigitalTwinsEndpoint_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, string endpointName, DigitalTwinsEndpointResource requestBody)
@@ -1036,11 +1111,22 @@ namespace MyNS
 		/// Delete a DigitalTwinsInstance endpoint.
 		/// DigitalTwinsEndpoint_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
-		/// <param name="endpointName">Name of Endpoint Resource.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="endpointName">Name of Endpoint Resource.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.</returns>
 		public async Task DigitalTwinsEndpoint_DeleteAsync(DigitalTwinsEndpoint_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName, string endpointName)
 		{
@@ -1063,10 +1149,18 @@ namespace MyNS
 		/// Get DigitalTwinsInstance IoTHubs.
 		/// DigitalTwinsIoTHubs_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/integrationResources
 		/// </summary>
-		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.</param>
+		/// <param name="api_version">Version of the DigitalTwinsInstance Management API.
+		/// Min length: 10
+		// </param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
-		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.</param>
-		/// <param name="resourceName">The name of the DigitalTwinsInstance.</param>
+		/// <param name="resourceGroupName">The name of the resource group that contains the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceName">The name of the DigitalTwinsInstance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.</returns>
 		public async Task<DigitalTwinsIntegrationResourceListResult> DigitalTwinsIoTHubs_ListAsync(DigitalTwinsIoTHubs_ListApi_version api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -1096,7 +1190,10 @@ namespace MyNS
 		/// IoTHub_Get {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		/// </summary>
 		/// <param name="scope">The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.</param>
-		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.</param>
+		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>This is a synchronous operation. The body contains metadata about IoTHub and DigitalTwinsInstance Integration.</returns>
 		public async Task<IntegrationResource> IoTHub_GetAsync(string scope, string integrationResourceName)
 		{
@@ -1126,7 +1223,10 @@ namespace MyNS
 		/// IoTHub_CreateOrUpdate {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		/// </summary>
 		/// <param name="scope">The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.</param>
-		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.</param>
+		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">The IoTHub metadata.</param>
 		public async Task IoTHub_CreateOrUpdateAsync(string scope, string integrationResourceName, IntegrationResource requestBody)
 		{
@@ -1157,7 +1257,10 @@ namespace MyNS
 		/// IoTHub_Delete {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		/// </summary>
 		/// <param name="scope">The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.</param>
-		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.</param>
+		/// <param name="integrationResourceName">Name of IoTHub and DigitalTwinsInstance integration instance.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>OK. DigitalTwinsInstance IoTHub link has been Deleted.</returns>
 		public async Task IoTHub_DeleteAsync(string scope, string integrationResourceName)
 		{

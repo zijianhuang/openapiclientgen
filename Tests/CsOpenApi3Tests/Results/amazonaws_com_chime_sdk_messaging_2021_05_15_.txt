@@ -2218,7 +2218,10 @@ namespace MyNS
 		/// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the <code>DisassociateChannelFlow</code> API.</p> <note> <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// AssociateChannelFlow channels/{channelArn}/channel-flow#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateChannelFlowAsync(string channelArn, AssociateChannelFlowPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2253,7 +2256,10 @@ namespace MyNS
 		/// Adds a specified number of users and bots to a channel.
 		/// BatchCreateChannelMembership channels/{channelArn}/memberships#operation=batch-create&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which you're adding users or bots.</param>
+		/// <param name="channelArn">The ARN of the channel to which you're adding users or bots.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateChannelMembershipResponse> BatchCreateChannelMembershipAsync(string channelArn, BatchCreateChannelMembershipOperation operation, BatchCreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2294,7 +2300,10 @@ namespace MyNS
 		/// <p>Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p> <p>You can return one of the following processing responses:</p> <ul> <li> <p>Update message content or metadata</p> </li> <li> <p>Deny a message</p> </li> <li> <p>Make no changes to the message</p> </li> </ul>
 		/// ChannelFlowCallback channels/{channelArn}#operation=channel-flow-callback
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChannelFlowCallbackResponse> ChannelFlowCallbackAsync(string channelArn, ChannelFlowCallbackOperation operation, ChannelFlowCallbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2368,7 +2377,10 @@ namespace MyNS
 		/// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// CreateChannelBan channels/{channelArn}/bans#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the ban request.</param>
+		/// <param name="channelArn">The ARN of the ban request.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelBanAsync(string channelArn, CreateChannelBanPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/bans#x-amz-chime-bearer";
@@ -2402,9 +2414,18 @@ namespace MyNS
 		/// <p>Lists all the users and bots banned from a particular channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannelBans channels/{channelArn}/bans#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="max_results">The maximum number of bans that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested bans are returned.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of bans that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested bans are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2473,7 +2494,10 @@ namespace MyNS
 		/// <p>Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// CreateChannelMembership channels/{channelArn}/memberships#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which you're adding users.</param>
+		/// <param name="channelArn">The ARN of the channel to which you're adding users.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelMembershipAsync(string channelArn, CreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/memberships#x-amz-chime-bearer";
@@ -2507,11 +2531,23 @@ namespace MyNS
 		/// <p>Lists all channel memberships in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note> <p>If you want to list the channels to which a specific app instance user belongs, see the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
 		/// ListChannelMemberships channels/{channelArn}/memberships#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The maximum number of channel memberships that you want returned.</param>
+		/// <param name="channelArn">The maximum number of channel memberships that you want returned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="type">The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</param>
-		/// <param name="max_results">The maximum number of channel memberships that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channel memberships are returned.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p> </note></param>
+		/// <param name="max_results">The maximum number of channel memberships that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channel memberships are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2547,7 +2583,10 @@ namespace MyNS
 		/// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that makes the API call as the value in the header.</p> </note>
 		/// CreateChannelModerator channels/{channelArn}/moderators#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task CreateChannelModeratorAsync(string channelArn, CreateChannelModeratorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/moderators#x-amz-chime-bearer";
@@ -2581,9 +2620,18 @@ namespace MyNS
 		/// <p>Lists all the moderators for a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannelModerators channels/{channelArn}/moderators#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="max_results">The maximum number of moderators that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested moderators are returned.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of moderators that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested moderators are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2619,7 +2667,10 @@ namespace MyNS
 		/// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DeleteChannel channels/{channelArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel being deleted.</param>
+		/// <param name="channelArn">The ARN of the channel being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"#x-amz-chime-bearer";
@@ -2646,7 +2697,10 @@ namespace MyNS
 		/// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannel channels/{channelArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelResponse> DescribeChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2680,7 +2734,10 @@ namespace MyNS
 		/// <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// UpdateChannel channels/{channelArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelResponse> UpdateChannelAsync(string channelArn, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2721,8 +2778,14 @@ namespace MyNS
 		/// <p>Removes a member from a channel's ban list.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DeleteChannelBan channels/{channelArn}/bans/{memberArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</param>
-		/// <param name="memberArn">The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</param>
+		/// <param name="channelArn">The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/bans/"+ (memberArn==null? "" : System.Uri.EscapeDataString(memberArn))+"#x-amz-chime-bearer";
@@ -2749,8 +2812,14 @@ namespace MyNS
 		/// <p>Returns the full details of a channel ban.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannelBan channels/{channelArn}/bans/{memberArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which the user is banned.</param>
-		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member being banned.</param>
+		/// <param name="channelArn">The ARN of the channel from which the user is banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member being banned.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelBanResponse> DescribeChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2784,7 +2853,10 @@ namespace MyNS
 		/// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note> <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p> </note>
 		/// DeleteChannelFlow channel-flows/{channelFlowArn}
 		/// </summary>
-		/// <param name="channelFlowArn">The ARN of the channel flow.</param>
+		/// <param name="channelFlowArn">The ARN of the channel flow.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelFlowAsync(string channelFlowArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channel-flows/"+ (channelFlowArn==null? "" : System.Uri.EscapeDataString(channelFlowArn));
@@ -2811,7 +2883,10 @@ namespace MyNS
 		/// Returns the full details of a channel flow in an Amazon Chime <code>AppInstance</code>. This is a developer API.
 		/// DescribeChannelFlow channel-flows/{channelFlowArn}
 		/// </summary>
-		/// <param name="channelFlowArn">The ARN of the channel flow.</param>
+		/// <param name="channelFlowArn">The ARN of the channel flow.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelFlowResponse> DescribeChannelFlowAsync(string channelFlowArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2845,7 +2920,10 @@ namespace MyNS
 		/// Updates channel flow attributes. This is a developer API.
 		/// UpdateChannelFlow channel-flows/{channelFlowArn}
 		/// </summary>
-		/// <param name="channelFlowArn">The ARN of the channel flow.</param>
+		/// <param name="channelFlowArn">The ARN of the channel flow.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelFlowResponse> UpdateChannelFlowAsync(string channelFlowArn, UpdateChannelFlowPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2886,9 +2964,18 @@ namespace MyNS
 		/// <p>Removes a member from a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>
 		/// DeleteChannelMembership channels/{channelArn}/memberships/{memberArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel from which you want to remove the user.</param>
-		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only for use by moderators.</p> </note></param>
+		/// <param name="channelArn">The ARN of the channel from which you want to remove the user.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only for use by moderators.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteChannelMembershipAsync(string channelArn, string memberArn, string sub_channel_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/memberships/"+ (memberArn==null? "" : System.Uri.EscapeDataString(memberArn))+"#x-amz-chime-bearer&sub-channel-id=" + (sub_channel_id==null? "" : System.Uri.EscapeDataString(sub_channel_id));
@@ -2915,9 +3002,18 @@ namespace MyNS
 		/// <p>Returns the full details of a user's channel membership.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannelMembership channels/{channelArn}/memberships/{memberArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note> <p>Only required to get a user’s SubChannel membership details.</p> </note></param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note> <p>Only required to get a user’s SubChannel membership details.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipResponse> DescribeChannelMembershipAsync(string channelArn, string memberArn, string sub_channel_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2951,9 +3047,18 @@ namespace MyNS
 		/// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DeleteChannelMessage channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID of the message being deleted.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> </note></param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message being deleted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteChannelMessageAsync(string channelArn, string messageId, string sub_channel_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/messages/"+ (messageId==null? "" : System.Uri.EscapeDataString(messageId))+"#x-amz-chime-bearer&sub-channel-id=" + (sub_channel_id==null? "" : System.Uri.EscapeDataString(sub_channel_id));
@@ -2980,9 +3085,18 @@ namespace MyNS
 		/// <p>Gets the full details of a channel message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// GetChannelMessage channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID of the message.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting messages in a SubChannel that the user belongs to.</p> </note></param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting messages in a SubChannel that the user belongs to.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelMessageResponse> GetChannelMessageAsync(string channelArn, string messageId, string sub_channel_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3016,8 +3130,14 @@ namespace MyNS
 		/// <p>Updates the content of a message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// UpdateChannelMessage channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="messageId">The ID string of the message being updated.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID string of the message being updated.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelMessageResponse> UpdateChannelMessageAsync(string channelArn, string messageId, UpdateChannelMessagePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3058,8 +3178,14 @@ namespace MyNS
 		/// <p>Deletes a channel moderator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DeleteChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="channelModeratorArn">The <code>AppInstanceUserArn</code> of the moderator being deleted.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="channelModeratorArn">The <code>AppInstanceUserArn</code> of the moderator being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/moderators/"+ (channelModeratorArn==null? "" : System.Uri.EscapeDataString(channelModeratorArn))+"#x-amz-chime-bearer";
@@ -3086,8 +3212,14 @@ namespace MyNS
 		/// <p>Returns the full details of a single ChannelModerator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="channelModeratorArn">The <code>AppInstanceUserArn</code> of the channel moderator.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="channelModeratorArn">The <code>AppInstanceUserArn</code> of the channel moderator.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratorResponse> DescribeChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3121,7 +3253,10 @@ namespace MyNS
 		/// Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		/// DeleteMessagingStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the streaming configurations being deleted.</param>
+		/// <param name="appInstanceArn">The ARN of the streaming configurations being deleted.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DeleteMessagingStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "app-instances/"+ (appInstanceArn==null? "" : System.Uri.EscapeDataString(appInstanceArn))+"/streaming-configurations";
@@ -3148,7 +3283,10 @@ namespace MyNS
 		/// Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		/// GetMessagingStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the streaming configurations.</param>
+		/// <param name="appInstanceArn">The ARN of the streaming configurations.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMessagingStreamingConfigurationsResponse> GetMessagingStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3182,7 +3320,10 @@ namespace MyNS
 		/// Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		/// PutMessagingStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
-		/// <param name="appInstanceArn">The ARN of the streaming configuration.</param>
+		/// <param name="appInstanceArn">The ARN of the streaming configuration.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutMessagingStreamingConfigurationsResponse> PutMessagingStreamingConfigurationsAsync(string appInstanceArn, PutMessagingStreamingConfigurationsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3223,8 +3364,14 @@ namespace MyNS
 		/// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannelMembershipForAppInstanceUser channels/{channelArn}#scope=app-instance-user-membership&app-instance-user-arn&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel to which the user belongs.</param>
-		/// <param name="app_instance_user_arn">The ARN of the user or bot in a channel.</param>
+		/// <param name="channelArn">The ARN of the channel to which the user belongs.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="app_instance_user_arn">The ARN of the user or bot in a channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipForAppInstanceUserResponse> DescribeChannelMembershipForAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelMembershipForAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3258,8 +3405,14 @@ namespace MyNS
 		/// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DescribeChannelModeratedByAppInstanceUser channels/{channelArn}#scope=app-instance-user-moderated-channel&app-instance-user-arn&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the moderated channel.</param>
-		/// <param name="app_instance_user_arn">The ARN of the user or bot in the moderated channel.</param>
+		/// <param name="channelArn">The ARN of the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="app_instance_user_arn">The ARN of the user or bot in the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratedByAppInstanceUserResponse> DescribeChannelModeratedByAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelModeratedByAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3293,8 +3446,14 @@ namespace MyNS
 		/// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note> <p>Only administrators or channel moderators can disassociate a channel flow.</p> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// DisassociateChannelFlow channels/{channelArn}/channel-flow/{channelFlowArn}#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="channelFlowArn">The ARN of the channel flow.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="channelFlowArn">The ARN of the channel flow.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task DisassociateChannelFlowAsync(string channelArn, string channelFlowArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/channel-flow/"+ (channelFlowArn==null? "" : System.Uri.EscapeDataString(channelFlowArn))+"#x-amz-chime-bearer";
@@ -3321,8 +3480,14 @@ namespace MyNS
 		/// <p>Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the specified channel. A user or a bot must be a member of the channel and own the membership in order to retrieve membership preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users or bots. Banned users or bots can't retrieve membership preferences for the channel from which they are banned.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// GetChannelMembershipPreferences channels/{channelArn}/memberships/{memberArn}/preferences#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The <code>AppInstanceUserArn</code> of the member retrieving the preferences.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelMembershipPreferencesResponse> GetChannelMembershipPreferencesAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3356,8 +3521,14 @@ namespace MyNS
 		/// <p>Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the specified channel. The user or bot must be a member of the channel. Only the user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users. Banned users or bots can't set membership preferences for the channel from which they are banned.</p> <note> <p>The x-amz-chime-bearer request header is mandatory. Use the ARN of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// PutChannelMembershipPreferences channels/{channelArn}/memberships/{memberArn}/preferences#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
-		/// <param name="memberArn">The ARN of the member setting the preferences.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="memberArn">The ARN of the member setting the preferences.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutChannelMembershipPreferencesResponse> PutChannelMembershipPreferencesAsync(string channelArn, string memberArn, PutChannelMembershipPreferencesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3398,9 +3569,18 @@ namespace MyNS
 		/// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p> <p>Messages can have any one of these statuses.</p> <dl> <dt>SENT</dt> <dd> <p>Message processed successfully</p> </dd> <dt>PENDING</dt> <dd> <p>Ongoing processing</p> </dd> <dt>FAILED</dt> <dd> <p>Processing failed</p> </dd> <dt>DENIED</dt> <dd> <p>Message denied by the processor</p> </dd> </dl> <note> <ul> <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li> <li> <p>Only the message sender can invoke this API.</p> </li> <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li> </ul> </note>
 		/// GetChannelMessageStatus channels/{channelArn}/messages/{messageId}#scope=message-status&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel</param>
-		/// <param name="messageId">The ID of the message.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting message status in a SubChannel that the user belongs to.</p> </note></param>
+		/// <param name="channelArn">The ARN of the channel
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting message status in a SubChannel that the user belongs to.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelMessageStatusResponse> GetChannelMessageStatusAsync(string channelArn, string messageId, string sub_channel_id, GetChannelMessageStatusScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3467,9 +3647,18 @@ namespace MyNS
 		/// Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.
 		/// ListChannelFlows channel-flows#app-instance-arn
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the app instance.</param>
-		/// <param name="max_results">The maximum number of channel flows that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channel flows are returned.</param>
+		/// <param name="app_instance_arn">The ARN of the app instance.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of channel flows that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channel flows are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3505,9 +3694,18 @@ namespace MyNS
 		/// <p> Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannelMembershipsForAppInstanceUser channels#scope=app-instance-user-memberships&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="app_instance_user_arn">The ARN of the user or bot.</param>
-		/// <param name="max_results">The maximum number of users that you want returned.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of channel memberships is reached.</param>
+		/// <param name="app_instance_user_arn">The ARN of the user or bot.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of users that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of channel memberships is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3543,13 +3741,25 @@ namespace MyNS
 		/// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> <p>Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannelMessages channels/{channelArn}/messages#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="sort_order">The order in which you want messages sorted. Default is Descending, based on time created.</param>
 		/// <param name="not_before">The initial or starting time stamp for your requested messages.</param>
 		/// <param name="not_after">The final or ending time stamp for your requested messages.</param>
-		/// <param name="max_results">The maximum number of messages that you want returned.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested messages are returned.</param>
-		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing the messages in a SubChannel that the user belongs to.</p> </note></param>
+		/// <param name="max_results">The maximum number of messages that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested messages are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="sub_channel_id"><p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing the messages in a SubChannel that the user belongs to.</p> </note>
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3585,7 +3795,10 @@ namespace MyNS
 		/// <p>Sends a message to a particular channel that the member is a part of.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> <p>Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p> </note>
 		/// SendChannelMessage channels/{channelArn}/messages#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		public async Task SendChannelMessageAsync(string channelArn, SendChannelMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelArn==null? "" : System.Uri.EscapeDataString(channelArn))+"/messages#x-amz-chime-bearer";
@@ -3619,10 +3832,19 @@ namespace MyNS
 		/// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class="title"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannels channels#app-instance-arn&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.</param>
+		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <param name="privacy">The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </param>
-		/// <param name="max_results">The maximum number of channels that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.</param>
+		/// <param name="max_results">The maximum number of channels that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3658,9 +3880,18 @@ namespace MyNS
 		/// Lists all channels associated with a specified channel flow. You can associate a channel flow with multiple channels, but you can only associate a channel with one channel flow. This is a developer API.
 		/// ListChannelsAssociatedWithChannelFlow channels#scope=channel-flow-associations&channel-flow-arn
 		/// </summary>
-		/// <param name="channel_flow_arn">The ARN of the channel flow.</param>
-		/// <param name="max_results">The maximum number of channels that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.</param>
+		/// <param name="channel_flow_arn">The ARN of the channel flow.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of channels that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3696,9 +3927,18 @@ namespace MyNS
 		/// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// ListChannelsModeratedByAppInstanceUser channels#scope=app-instance-user-moderated-channels&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="app_instance_user_arn">The ARN of the user or bot in the moderated channel.</param>
-		/// <param name="max_results">The maximum number of channels in the request.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of channels moderated by the user is reached.</param>
+		/// <param name="app_instance_user_arn">The ARN of the user or bot in the moderated channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of channels in the request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of channels moderated by the user is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3734,9 +3974,18 @@ namespace MyNS
 		/// Lists all the SubChannels in an elastic channel when given a channel ID. Available only to the app instance admins and channel moderators of elastic channels.
 		/// ListSubChannels channels/{channelArn}/subchannels#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of elastic channel.</param>
-		/// <param name="max_results">The maximum number of sub-channels that you want to return.</param>
-		/// <param name="next_token">The token passed by previous API calls until all requested sub-channels are returned.</param>
+		/// <param name="channelArn">The ARN of elastic channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="max_results">The maximum number of sub-channels that you want to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token passed by previous API calls until all requested sub-channels are returned.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3772,7 +4021,10 @@ namespace MyNS
 		/// Lists the tags applied to an Amazon Chime SDK messaging resource.
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The ARN of the resource.</param>
+		/// <param name="arn">The ARN of the resource.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3806,7 +4058,10 @@ namespace MyNS
 		/// <p>Sets the number of days before the channel is automatically deleted.</p> <note> <ul> <li> <p>A background process deletes expired channels within 6 hours of expiration. Actual deletion times may vary.</p> </li> <li> <p>Expired channels that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p> </li> <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li> </ul> </note>
 		/// PutChannelExpirationSettings channels/{channelArn}/expiration-settings
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutChannelExpirationSettingsResponse> PutChannelExpirationSettingsAsync(string channelArn, PutChannelExpirationSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3847,8 +4102,14 @@ namespace MyNS
 		/// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// RedactChannelMessage channels/{channelArn}/messages/{messageId}#operation=redact&x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel containing the messages that you want to redact.</param>
-		/// <param name="messageId">The ID of the message being redacted.</param>
+		/// <param name="channelArn">The ARN of the channel containing the messages that you want to redact.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
+		/// <param name="messageId">The ID of the message being redacted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RedactChannelMessageResponse> RedactChannelMessageAsync(string channelArn, string messageId, RedactChannelMessageOperation operation, RedactChannelMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3889,8 +4150,14 @@ namespace MyNS
 		/// <p>Allows the <code>ChimeBearer</code> to search channels by channel members. Users or bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code> role can search across all channels.</p> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 		/// SearchChannels channels#operation=search
 		/// </summary>
-		/// <param name="max_results">The maximum number of channels that you want returned.</param>
-		/// <param name="next_token">The token returned from previous API requests until the number of channels is reached.</param>
+		/// <param name="max_results">The maximum number of channels that you want returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="next_token">The token returned from previous API requests until the number of channels is reached.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3999,7 +4266,10 @@ namespace MyNS
 		/// <p>The details of the time when a user last read messages in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		/// UpdateChannelReadMarker channels/{channelArn}/readMarker#x-amz-chime-bearer
 		/// </summary>
-		/// <param name="channelArn">The ARN of the channel.</param>
+		/// <param name="channelArn">The ARN of the channel.
+		/// Max length: 1600
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelReadMarkerResponse> UpdateChannelReadMarkerAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -141,10 +141,16 @@ export namespace MyNS {
 		/** Requests the lists for a specific language. Expects ISO 639 alpha-2 format. */
 		language?: string | null;
 
-		/** Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set. */
+		/**
+		 * Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDatabaseEntries?: number | null;
 
-		/** The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set. */
+		/**
+		 * The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUpdateEntries?: number | null;
 
 		/** Requests the list for a specific geographic location. If not set the server may pick that value based on the user's IP address. Expects ISO 3166-1 alpha-2 format. */
@@ -163,10 +169,16 @@ export namespace MyNS {
 		/** Requests the lists for a specific language. Expects ISO 639 alpha-2 format. */
 		language: FormControl<string | null | undefined>,
 
-		/** Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set. */
+		/**
+		 * Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDatabaseEntries: FormControl<number | null | undefined>,
 
-		/** The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set. */
+		/**
+		 * The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxUpdateEntries: FormControl<number | null | undefined>,
 
 		/** Requests the list for a specific geographic location. If not set the server may pick that value based on the user's IP address. Expects ISO 3166-1 alpha-2 format. */
@@ -306,7 +318,10 @@ export namespace MyNS {
 	/** The uncompressed threat entries in hash format of a particular prefix length. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URL. Used for sending ThreatEntrySet to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression. */
 	export interface GoogleSecuritySafebrowsingV4RawHashes {
 
-		/** The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). */
+		/**
+		 * The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixSize?: number | null;
 
 		/** The hashes, in binary format, concatenated into one long string. Hashes are sorted in lexicographic order. For JSON API users, hashes are base64-encoded. */
@@ -316,7 +331,10 @@ export namespace MyNS {
 	/** The uncompressed threat entries in hash format of a particular prefix length. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URL. Used for sending ThreatEntrySet to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression. */
 	export interface GoogleSecuritySafebrowsingV4RawHashesFormProperties {
 
-		/** The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). */
+		/**
+		 * The number of bytes for each prefix encoded below. This field can be anywhere from 4 (shortest prefix) to 32 (full SHA256 hash).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixSize: FormControl<number | null | undefined>,
 
 		/** The hashes, in binary format, concatenated into one long string. Hashes are sorted in lexicographic order. For JSON API users, hashes are base64-encoded. */
@@ -357,10 +375,16 @@ export namespace MyNS {
 		/** The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer's value. If the field is empty or missing, assume zero. */
 		firstValue?: string | null;
 
-		/** The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`. */
+		/**
+		 * The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numEntries?: number | null;
 
-		/** The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero. */
+		/**
+		 * The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		riceParameter?: number | null;
 	}
 
@@ -373,10 +397,16 @@ export namespace MyNS {
 		/** The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer's value. If the field is empty or missing, assume zero. */
 		firstValue: FormControl<string | null | undefined>,
 
-		/** The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`. */
+		/**
+		 * The number of entries that are delta encoded in the encoded data. If only a single integer was encoded, this will be zero and the single value will be stored in `first_value`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numEntries: FormControl<number | null | undefined>,
 
-		/** The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero. */
+		/**
+		 * The Golomb-Rice parameter, which is a number between 2 and 28. This field is missing (that is, zero) if `num_entries` is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		riceParameter: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleSecuritySafebrowsingV4RiceDeltaEncodingFormGroup() {

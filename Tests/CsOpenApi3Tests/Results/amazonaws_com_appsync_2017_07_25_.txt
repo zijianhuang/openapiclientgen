@@ -2896,7 +2896,10 @@ namespace MyNS
 		/// Maps an endpoint to your custom domain.
 		/// AssociateApi v1/domainnames/{domainName}/apiassociation
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateApiResponse> AssociateApiAsync(string domainName, AssociateApiPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2937,7 +2940,10 @@ namespace MyNS
 		/// Removes an <code>ApiAssociation</code> object from a custom domain.
 		/// DisassociateApi v1/domainnames/{domainName}/apiassociation
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateApiResponse> DisassociateApiAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2971,7 +2977,10 @@ namespace MyNS
 		/// Retrieves an <code>ApiAssociation</code> object.
 		/// GetApiAssociation v1/domainnames/{domainName}/apiassociation
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApiAssociationResponse> GetApiAssociationAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3238,8 +3247,14 @@ namespace MyNS
 		/// ListApiKeys v1/apis/{apiId}/apikeys
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListApiKeysResponse> ListApiKeysAsync(string apiId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3315,8 +3330,14 @@ namespace MyNS
 		/// ListDataSources v1/apis/{apiId}/datasources
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDataSourcesResponse> ListDataSourcesAsync(string apiId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3390,8 +3411,14 @@ namespace MyNS
 		/// Lists multiple custom domain names.
 		/// ListDomainNames v1/domainnames
 		/// </summary>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDomainNamesResponse> ListDomainNamesAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3467,8 +3494,14 @@ namespace MyNS
 		/// ListFunctions v1/apis/{apiId}/functions
 		/// </summary>
 		/// <param name="apiId">The GraphQL API ID.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionsResponse> ListFunctionsAsync(string apiId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3542,8 +3575,14 @@ namespace MyNS
 		/// Lists your GraphQL APIs.
 		/// ListGraphqlApis v1/apis
 		/// </summary>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <param name="apiType">The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</param>
 		/// <param name="owner">The account owner of the GraphQL API.</param>
 		/// <returns>Success</returns>
@@ -3580,7 +3619,10 @@ namespace MyNS
 		/// CreateResolver v1/apis/{apiId}/types/{typeName}/resolvers
 		/// </summary>
 		/// <param name="apiId">The ID for the GraphQL API for which the resolver is being created.</param>
-		/// <param name="typeName">The name of the <code>Type</code>.</param>
+		/// <param name="typeName">The name of the <code>Type</code>.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateResolverResponse> CreateResolverAsync(string apiId, string typeName, CreateResolverPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3623,8 +3665,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
 		/// <param name="typeName">The type name.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListResolversResponse> ListResolversAsync(string apiId, string typeName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3777,7 +3825,10 @@ namespace MyNS
 		/// DeleteDataSource v1/apis/{apiId}/datasources/{name}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="name">The name of the data source.</param>
+		/// <param name="name">The name of the data source.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDataSourceResponse> DeleteDataSourceAsync(string apiId, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3812,7 +3863,10 @@ namespace MyNS
 		/// GetDataSource v1/apis/{apiId}/datasources/{name}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="name">The name of the data source.</param>
+		/// <param name="name">The name of the data source.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataSourceResponse> GetDataSourceAsync(string apiId, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3847,7 +3901,10 @@ namespace MyNS
 		/// UpdateDataSource v1/apis/{apiId}/datasources/{name}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="name">The new name for the data source.</param>
+		/// <param name="name">The new name for the data source.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDataSourceResponse> UpdateDataSourceAsync(string apiId, string name, UpdateDataSourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3888,7 +3945,10 @@ namespace MyNS
 		/// Deletes a custom <code>DomainName</code> object.
 		/// DeleteDomainName v1/domainnames/{domainName}
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainNameResponse> DeleteDomainNameAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3922,7 +3982,10 @@ namespace MyNS
 		/// Retrieves a custom <code>DomainName</code> object.
 		/// GetDomainName v1/domainnames/{domainName}
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainNameResponse> GetDomainNameAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3956,7 +4019,10 @@ namespace MyNS
 		/// Updates a custom <code>DomainName</code> object.
 		/// UpdateDomainName v1/domainnames/{domainName}
 		/// </summary>
-		/// <param name="domainName">The domain name.</param>
+		/// <param name="domainName">The domain name.
+		/// Max length: 253
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDomainNameResponse> UpdateDomainNameAsync(string domainName, UpdateDomainNamePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3998,7 +4064,10 @@ namespace MyNS
 		/// DeleteFunction v1/apis/{apiId}/functions/{functionId}
 		/// </summary>
 		/// <param name="apiId">The GraphQL API ID.</param>
-		/// <param name="functionId">The <code>Function</code> ID.</param>
+		/// <param name="functionId">The <code>Function</code> ID.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteFunctionResponse> DeleteFunctionAsync(string apiId, string functionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4033,7 +4102,10 @@ namespace MyNS
 		/// GetFunction v1/apis/{apiId}/functions/{functionId}
 		/// </summary>
 		/// <param name="apiId">The GraphQL API ID.</param>
-		/// <param name="functionId">The <code>Function</code> ID.</param>
+		/// <param name="functionId">The <code>Function</code> ID.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionResponse> GetFunctionAsync(string apiId, string functionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4068,7 +4140,10 @@ namespace MyNS
 		/// UpdateFunction v1/apis/{apiId}/functions/{functionId}
 		/// </summary>
 		/// <param name="apiId">The GraphQL API ID.</param>
-		/// <param name="functionId">The function ID.</param>
+		/// <param name="functionId">The function ID.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFunctionResponse> UpdateFunctionAsync(string apiId, string functionId, UpdateFunctionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4219,8 +4294,14 @@ namespace MyNS
 		/// DeleteResolver v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The name of the resolver type.</param>
-		/// <param name="fieldName">The resolver field name.</param>
+		/// <param name="typeName">The name of the resolver type.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldName">The resolver field name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResolverResponse> DeleteResolverAsync(string apiId, string typeName, string fieldName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4255,8 +4336,14 @@ namespace MyNS
 		/// GetResolver v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The resolver type name.</param>
-		/// <param name="fieldName">The resolver field name.</param>
+		/// <param name="typeName">The resolver type name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldName">The resolver field name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResolverResponse> GetResolverAsync(string apiId, string typeName, string fieldName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4291,8 +4378,14 @@ namespace MyNS
 		/// UpdateResolver v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The new type name.</param>
-		/// <param name="fieldName">The new field name.</param>
+		/// <param name="typeName">The new type name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="fieldName">The new field name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateResolverResponse> UpdateResolverAsync(string apiId, string typeName, string fieldName, UpdateResolverPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4334,7 +4427,10 @@ namespace MyNS
 		/// DeleteType v1/apis/{apiId}/types/{typeName}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The type name.</param>
+		/// <param name="typeName">The type name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTypeResponse> DeleteTypeAsync(string apiId, string typeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4369,7 +4465,10 @@ namespace MyNS
 		/// UpdateType v1/apis/{apiId}/types/{typeName}
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The new type name.</param>
+		/// <param name="typeName">The new type name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTypeResponse> UpdateTypeAsync(string apiId, string typeName, UpdateTypePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4783,7 +4882,10 @@ namespace MyNS
 		/// GetType v1/apis/{apiId}/types/{typeName}#format
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="typeName">The type name.</param>
+		/// <param name="typeName">The type name.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
 		/// <param name="format">The type format: SDL or JSON.</param>
 		/// <returns>Success</returns>
 		public async Task<GetTypeResponse> GetTypeAsync(string apiId, string typeName, TypeDefinitionFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4820,8 +4922,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
 		/// <param name="functionId">The function ID.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(string apiId, string functionId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4856,8 +4964,14 @@ namespace MyNS
 		/// ListSourceApiAssociations v1/apis/{apiId}/sourceApiAssociations
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSourceApiAssociationsResponse> ListSourceApiAssociationsAsync(string apiId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4891,7 +5005,10 @@ namespace MyNS
 		/// Lists the tags for a resource.
 		/// ListTagsForResource v1/tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).</param>
+		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		/// Max length: 75
+		/// Min length: 70
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4925,7 +5042,10 @@ namespace MyNS
 		/// Tags a resource with user-supplied tags.
 		/// TagResource v1/tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).</param>
+		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		/// Max length: 75
+		/// Min length: 70
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4968,8 +5088,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="apiId">The API ID.</param>
 		/// <param name="format">The type format: SDL or JSON.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTypesResponse> ListTypesAsync(string apiId, TypeDefinitionFormat format, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5006,8 +5132,14 @@ namespace MyNS
 		/// <param name="mergedApiIdentifier">The identifier of the AppSync Merged API. This is generated by the AppSync service. In most cases, Merged APIs (especially in your account) only require the API ID value or ARN of the merged API. However, Merged APIs in other accounts (cross-account use cases) strictly require the full resource ARN of the merged API.</param>
 		/// <param name="associationId">The ID generated by the AppSync service for the source API association.</param>
 		/// <param name="format">The format type.</param>
-		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</param>
-		/// <param name="maxResults">The maximum number of results that you want the request to return.</param>
+		/// <param name="nextToken">An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.
+		/// Max length: 65536
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results that you want the request to return.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTypesByAssociationResponse> ListTypesByAssociationAsync(string mergedApiIdentifier, string associationId, TypeDefinitionFormat format, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5071,8 +5203,14 @@ namespace MyNS
 		/// Untags a resource.
 		/// UntagResource v1/tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).</param>
-		/// <param name="tagKeys">A list of <code>TagKey</code> objects.</param>
+		/// <param name="resourceArn">The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+		/// Max length: 75
+		/// Min length: 70
+		// </param>
+		/// <param name="tagKeys">A list of <code>TagKey</code> objects.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

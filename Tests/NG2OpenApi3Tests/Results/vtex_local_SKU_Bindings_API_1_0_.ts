@@ -268,7 +268,10 @@ export namespace MyNS {
 
 	export interface GetbySkuIdReturn {
 
-		/** SKU Binding ID. */
+		/**
+		 * SKU Binding ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Defines if the SKU binding is active. */
@@ -277,7 +280,10 @@ export namespace MyNS {
 		/** Date when the SKU binding was updated for the last time, in UTC format. */
 		LastUpdateDate?: string | null;
 
-		/** Sales policy ID. */
+		/**
+		 * Sales policy ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SalesPolicy?: number | null;
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -286,12 +292,18 @@ export namespace MyNS {
 		/** SKU seller ID. */
 		SellerSkuId?: string | null;
 
-		/** SKU ID in the VTEX marketplace. */
+		/**
+		 * SKU ID in the VTEX marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId?: number | null;
 	}
 	export interface GetbySkuIdReturnFormProperties {
 
-		/** SKU Binding ID. */
+		/**
+		 * SKU Binding ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Defines if the SKU binding is active. */
@@ -300,7 +312,10 @@ export namespace MyNS {
 		/** Date when the SKU binding was updated for the last time, in UTC format. */
 		LastUpdateDate: FormControl<string | null | undefined>,
 
-		/** Sales policy ID. */
+		/**
+		 * Sales policy ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SalesPolicy: FormControl<number | null | undefined>,
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -309,7 +324,10 @@ export namespace MyNS {
 		/** SKU seller ID. */
 		SellerSkuId: FormControl<string | null | undefined>,
 
-		/** SKU ID in the VTEX marketplace. */
+		/**
+		 * SKU ID in the VTEX marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetbySkuIdReturnFormGroup() {
@@ -345,10 +363,16 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId?: string | null;
 
-		/** SKU Binding ID. */
+		/**
+		 * SKU Binding ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SkuSellerId?: number | null;
 
-		/** SKU ID in the VTEX marketplace. */
+		/**
+		 * SKU ID in the VTEX marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId?: number | null;
 
 		/** Date when the SKU binding was updated for the last time, in UTC format. */
@@ -374,10 +398,16 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId: FormControl<string | null | undefined>,
 
-		/** SKU Binding ID. */
+		/**
+		 * SKU Binding ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SkuSellerId: FormControl<number | null | undefined>,
 
-		/** SKU ID in the VTEX marketplace. */
+		/**
+		 * SKU ID in the VTEX marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 
 		/** Date when the SKU binding was updated for the last time, in UTC format. */
@@ -421,6 +451,7 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: number;
 	}
@@ -447,6 +478,7 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 	}
@@ -462,13 +494,19 @@ export namespace MyNS {
 
 	export interface GetallbySellerIdReturn {
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller.
+		 * Type: double
+		 */
 		FreightCommissionPercentage?: number | null;
 
 		/** Defines if the SKU binding is active. */
 		IsActive?: boolean | null;
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`.
+		 * Type: double
+		 */
 		ProductCommissionPercentage?: number | null;
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -477,18 +515,27 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId?: string | null;
 
-		/** SKU ID in the marketplace. */
+		/**
+		 * SKU ID in the marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId?: number | null;
 	}
 	export interface GetallbySellerIdReturnFormProperties {
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller.
+		 * Type: double
+		 */
 		FreightCommissionPercentage: FormControl<number | null | undefined>,
 
 		/** Defines if the SKU binding is active. */
 		IsActive: FormControl<boolean | null | undefined>,
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`.
+		 * Type: double
+		 */
 		ProductCommissionPercentage: FormControl<number | null | undefined>,
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -497,7 +544,10 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId: FormControl<string | null | undefined>,
 
-		/** SKU ID in the marketplace. */
+		/**
+		 * SKU ID in the marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetallbySellerIdReturnFormGroup() {
@@ -514,13 +564,19 @@ export namespace MyNS {
 
 	export interface GetpagedbySellerIdReturn {
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller.
+		 * Type: double
+		 */
 		FreightCommissionPercentage?: number | null;
 
 		/** Defines if the SKU binding is active. */
 		IsActive?: boolean | null;
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`.
+		 * Type: double
+		 */
 		ProductCommissionPercentage?: number | null;
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -529,18 +585,27 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId?: string | null;
 
-		/** SKU ID in the marketplace. */
+		/**
+		 * SKU ID in the marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId?: number | null;
 	}
 	export interface GetpagedbySellerIdReturnFormProperties {
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller.
+		 * Type: double
+		 */
 		FreightCommissionPercentage: FormControl<number | null | undefined>,
 
 		/** Defines if the SKU binding is active. */
 		IsActive: FormControl<boolean | null | undefined>,
 
-		/** The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`. */
+		/**
+		 * The percentage that must be filled in as agreed between the marketplace and the seller. If there is no such commission, please fill in the field with the value: `0.00`.
+		 * Type: double
+		 */
 		ProductCommissionPercentage: FormControl<number | null | undefined>,
 
 		/** ID that identifies the seller in the marketplace. It can be the same as the seller name or a unique number. Check the **Sellers management** section in the Admin to get the correct ID. */
@@ -549,7 +614,10 @@ export namespace MyNS {
 		/** SKU ID in the seller's store. */
 		SellerStockKeepingUnitId: FormControl<string | null | undefined>,
 
-		/** SKU ID in the marketplace. */
+		/**
+		 * SKU ID in the marketplace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetpagedbySellerIdReturnFormGroup() {
@@ -605,12 +673,14 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the seller's store.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SkuSellerId: number;
 
 		/**
 		 * SKU ID in the VTEX marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: number;
 
@@ -661,12 +731,14 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the seller's store.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SkuSellerId: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU ID in the VTEX marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 
@@ -696,6 +768,7 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: number;
 	}
@@ -704,6 +777,7 @@ export namespace MyNS {
 		/**
 		 * SKU ID in the marketplace.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StockKeepingUnitId: FormControl<number | null | undefined>,
 	}

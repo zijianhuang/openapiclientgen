@@ -908,9 +908,18 @@ namespace MyNS
 		/// Deletes the instance of the given custom app.
 		/// DeleteApp deleteapp#app&domain&simulation
 		/// </summary>
-		/// <param name="app">The name of the app.</param>
-		/// <param name="domain">The name of the domain of the app.</param>
-		/// <param name="simulation">The name of the simulation of the app.</param>
+		/// <param name="app">The name of the app.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="domain">The name of the domain of the app.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="simulation">The name of the simulation of the app.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAppOutput> DeleteAppAsync(string app, string domain, string simulation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -944,7 +953,10 @@ namespace MyNS
 		/// <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p> <note> <p>Your simulation uses resources in other Amazon Web Services. This API operation doesn't delete resources in other Amazon Web Services.</p> </note>
 		/// DeleteSimulation deletesimulation#simulation
 		/// </summary>
-		/// <param name="simulation">The name of the simulation.</param>
+		/// <param name="simulation">The name of the simulation.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSimulationOutput> DeleteSimulationAsync(string simulation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -978,9 +990,18 @@ namespace MyNS
 		/// Returns the state of the given custom app.
 		/// DescribeApp describeapp#app&domain&simulation
 		/// </summary>
-		/// <param name="app">The name of the app.</param>
-		/// <param name="domain">The name of the domain of the app.</param>
-		/// <param name="simulation">The name of the simulation of the app.</param>
+		/// <param name="app">The name of the app.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="domain">The name of the domain of the app.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="simulation">The name of the simulation of the app.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppOutput> DescribeAppAsync(string app, string domain, string simulation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1014,7 +1035,10 @@ namespace MyNS
 		/// Returns the current state of the given simulation.
 		/// DescribeSimulation describesimulation#simulation
 		/// </summary>
-		/// <param name="simulation">The name of the simulation.</param>
+		/// <param name="simulation">The name of the simulation.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeSimulationOutput> DescribeSimulationAsync(string simulation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1048,10 +1072,18 @@ namespace MyNS
 		/// Lists all custom apps or service apps for the given simulation and domain.
 		/// ListApps listapps#simulation
 		/// </summary>
-		/// <param name="domain">The name of the domain that you want to list apps for.</param>
-		/// <param name="maxResults">The maximum number of apps to list.</param>
+		/// <param name="domain">The name of the domain that you want to list apps for.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of apps to list.
+		/// Minimum: 1
+		// </param>
 		/// <param name="nextToken">If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</param>
-		/// <param name="simulation">The name of the simulation that you want to list apps for.</param>
+		/// <param name="simulation">The name of the simulation that you want to list apps for.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1087,7 +1119,9 @@ namespace MyNS
 		/// Lists the SimSpace Weaver simulations in the Amazon Web Services account used to make the API call.
 		/// ListSimulations listsimulations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of simulations to list.</param>
+		/// <param name="maxResults">The maximum number of simulations to list.
+		/// Minimum: 1
+		// </param>
 		/// <param name="nextToken">If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1124,7 +1158,10 @@ namespace MyNS
 		/// Lists all tags on a SimSpace Weaver resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1158,7 +1195,10 @@ namespace MyNS
 		/// Adds tags to a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceOutput> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1439,8 +1479,14 @@ namespace MyNS
 		/// Removes tags from a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
-		/// <param name="tagKeys">A list of tag keys to remove from the resource.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">A list of tag keys to remove from the resource.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

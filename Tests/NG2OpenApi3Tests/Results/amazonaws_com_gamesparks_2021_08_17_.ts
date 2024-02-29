@@ -1411,7 +1411,9 @@ export namespace MyNS {
 		 * Gets a paginated list of games.
 		 * Get game
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListGamesResult} Success
 		 */
 		ListGames(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListGamesResult> {
@@ -1422,6 +1424,7 @@ export namespace MyNS {
 		 * Creates a snapshot of the game configuration.
 		 * Post game/{GameName}/snapshot
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {CreateSnapshotResult} Success
 		 */
 		CreateSnapshot(GameName: string, requestBody: CreateSnapshotPostBody): Observable<CreateSnapshotResult> {
@@ -1432,8 +1435,11 @@ export namespace MyNS {
 		 * Gets a paginated list of snapshot summaries from the game.
 		 * Get game/{GameName}/snapshot
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListSnapshotsResult} Success
 		 */
 		ListSnapshots(GameName: string, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListSnapshotsResult> {
@@ -1444,6 +1450,7 @@ export namespace MyNS {
 		 * Creates a new stage for stage-by-stage game development and deployment.
 		 * Post game/{GameName}/stage
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {CreateStageResult} Success
 		 */
 		CreateStage(GameName: string, requestBody: CreateStagePostBody): Observable<CreateStageResult> {
@@ -1454,8 +1461,11 @@ export namespace MyNS {
 		 * Gets a paginated list of stage summaries from the game.
 		 * Get game/{GameName}/stage
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListStagesResult} Success
 		 */
 		ListStages(GameName: string, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListStagesResult> {
@@ -1466,6 +1476,7 @@ export namespace MyNS {
 		 * Deletes a game.
 		 * Delete game/{GameName}
 		 * @param {string} GameName The name of the game to delete.
+		 *     Min length: 1    Max length: 36
 		 * @return {DeleteGameResult} Success
 		 */
 		DeleteGame(GameName: string): Observable<DeleteGameResult> {
@@ -1476,6 +1487,7 @@ export namespace MyNS {
 		 * Gets details about a game.
 		 * Get game/{GameName}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetGameResult} Success
 		 */
 		GetGame(GameName: string): Observable<GetGameResult> {
@@ -1486,6 +1498,7 @@ export namespace MyNS {
 		 * Updates details of the game.
 		 * Patch game/{GameName}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {UpdateGameResult} Success
 		 */
 		UpdateGame(GameName: string, requestBody: UpdateGamePatchBody): Observable<UpdateGameResult> {
@@ -1496,7 +1509,9 @@ export namespace MyNS {
 		 * Deletes a stage from a game, along with the associated game runtime.
 		 * Delete game/{GameName}/stage/{StageName}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} StageName The name of the stage to delete.
+		 *     Min length: 1    Max length: 36
 		 * @return {DeleteStageResult} Success
 		 */
 		DeleteStage(GameName: string, StageName: string): Observable<DeleteStageResult> {
@@ -1507,7 +1522,9 @@ export namespace MyNS {
 		 * Gets information about a stage.
 		 * Get game/{GameName}/stage/{StageName}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetStageResult} Success
 		 */
 		GetStage(GameName: string, StageName: string): Observable<GetStageResult> {
@@ -1518,7 +1535,9 @@ export namespace MyNS {
 		 * Updates the metadata of a stage.
 		 * Patch game/{GameName}/stage/{StageName}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {UpdateStageResult} Success
 		 */
 		UpdateStage(GameName: string, StageName: string, requestBody: UpdateStagePatchBody): Observable<UpdateStageResult> {
@@ -1529,8 +1548,11 @@ export namespace MyNS {
 		 * <p>Disconnects a player from the game runtime.</p> <p> If a player has multiple connections, this operation attempts to close all of them. </p>
 		 * Post runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/disconnect
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} PlayerId The unique identifier representing a player.
+		 *     Min length: 1    Max length: 44
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {DisconnectPlayerResult} Success
 		 */
 		DisconnectPlayer(GameName: string, PlayerId: string, StageName: string): Observable<DisconnectPlayerResult> {
@@ -1541,7 +1563,9 @@ export namespace MyNS {
 		 * Exports a game configuration snapshot.
 		 * Get game/{GameName}/snapshot/{SnapshotId}/export
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} SnapshotId The identifier of the snapshot to export.
+		 *     Min length: 33    Max length: 36
 		 * @return {ExportSnapshotResult} Success
 		 */
 		ExportSnapshot(GameName: string, SnapshotId: string): Observable<ExportSnapshotResult> {
@@ -1552,7 +1576,9 @@ export namespace MyNS {
 		 * Gets details about a specified extension.
 		 * Get extension/{Namespace}/{Name}
 		 * @param {string} Name The name of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} Namespace The namespace (qualifier) of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetExtensionResult} Success
 		 */
 		GetExtension(Name: string, Namespace: string): Observable<GetExtensionResult> {
@@ -1563,8 +1589,11 @@ export namespace MyNS {
 		 * Gets details about a specified extension version.
 		 * Get extension/{Namespace}/{Name}/version/{ExtensionVersion}
 		 * @param {string} ExtensionVersion The version of the extension.
+		 *     Min length: 0    Max length: 20
 		 * @param {string} Name The name of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} Namespace The namespace (qualifier) of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetExtensionVersionResult} Success
 		 */
 		GetExtensionVersion(ExtensionVersion: string, Name: string, Namespace: string): Observable<GetExtensionVersionResult> {
@@ -1575,7 +1604,9 @@ export namespace MyNS {
 		 * Gets the configuration of the game.
 		 * Get game/{GameName}/configuration
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {Array<string>} Sections The list of sections to return.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @return {GetGameConfigurationResult} Success
 		 */
 		GetGameConfiguration(GameName: string, Sections: Array<string> | null | undefined): Observable<GetGameConfigurationResult> {
@@ -1586,6 +1617,7 @@ export namespace MyNS {
 		 * <p>Imports a game configuration.</p> <p> This operation replaces the current configuration of the game with the provided input. This is not a reversible operation. If you want to preserve the previous configuration, use <code>CreateSnapshot</code> to make a new snapshot before importing. </p>
 		 * Put game/{GameName}/configuration
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {ImportGameConfigurationResult} Success
 		 */
 		ImportGameConfiguration(GameName: string, requestBody: ImportGameConfigurationPutBody): Observable<ImportGameConfigurationResult> {
@@ -1596,6 +1628,7 @@ export namespace MyNS {
 		 * Updates one or more sections of the game configuration.
 		 * Patch game/{GameName}/configuration
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @return {UpdateGameConfigurationResult} Success
 		 */
 		UpdateGameConfiguration(GameName: string, requestBody: UpdateGameConfigurationPatchBody): Observable<UpdateGameConfigurationResult> {
@@ -1606,8 +1639,10 @@ export namespace MyNS {
 		 * Gets details about a job that is generating code for a snapshot.
 		 * Get game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job/{JobId}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} JobId The identifier of the code generation job.
 		 * @param {string} SnapshotId The identifier of the snapshot for the code generation job.
+		 *     Min length: 33    Max length: 36
 		 * @return {GetGeneratedCodeJobResult} Success
 		 */
 		GetGeneratedCodeJob(GameName: string, JobId: string, SnapshotId: string): Observable<GetGeneratedCodeJobResult> {
@@ -1618,8 +1653,11 @@ export namespace MyNS {
 		 * <p>Gets the status of a player's connection to the game runtime.</p> <p> It's possible for a single player to have multiple connections to the game runtime. If a player is not connected, this operation returns an empty list. </p>
 		 * Get runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/connection
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} PlayerId The unique identifier representing a player.
+		 *     Min length: 1    Max length: 44
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetPlayerConnectionStatusResult} Success
 		 */
 		GetPlayerConnectionStatus(GameName: string, PlayerId: string, StageName: string): Observable<GetPlayerConnectionStatusResult> {
@@ -1630,8 +1668,11 @@ export namespace MyNS {
 		 * Gets a copy of the game configuration in a snapshot.
 		 * Get game/{GameName}/snapshot/{SnapshotId}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {Array<string>} Sections The list of game configuration sections to be described.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {string} SnapshotId The identifier of the snapshot.
+		 *     Min length: 33    Max length: 36
 		 * @return {GetSnapshotResult} Success
 		 */
 		GetSnapshot(GameName: string, Sections: Array<string> | null | undefined, SnapshotId: string): Observable<GetSnapshotResult> {
@@ -1642,7 +1683,9 @@ export namespace MyNS {
 		 * Updates the metadata of a GameSparks snapshot.
 		 * Patch game/{GameName}/snapshot/{SnapshotId}
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} SnapshotId The identifier of the snapshot.
+		 *     Min length: 33    Max length: 36
 		 * @return {UpdateSnapshotResult} Success
 		 */
 		UpdateSnapshot(GameName: string, SnapshotId: string, requestBody: UpdateSnapshotPatchBody): Observable<UpdateSnapshotResult> {
@@ -1653,8 +1696,11 @@ export namespace MyNS {
 		 * Gets information about a stage deployment.
 		 * Get game/{GameName}/stage/{StageName}/deployment
 		 * @param {string} DeploymentId  The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. 
+		 *     Min length: 1    Max length: 128
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetStageDeploymentResult} Success
 		 */
 		GetStageDeployment(DeploymentId: string | null | undefined, GameName: string, StageName: string): Observable<GetStageDeploymentResult> {
@@ -1665,7 +1711,9 @@ export namespace MyNS {
 		 * <p>Deploys a snapshot to the stage and creates a new game runtime.</p> <p> After you call this operation, you can check the deployment status by using <code>GetStageDeployment</code>. </p> <p> If there are any players connected to the previous game runtime, then both runtimes persist. Existing connections to the previous runtime are maintained. When players disconnect and reconnect, they connect to the new runtime. After there are no connections to the previous game runtime, it is deleted. </p>
 		 * Post game/{GameName}/stage/{StageName}/deployment
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} StageName The name of the stage to deploy the snapshot onto.
+		 *     Min length: 1    Max length: 36
 		 * @return {StartStageDeploymentResult} Success
 		 */
 		StartStageDeployment(GameName: string, StageName: string, requestBody: StartStageDeploymentPostBody): Observable<StartStageDeploymentResult> {
@@ -1676,9 +1724,13 @@ export namespace MyNS {
 		 * <p>Gets a paginated list of available versions for the extension.</p> <p> Each time an API change is made to an extension, the version is incremented. The list retrieved by this operation shows the versions that are currently available. </p>
 		 * Get extension/{Namespace}/{Name}/version
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} Name The name of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} Namespace The namespace (qualifier) of the extension.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListExtensionVersionsResult} Success
 		 */
 		ListExtensionVersions(MaxResults: number | null | undefined, Name: string, Namespace: string, NextToken: string | null | undefined): Observable<ListExtensionVersionsResult> {
@@ -1689,7 +1741,9 @@ export namespace MyNS {
 		 * <p>Gets a paginated list of available extensions.</p> <p> Extensions provide features that games can use from scripts. </p>
 		 * Get extension
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListExtensionsResult} Success
 		 */
 		ListExtensions(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListExtensionsResult> {
@@ -1700,9 +1754,13 @@ export namespace MyNS {
 		 * Gets a paginated list of code generation jobs for a snapshot.
 		 * Get game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-jobs
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @param {string} SnapshotId The identifier of the snapshot.
+		 *     Min length: 33    Max length: 36
 		 * @return {ListGeneratedCodeJobsResult} Success
 		 */
 		ListGeneratedCodeJobs(GameName: string, MaxResults: number | null | undefined, NextToken: string | null | undefined, SnapshotId: string): Observable<ListGeneratedCodeJobsResult> {
@@ -1713,9 +1771,13 @@ export namespace MyNS {
 		 * Gets a paginated list of stage deployment summaries from the game.
 		 * Get game/{GameName}/stage/{StageName}/deployments
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} MaxResults <p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+		 *     Min length: 1    Max length: 1024
 		 * @param {string} StageName The name of the stage.
+		 *     Min length: 1    Max length: 36
 		 * @return {ListStageDeploymentsResult} Success
 		 */
 		ListStageDeployments(GameName: string, MaxResults: number | null | undefined, NextToken: string | null | undefined, StageName: string): Observable<ListStageDeploymentsResult> {
@@ -1726,6 +1788,7 @@ export namespace MyNS {
 		 * Lists the tags associated with a GameSparks resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the GameSparks resource.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResult} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResult> {
@@ -1736,6 +1799,7 @@ export namespace MyNS {
 		 * Adds tags to a GameSparks resource.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource to add the tags to.
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResult} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResult> {
@@ -1746,7 +1810,9 @@ export namespace MyNS {
 		 * Starts an asynchronous process that generates client code for system-defined and custom messages. The resulting code is collected as a .zip file and uploaded to a pre-signed Amazon S3 URL.
 		 * Post game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job
 		 * @param {string} GameName The name of the game.
+		 *     Min length: 1    Max length: 36
 		 * @param {string} SnapshotId The identifier of the snapshot for which to generate code.
+		 *     Min length: 33    Max length: 36
 		 * @return {StartGeneratedCodeJobResult} Success
 		 */
 		StartGeneratedCodeJob(GameName: string, SnapshotId: string, requestBody: StartGeneratedCodeJobPostBody): Observable<StartGeneratedCodeJobResult> {
@@ -1757,7 +1823,9 @@ export namespace MyNS {
 		 * Removes tags from a GameSparks resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource to remove the tags from.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys The keys of the tags to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResult} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResult> {
@@ -1769,23 +1837,23 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the game.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The name of the game.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		GameName: string;
 
@@ -1796,23 +1864,23 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the game.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the game.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		GameName: FormControl<string | null | undefined>,
 
@@ -1833,8 +1901,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the snapshot.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -1842,8 +1910,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the snapshot.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -1858,31 +1926,31 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the stage.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role: string;
 
 		/**
 		 * The name of the stage.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		StageName: string;
 
@@ -1893,31 +1961,31 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the stage.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the stage.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		StageName: FormControl<string | null | undefined>,
 
@@ -1939,8 +2007,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the game.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -1948,8 +2016,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the game.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -1964,15 +2032,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the stage.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role?: string | null;
 	}
@@ -1980,15 +2048,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the stage.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		Role: FormControl<string | null | undefined>,
 	}
@@ -2051,8 +2119,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the snapshot.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -2060,8 +2128,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the snapshot.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -2076,16 +2144,16 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The identifier of the snapshot to deploy.
 		 * Required
-		 * Max length: 36
 		 * Min length: 33
+		 * Max length: 36
 		 */
 		SnapshotId: string;
 	}
@@ -2093,16 +2161,16 @@ export namespace MyNS {
 
 		/**
 		 * A client-defined token. With an active client token in the request, this action is idempotent.
-		 * Max length: 126
 		 * Min length: 33
+		 * Max length: 126
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the snapshot to deploy.
 		 * Required
-		 * Max length: 36
 		 * Min length: 33
+		 * Max length: 36
 		 */
 		SnapshotId: FormControl<string | null | undefined>,
 	}

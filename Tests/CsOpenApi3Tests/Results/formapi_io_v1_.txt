@@ -572,8 +572,13 @@ namespace MyNS
 		/// Get a list of all combined submissions
 		/// ListCombinedSubmissions combined_submissions
 		/// </summary>
-		/// <param name="page">Default: 1</param>
-		/// <param name="per_page">Default: 50</param>
+		/// <param name="page">Default: 1
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Default: 50
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>enumerate all combined submissions</returns>
 		public async Task<ListCombinedSubmissionsReturn[]> ListCombinedSubmissionsAsync(int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1221,8 +1226,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="query">Search By Name</param>
 		/// <param name="parent_folder_id">Filter By Folder Id</param>
-		/// <param name="page">Default: 1</param>
-		/// <param name="per_page">Default: 50</param>
+		/// <param name="page">Default: 1
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">Default: 50
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>enumerate all templates</returns>
 		public async Task<ListTemplatesReturn[]> ListTemplatesAsync(string query, string parent_folder_id, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

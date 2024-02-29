@@ -43,8 +43,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fromDate">Orders invoice date. Date-time in ISO 8601 format for selecting orders after, or at, the specified time</param>
 		/// <param name="toDate">Orders invoice date. Date-time in ISO 8601 format for selecting orders before, or at, the specified time</param>
-		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results</param>
-		/// <param name="limit">The numbers of items to return</param>
+		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">The numbers of items to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="warehouseIds">A CSV of warehouse id, '123' or '1,2,3'</param>
 		/// <param name="orderIds">A CSV of FDC order id, '123' or '1,2,3'</param>
 		/// <param name="hydrate">Adds additional information to the response, uses a CSV format for multiple values.</param>
@@ -82,8 +87,13 @@ namespace MyNS
 		/// Retrieve inventory for one or more items. This API requires elevated permissions, please speak to your success manager.
 		/// Get_inventory inventory
 		/// </summary>
-		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results</param>
-		/// <param name="limit">The numbers of items to return</param>
+		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">The numbers of items to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="merchantIds">A CSV of merchant id, '123' or '1,2,3'</param>
 		/// <param name="warehouseIds">A CSV of warehouse id, '123' or '1,2,3'</param>
 		/// <param name="externalSkuNames">A CSV of sku reference names, 'skuName1' or 'skuName1,skuName2,skuName3'</param>
@@ -167,8 +177,13 @@ namespace MyNS
 		/// <param name="toDate">Date-time in ISO 8601 format for selecting orders before, or at, the specified time</param>
 		/// <param name="merchantIds">A CSV of merchant id, '123' or '1,2,3'</param>
 		/// <param name="warehouseIds">A CSV of warehouse id, '123' or '1,2,3'</param>
-		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results</param>
-		/// <param name="limit">The numbers of items to return</param>
+		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">The numbers of items to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="hydrate">Adds additional information to the response, uses a CSV format for multiple values.'</param>
 		/// <returns>OK</returns>
 		public async Task<object> Get_ordersAsync(string fromDate, string toDate, int[] merchantIds, int[] warehouseIds, int page, int limit, string[] hydrate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -377,8 +392,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fromDate">Date-time in ISO 8601 format for selecting orders after, or at, the specified time</param>
 		/// <param name="toDate">Date-time in ISO 8601 format for selecting orders before, or at, the specified time</param>
-		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results</param>
-		/// <param name="limit">The numbers of items to return</param>
+		/// <param name="page">A multiplier of the number of items (limit parameter) to skip before returning results
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">The numbers of items to return
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Returns</returns>
 		public async Task<Get_returnsReturn> Get_returnsAsync(string fromDate, string toDate, int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

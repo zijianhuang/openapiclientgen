@@ -9,8 +9,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Channel resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -22,22 +22,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_flow_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the TaskRouter Task. Only valid when integration type is `task`. `null` for integration types `studio` & `external`
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid?: string | null;
 
@@ -46,8 +46,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the chat user.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		user_sid?: string | null;
 	}
@@ -55,8 +55,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Channel resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -68,22 +68,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_flow_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the TaskRouter Task. Only valid when integration type is `task`. `null` for integration types `studio` & `external`
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid: FormControl<string | null | undefined>,
 
@@ -92,8 +92,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the chat user.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		user_sid: FormControl<string | null | undefined>,
 	}
@@ -115,8 +115,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Configuration resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -137,8 +137,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the chat service this user belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_service_instance_sid?: string | null;
 
@@ -177,8 +177,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex service instance.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_service_instance_sid?: string | null;
 
@@ -196,8 +196,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Messaging service instance.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		messaging_service_instance_sid?: string | null;
 
@@ -234,8 +234,8 @@ export namespace MyNS {
 
 		/**
 		 * The TaskRouter SID of the offline activity.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_offline_activity_sid?: string | null;
 
@@ -244,15 +244,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the TaskRouter Target TaskQueue.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_target_taskqueue_sid?: string | null;
 
 		/**
 		 * The SID of the TaskRouter target Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_target_workflow_sid?: string | null;
 
@@ -267,8 +267,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the TaskRouter Workspace.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_workspace_sid?: string | null;
 
@@ -291,8 +291,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Configuration resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -310,8 +310,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the chat service this user belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_service_instance_sid: FormControl<string | null | undefined>,
 
@@ -350,8 +350,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex service instance.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_service_instance_sid: FormControl<string | null | undefined>,
 
@@ -366,8 +366,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Messaging service instance.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		messaging_service_instance_sid: FormControl<string | null | undefined>,
 
@@ -401,22 +401,22 @@ export namespace MyNS {
 
 		/**
 		 * The TaskRouter SID of the offline activity.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_offline_activity_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the TaskRouter Target TaskQueue.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_target_taskqueue_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the TaskRouter target Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_target_workflow_sid: FormControl<string | null | undefined>,
 
@@ -428,8 +428,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the TaskRouter Workspace.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		taskrouter_workspace_sid: FormControl<string | null | undefined>,
 
@@ -501,16 +501,16 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Flow resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		channel_type?: Flexv1flex_flowChannel_type | null;
 
 		/**
 		 * The SID of the chat service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_service_sid?: string | null;
 
@@ -541,8 +541,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Flex Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -553,16 +553,16 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Flow resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		channel_type: FormControl<Flexv1flex_flowChannel_type | null | undefined>,
 
 		/**
 		 * The SID of the chat service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_service_sid: FormControl<string | null | undefined>,
 
@@ -593,8 +593,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Flex Flow resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -629,8 +629,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -648,12 +648,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the assessment
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assessment_sid?: string | null;
 
-		/** Offset of the conversation */
+		/**
+		 * Offset of the conversation
+		 * Type: double
+		 */
 		offset?: number | null;
 
 		/** The flag indicating if this assessment is part of report */
@@ -661,6 +664,8 @@ export namespace MyNS {
 
 		/** Segment Id of conversation */
 		segment_id?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 		url?: string | null;
 
@@ -670,15 +675,18 @@ export namespace MyNS {
 		/** The name of the user. */
 		user_name?: string | null;
 
-		/** The weightage given to this comment */
+		/**
+		 * The weightage given to this comment
+		 * Type: double
+		 */
 		weight?: number | null;
 	}
 	export interface Flexv1insights_assessmentsFormProperties {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -696,12 +704,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the assessment
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assessment_sid: FormControl<string | null | undefined>,
 
-		/** Offset of the conversation */
+		/**
+		 * Offset of the conversation
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The flag indicating if this assessment is part of report */
@@ -709,6 +720,8 @@ export namespace MyNS {
 
 		/** Segment Id of conversation */
 		segment_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 
@@ -718,7 +731,10 @@ export namespace MyNS {
 		/** The name of the user. */
 		user_name: FormControl<string | null | undefined>,
 
-		/** The weightage given to this comment */
+		/**
+		 * The weightage given to this comment
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateFlexv1insights_assessmentsFormGroup() {
@@ -745,8 +761,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -755,15 +771,18 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the assessment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assessment_sid?: string | null;
 
 		/** The comment added for assessment. */
 		comment?: any;
 
-		/** The offset */
+		/**
+		 * The offset
+		 * Type: double
+		 */
 		offset?: number | null;
 
 		/** The flag indicating if this assessment is part of report */
@@ -772,7 +791,10 @@ export namespace MyNS {
 		/** The id of the segment. */
 		segment_id?: string | null;
 
-		/** The timestamp when the record is inserted */
+		/**
+		 * The timestamp when the record is inserted
+		 * Type: double
+		 */
 		timestamp?: number | null;
 		url?: string | null;
 
@@ -782,15 +804,18 @@ export namespace MyNS {
 		/** The name of the user. */
 		user_name?: string | null;
 
-		/** The weightage given to this comment */
+		/**
+		 * The weightage given to this comment
+		 * Type: double
+		 */
 		weight?: number | null;
 	}
 	export interface Flexv1insights_assessments_commentFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -799,15 +824,18 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the assessment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assessment_sid: FormControl<string | null | undefined>,
 
 		/** The comment added for assessment. */
 		comment: FormControl<any | null | undefined>,
 
-		/** The offset */
+		/**
+		 * The offset
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The flag indicating if this assessment is part of report */
@@ -816,7 +844,10 @@ export namespace MyNS {
 		/** The id of the segment. */
 		segment_id: FormControl<string | null | undefined>,
 
-		/** The timestamp when the record is inserted */
+		/**
+		 * The timestamp when the record is inserted
+		 * Type: double
+		 */
 		timestamp: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 
@@ -826,7 +857,10 @@ export namespace MyNS {
 		/** The name of the user. */
 		user_name: FormControl<string | null | undefined>,
 
-		/** The weightage given to this comment */
+		/**
+		 * The weightage given to this comment
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateFlexv1insights_assessments_commentFormGroup() {
@@ -855,7 +889,10 @@ export namespace MyNS {
 		/** The unique id of the conversation */
 		conversation_id?: string | null;
 
-		/** The count of segments for a conversation */
+		/**
+		 * The count of segments for a conversation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		segment_count?: number | null;
 
 		/** The Segments of a conversation */
@@ -869,7 +906,10 @@ export namespace MyNS {
 		/** The unique id of the conversation */
 		conversation_id: FormControl<string | null | undefined>,
 
-		/** The count of segments for a conversation */
+		/**
+		 * The count of segments for a conversation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		segment_count: FormControl<number | null | undefined>,
 	}
 	export function CreateFlexv1insights_conversationsFormGroup() {
@@ -885,8 +925,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -901,8 +941,8 @@ export namespace MyNS {
 
 		/**
 		 * The sid of this questionnaire
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		questionnaire_sid?: string | null;
 
@@ -914,8 +954,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -930,8 +970,8 @@ export namespace MyNS {
 
 		/**
 		 * The sid of this questionnaire
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		questionnaire_sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -952,15 +992,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the category
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		category_sid?: string | null;
 
@@ -972,15 +1012,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the category
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		category_sid: FormControl<string | null | undefined>,
 
@@ -1002,8 +1042,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1027,21 +1067,24 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the question
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		question_sid?: string | null;
 		url?: string | null;
 
-		/** Integer value that tells a particular question is used by how many questionnaires */
+		/**
+		 * Integer value that tells a particular question is used by how many questionnaires
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usage?: number | null;
 	}
 	export interface Flexv1insights_questionnaires_questionFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1065,13 +1108,16 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the question
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		question_sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 
-		/** Integer value that tells a particular question is used by how many questionnaires */
+		/**
+		 * Integer value that tells a particular question is used by how many questionnaires
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateFlexv1insights_questionnaires_questionFormGroup() {
@@ -1291,8 +1337,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1310,8 +1356,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1340,8 +1386,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		comments?: any;
@@ -1351,8 +1397,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		comments: FormControl<any | null | undefined>,
@@ -1389,8 +1435,8 @@ export namespace MyNS {
 		channel?: any;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_context_sid?: string | null;
 		links?: string | null;
@@ -1403,8 +1449,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -1415,8 +1461,8 @@ export namespace MyNS {
 		channel: FormControl<any | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_context_sid: FormControl<string | null | undefined>,
 		links: FormControl<string | null | undefined>,
@@ -1429,8 +1475,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1449,7 +1495,10 @@ export namespace MyNS {
 
 	export interface Flexv1interactioninteraction_channel {
 
-		/** The Twilio error code for a failed channel. */
+		/**
+		 * The Twilio error code for a failed channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code?: number | null;
 
 		/** The error message for a failed channel. */
@@ -1457,16 +1506,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid?: string | null;
 		links?: string | null;
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Flexv1interactioninteraction_channelStatus | null;
@@ -1475,7 +1524,10 @@ export namespace MyNS {
 	}
 	export interface Flexv1interactioninteraction_channelFormProperties {
 
-		/** The Twilio error code for a failed channel. */
+		/**
+		 * The Twilio error code for a failed channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/** The error message for a failed channel. */
@@ -1483,16 +1535,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid: FormControl<string | null | undefined>,
 		links: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Flexv1interactioninteraction_channelStatus | null | undefined>,
@@ -1521,15 +1573,15 @@ export namespace MyNS {
 
 		/**
 		 * The Channel SID for this Invite.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
 		/**
 		 * The Interaction SID for this Channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid?: string | null;
 
@@ -1541,8 +1593,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -1551,15 +1603,15 @@ export namespace MyNS {
 
 		/**
 		 * The Channel SID for this Invite.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The Interaction SID for this Channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid: FormControl<string | null | undefined>,
 
@@ -1571,8 +1623,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1592,22 +1644,22 @@ export namespace MyNS {
 
 		/**
 		 * The Channel Sid for this Participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
 		/**
 		 * The Interaction Sid for this channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid?: string | null;
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Flexv1interactioninteraction_channelinteraction_channel_participantType | null;
@@ -1617,22 +1669,22 @@ export namespace MyNS {
 
 		/**
 		 * The Channel Sid for this Participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The Interaction Sid for this channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		interaction_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string created by Twilio to identify an Interaction Channel Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Flexv1interactioninteraction_channelinteraction_channel_participantType | null | undefined>,
@@ -1677,8 +1729,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the WebChannel resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1690,15 +1742,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_flow_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the WebChannel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1709,8 +1761,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the WebChannel resource and owns this Workflow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1722,15 +1774,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Flex Flow.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		flex_flow_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the WebChannel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1781,7 +1833,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Channels
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListChannelReturn} OK
 		 */
@@ -1792,6 +1846,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Channels/{Sid}
 		 * @param {string} Sid The SID of the Flex chat channel resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteChannel(Sid: string): Observable<HttpResponse<string>> {
@@ -1801,6 +1856,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Channels/{Sid}
 		 * @param {string} Sid The SID of the Flex chat channel resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1channel} OK
 		 */
 		FetchChannel(Sid: string): Observable<Flexv1channel> {
@@ -1820,7 +1876,9 @@ export namespace MyNS {
 		 * Get v1/FlexFlows
 		 * @param {string} FriendlyName The `friendly_name` of the Flex Flow resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFlexFlowReturn} OK
 		 */
@@ -1831,6 +1889,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/FlexFlows/{Sid}
 		 * @param {string} Sid The SID of the Flex Flow resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteFlexFlow(Sid: string): Observable<HttpResponse<string>> {
@@ -1840,6 +1899,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/FlexFlows/{Sid}
 		 * @param {string} Sid The SID of the Flex Flow resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1flex_flow} OK
 		 */
 		FetchFlexFlow(Sid: string): Observable<Flexv1flex_flow> {
@@ -1851,7 +1911,9 @@ export namespace MyNS {
 		 * Get v1/Insights/Conversations
 		 * @param {string} SegmentId Unique Id of the segment for which conversation details needs to be fetched
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsConversationsReturn} OK
 		 */
@@ -1864,7 +1926,9 @@ export namespace MyNS {
 		 * Get v1/Insights/QualityManagement/Assessments
 		 * @param {string} SegmentId The id of the segment.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsAssessmentsReturn} OK
 		 */
@@ -1878,7 +1942,9 @@ export namespace MyNS {
 		 * @param {string} SegmentId The id of the segment.
 		 * @param {string} AgentId The id of the agent.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsAssessmentsCommentReturn} OK
 		 */
@@ -1890,7 +1956,9 @@ export namespace MyNS {
 		 * To get all the categories
 		 * Get v1/Insights/QualityManagement/Categories
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsQuestionnairesCategoryReturn} OK
 		 */
@@ -1901,6 +1969,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Insights/QualityManagement/Categories/{CategorySid}
 		 * @param {string} CategorySid The SID of the category to be deleted
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInsightsQuestionnairesCategory(CategorySid: string): Observable<HttpResponse<string>> {
@@ -1912,7 +1981,9 @@ export namespace MyNS {
 		 * Get v1/Insights/QualityManagement/Questionnaires
 		 * @param {boolean} IncludeInactive Flag indicating whether to include inactive questionnaires or not
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsQuestionnairesReturn} OK
 		 */
@@ -1924,6 +1995,7 @@ export namespace MyNS {
 		 * To delete the questionnaire
 		 * Delete v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		 * @param {string} QuestionnaireSid The SID of the questionnaire
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInsightsQuestionnaires(QuestionnaireSid: string): Observable<HttpResponse<string>> {
@@ -1934,6 +2006,7 @@ export namespace MyNS {
 		 * To get the Questionnaire Detail
 		 * Get v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		 * @param {string} QuestionnaireSid The SID of the questionnaire
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1insights_questionnaires} OK
 		 */
 		FetchInsightsQuestionnaires(QuestionnaireSid: string): Observable<Flexv1insights_questionnaires> {
@@ -1945,7 +2018,9 @@ export namespace MyNS {
 		 * Get v1/Insights/QualityManagement/Questions
 		 * @param {Array<string>} CategorySid The list of category SIDs
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsQuestionnairesQuestionReturn} OK
 		 */
@@ -1956,6 +2031,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Insights/QualityManagement/Questions/{QuestionSid}
 		 * @param {string} QuestionSid The SID of the question
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInsightsQuestionnairesQuestion(QuestionSid: string): Observable<HttpResponse<string>> {
@@ -1986,7 +2062,9 @@ export namespace MyNS {
 		 * @param {string} SegmentId To unique id of the segment
 		 * @param {Array<string>} ReservationId The list of reservation Ids
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInsightsSegmentsReturn} OK
 		 */
@@ -2016,8 +2094,11 @@ export namespace MyNS {
 		 * List all Channels for an Interaction.
 		 * Get v1/Interactions/{InteractionSid}/Channels
 		 * @param {string} InteractionSid The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInteractionChannelReturn} OK
 		 */
@@ -2029,9 +2110,13 @@ export namespace MyNS {
 		 * List all Invites for a Channel.
 		 * Get v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Invites
 		 * @param {string} InteractionSid The Interaction SID for this Channel.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The Channel SID for this Participant.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInteractionChannelInviteReturn} OK
 		 */
@@ -2043,9 +2128,13 @@ export namespace MyNS {
 		 * List all Participants for a Channel.
 		 * Get v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Participants
 		 * @param {string} InteractionSid The Interaction Sid for this channel.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The Channel Sid for this Participant.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInteractionChannelParticipantReturn} OK
 		 */
@@ -2057,7 +2146,9 @@ export namespace MyNS {
 		 * Fetch a Channel for an Interaction.
 		 * Get v1/Interactions/{InteractionSid}/Channels/{Sid}
 		 * @param {string} InteractionSid The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1interactioninteraction_channel} OK
 		 */
 		FetchInteractionChannel(InteractionSid: string, Sid: string): Observable<Flexv1interactioninteraction_channel> {
@@ -2067,6 +2158,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Interactions/{Sid}
 		 * @param {string} Sid The SID of the Interaction resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1interaction} OK
 		 */
 		FetchInteraction(Sid: string): Observable<Flexv1interaction> {
@@ -2076,7 +2168,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/WebChannels
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListWebChannelReturn} OK
 		 */
@@ -2087,6 +2181,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/WebChannels/{Sid}
 		 * @param {string} Sid The SID of the WebChannel resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteWebChannel(Sid: string): Observable<HttpResponse<string>> {
@@ -2096,6 +2191,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/WebChannels/{Sid}
 		 * @param {string} Sid The SID of the WebChannel resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Flexv1web_channel} OK
 		 */
 		FetchWebChannel(Sid: string): Observable<Flexv1web_channel> {
@@ -2127,7 +2223,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2136,7 +2236,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2170,7 +2274,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2179,7 +2287,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2213,7 +2325,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2222,7 +2338,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2256,7 +2376,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2265,7 +2389,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2299,7 +2427,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2308,7 +2440,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2342,7 +2478,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2351,7 +2491,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2385,7 +2529,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2394,7 +2542,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2428,7 +2580,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2437,7 +2593,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2471,7 +2631,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2480,7 +2644,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2514,7 +2682,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2523,7 +2695,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2557,7 +2733,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2566,7 +2746,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2600,7 +2784,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2609,7 +2797,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2643,7 +2835,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2652,7 +2848,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

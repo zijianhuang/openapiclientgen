@@ -5280,7 +5280,10 @@ namespace MyNS
 		/// This operation returns only Applications and versions that are available for use on Compute Nodes; that is, that can be used in an Package reference. For administrator information about applications and versions that are not yet available to Compute Nodes, use the Azure portal or the Azure Resource Manager API.
 		/// Application_List applications
 		/// </summary>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 applications can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 applications can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of applications.</returns>
@@ -5345,7 +5348,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-certificates.</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Certificates can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Certificates can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Certificates.</returns>
@@ -5464,7 +5470,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-jobs.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Jobs can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Jobs can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Jobs.</returns>
@@ -5582,7 +5591,10 @@ namespace MyNS
 		/// <param name="jobId">The ID of the Job.</param>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-job-preparation-and-release-status.</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Tasks can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Tasks can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing a list of Job Preparation and Job Release Task statuses.</returns>
@@ -5650,7 +5662,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-tasks.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Tasks can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Tasks can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Tasks.</returns>
@@ -5747,7 +5762,10 @@ namespace MyNS
 		/// <param name="taskId">The ID of the Task whose files you want to list.</param>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-task-files.</param>
 		/// <param name="recursive">Whether to list children of the Task directory. This parameter can be used in combination with the filter parameter to list specific type of files.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of files.</returns>
@@ -5927,7 +5945,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-job-schedules.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Job Schedules can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Job Schedules can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Job Schedules.</returns>
@@ -6069,7 +6090,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-jobs-in-a-job-schedule.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Jobs can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Jobs can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Jobs.</returns>
@@ -6187,7 +6211,10 @@ namespace MyNS
 		/// Account_ListPoolNodeCounts nodecounts
 		/// </summary>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response.
+		/// Minimum: 1
+		/// Maximum: 10
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>The response contains the number of Compute Nodes in each Compute Node state, grouped by Pool.</returns>
@@ -6221,7 +6248,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-pools.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Pools can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Pools can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Pools.</returns>
@@ -6338,7 +6368,10 @@ namespace MyNS
 		/// <param name="poolId">The ID of the Pool from which you want to list Compute Nodes.</param>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-nodes-in-a-pool.</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Compute Nodes can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 Compute Nodes can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Compute Nodes.</returns>
@@ -6433,7 +6466,10 @@ namespace MyNS
 		/// <param name="nodeId">The ID of the Compute Node whose files you want to list.</param>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-compute-node-files.</param>
 		/// <param name="recursive">Whether to list children of a directory.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of files.</returns>
@@ -6646,7 +6682,10 @@ namespace MyNS
 		/// <param name="starttime">The earliest time from which to include metrics. This must be at least two and a half hours before the current time. If not specified this defaults to the start time of the last aggregation interval currently available.</param>
 		/// <param name="endtime">The latest time from which to include metrics. This must be at least two hours before the current time. If not specified this defaults to the end time of the last aggregation interval currently available.</param>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-account-usage-metrics.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of Pool usage details.</returns>
@@ -6678,7 +6717,10 @@ namespace MyNS
 		/// Account_ListSupportedImages supportedimages
 		/// </summary>
 		/// <param name="filter">An OData $filter clause. For more information on constructing this filter, see https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-support-images.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of supported Virtual Machine Images.</returns>

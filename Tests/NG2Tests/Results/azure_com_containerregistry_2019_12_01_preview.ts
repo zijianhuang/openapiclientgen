@@ -1357,8 +1357,8 @@ export namespace MyNS {
 		/**
 		 * The name of the container registry.
 		 * Required
-		 * Max length: 50
 		 * Min length: 5
+		 * Max length: 50
 		 */
 		name: string;
 
@@ -1375,8 +1375,8 @@ export namespace MyNS {
 		/**
 		 * The name of the container registry.
 		 * Required
-		 * Max length: 50
 		 * Min length: 5
+		 * Max length: 50
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1989,6 +1989,7 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @return {RegistryListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Registries_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<RegistryListResult> {
@@ -2001,7 +2002,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {Registry} The request was successful; the request was well-formed and received properly.
 		 */
 		Registries_Get(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<Registry> {
@@ -2014,7 +2017,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {Registry} requestBody The parameters for creating a container registry.
 		 * @return {Registry} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2028,7 +2033,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		Registries_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<HttpResponse<string>> {
@@ -2041,7 +2048,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {RegistryUpdateParameters} requestBody The parameters for updating a container registry.
 		 * @return {Registry} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2055,7 +2064,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {ImportImageParameters} requestBody The parameters specifying the image to copy and the source container registry.
 		 * @return {void} The request was successful; the operation has completed successfully.
 		 */
@@ -2069,7 +2080,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {RegistryListCredentialsResult} The request was successful; the list of credentials retrieved and returned successfully.
 		 */
 		Registries_ListCredentials(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<RegistryListCredentialsResult> {
@@ -2082,7 +2095,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {RegistryUsageListResult} The request was successful; the registry usages retrieved and returned successfully.
 		 */
 		Registries_ListUsages(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<RegistryUsageListResult> {
@@ -2095,7 +2110,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {RegenerateCredentialParameters} requestBody Specifies name of the password which should be regenerated -- password or password2.
 		 * @return {RegistryListCredentialsResult} The request was successful; the specified credential regenerated successfully.
 		 */
@@ -2109,7 +2126,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {ReplicationListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Replications_List(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<ReplicationListResult> {
@@ -2122,8 +2141,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} replicationName The name of the replication.
+		 *     Min length: 5    Max length: 50
 		 * @return {Replication} The request was successful; the request was well-formed and received properly.
 		 */
 		Replications_Get(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, replicationName: string): Observable<Replication> {
@@ -2136,8 +2158,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} replicationName The name of the replication.
+		 *     Min length: 5    Max length: 50
 		 * @param {Replication} requestBody The parameters for creating a replication.
 		 * @return {Replication} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2151,8 +2176,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} replicationName The name of the replication.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		Replications_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, replicationName: string): Observable<HttpResponse<string>> {
@@ -2165,8 +2193,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} replicationName The name of the replication.
+		 *     Min length: 5    Max length: 50
 		 * @param {ReplicationUpdateParameters} requestBody The parameters for updating a replication.
 		 * @return {Replication} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2180,7 +2211,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {WebhookListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_List(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<WebhookListResult> {
@@ -2193,8 +2226,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @return {Webhook} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_Get(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, webhookName: string): Observable<Webhook> {
@@ -2207,8 +2243,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @param {WebhookCreateParameters} requestBody The parameters for creating a webhook.
 		 * @return {Webhook} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2222,8 +2261,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, webhookName: string): Observable<HttpResponse<string>> {
@@ -2236,8 +2278,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @param {WebhookUpdateParameters} requestBody The parameters for updating a webhook.
 		 * @return {Webhook} The request was successful; the request was well-formed and received properly.
 		 */
@@ -2251,8 +2296,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @return {CallbackConfig} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_GetCallbackConfig(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, webhookName: string): Observable<CallbackConfig> {
@@ -2265,8 +2313,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @return {EventListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_ListEvents(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, webhookName: string): Observable<EventListResult> {
@@ -2279,8 +2330,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} webhookName The name of the webhook.
+		 *     Min length: 5    Max length: 50
 		 * @return {EventInfo} The request was successful; the request was well-formed and received properly.
 		 */
 		Webhooks_Ping(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, webhookName: string): Observable<EventInfo> {

@@ -33,27 +33,27 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		clientKey: string;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 15000
 		 * Min length: 0
+		 * Max length: 15000
 		 */
 		jiraJwtToken: string;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		url?: string | null;
 	}
@@ -61,27 +61,27 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		clientKey: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 15000
 		 * Min length: 0
+		 * Max length: 15000
 		 */
 		jiraJwtToken: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -111,7 +111,9 @@ export namespace MyNS {
 	export interface AuditLogItemModel {
 		actionTarget?: string | null;
 		auditLogDateTime?: Date | null;
-		auditLogId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		auditLogId?: string | null;
 		auditLogType?: string | null;
 		auditLogTypeEnum?: AuditLogItemModelAuditLogTypeEnum | null;
 		details?: string | null;
@@ -123,7 +125,9 @@ export namespace MyNS {
 	export interface AuditLogItemModelFormProperties {
 		actionTarget: FormControl<string | null | undefined>,
 		auditLogDateTime: FormControl<Date | null | undefined>,
-		auditLogId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		auditLogId: FormControl<string | null | undefined>,
 		auditLogType: FormControl<string | null | undefined>,
 		auditLogTypeEnum: FormControl<AuditLogItemModelAuditLogTypeEnum | null | undefined>,
 		details: FormControl<string | null | undefined>,
@@ -136,7 +140,7 @@ export namespace MyNS {
 		return new FormGroup<AuditLogItemModelFormProperties>({
 			actionTarget: new FormControl<string | null | undefined>(undefined),
 			auditLogDateTime: new FormControl<Date | null | undefined>(undefined),
-			auditLogId: new FormControl<number | null | undefined>(undefined),
+			auditLogId: new FormControl<string | null | undefined>(undefined),
 			auditLogType: new FormControl<string | null | undefined>(undefined),
 			auditLogTypeEnum: new FormControl<AuditLogItemModelAuditLogTypeEnum | null | undefined>(undefined),
 			details: new FormControl<string | null | undefined>(undefined),
@@ -160,22 +164,22 @@ export namespace MyNS {
 		/**
 		 * The source control branch on where the scan was performed. (Source of the branch selector on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		branch: string;
 
 		/**
 		 * The related commit's hash. (Appears on the ConfigCat Dashboard)
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		commitHash?: string | null;
 
 		/**
 		 * The related commit's URL. (Appears on the ConfigCat Dashboard)
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		commitUrl?: string | null;
 
@@ -191,15 +195,15 @@ export namespace MyNS {
 		/**
 		 * The source control repository that contains the scanned code. (Source of the repository selector on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		repository: string;
 
 		/**
 		 * The scanning tool's name. (Appears on the ConfigCat Dashboard)
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		uploader?: string | null;
 	}
@@ -208,22 +212,22 @@ export namespace MyNS {
 		/**
 		 * The source control branch on where the scan was performed. (Source of the branch selector on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		branch: FormControl<string | null | undefined>,
 
 		/**
 		 * The related commit's hash. (Appears on the ConfigCat Dashboard)
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		commitHash: FormControl<string | null | undefined>,
 
 		/**
 		 * The related commit's URL. (Appears on the ConfigCat Dashboard)
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		commitUrl: FormControl<string | null | undefined>,
 
@@ -236,15 +240,15 @@ export namespace MyNS {
 		/**
 		 * The source control repository that contains the scanned code. (Source of the repository selector on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		repository: FormControl<string | null | undefined>,
 
 		/**
 		 * The scanning tool's name. (Appears on the ConfigCat Dashboard)
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		uploader: FormControl<string | null | undefined>,
 	}
@@ -271,6 +275,7 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Feature Flag or Setting the code reference belongs to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		settingId: number;
 	}
@@ -279,6 +284,7 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Feature Flag or Setting the code reference belongs to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		settingId: FormControl<number | null | undefined>,
 	}
@@ -294,15 +300,15 @@ export namespace MyNS {
 		/**
 		 * The file's name in where the code reference has been found. (Appears on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		file: string;
 
 		/**
 		 * The file's url. (Used to point to the file on the repository's website)
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		fileUrl?: string | null;
 
@@ -320,15 +326,15 @@ export namespace MyNS {
 		/**
 		 * The file's name in where the code reference has been found. (Appears on the ConfigCat Dashboard)
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		file: FormControl<string | null | undefined>,
 
 		/**
 		 * The file's url. (Used to point to the file on the repository's website)
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		fileUrl: FormControl<string | null | undefined>,
 	}
@@ -345,13 +351,14 @@ export namespace MyNS {
 		/**
 		 * The line number of the reference line.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lineNumber: number;
 
 		/**
 		 * The content of the reference line.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		lineText?: string | null;
 	}
@@ -360,13 +367,14 @@ export namespace MyNS {
 		/**
 		 * The line number of the reference line.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lineNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The content of the reference line.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		lineText: FormControl<string | null | undefined>,
 	}
@@ -382,6 +390,8 @@ export namespace MyNS {
 		configId?: string | null;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		product?: ProductModel;
 	}
@@ -389,6 +399,8 @@ export namespace MyNS {
 		configId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigModelFormGroup() {
@@ -404,6 +416,8 @@ export namespace MyNS {
 	export interface ProductModel {
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		organization?: OrganizationModel;
 		productId?: string | null;
@@ -412,6 +426,8 @@ export namespace MyNS {
 	export interface ProductModelFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -449,12 +465,16 @@ export namespace MyNS {
 		configId?: string | null;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface ConfigModel_haljsonFormProperties {
 		configId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigModel_haljsonFormGroup() {
@@ -483,6 +503,8 @@ export namespace MyNS {
 		_links?: ConfigModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -490,6 +512,8 @@ export namespace MyNS {
 	export interface ConfigModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -660,8 +684,9 @@ export namespace MyNS {
 		/**
 		 * The percentage value for the rule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		percentage: number;
+		percentage: string;
 
 		/** The value to serve when the user falls in the percentage rule. It must respect the setting type. */
 		value?: any;
@@ -671,15 +696,16 @@ export namespace MyNS {
 		/**
 		 * The percentage value for the rule.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		percentage: FormControl<number | null | undefined>,
+		percentage: FormControl<string | null | undefined>,
 
 		/** The value to serve when the user falls in the percentage rule. It must respect the setting type. */
 		value: FormControl<any | null | undefined>,
 	}
 	export function CreateRolloutPercentageItemModelFormGroup() {
 		return new FormGroup<RolloutPercentageItemModelFormProperties>({
-			percentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			percentage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			value: new FormControl<any | null | undefined>(undefined),
 		});
 
@@ -690,15 +716,15 @@ export namespace MyNS {
 
 		/**
 		 * The user attribute to compare.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute?: string | null;
 
 		/**
 		 * The value to compare against.
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue?: string | null;
 		segmentComparator?: RolloutRuleModelSegmentComparator | null;
@@ -714,15 +740,15 @@ export namespace MyNS {
 
 		/**
 		 * The user attribute to compare.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute: FormControl<string | null | undefined>,
 
 		/**
 		 * The value to compare against.
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue: FormControl<string | null | undefined>,
 		segmentComparator: FormControl<RolloutRuleModelSegmentComparator | null | undefined>,
@@ -757,7 +783,11 @@ export namespace MyNS {
 		isWatching?: boolean | null;
 		key?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId?: number | null;
 		settingType?: SettingDataModelSettingType | null;
 	}
@@ -769,7 +799,11 @@ export namespace MyNS {
 		isWatching: FormControl<boolean | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId: FormControl<number | null | undefined>,
 		settingType: FormControl<SettingDataModelSettingType | null | undefined>,
 	}
@@ -794,21 +828,29 @@ export namespace MyNS {
 	export interface SettingTagModel {
 		color?: string | null;
 		name?: string | null;
-		settingTagId?: number | null;
-		tagId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		settingTagId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId?: string | null;
 	}
 	export interface SettingTagModelFormProperties {
 		color: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		settingTagId: FormControl<number | null | undefined>,
-		tagId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		settingTagId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId: FormControl<string | null | undefined>,
 	}
 	export function CreateSettingTagModelFormGroup() {
 		return new FormGroup<SettingTagModelFormProperties>({
 			color: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			settingTagId: new FormControl<number | null | undefined>(undefined),
-			tagId: new FormControl<number | null | undefined>(undefined),
+			settingTagId: new FormControl<string | null | undefined>(undefined),
+			tagId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -834,6 +876,8 @@ export namespace MyNS {
 		description?: string | null;
 		environmentId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		product?: ProductModel;
 		reasonRequired?: boolean | null;
@@ -843,6 +887,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		environmentId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
 	}
@@ -862,15 +908,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		clientKey: string;
 
 		/**
 		 * Required
-		 * Max length: 15000
 		 * Min length: 0
+		 * Max length: 15000
 		 */
 		jiraJwtToken: string;
 	}
@@ -878,15 +924,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		clientKey: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 15000
 		 * Min length: 0
+		 * Max length: 15000
 		 */
 		jiraJwtToken: FormControl<string | null | undefined>,
 	}
@@ -901,30 +947,30 @@ export namespace MyNS {
 	export interface CreateConfigRequest {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 	}
 	export interface CreateConfigRequestFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -939,42 +985,42 @@ export namespace MyNS {
 	export interface CreateEnvironmentModel {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color?: string | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 	}
 	export interface CreateEnvironmentModelFormProperties {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -993,6 +1039,8 @@ export namespace MyNS {
 		environmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
 		environmentId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		reasonRequired?: boolean | null;
 	}
@@ -1002,6 +1050,8 @@ export namespace MyNS {
 		environmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
 		environmentId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
 	}
@@ -1046,8 +1096,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 		newEnvironmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
@@ -1077,8 +1127,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 		newEnvironmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
@@ -1115,30 +1165,30 @@ export namespace MyNS {
 	export interface CreateProductRequest {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		name: string;
 	}
 	export interface CreateProductRequestFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1157,28 +1207,28 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute: string;
 
 		/**
 		 * Required
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue: string;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 	}
@@ -1189,28 +1239,28 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1229,8 +1279,8 @@ export namespace MyNS {
 
 		/**
 		 * A short description for the setting, shown on the Dashboard UI.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		hint?: string | null;
 
@@ -1240,16 +1290,16 @@ export namespace MyNS {
 		/**
 		 * The key of the setting.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		key: string;
 
 		/**
 		 * The name of the setting, shown on the Dashboard UI.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1263,24 +1313,24 @@ export namespace MyNS {
 
 		/**
 		 * A short description for the setting, shown on the Dashboard UI.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		hint: FormControl<string | null | undefined>,
 
 		/**
 		 * The key of the setting.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		key: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the setting, shown on the Dashboard UI.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1324,30 +1374,30 @@ export namespace MyNS {
 	export interface CreateTagModel {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 	}
 	export interface CreateTagModelFormProperties {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1376,8 +1426,8 @@ export namespace MyNS {
 
 		/**
 		 * If it's set, only this branch's reports belonging to the given repository will be deleted.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		branch?: string | null;
 
@@ -1390,20 +1440,23 @@ export namespace MyNS {
 		/**
 		 * The source control repository which's reports should be deleted.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		repository: string;
 
-		/** If it's set, only this setting's reports belonging to the given repository will be deleted. */
+		/**
+		 * If it's set, only this setting's reports belonging to the given repository will be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingId?: number | null;
 	}
 	export interface DeleteRepositoryReportsRequestFormProperties {
 
 		/**
 		 * If it's set, only this branch's reports belonging to the given repository will be deleted.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		branch: FormControl<string | null | undefined>,
 
@@ -1416,12 +1469,15 @@ export namespace MyNS {
 		/**
 		 * The source control repository which's reports should be deleted.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		repository: FormControl<string | null | undefined>,
 
-		/** If it's set, only this setting's reports belonging to the given repository will be deleted. */
+		/**
+		 * If it's set, only this setting's reports belonging to the given repository will be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteRepositoryReportsRequestFormGroup() {
@@ -1440,6 +1496,8 @@ export namespace MyNS {
 		environmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
 		environmentId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		reasonRequired?: boolean | null;
 	}
@@ -1449,6 +1507,8 @@ export namespace MyNS {
 		environmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
 		environmentId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
 	}
@@ -1474,6 +1534,8 @@ export namespace MyNS {
 		description?: string | null;
 		environmentId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		reasonRequired?: boolean | null;
 	}
@@ -1482,6 +1544,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		environmentId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
 	}
@@ -1513,6 +1577,8 @@ export namespace MyNS {
 		_links?: EnvironmentModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -1520,6 +1586,8 @@ export namespace MyNS {
 	export interface EnvironmentModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -1644,10 +1712,14 @@ export namespace MyNS {
 	}
 
 	export interface IntegrationLinkDetailsModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allIntegrationLinkCount?: number | null;
 		details?: Array<IntegrationLinkDetail>;
 	}
 	export interface IntegrationLinkDetailsModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allIntegrationLinkCount: FormControl<number | null | undefined>,
 	}
 	export function CreateIntegrationLinkDetailsModelFormGroup() {
@@ -1664,17 +1736,23 @@ export namespace MyNS {
 		/** Required */
 		emails: Array<string>;
 
-		/** Required */
-		permissionGroupId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		permissionGroupId: string;
 	}
 	export interface InviteMembersRequestFormProperties {
 
-		/** Required */
-		permissionGroupId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		permissionGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateInviteMembersRequestFormGroup() {
 		return new FormGroup<InviteMembersRequestFormProperties>({
-			permissionGroupId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1791,14 +1869,18 @@ export namespace MyNS {
 	export interface MemberModel {
 		email?: string | null;
 		fullName?: string | null;
-		permissionGroupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId?: string | null;
 		productId?: string | null;
 		userId?: string | null;
 	}
 	export interface MemberModelFormProperties {
 		email: FormControl<string | null | undefined>,
 		fullName: FormControl<string | null | undefined>,
-		permissionGroupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId: FormControl<string | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 	}
@@ -1806,7 +1888,7 @@ export namespace MyNS {
 		return new FormGroup<MemberModelFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined),
 			fullName: new FormControl<string | null | undefined>(undefined),
-			permissionGroupId: new FormControl<number | null | undefined>(undefined),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined),
 			productId: new FormControl<string | null | undefined>(undefined),
 			userId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1873,7 +1955,9 @@ export namespace MyNS {
 		environmentAccesses?: Array<EnvironmentAccessModel>;
 		name?: string | null;
 		newEnvironmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
-		permissionGroupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId?: string | null;
 		product?: ProductModel;
 	}
 	export interface PermissionGroupModelFormProperties {
@@ -1900,7 +1984,9 @@ export namespace MyNS {
 		canViewSdkKey: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		newEnvironmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
-		permissionGroupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreatePermissionGroupModelFormGroup() {
 		return new FormGroup<PermissionGroupModelFormProperties>({
@@ -1927,7 +2013,7 @@ export namespace MyNS {
 			canViewSdkKey: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			newEnvironmentAccessType: new FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>(undefined),
-			permissionGroupId: new FormControl<number | null | undefined>(undefined),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1959,7 +2045,9 @@ export namespace MyNS {
 		environmentAccesses?: Array<EnvironmentAccessModel>;
 		name?: string | null;
 		newEnvironmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
-		permissionGroupId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId?: string | null;
 	}
 	export interface PermissionGroupModel_haljsonFormProperties {
 		accessType: FormControl<AccessType | null | undefined>,
@@ -1985,7 +2073,9 @@ export namespace MyNS {
 		canViewSdkKey: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		newEnvironmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
-		permissionGroupId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		permissionGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreatePermissionGroupModel_haljsonFormGroup() {
 		return new FormGroup<PermissionGroupModel_haljsonFormProperties>({
@@ -2012,7 +2102,7 @@ export namespace MyNS {
 			canViewSdkKey: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			newEnvironmentAccessType: new FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>(undefined),
-			permissionGroupId: new FormControl<number | null | undefined>(undefined),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2033,6 +2123,8 @@ export namespace MyNS {
 		_links?: PermissionGroupModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -2040,6 +2132,8 @@ export namespace MyNS {
 	export interface PermissionGroupModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -2148,6 +2242,8 @@ export namespace MyNS {
 		_links?: ProductModel_haljson_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -2155,6 +2251,8 @@ export namespace MyNS {
 	export interface ProductModel_haljsonFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -2276,6 +2374,8 @@ export namespace MyNS {
 		product?: ProductModel;
 		segmentId?: string | null;
 		updatedAt?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usage?: number | null;
 	}
 	export interface SegmentListModelFormProperties {
@@ -2288,6 +2388,8 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		segmentId: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentListModelFormGroup() {
@@ -2318,6 +2420,8 @@ export namespace MyNS {
 		name?: string | null;
 		segmentId?: string | null;
 		updatedAt?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usage?: number | null;
 	}
 	export interface SegmentListModel_haljsonFormProperties {
@@ -2330,6 +2434,8 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		segmentId: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentListModel_haljsonFormGroup() {
@@ -2364,6 +2470,8 @@ export namespace MyNS {
 		_links?: SegmentListModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -2371,6 +2479,8 @@ export namespace MyNS {
 	export interface SegmentListModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -2585,6 +2695,8 @@ export namespace MyNS {
 		_links?: SegmentModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -2592,6 +2704,8 @@ export namespace MyNS {
 	export interface SegmentModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -2701,7 +2815,11 @@ export namespace MyNS {
 		hint?: string | null;
 		key?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId?: number | null;
 		settingType?: SettingDataModelSettingType | null;
 		tags?: Array<TagModel>;
@@ -2712,7 +2830,11 @@ export namespace MyNS {
 		hint: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId: FormControl<number | null | undefined>,
 		settingType: FormControl<SettingDataModelSettingType | null | undefined>,
 	}
@@ -2734,18 +2856,22 @@ export namespace MyNS {
 		color?: string | null;
 		name?: string | null;
 		product?: ProductModel;
-		tagId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId?: string | null;
 	}
 	export interface TagModelFormProperties {
 		color: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		tagId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId: FormControl<string | null | undefined>,
 	}
 	export function CreateTagModelFormGroup() {
 		return new FormGroup<TagModelFormProperties>({
 			color: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			tagId: new FormControl<number | null | undefined>(undefined),
+			tagId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2758,7 +2884,11 @@ export namespace MyNS {
 		hint?: string | null;
 		key?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId?: number | null;
 		settingType?: SettingDataModelSettingType | null;
 	}
@@ -2768,7 +2898,11 @@ export namespace MyNS {
 		hint: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId: FormControl<number | null | undefined>,
 		settingType: FormControl<SettingDataModelSettingType | null | undefined>,
 	}
@@ -2802,18 +2936,22 @@ export namespace MyNS {
 		_links?: SettingModel_haljson_embeddedTags_links;
 		color?: string | null;
 		name?: string | null;
-		tagId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId?: string | null;
 	}
 	export interface SettingModel_haljson_embeddedTagsFormProperties {
 		color: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		tagId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId: FormControl<string | null | undefined>,
 	}
 	export function CreateSettingModel_haljson_embeddedTagsFormGroup() {
 		return new FormGroup<SettingModel_haljson_embeddedTagsFormProperties>({
 			color: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			tagId: new FormControl<number | null | undefined>(undefined),
+			tagId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2834,6 +2972,8 @@ export namespace MyNS {
 		_links?: SettingModel_haljson_embeddedTags_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -2841,6 +2981,8 @@ export namespace MyNS {
 	export interface SettingModel_haljson_embeddedTags_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -3057,12 +3199,16 @@ export namespace MyNS {
 		configId?: string | null;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 	}
 	export interface SettingValueModel_haljson_embeddedConfigFormProperties {
 		configId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateSettingValueModel_haljson_embeddedConfigFormGroup() {
@@ -3091,6 +3237,8 @@ export namespace MyNS {
 		_links?: SettingValueModel_haljson_embeddedConfig_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -3098,6 +3246,8 @@ export namespace MyNS {
 	export interface SettingValueModel_haljson_embeddedConfig_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -3211,6 +3361,8 @@ export namespace MyNS {
 		description?: string | null;
 		environmentId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		reasonRequired?: boolean | null;
 	}
@@ -3219,6 +3371,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		environmentId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
 	}
@@ -3250,6 +3404,8 @@ export namespace MyNS {
 		_links?: SettingValueModel_haljson_embeddedEnvironment_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -3257,6 +3413,8 @@ export namespace MyNS {
 	export interface SettingValueModel_haljson_embeddedEnvironment_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -3390,7 +3548,11 @@ export namespace MyNS {
 		isWatching?: boolean | null;
 		key?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId?: number | null;
 		settingType?: SettingDataModelSettingType | null;
 	}
@@ -3402,7 +3564,11 @@ export namespace MyNS {
 		isWatching: FormControl<boolean | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		settingId: FormControl<number | null | undefined>,
 		settingType: FormControl<SettingDataModelSettingType | null | undefined>,
 	}
@@ -3425,21 +3591,29 @@ export namespace MyNS {
 	export interface SettingValueModel_haljson_embeddedSettingTags {
 		color?: string | null;
 		name?: string | null;
-		settingTagId?: number | null;
-		tagId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		settingTagId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId?: string | null;
 	}
 	export interface SettingValueModel_haljson_embeddedSettingTagsFormProperties {
 		color: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		settingTagId: FormControl<number | null | undefined>,
-		tagId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		settingTagId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId: FormControl<string | null | undefined>,
 	}
 	export function CreateSettingValueModel_haljson_embeddedSettingTagsFormGroup() {
 		return new FormGroup<SettingValueModel_haljson_embeddedSettingTagsFormProperties>({
 			color: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			settingTagId: new FormControl<number | null | undefined>(undefined),
-			tagId: new FormControl<number | null | undefined>(undefined),
+			settingTagId: new FormControl<string | null | undefined>(undefined),
+			tagId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3462,18 +3636,22 @@ export namespace MyNS {
 		_links?: TagModel_haljson_links;
 		color?: string | null;
 		name?: string | null;
-		tagId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId?: string | null;
 	}
 	export interface TagModel_haljsonFormProperties {
 		color: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		tagId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tagId: FormControl<string | null | undefined>,
 	}
 	export function CreateTagModel_haljsonFormGroup() {
 		return new FormGroup<TagModel_haljsonFormProperties>({
 			color: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			tagId: new FormControl<number | null | undefined>(undefined),
+			tagId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3494,6 +3672,8 @@ export namespace MyNS {
 		_links?: TagModel_haljson_embeddedProduct_links;
 		description?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		productId?: string | null;
 		reasonRequired?: boolean | null;
@@ -3501,6 +3681,8 @@ export namespace MyNS {
 	export interface TagModel_haljson_embeddedProductFormProperties {
 		description: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 		productId: FormControl<string | null | undefined>,
 		reasonRequired: FormControl<boolean | null | undefined>,
@@ -3607,28 +3789,28 @@ export namespace MyNS {
 	export interface UpdateConfigRequest {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 	}
 	export interface UpdateConfigRequestFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3643,40 +3825,40 @@ export namespace MyNS {
 	export interface UpdateEnvironmentModel {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color?: string | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 	}
 	export interface UpdateEnvironmentModelFormProperties {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3714,8 +3896,8 @@ export namespace MyNS {
 		environmentAccesses?: Array<CreateOrUpdateEnvironmentAccessModel>;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 		newEnvironmentAccessType?: CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null;
@@ -3744,8 +3926,8 @@ export namespace MyNS {
 		canViewSdkKey: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 		newEnvironmentAccessType: FormControl<CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType | null | undefined>,
@@ -3782,28 +3964,28 @@ export namespace MyNS {
 	export interface UpdateProductRequest {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		name?: string | null;
 	}
 	export interface UpdateProductRequestFormProperties {
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3819,26 +4001,26 @@ export namespace MyNS {
 		comparator?: RolloutRuleModelComparator | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute?: string | null;
 
 		/**
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue?: string | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 	}
@@ -3846,26 +4028,26 @@ export namespace MyNS {
 		comparator: FormControl<RolloutRuleModelComparator | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		comparisonAttribute: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 65535
 		 * Min length: 0
+		 * Max length: 65535
 		 */
 		comparisonValue: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -3911,7 +4093,10 @@ export namespace MyNS {
 		/** The targeting rule collection. */
 		rolloutRules?: Array<RolloutRuleModel>;
 
-		/** The id of the Setting. */
+		/**
+		 * The id of the Setting.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingId?: number | null;
 
 		/** The value to serve. It must respect the setting type. */
@@ -3919,7 +4104,10 @@ export namespace MyNS {
 	}
 	export interface UpdateSettingValueWithSettingIdModelFormProperties {
 
-		/** The id of the Setting. */
+		/**
+		 * The id of the Setting.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingId: FormControl<number | null | undefined>,
 
 		/** The value to serve. It must respect the setting type. */
@@ -3949,28 +4137,28 @@ export namespace MyNS {
 	export interface UpdateTagModel {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 	}
 	export interface UpdateTagModelFormProperties {
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		color: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -4050,7 +4238,6 @@ export namespace MyNS {
 		 * This endpoint updates a Config identified by the `configId` parameter.
 		 * Put v1/configs/{configId}
 		 * @param {string} configId The identifier of the Config.
-		 * @return {ConfigModel} 
 		 */
 		V1Configs_configIdPut(configId: string, requestBody: UpdateConfigRequest, headersHandler?: () => HttpHeaders): Observable<ConfigModel> {
 			return this.http.put<ConfigModel>(this.baseUri + 'v1/configs/' + (configId == null ? '' : encodeURIComponent(configId)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -4061,7 +4248,6 @@ export namespace MyNS {
 		 * This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config.
 		 * Get v1/configs/{configId}/deleted-settings
 		 * @param {string} configId The identifier of the Config.
-		 * @return {Array<SettingModel>} 
 		 */
 		V1Configs_configIdDeleted_settingsGet(configId: string, headersHandler?: () => HttpHeaders): Observable<Array<SettingModel>> {
 			return this.http.get<Array<SettingModel>>(this.baseUri + 'v1/configs/' + (configId == null ? '' : encodeURIComponent(configId)) + '/deleted-settings', { headers: headersHandler ? headersHandler() : undefined });
@@ -4073,7 +4259,6 @@ export namespace MyNS {
 		 * Get v1/configs/{configId}/environments/{environmentId}
 		 * @param {string} configId The identifier of the Config.
 		 * @param {string} environmentId The identifier of the Environment.
-		 * @return {SdkKeysModel} 
 		 */
 		V1Configs_configIdEnvironments_environmentIdGet(configId: string, environmentId: string, headersHandler?: () => HttpHeaders): Observable<SdkKeysModel> {
 			return this.http.get<SdkKeysModel>(this.baseUri + 'v1/configs/' + (configId == null ? '' : encodeURIComponent(configId)) + '/environments/' + (environmentId == null ? '' : encodeURIComponent(environmentId)), { headers: headersHandler ? headersHandler() : undefined });
@@ -4175,7 +4360,6 @@ export namespace MyNS {
 		 * specified Config, identified by the `configId` parameter.
 		 * Get v1/configs/{configId}/settings
 		 * @param {string} configId The identifier of the Config.
-		 * @return {Array<SettingModel>} 
 		 */
 		V1Configs_configIdSettingsGet(configId: string, headersHandler?: () => HttpHeaders): Observable<Array<SettingModel>> {
 			return this.http.get<Array<SettingModel>>(this.baseUri + 'v1/configs/' + (configId == null ? '' : encodeURIComponent(configId)) + '/settings', { headers: headersHandler ? headersHandler() : undefined });
@@ -4222,7 +4406,6 @@ export namespace MyNS {
 		 * This endpoint updates an Environment identified by the `environmentId` parameter.
 		 * Put v1/environments/{environmentId}
 		 * @param {string} environmentId The identifier of the Environment.
-		 * @return {EnvironmentModel} 
 		 */
 		V1Environments_environmentIdPut(environmentId: string, requestBody: UpdateEnvironmentModel, headersHandler?: () => HttpHeaders): Observable<EnvironmentModel> {
 			return this.http.put<EnvironmentModel>(this.baseUri + 'v1/environments/' + (environmentId == null ? '' : encodeURIComponent(environmentId)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -4233,6 +4416,7 @@ export namespace MyNS {
 		 * Delete v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {IntegrationLinkModelIntegrationLinkType} integrationLinkType The integration's type.
 		 * @param {string} key The key of the integration link.
 		 * @return {DeleteIntegrationLinkModel} When everything is ok.
@@ -4246,6 +4430,7 @@ export namespace MyNS {
 		 * Post v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {IntegrationLinkModelIntegrationLinkType} integrationLinkType The integration link's type.
 		 * @param {string} key The key of the integration link.
 		 * @return {IntegrationLinkModel} When everything is ok, the integration link data returned.
@@ -4268,6 +4453,7 @@ export namespace MyNS {
 		 * Get v1/environments/{environmentId}/settings/{settingId}/value
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SettingValueModel} When everything is ok, the setting value data returned.
 		 */
 		V1Environments_environmentIdSettings_settingIdValueGet(environmentId: string, settingId: number, headersHandler?: () => HttpHeaders): Observable<SettingValueModel> {
@@ -4333,6 +4519,7 @@ export namespace MyNS {
 		 * Patch v1/environments/{environmentId}/settings/{settingId}/value
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} reason The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.
 		 * @return {SettingValueModel} When the patch was successful.
 		 */
@@ -4384,8 +4571,8 @@ export namespace MyNS {
 		 * Put v1/environments/{environmentId}/settings/{settingId}/value
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} reason The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.
-		 * @return {SettingValueModel} 
 		 */
 		V1Environments_environmentIdSettings_settingIdValuePutByReason(environmentId: string, settingId: number, reason: string | null | undefined, requestBody: UpdateSettingValueModel, headersHandler?: () => HttpHeaders): Observable<SettingValueModel> {
 			return this.http.put<SettingValueModel>(this.baseUri + 'v1/environments/' + (environmentId == null ? '' : encodeURIComponent(environmentId)) + '/settings/' + settingId + '/value&reason=' + (reason == null ? '' : encodeURIComponent(reason)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -4414,6 +4601,7 @@ export namespace MyNS {
 		 * Post v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}
 		 * @param {string} environmentId The identifier of the Environment.
 		 * @param {number} settingId The id of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} key The key of the integration link.
 		 * @return {IntegrationLinkModel} When everything is ok, the integration link data returned.
 		 */
@@ -4424,7 +4612,6 @@ export namespace MyNS {
 		/**
 		 * Get authenticated user details
 		 * Get v1/me
-		 * @return {MeModel} 
 		 */
 		V1MeGet(headersHandler?: () => HttpHeaders): Observable<MeModel> {
 			return this.http.get<MeModel>(this.baseUri + 'v1/me', { headers: headersHandler ? headersHandler() : undefined });
@@ -4434,7 +4621,6 @@ export namespace MyNS {
 		 * List Organizations
 		 * This endpoint returns the list of the Organizations that belongs to the user.
 		 * Get v1/organizations
-		 * @return {Array<OrganizationModel>} 
 		 */
 		V1OrganizationsGet(headersHandler?: () => HttpHeaders): Observable<Array<OrganizationModel>> {
 			return this.http.get<Array<OrganizationModel>>(this.baseUri + 'v1/organizations', { headers: headersHandler ? headersHandler() : undefined });
@@ -4452,7 +4638,6 @@ export namespace MyNS {
 		 * @param {AuditLogItemModelAuditLogTypeEnum} auditLogType Filter Audit logs by Audit log type.
 		 * @param {Date} fromUtcDateTime Filter Audit logs by starting UTC date.
 		 * @param {Date} toUtcDateTime Filter Audit logs by ending UTC date.
-		 * @return {Array<AuditLogItemModel>} 
 		 */
 		V1Organizations_organizationIdAuditlogsGetByProductIdAndConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTime(organizationId: string, productId: string | null | undefined, configId: string | null | undefined, environmentId: string | null | undefined, auditLogType: AuditLogItemModelAuditLogTypeEnum | null | undefined, fromUtcDateTime: Date | null | undefined, toUtcDateTime: Date | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AuditLogItemModel>> {
 			return this.http.get<Array<AuditLogItemModel>>(this.baseUri + 'v1/organizations/' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '/auditlogs&productId=' + (productId == null ? '' : encodeURIComponent(productId)) + '&configId=' + (configId == null ? '' : encodeURIComponent(configId)) + '&environmentId=' + (environmentId == null ? '' : encodeURIComponent(environmentId)) + '&auditLogType=' + auditLogType + '&fromUtcDateTime=' + fromUtcDateTime?.toISOString() + '&toUtcDateTime=' + toUtcDateTime?.toISOString(), { headers: headersHandler ? headersHandler() : undefined });
@@ -4464,7 +4649,6 @@ export namespace MyNS {
 		 * to the given Organization, identified by the `organizationId` parameter.
 		 * Get v1/organizations/{organizationId}/members
 		 * @param {string} organizationId The identifier of the Organization.
-		 * @return {Array<UserModel>} 
 		 */
 		V1Organizations_organizationIdMembersGet(organizationId: string, headersHandler?: () => HttpHeaders): Observable<Array<UserModel>> {
 			return this.http.get<Array<UserModel>>(this.baseUri + 'v1/organizations/' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '/members', { headers: headersHandler ? headersHandler() : undefined });
@@ -4513,10 +4697,11 @@ export namespace MyNS {
 		 * Delete Permission Group
 		 * This endpoint removes a Permission Group identified by the `permissionGroupId` parameter.
 		 * Delete v1/permissions/{permissionGroupId}
-		 * @param {number} permissionGroupId The identifier of the Permission Group.
+		 * @param {string} permissionGroupId The identifier of the Permission Group.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		V1Permissions_permissionGroupIdDelete(permissionGroupId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V1Permissions_permissionGroupIdDelete(permissionGroupId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/permissions/' + permissionGroupId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -4525,10 +4710,11 @@ export namespace MyNS {
 		 * This endpoint returns the metadata of a Permission Group
 		 * identified by the `permissionGroupId`.
 		 * Get v1/permissions/{permissionGroupId}
-		 * @param {number} permissionGroupId The identifier of the Permission Group.
+		 * @param {string} permissionGroupId The identifier of the Permission Group.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PermissionGroupModel} When everything is ok, the permission group data returned.
 		 */
-		V1Permissions_permissionGroupIdGet(permissionGroupId: number, headersHandler?: () => HttpHeaders): Observable<PermissionGroupModel> {
+		V1Permissions_permissionGroupIdGet(permissionGroupId: string, headersHandler?: () => HttpHeaders): Observable<PermissionGroupModel> {
 			return this.http.get<PermissionGroupModel>(this.baseUri + 'v1/permissions/' + permissionGroupId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -4536,10 +4722,10 @@ export namespace MyNS {
 		 * Update Permission Group
 		 * This endpoint updates a Permission Group identified by the `permissionGroupId` parameter.
 		 * Put v1/permissions/{permissionGroupId}
-		 * @param {number} permissionGroupId The identifier of the Permission Group.
-		 * @return {PermissionGroupModel} 
+		 * @param {string} permissionGroupId The identifier of the Permission Group.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		V1Permissions_permissionGroupIdPut(permissionGroupId: number, requestBody: UpdatePermissionGroupRequest, headersHandler?: () => HttpHeaders): Observable<PermissionGroupModel> {
+		V1Permissions_permissionGroupIdPut(permissionGroupId: string, requestBody: UpdatePermissionGroupRequest, headersHandler?: () => HttpHeaders): Observable<PermissionGroupModel> {
 			return this.http.put<PermissionGroupModel>(this.baseUri + 'v1/permissions/' + permissionGroupId, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -4547,7 +4733,6 @@ export namespace MyNS {
 		 * List Products
 		 * This endpoint returns the list of the Products that belongs to the user.
 		 * Get v1/products
-		 * @return {Array<ProductModel>} 
 		 */
 		V1ProductsGet(headersHandler?: () => HttpHeaders): Observable<Array<ProductModel>> {
 			return this.http.get<Array<ProductModel>>(this.baseUri + 'v1/products', { headers: headersHandler ? headersHandler() : undefined });
@@ -4581,7 +4766,6 @@ export namespace MyNS {
 		 * This endpoint updates a Product identified by the `productId` parameter.
 		 * Put v1/products/{productId}
 		 * @param {string} productId The identifier of the Product.
-		 * @return {ProductModel} 
 		 */
 		V1Products_productIdPut(productId: string, requestBody: UpdateProductRequest, headersHandler?: () => HttpHeaders): Observable<ProductModel> {
 			return this.http.put<ProductModel>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -4598,7 +4782,6 @@ export namespace MyNS {
 		 * @param {AuditLogItemModelAuditLogTypeEnum} auditLogType Filter Audit logs by Audit log type.
 		 * @param {Date} fromUtcDateTime Filter Audit logs by starting UTC date.
 		 * @param {Date} toUtcDateTime Filter Audit logs by ending UTC date.
-		 * @return {Array<AuditLogItemModel>} 
 		 */
 		V1Products_productIdAuditlogsGetByConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTime(productId: string, configId: string | null | undefined, environmentId: string | null | undefined, auditLogType: AuditLogItemModelAuditLogTypeEnum | null | undefined, fromUtcDateTime: Date | null | undefined, toUtcDateTime: Date | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AuditLogItemModel>> {
 			return this.http.get<Array<AuditLogItemModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/auditlogs&configId=' + (configId == null ? '' : encodeURIComponent(configId)) + '&environmentId=' + (environmentId == null ? '' : encodeURIComponent(environmentId)) + '&auditLogType=' + auditLogType + '&fromUtcDateTime=' + fromUtcDateTime?.toISOString() + '&toUtcDateTime=' + toUtcDateTime?.toISOString(), { headers: headersHandler ? headersHandler() : undefined });
@@ -4610,7 +4793,6 @@ export namespace MyNS {
 		 * `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
 		 * Get v1/products/{productId}/configs
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<ConfigModel>} 
 		 */
 		V1Products_productIdConfigsGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<ConfigModel>> {
 			return this.http.get<Array<ConfigModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/configs', { headers: headersHandler ? headersHandler() : undefined });
@@ -4634,7 +4816,6 @@ export namespace MyNS {
 		 * `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
 		 * Get v1/products/{productId}/environments
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<EnvironmentModel>} 
 		 */
 		V1Products_productIdEnvironmentsGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<EnvironmentModel>> {
 			return this.http.get<Array<EnvironmentModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/environments', { headers: headersHandler ? headersHandler() : undefined });
@@ -4658,7 +4839,6 @@ export namespace MyNS {
 		 * to the given Product, identified by the `productId` parameter.
 		 * Get v1/products/{productId}/members
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<MemberModel>} 
 		 */
 		V1Products_productIdMembersGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<MemberModel>> {
 			return this.http.get<Array<MemberModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/members', { headers: headersHandler ? headersHandler() : undefined });
@@ -4694,7 +4874,6 @@ export namespace MyNS {
 		 * `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
 		 * Get v1/products/{productId}/permissions
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<PermissionGroupModel>} 
 		 */
 		V1Products_productIdPermissionsGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<PermissionGroupModel>> {
 			return this.http.get<Array<PermissionGroupModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/permissions', { headers: headersHandler ? headersHandler() : undefined });
@@ -4718,7 +4897,6 @@ export namespace MyNS {
 		 * `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
 		 * Get v1/products/{productId}/segments
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<SegmentListModel>} 
 		 */
 		V1Products_productIdSegmentsGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<SegmentListModel>> {
 			return this.http.get<Array<SegmentListModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/segments', { headers: headersHandler ? headersHandler() : undefined });
@@ -4742,7 +4920,6 @@ export namespace MyNS {
 		 * specified Product, identified by the `productId` parameter.
 		 * Get v1/products/{productId}/tags
 		 * @param {string} productId The identifier of the Product.
-		 * @return {Array<TagModel>} 
 		 */
 		V1Products_productIdTagsGet(productId: string, headersHandler?: () => HttpHeaders): Observable<Array<TagModel>> {
 			return this.http.get<Array<TagModel>>(this.baseUri + 'v1/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/tags', { headers: headersHandler ? headersHandler() : undefined });
@@ -4788,7 +4965,6 @@ export namespace MyNS {
 		 * This endpoint updates a Segment identified by the `segmentId` parameter.
 		 * Put v1/segments/{segmentId}
 		 * @param {string} segmentId The identifier of the Segment.
-		 * @return {SegmentModel} 
 		 */
 		V1Segments_segmentIdPut(segmentId: string, requestBody: UpdateSegmentModel, headersHandler?: () => HttpHeaders): Observable<SegmentModel> {
 			return this.http.put<SegmentModel>(this.baseUri + 'v1/segments/' + (segmentId == null ? '' : encodeURIComponent(segmentId)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -4800,6 +4976,7 @@ export namespace MyNS {
 		 * identified by the `configId` parameter.
 		 * Delete v1/settings/{settingId}
 		 * @param {number} settingId The identifier of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		V1Settings_settingIdDelete(settingId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4812,6 +4989,7 @@ export namespace MyNS {
 		 * identified by the `settingId` parameter.
 		 * Get v1/settings/{settingId}
 		 * @param {number} settingId The identifier of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SettingModel} When everything is ok, the setting data returned.
 		 */
 		V1Settings_settingIdGet(settingId: number, headersHandler?: () => HttpHeaders): Observable<SettingModel> {
@@ -4883,6 +5061,7 @@ export namespace MyNS {
 		 * ```
 		 * Patch v1/settings/{settingId}
 		 * @param {number} settingId The identifier of the Setting.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SettingModel} When the update was successful.
 		 */
 		V1Settings_settingIdPatch(settingId: number, requestBody: JsonPatch, headersHandler?: () => HttpHeaders): Observable<SettingModel> {
@@ -4902,7 +5081,6 @@ export namespace MyNS {
 		 * evaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/).
 		 * Get v1/settings/{settingKeyOrId}/value
 		 * @param {string} settingKeyOrId The key or id of the Setting.
-		 * @return {SettingValueModel} 
 		 */
 		V1Settings_settingKeyOrIdValueGet(settingKeyOrId: string, headersHandler?: () => HttpHeaders): Observable<SettingValueModel> {
 			return this.http.get<SettingValueModel>(this.baseUri + 'v1/settings/' + (settingKeyOrId == null ? '' : encodeURIComponent(settingKeyOrId)) + '/value', { headers: headersHandler ? headersHandler() : undefined });
@@ -4965,7 +5143,6 @@ export namespace MyNS {
 		 * Patch v1/settings/{settingKeyOrId}/value
 		 * @param {string} settingKeyOrId The key or id of the Setting.
 		 * @param {string} reason The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.
-		 * @return {SettingValueModel} 
 		 */
 		V1Settings_settingKeyOrIdValuePatchByReason(settingKeyOrId: string, reason: string | null | undefined, requestBody: JsonPatch, headersHandler?: () => HttpHeaders): Observable<SettingValueModel> {
 			return this.http.patch<SettingValueModel>(this.baseUri + 'v1/settings/' + (settingKeyOrId == null ? '' : encodeURIComponent(settingKeyOrId)) + '/value&reason=' + (reason == null ? '' : encodeURIComponent(reason)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5013,7 +5190,6 @@ export namespace MyNS {
 		 * Put v1/settings/{settingKeyOrId}/value
 		 * @param {string} settingKeyOrId The key or id of the Setting.
 		 * @param {string} reason The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.
-		 * @return {SettingValueModel} 
 		 */
 		V1Settings_settingKeyOrIdValuePutByReason(settingKeyOrId: string, reason: string | null | undefined, requestBody: UpdateSettingValueModel, headersHandler?: () => HttpHeaders): Observable<SettingValueModel> {
 			return this.http.put<SettingValueModel>(this.baseUri + 'v1/settings/' + (settingKeyOrId == null ? '' : encodeURIComponent(settingKeyOrId)) + '/value&reason=' + (reason == null ? '' : encodeURIComponent(reason)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -5023,10 +5199,11 @@ export namespace MyNS {
 		 * Delete Tag
 		 * This endpoint deletes a Tag identified by the `tagId` parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint.
 		 * Delete v1/tags/{tagId}
-		 * @param {number} tagId The identifier of the Tag.
+		 * @param {string} tagId The identifier of the Tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		V1Tags_tagIdDelete(tagId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V1Tags_tagIdDelete(tagId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/tags/' + tagId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -5035,10 +5212,11 @@ export namespace MyNS {
 		 * This endpoint returns the metadata of a Tag
 		 * identified by the `tagId`.
 		 * Get v1/tags/{tagId}
-		 * @param {number} tagId The identifier of the Tag.
+		 * @param {string} tagId The identifier of the Tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TagModel} When everything is ok, the tag data returned.
 		 */
-		V1Tags_tagIdGet(tagId: number, headersHandler?: () => HttpHeaders): Observable<TagModel> {
+		V1Tags_tagIdGet(tagId: string, headersHandler?: () => HttpHeaders): Observable<TagModel> {
 			return this.http.get<TagModel>(this.baseUri + 'v1/tags/' + tagId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -5046,10 +5224,10 @@ export namespace MyNS {
 		 * Update Tag
 		 * This endpoint updates a Tag identified by the `tagId` parameter.
 		 * Put v1/tags/{tagId}
-		 * @param {number} tagId The identifier of the Tag.
-		 * @return {TagModel} 
+		 * @param {string} tagId The identifier of the Tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		V1Tags_tagIdPut(tagId: number, requestBody: UpdateTagModel, headersHandler?: () => HttpHeaders): Observable<TagModel> {
+		V1Tags_tagIdPut(tagId: string, requestBody: UpdateTagModel, headersHandler?: () => HttpHeaders): Observable<TagModel> {
 			return this.http.put<TagModel>(this.baseUri + 'v1/tags/' + tagId, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -5058,10 +5236,11 @@ export namespace MyNS {
 		 * This endpoint returns the list of the Settings that
 		 * has the specified Tag, identified by the `tagId` parameter.
 		 * Get v1/tags/{tagId}/settings
-		 * @param {number} tagId The identifier of the Tag.
+		 * @param {string} tagId The identifier of the Tag.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<SettingModel>} When everything is ok, the settings data returned.
 		 */
-		V1Tags_tagIdSettingsGet(tagId: number, headersHandler?: () => HttpHeaders): Observable<Array<SettingModel>> {
+		V1Tags_tagIdSettingsGet(tagId: string, headersHandler?: () => HttpHeaders): Observable<Array<SettingModel>> {
 			return this.http.get<Array<SettingModel>>(this.baseUri + 'v1/tags/' + tagId + '/settings', { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}

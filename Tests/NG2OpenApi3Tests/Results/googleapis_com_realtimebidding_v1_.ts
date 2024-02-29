@@ -517,7 +517,10 @@ export namespace MyNS {
 		/** All restricted categories for the ads that may be shown from this creative. */
 		restrictedCategories?: Array<string>;
 
-		/** Output only. The version of the creative. Version for a new creative is 1 and it increments during subsequent creative updates. */
+		/**
+		 * Output only. The version of the creative. Version for a new creative is 1 and it increments during subsequent creative updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 
 		/** Video content for a creative. */
@@ -554,7 +557,10 @@ export namespace MyNS {
 		/** Experimental field that can be used during the [FLEDGE Origin Trial](/authorized-buyers/rtb/fledge-origin-trial). The URL to fetch an interest group ad used in [TURTLEDOVE on-device auction](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#1-browsers-record-interest-groups"). This should be unique among all creatives for a given `accountId`. This URL should be the same as the URL returned by [generateBid()](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#32-on-device-bidding). */
 		renderUrl: FormControl<string | null | undefined>,
 
-		/** Output only. The version of the creative. Version for a new creative is 1 and it increments during subsequent creative updates. */
+		/**
+		 * Output only. The version of the creative. Version for a new creative is 1 and it increments during subsequent creative updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFormGroup() {
@@ -784,7 +790,10 @@ export namespace MyNS {
 		/** The full non-working URL. */
 		expandedUrl?: string | null;
 
-		/** HTTP error code (for example, 404 or 5xx) */
+		/**
+		 * HTTP error code (for example, 404 or 5xx)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpError?: number | null;
 
 		/** Page was crawled successfully, but was detected as either a page with no content or an error page. */
@@ -812,7 +821,10 @@ export namespace MyNS {
 		/** The full non-working URL. */
 		expandedUrl: FormControl<string | null | undefined>,
 
-		/** HTTP error code (for example, 404 or 5xx) */
+		/**
+		 * HTTP error code (for example, 404 or 5xx)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpError: FormControl<number | null | undefined>,
 
 		/** Page was crawled successfully, but was detected as either a page with no content or an error page. */
@@ -882,14 +894,20 @@ export namespace MyNS {
 		/** Breakdown of the most frequent domains called through HTTP by the creative. */
 		topHttpCallDomains?: Array<DomainCalls>;
 
-		/** The total number of HTTP calls made by the creative, including but not limited to the number of calls in the top_http_call_domains. */
+		/**
+		 * The total number of HTTP calls made by the creative, including but not limited to the number of calls in the top_http_call_domains.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalHttpCallCount?: number | null;
 	}
 
 	/** Number of HTTP calls made by a creative, broken down by domain. */
 	export interface DomainCallEvidenceFormProperties {
 
-		/** The total number of HTTP calls made by the creative, including but not limited to the number of calls in the top_http_call_domains. */
+		/**
+		 * The total number of HTTP calls made by the creative, including but not limited to the number of calls in the top_http_call_domains.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalHttpCallCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDomainCallEvidenceFormGroup() {
@@ -906,7 +924,10 @@ export namespace MyNS {
 		/** The domain name. */
 		domain?: string | null;
 
-		/** Number of HTTP calls made to the domain. */
+		/**
+		 * Number of HTTP calls made to the domain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpCallCount?: number | null;
 	}
 
@@ -916,7 +937,10 @@ export namespace MyNS {
 		/** The domain name. */
 		domain: FormControl<string | null | undefined>,
 
-		/** Number of HTTP calls made to the domain. */
+		/**
+		 * Number of HTTP calls made to the domain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpCallCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDomainCallsFormGroup() {
@@ -934,14 +958,20 @@ export namespace MyNS {
 		/** Download size broken down by URLs with the top download size. */
 		topUrlDownloadSizeBreakdowns?: Array<UrlDownloadSize>;
 
-		/** Total download size (in kilobytes) for all the resources in the creative. */
+		/**
+		 * Total download size (in kilobytes) for all the resources in the creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDownloadSizeKb?: number | null;
 	}
 
 	/** Total download size and URL-level download size breakdown for resources in a creative. */
 	export interface DownloadSizeEvidenceFormProperties {
 
-		/** Total download size (in kilobytes) for all the resources in the creative. */
+		/**
+		 * Total download size (in kilobytes) for all the resources in the creative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDownloadSizeKb: FormControl<number | null | undefined>,
 	}
 	export function CreateDownloadSizeEvidenceFormGroup() {
@@ -955,7 +985,10 @@ export namespace MyNS {
 	/** The URL-level breakdown for the download size. */
 	export interface UrlDownloadSize {
 
-		/** Download size of the URL in kilobytes. */
+		/**
+		 * Download size of the URL in kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadSizeKb?: number | null;
 
 		/** The normalized URL with query parameters and fragment removed. */
@@ -965,7 +998,10 @@ export namespace MyNS {
 	/** The URL-level breakdown for the download size. */
 	export interface UrlDownloadSizeFormProperties {
 
-		/** Download size of the URL in kilobytes. */
+		/**
+		 * Download size of the URL in kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadSizeKb: FormControl<number | null | undefined>,
 
 		/** The normalized URL with query parameters and fragment removed. */
@@ -1003,14 +1039,20 @@ export namespace MyNS {
 		/** Names of cookies that violate Google policies. For TOO_MANY_COOKIES policy, this will be the cookie names of top domains with the largest number of cookies. For other policies, this will be all the cookie names that violate the policy. */
 		cookieNames?: Array<string>;
 
-		/** The largest number of cookies set by a creative. If this field is set, cookie_names above will be set to the cookie names of top domains with the largest number of cookies. This field will only be set for TOO_MANY_COOKIES policy. */
+		/**
+		 * The largest number of cookies set by a creative. If this field is set, cookie_names above will be set to the cookie names of top domains with the largest number of cookies. This field will only be set for TOO_MANY_COOKIES policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCookieCount?: number | null;
 	}
 
 	/** Evidence for HTTP cookie-related policy violations. */
 	export interface HttpCookieEvidenceFormProperties {
 
-		/** The largest number of cookies set by a creative. If this field is set, cookie_names above will be set to the cookie names of top domains with the largest number of cookies. This field will only be set for TOO_MANY_COOKIES policy. */
+		/**
+		 * The largest number of cookies set by a creative. If this field is set, cookie_names above will be set to the cookie names of top domains with the largest number of cookies. This field will only be set for TOO_MANY_COOKIES policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCookieCount: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpCookieEvidenceFormGroup() {
@@ -1024,26 +1066,38 @@ export namespace MyNS {
 	/** HTML content for a creative. */
 	export interface HtmlContent {
 
-		/** The height of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method. */
+		/**
+		 * The height of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The HTML snippet that displays the ad when inserted in the web page. */
 		snippet?: string | null;
 
-		/** The width of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method. */
+		/**
+		 * The width of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** HTML content for a creative. */
 	export interface HtmlContentFormProperties {
 
-		/** The height of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method. */
+		/**
+		 * The height of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The HTML snippet that displays the ad when inserted in the web page. */
 		snippet: FormControl<string | null | undefined>,
 
-		/** The width of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method. */
+		/**
+		 * The width of the HTML snippet in pixels. Can be used to filter the response of the creatives.list method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateHtmlContentFormGroup() {
@@ -1089,7 +1143,10 @@ export namespace MyNS {
 		/** The price of the promoted app including currency info. */
 		priceDisplayText?: string | null;
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating?: number | null;
 
 		/** The URL to fetch a native video ad. */
@@ -1123,7 +1180,10 @@ export namespace MyNS {
 		/** The price of the promoted app including currency info. */
 		priceDisplayText: FormControl<string | null | undefined>,
 
-		/** The app rating in the app store. Must be in the range [0-5]. */
+		/**
+		 * The app rating in the app store. Must be in the range [0-5].
+		 * Type: double
+		 */
 		starRating: FormControl<number | null | undefined>,
 
 		/** The URL to fetch a native video ad. */
@@ -1152,26 +1212,38 @@ export namespace MyNS {
 	/** An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved. */
 	export interface Image {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The URL of the image. */
 		url?: string | null;
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved. */
 	export interface ImageFormProperties {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The URL of the image. */
 		url: FormControl<string | null | undefined>,
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -1330,26 +1402,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1621,7 +1711,10 @@ export namespace MyNS {
 		/** The maximum QPS threshold for this configuration. The bidder should receive no more than this number of bid requests matching this configuration per second across all their bidding endpoints among all trading locations. Further information available at https://developers.google.com/authorized-buyers/rtb/peer-guide */
 		maximumQps?: string | null;
 
-		/** The targeted minimum viewability decile, ranging in values [0, 10]. A value of 5 means that the configuration will only match adslots for which we predict at least 50% viewability. Values > 10 will be rounded down to 10. An unset value or a value of 0 indicates that bid requests will be sent regardless of viewability. */
+		/**
+		 * The targeted minimum viewability decile, ranging in values [0, 10]. A value of 5 means that the configuration will only match adslots for which we predict at least 50% viewability. Values > 10 will be rounded down to 10. An unset value or a value of 0 indicates that bid requests will be sent regardless of viewability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumViewabilityDecile?: number | null;
 
 		/** Output only. Name of the pretargeting configuration that must follow the pattern `bidders/{bidder_account_id}/pretargetingConfigs/{config_id}` */
@@ -1658,7 +1751,10 @@ export namespace MyNS {
 		/** The maximum QPS threshold for this configuration. The bidder should receive no more than this number of bid requests matching this configuration per second across all their bidding endpoints among all trading locations. Further information available at https://developers.google.com/authorized-buyers/rtb/peer-guide */
 		maximumQps: FormControl<string | null | undefined>,
 
-		/** The targeted minimum viewability decile, ranging in values [0, 10]. A value of 5 means that the configuration will only match adslots for which we predict at least 50% viewability. Values > 10 will be rounded down to 10. An unset value or a value of 0 indicates that bid requests will be sent regardless of viewability. */
+		/**
+		 * The targeted minimum viewability decile, ranging in values [0, 10]. A value of 5 means that the configuration will only match adslots for which we predict at least 50% viewability. Values > 10 will be rounded down to 10. An unset value or a value of 0 indicates that bid requests will be sent regardless of viewability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumViewabilityDecile: FormControl<number | null | undefined>,
 
 		/** Output only. Name of the pretargeting configuration that must follow the pattern `bidders/{bidder_account_id}/pretargetingConfigs/{config_id}` */
@@ -1952,6 +2048,7 @@ export namespace MyNS {
 		 * Lists all the bidder accounts that belong to the caller.
 		 * Get v1/bidders
 		 * @param {number} pageSize The maximum number of bidders to return. If unspecified, at most 100 bidders will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. This value is received from a previous `ListBidders` call in ListBiddersResponse.nextPageToken.
 		 * @return {ListBiddersResponse} Successful response
 		 */
@@ -1963,6 +2060,7 @@ export namespace MyNS {
 		 * Lists all buyer account information the calling buyer user or service account is permissioned to manage.
 		 * Get v1/buyers
 		 * @param {number} pageSize The maximum number of buyers to return. If unspecified, at most 100 buyers will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. This value is received from a previous `ListBuyers` call in ListBuyersResponse.nextPageToken.
 		 * @return {ListBuyersResponse} Successful response
 		 */
@@ -2068,6 +2166,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the parent buyer that owns the creatives. The pattern for this resource is either `buyers/{buyerAccountId}` or `bidders/{bidderAccountId}`. For `buyers/{buyerAccountId}`, the `buyerAccountId` can be one of the following: 1. The ID of the buyer that is accessing their own creatives. 2. The ID of the child seat buyer under a bidder account. So for listing creatives pertaining to the child seat buyer (`456`) under bidder account (`123`), you would use the pattern: `buyers/456`. 3. The ID of the bidder itself. So for listing creatives pertaining to bidder (`123`), you would use `buyers/123`. If you want to access all creatives pertaining to both the bidder and all of its child seat accounts, you would use `bidders/{bidderAccountId}`, for example, for all creatives pertaining to bidder (`123`), use `bidders/123`.
 		 * @param {string} filter Query string to filter creatives. If no filter is specified, all active creatives will be returned. Example: 'accountId=12345 AND (dealsStatus:DISAPPROVED AND disapprovalReason:UNACCEPTABLE_CONTENT) OR declaredAttributes:IS_COOKIE_TARGETED'
 		 * @param {number} pageSize Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available through another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.nextPageToken returned from the previous call to the 'ListCreatives' method. Page tokens for continued pages are valid for up to five hours, counting from the call to 'ListCreatives' for the first page.
 		 * @param {Realtimebidding_buyers_userLists_getView} view Controls the amount of information included in the response. By default only creativeServingDecision is included. To retrieve the entire creative resource (including the declared fields and the creative content) specify the view as "FULL".
 		 * @return {ListCreativesResponse} Successful response
@@ -2101,6 +2200,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/endpoints
 		 * @param {string} parent Required. Name of the bidder whose endpoints will be listed. Format: `bidders/{bidderAccountId}`
 		 * @param {number} pageSize The maximum number of endpoints to return. If unspecified, at most 100 endpoints will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. This value is received from a previous `ListEndpoints` call in ListEndpointsResponse.nextPageToken.
 		 * @return {ListEndpointsResponse} Successful response
 		 */
@@ -2113,6 +2213,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/pretargetingConfigs
 		 * @param {string} parent Required. Name of the bidder whose pretargeting configurations will be listed. Format: bidders/{bidderAccountId}
 		 * @param {number} pageSize The maximum number of pretargeting configurations to return. If unspecified, at most 10 pretargeting configurations will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. This value is received from a previous `ListPretargetingConfigs` call in ListPretargetingConfigsResponse.nextPageToken.
 		 * @return {ListPretargetingConfigsResponse} Successful response
 		 */
@@ -2137,6 +2238,7 @@ export namespace MyNS {
 		 * @param {string} filter Query string to filter publisher connections. Connections can be filtered by `displayName`, `publisherPlatform`, and `biddingState`. If no filter is specified, all publisher connections will be returned. Example: 'displayName="Great Publisher*" AND publisherPlatform=ADMOB AND biddingState != PENDING' See https://google.aip.dev/160 for more information about filtering syntax.
 		 * @param {string} orderBy Order specification by which results should be sorted. If no sort order is specified, the results will be returned in alphabetic order based on the publisher's publisher code. Results can be sorted by `createTime`. Example: 'createTime DESC'.
 		 * @param {number} pageSize Requested page size. The server may return fewer results than requested (due to timeout constraint) even if more are available through another call. If unspecified, the server will pick an appropriate default. Acceptable values are 1 to 5000, inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListPublisherConnectionsResponse.nextPageToken returned from the previous call to the 'ListPublisherConnections' method.
 		 * @return {ListPublisherConnectionsResponse} Successful response
 		 */
@@ -2169,6 +2271,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/userLists
 		 * @param {string} parent Required. The name of the parent buyer for the user lists to be returned that must follow the pattern `buyers/{buyerAccountId}`, where `{buyerAccountId}` represents the account ID of the buyer who owns user lists. For a bidder accessing user lists on behalf of a child seat buyer , `{buyerAccountId}` should represent the account ID of the child seat buyer.
 		 * @param {number} pageSize The number of results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation page token as received from a previous response.
 		 * @return {ListUserListsResponse} Successful response
 		 */

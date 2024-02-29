@@ -245,6 +245,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/settings
 		 * @param {string} parent Required. The project, folder, or organization that is the parent resource for this setting. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
 		 * @param {number} pageSize Unused. The size of the page to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Unused. A page token used to retrieve the next page.
 		 * @param {Resourcesettings_projects_settings_getView} view The SettingView for this request.
 		 * @return {GoogleCloudResourcesettingsV1ListSettingsResponse} Successful response

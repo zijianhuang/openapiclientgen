@@ -20,6 +20,8 @@ export namespace MyNS {
 		/**
 		 * Search results
 		 * Get query
+		 * @param {number} start Type: double
+		 * @param {number} count Type: double
 		 * @return {void} Search results
 		 */
 		QueryGetByQAndStartAndCountAndSubdomainsAndInUrlPrefixes(q: string, start: number | null | undefined, count: number | null | undefined, subdomains: string | null | undefined, inUrlPrefixes: string | null | undefined): Observable<HttpResponse<string>> {
@@ -30,6 +32,8 @@ export namespace MyNS {
 		 * Search results
 		 * Get query.{extension}
 		 * @param {QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension} extension extension
+		 * @param {number} start Type: double
+		 * @param {number} count Type: double
 		 * @return {void} Search results
 		 */
 		QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixes(extension: QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension, q: string, start: number | null | undefined, count: number | null | undefined, subdomains: string | null | undefined, inUrlPrefixes: string | null | undefined): Observable<HttpResponse<string>> {

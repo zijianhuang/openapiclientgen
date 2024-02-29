@@ -199,15 +199,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
 		/**
 		 * Unique identifier for the viewer. Must be unique within the signaling channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientId?: string | null;
 
@@ -216,8 +216,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional user ID to be associated with the credentials.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username?: string | null;
 	}
@@ -226,15 +226,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier for the viewer. Must be unique within the signaling channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ClientId: FormControl<string | null | undefined>,
 
@@ -243,8 +243,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional user ID to be associated with the credentials.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username: FormControl<string | null | undefined>,
 	}
@@ -263,24 +263,24 @@ export namespace MyNS {
 		/**
 		 * The ARN of the signaling channel by which Alexa and the master peer communicate.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: string;
 
 		/**
 		 * The unique identifier for the sender client.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SenderClientId: string;
 
 		/**
 		 * The base64-encoded SDP offer content.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		MessagePayload: string;
 	}
@@ -289,24 +289,24 @@ export namespace MyNS {
 		/**
 		 * The ARN of the signaling channel by which Alexa and the master peer communicate.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the sender client.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SenderClientId: FormControl<string | null | undefined>,
 
 		/**
 		 * The base64-encoded SDP offer content.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		MessagePayload: FormControl<string | null | undefined>,
 	}

@@ -37,11 +37,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_2017_boulder_election_expenditures_committee Committee
 		 * @param {string} search_db_2017_boulder_election_expenditures_transaction_date Transaction Date
 		 * @param {string} search_db_2017_boulder_election_expenditures_name Name
@@ -50,6 +56,7 @@ export namespace MyNS {
 		 * @param {string} search_db_2017_boulder_election_expenditures_state State
 		 * @param {string} search_db_2017_boulder_election_expenditures_zip Zip
 		 * @param {number} search_db_2017_boulder_election_expenditures_expenditure Expenditure
+		 *     Type: double
 		 * @param {string} search_db_2017_boulder_election_expenditures_purpose Purpose
 		 * @return {void} No response was specified
 		 */
@@ -73,11 +80,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_any(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -100,11 +113,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_beforeafter(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -127,11 +146,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_biblio_primary_author Primary Author
 		 * @param {string} search_biblio_type Publication Type
 		 * @param {string} search_biblio_institution Institution
@@ -159,11 +184,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_dicom(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -186,11 +217,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_bio_dicom_test_PatientName Patient Name
 		 * @param {string} search_bio_dicom_test_PatientID Patient ID
 		 * @return {void} No response was specified
@@ -215,11 +252,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_fasta(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -242,11 +285,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_fastq(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -269,11 +318,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_hmmer_index(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -296,11 +351,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ome_tiff(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -323,11 +384,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ontology_assay(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -350,11 +417,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ontology_cohort(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -377,11 +450,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_bio_ontology_person_gender Gender
 		 * @return {void} No response was specified
 		 */
@@ -405,11 +484,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ontology_sample(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -432,11 +517,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ontology_series(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -459,11 +550,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_ontology_study(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -486,11 +583,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_sam(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -513,11 +616,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_sf_pdb(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -540,11 +649,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_sra(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -567,11 +682,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_bio_stockholm(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -594,11 +715,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_bio_taxonomy_rank Rank
 		 * @param {string} search_bio_taxonomy_embl_code EMBL Code
 		 * @param {string} search_bio_taxonomy_division Divison
@@ -626,11 +753,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_blogentry_blogtext Extra Text
 		 * @return {void} No response was specified
 		 */
@@ -654,16 +787,24 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_bolder_rental_housing_propaddr1 Property Address
 		 * @param {string} search_db_bolder_rental_housing_rentaltype Rental Type
 		 * @param {string} search_db_bolder_rental_housing_bldgtype Building Type
 		 * @param {number} search_db_bolder_rental_housing_dwellunits Dwelling Units
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_bolder_rental_housing_roomunits Room Units
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_bolder_rental_housing_neighbrhd Neighborhood
 		 * @param {string} search_db_bolder_rental_housing_complexnm Complex Name
 		 * @param {string} search_db_bolder_rental_housing_name Name
@@ -701,11 +842,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_bookmarks_title Title
 		 * @param {string} search_db_bookmarks_url URL
 		 * @param {string} search_db_bookmarks_category Category
@@ -732,11 +879,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boston_crime_offense Offense
 		 * @param {string} search_db_boston_crime_offense_code_group Offense Code Group
 		 * @param {string} search_db_boston_crime_offense_description Offense Description
@@ -744,9 +897,12 @@ export namespace MyNS {
 		 * @param {string} search_db_boston_crime_reporting_area Reporting Area
 		 * @param {string} search_db_boston_crime_shooting Shooting
 		 * @param {number} search_db_boston_crime_year Year
+		 *     Type: double
 		 * @param {number} search_db_boston_crime_month Month
+		 *     Type: double
 		 * @param {string} search_db_boston_crime_day_of_week Day Of Week
 		 * @param {number} search_db_boston_crime_hour Hour
+		 *     Type: double
 		 * @param {string} search_db_boston_crime_street Street
 		 * @param {string} search_db_boston_crime_location Location
 		 * @return {void} No response was specified
@@ -771,11 +927,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_2017_election_contributions_committee Committee
 		 * @param {string} search_db_boulder_2017_election_contributions_last_name Last Name
 		 * @param {string} search_db_boulder_2017_election_contributions_first_name First Name
@@ -787,8 +949,11 @@ export namespace MyNS {
 		 * @param {string} search_db_boulder_2017_election_contributions_from_candidate From Candidate
 		 * @param {string} search_db_boulder_2017_election_contributions_date Date
 		 * @param {number} search_db_boulder_2017_election_contributions_amount Amount
+		 *     Type: double
 		 * @param {number} search_db_boulder_2017_election_contributions_match_amount Match Amount
+		 *     Type: double
 		 * @param {number} search_db_boulder_2017_election_contributions_ytd_amount Ytd Amount
+		 *     Type: double
 		 * @param {string} search_db_boulder_2017_election_contributions_location Location
 		 * @return {void} No response was specified
 		 */
@@ -812,11 +977,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_campaign_contributions_committee Committee
 		 * @param {string} search_db_boulder_campaign_contributions_type Type
 		 * @param {string} search_db_boulder_campaign_contributions_committee_num Committee Num
@@ -832,10 +1003,12 @@ export namespace MyNS {
 		 * @param {string} search_db_boulder_campaign_contributions_state State
 		 * @param {string} search_db_boulder_campaign_contributions_zip Zip
 		 * @param {number} search_db_boulder_campaign_contributions_contribution Contribution
+		 *     Type: double
 		 * @param {string} search_db_boulder_campaign_contributions_contribution_type Contribution Type
 		 * @param {string} search_db_boulder_campaign_contributions_anonymous Anonymous
 		 * @param {string} search_db_boulder_campaign_contributions_from_candidate From Candidate
 		 * @param {number} search_db_boulder_campaign_contributions_match Match
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_boulder_campaign_contributions(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_boulder_campaign_contributions_committee: string | null | undefined, search_db_boulder_campaign_contributions_type: string | null | undefined, search_db_boulder_campaign_contributions_committee_num: string | null | undefined, search_db_boulder_campaign_contributions_candidate: string | null | undefined, search_db_boulder_campaign_contributions_filing_date: string | null | undefined, search_db_boulder_campaign_contributions_amended_date: string | null | undefined, search_db_boulder_campaign_contributions_official_filing: string | null | undefined, search_db_boulder_campaign_contributions_transaction_date: string | null | undefined, search_db_boulder_campaign_contributions_last_name: string | null | undefined, search_db_boulder_campaign_contributions_first_name: string | null | undefined, search_db_boulder_campaign_contributions_street: string | null | undefined, search_db_boulder_campaign_contributions_city: string | null | undefined, search_db_boulder_campaign_contributions_state: string | null | undefined, search_db_boulder_campaign_contributions_zip: string | null | undefined, search_db_boulder_campaign_contributions_contribution: number | null | undefined, search_db_boulder_campaign_contributions_contribution_type: string | null | undefined, search_db_boulder_campaign_contributions_anonymous: string | null | undefined, search_db_boulder_campaign_contributions_from_candidate: string | null | undefined, search_db_boulder_campaign_contributions_match: number | null | undefined): Observable<HttpResponse<string>> {
@@ -858,11 +1031,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_consulting_services_fund Fund
 		 * @param {string} search_db_boulder_consulting_services_department Department
 		 * @param {string} search_db_boulder_consulting_services_organization Organization
@@ -871,6 +1050,7 @@ export namespace MyNS {
 		 * @param {string} search_db_boulder_consulting_services_account_description Account Description
 		 * @param {string} search_db_boulder_consulting_services_date Date
 		 * @param {number} search_db_boulder_consulting_services_amount Amount
+		 *     Type: double
 		 * @param {string} search_db_boulder_consulting_services_purchase_order Purchase Order
 		 * @param {string} search_db_boulder_consulting_services_vendor_name Vendor Name
 		 * @param {string} search_db_boulder_consulting_services_comment Comment
@@ -896,11 +1076,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_county_voter_details_first_name First Name
 		 * @param {string} search_db_boulder_county_voter_details_last_name Last Name
 		 * @param {string} search_db_boulder_county_voter_details_registration_date Registration Date
@@ -912,6 +1098,7 @@ export namespace MyNS {
 		 * @param {string} search_db_boulder_county_voter_details_party Party
 		 * @param {string} search_db_boulder_county_voter_details_gender Gender
 		 * @param {number} search_db_boulder_county_voter_details_birth_year Birth Year
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_county_voter_details_precinct_code Precinct Code
 		 * @param {string} search_db_boulder_county_voter_details_congressional Congressional
 		 * @param {string} search_db_boulder_county_voter_details_state_senate State Senate
@@ -942,11 +1129,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_crimes_offense Offense
 		 * @param {string} search_db_boulder_crimes_reportdate Report Date
 		 * @param {string} search_db_boulder_crimes_blockadd Address
@@ -973,11 +1166,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_emails_sent_from Sent From
 		 * @param {string} search_db_boulder_emails_sent_to Sent To
 		 * @param {string} search_db_boulder_emails_sent_cc Sent Cc
@@ -1006,19 +1205,30 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_boulder_employee_salaries_position_description Position Description
 		 * @param {string} search_db_boulder_employee_salaries_department Department
 		 * @param {string} search_db_boulder_employee_salaries_employee_flsa_exempt_y_n Employee Flsa Exempt Y N
 		 * @param {number} search_db_boulder_employee_salaries_pay_range_min Pay Range Min
+		 *     Type: double
 		 * @param {number} search_db_boulder_employee_salaries_pay_range_max Pay Range Max
+		 *     Type: double
 		 * @param {number} search_db_boulder_employee_salaries_employee_hourly_pay_rate Employee Hourly Pay Rate
+		 *     Type: double
 		 * @param {number} search_db_boulder_employee_salaries_employee_fte_in_this_position Employee Fte In This Position
+		 *     Type: double
 		 * @param {number} search_db_boulder_employee_salaries_employee_annual_base_salary Employee Annual Base Salary
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_boulder_employee_salaries(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_boulder_employee_salaries_position_description: string | null | undefined, search_db_boulder_employee_salaries_department: string | null | undefined, search_db_boulder_employee_salaries_employee_flsa_exempt_y_n: string | null | undefined, search_db_boulder_employee_salaries_pay_range_min: number | null | undefined, search_db_boulder_employee_salaries_pay_range_max: number | null | undefined, search_db_boulder_employee_salaries_employee_hourly_pay_rate: number | null | undefined, search_db_boulder_employee_salaries_employee_fte_in_this_position: number | null | undefined, search_db_boulder_employee_salaries_employee_annual_base_salary: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1041,11 +1251,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_calendar(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1068,13 +1284,20 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_campaign_donors_committee Committee
 		 * @param {number} search_db_campaign_donors_amount Amount
+		 *     Type: double
 		 * @param {string} search_db_campaign_donors_party Party
 		 * @param {string} search_db_campaign_donors_donor Donor
 		 * @param {string} search_db_campaign_donors_gender Gender
@@ -1107,13 +1330,20 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_campaign_expenditures_committee Committee
 		 * @param {number} search_db_campaign_expenditures_amount Amount
+		 *     Type: double
 		 * @param {string} search_db_campaign_expenditures_party Party
 		 * @param {string} search_db_campaign_expenditures_recipient Recipient
 		 * @param {string} search_db_campaign_expenditures_city City
@@ -1145,11 +1375,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_cataloglink(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1172,11 +1408,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_cdm_grid(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1199,11 +1441,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_chatroom(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1226,11 +1474,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_colorado_water_rights_structure_name Structure Name
 		 * @param {string} search_db_colorado_water_rights_structure_type Structure Type
 		 * @param {string} search_db_colorado_water_rights_water_source Water Source
@@ -1240,9 +1494,13 @@ export namespace MyNS {
 		 * @param {string} search_db_colorado_water_rights_priority_no Priority No
 		 * @param {string} search_db_colorado_water_rights_decreed_uses Decreed Uses
 		 * @param {number} search_db_colorado_water_rights_net_absolute Net Absolute
+		 *     Type: double
 		 * @param {number} search_db_colorado_water_rights_net_conditional Net Conditional
+		 *     Type: double
 		 * @param {number} search_db_colorado_water_rights_net_apex_absolute Net Apex Absolute
+		 *     Type: double
 		 * @param {number} search_db_colorado_water_rights_net_apex_conditional Net Apex Conditional
+		 *     Type: double
 		 * @param {string} search_db_colorado_water_rights_decreed_units Decreed Units
 		 * @param {string} search_db_colorado_water_rights_seasonal_limits Seasonal Limits
 		 * @param {string} search_db_colorado_water_rights_comments Comments
@@ -1270,13 +1528,20 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_committee_donations_committee Committee
 		 * @param {number} search_db_committee_donations_amount Amount
+		 *     Type: double
 		 * @param {string} search_db_committee_donations_recipient Recipient
 		 * @param {string} search_db_committee_donations_date Date
 		 * @param {string} search_db_committee_donations_city City
@@ -1307,11 +1572,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_community_datahub(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1334,11 +1605,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_community_resource_resource_type Type
 		 * @param {string} search_community_resource_address Address
 		 * @param {string} search_community_resource_city City
@@ -1366,28 +1643,41 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_construction_permits_address Address
 		 * @param {string} search_db_construction_permits_case_status Case Status
 		 * @param {string} search_db_construction_permits_category Category
 		 * @param {string} search_db_construction_permits_building_uses_and_work_scopes Building Uses And Work Scopes
 		 * @param {string} search_db_construction_permits_permit_types Permit Types
 		 * @param {number} search_db_construction_permits_total_project_value Total Project Value
+		 *     Type: double
 		 * @param {number} search_db_construction_permits_total_subpermit_value Total Subpermit Value
+		 *     Type: double
 		 * @param {string} search_db_construction_permits_applied Applied
 		 * @param {string} search_db_construction_permits_approved Approved
 		 * @param {string} search_db_construction_permits_issued Issued
 		 * @param {string} search_db_construction_permits_co_date Co Date
 		 * @param {string} search_db_construction_permits_completion_date Completion Date
 		 * @param {number} search_db_construction_permits_new_res_unit New Res Unit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_construction_permits_existing_res_unit Existing Res Unit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_construction_permits_affordable_hsg_unit Affordable Hsg Unit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_construction_permits_new_sf New Sf
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_construction_permits_remodel_sf Remodel Sf
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_construction_permits_narrative_description Narrative Description
 		 * @param {string} search_db_construction_permits_primary_first_name Primary First Name
 		 * @param {string} search_db_construction_permits_primary_last_name Primary Last Name
@@ -1423,11 +1713,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_contact_name Name
 		 * @param {string} search_db_contact_institution Institution
 		 * @param {string} search_db_contact_email Email
@@ -1453,17 +1749,24 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_db_co_indicators_geo_name County
 		 * @param {string} search_db_db_co_indicators_domain Domain
 		 * @param {string} search_db_db_co_indicators_subdomain Subdomain
 		 * @param {string} search_db_db_co_indicators_indicatorName Indicator
 		 * @param {string} search_db_db_co_indicators_description Description
 		 * @param {number} search_db_db_co_indicators_measure Measure
+		 *     Type: double
 		 * @param {string} search_db_db_co_indicators_location Location
 		 * @return {void} No response was specified
 		 */
@@ -1487,17 +1790,26 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_earth_satellite_landsat_sensor Sensor
 		 * @param {string} search_earth_satellite_landsat_satellite Satellite
 		 * @param {number} search_earth_satellite_landsat_wrs_path_number WRS Path
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_earth_satellite_landsat_wrs_row_number WRS Row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_earth_satellite_landsat_ground_station Ground Station
 		 * @param {number} search_earth_satellite_landsat_archive_version_number Archive Version Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_earth_satellite_landsat(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_earth_satellite_landsat_sensor: string | null | undefined, search_earth_satellite_landsat_satellite: string | null | undefined, search_earth_satellite_landsat_wrs_path_number: number | null | undefined, search_earth_satellite_landsat_wrs_row_number: number | null | undefined, search_earth_satellite_landsat_ground_station: string | null | undefined, search_earth_satellite_landsat_archive_version_number: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1520,11 +1832,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_faq(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1547,28 +1865,50 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_fec_pacs_committee Committee
 		 * @param {number} search_db_fec_pacs_total_receipts Total Receipts
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_beginning_cash Beginning Cash
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_ending_cash Ending Cash
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_contributions_from_individuals Contributions From Individuals
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_contributions_from_other_committees Contributions From Other Committees
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_trans_from_affiliates Trans From Affiliates
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_contributions_to_other_committee Contributions To Other Committee
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_contributions_from_candidate Contributions From Candidate
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_loans_from_candidate Loans From Candidate
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_total_loans_received Total Loans Received
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_total_distributions Total Distributions
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_transfers_to_affiliates Transfers To Affiliates
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_refunds_to_individuals Refunds To Individuals
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_refends_to_othercommittees Refends To Othercommittees
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_candidate_loan_repayments Candidate Loan Repayments
+		 *     Type: double
 		 * @param {number} search_db_fec_pacs_loan_repayments Loan Repayments
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_fec_pacs(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_fec_pacs_committee: string | null | undefined, search_db_fec_pacs_total_receipts: number | null | undefined, search_db_fec_pacs_beginning_cash: number | null | undefined, search_db_fec_pacs_ending_cash: number | null | undefined, search_db_fec_pacs_contributions_from_individuals: number | null | undefined, search_db_fec_pacs_contributions_from_other_committees: number | null | undefined, search_db_fec_pacs_trans_from_affiliates: number | null | undefined, search_db_fec_pacs_contributions_to_other_committee: number | null | undefined, search_db_fec_pacs_contributions_from_candidate: number | null | undefined, search_db_fec_pacs_loans_from_candidate: number | null | undefined, search_db_fec_pacs_total_loans_received: number | null | undefined, search_db_fec_pacs_total_distributions: number | null | undefined, search_db_fec_pacs_transfers_to_affiliates: number | null | undefined, search_db_fec_pacs_refunds_to_individuals: number | null | undefined, search_db_fec_pacs_refends_to_othercommittees: number | null | undefined, search_db_fec_pacs_candidate_loan_repayments: number | null | undefined, search_db_fec_pacs_loan_repayments: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1591,34 +1931,57 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_feccandidates_name Name
 		 * @param {string} search_db_feccandidates_party Party
 		 * @param {string} search_db_feccandidates_state State
 		 * @param {string} search_db_feccandidates_district District
 		 * @param {string} search_db_feccandidates_gender Gender
 		 * @param {number} search_db_feccandidates_beginning_cash Beginning Cash
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_ending_cash Ending Cash
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_total_receipts Total Receipts
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_total_indivual_contributions Total Indivual Contributions
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_transfers_from_committees Transfers From Committees
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_transfers_to_committees Transfers To Committees
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_total_disbursements Total Disbursements
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_contributions_from_candidate Contributions From Candidate
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_loans_from_candidates Loans From Candidates
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_other_loans Other Loans
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_candidate_loan_repayments Candidate Loan Repayments
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_other_loan_repayments Other Loan Repayments
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_debts_owed_by Debts Owed By
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_contributions_from_other_committees Contributions From Other Committees
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_contributions_from_party_committees Contributions From Party Committees
+		 *     Type: double
 		 * @param {string} search_db_feccandidates_coverage_end_date Coverage End Date
 		 * @param {number} search_db_feccandidates_individual_refunds Individual Refunds
+		 *     Type: double
 		 * @param {number} search_db_feccandidates_committee_refunds Committee Refunds
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_feccandidates(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_feccandidates_name: string | null | undefined, search_db_feccandidates_party: string | null | undefined, search_db_feccandidates_state: string | null | undefined, search_db_feccandidates_district: string | null | undefined, search_db_feccandidates_gender: string | null | undefined, search_db_feccandidates_beginning_cash: number | null | undefined, search_db_feccandidates_ending_cash: number | null | undefined, search_db_feccandidates_total_receipts: number | null | undefined, search_db_feccandidates_total_indivual_contributions: number | null | undefined, search_db_feccandidates_transfers_from_committees: number | null | undefined, search_db_feccandidates_transfers_to_committees: number | null | undefined, search_db_feccandidates_total_disbursements: number | null | undefined, search_db_feccandidates_contributions_from_candidate: number | null | undefined, search_db_feccandidates_loans_from_candidates: number | null | undefined, search_db_feccandidates_other_loans: number | null | undefined, search_db_feccandidates_candidate_loan_repayments: number | null | undefined, search_db_feccandidates_other_loan_repayments: number | null | undefined, search_db_feccandidates_debts_owed_by: number | null | undefined, search_db_feccandidates_contributions_from_other_committees: number | null | undefined, search_db_feccandidates_contributions_from_party_committees: number | null | undefined, search_db_feccandidates_coverage_end_date: string | null | undefined, search_db_feccandidates_individual_refunds: number | null | undefined, search_db_feccandidates_committee_refunds: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1641,11 +2004,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_feed(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1668,11 +2037,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_file(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1695,11 +2070,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_fits_data_origin Origin
 		 * @param {string} search_fits_data_telescope Telescope
 		 * @param {string} search_fits_data_instrument Instrument
@@ -1725,11 +2106,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_ftp(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1752,11 +2139,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_gadgets_countdown(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1779,11 +2172,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_gadgets_stock(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1806,11 +2205,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_gadgets_weather(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1833,11 +2238,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_gazeteer_census_tracts_state State
 		 * @param {string} search_db_gazeteer_census_tracts_state_fips State Fips
 		 * @param {string} search_db_gazeteer_census_tracts_county_name County Name
@@ -1845,7 +2256,9 @@ export namespace MyNS {
 		 * @param {string} search_db_gazeteer_census_tracts_census_tract_id Census Tract Id
 		 * @param {string} search_db_gazeteer_census_tracts_full_census_tract_id Full Census Tract Id
 		 * @param {number} search_db_gazeteer_census_tracts_land_area Land Area
+		 *     Type: double
 		 * @param {number} search_db_gazeteer_census_tracts_water_area Water Area
+		 *     Type: double
 		 * @param {string} search_db_gazeteer_census_tracts_location Location
 		 * @return {void} No response was specified
 		 */
@@ -1869,18 +2282,26 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_gazeteer_counties_state_abbreviation State Abbreviation
 		 * @param {string} search_db_gazeteer_counties_state_fips State Fips
 		 * @param {string} search_db_gazeteer_counties_county_fips County Fips
 		 * @param {string} search_db_gazeteer_counties_full_county_fips Full County Fips
 		 * @param {string} search_db_gazeteer_counties_county_name County Name
 		 * @param {number} search_db_gazeteer_counties_area_land Area Land
+		 *     Type: double
 		 * @param {number} search_db_gazeteer_counties_area_water Area Water
+		 *     Type: double
 		 * @param {string} search_db_gazeteer_counties_location Location
 		 * @return {void} No response was specified
 		 */
@@ -1904,11 +2325,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_geojson(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1931,11 +2358,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_geotiff(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1958,17 +2391,29 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_geo_gpx_distance Distance
+		 *     Type: double
 		 * @param {number} search_geo_gpx_total_time Total Time
+		 *     Type: double
 		 * @param {number} search_geo_gpx_moving_time Moving Time
+		 *     Type: double
 		 * @param {number} search_geo_gpx_speed Average Speed
+		 *     Type: double
 		 * @param {number} search_geo_gpx_elevation_gain Elevation Gain
+		 *     Type: double
 		 * @param {number} search_geo_gpx_elevation_loss Elevation Loss
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_geo_gpx(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_geo_gpx_distance: number | null | undefined, search_geo_gpx_total_time: number | null | undefined, search_geo_gpx_moving_time: number | null | undefined, search_geo_gpx_speed: number | null | undefined, search_geo_gpx_elevation_gain: number | null | undefined, search_geo_gpx_elevation_loss: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1991,11 +2436,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_hdf5(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2018,11 +2469,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_kml(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2045,11 +2502,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_shapefile(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2072,11 +2535,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_geo_shapefile_fips(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2099,11 +2568,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_glossary(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2126,11 +2601,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_gridaggregation(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2153,11 +2634,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_group(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2180,11 +2667,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_hipchat_group(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2207,11 +2700,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_homepage(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2234,11 +2733,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_incident_incidenttype Incident Type
 		 * @param {string} search_incident_cause Cause
 		 * @param {string} search_incident_state State
@@ -2264,11 +2769,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_jeopardy_question Question
 		 * @param {string} search_db_jeopardy_answer Answer
 		 * @param {string} search_db_jeopardy_round Round
@@ -2296,11 +2807,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_latlonimage(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2323,11 +2840,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_lidar_collection(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2350,11 +2873,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_lidar_las(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2377,11 +2906,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_lidar_lvis(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2404,11 +2939,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_link(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2431,11 +2972,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_localfiles(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2458,11 +3005,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_locations_name Name
 		 * @param {string} search_db_locations_type Type
 		 * @param {string} search_db_locations_location Location
@@ -2488,11 +3041,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_map_googlemap(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2515,11 +3074,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_audiofile(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2542,11 +3107,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_imageloop(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2569,11 +3140,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_photoalbum(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2596,11 +3173,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_video_channel(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2623,11 +3206,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_video_quicktime(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2650,11 +3239,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_media_youtubevideo(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2677,11 +3272,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_notes_note Note
 		 * @return {void} No response was specified
 		 */
@@ -2705,11 +3306,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_notes_jsonfile(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2732,11 +3339,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_notes_note(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2759,11 +3372,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_notes_notebook(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2786,11 +3405,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_nwsfeed(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2813,11 +3438,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_opendaplink(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2840,11 +3471,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_owl_class(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2867,11 +3504,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_owl_ontology(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2894,11 +3537,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_pasteitentry(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2921,11 +3570,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_point_text(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2948,15 +3603,22 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_police_stop_data_race Race
 		 * @param {string} search_db_police_stop_data_ethnicity Ethnicity
 		 * @param {string} search_db_police_stop_data_sex Sex
 		 * @param {number} search_db_police_stop_data_minutes Minutes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_police_stop_data_date Date
 		 * @param {string} search_db_police_stop_data_address Address
 		 * @param {string} search_db_police_stop_data_resident Resident
@@ -2982,11 +3644,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_poll(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3009,11 +3677,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_campaign(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3036,11 +3710,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_casestudy_intended_use Intended Use
 		 * @param {string} search_project_casestudy_location Where
 		 * @return {void} No response was specified
@@ -3065,11 +3745,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_contribution(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3092,11 +3778,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_dataformat_data_type Data Type
 		 * @param {string} search_project_dataformat_field Field
 		 * @return {void} No response was specified
@@ -3121,11 +3813,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_dataset_dataset_id Dataset ID
 		 * @param {string} search_project_dataset_data_type Data Type
 		 * @param {string} search_project_dataset_data_level Data Level
@@ -3151,11 +3849,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_deployment(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3178,11 +3882,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_experiment(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3205,11 +3915,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_fieldnote(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3232,11 +3948,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_gps_controlpoints(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3259,11 +3981,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_gps_raw(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3286,11 +4014,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_gps_rinex(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3313,11 +4047,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_instrument(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3340,11 +4080,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_learning_resource_topic Topic
 		 * @param {string} search_project_learning_resource_grade_level Grade Level
 		 * @return {void} No response was specified
@@ -3369,11 +4115,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_meeting_topic Topic
 		 * @param {string} search_project_meeting_location Location
 		 * @param {string} search_project_meeting_participants Participants
@@ -3399,11 +4151,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_organization_organization_type Organization Type
 		 * @param {string} search_project_organization_status Status
 		 * @return {void} No response was specified
@@ -3428,11 +4186,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_program(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3455,11 +4219,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_project(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3482,11 +4252,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_service_service_type Service Type
 		 * @param {string} search_project_service_provider Provider
 		 * @return {void} No response was specified
@@ -3511,11 +4287,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_site_short_name Short Name
 		 * @param {string} search_project_site_site_type Site Type
 		 * @param {string} search_project_site_status Status
@@ -3545,11 +4327,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_softwarepackage_software_use Software Use
 		 * @param {string} search_project_softwarepackage_software_type Software Type
 		 * @param {string} search_project_softwarepackage_domain Science Domain
@@ -3579,11 +4367,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_standard_name_unit Canonical Unit
 		 * @param {string} search_project_standard_name_aliases Aliases
 		 * @return {void} No response was specified
@@ -3608,11 +4402,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_surveylocation(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3635,11 +4435,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_project_term_value Term Value
 		 * @return {void} No response was specified
 		 */
@@ -3663,11 +4469,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_visit(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3690,11 +4502,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_project_vocabulary(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3717,15 +4535,22 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_property_sales_property_address Property Address
 		 * @param {string} search_db_property_sales_city City
 		 * @param {string} search_db_property_sales_zipcode Zip Code
 		 * @param {number} search_db_property_sales_sale_price Sale Price
+		 *     Type: double
 		 * @param {string} search_db_property_sales_sale_date Sale Date
 		 * @param {string} search_db_property_sales_seller Seller
 		 * @param {string} search_db_property_sales_buyer Buyer
@@ -3756,22 +4581,33 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_propertydb_property_id Property ID
 		 * @param {string} search_db_propertydb_owner Owner
 		 * @param {string} search_db_propertydb_address Address
 		 * @param {string} search_db_propertydb_city City
 		 * @param {string} search_db_propertydb_state State
 		 * @param {number} search_db_propertydb_value Property Value
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_propertydb_building_type Building Type
 		 * @param {number} search_db_propertydb_house_size Building Sq Ft
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_propertydb_lot_sqft Lot Size Sq Ft
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_db_propertydb_lot_acres Lot Size Acres
+		 *     Type: double
 		 * @param {number} search_db_propertydb_price_sqft $-sqft
+		 *     Type: double
 		 * @param {string} search_db_propertydb_location Location
 		 * @return {void} No response was specified
 		 */
@@ -3795,11 +4631,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_python_notebook(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3822,11 +4664,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_slack_team(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3849,11 +4697,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_statusboard_what What
 		 * @param {string} search_db_statusboard_status Status
 		 * @return {void} No response was specified
@@ -3878,11 +4732,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_sunrisesunset(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3905,15 +4765,22 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_tasks_title Title
 		 * @param {string} search_db_tasks_priority Priority
 		 * @param {string} search_db_tasks_status Status
 		 * @param {number} search_db_tasks_complete % Complete
+		 *     Type: double
 		 * @param {string} search_db_tasks_assignedto Assigned To
 		 * @param {string} search_db_tasks_startdate Start Date
 		 * @param {string} search_db_tasks_enddate End Date
@@ -3939,31 +4806,43 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_tmdbmovies_original_title Original Title
 		 * @param {string} search_db_tmdbmovies_overview Overview
 		 * @param {number} search_db_tmdbmovies_budget Budget
+		 *     Type: double
 		 * @param {string} search_db_tmdbmovies_genres Genres
 		 * @param {string} search_db_tmdbmovies_homepage Homepage
 		 * @param {string} search_db_tmdbmovies_movie_id Id
 		 * @param {string} search_db_tmdbmovies_keywords Keywords
 		 * @param {string} search_db_tmdbmovies_original_language Original Language
 		 * @param {number} search_db_tmdbmovies_popularity Popularity
+		 *     Type: double
 		 * @param {string} search_db_tmdbmovies_production_companies Production Companies
 		 * @param {string} search_db_tmdbmovies_production_countries Production Countries
 		 * @param {string} search_db_tmdbmovies_release_date Release Date
 		 * @param {number} search_db_tmdbmovies_revenue Revenue
+		 *     Type: double
 		 * @param {number} search_db_tmdbmovies_runtime Runtime
+		 *     Type: double
 		 * @param {string} search_db_tmdbmovies_spoken_languages Spoken Languages
 		 * @param {string} search_db_tmdbmovies_status Status
 		 * @param {string} search_db_tmdbmovies_tagline Tagline
 		 * @param {string} search_db_tmdbmovies_title Title
 		 * @param {number} search_db_tmdbmovies_vote_average Vote Average
+		 *     Type: double
 		 * @param {number} search_db_tmdbmovies_vote_count Vote Count
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_tmdbmovies(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_tmdbmovies_original_title: string | null | undefined, search_db_tmdbmovies_overview: string | null | undefined, search_db_tmdbmovies_budget: number | null | undefined, search_db_tmdbmovies_genres: string | null | undefined, search_db_tmdbmovies_homepage: string | null | undefined, search_db_tmdbmovies_movie_id: string | null | undefined, search_db_tmdbmovies_keywords: string | null | undefined, search_db_tmdbmovies_original_language: string | null | undefined, search_db_tmdbmovies_popularity: number | null | undefined, search_db_tmdbmovies_production_companies: string | null | undefined, search_db_tmdbmovies_production_countries: string | null | undefined, search_db_tmdbmovies_release_date: string | null | undefined, search_db_tmdbmovies_revenue: number | null | undefined, search_db_tmdbmovies_runtime: number | null | undefined, search_db_tmdbmovies_spoken_languages: string | null | undefined, search_db_tmdbmovies_status: string | null | undefined, search_db_tmdbmovies_tagline: string | null | undefined, search_db_tmdbmovies_title: string | null | undefined, search_db_tmdbmovies_vote_average: number | null | undefined, search_db_tmdbmovies_vote_count: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3986,11 +4865,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} search_db_todo_checked Done
 		 * @param {string} search_db_todo_title What
 		 * @param {string} search_db_todo_category Category
@@ -4016,11 +4901,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_trip_event(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4043,11 +4934,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_trip_flight(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4070,11 +4967,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_trip_hotel(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4097,11 +5000,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_trip_report(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4124,11 +5033,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_trip_trip(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4151,11 +5066,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_awc_metar_site_id Site ID
 		 * @return {void} No response was specified
 		 */
@@ -4179,11 +5100,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_biz_stockseries(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4206,11 +5133,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_bls_series_survey_name Survey Name
 		 * @param {string} search_type_bls_series_measure_data_type Measure Data Type
 		 * @param {string} search_type_bls_series_industry Industry
@@ -4240,11 +5173,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_bls_survey(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4267,11 +5206,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_census_acs_fields Indicators
 		 * @param {string} search_type_census_acs_for_type For
 		 * @param {string} search_type_census_acs_in_type1 In
@@ -4298,11 +5243,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_daymet(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4325,11 +5276,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_db_table(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4352,11 +5309,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_csv(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4379,11 +5342,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_doc(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4406,11 +5375,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_html(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4433,11 +5408,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_pdf(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4460,11 +5441,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_ppt(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4487,11 +5474,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_document_xls(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4514,11 +5507,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_drilsdown_casestudy(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4541,11 +5540,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_edgar_filing_form_type Form Type
 		 * @param {string} search_type_edgar_filing_company_name Company Name
 		 * @param {string} search_type_edgar_filing_cik_number CIK Number
@@ -4574,11 +5579,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_eia_category(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4601,11 +5612,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_eia_series(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4628,11 +5645,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_featureserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4655,11 +5678,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_geometryserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4682,11 +5711,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_gpserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4709,11 +5744,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_imageserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4736,11 +5777,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_esri_layer_layer_type Layer Type
 		 * @return {void} No response was specified
 		 */
@@ -4764,11 +5811,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_mapserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4791,11 +5844,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_restfolder(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4818,11 +5877,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_restserver(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4845,11 +5910,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_esri_restservice(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4872,11 +5943,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_extremes_region US Climate Region
 		 * @param {string} search_type_extremes_variable Variable
 		 * @return {void} No response was specified
@@ -4901,11 +5978,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_fred_category(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4928,11 +6011,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_fred_series(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4955,11 +6044,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_gtfs_agency(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -4982,11 +6077,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_gtfs_route_route_id Route ID
 		 * @param {string} search_type_gtfs_route_stop_names Stop Names
 		 * @return {void} No response was specified
@@ -5011,11 +6112,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_gtfs_routes(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5038,11 +6145,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_gtfs_stop_stop_id Stop ID
 		 * @param {string} search_type_gtfs_stop_stop_code Stop Code
 		 * @param {string} search_type_gtfs_stop_zone_id Zone ID
@@ -5070,11 +6183,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_gtfs_stops(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5097,11 +6216,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_gtfs_trip_trip_id Trip ID
 		 * @param {string} search_type_gtfs_trip_stop_ids Stop IDS
 		 * @param {string} search_type_gtfs_trip_wheelchair_accessible Wheelchair Accessible
@@ -5128,11 +6253,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_hazarddata_source Source Agency
 		 * @return {void} No response was specified
 		 */
@@ -5156,11 +6287,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_hydro_colorado_site_id Site ID
 		 * @return {void} No response was specified
 		 */
@@ -5184,11 +6321,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_idv_bundle(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5211,11 +6354,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_image(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5238,11 +6387,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_image_airport(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5265,11 +6420,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_image_webcam(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5292,11 +6453,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_mb(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5319,11 +6486,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_mb_collection(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5346,11 +6519,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_mb_point_basic(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5373,12 +6552,19 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_type_metameta_dictionary_field_index Index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_metameta_dictionary_dictionary_type Type
 		 * @param {string} search_type_metameta_dictionary_short_name Short Name
 		 * @param {string} search_type_metameta_dictionary_super_type Super Type
@@ -5408,17 +6594,25 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} search_type_metameta_field_field_index Index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_metameta_field_field_id Field ID
 		 * @param {string} search_type_metameta_field_datatype Data Type
 		 * @param {string} search_type_metameta_field_enumeration_values Enumeration Values
 		 * @param {string} search_type_metameta_field_properties Properties
 		 * @param {number} search_type_metameta_field_database_column_size Database Column Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_metameta_field_missing Missing Value
 		 * @param {string} search_type_metameta_field_unit Unit
 		 * @return {void} No response was specified
@@ -5443,11 +6637,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_nasaames(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5470,11 +6670,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_ncss(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5497,11 +6703,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_nitf(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5524,11 +6736,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_ameriflux_level2_site_id Site ID
 		 * @param {string} search_type_point_ameriflux_level2_contact Contact
 		 * @param {string} search_type_point_ameriflux_level2_ecosystem_type Ecosystem Type
@@ -5554,11 +6772,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_amrc_final_site_id Site ID
 		 * @param {string} search_type_point_amrc_final_site_name Site Name
 		 * @param {string} search_type_point_amrc_final_argos_id Argos ID
@@ -5584,11 +6808,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_amrc_freewave_station_name Station Name
 		 * @param {string} search_type_point_amrc_freewave_format File Format
 		 * @param {string} search_type_point_amrc_freewave_datalogger_model Data Logger Model
@@ -5615,11 +6845,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_czo(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5642,11 +6878,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_gcnet(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5669,11 +6911,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_geomag_iaga2002_iaga_code IAGA Code
 		 * @param {string} search_type_point_geomag_iaga2002_station_name Station Name
 		 * @param {string} search_type_point_geomag_iaga2002_source_of_data Source of data
@@ -5702,11 +6950,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_hydro_waterml_site_code Site Code
 		 * @param {string} search_type_point_hydro_waterml_site_name Site Name
 		 * @return {void} No response was specified
@@ -5731,11 +6985,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_icebridge_atm_icessn(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5758,11 +7018,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_icebridge_atm_qfit(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5785,11 +7051,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_icebridge_mccords_irmcr2(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5812,11 +7084,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_icebridge_mccords_irmcr3(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5839,11 +7117,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_icebridge_paris(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5866,11 +7150,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_idv(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5893,11 +7183,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_inline(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5920,11 +7216,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ncdc_climate(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5947,11 +7249,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_netcdf(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -5974,11 +7282,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_noaa_carbon_site_id Site ID
 		 * @param {string} search_type_point_noaa_carbon_parameter Parameter
 		 * @param {string} search_type_point_noaa_carbon_project Project
@@ -6006,11 +7320,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_noaa_flask_event_site_id Site ID
 		 * @param {string} search_type_point_noaa_flask_event_parameter Parameter
 		 * @param {string} search_type_point_noaa_flask_event_project Project
@@ -6038,11 +7358,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_noaa_flask_month_site_id Site ID
 		 * @param {string} search_type_point_noaa_flask_month_parameter Parameter
 		 * @param {string} search_type_point_noaa_flask_month_project Project
@@ -6070,11 +7396,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_noaa_madis(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6097,11 +7429,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_noaa_tower_site_id Site ID
 		 * @return {void} No response was specified
 		 */
@@ -6125,11 +7463,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ocean_cnv(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6152,11 +7496,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ocean_csv_sado_TTS(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6179,11 +7529,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ocean_csv_sado_meteo(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6206,11 +7562,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ocean_csv_sado_position(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6233,11 +7595,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_ocean_netcdf_track_platform Platform
 		 * @return {void} No response was specified
 		 */
@@ -6261,11 +7629,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_ocean_netcdf_track_platform Platform
 		 * @return {void} No response was specified
 		 */
@@ -6289,11 +7663,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_ocean_ooi_dmgx(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6316,15 +7696,22 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_openaq_location Location
 		 * @param {string} search_type_point_openaq_country Country
 		 * @param {string} search_type_point_openaq_city City
 		 * @param {number} search_type_point_openaq_hours_offset Offset Hours
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_openaq(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_type_point_openaq_location: string | null | undefined, search_type_point_openaq_country: string | null | undefined, search_type_point_openaq_city: string | null | undefined, search_type_point_openaq_hours_offset: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6347,11 +7734,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_pbo_position_time_series_four_char_id Four Char ID
 		 * @param {string} search_type_point_pbo_position_time_series_station_name Station Name
 		 * @param {string} search_type_point_pbo_position_time_series_reference_frame Reference Frame
@@ -6379,11 +7772,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_simple_records(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6406,11 +7805,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_snotel_site_id Site ID
 		 * @param {string} search_type_point_snotel_site_number Site Number
 		 * @param {string} search_type_point_snotel_state State
@@ -6439,11 +7844,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_point_text(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6466,11 +7877,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_point_wsbb_ggp_station Station
 		 * @param {string} search_type_point_wsbb_ggp_instrument Instrument
 		 * @param {string} search_type_point_wsbb_ggp_author Author
@@ -6496,11 +7913,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_type_psd_monthly_climate_index_units Units
 		 * @return {void} No response was specified
 		 */
@@ -6524,11 +7947,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_quandl_series(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6551,11 +7980,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_service_group(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6578,11 +8013,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_service_link(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6605,11 +8046,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_socrata_series(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6632,11 +8079,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_sounding_cod(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6659,11 +8112,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_sounding_frd(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6686,11 +8145,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_sounding_gsd(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6713,11 +8178,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_sounding_wyoming(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6740,11 +8211,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_tmy(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6767,11 +8244,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_tweet(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6794,11 +8277,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_usgs_gauge(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6821,11 +8310,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_virtual(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6848,11 +8343,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_wms_capabilities(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6875,11 +8376,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_type_wms_layer(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6902,22 +8409,31 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_ufo_sightings_datetime Datetime
 		 * @param {string} search_db_ufo_sightings_city City
 		 * @param {string} search_db_ufo_sightings_state State
 		 * @param {string} search_db_ufo_sightings_country Country
 		 * @param {string} search_db_ufo_sightings_shape Shape
 		 * @param {number} search_db_ufo_sightings_duration_seconds Duration (seconds)
+		 *     Type: double
 		 * @param {string} search_db_ufo_sightings_duration_hours_min Duration (hours/min)
 		 * @param {string} search_db_ufo_sightings_comments Comments
 		 * @param {string} search_db_ufo_sightings_date_posted Date Posted
 		 * @param {number} search_db_ufo_sightings_latitude Latitude
+		 *     Type: double
 		 * @param {number} search_db_ufo_sightings_longitude Longitude
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_ufo_sightings(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_ufo_sightings_datetime: string | null | undefined, search_db_ufo_sightings_city: string | null | undefined, search_db_ufo_sightings_state: string | null | undefined, search_db_ufo_sightings_country: string | null | undefined, search_db_ufo_sightings_shape: string | null | undefined, search_db_ufo_sightings_duration_seconds: number | null | undefined, search_db_ufo_sightings_duration_hours_min: string | null | undefined, search_db_ufo_sightings_comments: string | null | undefined, search_db_ufo_sightings_date_posted: string | null | undefined, search_db_ufo_sightings_latitude: number | null | undefined, search_db_ufo_sightings_longitude: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6940,17 +8456,24 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_us_places_feature_name Place Name
 		 * @param {string} search_db_us_places_feature_class Place Type
 		 * @param {string} search_db_us_places_state_alpha State
 		 * @param {string} search_db_us_places_county_name County Name
 		 * @param {string} search_db_us_places_location Location
 		 * @param {number} search_db_us_places_elev_in_ft Elev In Ft
+		 *     Type: double
 		 * @return {void} No response was specified
 		 */
 		Search_us_places(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined, search_db_us_places_feature_name: string | null | undefined, search_db_us_places_feature_class: string | null | undefined, search_db_us_places_state_alpha: string | null | undefined, search_db_us_places_county_name: string | null | undefined, search_db_us_places_location: string | null | undefined, search_db_us_places_elev_in_ft: number | null | undefined): Observable<HttpResponse<string>> {
@@ -6973,11 +8496,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_db_vote_yesno_vote My Vote
 		 * @return {void} No response was specified
 		 */
@@ -7001,11 +8530,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		Search_weblog(text: string | null | undefined, name: string | null | undefined, description: string | null | undefined, fromdate: Date | null | undefined, todate: Date | null | undefined, createdate_from: Date | null | undefined, createdate_to: Date | null | undefined, changedate_from: Date | null | undefined, changedate_to: Date | null | undefined, group: string | null | undefined, filesuffix: string | null | undefined, maxlatitude: number | null | undefined, minlongitude: number | null | undefined, minlatitude: number | null | undefined, maxlongitude: number | null | undefined, max: number | null | undefined, skip: number | null | undefined): Observable<HttpResponse<string>> {
@@ -7028,11 +8563,17 @@ export namespace MyNS {
 		 * @param {string} group Parent entry
 		 * @param {string} filesuffix File suffix
 		 * @param {number} maxlatitude Northern bounds of search
+		 *     Type: float
 		 * @param {number} minlongitude Western bounds of search
+		 *     Type: float
 		 * @param {number} minlatitude Southern bounds of search
+		 *     Type: float
 		 * @param {number} maxlongitude Eastern bounds of search
+		 *     Type: float
 		 * @param {number} max Max number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip Number to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search_wikipage_wikitext Wiki Text
 		 * @param {string} search_wikipage_category Wiki Page Category
 		 * @return {void} No response was specified

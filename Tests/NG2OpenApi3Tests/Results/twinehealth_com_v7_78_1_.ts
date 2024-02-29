@@ -37,10 +37,14 @@ export namespace MyNS {
 
 	export interface ActionMetricValidationsMaximum {
 		unit?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ActionMetricValidationsMaximumFormProperties {
 		unit: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateActionMetricValidationsMaximumFormGroup() {
@@ -53,10 +57,14 @@ export namespace MyNS {
 
 	export interface ActionMetricValidationsMinimum {
 		unit?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ActionMetricValidationsMinimumFormProperties {
 		unit: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateActionMetricValidationsMinimumFormGroup() {
@@ -151,12 +159,20 @@ export namespace MyNS {
 	}
 
 	export interface ActionResourceAttributesAdherence {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		complete?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		due?: number | null;
 		streak?: ActionResourceAttributesAdherenceStreak;
 	}
 	export interface ActionResourceAttributesAdherenceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		complete: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		due: FormControl<number | null | undefined>,
 	}
 	export function CreateActionResourceAttributesAdherenceFormGroup() {
@@ -168,10 +184,14 @@ export namespace MyNS {
 	}
 
 	export interface ActionResourceAttributesAdherenceStreak {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		updated_at?: string | null;
 	}
 	export interface ActionResourceAttributesAdherenceStreakFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		updated_at: FormControl<string | null | undefined>,
 	}
@@ -1378,8 +1398,12 @@ export namespace MyNS {
 
 	export interface PatientHealthMetricResourceAttributes {
 		code?: PatientHealthMetricResourceAttributesCode;
+
+		/** Type: double */
 		diastolic?: number | null;
 		occurred_at?: string | null;
+
+		/** Type: double */
 		systolic?: number | null;
 		type?: PatientHealthMetricResourceAttributesType | null;
 		unit?: string | null;
@@ -1388,8 +1412,12 @@ export namespace MyNS {
 		value?: any;
 	}
 	export interface PatientHealthMetricResourceAttributesFormProperties {
+
+		/** Type: double */
 		diastolic: FormControl<number | null | undefined>,
 		occurred_at: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		systolic: FormControl<number | null | undefined>,
 		type: FormControl<PatientHealthMetricResourceAttributesType | null | undefined>,
 		unit: FormControl<string | null | undefined>,
@@ -1630,6 +1658,8 @@ export namespace MyNS {
 		addresses?: Array<Address>;
 		archive_history?: Array<ArchiveHistory>;
 		archived?: boolean | null;
+
+		/** Type: DateOnly */
 		birth_date?: Date | null;
 		email_address?: string | null;
 		enrolled_at?: string | null;
@@ -1651,6 +1681,8 @@ export namespace MyNS {
 	}
 	export interface PatientResourceAttributesFormProperties {
 		archived: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		birth_date: FormControl<Date | null | undefined>,
 		email_address: FormControl<string | null | undefined>,
 		enrolled_at: FormControl<string | null | undefined>,
@@ -1862,6 +1894,7 @@ export namespace MyNS {
 		/**
 		 * Value of the earned reward that has been fulfilled. (Must be greater than or equal to 0)
 		 * Required
+		 * Type: double
 		 */
 		fulfilled_value: number;
 	}
@@ -1879,6 +1912,7 @@ export namespace MyNS {
 		/**
 		 * Value of the earned reward that has been fulfilled. (Must be greater than or equal to 0)
 		 * Required
+		 * Type: double
 		 */
 		fulfilled_value: FormControl<number | null | undefined>,
 	}
@@ -2022,13 +2056,17 @@ export namespace MyNS {
 		/**
 		 * Value of the reward that has been earned. (Must not exceed the allocated value for the reward)
 		 * Required
+		 * Type: double
 		 */
 		earned_value: number;
 
 		/** Date at which the reward earning was fulfilled. (Read-only property) */
 		fulfilled_at?: string | null;
 
-		/** Value of the earned reward that has been fulfilled. (Read-only property) */
+		/**
+		 * Value of the earned reward that has been fulfilled. (Read-only property)
+		 * Type: double
+		 */
 		fulfilled_value?: number | null;
 
 		/** If true, the reward earning is ready to be fulfilled, either because the reward program activation was fulfill_as_earned or because the reward program activation has been deactivated. (Read-only property) */
@@ -2048,13 +2086,17 @@ export namespace MyNS {
 		/**
 		 * Value of the reward that has been earned. (Must not exceed the allocated value for the reward)
 		 * Required
+		 * Type: double
 		 */
 		earned_value: FormControl<number | null | undefined>,
 
 		/** Date at which the reward earning was fulfilled. (Read-only property) */
 		fulfilled_at: FormControl<string | null | undefined>,
 
-		/** Value of the earned reward that has been fulfilled. (Read-only property) */
+		/**
+		 * Value of the earned reward that has been fulfilled. (Read-only property)
+		 * Type: double
+		 */
 		fulfilled_value: FormControl<number | null | undefined>,
 
 		/** If true, the reward earning is ready to be fulfilled, either because the reward program activation was fulfill_as_earned or because the reward program activation has been deactivated. (Read-only property) */
@@ -2256,7 +2298,10 @@ export namespace MyNS {
 		/** If true, the reward program is currently active. */
 		active?: boolean | null;
 
-		/** Number of rewards allocated. (Read-only property) */
+		/**
+		 * Number of rewards allocated. (Read-only property)
+		 * Type: double
+		 */
 		allocated_count?: number | null;
 
 		/** Unit of the reward program budget. (Read-only property) */
@@ -2265,7 +2310,10 @@ export namespace MyNS {
 		/** Date at which the reward program was deactivated. (Must be after the activated_at date) */
 		deactivated_at?: string | null;
 
-		/** Number of reward earnings. (Read-only property) */
+		/**
+		 * Number of reward earnings. (Read-only property)
+		 * Type: double
+		 */
 		earned_count?: number | null;
 
 		/** Date at which the reward program activation expires. (Read-only property set by adding the days_active from the reward program to the activated_at date) */
@@ -2274,10 +2322,16 @@ export namespace MyNS {
 		/** If true, the rewards created for a patient for the program can be fulfulled as they are earned. If false, the rewards should only be fulfilled when the program is deactivated. (Read-only property denormalized from the reward program) */
 		fulfill_as_earned?: boolean | null;
 
-		/** Total value of reward allocated. (Read-only property) */
+		/**
+		 * Total value of reward allocated. (Read-only property)
+		 * Type: double
+		 */
 		total_allocated_value?: number | null;
 
-		/** Total value of reward earnings. (Read-only property) */
+		/**
+		 * Total value of reward earnings. (Read-only property)
+		 * Type: double
+		 */
 		total_earned_value?: number | null;
 	}
 	export interface RewardProgramActivationResourceAttributesFormProperties {
@@ -2291,7 +2345,10 @@ export namespace MyNS {
 		/** If true, the reward program is currently active. */
 		active: FormControl<boolean | null | undefined>,
 
-		/** Number of rewards allocated. (Read-only property) */
+		/**
+		 * Number of rewards allocated. (Read-only property)
+		 * Type: double
+		 */
 		allocated_count: FormControl<number | null | undefined>,
 
 		/** Unit of the reward program budget. (Read-only property) */
@@ -2300,7 +2357,10 @@ export namespace MyNS {
 		/** Date at which the reward program was deactivated. (Must be after the activated_at date) */
 		deactivated_at: FormControl<string | null | undefined>,
 
-		/** Number of reward earnings. (Read-only property) */
+		/**
+		 * Number of reward earnings. (Read-only property)
+		 * Type: double
+		 */
 		earned_count: FormControl<number | null | undefined>,
 
 		/** Date at which the reward program activation expires. (Read-only property set by adding the days_active from the reward program to the activated_at date) */
@@ -2309,10 +2369,16 @@ export namespace MyNS {
 		/** If true, the rewards created for a patient for the program can be fulfulled as they are earned. If false, the rewards should only be fulfilled when the program is deactivated. (Read-only property denormalized from the reward program) */
 		fulfill_as_earned: FormControl<boolean | null | undefined>,
 
-		/** Total value of reward allocated. (Read-only property) */
+		/**
+		 * Total value of reward allocated. (Read-only property)
+		 * Type: double
+		 */
 		total_allocated_value: FormControl<number | null | undefined>,
 
-		/** Total value of reward earnings. (Read-only property) */
+		/**
+		 * Total value of reward earnings. (Read-only property)
+		 * Type: double
+		 */
 		total_earned_value: FormControl<number | null | undefined>,
 	}
 	export function CreateRewardProgramActivationResourceAttributesFormGroup() {
@@ -2458,13 +2524,17 @@ export namespace MyNS {
 		/**
 		 * Value of the budget for the reward program. (Must be greater than 0)
 		 * Required
+		 * Type: double
 		 */
 		budget_value: number;
 
 		/** Description of the reward program - designed to be a comprehensive text description */
 		description?: string | null;
 
-		/** Number of days that a program can be active after it has been activated for a patient. (Must be greater than 0) */
+		/**
+		 * Number of days that a program can be active after it has been activated for a patient. (Must be greater than 0)
+		 * Type: double
+		 */
 		duration_active?: number | null;
 
 		/**
@@ -2502,13 +2572,17 @@ export namespace MyNS {
 		/**
 		 * Value of the budget for the reward program. (Must be greater than 0)
 		 * Required
+		 * Type: double
 		 */
 		budget_value: FormControl<number | null | undefined>,
 
 		/** Description of the reward program - designed to be a comprehensive text description */
 		description: FormControl<string | null | undefined>,
 
-		/** Number of days that a program can be active after it has been activated for a patient. (Must be greater than 0) */
+		/**
+		 * Number of days that a program can be active after it has been activated for a patient. (Must be greater than 0)
+		 * Type: double
+		 */
 		duration_active: FormControl<number | null | undefined>,
 
 		/**
@@ -2672,6 +2746,7 @@ export namespace MyNS {
 		/**
 		 * Value of the reward program budget allocated for the reward. (Must not exceed the remaining budget for the reward program activation)
 		 * Required
+		 * Type: double
 		 */
 		allocated_value: number;
 
@@ -2684,13 +2759,19 @@ export namespace MyNS {
 		/** Date at which the reward was earned. (Read-only property) */
 		earned_at?: string | null;
 
-		/** Value of the reward that has been earned. (Read-only property) */
+		/**
+		 * Value of the reward that has been earned. (Read-only property)
+		 * Type: double
+		 */
 		earned_value?: number | null;
 
 		/** Date at which the reward earning was fulfilled. (Read-only property) */
 		fulfilled_at?: string | null;
 
-		/** Value of the earned reward that has been fulfilled. (Read-only property) */
+		/**
+		 * Value of the earned reward that has been fulfilled. (Read-only property)
+		 * Type: double
+		 */
 		fulfilled_value?: number | null;
 
 		/** Date at which the patient aspires to achieve the reward. (Must be the same or after the allocated_at date) */
@@ -2713,6 +2794,7 @@ export namespace MyNS {
 		/**
 		 * Value of the reward program budget allocated for the reward. (Must not exceed the remaining budget for the reward program activation)
 		 * Required
+		 * Type: double
 		 */
 		allocated_value: FormControl<number | null | undefined>,
 
@@ -2725,13 +2807,19 @@ export namespace MyNS {
 		/** Date at which the reward was earned. (Read-only property) */
 		earned_at: FormControl<string | null | undefined>,
 
-		/** Value of the reward that has been earned. (Read-only property) */
+		/**
+		 * Value of the reward that has been earned. (Read-only property)
+		 * Type: double
+		 */
 		earned_value: FormControl<number | null | undefined>,
 
 		/** Date at which the reward earning was fulfilled. (Read-only property) */
 		fulfilled_at: FormControl<string | null | undefined>,
 
-		/** Value of the earned reward that has been fulfilled. (Read-only property) */
+		/**
+		 * Value of the earned reward that has been fulfilled. (Read-only property)
+		 * Type: double
+		 */
 		fulfilled_value: FormControl<number | null | undefined>,
 
 		/** Date at which the patient aspires to achieve the reward. (Must be the same or after the allocated_at date) */
@@ -3188,10 +3276,14 @@ export namespace MyNS {
 	}
 
 	export interface FetchMetaResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		req_id?: string | null;
 	}
 	export interface FetchMetaResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		req_id: FormControl<string | null | undefined>,
 	}
@@ -3854,13 +3946,21 @@ export namespace MyNS {
 	}
 
 	export interface HealthProfileResourceAttributesStats {
+
+		/** Type: double */
 		answered?: number | null;
 		category?: HealthProfileResourceAttributesStatsCategory | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface HealthProfileResourceAttributesStatsFormProperties {
+
+		/** Type: double */
 		answered: FormControl<number | null | undefined>,
 		category: FormControl<HealthProfileResourceAttributesStatsCategory | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthProfileResourceAttributesStatsFormGroup() {
@@ -4121,10 +4221,16 @@ export namespace MyNS {
 		/** Specifies if the value in property should be equal to the one in value */
 		shouldBeEqual?: boolean | null;
 
-		/** Specifies if the value in property should be greater than the one in value */
+		/**
+		 * Specifies if the value in property should be greater than the one in value
+		 * Type: double
+		 */
 		shouldBeGreaterThan?: number | null;
 
-		/** Specifies if the value in property should be less than the one in value */
+		/**
+		 * Specifies if the value in property should be less than the one in value
+		 * Type: double
+		 */
 		shouldBeLessThan?: number | null;
 
 		/** The value to be compared with the one in property, based on shouldBeEqual, shouldBeGreaterThan, or shouldBeLessThan */
@@ -4136,10 +4242,16 @@ export namespace MyNS {
 		/** Specifies if the value in property should be equal to the one in value */
 		shouldBeEqual: FormControl<boolean | null | undefined>,
 
-		/** Specifies if the value in property should be greater than the one in value */
+		/**
+		 * Specifies if the value in property should be greater than the one in value
+		 * Type: double
+		 */
 		shouldBeGreaterThan: FormControl<number | null | undefined>,
 
-		/** Specifies if the value in property should be less than the one in value */
+		/**
+		 * Specifies if the value in property should be less than the one in value
+		 * Type: double
+		 */
 		shouldBeLessThan: FormControl<number | null | undefined>,
 
 		/** The value to be compared with the one in property, based on shouldBeEqual, shouldBeGreaterThan, or shouldBeLessThan */
@@ -4641,15 +4753,31 @@ export namespace MyNS {
 	}
 
 	export interface PatientPlanSummaryResourceAttributesWindow_notification_times {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		afternoon?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		evening?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		morning?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		night?: number | null;
 	}
 	export interface PatientPlanSummaryResourceAttributesWindow_notification_timesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		afternoon: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		evening: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		morning: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		night: FormControl<number | null | undefined>,
 	}
 	export function CreatePatientPlanSummaryResourceAttributesWindow_notification_timesFormGroup() {
@@ -5382,8 +5510,11 @@ export namespace MyNS {
 		 * @param {string} filter_created_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for events created in November 2017 (America/New_York): `filter[created_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {string} filter_updated_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for events updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_cursor Page cursor
 		 * @param {FetchCalendarEventsInclude} include List of related resources to include in the response
 		 * @return {void} OK
@@ -5495,8 +5626,11 @@ export namespace MyNS {
 		 * @param {string} filter_groups Comma-separated list of group ids. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		 * @param {string} filter_organization Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_cursor Page cursor
 		 * @param {FetchHealthProfilesInclude} include List of related resources to include in the response
 		 * @return {void} OK
@@ -5525,8 +5659,11 @@ export namespace MyNS {
 		 * @param {string} filter_groups Comma-separated list of group ids. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		 * @param {string} filter_organization Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[group]`, or `filter[organization]`.
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 100
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_cursor Page cursor
 		 * @param {PatientResourceType} include List of related resources to include in the response
 		 * @return {void} OK
@@ -5661,8 +5798,11 @@ export namespace MyNS {
 		 * @param {string} filter_created_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for patients created in November 2017 (America/New_York): `filter[created_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {string} filter_updated_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for patients updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_cursor Page cursor
 		 * @return {void} OK
 		 */
@@ -5711,8 +5851,11 @@ export namespace MyNS {
 		 * @param {string} filter_groups Comma-separated list of group ids. Note that one of the following filters must be specified: `filter[patient]`, `filter[groups]`, `filter[organization]`.
 		 * @param {string} filter_organization Fitbit Plus organization id. Note that one of the following filters must be specified: `filter[patient]`, `filter[groups]`, `filter[organization]`.
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_cursor Page cursor
 		 * @return {void} OK
 		 */
@@ -5769,8 +5912,11 @@ export namespace MyNS {
 		 * @param {string} filter_created_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for results created in November 2017 (America/New_York): `filter[created_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {string} filter_updated_at The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`. Example for results updated in November 2017 (America/New_York): `filter[updated_at]=2017-11-01T00:00:00-04:00..2017-12-01T00:00:00-05:00`
 		 * @param {number} page_number Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Page size
+		 *     Minimum: 0    Maximum: 50
 		 * @param {number} page_limit Page limit
+		 *     Minimum: 0
 		 * @param {string} page_after Page cursor
 		 * @return {void} OK
 		 */

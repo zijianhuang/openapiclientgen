@@ -161,9 +161,15 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 1.</param>
 		/// <param name="origin">Point from which the range calculation should start.</param>
 		/// <param name="contentType">The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.</param>
-		/// <param name="fuelBudgetInLiters">Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.</param>
-		/// <param name="energyBudgetInkWh">Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.</param>
-		/// <param name="timeBudgetInSec">Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.</param>
+		/// <param name="fuelBudgetInLiters">Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.
+		/// Minimum: 0
+		// </param>
+		/// <param name="energyBudgetInkWh">Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.
+		/// Minimum: 0
+		// </param>
+		/// <param name="timeBudgetInSec">Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.
+		/// Minimum: 0
+		// </param>
 		/// <param name="callback">Specifies the jsonp callback method.</param>
 		/// <param name="report">Specifies which data should be reported for diagnosis purposes.</param>
 		/// <param name="departAt">The date and time of departure from the origin point. Departure times apart from <i>now</i> must be specified as a dateTime.</param>
@@ -283,9 +289,15 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 1.</param>
 		/// <param name="origin">Point from which the range calculation should start.</param>
 		/// <param name="contentType">The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.</param>
-		/// <param name="fuelBudgetInLiters">Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.</param>
-		/// <param name="energyBudgetInkWh">Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.</param>
-		/// <param name="timeBudgetInSec">Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.</param>
+		/// <param name="fuelBudgetInLiters">Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.
+		/// Minimum: 0
+		// </param>
+		/// <param name="energyBudgetInkWh">Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.
+		/// Minimum: 0
+		// </param>
+		/// <param name="timeBudgetInSec">Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.
+		/// Minimum: 0
+		// </param>
 		/// <param name="callback">Specifies the jsonp callback method.</param>
 		/// <param name="report">Specifies which data should be reported for diagnosis purposes.</param>
 		/// <param name="departAt">The date and time of departure from the origin point. Departure times apart from <i>now</i> must be specified as a dateTime.</param>
@@ -413,7 +425,10 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 1.</param>
 		/// <param name="locations">Locations through which the calculated route must pass.</param>
 		/// <param name="contentType">The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.</param>
-		/// <param name="maxAlternatives">Number of alternative routes to be calculated.</param>
+		/// <param name="maxAlternatives">Number of alternative routes to be calculated.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
 		/// <param name="alternativeType">Determines whether the alternative routes to be calculated should be better with respect to the planning criteria provided than the reference route.</param>
 		/// <param name="minDeviationDistance">All alternative routes will follow the reference route for the specified minimum number of meters starting from the origin point.</param>
 		/// <param name="minDeviationTime">All alternative routes will follow the reference route for the specified minimum number of seconds starting from the origin point.</param>
@@ -422,7 +437,10 @@ namespace MyNS
 		/// <param name="computeBestOrder">Re-order the route waypoints to reduce the route length.</param>
 		/// <param name="routeRepresentation">Specifies the representation of the set of routes provided as a response.</param>
 		/// <param name="computeTravelTimeFor">Specifies whether to return additional travel times using different types of traffic information (none, historic, live) as well as the default best-estimate travel time.</param>
-		/// <param name="vehicleHeading">The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).</param>
+		/// <param name="vehicleHeading">The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).
+		/// Minimum: 0
+		/// Maximum: 359
+		// </param>
 		/// <param name="sectionType">Specifies which section types are explicitly reported in the route response. Can be specified multiple times.
 		///  - carTrain, ferry, tunnel or motorway
 		///  - pedestrian
@@ -559,7 +577,10 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 1.</param>
 		/// <param name="locations">Locations through which the calculated route must pass.</param>
 		/// <param name="contentType">The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.</param>
-		/// <param name="maxAlternatives">Number of alternative routes to be calculated.</param>
+		/// <param name="maxAlternatives">Number of alternative routes to be calculated.
+		/// Minimum: 0
+		/// Maximum: 5
+		// </param>
 		/// <param name="alternativeType">Determines whether the alternative routes to be calculated should be better with respect to the planning criteria provided than the reference route.</param>
 		/// <param name="minDeviationDistance">All alternative routes will follow the reference route for the specified minimum number of meters starting from the origin point.</param>
 		/// <param name="minDeviationTime">All alternative routes will follow the reference route for the specified minimum number of seconds starting from the origin point.</param>
@@ -568,7 +589,10 @@ namespace MyNS
 		/// <param name="computeBestOrder">Re-order the route waypoints to reduce the route length.</param>
 		/// <param name="routeRepresentation">Specifies the representation of the set of routes provided as a response.</param>
 		/// <param name="computeTravelTimeFor">Specifies whether to return additional travel times using different types of traffic information (none, historic, live) as well as the default best-estimate travel time.</param>
-		/// <param name="vehicleHeading">The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).</param>
+		/// <param name="vehicleHeading">The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).
+		/// Minimum: 0
+		/// Maximum: 359
+		// </param>
 		/// <param name="sectionType">Specifies which section types are explicitly reported in the route response. Can be specified multiple times.
 		///  - carTrain, ferry, tunnel or motorway
 		///  - pedestrian

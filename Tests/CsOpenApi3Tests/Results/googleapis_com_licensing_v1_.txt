@@ -356,7 +356,10 @@ namespace MyNS
 		/// <param name="productId">A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.</param>
 		/// <param name="skuId">A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.</param>
 		/// <param name="customerId">The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.</param>
-		/// <param name="maxResults">The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.</param>
+		/// <param name="maxResults">The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">Token to fetch the next page of data. The `maxResults` query string is related to the `pageToken` since `maxResults` determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.</param>
 		/// <returns>Successful response</returns>
 		public async Task<LicenseAssignmentList> Licensing_licenseAssignments_listForProductAndSkuAsync(string productId, string skuId, string customerId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -393,7 +396,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="productId">A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.</param>
 		/// <param name="customerId">The customer's unique ID as defined in the Admin console, such as `C00000000`. If the customer is suspended, the server returns an error.</param>
-		/// <param name="maxResults">The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.</param>
+		/// <param name="maxResults">The `maxResults` query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">Token to fetch the next page of data. The `maxResults` query string is related to the `pageToken` since `maxResults` determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.</param>
 		/// <returns>Successful response</returns>
 		public async Task<LicenseAssignmentList> Licensing_licenseAssignments_listForProductAsync(string productId, string customerId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

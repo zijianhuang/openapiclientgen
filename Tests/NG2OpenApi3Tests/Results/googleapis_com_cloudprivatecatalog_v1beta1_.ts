@@ -539,6 +539,7 @@ export namespace MyNS {
 		 * * `folders/{folder_id}`
 		 * * `organizations/{organization_id}`
 		 * @param {number} pageSize The maximum number of entries that are requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to SearchCatalogs that
 		 * indicates where this listing should continue from.
 		 * This field is optional.
@@ -557,6 +558,7 @@ export namespace MyNS {
 		 * @param {string} resource Required. The name of the resource context. See
 		 * SearchCatalogsRequest.resource for details.
 		 * @param {number} pageSize The maximum number of entries that are requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to SearchProducts that
 		 * indicates where this listing should continue from.
 		 * This field is optional.
@@ -579,6 +581,7 @@ export namespace MyNS {
 		 * @param {string} resource Required. The name of the resource context. See
 		 * SearchCatalogsRequest.resource for details.
 		 * @param {number} pageSize The maximum number of entries that are requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to SearchVersions
 		 * that indicates where this listing should continue from.
 		 * This field is optional.

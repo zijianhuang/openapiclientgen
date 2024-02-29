@@ -25,7 +25,10 @@ export namespace MyNS {
 		/** An achievement configuration detail. */
 		published?: AchievementConfigurationDetail;
 
-		/** Steps to unlock. Only applicable to incremental achievements. */
+		/**
+		 * Steps to unlock. Only applicable to incremental achievements.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepsToUnlock?: number | null;
 
 		/** The token for this resource. */
@@ -47,7 +50,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#achievementConfiguration`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Steps to unlock. Only applicable to incremental achievements. */
+		/**
+		 * Steps to unlock. Only applicable to incremental achievements.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepsToUnlock: FormControl<number | null | undefined>,
 
 		/** The token for this resource. */
@@ -83,10 +89,16 @@ export namespace MyNS {
 		/** A localized string bundle resource. */
 		name?: LocalizedStringBundle;
 
-		/** Point value for the achievement. */
+		/**
+		 * Point value for the achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointValue?: number | null;
 
-		/** The sort rank of this achievement. Writes to this field are ignored. */
+		/**
+		 * The sort rank of this achievement. Writes to this field are ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortRank?: number | null;
 	}
 
@@ -99,10 +111,16 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#achievementConfigurationDetail`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Point value for the achievement. */
+		/**
+		 * Point value for the achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointValue: FormControl<number | null | undefined>,
 
-		/** The sort rank of this achievement. Writes to this field are ignored. */
+		/**
+		 * The sort rank of this achievement. Writes to this field are ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortRank: FormControl<number | null | undefined>,
 	}
 	export function CreateAchievementConfigurationDetailFormGroup() {
@@ -246,7 +264,10 @@ export namespace MyNS {
 		/** The curreny code string. Only used for CURRENCY format type. */
 		currencyCode?: string | null;
 
-		/** The number of decimal places for number. Only used for NUMERIC format type. */
+		/**
+		 * The number of decimal places for number. Only used for NUMERIC format type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDecimalPlaces?: number | null;
 
 		/** The formatting for the number. */
@@ -262,7 +283,10 @@ export namespace MyNS {
 		/** The curreny code string. Only used for CURRENCY format type. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** The number of decimal places for number. Only used for NUMERIC format type. */
+		/**
+		 * The number of decimal places for number. Only used for NUMERIC format type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDecimalPlaces: FormControl<number | null | undefined>,
 
 		/** The formatting for the number. */
@@ -353,7 +377,10 @@ export namespace MyNS {
 		/** A number format resource. */
 		scoreFormat?: GamesNumberFormatConfiguration;
 
-		/** The sort rank of this leaderboard. Writes to this field are ignored. */
+		/**
+		 * The sort rank of this leaderboard. Writes to this field are ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortRank?: number | null;
 	}
 
@@ -366,7 +393,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#leaderboardConfigurationDetail`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The sort rank of this leaderboard. Writes to this field are ignored. */
+		/**
+		 * The sort rank of this leaderboard. Writes to this field are ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortRank: FormControl<number | null | undefined>,
 	}
 	export function CreateLeaderboardConfigurationDetailFormGroup() {
@@ -451,6 +481,7 @@ export namespace MyNS {
 		 * Get games/v1configuration/applications/{applicationId}/achievements
 		 * @param {string} applicationId The application ID from the Google Play developer console.
 		 * @param {number} maxResults The maximum number of resource configurations to return in the response, used for paging. For any response, the actual number of resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {AchievementConfigurationListResponse} Successful response
 		 */
@@ -473,6 +504,7 @@ export namespace MyNS {
 		 * Get games/v1configuration/applications/{applicationId}/leaderboards
 		 * @param {string} applicationId The application ID from the Google Play developer console.
 		 * @param {number} maxResults The maximum number of resource configurations to return in the response, used for paging. For any response, the actual number of resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {LeaderboardConfigurationListResponse} Successful response
 		 */

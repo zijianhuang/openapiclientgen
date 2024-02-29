@@ -120,6 +120,7 @@ export namespace MyNS {
 		/**
 		 * This is the index of the item at Checkout's cart. It has to be unique in the items array
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: number;
 
@@ -132,6 +133,7 @@ export namespace MyNS {
 		/**
 		 * This is the amount of items that will be priced. It is possible to have a volume discount for many repeated items. Hence, the price may not be the quantity of the item multiplied by the unitary price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -158,12 +160,14 @@ export namespace MyNS {
 		/**
 		 * This is the index of the item at Checkout's cart. It has to be unique in the items array
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * This is the amount of items that will be priced. It is possible to have a volume discount for many repeated items. Hence, the price may not be the quantity of the item multiplied by the unitary price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -195,24 +199,28 @@ export namespace MyNS {
 		/**
 		 * The cost price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency.
 		 * Required
+		 * Type: double
 		 */
 		costPrice: number;
 
 		/**
 		 * The same index referring to Checkout's cart that was passed to the API
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: number;
 
 		/**
 		 * The list price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
 		/**
 		 * The price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
@@ -239,24 +247,28 @@ export namespace MyNS {
 		/**
 		 * The cost price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency.
 		 * Required
+		 * Type: double
 		 */
 		costPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * The same index referring to Checkout's cart that was passed to the API
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * The list price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * The price returned by the pricing API that was used by Pricing Hub. It is measured in cents, so 5000 means 50,00 in local currency
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -310,6 +322,7 @@ export namespace MyNS {
 		/**
 		 * This is the index of the item at Checkout's cart. It has to be unique in the items array
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: number;
 
@@ -322,6 +335,7 @@ export namespace MyNS {
 		/**
 		 * This is the amount of items that will be priced. It is possible to have a volume discount for many repeated items. Hence, the price may not be the quantity of the item multiplied by the unitary price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -350,12 +364,14 @@ export namespace MyNS {
 		/**
 		 * This is the index of the item at Checkout's cart. It has to be unique in the items array
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * This is the amount of items that will be priced. It is possible to have a volume discount for many repeated items. Hence, the price may not be the quantity of the item multiplied by the unitary price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 

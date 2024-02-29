@@ -5194,8 +5194,8 @@ export namespace MyNS {
 		/**
 		 * The link name with which the child object is attached to the parent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: string;
 	}
@@ -5204,8 +5204,8 @@ export namespace MyNS {
 		/**
 		 * The link name with which the child object is attached to the parent.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
@@ -5451,8 +5451,8 @@ export namespace MyNS {
 		/**
 		 * The name of the <a>Directory</a>. Should be unique per account, per region.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 	}
@@ -5461,8 +5461,8 @@ export namespace MyNS {
 		/**
 		 * The name of the <a>Directory</a>. Should be unique per account, per region.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5478,8 +5478,8 @@ export namespace MyNS {
 		/**
 		 * The name of the <a>Facet</a>, which is unique for a given schema.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -5497,8 +5497,8 @@ export namespace MyNS {
 		/**
 		 * The name of the <a>Facet</a>, which is unique for a given schema.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5536,8 +5536,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the link between the parent object and the index object.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName?: string | null;
 	}
@@ -5551,8 +5551,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the link between the parent object and the index object.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
@@ -5593,8 +5593,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of link that is used to attach this object to a parent.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName?: string | null;
 	}
@@ -5602,8 +5602,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of link that is used to attach this object to a parent.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
@@ -5632,8 +5632,8 @@ export namespace MyNS {
 		/**
 		 * The name that is associated with the schema. This is unique to each account and in each region.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: string;
 	}
@@ -5642,8 +5642,8 @@ export namespace MyNS {
 		/**
 		 * The name that is associated with the schema. This is unique to each account and in each region.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5690,8 +5690,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet to delete.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 	}
@@ -5700,8 +5700,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet to delete.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5823,8 +5823,8 @@ export namespace MyNS {
 		/**
 		 * The link name associated with the object that needs to be detached.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: string;
 	}
@@ -5833,8 +5833,8 @@ export namespace MyNS {
 		/**
 		 * The link name associated with the object that needs to be detached.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
@@ -5964,8 +5964,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet to retrieve.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 	}
@@ -5974,8 +5974,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet to retrieve.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5991,8 +5991,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -6007,8 +6007,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -6369,8 +6369,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet whose attributes will be retrieved.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -6388,8 +6388,8 @@ export namespace MyNS {
 		/**
 		 * The name of the facet whose attributes will be retrieved.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7213,22 +7213,22 @@ export namespace MyNS {
 		/**
 		 * The major version under which the schema will be published. Schemas have both a major and minor version associated with them.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		Version: string;
 
 		/**
 		 * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		MinorVersion?: string | null;
 
 		/**
 		 * The new name under which the schema will be published. If this is not provided, the development schema is considered.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name?: string | null;
 	}
@@ -7237,22 +7237,22 @@ export namespace MyNS {
 		/**
 		 * The major version under which the schema will be published. Schemas have both a major and minor version associated with them.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		Version: FormControl<string | null | undefined>,
 
 		/**
 		 * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The new name under which the schema will be published. If this is not provided, the development schema is considered.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7450,8 +7450,8 @@ export namespace MyNS {
 		/**
 		 * The name of the schema.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: string;
 	}
@@ -7460,8 +7460,8 @@ export namespace MyNS {
 		/**
 		 * The name of the schema.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7567,8 +7567,8 @@ export namespace MyNS {
 		/**
 		 * Identifies the minor version of the published schema that will be created. This parameter is NOT optional.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		MinorVersion: string;
 
@@ -7592,8 +7592,8 @@ export namespace MyNS {
 		/**
 		 * Identifies the minor version of the published schema that will be created. This parameter is NOT optional.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 

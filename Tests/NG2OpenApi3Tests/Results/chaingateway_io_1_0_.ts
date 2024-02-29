@@ -48,7 +48,10 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: number;
 	}
 	export interface ContentFormProperties {
@@ -59,7 +62,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateContentFormGroup() {
@@ -117,16 +123,28 @@ export namespace MyNS {
 
 	export interface Kdfparams {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dklen: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		n: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		p: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		r: number;
 
 		/** Required */
@@ -134,16 +152,28 @@ export namespace MyNS {
 	}
 	export interface KdfparamsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dklen: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		n: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		p: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		r: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -353,13 +383,19 @@ export namespace MyNS {
 
 	export interface ClearAddress {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Required */
 		ethereumaddress: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		gas: number;
 
 		/** Required */
@@ -376,13 +412,19 @@ export namespace MyNS {
 	}
 	export interface ClearAddressFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
 		ethereumaddress: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		gas: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -657,7 +699,10 @@ export namespace MyNS {
 
 	export interface GetEthereumBalance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		balance: number;
 
 		/** Required */
@@ -668,7 +713,10 @@ export namespace MyNS {
 	}
 	export interface GetEthereumBalanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -711,7 +759,10 @@ export namespace MyNS {
 		/** Required */
 		ok: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rate: number;
 	}
 	export interface GetExchangeRateFormProperties {
@@ -722,7 +773,10 @@ export namespace MyNS {
 		/** Required */
 		ok: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateGetExchangeRateFormGroup() {
@@ -753,7 +807,10 @@ export namespace MyNS {
 
 	export interface GetGasPrice {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gasprice: number;
 
 		/** Required */
@@ -761,7 +818,10 @@ export namespace MyNS {
 	}
 	export interface GetGasPriceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gasprice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -777,7 +837,10 @@ export namespace MyNS {
 
 	export interface GetLastBlockNumber {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blocknumber: number;
 
 		/** Required */
@@ -785,7 +848,10 @@ export namespace MyNS {
 	}
 	export interface GetLastBlockNumberFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blocknumber: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -804,7 +870,10 @@ export namespace MyNS {
 		/** Required */
 		contractaddress: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		decimals: number;
 
 		/** Required */
@@ -813,8 +882,11 @@ export namespace MyNS {
 		/** Required */
 		ok: boolean;
 
-		/** Required */
-		supply: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		supply: string;
 
 		/** Required */
 		symbol: string;
@@ -824,7 +896,10 @@ export namespace MyNS {
 		/** Required */
 		contractaddress: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		decimals: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -833,8 +908,11 @@ export namespace MyNS {
 		/** Required */
 		ok: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		supply: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		supply: FormControl<string | null | undefined>,
 
 		/** Required */
 		symbol: FormControl<string | null | undefined>,
@@ -845,7 +923,7 @@ export namespace MyNS {
 			decimals: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ok: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			supply: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			supply: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			symbol: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -853,7 +931,10 @@ export namespace MyNS {
 
 	export interface GetTokenBalance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: number;
 
 		/** Required */
@@ -867,7 +948,10 @@ export namespace MyNS {
 	}
 	export interface GetTokenBalanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1135,7 +1219,10 @@ export namespace MyNS {
 
 	export interface ResendFailedIPN {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -1143,7 +1230,10 @@ export namespace MyNS {
 	}
 	export interface ResendFailedIPNFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1159,12 +1249,18 @@ export namespace MyNS {
 
 	export interface ResendFailedIPNRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 	}
 	export interface ResendFailedIPNRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateResendFailedIPNRequestFormGroup() {
@@ -1221,7 +1317,10 @@ export namespace MyNS {
 
 	export interface SendEthereumRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Required */
@@ -1235,7 +1334,10 @@ export namespace MyNS {
 	}
 	export interface SendEthereumRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1259,7 +1361,10 @@ export namespace MyNS {
 
 	export interface SendToken {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: number;
 
 		/** Required */
@@ -1282,7 +1387,10 @@ export namespace MyNS {
 	}
 	export interface SendTokenFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1318,7 +1426,10 @@ export namespace MyNS {
 
 	export interface SendTokenRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: number;
 
 		/** Required */
@@ -1338,7 +1449,10 @@ export namespace MyNS {
 	}
 	export interface SendTokenRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1522,7 +1636,6 @@ export namespace MyNS {
 		 * clearAddress
 		 * Sends all available ethereum funds of an address to a specified receiver address.
 		 * Post clearAddress
-		 * @return {ClearAddress} 
 		 */
 		ClearAddress(requestBody: ClearAddressRequest): Observable<ClearAddress> {
 			return this.http.post<ClearAddress>(this.baseUri + 'clearAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1532,7 +1645,6 @@ export namespace MyNS {
 		 * deleteAddress
 		 * Deletes an existing ethereum address. Be careful when using this function.
 		 * Post deleteAddress
-		 * @return {DeleteAddress} 
 		 */
 		DeleteAddress(requestBody: DeleteAddressRequest): Observable<DeleteAddress> {
 			return this.http.post<DeleteAddress>(this.baseUri + 'deleteAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1542,7 +1654,6 @@ export namespace MyNS {
 		 * exportAddress
 		 * Returns all ethereum addresses created with an account.
 		 * Post exportAddress
-		 * @return {ExportAddress} 
 		 */
 		ExportAddress(requestBody: ExportAddressRequest): Observable<ExportAddress> {
 			return this.http.post<ExportAddress>(this.baseUri + 'exportAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1552,7 +1663,6 @@ export namespace MyNS {
 		 * getBlock
 		 * Returns information of an ethereum block with or without transactions
 		 * Post getBlock
-		 * @return {GetBlock} 
 		 */
 		GetBlock(requestBody: GetBlockRequest): Observable<GetBlock> {
 			return this.http.post<GetBlock>(this.baseUri + 'getBlock', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1562,7 +1672,6 @@ export namespace MyNS {
 		 * getEthereumBalance
 		 * Returns the ethereum balance of a given address.
 		 * Post getEthereumBalance
-		 * @return {GetEthereumBalance} 
 		 */
 		GetEthereumBalance(requestBody: GetEthereumBalanceRequest): Observable<GetEthereumBalance> {
 			return this.http.post<GetEthereumBalance>(this.baseUri + 'getEthereumBalance', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1572,7 +1681,6 @@ export namespace MyNS {
 		 * getExchangeRate
 		 * Returns the current Ethereum price in Euro or US Dollar.
 		 * Post getExchangeRate
-		 * @return {GetExchangeRate} 
 		 */
 		GetExchangeRate(requestBody: GetExchangeRateRequest): Observable<GetExchangeRate> {
 			return this.http.post<GetExchangeRate>(this.baseUri + 'getExchangeRate', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1582,7 +1690,6 @@ export namespace MyNS {
 		 * getGasPrice
 		 * Returns the current gas price in GWEI.
 		 * Post getGasPrice
-		 * @return {GetGasPrice} 
 		 */
 		GetGasPrice(): Observable<GetGasPrice> {
 			return this.http.post<GetGasPrice>(this.baseUri + 'getGasPrice', null, {});
@@ -1592,7 +1699,6 @@ export namespace MyNS {
 		 * getLastBlockNumber
 		 * Returns the block number of the last mined ethereum block.
 		 * Post getLastBlockNumber
-		 * @return {GetLastBlockNumber} 
 		 */
 		GetLastBlockNumber(): Observable<GetLastBlockNumber> {
 			return this.http.post<GetLastBlockNumber>(this.baseUri + 'getLastBlockNumber', null, {});
@@ -1602,7 +1708,6 @@ export namespace MyNS {
 		 * getToken
 		 * Returns information about a specific ERC20 token like name, symbol, decimal places and total supply.
 		 * Post getToken
-		 * @return {GetToken} 
 		 */
 		GetToken(requestBody: GetTokenRequest): Observable<GetToken> {
 			return this.http.post<GetToken>(this.baseUri + 'getToken', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1612,7 +1717,6 @@ export namespace MyNS {
 		 * getTokenBalance
 		 * Returns the token balance of a given address.
 		 * Post getTokenBalance
-		 * @return {GetTokenBalance} 
 		 */
 		GetTokenBalance(requestBody: GetTokenBalanceRequest): Observable<GetTokenBalance> {
 			return this.http.post<GetTokenBalance>(this.baseUri + 'getTokenBalance', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1622,7 +1726,6 @@ export namespace MyNS {
 		 * getTransactions
 		 * Returns information like confirmations, token contract address, amount, gas price and more of a given transaction.
 		 * Post getTransactions
-		 * @return {GetTransactions} 
 		 */
 		GetTransactions(requestBody: GetTransactionsRequest): Observable<GetTransactions> {
 			return this.http.post<GetTransactions>(this.baseUri + 'getTransactions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1632,7 +1735,6 @@ export namespace MyNS {
 		 * importAddress
 		 * Returns all ethereum addresses created with an account.
 		 * Post importAddress
-		 * @return {ImportAddress} 
 		 */
 		ImportAddress(requestBody: ImportAddressRequest): Observable<ImportAddress> {
 			return this.http.post<ImportAddress>(this.baseUri + 'importAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1642,7 +1744,6 @@ export namespace MyNS {
 		 * listAddresses
 		 * Returns all ethereum addresses created with an account.
 		 * Post listAddresses
-		 * @return {ListAddresses} 
 		 */
 		ListAddresses(): Observable<ListAddresses> {
 			return this.http.post<ListAddresses>(this.baseUri + 'listAddresses', null, {});
@@ -1652,7 +1753,6 @@ export namespace MyNS {
 		 * listFailedIPNs
 		 * Returns all subscriptions/IPNs created with an account.
 		 * Post listFailedIPNs
-		 * @return {ListFailedIPNs} 
 		 */
 		ListFailedIPNs(): Observable<ListFailedIPNs> {
 			return this.http.post<ListFailedIPNs>(this.baseUri + 'listFailedIPNs', null, {});
@@ -1662,7 +1762,6 @@ export namespace MyNS {
 		 * listSubscribedAddresses
 		 * Returns all subscriptions/IPNs created with an account.
 		 * Post listSubscribedAddresses
-		 * @return {ListSubscribedAddresses} 
 		 */
 		ListSubscribedAddresses(): Observable<ListSubscribedAddresses> {
 			return this.http.post<ListSubscribedAddresses>(this.baseUri + 'listSubscribedAddresses', null, {});
@@ -1672,7 +1771,6 @@ export namespace MyNS {
 		 * newAddress
 		 * Generates a new ethereum addresses you can use to send or receive funds. Do not lose the password! We can't restore access to an address if you lose it.
 		 * Post newAddress
-		 * @return {NewAddress} 
 		 */
 		NewAddress(requestBody: NewAddressRequest): Observable<NewAddress> {
 			return this.http.post<NewAddress>(this.baseUri + 'newAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1682,7 +1780,6 @@ export namespace MyNS {
 		 * resendFailedIPN
 		 * Returns all subscriptions/IPNs created with an account.
 		 * Post resendFailedIPN
-		 * @return {ResendFailedIPN} 
 		 */
 		ResendFailedIPN(requestBody: ResendFailedIPNRequest): Observable<ResendFailedIPN> {
 			return this.http.post<ResendFailedIPN>(this.baseUri + 'resendFailedIPN', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1692,7 +1789,6 @@ export namespace MyNS {
 		 * sendEthereum
 		 * Sends ethereum from an address controlled by the account to a specified receiver address.
 		 * Post sendEthereum
-		 * @return {SendEthereum} 
 		 */
 		SendEthereum(requestBody: SendEthereumRequest): Observable<SendEthereum> {
 			return this.http.post<SendEthereum>(this.baseUri + 'sendEthereum', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1702,7 +1798,6 @@ export namespace MyNS {
 		 * sendToken
 		 * Sends ERC20 tokens from an address controlled by the account to a specified receiver address. The token contract address is needed to specify the token. The use of the identifier parameter is recommend and awaits an unique string. Whenever a transaction is beeing sent, the identifier is checked and the transaction gets dropped if there is one with that identifier already.
 		 * Post sendToken
-		 * @return {SendToken} 
 		 */
 		SendToken(requestBody: SendTokenRequest): Observable<SendToken> {
 			return this.http.post<SendToken>(this.baseUri + 'sendToken', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1712,7 +1807,6 @@ export namespace MyNS {
 		 * subscribeAddress
 		 * Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.
 		 * Post subscribeAddress
-		 * @return {SubscribeAddress} 
 		 */
 		SubscribeAddress(requestBody: SubscribeAddressRequest): Observable<SubscribeAddress> {
 			return this.http.post<SubscribeAddress>(this.baseUri + 'subscribeAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1722,7 +1816,6 @@ export namespace MyNS {
 		 * unsubscribeAddress
 		 * Deletes an existing subscription/IPN for the given address (and contractaddress).
 		 * Post unsubscribeAddress
-		 * @return {UnsubscribeAddress} 
 		 */
 		UnsubscribeAddress(requestBody: UnsubscribeAddressRequest): Observable<UnsubscribeAddress> {
 			return this.http.post<UnsubscribeAddress>(this.baseUri + 'unsubscribeAddress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

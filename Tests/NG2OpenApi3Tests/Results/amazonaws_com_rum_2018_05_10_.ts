@@ -1035,6 +1035,7 @@ export namespace MyNS {
 		 * <p>Specifies the extended metrics and custom metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid destinations include CloudWatch and Evidently.</p> <p>By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch metrics that you can collect with CloudWatch RUM</a>.</p> <p>In addition to these default metrics, you can choose to send extended metrics or custom metrics or both.</p> <ul> <li> <p>Extended metrics enable you to send metrics with additional dimensions not included in the default metrics. You can also send extended metrics to Evidently as well as CloudWatch. The valid dimension names for the additional dimensions for extended metrics are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p> </li> <li> <p>Custom metrics are metrics that you define. You can send custom metrics to CloudWatch or to CloudWatch Evidently or to both. With custom metrics, you can use any metric name and namespace, and to derive the metrics you can use any custom events, built-in events, custom attributes, or default attributes. </p> <p>You can't send custom metrics to the <code>AWS/RUM</code> namespace. You must send custom metrics to a custom namespace that you define. The namespace that you use can't start with <code>AWS/</code>. CloudWatch RUM prepends <code>RUM/CustomMetrics/</code> to the custom namespace that you define, so the final namespace for your metrics in CloudWatch is <code>RUM/CustomMetrics/<i>your-custom-namespace</i> </code>.</p> </li> </ul> <p>The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code> operation is 200.</p> <p>The maximum number of metric definitions that one destination can contain is 2000.</p> <p>Extended metrics sent to CloudWatch and RUM custom metrics are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> <p>You must have already created a destination for the metrics before you send them. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p> <p>If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.</p>
 		 * Post rummetrics/{AppMonitorName}/metrics
 		 * @param {string} AppMonitorName The name of the CloudWatch RUM app monitor that is to send the metrics.
+		 *     Min length: 1    Max length: 255
 		 * @return {BatchCreateRumMetricDefinitionsResponse} Success
 		 */
 		BatchCreateRumMetricDefinitions(AppMonitorName: string, requestBody: BatchCreateRumMetricDefinitionsPostBody): Observable<BatchCreateRumMetricDefinitionsResponse> {
@@ -1045,6 +1046,7 @@ export namespace MyNS {
 		 * Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.
 		 * Patch rummetrics/{AppMonitorName}/metrics
 		 * @param {string} AppMonitorName The name of the CloudWatch RUM app monitor that sends these metrics.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateRumMetricDefinitionResponse} Success
 		 */
 		UpdateRumMetricDefinition(AppMonitorName: string, requestBody: UpdateRumMetricDefinitionPatchBody): Observable<UpdateRumMetricDefinitionResponse> {
@@ -1055,8 +1057,10 @@ export namespace MyNS {
 		 * <p>Removes the specified metrics from being sent to an extended metrics destination.</p> <p>If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation are still deleted.</p> <p>The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p>
 		 * Delete rummetrics/{AppMonitorName}/metrics#destination&metricDefinitionIds
 		 * @param {string} AppMonitorName The name of the CloudWatch RUM app monitor that is sending these metrics.
+		 *     Min length: 1    Max length: 255
 		 * @param {MetricDestination} destination Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.
 		 * @param {string} destinationArn <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+		 *     Min length: 0    Max length: 2048
 		 * @param {Array<string>} metricDefinitionIds An array of structures which define the metrics that you want to stop sending.
 		 * @return {BatchDeleteRumMetricDefinitionsResponse} Success
 		 */
@@ -1068,9 +1072,12 @@ export namespace MyNS {
 		 * Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
 		 * Get rummetrics/{AppMonitorName}/metrics#destination
 		 * @param {string} AppMonitorName The name of the CloudWatch RUM app monitor that is sending the metrics.
+		 *     Min length: 1    Max length: 255
 		 * @param {MetricDestination} destination The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.
 		 * @param {string} destinationArn <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+		 *     Min length: 0    Max length: 2048
 		 * @param {number} maxResults <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Use the token returned by the previous operation to request the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1093,6 +1100,7 @@ export namespace MyNS {
 		 * Deletes an existing app monitor. This immediately stops the collection of data.
 		 * Delete appmonitor/{Name}
 		 * @param {string} Name The name of the app monitor to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteAppMonitorResponse} Success
 		 */
 		DeleteAppMonitor(Name: string): Observable<DeleteAppMonitorResponse> {
@@ -1103,6 +1111,7 @@ export namespace MyNS {
 		 * Retrieves the complete configuration information for one app monitor.
 		 * Get appmonitor/{Name}
 		 * @param {string} Name The app monitor to retrieve information for.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetAppMonitorResponse} Success
 		 */
 		GetAppMonitor(Name: string): Observable<GetAppMonitorResponse> {
@@ -1113,6 +1122,7 @@ export namespace MyNS {
 		 * <p>Updates the configuration of an existing app monitor. When you use this operation, only the parts of the app monitor configuration that you specify in this operation are changed. For any parameters that you omit, the existing values are kept.</p> <p>You can't use this operation to change the tags of an existing app monitor. To change the tags of an existing app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_TagResource.html">TagResource</a>.</p> <p>To create a new app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_CreateAppMonitor.html">CreateAppMonitor</a>.</p> <p>After you update an app monitor, sign in to the CloudWatch RUM console to get the updated JavaScript code snippet to add to your web application. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet that I've already generated?</a> </p>
 		 * Patch appmonitor/{Name}
 		 * @param {string} Name The name of the app monitor to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateAppMonitorResponse} Success
 		 */
 		UpdateAppMonitor(Name: string, requestBody: UpdateAppMonitorPatchBody): Observable<UpdateAppMonitorResponse> {
@@ -1123,8 +1133,10 @@ export namespace MyNS {
 		 * Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.
 		 * Delete rummetrics/{AppMonitorName}/metricsdestination#destination
 		 * @param {string} AppMonitorName The name of the app monitor that is sending metrics to the destination that you want to delete.
+		 *     Min length: 1    Max length: 255
 		 * @param {MetricDestination} destination The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.
 		 * @param {string} destinationArn This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DeleteRumMetricsDestinationResponse} Success
 		 */
 		DeleteRumMetricsDestination(AppMonitorName: string, destination: MetricDestination, destinationArn: string | null | undefined): Observable<DeleteRumMetricsDestinationResponse> {
@@ -1135,6 +1147,7 @@ export namespace MyNS {
 		 * Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.
 		 * Post appmonitor/{Name}/data
 		 * @param {string} Name The name of the app monitor that collected the data that you want to retrieve.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetAppMonitorDataResponse} Success
@@ -1147,6 +1160,7 @@ export namespace MyNS {
 		 * Returns a list of the Amazon CloudWatch RUM app monitors in the account.
 		 * Post appmonitors
 		 * @param {number} maxResults The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Use the token returned by the previous operation to request the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1160,7 +1174,9 @@ export namespace MyNS {
 		 * <p>Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app monitor.</p> <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.</p>
 		 * Get rummetrics/{AppMonitorName}/metricsdestination
 		 * @param {string} AppMonitorName The name of the app monitor associated with the destinations that you want to retrieve.
+		 *     Min length: 1    Max length: 255
 		 * @param {number} maxResults <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken Use the token returned by the previous operation to request the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1174,6 +1190,7 @@ export namespace MyNS {
 		 * <p>Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.</p> <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricDefinitions.html">BatchCreateRumMetricDefinitions</a>.</p>
 		 * Post rummetrics/{AppMonitorName}/metricsdestination
 		 * @param {string} AppMonitorName The name of the CloudWatch RUM app monitor that will send the metrics.
+		 *     Min length: 1    Max length: 255
 		 * @return {PutRumMetricsDestinationResponse} Success
 		 */
 		PutRumMetricsDestination(AppMonitorName: string, requestBody: PutRumMetricsDestinationPostBody): Observable<PutRumMetricsDestinationResponse> {
@@ -1204,6 +1221,7 @@ export namespace MyNS {
 		 * <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p> <p>Each <code>PutRumEvents</code> operation can send a batch of events from one user session.</p>
 		 * Post appmonitors/{Id}/
 		 * @param {string} Id The ID of the app monitor that is sending this data.
+		 *     Min length: 36    Max length: 36
 		 * @return {PutRumEventsResponse} Success
 		 */
 		PutRumEvents(Id: string, requestBody: PutRumEventsPostBody): Observable<PutRumEventsResponse> {
@@ -1215,6 +1233,7 @@ export namespace MyNS {
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The ARN of the CloudWatch RUM resource that you're removing tags from.
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1232,8 +1251,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn?: string | null;
 
@@ -1253,8 +1272,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn: FormControl<string | null | undefined>,
 	}
@@ -1276,8 +1295,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn?: string | null;
 
@@ -1290,8 +1309,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the metric definition to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MetricDefinitionId: string;
 	}
@@ -1305,16 +1324,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the metric definition to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MetricDefinitionId: FormControl<string | null | undefined>,
 	}
@@ -1367,16 +1386,16 @@ export namespace MyNS {
 		/**
 		 * The top-level internet domain name for which your application has administrative authority.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		Domain: string;
 
 		/**
 		 * A name for the app monitor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
@@ -1391,16 +1410,16 @@ export namespace MyNS {
 		/**
 		 * The top-level internet domain name for which your application has administrative authority.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		Domain: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the app monitor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1472,8 +1491,8 @@ export namespace MyNS {
 
 		/**
 		 * The top-level internet domain name for which your application has administrative authority.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		Domain?: string | null;
 	}
@@ -1484,8 +1503,8 @@ export namespace MyNS {
 
 		/**
 		 * The top-level internet domain name for which your application has administrative authority.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		Domain: FormControl<string | null | undefined>,
 	}
@@ -1606,8 +1625,8 @@ export namespace MyNS {
 
 		/**
 		 * Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn?: string | null;
 
@@ -1624,8 +1643,8 @@ export namespace MyNS {
 
 		/**
 		 * Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		DestinationArn: FormControl<string | null | undefined>,
 
@@ -1675,8 +1694,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for this batch of RUM event data.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		BatchId: string;
 
@@ -1697,8 +1716,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for this batch of RUM event data.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		BatchId: FormControl<string | null | undefined>,
 	}

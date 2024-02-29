@@ -29999,6 +29999,7 @@ namespace MyNS
 		/// List Account Numbers
 		/// List_account_numbers account_numbers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Account Number List</returns>
 		public async Task<Account_number_list> List_account_numbersAsync(string cursor, int limit, Account_numberStatus status, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30145,6 +30146,7 @@ namespace MyNS
 		/// List Account Statements
 		/// List_account_statements account_statements
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Account Statement List</returns>
 		public async Task<Account_statement_list> List_account_statementsAsync(string cursor, int limit, string account_id, System.DateTimeOffset statement_period_start_after, System.DateTimeOffset statement_period_start_before, System.DateTimeOffset statement_period_start_on_or_after, System.DateTimeOffset statement_period_start_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30211,6 +30213,7 @@ namespace MyNS
 		/// List Account Transfers
 		/// List_account_transfers account_transfers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Account Transfer List</returns>
 		public async Task<Account_transfer_list> List_account_transfersAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30373,6 +30376,7 @@ namespace MyNS
 		/// List Accounts
 		/// List_accounts accounts
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Account List</returns>
 		public async Task<Account_list> List_accountsAsync(string cursor, int limit, string entity_id, AccountStatus status, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30547,6 +30551,7 @@ namespace MyNS
 		/// List ACH Prenotifications
 		/// List_ach_prenotifications ach_prenotifications
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>ACH Prenotification List</returns>
 		public async Task<Ach_prenotification_list> List_ach_prenotificationsAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30653,6 +30658,7 @@ namespace MyNS
 		/// List ACH Transfers
 		/// List_ach_transfers ach_transfers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>ACH Transfer List</returns>
 		public async Task<Ach_transfer_list> List_ach_transfersAsync(string cursor, int limit, string account_id, string external_account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30857,6 +30863,7 @@ namespace MyNS
 		/// List Bookkeeping Accounts
 		/// List_bookkeeping_accounts bookkeeping_accounts
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Bookkeeping Account List</returns>
 		public async Task<Bookkeeping_account_list> List_bookkeeping_accountsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -30930,6 +30937,7 @@ namespace MyNS
 		/// List Bookkeeping Entries
 		/// List_bookkeeping_entries bookkeeping_entries
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Bookkeeping Entry List</returns>
 		public async Task<Bookkeeping_entry_list> List_bookkeeping_entriesAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31003,6 +31011,7 @@ namespace MyNS
 		/// List Card Disputes
 		/// List_card_disputes card_disputes
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Card Dispute List</returns>
 		public async Task<Card_dispute_list> List_card_disputesAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Card_disputeStatus[] status_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31109,6 +31118,7 @@ namespace MyNS
 		/// List Card Profiles
 		/// List_card_profiles card_profiles
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Card Profile List</returns>
 		public async Task<Card_profile_list> List_card_profilesAsync(string cursor, int limit, Card_profileStatus[] status_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31215,6 +31225,7 @@ namespace MyNS
 		/// List Cards
 		/// List_cards cards
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Card List</returns>
 		public async Task<Card_list> List_cardsAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31394,6 +31405,7 @@ namespace MyNS
 		/// List Check Deposits
 		/// List_check_deposits check_deposits
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Check Deposit List</returns>
 		public async Task<Check_deposit_list> List_check_depositsAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31500,6 +31512,7 @@ namespace MyNS
 		/// List Check Transfers
 		/// List_check_transfers check_transfers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Check Transfer List</returns>
 		public async Task<Check_transfer_list> List_check_transfersAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31690,6 +31703,7 @@ namespace MyNS
 		/// List Declined Transactions
 		/// List_declined_transactions declined_transactions
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Declined Transaction List</returns>
 		public async Task<Declined_transaction_list> List_declined_transactionsAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, string route_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31756,6 +31770,7 @@ namespace MyNS
 		/// List Digital Wallet Tokens
 		/// List_digital_wallet_tokens digital_wallet_tokens
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Digital Wallet Token List</returns>
 		public async Task<Digital_wallet_token_list> List_digital_wallet_tokensAsync(string cursor, int limit, string card_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31822,6 +31837,7 @@ namespace MyNS
 		/// List Documents
 		/// List_documents documents
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Document List</returns>
 		public async Task<Document_list> List_documentsAsync(string cursor, int limit, string entity_id, DocumentCategory[] category_in, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -31888,6 +31904,7 @@ namespace MyNS
 		/// List Entities
 		/// List_entities entities
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Entity List</returns>
 		public async Task<Entity_list> List_entitiesAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32034,6 +32051,7 @@ namespace MyNS
 		/// List Event Subscriptions
 		/// List_event_subscriptions event_subscriptions
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Event Subscription List</returns>
 		public async Task<Event_subscription_list> List_event_subscriptionsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32180,6 +32198,7 @@ namespace MyNS
 		/// List Events
 		/// List_events events
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Event List</returns>
 		public async Task<Event_list> List_eventsAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, string[] category_in, string associated_object_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32246,6 +32265,7 @@ namespace MyNS
 		/// List Exports
 		/// List_exports exports
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Export List</returns>
 		public async Task<Export_list> List_exportsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32352,6 +32372,7 @@ namespace MyNS
 		/// List External Accounts
 		/// List_external_accounts external_accounts
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>External Account List</returns>
 		public async Task<External_account_list> List_external_accountsAsync(string cursor, int limit, External_accountStatus[] status_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32498,6 +32519,7 @@ namespace MyNS
 		/// List Files
 		/// List_files files
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>File List</returns>
 		public async Task<File_list> List_filesAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, FilePurpose[] purpose_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32598,6 +32620,7 @@ namespace MyNS
 		/// List Inbound ACH Transfer Returns
 		/// List_inbound_ach_transfer_returns inbound_ach_transfer_returns
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Inbound ACH Transfer Return List</returns>
 		public async Task<Inbound_ach_transfer_return_list> List_inbound_ach_transfer_returnsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32704,6 +32727,7 @@ namespace MyNS
 		/// List Inbound Wire Drawdown Requests
 		/// List_inbound_wire_drawdown_requests inbound_wire_drawdown_requests
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Inbound Wire Drawdown Request List</returns>
 		public async Task<Inbound_wire_drawdown_request_list> List_inbound_wire_drawdown_requestsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32770,6 +32794,13 @@ namespace MyNS
 		/// List Limits
 		/// List_limits limits
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
+		/// <param name="model_id">Max length: 200
+		/// Min length: 1
+		// </param>
+		/// <param name="status">Max length: 200
+		/// Min length: 1
+		// </param>
 		/// <returns>Limit List</returns>
 		public async Task<Limit_list> List_limitsAsync(string cursor, int limit, string model_id, string status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32916,6 +32947,7 @@ namespace MyNS
 		/// List OAuth Connections
 		/// List_oauth_connections oauth_connections
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>OAuth Connection List</returns>
 		public async Task<Oauth_connection_list> List_oauth_connectionsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -32982,6 +33014,7 @@ namespace MyNS
 		/// List Pending Transactions
 		/// List_pending_transactions pending_transactions
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Pending Transaction List</returns>
 		public async Task<Pending_transaction_list> List_pending_transactionsAsync(string cursor, int limit, string account_id, string route_id, string source_id, ExportStatus[] status_in, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -33048,6 +33081,7 @@ namespace MyNS
 		/// List Programs
 		/// List_programs programs
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Program List</returns>
 		public async Task<Program_list> List_programsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -33187,6 +33221,7 @@ namespace MyNS
 		/// List Real Time Payments Transfers
 		/// List_real_time_payments_transfers real_time_payments_transfers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Real Time Payments Transfer List</returns>
 		public async Task<Real_time_payments_transfer_list> List_real_time_payments_transfersAsync(string cursor, int limit, string account_id, string external_account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -33294,6 +33329,10 @@ namespace MyNS
 		/// You can use this API to confirm if a routing number is valid, such as when a user is providing you with bank account details. Since routing numbers uniquely identify a bank, this will always return 0 or 1 entry. In Sandbox, the only valid routing number for this method is 110000000.
 		/// List_routing_numbers routing_numbers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
+		/// <param name="routing_number">Max length: 9
+		/// Min length: 9
+		// </param>
 		/// <returns>Routing Number List</returns>
 		public async Task<Routing_number_list> List_routing_numbersAsync(string cursor, int limit, string routing_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -34203,6 +34242,7 @@ namespace MyNS
 		/// List Transactions
 		/// List_transactions transactions
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Transaction List</returns>
 		public async Task<Transaction_list> List_transactionsAsync(string cursor, int limit, string account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Inbound_ach_transfer_simulation_resultTransactionSourceCategory[] category_in, string route_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -34269,6 +34309,7 @@ namespace MyNS
 		/// List Wire Drawdown Requests
 		/// List_wire_drawdown_requests wire_drawdown_requests
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Wire Drawdown Request List</returns>
 		public async Task<Wire_drawdown_request_list> List_wire_drawdown_requestsAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -34375,6 +34416,7 @@ namespace MyNS
 		/// List Wire Transfers
 		/// List_wire_transfers wire_transfers
 		/// </summary>
+		/// <param name="limit">Minimum: 0</param>
 		/// <returns>Wire Transfer List</returns>
 		public async Task<Wire_transfer_list> List_wire_transfersAsync(string cursor, int limit, string account_id, string external_account_id, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

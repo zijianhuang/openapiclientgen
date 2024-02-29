@@ -1678,7 +1678,10 @@ namespace MyNS
 		/// Albums_idTracksGetByLimitAndOffsetAndMarket albums/{id}/tracks
 		/// </summary>
 		/// <param name="id">The Spotify ID for the album</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="market">The market (an ISO 3166-1 alpha-2 country code)</param>
 		/// <returns>OK</returns>
@@ -1786,7 +1789,10 @@ namespace MyNS
 		/// Artists_idAlbumsGetByLimitAndOffsetAndAlbum_typeAndMarket artists/{id}/albums
 		/// </summary>
 		/// <param name="id">The Spotify ID for the artist</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="album_type">Filter by album types</param>
 		/// <param name="market">The market (an ISO 3166-1 alpha-2 country code)</param>
@@ -1895,7 +1901,10 @@ namespace MyNS
 		/// 
 		/// BrowseCategoriesGetByLimitAndOffsetAndCountryAndLocale browse/categories
 		/// </summary>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="country">The country (an ISO 3166-1 alpha-2 country code)</param>
 		/// <param name="locale">The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: es_MX, meaning "Spanish (Mexico)".
@@ -1973,7 +1982,10 @@ namespace MyNS
 		/// BrowseCategories_category_idPlaylistsGetByLimitAndOffsetAndCountry browse/categories/{category_id}/playlists
 		/// </summary>
 		/// <param name="category_id">The Spotify ID of the category you wish to fetch.</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="country">The country (an ISO 3166-1 alpha-2 country code)</param>
 		/// <returns>OK</returns>
@@ -2010,7 +2022,10 @@ namespace MyNS
 		/// 
 		/// BrowseFeatured_playlistsGetByLimitAndOffsetAndCountryAndLocaleAndTimestamp browse/featured-playlists
 		/// </summary>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="country">The country (an ISO 3166-1 alpha-2 country code)</param>
 		/// <param name="locale">The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: es_MX, meaning "Spanish (Mexico)".
@@ -2051,7 +2066,10 @@ namespace MyNS
 		/// 
 		/// BrowseNew_releasesGetByLimitAndOffsetAndCountry browse/new-releases
 		/// </summary>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="country">The country (an ISO 3166-1 alpha-2 country code)</param>
 		/// <returns>OK</returns>
@@ -2123,7 +2141,10 @@ namespace MyNS
 		/// MeFollowingGetByTypeAndLimitAndAfter me/following
 		/// </summary>
 		/// <param name="type">The ID type, currently only artist is supported.</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="after">The last artist ID retrieved from the previous request.</param>
 		/// <returns>OK</returns>
 		public async Task<User_followed> MeFollowingGetByTypeAndLimitAndAfterAsync(MeFollowingGetByTypeAndLimitAndAfterType type, int limit, string after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2248,7 +2269,10 @@ namespace MyNS
 		/// 
 		/// MeTracksGetByLimitAndOffsetAndMarket me/tracks
 		/// </summary>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="market">The market (an ISO 3166-1 alpha-2 country code)</param>
 		/// <returns>OK</returns>
@@ -2373,7 +2397,10 @@ namespace MyNS
 		/// 
 		/// SearchGetByLimitAndOffsetAndQAndTypeAndMarket search
 		/// </summary>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="q">The search query's keywords (and optional field filters). The search is not case-sensitive: 'roadhouse' will match 'Roadhouse', 'roadHouse', etc. Keywords will be matched in any order unless surrounded by quotes, thus q=roadhouse&20blues will match both 'Blues Roadhouse' and 'Roadhouse of the Blues'. Quotation marks can be used to limit the match to a phrase: q=roadhouse&20blues will match 'My Roadhouse Blues' but not 'Roadhouse of the Blues'. By default, results are returned when a match is found in any field of the target object type. Searches can be made more specific by specifying an album, artist or track field filter. For example q=album:gold%20artist:abba&type=album will search for albums with the text 'gold' in the album name and the text 'abba' in an artist name. Other possible field filters, depending on object types being searched, include year, genre, upc, and isrc. For example, q=damian%20genre:reggae-pop&type=artist. The asterisk (*) character can, with some limitations, be used as a wildcard (maximum: 2 per query). It will match a variable number of non-white-space characters. It cannot be used in a quoted phrase, in a field filter, or as the first character of the keyword string. Searching for playlists will return results matching the playlist's name and/or description.</param>
 		/// <param name="type">A comma-separated list of item types to search across. Search results will include hits from all the specified item types; for example q=name:abacab&type=album,track will return both albums and tracks with "abacab" in their name.</param>
@@ -2519,7 +2546,10 @@ namespace MyNS
 		/// Users_user_idPlaylistsGetByLimitAndOffset users/{user_id}/playlists
 		/// </summary>
 		/// <param name="user_id">The user's Spotify user ID.</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <returns>OK</returns>
 		public async Task<Playlist_simple_page> Users_user_idPlaylistsGetByLimitAndOffsetAsync(string user_id, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2771,7 +2801,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="user_id">The user's Spotify user ID.</param>
 		/// <param name="playlist_id">The Spotify playlist ID.</param>
-		/// <param name="limit">The maximum number of items to return</param>
+		/// <param name="limit">The maximum number of items to return
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="offset">The index of the first item to return</param>
 		/// <param name="fields">A comma-separated list of fields to filter query</param>
 		/// <param name="market">The market (an ISO 3166-1 alpha-2 country code)</param>

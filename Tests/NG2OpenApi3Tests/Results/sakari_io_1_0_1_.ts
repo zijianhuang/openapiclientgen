@@ -22,9 +22,13 @@ export namespace MyNS {
 	export enum AccountEventType { account = 'account', messageStatus = 'messageStatus', messageIncoming = 'messageIncoming' }
 
 	export interface AccountEventPayload {
+
+		/** Type: double */
 		balance?: number | null;
 	}
 	export interface AccountEventPayloadFormProperties {
+
+		/** Type: double */
 		balance: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountEventPayloadFormGroup() {
@@ -329,15 +333,31 @@ export namespace MyNS {
 
 		/** Contacts that failed validation */
 		errors?: Array<Contact>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		inserted?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		submitted?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		success?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated?: number | null;
 	}
 	export interface ContactUploadResponseDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		inserted: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		submitted: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		success: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updated: FormControl<number | null | undefined>,
 	}
 	export function CreateContactUploadResponseDataFormGroup() {
@@ -396,8 +416,12 @@ export namespace MyNS {
 		message?: string | null;
 		outgoing?: boolean | null;
 		phoneNumber?: string | null;
+
+		/** Type: double */
 		price?: number | null;
 		read?: boolean | null;
+
+		/** Type: double */
 		segments?: number | null;
 		status?: string | null;
 		template?: string | null;
@@ -408,8 +432,12 @@ export namespace MyNS {
 		message: FormControl<string | null | undefined>,
 		outgoing: FormControl<boolean | null | undefined>,
 		phoneNumber: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 		read: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		segments: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		template: FormControl<string | null | undefined>,
@@ -636,13 +664,25 @@ export namespace MyNS {
 	}
 
 	export interface PaginatedResponsePagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PaginatedResponsePaginationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginatedResponsePaginationFormGroup() {
@@ -745,17 +785,29 @@ export namespace MyNS {
 	}
 
 	export interface SendMessagesResponseData {
+
+		/** Type: double */
 		estimatedPrice?: number | null;
 		invalid?: Array<Contact>;
 		jobId?: string | null;
 		messages?: Array<Message>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requested?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		valid?: number | null;
 	}
 	export interface SendMessagesResponseDataFormProperties {
+
+		/** Type: double */
 		estimatedPrice: FormControl<number | null | undefined>,
 		jobId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		requested: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		valid: FormControl<number | null | undefined>,
 	}
 	export function CreateSendMessagesResponseDataFormGroup() {
@@ -954,12 +1006,14 @@ export namespace MyNS {
 		 * Fetch campaigns
 		 * Get v1/accounts/{accountId}/campaigns
 		 * @param {string} accountId Account to apply operations to
-		 * @param {number} offset Results to skip when paginating through a result set
-		 * @param {number} limit Maximum number of results to return
+		 * @param {string} offset Results to skip when paginating through a result set
+		 *     Minimum: 0
+		 * @param {string} limit Maximum number of results to return
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} name Filter by name or part of
 		 * @return {CampaignsResponse} successful operation
 		 */
-		Campaigns_fetchAll(accountId: string, offset: number | null | undefined, limit: number | null | undefined, name: string | null | undefined): Observable<CampaignsResponse> {
+		Campaigns_fetchAll(accountId: string, offset: string | null | undefined, limit: string | null | undefined, name: string | null | undefined): Observable<CampaignsResponse> {
 			return this.http.get<CampaignsResponse>(this.baseUri + 'v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/campaigns&offset=' + offset + '&limit=' + limit + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 
@@ -1010,8 +1064,10 @@ export namespace MyNS {
 		 * Fetch contacts
 		 * Get v1/accounts/{accountId}/contacts
 		 * @param {string} accountId Account to apply operations to
-		 * @param {number} offset Results to skip when paginating through a result set
-		 * @param {number} limit Maximum number of results to return
+		 * @param {string} offset Results to skip when paginating through a result set
+		 *     Minimum: 0
+		 * @param {string} limit Maximum number of results to return
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} firstName Filter by first name or part of
 		 * @param {string} lastName Filter by last name or part of
 		 * @param {string} mobile Filter by mobile or part of
@@ -1019,7 +1075,7 @@ export namespace MyNS {
 		 * @param {string} tags Filter by tag(s)
 		 * @return {ContactsResponse} successful operation
 		 */
-		Contacts_fetchAll(accountId: string, offset: number | null | undefined, limit: number | null | undefined, firstName: string | null | undefined, lastName: string | null | undefined, mobile: string | null | undefined, email: string | null | undefined, tags: string | null | undefined): Observable<ContactsResponse> {
+		Contacts_fetchAll(accountId: string, offset: string | null | undefined, limit: string | null | undefined, firstName: string | null | undefined, lastName: string | null | undefined, mobile: string | null | undefined, email: string | null | undefined, tags: string | null | undefined): Observable<ContactsResponse> {
 			return this.http.get<ContactsResponse>(this.baseUri + 'v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/contacts&offset=' + offset + '&limit=' + limit + '&firstName=' + (firstName == null ? '' : encodeURIComponent(firstName)) + '&lastName=' + (lastName == null ? '' : encodeURIComponent(lastName)) + '&mobile=' + (mobile == null ? '' : encodeURIComponent(mobile)) + '&email=' + (email == null ? '' : encodeURIComponent(email)) + '&tags=' + (tags == null ? '' : encodeURIComponent(tags)), {});
 		}
 
@@ -1071,11 +1127,13 @@ export namespace MyNS {
 		 * Fetch conversations
 		 * Get v1/accounts/{accountId}/conversations
 		 * @param {string} accountId Account to apply operations to
-		 * @param {number} offset Results to skip when paginating through a result set
-		 * @param {number} limit Maximum number of results to return
+		 * @param {string} offset Results to skip when paginating through a result set
+		 *     Minimum: 0
+		 * @param {string} limit Maximum number of results to return
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ConversationsResponse} successful operation
 		 */
-		Conversations_fetchAll(accountId: string, offset: number | null | undefined, limit: number | null | undefined): Observable<ConversationsResponse> {
+		Conversations_fetchAll(accountId: string, offset: string | null | undefined, limit: string | null | undefined): Observable<ConversationsResponse> {
 			return this.http.get<ConversationsResponse>(this.baseUri + 'v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/conversations&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -1105,13 +1163,15 @@ export namespace MyNS {
 		 * Fetch messages
 		 * Get v1/accounts/{accountId}/messages
 		 * @param {string} accountId Account to apply operations to
-		 * @param {number} offset Results to skip when paginating through a result set
-		 * @param {number} limit Maximum number of results to return
+		 * @param {string} offset Results to skip when paginating through a result set
+		 *     Minimum: 0
+		 * @param {string} limit Maximum number of results to return
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} contactId ID of contact
 		 * @param {string} conversationId ID of conversation
 		 * @return {MessagesResponse} successful operation
 		 */
-		Messages_fetchAll(accountId: string, offset: number | null | undefined, limit: number | null | undefined, contactId: string | null | undefined, conversationId: string | null | undefined): Observable<MessagesResponse> {
+		Messages_fetchAll(accountId: string, offset: string | null | undefined, limit: string | null | undefined, contactId: string | null | undefined, conversationId: string | null | undefined): Observable<MessagesResponse> {
 			return this.http.get<MessagesResponse>(this.baseUri + 'v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/messages&offset=' + offset + '&limit=' + limit + '&contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&conversationId=' + (conversationId == null ? '' : encodeURIComponent(conversationId)), {});
 		}
 
@@ -1141,12 +1201,14 @@ export namespace MyNS {
 		 * Fetch templates
 		 * Get v1/accounts/{accountId}/templates
 		 * @param {string} accountId Account to apply operations to
-		 * @param {number} offset Results to skip when paginating through a result set
-		 * @param {number} limit Maximum number of results to return
+		 * @param {string} offset Results to skip when paginating through a result set
+		 *     Minimum: 0
+		 * @param {string} limit Maximum number of results to return
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} name Filter by name or part of
 		 * @return {TemplatesResponse} successful operation
 		 */
-		Templates_fetchAll(accountId: string, offset: number | null | undefined, limit: number | null | undefined, name: string | null | undefined): Observable<TemplatesResponse> {
+		Templates_fetchAll(accountId: string, offset: string | null | undefined, limit: string | null | undefined, name: string | null | undefined): Observable<TemplatesResponse> {
 			return this.http.get<TemplatesResponse>(this.baseUri + 'v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/templates&offset=' + offset + '&limit=' + limit + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 

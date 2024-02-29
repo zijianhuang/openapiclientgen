@@ -167,7 +167,10 @@ export namespace MyNS {
 	/** Information about the claim rating. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating {
 
-		/** For numeric ratings, the best value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.bestRating`. */
+		/**
+		 * For numeric ratings, the best value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.bestRating`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bestRating?: number | null;
 
 		/** Corresponds to `ClaimReview.reviewRating.image`. */
@@ -176,20 +179,29 @@ export namespace MyNS {
 		/** Corresponds to `ClaimReview.reviewRating.ratingExplanation`. */
 		ratingExplanation?: string | null;
 
-		/** A numeric rating of this claim, in the range worstRating — bestRating inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`. */
+		/**
+		 * A numeric rating of this claim, in the range worstRating — bestRating inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingValue?: number | null;
 
 		/** The truthfulness rating as a human-readible short word or phrase. Corresponds to `ClaimReview.reviewRating.alternateName`. */
 		textualRating?: string | null;
 
-		/** For numeric ratings, the worst value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.worstRating`. */
+		/**
+		 * For numeric ratings, the worst value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.worstRating`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		worstRating?: number | null;
 	}
 
 	/** Information about the claim rating. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimRatingFormProperties {
 
-		/** For numeric ratings, the best value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.bestRating`. */
+		/**
+		 * For numeric ratings, the best value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.bestRating`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bestRating: FormControl<number | null | undefined>,
 
 		/** Corresponds to `ClaimReview.reviewRating.image`. */
@@ -198,13 +210,19 @@ export namespace MyNS {
 		/** Corresponds to `ClaimReview.reviewRating.ratingExplanation`. */
 		ratingExplanation: FormControl<string | null | undefined>,
 
-		/** A numeric rating of this claim, in the range worstRating — bestRating inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`. */
+		/**
+		 * A numeric rating of this claim, in the range worstRating — bestRating inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingValue: FormControl<number | null | undefined>,
 
 		/** The truthfulness rating as a human-readible short word or phrase. Corresponds to `ClaimReview.reviewRating.alternateName`. */
 		textualRating: FormControl<string | null | undefined>,
 
-		/** For numeric ratings, the worst value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.worstRating`. */
+		/**
+		 * For numeric ratings, the worst value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.worstRating`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		worstRating: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimRatingFormGroup() {
@@ -425,8 +443,11 @@ export namespace MyNS {
 		 * Get v1alpha1/claims:search
 		 * @param {string} languageCode The BCP-47 language code, such as "en-US" or "sr-Latn". Can be used to restrict results by language, though we do not currently consider the region.
 		 * @param {number} maxAgeDays The maximum age of the returned search results, in days. Age is determined by either claim date or review date, whichever is newer.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset An integer that specifies the current offset (that is, starting result location) in search results. This field is only considered if `page_token` is unset. For example, 0 means to return results starting from the first matching result, and 10 means to return from the 11th result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The pagination size. We will return up to that many results. Defaults to 10 if not set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token. You may provide the `next_page_token` returned from a previous List request, if any, in order to get the next page. All other fields must have the same values as in the previous request.
 		 * @param {string} query Textual query string. Required unless `review_publisher_site_filter` is specified.
 		 * @param {string} reviewPublisherSiteFilter The review publisher site to filter results by, e.g. nytimes.com.
@@ -440,8 +461,10 @@ export namespace MyNS {
 		 * List the `ClaimReview` markup pages for a specific URL or for an organization.
 		 * Get v1alpha1/pages
 		 * @param {number} offset An integer that specifies the current offset (that is, starting result location) in search results. This field is only considered if `page_token` is unset, and if the request is not for a specific URL. For example, 0 means to return results starting from the first matching result, and 10 means to return from the 11th result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} organization The organization for which we want to fetch markups for. For instance, "site.com". Cannot be specified along with an URL.
 		 * @param {number} pageSize The pagination size. We will return up to that many results. Defaults to 10 if not set. Has no effect if a URL is requested.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token. You may provide the `next_page_token` returned from a previous List request, if any, in order to get the next page. All other fields must have the same values as in the previous request.
 		 * @param {string} url The URL from which to get `ClaimReview` markup. There will be at most one result. If markup is associated with a more canonical version of the URL provided, we will return that URL instead. Cannot be specified along with an organization.
 		 * @return {GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse} Successful response

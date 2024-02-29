@@ -1961,7 +1961,9 @@ export namespace MyNS {
 		 * Get catalog/usql/acl
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -1977,7 +1979,9 @@ export namespace MyNS {
 		 * Get catalog/usql/databases
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2005,7 +2009,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2022,7 +2028,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the assembly.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2051,7 +2059,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the schema.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2120,7 +2130,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the external data sources.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2149,7 +2161,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the schema.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2179,7 +2193,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the packages.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2210,7 +2226,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the procedures.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2241,7 +2259,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the statistics.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2259,7 +2279,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the tables.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2292,7 +2314,9 @@ export namespace MyNS {
 		 * @param {string} tableName The name of the table containing the partitions.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2325,7 +2349,9 @@ export namespace MyNS {
 		 * @param {string} tableName The name of the table containing the partition.
 		 * @param {string} partitionName The name of the table partition.
 		 * @param {string} maxRows The maximum number of preview rows to be retrieved.Rows returned may be less than or equal to this number depending on row sizes and number of rows in the partition.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} maxColumns The maximum number of columns to be retrieved.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} api_version Client Api Version.
 		 * @return {USqlTablePreview} Successfully retrieved preview rows for the specified partition.
 		 */
@@ -2340,7 +2366,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the table.
 		 * @param {string} tableName The name of the table.
 		 * @param {string} maxRows The maximum number of preview rows to be retrieved. Rows returned may be less than or equal to this number depending on row sizes and number of rows in the table.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} maxColumns The maximum number of columns to be retrieved.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} api_version Client Api Version.
 		 * @return {USqlTablePreview} Successfully retrieved preview rows for the specified table.
 		 */
@@ -2356,7 +2384,9 @@ export namespace MyNS {
 		 * @param {string} tableName The name of the table containing the statistics.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2389,7 +2419,9 @@ export namespace MyNS {
 		 * @param {string} tableName The name of the table containing the table fragments.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2407,7 +2439,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the table types.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2438,7 +2472,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the table valued functions.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2469,7 +2505,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the types.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2487,7 +2525,9 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the views.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2578,7 +2618,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the table statistics.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2595,7 +2637,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the tables.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2613,7 +2657,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the table valued functions.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.
@@ -2630,7 +2676,9 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the views.
 		 * @param {string} filter OData filter. Optional.
 		 * @param {number} top The number of items to return. Optional.
+		 *     Minimum: 1
 		 * @param {number} skip The number of items to skip over before returning elements. Optional.
+		 *     Minimum: 1
 		 * @param {string} select OData Select statement. Limits the properties on each entry to just those requested, e.g. Categories?$select=CategoryName,Description. Optional.
 		 * @param {string} orderby OrderBy clause. One or more comma-separated expressions with an optional "asc" (the default) or "desc" depending on the order you'd like the values sorted, e.g. Categories?$orderby=CategoryName desc. Optional.
 		 * @param {boolean} count The Boolean value of true or false to request a count of the matching resources included with the resources in the response, e.g. Categories?$count=true. Optional.

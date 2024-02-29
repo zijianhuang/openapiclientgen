@@ -6763,8 +6763,13 @@ namespace MyNS
 		/// Lists the partner accounts associated with your AWS account.
 		/// ListPartnerAccounts partner-accounts
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPartnerAccountsResponse> ListPartnerAccountsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6798,6 +6803,7 @@ namespace MyNS
 		/// Associate a multicast group with a FUOTA task.
 		/// AssociateMulticastGroupWithFuotaTask fuota-tasks/{Id}/multicast-group
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task AssociateMulticastGroupWithFuotaTaskAsync(string Id, AssociateMulticastGroupWithFuotaTaskPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/multicast-group";
@@ -6831,6 +6837,7 @@ namespace MyNS
 		/// Associate a wireless device with a FUOTA task.
 		/// AssociateWirelessDeviceWithFuotaTask fuota-tasks/{Id}/wireless-device
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task AssociateWirelessDeviceWithFuotaTaskAsync(string Id, AssociateWirelessDeviceWithFuotaTaskPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/wireless-device";
@@ -6864,6 +6871,7 @@ namespace MyNS
 		/// Associates a wireless device with a multicast group.
 		/// AssociateWirelessDeviceWithMulticastGroup multicast-groups/{Id}/wireless-device
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task AssociateWirelessDeviceWithMulticastGroupAsync(string Id, AssociateWirelessDeviceWithMulticastGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/wireless-device";
@@ -6897,7 +6905,9 @@ namespace MyNS
 		/// Associates a wireless device with a thing.
 		/// AssociateWirelessDeviceWithThing wireless-devices/{Id}/thing
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task AssociateWirelessDeviceWithThingAsync(string Id, AssociateWirelessDeviceWithThingPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-devices/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/thing";
@@ -6931,7 +6941,9 @@ namespace MyNS
 		/// Disassociates a wireless device from its currently associated thing.
 		/// DisassociateWirelessDeviceFromThing wireless-devices/{Id}/thing
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task DisassociateWirelessDeviceFromThingAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-devices/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/thing";
@@ -6958,7 +6970,9 @@ namespace MyNS
 		/// Associates a wireless gateway with a certificate.
 		/// AssociateWirelessGatewayWithCertificate wireless-gateways/{Id}/certificate
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateWirelessGatewayWithCertificateResponse> AssociateWirelessGatewayWithCertificateAsync(string Id, AssociateWirelessGatewayWithCertificatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6999,7 +7013,9 @@ namespace MyNS
 		/// Disassociates a wireless gateway from its currently associated certificate.
 		/// DisassociateWirelessGatewayFromCertificate wireless-gateways/{Id}/certificate
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task DisassociateWirelessGatewayFromCertificateAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/certificate";
@@ -7026,7 +7042,9 @@ namespace MyNS
 		/// Gets the ID of the certificate that is currently associated with a wireless gateway.
 		/// GetWirelessGatewayCertificate wireless-gateways/{Id}/certificate
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayCertificateResponse> GetWirelessGatewayCertificateAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7060,7 +7078,9 @@ namespace MyNS
 		/// Associates a wireless gateway with a thing.
 		/// AssociateWirelessGatewayWithThing wireless-gateways/{Id}/thing
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task AssociateWirelessGatewayWithThingAsync(string Id, AssociateWirelessGatewayWithThingPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/thing";
@@ -7094,7 +7114,9 @@ namespace MyNS
 		/// Disassociates a wireless gateway from its currently associated thing.
 		/// DisassociateWirelessGatewayFromThing wireless-gateways/{Id}/thing
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task DisassociateWirelessGatewayFromThingAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/thing";
@@ -7121,6 +7143,7 @@ namespace MyNS
 		/// Cancels an existing multicast group session.
 		/// CancelMulticastGroupSession multicast-groups/{Id}/session
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task CancelMulticastGroupSessionAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/session";
@@ -7147,6 +7170,7 @@ namespace MyNS
 		/// Gets information about a multicast group session.
 		/// GetMulticastGroupSession multicast-groups/{Id}/session
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		/// <returns>Success</returns>
 		public async Task<GetMulticastGroupSessionResponse> GetMulticastGroupSessionAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7180,6 +7204,7 @@ namespace MyNS
 		/// Starts a multicast group session.
 		/// StartMulticastGroupSession multicast-groups/{Id}/session
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task StartMulticastGroupSessionAsync(string Id, StartMulticastGroupSessionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/session";
@@ -7246,8 +7271,13 @@ namespace MyNS
 		/// Lists the destinations registered to your AWS account.
 		/// ListDestinations destinations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7316,8 +7346,13 @@ namespace MyNS
 		/// Lists the device profiles registered to your AWS account.
 		/// ListDeviceProfiles device-profiles
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="deviceProfileType">A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7387,7 +7422,12 @@ namespace MyNS
 		/// Lists the FUOTA tasks registered to your AWS account.
 		/// ListFuotaTasks fuota-tasks
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7456,7 +7496,12 @@ namespace MyNS
 		/// Lists the multicast groups registered to your AWS account.
 		/// ListMulticastGroups multicast-groups
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7525,7 +7570,12 @@ namespace MyNS
 		/// Lists the network analyzer configurations.
 		/// ListNetworkAnalyzerConfigurations network-analyzer-configurations
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7594,8 +7644,13 @@ namespace MyNS
 		/// Lists the service profiles registered to your AWS account.
 		/// ListServiceProfiles service-profiles
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7664,12 +7719,25 @@ namespace MyNS
 		/// Lists the wireless devices registered to your AWS account.
 		/// ListWirelessDevices wireless-devices
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="destinationName">A filter to list only the wireless devices that use this destination.</param>
-		/// <param name="deviceProfileId">A filter to list only the wireless devices that use this device profile.</param>
-		/// <param name="serviceProfileId">A filter to list only the wireless devices that use this service profile.</param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="destinationName">A filter to list only the wireless devices that use this destination.
+		/// Max length: 128
+		// </param>
+		/// <param name="deviceProfileId">A filter to list only the wireless devices that use this device profile.
+		/// Max length: 256
+		// </param>
+		/// <param name="serviceProfileId">A filter to list only the wireless devices that use this service profile.
+		/// Max length: 256
+		// </param>
 		/// <param name="wirelessDeviceType">A filter to list only the wireless devices that use this wireless device type.</param>
+		/// <param name="fuotaTaskId">Max length: 256</param>
+		/// <param name="multicastGroupId">Max length: 256</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7738,8 +7806,13 @@ namespace MyNS
 		/// Lists the wireless gateways registered to your AWS account.
 		/// ListWirelessGateways wireless-gateways
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -7775,7 +7848,9 @@ namespace MyNS
 		/// Creates a task for a wireless gateway.
 		/// CreateWirelessGatewayTask wireless-gateways/{Id}/tasks
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task CreateWirelessGatewayTaskAsync(string Id, CreateWirelessGatewayTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/tasks";
@@ -7809,7 +7884,9 @@ namespace MyNS
 		/// Deletes a wireless gateway task.
 		/// DeleteWirelessGatewayTask wireless-gateways/{Id}/tasks
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteWirelessGatewayTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/tasks";
@@ -7836,7 +7913,9 @@ namespace MyNS
 		/// Gets information about a wireless gateway task.
 		/// GetWirelessGatewayTask wireless-gateways/{Id}/tasks
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayTaskResponse> GetWirelessGatewayTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7903,8 +7982,13 @@ namespace MyNS
 		/// List the wireless gateway tasks definitions registered to your AWS account.
 		/// ListWirelessGatewayTaskDefinitions wireless-gateway-task-definitions
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <param name="taskDefinitionType">A filter to list only the wireless gateway task definitions that use this task definition type.</param>
 		/// <returns>Success</returns>
 		public async Task<ListWirelessGatewayTaskDefinitionsResponse> ListWirelessGatewayTaskDefinitionsAsync(int maxResults, string nextToken, WirelessGatewayTaskDefinitionType taskDefinitionType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7939,7 +8023,9 @@ namespace MyNS
 		/// Deletes a destination.
 		/// DeleteDestination destinations/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the resource to delete.</param>
+		/// <param name="Name">The name of the resource to delete.
+		/// Max length: 128
+		// </param>
 		public async Task DeleteDestinationAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "destinations/"+ (Name==null? "" : System.Uri.EscapeDataString(Name));
@@ -7966,7 +8052,9 @@ namespace MyNS
 		/// Gets information about a destination.
 		/// GetDestination destinations/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the resource to get.</param>
+		/// <param name="Name">The name of the resource to get.
+		/// Max length: 128
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDestinationResponse> GetDestinationAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8000,7 +8088,9 @@ namespace MyNS
 		/// Updates properties of a destination.
 		/// UpdateDestination destinations/{Name}
 		/// </summary>
-		/// <param name="Name">The new name of the resource.</param>
+		/// <param name="Name">The new name of the resource.
+		/// Max length: 128
+		// </param>
 		public async Task UpdateDestinationAsync(string Name, UpdateDestinationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "destinations/"+ (Name==null? "" : System.Uri.EscapeDataString(Name));
@@ -8034,7 +8124,9 @@ namespace MyNS
 		/// Deletes a device profile.
 		/// DeleteDeviceProfile device-profiles/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteDeviceProfileAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "device-profiles/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8061,7 +8153,9 @@ namespace MyNS
 		/// Gets information about a device profile.
 		/// GetDeviceProfile device-profiles/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDeviceProfileResponse> GetDeviceProfileAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8095,6 +8189,7 @@ namespace MyNS
 		/// Deletes a FUOTA task.
 		/// DeleteFuotaTask fuota-tasks/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task DeleteFuotaTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8121,6 +8216,7 @@ namespace MyNS
 		/// Gets information about a FUOTA task.
 		/// GetFuotaTask fuota-tasks/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		/// <returns>Success</returns>
 		public async Task<GetFuotaTaskResponse> GetFuotaTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8154,6 +8250,7 @@ namespace MyNS
 		/// Starts a FUOTA task.
 		/// StartFuotaTask fuota-tasks/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task StartFuotaTaskAsync(string Id, StartFuotaTaskPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8187,6 +8284,7 @@ namespace MyNS
 		/// Updates properties of a FUOTA task.
 		/// UpdateFuotaTask fuota-tasks/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task UpdateFuotaTaskAsync(string Id, UpdateFuotaTaskPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8220,6 +8318,7 @@ namespace MyNS
 		/// Deletes a multicast group if it is not in use by a fuota task.
 		/// DeleteMulticastGroup multicast-groups/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task DeleteMulticastGroupAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8246,6 +8345,7 @@ namespace MyNS
 		/// Gets information about a multicast group.
 		/// GetMulticastGroup multicast-groups/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		/// <returns>Success</returns>
 		public async Task<GetMulticastGroupResponse> GetMulticastGroupAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8279,6 +8379,7 @@ namespace MyNS
 		/// Updates properties of a multicast group session.
 		/// UpdateMulticastGroup multicast-groups/{Id}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task UpdateMulticastGroupAsync(string Id, UpdateMulticastGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8312,6 +8413,9 @@ namespace MyNS
 		/// Deletes a network analyzer configuration.
 		/// DeleteNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
+		/// <param name="ConfigurationName">Max length: 1024
+		/// Min length: 1
+		// </param>
 		public async Task DeleteNetworkAnalyzerConfigurationAsync(string ConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "network-analyzer-configurations/"+ (ConfigurationName==null? "" : System.Uri.EscapeDataString(ConfigurationName));
@@ -8338,6 +8442,9 @@ namespace MyNS
 		/// Get network analyzer configuration.
 		/// GetNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
+		/// <param name="ConfigurationName">Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkAnalyzerConfigurationResponse> GetNetworkAnalyzerConfigurationAsync(string ConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8371,6 +8478,9 @@ namespace MyNS
 		/// Update network analyzer configuration.
 		/// UpdateNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
+		/// <param name="ConfigurationName">Max length: 1024
+		/// Min length: 1
+		// </param>
 		public async Task UpdateNetworkAnalyzerConfigurationAsync(string ConfigurationName, UpdateNetworkAnalyzerConfigurationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "network-analyzer-configurations/"+ (ConfigurationName==null? "" : System.Uri.EscapeDataString(ConfigurationName));
@@ -8404,7 +8514,9 @@ namespace MyNS
 		/// Remove queued messages from the downlink queue.
 		/// DeleteQueuedMessages wireless-devices/{Id}/data#messageId
 		/// </summary>
-		/// <param name="Id">The ID of a given wireless device for which downlink messages will be deleted.</param>
+		/// <param name="Id">The ID of a given wireless device for which downlink messages will be deleted.
+		/// Max length: 256
+		// </param>
 		/// <param name="messageId">If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</param>
 		/// <param name="WirelessDeviceType">The wireless device type, which can be either Sidewalk or LoRaWAN.</param>
 		public async Task DeleteQueuedMessagesAsync(string Id, string messageId, WirelessDeviceType WirelessDeviceType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8433,7 +8545,9 @@ namespace MyNS
 		/// Deletes a service profile.
 		/// DeleteServiceProfile service-profiles/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteServiceProfileAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "service-profiles/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8460,7 +8574,9 @@ namespace MyNS
 		/// Gets information about a service profile.
 		/// GetServiceProfile service-profiles/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceProfileResponse> GetServiceProfileAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8494,7 +8610,9 @@ namespace MyNS
 		/// Deletes a wireless device.
 		/// DeleteWirelessDevice wireless-devices/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteWirelessDeviceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-devices/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8521,7 +8639,9 @@ namespace MyNS
 		/// Updates properties of a wireless device.
 		/// UpdateWirelessDevice wireless-devices/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task UpdateWirelessDeviceAsync(string Id, UpdateWirelessDevicePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-devices/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8555,7 +8675,9 @@ namespace MyNS
 		/// Delete an import task.
 		/// DeleteWirelessDeviceImportTask wireless_device_import_task/{Id}
 		/// </summary>
-		/// <param name="Id">The unique identifier of the import task to be deleted.</param>
+		/// <param name="Id">The unique identifier of the import task to be deleted.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteWirelessDeviceImportTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless_device_import_task/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8582,7 +8704,9 @@ namespace MyNS
 		/// Get information about an import task and count of device onboarding summary information for the import task.
 		/// GetWirelessDeviceImportTask wireless_device_import_task/{Id}
 		/// </summary>
-		/// <param name="Id">The identifier of the import task for which information is requested.</param>
+		/// <param name="Id">The identifier of the import task for which information is requested.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessDeviceImportTaskResponse> GetWirelessDeviceImportTaskAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8616,7 +8740,9 @@ namespace MyNS
 		/// Update an import task to add more devices to the task.
 		/// UpdateWirelessDeviceImportTask wireless_device_import_task/{Id}
 		/// </summary>
-		/// <param name="Id">The identifier of the import task to be updated.</param>
+		/// <param name="Id">The identifier of the import task to be updated.
+		/// Max length: 256
+		// </param>
 		public async Task UpdateWirelessDeviceImportTaskAsync(string Id, UpdateWirelessDeviceImportTaskPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless_device_import_task/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8650,7 +8776,9 @@ namespace MyNS
 		/// Deletes a wireless gateway.
 		/// DeleteWirelessGateway wireless-gateways/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 256
+		// </param>
 		public async Task DeleteWirelessGatewayAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8677,7 +8805,9 @@ namespace MyNS
 		/// Updates properties of a wireless gateway.
 		/// UpdateWirelessGateway wireless-gateways/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to update.</param>
+		/// <param name="Id">The ID of the resource to update.
+		/// Max length: 256
+		// </param>
 		public async Task UpdateWirelessGatewayAsync(string Id, UpdateWirelessGatewayPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateways/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8711,7 +8841,9 @@ namespace MyNS
 		/// Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.
 		/// DeleteWirelessGatewayTaskDefinition wireless-gateway-task-definitions/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to delete.</param>
+		/// <param name="Id">The ID of the resource to delete.
+		/// Max length: 36
+		// </param>
 		public async Task DeleteWirelessGatewayTaskDefinitionAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-gateway-task-definitions/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
@@ -8738,7 +8870,9 @@ namespace MyNS
 		/// Gets information about a wireless gateway task definition.
 		/// GetWirelessGatewayTaskDefinition wireless-gateway-task-definitions/{Id}
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayTaskDefinitionResponse> GetWirelessGatewayTaskDefinitionAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8772,7 +8906,9 @@ namespace MyNS
 		/// Deregister a wireless device from AWS IoT Wireless.
 		/// DeregisterWirelessDevice wireless-devices/{Identifier}/deregister
 		/// </summary>
-		/// <param name="Identifier">The identifier of the wireless device to deregister from AWS IoT Wireless.</param>
+		/// <param name="Identifier">The identifier of the wireless device to deregister from AWS IoT Wireless.
+		/// Max length: 256
+		// </param>
 		/// <param name="WirelessDeviceType">The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterWirelessDeviceResponse> DeregisterWirelessDeviceAsync(string Identifier, WirelessDeviceType WirelessDeviceType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8802,7 +8938,9 @@ namespace MyNS
 		/// Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.
 		/// DisassociateAwsAccountFromPartnerAccount partner-accounts/{PartnerAccountId}#partnerType
 		/// </summary>
-		/// <param name="PartnerAccountId">The partner account ID to disassociate from the AWS account.</param>
+		/// <param name="PartnerAccountId">The partner account ID to disassociate from the AWS account.
+		/// Max length: 256
+		// </param>
 		/// <param name="partnerType">The partner type.</param>
 		public async Task DisassociateAwsAccountFromPartnerAccountAsync(string PartnerAccountId, EventNotificationPartnerType partnerType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8830,7 +8968,9 @@ namespace MyNS
 		/// Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, returns all partner accounts.
 		/// GetPartnerAccount partner-accounts/{PartnerAccountId}#partnerType
 		/// </summary>
-		/// <param name="PartnerAccountId">The partner account ID to disassociate from the AWS account.</param>
+		/// <param name="PartnerAccountId">The partner account ID to disassociate from the AWS account.
+		/// Max length: 256
+		// </param>
 		/// <param name="partnerType">The partner type.</param>
 		/// <returns>Success</returns>
 		public async Task<GetPartnerAccountResponse> GetPartnerAccountAsync(string PartnerAccountId, EventNotificationPartnerType partnerType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8865,7 +9005,9 @@ namespace MyNS
 		/// Updates properties of a partner account.
 		/// UpdatePartnerAccount partner-accounts/{PartnerAccountId}#partnerType
 		/// </summary>
-		/// <param name="PartnerAccountId">The ID of the partner account to update.</param>
+		/// <param name="PartnerAccountId">The ID of the partner account to update.
+		/// Max length: 256
+		// </param>
 		/// <param name="partnerType">The partner type.</param>
 		public async Task UpdatePartnerAccountAsync(string PartnerAccountId, EventNotificationPartnerType partnerType, UpdatePartnerAccountPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8900,6 +9042,8 @@ namespace MyNS
 		/// Disassociates a multicast group from a fuota task.
 		/// DisassociateMulticastGroupFromFuotaTask fuota-tasks/{Id}/multicast-groups/{MulticastGroupId}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
+		/// <param name="MulticastGroupId">Max length: 256</param>
 		public async Task DisassociateMulticastGroupFromFuotaTaskAsync(string Id, string MulticastGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/multicast-groups/"+ (MulticastGroupId==null? "" : System.Uri.EscapeDataString(MulticastGroupId));
@@ -8926,6 +9070,8 @@ namespace MyNS
 		/// Disassociates a wireless device from a FUOTA task.
 		/// DisassociateWirelessDeviceFromFuotaTask fuota-tasks/{Id}/wireless-devices/{WirelessDeviceId}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
+		/// <param name="WirelessDeviceId">Max length: 256</param>
 		public async Task DisassociateWirelessDeviceFromFuotaTaskAsync(string Id, string WirelessDeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fuota-tasks/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/wireless-devices/"+ (WirelessDeviceId==null? "" : System.Uri.EscapeDataString(WirelessDeviceId));
@@ -8952,6 +9098,8 @@ namespace MyNS
 		/// Disassociates a wireless device from a multicast group.
 		/// DisassociateWirelessDeviceFromMulticastGroup multicast-groups/{Id}/wireless-devices/{WirelessDeviceId}
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
+		/// <param name="WirelessDeviceId">Max length: 256</param>
 		public async Task DisassociateWirelessDeviceFromMulticastGroupAsync(string Id, string WirelessDeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/wireless-devices/"+ (WirelessDeviceId==null? "" : System.Uri.EscapeDataString(WirelessDeviceId));
@@ -9330,7 +9478,9 @@ namespace MyNS
 		/// Get the event configuration for a particular resource identifier.
 		/// GetResourceEventConfiguration event-configurations/{Identifier}#identifierType
 		/// </summary>
-		/// <param name="Identifier">Resource identifier to opt in for event messaging.</param>
+		/// <param name="Identifier">Resource identifier to opt in for event messaging.
+		/// Max length: 256
+		// </param>
 		/// <param name="identifierType">Identifier type of the particular resource identifier for event configuration.</param>
 		/// <param name="partnerType">Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</param>
 		/// <returns>Success</returns>
@@ -9366,7 +9516,9 @@ namespace MyNS
 		/// Update the event configuration for a particular resource identifier.
 		/// UpdateResourceEventConfiguration event-configurations/{Identifier}#identifierType
 		/// </summary>
-		/// <param name="Identifier">Resource identifier to opt in for event messaging.</param>
+		/// <param name="Identifier">Resource identifier to opt in for event messaging.
+		/// Max length: 256
+		// </param>
 		/// <param name="identifierType">Identifier type of the particular resource identifier for event configuration.</param>
 		/// <param name="partnerType">Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </param>
 		public async Task UpdateResourceEventConfigurationAsync(string Identifier, IdentifierType identifierType, EventNotificationPartnerType partnerType, UpdateResourceEventConfigurationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9402,6 +9554,7 @@ namespace MyNS
 		/// Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.
 		/// GetResourceLogLevel log-levels/{ResourceIdentifier}#resourceType
 		/// </summary>
+		/// <param name="ResourceIdentifier">Max length: 256</param>
 		/// <param name="resourceType">The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<GetResourceLogLevelResponse> GetResourceLogLevelAsync(string ResourceIdentifier, string resourceType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9436,6 +9589,7 @@ namespace MyNS
 		/// Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.
 		/// PutResourceLogLevel log-levels/{ResourceIdentifier}#resourceType
 		/// </summary>
+		/// <param name="ResourceIdentifier">Max length: 256</param>
 		/// <param name="resourceType">The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<PutResourceLogLevelResponse> PutResourceLogLevelAsync(string ResourceIdentifier, string resourceType, PutResourceLogLevelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9477,6 +9631,7 @@ namespace MyNS
 		/// Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.
 		/// ResetResourceLogLevel log-levels/{ResourceIdentifier}#resourceType
 		/// </summary>
+		/// <param name="ResourceIdentifier">Max length: 256</param>
 		/// <param name="resourceType">The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</param>
 		public async Task ResetResourceLogLevelAsync(string ResourceIdentifier, string resourceType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9608,7 +9763,9 @@ namespace MyNS
 		/// Gets information about a wireless device.
 		/// GetWirelessDevice wireless-devices/{Identifier}#identifierType
 		/// </summary>
-		/// <param name="Identifier">The identifier of the wireless device to get.</param>
+		/// <param name="Identifier">The identifier of the wireless device to get.
+		/// Max length: 256
+		// </param>
 		/// <param name="identifierType">The type of identifier used in <code>identifier</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessDeviceResponse> GetWirelessDeviceAsync(string Identifier, WirelessDeviceIdType identifierType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9643,7 +9800,9 @@ namespace MyNS
 		/// Gets operating information about a wireless device.
 		/// GetWirelessDeviceStatistics wireless-devices/{Id}/statistics
 		/// </summary>
-		/// <param name="Id">The ID of the wireless device for which to get the data.</param>
+		/// <param name="Id">The ID of the wireless device for which to get the data.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessDeviceStatisticsResponse> GetWirelessDeviceStatisticsAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9677,7 +9836,9 @@ namespace MyNS
 		/// Gets information about a wireless gateway.
 		/// GetWirelessGateway wireless-gateways/{Identifier}#identifierType
 		/// </summary>
-		/// <param name="Identifier">The identifier of the wireless gateway to get.</param>
+		/// <param name="Identifier">The identifier of the wireless gateway to get.
+		/// Max length: 256
+		// </param>
 		/// <param name="identifierType">The type of identifier used in <code>identifier</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayResponse> GetWirelessGatewayAsync(string Identifier, WirelessGatewayIdType identifierType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9712,7 +9873,9 @@ namespace MyNS
 		/// Gets the firmware version and other information about a wireless gateway.
 		/// GetWirelessGatewayFirmwareInformation wireless-gateways/{Id}/firmware-information
 		/// </summary>
-		/// <param name="Id">The ID of the resource to get.</param>
+		/// <param name="Id">The ID of the resource to get.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayFirmwareInformationResponse> GetWirelessGatewayFirmwareInformationAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9746,7 +9909,9 @@ namespace MyNS
 		/// Gets operating information about a wireless gateway.
 		/// GetWirelessGatewayStatistics wireless-gateways/{Id}/statistics
 		/// </summary>
-		/// <param name="Id">The ID of the wireless gateway for which to get the data.</param>
+		/// <param name="Id">The ID of the wireless gateway for which to get the data.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWirelessGatewayStatisticsResponse> GetWirelessGatewayStatisticsAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9780,8 +9945,15 @@ namespace MyNS
 		/// List the Sidewalk devices in an import task and their onboarding status.
 		/// ListDevicesForWirelessDeviceImportTask wireless_device_import_task#id
 		/// </summary>
-		/// <param name="id">The identifier of the import task for which wireless devices are listed.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</param>
+		/// <param name="id">The identifier of the import task for which wireless devices are listed.
+		/// Max length: 256
+		// </param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <param name="status">The status of the devices in the import task.</param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesForWirelessDeviceImportTaskResponse> ListDevicesForWirelessDeviceImportTaskAsync(string id, int maxResults, string nextToken, OnboardStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9817,7 +9989,12 @@ namespace MyNS
 		/// ListEventConfigurations event-configurations#resourceType
 		/// </summary>
 		/// <param name="resourceType">Resource type to filter event configurations.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEventConfigurationsResponse> ListEventConfigurationsAsync(EventNotificationResourceType resourceType, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9851,7 +10028,13 @@ namespace MyNS
 		/// List all multicast groups associated with a fuota task.
 		/// ListMulticastGroupsByFuotaTask fuota-tasks/{Id}/multicast-groups
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="Id">Max length: 256</param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -9888,7 +10071,12 @@ namespace MyNS
 		/// ListPositionConfigurations position-configurations
 		/// </summary>
 		/// <param name="resourceType">Resource type for which position configurations are listed.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -9924,9 +10112,16 @@ namespace MyNS
 		/// List queued messages in the downlink queue.
 		/// ListQueuedMessages wireless-devices/{Id}/data
 		/// </summary>
-		/// <param name="Id">The ID of a given wireless device which the downlink message packets are being sent.</param>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this operation.</param>
+		/// <param name="Id">The ID of a given wireless device which the downlink message packets are being sent.
+		/// Max length: 256
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return in this operation.
+		/// Minimum: 0
+		/// Maximum: 250
+		// </param>
 		/// <param name="WirelessDeviceType">The wireless device type, whic can be either Sidewalk or LoRaWAN.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -9963,7 +10158,9 @@ namespace MyNS
 		/// Sends a decrypted application data frame to a device.
 		/// SendDataToWirelessDevice wireless-devices/{Id}/data
 		/// </summary>
-		/// <param name="Id">The ID of the wireless device to receive the data.</param>
+		/// <param name="Id">The ID of the wireless device to receive the data.
+		/// Max length: 256
+		// </param>
 		public async Task SendDataToWirelessDeviceAsync(string Id, SendDataToWirelessDevicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wireless-devices/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/data";
@@ -9997,7 +10194,10 @@ namespace MyNS
 		/// Lists the tags (metadata) you have assigned to the resource.
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource for which you want to list tags.</param>
+		/// <param name="resourceArn">The ARN of the resource for which you want to list tags.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10031,7 +10231,10 @@ namespace MyNS
 		/// Adds a tag to a resource.
 		/// TagResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource to add tags to.</param>
+		/// <param name="resourceArn">The ARN of the resource to add tags to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags#resourceArn?resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -10065,7 +10268,12 @@ namespace MyNS
 		/// List wireless devices that have been added to an import task.
 		/// ListWirelessDeviceImportTasks wireless_device_import_tasks
 		/// </summary>
-		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</param>
+		/// <param name="maxResults">Minimum: 0
+		/// Maximum: 250
+		// </param>
+		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.
+		/// Max length: 4096
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWirelessDeviceImportTasksResponse> ListWirelessDeviceImportTasksAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10099,6 +10307,7 @@ namespace MyNS
 		/// Sends the specified data to a multicast group.
 		/// SendDataToMulticastGroup multicast-groups/{Id}/data
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task SendDataToMulticastGroupAsync(string Id, SendDataToMulticastGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/data";
@@ -10132,6 +10341,7 @@ namespace MyNS
 		/// Starts a bulk association of all qualifying wireless devices with a multicast group.
 		/// StartBulkAssociateWirelessDeviceWithMulticastGroup multicast-groups/{Id}/bulk
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task StartBulkAssociateWirelessDeviceWithMulticastGroupAsync(string Id, StartBulkAssociateWirelessDeviceWithMulticastGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/bulk";
@@ -10165,6 +10375,7 @@ namespace MyNS
 		/// Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
 		/// StartBulkDisassociateWirelessDeviceFromMulticastGroup multicast-groups/{Id}/bulk
 		/// </summary>
+		/// <param name="Id">Max length: 256</param>
 		public async Task StartBulkDisassociateWirelessDeviceFromMulticastGroupAsync(string Id, StartBulkDisassociateWirelessDeviceFromMulticastGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "multicast-groups/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/bulk";
@@ -10264,7 +10475,9 @@ namespace MyNS
 		/// Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.
 		/// TestWirelessDevice wireless-devices/{Id}/test
 		/// </summary>
-		/// <param name="Id">The ID of the wireless device to test.</param>
+		/// <param name="Id">The ID of the wireless device to test.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TestWirelessDeviceResponse> TestWirelessDeviceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10293,8 +10506,14 @@ namespace MyNS
 		/// Removes one or more tags from a resource.
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource to remove tags from.</param>
-		/// <param name="tagKeys">A list of the keys of the tags to remove from the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource to remove tags from.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">A list of the keys of the tags to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags#resourceArn&tagKeys?resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

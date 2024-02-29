@@ -382,6 +382,12 @@ namespace MyNS
 		/// Returns the API entry for one specific version of an API where there is no serviceName.
 		/// GetAPI specs/{provider}/{api}.json
 		/// </summary>
+		/// <param name="provider">Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="api">Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<API> GetAPIAsync(string provider, string api, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -416,6 +422,15 @@ namespace MyNS
 		/// Returns the API entry for one specific version of an API where there is a serviceName.
 		/// GetServiceAPI specs/{provider}/{service}/{api}.json
 		/// </summary>
+		/// <param name="provider">Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="service">Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="api">Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<API> GetServiceAPIAsync(string provider, string service, string api, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -452,6 +467,9 @@ namespace MyNS
 		/// 
 		/// GetProvider {provider}.json
 		/// </summary>
+		/// <param name="provider">Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<APIs> GetProviderAsync(string provider, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -487,6 +505,9 @@ namespace MyNS
 		/// 
 		/// GetServices {provider}/services.json
 		/// </summary>
+		/// <param name="provider">Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<GetServicesReturn> GetServicesAsync(string provider, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

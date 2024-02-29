@@ -2550,6 +2550,7 @@ export namespace MyNS {
 		 * Lists all of the available Storage Rest API operations.
 		 * Get providers/Microsoft.Storage/operations
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {OperationListResult} OK. The request has succeeded.
 		 */
 		Operations_List(api_version: string): Observable<OperationListResult> {
@@ -2560,7 +2561,9 @@ export namespace MyNS {
 		 * Checks that the storage account name is valid and is not already in use.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccountCheckNameAvailabilityParameters} requestBody The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
 		 * @return {CheckNameAvailabilityResult} OK -- Operation to check the storage account name availability was successful.
 		 */
@@ -2572,7 +2575,9 @@ export namespace MyNS {
 		 * Gets the current usage count and the limit for the resources of the location under the subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Storage/locations/{location}/usages
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} location The location of the Azure Storage resource.
 		 * @return {UsageListResult} OK -- current usage count and limit retrieved and returned successfully.
 		 */
@@ -2584,7 +2589,9 @@ export namespace MyNS {
 		 * Lists the available SKUs supported by Microsoft.Storage for given subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Storage/skus
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {StorageSkuListResult} OK -- List of storage SKUs in the given subscription retrieved and returned successfully.
 		 */
 		Skus_List(api_version: string, subscriptionId: string): Observable<StorageSkuListResult> {
@@ -2595,7 +2602,9 @@ export namespace MyNS {
 		 * Lists all the storage accounts available under the subscription. Note that storage keys are not returned; use the ListKeys operation for this.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Storage/storageAccounts
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {StorageAccountListResult} OK -- List of storage accounts was retrieved and returned successfully.
 		 */
 		StorageAccounts_List(api_version: string, subscriptionId: string): Observable<StorageAccountListResult> {
@@ -2606,8 +2615,11 @@ export namespace MyNS {
 		 * Lists all the storage accounts available under the given resource group. Note that storage keys are not returned; use the ListKeys operation for this.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {StorageAccountListResult} OK -- List of storage accounts in the given resource group retrieved and returned successfully.
 		 */
 		StorageAccounts_ListByResourceGroup(resourceGroupName: string, api_version: string, subscriptionId: string): Observable<StorageAccountListResult> {
@@ -2618,9 +2630,13 @@ export namespace MyNS {
 		 * Returns the properties for the specified storage account including but not limited to name, SKU name, location, and account status. The ListKeys operation should be used to retrieve storage keys.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccounts_GetPropertiesExpand} expand May be used to expand the properties within account's properties. By default, data is not included when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.
 		 * @return {StorageAccount} OK -- properties retrieved successfully for the storage account.
 		 */
@@ -2632,9 +2648,13 @@ export namespace MyNS {
 		 * Asynchronously creates a new storage account with the specified parameters. If an account is already created and a subsequent create request is issued with different properties, the account properties will be updated. If an account is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccountCreateParameters} requestBody The parameters to provide for the created account.
 		 * @return {StorageAccount} OK -- returned when the storage account was already created from a previous request with the same properties specified in the request body.
 		 */
@@ -2646,9 +2666,13 @@ export namespace MyNS {
 		 * Deletes a storage account in Microsoft Azure.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {void} OK -- storage account deleted successfully.
 		 */
 		StorageAccounts_Delete(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string): Observable<HttpResponse<string>> {
@@ -2659,9 +2683,13 @@ export namespace MyNS {
 		 * The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It can also be used to map the account to a custom domain. Only one custom domain is supported per storage account; the replacement/change of custom domain is not supported. In order to replace an old custom domain, the old value must be cleared/unregistered before a new value can be set. The update of multiple properties is supported. This call does not change the storage keys for the account. If you want to change the storage account keys, use the regenerate keys operation. The location and name of the storage account cannot be changed after creation.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccountUpdateParameters} requestBody The parameters to provide for the updated account.
 		 * @return {StorageAccount} OK -- storage account properties updated successfully.
 		 */
@@ -2673,9 +2701,13 @@ export namespace MyNS {
 		 * List SAS credentials of a storage account.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/ListAccountSas
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {AccountSasParameters} requestBody The parameters to provide to list SAS credentials for the storage account.
 		 * @return {ListAccountSasResponse} OK -- returned the account SAS created for the storage account requested.
 		 */
@@ -2687,9 +2719,13 @@ export namespace MyNS {
 		 * List service SAS credentials of a specific resource.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/ListServiceSas
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ServiceSasParameters} requestBody The parameters to provide to list service SAS credentials.
 		 * @return {ListServiceSasResponse} OK -- returned the service SAS created for the storage service requested.
 		 */
@@ -2701,9 +2737,13 @@ export namespace MyNS {
 		 * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become primary after failover.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/failover
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {void} OK -- Returned when the storage account failover is completed, and the secondary cluster has become primary.
 		 */
 		StorageAccounts_Failover(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string): Observable<HttpResponse<string>> {
@@ -2714,9 +2754,13 @@ export namespace MyNS {
 		 * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/listKeys
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccounts_ListKeysExpand} expand Specifies type of the key to be listed. Possible value is kerb.
 		 * @return {StorageAccountListKeysResult} OK -- list of keys retrieved and returned successfully.
 		 */
@@ -2728,9 +2772,13 @@ export namespace MyNS {
 		 * Gets the managementpolicy associated with the specified storage account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @return {ManagementPolicy} OK -- Get the managementpolicy successfully.
 		 */
@@ -2742,9 +2790,13 @@ export namespace MyNS {
 		 * Sets the managementpolicy to the specified storage account.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @param {ManagementPolicy} requestBody The ManagementPolicy set to a storage account.
 		 * @return {ManagementPolicy} OK -- Put managementpolicy successfully.
@@ -2757,9 +2809,13 @@ export namespace MyNS {
 		 * Deletes the managementpolicy associated with the specified storage account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @return {void} OK -- Delete the managementpolicy successfully.
 		 */
@@ -2771,9 +2827,13 @@ export namespace MyNS {
 		 * Gets the specified private endpoint connection associated with the storage account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection associated with the Storage Account
 		 * @return {PrivateEndpointConnection} OK -- Get the private endpoint connection properties successfully.
 		 */
@@ -2785,9 +2845,13 @@ export namespace MyNS {
 		 * Update the state of specified private endpoint connection associated with the storage account.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection associated with the Storage Account
 		 * @param {PrivateEndpointConnection} requestBody The private endpoint connection properties.
 		 * @return {PrivateEndpointConnection} OK -- Update the private endpoint connection properties successfully.
@@ -2800,9 +2864,13 @@ export namespace MyNS {
 		 * Deletes the specified private endpoint connection associated with the storage account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection associated with the Storage Account
 		 * @return {void} OK -- Delete the private endpoint connection successfully.
 		 */
@@ -2814,9 +2882,13 @@ export namespace MyNS {
 		 * Gets the private link resources that need to be created for a storage account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/privateLinkResources
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {PrivateLinkResourceListResult} Successfully retrieved private link resources.
 		 */
 		PrivateLinkResources_ListByStorageAccount(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string): Observable<PrivateLinkResourceListResult> {
@@ -2827,9 +2899,13 @@ export namespace MyNS {
 		 * Regenerates one of the access keys or Kerberos keys for the specified storage account.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/regenerateKey
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {StorageAccountRegenerateKeyParameters} requestBody Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
 		 * @return {StorageAccountListKeysResult} OK -- specified key regenerated successfully.
 		 */
@@ -2841,9 +2917,13 @@ export namespace MyNS {
 		 * Restore blobs in the specified blob ranges
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/restoreBlobRanges
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {BlobRestoreParameters} requestBody The parameters to provide for restore blob ranges.
 		 * @return {BlobRestoreStatus} OK -- returned when blob ranges are restored completely with the same properties specified in the request body.
 		 */
@@ -2855,9 +2935,13 @@ export namespace MyNS {
 		 * Revoke user delegation keys.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/revokeUserDelegationKeys
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {void} OK -- revoke user delegation keys succeeded.
 		 */
 		StorageAccounts_RevokeUserDelegationKeys(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string): Observable<HttpResponse<string>> {

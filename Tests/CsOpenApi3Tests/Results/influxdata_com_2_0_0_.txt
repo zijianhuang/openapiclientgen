@@ -10243,6 +10243,10 @@ namespace MyNS
 		/// List all buckets
 		/// GetBuckets buckets
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="after">The last resource ID from which to seek from (but not including). This is to be used instead of `offset`.
 		///</param>
 		/// <param name="org">The name of the organization.</param>
@@ -10710,6 +10714,10 @@ namespace MyNS
 		/// List all checks
 		/// GetChecks checks
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="orgID">Only show checks that belong to a specific organization ID.</param>
 		/// <returns>A list of checks</returns>
 		public async Task<Checks> GetChecksAsync(int offset, int limit, string orgID, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11054,6 +11062,10 @@ namespace MyNS
 		/// List all dashboards
 		/// GetDashboards dashboards
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="owner">A user identifier. Returns only dashboards where this user has the `owner` role.</param>
 		/// <param name="sortBy">The column to sort by.</param>
 		/// <param name="id">A list of dashboard identifiers. Returns only the listed dashboards. If both `id` and `owner` are specified, only `id` is used.</param>
@@ -12529,6 +12541,10 @@ namespace MyNS
 		/// List all notification endpoints
 		/// GetNotificationEndpoints notificationEndpoints
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="orgID">Only show notification endpoints that belong to specific organization ID.</param>
 		/// <returns>A list of notification endpoints</returns>
 		public async Task<NotificationEndpoints> GetNotificationEndpointsAsync(int offset, int limit, string orgID, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12839,6 +12855,10 @@ namespace MyNS
 		/// List all notification rules
 		/// GetNotificationRules notificationRules
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="orgID">Only show notification rules that belong to a specific organization ID.</param>
 		/// <param name="checkID">Only show notifications that belong to the specific check ID.</param>
 		/// <param name="tag">Only return notification rules that "would match" statuses which contain the tag key value pairs provided.</param>
@@ -13185,6 +13205,10 @@ namespace MyNS
 		/// List all organizations
 		/// GetOrgs orgs
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="org">Filter organizations to a specific organization name.</param>
 		/// <param name="orgID">Filter organizations to a specific organization ID.</param>
 		/// <param name="userID">Filter organizations to a specific user ID.</param>
@@ -14901,7 +14925,10 @@ namespace MyNS
 		/// <param name="org">Filter tasks to a specific organization name.</param>
 		/// <param name="orgID">Filter tasks to a specific organization ID.</param>
 		/// <param name="status">Filter tasks by a status--"inactive" or "active".</param>
-		/// <param name="limit">The number of tasks to return</param>
+		/// <param name="limit">The number of tasks to return
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <returns>A list of tasks</returns>
 		public async Task<Tasks> GetTasksAsync(string name, string after, string user, string org, string orgID, AuthorizationUpdateRequestStatus status, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -15401,7 +15428,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="taskID">The ID of the task to get runs for.</param>
 		/// <param name="after">Returns runs after a specific ID.</param>
-		/// <param name="limit">The number of runs to return</param>
+		/// <param name="limit">The number of runs to return
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="afterTime">Filter runs to those scheduled after this time, RFC3339</param>
 		/// <param name="beforeTime">Filter runs to those scheduled before this time, RFC3339</param>
 		/// <returns>A list of task runs</returns>
@@ -16146,6 +16176,10 @@ namespace MyNS
 		/// List all users
 		/// GetUsers users
 		/// </summary>
+		/// <param name="offset">Minimum: 0</param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="after">The last resource ID from which to seek from (but not including). This is to be used instead of `offset`.
 		///</param>
 		/// <returns>A list of users</returns>

@@ -264,7 +264,10 @@ export namespace MyNS {
 		/** Locale of the generated reports. Valid values are cs CZECH de GERMAN en ENGLISH es SPANISH fr FRENCH it ITALIAN ja JAPANESE ko KOREAN pl POLISH pt-BR BRAZILIAN_PORTUGUESE ru RUSSIAN tr TURKISH uk UKRAINIAN zh-CN CHINA_CHINESE zh-TW TAIWAN_CHINESE An locale string not in the list above will generate reports in English. */
 		locale?: string | null;
 
-		/** Number of reports that have been generated for the query. */
+		/**
+		 * Number of reports that have been generated for the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportCount?: number | null;
 
 		/** Whether the latest report is currently running. */
@@ -301,7 +304,10 @@ export namespace MyNS {
 		/** Locale of the generated reports. Valid values are cs CZECH de GERMAN en ENGLISH es SPANISH fr FRENCH it ITALIAN ja JAPANESE ko KOREAN pl POLISH pt-BR BRAZILIAN_PORTUGUESE ru RUSSIAN tr TURKISH uk UKRAINIAN zh-CN CHINA_CHINESE zh-TW TAIWAN_CHINESE An locale string not in the list above will generate reports in English. */
 		locale: FormControl<string | null | undefined>,
 
-		/** Number of reports that have been generated for the query. */
+		/**
+		 * Number of reports that have been generated for the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportCount: FormControl<number | null | undefined>,
 
 		/** Whether the latest report is currently running. */
@@ -455,7 +461,10 @@ export namespace MyNS {
 		/** How often the query is run. */
 		frequency?: QueryScheduleFrequency | null;
 
-		/** Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports. */
+		/**
+		 * Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextRunMinuteOfDay?: number | null;
 
 		/** Canonical timezone code for report generation time. Defaults to America/New_York. */
@@ -474,7 +483,10 @@ export namespace MyNS {
 		/** How often the query is run. */
 		frequency: FormControl<QueryScheduleFrequency | null | undefined>,
 
-		/** Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports. */
+		/**
+		 * Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextRunMinuteOfDay: FormControl<number | null | undefined>,
 
 		/** Canonical timezone code for report generation time. Defaults to America/New_York. */
@@ -730,6 +742,7 @@ export namespace MyNS {
 		 * Retrieves stored queries.
 		 * Get queries
 		 * @param {number} pageSize Maximum number of results per page. Must be between 1 and 100. Defaults to 100 if unspecified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional pagination token.
 		 * @return {ListQueriesResponse} Successful response
 		 */
@@ -742,6 +755,7 @@ export namespace MyNS {
 		 * Get queries/{queryId}/reports
 		 * @param {string} queryId Query ID with which the reports are associated.
 		 * @param {number} pageSize Maximum number of results per page. Must be between 1 and 100. Defaults to 100 if unspecified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional pagination token.
 		 * @return {ListReportsResponse} Successful response
 		 */

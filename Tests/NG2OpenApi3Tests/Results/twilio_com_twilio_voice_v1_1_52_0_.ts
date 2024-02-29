@@ -5,13 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Voicev1archived_call {
 
-		/** The date */
+		/**
+		 * The date
+		 * Type: DateOnly
+		 */
 		date?: Date | null;
 
 		/**
 		 * The call sid
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -20,13 +23,16 @@ export namespace MyNS {
 	}
 	export interface Voicev1archived_callFormProperties {
 
-		/** The date */
+		/**
+		 * The date
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
 		/**
 		 * The call sid
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -46,8 +52,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the BYOC Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -56,8 +62,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Connection Policy that Twilio will use when routing traffic to your communications infrastructure.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		connection_policy_sid?: string | null;
 
@@ -72,15 +78,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the SIP Domain that should be used in the `From` header of originating calls sent to your SIP infrastructure. If your SIP infrastructure allows users to "call back" an incoming call, configure this with a [SIP Domain](https://www.twilio.com/docs/voice/api/sending-sip) to ensure proper routing. If not configured, the from domain will default to "sip.twilio.com".
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		from_domain_sid?: string | null;
 
 		/**
 		 * The unique string that that we created to identify the BYOC Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -109,8 +115,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the BYOC Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -119,8 +125,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Connection Policy that Twilio will use when routing traffic to your communications infrastructure.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		connection_policy_sid: FormControl<string | null | undefined>,
 
@@ -135,15 +141,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the SIP Domain that should be used in the `From` header of originating calls sent to your SIP infrastructure. If your SIP infrastructure allows users to "call back" an incoming call, configure this with a [SIP Domain](https://www.twilio.com/docs/voice/api/sending-sip) to ensure proper routing. If not configured, the from domain will default to "sip.twilio.com".
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		from_domain_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that that we created to identify the BYOC Trunk resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -195,8 +201,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Connection Policy resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -214,8 +220,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Connection Policy resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -226,8 +232,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Connection Policy resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -245,8 +251,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Connection Policy resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -270,15 +276,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Target resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the Connection Policy that owns the Target.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		connection_policy_sid?: string | null;
 
@@ -294,13 +300,16 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name?: string | null;
 
-		/** The relative importance of the target. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important target. */
+		/**
+		 * The relative importance of the target. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/**
 		 * The unique string that we created to identify the Target resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -310,22 +319,25 @@ export namespace MyNS {
 		/** The absolute URL of the resource. */
 		url?: string | null;
 
-		/** The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. Targets with higher values receive more load than those with lower ones with the same priority. */
+		/**
+		 * The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. Targets with higher values receive more load than those with lower ones with the same priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 	export interface Voicev1connection_policyconnection_policy_targetFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Target resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Connection Policy that owns the Target.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		connection_policy_sid: FormControl<string | null | undefined>,
 
@@ -341,13 +353,16 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name: FormControl<string | null | undefined>,
 
-		/** The relative importance of the target. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important target. */
+		/**
+		 * The relative importance of the target. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Target resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -357,7 +372,10 @@ export namespace MyNS {
 		/** The absolute URL of the resource. */
 		url: FormControl<string | null | undefined>,
 
-		/** The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. Targets with higher values receive more load than those with lower ones with the same priority. */
+		/**
+		 * The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. Targets with higher values receive more load than those with lower ones with the same priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateVoicev1connection_policyconnection_policy_targetFormGroup() {
@@ -544,7 +562,10 @@ export namespace MyNS {
 
 	export interface Voicev1dialing_permissionsdialing_permissions_country_bulk_update {
 
-		/** The number of countries updated */
+		/**
+		 * The number of countries updated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_count?: number | null;
 
 		/** A bulk update request to change voice dialing country permissions stored as a URL-encoded, JSON array of update objects. For example : `[ { "iso_code": "GB", "low_risk_numbers_enabled": "true", "high_risk_special_numbers_enabled":"true", "high_risk_tollfraud_numbers_enabled": "false" } ]` */
@@ -552,7 +573,10 @@ export namespace MyNS {
 	}
 	export interface Voicev1dialing_permissionsdialing_permissions_country_bulk_updateFormProperties {
 
-		/** The number of countries updated */
+		/**
+		 * The number of countries updated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		update_count: FormControl<number | null | undefined>,
 
 		/** A bulk update request to change voice dialing country permissions stored as a URL-encoded, JSON array of update objects. For example : `[ { "iso_code": "GB", "low_risk_numbers_enabled": "true", "high_risk_special_numbers_enabled":"true", "high_risk_tollfraud_numbers_enabled": "false" } ]` */
@@ -594,12 +618,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
-		/** An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32. */
+		/**
+		 * An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cidr_prefix_length?: number | null;
 
 		/** The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -616,8 +643,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -628,12 +655,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
-		/** An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32. */
+		/**
+		 * An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cidr_prefix_length: FormControl<number | null | undefined>,
 
 		/** The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -650,8 +680,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -682,22 +712,22 @@ export namespace MyNS {
 
 		/**
 		 * The Twilio-provided string that uniquely identifies the IP Record resource to map from.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		ip_record_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the SIP Domain that the IP Record is mapped to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sip_domain_sid?: string | null;
 
@@ -714,22 +744,22 @@ export namespace MyNS {
 
 		/**
 		 * The Twilio-provided string that uniquely identifies the IP Record resource to map from.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		ip_record_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the IP Record resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the SIP Domain that the IP Record is mapped to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sip_domain_sid: FormControl<string | null | undefined>,
 
@@ -757,7 +787,9 @@ export namespace MyNS {
 		 * Delete an archived call record from Bulk Export. Note: this does not also delete the record from the Voice API.
 		 * Delete v1/Archives/{Date}/Calls/{Sid}
 		 * @param {Date} Date The date of the Call in UTC.
+		 *     Type: DateOnly
 		 * @param {string} Sid The Twilio-provided Call SID that uniquely identifies the Call resource to delete
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteArchivedCall(Date: Date, Sid: string): Observable<HttpResponse<string>> {
@@ -767,7 +799,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/ByocTrunks
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListByocTrunkReturn} OK
 		 */
@@ -778,6 +812,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/ByocTrunks/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the BYOC Trunk resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteByocTrunk(Sid: string): Observable<HttpResponse<string>> {
@@ -787,6 +822,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/ByocTrunks/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the BYOC Trunk resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Voicev1byoc_trunk} OK
 		 */
 		FetchByocTrunk(Sid: string): Observable<Voicev1byoc_trunk> {
@@ -796,7 +832,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/ConnectionPolicies
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListConnectionPolicyReturn} OK
 		 */
@@ -807,8 +845,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/ConnectionPolicies/{ConnectionPolicySid}/Targets
 		 * @param {string} ConnectionPolicySid The SID of the Connection Policy from which to read the Targets.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListConnectionPolicyTargetReturn} OK
 		 */
@@ -819,7 +860,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		 * @param {string} ConnectionPolicySid The SID of the Connection Policy that owns the Target.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the Target resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteConnectionPolicyTarget(ConnectionPolicySid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -829,7 +872,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		 * @param {string} ConnectionPolicySid The SID of the Connection Policy that owns the Target.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The unique string that we created to identify the Target resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Voicev1connection_policyconnection_policy_target} OK
 		 */
 		FetchConnectionPolicyTarget(ConnectionPolicySid: string, Sid: string): Observable<Voicev1connection_policyconnection_policy_target> {
@@ -839,6 +884,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/ConnectionPolicies/{Sid}
 		 * @param {string} Sid The unique string that we created to identify the Connection Policy resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteConnectionPolicy(Sid: string): Observable<HttpResponse<string>> {
@@ -848,6 +894,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/ConnectionPolicies/{Sid}
 		 * @param {string} Sid The unique string that we created to identify the Connection Policy resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Voicev1connection_policy} OK
 		 */
 		FetchConnectionPolicy(Sid: string): Observable<Voicev1connection_policy> {
@@ -864,7 +911,9 @@ export namespace MyNS {
 		 * @param {boolean} HighRiskSpecialNumbersEnabled Filter to retrieve the country permissions with dialing to high-risk special service numbers enabled. Can be: `true` or `false`
 		 * @param {boolean} HighRiskTollfraudNumbersEnabled Filter to retrieve the country permissions with dialing to high-risk [toll fraud](https://www.twilio.com/blog/how-to-protect-your-account-from-toll-fraud-with-voice-dialing-geo-permissions-html) numbers enabled. Can be: `true` or `false`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDialingPermissionsCountryReturn} OK
 		 */
@@ -887,7 +936,9 @@ export namespace MyNS {
 		 * Get v1/DialingPermissions/Countries/{IsoCode}/HighRiskSpecialPrefixes
 		 * @param {string} IsoCode The [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) to identify the country permissions from which high-risk special service number prefixes are fetched
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDialingPermissionsHrsPrefixesReturn} OK
 		 */
@@ -898,7 +949,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/IpRecords
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListIpRecordReturn} OK
 		 */
@@ -909,6 +962,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/IpRecords/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the IP Record resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteIpRecord(Sid: string): Observable<HttpResponse<string>> {
@@ -918,6 +972,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/IpRecords/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Voicev1ip_record} OK
 		 */
 		FetchIpRecord(Sid: string): Observable<Voicev1ip_record> {
@@ -936,7 +991,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/SourceIpMappings
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSourceIpMappingReturn} OK
 		 */
@@ -947,6 +1004,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/SourceIpMappings/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the IP Record resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteSourceIpMapping(Sid: string): Observable<HttpResponse<string>> {
@@ -956,6 +1014,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/SourceIpMappings/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Voicev1source_ip_mapping} OK
 		 */
 		FetchSourceIpMapping(Sid: string): Observable<Voicev1source_ip_mapping> {
@@ -979,7 +1038,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -988,7 +1051,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1022,7 +1089,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1031,7 +1102,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1065,7 +1140,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1074,7 +1153,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1108,7 +1191,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1117,7 +1204,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1151,7 +1242,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1160,7 +1255,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1194,7 +1293,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1203,7 +1306,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1237,7 +1344,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1246,7 +1357,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

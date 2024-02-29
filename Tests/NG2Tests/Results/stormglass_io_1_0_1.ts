@@ -280,7 +280,9 @@ export namespace MyNS {
 		 * Get forecast info for the given coordinates. For every hour and property, you will get a list of weather sources and their values.
 		 * Get forecast
 		 * @param {number} lat The latitude for a location. Valid input is a number between -90 and 90.
+		 *     Type: double
 		 * @param {number} lng The longitude for a location. Valid input is a number between -180 and 180.
+		 *     Type: double
 		 * @return {Forecast} Successful request
 		 */
 		GetForecast(lat: number, lng: number): Observable<Forecast> {

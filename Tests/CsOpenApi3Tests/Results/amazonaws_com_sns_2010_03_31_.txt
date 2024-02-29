@@ -1900,7 +1900,9 @@ namespace MyNS
 		/// <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		/// GET_CreateSMSSandboxPhoneNumber #Action=CreateSMSSandboxPhoneNumber
 		/// </summary>
-		/// <param name="PhoneNumber">The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</param>
+		/// <param name="PhoneNumber">The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.
+		/// Max length: 20
+		// </param>
 		/// <param name="LanguageCode">The language to use for sending the OTP. The default value is <code>en-US</code>.</param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateSMSSandboxPhoneNumberAsync(string PhoneNumber, GET_CreateSMSSandboxPhoneNumberLanguageCode LanguageCode, GET_CreateSMSSandboxPhoneNumberAction Action, GET_CreateSMSSandboxPhoneNumberVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2016,7 +2018,9 @@ namespace MyNS
 		/// <p>Deletes an Amazon Web Services account's verified or pending phone number from the SMS sandbox.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		/// GET_DeleteSMSSandboxPhoneNumber #Action=DeleteSMSSandboxPhoneNumber
 		/// </summary>
-		/// <param name="PhoneNumber">The destination phone number to delete.</param>
+		/// <param name="PhoneNumber">The destination phone number to delete.
+		/// Max length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteSMSSandboxPhoneNumberAsync(string PhoneNumber, GET_DeleteSMSSandboxPhoneNumberAction Action, GET_DeleteSMSSandboxPhoneNumberVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2297,7 +2301,10 @@ namespace MyNS
 		/// GET_ListOriginationNumbers #Action=ListOriginationNumbers
 		/// </summary>
 		/// <param name="NextToken">Token that the previous <code>ListOriginationNumbers</code> request returns.</param>
-		/// <param name="MaxResults">The maximum number of origination numbers to return.</param>
+		/// <param name="MaxResults">The maximum number of origination numbers to return.
+		/// Minimum: 1
+		/// Maximum: 30
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListOriginationNumbersAsync(string NextToken, int MaxResults, GET_ListOriginationNumbersAction Action, GET_ListOriginationNumbersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2382,7 +2389,10 @@ namespace MyNS
 		/// GET_ListSMSSandboxPhoneNumbers #Action=ListSMSSandboxPhoneNumbers
 		/// </summary>
 		/// <param name="NextToken">Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</param>
-		/// <param name="MaxResults">The maximum number of phone numbers to return.</param>
+		/// <param name="MaxResults">The maximum number of phone numbers to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListSMSSandboxPhoneNumbersAsync(string NextToken, int MaxResults, GET_ListSMSSandboxPhoneNumbersAction Action, GET_ListSMSSandboxPhoneNumbersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2467,7 +2477,10 @@ namespace MyNS
 		/// List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
 		/// GET_ListTagsForResource #Action=ListTagsForResource
 		/// </summary>
-		/// <param name="ResourceArn">The ARN of the topic for which to list tags.</param>
+		/// <param name="ResourceArn">The ARN of the topic for which to list tags.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListTagsForResourceAsync(string ResourceArn, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2852,7 +2865,10 @@ namespace MyNS
 		/// <p>Add tags to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>When you use topic tags, keep the following guidelines in mind:</p> <ul> <li> <p>Adding more than 50 tags to a topic isn't recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.</p> </li> <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p> </li> </ul>
 		/// GET_TagResource #Action=TagResource
 		/// </summary>
-		/// <param name="ResourceArn">The ARN of the topic to which to add tags.</param>
+		/// <param name="ResourceArn">The ARN of the topic to which to add tags.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <param name="Tags">The tags to be added to the specified topic. A tag consists of a required key and an optional value.</param>
 		/// <returns>Success</returns>
 		public async Task GET_TagResourceAsync(string ResourceArn, Tag[] Tags, GET_TagResourceAction Action, GET_TagResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2909,7 +2925,10 @@ namespace MyNS
 		/// Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.
 		/// GET_UntagResource #Action=UntagResource
 		/// </summary>
-		/// <param name="ResourceArn">The ARN of the topic from which to remove tags.</param>
+		/// <param name="ResourceArn">The ARN of the topic from which to remove tags.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <param name="TagKeys">The list of tag keys to remove from the specified topic.</param>
 		/// <returns>Success</returns>
 		public async Task GET_UntagResourceAsync(string ResourceArn, string[] TagKeys, GET_UntagResourceAction Action, GET_UntagResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2938,8 +2957,13 @@ namespace MyNS
 		/// <p>Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account.</p> <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 		/// GET_VerifySMSSandboxPhoneNumber #Action=VerifySMSSandboxPhoneNumber
 		/// </summary>
-		/// <param name="PhoneNumber">The destination phone number to verify.</param>
-		/// <param name="OneTimePassword">The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</param>
+		/// <param name="PhoneNumber">The destination phone number to verify.
+		/// Max length: 20
+		// </param>
+		/// <param name="OneTimePassword">The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.
+		/// Max length: 8
+		/// Min length: 5
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_VerifySMSSandboxPhoneNumberAsync(string PhoneNumber, string OneTimePassword, GET_VerifySMSSandboxPhoneNumberAction Action, GET_VerifySMSSandboxPhoneNumberVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

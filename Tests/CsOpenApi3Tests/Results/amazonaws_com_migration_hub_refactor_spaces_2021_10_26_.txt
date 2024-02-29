@@ -1777,7 +1777,10 @@ namespace MyNS
 		/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application proxy inside your account.</p> <p>In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html"> VPC to VPC connectivity</a> between your service VPC and the application proxy VPC to route traffic through the application proxy to a service with a private URL endpoint. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html"> Create an application</a> in the <i>Refactor Spaces User Guide</i>. </p>
 		/// CreateApplication environments/{EnvironmentIdentifier}/applications
 		/// </summary>
-		/// <param name="EnvironmentIdentifier">The unique identifier of the environment.</param>
+		/// <param name="EnvironmentIdentifier">The unique identifier of the environment.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateApplicationResponse> CreateApplicationAsync(string EnvironmentIdentifier, CreateApplicationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1818,9 +1821,18 @@ namespace MyNS
 		/// Lists all the Amazon Web Services Migration Hub Refactor Spaces applications within an environment.
 		/// ListApplications environments/{EnvironmentIdentifier}/applications
 		/// </summary>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1896,8 +1908,14 @@ namespace MyNS
 		/// Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account.
 		/// ListEnvironments environments
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1933,8 +1951,14 @@ namespace MyNS
 		/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the environment owner, regardless of which account creates the route. Routes target a service in the application. If an application does not have any routes, then the first route must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p> <p>When created, the default route defaults to an active state so state is not a required input. However, like all other state values the state of the default route can be updated after creation, but only when all other routes are also inactive. Conversely, no route can be active without the default route also being active.</p> <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service as follows:</p> <ul> <li> <p> <b>URL Endpoints</b> </p> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. If a service endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet. Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported. Private Certificate Authorities (CAs) are permitted only if the CA's domain is also publicly resolvable. </p> <p>Refactor Spaces automatically resolves the public Domain Name System (DNS) names that are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration remains up-to-date. </p> <p/> <p> <b>One-time health check</b> </p> <p>A one-time health check is performed on the service when either the route is updated from inactive to active, or when it is created with an active state. If the health check fails, the route transitions the route state to <code>FAILED</code>, an error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic is sent to the service.</p> <p>For private URLs, a target group is created on the Network Load Balancer and the load balancer target group runs default target health checks. By default, the health check is run against the service endpoint URL. Optionally, the health check can be performed against a different protocol, port, and/or path using the <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateService.html#migrationhubrefactorspaces-CreateService-request-UrlEndpoint">CreateService:UrlEndpoint</a> parameter. All other health check settings for the load balancer use the default values described in the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a> in the <i>Elastic Load Balancing guide</i>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p> <p/> </li> <li> <p> <b>Lambda function endpoints</b> </p> <p>If the service has an Lambda function endpoint, then Refactor Spaces configures the Lambda function's resource policy to allow the application's API Gateway to invoke the function.</p> <p>The Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>A check is performed to determine that a Lambda function with the specified ARN exists. If it does not exist, the health check fails. For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. </p> </li> </ul> <p> <b>Environments without a network bridge</b> </p> <p>When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> is <code>NONE)</code> and you use your own networking infrastructure, you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC to VPC connectivity</a> between your network and the application proxy VPC. Route creation from the application proxy to service endpoints will fail if your network is not configured to connect to the application proxy VPC. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-role.html"> Create a route</a> in the <i>Refactor Spaces User Guide</i>.</p> <p/>
 		/// CreateRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application within which the route is being created.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment in which the route is created.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application within which the route is being created.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment in which the route is created.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRouteResponse> CreateRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, CreateRoutePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1975,10 +1999,22 @@ namespace MyNS
 		/// Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application.
 		/// ListRoutes environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application. </param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2014,8 +2050,14 @@ namespace MyNS
 		/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important> <p>If an Amazon Web Services resource is launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p> </important>
 		/// CreateService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application which the service is created.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment in which the service is created.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application which the service is created.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment in which the service is created.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateServiceResponse> CreateServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, CreateServicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2056,10 +2098,22 @@ namespace MyNS
 		/// Lists all the Amazon Web Services Migration Hub Refactor Spaces services within an application.
 		/// ListServices environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application. </param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2095,8 +2149,14 @@ namespace MyNS
 		/// Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first delete any services or routes within the application.
 		/// DeleteApplication environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
+		/// <param name="ApplicationIdentifier">The ID of the application.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(string ApplicationIdentifier, string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2130,8 +2190,14 @@ namespace MyNS
 		/// Gets an Amazon Web Services Migration Hub Refactor Spaces application.
 		/// GetApplication environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
+		/// <param name="ApplicationIdentifier">The ID of the application.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationResponse> GetApplicationAsync(string ApplicationIdentifier, string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2165,7 +2231,10 @@ namespace MyNS
 		/// Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first delete any applications and services within the environment.
 		/// DeleteEnvironment environments/{EnvironmentIdentifier}
 		/// </summary>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2199,7 +2268,10 @@ namespace MyNS
 		/// Gets an Amazon Web Services Migration Hub Refactor Spaces environment.
 		/// GetEnvironment environments/{EnvironmentIdentifier}
 		/// </summary>
-		/// <param name="EnvironmentIdentifier">The ID of the environment.</param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEnvironmentResponse> GetEnvironmentAsync(string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2233,7 +2305,10 @@ namespace MyNS
 		/// Deletes the resource policy set for the environment.
 		/// DeleteResourcePolicy resourcepolicy/{Identifier}
 		/// </summary>
-		/// <param name="Identifier">Amazon Resource Name (ARN) of the resource associated with the policy. </param>
+		/// <param name="Identifier">Amazon Resource Name (ARN) of the resource associated with the policy. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2267,7 +2342,10 @@ namespace MyNS
 		/// Gets the resource-based permission policy that is set for the given environment.
 		/// GetResourcePolicy resourcepolicy/{Identifier}
 		/// </summary>
-		/// <param name="Identifier">The Amazon Resource Name (ARN) of the resource associated with the policy. </param>
+		/// <param name="Identifier">The Amazon Resource Name (ARN) of the resource associated with the policy. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2301,9 +2379,18 @@ namespace MyNS
 		/// Deletes an Amazon Web Services Migration Hub Refactor Spaces route.
 		/// DeleteRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application to delete the route from.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment to delete the route from.</param>
-		/// <param name="RouteIdentifier">The ID of the route to delete.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application to delete the route from.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment to delete the route from.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="RouteIdentifier">The ID of the route to delete.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteResponse> DeleteRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2337,9 +2424,18 @@ namespace MyNS
 		/// Gets an Amazon Web Services Migration Hub Refactor Spaces route.
 		/// GetRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application. </param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment.</param>
-		/// <param name="RouteIdentifier">The ID of the route.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="RouteIdentifier">The ID of the route.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRouteResponse> GetRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2373,9 +2469,18 @@ namespace MyNS
 		/// Updates an Amazon Web Services Migration Hub Refactor Spaces route.
 		/// UpdateRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier"> The ID of the application within which the route is being updated. </param>
-		/// <param name="EnvironmentIdentifier"> The ID of the environment in which the route is being updated. </param>
-		/// <param name="RouteIdentifier"> The unique identifier of the route to update. </param>
+		/// <param name="ApplicationIdentifier"> The ID of the application within which the route is being updated. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier"> The ID of the environment in which the route is being updated. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="RouteIdentifier"> The unique identifier of the route to update. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteResponse> UpdateRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, UpdateRoutePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2416,9 +2521,18 @@ namespace MyNS
 		/// Deletes an Amazon Web Services Migration Hub Refactor Spaces service.
 		/// DeleteService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier"><p>Deletes a Refactor Spaces service.</p> <note> <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p> </note></param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment that the service is in.</param>
-		/// <param name="ServiceIdentifier">The ID of the service to delete.</param>
+		/// <param name="ApplicationIdentifier"><p>Deletes a Refactor Spaces service.</p> <note> <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p> </note>
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment that the service is in.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="ServiceIdentifier">The ID of the service to delete.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceResponse> DeleteServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string ServiceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2452,9 +2566,18 @@ namespace MyNS
 		/// Gets an Amazon Web Services Migration Hub Refactor Spaces service.
 		/// GetService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		/// </summary>
-		/// <param name="ApplicationIdentifier">The ID of the application.</param>
-		/// <param name="EnvironmentIdentifier">The ID of the environment.</param>
-		/// <param name="ServiceIdentifier">The ID of the service.</param>
+		/// <param name="ApplicationIdentifier">The ID of the application.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="ServiceIdentifier">The ID of the service.
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceResponse> GetServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string ServiceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2488,9 +2611,18 @@ namespace MyNS
 		/// Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment.
 		/// ListEnvironmentVpcs environments/{EnvironmentIdentifier}/vpcs
 		/// </summary>
-		/// <param name="EnvironmentIdentifier">The ID of the environment. </param>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="EnvironmentIdentifier">The ID of the environment. 
+		/// Max length: 14
+		/// Min length: 14
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>

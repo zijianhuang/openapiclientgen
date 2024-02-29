@@ -14,11 +14,15 @@ export namespace MyNS {
 		 * Get Facets
 		 * @param {string} searchTerms URL-encoded keyword or keywords desired by the client; OpenSearch 1.1
 		 * @param {number} count The number of search results per page desired by the client; OpenSearch 1.1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startIndex First search result desired by the search client; OpenSearch 1.1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} spatial 4 comma separated values - W, S, E, N; OpenSearch-Geo 1.0, "box" parameter
 		 * @param {FacetsSortKeys} sortKeys Sort the results by most relevant (default), smallest or largest spatial area, shortest or longest temporal duration, or most recently updated; partial implementation of OpenSearch SRU 1.0
 		 * @param {Date} startDate The start date in yyyy-mm-dd format
+		 *     Type: DateOnly
 		 * @param {Date} endDate The end date in yyyy-mm-dd format
+		 *     Type: DateOnly
 		 * @param {string} facetFilters Describes faceted restrictions on the search. A URL-encoded JSON object where the keys are the names of the facet, and the values are arrays of the selected facet values
 		 * @param {FacetsSource} source Custom parameter for selecting which source to use; the Arctic Data Explorer (ADE) uses data aggregated from many sources, including, but not limited to, NSIDC
 		 * @return {void} OK
@@ -33,11 +37,15 @@ export namespace MyNS {
 		 * Get OpenSearch
 		 * @param {string} searchTerms URL-encoded keyword or keywords desired by the client; OpenSearch 1.1
 		 * @param {number} count The number of search results per page desired by the client; OpenSearch 1.1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startIndex First search result desired by the search client; OpenSearch 1.1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} spatial 4 comma separated values - W, S, E, N; OpenSearch-Geo 1.0, "box" parameter
 		 * @param {FacetsSortKeys} sortKeys Sort the results by most relevant (default), smallest or largest spatial area, shortest or longest temporal duration, or most recently updated; partial implementation of OpenSearch SRU 1.0
 		 * @param {Date} startDate The start date in yyyy-mm-dd format
+		 *     Type: DateOnly
 		 * @param {Date} endDate The end date in yyyy-mm-dd format
+		 *     Type: DateOnly
 		 * @param {string} facetFilters Describes faceted restrictions on the search. A URL-encoded JSON object where the keys are the names of the facet, and the values are arrays of the selected facet values
 		 * @param {FacetsSource} source Custom parameter for selecting which source to use; the Arctic Data Explorer (ADE) uses data aggregated from many sources, including, but not limited to, NSIDC
 		 * @return {void} OK

@@ -298,8 +298,13 @@ namespace MyNS
 		/// GetArticles api/articles/search
 		/// </summary>
 		/// <param name="q">Accepts keywords to use as a search query.</param>
-		/// <param name="page">Pagination Page</param>
-		/// <param name="per_page">Page size (the number of items to return per page).</param>
+		/// <param name="page">Pagination Page
+		/// Minimum: 0
+		// </param>
+		/// <param name="per_page">Page size (the number of items to return per page).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="top">Returns the most popular articles in the last N days. 'top' indicates the number of days since publication of the articles returned. This param can be used in conjuction with q or tag.</param>
 		/// <returns>OK</returns>
 		public async Task GetArticlesAsync(string q, int page, int per_page, string top, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

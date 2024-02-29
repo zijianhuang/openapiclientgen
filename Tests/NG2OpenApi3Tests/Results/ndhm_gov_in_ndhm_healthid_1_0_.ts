@@ -216,6 +216,8 @@ export namespace MyNS {
 		description?: string | null;
 		linkageDate?: Date | null;
 		programName?: string | null;
+
+		/** Type: DateOnly */
 		validity?: Date | null;
 	}
 	export interface BenefitDTOFormProperties {
@@ -224,6 +226,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		linkageDate: FormControl<Date | null | undefined>,
 		programName: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		validity: FormControl<Date | null | undefined>,
 	}
 	export function CreateBenefitDTOFormGroup() {
@@ -275,14 +279,20 @@ export namespace MyNS {
 		canonicalPath?: string | null;
 		directory?: boolean | null;
 		file?: boolean | null;
-		freeSpace?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		freeSpace?: string | null;
 		hidden?: boolean | null;
 		name?: string | null;
 		parent?: string | null;
 		parentFile?: File;
 		path?: string | null;
-		totalSpace?: number | null;
-		usableSpace?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalSpace?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usableSpace?: string | null;
 	}
 	export interface FileFormProperties {
 		absolute: FormControl<boolean | null | undefined>,
@@ -290,13 +300,19 @@ export namespace MyNS {
 		canonicalPath: FormControl<string | null | undefined>,
 		directory: FormControl<boolean | null | undefined>,
 		file: FormControl<boolean | null | undefined>,
-		freeSpace: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		freeSpace: FormControl<string | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		parent: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
-		totalSpace: FormControl<number | null | undefined>,
-		usableSpace: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalSpace: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usableSpace: FormControl<string | null | undefined>,
 	}
 	export function CreateFileFormGroup() {
 		return new FormGroup<FileFormProperties>({
@@ -305,13 +321,13 @@ export namespace MyNS {
 			canonicalPath: new FormControl<string | null | undefined>(undefined),
 			directory: new FormControl<boolean | null | undefined>(undefined),
 			file: new FormControl<boolean | null | undefined>(undefined),
-			freeSpace: new FormControl<number | null | undefined>(undefined),
+			freeSpace: new FormControl<string | null | undefined>(undefined),
 			hidden: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			parent: new FormControl<string | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
-			totalSpace: new FormControl<number | null | undefined>(undefined),
-			usableSpace: new FormControl<number | null | undefined>(undefined),
+			totalSpace: new FormControl<string | null | undefined>(undefined),
+			usableSpace: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -333,6 +349,8 @@ export namespace MyNS {
 		host?: string | null;
 		opaque?: boolean | null;
 		path?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		query?: string | null;
 		rawAuthority?: string | null;
@@ -352,6 +370,8 @@ export namespace MyNS {
 		host: FormControl<string | null | undefined>,
 		opaque: FormControl<boolean | null | undefined>,
 		path: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		query: FormControl<string | null | undefined>,
 		rawAuthority: FormControl<string | null | undefined>,
@@ -390,10 +410,14 @@ export namespace MyNS {
 	export interface URL {
 		authority?: string | null;
 		content?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultPort?: number | null;
 		file?: string | null;
 		host?: string | null;
 		path?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		protocol?: string | null;
 		query?: string | null;
@@ -403,10 +427,14 @@ export namespace MyNS {
 	export interface URLFormProperties {
 		authority: FormControl<string | null | undefined>,
 		content: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultPort: FormControl<number | null | undefined>,
 		file: FormControl<string | null | undefined>,
 		host: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		protocol: FormControl<string | null | undefined>,
 		query: FormControl<string | null | undefined>,
@@ -459,6 +487,8 @@ export namespace MyNS {
 		monthOfBirth?: string | null;
 		name?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode?: number | null;
 		profilePhoto?: string | null;
 		restrictions?: string | null;
@@ -486,6 +516,8 @@ export namespace MyNS {
 		monthOfBirth: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode: FormControl<number | null | undefined>,
 		profilePhoto: FormControl<string | null | undefined>,
 		restrictions: FormControl<string | null | undefined>,
@@ -1278,6 +1310,8 @@ export namespace MyNS {
 		middleName?: string | null;
 		monthOfBirth?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode?: number | null;
 		profilePhoto?: string | null;
 		stateCode?: string | null;
@@ -1299,6 +1333,8 @@ export namespace MyNS {
 		middleName: FormControl<string | null | undefined>,
 		monthOfBirth: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode: FormControl<number | null | undefined>,
 		profilePhoto: FormControl<string | null | undefined>,
 		stateCode: FormControl<string | null | undefined>,
@@ -1411,11 +1447,15 @@ export namespace MyNS {
 	export interface ResponseEntity {
 		body?: string | null;
 		statusCode?: ResponseEntityStatusCode | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCodeValue?: number | null;
 	}
 	export interface ResponseEntityFormProperties {
 		body: FormControl<string | null | undefined>,
 		statusCode: FormControl<ResponseEntityStatusCode | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCodeValue: FormControl<number | null | undefined>,
 	}
 	export function CreateResponseEntityFormGroup() {
@@ -1604,6 +1644,8 @@ export namespace MyNS {
 		middleName?: string | null;
 		monthOfBirth?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode?: number | null;
 		profilePhoto?: string | null;
 		stateCode?: string | null;
@@ -1624,6 +1666,8 @@ export namespace MyNS {
 		middleName: FormControl<string | null | undefined>,
 		monthOfBirth: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode: FormControl<number | null | undefined>,
 		profilePhoto: FormControl<string | null | undefined>,
 		stateCode: FormControl<string | null | undefined>,

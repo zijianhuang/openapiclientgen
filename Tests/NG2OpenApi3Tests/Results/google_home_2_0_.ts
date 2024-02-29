@@ -32,13 +32,19 @@ export namespace MyNS {
 		/** Required */
 		date_pattern: DatePattern;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		fire_time: number;
 
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 
 		/** Required */
@@ -46,13 +52,19 @@ export namespace MyNS {
 	}
 	export interface AlarmFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		fire_time: FormControl<number | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateAlarmFormGroup() {
@@ -66,24 +78,42 @@ export namespace MyNS {
 
 	export interface DatePattern {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: number;
 	}
 	export interface DatePatternFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDatePatternFormGroup() {
@@ -97,24 +127,42 @@ export namespace MyNS {
 
 	export interface TimePattern {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		second: number;
 	}
 	export interface TimePatternFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		second: FormControl<number | null | undefined>,
 	}
 	export function CreateTimePatternFormGroup() {
@@ -128,12 +176,18 @@ export namespace MyNS {
 
 	export interface AlarmVolumeRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volume: number;
 	}
 	export interface AlarmVolumeRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateAlarmVolumeRequestFormGroup() {
@@ -196,16 +250,25 @@ export namespace MyNS {
 
 	export interface BuildInfo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build_type: number;
 
 		/** Required */
 		cast_build_revision: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cast_control_version: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preview_channel_state: number;
 
 		/** Required */
@@ -216,16 +279,25 @@ export namespace MyNS {
 	}
 	export interface BuildInfoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build_type: FormControl<number | null | undefined>,
 
 		/** Required */
 		cast_build_revision: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cast_control_version: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preview_channel_state: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -554,12 +626,18 @@ export namespace MyNS {
 		/** Required */
 		device: Device;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		enabled_profiles: number;
 	}
 	export interface ConnectedDeviceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		enabled_profiles: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectedDeviceFormGroup() {
@@ -571,16 +649,28 @@ export namespace MyNS {
 
 	export interface Device {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_connect_date: number;
 
 		/** Required */
@@ -589,7 +679,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: number;
 
 		/** Required */
@@ -597,16 +690,28 @@ export namespace MyNS {
 	}
 	export interface DeviceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_connect_date: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -615,7 +720,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
@@ -639,16 +747,25 @@ export namespace MyNS {
 		/** Required */
 		enc_passwd: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: number;
 
 		/** Required */
 		ssid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: number;
 	}
 	export interface ConnecttoWi_FiNetworkRequestFormProperties {
@@ -659,16 +776,25 @@ export namespace MyNS {
 		/** Required */
 		enc_passwd: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: FormControl<number | null | undefined>,
 	}
 	export function CreateConnecttoWi_FiNetworkRequestFormGroup() {
@@ -717,10 +843,16 @@ export namespace MyNS {
 
 	export interface IconList {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
 		/** Required */
@@ -729,15 +861,24 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface IconListFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -746,7 +887,10 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateIconListFormGroup() {
@@ -782,7 +926,10 @@ export namespace MyNS {
 		/** Required */
 		display_string: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 	}
 	export interface TimezoneFormProperties {
@@ -790,7 +937,10 @@ export namespace MyNS {
 		/** Required */
 		display_string: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 	}
 	export function CreateTimezoneFormGroup() {
@@ -803,7 +953,10 @@ export namespace MyNS {
 
 	export interface DeviceInfo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4k_blocked': number;
 
 		/** Required */
@@ -842,7 +995,10 @@ export namespace MyNS {
 		/** Required */
 		uma_client_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		uptime: number;
 
 		/** Required */
@@ -850,7 +1006,10 @@ export namespace MyNS {
 	}
 	export interface DeviceInfoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4k_blocked': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -886,7 +1045,10 @@ export namespace MyNS {
 		/** Required */
 		uma_client_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		uptime: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -962,7 +1124,10 @@ export namespace MyNS {
 		/** Required */
 		user_eq: UserEq;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: number;
 
 		/** Required */
@@ -973,7 +1138,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateExample1FormGroup() {
@@ -986,13 +1154,22 @@ export namespace MyNS {
 
 	export interface Multizone {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay_hdmi: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay_oem: number;
 
 		/** Required */
@@ -1004,24 +1181,39 @@ export namespace MyNS {
 		/** Required */
 		groups: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multichannel_status: number;
 	}
 	export interface MultizoneFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay_hdmi: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_output_delay_oem: FormControl<number | null | undefined>,
 
 		/** Required */
 		aux_in_group: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multichannel_status: FormControl<number | null | undefined>,
 	}
 	export function CreateMultizoneFormGroup() {
@@ -1068,7 +1260,10 @@ export namespace MyNS {
 
 	export interface NightModeParams {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_override_do_not_disturb: number;
 
 		/** Required */
@@ -1077,10 +1272,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: number;
 
 		/** Required */
@@ -1088,7 +1289,10 @@ export namespace MyNS {
 	}
 	export interface NightModeParamsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_override_do_not_disturb: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1097,10 +1301,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateNightModeParamsFormGroup() {
@@ -1119,18 +1329,30 @@ export namespace MyNS {
 		/** Required */
 		days: Array<number>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length_hours: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_hour: number;
 	}
 	export interface WindowFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length_hours: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_hour: FormControl<number | null | undefined>,
 	}
 	export function CreateWindowFormGroup() {
@@ -1163,7 +1385,10 @@ export namespace MyNS {
 		/** Required */
 		audio_hdr: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_surround_mode: number;
 
 		/** Required */
@@ -1204,7 +1429,10 @@ export namespace MyNS {
 		/** Required */
 		audio_hdr: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_surround_mode: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1281,7 +1509,10 @@ export namespace MyNS {
 		/** Required */
 		closed_caption: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		control_notifications: number;
 
 		/** Required */
@@ -1290,19 +1521,28 @@ export namespace MyNS {
 		/** Required */
 		locale: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_standby: number;
 
 		/** Required */
 		system_sound_effects: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_format: number;
 
 		/** Required */
 		timezone: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wake_on_cast: number;
 	}
 	export interface SettingsFormProperties {
@@ -1310,7 +1550,10 @@ export namespace MyNS {
 		/** Required */
 		closed_caption: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		control_notifications: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1319,19 +1562,28 @@ export namespace MyNS {
 		/** Required */
 		locale: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network_standby: FormControl<number | null | undefined>,
 
 		/** Required */
 		system_sound_effects: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_format: FormControl<number | null | undefined>,
 
 		/** Required */
 		timezone: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wake_on_cast: FormControl<number | null | undefined>,
 	}
 	export function CreateSettingsFormGroup() {
@@ -1354,7 +1606,10 @@ export namespace MyNS {
 		/** Required */
 		qr_ssid_suffix: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		setup_state: number;
 
 		/** Required */
@@ -1371,7 +1626,10 @@ export namespace MyNS {
 		/** Required */
 		qr_ssid_suffix: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		setup_state: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1392,36 +1650,66 @@ export namespace MyNS {
 
 	export interface Stats {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_check_connectivity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_connect_wifi: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_connected_wifi_not_saved: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_initial_eureka_info: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_obtain_ip: number;
 	}
 	export interface StatsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_check_connectivity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_connect_wifi: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_connected_wifi_not_saved: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_initial_eureka_info: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_obtain_ip: FormControl<number | null | undefined>,
 	}
 	export function CreateStatsFormGroup() {
@@ -1477,7 +1765,10 @@ export namespace MyNS {
 		/** Required */
 		low_shelf: LowShelf;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_peaking_eqs: number;
 
 		/** Required */
@@ -1485,7 +1776,10 @@ export namespace MyNS {
 	}
 	export interface UserEqFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_peaking_eqs: FormControl<number | null | undefined>,
 	}
 	export function CreateUserEqFormGroup() {
@@ -1497,24 +1791,42 @@ export namespace MyNS {
 
 	export interface HighShelf {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quality: number;
 	}
 	export interface HighShelfFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quality: FormControl<number | null | undefined>,
 	}
 	export function CreateHighShelfFormGroup() {
@@ -1528,24 +1840,42 @@ export namespace MyNS {
 
 	export interface LowShelf {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quality: number;
 	}
 	export interface LowShelfFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quality: FormControl<number | null | undefined>,
 	}
 	export function CreateLowShelfFormGroup() {
@@ -1565,10 +1895,16 @@ export namespace MyNS {
 		/** Required */
 		has_changes: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noise_level: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: number;
 
 		/** Required */
@@ -1577,10 +1913,16 @@ export namespace MyNS {
 		/** Required */
 		wpa_configured: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_state: number;
 	}
 	export interface WifiFormProperties {
@@ -1591,10 +1933,16 @@ export namespace MyNS {
 		/** Required */
 		has_changes: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noise_level: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1603,10 +1951,16 @@ export namespace MyNS {
 		/** Required */
 		wpa_configured: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_state: FormControl<number | null | undefined>,
 	}
 	export function CreateWifiFormGroup() {
@@ -1656,7 +2010,10 @@ export namespace MyNS {
 
 	export interface Example110 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_mode: number;
 
 		/** Required */
@@ -1676,7 +2033,10 @@ export namespace MyNS {
 	}
 	export interface Example110FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		audio_mode: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1696,16 +2056,28 @@ export namespace MyNS {
 
 	export interface RemoteSink {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_connect_date: number;
 
 		/** Required */
@@ -1714,7 +2086,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: number;
 
 		/** Required */
@@ -1722,16 +2097,28 @@ export namespace MyNS {
 	}
 	export interface RemoteSinkFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_connect_date: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1740,7 +2127,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: FormControl<number | null | undefined>,
 	}
 	export function CreateRemoteSinkFormGroup() {
@@ -1758,16 +2148,28 @@ export namespace MyNS {
 
 	export interface Example111 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		last_connect_date: number;
 
 		/** Required */
@@ -1776,7 +2178,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: number;
 
 		/** Required */
@@ -1784,16 +2189,28 @@ export namespace MyNS {
 	}
 	export interface Example111FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		bond_date: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		last_connect_date: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1802,7 +2219,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: FormControl<number | null | undefined>,
 	}
 	export function CreateExample111FormGroup() {
@@ -1820,13 +2240,22 @@ export namespace MyNS {
 
 	export interface Example112 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expected_profiles: number;
 
 		/** Required */
@@ -1835,18 +2264,30 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: number;
 	}
 	export interface Example112FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_class: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		device_type: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expected_profiles: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1855,7 +2296,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: FormControl<number | null | undefined>,
 	}
 	export function CreateExample112FormGroup() {
@@ -1875,13 +2319,22 @@ export namespace MyNS {
 		/** Required */
 		ssid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: number;
 	}
 	export interface Example113FormProperties {
@@ -1889,13 +2342,22 @@ export namespace MyNS {
 		/** Required */
 		ssid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: FormControl<number | null | undefined>,
 	}
 	export function CreateExample113FormGroup() {
@@ -1913,19 +2375,31 @@ export namespace MyNS {
 		/** Required */
 		bssid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: number;
 
 		/** Required */
 		ssid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: number;
 	}
 	export interface Example114FormProperties {
@@ -1933,19 +2407,31 @@ export namespace MyNS {
 		/** Required */
 		bssid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signal_level: FormControl<number | null | undefined>,
 
 		/** Required */
 		ssid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_auth: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_cipher: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: FormControl<number | null | undefined>,
 	}
 	export function CreateExample114FormGroup() {
@@ -1982,10 +2468,16 @@ export namespace MyNS {
 		/** Required */
 		can_enroll: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		enrollment_state: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: number;
 
 		/** Required */
@@ -1999,10 +2491,16 @@ export namespace MyNS {
 		/** Required */
 		can_enroll: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		enrollment_state: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2027,7 +2525,10 @@ export namespace MyNS {
 		/** Required */
 		display_string: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
@@ -2038,7 +2539,10 @@ export namespace MyNS {
 		/** Required */
 		display_string: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2079,30 +2583,54 @@ export namespace MyNS {
 
 	export interface Example16 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_received: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		response_code: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_for_data_fetch: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_for_http_response: number;
 	}
 	export interface Example16FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_received: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		response_code: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_for_data_fetch: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_for_http_response: FormControl<number | null | undefined>,
 	}
 	export function CreateExample16FormGroup() {
@@ -2123,10 +2651,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: number;
 
 		/** Required */
@@ -2140,10 +2674,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateExample17FormGroup() {
@@ -2161,18 +2701,30 @@ export namespace MyNS {
 		/** Required */
 		days: Array<number>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length_hours: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		start_hour: number;
 	}
 	export interface Window2FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length_hours: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		start_hour: FormControl<number | null | undefined>,
 	}
 	export function CreateWindow2FormGroup() {
@@ -2201,35 +2753,53 @@ export namespace MyNS {
 
 	export interface Timer {
 
-		/** Required */
-		fire_time: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fire_time: string;
 
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_duration: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface TimerFormProperties {
 
-		/** Required */
-		fire_time: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fire_time: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		original_duration: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerFormGroup() {
 		return new FormGroup<TimerFormProperties>({
-			fire_time: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			fire_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			original_duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -2256,12 +2826,18 @@ export namespace MyNS {
 
 	export interface ForgetWi_FiNetworkRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: number;
 	}
 	export interface ForgetWi_FiNetworkRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wpa_id: FormControl<number | null | undefined>,
 	}
 	export function CreateForgetWi_FiNetworkRequestFormGroup() {
@@ -2338,12 +2914,18 @@ export namespace MyNS {
 
 	export interface Getvolume {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: number;
 	}
 	export interface GetvolumeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateGetvolumeFormGroup() {
@@ -2355,12 +2937,18 @@ export namespace MyNS {
 
 	export interface HighShelf1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: number;
 	}
 	export interface HighShelf1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: FormControl<number | null | undefined>,
 	}
 	export function CreateHighShelf1FormGroup() {
@@ -2372,12 +2960,18 @@ export namespace MyNS {
 
 	export interface LowShelf1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: number;
 	}
 	export interface LowShelf1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gain_db: FormControl<number | null | undefined>,
 	}
 	export function CreateLowShelf1FormGroup() {
@@ -2398,10 +2992,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: number;
 
 		/** Required */
@@ -2418,10 +3018,16 @@ export namespace MyNS {
 		/** Required */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		led_brightness: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateNightModesettingsRequestFormGroup() {
@@ -2481,7 +3087,10 @@ export namespace MyNS {
 		/** Required */
 		mac_address: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profile: number;
 	}
 	export interface PairwithSpeakerRequestFormProperties {
@@ -2492,7 +3101,10 @@ export namespace MyNS {
 		/** Required */
 		mac_address: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profile: FormControl<number | null | undefined>,
 	}
 	export function CreatePairwithSpeakerRequestFormGroup() {
@@ -2529,7 +3141,10 @@ export namespace MyNS {
 		/** Required */
 		enable: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: number;
 	}
 	export interface ScanfordevicesRequestFormProperties {
@@ -2540,7 +3155,10 @@ export namespace MyNS {
 		/** Required */
 		enable: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateScanfordevicesRequestFormGroup() {
@@ -2593,12 +3211,18 @@ export namespace MyNS {
 
 	export interface Settings1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		control_notifications: number;
 	}
 	export interface Settings1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		control_notifications: FormControl<number | null | undefined>,
 	}
 	export function CreateSettings1FormGroup() {
@@ -2634,7 +3258,6 @@ export namespace MyNS {
 		 * Legal Notice
 		 * All licenses of programs used by Home.
 		 * Get NOTICE.html.gz
-		 * @return {string} 
 		 */
 		LegalNotice(): Observable<string> {
 			return this.http.get(this.baseUri + 'NOTICE.html.gz', { responseType: 'text' });
@@ -2646,7 +3269,6 @@ export namespace MyNS {
 		 * Sending an empty-body POST request returns the current values.
 		 * Either of the fields or both can be sent and new values will be saved.
 		 * Post assistant/a11y_mode
-		 * @return {Getcurrentvalues} 
 		 */
 		Accessibility(requestBody: AccessibilityRequest): Observable<Getcurrentvalues> {
 			return this.http.post<Getcurrentvalues>(this.baseUri + 'assistant/a11y_mode', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2661,7 +3283,6 @@ export namespace MyNS {
 		 * Timers have `original_duration` is the original duration.
 		 * `status` is 1 for set up and 3 for ringing.
 		 * Get assistant/alarms
-		 * @return {Example18} 
 		 */
 		GetAlarmsandTimers(): Observable<Example18> {
 			return this.http.get<Example18>(this.baseUri + 'assistant/alarms', {});
@@ -2672,7 +3293,6 @@ export namespace MyNS {
 		 * This deletes alarms and timers by their id.
 		 * `ids` is a list of ids to be deleted. Sending invalid id still returns a 200 OK. The `/` in the ids have to be escaped like `\/`.
 		 * Post assistant/alarms/delete
-		 * @return {Example19} 
 		 */
 		DeleteAlarmsandTimers(requestBody: DeleteAlarmsandTimersRequest): Observable<Example19> {
 			return this.http.post<Example19>(this.baseUri + 'assistant/alarms/delete', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2685,7 +3305,6 @@ export namespace MyNS {
 		 * Volume is a float number in [0, 1] where 0 is minimum and 1 is maximum.
 		 * Sending an empty body gets the volume. Sending `volume` sets the volume.
 		 * Post assistant/alarms/volume
-		 * @return {Getvolume} 
 		 */
 		AlarmVolume(requestBody: AlarmVolumeRequest): Observable<Getvolume> {
 			return this.http.post<Getvolume>(this.baseUri + 'assistant/alarms/volume', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2696,7 +3315,6 @@ export namespace MyNS {
 		 * **Update:** This seems to have changed now and is no longer possible. The error is also new.
 		 * Setting `play_ready_message` to true plays a welcome message on the device saying "Hi, I'm your Google Assistant. I'm here to help. To learn a few things you can do, continue in the Google Home app."
 		 * Post assistant/check_ready_status
-		 * @return {Example13} 
 		 */
 		CheckReadyStatus(requestBody: CheckReadyStatusRequest): Observable<Example13> {
 			return this.http.post<Example13>(this.baseUri + 'assistant/check_ready_status', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2706,7 +3324,6 @@ export namespace MyNS {
 		 * Do Not Disturb
 		 * This is for the Do Not Disturb option. Sending an empty-body POST returns the current value. Sending a new value changes it.
 		 * Post assistant/notifications
-		 * @return {Getcurrentstate} 
 		 */
 		DoNotDisturb(): Observable<Getcurrentstate> {
 			return this.http.post<Getcurrentstate>(this.baseUri + 'assistant/notifications', null, {});
@@ -2721,7 +3338,6 @@ export namespace MyNS {
 		 * `demo_to_user` is always set to `true` so change in values will be visible in realtime (like brightness).
 		 * `windows`: A combination of `length_hours` and `start_hour` is used to define start and end times for night mode. In this example, night mode starts at 10 PM (22) and ends at 6 AM (8 hours later). `windows.days` is an array of days of week when night mode will be enabled. Example: 0->Sunday, 1-> Monday, ..., 6->Saturday.
 		 * Post assistant/set_night_mode_params
-		 * @return {Example17} 
 		 */
 		NightModesettings(requestBody: NightModesettingsRequest): Observable<Example17> {
 			return this.http.post<Example17>(this.baseUri + 'assistant/set_night_mode_params', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2733,7 +3349,6 @@ export namespace MyNS {
 		 * **For both parts**
 		 * This is to forget paired devices by mac address. Works for both kinds of devices (Part 1 and Part 2).
 		 * Post bluetooth/bond
-		 * @return {string} 
 		 */
 		Forgetpaireddevice(requestBody: ForgetpaireddeviceRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'bluetooth/bond', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2745,7 +3360,6 @@ export namespace MyNS {
 		 * **For Part 2 only**
 		 * This pairs with other bluetooth speakers by mac address.
 		 * Post bluetooth/connect
-		 * @return {string} 
 		 */
 		PairwithSpeaker(requestBody: PairwithSpeakerRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'bluetooth/connect', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2757,7 +3371,6 @@ export namespace MyNS {
 		 * **For Part 1 only**
 		 * This enables/disables Home's bluetooth discovery and other devices can pair with Home (where Home acts as a speaker).
 		 * Post bluetooth/discovery
-		 * @return {string} 
 		 */
 		ChangeDiscoverability(requestBody: ChangeDiscoverabilityRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'bluetooth/discovery', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2769,7 +3382,6 @@ export namespace MyNS {
 		 * **For both parts**
 		 * This gives a list of all paired or 'bonded' devices. The response field names are self-descriptive.
 		 * Get bluetooth/get_bonded
-		 * @return {Array<Example111>} 
 		 */
 		GetPairedDevices(): Observable<Array<Example111>> {
 			return this.http.get<Array<Example111>>(this.baseUri + 'bluetooth/get_bonded', {});
@@ -2782,7 +3394,6 @@ export namespace MyNS {
 		 * This initiates scan for other bluetooth speakers/devices. Scan results will be updated continuously for `timeout` seconds.
 		 * To get the scan results, see /setup/bluetooth/scan_results.
 		 * Post bluetooth/scan
-		 * @return {string} 
 		 */
 		Scanfordevices(requestBody: ScanfordevicesRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'bluetooth/scan', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2797,7 +3408,6 @@ export namespace MyNS {
 		 * `device_class` and `device_type` are bluetooth codes.
 		 * The Home app only lists those devices with `expected_profiles` > 0. Basically, the device should function as a speaker.
 		 * Get bluetooth/scan_results
-		 * @return {Array<Example112>} 
 		 */
 		GetScanResults(): Observable<Array<Example112>> {
 			return this.http.get<Array<Example112>>(this.baseUri + 'bluetooth/scan_results', {});
@@ -2822,7 +3432,6 @@ export namespace MyNS {
 		 * - `scanning_enabled` states whether Home scanning for other bluetooth speakers/devices. (**Part 2**)
 		 * - `connected_devices` is a list of all speakers connected to Home. (**Part 2**)
 		 * Get bluetooth/status
-		 * @return {Example110} 
 		 */
 		Status(): Observable<Example110> {
 			return this.http.get<Example110>(this.baseUri + 'bluetooth/status', {});
@@ -2835,7 +3444,6 @@ export namespace MyNS {
 		 * `wpa_id` is an incrementing number used to identify a saved network.
 		 * #TODO: Add values for `wpa_auth` and `wpa_cipher`.
 		 * Get configured_networks
-		 * @return {Array<Example113>} 
 		 */
 		GetSavedNetworks(): Observable<Array<Example113>> {
 			return this.http.get<Array<Example113>>(this.baseUri + 'configured_networks', {});
@@ -2858,7 +3466,7 @@ export namespace MyNS {
 		 * The `options` GET parameter is always set to `detail` or `detail,sign`. `sign` signs the `nonce` and returns some value.
 		 * The `nonce` GET parameter is an integer value signed with needed (see `option` parameter above).
 		 * Get eureka_info
-		 * @return {Example1} 
+		 * @param {number} nonce Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		EurekaInfo(params: string, options: string, nonce: number): Observable<Example1> {
 			return this.http.get<Example1>(this.baseUri + 'eureka_info?params=' + (params == null ? '' : encodeURIComponent(params)) + '&options=' + (options == null ? '' : encodeURIComponent(options)) + '&nonce=' + nonce, {});
@@ -2868,7 +3476,6 @@ export namespace MyNS {
 		 * Forget Wi-Fi Network
 		 * This is to forget a saved network by `wpa_id`. Get the `wpa_id` from /setup/configured_networks
 		 * Post forget_wifi
-		 * @return {string} 
 		 */
 		ForgetWi_FiNetwork(requestBody: ForgetWi_FiNetworkRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'forget_wifi', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2881,7 +3488,6 @@ export namespace MyNS {
 		 * The certificate is valid and issued by `Chromecast ICA 6 (Audio Assist), Google Inc`.
 		 * Not sure what the other two are.
 		 * Post get_app_device_id
-		 * @return {Example11} 
 		 */
 		AppDeviceID(requestBody: AppDeviceIDRequest): Observable<Example11> {
 			return this.http.post<Example11>(this.baseUri + 'get_app_device_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2903,7 +3509,6 @@ export namespace MyNS {
 		 * This gives a token which is used by the Home app to get offers. The offers themselves are not stored on the device.
 		 * A new token is generated for every request.
 		 * Get offer
-		 * @return {Example12} 
 		 */
 		Offer(): Observable<Example12> {
 			return this.http.get<Example12>(this.baseUri + 'offer', {});
@@ -2913,7 +3518,6 @@ export namespace MyNS {
 		 * Reboot and Factory Reset
 		 * This can simply reboot the device (`params: "now"`) or factory reset the device (`params: "fdr"`).
 		 * Post reboot
-		 * @return {string} 
 		 */
 		RebootandFactoryReset(requestBody: RebootandFactoryResetRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'reboot', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2924,7 +3528,6 @@ export namespace MyNS {
 		 * This gets a list of all nearby Wi-Fi access points.
 		 * The list only has the connected AP by default. Once a scan is triggered by `/setup/scan_wifi`, the whole list is cached for ~3 minutes. Then it will revert to returning only the connected AP again.
 		 * Get scan_results
-		 * @return {Array<Example114>} 
 		 */
 		GetWi_FiScanResults(): Observable<Array<Example114>> {
 			return this.http.get<Array<Example114>>(this.baseUri + 'scan_results', {});
@@ -2935,7 +3538,6 @@ export namespace MyNS {
 		 * This initiates scanning for Wi-Fi networks.
 		 * The results can be obtained with `/setup/scan_results` after triggering the scan with this request.
 		 * Post scan_wifi
-		 * @return {string} 
 		 */
 		ScanforNetworks(): Observable<string> {
 			return this.http.post(this.baseUri + 'scan_wifi', null, { responseType: 'text' });
@@ -2948,7 +3550,6 @@ export namespace MyNS {
 		 * TODO: List all modifiable fields.
 		 * Sending non-existant fields will still return a 200 OK, but they are not saved.
 		 * Post set_eureka_info
-		 * @return {string} 
 		 */
 		SetEurekaInfo(requestBody: SetEurekaInfoRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'set_eureka_info', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -2958,7 +3559,6 @@ export namespace MyNS {
 		 * Locales
 		 * Simply returns a list of all supported locales.
 		 * Get supported_locales
-		 * @return {Array<Example15>} 
 		 */
 		Locales(): Observable<Array<Example15>> {
 			return this.http.get<Array<Example15>>(this.baseUri + 'supported_locales', {});
@@ -2968,7 +3568,6 @@ export namespace MyNS {
 		 * Timezones
 		 * Simply returns a list of all supported timezones.
 		 * Get supported_timezones
-		 * @return {Array<Example14>} 
 		 */
 		Timezones(): Observable<Array<Example14>> {
 			return this.http.get<Array<Example14>>(this.baseUri + 'supported_timezones', {});
@@ -2979,7 +3578,6 @@ export namespace MyNS {
 		 * **Update:** This seems to have been removed. Returns 404 Not Found.
 		 * This endpoint tests internet download speed. Any sample file URL can be provided.
 		 * Post test_internet_download_speed
-		 * @return {Example16} 
 		 */
 		TestInternetDownloadSpeed(requestBody: TestInternetDownloadSpeedRequest): Observable<Example16> {
 			return this.http.post<Example16>(this.baseUri + 'test_internet_download_speed', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2993,7 +3591,6 @@ export namespace MyNS {
 		 * Default values are 0 for both.
 		 * While the slider in the Home app only ranges from -6 to +6, they can be set to any integer like 50 or -100. These changes persist.
 		 * Post user_eq/set_equalizer
-		 * @return {string} 
 		 */
 		SetEqualizerValues(requestBody: SetEqualizerValuesRequest): Observable<string> {
 			return this.http.post(this.baseUri + 'user_eq/set_equalizer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });

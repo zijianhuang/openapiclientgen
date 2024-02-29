@@ -490,8 +490,14 @@ namespace MyNS
 		/// <param name="dateFrom">Daily report with report date on or after the date specified. Date format yyyy-mm-dd</param>
 		/// <param name="dateTo">Daily report with report date on or before the date specified. Date format yyyy-mm-dd</param>
 		/// <param name="house">Daily report relating to the House specified. Defaults to Bicameral</param>
-		/// <param name="skip">Number of records to skip, default is 0</param>
-		/// <param name="take">Number of records to take, default is 20</param>
+		/// <param name="skip">Number of records to skip, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="take">Number of records to take, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DailyReportViewModelSearchResult> DailyReportsGetByDateFromAndDateToAndHouseAndSkipAndTakeAsync(System.DateTimeOffset dateFrom, System.DateTimeOffset dateTo, DailyReportViewModelHouse house, int skip, int take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -525,8 +531,14 @@ namespace MyNS
 		/// Returns a list of written questions
 		/// WrittenQuestionsGetByAskingMemberIdAndAnsweringMemberIdAndTabledWhenFromAndTabledWhenToAndAnsweredAndAnsweredWhenFromAndAnsweredWhenToAndQuestionStatusAndIncludeWithdrawnAndExpandMemberAndCorrectedWhenFromAndCorrectedWhenToAndSearchTermAndUINAndAnsweringBodiesAndMembersAndHouseAndSkipAndTake api/writtenquestions/questions
 		/// </summary>
-		/// <param name="askingMemberId">Written questions asked by member with member ID specified</param>
-		/// <param name="answeringMemberId">Written questions answered by member with member ID specified</param>
+		/// <param name="askingMemberId">Written questions asked by member with member ID specified
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="answeringMemberId">Written questions answered by member with member ID specified
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="tabledWhenFrom">Written questions tabled on or after the date specified. Date format yyyy-mm-dd</param>
 		/// <param name="tabledWhenTo">Written questions tabled on or before the date specified. Date format yyyy-mm-dd</param>
 		/// <param name="answered">Written questions that have been answered, unanswered or either.</param>
@@ -542,8 +554,14 @@ namespace MyNS
 		/// <param name="answeringBodies">Written questions / statements relating to the answering bodies with the IDs specified</param>
 		/// <param name="members">Written questions / statements relating to the members with the IDs specified</param>
 		/// <param name="house">Written questions / statements relating to the House specified</param>
-		/// <param name="skip">Number of records to skip, default is 0</param>
-		/// <param name="take">Number of records to take, default is 20</param>
+		/// <param name="skip">Number of records to skip, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="take">Number of records to take, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<QuestionsViewModelSearchResult> WrittenQuestionsGetByAskingMemberIdAndAnsweringMemberIdAndTabledWhenFromAndTabledWhenToAndAnsweredAndAnsweredWhenFromAndAnsweredWhenToAndQuestionStatusAndIncludeWithdrawnAndExpandMemberAndCorrectedWhenFromAndCorrectedWhenToAndSearchTermAndUINAndAnsweringBodiesAndMembersAndHouseAndSkipAndTakeAsync(
 					int askingMemberId, 
@@ -675,8 +693,14 @@ namespace MyNS
 		/// <param name="answeringBodies">Written questions / statements relating to the answering bodies with the IDs specified</param>
 		/// <param name="members">Written questions / statements relating to the members with the IDs specified</param>
 		/// <param name="house">Written questions / statements relating to the House specified</param>
-		/// <param name="skip">Number of records to skip, default is 0</param>
-		/// <param name="take">Number of records to take, default is 20</param>
+		/// <param name="skip">Number of records to skip, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="take">Number of records to take, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="expandMember">Expand the details of Members in the results</param>
 		/// <returns>Success</returns>
 		public async Task<StatementsViewModelSearchResult> WrittenStatementsGetByMadeWhenFromAndMadeWhenToAndSearchTermAndUINAndAnsweringBodiesAndMembersAndHouseAndSkipAndTakeAndExpandMemberAsync(System.DateTimeOffset madeWhenFrom, System.DateTimeOffset madeWhenTo, string searchTerm, string uIN, int[] answeringBodies, int[] members, DailyReportViewModelHouse house, int skip, int take, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -4,11 +4,15 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		fields?: string | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		fields: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -73,6 +77,7 @@ export namespace MyNS {
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 10000 (0.0001 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: number;
 
@@ -85,6 +90,7 @@ export namespace MyNS {
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 10000 (0.0001 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: FormControl<number | null | undefined>,
 	}
@@ -97,7 +103,10 @@ export namespace MyNS {
 
 	export interface BurnTokenRequestBurn {
 
-		/** Amount of tokens to burn */
+		/**
+		 * Amount of tokens to burn
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Unique token id we are burning */
@@ -105,7 +114,10 @@ export namespace MyNS {
 	}
 	export interface BurnTokenRequestBurnFormProperties {
 
-		/** Amount of tokens to burn */
+		/**
+		 * Amount of tokens to burn
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Unique token id we are burning */
@@ -124,7 +136,10 @@ export namespace MyNS {
 		/** Address to transfer tokens to */
 		address?: string | null;
 
-		/** Number of tokens to send */
+		/**
+		 * Number of tokens to send
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** ID of token we are sending */
@@ -135,7 +150,10 @@ export namespace MyNS {
 		/** Address to transfer tokens to */
 		address: FormControl<string | null | undefined>,
 
-		/** Number of tokens to send */
+		/**
+		 * Number of tokens to send
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** ID of token we are sending */
@@ -195,13 +213,22 @@ export namespace MyNS {
 
 	export interface GetAddressInfoResponseUtxos {
 
-		/** Blockheight of the UTXO */
+		/**
+		 * Blockheight of the UTXO
+		 * Type: double
+		 */
 		blockheight?: number | null;
 
-		/** Blocktime of the UTXO */
+		/**
+		 * Blocktime of the UTXO
+		 * Type: double
+		 */
 		blocktime?: number | null;
 
-		/** Index of the UTXO at this address */
+		/**
+		 * Index of the UTXO at this address
+		 * Type: double
+		 */
 		index?: number | null;
 
 		/** Object representing the scruptPubKey of the UTXO */
@@ -216,18 +243,30 @@ export namespace MyNS {
 		/** Whether the UTXO has been used */
 		used?: boolean | null;
 
-		/** Value of the UTXO in NEBL satoshi */
+		/**
+		 * Value of the UTXO in NEBL satoshi
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface GetAddressInfoResponseUtxosFormProperties {
 
-		/** Blockheight of the UTXO */
+		/**
+		 * Blockheight of the UTXO
+		 * Type: double
+		 */
 		blockheight: FormControl<number | null | undefined>,
 
-		/** Blocktime of the UTXO */
+		/**
+		 * Blocktime of the UTXO
+		 * Type: double
+		 */
 		blocktime: FormControl<number | null | undefined>,
 
-		/** Index of the UTXO at this address */
+		/**
+		 * Index of the UTXO at this address
+		 * Type: double
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Object representing the scruptPubKey of the UTXO */
@@ -239,7 +278,10 @@ export namespace MyNS {
 		/** Whether the UTXO has been used */
 		used: FormControl<boolean | null | undefined>,
 
-		/** Value of the UTXO in NEBL satoshi */
+		/**
+		 * Value of the UTXO in NEBL satoshi
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAddressInfoResponseUtxosFormGroup() {
@@ -260,10 +302,16 @@ export namespace MyNS {
 		/** Whether the tokens can be aggregated together */
 		aggregationPolicy?: string | null;
 
-		/** Number of Tokens */
+		/**
+		 * Number of Tokens
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility?: number | null;
 
 		/** TXID the token originally was issued in */
@@ -280,10 +328,16 @@ export namespace MyNS {
 		/** Whether the tokens can be aggregated together */
 		aggregationPolicy: FormControl<string | null | undefined>,
 
-		/** Number of Tokens */
+		/**
+		 * Number of Tokens
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility: FormControl<number | null | undefined>,
 
 		/** TXID the token originally was issued in */
@@ -312,37 +366,67 @@ export namespace MyNS {
 		/** Address in string form */
 		addrStr?: string | null;
 
-		/** NEBL balance */
+		/**
+		 * NEBL balance
+		 * Type: double
+		 */
 		balance?: number | null;
 
-		/** NEBL balance in satoshis */
+		/**
+		 * NEBL balance in satoshis
+		 * Type: double
+		 */
 		balanceSat?: number | null;
 
-		/** Total NEBL received */
+		/**
+		 * Total NEBL received
+		 * Type: double
+		 */
 		totalReceived?: number | null;
 
-		/** Total NEBL received in satoshis */
+		/**
+		 * Total NEBL received in satoshis
+		 * Type: double
+		 */
 		totalReceivedSat?: number | null;
 
-		/** Total NEBL sent */
+		/**
+		 * Total NEBL sent
+		 * Type: double
+		 */
 		totalSent?: number | null;
 
-		/** Total NEBL sent satoshis */
+		/**
+		 * Total NEBL sent satoshis
+		 * Type: double
+		 */
 		totalSentSat?: number | null;
 
 		/** Array of transaction ids for this address */
 		transactions?: Array<string>;
 
-		/** Number of transactions for this address */
+		/**
+		 * Number of transactions for this address
+		 * Type: double
+		 */
 		txAppearances?: number | null;
 
-		/** Unconfirmed NEBL balance */
+		/**
+		 * Unconfirmed NEBL balance
+		 * Type: double
+		 */
 		unconfirmedBalance?: number | null;
 
-		/** Unconfirmed NEBL balance in satoshis */
+		/**
+		 * Unconfirmed NEBL balance in satoshis
+		 * Type: double
+		 */
 		unconfirmedBalanceSat?: number | null;
 
-		/** Number of unconfirmed transactions for this address */
+		/**
+		 * Number of unconfirmed transactions for this address
+		 * Type: double
+		 */
 		unconfirmedTxAppearances?: number | null;
 	}
 	export interface GetAddressResponseFormProperties {
@@ -350,34 +434,64 @@ export namespace MyNS {
 		/** Address in string form */
 		addrStr: FormControl<string | null | undefined>,
 
-		/** NEBL balance */
+		/**
+		 * NEBL balance
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
-		/** NEBL balance in satoshis */
+		/**
+		 * NEBL balance in satoshis
+		 * Type: double
+		 */
 		balanceSat: FormControl<number | null | undefined>,
 
-		/** Total NEBL received */
+		/**
+		 * Total NEBL received
+		 * Type: double
+		 */
 		totalReceived: FormControl<number | null | undefined>,
 
-		/** Total NEBL received in satoshis */
+		/**
+		 * Total NEBL received in satoshis
+		 * Type: double
+		 */
 		totalReceivedSat: FormControl<number | null | undefined>,
 
-		/** Total NEBL sent */
+		/**
+		 * Total NEBL sent
+		 * Type: double
+		 */
 		totalSent: FormControl<number | null | undefined>,
 
-		/** Total NEBL sent satoshis */
+		/**
+		 * Total NEBL sent satoshis
+		 * Type: double
+		 */
 		totalSentSat: FormControl<number | null | undefined>,
 
-		/** Number of transactions for this address */
+		/**
+		 * Number of transactions for this address
+		 * Type: double
+		 */
 		txAppearances: FormControl<number | null | undefined>,
 
-		/** Unconfirmed NEBL balance */
+		/**
+		 * Unconfirmed NEBL balance
+		 * Type: double
+		 */
 		unconfirmedBalance: FormControl<number | null | undefined>,
 
-		/** Unconfirmed NEBL balance in satoshis */
+		/**
+		 * Unconfirmed NEBL balance in satoshis
+		 * Type: double
+		 */
 		unconfirmedBalanceSat: FormControl<number | null | undefined>,
 
-		/** Number of unconfirmed transactions for this address */
+		/**
+		 * Number of unconfirmed transactions for this address
+		 * Type: double
+		 */
 		unconfirmedTxAppearances: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAddressResponseFormGroup() {
@@ -402,22 +516,34 @@ export namespace MyNS {
 		/** Address */
 		address?: string | null;
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
 		/** scriptPubKey */
 		scriptPubKey?: string | null;
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts?: number | null;
 
 		/** Transaction ID */
 		txid?: string | null;
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout?: number | null;
 	}
 	export interface GetAddressUtxosResponseElementFormProperties {
@@ -425,22 +551,34 @@ export namespace MyNS {
 		/** Address */
 		address: FormControl<string | null | undefined>,
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
 		/** scriptPubKey */
 		scriptPubKey: FormControl<string | null | undefined>,
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts: FormControl<number | null | undefined>,
 
 		/** Transaction ID */
 		txid: FormControl<string | null | undefined>,
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAddressUtxosResponseElementFormGroup() {
@@ -478,16 +616,25 @@ export namespace MyNS {
 		/** Block bits */
 		bits?: string | null;
 
-		/** Number of confirmations block has */
+		/**
+		 * Number of confirmations block has
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
-		/** Block difficulty */
+		/**
+		 * Block difficulty
+		 * Type: double
+		 */
 		difficulty?: number | null;
 
 		/** Block hash */
 		hash?: string | null;
 
-		/** Block height */
+		/**
+		 * Block height
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Merkleroot of block */
@@ -496,25 +643,40 @@ export namespace MyNS {
 		/** Hash of the next block on the chain */
 		nextblockhash?: string | null;
 
-		/** Block nonce */
+		/**
+		 * Block nonce
+		 * Type: double
+		 */
 		nonce?: number | null;
 
 		/** Hash of the previous block on the chain */
 		previousblockhash?: string | null;
 
-		/** Number of NEBL awarded in this block */
+		/**
+		 * Number of NEBL awarded in this block
+		 * Type: double
+		 */
 		reward?: number | null;
 
-		/** Block size in bytes */
+		/**
+		 * Block size in bytes
+		 * Type: double
+		 */
 		size?: number | null;
 
-		/** Block time relative to epoch */
+		/**
+		 * Block time relative to epoch
+		 * Type: double
+		 */
 		time?: number | null;
 
 		/** Array of tx ids in the block */
 		tx?: Array<string>;
 
-		/** Block version */
+		/**
+		 * Block version
+		 * Type: double
+		 */
 		version?: number | null;
 	}
 	export interface GetBlockResponseFormProperties {
@@ -522,16 +684,25 @@ export namespace MyNS {
 		/** Block bits */
 		bits: FormControl<string | null | undefined>,
 
-		/** Number of confirmations block has */
+		/**
+		 * Number of confirmations block has
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
-		/** Block difficulty */
+		/**
+		 * Block difficulty
+		 * Type: double
+		 */
 		difficulty: FormControl<number | null | undefined>,
 
 		/** Block hash */
 		hash: FormControl<string | null | undefined>,
 
-		/** Block height */
+		/**
+		 * Block height
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Merkleroot of block */
@@ -540,22 +711,37 @@ export namespace MyNS {
 		/** Hash of the next block on the chain */
 		nextblockhash: FormControl<string | null | undefined>,
 
-		/** Block nonce */
+		/**
+		 * Block nonce
+		 * Type: double
+		 */
 		nonce: FormControl<number | null | undefined>,
 
 		/** Hash of the previous block on the chain */
 		previousblockhash: FormControl<string | null | undefined>,
 
-		/** Number of NEBL awarded in this block */
+		/**
+		 * Number of NEBL awarded in this block
+		 * Type: double
+		 */
 		reward: FormControl<number | null | undefined>,
 
-		/** Block size in bytes */
+		/**
+		 * Block size in bytes
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 
-		/** Block time relative to epoch */
+		/**
+		 * Block time relative to epoch
+		 * Type: double
+		 */
 		time: FormControl<number | null | undefined>,
 
-		/** Block version */
+		/**
+		 * Block version
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGetBlockResponseFormGroup() {
@@ -647,19 +833,28 @@ export namespace MyNS {
 	/** Object containing node sync status */
 	export interface GetSyncResponse {
 
-		/** Current blockchain height */
+		/**
+		 * Current blockchain height
+		 * Type: double
+		 */
 		blockChainHeight?: number | null;
 
 		/** Recent sync error messages */
 		error?: string | null;
 
-		/** Height node is synced to */
+		/**
+		 * Height node is synced to
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Current sync status */
 		status?: string | null;
 
-		/** Current sync percentage */
+		/**
+		 * Current sync percentage
+		 * Type: double
+		 */
 		syncPercentage?: number | null;
 
 		/** Node type */
@@ -669,19 +864,28 @@ export namespace MyNS {
 	/** Object containing node sync status */
 	export interface GetSyncResponseFormProperties {
 
-		/** Current blockchain height */
+		/**
+		 * Current blockchain height
+		 * Type: double
+		 */
 		blockChainHeight: FormControl<number | null | undefined>,
 
 		/** Recent sync error messages */
 		error: FormControl<string | null | undefined>,
 
-		/** Height node is synced to */
+		/**
+		 * Height node is synced to
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Current sync status */
 		status: FormControl<string | null | undefined>,
 
-		/** Current sync percentage */
+		/**
+		 * Current sync percentage
+		 * Type: double
+		 */
 		syncPercentage: FormControl<number | null | undefined>,
 
 		/** Node type */
@@ -704,7 +908,10 @@ export namespace MyNS {
 		/** Whether the tokesn are aggregatable */
 		aggregationPolicy?: string | null;
 
-		/** How many decimal points the token is divisble to */
+		/**
+		 * How many decimal points the token is divisble to
+		 * Type: double
+		 */
 		divibility?: number | null;
 		GetTokenHoldersResponseHolders?: Array<GetTokenHoldersResponseHolders>;
 
@@ -722,7 +929,10 @@ export namespace MyNS {
 		/** Whether the tokesn are aggregatable */
 		aggregationPolicy: FormControl<string | null | undefined>,
 
-		/** How many decimal points the token is divisble to */
+		/**
+		 * How many decimal points the token is divisble to
+		 * Type: double
+		 */
 		divibility: FormControl<number | null | undefined>,
 
 		/** Whether new issuances of this token are locked */
@@ -747,10 +957,14 @@ export namespace MyNS {
 
 	export interface GetTokenHoldersResponseHolders {
 		address?: string | null;
+
+		/** Type: double */
 		amount?: number | null;
 	}
 	export interface GetTokenHoldersResponseHoldersFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTokenHoldersResponseHoldersFormGroup() {
@@ -790,13 +1004,22 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy?: string | null;
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility?: number | null;
 
-		/** Block number token was issued in */
+		/**
+		 * Block number token was issued in
+		 * Type: double
+		 */
 		firstBlock?: number | null;
 
-		/** Total tokens issued in initial issuance */
+		/**
+		 * Total tokens issued in initial issuance
+		 * Type: double
+		 */
 		initialIssuanceAmount?: number | null;
 
 		/** TXID the token was issued with */
@@ -814,16 +1037,28 @@ export namespace MyNS {
 		/** Metadata set for UTXO */
 		metadataOfUtxo?: GetTokenMetadataResponseMetadataOfUtxo;
 
-		/** Number of times tokens have been burned */
+		/**
+		 * Number of times tokens have been burned
+		 * Type: double
+		 */
 		numOfBurns?: number | null;
 
-		/** Total number of addresses this token is held at */
+		/**
+		 * Total number of addresses this token is held at
+		 * Type: double
+		 */
 		numOfHolders?: number | null;
 
-		/** Total number of times this token has been issued */
+		/**
+		 * Total number of times this token has been issued
+		 * Type: double
+		 */
 		numOfIssuance?: number | null;
 
-		/** Total number of transactions of this token */
+		/**
+		 * Total number of transactions of this token
+		 * Type: double
+		 */
 		numOfTransfers?: number | null;
 
 		/** Example UTXO containing this token. */
@@ -832,7 +1067,10 @@ export namespace MyNS {
 		/** ID of the token */
 		tokenId?: string | null;
 
-		/** Total number of tokens in supply */
+		/**
+		 * Total number of tokens in supply
+		 * Type: double
+		 */
 		totalSupply?: number | null;
 	}
 	export interface GetTokenMetadataResponseFormProperties {
@@ -840,13 +1078,22 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy: FormControl<string | null | undefined>,
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility: FormControl<number | null | undefined>,
 
-		/** Block number token was issued in */
+		/**
+		 * Block number token was issued in
+		 * Type: double
+		 */
 		firstBlock: FormControl<number | null | undefined>,
 
-		/** Total tokens issued in initial issuance */
+		/**
+		 * Total tokens issued in initial issuance
+		 * Type: double
+		 */
 		initialIssuanceAmount: FormControl<number | null | undefined>,
 
 		/** TXID the token was issued with */
@@ -858,16 +1105,28 @@ export namespace MyNS {
 		/** Whether issuance of more tokens is locked */
 		lockStatus: FormControl<boolean | null | undefined>,
 
-		/** Number of times tokens have been burned */
+		/**
+		 * Number of times tokens have been burned
+		 * Type: double
+		 */
 		numOfBurns: FormControl<number | null | undefined>,
 
-		/** Total number of addresses this token is held at */
+		/**
+		 * Total number of addresses this token is held at
+		 * Type: double
+		 */
 		numOfHolders: FormControl<number | null | undefined>,
 
-		/** Total number of times this token has been issued */
+		/**
+		 * Total number of times this token has been issued
+		 * Type: double
+		 */
 		numOfIssuance: FormControl<number | null | undefined>,
 
-		/** Total number of transactions of this token */
+		/**
+		 * Total number of transactions of this token
+		 * Type: double
+		 */
 		numOfTransfers: FormControl<number | null | undefined>,
 
 		/** Example UTXO containing this token. */
@@ -876,7 +1135,10 @@ export namespace MyNS {
 		/** ID of the token */
 		tokenId: FormControl<string | null | undefined>,
 
-		/** Total number of tokens in supply */
+		/**
+		 * Total number of tokens in supply
+		 * Type: double
+		 */
 		totalSupply: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTokenMetadataResponseFormGroup() {
@@ -1000,34 +1262,58 @@ export namespace MyNS {
 		/** Hash of the block this transaction is in */
 		blockhash?: string | null;
 
-		/** Block height of this transaction */
+		/**
+		 * Block height of this transaction
+		 * Type: double
+		 */
 		blockheight?: number | null;
 
-		/** Block time of this transaction */
+		/**
+		 * Block time of this transaction
+		 * Type: double
+		 */
 		blocktime?: number | null;
 
-		/** Number of transaction confirmations */
+		/**
+		 * Number of transaction confirmations
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
-		/** Total NEBL used as fee for this transcation in satoshis */
+		/**
+		 * Total NEBL used as fee for this transcation in satoshis
+		 * Type: double
+		 */
 		fee?: number | null;
 
 		/** Transaction in raw hex */
 		hex?: string | null;
 
-		/** Transaction locktime */
+		/**
+		 * Transaction locktime
+		 * Type: double
+		 */
 		locktime?: number | null;
 
-		/** Transaction time */
+		/**
+		 * Transaction time
+		 * Type: double
+		 */
 		time?: number | null;
 
-		/** Total NEBL sent in this transaction in satoshis */
+		/**
+		 * Total NEBL sent in this transaction in satoshis
+		 * Type: double
+		 */
 		totalsent?: number | null;
 
 		/** TXID of transaction */
 		txid?: string | null;
 
-		/** Transaction version */
+		/**
+		 * Transaction version
+		 * Type: double
+		 */
 		version?: number | null;
 
 		/** Array of transaction inputs */
@@ -1041,34 +1327,58 @@ export namespace MyNS {
 		/** Hash of the block this transaction is in */
 		blockhash: FormControl<string | null | undefined>,
 
-		/** Block height of this transaction */
+		/**
+		 * Block height of this transaction
+		 * Type: double
+		 */
 		blockheight: FormControl<number | null | undefined>,
 
-		/** Block time of this transaction */
+		/**
+		 * Block time of this transaction
+		 * Type: double
+		 */
 		blocktime: FormControl<number | null | undefined>,
 
-		/** Number of transaction confirmations */
+		/**
+		 * Number of transaction confirmations
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
-		/** Total NEBL used as fee for this transcation in satoshis */
+		/**
+		 * Total NEBL used as fee for this transcation in satoshis
+		 * Type: double
+		 */
 		fee: FormControl<number | null | undefined>,
 
 		/** Transaction in raw hex */
 		hex: FormControl<string | null | undefined>,
 
-		/** Transaction locktime */
+		/**
+		 * Transaction locktime
+		 * Type: double
+		 */
 		locktime: FormControl<number | null | undefined>,
 
-		/** Transaction time */
+		/**
+		 * Transaction time
+		 * Type: double
+		 */
 		time: FormControl<number | null | undefined>,
 
-		/** Total NEBL sent in this transaction in satoshis */
+		/**
+		 * Total NEBL sent in this transaction in satoshis
+		 * Type: double
+		 */
 		totalsent: FormControl<number | null | undefined>,
 
 		/** TXID of transaction */
 		txid: FormControl<string | null | undefined>,
 
-		/** Transaction version */
+		/**
+		 * Transaction version
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTransactionInfoResponseFormGroup() {
@@ -1091,28 +1401,44 @@ export namespace MyNS {
 	export interface GetTransactionInfoResponseVin {
 		previousOutput?: GetTransactionInfoResponseVinPreviousOutput;
 		scriptSig?: GetTransactionInfoResponseVinScriptSig;
+
+		/** Type: double */
 		sequence?: number | null;
 		GetTransactionInfoResponseVinTokens?: Array<GetTransactionInfoResponseVinTokens>;
 
 		/** TXID of the input */
 		txid?: string | null;
 
-		/** Value of input in NEBL satoshi */
+		/**
+		 * Value of input in NEBL satoshi
+		 * Type: double
+		 */
 		value?: number | null;
 
-		/** output index */
+		/**
+		 * output index
+		 * Type: double
+		 */
 		vout?: number | null;
 	}
 	export interface GetTransactionInfoResponseVinFormProperties {
+
+		/** Type: double */
 		sequence: FormControl<number | null | undefined>,
 
 		/** TXID of the input */
 		txid: FormControl<string | null | undefined>,
 
-		/** Value of input in NEBL satoshi */
+		/**
+		 * Value of input in NEBL satoshi
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 
-		/** output index */
+		/**
+		 * output index
+		 * Type: double
+		 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTransactionInfoResponseVinFormGroup() {
@@ -1129,12 +1455,16 @@ export namespace MyNS {
 		addresses?: Array<string>;
 		asm?: string | null;
 		hex?: string | null;
+
+		/** Type: double */
 		reqSigs?: number | null;
 		type?: string | null;
 	}
 	export interface GetTransactionInfoResponseVinPreviousOutputFormProperties {
 		asm: FormControl<string | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		reqSigs: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -1169,10 +1499,16 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy?: string | null;
 
-		/** Number of tokens */
+		/**
+		 * Number of tokens
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility?: number | null;
 
 		/** TXID the token was issued in */
@@ -1189,10 +1525,16 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy: FormControl<string | null | undefined>,
 
-		/** Number of tokens */
+		/**
+		 * Number of tokens
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility: FormControl<number | null | undefined>,
 
 		/** TXID the token was issued in */
@@ -1218,10 +1560,16 @@ export namespace MyNS {
 
 	export interface GetTransactionInfoResponseVout {
 
-		/** Blockheight of this transaction */
+		/**
+		 * Blockheight of this transaction
+		 * Type: double
+		 */
 		blockheight?: number | null;
 
-		/** Output index */
+		/**
+		 * Output index
+		 * Type: double
+		 */
 		n?: number | null;
 		scriptPubKey?: GetTransactionInfoResponseVoutScriptPubKey;
 		GetTransactionInfoResponseVoutTokens?: Array<GetTransactionInfoResponseVoutTokens>;
@@ -1229,33 +1577,51 @@ export namespace MyNS {
 		/** Whether this output has now been used */
 		used?: boolean | null;
 
-		/** Blockheight this output was used in */
+		/**
+		 * Blockheight this output was used in
+		 * Type: double
+		 */
 		usedBlockheight?: number | null;
 
 		/** TXID this output was used in */
 		usedTxid?: string | null;
 
-		/** Value of the output in NEBL satoshi */
+		/**
+		 * Value of the output in NEBL satoshi
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface GetTransactionInfoResponseVoutFormProperties {
 
-		/** Blockheight of this transaction */
+		/**
+		 * Blockheight of this transaction
+		 * Type: double
+		 */
 		blockheight: FormControl<number | null | undefined>,
 
-		/** Output index */
+		/**
+		 * Output index
+		 * Type: double
+		 */
 		n: FormControl<number | null | undefined>,
 
 		/** Whether this output has now been used */
 		used: FormControl<boolean | null | undefined>,
 
-		/** Blockheight this output was used in */
+		/**
+		 * Blockheight this output was used in
+		 * Type: double
+		 */
 		usedBlockheight: FormControl<number | null | undefined>,
 
 		/** TXID this output was used in */
 		usedTxid: FormControl<string | null | undefined>,
 
-		/** Value of the output in NEBL satoshi */
+		/**
+		 * Value of the output in NEBL satoshi
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTransactionInfoResponseVoutFormGroup() {
@@ -1274,12 +1640,16 @@ export namespace MyNS {
 		addresses?: Array<string>;
 		asm?: string | null;
 		hex?: string | null;
+
+		/** Type: double */
 		reqSigs?: number | null;
 		type?: string | null;
 	}
 	export interface GetTransactionInfoResponseVoutScriptPubKeyFormProperties {
 		asm: FormControl<string | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		reqSigs: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -1298,10 +1668,16 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy?: string | null;
 
-		/** Number of tokens */
+		/**
+		 * Number of tokens
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility?: number | null;
 
 		/** TXID the token was issued in */
@@ -1318,10 +1694,16 @@ export namespace MyNS {
 		/** Whether the tokens are aggregatable */
 		aggregationPolicy: FormControl<string | null | undefined>,
 
-		/** Number of tokens */
+		/**
+		 * Number of tokens
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Decimal places the token is divisible to */
+		/**
+		 * Decimal places the token is divisible to
+		 * Type: double
+		 */
 		divisibility: FormControl<number | null | undefined>,
 
 		/** TXID the token was issued in */
@@ -1350,43 +1732,79 @@ export namespace MyNS {
 		/** Hash of the block this transaction is in */
 		blockhash?: string | null;
 
-		/** Block height of this transaction */
+		/**
+		 * Block height of this transaction
+		 * Type: double
+		 */
 		blockheight?: number | null;
 
-		/** Block time of this transaction */
+		/**
+		 * Block time of this transaction
+		 * Type: double
+		 */
 		blocktime?: number | null;
 
-		/** Number of transaction confirmations */
+		/**
+		 * Number of transaction confirmations
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
-		/** Total NEBL used as fee for this transcation in satoshis */
+		/**
+		 * Total NEBL used as fee for this transcation in satoshis
+		 * Type: double
+		 */
 		fee?: number | null;
 
-		/** Total NEBL used in fees for this transaction */
+		/**
+		 * Total NEBL used in fees for this transaction
+		 * Type: double
+		 */
 		fees?: number | null;
 
-		/** Transaction locktime */
+		/**
+		 * Transaction locktime
+		 * Type: double
+		 */
 		locktime?: number | null;
 
-		/** Transcation size in bytes */
+		/**
+		 * Transcation size in bytes
+		 * Type: double
+		 */
 		size?: number | null;
 
-		/** Transaction time */
+		/**
+		 * Transaction time
+		 * Type: double
+		 */
 		time?: number | null;
 
-		/** Total NEBL sent in this transaction in satoshis */
+		/**
+		 * Total NEBL sent in this transaction in satoshis
+		 * Type: double
+		 */
 		totalsent?: number | null;
 
 		/** TXID of transaction */
 		txid?: string | null;
 
-		/** Total NEBL input in this transaction */
+		/**
+		 * Total NEBL input in this transaction
+		 * Type: double
+		 */
 		valueIn?: number | null;
 
-		/** Total NEBL output in this transaction */
+		/**
+		 * Total NEBL output in this transaction
+		 * Type: double
+		 */
 		valueOut?: number | null;
 
-		/** Transaction version */
+		/**
+		 * Transaction version
+		 * Type: double
+		 */
 		version?: number | null;
 
 		/** Array of transaction inputs */
@@ -1400,43 +1818,79 @@ export namespace MyNS {
 		/** Hash of the block this transaction is in */
 		blockhash: FormControl<string | null | undefined>,
 
-		/** Block height of this transaction */
+		/**
+		 * Block height of this transaction
+		 * Type: double
+		 */
 		blockheight: FormControl<number | null | undefined>,
 
-		/** Block time of this transaction */
+		/**
+		 * Block time of this transaction
+		 * Type: double
+		 */
 		blocktime: FormControl<number | null | undefined>,
 
-		/** Number of transaction confirmations */
+		/**
+		 * Number of transaction confirmations
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
-		/** Total NEBL used as fee for this transcation in satoshis */
+		/**
+		 * Total NEBL used as fee for this transcation in satoshis
+		 * Type: double
+		 */
 		fee: FormControl<number | null | undefined>,
 
-		/** Total NEBL used in fees for this transaction */
+		/**
+		 * Total NEBL used in fees for this transaction
+		 * Type: double
+		 */
 		fees: FormControl<number | null | undefined>,
 
-		/** Transaction locktime */
+		/**
+		 * Transaction locktime
+		 * Type: double
+		 */
 		locktime: FormControl<number | null | undefined>,
 
-		/** Transcation size in bytes */
+		/**
+		 * Transcation size in bytes
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 
-		/** Transaction time */
+		/**
+		 * Transaction time
+		 * Type: double
+		 */
 		time: FormControl<number | null | undefined>,
 
-		/** Total NEBL sent in this transaction in satoshis */
+		/**
+		 * Total NEBL sent in this transaction in satoshis
+		 * Type: double
+		 */
 		totalsent: FormControl<number | null | undefined>,
 
 		/** TXID of transaction */
 		txid: FormControl<string | null | undefined>,
 
-		/** Total NEBL input in this transaction */
+		/**
+		 * Total NEBL input in this transaction
+		 * Type: double
+		 */
 		valueIn: FormControl<number | null | undefined>,
 
-		/** Total NEBL output in this transaction */
+		/**
+		 * Total NEBL output in this transaction
+		 * Type: double
+		 */
 		valueOut: FormControl<number | null | undefined>,
 
-		/** Transaction version */
+		/**
+		 * Transaction version
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTxResponseFormGroup() {
@@ -1461,39 +1915,67 @@ export namespace MyNS {
 
 	export interface GetTxResponseVin {
 
-		/** input index */
+		/**
+		 * input index
+		 * Type: double
+		 */
 		n?: number | null;
 		scriptSig?: GetTxResponseVinScriptSig;
+
+		/** Type: double */
 		sequence?: number | null;
 
 		/** TXID of the input */
 		txid?: string | null;
 
-		/** Value of input in NEBL */
+		/**
+		 * Value of input in NEBL
+		 * Type: double
+		 */
 		value?: number | null;
 
-		/** Value of input in NEBL satoshi */
+		/**
+		 * Value of input in NEBL satoshi
+		 * Type: double
+		 */
 		valueSat?: number | null;
 
-		/** output index */
+		/**
+		 * output index
+		 * Type: double
+		 */
 		vout?: number | null;
 	}
 	export interface GetTxResponseVinFormProperties {
 
-		/** input index */
+		/**
+		 * input index
+		 * Type: double
+		 */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sequence: FormControl<number | null | undefined>,
 
 		/** TXID of the input */
 		txid: FormControl<string | null | undefined>,
 
-		/** Value of input in NEBL */
+		/**
+		 * Value of input in NEBL
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 
-		/** Value of input in NEBL satoshi */
+		/**
+		 * Value of input in NEBL satoshi
+		 * Type: double
+		 */
 		valueSat: FormControl<number | null | undefined>,
 
-		/** output index */
+		/**
+		 * output index
+		 * Type: double
+		 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTxResponseVinFormGroup() {
@@ -1526,43 +2008,67 @@ export namespace MyNS {
 
 	export interface GetTxResponseVout {
 
-		/** Blockheight of this transaction */
+		/**
+		 * Blockheight of this transaction
+		 * Type: double
+		 */
 		blockheight?: number | null;
 
-		/** Output index */
+		/**
+		 * Output index
+		 * Type: double
+		 */
 		n?: number | null;
 		scriptPubKey?: GetTxResponseVoutScriptPubKey;
 
 		/** Whether this output has now been used */
 		used?: boolean | null;
 
-		/** Blockheight this output was used in */
+		/**
+		 * Blockheight this output was used in
+		 * Type: double
+		 */
 		usedBlockheight?: number | null;
 
 		/** TXID this output was used in */
 		usedTxid?: string | null;
 
-		/** Value of the output in NEBL */
+		/**
+		 * Value of the output in NEBL
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface GetTxResponseVoutFormProperties {
 
-		/** Blockheight of this transaction */
+		/**
+		 * Blockheight of this transaction
+		 * Type: double
+		 */
 		blockheight: FormControl<number | null | undefined>,
 
-		/** Output index */
+		/**
+		 * Output index
+		 * Type: double
+		 */
 		n: FormControl<number | null | undefined>,
 
 		/** Whether this output has now been used */
 		used: FormControl<boolean | null | undefined>,
 
-		/** Blockheight this output was used in */
+		/**
+		 * Blockheight this output was used in
+		 * Type: double
+		 */
 		usedBlockheight: FormControl<number | null | undefined>,
 
 		/** TXID this output was used in */
 		usedTxid: FormControl<string | null | undefined>,
 
-		/** Value of the output in NEBL */
+		/**
+		 * Value of the output in NEBL
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTxResponseVoutFormGroup() {
@@ -1581,12 +2087,16 @@ export namespace MyNS {
 		addresses?: Array<string>;
 		asm?: string | null;
 		hex?: string | null;
+
+		/** Type: double */
 		reqSigs?: number | null;
 		type?: string | null;
 	}
 	export interface GetTxResponseVoutScriptPubKeyFormProperties {
 		asm: FormControl<string | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		reqSigs: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
@@ -1604,7 +2114,10 @@ export namespace MyNS {
 	/** Object containing an array of transaction objects */
 	export interface GetTxsResponse {
 
-		/** Number of pages of transactions */
+		/**
+		 * Number of pages of transactions
+		 * Type: double
+		 */
 		pagesTotal?: number | null;
 
 		/** Array of transaction objects */
@@ -1614,7 +2127,10 @@ export namespace MyNS {
 	/** Object containing an array of transaction objects */
 	export interface GetTxsResponseFormProperties {
 
-		/** Number of pages of transactions */
+		/**
+		 * Number of pages of transactions
+		 * Type: double
+		 */
 		pagesTotal: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTxsResponseFormGroup() {
@@ -1629,18 +2145,21 @@ export namespace MyNS {
 		/**
 		 * Number of tokens to issue
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
 		/**
 		 * Number of decimal places the token should be divisble by (0-7)
 		 * Required
+		 * Type: double
 		 */
 		divisibility: number;
 
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 1000000000 (10 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: number;
 
@@ -1670,18 +2189,21 @@ export namespace MyNS {
 		/**
 		 * Number of tokens to issue
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of decimal places the token should be divisble by (0-7)
 		 * Required
+		 * Type: double
 		 */
 		divisibility: FormControl<number | null | undefined>,
 
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 1000000000 (10 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: FormControl<number | null | undefined>,
 
@@ -1826,7 +2348,10 @@ export namespace MyNS {
 		/** Whether this rule can be modified in future transactions */
 		locked?: boolean | null;
 
-		/** Blockheight at wh */
+		/**
+		 * Blockheight at wh
+		 * Type: double
+		 */
 		validUntil?: number | null;
 	}
 	export interface IssueTokenRequestMetadataRulesExpirationFormProperties {
@@ -1834,7 +2359,10 @@ export namespace MyNS {
 		/** Whether this rule can be modified in future transactions */
 		locked: FormControl<boolean | null | undefined>,
 
-		/** Blockheight at wh */
+		/**
+		 * Blockheight at wh
+		 * Type: double
+		 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateIssueTokenRequestMetadataRulesExpirationFormGroup() {
@@ -1989,12 +2517,16 @@ export namespace MyNS {
 
 		/** Address to send the amount of issued tokens to */
 		address?: string | null;
+
+		/** Type: double */
 		amount?: number | null;
 	}
 	export interface IssueTokenRequestTransferFormProperties {
 
 		/** Address to send the amount of issued tokens to */
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 	}
 	export function CreateIssueTokenRequestTransferFormGroup() {
@@ -2124,6 +2656,7 @@ export namespace MyNS {
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 10000 (0.0001 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: number;
 
@@ -2147,6 +2680,7 @@ export namespace MyNS {
 		/**
 		 * Fee in satoshi to include in the issuance transaction min 10000 (0.0001 NEBL)
 		 * Required
+		 * Type: double
 		 */
 		fee: FormControl<number | null | undefined>,
 	}
@@ -2275,7 +2809,10 @@ export namespace MyNS {
 		/** Whether this rule can be modified in future transactions */
 		locked?: boolean | null;
 
-		/** Blockheight at wh */
+		/**
+		 * Blockheight at wh
+		 * Type: double
+		 */
 		validUntil?: number | null;
 	}
 	export interface SendTokenRequestMetadataRulesExpirationFormProperties {
@@ -2283,7 +2820,10 @@ export namespace MyNS {
 		/** Whether this rule can be modified in future transactions */
 		locked: FormControl<boolean | null | undefined>,
 
-		/** Blockheight at wh */
+		/**
+		 * Blockheight at wh
+		 * Type: double
+		 */
 		validUntil: FormControl<number | null | undefined>,
 	}
 	export function CreateSendTokenRequestMetadataRulesExpirationFormGroup() {
@@ -2439,7 +2979,10 @@ export namespace MyNS {
 		/** Address to transfer tokens to */
 		address?: string | null;
 
-		/** Number of tokens to send */
+		/**
+		 * Number of tokens to send
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** ID of token we are sending */
@@ -2450,7 +2993,10 @@ export namespace MyNS {
 		/** Address to transfer tokens to */
 		address: FormControl<string | null | undefined>,
 
-		/** Number of tokens to send */
+		/**
+		 * Number of tokens to send
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** ID of token we are sending */
@@ -2543,6 +3089,7 @@ export namespace MyNS {
 		 * Get ins/addr/{address}/balance
 		 * @param {string} address Address
 		 * @return {number} Address balance
+		 *     Type: double
 		 */
 		GetAddressBalance(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/balance', {});
@@ -2554,6 +3101,7 @@ export namespace MyNS {
 		 * Get ins/addr/{address}/totalReceived
 		 * @param {string} address Address
 		 * @return {number} Total received by address
+		 *     Type: double
 		 */
 		GetAddressTotalReceived(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/totalReceived', {});
@@ -2565,6 +3113,7 @@ export namespace MyNS {
 		 * Get ins/addr/{address}/totalSent
 		 * @param {string} address Address
 		 * @return {number} Total sent by address
+		 *     Type: double
 		 */
 		GetAddressTotalSent(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/totalSent', {});
@@ -2576,6 +3125,7 @@ export namespace MyNS {
 		 * Get ins/addr/{address}/unconfirmedBalance
 		 * @param {string} address Address
 		 * @return {number} Address unconfirmed balance
+		 *     Type: double
 		 */
 		GetAddressUnconfirmedBalance(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/unconfirmedBalance', {});
@@ -2597,6 +3147,7 @@ export namespace MyNS {
 		 * Returns the block hash of a block at a given block index
 		 * Get ins/block-index/{blockindex}
 		 * @param {number} blockindex Block Index
+		 *     Type: double
 		 * @return {GetBlockIndexResponse} Object containing block hash
 		 */
 		GetBlockIndex(blockindex: number): Observable<GetBlockIndexResponse> {
@@ -2675,6 +3226,7 @@ export namespace MyNS {
 		 * @param {string} address Address
 		 * @param {string} block Block Hash
 		 * @param {number} pageNum Page number to display
+		 *     Type: double
 		 * @return {GetTxsResponse} List of transactions
 		 */
 		GetTxs(address: string | null | undefined, block: string | null | undefined, pageNum: number | null | undefined): Observable<GetTxsResponse> {
@@ -2764,6 +3316,7 @@ export namespace MyNS {
 		 * Get ntp1/tokenmetadata/{tokenid}
 		 * @param {string} tokenid TokenId to request metadata for
 		 * @param {number} verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+		 *     Type: double
 		 * @return {GetTokenMetadataResponse} An object containing the metadata of a token
 		 */
 		GetTokenMetadata(tokenid: string, verbosity: number | null | undefined): Observable<GetTokenMetadataResponse> {
@@ -2777,6 +3330,7 @@ export namespace MyNS {
 		 * @param {string} tokenid TokenId to request metadata for
 		 * @param {string} utxo Specific UTXO to request metadata for
 		 * @param {number} verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+		 *     Type: double
 		 * @return {GetTokenMetadataResponse} An object containing the metadata of a token for a UTXO
 		 */
 		GetTokenMetadataOfUtxo(tokenid: string, utxo: string, verbosity: number | null | undefined): Observable<GetTokenMetadataResponse> {
@@ -2800,6 +3354,7 @@ export namespace MyNS {
 		 * Get testnet/faucet
 		 * @param {string} address Your Neblio Testnet Address
 		 * @param {number} amount Amount of NEBL to withdrawal in satoshis
+		 *     Type: double
 		 * @return {GetFaucetResponse} Object containing the transaction ID of the withdrawal.
 		 */
 		Testnet_getFaucet(address: string, amount: number | null | undefined): Observable<GetFaucetResponse> {
@@ -2823,6 +3378,7 @@ export namespace MyNS {
 		 * Get testnet/ins/addr/{address}/balance
 		 * @param {string} address Address
 		 * @return {number} Address balance
+		 *     Type: double
 		 */
 		Testnet_getAddressBalance(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'testnet/ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/balance', {});
@@ -2834,6 +3390,7 @@ export namespace MyNS {
 		 * Get testnet/ins/addr/{address}/totalReceived
 		 * @param {string} address Address
 		 * @return {number} Total received by address
+		 *     Type: double
 		 */
 		Testnet_getAddressTotalReceived(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'testnet/ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/totalReceived', {});
@@ -2845,6 +3402,7 @@ export namespace MyNS {
 		 * Get testnet/ins/addr/{address}/totalSent
 		 * @param {string} address Address
 		 * @return {number} Total sent by address
+		 *     Type: double
 		 */
 		Testnet_getAddressTotalSent(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'testnet/ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/totalSent', {});
@@ -2856,6 +3414,7 @@ export namespace MyNS {
 		 * Get testnet/ins/addr/{address}/unconfirmedBalance
 		 * @param {string} address Address
 		 * @return {number} Address unconfirmed balance
+		 *     Type: double
 		 */
 		Testnet_getAddressUnconfirmedBalance(address: string): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'testnet/ins/addr/' + (address == null ? '' : encodeURIComponent(address)) + '/unconfirmedBalance', {});
@@ -2877,6 +3436,7 @@ export namespace MyNS {
 		 * Returns the block hash of a block at a given block index
 		 * Get testnet/ins/block-index/{blockindex}
 		 * @param {number} blockindex Block Index
+		 *     Type: double
 		 * @return {GetBlockIndexResponse} Object containing block hash
 		 */
 		Testnet_getBlockIndex(blockindex: number): Observable<GetBlockIndexResponse> {
@@ -2955,6 +3515,7 @@ export namespace MyNS {
 		 * @param {string} address Address
 		 * @param {string} block Block Hash
 		 * @param {number} pageNum Page number to display
+		 *     Type: double
 		 * @return {GetTxsResponse} List of transactions
 		 */
 		Testnet_getTxs(address: string | null | undefined, block: string | null | undefined, pageNum: number | null | undefined): Observable<GetTxsResponse> {
@@ -3044,6 +3605,7 @@ export namespace MyNS {
 		 * Get testnet/ntp1/tokenmetadata/{tokenid}
 		 * @param {string} tokenid TokenId to request metadata for
 		 * @param {number} verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+		 *     Type: double
 		 * @return {GetTokenMetadataResponse} An object containing the metadata of a token
 		 */
 		Testnet_getTokenMetadata(tokenid: string, verbosity: number | null | undefined): Observable<GetTokenMetadataResponse> {
@@ -3057,6 +3619,7 @@ export namespace MyNS {
 		 * @param {string} tokenid TokenId to request metadata for
 		 * @param {string} utxo Specific UTXO to request metadata for
 		 * @param {number} verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+		 *     Type: double
 		 * @return {GetTokenMetadataResponse} An object containing the metadata of a token for a UTXO
 		 */
 		Testnet_getTokenMetadataOfUtxo(tokenid: string, utxo: string, verbosity: number | null | undefined): Observable<GetTokenMetadataResponse> {
@@ -3080,22 +3643,34 @@ export namespace MyNS {
 		/** Address */
 		address?: string | null;
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
 		/** scriptPubKey */
 		scriptPubKey?: string | null;
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts?: number | null;
 
 		/** Transaction ID */
 		txid?: string | null;
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout?: number | null;
 	}
 	export interface GetAddressUtxosReturnFormProperties {
@@ -3103,22 +3678,34 @@ export namespace MyNS {
 		/** Address */
 		address: FormControl<string | null | undefined>,
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
 		/** scriptPubKey */
 		scriptPubKey: FormControl<string | null | undefined>,
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts: FormControl<number | null | undefined>,
 
 		/** Transaction ID */
 		txid: FormControl<string | null | undefined>,
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAddressUtxosReturnFormGroup() {
@@ -3139,22 +3726,34 @@ export namespace MyNS {
 		/** Address */
 		address?: string | null;
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations?: number | null;
 
 		/** scriptPubKey */
 		scriptPubKey?: string | null;
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts?: number | null;
 
 		/** Transaction ID */
 		txid?: string | null;
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout?: number | null;
 	}
 	export interface Testnet_getAddressUtxosReturnFormProperties {
@@ -3162,22 +3761,34 @@ export namespace MyNS {
 		/** Address */
 		address: FormControl<string | null | undefined>,
 
-		/** NEBL amount */
+		/**
+		 * NEBL amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Number of confirmations */
+		/**
+		 * Number of confirmations
+		 * Type: double
+		 */
 		confirmations: FormControl<number | null | undefined>,
 
 		/** scriptPubKey */
 		scriptPubKey: FormControl<string | null | undefined>,
 
-		/** Timestamp */
+		/**
+		 * Timestamp
+		 * Type: double
+		 */
 		ts: FormControl<number | null | undefined>,
 
 		/** Transaction ID */
 		txid: FormControl<string | null | undefined>,
 
-		/** vout */
+		/**
+		 * vout
+		 * Type: double
+		 */
 		vout: FormControl<number | null | undefined>,
 	}
 	export function CreateTestnet_getAddressUtxosReturnFormGroup() {

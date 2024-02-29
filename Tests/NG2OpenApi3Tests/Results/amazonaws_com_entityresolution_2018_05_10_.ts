@@ -1108,7 +1108,9 @@ export namespace MyNS {
 		 * Returns a list of all the <code>MatchingWorkflows</code> that have been created for an AWS account.
 		 * Get matchingworkflows
 		 * @param {number} maxResults The maximum number of objects returned per page.
+		 *     Maximum: 25
 		 * @param {string} nextToken The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListMatchingWorkflowsOutput} Success
 		 */
 		ListMatchingWorkflows(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMatchingWorkflowsOutput> {
@@ -1128,7 +1130,9 @@ export namespace MyNS {
 		 * Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.
 		 * Get schemas
 		 * @param {number} maxResults The maximum number of objects returned per page.
+		 *     Maximum: 25
 		 * @param {string} nextToken The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListSchemaMappingsOutput} Success
 		 */
 		ListSchemaMappings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSchemaMappingsOutput> {
@@ -1139,6 +1143,7 @@ export namespace MyNS {
 		 * Deletes the <code>MatchingWorkflow</code> with a given name. This operation will succeed even if a workflow with the given name does not exist.
 		 * Delete matchingworkflows/{workflowName}
 		 * @param {string} workflowName The name of the workflow to be retrieved.
+		 *     Min length: 0    Max length: 255
 		 * @return {DeleteMatchingWorkflowOutput} Success
 		 */
 		DeleteMatchingWorkflow(workflowName: string): Observable<DeleteMatchingWorkflowOutput> {
@@ -1149,6 +1154,7 @@ export namespace MyNS {
 		 * Returns the <code>MatchingWorkflow</code> with a given name, if it exists.
 		 * Get matchingworkflows/{workflowName}
 		 * @param {string} workflowName The name of the workflow.
+		 *     Min length: 0    Max length: 255
 		 * @return {GetMatchingWorkflowOutput} Success
 		 */
 		GetMatchingWorkflow(workflowName: string): Observable<GetMatchingWorkflowOutput> {
@@ -1159,6 +1165,7 @@ export namespace MyNS {
 		 * Updates an existing <code>MatchingWorkflow</code>. This method is identical to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>MatchingWorkflow</code> must already exist for the method to succeed.
 		 * Put matchingworkflows/{workflowName}
 		 * @param {string} workflowName The name of the workflow to be retrieved.
+		 *     Min length: 0    Max length: 255
 		 * @return {UpdateMatchingWorkflowOutput} Success
 		 */
 		UpdateMatchingWorkflow(workflowName: string, requestBody: UpdateMatchingWorkflowPutBody): Observable<UpdateMatchingWorkflowOutput> {
@@ -1169,6 +1176,7 @@ export namespace MyNS {
 		 * Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.
 		 * Delete schemas/{schemaName}
 		 * @param {string} schemaName The name of the schema to delete.
+		 *     Min length: 0    Max length: 255
 		 * @return {DeleteSchemaMappingOutput} Success
 		 */
 		DeleteSchemaMapping(schemaName: string): Observable<DeleteSchemaMappingOutput> {
@@ -1179,6 +1187,7 @@ export namespace MyNS {
 		 * Returns the SchemaMapping of a given name.
 		 * Get schemas/{schemaName}
 		 * @param {string} schemaName The name of the schema to be retrieved.
+		 *     Min length: 0    Max length: 255
 		 * @return {GetSchemaMappingOutput} Success
 		 */
 		GetSchemaMapping(schemaName: string): Observable<GetSchemaMappingOutput> {
@@ -1189,6 +1198,7 @@ export namespace MyNS {
 		 * Returns the corresponding Match ID of a customer record if the record has been processed.
 		 * Post matchingworkflows/{workflowName}/matches
 		 * @param {string} workflowName The name of the workflow.
+		 *     Min length: 0    Max length: 255
 		 * @return {GetMatchIdOutput} Success
 		 */
 		GetMatchId(workflowName: string, requestBody: GetMatchIdPostBody): Observable<GetMatchIdOutput> {
@@ -1200,6 +1210,7 @@ export namespace MyNS {
 		 * Get matchingworkflows/{workflowName}/jobs/{jobId}
 		 * @param {string} jobId The ID of the job.
 		 * @param {string} workflowName The name of the workflow.
+		 *     Min length: 0    Max length: 255
 		 * @return {GetMatchingJobOutput} Success
 		 */
 		GetMatchingJob(jobId: string, workflowName: string): Observable<GetMatchingJobOutput> {
@@ -1210,8 +1221,11 @@ export namespace MyNS {
 		 * Lists all jobs for a given workflow.
 		 * Get matchingworkflows/{workflowName}/jobs
 		 * @param {number} maxResults The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} nextToken The pagination token from the previous <code>ListSchemaMappings</code> API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {string} workflowName The name of the workflow to be retrieved.
+		 *     Min length: 0    Max length: 255
 		 * @return {ListMatchingJobsOutput} Success
 		 */
 		ListMatchingJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, workflowName: string): Observable<ListMatchingJobsOutput> {
@@ -1222,6 +1236,7 @@ export namespace MyNS {
 		 * Starts the <code>MatchingJob</code> of a workflow. The workflow must have previously been created using the <code>CreateMatchingWorkflow</code> endpoint.
 		 * Post matchingworkflows/{workflowName}/jobs
 		 * @param {string} workflowName The name of the matching job to be retrieved.
+		 *     Min length: 0    Max length: 255
 		 * @return {StartMatchingJobOutput} Success
 		 */
 		StartMatchingJob(workflowName: string): Observable<StartMatchingJobOutput> {
@@ -1253,6 +1268,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource for which you want to untag.
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -1264,8 +1280,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the workflow.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -1306,8 +1322,8 @@ export namespace MyNS {
 		/**
 		 * The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		workflowName: string;
 	}
@@ -1315,8 +1331,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the workflow.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -1332,8 +1348,8 @@ export namespace MyNS {
 		/**
 		 * The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		workflowName: FormControl<string | null | undefined>,
 	}
@@ -1378,8 +1394,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the schema.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -1393,8 +1409,8 @@ export namespace MyNS {
 		/**
 		 * The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		schemaName: string;
 
@@ -1405,16 +1421,16 @@ export namespace MyNS {
 
 		/**
 		 * A description of the schema.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		schemaName: FormControl<string | null | undefined>,
 
@@ -1434,8 +1450,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the workflow.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -1474,8 +1490,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the workflow.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 

@@ -254,7 +254,9 @@ export namespace MyNS {
 		 * Get API specification metadata
 		 * Get api-specification
 		 * @param {number} perPage Number of items to include in pagination (up to 100, defaults to 10)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page Used to specify further pages (starts at 1)
+		 *     Minimum: 1
 		 * @return {void} Successfully retrieved API specification metadata.
 		 */
 		GetAPISpecification(perPage: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -298,7 +300,9 @@ export namespace MyNS {
 		 * Returns a list of changelogs associated with the project API key
 		 * Get changelogs
 		 * @param {number} perPage Number of items to include in pagination (up to 100, defaults to 10)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page Used to specify further pages (starts at 1)
+		 *     Minimum: 1
 		 * @return {void} OK
 		 */
 		GetChangelogs(perPage: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -355,7 +359,9 @@ export namespace MyNS {
 		 * Returns a list of custom pages associated with the project API key
 		 * Get custompages
 		 * @param {number} perPage Number of items to include in pagination (up to 100, defaults to 10)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page Used to specify further pages (starts at 1)
+		 *     Minimum: 1
 		 * @return {void} OK
 		 */
 		GetCustomPages(perPage: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {

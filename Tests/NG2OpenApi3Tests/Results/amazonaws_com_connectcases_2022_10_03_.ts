@@ -2042,6 +2042,7 @@ export namespace MyNS {
 		 * Returns the description for the list of fields in the request parameters.
 		 * Post domains/{domainId}/fields-batch
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {BatchGetFieldResponse} Success
 		 */
 		BatchGetField(domainId: string, requestBody: BatchGetFieldPostBody): Observable<BatchGetFieldResponse> {
@@ -2052,7 +2053,9 @@ export namespace MyNS {
 		 * Creates and updates a set of field options for a single select field in a Cases domain.
 		 * Put domains/{domainId}/fields/{fieldId}/options
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} fieldId The unique identifier of a field.
+		 *     Min length: 1    Max length: 500
 		 * @return {BatchPutFieldOptionsResponse} Success
 		 */
 		BatchPutFieldOptions(domainId: string, fieldId: string, requestBody: BatchPutFieldOptionsPutBody): Observable<BatchPutFieldOptionsResponse> {
@@ -2063,6 +2066,7 @@ export namespace MyNS {
 		 * <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note> <p>The following fields are required when creating a case:</p> <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code></pre>
 		 * Post domains/{domainId}/cases
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {CreateCaseResponse} Success
 		 */
 		CreateCase(domainId: string, requestBody: CreateCasePostBody): Observable<CreateCaseResponse> {
@@ -2082,6 +2086,7 @@ export namespace MyNS {
 		 * Creates a field in the Cases domain. This field is used to define the case object model (that is, defines what data can be captured on cases) in a Cases domain.
 		 * Post domains/{domainId}/fields
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {CreateFieldResponse} Success
 		 */
 		CreateField(domainId: string, requestBody: CreateFieldPostBody): Observable<CreateFieldResponse> {
@@ -2092,6 +2097,7 @@ export namespace MyNS {
 		 * <p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p> <ul> <li> <p>Fields to display to the users</p> </li> <li> <p>Field ordering</p> </li> </ul> <note> <p>Title and Status fields cannot be part of layouts since they are not configurable.</p> </note>
 		 * Post domains/{domainId}/layouts
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {CreateLayoutResponse} Success
 		 */
 		CreateLayout(domainId: string, requestBody: CreateLayoutPostBody): Observable<CreateLayoutResponse> {
@@ -2102,7 +2108,9 @@ export namespace MyNS {
 		 * <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </note>
 		 * Post domains/{domainId}/cases/{caseId}/related-items/
 		 * @param {string} caseId A unique identifier of the case.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {CreateRelatedItemResponse} Success
 		 */
 		CreateRelatedItem(caseId: string, domainId: string, requestBody: CreateRelatedItemPostBody): Observable<CreateRelatedItemResponse> {
@@ -2113,6 +2121,7 @@ export namespace MyNS {
 		 * Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases.
 		 * Post domains/{domainId}/templates
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {CreateTemplateResponse} Success
 		 */
 		CreateTemplate(domainId: string, requestBody: CreateTemplatePostBody): Observable<CreateTemplateResponse> {
@@ -2123,6 +2132,7 @@ export namespace MyNS {
 		 * <p>Deletes a Cases domain.</p> <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; </code></pre>
 		 * Delete domains/{domainId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {DeleteDomainResponse} Success
 		 */
 		DeleteDomain(domainId: string): Observable<DeleteDomainResponse> {
@@ -2133,6 +2143,7 @@ export namespace MyNS {
 		 * Returns information about a specific domain if it exists.
 		 * Post domains/{domainId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {GetDomainResponse} Success
 		 */
 		GetDomain(domainId: string): Observable<GetDomainResponse> {
@@ -2143,7 +2154,9 @@ export namespace MyNS {
 		 * Returns information about a specific case if it exists.
 		 * Post domains/{domainId}/cases/{caseId}
 		 * @param {string} caseId A unique identifier of the case.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} nextToken Pagination token
 		 * @return {GetCaseResponse} Success
 		 */
@@ -2155,7 +2168,9 @@ export namespace MyNS {
 		 * <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 		 * Put domains/{domainId}/cases/{caseId}
 		 * @param {string} caseId A unique identifier of the case.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateCaseResponse} Success
 		 */
 		UpdateCase(caseId: string, domainId: string, requestBody: UpdateCasePutBody): Observable<UpdateCaseResponse> {
@@ -2166,6 +2181,7 @@ export namespace MyNS {
 		 * Returns the case event publishing configuration.
 		 * Post domains/{domainId}/case-event-configuration
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {GetCaseEventConfigurationResponse} Success
 		 */
 		GetCaseEventConfiguration(domainId: string): Observable<GetCaseEventConfigurationResponse> {
@@ -2176,6 +2192,7 @@ export namespace MyNS {
 		 * API for adding case event publishing configuration
 		 * Put domains/{domainId}/case-event-configuration
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @return {PutCaseEventConfigurationResponse} Success
 		 */
 		PutCaseEventConfiguration(domainId: string, requestBody: PutCaseEventConfigurationPutBody): Observable<PutCaseEventConfigurationResponse> {
@@ -2186,7 +2203,9 @@ export namespace MyNS {
 		 * Returns the details for the requested layout.
 		 * Post domains/{domainId}/layouts/{layoutId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} layoutId The unique identifier of the layout.
+		 *     Min length: 1    Max length: 500
 		 * @return {GetLayoutResponse} Success
 		 */
 		GetLayout(domainId: string, layoutId: string): Observable<GetLayoutResponse> {
@@ -2197,7 +2216,9 @@ export namespace MyNS {
 		 * <p>Updates the attributes of an existing layout.</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p> <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note> <p>Title and Status fields cannot be part of layouts because they are not configurable.</p> </note>
 		 * Put domains/{domainId}/layouts/{layoutId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} layoutId The unique identifier of the layout.
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateLayoutResponse} Success
 		 */
 		UpdateLayout(domainId: string, layoutId: string, requestBody: UpdateLayoutPutBody): Observable<UpdateLayoutResponse> {
@@ -2208,7 +2229,9 @@ export namespace MyNS {
 		 * Returns the details for the requested template.
 		 * Post domains/{domainId}/templates/{templateId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} templateId A unique identifier of a template.
+		 *     Min length: 1    Max length: 500
 		 * @return {GetTemplateResponse} Success
 		 */
 		GetTemplate(domainId: string, templateId: string): Observable<GetTemplateResponse> {
@@ -2219,7 +2242,9 @@ export namespace MyNS {
 		 * Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.
 		 * Put domains/{domainId}/templates/{templateId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} templateId A unique identifier for the template.
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateTemplateResponse} Success
 		 */
 		UpdateTemplate(domainId: string, templateId: string, requestBody: UpdateTemplatePutBody): Observable<UpdateTemplateResponse> {
@@ -2230,6 +2255,7 @@ export namespace MyNS {
 		 * Lists cases for a given contact.
 		 * Post domains/{domainId}/list-cases-for-contact
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListCasesForContactResponse} Success
@@ -2242,7 +2268,9 @@ export namespace MyNS {
 		 * Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain.
 		 * Post domains-list
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 0    Max length: 9000
 		 * @return {ListDomainsResponse} Success
 		 */
 		ListDomains(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDomainsResponse> {
@@ -2253,10 +2281,15 @@ export namespace MyNS {
 		 * Lists all of the field options for a field identifier in the domain.
 		 * Post domains/{domainId}/fields/{fieldId}/options-list
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} fieldId The unique identifier of a field.
+		 *     Min length: 1    Max length: 500
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 0    Max length: 9000
 		 * @param {Array<string>} values A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.
+		 *     Minimum items: 0    Maximum items: 1
 		 * @return {ListFieldOptionsResponse} Success
 		 */
 		ListFieldOptions(domainId: string, fieldId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, values: Array<string> | null | undefined): Observable<ListFieldOptionsResponse> {
@@ -2267,8 +2300,11 @@ export namespace MyNS {
 		 * Lists all fields in a Cases domain.
 		 * Post domains/{domainId}/fields-list
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 0    Max length: 9000
 		 * @return {ListFieldsResponse} Success
 		 */
 		ListFields(domainId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListFieldsResponse> {
@@ -2279,8 +2315,11 @@ export namespace MyNS {
 		 * Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout.
 		 * Post domains/{domainId}/layouts-list
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 0    Max length: 9000
 		 * @return {ListLayoutsResponse} Success
 		 */
 		ListLayouts(domainId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListLayoutsResponse> {
@@ -2291,6 +2330,7 @@ export namespace MyNS {
 		 * Lists tags for a resource.
 		 * Get tags/{arn}
 		 * @param {string} arn The Amazon Resource Name (ARN)
+		 *     Min length: 1    Max length: 500
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -2301,6 +2341,7 @@ export namespace MyNS {
 		 * Adds tags to a resource.
 		 * Post tags/{arn}
 		 * @param {string} arn The Amazon Resource Name (ARN)
+		 *     Min length: 1    Max length: 500
 		 * @return {void} Success
 		 */
 		TagResource(arn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -2311,9 +2352,13 @@ export namespace MyNS {
 		 * Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template.
 		 * Post domains/{domainId}/templates-list
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 0    Max length: 9000
 		 * @param {Array<TemplateStatus>} status A list of status values to filter on.
+		 *     Minimum items: 1    Maximum items: 2
 		 * @return {ListTemplatesResponse} Success
 		 */
 		ListTemplates(domainId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, status: Array<TemplateStatus> | null | undefined): Observable<ListTemplatesResponse> {
@@ -2324,6 +2369,7 @@ export namespace MyNS {
 		 * <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note> <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>. </p> </note>
 		 * Post domains/{domainId}/cases-search
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchCasesResponse} Success
@@ -2336,7 +2382,9 @@ export namespace MyNS {
 		 * <p>Searches for related items that are associated with a case.</p> <note> <p>If no filters are provided, this returns all related items associated with a case.</p> </note>
 		 * Post domains/{domainId}/cases/{caseId}/related-items-search
 		 * @param {string} caseId A unique identifier of the case.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchRelatedItemsResponse} Success
@@ -2349,7 +2397,9 @@ export namespace MyNS {
 		 * Untags a resource.
 		 * Delete tags/{arn}#tagKeys
 		 * @param {string} arn The Amazon Resource Name (ARN)
+		 *     Min length: 1    Max length: 500
 		 * @param {Array<string>} tagKeys List of tag keys.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {void} Success
 		 */
 		UntagResource(arn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -2360,7 +2410,9 @@ export namespace MyNS {
 		 * Updates the properties of an existing field.
 		 * Put domains/{domainId}/fields/{fieldId}
 		 * @param {string} domainId The unique identifier of the Cases domain. 
+		 *     Min length: 1    Max length: 500
 		 * @param {string} fieldId The unique identifier of a field.
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateFieldResponse} Success
 		 */
 		UpdateField(domainId: string, fieldId: string, requestBody: UpdateFieldPutBody): Observable<UpdateFieldResponse> {
@@ -2408,8 +2460,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -2424,8 +2476,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier of a template.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		templateId: string;
 	}
@@ -2433,16 +2485,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier of a template.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		templateId: FormControl<string | null | undefined>,
 	}
@@ -2459,8 +2511,8 @@ export namespace MyNS {
 		/**
 		 * The name for your Cases domain. It must be unique for your Amazon Web Services account.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 	}
@@ -2469,8 +2521,8 @@ export namespace MyNS {
 		/**
 		 * The name for your Cases domain. It must be unique for your Amazon Web Services account.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -2485,16 +2537,16 @@ export namespace MyNS {
 
 		/**
 		 * The description of the field.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the field.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -2508,16 +2560,16 @@ export namespace MyNS {
 
 		/**
 		 * The description of the field.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the field.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2547,8 +2599,8 @@ export namespace MyNS {
 		/**
 		 * The name of the layout. It must be unique for the Cases domain.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 	}
@@ -2557,8 +2609,8 @@ export namespace MyNS {
 		/**
 		 * The name of the layout. It must be unique for the Cases domain.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -2625,8 +2677,8 @@ export namespace MyNS {
 
 		/**
 		 * A brief description of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -2636,8 +2688,8 @@ export namespace MyNS {
 		/**
 		 * A name for the template. It must be unique per domain.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -2655,16 +2707,16 @@ export namespace MyNS {
 
 		/**
 		 * A brief description of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the template. It must be unique per domain.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2705,8 +2757,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken?: string | null;
 	}
@@ -2714,8 +2766,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2781,8 +2833,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the layout. It must be unique per domain.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 	}
@@ -2790,8 +2842,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the layout. It must be unique per domain.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -2817,8 +2869,8 @@ export namespace MyNS {
 
 		/**
 		 * A brief description of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -2827,8 +2879,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the template. It must be unique per domain.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
@@ -2846,15 +2898,15 @@ export namespace MyNS {
 
 		/**
 		 * A brief description of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the template. It must be unique per domain.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2888,8 +2940,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier of a contact in Amazon Connect.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		contactArn: string;
 
@@ -2902,8 +2954,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken?: string | null;
 	}
@@ -2912,8 +2964,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier of a contact in Amazon Connect.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		contactArn: FormControl<string | null | undefined>,
 
@@ -2926,8 +2978,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2984,15 +3036,15 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * A word or phrase used to perform a quick search.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		searchTerm?: string | null;
 
@@ -3014,15 +3066,15 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A word or phrase used to perform a quick search.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		searchTerm: FormControl<string | null | undefined>,
 	}
@@ -3069,8 +3121,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken?: string | null;
 	}
@@ -3085,8 +3137,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 9000
 		 * Min length: 0
+		 * Max length: 9000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -3102,15 +3154,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of a field.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the field.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 	}
@@ -3118,15 +3170,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of a field.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the field.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 	}

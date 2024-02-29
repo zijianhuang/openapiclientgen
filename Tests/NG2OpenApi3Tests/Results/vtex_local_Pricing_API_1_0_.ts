@@ -51,12 +51,14 @@ export namespace MyNS {
 		/**
 		 * Trade Policy List Price Value.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
 		/**
 		 * Trade Policy Fixed Price Minimum Item Quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: number;
 
@@ -69,6 +71,7 @@ export namespace MyNS {
 		/**
 		 * Trade Policy Fixed Price Value.
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -77,12 +80,14 @@ export namespace MyNS {
 		/**
 		 * Trade Policy List Price Value.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade Policy Fixed Price Minimum Item Quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: FormControl<number | null | undefined>,
 
@@ -95,6 +100,7 @@ export namespace MyNS {
 		/**
 		 * Trade Policy Fixed Price Value.
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -110,12 +116,16 @@ export namespace MyNS {
 
 	export interface Getcomputedprice {
 
-		/** Cost price. */
+		/**
+		 * Cost price.
+		 * Type: double
+		 */
 		costPrice?: number | null;
 
 		/**
 		 * Trade Policy List Price, also known as "from" price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: number;
 
@@ -128,6 +138,7 @@ export namespace MyNS {
 		/**
 		 * Computed Price before applying coupons, promotions and taxes. This price may change before reaching the shelf.
 		 * Required
+		 * Type: double
 		 */
 		sellingPrice: number;
 
@@ -139,12 +150,16 @@ export namespace MyNS {
 	}
 	export interface GetcomputedpriceFormProperties {
 
-		/** Cost price. */
+		/**
+		 * Cost price.
+		 * Type: double
+		 */
 		costPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade Policy List Price, also known as "from" price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -157,6 +172,7 @@ export namespace MyNS {
 		/**
 		 * Computed Price before applying coupons, promotions and taxes. This price may change before reaching the shelf.
 		 * Required
+		 * Type: double
 		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
@@ -182,12 +198,14 @@ export namespace MyNS {
 		/**
 		 * SKU's reference price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		basePrice: number;
 
 		/**
 		 * SKU's cost price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costPrice: number;
 
@@ -206,12 +224,14 @@ export namespace MyNS {
 		/**
 		 * Suggested retail price for the SKU.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: number;
 
 		/**
 		 * Desired profit margin with the SKU's sale.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		markup: number;
 	}
@@ -220,12 +240,14 @@ export namespace MyNS {
 		/**
 		 * SKU's reference price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		basePrice: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU's cost price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costPrice: FormControl<number | null | undefined>,
 
@@ -238,12 +260,14 @@ export namespace MyNS {
 		/**
 		 * Suggested retail price for the SKU.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Desired profit margin with the SKU's sale.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		markup: FormControl<number | null | undefined>,
 	}
@@ -269,6 +293,7 @@ export namespace MyNS {
 		/**
 		 * Account default markup.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultMarkup: number;
 
@@ -296,7 +321,10 @@ export namespace MyNS {
 		/** Condition of price inheritance from its parent account. This field can have three possible values: `never` if the store should never inherit prices, `nonexistent` if the store should only inherit prices in case of nonexistent prices for a given product, or `always` if the store should always inherit prices, regardless of its own prices. */
 		priceInheritance?: string | null;
 
-		/** Price Table Limit. */
+		/**
+		 * Price Table Limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceTableLimit?: number | null;
 
 		/** The strategy used to get prices when there is more than one option. Possible values: `first`, `highest`, `lowest`. Default: `first`. */
@@ -319,6 +347,7 @@ export namespace MyNS {
 		/**
 		 * Account default markup.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		defaultMarkup: FormControl<number | null | undefined>,
 
@@ -346,7 +375,10 @@ export namespace MyNS {
 		/** Condition of price inheritance from its parent account. This field can have three possible values: `never` if the store should never inherit prices, `nonexistent` if the store should only inherit prices in case of nonexistent prices for a given product, or `always` if the store should always inherit prices, regardless of its own prices. */
 		priceInheritance: FormControl<string | null | undefined>,
 
-		/** Price Table Limit. */
+		/**
+		 * Price Table Limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceTableLimit: FormControl<number | null | undefined>,
 
 		/** The strategy used to get prices when there is more than one option. Possible values: `first`, `highest`, `lowest`. Default: `first`. */
@@ -370,18 +402,30 @@ export namespace MyNS {
 
 	export interface PricingConfigurationPriceVariation {
 
-		/** Lower variation limit. */
+		/**
+		 * Lower variation limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerLimit?: number | null;
 
-		/** Upper variation limit. */
+		/**
+		 * Upper variation limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperLimit?: number | null;
 	}
 	export interface PricingConfigurationPriceVariationFormProperties {
 
-		/** Lower variation limit. */
+		/**
+		 * Lower variation limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerLimit: FormControl<number | null | undefined>,
 
-		/** Upper variation limit. */
+		/**
+		 * Upper variation limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperLimit: FormControl<number | null | undefined>,
 	}
 	export function CreatePricingConfigurationPriceVariationFormGroup() {
@@ -394,7 +438,10 @@ export namespace MyNS {
 
 	export interface PricingConfigurationTradePolicyConfigs {
 
-		/** Trade Policy Minimum Markup. */
+		/**
+		 * Trade Policy Minimum Markup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumMarkup?: number | null;
 
 		/** Defines if the Price Rule should affect the list price too. */
@@ -405,7 +452,10 @@ export namespace MyNS {
 	}
 	export interface PricingConfigurationTradePolicyConfigsFormProperties {
 
-		/** Trade Policy Minimum Markup. */
+		/**
+		 * Trade Policy Minimum Markup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumMarkup: FormControl<number | null | undefined>,
 
 		/** Defines if the Price Rule should affect the list price too. */
@@ -607,6 +657,7 @@ export namespace MyNS {
 		 * Deletes the Base Price and all available Fixed Prices for an SKU in all trade policies.
 		 * Delete pricing/prices/{itemId}
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		DeletePrice(itemId: number): Observable<HttpResponse<string>> {
@@ -646,6 +697,7 @@ export namespace MyNS {
 		 * ```
 		 * Get pricing/prices/{itemId}
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Getprice} OK
 		 */
 		GetPrice(itemId: number): Observable<Getprice> {
@@ -683,6 +735,7 @@ export namespace MyNS {
 		 * ```
 		 * Put pricing/prices/{itemId}
 		 * @param {number} itemId SKU unique identifier number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CreateUpdatePriceOrFixedPrice(itemId: number, requestBody: CreateUpdatePriceOrFixedPricePutBody): Observable<HttpResponse<string>> {
@@ -704,9 +757,13 @@ export namespace MyNS {
 		 * ```
 		 * Get pricing/prices/{itemId}/computed/{priceTableId}
 		 * @param {number} categoryIds Category ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} brandId Brand ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quantity SKU quantity.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} priceTableId SKU Price Table Name.
 		 * @return {void} OK
 		 */
@@ -747,6 +804,7 @@ export namespace MyNS {
 		 * ```
 		 * Get pricing/prices/{itemId}/fixed
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetFixedPrices(itemId: number): Observable<HttpResponse<string>> {
@@ -758,6 +816,7 @@ export namespace MyNS {
 		 * Deletes all Fixed Prices of an SKU in a specific Price Table or Trade Policy.
 		 * Delete pricing/prices/{itemId}/fixed/{priceTableId}
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} priceTableId Price Table or Trade Policy Name.
 		 * @return {void} OK
 		 */
@@ -791,6 +850,7 @@ export namespace MyNS {
 		 * ```
 		 * Get pricing/prices/{itemId}/fixed/{priceTableId}
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} priceTableId Price Table Name
 		 * @return {void} OK
 		 */
@@ -817,6 +877,7 @@ export namespace MyNS {
 		 * ```
 		 * Post pricing/prices/{itemId}/fixed/{priceTableId}
 		 * @param {number} itemId SKU ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} priceTableId SKU **price table** name or **trade policy** ID.
 		 * @return {void} OK
 		 */
@@ -848,7 +909,10 @@ export namespace MyNS {
 
 	export interface GetallpricetablesandrulesReturn {
 
-		/** Percentual modifier. */
+		/**
+		 * Percentual modifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentualModifier?: number | null;
 
 		/** Array of rules for the price table. */
@@ -859,7 +923,10 @@ export namespace MyNS {
 	}
 	export interface GetallpricetablesandrulesReturnFormProperties {
 
-		/** Percentual modifier. */
+		/**
+		 * Percentual modifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentualModifier: FormControl<number | null | undefined>,
 
 		/** Trade Policy ID (Price Table ID). */
@@ -878,12 +945,18 @@ export namespace MyNS {
 		/** Rule Context is a group of filters to be checked at an item level when applying the rule. If all those filters check out, the rule will be applied for that item, unless there is a fixed price for that item. */
 		context?: GetallpricetablesandrulesReturnRulesContext;
 
-		/** Rule ID. */
+		/**
+		 * Rule ID.
+		 * Type: double
+		 */
 		id?: number | null;
 	}
 	export interface GetallpricetablesandrulesReturnRulesFormProperties {
 
-		/** Rule ID. */
+		/**
+		 * Rule ID.
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateGetallpricetablesandrulesReturnRulesFormGroup() {
@@ -963,18 +1036,30 @@ export namespace MyNS {
 
 	export interface GetallpricetablesandrulesReturnRulesContextMarkupRange {
 
-		/** Item markup should be greater than or equal to this value. */
+		/**
+		 * Item markup should be greater than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** Item markup should be less than or equal to this value. */
+		/**
+		 * Item markup should be less than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 	}
 	export interface GetallpricetablesandrulesReturnRulesContextMarkupRangeFormProperties {
 
-		/** Item markup should be greater than or equal to this value. */
+		/**
+		 * Item markup should be greater than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** Item markup should be less than or equal to this value. */
+		/**
+		 * Item markup should be less than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 	}
 	export function CreateGetallpricetablesandrulesReturnRulesContextMarkupRangeFormGroup() {
@@ -987,7 +1072,10 @@ export namespace MyNS {
 
 	export interface GetrulesforapricetableReturn {
 
-		/** Percentual modifier. */
+		/**
+		 * Percentual modifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentualModifier?: number | null;
 
 		/** Array of rules for the price table. */
@@ -998,7 +1086,10 @@ export namespace MyNS {
 	}
 	export interface GetrulesforapricetableReturnFormProperties {
 
-		/** Percentual modifier. */
+		/**
+		 * Percentual modifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentualModifier: FormControl<number | null | undefined>,
 
 		/** Trade Policy ID (Price Table ID). */
@@ -1017,12 +1108,18 @@ export namespace MyNS {
 		/** Rule Context is a group of filters to be checked at an item level when applying the rule. If all those filters check out, the rule will be applied for that item, unless there is a fixed price for that item. */
 		context?: GetrulesforapricetableReturnRulesContext;
 
-		/** Rule ID. */
+		/**
+		 * Rule ID.
+		 * Type: double
+		 */
 		id?: number | null;
 	}
 	export interface GetrulesforapricetableReturnRulesFormProperties {
 
-		/** Rule ID. */
+		/**
+		 * Rule ID.
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateGetrulesforapricetableReturnRulesFormGroup() {
@@ -1102,18 +1199,30 @@ export namespace MyNS {
 
 	export interface GetrulesforapricetableReturnRulesContextMarkupRange {
 
-		/** Item markup should be greater than or equal to this value. */
+		/**
+		 * Item markup should be greater than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** Item markup should be less than or equal to this value. */
+		/**
+		 * Item markup should be less than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 	}
 	export interface GetrulesforapricetableReturnRulesContextMarkupRangeFormProperties {
 
-		/** Item markup should be greater than or equal to this value. */
+		/**
+		 * Item markup should be greater than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** Item markup should be less than or equal to this value. */
+		/**
+		 * Item markup should be less than or equal to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 	}
 	export function CreateGetrulesforapricetableReturnRulesContextMarkupRangeFormGroup() {
@@ -1151,12 +1260,14 @@ export namespace MyNS {
 		/**
 		 * Rule ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Percentual modifier.
 		 * Required
+		 * Type: double
 		 */
 		percentualModifier: number;
 	}
@@ -1165,12 +1276,14 @@ export namespace MyNS {
 		/**
 		 * Rule ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentual modifier.
 		 * Required
+		 * Type: double
 		 */
 		percentualModifier: FormControl<number | null | undefined>,
 	}
@@ -1285,12 +1398,14 @@ export namespace MyNS {
 		/**
 		 * Item markup should be greater than or equal to this value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: number;
 
 		/**
 		 * Item markup should be less than or equal to this value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: number;
 	}
@@ -1299,12 +1414,14 @@ export namespace MyNS {
 		/**
 		 * Item markup should be greater than or equal to this value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		from: FormControl<number | null | undefined>,
 
 		/**
 		 * Item markup should be less than or equal to this value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		to: FormControl<number | null | undefined>,
 	}
@@ -1321,22 +1438,28 @@ export namespace MyNS {
 		/**
 		 * SKU selling base price. If you decide to fill only the `basePrice` item, the `markup` and `costPrice` will be automatically generated to adapt to the number inserted in `basePrice`.
 		 * Required
+		 * Type: double
 		 */
 		basePrice: number;
 
-		/** SKU selling cost price. If you decide to fill the `costPrice` item, you must also fill the `markup` and `basePrice` will be automatically generated based on both values. */
+		/**
+		 * SKU selling cost price. If you decide to fill the `costPrice` item, you must also fill the `markup` and `basePrice` will be automatically generated based on both values.
+		 * Type: double
+		 */
 		costPrice?: number | null;
 		CreateUpdatePriceOrFixedPricePutBodyFixedPrices?: Array<CreateUpdatePriceOrFixedPricePutBodyFixedPrices>;
 
 		/**
 		 * SKU's suggested selling price.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
 		/**
 		 * The profit percentage that is to be obtained from the sale of that SKU. If you decide to fill the `markup` item, you must also fill the `costPrice`. The `basePrice` will be automatically generated based on both values.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		markup: number;
 	}
@@ -1345,21 +1468,27 @@ export namespace MyNS {
 		/**
 		 * SKU selling base price. If you decide to fill only the `basePrice` item, the `markup` and `costPrice` will be automatically generated to adapt to the number inserted in `basePrice`.
 		 * Required
+		 * Type: double
 		 */
 		basePrice: FormControl<number | null | undefined>,
 
-		/** SKU selling cost price. If you decide to fill the `costPrice` item, you must also fill the `markup` and `basePrice` will be automatically generated based on both values. */
+		/**
+		 * SKU selling cost price. If you decide to fill the `costPrice` item, you must also fill the `markup` and `basePrice` will be automatically generated based on both values.
+		 * Type: double
+		 */
 		costPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU's suggested selling price.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * The profit percentage that is to be obtained from the sale of that SKU. If you decide to fill the `markup` item, you must also fill the `costPrice`. The `basePrice` will be automatically generated based on both values.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		markup: FormControl<number | null | undefined>,
 	}
@@ -1378,12 +1507,16 @@ export namespace MyNS {
 		/** Period of time when the fixed price will be applied to the SKU. */
 		dateRange?: CreateUpdatePriceOrFixedPricePutBodyFixedPricesDateRange;
 
-		/** SKU List Fixed Price. */
+		/**
+		 * SKU List Fixed Price.
+		 * Type: double
+		 */
 		listPrice?: number | null;
 
 		/**
 		 * Minimum quantity of the SKU for the fixed price to be applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: number;
 
@@ -1396,17 +1529,22 @@ export namespace MyNS {
 		/**
 		 * Fixed price value.
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
 	export interface CreateUpdatePriceOrFixedPricePutBodyFixedPricesFormProperties {
 
-		/** SKU List Fixed Price. */
+		/**
+		 * SKU List Fixed Price.
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum quantity of the SKU for the fixed price to be applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: FormControl<number | null | undefined>,
 
@@ -1419,6 +1557,7 @@ export namespace MyNS {
 		/**
 		 * Fixed price value.
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1473,35 +1612,45 @@ export namespace MyNS {
 		/** Period of time when the fixed price will be applied to the SKU. */
 		dateRange?: CreateorupdatefixedpricesonpricetableortradepolicyPostBodyDateRange;
 
-		/** SKU List Fixed Price. */
+		/**
+		 * SKU List Fixed Price.
+		 * Type: double
+		 */
 		listPrice?: number | null;
 
 		/**
 		 * The minimum SKU quantity for the fixed price to be applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: number;
 
 		/**
 		 * Fixed price value.
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
 	export interface CreateorupdatefixedpricesonpricetableortradepolicyPostBodyFormProperties {
 
-		/** SKU List Fixed Price. */
+		/**
+		 * SKU List Fixed Price.
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * The minimum SKU quantity for the fixed price to be applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minQuantity: FormControl<number | null | undefined>,
 
 		/**
 		 * Fixed price value.
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}

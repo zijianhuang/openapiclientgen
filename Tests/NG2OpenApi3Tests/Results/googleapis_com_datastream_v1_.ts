@@ -118,22 +118,34 @@ export namespace MyNS {
 		/** The MySQL data type. Full data types list can be found here: https://dev.mysql.com/doc/refman/8.0/en/data-types.html */
 		dataType?: string | null;
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** Whether or not the column can accept a null value. */
 		nullable?: boolean | null;
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition?: number | null;
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision?: number | null;
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey?: boolean | null;
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale?: number | null;
 	}
 
@@ -149,22 +161,34 @@ export namespace MyNS {
 		/** The MySQL data type. Full data types list can be found here: https://dev.mysql.com/doc/refman/8.0/en/data-types.html */
 		dataType: FormControl<string | null | undefined>,
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** Whether or not the column can accept a null value. */
 		nullable: FormControl<boolean | null | undefined>,
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition: FormControl<number | null | undefined>,
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision: FormControl<number | null | undefined>,
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey: FormControl<boolean | null | undefined>,
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateMysqlColumnFormGroup() {
@@ -260,22 +284,34 @@ export namespace MyNS {
 		/** Column encoding. */
 		encoding?: string | null;
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** Whether or not the column can accept a null value. */
 		nullable?: boolean | null;
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition?: number | null;
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision?: number | null;
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey?: boolean | null;
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale?: number | null;
 	}
 
@@ -291,22 +327,34 @@ export namespace MyNS {
 		/** Column encoding. */
 		encoding: FormControl<string | null | undefined>,
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** Whether or not the column can accept a null value. */
 		nullable: FormControl<boolean | null | undefined>,
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition: FormControl<number | null | undefined>,
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision: FormControl<number | null | undefined>,
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey: FormControl<boolean | null | undefined>,
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateOracleColumnFormGroup() {
@@ -399,22 +447,34 @@ export namespace MyNS {
 		/** The PostgreSQL data type. */
 		dataType?: string | null;
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** Whether or not the column can accept a null value. */
 		nullable?: boolean | null;
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition?: number | null;
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision?: number | null;
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey?: boolean | null;
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale?: number | null;
 	}
 
@@ -427,22 +487,34 @@ export namespace MyNS {
 		/** The PostgreSQL data type. */
 		dataType: FormControl<string | null | undefined>,
 
-		/** Column length. */
+		/**
+		 * Column length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** Whether or not the column can accept a null value. */
 		nullable: FormControl<boolean | null | undefined>,
 
-		/** The ordinal position of the column in the table. */
+		/**
+		 * The ordinal position of the column in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition: FormControl<number | null | undefined>,
 
-		/** Column precision. */
+		/**
+		 * Column precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision: FormControl<number | null | undefined>,
 
 		/** Whether or not the column represents a primary key. */
 		primaryKey: FormControl<boolean | null | undefined>,
 
-		/** Column scale. */
+		/**
+		 * Column scale.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreatePostgresqlColumnFormGroup() {
@@ -774,7 +846,10 @@ export namespace MyNS {
 		/** Required. The binary log file name. */
 		logFile?: string | null;
 
-		/** Optional. The position within the binary log file. Default is head of file. */
+		/**
+		 * Optional. The position within the binary log file. Default is head of file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logPosition?: number | null;
 	}
 
@@ -784,7 +859,10 @@ export namespace MyNS {
 		/** Required. The binary log file name. */
 		logFile: FormControl<string | null | undefined>,
 
-		/** Optional. The position within the binary log file. Default is head of file. */
+		/**
+		 * Optional. The position within the binary log file. Default is head of file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logPosition: FormControl<number | null | undefined>,
 	}
 	export function CreateMysqlLogPositionFormGroup() {
@@ -878,7 +956,10 @@ export namespace MyNS {
 		/** Input only. SSH password. */
 		password?: string | null;
 
-		/** Port for the SSH tunnel, default value is 22. */
+		/**
+		 * Port for the SSH tunnel, default value is 22.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Input only. SSH private key. */
@@ -897,7 +978,10 @@ export namespace MyNS {
 		/** Input only. SSH password. */
 		password: FormControl<string | null | undefined>,
 
-		/** Port for the SSH tunnel, default value is 22. */
+		/**
+		 * Port for the SSH tunnel, default value is 22.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Input only. SSH private key. */
@@ -955,7 +1039,10 @@ export namespace MyNS {
 		/** Required. Input only. Password for the MySQL connection. */
 		password?: string | null;
 
-		/** Port for the MySQL connection, default value is 3306. */
+		/**
+		 * Port for the MySQL connection, default value is 3306.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** MySQL SSL configuration information. */
@@ -974,7 +1061,10 @@ export namespace MyNS {
 		/** Required. Input only. Password for the MySQL connection. */
 		password: FormControl<string | null | undefined>,
 
-		/** Port for the MySQL connection, default value is 3306. */
+		/**
+		 * Port for the MySQL connection, default value is 3306.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Required. Username for the MySQL connection. */
@@ -1065,7 +1155,10 @@ export namespace MyNS {
 		/** Required. Password for the Oracle connection. */
 		password?: string | null;
 
-		/** Port for the Oracle connection, default value is 1521. */
+		/**
+		 * Port for the Oracle connection, default value is 1521.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Required. Username for the Oracle connection. */
@@ -1087,7 +1180,10 @@ export namespace MyNS {
 		/** Required. Password for the Oracle connection. */
 		password: FormControl<string | null | undefined>,
 
-		/** Port for the Oracle connection, default value is 1521. */
+		/**
+		 * Port for the Oracle connection, default value is 1521.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Required. Username for the Oracle connection. */
@@ -1146,7 +1242,10 @@ export namespace MyNS {
 		/** Required. Password for the PostgreSQL connection. */
 		password?: string | null;
 
-		/** Port for the PostgreSQL connection, default value is 5432. */
+		/**
+		 * Port for the PostgreSQL connection, default value is 5432.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Required. Username for the PostgreSQL connection. */
@@ -1165,7 +1264,10 @@ export namespace MyNS {
 		/** Required. Password for the PostgreSQL connection. */
 		password: FormControl<string | null | undefined>,
 
-		/** Port for the PostgreSQL connection, default value is 5432. */
+		/**
+		 * Port for the PostgreSQL connection, default value is 5432.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Required. Username for the PostgreSQL connection. */
@@ -1254,7 +1356,10 @@ export namespace MyNS {
 		/** The maximum duration for which new events are added before a file is closed and a new file is created. Values within the range of 15-60 seconds are allowed. */
 		fileRotationInterval?: string | null;
 
-		/** The maximum file size to be saved in the bucket. */
+		/**
+		 * The maximum file size to be saved in the bucket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileRotationMb?: number | null;
 
 		/** JSON file format configuration. */
@@ -1270,7 +1375,10 @@ export namespace MyNS {
 		/** The maximum duration for which new events are added before a file is closed and a new file is created. Values within the range of 15-60 seconds are allowed. */
 		fileRotationInterval: FormControl<string | null | undefined>,
 
-		/** The maximum file size to be saved in the bucket. */
+		/**
+		 * The maximum file size to be saved in the bucket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileRotationMb: FormControl<number | null | undefined>,
 
 		/** Path inside the Cloud Storage bucket to write data to. */
@@ -1330,7 +1438,10 @@ export namespace MyNS {
 		/** Whether to retrieve the full hierarchy of data objects (TRUE) or only the current level (FALSE). */
 		fullHierarchy?: boolean | null;
 
-		/** The number of hierarchy levels below the current level to be retrieved. */
+		/**
+		 * The number of hierarchy levels below the current level to be retrieved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hierarchyDepth?: number | null;
 
 		/** MySQL database structure */
@@ -1352,7 +1463,10 @@ export namespace MyNS {
 		/** Whether to retrieve the full hierarchy of data objects (TRUE) or only the current level (FALSE). */
 		fullHierarchy: FormControl<boolean | null | undefined>,
 
-		/** The number of hierarchy levels below the current level to be retrieved. */
+		/**
+		 * The number of hierarchy levels below the current level to be retrieved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hierarchyDepth: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscoverConnectionProfileRequestFormGroup() {
@@ -1612,7 +1726,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1625,7 +1742,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1795,7 +1915,10 @@ export namespace MyNS {
 		/** Required. Destination address for connection */
 		destinationAddress?: string | null;
 
-		/** Destination port for connection */
+		/**
+		 * Destination port for connection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** Required. Display name. */
@@ -1820,7 +1943,10 @@ export namespace MyNS {
 		/** Required. Destination address for connection */
 		destinationAddress: FormControl<string | null | undefined>,
 
-		/** Destination port for connection */
+		/**
+		 * Destination port for connection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** Required. Display name. */
@@ -2182,20 +2308,32 @@ export namespace MyNS {
 		/** MySQL database structure */
 		includeObjects?: MysqlRdbms;
 
-		/** Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks?: number | null;
 
-		/** Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentCdcTasks?: number | null;
 	}
 
 	/** MySQL source configuration */
 	export interface MysqlSourceConfigFormProperties {
 
-		/** Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks: FormControl<number | null | undefined>,
 
-		/** Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentCdcTasks: FormControl<number | null | undefined>,
 	}
 	export function CreateMysqlSourceConfigFormGroup() {
@@ -2219,10 +2357,16 @@ export namespace MyNS {
 		/** Oracle database structure. */
 		includeObjects?: OracleRdbms;
 
-		/** Maximum number of concurrent backfill tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks?: number | null;
 
-		/** Maximum number of concurrent CDC tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used. */
+		/**
+		 * Maximum number of concurrent CDC tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentCdcTasks?: number | null;
 
 		/** Configuration to stream large object values. */
@@ -2232,10 +2376,16 @@ export namespace MyNS {
 	/** Oracle data source configuration */
 	export interface OracleSourceConfigFormProperties {
 
-		/** Maximum number of concurrent backfill tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks: FormControl<number | null | undefined>,
 
-		/** Maximum number of concurrent CDC tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used. */
+		/**
+		 * Maximum number of concurrent CDC tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentCdcTasks: FormControl<number | null | undefined>,
 	}
 	export function CreateOracleSourceConfigFormGroup() {
@@ -2270,7 +2420,10 @@ export namespace MyNS {
 		/** PostgreSQL database structure. */
 		includeObjects?: PostgresqlRdbms;
 
-		/** Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks?: number | null;
 
 		/** Required. The name of the publication that includes the set of all tables that are defined in the stream's include_objects. */
@@ -2283,7 +2436,10 @@ export namespace MyNS {
 	/** PostgreSQL data source configuration */
 	export interface PostgresqlSourceConfigFormProperties {
 
-		/** Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used. */
+		/**
+		 * Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentBackfillTasks: FormControl<number | null | undefined>,
 
 		/** Required. The name of the publication that includes the set of all tables that are defined in the stream's include_objects. */
@@ -2612,6 +2768,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2625,6 +2782,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2647,6 +2805,7 @@ export namespace MyNS {
 		 * Get v1/{name}:fetchStaticIps
 		 * @param {string} name Required. The resource name for the location for which static IPs should be returned. Must be in the format `projects/locations/*`.
 		 * @param {number} pageSize Maximum number of Ips to return, will likely not be specified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListStaticIps` call. will likely not be specified.
 		 * @return {FetchStaticIpsResponse} Successful response
 		 */
@@ -2691,6 +2850,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter request.
 		 * @param {string} orderBy Order by fields for the result.
 		 * @param {number} pageSize Maximum number of connection profiles to return. If unspecified, at most 50 connection profiles will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous `ListConnectionProfiles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnectionProfiles` must match the call that provided the page token.
 		 * @return {ListConnectionProfilesResponse} Successful response
 		 */
@@ -2727,6 +2887,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/objects
 		 * @param {string} parent Required. The parent stream that owns the collection of objects.
 		 * @param {number} pageSize Maximum number of objects to return. Default is 50. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous `ListStreamObjectsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListStreamObjectsRequest` must match the call that provided the page token.
 		 * @return {ListStreamObjectsResponse} Successful response
 		 */
@@ -2751,6 +2912,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter request.
 		 * @param {string} orderBy Order by fields for the result.
 		 * @param {number} pageSize Maximum number of private connectivity configurations to return. If unspecified, at most 50 private connectivity configurations that will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous `ListPrivateConnections` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPrivateConnections` must match the call that provided the page token.
 		 * @return {ListPrivateConnectionsResponse} Successful response
 		 */
@@ -2778,6 +2940,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter request.
 		 * @param {string} orderBy Order by fields for the result.
 		 * @param {number} pageSize Maximum number of Routes to return. The service may return fewer than this value. If unspecified, at most 50 Routes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous `ListRoutes` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRoutes` must match the call that provided the page token.
 		 * @return {ListRoutesResponse} Successful response
 		 */
@@ -2804,6 +2967,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter request.
 		 * @param {string} orderBy Order by fields for the result.
 		 * @param {number} pageSize Maximum number of streams to return. If unspecified, at most 50 streams will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous `ListStreams` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListStreams` must match the call that provided the page token.
 		 * @return {ListStreamsResponse} Successful response
 		 */

@@ -668,6 +668,7 @@ export namespace MyNS {
 		 * Delete templeton/v1/jobs/{jobId}
 		 * @param {string} user_name The user name used for running job.
 		 * @param {string} jobId The id of the job.
+		 *     Min length: 1
 		 * @return {JobDetailRootJsonObject} OK response definition.
 		 */
 		Job_Kill(user_name: string, jobId: string): Observable<JobDetailRootJsonObject> {
@@ -680,6 +681,7 @@ export namespace MyNS {
 		 * @param {string} user_name The user name used for running job.
 		 * @param {string} jobid JobId from where to list jobs.
 		 * @param {number} numrecords Number of jobs to fetch.
+		 *     Minimum: 1
 		 * @param {Job_ListShowall} showall If showall is set to 'true', the request will return all jobs the user has permission to view, not only the jobs belonging to the user.
 		 * @param {Job_ListFields} fields If fields set to '*', the request will return full details of the job. Currently the value can only be '*'.
 		 * @return {Array<JobListJsonObject>} OK response definition.

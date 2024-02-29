@@ -151,8 +151,11 @@ export namespace MyNS {
 		 * Returns the current pricing plan setting for an Application Insights component.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @return {ApplicationInsightsComponentPricingPlan} An Application Insights component pricing plan definition.
 		 */
@@ -164,8 +167,11 @@ export namespace MyNS {
 		 * Replace current pricing plan for an Application Insights component.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {ApplicationInsightsComponentPricingPlan} requestBody Properties that need to be specified to update current pricing plan for an Application Insights component.
 		 * @return {ApplicationInsightsComponentPricingPlan} Successful request when updating billing features for an Application Insights component. The updated current billing features are returned.
@@ -178,8 +184,11 @@ export namespace MyNS {
 		 * Update current pricing plan for an Application Insights component.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {ApplicationInsightsComponentPricingPlan} requestBody Properties that need to be specified to update current pricing plan for an Application Insights component.
 		 * @return {ApplicationInsightsComponentPricingPlan} Successful request when updating billing features for an Application Insights component. The updated current billing features are returned.

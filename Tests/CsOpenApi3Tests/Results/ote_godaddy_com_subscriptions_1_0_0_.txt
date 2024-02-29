@@ -570,7 +570,10 @@ namespace MyNS
 		/// <param name="productGroupKeys">Only return Subscriptions with the specified product groups</param>
 		/// <param name="includes">Optional details to be included in the response</param>
 		/// <param name="offset">Number of Subscriptions to skip before starting to return paged results (must be a multiple of the limit)</param>
-		/// <param name="limit">Number of Subscriptions to retrieve in this page, starting after offset</param>
+		/// <param name="limit">Number of Subscriptions to retrieve in this page, starting after offset
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="sort">Property name that will be used to sort results. "-" indicates descending</param>
 		/// <returns>Request was successful</returns>
 		public async Task<SubscriptionList> ListAsync(string[] productGroupKeys, string[] includes, int offset, int limit, ListSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

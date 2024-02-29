@@ -4,11 +4,17 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Color {
+
+		/** Type: double */
 		distance?: number | null;
 		hex?: string | null;
 		hsl?: ColorHsl;
 		lab?: ColorLab;
+
+		/** Type: double */
 		luminance?: number | null;
+
+		/** Type: double */
 		luminanceWCAG?: number | null;
 		name?: string | null;
 		requestedHex?: string | null;
@@ -18,9 +24,15 @@ export namespace MyNS {
 		swatchImg?: string | null;
 	}
 	export interface ColorFormProperties {
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		luminance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		luminanceWCAG: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		requestedHex: FormControl<string | null | undefined>,
@@ -44,13 +56,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorHsl {
+
+		/** Type: double */
 		h?: number | null;
+
+		/** Type: double */
 		l?: number | null;
+
+		/** Type: double */
 		s?: number | null;
 	}
 	export interface ColorHslFormProperties {
+
+		/** Type: double */
 		h: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		s: FormControl<number | null | undefined>,
 	}
 	export function CreateColorHslFormGroup() {
@@ -63,13 +87,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorLab {
+
+		/** Type: double */
 		a?: number | null;
+
+		/** Type: double */
 		b?: number | null;
+
+		/** Type: double */
 		l?: number | null;
 	}
 	export interface ColorLabFormProperties {
+
+		/** Type: double */
 		a: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		b: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l: FormControl<number | null | undefined>,
 	}
 	export function CreateColorLabFormGroup() {
@@ -82,13 +118,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorRgb {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		b?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		g?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		r?: number | null;
 	}
 	export interface ColorRgbFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		b: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		g: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		r: FormControl<number | null | undefined>,
 	}
 	export function CreateColorRgbFormGroup() {
@@ -104,7 +152,11 @@ export namespace MyNS {
 		hex?: string | null;
 		hsl?: ColorBaseHsl;
 		lab?: ColorBaseLab;
+
+		/** Type: double */
 		luminance?: number | null;
+
+		/** Type: double */
 		luminanceWCAG?: number | null;
 		name?: string | null;
 		rgb?: ColorBaseRgb;
@@ -112,7 +164,11 @@ export namespace MyNS {
 	}
 	export interface ColorBaseFormProperties {
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		luminance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		luminanceWCAG: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -127,13 +183,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorBaseHsl {
+
+		/** Type: double */
 		h?: number | null;
+
+		/** Type: double */
 		l?: number | null;
+
+		/** Type: double */
 		s?: number | null;
 	}
 	export interface ColorBaseHslFormProperties {
+
+		/** Type: double */
 		h: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		s: FormControl<number | null | undefined>,
 	}
 	export function CreateColorBaseHslFormGroup() {
@@ -146,13 +214,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorBaseLab {
+
+		/** Type: double */
 		a?: number | null;
+
+		/** Type: double */
 		b?: number | null;
+
+		/** Type: double */
 		l?: number | null;
 	}
 	export interface ColorBaseLabFormProperties {
+
+		/** Type: double */
 		a: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		b: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l: FormControl<number | null | undefined>,
 	}
 	export function CreateColorBaseLabFormGroup() {
@@ -165,13 +245,25 @@ export namespace MyNS {
 	}
 
 	export interface ColorBaseRgb {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		b?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		g?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		r?: number | null;
 	}
 	export interface ColorBaseRgbFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		b: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		g: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		r: FormControl<number | null | undefined>,
 	}
 	export function CreateColorBaseRgbFormGroup() {
@@ -216,6 +308,8 @@ export namespace MyNS {
 	}
 
 	export interface ListDescription {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorCount?: number | null;
 		description?: string | null;
 		key?: string | null;
@@ -225,6 +319,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface ListDescriptionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		colorCount: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,

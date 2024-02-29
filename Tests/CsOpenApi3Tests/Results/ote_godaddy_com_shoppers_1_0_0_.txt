@@ -761,7 +761,9 @@ namespace MyNS
 		/// <strong>Notes:</strong><ul><li>Shopper deletion is not supported in OTE</li><li>**shopperId** is **not the same** as **customerId**.  **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)</li></ul>
 		/// Delete v1/shoppers/{shopperId}
 		/// </summary>
-		/// <param name="shopperId">The ID of the shopper to delete. Must agree with the shopper id on the token or header, if present. *Note*: **shopperId** is **not the same** as **customerId**.  **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)</param>
+		/// <param name="shopperId">The ID of the shopper to delete. Must agree with the shopper id on the token or header, if present. *Note*: **shopperId** is **not the same** as **customerId**.  **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)
+		/// Max length: 10
+		// </param>
 		/// <param name="auditClientIp">The client IP of the user who originated the request leading to this call.</param>
 		public async Task DeleteAsync(string shopperId, string auditClientIp, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -912,7 +914,9 @@ namespace MyNS
 		/// <strong>Notes:</strong><ul><li>**shopperId** is **not the same** as **customerId**. **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)</li></ul>
 		/// GetStatus v1/shoppers/{shopperId}/status
 		/// </summary>
-		/// <param name="shopperId">The ID of the shopper to retrieve. Must agree with the shopper id on the token or header, if present</param>
+		/// <param name="shopperId">The ID of the shopper to retrieve. Must agree with the shopper id on the token or header, if present
+		/// Max length: 10
+		// </param>
 		/// <param name="auditClientIp">The client IP of the user who originated the request leading to this call.</param>
 		/// <returns>Request was successful</returns>
 		public async Task<ShopperStatus> GetStatusAsync(string shopperId, string auditClientIp, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -123,14 +123,20 @@ export namespace MyNS {
 	/** A compliance rule condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement. There can only be one rule with this type of condition per policy. */
 	export interface ApiLevelCondition {
 
-		/** The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero. */
+		/**
+		 * The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minApiLevel?: number | null;
 	}
 
 	/** A compliance rule condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement. There can only be one rule with this type of condition per policy. */
 	export interface ApiLevelConditionFormProperties {
 
-		/** The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero. */
+		/**
+		 * The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minApiLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateApiLevelConditionFormGroup() {
@@ -150,7 +156,10 @@ export namespace MyNS {
 		/** Package names of all packages that are associated with the particular user ID. In most cases, this will be a single package name, the package that has been assigned that user ID. If multiple application share a UID then all packages sharing UID will be included. */
 		packageNames?: Array<string>;
 
-		/** Process ID. */
+		/**
+		 * Process ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pid?: number | null;
 
 		/** Process name. */
@@ -162,7 +171,10 @@ export namespace MyNS {
 		/** Process start time. */
 		startTime?: string | null;
 
-		/** UID of the package. */
+		/**
+		 * UID of the package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid?: number | null;
 	}
 
@@ -172,7 +184,10 @@ export namespace MyNS {
 		/** SHA-256 hash of the base APK, in hexadecimal format. */
 		apkSha256Hash: FormControl<string | null | undefined>,
 
-		/** Process ID. */
+		/**
+		 * Process ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pid: FormControl<number | null | undefined>,
 
 		/** Process name. */
@@ -184,7 +199,10 @@ export namespace MyNS {
 		/** Process start time. */
 		startTime: FormControl<string | null | undefined>,
 
-		/** UID of the package. */
+		/**
+		 * UID of the package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateAppProcessInfoFormGroup() {
@@ -254,7 +272,10 @@ export namespace MyNS {
 		/** Track identifiers that the app version is published in. This does not include the production track (see production instead). */
 		trackIds?: Array<string>;
 
-		/** Unique increasing identifier for the app version. */
+		/**
+		 * Unique increasing identifier for the app version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be "1.4"). */
@@ -267,7 +288,10 @@ export namespace MyNS {
 		/** If the value is True, it indicates that this version is a production track. */
 		production: FormControl<boolean | null | undefined>,
 
-		/** Unique increasing identifier for the app version. */
+		/**
+		 * Unique increasing identifier for the app version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be "1.4"). */
@@ -325,7 +349,10 @@ export namespace MyNS {
 		/** The set of managed properties available to be pre-configured for the app. */
 		managedProperties?: Array<ManagedProperty>;
 
-		/** The minimum Android SDK necessary to run the app. */
+		/**
+		 * The minimum Android SDK necessary to run the app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minAndroidSdkVersion?: number | null;
 
 		/** The name of the app in the form enterprises/{enterprise}/applications/{package_name}. */
@@ -380,7 +407,10 @@ export namespace MyNS {
 		/** A link to an image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 512 x 512. */
 		iconUrl: FormControl<string | null | undefined>,
 
-		/** The minimum Android SDK necessary to run the app. */
+		/**
+		 * The minimum Android SDK necessary to run the app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minAndroidSdkVersion: FormControl<number | null | undefined>,
 
 		/** The name of the app in the form enterprises/{enterprise}/applications/{package_name}. */
@@ -618,7 +648,10 @@ export namespace MyNS {
 		/** The managed configurations template for the app, saved from the managed configurations iframe. */
 		managedConfigurationTemplate?: ManagedConfigurationTemplate;
 
-		/** The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy. */
+		/**
+		 * The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumVersionCode?: number | null;
 
 		/** The package name of the app. For example, com.google.android.youtube for the YouTube app. */
@@ -658,7 +691,10 @@ export namespace MyNS {
 		/** Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: *type* *JSON value* BOOL true or false STRING string INTEGER number CHOICE string MULTISELECT array of strings HIDDEN string BUNDLE_ARRAY array of objects */
 		managedConfiguration: FormControl<{[id: string]: any } | null | undefined>,
 
-		/** The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy. */
+		/**
+		 * The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumVersionCode: FormControl<number | null | undefined>,
 
 		/** The package name of the app. For example, com.google.android.youtube for the YouTube app. */
@@ -810,7 +846,10 @@ export namespace MyNS {
 		/** Whether the app is user facing. */
 		userFacingType?: ApplicationReportUserFacingType | null;
 
-		/** The app version code, which can be used to determine whether one version is more recent than another. */
+		/**
+		 * The app version code, which can be used to determine whether one version is more recent than another.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The app version as displayed to the user. */
@@ -841,7 +880,10 @@ export namespace MyNS {
 		/** Whether the app is user facing. */
 		userFacingType: FormControl<ApplicationReportUserFacingType | null | undefined>,
 
-		/** The app version code, which can be used to determine whether one version is more recent than another. */
+		/**
+		 * The app version code, which can be used to determine whether one version is more recent than another.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The app version as displayed to the user. */
@@ -1123,7 +1165,10 @@ export namespace MyNS {
 		/** Whether the installation event succeeded. */
 		success?: boolean | null;
 
-		/** The user in which the certificate install event happened. Only available for devices running Android 11 and above. */
+		/**
+		 * The user in which the certificate install event happened. Only available for devices running Android 11 and above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId?: number | null;
 	}
 
@@ -1136,7 +1181,10 @@ export namespace MyNS {
 		/** Whether the installation event succeeded. */
 		success: FormControl<boolean | null | undefined>,
 
-		/** The user in which the certificate install event happened. Only available for devices running Android 11 and above. */
+		/**
+		 * The user in which the certificate install event happened. Only available for devices running Android 11 and above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId: FormControl<number | null | undefined>,
 	}
 	export function CreateCertAuthorityInstalledEventFormGroup() {
@@ -1158,7 +1206,10 @@ export namespace MyNS {
 		/** Whether the removal succeeded. */
 		success?: boolean | null;
 
-		/** The user in which the certificate removal event occurred. Only available for devices running Android 11 and above. */
+		/**
+		 * The user in which the certificate removal event occurred. Only available for devices running Android 11 and above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId?: number | null;
 	}
 
@@ -1171,7 +1222,10 @@ export namespace MyNS {
 		/** Whether the removal succeeded. */
 		success: FormControl<boolean | null | undefined>,
 
-		/** The user in which the certificate removal event occurred. Only available for devices running Android 11 and above. */
+		/**
+		 * The user in which the certificate removal event occurred. Only available for devices running Android 11 and above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userId: FormControl<number | null | undefined>,
 	}
 	export function CreateCertAuthorityRemovedEventFormGroup() {
@@ -1211,7 +1265,10 @@ export namespace MyNS {
 		/** The destination IP address of the connect call. */
 		destinationIpAddress?: string | null;
 
-		/** The destination port of the connect call. */
+		/**
+		 * The destination port of the connect call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** The package name of the UID that performed the connect call. */
@@ -1224,7 +1281,10 @@ export namespace MyNS {
 		/** The destination IP address of the connect call. */
 		destinationIpAddress: FormControl<string | null | undefined>,
 
-		/** The destination port of the connect call. */
+		/**
+		 * The destination port of the connect call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** The package name of the UID that performed the connect call. */
@@ -1360,7 +1420,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is removed from the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyDestructionEvent {
 
-		/** UID of the application which owns the key. */
+		/**
+		 * UID of the application which owns the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid?: number | null;
 
 		/** Alias of the key. */
@@ -1373,7 +1436,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is removed from the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyDestructionEventFormProperties {
 
-		/** UID of the application which owns the key. */
+		/**
+		 * UID of the application which owns the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid: FormControl<number | null | undefined>,
 
 		/** Alias of the key. */
@@ -1395,7 +1461,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management.This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyGeneratedEvent {
 
-		/** UID of the application which generated the key. */
+		/**
+		 * UID of the application which generated the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid?: number | null;
 
 		/** Alias of the key. */
@@ -1408,7 +1477,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management.This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyGeneratedEventFormProperties {
 
-		/** UID of the application which generated the key. */
+		/**
+		 * UID of the application which generated the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid: FormControl<number | null | undefined>,
 
 		/** Alias of the key. */
@@ -1430,7 +1502,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is imported on the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyImportEvent {
 
-		/** UID of the application which imported the key */
+		/**
+		 * UID of the application which imported the key
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid?: number | null;
 
 		/** Alias of the key. */
@@ -1443,7 +1518,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is imported on the device either by the user or management. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyImportEventFormProperties {
 
-		/** UID of the application which imported the key */
+		/**
+		 * UID of the application which imported the key
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid: FormControl<number | null | undefined>,
 
 		/** Alias of the key. */
@@ -1465,7 +1543,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyIntegrityViolationEvent {
 
-		/** UID of the application which owns the key */
+		/**
+		 * UID of the application which owns the key
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid?: number | null;
 
 		/** Alias of the key. */
@@ -1475,7 +1556,10 @@ export namespace MyNS {
 	/** A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile. */
 	export interface KeyIntegrityViolationEventFormProperties {
 
-		/** UID of the application which owns the key */
+		/**
+		 * UID of the application which owns the key
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationUid: FormControl<number | null | undefined>,
 
 		/** Alias of the key. */
@@ -1591,7 +1675,10 @@ export namespace MyNS {
 	/** A lost mode event containing the device location and battery level as a percentage. */
 	export interface LostModeLocationEvent {
 
-		/** The battery level as a number between 0 and 100 inclusive */
+		/**
+		 * The battery level as a number between 0 and 100 inclusive
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batteryLevel?: number | null;
 
 		/** The device location containing the latitude and longitude. */
@@ -1601,7 +1688,10 @@ export namespace MyNS {
 	/** A lost mode event containing the device location and battery level as a percentage. */
 	export interface LostModeLocationEventFormProperties {
 
-		/** The battery level as a number between 0 and 100 inclusive */
+		/**
+		 * The battery level as a number between 0 and 100 inclusive
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batteryLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateLostModeLocationEventFormGroup() {
@@ -1615,20 +1705,32 @@ export namespace MyNS {
 	/** The device location containing the latitude and longitude. */
 	export interface Location {
 
-		/** The latitude position of the location */
+		/**
+		 * The latitude position of the location
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude position of the location */
+		/**
+		 * The longitude position of the location
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** The device location containing the latitude and longitude. */
 	export interface LocationFormProperties {
 
-		/** The latitude position of the location */
+		/**
+		 * The latitude position of the location
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude position of the location */
+		/**
+		 * The longitude position of the location
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationFormGroup() {
@@ -1762,10 +1864,16 @@ export namespace MyNS {
 		/** Package name of the admin app requesting the change. */
 		adminPackageName?: string | null;
 
-		/** User ID of the admin app from the which the change was requested. */
+		/**
+		 * User ID of the admin app from the which the change was requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adminUserId?: number | null;
 
-		/** User ID in which the change was requested in. */
+		/**
+		 * User ID in which the change was requested in.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetUserId?: number | null;
 	}
 
@@ -1775,10 +1883,16 @@ export namespace MyNS {
 		/** Package name of the admin app requesting the change. */
 		adminPackageName: FormControl<string | null | undefined>,
 
-		/** User ID of the admin app from the which the change was requested. */
+		/**
+		 * User ID of the admin app from the which the change was requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adminUserId: FormControl<number | null | undefined>,
 
-		/** User ID in which the change was requested in. */
+		/**
+		 * User ID in which the change was requested in.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetUserId: FormControl<number | null | undefined>,
 	}
 	export function CreateRemoteLockEventFormGroup() {
@@ -1831,7 +1945,10 @@ export namespace MyNS {
 	/** An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a device or work profile to displays a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified. */
 	export interface BlockAction {
 
-		/** Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays. */
+		/**
+		 * Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blockAfterDays?: number | null;
 
 		/** Specifies the scope of this BlockAction. Only applicable to devices that are company-owned. */
@@ -1841,7 +1958,10 @@ export namespace MyNS {
 	/** An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a device or work profile to displays a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified. */
 	export interface BlockActionFormProperties {
 
-		/** Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays. */
+		/**
+		 * Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blockAfterDays: FormControl<number | null | undefined>,
 
 		/** Specifies the scope of this BlockAction. Only applicable to devices that are company-owned. */
@@ -2409,26 +2529,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -2444,7 +2582,10 @@ export namespace MyNS {
 	/** A device owned by an enterprise. Unless otherwise noted, all fields are read-only and can't be modified by enterprises.devices.patch. */
 	export interface Device {
 
-		/** The API level of the Android platform version running on the device. */
+		/**
+		 * The API level of the Android platform version running on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel?: number | null;
 
 		/** Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device's policy. */
@@ -2553,7 +2694,10 @@ export namespace MyNS {
 	/** A device owned by an enterprise. Unless otherwise noted, all fields are read-only and can't be modified by enterprises.devices.patch. */
 	export interface DeviceFormProperties {
 
-		/** The API level of the Android platform version running on the device. */
+		/**
+		 * The API level of the Android platform version running on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel: FormControl<number | null | undefined>,
 
 		/** The name of the policy currently applied to the device. */
@@ -2635,34 +2779,61 @@ export namespace MyNS {
 	/** Requirements for the password used to unlock a device. */
 	export interface PasswordRequirements {
 
-		/** Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction. */
+		/**
+		 * Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumFailedPasswordsForWipe?: number | null;
 
 		/** Password expiration timeout. */
 		passwordExpirationTimeout?: string | null;
 
-		/** The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction. */
+		/**
+		 * The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordHistoryLength?: number | null;
 
-		/** The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX. */
+		/**
+		 * The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLength?: number | null;
 
-		/** Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLetters?: number | null;
 
-		/** Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLowerCase?: number | null;
 
-		/** Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumNonLetter?: number | null;
 
-		/** Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumNumeric?: number | null;
 
-		/** Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumSymbols?: number | null;
 
-		/** Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumUpperCase?: number | null;
 
 		/** The required password quality. */
@@ -2681,34 +2852,61 @@ export namespace MyNS {
 	/** Requirements for the password used to unlock a device. */
 	export interface PasswordRequirementsFormProperties {
 
-		/** Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction. */
+		/**
+		 * Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumFailedPasswordsForWipe: FormControl<number | null | undefined>,
 
 		/** Password expiration timeout. */
 		passwordExpirationTimeout: FormControl<string | null | undefined>,
 
-		/** The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction. */
+		/**
+		 * The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordHistoryLength: FormControl<number | null | undefined>,
 
-		/** The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX. */
+		/**
+		 * The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLength: FormControl<number | null | undefined>,
 
-		/** Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLetters: FormControl<number | null | undefined>,
 
-		/** Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumLowerCase: FormControl<number | null | undefined>,
 
-		/** Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumNonLetter: FormControl<number | null | undefined>,
 
-		/** Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumNumeric: FormControl<number | null | undefined>,
 
-		/** Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumSymbols: FormControl<number | null | undefined>,
 
-		/** Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX. */
+		/**
+		 * Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordMinimumUpperCase: FormControl<number | null | undefined>,
 
 		/** The required password quality. */
@@ -2822,50 +3020,80 @@ export namespace MyNS {
 	/** Device display information. */
 	export interface Display {
 
-		/** Display density expressed as dots-per-inch. */
+		/**
+		 * Display density expressed as dots-per-inch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		density?: number | null;
 
-		/** Unique display id. */
+		/**
+		 * Unique display id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayId?: number | null;
 
-		/** Display height in pixels. */
+		/**
+		 * Display height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Name of the display. */
 		name?: string | null;
 
-		/** Refresh rate of the display in frames per second. */
+		/**
+		 * Refresh rate of the display in frames per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshRate?: number | null;
 
 		/** State of the display. */
 		state?: DisplayState | null;
 
-		/** Display width in pixels. */
+		/**
+		 * Display width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Device display information. */
 	export interface DisplayFormProperties {
 
-		/** Display density expressed as dots-per-inch. */
+		/**
+		 * Display density expressed as dots-per-inch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		density: FormControl<number | null | undefined>,
 
-		/** Unique display id. */
+		/**
+		 * Unique display id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayId: FormControl<number | null | undefined>,
 
-		/** Display height in pixels. */
+		/**
+		 * Display height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Name of the display. */
 		name: FormControl<string | null | undefined>,
 
-		/** Refresh rate of the display in frames per second. */
+		/**
+		 * Refresh rate of the display in frames per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshRate: FormControl<number | null | undefined>,
 
 		/** State of the display. */
 		state: FormControl<DisplayState | null | undefined>,
 
-		/** Display width in pixels. */
+		/**
+		 * Display width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDisplayFormGroup() {
@@ -3287,7 +3515,10 @@ export namespace MyNS {
 	/** A power management event. */
 	export interface PowerManagementEvent {
 
-		/** For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage. */
+		/**
+		 * For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage.
+		 * Type: float
+		 */
 		batteryLevel?: number | null;
 
 		/** The creation time of the event. */
@@ -3300,7 +3531,10 @@ export namespace MyNS {
 	/** A power management event. */
 	export interface PowerManagementEventFormProperties {
 
-		/** For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage. */
+		/**
+		 * For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage.
+		 * Type: float
+		 */
 		batteryLevel: FormControl<number | null | undefined>,
 
 		/** The creation time of the event. */
@@ -3382,7 +3616,10 @@ export namespace MyNS {
 		/** Build time. */
 		androidBuildTime?: string | null;
 
-		/** The Android Device Policy app version code. */
+		/**
+		 * The Android Device Policy app version code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidDevicePolicyVersionCode?: number | null;
 
 		/** The Android Device Policy app version as displayed to the user. */
@@ -3419,7 +3656,10 @@ export namespace MyNS {
 		/** Build time. */
 		androidBuildTime: FormControl<string | null | undefined>,
 
-		/** The Android Device Policy app version code. */
+		/**
+		 * The Android Device Policy app version code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidDevicePolicyVersionCode: FormControl<number | null | undefined>,
 
 		/** The Android Device Policy app version as displayed to the user. */
@@ -3737,7 +3977,10 @@ export namespace MyNS {
 		/** The name of the enterprise which is generated by the server during creation, in the form enterprises/{enterpriseId}. */
 		name?: string | null;
 
-		/** A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive. */
+		/**
+		 * A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryColor?: number | null;
 
 		/** The topic which Pub/Sub notifications are published to, in the form projects/{project}/topics/{topic}. This field is only required if Pub/Sub notifications are enabled. */
@@ -3762,7 +4005,10 @@ export namespace MyNS {
 		/** The name of the enterprise which is generated by the server during creation, in the form enterprises/{enterpriseId}. */
 		name: FormControl<string | null | undefined>,
 
-		/** A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive. */
+		/**
+		 * A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryColor: FormControl<number | null | undefined>,
 
 		/** The topic which Pub/Sub notifications are published to, in the form projects/{project}/topics/{topic}. This field is only required if Pub/Sub notifications are enabled. */
@@ -4135,7 +4381,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -4148,7 +4397,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -4319,7 +4571,10 @@ export namespace MyNS {
 		/** Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices. */
 		microphoneAccess?: PolicyMicrophoneAccess | null;
 
-		/** The minimum allowed Android API level. */
+		/**
+		 * The minimum allowed Android API level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumApiLevel?: number | null;
 
 		/** Whether configuring mobile networks is disabled. */
@@ -4548,7 +4803,10 @@ export namespace MyNS {
 		/** Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices. */
 		microphoneAccess: FormControl<PolicyMicrophoneAccess | null | undefined>,
 
-		/** The minimum allowed Android API level. */
+		/**
+		 * The minimum allowed Android API level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumApiLevel: FormControl<number | null | undefined>,
 
 		/** Whether configuring mobile networks is disabled. */
@@ -4775,7 +5033,10 @@ export namespace MyNS {
 		/** If true, the camera is disabled on the personal profile. */
 		cameraDisabled?: boolean | null;
 
-		/** Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter. */
+		/**
+		 * Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDaysWithWorkOff?: number | null;
 
 		/** Policy applied to applications in the personal profile. */
@@ -4794,7 +5055,10 @@ export namespace MyNS {
 		/** If true, the camera is disabled on the personal profile. */
 		cameraDisabled: FormControl<boolean | null | undefined>,
 
-		/** Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter. */
+		/**
+		 * Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDaysWithWorkOff: FormControl<number | null | undefined>,
 
 		/** Used together with personalApplications to control how apps in the personal profile are allowed or blocked. */
@@ -4881,7 +5145,10 @@ export namespace MyNS {
 		/** Whether the factory-reset protection data is preserved on the device. This setting doesn’t apply to work profiles. */
 		preserveFrp?: boolean | null;
 
-		/** Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays. */
+		/**
+		 * Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wipeAfterDays?: number | null;
 	}
 
@@ -4891,7 +5158,10 @@ export namespace MyNS {
 		/** Whether the factory-reset protection data is preserved on the device. This setting doesn’t apply to work profiles. */
 		preserveFrp: FormControl<boolean | null | undefined>,
 
-		/** Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays. */
+		/**
+		 * Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wipeAfterDays: FormControl<number | null | undefined>,
 	}
 	export function CreateWipeActionFormGroup() {
@@ -4917,7 +5187,10 @@ export namespace MyNS {
 		/** The URI of the PAC script used to configure the proxy. */
 		pacUri?: string | null;
 
-		/** The port of the direct proxy. */
+		/**
+		 * The port of the direct proxy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -4930,7 +5203,10 @@ export namespace MyNS {
 		/** The URI of the PAC script used to configure the proxy. */
 		pacUri: FormControl<string | null | undefined>,
 
-		/** The port of the direct proxy. */
+		/**
+		 * The port of the direct proxy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateProxyInfoFormGroup() {
@@ -5056,13 +5332,19 @@ export namespace MyNS {
 	/** Configuration for managing system updates */
 	export interface SystemUpdate {
 
-		/** If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time. */
+		/**
+		 * If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endMinutes?: number | null;
 
 		/** An annually repeating time period in which over-the-air (OTA) system updates are postponed to freeze the OS version running on a device. To prevent freezing the device indefinitely, each freeze period must be separated by at least 60 days. */
 		freezePeriods?: Array<FreezePeriod>;
 
-		/** If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive. */
+		/**
+		 * If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startMinutes?: number | null;
 
 		/** The type of system update to configure. */
@@ -5072,10 +5354,16 @@ export namespace MyNS {
 	/** Configuration for managing system updates */
 	export interface SystemUpdateFormProperties {
 
-		/** If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time. */
+		/**
+		 * If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endMinutes: FormControl<number | null | undefined>,
 
-		/** If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive. */
+		/**
+		 * If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startMinutes: FormControl<number | null | undefined>,
 
 		/** The type of system update to configure. */
@@ -5215,7 +5503,10 @@ export namespace MyNS {
 	/** Information about a device that is available during setup. */
 	export interface ProvisioningInfo {
 
-		/** The API level of the Android platform version running on the device. */
+		/**
+		 * The API level of the Android platform version running on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel?: number | null;
 
 		/** The brand of the device. For example, Google. */
@@ -5240,7 +5531,10 @@ export namespace MyNS {
 	/** Information about a device that is available during setup. */
 	export interface ProvisioningInfoFormProperties {
 
-		/** The API level of the Android platform version running on the device. */
+		/**
+		 * The API level of the Android platform version running on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiLevel: FormControl<number | null | undefined>,
 
 		/** The brand of the device. For example, Google. */
@@ -5352,6 +5646,7 @@ export namespace MyNS {
 		 * Lists EMM-managed enterprises. Only BASIC fields are returned.
 		 * Get v1/enterprises
 		 * @param {number} pageSize The requested page size. The actual page size may be fixed to a min or max value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @param {string} projectId Required. The Cloud project ID of the EMM managing the enterprises.
 		 * @param {Androidmanagement_enterprises_listView} view Specifies which Enterprise fields to return. This method only supports BASIC.
@@ -5403,6 +5698,7 @@ export namespace MyNS {
 		 * @param {string} name Required. The identifier that Android Device Policy passes to the 3P sign-in page in the form of provisioningInfo/{provisioning_info}.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ProvisioningInfo} Successful response
 		 */
@@ -5446,6 +5742,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/devices
 		 * @param {string} parent The name of the enterprise in the form enterprises/{enterpriseId}.
 		 * @param {number} pageSize The requested page size. The actual page size may be fixed to a min or max value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListDevicesResponse} Successful response
 		 */
@@ -5458,6 +5755,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/enrollmentTokens
 		 * @param {string} parent Required. The name of the enterprise in the form enterprises/{enterpriseId}.
 		 * @param {number} pageSize The requested page size. The service may return fewer than this value. If unspecified, at most 10 items will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListEnrollmentTokensResponse} Successful response
 		 */
@@ -5480,6 +5778,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/policies
 		 * @param {string} parent The name of the enterprise in the form enterprises/{enterpriseId}.
 		 * @param {number} pageSize The requested page size. The actual page size may be fixed to a min or max value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListPoliciesResponse} Successful response
 		 */
@@ -5492,6 +5791,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/webApps
 		 * @param {string} parent The name of the enterprise in the form enterprises/{enterpriseId}.
 		 * @param {number} pageSize The requested page size. This is a hint and the actual page size in the response may be different.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListWebAppsResponse} Successful response
 		 */

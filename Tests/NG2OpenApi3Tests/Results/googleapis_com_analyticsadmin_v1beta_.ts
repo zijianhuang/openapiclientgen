@@ -27,7 +27,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1betaNumericValue {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Integer value */
@@ -37,7 +40,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface GoogleAnalyticsAdminV1betaNumericValueFormProperties {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Integer value */
@@ -479,20 +485,32 @@ export namespace MyNS {
 	/** Current state for a particular quota group. */
 	export interface GoogleAnalyticsAdminV1betaAccessQuotaStatus {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed?: number | null;
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining?: number | null;
 	}
 
 	/** Current state for a particular quota group. */
 	export interface GoogleAnalyticsAdminV1betaAccessQuotaStatusFormProperties {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed: FormControl<number | null | undefined>,
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1betaAccessQuotaStatusFormGroup() {
@@ -866,7 +884,10 @@ export namespace MyNS {
 		/** When a conversion event for this event_name has no set currency, this currency will be applied as the default. Must be in ISO 4217 currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for more information. */
 		currencyCode?: string | null;
 
-		/** This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset. */
+		/**
+		 * This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -876,7 +897,10 @@ export namespace MyNS {
 		/** When a conversion event for this event_name has no set currency, this currency will be applied as the default. Must be in ISO 4217 currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for more information. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset. */
+		/**
+		 * This value will be used to populate the value for all conversions of the specified event_name where the event "value" parameter is unset.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1betaConversionEventDefaultConversionValueFormGroup() {
@@ -1920,7 +1944,10 @@ export namespace MyNS {
 		/** Current state of all quotas for this Analytics property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors. */
 		quota?: GoogleAnalyticsAdminV1betaAccessQuota;
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** Rows of dimension value combinations and metric values in the report. */
@@ -1930,7 +1957,10 @@ export namespace MyNS {
 	/** The customized Data Access Record Report response. */
 	export interface GoogleAnalyticsAdminV1betaRunAccessReportResponseFormProperties {
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAnalyticsAdminV1betaRunAccessReportResponseFormGroup() {
@@ -1956,7 +1986,10 @@ export namespace MyNS {
 		/** Optional. If set, only return changes made before this time (inclusive). */
 		latestChangeTime?: string | null;
 
-		/** Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum). */
+		/**
+		 * Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A page token, received from a previous `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchChangeHistoryEvents` must match the call that provided the page token. */
@@ -1978,7 +2011,10 @@ export namespace MyNS {
 		/** Optional. If set, only return changes made before this time (inclusive). */
 		latestChangeTime: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum). */
+		/**
+		 * Optional. The maximum number of ChangeHistoryEvent items to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 items will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A page token, received from a previous `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchChangeHistoryEvents` must match the call that provided the page token. */
@@ -2045,6 +2081,7 @@ export namespace MyNS {
 		 * Returns summaries of all accounts accessible by the caller.
 		 * Get v1beta/accountSummaries
 		 * @param {number} pageSize The maximum number of AccountSummary resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccountSummaries` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccountSummaries` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListAccountSummariesResponse} Successful response
 		 */
@@ -2056,6 +2093,7 @@ export namespace MyNS {
 		 * Returns all accounts accessible by the caller. Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.
 		 * Get v1beta/accounts
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListAccounts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccounts` must match the call that provided the page token.
 		 * @param {boolean} showDeleted Whether to include soft-deleted (ie: "trashed") Accounts in the results. Accounts can be inspected to determine whether they are deleted or not.
 		 * @return {GoogleAnalyticsAdminV1betaListAccountsResponse} Successful response
@@ -2078,6 +2116,7 @@ export namespace MyNS {
 		 * Get v1beta/properties
 		 * @param {string} filter Required. An expression for filtering the results of the request. Fields eligible for filtering are: `parent:`(The resource name of the parent account/property) or `ancestor:`(The resource name of the parent account) or `firebase_project:`(The id or number of the linked firebase project). Some examples of filters: ``` | Filter | Description | |-----------------------------|-------------------------------------------| | parent:accounts/123 | The account with account id: 123. | | parent:properties/123 | The property with property id: 123. | | ancestor:accounts/123 | The account with account id: 123. | | firebase_project:project-id | The firebase project with id: project-id. | | firebase_project:123 | The firebase project with number: 123. | ```
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListProperties` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListProperties` must match the call that provided the page token.
 		 * @param {boolean} showDeleted Whether to include soft-deleted (ie: "trashed") Properties in the results. Properties can be inspected to determine whether they are deleted or not.
 		 * @return {GoogleAnalyticsAdminV1betaListPropertiesResponse} Successful response
@@ -2161,6 +2200,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/conversionEvents
 		 * @param {string} parent Required. The resource name of the parent property. Example: 'properties/123'
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListConversionEvents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConversionEvents` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListConversionEventsResponse} Successful response
 		 */
@@ -2183,6 +2223,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/customDimensions
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCustomDimensions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomDimensions` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListCustomDimensionsResponse} Successful response
 		 */
@@ -2205,6 +2246,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/customMetrics
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCustomMetrics` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomMetrics` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListCustomMetricsResponse} Successful response
 		 */
@@ -2227,6 +2269,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/dataStreams
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDataStreams` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDataStreams` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListDataStreamsResponse} Successful response
 		 */
@@ -2249,6 +2292,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/firebaseLinks
 		 * @param {string} parent Required. Format: properties/{property_id} Example: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListFirebaseLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListFirebaseLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListFirebaseLinksResponse} Successful response
 		 */
@@ -2271,6 +2315,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/googleAdsLinks
 		 * @param {string} parent Required. Example format: properties/1234
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListGoogleAdsLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGoogleAdsLinks` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse} Successful response
 		 */
@@ -2293,6 +2338,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/measurementProtocolSecrets
 		 * @param {string} parent Required. The resource name of the parent stream. Format: properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets
 		 * @param {number} pageSize The maximum number of resources to return. If unspecified, at most 10 resources will be returned. The maximum value is 10. Higher values will be coerced to the maximum.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListMeasurementProtocolSecrets` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMeasurementProtocolSecrets` must match the call that provided the page token.
 		 * @return {GoogleAnalyticsAdminV1betaListMeasurementProtocolSecretsResponse} Successful response
 		 */

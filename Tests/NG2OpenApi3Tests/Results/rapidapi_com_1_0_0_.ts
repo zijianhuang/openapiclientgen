@@ -66,10 +66,14 @@ export namespace MyNS {
 		moon?: GetAdvancedMoonPhaseDataReturnMoon;
 		moon_phases?: GetAdvancedMoonPhaseDataReturnMoon_phases;
 		sun?: GetAdvancedMoonPhaseDataReturnSun;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnFormGroup() {
@@ -81,17 +85,31 @@ export namespace MyNS {
 	}
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon {
+
+		/** Type: double */
 		age_days?: number | null;
 		emoji?: string | null;
 		illumination?: string | null;
 		lunar_cycle?: string | null;
+
+		/** Type: double */
 		moon_altitude?: number | null;
+
+		/** Type: double */
 		moon_azimuth?: number | null;
+
+		/** Type: double */
 		moon_distance?: number | null;
+
+		/** Type: double */
 		moon_parallactic_angle?: number | null;
 		moonrise?: string | null;
+
+		/** Type: double */
 		moonrise_timestamp?: number | null;
 		moonset?: string | null;
+
+		/** Type: double */
 		moonset_timestamp?: number | null;
 		phase?: string | null;
 		phase_name?: string | null;
@@ -99,17 +117,31 @@ export namespace MyNS {
 		zodiac_sign?: string | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoonFormProperties {
+
+		/** Type: double */
 		age_days: FormControl<number | null | undefined>,
 		emoji: FormControl<string | null | undefined>,
 		illumination: FormControl<string | null | undefined>,
 		lunar_cycle: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		moon_altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		moon_azimuth: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		moon_distance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		moon_parallactic_angle: FormControl<number | null | undefined>,
 		moonrise: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		moonrise_timestamp: FormControl<number | null | undefined>,
 		moonset: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		moonset_timestamp: FormControl<number | null | undefined>,
 		phase: FormControl<string | null | undefined>,
 		phase_name: FormControl<string | null | undefined>,
@@ -166,12 +198,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterCurrent {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ago?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterCurrentFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ago: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterCurrentFormGroup() {
@@ -185,12 +225,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterNext {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ahead?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterNextFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ahead: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesFirst_quarterNextFormGroup() {
@@ -216,12 +264,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonCurrent {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ago?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonCurrentFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ago: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonCurrentFormGroup() {
@@ -235,12 +291,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonNext {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ahead?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonNextFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ahead: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesFull_moonNextFormGroup() {
@@ -266,12 +330,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterCurrent {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ago?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterCurrentFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ago: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterCurrentFormGroup() {
@@ -285,12 +357,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterNext {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ahead?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterNextFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ahead: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesLast_quarterNextFormGroup() {
@@ -316,12 +396,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonCurrent {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ago?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonCurrentFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ago: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonCurrentFormGroup() {
@@ -335,12 +423,20 @@ export namespace MyNS {
 
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonNext {
 		datestamp?: string | null;
+
+		/** Type: double */
 		days_ahead?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonNextFormProperties {
 		datestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		days_ahead: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAdvancedMoonPhaseDataReturnMoon_phasesNew_moonNextFormGroup() {
@@ -355,22 +451,42 @@ export namespace MyNS {
 	export interface GetAdvancedMoonPhaseDataReturnSun {
 		day_length?: string | null;
 		solar_noon?: string | null;
+
+		/** Type: double */
 		sun_altitude?: number | null;
+
+		/** Type: double */
 		sun_azimuth?: number | null;
+
+		/** Type: double */
 		sun_distance?: number | null;
+
+		/** Type: double */
 		sunrise?: number | null;
 		sunrise_timestamp?: string | null;
+
+		/** Type: double */
 		sunset?: number | null;
 		sunset_timestamp?: string | null;
 	}
 	export interface GetAdvancedMoonPhaseDataReturnSunFormProperties {
 		day_length: FormControl<string | null | undefined>,
 		solar_noon: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		sun_altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sun_azimuth: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sun_distance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sunrise: FormControl<number | null | undefined>,
 		sunrise_timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		sunset: FormControl<number | null | undefined>,
 		sunset_timestamp: FormControl<string | null | undefined>,
 	}
@@ -390,13 +506,21 @@ export namespace MyNS {
 	}
 
 	export interface GetBasicMoonPhaseDataReturn {
+
+		/** Type: double */
 		days_until_next_full_moon?: number | null;
+
+		/** Type: double */
 		days_until_next_new_moon?: number | null;
 		phase_name?: string | null;
 		stage?: string | null;
 	}
 	export interface GetBasicMoonPhaseDataReturnFormProperties {
+
+		/** Type: double */
 		days_until_next_full_moon: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		days_until_next_new_moon: FormControl<number | null | undefined>,
 		phase_name: FormControl<string | null | undefined>,
 		stage: FormControl<string | null | undefined>,

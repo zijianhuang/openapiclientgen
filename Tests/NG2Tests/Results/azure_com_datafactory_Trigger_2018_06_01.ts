@@ -394,15 +394,15 @@ export namespace MyNS {
 		/**
 		 * Timespan applied to the start time of a tumbling window when evaluating dependency.
 		 * Required
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		offset: string;
 
 		/**
 		 * The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		size?: string | null;
 	}
@@ -413,15 +413,15 @@ export namespace MyNS {
 		/**
 		 * Timespan applied to the start time of a tumbling window when evaluating dependency.
 		 * Required
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		offset: FormControl<string | null | undefined>,
 
 		/**
 		 * The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		size: FormControl<string | null | undefined>,
 	}
@@ -591,15 +591,15 @@ export namespace MyNS {
 
 		/**
 		 * Timespan applied to the start time of a tumbling window when evaluating dependency.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		offset?: string | null;
 
 		/**
 		 * The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		size?: string | null;
 	}
@@ -609,15 +609,15 @@ export namespace MyNS {
 
 		/**
 		 * Timespan applied to the start time of a tumbling window when evaluating dependency.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		offset: FormControl<string | null | undefined>,
 
 		/**
 		 * The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		 * Max length: 15
 		 * Min length: 8
+		 * Max length: 15
 		 */
 		size: FormControl<string | null | undefined>,
 	}

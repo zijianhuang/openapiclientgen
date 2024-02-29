@@ -9726,7 +9726,10 @@ namespace MyNS
 		/// V1DeltasFundingsGetByPayorIdAndUpdatedSinceAndPageAndPageSize v1/deltas/fundings
 		/// </summary>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Funding Account Deltas</returns>
 		public async Task<PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse> V1DeltasFundingsGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9764,7 +9767,10 @@ namespace MyNS
 		/// <param name="payorId">The Payor ID to find associated Payments</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Details of Payment Changes</returns>
 		public async Task<PaymentDeltaResponseV1> V1DeltasPaymentsGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9931,7 +9937,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc```
 		///Default is no sort. The supported sort fields are: dateTime and amount.
 		///</param>
@@ -10441,7 +10450,10 @@ namespace MyNS
 		/// V1WebhooksGetByPageAndPageSizeAndPayorId v1/webhooks
 		/// </summary>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="payorId">The Payor ID</param>
 		/// <returns>Webhook response</returns>
 		public async Task<WebhooksResponse> V1WebhooksGetByPageAndPageSizeAndPayorIdAsync(int page, int pageSize, string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10641,7 +10653,10 @@ namespace MyNS
 		/// <param name="currency">The ISO 4217 currency code</param>
 		/// <param name="type">The type of funding account.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name.</param>
 		/// <returns>Get Funding Accounts Response</returns>
 		public async Task<ListFundingAccountsResponseV2> V2FundingAccountsGetByPayorIdAndNameAndCountryAndCurrencyAndTypeAndPageAndPageSizeAndSortAndSensitiveAsync(string payorId, string name, string country, string currency, string type, int page, int pageSize, string sort, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10786,7 +10801,10 @@ namespace MyNS
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="fundingAccountId">The funding account ID</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields e.g. ?sort=name:asc
 		///Default is name:asc
 		///The supported sort fields are - fundingRef, name, balance
@@ -10971,7 +10989,10 @@ namespace MyNS
 		/// <param name="entityId">The entityId of the User.</param>
 		/// <param name="payeeType">The Type of the Payee entity. Either COMPANY or INDIVIDUAL.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=email:asc,lastName:asc)
 		///Default is email:asc 'name'
 		///The supported sort fields are - email, lastNmae.
@@ -11984,7 +12005,10 @@ namespace MyNS
 		/// <param name="submittedDateTo">The submitted date to range filter. Format is yyyy-MM-dd.</param>
 		/// <param name="paymentMemo">The payment memo filter. This filters via a case insensitive substring match.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId
 		///The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency,
 		///routingNumber, accountNumber, remoteId, submittedDateTime and status
@@ -12090,7 +12114,10 @@ namespace MyNS
 		/// <param name="submittedDateFrom">The submitted date from range filter. Format is yyyy-MM-dd.</param>
 		/// <param name="submittedDateTo">The submitted date to range filter. Format is yyyy-MM-dd.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc)
 		///Default is submittedDateTime:asc
 		///The supported sort fields are: submittedDateTime, instructedDateTime, status.
@@ -12139,7 +12166,10 @@ namespace MyNS
 		/// <param name="submittedDateFrom">The submitted date from range filter. Format is yyyy-MM-dd.</param>
 		/// <param name="submittedDateTo">The submitted date to range filter. Format is yyyy-MM-dd.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort"><p>List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId</p>
 		///<p>The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency,
 		///routingNumber, accountNumber, remoteId, submittedDateTime and status</p>
@@ -12368,7 +12398,10 @@ namespace MyNS
 		///* WIRE
 		///</param>
 		/// <param name="paymentMemo">Payment Memo of the Payment</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <returns>Payments for payout</returns>
 		public async Task<PagedPaymentsResponseV3> V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageAsync(string payoutId, V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageStatus status, string remoteId, string payorPaymentId, string sourceAccountName, V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageTransmissionType transmissionType, string paymentMemo, int pageSize, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12507,7 +12540,10 @@ namespace MyNS
 		/// <param name="includeUserDeleted">A filter for retrieving both active accounts and user deleted ones</param>
 		/// <param name="type">The type of source account.</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields e.g. ?sort=name:asc
 		///Default is name:asc
 		///The supported sort fields are - fundingRef, name, balance
@@ -13124,7 +13160,10 @@ namespace MyNS
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="sourceAccountName">The source account name</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc```
 		///Default is no sort. The supported sort fields are: dateTime and amount.
 		///</param>
@@ -13193,7 +13232,10 @@ namespace MyNS
 		/// <param name="scheduleStatus">Payout Schedule Status</param>
 		/// <param name="postInstructFxStatus">The status of the post instruct FX step if one was required for the payment</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc
 		///The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency,
 		///routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId
@@ -13348,7 +13390,10 @@ namespace MyNS
 		/// <param name="scheduledForDateTo">Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.</param>
 		/// <param name="scheduleStatus">Payout Schedule Status</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc)
 		///Default is submittedDateTime:asc
 		///The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor
@@ -13409,7 +13454,10 @@ namespace MyNS
 		///* GACHO
 		///</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId
 		///The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency,
 		///routingNumber, accountNumber, remoteId, submittedDateTime and status
@@ -13511,7 +13559,10 @@ namespace MyNS
 		/// <param name="payorId">The Payor ID to find associated Payments</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
-		/// <param name="pageSize">The number of results to return in a page</param>
+		/// <param name="pageSize">The number of results to return in a page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Details of Payment Changes</returns>
 		public async Task<PaymentDeltaResponse> V4PaymentsDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

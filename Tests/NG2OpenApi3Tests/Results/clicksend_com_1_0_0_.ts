@@ -871,6 +871,7 @@ export namespace MyNS {
 		/**
 		 * The allowed email address id.
 		 * Required
+		 * Type: double
 		 */
 		from_email_address_id: number;
 
@@ -883,6 +884,7 @@ export namespace MyNS {
 		/**
 		 * The list id you want to access.
 		 * Required
+		 * Type: double
 		 */
 		list_id: number;
 
@@ -892,7 +894,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/**
@@ -904,6 +909,7 @@ export namespace MyNS {
 		/**
 		 * The template id you want to use.
 		 * Required
+		 * Type: double
 		 */
 		template_id: number;
 	}
@@ -912,6 +918,7 @@ export namespace MyNS {
 		/**
 		 * The allowed email address id.
 		 * Required
+		 * Type: double
 		 */
 		from_email_address_id: FormControl<number | null | undefined>,
 
@@ -924,6 +931,7 @@ export namespace MyNS {
 		/**
 		 * The list id you want to access.
 		 * Required
+		 * Type: double
 		 */
 		list_id: FormControl<number | null | undefined>,
 
@@ -933,7 +941,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/**
@@ -945,6 +956,7 @@ export namespace MyNS {
 		/**
 		 * The template id you want to use.
 		 * Required
+		 * Type: double
 		 */
 		template_id: FormControl<number | null | undefined>,
 	}
@@ -1107,6 +1119,7 @@ export namespace MyNS {
 		/**
 		 * Your address postal code.
 		 * Required
+		 * Type: double
 		 */
 		address_postal_code: number;
 
@@ -1148,6 +1161,7 @@ export namespace MyNS {
 		/**
 		 * Your address postal code.
 		 * Required
+		 * Type: double
 		 */
 		address_postal_code: FormControl<number | null | undefined>,
 
@@ -1193,6 +1207,7 @@ export namespace MyNS {
 		/**
 		 * Enable
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
@@ -1225,6 +1240,7 @@ export namespace MyNS {
 		/**
 		 * Enable
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
@@ -1262,12 +1278,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
 		/**
 		 * Match Type. 0=All reports, 1=Only failed, 2=Only successful.
 		 * Required
+		 * Type: double
 		 */
 		match_type: number;
 
@@ -1294,12 +1312,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
 		/**
 		 * Match Type. 0=All reports, 1=Only failed, 2=Only successful.
 		 * Required
+		 * Type: double
 		 */
 		match_type: FormControl<number | null | undefined>,
 
@@ -1340,7 +1360,10 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. */
 		from_email?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
 		/**
@@ -1349,7 +1372,10 @@ export namespace MyNS {
 		 */
 		messages: Array<string>;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -1381,10 +1407,16 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. */
 		from_email: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -1467,7 +1499,9 @@ export namespace MyNS {
 		 * Account Usage
 		 * Get account/usage/{year}/{month}/{type}
 		 * @param {number} year Your account usage year.
+		 *     Type: double
 		 * @param {number} month Your account usage month.
+		 *     Type: double
 		 * @param {string} type The account type. Value can only be either email or subaccount.
 		 * @return {void} OK
 		 */
@@ -1497,6 +1531,7 @@ export namespace MyNS {
 		 * Delete a Rule
 		 * Delete automations/email/receipt/{rule_id}
 		 * @param {number} rule_id The email receipt rule id you want to delete.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsEmailReceipt_rule_idDelete(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1507,6 +1542,7 @@ export namespace MyNS {
 		 * Get a Specific Rule
 		 * Get automations/email/receipt/{rule_id}
 		 * @param {number} rule_id The rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsEmailReceipt_rule_idGet(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1517,6 +1553,7 @@ export namespace MyNS {
 		 * Update a Rule
 		 * Put automations/email/receipt/{rule_id}
 		 * @param {number} rule_id The email receipt rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsEmailReceipt_rule_idPut(rule_id: number, requestBody: AutomationsEmailReceipt_rule_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1545,6 +1582,7 @@ export namespace MyNS {
 		 * Delete a rule
 		 * Delete automations/fax/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Fax inbound rule id
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxInbound_inbound_rule_idDelete(inbound_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1555,6 +1593,7 @@ export namespace MyNS {
 		 * Get a specific rule
 		 * Get automations/fax/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Fax inbound rule id
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxInbound_inbound_rule_idGet(inbound_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1565,6 +1604,7 @@ export namespace MyNS {
 		 * Update a rule
 		 * Put automations/fax/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Fax inbound rule id
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxInbound_inbound_rule_idPut(inbound_rule_id: number, requestBody: Create_a_new_ruleBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1593,6 +1633,7 @@ export namespace MyNS {
 		 * Delete a Rule
 		 * Delete automations/fax/receipts/{rule_id}
 		 * @param {number} rule_id The email receipt rule id you want to delete.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxReceipts_rule_idDelete(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1603,6 +1644,7 @@ export namespace MyNS {
 		 * Get a Specific Rule
 		 * Get automations/fax/receipts/{rule_id}
 		 * @param {number} rule_id The rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxReceipts_rule_idGet(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1613,6 +1655,7 @@ export namespace MyNS {
 		 * Update a Rule
 		 * Put automations/fax/receipts/{rule_id}
 		 * @param {number} rule_id The email receipt rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsFaxReceipts_rule_idPut(rule_id: number, requestBody: AutomationsFaxReceipts_rule_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1641,6 +1684,7 @@ export namespace MyNS {
 		 * Delete a rule
 		 * Delete automations/sms/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Inbound Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsInbound_inbound_rule_idDelete(inbound_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1651,6 +1695,7 @@ export namespace MyNS {
 		 * Get a specific rule
 		 * Get automations/sms/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Inbound Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsInbound_inbound_rule_idGet(inbound_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1661,6 +1706,7 @@ export namespace MyNS {
 		 * Update a rule
 		 * Put automations/sms/inbound/{inbound_rule_id}
 		 * @param {number} inbound_rule_id Inbound Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsInbound_inbound_rule_idPut(inbound_rule_id: number, requestBody: AutomationsSmsInbound_inbound_rule_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1689,6 +1735,7 @@ export namespace MyNS {
 		 * Delete a rule
 		 * Delete automations/sms/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsReceipts_receipt_rule_idDelete(receipt_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1699,6 +1746,7 @@ export namespace MyNS {
 		 * Get a specific rule
 		 * Get automations/sms/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsReceipts_receipt_rule_idGet(receipt_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1709,6 +1757,7 @@ export namespace MyNS {
 		 * Update a rule
 		 * Put automations/sms/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsSmsReceipts_receipt_rule_idPut(receipt_rule_id: number, requestBody: Create_a_new_ruleBody2, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1737,6 +1786,7 @@ export namespace MyNS {
 		 * Delete a rule
 		 * Delete automations/voice/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsVoiceReceipts_receipt_rule_idDelete(receipt_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1747,6 +1797,7 @@ export namespace MyNS {
 		 * Get a specific rule
 		 * Get automations/voice/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsVoiceReceipts_receipt_rule_idGet(receipt_rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1757,6 +1808,7 @@ export namespace MyNS {
 		 * Update a rule
 		 * Put automations/voice/receipts/{receipt_rule_id}
 		 * @param {number} receipt_rule_id Receipt Rule ID.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		AutomationsVoiceReceipts_receipt_rule_idPut(receipt_rule_id: number, requestBody: Create_a_new_ruleBody2, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1830,6 +1882,7 @@ export namespace MyNS {
 		 * Get Specific Email Campaign History
 		 * Get email-campaigns/{campaign_id}/history
 		 * @param {number} campaign_id The email campaign id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Email_campaigns_campaign_idHistoryGet(campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1840,6 +1893,7 @@ export namespace MyNS {
 		 * Get Specific Email Campaign
 		 * Get email-campaigns/{email_campaign_id}
 		 * @param {number} email_campaign_id The email campaign id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Email_campaigns_email_campaign_idGet(email_campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1850,6 +1904,7 @@ export namespace MyNS {
 		 * Update Email Campaign
 		 * Put email-campaigns/{email_campaign_id}
 		 * @param {number} email_campaign_id The email campaign id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Email_campaigns_email_campaign_idPut(email_campaign_id: number, requestBody: Email_campaigns_email_campaign_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1860,6 +1915,7 @@ export namespace MyNS {
 		 * Cancel Email Campaign
 		 * Put email-campaigns/{email_campaign_id}/cancel
 		 * @param {number} email_campaign_id The email campaign id you want to cancel.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Email_campaigns_email_campaign_idCancelPut(email_campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1870,6 +1926,7 @@ export namespace MyNS {
 		 * Send Verification Token
 		 * Put email/address-verify/{email_address_id}/send
 		 * @param {number} email_address_id The email addess id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailAddress_verify_email_address_idSendPut(email_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1880,6 +1937,7 @@ export namespace MyNS {
 		 * Verify Allowed Email Address
 		 * Put email/address-verify/{email_address_id}/verify/{activation_token}
 		 * @param {number} email_address_id The email address id you want to access.
+		 *     Type: double
 		 * @param {string} activation_token 6E8B-4FDB-99A7-7ED08DF97BCC (required, string) - Your activation token.
 		 * @return {void} OK
 		 */
@@ -1909,6 +1967,7 @@ export namespace MyNS {
 		 * Delete Allowed Email Address
 		 * Delete email/addresses/{email_address_id}
 		 * @param {number} email_address_id The email address you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailAddresses_email_address_idDelete(email_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1919,6 +1978,7 @@ export namespace MyNS {
 		 * Get Specific Allowed Email Address
 		 * Get email/addresses/{email_address_id}
 		 * @param {number} email_address_id The email address you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailAddresses_email_address_idGet(email_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2051,6 +2111,7 @@ export namespace MyNS {
 		 * Delete Email Template
 		 * Delete email/templates/{template_id}
 		 * @param {number} template_id Your template id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailTemplates_template_idDelete(template_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2061,6 +2122,7 @@ export namespace MyNS {
 		 * Get Specific Email Template
 		 * Get email/templates/{template_id}
 		 * @param {number} template_id The email template id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailTemplates_template_idGet(template_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2071,6 +2133,7 @@ export namespace MyNS {
 		 * Update an Email Template
 		 * Put email/templates/{template_id}
 		 * @param {number} template_id The id of the template to be updated.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		EmailTemplates_template_idPut(template_id: number, requestBody: EmailTemplates_template_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2092,7 +2155,9 @@ export namespace MyNS {
 		 * Get a list of Fax History.
 		 * Get fax/history?date_from={date_from}&date_to={date_to}&q={q}&order_by={order_by}
 		 * @param {number} date_from Customize result by setting from date (timestsamp)
+		 *     Type: double
 		 * @param {number} date_to Customize result by setting to date (timestamp)
+		 *     Type: double
 		 * @param {string} q Custom query
 		 * @param {string} order_by Order result by
 		 * @return {void} OK
@@ -2211,8 +2276,11 @@ export namespace MyNS {
 		 * Transfers a specific contact to another list.
 		 * Put lists/{from_list_id}/contacts/{contact_id}/{to_list_id}
 		 * @param {number} from_list_id From list id.
+		 *     Type: double
 		 * @param {number} contact_id Contact ID.
+		 *     Type: double
 		 * @param {number} to_list_id To list id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_from_list_idContacts_contact_id_to_list_idPut(from_list_id: number, contact_id: number, to_list_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2223,6 +2291,7 @@ export namespace MyNS {
 		 * Delete a specific contact list
 		 * Delete lists/{list_id}
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idDelete(list_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2233,6 +2302,7 @@ export namespace MyNS {
 		 * Get a specific contact list
 		 * Get lists/{list_id}
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idGet(list_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2243,6 +2313,7 @@ export namespace MyNS {
 		 * Update a specific contact list
 		 * Put lists/{list_id}
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idPut(list_id: number, requestBody: Lists_list_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2253,6 +2324,7 @@ export namespace MyNS {
 		 * Get all Contacts in a List
 		 * Get lists/{list_id}/contacts
 		 * @param {number} list_id Your contact list id where your contacts belong.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idContactsGet(list_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2264,6 +2336,7 @@ export namespace MyNS {
 		 * Note that the fields `phone_number`, `fax_number` and email` are all optional; however at least one of them must be specified, otherwise the API call will fail.
 		 * Post lists/{list_id}/contacts
 		 * @param {number} list_id Your contact list id where your contact be associated.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idContactsPost(list_id: number, requestBody: Lists_list_idContactsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2274,7 +2347,9 @@ export namespace MyNS {
 		 * Delete a specific contact
 		 * Delete lists/{list_id}/contacts/{contact_id}
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @param {number} contact_id Your contact id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idContacts_contact_idDelete(list_id: number, contact_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2285,7 +2360,9 @@ export namespace MyNS {
 		 * Get a specific contact
 		 * Get lists/{list_id}/contacts/{contact_id}
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @param {number} contact_id Your contact id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idContacts_contact_idGet(list_id: number, contact_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2296,7 +2373,9 @@ export namespace MyNS {
 		 * Update a specific contact
 		 * Put lists/{list_id}/contacts/{contact_id}
 		 * @param {number} list_id Contact list id you want to access.
+		 *     Type: double
 		 * @param {number} contact_id Contact id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idContacts_contact_idPut(list_id: number, contact_id: number, requestBody: Lists_list_idContacts_contact_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2318,6 +2397,7 @@ export namespace MyNS {
 		 * Import Contacts to List
 		 * Post lists/{list_id}/import
 		 * @param {number} list_id Your contact list id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idImportPost(list_id: number, requestBody: Lists_list_idImportPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2329,6 +2409,7 @@ export namespace MyNS {
 		 * Show first row of the csv import file.
 		 * Post lists/{list_id}/import-csv-preview
 		 * @param {number} list_id Your contact list id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idImport_csv_previewPost(list_id: number, requestBody: Lists_list_idImport_csv_previewPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2349,6 +2430,7 @@ export namespace MyNS {
 		 * Remove Duplicate Contacts
 		 * Put lists/{list_id}/remove-duplicates
 		 * @param {number} list_id Your contact list id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idRemove_duplicatesPut(list_id: number, requestBody: Lists_list_idRemove_duplicatesPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2359,7 +2441,9 @@ export namespace MyNS {
 		 * Remove Opted Out Contacts
 		 * Put lists/{list_id}/remove-opted-out-contacts/{opt_out_list_id}
 		 * @param {number} list_id Your contact list id.
+		 *     Type: double
 		 * @param {number} opt_out_list_id Your opt out list id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Lists_list_idRemove_opted_out_contacts_opt_out_list_idPut(list_id: number, opt_out_list_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2479,6 +2563,7 @@ export namespace MyNS {
 		 * @param {string} country Your preferred country.
 		 * @param {string} search Your search pattern or query.
 		 * @param {number} search_type Your strategy for searching, 0 = starts with, 1 = anywhere, 2 = ends with.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		NumbersSearch_countryGet(country: string, search: string, search_type: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2655,6 +2740,7 @@ export namespace MyNS {
 		 * Delete Post Return Address
 		 * Delete post/return-addresses/{return_address_id}
 		 * @param {number} return_address_id Your return address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		PostReturn_addresses_return_address_idDelete(return_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2665,6 +2751,7 @@ export namespace MyNS {
 		 * Get Post Return Address
 		 * Get post/return-addresses/{return_address_id}
 		 * @param {number} return_address_id Your return address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		PostReturn_addresses_return_address_idGet(return_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2675,6 +2762,7 @@ export namespace MyNS {
 		 * Update Post Return Address
 		 * Put post/return-addresses/{return_address_id}
 		 * @param {number} return_address_id Your return address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		PostReturn_addresses_return_address_idPut(return_address_id: number, requestBody: Create_a_Post_Return_AddressBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2724,6 +2812,7 @@ export namespace MyNS {
 		 * Purchase a Package
 		 * Put recharge/purchase/{package_id}
 		 * @param {number} package_id Your package id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		RechargePurchase_package_idPut(package_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2811,6 +2900,7 @@ export namespace MyNS {
 		 * Get a specific reseller account.
 		 * Get reseller/accounts/{client_user_id}
 		 * @param {number} client_user_id The client user id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		ResellerAccounts_client_user_idGet(client_user_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2821,6 +2911,7 @@ export namespace MyNS {
 		 * Update Reseller Account
 		 * Put reseller/accounts/{client_user_id}
 		 * @param {number} client_user_id Your client user id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		ResellerAccounts_client_user_idPut(client_user_id: number, requestBody: Create_Reseller_AccountBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2900,6 +2991,7 @@ export namespace MyNS {
 		 * Compile all link tracking for the specified campaign into a CSV for download.
 		 * Get sms-campaigns/{campaign_id}/link-export?filename={filename}
 		 * @param {number} campaign_id Your campaign id.
+		 *     Type: double
 		 * @param {string} filename Your export filename.
 		 * @return {void} OK
 		 */
@@ -2912,6 +3004,7 @@ export namespace MyNS {
 		 * Get the breakdown of statistics for your campaign. Note that the returned values vary depending on your specific customers' interaction, so it's not safe to assume a value will always be specified.
 		 * Get sms-campaigns/{campaign_id}/link-statistics
 		 * @param {number} campaign_id Your campaign id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Sms_campaigns_campaign_idLink_statisticsGet(campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2923,6 +3016,7 @@ export namespace MyNS {
 		 * This endpoint gives you a paginated overview of all the links in a particular campaign, and who has and hasn't visited them.
 		 * Get sms-campaigns/{campaign_id}/link-tracking
 		 * @param {number} campaign_id Your campaign id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Sms_campaigns_campaign_idLink_trackingGet(campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2933,6 +3027,7 @@ export namespace MyNS {
 		 * Get SMS Campaign
 		 * Get sms-campaigns/{sms_campaign_id}
 		 * @param {number} sms_campaign_id Your SMS campaign id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Sms_campaigns_sms_campaign_idGet(sms_campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2943,6 +3038,7 @@ export namespace MyNS {
 		 * Update an SMS Campaign
 		 * Put sms-campaigns/{sms_campaign_id}
 		 * @param {number} sms_campaign_id Your SMS Campaign id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Sms_campaigns_sms_campaign_idPut(sms_campaign_id: number, requestBody: Sms_campaigns_sms_campaign_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2953,6 +3049,7 @@ export namespace MyNS {
 		 * Cancel an SMS Campaign
 		 * Put sms-campaigns/{sms_campaign_id}/cancel
 		 * @param {number} sms_campaign_id Your SMS Campaign id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Sms_campaigns_sms_campaign_idCancelPut(sms_campaign_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3010,6 +3107,7 @@ export namespace MyNS {
 		 * Delete Stripped String
 		 * Delete sms/email-sms-stripped-strings/{rule_id}
 		 * @param {number} rule_id The rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_stripped_strings_rule_idDelete(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3020,6 +3118,7 @@ export namespace MyNS {
 		 * Find Specific Stripped String
 		 * Get sms/email-sms-stripped-strings/{rule_id}
 		 * @param {number} rule_id The rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_stripped_strings_rule_idGet(rule_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3030,6 +3129,7 @@ export namespace MyNS {
 		 * Update Stripped String
 		 * Put sms/email-sms-stripped-strings/{rule_id}
 		 * @param {number} rule_id The rule id you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_stripped_strings_rule_idPut(rule_id: number, requestBody: SmsEmail_sms_stripped_strings_rule_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3041,6 +3141,7 @@ export namespace MyNS {
 		 * Delete a specific allowed email address.
 		 * Delete sms/email-sms/{email_address_id}
 		 * @param {number} email_address_id Your email address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_email_address_idDelete(email_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3052,6 +3153,7 @@ export namespace MyNS {
 		 * Get a specific allowed email address.
 		 * Get sms/email-sms/{email_address_id}
 		 * @param {number} email_address_id Your email address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_email_address_idGet(email_address_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3063,6 +3165,7 @@ export namespace MyNS {
 		 * Update a specific allowed email address.
 		 * Put sms/email-sms/{email_address_id}
 		 * @param {number} email_address_id Your email address id.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		SmsEmail_sms_email_address_idPut(email_address_id: number, requestBody: SmsEmail_sms_email_address_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3300,6 +3403,7 @@ export namespace MyNS {
 		 * Delete a specific subaccount
 		 * Delete subaccounts/{subaccount_id}
 		 * @param {number} subaccount_id The subaccount ID you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Subaccounts_subaccount_idDelete(subaccount_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3320,6 +3424,7 @@ export namespace MyNS {
 		 * Update a specific subaccount
 		 * Put subaccounts/{subaccount_id}
 		 * @param {number} subaccount_id The subaccount ID you want to access.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Subaccounts_subaccount_idPut(subaccount_id: number, requestBody: Subaccounts_subaccount_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3330,6 +3435,7 @@ export namespace MyNS {
 		 * Regenerate API Key
 		 * Put subaccounts/{subaccount_id}/regen-api-key
 		 * @param {number} subaccount_id The ID of the subaccount to be accessed.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Subaccounts_subaccount_idRegen_api_keyPut(subaccount_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3425,6 +3531,7 @@ export namespace MyNS {
 		 * Marked Voice Receipts as Read
 		 * Put voice/receipts-read?date_before={date_before}
 		 * @param {number} date_before An optional [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp) - mark all as read before this timestamp. If not given, all receipts will be marked as read.
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		VoiceReceipts_readPut(date_before: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3597,13 +3704,22 @@ export namespace MyNS {
 		 */
 		password: string;
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		private_uploads?: number | null;
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		setting_sms_hide_business_name?: number | null;
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		setting_sms_hide_your_number?: number | null;
 
 		/**
@@ -3662,13 +3778,22 @@ export namespace MyNS {
 		 */
 		password: FormControl<string | null | undefined>,
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		private_uploads: FormControl<number | null | undefined>,
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		setting_sms_hide_business_name: FormControl<number | null | undefined>,
 
-		/** Set the private uploads flag. 0 or 1 only. */
+		/**
+		 * Set the private uploads flag. 0 or 1 only.
+		 * Type: double
+		 */
 		setting_sms_hide_your_number: FormControl<number | null | undefined>,
 
 		/**
@@ -3761,12 +3886,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
 		/**
 		 * Match Type. 0=All reports.
 		 * Required
+		 * Type: double
 		 */
 		match_type: number;
 
@@ -3793,12 +3920,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
 		/**
 		 * Match Type. 0=All reports.
 		 * Required
+		 * Type: double
 		 */
 		match_type: FormControl<number | null | undefined>,
 
@@ -3827,10 +3956,16 @@ export namespace MyNS {
 		/** Action Address. */
 		action_address?: string | null;
 
-		/** Enabled. */
+		/**
+		 * Enabled.
+		 * Type: double
+		 */
 		enabled?: number | null;
 
-		/** Match Type. 0=All reports. */
+		/**
+		 * Match Type. 0=All reports.
+		 * Type: double
+		 */
 		match_type?: number | null;
 
 		/** Rule Name. */
@@ -3844,10 +3979,16 @@ export namespace MyNS {
 		/** Action Address. */
 		action_address: FormControl<string | null | undefined>,
 
-		/** Enabled. */
+		/**
+		 * Enabled.
+		 * Type: double
+		 */
 		enabled: FormControl<number | null | undefined>,
 
-		/** Match Type. 0=All reports. */
+		/**
+		 * Match Type. 0=All reports.
+		 * Type: double
+		 */
 		match_type: FormControl<number | null | undefined>,
 
 		/** Rule Name. */
@@ -3881,12 +4022,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
 		/**
 		 * Match Type. 0=All reports.
 		 * Required
+		 * Type: double
 		 */
 		match_type: number;
 
@@ -3913,12 +4056,14 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
 		/**
 		 * Match Type. 0=All reports.
 		 * Required
+		 * Type: double
 		 */
 		match_type: FormControl<number | null | undefined>,
 
@@ -3947,10 +4092,16 @@ export namespace MyNS {
 		/** Action Address. */
 		action_address?: string | null;
 
-		/** Enabled. */
+		/**
+		 * Enabled.
+		 * Type: double
+		 */
 		enabled?: number | null;
 
-		/** Match Type. 0=All reports. */
+		/**
+		 * Match Type. 0=All reports.
+		 * Type: double
+		 */
 		match_type?: number | null;
 
 		/** Rule Name. */
@@ -3964,10 +4115,16 @@ export namespace MyNS {
 		/** Action Address. */
 		action_address: FormControl<string | null | undefined>,
 
-		/** Enabled. */
+		/**
+		 * Enabled.
+		 * Type: double
+		 */
 		enabled: FormControl<number | null | undefined>,
 
-		/** Match Type. 0=All reports. */
+		/**
+		 * Match Type. 0=All reports.
+		 * Type: double
+		 */
 		match_type: FormControl<number | null | undefined>,
 
 		/** Rule Name. */
@@ -4001,12 +4158,14 @@ export namespace MyNS {
 		/**
 		 * Dedicated Number.
 		 * Required
+		 * Type: double
 		 */
 		dedicated_number: number;
 
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
@@ -4019,6 +4178,7 @@ export namespace MyNS {
 		/**
 		 * Message Search Type: 0=Any message, 1=starts with, 2=contains, 3=does not contain.
 		 * Required
+		 * Type: double
 		 */
 		message_search_type: number;
 
@@ -4045,12 +4205,14 @@ export namespace MyNS {
 		/**
 		 * Dedicated Number.
 		 * Required
+		 * Type: double
 		 */
 		dedicated_number: FormControl<number | null | undefined>,
 
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
@@ -4063,6 +4225,7 @@ export namespace MyNS {
 		/**
 		 * Message Search Type: 0=Any message, 1=starts with, 2=contains, 3=does not contain.
 		 * Required
+		 * Type: double
 		 */
 		message_search_type: FormControl<number | null | undefined>,
 
@@ -4108,6 +4271,7 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: number;
 
@@ -4120,6 +4284,7 @@ export namespace MyNS {
 		/**
 		 * Message Search Type: 0=Any message, 1=starts with, 2=contains, 3=does not contain.
 		 * Required
+		 * Type: double
 		 */
 		message_search_type: number;
 	}
@@ -4146,6 +4311,7 @@ export namespace MyNS {
 		/**
 		 * Enabled.
 		 * Required
+		 * Type: double
 		 */
 		enabled: FormControl<number | null | undefined>,
 
@@ -4158,6 +4324,7 @@ export namespace MyNS {
 		/**
 		 * Message Search Type: 0=Any message, 1=starts with, 2=contains, 3=does not contain.
 		 * Required
+		 * Type: double
 		 */
 		message_search_type: FormControl<number | null | undefined>,
 	}
@@ -4244,48 +4411,72 @@ export namespace MyNS {
 
 	export interface Email_campaigns_email_campaign_idPutPutBody {
 
-		/** The allowed email address id. */
+		/**
+		 * The allowed email address id.
+		 * Type: double
+		 */
 		from_email_address_id?: number | null;
 
 		/** The name that will appear on the email. */
 		from_name?: string | null;
 
-		/** The list id you want to access. */
+		/**
+		 * The list id you want to access.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
 		/** The name of the sender. */
 		name?: string | null;
 
-		/** Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** The subject of the email campaign. */
 		subject?: string | null;
 
-		/** The template id you want to use. */
+		/**
+		 * The template id you want to use.
+		 * Type: double
+		 */
 		template_id?: number | null;
 	}
 	export interface Email_campaigns_email_campaign_idPutPutBodyFormProperties {
 
-		/** The allowed email address id. */
+		/**
+		 * The allowed email address id.
+		 * Type: double
+		 */
 		from_email_address_id: FormControl<number | null | undefined>,
 
 		/** The name that will appear on the email. */
 		from_name: FormControl<string | null | undefined>,
 
-		/** The list id you want to access. */
+		/**
+		 * The list id you want to access.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
 		/** The name of the sender. */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** The subject of the email campaign. */
 		subject: FormControl<string | null | undefined>,
 
-		/** The template id you want to use. */
+		/**
+		 * The template id you want to use.
+		 * Type: double
+		 */
 		template_id: FormControl<number | null | undefined>,
 	}
 	export function CreateEmail_campaigns_email_campaign_idPutPutBodyFormGroup() {
@@ -4362,6 +4553,7 @@ export namespace MyNS {
 		/**
 		 * The sender's email address id.
 		 * Required
+		 * Type: double
 		 */
 		'from.email_address_id': number;
 
@@ -4391,6 +4583,7 @@ export namespace MyNS {
 		/**
 		 * The sender's email address id.
 		 * Required
+		 * Type: double
 		 */
 		'from.email_address_id': FormControl<number | null | undefined>,
 
@@ -4433,13 +4626,17 @@ export namespace MyNS {
 		/**
 		 * The sender's email address ID.
 		 * Required
+		 * Type: double
 		 */
 		'from.email_address_id': number;
 
 		/** The sender's name. */
 		'from.name'?: string | null;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/**
@@ -4459,13 +4656,17 @@ export namespace MyNS {
 		/**
 		 * The sender's email address ID.
 		 * Required
+		 * Type: double
 		 */
 		'from.email_address_id': FormControl<number | null | undefined>,
 
 		/** The sender's name. */
 		'from.name': FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 	}
 	export function CreateEmailSendPostPostBodyFormGroup() {
@@ -4483,6 +4684,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the master template you want to base on.
 		 * Required
+		 * Type: double
 		 */
 		template_id_master: number;
 
@@ -4497,6 +4699,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the master template you want to base on.
 		 * Required
+		 * Type: double
 		 */
 		template_id_master: FormControl<number | null | undefined>,
 
@@ -4576,12 +4779,18 @@ export namespace MyNS {
 
 	export interface FaxReceipts_readPutPutBody {
 
-		/** An optional [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp) - mark all as read before this timestamp. If not given, all receipts will be marked as read. */
+		/**
+		 * An optional [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp) - mark all as read before this timestamp. If not given, all receipts will be marked as read.
+		 * Type: double
+		 */
 		date_before?: number | null;
 	}
 	export interface FaxReceipts_readPutPutBodyFormProperties {
 
-		/** An optional [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp) - mark all as read before this timestamp. If not given, all receipts will be marked as read. */
+		/**
+		 * An optional [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp) - mark all as read before this timestamp. If not given, all receipts will be marked as read.
+		 * Type: double
+		 */
 		date_before: FormControl<number | null | undefined>,
 	}
 	export function CreateFaxReceipts_readPutPutBodyFormGroup() {
@@ -4631,6 +4840,7 @@ export namespace MyNS {
 		/**
 		 * Your subaccount id.
 		 * Required
+		 * Type: double
 		 */
 		subaccount_id: number;
 	}
@@ -4651,6 +4861,7 @@ export namespace MyNS {
 		/**
 		 * Your subaccount id.
 		 * Required
+		 * Type: double
 		 */
 		subaccount_id: FormControl<number | null | undefined>,
 	}
@@ -4671,7 +4882,10 @@ export namespace MyNS {
 		/** Your email. This is required if phone_number is not present. */
 		email?: string | null;
 
-		/** Your phone number. This is required if email is not present. */
+		/**
+		 * Your phone number. This is required if email is not present.
+		 * Type: double
+		 */
 		phone_number?: number | null;
 	}
 	export interface Forgot_usernamePutPutBodyFormProperties {
@@ -4682,7 +4896,10 @@ export namespace MyNS {
 		/** Your email. This is required if phone_number is not present. */
 		email: FormControl<string | null | undefined>,
 
-		/** Your phone number. This is required if email is not present. */
+		/**
+		 * Your phone number. This is required if email is not present.
+		 * Type: double
+		 */
 		phone_number: FormControl<number | null | undefined>,
 	}
 	export function CreateForgot_usernamePutPutBodyFormGroup() {
@@ -5072,7 +5289,10 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
 		/**
@@ -5081,7 +5301,10 @@ export namespace MyNS {
 		 */
 		media_file: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -5119,7 +5342,10 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
 		/**
@@ -5128,7 +5354,10 @@ export namespace MyNS {
 		 */
 		media_file: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -5183,7 +5412,10 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
 		/**
@@ -5192,7 +5424,10 @@ export namespace MyNS {
 		 */
 		media_file: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -5230,7 +5465,10 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
 		/**
@@ -5239,7 +5477,10 @@ export namespace MyNS {
 		 */
 		media_file: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -5291,7 +5532,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/**
@@ -5311,7 +5555,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/**
@@ -5350,7 +5597,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/**
@@ -5370,7 +5620,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/**
@@ -5417,10 +5670,16 @@ export namespace MyNS {
 
 	export interface PostLettersPricePostPostBody {
 
-		/** Is it in colored? */
+		/**
+		 * Is it in colored?
+		 * Type: double
+		 */
 		colour?: number | null;
 
-		/** Is it in duplex? */
+		/**
+		 * Is it in duplex?
+		 * Type: double
+		 */
 		duplex?: number | null;
 
 		/**
@@ -5429,21 +5688,33 @@ export namespace MyNS {
 		 */
 		file_url: string;
 
-		/** Is it priority? 0 = Not Priority, 1 = Priority. */
+		/**
+		 * Is it priority? 0 = Not Priority, 1 = Priority.
+		 * Type: double
+		 */
 		priority_post?: number | null;
 
 		/** Your recipients. */
 		recipients?: Array<string>;
 
-		/** Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)). */
+		/**
+		 * Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)).
+		 * Type: double
+		 */
 		template_used?: number | null;
 	}
 	export interface PostLettersPricePostPostBodyFormProperties {
 
-		/** Is it in colored? */
+		/**
+		 * Is it in colored?
+		 * Type: double
+		 */
 		colour: FormControl<number | null | undefined>,
 
-		/** Is it in duplex? */
+		/**
+		 * Is it in duplex?
+		 * Type: double
+		 */
 		duplex: FormControl<number | null | undefined>,
 
 		/**
@@ -5452,10 +5723,16 @@ export namespace MyNS {
 		 */
 		file_url: FormControl<string | null | undefined>,
 
-		/** Is it priority? 0 = Not Priority, 1 = Priority. */
+		/**
+		 * Is it priority? 0 = Not Priority, 1 = Priority.
+		 * Type: double
+		 */
 		priority_post: FormControl<number | null | undefined>,
 
-		/** Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)). */
+		/**
+		 * Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)).
+		 * Type: double
+		 */
 		template_used: FormControl<number | null | undefined>,
 	}
 	export function CreatePostLettersPricePostPostBodyFormGroup() {
@@ -5471,10 +5748,16 @@ export namespace MyNS {
 
 	export interface PostLettersSendPostPostBody {
 
-		/** Is it in colour? 0 = Black and White, 1 = Colour. */
+		/**
+		 * Is it in colour? 0 = Black and White, 1 = Colour.
+		 * Type: double
+		 */
 		colour?: number | null;
 
-		/** Is it in duplex? 0 = Simplex, 1 = Duplex. */
+		/**
+		 * Is it in duplex? 0 = Simplex, 1 = Duplex.
+		 * Type: double
+		 */
 		duplex?: number | null;
 
 		/**
@@ -5483,21 +5766,33 @@ export namespace MyNS {
 		 */
 		file_url: string;
 
-		/** Is it priority? 0 = Not Priority, 1 = Priority. */
+		/**
+		 * Is it priority? 0 = Not Priority, 1 = Priority.
+		 * Type: double
+		 */
 		priority_post?: number | null;
 
 		/** Your recipients. */
 		recipients?: Array<string>;
 
-		/** Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)). */
+		/**
+		 * Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)).
+		 * Type: double
+		 */
 		template_used?: number | null;
 	}
 	export interface PostLettersSendPostPostBodyFormProperties {
 
-		/** Is it in colour? 0 = Black and White, 1 = Colour. */
+		/**
+		 * Is it in colour? 0 = Black and White, 1 = Colour.
+		 * Type: double
+		 */
 		colour: FormControl<number | null | undefined>,
 
-		/** Is it in duplex? 0 = Simplex, 1 = Duplex. */
+		/**
+		 * Is it in duplex? 0 = Simplex, 1 = Duplex.
+		 * Type: double
+		 */
 		duplex: FormControl<number | null | undefined>,
 
 		/**
@@ -5506,10 +5801,16 @@ export namespace MyNS {
 		 */
 		file_url: FormControl<string | null | undefined>,
 
-		/** Is it priority? 0 = Not Priority, 1 = Priority. */
+		/**
+		 * Is it priority? 0 = Not Priority, 1 = Priority.
+		 * Type: double
+		 */
 		priority_post: FormControl<number | null | undefined>,
 
-		/** Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)). */
+		/**
+		 * Whether you used our template or not ([More Info](http://help.clicksend.com/13996-Post/post-letter-template)).
+		 * Type: double
+		 */
 		template_used: FormControl<number | null | undefined>,
 	}
 	export function CreatePostLettersSendPostPostBodyFormGroup() {
@@ -5578,16 +5879,21 @@ export namespace MyNS {
 		/**
 		 * Your CVC digits.
 		 * Required
+		 * Type: double
 		 */
 		cvc: number;
 
 		/**
 		 * Your credit card expiry month.
 		 * Required
+		 * Type: double
 		 */
 		expiry_month: number;
 
-		/** Your credit card expiry year. */
+		/**
+		 * Your credit card expiry year.
+		 * Type: double
+		 */
 		expiry_year?: number | null;
 
 		/**
@@ -5596,7 +5902,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Your credit card no. */
+		/**
+		 * Your credit card no.
+		 * Type: double
+		 */
 		number?: number | null;
 	}
 	export interface RechargeCredit_cardPutPutBodyFormProperties {
@@ -5610,16 +5919,21 @@ export namespace MyNS {
 		/**
 		 * Your CVC digits.
 		 * Required
+		 * Type: double
 		 */
 		cvc: FormControl<number | null | undefined>,
 
 		/**
 		 * Your credit card expiry month.
 		 * Required
+		 * Type: double
 		 */
 		expiry_month: FormControl<number | null | undefined>,
 
-		/** Your credit card expiry year. */
+		/**
+		 * Your credit card expiry year.
+		 * Type: double
+		 */
 		expiry_year: FormControl<number | null | undefined>,
 
 		/**
@@ -5628,7 +5942,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Your credit card no. */
+		/**
+		 * Your credit card no.
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateRechargeCredit_cardPutPutBodyFormGroup() {
@@ -5648,6 +5965,7 @@ export namespace MyNS {
 		/**
 		 * Allow public signups.
 		 * Required
+		 * Type: double
 		 */
 		allow_public_signups: number;
 
@@ -5666,12 +5984,14 @@ export namespace MyNS {
 		/**
 		 * Default margin.
 		 * Required
+		 * Type: double
 		 */
 		default_margin: number;
 
 		/**
 		 * Default margin numbers.
 		 * Required
+		 * Type: double
 		 */
 		default_margin_numbers: number;
 
@@ -5696,6 +6016,7 @@ export namespace MyNS {
 		/**
 		 * Trial balance.
 		 * Required
+		 * Type: double
 		 */
 		trial_balance: number;
 	}
@@ -5704,6 +6025,7 @@ export namespace MyNS {
 		/**
 		 * Allow public signups.
 		 * Required
+		 * Type: double
 		 */
 		allow_public_signups: FormControl<number | null | undefined>,
 
@@ -5722,12 +6044,14 @@ export namespace MyNS {
 		/**
 		 * Default margin.
 		 * Required
+		 * Type: double
 		 */
 		default_margin: FormControl<number | null | undefined>,
 
 		/**
 		 * Default margin numbers.
 		 * Required
+		 * Type: double
 		 */
 		default_margin_numbers: FormControl<number | null | undefined>,
 
@@ -5752,6 +6076,7 @@ export namespace MyNS {
 		/**
 		 * Trial balance.
 		 * Required
+		 * Type: double
 		 */
 		trial_balance: FormControl<number | null | undefined>,
 	}
@@ -5793,6 +6118,7 @@ export namespace MyNS {
 		/**
 		 * Reseller User ID.
 		 * Required
+		 * Type: double
 		 */
 		reseller_user_id: number;
 
@@ -5849,6 +6175,7 @@ export namespace MyNS {
 		/**
 		 * Reseller User ID.
 		 * Required
+		 * Type: double
 		 */
 		reseller_user_id: FormControl<number | null | undefined>,
 
@@ -5902,6 +6229,7 @@ export namespace MyNS {
 		/**
 		 * Your amount.
 		 * Required
+		 * Type: double
 		 */
 		balance: number;
 
@@ -5922,6 +6250,7 @@ export namespace MyNS {
 		/**
 		 * Your amount.
 		 * Required
+		 * Type: double
 		 */
 		balance: FormControl<number | null | undefined>,
 
@@ -5960,6 +6289,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: number;
 
@@ -5983,6 +6313,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: FormControl<number | null | undefined>,
 
@@ -6016,6 +6347,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: number;
 
@@ -6025,7 +6357,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/**
@@ -6048,6 +6383,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: FormControl<number | null | undefined>,
 
@@ -6057,7 +6393,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/**
@@ -6092,6 +6431,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: number;
 
@@ -6101,7 +6441,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 	}
 	export interface Sms_campaigns_sms_campaign_idPutPutBodyFormProperties {
@@ -6118,6 +6461,7 @@ export namespace MyNS {
 		/**
 		 * Your list id.
 		 * Required
+		 * Type: double
 		 */
 		list_id: FormControl<number | null | undefined>,
 
@@ -6127,7 +6471,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Will replace existing schedule (even if left blank). Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 	}
 	export function CreateSms_campaigns_sms_campaign_idPutPutBodyFormGroup() {
@@ -6246,6 +6593,7 @@ export namespace MyNS {
 		/**
 		 * An optional timestamp - mark all as read before this timestamp. If not given, all messages will be marked as read.
 		 * Required
+		 * Type: double
 		 */
 		date_before: number;
 	}
@@ -6254,6 +6602,7 @@ export namespace MyNS {
 		/**
 		 * An optional timestamp - mark all as read before this timestamp. If not given, all messages will be marked as read.
 		 * Required
+		 * Type: double
 		 */
 		date_before: FormControl<number | null | undefined>,
 	}
@@ -6281,10 +6630,16 @@ export namespace MyNS {
 		/** Your sender id - [more info](http://help.clicksend.com/SMS/what-is-a-sender-id-or-sender-number). */
 		from?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6313,10 +6668,16 @@ export namespace MyNS {
 		/** Your sender id - [more info](http://help.clicksend.com/SMS/what-is-a-sender-id-or-sender-number). */
 		from: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6344,12 +6705,18 @@ export namespace MyNS {
 
 	export interface SmsReceipts_readPutPutBody {
 
-		/** An optional timestamp - mark all as read before this timestamp. If not given, all receipts will be marked as read. */
+		/**
+		 * An optional timestamp - mark all as read before this timestamp. If not given, all receipts will be marked as read.
+		 * Type: double
+		 */
 		date_before?: number | null;
 	}
 	export interface SmsReceipts_readPutPutBodyFormProperties {
 
-		/** An optional timestamp - mark all as read before this timestamp. If not given, all receipts will be marked as read. */
+		/**
+		 * An optional timestamp - mark all as read before this timestamp. If not given, all receipts will be marked as read.
+		 * Type: double
+		 */
 		date_before: FormControl<number | null | undefined>,
 	}
 	export function CreateSmsReceipts_readPutPutBodyFormGroup() {
@@ -6379,10 +6746,16 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6414,10 +6787,16 @@ export namespace MyNS {
 		/** An email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. */
 		from_email: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6518,19 +6897,34 @@ export namespace MyNS {
 
 	export interface SubaccountsPostPostBody {
 
-		/** Your access billing flag value, must be 1 or 0. */
+		/**
+		 * Your access billing flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_billing?: number | null;
 
-		/** Your access contacts flag value, must be 1 or 0. */
+		/**
+		 * Your access contacts flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_contacts?: number | null;
 
-		/** Your access reporting flag value, must be 1 or 0. */
+		/**
+		 * Your access reporting flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_reporting?: number | null;
 
-		/** Your access settings flag value, must be 1 or 0. */
+		/**
+		 * Your access settings flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_settings?: number | null;
 
-		/** Your access users flag value, must be 1 or 0. */
+		/**
+		 * Your access users flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_users?: number | null;
 
 		/**
@@ -6569,24 +6963,42 @@ export namespace MyNS {
 		 */
 		phone_number: string;
 
-		/** Your share campaigns flag value, must be 1 or 0. */
+		/**
+		 * Your share campaigns flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		share_campaigns?: number | null;
 	}
 	export interface SubaccountsPostPostBodyFormProperties {
 
-		/** Your access billing flag value, must be 1 or 0. */
+		/**
+		 * Your access billing flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_billing: FormControl<number | null | undefined>,
 
-		/** Your access contacts flag value, must be 1 or 0. */
+		/**
+		 * Your access contacts flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_contacts: FormControl<number | null | undefined>,
 
-		/** Your access reporting flag value, must be 1 or 0. */
+		/**
+		 * Your access reporting flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_reporting: FormControl<number | null | undefined>,
 
-		/** Your access settings flag value, must be 1 or 0. */
+		/**
+		 * Your access settings flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_settings: FormControl<number | null | undefined>,
 
-		/** Your access users flag value, must be 1 or 0. */
+		/**
+		 * Your access users flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_users: FormControl<number | null | undefined>,
 
 		/**
@@ -6625,7 +7037,10 @@ export namespace MyNS {
 		 */
 		phone_number: FormControl<string | null | undefined>,
 
-		/** Your share campaigns flag value, must be 1 or 0. */
+		/**
+		 * Your share campaigns flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		share_campaigns: FormControl<number | null | undefined>,
 	}
 	export function CreateSubaccountsPostPostBodyFormGroup() {
@@ -6648,19 +7063,34 @@ export namespace MyNS {
 
 	export interface Subaccounts_subaccount_idPutPutBody {
 
-		/** Your access billing flag value, must be 1 or 0. */
+		/**
+		 * Your access billing flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_billing?: number | null;
 
-		/** Your access contacts flag value, must be 1 or 0. */
+		/**
+		 * Your access contacts flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_contacts?: number | null;
 
-		/** Your access reporting flag value, must be 1 or 0. */
+		/**
+		 * Your access reporting flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_reporting?: number | null;
 
-		/** Your access settings flag value, must be 1 or 0. */
+		/**
+		 * Your access settings flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_settings?: number | null;
 
-		/** Your access users flag value, must be 1 or 0. */
+		/**
+		 * Your access users flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_users?: number | null;
 
 		/** Your new email. */
@@ -6678,24 +7108,42 @@ export namespace MyNS {
 		/** Your phone number in E.164 format. */
 		phone_number?: string | null;
 
-		/** Your share campaigns flag value, must be 1 or 0. */
+		/**
+		 * Your share campaigns flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		share_campaigns?: number | null;
 	}
 	export interface Subaccounts_subaccount_idPutPutBodyFormProperties {
 
-		/** Your access billing flag value, must be 1 or 0. */
+		/**
+		 * Your access billing flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_billing: FormControl<number | null | undefined>,
 
-		/** Your access contacts flag value, must be 1 or 0. */
+		/**
+		 * Your access contacts flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_contacts: FormControl<number | null | undefined>,
 
-		/** Your access reporting flag value, must be 1 or 0. */
+		/**
+		 * Your access reporting flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_reporting: FormControl<number | null | undefined>,
 
-		/** Your access settings flag value, must be 1 or 0. */
+		/**
+		 * Your access settings flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_settings: FormControl<number | null | undefined>,
 
-		/** Your access users flag value, must be 1 or 0. */
+		/**
+		 * Your access users flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		access_users: FormControl<number | null | undefined>,
 
 		/** Your new email. */
@@ -6713,7 +7161,10 @@ export namespace MyNS {
 		/** Your phone number in E.164 format. */
 		phone_number: FormControl<string | null | undefined>,
 
-		/** Your share campaigns flag value, must be 1 or 0. */
+		/**
+		 * Your share campaigns flag value, must be 1 or 0.
+		 * Type: double
+		 */
 		share_campaigns: FormControl<number | null | undefined>,
 	}
 	export function CreateSubaccounts_subaccount_idPutPutBodyFormGroup() {
@@ -6786,13 +7237,22 @@ export namespace MyNS {
 		/** au (string, required) - See section on available languages. */
 		lang?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
-		/** Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off) */
+		/**
+		 * Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		require_input?: number | null;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6827,13 +7287,22 @@ export namespace MyNS {
 		/** au (string, required) - See section on available languages. */
 		lang: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
-		/** Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off) */
+		/**
+		 * Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		require_input: FormControl<number | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6884,16 +7353,28 @@ export namespace MyNS {
 		/** au (string, required) - See section on available languages. */
 		lang?: string | null;
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. Will override 'to' if both are used. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'. Will override 'to' if both are used.
+		 * Type: double
+		 */
 		list_id?: number | null;
 
-		/** Whether to attempt to detect an answering machine or voicemail service and leave a message (1 for on, 0 [default] for off) */
+		/**
+		 * Whether to attempt to detect an answering machine or voicemail service and leave a message (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		machine_detection?: number | null;
 
-		/** Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off) */
+		/**
+		 * Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		require_input?: number | null;
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule?: number | null;
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */
@@ -6928,16 +7409,28 @@ export namespace MyNS {
 		/** au (string, required) - See section on available languages. */
 		lang: FormControl<string | null | undefined>,
 
-		/** Your list ID if sending to a whole list. Can be used instead of 'to'. Will override 'to' if both are used. */
+		/**
+		 * Your list ID if sending to a whole list. Can be used instead of 'to'. Will override 'to' if both are used.
+		 * Type: double
+		 */
 		list_id: FormControl<number | null | undefined>,
 
-		/** Whether to attempt to detect an answering machine or voicemail service and leave a message (1 for on, 0 [default] for off) */
+		/**
+		 * Whether to attempt to detect an answering machine or voicemail service and leave a message (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		machine_detection: FormControl<number | null | undefined>,
 
-		/** Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off) */
+		/**
+		 * Whether you want to receive a keypress from the call recipient (1 for on, 0 [default] for off)
+		 * Type: double
+		 */
 		require_input: FormControl<number | null | undefined>,
 
-		/** Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp). */
+		/**
+		 * Leave blank for immediate delivery. Your schedule time as a [unix timestamp](http://help.clicksend.com/what-is-a-unix-timestamp).
+		 * Type: double
+		 */
 		schedule: FormControl<number | null | undefined>,
 
 		/** Your method of sending e.g. 'wordpress', 'php', 'c#'. */

@@ -126,7 +126,10 @@ export namespace MyNS {
 		/** Distribution represents a frequency distribution of double-valued sample points. It contains the size of the population of sample points plus additional optional information: * the arithmetic mean of the samples * the minimum and maximum of the samples * the sum-squared-deviation of the samples, used to compute variance * a histogram of the values of the sample points */
 		distributionValue?: Distribution;
 
-		/** A double precision floating point value. */
+		/**
+		 * A double precision floating point value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** The end of the time period over which this metric value's measurement applies. If not specified, google.api.servicecontrol.v1.Operation.end_time will be used. */
@@ -154,7 +157,10 @@ export namespace MyNS {
 		/** A boolean value. */
 		boolValue: FormControl<boolean | null | undefined>,
 
-		/** A double precision floating point value. */
+		/**
+		 * A double precision floating point value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** The end of the time period over which this metric value's measurement applies. If not specified, google.api.servicecontrol.v1.Operation.end_time will be used. */
@@ -207,16 +213,28 @@ export namespace MyNS {
 		/** Describing buckets with constant width. */
 		linearBuckets?: LinearBuckets;
 
-		/** The maximum of the population of values. Ignored if `count` is zero. */
+		/**
+		 * The maximum of the population of values. Ignored if `count` is zero.
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** The arithmetic mean of the samples in the distribution. If `count` is zero then this field must be zero. */
+		/**
+		 * The arithmetic mean of the samples in the distribution. If `count` is zero then this field must be zero.
+		 * Type: double
+		 */
 		mean?: number | null;
 
-		/** The minimum of the population of values. Ignored if `count` is zero. */
+		/**
+		 * The minimum of the population of values. Ignored if `count` is zero.
+		 * Type: double
+		 */
 		minimum?: number | null;
 
-		/** The sum of squared deviations from the mean: Sum[i=1..count]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails. */
+		/**
+		 * The sum of squared deviations from the mean: Sum[i=1..count]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails.
+		 * Type: double
+		 */
 		sumOfSquaredDeviation?: number | null;
 	}
 
@@ -226,16 +244,28 @@ export namespace MyNS {
 		/** The total number of samples in the distribution. Must be >= 0. */
 		count: FormControl<string | null | undefined>,
 
-		/** The maximum of the population of values. Ignored if `count` is zero. */
+		/**
+		 * The maximum of the population of values. Ignored if `count` is zero.
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** The arithmetic mean of the samples in the distribution. If `count` is zero then this field must be zero. */
+		/**
+		 * The arithmetic mean of the samples in the distribution. If `count` is zero then this field must be zero.
+		 * Type: double
+		 */
 		mean: FormControl<number | null | undefined>,
 
-		/** The minimum of the population of values. Ignored if `count` is zero. */
+		/**
+		 * The minimum of the population of values. Ignored if `count` is zero.
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 
-		/** The sum of squared deviations from the mean: Sum[i=1..count]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails. */
+		/**
+		 * The sum of squared deviations from the mean: Sum[i=1..count]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails.
+		 * Type: double
+		 */
 		sumOfSquaredDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateDistributionFormGroup() {
@@ -259,7 +289,10 @@ export namespace MyNS {
 		/** The observation (sampling) time of the above value. */
 		timestamp?: string | null;
 
-		/** Value of the exemplar point. This value determines to which bucket the exemplar belongs. */
+		/**
+		 * Value of the exemplar point. This value determines to which bucket the exemplar belongs.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -269,7 +302,10 @@ export namespace MyNS {
 		/** The observation (sampling) time of the above value. */
 		timestamp: FormControl<string | null | undefined>,
 
-		/** Value of the exemplar point. This value determines to which bucket the exemplar belongs. */
+		/**
+		 * Value of the exemplar point. This value determines to which bucket the exemplar belongs.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateExemplarFormGroup() {
@@ -301,26 +337,44 @@ export namespace MyNS {
 	/** Describing buckets with exponentially growing width. */
 	export interface ExponentialBuckets {
 
-		/** The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0. */
+		/**
+		 * The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0.
+		 * Type: double
+		 */
 		growthFactor?: number | null;
 
-		/** The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details. */
+		/**
+		 * The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0. */
+		/**
+		 * The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0.
+		 * Type: double
+		 */
 		scale?: number | null;
 	}
 
 	/** Describing buckets with exponentially growing width. */
 	export interface ExponentialBucketsFormProperties {
 
-		/** The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0. */
+		/**
+		 * The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0.
+		 * Type: double
+		 */
 		growthFactor: FormControl<number | null | undefined>,
 
-		/** The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details. */
+		/**
+		 * The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0. */
+		/**
+		 * The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateExponentialBucketsFormGroup() {
@@ -336,26 +390,44 @@ export namespace MyNS {
 	/** Describing buckets with constant width. */
 	export interface LinearBuckets {
 
-		/** The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details. */
+		/**
+		 * The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. */
+		/**
+		 * The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive.
+		 * Type: double
+		 */
 		offset?: number | null;
 
-		/** The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive. */
+		/**
+		 * The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive.
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
 	/** Describing buckets with constant width. */
 	export interface LinearBucketsFormProperties {
 
-		/** The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details. */
+		/**
+		 * The number of finite buckets. With the underflow and overflow buckets, the total number of buckets is `num_finite_buckets` + 2. See comments on `bucket_options` for details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. */
+		/**
+		 * The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive.
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive. */
+		/**
+		 * The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateLinearBucketsFormGroup() {
@@ -374,7 +446,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -387,7 +462,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -483,7 +561,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -496,7 +577,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -545,7 +629,10 @@ export namespace MyNS {
 	/** Represents a string that might be shortened to a specified length. */
 	export interface TruncatableString {
 
-		/** The number of bytes removed from the original string. If this value is 0, then the string was not shortened. */
+		/**
+		 * The number of bytes removed from the original string. If this value is 0, then the string was not shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truncatedByteCount?: number | null;
 
 		/** The shortened string. For example, if the original string is 500 bytes long and the limit of the string is 128 bytes, then `value` contains the first 128 bytes of the 500-byte string. Truncation always happens on a UTF8 character boundary. If there are multi-byte characters in the string, then the length of the shortened string might be less than the size limit. */
@@ -555,7 +642,10 @@ export namespace MyNS {
 	/** Represents a string that might be shortened to a specified length. */
 	export interface TruncatableStringFormProperties {
 
-		/** The number of bytes removed from the original string. If this value is 0, then the string was not shortened. */
+		/**
+		 * The number of bytes removed from the original string. If this value is 0, then the string was not shortened.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truncatedByteCount: FormControl<number | null | undefined>,
 
 		/** The shortened string. For example, if the original string is 500 bytes long and the limit of the string is 128 bytes, then `value` contains the first 128 bytes of the 500-byte string. Truncation always happens on a UTF8 character boundary. If there are multi-byte characters in the string, then the length of the shortened string might be less than the size limit. */
@@ -576,7 +666,10 @@ export namespace MyNS {
 		/** The set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the Boolean values `true` and `false`. For example: "/instance_id": "my-instance" "/http/user_agent": "" "/http/request_bytes": 300 "abc.com/myattribute": true */
 		attributeMap?: {[id: string]: AttributeValue };
 
-		/** The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid. */
+		/**
+		 * The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAttributesCount?: number | null;
 	}
 
@@ -586,7 +679,10 @@ export namespace MyNS {
 		/** The set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the Boolean values `true` and `false`. For example: "/instance_id": "my-instance" "/http/user_agent": "" "/http/request_bytes": 300 "abc.com/myattribute": true */
 		attributeMap: FormControl<{[id: string]: AttributeValue } | null | undefined>,
 
-		/** The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid. */
+		/**
+		 * The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		droppedAttributesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAttributesFormGroup() {
@@ -1713,7 +1809,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. */
 		serverIp?: string | null;
 
-		/** The response code indicating the status of the response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of the response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The user agent sent by the client. Example: `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`. */
@@ -1762,7 +1861,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. */
 		serverIp: FormControl<string | null | undefined>,
 
-		/** The response code indicating the status of the response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of the response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The user agent sent by the client. Example: `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`. */
@@ -1940,7 +2042,10 @@ export namespace MyNS {
 		/** A set of attributes, each in the format `[KEY]:[VALUE]`. */
 		attributes?: Attributes;
 
-		/** An optional number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans. */
+		/**
+		 * An optional number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childSpanCount?: number | null;
 
 		/** Represents a string that might be shortened to a specified length. */
@@ -1974,7 +2079,10 @@ export namespace MyNS {
 	/** A span represents a single operation within a trace. Spans can be nested to form a trace tree. Often, a trace contains a root span that describes the end-to-end latency, and one or more subspans for its sub-operations. A trace can also contain multiple root spans, or none at all. Spans do not need to be contiguous—there may be gaps or overlaps between spans in a trace. */
 	export interface TraceSpanFormProperties {
 
-		/** An optional number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans. */
+		/**
+		 * An optional number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childSpanCount: FormControl<number | null | undefined>,
 
 		/** The end time of the span. On the client side, this is the time kept by the local machine where the span execution ends. On the server side, this is the time when the server application handler stops running. */
@@ -2228,7 +2336,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. */
 		serverIp?: string | null;
 
-		/** The response code indicating the status of the response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of the response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The user agent sent by the client. Example: `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`. */
@@ -2277,7 +2388,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. */
 		serverIp: FormControl<string | null | undefined>,
 
-		/** The response code indicating the status of the response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of the response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The user agent sent by the client. Example: `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`. */

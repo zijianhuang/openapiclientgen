@@ -112,6 +112,7 @@ export namespace MyNS {
 		 * Get contacts
 		 * @param {ContactsGetAction} action Determines the action to execute.
 		 * @param {ContactsGetJson} json Defines whether to return the response as JSON or CSV separated by semicolon.
+		 *     Type: double
 		 * @return {string} OK (CSV)
 		 */
 		ContactsGet(action: ContactsGetAction, json: ContactsGetJson | null | undefined): Observable<string> {
@@ -122,6 +123,7 @@ export namespace MyNS {
 		 * Post contacts
 		 * @param {ContactsPOSTAction} action Determines the action to execute.
 		 * @param {ContactsPOSTJson} json Defines whether to return the response as JSON or CSV separated by semicolon.
+		 *     Type: double
 		 * @param {string} id The contact ID for editing/deletion.
 		 * @param {string} nick The contacts name.
 		 * @param {string} empfaenger The contacts phone number.
@@ -145,6 +147,7 @@ export namespace MyNS {
 		 * Post hooks
 		 * @param {HooksPOSTAction} action Determines the action to execute.
 		 * @param {number} id The Webhook ID you wish to unsubscribe.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} target_url Target URL of your Webhook.
 		 * @param {HooksPOSTEvent_type} event_type Type of event for which you would like to receive a webhook.
 		 * @param {HooksPOSTRequest_method} request_method Request method in which you want to receive the webhook.
@@ -222,14 +225,23 @@ export namespace MyNS {
 		 * @param {string} udh A custom User Data Header.
 		 * @param {string} delay Date/Time for delayed dispatch.
 		 * @param {SmsDebug} debug Disable message sending.
+		 *     Type: double
 		 * @param {SmsNo_reload} no_reload Enable sending of duplicated messages within 180 seconds.
+		 *     Type: double
 		 * @param {SmsUnicode} unicode Force unicode encoding. Reduces sms length to 70 chars.
+		 *     Type: double
 		 * @param {SmsFlash} flash Send as flash.
+		 *     Type: double
 		 * @param {SmsUtf8} utf8 Force UTF8 encoding.
+		 *     Type: double
 		 * @param {SmsDetails} details Attach message details to response.
+		 *     Type: double
 		 * @param {SmsReturn_msg_id} return_msg_id Attach message ID to second row in a text response.
+		 *     Type: double
 		 * @param {SmsJson} json Return a detailed JSON response.
+		 *     Type: double
 		 * @param {SmsPerformance_tracking} performance_tracking Enable performance tracking for found URLs.
+		 *     Type: double
 		 * @return {SmsReturn} OK
 		 */
 		Sms(text: string, to: string, from: string | null | undefined, foreign_id: string | null | undefined, label: string | null | undefined, udh: string | null | undefined, delay: string | null | undefined, debug: SmsDebug | null | undefined, no_reload: SmsNo_reload | null | undefined, unicode: SmsUnicode | null | undefined, flash: SmsFlash | null | undefined, utf8: SmsUtf8 | null | undefined, details: SmsDetails | null | undefined, return_msg_id: SmsReturn_msg_id | null | undefined, json: SmsJson | null | undefined, performance_tracking: SmsPerformance_tracking | null | undefined): Observable<SmsReturn> {
@@ -259,7 +271,9 @@ export namespace MyNS {
 		 * Post voice
 		 * @param {string} to Determines the receiver. Must be a valid phone number or contact from the address book.
 		 * @param {string} text The text to convert to a voice message. Accepts valid XML too.
+		 *     Max length: 10000
 		 * @param {VoiceXml} xml Decides whether the parameter "text" is plain text or XML. The default value is 0.
+		 *     Type: double
 		 * @param {string} from Sets the sender. Must be a verified sender. Use an inbound number of yours or one of ours.
 		 * @return {string} OK
 		 */
@@ -272,22 +286,50 @@ export namespace MyNS {
 
 	export interface AnalyticsReturn {
 		date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		direct?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		economy?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hlr?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		inbound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mnp?: number | null;
+
+		/** Type: float */
 		usage_eur?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voice?: number | null;
 	}
 	export interface AnalyticsReturnFormProperties {
 		date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		direct: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		economy: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hlr: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		inbound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mnp: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		usage_eur: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		voice: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalyticsReturnFormGroup() {
@@ -358,10 +400,14 @@ export namespace MyNS {
 	export enum HooksPOSTRequest_method { POST = 'POST', JSON = 'JSON', GET = 'GET' }
 
 	export interface HooksPOSTReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		success?: boolean | null;
 	}
 	export interface HooksPOSTReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		success: FormControl<boolean | null | undefined>,
 	}
@@ -392,18 +438,26 @@ export namespace MyNS {
 	export enum SmsPerformance_tracking { _1 = 1, _0 = 0 }
 
 	export interface SmsReturn {
+
+		/** Type: float */
 		balance?: number | null;
 		debug?: string | null;
 		SmsReturnMessages?: Array<SmsReturnMessages>;
 		sms_type?: SmsReturnSms_type | null;
 		success?: string | null;
+
+		/** Type: float */
 		total_price?: number | null;
 	}
 	export interface SmsReturnFormProperties {
+
+		/** Type: float */
 		balance: FormControl<number | null | undefined>,
 		debug: FormControl<string | null | undefined>,
 		sms_type: FormControl<SmsReturnSms_type | null | undefined>,
 		success: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		total_price: FormControl<number | null | undefined>,
 	}
 	export function CreateSmsReturnFormGroup() {
@@ -423,7 +477,11 @@ export namespace MyNS {
 		error_text?: string | null;
 		id?: string | null;
 		messages?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parts?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		price?: number | null;
 		recipient?: string | null;
 		sender?: string | null;
@@ -435,7 +493,11 @@ export namespace MyNS {
 		error: FormControl<string | null | undefined>,
 		error_text: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parts: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		price: FormControl<number | null | undefined>,
 		recipient: FormControl<string | null | undefined>,
 		sender: FormControl<string | null | undefined>,

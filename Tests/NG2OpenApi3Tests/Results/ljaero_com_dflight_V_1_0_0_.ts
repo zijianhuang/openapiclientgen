@@ -941,7 +941,10 @@ export namespace MyNS {
 		/** Required */
 		distance: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: number;
 
 		/** Required */
@@ -960,7 +963,10 @@ export namespace MyNS {
 		/** Required */
 		distance: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -983,7 +989,10 @@ export namespace MyNS {
 	/** Geometry-defining arguments for polygon requests */
 	export interface WxByPolygon {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: number;
 
 		/** Required */
@@ -996,7 +1005,10 @@ export namespace MyNS {
 	/** Geometry-defining arguments for polygon requests */
 	export interface WxByPolygonFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1014,7 +1026,10 @@ export namespace MyNS {
 	/** Geometry-defining arguments for along-route requests */
 	export interface WxByRoute {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: number;
 
 		/** Required */
@@ -1027,7 +1042,10 @@ export namespace MyNS {
 	/** Geometry-defining arguments for along-route requests */
 	export interface WxByRouteFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
 		/** Required */

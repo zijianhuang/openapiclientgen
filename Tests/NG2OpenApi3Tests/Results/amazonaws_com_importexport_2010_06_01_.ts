@@ -555,7 +555,10 @@ export namespace MyNS {
 		/** The key where the user logs were stored. */
 		LogKey?: string | null;
 
-		/** Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors. */
+		/**
+		 * Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ErrorCount?: number | null;
 
 		/** An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value. */
@@ -607,7 +610,10 @@ export namespace MyNS {
 		/** The key where the user logs were stored. */
 		LogKey: FormControl<string | null | undefined>,
 
-		/** Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors. */
+		/**
+		 * Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ErrorCount: FormControl<number | null | undefined>,
 
 		/** An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value. */
@@ -994,7 +1000,10 @@ export namespace MyNS {
 	/** Input structure for the ListJobs operation. */
 	export interface ListJobsInput {
 
-		/** Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker. */
+		/**
+		 * Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxJobs?: number | null;
 
 		/** Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse chronological order. See MaxJobs. */
@@ -1007,7 +1016,10 @@ export namespace MyNS {
 	/** Input structure for the ListJobs operation. */
 	export interface ListJobsInputFormProperties {
 
-		/** Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker. */
+		/**
+		 * Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxJobs: FormControl<number | null | undefined>,
 
 		/** Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse chronological order. See MaxJobs. */
@@ -1142,6 +1154,7 @@ export namespace MyNS {
 		/**
 		 * This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.
 		 * Get #Operation=ListJobs&Action=ListJobs
+		 * @param {number} MaxJobs Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ListJobs(MaxJobs: number | null | undefined, Marker: string | null | undefined, APIVersion: string | null | undefined, Operation: GET_ListJobsOperation, Action: GET_ListJobsOperation, Version: GET_CancelJobVersion): Observable<HttpResponse<string>> {

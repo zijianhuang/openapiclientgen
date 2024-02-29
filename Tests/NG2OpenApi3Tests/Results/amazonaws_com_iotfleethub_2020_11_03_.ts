@@ -418,6 +418,7 @@ export namespace MyNS {
 		 * <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		 * Get applications
 		 * @param {string} nextToken A token used to get the next set of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListApplicationsResponse} Success
 		 */
 		ListApplications(nextToken: string | null | undefined): Observable<ListApplicationsResponse> {
@@ -428,7 +429,9 @@ export namespace MyNS {
 		 * <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		 * Delete applications/{applicationId}
 		 * @param {string} applicationId The unique Id of the web application.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteApplication(applicationId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -439,6 +442,7 @@ export namespace MyNS {
 		 * <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		 * Get applications/{applicationId}
 		 * @param {string} applicationId The unique Id of the web application.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeApplicationResponse} Success
 		 */
 		DescribeApplication(applicationId: string): Observable<DescribeApplicationResponse> {
@@ -449,6 +453,7 @@ export namespace MyNS {
 		 * <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		 * Patch applications/{applicationId}
 		 * @param {string} applicationId The unique Id of the web application.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		UpdateApplication(applicationId: string, requestBody: UpdateApplicationPatchBody): Observable<HttpResponse<string>> {
@@ -492,30 +497,30 @@ export namespace MyNS {
 		/**
 		 * The name of the web application.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationName: string;
 
 		/**
 		 * An optional description of the web application.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		applicationDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note> <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> </note>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: string;
 
@@ -527,30 +532,30 @@ export namespace MyNS {
 		/**
 		 * The name of the web application.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the web application.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		applicationDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note> <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> </note>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -572,22 +577,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the web application.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationName?: string | null;
 
 		/**
 		 * An optional description of the web application.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		applicationDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -595,22 +600,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the web application.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description of the web application.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		applicationDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

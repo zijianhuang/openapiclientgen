@@ -68,38 +68,62 @@ export namespace MyNS {
 	/** Position in the `Source` content including its line, column number, and an index of the `File` in the `Source` message. Used for debug purposes. */
 	export interface SourcePosition {
 
-		/** First column on the source line associated with the source fragment. */
+		/**
+		 * First column on the source line associated with the source fragment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column?: number | null;
 
-		/** Start position relative to the beginning of the file. */
+		/**
+		 * Start position relative to the beginning of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentOffset?: number | null;
 
-		/** End position relative to the beginning of the file. */
+		/**
+		 * End position relative to the beginning of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset?: number | null;
 
 		/** Name of the `File`. */
 		fileName?: string | null;
 
-		/** Line number of the source fragment. 1-based. */
+		/**
+		 * Line number of the source fragment. 1-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 	}
 
 	/** Position in the `Source` content including its line, column number, and an index of the `File` in the `Source` message. Used for debug purposes. */
 	export interface SourcePositionFormProperties {
 
-		/** First column on the source line associated with the source fragment. */
+		/**
+		 * First column on the source line associated with the source fragment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column: FormControl<number | null | undefined>,
 
-		/** Start position relative to the beginning of the file. */
+		/**
+		 * Start position relative to the beginning of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentOffset: FormControl<number | null | undefined>,
 
-		/** End position relative to the beginning of the file. */
+		/**
+		 * End position relative to the beginning of the file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset: FormControl<number | null | undefined>,
 
 		/** Name of the `File`. */
 		fileName: FormControl<string | null | undefined>,
 
-		/** Line number of the source fragment. 1-based. */
+		/**
+		 * Line number of the source fragment. 1-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 	}
 	export function CreateSourcePositionFormGroup() {
@@ -117,7 +141,10 @@ export namespace MyNS {
 	/** Tuple for how many times an Expression was evaluated to a particular ExpressionValue. */
 	export interface ValueCount {
 
-		/** The amount of times that expression returned. */
+		/**
+		 * The amount of times that expression returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The return value of the expression */
@@ -127,7 +154,10 @@ export namespace MyNS {
 	/** Tuple for how many times an Expression was evaluated to a particular ExpressionValue. */
 	export interface ValueCountFormProperties {
 
-		/** The amount of times that expression returned. */
+		/**
+		 * The amount of times that expression returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The return value of the expression */
@@ -751,6 +781,7 @@ export namespace MyNS {
 		 * @param {string} name Required. Resource name for the project. Format: `projects/{project_id}`
 		 * @param {string} filter `Release` filter. The list method supports filters with restrictions on the `Release.name`, and `Release.ruleset_name`. Example 1: A filter of 'name=prod*' might return `Release`s with names within 'projects/foo' prefixed with 'prod': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v2 -> projects/foo/rulesets/uuid8888 Example 2: A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for 'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/1234 In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used.
 		 * @param {number} pageSize Page size to load. Maximum of 100. Defaults to 10. Note: `page_size` is just a hint and the service may choose to load fewer than `page_size` results due to the size of the output. To traverse all of the releases, the caller should iterate until the `page_token` on the response is empty.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Next page token for the next batch of `Release` instances.
 		 * @return {ListReleasesResponse} Successful response
 		 */
@@ -774,6 +805,7 @@ export namespace MyNS {
 		 * @param {string} name Required. Resource name for the project. Format: `projects/{project_id}`
 		 * @param {string} filter `Ruleset` filter. The list method supports filters with restrictions on `Ruleset.name`. Filters on `Ruleset.create_time` should use the `date` function which parses strings that conform to the RFC 3339 date/time specifications. Example: `create_time > date("2017-01-01T00:00:00Z") AND name=UUID-*`
 		 * @param {number} pageSize Page size to load. Maximum of 100. Defaults to 10. Note: `page_size` is just a hint and the service may choose to load less than `page_size` due to the size of the output. To traverse all of the releases, caller should iterate until the `page_token` is empty.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Next page token for loading the next batch of `Ruleset` instances.
 		 * @return {ListRulesetsResponse} Successful response
 		 */

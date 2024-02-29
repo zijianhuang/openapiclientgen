@@ -22,12 +22,14 @@ export namespace MyNS {
 		/**
 		 * Collection creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
 		/**
 		 * Collection creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateUpdated: number;
 
@@ -62,12 +64,14 @@ export namespace MyNS {
 		/**
 		 * Collection creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
 		/**
 		 * Collection creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateUpdated: FormControl<number | null | undefined>,
 
@@ -265,6 +269,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -275,6 +280,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -338,6 +344,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -348,6 +355,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -371,6 +379,7 @@ export namespace MyNS {
 		/**
 		 * Number of decimal digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		decimalDigits: number;
 
@@ -389,6 +398,7 @@ export namespace MyNS {
 		/**
 		 * Currency digit rounding.
 		 * Required
+		 * Type: float
 		 */
 		rounding: number;
 
@@ -417,6 +427,7 @@ export namespace MyNS {
 		/**
 		 * Number of decimal digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		decimalDigits: FormControl<number | null | undefined>,
 
@@ -435,6 +446,7 @@ export namespace MyNS {
 		/**
 		 * Currency digit rounding.
 		 * Required
+		 * Type: float
 		 */
 		rounding: FormControl<number | null | undefined>,
 
@@ -476,6 +488,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -486,6 +499,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -562,6 +576,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -572,6 +587,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -648,12 +664,14 @@ export namespace MyNS {
 		/**
 		 * The execution creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
 		/**
 		 * The script exit code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exitCode: number;
 
@@ -684,6 +702,7 @@ export namespace MyNS {
 		/**
 		 * The script execution time in seconds.
 		 * Required
+		 * Type: float
 		 */
 		time: number;
 
@@ -706,12 +725,14 @@ export namespace MyNS {
 		/**
 		 * The execution creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
 		/**
 		 * The script exit code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exitCode: FormControl<number | null | undefined>,
 
@@ -742,6 +763,7 @@ export namespace MyNS {
 		/**
 		 * The script execution time in seconds.
 		 * Required
+		 * Type: float
 		 */
 		time: FormControl<number | null | undefined>,
 
@@ -779,6 +801,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -789,6 +812,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -818,6 +842,7 @@ export namespace MyNS {
 		/**
 		 * File creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
@@ -842,6 +867,7 @@ export namespace MyNS {
 		/**
 		 * File original size in bytes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sizeOriginal: number;
 	}
@@ -864,6 +890,7 @@ export namespace MyNS {
 		/**
 		 * File creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
@@ -888,6 +915,7 @@ export namespace MyNS {
 		/**
 		 * File original size in bytes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sizeOriginal: FormControl<number | null | undefined>,
 	}
@@ -917,6 +945,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -927,6 +956,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -956,12 +986,14 @@ export namespace MyNS {
 		/**
 		 * Function creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
 		/**
 		 * Function update date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateUpdated: number;
 
@@ -992,12 +1024,14 @@ export namespace MyNS {
 		/**
 		 * Function next scheduled execution date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		scheduleNext: number;
 
 		/**
 		 * Function next scheduled execution date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		schedulePrevious: number;
 
@@ -1016,6 +1050,7 @@ export namespace MyNS {
 		/**
 		 * Function execution timeout in seconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 
@@ -1044,12 +1079,14 @@ export namespace MyNS {
 		/**
 		 * Function creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
 		/**
 		 * Function update date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateUpdated: FormControl<number | null | undefined>,
 
@@ -1074,12 +1111,14 @@ export namespace MyNS {
 		/**
 		 * Function next scheduled execution date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		scheduleNext: FormControl<number | null | undefined>,
 
 		/**
 		 * Function next scheduled execution date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		schedulePrevious: FormControl<number | null | undefined>,
 
@@ -1098,6 +1137,7 @@ export namespace MyNS {
 		/**
 		 * Function execution timeout in seconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 
@@ -1219,6 +1259,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -1229,6 +1270,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -1447,6 +1489,7 @@ export namespace MyNS {
 		/**
 		 * Log creation time in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		time: number;
 	}
@@ -1553,6 +1596,7 @@ export namespace MyNS {
 		/**
 		 * Log creation time in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		time: FormControl<number | null | undefined>,
 	}
@@ -1624,12 +1668,14 @@ export namespace MyNS {
 		/**
 		 * Date, the user has been invited to join the team in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		invited: number;
 
 		/**
 		 * Date, the user has accepted the invitation to join the team in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		joined: number;
 
@@ -1682,12 +1728,14 @@ export namespace MyNS {
 		/**
 		 * Date, the user has been invited to join the team in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		invited: FormControl<number | null | undefined>,
 
 		/**
 		 * Date, the user has accepted the invitation to join the team in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		joined: FormControl<number | null | undefined>,
 
@@ -1736,6 +1784,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -1746,6 +1795,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -1848,6 +1898,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -1858,6 +1909,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -1967,6 +2019,7 @@ export namespace MyNS {
 		/**
 		 * Session expiration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire: number;
 
@@ -2103,6 +2156,7 @@ export namespace MyNS {
 		/**
 		 * Session expiration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire: FormControl<number | null | undefined>,
 
@@ -2195,6 +2249,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -2205,6 +2260,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -2234,6 +2290,7 @@ export namespace MyNS {
 		/**
 		 * The tag creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
@@ -2268,6 +2325,7 @@ export namespace MyNS {
 		/**
 		 * The tag creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
@@ -2307,6 +2365,7 @@ export namespace MyNS {
 		/**
 		 * Team creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: number;
 
@@ -2319,6 +2378,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of team members.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 	}
@@ -2335,6 +2395,7 @@ export namespace MyNS {
 		/**
 		 * Team creation date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dateCreated: FormControl<number | null | undefined>,
 
@@ -2347,6 +2408,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of team members.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -2367,6 +2429,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: number;
 
@@ -2383,6 +2446,7 @@ export namespace MyNS {
 		/**
 		 * Total sum of items in the list.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -2406,6 +2470,7 @@ export namespace MyNS {
 		/**
 		 * Token expiration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire: number;
 
@@ -2434,6 +2499,7 @@ export namespace MyNS {
 		/**
 		 * Token expiration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire: FormControl<number | null | undefined>,
 
@@ -2490,6 +2556,7 @@ export namespace MyNS {
 		/**
 		 * Unix timestamp of the most recent password update
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		passwordUpdate: number;
 
@@ -2502,12 +2569,14 @@ export namespace MyNS {
 		/**
 		 * User registration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		registration: number;
 
 		/**
 		 * User status. 0 for Unactivated, 1 for active and 2 is blocked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -2542,6 +2611,7 @@ export namespace MyNS {
 		/**
 		 * Unix timestamp of the most recent password update
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		passwordUpdate: FormControl<number | null | undefined>,
 
@@ -2554,12 +2624,14 @@ export namespace MyNS {
 		/**
 		 * User registration date in Unix timestamp.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		registration: FormControl<number | null | undefined>,
 
 		/**
 		 * User status. 0 for Unactivated, 1 for active and 2 is blocked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -2808,8 +2880,11 @@ export namespace MyNS {
 		 * Get avatars/browsers/{code}
 		 * @param {string} code Browser Code.
 		 * @param {number} width Image width. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Image height. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Image quality. Pass an integer between 0 to 100. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image
 		 */
 		AvatarsGetBrowser(code: string, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2822,8 +2897,11 @@ export namespace MyNS {
 		 * Get avatars/credit-cards/{code}
 		 * @param {string} code Credit Card Code. Possible values: amex, argencard, cabal, censosud, diners, discover, elo, hipercard, jcb, mastercard, naranja, targeta-shopping, union-china-pay, visa, mir, maestro.
 		 * @param {number} width Image width. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Image height. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Image quality. Pass an integer between 0 to 100. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image
 		 */
 		AvatarsGetCreditCard(code: string, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2847,8 +2925,11 @@ export namespace MyNS {
 		 * Get avatars/flags/{code}
 		 * @param {string} code Country Code. ISO Alpha-2 country code format.
 		 * @param {number} width Image width. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Image height. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Image quality. Pass an integer between 0 to 100. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image
 		 */
 		AvatarsGetFlag(code: string, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2861,7 +2942,9 @@ export namespace MyNS {
 		 * Get avatars/image
 		 * @param {string} url Image URL which you want to crop.
 		 * @param {number} width Resize preview image width, Pass an integer between 0 to 2000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Resize preview image height, Pass an integer between 0 to 2000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image
 		 */
 		AvatarsGetImage(url: string, width: number | null | undefined, height: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2875,7 +2958,9 @@ export namespace MyNS {
 		 * Get avatars/initials
 		 * @param {string} name Full Name. When empty, current user name or email will be used. Max length: 128 chars.
 		 * @param {number} width Image width. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Image height. Pass an integer between 0 to 2000. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} color Changes text color. By default a random color will be picked and stay will persistent to the given name.
 		 * @param {string} background Changes background color. By default a random color will be picked and stay will persistent to the given name.
 		 * @return {void} Image
@@ -2890,7 +2975,9 @@ export namespace MyNS {
 		 * Get avatars/qr
 		 * @param {string} text Plain text to be converted to QR code image.
 		 * @param {number} size QR code size. Pass an integer between 0 to 1000. Defaults to 400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} margin Margin from edge. Pass an integer between 0 to 10. Defaults to 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} download Return resulting image with 'Content-Disposition: attachment ' headers for the browser to start downloading it. Pass 0 for no header, or 1 for otherwise. Default value is set to 0.
 		 * @return {void} Image
 		 */
@@ -2905,7 +2992,9 @@ export namespace MyNS {
 		 * @param {string} collectionId Collection unique ID. You can create a new collection with validation rules using the Database service [server integration](/docs/server/database#createCollection).
 		 * @param {Array<string>} filters Array of filter strings. Each filter is constructed from a key name, comparison operator (=, !=, >, <, <=, >=) and a value. You can also use a dot (.) separator in attribute names to filter by child document attributes. Examples: 'name=John Doe' or 'category.$id>=5bed2d152c362'.
 		 * @param {number} limit Maximum number of documents to return in response.  Use this value to manage pagination. By default will return maximum 25 results. Maximum of 100 results allowed per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset value. The default value is 0. Use this param to manage pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderField Document field that results will be sorted by.
 		 * @param {string} orderType Order direction. Possible values are DESC for descending order, or ASC for ascending order.
 		 * @param {string} orderCast Order field type casting. Possible values are int, string, date, time or datetime. The database will attempt to cast the order field to the value you pass here. The default value is a string.
@@ -2970,7 +3059,9 @@ export namespace MyNS {
 		 * @param {string} functionId Function unique ID.
 		 * @param {string} search Search term to filter your list results. Max length: 256 chars.
 		 * @param {number} limit Results limit value. By default will return maximum 25 results. Maximum of 100 results allowed per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Results offset. The default value is 0. Use this param to manage pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderType Order result by ASC or DESC order.
 		 * @return {ExecutionList} Executions List
 		 */
@@ -3078,7 +3169,9 @@ export namespace MyNS {
 		 * Get storage/files
 		 * @param {string} search Search term to filter your list results. Max length: 256 chars.
 		 * @param {number} limit Results limit value. By default will return maximum 25 results. Maximum of 100 results allowed per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Results offset. The default value is 0. Use this param to manage pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderType Order result by ASC or DESC order.
 		 * @return {FileList} Files List
 		 */
@@ -3136,14 +3229,21 @@ export namespace MyNS {
 		 * Get storage/files/{fileId}/preview
 		 * @param {string} fileId File unique ID
 		 * @param {number} width Resize preview image width, Pass an integer between 0 to 4000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Resize preview image height, Pass an integer between 0 to 4000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} gravity Image crop gravity. Can be one of center,top-left,top,top-right,left,right,bottom-left,bottom,bottom-right
 		 * @param {number} quality Preview image quality. Pass an integer between 0 to 100. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} borderWidth Preview image border in pixels. Pass an integer between 0 to 100. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} borderColor Preview image border color. Use a valid HEX color, no # is needed for prefix.
 		 * @param {number} borderRadius Preview image border radius in pixels. Pass an integer between 0 to 4000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} opacity Preview image opacity. Only works with images having an alpha channel (like png). Pass a number between 0 to 1.
+		 *     Type: float
 		 * @param {number} rotation Preview image rotation in degrees. Pass an integer between 0 and 360.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} background Preview image background color. Only works with transparent images (png). Use a valid HEX color, no # is needed for prefix.
 		 * @param {string} output Output format type (jpeg, jpg, png, gif and webp).
 		 * @return {void} Image
@@ -3169,7 +3269,9 @@ export namespace MyNS {
 		 * Get teams
 		 * @param {string} search Search term to filter your list results. Max length: 256 chars.
 		 * @param {number} limit Results limit value. By default will return maximum 25 results. Maximum of 100 results allowed per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Results offset. The default value is 0. Use this param to manage pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderType Order result by ASC or DESC order.
 		 * @return {TeamList} Teams List
 		 */
@@ -3227,7 +3329,9 @@ export namespace MyNS {
 		 * @param {string} teamId Team unique ID.
 		 * @param {string} search Search term to filter your list results. Max length: 256 chars.
 		 * @param {number} limit Results limit value. By default will return maximum 25 results. Maximum of 100 results allowed per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Results offset. The default value is 0. Use this param to manage pagination.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderType Order result by ASC or DESC order.
 		 * @return {MembershipList} Memberships List
 		 */

@@ -20,8 +20,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the bulk eligibility check that you want to know about.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		request_id?: string | null;
 
@@ -43,8 +43,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the bulk eligibility check that you want to know about.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		request_id: FormControl<string | null | undefined>,
 
@@ -89,8 +89,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Portability check.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Numbersv1porting_bulk_portabilityStatus | null;
@@ -105,8 +105,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Portability check.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Numbersv1porting_bulk_portabilityStatus | null | undefined>,
@@ -130,8 +130,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Port In request. This is a unique identifier of the port in request.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		port_in_request_sid?: string | null;
 		url?: string | null;
@@ -140,8 +140,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Port In request. This is a unique identifier of the port in request.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		port_in_request_sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -158,8 +158,8 @@ export namespace MyNS {
 
 		/**
 		 * The Account SID that the numbers will be added to after they are ported into Twilio.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -177,12 +177,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Port In request. This is a unique identifier of the port in request.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		port_in_request_sid?: string | null;
 
-		/** Minimum number of days in the future (at least 2 days) needs to be established with the Ops team for validation. */
+		/**
+		 * Minimum number of days in the future (at least 2 days) needs to be established with the Ops team for validation.
+		 * Type: DateOnly
+		 */
 		target_port_in_date?: Date | null;
 
 		/** Maximum hour in the future needs to be established with the Ops team for validation. */
@@ -198,8 +201,8 @@ export namespace MyNS {
 
 		/**
 		 * The Account SID that the numbers will be added to after they are ported into Twilio.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -208,12 +211,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Port In request. This is a unique identifier of the port in request.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		port_in_request_sid: FormControl<string | null | undefined>,
 
-		/** Minimum number of days in the future (at least 2 days) needs to be established with the Ops team for validation. */
+		/**
+		 * Minimum number of days in the future (at least 2 days) needs to be established with the Ops team for validation.
+		 * Type: DateOnly
+		 */
 		target_port_in_date: FormControl<Date | null | undefined>,
 
 		/** Maximum hour in the future needs to be established with the Ops team for validation. */
@@ -242,8 +248,8 @@ export namespace MyNS {
 
 		/**
 		 * The target account sid to which the number will be ported
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -256,7 +262,10 @@ export namespace MyNS {
 		/** Reason why the phone number cannot be ported into Twilio, `null` otherwise. */
 		not_portable_reason?: string | null;
 
-		/** The Portability Reason Code for the phone number if it cannot be ported into Twilio, `null` otherwise. One of `22131`, `22132`, `22130`, `22133`, `22102` or `22135`. */
+		/**
+		 * The Portability Reason Code for the phone number if it cannot be ported into Twilio, `null` otherwise. One of `22131`, `22132`, `22130`, `22133`, `22102` or `22135`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		not_portable_reason_code?: number | null;
 		number_type?: Numbersv1porting_portabilityNumber_type | null;
 
@@ -279,8 +288,8 @@ export namespace MyNS {
 
 		/**
 		 * The target account sid to which the number will be ported
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -293,7 +302,10 @@ export namespace MyNS {
 		/** Reason why the phone number cannot be ported into Twilio, `null` otherwise. */
 		not_portable_reason: FormControl<string | null | undefined>,
 
-		/** The Portability Reason Code for the phone number if it cannot be ported into Twilio, `null` otherwise. One of `22131`, `22132`, `22130`, `22133`, `22102` or `22135`. */
+		/**
+		 * The Portability Reason Code for the phone number if it cannot be ported into Twilio, `null` otherwise. One of `22131`, `22132`, `22130`, `22133`, `22102` or `22135`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		not_portable_reason_code: FormControl<number | null | undefined>,
 		number_type: FormControl<Numbersv1porting_portabilityNumber_type | null | undefined>,
 
@@ -344,6 +356,7 @@ export namespace MyNS {
 		 * Fetch an eligibility bulk check that you requested to host in Twilio.
 		 * Get v1/HostedNumber/Eligibility/Bulk/{RequestId}
 		 * @param {string} RequestId The SID of the bulk eligibility check that you want to know about.
+		 *     Min length: 34    Max length: 34
 		 * @return {Numbersv1bulk_eligibility} OK
 		 */
 		FetchBulkEligibility(RequestId: string): Observable<Numbersv1bulk_eligibility> {
@@ -354,6 +367,7 @@ export namespace MyNS {
 		 * Fetch a port in request by SID
 		 * Get v1/Porting/PortIn/{PortInRequestSid}
 		 * @param {string} PortInRequestSid The SID of the Port In request. This is a unique identifier of the port in request.
+		 *     Min length: 34    Max length: 34
 		 * @return {Numbersv1porting_port_in_fetch} OK
 		 */
 		FetchPortingPortInFetch(PortInRequestSid: string): Observable<Numbersv1porting_port_in_fetch> {
@@ -365,6 +379,7 @@ export namespace MyNS {
 		 * Get v1/Porting/Portability/PhoneNumber/{PhoneNumber}
 		 * @param {string} PhoneNumber The phone number which portability is to be checked. Phone numbers are in E.164 format (e.g. +16175551212).
 		 * @param {string} TargetAccountSid The SID of the account where the phone number(s) will be ported.
+		 *     Min length: 34    Max length: 34
 		 * @return {Numbersv1porting_portability} OK
 		 */
 		FetchPortingPortability(PhoneNumber: string, TargetAccountSid: string | null | undefined): Observable<Numbersv1porting_portability> {
@@ -375,6 +390,7 @@ export namespace MyNS {
 		 * Fetch a previous portability check. This should return the current status of the validation and the result for all the numbers provided, given that they have been validated (as this process is performed asynchronously).
 		 * Get v1/Porting/Portability/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies the Portability check.
+		 *     Min length: 34    Max length: 34
 		 * @return {Numbersv1porting_bulk_portability} OK
 		 */
 		FetchPortingBulkPortability(Sid: string): Observable<Numbersv1porting_bulk_portability> {

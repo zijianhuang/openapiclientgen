@@ -196,24 +196,36 @@ export namespace MyNS {
 
 	export interface AnnotationLayerSummary {
 
-		/** Maximum allowed characters on this layer, especially for the "copy" layer. */
+		/**
+		 * Maximum allowed characters on this layer, especially for the "copy" layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowedCharacterCount?: number | null;
 
 		/** Type of limitation on this layer. "limited" or "unlimited" for the "copy" layer. */
 		limitType?: string | null;
 
-		/** Remaining allowed characters on this layer, especially for the "copy" layer. */
+		/**
+		 * Remaining allowed characters on this layer, especially for the "copy" layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCharacterCount?: number | null;
 	}
 	export interface AnnotationLayerSummaryFormProperties {
 
-		/** Maximum allowed characters on this layer, especially for the "copy" layer. */
+		/**
+		 * Maximum allowed characters on this layer, especially for the "copy" layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowedCharacterCount: FormControl<number | null | undefined>,
 
 		/** Type of limitation on this layer. "limited" or "unlimited" for the "copy" layer. */
 		limitType: FormControl<string | null | undefined>,
 
-		/** Remaining allowed characters on this layer, especially for the "copy" layer. */
+		/**
+		 * Remaining allowed characters on this layer, especially for the "copy" layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCharacterCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAnnotationLayerSummaryFormGroup() {
@@ -236,7 +248,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken?: string | null;
 
-		/** Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated. */
+		/**
+		 * Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface AnnotationsFormProperties {
@@ -247,7 +262,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated. */
+		/**
+		 * Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateAnnotationsFormGroup() {
@@ -274,16 +292,24 @@ export namespace MyNS {
 	}
 
 	export interface AnnotationsSummaryLayers {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		layerId?: string | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: string | null;
 	}
 	export interface AnnotationsSummaryLayersFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount: FormControl<number | null | undefined>,
 		layerId: FormControl<string | null | undefined>,
 		limitType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount: FormControl<number | null | undefined>,
 		updated: FormControl<string | null | undefined>,
 	}
@@ -309,7 +335,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken?: string | null;
 
-		/** The total number of volume annotations found. */
+		/**
+		 * The total number of volume annotations found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface AnnotationsdataFormProperties {
@@ -320,7 +349,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of volume annotations found. */
+		/**
+		 * The total number of volume annotations found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateAnnotationsdataFormGroup() {
@@ -470,10 +502,16 @@ export namespace MyNS {
 		/** The country code of the location. */
 		countryCode?: string | null;
 
-		/** The latitude of the location. */
+		/**
+		 * The latitude of the location.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude of the location. */
+		/**
+		 * The longitude of the location.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN */
@@ -482,7 +520,10 @@ export namespace MyNS {
 		/** The viewport for showing this location. This is a latitude, longitude rectangle. */
 		viewport?: GeolayerdataGeoViewport;
 
-		/** The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https: //developers.google.com/maps/documentation/staticmaps/#Zoomlevels */
+		/**
+		 * The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https: //developers.google.com/maps/documentation/staticmaps/#Zoomlevels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom?: number | null;
 	}
 	export interface GeolayerdataGeoFormProperties {
@@ -493,16 +534,25 @@ export namespace MyNS {
 		/** The country code of the location. */
 		countryCode: FormControl<string | null | undefined>,
 
-		/** The latitude of the location. */
+		/**
+		 * The latitude of the location.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude of the location. */
+		/**
+		 * The longitude of the location.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN */
 		mapType: FormControl<string | null | undefined>,
 
-		/** The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https: //developers.google.com/maps/documentation/staticmaps/#Zoomlevels */
+		/**
+		 * The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https: //developers.google.com/maps/documentation/staticmaps/#Zoomlevels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom: FormControl<number | null | undefined>,
 	}
 	export function CreateGeolayerdataGeoFormGroup() {
@@ -530,11 +580,19 @@ export namespace MyNS {
 	}
 
 	export interface GeolayerdataGeoViewportHi {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GeolayerdataGeoViewportHiFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeolayerdataGeoViewportHiFormGroup() {
@@ -546,11 +604,19 @@ export namespace MyNS {
 	}
 
 	export interface GeolayerdataGeoViewportLo {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GeolayerdataGeoViewportLoFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeolayerdataGeoViewportLoFormGroup() {
@@ -607,7 +673,10 @@ export namespace MyNS {
 		/** Description of this bookshelf. */
 		description?: string | null;
 
-		/** Id of this bookshelf, only unique by user. */
+		/**
+		 * Id of this bookshelf, only unique by user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Resource type for bookshelf metadata. */
@@ -622,7 +691,10 @@ export namespace MyNS {
 		/** Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution). */
 		updated?: string | null;
 
-		/** Number of volumes in this bookshelf. */
+		/**
+		 * Number of volumes in this bookshelf.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumeCount?: number | null;
 
 		/** Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution). */
@@ -639,7 +711,10 @@ export namespace MyNS {
 		/** Description of this bookshelf. */
 		description: FormControl<string | null | undefined>,
 
-		/** Id of this bookshelf, only unique by user. */
+		/**
+		 * Id of this bookshelf, only unique by user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Resource type for bookshelf metadata. */
@@ -654,7 +729,10 @@ export namespace MyNS {
 		/** Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution). */
 		updated: FormControl<string | null | undefined>,
 
-		/** Number of volumes in this bookshelf. */
+		/**
+		 * Number of volumes in this bookshelf.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumeCount: FormControl<number | null | undefined>,
 
 		/** Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution). */
@@ -743,7 +821,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind?: string | null;
 
-		/** The maximum number of concurrent access licenses for this volume. */
+		/**
+		 * The maximum number of concurrent access licenses for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentDevices?: number | null;
 
 		/** Error/warning message. */
@@ -764,7 +845,10 @@ export namespace MyNS {
 		/** Client app identifier for verification. Download access and client-validation only. */
 		source?: string | null;
 
-		/** Time in seconds for license auto-expiration. */
+		/**
+		 * Time in seconds for license auto-expiration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeWindowSeconds?: number | null;
 
 		/** Identifies the volume for which this entry applies. */
@@ -778,7 +862,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The maximum number of concurrent access licenses for this volume. */
+		/**
+		 * The maximum number of concurrent access licenses for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentDevices: FormControl<number | null | undefined>,
 
 		/** Error/warning message. */
@@ -799,7 +886,10 @@ export namespace MyNS {
 		/** Client app identifier for verification. Download access and client-validation only. */
 		source: FormControl<string | null | undefined>,
 
-		/** Time in seconds for license auto-expiration. */
+		/**
+		 * Time in seconds for license auto-expiration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeWindowSeconds: FormControl<number | null | undefined>,
 
 		/** Identifies the volume for which this entry applies. */
@@ -1180,12 +1270,16 @@ export namespace MyNS {
 
 		/** Resorce type. */
 		kind?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalClusters?: number | null;
 	}
 	export interface DiscoveryclustersFormProperties {
 
 		/** Resorce type. */
 		kind: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalClusters: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscoveryclustersFormGroup() {
@@ -1200,6 +1294,8 @@ export namespace MyNS {
 		banner_with_content_container?: DiscoveryclustersClustersBanner_with_content_container;
 		subTitle?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalVolumes?: number | null;
 		uid?: string | null;
 		volumes?: Array<Volume>;
@@ -1207,6 +1303,8 @@ export namespace MyNS {
 	export interface DiscoveryclustersClustersFormProperties {
 		subTitle: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalVolumes: FormControl<number | null | undefined>,
 		uid: FormControl<string | null | undefined>,
 	}
@@ -1406,7 +1504,10 @@ export namespace MyNS {
 		/** If restricted, whether access is granted for this (user, device, volume). */
 		deviceAllowed?: boolean | null;
 
-		/** If restricted, the number of content download licenses already acquired (including the requesting client, if licensed). */
+		/**
+		 * If restricted, the number of content download licenses already acquired (including the requesting client, if licensed).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadsAcquired?: number | null;
 
 		/** If deviceAllowed, whether access was just acquired with this request. */
@@ -1415,7 +1516,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind?: string | null;
 
-		/** If restricted, the maximum number of content download licenses for this volume. */
+		/**
+		 * If restricted, the maximum number of content download licenses for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloadDevices?: number | null;
 
 		/** Error/warning message. */
@@ -1444,7 +1548,10 @@ export namespace MyNS {
 		/** If restricted, whether access is granted for this (user, device, volume). */
 		deviceAllowed: FormControl<boolean | null | undefined>,
 
-		/** If restricted, the number of content download licenses already acquired (including the requesting client, if licensed). */
+		/**
+		 * If restricted, the number of content download licenses already acquired (including the requesting client, if licensed).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadsAcquired: FormControl<number | null | undefined>,
 
 		/** If deviceAllowed, whether access was just acquired with this request. */
@@ -1453,7 +1560,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** If restricted, the maximum number of content download licenses for this volume. */
+		/**
+		 * If restricted, the maximum number of content download licenses for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDownloadDevices: FormControl<number | null | undefined>,
 
 		/** Error/warning message. */
@@ -1667,7 +1777,10 @@ export namespace MyNS {
 
 	export interface VolumeSaleInfoListPrice {
 
-		/** Amount in the currency listed below. (In LITE projection.) */
+		/**
+		 * Amount in the currency listed below. (In LITE projection.)
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
@@ -1675,7 +1788,10 @@ export namespace MyNS {
 	}
 	export interface VolumeSaleInfoListPriceFormProperties {
 
-		/** Amount in the currency listed below. (In LITE projection.) */
+		/**
+		 * Amount in the currency listed below. (In LITE projection.)
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
@@ -1691,7 +1807,10 @@ export namespace MyNS {
 
 	export interface VolumeSaleInfoOffers {
 
-		/** The finsky offer type (e.g., PURCHASE=0 RENTAL=3) */
+		/**
+		 * The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finskyOfferType?: number | null;
 
 		/** Indicates whether the offer is giftable. */
@@ -1708,7 +1827,10 @@ export namespace MyNS {
 	}
 	export interface VolumeSaleInfoOffersFormProperties {
 
-		/** The finsky offer type (e.g., PURCHASE=0 RENTAL=3) */
+		/**
+		 * The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finskyOfferType: FormControl<number | null | undefined>,
 
 		/** Indicates whether the offer is giftable. */
@@ -1723,10 +1845,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersListPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
 	export interface VolumeSaleInfoOffersListPriceFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -1739,10 +1865,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersRentalDuration {
+
+		/** Type: double */
 		count?: number | null;
 		unit?: string | null;
 	}
 	export interface VolumeSaleInfoOffersRentalDurationFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		unit: FormControl<string | null | undefined>,
 	}
@@ -1755,10 +1885,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersRetailPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
 	export interface VolumeSaleInfoOffersRetailPriceFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -1772,7 +1906,10 @@ export namespace MyNS {
 
 	export interface VolumeSaleInfoRetailPrice {
 
-		/** Amount in the currency listed below. (In LITE projection.) */
+		/**
+		 * Amount in the currency listed below. (In LITE projection.)
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
@@ -1780,7 +1917,10 @@ export namespace MyNS {
 	}
 	export interface VolumeSaleInfoRetailPriceFormProperties {
 
-		/** Amount in the currency listed below. (In LITE projection.) */
+		/**
+		 * Amount in the currency listed below. (In LITE projection.)
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
@@ -1816,13 +1956,19 @@ export namespace MyNS {
 		/** Timestamp when this volume was acquired by the user. (RFC 3339 UTC date-time format) Acquiring includes purchase, user upload, receiving family sharing, etc. */
 		acquiredTime?: string | null;
 
-		/** How this volume was acquired. */
+		/**
+		 * How this volume was acquired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acquisitionType?: number | null;
 
 		/** Copy/Paste accounting information. */
 		copy?: VolumeUserInfoCopy;
 
-		/** Whether this volume is purchased, sample, pd download etc. */
+		/**
+		 * Whether this volume is purchased, sample, pd download etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entitlementType?: number | null;
 
 		/** Information on the ability to share with the family. */
@@ -1869,10 +2015,16 @@ export namespace MyNS {
 		/** Timestamp when this volume was acquired by the user. (RFC 3339 UTC date-time format) Acquiring includes purchase, user upload, receiving family sharing, etc. */
 		acquiredTime: FormControl<string | null | undefined>,
 
-		/** How this volume was acquired. */
+		/**
+		 * How this volume was acquired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acquisitionType: FormControl<number | null | undefined>,
 
-		/** Whether this volume is purchased, sample, pd download etc. */
+		/**
+		 * Whether this volume is purchased, sample, pd download etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entitlementType: FormControl<number | null | undefined>,
 
 		/** Whether or not the user shared this volume with the family. */
@@ -1925,14 +2077,22 @@ export namespace MyNS {
 	}
 
 	export interface VolumeUserInfoCopy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: string | null;
 	}
 	export interface VolumeUserInfoCopyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount: FormControl<number | null | undefined>,
 		limitType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount: FormControl<number | null | undefined>,
 		updated: FormControl<string | null | undefined>,
 	}
@@ -2193,7 +2353,10 @@ export namespace MyNS {
 		/** The names of the authors and/or editors for this volume. (In LITE projection) */
 		authors?: Array<string>;
 
-		/** The mean review rating for this volume. (min = 1.0, max = 5.0) */
+		/**
+		 * The mean review rating for this volume. (min = 1.0, max = 5.0)
+		 * Type: double
+		 */
 		averageRating?: number | null;
 
 		/** Canonical URL for a volume. (In LITE projection.) */
@@ -2230,7 +2393,10 @@ export namespace MyNS {
 		mainCategory?: string | null;
 		maturityRating?: string | null;
 
-		/** Total number of pages as per publisher metadata. */
+		/**
+		 * Total number of pages as per publisher metadata.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount?: number | null;
 
 		/** A top-level summary of the panelization info in this volume. */
@@ -2242,7 +2408,10 @@ export namespace MyNS {
 		/** Type of publication of this volume. Possible values are BOOK or MAGAZINE. */
 		printType?: string | null;
 
-		/** Total number of printed pages in generated pdf representation. */
+		/**
+		 * Total number of printed pages in generated pdf representation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		printedPageCount?: number | null;
 
 		/** Date of publication. (In LITE projection.) */
@@ -2251,13 +2420,19 @@ export namespace MyNS {
 		/** Publisher of this volume. (In LITE projection.) */
 		publisher?: string | null;
 
-		/** The number of review ratings for this volume. */
+		/**
+		 * The number of review ratings for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingsCount?: number | null;
 
 		/** The reading modes available for this volume. */
 		readingModes?: VolumeVolumeInfoReadingModes;
 
-		/** Total number of sample pages as per publisher metadata. */
+		/**
+		 * Total number of sample pages as per publisher metadata.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplePageCount?: number | null;
 		seriesInfo?: Volumeseriesinfo;
 
@@ -2272,7 +2447,10 @@ export namespace MyNS {
 		/** Whether anonymous logging should be allowed. */
 		allowAnonLogging: FormControl<boolean | null | undefined>,
 
-		/** The mean review rating for this volume. (min = 1.0, max = 5.0) */
+		/**
+		 * The mean review rating for this volume. (min = 1.0, max = 5.0)
+		 * Type: double
+		 */
 		averageRating: FormControl<number | null | undefined>,
 
 		/** Canonical URL for a volume. (In LITE projection.) */
@@ -2297,7 +2475,10 @@ export namespace MyNS {
 		mainCategory: FormControl<string | null | undefined>,
 		maturityRating: FormControl<string | null | undefined>,
 
-		/** Total number of pages as per publisher metadata. */
+		/**
+		 * Total number of pages as per publisher metadata.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount: FormControl<number | null | undefined>,
 
 		/** URL to preview this volume on the Google Books site. */
@@ -2306,7 +2487,10 @@ export namespace MyNS {
 		/** Type of publication of this volume. Possible values are BOOK or MAGAZINE. */
 		printType: FormControl<string | null | undefined>,
 
-		/** Total number of printed pages in generated pdf representation. */
+		/**
+		 * Total number of printed pages in generated pdf representation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		printedPageCount: FormControl<number | null | undefined>,
 
 		/** Date of publication. (In LITE projection.) */
@@ -2315,10 +2499,16 @@ export namespace MyNS {
 		/** Publisher of this volume. (In LITE projection.) */
 		publisher: FormControl<string | null | undefined>,
 
-		/** The number of review ratings for this volume. */
+		/**
+		 * The number of review ratings for this volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingsCount: FormControl<number | null | undefined>,
 
-		/** Total number of sample pages as per publisher metadata. */
+		/**
+		 * Total number of sample pages as per publisher metadata.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplePageCount: FormControl<number | null | undefined>,
 
 		/** Volume subtitle. (In LITE projection.) */
@@ -2535,7 +2725,10 @@ export namespace MyNS {
 		/** List of issues. Applicable only for Collection Edition and Omnibus. */
 		VolumeseriesinfoVolumeSeriesIssue?: Array<VolumeseriesinfoVolumeSeriesIssue>;
 
-		/** The book order number in the series. */
+		/**
+		 * The book order number in the series.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		orderNumber?: number | null;
 
 		/** The book type in the context of series. Examples - Single Issue, Collection Edition, etc. */
@@ -2546,7 +2739,10 @@ export namespace MyNS {
 	}
 	export interface VolumeseriesinfoVolumeSeriesFormProperties {
 
-		/** The book order number in the series. */
+		/**
+		 * The book order number in the series.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		orderNumber: FormControl<number | null | undefined>,
 
 		/** The book type in the context of series. Examples - Single Issue, Collection Edition, etc. */
@@ -2566,10 +2762,14 @@ export namespace MyNS {
 
 	export interface VolumeseriesinfoVolumeSeriesIssue {
 		issueDisplayNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issueOrderNumber?: number | null;
 	}
 	export interface VolumeseriesinfoVolumeSeriesIssueFormProperties {
 		issueDisplayNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issueOrderNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateVolumeseriesinfoVolumeSeriesIssueFormGroup() {
@@ -2683,7 +2883,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind?: string | null;
 
-		/** The total number of layer summaries found. */
+		/**
+		 * The total number of layer summaries found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface LayersummariesFormProperties {
@@ -2691,7 +2894,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The total number of layer summaries found. */
+		/**
+		 * The total number of layer summaries found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateLayersummariesFormGroup() {
@@ -2704,7 +2910,10 @@ export namespace MyNS {
 
 	export interface Layersummary {
 
-		/** The number of annotations for this layer. */
+		/**
+		 * The number of annotations for this layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotationCount?: number | null;
 
 		/** The list of annotation types contained for this layer. */
@@ -2719,7 +2928,10 @@ export namespace MyNS {
 		/** The content version this resource is for. */
 		contentVersion?: string | null;
 
-		/** The number of data items for this layer. */
+		/**
+		 * The number of data items for this layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataCount?: number | null;
 
 		/** Unique id of this layer summary. */
@@ -2745,7 +2957,10 @@ export namespace MyNS {
 	}
 	export interface LayersummaryFormProperties {
 
-		/** The number of annotations for this layer. */
+		/**
+		 * The number of annotations for this layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotationCount: FormControl<number | null | undefined>,
 
 		/** Link to get data for this annotation. */
@@ -2757,7 +2972,10 @@ export namespace MyNS {
 		/** The content version this resource is for. */
 		contentVersion: FormControl<string | null | undefined>,
 
-		/** The number of data items for this layer. */
+		/**
+		 * The number of data items for this layer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataCount: FormControl<number | null | undefined>,
 
 		/** Unique id of this layer summary. */
@@ -3068,12 +3286,16 @@ export namespace MyNS {
 	}
 
 	export interface SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 		releaseNumber?: string | null;
 		releaseTime?: string | null;
 	}
 	export interface SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfoFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 		releaseNumber: FormControl<string | null | undefined>,
@@ -3090,12 +3312,16 @@ export namespace MyNS {
 	}
 
 	export interface SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 		releaseNumber?: string | null;
 		releaseTime?: string | null;
 	}
 	export interface SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfoFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 		releaseNumber: FormControl<string | null | undefined>,
@@ -3403,7 +3629,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken?: string | null;
 
-		/** The total number of volume annotations found. */
+		/**
+		 * The total number of volume annotations found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 
 		/** The version string for all of the volume annotations in this layer (not just the ones in this response). Note: the version string doesn't apply to the annotation data, just the information in this response (e.g. the location of annotations in the book). */
@@ -3417,7 +3646,10 @@ export namespace MyNS {
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of volume annotations found. */
+		/**
+		 * The total number of volume annotations found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 
 		/** The version string for all of the volume annotations in this layer (not just the ones in this response). Note: the version string doesn't apply to the annotation data, just the information in this response (e.g. the location of annotations in the book). */
@@ -3441,7 +3673,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind?: string | null;
 
-		/** Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated. */
+		/**
+		 * Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface VolumesFormProperties {
@@ -3449,7 +3684,10 @@ export namespace MyNS {
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated. */
+		/**
+		 * Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateVolumesFormGroup() {
@@ -3612,6 +3850,7 @@ export namespace MyNS {
 		 * @param {string} layerId The layer ID to limit annotation by.
 		 * @param {Array<string>} layerIds The layer ID(s) to limit annotation by.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 40
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {boolean} showDeleted Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
@@ -3721,6 +3960,7 @@ export namespace MyNS {
 		 * @param {string} shelf ID of bookshelf with the volume.
 		 * @param {string} volumeId ID of volume to move.
 		 * @param {number} volumePosition Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {Empty} Successful response
 		 */
@@ -3747,11 +3987,13 @@ export namespace MyNS {
 		 * @param {string} shelf The bookshelf ID or name retrieve volumes for.
 		 * @param {string} country ISO-3166-1 code to override the IP-based location.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0
 		 * @param {Books_mylibrary_bookshelves_volumes_listProjection} projection Restrict information returned to a set of selected fields.
 		 * @param {string} q Full-text search query string in this bookshelf.
 		 * @param {boolean} showPreorders Set to true to show pre-ordered books. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {Volumes} Successful response
 		 */
 		Books_mylibrary_bookshelves_volumes_list(shelf: string, country: string | null | undefined, maxResults: number | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, q: string | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<Volumes> {
@@ -3815,6 +4057,7 @@ export namespace MyNS {
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Default is en-US if unset.
 		 * @param {Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating} maxAllowedMaturityRating The maximum allowed maturity rating of returned volumes. Books with a higher maturity rating are filtered out.
 		 * @param {number} pageSize Number of maximum results per page to be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @return {Volume2} Successful response
 		 */
@@ -3896,6 +4139,7 @@ export namespace MyNS {
 		 * Get books/v1/series/membership/get
 		 * @param {string} series_id String that identifies the series
 		 * @param {number} page_size Number of maximum results per page to be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} page_token The value of the nextToken from the previous page.
 		 * @return {Seriesmembership} Successful response
 		 */
@@ -3932,9 +4176,11 @@ export namespace MyNS {
 		 * @param {string} userId ID of user for whom to retrieve bookshelf volumes.
 		 * @param {string} shelf ID of bookshelf to retrieve volumes.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0
 		 * @param {boolean} showPreorders Set to true to show pre-ordered books. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {Volumes} Successful response
 		 */
 		Books_bookshelves_volumes_list(userId: string, shelf: string, maxResults: number | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<Volumes> {
@@ -3951,6 +4197,7 @@ export namespace MyNS {
 		 * @param {Books_volumes_listLibraryRestrict} libraryRestrict Restrict search to this user's library.
 		 * @param {Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating} maxAllowedMaturityRating The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 40
 		 * @param {Books_volumes_listOrderBy} orderBy Sort search results.
 		 * @param {string} partner Restrict and brand results for partner ID.
 		 * @param {Books_volumes_listPrintType} printType Restrict to books or magazines.
@@ -3958,6 +4205,7 @@ export namespace MyNS {
 		 * @param {boolean} showPreorders Set to true to show books available for preorder. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {Volumes} Successful response
 		 */
 		Books_volumes_list(q: string, download: Books_volumes_listDownload | null | undefined, filter: Books_volumes_listFilter | null | undefined, langRestrict: string | null | undefined, libraryRestrict: Books_volumes_listLibraryRestrict | null | undefined, maxAllowedMaturityRating: Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating | null | undefined, maxResults: number | null | undefined, orderBy: Books_volumes_listOrderBy | null | undefined, partner: string | null | undefined, printType: Books_volumes_listPrintType | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<Volumes> {
@@ -3971,9 +4219,11 @@ export namespace MyNS {
 		 * @param {string} country ISO-3166-1 code to override the IP-based location.
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {Array<string>} processingState The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {Volumes} Successful response
 		 */
 		Books_volumes_mybooks_list(acquireMethod: Array<string> | null | undefined, country: string | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, processingState: Array<string> | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<Volumes> {
@@ -4010,9 +4260,11 @@ export namespace MyNS {
 		 * Get books/v1/volumes/useruploaded
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 40
 		 * @param {Array<string>} processingState The processing state of the user uploaded volumes to be returned.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @param {Array<string>} volumeId The ids of the volumes to be returned. If not specified all that match the processingState are returned.
 		 * @return {Volumes} Successful response
 		 */
@@ -4059,6 +4311,7 @@ export namespace MyNS {
 		 * @param {string} endPosition The end position to end retrieving data from.
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {boolean} showDeleted Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
@@ -4095,14 +4348,18 @@ export namespace MyNS {
 		 * @param {string} contentVersion The content version for the requested volume.
 		 * @param {Array<string>} annotationDataId The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
 		 * @param {number} h The requested pixel height for any images. If height is provided width must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {number} scale The requested scale for the image.
+		 *     Minimum: 0
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {string} updatedMax RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
 		 * @param {string} updatedMin RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Annotationsdata} Successful response
 		 */
 		Books_layers_annotationData_list(volumeId: string, layerId: string, contentVersion: string, annotationDataId: Array<string> | null | undefined, h: number | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, updatedMax: string | null | undefined, updatedMin: string | null | undefined, w: number | null | undefined): Observable<Annotationsdata> {
@@ -4118,10 +4375,13 @@ export namespace MyNS {
 		 * @param {string} contentVersion The content version for the volume you are trying to retrieve.
 		 * @param {boolean} allowWebDefinitions For the dictionary layer. Whether or not to allow web definitions.
 		 * @param {number} h The requested pixel height for any images. If height is provided width must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} scale The requested scale for the image.
+		 *     Minimum: 0
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DictionaryAnnotationdata} Successful response
 		 */
 		Books_layers_annotationData_get(volumeId: string, layerId: string, annotationDataId: string, contentVersion: string, allowWebDefinitions: boolean | null | undefined, h: number | null | undefined, locale: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, w: number | null | undefined): Observable<DictionaryAnnotationdata> {
@@ -4134,6 +4394,7 @@ export namespace MyNS {
 		 * @param {string} volumeId The volume to retrieve layers for.
 		 * @param {string} contentVersion The content version for the requested volume.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {Layersummaries} Successful response

@@ -6018,7 +6018,10 @@ namespace MyNS
 		/// Lists all tags on a AWS RoboMaker resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</param>
+		/// <param name="resourceArn">The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6052,7 +6055,10 @@ namespace MyNS
 		/// <p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6421,7 +6427,10 @@ namespace MyNS
 		/// <p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>. </p>
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
 		/// <param name="tagKeys">A map that contains tag keys and tag values that will be unattached from the resource.</param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

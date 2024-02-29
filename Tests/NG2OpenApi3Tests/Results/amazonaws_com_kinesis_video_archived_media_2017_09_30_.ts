@@ -701,15 +701,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -723,15 +723,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -761,15 +761,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -803,15 +803,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -869,15 +869,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -914,15 +914,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -984,15 +984,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -1014,7 +1014,10 @@ export namespace MyNS {
 		 */
 		EndTimestamp: Date;
 
-		/** <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> <p>The minimum value of 200 ms is a hard limit.</p> </note> */
+		/**
+		 * <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> <p>The minimum value of 200 ms is a hard limit.</p> </note>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SamplingInterval?: number | null;
 
 		/**
@@ -1049,8 +1052,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 	}
@@ -1058,15 +1061,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1088,7 +1091,10 @@ export namespace MyNS {
 		 */
 		EndTimestamp: FormControl<Date | null | undefined>,
 
-		/** <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> <p>The minimum value of 200 ms is a hard limit.</p> </note> */
+		/**
+		 * <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> <p>The minimum value of 200 ms is a hard limit.</p> </note>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SamplingInterval: FormControl<number | null | undefined>,
 
 		/**
@@ -1123,8 +1129,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1150,15 +1156,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -1174,15 +1180,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
@@ -1198,15 +1204,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN?: string | null;
 
@@ -1219,8 +1225,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 
@@ -1231,15 +1237,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1252,8 +1258,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}

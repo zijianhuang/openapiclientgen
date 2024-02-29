@@ -98,12 +98,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1messagingmessaging_country_instanceInbound_sms_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv1messagingmessaging_country_instanceInbound_sms_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -137,12 +145,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1messagingmessaging_country_instanceOutbound_sms_pricesPrices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv1messagingmessaging_country_instanceOutbound_sms_pricesPricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -247,12 +263,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1phone_numberphone_number_country_instancePhone_number_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv1phone_numberphone_number_country_instancePhone_number_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -360,12 +384,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1voicevoice_country_instanceInbound_call_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv1voicevoice_country_instanceInbound_call_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -379,13 +411,21 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1voicevoice_country_instanceOutbound_prefix_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		friendly_name?: string | null;
 		prefixes?: Array<string>;
 	}
 	export interface Pricingv1voicevoice_country_instanceOutbound_prefix_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 	}
@@ -450,12 +490,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1voicevoice_numberInbound_call_price {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv1voicevoice_numberInbound_call_priceFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -469,11 +517,19 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv1voicevoice_numberOutbound_call_price {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 	}
 	export interface Pricingv1voicevoice_numberOutbound_call_priceFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 	}
 	export function CreatePricingv1voicevoice_numberOutbound_call_priceFormGroup() {
@@ -492,7 +548,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Messaging/Countries
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMessagingCountryReturn} OK
 		 */
@@ -512,7 +570,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/PhoneNumbers/Countries
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListPhoneNumberCountryReturn} OK
 		 */
@@ -532,7 +592,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Voice/Countries
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListVoiceCountryReturn} OK
 		 */
@@ -575,7 +637,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -584,7 +650,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -618,7 +688,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -627,7 +701,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -661,7 +739,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -670,7 +752,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

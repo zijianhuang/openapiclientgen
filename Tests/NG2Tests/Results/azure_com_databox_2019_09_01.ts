@@ -3088,6 +3088,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {string} expand $expand is supported on details parameter for job, which provides details on the job stages.
 		 * @return {JobResource} Job object.
@@ -3102,6 +3103,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {JobResource} requestBody Job details from request body.
 		 * @return {JobResource} Job object.
@@ -3116,6 +3118,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {void} 
 		 */
@@ -3129,6 +3132,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {JobResourceUpdateParameter} requestBody Job update parameters from request body.
 		 * @return {JobResource} Job object.
@@ -3143,6 +3147,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {ShipmentPickUpRequest} requestBody Details of shipment pick up request.
 		 * @return {ShipmentPickUpResponse} Booked shipment pick up successfully.
@@ -3157,6 +3162,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @param {CancellationReason} requestBody Reason for cancellation.
 		 * @return {void} 
@@ -3171,6 +3177,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Subscription Id
 		 * @param {string} resourceGroupName The Resource Group Name
 		 * @param {string} jobName The name of the job Resource within the specified resource group. job names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API Version
 		 * @return {UnencryptedCredentialsList} List of unencrypted credentials of the job.
 		 */

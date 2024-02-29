@@ -1404,8 +1404,14 @@ namespace MyNS
 		/// Lists your experiment templates.
 		/// ListExperimentTemplates experimentTemplates
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExperimentTemplatesResponse> ListExperimentTemplatesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1439,7 +1445,9 @@ namespace MyNS
 		/// Deletes the specified experiment template.
 		/// DeleteExperimentTemplate experimentTemplates/{id}
 		/// </summary>
-		/// <param name="id">The ID of the experiment template.</param>
+		/// <param name="id">The ID of the experiment template.
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteExperimentTemplateResponse> DeleteExperimentTemplateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1473,7 +1481,9 @@ namespace MyNS
 		/// Gets information about the specified experiment template.
 		/// GetExperimentTemplate experimentTemplates/{id}
 		/// </summary>
-		/// <param name="id">The ID of the experiment template.</param>
+		/// <param name="id">The ID of the experiment template.
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExperimentTemplateResponse> GetExperimentTemplateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1507,7 +1517,9 @@ namespace MyNS
 		/// Updates the specified experiment template.
 		/// UpdateExperimentTemplate experimentTemplates/{id}
 		/// </summary>
-		/// <param name="id">The ID of the experiment template.</param>
+		/// <param name="id">The ID of the experiment template.
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateExperimentTemplateResponse> UpdateExperimentTemplateAsync(string id, UpdateExperimentTemplatePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1548,7 +1560,9 @@ namespace MyNS
 		/// Gets information about the specified FIS action.
 		/// GetAction actions/{id}
 		/// </summary>
-		/// <param name="id">The ID of the action.</param>
+		/// <param name="id">The ID of the action.
+		/// Max length: 128
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetActionResponse> GetActionAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1582,7 +1596,9 @@ namespace MyNS
 		/// Gets information about the specified experiment.
 		/// GetExperiment experiments/{id}
 		/// </summary>
-		/// <param name="id">The ID of the experiment.</param>
+		/// <param name="id">The ID of the experiment.
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExperimentResponse> GetExperimentAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1616,7 +1632,9 @@ namespace MyNS
 		/// Stops the specified experiment.
 		/// StopExperiment experiments/{id}
 		/// </summary>
-		/// <param name="id">The ID of the experiment.</param>
+		/// <param name="id">The ID of the experiment.
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopExperimentResponse> StopExperimentAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1650,7 +1668,9 @@ namespace MyNS
 		/// Gets information about the specified resource type.
 		/// GetTargetResourceType targetResourceTypes/{resourceType}
 		/// </summary>
-		/// <param name="resourceType">The resource type.</param>
+		/// <param name="resourceType">The resource type.
+		/// Max length: 128
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTargetResourceTypeResponse> GetTargetResourceTypeAsync(string resourceType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1684,8 +1704,14 @@ namespace MyNS
 		/// Lists the available FIS actions.
 		/// ListActions actions
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListActionsResponse> ListActionsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1719,8 +1745,14 @@ namespace MyNS
 		/// Lists your experiments.
 		/// ListExperiments experiments
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExperimentsResponse> ListExperimentsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1794,7 +1826,10 @@ namespace MyNS
 		/// Lists the tags for the specified resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1828,7 +1863,10 @@ namespace MyNS
 		/// Applies the specified tags to the specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1869,7 +1907,10 @@ namespace MyNS
 		/// Removes the specified tags from the specified resource.
 		/// UntagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <param name="tagKeys">The tag keys to remove.</param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1904,8 +1945,14 @@ namespace MyNS
 		/// Lists the target resource types.
 		/// ListTargetResourceTypes targetResourceTypes
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</param>
-		/// <param name="nextToken">The token for the next page of results.</param>
+		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTargetResourceTypesResponse> ListTargetResourceTypesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

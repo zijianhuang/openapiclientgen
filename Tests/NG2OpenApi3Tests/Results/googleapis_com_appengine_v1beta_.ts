@@ -312,7 +312,10 @@ export namespace MyNS {
 		/** The user-specified display name of the certificate. This is not guaranteed to be unique. Example: My Certificate. */
 		displayName?: string | null;
 
-		/** Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
+		/**
+		 * Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		domainMappingsCount?: number | null;
 
 		/** Topmost applicable domains of this certificate. This certificate applies to these domains and their subdomains. Example: example.com.@OutputOnly */
@@ -340,7 +343,10 @@ export namespace MyNS {
 		/** The user-specified display name of the certificate. This is not guaranteed to be unique. Example: My Certificate. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
+		/**
+		 * Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		domainMappingsCount: FormControl<number | null | undefined>,
 
 		/** The time when this certificate expires. To update the renewal time on this certificate, upload an SSL certificate with a different expiration time using AuthorizedCertificates.UpdateAuthorizedCertificate.@OutputOnly */
@@ -465,25 +471,40 @@ export namespace MyNS {
 		/** Target scaling by disk usage. Only applicable in the App Engine flexible environment. */
 		diskUtilization?: DiskUtilization;
 
-		/** Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. */
+		/**
+		 * Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentRequests?: number | null;
 
-		/** Maximum number of idle instances that should be maintained for this version. */
+		/**
+		 * Maximum number of idle instances that should be maintained for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdleInstances?: number | null;
 
 		/** Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. */
 		maxPendingLatency?: string | null;
 
-		/** Maximum number of instances that should be started to handle requests for this version. */
+		/**
+		 * Maximum number of instances that should be started to handle requests for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTotalInstances?: number | null;
 
-		/** Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service. */
+		/**
+		 * Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minIdleInstances?: number | null;
 
 		/** Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it. */
 		minPendingLatency?: string | null;
 
-		/** Minimum number of running instances that should be maintained for this version. */
+		/**
+		 * Minimum number of running instances that should be maintained for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minTotalInstances?: number | null;
 
 		/** Target scaling by network usage. Only applicable in the App Engine flexible environment. */
@@ -502,25 +523,40 @@ export namespace MyNS {
 		/** The time period that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. Only applicable in the App Engine flexible environment. */
 		coolDownPeriod: FormControl<string | null | undefined>,
 
-		/** Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. */
+		/**
+		 * Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentRequests: FormControl<number | null | undefined>,
 
-		/** Maximum number of idle instances that should be maintained for this version. */
+		/**
+		 * Maximum number of idle instances that should be maintained for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIdleInstances: FormControl<number | null | undefined>,
 
 		/** Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. */
 		maxPendingLatency: FormControl<string | null | undefined>,
 
-		/** Maximum number of instances that should be started to handle requests for this version. */
+		/**
+		 * Maximum number of instances that should be started to handle requests for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTotalInstances: FormControl<number | null | undefined>,
 
-		/** Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service. */
+		/**
+		 * Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minIdleInstances: FormControl<number | null | undefined>,
 
 		/** Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it. */
 		minPendingLatency: FormControl<string | null | undefined>,
 
-		/** Minimum number of running instances that should be maintained for this version. */
+		/**
+		 * Minimum number of running instances that should be maintained for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minTotalInstances: FormControl<number | null | undefined>,
 	}
 	export function CreateAutomaticScalingFormGroup() {
@@ -544,7 +580,10 @@ export namespace MyNS {
 		/** Period of time over which CPU utilization is calculated. */
 		aggregationWindowLength?: string | null;
 
-		/** Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1. */
+		/**
+		 * Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.
+		 * Type: double
+		 */
 		targetUtilization?: number | null;
 	}
 
@@ -554,7 +593,10 @@ export namespace MyNS {
 		/** Period of time over which CPU utilization is calculated. */
 		aggregationWindowLength: FormControl<string | null | undefined>,
 
-		/** Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1. */
+		/**
+		 * Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.
+		 * Type: double
+		 */
 		targetUtilization: FormControl<number | null | undefined>,
 	}
 	export function CreateCpuUtilizationFormGroup() {
@@ -575,13 +617,19 @@ export namespace MyNS {
 		/** The name of the metric. */
 		metricName?: string | null;
 
-		/** May be used instead of target_utilization when an instance can handle a specific amount of work/resources and the metric value is equal to the current amount of work remaining. The autoscaler will try to keep the number of instances equal to the metric value divided by single_instance_assignment. */
+		/**
+		 * May be used instead of target_utilization when an instance can handle a specific amount of work/resources and the metric value is equal to the current amount of work remaining. The autoscaler will try to keep the number of instances equal to the metric value divided by single_instance_assignment.
+		 * Type: double
+		 */
 		singleInstanceAssignment?: number | null;
 
 		/** The type of the metric. Must be a string representing a Stackdriver metric type e.g. GAGUE, DELTA_PER_SECOND, etc. */
 		targetType?: string | null;
 
-		/** The target value for the metric. */
+		/**
+		 * The target value for the metric.
+		 * Type: double
+		 */
 		targetUtilization?: number | null;
 	}
 
@@ -594,13 +642,19 @@ export namespace MyNS {
 		/** The name of the metric. */
 		metricName: FormControl<string | null | undefined>,
 
-		/** May be used instead of target_utilization when an instance can handle a specific amount of work/resources and the metric value is equal to the current amount of work remaining. The autoscaler will try to keep the number of instances equal to the metric value divided by single_instance_assignment. */
+		/**
+		 * May be used instead of target_utilization when an instance can handle a specific amount of work/resources and the metric value is equal to the current amount of work remaining. The autoscaler will try to keep the number of instances equal to the metric value divided by single_instance_assignment.
+		 * Type: double
+		 */
 		singleInstanceAssignment: FormControl<number | null | undefined>,
 
 		/** The type of the metric. Must be a string representing a Stackdriver metric type e.g. GAGUE, DELTA_PER_SECOND, etc. */
 		targetType: FormControl<string | null | undefined>,
 
-		/** The target value for the metric. */
+		/**
+		 * The target value for the metric.
+		 * Type: double
+		 */
 		targetUtilization: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomMetricFormGroup() {
@@ -618,32 +672,56 @@ export namespace MyNS {
 	/** Target scaling by disk usage. Only applicable in the App Engine flexible environment. */
 	export interface DiskUtilization {
 
-		/** Target bytes read per second. */
+		/**
+		 * Target bytes read per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReadBytesPerSecond?: number | null;
 
-		/** Target ops read per seconds. */
+		/**
+		 * Target ops read per seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReadOpsPerSecond?: number | null;
 
-		/** Target bytes written per second. */
+		/**
+		 * Target bytes written per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetWriteBytesPerSecond?: number | null;
 
-		/** Target ops written per second. */
+		/**
+		 * Target ops written per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetWriteOpsPerSecond?: number | null;
 	}
 
 	/** Target scaling by disk usage. Only applicable in the App Engine flexible environment. */
 	export interface DiskUtilizationFormProperties {
 
-		/** Target bytes read per second. */
+		/**
+		 * Target bytes read per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReadBytesPerSecond: FormControl<number | null | undefined>,
 
-		/** Target ops read per seconds. */
+		/**
+		 * Target ops read per seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReadOpsPerSecond: FormControl<number | null | undefined>,
 
-		/** Target bytes written per second. */
+		/**
+		 * Target bytes written per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetWriteBytesPerSecond: FormControl<number | null | undefined>,
 
-		/** Target ops written per second. */
+		/**
+		 * Target ops written per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetWriteOpsPerSecond: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskUtilizationFormGroup() {
@@ -660,32 +738,56 @@ export namespace MyNS {
 	/** Target scaling by network usage. Only applicable in the App Engine flexible environment. */
 	export interface NetworkUtilization {
 
-		/** Target bytes received per second. */
+		/**
+		 * Target bytes received per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReceivedBytesPerSecond?: number | null;
 
-		/** Target packets received per second. */
+		/**
+		 * Target packets received per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReceivedPacketsPerSecond?: number | null;
 
-		/** Target bytes sent per second. */
+		/**
+		 * Target bytes sent per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSentBytesPerSecond?: number | null;
 
-		/** Target packets sent per second. */
+		/**
+		 * Target packets sent per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSentPacketsPerSecond?: number | null;
 	}
 
 	/** Target scaling by network usage. Only applicable in the App Engine flexible environment. */
 	export interface NetworkUtilizationFormProperties {
 
-		/** Target bytes received per second. */
+		/**
+		 * Target bytes received per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReceivedBytesPerSecond: FormControl<number | null | undefined>,
 
-		/** Target packets received per second. */
+		/**
+		 * Target packets received per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetReceivedPacketsPerSecond: FormControl<number | null | undefined>,
 
-		/** Target bytes sent per second. */
+		/**
+		 * Target bytes sent per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSentBytesPerSecond: FormControl<number | null | undefined>,
 
-		/** Target packets sent per second. */
+		/**
+		 * Target packets sent per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSentPacketsPerSecond: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkUtilizationFormGroup() {
@@ -702,20 +804,32 @@ export namespace MyNS {
 	/** Target scaling by request utilization. Only applicable in the App Engine flexible environment. */
 	export interface RequestUtilization {
 
-		/** Target number of concurrent requests. */
+		/**
+		 * Target number of concurrent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetConcurrentRequests?: number | null;
 
-		/** Target requests per second. */
+		/**
+		 * Target requests per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetRequestCountPerSecond?: number | null;
 	}
 
 	/** Target scaling by request utilization. Only applicable in the App Engine flexible environment. */
 	export interface RequestUtilizationFormProperties {
 
-		/** Target number of concurrent requests. */
+		/**
+		 * Target number of concurrent requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetConcurrentRequests: FormControl<number | null | undefined>,
 
-		/** Target requests per second. */
+		/**
+		 * Target requests per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetRequestCountPerSecond: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestUtilizationFormGroup() {
@@ -730,32 +844,56 @@ export namespace MyNS {
 	/** Scheduler settings for standard environment. */
 	export interface StandardSchedulerSettings {
 
-		/** Maximum number of instances to run for this version. Set to zero to disable max_instances configuration. */
+		/**
+		 * Maximum number of instances to run for this version. Set to zero to disable max_instances configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances?: number | null;
 
-		/** Minimum number of instances to run for this version. Set to zero to disable min_instances configuration. */
+		/**
+		 * Minimum number of instances to run for this version. Set to zero to disable min_instances configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances?: number | null;
 
-		/** Target CPU utilization ratio to maintain when scaling. */
+		/**
+		 * Target CPU utilization ratio to maintain when scaling.
+		 * Type: double
+		 */
 		targetCpuUtilization?: number | null;
 
-		/** Target throughput utilization ratio to maintain when scaling */
+		/**
+		 * Target throughput utilization ratio to maintain when scaling
+		 * Type: double
+		 */
 		targetThroughputUtilization?: number | null;
 	}
 
 	/** Scheduler settings for standard environment. */
 	export interface StandardSchedulerSettingsFormProperties {
 
-		/** Maximum number of instances to run for this version. Set to zero to disable max_instances configuration. */
+		/**
+		 * Maximum number of instances to run for this version. Set to zero to disable max_instances configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: FormControl<number | null | undefined>,
 
-		/** Minimum number of instances to run for this version. Set to zero to disable min_instances configuration. */
+		/**
+		 * Minimum number of instances to run for this version. Set to zero to disable min_instances configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: FormControl<number | null | undefined>,
 
-		/** Target CPU utilization ratio to maintain when scaling. */
+		/**
+		 * Target CPU utilization ratio to maintain when scaling.
+		 * Type: double
+		 */
 		targetCpuUtilization: FormControl<number | null | undefined>,
 
-		/** Target throughput utilization ratio to maintain when scaling */
+		/**
+		 * Target throughput utilization ratio to maintain when scaling
+		 * Type: double
+		 */
 		targetThroughputUtilization: FormControl<number | null | undefined>,
 	}
 	export function CreateStandardSchedulerSettingsFormGroup() {
@@ -775,7 +913,10 @@ export namespace MyNS {
 		/** Duration of time after the last request that an instance must wait before the instance is shut down. */
 		idleTimeout?: string | null;
 
-		/** Maximum number of instances to create for this version. */
+		/**
+		 * Maximum number of instances to create for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances?: number | null;
 	}
 
@@ -785,7 +926,10 @@ export namespace MyNS {
 		/** Duration of time after the last request that an instance must wait before the instance is shut down. */
 		idleTimeout: FormControl<string | null | undefined>,
 
-		/** Maximum number of instances to create for this version. */
+		/**
+		 * Maximum number of instances to create for this version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: FormControl<number | null | undefined>,
 	}
 	export function CreateBasicScalingFormGroup() {
@@ -823,7 +967,10 @@ export namespace MyNS {
 		/** An optional string description of this rule. This field has a maximum length of 400 characters. */
 		description?: string | null;
 
-		/** A positive integer between 1, Int32.MaxValue-1 that defines the order of rule evaluation. Rules with the lowest priority are evaluated first.A default rule at priority Int32.MaxValue matches all IPv4 and IPv6 traffic when no previous rule matches. Only the action of this rule can be modified by the user. */
+		/**
+		 * A positive integer between 1, Int32.MaxValue-1 that defines the order of rule evaluation. Rules with the lowest priority are evaluated first.A default rule at priority Int32.MaxValue matches all IPv4 and IPv6 traffic when no previous rule matches. Only the action of this rule can be modified by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** IP address or range, defined using CIDR notation, of requests that this rule applies to. You can use the wildcard character "*" to match all IPs equivalent to "0/0" and "::/0" together. Examples: 192.168.1.1 or 192.168.0.0/16 or 2001:db8::/32 or 2001:0db8:0000:0042:0000:8a2e:0370:7334. Truncation will be silently performed on addresses which are not properly truncated. For example, 1.2.3.4/24 is accepted as the same address as 1.2.3.0/24. Similarly, for IPv6, 2001:db8::1/32 is accepted as the same address as 2001:db8::/32. */
@@ -839,7 +986,10 @@ export namespace MyNS {
 		/** An optional string description of this rule. This field has a maximum length of 400 characters. */
 		description: FormControl<string | null | undefined>,
 
-		/** A positive integer between 1, Int32.MaxValue-1 that defines the order of rule evaluation. Rules with the lowest priority are evaluated first.A default rule at priority Int32.MaxValue matches all IPv4 and IPv6 traffic when no previous rule matches. Only the action of this rule can be modified by the user. */
+		/**
+		 * A positive integer between 1, Int32.MaxValue-1 that defines the order of rule evaluation. Rules with the lowest priority are evaluated first.A default rule at priority Int32.MaxValue matches all IPv4 and IPv6 traffic when no previous rule matches. Only the action of this rule can be modified by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** IP address or range, defined using CIDR notation, of requests that this rule applies to. You can use the wildcard character "*" to match all IPs equivalent to "0/0" and "::/0" together. Examples: 192.168.1.1 or 192.168.0.0/16 or 2001:db8::/32 or 2001:0db8:0000:0042:0000:8a2e:0370:7334. Truncation will be silently performed on addresses which are not properly truncated. For example, 1.2.3.4/24 is accepted as the same address as 1.2.3.0/24. Similarly, for IPv6, 2001:db8::1/32 is accepted as the same address as 2001:db8::/32. */
@@ -1074,26 +1224,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1198,7 +1366,10 @@ export namespace MyNS {
 	/** The zip file information for a zip deployment. */
 	export interface ZipInfo {
 
-		/** An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow. */
+		/**
+		 * An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesCount?: number | null;
 
 		/** URL of the zip file to deploy from. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com//'. */
@@ -1208,7 +1379,10 @@ export namespace MyNS {
 	/** The zip file information for a zip deployment. */
 	export interface ZipInfoFormProperties {
 
-		/** An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow. */
+		/**
+		 * An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesCount: FormControl<number | null | undefined>,
 
 		/** URL of the zip file to deploy from. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com//'. */
@@ -1519,19 +1693,28 @@ export namespace MyNS {
 		/** Whether to explicitly disable health checks for this instance. */
 		disableHealthCheck?: boolean | null;
 
-		/** Number of consecutive successful health checks required before receiving traffic. */
+		/**
+		 * Number of consecutive successful health checks required before receiving traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		healthyThreshold?: number | null;
 
 		/** Host header to send when performing an HTTP health check. Example: "myapp.appspot.com" */
 		host?: string | null;
 
-		/** Number of consecutive failed health checks required before an instance is restarted. */
+		/**
+		 * Number of consecutive failed health checks required before an instance is restarted.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		restartThreshold?: number | null;
 
 		/** Time before the health check is considered failed. */
 		timeout?: string | null;
 
-		/** Number of consecutive failed health checks required before removing traffic. */
+		/**
+		 * Number of consecutive failed health checks required before removing traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		unhealthyThreshold?: number | null;
 	}
 
@@ -1544,19 +1727,28 @@ export namespace MyNS {
 		/** Whether to explicitly disable health checks for this instance. */
 		disableHealthCheck: FormControl<boolean | null | undefined>,
 
-		/** Number of consecutive successful health checks required before receiving traffic. */
+		/**
+		 * Number of consecutive successful health checks required before receiving traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		healthyThreshold: FormControl<number | null | undefined>,
 
 		/** Host header to send when performing an HTTP health check. Example: "myapp.appspot.com" */
 		host: FormControl<string | null | undefined>,
 
-		/** Number of consecutive failed health checks required before an instance is restarted. */
+		/**
+		 * Number of consecutive failed health checks required before an instance is restarted.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		restartThreshold: FormControl<number | null | undefined>,
 
 		/** Time before the health check is considered failed. */
 		timeout: FormControl<string | null | undefined>,
 
-		/** Number of consecutive failed health checks required before removing traffic. */
+		/**
+		 * Number of consecutive failed health checks required before removing traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		unhealthyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthCheckFormGroup() {
@@ -1582,10 +1774,16 @@ export namespace MyNS {
 		/** Output only. Availability of the instance. */
 		availability?: InstanceAvailability | null;
 
-		/** Output only. Average latency (ms) over the last minute. */
+		/**
+		 * Output only. Average latency (ms) over the last minute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageLatency?: number | null;
 
-		/** Output only. Number of errors since this instance was started. */
+		/**
+		 * Output only. Number of errors since this instance was started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors?: number | null;
 
 		/** Output only. Relative name of the instance within the version. Example: instance-1. */
@@ -1597,10 +1795,16 @@ export namespace MyNS {
 		/** Output only. Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1. */
 		name?: string | null;
 
-		/** Output only. Average queries per second (QPS) over the last minute. */
+		/**
+		 * Output only. Average queries per second (QPS) over the last minute.
+		 * Type: float
+		 */
 		qps?: number | null;
 
-		/** Output only. Number of requests since this instance was started. */
+		/**
+		 * Output only. Number of requests since this instance was started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requests?: number | null;
 
 		/** Output only. Time that this instance was started.@OutputOnly */
@@ -1637,10 +1841,16 @@ export namespace MyNS {
 		/** Output only. Availability of the instance. */
 		availability: FormControl<InstanceAvailability | null | undefined>,
 
-		/** Output only. Average latency (ms) over the last minute. */
+		/**
+		 * Output only. Average latency (ms) over the last minute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageLatency: FormControl<number | null | undefined>,
 
-		/** Output only. Number of errors since this instance was started. */
+		/**
+		 * Output only. Number of errors since this instance was started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors: FormControl<number | null | undefined>,
 
 		/** Output only. Relative name of the instance within the version. Example: instance-1. */
@@ -1652,10 +1862,16 @@ export namespace MyNS {
 		/** Output only. Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. Average queries per second (QPS) over the last minute. */
+		/**
+		 * Output only. Average queries per second (QPS) over the last minute.
+		 * Type: float
+		 */
 		qps: FormControl<number | null | undefined>,
 
-		/** Output only. Number of requests since this instance was started. */
+		/**
+		 * Output only. Number of requests since this instance was started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requests: FormControl<number | null | undefined>,
 
 		/** Output only. Time that this instance was started.@OutputOnly */
@@ -2003,7 +2219,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2016,7 +2235,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2637,7 +2859,10 @@ export namespace MyNS {
 		/** Interval between health checks. */
 		checkInterval?: string | null;
 
-		/** Number of consecutive failed checks required before considering the VM unhealthy. */
+		/**
+		 * Number of consecutive failed checks required before considering the VM unhealthy.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		failureThreshold?: number | null;
 
 		/** Host header to send when performing a HTTP Liveness check. Example: "myapp.appspot.com" */
@@ -2649,7 +2874,10 @@ export namespace MyNS {
 		/** The request path. */
 		path?: string | null;
 
-		/** Number of consecutive successful checks required before considering the VM healthy. */
+		/**
+		 * Number of consecutive successful checks required before considering the VM healthy.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		successThreshold?: number | null;
 
 		/** Time before the check is considered failed. */
@@ -2662,7 +2890,10 @@ export namespace MyNS {
 		/** Interval between health checks. */
 		checkInterval: FormControl<string | null | undefined>,
 
-		/** Number of consecutive failed checks required before considering the VM unhealthy. */
+		/**
+		 * Number of consecutive failed checks required before considering the VM unhealthy.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
 		/** Host header to send when performing a HTTP Liveness check. Example: "myapp.appspot.com" */
@@ -2674,7 +2905,10 @@ export namespace MyNS {
 		/** The request path. */
 		path: FormControl<string | null | undefined>,
 
-		/** Number of consecutive successful checks required before considering the VM healthy. */
+		/**
+		 * Number of consecutive successful checks required before considering the VM healthy.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
 		/** Time before the check is considered failed. */
@@ -2697,14 +2931,20 @@ export namespace MyNS {
 	/** A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. */
 	export interface ManualScaling {
 
-		/** Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function. */
+		/**
+		 * Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instances?: number | null;
 	}
 
 	/** A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. */
 	export interface ManualScalingFormProperties {
 
-		/** Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function. */
+		/**
+		 * Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instances: FormControl<number | null | undefined>,
 	}
 	export function CreateManualScalingFormGroup() {
@@ -2778,7 +3018,10 @@ export namespace MyNS {
 		/** Interval between health checks. */
 		checkInterval?: string | null;
 
-		/** Number of consecutive failed checks required before removing traffic. */
+		/**
+		 * Number of consecutive failed checks required before removing traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		failureThreshold?: number | null;
 
 		/** Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com" */
@@ -2787,7 +3030,10 @@ export namespace MyNS {
 		/** The request path. */
 		path?: string | null;
 
-		/** Number of consecutive successful checks required before receiving traffic. */
+		/**
+		 * Number of consecutive successful checks required before receiving traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		successThreshold?: number | null;
 
 		/** Time before the check is considered failed. */
@@ -2803,7 +3049,10 @@ export namespace MyNS {
 		/** Interval between health checks. */
 		checkInterval: FormControl<string | null | undefined>,
 
-		/** Number of consecutive failed checks required before removing traffic. */
+		/**
+		 * Number of consecutive failed checks required before removing traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
 		/** Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com" */
@@ -2812,7 +3061,10 @@ export namespace MyNS {
 		/** The request path. */
 		path: FormControl<string | null | undefined>,
 
-		/** Number of consecutive successful checks required before receiving traffic. */
+		/**
+		 * Number of consecutive successful checks required before receiving traffic.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
 		/** Time before the check is considered failed. */
@@ -2835,16 +3087,25 @@ export namespace MyNS {
 	/** Machine resources for a version. */
 	export interface Resources {
 
-		/** Number of CPU cores needed. */
+		/**
+		 * Number of CPU cores needed.
+		 * Type: double
+		 */
 		cpu?: number | null;
 
-		/** Disk size (GB) needed. */
+		/**
+		 * Disk size (GB) needed.
+		 * Type: double
+		 */
 		diskGb?: number | null;
 
 		/** The name of the encryption key that is stored in Google Cloud KMS. Only should be used by Cloud Composer to encrypt the vm disk */
 		kmsKeyReference?: string | null;
 
-		/** Memory (GB) needed. */
+		/**
+		 * Memory (GB) needed.
+		 * Type: double
+		 */
 		memoryGb?: number | null;
 
 		/** User specified volumes. */
@@ -2854,16 +3115,25 @@ export namespace MyNS {
 	/** Machine resources for a version. */
 	export interface ResourcesFormProperties {
 
-		/** Number of CPU cores needed. */
+		/**
+		 * Number of CPU cores needed.
+		 * Type: double
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Disk size (GB) needed. */
+		/**
+		 * Disk size (GB) needed.
+		 * Type: double
+		 */
 		diskGb: FormControl<number | null | undefined>,
 
 		/** The name of the encryption key that is stored in Google Cloud KMS. Only should be used by Cloud Composer to encrypt the vm disk */
 		kmsKeyReference: FormControl<string | null | undefined>,
 
-		/** Memory (GB) needed. */
+		/**
+		 * Memory (GB) needed.
+		 * Type: double
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 	}
 	export function CreateResourcesFormGroup() {
@@ -2883,7 +3153,10 @@ export namespace MyNS {
 		/** Unique name for the volume. */
 		name?: string | null;
 
-		/** Volume size in gigabytes. */
+		/**
+		 * Volume size in gigabytes.
+		 * Type: double
+		 */
 		sizeGb?: number | null;
 
 		/** Underlying volume type, e.g. 'tmpfs'. */
@@ -2896,7 +3169,10 @@ export namespace MyNS {
 		/** Unique name for the volume. */
 		name: FormControl<string | null | undefined>,
 
-		/** Volume size in gigabytes. */
+		/**
+		 * Volume size in gigabytes.
+		 * Type: double
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Underlying volume type, e.g. 'tmpfs'. */
@@ -3321,6 +3597,7 @@ export namespace MyNS {
 		 * Get v1beta/apps/{appsId}/authorizedCertificates
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the LIST response.
 		 * @return {ListAuthorizedCertificatesResponse} Successful response
@@ -3379,6 +3656,7 @@ export namespace MyNS {
 		 * Get v1beta/apps/{appsId}/authorizedDomains
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListAuthorizedDomainsResponse} Successful response
 		 */
@@ -3391,6 +3669,7 @@ export namespace MyNS {
 		 * Get v1beta/apps/{appsId}/domainMappings
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListDomainMappingsResponse} Successful response
 		 */
@@ -3449,6 +3728,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `parent`. Name of the Firewall collection to retrieve. Example: apps/myapp/firewall/ingressRules.
 		 * @param {string} matchingAddress A valid IP Address. If set, only rules matching this address will be returned. The first returned rule will be the rule that fires on requests from this IP.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListIngressRulesResponse} Successful response
 		 */
@@ -3516,6 +3796,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `name`. The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3540,6 +3821,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `name`. The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3563,6 +3845,7 @@ export namespace MyNS {
 		 * Get v1beta/apps/{appsId}/services
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListServicesResponse} Successful response
 		 */
@@ -3612,6 +3895,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `parent`. Name of the parent Service resource. Example: apps/myapp/services/default.
 		 * @param {string} servicesId Part of `parent`. See documentation of `appsId`.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @param {Appengine_apps_services_versions_listView} view Controls the set of fields returned in the List response.
 		 * @return {ListVersionsResponse} Successful response
@@ -3677,6 +3961,7 @@ export namespace MyNS {
 		 * @param {string} servicesId Part of `parent`. See documentation of `appsId`.
 		 * @param {string} versionsId Part of `parent`. See documentation of `appsId`.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListInstancesResponse} Successful response
 		 */
@@ -3750,6 +4035,7 @@ export namespace MyNS {
 		 * @param {string} projectsId Part of `name`. The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3775,6 +4061,7 @@ export namespace MyNS {
 		 * @param {string} locationsId Part of `name`. See documentation of `projectsId`.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

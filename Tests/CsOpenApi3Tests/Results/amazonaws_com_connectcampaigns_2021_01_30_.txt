@@ -1517,6 +1517,9 @@ namespace MyNS
 		/// Deletes a campaign from the specified Amazon Connect account.
 		/// DeleteCampaign campaigns/{id}
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1544,6 +1547,9 @@ namespace MyNS
 		/// Describes the specific campaign.
 		/// DescribeCampaign campaigns/{id}
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCampaignResponse> DescribeCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1577,6 +1583,9 @@ namespace MyNS
 		/// Deletes a connect instance config from the specified AWS account.
 		/// DeleteConnectInstanceConfig connect-instance/{connectInstanceId}/config
 		/// </summary>
+		/// <param name="connectInstanceId">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteConnectInstanceConfigAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1604,6 +1613,9 @@ namespace MyNS
 		/// Get the specific Connect instance config.
 		/// GetConnectInstanceConfig connect-instance/{connectInstanceId}/config
 		/// </summary>
+		/// <param name="connectInstanceId">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectInstanceConfigResponse> GetConnectInstanceConfigAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1637,6 +1649,9 @@ namespace MyNS
 		/// Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.
 		/// DeleteInstanceOnboardingJob connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
+		/// <param name="connectInstanceId">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteInstanceOnboardingJobAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1664,6 +1679,9 @@ namespace MyNS
 		/// Get the specific instance onboarding job status.
 		/// GetInstanceOnboardingJobStatus connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
+		/// <param name="connectInstanceId">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetInstanceOnboardingJobStatusResponse> GetInstanceOnboardingJobStatusAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1697,6 +1715,9 @@ namespace MyNS
 		/// Onboard the specific Amazon Connect instance to Connect Campaigns.
 		/// StartInstanceOnboardingJob connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
+		/// <param name="connectInstanceId">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartInstanceOnboardingJobResponse> StartInstanceOnboardingJobAsync(string connectInstanceId, StartInstanceOnboardingJobPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1737,6 +1758,9 @@ namespace MyNS
 		/// Get state of a campaign for the specified Amazon Connect account.
 		/// GetCampaignState campaigns/{id}/state
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCampaignStateResponse> GetCampaignStateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1852,6 +1876,9 @@ namespace MyNS
 		/// List tags for a resource.
 		/// ListTagsForResource tags/{arn}
 		/// </summary>
+		/// <param name="arn">Max length: 500
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1885,6 +1912,9 @@ namespace MyNS
 		/// Tag a resource.
 		/// TagResource tags/{arn}
 		/// </summary>
+		/// <param name="arn">Max length: 500
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1919,6 +1949,9 @@ namespace MyNS
 		/// Pauses a campaign for the specified Amazon Connect account.
 		/// PauseCampaign campaigns/{id}/pause
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task PauseCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1941,6 +1974,9 @@ namespace MyNS
 		/// Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.
 		/// PutDialRequestBatch campaigns/{id}/dial-requests
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutDialRequestBatchResponse> PutDialRequestBatchAsync(string id, PutDialRequestBatchPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1981,6 +2017,9 @@ namespace MyNS
 		/// Stops a campaign for the specified Amazon Connect account.
 		/// ResumeCampaign campaigns/{id}/resume
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ResumeCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2003,6 +2042,9 @@ namespace MyNS
 		/// Starts a campaign for the specified Amazon Connect account.
 		/// StartCampaign campaigns/{id}/start
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task StartCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2025,6 +2067,9 @@ namespace MyNS
 		/// Stops a campaign for the specified Amazon Connect account.
 		/// StopCampaign campaigns/{id}/stop
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task StopCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2047,6 +2092,12 @@ namespace MyNS
 		/// Untag a resource.
 		/// UntagResource tags/{arn}#tagKeys
 		/// </summary>
+		/// <param name="arn">Max length: 500
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UntagResourceAsync(string arn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2074,6 +2125,9 @@ namespace MyNS
 		/// Updates the dialer config of a campaign. This API is idempotent.
 		/// UpdateCampaignDialerConfig campaigns/{id}/dialer-config
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignDialerConfigAsync(string id, UpdateCampaignDialerConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2108,6 +2162,9 @@ namespace MyNS
 		/// Updates the name of a campaign. This API is idempotent.
 		/// UpdateCampaignName campaigns/{id}/name
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignNameAsync(string id, UpdateCampaignNamePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2142,6 +2199,9 @@ namespace MyNS
 		/// Updates the outbound call config of a campaign. This API is idempotent.
 		/// UpdateCampaignOutboundCallConfig campaigns/{id}/outbound-call-config
 		/// </summary>
+		/// <param name="id">Max length: 256
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignOutboundCallConfigAsync(string id, UpdateCampaignOutboundCallConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

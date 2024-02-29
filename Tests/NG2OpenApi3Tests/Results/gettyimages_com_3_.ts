@@ -79,24 +79,48 @@ export namespace MyNS {
 
 	export interface AffiliateImageUrls {
 		large?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		large_height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		large_width?: number | null;
 		medium?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		medium_height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		medium_width?: number | null;
 		small?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		small_height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		small_width?: number | null;
 	}
 	export interface AffiliateImageUrlsFormProperties {
 		large: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		large_height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		large_width: FormControl<number | null | undefined>,
 		medium: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		medium_height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		medium_width: FormControl<number | null | undefined>,
 		small: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		small_height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		small_width: FormControl<number | null | undefined>,
 	}
 	export function CreateAffiliateImageUrlsFormGroup() {
@@ -407,9 +431,13 @@ export namespace MyNS {
 
 	export interface AssetLicensingResponse {
 		acquired_licenses?: Array<ExtendedLicenses>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits_used?: number | null;
 	}
 	export interface AssetLicensingResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits_used: FormControl<number | null | undefined>,
 	}
 	export function CreateAssetLicensingResponseFormGroup() {
@@ -432,6 +460,8 @@ export namespace MyNS {
 		caption?: string | null;
 		clip_length?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -460,6 +490,8 @@ export namespace MyNS {
 		caption: FormControl<string | null | undefined>,
 		clip_length: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -523,10 +555,14 @@ export namespace MyNS {
 	}
 
 	export interface IStockLicense {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits?: number | null;
 		license_type?: AssetLicenseName | null;
 	}
 	export interface IStockLicenseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits: FormControl<number | null | undefined>,
 		license_type: FormControl<AssetLicenseName | null | undefined>,
 	}
@@ -542,12 +578,16 @@ export namespace MyNS {
 		entity_types?: Array<string>;
 		entity_uris?: Array<string>;
 		keyword_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		relevance?: number | null;
 		text?: string | null;
 		type?: string | null;
 	}
 	export interface KeywordFormProperties {
 		keyword_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		relevance: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -603,10 +643,14 @@ export namespace MyNS {
 	export interface BlendedVideoSearchResults {
 		facets?: SearchFacetsResponse;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 		videos?: Array<BlendedVideoSearchItem>;
 	}
 	export interface BlendedVideoSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateBlendedVideoSearchResultsFormGroup() {
@@ -632,10 +676,14 @@ export namespace MyNS {
 	}
 
 	export interface Entertainment {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface EntertainmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -649,11 +697,15 @@ export namespace MyNS {
 
 	export interface FacetEvent {
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface FacetEventFormProperties {
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -667,10 +719,14 @@ export namespace MyNS {
 	}
 
 	export interface Location {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface LocationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -683,10 +739,14 @@ export namespace MyNS {
 	}
 
 	export interface SpecificPeople {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface SpecificPeopleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -743,8 +803,12 @@ export namespace MyNS {
 	}
 
 	export interface BoardDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		asset_count?: number | null;
 		assets?: Array<Asset>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count?: number | null;
 		date_created?: Date | null;
 		date_last_updated?: Date | null;
@@ -755,7 +819,11 @@ export namespace MyNS {
 		permissions?: BoardPermissions;
 	}
 	export interface BoardDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		asset_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count: FormControl<number | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
 		date_last_updated: FormControl<Date | null | undefined>,
@@ -841,10 +909,14 @@ export namespace MyNS {
 	}
 
 	export interface BoardList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		board_count?: number | null;
 		boards?: Array<BoardListBoard>;
 	}
 	export interface BoardListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		board_count: FormControl<number | null | undefined>,
 	}
 	export function CreateBoardListFormGroup() {
@@ -855,6 +927,8 @@ export namespace MyNS {
 	}
 
 	export interface BoardListBoard {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		asset_count?: number | null;
 		board_relationship?: string | null;
 		date_created?: Date | null;
@@ -865,6 +939,8 @@ export namespace MyNS {
 		name?: string | null;
 	}
 	export interface BoardListBoardFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		asset_count: FormControl<number | null | undefined>,
 		board_relationship: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
@@ -894,9 +970,13 @@ export namespace MyNS {
 		AssetChangeType?: string | null;
 		AssetFamily?: AssetFamily | null;
 		AssetType?: AssetType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ChannelId?: number | null;
 		CreateDateUtc?: Date | null;
 		Metadata?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotificationCount?: number | null;
 		OldestChangeNotificationDateUtc?: Date | null;
 	}
@@ -904,9 +984,13 @@ export namespace MyNS {
 		AssetChangeType: FormControl<string | null | undefined>,
 		AssetFamily: FormControl<AssetFamily | null | undefined>,
 		AssetType: FormControl<AssetType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ChannelId: FormControl<number | null | undefined>,
 		CreateDateUtc: FormControl<Date | null | undefined>,
 		Metadata: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NotificationCount: FormControl<number | null | undefined>,
 		OldestChangeNotificationDateUtc: FormControl<Date | null | undefined>,
 	}
@@ -943,6 +1027,8 @@ export namespace MyNS {
 	export interface Collection {
 		asset_family?: string | null;
 		code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		license_model?: string | null;
 		name?: string | null;
@@ -951,6 +1037,8 @@ export namespace MyNS {
 	export interface CollectionFormProperties {
 		asset_family: FormControl<string | null | undefined>,
 		code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		license_model: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -1119,9 +1207,13 @@ export namespace MyNS {
 		auto_corrections?: AutoCorrections;
 		images?: Array<ImageSearchItemCreative>;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface CreativeImageSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeImageSearchResultsFormGroup() {
@@ -1139,6 +1231,8 @@ export namespace MyNS {
 		call_for_image?: boolean | null;
 		caption?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -1154,6 +1248,8 @@ export namespace MyNS {
 		license_model?: string | null;
 		max_dimensions?: MaxDimensions;
 		orientation?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank?: number | null;
 		referral_destinations?: Array<ReferralDestination>;
 		title?: string | null;
@@ -1166,6 +1262,8 @@ export namespace MyNS {
 		call_for_image: FormControl<boolean | null | undefined>,
 		caption: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -1177,6 +1275,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		license_model: FormControl<string | null | undefined>,
 		orientation: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		uri_oembed: FormControl<string | null | undefined>,
@@ -1227,11 +1327,19 @@ export namespace MyNS {
 	}
 
 	export interface MaxDimensions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface MaxDimensionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMaxDimensionsFormGroup() {
@@ -1253,6 +1361,8 @@ export namespace MyNS {
 		caption?: string | null;
 		clip_length?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -1280,6 +1390,8 @@ export namespace MyNS {
 		caption: FormControl<string | null | undefined>,
 		clip_length: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -1322,10 +1434,14 @@ export namespace MyNS {
 		auto_corrections?: AutoCorrections;
 		facets?: SearchFacetsResponse;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 		videos?: Array<CreativeVideoSearchItem>;
 	}
 	export interface CreativeVideoSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeVideoSearchResultsFormGroup() {
@@ -1389,13 +1505,25 @@ export namespace MyNS {
 	}
 
 	export interface Dimensions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface DimensionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionsFormGroup() {
@@ -1449,9 +1577,13 @@ export namespace MyNS {
 	export interface EditorialImageSearchResults {
 		images?: Array<ImageSearchItemEditorial>;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface EditorialImageSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialImageSearchResultsFormGroup() {
@@ -1469,6 +1601,8 @@ export namespace MyNS {
 		call_for_image?: boolean | null;
 		caption?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -1489,6 +1623,8 @@ export namespace MyNS {
 		orientation?: string | null;
 		people?: Array<string>;
 		product_types?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank?: number | null;
 		referral_destinations?: Array<ReferralDestination>;
 		title?: string | null;
@@ -1501,6 +1637,8 @@ export namespace MyNS {
 		call_for_image: FormControl<boolean | null | undefined>,
 		caption: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -1512,6 +1650,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		license_model: FormControl<string | null | undefined>,
 		orientation: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		uri_oembed: FormControl<string | null | undefined>,
@@ -1543,9 +1683,13 @@ export namespace MyNS {
 	}
 
 	export interface EditorialSource {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface EditorialSourceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialSourceFormGroup() {
@@ -1568,6 +1712,8 @@ export namespace MyNS {
 		caption?: string | null;
 		clip_length?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -1596,6 +1742,8 @@ export namespace MyNS {
 		caption: FormControl<string | null | undefined>,
 		clip_length: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -1639,10 +1787,14 @@ export namespace MyNS {
 	export interface EditorialVideoSearchResults {
 		facets?: SearchFacetsResponse;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 		videos?: Array<EditorialVideoSearchItem>;
 	}
 	export interface EditorialVideoSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialVideoSearchResultsFormGroup() {
@@ -1659,18 +1811,30 @@ export namespace MyNS {
 	export enum EthnicityFilterType { black = 'black', caucasian = 'caucasian', east_asian = 'east_asian', hispanic_latino = 'hispanic_latino', japanese = 'japanese', middle_eastern = 'middle_eastern', mixed_race_person = 'mixed_race_person', multiethnic_group = 'multiethnic_group', native_american_first_nations = 'native_american_first_nations', pacific_islander = 'pacific_islander', south_asian = 'south_asian', southeast_asian = 'southeast_asian' }
 
 	export interface Event {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		child_event_count?: number | null;
 		editorial_segments?: Array<string>;
 		hero_image?: HeroImage;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_count?: number | null;
 		location?: LocationEvent;
 		name?: string | null;
 		start_date?: Date | null;
 	}
 	export interface EventFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		child_event_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_count: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		start_date: FormControl<Date | null | undefined>,
@@ -1749,9 +1913,13 @@ export namespace MyNS {
 
 	export interface EventsSearchResult {
 		events?: Array<Event>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface EventsSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateEventsSearchResultFormGroup() {
@@ -1763,9 +1931,13 @@ export namespace MyNS {
 
 	export interface GetDownloadsResponse {
 		downloads?: Array<HistoricalDownload>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface GetDownloadsResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDownloadsResponseFormGroup() {
@@ -1783,6 +1955,8 @@ export namespace MyNS {
 		download_details?: DownloadDetails;
 		download_source?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id?: number | null;
 		product_type?: string | null;
 		size_name?: string | null;
@@ -1795,6 +1969,8 @@ export namespace MyNS {
 		date_downloaded: FormControl<Date | null | undefined>,
 		download_source: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		product_id: FormControl<number | null | undefined>,
 		product_type: FormControl<string | null | undefined>,
 		size_name: FormControl<string | null | undefined>,
@@ -1867,6 +2043,8 @@ export namespace MyNS {
 		call_for_image?: boolean | null;
 		caption?: string | null;
 		collection_code?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id?: number | null;
 		collection_name?: string | null;
 		color_type?: string | null;
@@ -1887,6 +2065,8 @@ export namespace MyNS {
 		orientation?: string | null;
 		people?: Array<string>;
 		product_types?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank?: number | null;
 		referral_destinations?: Array<ReferralDestination>;
 		title?: string | null;
@@ -1899,6 +2079,8 @@ export namespace MyNS {
 		call_for_image: FormControl<boolean | null | undefined>,
 		caption: FormControl<string | null | undefined>,
 		collection_code: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collection_id: FormControl<number | null | undefined>,
 		collection_name: FormControl<string | null | undefined>,
 		color_type: FormControl<string | null | undefined>,
@@ -1910,6 +2092,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		license_model: FormControl<string | null | undefined>,
 		orientation: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quality_rank: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		uri_oembed: FormControl<string | null | undefined>,
@@ -1943,9 +2127,13 @@ export namespace MyNS {
 	export interface ImageSearchItemSearchResults {
 		images?: Array<ImageSearchItem>;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface ImageSearchItemSearchResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateImageSearchItemSearchResultsFormGroup() {
@@ -2050,15 +2238,27 @@ export namespace MyNS {
 	}
 
 	export interface OverageDetails {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 		overages_reached?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining?: number | null;
 	}
 	export interface OverageDetailsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 		overages_reached: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remaining: FormControl<number | null | undefined>,
 	}
 	export function CreateOverageDetailsFormGroup() {
@@ -2129,9 +2329,13 @@ export namespace MyNS {
 
 	export interface PreviousAssetPurchases {
 		previous_purchases?: Array<PreviousAssetPurchase>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface PreviousAssetPurchasesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePreviousAssetPurchasesFormGroup() {
@@ -2168,9 +2372,13 @@ export namespace MyNS {
 
 	export interface PreviousPurchases {
 		previous_purchases?: Array<PreviousPurchase>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface PreviousPurchasesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePreviousPurchasesFormGroup() {
@@ -2183,34 +2391,54 @@ export namespace MyNS {
 	export interface Product {
 		agreement_name?: string | null;
 		application_website?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits_remaining?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		download_limit?: number | null;
 		download_limit_duration?: string | null;
 		download_limit_reset_utc_date?: Date | null;
 		download_requirements?: DownloadRequirements;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		downloads_remaining?: number | null;
 		expiration_utc_date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		imagepack_resolution?: string | null;
 		name?: string | null;
 		overage?: OverageDetails;
 		status?: ProductStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		team_credits?: number | null;
 		type?: ProductType | null;
 	}
 	export interface ProductFormProperties {
 		agreement_name: FormControl<string | null | undefined>,
 		application_website: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		credits_remaining: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		download_limit: FormControl<number | null | undefined>,
 		download_limit_duration: FormControl<string | null | undefined>,
 		download_limit_reset_utc_date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		downloads_remaining: FormControl<number | null | undefined>,
 		expiration_utc_date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		imagepack_resolution: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ProductStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		team_credits: FormControl<number | null | undefined>,
 		type: FormControl<ProductType | null | undefined>,
 	}
@@ -2265,11 +2493,15 @@ export namespace MyNS {
 		image_fingerprint?: string | null;
 		images?: any;
 		related_searches?: Array<RelatedSearch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count?: number | null;
 	}
 	export interface SearchByImageResourceResultsFormProperties {
 		image_fingerprint: FormControl<string | null | undefined>,
 		images: FormControl<any | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchByImageResourceResultsFormGroup() {
@@ -2344,7 +2576,10 @@ export namespace MyNS {
 		/** Specifies the Id of the asset that was used. */
 		asset_id?: string | null;
 
-		/** Specifies the number of times the asset was used. */
+		/**
+		 * Specifies the number of times the asset was used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Identifies the date the asset was used, in ISO 8601 format (e.g., YYYY-MM-DD), time is not needed. */
@@ -2357,7 +2592,10 @@ export namespace MyNS {
 		/** Specifies the Id of the asset that was used. */
 		asset_id: FormControl<string | null | undefined>,
 
-		/** Specifies the number of times the asset was used. */
+		/**
+		 * Specifies the number of times the asset was used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Identifies the date the asset was used, in ISO 8601 format (e.g., YYYY-MM-DD), time is not needed. */
@@ -2396,14 +2634,20 @@ export namespace MyNS {
 		/** Identifies a list of asset ids submitted that did not match known Getty asset ids. */
 		invalid_assets?: Array<string>;
 
-		/** Specifies the number of asset usage records that were successfully recorded. */
+		/**
+		 * Specifies the number of asset usage records that were successfully recorded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_asset_usages_processed?: number | null;
 	}
 
 	/** Specifies the response from the Batch Usages endpoint. */
 	export interface Report_usage_batch_responseFormProperties {
 
-		/** Specifies the number of asset usage records that were successfully recorded. */
+		/**
+		 * Specifies the number of asset usage records that were successfully recorded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_asset_usages_processed: FormControl<number | null | undefined>,
 	}
 	export function CreateReport_usage_batch_responseFormGroup() {
@@ -2442,7 +2686,9 @@ export namespace MyNS {
 		 * @param {string} artist_name Name of artist for desired images
 		 * @param {Array<ArtistsImageSearchFieldValues>} fields Comma separated list of fields. Allows restricting which fields are returned. If no fields are selected, the summary_set of fields are returned.
 		 * @param {number} page Identifies page to return. Default page is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default page_size is 10, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		V3ArtistsImagesGetByArtist_nameAndFieldsAndPageAndPage_size(artist_name: string | null | undefined, fields: Array<ArtistsImageSearchFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2455,7 +2701,9 @@ export namespace MyNS {
 		 * @param {string} artist_name Name of artist for desired images
 		 * @param {Array<ArtistsVideoSearchFieldValues>} fields Comma separated list of fields. Allows restricting which fields are returned. If no fields are selected, the summary_set of fields are returned.
 		 * @param {number} page Identifies page to return. Default page is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default page_size is 10, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		V3ArtistsVideosGetByArtist_nameAndFieldsAndPageAndPage_size(artist_name: string | null | undefined, fields: Array<ArtistsVideoSearchFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2476,7 +2724,9 @@ export namespace MyNS {
 		 * Notifications older than 60 days will be removed from partner channels.
 		 * Put v3/asset-changes/change-sets
 		 * @param {number} channel_id Specifies the id of the channel for the asset data. Valid channel ids can be found in the results of the Get Partner Channel query.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} batch_size Specifies the number of assets to return. The default is 2200; maximum is 2200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AssetChanges} Success - Channel contains unconfirmed asset change notifications
 		 */
 		V3Asset_changesChange_setsPutByChannel_idAndBatch_size(channel_id: number | null | undefined, batch_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<AssetChanges> {
@@ -2491,10 +2741,11 @@ export namespace MyNS {
 		 * You'll need an API key and an access token to use this resource.
 		 * Use the change_set_id from the PUT asset-changes/change-sets endpoint to confirm receipt of notifications.
 		 * Delete v3/asset-changes/change-sets/{change_set_id}
-		 * @param {number} change_set_id Specify the change-set-id associated with a transaction resource whose receipt you want to confirm.
+		 * @param {string} change_set_id Specify the change-set-id associated with a transaction resource whose receipt you want to confirm.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Success
 		 */
-		V3Asset_changesChange_sets_change_set_idDelete(change_set_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V3Asset_changesChange_sets_change_set_idDelete(change_set_id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v3/asset-changes/change-sets/{change_set_id}', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -2529,6 +2780,7 @@ export namespace MyNS {
 		 * @param {Date} last_offset Specifies a date/time (with timezone information) for continuing retrieval of events.
 		 * Events occuring _after_ the `last_offset` value provided will be returned.
 		 * @param {number} event_count Specifies the number of events to return. Default is 50, maximum value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSendEventsResponse} Success
 		 */
 		V3Asset_managementAssetsSend_eventsGetByLast_offsetAndEvent_count(last_offset: Date | null | undefined, event_count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<GetSendEventsResponse> {
@@ -2539,9 +2791,11 @@ export namespace MyNS {
 		 * Get all boards that the user participates in
 		 * Get v3/boards
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BoardRelationship} board_relationship Search for boards the user owns or has been invited to as an editor.
 		 * @param {BoardSortOrder} sort_order Sort the list of boards by last update date or name. Defaults to date_last_updated_descending.
 		 * @param {number} pageSize Request number of boards to return in each page. (default is 30).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BoardList} Success
 		 */
 		V3BoardsGetByPageAndBoard_relationshipAndSort_orderAndPageSize(page: number | null | undefined, board_relationship: BoardRelationship | null | undefined, sort_order: BoardSortOrder | null | undefined, pageSize: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BoardList> {
@@ -2717,7 +2971,9 @@ export namespace MyNS {
 		 * i.e.: 2019-09-19T19:30:37 or 2019-09-19 19:30:37.  Time zone can be specified as optional.
 		 * Default value is false
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductType} product_type Specifies product type to be included in the previous download results. Product types easyaccess, editorialsubscription, imagepack, and premiumaccess are for GettyImages API keys. Product types royaltyfreesubscription and creditpack are for iStock API keys. To get previous iStockPhoto credit downloads, creditpack must be selected.
 		 * @param {boolean} company_downloads If specified, returns the list of previously downloaded images for all users in your company. Your account must be enabled for this functionality. Contact your Getty Images account rep for more information. Default is false.
 		 * @return {GetDownloadsResponse} OK
@@ -2790,6 +3046,7 @@ export namespace MyNS {
 		 * @param {number} product_id <remarks>
 		 *                     Identifier of the instance for the selected product offering type.
 		 *                 </remarks>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductType} product_type <remarks>
 		 *                     Product types easyaccess, editorialsubscription, imagepack, and premiumaccess are for GettyImages API keys. Product types royaltyfreesubscription and creditpack are for iStock API keys. Default product type for iStock API keys is creditpack.
 		 *                 </remarks>
@@ -2861,6 +3118,7 @@ export namespace MyNS {
 		 * @param {number} product_id <remarks>
 		 *                     Identifier of the instance for the selected product offering type.
 		 *                 </remarks>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductType} product_type <remarks>
 		 *                     Product types easyaccess, editorialsubscription, imagepack, and premiumaccess are for GettyImages API keys. Product types royaltyfreesubscription and creditpack are for iStock API keys. Default product type for iStock API keys is creditpack.
 		 *                 </remarks>
@@ -2905,6 +3163,7 @@ export namespace MyNS {
 		 * You'll need an API key and access token to use this resource.
 		 * Get v3/events/{id}
 		 * @param {number} id An event id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<EventDetailFieldValues>} fields A comma separated list of fields to return in the response.
 		 * @return {void} OK
 		 */
@@ -3242,7 +3501,9 @@ export namespace MyNS {
 		 * @param {string} id Identifies an existing image
 		 * @param {Array<ImagesFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes, height, and width returned by 'download_sizes' field are estimates.
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ImageSearchItemSearchResults} OK
 		 */
 		V3Images_idSame_seriesGetByFieldsAndPageAndPage_size(id: string, fields: Array<ImagesFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ImageSearchItemSearchResults> {
@@ -3355,7 +3616,9 @@ export namespace MyNS {
 		 * @param {string} id Identifies an existing image
 		 * @param {Array<ImagesFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes, height, and width returned by 'download_sizes' field are estimates.
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ImageSearchItemSearchResults} OK
 		 */
 		V3Images_idSimilarGetByFieldsAndPageAndPage_size(id: string, fields: Array<ImagesFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ImageSearchItemSearchResults> {
@@ -3369,6 +3632,7 @@ export namespace MyNS {
 		 * You'll need an API key and access token to use this resource.
 		 * Get v3/orders/{id}
 		 * @param {number} id An order id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OrderDetail} OK
 		 */
 		V3Orders_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<OrderDetail> {
@@ -3397,7 +3661,9 @@ export namespace MyNS {
 		 * Get v3/purchased-assets
 		 * @param {Date} date_to If specified, retrieves previous purchases on or before this date. Dates should be submitted in ISO 8601 format (i.e., YYYY-MM-DD).
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 75, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} date_from If specified, retrieves previous purchases on or after this date. Dates should be submitted in ISO 8601 format (i.e., YYYY-MM-DD).
 		 * @param {boolean} company_purchases If specified, returns the list of previously purchased assets for all users in your company. Your account must be enabled for this functionality. Contact your Getty Images account rep for more information. Default is false.
 		 * @return {PreviousAssetPurchases} OK
@@ -3418,7 +3684,9 @@ export namespace MyNS {
 		 * @param {Date} date_to Filters to events that start on or before this date. Use ISO 8601 format (e.g., 1999-12-31). Defaults to UTC unless otherwise specified.
 		 * @param {Array<EventFieldValues>} fields Specifies fields to return. Default set is 'id','name','start_date'.
 		 * @param {number} page Request results starting at a page number (default is 1, maximum is 50).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of events to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Filters to events related to this phrase
 		 * @param {EventSearchSortOrder} sort_order Specifies the order in which to sort the results. Default is `newest`.
 		 * @return {EventsSearchResult} OK
@@ -3561,7 +3829,9 @@ export namespace MyNS {
 		 * @param {Array<NumberOfPeopleFilterType>} number_of_people Filter based on the number of people in the image.
 		 * @param {Array<ImageOrientationRequest>} orientations Return only images with selected aspect ratios.
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of images to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Search images using a search phrase.
 		 * @param {BlendedImageSortOrder} sort_order Select sort order of results.  The default is best_match
 		 * @param {Array<string>} specific_people Return only images associated with specific people (using a comma-delimited list).
@@ -3703,7 +3973,9 @@ export namespace MyNS {
 		 * @param {Array<NumberOfPeopleFilterType>} number_of_people Filter based on the number of people in the image.
 		 * @param {Array<ImageOrientationRequest>} orientations Return only images with selected aspect ratios.
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of images to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Search images using a search phrase.
 		 * @param {boolean} safe_search Setting safe_search to "true" excludes images containing nudity, death, profanity, drugs and alcohol, suggestive content, and graphic content from the result set. The default is false. Because this is a keyword-based filter, it's possible that a small number of unsafe images may not be caught by the filter. Please direct feedback to your Getty Images Account or API support representative.
 		 * @param {BlendedImageSortOrder} sort_order Select sort order of results.  The default is best_match
@@ -3711,6 +3983,7 @@ export namespace MyNS {
 		 *                    The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreativeImageSearchResults} OK
 		 */
 		V3SearchImagesCreativeGetByAge_of_peopleAndArtistsAndCollection_codesAndCollections_filter_typeAndColorAndCompositionsAndDownload_productAndEmbed_content_onlyAndEthnicityAndExclude_keyword_idsAndExclude_nudityAndExclude_editorial_use_onlyAndFieldsAndFile_typesAndGraphical_stylesAndGraphical_styles_filter_typeAndInclude_related_searchesAndKeyword_idsAndMinimum_sizeAndNumber_of_peopleAndOrientationsAndPageAndPage_sizeAndPhraseAndSafe_searchAndSort_orderAndFacet_fieldsAndInclude_facetsAndFacet_max_count(age_of_people: Array<AgeOfPeopleFilterType> | null | undefined, artists: string | null | undefined, collection_codes: Array<string> | null | undefined, collections_filter_type: CollectionsFilterType | null | undefined, color: string | null | undefined, compositions: Array<CompositionsFilterType> | null | undefined, download_product: string | null | undefined, embed_content_only: boolean | null | undefined, ethnicity: Array<EthnicityFilterType> | null | undefined, exclude_keyword_ids: Array<number> | null | undefined, exclude_nudity: boolean | null | undefined, exclude_editorial_use_only: boolean | null | undefined, fields: Array<CreativeImagesFieldValues> | null | undefined, file_types: Array<SearchFileType> | null | undefined, graphical_styles: Array<GraphicalStyle> | null | undefined, graphical_styles_filter_type: CollectionsFilterType | null | undefined, include_related_searches: boolean | null | undefined, keyword_ids: Array<number> | null | undefined, minimum_size: TeeShirtSize | null | undefined, number_of_people: Array<NumberOfPeopleFilterType> | null | undefined, orientations: Array<ImageOrientationRequest> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, phrase: string | null | undefined, safe_search: boolean | null | undefined, sort_order: BlendedImageSortOrder | null | undefined, facet_fields: Array<CreateImageSearchFacetsFields> | null | undefined, include_facets: boolean | null | undefined, facet_max_count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<CreativeImageSearchResults> {
@@ -3739,11 +4012,14 @@ export namespace MyNS {
 		 * @param {Array<CreateImageSearchFacetsFields>} facet_fields Specifies the facets to return in the response. Facets provide additional search parameters to refine your results.
 		 *                     The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<CreativeImagesFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes, height, and width returned by 'download_sizes' field are estimates.
 		 * @param {string} image_url Specifies the location of the image to use in the search.
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of images to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} product_types Filter images to those from one of your product types. 
 		 *                     Allowed values are easyaccess, imagepack, premiumaccess and royaltyfreesubscription. 
 		 *                     If you have more than one instance of a product, you may also include the ID of the product instance you wish to filter on. 
@@ -3886,15 +4162,19 @@ export namespace MyNS {
 		 * @param {Array<NumberOfPeopleFilterType>} number_of_people Filter based on the number of people in the image.
 		 * @param {Array<ImageOrientationRequest>} orientations Return only images with selected aspect ratios.
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of images to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Search images using a search phrase.
 		 * @param {SortOrder} sort_order Select sort order of results.  The default is best_match
 		 * @param {Array<string>} specific_people Return only images associated with specific people (using a comma-delimited list).
 		 * @param {number} minimum_quality_rank Filter search results based on minimum quality ranking. Possible values 1, 2, 3 with 1 being best.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<EditorialImageSearchFacetsFields>} facet_fields Specifies the facets to return in the response. Facets provide additional search parameters to refine your results.
 		 *                    The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EditorialImageSearchResults} OK
 		 */
 		V3SearchImagesEditorialGetByAge_of_peopleAndArtistsAndCollection_codesAndCollections_filter_typeAndCompositionsAndDate_fromAndDate_toAndDownload_productAndEditorial_segmentsAndEmbed_content_onlyAndEthnicityAndEvent_idsAndExclude_keyword_idsAndFieldsAndFile_typesAndGraphical_stylesAndGraphical_styles_filter_typeAndInclude_related_searchesAndKeyword_idsAndMinimum_sizeAndNumber_of_peopleAndOrientationsAndPageAndPage_sizeAndPhraseAndSort_orderAndSpecific_peopleAndMinimum_quality_rankAndFacet_fieldsAndInclude_facetsAndFacet_max_count(age_of_people: Array<AgeOfPeopleFilterType> | null | undefined, artists: string | null | undefined, collection_codes: Array<string> | null | undefined, collections_filter_type: CollectionsFilterType | null | undefined, compositions: Array<CompositionsFilterType> | null | undefined, date_from: Date | null | undefined, date_to: Date | null | undefined, download_product: string | null | undefined, editorial_segments: Array<EditorialSegmentContract> | null | undefined, embed_content_only: boolean | null | undefined, ethnicity: Array<EthnicityFilterType> | null | undefined, event_ids: Array<number> | null | undefined, exclude_keyword_ids: Array<number> | null | undefined, fields: Array<EditorialImagesFieldValues> | null | undefined, file_types: Array<SearchFileType> | null | undefined, graphical_styles: Array<EditorialGraphicalStyle> | null | undefined, graphical_styles_filter_type: CollectionsFilterType | null | undefined, include_related_searches: boolean | null | undefined, keyword_ids: Array<number> | null | undefined, minimum_size: TeeShirtSize | null | undefined, number_of_people: Array<NumberOfPeopleFilterType> | null | undefined, orientations: Array<ImageOrientationRequest> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, phrase: string | null | undefined, sort_order: SortOrder | null | undefined, specific_people: Array<string> | null | undefined, minimum_quality_rank: number | null | undefined, facet_fields: Array<EditorialImageSearchFacetsFields> | null | undefined, include_facets: boolean | null | undefined, facet_max_count: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<EditorialImageSearchResults> {
@@ -4038,9 +4318,13 @@ export namespace MyNS {
 		 * @param {Array<LicenseModelVideoRequest>} license_models Specifies the video licensing model(s).
 		 * @param {Array<VideoOrientationRequest>} orientations Return only videos with selected orientations.
 		 * @param {number} min_clip_length Provides filtering by minimum length of video clip, in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_clip_length Provides filtering by maximum length of video, in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Free-text search query.
 		 * @param {boolean} safe_search Setting safe_search to "true" excludes images containing nudity, death, profanity, drugs and alcohol, suggestive content, and graphic content from the result set. The default is false. Because this is a keyword-based filter, it's possible that a small number of unsafe images may not be caught by the filter. Please direct feedback to your Getty Images Account or API support representative.
 		 * @param {BlendedImageSortOrder} sort_order Select sort order of results.  The default is best_match
@@ -4048,6 +4332,7 @@ export namespace MyNS {
 		 * @param {Array<CreateVideoSearchFacetsFields>} facet_fields Specifies the facets to return in the response. Facets provide additional search parameters to refine your results.
 		 *                    The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {Array<ViewpointsFilterType>} viewpoints Filter based on viewpoint.
 		 * @return {CreativeVideoSearchResults} OK
@@ -4078,11 +4363,14 @@ export namespace MyNS {
 		 * @param {Array<CreateVideoSearchFacetsFields>} facet_fields Specifies the facets to return in the response. Facets provide additional search parameters to refine your results.
 		 *                     The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<CreativeVideosFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes returned by 'download_sizes' field is an estimate.
 		 * @param {string} image_url Specifies the location of the image to use in the search.
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {number} page Request results starting at a page number (default is 1).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Request number of images to return in each page. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} product_types Filter images to those from one of your product types. 
 		 *                     Allowed values are easyaccess, imagepack, premiumaccess and royaltyfreesubscription. 
 		 *                     If you have more than one instance of a product, you may also include the ID of the product instance you wish to filter on. 
@@ -4223,10 +4511,14 @@ export namespace MyNS {
 		 * @param {boolean} include_related_searches Specifies whether or not to include related searches in the response. The default is false.
 		 * @param {Array<number>} keyword_ids Return only videos tagged with specific keyword(s). Specify using a comma-separated list of keyword Ids. If keyword Ids and phrase are both specified, only those videos matching the query phrase which also contain the requested keyword(s) are returned.
 		 * @param {number} min_clip_length Provides filtering by minimum length of video clip, in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_clip_length Provides filtering by maximum length of video clip, in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<VideoOrientationRequest>} orientations Return only videos with selected orientations.
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} phrase Free-text search query.
 		 * @param {SortOrder} sort_order Select sort order of results.  The default is best_match
 		 * @param {Array<string>} specific_people Allows filtering by specific peoples' names.
@@ -4235,6 +4527,7 @@ export namespace MyNS {
 		 *                    The include_facets parameter must be set to "true" for facets to be returned.
 		 * @param {boolean} include_facets Specifies whether or not to include facets in the result set. Default is "false".
 		 * @param {number} facet_max_count Specifies the maximum number of facets to return per type. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ViewpointsFilterType>} viewpoints Filter based on viewpoint.
 		 * @return {EditorialVideoSearchResults} OK
 		 */
@@ -4649,7 +4942,9 @@ export namespace MyNS {
 		 * @param {string} id Identifies an existing video
 		 * @param {Array<AssociatedVideoDetailFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes returned by 'download_sizes' field is an estimate.
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		V3Videos_idSame_seriesGetByFieldsAndPageAndPage_size(id: string, fields: Array<AssociatedVideoDetailFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4765,7 +5060,9 @@ export namespace MyNS {
 		 * @param {string} id A video id.
 		 * @param {Array<AssociatedVideoDetailFieldValues>} fields Specifies fields to return. Defaults to 'summary_set'. NOTE: Bytes returned by 'download_sizes' field is an estimate.
 		 * @param {number} page Identifies page to return. Default is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size Specifies page size. Default is 30, maximum page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		V3Videos_idSimilarGetByFieldsAndPageAndPage_size(id: string, fields: Array<AssociatedVideoDetailFieldValues> | null | undefined, page: number | null | undefined, page_size: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

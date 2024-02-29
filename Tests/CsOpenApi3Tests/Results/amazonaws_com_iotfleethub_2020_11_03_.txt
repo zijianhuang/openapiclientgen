@@ -405,7 +405,10 @@ namespace MyNS
 		/// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		/// ListApplications applications
 		/// </summary>
-		/// <param name="nextToken">A token used to get the next set of results.</param>
+		/// <param name="nextToken">A token used to get the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationsResponse> ListApplicationsAsync(string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -439,8 +442,14 @@ namespace MyNS
 		/// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		/// DeleteApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The unique Id of the web application.</param>
-		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</param>
+		/// <param name="applicationId">The unique Id of the web application.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		public async Task DeleteApplicationAsync(string applicationId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"&clientToken=" + (clientToken==null? "" : System.Uri.EscapeDataString(clientToken));
@@ -467,7 +476,10 @@ namespace MyNS
 		/// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		/// DescribeApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The unique Id of the web application.</param>
+		/// <param name="applicationId">The unique Id of the web application.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationResponse> DescribeApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -501,7 +513,10 @@ namespace MyNS
 		/// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p> <note> <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p> </note>
 		/// UpdateApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The unique Id of the web application.</param>
+		/// <param name="applicationId">The unique Id of the web application.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		public async Task UpdateApplicationAsync(string applicationId, UpdateApplicationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId));

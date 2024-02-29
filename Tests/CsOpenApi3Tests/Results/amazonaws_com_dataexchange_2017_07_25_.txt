@@ -2978,7 +2978,10 @@ namespace MyNS
 		/// This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order and the maxResults parameter is ignored.
 		/// ListDataSets v1/data-sets
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results returned by a single call.</param>
+		/// <param name="maxResults">The maximum number of results returned by a single call.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
 		/// <param name="origin">A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -3050,7 +3053,10 @@ namespace MyNS
 		/// ListEventActions v1/event-actions
 		/// </summary>
 		/// <param name="eventSourceId">The unique identifier for the event source.</param>
-		/// <param name="maxResults">The maximum number of results returned by a single call.</param>
+		/// <param name="maxResults">The maximum number of results returned by a single call.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3121,7 +3127,10 @@ namespace MyNS
 		/// ListJobs v1/jobs
 		/// </summary>
 		/// <param name="dataSetId">The unique identifier for a data set.</param>
-		/// <param name="maxResults">The maximum number of results returned by a single call.</param>
+		/// <param name="maxResults">The maximum number of results returned by a single call.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
 		/// <param name="revisionId">The unique identifier for a revision.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -3194,7 +3203,10 @@ namespace MyNS
 		/// ListDataSetRevisions v1/data-sets/{DataSetId}/revisions
 		/// </summary>
 		/// <param name="DataSetId">The unique identifier for a data set.</param>
-		/// <param name="maxResults">The maximum number of results returned by a single call.</param>
+		/// <param name="maxResults">The maximum number of results returned by a single call.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3649,7 +3661,10 @@ namespace MyNS
 		/// ListRevisionAssets v1/data-sets/{DataSetId}/revisions/{RevisionId}/assets
 		/// </summary>
 		/// <param name="DataSetId">The unique identifier for a data set.</param>
-		/// <param name="maxResults">The maximum number of results returned by a single call.</param>
+		/// <param name="maxResults">The maximum number of results returned by a single call.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="nextToken">The token value retrieved from a previous call to access the next page of results.</param>
 		/// <param name="RevisionId">The unique identifier for a revision.</param>
 		/// <param name="MaxResults">Pagination limit</param>

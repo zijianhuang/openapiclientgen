@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AggregateBucket {
 
-		/** Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT */
+		/**
+		 * Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activity?: number | null;
 
 		/** There will be one dataset per AggregateBy in the request. */
@@ -25,7 +28,10 @@ export namespace MyNS {
 	}
 	export interface AggregateBucketFormProperties {
 
-		/** Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT */
+		/**
+		 * Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activity: FormControl<number | null | undefined>,
 
 		/** The end time for the aggregated data, in milliseconds since epoch, inclusive. */
@@ -162,10 +168,16 @@ export namespace MyNS {
 	/** Holder object for the value of a single field in a data point. A field value has a particular format and is only ever set to one of an integer or a floating point value. */
 	export interface Value {
 
-		/** Floating point value. When this is set, other values must not be set. */
+		/**
+		 * Floating point value. When this is set, other values must not be set.
+		 * Type: double
+		 */
 		fpVal?: number | null;
 
-		/** Integer value. When this is set, other values must not be set. */
+		/**
+		 * Integer value. When this is set, other values must not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intVal?: number | null;
 
 		/** Map value. The valid key space and units for the corresponding value of each entry should be documented as part of the data type definition. Keys should be kept small whenever possible. Data streams with large keys and high data frequency may be down sampled. */
@@ -178,10 +190,16 @@ export namespace MyNS {
 	/** Holder object for the value of a single field in a data point. A field value has a particular format and is only ever set to one of an integer or a floating point value. */
 	export interface ValueFormProperties {
 
-		/** Floating point value. When this is set, other values must not be set. */
+		/**
+		 * Floating point value. When this is set, other values must not be set.
+		 * Type: double
+		 */
 		fpVal: FormControl<number | null | undefined>,
 
-		/** Integer value. When this is set, other values must not be set. */
+		/**
+		 * Integer value. When this is set, other values must not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		intVal: FormControl<number | null | undefined>,
 
 		/** String value. When this is set, other values must not be set. Strings should be kept small whenever possible. Data streams with large string values and high data frequency may be down sampled. */
@@ -216,14 +234,20 @@ export namespace MyNS {
 	/** Holder object for the value of an entry in a map field of a data point. A map value supports a subset of the formats that the regular Value supports. */
 	export interface MapValue {
 
-		/** Floating point value. */
+		/**
+		 * Floating point value.
+		 * Type: double
+		 */
 		fpVal?: number | null;
 	}
 
 	/** Holder object for the value of an entry in a map field of a data point. A map value supports a subset of the formats that the regular Value supports. */
 	export interface MapValueFormProperties {
 
-		/** Floating point value. */
+		/**
+		 * Floating point value.
+		 * Type: double
+		 */
 		fpVal: FormControl<number | null | undefined>,
 	}
 	export function CreateMapValueFormGroup() {
@@ -240,7 +264,10 @@ export namespace MyNS {
 		/** Session active time. While start_time_millis and end_time_millis define the full session time, the active time can be shorter and specified by active_time_millis. If the inactive time during the session is known, it should also be inserted via a com.google.activity.segment data point with a STILL activity value */
 		activeTimeMillis?: string | null;
 
-		/** The type of activity this session represents. */
+		/**
+		 * The type of activity this session represents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activityType?: number | null;
 		application?: Application;
 
@@ -269,7 +296,10 @@ export namespace MyNS {
 		/** Session active time. While start_time_millis and end_time_millis define the full session time, the active time can be shorter and specified by active_time_millis. If the inactive time during the session is known, it should also be inserted via a com.google.activity.segment data point with a STILL activity value */
 		activeTimeMillis: FormControl<string | null | undefined>,
 
-		/** The type of activity this session represents. */
+		/**
+		 * The type of activity this session represents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activityType: FormControl<number | null | undefined>,
 
 		/** A description for this session. */
@@ -474,6 +504,8 @@ export namespace MyNS {
 		/** org.joda.timezone.DateTimeZone */
 		timeZoneId?: string | null;
 		type?: BucketByTimePeriodType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface BucketByTimePeriodFormProperties {
@@ -481,6 +513,8 @@ export namespace MyNS {
 		/** org.joda.timezone.DateTimeZone */
 		timeZoneId: FormControl<string | null | undefined>,
 		type: FormControl<BucketByTimePeriodType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketByTimePeriodFormGroup() {
@@ -801,6 +835,7 @@ export namespace MyNS {
 		 * @param {string} userId List data points for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
 		 * @param {string} dataSourceId The data stream ID of the data source that created the dataset.
 		 * @param {number} limit If specified, no more than this many data point changes will be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of nextPageToken from the previous response.
 		 * @return {ListDataPointChangesResponse} Successful response
 		 */
@@ -827,6 +862,7 @@ export namespace MyNS {
 		 * @param {string} dataSourceId The data stream ID of the data source that created the dataset.
 		 * @param {string} datasetId Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: "startTime-endTime" where startTime and endTime are 64 bit integers.
 		 * @param {number} limit If specified, no more than this many data points will be included in the dataset. If there are more data points in the dataset, nextPageToken will be set in the dataset response. The limit is applied from the end of the time range. That is, if pageToken is absent, the limit most recent data points will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The continuation token, which is used to page through large datasets. To get the next page of a dataset, set this parameter to the value of nextPageToken from the previous response. Each subsequent call will yield a partial dataset with data point end timestamps that are strictly smaller than those in the previous partial response.
 		 * @return {Dataset} Successful response
 		 */

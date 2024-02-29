@@ -700,9 +700,17 @@ namespace MyNS
 		/// This end point lists all the Metropolitan and Micropolitan Statistical Areas in the United States with the corresponding states and counties that make up the group.
 		/// Get_msagroups zipc/v1/msagroups
 		/// </summary>
-		/// <param name="limit">Number of records to return in each page. Max value: 50.</param>
-		/// <param name="offset">Offset is the position in the dataset to start retrieval of records.</param>
-		/// <param name="stateCode">Parameter for state code.</param>
+		/// <param name="limit">Number of records to return in each page. Max value: 50.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="offset">Offset is the position in the dataset to start retrieval of records.
+		/// Minimum: 0
+		// </param>
+		/// <param name="stateCode">Parameter for state code.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Get_msagroupsReturn> Get_msagroupsAsync(int limit, int offset, string stateCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -771,9 +779,15 @@ namespace MyNS
 		/// Endpoint that returns the zip codes that fall within the specified radius of another zip code. The returned zip codes are sorted by distance.
 		/// Get_radius zipc/v1/radius
 		/// </summary>
-		/// <param name="zipCode">5 Digit US Zip Code</param>
+		/// <param name="zipCode">5 Digit US Zip Code
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="radius">Radius distance.  Max 322 km or 200 mi</param>
-		/// <param name="uom">Unit of Measure</param>
+		/// <param name="uom">Unit of Measure
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Get_radiusReturn> Get_radiusAsync(string zipCode, int radius, Get_radiusUom uom, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -808,17 +822,28 @@ namespace MyNS
 		/// Returns a list of zip codes. Results are always paginated. Visit the [Zip Code Data API](https://www.metadapi.com/API-Products/API-Product-Details/zip-code-api) product page for information on how to get an API key.
 		/// Get_zipcodes zipc/v1/zipcodes
 		/// </summary>
-		/// <param name="offset">Offset is the position in the dataset to start retrieval of records.</param>
-		/// <param name="limit">Number of records to return in each page.</param>
+		/// <param name="offset">Offset is the position in the dataset to start retrieval of records.
+		/// Minimum: 0
+		// </param>
+		/// <param name="limit">Number of records to return in each page.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="zipcode">5 Digit Zip Code query parameter. Can have multiple values (separated by comma).</param>
 		/// <param name="uspsMainCityKey">Parameter for USPS City / Town key identifier for the main city of the zip code.</param>
-		/// <param name="zipClassificationCode">Parameter for zipClassificationCode</param>
+		/// <param name="zipClassificationCode">Parameter for zipClassificationCode
+		/// Max length: 1
+		/// Min length: 1
+		// </param>
 		/// <param name="uspsFacilityCode">Parameter for facility code.</param>
 		/// <param name="uspsDeliveryCode">Parameter for delivery code.</param>
 		/// <param name="uspsCarrierRouteSortCode">Parameter for carrier route sort code.</param>
 		/// <param name="uniqueZipNameInd">Parameter for unique zip name indicator.</param>
 		/// <param name="uspsFinanceNumber">Parameter for finance number.</param>
-		/// <param name="stateCode">Parameter for state code.</param>
+		/// <param name="stateCode">Parameter for state code.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="stateFipsCode">Parameter for State FIPS code.</param>
 		/// <param name="countyFipsCode">Parameter for county FIPS code.</param>
 		/// <param name="divisionCode">Parameter for division code. </param>

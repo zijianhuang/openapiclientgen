@@ -3584,7 +3584,10 @@ namespace MyNS
 		/// <param name="PreSignedUrl">Not currently supported. </param>
 		/// <param name="EnableCloudwatchLogsExports">A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>. </param>
 		/// <param name="DeletionProtection">Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</param>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global cluster.</param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global cluster.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateDBClusterAsync(
 					string[] AvailabilityZones, 
@@ -3800,7 +3803,10 @@ namespace MyNS
 		/// <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon Web Services Regions. The global cluster contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated infrastructure with no impact to your workload’s performance.</p> <p/> <p>You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can specify an existing cluster during the create operation, and this cluster becomes the primary of the global cluster. </p> <note> <p>This action only applies to Amazon DocumentDB clusters.</p> </note>
 		/// GET_CreateGlobalCluster #Action=CreateGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global cluster.</param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global cluster.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="SourceDBClusterIdentifier">The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</param>
 		/// <param name="Engine">The name of the database engine to be used for this cluster.</param>
 		/// <param name="EngineVersion">The engine version of the global cluster.</param>
@@ -4004,7 +4010,10 @@ namespace MyNS
 		/// <p>Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before attempting to delete a global cluster.</p> <note> <p>This action only applies to Amazon DocumentDB clusters.</p> </note>
 		/// GET_DeleteGlobalCluster #Action=DeleteGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier of the global cluster being deleted.</param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier of the global cluster being deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteGlobalClusterAsync(string GlobalClusterIdentifier, GET_DeleteGlobalClusterAction Action, GET_DeleteGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4445,7 +4454,10 @@ namespace MyNS
 		/// <p>Returns information about Amazon DocumentDB global clusters. This API supports pagination.</p> <note> <p>This action only applies to Amazon DocumentDB clusters.</p> </note>
 		/// GET_DescribeGlobalClusters #Action=DescribeGlobalClusters
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</param>
+		/// <param name="GlobalClusterIdentifier">The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="Filters"><p>A filter that specifies one or more global DB clusters to describe.</p> <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p></param>
 		/// <param name="MaxRecords">The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results. </param>
 		/// <param name="Marker">An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</param>
@@ -4818,8 +4830,14 @@ namespace MyNS
 		/// <p>Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.</p> <note> <p>This action only applies to Amazon DocumentDB clusters.</p> </note>
 		/// GET_ModifyGlobalCluster #Action=ModifyGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier"><p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing global cluster.</p> </li> </ul></param>
-		/// <param name="NewGlobalClusterIdentifier"><p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-cluster2</code> </p></param>
+		/// <param name="GlobalClusterIdentifier"><p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing global cluster.</p> </li> </ul>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="NewGlobalClusterIdentifier"><p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-cluster2</code> </p>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="DeletionProtection">Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </param>
 		/// <returns>Success</returns>
 		public async Task GET_ModifyGlobalClusterAsync(string GlobalClusterIdentifier, string NewGlobalClusterIdentifier, bool DeletionProtection, GET_ModifyGlobalClusterAction Action, GET_ModifyGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4877,7 +4895,10 @@ namespace MyNS
 		/// <p>Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region. </p> <note> <p>This action only applies to Amazon DocumentDB clusters.</p> </note>
 		/// GET_RemoveFromGlobalCluster #Action=RemoveFromGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier to detach from the Amazon DocumentDB global cluster. </param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier to detach from the Amazon DocumentDB global cluster. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="DbClusterIdentifier">The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </param>
 		/// <returns>Success</returns>
 		public async Task GET_RemoveFromGlobalClusterAsync(string GlobalClusterIdentifier, string DbClusterIdentifier, GET_RemoveFromGlobalClusterAction Action, GET_RemoveFromGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

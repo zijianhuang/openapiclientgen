@@ -123,18 +123,30 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsCountry_details {
 
-		/** The number of countries where English is the country's primary language */
+		/**
+		 * The number of countries where English is the country's primary language
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		english_speaking?: number | null;
 
-		/** The number of countries where English is not the country's primary language */
+		/**
+		 * The number of countries where English is not the country's primary language
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		non_english_speaking?: number | null;
 	}
 	export interface BrandedFoodObjectItemsCountry_detailsFormProperties {
 
-		/** The number of countries where English is the country's primary language */
+		/**
+		 * The number of countries where English is the country's primary language
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		english_speaking: FormControl<number | null | undefined>,
 
-		/** The number of countries where English is not the country's primary language */
+		/**
+		 * The number of countries where English is not the country's primary language
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		non_english_speaking: FormControl<number | null | undefined>,
 	}
 	export function CreateBrandedFoodObjectItemsCountry_detailsFormGroup() {
@@ -150,7 +162,10 @@ export namespace MyNS {
 		/** A description of how we graded this ingredient for compatibility with the diet */
 		compatibility_description?: string | null;
 
-		/** A numeric representation of if we believe this ingredient is compatible with the diet. Higher values indicate more compatibility */
+		/**
+		 * A numeric representation of if we believe this ingredient is compatible with the diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level?: number | null;
 
 		/** Name of the diet with which this ingredient may not be compatible */
@@ -173,7 +188,10 @@ export namespace MyNS {
 		/** A description of how we graded this ingredient for compatibility with the diet */
 		compatibility_description: FormControl<string | null | undefined>,
 
-		/** A numeric representation of if we believe this ingredient is compatible with the diet. Higher values indicate more compatibility */
+		/**
+		 * A numeric representation of if we believe this ingredient is compatible with the diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level: FormControl<number | null | undefined>,
 
 		/** Name of the diet with which this ingredient may not be compatible */
@@ -225,10 +243,16 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsDiet_labelsGluten_free {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level?: number | null;
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence?: number | null;
 
 		/** Description of our confidence that this item was graded correctly */
@@ -242,10 +266,16 @@ export namespace MyNS {
 	}
 	export interface BrandedFoodObjectItemsDiet_labelsGluten_freeFormProperties {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level: FormControl<number | null | undefined>,
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Description of our confidence that this item was graded correctly */
@@ -270,10 +300,16 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsDiet_labelsVegan {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level?: number | null;
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence?: number | null;
 
 		/** Description of our confidence that this item was graded correctly */
@@ -287,10 +323,16 @@ export namespace MyNS {
 	}
 	export interface BrandedFoodObjectItemsDiet_labelsVeganFormProperties {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level: FormControl<number | null | undefined>,
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Description of our confidence that this item was graded correctly */
@@ -315,10 +357,16 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsDiet_labelsVegetarian {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level?: number | null;
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence?: number | null;
 
 		/** Description of our confidence that this item was graded correctly */
@@ -332,10 +380,16 @@ export namespace MyNS {
 	}
 	export interface BrandedFoodObjectItemsDiet_labelsVegetarianFormProperties {
 
-		/** Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility */
+		/**
+		 * Numeric representation of how compatible this item is with this diet. Higher values indicate more compatibility
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibility_level: FormControl<number | null | undefined>,
 
-		/** Boolean that indicates if we are confident in how this item is graded for this diet */
+		/**
+		 * Boolean that indicates if we are confident in how this item is graded for this diet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Description of our confidence that this item was graded correctly */
@@ -360,7 +414,10 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsNutrients {
 
-		/** Number of observations on which the value is based */
+		/**
+		 * Number of observations on which the value is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points?: number | null;
 
 		/** Description of the nutrient source */
@@ -372,15 +429,24 @@ export namespace MyNS {
 		/** Nutrient name */
 		name?: string | null;
 
-		/** Amount of the nutrient per 100g of food */
+		/**
+		 * Amount of the nutrient per 100g of food
+		 * Type: double
+		 */
 		per_100g?: number | null;
 
-		/** Nutrient rank */
+		/**
+		 * Nutrient rank
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank?: number | null;
 	}
 	export interface BrandedFoodObjectItemsNutrientsFormProperties {
 
-		/** Number of observations on which the value is based */
+		/**
+		 * Number of observations on which the value is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points: FormControl<number | null | undefined>,
 
 		/** Description of the nutrient source */
@@ -392,10 +458,16 @@ export namespace MyNS {
 		/** Nutrient name */
 		name: FormControl<string | null | undefined>,
 
-		/** Amount of the nutrient per 100g of food */
+		/**
+		 * Amount of the nutrient per 100g of food
+		 * Type: double
+		 */
 		per_100g: FormControl<number | null | undefined>,
 
-		/** Nutrient rank */
+		/**
+		 * Nutrient rank
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateBrandedFoodObjectItemsNutrientsFormGroup() {
@@ -412,7 +484,10 @@ export namespace MyNS {
 
 	export interface BrandedFoodObjectItemsPackage {
 
-		/** Package quantity */
+		/**
+		 * Package quantity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Package size */
@@ -420,7 +495,10 @@ export namespace MyNS {
 	}
 	export interface BrandedFoodObjectItemsPackageFormProperties {
 
-		/** Package quantity */
+		/**
+		 * Package quantity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Package size */
@@ -618,7 +696,10 @@ export namespace MyNS {
 		/** An array of objects containing information on discrete amounts of a food found in this item */
 		IngredientObjectItemsPortions?: Array<IngredientObjectItemsPortions>;
 
-		/** The multiplication factor used to calculate protein from nitrogen */
+		/**
+		 * The multiplication factor used to calculate protein from nitrogen
+		 * Type: double
+		 */
 		protein_conversion_factor?: number | null;
 
 		/** A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term. */
@@ -638,7 +719,10 @@ export namespace MyNS {
 		/** Item name as provided by brand owner or as shown on packaging */
 		name: FormControl<string | null | undefined>,
 
-		/** The multiplication factor used to calculate protein from nitrogen */
+		/**
+		 * The multiplication factor used to calculate protein from nitrogen
+		 * Type: double
+		 */
 		protein_conversion_factor: FormControl<number | null | undefined>,
 
 		/** A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term. */
@@ -661,24 +745,42 @@ export namespace MyNS {
 
 	export interface IngredientObjectItemsCalorie_conversion_factor {
 
-		/** The multiplication factor for carbohydrates */
+		/**
+		 * The multiplication factor for carbohydrates
+		 * Type: double
+		 */
 		carbohydrate_value?: number | null;
 
-		/** The multiplication factor for fat */
+		/**
+		 * The multiplication factor for fat
+		 * Type: double
+		 */
 		fat_value?: number | null;
 
-		/** The multiplication factor for protein */
+		/**
+		 * The multiplication factor for protein
+		 * Type: double
+		 */
 		protein_value?: number | null;
 	}
 	export interface IngredientObjectItemsCalorie_conversion_factorFormProperties {
 
-		/** The multiplication factor for carbohydrates */
+		/**
+		 * The multiplication factor for carbohydrates
+		 * Type: double
+		 */
 		carbohydrate_value: FormControl<number | null | undefined>,
 
-		/** The multiplication factor for fat */
+		/**
+		 * The multiplication factor for fat
+		 * Type: double
+		 */
 		fat_value: FormControl<number | null | undefined>,
 
-		/** The multiplication factor for protein */
+		/**
+		 * The multiplication factor for protein
+		 * Type: double
+		 */
 		protein_value: FormControl<number | null | undefined>,
 	}
 	export function CreateIngredientObjectItemsCalorie_conversion_factorFormGroup() {
@@ -692,10 +794,16 @@ export namespace MyNS {
 
 	export interface IngredientObjectItemsComponents {
 
-		/** The number of obersvations on which the measure is based */
+		/**
+		 * The number of obersvations on which the measure is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points?: number | null;
 
-		/** The weight of the component in grams */
+		/**
+		 * The weight of the component in grams
+		 * Type: double
+		 */
 		gram_weight?: number | null;
 
 		/** Whether the component is refuse, i.e. not edible */
@@ -704,15 +812,24 @@ export namespace MyNS {
 		/** The kind of component, e.g. bone */
 		name?: string | null;
 
-		/** The weight of the component as a percentage of the total weight of the food */
+		/**
+		 * The weight of the component as a percentage of the total weight of the food
+		 * Type: double
+		 */
 		pct_weight?: number | null;
 	}
 	export interface IngredientObjectItemsComponentsFormProperties {
 
-		/** The number of obersvations on which the measure is based */
+		/**
+		 * The number of obersvations on which the measure is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points: FormControl<number | null | undefined>,
 
-		/** The weight of the component in grams */
+		/**
+		 * The weight of the component in grams
+		 * Type: double
+		 */
 		gram_weight: FormControl<number | null | undefined>,
 
 		/** Whether the component is refuse, i.e. not edible */
@@ -721,7 +838,10 @@ export namespace MyNS {
 		/** The kind of component, e.g. bone */
 		name: FormControl<string | null | undefined>,
 
-		/** The weight of the component as a percentage of the total weight of the food */
+		/**
+		 * The weight of the component as a percentage of the total weight of the food
+		 * Type: double
+		 */
 		pct_weight: FormControl<number | null | undefined>,
 	}
 	export function CreateIngredientObjectItemsComponentsFormGroup() {
@@ -737,7 +857,10 @@ export namespace MyNS {
 
 	export interface IngredientObjectItemsNutrients {
 
-		/** Number of observations on which the value is based */
+		/**
+		 * Number of observations on which the value is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points?: number | null;
 
 		/** Description of the nutrient source */
@@ -746,30 +869,48 @@ export namespace MyNS {
 		/** Comments on any unusual aspect of the food nutrient. Examples might include why a nutrient value is different than typically expected. */
 		footnote?: string | null;
 
-		/** Maximum nutrient value */
+		/**
+		 * Maximum nutrient value
+		 * Type: double
+		 */
 		max?: number | null;
 
 		/** The unit used for the measure of this nutrient */
 		measurement_unit?: string | null;
 
-		/** Median nutrient value */
+		/**
+		 * Median nutrient value
+		 * Type: double
+		 */
 		median?: number | null;
 
-		/** Minimum nutrient value */
+		/**
+		 * Minimum nutrient value
+		 * Type: double
+		 */
 		min?: number | null;
 
 		/** Nutrient name */
 		name?: string | null;
 
-		/** Amount of the nutrient per 100g of food */
+		/**
+		 * Amount of the nutrient per 100g of food
+		 * Type: double
+		 */
 		per_100g?: number | null;
 
-		/** Nutrient rank */
+		/**
+		 * Nutrient rank
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank?: number | null;
 	}
 	export interface IngredientObjectItemsNutrientsFormProperties {
 
-		/** Number of observations on which the value is based */
+		/**
+		 * Number of observations on which the value is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points: FormControl<number | null | undefined>,
 
 		/** Description of the nutrient source */
@@ -778,25 +919,40 @@ export namespace MyNS {
 		/** Comments on any unusual aspect of the food nutrient. Examples might include why a nutrient value is different than typically expected. */
 		footnote: FormControl<string | null | undefined>,
 
-		/** Maximum nutrient value */
+		/**
+		 * Maximum nutrient value
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
 		/** The unit used for the measure of this nutrient */
 		measurement_unit: FormControl<string | null | undefined>,
 
-		/** Median nutrient value */
+		/**
+		 * Median nutrient value
+		 * Type: double
+		 */
 		median: FormControl<number | null | undefined>,
 
-		/** Minimum nutrient value */
+		/**
+		 * Minimum nutrient value
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 
 		/** Nutrient name */
 		name: FormControl<string | null | undefined>,
 
-		/** Amount of the nutrient per 100g of food */
+		/**
+		 * Amount of the nutrient per 100g of food
+		 * Type: double
+		 */
 		per_100g: FormControl<number | null | undefined>,
 
-		/** Nutrient rank */
+		/**
+		 * Nutrient rank
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateIngredientObjectItemsNutrientsFormGroup() {
@@ -817,7 +973,10 @@ export namespace MyNS {
 
 	export interface IngredientObjectItemsPortions {
 
-		/** The number of observations on which the measure is based */
+		/**
+		 * The number of observations on which the measure is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points?: number | null;
 
 		/** Comments that provide more specificity on the measure. For example, for a pizza measure the dissemination text might be 1 slice is 1/8th of a 14 inch pizza. */
@@ -826,7 +985,10 @@ export namespace MyNS {
 		/** Comments on any unusual aspects of the measure. Examples might includes caveats on the usage of a measure, or reasons why a measure gram weight is an unexpected value. */
 		footnote?: string | null;
 
-		/** The weight of the measure in grams */
+		/**
+		 * The weight of the measure in grams
+		 * Type: double
+		 */
 		gram_weight?: number | null;
 
 		/** The unit used for measure (e.g. if mesure is 3 tsp, the unit is tsp) */
@@ -837,7 +999,10 @@ export namespace MyNS {
 	}
 	export interface IngredientObjectItemsPortionsFormProperties {
 
-		/** The number of observations on which the measure is based */
+		/**
+		 * The number of observations on which the measure is based
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_points: FormControl<number | null | undefined>,
 
 		/** Comments that provide more specificity on the measure. For example, for a pizza measure the dissemination text might be 1 slice is 1/8th of a 14 inch pizza. */
@@ -846,7 +1011,10 @@ export namespace MyNS {
 		/** Comments on any unusual aspects of the measure. Examples might includes caveats on the usage of a measure, or reasons why a measure gram weight is an unexpected value. */
 		footnote: FormControl<string | null | undefined>,
 
-		/** The weight of the measure in grams */
+		/**
+		 * The weight of the measure in grams
+		 * Type: double
+		 */
 		gram_weight: FormControl<number | null | undefined>,
 
 		/** The unit used for measure (e.g. if mesure is 3 tsp, the unit is tsp) */
@@ -904,9 +1072,11 @@ export namespace MyNS {
 		 * @param {FoodBrandedName_phpGetByNameAndLimitAndPageLimit} limit #### Set maximum number of records you want the API to return. The default value is "**10**."
 		 * **Example**
 		 * > ```&limit=10```
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page #### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is "**1**."
 		 * **Example**
 		 * > ```&page=1```
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BrandedFoodObject} **Valid** - Will return an object containing any matching foods. 
 		 */
 		FoodBrandedName_phpGetByNameAndLimitAndPage(name: string, limit: FoodBrandedName_phpGetByNameAndLimitAndPageLimit | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BrandedFoodObject> {
@@ -965,9 +1135,11 @@ export namespace MyNS {
 		 * @param {FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageLimit} limit #### Set maximum number of records you want the API to return. The default value is "**10**."
 		 * **Example**
 		 * > ```&limit=10```
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page #### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is "**1**."
 		 * **Example**
 		 * > ```&page=1```
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BrandedFoodObject} **Valid** - Will return an object containing any matching foods. 
 		 */
 		FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPage(allergen: string | null | undefined, brand: string | null | undefined, category: string | null | undefined, country: string | null | undefined, diet: FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageDiet | null | undefined, ingredient: string | null | undefined, keyword: string | null | undefined, mineral: string | null | undefined, nutrient: string | null | undefined, palm_oil: string | null | undefined, trace: string | null | undefined, vitamin: string | null | undefined, limit: FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageLimit | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BrandedFoodObject> {
@@ -995,6 +1167,7 @@ export namespace MyNS {
 		 * @param {FoodIngredientSearch_phpGetByFindAndLimitLimit} limit #### Set maximum number of records you want the API to return, per search term. The default value is "**1**."
 		 * **Example**
 		 * > ```&limit=3```
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IngredientObject} **Valid** - Will return an object containing any matching ingredient foods. 
 		 */
 		FoodIngredientSearch_phpGetByFindAndLimit(find: string, limit: FoodIngredientSearch_phpGetByFindAndLimitLimit | null | undefined, headersHandler?: () => HttpHeaders): Observable<IngredientObject> {

@@ -26,16 +26,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		password: string;
 		rememberClient?: boolean | null;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userNameOrEmailAddress: string;
 	}
@@ -43,16 +43,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		password: FormControl<string | null | undefined>,
 		rememberClient: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userNameOrEmailAddress: FormControl<string | null | undefined>,
 	}
@@ -341,8 +341,8 @@ export namespace MyNS {
 		accessFailedCount?: number | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		authenticationSource?: string | null;
 		claims?: Array<UserClaim>;
@@ -351,8 +351,8 @@ export namespace MyNS {
 		code?: number | null;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		concurrencyStamp?: string | null;
 		creationTime?: Date | null;
@@ -368,14 +368,14 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		emailAddress: string;
 
 		/**
-		 * Max length: 328
 		 * Min length: 0
+		 * Max length: 328
 		 */
 		emailConfirmationCode?: string | null;
 		expireTime?: Date | null;
@@ -399,57 +399,57 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		normalizedEmailAddress: string;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		normalizedUserName: string;
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		password: string;
 
 		/**
-		 * Max length: 328
 		 * Min length: 0
+		 * Max length: 328
 		 */
 		passwordResetCode?: string | null;
 		permissions?: Array<UserPermissionSetting>;
 
 		/**
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		phoneNumber?: string | null;
 		roles?: Array<UserRole>;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		securityStamp?: string | null;
 		settings?: Array<Setting>;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		surname: string;
 
@@ -459,8 +459,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: string;
 	}
@@ -470,8 +470,8 @@ export namespace MyNS {
 		accessFailedCount: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		authenticationSource: FormControl<string | null | undefined>,
 
@@ -479,8 +479,8 @@ export namespace MyNS {
 		code: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		concurrencyStamp: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
@@ -494,14 +494,14 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		emailAddress: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 328
 		 * Min length: 0
+		 * Max length: 328
 		 */
 		emailConfirmationCode: FormControl<string | null | undefined>,
 		expireTime: FormControl<Date | null | undefined>,
@@ -523,54 +523,54 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		normalizedEmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		normalizedUserName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		password: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 328
 		 * Min length: 0
+		 * Max length: 328
 		 */
 		passwordResetCode: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		phoneNumber: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		securityStamp: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		surname: FormControl<string | null | undefined>,
 
@@ -579,8 +579,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: FormControl<string | null | undefined>,
 	}
@@ -625,8 +625,8 @@ export namespace MyNS {
 	export interface UserClaim {
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		claimType?: string | null;
 		claimValue?: string | null;
@@ -647,8 +647,8 @@ export namespace MyNS {
 	export interface UserClaimFormProperties {
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		claimType: FormControl<string | null | undefined>,
 		claimValue: FormControl<string | null | undefined>,
@@ -686,15 +686,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		loginProvider: string;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		providerKey: string;
 
@@ -711,15 +711,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		loginProvider: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		providerKey: FormControl<string | null | undefined>,
 
@@ -752,8 +752,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: string;
 
@@ -775,8 +775,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -862,8 +862,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -874,8 +874,8 @@ export namespace MyNS {
 		userId?: string | null;
 
 		/**
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		value?: string | null;
 	}
@@ -894,8 +894,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -906,8 +906,8 @@ export namespace MyNS {
 		userId: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -933,14 +933,14 @@ export namespace MyNS {
 		id?: string | null;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		loginProvider?: string | null;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -951,8 +951,8 @@ export namespace MyNS {
 		userId?: string | null;
 
 		/**
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		value?: string | null;
 	}
@@ -963,14 +963,14 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		loginProvider: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -981,8 +981,8 @@ export namespace MyNS {
 		userId: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -1027,8 +1027,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		theme: string;
 	}
@@ -1036,8 +1036,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		theme: FormControl<string | null | undefined>,
 	}
@@ -1118,23 +1118,23 @@ export namespace MyNS {
 	export interface CreateRoleDto {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: string;
 		grantedPermissions?: Array<string>;
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: string;
 		normalizedName?: string | null;
@@ -1142,22 +1142,22 @@ export namespace MyNS {
 	export interface CreateRoleDtoFormProperties {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: FormControl<string | null | undefined>,
 		normalizedName: FormControl<string | null | undefined>,
@@ -1176,29 +1176,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		adminEmailAddress: string;
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		connectionString?: string | null;
 		isActive?: boolean | null;
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: string;
 	}
@@ -1206,29 +1206,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		adminEmailAddress: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		connectionString: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: FormControl<string | null | undefined>,
 	}
@@ -1247,8 +1247,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: string;
 	}
@@ -1256,8 +1256,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: FormControl<string | null | undefined>,
 	}
@@ -1297,8 +1297,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 60
 		 * Min length: 3
+		 * Max length: 60
 		 */
 		title: string;
 
@@ -1332,8 +1332,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 60
 		 * Min length: 3
+		 * Max length: 60
 		 */
 		title: FormControl<string | null | undefined>,
 
@@ -1381,8 +1381,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		authProvider: string;
 
@@ -1391,8 +1391,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		providerKey: string;
 	}
@@ -1400,8 +1400,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		authProvider: FormControl<string | null | undefined>,
 
@@ -1410,8 +1410,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		providerKey: FormControl<string | null | undefined>,
 	}
@@ -1717,15 +1717,15 @@ export namespace MyNS {
 	export interface RoleEditDto {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: string;
 
@@ -1735,23 +1735,23 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: string;
 	}
 	export interface RoleEditDtoFormProperties {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 
@@ -1761,8 +1761,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1781,8 +1781,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: string;
 	}
@@ -1790,8 +1790,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: FormControl<string | null | undefined>,
 	}
@@ -1875,15 +1875,15 @@ export namespace MyNS {
 	export interface RoleDto {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: string;
 		grantedPermissions?: Array<string>;
@@ -1893,8 +1893,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: string;
 		normalizedName?: string | null;
@@ -1902,15 +1902,15 @@ export namespace MyNS {
 	export interface RoleDtoFormProperties {
 
 		/**
-		 * Max length: 5000
 		 * Min length: 0
+		 * Max length: 5000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 
@@ -1919,8 +1919,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		name: FormControl<string | null | undefined>,
 		normalizedName: FormControl<string | null | undefined>,
@@ -1983,8 +1983,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 0
+		 * Max length: 11
 		 */
 		mobileNumber: string;
 		password?: string | null;
@@ -1993,8 +1993,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 0
+		 * Max length: 11
 		 */
 		mobileNumber: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
@@ -2163,15 +2163,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: string;
 	}
@@ -2183,15 +2183,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		tenancyName: FormControl<string | null | undefined>,
 	}
@@ -2231,8 +2231,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		emailAddress: string;
 		expireTime?: Date | null;
@@ -2246,23 +2246,23 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: string;
 		roleNames?: Array<string>;
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		surname: string;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: string;
 	}
@@ -2274,8 +2274,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		emailAddress: FormControl<string | null | undefined>,
 		expireTime: FormControl<Date | null | undefined>,
@@ -2289,22 +2289,22 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		surname: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: FormControl<string | null | undefined>,
 	}
@@ -2425,8 +2425,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: string;
 	}
@@ -2434,8 +2434,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		userName: FormControl<string | null | undefined>,
 	}
@@ -2686,8 +2686,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 60
 		 * Min length: 3
+		 * Max length: 60
 		 */
 		title: string;
 
@@ -2724,8 +2724,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 60
 		 * Min length: 3
+		 * Max length: 60
 		 */
 		title: FormControl<string | null | undefined>,
 
@@ -2901,8 +2901,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/AddressServices/GetAll
-		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
-		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} SkipCount Minimum: 0
+		 *     Maximum: 2147483647
+		 * @param {number} MaxResultCount Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {PagedResultDto_GeoDetailsDto} Success
 		 */
 		ApiServicesAppAddressServicesGetAllGetBySortingAndSkipCountAndMaxResultCount(Sorting: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_GeoDetailsDto> {
@@ -3038,8 +3040,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Role/GetAll
-		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
-		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} SkipCount Minimum: 0
+		 *     Maximum: 2147483647
+		 * @param {number} MaxResultCount Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {PagedResultDto_RoleDto} Success
 		 */
 		ApiServicesAppRoleGetAllGetByKeywordAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_RoleDto> {
@@ -3173,8 +3177,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Tenant/GetAll
-		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
-		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} SkipCount Minimum: 0
+		 *     Maximum: 2147483647
+		 * @param {number} MaxResultCount Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {PagedResultDto_TenantDto} Success
 		 */
 		ApiServicesAppTenantGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, IsActive: boolean | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_TenantDto> {
@@ -3249,8 +3255,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/User/GetAll
-		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
-		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} SkipCount Minimum: 0
+		 *     Maximum: 2147483647
+		 * @param {number} MaxResultCount Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {PagedResultDto_UserDto} Success
 		 */
 		ApiServicesAppUserGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, IsActive: boolean | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_UserDto> {
@@ -3326,8 +3334,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/WeddingVendorServices/GetAll
-		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
-		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} SkipCount Minimum: 0
+		 *     Maximum: 2147483647
+		 * @param {number} MaxResultCount Minimum: 1
+		 *     Maximum: 2147483647
 		 * @return {PagedResultDto_WeddingVendorDto} Success
 		 */
 		ApiServicesAppWeddingVendorServicesGetAllGetBySortingAndSkipCountAndMaxResultCount(Sorting: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_WeddingVendorDto> {

@@ -21,7 +21,10 @@ export namespace MyNS {
 		/** Required */
 		active: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 	}
 	export interface SubscriptionBatchUpdateRequestFormProperties {
@@ -29,7 +32,10 @@ export namespace MyNS {
 		/** Required */
 		active: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionBatchUpdateRequestFormGroup() {
@@ -170,6 +176,8 @@ export namespace MyNS {
 		completedAt: Date;
 		errors?: Array<StandardError>;
 		links?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors?: number | null;
 		requestedAt?: Date | null;
 
@@ -187,6 +195,8 @@ export namespace MyNS {
 		/** Required */
 		completedAt: FormControl<Date | null | undefined>,
 		links: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors: FormControl<number | null | undefined>,
 		requestedAt: FormControl<Date | null | undefined>,
 
@@ -426,6 +436,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of HTTP requests HubSpot will attempt to make to your app in a given time frame determined by `period`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxConcurrentRequests: number;
 
@@ -442,6 +453,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of HTTP requests HubSpot will attempt to make to your app in a given time frame determined by `period`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxConcurrentRequests: FormControl<number | null | undefined>,
 
@@ -603,6 +615,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete webhooks/v3/{appId}/settings
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Delete_SlashwebhooksSlashv3SlashappIdSlashsettings_clear(appId: number): Observable<HttpResponse<string>> {
@@ -611,6 +624,7 @@ export namespace MyNS {
 
 		/**
 		 * Get webhooks/v3/{appId}/settings
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SettingsResponse} successful operation
 		 */
 		Get_SlashwebhooksSlashv3SlashappIdSlashsettings_getAll(appId: number): Observable<SettingsResponse> {
@@ -619,6 +633,7 @@ export namespace MyNS {
 
 		/**
 		 * Put webhooks/v3/{appId}/settings
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SettingsResponse} successful operation
 		 */
 		Put_SlashwebhooksSlashv3SlashappIdSlashsettings_configure(appId: number, requestBody: SettingsChangeRequest): Observable<SettingsResponse> {
@@ -627,6 +642,7 @@ export namespace MyNS {
 
 		/**
 		 * Get webhooks/v3/{appId}/subscriptions
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubscriptionListResponse} successful operation
 		 */
 		Get_SlashwebhooksSlashv3SlashappIdSlashsubscriptions_getAll(appId: number): Observable<SubscriptionListResponse> {
@@ -635,6 +651,7 @@ export namespace MyNS {
 
 		/**
 		 * Post webhooks/v3/{appId}/subscriptions
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Post_SlashwebhooksSlashv3SlashappIdSlashsubscriptions_create(appId: number, requestBody: SubscriptionCreateRequest): Observable<HttpResponse<string>> {
@@ -643,6 +660,7 @@ export namespace MyNS {
 
 		/**
 		 * Post webhooks/v3/{appId}/subscriptions/batch/update
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BatchResponseSubscriptionResponse} successful operation
 		 */
 		Post_SlashwebhooksSlashv3SlashappIdSlashsubscriptionsSlashbatchSlashupdate_updateBatch(appId: number, requestBody: BatchInputSubscriptionBatchUpdateRequest): Observable<BatchResponseSubscriptionResponse> {
@@ -651,6 +669,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete webhooks/v3/{appId}/subscriptions/{subscriptionId}
+		 * @param {number} subscriptionId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Delete_SlashwebhooksSlashv3SlashappIdSlashsubscriptionsSlashsubscriptionId_archive(subscriptionId: number, appId: number): Observable<HttpResponse<string>> {
@@ -659,6 +679,8 @@ export namespace MyNS {
 
 		/**
 		 * Get webhooks/v3/{appId}/subscriptions/{subscriptionId}
+		 * @param {number} subscriptionId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubscriptionResponse} successful operation
 		 */
 		Get_SlashwebhooksSlashv3SlashappIdSlashsubscriptionsSlashsubscriptionId_getById(subscriptionId: number, appId: number): Observable<SubscriptionResponse> {
@@ -667,6 +689,8 @@ export namespace MyNS {
 
 		/**
 		 * Patch webhooks/v3/{appId}/subscriptions/{subscriptionId}
+		 * @param {number} subscriptionId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubscriptionResponse} successful operation
 		 */
 		Patch_SlashwebhooksSlashv3SlashappIdSlashsubscriptionsSlashsubscriptionId_update(subscriptionId: number, appId: number, requestBody: SubscriptionPatchRequest): Observable<SubscriptionResponse> {

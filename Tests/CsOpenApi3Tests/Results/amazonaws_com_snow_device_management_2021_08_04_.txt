@@ -860,7 +860,10 @@ namespace MyNS
 		/// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note> <p>A task might still run if it's processed from the queue before the <code>CancelTask</code> operation changes the task's state.</p> </note>
 		/// CancelTask task/{taskId}/cancel
 		/// </summary>
-		/// <param name="taskId">The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</param>
+		/// <param name="taskId">The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelTaskOutput> CancelTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -929,7 +932,10 @@ namespace MyNS
 		/// Checks device-specific information, such as the device type, software version, IP addresses, and lock status.
 		/// DescribeDevice managed-device/{managedDeviceId}/describe
 		/// </summary>
-		/// <param name="managedDeviceId">The ID of the device that you are checking the information of.</param>
+		/// <param name="managedDeviceId">The ID of the device that you are checking the information of.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceOutput> DescribeDeviceAsync(string managedDeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -958,7 +964,10 @@ namespace MyNS
 		/// Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields.
 		/// DescribeDeviceEc2Instances managed-device/{managedDeviceId}/resources/ec2/describe
 		/// </summary>
-		/// <param name="managedDeviceId">The ID of the managed device.</param>
+		/// <param name="managedDeviceId">The ID of the managed device.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceEc2Output> DescribeDeviceEc2InstancesAsync(string managedDeviceId, DescribeDeviceEc2InstancesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -999,8 +1008,14 @@ namespace MyNS
 		/// Checks the status of a remote task running on one or more target devices.
 		/// DescribeExecution task/{taskId}/execution/{managedDeviceId}
 		/// </summary>
-		/// <param name="managedDeviceId">The ID of the managed device.</param>
-		/// <param name="taskId">The ID of the task that the action is describing.</param>
+		/// <param name="managedDeviceId">The ID of the managed device.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="taskId">The ID of the task that the action is describing.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeExecutionOutput> DescribeExecutionAsync(string managedDeviceId, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1029,7 +1044,10 @@ namespace MyNS
 		/// Checks the metadata for a given task on a device.
 		/// DescribeTask task/{taskId}
 		/// </summary>
-		/// <param name="taskId">The ID of the task to be described.</param>
+		/// <param name="taskId">The ID of the task to be described.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTaskOutput> DescribeTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1058,10 +1076,22 @@ namespace MyNS
 		/// Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.
 		/// ListDeviceResources managed-device/{managedDeviceId}/resources
 		/// </summary>
-		/// <param name="managedDeviceId">The ID of the managed device that you are listing the resources of.</param>
-		/// <param name="maxResults">The maximum number of resources per page.</param>
-		/// <param name="nextToken">A pagination token to continue to the next page of results.</param>
-		/// <param name="type">A structure used to filter the results by type of resource.</param>
+		/// <param name="managedDeviceId">The ID of the managed device that you are listing the resources of.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of resources per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token to continue to the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
+		/// <param name="type">A structure used to filter the results by type of resource.
+		/// Max length: 50
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDeviceResourcesOutput> ListDeviceResourcesAsync(string managedDeviceId, int maxResults, string nextToken, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1095,9 +1125,18 @@ namespace MyNS
 		/// Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management enabled in the Amazon Web Services Region where the command is run.
 		/// ListDevices managed-devices
 		/// </summary>
-		/// <param name="jobId">The ID of the job used to order the device.</param>
-		/// <param name="maxResults">The maximum number of devices to list per page.</param>
-		/// <param name="nextToken">A pagination token to continue to the next page of results.</param>
+		/// <param name="jobId">The ID of the job used to order the device.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of devices to list per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token to continue to the next page of results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesOutput> ListDevicesAsync(string jobId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1131,10 +1170,19 @@ namespace MyNS
 		/// Returns the status of tasks for one or more target devices.
 		/// ListExecutions executions#taskId
 		/// </summary>
-		/// <param name="maxResults">The maximum number of tasks to list per page.</param>
-		/// <param name="nextToken">A pagination token to continue to the next page of tasks.</param>
+		/// <param name="maxResults">The maximum number of tasks to list per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token to continue to the next page of tasks.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <param name="state">A structure used to filter the tasks by their current state.</param>
-		/// <param name="taskId">The ID of the task.</param>
+		/// <param name="taskId">The ID of the task.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExecutionsOutput> ListExecutionsAsync(int maxResults, string nextToken, ExecutionState state, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1237,8 +1285,14 @@ namespace MyNS
 		/// Returns a list of tasks that can be filtered by state.
 		/// ListTasks tasks
 		/// </summary>
-		/// <param name="maxResults">The maximum number of tasks per page.</param>
-		/// <param name="nextToken">A pagination token to continue to the next page of tasks.</param>
+		/// <param name="maxResults">The maximum number of tasks per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">A pagination token to continue to the next page of tasks.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <param name="state">A structure used to filter the list of tasks.</param>
 		/// <returns>Success</returns>
 		public async Task<ListTasksOutput> ListTasksAsync(int maxResults, string nextToken, TaskState state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

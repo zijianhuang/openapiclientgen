@@ -14,6 +14,7 @@ export namespace MyNS {
 		/**
 		 * number of times, the token can be used
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: number;
 
@@ -40,6 +41,7 @@ export namespace MyNS {
 		/**
 		 * number of times, the token can be used
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
@@ -490,24 +492,36 @@ export namespace MyNS {
 
 	export interface PermissionFrequency {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeats: number;
 
 		/** Required */
 		unit: PermissionFrequencyUnit;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface PermissionFrequencyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeats: FormControl<number | null | undefined>,
 
 		/** Required */
 		unit: FormControl<PermissionFrequencyUnit | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePermissionFrequencyFormGroup() {
@@ -892,12 +906,14 @@ export namespace MyNS {
 		/**
 		 * Total number of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageCount: number;
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
@@ -912,12 +928,14 @@ export namespace MyNS {
 		/**
 		 * Total number of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
@@ -2313,7 +2331,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yearOfBirth: number;
 	}
 	export interface PatientDemographicResponseFormProperties {
@@ -2330,7 +2351,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yearOfBirth: FormControl<number | null | undefined>,
 	}
 	export function CreatePatientDemographicResponseFormGroup() {
@@ -3047,10 +3071,16 @@ export namespace MyNS {
 	export interface SessionResponse {
 		accessToken?: string | null;
 
-		/** In Minutes */
+		/**
+		 * In Minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn?: number | null;
 
-		/** In Minutes */
+		/**
+		 * In Minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshExpiresIn?: number | null;
 		refreshToken?: string | null;
 		tokenType?: string | null;
@@ -3058,10 +3088,16 @@ export namespace MyNS {
 	export interface SessionResponseFormProperties {
 		accessToken: FormControl<string | null | undefined>,
 
-		/** In Minutes */
+		/**
+		 * In Minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn: FormControl<number | null | undefined>,
 
-		/** In Minutes */
+		/**
+		 * In Minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshExpiresIn: FormControl<number | null | undefined>,
 		refreshToken: FormControl<string | null | undefined>,
 		tokenType: FormControl<string | null | undefined>,

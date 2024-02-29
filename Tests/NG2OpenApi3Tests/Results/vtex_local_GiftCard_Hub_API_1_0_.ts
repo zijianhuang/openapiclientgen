@@ -5,16 +5,25 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Cart {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: number;
 
 		/** Required */
 		items: Array<Item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: number;
 
 		/** Required */
@@ -23,21 +32,36 @@ export namespace MyNS {
 		/** Required */
 		relationName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: number;
 	}
 	export interface CartFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -46,10 +70,16 @@ export namespace MyNS {
 		/** Required */
 		relationName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: FormControl<number | null | undefined>,
 	}
 	export function CreateCartFormGroup() {
@@ -73,13 +103,19 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
 		/** Required */
 		productId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -93,13 +129,19 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Required */
 		productId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -119,39 +161,69 @@ export namespace MyNS {
 
 	export interface Cart1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: number;
 
 		/** Required */
 		items: Array<Item1>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: number;
 	}
 	export interface Cart1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: FormControl<number | null | undefined>,
 	}
 	export function CreateCart1FormGroup() {
@@ -167,7 +239,10 @@ export namespace MyNS {
 
 	export interface Item1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount: number;
 
 		/** Required */
@@ -176,7 +251,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
 		/** Required */
@@ -185,21 +263,33 @@ export namespace MyNS {
 		/** Required */
 		productId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
 		refId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shippingDiscount: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface Item1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -208,22 +298,34 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Required */
 		productId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
 		refId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shippingDiscount: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItem1FormGroup() {
@@ -243,16 +345,25 @@ export namespace MyNS {
 
 	export interface Cart2 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: number;
 
 		/** Required */
 		items: Array<Item>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: number;
 
 		/** Required */
@@ -261,21 +372,36 @@ export namespace MyNS {
 		/** Required */
 		relationName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: number;
 	}
 	export interface Cart2FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discounts: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		grandTotal: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -284,10 +410,16 @@ export namespace MyNS {
 		/** Required */
 		relationName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shipping: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taxes: FormControl<number | null | undefined>,
 	}
 	export function CreateCart2FormGroup() {
@@ -405,7 +537,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface CreateGiftCardCancellationTransactionRequestFormProperties {
@@ -413,7 +548,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateGiftCardCancellationTransactionRequestFormGroup() {
@@ -460,7 +598,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface CreateGiftCardTransactionRequestFormProperties {
@@ -480,7 +621,10 @@ export namespace MyNS {
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateGiftCardTransactionRequestFormGroup() {
@@ -506,7 +650,10 @@ export namespace MyNS {
 		/** Required */
 		orderId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence: number;
 
 		/** Required */
@@ -517,7 +664,10 @@ export namespace MyNS {
 		/** Required */
 		orderId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderInfoFormGroup() {
@@ -775,7 +925,6 @@ export namespace MyNS {
 		 * List All GiftCard Providers
 		 * Returns a collection of giftcard providers from a store.
 		 * Get giftcardproviders
-		 * @return {string} 
 		 */
 		ListAllGiftCardProviders(): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders', { responseType: 'text' });
@@ -786,7 +935,6 @@ export namespace MyNS {
 		 * Delete a giftcard provider from a store.
 		 * Delete giftcardproviders/{giftCardProviderID}
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
-		 * @return {string} 
 		 */
 		DeleteGiftCardProviderbyID(giftCardProviderID: string): Observable<string> {
 			return this.http.delete(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)), { responseType: 'text' });
@@ -798,7 +946,6 @@ export namespace MyNS {
 		 * Get giftcardproviders/{giftCardProviderID}/giftcards/{giftCardID}
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
-		 * @return {string} 
 		 */
 		GetGiftCardfromGiftCardProviderbyID(giftCardProviderID: string, giftCardID: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)), { responseType: 'text' });
@@ -810,7 +957,6 @@ export namespace MyNS {
 		 * Get giftcardproviders/{giftCardProviderID}/giftcards/{giftCardID}/transactions
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
-		 * @return {string} 
 		 */
 		ListAllGiftCardTransactions(giftCardProviderID: string, giftCardID: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)) + '/transactions', { responseType: 'text' });
@@ -823,7 +969,6 @@ export namespace MyNS {
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
 		 * @param {string} tId Transaction ID generated by the provider. It is different from the `transactionID` generated by VTEX.
-		 * @return {string} 
 		 */
 		ListAllGiftCardCancellationTransactions(giftCardProviderID: string, giftCardID: string, tId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)) + '/transactions/' + (tId == null ? '' : encodeURIComponent(tId)) + '/cancellations', { responseType: 'text' });
@@ -836,7 +981,6 @@ export namespace MyNS {
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
 		 * @param {string} tId Transaction ID generated by the provider. It is different from the `transactionID` generated by VTEX.
-		 * @return {string} 
 		 */
 		ListAllGiftCardSettlementTransactions(giftCardProviderID: string, giftCardID: string, tId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)) + '/transactions/' + (tId == null ? '' : encodeURIComponent(tId)) + '/settlements', { responseType: 'text' });
@@ -849,7 +993,6 @@ export namespace MyNS {
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
 		 * @param {string} transactionID Gift Card transaction ID.
-		 * @return {string} 
 		 */
 		GetGiftCardTransactionbyID(giftCardProviderID: string, giftCardID: string, transactionID: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)) + '/transactions/' + (transactionID == null ? '' : encodeURIComponent(transactionID)), { responseType: 'text' });
@@ -862,7 +1005,6 @@ export namespace MyNS {
 		 * @param {string} giftCardProviderID Gift Card provider's ID.
 		 * @param {string} giftCardID Gift Card ID.
 		 * @param {string} transactionID Gift Card transaction ID.
-		 * @return {string} 
 		 */
 		GetGiftCardAuthorizationTransaction(giftCardProviderID: string, giftCardID: string, transactionID: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderID == null ? '' : encodeURIComponent(giftCardProviderID)) + '/giftcards/' + (giftCardID == null ? '' : encodeURIComponent(giftCardID)) + '/transactions/' + (transactionID == null ? '' : encodeURIComponent(transactionID)) + '/authorization', { responseType: 'text' });
@@ -873,7 +1015,6 @@ export namespace MyNS {
 		 * Returns a giftcard provider from a store.
 		 * Get giftcardproviders/{giftCardProviderId}
 		 * @param {string} giftCardProviderId Gift Card provider's ID.
-		 * @return {string} 
 		 */
 		GetGiftCardProviderbyID(giftCardProviderId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'giftcardproviders/' + (giftCardProviderId == null ? '' : encodeURIComponent(giftCardProviderId)), { responseType: 'text' });

@@ -134,10 +134,16 @@ export namespace MyNS {
 		/** The runner class for the bootstrap. Optional */
 		bootstrapRunnerClass?: string | null;
 
-		/** The max depth of the traversal stack Robo can explore. Optional */
+		/**
+		 * The max depth of the traversal stack Robo can explore. Optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDepth?: number | null;
 
-		/** The max number of steps/actions Robo can execute. Default is no limit (0). Optional */
+		/**
+		 * The max number of steps/actions Robo can execute. Default is no limit (0). Optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSteps?: number | null;
 	}
 
@@ -153,10 +159,16 @@ export namespace MyNS {
 		/** The runner class for the bootstrap. Optional */
 		bootstrapRunnerClass: FormControl<string | null | undefined>,
 
-		/** The max depth of the traversal stack Robo can explore. Optional */
+		/**
+		 * The max depth of the traversal stack Robo can explore. Optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDepth: FormControl<number | null | undefined>,
 
-		/** The max number of steps/actions Robo can execute. Default is no limit (0). Optional */
+		/**
+		 * The max number of steps/actions Robo can execute. Default is no limit (0). Optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSteps: FormControl<number | null | undefined>,
 	}
 	export function CreateAndroidRoboTestFormGroup() {
@@ -217,7 +229,10 @@ export namespace MyNS {
 	/**  A Duration represents a signed, fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". It is related to Timestamp in that the difference between two Timestamp values is a Duration and it can be added or subtracted from a Timestamp. Range is approximately +-10,000 years. */
 	export interface Duration {
 
-		/** Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 `seconds` field and a positive or negative `nanos` field. For durations of one second or more, a non-zero value for the `nanos` field must be of the same sign as the `seconds` field. Must be from -999,999,999 to +999,999,999 inclusive. */
+		/**
+		 * Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 `seconds` field and a positive or negative `nanos` field. For durations of one second or more, a non-zero value for the `nanos` field must be of the same sign as the `seconds` field. Must be from -999,999,999 to +999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** Signed seconds of the span of time. Must be from -315,576,000,000 to +315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years */
@@ -227,7 +242,10 @@ export namespace MyNS {
 	/**  A Duration represents a signed, fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". It is related to Timestamp in that the difference between two Timestamp values is a Duration and it can be added or subtracted from a Timestamp. Range is approximately +-10,000 years. */
 	export interface DurationFormProperties {
 
-		/** Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 `seconds` field and a positive or negative `nanos` field. For durations of one second or more, a non-zero value for the `nanos` field must be of the same sign as the `seconds` field. Must be from -999,999,999 to +999,999,999 inclusive. */
+		/**
+		 * Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 `seconds` field and a positive or negative `nanos` field. For durations of one second or more, a non-zero value for the `nanos` field must be of the same sign as the `seconds` field. Must be from -999,999,999 to +999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** Signed seconds of the span of time. Must be from -315,576,000,000 to +315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years */
@@ -366,14 +384,20 @@ export namespace MyNS {
 		/** A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. */
 		sampleTime?: Timestamp;
 
-		/** Value observed */
+		/**
+		 * Value observed
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** Resource representing a single performance measure or data point */
 	export interface PerfSampleFormProperties {
 
-		/** Value observed */
+		/**
+		 * Value observed
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePerfSampleFormGroup() {
@@ -387,7 +411,10 @@ export namespace MyNS {
 	/** A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. */
 	export interface Timestamp {
 
-		/** Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive. */
+		/**
+		 * Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive. */
@@ -397,7 +424,10 @@ export namespace MyNS {
 	/** A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. */
 	export interface TimestampFormProperties {
 
-		/** Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive. */
+		/**
+		 * Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive. */
@@ -448,10 +478,16 @@ export namespace MyNS {
 		/** description of the device processor ie '1.8 GHz hexa core 64-bit ARMv8-A' */
 		cpuProcessor?: string | null;
 
-		/** the CPU clock speed in GHz */
+		/**
+		 * the CPU clock speed in GHz
+		 * Type: float
+		 */
 		cpuSpeedInGhz?: number | null;
 
-		/** the number of CPU cores */
+		/**
+		 * the number of CPU cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores?: number | null;
 	}
 	export interface CPUInfoFormProperties {
@@ -459,10 +495,16 @@ export namespace MyNS {
 		/** description of the device processor ie '1.8 GHz hexa core 64-bit ARMv8-A' */
 		cpuProcessor: FormControl<string | null | undefined>,
 
-		/** the CPU clock speed in GHz */
+		/**
+		 * the CPU clock speed in GHz
+		 * Type: float
+		 */
 		cpuSpeedInGhz: FormControl<number | null | undefined>,
 
-		/** the number of CPU cores */
+		/**
+		 * the number of CPU cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores: FormControl<number | null | undefined>,
 	}
 	export function CreateCPUInfoFormGroup() {
@@ -527,7 +569,10 @@ export namespace MyNS {
 	/** Additional details about encountered login screens. */
 	export interface EncounteredLoginScreen {
 
-		/** Number of encountered distinct login screens. */
+		/**
+		 * Number of encountered distinct login screens.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctScreens?: number | null;
 
 		/** Subset of login screens. */
@@ -537,7 +582,10 @@ export namespace MyNS {
 	/** Additional details about encountered login screens. */
 	export interface EncounteredLoginScreenFormProperties {
 
-		/** Number of encountered distinct login screens. */
+		/**
+		 * Number of encountered distinct login screens.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctScreens: FormControl<number | null | undefined>,
 	}
 	export function CreateEncounteredLoginScreenFormGroup() {
@@ -551,7 +599,10 @@ export namespace MyNS {
 	/** Additional details about encountered screens with elements that are not Android UI widgets. */
 	export interface EncounteredNonAndroidUiWidgetScreen {
 
-		/** Number of encountered distinct screens with non Android UI widgets. */
+		/**
+		 * Number of encountered distinct screens with non Android UI widgets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctScreens?: number | null;
 
 		/** Subset of screens which contain non Android UI widgets. */
@@ -561,7 +612,10 @@ export namespace MyNS {
 	/** Additional details about encountered screens with elements that are not Android UI widgets. */
 	export interface EncounteredNonAndroidUiWidgetScreenFormProperties {
 
-		/** Number of encountered distinct screens with non Android UI widgets. */
+		/**
+		 * Number of encountered distinct screens with non Android UI widgets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctScreens: FormControl<number | null | undefined>,
 	}
 	export function CreateEncounteredNonAndroidUiWidgetScreenFormGroup() {
@@ -879,22 +933,37 @@ export namespace MyNS {
 		/** A Duration represents a signed, fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". It is related to Timestamp in that the difference between two Timestamp values is a Duration and it can be added or subtracted from a Timestamp. Range is approximately +-10,000 years. */
 		elapsedTime?: Duration;
 
-		/** Number of test cases in error, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases in error, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount?: number | null;
 
-		/** Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user. - In create/response: always set - In update request: never */
+		/**
+		 * Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureCount?: number | null;
 
-		/** Number of flaky test cases, set by the service by rolling up flaky test attempts. Present only for rollup test suite overview at environment level. A step cannot have flaky test cases. */
+		/**
+		 * Number of flaky test cases, set by the service by rolling up flaky test attempts. Present only for rollup test suite overview at environment level. A step cannot have flaky test cases.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flakyCount?: number | null;
 
 		/** The name of the test suite. - In create/response: always set - In update request: never */
 		name?: string | null;
 
-		/** Number of test cases not run, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases not run, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedCount?: number | null;
 
-		/** Number of test cases, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** A reference to a file. */
@@ -904,22 +973,37 @@ export namespace MyNS {
 	/** A summary of a test suite result either parsed from XML or uploaded directly by a user. Note: the API related comments are for StepService only. This message is also being used in ExecutionService in a read only mode for the corresponding step. */
 	export interface TestSuiteOverviewFormProperties {
 
-		/** Number of test cases in error, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases in error, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount: FormControl<number | null | undefined>,
 
-		/** Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user. - In create/response: always set - In update request: never */
+		/**
+		 * Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureCount: FormControl<number | null | undefined>,
 
-		/** Number of flaky test cases, set by the service by rolling up flaky test attempts. Present only for rollup test suite overview at environment level. A step cannot have flaky test cases. */
+		/**
+		 * Number of flaky test cases, set by the service by rolling up flaky test attempts. Present only for rollup test suite overview at environment level. A step cannot have flaky test cases.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flakyCount: FormControl<number | null | undefined>,
 
 		/** The name of the test suite. - In create/response: always set - In update request: never */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of test cases not run, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases not run, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedCount: FormControl<number | null | undefined>,
 
-		/** Number of test cases, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never */
+		/**
+		 * Number of test cases, typically set by the service by parsing the xml_source. - In create/response: always set - In update request: never
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTestSuiteOverviewFormGroup() {
@@ -1433,7 +1517,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1446,7 +1533,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1528,10 +1618,16 @@ export namespace MyNS {
 		/** The thumbnail file itself. That is, the bytes here are precisely the bytes that make up the thumbnail file; they can be served as an image as-is (with the appropriate content type.) Always set. */
 		data?: string | null;
 
-		/** The height of the thumbnail, in pixels. Always set. */
+		/**
+		 * The height of the thumbnail, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx?: number | null;
 
-		/** The width of the thumbnail, in pixels. Always set. */
+		/**
+		 * The width of the thumbnail, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx?: number | null;
 	}
 
@@ -1544,10 +1640,16 @@ export namespace MyNS {
 		/** The thumbnail file itself. That is, the bytes here are precisely the bytes that make up the thumbnail file; they can be served as an image as-is (with the appropriate content type.) Always set. */
 		data: FormControl<string | null | undefined>,
 
-		/** The height of the thumbnail, in pixels. Always set. */
+		/**
+		 * The height of the thumbnail, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx: FormControl<number | null | undefined>,
 
-		/** The width of the thumbnail, in pixels. Always set. */
+		/**
+		 * The width of the thumbnail, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx: FormControl<number | null | undefined>,
 	}
 	export function CreateThumbnailFormGroup() {
@@ -1564,20 +1666,32 @@ export namespace MyNS {
 	/** Additional details of in-app purchases encountered during the crawl. */
 	export interface InAppPurchasesFound {
 
-		/** The total number of in-app purchases flows explored: how many times the robo tries to buy a SKU. */
+		/**
+		 * The total number of in-app purchases flows explored: how many times the robo tries to buy a SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppPurchasesFlowsExplored?: number | null;
 
-		/** The total number of in-app purchases flows started. */
+		/**
+		 * The total number of in-app purchases flows started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppPurchasesFlowsStarted?: number | null;
 	}
 
 	/** Additional details of in-app purchases encountered during the crawl. */
 	export interface InAppPurchasesFoundFormProperties {
 
-		/** The total number of in-app purchases flows explored: how many times the robo tries to buy a SKU. */
+		/**
+		 * The total number of in-app purchases flows explored: how many times the robo tries to buy a SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppPurchasesFlowsExplored: FormControl<number | null | undefined>,
 
-		/** The total number of in-app purchases flows started. */
+		/**
+		 * The total number of in-app purchases flows started.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inAppPurchasesFlowsStarted: FormControl<number | null | undefined>,
 	}
 	export function CreateInAppPurchasesFoundFormGroup() {
@@ -1592,7 +1706,10 @@ export namespace MyNS {
 	/** Step Id and outcome of each individual step that was run as a group with other steps with the same configuration. */
 	export interface IndividualOutcome {
 
-		/** Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0. */
+		/**
+		 * Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multistepNumber?: number | null;
 		outcomeSummary?: OutcomeSummary | null;
 
@@ -1604,7 +1721,10 @@ export namespace MyNS {
 	/** Step Id and outcome of each individual step that was run as a group with other steps with the same configuration. */
 	export interface IndividualOutcomeFormProperties {
 
-		/** Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0. */
+		/**
+		 * Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multistepNumber: FormControl<number | null | undefined>,
 		outcomeSummary: FormControl<OutcomeSummary | null | undefined>,
 		stepId: FormControl<string | null | undefined>,
@@ -1987,7 +2107,10 @@ export namespace MyNS {
 		/** ID of the screen for the suggestion. It is used for getting the corresponding screenshot path. For example, screen_id "1" corresponds to "1.png" file in GCS. Always set. */
 		screenId?: string | null;
 
-		/** Relative importance of a suggestion as compared with other suggestions that have the same priority and category. This is a meaningless value that can be used to order suggestions that are in the same category and have the same priority. The larger values have higher priority (i.e., are more important). Optional. */
+		/**
+		 * Relative importance of a suggestion as compared with other suggestions that have the same priority and category. This is a meaningless value that can be used to order suggestions that are in the same category and have the same priority. The larger values have higher priority (i.e., are more important). Optional.
+		 * Type: double
+		 */
 		secondaryPriority?: number | null;
 
 		/** IMPORTANT: It is unsafe to accept this message from an untrusted source, since it's trivial for an attacker to forge serialized messages that don't fulfill the type's safety contract -- for example, it could contain attacker controlled script. A system which receives a SafeHtmlProto implicitly trusts the producer of the SafeHtmlProto. So, it's generally safe to return this message in RPC responses, but generally unsafe to accept it in RPC requests. */
@@ -2013,7 +2136,10 @@ export namespace MyNS {
 		/** ID of the screen for the suggestion. It is used for getting the corresponding screenshot path. For example, screen_id "1" corresponds to "1.png" file in GCS. Always set. */
 		screenId: FormControl<string | null | undefined>,
 
-		/** Relative importance of a suggestion as compared with other suggestions that have the same priority and category. This is a meaningless value that can be used to order suggestions that are in the same category and have the same priority. The larger values have higher priority (i.e., are more important). Optional. */
+		/**
+		 * Relative importance of a suggestion as compared with other suggestions that have the same priority and category. This is a meaningless value that can be used to order suggestions that are in the same category and have the same priority. The larger values have higher priority (i.e., are more important). Optional.
+		 * Type: double
+		 */
 		secondaryPriority: FormControl<number | null | undefined>,
 
 		/** General title for the suggestion, in the user's language, without markup. Always set. */
@@ -2059,32 +2185,56 @@ export namespace MyNS {
 	/** A rectangular region. */
 	export interface RegionProto {
 
-		/** The height, in pixels. Always set. */
+		/**
+		 * The height, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx?: number | null;
 
-		/** The left side of the rectangle, in pixels. Always set. */
+		/**
+		 * The left side of the rectangle, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPx?: number | null;
 
-		/** The top of the rectangle, in pixels. Always set. */
+		/**
+		 * The top of the rectangle, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPx?: number | null;
 
-		/** The width, in pixels. Always set. */
+		/**
+		 * The width, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx?: number | null;
 	}
 
 	/** A rectangular region. */
 	export interface RegionProtoFormProperties {
 
-		/** The height, in pixels. Always set. */
+		/**
+		 * The height, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx: FormControl<number | null | undefined>,
 
-		/** The left side of the rectangle, in pixels. Always set. */
+		/**
+		 * The left side of the rectangle, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPx: FormControl<number | null | undefined>,
 
-		/** The top of the rectangle, in pixels. Always set. */
+		/**
+		 * The top of the rectangle, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPx: FormControl<number | null | undefined>,
 
-		/** The width, in pixels. Always set. */
+		/**
+		 * The width, in pixels. Always set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx: FormControl<number | null | undefined>,
 	}
 	export function CreateRegionProtoFormGroup() {
@@ -2260,7 +2410,10 @@ export namespace MyNS {
 	/** Details when multiple steps are run with the same configuration as a group. */
 	export interface MultiStep {
 
-		/** Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0. */
+		/**
+		 * Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multistepNumber?: number | null;
 
 		/** Stores rollup test status of multiple steps that were run as a group and outcome of each individual step. */
@@ -2273,7 +2426,10 @@ export namespace MyNS {
 	/** Details when multiple steps are run with the same configuration as a group. */
 	export interface MultiStepFormProperties {
 
-		/** Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0. */
+		/**
+		 * Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multistepNumber: FormControl<number | null | undefined>,
 
 		/** Step Id of the primary (original) step, which might be this step. */
@@ -2438,14 +2594,20 @@ export namespace MyNS {
 	/** Exit code from a tool execution. */
 	export interface ToolExitCode {
 
-		/** Tool execution exit code. A value of 0 means that the execution was successful. - In response: always set - In create/update request: always set */
+		/**
+		 * Tool execution exit code. A value of 0 means that the execution was successful. - In response: always set - In create/update request: always set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 	}
 
 	/** Exit code from a tool execution. */
 	export interface ToolExitCodeFormProperties {
 
-		/** Tool execution exit code. A value of 0 means that the execution was successful. - In response: always set - In create/update request: always set */
+		/**
+		 * Tool execution exit code. A value of 0 means that the execution was successful. - In response: always set - In create/update request: always set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateToolExitCodeFormGroup() {
@@ -2611,7 +2773,10 @@ export namespace MyNS {
 		/** Optional debugging insights for non-SDK API violations. */
 		insights?: Array<NonSdkApiInsight>;
 
-		/** The total number of times this API was observed to have been called. */
+		/**
+		 * The total number of times this API was observed to have been called.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invocationCount?: number | null;
 
 		/** Which list this API appears on */
@@ -2624,7 +2789,10 @@ export namespace MyNS {
 		/** The signature of the Non-SDK API */
 		apiSignature: FormControl<string | null | undefined>,
 
-		/** The total number of times this API was observed to have been called. */
+		/**
+		 * The total number of times this API was observed to have been called.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invocationCount: FormControl<number | null | undefined>,
 
 		/** Which list this API appears on */
@@ -2727,14 +2895,20 @@ export namespace MyNS {
 		/** Signatures of a subset of those hidden API's. */
 		apiSignatures?: Array<string>;
 
-		/** Total number of unique hidden API's accessed. */
+		/**
+		 * Total number of unique hidden API's accessed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uniqueApis?: number | null;
 	}
 
 	/** Additional details for a non-sdk API usage violation. */
 	export interface NonSdkApiUsageViolationFormProperties {
 
-		/** Total number of unique hidden API's accessed. */
+		/**
+		 * Total number of unique hidden API's accessed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uniqueApis: FormControl<number | null | undefined>,
 	}
 	export function CreateNonSdkApiUsageViolationFormGroup() {
@@ -2751,26 +2925,44 @@ export namespace MyNS {
 		/** Examples of the detected API usages. */
 		exampleApis?: Array<NonSdkApi>;
 
-		/** Minimum API level required for the application to run. */
+		/**
+		 * Minimum API level required for the application to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minSdkVersion?: number | null;
 
-		/** Specifies the API Level on which the application is designed to run. */
+		/**
+		 * Specifies the API Level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion?: number | null;
 
-		/** Total number of unique Non-SDK API's accessed. */
+		/**
+		 * Total number of unique Non-SDK API's accessed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uniqueApis?: number | null;
 	}
 
 	/** Contains a summary and examples of non-sdk API usage violations. */
 	export interface NonSdkApiUsageViolationReportFormProperties {
 
-		/** Minimum API level required for the application to run. */
+		/**
+		 * Minimum API level required for the application to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minSdkVersion: FormControl<number | null | undefined>,
 
-		/** Specifies the API Level on which the application is designed to run. */
+		/**
+		 * Specifies the API Level on which the application is designed to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetSdkVersion: FormControl<number | null | undefined>,
 
-		/** Total number of unique Non-SDK API's accessed. */
+		/**
+		 * Total number of unique Non-SDK API's accessed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uniqueApis: FormControl<number | null | undefined>,
 	}
 	export function CreateNonSdkApiUsageViolationReportFormGroup() {
@@ -2892,14 +3084,20 @@ export namespace MyNS {
 	/** A notification that Robo performed some monkey actions. */
 	export interface PerformedMonkeyActions {
 
-		/** The total number of monkey actions performed during the crawl. */
+		/**
+		 * The total number of monkey actions performed during the crawl.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalActions?: number | null;
 	}
 
 	/** A notification that Robo performed some monkey actions. */
 	export interface PerformedMonkeyActionsFormProperties {
 
-		/** The total number of monkey actions performed during the crawl. */
+		/**
+		 * The total number of monkey actions performed during the crawl.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalActions: FormControl<number | null | undefined>,
 	}
 	export function CreatePerformedMonkeyActionsFormGroup() {
@@ -2958,20 +3156,32 @@ export namespace MyNS {
 	/** Execution stats for a user-provided Robo script. */
 	export interface RoboScriptExecution {
 
-		/** The number of Robo script actions executed successfully. */
+		/**
+		 * The number of Robo script actions executed successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulActions?: number | null;
 
-		/** The total number of actions in the Robo script. */
+		/**
+		 * The total number of actions in the Robo script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalActions?: number | null;
 	}
 
 	/** Execution stats for a user-provided Robo script. */
 	export interface RoboScriptExecutionFormProperties {
 
-		/** The number of Robo script actions executed successfully. */
+		/**
+		 * The number of Robo script actions executed successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulActions: FormControl<number | null | undefined>,
 
-		/** The total number of actions in the Robo script. */
+		/**
+		 * The total number of actions in the Robo script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalActions: FormControl<number | null | undefined>,
 	}
 	export function CreateRoboScriptExecutionFormGroup() {
@@ -3006,7 +3216,10 @@ export namespace MyNS {
 	/** A warning that the screen hierarchy is deeper than the recommended threshold. */
 	export interface UIElementTooDeep {
 
-		/** The depth of the screen element */
+		/**
+		 * The depth of the screen element
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth?: number | null;
 
 		/** The screen id of the element */
@@ -3019,7 +3232,10 @@ export namespace MyNS {
 	/** A warning that the screen hierarchy is deeper than the recommended threshold. */
 	export interface UIElementTooDeepFormProperties {
 
-		/** The depth of the screen element */
+		/**
+		 * The depth of the screen element
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 
 		/** The screen id of the element */
@@ -3125,6 +3341,7 @@ export namespace MyNS {
 		 * @param {string} projectId A Project id. Required.
 		 * @param {string} filterByName If set, only return histories with the given name. Optional.
 		 * @param {number} pageSize The maximum number of Histories to fetch. Default value: 20. The server will use this default if the field is not set or has a value of 0. Any value greater than 100 will be treated as 100. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item. Optional.
 		 * @return {ListHistoriesResponse} Successful response
 		 */
@@ -3160,6 +3377,7 @@ export namespace MyNS {
 		 * @param {string} projectId A Project id. Required.
 		 * @param {string} historyId A History id. Required.
 		 * @param {number} pageSize The maximum number of Executions to fetch. Default value: 25. The server will use this default if the field is not set or has a value of 0. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item. Optional.
 		 * @return {ListExecutionsResponse} Successful response
 		 */
@@ -3236,6 +3454,7 @@ export namespace MyNS {
 		 * @param {string} historyId Required. A History id.
 		 * @param {string} executionId Required. An Execution id.
 		 * @param {number} pageSize The maximum number of Environments to fetch. Default value: 25. The server will use this default if the field is not set or has a value of 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item.
 		 * @return {ListEnvironmentsResponse} Successful response
 		 */
@@ -3263,6 +3482,7 @@ export namespace MyNS {
 		 * @param {string} historyId A History id. Required.
 		 * @param {string} executionId A Execution id. Required.
 		 * @param {number} pageSize The maximum number of Steps to fetch. Default value: 25. The server will use this default if the field is not set or has a value of 0. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item. Optional.
 		 * @return {ListStepsResponse} Successful response
 		 */
@@ -3386,6 +3606,7 @@ export namespace MyNS {
 		 * @param {string} stepId A tool results step ID.
 		 * @param {string} sampleSeriesId A sample series id
 		 * @param {number} pageSize The default page size is 500 samples, and the maximum size is 5000. If the page_size is greater than 5000, the effective page size will be 5000
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional, the next_page_token returned in the previous response
 		 * @return {ListPerfSamplesResponse} Successful response
 		 */
@@ -3415,6 +3636,7 @@ export namespace MyNS {
 		 * @param {string} executionId A Execution id Required.
 		 * @param {string} stepId A Step id. Note: This step must include a TestExecutionStep. Required.
 		 * @param {number} pageSize The maximum number of TestCases to fetch. Default value: 100. The server will use this default if the field is not set or has a value of 0. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item. Optional.
 		 * @return {ListTestCasesResponse} Successful response
 		 */
@@ -3444,6 +3666,7 @@ export namespace MyNS {
 		 * @param {string} executionId An Execution id. Required.
 		 * @param {string} stepId A Step id. Required.
 		 * @param {number} pageSize The maximum number of thumbnails to fetch. Default value: 50. The server will use this default if the field is not set or has a value of 0. Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A continuation token to resume the query at the next item. Optional.
 		 * @return {ListStepThumbnailsResponse} Successful response
 		 */

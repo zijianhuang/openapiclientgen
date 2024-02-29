@@ -13,8 +13,9 @@ export namespace MyNS {
 		 * List all discovered factions in the game.
 		 * Get factions
 		 * @param {number} page What entry offset to request
+		 *     Minimum: 1
 		 * @param {number} limit How many entries to return per page
-		 * @return {string} 
+		 *     Minimum: 1    Maximum: 20
 		 */
 		Get_factions(page: number | null | undefined, limit: number | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'factions?page=' + page + '&limit=' + limit, { responseType: 'text' });
@@ -45,7 +46,9 @@ export namespace MyNS {
 		 * List all of your contracts.
 		 * Get my/contracts
 		 * @param {number} page What entry offset to request
+		 *     Minimum: 1
 		 * @param {number} limit How many entries to return per page
+		 *     Minimum: 1    Maximum: 20
 		 * @return {string} OK
 		 */
 		Get_contracts(page: number | null | undefined, limit: number | null | undefined): Observable<string> {
@@ -97,7 +100,9 @@ export namespace MyNS {
 		 * Retrieve all of your ships.
 		 * Get my/ships
 		 * @param {number} page What entry offset to request
+		 *     Minimum: 1
 		 * @param {number} limit How many entries to return per page
+		 *     Minimum: 1    Maximum: 20
 		 * @return {string} OK
 		 */
 		Get_my_ships(page: number | null | undefined, limit: number | null | undefined): Observable<string> {
@@ -367,7 +372,9 @@ export namespace MyNS {
 		 * Return a list of all systems.
 		 * Get systems
 		 * @param {number} page What entry offset to request
+		 *     Minimum: 1
 		 * @param {number} limit How many entries to return per page
+		 *     Minimum: 1    Maximum: 20
 		 * @return {Get_systemsReturn} OK
 		 */
 		Get_systems(page: number | null | undefined, limit: number | null | undefined): Observable<Get_systemsReturn> {
@@ -389,7 +396,9 @@ export namespace MyNS {
 		 * Fetch all of the waypoints for a given system. System must be charted or a ship must be present to return waypoint details.
 		 * Get systems/{systemSymbol}/waypoints
 		 * @param {number} page What entry offset to request
+		 *     Minimum: 1
 		 * @param {number} limit How many entries to return per page
+		 *     Minimum: 1    Maximum: 20
 		 * @return {string} OK
 		 */
 		Get_system_waypoints(page: number | null | undefined, limit: number | null | undefined): Observable<string> {
@@ -462,7 +471,10 @@ export namespace MyNS {
 		/** Required */
 		tradeSymbol: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: number;
 	}
 	export interface Deliver_contractPostBodyFormProperties {
@@ -473,7 +485,10 @@ export namespace MyNS {
 		/** Required */
 		tradeSymbol: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: FormControl<number | null | undefined>,
 	}
 	export function CreateDeliver_contractPostBodyFormGroup() {
@@ -685,7 +700,10 @@ export namespace MyNS {
 		/** Required */
 		symbol: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: number;
 	}
 	export interface Purchase_cargoPostBodyFormProperties {
@@ -693,7 +711,10 @@ export namespace MyNS {
 		/** Required */
 		symbol: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchase_cargoPostBodyFormGroup() {
@@ -762,7 +783,10 @@ export namespace MyNS {
 		/** Required */
 		symbol: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: number;
 	}
 	export interface Sell_cargoPostBodyFormProperties {
@@ -770,7 +794,10 @@ export namespace MyNS {
 		/** Required */
 		symbol: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: FormControl<number | null | undefined>,
 	}
 	export function CreateSell_cargoPostBodyFormGroup() {
@@ -789,7 +816,10 @@ export namespace MyNS {
 		/** Required */
 		tradeSymbol: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: number;
 	}
 	export interface Transfer_cargoPostBodyFormProperties {
@@ -800,7 +830,10 @@ export namespace MyNS {
 		/** Required */
 		tradeSymbol: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: FormControl<number | null | undefined>,
 	}
 	export function CreateTransfer_cargoPostBodyFormGroup() {
@@ -880,8 +913,8 @@ export namespace MyNS {
 		/**
 		 * How other agents will see your ships and information.
 		 * Required
-		 * Max length: 14
 		 * Min length: 3
+		 * Max length: 14
 		 */
 		symbol: string;
 	}
@@ -896,8 +929,8 @@ export namespace MyNS {
 		/**
 		 * How other agents will see your ships and information.
 		 * Required
-		 * Max length: 14
 		 * Min length: 3
+		 * Max length: 14
 		 */
 		symbol: FormControl<string | null | undefined>,
 	}
@@ -953,10 +986,16 @@ export namespace MyNS {
 		/** Required */
 		waypoints: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: number;
 	}
 	export interface Get_systemsReturnDataFormProperties {
@@ -979,10 +1018,16 @@ export namespace MyNS {
 		 */
 		type: FormControl<Get_systemsReturnDataType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_systemsReturnDataFormGroup() {
@@ -1023,24 +1068,42 @@ export namespace MyNS {
 
 	export interface Get_systemsReturnMeta {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface Get_systemsReturnMetaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_systemsReturnMetaFormGroup() {
@@ -1079,6 +1142,7 @@ export namespace MyNS {
 		/**
 		 * The maximum jump range of the gate.
 		 * Required
+		 * Type: double
 		 */
 		jumpRange: number;
 	}
@@ -1090,6 +1154,7 @@ export namespace MyNS {
 		/**
 		 * The maximum jump range of the gate.
 		 * Required
+		 * Type: double
 		 */
 		jumpRange: FormControl<number | null | undefined>,
 	}

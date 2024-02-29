@@ -11,6 +11,7 @@ export namespace MyNS {
 		 * The consumption state of the inapp product. Possible values are:
 		 * - Yet to be consumed
 		 * - Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		consumptionState?: number | null;
 
@@ -28,6 +29,7 @@ export namespace MyNS {
 		 * - Purchased
 		 * - Canceled
 		 * - Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseState?: number | null;
 
@@ -39,6 +41,7 @@ export namespace MyNS {
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
 		 * - Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType?: number | null;
 	}
@@ -50,6 +53,7 @@ export namespace MyNS {
 		 * The consumption state of the inapp product. Possible values are:
 		 * - Yet to be consumed
 		 * - Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		consumptionState: FormControl<number | null | undefined>,
 
@@ -67,6 +71,7 @@ export namespace MyNS {
 		 * - Purchased
 		 * - Canceled
 		 * - Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseState: FormControl<number | null | undefined>,
 
@@ -78,6 +83,7 @@ export namespace MyNS {
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
 		 * - Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType: FormControl<number | null | undefined>,
 	}

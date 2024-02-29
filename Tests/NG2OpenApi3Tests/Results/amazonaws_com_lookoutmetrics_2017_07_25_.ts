@@ -2725,6 +2725,7 @@ export namespace MyNS {
 		 * Gets a list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> for a detector, dataset, or alert.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Max length: 256
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2735,6 +2736,7 @@ export namespace MyNS {
 		 * Adds <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to a detector, dataset, or alert.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -2754,7 +2756,9 @@ export namespace MyNS {
 		 * Removes <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> from a detector, dataset, or alert.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The resource's Amazon Resource Name (ARN).
+		 *     Max length: 256
 		 * @param {Array<string>} tagKeys Keys to remove from the resource's tags.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -2844,8 +2848,8 @@ export namespace MyNS {
 		/**
 		 * The name of the alert.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		AlertName: string;
 
@@ -2886,8 +2890,8 @@ export namespace MyNS {
 		/**
 		 * The name of the alert.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		AlertName: FormControl<string | null | undefined>,
 
@@ -2954,15 +2958,15 @@ export namespace MyNS {
 		/**
 		 * The name of the detector.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		AnomalyDetectorName: string;
 
 		/**
 		 * A description of the detector.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AnomalyDetectorDescription?: string | null;
 
@@ -2974,8 +2978,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the KMS key to use to encrypt your data.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		KmsKeyArn?: string | null;
 
@@ -2987,22 +2991,22 @@ export namespace MyNS {
 		/**
 		 * The name of the detector.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		AnomalyDetectorName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the detector.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AnomalyDetectorDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the KMS key to use to encrypt your data.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		KmsKeyArn: FormControl<string | null | undefined>,
 
@@ -3044,15 +3048,15 @@ export namespace MyNS {
 		/**
 		 * The name of the dataset.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		MetricSetName: string;
 
 		/**
 		 * A description of the dataset you are creating.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		MetricSetDescription?: string | null;
 
@@ -3112,15 +3116,15 @@ export namespace MyNS {
 		/**
 		 * The name of the dataset.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		MetricSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the dataset you are creating.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		MetricSetDescription: FormControl<string | null | undefined>,
 
@@ -3314,8 +3318,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3343,8 +3347,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3552,8 +3556,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3575,8 +3579,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3646,8 +3650,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 
@@ -3668,8 +3672,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3700,8 +3704,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3716,8 +3720,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3757,8 +3761,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3790,8 +3794,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3832,8 +3836,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3863,8 +3867,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3910,8 +3914,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -3947,8 +3951,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3980,8 +3984,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken?: string | null;
 	}
@@ -4002,8 +4006,8 @@ export namespace MyNS {
 
 		/**
 		 * If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -4183,15 +4187,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an AWS KMS encryption key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		KmsKeyArn?: string | null;
 
 		/**
 		 * The updated detector description.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AnomalyDetectorDescription?: string | null;
 
@@ -4209,15 +4213,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an AWS KMS encryption key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		KmsKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The updated detector description.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AnomalyDetectorDescription: FormControl<string | null | undefined>,
 	}
@@ -4254,8 +4258,8 @@ export namespace MyNS {
 
 		/**
 		 * The dataset's description.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		MetricSetDescription?: string | null;
 
@@ -4301,8 +4305,8 @@ export namespace MyNS {
 
 		/**
 		 * The dataset's description.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		MetricSetDescription: FormControl<string | null | undefined>,
 

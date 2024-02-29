@@ -899,7 +899,10 @@ namespace MyNS
 		/// Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating an Apache Airflow CLI token</a>.
 		/// CreateCliToken clitoken/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCliTokenResponse> CreateCliTokenAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -928,7 +931,10 @@ namespace MyNS
 		/// Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		/// CreateEnvironment environments/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEnvironmentOutput> CreateEnvironmentAsync(string Name, CreateEnvironmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -969,7 +975,10 @@ namespace MyNS
 		/// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		/// DeleteEnvironment environments/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEnvironmentOutput> DeleteEnvironmentAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1003,7 +1012,10 @@ namespace MyNS
 		/// Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		/// GetEnvironment environments/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEnvironmentOutput> GetEnvironmentAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1037,7 +1049,10 @@ namespace MyNS
 		/// Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		/// UpdateEnvironment environments/{Name}
 		/// </summary>
-		/// <param name="Name">The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEnvironmentOutput> UpdateEnvironmentAsync(string Name, UpdateEnvironmentPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1078,7 +1093,10 @@ namespace MyNS
 		/// Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating an Apache Airflow web login token</a>.
 		/// CreateWebLoginToken webtoken/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</param>
+		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWebLoginTokenResponse> CreateWebLoginTokenAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1107,8 +1125,14 @@ namespace MyNS
 		/// Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
 		/// ListEnvironments environments
 		/// </summary>
-		/// <param name="MaxResults">The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</param>
-		/// <param name="NextToken">Retrieves the next page of the results.</param>
+		/// <param name="MaxResults">The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+		/// Minimum: 1
+		/// Maximum: 25
+		// </param>
+		/// <param name="NextToken">Retrieves the next page of the results.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEnvironmentsOutput> ListEnvironmentsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1142,7 +1166,10 @@ namespace MyNS
 		/// Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1176,7 +1203,10 @@ namespace MyNS
 		/// Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceOutput> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1217,7 +1247,10 @@ namespace MyNS
 		/// <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.
 		/// PublishMetrics metrics/environments/{EnvironmentName}
 		/// </summary>
-		/// <param name="EnvironmentName"> <b>Internal only</b>. The name of the environment.</param>
+		/// <param name="EnvironmentName"> <b>Internal only</b>. The name of the environment.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PublishMetricsOutput> PublishMetricsAsync(string EnvironmentName, PublishMetricsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1258,8 +1291,14 @@ namespace MyNS
 		/// Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</param>
-		/// <param name="tagKeys">The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. </param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		/// Max length: 1224
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. 
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

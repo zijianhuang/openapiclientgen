@@ -38,10 +38,16 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit?: string | null;
 
-		/** The lowest heating margin among the heating margins of the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin?: number | null;
 
-		/** The percentage of devices attached to the application, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the application, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage?: number | null;
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -62,53 +68,98 @@ export namespace MyNS {
 		/** The name of the application. */
 		name?: string | null;
 
-		/** The number of devices attached to the application. */
+		/**
+		 * The number of devices attached to the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices?: number | null;
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence?: number | null;
 
-		/** The daily cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the application during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence?: number | null;
 
-		/** The monthly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the application during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence?: number | null;
 
-		/** The yearly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the application during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption?: number | null;
 
-		/** The total power consumption of the devices attached to the application. */
+		/**
+		 * The total power consumption of the devices attached to the application.
+		 * Type: double
+		 */
 		totalPowerConsumption?: number | null;
 
 		/** The unit in which the total power consumption of the devices attached to the application is being expressed. */
 		totalPowerConsumptionUnit?: string | null;
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp?: number | null;
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp?: string | null;
 
 		/** The link to the application details. */
 		url?: string | null;
@@ -124,10 +175,16 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The lowest heating margin among the heating margins of the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin: FormControl<number | null | undefined>,
 
-		/** The percentage of devices attached to the application, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the application, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage: FormControl<number | null | undefined>,
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -148,53 +205,98 @@ export namespace MyNS {
 		/** The name of the application. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of devices attached to the application. */
+		/**
+		 * The number of devices attached to the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence: FormControl<number | null | undefined>,
 
-		/** The daily cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the application during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence: FormControl<number | null | undefined>,
 
-		/** The monthly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the application during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence: FormControl<number | null | undefined>,
 
-		/** The yearly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the application.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the application in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the application in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the application during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the application during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The total power consumption of the devices attached to the application. */
+		/**
+		 * The total power consumption of the devices attached to the application.
+		 * Type: double
+		 */
 		totalPowerConsumption: FormControl<number | null | undefined>,
 
 		/** The unit in which the total power consumption of the devices attached to the application is being expressed. */
 		totalPowerConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp: FormControl<string | null | undefined>,
 
 		/** The link to the application details. */
 		url: FormControl<string | null | undefined>,
@@ -227,7 +329,7 @@ export namespace MyNS {
 			oneYearEnergyConsumption: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumption: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumptionUnit: new FormControl<string | null | undefined>(undefined),
-			updateTimestamp: new FormControl<number | null | undefined>(undefined),
+			updateTimestamp: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -235,13 +337,19 @@ export namespace MyNS {
 
 	export interface DeviceSummary {
 
-		/** The ID of the PATROL Agent the device is attached to. */
+		/**
+		 * The ID of the PATROL Agent the device is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentId?: number | null;
 
 		/** The name of the PATROL Agent the device is attached to. */
 		agentName?: string | null;
 
-		/** The ambient temperature of the device. */
+		/**
+		 * The ambient temperature of the device.
+		 * Type: double
+		 */
 		ambientTemperature?: number | null;
 
 		/** The collection time of the heating margin (as an Epoch time, in seconds).<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -253,19 +361,28 @@ export namespace MyNS {
 		/** The link to the device details. */
 		deviceUrl?: string | null;
 
-		/** The heating margin of the device.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The heating margin of the device.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin?: number | null;
 
 		/** The unit in which the heating margin of the device is being expressed.<br><u>Note</u>:This field will only be present if a value could be found. */
 		heatingMarginUnit?: string | null;
 
-		/** The ID of the device. */
+		/**
+		 * The ID of the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The ID of the device. */
 		name?: string | null;
 
-		/** The power consumption of the device. */
+		/**
+		 * The power consumption of the device.
+		 * Type: double
+		 */
 		powerConsumption?: number | null;
 
 		/** The unit in which the power consumption of the device is being expressed. */
@@ -274,7 +391,10 @@ export namespace MyNS {
 		/** The Hardware Sentry KM version of the device's Monitor.<br><u>Note</u>:This field will only be present if a value could be found. */
 		productVersion?: string | null;
 
-		/** The ID of the server the device is attached to. */
+		/**
+		 * The ID of the server the device is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverId?: number | null;
 
 		/** The name of the server the device is attached to. */
@@ -284,18 +404,27 @@ export namespace MyNS {
 		sid?: string | null;
 		type?: DeviceSummaryType | null;
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp?: number | null;
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp?: string | null;
 	}
 	export interface DeviceSummaryFormProperties {
 
-		/** The ID of the PATROL Agent the device is attached to. */
+		/**
+		 * The ID of the PATROL Agent the device is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agentId: FormControl<number | null | undefined>,
 
 		/** The name of the PATROL Agent the device is attached to. */
 		agentName: FormControl<string | null | undefined>,
 
-		/** The ambient temperature of the device. */
+		/**
+		 * The ambient temperature of the device.
+		 * Type: double
+		 */
 		ambientTemperature: FormControl<number | null | undefined>,
 
 		/** The collection time of the heating margin (as an Epoch time, in seconds).<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -307,19 +436,28 @@ export namespace MyNS {
 		/** The link to the device details. */
 		deviceUrl: FormControl<string | null | undefined>,
 
-		/** The heating margin of the device.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The heating margin of the device.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin: FormControl<number | null | undefined>,
 
 		/** The unit in which the heating margin of the device is being expressed.<br><u>Note</u>:This field will only be present if a value could be found. */
 		heatingMarginUnit: FormControl<string | null | undefined>,
 
-		/** The ID of the device. */
+		/**
+		 * The ID of the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The ID of the device. */
 		name: FormControl<string | null | undefined>,
 
-		/** The power consumption of the device. */
+		/**
+		 * The power consumption of the device.
+		 * Type: double
+		 */
 		powerConsumption: FormControl<number | null | undefined>,
 
 		/** The unit in which the power consumption of the device is being expressed. */
@@ -328,7 +466,10 @@ export namespace MyNS {
 		/** The Hardware Sentry KM version of the device's Monitor.<br><u>Note</u>:This field will only be present if a value could be found. */
 		productVersion: FormControl<string | null | undefined>,
 
-		/** The ID of the server the device is attached to. */
+		/**
+		 * The ID of the server the device is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverId: FormControl<number | null | undefined>,
 
 		/** The name of the server the device is attached to. */
@@ -338,8 +479,11 @@ export namespace MyNS {
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<DeviceSummaryType | null | undefined>,
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceSummaryFormGroup() {
 		return new FormGroup<DeviceSummaryFormProperties>({
@@ -360,7 +504,7 @@ export namespace MyNS {
 			serverName: new FormControl<string | null | undefined>(undefined),
 			sid: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<DeviceSummaryType | null | undefined>(undefined),
-			updateTimestamp: new FormControl<number | null | undefined>(undefined),
+			updateTimestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -463,7 +607,10 @@ export namespace MyNS {
 
 	export interface GlobalSummary {
 
-		/** The CO<sub>2</sub> emissions for all devices. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The CO<sub>2</sub> emissions for all devices. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		co2Emission?: number | null;
 
 		/** The unit in which the CO<sub>2</sub> emission is being expressed. */
@@ -472,7 +619,10 @@ export namespace MyNS {
 		/** If <em>true</em>, indicates that you do not have sufficient rights to update the global settings. However, you may still have sufficient rights to update a specific group's setting. */
 		editable?: boolean | null;
 
-		/** The electricity rate for all devices. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The electricity rate for all devices. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		energyCost?: number | null;
 
 		/** The unit in which the electricity rate is being expressed. */
@@ -481,10 +631,16 @@ export namespace MyNS {
 		/** Regular expression used to filter the groups for which the power consumption will be reported. */
 		groupNameFilter?: string | null;
 
-		/** The lowest heating margin among the heating margins of all the devices.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of all the devices.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin?: number | null;
 
-		/** The percentage of devices whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage?: number | null;
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -499,18 +655,27 @@ export namespace MyNS {
 		/** The ID of the global summary (this ID will always be "global"). */
 		id?: string | null;
 
-		/** The total power consumption of all the devices. */
+		/**
+		 * The total power consumption of all the devices.
+		 * Type: double
+		 */
 		totalPowerConsumption?: number | null;
 
 		/** The unit in which the total power consumption is being expressed. */
 		totalPowerConsumptionUnit?: string | null;
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp?: number | null;
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp?: string | null;
 	}
 	export interface GlobalSummaryFormProperties {
 
-		/** The CO<sub>2</sub> emissions for all devices. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The CO<sub>2</sub> emissions for all devices. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		co2Emission: FormControl<number | null | undefined>,
 
 		/** The unit in which the CO<sub>2</sub> emission is being expressed. */
@@ -519,7 +684,10 @@ export namespace MyNS {
 		/** If <em>true</em>, indicates that you do not have sufficient rights to update the global settings. However, you may still have sufficient rights to update a specific group's setting. */
 		editable: FormControl<boolean | null | undefined>,
 
-		/** The electricity rate for all devices. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The electricity rate for all devices. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		energyCost: FormControl<number | null | undefined>,
 
 		/** The unit in which the electricity rate is being expressed. */
@@ -528,10 +696,16 @@ export namespace MyNS {
 		/** Regular expression used to filter the groups for which the power consumption will be reported. */
 		groupNameFilter: FormControl<string | null | undefined>,
 
-		/** The lowest heating margin among the heating margins of all the devices.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of all the devices.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin: FormControl<number | null | undefined>,
 
-		/** The percentage of devices whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage: FormControl<number | null | undefined>,
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -546,14 +720,20 @@ export namespace MyNS {
 		/** The ID of the global summary (this ID will always be "global"). */
 		id: FormControl<string | null | undefined>,
 
-		/** The total power consumption of all the devices. */
+		/**
+		 * The total power consumption of all the devices.
+		 * Type: double
+		 */
 		totalPowerConsumption: FormControl<number | null | undefined>,
 
 		/** The unit in which the total power consumption is being expressed. */
 		totalPowerConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSummaryFormGroup() {
 		return new FormGroup<GlobalSummaryFormProperties>({
@@ -571,7 +751,7 @@ export namespace MyNS {
 			id: new FormControl<string | null | undefined>(undefined),
 			totalPowerConsumption: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumptionUnit: new FormControl<string | null | undefined>(undefined),
-			updateTimestamp: new FormControl<number | null | undefined>(undefined),
+			updateTimestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -580,10 +760,16 @@ export namespace MyNS {
 	/** The deserialized form of the <b>Energy Footprint Update</b> service's request payload. */
 	export interface GroupConfiguration {
 
-		/** Updates the CO<sub>2</sub> emission (unit: kg/kWh). */
+		/**
+		 * Updates the CO<sub>2</sub> emission (unit: kg/kWh).
+		 * Type: double
+		 */
 		co2Emission?: number | null;
 
-		/** Updates the electricity rate (unit: $/kWh). */
+		/**
+		 * Updates the electricity rate (unit: $/kWh).
+		 * Type: double
+		 */
 		energyCost?: number | null;
 
 		/** Updates the regular expression used to filter the groups for which the power consumption should be reported. */
@@ -593,10 +779,16 @@ export namespace MyNS {
 	/** The deserialized form of the <b>Energy Footprint Update</b> service's request payload. */
 	export interface GroupConfigurationFormProperties {
 
-		/** Updates the CO<sub>2</sub> emission (unit: kg/kWh). */
+		/**
+		 * Updates the CO<sub>2</sub> emission (unit: kg/kWh).
+		 * Type: double
+		 */
 		co2Emission: FormControl<number | null | undefined>,
 
-		/** Updates the electricity rate (unit: $/kWh). */
+		/**
+		 * Updates the electricity rate (unit: $/kWh).
+		 * Type: double
+		 */
 		energyCost: FormControl<number | null | undefined>,
 
 		/** Updates the regular expression used to filter the groups for which the power consumption should be reported. */
@@ -613,13 +805,19 @@ export namespace MyNS {
 
 	export interface GroupSummary {
 
-		/** The average ambient temperature based on the ambient temperatures of the devices attached to the group. */
+		/**
+		 * The average ambient temperature based on the ambient temperatures of the devices attached to the group.
+		 * Type: double
+		 */
 		ambientTemperature?: number | null;
 
 		/** The unit in which the ambient temperature value is being expressed. */
 		ambientTemperatureUnit?: string | null;
 
-		/** The CO<sub>2</sub> emissions for all devices attached to the group. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The CO<sub>2</sub> emissions for all devices attached to the group. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		co2Emission?: number | null;
 
 		/** The unit in which the user-defined CO<sub>2</sub> emission value is being expressed. */
@@ -638,16 +836,25 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit?: string | null;
 
-		/** The electricity rate for all devices attached to the group. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The electricity rate for all devices attached to the group. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		energyCost?: number | null;
 
 		/** The unit in which th euser-defined electricity rate value is being expressed. */
 		energyCostUnit?: string | null;
 
-		/** The lowest heating margin among the heating margins of the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin?: number | null;
 
-		/** The percentage of devices attached to the group, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the group, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage?: number | null;
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -666,69 +873,123 @@ export namespace MyNS {
 		/** The name of the group. */
 		name?: string | null;
 
-		/** The number of devices attached to the group. */
+		/**
+		 * The number of devices attached to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices?: number | null;
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence?: number | null;
 
-		/** The daily cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the group during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence?: number | null;
 
-		/** The monthly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the group during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence?: number | null;
 
-		/** The yearly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the group during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption?: number | null;
 
-		/** The ID of the server the group is attached to. */
+		/**
+		 * The ID of the server the group is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverId?: number | null;
 
-		/** The total power consumption of the devices attached to the group. */
+		/**
+		 * The total power consumption of the devices attached to the group.
+		 * Type: double
+		 */
 		totalPowerConsumption?: number | null;
 
 		/** The unit in which the total power consumption of the devices attached to the group is being expressed. */
 		totalPowerConsumptionUnit?: string | null;
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp?: number | null;
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp?: string | null;
 
 		/** The link to the group details. */
 		url?: string | null;
 	}
 	export interface GroupSummaryFormProperties {
 
-		/** The average ambient temperature based on the ambient temperatures of the devices attached to the group. */
+		/**
+		 * The average ambient temperature based on the ambient temperatures of the devices attached to the group.
+		 * Type: double
+		 */
 		ambientTemperature: FormControl<number | null | undefined>,
 
 		/** The unit in which the ambient temperature value is being expressed. */
 		ambientTemperatureUnit: FormControl<string | null | undefined>,
 
-		/** The CO<sub>2</sub> emissions for all devices attached to the group. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The CO<sub>2</sub> emissions for all devices attached to the group. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		co2Emission: FormControl<number | null | undefined>,
 
 		/** The unit in which the user-defined CO<sub>2</sub> emission value is being expressed. */
@@ -746,16 +1007,25 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The electricity rate for all devices attached to the group. This value can be updated by users with sufficient permissions. */
+		/**
+		 * The electricity rate for all devices attached to the group. This value can be updated by users with sufficient permissions.
+		 * Type: double
+		 */
 		energyCost: FormControl<number | null | undefined>,
 
 		/** The unit in which th euser-defined electricity rate value is being expressed. */
 		energyCostUnit: FormControl<string | null | undefined>,
 
-		/** The lowest heating margin among the heating margins of the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin: FormControl<number | null | undefined>,
 
-		/** The percentage of devices attached to the group, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the group, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage: FormControl<number | null | undefined>,
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -774,56 +1044,104 @@ export namespace MyNS {
 		/** The name of the group. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of devices attached to the group. */
+		/**
+		 * The number of devices attached to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence: FormControl<number | null | undefined>,
 
-		/** The daily cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the group during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence: FormControl<number | null | undefined>,
 
-		/** The monthly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the group during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence: FormControl<number | null | undefined>,
 
-		/** The yearly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the group.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the group in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the group in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the group during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the group during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The ID of the server the group is attached to. */
+		/**
+		 * The ID of the server the group is attached to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverId: FormControl<number | null | undefined>,
 
-		/** The total power consumption of the devices attached to the group. */
+		/**
+		 * The total power consumption of the devices attached to the group.
+		 * Type: double
+		 */
 		totalPowerConsumption: FormControl<number | null | undefined>,
 
 		/** The unit in which the total power consumption of the devices attached to the group is being expressed. */
 		totalPowerConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp: FormControl<string | null | undefined>,
 
 		/** The link to the group details. */
 		url: FormControl<string | null | undefined>,
@@ -864,7 +1182,7 @@ export namespace MyNS {
 			serverId: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumption: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumptionUnit: new FormControl<string | null | undefined>(undefined),
-			updateTimestamp: new FormControl<number | null | undefined>(undefined),
+			updateTimestamp: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -975,8 +1293,11 @@ export namespace MyNS {
 		/** If <em>true</em>, indicates that you are denied access to part of, or all the results. */
 		restrictedRights?: boolean | null;
 
-		/** The total number of accessible results, including the results not listed in <em>items</em>. */
-		total?: number | null;
+		/**
+		 * The total number of accessible results, including the results not listed in <em>items</em>.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 
 	/** Encapsulates a list of results. */
@@ -985,13 +1306,16 @@ export namespace MyNS {
 		/** If <em>true</em>, indicates that you are denied access to part of, or all the results. */
 		restrictedRights: FormControl<boolean | null | undefined>,
 
-		/** The total number of accessible results, including the results not listed in <em>items</em>. */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * The total number of accessible results, including the results not listed in <em>items</em>.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateResultPageFormGroup() {
 		return new FormGroup<ResultPageFormProperties>({
 			restrictedRights: new FormControl<boolean | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1010,10 +1334,16 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit?: string | null;
 
-		/** The lowest heating margin among the heating margins of the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin?: number | null;
 
-		/** The percentage of devices attached to the service, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the service, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage?: number | null;
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -1034,56 +1364,101 @@ export namespace MyNS {
 		/** The name of the service. */
 		name?: string | null;
 
-		/** The number of devices attached to the service. */
+		/**
+		 * The number of devices attached to the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices?: number | null;
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence?: number | null;
 
-		/** The daily cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the service during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence?: number | null;
 
-		/** The monthly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the service during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption?: number | null;
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence?: number | null;
 
-		/** The yearly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost?: number | null;
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2?: number | null;
 
-		/** The quantity of energy consumed by the devices attached to the service during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption?: number | null;
 
 		/** The ID of the server providing the service. */
 		providerId?: string | null;
 
-		/** The total power consumption of the devices attached to the service. */
+		/**
+		 * The total power consumption of the devices attached to the service.
+		 * Type: double
+		 */
 		totalPowerConsumption?: number | null;
 
 		/** The unit in which the total power consumption of the devices attached to the service is being expressed. */
 		totalPowerConsumptionUnit?: string | null;
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp?: number | null;
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp?: string | null;
 
 		/** The link to the service details. */
 		url?: string | null;
@@ -1099,10 +1474,16 @@ export namespace MyNS {
 		/** The unit in which all energy consumption values are being expressed. */
 		energyConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The lowest heating margin among the heating margins of the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The lowest heating margin among the heating margins of the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMargin: FormControl<number | null | undefined>,
 
-		/** The percentage of devices attached to the service, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found. */
+		/**
+		 * The percentage of devices attached to the service, whose heating margin could be found.<br><u>Note</u>:This field will only be present if a value could be found.
+		 * Type: double
+		 */
 		heatingMarginCoverage: FormControl<number | null | undefined>,
 
 		/** The name of the device having the lowest heating margin.<br><u>Note</u>:This field will only be present if a value could be found. */
@@ -1123,56 +1504,101 @@ export namespace MyNS {
 		/** The name of the service. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of devices attached to the service. */
+		/**
+		 * The number of devices attached to the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfDevices: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the daily energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneDayConfidence: FormControl<number | null | undefined>,
 
-		/** The daily cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The daily cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one day.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one day.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneDayEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the service during one day. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one day.
+		 * Type: double
+		 */
 		oneDayEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the monthly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneMonthConfidence: FormControl<number | null | undefined>,
 
-		/** The monthly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The monthly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one month.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service during one month.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneMonthEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the service during one month. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one month.
+		 * Type: double
+		 */
 		oneMonthEnergyConsumption: FormControl<number | null | undefined>,
 
-		/** The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are. */
+		/**
+		 * The confidence score (percentage) for the yearly energy consumption, energy cost and CO<sub>2</sub> emission values.<br>The lower the confidence score, the more extrapolated the values are.
+		 * Type: double
+		 */
 		oneYearConfidence: FormControl<number | null | undefined>,
 
-		/** The yearly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The yearly cost of the energy consumed by the devices attached to the service.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearCost: FormControl<number | null | undefined>,
 
-		/** The quantity of CO<sub>2</sub> emitted by the devices attached to the service in one year.<br><u>Note</u>:This field will only be present if a value could be computed. */
+		/**
+		 * The quantity of CO<sub>2</sub> emitted by the devices attached to the service in one year.<br><u>Note</u>:This field will only be present if a value could be computed.
+		 * Type: double
+		 */
 		oneYearEmittedCo2: FormControl<number | null | undefined>,
 
-		/** The quantity of energy consumed by the devices attached to the service during one year. */
+		/**
+		 * The quantity of energy consumed by the devices attached to the service during one year.
+		 * Type: double
+		 */
 		oneYearEnergyConsumption: FormControl<number | null | undefined>,
 
 		/** The ID of the server providing the service. */
 		providerId: FormControl<string | null | undefined>,
 
-		/** The total power consumption of the devices attached to the service. */
+		/**
+		 * The total power consumption of the devices attached to the service.
+		 * Type: double
+		 */
 		totalPowerConsumption: FormControl<number | null | undefined>,
 
 		/** The unit in which the total power consumption of the devices attached to the service is being expressed. */
 		totalPowerConsumptionUnit: FormControl<string | null | undefined>,
 
-		/** The data collection time (as an Epoch time, in seconds). */
-		updateTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * The data collection time (as an Epoch time, in seconds).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updateTimestamp: FormControl<string | null | undefined>,
 
 		/** The link to the service details. */
 		url: FormControl<string | null | undefined>,
@@ -1206,7 +1632,7 @@ export namespace MyNS {
 			providerId: new FormControl<string | null | undefined>(undefined),
 			totalPowerConsumption: new FormControl<number | null | undefined>(undefined),
 			totalPowerConsumptionUnit: new FormControl<string | null | undefined>(undefined),
-			updateTimestamp: new FormControl<number | null | undefined>(undefined),
+			updateTimestamp: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1222,6 +1648,7 @@ export namespace MyNS {
 		 * You need to provide the <b>Device ID</b> and <b>Monitor Class</b> parameters to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> of a device.
 		 * Post hardware/actions/{deviceId}/collect-now
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} monitorClass The Monitor Class of the device.
 		 * @return {void} Successful operation
 		 */
@@ -1234,6 +1661,7 @@ export namespace MyNS {
 		 * You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device.
 		 * Post hardware/actions/{deviceId}/rediscover
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		Rediscover(deviceId: number): Observable<HttpResponse<string>> {
@@ -1245,6 +1673,7 @@ export namespace MyNS {
 		 * Launches a 'Reinitialize KM' command for the following parameters:<br>- resetDiscoveryAndPollingIntervals<br>- resetAlertAfterNTimes<br>- resetAlertActions<br>- resetOtherA<br>- resetSettings<br>- resetDebugMode<br>- resetRemovedPausedObjectList<br>- resetReportSettings<br>- resetJavaSettings<br>- resetThresholds<br><br>You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device.
 		 * Post hardware/actions/{deviceId}/reinitialize
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ReinitializeActionConfiguration} requestBody The request body as a JSON payload.
 		 * @return {void} Successful operation
 		 */
@@ -1257,6 +1686,7 @@ export namespace MyNS {
 		 * You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:"path":"/MS_HW_MAIN/10025150" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the Monitor SID).
 		 * Post hardware/actions/{deviceId}/remove
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} monitorClass The Monitor Class of the device.
 		 * @param {string} monitorSid The Monitor SID of the device.
 		 * @return {void} Successful operation
@@ -1270,6 +1700,7 @@ export namespace MyNS {
 		 * Sets the Error Count parameter to 0.<br><br>You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:"path":"/MS_HW_MAIN/10025150" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the monitorSid).
 		 * Post hardware/actions/{deviceId}/reset-error-count
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} monitorClass The Monitor Class of the device.
 		 * @param {string} monitorSid The Monitor SID of the device.
 		 * @return {void} Successful operation
@@ -1284,6 +1715,7 @@ export namespace MyNS {
 		 * Get hardware/applications
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetApplicationsDirection} direction The sorting order (case insensitive).
 		 * @param {string} sort The column to sort by (case insensitive).
 		 * @return {void} Successful operation
@@ -1308,6 +1740,7 @@ export namespace MyNS {
 		 * You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs.
 		 * Get hardware/device-monitors/{deviceId}
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		GetDeviceMonitors(deviceId: number): Observable<HttpResponse<string>> {
@@ -1320,6 +1753,7 @@ export namespace MyNS {
 		 * Get hardware/devices
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetApplicationsDirection} direction The sorting order (case insensitive).
 		 * @param {string} sort The column to sort by (case insensitive).
 		 * @param {string} groupId The ID of the group.
@@ -1346,6 +1780,7 @@ export namespace MyNS {
 		 * You need to provide a <b>Device ID</b>:<br>-use the <b>hardware/devices</b> service to get all available device IDs.
 		 * Get hardware/devices/{deviceId}
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		GetDevice(deviceId: number): Observable<HttpResponse<string>> {
@@ -1357,6 +1792,7 @@ export namespace MyNS {
 		 * You need to provide a <b>Device ID</b> to retrieve detailed information about the Agent that Monitors the device:<br>-use the <b>hardware/devices</b> service to get all available device IDs.
 		 * Get hardware/devices/{deviceId}/agent
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		GetDeviceAgent(deviceId: number): Observable<HttpResponse<string>> {
@@ -1368,6 +1804,7 @@ export namespace MyNS {
 		 * You need to provide the <b>Device ID</b> of a device to retrieve any other devices monitored by the same Agent:<br>-use the <b>hardware/devices</b> service to get all available device IDs.
 		 * Get hardware/devices/{deviceId}/agent-devices
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		GetAgentDevices(deviceId: number): Observable<HttpResponse<string>> {
@@ -1379,14 +1816,17 @@ export namespace MyNS {
 		 * You need to provide the <b>Device ID</b>, <b>Parameter Name</b>, <b>Monitor Type</b> and <b>Monitor SID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs<br>- use the <b>/hardware/device-monitors/{deviceId}</b> to get the parameter name, the Monitor type and the Monitor SID.<br><br>Finally, define the period for which you wish to retrieve data history.
 		 * Get hardware/devices/{deviceId}/parameter-history
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} parameterName The name of the parameter.
 		 * @param {string} monitorType The unique name of the Monitor type.
-		 * @param {number} from Beginning of the period (Epoch time, in seconds).
-		 * @param {number} to End of the period (Epoch time, in seconds).
+		 * @param {string} from Beginning of the period (Epoch time, in seconds).
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} to End of the period (Epoch time, in seconds).
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} monitorSid The Monitor SID (to filter the list of Monitors).
 		 * @return {void} Successful operation
 		 */
-		GetDeviceParameterHistory(deviceId: number, parameterName: string, monitorType: string, from: number | null | undefined, to: number | null | undefined, monitorSid: string | null | undefined): Observable<HttpResponse<string>> {
+		GetDeviceParameterHistory(deviceId: number, parameterName: string, monitorType: string, from: string | null | undefined, to: string | null | undefined, monitorSid: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'hardware/devices/' + deviceId + '/parameter-history?parameterName=' + (parameterName == null ? '' : encodeURIComponent(parameterName)) + '&monitorType=' + (monitorType == null ? '' : encodeURIComponent(monitorType)) + '&from=' + from + '&to=' + to + '&monitorSid=' + (monitorSid == null ? '' : encodeURIComponent(monitorSid)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1395,6 +1835,7 @@ export namespace MyNS {
 		 * You need to provide the device ID:<br>- use the <b>hardware/devices</b> service to get all available device IDs.
 		 * Get hardware/energy-usage/{deviceId}
 		 * @param {number} deviceId The ID of the device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetDeviceEnergyUsageRollPeriod} rollPeriod The period for which you wish to retrieve energy usage data.
 		 * @param {GetDeviceEnergyUsageBasis} basis Subdivision of the period for which you wish to retrieve energy usage data.
 		 * @return {void} Successful operation
@@ -1409,6 +1850,7 @@ export namespace MyNS {
 		 * Get hardware/groups
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetApplicationsDirection} direction The sorting order (case insensitive).
 		 * @param {string} sort The column to sort by (case insensitive).
 		 * @return {void} Successful operation
@@ -1447,6 +1889,7 @@ export namespace MyNS {
 		 * @param {boolean} covered If set to <em>true</em>, only gets devices whose heating margin information is available.<br>Otherwise, gets any other devices.
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetApplicationsDirection} direction The sorting order (case insensitive).
 		 * @param {string} sort The column to sort by (case insensitive).
 		 * @param {string} groupId The ID of the group.
@@ -1465,11 +1908,13 @@ export namespace MyNS {
 		 * @param {string} groupId The ID of the group.
 		 * @param {string} applicationId The ID of the application.
 		 * @param {string} serviceId The ID of the service.
-		 * @param {number} from Beginning of the period (Epoch time, in seconds).
-		 * @param {number} to End of the period (Epoch time, in seconds).
+		 * @param {string} from Beginning of the period (Epoch time, in seconds).
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} to End of the period (Epoch time, in seconds).
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Successful operation
 		 */
-		GetHistory(groupId: string | null | undefined, applicationId: string | null | undefined, serviceId: string | null | undefined, from: number | null | undefined, to: number | null | undefined): Observable<HttpResponse<string>> {
+		GetHistory(groupId: string | null | undefined, applicationId: string | null | undefined, serviceId: string | null | undefined, from: string | null | undefined, to: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'hardware/history?groupId=' + (groupId == null ? '' : encodeURIComponent(groupId)) + '&applicationId=' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '&serviceId=' + (serviceId == null ? '' : encodeURIComponent(serviceId)) + '&from=' + from + '&to=' + to, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1483,6 +1928,7 @@ export namespace MyNS {
 		 * @param {string} serviceId The ID of the service.
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful operation
 		 */
 		SearchDevices(searchTerms: string, groupId: string | null | undefined, applicationId: string | null | undefined, serviceId: string | null | undefined, page: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1495,6 +1941,7 @@ export namespace MyNS {
 		 * Get hardware/services
 		 * @param {string} page The page number to retrieve (first page is 0).
 		 * @param {number} limit The maximum number of entries per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetApplicationsDirection} direction The sorting order (case insensitive).
 		 * @param {string} sort The column to sort by (case insensitive).
 		 * @return {void} Successful operation

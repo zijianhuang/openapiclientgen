@@ -410,8 +410,12 @@ namespace MyNS
 		/// Gets a list of all Azure Monitor PrivateLinkScopes within a subscription.
 		/// PrivateLinkScopes_List subscriptions/{subscriptionId}/providers/microsoft.insights/privateLinkScopes
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>A list containing 0 or more Azure Monitor PrivateLinkScope definitions.</returns>
 		public async Task<AzureMonitorPrivateLinkScopeListResult> PrivateLinkScopes_ListAsync(string api_version, string subscriptionId)
 		{
@@ -440,9 +444,16 @@ namespace MyNS
 		/// Gets all private endpoint connections on a private link scope.
 		/// PrivateEndpointConnections_ListByPrivateLinkScope subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <returns>Successfully retrieved private endpoint connections.</returns>
 		public async Task<PrivateEndpointConnectionListResult> PrivateEndpointConnections_ListByPrivateLinkScopeAsync(string subscriptionId, string resourceGroupName, string api_version, string scopeName)
@@ -472,9 +483,16 @@ namespace MyNS
 		/// Gets a private endpoint connection.
 		/// PrivateEndpointConnections_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		/// <returns>Successfully retrieved a specified private endpoint connection.</returns>
@@ -505,9 +523,16 @@ namespace MyNS
 		/// Approve or reject a private endpoint connection with a given name.
 		/// PrivateEndpointConnections_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		/// <returns>Successfully approved or rejected private endpoint connection.</returns>
@@ -545,9 +570,16 @@ namespace MyNS
 		/// Deletes a private endpoint connection with a given name.
 		/// PrivateEndpointConnections_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		/// <returns>Successfully deleted private endpoint connection.</returns>
@@ -572,9 +604,16 @@ namespace MyNS
 		/// Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
 		/// PrivateLinkResources_ListByPrivateLinkScope subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateLinkResources
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResourceListResult> PrivateLinkResources_ListByPrivateLinkScopeAsync(string subscriptionId, string resourceGroupName, string api_version, string scopeName)
@@ -604,9 +643,16 @@ namespace MyNS
 		/// Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
 		/// PrivateLinkResources_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateLinkResources/{groupName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="groupName">The name of the private link resource.</param>
 		/// <returns>Successfully retrieved a specified private link resource.</returns>
@@ -637,9 +683,16 @@ namespace MyNS
 		/// Gets all private endpoint connections on a private link scope.
 		/// PrivateLinkScopedResources_ListByPrivateLinkScope subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <returns>Successfully retrieved scoped resources in a private link scope.</returns>
 		public async Task<ScopedResourceListResult> PrivateLinkScopedResources_ListByPrivateLinkScopeAsync(string subscriptionId, string resourceGroupName, string api_version, string scopeName)
@@ -669,9 +722,16 @@ namespace MyNS
 		/// Gets a scoped resource in a private link scope.
 		/// PrivateLinkScopedResources_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="name">The name of the scoped resource object.</param>
 		/// <returns>Successfully retrieved a scoped resource in a private link scope.</returns>
@@ -702,9 +762,16 @@ namespace MyNS
 		/// Approve or reject a private endpoint connection with a given name.
 		/// PrivateLinkScopedResources_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="name">The name of the scoped resource object.</param>
 		/// <returns>Successfully scoped azure monitor resource in a private link scope.</returns>
@@ -742,9 +809,16 @@ namespace MyNS
 		/// Deletes a private endpoint connection with a given name.
 		/// PrivateLinkScopedResources_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">Name of the Azure Monitor PrivateLinkScope that will contain the datasource</param>
 		/// <param name="name">The name of the scoped resource object.</param>
 		/// <returns>Successfully deleted scoped resource.</returns>
@@ -769,9 +843,16 @@ namespace MyNS
 		/// Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
 		/// PrivateLinkScopes_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>A list containing 0 or more Azure Monitor PrivateLinkScope definitions.</returns>
 		public async Task<AzureMonitorPrivateLinkScopeListResult> PrivateLinkScopes_ListByResourceGroupAsync(string resourceGroupName, string api_version, string subscriptionId)
 		{
@@ -800,9 +881,16 @@ namespace MyNS
 		/// Returns a Azure Monitor PrivateLinkScope.
 		/// PrivateLinkScopes_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">The name of the Azure Monitor PrivateLinkScope resource.</param>
 		/// <returns>An Azure Monitor PrivateLinkScope definition.</returns>
 		public async Task<AzureMonitorPrivateLinkScope> PrivateLinkScopes_GetAsync(string resourceGroupName, string api_version, string subscriptionId, string scopeName)
@@ -832,9 +920,16 @@ namespace MyNS
 		/// Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
 		/// PrivateLinkScopes_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">The name of the Azure Monitor PrivateLinkScope resource.</param>
 		/// <param name="requestBody">Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.</param>
 		/// <returns>Successful request when creating or updating a Azure Monitor PrivateLinkScope. The updated PrivateLinkScope is returned.</returns>
@@ -872,9 +967,16 @@ namespace MyNS
 		/// Deletes a Azure Monitor PrivateLinkScope.
 		/// PrivateLinkScopes_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">The name of the Azure Monitor PrivateLinkScope resource.</param>
 		/// <returns>Successful request when deleting a Azure Monitor PrivateLinkScope.</returns>
 		public async Task PrivateLinkScopes_DeleteAsync(string resourceGroupName, string api_version, string subscriptionId, string scopeName)
@@ -898,9 +1000,16 @@ namespace MyNS
 		/// Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
 		/// PrivateLinkScopes_UpdateTags subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="scopeName">The name of the Azure Monitor PrivateLinkScope resource.</param>
 		/// <param name="requestBody">Updated tag information to set into the PrivateLinkScope instance.</param>
 		/// <returns>Updating the Azure Monitor PrivateLinkScope's tags was successful. PrivateLinkScope tags are updated and returned with the rest of the PrivateLinkScope's object properties.</returns>

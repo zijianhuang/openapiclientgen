@@ -283,7 +283,10 @@ export namespace MyNS {
 		/** When the resource instance was created. This date-time is in the UTC timezone. */
 		createdAt?: Date | null;
 
-		/** The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert. */
+		/**
+		 * The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditsPerTransportAlert?: number | null;
 
 		/**
@@ -420,7 +423,10 @@ export namespace MyNS {
 		/** When the resource instance was created. This date-time is in the UTC timezone. */
 		createdAt: FormControl<Date | null | undefined>,
 
-		/** The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert. */
+		/**
+		 * The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditsPerTransportAlert: FormControl<number | null | undefined>,
 
 		/**
@@ -1594,7 +1600,10 @@ export namespace MyNS {
 		/** When the resource instance was created. This date-time is in the UTC timezone. */
 		createdAt?: Date | null;
 
-		/** The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert. */
+		/**
+		 * The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditsPerTransportAlert?: number | null;
 
 		/**
@@ -1734,7 +1743,10 @@ export namespace MyNS {
 		/** When the resource instance was created. This date-time is in the UTC timezone. */
 		createdAt: FormControl<Date | null | undefined>,
 
-		/** The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert. */
+		/**
+		 * The phone number where alerts will be sent. Ensure that the number format complies with the external transport service that will send the alert.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditsPerTransportAlert: FormControl<number | null | undefined>,
 
 		/**
@@ -2840,7 +2852,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The size of the media file. */
+		/**
+		 * The size of the media file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize?: number | null;
 
 		/** The unique identifier of the resource instance. */
@@ -2883,7 +2898,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The size of the media file. */
+		/**
+		 * The size of the media file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the resource instance. */
@@ -2945,7 +2963,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The size of the media file. */
+		/**
+		 * The size of the media file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize?: number | null;
 
 		/** The unique identifier of the resource instance. */
@@ -2991,7 +3012,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The size of the media file. */
+		/**
+		 * The size of the media file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fileSize: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the resource instance. */
@@ -3080,7 +3104,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/** The expected ping / run interval of this monitor in human readable form. */
@@ -3241,7 +3268,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/** The expected ping / run interval of this monitor in human readable form. */
@@ -3440,7 +3470,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/**
@@ -3556,7 +3589,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/**
@@ -3704,7 +3740,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/**
@@ -3832,7 +3871,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/**
@@ -3994,7 +4036,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/**
@@ -4110,7 +4155,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/**
@@ -4264,7 +4312,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/** The expected ping / run interval of this monitor in human readable form. */
@@ -4428,7 +4479,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/** The expected ping / run interval of this monitor in human readable form. */
@@ -4630,7 +4684,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/**
@@ -4758,7 +4815,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/**
@@ -4920,7 +4980,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode?: string | null;
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds?: number | null;
 
 		/**
@@ -5036,7 +5099,10 @@ export namespace MyNS {
 		 */
 		dataSegmentCode: FormControl<string | null | undefined>,
 
-		/** The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly. */
+		/**
+		 * The number of grace seconds after expiry of the time when the next ping was expected, before raising an alert. The number of grace seconds to allow before classifying a Measured Monitor task duration as an anomaly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		graceSeconds: FormControl<number | null | undefined>,
 
 		/**
@@ -5873,7 +5939,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt?: Date | null;
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch?: number | null;
 
 		/** The unique identifier of the resource instance. */
@@ -5919,7 +5988,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt: FormControl<Date | null | undefined>,
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the resource instance. */
@@ -5978,7 +6050,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt?: Date | null;
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch?: number | null;
 
 		/**
@@ -6000,7 +6075,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt: FormControl<Date | null | undefined>,
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch: FormControl<number | null | undefined>,
 
 		/**
@@ -6045,7 +6123,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt?: Date | null;
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch?: number | null;
 
 		/** The unique identifier of the resource instance. */
@@ -6094,7 +6175,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt: FormControl<Date | null | undefined>,
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the resource instance. */
@@ -6156,7 +6240,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt?: Date | null;
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch?: number | null;
 
 		/**
@@ -6178,7 +6265,10 @@ export namespace MyNS {
 		/** When to expect the next ping for a Last Ping monitor type. This date-time is always interpreted to be in the timezone of the monitor. Any UTC offset is ignored. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
 		expectNextPingAt: FormControl<Date | null | undefined>,
 
-		/** When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types. */
+		/**
+		 * When to expect the next ping for a Last Ping monitor type, expressed in epoch timestamp format. Supply either "expectNextPingAt", or "expectNextPingAtEpoch", or a X_NEXT_PING request header, not more than one of those options. Must be blank for other monitor types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectNextPingAtEpoch: FormControl<number | null | undefined>,
 
 		/**
@@ -7028,7 +7118,10 @@ export namespace MyNS {
 		/** The unique identifier of the resource instance. */
 		id?: string | null;
 
-		/** The numeric offset from the UTC timezone. */
+		/**
+		 * The numeric offset from the UTC timezone.
+		 * Type: double
+		 */
 		offsetFromUtc?: number | null;
 
 		/** The text offset from the UTC timezone that forms part of the ISO 8601 date time format. */
@@ -7044,7 +7137,10 @@ export namespace MyNS {
 		/** The unique identifier of the resource instance. */
 		id: FormControl<string | null | undefined>,
 
-		/** The numeric offset from the UTC timezone. */
+		/**
+		 * The numeric offset from the UTC timezone.
+		 * Type: double
+		 */
 		offsetFromUtc: FormControl<number | null | undefined>,
 
 		/** The text offset from the UTC timezone that forms part of the ISO 8601 date time format. */
@@ -7073,7 +7169,10 @@ export namespace MyNS {
 		/** The unique identifier of the resource instance. */
 		id?: string | null;
 
-		/** The numeric offset from the UTC timezone. */
+		/**
+		 * The numeric offset from the UTC timezone.
+		 * Type: double
+		 */
 		offsetFromUtc?: number | null;
 
 		/** The text offset from the UTC timezone that forms part of the ISO 8601 date time format. */
@@ -7092,7 +7191,10 @@ export namespace MyNS {
 		/** The unique identifier of the resource instance. */
 		id: FormControl<string | null | undefined>,
 
-		/** The numeric offset from the UTC timezone. */
+		/**
+		 * The numeric offset from the UTC timezone.
+		 * Type: double
+		 */
 		offsetFromUtc: FormControl<number | null | undefined>,
 
 		/** The text offset from the UTC timezone that forms part of the ISO 8601 date time format. */
@@ -59391,6 +59493,7 @@ export namespace MyNS {
 		 * Retrieves the collection of AlertLog resources.
 		 * Get api/alert-log
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<AlertLog_get>} AlertLog collection
 		 */
@@ -59403,6 +59506,7 @@ export namespace MyNS {
 		 * Retrieves the collection of AlertLogStatusCode resources.
 		 * Get api/alert-log-status-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<AlertLogStatusCode_get>} AlertLogStatusCode collection
 		 */
@@ -59437,6 +59541,7 @@ export namespace MyNS {
 		 * Retrieves the collection of AlertService resources.
 		 * Get api/alert-service
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<AlertService_get>} AlertService collection
 		 */
@@ -59460,6 +59565,7 @@ export namespace MyNS {
 		 * Retrieves the collection of AlertServiceTransportCode resources.
 		 * Get api/alert-service-transport-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<AlertServiceTransportCode_get>} AlertServiceTransportCode collection
 		 */
@@ -59517,6 +59623,7 @@ export namespace MyNS {
 		 * Retrieves the collection of CreditsConsumption resources.
 		 * Get api/credits-consumption
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<CreditsConsumption_get>} CreditsConsumption collection
 		 */
@@ -59540,6 +59647,7 @@ export namespace MyNS {
 		 * Retrieves the collection of HttpMethodCode resources.
 		 * Get api/http-method-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<HttpMethodCode_get>} HttpMethodCode collection
 		 */
@@ -59563,6 +59671,7 @@ export namespace MyNS {
 		 * Retrieves the collection of MediaObject resources.
 		 * Get api/media-object
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<MediaObject_get>} MediaObject collection
 		 */
@@ -59597,6 +59706,7 @@ export namespace MyNS {
 		 * Retrieves the collection of Monitor resources.
 		 * Get api/monitor
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<Monitor_get>} Monitor collection
 		 */
@@ -59620,6 +59730,7 @@ export namespace MyNS {
 		 * Retrieves the collection of MonitorStatusCode resources.
 		 * Get api/monitor-status-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<MonitorStatusCode_get>} MonitorStatusCode collection
 		 */
@@ -59643,6 +59754,7 @@ export namespace MyNS {
 		 * Retrieves the collection of MonitorStatusLog resources.
 		 * Get api/monitor-status-log
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<MonitorStatusLog_get>} MonitorStatusLog collection
 		 */
@@ -59666,6 +59778,7 @@ export namespace MyNS {
 		 * Retrieves the collection of MonitorTypeCode resources.
 		 * Get api/monitor-type-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<MonitorTypeCode_get>} MonitorTypeCode collection
 		 */
@@ -59723,6 +59836,7 @@ export namespace MyNS {
 		 * Retrieves the collection of Partition resources.
 		 * Get api/partition
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<Partition_get>} Partition collection
 		 */
@@ -59780,6 +59894,7 @@ export namespace MyNS {
 		 * Retrieves the collection of Ping resources.
 		 * Get api/ping
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<Ping_get>} Ping collection
 		 */
@@ -59803,6 +59918,7 @@ export namespace MyNS {
 		 * Retrieves the collection of PingMethodCode resources.
 		 * Get api/ping-method-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<PingMethodCode_get>} PingMethodCode collection
 		 */
@@ -59837,6 +59953,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TeamInvitation resources.
 		 * Get api/team-invitation
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TeamInvitation_get>} TeamInvitation collection
 		 */
@@ -59882,6 +59999,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TeamMember resources.
 		 * Get api/team-member
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TeamMember_get>} TeamMember collection
 		 */
@@ -59894,6 +60012,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TeamMemberRoleCode resources.
 		 * Get api/team-member-role-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TeamMemberRoleCode_get>} TeamMemberRoleCode collection
 		 */
@@ -59951,6 +60070,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TimezoneCode resources.
 		 * Get api/timezone-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TimezoneCode_get>} TimezoneCode collection
 		 */
@@ -59974,6 +60094,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportAlerta resources.
 		 * Get api/transport-alerta
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportAlerta_get>} TransportAlerta collection
 		 */
@@ -60031,6 +60152,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportAllMySms resources.
 		 * Get api/transport-all-my-sms
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportAllMySms_get>} TransportAllMySms collection
 		 */
@@ -60088,6 +60210,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportAmazonSns resources.
 		 * Get api/transport-amazon-sns
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportAmazonSns_get>} TransportAmazonSns collection
 		 */
@@ -60145,6 +60268,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportBandwidth resources.
 		 * Get api/transport-bandwidth
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportBandwidth_get>} TransportBandwidth collection
 		 */
@@ -60202,6 +60326,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportChatwork resources.
 		 * Get api/transport-chatwork
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportChatwork_get>} TransportChatwork collection
 		 */
@@ -60259,6 +60384,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportClickSend resources.
 		 * Get api/transport-click-send
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportClickSend_get>} TransportClickSend collection
 		 */
@@ -60316,6 +60442,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportClickatell resources.
 		 * Get api/transport-clickatell
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportClickatell_get>} TransportClickatell collection
 		 */
@@ -60373,6 +60500,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportContactEveryone resources.
 		 * Get api/transport-contact-everyone
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportContactEveryone_get>} TransportContactEveryone collection
 		 */
@@ -60430,6 +60558,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportDiscord resources.
 		 * Get api/transport-discord
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportDiscord_get>} TransportDiscord collection
 		 */
@@ -60487,6 +60616,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportEmail resources.
 		 * Get api/transport-email
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportEmail_get>} TransportEmail collection
 		 */
@@ -60544,6 +60674,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportEngagespot resources.
 		 * Get api/transport-engagespot
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportEngagespot_get>} TransportEngagespot collection
 		 */
@@ -60601,6 +60732,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportEsendex resources.
 		 * Get api/transport-esendex
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportEsendex_get>} TransportEsendex collection
 		 */
@@ -60658,6 +60790,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportExpo resources.
 		 * Get api/transport-expo
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportExpo_get>} TransportExpo collection
 		 */
@@ -60715,6 +60848,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportFirebase resources.
 		 * Get api/transport-firebase
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportFirebase_get>} TransportFirebase collection
 		 */
@@ -60772,6 +60906,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportFortySixElks resources.
 		 * Get api/transport-forty-six-elks
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportFortySixElks_get>} TransportFortySixElks collection
 		 */
@@ -60829,6 +60964,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportFreeMobile resources.
 		 * Get api/transport-free-mobile
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportFreeMobile_get>} TransportFreeMobile collection
 		 */
@@ -60886,6 +61022,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportFreshdesk resources.
 		 * Get api/transport-freshdesk
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportFreshdesk_get>} TransportFreshdesk collection
 		 */
@@ -60943,6 +61080,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportGatewayApi resources.
 		 * Get api/transport-gateway-api
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportGatewayApi_get>} TransportGatewayApi collection
 		 */
@@ -61000,6 +61138,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportGitter resources.
 		 * Get api/transport-gitter
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportGitter_get>} TransportGitter collection
 		 */
@@ -61057,6 +61196,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportGoogleChat resources.
 		 * Get api/transport-google-chat
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportGoogleChat_get>} TransportGoogleChat collection
 		 */
@@ -61114,6 +61254,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportGotify resources.
 		 * Get api/transport-gotify
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportGotify_get>} TransportGotify collection
 		 */
@@ -61171,6 +61312,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportHelpScout resources.
 		 * Get api/transport-help-scout
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportHelpScout_get>} TransportHelpScout collection
 		 */
@@ -61228,6 +61370,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportInfobip resources.
 		 * Get api/transport-infobip
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportInfobip_get>} TransportInfobip collection
 		 */
@@ -61285,6 +61428,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportIqsms resources.
 		 * Get api/transport-iqsms
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportIqsms_get>} TransportIqsms collection
 		 */
@@ -61342,6 +61486,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportKazInfoTeh resources.
 		 * Get api/transport-kaz-info-teh
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportKazInfoTeh_get>} TransportKazInfoTeh collection
 		 */
@@ -61399,6 +61544,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportLightSms resources.
 		 * Get api/transport-light-sms
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportLightSms_get>} TransportLightSms collection
 		 */
@@ -61456,6 +61602,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportLineNotify resources.
 		 * Get api/transport-line-notify
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportLineNotify_get>} TransportLineNotify collection
 		 */
@@ -61513,6 +61660,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportLinkedIn resources.
 		 * Get api/transport-linked-in
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportLinkedIn_get>} TransportLinkedIn collection
 		 */
@@ -61570,6 +61718,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMailjet resources.
 		 * Get api/transport-mailjet
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMailjet_get>} TransportMailjet collection
 		 */
@@ -61627,6 +61776,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMastodon resources.
 		 * Get api/transport-mastodon
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMastodon_get>} TransportMastodon collection
 		 */
@@ -61684,6 +61834,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMattermost resources.
 		 * Get api/transport-mattermost
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMattermost_get>} TransportMattermost collection
 		 */
@@ -61741,6 +61892,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMercure resources.
 		 * Get api/transport-mercure
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMercure_get>} TransportMercure collection
 		 */
@@ -61798,6 +61950,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMessageBird resources.
 		 * Get api/transport-message-bird
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMessageBird_get>} TransportMessageBird collection
 		 */
@@ -61855,6 +62008,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMessageMedia resources.
 		 * Get api/transport-message-media
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMessageMedia_get>} TransportMessageMedia collection
 		 */
@@ -61912,6 +62066,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMicrosoftTeams resources.
 		 * Get api/transport-microsoft-teams
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMicrosoftTeams_get>} TransportMicrosoftTeams collection
 		 */
@@ -61969,6 +62124,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportMobyt resources.
 		 * Get api/transport-mobyt
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportMobyt_get>} TransportMobyt collection
 		 */
@@ -62026,6 +62182,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportOctopush resources.
 		 * Get api/transport-octopush
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportOctopush_get>} TransportOctopush collection
 		 */
@@ -62083,6 +62240,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportOneSignal resources.
 		 * Get api/transport-one-signal
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportOneSignal_get>} TransportOneSignal collection
 		 */
@@ -62140,6 +62298,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportOpsgenie resources.
 		 * Get api/transport-opsgenie
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportOpsgenie_get>} TransportOpsgenie collection
 		 */
@@ -62197,6 +62356,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportOrangeSms resources.
 		 * Get api/transport-orange-sms
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportOrangeSms_get>} TransportOrangeSms collection
 		 */
@@ -62254,6 +62414,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportOvhCloud resources.
 		 * Get api/transport-ovh-cloud
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportOvhCloud_get>} TransportOvhCloud collection
 		 */
@@ -62311,6 +62472,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPagerDuty resources.
 		 * Get api/transport-pager-duty
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPagerDuty_get>} TransportPagerDuty collection
 		 */
@@ -62368,6 +62530,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPagerTree resources.
 		 * Get api/transport-pager-tree
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPagerTree_get>} TransportPagerTree collection
 		 */
@@ -62425,6 +62588,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPlivo resources.
 		 * Get api/transport-plivo
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPlivo_get>} TransportPlivo collection
 		 */
@@ -62482,6 +62646,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPushbullet resources.
 		 * Get api/transport-pushbullet
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPushbullet_get>} TransportPushbullet collection
 		 */
@@ -62539,6 +62704,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPushover resources.
 		 * Get api/transport-pushover
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPushover_get>} TransportPushover collection
 		 */
@@ -62596,6 +62762,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportPushy resources.
 		 * Get api/transport-pushy
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportPushy_get>} TransportPushy collection
 		 */
@@ -62653,6 +62820,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportRingCentral resources.
 		 * Get api/transport-ring-central
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportRingCentral_get>} TransportRingCentral collection
 		 */
@@ -62710,6 +62878,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportRocketChat resources.
 		 * Get api/transport-rocket-chat
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportRocketChat_get>} TransportRocketChat collection
 		 */
@@ -62767,6 +62936,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSendberry resources.
 		 * Get api/transport-sendberry
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSendberry_get>} TransportSendberry collection
 		 */
@@ -62824,6 +62994,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSendinblue resources.
 		 * Get api/transport-sendinblue
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSendinblue_get>} TransportSendinblue collection
 		 */
@@ -62881,6 +63052,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSimpleTextin resources.
 		 * Get api/transport-simple-textin
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSimpleTextin_get>} TransportSimpleTextin collection
 		 */
@@ -62938,6 +63110,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSinch resources.
 		 * Get api/transport-sinch
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSinch_get>} TransportSinch collection
 		 */
@@ -62995,6 +63168,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSlack resources.
 		 * Get api/transport-slack
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSlack_get>} TransportSlack collection
 		 */
@@ -63052,6 +63226,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSmsBiuras resources.
 		 * Get api/transport-sms-biuras
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSmsBiuras_get>} TransportSmsBiuras collection
 		 */
@@ -63109,6 +63284,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSmsFactor resources.
 		 * Get api/transport-sms-factor
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSmsFactor_get>} TransportSmsFactor collection
 		 */
@@ -63166,6 +63342,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSms77 resources.
 		 * Get api/transport-sms77
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSms77_get>} TransportSms77 collection
 		 */
@@ -63223,6 +63400,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSmsapi resources.
 		 * Get api/transport-smsapi
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSmsapi_get>} TransportSmsapi collection
 		 */
@@ -63280,6 +63458,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSmsc resources.
 		 * Get api/transport-smsc
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSmsc_get>} TransportSmsc collection
 		 */
@@ -63337,6 +63516,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSmsmode resources.
 		 * Get api/transport-smsmode
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSmsmode_get>} TransportSmsmode collection
 		 */
@@ -63394,6 +63574,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportSpotHit resources.
 		 * Get api/transport-spot-hit
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportSpotHit_get>} TransportSpotHit collection
 		 */
@@ -63451,6 +63632,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTelegram resources.
 		 * Get api/transport-telegram
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTelegram_get>} TransportTelegram collection
 		 */
@@ -63508,6 +63690,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTelnyx resources.
 		 * Get api/transport-telnyx
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTelnyx_get>} TransportTelnyx collection
 		 */
@@ -63565,6 +63748,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTermii resources.
 		 * Get api/transport-termii
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTermii_get>} TransportTermii collection
 		 */
@@ -63622,6 +63806,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTrello resources.
 		 * Get api/transport-trello
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTrello_get>} TransportTrello collection
 		 */
@@ -63679,6 +63864,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTurboSms resources.
 		 * Get api/transport-turbo-sms
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTurboSms_get>} TransportTurboSms collection
 		 */
@@ -63736,6 +63922,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTwilio resources.
 		 * Get api/transport-twilio
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTwilio_get>} TransportTwilio collection
 		 */
@@ -63793,6 +63980,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportTwitter resources.
 		 * Get api/transport-twitter
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportTwitter_get>} TransportTwitter collection
 		 */
@@ -63850,6 +64038,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportVonage resources.
 		 * Get api/transport-vonage
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportVonage_get>} TransportVonage collection
 		 */
@@ -63907,6 +64096,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportWebhook resources.
 		 * Get api/transport-webhook
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportWebhook_get>} TransportWebhook collection
 		 */
@@ -63964,6 +64154,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportYunpian resources.
 		 * Get api/transport-yunpian
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportYunpian_get>} TransportYunpian collection
 		 */
@@ -64021,6 +64212,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportZendesk resources.
 		 * Get api/transport-zendesk
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportZendesk_get>} TransportZendesk collection
 		 */
@@ -64078,6 +64270,7 @@ export namespace MyNS {
 		 * Retrieves the collection of TransportZulip resources.
 		 * Get api/transport-zulip
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<TransportZulip_get>} TransportZulip collection
 		 */
@@ -64135,6 +64328,7 @@ export namespace MyNS {
 		 * Retrieves the collection of UserAccount resources.
 		 * Get api/user-account
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<UserAccount_get>} UserAccount collection
 		 */
@@ -64147,6 +64341,7 @@ export namespace MyNS {
 		 * Retrieves the collection of UserAccountLevelCode resources.
 		 * Get api/user-account-level-code
 		 * @param {number} page The collection page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} properties_ Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 		 * @return {Array<UserAccountLevelCode_get>} UserAccountLevelCode collection
 		 */

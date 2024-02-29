@@ -186,14 +186,20 @@ export namespace MyNS {
 		/** Defines flags that are used to run the diagnostic tool */
 		diagnosticConfig?: DiagnosticConfig;
 
-		/** Optional. Maxmium amount of time in minutes before the operation times out. */
+		/**
+		 * Optional. Maxmium amount of time in minutes before the operation times out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMinutes?: number | null;
 	}
 
 	/** Request for creating a notebook instance diagnostic file. */
 	export interface DiagnoseInstanceRequestFormProperties {
 
-		/** Optional. Maxmium amount of time in minutes before the operation times out. */
+		/**
+		 * Optional. Maxmium amount of time in minutes before the operation times out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateDiagnoseInstanceRequestFormGroup() {
@@ -259,14 +265,20 @@ export namespace MyNS {
 		/** Defines flags that are used to run the diagnostic tool */
 		diagnosticConfig?: DiagnosticConfig;
 
-		/** Optional. Maxmium amount of time in minutes before the operation times out. */
+		/**
+		 * Optional. Maxmium amount of time in minutes before the operation times out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMinutes?: number | null;
 	}
 
 	/** Request for creating a notebook instance diagnostic file. */
 	export interface DiagnoseRuntimeRequestFormProperties {
 
-		/** Optional. Maxmium amount of time in minutes before the operation times out. */
+		/**
+		 * Optional. Maxmium amount of time in minutes before the operation times out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateDiagnoseRuntimeRequestFormGroup() {
@@ -1540,7 +1552,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1553,7 +1568,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1766,7 +1784,10 @@ export namespace MyNS {
 		/** Runtime will automatically shutdown after idle_shutdown_time. Default: True */
 		idleShutdown?: boolean | null;
 
-		/** Time in minutes to wait before shutting down runtime. Default: 180 minutes */
+		/**
+		 * Time in minutes to wait before shutting down runtime. Default: 180 minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleShutdownTimeout?: number | null;
 
 		/** Install Nvidia Driver automatically. Default: True */
@@ -1809,7 +1830,10 @@ export namespace MyNS {
 		/** Runtime will automatically shutdown after idle_shutdown_time. Default: True */
 		idleShutdown: FormControl<boolean | null | undefined>,
 
-		/** Time in minutes to wait before shutting down runtime. Default: 180 minutes */
+		/**
+		 * Time in minutes to wait before shutting down runtime. Default: 180 minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleShutdownTimeout: FormControl<number | null | undefined>,
 
 		/** Install Nvidia Driver automatically. Default: True */
@@ -2037,7 +2061,10 @@ export namespace MyNS {
 		/** Output only. Indicates a list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options. */
 		guestOsFeatures?: Array<RuntimeGuestOsFeature>;
 
-		/** Output only. A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number. */
+		/**
+		 * Output only. A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Input only. Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new runtime. This property is mutually exclusive with the source property; you can only define one or the other, but not both. */
@@ -2074,7 +2101,10 @@ export namespace MyNS {
 		/** Optional. Output only. Specifies a unique device name of your choice that is reflected into the `/dev/disk/by-id/google-*` tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks. */
 		deviceName: FormControl<string | null | undefined>,
 
-		/** Output only. A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number. */
+		/**
+		 * Output only. A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance. Valid values: * `NVME` * `SCSI` */
@@ -2465,7 +2495,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2475,7 +2508,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -3116,6 +3152,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3129,6 +3166,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3362,6 +3400,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/environments
 		 * @param {string} parent Required. Format: `projects/{project_id}/locations/{location}`
 		 * @param {number} pageSize Maximum return size of the list call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previous returned page token that can be used to continue listing from the last result.
 		 * @return {ListEnvironmentsResponse} Successful response
 		 */
@@ -3387,6 +3426,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter applied to resulting executions. Currently only supports filtering executions by a specified `schedule_id`. Format: `schedule_id=`
 		 * @param {string} orderBy Sort by field.
 		 * @param {number} pageSize Maximum return size of the list call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previous returned page token that can be used to continue listing from the last result.
 		 * @return {ListExecutionsResponse} Successful response
 		 */
@@ -3412,6 +3452,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. List filter.
 		 * @param {string} orderBy Optional. Sort results. Supported values are "name", "name desc" or "" (unsorted).
 		 * @param {number} pageSize Maximum return size of the list call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previous returned page token that can be used to continue listing from the last result.
 		 * @return {ListInstancesResponse} Successful response
 		 */
@@ -3447,6 +3488,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. List filter.
 		 * @param {string} orderBy Optional. Sort results. Supported values are "name", "name desc" or "" (unsorted).
 		 * @param {number} pageSize Maximum return size of the list call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previous returned page token that can be used to continue listing from the last result.
 		 * @return {ListRuntimesResponse} Successful response
 		 */
@@ -3473,6 +3515,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter applied to resulting schedules.
 		 * @param {string} orderBy Field to order results by.
 		 * @param {number} pageSize Maximum return size of the list call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previous returned page token that can be used to continue listing from the last result.
 		 * @return {ListSchedulesResponse} Successful response
 		 */
@@ -3496,6 +3539,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Notebooks_projects_locations_runtimes_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

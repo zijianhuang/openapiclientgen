@@ -22,6 +22,7 @@ export namespace MyNS {
 		 * @param {string} fromExpectedShipDate Limit orders to those that have order lines with an expected ship date after this date.
 		 * @param {string} toExpectedShipDate Limit orders to those that have order lines with an expected ship date before this date. 
 		 * @param {number} limit The number of orders to be returned. Do not set this parameter to over 200 orders.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GetAllOrders(shipNode: string | null | undefined, sku: string | null | undefined, customerOrderId: string | null | undefined, purchaseOrderId: string | null | undefined, status: string | null | undefined, createdStartDate: string | null | undefined, createdEndDate: string | null | undefined, fromExpectedShipDate: string | null | undefined, toExpectedShipDate: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -35,6 +36,7 @@ export namespace MyNS {
 		 * @param {string} shipNode Ship Node
 		 * @param {string} createdStartDate Limit orders to those created after this date or a timestamp.
 		 * @param {number} limit The number of orders to be returned. Do not set this parameter to over 200 orders.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GetReleasedOrders(shipNode: string | null | undefined, createdStartDate: string, limit: number | null | undefined): Observable<HttpResponse<string>> {

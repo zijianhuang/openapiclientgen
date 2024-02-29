@@ -2970,7 +2970,10 @@ namespace MyNS
 		/// <param name="appId">The unique ID for the Amplify app.</param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="nextToken">The token to request the next page of results.</param>
-		/// <param name="maxResults">The maximum number of components to retrieve.</param>
+		/// <param name="maxResults">The maximum number of components to retrieve.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListComponentsResponse> ListComponentsAsync(string appId, string environmentName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3050,7 +3053,10 @@ namespace MyNS
 		/// <param name="appId">The unique ID for the Amplify app.</param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="nextToken">The token to request the next page of results.</param>
-		/// <param name="maxResults">The maximum number of forms to retrieve.</param>
+		/// <param name="maxResults">The maximum number of forms to retrieve.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFormsResponse> ListFormsAsync(string appId, string environmentName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3130,7 +3136,10 @@ namespace MyNS
 		/// <param name="appId">The unique ID for the Amplify app.</param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="nextToken">The token to request the next page of results.</param>
-		/// <param name="maxResults">The maximum number of theme results to return in the response.</param>
+		/// <param name="maxResults">The maximum number of theme results to return in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListThemesResponse> ListThemesAsync(string appId, string environmentName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3643,7 +3652,10 @@ namespace MyNS
 		/// Returns an existing code generation job.
 		/// GetCodegenJob app/{appId}/environment/{environmentName}/codegen-jobs/{id}
 		/// </summary>
-		/// <param name="appId">The unique ID of the Amplify app associated with the code generation job.</param>
+		/// <param name="appId">The unique ID of the Amplify app associated with the code generation job.
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app associated with the code generation job.</param>
 		/// <param name="id">The unique ID of the code generation job.</param>
 		/// <returns>Success</returns>
@@ -3714,10 +3726,16 @@ namespace MyNS
 		/// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
 		/// ListCodegenJobs app/{appId}/environment/{environmentName}/codegen-jobs
 		/// </summary>
-		/// <param name="appId">The unique ID for the Amplify app.</param>
+		/// <param name="appId">The unique ID for the Amplify app.
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="nextToken">The token to request the next page of results.</param>
-		/// <param name="maxResults">The maximum number of jobs to retrieve.</param>
+		/// <param name="maxResults">The maximum number of jobs to retrieve.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCodegenJobsResponse> ListCodegenJobsAsync(string appId, string environmentName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3751,7 +3769,10 @@ namespace MyNS
 		/// Starts a code generation job for a specified Amplify app and backend environment.
 		/// StartCodegenJob app/{appId}/environment/{environmentName}/codegen-jobs
 		/// </summary>
-		/// <param name="appId">The unique ID for the Amplify app.</param>
+		/// <param name="appId">The unique ID for the Amplify app.
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="clientToken">The idempotency token used to ensure that the code generation job request completes only once.</param>
 		/// <returns>Success</returns>

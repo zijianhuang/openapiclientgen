@@ -10667,7 +10667,10 @@ namespace MyNS
 		/// Youtube_activities_list youtube/v3/activities
 		/// </summary>
 		/// <param name="part">The *part* parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set *part=snippet*, the API response will also contain all of those nested properties.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <returns>Successful response</returns>
 		public async Task<ActivityListResponse> Youtube_activities_listAsync(string[] part, string channelId, bool home, int maxResults, bool mine, string pageToken, string publishedAfter, string publishedBefore, string regionCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10959,7 +10962,10 @@ namespace MyNS
 		/// <param name="hl">Stands for "host language". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX).</param>
 		/// <param name="id">Return the channels with the specified IDs.</param>
 		/// <param name="managedByMe">Return the channels managed by the authenticated user.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="mine">Return the ids of channels owned by the authenticated user.</param>
 		/// <param name="mySubscribers">Return the channels subscribed to the authenticated user</param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
@@ -11043,7 +11049,10 @@ namespace MyNS
 		/// <param name="allThreadsRelatedToChannelId">Returns the comment threads of all videos of the channel and the channel comments as well.</param>
 		/// <param name="channelId">Returns the comment threads for all the channel comments (ie does not include comments left on videos).</param>
 		/// <param name="id">Returns the comment threads with the given IDs for Stubby or Apiary.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="moderationStatus">Limits the returned comment threads to those with the specified moderation status. Not compatible with the 'id' filter. Valid values: published, heldForReview, likelySpam.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <param name="searchTerms">Limits the returned comment threads to those matching the specified key words. Not compatible with the 'id' filter.</param>
@@ -11193,7 +11202,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="part">The *part* parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.</param>
 		/// <param name="id">Returns the comments with the given IDs for One Platform.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <param name="parentId">Returns replies to the specified comment. Note, currently YouTube features only one level of replies (ie replies to top level comments). However replies to replies may be supported in the future.</param>
 		/// <param name="textFormat">The requested text format for the returned comments.</param>
@@ -11462,7 +11474,10 @@ namespace MyNS
 		/// <param name="broadcastStatus">Return broadcasts with a certain status, e.g. active broadcasts.</param>
 		/// <param name="broadcastType">Return only broadcasts with the selected type.</param>
 		/// <param name="id">Return broadcasts with the given ids from Stubby or Apiary.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="onBehalfOfContentOwnerChannel">This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
@@ -11793,9 +11808,15 @@ namespace MyNS
 		/// <param name="liveChatId">The id of the live chat for which comments should be returned.</param>
 		/// <param name="part">The *part* parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet.</param>
 		/// <param name="hl">Specifies the localization language in which the system messages should be returned.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 200
+		/// Maximum: 2000
+		// </param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identify other pages that could be retrieved.</param>
-		/// <param name="profileImageSize">Specifies the size of the profile image that should be returned for each user.</param>
+		/// <param name="profileImageSize">Specifies the size of the profile image that should be returned for each user.
+		/// Minimum: 16
+		/// Maximum: 720
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<LiveChatMessageListResponse> Youtube_liveChatMessages_listAsync(string liveChatId, string[] part, string hl, int maxResults, string pageToken, int profileImageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11899,7 +11920,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="liveChatId">The id of the live chat for which moderators should be returned.</param>
 		/// <param name="part">The *part* parameter specifies the liveChatModerator resource parts that the API response will include. Supported values are id and snippet.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <returns>Successful response</returns>
 		public async Task<LiveChatModeratorListResponse> Youtube_liveChatModerators_listAsync(string liveChatId, string[] part, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12006,7 +12030,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="part">The *part* parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.</param>
 		/// <param name="id">Return LiveStreams with the given ids from Stubby or Apiary.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="onBehalfOfContentOwnerChannel">This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
@@ -12132,7 +12159,10 @@ namespace MyNS
 		/// <param name="part">The *part* parameter specifies the member resource parts that the API response will include. Set the parameter value to snippet.</param>
 		/// <param name="filterByMemberChannelId">Comma separated list of channel IDs. Only data about members that are part of this list will be included in the response.</param>
 		/// <param name="hasAccessToLevel">Filter members in the results set to the ones that have access to a level.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 1000
+		// </param>
 		/// <param name="mode">Parameter that specifies which channel members to return.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <returns>Successful response</returns>
@@ -12231,7 +12261,10 @@ namespace MyNS
 		/// Retrieves a list of resources, possibly filtered.
 		/// Youtube_playlistImages_list youtube/v3/playlistImages
 		/// </summary>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="onBehalfOfContentOwnerChannel">This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
@@ -12384,7 +12417,10 @@ namespace MyNS
 		/// Youtube_playlistItems_list youtube/v3/playlistItems
 		/// </summary>
 		/// <param name="part">The *part* parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set *part=snippet*, the API response will contain all of those properties.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <param name="playlistId">Return the playlist items within the given playlist.</param>
@@ -12538,7 +12574,10 @@ namespace MyNS
 		/// <param name="channelId">Return the playlists owned by the specified channel ID.</param>
 		/// <param name="hl">Return content in specified language</param>
 		/// <param name="id">Return the playlists with the given IDs for Stubby or Apiary.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="mine">Return the playlists owned by the authenticated user.</param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="onBehalfOfContentOwnerChannel">This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.</param>
@@ -12670,7 +12709,10 @@ namespace MyNS
 		/// <param name="forMine">Search for the private videos of the authenticated user.</param>
 		/// <param name="location">Filter on location of the video</param>
 		/// <param name="locationRadius">Filter on distance from the location (specified above).</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="order">Sort order of the results.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
@@ -12787,7 +12829,10 @@ namespace MyNS
 		/// <param name="channelId">Return the subscriptions of the given channel owner.</param>
 		/// <param name="forChannelId">Return the subscriptions to the subset of these channels that the authenticated user is subscribed to.</param>
 		/// <param name="id">Return the subscriptions with the given IDs for Stubby or Apiary.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 0
+		/// Maximum: 50
+		// </param>
 		/// <param name="mine">Flag for returning the subscriptions of the authenticated user.</param>
 		/// <param name="mySubscribers">Return the subscribers of the given channel owner.</param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
@@ -12870,7 +12915,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="part">The *part* parameter specifies the superChatEvent resource parts that the API response will include. This parameter is currently not supported.</param>
 		/// <param name="hl">Return rendered funding amounts in specified language.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.</param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</param>
 		/// <returns>Successful response</returns>
 		public async Task<SuperChatEventListResponse> Youtube_superChatEvents_listAsync(string[] part, string hl, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13228,8 +13276,17 @@ namespace MyNS
 		/// <param name="chart">Return the videos that are in the specified chart.</param>
 		/// <param name="hl">Stands for "host language". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX).</param>
 		/// <param name="id">Return videos with the given ids.</param>
-		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.</param>
-		/// <param name="maxWidth">Return the player with maximum height specified in</param>
+		/// <param name="maxHeight">Minimum: 72
+		/// Maximum: 8192
+		// </param>
+		/// <param name="maxResults">The *maxResults* parameter specifies the maximum number of items that should be returned in the result set. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="maxWidth">Return the player with maximum height specified in
+		/// Minimum: 72
+		/// Maximum: 8192
+		// </param>
 		/// <param name="myRating">Return videos liked/disliked by the authenticated user. Does not support RateType.RATED_TYPE_NONE.</param>
 		/// <param name="onBehalfOfContentOwner">*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.</param>
 		/// <param name="pageToken">The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.</param>

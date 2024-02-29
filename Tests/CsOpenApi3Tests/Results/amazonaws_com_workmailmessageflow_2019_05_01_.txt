@@ -144,7 +144,10 @@ namespace MyNS
 		/// Retrieves the raw content of an in-transit email message, in MIME format.
 		/// GetRawMessageContent messages/{messageId}
 		/// </summary>
-		/// <param name="messageId">The identifier of the email message to retrieve.</param>
+		/// <param name="messageId">The identifier of the email message to retrieve.
+		/// Max length: 120
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRawMessageContentResponse> GetRawMessageContentAsync(string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -178,7 +181,10 @@ namespace MyNS
 		/// <p>Updates the raw content of an in-transit email message, in MIME format.</p> <p>This example describes how to update in-transit email message. For more information and examples for using this API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda</a>.</p> <note> <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function configured with a synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a> returns an updated message. </p> </note>
 		/// PutRawMessageContent messages/{messageId}
 		/// </summary>
-		/// <param name="messageId">The identifier of the email message being updated.</param>
+		/// <param name="messageId">The identifier of the email message being updated.
+		/// Max length: 120
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRawMessageContentResponse> PutRawMessageContentAsync(string messageId, PutRawMessageContentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

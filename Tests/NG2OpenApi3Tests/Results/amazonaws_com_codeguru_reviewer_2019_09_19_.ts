@@ -1190,11 +1190,17 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">RepositoryAssociationSummary</a> objects that contain summary information about a repository association. You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">ProviderType</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">Name</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">State</a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">Owner</a>.
 		 * Get associations
 		 * @param {Array<ProviderType>} ProviderType List of provider types to use as a filter.
+		 *     Minimum items: 1    Maximum items: 3
 		 * @param {Array<RepositoryAssociationState>} State <p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>
+		 *     Minimum items: 1    Maximum items: 5
 		 * @param {Array<string>} Name List of repository names to use as a filter.
+		 *     Minimum items: 1    Maximum items: 3
 		 * @param {Array<string>} Owner List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. 
+		 *     Minimum items: 1    Maximum items: 3
 		 * @param {number} MaxResults The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListRepositoryAssociationsResponse} Success
 		 */
 		ListRepositoryAssociations(ProviderType: Array<ProviderType> | null | undefined, State: Array<RepositoryAssociationState> | null | undefined, Name: Array<string> | null | undefined, Owner: Array<string> | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListRepositoryAssociationsResponse> {
@@ -1214,6 +1220,7 @@ export namespace MyNS {
 		 * Returns the metadata associated with the code review along with its status.
 		 * Get codereviews/{CodeReviewArn}
 		 * @param {string} CodeReviewArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. 
+		 *     Min length: 1    Max length: 1600
 		 * @return {DescribeCodeReviewResponse} Success
 		 */
 		DescribeCodeReview(CodeReviewArn: string): Observable<DescribeCodeReviewResponse> {
@@ -1224,8 +1231,11 @@ export namespace MyNS {
 		 * Describes the customer feedback for a CodeGuru Reviewer recommendation.
 		 * Get feedback/{CodeReviewArn}#RecommendationId
 		 * @param {string} CodeReviewArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. 
+		 *     Min length: 1    Max length: 1600
 		 * @param {string} RecommendationId The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} UserId <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeRecommendationFeedbackResponse} Success
 		 */
 		DescribeRecommendationFeedback(CodeReviewArn: string, RecommendationId: string, UserId: string | null | undefined): Observable<DescribeRecommendationFeedbackResponse> {
@@ -1236,6 +1246,7 @@ export namespace MyNS {
 		 * Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object that contains information about the requested repository association.
 		 * Get associations/{AssociationArn}
 		 * @param {string} AssociationArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
+		 *     Min length: 1    Max length: 1600
 		 * @return {DescribeRepositoryAssociationResponse} Success
 		 */
 		DescribeRepositoryAssociation(AssociationArn: string): Observable<DescribeRepositoryAssociationResponse> {
@@ -1246,6 +1257,7 @@ export namespace MyNS {
 		 * Removes the association between Amazon CodeGuru Reviewer and a repository.
 		 * Delete associations/{AssociationArn}
 		 * @param {string} AssociationArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
+		 *     Min length: 1    Max length: 1600
 		 * @return {DisassociateRepositoryResponse} Success
 		 */
 		DisassociateRepository(AssociationArn: string): Observable<DisassociateRepositoryResponse> {
@@ -1256,11 +1268,16 @@ export namespace MyNS {
 		 * Lists all the code reviews that the customer has created in the past 90 days.
 		 * Get codereviews#Type
 		 * @param {Array<ProviderType>} ProviderTypes List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
+		 *     Minimum items: 1    Maximum items: 3
 		 * @param {Array<JobState>} States <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>
+		 *     Minimum items: 1    Maximum items: 3
 		 * @param {Array<string>} RepositoryNames List of repository names for filtering that needs to be applied before displaying the result.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Type} Type The type of code reviews to list in the response.
 		 * @param {number} MaxResults The maximum number of results that are returned per call. The default is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListCodeReviewsResponse} Success
 		 */
 		ListCodeReviews(ProviderTypes: Array<ProviderType> | null | undefined, States: Array<JobState> | null | undefined, RepositoryNames: Array<string> | null | undefined, Type: Type, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListCodeReviewsResponse> {
@@ -1271,10 +1288,15 @@ export namespace MyNS {
 		 * Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a> objects that contain customer recommendation feedback for all CodeGuru Reviewer users.
 		 * Get feedback/{CodeReviewArn}/RecommendationFeedback
 		 * @param {string} NextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} MaxResults The maximum number of results that are returned per call. The default is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} CodeReviewArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. 
+		 *     Min length: 1    Max length: 1600
 		 * @param {Array<string>} UserIds <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} RecommendationIds Used to query the recommendation feedback for a given recommendation.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @return {ListRecommendationFeedbackResponse} Success
 		 */
 		ListRecommendationFeedback(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string, UserIds: Array<string> | null | undefined, RecommendationIds: Array<string> | null | undefined): Observable<ListRecommendationFeedbackResponse> {
@@ -1285,8 +1307,11 @@ export namespace MyNS {
 		 * Returns the list of all recommendations for a completed code review.
 		 * Get codereviews/{CodeReviewArn}/Recommendations
 		 * @param {string} NextToken Pagination token.
+		 *     Min length: 1    Max length: 2048
 		 * @param {number} MaxResults The maximum number of results that are returned per call. The default is 100.
+		 *     Minimum: 1    Maximum: 300
 		 * @param {string} CodeReviewArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. 
+		 *     Min length: 1    Max length: 1600
 		 * @return {ListRecommendationsResponse} Success
 		 */
 		ListRecommendations(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string): Observable<ListRecommendationsResponse> {
@@ -1297,6 +1322,7 @@ export namespace MyNS {
 		 * Returns the list of tags associated with an associated repository resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
+		 *     Min length: 1    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1307,6 +1333,7 @@ export namespace MyNS {
 		 * Adds one or more tags to an associated repository.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
+		 *     Min length: 1    Max length: 1600
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1326,7 +1353,9 @@ export namespace MyNS {
 		 * Removes a tag from an associated repository.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
+		 *     Min length: 1    Max length: 1600
 		 * @param {Array<string>} tagKeys A list of the keys for each tag you want to remove from an associated repository.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1344,8 +1373,8 @@ export namespace MyNS {
 
 		/**
 		 * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -1359,8 +1388,8 @@ export namespace MyNS {
 
 		/**
 		 * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -1412,16 +1441,16 @@ export namespace MyNS {
 		/**
 		 * The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p> <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RepositoryAssociationArn: string;
 
@@ -1433,8 +1462,8 @@ export namespace MyNS {
 
 		/**
 		 * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -1443,23 +1472,23 @@ export namespace MyNS {
 		/**
 		 * The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p> <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		RepositoryAssociationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1512,16 +1541,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		CodeReviewArn: string;
 
 		/**
 		 * The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RecommendationId: string;
 
@@ -1538,16 +1567,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		RecommendationId: FormControl<string | null | undefined>,
 	}

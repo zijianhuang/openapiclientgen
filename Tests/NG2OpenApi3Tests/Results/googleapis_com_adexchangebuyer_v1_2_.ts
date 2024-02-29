@@ -16,19 +16,31 @@ export namespace MyNS {
 		/** The base URL used in cookie match requests. */
 		cookieMatchingUrl?: string | null;
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Resource type. */
 		kind?: string | null;
 
-		/** The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumActiveCreatives?: number | null;
 
-		/** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumTotalQps?: number | null;
 
-		/** The number of creatives that this account inserted or bid with in the last 30 days. */
+		/**
+		 * The number of creatives that this account inserted or bid with in the last 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberActiveCreatives?: number | null;
 	}
 
@@ -41,19 +53,31 @@ export namespace MyNS {
 		/** The base URL used in cookie match requests. */
 		cookieMatchingUrl: FormControl<string | null | undefined>,
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Resource type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumActiveCreatives: FormControl<number | null | undefined>,
 
-		/** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
+		/**
+		 * The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumTotalQps: FormControl<number | null | undefined>,
 
-		/** The number of creatives that this account inserted or bid with in the last 30 days. */
+		/**
+		 * The number of creatives that this account inserted or bid with in the last 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberActiveCreatives: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
@@ -71,7 +95,10 @@ export namespace MyNS {
 
 	export interface AccountBidderLocation {
 
-		/** The maximum queries per second the Ad Exchange will send. */
+		/**
+		 * The maximum queries per second the Ad Exchange will send.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumQps?: number | null;
 
 		/**
@@ -88,7 +115,10 @@ export namespace MyNS {
 	}
 	export interface AccountBidderLocationFormProperties {
 
-		/** The maximum queries per second the Ad Exchange will send. */
+		/**
+		 * The maximum queries per second the Ad Exchange will send.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumQps: FormControl<number | null | undefined>,
 
 		/**
@@ -143,7 +173,10 @@ export namespace MyNS {
 		/** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. */
 		HTMLSnippet?: string | null;
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId?: number | null;
 
 		/** Detected advertiser id, if any. Read-only. This field should not be set in requests. */
@@ -176,7 +209,10 @@ export namespace MyNS {
 		/** The filtering reasons for the creative. Read-only. This field should not be set in requests. */
 		filteringReasons?: CreativeFilteringReasons;
 
-		/** Ad height. */
+		/**
+		 * Ad height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The set of urls to be called to record an impression. */
@@ -200,13 +236,19 @@ export namespace MyNS {
 		/** All vendor types for the ads that may be shown from this snippet. */
 		vendorType?: Array<number>;
 
-		/** The version for this creative. Read-only. This field should not be set in requests. */
+		/**
+		 * The version for this creative. Read-only. This field should not be set in requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 
 		/** The url to fetch a video ad. If set, HTMLSnippet should not be set. */
 		videoURL?: string | null;
 
-		/** Ad width. */
+		/**
+		 * Ad width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -216,7 +258,10 @@ export namespace MyNS {
 		/** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. */
 		HTMLSnippet: FormControl<string | null | undefined>,
 
-		/** Account id. */
+		/**
+		 * Account id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/** The name of the company being advertised in the creative. */
@@ -231,7 +276,10 @@ export namespace MyNS {
 		/** A buyer-specific id identifying the creative in this ad. */
 		buyerCreativeId: FormControl<string | null | undefined>,
 
-		/** Ad height. */
+		/**
+		 * Ad height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Resource type. */
@@ -240,13 +288,19 @@ export namespace MyNS {
 		/** Creative serving status. Read-only. This field should not be set in requests. */
 		status: FormControl<string | null | undefined>,
 
-		/** The version for this creative. Read-only. This field should not be set in requests. */
+		/**
+		 * The version for this creative. Read-only. This field should not be set in requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 
 		/** The url to fetch a video ad. If set, HTMLSnippet should not be set. */
 		videoURL: FormControl<string | null | undefined>,
 
-		/** Ad width. */
+		/**
+		 * Ad width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFormGroup() {
@@ -332,7 +386,10 @@ export namespace MyNS {
 		/** The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. */
 		filteringCount?: string | null;
 
-		/** The filtering status code. Please refer to the creative-status-codes.txt file for different statuses. */
+		/**
+		 * The filtering status code. Please refer to the creative-status-codes.txt file for different statuses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filteringStatus?: number | null;
 	}
 	export interface CreativeFilteringReasonsReasonsFormProperties {
@@ -340,7 +397,10 @@ export namespace MyNS {
 		/** The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. */
 		filteringCount: FormControl<string | null | undefined>,
 
-		/** The filtering status code. Please refer to the creative-status-codes.txt file for different statuses. */
+		/**
+		 * The filtering status code. Please refer to the creative-status-codes.txt file for different statuses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filteringStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateCreativeFilteringReasonsReasonsFormGroup() {
@@ -400,6 +460,7 @@ export namespace MyNS {
 		 * Gets one account by ID.
 		 * Get accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_get(id: number): Observable<Account> {
@@ -410,6 +471,7 @@ export namespace MyNS {
 		 * Updates an existing account. This method supports patch semantics.
 		 * Patch accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_patch(id: number, requestBody: Account): Observable<Account> {
@@ -420,6 +482,7 @@ export namespace MyNS {
 		 * Updates an existing account.
 		 * Put accounts/{id}
 		 * @param {number} id The account id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Successful response
 		 */
 		Adexchangebuyer_accounts_update(id: number, requestBody: Account): Observable<Account> {
@@ -430,6 +493,7 @@ export namespace MyNS {
 		 * Retrieves a list of the authenticated user's active creatives. A creative will be available 30-40 minutes after submission.
 		 * Get creatives
 		 * @param {number} maxResults Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
 		 * @param {Adexchangebuyer_creatives_listStatusFilter} statusFilter When specified, only creatives having the given status are returned.
 		 * @return {CreativesList} Successful response
@@ -451,6 +515,7 @@ export namespace MyNS {
 		 * Gets the status for a single creative. A creative will be available 30-40 minutes after submission.
 		 * Get creatives/{accountId}/{buyerCreativeId}
 		 * @param {number} accountId The id for the account that will serve this creative.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} buyerCreativeId The buyer-specific id for this creative.
 		 * @return {Creative} Successful response
 		 */

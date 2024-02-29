@@ -42,14 +42,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		static void ValidationsToComments(IList<string> ss, OpenApiSchema fieldSchema, bool excludePattern = false)
 		{
-			if (fieldSchema.MaxLength.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
-			}
-
 			if (fieldSchema.MinLength.HasValue)
 			{
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Min length: {0}", fieldSchema.MinLength.Value));
+			}
+
+			if (fieldSchema.MaxLength.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
 			}
 
 			if (fieldSchema.Minimum.HasValue)

@@ -34,14 +34,20 @@ export namespace MyNS {
 		/** Frequency range from `low_frequency` to `high_frequency`. */
 		frequencyRange?: SasPortalFrequencyRange;
 
-		/** The channel score, normalized to be in the range [0,100]. */
+		/**
+		 * The channel score, normalized to be in the range [0,100].
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
 	/** The channel with score. */
 	export interface SasPortalChannelWithScoreFormProperties {
 
-		/** The channel score, normalized to be in the range [0,100]. */
+		/**
+		 * The channel score, normalized to be in the range [0,100].
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateSasPortalChannelWithScoreFormGroup() {
@@ -55,20 +61,32 @@ export namespace MyNS {
 	/** Frequency range from `low_frequency` to `high_frequency`. */
 	export interface SasPortalFrequencyRange {
 
-		/** The highest frequency of the frequency range in MHz. */
+		/**
+		 * The highest frequency of the frequency range in MHz.
+		 * Type: double
+		 */
 		highFrequencyMhz?: number | null;
 
-		/** The lowest frequency of the frequency range in MHz. */
+		/**
+		 * The lowest frequency of the frequency range in MHz.
+		 * Type: double
+		 */
 		lowFrequencyMhz?: number | null;
 	}
 
 	/** Frequency range from `low_frequency` to `high_frequency`. */
 	export interface SasPortalFrequencyRangeFormProperties {
 
-		/** The highest frequency of the frequency range in MHz. */
+		/**
+		 * The highest frequency of the frequency range in MHz.
+		 * Type: double
+		 */
 		highFrequencyMhz: FormControl<number | null | undefined>,
 
-		/** The lowest frequency of the frequency range in MHz. */
+		/**
+		 * The lowest frequency of the frequency range in MHz.
+		 * Type: double
+		 */
 		lowFrequencyMhz: FormControl<number | null | undefined>,
 	}
 	export function CreateSasPortalFrequencyRangeFormGroup() {
@@ -388,16 +406,28 @@ export namespace MyNS {
 	/** Information about the device installation parameters. */
 	export interface SasPortalInstallationParams {
 
-		/** Boresight direction of the horizontal plane of the antenna in degrees with respect to true north. The value of this parameter is an integer with a value between 0 and 359 inclusive. A value of 0 degrees means true north; a value of 90 degrees means east. This parameter is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * Boresight direction of the horizontal plane of the antenna in degrees with respect to true north. The value of this parameter is an integer with a value between 0 and 359 inclusive. A value of 0 degrees means true north; a value of 90 degrees means east. This parameter is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaAzimuth?: number | null;
 
-		/** 3-dB antenna beamwidth of the antenna in the horizontal-plane in degrees. This parameter is an unsigned integer having a value between 0 and 360 (degrees) inclusive; it is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * 3-dB antenna beamwidth of the antenna in the horizontal-plane in degrees. This parameter is an unsigned integer having a value between 0 and 360 (degrees) inclusive; it is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaBeamwidth?: number | null;
 
-		/** Antenna downtilt in degrees and is an integer with a value between -90 and +90 inclusive; a negative value means the antenna is tilted up (above horizontal). This parameter is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * Antenna downtilt in degrees and is an integer with a value between -90 and +90 inclusive; a negative value means the antenna is tilted up (above horizontal). This parameter is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaDowntilt?: number | null;
 
-		/** Peak antenna gain in dBi. This parameter is an integer with a value between -127 and +128 (dBi) inclusive. */
+		/**
+		 * Peak antenna gain in dBi. This parameter is an integer with a value between -127 and +128 (dBi) inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaGain?: number | null;
 
 		/** If an external antenna is used, the antenna model is optionally provided in this field. The string has a maximum length of 128 octets. */
@@ -406,44 +436,74 @@ export namespace MyNS {
 		/** If present, this parameter specifies whether the CBSD is a CPE-CBSD or not. */
 		cpeCbsdIndication?: boolean | null;
 
-		/** This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category. */
+		/**
+		 * This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eirpCapability?: number | null;
 
-		/** Device antenna height in meters. When the `heightType` parameter value is "AGL", the antenna height should be given relative to ground level. When the `heightType` parameter value is "AMSL", it is given with respect to WGS84 datum. */
+		/**
+		 * Device antenna height in meters. When the `heightType` parameter value is "AGL", the antenna height should be given relative to ground level. When the `heightType` parameter value is "AMSL", it is given with respect to WGS84 datum.
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Specifies how the height is measured. */
 		heightType?: SasPortalInstallationParamsHeightType | null;
 
-		/** A positive number in meters to indicate accuracy of the device antenna horizontal location. This optional parameter should only be present if its value is less than the FCC requirement of 50 meters. */
+		/**
+		 * A positive number in meters to indicate accuracy of the device antenna horizontal location. This optional parameter should only be present if its value is less than the FCC requirement of 50 meters.
+		 * Type: double
+		 */
 		horizontalAccuracy?: number | null;
 
 		/** Whether the device antenna is indoor or not. `true`: indoor. `false`: outdoor. */
 		indoorDeployment?: boolean | null;
 
-		/** Latitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -90.000000 to +90.000000. Positive values represent latitudes north of the equator; negative values south of the equator. */
+		/**
+		 * Latitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -90.000000 to +90.000000. Positive values represent latitudes north of the equator; negative values south of the equator.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian. */
+		/**
+		 * Longitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
-		/** A positive number in meters to indicate accuracy of the device antenna vertical location. This optional parameter should only be present if its value is less than the FCC requirement of 3 meters. */
+		/**
+		 * A positive number in meters to indicate accuracy of the device antenna vertical location. This optional parameter should only be present if its value is less than the FCC requirement of 3 meters.
+		 * Type: double
+		 */
 		verticalAccuracy?: number | null;
 	}
 
 	/** Information about the device installation parameters. */
 	export interface SasPortalInstallationParamsFormProperties {
 
-		/** Boresight direction of the horizontal plane of the antenna in degrees with respect to true north. The value of this parameter is an integer with a value between 0 and 359 inclusive. A value of 0 degrees means true north; a value of 90 degrees means east. This parameter is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * Boresight direction of the horizontal plane of the antenna in degrees with respect to true north. The value of this parameter is an integer with a value between 0 and 359 inclusive. A value of 0 degrees means true north; a value of 90 degrees means east. This parameter is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaAzimuth: FormControl<number | null | undefined>,
 
-		/** 3-dB antenna beamwidth of the antenna in the horizontal-plane in degrees. This parameter is an unsigned integer having a value between 0 and 360 (degrees) inclusive; it is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * 3-dB antenna beamwidth of the antenna in the horizontal-plane in degrees. This parameter is an unsigned integer having a value between 0 and 360 (degrees) inclusive; it is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaBeamwidth: FormControl<number | null | undefined>,
 
-		/** Antenna downtilt in degrees and is an integer with a value between -90 and +90 inclusive; a negative value means the antenna is tilted up (above horizontal). This parameter is optional for Category A devices and conditional for Category B devices. */
+		/**
+		 * Antenna downtilt in degrees and is an integer with a value between -90 and +90 inclusive; a negative value means the antenna is tilted up (above horizontal). This parameter is optional for Category A devices and conditional for Category B devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaDowntilt: FormControl<number | null | undefined>,
 
-		/** Peak antenna gain in dBi. This parameter is an integer with a value between -127 and +128 (dBi) inclusive. */
+		/**
+		 * Peak antenna gain in dBi. This parameter is an integer with a value between -127 and +128 (dBi) inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		antennaGain: FormControl<number | null | undefined>,
 
 		/** If an external antenna is used, the antenna model is optionally provided in this field. The string has a maximum length of 128 octets. */
@@ -452,28 +512,46 @@ export namespace MyNS {
 		/** If present, this parameter specifies whether the CBSD is a CPE-CBSD or not. */
 		cpeCbsdIndication: FormControl<boolean | null | undefined>,
 
-		/** This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category. */
+		/**
+		 * This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eirpCapability: FormControl<number | null | undefined>,
 
-		/** Device antenna height in meters. When the `heightType` parameter value is "AGL", the antenna height should be given relative to ground level. When the `heightType` parameter value is "AMSL", it is given with respect to WGS84 datum. */
+		/**
+		 * Device antenna height in meters. When the `heightType` parameter value is "AGL", the antenna height should be given relative to ground level. When the `heightType` parameter value is "AMSL", it is given with respect to WGS84 datum.
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Specifies how the height is measured. */
 		heightType: FormControl<SasPortalInstallationParamsHeightType | null | undefined>,
 
-		/** A positive number in meters to indicate accuracy of the device antenna horizontal location. This optional parameter should only be present if its value is less than the FCC requirement of 50 meters. */
+		/**
+		 * A positive number in meters to indicate accuracy of the device antenna horizontal location. This optional parameter should only be present if its value is less than the FCC requirement of 50 meters.
+		 * Type: double
+		 */
 		horizontalAccuracy: FormControl<number | null | undefined>,
 
 		/** Whether the device antenna is indoor or not. `true`: indoor. `false`: outdoor. */
 		indoorDeployment: FormControl<boolean | null | undefined>,
 
-		/** Latitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -90.000000 to +90.000000. Positive values represent latitudes north of the equator; negative values south of the equator. */
+		/**
+		 * Latitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -90.000000 to +90.000000. Positive values represent latitudes north of the equator; negative values south of the equator.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian. */
+		/**
+		 * Longitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
-		/** A positive number in meters to indicate accuracy of the device antenna vertical location. This optional parameter should only be present if its value is less than the FCC requirement of 3 meters. */
+		/**
+		 * A positive number in meters to indicate accuracy of the device antenna vertical location. This optional parameter should only be present if its value is less than the FCC requirement of 3 meters.
+		 * Type: double
+		 */
 		verticalAccuracy: FormControl<number | null | undefined>,
 	}
 	export function CreateSasPortalInstallationParamsFormGroup() {
@@ -604,10 +682,16 @@ export namespace MyNS {
 		/** CPI who signed the validation. */
 		cpiId?: string | null;
 
-		/** Device latitude that's associated with the validation. */
+		/**
+		 * Device latitude that's associated with the validation.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Device longitude that's associated with the validation. */
+		/**
+		 * Device longitude that's associated with the validation.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** State of the NRQZ validation info. */
@@ -623,10 +707,16 @@ export namespace MyNS {
 		/** CPI who signed the validation. */
 		cpiId: FormControl<string | null | undefined>,
 
-		/** Device latitude that's associated with the validation. */
+		/**
+		 * Device latitude that's associated with the validation.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Device longitude that's associated with the validation. */
+		/**
+		 * Device longitude that's associated with the validation.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** State of the NRQZ validation info. */
@@ -664,7 +754,10 @@ export namespace MyNS {
 		/** The transmit expiration time of the last heartbeat. */
 		lastHeartbeatTransmitExpireTime?: string | null;
 
-		/** Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3). */
+		/**
+		 * Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3).
+		 * Type: double
+		 */
 		maxEirp?: number | null;
 
 		/** The DPA move lists on which this grant appears. */
@@ -692,7 +785,10 @@ export namespace MyNS {
 		/** The transmit expiration time of the last heartbeat. */
 		lastHeartbeatTransmitExpireTime: FormControl<string | null | undefined>,
 
-		/** Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3). */
+		/**
+		 * Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3).
+		 * Type: double
+		 */
 		maxEirp: FormControl<number | null | undefined>,
 
 		/** State of the grant. */
@@ -1155,7 +1251,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface SasPortalStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1168,7 +1267,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface SasPortalStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1484,6 +1586,7 @@ export namespace MyNS {
 		 * Returns a list of requested customers.
 		 * Get v1alpha1/customers
 		 * @param {number} pageSize The maximum number of customers to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListCustomers that indicates where this listing should continue from.
 		 * @return {SasPortalListCustomersResponse} Successful response
 		 */
@@ -1648,6 +1751,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name, for example, "nodes/1", customer/1/nodes/2.
 		 * @param {string} filter The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no deployments are filtered.
 		 * @param {number} pageSize The maximum number of deployments to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListDeployments that indicates where this listing should continue from.
 		 * @return {SasPortalListDeploymentsResponse} Successful response
 		 */
@@ -1671,6 +1775,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the parent resource.
 		 * @param {string} filter The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial number of the device. The filter is case insensitive.
 		 * @param {number} pageSize The maximum number of devices to return in the response. If empty or zero, all devices will be listed. Must be in the range [0, 1000].
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListDevices that indicates where this listing should continue from.
 		 * @return {SasPortalListDevicesResponse} Successful response
 		 */
@@ -1704,6 +1809,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent resource name, for example, "nodes/1".
 		 * @param {string} filter The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no nodes are filtered.
 		 * @param {number} pageSize The maximum number of nodes to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListNodes that indicates where this listing should continue from.
 		 * @return {SasPortalListNodesResponse} Successful response
 		 */

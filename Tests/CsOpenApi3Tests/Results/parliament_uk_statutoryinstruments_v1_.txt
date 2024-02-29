@@ -738,10 +738,19 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Name">Proposed negative statutory instruments with the name provided</param>
 		/// <param name="RecommendedForProcedureChange">Proposed negative statutory instruments recommended for procedure change</param>
-		/// <param name="DepartmentId">Proposed negative statutory instruments with the department ID specified</param>
+		/// <param name="DepartmentId">Proposed negative statutory instruments with the department ID specified
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="LayingBodyId">Proposed negative statutory instruments with the laying body ID specified</param>
-		/// <param name="Skip">The number of records to skip from the first, default is 0</param>
-		/// <param name="Take">The number of records to return, default is 20</param>
+		/// <param name="Skip">The number of records to skip from the first, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="Take">The number of records to return, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProposedNegativeStatutoryInstrumentResourceCollection> GetProposedNegativeStatutoryInstrumentsAsync(string Name, bool RecommendedForProcedureChange, int DepartmentId, string LayingBodyId, int Skip, int Take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -849,11 +858,20 @@ namespace MyNS
 		/// <param name="MotionToStop">Statutory instruments which contains a motion to stop</param>
 		/// <param name="ConcernsRaisedByCommittee">Statutory instruments which contains concerns raised by committee</param>
 		/// <param name="ParliamentaryProcessConcluded">Statutory instruments where the parliamentary process is concluded or notconcluded</param>
-		/// <param name="DepartmentId">Statutory instruments with the department ID specified</param>
+		/// <param name="DepartmentId">Statutory instruments with the department ID specified
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="LayingBodyId">Statutory instruments with the laying body ID specified</param>
 		/// <param name="House">Statutory instruments laid in the house specified</param>
-		/// <param name="Skip">The number of records to skip from the first, default is 0</param>
-		/// <param name="Take">The number of records to return, default is 20</param>
+		/// <param name="Skip">The number of records to skip from the first, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="Take">The number of records to return, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StatutoryInstrumentResourceCollection> GetStatutoryInstrumentsAsync(string Name, StatutoryInstrumentType StatutoryInstrumentType, bool ScheduledDebate, bool MotionToStop, bool ConcernsRaisedByCommittee, ParliamentaryProcess ParliamentaryProcessConcluded, int DepartmentId, string LayingBodyId, BusinessItemHouseHouse House, int Skip, int Take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

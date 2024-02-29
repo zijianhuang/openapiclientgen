@@ -2371,8 +2371,13 @@ namespace MyNS
 		/// Registries_GetBuildSourceUploadUrl subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listBuildSourceUploadUrl
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<SourceUploadDefinition> Registries_GetBuildSourceUploadUrlAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version)
@@ -2403,8 +2408,13 @@ namespace MyNS
 		/// Runs_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="filter">The runs filter to apply on the operation. Arithmetic operators are not supported. The allowed string function is 'contains'. All logical operators except 'Not', 'Has', 'All' are allowed.</param>
 		/// <param name="top">$top is supported for get list of runs, which limits the maximum number of runs to return.</param>
@@ -2437,8 +2447,13 @@ namespace MyNS
 		/// Runs_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2470,8 +2485,13 @@ namespace MyNS
 		/// Runs_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
 		/// <param name="requestBody">The run update properties.</param>
@@ -2511,8 +2531,13 @@ namespace MyNS
 		/// Runs_Cancel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}/cancel
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2538,8 +2563,13 @@ namespace MyNS
 		/// Runs_GetLogSasUrl subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/runs/{runId}/listLogSasUrl
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2571,8 +2601,13 @@ namespace MyNS
 		/// Registries_ScheduleRun subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/scheduleRun
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters of a run that needs to scheduled.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2611,8 +2646,13 @@ namespace MyNS
 		/// TaskRuns_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<TaskRunListResult> TaskRuns_ListAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version)
@@ -2643,8 +2683,13 @@ namespace MyNS
 		/// TaskRuns_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The run request name.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2676,8 +2721,13 @@ namespace MyNS
 		/// TaskRuns_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The name of task run.</param>
 		/// <param name="requestBody">The parameters of a run that needs to scheduled.</param>
@@ -2717,8 +2767,13 @@ namespace MyNS
 		/// TaskRuns_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The task run name.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2744,8 +2799,13 @@ namespace MyNS
 		/// TaskRuns_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The task run name.</param>
 		/// <param name="requestBody">The parameters for updating a task run.</param>
@@ -2785,8 +2845,13 @@ namespace MyNS
 		/// Tasks_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<TaskListResult> Tasks_ListAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version)
@@ -2817,10 +2882,18 @@ namespace MyNS
 		/// Tasks_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
-		/// <param name="taskName">The name of the container registry task.</param>
+		/// <param name="taskName">The name of the container registry task.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_GetAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)
 		{
@@ -2850,10 +2923,18 @@ namespace MyNS
 		/// Tasks_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
-		/// <param name="taskName">The name of the container registry task.</param>
+		/// <param name="taskName">The name of the container registry task.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for creating a task.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_CreateAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName, Task_ requestBody)
@@ -2891,10 +2972,18 @@ namespace MyNS
 		/// Tasks_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
-		/// <param name="taskName">The name of the container registry task.</param>
+		/// <param name="taskName">The name of the container registry task.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Tasks_DeleteAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)
 		{
@@ -2918,10 +3007,18 @@ namespace MyNS
 		/// Tasks_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
-		/// <param name="taskName">The name of the container registry task.</param>
+		/// <param name="taskName">The name of the container registry task.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="requestBody">The parameters for updating a task.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_UpdateAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName, TaskUpdateParameters requestBody)
@@ -2959,10 +3056,18 @@ namespace MyNS
 		/// Tasks_GetDetails subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/tasks/{taskName}/listDetails
 		/// </summary>
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
-		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
-		/// <param name="registryName">The name of the container registry.</param>
+		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.
+		/// Min length: 1
+		// </param>
+		/// <param name="registryName">The name of the container registry.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <param name="api_version">The client API version.</param>
-		/// <param name="taskName">The name of the container registry task.</param>
+		/// <param name="taskName">The name of the container registry task.
+		/// Max length: 50
+		/// Min length: 5
+		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_GetDetailsAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)
 		{

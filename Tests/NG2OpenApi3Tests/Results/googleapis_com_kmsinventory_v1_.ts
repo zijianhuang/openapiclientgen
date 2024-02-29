@@ -441,7 +441,10 @@ export namespace MyNS {
 		/** The full name of the ProtectedResourcesSummary resource. Example: projects/test-project/locations/us/keyRings/test-keyring/cryptoKeys/test-key/protectedResourcesSummary */
 		name?: string | null;
 
-		/** The number of distinct Cloud projects in the same Cloud organization as the key that have resources protected by the key. */
+		/**
+		 * The number of distinct Cloud projects in the same Cloud organization as the key that have resources protected by the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		projectCount?: number | null;
 
 		/** The total number of protected resources in the same Cloud organization as the key. */
@@ -463,7 +466,10 @@ export namespace MyNS {
 		/** The full name of the ProtectedResourcesSummary resource. Example: projects/test-project/locations/us/keyRings/test-keyring/cryptoKeys/test-key/protectedResourcesSummary */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of distinct Cloud projects in the same Cloud organization as the key that have resources protected by the key. */
+		/**
+		 * The number of distinct Cloud projects in the same Cloud organization as the key that have resources protected by the key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		projectCount: FormControl<number | null | undefined>,
 
 		/** The total number of protected resources in the same Cloud organization as the key. */
@@ -528,6 +534,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/cryptoKeys
 		 * @param {string} parent Required. The Google Cloud project for which to retrieve key metadata, in the format `projects/*`
 		 * @param {number} pageSize Optional. The maximum number of keys to return. The service may return fewer than this value. If unspecified, at most 1000 keys will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Pass this into a subsequent request in order to receive the next page of results.
 		 * @return {GoogleCloudKmsInventoryV1ListCryptoKeysResponse} Successful response
 		 */
@@ -541,6 +548,7 @@ export namespace MyNS {
 		 * @param {string} scope Required. Resource name of the organization. Example: organizations/123
 		 * @param {string} cryptoKey Required. The resource name of the CryptoKey.
 		 * @param {number} pageSize The maximum number of resources to return. The service may return fewer than this value. If unspecified, at most 500 resources will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous KeyTrackingService.SearchProtectedResources call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to KeyTrackingService.SearchProtectedResources must match the call that provided the page token.
 		 * @param {Array<string>} resourceTypes Optional. A list of resource types that this request searches for. If empty, it will search all the [trackable resource types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types). Regular expressions are also supported. For example: * `compute.googleapis.com.*` snapshots resources whose type starts with `compute.googleapis.com`. * `.*Image` snapshots resources whose type ends with `Image`. * `.*Image.*` snapshots resources whose type contains `Image`. See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported regular expression syntax. If the regular expression does not match any supported resource type, an INVALID_ARGUMENT error will be returned.
 		 * @return {GoogleCloudKmsInventoryV1SearchProtectedResourcesResponse} Successful response

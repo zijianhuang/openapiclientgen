@@ -25,7 +25,10 @@ export namespace MyNS {
 		/** An enumeration value representing the item's availability (possibility of being purchased). <br><br><b>Values: </b>    <ul>  <li>AVAILABLE</li>    <li>TEMPORARILY_UNAVAILABLE</li>     <li>UNAVAILABLE</li> </ul>  Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityEnum'>eBay API documentation</a> */
 		availability?: string | null;
 
-		/** This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value. */
+		/**
+		 * This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityThreshold?: number | null;
 
 		/** <a name="display-item-quantity"></a> This column has a value only when the seller sets their <b>Display Item Quantity</b> preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item.    <br><br> The following are the <b>Display Item Quantity</b> preferences the seller can set. <br><ul><li> <b> Display "More than 10 available" in your listing (if applicable)</b> <br>If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column. </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> columns will be null  and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column.<br><br><b>Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityThresholdEnum'>eBay API documentation</a> */
@@ -76,7 +79,10 @@ export namespace MyNS {
 		/** The eBay product identifier of a product from the eBay product catalog. You can use this value in the Browse API <a href="/api-docs/buy/browse/resources/item_summary/methods/search">search</a> method to retrieve items for this product and in the <a href="/api-docs/buy/marketing/resources/methods">Marketing API</a> methods to retrieve 'also viewed' and 'also bought' products to encourage up-selling and cross-selling. */
 		epid?: string | null;
 
-		/** The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned. */
+		/**
+		 * The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedAvailableQuantity?: number | null;
 
 		/** In cases where items could vary by gender, this specifies for which gender the product is intended. Possible values include male, female, and unisex. */
@@ -157,7 +163,10 @@ export namespace MyNS {
 		/** A semicolon separated list of the name/value pairs for the aspects of the item, which are BASE64 encoded. The aspect label is separated by a pipe (|), the aspect name and value are separated by a colon (:) and the name/value pairs are separated by a semicolon (;). <p><b> Example without Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b> <br>&nbsp;&nbsp;&nbsp;<code><em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em></code> </p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):    <br>&nbsp;&nbsp;&nbsp;<code>U2l6ZQ==<b style="font-family: 'Arial Black';">:</b>WEw=<b style="font-family: 'Arial Black';">;</b>Q29sb3I=<b style="font-family: 'Arial Black';">:</b>UmVk<b style="font-family: 'Arial Black';">;</b>U2xlZXZlcw==<b style="font-family: 'Arial Black';">:</b>TG9uZw==</code> </p>    <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Size:XL;Color:Red;Sleeves:Long </p>        <p><br><b> Example with Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b>   <br>&nbsp;&nbsp;&nbsp;<code><em>encodedLabel</em>|<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedLabel</em>|</code></p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):  <br>&nbsp;&nbsp;&nbsp;<code>UHJvZHVjdCBJZGVudGlmaWVycw==<b style="font-family: 'Arial Black';">|</b>R1RJTg==<b style="font-family: 'Arial Black';">:</b>MDE5MDE5ODA2NjYzMw==<b style="font-family: 'Arial Black';">;</b>QlJBTkQ=<b style="font-family: 'Arial Black';">:</b>QXBwbGU=<b style="font-family: 'Arial Black';">;</b>UHJvZHVjdCBLZXkgRmVhdHVyZXM=<b style="font-family: 'Arial Black';">|</b>TW9kZWw=<b style="font-family: 'Arial Black';">:</b>aVBob25lIDc=</code> </p>        <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Product Identifiers|GTIN:0190198066633;BRAND:Apple;Product Key Features|Model:iPhone 7</p>        <p><span class="tablenote"><b>Note: </b> The separators (<code> |  :  ; </code>) are <i> not</i> encoded. You must decode each label, name, and value separately. You cannot decode the entire string.</b></p> <p>For more information, see <a href="/api-docs/buy/static/api-feed.html#encoded-aspects">Encoded Aspects</a> in the Buying Integration Guide.</p> */
 		localizedAspects?: string | null;
 
-		/** The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.  <br><br><b>For example:</b> <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span> */
+		/**
+		 * The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.  <br><br><b>For example:</b> <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize?: number | null;
 
 		/** The material that the item is made of. */
@@ -205,7 +214,10 @@ export namespace MyNS {
 		/** A pipe separated list of the qualified programs available for the item, such as EBAY_PLUS and AUTHENTICITY_GUARANTEE.  <br><br>eBay Plus is a premium account option for buyers, which provides benefits such as fast free domestic shipping and free returns on selected items. Top-Rated eBay sellers must opt in to eBay Plus to be able to offer the program on qualifying listings. Sellers must commit to next-day delivery of those items.  <span class="tablenote"><b>Note: </b> eBay Plus is available only to buyers in Germany, Austria, and Australia marketplaces. </span><br><br>The eBay Authenticity Guarantee program enables third-party authenticators to perform authentication verification inspections on items such as watches and sneakers. */
 		qualifiedPrograms?: string | null;
 
-		/** The number of items used when calculating the estimation information. */
+		/**
+		 * The number of items used when calculating the estimation information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityUsedForEstimate?: number | null;
 
 		/** An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:RefundMethodEnum'>eBay API documentation</a> */
@@ -220,7 +232,10 @@ export namespace MyNS {
 		/** An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. <br><br><b>TimeDurationUnitEnum</b> is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be <code>DAY</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/bas:TimeDurationUnitEnum'>eBay API documentation</a> */
 		returnPeriodUnit?: string | null;
 
-		/** The amount of days that the buyer has to return the item after the purchase date. For example, if this value is '30', the return period is 30 days. */
+		/**
+		 * The amount of days that the buyer has to return the item after the purchase date. For example, if this value is '30', the return period is 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnPeriodValue?: number | null;
 
 		/** The party responsible for the return shipping costs when an item is returned. <br><br><b>Valid Values: </b> <code>BUYER</code> or <code>SELLER</code>  <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:ReturnShippingCostPayerEnum'>eBay API documentation</a> */
@@ -317,7 +332,10 @@ export namespace MyNS {
 		/** An enumeration value representing the item's availability (possibility of being purchased). <br><br><b>Values: </b>    <ul>  <li>AVAILABLE</li>    <li>TEMPORARILY_UNAVAILABLE</li>     <li>UNAVAILABLE</li> </ul>  Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityEnum'>eBay API documentation</a> */
 		availability: FormControl<string | null | undefined>,
 
-		/** This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value. */
+		/**
+		 * This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityThreshold: FormControl<number | null | undefined>,
 
 		/** <a name="display-item-quantity"></a> This column has a value only when the seller sets their <b>Display Item Quantity</b> preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item.    <br><br> The following are the <b>Display Item Quantity</b> preferences the seller can set. <br><ul><li> <b> Display "More than 10 available" in your listing (if applicable)</b> <br>If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column. </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> columns will be null  and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column.<br><br><b>Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityThresholdEnum'>eBay API documentation</a> */
@@ -368,7 +386,10 @@ export namespace MyNS {
 		/** The eBay product identifier of a product from the eBay product catalog. You can use this value in the Browse API <a href="/api-docs/buy/browse/resources/item_summary/methods/search">search</a> method to retrieve items for this product and in the <a href="/api-docs/buy/marketing/resources/methods">Marketing API</a> methods to retrieve 'also viewed' and 'also bought' products to encourage up-selling and cross-selling. */
 		epid: FormControl<string | null | undefined>,
 
-		/** The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned. */
+		/**
+		 * The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedAvailableQuantity: FormControl<number | null | undefined>,
 
 		/** In cases where items could vary by gender, this specifies for which gender the product is intended. Possible values include male, female, and unisex. */
@@ -449,7 +470,10 @@ export namespace MyNS {
 		/** A semicolon separated list of the name/value pairs for the aspects of the item, which are BASE64 encoded. The aspect label is separated by a pipe (|), the aspect name and value are separated by a colon (:) and the name/value pairs are separated by a semicolon (;). <p><b> Example without Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b> <br>&nbsp;&nbsp;&nbsp;<code><em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em></code> </p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):    <br>&nbsp;&nbsp;&nbsp;<code>U2l6ZQ==<b style="font-family: 'Arial Black';">:</b>WEw=<b style="font-family: 'Arial Black';">;</b>Q29sb3I=<b style="font-family: 'Arial Black';">:</b>UmVk<b style="font-family: 'Arial Black';">;</b>U2xlZXZlcw==<b style="font-family: 'Arial Black';">:</b>TG9uZw==</code> </p>    <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Size:XL;Color:Red;Sleeves:Long </p>        <p><br><b> Example with Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b>   <br>&nbsp;&nbsp;&nbsp;<code><em>encodedLabel</em>|<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedLabel</em>|</code></p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):  <br>&nbsp;&nbsp;&nbsp;<code>UHJvZHVjdCBJZGVudGlmaWVycw==<b style="font-family: 'Arial Black';">|</b>R1RJTg==<b style="font-family: 'Arial Black';">:</b>MDE5MDE5ODA2NjYzMw==<b style="font-family: 'Arial Black';">;</b>QlJBTkQ=<b style="font-family: 'Arial Black';">:</b>QXBwbGU=<b style="font-family: 'Arial Black';">;</b>UHJvZHVjdCBLZXkgRmVhdHVyZXM=<b style="font-family: 'Arial Black';">|</b>TW9kZWw=<b style="font-family: 'Arial Black';">:</b>aVBob25lIDc=</code> </p>        <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Product Identifiers|GTIN:0190198066633;BRAND:Apple;Product Key Features|Model:iPhone 7</p>        <p><span class="tablenote"><b>Note: </b> The separators (<code> |  :  ; </code>) are <i> not</i> encoded. You must decode each label, name, and value separately. You cannot decode the entire string.</b></p> <p>For more information, see <a href="/api-docs/buy/static/api-feed.html#encoded-aspects">Encoded Aspects</a> in the Buying Integration Guide.</p> */
 		localizedAspects: FormControl<string | null | undefined>,
 
-		/** The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.  <br><br><b>For example:</b> <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span> */
+		/**
+		 * The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.  <br><br><b>For example:</b> <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize: FormControl<number | null | undefined>,
 
 		/** The material that the item is made of. */
@@ -497,7 +521,10 @@ export namespace MyNS {
 		/** A pipe separated list of the qualified programs available for the item, such as EBAY_PLUS and AUTHENTICITY_GUARANTEE.  <br><br>eBay Plus is a premium account option for buyers, which provides benefits such as fast free domestic shipping and free returns on selected items. Top-Rated eBay sellers must opt in to eBay Plus to be able to offer the program on qualifying listings. Sellers must commit to next-day delivery of those items.  <span class="tablenote"><b>Note: </b> eBay Plus is available only to buyers in Germany, Austria, and Australia marketplaces. </span><br><br>The eBay Authenticity Guarantee program enables third-party authenticators to perform authentication verification inspections on items such as watches and sneakers. */
 		qualifiedPrograms: FormControl<string | null | undefined>,
 
-		/** The number of items used when calculating the estimation information. */
+		/**
+		 * The number of items used when calculating the estimation information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityUsedForEstimate: FormControl<number | null | undefined>,
 
 		/** An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:RefundMethodEnum'>eBay API documentation</a> */
@@ -512,7 +539,10 @@ export namespace MyNS {
 		/** An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. <br><br><b>TimeDurationUnitEnum</b> is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be <code>DAY</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/bas:TimeDurationUnitEnum'>eBay API documentation</a> */
 		returnPeriodUnit: FormControl<string | null | undefined>,
 
-		/** The amount of days that the buyer has to return the item after the purchase date. For example, if this value is '30', the return period is 30 days. */
+		/**
+		 * The amount of days that the buyer has to return the item after the purchase date. For example, if this value is '30', the return period is 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnPeriodValue: FormControl<number | null | undefined>,
 
 		/** The party responsible for the return shipping costs when an item is returned. <br><br><b>Valid Values: </b> <code>BUYER</code> or <code>SELLER</code>  <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:ReturnShippingCostPayerEnum'>eBay API documentation</a> */
@@ -864,7 +894,10 @@ export namespace MyNS {
 		/** An enumeration value representing the item's availability (possibility of being purchased). <br><br><b>Values: </b>    <ul>  <li>AVAILABLE</li>    <li>TEMPORARILY_UNAVAILABLE</li>     <li>UNAVAILABLE</li> </ul>  Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityEnum'>eBay API documentation</a> */
 		availability?: string | null;
 
-		/** This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value. */
+		/**
+		 * This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityThreshold?: number | null;
 
 		/** <a name="display-item-quantity"></a> This column has a value only when the seller sets their <b>Display Item Quantity</b> preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item.    <br><br> The following are the <b>Display Item Quantity</b> preferences the seller can set. <br><ul><li> <b> Display "More than 10 available" in your listing (if applicable)</b> <br>If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column. </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> columns will be null  and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column.<br><br><b>Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityThresholdEnum'>eBay API documentation</a> */
@@ -942,7 +975,10 @@ export namespace MyNS {
 		/** The eBay product identifier of a product from the eBay product catalog. You can use this value in the Browse API <a href="/api-docs/buy/browse/resources/item_summary/methods/search">search</a> method to retrieve items for this product and in the <a href="/api-docs/buy/marketing/resources/methods">Marketing API</a> methods to retrieve 'also viewed' and 'also bought' products to encourage up-selling and cross-selling. */
 		epid?: string | null;
 
-		/** The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned. */
+		/**
+		 * The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedAvailableQuantity?: number | null;
 
 		/** In cases where items could vary by gender, this specifies for which gender the product is intended. Possible values include male, female, and unisex. */
@@ -1011,7 +1047,10 @@ export namespace MyNS {
 		/** A semicolon separated list of the name/value pairs for the aspects of the item, which are BASE64 encoded. The aspect label is separated by a pipe (|), the aspect name and value are separated by a colon (:) and the name/value pairs are separated by a semicolon (;). <p><b> Example without Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b> <br>&nbsp;&nbsp;&nbsp;<code><em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em></code> </p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):    <br>&nbsp;&nbsp;&nbsp;<code>U2l6ZQ==<b style="font-family: 'Arial Black';">:</b>WEw=<b style="font-family: 'Arial Black';">;</b>Q29sb3I=<b style="font-family: 'Arial Black';">:</b>UmVk<b style="font-family: 'Arial Black';">;</b>U2xlZXZlcw==<b style="font-family: 'Arial Black';">:</b>TG9uZw==</code> </p>    <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Size:XL;Color:Red;Sleeves:Long </p>        <p><br><b> Example with Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b>   <br>&nbsp;&nbsp;&nbsp;<code><em>encodedLabel</em>|<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedLabel</em>|</code></p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):  <br>&nbsp;&nbsp;&nbsp;<code>UHJvZHVjdCBJZGVudGlmaWVycw==<b style="font-family: 'Arial Black';">|</b>R1RJTg==<b style="font-family: 'Arial Black';">:</b>MDE5MDE5ODA2NjYzMw==<b style="font-family: 'Arial Black';">;</b>QlJBTkQ=<b style="font-family: 'Arial Black';">:</b>QXBwbGU=<b style="font-family: 'Arial Black';">;</b>UHJvZHVjdCBLZXkgRmVhdHVyZXM=<b style="font-family: 'Arial Black';">|</b>TW9kZWw=<b style="font-family: 'Arial Black';">:</b>aVBob25lIDc=</code> </p>        <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Product Identifiers|GTIN:0190198066633;BRAND:Apple;Product Key Features|Model:iPhone 7</p>        <p><span class="tablenote"><b>Note: </b> The separators (<code> |  :  ; </code>) are <i> not</i> encoded. You must decode each label, name, and value separately. You cannot decode the entire string.</b></p> <p>For more information, see <a href="/api-docs/buy/static/api-feed.html#encoded-aspects">Encoded Aspects</a> in the Buying Integration Guide.</p> */
 		localizedAspects?: string | null;
 
-		/** The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.   <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span> */
+		/**
+		 * The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.   <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize?: number | null;
 
 		/** The material that the item is made of. */
@@ -1044,7 +1083,10 @@ export namespace MyNS {
 		/** A pipe separated list of the qualified programs available for the item, such as EBAY_PLUS and AUTHENTICITY_GUARANTEE.  <br><br>eBay Plus is a premium account option for buyers, which provides benefits such as fast free domestic shipping and free returns on selected items. Top-Rated eBay sellers must opt in to eBay Plus to be able to offer the program on qualifying listings. Sellers must commit to next-day delivery of those items.  <span class="tablenote"><b>Note: </b> eBay Plus is available only to buyers in Germany, Austria, and Australia marketplaces. </span><br><br>The eBay Authenticity Guarantee program enables third-party authenticators to perform authentication verification inspections on items such as watches and sneakers. */
 		qualifiedPrograms?: string | null;
 
-		/** The number of items used when calculating the shipping estimation information. */
+		/**
+		 * The number of items used when calculating the shipping estimation information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityUsedForEstimate?: number | null;
 
 		/** An enumeration value representing how a buyer is refunded when an item is returned. <br><br>Code so that your app gracefully handles any future changes to this list.  For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:RefundMethodEnum'>eBay API documentation</a> */
@@ -1059,7 +1101,10 @@ export namespace MyNS {
 		/** An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. <br><br><b>TimeDurationUnitEnum</b> is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be <code>DAY</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/bas:TimeDurationUnitEnum'>eBay API documentation</a> */
 		returnPeriodUnit?: string | null;
 
-		/** The amount of days that the buyer has to return the item after the purchase date. For example, if this value is <code>30</code>, the return period is 30 days. */
+		/**
+		 * The amount of days that the buyer has to return the item after the purchase date. For example, if this value is <code>30</code>, the return period is 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnPeriodValue?: number | null;
 
 		/** An enumeration value that indicates the party responsible for the return shipping costs when an item is returned. <br><br><b>Valid Values: </b> <code>BUYER</code> or <code>SELLER</code> <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:ReturnShippingCostPayerEnum'>eBay API documentation</a> */
@@ -1165,7 +1210,10 @@ export namespace MyNS {
 		/** An enumeration value representing the item's availability (possibility of being purchased). <br><br><b>Values: </b>    <ul>  <li>AVAILABLE</li>    <li>TEMPORARILY_UNAVAILABLE</li>     <li>UNAVAILABLE</li> </ul>  Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityEnum'>eBay API documentation</a> */
 		availability: FormControl<string | null | undefined>,
 
-		/** This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value. */
+		/**
+		 * This column has a value only when the seller sets their '<a href="#display-item-quantity">display item quantity</a>' preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be "10", which is the threshold value. <br><br>Code so that your app gracefully handles any future changes to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityThreshold: FormControl<number | null | undefined>,
 
 		/** <a name="display-item-quantity"></a> This column has a value only when the seller sets their <b>Display Item Quantity</b> preference to <b> Display "More than 10 available" in your listing (if applicable)</b>. The value of this column will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item.    <br><br> The following are the <b>Display Item Quantity</b> preferences the seller can set. <br><ul><li> <b> Display "More than 10 available" in your listing (if applicable)</b> <br>If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column. </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> columns will be null  and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> column.<br><br><b>Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:AvailabilityThresholdEnum'>eBay API documentation</a> */
@@ -1243,7 +1291,10 @@ export namespace MyNS {
 		/** The eBay product identifier of a product from the eBay product catalog. You can use this value in the Browse API <a href="/api-docs/buy/browse/resources/item_summary/methods/search">search</a> method to retrieve items for this product and in the <a href="/api-docs/buy/marketing/resources/methods">Marketing API</a> methods to retrieve 'also viewed' and 'also bought' products to encourage up-selling and cross-selling. */
 		epid: FormControl<string | null | undefined>,
 
-		/** The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned. */
+		/**
+		 * The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedAvailableQuantity: FormControl<number | null | undefined>,
 
 		/** In cases where items could vary by gender, this specifies for which gender the product is intended. Possible values include male, female, and unisex. */
@@ -1312,7 +1363,10 @@ export namespace MyNS {
 		/** A semicolon separated list of the name/value pairs for the aspects of the item, which are BASE64 encoded. The aspect label is separated by a pipe (|), the aspect name and value are separated by a colon (:) and the name/value pairs are separated by a semicolon (;). <p><b> Example without Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b> <br>&nbsp;&nbsp;&nbsp;<code><em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em></code> </p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):    <br>&nbsp;&nbsp;&nbsp;<code>U2l6ZQ==<b style="font-family: 'Arial Black';">:</b>WEw=<b style="font-family: 'Arial Black';">;</b>Q29sb3I=<b style="font-family: 'Arial Black';">:</b>UmVk<b style="font-family: 'Arial Black';">;</b>U2xlZXZlcw==<b style="font-family: 'Arial Black';">:</b>TG9uZw==</code> </p>    <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Size:XL;Color:Red;Sleeves:Long </p>        <p><br><b> Example with Label</b></p>    <p>&nbsp;&nbsp;<b> Encoded Format:</b>   <br>&nbsp;&nbsp;&nbsp;<code><em>encodedLabel</em>|<em>encodedName</em>:<em>encodedValue</em>;<em>encodedName</em>:<em>encodedValue</em>;<em>encodedLabel</em>|</code></p>       <p>&nbsp;&nbsp;<b> Encoded Example</b> (The delimiters are <b style="font-family: 'Arial Black';">emphasized</b>):  <br>&nbsp;&nbsp;&nbsp;<code>UHJvZHVjdCBJZGVudGlmaWVycw==<b style="font-family: 'Arial Black';">|</b>R1RJTg==<b style="font-family: 'Arial Black';">:</b>MDE5MDE5ODA2NjYzMw==<b style="font-family: 'Arial Black';">;</b>QlJBTkQ=<b style="font-family: 'Arial Black';">:</b>QXBwbGU=<b style="font-family: 'Arial Black';">;</b>UHJvZHVjdCBLZXkgRmVhdHVyZXM=<b style="font-family: 'Arial Black';">|</b>TW9kZWw=<b style="font-family: 'Arial Black';">:</b>aVBob25lIDc=</code> </p>        <p>&nbsp;&nbsp;<b> Decoded: </b> <br>&nbsp;&nbsp;&nbsp;Product Identifiers|GTIN:0190198066633;BRAND:Apple;Product Key Features|Model:iPhone 7</p>        <p><span class="tablenote"><b>Note: </b> The separators (<code> |  :  ; </code>) are <i> not</i> encoded. You must decode each label, name, and value separately. You cannot decode the entire string.</b></p> <p>For more information, see <a href="/api-docs/buy/static/api-feed.html#encoded-aspects">Encoded Aspects</a> in the Buying Integration Guide.</p> */
 		localizedAspects: FormControl<string | null | undefined>,
 
-		/** The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.   <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span> */
+		/**
+		 * The number of items in a lot. In other words, a lot size is the number of items that are being sold together.  <br><br>A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot,  such as the package of batteries shown in the example below.   <br><br><table border="1"> <tr> <tr>  <th>Item</th>  <th>Lot Definition</th> <th>Lot Size</th></tr>  <tr>  <td>A package of 24 AA batteries</td>  <td>A box of 10 packages</td>  <td>10  </td> </tr>  <tr>  <td>A P235/75-15 Goodyear tire </td>  <td>4 tires  </td>  <td>4  </td> </tr> <tr> <td>Fashion Jewelry Rings  </td> <td>Package of 100 assorted rings  </td> <td>100 </td> </tr></table>  <br><br><span class="tablenote"><b>Note: </b>  Lots are not supported in all categories.  </span>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize: FormControl<number | null | undefined>,
 
 		/** The material that the item is made of. */
@@ -1345,7 +1399,10 @@ export namespace MyNS {
 		/** A pipe separated list of the qualified programs available for the item, such as EBAY_PLUS and AUTHENTICITY_GUARANTEE.  <br><br>eBay Plus is a premium account option for buyers, which provides benefits such as fast free domestic shipping and free returns on selected items. Top-Rated eBay sellers must opt in to eBay Plus to be able to offer the program on qualifying listings. Sellers must commit to next-day delivery of those items.  <span class="tablenote"><b>Note: </b> eBay Plus is available only to buyers in Germany, Austria, and Australia marketplaces. </span><br><br>The eBay Authenticity Guarantee program enables third-party authenticators to perform authentication verification inspections on items such as watches and sneakers. */
 		qualifiedPrograms: FormControl<string | null | undefined>,
 
-		/** The number of items used when calculating the shipping estimation information. */
+		/**
+		 * The number of items used when calculating the shipping estimation information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityUsedForEstimate: FormControl<number | null | undefined>,
 
 		/** An enumeration value representing how a buyer is refunded when an item is returned. <br><br>Code so that your app gracefully handles any future changes to this list.  For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:RefundMethodEnum'>eBay API documentation</a> */
@@ -1360,7 +1417,10 @@ export namespace MyNS {
 		/** An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. <br><br><b>TimeDurationUnitEnum</b> is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be <code>DAY</code>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/bas:TimeDurationUnitEnum'>eBay API documentation</a> */
 		returnPeriodUnit: FormControl<string | null | undefined>,
 
-		/** The amount of days that the buyer has to return the item after the purchase date. For example, if this value is <code>30</code>, the return period is 30 days. */
+		/**
+		 * The amount of days that the buyer has to return the item after the purchase date. For example, if this value is <code>30</code>, the return period is 30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnPeriodValue: FormControl<number | null | undefined>,
 
 		/** An enumeration value that indicates the party responsible for the return shipping costs when an item is returned. <br><br><b>Valid Values: </b> <code>BUYER</code> or <code>SELLER</code> <br><br>Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/buy/feed/types/api:ReturnShippingCostPayerEnum'>eBay API documentation</a> */

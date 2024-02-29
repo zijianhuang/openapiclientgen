@@ -210,7 +210,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode?: string | null;
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -241,7 +244,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode: FormControl<string | null | undefined>,
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -675,7 +681,10 @@ export namespace MyNS {
 		/** Output only. The timestamp for when the answer was last modified. */
 		updateTime?: string | null;
 
-		/** Output only. The number of upvotes for the answer. */
+		/**
+		 * Output only. The number of upvotes for the answer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount?: number | null;
 	}
 
@@ -694,7 +703,10 @@ export namespace MyNS {
 		/** Output only. The timestamp for when the answer was last modified. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of upvotes for the answer. */
+		/**
+		 * Output only. The number of upvotes for the answer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAnswerFormGroup() {
@@ -1314,20 +1326,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -1691,26 +1715,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`. */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`. */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -1861,7 +1903,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -1874,7 +1919,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2031,14 +2079,20 @@ export namespace MyNS {
 		/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges. */
 		latlng?: LatLng;
 
-		/** The distance in kilometers of the area around the point. */
+		/**
+		 * The distance in kilometers of the area around the point.
+		 * Type: float
+		 */
 		radiusKm?: number | null;
 	}
 
 	/** A radius around a particular point (latitude/longitude). */
 	export interface PointRadiusFormProperties {
 
-		/** The distance in kilometers of the area around the point. */
+		/**
+		 * The distance in kilometers of the area around the point.
+		 * Type: float
+		 */
 		radiusKm: FormControl<number | null | undefined>,
 	}
 	export function CreatePointRadiusFormGroup() {
@@ -2119,7 +2173,10 @@ export namespace MyNS {
 		/** Optional. Specifies the field to sort reviews by. If unspecified, the order of reviews returned will default to `update_time desc`. Valid orders to sort by are `rating`, `rating desc` and `update_time desc`. `rating` will return reviews in ascending order. `update_time`(i.e. ascending order) is not supported. */
 		orderBy?: string | null;
 
-		/** How many reviews to fetch per page. The default value is 200. */
+		/**
+		 * How many reviews to fetch per page. The default value is 200.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** If specified, it fetches the next page of reviews. */
@@ -2135,7 +2192,10 @@ export namespace MyNS {
 		/** Optional. Specifies the field to sort reviews by. If unspecified, the order of reviews returned will default to `update_time desc`. Valid orders to sort by are `rating`, `rating desc` and `update_time desc`. `rating` will return reviews in ascending order. `update_time`(i.e. ascending order) is not supported. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** How many reviews to fetch per page. The default value is 200. */
+		/**
+		 * How many reviews to fetch per page. The default value is 200.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** If specified, it fetches the next page of reviews. */
@@ -2339,7 +2399,10 @@ export namespace MyNS {
 		/** Meeting rooms. Rooms at the hotel designated for business-related gatherings. Rooms are usually equipped with tables or desks, office chairs and audio/visual facilities to allow for presentations and conference calls. Also known as conference rooms. */
 		meetingRooms?: boolean | null;
 
-		/** Meeting rooms count. The number of meeting rooms at the property. */
+		/**
+		 * Meeting rooms count. The number of meeting rooms at the property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meetingRoomsCount?: number | null;
 
 		/** Meeting rooms count exception. */
@@ -2361,7 +2424,10 @@ export namespace MyNS {
 		/** Meeting rooms. Rooms at the hotel designated for business-related gatherings. Rooms are usually equipped with tables or desks, office chairs and audio/visual facilities to allow for presentations and conference calls. Also known as conference rooms. */
 		meetingRooms: FormControl<boolean | null | undefined>,
 
-		/** Meeting rooms count. The number of meeting rooms at the property. */
+		/**
+		 * Meeting rooms count. The number of meeting rooms at the property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		meetingRoomsCount: FormControl<number | null | undefined>,
 
 		/** Meeting rooms count exception. */
@@ -2416,26 +2482,38 @@ export namespace MyNS {
 	/** This message denotes calories information with an upper bound and lower bound range. Lower amount must be specified. Both lower and upper amounts are non-negative numbers. */
 	export interface CaloriesFact {
 
-		/** Required. Lower amount of calories */
+		/**
+		 * Required. Lower amount of calories
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerAmount?: number | null;
 
 		/** Required. Unit of the given calories information. */
 		unit?: CaloriesFactUnit | null;
 
-		/** Optional. Upper amount of calories */
+		/**
+		 * Optional. Upper amount of calories
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperAmount?: number | null;
 	}
 
 	/** This message denotes calories information with an upper bound and lower bound range. Lower amount must be specified. Both lower and upper amounts are non-negative numbers. */
 	export interface CaloriesFactFormProperties {
 
-		/** Required. Lower amount of calories */
+		/**
+		 * Required. Lower amount of calories
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerAmount: FormControl<number | null | undefined>,
 
 		/** Required. Unit of the given calories information. */
 		unit: FormControl<CaloriesFactUnit | null | undefined>,
 
-		/** Optional. Upper amount of calories */
+		/**
+		 * Optional. Upper amount of calories
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateCaloriesFactFormGroup() {
@@ -2456,7 +2534,10 @@ export namespace MyNS {
 		/** Names of the chain. */
 		chainNames?: Array<ChainName>;
 
-		/** Number of locations that are part of this chain. */
+		/**
+		 * Number of locations that are part of this chain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locationCount?: number | null;
 
 		/** The chain's resource name, in the format `chains/{chain_place_id}`. */
@@ -2469,7 +2550,10 @@ export namespace MyNS {
 	/** A chain is a brand that your business's locations can be affiliated with. */
 	export interface ChainFormProperties {
 
-		/** Number of locations that are part of this chain. */
+		/**
+		 * Number of locations that are part of this chain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locationCount: FormControl<number | null | undefined>,
 
 		/** The chain's resource name, in the format `chains/{chain_place_id}`. */
@@ -2778,32 +2862,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -2820,20 +2928,32 @@ export namespace MyNS {
 	/** Dimensions of the media item. */
 	export interface Dimensions {
 
-		/** Height of the media item, in pixels. */
+		/**
+		 * Height of the media item, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels?: number | null;
 
-		/** Width of the media item, in pixels. */
+		/**
+		 * Width of the media item, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels?: number | null;
 	}
 
 	/** Dimensions of the media item. */
 	export interface DimensionsFormProperties {
 
-		/** Height of the media item, in pixels. */
+		/**
+		 * Height of the media item, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
-		/** Width of the media item, in pixels. */
+		/**
+		 * Width of the media item, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionsFormGroup() {
@@ -3217,7 +3337,10 @@ export namespace MyNS {
 		/** Deprecated. This field is ignored for all requests. */
 		maxCacheDuration?: string | null;
 
-		/** The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination. */
+		/**
+		 * The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numResults?: number | null;
 	}
 
@@ -3230,7 +3353,10 @@ export namespace MyNS {
 		/** Deprecated. This field is ignored for all requests. */
 		maxCacheDuration: FormControl<string | null | undefined>,
 
-		/** The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination. */
+		/**
+		 * The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numResults: FormControl<number | null | undefined>,
 	}
 	export function CreateFindMatchingLocationsRequestFormGroup() {
@@ -3364,7 +3490,10 @@ export namespace MyNS {
 		/** Restaurant exception. */
 		restaurantException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Restaurants count. The number of restaurants at the hotel. */
+		/**
+		 * Restaurants count. The number of restaurants at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restaurantsCount?: number | null;
 
 		/** Restaurants count exception. */
@@ -3440,7 +3569,10 @@ export namespace MyNS {
 		/** Restaurant exception. */
 		restaurantException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Restaurants count. The number of restaurants at the hotel. */
+		/**
+		 * Restaurants count. The number of restaurants at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restaurantsCount: FormControl<number | null | undefined>,
 
 		/** Restaurants count exception. */
@@ -3636,7 +3768,10 @@ export namespace MyNS {
 		/** Represents an amount of money with its currency type. */
 		price?: Money;
 
-		/** Optional. Number of people can be served by this food dish option. */
+		/**
+		 * Optional. Number of people can be served by this food dish option.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servesNumPeople?: number | null;
 
 		/** Optional. Spiciness level of the food dish. */
@@ -3646,7 +3781,10 @@ export namespace MyNS {
 	/** Attributes of a food item/dish. */
 	export interface FoodMenuItemAttributesFormProperties {
 
-		/** Optional. Number of people can be served by this food dish option. */
+		/**
+		 * Optional. Number of people can be served by this food dish option.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servesNumPeople: FormControl<number | null | undefined>,
 
 		/** Optional. Spiciness level of the food dish. */
@@ -3713,26 +3851,38 @@ export namespace MyNS {
 	/** This message denotes nutrition information with an upper bound and lower bound range and can be represented by mass unit. Lower amount must be specified. Both lower and upper amounts are non-negative numbers. */
 	export interface NutritionFact {
 
-		/** Required. Lower amount of nutrition */
+		/**
+		 * Required. Lower amount of nutrition
+		 * Type: double
+		 */
 		lowerAmount?: number | null;
 
 		/** Required. Unit of the given nutrition information. */
 		unit?: NutritionFactUnit | null;
 
-		/** Optional. Upper amount of nutrition */
+		/**
+		 * Optional. Upper amount of nutrition
+		 * Type: double
+		 */
 		upperAmount?: number | null;
 	}
 
 	/** This message denotes nutrition information with an upper bound and lower bound range and can be represented by mass unit. Lower amount must be specified. Both lower and upper amounts are non-negative numbers. */
 	export interface NutritionFactFormProperties {
 
-		/** Required. Lower amount of nutrition */
+		/**
+		 * Required. Lower amount of nutrition
+		 * Type: double
+		 */
 		lowerAmount: FormControl<number | null | undefined>,
 
 		/** Required. Unit of the given nutrition information. */
 		unit: FormControl<NutritionFactUnit | null | undefined>,
 
-		/** Optional. Upper amount of nutrition */
+		/**
+		 * Optional. Upper amount of nutrition
+		 * Type: double
+		 */
 		upperAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateNutritionFactFormGroup() {
@@ -3750,7 +3900,10 @@ export namespace MyNS {
 	/** Serving portion size of a food dish. */
 	export interface PortionSize {
 
-		/** Required. Number of the portion. */
+		/**
+		 * Required. Number of the portion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Required. The repeated name_info field is for the unit in multiple languages. */
@@ -3760,7 +3913,10 @@ export namespace MyNS {
 	/** Serving portion size of a food dish. */
 	export interface PortionSizeFormProperties {
 
-		/** Required. Number of the portion. */
+		/**
+		 * Required. Number of the portion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreatePortionSizeFormGroup() {
@@ -3984,19 +4140,28 @@ export namespace MyNS {
 		/** Executive floor exception. */
 		executiveFloorException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAdultOccupantsCount?: number | null;
 
 		/** Max adult occupants count exception. */
 		maxAdultOccupantsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max child occupants count. The total number of children allowed to stay overnight in the room. */
+		/**
+		 * Max child occupants count. The total number of children allowed to stay overnight in the room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildOccupantsCount?: number | null;
 
 		/** Max child occupants count exception. */
 		maxChildOccupantsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max occupants count. The total number of guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max occupants count. The total number of guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccupantsCount?: number | null;
 
 		/** Max occupants count exception. */
@@ -4048,19 +4213,28 @@ export namespace MyNS {
 		/** Executive floor exception. */
 		executiveFloorException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max adult occupants count. The total number of adult guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAdultOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max adult occupants count exception. */
 		maxAdultOccupantsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max child occupants count. The total number of children allowed to stay overnight in the room. */
+		/**
+		 * Max child occupants count. The total number of children allowed to stay overnight in the room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max child occupants count exception. */
 		maxChildOccupantsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max occupants count. The total number of guests allowed to stay overnight in the guestroom. */
+		/**
+		 * Max occupants count. The total number of guests allowed to stay overnight in the guestroom.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccupantsCount: FormControl<number | null | undefined>,
 
 		/** Max occupants count exception. */
@@ -4807,7 +4981,10 @@ export namespace MyNS {
 		/** Balcony exception. */
 		balconyException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Living area sq meters. The measurement in meters of the area of a guestroom's living space. */
+		/**
+		 * Living area sq meters. The measurement in meters of the area of a guestroom's living space.
+		 * Type: float
+		 */
 		livingAreaSqMeters?: number | null;
 
 		/** Living area sq meters exception. */
@@ -4847,7 +5024,10 @@ export namespace MyNS {
 		/** Balcony exception. */
 		balconyException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Living area sq meters. The measurement in meters of the area of a guestroom's living space. */
+		/**
+		 * Living area sq meters. The measurement in meters of the area of a guestroom's living space.
+		 * Type: float
+		 */
 		livingAreaSqMeters: FormControl<number | null | undefined>,
 
 		/** Living area sq meters exception. */
@@ -4899,25 +5079,37 @@ export namespace MyNS {
 	/** Information about sleeping features in the living area. */
 	export interface LivingAreaSleeping {
 
-		/** Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds. */
+		/**
+		 * Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bedsCount?: number | null;
 
 		/** Beds count exception. */
 		bedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed. */
+		/**
+		 * Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bunkBedsCount?: number | null;
 
 		/** Bunk beds count exception. */
 		bunkBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed */
+		/**
+		 * Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cribsCount?: number | null;
 
 		/** Cribs count exception. */
 		cribsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed. */
+		/**
+		 * Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doubleBedsCount?: number | null;
 
 		/** Double beds count exception. */
@@ -4935,7 +5127,10 @@ export namespace MyNS {
 		/** Hypoallergenic bedding exception. */
 		hypoallergenicBeddingException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king. */
+		/**
+		 * King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		kingBedsCount?: number | null;
 
 		/** King beds count exception. */
@@ -4947,31 +5142,46 @@ export namespace MyNS {
 		/** Memory foam pillows exception. */
 		memoryFoamPillowsException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots. */
+		/**
+		 * Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherBedsCount?: number | null;
 
 		/** Other beds count exception. */
 		otherBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm). */
+		/**
+		 * Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queenBedsCount?: number | null;
 
 		/** Queen beds count exception. */
 		queenBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request. */
+		/**
+		 * Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rollAwayBedsCount?: number | null;
 
 		/** Roll away beds count exception. */
 		rollAwayBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult. */
+		/**
+		 * Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		singleOrTwinBedsCount?: number | null;
 
 		/** Single or twin beds count exception. */
 		singleOrTwinBedsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress. */
+		/**
+		 * Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sofaBedsCount?: number | null;
 
 		/** Sofa beds count exception. */
@@ -4987,25 +5197,37 @@ export namespace MyNS {
 	/** Information about sleeping features in the living area. */
 	export interface LivingAreaSleepingFormProperties {
 
-		/** Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds. */
+		/**
+		 * Beds count. The number of permanent beds present in a guestroom. Does not include rollaway beds, cribs or sofabeds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bedsCount: FormControl<number | null | undefined>,
 
 		/** Beds count exception. */
 		bedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed. */
+		/**
+		 * Bunk beds count. The number of furniture pieces in which one framed mattress is fixed directly above another by means of a physical frame. This allows one person(s) to sleep in the bottom bunk and one person(s) to sleep in the top bunk. Also known as double decker bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bunkBedsCount: FormControl<number | null | undefined>,
 
 		/** Bunk beds count exception. */
 		bunkBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed */
+		/**
+		 * Cribs count. The number of small beds for an infant or toddler that the guestroom can obtain. The bed is surrounded by a high railing to prevent the child from falling or climbing out of the bed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cribsCount: FormControl<number | null | undefined>,
 
 		/** Cribs count exception. */
 		cribsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed. */
+		/**
+		 * Double beds count. The number of medium beds measuring 53"W x 75"L (135cm x 191cm). Also known as full size bed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doubleBedsCount: FormControl<number | null | undefined>,
 
 		/** Double beds count exception. */
@@ -5023,7 +5245,10 @@ export namespace MyNS {
 		/** Hypoallergenic bedding exception. */
 		hypoallergenicBeddingException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king. */
+		/**
+		 * King beds count. The number of large beds measuring 76"W x 80"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		kingBedsCount: FormControl<number | null | undefined>,
 
 		/** King beds count exception. */
@@ -5035,31 +5260,46 @@ export namespace MyNS {
 		/** Memory foam pillows exception. */
 		memoryFoamPillowsException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots. */
+		/**
+		 * Other beds count. The number of beds that are not standard mattress and boxspring setups such as Japanese tatami mats, trundle beds, air mattresses and cots.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherBedsCount: FormControl<number | null | undefined>,
 
 		/** Other beds count exception. */
 		otherBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm). */
+		/**
+		 * Queen beds count. The number of medium-large beds measuring 60"W x 80"L (152cm x 102cm).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queenBedsCount: FormControl<number | null | undefined>,
 
 		/** Queen beds count exception. */
 		queenBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request. */
+		/**
+		 * Roll away beds count. The number of mattresses on wheeled frames that can be folded in half and rolled away for easy storage that the guestroom can obtain upon request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rollAwayBedsCount: FormControl<number | null | undefined>,
 
 		/** Roll away beds count exception. */
 		rollAwayBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult. */
+		/**
+		 * Single or twin count beds. The number of smaller beds measuring 38"W x 75"L (97cm x 191cm) that can accommodate one adult.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		singleOrTwinBedsCount: FormControl<number | null | undefined>,
 
 		/** Single or twin beds count exception. */
 		singleOrTwinBedsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress. */
+		/**
+		 * Sofa beds count. The number of specially designed sofas that can be made to serve as a bed by lowering its hinged upholstered back to horizontal position or by pulling out a concealed mattress.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sofaBedsCount: FormControl<number | null | undefined>,
 
 		/** Sofa beds count exception. */
@@ -5930,13 +6170,19 @@ export namespace MyNS {
 		/** Kids stay free exception. */
 		kidsStayFreeException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildAge?: number | null;
 
 		/** Max child age exception. */
 		maxChildAgeException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxKidsStayFreeCount?: number | null;
 
 		/** Max kids stay free count exception. */
@@ -5979,13 +6225,19 @@ export namespace MyNS {
 		/** Kids stay free exception. */
 		kidsStayFreeException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max child age. The hotel allows children up to a certain age to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildAge: FormControl<number | null | undefined>,
 
 		/** Max child age exception. */
 		maxChildAgeException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee. */
+		/**
+		 * Max kids stay free count. The hotel allows a specific, defined number of children to stay in the room/suite of a parent or adult without an additional fee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxKidsStayFreeCount: FormControl<number | null | undefined>,
 
 		/** Max kids stay free count exception. */
@@ -6123,7 +6375,10 @@ export namespace MyNS {
 		/** Indoor pool exception. */
 		indoorPoolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Indoor pools count. The sum of all indoor pools at the hotel. */
+		/**
+		 * Indoor pools count. The sum of all indoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorPoolsCount?: number | null;
 
 		/** Indoor pools count exception. */
@@ -6147,7 +6402,10 @@ export namespace MyNS {
 		/** Outdoor pool exception. */
 		outdoorPoolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Outdoor pools count. The sum of all outdoor pools at the hotel. */
+		/**
+		 * Outdoor pools count. The sum of all outdoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outdoorPoolsCount?: number | null;
 
 		/** Outdoor pools count exception. */
@@ -6159,7 +6417,10 @@ export namespace MyNS {
 		/** Pool exception. */
 		poolException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Pools count. The sum of all pools at the hotel. */
+		/**
+		 * Pools count. The sum of all pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolsCount?: number | null;
 
 		/** Pools count exception. */
@@ -6211,7 +6472,10 @@ export namespace MyNS {
 		/** Indoor pool exception. */
 		indoorPoolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Indoor pools count. The sum of all indoor pools at the hotel. */
+		/**
+		 * Indoor pools count. The sum of all indoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorPoolsCount: FormControl<number | null | undefined>,
 
 		/** Indoor pools count exception. */
@@ -6235,7 +6499,10 @@ export namespace MyNS {
 		/** Outdoor pool exception. */
 		outdoorPoolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Outdoor pools count. The sum of all outdoor pools at the hotel. */
+		/**
+		 * Outdoor pools count. The sum of all outdoor pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outdoorPoolsCount: FormControl<number | null | undefined>,
 
 		/** Outdoor pools count exception. */
@@ -6247,7 +6514,10 @@ export namespace MyNS {
 		/** Pool exception. */
 		poolException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Pools count. The sum of all pools at the hotel. */
+		/**
+		 * Pools count. The sum of all pools at the hotel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolsCount: FormControl<number | null | undefined>,
 
 		/** Pools count exception. */
@@ -6315,25 +6585,37 @@ export namespace MyNS {
 	/** General factual information about the property's physical structure and important dates. */
 	export interface Property {
 
-		/** Built year. The year that construction of the property was completed. */
+		/**
+		 * Built year. The year that construction of the property was completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		builtYear?: number | null;
 
 		/** Built year exception. */
 		builtYearException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests. */
+		/**
+		 * Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floorsCount?: number | null;
 
 		/** Floors count exception. */
 		floorsCountException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior. */
+		/**
+		 * Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastRenovatedYear?: number | null;
 
 		/** Last renovated year exception. */
 		lastRenovatedYearException?: AccessibilityMobilityAccessibleElevatorException | null;
 
-		/** Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops. */
+		/**
+		 * Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roomsCount?: number | null;
 
 		/** Rooms count exception. */
@@ -6343,25 +6625,37 @@ export namespace MyNS {
 	/** General factual information about the property's physical structure and important dates. */
 	export interface PropertyFormProperties {
 
-		/** Built year. The year that construction of the property was completed. */
+		/**
+		 * Built year. The year that construction of the property was completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		builtYear: FormControl<number | null | undefined>,
 
 		/** Built year exception. */
 		builtYearException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests. */
+		/**
+		 * Floors count. The number of stories the building has from the ground floor to the top floor that are accessible to guests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floorsCount: FormControl<number | null | undefined>,
 
 		/** Floors count exception. */
 		floorsCountException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior. */
+		/**
+		 * Last renovated year. The year when the most recent renovation of the property was completed. Renovation may include all or any combination of the following: the units, the public spaces, the exterior, or the interior.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastRenovatedYear: FormControl<number | null | undefined>,
 
 		/** Last renovated year exception. */
 		lastRenovatedYearException: FormControl<AccessibilityMobilityAccessibleElevatorException | null | undefined>,
 
-		/** Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops. */
+		/**
+		 * Rooms count. The total number of rooms and suites bookable by guests for an overnight stay. Does not include event space, public spaces, conference rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or shops.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roomsCount: FormControl<number | null | undefined>,
 
 		/** Rooms count exception. */
@@ -7334,7 +7628,10 @@ export namespace MyNS {
 		/** If the number of answers exceeds the requested max page size, this field is populated with a token to fetch the next page of answers on a subsequent call. If there are no more answers, this field is not present in the response. */
 		nextPageToken?: string | null;
 
-		/** The total number of answers posted for this question across all pages. */
+		/**
+		 * The total number of answers posted for this question across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -7344,7 +7641,10 @@ export namespace MyNS {
 		/** If the number of answers exceeds the requested max page size, this field is populated with a token to fetch the next page of answers on a subsequent call. If there are no more answers, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of answers posted for this question across all pages. */
+		/**
+		 * The total number of answers posted for this question across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListAnswersResponseFormGroup() {
@@ -7387,7 +7687,10 @@ export namespace MyNS {
 		/** If the number of categories exceeded the requested page size, this field will be populated with a token to fetch the next page of categories on a subsequent call to `ListBusinessCategories`. */
 		nextPageToken?: string | null;
 
-		/** The total number of categories for the request parameters. */
+		/**
+		 * The total number of categories for the request parameters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCategoryCount?: number | null;
 	}
 	export interface ListBusinessCategoriesResponseFormProperties {
@@ -7395,7 +7698,10 @@ export namespace MyNS {
 		/** If the number of categories exceeded the requested page size, this field will be populated with a token to fetch the next page of categories on a subsequent call to `ListBusinessCategories`. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of categories for the request parameters. */
+		/**
+		 * The total number of categories for the request parameters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCategoryCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListBusinessCategoriesResponseFormGroup() {
@@ -7416,7 +7722,10 @@ export namespace MyNS {
 		/** If there are more media items than the requested page size, then this field is populated with a token to fetch the next page of media items on a subsequent call to ListCustomerMediaItems. */
 		nextPageToken?: string | null;
 
-		/** The total number of media items for this location, irrespective of pagination. This number is approximate, particularly when there are multiple pages of results. */
+		/**
+		 * The total number of media items for this location, irrespective of pagination. This number is approximate, particularly when there are multiple pages of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMediaItemCount?: number | null;
 	}
 
@@ -7426,7 +7735,10 @@ export namespace MyNS {
 		/** If there are more media items than the requested page size, then this field is populated with a token to fetch the next page of media items on a subsequent call to ListCustomerMediaItems. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of media items for this location, irrespective of pagination. This number is approximate, particularly when there are multiple pages of results. */
+		/**
+		 * The total number of media items for this location, irrespective of pagination. This number is approximate, particularly when there are multiple pages of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMediaItemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListCustomerMediaItemsResponseFormGroup() {
@@ -7861,7 +8173,10 @@ export namespace MyNS {
 		/** If the number of locations exceeded the requested page size, this field is populated with a token to fetch the next page of locations on a subsequent call to `ListLocations`. If there are no more locations, this field is not present in the response. */
 		nextPageToken?: string | null;
 
-		/** The approximate number of Locations in the list irrespective of pagination. */
+		/**
+		 * The approximate number of Locations in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -7871,7 +8186,10 @@ export namespace MyNS {
 		/** If the number of locations exceeded the requested page size, this field is populated with a token to fetch the next page of locations on a subsequent call to `ListLocations`. If there are no more locations, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The approximate number of Locations in the list irrespective of pagination. */
+		/**
+		 * The approximate number of Locations in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListLocationsResponseFormGroup() {
@@ -7892,7 +8210,10 @@ export namespace MyNS {
 		/** If there are more media items than the requested page size, then this field is populated with a token to fetch the next page of media items on a subsequent call to ListMediaItems. */
 		nextPageToken?: string | null;
 
-		/** The total number of media items for this location, irrespective of pagination. */
+		/**
+		 * The total number of media items for this location, irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMediaItemCount?: number | null;
 	}
 
@@ -7902,7 +8223,10 @@ export namespace MyNS {
 		/** If there are more media items than the requested page size, then this field is populated with a token to fetch the next page of media items on a subsequent call to ListMediaItems. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of media items for this location, irrespective of pagination. */
+		/**
+		 * The total number of media items for this location, irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalMediaItemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListMediaItemsResponseFormGroup() {
@@ -7923,7 +8247,10 @@ export namespace MyNS {
 		/** The requested questions, */
 		questions?: Array<Question>;
 
-		/** The total number of questions posted for this location across all pages. */
+		/**
+		 * The total number of questions posted for this location across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -7933,7 +8260,10 @@ export namespace MyNS {
 		/** If the number of questions exceeds the requested max page size, this field is populated with a token to fetch the next page of questions on a subsequent call. If there are no more questions, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of questions posted for this location across all pages. */
+		/**
+		 * The total number of questions posted for this location across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListQuestionsResponseFormGroup() {
@@ -7963,13 +8293,19 @@ export namespace MyNS {
 		/** Output only. A list of answers to the question, sorted by upvotes. This may not be a complete list of answers depending on the request parameters (answers_per_question) */
 		topAnswers?: Array<Answer>;
 
-		/** Output only. The total number of answers posted for this question. */
+		/**
+		 * Output only. The total number of answers posted for this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAnswerCount?: number | null;
 
 		/** Output only. The timestamp for when the question was last modified. */
 		updateTime?: string | null;
 
-		/** Output only. The number of upvotes for the question. */
+		/**
+		 * Output only. The number of upvotes for the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount?: number | null;
 	}
 
@@ -7985,13 +8321,19 @@ export namespace MyNS {
 		/** The text of the question. It should contain at least three words and the total length should be greater than or equal to 10 characters. The maximum length is 4096 characters. */
 		text: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of answers posted for this question. */
+		/**
+		 * Output only. The total number of answers posted for this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAnswerCount: FormControl<number | null | undefined>,
 
 		/** Output only. The timestamp for when the question was last modified. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of upvotes for the question. */
+		/**
+		 * Output only. The number of upvotes for the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionFormGroup() {
@@ -8016,7 +8358,10 @@ export namespace MyNS {
 		/** During pagination, if there are more locations available to be fetched in the next page, this field is populated with a token to fetch the next page of locations in a subsequent call. If there are no more locations to be fetched, this field is not present in the response. */
 		nextPageToken?: string | null;
 
-		/** The total number of recommended locations for this Business Profile account, irrespective of pagination. */
+		/**
+		 * The total number of recommended locations for this Business Profile account, irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -8026,7 +8371,10 @@ export namespace MyNS {
 		/** During pagination, if there are more locations available to be fetched in the next page, this field is populated with a token to fetch the next page of locations in a subsequent call. If there are no more locations to be fetched, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of recommended locations for this Business Profile account, irrespective of pagination. */
+		/**
+		 * The total number of recommended locations for this Business Profile account, irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListRecommendedGoogleLocationsResponseFormGroup() {
@@ -8041,7 +8389,10 @@ export namespace MyNS {
 	/** Response message for Reviews.ListReviews. */
 	export interface ListReviewsResponse {
 
-		/** The average star rating of all reviews for this location on a scale of 1 to 5, where 5 is the highest rating. */
+		/**
+		 * The average star rating of all reviews for this location on a scale of 1 to 5, where 5 is the highest rating.
+		 * Type: double
+		 */
 		averageRating?: number | null;
 
 		/** If the number of reviews exceeded the requested page size, this field is populated with a token to fetch the next page of reviews on a subsequent call to ListReviews. If there are no more reviews, this field is not present in the response. */
@@ -8050,20 +8401,29 @@ export namespace MyNS {
 		/** The reviews. */
 		reviews?: Array<Review>;
 
-		/** The total number of reviews for this location. */
+		/**
+		 * The total number of reviews for this location.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReviewCount?: number | null;
 	}
 
 	/** Response message for Reviews.ListReviews. */
 	export interface ListReviewsResponseFormProperties {
 
-		/** The average star rating of all reviews for this location on a scale of 1 to 5, where 5 is the highest rating. */
+		/**
+		 * The average star rating of all reviews for this location on a scale of 1 to 5, where 5 is the highest rating.
+		 * Type: double
+		 */
 		averageRating: FormControl<number | null | undefined>,
 
 		/** If the number of reviews exceeded the requested page size, this field is populated with a token to fetch the next page of reviews on a subsequent call to ListReviews. If there are no more reviews, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of reviews for this location. */
+		/**
+		 * The total number of reviews for this location.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReviewCount: FormControl<number | null | undefined>,
 	}
 	export function CreateListReviewsResponseFormGroup() {
@@ -8181,7 +8541,10 @@ export namespace MyNS {
 	/** Top regions where driving-direction requests originated from. */
 	export interface TopDirectionSources {
 
-		/** The number of days data is aggregated over. */
+		/**
+		 * The number of days data is aggregated over.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayCount?: number | null;
 
 		/** Regions sorted in descending order by count. */
@@ -8191,7 +8554,10 @@ export namespace MyNS {
 	/** Top regions where driving-direction requests originated from. */
 	export interface TopDirectionSourcesFormProperties {
 
-		/** The number of days data is aggregated over. */
+		/**
+		 * The number of days data is aggregated over.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTopDirectionSourcesFormGroup() {
@@ -8485,7 +8851,10 @@ export namespace MyNS {
 		/** Text query to search for. The search results from a query string will be less accurate than if providing an exact location, but can provide more inexact matches. */
 		query?: string | null;
 
-		/** The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination. */
+		/**
+		 * The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultCount?: number | null;
 	}
 
@@ -8495,7 +8864,10 @@ export namespace MyNS {
 		/** Text query to search for. The search results from a query string will be less accurate than if providing an exact location, but can provide more inexact matches. */
 		query: FormControl<string | null | undefined>,
 
-		/** The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination. */
+		/**
+		 * The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchGoogleLocationsRequestFormGroup() {
@@ -8725,6 +9097,7 @@ export namespace MyNS {
 		 * @param {string} filter A filter constraining the accounts to return. The response includes only entries that match the filter. If `filter` is empty, then no constraints are applied and all accounts (paginated) are retrieved for the requested account. For example, a request with the filter `type=USER_GROUP` will only return user groups.
 		 * @param {string} name The resource name of the account for which the list of directly accessible accounts is to be retrieved. This only makes sense for Organizations and User Groups. If empty, will return `ListAccounts` for the authenticated user.
 		 * @param {number} pageSize How many accounts to fetch per page. Default is 20, minimum is 2, and maximum page size is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of accounts is retrieved. The `pageToken` is returned when a call to `accounts.list` returns more results than can fit into the requested page size.
 		 * @return {ListAccountsResponse} Successful response
 		 */
@@ -8750,6 +9123,7 @@ export namespace MyNS {
 		 * @param {string} languageCode The BCP 47 code of language to get attribute display names in. If this language is not available, they will be provided in English.
 		 * @param {string} name Resource name of the location to look up available attributes.
 		 * @param {number} pageSize How many attributes to include per page. Default is 200, minimum is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of attribute metadata is retrieved. The `pageToken` is returned when a call to `attributes.list` returns more results than can fit into the requested page size.
 		 * @return {ListAttributeMetadataResponse} Successful response
 		 */
@@ -8762,6 +9136,7 @@ export namespace MyNS {
 		 * Get v4/categories
 		 * @param {string} languageCode The BCP 47 code of language. If the language is not available, it will default to English.
 		 * @param {number} pageSize How many categories to fetch per page. Default is 100, minimum is 1, and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of categories will be fetched.
 		 * @param {string} regionCode The ISO 3166-1 alpha-2 country code.
 		 * @param {string} searchTerm Optional filter string from user.
@@ -8790,6 +9165,7 @@ export namespace MyNS {
 		 * Get v4/chains:search
 		 * @param {string} chainDisplayName Search for a chain by its name. Exact/partial/fuzzy/related queries are supported. Examples: "walmart", "wal-mart", "walmmmart", "沃尔玛"
 		 * @param {number} resultCount The maximum number of matched chains to return from this query. The default is 10. The maximum possible value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SearchChainsResponse} Successful response
 		 */
 		Mybusiness_chains_search(chainDisplayName: string | null | undefined, resultCount: number | null | undefined): Observable<SearchChainsResponse> {
@@ -9012,6 +9388,7 @@ export namespace MyNS {
 		 * Get v4/{name}:recommendGoogleLocations
 		 * @param {string} name Name of the account resource to fetch recommended Google locations for.
 		 * @param {number} pageSize How many locations to fetch per page. Default is 25, minimum is 1, and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of locations is retrieved.
 		 * @return {ListRecommendedGoogleLocationsResponse} Successful response
 		 */
@@ -9075,6 +9452,7 @@ export namespace MyNS {
 		 * @param {string} parent The name of the question to fetch answers for.
 		 * @param {string} orderBy The order to return the answers. Valid options include 'update_time desc' and 'upvote_count desc', which will return the answers sorted descendingly by the requested field. The default sort order is 'update_time desc'.
 		 * @param {number} pageSize How many answers to fetch per page. The default and maximum `page_size` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of answers is retrieved.
 		 * @return {ListAnswersResponse} Successful response
 		 */
@@ -9108,6 +9486,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the location whose insurance networks will be listed. The name is in the form: accounts/{account_id}/locations/{location_id}
 		 * @param {string} languageCode Optional. The BCP 47 code for the language. If a language code is not provided, it defaults to English. Right now only 'en' is supported.
 		 * @param {number} pageSize How many insurance networks to return per page. The default value is 5000. Maximum page size is 10000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of insurance networks.
 		 * @return {ListInsuranceNetworksResponse} Successful response
 		 */
@@ -9131,6 +9510,7 @@ export namespace MyNS {
 		 * Get v4/{parent}/localPosts
 		 * @param {string} parent The name of the location whose local posts will be listed.
 		 * @param {number} pageSize How many local posts to return per page. Default of 20. The minimum is 1, and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of local posts.
 		 * @return {ListLocalPostsResponse} Successful response
 		 */
@@ -9156,6 +9536,7 @@ export namespace MyNS {
 		 * @param {string} languageCode The BCP 47 code of language to get display location properties in. If this language is not available, they will be provided in the language of the location. If neither is available, they will be provided in English. Deprecated. After August 15th, 2020, this field will no longer be applied. Instead, the language of the location will always be used.
 		 * @param {string} orderBy Sorting order for the request. Multiple fields should be comma-separated, following SQL syntax. The default sorting order is ascending. To specify descending order, a suffix " desc" should be added. Valid fields to order_by are location_name and store_code. For example: "location_name, store_code desc" or "location_name" or "store_code desc"
 		 * @param {number} pageSize How many locations to fetch per page. Default is 100, minimum is 1, and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, it fetches the next `page` of locations. The page token is returned by previous calls to `ListLocations` when there were more locations than could fit in the requested page size.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -9180,6 +9561,7 @@ export namespace MyNS {
 		 * Get v4/{parent}/media
 		 * @param {string} parent The name of the location whose media items will be listed.
 		 * @param {number} pageSize How many media items to return per page. The default value is 100, which is also the maximum supported number of media items able to be added to a location with the Google My Business API. Maximum page size is 2500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of media items.
 		 * @return {ListMediaItemsResponse} Successful response
 		 */
@@ -9202,6 +9584,7 @@ export namespace MyNS {
 		 * Get v4/{parent}/media/customers
 		 * @param {string} parent The name of the location whose customer media items will be listed.
 		 * @param {number} pageSize How many media items to return per page. The default value is 100, the maximum supported page size is 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of media items.
 		 * @return {ListCustomerMediaItemsResponse} Successful response
 		 */
@@ -9224,9 +9607,11 @@ export namespace MyNS {
 		 * Get v4/{parent}/questions
 		 * @param {string} parent The name of the location to fetch questions for.
 		 * @param {number} answersPerQuestion How many answers to fetch per question. The default and maximum `answers_per_question` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter A filter constraining the questions to return. The only filter currently supported is "ignore_answered=true"
 		 * @param {string} orderBy The order to return the questions. Valid options include 'update_time desc' and 'upvote_count desc', which will return the questions sorted descendingly by the requested field. The default sort order is 'update_time desc'.
 		 * @param {number} pageSize How many questions to fetch per page. The default and maximum `page_size` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, the next page of questions is retrieved.
 		 * @return {ListQuestionsResponse} Successful response
 		 */
@@ -9250,6 +9635,7 @@ export namespace MyNS {
 		 * @param {string} parent The name of the location to fetch reviews for.
 		 * @param {string} orderBy Specifies the field to sort reviews by. If unspecified, the order of reviews returned will default to `update_time desc`. Valid orders to sort by are `rating`, `rating desc` and `update_time desc`.
 		 * @param {number} pageSize How many reviews to fetch per page. The maximum `page_size` is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, it fetches the next page of reviews.
 		 * @return {ListReviewsResponse} Successful response
 		 */
@@ -9262,6 +9648,7 @@ export namespace MyNS {
 		 * Get v4/{parent}/verifications
 		 * @param {string} parent Resource name of the location that verification requests belong to.
 		 * @param {number} pageSize How many verification to include per page. If not set, return all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If specified, returns the next page of verifications.
 		 * @return {ListVerificationsResponse} Successful response
 		 */

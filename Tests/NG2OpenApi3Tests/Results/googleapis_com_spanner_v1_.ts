@@ -27,32 +27,56 @@ export namespace MyNS {
 	/** The autoscaling limits for the instance. Users can define the minimum and maximum compute capacity allocated to the instance, and the autoscaler will only scale within that range. Users can either use nodes or processing units to specify the limits, but should use the same unit to set both the min_limit and max_limit. */
 	export interface AutoscalingLimits {
 
-		/** Maximum number of nodes allocated to the instance. If set, this number should be greater than or equal to min_nodes. */
+		/**
+		 * Maximum number of nodes allocated to the instance. If set, this number should be greater than or equal to min_nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodes?: number | null;
 
-		/** Maximum number of processing units allocated to the instance. If set, this number should be multiples of 1000 and be greater than or equal to min_processing_units. */
+		/**
+		 * Maximum number of processing units allocated to the instance. If set, this number should be multiples of 1000 and be greater than or equal to min_processing_units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxProcessingUnits?: number | null;
 
-		/** Minimum number of nodes allocated to the instance. If set, this number should be greater than or equal to 1. */
+		/**
+		 * Minimum number of nodes allocated to the instance. If set, this number should be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodes?: number | null;
 
-		/** Minimum number of processing units allocated to the instance. If set, this number should be multiples of 1000. */
+		/**
+		 * Minimum number of processing units allocated to the instance. If set, this number should be multiples of 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProcessingUnits?: number | null;
 	}
 
 	/** The autoscaling limits for the instance. Users can define the minimum and maximum compute capacity allocated to the instance, and the autoscaler will only scale within that range. Users can either use nodes or processing units to specify the limits, but should use the same unit to set both the min_limit and max_limit. */
 	export interface AutoscalingLimitsFormProperties {
 
-		/** Maximum number of nodes allocated to the instance. If set, this number should be greater than or equal to min_nodes. */
+		/**
+		 * Maximum number of nodes allocated to the instance. If set, this number should be greater than or equal to min_nodes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodes: FormControl<number | null | undefined>,
 
-		/** Maximum number of processing units allocated to the instance. If set, this number should be multiples of 1000 and be greater than or equal to min_processing_units. */
+		/**
+		 * Maximum number of processing units allocated to the instance. If set, this number should be multiples of 1000 and be greater than or equal to min_processing_units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxProcessingUnits: FormControl<number | null | undefined>,
 
-		/** Minimum number of nodes allocated to the instance. If set, this number should be greater than or equal to 1. */
+		/**
+		 * Minimum number of nodes allocated to the instance. If set, this number should be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodes: FormControl<number | null | undefined>,
 
-		/** Minimum number of processing units allocated to the instance. If set, this number should be multiples of 1000. */
+		/**
+		 * Minimum number of processing units allocated to the instance. If set, this number should be multiples of 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProcessingUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoscalingLimitsFormGroup() {
@@ -69,20 +93,32 @@ export namespace MyNS {
 	/** The autoscaling targets for an instance. */
 	export interface AutoscalingTargets {
 
-		/** Required. The target high priority cpu utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 90] inclusive. */
+		/**
+		 * Required. The target high priority cpu utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 90] inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highPriorityCpuUtilizationPercent?: number | null;
 
-		/** Required. The target storage utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 99] inclusive. */
+		/**
+		 * Required. The target storage utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 99] inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageUtilizationPercent?: number | null;
 	}
 
 	/** The autoscaling targets for an instance. */
 	export interface AutoscalingTargetsFormProperties {
 
-		/** Required. The target high priority cpu utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 90] inclusive. */
+		/**
+		 * Required. The target high priority cpu utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 90] inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highPriorityCpuUtilizationPercent: FormControl<number | null | undefined>,
 
-		/** Required. The target storage utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 99] inclusive. */
+		/**
+		 * Required. The target storage utilization percentage that the autoscaler should be trying to achieve for the instance. This number is on a scale from 0 (no utilization) to 100 (full utilization). The valid range is [10, 99] inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageUtilizationPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoscalingTargetsFormGroup() {
@@ -216,7 +252,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -229,7 +268,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -293,7 +335,10 @@ export namespace MyNS {
 	/** The request for BatchCreateSessions. */
 	export interface BatchCreateSessionsRequest {
 
-		/** Required. The number of sessions to be created in this batch call. The API may return fewer than the requested number of sessions. If a specific number of sessions are desired, the client can make additional calls to BatchCreateSessions (adjusting session_count as necessary). */
+		/**
+		 * Required. The number of sessions to be created in this batch call. The API may return fewer than the requested number of sessions. If a specific number of sessions are desired, the client can make additional calls to BatchCreateSessions (adjusting session_count as necessary).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sessionCount?: number | null;
 
 		/** A session in the Cloud Spanner API. */
@@ -303,7 +348,10 @@ export namespace MyNS {
 	/** The request for BatchCreateSessions. */
 	export interface BatchCreateSessionsRequestFormProperties {
 
-		/** Required. The number of sessions to be created in this batch call. The API may return fewer than the requested number of sessions. If a specific number of sessions are desired, the client can make additional calls to BatchCreateSessions (adjusting session_count as necessary). */
+		/**
+		 * Required. The number of sessions to be created in this batch call. The API may return fewer than the requested number of sessions. If a specific number of sessions are desired, the client can make additional calls to BatchCreateSessions (adjusting session_count as necessary).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sessionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchCreateSessionsRequestFormGroup() {
@@ -822,7 +870,10 @@ export namespace MyNS {
 	/** Metadata associated with a parent-child relationship appearing in a PlanNode. */
 	export interface ChildLink {
 
-		/** The node to which the link points. */
+		/**
+		 * The node to which the link points.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childIndex?: number | null;
 
 		/** The type of the link. For example, in Hash Joins this could be used to distinguish between the build child and the probe child, or in the case of the child being an output variable, to represent the tag associated with the output variable. */
@@ -835,7 +886,10 @@ export namespace MyNS {
 	/** Metadata associated with a parent-child relationship appearing in a PlanNode. */
 	export interface ChildLinkFormProperties {
 
-		/** The node to which the link points. */
+		/**
+		 * The node to which the link points.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childIndex: FormControl<number | null | undefined>,
 
 		/** The type of the link. For example, in Hash Joins this could be used to distinguish between the build child and the probe child, or in the case of the child being an output variable, to represent the tag associated with the output variable. */
@@ -948,7 +1002,10 @@ export namespace MyNS {
 		/** The unit of the context value. */
 		unit?: string | null;
 
-		/** The value for the context. */
+		/**
+		 * The value for the context.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
@@ -961,7 +1018,10 @@ export namespace MyNS {
 		/** The unit of the context value. */
 		unit: FormControl<string | null | undefined>,
 
-		/** The value for the context. */
+		/**
+		 * The value for the context.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateContextValueFormGroup() {
@@ -1085,7 +1145,10 @@ export namespace MyNS {
 		/** If set, the time at which this operation failed or was completed successfully. */
 		endTime?: string | null;
 
-		/** Percent completion of the operation. Values are between 0 and 100 inclusive. */
+		/**
+		 * Percent completion of the operation. Values are between 0 and 100 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Time the request was received. */
@@ -1098,7 +1161,10 @@ export namespace MyNS {
 		/** If set, the time at which this operation failed or was completed successfully. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Percent completion of the operation. Values are between 0 and 100 inclusive. */
+		/**
+		 * Percent completion of the operation. Values are between 0 and 100 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time the request was received. */
@@ -1429,7 +1495,10 @@ export namespace MyNS {
 		/** If set, the time at which this operation failed or was completed successfully. */
 		endTime?: string | null;
 
-		/** Percent completion of the operation. Values are between 0 and 100 inclusive. */
+		/**
+		 * Percent completion of the operation. Values are between 0 and 100 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Time the request was received. */
@@ -1442,7 +1511,10 @@ export namespace MyNS {
 		/** If set, the time at which this operation failed or was completed successfully. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Percent completion of the operation. Values are between 0 and 100 inclusive. */
+		/**
+		 * Percent completion of the operation. Values are between 0 and 100 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time the request was received. */
@@ -1557,10 +1629,16 @@ export namespace MyNS {
 		/** Required. A unique identifier for the instance, which cannot be changed after the instance is created. Values are of the form `projects//instances/a-z*[a-z0-9]`. The final segment of the name must be between 2 and 64 characters in length. */
 		name?: string | null;
 
-		/** The number of nodes allocated to this instance. At most one of either node_count or processing_units should be present in the message. Users can set the node_count field to specify the target number of nodes allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units. */
+		/**
+		 * The number of nodes allocated to this instance. At most one of either node_count or processing_units should be present in the message. Users can set the node_count field to specify the target number of nodes allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
-		/** The number of processing units allocated to this instance. At most one of processing_units or node_count should be present in the message. Users can set the processing_units field to specify the target number of processing units allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units. */
+		/**
+		 * The number of processing units allocated to this instance. At most one of processing_units or node_count should be present in the message. Users can set the processing_units field to specify the target number of processing units allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processingUnits?: number | null;
 
 		/** Output only. The current instance state. For CreateInstance, the state must be either omitted or set to `CREATING`. For UpdateInstance, the state must be either omitted or set to `READY`. */
@@ -1591,10 +1669,16 @@ export namespace MyNS {
 		/** Required. A unique identifier for the instance, which cannot be changed after the instance is created. Values are of the form `projects//instances/a-z*[a-z0-9]`. The final segment of the name must be between 2 and 64 characters in length. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of nodes allocated to this instance. At most one of either node_count or processing_units should be present in the message. Users can set the node_count field to specify the target number of nodes allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units. */
+		/**
+		 * The number of nodes allocated to this instance. At most one of either node_count or processing_units should be present in the message. Users can set the node_count field to specify the target number of nodes allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
-		/** The number of processing units allocated to this instance. At most one of processing_units or node_count should be present in the message. Users can set the processing_units field to specify the target number of processing units allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units. */
+		/**
+		 * The number of processing units allocated to this instance. At most one of processing_units or node_count should be present in the message. Users can set the processing_units field to specify the target number of processing units allocated to the instance. This may be zero in API responses for instances that are not yet in state `READY`. See [the documentation](https://cloud.google.com/spanner/docs/compute-capacity) for more information about nodes and processing units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processingUnits: FormControl<number | null | undefined>,
 
 		/** Output only. The current instance state. For CreateInstance, the state must be either omitted or set to `CREATING`. For UpdateInstance, the state must be either omitted or set to `READY`. */
@@ -2370,7 +2454,10 @@ export namespace MyNS {
 		/** The execution statistics associated with the node, contained in a group of key-value pairs. Only present if the plan was returned as a result of a profile query. For example, number of executions, number of rows/time per execution etc. */
 		executionStats?: {[id: string]: any };
 
-		/** The `PlanNode`'s index in node list. */
+		/**
+		 * The `PlanNode`'s index in node list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Used to determine the type of node. May be needed for visualizing different kinds of nodes differently. For example, If the node is a SCALAR node, it will have a condensed representation which can be used to directly embed a description of the node in its parent. */
@@ -2392,7 +2479,10 @@ export namespace MyNS {
 		/** The execution statistics associated with the node, contained in a group of key-value pairs. Only present if the plan was returned as a result of a profile query. For example, number of executions, number of rows/time per execution etc. */
 		executionStats: FormControl<{[id: string]: any } | null | undefined>,
 
-		/** The `PlanNode`'s index in node list. */
+		/**
+		 * The `PlanNode`'s index in node list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Used to determine the type of node. May be needed for visualizing different kinds of nodes differently. For example, If the node is a SCALAR node, it will have a condensed representation which can be used to directly embed a description of the node in its parent. */
@@ -2466,14 +2556,20 @@ export namespace MyNS {
 		/** Optional. DDL statements to add new indexes that will improve the query. */
 		ddl?: Array<string>;
 
-		/** Optional. Estimated latency improvement factor. For example if the query currently takes 500 ms to run and the estimated latency with new indexes is 100 ms this field will be 5. */
+		/**
+		 * Optional. Estimated latency improvement factor. For example if the query currently takes 500 ms to run and the estimated latency with new indexes is 100 ms this field will be 5.
+		 * Type: double
+		 */
 		improvementFactor?: number | null;
 	}
 
 	/** Recommendation to add new indexes to run queries more efficiently. */
 	export interface IndexAdviceFormProperties {
 
-		/** Optional. Estimated latency improvement factor. For example if the query currently takes 500 ms to run and the estimated latency with new indexes is 100 ms this field will be 5. */
+		/**
+		 * Optional. Estimated latency improvement factor. For example if the query currently takes 500 ms to run and the estimated latency with new indexes is 100 ms this field will be 5.
+		 * Type: double
+		 */
 		improvementFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateIndexAdviceFormGroup() {
@@ -2640,14 +2736,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -2706,14 +2808,20 @@ export namespace MyNS {
 		/** The list individual KeyRangeInfos. */
 		infos?: Array<KeyRangeInfo>;
 
-		/** The total size of the list of all KeyRangeInfos. This may be larger than the number of repeated messages above. If that is the case, this number may be used to determine how many are not being shown. */
+		/**
+		 * The total size of the list of all KeyRangeInfos. This may be larger than the number of repeated messages above. If that is the case, this number may be used to determine how many are not being shown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
 	/** A message representing a list of specific information for multiple key ranges. */
 	export interface KeyRangeInfosFormProperties {
 
-		/** The total size of the list of all KeyRangeInfos. This may be larger than the number of repeated messages above. If that is the case, this number may be used to determine how many are not being shown. */
+		/**
+		 * The total size of the list of all KeyRangeInfos. This may be larger than the number of repeated messages above. If that is the case, this number may be used to determine how many are not being shown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyRangeInfosFormGroup() {
@@ -2730,7 +2838,10 @@ export namespace MyNS {
 		/** The list of context values for this key range. */
 		contextValues?: Array<ContextValue>;
 
-		/** The index of the end key in indexed_keys. */
+		/**
+		 * The index of the end key in indexed_keys.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endKeyIndex?: number | null;
 
 		/** A message representing a user-facing string whose value may need to be translated before being displayed. */
@@ -2742,7 +2853,10 @@ export namespace MyNS {
 		/** A message representing a user-facing string whose value may need to be translated before being displayed. */
 		metric?: LocalizedString;
 
-		/** The index of the start key in indexed_keys. */
+		/**
+		 * The index of the start key in indexed_keys.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startKeyIndex?: number | null;
 
 		/** The time offset. This is the time since the start of the time interval. */
@@ -2751,26 +2865,38 @@ export namespace MyNS {
 		/** A message representing a user-facing string whose value may need to be translated before being displayed. */
 		unit?: LocalizedString;
 
-		/** The value of the metric. */
+		/**
+		 * The value of the metric.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
 	/** A message representing information for a key range (possibly one key). */
 	export interface KeyRangeInfoFormProperties {
 
-		/** The index of the end key in indexed_keys. */
+		/**
+		 * The index of the end key in indexed_keys.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endKeyIndex: FormControl<number | null | undefined>,
 
 		/** The number of keys this range covers. */
 		keysCount: FormControl<string | null | undefined>,
 
-		/** The index of the start key in indexed_keys. */
+		/**
+		 * The index of the start key in indexed_keys.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startKeyIndex: FormControl<number | null | undefined>,
 
 		/** The time offset. This is the time since the start of the time interval. */
 		timeOffset: FormControl<string | null | undefined>,
 
-		/** The value of the metric. */
+		/**
+		 * The value of the metric.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyRangeInfoFormGroup() {
@@ -3227,7 +3353,10 @@ export namespace MyNS {
 		/** Whether the metric has any non-zero data. */
 		hasNonzeroData?: boolean | null;
 
-		/** The value that is considered hot for the metric. On a per metric basis hotness signals high utilization and something that might potentially be a cause for concern by the end user. hot_value is used to calibrate and scale visual color scales. */
+		/**
+		 * The value that is considered hot for the metric. On a per metric basis hotness signals high utilization and something that might potentially be a cause for concern by the end user. hot_value is used to calibrate and scale visual color scales.
+		 * Type: float
+		 */
 		hotValue?: number | null;
 
 		/** The (sparse) mapping from time index to an IndexedHotKey message, representing those time intervals for which there are hot keys. */
@@ -3258,7 +3387,10 @@ export namespace MyNS {
 		/** Whether the metric has any non-zero data. */
 		hasNonzeroData: FormControl<boolean | null | undefined>,
 
-		/** The value that is considered hot for the metric. On a per metric basis hotness signals high utilization and something that might potentially be a cause for concern by the end user. hot_value is used to calibrate and scale visual color scales. */
+		/**
+		 * The value that is considered hot for the metric. On a per metric basis hotness signals high utilization and something that might potentially be a cause for concern by the end user. hot_value is used to calibrate and scale visual color scales.
+		 * Type: float
+		 */
 		hotValue: FormControl<number | null | undefined>,
 
 		/** The (sparse) mapping from time index to an IndexedHotKey message, representing those time intervals for which there are hot keys. */
@@ -3325,13 +3457,22 @@ export namespace MyNS {
 		/** Whether this corresponds to a data_source name. */
 		dataSourceNode?: boolean | null;
 
-		/** The depth in the prefix hierarchy. */
+		/**
+		 * The depth in the prefix hierarchy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth?: number | null;
 
-		/** The index of the end key bucket of the range that this node spans. */
+		/**
+		 * The index of the end key bucket of the range that this node spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
-		/** The index of the start key bucket of the range that this node spans. */
+		/**
+		 * The index of the start key bucket of the range that this node spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** The string represented by the prefix node. */
@@ -3344,13 +3485,22 @@ export namespace MyNS {
 		/** Whether this corresponds to a data_source name. */
 		dataSourceNode: FormControl<boolean | null | undefined>,
 
-		/** The depth in the prefix hierarchy. */
+		/**
+		 * The depth in the prefix hierarchy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 
-		/** The index of the end key bucket of the range that this node spans. */
+		/**
+		 * The index of the end key bucket of the range that this node spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The index of the start key bucket of the range that this node spans. */
+		/**
+		 * The index of the start key bucket of the range that this node spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** The string represented by the prefix node. */
@@ -3612,7 +3762,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3622,7 +3775,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -4166,6 +4322,7 @@ export namespace MyNS {
 		 * @param {string} database Required. The database in which to list sessions.
 		 * @param {string} filter An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are: * `labels.key` where key is the name of a label Some examples of using filters are: * `labels.env:*` --> The session has the label "env". * `labels.env:dev` --> The session has the label "env" and the value of the label contains the string "dev".
 		 * @param {number} pageSize Number of sessions to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListSessionsResponse.
 		 * @return {ListSessionsResponse} Successful response
 		 */
@@ -4211,6 +4368,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -4258,6 +4416,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The unique name of the parent resource, specific to the Database service implementing this interface.
 		 * @param {string} filter A filter expression to restrict the results based on information present in the available Scan collection. The filter applies to all fields within the Scan message except for `data`.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @param {Spanner_projects_instances_databases_getScansView} view Specifies which parts of the Scan should be returned in the response. Note, only the SUMMARY view (the default) is currently supported for ListScans.
 		 * @return {ListScansResponse} Successful response
@@ -4272,6 +4431,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The instance of the backup operations. Values are of the form `projects//instances/`.
 		 * @param {string} filter An expression that filters the list of returned backup operations. A filter expression consists of a field name, a comparison operator, and a value for filtering. The value must be a string, a number, or a boolean. The comparison operator must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`. Colon `:` is the contains operator. Filter rules are not case sensitive. The following fields in the operation are eligible for filtering: * `name` - The name of the long-running operation * `done` - False if the operation is in progress, else true. * `metadata.@type` - the type of metadata. For example, the type string for CreateBackupMetadata is `type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata`. * `metadata.` - any field in metadata.value. `metadata.@type` must be specified first if filtering on metadata fields. * `error` - Error associated with the long-running operation. * `response.@type` - the type of response. * `response.` - any field in response.value. You can combine multiple expressions by enclosing each expression in parentheses. By default, expressions are combined with AND logic, but you can specify AND, OR, and NOT logic explicitly. Here are a few examples: * `done:true` - The operation is complete. * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata) AND` \ `metadata.database:prod` - Returns operations where: * The operation's metadata type is CreateBackupMetadata. * The source database name of backup contains the string "prod". * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata) AND` \ `(metadata.name:howl) AND` \ `(metadata.progress.start_time < \"2018-03-28T14:50:00Z\") AND` \ `(error:*)` - Returns operations where: * The operation's metadata type is CreateBackupMetadata. * The backup name contains the string "howl". * The operation started before 2018-03-28T14:50:00Z. * The operation resulted in an error. * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CopyBackupMetadata) AND` \ `(metadata.source_backup:test) AND` \ `(metadata.progress.start_time < \"2022-01-18T14:50:00Z\") AND` \ `(error:*)` - Returns operations where: * The operation's metadata type is CopyBackupMetadata. * The source backup name contains the string "test". * The operation started before 2022-01-18T14:50:00Z. * The operation resulted in an error. * `((metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata) AND` \ `(metadata.database:test_db)) OR` \ `((metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CopyBackupMetadata) AND` \ `(metadata.source_backup:test_bkp)) AND` \ `(error:*)` - Returns operations where: * The operation's metadata matches either of criteria: * The operation's metadata type is CreateBackupMetadata AND the source database name of the backup contains the string "test_db" * The operation's metadata type is CopyBackupMetadata AND the source backup name contains the string "test_bkp" * The operation resulted in an error.
 		 * @param {number} pageSize Number of operations to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListBackupOperationsResponse to the same `parent` and with the same `filter`.
 		 * @return {ListBackupOperationsResponse} Successful response
 		 */
@@ -4285,6 +4445,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The instance to list backups from. Values are of the form `projects//instances/`.
 		 * @param {string} filter An expression that filters the list of returned backups. A filter expression consists of a field name, a comparison operator, and a value for filtering. The value must be a string, a number, or a boolean. The comparison operator must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`. Colon `:` is the contains operator. Filter rules are not case sensitive. The following fields in the Backup are eligible for filtering: * `name` * `database` * `state` * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `size_bytes` You can combine multiple expressions by enclosing each expression in parentheses. By default, expressions are combined with AND logic, but you can specify AND, OR, and NOT logic explicitly. Here are a few examples: * `name:Howl` - The backup's name contains the string "howl". * `database:prod` - The database's name contains the string "prod". * `state:CREATING` - The backup is pending creation. * `state:READY` - The backup is fully created and ready for use. * `(name:howl) AND (create_time < \"2018-03-28T14:50:00Z\")` - The backup name contains the string "howl" and `create_time` of the backup is before 2018-03-28T14:50:00Z. * `expire_time < \"2018-03-28T14:50:00Z\"` - The backup `expire_time` is before 2018-03-28T14:50:00Z. * `size_bytes > 10000000000` - The backup's size is greater than 10GB
 		 * @param {number} pageSize Number of backups to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListBackupsResponse to the same `parent` and with the same `filter`.
 		 * @return {ListBackupsResponse} Successful response
 		 */
@@ -4321,6 +4482,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The instance of the database operations. Values are of the form `projects//instances/`.
 		 * @param {string} filter An expression that filters the list of returned operations. A filter expression consists of a field name, a comparison operator, and a value for filtering. The value must be a string, a number, or a boolean. The comparison operator must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`. Colon `:` is the contains operator. Filter rules are not case sensitive. The following fields in the Operation are eligible for filtering: * `name` - The name of the long-running operation * `done` - False if the operation is in progress, else true. * `metadata.@type` - the type of metadata. For example, the type string for RestoreDatabaseMetadata is `type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata`. * `metadata.` - any field in metadata.value. `metadata.@type` must be specified first, if filtering on metadata fields. * `error` - Error associated with the long-running operation. * `response.@type` - the type of response. * `response.` - any field in response.value. You can combine multiple expressions by enclosing each expression in parentheses. By default, expressions are combined with AND logic. However, you can specify AND, OR, and NOT logic explicitly. Here are a few examples: * `done:true` - The operation is complete. * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata) AND` \ `(metadata.source_type:BACKUP) AND` \ `(metadata.backup_info.backup:backup_howl) AND` \ `(metadata.name:restored_howl) AND` \ `(metadata.progress.start_time < \"2018-03-28T14:50:00Z\") AND` \ `(error:*)` - Return operations where: * The operation's metadata type is RestoreDatabaseMetadata. * The database is restored from a backup. * The backup name contains "backup_howl". * The restored database's name contains "restored_howl". * The operation started before 2018-03-28T14:50:00Z. * The operation resulted in an error.
 		 * @param {number} pageSize Number of operations to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListDatabaseOperationsResponse to the same `parent` and with the same `filter`.
 		 * @return {ListDatabaseOperationsResponse} Successful response
 		 */
@@ -4333,6 +4495,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/databaseRoles
 		 * @param {string} parent Required. The database whose roles should be listed. Values are of the form `projects//instances//databases/`.
 		 * @param {number} pageSize Number of database roles to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListDatabaseRolesResponse.
 		 * @return {ListDatabaseRolesResponse} Successful response
 		 */
@@ -4345,6 +4508,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/databases
 		 * @param {string} parent Required. The instance whose databases should be listed. Values are of the form `projects//instances/`.
 		 * @param {number} pageSize Number of databases to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListDatabasesResponse.
 		 * @return {ListDatabasesResponse} Successful response
 		 */
@@ -4378,6 +4542,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project of the instance config operations. Values are of the form `projects/`.
 		 * @param {string} filter An expression that filters the list of returned operations. A filter expression consists of a field name, a comparison operator, and a value for filtering. The value must be a string, a number, or a boolean. The comparison operator must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`. Colon `:` is the contains operator. Filter rules are not case sensitive. The following fields in the Operation are eligible for filtering: * `name` - The name of the long-running operation * `done` - False if the operation is in progress, else true. * `metadata.@type` - the type of metadata. For example, the type string for CreateInstanceConfigMetadata is `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigMetadata`. * `metadata.` - any field in metadata.value. `metadata.@type` must be specified first, if filtering on metadata fields. * `error` - Error associated with the long-running operation. * `response.@type` - the type of response. * `response.` - any field in response.value. You can combine multiple expressions by enclosing each expression in parentheses. By default, expressions are combined with AND logic. However, you can specify AND, OR, and NOT logic explicitly. Here are a few examples: * `done:true` - The operation is complete. * `(metadata.@type=` \ `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigMetadata) AND` \ `(metadata.instance_config.name:custom-config) AND` \ `(metadata.progress.start_time < \"2021-03-28T14:50:00Z\") AND` \ `(error:*)` - Return operations where: * The operation's metadata type is CreateInstanceConfigMetadata. * The instance config name contains "custom-config". * The operation started before 2021-03-28T14:50:00Z. * The operation resulted in an error.
 		 * @param {number} pageSize Number of operations to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListInstanceConfigOperationsResponse to the same `parent` and with the same `filter`.
 		 * @return {ListInstanceConfigOperationsResponse} Successful response
 		 */
@@ -4390,6 +4555,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/instanceConfigs
 		 * @param {string} parent Required. The name of the project for which a list of supported instance configurations is requested. Values are of the form `projects/`.
 		 * @param {number} pageSize Number of instance configurations to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListInstanceConfigsResponse.
 		 * @return {ListInstanceConfigsResponse} Successful response
 		 */
@@ -4414,6 +4580,7 @@ export namespace MyNS {
 		 * @param {string} filter An expression for filtering the results of the request. Filter rules are case insensitive. The fields eligible for filtering are: * `name` * `display_name` * `labels.key` where key is the name of a label Some examples of using filters are: * `name:*` --> The instance has a name. * `name:Howl` --> The instance's name contains the string "howl". * `name:HOWL` --> Equivalent to above. * `NAME:howl` --> Equivalent to above. * `labels.env:*` --> The instance has the label "env". * `labels.env:dev` --> The instance has the label "env" and the value of the label contains the string "dev". * `name:howl labels.env:dev` --> The instance's name contains "howl" and it has the label "env" with its value containing "dev".
 		 * @param {string} instanceDeadline Deadline used while retrieving metadata for instances. Instances whose metadata cannot be retrieved within this deadline will be added to unreachable in ListInstancesResponse.
 		 * @param {number} pageSize Number of instances to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, `page_token` should contain a next_page_token from a previous ListInstancesResponse.
 		 * @return {ListInstancesResponse} Successful response
 		 */

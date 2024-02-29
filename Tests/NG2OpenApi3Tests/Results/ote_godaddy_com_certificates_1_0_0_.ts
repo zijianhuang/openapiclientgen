@@ -62,6 +62,7 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
@@ -71,7 +72,10 @@ export namespace MyNS {
 		 */
 		productType: CertificateProductType;
 
-		/** Percentage of completion for certificate vetting */
+		/**
+		 * Percentage of completion for certificate vetting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
 		/** The revocation date of certificate (if revoked). */
@@ -127,6 +131,7 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 
@@ -136,7 +141,10 @@ export namespace MyNS {
 		 */
 		productType: FormControl<CertificateProductType | null | undefined>,
 
-		/** Percentage of completion for certificate vetting */
+		/**
+		 * Percentage of completion for certificate vetting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
 		/** The revocation date of certificate (if revoked). */
@@ -455,6 +463,7 @@ export namespace MyNS {
 		/**
 		 * Number of years for certificate validity period
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
@@ -493,6 +502,7 @@ export namespace MyNS {
 		/**
 		 * Number of years for certificate validity period
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 
@@ -558,10 +568,14 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
-		/** Percentage of completion for certificate vetting */
+		/**
+		 * Percentage of completion for certificate vetting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
 		/** Only returned when a renewal is available. */
@@ -668,10 +682,14 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 
-		/** Percentage of completion for certificate vetting */
+		/**
+		 * Percentage of completion for certificate vetting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
 		/** Only returned when a renewal is available. */
@@ -774,6 +792,7 @@ export namespace MyNS {
 		/**
 		 * Shopper Id requested certificate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountId: number;
 
@@ -798,6 +817,7 @@ export namespace MyNS {
 		/**
 		 * Email Id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -824,6 +844,7 @@ export namespace MyNS {
 		/**
 		 * Shopper Id requested certificate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountId: FormControl<number | null | undefined>,
 
@@ -848,6 +869,7 @@ export namespace MyNS {
 		/**
 		 * Email Id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -1093,7 +1115,10 @@ export namespace MyNS {
 		/** Certificate Signing Request. */
 		csr?: string | null;
 
-		/** Number of years for certificate validity period, if different from previous certificate */
+		/**
+		 * Number of years for certificate validity period, if different from previous certificate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 
 		/** Root Type. Depending on certificate expiration date, SHA_1 not be allowed. Will default to SHA_2 if expiration date exceeds sha1 allowed date */
@@ -1113,7 +1138,10 @@ export namespace MyNS {
 		/** Certificate Signing Request. */
 		csr: FormControl<string | null | undefined>,
 
-		/** Number of years for certificate validity period, if different from previous certificate */
+		/**
+		 * Number of years for certificate validity period, if different from previous certificate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 
 		/** Root Type. Depending on certificate expiration date, SHA_1 not be allowed. Will default to SHA_2 if expiration date exceeds sha1 allowed date */
@@ -1223,6 +1251,7 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
@@ -1314,6 +1343,7 @@ export namespace MyNS {
 		/**
 		 * Validity period of order. Specified in years.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 
@@ -1411,7 +1441,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous?: string | null;
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PaginationFormProperties {
@@ -1428,7 +1461,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous: FormControl<string | null | undefined>,
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -1538,6 +1574,7 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that can be leveraged for retrieving domain verification related information. Primarily used when troubleshooting a request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		domainEntityId: number;
 
@@ -1612,6 +1649,7 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that can be leveraged for retrieving domain verification related information. Primarily used when troubleshooting a request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		domainEntityId: FormControl<number | null | undefined>,
 

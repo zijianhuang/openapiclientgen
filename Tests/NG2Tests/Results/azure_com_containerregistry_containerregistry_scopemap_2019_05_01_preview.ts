@@ -489,7 +489,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {GenerateCredentialsParameters} requestBody The parameters for generating credentials.
 		 * @return {GenerateCredentialsResult} The request was successful; the request was well-formed and received properly.
 		 */
@@ -503,7 +505,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {ScopeMapListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		ScopeMaps_List(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<ScopeMapListResult> {
@@ -516,8 +520,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} scopeMapName The name of the scope map.
+		 *     Min length: 5    Max length: 50
 		 * @return {ScopeMap} The request was successful; the request was well-formed and received properly.
 		 */
 		ScopeMaps_Get(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, scopeMapName: string): Observable<ScopeMap> {
@@ -530,8 +537,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} scopeMapName The name of the scope map.
+		 *     Min length: 5    Max length: 50
 		 * @param {ScopeMap} requestBody The parameters for creating a scope map.
 		 * @return {ScopeMap} The request was successful; the request was well-formed and received properly.
 		 */
@@ -545,8 +555,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} scopeMapName The name of the scope map.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		ScopeMaps_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, scopeMapName: string): Observable<HttpResponse<string>> {
@@ -559,8 +572,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} scopeMapName The name of the scope map.
+		 *     Min length: 5    Max length: 50
 		 * @param {ScopeMapUpdateParameters} requestBody The parameters for updating a scope map.
 		 * @return {ScopeMap} The request was successful; the request was well-formed and received properly.
 		 */
@@ -574,7 +590,9 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @return {TokenListResult} The request was successful; the request was well-formed and received properly.
 		 */
 		Tokens_List(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string): Observable<TokenListResult> {
@@ -587,8 +605,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} tokenName The name of the token.
+		 *     Min length: 5    Max length: 50
 		 * @return {Token} The request was successful; the request was well-formed and received properly.
 		 */
 		Tokens_Get(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, tokenName: string): Observable<Token> {
@@ -601,8 +622,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} tokenName The name of the token.
+		 *     Min length: 5    Max length: 50
 		 * @param {Token} requestBody The parameters for creating a token.
 		 * @return {Token} The request was successful; the request was well-formed and received properly.
 		 */
@@ -616,8 +640,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} tokenName The name of the token.
+		 *     Min length: 5    Max length: 50
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
 		Tokens_Delete(api_version: string, subscriptionId: string, resourceGroupName: string, registryName: string, tokenName: string): Observable<HttpResponse<string>> {
@@ -630,8 +657,11 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
+		 *     Min length: 1
 		 * @param {string} registryName The name of the container registry.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} tokenName The name of the token.
+		 *     Min length: 5    Max length: 50
 		 * @param {TokenUpdateParameters} requestBody The parameters for updating a token.
 		 * @return {Token} The request was successful; the request was well-formed and received properly.
 		 */

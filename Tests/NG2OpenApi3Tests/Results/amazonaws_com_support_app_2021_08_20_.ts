@@ -602,23 +602,23 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: string;
 
 		/**
 		 * The name of the Slack channel that you configure for the Amazon Web Services Support App.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 31
+		 * Max length: 2048
 		 */
 		channelRoleArn: string;
 
@@ -640,8 +640,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: string;
 	}
@@ -650,23 +650,23 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Slack channel that you configure for the Amazon Web Services Support App.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 31
+		 * Max length: 2048
 		 */
 		channelRoleArn: FormControl<string | null | undefined>,
 
@@ -688,8 +688,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: FormControl<string | null | undefined>,
 	}
@@ -712,16 +712,16 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: string;
 
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: string;
 	}
@@ -730,16 +730,16 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: FormControl<string | null | undefined>,
 
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: FormControl<string | null | undefined>,
 	}
@@ -756,8 +756,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: string;
 	}
@@ -766,8 +766,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: FormControl<string | null | undefined>,
 	}
@@ -782,8 +782,8 @@ export namespace MyNS {
 
 		/**
 		 * If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		nextToken?: string | null;
 	}
@@ -791,8 +791,8 @@ export namespace MyNS {
 
 		/**
 		 * If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -807,8 +807,8 @@ export namespace MyNS {
 
 		/**
 		 * If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		nextToken?: string | null;
 	}
@@ -816,8 +816,8 @@ export namespace MyNS {
 
 		/**
 		 * If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -833,8 +833,8 @@ export namespace MyNS {
 		/**
 		 * An alias or short name for an Amazon Web Services account.
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		accountAlias: string;
 	}
@@ -843,8 +843,8 @@ export namespace MyNS {
 		/**
 		 * An alias or short name for an Amazon Web Services account.
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		accountAlias: FormControl<string | null | undefined>,
 	}
@@ -860,8 +860,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: string;
 	}
@@ -870,8 +870,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: FormControl<string | null | undefined>,
 	}
@@ -887,22 +887,22 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: string;
 
 		/**
 		 * The Slack channel name that you want to update.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.
-		 * Max length: 2048
 		 * Min length: 31
+		 * Max length: 2048
 		 */
 		channelRoleArn?: string | null;
 
@@ -921,8 +921,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: string;
 	}
@@ -931,22 +931,22 @@ export namespace MyNS {
 		/**
 		 * The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Slack channel name that you want to update.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		channelName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.
-		 * Max length: 2048
 		 * Min length: 31
+		 * Max length: 2048
 		 */
 		channelRoleArn: FormControl<string | null | undefined>,
 
@@ -965,8 +965,8 @@ export namespace MyNS {
 		/**
 		 * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		teamId: FormControl<string | null | undefined>,
 	}

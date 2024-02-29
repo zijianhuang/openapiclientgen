@@ -283,18 +283,30 @@ export namespace MyNS {
 
 	export interface Address2Location {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface Address2LocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateAddress2LocationFormGroup() {
@@ -396,18 +408,30 @@ export namespace MyNS {
 
 	export interface Address4Location {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface Address4LocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateAddress4LocationFormGroup() {
@@ -423,10 +447,16 @@ export namespace MyNS {
 		/** Required */
 		hasUnlimitedQuantity: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: number;
 
 		/** Required */
@@ -440,10 +470,16 @@ export namespace MyNS {
 		/** Required */
 		hasUnlimitedQuantity: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -468,7 +504,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -479,7 +518,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -534,10 +576,16 @@ export namespace MyNS {
 		/** Required */
 		CalculateSLARequestItemsKitItem: Array<CalculateSLARequestItemsKitItem>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface CalculateSLARequestItemsFormProperties {
@@ -551,10 +599,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateSLARequestItemsFormGroup() {
@@ -570,30 +624,54 @@ export namespace MyNS {
 
 	export interface CalculateSLARequestItemsDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface CalculateSLARequestItemsDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateSLARequestItemsDimensionFormGroup() {
@@ -623,10 +701,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface CalculateSLARequestItemsKitItemFormProperties {
@@ -640,10 +724,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateSLARequestItemsKitItemFormGroup() {
@@ -659,30 +749,54 @@ export namespace MyNS {
 
 	export interface CalculateSLARequestItemsKitItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface CalculateSLARequestItemsKitItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateSLARequestItemsKitItemDimensionFormGroup() {
@@ -784,7 +898,10 @@ export namespace MyNS {
 		/** Required */
 		CreateReservationSlaRequest: Array<CreateReservationSlaRequest>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Status: number;
 	}
 	export interface CreateReservationFormProperties {
@@ -819,7 +936,10 @@ export namespace MyNS {
 		/** Required */
 		SalesChannel: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Status: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateReservationFormGroup() {
@@ -859,7 +979,10 @@ export namespace MyNS {
 		/** Required */
 		item: CreateReservationSlaRequestItem;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -868,7 +991,10 @@ export namespace MyNS {
 		/** Required */
 		pickupStoreInfo: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: number;
 
 		/** Required */
@@ -909,13 +1035,19 @@ export namespace MyNS {
 		/** Required */
 		freightTableName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
 		pickupStoreInfo: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -980,10 +1112,16 @@ export namespace MyNS {
 		/** Required */
 		modal: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -1003,10 +1141,16 @@ export namespace MyNS {
 		/** Required */
 		modal: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1027,36 +1171,66 @@ export namespace MyNS {
 
 	export interface CreateReservationSlaRequestItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface CreateReservationSlaRequestItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateReservationSlaRequestItemDimensionFormGroup() {
@@ -1186,13 +1360,19 @@ export namespace MyNS {
 		/** Required */
 		item: CreateReservationRequestDeliveryItemOptionsItem;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
 		location: CreateReservationRequestDeliveryItemOptionsLocation;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: number;
 
 		/** Required */
@@ -1224,10 +1404,16 @@ export namespace MyNS {
 		/** Required */
 		dockTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1282,10 +1468,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface CreateReservationRequestDeliveryItemOptionsItemFormProperties {
@@ -1299,10 +1491,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateReservationRequestDeliveryItemOptionsItemFormGroup() {
@@ -1318,30 +1516,54 @@ export namespace MyNS {
 
 	export interface CreateReservationRequestDeliveryItemOptionsItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface CreateReservationRequestDeliveryItemOptionsItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateReservationRequestDeliveryItemOptionsItemDimensionFormGroup() {
@@ -1567,18 +1789,30 @@ export namespace MyNS {
 
 	export interface CreateUpdateAddressLocation {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface CreateUpdateAddressLocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateUpdateAddressLocationFormGroup() {
@@ -1594,7 +1828,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -1605,7 +1842,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1643,7 +1883,10 @@ export namespace MyNS {
 		/** Required */
 		maxDimension: CreateUpdateCarrierDeliveryWindowsRequestMaxDimension;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: number;
 
 		/** Required */
@@ -1678,7 +1921,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1720,6 +1966,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -1734,6 +1981,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -1758,6 +2006,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -1778,6 +2027,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -1807,6 +2057,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -1821,6 +2072,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -1886,7 +2138,10 @@ export namespace MyNS {
 		/** Required */
 		factorCubicWeight: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: number;
 
 		/** Required */
@@ -1904,10 +2159,16 @@ export namespace MyNS {
 		/** Required */
 		maxDimension: CreateUpdateCarrierRequestMaxDimension;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimunCubicWeight: number;
 
 		/** Required */
@@ -1939,7 +2200,10 @@ export namespace MyNS {
 		/** Required */
 		factorCubicWeight: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1951,10 +2215,16 @@ export namespace MyNS {
 		/** Required */
 		isPolygon: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimunCubicWeight: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1997,6 +2267,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -2011,6 +2282,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -2035,6 +2307,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -2055,6 +2328,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -2084,6 +2358,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -2098,6 +2373,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -2111,36 +2387,66 @@ export namespace MyNS {
 
 	export interface CreateUpdateCarrierRequestMaxDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface CreateUpdateCarrierRequestMaxDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateUpdateCarrierRequestMaxDimensionFormGroup() {
@@ -2174,7 +2480,10 @@ export namespace MyNS {
 		/** Required */
 		pickupStoreInfo: CreateUpdateDockRequestPickupStoreInfo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: number;
 
 		/** Required */
@@ -2200,7 +2509,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2463,28 +2775,46 @@ export namespace MyNS {
 		/** Required */
 		country: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxVolume: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType: number;
 
 		/** Required */
 		polygon: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pricePercent: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pricePercentByWeight: number;
 
 		/** Required */
 		timeCost: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weightEnd: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weightStart: number;
 
 		/** Required */
@@ -2501,28 +2831,46 @@ export namespace MyNS {
 		/** Required */
 		country: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxVolume: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType: FormControl<number | null | undefined>,
 
 		/** Required */
 		polygon: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pricePercent: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pricePercentByWeight: FormControl<number | null | undefined>,
 
 		/** Required */
 		timeCost: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weightEnd: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weightStart: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2765,18 +3113,30 @@ export namespace MyNS {
 
 	export interface CreateUpdateRequestAddressLocation {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface CreateUpdateRequestAddressLocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateUpdateRequestAddressLocationFormGroup() {
@@ -2792,7 +3152,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -2803,7 +3166,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2899,7 +3265,10 @@ export namespace MyNS {
 
 	export interface DayOfWeekForDelivery {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -2907,7 +3276,10 @@ export namespace MyNS {
 	}
 	export interface DayOfWeekForDeliveryFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
 	export function CreateDayOfWeekForDeliveryFormGroup() {
@@ -2922,7 +3294,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -2933,7 +3308,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2950,7 +3328,10 @@ export namespace MyNS {
 
 	export interface DayOfWeekForDelivery1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -2958,7 +3339,10 @@ export namespace MyNS {
 	}
 	export interface DayOfWeekForDelivery1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
 	export function CreateDayOfWeekForDelivery1FormGroup() {
@@ -2973,7 +3357,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -2984,7 +3371,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3016,13 +3406,19 @@ export namespace MyNS {
 		/** Required */
 		item: DeliveryItemOptionItem;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
 		location: DeliveryItemOptionLocation;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: number;
 
 		/** Required */
@@ -3054,10 +3450,16 @@ export namespace MyNS {
 		/** Required */
 		dockTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3112,10 +3514,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface DeliveryItemOptionItemFormProperties {
@@ -3129,10 +3537,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateDeliveryItemOptionItemFormGroup() {
@@ -3148,30 +3562,54 @@ export namespace MyNS {
 
 	export interface DeliveryItemOptionItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface DeliveryItemOptionItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDeliveryItemOptionItemDimensionFormGroup() {
@@ -3240,7 +3678,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -3251,7 +3692,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3271,7 +3715,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -3282,7 +3729,10 @@ export namespace MyNS {
 		/** Required */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3299,11 +3749,15 @@ export namespace MyNS {
 
 	export interface DeliveryWindow {
 		endDateUtc?: string | null;
+
+		/** Type: double */
 		listPrice?: number | null;
 		startDateUtc?: string | null;
 	}
 	export interface DeliveryWindowFormProperties {
 		endDateUtc: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		listPrice: FormControl<number | null | undefined>,
 		startDateUtc: FormControl<string | null | undefined>,
 	}
@@ -3318,30 +3772,54 @@ export namespace MyNS {
 
 	export interface Dimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface DimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionFormGroup() {
@@ -3356,36 +3834,66 @@ export namespace MyNS {
 
 	export interface Dimension1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface Dimension1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDimension1FormGroup() {
@@ -3629,18 +4137,30 @@ export namespace MyNS {
 
 	export interface GetByIdAddressLocation {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface GetByIdAddressLocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGetByIdAddressLocationFormGroup() {
@@ -3656,7 +4176,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: number;
 
 		/** Required */
@@ -3667,7 +4190,10 @@ export namespace MyNS {
 		/** Required */
 		closingTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3747,10 +4273,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface ItemFormProperties {
@@ -3764,10 +4296,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
@@ -3783,30 +4321,54 @@ export namespace MyNS {
 
 	export interface ItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface ItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateItemDimensionFormGroup() {
@@ -3839,10 +4401,16 @@ export namespace MyNS {
 		/** Required */
 		modal: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -3862,10 +4430,16 @@ export namespace MyNS {
 		/** Required */
 		modal: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3886,36 +4460,66 @@ export namespace MyNS {
 
 	export interface Item1Dimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface Item1DimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateItem1DimensionFormGroup() {
@@ -3946,10 +4550,16 @@ export namespace MyNS {
 		/** Required */
 		Item3KitItem: Array<Item3KitItem>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface Item3FormProperties {
@@ -3963,10 +4573,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateItem3FormGroup() {
@@ -3982,30 +4598,54 @@ export namespace MyNS {
 
 	export interface Item3Dimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface Item3DimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateItem3DimensionFormGroup() {
@@ -4035,10 +4675,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface Item3KitItemFormProperties {
@@ -4052,10 +4698,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateItem3KitItemFormGroup() {
@@ -4071,30 +4723,54 @@ export namespace MyNS {
 
 	export interface Item3KitItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface Item3KitItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateItem3KitItemDimensionFormGroup() {
@@ -4124,10 +4800,16 @@ export namespace MyNS {
 		/** Required */
 		kitItem: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 	}
 	export interface KitItemFormProperties {
@@ -4141,10 +4823,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateKitItemFormGroup() {
@@ -4160,30 +4848,54 @@ export namespace MyNS {
 
 	export interface KitItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface KitItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateKitItemDimensionFormGroup() {
@@ -4225,7 +4937,10 @@ export namespace MyNS {
 
 	export interface ListAllAarehousesWarehouseDocks {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: number;
 
 		/** Required */
@@ -4236,7 +4951,10 @@ export namespace MyNS {
 	}
 	export interface ListAllAarehousesWarehouseDocksFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4271,7 +4989,10 @@ export namespace MyNS {
 		/** Required */
 		pickupStoreInfo: ListAllDocksPickupStoreInfo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: number;
 
 		/** Required */
@@ -4297,7 +5018,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4376,28 +5100,46 @@ export namespace MyNS {
 
 	export interface ListFreightValues {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		absoluteMoneyCost: number;
 
 		/** Required */
 		country: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxVolume: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimumValueInsurance: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType: number;
 
 		/** Required */
 		polygon: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pricePercent: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pricePercentByWeight: number;
 
 		/** Required */
@@ -4406,10 +5148,16 @@ export namespace MyNS {
 		/** Required */
 		timeCost: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weightEnd: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weightStart: number;
 
 		/** Required */
@@ -4420,37 +5168,61 @@ export namespace MyNS {
 	}
 	export interface ListFreightValuesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		absoluteMoneyCost: FormControl<number | null | undefined>,
 
 		/** Required */
 		country: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxVolume: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimumValueInsurance: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		operationType: FormControl<number | null | undefined>,
 
 		/** Required */
 		polygon: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pricePercent: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		pricePercentByWeight: FormControl<number | null | undefined>,
 
 		/** Required */
 		timeCost: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weightEnd: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weightStart: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4503,10 +5275,16 @@ export namespace MyNS {
 		/** Required */
 		hasUnlimitedQuantity: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: number;
 
 		/** Required */
@@ -4520,10 +5298,16 @@ export namespace MyNS {
 		/** Required */
 		hasUnlimitedQuantity: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4548,7 +5332,10 @@ export namespace MyNS {
 		/** Required */
 		aditionalTimeBlockedDays: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityQuantity: number;
 
 		/** Required */
@@ -4578,7 +5365,10 @@ export namespace MyNS {
 		/** Required */
 		itemId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -4587,7 +5377,10 @@ export namespace MyNS {
 		/** Required */
 		pickupStoreInfo: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -4619,7 +5412,10 @@ export namespace MyNS {
 		/** Required */
 		aditionalTimeBlockedDays: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availabilityQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4643,13 +5439,19 @@ export namespace MyNS {
 		/** Required */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
 		pickupStoreInfo: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4704,11 +5506,15 @@ export namespace MyNS {
 
 	export interface ListReservationByWarehouseAndSKUDeliveryWindows {
 		endDateUtc?: string | null;
+
+		/** Type: double */
 		listPrice?: number | null;
 		startDateUtc?: string | null;
 	}
 	export interface ListReservationByWarehouseAndSKUDeliveryWindowsFormProperties {
 		endDateUtc: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		listPrice: FormControl<number | null | undefined>,
 		startDateUtc: FormControl<string | null | undefined>,
 	}
@@ -4931,18 +5737,30 @@ export namespace MyNS {
 
 	export interface Location5 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface Location5FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLocation5FormGroup() {
@@ -4955,36 +5773,66 @@ export namespace MyNS {
 
 	export interface MaxDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface MaxDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMaxDimensionFormGroup() {
@@ -5031,36 +5879,66 @@ export namespace MyNS {
 
 	export interface MaxDimension2 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface MaxDimension2FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMaxDimension2FormGroup() {
@@ -5287,7 +6165,10 @@ export namespace MyNS {
 		/** Required */
 		item: SlaRequestItem;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: number;
 
 		/** Required */
@@ -5296,7 +6177,10 @@ export namespace MyNS {
 		/** Required */
 		pickupStoreInfo: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: number;
 
 		/** Required */
@@ -5337,13 +6221,19 @@ export namespace MyNS {
 		/** Required */
 		freightTableName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Required */
 		pickupStoreInfo: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		promotionalPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5408,10 +6298,16 @@ export namespace MyNS {
 		/** Required */
 		modal: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -5431,10 +6327,16 @@ export namespace MyNS {
 		/** Required */
 		modal: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5455,36 +6357,66 @@ export namespace MyNS {
 
 	export interface SlaRequestItemDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface SlaRequestItemDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSlaRequestItemDimensionFormGroup() {
@@ -5565,22 +6497,34 @@ export namespace MyNS {
 
 	export interface Success {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dispatchedReservationsQuantity: number;
 
 		/** Required */
 		isUnlimitedQuantity: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
 		skuId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReservedQuantity: number;
 
 		/** Required */
@@ -5588,22 +6532,34 @@ export namespace MyNS {
 	}
 	export interface SuccessFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dispatchedReservationsQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
 		isUnlimitedQuantity: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
 		skuId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReservedQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5627,7 +6583,10 @@ export namespace MyNS {
 		/** Required */
 		dateUtcOnBalanceSystem: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
 		/** Required */
@@ -5638,7 +6597,10 @@ export namespace MyNS {
 		/** Required */
 		dateUtcOnBalanceSystem: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5707,7 +6669,10 @@ export namespace MyNS {
 
 	export interface WarehouseDock1 {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: number;
 
 		/** Required */
@@ -5718,7 +6683,10 @@ export namespace MyNS {
 	}
 	export interface WarehouseDock1FormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5756,10 +6724,16 @@ export namespace MyNS {
 		/** Required */
 		exclusiveToDeliveryPoints: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		factorCubicWeight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: number;
 
 		/** Required */
@@ -5777,10 +6751,16 @@ export namespace MyNS {
 		/** Required */
 		maxDimension: AllcarrierMaxDimension;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunCubicWeight: number;
 
 		/** Required */
@@ -5809,10 +6789,16 @@ export namespace MyNS {
 		/** Required */
 		exclusiveToDeliveryPoints: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		factorCubicWeight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5824,10 +6810,16 @@ export namespace MyNS {
 		/** Required */
 		isPolygon: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunCubicWeight: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5870,6 +6862,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -5884,6 +6877,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -5908,6 +6902,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -5928,6 +6923,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -5957,6 +6953,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -5971,6 +6968,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -5984,36 +6982,66 @@ export namespace MyNS {
 
 	export interface AllcarrierMaxDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface AllcarrierMaxDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateAllcarrierMaxDimensionFormGroup() {
@@ -6047,10 +7075,16 @@ export namespace MyNS {
 		/** Required */
 		exclusiveToDeliveryPoints: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		factorCubicWeight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: number;
 
 		/** Required */
@@ -6068,10 +7102,16 @@ export namespace MyNS {
 		/** Required */
 		maxDimension: CarrierbyidMaxDimension;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunCubicWeight: number;
 
 		/** Required */
@@ -6100,10 +7140,16 @@ export namespace MyNS {
 		/** Required */
 		exclusiveToDeliveryPoints: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		factorCubicWeight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightTableProcessStatus: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6115,10 +7161,16 @@ export namespace MyNS {
 		/** Required */
 		isPolygon: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunCubicWeight: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6161,6 +7213,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -6175,6 +7228,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -6199,6 +7253,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -6219,6 +7274,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -6248,6 +7304,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -6262,6 +7319,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -6275,36 +7333,66 @@ export namespace MyNS {
 
 	export interface CarrierbyidMaxDimension {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: number;
 	}
 	export interface CarrierbyidMaxDimensionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		maxSumDimension: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateCarrierbyidMaxDimensionFormGroup() {
@@ -6767,22 +7855,34 @@ export namespace MyNS {
 
 	export interface GetinventorywithdispatchedreservationsReturn {
 
-		/** Available quantity. */
+		/**
+		 * Available quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
-		/** Dispatched reservations quantity. */
+		/**
+		 * Dispatched reservations quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dispatchedReservationsQuantity?: number | null;
 
 		/** Indicates whether the SKU's availability is unlimited ("infinite inventory"). */
 		isUnlimitedQuantity?: boolean | null;
 
-		/** SKU quantity. */
+		/**
+		 * SKU quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** SKU ID. */
 		skuId?: string | null;
 
-		/** Total reserved quantity of the SKU. */
+		/**
+		 * Total reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReservedQuantity?: number | null;
 
 		/** Warehouse ID. */
@@ -6790,22 +7890,34 @@ export namespace MyNS {
 	}
 	export interface GetinventorywithdispatchedreservationsReturnFormProperties {
 
-		/** Available quantity. */
+		/**
+		 * Available quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
-		/** Dispatched reservations quantity. */
+		/**
+		 * Dispatched reservations quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dispatchedReservationsQuantity: FormControl<number | null | undefined>,
 
 		/** Indicates whether the SKU's availability is unlimited ("infinite inventory"). */
 		isUnlimitedQuantity: FormControl<boolean | null | undefined>,
 
-		/** SKU quantity. */
+		/**
+		 * SKU quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** SKU ID. */
 		skuId: FormControl<string | null | undefined>,
 
-		/** Total reserved quantity of the SKU. */
+		/**
+		 * Total reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalReservedQuantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -6826,7 +7938,10 @@ export namespace MyNS {
 
 	export interface InventoryperdockReturn {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** Date of supply lot in UTC. */
@@ -6844,7 +7959,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration?: boolean | null;
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity?: number | null;
 
 		/** List of sales channels associated. */
@@ -6856,7 +7974,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill?: string | null;
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity?: number | null;
 
 		/** Transfer. */
@@ -6867,7 +7988,10 @@ export namespace MyNS {
 	}
 	export interface InventoryperdockReturnFormProperties {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
 		/** Date of supply lot in UTC. */
@@ -6882,7 +8006,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration: FormControl<boolean | null | undefined>,
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: FormControl<number | null | undefined>,
 
 		/** SKU ID. */
@@ -6891,7 +8018,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill: FormControl<string | null | undefined>,
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: FormControl<number | null | undefined>,
 
 		/** Transfer. */
@@ -6919,7 +8049,10 @@ export namespace MyNS {
 
 	export interface InventoryperdockandwarehouseReturn {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** Date of supply lot in UTC. */
@@ -6937,7 +8070,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration?: boolean | null;
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity?: number | null;
 
 		/** List of sales channels associated. */
@@ -6949,7 +8085,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill?: string | null;
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity?: number | null;
 
 		/** Transfer. */
@@ -6960,7 +8099,10 @@ export namespace MyNS {
 	}
 	export interface InventoryperdockandwarehouseReturnFormProperties {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
 		/** Date of supply lot in UTC. */
@@ -6975,7 +8117,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration: FormControl<boolean | null | undefined>,
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: FormControl<number | null | undefined>,
 
 		/** SKU ID. */
@@ -6984,7 +8129,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill: FormControl<string | null | undefined>,
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: FormControl<number | null | undefined>,
 
 		/** Transfer. */
@@ -7012,7 +8160,10 @@ export namespace MyNS {
 
 	export interface InventoryperwarehouseReturn {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** Date of supply lot in UTC. */
@@ -7030,7 +8181,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration?: boolean | null;
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity?: number | null;
 
 		/** List of sales channels associated. */
@@ -7042,7 +8196,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill?: string | null;
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity?: number | null;
 
 		/** Transfer. */
@@ -7053,7 +8210,10 @@ export namespace MyNS {
 	}
 	export interface InventoryperwarehouseReturnFormProperties {
 
-		/** Amount of items available for sale. Difference between total quantity and reserved quantity. */
+		/**
+		 * Amount of items available for sale. Difference between total quantity and reserved quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
 		/** Date of supply lot in UTC. */
@@ -7068,7 +8228,10 @@ export namespace MyNS {
 		/** Indicates whether SKU can continue to be sold after the available quantity gets to 0. */
 		keepSellingAfterExpiration: FormControl<boolean | null | undefined>,
 
-		/** Reserved quantity of the SKU. */
+		/**
+		 * Reserved quantity of the SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedQuantity: FormControl<number | null | undefined>,
 
 		/** SKU ID. */
@@ -7077,7 +8240,10 @@ export namespace MyNS {
 		/** Time to refill (deprecated). */
 		timeToRefill: FormControl<string | null | undefined>,
 
-		/** Total quantity of SKU. */
+		/**
+		 * Total quantity of SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalQuantity: FormControl<number | null | undefined>,
 
 		/** Transfer. */
@@ -7147,12 +8313,14 @@ export namespace MyNS {
 		/**
 		 * Maximum value accepted by the carrier, to realize the shipping.
 		 * Required
+		 * Type: double
 		 */
 		maximumValueAceptable: number;
 
 		/**
 		 * Minimum value accepted by the carrier, to realize the shipping.
 		 * Required
+		 * Type: double
 		 */
 		minimumValueAceptable: number;
 
@@ -7171,6 +8339,7 @@ export namespace MyNS {
 		/**
 		 * Capacity of your store's logistics of shipment, determines number of items permitted per shipment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfItemsPerShipment: number;
 
@@ -7209,12 +8378,14 @@ export namespace MyNS {
 		/**
 		 * Maximum value accepted by the carrier, to realize the shipping.
 		 * Required
+		 * Type: double
 		 */
 		maximumValueAceptable: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum value accepted by the carrier, to realize the shipping.
 		 * Required
+		 * Type: double
 		 */
 		minimumValueAceptable: FormControl<number | null | undefined>,
 
@@ -7227,6 +8398,7 @@ export namespace MyNS {
 		/**
 		 * Capacity of your store's logistics of shipment, determines number of items permitted per shipment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfItemsPerShipment: FormControl<number | null | undefined>,
 
@@ -7289,6 +8461,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -7309,6 +8482,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
@@ -7329,7 +8503,10 @@ export namespace MyNS {
 
 	export interface Shipping_PoliciesPostPostBodyCarrierSchedule {
 
-		/** Day of the week, from `0` (sunday) to `6` (saturday). */
+		/**
+		 * Day of the week, from `0` (sunday) to `6` (saturday).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek?: number | null;
 
 		/** Time limit. */
@@ -7337,7 +8514,10 @@ export namespace MyNS {
 	}
 	export interface Shipping_PoliciesPostPostBodyCarrierScheduleFormProperties {
 
-		/** Day of the week, from `0` (sunday) to `6` (saturday). */
+		/**
+		 * Day of the week, from `0` (sunday) to `6` (saturday).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 
 		/** Time limit. */
@@ -7353,23 +8533,31 @@ export namespace MyNS {
 
 	export interface Shipping_PoliciesPostPostBodyCubicWeightSettings {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunAcceptableVolumetricWeight: number;
 
 		/**
 		 * Factor that will be used on the cubic weight calculation.
 		 * Required
+		 * Type: double
 		 */
 		volumetricFactor: number;
 	}
 	export interface Shipping_PoliciesPostPostBodyCubicWeightSettingsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		minimunAcceptableVolumetricWeight: FormControl<number | null | undefined>,
 
 		/**
 		 * Factor that will be used on the cubic weight calculation.
 		 * Required
+		 * Type: double
 		 */
 		volumetricFactor: FormControl<number | null | undefined>,
 	}
@@ -7392,6 +8580,7 @@ export namespace MyNS {
 		/**
 		 * Range of days available within a delivery window, for the customer to choose the scheduled delivery. For example, if the configured maxRangeDelivery is equal 7, and the customer buys something on a Tuesday, the options for scheduled delivery will be shown until the following Tuesday (7 days from the purchase day). If no options are available within the maxRangeDelivery set, this shipping policy won't be shown on the checkout.
 		 * Required
+		 * Type: double
 		 */
 		maxRangeDelivery: number;
 
@@ -7406,6 +8595,7 @@ export namespace MyNS {
 		/**
 		 * Range of days available within a delivery window, for the customer to choose the scheduled delivery. For example, if the configured maxRangeDelivery is equal 7, and the customer buys something on a Tuesday, the options for scheduled delivery will be shown until the following Tuesday (7 days from the purchase day). If no options are available within the maxRangeDelivery set, this shipping policy won't be shown on the checkout.
 		 * Required
+		 * Type: double
 		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
@@ -7428,6 +8618,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -7442,6 +8633,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -7466,6 +8658,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -7486,6 +8679,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -7515,6 +8709,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -7529,6 +8724,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -7545,12 +8741,14 @@ export namespace MyNS {
 		/**
 		 * Largest measure of the package.
 		 * Required
+		 * Type: double
 		 */
 		largestMeasure: number;
 
 		/**
 		 * Sum of all maximum measures of the package.
 		 * Required
+		 * Type: double
 		 */
 		maxMeasureSum: number;
 	}
@@ -7559,12 +8757,14 @@ export namespace MyNS {
 		/**
 		 * Largest measure of the package.
 		 * Required
+		 * Type: double
 		 */
 		largestMeasure: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of all maximum measures of the package.
 		 * Required
+		 * Type: double
 		 */
 		maxMeasureSum: FormControl<number | null | undefined>,
 	}
@@ -7764,6 +8964,7 @@ export namespace MyNS {
 		/**
 		 * Range of days available within a delivery window, for the customer to choose the scheduled delivery. For example, if the configured maxRangeDelivery is equal 7, and the customer buys something on a Tuesday, the options for scheduled delivery will be shown until the following Tuesday (7 days from the purchase day). If no options are available within the maxRangeDelivery set, this shipping policy won't be shown on the checkout.
 		 * Required
+		 * Type: double
 		 */
 		maxRangeDelivery: number;
 
@@ -7778,6 +8979,7 @@ export namespace MyNS {
 		/**
 		 * Range of days available within a delivery window, for the customer to choose the scheduled delivery. For example, if the configured maxRangeDelivery is equal 7, and the customer buys something on a Tuesday, the options for scheduled delivery will be shown until the following Tuesday (7 days from the purchase day). If no options are available within the maxRangeDelivery set, this shipping policy won't be shown on the checkout.
 		 * Required
+		 * Type: double
 		 */
 		maxRangeDelivery: FormControl<number | null | undefined>,
 
@@ -7800,6 +9002,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: number;
 
@@ -7814,6 +9017,7 @@ export namespace MyNS {
 		/**
 		 * Day of the week, from `0` (sunday) to `6` (saturday).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dayOfWeek: FormControl<number | null | undefined>,
 	}
@@ -7838,6 +9042,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: number;
 
@@ -7858,6 +9063,7 @@ export namespace MyNS {
 		/**
 		 * List price for day of the week.
 		 * Required
+		 * Type: double
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -7887,6 +9093,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: number;
 	}
@@ -7901,6 +9108,7 @@ export namespace MyNS {
 		/**
 		 * Maximum number of orders or SKUs that the store is capable of fulfilling.
 		 * Required
+		 * Type: double
 		 */
 		maxValue: FormControl<number | null | undefined>,
 	}
@@ -7917,12 +9125,14 @@ export namespace MyNS {
 		/**
 		 * Largest measure of the package.
 		 * Required
+		 * Type: double
 		 */
 		largestMeasure: number;
 
 		/**
 		 * Sum of all maximum measures of the package.
 		 * Required
+		 * Type: double
 		 */
 		maxMeasureSum: number;
 	}
@@ -7931,12 +9141,14 @@ export namespace MyNS {
 		/**
 		 * Largest measure of the package.
 		 * Required
+		 * Type: double
 		 */
 		largestMeasure: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of all maximum measures of the package.
 		 * Required
+		 * Type: double
 		 */
 		maxMeasureSum: FormControl<number | null | undefined>,
 	}

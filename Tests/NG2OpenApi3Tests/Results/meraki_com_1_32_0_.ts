@@ -29,7 +29,10 @@ export namespace MyNS {
 		/** The network that this routed interface is on, in CIDR notation (ex. 10.1.1.0/24). */
 		subnet?: string | null;
 
-		/** The VLAN this routed interface is on. VLAN must be between 1 and 4094. */
+		/**
+		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface CreateDeviceSwitchRoutingInterfaceCreatedeviceswitchroutinginterfaceFormProperties {
@@ -49,7 +52,10 @@ export namespace MyNS {
 		/** The network that this routed interface is on, in CIDR notation (ex. 10.1.1.0/24). */
 		subnet: FormControl<string | null | undefined>,
 
-		/** The VLAN this routed interface is on. VLAN must be between 1 and 4094. */
+		/**
+		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDeviceSwitchRoutingInterfaceCreatedeviceswitchroutinginterfaceFormGroup() {
@@ -109,7 +115,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an           existing OSPF area. Defaults to 'disabled'. */
 		area?: string | null;
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -120,7 +129,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an           existing OSPF area. Defaults to 'disabled'. */
 		area: FormControl<string | null | undefined>,
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -140,7 +152,10 @@ export namespace MyNS {
 		/** The OSPFv3 area to which this interface should belong. Can be either 'disabled' or the identifier of an           existing OSPFv3 area. Defaults to 'disabled'. */
 		area?: string | null;
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** When enabled, OSPFv3 will not run on the interface, but the subnet will still be advertised. */
@@ -151,7 +166,10 @@ export namespace MyNS {
 		/** The OSPFv3 area to which this interface should belong. Can be either 'disabled' or the identifier of an           existing OSPFv3 area. Defaults to 'disabled'. */
 		area: FormControl<string | null | undefined>,
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535           to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** When enabled, OSPFv3 will not run on the interface, but the subnet will still be advertised. */
@@ -763,6 +781,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.
+		 *     Type: float
 		 * @param {GetDeviceCameraAnalyticsOverviewObjectType} objectType [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
 		 * @return {Array<string>} Successful operation
 		 */
@@ -798,7 +817,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 14 hours after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 60. The default is 60.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetDeviceCameraAnalyticsOverviewObjectType} objectType [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
 		 * @return {Array<string>} Successful operation
 		 */
@@ -1003,6 +1024,7 @@ export namespace MyNS {
 		 * Get devices/{serial}/clients
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetDeviceClients(serial: string, t0: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -1066,7 +1088,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetDeviceLossAndLatencyHistoryUplink} uplink The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, cellular. The default is wan1.
 		 * @param {string} ip The destination IP used to obtain the requested stats. This is required.
 		 * @return {Array<string>} Successful operation
@@ -1151,6 +1175,7 @@ export namespace MyNS {
 		 * Get devices/{serial}/switch/ports/statuses
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetDeviceSwitchPortsStatusesReturn>} Successful operation
 		 */
 		GetDeviceSwitchPortsStatuses(serial: string, t0: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetDeviceSwitchPortsStatusesReturn>> {
@@ -1163,6 +1188,7 @@ export namespace MyNS {
 		 * Get devices/{serial}/switch/ports/statuses/packets
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetDeviceSwitchPortsStatusesPackets(serial: string, t0: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -1356,9 +1382,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @return {GetDeviceWirelessConnectionStatsReturn} Successful operation
 		 */
@@ -1373,9 +1402,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} fields Partial selection: If present, this call will return only the selected fields of ["rawDistribution", "avg"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 		 * @return {string} Successful operation
@@ -1449,6 +1481,7 @@ export namespace MyNS {
 		 * Return the alert history for this network
 		 * Get networks/{networkId}/alerts/history
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkAlertsHistoryReturn>} Successful operation
@@ -1484,7 +1517,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {GetNetworkApplianceClientSecurityEventsSortOrder} sortOrder Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
@@ -1851,7 +1886,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {GetNetworkApplianceClientSecurityEventsSortOrder} sortOrder Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
@@ -2158,7 +2195,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 10 minutes.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 600, 1800, 3600, 86400. The default is 60.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkApplianceUplinksUsageHistory(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined): Observable<Array<string>> {
@@ -2321,7 +2360,9 @@ export namespace MyNS {
 		 * Get networks/{networkId}/bluetoothClients
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 7 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 5 - 1000. Default is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {boolean} includeConnectivityHistory Include the connectivity history for this client
@@ -2337,6 +2378,7 @@ export namespace MyNS {
 		 * Get networks/{networkId}/bluetoothClients/{bluetoothClientId}
 		 * @param {boolean} includeConnectivityHistory Include the connectivity history for this client
 		 * @param {number} connectivityHistoryTimespan The timespan, in seconds, for the connectivityHistory data. By default 1 day, 86400, will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} Successful operation
 		 */
 		GetNetworkBluetoothClient(networkId: string, bluetoothClientId: string, includeConnectivityHistory: boolean | null | undefined, connectivityHistoryTimespan: number | null | undefined): Observable<string> {
@@ -2539,7 +2581,9 @@ export namespace MyNS {
 		 * Get networks/{networkId}/clients
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} statuses Filters clients based on status. Can be one of 'Online' or 'Offline'.
@@ -2563,12 +2607,15 @@ export namespace MyNS {
 		 * Get networks/{networkId}/clients/applicationUsage
 		 * @param {string} clients A list of client keys, MACs or IPs separated by comma.
 		 * @param {GetNetworkClientsApplicationUsageSsidNumber} ssidNumber An SSID number to include. If not specified, eveusage histories application usagents for all SSIDs will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkClientsApplicationUsage(networkId: string, clients: string, ssidNumber: GetNetworkClientsApplicationUsageSsidNumber | null | undefined, perPage: number | null | undefined, startingAfter: string | null | undefined, endingBefore: string | null | undefined, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -2582,7 +2629,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<string>} Successful operation
@@ -2598,7 +2647,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 7200, 86400, 604800, 2592000. The default is 604800.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} Successful operation
 		 */
 		GetNetworkClientsOverview(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined): Observable<string> {
@@ -2621,12 +2672,15 @@ export namespace MyNS {
 		 * Get networks/{networkId}/clients/usageHistories
 		 * @param {string} clients A list of client keys, MACs or IPs separated by comma.
 		 * @param {GetNetworkClientsUsageHistoriesSsidNumber} ssidNumber An SSID number to include. If not specified, events for all SSIDs will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkClientsUsageHistories(networkId: string, clients: string, ssidNumber: GetNetworkClientsUsageHistoriesSsidNumber | null | undefined, perPage: number | null | undefined, startingAfter: string | null | undefined, endingBefore: string | null | undefined, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -2688,6 +2742,7 @@ export namespace MyNS {
 		 * Return the client's network traffic data over time. Usage data is in kilobytes. This endpoint requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
 		 * Get networks/{networkId}/clients/{clientId}/trafficHistory
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<string>} Successful operation
@@ -2762,6 +2817,7 @@ export namespace MyNS {
 		 * @param {string} smDeviceMac The MAC address of the Systems Manager device which the list of events will be filtered with
 		 * @param {string} smDeviceName The name of the Systems Manager device which the list of events will be filtered with
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {GetNetworkEventsReturn} Successful operation
@@ -3047,7 +3103,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 3600, 86400. The default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkInsightApplicationHealthByTimeReturn>} Successful operation
 		 */
 		GetNetworkInsightApplicationHealthByTime(networkId: string, applicationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined): Observable<Array<GetNetworkInsightApplicationHealthByTimeReturn>> {
@@ -3181,8 +3239,11 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 600. The default is 600.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 100. Default is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<string>} Successful operation
@@ -3312,10 +3373,12 @@ export namespace MyNS {
 		 * Get policies for all clients with policies
 		 * Get networks/{networkId}/policies/byClient
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetNetworkPoliciesByClientReturn>} Successful operation
 		 */
 		GetNetworkPoliciesByClient(networkId: string, perPage: number | null | undefined, startingAfter: string | null | undefined, endingBefore: string | null | undefined, t0: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetNetworkPoliciesByClientReturn>> {
@@ -3339,7 +3402,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} interval The time interval in seconds for returned data. The valid intervals are: 86400, 604800. The default is 604800.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkSensorAlertsOverviewByMetricReturn>} Successful operation
 		 */
 		GetNetworkSensorAlertsOverviewByMetric(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, interval: number | null | undefined): Observable<Array<GetNetworkSensorAlertsOverviewByMetricReturn>> {
@@ -3462,6 +3527,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Filter devices by id(s).
 		 * @param {Array<string>} scope Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmDevicesReturn>} Successful operation
@@ -3555,6 +3621,7 @@ export namespace MyNS {
 		 * Returns historical connectivity data (whether a device is regularly checking in to Dashboard).
 		 * Get networks/{networkId}/sm/devices/{deviceId}/connectivity
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmDeviceConnectivityReturn>} Successful operation
@@ -3568,6 +3635,7 @@ export namespace MyNS {
 		 * Return historical records of various Systems Manager network connection details for desktop devices.
 		 * Get networks/{networkId}/sm/devices/{deviceId}/desktopLogs
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmDeviceDesktopLogsReturn>} Successful operation
@@ -3581,6 +3649,7 @@ export namespace MyNS {
 		 * Return historical records of commands sent to Systems Manager devices. Note that this will include the name of the Dashboard user who initiated the command if it was generated by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out of any reports.
 		 * Get networks/{networkId}/sm/devices/{deviceId}/deviceCommandLogs
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmDeviceDeviceCommandLogsReturn>} Successful operation
@@ -3614,6 +3683,7 @@ export namespace MyNS {
 		 * Return historical records of various Systems Manager client metrics for desktop devices.
 		 * Get networks/{networkId}/sm/devices/{deviceId}/performanceHistory
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmDevicePerformanceHistoryReturn>} Successful operation
@@ -3749,6 +3819,7 @@ export namespace MyNS {
 		 * List Trusted Access Configs
 		 * Get networks/{networkId}/sm/trustedAccessConfigs
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmTrustedAccessConfigsReturn>} Successful operation
@@ -3762,6 +3833,7 @@ export namespace MyNS {
 		 * List User Access Devices and its Trusted Access Connections
 		 * Get networks/{networkId}/sm/userAccessDevices
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSmUserAccessDevicesReturn>} Successful operation
@@ -3839,8 +3911,10 @@ export namespace MyNS {
 		 * List the splash login attempts for a network
 		 * Get networks/{networkId}/splashLoginAttempts
 		 * @param {GetNetworkSplashLoginAttemptsSsidNumber} ssidNumber Only return the login attempts for the specified SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} loginIdentifier The username, email, or phone number used during login
 		 * @param {number} timespan The timespan, in seconds, for the login attempts. The period will be from [timespan] seconds ago until now. The maximum timespan is 3 months
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkSplashLoginAttempts(networkId: string, ssidNumber: GetNetworkSplashLoginAttemptsSsidNumber | null | undefined, loginIdentifier: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -3953,7 +4027,9 @@ export namespace MyNS {
 		 * Get networks/{networkId}/switch/dhcp/v4/servers/seen
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSwitchDhcpV4ServersSeenReturn>} Successful operation
@@ -3987,6 +4063,7 @@ export namespace MyNS {
 		 * Return the list of servers trusted by Dynamic ARP Inspection on this network. These are also known as whitelisted snoop entries
 		 * Get networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersReturn>} Successful operation
@@ -4030,6 +4107,7 @@ export namespace MyNS {
 		 * Return the devices that have a Dynamic ARP Inspection warning and their warnings
 		 * Get networks/{networkId}/switch/dhcpServerPolicy/arpInspection/warnings/byDevice
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceReturn>} Successful operation
@@ -4594,6 +4672,7 @@ export namespace MyNS {
 		 * Get networks/{networkId}/traffic
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 30 days.
+		 *     Type: float
 		 * @param {GetNetworkTrafficDeviceType} deviceType Filter the data by device type: 'combined', 'wireless', 'switch' or 'appliance'. Defaults to 'combined'. When using 'combined', for each rule the data will come from the device type with the most usage.
 		 * @return {Array<string>} Successful operation
 		 */
@@ -4777,6 +4856,7 @@ export namespace MyNS {
 		 * Get networks/{networkId}/wireless/airMarshal
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkWirelessAirMarshal(networkId: string, t0: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -4850,7 +4930,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client's connection history.
 		 * @param {string} deviceSerial Filter results by device to return AP channel utilization metrics for the queried device; either :band or :clientId must be jointly specified.
@@ -4869,13 +4951,16 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client to return per-device client counts over time inner joined by the queried client's connection history.
 		 * @param {string} deviceSerial Filter results by device.
 		 * @param {string} apTag Filter results by AP tag.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6').
 		 * @param {number} ssid Filter results by SSID number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkWirelessClientCountHistoryReturn>} Successful operation
 		 */
 		GetNetworkWirelessClientCountHistory(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined, autoResolution: boolean | null | undefined, clientId: string | null | undefined, deviceSerial: string | null | undefined, apTag: string | null | undefined, band: GetDeviceWirelessConnectionStatsBand | null | undefined, ssid: number | null | undefined): Observable<Array<GetNetworkWirelessClientCountHistoryReturn>> {
@@ -4889,9 +4974,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @return {Array<string>} Successful operation
 		 */
@@ -4906,9 +4994,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} fields Partial selection: If present, this call will return only the selected fields of ["rawDistribution", "avg"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 		 * @return {Array<string>} Successful operation
@@ -4924,9 +5015,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @return {string} Successful operation
 		 */
@@ -4939,15 +5033,18 @@ export namespace MyNS {
 		 * List the wireless connectivity events for a client within a network in the timespan.
 		 * Get networks/{networkId}/wireless/clients/{clientId}/connectivityEvents
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {Array<string>} types A list of event types to include. If not specified, events of all types will be returned. Valid types are 'assoc', 'disassoc', 'auth', 'deauth', 'dns', 'dhcp', 'roam', 'connection' and/or 'sticky'.
 		 * @param {Array<string>} includedSeverities A list of severities to include. If not specified, events of all severities will be returned. Valid severities are 'good', 'info', 'warn' and/or 'bad'.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5', '6').
 		 * @param {GetNetworkWirelessClientConnectivityEventsSsidNumber} ssidNumber An SSID number to include. If not specified, events for all SSIDs will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} deviceSerial Filter results by an AP's serial number.
 		 * @return {Array<string>} Successful operation
 		 */
@@ -4962,7 +5059,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful operation
 		 */
 		GetNetworkWirelessClientLatencyHistory(networkId: string, clientId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined): Observable<Array<string>> {
@@ -4976,9 +5075,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} fields Partial selection: If present, this call will return only the selected fields of ["rawDistribution", "avg"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 		 * @return {string} Successful operation
@@ -4994,9 +5096,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @return {GetNetworkWirelessConnectionStatsReturn} Successful operation
 		 */
@@ -5011,13 +5116,16 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client.
 		 * @param {string} deviceSerial Filter results by device.
 		 * @param {string} apTag Filter results by AP tag.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6').
 		 * @param {number} ssid Filter results by SSID number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkWirelessDataRateHistoryReturn>} Successful operation
 		 */
 		GetNetworkWirelessDataRateHistory(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined, autoResolution: boolean | null | undefined, clientId: string | null | undefined, deviceSerial: string | null | undefined, apTag: string | null | undefined, band: GetDeviceWirelessConnectionStatsBand | null | undefined, ssid: number | null | undefined): Observable<Array<GetNetworkWirelessDataRateHistoryReturn>> {
@@ -5031,9 +5139,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @return {Array<GetNetworkWirelessDevicesConnectionStatsReturn>} Successful operation
 		 */
@@ -5048,9 +5159,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} fields Partial selection: If present, this call will return only the selected fields of ["rawDistribution", "avg"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 		 * @return {Array<string>} Successful operation
@@ -5066,9 +5180,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} serial Filter by AP
 		 * @param {string} clientId Filter by client MAC
@@ -5085,13 +5202,16 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client.
 		 * @param {string} deviceSerial Filter results by device.
 		 * @param {string} apTag Filter results by AP tag.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6').
 		 * @param {number} ssid Filter results by SSID number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetNetworkWirelessLatencyHistoryAccessCategory} accessCategory Filter by access category.
 		 * @return {Array<GetNetworkWirelessLatencyHistoryReturn>} Successful operation
 		 */
@@ -5106,9 +5226,12 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
+		 *     Type: float
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
 		 * @param {number} ssid Filter results by SSID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vlan Filter results by VLAN
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} apTag Filter results by AP Tag
 		 * @param {string} fields Partial selection: If present, this call will return only the selected fields of ["rawDistribution", "avg"]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
 		 * @return {string} Successful operation
@@ -5122,6 +5245,7 @@ export namespace MyNS {
 		 * List wireless mesh statuses for repeaters
 		 * Get networks/{networkId}/wireless/meshStatuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {string} Successful operation
@@ -5208,13 +5332,16 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client.
 		 * @param {string} deviceSerial Filter results by device.
 		 * @param {string} apTag Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6').
 		 * @param {number} ssid Filter results by SSID number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkWirelessSignalQualityHistoryReturn>} Successful operation
 		 */
 		GetNetworkWirelessSignalQualityHistory(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined, autoResolution: boolean | null | undefined, clientId: string | null | undefined, deviceSerial: string | null | undefined, apTag: string | null | undefined, band: GetDeviceWirelessConnectionStatsBand | null | undefined, ssid: number | null | undefined): Observable<Array<GetNetworkWirelessSignalQualityHistoryReturn>> {
@@ -5508,13 +5635,16 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+		 *     Type: float
 		 * @param {number} resolution The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoResolution Automatically select a data resolution based on the given timespan; this overrides the value specified by the 'resolution' parameter. The default setting is false.
 		 * @param {string} clientId Filter results by network client to return per-device AP usage over time inner joined by the queried client's connection history.
 		 * @param {string} deviceSerial Filter results by device. Requires :band.
 		 * @param {string} apTag Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
 		 * @param {GetDeviceWirelessConnectionStatsBand} band Filter results by band (either '2.4', '5' or '6').
 		 * @param {number} ssid Filter results by SSID number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<GetNetworkWirelessUsageHistoryReturn>} Successful operation
 		 */
 		GetNetworkWirelessUsageHistory(networkId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined, resolution: number | null | undefined, autoResolution: boolean | null | undefined, clientId: string | null | undefined, deviceSerial: string | null | undefined, apTag: string | null | undefined, band: GetDeviceWirelessConnectionStatsBand | null | undefined, ssid: number | null | undefined): Observable<Array<GetNetworkWirelessUsageHistoryReturn>> {
@@ -5889,16 +6019,20 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} adminId Filter the results by the ID of the admin who made the API requests
 		 * @param {string} path Filter the results by the path of the API requests
 		 * @param {GetOrganizationApiRequestsMethod} method Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST' or 'DELETE')
 		 * @param {number} responseCode Filter the results by the response code of the API requests
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sourceIp Filter the results by the IP address of the originating API request
 		 * @param {string} userAgent Filter the results by the user agent string of the API request
 		 * @param {GetOrganizationApiRequestsVersion} version Filter the results by the API version of the API request
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} operationIds Filter the results by one or more operation IDs for the API request
 		 * @return {Array<GetOrganizationApiRequestsReturn>} Successful operation
 		 */
@@ -5913,6 +6047,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
+		 *     Type: float
 		 * @return {string} Successful operation
 		 */
 		GetOrganizationApiRequestsOverview(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<string> {
@@ -5926,8 +6061,11 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
+		 *     Type: float
 		 * @param {number} interval The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetOrganizationApiRequestsOverviewResponseCodesByIntervalVersion} version Filter by API version of the endpoint. Allowable values are: [0, 1]
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} operationIds Filter by operation ID of the endpoint
 		 * @param {Array<string>} sourceIps Filter by source IP that made the API request
 		 * @param {Array<string>} adminIds Filter by admin ID of user that made the API request
@@ -5945,7 +6083,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {GetNetworkApplianceClientSecurityEventsSortOrder} sortOrder Sorted order of security events based on event detection time. Order options are 'ascending' or 'descending'. Default is ascending order.
@@ -5980,6 +6120,7 @@ export namespace MyNS {
 		 * List the uplink status of every Meraki MX and Z series appliances in the organization
 		 * Get organizations/{organizationId}/appliance/uplink/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of network IDs. The returned devices will be filtered to only include these networks.
@@ -5996,12 +6137,14 @@ export namespace MyNS {
 		 * Show VPN history stat for networks in an organization
 		 * Get organizations/{organizationId}/appliance/vpn/stats
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<string>} Successful operation
 		 */
 		GetOrganizationApplianceVpnStats(organizationId: string, perPage: number | null | undefined, startingAfter: string | null | undefined, endingBefore: string | null | undefined, networkIds: Array<string> | null | undefined, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<string>> {
@@ -6013,6 +6156,7 @@ export namespace MyNS {
 		 * Show VPN status for networks in an organization
 		 * Get organizations/{organizationId}/appliance/vpn/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456
@@ -6199,6 +6343,7 @@ export namespace MyNS {
 		 * List the uplink status of every Meraki MG cellular gateway in the organization
 		 * Get organizations/{organizationId}/cellularGateway/uplink/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of network IDs. The returned devices will be filtered to only include these networks.
@@ -6227,6 +6372,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationClientsBandwidthUsageHistoryReturn>} Successful operation
 		 */
 		GetOrganizationClientsBandwidthUsageHistory(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationClientsBandwidthUsageHistoryReturn>> {
@@ -6240,6 +6386,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {GetOrganizationClientsOverviewReturn} Successful operation
 		 */
 		GetOrganizationClientsOverview(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<GetOrganizationClientsOverviewReturn> {
@@ -6252,6 +6399,7 @@ export namespace MyNS {
 		 * Get organizations/{organizationId}/clients/search
 		 * @param {string} mac The MAC address of the client. Required.
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {string} Successful operation
@@ -6367,7 +6515,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 5000. Default is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} networkId Filters on the given network
@@ -6383,6 +6533,7 @@ export namespace MyNS {
 		 * List the devices in an organization
 		 * Get organizations/{organizationId}/devices
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} configurationUpdatedAfter Filter results by whether or not the device's configuration has been updated after the given timestamp
@@ -6410,6 +6561,7 @@ export namespace MyNS {
 		 * List the availability information for devices in an organization. The data returned by this endpoint is updated every 5 minutes.
 		 * Get organizations/{organizationId}/devices/availabilities
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
@@ -6428,6 +6580,7 @@ export namespace MyNS {
 		 * List the power status information for devices in an organization. The data returned by this endpoint is updated every 5 minutes.
 		 * Get organizations/{organizationId}/devices/powerModules/statuses/byDevice
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
@@ -6446,6 +6599,7 @@ export namespace MyNS {
 		 * List the status of every Meraki device in the organization
 		 * Get organizations/{organizationId}/devices/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter devices by network ids.
@@ -6478,6 +6632,7 @@ export namespace MyNS {
 		 * List the current uplink addresses for devices in an organization.
 		 * Get organizations/{organizationId}/devices/uplinks/addresses/byDevice
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
@@ -6498,6 +6653,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
+		 *     Type: float
 		 * @param {GetDeviceLossAndLatencyHistoryUplink} uplink Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.
 		 * @param {string} ip Optional filter for a specific destination IP. Default will return all destination IPs.
 		 * @return {Array<GetOrganizationDevicesUplinksLossAndLatencyReturn>} Successful operation
@@ -6583,6 +6739,7 @@ export namespace MyNS {
 		 * Get firmware upgrade status for the filtered devices
 		 * Get organizations/{organizationId}/firmware/upgrades/byDevice
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter by network
@@ -6671,6 +6828,7 @@ export namespace MyNS {
 		 * Return the device inventory for an organization
 		 * Get organizations/{organizationId}/inventory/devices
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {GetOrganizationInventoryDevicesUsedState} usedState Filter results by used or unused inventory. Accepted values are 'used' or 'unused'.
@@ -6736,6 +6894,7 @@ export namespace MyNS {
 		 * Get organizations/{organizationId}/inventory/onboarding/cloudMonitoring/networks
 		 * @param {GetOrganizationInventoryOnboardingCloudMonitoringNetworksDeviceType} deviceType Device Type switch or wireless controller
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {void} 
@@ -6769,6 +6928,7 @@ export namespace MyNS {
 		 * List the licenses for an organization
 		 * Get organizations/{organizationId}/licenses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} deviceSerial Filter the licenses to those assigned to a particular device. Returned in the same order that they are queued to the device.
@@ -6855,6 +7015,7 @@ export namespace MyNS {
 		 * List the licenses in a coterm organization
 		 * Get organizations/{organizationId}/licensing/coterm/licenses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {boolean} invalidated Filter for licenses that are invalidated
@@ -6904,6 +7065,7 @@ export namespace MyNS {
 		 * @param {Array<string>} tags An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below).
 		 * @param {GetOrganizationDevicesTagsFilterType} tagsFilterType An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<GetOrganizationNetworksReturn>} Successful operation
@@ -6947,6 +7109,7 @@ export namespace MyNS {
 		 * Lists Policy Objects belonging to the organization.
 		 * Get organizations/{organizationId}/policyObjects
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 10 - 5000. Default is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<string>} Successful operation
@@ -6970,6 +7133,7 @@ export namespace MyNS {
 		 * Lists Policy Object Groups belonging to the organization.
 		 * Get organizations/{organizationId}/policyObjects/groups
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @return {Array<string>} Successful operation
@@ -7173,11 +7337,13 @@ export namespace MyNS {
 		 * Return all reported readings from sensors in a given timespan, sorted by timestamp
 		 * Get organizations/{organizationId}/sensor/readings/history
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 365 days and 6 hours from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
+		 *     Type: float
 		 * @param {Array<string>} networkIds Optional parameter to filter readings by network.
 		 * @param {Array<string>} serials Optional parameter to filter readings by sensor.
 		 * @param {Array<string>} metrics Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
@@ -7192,6 +7358,7 @@ export namespace MyNS {
 		 * Return the latest available reading for each metric from each sensor, sorted by sensor serial
 		 * Get organizations/{organizationId}/sensor/readings/latest
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 100. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter readings by network.
@@ -7260,6 +7427,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopAppliancesByUtilizationReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopAppliancesByUtilization(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopAppliancesByUtilizationReturn>> {
@@ -7273,6 +7441,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopClientsByUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopClientsByUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopClientsByUsageReturn>> {
@@ -7286,6 +7455,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopClientsManufacturersByUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopClientsManufacturersByUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopClientsManufacturersByUsageReturn>> {
@@ -7299,6 +7469,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopDevicesByUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopDevicesByUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopDevicesByUsageReturn>> {
@@ -7312,6 +7483,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopDevicesModelsByUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopDevicesModelsByUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopDevicesModelsByUsageReturn>> {
@@ -7325,6 +7497,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopSsidsByUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopSsidsByUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopSsidsByUsageReturn>> {
@@ -7338,6 +7511,7 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @return {Array<GetOrganizationSummaryTopSwitchesByEnergyUsageReturn>} Successful operation
 		 */
 		GetOrganizationSummaryTopSwitchesByEnergyUsage(organizationId: string, t0: string | null | undefined, t1: string | null | undefined, timespan: number | null | undefined): Observable<Array<GetOrganizationSummaryTopSwitchesByEnergyUsageReturn>> {
@@ -7359,6 +7533,7 @@ export namespace MyNS {
 		 * List the switchports in an organization by switch
 		 * Get organizations/{organizationId}/switch/ports/bySwitch
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds Optional parameter to filter switchports by network.
@@ -7380,6 +7555,7 @@ export namespace MyNS {
 		 * List the uplink status of every Meraki MX, MG and Z series devices in the organization
 		 * Get organizations/{organizationId}/uplinks/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of network IDs. The returned devices will be filtered to only include these networks.
@@ -7419,7 +7595,9 @@ export namespace MyNS {
 		 * @param {string} t0 The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
 		 * @param {string} t1 The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
 		 * @param {number} timespan The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+		 *     Type: float
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} url The URL the webhook was sent to
@@ -7434,6 +7612,7 @@ export namespace MyNS {
 		 * Endpoint to see power status for wireless devices
 		 * Get organizations/{organizationId}/wireless/devices/ethernet/statuses
 		 * @param {number} perPage The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startingAfter A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {string} endingBefore A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
 		 * @param {Array<string>} networkIds A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]=N_12345678&networkIds[]=L_3456
@@ -7576,10 +7755,16 @@ export namespace MyNS {
 		/** The floor plan to associate to this device. null disassociates the device from the floorplan. */
 		floorPlanId?: string | null;
 
-		/** The latitude of a device */
+		/**
+		 * The latitude of a device
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** The longitude of a device */
+		/**
+		 * The longitude of a device
+		 * Type: float
+		 */
 		lng?: number | null;
 
 		/** Whether or not to set the latitude and longitude of a device based on the new address. Only applies when lat and lng are not specified. */
@@ -7605,10 +7790,16 @@ export namespace MyNS {
 		/** The floor plan to associate to this device. null disassociates the device from the floorplan. */
 		floorPlanId: FormControl<string | null | undefined>,
 
-		/** The latitude of a device */
+		/**
+		 * The latitude of a device
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** The longitude of a device */
+		/**
+		 * The longitude of a device
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Whether or not to set the latitude and longitude of a device based on the new address. Only applies when lat and lng are not specified. */
@@ -7853,7 +8044,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface GetDeviceApplianceUplinksSettingsReturnInterfacesWan1VlanTaggingFormProperties {
@@ -7861,7 +8055,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceApplianceUplinksSettingsReturnInterfacesWan1VlanTaggingFormGroup() {
@@ -8057,7 +8254,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface GetDeviceApplianceUplinksSettingsReturnInterfacesWan2VlanTaggingFormProperties {
@@ -8065,7 +8265,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceApplianceUplinksSettingsReturnInterfacesWan2VlanTaggingFormGroup() {
@@ -8300,7 +8503,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateDeviceApplianceUplinksSettingsPutBodyInterfacesWan1VlanTaggingFormProperties {
@@ -8308,7 +8514,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceApplianceUplinksSettingsPutBodyInterfacesWan1VlanTaggingFormGroup() {
@@ -8511,7 +8720,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateDeviceApplianceUplinksSettingsPutBodyInterfacesWan2VlanTaggingFormProperties {
@@ -8519,7 +8731,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceApplianceUplinksSettingsPutBodyInterfacesWan2VlanTaggingFormGroup() {
@@ -8744,7 +8959,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateDeviceApplianceUplinksSettingsReturnInterfacesWan1VlanTaggingFormProperties {
@@ -8752,7 +8970,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceApplianceUplinksSettingsReturnInterfacesWan1VlanTaggingFormGroup() {
@@ -8948,7 +9169,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled?: boolean | null;
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateDeviceApplianceUplinksSettingsReturnInterfacesWan2VlanTaggingFormProperties {
@@ -8956,7 +9180,10 @@ export namespace MyNS {
 		/** Whether VLAN tagging is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the VLAN to use for VLAN tagging. */
+		/**
+		 * The ID of the VLAN to use for VLAN tagging.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceApplianceUplinksSettingsReturnInterfacesWan2VlanTaggingFormGroup() {
@@ -8969,24 +9196,42 @@ export namespace MyNS {
 
 	export interface BlinkDeviceLedsPostBody {
 
-		/** The duration in seconds. Must be between 5 and 120. Default is 20 seconds */
+		/**
+		 * The duration in seconds. Must be between 5 and 120. Default is 20 seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
-		/** The duty cycle as the percent active. Must be between 10 and 90. Default is 50. */
+		/**
+		 * The duty cycle as the percent active. Must be between 10 and 90. Default is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duty?: number | null;
 
-		/** The period in milliseconds. Must be between 100 and 1000. Default is 160 milliseconds */
+		/**
+		 * The period in milliseconds. Must be between 100 and 1000. Default is 160 milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 	}
 	export interface BlinkDeviceLedsPostBodyFormProperties {
 
-		/** The duration in seconds. Must be between 5 and 120. Default is 20 seconds */
+		/**
+		 * The duration in seconds. Must be between 5 and 120. Default is 20 seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The duty cycle as the percent active. Must be between 10 and 90. Default is 50. */
+		/**
+		 * The duty cycle as the percent active. Must be between 10 and 90. Default is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duty: FormControl<number | null | undefined>,
 
-		/** The period in milliseconds. Must be between 100 and 1000. Default is 160 milliseconds */
+		/**
+		 * The period in milliseconds. Must be between 100 and 1000. Default is 160 milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 	}
 	export function CreateBlinkDeviceLedsPostBodyFormGroup() {
@@ -9602,7 +9847,10 @@ export namespace MyNS {
 
 	export interface CreateDeviceLiveToolsPingPostBody {
 
-		/** Count parameter to pass to ping. [1..5], default 5 */
+		/**
+		 * Count parameter to pass to ping. [1..5], default 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/**
@@ -9613,7 +9861,10 @@ export namespace MyNS {
 	}
 	export interface CreateDeviceLiveToolsPingPostBodyFormProperties {
 
-		/** Count parameter to pass to ping. [1..5], default 5 */
+		/**
+		 * Count parameter to pass to ping. [1..5], default 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
@@ -9669,7 +9920,10 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingReturnRequest {
 
-		/** Number of pings to send */
+		/**
+		 * Number of pings to send
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Device serial number */
@@ -9680,7 +9934,10 @@ export namespace MyNS {
 	}
 	export interface GetDeviceLiveToolsPingReturnRequestFormProperties {
 
-		/** Number of pings to send */
+		/**
+		 * Number of pings to send
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Device serial number */
@@ -9706,21 +9963,33 @@ export namespace MyNS {
 		/** Lost packets */
 		loss?: GetDeviceLiveToolsPingReturnResultsLoss;
 
-		/** Number of packets received */
+		/**
+		 * Number of packets received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		received?: number | null;
 
 		/** Received packets */
 		GetDeviceLiveToolsPingReturnResultsReplies?: Array<GetDeviceLiveToolsPingReturnResultsReplies>;
 
-		/** Number of packets sent */
+		/**
+		 * Number of packets sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingReturnResultsFormProperties {
 
-		/** Number of packets received */
+		/**
+		 * Number of packets received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		received: FormControl<number | null | undefined>,
 
-		/** Number of packets sent */
+		/**
+		 * Number of packets sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingReturnResultsFormGroup() {
@@ -9733,24 +10002,42 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingReturnResultsLatencies {
 
-		/** Average latency */
+		/**
+		 * Average latency
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Maximum latency */
+		/**
+		 * Maximum latency
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum latency */
+		/**
+		 * Minimum latency
+		 * Type: float
+		 */
 		minimum?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingReturnResultsLatenciesFormProperties {
 
-		/** Average latency */
+		/**
+		 * Average latency
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Maximum latency */
+		/**
+		 * Maximum latency
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum latency */
+		/**
+		 * Minimum latency
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingReturnResultsLatenciesFormGroup() {
@@ -9764,12 +10051,18 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingReturnResultsLoss {
 
-		/** Percentage of packets lost */
+		/**
+		 * Percentage of packets lost
+		 * Type: float
+		 */
 		percentage?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingReturnResultsLossFormProperties {
 
-		/** Percentage of packets lost */
+		/**
+		 * Percentage of packets lost
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingReturnResultsLossFormGroup() {
@@ -9781,24 +10074,42 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingReturnResultsReplies {
 
-		/** Latency of the packet in milliseconds */
+		/**
+		 * Latency of the packet in milliseconds
+		 * Type: float
+		 */
 		latency?: number | null;
 
-		/** Sequence ID of the packet */
+		/**
+		 * Sequence ID of the packet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequenceId?: number | null;
 
-		/** Size of the packet in bytes */
+		/**
+		 * Size of the packet in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingReturnResultsRepliesFormProperties {
 
-		/** Latency of the packet in milliseconds */
+		/**
+		 * Latency of the packet in milliseconds
+		 * Type: float
+		 */
 		latency: FormControl<number | null | undefined>,
 
-		/** Sequence ID of the packet */
+		/**
+		 * Sequence ID of the packet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequenceId: FormControl<number | null | undefined>,
 
-		/** Size of the packet in bytes */
+		/**
+		 * Size of the packet in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingReturnResultsRepliesFormGroup() {
@@ -9812,12 +10123,18 @@ export namespace MyNS {
 
 	export interface CreateDeviceLiveToolsPingDevicePostBody {
 
-		/** Count parameter to pass to ping. [1..5], default 5 */
+		/**
+		 * Count parameter to pass to ping. [1..5], default 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface CreateDeviceLiveToolsPingDevicePostBodyFormProperties {
 
-		/** Count parameter to pass to ping. [1..5], default 5 */
+		/**
+		 * Count parameter to pass to ping. [1..5], default 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDeviceLiveToolsPingDevicePostBodyFormGroup() {
@@ -9866,7 +10183,10 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingDeviceReturnRequest {
 
-		/** Number of pings to send */
+		/**
+		 * Number of pings to send
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Device serial number */
@@ -9877,7 +10197,10 @@ export namespace MyNS {
 	}
 	export interface GetDeviceLiveToolsPingDeviceReturnRequestFormProperties {
 
-		/** Number of pings to send */
+		/**
+		 * Number of pings to send
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Device serial number */
@@ -9903,21 +10226,33 @@ export namespace MyNS {
 		/** Lost packets */
 		loss?: GetDeviceLiveToolsPingDeviceReturnResultsLoss;
 
-		/** Number of packets received */
+		/**
+		 * Number of packets received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		received?: number | null;
 
 		/** Received packets */
 		GetDeviceLiveToolsPingDeviceReturnResultsReplies?: Array<GetDeviceLiveToolsPingDeviceReturnResultsReplies>;
 
-		/** Number of packets sent */
+		/**
+		 * Number of packets sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsFormProperties {
 
-		/** Number of packets received */
+		/**
+		 * Number of packets received
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		received: FormControl<number | null | undefined>,
 
-		/** Number of packets sent */
+		/**
+		 * Number of packets sent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingDeviceReturnResultsFormGroup() {
@@ -9930,24 +10265,42 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsLatencies {
 
-		/** Average latency */
+		/**
+		 * Average latency
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Maximum latency */
+		/**
+		 * Maximum latency
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum latency */
+		/**
+		 * Minimum latency
+		 * Type: float
+		 */
 		minimum?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsLatenciesFormProperties {
 
-		/** Average latency */
+		/**
+		 * Average latency
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Maximum latency */
+		/**
+		 * Maximum latency
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum latency */
+		/**
+		 * Minimum latency
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingDeviceReturnResultsLatenciesFormGroup() {
@@ -9961,12 +10314,18 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsLoss {
 
-		/** Percentage of packets lost */
+		/**
+		 * Percentage of packets lost
+		 * Type: float
+		 */
 		percentage?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsLossFormProperties {
 
-		/** Percentage of packets lost */
+		/**
+		 * Percentage of packets lost
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingDeviceReturnResultsLossFormGroup() {
@@ -9978,24 +10337,42 @@ export namespace MyNS {
 
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsReplies {
 
-		/** Latency of the packet in milliseconds */
+		/**
+		 * Latency of the packet in milliseconds
+		 * Type: float
+		 */
 		latency?: number | null;
 
-		/** Sequence ID of the packet */
+		/**
+		 * Sequence ID of the packet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequenceId?: number | null;
 
-		/** Size of the packet in bytes */
+		/**
+		 * Size of the packet in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 	export interface GetDeviceLiveToolsPingDeviceReturnResultsRepliesFormProperties {
 
-		/** Latency of the packet in milliseconds */
+		/**
+		 * Latency of the packet in milliseconds
+		 * Type: float
+		 */
 		latency: FormControl<number | null | undefined>,
 
-		/** Sequence ID of the packet */
+		/**
+		 * Sequence ID of the packet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequenceId: FormControl<number | null | undefined>,
 
-		/** Size of the packet in bytes */
+		/**
+		 * Size of the packet in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceLiveToolsPingDeviceReturnResultsRepliesFormGroup() {
@@ -10042,7 +10419,10 @@ export namespace MyNS {
 		/** Configure the interface to have static IP settings or use DHCP. */
 		usingStaticIp?: boolean | null;
 
-		/** The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false. */
+		/**
+		 * The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
 		/** Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'. */
@@ -10062,7 +10442,10 @@ export namespace MyNS {
 		/** Configure the interface to have static IP settings or use DHCP. */
 		usingStaticIp: FormControl<boolean | null | undefined>,
 
-		/** The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false. */
+		/**
+		 * The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
 		/** Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'. */
@@ -10099,7 +10482,10 @@ export namespace MyNS {
 		/** Configure the interface to have static IP settings or use DHCP. */
 		usingStaticIp?: boolean | null;
 
-		/** The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false. */
+		/**
+		 * The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
 		/** Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'. */
@@ -10119,7 +10505,10 @@ export namespace MyNS {
 		/** Configure the interface to have static IP settings or use DHCP. */
 		usingStaticIp: FormControl<boolean | null | undefined>,
 
-		/** The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false. */
+		/**
+		 * The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
 		/** Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'. */
@@ -10290,7 +10679,10 @@ export namespace MyNS {
 
 	export interface GetDeviceSwitchPortsReturn {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -10347,7 +10739,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch port. */
@@ -10365,15 +10760,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetDeviceSwitchPortsReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -10418,7 +10822,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch port. */
@@ -10433,10 +10840,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchPortsReturnFormGroup() {
@@ -10527,7 +10940,10 @@ export namespace MyNS {
 		/** The Cisco Discovery Protocol (CDP) information of the connected device. */
 		cdp?: GetDeviceSwitchPortsStatusesReturnCdp;
 
-		/** The number of clients connected through this port. */
+		/**
+		 * The number of clients connected through this port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clientCount?: number | null;
 
 		/** The current duplex of a connected port. */
@@ -10548,7 +10964,10 @@ export namespace MyNS {
 		/** The string identifier of this port on the switch. This is commonly just the port number but may contain additional identifying information such as the slot and module-type if the port is located on a port module. */
 		portId?: string | null;
 
-		/** How much power (in watt-hours) has been delivered by this port during the timespan. */
+		/**
+		 * How much power (in watt-hours) has been delivered by this port during the timespan.
+		 * Type: float
+		 */
 		powerUsageInWh?: number | null;
 
 		/** The Secure Port status of the port. */
@@ -10571,7 +10990,10 @@ export namespace MyNS {
 	}
 	export interface GetDeviceSwitchPortsStatusesReturnFormProperties {
 
-		/** The number of clients connected through this port. */
+		/**
+		 * The number of clients connected through this port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clientCount: FormControl<number | null | undefined>,
 
 		/** The current duplex of a connected port. */
@@ -10586,7 +11008,10 @@ export namespace MyNS {
 		/** The string identifier of this port on the switch. This is commonly just the port number but may contain additional identifying information such as the slot and module-type if the port is located on a port module. */
 		portId: FormControl<string | null | undefined>,
 
-		/** How much power (in watt-hours) has been delivered by this port during the timespan. */
+		/**
+		 * How much power (in watt-hours) has been delivered by this port during the timespan.
+		 * Type: float
+		 */
 		powerUsageInWh: FormControl<number | null | undefined>,
 
 		/** The current data transfer rate which the port is operating at. */
@@ -10623,7 +11048,10 @@ export namespace MyNS {
 		/** The device's management IP. */
 		managementAddress?: string | null;
 
-		/** Indicates, per interface, the assumed VLAN for untagged packets on the interface. */
+		/**
+		 * Indicates, per interface, the assumed VLAN for untagged packets on the interface.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nativeVlan?: number | null;
 
 		/** Identifies the hardware platform of the device. */
@@ -10655,7 +11083,10 @@ export namespace MyNS {
 		/** The device's management IP. */
 		managementAddress: FormControl<string | null | undefined>,
 
-		/** Indicates, per interface, the assumed VLAN for untagged packets on the interface. */
+		/**
+		 * Indicates, per interface, the assumed VLAN for untagged packets on the interface.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nativeVlan: FormControl<number | null | undefined>,
 
 		/** Identifies the hardware platform of the device. */
@@ -10699,7 +11130,10 @@ export namespace MyNS {
 		/** The device's management IP. */
 		managementAddress?: string | null;
 
-		/** The device's management VLAN. */
+		/**
+		 * The device's management VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managementVlan?: number | null;
 
 		/** Description of the port from which the LLDP packet was sent. */
@@ -10708,7 +11142,10 @@ export namespace MyNS {
 		/** Identifies the port from which the LLDP packet was sent */
 		portId?: string | null;
 
-		/** The port's VLAN. */
+		/**
+		 * The port's VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		portVlan?: number | null;
 
 		/** Identifies the device type, which indicates the functional capabilities of the device. */
@@ -10728,7 +11165,10 @@ export namespace MyNS {
 		/** The device's management IP. */
 		managementAddress: FormControl<string | null | undefined>,
 
-		/** The device's management VLAN. */
+		/**
+		 * The device's management VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managementVlan: FormControl<number | null | undefined>,
 
 		/** Description of the port from which the LLDP packet was sent. */
@@ -10737,7 +11177,10 @@ export namespace MyNS {
 		/** Identifies the port from which the LLDP packet was sent */
 		portId: FormControl<string | null | undefined>,
 
-		/** The port's VLAN. */
+		/**
+		 * The port's VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		portVlan: FormControl<number | null | undefined>,
 
 		/** Identifies the device type, which indicates the functional capabilities of the device. */
@@ -10808,10 +11251,16 @@ export namespace MyNS {
 		/** The type of the  ('trunk' or 'access'). */
 		type?: GetDeviceSwitchPortsReturnType | null;
 
-		/** The VLAN of the . A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the . A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the . Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the . Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetDeviceSwitchPortsStatusesReturnSecurePortConfigOverridesFormProperties {
@@ -10822,10 +11271,16 @@ export namespace MyNS {
 		/** The type of the  ('trunk' or 'access'). */
 		type: FormControl<GetDeviceSwitchPortsReturnType | null | undefined>,
 
-		/** The VLAN of the . A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the . A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the . Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the . Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchPortsStatusesReturnSecurePortConfigOverridesFormGroup() {
@@ -10844,24 +11299,42 @@ export namespace MyNS {
 
 	export interface GetDeviceSwitchPortsStatusesReturnTrafficInKbps {
 
-		/** The average speed of the data received (in kilobits-per-second). */
+		/**
+		 * The average speed of the data received (in kilobits-per-second).
+		 * Type: float
+		 */
 		recv?: number | null;
 
-		/** The average speed of the data sent (in kilobits-per-second). */
+		/**
+		 * The average speed of the data sent (in kilobits-per-second).
+		 * Type: float
+		 */
 		sent?: number | null;
 
-		/** The average speed of the data sent and received (in kilobits-per-second). */
+		/**
+		 * The average speed of the data sent and received (in kilobits-per-second).
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface GetDeviceSwitchPortsStatusesReturnTrafficInKbpsFormProperties {
 
-		/** The average speed of the data received (in kilobits-per-second). */
+		/**
+		 * The average speed of the data received (in kilobits-per-second).
+		 * Type: float
+		 */
 		recv: FormControl<number | null | undefined>,
 
-		/** The average speed of the data sent (in kilobits-per-second). */
+		/**
+		 * The average speed of the data sent (in kilobits-per-second).
+		 * Type: float
+		 */
 		sent: FormControl<number | null | undefined>,
 
-		/** The average speed of the data sent and received (in kilobits-per-second). */
+		/**
+		 * The average speed of the data sent and received (in kilobits-per-second).
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchPortsStatusesReturnTrafficInKbpsFormGroup() {
@@ -10875,24 +11348,42 @@ export namespace MyNS {
 
 	export interface GetDeviceSwitchPortsStatusesReturnUsageInKb {
 
-		/** The amount of data received (in kilobytes). */
+		/**
+		 * The amount of data received (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recv?: number | null;
 
-		/** The amount of data sent (in kilobytes). */
+		/**
+		 * The amount of data sent (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent?: number | null;
 
-		/** The total amount of data sent and received (in kilobytes). */
+		/**
+		 * The total amount of data sent and received (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetDeviceSwitchPortsStatusesReturnUsageInKbFormProperties {
 
-		/** The amount of data received (in kilobytes). */
+		/**
+		 * The amount of data received (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recv: FormControl<number | null | undefined>,
 
-		/** The amount of data sent (in kilobytes). */
+		/**
+		 * The amount of data sent (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent: FormControl<number | null | undefined>,
 
-		/** The total amount of data sent and received (in kilobytes). */
+		/**
+		 * The total amount of data sent and received (in kilobytes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchPortsStatusesReturnUsageInKbFormGroup() {
@@ -10906,7 +11397,10 @@ export namespace MyNS {
 
 	export interface GetDeviceSwitchPortReturn {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -10963,7 +11457,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch port. */
@@ -10981,15 +11478,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetDeviceSwitchPortReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -11034,7 +11540,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch port. */
@@ -11049,10 +11558,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchPortReturnFormGroup() {
@@ -11116,7 +11631,10 @@ export namespace MyNS {
 
 	export interface UpdateDeviceSwitchPortPutBody {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -11167,7 +11685,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch port. */
@@ -11185,15 +11706,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface UpdateDeviceSwitchPortPutBodyFormProperties {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -11235,7 +11765,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch port. */
@@ -11250,10 +11783,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceSwitchPortPutBodyFormGroup() {
@@ -11316,7 +11855,10 @@ export namespace MyNS {
 
 	export interface UpdateDeviceSwitchPortReturn {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -11373,7 +11915,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch port. */
@@ -11391,15 +11936,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface UpdateDeviceSwitchPortReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -11444,7 +11998,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch port. */
@@ -11459,10 +12016,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceSwitchPortReturnFormGroup() {
@@ -11553,7 +12116,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet?: string | null;
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface GetDeviceSwitchRoutingInterfacesReturnFormProperties {
@@ -11576,7 +12142,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet: FormControl<string | null | undefined>,
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchRoutingInterfacesReturnFormGroup() {
@@ -11635,7 +12204,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -11646,7 +12218,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -11666,7 +12241,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -11677,7 +12255,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -11721,7 +12302,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet?: string | null;
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface GetDeviceSwitchRoutingInterfaceReturnFormProperties {
@@ -11744,7 +12328,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet: FormControl<string | null | undefined>,
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceSwitchRoutingInterfaceReturnFormGroup() {
@@ -11803,7 +12390,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -11814,7 +12404,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -11834,7 +12427,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -11845,7 +12441,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -11889,7 +12488,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet?: string | null;
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateDeviceSwitchRoutingInterfaceReturnFormProperties {
@@ -11912,7 +12514,10 @@ export namespace MyNS {
 		/** IPv4 subnet */
 		subnet: FormControl<string | null | undefined>,
 
-		/** VLAN id */
+		/**
+		 * VLAN id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceSwitchRoutingInterfaceReturnFormGroup() {
@@ -11971,7 +12576,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -11982,7 +12590,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv4 area */
@@ -12002,7 +12613,10 @@ export namespace MyNS {
 		/** Area id */
 		area?: string | null;
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -12013,7 +12627,10 @@ export namespace MyNS {
 		/** Area id */
 		area: FormControl<string | null | undefined>,
 
-		/** OSPF Cost */
+		/**
+		 * OSPF Cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Disable sending Hello packets on this interface's IPv6 area */
@@ -12340,10 +12957,16 @@ export namespace MyNS {
 
 	export interface GetDeviceWirelessBluetoothSettingsReturn {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12351,10 +12974,16 @@ export namespace MyNS {
 	}
 	export interface GetDeviceWirelessBluetoothSettingsReturnFormProperties {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12371,10 +13000,16 @@ export namespace MyNS {
 
 	export interface UpdateDeviceWirelessBluetoothSettingsPutBody {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12382,10 +13017,16 @@ export namespace MyNS {
 	}
 	export interface UpdateDeviceWirelessBluetoothSettingsPutBodyFormProperties {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12402,10 +13043,16 @@ export namespace MyNS {
 
 	export interface UpdateDeviceWirelessBluetoothSettingsReturn {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12413,10 +13060,16 @@ export namespace MyNS {
 	}
 	export interface UpdateDeviceWirelessBluetoothSettingsReturnFormProperties {
 
-		/** Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired major value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
+		/**
+		 * Desired minor value of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Desired UUID of the beacon. If the value is set to null it will reset to Dashboard's automatically generated value. */
@@ -12455,36 +13108,66 @@ export namespace MyNS {
 
 	export interface GetDeviceWirelessConnectionStatsReturnConnectionStats {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc?: number | null;
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth?: number | null;
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp?: number | null;
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns?: number | null;
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success?: number | null;
 	}
 	export interface GetDeviceWirelessConnectionStatsReturnConnectionStatsFormProperties {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc: FormControl<number | null | undefined>,
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth: FormControl<number | null | undefined>,
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp: FormControl<number | null | undefined>,
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns: FormControl<number | null | undefined>,
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDeviceWirelessConnectionStatsReturnConnectionStatsFormGroup() {
@@ -12529,7 +13212,10 @@ export namespace MyNS {
 		/** Sets a manual channel for 5 GHz. Can be '0', '20', '40', '80' or '160' or null for using auto channel width. */
 		channelWidth?: UpdateDeviceWirelessRadioSettingsPutBodyFiveGhzSettingsChannelWidth;
 
-		/** Set a manual target power for 5 GHz. Can be between '8' or '30' or null for using auto power range. */
+		/**
+		 * Set a manual target power for 5 GHz. Can be between '8' or '30' or null for using auto power range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetPower?: number | null;
 	}
 	export interface UpdateDeviceWirelessRadioSettingsPutBodyFiveGhzSettingsFormProperties {
@@ -12540,7 +13226,10 @@ export namespace MyNS {
 		/** Sets a manual channel for 5 GHz. Can be '0', '20', '40', '80' or '160' or null for using auto channel width. */
 		channelWidth: FormControl<UpdateDeviceWirelessRadioSettingsPutBodyFiveGhzSettingsChannelWidth | null | undefined>,
 
-		/** Set a manual target power for 5 GHz. Can be between '8' or '30' or null for using auto power range. */
+		/**
+		 * Set a manual target power for 5 GHz. Can be between '8' or '30' or null for using auto power range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetPower: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceWirelessRadioSettingsPutBodyFiveGhzSettingsFormGroup() {
@@ -12561,7 +13250,10 @@ export namespace MyNS {
 		/** Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using auto channel. */
 		channel?: UpdateDeviceWirelessRadioSettingsPutBodyTwoFourGhzSettingsChannel;
 
-		/** Set a manual target power for 2.4 GHz. Can be between '5' or '30' or null for using auto power range. */
+		/**
+		 * Set a manual target power for 2.4 GHz. Can be between '5' or '30' or null for using auto power range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetPower?: number | null;
 	}
 	export interface UpdateDeviceWirelessRadioSettingsPutBodyTwoFourGhzSettingsFormProperties {
@@ -12569,7 +13261,10 @@ export namespace MyNS {
 		/** Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using auto channel. */
 		channel: FormControl<UpdateDeviceWirelessRadioSettingsPutBodyTwoFourGhzSettingsChannel | null | undefined>,
 
-		/** Set a manual target power for 2.4 GHz. Can be between '5' or '30' or null for using auto power range. */
+		/**
+		 * Set a manual target power for 2.4 GHz. Can be between '5' or '30' or null for using auto power range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetPower: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDeviceWirelessRadioSettingsPutBodyTwoFourGhzSettingsFormGroup() {
@@ -13547,13 +14242,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled?: boolean | null;
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type?: string | null;
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkAppliancePortsReturnFormProperties {
@@ -13570,13 +14271,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type: FormControl<string | null | undefined>,
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkAppliancePortsReturnFormGroup() {
@@ -13606,13 +14313,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled?: boolean | null;
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type?: string | null;
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkAppliancePortReturnFormProperties {
@@ -13629,13 +14342,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type: FormControl<string | null | undefined>,
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkAppliancePortReturnFormGroup() {
@@ -13668,7 +14387,10 @@ export namespace MyNS {
 		/** The type of the port: 'access' or 'trunk'. */
 		type?: string | null;
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkAppliancePortPutBodyFormProperties {
@@ -13688,7 +14410,10 @@ export namespace MyNS {
 		/** The type of the port: 'access' or 'trunk'. */
 		type: FormControl<string | null | undefined>,
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkAppliancePortPutBodyFormGroup() {
@@ -13717,13 +14442,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled?: boolean | null;
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type?: string | null;
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkAppliancePortReturnFormProperties {
@@ -13740,13 +14471,19 @@ export namespace MyNS {
 		/** The status of the port */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Number of the port */
+		/**
+		 * Number of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The type of the port: 'access' or 'trunk'. */
 		type: FormControl<string | null | undefined>,
 
-		/** Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode. */
+		/**
+		 * Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkAppliancePortReturnFormGroup() {
@@ -14705,7 +15442,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode?: string | null;
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId?: number | null;
 
 		/** Whether or not the SSID is enabled. */
@@ -14717,7 +15457,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name?: string | null;
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The RADIUS 802.1x servers to be used for authentication. */
@@ -14734,7 +15477,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode: FormControl<string | null | undefined>,
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId: FormControl<number | null | undefined>,
 
 		/** Whether or not the SSID is enabled. */
@@ -14746,7 +15492,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether the MX should advertise or hide this SSID. */
@@ -14774,7 +15523,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host?: string | null;
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkApplianceSsidsReturnRadiusServersFormProperties {
@@ -14782,7 +15534,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host: FormControl<string | null | undefined>,
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceSsidsReturnRadiusServersFormGroup() {
@@ -14798,7 +15553,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode?: string | null;
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId?: number | null;
 
 		/** Whether or not the SSID is enabled. */
@@ -14810,7 +15568,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name?: string | null;
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The RADIUS 802.1x servers to be used for authentication. */
@@ -14827,7 +15588,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode: FormControl<string | null | undefined>,
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId: FormControl<number | null | undefined>,
 
 		/** Whether or not the SSID is enabled. */
@@ -14839,7 +15603,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether the MX should advertise or hide this SSID. */
@@ -14867,7 +15634,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host?: string | null;
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkApplianceSsidReturnRadiusServersFormProperties {
@@ -14875,7 +15645,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host: FormControl<string | null | undefined>,
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceSsidReturnRadiusServersFormGroup() {
@@ -14891,7 +15664,10 @@ export namespace MyNS {
 		/** The association control method for the SSID ('open', 'psk', '8021x-meraki' or '8021x-radius'). */
 		authMode?: UpdateNetworkApplianceSsidPutBodyAuthMode | null;
 
-		/** The VLAN ID of the VLAN associated to this SSID. This parameter is only valid if the network is in routed mode. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID. This parameter is only valid if the network is in routed mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId?: number | null;
 
 		/** DHCP Enforced Deauthentication enables the disassociation of wireless clients in addition to Mandatory DHCP. This param is only valid on firmware versions >= MX 17.0 where the associated LAN has Mandatory DHCP Enabled */
@@ -14923,7 +15699,10 @@ export namespace MyNS {
 		/** The association control method for the SSID ('open', 'psk', '8021x-meraki' or '8021x-radius'). */
 		authMode: FormControl<UpdateNetworkApplianceSsidPutBodyAuthMode | null | undefined>,
 
-		/** The VLAN ID of the VLAN associated to this SSID. This parameter is only valid if the network is in routed mode. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID. This parameter is only valid if the network is in routed mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId: FormControl<number | null | undefined>,
 
 		/** Whether or not the SSID is enabled. */
@@ -14984,7 +15763,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host?: string | null;
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The RADIUS client shared secret. */
@@ -14995,7 +15777,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host: FormControl<string | null | undefined>,
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The RADIUS client shared secret. */
@@ -15017,7 +15802,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode?: string | null;
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId?: number | null;
 
 		/** Whether or not the SSID is enabled. */
@@ -15029,7 +15817,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name?: string | null;
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The RADIUS 802.1x servers to be used for authentication. */
@@ -15046,7 +15837,10 @@ export namespace MyNS {
 		/** The association control method for the SSID. */
 		authMode: FormControl<string | null | undefined>,
 
-		/** The VLAN ID of the VLAN associated to this SSID. */
+		/**
+		 * The VLAN ID of the VLAN associated to this SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId: FormControl<number | null | undefined>,
 
 		/** Whether or not the SSID is enabled. */
@@ -15058,7 +15852,10 @@ export namespace MyNS {
 		/** The name of the SSID. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of the SSID. */
+		/**
+		 * The number of the SSID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether the MX should advertise or hide this SSID. */
@@ -15086,7 +15883,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host?: string | null;
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface UpdateNetworkApplianceSsidReturnRadiusServersFormProperties {
@@ -15094,7 +15894,10 @@ export namespace MyNS {
 		/** The IP address of your RADIUS server. */
 		host: FormControl<string | null | undefined>,
 
-		/** The UDP port your RADIUS servers listens on for Access-requests. */
+		/**
+		 * The UDP port your RADIUS servers listens on for Access-requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceSsidReturnRadiusServersFormGroup() {
@@ -15280,18 +16083,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingPutBodyGlobalBandwidthLimits {
 
-		/** The download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingPutBodyGlobalBandwidthLimitsFormProperties {
 
-		/** The download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingPutBodyGlobalBandwidthLimitsFormGroup() {
@@ -15304,13 +16119,22 @@ export namespace MyNS {
 
 	export interface CreateNetworkApplianceTrafficShapingCustomPerformanceClassPostBody {
 
-		/** Maximum jitter in milliseconds */
+		/**
+		 * Maximum jitter in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJitter?: number | null;
 
-		/** Maximum latency in milliseconds */
+		/**
+		 * Maximum latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency?: number | null;
 
-		/** Maximum percentage of packet loss */
+		/**
+		 * Maximum percentage of packet loss
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLossPercentage?: number | null;
 
 		/**
@@ -15321,13 +16145,22 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkApplianceTrafficShapingCustomPerformanceClassPostBodyFormProperties {
 
-		/** Maximum jitter in milliseconds */
+		/**
+		 * Maximum jitter in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJitter: FormControl<number | null | undefined>,
 
-		/** Maximum latency in milliseconds */
+		/**
+		 * Maximum latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency: FormControl<number | null | undefined>,
 
-		/** Maximum percentage of packet loss */
+		/**
+		 * Maximum percentage of packet loss
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLossPercentage: FormControl<number | null | undefined>,
 
 		/**
@@ -15348,13 +16181,22 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingCustomPerformanceClassPutBody {
 
-		/** Maximum jitter in milliseconds */
+		/**
+		 * Maximum jitter in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJitter?: number | null;
 
-		/** Maximum latency in milliseconds */
+		/**
+		 * Maximum latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency?: number | null;
 
-		/** Maximum percentage of packet loss */
+		/**
+		 * Maximum percentage of packet loss
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLossPercentage?: number | null;
 
 		/** Name of the custom performance class */
@@ -15362,13 +16204,22 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkApplianceTrafficShapingCustomPerformanceClassPutBodyFormProperties {
 
-		/** Maximum jitter in milliseconds */
+		/**
+		 * Maximum jitter in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJitter: FormControl<number | null | undefined>,
 
-		/** Maximum latency in milliseconds */
+		/**
+		 * Maximum latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency: FormControl<number | null | undefined>,
 
-		/** Maximum percentage of packet loss */
+		/**
+		 * Maximum percentage of packet loss
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLossPercentage: FormControl<number | null | undefined>,
 
 		/** Name of the custom performance class */
@@ -15419,6 +16270,7 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue?: number | null;
 
@@ -15438,6 +16290,7 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue: FormControl<number | null | undefined>,
 
@@ -15529,18 +16382,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimitsFormGroup() {
@@ -15585,18 +16450,30 @@ export namespace MyNS {
 
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsCellular {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsCellularFormProperties {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsCellularFormGroup() {
@@ -15609,18 +16486,30 @@ export namespace MyNS {
 
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan1 {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan1FormProperties {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan1FormGroup() {
@@ -15633,18 +16522,30 @@ export namespace MyNS {
 
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan2 {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan2FormProperties {
 
-		/** configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured DOWN limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** configured UP limit for the uplink (in Kbps).  Null indicated unlimited */
+		/**
+		 * configured UP limit for the uplink (in Kbps).  Null indicated unlimited
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkBandwidthReturnBandwidthLimitsWan2FormGroup() {
@@ -15689,18 +16590,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsCellular {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsCellularFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsCellularFormGroup() {
@@ -15713,18 +16626,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan1 {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan1FormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan1FormGroup() {
@@ -15737,18 +16662,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan2 {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan2FormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkBandwidthPutBodyBandwidthLimitsWan2FormGroup() {
@@ -15990,7 +16927,10 @@ export namespace MyNS {
 		/** FQDN format address. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available in the "destination" object of the "vpnTrafficUplinkPreference" object. E.g.: "www.google.com" */
 		fqdn?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -15999,7 +16939,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormProperties {
@@ -16010,7 +16953,10 @@ export namespace MyNS {
 		/** FQDN format address. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available in the "destination" object of the "vpnTrafficUplinkPreference" object. E.g.: "www.google.com" */
 		fqdn: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16019,7 +16965,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormGroup() {
@@ -16039,7 +16988,10 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16048,7 +17000,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -16056,7 +17011,10 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16065,7 +17023,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -16199,13 +17160,19 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -16213,13 +17180,19 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -16451,7 +17424,10 @@ export namespace MyNS {
 		/** FQDN format address. Currently only availabe in 'destination' of 'vpnTrafficUplinkPreference' object. E.g.: 'www.google.com' */
 		fqdn?: string | null;
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16460,7 +17436,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormProperties {
@@ -16471,7 +17450,10 @@ export namespace MyNS {
 		/** FQDN format address. Currently only availabe in 'destination' of 'vpnTrafficUplinkPreference' object. E.g.: 'www.google.com' */
 		fqdn: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16480,7 +17462,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormGroup() {
@@ -16500,7 +17485,10 @@ export namespace MyNS {
 		/** CIDR format address, or "any". E.g.: "192.168.10.0/24",  "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same as "any") */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16509,7 +17497,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -16517,7 +17508,10 @@ export namespace MyNS {
 		/** CIDR format address, or "any". E.g.: "192.168.10.0/24",  "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same as "any") */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16526,7 +17520,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -16656,13 +17653,19 @@ export namespace MyNS {
 		/** CIDR format address, or "any". E.g.: "192.168.10.0/24",  "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same as "any") */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -16670,13 +17673,19 @@ export namespace MyNS {
 		/** CIDR format address, or "any". E.g.: "192.168.10.0/24",  "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same as "any") */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionPutBodyWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -16908,7 +17917,10 @@ export namespace MyNS {
 		/** FQDN format address. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available in the "destination" object of the "vpnTrafficUplinkPreference" object. E.g.: "www.google.com" */
 		fqdn?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16917,7 +17929,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormProperties {
@@ -16928,7 +17943,10 @@ export namespace MyNS {
 		/** FQDN format address. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available in the "destination" object of the "vpnTrafficUplinkPreference" object. E.g.: "www.google.com" */
 		fqdn: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16937,7 +17955,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" or "fqdn" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueDestinationFormGroup() {
@@ -16957,7 +17978,10 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16966,7 +17990,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -16974,7 +18001,10 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: "L_12345678". */
@@ -16983,7 +18013,10 @@ export namespace MyNS {
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -17113,13 +18146,19 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr?: string | null;
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host?: number | null;
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port?: string | null;
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormProperties {
@@ -17127,13 +18166,19 @@ export namespace MyNS {
 		/** CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in combination with the "vlan" property */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network. */
+		/**
+		 * Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		host: FormControl<number | null | undefined>,
 
 		/** E.g.: "any", "0" (also means "any"), "8080", "1-1024" */
 		port: FormControl<string | null | undefined>,
 
-		/** VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network. */
+		/**
+		 * VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property and is currently only available under a template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueSourceFormGroup() {
@@ -17196,7 +18241,10 @@ export namespace MyNS {
 		/** Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above */
 		mandatoryDhcp?: GetNetworkApplianceVlansReturnMandatoryDhcp;
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 
 		/** The name of the VLAN */
@@ -17252,7 +18300,10 @@ export namespace MyNS {
 		/** The interface ID of the VLAN */
 		interfaceId: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 
 		/** The name of the VLAN */
@@ -17488,7 +18539,10 @@ export namespace MyNS {
 		/** Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above */
 		mandatoryDhcp?: CreateNetworkApplianceVlanPostBodyMandatoryDhcp;
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 
 		/**
@@ -17520,7 +18574,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 
 		/**
@@ -17713,7 +18770,10 @@ export namespace MyNS {
 		/** Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above */
 		mandatoryDhcp?: GetNetworkApplianceVlanReturnMandatoryDhcp;
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 
 		/** The name of the VLAN */
@@ -17769,7 +18829,10 @@ export namespace MyNS {
 		/** The interface ID of the VLAN */
 		interfaceId: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 
 		/** The name of the VLAN */
@@ -18022,7 +19085,10 @@ export namespace MyNS {
 		/** Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above */
 		mandatoryDhcp?: UpdateNetworkApplianceVlanPutBodyMandatoryDhcp;
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 
 		/** The name of the VLAN */
@@ -18072,7 +19138,10 @@ export namespace MyNS {
 		/** The id of the desired group policy to apply to the VLAN */
 		groupPolicyId: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 
 		/** The name of the VLAN */
@@ -18353,7 +19422,10 @@ export namespace MyNS {
 		/** Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above */
 		mandatoryDhcp?: UpdateNetworkApplianceVlanReturnMandatoryDhcp;
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 
 		/** The name of the VLAN */
@@ -18409,7 +19481,10 @@ export namespace MyNS {
 		/** The interface ID of the VLAN */
 		interfaceId: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all bound to the template networks. Applicable only for template network. */
+		/**
+		 * Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 
 		/** The name of the VLAN */
@@ -18620,7 +19695,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkApplianceVpnBgpPutBody {
 
-		/** An Autonomous System Number (ASN) is required if you are to run BGP and peer with another BGP Speaker outside of the Auto VPN domain. This ASN will be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported. So, the ASN must be an integer between 1 and 4294967295. When absent, this field is not updated. If no value exists then it defaults to 64512. */
+		/**
+		 * An Autonomous System Number (ASN) is required if you are to run BGP and peer with another BGP Speaker outside of the Auto VPN domain. This ASN will be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported. So, the ASN must be an integer between 1 and 4294967295. When absent, this field is not updated. If no value exists then it defaults to 64512.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asNumber?: number | null;
 
 		/**
@@ -18629,7 +19707,10 @@ export namespace MyNS {
 		 */
 		enabled: boolean;
 
-		/** The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240. */
+		/**
+		 * The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ibgpHoldTimer?: number | null;
 
 		/** List of BGP neighbors. This list replaces the existing set of neighbors. When absent, this field is not updated. */
@@ -18637,7 +19718,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkApplianceVpnBgpPutBodyFormProperties {
 
-		/** An Autonomous System Number (ASN) is required if you are to run BGP and peer with another BGP Speaker outside of the Auto VPN domain. This ASN will be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported. So, the ASN must be an integer between 1 and 4294967295. When absent, this field is not updated. If no value exists then it defaults to 64512. */
+		/**
+		 * An Autonomous System Number (ASN) is required if you are to run BGP and peer with another BGP Speaker outside of the Auto VPN domain. This ASN will be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported. So, the ASN must be an integer between 1 and 4294967295. When absent, this field is not updated. If no value exists then it defaults to 64512.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asNumber: FormControl<number | null | undefined>,
 
 		/**
@@ -18646,7 +19730,10 @@ export namespace MyNS {
 		 */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240. */
+		/**
+		 * The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ibgpHoldTimer: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkApplianceVpnBgpPutBodyFormGroup() {
@@ -18666,12 +19753,14 @@ export namespace MyNS {
 		/**
 		 * The EBGP hold timer in seconds for each neighbor. The EBGP hold timer must be an integer between 12 and 240.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ebgpHoldTimer: number;
 
 		/**
 		 * Configure this if the neighbor is not adjacent. The EBGP multi-hop must be an integer between 1 and 255.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ebgpMultihop: number;
 
@@ -18681,12 +19770,16 @@ export namespace MyNS {
 		/** Information regarding IPv6 address of the neighbor, Required if `ip` is not present. */
 		ipv6?: UpdateNetworkApplianceVpnBgpPutBodyNeighborsIpv6;
 
-		/** The receive limit is the maximum number of routes that can be received from any BGP peer. The receive limit must be an integer between 0 and 4294967295. When absent, it defaults to 0. */
+		/**
+		 * The receive limit is the maximum number of routes that can be received from any BGP peer. The receive limit must be an integer between 0 and 4294967295. When absent, it defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receiveLimit?: number | null;
 
 		/**
 		 * Remote ASN of the neighbor. The remote ASN must be an integer between 1 and 4294967295.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		remoteAsNumber: number;
 	}
@@ -18698,24 +19791,30 @@ export namespace MyNS {
 		/**
 		 * The EBGP hold timer in seconds for each neighbor. The EBGP hold timer must be an integer between 12 and 240.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ebgpHoldTimer: FormControl<number | null | undefined>,
 
 		/**
 		 * Configure this if the neighbor is not adjacent. The EBGP multi-hop must be an integer between 1 and 255.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ebgpMultihop: FormControl<number | null | undefined>,
 
 		/** The IPv4 address of the neighbor */
 		ip: FormControl<string | null | undefined>,
 
-		/** The receive limit is the maximum number of routes that can be received from any BGP peer. The receive limit must be an integer between 0 and 4294967295. When absent, it defaults to 0. */
+		/**
+		 * The receive limit is the maximum number of routes that can be received from any BGP peer. The receive limit must be an integer between 0 and 4294967295. When absent, it defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receiveLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * Remote ASN of the neighbor. The remote ASN must be an integer between 1 and 4294967295.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		remoteAsNumber: FormControl<number | null | undefined>,
 	}
@@ -19076,13 +20175,19 @@ export namespace MyNS {
 		/** Create redundant video backup using Cloud Archive. Can be either true or false. Defaults to false. */
 		cloudArchiveEnabled?: boolean | null;
 
-		/** The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days. */
+		/**
+		 * The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetentionDays?: number | null;
 
 		/** Deletes footage older than 3 days in which no motion was detected. Can be either true or false. Defaults to false. This setting does not apply to MV2 cameras. */
 		motionBasedRetentionEnabled?: boolean | null;
 
-		/** The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2. */
+		/**
+		 * The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		motionDetectorVersion?: number | null;
 
 		/**
@@ -19108,13 +20213,19 @@ export namespace MyNS {
 		/** Create redundant video backup using Cloud Archive. Can be either true or false. Defaults to false. */
 		cloudArchiveEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days. */
+		/**
+		 * The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetentionDays: FormControl<number | null | undefined>,
 
 		/** Deletes footage older than 3 days in which no motion was detected. Can be either true or false. Defaults to false. This setting does not apply to MV2 cameras. */
 		motionBasedRetentionEnabled: FormControl<boolean | null | undefined>,
 
-		/** The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2. */
+		/**
+		 * The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		motionDetectorVersion: FormControl<number | null | undefined>,
 
 		/**
@@ -19649,13 +20760,19 @@ export namespace MyNS {
 		/** Create redundant video backup using Cloud Archive. Can be either true or false. Defaults to false. */
 		cloudArchiveEnabled?: boolean | null;
 
-		/** The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days. */
+		/**
+		 * The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetentionDays?: number | null;
 
 		/** Deletes footage older than 3 days in which no motion was detected. Can be either true or false. Defaults to false. This setting does not apply to MV2 cameras. */
 		motionBasedRetentionEnabled?: boolean | null;
 
-		/** The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2. */
+		/**
+		 * The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		motionDetectorVersion?: number | null;
 
 		/** The name of the new profile. Must be unique. */
@@ -19678,13 +20795,19 @@ export namespace MyNS {
 		/** Create redundant video backup using Cloud Archive. Can be either true or false. Defaults to false. */
 		cloudArchiveEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days. */
+		/**
+		 * The maximum number of days for which the data will be stored, or 'null' to keep data until storage space runs out. If the former, it can be one of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90] days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetentionDays: FormControl<number | null | undefined>,
 
 		/** Deletes footage older than 3 days in which no motion was detected. Can be either true or false. Defaults to false. This setting does not apply to MV2 cameras. */
 		motionBasedRetentionEnabled: FormControl<boolean | null | undefined>,
 
-		/** The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2. */
+		/**
+		 * The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		motionDetectorVersion: FormControl<number | null | undefined>,
 
 		/** The name of the new profile. Must be unique. */
@@ -20507,7 +21630,10 @@ export namespace MyNS {
 		/** CIDR of the pool of subnets. Each MG in this network will automatically pick a subnet from this pool. */
 		cidr?: string | null;
 
-		/** Mask used for the subnet of all MGs in  this network. */
+		/**
+		 * Mask used for the subnet of all MGs in  this network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask?: number | null;
 	}
 	export interface UpdateNetworkCellularGatewaySubnetPoolPutBodyFormProperties {
@@ -20515,7 +21641,10 @@ export namespace MyNS {
 		/** CIDR of the pool of subnets. Each MG in this network will automatically pick a subnet from this pool. */
 		cidr: FormControl<string | null | undefined>,
 
-		/** Mask used for the subnet of all MGs in  this network. */
+		/**
+		 * Mask used for the subnet of all MGs in  this network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mask: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkCellularGatewaySubnetPoolPutBodyFormGroup() {
@@ -20541,18 +21670,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkCellularGatewayUplinkPutBodyBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkCellularGatewayUplinkPutBodyBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkCellularGatewayUplinkPutBodyBandwidthLimitsFormGroup() {
@@ -20574,7 +21715,10 @@ export namespace MyNS {
 		/** Prediction of the client's device type */
 		deviceTypePrediction?: string | null;
 
-		/** Timestamp client was first seen in the network */
+		/**
+		 * Timestamp client was first seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstSeen?: number | null;
 
 		/** 802.1x group policy of the client */
@@ -20592,7 +21736,10 @@ export namespace MyNS {
 		/** Local IPv6 address of the client */
 		ip6Local?: string | null;
 
-		/** Timestamp client was last seen in the network */
+		/**
+		 * Timestamp client was last seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSeen?: number | null;
 
 		/** The MAC address of the client */
@@ -20657,7 +21804,10 @@ export namespace MyNS {
 		/** Prediction of the client's device type */
 		deviceTypePrediction: FormControl<string | null | undefined>,
 
-		/** Timestamp client was first seen in the network */
+		/**
+		 * Timestamp client was first seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstSeen: FormControl<number | null | undefined>,
 
 		/** 802.1x group policy of the client */
@@ -20675,7 +21825,10 @@ export namespace MyNS {
 		/** Local IPv6 address of the client */
 		ip6Local: FormControl<string | null | undefined>,
 
-		/** Timestamp client was last seen in the network */
+		/**
+		 * Timestamp client was last seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSeen: FormControl<number | null | undefined>,
 
 		/** The MAC address of the client */
@@ -20764,18 +21917,30 @@ export namespace MyNS {
 
 	export interface GetNetworkClientsReturnUsage {
 
-		/** Usage received by the client */
+		/**
+		 * Usage received by the client
+		 * Type: float
+		 */
 		recv?: number | null;
 
-		/** Usage sent by the client */
+		/**
+		 * Usage sent by the client
+		 * Type: float
+		 */
 		sent?: number | null;
 	}
 	export interface GetNetworkClientsReturnUsageFormProperties {
 
-		/** Usage received by the client */
+		/**
+		 * Usage received by the client
+		 * Type: float
+		 */
 		recv: FormControl<number | null | undefined>,
 
-		/** Usage sent by the client */
+		/**
+		 * Usage sent by the client
+		 * Type: float
+		 */
 		sent: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkClientsReturnUsageFormGroup() {
@@ -21401,7 +22566,10 @@ export namespace MyNS {
 		/** Short description of the client */
 		description?: string | null;
 
-		/** Timestamp client was first seen in the network */
+		/**
+		 * Timestamp client was first seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstSeen?: number | null;
 
 		/** The ID of the client */
@@ -21413,7 +22581,10 @@ export namespace MyNS {
 		/** The IPv6 address of the client */
 		ip6?: string | null;
 
-		/** Timestamp client was last seen in the network */
+		/**
+		 * Timestamp client was last seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSeen?: number | null;
 
 		/** The link layer discover protocol settings for the client */
@@ -21457,7 +22628,10 @@ export namespace MyNS {
 		/** Short description of the client */
 		description: FormControl<string | null | undefined>,
 
-		/** Timestamp client was first seen in the network */
+		/**
+		 * Timestamp client was first seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstSeen: FormControl<number | null | undefined>,
 
 		/** The ID of the client */
@@ -21469,7 +22643,10 @@ export namespace MyNS {
 		/** The IPv6 address of the client */
 		ip6: FormControl<string | null | undefined>,
 
-		/** Timestamp client was last seen in the network */
+		/**
+		 * Timestamp client was last seen in the network
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSeen: FormControl<number | null | undefined>,
 
 		/** The MAC address of the client */
@@ -21530,10 +22707,16 @@ export namespace MyNS {
 
 	export interface GetNetworkClientReturnClientVpnConnections {
 
-		/** The time the client last connected to the VPN */
+		/**
+		 * The time the client last connected to the VPN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectedAt?: number | null;
 
-		/** The time the client last disconnectd from the VPN */
+		/**
+		 * The time the client last disconnectd from the VPN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disconnectedAt?: number | null;
 
 		/** The IP address of the VPN the client last connected to */
@@ -21541,10 +22724,16 @@ export namespace MyNS {
 	}
 	export interface GetNetworkClientReturnClientVpnConnectionsFormProperties {
 
-		/** The time the client last connected to the VPN */
+		/**
+		 * The time the client last connected to the VPN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectedAt: FormControl<number | null | undefined>,
 
-		/** The time the client last disconnectd from the VPN */
+		/**
+		 * The time the client last disconnectd from the VPN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disconnectedAt: FormControl<number | null | undefined>,
 
 		/** The IP address of the VPN the client last connected to */
@@ -22047,7 +23236,10 @@ export namespace MyNS {
 		/** An UTC ISO8601 string of the time the event occurred at. */
 		occurredAt?: string | null;
 
-		/** The SSID number of the device. */
+		/**
+		 * The SSID number of the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 
 		/** The type of event being listed. */
@@ -22082,7 +23274,10 @@ export namespace MyNS {
 		/** An UTC ISO8601 string of the time the event occurred at. */
 		occurredAt: FormControl<string | null | undefined>,
 
-		/** The SSID number of the device. */
+		/**
+		 * The SSID number of the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 
 		/** The type of event being listed. */
@@ -28263,18 +29458,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkFloorPlanPostBodyBottomLeftCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface CreateNetworkFloorPlanPostBodyBottomLeftCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkFloorPlanPostBodyBottomLeftCornerFormGroup() {
@@ -28287,18 +29494,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkFloorPlanPostBodyBottomRightCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface CreateNetworkFloorPlanPostBodyBottomRightCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkFloorPlanPostBodyBottomRightCornerFormGroup() {
@@ -28311,18 +29530,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkFloorPlanPostBodyCenter {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface CreateNetworkFloorPlanPostBodyCenterFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkFloorPlanPostBodyCenterFormGroup() {
@@ -28335,18 +29566,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkFloorPlanPostBodyTopLeftCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface CreateNetworkFloorPlanPostBodyTopLeftCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkFloorPlanPostBodyTopLeftCornerFormGroup() {
@@ -28359,18 +29602,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkFloorPlanPostBodyTopRightCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface CreateNetworkFloorPlanPostBodyTopRightCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkFloorPlanPostBodyTopRightCornerFormGroup() {
@@ -28422,18 +29677,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkFloorPlanPutBodyBottomLeftCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface UpdateNetworkFloorPlanPutBodyBottomLeftCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkFloorPlanPutBodyBottomLeftCornerFormGroup() {
@@ -28446,18 +29713,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkFloorPlanPutBodyBottomRightCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface UpdateNetworkFloorPlanPutBodyBottomRightCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkFloorPlanPutBodyBottomRightCornerFormGroup() {
@@ -28470,18 +29749,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkFloorPlanPutBodyCenter {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface UpdateNetworkFloorPlanPutBodyCenterFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkFloorPlanPutBodyCenterFormGroup() {
@@ -28494,18 +29785,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkFloorPlanPutBodyTopLeftCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface UpdateNetworkFloorPlanPutBodyTopLeftCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkFloorPlanPutBodyTopLeftCornerFormGroup() {
@@ -28518,18 +29821,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkFloorPlanPutBodyTopRightCorner {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng?: number | null;
 	}
 	export interface UpdateNetworkFloorPlanPutBodyTopRightCornerFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkFloorPlanPutBodyTopRightCornerFormGroup() {
@@ -28616,18 +29931,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkGroupPolicyPostBodyBandwidthBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface CreateNetworkGroupPolicyPostBodyBandwidthBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkGroupPolicyPostBodyBandwidthBandwidthLimitsFormGroup() {
@@ -28912,12 +30239,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue?: number | null;
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue?: number | null;
 
@@ -28937,12 +30266,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue: FormControl<number | null | undefined>,
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue: FormControl<number | null | undefined>,
 
@@ -29033,18 +30364,30 @@ export namespace MyNS {
 
 	export interface CreateNetworkGroupPolicyPostBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface CreateNetworkGroupPolicyPostBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkGroupPolicyPostBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimitsFormGroup() {
@@ -29406,18 +30749,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkGroupPolicyPutBodyBandwidthBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkGroupPolicyPutBodyBandwidthBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkGroupPolicyPutBodyBandwidthBandwidthLimitsFormGroup() {
@@ -29698,12 +31053,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue?: number | null;
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue?: number | null;
 
@@ -29723,12 +31080,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue: FormControl<number | null | undefined>,
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue: FormControl<number | null | undefined>,
 
@@ -29819,18 +31178,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkGroupPolicyPutBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkGroupPolicyPutBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkGroupPolicyPutBodyFirewallAndTrafficShapingTrafficShapingRulesPerClientBandwidthLimitsBandwidthLimitsFormGroup() {
@@ -30340,37 +31711,67 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs?: Date | null;
 
-		/** LAN goodput (Number of useful information bits delivered over a LAN per unit of time) */
+		/**
+		 * LAN goodput (Number of useful information bits delivered over a LAN per unit of time)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lanGoodput?: number | null;
 
-		/** LAN latency in milliseconds */
+		/**
+		 * LAN latency in milliseconds
+		 * Type: float
+		 */
 		lanLatencyMs?: number | null;
 
-		/** LAN loss percentage */
+		/**
+		 * LAN loss percentage
+		 * Type: float
+		 */
 		lanLossPercent?: number | null;
 
-		/** Number of clients */
+		/**
+		 * Number of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numClients?: number | null;
 
-		/** Received kilobytes-per-second */
+		/**
+		 * Received kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recv?: number | null;
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration?: number | null;
 
-		/** Sent kilobytes-per-second */
+		/**
+		 * Sent kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent?: number | null;
 
 		/** The start time of the query range */
 		startTs?: Date | null;
 
-		/** WAN goodput (Number of useful information bits delivered over a WAN per unit of time) */
+		/**
+		 * WAN goodput (Number of useful information bits delivered over a WAN per unit of time)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wanGoodput?: number | null;
 
-		/** WAN latency in milliseconds */
+		/**
+		 * WAN latency in milliseconds
+		 * Type: float
+		 */
 		wanLatencyMs?: number | null;
 
-		/** WAN loss percentage */
+		/**
+		 * WAN loss percentage
+		 * Type: float
+		 */
 		wanLossPercent?: number | null;
 	}
 	export interface GetNetworkInsightApplicationHealthByTimeReturnFormProperties {
@@ -30378,37 +31779,67 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs: FormControl<Date | null | undefined>,
 
-		/** LAN goodput (Number of useful information bits delivered over a LAN per unit of time) */
+		/**
+		 * LAN goodput (Number of useful information bits delivered over a LAN per unit of time)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lanGoodput: FormControl<number | null | undefined>,
 
-		/** LAN latency in milliseconds */
+		/**
+		 * LAN latency in milliseconds
+		 * Type: float
+		 */
 		lanLatencyMs: FormControl<number | null | undefined>,
 
-		/** LAN loss percentage */
+		/**
+		 * LAN loss percentage
+		 * Type: float
+		 */
 		lanLossPercent: FormControl<number | null | undefined>,
 
-		/** Number of clients */
+		/**
+		 * Number of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numClients: FormControl<number | null | undefined>,
 
-		/** Received kilobytes-per-second */
+		/**
+		 * Received kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recv: FormControl<number | null | undefined>,
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration: FormControl<number | null | undefined>,
 
-		/** Sent kilobytes-per-second */
+		/**
+		 * Sent kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sent: FormControl<number | null | undefined>,
 
 		/** The start time of the query range */
 		startTs: FormControl<Date | null | undefined>,
 
-		/** WAN goodput (Number of useful information bits delivered over a WAN per unit of time) */
+		/**
+		 * WAN goodput (Number of useful information bits delivered over a WAN per unit of time)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wanGoodput: FormControl<number | null | undefined>,
 
-		/** WAN latency in milliseconds */
+		/**
+		 * WAN latency in milliseconds
+		 * Type: float
+		 */
 		wanLatencyMs: FormControl<number | null | undefined>,
 
-		/** WAN loss percentage */
+		/**
+		 * WAN loss percentage
+		 * Type: float
+		 */
 		wanLossPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkInsightApplicationHealthByTimeReturnFormGroup() {
@@ -30498,7 +31929,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt?: Date | null;
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 	}
 	export interface GetNetworkMerakiAuthUsersReturnAuthorizationsFormProperties {
@@ -30515,7 +31949,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt: FormControl<Date | null | undefined>,
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkMerakiAuthUsersReturnAuthorizationsFormGroup() {
@@ -30600,7 +32037,10 @@ export namespace MyNS {
 		/** Date for authorization to expire. Set to 'Never' for the authorization to not expire, which is the default. */
 		expiresAt?: string | null;
 
-		/** Required for wireless networks. The SSID for which the user is being authorized, which must be configured for the user's given accountType. */
+		/**
+		 * Required for wireless networks. The SSID for which the user is being authorized, which must be configured for the user's given accountType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 	}
 	export interface CreateNetworkMerakiAuthUserPostBodyAuthorizationsFormProperties {
@@ -30608,7 +32048,10 @@ export namespace MyNS {
 		/** Date for authorization to expire. Set to 'Never' for the authorization to not expire, which is the default. */
 		expiresAt: FormControl<string | null | undefined>,
 
-		/** Required for wireless networks. The SSID for which the user is being authorized, which must be configured for the user's given accountType. */
+		/**
+		 * Required for wireless networks. The SSID for which the user is being authorized, which must be configured for the user's given accountType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkMerakiAuthUserPostBodyAuthorizationsFormGroup() {
@@ -30688,7 +32131,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt?: Date | null;
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 	}
 	export interface GetNetworkMerakiAuthUserReturnAuthorizationsFormProperties {
@@ -30705,7 +32151,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt: FormControl<Date | null | undefined>,
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkMerakiAuthUserReturnAuthorizationsFormGroup() {
@@ -30761,6 +32210,7 @@ export namespace MyNS {
 		/**
 		 * SSID for which the user is being authorized
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ssidNumber: number;
 	}
@@ -30772,6 +32222,7 @@ export namespace MyNS {
 		/**
 		 * SSID for which the user is being authorized
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
@@ -30852,7 +32303,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt?: Date | null;
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 	}
 	export interface UpdateNetworkMerakiAuthUserReturnAuthorizationsFormProperties {
@@ -30869,7 +32323,10 @@ export namespace MyNS {
 		/** Authorization expiration time */
 		expiresAt: FormControl<Date | null | undefined>,
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkMerakiAuthUserReturnAuthorizationsFormGroup() {
@@ -30903,6 +32360,7 @@ export namespace MyNS {
 		/**
 		 * Host port though which the MQTT broker can be reached.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -30929,6 +32387,7 @@ export namespace MyNS {
 		/**
 		 * Host port though which the MQTT broker can be reached.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 	}
@@ -30997,7 +32456,10 @@ export namespace MyNS {
 		/** Name of the MQTT broker. */
 		name?: string | null;
 
-		/** Host port though which the MQTT broker can be reached. */
+		/**
+		 * Host port though which the MQTT broker can be reached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Security settings of the MQTT broker. */
@@ -31014,7 +32476,10 @@ export namespace MyNS {
 		/** Name of the MQTT broker. */
 		name: FormControl<string | null | undefined>,
 
-		/** Host port though which the MQTT broker can be reached. */
+		/**
+		 * Host port though which the MQTT broker can be reached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkMqttBrokerPutBodyFormGroup() {
@@ -31076,10 +32541,16 @@ export namespace MyNS {
 		/** The IPv4 address of the NetFlow collector. */
 		collectorIp?: string | null;
 
-		/** The port that the NetFlow collector will be listening on. */
+		/**
+		 * The port that the NetFlow collector will be listening on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collectorPort?: number | null;
 
-		/** The port that the Encrypted Traffic Analytics collector will be listening on. */
+		/**
+		 * The port that the Encrypted Traffic Analytics collector will be listening on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		etaDstPort?: number | null;
 
 		/** Boolean indicating whether Encrypted Traffic Analytics is enabled (true) or disabled (false). */
@@ -31093,10 +32564,16 @@ export namespace MyNS {
 		/** The IPv4 address of the NetFlow collector. */
 		collectorIp: FormControl<string | null | undefined>,
 
-		/** The port that the NetFlow collector will be listening on. */
+		/**
+		 * The port that the NetFlow collector will be listening on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		collectorPort: FormControl<number | null | undefined>,
 
-		/** The port that the Encrypted Traffic Analytics collector will be listening on. */
+		/**
+		 * The port that the Encrypted Traffic Analytics collector will be listening on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		etaDstPort: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether Encrypted Traffic Analytics is enabled (true) or disabled (false). */
@@ -31236,12 +32713,18 @@ export namespace MyNS {
 
 	export interface GetNetworkPoliciesByClientReturnAssignedSsid {
 
-		/** number of ssid */
+		/**
+		 * number of ssid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 	}
 	export interface GetNetworkPoliciesByClientReturnAssignedSsidFormProperties {
 
-		/** number of ssid */
+		/**
+		 * number of ssid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkPoliciesByClientReturnAssignedSsidFormGroup() {
@@ -31269,51 +32752,93 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsCurrentOverviewByMetricReturnCounts {
 
-		/** Number of sensors that are currently alerting due to an open door */
+		/**
+		 * Number of sensors that are currently alerting due to an open door
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		door?: number | null;
 
-		/** Number of sensors that are currently alerting due to humidity readings */
+		/**
+		 * Number of sensors that are currently alerting due to humidity readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		humidity?: number | null;
 
-		/** Number of sensors that are currently alerting due to indoor air quality readings */
+		/**
+		 * Number of sensors that are currently alerting due to indoor air quality readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorAirQuality?: number | null;
 
 		/** Object containing the number of sensors that are currently alerting due to noise readings */
 		noise?: GetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsNoise;
 
-		/** Number of sensors that are currently alerting due to PM2.5 readings */
+		/**
+		 * Number of sensors that are currently alerting due to PM2.5 readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pm25?: number | null;
 
-		/** Number of sensors that are currently alerting due to temperature readings */
+		/**
+		 * Number of sensors that are currently alerting due to temperature readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature?: number | null;
 
-		/** Number of sensors that are currently alerting due to TVOC readings */
+		/**
+		 * Number of sensors that are currently alerting due to TVOC readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tvoc?: number | null;
 
-		/** Number of sensors that are currently alerting due to the presence of water */
+		/**
+		 * Number of sensors that are currently alerting due to the presence of water
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		water?: number | null;
 	}
 	export interface GetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsFormProperties {
 
-		/** Number of sensors that are currently alerting due to an open door */
+		/**
+		 * Number of sensors that are currently alerting due to an open door
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		door: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to humidity readings */
+		/**
+		 * Number of sensors that are currently alerting due to humidity readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		humidity: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to indoor air quality readings */
+		/**
+		 * Number of sensors that are currently alerting due to indoor air quality readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorAirQuality: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to PM2.5 readings */
+		/**
+		 * Number of sensors that are currently alerting due to PM2.5 readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pm25: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to temperature readings */
+		/**
+		 * Number of sensors that are currently alerting due to temperature readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to TVOC readings */
+		/**
+		 * Number of sensors that are currently alerting due to TVOC readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tvoc: FormControl<number | null | undefined>,
 
-		/** Number of sensors that are currently alerting due to the presence of water */
+		/**
+		 * Number of sensors that are currently alerting due to the presence of water
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		water: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsFormGroup() {
@@ -31331,12 +32856,18 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsNoise {
 
-		/** Number of sensors that are currently alerting due to ambient noise readings */
+		/**
+		 * Number of sensors that are currently alerting due to ambient noise readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ambient?: number | null;
 	}
 	export interface GetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsNoiseFormProperties {
 
-		/** Number of sensors that are currently alerting due to ambient noise readings */
+		/**
+		 * Number of sensors that are currently alerting due to ambient noise readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ambient: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsCurrentOverviewByMetricReturnCountsNoiseFormGroup() {
@@ -31375,51 +32906,93 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsOverviewByMetricReturnCounts {
 
-		/** Number of sensor alerts that occurred due to an open door */
+		/**
+		 * Number of sensor alerts that occurred due to an open door
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		door?: number | null;
 
-		/** Number of sensor alerts that occurred due to humidity readings */
+		/**
+		 * Number of sensor alerts that occurred due to humidity readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		humidity?: number | null;
 
-		/** Number of sensor alerts that occurred due to indoor air quality readings */
+		/**
+		 * Number of sensor alerts that occurred due to indoor air quality readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorAirQuality?: number | null;
 
 		/** Object containing the number of sensor alerts that occurred due to noise readings */
 		noise?: GetNetworkSensorAlertsOverviewByMetricReturnCountsNoise;
 
-		/** Number of sensor alerts that occurred due to PM2.5 readings */
+		/**
+		 * Number of sensor alerts that occurred due to PM2.5 readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pm25?: number | null;
 
-		/** Number of sensor alerts that occurred due to temperature readings */
+		/**
+		 * Number of sensor alerts that occurred due to temperature readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature?: number | null;
 
-		/** Number of sensor alerts that occurred due to TVOC readings */
+		/**
+		 * Number of sensor alerts that occurred due to TVOC readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tvoc?: number | null;
 
-		/** Number of sensor alerts that occurred due to the presence of water */
+		/**
+		 * Number of sensor alerts that occurred due to the presence of water
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		water?: number | null;
 	}
 	export interface GetNetworkSensorAlertsOverviewByMetricReturnCountsFormProperties {
 
-		/** Number of sensor alerts that occurred due to an open door */
+		/**
+		 * Number of sensor alerts that occurred due to an open door
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		door: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to humidity readings */
+		/**
+		 * Number of sensor alerts that occurred due to humidity readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		humidity: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to indoor air quality readings */
+		/**
+		 * Number of sensor alerts that occurred due to indoor air quality readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indoorAirQuality: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to PM2.5 readings */
+		/**
+		 * Number of sensor alerts that occurred due to PM2.5 readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pm25: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to temperature readings */
+		/**
+		 * Number of sensor alerts that occurred due to temperature readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to TVOC readings */
+		/**
+		 * Number of sensor alerts that occurred due to TVOC readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tvoc: FormControl<number | null | undefined>,
 
-		/** Number of sensor alerts that occurred due to the presence of water */
+		/**
+		 * Number of sensor alerts that occurred due to the presence of water
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		water: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsOverviewByMetricReturnCountsFormGroup() {
@@ -31437,12 +33010,18 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsOverviewByMetricReturnCountsNoise {
 
-		/** Number of sensor alerts that occurred due to ambient noise readings */
+		/**
+		 * Number of sensor alerts that occurred due to ambient noise readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ambient?: number | null;
 	}
 	export interface GetNetworkSensorAlertsOverviewByMetricReturnCountsNoiseFormProperties {
 
-		/** Number of sensor alerts that occurred due to ambient noise readings */
+		/**
+		 * Number of sensor alerts that occurred due to ambient noise readings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ambient: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsOverviewByMetricReturnCountsNoiseFormGroup() {
@@ -31600,7 +33179,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityFormProperties {
@@ -31608,7 +33190,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityFormGroup() {
@@ -31626,7 +33211,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdIndoorAirQualityFormProperties {
@@ -31634,7 +33222,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsProfilesReturnConditionsThresholdIndoorAirQualityFormGroup() {
@@ -31663,7 +33254,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -31671,7 +33265,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -31687,7 +33284,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -31695,7 +33295,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -31711,10 +33314,16 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -31722,10 +33331,16 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -31742,7 +33357,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -31750,7 +33368,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -31975,7 +33596,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdHumidityFormProperties {
@@ -31983,7 +33607,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSensorAlertsProfilePostBodyConditionsThresholdHumidityFormGroup() {
@@ -31999,7 +33626,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdIndoorAirQualityFormProperties {
@@ -32007,7 +33637,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSensorAlertsProfilePostBodyConditionsThresholdIndoorAirQualityFormGroup() {
@@ -32036,7 +33669,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32044,7 +33680,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32060,7 +33699,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32068,7 +33710,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32084,10 +33729,16 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32095,10 +33746,16 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32115,7 +33772,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -32123,7 +33783,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfilePostBodyConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -32342,7 +34005,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormProperties {
@@ -32350,7 +34016,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormGroup() {
@@ -32366,7 +34035,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormProperties {
@@ -32374,7 +34046,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormGroup() {
@@ -32403,7 +34078,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32411,7 +34089,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32427,7 +34108,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32435,7 +34119,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32451,10 +34138,16 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32462,10 +34155,16 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32482,7 +34181,10 @@ export namespace MyNS {
 
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -32490,7 +34192,10 @@ export namespace MyNS {
 	}
 	export interface CreateNetworkSensorAlertsProfileReturnConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -32716,7 +34421,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormProperties {
@@ -32724,7 +34432,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormGroup() {
@@ -32740,7 +34451,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormProperties {
@@ -32748,7 +34462,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormGroup() {
@@ -32777,7 +34494,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32785,7 +34505,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -32801,7 +34524,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32809,7 +34535,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -32825,10 +34554,16 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32836,10 +34571,16 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -32856,7 +34597,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -32864,7 +34608,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSensorAlertsProfileReturnConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -33080,7 +34827,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdHumidityFormProperties {
@@ -33088,7 +34838,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdHumidityFormGroup() {
@@ -33104,7 +34857,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdIndoorAirQualityFormProperties {
@@ -33112,7 +34868,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdIndoorAirQualityFormGroup() {
@@ -33141,7 +34900,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -33149,7 +34911,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -33165,7 +34930,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -33173,7 +34941,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -33189,10 +34960,16 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -33200,10 +34977,16 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -33220,7 +35003,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -33228,7 +35014,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfilePutBodyConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -33447,7 +35236,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormProperties {
@@ -33455,7 +35247,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative humidity level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold in %RH. */
+		/**
+		 * Alerting threshold in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSensorAlertsProfileReturnConditionsThresholdHumidityFormGroup() {
@@ -33471,7 +35266,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality?: GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null;
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormProperties {
@@ -33479,7 +35277,10 @@ export namespace MyNS {
 		/** Alerting threshold as a qualitative indoor air quality level. */
 		quality: FormControl<GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality | null | undefined>,
 
-		/** Alerting threshold as indoor air quality score. */
+		/**
+		 * Alerting threshold as indoor air quality score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSensorAlertsProfileReturnConditionsThresholdIndoorAirQualityFormGroup() {
@@ -33508,7 +35309,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbient {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -33516,7 +35320,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdNoiseAmbientFormProperties {
 
-		/** Alerting threshold as adjusted decibels. */
+		/**
+		 * Alerting threshold as adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative ambient noise level. */
@@ -33532,7 +35339,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdPm25 {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -33540,7 +35350,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdPm25FormProperties {
 
-		/** Alerting threshold as PM2.5 parts per million. */
+		/**
+		 * Alerting threshold as PM2.5 parts per million.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative PM2.5 level. */
@@ -33556,10 +35369,16 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdTemperature {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -33567,10 +35386,16 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdTemperatureFormProperties {
 
-		/** Alerting threshold in degrees Celsius. */
+		/**
+		 * Alerting threshold in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Alerting threshold in degrees Fahrenheit. */
+		/**
+		 * Alerting threshold in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative temperature level. */
@@ -33587,7 +35412,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdTvoc {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -33595,7 +35423,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSensorAlertsProfileReturnConditionsThresholdTvocFormProperties {
 
-		/** Alerting threshold as TVOC micrograms per cubic meter. */
+		/**
+		 * Alerting threshold as TVOC micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 
 		/** Alerting threshold as a qualitative TVOC level. */
@@ -33816,7 +35647,10 @@ export namespace MyNS {
 		/** The date to expire the data before */
 		expireDataBefore?: Date | null;
 
-		/** The number of days, weeks, or months in Epoch time to expire the data before */
+		/**
+		 * The number of days, weeks, or months in Epoch time to expire the data before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireDataOlderThan?: number | null;
 	}
 	export interface GetNetworkSettingsReturnClientPrivacyFormProperties {
@@ -33824,7 +35658,10 @@ export namespace MyNS {
 		/** The date to expire the data before */
 		expireDataBefore: FormControl<Date | null | undefined>,
 
-		/** The number of days, weeks, or months in Epoch time to expire the data before */
+		/**
+		 * The number of days, weeks, or months in Epoch time to expire the data before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireDataOlderThan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSettingsReturnClientPrivacyFormGroup() {
@@ -34057,7 +35894,10 @@ export namespace MyNS {
 		/** The date to expire the data before */
 		expireDataBefore?: Date | null;
 
-		/** The number of days, weeks, or months in Epoch time to expire the data before */
+		/**
+		 * The number of days, weeks, or months in Epoch time to expire the data before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireDataOlderThan?: number | null;
 	}
 	export interface UpdateNetworkSettingsReturnClientPrivacyFormProperties {
@@ -34065,7 +35905,10 @@ export namespace MyNS {
 		/** The date to expire the data before */
 		expireDataBefore: FormControl<Date | null | undefined>,
 
-		/** The number of days, weeks, or months in Epoch time to expire the data before */
+		/**
+		 * The number of days, weeks, or months in Epoch time to expire the data before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireDataOlderThan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSettingsReturnClientPrivacyFormGroup() {
@@ -34422,7 +36265,10 @@ export namespace MyNS {
 		/** The ids of the devices to be locked. */
 		ids?: Array<string>;
 
-		/** The pin number for locking macOS devices (a six digit number). Required only for macOS devices. */
+		/**
+		 * The pin number for locking macOS devices (a six digit number). Required only for macOS devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pin?: number | null;
 
 		/** The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the devices to be wiped. */
@@ -34436,7 +36282,10 @@ export namespace MyNS {
 	}
 	export interface LockNetworkSmDevicesPostBodyFormProperties {
 
-		/** The pin number for locking macOS devices (a six digit number). Required only for macOS devices. */
+		/**
+		 * The pin number for locking macOS devices (a six digit number). Required only for macOS devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pin: FormControl<number | null | undefined>,
 	}
 	export function CreateLockNetworkSmDevicesPostBodyFormGroup() {
@@ -34594,7 +36443,10 @@ export namespace MyNS {
 		/** The id of the device to be wiped. */
 		id?: string | null;
 
-		/** The pin number (a six digit value) for wiping a macOS device. Required only for macOS devices. */
+		/**
+		 * The pin number (a six digit value) for wiping a macOS device. Required only for macOS devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pin?: number | null;
 
 		/** The serial of the device to be wiped. */
@@ -34608,7 +36460,10 @@ export namespace MyNS {
 		/** The id of the device to be wiped. */
 		id: FormControl<string | null | undefined>,
 
-		/** The pin number (a six digit value) for wiping a macOS device. Required only for macOS devices. */
+		/**
+		 * The pin number (a six digit value) for wiping a macOS device. Required only for macOS devices.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pin: FormControl<number | null | undefined>,
 
 		/** The serial of the device to be wiped. */
@@ -34646,10 +36501,16 @@ export namespace MyNS {
 
 	export interface GetNetworkSmDeviceCellularUsageHistoryReturn {
 
-		/** The amount of cellular data received by the device. */
+		/**
+		 * The amount of cellular data received by the device.
+		 * Type: float
+		 */
 		received?: number | null;
 
-		/** The amount of cellular sent received by the device. */
+		/**
+		 * The amount of cellular sent received by the device.
+		 * Type: float
+		 */
 		sent?: number | null;
 
 		/** When the cellular usage data was collected. */
@@ -34657,10 +36518,16 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSmDeviceCellularUsageHistoryReturnFormProperties {
 
-		/** The amount of cellular data received by the device. */
+		/**
+		 * The amount of cellular data received by the device.
+		 * Type: float
+		 */
 		received: FormControl<number | null | undefined>,
 
-		/** The amount of cellular sent received by the device. */
+		/**
+		 * The amount of cellular sent received by the device.
+		 * Type: float
+		 */
 		sent: FormControl<number | null | undefined>,
 
 		/** When the cellular usage data was collected. */
@@ -35080,31 +36947,55 @@ export namespace MyNS {
 
 	export interface GetNetworkSmDevicePerformanceHistoryReturn {
 
-		/** The percentage of CPU used as a decimal format. */
+		/**
+		 * The percentage of CPU used as a decimal format.
+		 * Type: float
+		 */
 		cpuPercentUsed?: number | null;
 
 		/** An object containing disk usage details. */
 		diskUsage?: GetNetworkSmDevicePerformanceHistoryReturnDiskUsage;
 
-		/** The active RAM on the device. */
+		/**
+		 * The active RAM on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memActive?: number | null;
 
-		/** Memory that is not yet in use by the system. */
+		/**
+		 * Memory that is not yet in use by the system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memFree?: number | null;
 
-		/** The inactive RAM on the device. */
+		/**
+		 * The inactive RAM on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memInactive?: number | null;
 
-		/** Memory used for core OS functions on the device. */
+		/**
+		 * Memory used for core OS functions on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memWired?: number | null;
 
-		/** Network bandwith received. */
+		/**
+		 * Network bandwith received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networkReceived?: number | null;
 
-		/** Network bandwith transmitted. */
+		/**
+		 * Network bandwith transmitted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networkSent?: number | null;
 
-		/** The amount of space being used on the startup disk to swap unused files to and from RAM. */
+		/**
+		 * The amount of space being used on the startup disk to swap unused files to and from RAM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		swapUsed?: number | null;
 
 		/** The time at which the performance was measured. */
@@ -35112,28 +37003,52 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSmDevicePerformanceHistoryReturnFormProperties {
 
-		/** The percentage of CPU used as a decimal format. */
+		/**
+		 * The percentage of CPU used as a decimal format.
+		 * Type: float
+		 */
 		cpuPercentUsed: FormControl<number | null | undefined>,
 
-		/** The active RAM on the device. */
+		/**
+		 * The active RAM on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memActive: FormControl<number | null | undefined>,
 
-		/** Memory that is not yet in use by the system. */
+		/**
+		 * Memory that is not yet in use by the system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memFree: FormControl<number | null | undefined>,
 
-		/** The inactive RAM on the device. */
+		/**
+		 * The inactive RAM on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memInactive: FormControl<number | null | undefined>,
 
-		/** Memory used for core OS functions on the device. */
+		/**
+		 * Memory used for core OS functions on the device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memWired: FormControl<number | null | undefined>,
 
-		/** Network bandwith received. */
+		/**
+		 * Network bandwith received.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networkReceived: FormControl<number | null | undefined>,
 
-		/** Network bandwith transmitted. */
+		/**
+		 * Network bandwith transmitted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networkSent: FormControl<number | null | undefined>,
 
-		/** The amount of space being used on the startup disk to swap unused files to and from RAM. */
+		/**
+		 * The amount of space being used on the startup disk to swap unused files to and from RAM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		swapUsed: FormControl<number | null | undefined>,
 
 		/** The time at which the performance was measured. */
@@ -35169,18 +37084,30 @@ export namespace MyNS {
 
 	export interface GetNetworkSmDevicePerformanceHistoryReturnDiskUsageC {
 
-		/** The available disk space. */
+		/**
+		 * The available disk space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space?: number | null;
 
-		/** The used disk space. */
+		/**
+		 * The used disk space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		used?: number | null;
 	}
 	export interface GetNetworkSmDevicePerformanceHistoryReturnDiskUsageCFormProperties {
 
-		/** The available disk space. */
+		/**
+		 * The available disk space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		space: FormControl<number | null | undefined>,
 
-		/** The used disk space. */
+		/**
+		 * The used disk space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		used: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSmDevicePerformanceHistoryReturnDiskUsageCFormGroup() {
@@ -35276,7 +37203,10 @@ export namespace MyNS {
 		/** The Meraki managed application Id for this record on a particular device. */
 		appId?: string | null;
 
-		/** The size of the software bundle. */
+		/**
+		 * The size of the software bundle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bundleSize?: number | null;
 
 		/** When the Meraki record for the software was created. */
@@ -35285,7 +37215,10 @@ export namespace MyNS {
 		/** The Meraki managed device Id. */
 		deviceId?: string | null;
 
-		/** The size of the data stored in the application. */
+		/**
+		 * The size of the data stored in the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicSize?: number | null;
 
 		/** The Meraki software Id. */
@@ -35315,7 +37248,10 @@ export namespace MyNS {
 		/** The path on the device where the software record is located. */
 		path?: string | null;
 
-		/** The redemption code used for this software. */
+		/**
+		 * The redemption code used for this software.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		redemptionCode?: number | null;
 
 		/** Short version notation for the software. */
@@ -35347,7 +37283,10 @@ export namespace MyNS {
 		/** The Meraki managed application Id for this record on a particular device. */
 		appId: FormControl<string | null | undefined>,
 
-		/** The size of the software bundle. */
+		/**
+		 * The size of the software bundle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bundleSize: FormControl<number | null | undefined>,
 
 		/** When the Meraki record for the software was created. */
@@ -35356,7 +37295,10 @@ export namespace MyNS {
 		/** The Meraki managed device Id. */
 		deviceId: FormControl<string | null | undefined>,
 
-		/** The size of the data stored in the application. */
+		/**
+		 * The size of the data stored in the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicSize: FormControl<number | null | undefined>,
 
 		/** The Meraki software Id. */
@@ -35386,7 +37328,10 @@ export namespace MyNS {
 		/** The path on the device where the software record is located. */
 		path: FormControl<string | null | undefined>,
 
-		/** The redemption code used for this software. */
+		/**
+		 * The redemption code used for this software.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		redemptionCode: FormControl<number | null | undefined>,
 
 		/** Short version notation for the software. */
@@ -35835,7 +37780,10 @@ export namespace MyNS {
 		/** The Meraki managed application Id for this record on a particular device. */
 		appId?: string | null;
 
-		/** The size of the software bundle. */
+		/**
+		 * The size of the software bundle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bundleSize?: number | null;
 
 		/** When the Meraki record for the software was created. */
@@ -35844,7 +37792,10 @@ export namespace MyNS {
 		/** The Meraki managed device Id. */
 		deviceId?: string | null;
 
-		/** The size of the data stored in the application. */
+		/**
+		 * The size of the data stored in the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicSize?: number | null;
 
 		/** The Meraki software Id. */
@@ -35874,7 +37825,10 @@ export namespace MyNS {
 		/** The path on the device where the software record is located. */
 		path?: string | null;
 
-		/** The redemption code used for this software. */
+		/**
+		 * The redemption code used for this software.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		redemptionCode?: number | null;
 
 		/** Short version notation for the software. */
@@ -35906,7 +37860,10 @@ export namespace MyNS {
 		/** The Meraki managed application Id for this record on a particular device. */
 		appId: FormControl<string | null | undefined>,
 
-		/** The size of the software bundle. */
+		/**
+		 * The size of the software bundle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bundleSize: FormControl<number | null | undefined>,
 
 		/** When the Meraki record for the software was created. */
@@ -35915,7 +37872,10 @@ export namespace MyNS {
 		/** The Meraki managed device Id. */
 		deviceId: FormControl<string | null | undefined>,
 
-		/** The size of the data stored in the application. */
+		/**
+		 * The size of the data stored in the application.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicSize: FormControl<number | null | undefined>,
 
 		/** The Meraki software Id. */
@@ -35945,7 +37905,10 @@ export namespace MyNS {
 		/** The path on the device where the software record is located. */
 		path: FormControl<string | null | undefined>,
 
-		/** The redemption code used for this software. */
+		/**
+		 * The redemption code used for this software.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		redemptionCode: FormControl<number | null | undefined>,
 
 		/** Short version notation for the software. */
@@ -36453,7 +38416,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing?: boolean | null;
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId?: number | null;
 
 		/** Choose the Host Mode for the access policy. */
@@ -36503,7 +38469,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing: FormControl<boolean | null | undefined>,
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId: FormControl<number | null | undefined>,
 
 		/** Choose the Host Mode for the access policy. */
@@ -36579,18 +38548,30 @@ export namespace MyNS {
 		/** Critical auth settings for when authentication is rejected by the RADIUS server */
 		criticalAuth?: GetNetworkSwitchAccessPoliciesReturnRadiusCriticalAuth;
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId?: number | null;
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPoliciesReturnRadiusFormProperties {
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId: FormControl<number | null | undefined>,
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPoliciesReturnRadiusFormGroup() {
@@ -36603,24 +38584,36 @@ export namespace MyNS {
 
 	export interface GetNetworkSwitchAccessPoliciesReturnRadiusCriticalAuth {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId?: number | null;
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce?: boolean | null;
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPoliciesReturnRadiusCriticalAuthFormProperties {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId: FormControl<number | null | undefined>,
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce: FormControl<boolean | null | undefined>,
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPoliciesReturnRadiusCriticalAuthFormGroup() {
@@ -36637,7 +38630,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPoliciesReturnRadiusAccountingServersFormProperties {
@@ -36645,7 +38641,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPoliciesReturnRadiusAccountingServersFormGroup() {
@@ -36661,7 +38660,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPoliciesReturnRadiusServersFormProperties {
@@ -36669,7 +38671,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPoliciesReturnRadiusServersFormGroup() {
@@ -36691,7 +38696,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing?: boolean | null;
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId?: number | null;
 
 		/**
@@ -36762,7 +38770,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing: FormControl<boolean | null | undefined>,
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId: FormControl<number | null | undefined>,
 
 		/**
@@ -36850,18 +38861,30 @@ export namespace MyNS {
 		/** Critical auth settings for when authentication is rejected by the RADIUS server */
 		criticalAuth?: CreateNetworkSwitchAccessPolicyPostBodyRadiusCriticalAuth;
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId?: number | null;
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval?: number | null;
 	}
 	export interface CreateNetworkSwitchAccessPolicyPostBodyRadiusFormProperties {
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId: FormControl<number | null | undefined>,
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSwitchAccessPolicyPostBodyRadiusFormGroup() {
@@ -36874,24 +38897,36 @@ export namespace MyNS {
 
 	export interface CreateNetworkSwitchAccessPolicyPostBodyRadiusCriticalAuth {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId?: number | null;
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce?: boolean | null;
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId?: number | null;
 	}
 	export interface CreateNetworkSwitchAccessPolicyPostBodyRadiusCriticalAuthFormProperties {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId: FormControl<number | null | undefined>,
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce: FormControl<boolean | null | undefined>,
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkSwitchAccessPolicyPostBodyRadiusCriticalAuthFormGroup() {
@@ -36914,6 +38949,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS Accounting server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -36934,6 +38970,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS Accounting server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -36963,6 +39000,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -36983,6 +39021,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -37012,7 +39051,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing?: boolean | null;
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId?: number | null;
 
 		/** Choose the Host Mode for the access policy. */
@@ -37062,7 +39104,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing: FormControl<boolean | null | undefined>,
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId: FormControl<number | null | undefined>,
 
 		/** Choose the Host Mode for the access policy. */
@@ -37132,18 +39177,30 @@ export namespace MyNS {
 		/** Critical auth settings for when authentication is rejected by the RADIUS server */
 		criticalAuth?: GetNetworkSwitchAccessPolicyReturnRadiusCriticalAuth;
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId?: number | null;
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPolicyReturnRadiusFormProperties {
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId: FormControl<number | null | undefined>,
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPolicyReturnRadiusFormGroup() {
@@ -37156,24 +39213,36 @@ export namespace MyNS {
 
 	export interface GetNetworkSwitchAccessPolicyReturnRadiusCriticalAuth {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId?: number | null;
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce?: boolean | null;
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPolicyReturnRadiusCriticalAuthFormProperties {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId: FormControl<number | null | undefined>,
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce: FormControl<boolean | null | undefined>,
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPolicyReturnRadiusCriticalAuthFormGroup() {
@@ -37190,7 +39259,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPolicyReturnRadiusAccountingServersFormProperties {
@@ -37198,7 +39270,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPolicyReturnRadiusAccountingServersFormGroup() {
@@ -37214,7 +39289,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchAccessPolicyReturnRadiusServersFormProperties {
@@ -37222,7 +39300,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchAccessPolicyReturnRadiusServersFormGroup() {
@@ -37244,7 +39325,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing?: boolean | null;
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId?: number | null;
 
 		/** Choose the Host Mode for the access policy. */
@@ -37294,7 +39378,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing: FormControl<boolean | null | undefined>,
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId: FormControl<number | null | undefined>,
 
 		/** Choose the Host Mode for the access policy. */
@@ -37364,18 +39451,30 @@ export namespace MyNS {
 		/** Critical auth settings for when authentication is rejected by the RADIUS server */
 		criticalAuth?: UpdateNetworkSwitchAccessPolicyPutBodyRadiusCriticalAuth;
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId?: number | null;
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyPutBodyRadiusFormProperties {
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId: FormControl<number | null | undefined>,
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyPutBodyRadiusFormGroup() {
@@ -37388,24 +39487,36 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchAccessPolicyPutBodyRadiusCriticalAuth {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId?: number | null;
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce?: boolean | null;
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyPutBodyRadiusCriticalAuthFormProperties {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId: FormControl<number | null | undefined>,
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce: FormControl<boolean | null | undefined>,
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyPutBodyRadiusCriticalAuthFormGroup() {
@@ -37428,6 +39539,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS Accounting server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -37448,6 +39560,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS Accounting server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -37477,6 +39590,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -37497,6 +39611,7 @@ export namespace MyNS {
 		/**
 		 * UDP port that the RADIUS server listens on for access requests
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -37526,7 +39641,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing?: boolean | null;
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId?: number | null;
 
 		/** Choose the Host Mode for the access policy. */
@@ -37576,7 +39694,10 @@ export namespace MyNS {
 		/** If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers */
 		guestPortBouncing: FormControl<boolean | null | undefined>,
 
-		/** ID for the guest VLAN allow unauthorized devices access to limited network resources */
+		/**
+		 * ID for the guest VLAN allow unauthorized devices access to limited network resources
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		guestVlanId: FormControl<number | null | undefined>,
 
 		/** Choose the Host Mode for the access policy. */
@@ -37646,18 +39767,30 @@ export namespace MyNS {
 		/** Critical auth settings for when authentication is rejected by the RADIUS server */
 		criticalAuth?: UpdateNetworkSwitchAccessPolicyReturnRadiusCriticalAuth;
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId?: number | null;
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyReturnRadiusFormProperties {
 
-		/** VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAuthVlanId: FormControl<number | null | undefined>,
 
-		/** Re-authentication period in seconds. Will be null if hostMode is Multi-Auth */
+		/**
+		 * Re-authentication period in seconds. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reAuthenticationInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyReturnRadiusFormGroup() {
@@ -37670,24 +39803,36 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchAccessPolicyReturnRadiusCriticalAuth {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId?: number | null;
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce?: boolean | null;
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyReturnRadiusCriticalAuthFormProperties {
 
-		/** VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataVlanId: FormControl<number | null | undefined>,
 
 		/** Enable to suspend port bounce when RADIUS servers are unreachable */
 		suspendPortBounce: FormControl<boolean | null | undefined>,
 
-		/** VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth */
+		/**
+		 * VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyReturnRadiusCriticalAuthFormGroup() {
@@ -37704,7 +39849,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyReturnRadiusAccountingServersFormProperties {
@@ -37712,7 +39860,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS accounting server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS Accounting server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS Accounting server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyReturnRadiusAccountingServersFormGroup() {
@@ -37728,7 +39879,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host?: string | null;
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface UpdateNetworkSwitchAccessPolicyReturnRadiusServersFormProperties {
@@ -37736,7 +39890,10 @@ export namespace MyNS {
 		/** Public IP address of the RADIUS server */
 		host: FormControl<string | null | undefined>,
 
-		/** UDP port that the RADIUS server listens on for access requests */
+		/**
+		 * UDP port that the RADIUS server listens on for access requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAccessPolicyReturnRadiusServersFormGroup() {
@@ -37758,7 +39915,10 @@ export namespace MyNS {
 		/** Array of switch serial number and IP assignment. If parameter is present, it cannot have empty body. Note: switches parameter is not applicable for template networks, in other words, do not put 'switches' in the body when updating template networks. Also, an empty 'switches' array will remove all previous assignments */
 		UpdateNetworkSwitchAlternateManagementInterfacePutBodySwitches?: Array<UpdateNetworkSwitchAlternateManagementInterfacePutBodySwitches>;
 
-		/** Alternate management VLAN, must be between 1 and 4094 */
+		/**
+		 * Alternate management VLAN, must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateNetworkSwitchAlternateManagementInterfacePutBodyFormProperties {
@@ -37766,7 +39926,10 @@ export namespace MyNS {
 		/** Boolean value to enable or disable AMI configuration. If enabled, VLAN and protocols must be set */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Alternate management VLAN, must be between 1 and 4094 */
+		/**
+		 * Alternate management VLAN, must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchAlternateManagementInterfacePutBodyFormGroup() {
@@ -37862,7 +40025,10 @@ export namespace MyNS {
 		/** server type. Can be a 'device', 'stack', or 'discovered' (i.e client). */
 		type?: GetNetworkSwitchDhcpV4ServersSeenReturnType | null;
 
-		/** Vlan id of the server. */
+		/**
+		 * Vlan id of the server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnFormProperties {
@@ -37885,7 +40051,10 @@ export namespace MyNS {
 		/** server type. Can be a 'device', 'stack', or 'discovered' (i.e client). */
 		type: FormControl<GetNetworkSwitchDhcpV4ServersSeenReturnType | null | undefined>,
 
-		/** Vlan id of the server. */
+		/**
+		 * Vlan id of the server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpV4ServersSeenReturnFormGroup() {
@@ -38070,7 +40239,10 @@ export namespace MyNS {
 		/** Destination mac address of the packet. */
 		mac?: string | null;
 
-		/** Destination port of the packet. */
+		/**
+		 * Destination port of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketDestinationFormProperties {
@@ -38078,7 +40250,10 @@ export namespace MyNS {
 		/** Destination mac address of the packet. */
 		mac: FormControl<string | null | undefined>,
 
-		/** Destination port of the packet. */
+		/**
+		 * Destination port of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpV4ServersSeenReturnLastPacketDestinationFormGroup() {
@@ -38137,25 +40312,40 @@ export namespace MyNS {
 		/** Gateway IP address of the packet. */
 		giaddr?: string | null;
 
-		/** Hardware length of the packet. */
+		/**
+		 * Hardware length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hlen?: number | null;
 
-		/** Number of hops the packet took. */
+		/**
+		 * Number of hops the packet took.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hops?: number | null;
 
-		/** Hardware type code of the packet. */
+		/**
+		 * Hardware type code of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		htype?: number | null;
 
 		/** Magic cookie of the packet. */
 		magicCookie?: string | null;
 
-		/** Operation code of the packet. */
+		/**
+		 * Operation code of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		op?: number | null;
 
 		/** Additional DHCP options of the packet. */
 		GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketFieldsOptions?: Array<GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketFieldsOptions>;
 
-		/** Number of seconds since receiving the packet. */
+		/**
+		 * Number of seconds since receiving the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		secs?: number | null;
 
 		/** Server IP address of the packet. */
@@ -38184,22 +40374,37 @@ export namespace MyNS {
 		/** Gateway IP address of the packet. */
 		giaddr: FormControl<string | null | undefined>,
 
-		/** Hardware length of the packet. */
+		/**
+		 * Hardware length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hlen: FormControl<number | null | undefined>,
 
-		/** Number of hops the packet took. */
+		/**
+		 * Number of hops the packet took.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hops: FormControl<number | null | undefined>,
 
-		/** Hardware type code of the packet. */
+		/**
+		 * Hardware type code of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		htype: FormControl<number | null | undefined>,
 
 		/** Magic cookie of the packet. */
 		magicCookie: FormControl<string | null | undefined>,
 
-		/** Operation code of the packet. */
+		/**
+		 * Operation code of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		op: FormControl<number | null | undefined>,
 
-		/** Number of seconds since receiving the packet. */
+		/**
+		 * Number of seconds since receiving the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		secs: FormControl<number | null | undefined>,
 
 		/** Server IP address of the packet. */
@@ -38263,19 +40468,31 @@ export namespace MyNS {
 		/** DSCP attributes of the packet. */
 		dscp?: GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketIpDscp;
 
-		/** IP header length of the packet. */
+		/**
+		 * IP header length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerLength?: number | null;
 
 		/** IP ID of the packet. */
 		id?: string | null;
 
-		/** IP length of the packet. */
+		/**
+		 * IP length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** IP protocol number of the packet. */
+		/**
+		 * IP protocol number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protocol?: number | null;
 
-		/** Time to live of the packet. */
+		/**
+		 * Time to live of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 
 		/** IP version of the packet. */
@@ -38283,19 +40500,31 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketIpFormProperties {
 
-		/** IP header length of the packet. */
+		/**
+		 * IP header length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerLength: FormControl<number | null | undefined>,
 
 		/** IP ID of the packet. */
 		id: FormControl<string | null | undefined>,
 
-		/** IP length of the packet. */
+		/**
+		 * IP length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** IP protocol number of the packet. */
+		/**
+		 * IP protocol number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protocol: FormControl<number | null | undefined>,
 
-		/** Time to live of the packet. */
+		/**
+		 * Time to live of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 
 		/** IP version of the packet. */
@@ -38315,18 +40544,30 @@ export namespace MyNS {
 
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketIpDscp {
 
-		/** ECN number of the packet. */
+		/**
+		 * ECN number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ecn?: number | null;
 
-		/** DSCP tag number of the packet. */
+		/**
+		 * DSCP tag number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tag?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketIpDscpFormProperties {
 
-		/** ECN number of the packet. */
+		/**
+		 * ECN number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ecn: FormControl<number | null | undefined>,
 
-		/** DSCP tag number of the packet. */
+		/**
+		 * DSCP tag number of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tag: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpV4ServersSeenReturnLastPacketIpDscpFormGroup() {
@@ -38347,7 +40588,10 @@ export namespace MyNS {
 		/** Source mac address of the packet. */
 		mac?: string | null;
 
-		/** Source port of the packet. */
+		/**
+		 * Source port of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketSourceFormProperties {
@@ -38355,7 +40599,10 @@ export namespace MyNS {
 		/** Source mac address of the packet. */
 		mac: FormControl<string | null | undefined>,
 
-		/** Source port of the packet. */
+		/**
+		 * Source port of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpV4ServersSeenReturnLastPacketSourceFormGroup() {
@@ -38388,7 +40635,10 @@ export namespace MyNS {
 		/** UDP checksum of the packet. */
 		checksum?: string | null;
 
-		/** UDP length of the packet. */
+		/**
+		 * UDP length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpV4ServersSeenReturnLastPacketUdpFormProperties {
@@ -38396,7 +40646,10 @@ export namespace MyNS {
 		/** UDP checksum of the packet. */
 		checksum: FormControl<string | null | undefined>,
 
-		/** UDP length of the packet. */
+		/**
+		 * UDP length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpV4ServersSeenReturnLastPacketUdpFormGroup() {
@@ -38529,7 +40782,10 @@ export namespace MyNS {
 		/** ID of the trusted server. */
 		trustedServerId?: string | null;
 
-		/** Vlan ID of the trusted server. */
+		/**
+		 * Vlan ID of the trusted server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersReturnFormProperties {
@@ -38540,7 +40796,10 @@ export namespace MyNS {
 		/** ID of the trusted server. */
 		trustedServerId: FormControl<string | null | undefined>,
 
-		/** Vlan ID of the trusted server. */
+		/**
+		 * Vlan ID of the trusted server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersReturnFormGroup() {
@@ -38586,6 +40845,7 @@ export namespace MyNS {
 		/**
 		 * The VLAN of the trusted server being added. It must be between 1 and 4094
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlan: number;
 	}
@@ -38600,6 +40860,7 @@ export namespace MyNS {
 		/**
 		 * The VLAN of the trusted server being added. It must be between 1 and 4094
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlan: FormControl<number | null | undefined>,
 	}
@@ -38636,7 +40897,10 @@ export namespace MyNS {
 		/** The updated mac address of the trusted server */
 		mac?: string | null;
 
-		/** The updated VLAN of the trusted server. It must be between 1 and 4094 */
+		/**
+		 * The updated VLAN of the trusted server. It must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerPutBodyFormProperties {
@@ -38644,7 +40908,10 @@ export namespace MyNS {
 		/** The updated mac address of the trusted server */
 		mac: FormControl<string | null | undefined>,
 
-		/** The updated VLAN of the trusted server. It must be between 1 and 4094 */
+		/**
+		 * The updated VLAN of the trusted server. It must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerPutBodyFormGroup() {
@@ -38683,7 +40950,10 @@ export namespace MyNS {
 		/** ID of the trusted server. */
 		trustedServerId?: string | null;
 
-		/** Vlan ID of the trusted server. */
+		/**
+		 * Vlan ID of the trusted server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerReturnFormProperties {
@@ -38694,7 +40964,10 @@ export namespace MyNS {
 		/** ID of the trusted server. */
 		trustedServerId: FormControl<string | null | undefined>,
 
-		/** Vlan ID of the trusted server. */
+		/**
+		 * Vlan ID of the trusted server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerReturnFormGroup() {
@@ -38789,12 +41062,14 @@ export namespace MyNS {
 		/**
 		 * The actual layer-2 CoS queue the DSCP value is mapped to. These are not bits set on outgoing frames. Value can be in the range of 0 to 5 inclusive.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cos: number;
 
 		/**
 		 * The Differentiated Services Code Point (DSCP) tag in the IP header that will be mapped to a particular Class-of-Service (CoS) queue. Value can be in the range of 0 to 63 inclusive.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscp: number;
 
@@ -38806,12 +41081,14 @@ export namespace MyNS {
 		/**
 		 * The actual layer-2 CoS queue the DSCP value is mapped to. These are not bits set on outgoing frames. Value can be in the range of 0 to 5 inclusive.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cos: FormControl<number | null | undefined>,
 
 		/**
 		 * The Differentiated Services Code Point (DSCP) tag in the IP header that will be mapped to a particular Class-of-Service (CoS) queue. Value can be in the range of 0 to 63 inclusive.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscp: FormControl<number | null | undefined>,
 
@@ -39005,7 +41282,10 @@ export namespace MyNS {
 
 	export interface GetNetworkSwitchMtuReturn {
 
-		/** MTU size for the entire network. Default value is 9578. */
+		/**
+		 * MTU size for the entire network. Default value is 9578.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMtuSize?: number | null;
 
 		/**
@@ -39016,7 +41296,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkSwitchMtuReturnFormProperties {
 
-		/** MTU size for the entire network. Default value is 9578. */
+		/**
+		 * MTU size for the entire network. Default value is 9578.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMtuSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchMtuReturnFormGroup() {
@@ -39031,6 +41314,7 @@ export namespace MyNS {
 		/**
 		 * MTU size for the switches or switch profiles.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mtuSize: number;
 
@@ -39045,6 +41329,7 @@ export namespace MyNS {
 		/**
 		 * MTU size for the switches or switch profiles.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mtuSize: FormControl<number | null | undefined>,
 	}
@@ -39057,7 +41342,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchMtuPutBody {
 
-		/** MTU size for the entire network. Default value is 9578. */
+		/**
+		 * MTU size for the entire network. Default value is 9578.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMtuSize?: number | null;
 
 		/** Override MTU size for individual switches or switch profiles. An empty array will clear overrides. */
@@ -39065,7 +41353,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSwitchMtuPutBodyFormProperties {
 
-		/** MTU size for the entire network. Default value is 9578. */
+		/**
+		 * MTU size for the entire network. Default value is 9578.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMtuSize: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchMtuPutBodyFormGroup() {
@@ -39080,6 +41371,7 @@ export namespace MyNS {
 		/**
 		 * MTU size for the switches or switch profiles.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mtuSize: number;
 
@@ -39094,6 +41386,7 @@ export namespace MyNS {
 		/**
 		 * MTU size for the switches or switch profiles.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mtuSize: FormControl<number | null | undefined>,
 	}
@@ -39656,10 +41949,16 @@ export namespace MyNS {
 
 	export interface CreateNetworkSwitchQosRulePostBody {
 
-		/** DSCP tag. Set this to -1 to trust incoming DSCP. Default value is 0 */
+		/**
+		 * DSCP tag. Set this to -1 to trust incoming DSCP. Default value is 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dscp?: number | null;
 
-		/** The destination port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The destination port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dstPort?: number | null;
 
 		/** The destination port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39668,7 +41967,10 @@ export namespace MyNS {
 		/** The protocol of the incoming packet. Can be one of "ANY", "TCP" or "UDP". Default value is "ANY" */
 		protocol?: CreateNetworkSwitchQosRulePostBodyProtocol | null;
 
-		/** The source port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The source port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		srcPort?: number | null;
 
 		/** The source port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39677,15 +41979,22 @@ export namespace MyNS {
 		/**
 		 * The VLAN of the incoming packet. A null value will match any VLAN.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlan: number;
 	}
 	export interface CreateNetworkSwitchQosRulePostBodyFormProperties {
 
-		/** DSCP tag. Set this to -1 to trust incoming DSCP. Default value is 0 */
+		/**
+		 * DSCP tag. Set this to -1 to trust incoming DSCP. Default value is 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dscp: FormControl<number | null | undefined>,
 
-		/** The destination port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The destination port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dstPort: FormControl<number | null | undefined>,
 
 		/** The destination port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39694,7 +42003,10 @@ export namespace MyNS {
 		/** The protocol of the incoming packet. Can be one of "ANY", "TCP" or "UDP". Default value is "ANY" */
 		protocol: FormControl<CreateNetworkSwitchQosRulePostBodyProtocol | null | undefined>,
 
-		/** The source port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The source port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		srcPort: FormControl<number | null | undefined>,
 
 		/** The source port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39703,6 +42015,7 @@ export namespace MyNS {
 		/**
 		 * The VLAN of the incoming packet. A null value will match any VLAN.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlan: FormControl<number | null | undefined>,
 	}
@@ -39739,10 +42052,16 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchQosRulePutBody {
 
-		/** DSCP tag that should be assigned to incoming packet. Set this to -1 to trust incoming DSCP. Default value is 0. */
+		/**
+		 * DSCP tag that should be assigned to incoming packet. Set this to -1 to trust incoming DSCP. Default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dscp?: number | null;
 
-		/** The destination port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The destination port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dstPort?: number | null;
 
 		/** The destination port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39751,21 +42070,33 @@ export namespace MyNS {
 		/** The protocol of the incoming packet. Can be one of "ANY", "TCP" or "UDP". Default value is "ANY". */
 		protocol?: CreateNetworkSwitchQosRulePostBodyProtocol | null;
 
-		/** The source port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The source port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		srcPort?: number | null;
 
 		/** The source port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
 		srcPortRange?: string | null;
 
-		/** The VLAN of the incoming packet. A null value will match any VLAN. */
+		/**
+		 * The VLAN of the incoming packet. A null value will match any VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkSwitchQosRulePutBodyFormProperties {
 
-		/** DSCP tag that should be assigned to incoming packet. Set this to -1 to trust incoming DSCP. Default value is 0. */
+		/**
+		 * DSCP tag that should be assigned to incoming packet. Set this to -1 to trust incoming DSCP. Default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dscp: FormControl<number | null | undefined>,
 
-		/** The destination port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The destination port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dstPort: FormControl<number | null | undefined>,
 
 		/** The destination port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
@@ -39774,13 +42105,19 @@ export namespace MyNS {
 		/** The protocol of the incoming packet. Can be one of "ANY", "TCP" or "UDP". Default value is "ANY". */
 		protocol: FormControl<CreateNetworkSwitchQosRulePostBodyProtocol | null | undefined>,
 
-		/** The source port of the incoming packet. Applicable only if protocol is TCP or UDP. */
+		/**
+		 * The source port of the incoming packet. Applicable only if protocol is TCP or UDP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		srcPort: FormControl<number | null | undefined>,
 
 		/** The source port range of the incoming packet. Applicable only if protocol is set to TCP or UDP. Example: 70-80 */
 		srcPortRange: FormControl<string | null | undefined>,
 
-		/** The VLAN of the incoming packet. A null value will match any VLAN. */
+		/**
+		 * The VLAN of the incoming packet. A null value will match any VLAN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchQosRulePutBodyFormGroup() {
@@ -39958,13 +42295,19 @@ export namespace MyNS {
 		/** OSPF areas */
 		UpdateNetworkSwitchRoutingOspfPutBodyAreas?: Array<UpdateNetworkSwitchRoutingOspfPutBodyAreas>;
 
-		/** Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535 */
+		/**
+		 * Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deadTimerInSeconds?: number | null;
 
 		/** Boolean value to enable or disable OSPF routing. OSPF routing is disabled by default. */
 		enabled?: boolean | null;
 
-		/** Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds. */
+		/**
+		 * Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		helloTimerInSeconds?: number | null;
 
 		/** Boolean value to enable or disable MD5 authentication. MD5 authentication is disabled by default. */
@@ -39978,13 +42321,19 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSwitchRoutingOspfPutBodyFormProperties {
 
-		/** Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535 */
+		/**
+		 * Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deadTimerInSeconds: FormControl<number | null | undefined>,
 
 		/** Boolean value to enable or disable OSPF routing. OSPF routing is disabled by default. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds. */
+		/**
+		 * Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		helloTimerInSeconds: FormControl<number | null | undefined>,
 
 		/** Boolean value to enable or disable MD5 authentication. MD5 authentication is disabled by default. */
@@ -40053,7 +42402,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchRoutingOspfPutBodyMd5AuthenticationKey {
 
-		/** MD5 authentication key index. Key index must be between 1 to 255 */
+		/**
+		 * MD5 authentication key index. Key index must be between 1 to 255
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** MD5 authentication passphrase */
@@ -40061,7 +42413,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkSwitchRoutingOspfPutBodyMd5AuthenticationKeyFormProperties {
 
-		/** MD5 authentication key index. Key index must be between 1 to 255 */
+		/**
+		 * MD5 authentication key index. Key index must be between 1 to 255
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** MD5 authentication passphrase */
@@ -40080,24 +42435,36 @@ export namespace MyNS {
 		/** OSPF v3 areas */
 		UpdateNetworkSwitchRoutingOspfPutBodyV3Areas?: Array<UpdateNetworkSwitchRoutingOspfPutBodyV3Areas>;
 
-		/** Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535 */
+		/**
+		 * Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deadTimerInSeconds?: number | null;
 
 		/** Boolean value to enable or disable V3 OSPF routing. OSPF V3 routing is disabled by default. */
 		enabled?: boolean | null;
 
-		/** Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds. */
+		/**
+		 * Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		helloTimerInSeconds?: number | null;
 	}
 	export interface UpdateNetworkSwitchRoutingOspfPutBodyV3FormProperties {
 
-		/** Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535 */
+		/**
+		 * Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deadTimerInSeconds: FormControl<number | null | undefined>,
 
 		/** Boolean value to enable or disable V3 OSPF routing. OSPF V3 routing is disabled by default. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds. */
+		/**
+		 * Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between 1 and 255. Default is 10 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		helloTimerInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchRoutingOspfPutBodyV3FormGroup() {
@@ -40166,7 +42533,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower?: boolean | null;
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkSwitchSettingsReturnFormProperties {
@@ -40174,7 +42544,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower: FormControl<boolean | null | undefined>,
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchSettingsReturnFormGroup() {
@@ -40219,7 +42592,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower?: boolean | null;
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkSwitchSettingsPutBodyFormProperties {
@@ -40227,7 +42603,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower: FormControl<boolean | null | undefined>,
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchSettingsPutBodyFormGroup() {
@@ -40282,7 +42661,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower?: boolean | null;
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface UpdateNetworkSwitchSettingsReturnFormProperties {
@@ -40290,7 +42672,10 @@ export namespace MyNS {
 		/** The use Combined Power as the default behavior of secondary power supplies on supported devices. */
 		useCombinedPower: FormControl<boolean | null | undefined>,
 
-		/** Management VLAN */
+		/**
+		 * Management VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchSettingsReturnFormGroup() {
@@ -40456,6 +42841,7 @@ export namespace MyNS {
 		/**
 		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlanId: number;
 	}
@@ -40482,6 +42868,7 @@ export namespace MyNS {
 		/**
 		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
@@ -40540,7 +42927,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an existing OSPF area. Defaults to 'disabled'. */
 		area?: string | null;
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -40551,7 +42941,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an existing OSPF area. Defaults to 'disabled'. */
 		area: FormControl<string | null | undefined>,
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -40589,7 +42982,10 @@ export namespace MyNS {
 		/** The network that this routed interface is on, in CIDR notation (ex. 10.1.1.0/24). */
 		subnet?: string | null;
 
-		/** The VLAN this routed interface is on. VLAN must be between 1 and 4094. */
+		/**
+		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateNetworkSwitchStackRoutingInterfacePutBodyFormProperties {
@@ -40609,7 +43005,10 @@ export namespace MyNS {
 		/** The network that this routed interface is on, in CIDR notation (ex. 10.1.1.0/24). */
 		subnet: FormControl<string | null | undefined>,
 
-		/** The VLAN this routed interface is on. VLAN must be between 1 and 4094. */
+		/**
+		 * The VLAN this routed interface is on. VLAN must be between 1 and 4094.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchStackRoutingInterfacePutBodyFormGroup() {
@@ -40667,7 +43066,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an existing OSPF area. */
 		area?: string | null;
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost?: number | null;
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -40678,7 +43080,10 @@ export namespace MyNS {
 		/** The OSPF area to which this interface should belong. Can be either 'disabled' or the identifier of an existing OSPF area. */
 		area: FormControl<string | null | undefined>,
 
-		/** The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority. */
+		/**
+		 * The path cost for this interface. Defaults to 1, but can be increased up to 65535 to give lower priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** When enabled, OSPF will not run on the interface, but the subnet will still be advertised. */
@@ -40903,24 +43308,42 @@ export namespace MyNS {
 
 	export interface GetNetworkSwitchStormControlReturn {
 
-		/** Broadcast threshold. */
+		/**
+		 * Broadcast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		broadcastThreshold?: number | null;
 
-		/** Multicast threshold. */
+		/**
+		 * Multicast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multicastThreshold?: number | null;
 
-		/** Unknown Unicast threshold. */
+		/**
+		 * Unknown Unicast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unknownUnicastThreshold?: number | null;
 	}
 	export interface GetNetworkSwitchStormControlReturnFormProperties {
 
-		/** Broadcast threshold. */
+		/**
+		 * Broadcast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		broadcastThreshold: FormControl<number | null | undefined>,
 
-		/** Multicast threshold. */
+		/**
+		 * Multicast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multicastThreshold: FormControl<number | null | undefined>,
 
-		/** Unknown Unicast threshold. */
+		/**
+		 * Unknown Unicast threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unknownUnicastThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSwitchStormControlReturnFormGroup() {
@@ -40934,24 +43357,42 @@ export namespace MyNS {
 
 	export interface UpdateNetworkSwitchStormControlPutBody {
 
-		/** Percentage (1 to 99) of total available port bandwidth for broadcast traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for broadcast traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		broadcastThreshold?: number | null;
 
-		/** Percentage (1 to 99) of total available port bandwidth for multicast traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for multicast traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multicastThreshold?: number | null;
 
-		/** Percentage (1 to 99) of total available port bandwidth for unknown unicast (dlf-destination lookup failure) traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for unknown unicast (dlf-destination lookup failure) traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unknownUnicastThreshold?: number | null;
 	}
 	export interface UpdateNetworkSwitchStormControlPutBodyFormProperties {
 
-		/** Percentage (1 to 99) of total available port bandwidth for broadcast traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for broadcast traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		broadcastThreshold: FormControl<number | null | undefined>,
 
-		/** Percentage (1 to 99) of total available port bandwidth for multicast traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for multicast traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multicastThreshold: FormControl<number | null | undefined>,
 
-		/** Percentage (1 to 99) of total available port bandwidth for unknown unicast (dlf-destination lookup failure) traffic type. Default value 100 percent rate is to clear the configuration. */
+		/**
+		 * Percentage (1 to 99) of total available port bandwidth for unknown unicast (dlf-destination lookup failure) traffic type. Default value 100 percent rate is to clear the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unknownUnicastThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSwitchStormControlPutBodyFormGroup() {
@@ -40991,6 +43432,7 @@ export namespace MyNS {
 		/**
 		 * STP priority for switch, stacks, or switch profiles
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stpPriority: number;
 
@@ -41005,6 +43447,7 @@ export namespace MyNS {
 		/**
 		 * STP priority for switch, stacks, or switch profiles
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stpPriority: FormControl<number | null | undefined>,
 	}
@@ -41033,7 +43476,10 @@ export namespace MyNS {
 		/** The IP address of the syslog server */
 		host?: string | null;
 
-		/** The port of the syslog server */
+		/**
+		 * The port of the syslog server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** A list of roles for the syslog server. Options (case-insensitive): 'Wireless event log', 'Appliance event log', 'Switch event log', 'Air Marshal events', 'Flows', 'URLs', 'IDS alerts', 'Security events' */
@@ -41044,7 +43490,10 @@ export namespace MyNS {
 		/** The IP address of the syslog server */
 		host: FormControl<string | null | undefined>,
 
-		/** The port of the syslog server */
+		/**
+		 * The port of the syslog server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkSyslogServersReturnServersFormGroup() {
@@ -41082,6 +43531,7 @@ export namespace MyNS {
 		/**
 		 * The port of the syslog server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -41102,6 +43552,7 @@ export namespace MyNS {
 		/**
 		 * The port of the syslog server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 	}
@@ -41131,7 +43582,10 @@ export namespace MyNS {
 		/** The IP address of the syslog server */
 		host?: string | null;
 
-		/** The port of the syslog server */
+		/**
+		 * The port of the syslog server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** A list of roles for the syslog server. Options (case-insensitive): 'Wireless event log', 'Appliance event log', 'Switch event log', 'Air Marshal events', 'Flows', 'URLs', 'IDS alerts', 'Security events' */
@@ -41142,7 +43596,10 @@ export namespace MyNS {
 		/** The IP address of the syslog server */
 		host: FormControl<string | null | undefined>,
 
-		/** The port of the syslog server */
+		/**
+		 * The port of the syslog server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkSyslogServersReturnServersFormGroup() {
@@ -42060,7 +44517,10 @@ export namespace MyNS {
 		/** Can be one or more of the following values: 'radius', 'snmp', 'syslog' or 'ldap' */
 		protocols?: Array<string>;
 
-		/** Alternate management interface VLAN, must be between 1 and 4094 */
+		/**
+		 * Alternate management interface VLAN, must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateNetworkWirelessAlternateManagementInterfacePutBodyFormProperties {
@@ -42068,7 +44528,10 @@ export namespace MyNS {
 		/** Boolean value to enable or disable alternate management interface */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Alternate management interface VLAN, must be between 1 and 4094 */
+		/**
+		 * Alternate management interface VLAN, must be between 1 and 4094
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessAlternateManagementInterfacePutBodyFormGroup() {
@@ -42177,6 +44640,7 @@ export namespace MyNS {
 		/**
 		 * The price of the billing plan.
 		 * Required
+		 * Type: float
 		 */
 		price: number;
 
@@ -42194,6 +44658,7 @@ export namespace MyNS {
 		/**
 		 * The price of the billing plan.
 		 * Required
+		 * Type: float
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -42214,18 +44679,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessBillingPutBodyPlansBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkWirelessBillingPutBodyPlansBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum download limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). null indicates no limit */
+		/**
+		 * The maximum upload limit (integer, in Kbps). null indicates no limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessBillingPutBodyPlansBandwidthLimitsFormGroup() {
@@ -42246,13 +44723,19 @@ export namespace MyNS {
 		/** Whether ESL is enabled on this network. */
 		eslEnabled?: boolean | null;
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode?: string | null;
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42269,13 +44752,19 @@ export namespace MyNS {
 		/** Whether ESL is enabled on this network. */
 		eslEnabled: FormControl<boolean | null | undefined>,
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode: FormControl<string | null | undefined>,
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42302,13 +44791,19 @@ export namespace MyNS {
 		/** Whether APs will advertise beacons. */
 		advertisingEnabled?: boolean | null;
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode?: UpdateNetworkWirelessBluetoothSettingsPutBodyMajorMinorAssignmentMode | null;
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42322,13 +44817,19 @@ export namespace MyNS {
 		/** Whether APs will advertise beacons. */
 		advertisingEnabled: FormControl<boolean | null | undefined>,
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode: FormControl<UpdateNetworkWirelessBluetoothSettingsPutBodyMajorMinorAssignmentMode | null | undefined>,
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42359,13 +44860,19 @@ export namespace MyNS {
 		/** Whether ESL is enabled on this network. */
 		eslEnabled?: boolean | null;
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode?: string | null;
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42382,13 +44889,19 @@ export namespace MyNS {
 		/** Whether ESL is enabled on this network. */
 		eslEnabled: FormControl<boolean | null | undefined>,
 
-		/** The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
 		/** The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique') */
 		majorMinorAssignmentMode: FormControl<string | null | undefined>,
 
-		/** The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode. */
+		/**
+		 * The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
 		/** Whether APs will scan for Bluetooth enabled clients. */
@@ -42418,13 +44931,22 @@ export namespace MyNS {
 		/** The start time of the query range */
 		startTs?: Date | null;
 
-		/** Average wifi utilization */
+		/**
+		 * Average wifi utilization
+		 * Type: float
+		 */
 		utilization80211?: number | null;
 
-		/** Average signal interference */
+		/**
+		 * Average signal interference
+		 * Type: float
+		 */
 		utilizationNon80211?: number | null;
 
-		/** Total channel utilization */
+		/**
+		 * Total channel utilization
+		 * Type: float
+		 */
 		utilizationTotal?: number | null;
 	}
 	export interface GetNetworkWirelessChannelUtilizationHistoryReturnFormProperties {
@@ -42435,13 +44957,22 @@ export namespace MyNS {
 		/** The start time of the query range */
 		startTs: FormControl<Date | null | undefined>,
 
-		/** Average wifi utilization */
+		/**
+		 * Average wifi utilization
+		 * Type: float
+		 */
 		utilization80211: FormControl<number | null | undefined>,
 
-		/** Average signal interference */
+		/**
+		 * Average signal interference
+		 * Type: float
+		 */
 		utilizationNon80211: FormControl<number | null | undefined>,
 
-		/** Total channel utilization */
+		/**
+		 * Total channel utilization
+		 * Type: float
+		 */
 		utilizationTotal: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessChannelUtilizationHistoryReturnFormGroup() {
@@ -42457,7 +44988,10 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessClientCountHistoryReturn {
 
-		/** Number of connected clients */
+		/**
+		 * Number of connected clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clientCount?: number | null;
 
 		/** The end time of the query range */
@@ -42468,7 +45002,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkWirelessClientCountHistoryReturnFormProperties {
 
-		/** Number of connected clients */
+		/**
+		 * Number of connected clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clientCount: FormControl<number | null | undefined>,
 
 		/** The end time of the query range */
@@ -42490,36 +45027,66 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessConnectionStatsReturn {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc?: number | null;
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth?: number | null;
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp?: number | null;
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns?: number | null;
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success?: number | null;
 	}
 	export interface GetNetworkWirelessConnectionStatsReturnFormProperties {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc: FormControl<number | null | undefined>,
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth: FormControl<number | null | undefined>,
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp: FormControl<number | null | undefined>,
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns: FormControl<number | null | undefined>,
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessConnectionStatsReturnFormGroup() {
@@ -42535,10 +45102,16 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessDataRateHistoryReturn {
 
-		/** Average data rate in kilobytes-per-second */
+		/**
+		 * Average data rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageKbps?: number | null;
 
-		/** Download rate in kilobytes-per-second */
+		/**
+		 * Download rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadKbps?: number | null;
 
 		/** The end time of the query range */
@@ -42547,15 +45120,24 @@ export namespace MyNS {
 		/** The start time of the query range */
 		startTs?: Date | null;
 
-		/** Upload rate in kilobytes-per-second */
+		/**
+		 * Upload rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadKbps?: number | null;
 	}
 	export interface GetNetworkWirelessDataRateHistoryReturnFormProperties {
 
-		/** Average data rate in kilobytes-per-second */
+		/**
+		 * Average data rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		averageKbps: FormControl<number | null | undefined>,
 
-		/** Download rate in kilobytes-per-second */
+		/**
+		 * Download rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloadKbps: FormControl<number | null | undefined>,
 
 		/** The end time of the query range */
@@ -42564,7 +45146,10 @@ export namespace MyNS {
 		/** The start time of the query range */
 		startTs: FormControl<Date | null | undefined>,
 
-		/** Upload rate in kilobytes-per-second */
+		/**
+		 * Upload rate in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uploadKbps: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessDataRateHistoryReturnFormGroup() {
@@ -42600,36 +45185,66 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessDevicesConnectionStatsReturnConnectionStats {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc?: number | null;
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth?: number | null;
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp?: number | null;
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns?: number | null;
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success?: number | null;
 	}
 	export interface GetNetworkWirelessDevicesConnectionStatsReturnConnectionStatsFormProperties {
 
-		/** The number of failed association attempts */
+		/**
+		 * The number of failed association attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assoc: FormControl<number | null | undefined>,
 
-		/** The number of failed authentication attempts */
+		/**
+		 * The number of failed authentication attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		auth: FormControl<number | null | undefined>,
 
-		/** The number of failed DHCP attempts */
+		/**
+		 * The number of failed DHCP attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dhcp: FormControl<number | null | undefined>,
 
-		/** The number of failed DNS attempts */
+		/**
+		 * The number of failed DNS attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dns: FormControl<number | null | undefined>,
 
-		/** The number of successful connection attempts */
+		/**
+		 * The number of successful connection attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		success: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessDevicesConnectionStatsReturnConnectionStatsFormGroup() {
@@ -42654,7 +45269,10 @@ export namespace MyNS {
 		/** Serial Number */
 		serial?: string | null;
 
-		/** SSID Number */
+		/**
+		 * SSID Number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 
 		/** The timestamp when the client mac failed */
@@ -42663,7 +45281,10 @@ export namespace MyNS {
 		/** The failure type in the onboarding step */
 		type?: string | null;
 
-		/** LAN */
+		/**
+		 * LAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 	}
 	export interface GetNetworkWirelessFailedConnectionsReturnFormProperties {
@@ -42677,7 +45298,10 @@ export namespace MyNS {
 		/** Serial Number */
 		serial: FormControl<string | null | undefined>,
 
-		/** SSID Number */
+		/**
+		 * SSID Number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 
 		/** The timestamp when the client mac failed */
@@ -42686,7 +45310,10 @@ export namespace MyNS {
 		/** The failure type in the onboarding step */
 		type: FormControl<string | null | undefined>,
 
-		/** LAN */
+		/**
+		 * LAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessFailedConnectionsReturnFormGroup() {
@@ -42706,7 +45333,10 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessLatencyHistoryReturn {
 
-		/** Average latency in milliseconds */
+		/**
+		 * Average latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		avgLatencyMs?: number | null;
 
 		/** The end time of the query range */
@@ -42717,7 +45347,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkWirelessLatencyHistoryReturnFormProperties {
 
-		/** Average latency in milliseconds */
+		/**
+		 * Average latency in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		avgLatencyMs: FormControl<number | null | undefined>,
 
 		/** The end time of the query range */
@@ -42833,16 +45466,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. Defaults to auto. */
 		channelWidth?: string | null;
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 5Ghz band. Can be one of '36', '40', '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or '165'.Defaults to [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]. */
@@ -42853,16 +45498,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. Defaults to auto. */
 		channelWidth: FormControl<string | null | undefined>,
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyFiveGhzSettingsFormGroup() {
@@ -42941,7 +45598,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_0_FormProperties {
@@ -42952,7 +45612,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_0_FormGroup() {
@@ -42972,7 +45635,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_1_FormProperties {
@@ -42983,7 +45649,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_1_FormGroup() {
@@ -43003,7 +45672,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_2_FormProperties {
@@ -43014,7 +45686,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_2_FormGroup() {
@@ -43034,7 +45709,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_3_FormProperties {
@@ -43045,7 +45723,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_3_FormGroup() {
@@ -43065,7 +45746,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_4_FormProperties {
@@ -43076,7 +45760,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_4_FormGroup() {
@@ -43096,7 +45783,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_5_FormProperties {
@@ -43107,7 +45797,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_5_FormGroup() {
@@ -43127,7 +45820,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_6_FormProperties {
@@ -43138,7 +45834,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_6_FormGroup() {
@@ -43158,7 +45857,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_7_FormProperties {
@@ -43169,7 +45871,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_7_FormGroup() {
@@ -43189,7 +45894,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_8_FormProperties {
@@ -43200,7 +45908,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_8_FormGroup() {
@@ -43220,7 +45931,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_9_FormProperties {
@@ -43231,7 +45945,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_9_FormGroup() {
@@ -43251,7 +45968,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_10_FormProperties {
@@ -43262,7 +45982,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_10_FormGroup() {
@@ -43282,7 +46005,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_11_FormProperties {
@@ -43293,7 +46019,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_11_FormGroup() {
@@ -43313,7 +46042,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_12_FormProperties {
@@ -43324,7 +46056,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_12_FormGroup() {
@@ -43344,7 +46079,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_13_FormProperties {
@@ -43355,7 +46093,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_13_FormGroup() {
@@ -43375,7 +46116,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings_14_FormProperties {
@@ -43386,7 +46130,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyPerSsidSettings_14_FormGroup() {
@@ -43420,16 +46167,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true. */
 		axEnabled?: boolean | null;
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 2.4Ghz band. Can be one of '1', '6' or '11'. Defaults to [1, 6, 11]. */
@@ -43440,16 +46199,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true. */
 		axEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkWirelessRfProfilePostBodyTwoFourGhzSettingsFormGroup() {
@@ -43545,16 +46316,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. */
 		channelWidth?: string | null;
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 5Ghz band. Can be one of '36', '40', '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or '165'. */
@@ -43565,16 +46348,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. */
 		channelWidth: FormControl<string | null | undefined>,
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyFiveGhzSettingsFormGroup() {
@@ -43651,7 +46446,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_0_FormProperties {
@@ -43662,7 +46460,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_0_FormGroup() {
@@ -43682,7 +46483,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_1_FormProperties {
@@ -43693,7 +46497,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_1_FormGroup() {
@@ -43713,7 +46520,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_2_FormProperties {
@@ -43724,7 +46534,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_2_FormGroup() {
@@ -43744,7 +46557,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_3_FormProperties {
@@ -43755,7 +46571,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_3_FormGroup() {
@@ -43775,7 +46594,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_4_FormProperties {
@@ -43786,7 +46608,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_4_FormGroup() {
@@ -43806,7 +46631,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_5_FormProperties {
@@ -43817,7 +46645,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_5_FormGroup() {
@@ -43837,7 +46668,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_6_FormProperties {
@@ -43848,7 +46682,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_6_FormGroup() {
@@ -43868,7 +46705,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_7_FormProperties {
@@ -43879,7 +46719,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_7_FormGroup() {
@@ -43899,7 +46742,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_8_FormProperties {
@@ -43910,7 +46756,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_8_FormGroup() {
@@ -43930,7 +46779,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_9_FormProperties {
@@ -43941,7 +46793,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_9_FormGroup() {
@@ -43961,7 +46816,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_10_FormProperties {
@@ -43972,7 +46830,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_10_FormGroup() {
@@ -43992,7 +46853,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_11_FormProperties {
@@ -44003,7 +46867,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_11_FormGroup() {
@@ -44023,7 +46890,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_12_FormProperties {
@@ -44034,7 +46904,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_12_FormGroup() {
@@ -44054,7 +46927,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_13_FormProperties {
@@ -44065,7 +46941,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_13_FormGroup() {
@@ -44085,7 +46964,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 	}
 	export interface UpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_14_FormProperties {
@@ -44096,7 +46978,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyPerSsidSettings_14_FormGroup() {
@@ -44130,16 +47015,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. */
 		axEnabled?: boolean | null;
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 2.4Ghz band. Can be one of '1', '6' or '11'. */
@@ -44150,16 +47047,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. */
 		axEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfilePutBodyTwoFourGhzSettingsFormGroup() {
@@ -44269,16 +47178,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. Defaults to auto. */
 		channelWidth?: string | null;
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 5Ghz band. Can be one of '36', '40', '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or '165'.Defaults to [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]. */
@@ -44289,16 +47210,28 @@ export namespace MyNS {
 		/** Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20', '40' or '80'. Defaults to auto. */
 		channelWidth: FormControl<string | null | undefined>,
 
-		/** Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12. */
+		/**
+		 * Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8. */
+		/**
+		 * Sets min power (dBm) of 5Ghz band. Can be integer between 2 and 30. Defaults to 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfileReturnFiveGhzSettingsFormGroup() {
@@ -44375,7 +47308,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44389,7 +47325,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44413,7 +47352,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44427,7 +47369,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44451,7 +47396,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44465,7 +47413,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44489,7 +47440,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44503,7 +47457,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44527,7 +47484,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44541,7 +47501,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44565,7 +47528,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44579,7 +47545,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44603,7 +47572,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44617,7 +47589,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44641,7 +47616,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44655,7 +47633,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44679,7 +47660,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44693,7 +47677,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44717,7 +47704,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44731,7 +47721,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44755,7 +47748,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44769,7 +47765,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44793,7 +47792,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44807,7 +47809,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44831,7 +47836,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44845,7 +47853,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44869,7 +47880,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44883,7 +47897,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44907,7 +47924,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled?: boolean | null;
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate?: number | null;
 
 		/** Name of SSID */
@@ -44921,7 +47941,10 @@ export namespace MyNS {
 		/** Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false. */
 		bandSteeringEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. */
+		/**
+		 * Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** Name of SSID */
@@ -44959,16 +47982,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true. */
 		axEnabled?: boolean | null;
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower?: number | null;
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11.
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower?: number | null;
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop?: number | null;
 
 		/** Sets valid auto channels for 2.4Ghz band. Can be one of '1', '6' or '11'. Defaults to [1, 6, 11]. */
@@ -44979,16 +48014,28 @@ export namespace MyNS {
 		/** Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true. */
 		axEnabled: FormControl<boolean | null | undefined>,
 
-		/** Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30. */
+		/**
+		 * Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPower: FormControl<number | null | undefined>,
 
-		/** Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11. */
+		/**
+		 * Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11.
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
-		/** Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5. */
+		/**
+		 * Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and 30. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPower: FormControl<number | null | undefined>,
 
-		/** The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default. */
+		/**
+		 * The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rxsop: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessRfProfileReturnTwoFourGhzSettingsFormGroup() {
@@ -45065,7 +48112,10 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessSettingsReturnNamedVlansPoolDhcpMonitoring {
 
-		/** The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool. */
+		/**
+		 * The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from being assigned to VLANs where they would be unable to obtain an IP address via DHCP */
@@ -45073,7 +48123,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkWirelessSettingsReturnNamedVlansPoolDhcpMonitoringFormProperties {
 
-		/** The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool. */
+		/**
+		 * The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from being assigned to VLANs where they would be unable to obtain an IP address via DHCP */
@@ -45197,7 +48250,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSettingsReturnNamedVlansPoolDhcpMonitoring {
 
-		/** The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool. */
+		/**
+		 * The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from being assigned to VLANs where they would be unable to obtain an IP address via DHCP */
@@ -45205,7 +48261,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSettingsReturnNamedVlansPoolDhcpMonitoringFormProperties {
 
-		/** The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool. */
+		/**
+		 * The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from being assigned to VLANs where they would be unable to obtain an IP address via DHCP */
@@ -45224,10 +48283,16 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs?: Date | null;
 
-		/** Received signal strength indicator */
+		/**
+		 * Received signal strength indicator
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi?: number | null;
 
-		/** Signal to noise ratio */
+		/**
+		 * Signal to noise ratio
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		snr?: number | null;
 
 		/** The start time of the query range */
@@ -45238,10 +48303,16 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs: FormControl<Date | null | undefined>,
 
-		/** Received signal strength indicator */
+		/**
+		 * Received signal strength indicator
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rssi: FormControl<number | null | undefined>,
 
-		/** Signal to noise ratio */
+		/**
+		 * Signal to noise ratio
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		snr: FormControl<number | null | undefined>,
 
 		/** The start time of the query range */
@@ -45283,7 +48354,10 @@ export namespace MyNS {
 		/** The concentrator to use when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'. */
 		concentratorNetworkId?: string | null;
 
-		/** The default VLAN ID used for 'all other APs'. This param is only valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming' */
+		/**
+		 * The default VLAN ID used for 'all other APs'. This param is only valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId?: number | null;
 
 		/** Disassociate clients when 'VPN' concentrator failover occurs in order to trigger clients to re-associate and generate new DHCP requests. This param is only valid if ipAssignmentMode is 'VPN'. */
@@ -45325,7 +48399,10 @@ export namespace MyNS {
 		/** If true, Mandatory DHCP will enforce that clients connecting to this SSID must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. */
 		mandatoryDhcpEnabled?: boolean | null;
 
-		/** The minimum bitrate in Mbps of this SSID in the default indoor RF profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54') */
+		/**
+		 * The minimum bitrate in Mbps of this SSID in the default indoor RF profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54')
+		 * Type: float
+		 */
 		minBitrate?: number | null;
 
 		/** The name of the SSID */
@@ -45334,16 +48411,28 @@ export namespace MyNS {
 		/** The OAuth settings of this SSID. Only valid if splashPage is 'Google OAuth'. */
 		oauth?: UpdateNetworkWirelessSsidPutBodyOauth;
 
-		/** The download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perClientBandwidthLimitDown?: number | null;
 
-		/** The upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perClientBandwidthLimitUp?: number | null;
 
-		/** The total download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The total download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perSsidBandwidthLimitDown?: number | null;
 
-		/** The total upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The total upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perSsidBandwidthLimitUp?: number | null;
 
 		/** The passkey for the SSID. This param is only valid if the authMode is 'psk' */
@@ -45352,7 +48441,10 @@ export namespace MyNS {
 		/** Whether or not RADIUS accounting is enabled. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius' */
 		radiusAccountingEnabled?: boolean | null;
 
-		/** The interval (in seconds) in which accounting information is updated and sent to the RADIUS accounting server. */
+		/**
+		 * The interval (in seconds) in which accounting information is updated and sent to the RADIUS accounting server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusAccountingInterimInterval?: number | null;
 
 		/** The RADIUS accounting 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius' and radiusAccountingEnabled is 'true' */
@@ -45379,7 +48471,10 @@ export namespace MyNS {
 		/** Whether or not RADIUS Guest VLAN is enabled. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode */
 		radiusGuestVlanEnabled?: boolean | null;
 
-		/** VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode */
+		/**
+		 * VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusGuestVlanId?: number | null;
 
 		/** This policy determines which RADIUS server will be contacted first in an authentication attempt and the ordering of any necessary retry attempts ('Strict priority order' or 'Round robin') */
@@ -45391,10 +48486,16 @@ export namespace MyNS {
 		/** If true, Meraki devices will proxy RADIUS messages through the Meraki cloud to the configured RADIUS auth and accounting servers. */
 		radiusProxyEnabled?: boolean | null;
 
-		/** The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1-5). */
+		/**
+		 * The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1-5).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusServerAttemptsLimit?: number | null;
 
-		/** The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1-10 seconds). */
+		/**
+		 * The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1-10 seconds).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusServerTimeout?: number | null;
 
 		/** The RADIUS 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius' */
@@ -45421,7 +48522,10 @@ export namespace MyNS {
 		/** Boolean indicating whether APs should advertise or hide this SSID. APs will only broadcast this SSID if set to true */
 		visible?: boolean | null;
 
-		/** The VLAN ID used for VLAN tagging. This param is only valid when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN' */
+		/**
+		 * The VLAN ID used for VLAN tagging. This param is only valid when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 
 		/** Allow access to a configurable list of IP ranges, which users may access prior to sign-on. */
@@ -45450,7 +48554,10 @@ export namespace MyNS {
 		/** The concentrator to use when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'. */
 		concentratorNetworkId: FormControl<string | null | undefined>,
 
-		/** The default VLAN ID used for 'all other APs'. This param is only valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming' */
+		/**
+		 * The default VLAN ID used for 'all other APs'. This param is only valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVlanId: FormControl<number | null | undefined>,
 
 		/** Disassociate clients when 'VPN' concentrator failover occurs in order to trigger clients to re-associate and generate new DHCP requests. This param is only valid if ipAssignmentMode is 'VPN'. */
@@ -45474,22 +48581,37 @@ export namespace MyNS {
 		/** If true, Mandatory DHCP will enforce that clients connecting to this SSID must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. */
 		mandatoryDhcpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The minimum bitrate in Mbps of this SSID in the default indoor RF profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54') */
+		/**
+		 * The minimum bitrate in Mbps of this SSID in the default indoor RF profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54')
+		 * Type: float
+		 */
 		minBitrate: FormControl<number | null | undefined>,
 
 		/** The name of the SSID */
 		name: FormControl<string | null | undefined>,
 
-		/** The download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perClientBandwidthLimitDown: FormControl<number | null | undefined>,
 
-		/** The upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perClientBandwidthLimitUp: FormControl<number | null | undefined>,
 
-		/** The total download bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The total download bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perSsidBandwidthLimitDown: FormControl<number | null | undefined>,
 
-		/** The total upload bandwidth limit in Kbps. (0 represents no limit.) */
+		/**
+		 * The total upload bandwidth limit in Kbps. (0 represents no limit.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perSsidBandwidthLimitUp: FormControl<number | null | undefined>,
 
 		/** The passkey for the SSID. This param is only valid if the authMode is 'psk' */
@@ -45498,7 +48620,10 @@ export namespace MyNS {
 		/** Whether or not RADIUS accounting is enabled. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius' */
 		radiusAccountingEnabled: FormControl<boolean | null | undefined>,
 
-		/** The interval (in seconds) in which accounting information is updated and sent to the RADIUS accounting server. */
+		/**
+		 * The interval (in seconds) in which accounting information is updated and sent to the RADIUS accounting server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusAccountingInterimInterval: FormControl<number | null | undefined>,
 
 		/** Specify the RADIUS attribute used to look up group policies ('Filter-Id', 'Reply-Message', 'Airespace-ACL-Name' or 'Aruba-User-Role'). Access points must receive this attribute in the RADIUS Access-Accept message */
@@ -45522,7 +48647,10 @@ export namespace MyNS {
 		/** Whether or not RADIUS Guest VLAN is enabled. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode */
 		radiusGuestVlanEnabled: FormControl<boolean | null | undefined>,
 
-		/** VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode */
+		/**
+		 * VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusGuestVlanId: FormControl<number | null | undefined>,
 
 		/** This policy determines which RADIUS server will be contacted first in an authentication attempt and the ordering of any necessary retry attempts ('Strict priority order' or 'Round robin') */
@@ -45534,10 +48662,16 @@ export namespace MyNS {
 		/** If true, Meraki devices will proxy RADIUS messages through the Meraki cloud to the configured RADIUS auth and accounting servers. */
 		radiusProxyEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1-5). */
+		/**
+		 * The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1-5).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusServerAttemptsLimit: FormControl<number | null | undefined>,
 
-		/** The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1-10 seconds). */
+		/**
+		 * The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1-10 seconds).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radiusServerTimeout: FormControl<number | null | undefined>,
 
 		/** If true, Meraki devices will periodically send Access-Request messages to configured RADIUS servers using identity 'meraki_8021x_test' to ensure that the RADIUS servers are reachable. */
@@ -45555,7 +48689,10 @@ export namespace MyNS {
 		/** Boolean indicating whether APs should advertise or hide this SSID. APs will only broadcast this SSID if set to true */
 		visible: FormControl<boolean | null | undefined>,
 
-		/** The VLAN ID used for VLAN tagging. This param is only valid when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN' */
+		/**
+		 * The VLAN ID used for VLAN tagging. This param is only valid when the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 
 		/** Allow access to a configurable list of IP ranges, which users may access prior to sign-on. */
@@ -45661,7 +48798,10 @@ export namespace MyNS {
 		 */
 		host: string;
 
-		/** (Optional) UDP port the Active Directory server listens on. By default, uses port 3268. */
+		/**
+		 * (Optional) UDP port the Active Directory server listens on. By default, uses port 3268.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidPutBodyActiveDirectoryServersFormProperties {
@@ -45672,7 +48812,10 @@ export namespace MyNS {
 		 */
 		host: FormControl<string | null | undefined>,
 
-		/** (Optional) UDP port the Active Directory server listens on. By default, uses port 3268. */
+		/**
+		 * (Optional) UDP port the Active Directory server listens on. By default, uses port 3268.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidPutBodyActiveDirectoryServersFormGroup() {
@@ -45688,12 +48831,18 @@ export namespace MyNS {
 		/** Array of AP tags */
 		tags?: Array<string>;
 
-		/** Numerical identifier that is assigned to the VLAN */
+		/**
+		 * Numerical identifier that is assigned to the VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidPutBodyApTagsAndVlanIdsFormProperties {
 
-		/** Numerical identifier that is assigned to the VLAN */
+		/**
+		 * Numerical identifier that is assigned to the VLAN
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidPutBodyApTagsAndVlanIdsFormGroup() {
@@ -45780,12 +48929,18 @@ export namespace MyNS {
 		/** The EoGRE concentrator's settings */
 		concentrator?: UpdateNetworkWirelessSsidPutBodyGreConcentrator;
 
-		/** Optional numerical identifier that will add the GRE key field to the GRE header. Used to identify an individual traffic flow within a tunnel. */
+		/**
+		 * Optional numerical identifier that will add the GRE key field to the GRE header. Used to identify an individual traffic flow within a tunnel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidPutBodyGreFormProperties {
 
-		/** Optional numerical identifier that will add the GRE key field to the GRE header. Used to identify an individual traffic flow within a tunnel. */
+		/**
+		 * Optional numerical identifier that will add the GRE key field to the GRE header. Used to identify an individual traffic flow within a tunnel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidPutBodyGreFormGroup() {
@@ -45896,6 +49051,7 @@ export namespace MyNS {
 		/**
 		 * UDP port the LDAP server listens on.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 	}
@@ -45910,6 +49066,7 @@ export namespace MyNS {
 		/**
 		 * UDP port the LDAP server listens on.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 	}
@@ -45923,7 +49080,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidPutBodyLocalRadius {
 
-		/** The duration (in seconds) for which LDAP and OCSP lookups are cached. */
+		/**
+		 * The duration (in seconds) for which LDAP and OCSP lookups are cached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cacheTimeout?: number | null;
 
 		/** The current setting for certificate verification. */
@@ -45934,7 +49094,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidPutBodyLocalRadiusFormProperties {
 
-		/** The duration (in seconds) for which LDAP and OCSP lookups are cached. */
+		/**
+		 * The duration (in seconds) for which LDAP and OCSP lookups are cached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cacheTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidPutBodyLocalRadiusFormGroup() {
@@ -46043,7 +49206,10 @@ export namespace MyNS {
 		 */
 		host: string;
 
-		/** Port on the RADIUS server that is listening for accounting messages */
+		/**
+		 * Port on the RADIUS server that is listening for accounting messages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Use RADSEC (TLS over TCP) to connect to this RADIUS accounting server. Requires radiusProxyEnabled. */
@@ -46063,7 +49229,10 @@ export namespace MyNS {
 		 */
 		host: FormControl<string | null | undefined>,
 
-		/** Port on the RADIUS server that is listening for accounting messages */
+		/**
+		 * Port on the RADIUS server that is listening for accounting messages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Use RADSEC (TLS over TCP) to connect to this RADIUS accounting server. Requires radiusProxyEnabled. */
@@ -46100,10 +49269,16 @@ export namespace MyNS {
 		 */
 		host: string;
 
-		/** The ID of the Openroaming Certificate attached to radius server. */
+		/**
+		 * The ID of the Openroaming Certificate attached to radius server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		openRoamingCertificateId?: number | null;
 
-		/** UDP port the RADIUS server listens on for Access-requests */
+		/**
+		 * UDP port the RADIUS server listens on for Access-requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Use RADSEC (TLS over TCP) to connect to this RADIUS server. Requires radiusProxyEnabled. */
@@ -46123,10 +49298,16 @@ export namespace MyNS {
 		 */
 		host: FormControl<string | null | undefined>,
 
-		/** The ID of the Openroaming Certificate attached to radius server. */
+		/**
+		 * The ID of the Openroaming Certificate attached to radius server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		openRoamingCertificateId: FormControl<number | null | undefined>,
 
-		/** UDP port the RADIUS server listens on for Access-requests */
+		/**
+		 * UDP port the RADIUS server listens on for Access-requests
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Use RADSEC (TLS over TCP) to connect to this RADIUS server. Requires radiusProxyEnabled. */
@@ -46258,7 +49439,10 @@ export namespace MyNS {
 		 */
 		deviceType: UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDeviceType;
 
-		/** ID of the group policy object. */
+		/**
+		 * ID of the group policy object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupPolicyId?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesFormProperties {
@@ -46275,7 +49459,10 @@ export namespace MyNS {
 		 */
 		deviceType: FormControl<UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDeviceType | null | undefined>,
 
-		/** ID of the group policy object. */
+		/**
+		 * ID of the group policy object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupPolicyId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesFormGroup() {
@@ -46299,18 +49486,30 @@ export namespace MyNS {
 		/** EAP settings for identity requests. */
 		identity?: GetNetworkWirelessSsidEapOverrideReturnIdentity;
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface GetNetworkWirelessSsidEapOverrideReturnFormProperties {
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessSsidEapOverrideReturnFormGroup() {
@@ -46323,18 +49522,30 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessSsidEapOverrideReturnEapolKey {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs?: number | null;
 	}
 	export interface GetNetworkWirelessSsidEapOverrideReturnEapolKeyFormProperties {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessSsidEapOverrideReturnEapolKeyFormGroup() {
@@ -46347,18 +49558,30 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessSsidEapOverrideReturnIdentity {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface GetNetworkWirelessSsidEapOverrideReturnIdentityFormProperties {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessSsidEapOverrideReturnIdentityFormGroup() {
@@ -46377,18 +49600,30 @@ export namespace MyNS {
 		/** EAP settings for identity requests. */
 		identity?: UpdateNetworkWirelessSsidEapOverridePutBodyIdentity;
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverridePutBodyFormProperties {
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverridePutBodyFormGroup() {
@@ -46401,18 +49636,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidEapOverridePutBodyEapolKey {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverridePutBodyEapolKeyFormProperties {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverridePutBodyEapolKeyFormGroup() {
@@ -46425,18 +49672,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidEapOverridePutBodyIdentity {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverridePutBodyIdentityFormProperties {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverridePutBodyIdentityFormGroup() {
@@ -46455,18 +49714,30 @@ export namespace MyNS {
 		/** EAP settings for identity requests. */
 		identity?: UpdateNetworkWirelessSsidEapOverrideReturnIdentity;
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverrideReturnFormProperties {
 
-		/** Maximum number of general EAP retries. */
+		/**
+		 * Maximum number of general EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
-		/** General EAP timeout in seconds. */
+		/**
+		 * General EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverrideReturnFormGroup() {
@@ -46479,18 +49750,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidEapOverrideReturnEapolKey {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverrideReturnEapolKeyFormProperties {
 
-		/** Maximum number of EAPOL key retries. */
+		/**
+		 * Maximum number of EAPOL key retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAPOL Key timeout in milliseconds. */
+		/**
+		 * EAPOL Key timeout in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMs: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverrideReturnEapolKeyFormGroup() {
@@ -46503,18 +49786,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidEapOverrideReturnIdentity {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidEapOverrideReturnIdentityFormProperties {
 
-		/** Maximum number of EAP retries. */
+		/**
+		 * Maximum number of EAP retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
-		/** EAP timeout in seconds. */
+		/**
+		 * EAP timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidEapOverrideReturnIdentityFormGroup() {
@@ -47098,12 +50393,14 @@ export namespace MyNS {
 		/**
 		 * Seconds since Sunday at midnight when that outage range ends.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: number;
 
 		/**
 		 * Seconds since Sunday at midnight when the outage range starts.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: number;
 	}
@@ -47112,12 +50409,14 @@ export namespace MyNS {
 		/**
 		 * Seconds since Sunday at midnight when that outage range ends.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: FormControl<number | null | undefined>,
 
 		/**
 		 * Seconds since Sunday at midnight when the outage range starts.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: FormControl<number | null | undefined>,
 	}
@@ -47167,13 +50466,19 @@ export namespace MyNS {
 		/** The prepaid front image used in the splash page. */
 		splashPrepaidFront?: GetNetworkWirelessSsidSplashSettingsReturnSplashPrepaidFront;
 
-		/** Splash timeout in minutes. */
+		/**
+		 * Splash timeout in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout?: number | null;
 
 		/** The custom splash URL of the click-through splash page. */
 		splashUrl?: string | null;
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 
 		/** The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. */
@@ -47202,13 +50507,19 @@ export namespace MyNS {
 		/** The type of splash page for this SSID */
 		splashPage: FormControl<string | null | undefined>,
 
-		/** Splash timeout in minutes. */
+		/**
+		 * Splash timeout in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout: FormControl<number | null | undefined>,
 
 		/** The custom splash URL of the click-through splash page. */
 		splashUrl: FormControl<string | null | undefined>,
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 
 		/** The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. */
@@ -47266,7 +50577,10 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessSsidSplashSettingsReturnBillingFreeAccess {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not free access is enabled. */
@@ -47274,7 +50588,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkWirelessSsidSplashSettingsReturnBillingFreeAccessFormProperties {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not free access is enabled. */
@@ -47290,7 +50607,10 @@ export namespace MyNS {
 
 	export interface GetNetworkWirelessSsidSplashSettingsReturnGuestSponsorship {
 
-		/** Duration in minutes of sponsored guest authorization. */
+		/**
+		 * Duration in minutes of sponsored guest authorization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -47298,7 +50618,10 @@ export namespace MyNS {
 	}
 	export interface GetNetworkWirelessSsidSplashSettingsReturnGuestSponsorshipFormProperties {
 
-		/** Duration in minutes of sponsored guest authorization. */
+		/**
+		 * Duration in minutes of sponsored guest authorization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -47484,7 +50807,10 @@ export namespace MyNS {
 		/** The prepaid front image used in the splash page. */
 		splashPrepaidFront?: UpdateNetworkWirelessSsidSplashSettingsPutBodySplashPrepaidFront;
 
-		/** Splash timeout in minutes. This will determine how often users will see the splash page. */
+		/**
+		 * Splash timeout in minutes. This will determine how often users will see the splash page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout?: number | null;
 
 		/** [optional] The custom splash URL of the click-through splash page. Note that the URL can be configured without necessarily being used. In order to enable the custom URL, see 'useSplashUrl' */
@@ -47513,7 +50839,10 @@ export namespace MyNS {
 		/** The custom redirect URL where the users will go after the splash page. */
 		redirectUrl: FormControl<string | null | undefined>,
 
-		/** Splash timeout in minutes. This will determine how often users will see the splash page. */
+		/**
+		 * Splash timeout in minutes. This will determine how often users will see the splash page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout: FormControl<number | null | undefined>,
 
 		/** [optional] The custom splash URL of the click-through splash page. Note that the URL can be configured without necessarily being used. In order to enable the custom URL, see 'useSplashUrl' */
@@ -47572,7 +50901,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodyBillingFreeAccess {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not free access is enabled. */
@@ -47580,7 +50912,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodyBillingFreeAccessFormProperties {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not free access is enabled. */
@@ -47598,7 +50933,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodyGuestSponsorship {
 
-		/** Duration in minutes of sponsored guest authorization. Must be between 1 and 60480 (6 weeks) */
+		/**
+		 * Duration in minutes of sponsored guest authorization. Must be between 1 and 60480 (6 weeks)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -47606,7 +50944,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodyGuestSponsorshipFormProperties {
 
-		/** Duration in minutes of sponsored guest authorization. Must be between 1 and 60480 (6 weeks) */
+		/**
+		 * Duration in minutes of sponsored guest authorization. Must be between 1 and 60480 (6 weeks)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -47859,13 +51200,19 @@ export namespace MyNS {
 		/** The prepaid front image used in the splash page. */
 		splashPrepaidFront?: UpdateNetworkWirelessSsidSplashSettingsReturnSplashPrepaidFront;
 
-		/** Splash timeout in minutes. */
+		/**
+		 * Splash timeout in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout?: number | null;
 
 		/** The custom splash URL of the click-through splash page. */
 		splashUrl?: string | null;
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber?: number | null;
 
 		/** The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. */
@@ -47894,13 +51241,19 @@ export namespace MyNS {
 		/** The type of splash page for this SSID */
 		splashPage: FormControl<string | null | undefined>,
 
-		/** Splash timeout in minutes. */
+		/**
+		 * Splash timeout in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		splashTimeout: FormControl<number | null | undefined>,
 
 		/** The custom splash URL of the click-through splash page. */
 		splashUrl: FormControl<string | null | undefined>,
 
-		/** SSID number */
+		/**
+		 * SSID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ssidNumber: FormControl<number | null | undefined>,
 
 		/** The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. */
@@ -47958,7 +51311,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsReturnBillingFreeAccess {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not free access is enabled. */
@@ -47966,7 +51322,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidSplashSettingsReturnBillingFreeAccessFormProperties {
 
-		/** How long a device can use a network for free. */
+		/**
+		 * How long a device can use a network for free.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not free access is enabled. */
@@ -47982,7 +51341,10 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsReturnGuestSponsorship {
 
-		/** Duration in minutes of sponsored guest authorization. */
+		/**
+		 * Duration in minutes of sponsored guest authorization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes?: number | null;
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -47990,7 +51352,10 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidSplashSettingsReturnGuestSponsorshipFormProperties {
 
-		/** Duration in minutes of sponsored guest authorization. */
+		/**
+		 * Duration in minutes of sponsored guest authorization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMinutes: FormControl<number | null | undefined>,
 
 		/** Whether or not guests can specify how much time they are requesting. */
@@ -48182,12 +51547,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue?: number | null;
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue?: number | null;
 
@@ -48201,12 +51568,14 @@ export namespace MyNS {
 		/**
 		 * The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.
 		 * For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dscpTagValue: FormControl<number | null | undefined>,
 
 		/**
 		 * The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority).
 		 * null means 'Do not set PCP tag'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pcpTagValue: FormControl<number | null | undefined>,
 	}
@@ -48290,18 +51659,30 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimits {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown?: number | null;
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimitsFormProperties {
 
-		/** The maximum download limit (integer, in Kbps). */
+		/**
+		 * The maximum download limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitDown: FormControl<number | null | undefined>,
 
-		/** The maximum upload limit (integer, in Kbps). */
+		/**
+		 * The maximum upload limit (integer, in Kbps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limitUp: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidTrafficShapingRulesPutBodyRulesPerClientBandwidthLimitsBandwidthLimitsFormGroup() {
@@ -48336,7 +51717,10 @@ export namespace MyNS {
 		/** The NAT ID of the concentrator that should be set. */
 		networkId?: string | null;
 
-		/** The VLAN that should be tagged for the concentrator. */
+		/**
+		 * The VLAN that should be tagged for the concentrator.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 	export interface UpdateNetworkWirelessSsidVpnPutBodyConcentratorFormProperties {
@@ -48344,7 +51728,10 @@ export namespace MyNS {
 		/** The NAT ID of the concentrator that should be set. */
 		networkId: FormControl<string | null | undefined>,
 
-		/** The VLAN that should be tagged for the concentrator. */
+		/**
+		 * The VLAN that should be tagged for the concentrator.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkWirelessSsidVpnPutBodyConcentratorFormGroup() {
@@ -48357,10 +51744,16 @@ export namespace MyNS {
 
 	export interface UpdateNetworkWirelessSsidVpnPutBodyFailover {
 
-		/** Idle timer interval in seconds. */
+		/**
+		 * Idle timer interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heartbeatInterval?: number | null;
 
-		/** Idle timer timeout in seconds. */
+		/**
+		 * Idle timer timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeout?: number | null;
 
 		/** IP addressed reserved on DHCP server where SSID will terminate. */
@@ -48368,10 +51761,16 @@ export namespace MyNS {
 	}
 	export interface UpdateNetworkWirelessSsidVpnPutBodyFailoverFormProperties {
 
-		/** Idle timer interval in seconds. */
+		/**
+		 * Idle timer interval in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heartbeatInterval: FormControl<number | null | undefined>,
 
-		/** Idle timer timeout in seconds. */
+		/**
+		 * Idle timer timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeout: FormControl<number | null | undefined>,
 
 		/** IP addressed reserved on DHCP server where SSID will terminate. */
@@ -48470,16 +51869,25 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs?: Date | null;
 
-		/** Received kilobytes-per-second */
+		/**
+		 * Received kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receivedKbps?: number | null;
 
-		/** Sent kilobytes-per-second */
+		/**
+		 * Sent kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentKbps?: number | null;
 
 		/** The start time of the query range */
 		startTs?: Date | null;
 
-		/** Total usage in kilobytes-per-second */
+		/**
+		 * Total usage in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalKbps?: number | null;
 	}
 	export interface GetNetworkWirelessUsageHistoryReturnFormProperties {
@@ -48487,16 +51895,25 @@ export namespace MyNS {
 		/** The end time of the query range */
 		endTs: FormControl<Date | null | undefined>,
 
-		/** Received kilobytes-per-second */
+		/**
+		 * Received kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		receivedKbps: FormControl<number | null | undefined>,
 
-		/** Sent kilobytes-per-second */
+		/**
+		 * Sent kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentKbps: FormControl<number | null | undefined>,
 
 		/** The start time of the query range */
 		startTs: FormControl<Date | null | undefined>,
 
-		/** Total usage in kilobytes-per-second */
+		/**
+		 * Total usage in kilobytes-per-second
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalKbps: FormControl<number | null | undefined>,
 	}
 	export function CreateGetNetworkWirelessUsageHistoryReturnFormGroup() {
@@ -49525,6 +52942,7 @@ export namespace MyNS {
 		/**
 		 * SGT value of the group
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sgt: number;
 	}
@@ -49542,6 +52960,7 @@ export namespace MyNS {
 		/**
 		 * SGT value of the group
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sgt: FormControl<number | null | undefined>,
 	}
@@ -49589,7 +53008,10 @@ export namespace MyNS {
 		/** The policy objects that belong to this group; traffic from addresses specified by these policy objects will be tagged with this group's SGT value if no other tagging scheme is being used (each requires one unique attribute) */
 		UpdateOrganizationAdaptivePolicyGroupPutBodyPolicyObjects?: Array<UpdateOrganizationAdaptivePolicyGroupPutBodyPolicyObjects>;
 
-		/** SGT value of the group */
+		/**
+		 * SGT value of the group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt?: number | null;
 	}
 	export interface UpdateOrganizationAdaptivePolicyGroupPutBodyFormProperties {
@@ -49600,7 +53022,10 @@ export namespace MyNS {
 		/** Name of the group */
 		name: FormControl<string | null | undefined>,
 
-		/** SGT value of the group */
+		/**
+		 * SGT value of the group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationAdaptivePolicyGroupPutBodyFormGroup() {
@@ -49654,48 +53079,90 @@ export namespace MyNS {
 
 	export interface GetOrganizationAdaptivePolicyOverviewReturnCounts {
 
-		/** Number of adaptive policies currently in the organization that allow all traffic. */
+		/**
+		 * Number of adaptive policies currently in the organization that allow all traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowPolicies?: number | null;
 
-		/** Number of user-created adaptive policy ACLs currently in the organization. */
+		/**
+		 * Number of user-created adaptive policy ACLs currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customAcls?: number | null;
 
-		/** Number of user-created adaptive policy groups currently in the organization. */
+		/**
+		 * Number of user-created adaptive policy groups currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customGroups?: number | null;
 
-		/** Number of adaptive policies currently in the organization that deny all traffic. */
+		/**
+		 * Number of adaptive policies currently in the organization that deny all traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		denyPolicies?: number | null;
 
-		/** Number of adaptive policy groups currently in the organization. */
+		/**
+		 * Number of adaptive policy groups currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groups?: number | null;
 
-		/** Number of adaptive policies currently in the organization. */
+		/**
+		 * Number of adaptive policies currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policies?: number | null;
 
-		/** Number of policy objects (with the adaptive policy type) currently in the organization. */
+		/**
+		 * Number of policy objects (with the adaptive policy type) currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyObjects?: number | null;
 	}
 	export interface GetOrganizationAdaptivePolicyOverviewReturnCountsFormProperties {
 
-		/** Number of adaptive policies currently in the organization that allow all traffic. */
+		/**
+		 * Number of adaptive policies currently in the organization that allow all traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowPolicies: FormControl<number | null | undefined>,
 
-		/** Number of user-created adaptive policy ACLs currently in the organization. */
+		/**
+		 * Number of user-created adaptive policy ACLs currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customAcls: FormControl<number | null | undefined>,
 
-		/** Number of user-created adaptive policy groups currently in the organization. */
+		/**
+		 * Number of user-created adaptive policy groups currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customGroups: FormControl<number | null | undefined>,
 
-		/** Number of adaptive policies currently in the organization that deny all traffic. */
+		/**
+		 * Number of adaptive policies currently in the organization that deny all traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		denyPolicies: FormControl<number | null | undefined>,
 
-		/** Number of adaptive policy groups currently in the organization. */
+		/**
+		 * Number of adaptive policy groups currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groups: FormControl<number | null | undefined>,
 
-		/** Number of adaptive policies currently in the organization. */
+		/**
+		 * Number of adaptive policies currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policies: FormControl<number | null | undefined>,
 
-		/** Number of policy objects (with the adaptive policy type) currently in the organization. */
+		/**
+		 * Number of policy objects (with the adaptive policy type) currently in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyObjects: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationAdaptivePolicyOverviewReturnCountsFormGroup() {
@@ -49713,30 +53180,54 @@ export namespace MyNS {
 
 	export interface GetOrganizationAdaptivePolicyOverviewReturnLimits {
 
-		/** Maximum number of adaptive policy ACLs that can be assigned to an adaptive policy in the organization. */
+		/**
+		 * Maximum number of adaptive policy ACLs that can be assigned to an adaptive policy in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aclsInAPolicy?: number | null;
 
-		/** Maximum number of user-created adaptive policy groups allowed in the organization. */
+		/**
+		 * Maximum number of user-created adaptive policy groups allowed in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customGroups?: number | null;
 
-		/** Maximum number of policy objects (with the adaptive policy type) allowed in the organization. */
+		/**
+		 * Maximum number of policy objects (with the adaptive policy type) allowed in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyObjects?: number | null;
 
-		/** Maximum number of rules allowed in an adaptive policy ACL in the organization. */
+		/**
+		 * Maximum number of rules allowed in an adaptive policy ACL in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rulesInAnAcl?: number | null;
 	}
 	export interface GetOrganizationAdaptivePolicyOverviewReturnLimitsFormProperties {
 
-		/** Maximum number of adaptive policy ACLs that can be assigned to an adaptive policy in the organization. */
+		/**
+		 * Maximum number of adaptive policy ACLs that can be assigned to an adaptive policy in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aclsInAPolicy: FormControl<number | null | undefined>,
 
-		/** Maximum number of user-created adaptive policy groups allowed in the organization. */
+		/**
+		 * Maximum number of user-created adaptive policy groups allowed in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customGroups: FormControl<number | null | undefined>,
 
-		/** Maximum number of policy objects (with the adaptive policy type) allowed in the organization. */
+		/**
+		 * Maximum number of policy objects (with the adaptive policy type) allowed in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyObjects: FormControl<number | null | undefined>,
 
-		/** Maximum number of rules allowed in an adaptive policy ACL in the organization. */
+		/**
+		 * Maximum number of rules allowed in an adaptive policy ACL in the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rulesInAnAcl: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationAdaptivePolicyOverviewReturnLimitsFormGroup() {
@@ -49813,7 +53304,10 @@ export namespace MyNS {
 		/** The name of the destination adaptive policy group */
 		name?: string | null;
 
-		/** The SGT of the destination adaptive policy group */
+		/**
+		 * The SGT of the destination adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt?: number | null;
 	}
 	export interface CreateOrganizationAdaptivePolicyPolicyPostBodyDestinationGroupFormProperties {
@@ -49824,7 +53318,10 @@ export namespace MyNS {
 		/** The name of the destination adaptive policy group */
 		name: FormControl<string | null | undefined>,
 
-		/** The SGT of the destination adaptive policy group */
+		/**
+		 * The SGT of the destination adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateOrganizationAdaptivePolicyPolicyPostBodyDestinationGroupFormGroup() {
@@ -49846,7 +53343,10 @@ export namespace MyNS {
 		/** The name of the source adaptive policy group */
 		name?: string | null;
 
-		/** The SGT of the source adaptive policy group */
+		/**
+		 * The SGT of the source adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt?: number | null;
 	}
 	export interface CreateOrganizationAdaptivePolicyPolicyPostBodySourceGroupFormProperties {
@@ -49857,7 +53357,10 @@ export namespace MyNS {
 		/** The name of the source adaptive policy group */
 		name: FormControl<string | null | undefined>,
 
-		/** The SGT of the source adaptive policy group */
+		/**
+		 * The SGT of the source adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateOrganizationAdaptivePolicyPolicyPostBodySourceGroupFormGroup() {
@@ -49927,7 +53430,10 @@ export namespace MyNS {
 		/** The name of the destination adaptive policy group */
 		name?: string | null;
 
-		/** The SGT of the destination adaptive policy group */
+		/**
+		 * The SGT of the destination adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt?: number | null;
 	}
 	export interface UpdateOrganizationAdaptivePolicyPolicyPutBodyDestinationGroupFormProperties {
@@ -49938,7 +53444,10 @@ export namespace MyNS {
 		/** The name of the destination adaptive policy group */
 		name: FormControl<string | null | undefined>,
 
-		/** The SGT of the destination adaptive policy group */
+		/**
+		 * The SGT of the destination adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationAdaptivePolicyPolicyPutBodyDestinationGroupFormGroup() {
@@ -49958,7 +53467,10 @@ export namespace MyNS {
 		/** The name of the source adaptive policy group */
 		name?: string | null;
 
-		/** The SGT of the source adaptive policy group */
+		/**
+		 * The SGT of the source adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt?: number | null;
 	}
 	export interface UpdateOrganizationAdaptivePolicyPolicyPutBodySourceGroupFormProperties {
@@ -49969,7 +53481,10 @@ export namespace MyNS {
 		/** The name of the source adaptive policy group */
 		name: FormControl<string | null | undefined>,
 
-		/** The SGT of the source adaptive policy group */
+		/**
+		 * The SGT of the source adaptive policy group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sgt: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationAdaptivePolicyPolicyPutBodySourceGroupFormGroup() {
@@ -50286,54 +53801,96 @@ export namespace MyNS {
 
 	export interface CreateOrganizationAlertsProfilePostBodyAlertCondition {
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate_bps?: number | null;
 
-		/** The total duration in seconds that the threshold should be crossed before alerting */
+		/**
+		 * The total duration in seconds that the threshold should be crossed before alerting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The uplink observed for the alert.  interface must be one of the following: wan1, wan2, cellular */
 		interface?: GetDeviceLossAndLatencyHistoryUplink | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jitter_ms?: number | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latency_ms?: number | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts.
+		 * Type: float
+		 */
 		loss_ratio?: number | null;
 
-		/** The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts. */
+		/**
+		 * The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts.
+		 * Type: float
+		 */
 		mos?: number | null;
 
-		/** The look back period in seconds for sensing the alert */
+		/**
+		 * The look back period in seconds for sensing the alert
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window?: number | null;
 	}
 	export interface CreateOrganizationAlertsProfilePostBodyAlertConditionFormProperties {
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate_bps: FormControl<number | null | undefined>,
 
-		/** The total duration in seconds that the threshold should be crossed before alerting */
+		/**
+		 * The total duration in seconds that the threshold should be crossed before alerting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The uplink observed for the alert.  interface must be one of the following: wan1, wan2, cellular */
 		interface: FormControl<GetDeviceLossAndLatencyHistoryUplink | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jitter_ms: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latency_ms: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts.
+		 * Type: float
+		 */
 		loss_ratio: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts. */
+		/**
+		 * The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts.
+		 * Type: float
+		 */
 		mos: FormControl<number | null | undefined>,
 
-		/** The look back period in seconds for sensing the alert */
+		/**
+		 * The look back period in seconds for sensing the alert
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateOrganizationAlertsProfilePostBodyAlertConditionFormGroup() {
@@ -50410,54 +53967,96 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationAlertsProfilePutBodyAlertCondition {
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate_bps?: number | null;
 
-		/** The total duration in seconds that the threshold should be crossed before alerting */
+		/**
+		 * The total duration in seconds that the threshold should be crossed before alerting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The uplink observed for the alert.  interface must be one of the following: wan1, wan2, cellular */
 		interface?: GetDeviceLossAndLatencyHistoryUplink | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jitter_ms?: number | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latency_ms?: number | null;
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts.
+		 * Type: float
+		 */
 		loss_ratio?: number | null;
 
-		/** The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts. */
+		/**
+		 * The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts.
+		 * Type: float
+		 */
 		mos?: number | null;
 
-		/** The look back period in seconds for sensing the alert */
+		/**
+		 * The look back period in seconds for sensing the alert
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window?: number | null;
 	}
 	export interface UpdateOrganizationAlertsProfilePutBodyAlertConditionFormProperties {
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate_bps: FormControl<number | null | undefined>,
 
-		/** The total duration in seconds that the threshold should be crossed before alerting */
+		/**
+		 * The total duration in seconds that the threshold should be crossed before alerting
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The uplink observed for the alert.  interface must be one of the following: wan1, wan2, cellular */
 		interface: FormControl<GetDeviceLossAndLatencyHistoryUplink | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jitter_ms: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		latency_ms: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts. */
+		/**
+		 * The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts.
+		 * Type: float
+		 */
 		loss_ratio: FormControl<number | null | undefined>,
 
-		/** The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts. */
+		/**
+		 * The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts.
+		 * Type: float
+		 */
 		mos: FormControl<number | null | undefined>,
 
-		/** The look back period in seconds for sensing the alert */
+		/**
+		 * The look back period in seconds for sensing the alert
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationAlertsProfilePutBodyAlertConditionFormGroup() {
@@ -50514,7 +54113,10 @@ export namespace MyNS {
 		/** The query string sent with the API request. */
 		queryString?: string | null;
 
-		/** API request response code. */
+		/**
+		 * API request response code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode?: number | null;
 
 		/** Public IP address from which the API request was made. */
@@ -50549,7 +54151,10 @@ export namespace MyNS {
 		/** The query string sent with the API request. */
 		queryString: FormControl<string | null | undefined>,
 
-		/** API request response code. */
+		/**
+		 * API request response code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode: FormControl<number | null | undefined>,
 
 		/** Public IP address from which the API request was made. */
@@ -50614,18 +54219,30 @@ export namespace MyNS {
 
 	export interface GetOrganizationApiRequestsOverviewResponseCodesByIntervalReturnCounts {
 
-		/** Response status code of the API response */
+		/**
+		 * Response status code of the API response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Number of records that match the status code */
+		/**
+		 * Number of records that match the status code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface GetOrganizationApiRequestsOverviewResponseCodesByIntervalReturnCountsFormProperties {
 
-		/** Response status code of the API response */
+		/**
+		 * Response status code of the API response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Number of records that match the status code */
+		/**
+		 * Number of records that match the status code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationApiRequestsOverviewResponseCodesByIntervalReturnCountsFormGroup() {
@@ -50771,7 +54388,10 @@ export namespace MyNS {
 		/** This is the cipher algorithms to be used in Phase 2. The value should be an array with one or more of the following algorithms: 'aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null' */
 		childCipherAlgo?: Array<string>;
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime?: number | null;
 
 		/** This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values: 'disabled','group14', 'group5', 'group2', 'group1' */
@@ -50786,7 +54406,10 @@ export namespace MyNS {
 		/** This is the Diffie-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms: 'group14', 'group5', 'group2', 'group1' */
 		ikeDiffieHellmanGroup?: Array<string>;
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime?: number | null;
 
 		/** [optional] This is the pseudo-random function to be used in IKE_SA. The value should be an array with one of the following algorithms: 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm. */
@@ -50794,10 +54417,16 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationApplianceVpnThirdPartyVPNPeersReturnPeersIpsecPoliciesFormProperties {
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime: FormControl<number | null | undefined>,
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationApplianceVpnThirdPartyVPNPeersReturnPeersIpsecPoliciesFormGroup() {
@@ -50915,7 +54544,10 @@ export namespace MyNS {
 		/** This is the cipher algorithms to be used in Phase 2. The value should be an array with one or more of the following algorithms: 'aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null' */
 		childCipherAlgo?: Array<string>;
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime?: number | null;
 
 		/** This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values: 'disabled','group14', 'group5', 'group2', 'group1' */
@@ -50930,7 +54562,10 @@ export namespace MyNS {
 		/** This is the Diffie-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms: 'group14', 'group5', 'group2', 'group1' */
 		ikeDiffieHellmanGroup?: Array<string>;
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime?: number | null;
 
 		/** [optional] This is the pseudo-random function to be used in IKE_SA. The value should be an array with one of the following algorithms: 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm. */
@@ -50938,10 +54573,16 @@ export namespace MyNS {
 	}
 	export interface UpdateOrganizationApplianceVpnThirdPartyVPNPeersPutBodyPeersIpsecPoliciesFormProperties {
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime: FormControl<number | null | undefined>,
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationApplianceVpnThirdPartyVPNPeersPutBodyPeersIpsecPoliciesFormGroup() {
@@ -51041,7 +54682,10 @@ export namespace MyNS {
 		/** This is the cipher algorithms to be used in Phase 2. The value should be an array with one or more of the following algorithms: 'aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null' */
 		childCipherAlgo?: Array<string>;
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime?: number | null;
 
 		/** This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values: 'disabled','group14', 'group5', 'group2', 'group1' */
@@ -51056,7 +54700,10 @@ export namespace MyNS {
 		/** This is the Diffie-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms: 'group14', 'group5', 'group2', 'group1' */
 		ikeDiffieHellmanGroup?: Array<string>;
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime?: number | null;
 
 		/** [optional] This is the pseudo-random function to be used in IKE_SA. The value should be an array with one of the following algorithms: 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm. */
@@ -51064,10 +54711,16 @@ export namespace MyNS {
 	}
 	export interface UpdateOrganizationApplianceVpnThirdPartyVPNPeersReturnPeersIpsecPoliciesFormProperties {
 
-		/** The lifetime of the Phase 2 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 2 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		childLifetime: FormControl<number | null | undefined>,
 
-		/** The lifetime of the Phase 1 SA in seconds. */
+		/**
+		 * The lifetime of the Phase 1 SA in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ikeLifetime: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationApplianceVpnThirdPartyVPNPeersReturnPeersIpsecPoliciesFormGroup() {
@@ -53060,30 +56713,48 @@ export namespace MyNS {
 
 	export interface GetOrganizationClientsBandwidthUsageHistoryReturn {
 
-		/** Downloaded data, in mbps. */
+		/**
+		 * Downloaded data, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downstream?: number | null;
 
-		/** Total bandwidth usage, in mbps. */
+		/**
+		 * Total bandwidth usage, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
 		/** Timestamp for the bandwidth usage snapshot. */
 		ts?: Date | null;
 
-		/** Uploaded data, in mbps. */
+		/**
+		 * Uploaded data, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upstream?: number | null;
 	}
 	export interface GetOrganizationClientsBandwidthUsageHistoryReturnFormProperties {
 
-		/** Downloaded data, in mbps. */
+		/**
+		 * Downloaded data, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downstream: FormControl<number | null | undefined>,
 
-		/** Total bandwidth usage, in mbps. */
+		/**
+		 * Total bandwidth usage, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** Timestamp for the bandwidth usage snapshot. */
 		ts: FormControl<Date | null | undefined>,
 
-		/** Uploaded data, in mbps. */
+		/**
+		 * Uploaded data, in mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upstream: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationClientsBandwidthUsageHistoryReturnFormGroup() {
@@ -53114,12 +56785,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationClientsOverviewReturnCounts {
 
-		/** Total number of clients with data usage in organization */
+		/**
+		 * Total number of clients with data usage in organization
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationClientsOverviewReturnCountsFormProperties {
 
-		/** Total number of clients with data usage in organization */
+		/**
+		 * Total number of clients with data usage in organization
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationClientsOverviewReturnCountsFormGroup() {
@@ -53131,7 +56808,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationClientsOverviewReturnUsage {
 
-		/** Average data usage (in kb) of each client in organization */
+		/**
+		 * Average data usage (in kb) of each client in organization
+		 * Type: float
+		 */
 		average?: number | null;
 
 		/** Overall data usage of all clients across organization */
@@ -53139,7 +56819,10 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationClientsOverviewReturnUsageFormProperties {
 
-		/** Average data usage (in kb) of each client in organization */
+		/**
+		 * Average data usage (in kb) of each client in organization
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationClientsOverviewReturnUsageFormGroup() {
@@ -53151,24 +56834,42 @@ export namespace MyNS {
 
 	export interface GetOrganizationClientsOverviewReturnUsageOverall {
 
-		/** Downstream data usage (in kb) of all clients across organization */
+		/**
+		 * Downstream data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		downstream?: number | null;
 
-		/** Total data usage (in kb) of all clients across organization */
+		/**
+		 * Total data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		total?: number | null;
 
-		/** Upstream data usage (in kb) of all clients across organization */
+		/**
+		 * Upstream data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		upstream?: number | null;
 	}
 	export interface GetOrganizationClientsOverviewReturnUsageOverallFormProperties {
 
-		/** Downstream data usage (in kb) of all clients across organization */
+		/**
+		 * Downstream data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		downstream: FormControl<number | null | undefined>,
 
-		/** Total data usage (in kb) of all clients across organization */
+		/**
+		 * Total data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Upstream data usage (in kb) of all clients across organization */
+		/**
+		 * Upstream data usage (in kb) of all clients across organization
+		 * Type: float
+		 */
 		upstream: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationClientsOverviewReturnUsageOverallFormGroup() {
@@ -53297,7 +56998,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationConfigTemplateSwitchProfilePortsReturn {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53348,7 +57052,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch profile port. */
@@ -53366,15 +57073,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetOrganizationConfigTemplateSwitchProfilePortsReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53413,7 +57129,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch profile port. */
@@ -53428,10 +57147,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationConfigTemplateSwitchProfilePortsReturnFormGroup() {
@@ -53493,7 +57218,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationConfigTemplateSwitchProfilePortReturn {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53544,7 +57272,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch profile port. */
@@ -53562,15 +57293,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetOrganizationConfigTemplateSwitchProfilePortReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53609,7 +57349,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch profile port. */
@@ -53624,10 +57367,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationConfigTemplateSwitchProfilePortReturnFormGroup() {
@@ -53689,7 +57438,10 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationConfigTemplateSwitchProfilePortPutBody {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53734,7 +57486,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch profile port. */
@@ -53752,15 +57507,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface UpdateOrganizationConfigTemplateSwitchProfilePortPutBodyFormProperties {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53796,7 +57560,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch profile port. */
@@ -53811,10 +57578,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationConfigTemplateSwitchProfilePortPutBodyFormGroup() {
@@ -53875,7 +57648,10 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationConfigTemplateSwitchProfilePortReturn {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber?: number | null;
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53926,7 +57702,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The storm control status of the switch profile port. */
@@ -53944,15 +57723,24 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld?: GetDeviceSwitchPortsReturnUdld | null;
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface UpdateOrganizationConfigTemplateSwitchProfilePortReturnFormProperties {
 
-		/** The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'. */
+		/**
+		 * The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accessPolicyNumber: FormControl<number | null | undefined>,
 
 		/** The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'. */
@@ -53991,7 +57779,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The storm control status of the switch profile port. */
@@ -54006,10 +57797,16 @@ export namespace MyNS {
 		/** The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only. */
 		udld: FormControl<GetDeviceSwitchPortsReturnUdld | null | undefined>,
 
-		/** The VLAN of the switch profile port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch profile port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch profile port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationConfigTemplateSwitchProfilePortReturnFormGroup() {
@@ -54082,10 +57879,16 @@ export namespace MyNS {
 		/** LAN IP address of the device */
 		lanIp?: string | null;
 
-		/** Latitude of the device */
+		/**
+		 * Latitude of the device
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Longitude of the device */
+		/**
+		 * Longitude of the device
+		 * Type: float
+		 */
 		lng?: number | null;
 
 		/** MAC address of the device */
@@ -54123,10 +57926,16 @@ export namespace MyNS {
 		/** LAN IP address of the device */
 		lanIp: FormControl<string | null | undefined>,
 
-		/** Latitude of the device */
+		/**
+		 * Latitude of the device
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude of the device */
+		/**
+		 * Longitude of the device
+		 * Type: float
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** MAC address of the device */
@@ -54501,30 +58310,54 @@ export namespace MyNS {
 
 	export interface GetOrganizationDevicesStatusesOverviewReturnCountsByStatus {
 
-		/** alerting count */
+		/**
+		 * alerting count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alerting?: number | null;
 
-		/** dormant count */
+		/**
+		 * dormant count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dormant?: number | null;
 
-		/** offline count */
+		/**
+		 * offline count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offline?: number | null;
 
-		/** online count */
+		/**
+		 * online count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		online?: number | null;
 	}
 	export interface GetOrganizationDevicesStatusesOverviewReturnCountsByStatusFormProperties {
 
-		/** alerting count */
+		/**
+		 * alerting count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alerting: FormControl<number | null | undefined>,
 
-		/** dormant count */
+		/**
+		 * dormant count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dormant: FormControl<number | null | undefined>,
 
-		/** offline count */
+		/**
+		 * offline count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offline: FormControl<number | null | undefined>,
 
-		/** online count */
+		/**
+		 * online count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		online: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationDevicesStatusesOverviewReturnCountsByStatusFormGroup() {
@@ -54726,10 +58559,16 @@ export namespace MyNS {
 
 	export interface GetOrganizationDevicesUplinksLossAndLatencyReturnTimeSeries {
 
-		/** Latency in milliseconds */
+		/**
+		 * Latency in milliseconds
+		 * Type: float
+		 */
 		latencyMs?: number | null;
 
-		/** Loss percentage */
+		/**
+		 * Loss percentage
+		 * Type: float
+		 */
 		lossPercent?: number | null;
 
 		/** Timestamp for this data point */
@@ -54737,10 +58576,16 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationDevicesUplinksLossAndLatencyReturnTimeSeriesFormProperties {
 
-		/** Latency in milliseconds */
+		/**
+		 * Latency in milliseconds
+		 * Type: float
+		 */
 		latencyMs: FormControl<number | null | undefined>,
 
-		/** Loss percentage */
+		/**
+		 * Loss percentage
+		 * Type: float
+		 */
 		lossPercent: FormControl<number | null | undefined>,
 
 		/** Timestamp for this data point */
@@ -55191,24 +59036,36 @@ export namespace MyNS {
 
 	export interface GetOrganizationInsightApplicationsReturnThresholdsByNetwork {
 
-		/** Number of useful information bits delivered over a network per unit of time */
+		/**
+		 * Number of useful information bits delivered over a network per unit of time
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goodput?: number | null;
 
 		/** Network identifier */
 		networkId?: string | null;
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration?: number | null;
 	}
 	export interface GetOrganizationInsightApplicationsReturnThresholdsByNetworkFormProperties {
 
-		/** Number of useful information bits delivered over a network per unit of time */
+		/**
+		 * Number of useful information bits delivered over a network per unit of time
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		goodput: FormControl<number | null | undefined>,
 
 		/** Network identifier */
 		networkId: FormControl<string | null | undefined>,
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationInsightApplicationsReturnThresholdsByNetworkFormGroup() {
@@ -55552,6 +59409,7 @@ export namespace MyNS {
 		/**
 		 * A JavaScript UTC datetime stamp for when the even occurred
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timestamp: number;
 	}
@@ -55572,6 +59430,7 @@ export namespace MyNS {
 		/**
 		 * A JavaScript UTC datetime stamp for when the even occurred
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
@@ -55756,10 +59615,16 @@ export namespace MyNS {
 		/** Name of the configured TLS certificate */
 		certificateName?: string | null;
 
-		/** Number of the vlan expected to be used to connect to the cloud */
+		/**
+		 * Number of the vlan expected to be used to connect to the cloud
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localInterface?: number | null;
 
-		/** Number of the configured Loopback Interface used for TLS overlay */
+		/**
+		 * Number of the configured Loopback Interface used for TLS overlay
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loopbackNumber?: number | null;
 
 		/** Name of the configured TLS tunnel */
@@ -55770,10 +59635,16 @@ export namespace MyNS {
 		/** Name of the configured TLS certificate */
 		certificateName: FormControl<string | null | undefined>,
 
-		/** Number of the vlan expected to be used to connect to the cloud */
+		/**
+		 * Number of the vlan expected to be used to connect to the cloud
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		localInterface: FormControl<number | null | undefined>,
 
-		/** Number of the configured Loopback Interface used for TLS overlay */
+		/**
+		 * Number of the configured Loopback Interface used for TLS overlay
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		loopbackNumber: FormControl<number | null | undefined>,
 
 		/** Name of the configured TLS tunnel */
@@ -55817,24 +59688,42 @@ export namespace MyNS {
 		/** VTY AAA authorization */
 		authorization?: CreateOrganizationInventoryOnboardingCloudMonitoringPreparePostBodyDevicesVtyAuthorization;
 
-		/** Ending line VTY number */
+		/**
+		 * Ending line VTY number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endLineNumber?: number | null;
 
-		/** SSH rotary number */
+		/**
+		 * SSH rotary number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotaryNumber?: number | null;
 
-		/** Starting line VTY number */
+		/**
+		 * Starting line VTY number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startLineNumber?: number | null;
 	}
 	export interface CreateOrganizationInventoryOnboardingCloudMonitoringPreparePostBodyDevicesVtyFormProperties {
 
-		/** Ending line VTY number */
+		/**
+		 * Ending line VTY number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endLineNumber: FormControl<number | null | undefined>,
 
-		/** SSH rotary number */
+		/**
+		 * SSH rotary number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotaryNumber: FormControl<number | null | undefined>,
 
-		/** Starting line VTY number */
+		/**
+		 * Starting line VTY number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startLineNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateOrganizationInventoryOnboardingCloudMonitoringPreparePostBodyDevicesVtyFormGroup() {
@@ -55982,7 +59871,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial?: string | null;
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** The date the license will expire */
@@ -56009,13 +59901,19 @@ export namespace MyNS {
 		/** DEPRECATED List of permanently queued licenses attached to the license. Instead, use /organizations/{organizationId}/licenses?deviceSerial= to retrieved queued licenses for a given device. */
 		GetOrganizationLicensesReturnPermanentlyQueuedLicenses?: Array<GetOrganizationLicensesReturnPermanentlyQueuedLicenses>;
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state?: GetOrganizationLicensesState | null;
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays?: number | null;
 	}
 	export interface GetOrganizationLicensesReturnFormProperties {
@@ -56029,7 +59927,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial: FormControl<string | null | undefined>,
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** The date the license will expire */
@@ -56053,13 +59954,19 @@ export namespace MyNS {
 		/** Order number */
 		orderNumber: FormControl<string | null | undefined>,
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state: FormControl<GetOrganizationLicensesState | null | undefined>,
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationLicensesReturnFormGroup() {
@@ -56084,7 +59991,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationLicensesReturnPermanentlyQueuedLicenses {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** Permanently queued license ID */
@@ -56101,7 +60011,10 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationLicensesReturnPermanentlyQueuedLicensesFormProperties {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** Permanently queued license ID */
@@ -56144,6 +60057,7 @@ export namespace MyNS {
 		/**
 		 * The number of seats to assign to the SM network. Must be less than or equal to the total number of seats of the license
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		seatCount: number;
 	}
@@ -56164,6 +60078,7 @@ export namespace MyNS {
 		/**
 		 * The number of seats to assign to the SM network. Must be less than or equal to the total number of seats of the license
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		seatCount: FormControl<number | null | undefined>,
 	}
@@ -56200,7 +60115,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial?: string | null;
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** The date the license will expire */
@@ -56227,13 +60145,19 @@ export namespace MyNS {
 		/** DEPRECATED List of permanently queued licenses attached to the license. Instead, use /organizations/{organizationId}/licenses?deviceSerial= to retrieved queued licenses for a given device. */
 		AssignOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses?: Array<AssignOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses>;
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state?: GetOrganizationLicensesState | null;
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays?: number | null;
 	}
 	export interface AssignOrganizationLicensesSeatsReturnResultingLicensesFormProperties {
@@ -56247,7 +60171,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial: FormControl<string | null | undefined>,
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** The date the license will expire */
@@ -56271,13 +60198,19 @@ export namespace MyNS {
 		/** Order number */
 		orderNumber: FormControl<string | null | undefined>,
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state: FormControl<GetOrganizationLicensesState | null | undefined>,
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateAssignOrganizationLicensesSeatsReturnResultingLicensesFormGroup() {
@@ -56302,7 +60235,10 @@ export namespace MyNS {
 
 	export interface AssignOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** Permanently queued license ID */
@@ -56319,7 +60255,10 @@ export namespace MyNS {
 	}
 	export interface AssignOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicensesFormProperties {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** Permanently queued license ID */
@@ -56411,6 +60350,7 @@ export namespace MyNS {
 		/**
 		 * The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		seatCount: number;
 	}
@@ -56431,6 +60371,7 @@ export namespace MyNS {
 		/**
 		 * The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		seatCount: FormControl<number | null | undefined>,
 	}
@@ -56451,7 +60392,10 @@ export namespace MyNS {
 		/** The ID of the SM license to move the seats from */
 		licenseId?: string | null;
 
-		/** The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license */
+		/**
+		 * The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 	}
 	export interface MoveOrganizationLicensesSeatsReturnFormProperties {
@@ -56462,7 +60406,10 @@ export namespace MyNS {
 		/** The ID of the SM license to move the seats from */
 		licenseId: FormControl<string | null | undefined>,
 
-		/** The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license */
+		/**
+		 * The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 	}
 	export function CreateMoveOrganizationLicensesSeatsReturnFormGroup() {
@@ -56534,7 +60481,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial?: string | null;
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** The date the license will expire */
@@ -56561,13 +60511,19 @@ export namespace MyNS {
 		/** DEPRECATED List of permanently queued licenses attached to the license. Instead, use /organizations/{organizationId}/licenses?deviceSerial= to retrieved queued licenses for a given device. */
 		RenewOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses?: Array<RenewOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses>;
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state?: GetOrganizationLicensesState | null;
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays?: number | null;
 	}
 	export interface RenewOrganizationLicensesSeatsReturnResultingLicensesFormProperties {
@@ -56581,7 +60537,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial: FormControl<string | null | undefined>,
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** The date the license will expire */
@@ -56605,13 +60564,19 @@ export namespace MyNS {
 		/** Order number */
 		orderNumber: FormControl<string | null | undefined>,
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state: FormControl<GetOrganizationLicensesState | null | undefined>,
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateRenewOrganizationLicensesSeatsReturnResultingLicensesFormGroup() {
@@ -56636,7 +60601,10 @@ export namespace MyNS {
 
 	export interface RenewOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicenses {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** Permanently queued license ID */
@@ -56653,7 +60621,10 @@ export namespace MyNS {
 	}
 	export interface RenewOrganizationLicensesSeatsReturnResultingLicensesPermanentlyQueuedLicensesFormProperties {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** Permanently queued license ID */
@@ -56690,7 +60661,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial?: string | null;
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** The date the license will expire */
@@ -56717,13 +60691,19 @@ export namespace MyNS {
 		/** DEPRECATED List of permanently queued licenses attached to the license. Instead, use /organizations/{organizationId}/licenses?deviceSerial= to retrieved queued licenses for a given device. */
 		GetOrganizationLicenseReturnPermanentlyQueuedLicenses?: Array<GetOrganizationLicenseReturnPermanentlyQueuedLicenses>;
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state?: GetOrganizationLicensesState | null;
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays?: number | null;
 	}
 	export interface GetOrganizationLicenseReturnFormProperties {
@@ -56737,7 +60717,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial: FormControl<string | null | undefined>,
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** The date the license will expire */
@@ -56761,13 +60744,19 @@ export namespace MyNS {
 		/** Order number */
 		orderNumber: FormControl<string | null | undefined>,
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state: FormControl<GetOrganizationLicensesState | null | undefined>,
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationLicenseReturnFormGroup() {
@@ -56792,7 +60781,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationLicenseReturnPermanentlyQueuedLicenses {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** Permanently queued license ID */
@@ -56809,7 +60801,10 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationLicenseReturnPermanentlyQueuedLicensesFormProperties {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** Permanently queued license ID */
@@ -56863,7 +60858,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial?: string | null;
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** The date the license will expire */
@@ -56890,13 +60888,19 @@ export namespace MyNS {
 		/** DEPRECATED List of permanently queued licenses attached to the license. Instead, use /organizations/{organizationId}/licenses?deviceSerial= to retrieved queued licenses for a given device. */
 		UpdateOrganizationLicenseReturnPermanentlyQueuedLicenses?: Array<UpdateOrganizationLicenseReturnPermanentlyQueuedLicenses>;
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount?: number | null;
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state?: GetOrganizationLicensesState | null;
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays?: number | null;
 	}
 	export interface UpdateOrganizationLicenseReturnFormProperties {
@@ -56910,7 +60914,10 @@ export namespace MyNS {
 		/** Serial number of the device the license is assigned to */
 		deviceSerial: FormControl<string | null | undefined>,
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** The date the license will expire */
@@ -56934,13 +60941,19 @@ export namespace MyNS {
 		/** Order number */
 		orderNumber: FormControl<string | null | undefined>,
 
-		/** The number of seats of the license. Only applicable to SM licenses. */
+		/**
+		 * The number of seats of the license. Only applicable to SM licenses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seatCount: FormControl<number | null | undefined>,
 
 		/** The state of the license. All queued licenses have a status of `recentlyQueued`. */
 		state: FormControl<GetOrganizationLicensesState | null | undefined>,
 
-		/** The duration of the license plus all permanently queued licenses associated with it */
+		/**
+		 * The duration of the license plus all permanently queued licenses associated with it
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDurationInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationLicenseReturnFormGroup() {
@@ -56965,7 +60978,10 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationLicenseReturnPermanentlyQueuedLicenses {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays?: number | null;
 
 		/** Permanently queued license ID */
@@ -56982,7 +60998,10 @@ export namespace MyNS {
 	}
 	export interface UpdateOrganizationLicenseReturnPermanentlyQueuedLicensesFormProperties {
 
-		/** The duration of the individual license */
+		/**
+		 * The duration of the individual license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInDays: FormControl<number | null | undefined>,
 
 		/** Permanently queued license ID */
@@ -57016,7 +61035,10 @@ export namespace MyNS {
 		/** The counts of the license by model type */
 		GetOrganizationLicensingCotermLicensesReturnCounts?: Array<GetOrganizationLicensingCotermLicensesReturnCounts>;
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The editions of the license for each relevant product type */
@@ -57048,7 +61070,10 @@ export namespace MyNS {
 		/** When the license was claimed into the organization */
 		claimedAt: FormControl<Date | null | undefined>,
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Flag to indicate if the license is expired */
@@ -57089,7 +61114,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationLicensingCotermLicensesReturnCounts {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The license model type */
@@ -57097,7 +61125,10 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationLicensingCotermLicensesReturnCountsFormProperties {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The license model type */
@@ -57215,6 +61246,7 @@ export namespace MyNS {
 		/**
 		 * The number of counts to move
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -57229,6 +61261,7 @@ export namespace MyNS {
 		/**
 		 * The number of counts to move
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -57270,7 +61303,10 @@ export namespace MyNS {
 		/** The counts of the license by model type */
 		MoveOrganizationLicensingCotermLicensesReturnMovedLicensesCounts?: Array<MoveOrganizationLicensingCotermLicensesReturnMovedLicensesCounts>;
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The editions of the license for each relevant product type */
@@ -57302,7 +61338,10 @@ export namespace MyNS {
 		/** When the license was claimed into the organization */
 		claimedAt: FormControl<Date | null | undefined>,
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Flag to indicate if the license is expired */
@@ -57343,7 +61382,10 @@ export namespace MyNS {
 
 	export interface MoveOrganizationLicensingCotermLicensesReturnMovedLicensesCounts {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The license model type */
@@ -57351,7 +61393,10 @@ export namespace MyNS {
 	}
 	export interface MoveOrganizationLicensingCotermLicensesReturnMovedLicensesCountsFormProperties {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The license model type */
@@ -57397,7 +61442,10 @@ export namespace MyNS {
 		/** The counts of the license by model type */
 		MoveOrganizationLicensingCotermLicensesReturnRemainderLicensesCounts?: Array<MoveOrganizationLicensingCotermLicensesReturnRemainderLicensesCounts>;
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The editions of the license for each relevant product type */
@@ -57429,7 +61477,10 @@ export namespace MyNS {
 		/** When the license was claimed into the organization */
 		claimedAt: FormControl<Date | null | undefined>,
 
-		/** The duration (term length) of the license, measured in days */
+		/**
+		 * The duration (term length) of the license, measured in days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Flag to indicate if the license is expired */
@@ -57470,7 +61521,10 @@ export namespace MyNS {
 
 	export interface MoveOrganizationLicensingCotermLicensesReturnRemainderLicensesCounts {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The license model type */
@@ -57478,7 +61532,10 @@ export namespace MyNS {
 	}
 	export interface MoveOrganizationLicensingCotermLicensesReturnRemainderLicensesCountsFormProperties {
 
-		/** The number of counts the license contains of this model */
+		/**
+		 * The number of counts the license contains of this model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The license model type */
@@ -57518,7 +61575,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationLoginSecurityReturn {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts?: number | null;
 
 		/** Details for indicating whether organization will restrict access to API (but not Dashboard) to certain IP addresses. */
@@ -57545,21 +61605,33 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth?: boolean | null;
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes?: number | null;
 
 		/** List of acceptable IP ranges. Entries can be single IP addresses, IP address ranges, and CIDR subnets. */
 		loginIpRanges?: Array<string>;
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords?: number | null;
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays?: number | null;
 	}
 	export interface GetOrganizationLoginSecurityReturnFormProperties {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether users' Dashboard accounts will be locked out after a specified number of consecutive failed login attempts. */
@@ -57583,13 +61655,22 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth: FormControl<boolean | null | undefined>,
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes: FormControl<number | null | undefined>,
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords: FormControl<number | null | undefined>,
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationLoginSecurityReturnFormGroup() {
@@ -57644,7 +61725,10 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationLoginSecurityPutBody {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts?: number | null;
 
 		/** Details for indicating whether organization will restrict access to API (but not Dashboard) to certain IP addresses. */
@@ -57671,21 +61755,33 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth?: boolean | null;
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes?: number | null;
 
 		/** List of acceptable IP ranges. Entries can be single IP addresses, IP address ranges, and CIDR subnets. */
 		loginIpRanges?: Array<string>;
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords?: number | null;
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays?: number | null;
 	}
 	export interface UpdateOrganizationLoginSecurityPutBodyFormProperties {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether users' Dashboard accounts will be locked out after a specified number of consecutive failed login attempts. */
@@ -57709,13 +61805,22 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth: FormControl<boolean | null | undefined>,
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes: FormControl<number | null | undefined>,
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords: FormControl<number | null | undefined>,
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationLoginSecurityPutBodyFormGroup() {
@@ -57770,7 +61875,10 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationLoginSecurityReturn {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts?: number | null;
 
 		/** Details for indicating whether organization will restrict access to API (but not Dashboard) to certain IP addresses. */
@@ -57797,21 +61905,33 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth?: boolean | null;
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes?: number | null;
 
 		/** List of acceptable IP ranges. Entries can be single IP addresses, IP address ranges, and CIDR subnets. */
 		loginIpRanges?: Array<string>;
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords?: number | null;
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays?: number | null;
 	}
 	export interface UpdateOrganizationLoginSecurityReturnFormProperties {
 
-		/** Number of consecutive failed login attempts after which users' accounts will be locked. */
+		/**
+		 * Number of consecutive failed login attempts after which users' accounts will be locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountLockoutAttempts: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether users' Dashboard accounts will be locked out after a specified number of consecutive failed login attempts. */
@@ -57835,13 +61955,22 @@ export namespace MyNS {
 		/** Boolean indicating whether users in this organization will be required to use an extra verification code when logging in to Dashboard. This code will be sent to their mobile phone via SMS, or can be generated by the authenticator application. */
 		enforceTwoFactorAuth: FormControl<boolean | null | undefined>,
 
-		/** Number of minutes users can remain idle before being logged out of their accounts. */
+		/**
+		 * Number of minutes users can remain idle before being logged out of their accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutMinutes: FormControl<number | null | undefined>,
 
-		/** Number of recent passwords that new password must be distinct from. */
+		/**
+		 * Number of recent passwords that new password must be distinct from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDifferentPasswords: FormControl<number | null | undefined>,
 
-		/** Number of days after which users will be forced to change their password. */
+		/**
+		 * Number of days after which users will be forced to change their password.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordExpirationDays: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateOrganizationLoginSecurityReturnFormGroup() {
@@ -58909,12 +63038,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnBattery {
 
-		/** Remaining battery life. */
+		/**
+		 * Remaining battery life.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnBatteryFormProperties {
 
-		/** Remaining battery life. */
+		/**
+		 * Remaining battery life.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnBatteryFormGroup() {
@@ -58962,12 +63097,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnHumidity {
 
-		/** Humidity reading in %RH. */
+		/**
+		 * Humidity reading in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnHumidityFormProperties {
 
-		/** Humidity reading in %RH. */
+		/**
+		 * Humidity reading in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnHumidityFormGroup() {
@@ -58979,12 +63120,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnIndoorAirQuality {
 
-		/** Indoor air quality score between 0 and 100. */
+		/**
+		 * Indoor air quality score between 0 and 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnIndoorAirQualityFormProperties {
 
-		/** Indoor air quality score between 0 and 100. */
+		/**
+		 * Indoor air quality score between 0 and 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnIndoorAirQualityFormGroup() {
@@ -59035,12 +63182,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnNoiseAmbient {
 
-		/** Ambient noise reading in adjusted decibels. */
+		/**
+		 * Ambient noise reading in adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnNoiseAmbientFormProperties {
 
-		/** Ambient noise reading in adjusted decibels. */
+		/**
+		 * Ambient noise reading in adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnNoiseAmbientFormGroup() {
@@ -59052,12 +63205,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnPm25 {
 
-		/** PM2.5 reading in micrograms per cubic meter. */
+		/**
+		 * PM2.5 reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnPm25FormProperties {
 
-		/** PM2.5 reading in micrograms per cubic meter. */
+		/**
+		 * PM2.5 reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnPm25FormGroup() {
@@ -59069,18 +63228,30 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnTemperature {
 
-		/** Temperature reading in degrees Celsius. */
+		/**
+		 * Temperature reading in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Temperature reading in degrees Fahrenheit. */
+		/**
+		 * Temperature reading in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnTemperatureFormProperties {
 
-		/** Temperature reading in degrees Celsius. */
+		/**
+		 * Temperature reading in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Temperature reading in degrees Fahrenheit. */
+		/**
+		 * Temperature reading in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnTemperatureFormGroup() {
@@ -59093,12 +63264,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsHistoryReturnTvoc {
 
-		/** TVOC reading in micrograms per cubic meter. */
+		/**
+		 * TVOC reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsHistoryReturnTvocFormProperties {
 
-		/** TVOC reading in micrograms per cubic meter. */
+		/**
+		 * TVOC reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsHistoryReturnTvocFormGroup() {
@@ -59228,12 +63405,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsBattery {
 
-		/** Remaining battery life. */
+		/**
+		 * Remaining battery life.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsBatteryFormProperties {
 
-		/** Remaining battery life. */
+		/**
+		 * Remaining battery life.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsBatteryFormGroup() {
@@ -59279,12 +63462,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsHumidity {
 
-		/** Humidity reading in %RH. */
+		/**
+		 * Humidity reading in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsHumidityFormProperties {
 
-		/** Humidity reading in %RH. */
+		/**
+		 * Humidity reading in %RH.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsHumidityFormGroup() {
@@ -59296,12 +63485,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsIndoorAirQuality {
 
-		/** Indoor air quality score between 0 and 100. */
+		/**
+		 * Indoor air quality score between 0 and 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsIndoorAirQualityFormProperties {
 
-		/** Indoor air quality score between 0 and 100. */
+		/**
+		 * Indoor air quality score between 0 and 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsIndoorAirQualityFormGroup() {
@@ -59326,12 +63521,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsNoiseAmbient {
 
-		/** Ambient noise reading in adjusted decibels. */
+		/**
+		 * Ambient noise reading in adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsNoiseAmbientFormProperties {
 
-		/** Ambient noise reading in adjusted decibels. */
+		/**
+		 * Ambient noise reading in adjusted decibels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsNoiseAmbientFormGroup() {
@@ -59343,12 +63544,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsPm25 {
 
-		/** PM2.5 reading in micrograms per cubic meter. */
+		/**
+		 * PM2.5 reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsPm25FormProperties {
 
-		/** PM2.5 reading in micrograms per cubic meter. */
+		/**
+		 * PM2.5 reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsPm25FormGroup() {
@@ -59360,18 +63567,30 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsTemperature {
 
-		/** Temperature reading in degrees Celsius. */
+		/**
+		 * Temperature reading in degrees Celsius.
+		 * Type: float
+		 */
 		celsius?: number | null;
 
-		/** Temperature reading in degrees Fahrenheit. */
+		/**
+		 * Temperature reading in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsTemperatureFormProperties {
 
-		/** Temperature reading in degrees Celsius. */
+		/**
+		 * Temperature reading in degrees Celsius.
+		 * Type: float
+		 */
 		celsius: FormControl<number | null | undefined>,
 
-		/** Temperature reading in degrees Fahrenheit. */
+		/**
+		 * Temperature reading in degrees Fahrenheit.
+		 * Type: float
+		 */
 		fahrenheit: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsTemperatureFormGroup() {
@@ -59384,12 +63603,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsTvoc {
 
-		/** TVOC reading in micrograms per cubic meter. */
+		/**
+		 * TVOC reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration?: number | null;
 	}
 	export interface GetOrganizationSensorReadingsLatestReturnReadingsTvocFormProperties {
 
-		/** TVOC reading in micrograms per cubic meter. */
+		/**
+		 * TVOC reading in micrograms per cubic meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concentration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSensorReadingsLatestReturnReadingsTvocFormGroup() {
@@ -59623,12 +63848,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopAppliancesByUtilizationReturnUtilizationAverage {
 
-		/** Average percentage utilization of the appliance */
+		/**
+		 * Average percentage utilization of the appliance
+		 * Type: float
+		 */
 		percentage?: number | null;
 	}
 	export interface GetOrganizationSummaryTopAppliancesByUtilizationReturnUtilizationAverageFormProperties {
 
-		/** Average percentage utilization of the appliance */
+		/**
+		 * Average percentage utilization of the appliance
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopAppliancesByUtilizationReturnUtilizationAverageFormGroup() {
@@ -59699,30 +63930,54 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopClientsByUsageReturnUsage {
 
-		/** Downstream data usage by client */
+		/**
+		 * Downstream data usage by client
+		 * Type: float
+		 */
 		downstream?: number | null;
 
-		/** Percentage of total data usage by client */
+		/**
+		 * Percentage of total data usage by client
+		 * Type: float
+		 */
 		percentage?: number | null;
 
-		/** Total data usage by client */
+		/**
+		 * Total data usage by client
+		 * Type: float
+		 */
 		total?: number | null;
 
-		/** Upstream data usage by client */
+		/**
+		 * Upstream data usage by client
+		 * Type: float
+		 */
 		upstream?: number | null;
 	}
 	export interface GetOrganizationSummaryTopClientsByUsageReturnUsageFormProperties {
 
-		/** Downstream data usage by client */
+		/**
+		 * Downstream data usage by client
+		 * Type: float
+		 */
 		downstream: FormControl<number | null | undefined>,
 
-		/** Percentage of total data usage by client */
+		/**
+		 * Percentage of total data usage by client
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 
-		/** Total data usage by client */
+		/**
+		 * Total data usage by client
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Upstream data usage by client */
+		/**
+		 * Upstream data usage by client
+		 * Type: float
+		 */
 		upstream: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopClientsByUsageReturnUsageFormGroup() {
@@ -59773,12 +64028,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopClientsManufacturersByUsageReturnClientsCounts {
 
-		/** Total counts of clients */
+		/**
+		 * Total counts of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopClientsManufacturersByUsageReturnClientsCountsFormProperties {
 
-		/** Total counts of clients */
+		/**
+		 * Total counts of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopClientsManufacturersByUsageReturnClientsCountsFormGroup() {
@@ -59790,24 +64051,42 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopClientsManufacturersByUsageReturnUsage {
 
-		/** Downstream data usage by client */
+		/**
+		 * Downstream data usage by client
+		 * Type: float
+		 */
 		downstream?: number | null;
 
-		/** Total data usage by client */
+		/**
+		 * Total data usage by client
+		 * Type: float
+		 */
 		total?: number | null;
 
-		/** Upstream data usage by client */
+		/**
+		 * Upstream data usage by client
+		 * Type: float
+		 */
 		upstream?: number | null;
 	}
 	export interface GetOrganizationSummaryTopClientsManufacturersByUsageReturnUsageFormProperties {
 
-		/** Downstream data usage by client */
+		/**
+		 * Downstream data usage by client
+		 * Type: float
+		 */
 		downstream: FormControl<number | null | undefined>,
 
-		/** Total data usage by client */
+		/**
+		 * Total data usage by client
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Upstream data usage by client */
+		/**
+		 * Upstream data usage by client
+		 * Type: float
+		 */
 		upstream: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopClientsManufacturersByUsageReturnUsageFormGroup() {
@@ -59888,12 +64167,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopDevicesByUsageReturnClientsCounts {
 
-		/** Total counts of clients */
+		/**
+		 * Total counts of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopDevicesByUsageReturnClientsCountsFormProperties {
 
-		/** Total counts of clients */
+		/**
+		 * Total counts of clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopDevicesByUsageReturnClientsCountsFormGroup() {
@@ -59929,18 +64214,30 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopDevicesByUsageReturnUsage {
 
-		/** Data usage of the device by percentage */
+		/**
+		 * Data usage of the device by percentage
+		 * Type: float
+		 */
 		percentage?: number | null;
 
-		/** Total data usage of the device */
+		/**
+		 * Total data usage of the device
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopDevicesByUsageReturnUsageFormProperties {
 
-		/** Data usage of the device by percentage */
+		/**
+		 * Data usage of the device by percentage
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 
-		/** Total data usage of the device */
+		/**
+		 * Total data usage of the device
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopDevicesByUsageReturnUsageFormGroup() {
@@ -59953,7 +64250,10 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopDevicesModelsByUsageReturn {
 
-		/** Total number of devices per model */
+		/**
+		 * Total number of devices per model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The device model */
@@ -59964,7 +64264,10 @@ export namespace MyNS {
 	}
 	export interface GetOrganizationSummaryTopDevicesModelsByUsageReturnFormProperties {
 
-		/** Total number of devices per model */
+		/**
+		 * Total number of devices per model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The device model */
@@ -59980,18 +64283,30 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopDevicesModelsByUsageReturnUsage {
 
-		/** Average usage in megabytes */
+		/**
+		 * Average usage in megabytes
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Total usage in megabytes */
+		/**
+		 * Total usage in megabytes
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopDevicesModelsByUsageReturnUsageFormProperties {
 
-		/** Average usage in megabytes */
+		/**
+		 * Average usage in megabytes
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Total usage in megabytes */
+		/**
+		 * Total usage in megabytes
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopDevicesModelsByUsageReturnUsageFormGroup() {
@@ -60040,12 +64355,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopSsidsByUsageReturnClientsCounts {
 
-		/** Total counts of the clients */
+		/**
+		 * Total counts of the clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopSsidsByUsageReturnClientsCountsFormProperties {
 
-		/** Total counts of the clients */
+		/**
+		 * Total counts of the clients
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopSsidsByUsageReturnClientsCountsFormGroup() {
@@ -60057,30 +64378,54 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopSsidsByUsageReturnUsage {
 
-		/** Downstream usage of the SSID */
+		/**
+		 * Downstream usage of the SSID
+		 * Type: float
+		 */
 		downstream?: number | null;
 
-		/** Percentage usage of the SSID */
+		/**
+		 * Percentage usage of the SSID
+		 * Type: float
+		 */
 		percentage?: number | null;
 
-		/** Total usage of the SSID */
+		/**
+		 * Total usage of the SSID
+		 * Type: float
+		 */
 		total?: number | null;
 
-		/** Upstream usage of the SSID */
+		/**
+		 * Upstream usage of the SSID
+		 * Type: float
+		 */
 		upstream?: number | null;
 	}
 	export interface GetOrganizationSummaryTopSsidsByUsageReturnUsageFormProperties {
 
-		/** Downstream usage of the SSID */
+		/**
+		 * Downstream usage of the SSID
+		 * Type: float
+		 */
 		downstream: FormControl<number | null | undefined>,
 
-		/** Percentage usage of the SSID */
+		/**
+		 * Percentage usage of the SSID
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 
-		/** Total usage of the SSID */
+		/**
+		 * Total usage of the SSID
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 
-		/** Upstream usage of the SSID */
+		/**
+		 * Upstream usage of the SSID
+		 * Type: float
+		 */
 		upstream: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopSsidsByUsageReturnUsageFormGroup() {
@@ -60156,12 +64501,18 @@ export namespace MyNS {
 
 	export interface GetOrganizationSummaryTopSwitchesByEnergyUsageReturnUsage {
 
-		/** Total energy usage of the switch */
+		/**
+		 * Total energy usage of the switch
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface GetOrganizationSummaryTopSwitchesByEnergyUsageReturnUsageFormProperties {
 
-		/** Total energy usage of the switch */
+		/**
+		 * Total energy usage of the switch
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSummaryTopSwitchesByEnergyUsageReturnUsageFormGroup() {
@@ -60297,7 +64648,10 @@ export namespace MyNS {
 		/** The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
 		stickyMacAllowList?: Array<string>;
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit?: number | null;
 
 		/** The state of the STP guard ('disabled', 'root guard', 'bpdu guard' or 'loop guard'). */
@@ -60309,10 +64663,16 @@ export namespace MyNS {
 		/** The type of the switch port ('trunk' or 'access'). */
 		type?: GetDeviceSwitchPortsReturnType | null;
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan?: number | null;
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan?: number | null;
 	}
 	export interface GetOrganizationSwitchPortsBySwitchReturnPortsFormProperties {
@@ -60341,7 +64701,10 @@ export namespace MyNS {
 		/** The rapid spanning tree protocol status. */
 		rstpEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'. */
+		/**
+		 * The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stickyMacAllowListLimit: FormControl<number | null | undefined>,
 
 		/** The state of the STP guard ('disabled', 'root guard', 'bpdu guard' or 'loop guard'). */
@@ -60350,10 +64713,16 @@ export namespace MyNS {
 		/** The type of the switch port ('trunk' or 'access'). */
 		type: FormControl<GetDeviceSwitchPortsReturnType | null | undefined>,
 
-		/** The VLAN of the switch port. A null value will clear the value set for trunk ports. */
+		/**
+		 * The VLAN of the switch port. A null value will clear the value set for trunk ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlan: FormControl<number | null | undefined>,
 
-		/** The voice VLAN of the switch port. Only applicable to access ports. */
+		/**
+		 * The voice VLAN of the switch port. Only applicable to access ports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voiceVlan: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationSwitchPortsBySwitchReturnPortsFormGroup() {
@@ -60576,10 +64945,16 @@ export namespace MyNS {
 		/** ID for the webhook log's organization */
 		organizationId?: string | null;
 
-		/** Response code from the webhook */
+		/**
+		 * Response code from the webhook
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode?: number | null;
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration?: number | null;
 
 		/** When the webhook was sent, in ISO8601 format */
@@ -60602,10 +64977,16 @@ export namespace MyNS {
 		/** ID for the webhook log's organization */
 		organizationId: FormControl<string | null | undefined>,
 
-		/** Response code from the webhook */
+		/**
+		 * Response code from the webhook
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseCode: FormControl<number | null | undefined>,
 
-		/** Duration of the response, in milliseconds */
+		/**
+		 * Duration of the response, in milliseconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseDuration: FormControl<number | null | undefined>,
 
 		/** When the webhook was sent, in ISO8601 format */
@@ -60669,7 +65050,10 @@ export namespace MyNS {
 		/** Link Aggregation enabled flag */
 		enabled?: boolean | null;
 
-		/** Link Aggregation speed */
+		/**
+		 * Link Aggregation speed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed?: number | null;
 	}
 	export interface GetOrganizationWirelessDevicesEthernetStatusesReturnAggregationFormProperties {
@@ -60677,7 +65061,10 @@ export namespace MyNS {
 		/** Link Aggregation enabled flag */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Link Aggregation speed */
+		/**
+		 * Link Aggregation speed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationWirelessDevicesEthernetStatusesReturnAggregationFormGroup() {
@@ -60733,7 +65120,10 @@ export namespace MyNS {
 		/** The duplex mode of the port. Can be 'full' or 'half' */
 		duplex?: string | null;
 
-		/** The speed of the port */
+		/**
+		 * The speed of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed?: number | null;
 	}
 	export interface GetOrganizationWirelessDevicesEthernetStatusesReturnPortsLinkNegotiationFormProperties {
@@ -60741,7 +65131,10 @@ export namespace MyNS {
 		/** The duplex mode of the port. Can be 'full' or 'half' */
 		duplex: FormControl<string | null | undefined>,
 
-		/** The speed of the port */
+		/**
+		 * The speed of the port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrganizationWirelessDevicesEthernetStatusesReturnPortsLinkNegotiationFormGroup() {

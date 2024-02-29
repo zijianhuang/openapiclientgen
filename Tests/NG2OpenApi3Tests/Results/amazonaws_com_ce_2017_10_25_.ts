@@ -155,8 +155,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Key?: string | null;
 		Values?: Array<string>;
@@ -168,8 +168,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Key: FormControl<string | null | undefined>,
 	}
@@ -353,8 +353,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of the Cost Category.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name: string;
 		EffectiveStart?: string;
@@ -370,8 +370,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue?: string | null;
 		SplitChargeRules?: Array<CostCategorySplitChargeRule>;
@@ -382,8 +382,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of the Cost Category.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name: FormControl<string | null | undefined>,
 		EffectiveStart: FormControl<string | null | undefined>,
@@ -396,8 +396,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
 	}
@@ -419,8 +419,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Value?: string | null;
 		Rule?: Expression;
@@ -433,8 +433,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Value: FormControl<string | null | undefined>,
 		Type: FormControl<CostCategoryRuleType | null | undefined>,
@@ -675,8 +675,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of the Cost Category.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name: string;
 
@@ -693,8 +693,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue?: string | null;
 	}
@@ -712,8 +712,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of the Cost Category.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -725,8 +725,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
 	}
@@ -1387,8 +1387,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		CostCategoryName?: string | null;
 
@@ -1403,8 +1403,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		CostCategoryName: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -2809,15 +2809,15 @@ export namespace MyNS {
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		GenerationTimestamp?: string | null;
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		LatestUsageTimestamp?: string | null;
 		CurrentAverageHourlyOnDemandSpend?: string;
@@ -2854,15 +2854,15 @@ export namespace MyNS {
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		GenerationTimestamp: FormControl<string | null | undefined>,
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		LatestUsageTimestamp: FormControl<string | null | undefined>,
 		CurrentAverageHourlyOnDemandSpend: FormControl<string | null | undefined>,
@@ -2924,8 +2924,8 @@ export namespace MyNS {
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		StartTime?: string | null;
 		EstimatedOnDemandCost?: string;
@@ -2939,8 +2939,8 @@ export namespace MyNS {
 
 		/**
 		 * The period of time that you want the usage and costs for.
-		 * Max length: 25
 		 * Min length: 20
+		 * Max length: 25
 		 */
 		StartTime: FormControl<string | null | undefined>,
 		EstimatedOnDemandCost: FormControl<string | null | undefined>,
@@ -3735,8 +3735,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name?: string | null;
 		EffectiveStart?: string;
@@ -3747,8 +3747,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue?: string | null;
 	}
@@ -3759,8 +3759,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		Name: FormControl<string | null | undefined>,
 		EffectiveStart: FormControl<string | null | undefined>,
@@ -3769,8 +3769,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
 	}
@@ -4239,8 +4239,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue?: string | null;
 		SplitChargeRules?: Array<CostCategorySplitChargeRule>;
@@ -4259,8 +4259,8 @@ export namespace MyNS {
 
 		/**
 		 * The default value for the cost category.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
 	}

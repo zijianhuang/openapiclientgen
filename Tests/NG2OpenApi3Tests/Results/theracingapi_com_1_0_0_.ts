@@ -24,12 +24,18 @@ export namespace MyNS {
 		/** Required */
 		courses: Array<App__models__courses__Course>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface CoursesPageFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCoursesPageFormGroup() {
@@ -111,7 +117,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface DamClassAnalysisFormProperties {
@@ -122,7 +131,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateDamClassAnalysisFormGroup() {
@@ -136,60 +148,108 @@ export namespace MyNS {
 
 	export interface App__models__dams__Class {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
 		class: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__dams__ClassFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
 		class: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__dams__ClassFormGroup() {
@@ -221,7 +281,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface DamDistanceAnalysisFormProperties {
@@ -232,7 +295,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateDamDistanceAnalysisFormGroup() {
@@ -246,22 +312,40 @@ export namespace MyNS {
 
 	export interface App__models__dams__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -276,30 +360,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__dams__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -314,10 +422,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__dams__DistanceFormGroup() {
@@ -385,7 +499,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface DamsireClassAnalysisFormProperties {
@@ -396,7 +513,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateDamsireClassAnalysisFormGroup() {
@@ -410,60 +530,108 @@ export namespace MyNS {
 
 	export interface App__models__damsires__Class {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
 		class: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__damsires__ClassFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
 		class: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__damsires__ClassFormGroup() {
@@ -495,7 +663,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface DamsireDistanceAnalysisFormProperties {
@@ -506,7 +677,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateDamsireDistanceAnalysisFormGroup() {
@@ -520,22 +694,40 @@ export namespace MyNS {
 
 	export interface App__models__damsires__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -550,30 +742,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__damsires__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -588,10 +804,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__damsires__DistanceFormGroup() {
@@ -627,22 +849,40 @@ export namespace MyNS {
 
 	export interface Distances {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -657,33 +897,57 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runs: number;
 
 		/** Required */
 		times: Array<TimesGoing>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface DistancesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -698,10 +962,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runs: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateDistancesFormGroup() {
@@ -842,6 +1112,8 @@ export namespace MyNS {
 		is_cancelled?: boolean | null;
 		max_claim_price?: number | null;
 		min_claim_price?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mtp?: number | null;
 		post_time?: string | null;
 		post_time_long?: string | null;
@@ -883,6 +1155,8 @@ export namespace MyNS {
 		is_cancelled: FormControl<boolean | null | undefined>,
 		max_claim_price: FormControl<number | null | undefined>,
 		min_claim_price: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mtp: FormControl<number | null | undefined>,
 		post_time: FormControl<string | null | undefined>,
 		post_time_long: FormControl<string | null | undefined>,
@@ -956,18 +1230,34 @@ export namespace MyNS {
 	}
 
 	export interface RacePoolResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximum_wager_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_box_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_wager_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_wheel_amount?: number | null;
 		pool_code?: string | null;
 		pool_name?: string | null;
 		race_list?: string | null;
 	}
 	export interface RacePoolResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximum_wager_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_box_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_wager_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimum_wheel_amount: FormControl<number | null | undefined>,
 		pool_code: FormControl<string | null | undefined>,
 		pool_name: FormControl<string | null | undefined>,
@@ -1001,6 +1291,8 @@ export namespace MyNS {
 		morning_line_odds?: string | null;
 		post_pos?: string | null;
 		program_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		program_number_stripped?: number | null;
 		scratch_indicator?: string | null;
 		sire_name?: string | null;
@@ -1021,6 +1313,8 @@ export namespace MyNS {
 		morning_line_odds: FormControl<string | null | undefined>,
 		post_pos: FormControl<string | null | undefined>,
 		program_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		program_number_stripped: FormControl<number | null | undefined>,
 		scratch_indicator: FormControl<string | null | undefined>,
 		sire_name: FormControl<string | null | undefined>,
@@ -1147,20 +1441,40 @@ export namespace MyNS {
 	}
 
 	export interface TimeDataResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fifths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hundredths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		milliseconds?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seconds?: number | null;
 		str_fifths?: string | null;
 		time_in_fifths?: string | null;
 		time_in_hundredths?: string | null;
 	}
 	export interface TimeDataResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fifths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hundredths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		milliseconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seconds: FormControl<number | null | undefined>,
 		str_fifths: FormControl<string | null | undefined>,
 		time_in_fifths: FormControl<string | null | undefined>,
@@ -1258,60 +1572,108 @@ export namespace MyNS {
 
 	export interface HorseAges {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
 		horse_age: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface HorseAgesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
 		horse_age: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateHorseAgesFormGroup() {
@@ -1361,7 +1723,10 @@ export namespace MyNS {
 		/** Required */
 		sire_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runs: number;
 	}
 	export interface HorseDistanceTimeAnalysisFormProperties {
@@ -1390,7 +1755,10 @@ export namespace MyNS {
 		/** Required */
 		sire_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runs: FormControl<number | null | undefined>,
 	}
 	export function CreateHorseDistanceTimeAnalysisFormGroup() {
@@ -1435,7 +1803,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: number;
 	}
 	export interface JockeyCourseAnalysisFormProperties {
@@ -1446,7 +1817,10 @@ export namespace MyNS {
 		/** Required */
 		jockey: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: FormControl<number | null | undefined>,
 	}
 	export function CreateJockeyCourseAnalysisFormGroup() {
@@ -1460,22 +1834,40 @@ export namespace MyNS {
 
 	export interface App__models__jockeys__Course {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -1484,30 +1876,54 @@ export namespace MyNS {
 		/** Required */
 		region: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__jockeys__CourseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1516,10 +1932,16 @@ export namespace MyNS {
 		/** Required */
 		region: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__jockeys__CourseFormGroup() {
@@ -1552,7 +1974,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: number;
 	}
 	export interface JockeyDistanceAnalysisFormProperties {
@@ -1563,7 +1988,10 @@ export namespace MyNS {
 		/** Required */
 		jockey: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: FormControl<number | null | undefined>,
 	}
 	export function CreateJockeyDistanceAnalysisFormGroup() {
@@ -1577,22 +2005,40 @@ export namespace MyNS {
 
 	export interface App__models__jockeys__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -1607,30 +2053,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__jockeys__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1645,10 +2115,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__jockeys__DistanceFormGroup() {
@@ -1683,7 +2159,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: number;
 	}
 	export interface JockeyOwnerAnalysisFormProperties {
@@ -1694,7 +2173,10 @@ export namespace MyNS {
 		/** Required */
 		jockey: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: FormControl<number | null | undefined>,
 	}
 	export function CreateJockeyOwnerAnalysisFormGroup() {
@@ -1708,22 +2190,40 @@ export namespace MyNS {
 
 	export interface App__models__jockeys__Owner {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -1732,30 +2232,54 @@ export namespace MyNS {
 		/** Required */
 		owner_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__jockeys__OwnerFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1764,10 +2288,16 @@ export namespace MyNS {
 		/** Required */
 		owner_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__jockeys__OwnerFormGroup() {
@@ -1797,7 +2327,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: number;
 
 		/** Required */
@@ -1811,7 +2344,10 @@ export namespace MyNS {
 		/** Required */
 		jockey: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_rides: FormControl<number | null | undefined>,
 	}
 	export function CreateJockeyTrainerAnalysisFormGroup() {
@@ -1825,25 +2361,46 @@ export namespace MyNS {
 
 	export interface App__models__jockeys__Trainer {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: number;
 
 		/** Required */
@@ -1852,30 +2409,54 @@ export namespace MyNS {
 		/** Required */
 		trainer_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__jockeys__TrainerFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rides: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1884,7 +2465,10 @@ export namespace MyNS {
 		/** Required */
 		trainer_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__jockeys__TrainerFormGroup() {
@@ -1983,22 +2567,34 @@ export namespace MyNS {
 
 	export interface MeetsResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 		meets?: Array<MeetResponse>;
 
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skip: number;
 	}
 	export interface MeetsResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skip: FormControl<number | null | undefined>,
 	}
 	export function CreateMeetsResponseFormGroup() {
@@ -2023,7 +2619,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface OwnerCourseAnalysisFormProperties {
@@ -2034,7 +2633,10 @@ export namespace MyNS {
 		/** Required */
 		owner: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerCourseAnalysisFormGroup() {
@@ -2048,22 +2650,40 @@ export namespace MyNS {
 
 	export interface App__models__owners__Course {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -2072,30 +2692,54 @@ export namespace MyNS {
 		/** Required */
 		region: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__owners__CourseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2104,10 +2748,16 @@ export namespace MyNS {
 		/** Required */
 		region: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__owners__CourseFormGroup() {
@@ -2140,7 +2790,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface OwnerDistanceAnalysisFormProperties {
@@ -2151,7 +2804,10 @@ export namespace MyNS {
 		/** Required */
 		owner: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerDistanceAnalysisFormGroup() {
@@ -2165,22 +2821,40 @@ export namespace MyNS {
 
 	export interface App__models__owners__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -2195,30 +2869,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__owners__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2233,10 +2931,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__owners__DistanceFormGroup() {
@@ -2271,7 +2975,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface OwnerJockeyAnalysisFormProperties {
@@ -2282,7 +2989,10 @@ export namespace MyNS {
 		/** Required */
 		owner: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerJockeyAnalysisFormGroup() {
@@ -2296,22 +3006,40 @@ export namespace MyNS {
 
 	export interface App__models__owners__Jockey {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -2320,30 +3048,54 @@ export namespace MyNS {
 		/** Required */
 		jockey_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__owners__JockeyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2352,10 +3104,16 @@ export namespace MyNS {
 		/** Required */
 		jockey_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__owners__JockeyFormGroup() {
@@ -2385,7 +3143,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -2399,7 +3160,10 @@ export namespace MyNS {
 		/** Required */
 		owner: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnerTrainerAnalysisFormGroup() {
@@ -2413,25 +3177,46 @@ export namespace MyNS {
 
 	export interface App__models__owners__Trainer {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
 		/** Required */
@@ -2440,30 +3225,54 @@ export namespace MyNS {
 		/** Required */
 		trainer_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__owners__TrainerFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2472,7 +3281,10 @@ export namespace MyNS {
 		/** Required */
 		trainer_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__owners__TrainerFormGroup() {
@@ -2525,22 +3337,46 @@ export namespace MyNS {
 	}
 
 	export interface PayoffResponse {
+
+		/** Type: double */
 		base_amount?: number | null;
+
+		/** Type: double */
 		carryover?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_rights?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_tickets_bet?: number | null;
+
+		/** Type: double */
 		payoff_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_pool?: number | null;
 		wager_name?: string | null;
 		wager_type?: string | null;
 		winning_numbers?: string | null;
 	}
 	export interface PayoffResponseFormProperties {
+
+		/** Type: double */
 		base_amount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		carryover: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_rights: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_tickets_bet: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		payoff_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_pool: FormControl<number | null | undefined>,
 		wager_name: FormControl<string | null | undefined>,
 		wager_type: FormControl<string | null | undefined>,
@@ -4241,28 +5077,46 @@ export namespace MyNS {
 
 	export interface ResultsPage {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
 		/** Required */
 		query: Array<string>;
 		results?: Array<Result>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skip: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface ResultsPageFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skip: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateResultsPageFormGroup() {
@@ -4333,9 +5187,13 @@ export namespace MyNS {
 		grade?: string | null;
 		maximum_claim_price?: string | null;
 		minimum_claim_price?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		off_time?: number | null;
 		payoffs?: Array<PayoffResponse>;
 		post_time?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_time_long?: number | null;
 		race_class?: string | null;
 		race_key?: App__models__na_results__RaceKeyResponse;
@@ -4367,8 +5225,12 @@ export namespace MyNS {
 		grade: FormControl<string | null | undefined>,
 		maximum_claim_price: FormControl<string | null | undefined>,
 		minimum_claim_price: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		off_time: FormControl<number | null | undefined>,
 		post_time: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_time_long: FormControl<number | null | undefined>,
 		race_class: FormControl<string | null | undefined>,
 		race_name: FormControl<string | null | undefined>,
@@ -4442,14 +5304,22 @@ export namespace MyNS {
 		jockey_last_name?: string | null;
 		owner_first_name?: string | null;
 		owner_last_name?: string | null;
+
+		/** Type: double */
 		place_payoff?: number | null;
 		program_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		program_number_stripped?: number | null;
+
+		/** Type: double */
 		show_payoff?: number | null;
 		sire_name?: string | null;
 		trainer_first_name?: string | null;
 		trainer_last_name?: string | null;
 		weight_carried?: string | null;
+
+		/** Type: double */
 		win_payoff?: number | null;
 	}
 	export interface App__models__na_results__RunnerResponseFormProperties {
@@ -4460,14 +5330,22 @@ export namespace MyNS {
 		jockey_last_name: FormControl<string | null | undefined>,
 		owner_first_name: FormControl<string | null | undefined>,
 		owner_last_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		place_payoff: FormControl<number | null | undefined>,
 		program_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		program_number_stripped: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		show_payoff: FormControl<number | null | undefined>,
 		sire_name: FormControl<string | null | undefined>,
 		trainer_first_name: FormControl<string | null | undefined>,
 		trainer_last_name: FormControl<string | null | undefined>,
 		weight_carried: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		win_payoff: FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__na_results__RunnerResponseFormGroup() {
@@ -4576,7 +5454,10 @@ export namespace MyNS {
 		/** Required */
 		sire: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface SireClassAnalysisFormProperties {
@@ -4587,7 +5468,10 @@ export namespace MyNS {
 		/** Required */
 		sire: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateSireClassAnalysisFormGroup() {
@@ -4601,60 +5485,108 @@ export namespace MyNS {
 
 	export interface App__models__sires__Class {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
 		class: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__sires__ClassFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
 		class: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__sires__ClassFormGroup() {
@@ -4686,7 +5618,10 @@ export namespace MyNS {
 		/** Required */
 		sire: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 	}
 	export interface SireDistanceAnalysisFormProperties {
@@ -4697,7 +5632,10 @@ export namespace MyNS {
 		/** Required */
 		sire: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 	}
 	export function CreateSireDistanceAnalysisFormGroup() {
@@ -4711,22 +5649,40 @@ export namespace MyNS {
 
 	export interface App__models__sires__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -4741,30 +5697,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__sires__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4779,10 +5759,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__sires__DistanceFormGroup() {
@@ -4827,7 +5813,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -4838,7 +5827,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4855,22 +5847,40 @@ export namespace MyNS {
 
 	export interface App__models__trainers__Course {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -4879,30 +5889,54 @@ export namespace MyNS {
 		/** Required */
 		region: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__trainers__CourseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4911,10 +5945,16 @@ export namespace MyNS {
 		/** Required */
 		region: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__trainers__CourseFormGroup() {
@@ -4944,7 +5984,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -4955,7 +5998,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4972,22 +6018,40 @@ export namespace MyNS {
 
 	export interface App__models__trainers__Distance {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -5002,30 +6066,54 @@ export namespace MyNS {
 		/** Required */
 		dist_y: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__trainers__DistanceFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5040,10 +6128,16 @@ export namespace MyNS {
 		/** Required */
 		dist_y: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__trainers__DistanceFormGroup() {
@@ -5075,7 +6169,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -5086,7 +6183,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5112,7 +6212,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -5123,7 +6226,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5140,22 +6246,40 @@ export namespace MyNS {
 
 	export interface App__models__trainers__Jockey {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -5164,30 +6288,54 @@ export namespace MyNS {
 		/** Required */
 		jockey_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__trainers__JockeyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5196,10 +6344,16 @@ export namespace MyNS {
 		/** Required */
 		jockey_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__trainers__JockeyFormGroup() {
@@ -5229,7 +6383,10 @@ export namespace MyNS {
 		/** Required */
 		query: Array<string>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: number;
 
 		/** Required */
@@ -5240,7 +6397,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_runners: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5257,22 +6417,40 @@ export namespace MyNS {
 
 	export interface App__models__trainers__Owner {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': number;
 
 		/** Required */
@@ -5281,30 +6459,54 @@ export namespace MyNS {
 		/** Required */
 		owner_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': number;
 	}
 	export interface App__models__trainers__OwnerFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'1_pl': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1st': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2nd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3rd': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4th': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'a/e': FormControl<number | null | undefined>,
 
 		/** Required */
@@ -5313,10 +6515,16 @@ export namespace MyNS {
 		/** Required */
 		owner_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runners: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		'win_%': FormControl<number | null | undefined>,
 	}
 	export function CreateApp__models__trainers__OwnerFormGroup() {
@@ -5416,7 +6624,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {DamClassAnalysis} Successful Response
@@ -5437,7 +6647,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {DamDistanceAnalysis} Successful Response
@@ -5458,9 +6670,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Dam_results_v1_dams__dam_id__results_get(dam_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5489,7 +6706,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {DamsireClassAnalysis} Successful Response
@@ -5510,7 +6729,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {DamsireDistanceAnalysis} Successful Response
@@ -5531,9 +6752,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Damsire_results_v1_damsires__damsire_id__results_get(damsire_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5562,7 +6788,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {HorseDistanceTimeAnalysis} Successful Response
@@ -5583,9 +6811,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Horse_results_v1_horses__horse_id__results_get(horse_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5614,7 +6847,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {JockeyCourseAnalysis} Successful Response
@@ -5635,7 +6870,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {JockeyDistanceAnalysis} Successful Response
@@ -5656,7 +6893,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {JockeyOwnerAnalysis} Successful Response
@@ -5677,7 +6916,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {JockeyTrainerAnalysis} Successful Response
@@ -5698,9 +6939,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Jockey_results_v1_jockeys__jockey_id__results_get(jockey_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5713,6 +6959,9 @@ export namespace MyNS {
 		 * Get v1/north-america/meets
 		 * @param {string} start_date <p>Query from date with format YYYY-MM-DD (e.g. 2020-01-01)</p>
 		 * @param {string} end_date <p>Query to date with format YYYY-MM-DD (e.g. 2020-01-01)</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MeetsResponse} Successful Response
 		 */
 		List_meets_v1_north_america_meets_get(start_date: string | null | undefined, end_date: string | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<MeetsResponse> {
@@ -5761,7 +7010,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {OwnerCourseAnalysis} Successful Response
@@ -5782,7 +7033,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {OwnerDistanceAnalysis} Successful Response
@@ -5803,7 +7056,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {OwnerJockeyAnalysis} Successful Response
@@ -5824,7 +7079,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {OwnerTrainerAnalysis} Successful Response
@@ -5845,9 +7102,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Owner_results_v1_owners__owner_id__results_get(owner_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5945,9 +7207,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		List_racecard_horse_results_v1_racecards__horse_id__results_get(horse_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -5986,9 +7253,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		List_results_v1_results_get(start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -6000,6 +7272,9 @@ export namespace MyNS {
 		 * Today's results (BASIC PLAN)
 		 * Get v1/results/today
 		 * @param {Array<string>} region <p>Query results by region codes. Get the full list <a href='https://api.theracingapi.com/documentation#tag/Courses/operation/list_regions_v1_courses_regions_get'>here</a>.</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		List_todays_results_v1_results_today_get(region: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -6038,7 +7313,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {SireClassAnalysis} Successful Response
@@ -6059,7 +7336,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {SireDistanceAnalysis} Successful Response
@@ -6080,9 +7359,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Sire_results_v1_sires__sire_id__results_get(sire_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {
@@ -6111,7 +7395,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {TrainerCourseAnalysis} Successful Response
@@ -6132,7 +7418,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {TrainerDistanceAnalysis} Successful Response
@@ -6153,7 +7441,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {TrainerHorseAgeAnalysis} Successful Response
@@ -6174,7 +7464,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {TrainerJockeyAnalysis} Successful Response
@@ -6195,7 +7487,9 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
 		 * @return {TrainerOwnerAnalysis} Successful Response
@@ -6216,9 +7510,14 @@ export namespace MyNS {
 		 * @param {Array<string>} going <p>Query by going:</p><p>fast, firm, good, good_to_firm, good_to_soft, good_to_yielding, hard, heavy, holding, muddy, sloppy, slow, soft, soft_to_heavy, standard, standard_to_fast, standard_to_slow, very_soft, yielding, yielding_to_soft</p>
 		 * @param {Array<string>} race_class <p>Query by class:</p><p>class_1, class_2, class_3, class_4, class_5, class_6, class_7</p>
 		 * @param {number} min_distance_y <p>Query by minimum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance_y <p>Query by maximum race distance (yards)</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} age_band <p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p>
 		 * @param {Array<string>} sex_restriction <p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p>
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 50
+		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResultsPage} Successful Response
 		 */
 		Trainer_results_v1_trainers__trainer_id__results_get(trainer_id: string, start_date: string | null | undefined, end_date: string | null | undefined, region: Array<string> | null | undefined, course: Array<string> | null | undefined, type: Array<string> | null | undefined, going: Array<string> | null | undefined, race_class: Array<string> | null | undefined, min_distance_y: number | null | undefined, max_distance_y: number | null | undefined, age_band: Array<string> | null | undefined, sex_restriction: Array<string> | null | undefined, limit: number | null | undefined, skip: number | null | undefined): Observable<ResultsPage> {

@@ -10,8 +10,12 @@ export namespace MyNS {
 		object?: string | null;
 		organizationId?: string | null;
 		planData?: Array<PlanData>;
-		predictionsMax?: number | null;
-		predictionsUsed?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		predictionsMax?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		predictionsUsed?: string | null;
 		startsAt?: Date | null;
 	}
 	export interface ApiUsageFormProperties {
@@ -20,8 +24,12 @@ export namespace MyNS {
 		licenseId: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		organizationId: FormControl<string | null | undefined>,
-		predictionsMax: FormControl<number | null | undefined>,
-		predictionsUsed: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		predictionsMax: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		predictionsUsed: FormControl<string | null | undefined>,
 		startsAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateApiUsageFormGroup() {
@@ -31,19 +39,23 @@ export namespace MyNS {
 			licenseId: new FormControl<string | null | undefined>(undefined),
 			object: new FormControl<string | null | undefined>(undefined),
 			organizationId: new FormControl<string | null | undefined>(undefined),
-			predictionsMax: new FormControl<number | null | undefined>(undefined),
-			predictionsUsed: new FormControl<number | null | undefined>(undefined),
+			predictionsMax: new FormControl<string | null | undefined>(undefined),
+			predictionsUsed: new FormControl<string | null | undefined>(undefined),
 			startsAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PlanData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount?: number | null;
 		plan?: PlanDataPlan | null;
 		source?: PlanDataSource | null;
 	}
 	export interface PlanDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amount: FormControl<number | null | undefined>,
 		plan: FormControl<PlanDataPlan | null | undefined>,
 		source: FormControl<PlanDataSource | null | undefined>,
@@ -102,18 +114,30 @@ export namespace MyNS {
 
 	export interface CellLocation {
 
-		/** Index of the column that contains the detected text. */
+		/**
+		 * Index of the column that contains the detected text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colIndex?: number | null;
 
-		/** Index of the row that contains the detected text. */
+		/**
+		 * Index of the row that contains the detected text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex?: number | null;
 	}
 	export interface CellLocationFormProperties {
 
-		/** Index of the column that contains the detected text. */
+		/**
+		 * Index of the column that contains the detected text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colIndex: FormControl<number | null | undefined>,
 
-		/** Index of the row that contains the detected text. */
+		/**
+		 * Index of the row that contains the detected text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateCellLocationFormGroup() {
@@ -143,30 +167,54 @@ export namespace MyNS {
 
 	export interface BoundingBox {
 
-		/** X-coordinate of the left side of the bounding box. The origin of the coordinate system is the top-left of the image. Number of pixels from the left edge of the image. */
+		/**
+		 * X-coordinate of the left side of the bounding box. The origin of the coordinate system is the top-left of the image. Number of pixels from the left edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxX?: number | null;
 
-		/** Y-coordinate of the top of the bounding box. Number of pixels from the top edge of the image. */
+		/**
+		 * Y-coordinate of the top of the bounding box. Number of pixels from the top edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxY?: number | null;
 
-		/** X-coordinate of the right side of the bounding box. Number of pixels from the left edge of the image. */
+		/**
+		 * X-coordinate of the right side of the bounding box. Number of pixels from the left edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minX?: number | null;
 
-		/** Y-coordinate of the bottom of the bounding box. Number of pixels from the top edge of the image. */
+		/**
+		 * Y-coordinate of the bottom of the bounding box. Number of pixels from the top edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minY?: number | null;
 	}
 	export interface BoundingBoxFormProperties {
 
-		/** X-coordinate of the left side of the bounding box. The origin of the coordinate system is the top-left of the image. Number of pixels from the left edge of the image. */
+		/**
+		 * X-coordinate of the left side of the bounding box. The origin of the coordinate system is the top-left of the image. Number of pixels from the left edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxX: FormControl<number | null | undefined>,
 
-		/** Y-coordinate of the top of the bounding box. Number of pixels from the top edge of the image. */
+		/**
+		 * Y-coordinate of the top of the bounding box. Number of pixels from the top edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxY: FormControl<number | null | undefined>,
 
-		/** X-coordinate of the right side of the bounding box. Number of pixels from the left edge of the image. */
+		/**
+		 * X-coordinate of the right side of the bounding box. Number of pixels from the left edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minX: FormControl<number | null | undefined>,
 
-		/** Y-coordinate of the bottom of the bounding box. Number of pixels from the top edge of the image. */
+		/**
+		 * Y-coordinate of the bottom of the bounding box. Number of pixels from the top edge of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minY: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingBoxFormGroup() {
@@ -185,8 +233,11 @@ export namespace MyNS {
 		/** Date and time that the dataset was created. */
 		createdAt?: Date | null;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Contains the labels array that contains all the labels for the dataset. */
 		labelSummary?: LabelSummary;
@@ -197,17 +248,26 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Number of duplicate images. This number includes duplicates in the .zip file from which the dataset was created plus the number of duplicate images from subsequent PUT calls to add images to the dataset. */
+		/**
+		 * Number of duplicate images. This number includes duplicates in the .zip file from which the dataset was created plus the number of duplicate images from subsequent PUT calls to add images to the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numOfDuplicates?: number | null;
 
 		/** Object returned; in this case, dataset. */
 		object?: string | null;
 		statusMsg?: string | null;
 
-		/** Total number of examples in the dataset. */
+		/**
+		 * Total number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalExamples?: number | null;
 
-		/** Total number of labels in the dataset. */
+		/**
+		 * Total number of labels in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalLabels?: number | null;
 		type?: string | null;
 		updatedAt?: Date | null;
@@ -218,8 +278,11 @@ export namespace MyNS {
 		/** Date and time that the dataset was created. */
 		createdAt: FormControl<Date | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Dataset language. */
 		language: FormControl<string | null | undefined>,
@@ -227,17 +290,26 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of duplicate images. This number includes duplicates in the .zip file from which the dataset was created plus the number of duplicate images from subsequent PUT calls to add images to the dataset. */
+		/**
+		 * Number of duplicate images. This number includes duplicates in the .zip file from which the dataset was created plus the number of duplicate images from subsequent PUT calls to add images to the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numOfDuplicates: FormControl<number | null | undefined>,
 
 		/** Object returned; in this case, dataset. */
 		object: FormControl<string | null | undefined>,
 		statusMsg: FormControl<string | null | undefined>,
 
-		/** Total number of examples in the dataset. */
+		/**
+		 * Total number of examples in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalExamples: FormControl<number | null | undefined>,
 
-		/** Total number of labels in the dataset. */
+		/**
+		 * Total number of labels in the dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalLabels: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
@@ -246,7 +318,7 @@ export namespace MyNS {
 		return new FormGroup<DatasetFormProperties>({
 			available: new FormControl<boolean | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			language: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			numOfDuplicates: new FormControl<number | null | undefined>(undefined),
@@ -282,11 +354,15 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset that the label belongs to.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: number;
+		datasetId: string;
 
-		/** ID of the label. */
-		id?: number | null;
+		/**
+		 * ID of the label.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * Name of the label.
@@ -294,8 +370,11 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Number of examples that have the label. */
-		numExamples?: number | null;
+		/**
+		 * Number of examples that have the label.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numExamples?: string | null;
 	}
 
 	/** Contains information about the label with which the example is associated. */
@@ -304,11 +383,15 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset that the label belongs to.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: FormControl<number | null | undefined>,
+		datasetId: FormControl<string | null | undefined>,
 
-		/** ID of the label. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * ID of the label.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the label.
@@ -316,15 +399,18 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of examples that have the label. */
-		numExamples: FormControl<number | null | undefined>,
+		/**
+		 * Number of examples that have the label.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numExamples: FormControl<string | null | undefined>,
 	}
 	export function CreateLabelFormGroup() {
 		return new FormGroup<LabelFormProperties>({
-			datasetId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			datasetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			numExamples: new FormControl<number | null | undefined>(undefined),
+			numExamples: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -349,6 +435,8 @@ export namespace MyNS {
 		message?: string | null;
 		object?: string | null;
 		organizationId?: string | null;
+
+		/** Type: double */
 		progress?: number | null;
 		status?: DeletionResponseStatus | null;
 		type?: DeletionResponseType | null;
@@ -359,6 +447,8 @@ export namespace MyNS {
 		message: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		organizationId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 		status: FormControl<DeletionResponseStatus | null | undefined>,
 		type: FormControl<DeletionResponseType | null | undefined>,
@@ -389,7 +479,10 @@ export namespace MyNS {
 		/** Probability lable for the input. */
 		label?: string | null;
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability?: number | null;
 	}
 
@@ -399,7 +492,10 @@ export namespace MyNS {
 		/** Probability lable for the input. */
 		label: FormControl<string | null | undefined>,
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectionResultFormGroup() {
@@ -418,8 +514,9 @@ export namespace MyNS {
 		/**
 		 * ID of the example.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/** Contains information about the label with which the example is associated. */
 		label?: Label;
@@ -444,8 +541,9 @@ export namespace MyNS {
 		/**
 		 * ID of the example.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** URL of the image in the dataset. This is a temporary URL that expires in 30 minutes. This URL can be used to display images that were uploaded to a dataset in a UI. */
 		location: FormControl<string | null | undefined>,
@@ -462,7 +560,7 @@ export namespace MyNS {
 	export function CreateExampleFormGroup() {
 		return new FormGroup<ExampleFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			object: new FormControl<string | null | undefined>(undefined),
@@ -591,7 +689,10 @@ export namespace MyNS {
 		/** Probability lable for the input. */
 		label?: string | null;
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability?: number | null;
 	}
 
@@ -601,7 +702,10 @@ export namespace MyNS {
 		/** Probability lable for the input. */
 		label: FormControl<string | null | undefined>,
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateLabelResultFormGroup() {
@@ -792,14 +896,16 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset trained to create the model.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: number;
+		datasetId: string;
 
 		/**
 		 * Not available yet
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetVersionId: number;
+		datasetVersionId: string;
 
 		/** Reason the dataset training failed. Returned only if the training status is FAILED. */
 		failureMsg?: string | null;
@@ -828,6 +934,7 @@ export namespace MyNS {
 		/**
 		 * How far the dataset training has progressed. Values are between 0�1.
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -851,14 +958,16 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset trained to create the model.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: FormControl<number | null | undefined>,
+		datasetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Not available yet
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetVersionId: FormControl<number | null | undefined>,
+		datasetVersionId: FormControl<string | null | undefined>,
 
 		/** Reason the dataset training failed. Returned only if the training status is FAILED. */
 		failureMsg: FormControl<string | null | undefined>,
@@ -887,6 +996,7 @@ export namespace MyNS {
 		/**
 		 * How far the dataset training has progressed. Values are between 0�1.
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -903,8 +1013,8 @@ export namespace MyNS {
 		return new FormGroup<ModelFormProperties>({
 			algorithm: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			datasetId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			datasetVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			datasetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			datasetVersionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			failureMsg: new FormControl<string | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined),
 			modelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -973,7 +1083,10 @@ export namespace MyNS {
 		/** Content of the detected text. */
 		label?: string | null;
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability?: number | null;
 	}
 
@@ -983,7 +1096,10 @@ export namespace MyNS {
 		/** Content of the detected text. */
 		label: FormControl<string | null | undefined>,
 
-		/** Probability value for the input. Values are between 0�1. */
+		/**
+		 * Probability value for the input. Values are between 0�1.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateOCRResultFormGroup() {
@@ -1163,16 +1279,21 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset trained to create the model.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: number;
+		datasetId: string;
 
 		/**
 		 * Not available yet
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetVersionId: number;
+		datasetVersionId: string;
 
-		/** Number of epochs used during training. */
+		/**
+		 * Number of epochs used during training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epochs?: number | null;
 
 		/** Reason the dataset training failed. Returned only if the training status is FAILED. */
@@ -1184,7 +1305,10 @@ export namespace MyNS {
 		 */
 		language: string;
 
-		/** Learning rate used during training. */
+		/**
+		 * Learning rate used during training.
+		 * Type: double
+		 */
 		learningRate?: number | null;
 
 		/**
@@ -1208,10 +1332,14 @@ export namespace MyNS {
 		/**
 		 * How far the dataset training has progressed. Values are between 0�1.
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
-		/** Where the training job is in the queue. This field appears in the response only if the status is QUEUED. */
+		/**
+		 * Where the training job is in the queue. This field appears in the response only if the status is QUEUED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queuePosition?: number | null;
 
 		/**
@@ -1240,16 +1368,21 @@ export namespace MyNS {
 		/**
 		 * ID of the dataset trained to create the model.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetId: FormControl<number | null | undefined>,
+		datasetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Not available yet
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		datasetVersionId: FormControl<number | null | undefined>,
+		datasetVersionId: FormControl<string | null | undefined>,
 
-		/** Number of epochs used during training. */
+		/**
+		 * Number of epochs used during training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epochs: FormControl<number | null | undefined>,
 
 		/** Reason the dataset training failed. Returned only if the training status is FAILED. */
@@ -1261,7 +1394,10 @@ export namespace MyNS {
 		 */
 		language: FormControl<string | null | undefined>,
 
-		/** Learning rate used during training. */
+		/**
+		 * Learning rate used during training.
+		 * Type: double
+		 */
 		learningRate: FormControl<number | null | undefined>,
 
 		/**
@@ -1285,10 +1421,14 @@ export namespace MyNS {
 		/**
 		 * How far the dataset training has progressed. Values are between 0�1.
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
-		/** Where the training job is in the queue. This field appears in the response only if the status is QUEUED. */
+		/**
+		 * Where the training job is in the queue. This field appears in the response only if the status is QUEUED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queuePosition: FormControl<number | null | undefined>,
 
 		/**
@@ -1310,8 +1450,8 @@ export namespace MyNS {
 		return new FormGroup<TrainResponseFormProperties>({
 			algorithm: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			datasetId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			datasetVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			datasetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			datasetVersionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			epochs: new FormControl<number | null | undefined>(undefined),
 			failureMsg: new FormControl<string | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1334,33 +1474,45 @@ export namespace MyNS {
 	/** JSON that contains parameters that specify how the model is created */
 	export interface V2LanguageTrainParams {
 
-		/** Lets you specify the ratio of data used to train the dataset and the data used to test the model. */
+		/**
+		 * Lets you specify the ratio of data used to train the dataset and the data used to test the model.
+		 * Type: float
+		 */
 		trainSplitRatio?: number | null;
 
 		/** Lets you specify that feedback examples are included in the data to be trained to create the model. */
 		withFeedback?: boolean | null;
 
-		/** Lets you specify that a global dataset is used in addition to the specified dataset to create the model. */
-		withGlobalDatasetId?: number | null;
+		/**
+		 * Lets you specify that a global dataset is used in addition to the specified dataset to create the model.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		withGlobalDatasetId?: string | null;
 	}
 
 	/** JSON that contains parameters that specify how the model is created */
 	export interface V2LanguageTrainParamsFormProperties {
 
-		/** Lets you specify the ratio of data used to train the dataset and the data used to test the model. */
+		/**
+		 * Lets you specify the ratio of data used to train the dataset and the data used to test the model.
+		 * Type: float
+		 */
 		trainSplitRatio: FormControl<number | null | undefined>,
 
 		/** Lets you specify that feedback examples are included in the data to be trained to create the model. */
 		withFeedback: FormControl<boolean | null | undefined>,
 
-		/** Lets you specify that a global dataset is used in addition to the specified dataset to create the model. */
-		withGlobalDatasetId: FormControl<number | null | undefined>,
+		/**
+		 * Lets you specify that a global dataset is used in addition to the specified dataset to create the model.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		withGlobalDatasetId: FormControl<string | null | undefined>,
 	}
 	export function CreateV2LanguageTrainParamsFormGroup() {
 		return new FormGroup<V2LanguageTrainParamsFormProperties>({
 			trainSplitRatio: new FormControl<number | null | undefined>(undefined),
 			withFeedback: new FormControl<boolean | null | undefined>(undefined),
-			withGlobalDatasetId: new FormControl<number | null | undefined>(undefined),
+			withGlobalDatasetId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1369,33 +1521,45 @@ export namespace MyNS {
 	/** JSON that contains parameters that specify how the model is created */
 	export interface V2VisionTrainParams {
 
-		/** Lets you specify the ratio of data used to train the dataset and the data used to test the model. */
+		/**
+		 * Lets you specify the ratio of data used to train the dataset and the data used to test the model.
+		 * Type: float
+		 */
 		trainSplitRatio?: number | null;
 
 		/** Lets you specify that feedback examples are included in the data to be trained to create the model. */
 		withFeedback?: boolean | null;
 
-		/** Lets you specify that a global dataset is used in addition to the specified dataset to create the model. */
-		withGlobalDatasetId?: number | null;
+		/**
+		 * Lets you specify that a global dataset is used in addition to the specified dataset to create the model.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		withGlobalDatasetId?: string | null;
 	}
 
 	/** JSON that contains parameters that specify how the model is created */
 	export interface V2VisionTrainParamsFormProperties {
 
-		/** Lets you specify the ratio of data used to train the dataset and the data used to test the model. */
+		/**
+		 * Lets you specify the ratio of data used to train the dataset and the data used to test the model.
+		 * Type: float
+		 */
 		trainSplitRatio: FormControl<number | null | undefined>,
 
 		/** Lets you specify that feedback examples are included in the data to be trained to create the model. */
 		withFeedback: FormControl<boolean | null | undefined>,
 
-		/** Lets you specify that a global dataset is used in addition to the specified dataset to create the model. */
-		withGlobalDatasetId: FormControl<number | null | undefined>,
+		/**
+		 * Lets you specify that a global dataset is used in addition to the specified dataset to create the model.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		withGlobalDatasetId: FormControl<string | null | undefined>,
 	}
 	export function CreateV2VisionTrainParamsFormGroup() {
 		return new FormGroup<V2VisionTrainParamsFormProperties>({
 			trainSplitRatio: new FormControl<number | null | undefined>(undefined),
 			withFeedback: new FormControl<boolean | null | undefined>(undefined),
-			withGlobalDatasetId: new FormControl<number | null | undefined>(undefined),
+			withGlobalDatasetId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

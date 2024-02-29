@@ -130,12 +130,16 @@ export namespace MyNS {
 
 		/** MX domain */
 		exchange?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 	}
 	export interface MX_recordsFormProperties {
 
 		/** MX domain */
 		exchange: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateMX_recordsFormGroup() {
@@ -157,7 +161,10 @@ export namespace MyNS {
 		 */
 		time: string;
 
-		/** Total days reported */
+		/**
+		 * Total days reported
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Response_ParametersFormProperties {
@@ -171,7 +178,10 @@ export namespace MyNS {
 		 */
 		time: FormControl<string | null | undefined>,
 
-		/** Total days reported */
+		/**
+		 * Total days reported
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateResponse_ParametersFormGroup() {
@@ -292,18 +302,21 @@ export namespace MyNS {
 		/**
 		 * Increase
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dec: number;
 
 		/**
 		 * Decrease
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		inc: number;
 
 		/**
 		 * Total number of records
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
@@ -324,18 +337,21 @@ export namespace MyNS {
 		/**
 		 * Increase
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dec: FormControl<number | null | undefined>,
 
 		/**
 		 * Decrease
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		inc: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -382,6 +398,7 @@ export namespace MyNS {
 		 * @param {string} date Request date
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} domain Domain includes
 		 * @param {string} zone In Zone
 		 * @param {string} country Hosting Country
@@ -404,6 +421,7 @@ export namespace MyNS {
 		 * @param {string} date Request date
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} domain Domain includes
 		 * @param {string} country Hosting Country
 		 * @param {boolean} isDead Dead or Not, default not
@@ -436,6 +454,7 @@ export namespace MyNS {
 		 * @param {string} date Request date
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} domain Domain includes
 		 * @param {string} country Hosting Country
 		 * @param {boolean} isDead Dead or Not, default not
@@ -457,6 +476,7 @@ export namespace MyNS {
 		 * @param {string} date Request date
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Search_Results} Success
 		 */
 		DomainsUpdatesAddedGetByApi_keyAndDateAndPageAndLimit(api_key: string | null | undefined, date: string | null | undefined, page: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Search_Results> {
@@ -481,6 +501,7 @@ export namespace MyNS {
 		 * @param {string} date Request date
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Search_Results} Success
 		 */
 		DomainsUpdatesDeletedGetByApi_keyAndDateAndPageAndLimit(api_key: string | null | undefined, date: string | null | undefined, page: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Search_Results> {
@@ -522,6 +543,7 @@ export namespace MyNS {
 		 * Get info/stat/
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Zone_stats>} Success
 		 */
 		InfoStatGetByPageAndLimit(page: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Zone_stats>> {
@@ -533,6 +555,7 @@ export namespace MyNS {
 		 * Get info/stat/{zone}
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Zone_stats} Success
 		 */
 		InfoStat_zoneGetByPageAndLimit(page: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Zone_stats> {
@@ -553,6 +576,7 @@ export namespace MyNS {
 		 * Get info/tld/{zone}
 		 * @param {string} page Search page to request
 		 * @param {number} limit Results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Zone_info} Success
 		 */
 		InfoTld_zoneGetByPageAndLimit(page: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Zone_info> {

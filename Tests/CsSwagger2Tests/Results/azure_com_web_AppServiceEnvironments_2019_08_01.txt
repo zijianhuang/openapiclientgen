@@ -1876,7 +1876,10 @@ namespace MyNS
 		/// Description for Get all App Service Environments in a resource group.
 		/// AppServiceEnvironments_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
 		/// <returns>OK</returns>
@@ -1908,7 +1911,10 @@ namespace MyNS
 		/// Description for Get the properties of an App Service Environment.
 		/// AppServiceEnvironments_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -1941,7 +1947,10 @@ namespace MyNS
 		/// Description for Create or update an App Service Environment.
 		/// AppServiceEnvironments_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -1982,7 +1991,10 @@ namespace MyNS
 		/// Description for Delete an App Service Environment.
 		/// AppServiceEnvironments_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="forceDelete">Specify <code>true</code> to force the deletion even if the App Service Environment contains resources. The default is <code>false</code>.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2009,7 +2021,10 @@ namespace MyNS
 		/// Description for Create or update an App Service Environment.
 		/// AppServiceEnvironments_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2050,7 +2065,10 @@ namespace MyNS
 		/// Description for Get the used, available, and total worker capacity an App Service Environment.
 		/// AppServiceEnvironments_ListCapacities subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/capacities/compute
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2083,7 +2101,10 @@ namespace MyNS
 		/// Description for Get IP addresses assigned to an App Service Environment.
 		/// AppServiceEnvironments_GetVipInfo subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/capacities/virtualip
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2116,7 +2137,10 @@ namespace MyNS
 		/// Description for Move an App Service Environment to a different VNET.
 		/// AppServiceEnvironments_ChangeVnet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/changeVirtualNetwork
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2157,7 +2181,10 @@ namespace MyNS
 		/// Description for Get diagnostic information for an App Service Environment.
 		/// AppServiceEnvironments_ListDiagnostics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/diagnostics
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2190,7 +2217,10 @@ namespace MyNS
 		/// Description for Get a diagnostics item for an App Service Environment.
 		/// AppServiceEnvironments_GetDiagnosticsItem subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/diagnostics/{diagnosticsName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="diagnosticsName">Name of the diagnostics item.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2224,7 +2254,10 @@ namespace MyNS
 		/// Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
 		/// AppServiceEnvironments_GetInboundNetworkDependenciesEndpoints subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/inboundNetworkDependenciesEndpoints
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2257,7 +2290,10 @@ namespace MyNS
 		/// Description for Get all multi-role pools.
 		/// AppServiceEnvironments_ListMultiRolePools subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2290,7 +2326,10 @@ namespace MyNS
 		/// Description for Get properties of a multi-role pool.
 		/// AppServiceEnvironments_GetMultiRolePool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2323,7 +2362,10 @@ namespace MyNS
 		/// Description for Create or update a multi-role pool.
 		/// AppServiceEnvironments_CreateOrUpdateMultiRolePool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2364,7 +2406,10 @@ namespace MyNS
 		/// Description for Create or update a multi-role pool.
 		/// AppServiceEnvironments_UpdateMultiRolePool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2405,7 +2450,10 @@ namespace MyNS
 		/// Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
 		/// AppServiceEnvironments_ListMultiRolePoolInstanceMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default/instances/{instance}/metricdefinitions
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="instance">Name of the instance in the multi-role pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2439,7 +2487,10 @@ namespace MyNS
 		/// Description for Get metric definitions for a multi-role pool of an App Service Environment.
 		/// AppServiceEnvironments_ListMultiRoleMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default/metricdefinitions
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2472,7 +2523,10 @@ namespace MyNS
 		/// Description for Get available SKUs for scaling a multi-role pool.
 		/// AppServiceEnvironments_ListMultiRolePoolSkus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default/skus
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2505,7 +2559,10 @@ namespace MyNS
 		/// Description for Get usage metrics for a multi-role pool of an App Service Environment.
 		/// AppServiceEnvironments_ListMultiRoleUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/multiRolePools/default/usages
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2538,7 +2595,10 @@ namespace MyNS
 		/// Description for List all currently running operations on the App Service Environment.
 		/// AppServiceEnvironments_ListOperations subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/operations
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2571,7 +2631,10 @@ namespace MyNS
 		/// Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
 		/// AppServiceEnvironments_GetOutboundNetworkDependenciesEndpoints subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/outboundNetworkDependenciesEndpoints
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2604,7 +2667,10 @@ namespace MyNS
 		/// Description for Reboot all machines in an App Service Environment.
 		/// AppServiceEnvironments_Reboot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/reboot
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2630,7 +2696,10 @@ namespace MyNS
 		/// Description for Resume an App Service Environment.
 		/// AppServiceEnvironments_Resume subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/resume
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2663,7 +2732,10 @@ namespace MyNS
 		/// Description for Get all App Service plans in an App Service Environment.
 		/// AppServiceEnvironments_ListAppServicePlans subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/serverfarms
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2696,7 +2768,10 @@ namespace MyNS
 		/// Description for Get all apps in an App Service Environment.
 		/// AppServiceEnvironments_ListWebApps subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/sites
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="propertiesToInclude">Comma separated list of app properties to include.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2730,7 +2805,10 @@ namespace MyNS
 		/// Description for Suspend an App Service Environment.
 		/// AppServiceEnvironments_Suspend subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/suspend
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2763,7 +2841,10 @@ namespace MyNS
 		/// Description for Get global usage metrics of an App Service Environment.
 		/// AppServiceEnvironments_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/usages
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="filter">Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2797,7 +2878,10 @@ namespace MyNS
 		/// Description for Get all worker pools of an App Service Environment.
 		/// AppServiceEnvironments_ListWorkerPools subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -2830,7 +2914,10 @@ namespace MyNS
 		/// Description for Get properties of a worker pool.
 		/// AppServiceEnvironments_GetWorkerPool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2864,7 +2951,10 @@ namespace MyNS
 		/// Description for Create or update a worker pool.
 		/// AppServiceEnvironments_CreateOrUpdateWorkerPool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2906,7 +2996,10 @@ namespace MyNS
 		/// Description for Create or update a worker pool.
 		/// AppServiceEnvironments_UpdateWorkerPool subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -2948,7 +3041,10 @@ namespace MyNS
 		/// Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
 		/// AppServiceEnvironments_ListWorkerPoolInstanceMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}/instances/{instance}/metricdefinitions
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="instance">Name of the instance in the worker pool.</param>
@@ -2983,7 +3079,10 @@ namespace MyNS
 		/// Description for Get metric definitions for a worker pool of an App Service Environment.
 		/// AppServiceEnvironments_ListWebWorkerMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}/metricdefinitions
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -3017,7 +3116,10 @@ namespace MyNS
 		/// Description for Get available SKUs for scaling a worker pool.
 		/// AppServiceEnvironments_ListWorkerPoolSkus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}/skus
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -3051,7 +3153,10 @@ namespace MyNS
 		/// Description for Get usage metrics for a worker pool of an App Service Environment.
 		/// AppServiceEnvironments_ListWebWorkerUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/workerPools/{workerPoolName}/usages
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service Environment.</param>
 		/// <param name="workerPoolName">Name of the worker pool.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

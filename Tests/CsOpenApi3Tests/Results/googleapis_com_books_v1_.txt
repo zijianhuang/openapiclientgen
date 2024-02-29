@@ -3341,7 +3341,10 @@ namespace MyNS
 		/// <param name="contentVersion">The content version for the requested volume.</param>
 		/// <param name="layerId">The layer ID to limit annotation by.</param>
 		/// <param name="layerIds">The layer ID(s) to limit annotation by.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		/// Maximum: 40
+		// </param>
 		/// <param name="pageToken">The value of the nextToken from the previous page.</param>
 		/// <param name="showDeleted">Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
@@ -3729,12 +3732,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shelf">The bookshelf ID or name retrieve volumes for.</param>
 		/// <param name="country">ISO-3166-1 code to override the IP-based location.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		// </param>
 		/// <param name="projection">Restrict information returned to a set of selected fields.</param>
 		/// <param name="q">Full-text search query string in this bookshelf.</param>
 		/// <param name="showPreorders">Set to true to show pre-ordered books. Defaults to false.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
-		/// <param name="startIndex">Index of the first element to return (starts at 0)</param>
+		/// <param name="startIndex">Index of the first element to return (starts at 0)
+		/// Minimum: 0
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Volumes> Books_mylibrary_bookshelves_volumes_listAsync(string shelf, string country, int maxResults, Books_mylibrary_bookshelves_volumes_listProjection projection, string q, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4235,10 +4242,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="userId">ID of user for whom to retrieve bookshelf volumes.</param>
 		/// <param name="shelf">ID of bookshelf to retrieve volumes.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		// </param>
 		/// <param name="showPreorders">Set to true to show pre-ordered books. Defaults to false.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
-		/// <param name="startIndex">Index of the first element to return (starts at 0)</param>
+		/// <param name="startIndex">Index of the first element to return (starts at 0)
+		/// Minimum: 0
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Volumes> Books_bookshelves_volumes_listAsync(string userId, string shelf, int maxResults, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4278,14 +4289,19 @@ namespace MyNS
 		/// <param name="langRestrict">Restrict results to books with this language code.</param>
 		/// <param name="libraryRestrict">Restrict search to this user's library.</param>
 		/// <param name="maxAllowedMaturityRating">The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 0
+		/// Maximum: 40
+		// </param>
 		/// <param name="orderBy">Sort search results.</param>
 		/// <param name="partner">Restrict and brand results for partner ID.</param>
 		/// <param name="printType">Restrict to books or magazines.</param>
 		/// <param name="projection">Restrict information returned to a set of selected fields.</param>
 		/// <param name="showPreorders">Set to true to show books available for preorder. Defaults to false.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
-		/// <param name="startIndex">Index of the first result to return (starts at 0)</param>
+		/// <param name="startIndex">Index of the first result to return (starts at 0)
+		/// Minimum: 0
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Volumes> Books_volumes_listAsync(string q, Books_volumes_listDownload download, Books_volumes_listFilter filter, string langRestrict, Books_volumes_listLibraryRestrict libraryRestrict, Books_volumes_listMaxAllowedMaturityRating maxAllowedMaturityRating, int maxResults, Books_volumes_listOrderBy orderBy, string partner, Books_volumes_listPrintType printType, Books_mylibrary_bookshelves_volumes_listProjection projection, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4322,10 +4338,15 @@ namespace MyNS
 		/// <param name="acquireMethod">How the book was acquired</param>
 		/// <param name="country">ISO-3166-1 code to override the IP-based location.</param>
 		/// <param name="locale">ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <param name="processingState">The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
-		/// <param name="startIndex">Index of the first result to return (starts at 0)</param>
+		/// <param name="startIndex">Index of the first result to return (starts at 0)
+		/// Minimum: 0
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Volumes> Books_volumes_mybooks_listAsync(string[] acquireMethod, string country, string locale, int maxResults, string[] processingState, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4428,10 +4449,15 @@ namespace MyNS
 		/// Books_volumes_useruploaded_list books/v1/volumes/useruploaded
 		/// </summary>
 		/// <param name="locale">ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.</param>
-		/// <param name="maxResults">Maximum number of results to return.</param>
+		/// <param name="maxResults">Maximum number of results to return.
+		/// Minimum: 0
+		/// Maximum: 40
+		// </param>
 		/// <param name="processingState">The processing state of the user uploaded volumes to be returned.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
-		/// <param name="startIndex">Index of the first result to return (starts at 0)</param>
+		/// <param name="startIndex">Index of the first result to return (starts at 0)
+		/// Minimum: 0
+		// </param>
 		/// <param name="volumeId">The ids of the volumes to be returned. If not specified all that match the processingState are returned.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Volumes> Books_volumes_useruploaded_listAsync(string locale, int maxResults, string[] processingState, string source, int startIndex, string[] volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4549,7 +4575,10 @@ namespace MyNS
 		/// <param name="endOffset">The end offset to end retrieving data from.</param>
 		/// <param name="endPosition">The end position to end retrieving data from.</param>
 		/// <param name="locale">The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="pageToken">The value of the nextToken from the previous page.</param>
 		/// <param name="showDeleted">Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
@@ -4651,9 +4680,14 @@ namespace MyNS
 		/// <param name="annotationDataId">The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.</param>
 		/// <param name="h">The requested pixel height for any images. If height is provided width must also be provided.</param>
 		/// <param name="locale">The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="pageToken">The value of the nextToken from the previous page.</param>
-		/// <param name="scale">The requested scale for the image.</param>
+		/// <param name="scale">The requested scale for the image.
+		/// Minimum: 0
+		// </param>
 		/// <param name="source">String to identify the originator of this request.</param>
 		/// <param name="updatedMax">RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</param>
 		/// <param name="updatedMin">RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</param>
@@ -4698,7 +4732,9 @@ namespace MyNS
 		/// <param name="allowWebDefinitions">For the dictionary layer. Whether or not to allow web definitions.</param>
 		/// <param name="h">The requested pixel height for any images. If height is provided width must also be provided.</param>
 		/// <param name="locale">The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</param>
-		/// <param name="scale">The requested scale for the image.</param>
+		/// <param name="scale">The requested scale for the image.
+		/// Minimum: 0
+		// </param>
 		/// <param name="source">String to identify the originator of this request.</param>
 		/// <param name="w">The requested pixel width for any images. If width is provided height must also be provided.</param>
 		/// <returns>Successful response</returns>
@@ -4736,7 +4772,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="volumeId">The volume to retrieve layers for.</param>
 		/// <param name="contentVersion">The content version for the requested volume.</param>
-		/// <param name="maxResults">Maximum number of results to return</param>
+		/// <param name="maxResults">Maximum number of results to return
+		/// Minimum: 0
+		/// Maximum: 200
+		// </param>
 		/// <param name="pageToken">The value of the nextToken from the previous page.</param>
 		/// <param name="source">String to identify the originator of this request.</param>
 		/// <returns>Successful response</returns>

@@ -139,7 +139,10 @@ export namespace MyNS {
 		/** A feature of an entity mention. */
 		certaintyAssessment?: Feature;
 
-		/** The model's confidence in this entity mention annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this entity mention annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence. */
@@ -164,7 +167,10 @@ export namespace MyNS {
 	/** An entity mention in the document. */
 	export interface EntityMentionFormProperties {
 
-		/** The model's confidence in this entity mention annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this entity mention annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** mention_id uniquely identifies each entity mention in a single response. */
@@ -186,7 +192,10 @@ export namespace MyNS {
 	/** A feature of an entity mention. */
 	export interface Feature {
 
-		/** The model's confidence in this feature annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this feature annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** The value of this feature annotation. Its range depends on the type of the feature. */
@@ -196,7 +205,10 @@ export namespace MyNS {
 	/** A feature of an entity mention. */
 	export interface FeatureFormProperties {
 
-		/** The model's confidence in this feature annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this feature annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The value of this feature annotation. Its range depends on the type of the feature. */
@@ -235,7 +247,10 @@ export namespace MyNS {
 	/** A span of text in the provided document. */
 	export interface TextSpan {
 
-		/** The unicode codepoint index of the beginning of this span. */
+		/**
+		 * The unicode codepoint index of the beginning of this span.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		beginOffset?: number | null;
 
 		/** The original text contained in this span. */
@@ -245,7 +260,10 @@ export namespace MyNS {
 	/** A span of text in the provided document. */
 	export interface TextSpanFormProperties {
 
-		/** The unicode codepoint index of the beginning of this span. */
+		/**
+		 * The unicode codepoint index of the beginning of this span.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		beginOffset: FormControl<number | null | undefined>,
 
 		/** The original text contained in this span. */
@@ -263,7 +281,10 @@ export namespace MyNS {
 	/** Defines directed relationship from one entity mention to another. */
 	export interface EntityMentionRelationship {
 
-		/** The model's confidence in this annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** object_id is the id of the object entity mention. */
@@ -276,7 +297,10 @@ export namespace MyNS {
 	/** Defines directed relationship from one entity mention to another. */
 	export interface EntityMentionRelationshipFormProperties {
 
-		/** The model's confidence in this annotation. A number between 0 and 1. */
+		/**
+		 * The model's confidence in this annotation. A number between 0 and 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** object_id is the id of the object entity mention. */
@@ -1849,7 +1873,10 @@ export namespace MyNS {
 		/** List of resource names of Consent resources. */
 		consentList?: ConsentList;
 
-		/** Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000. */
+		/**
+		 * Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. Token to retrieve the next page of results, or empty to get the first page. */
@@ -1871,7 +1898,10 @@ export namespace MyNS {
 	/** Evaluate a user's Consents for all matching User data mappings. Note: User data mappings are indexed asynchronously, causing slight delays between the time mappings are created or updated and when they are included in EvaluateUserConsents results. */
 	export interface EvaluateUserConsentsRequestFormProperties {
 
-		/** Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000. */
+		/**
+		 * Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. Token to retrieve the next page of results, or empty to get the first page. */
@@ -2555,10 +2585,16 @@ export namespace MyNS {
 	/** A (sub) field of a type. */
 	export interface Field {
 
-		/** The maximum number of times this field can be repeated. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this field can be repeated. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs?: number | null;
 
-		/** The minimum number of times this field must be present/repeated. */
+		/**
+		 * The minimum number of times this field must be present/repeated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs?: number | null;
 
 		/** The name of the field. For example, "PID-1" or just "1". */
@@ -2574,10 +2610,16 @@ export namespace MyNS {
 	/** A (sub) field of a type. */
 	export interface FieldFormProperties {
 
-		/** The maximum number of times this field can be repeated. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this field can be repeated. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs: FormControl<number | null | undefined>,
 
-		/** The minimum number of times this field must be present/repeated. */
+		/**
+		 * The minimum number of times this field must be present/repeated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs: FormControl<number | null | undefined>,
 
 		/** The name of the field. For example, "PID-1" or just "1". */
@@ -2739,13 +2781,19 @@ export namespace MyNS {
 		/** True indicates that this is a choice group, meaning that only one of its segments can exist in a given message. */
 		choice?: boolean | null;
 
-		/** The maximum number of times this group can be repeated. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this group can be repeated. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs?: number | null;
 
 		/** Nested groups and/or segments. */
 		members?: Array<GroupOrSegment>;
 
-		/** The minimum number of times this group must be present/repeated. */
+		/**
+		 * The minimum number of times this group must be present/repeated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs?: number | null;
 
 		/** The name of this group. For example, "ORDER_DETAIL". */
@@ -2758,10 +2806,16 @@ export namespace MyNS {
 		/** True indicates that this is a choice group, meaning that only one of its segments can exist in a given message. */
 		choice: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of times this group can be repeated. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this group can be repeated. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs: FormControl<number | null | undefined>,
 
-		/** The minimum number of times this group must be present/repeated. */
+		/**
+		 * The minimum number of times this group must be present/repeated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs: FormControl<number | null | undefined>,
 
 		/** The name of this group. For example, "ORDER_DETAIL". */
@@ -2781,10 +2835,16 @@ export namespace MyNS {
 	/** An HL7v2 Segment. */
 	export interface SchemaSegment {
 
-		/** The maximum number of times this segment can be present in this group. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this segment can be present in this group. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs?: number | null;
 
-		/** The minimum number of times this segment can be present in this group. */
+		/**
+		 * The minimum number of times this segment can be present in this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs?: number | null;
 
 		/** The Segment type. For example, "PID". */
@@ -2794,10 +2854,16 @@ export namespace MyNS {
 	/** An HL7v2 Segment. */
 	export interface SchemaSegmentFormProperties {
 
-		/** The maximum number of times this segment can be present in this group. 0 or -1 means unbounded. */
+		/**
+		 * The maximum number of times this segment can be present in this group. 0 or -1 means unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOccurs: FormControl<number | null | undefined>,
 
-		/** The minimum number of times this segment can be present in this group. */
+		/**
+		 * The minimum number of times this segment can be present in this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minOccurs: FormControl<number | null | undefined>,
 
 		/** The Segment type. For example, "PID". */
@@ -3670,7 +3736,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3683,7 +3752,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3869,7 +3941,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3879,7 +3954,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -4232,6 +4310,7 @@ export namespace MyNS {
 		 * Get v1/{name}/$everything
 		 * @param {string} name Name of the `Patient` resource for which the information is required.
 		 * @param {number} _count Maximum number of resources in a page. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _page_token Used to retrieve the next or previous page of results when using pagination. Set `_page_token` to the value of _page_token set in next or previous page links' url. Next and previous page are returned in the response bundle's links field, where `link.relation` is "previous" or "next". Omit `_page_token` if no previous request has been made.
 		 * @param {string} _since If provided, only resources updated after this time are returned. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone.
 		 * @param {string} _type String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are returned. Specifying multiple `_type` parameters isn't supported. For example, the result of `_type=Observation&_type=Encounter` is undefined. Use `_type=Observation,Encounter` instead.
@@ -4259,6 +4338,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the resource to retrieve.
 		 * @param {string} _at Only include resource versions that were current at some point during the time period specified in the date time value. The date parameter format is yyyy-mm-ddThh:mm:ss[Z|(+|-)hh:mm] Clients may specify any of the following: * An entire year: `_at=2019` * An entire month: `_at=2019-01` * A specific day: `_at=2019-01-20` * A specific second: `_at=2018-12-31T23:59:58Z`
 		 * @param {number} _count The maximum number of search results on a page. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _page_token Used to retrieve the first, previous, next, or last page of resource versions when using pagination. Value should be set to the value of `_page_token` set in next or previous page links' URLs. Next and previous page are returned in the response bundle's links field, where `link.relation` is "previous" or "next". Omit `_page_token` if no previous request has been made.
 		 * @param {string} _since Only include resource versions that were created at or after the given instant in time. The instant in time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz (for example 2015-02-07T13:28:17.239+02:00 or 2017-01-01T00:00:00Z). The time must be specified to the second and include a time zone.
 		 * @return {HttpBody} Successful response
@@ -4283,6 +4363,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -4296,6 +4377,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -4399,6 +4481,7 @@ export namespace MyNS {
 		 * @param {string} name Required. The resource name of the Consent to retrieve revisions for.
 		 * @param {string} filter Optional. Restricts the revisions returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Fields available for filtering are: - user_id. For example, `filter='user_id="user123"'`. - consent_artifact - state - revision_create_time - metadata. For example, `filter=Metadata(\"testkey\")=\"value\"` or `filter=HasMetadata(\"testkey\")`.
 		 * @param {number} pageSize Optional. Limit on the number of revisions to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Token to retrieve the next page of results or empty if there are no more results in the list.
 		 * @return {ListConsentRevisionsResponse} Successful response
 		 */
@@ -4442,6 +4525,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the consent store to retrieve Attribute definitions from.
 		 * @param {string} filter Optional. Restricts the attributes returned to those matching a filter. The only field available for filtering is `category`. For example, `filter=category=\"REQUEST\"`.
 		 * @param {number} pageSize Optional. Limit on the number of Attribute definitions to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Token to retrieve the next page of results or empty to get the first page.
 		 * @return {ListAttributeDefinitionsResponse} Successful response
 		 */
@@ -4466,6 +4550,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the consent store to retrieve consent artifacts from.
 		 * @param {string} filter Optional. Restricts the artifacts returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. The fields available for filtering are: - user_id. For example, `filter=user_id=\"user123\"`. - consent_content_version - metadata. For example, `filter=Metadata(\"testkey\")=\"value\"` or `filter=HasMetadata(\"testkey\")`.
 		 * @param {number} pageSize Optional. Limit on the number of consent artifacts to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from the previous List request, if any.
 		 * @return {ListConsentArtifactsResponse} Successful response
 		 */
@@ -4489,6 +4574,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the dataset.
 		 * @param {string} filter Optional. Restricts the stores returned to those matching a filter. Only filtering on labels is supported. For example, `filter=labels.key=value`.
 		 * @param {number} pageSize Optional. Limit on the number of consent stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Token to retrieve the next page of results, or empty to get the first page.
 		 * @return {ListConsentStoresResponse} Successful response
 		 */
@@ -4513,6 +4599,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the consent store to retrieve Consents from.
 		 * @param {string} filter Optional. Restricts the Consents returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. The fields available for filtering are: - user_id. For example, `filter='user_id="user123"'`. - consent_artifact - state - revision_create_time - metadata. For example, `filter=Metadata(\"testkey\")=\"value\"` or `filter=HasMetadata(\"testkey\")`.
 		 * @param {number} pageSize Optional. Limit on the number of Consents to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token value returned from the previous List request, if any.
 		 * @return {ListConsentsResponse} Successful response
 		 */
@@ -4535,6 +4622,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/datasets
 		 * @param {string} parent The name of the project whose datasets should be listed. For example, `projects/{project_id}/locations/{location_id}`.
 		 * @param {number} pageSize The maximum number of items to return. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListDatasetsResponse} Successful response
 		 */
@@ -4559,6 +4647,7 @@ export namespace MyNS {
 		 * @param {string} parent Name of the dataset.
 		 * @param {string} filter Restricts stores returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Only filtering on labels is supported. For example, `labels.key=value`.
 		 * @param {number} pageSize Limit on the number of DICOM stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {ListDicomStoresResponse} Successful response
 		 */
@@ -4703,6 +4792,7 @@ export namespace MyNS {
 		 * @param {string} parent Name of the dataset.
 		 * @param {string} filter Restricts stores returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Only filtering on labels is supported, for example `labels.key=value`.
 		 * @param {number} pageSize Limit on the number of FHIR stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {ListFhirStoresResponse} Successful response
 		 */
@@ -4727,6 +4817,7 @@ export namespace MyNS {
 		 * @param {string} parent Name of the dataset.
 		 * @param {string} filter Restricts stores returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Only filtering on labels is supported. For example, `labels.key=value`.
 		 * @param {number} pageSize Limit on the number of HL7v2 stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {ListHl7V2StoresResponse} Successful response
 		 */
@@ -4752,6 +4843,7 @@ export namespace MyNS {
 		 * @param {string} filter Restricts messages returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Fields/functions available for filtering are: * `message_type`, from the MSH-9.1 field. For example, `NOT message_type = "ADT"`. * `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in the dataset's time_zone, from the MSH-7 segment. For example, `send_date < "2017-01-02"`. * `send_time`, the timestamp when the message was sent, using the RFC3339 time format for comparisons, from the MSH-7 segment. For example, `send_time < "2017-01-02T00:00:00-05:00"`. * `create_time`, the timestamp when the message was created in the HL7v2 store. Use the RFC3339 time format for comparisons. For example, `create_time < "2017-01-02T00:00:00-05:00"`. * `send_facility`, the care center that the message came from, from the MSH-4 segment. For example, `send_facility = "ABC"`. * `PatientId(value, type)`, which matches if the message lists a patient having an ID of the given value and type in the PID-2, PID-3, or PID-4 segments. For example, `PatientId("123456", "MRN")`. * `labels.x`, a string value of the label with key `x` as set using the Message.labels map. For example, `labels."priority"="high"`. The operator `:*` can be used to assert the existence of a label. For example, `labels."priority":*`.
 		 * @param {string} orderBy Orders messages returned by the specified order_by clause. Syntax: https://cloud.google.com/apis/design/design_patterns#sorting_order Fields available for ordering are: * `send_time`
 		 * @param {number} pageSize Limit on the number of messages to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @param {GcsDestinationMessageView} view Specifies the parts of the Message to return in the response. When unspecified, equivalent to BASIC. Setting this to anything other than BASIC with a `page_size` larger than the default can generate a large response, which impacts the performance of this method.
 		 * @return {ListMessagesResponse} Successful response
@@ -4786,6 +4878,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the consent store to retrieve User data mappings from.
 		 * @param {string} filter Optional. Restricts the User data mappings returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `"query text"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `"Comment = great"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. The fields available for filtering are: - data_id - user_id. For example, `filter=user_id=\"user123\"`. - archived - archive_time
 		 * @param {number} pageSize Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Token to retrieve the next page of results, or empty to get the first page.
 		 * @return {ListUserDataMappingsResponse} Successful response
 		 */
@@ -4808,6 +4901,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Healthcare_projects_locations_datasets_hl7V2Stores_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

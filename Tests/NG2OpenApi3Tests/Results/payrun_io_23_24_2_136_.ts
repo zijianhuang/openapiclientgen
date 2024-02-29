@@ -16,13 +16,19 @@ export namespace MyNS {
 
 	export interface AEAssessmentAEAssessment1 {
 
-		/** The a e assessments' age */
+		/**
+		 * The a e assessments' age
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Age?: number | null;
 
 		/** The a e assessments' assessment code */
 		AssessmentCode?: AEAssessmentAEAssessment1AssessmentCode | null;
 
-		/** The a e assessments' assessment date */
+		/**
+		 * The a e assessments' assessment date
+		 * Type: DateOnly
+		 */
 		AssessmentDate?: Date | null;
 
 		/** The a e assessments' assessment event */
@@ -37,36 +43,63 @@ export namespace MyNS {
 		/** The a e assessments' is member of alternative pension scheme */
 		IsMemberOfAlternativePensionScheme?: boolean | null;
 
-		/** The a e assessments' opt out window end date */
+		/**
+		 * The a e assessments' opt out window end date
+		 * Type: DateOnly
+		 */
 		OptOutWindowEndDate?: Date | null;
 
-		/** The a e assessments' qualifying earnings */
+		/**
+		 * The a e assessments' qualifying earnings
+		 * Type: double
+		 */
 		QualifyingEarnings?: number | null;
 
-		/** The a e assessments' reenrolment date */
+		/**
+		 * The a e assessments' reenrolment date
+		 * Type: DateOnly
+		 */
 		ReenrolmentDate?: Date | null;
 
-		/** The a e assessments' state pension age */
+		/**
+		 * The a e assessments' state pension age
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StatePensionAge?: number | null;
 
-		/** The a e assessments' state pension date */
+		/**
+		 * The a e assessments' state pension date
+		 * Type: DateOnly
+		 */
 		StatePensionDate?: Date | null;
 
-		/** The a e assessments' tax period */
+		/**
+		 * The a e assessments' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod?: number | null;
 
-		/** The a e assessments' tax year */
+		/**
+		 * The a e assessments' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 	}
 	export interface AEAssessmentAEAssessment1FormProperties {
 
-		/** The a e assessments' age */
+		/**
+		 * The a e assessments' age
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Age: FormControl<number | null | undefined>,
 
 		/** The a e assessments' assessment code */
 		AssessmentCode: FormControl<AEAssessmentAEAssessment1AssessmentCode | null | undefined>,
 
-		/** The a e assessments' assessment date */
+		/**
+		 * The a e assessments' assessment date
+		 * Type: DateOnly
+		 */
 		AssessmentDate: FormControl<Date | null | undefined>,
 
 		/** The a e assessments' assessment event */
@@ -81,25 +114,46 @@ export namespace MyNS {
 		/** The a e assessments' is member of alternative pension scheme */
 		IsMemberOfAlternativePensionScheme: FormControl<boolean | null | undefined>,
 
-		/** The a e assessments' opt out window end date */
+		/**
+		 * The a e assessments' opt out window end date
+		 * Type: DateOnly
+		 */
 		OptOutWindowEndDate: FormControl<Date | null | undefined>,
 
-		/** The a e assessments' qualifying earnings */
+		/**
+		 * The a e assessments' qualifying earnings
+		 * Type: double
+		 */
 		QualifyingEarnings: FormControl<number | null | undefined>,
 
-		/** The a e assessments' reenrolment date */
+		/**
+		 * The a e assessments' reenrolment date
+		 * Type: DateOnly
+		 */
 		ReenrolmentDate: FormControl<Date | null | undefined>,
 
-		/** The a e assessments' state pension age */
+		/**
+		 * The a e assessments' state pension age
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StatePensionAge: FormControl<number | null | undefined>,
 
-		/** The a e assessments' state pension date */
+		/**
+		 * The a e assessments' state pension date
+		 * Type: DateOnly
+		 */
 		StatePensionDate: FormControl<Date | null | undefined>,
 
-		/** The a e assessments' tax period */
+		/**
+		 * The a e assessments' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod: FormControl<number | null | undefined>,
 
-		/** The a e assessments' tax year */
+		/**
+		 * The a e assessments' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 	}
 	export function CreateAEAssessmentAEAssessment1FormGroup() {
@@ -291,28 +345,49 @@ export namespace MyNS {
 		/** The cis instructions' pay frequency */
 		PayFrequency?: CisInstructionCisInstruction1PayFrequency | null;
 
-		/** The cis instructions' period end */
+		/**
+		 * The cis instructions' period end
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PeriodEnd?: number | null;
 
-		/** The cis instructions' period start */
+		/**
+		 * The cis instructions' period start
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PeriodStart?: number | null;
 
-		/** The cis instructions' tax year end */
+		/**
+		 * The cis instructions' tax year end
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYearEnd?: number | null;
 
-		/** The cis instructions' tax year start */
+		/**
+		 * The cis instructions' tax year start
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYearStart?: number | null;
 
 		/** The cis instructions' u o m */
 		UOM?: CisInstructionCisInstruction1UOM | null;
 
-		/** The cis instructions' units */
+		/**
+		 * The cis instructions' units
+		 * Type: double
+		 */
 		Units?: number | null;
 
-		/** The cis instructions' v a t */
+		/**
+		 * The cis instructions' v a t
+		 * Type: double
+		 */
 		VAT?: number | null;
 
-		/** The cis instructions' value */
+		/**
+		 * The cis instructions' value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 	export interface CisInstructionCisInstruction1FormProperties {
@@ -329,28 +404,49 @@ export namespace MyNS {
 		/** The cis instructions' pay frequency */
 		PayFrequency: FormControl<CisInstructionCisInstruction1PayFrequency | null | undefined>,
 
-		/** The cis instructions' period end */
+		/**
+		 * The cis instructions' period end
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PeriodEnd: FormControl<number | null | undefined>,
 
-		/** The cis instructions' period start */
+		/**
+		 * The cis instructions' period start
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PeriodStart: FormControl<number | null | undefined>,
 
-		/** The cis instructions' tax year end */
+		/**
+		 * The cis instructions' tax year end
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYearEnd: FormControl<number | null | undefined>,
 
-		/** The cis instructions' tax year start */
+		/**
+		 * The cis instructions' tax year start
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYearStart: FormControl<number | null | undefined>,
 
 		/** The cis instructions' u o m */
 		UOM: FormControl<CisInstructionCisInstruction1UOM | null | undefined>,
 
-		/** The cis instructions' units */
+		/**
+		 * The cis instructions' units
+		 * Type: double
+		 */
 		Units: FormControl<number | null | undefined>,
 
-		/** The cis instructions' v a t */
+		/**
+		 * The cis instructions' v a t
+		 * Type: double
+		 */
 		VAT: FormControl<number | null | undefined>,
 
-		/** The cis instructions' value */
+		/**
+		 * The cis instructions' value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateCisInstructionCisInstruction1FormGroup() {
@@ -495,7 +591,10 @@ export namespace MyNS {
 
 	export interface CisLineCisLine1 {
 
-		/** The cis lines' cis deduction */
+		/**
+		 * The cis lines' cis deduction
+		 * Type: double
+		 */
 		CisDeduction?: number | null;
 
 		/** The cis lines' cis line type */
@@ -507,7 +606,10 @@ export namespace MyNS {
 		/** The cis lines' generated */
 		Generated?: Date | null;
 
-		/** The cis lines' gross pay */
+		/**
+		 * The cis lines' gross pay
+		 * Type: double
+		 */
 		GrossPay?: number | null;
 
 		/** The cis lines' nominal code key */
@@ -516,33 +618,54 @@ export namespace MyNS {
 		/** The cis lines' pay frequency */
 		PayFrequency?: CisInstructionCisInstruction1PayFrequency | null;
 
-		/** The cis lines' tax month */
+		/**
+		 * The cis lines' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth?: number | null;
 
-		/** The cis lines' tax period */
+		/**
+		 * The cis lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod?: number | null;
 
 		/** The cis lines' tax treatment */
 		TaxTreatment?: CisLineCisLine1TaxTreatment | null;
 
-		/** The cis lines' tax year */
+		/**
+		 * The cis lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
 		/** The cis lines' u o m */
 		UOM?: CisInstructionCisInstruction1UOM | null;
 
-		/** The cis lines' unit rate */
+		/**
+		 * The cis lines' unit rate
+		 * Type: double
+		 */
 		UnitRate?: number | null;
 
-		/** The cis lines' units */
+		/**
+		 * The cis lines' units
+		 * Type: double
+		 */
 		Units?: number | null;
 
-		/** The cis lines' v a t */
+		/**
+		 * The cis lines' v a t
+		 * Type: double
+		 */
 		VAT?: number | null;
 	}
 	export interface CisLineCisLine1FormProperties {
 
-		/** The cis lines' cis deduction */
+		/**
+		 * The cis lines' cis deduction
+		 * Type: double
+		 */
 		CisDeduction: FormControl<number | null | undefined>,
 
 		/** The cis lines' cis line type */
@@ -554,7 +677,10 @@ export namespace MyNS {
 		/** The cis lines' generated */
 		Generated: FormControl<Date | null | undefined>,
 
-		/** The cis lines' gross pay */
+		/**
+		 * The cis lines' gross pay
+		 * Type: double
+		 */
 		GrossPay: FormControl<number | null | undefined>,
 
 		/** The cis lines' nominal code key */
@@ -563,28 +689,46 @@ export namespace MyNS {
 		/** The cis lines' pay frequency */
 		PayFrequency: FormControl<CisInstructionCisInstruction1PayFrequency | null | undefined>,
 
-		/** The cis lines' tax month */
+		/**
+		 * The cis lines' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth: FormControl<number | null | undefined>,
 
-		/** The cis lines' tax period */
+		/**
+		 * The cis lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod: FormControl<number | null | undefined>,
 
 		/** The cis lines' tax treatment */
 		TaxTreatment: FormControl<CisLineCisLine1TaxTreatment | null | undefined>,
 
-		/** The cis lines' tax year */
+		/**
+		 * The cis lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
 		/** The cis lines' u o m */
 		UOM: FormControl<CisInstructionCisInstruction1UOM | null | undefined>,
 
-		/** The cis lines' unit rate */
+		/**
+		 * The cis lines' unit rate
+		 * Type: double
+		 */
 		UnitRate: FormControl<number | null | undefined>,
 
-		/** The cis lines' units */
+		/**
+		 * The cis lines' units
+		 * Type: double
+		 */
 		Units: FormControl<number | null | undefined>,
 
-		/** The cis lines' v a t */
+		/**
+		 * The cis lines' v a t
+		 * Type: double
+		 */
 		VAT: FormControl<number | null | undefined>,
 	}
 	export function CreateCisLineCisLine1FormGroup() {
@@ -711,7 +855,10 @@ export namespace MyNS {
 		/** The cis transactions' response data */
 		ResponseData?: string | null;
 
-		/** The cis transactions' tax year */
+		/**
+		 * The cis transactions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
 		/** The cis transactions' timestamp */
@@ -734,7 +881,10 @@ export namespace MyNS {
 		/** The cis transactions' response data */
 		ResponseData: FormControl<string | null | undefined>,
 
-		/** The cis transactions' tax year */
+		/**
+		 * The cis transactions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
 		/** The cis transactions' timestamp */
@@ -916,7 +1066,10 @@ export namespace MyNS {
 		/** The dps job instructions' employer */
 		Employer?: DpsJobInstructionDpsJobInstruction1Employer;
 
-		/** The dps job instructions' from date */
+		/**
+		 * The dps job instructions' from date
+		 * Type: DateOnly
+		 */
 		FromDate?: Date | null;
 
 		/** The dps job instructions' holding date */
@@ -936,7 +1089,10 @@ export namespace MyNS {
 		/** The dps job instructions' apply */
 		Apply: FormControl<boolean | null | undefined>,
 
-		/** The dps job instructions' from date */
+		/**
+		 * The dps job instructions' from date
+		 * Type: DateOnly
+		 */
 		FromDate: FormControl<Date | null | undefined>,
 
 		/** The dps job instructions' holding date */
@@ -1055,7 +1211,10 @@ export namespace MyNS {
 		/** The dps messages' form type */
 		FormType?: string | null;
 
-		/** The dps messages' issue date */
+		/**
+		 * The dps messages' issue date
+		 * Type: DateOnly
+		 */
 		IssueDate?: Date | null;
 
 		/** The dps messages' last updated */
@@ -1076,7 +1235,10 @@ export namespace MyNS {
 		/** The dps messages' retrieve date */
 		RetrieveDate?: Date | null;
 
-		/** The dps messages' sequence number */
+		/**
+		 * The dps messages' sequence number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SequenceNumber?: number | null;
 	}
 	export interface DpsMessageDpsMessage1FormProperties {
@@ -1084,7 +1246,10 @@ export namespace MyNS {
 		/** The dps messages' form type */
 		FormType: FormControl<string | null | undefined>,
 
-		/** The dps messages' issue date */
+		/**
+		 * The dps messages' issue date
+		 * Type: DateOnly
+		 */
 		IssueDate: FormControl<Date | null | undefined>,
 
 		/** The dps messages' last updated */
@@ -1105,7 +1270,10 @@ export namespace MyNS {
 		/** The dps messages' retrieve date */
 		RetrieveDate: FormControl<Date | null | undefined>,
 
-		/** The dps messages' sequence number */
+		/**
+		 * The dps messages' sequence number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SequenceNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateDpsMessageDpsMessage1FormGroup() {
@@ -1141,13 +1309,19 @@ export namespace MyNS {
 		/** The employees' a e assessment override */
 		AEAssessmentOverride?: AEAssessmentAEAssessment1AssessmentOverride | null;
 
-		/** The employees' a e assessment override date */
+		/**
+		 * The employees' a e assessment override date
+		 * Type: DateOnly
+		 */
 		AEAssessmentOverrideDate?: Date | null;
 
 		/** The employees' a e exclusion reason code */
 		AEExclusionReasonCode?: EmployeeEmployee1AEExclusionReasonCode | null;
 
-		/** The employees' a e postponement date */
+		/**
+		 * The employees' a e postponement date
+		 * Type: DateOnly
+		 */
 		AEPostponementDate?: Date | null;
 
 		/** The employees' address */
@@ -1159,13 +1333,19 @@ export namespace MyNS {
 		/** The employees' code */
 		Code?: string | null;
 
-		/** The employees' date of birth */
+		/**
+		 * The employees' date of birth
+		 * Type: DateOnly
+		 */
 		DateOfBirth?: Date | null;
 
 		/** The employees' deactivated */
 		Deactivated?: boolean | null;
 
-		/** The employees' directorship appointment date */
+		/**
+		 * The employees' directorship appointment date
+		 * Type: DateOnly
+		 */
 		DirectorshipAppointmentDate?: Date | null;
 
 		/** The employees' e e a citizen */
@@ -1174,7 +1354,10 @@ export namespace MyNS {
 		/** The employees' e p m6 */
 		EPM6?: boolean | null;
 
-		/** The employees' effective date */
+		/**
+		 * The employees' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The employees' employee partner */
@@ -1186,7 +1369,10 @@ export namespace MyNS {
 		/** The employees' gender */
 		Gender?: EmployeeEmployee1Gender | null;
 
-		/** The employees' hours per week */
+		/**
+		 * The employees' hours per week
+		 * Type: double
+		 */
 		HoursPerWeek?: number | null;
 
 		/** The employees' initials */
@@ -1204,7 +1390,10 @@ export namespace MyNS {
 		/** The employees' leaver reason */
 		LeaverReason?: EmployeeEmployee1LeaverReason | null;
 
-		/** The employees' leaving date */
+		/**
+		 * The employees' leaving date
+		 * Type: DateOnly
+		 */
 		LeavingDate?: Date | null;
 
 		/** The employees' marital status */
@@ -1216,7 +1405,10 @@ export namespace MyNS {
 		/** The employees' middle name */
 		MiddleName?: string | null;
 
-		/** The employees' next revision date */
+		/**
+		 * The employees' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The employees' ni number */
@@ -1231,7 +1423,10 @@ export namespace MyNS {
 		/** The employees' on strike */
 		OnStrike?: boolean | null;
 
-		/** The employees' p45 issued date */
+		/**
+		 * The employees' p45 issued date
+		 * Type: DateOnly
+		 */
 		P45IssuedDate?: Date | null;
 
 		/** The employees' passport number */
@@ -1249,7 +1444,10 @@ export namespace MyNS {
 		/** The employees' region */
 		Region?: EmployeeEmployee1Region | null;
 
-		/** The employees' revision */
+		/**
+		 * The employees' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The employees' rule exclusions */
@@ -1258,7 +1456,10 @@ export namespace MyNS {
 		/** The employees' seconded */
 		Seconded?: EmployeeEmployee1Seconded | null;
 
-		/** The employees' start date */
+		/**
+		 * The employees' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 
 		/** The employees' starter declaration */
@@ -1270,7 +1471,10 @@ export namespace MyNS {
 		/** The employees' title */
 		Title?: string | null;
 
-		/** The employees' veteran period start date */
+		/**
+		 * The employees' veteran period start date
+		 * Type: DateOnly
+		 */
 		VeteranPeriodStartDate?: Date | null;
 
 		/** The employees' working week */
@@ -1281,25 +1485,37 @@ export namespace MyNS {
 		/** The employees' a e assessment override */
 		AEAssessmentOverride: FormControl<AEAssessmentAEAssessment1AssessmentOverride | null | undefined>,
 
-		/** The employees' a e assessment override date */
+		/**
+		 * The employees' a e assessment override date
+		 * Type: DateOnly
+		 */
 		AEAssessmentOverrideDate: FormControl<Date | null | undefined>,
 
 		/** The employees' a e exclusion reason code */
 		AEExclusionReasonCode: FormControl<EmployeeEmployee1AEExclusionReasonCode | null | undefined>,
 
-		/** The employees' a e postponement date */
+		/**
+		 * The employees' a e postponement date
+		 * Type: DateOnly
+		 */
 		AEPostponementDate: FormControl<Date | null | undefined>,
 
 		/** The employees' code */
 		Code: FormControl<string | null | undefined>,
 
-		/** The employees' date of birth */
+		/**
+		 * The employees' date of birth
+		 * Type: DateOnly
+		 */
 		DateOfBirth: FormControl<Date | null | undefined>,
 
 		/** The employees' deactivated */
 		Deactivated: FormControl<boolean | null | undefined>,
 
-		/** The employees' directorship appointment date */
+		/**
+		 * The employees' directorship appointment date
+		 * Type: DateOnly
+		 */
 		DirectorshipAppointmentDate: FormControl<Date | null | undefined>,
 
 		/** The employees' e e a citizen */
@@ -1308,7 +1524,10 @@ export namespace MyNS {
 		/** The employees' e p m6 */
 		EPM6: FormControl<boolean | null | undefined>,
 
-		/** The employees' effective date */
+		/**
+		 * The employees' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The employees' the first name */
@@ -1317,7 +1536,10 @@ export namespace MyNS {
 		/** The employees' gender */
 		Gender: FormControl<EmployeeEmployee1Gender | null | undefined>,
 
-		/** The employees' hours per week */
+		/**
+		 * The employees' hours per week
+		 * Type: double
+		 */
 		HoursPerWeek: FormControl<number | null | undefined>,
 
 		/** The employees' initials */
@@ -1335,7 +1557,10 @@ export namespace MyNS {
 		/** The employees' leaver reason */
 		LeaverReason: FormControl<EmployeeEmployee1LeaverReason | null | undefined>,
 
-		/** The employees' leaving date */
+		/**
+		 * The employees' leaving date
+		 * Type: DateOnly
+		 */
 		LeavingDate: FormControl<Date | null | undefined>,
 
 		/** The employees' marital status */
@@ -1347,7 +1572,10 @@ export namespace MyNS {
 		/** The employees' middle name */
 		MiddleName: FormControl<string | null | undefined>,
 
-		/** The employees' next revision date */
+		/**
+		 * The employees' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The employees' ni number */
@@ -1362,7 +1590,10 @@ export namespace MyNS {
 		/** The employees' on strike */
 		OnStrike: FormControl<boolean | null | undefined>,
 
-		/** The employees' p45 issued date */
+		/**
+		 * The employees' p45 issued date
+		 * Type: DateOnly
+		 */
 		P45IssuedDate: FormControl<Date | null | undefined>,
 
 		/** The employees' passport number */
@@ -1377,7 +1608,10 @@ export namespace MyNS {
 		/** The employees' region */
 		Region: FormControl<EmployeeEmployee1Region | null | undefined>,
 
-		/** The employees' revision */
+		/**
+		 * The employees' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The employees' rule exclusions */
@@ -1386,7 +1620,10 @@ export namespace MyNS {
 		/** The employees' seconded */
 		Seconded: FormControl<EmployeeEmployee1Seconded | null | undefined>,
 
-		/** The employees' start date */
+		/**
+		 * The employees' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 
 		/** The employees' starter declaration */
@@ -1398,7 +1635,10 @@ export namespace MyNS {
 		/** The employees' title */
 		Title: FormControl<string | null | undefined>,
 
-		/** The employees' veteran period start date */
+		/**
+		 * The employees' veteran period start date
+		 * Type: DateOnly
+		 */
 		VeteranPeriodStartDate: FormControl<Date | null | undefined>,
 
 		/** The employees' working week */
@@ -1707,7 +1947,10 @@ export namespace MyNS {
 		/** The employee summarys' code */
 		Code?: string | null;
 
-		/** The employee summarys' effective date */
+		/**
+		 * The employee summarys' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The employee summarys' employee link */
@@ -1725,25 +1968,40 @@ export namespace MyNS {
 		/** The employee summarys' last name */
 		LastName?: string | null;
 
-		/** The employee summarys' last pay day */
+		/**
+		 * The employee summarys' last pay day
+		 * Type: DateOnly
+		 */
 		LastPayDay?: Date | null;
 
 		/** The employee summarys' last pay day schedule */
 		LastPayDaySchedule?: string | null;
 
-		/** The employee summarys' last pay day tax year */
+		/**
+		 * The employee summarys' last pay day tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LastPayDayTaxYear?: number | null;
 
-		/** The employee summarys' leaving date */
+		/**
+		 * The employee summarys' leaving date
+		 * Type: DateOnly
+		 */
 		LeavingDate?: Date | null;
 
 		/** The employee summarys' meta data */
 		MetaData?: string | null;
 
-		/** The employee summarys' next pay day */
+		/**
+		 * The employee summarys' next pay day
+		 * Type: DateOnly
+		 */
 		NextPayDay?: Date | null;
 
-		/** The employee summarys' next revision date */
+		/**
+		 * The employee summarys' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The employee summarys' ni letter */
@@ -1758,10 +2016,16 @@ export namespace MyNS {
 		/** The employee summarys' pay schedule name */
 		PayScheduleName?: string | null;
 
-		/** The employee summarys' revision */
+		/**
+		 * The employee summarys' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
-		/** The employee summarys' start date */
+		/**
+		 * The employee summarys' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 
 		/** The employee summarys' status */
@@ -1784,7 +2048,10 @@ export namespace MyNS {
 		/** The employee summarys' code */
 		Code: FormControl<string | null | undefined>,
 
-		/** The employee summarys' effective date */
+		/**
+		 * The employee summarys' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The employee summarys' first name */
@@ -1796,25 +2063,40 @@ export namespace MyNS {
 		/** The employee summarys' last name */
 		LastName: FormControl<string | null | undefined>,
 
-		/** The employee summarys' last pay day */
+		/**
+		 * The employee summarys' last pay day
+		 * Type: DateOnly
+		 */
 		LastPayDay: FormControl<Date | null | undefined>,
 
 		/** The employee summarys' last pay day schedule */
 		LastPayDaySchedule: FormControl<string | null | undefined>,
 
-		/** The employee summarys' last pay day tax year */
+		/**
+		 * The employee summarys' last pay day tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LastPayDayTaxYear: FormControl<number | null | undefined>,
 
-		/** The employee summarys' leaving date */
+		/**
+		 * The employee summarys' leaving date
+		 * Type: DateOnly
+		 */
 		LeavingDate: FormControl<Date | null | undefined>,
 
 		/** The employee summarys' meta data */
 		MetaData: FormControl<string | null | undefined>,
 
-		/** The employee summarys' next pay day */
+		/**
+		 * The employee summarys' next pay day
+		 * Type: DateOnly
+		 */
 		NextPayDay: FormControl<Date | null | undefined>,
 
-		/** The employee summarys' next revision date */
+		/**
+		 * The employee summarys' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The employee summarys' ni letter */
@@ -1826,10 +2108,16 @@ export namespace MyNS {
 		/** The employee summarys' pay schedule name */
 		PayScheduleName: FormControl<string | null | undefined>,
 
-		/** The employee summarys' revision */
+		/**
+		 * The employee summarys' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
-		/** The employee summarys' start date */
+		/**
+		 * The employee summarys' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 
 		/** The employee summarys' status */
@@ -1986,7 +2274,10 @@ export namespace MyNS {
 		/** The employers' address */
 		Address?: EmployerEmployer1Address;
 
-		/** The employers' apprenticeship levy allowance */
+		/**
+		 * The employers' apprenticeship levy allowance
+		 * Type: double
+		 */
 		ApprenticeshipLevyAllowance?: number | null;
 
 		/** The employers' auto enrolment */
@@ -2007,7 +2298,10 @@ export namespace MyNS {
 		/** The employers' claim small employer relief */
 		ClaimSmallEmployerRelief?: boolean | null;
 
-		/** The employers' effective date */
+		/**
+		 * The employers' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The employers' hmrc settings */
@@ -2019,13 +2313,19 @@ export namespace MyNS {
 		/** The employers' name */
 		Name?: string | null;
 
-		/** The employers' next revision date */
+		/**
+		 * The employers' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The employers' region */
 		Region?: EmployeeEmployee1Region | null;
 
-		/** The employers' revision */
+		/**
+		 * The employers' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The employers' rule exclusions */
@@ -2036,7 +2336,10 @@ export namespace MyNS {
 	}
 	export interface EmployerEmployer1FormProperties {
 
-		/** The employers' apprenticeship levy allowance */
+		/**
+		 * The employers' apprenticeship levy allowance
+		 * Type: double
+		 */
 		ApprenticeshipLevyAllowance: FormControl<number | null | undefined>,
 
 		/** The employers' bacs service user number */
@@ -2051,7 +2354,10 @@ export namespace MyNS {
 		/** The employers' claim small employer relief */
 		ClaimSmallEmployerRelief: FormControl<boolean | null | undefined>,
 
-		/** The employers' effective date */
+		/**
+		 * The employers' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The employers' meta data */
@@ -2060,13 +2366,19 @@ export namespace MyNS {
 		/** The employers' name */
 		Name: FormControl<string | null | undefined>,
 
-		/** The employers' next revision date */
+		/**
+		 * The employers' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The employers' region */
 		Region: FormControl<EmployeeEmployee1Region | null | undefined>,
 
-		/** The employers' revision */
+		/**
+		 * The employers' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The employers' rule exclusions */
@@ -2151,7 +2463,10 @@ export namespace MyNS {
 		/** The employer auto enrolments' pension */
 		Pension?: EmployerEmployer1AutoEnrolmentPension;
 
-		/** The employer auto enrolments' postponement date */
+		/**
+		 * The employer auto enrolments' postponement date
+		 * Type: DateOnly
+		 */
 		PostponementDate?: Date | null;
 
 		/** The employer auto enrolments' primary address */
@@ -2172,10 +2487,16 @@ export namespace MyNS {
 		/** The employer auto enrolments' primary telephone */
 		PrimaryTelephone?: string | null;
 
-		/** The employer auto enrolments' re enrolment day offset */
+		/**
+		 * The employer auto enrolments' re enrolment day offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReEnrolmentDayOffset?: number | null;
 
-		/** The employer auto enrolments' re enrolment month offset */
+		/**
+		 * The employer auto enrolments' re enrolment month offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReEnrolmentMonthOffset?: number | null;
 
 		/** The employer auto enrolments' recent opt out re enrolment excluded */
@@ -2199,12 +2520,18 @@ export namespace MyNS {
 		/** The employer auto enrolments' secondary telephone */
 		SecondaryTelephone?: string | null;
 
-		/** The employer auto enrolments' staging date */
+		/**
+		 * The employer auto enrolments' staging date
+		 * Type: DateOnly
+		 */
 		StagingDate?: Date | null;
 	}
 	export interface EmployerEmployer1AutoEnrolmentFormProperties {
 
-		/** The employer auto enrolments' postponement date */
+		/**
+		 * The employer auto enrolments' postponement date
+		 * Type: DateOnly
+		 */
 		PostponementDate: FormControl<Date | null | undefined>,
 
 		/** The employer auto enrolments' primary email */
@@ -2222,10 +2549,16 @@ export namespace MyNS {
 		/** The employer auto enrolments' primary telephone */
 		PrimaryTelephone: FormControl<string | null | undefined>,
 
-		/** The employer auto enrolments' re enrolment day offset */
+		/**
+		 * The employer auto enrolments' re enrolment day offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReEnrolmentDayOffset: FormControl<number | null | undefined>,
 
-		/** The employer auto enrolments' re enrolment month offset */
+		/**
+		 * The employer auto enrolments' re enrolment month offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReEnrolmentMonthOffset: FormControl<number | null | undefined>,
 
 		/** The employer auto enrolments' recent opt out re enrolment excluded */
@@ -2246,7 +2579,10 @@ export namespace MyNS {
 		/** The employer auto enrolments' secondary telephone */
 		SecondaryTelephone: FormControl<string | null | undefined>,
 
-		/** The employer auto enrolments' staging date */
+		/**
+		 * The employer auto enrolments' staging date
+		 * Type: DateOnly
+		 */
 		StagingDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateEmployerEmployer1AutoEnrolmentFormGroup() {
@@ -2473,7 +2809,10 @@ export namespace MyNS {
 		/** The hmrc settingss' contact telephone */
 		ContactTelephone?: string | null;
 
-		/** The hmrc settingss' employment allowance override */
+		/**
+		 * The hmrc settingss' employment allowance override
+		 * Type: double
+		 */
 		EmploymentAllowanceOverride?: number | null;
 
 		/** The hmrc settingss' password */
@@ -2520,7 +2859,10 @@ export namespace MyNS {
 		/** The hmrc settingss' contact telephone */
 		ContactTelephone: FormControl<string | null | undefined>,
 
-		/** The hmrc settingss' employment allowance override */
+		/**
+		 * The hmrc settingss' employment allowance override
+		 * Type: double
+		 */
 		EmploymentAllowanceOverride: FormControl<number | null | undefined>,
 
 		/** The hmrc settingss' password */
@@ -2624,7 +2966,10 @@ export namespace MyNS {
 
 	export interface EmployerSummaryEmployerSummary1 {
 
-		/** The employer summarys' effective date */
+		/**
+		 * The employer summarys' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The employer summarys' meta data */
@@ -2633,10 +2978,16 @@ export namespace MyNS {
 		/** The employer summarys' name */
 		Name?: string | null;
 
-		/** The employer summarys' next revision date */
+		/**
+		 * The employer summarys' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
-		/** The employer summarys' revision */
+		/**
+		 * The employer summarys' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The employer summarys' unique key */
@@ -2644,7 +2995,10 @@ export namespace MyNS {
 	}
 	export interface EmployerSummaryEmployerSummary1FormProperties {
 
-		/** The employer summarys' effective date */
+		/**
+		 * The employer summarys' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The employer summarys' meta data */
@@ -2653,10 +3007,16 @@ export namespace MyNS {
 		/** The employer summarys' name */
 		Name: FormControl<string | null | undefined>,
 
-		/** The employer summarys' next revision date */
+		/**
+		 * The employer summarys' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
-		/** The employer summarys' revision */
+		/**
+		 * The employer summarys' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The employer summarys' unique key */
@@ -2782,7 +3142,10 @@ export namespace MyNS {
 		/** The holiday schemes' allow negative balance */
 		AllowNegativeBalance?: boolean | null;
 
-		/** The holiday schemes' annual entitlement weeks */
+		/**
+		 * The holiday schemes' annual entitlement weeks
+		 * Type: double
+		 */
 		AnnualEntitlementWeeks?: number | null;
 
 		/** The holiday schemes' bank holiday inclusive */
@@ -2791,22 +3154,37 @@ export namespace MyNS {
 		/** The holiday schemes' code */
 		Code?: string | null;
 
-		/** The holiday schemes' effective date */
+		/**
+		 * The holiday schemes' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
-		/** The holiday schemes' max carry over days */
+		/**
+		 * The holiday schemes' max carry over days
+		 * Type: double
+		 */
 		MaxCarryOverDays?: number | null;
 
-		/** The holiday schemes' next revision date */
+		/**
+		 * The holiday schemes' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The holiday schemes' offset payment */
 		OffsetPayment?: boolean | null;
 
-		/** The holiday schemes' revision */
+		/**
+		 * The holiday schemes' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
-		/** The holiday schemes' scheme ceased date */
+		/**
+		 * The holiday schemes' scheme ceased date
+		 * Type: DateOnly
+		 */
 		SchemeCeasedDate?: Date | null;
 
 		/** The holiday schemes' scheme key */
@@ -2815,10 +3193,16 @@ export namespace MyNS {
 		/** The holiday schemes' scheme name */
 		SchemeName?: string | null;
 
-		/** The holiday schemes' year start day */
+		/**
+		 * The holiday schemes' year start day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		YearStartDay?: number | null;
 
-		/** The holiday schemes' year start month */
+		/**
+		 * The holiday schemes' year start month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		YearStartMonth?: number | null;
 	}
 	export interface HolidaySchemeHolidayScheme1FormProperties {
@@ -2829,7 +3213,10 @@ export namespace MyNS {
 		/** The holiday schemes' allow negative balance */
 		AllowNegativeBalance: FormControl<boolean | null | undefined>,
 
-		/** The holiday schemes' annual entitlement weeks */
+		/**
+		 * The holiday schemes' annual entitlement weeks
+		 * Type: double
+		 */
 		AnnualEntitlementWeeks: FormControl<number | null | undefined>,
 
 		/** The holiday schemes' bank holiday inclusive */
@@ -2838,22 +3225,37 @@ export namespace MyNS {
 		/** The holiday schemes' code */
 		Code: FormControl<string | null | undefined>,
 
-		/** The holiday schemes' effective date */
+		/**
+		 * The holiday schemes' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
-		/** The holiday schemes' max carry over days */
+		/**
+		 * The holiday schemes' max carry over days
+		 * Type: double
+		 */
 		MaxCarryOverDays: FormControl<number | null | undefined>,
 
-		/** The holiday schemes' next revision date */
+		/**
+		 * The holiday schemes' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The holiday schemes' offset payment */
 		OffsetPayment: FormControl<boolean | null | undefined>,
 
-		/** The holiday schemes' revision */
+		/**
+		 * The holiday schemes' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
-		/** The holiday schemes' scheme ceased date */
+		/**
+		 * The holiday schemes' scheme ceased date
+		 * Type: DateOnly
+		 */
 		SchemeCeasedDate: FormControl<Date | null | undefined>,
 
 		/** The holiday schemes' scheme key */
@@ -2862,10 +3264,16 @@ export namespace MyNS {
 		/** The holiday schemes' scheme name */
 		SchemeName: FormControl<string | null | undefined>,
 
-		/** The holiday schemes' year start day */
+		/**
+		 * The holiday schemes' year start day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		YearStartDay: FormControl<number | null | undefined>,
 
-		/** The holiday schemes' year start month */
+		/**
+		 * The holiday schemes' year start month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		YearStartMonth: FormControl<number | null | undefined>,
 	}
 	export function CreateHolidaySchemeHolidayScheme1FormGroup() {
@@ -2937,7 +3345,10 @@ export namespace MyNS {
 		/** The job infos' last updated */
 		LastUpdated?: Date | null;
 
-		/** The job infos' progress */
+		/**
+		 * The job infos' progress
+		 * Type: double
+		 */
 		Progress?: number | null;
 	}
 	export interface JobInfoJobInfo1FormProperties {
@@ -2963,7 +3374,10 @@ export namespace MyNS {
 		/** The job infos' last updated */
 		LastUpdated: FormControl<Date | null | undefined>,
 
-		/** The job infos' progress */
+		/**
+		 * The job infos' progress
+		 * Type: double
+		 */
 		Progress: FormControl<number | null | undefined>,
 	}
 	export function CreateJobInfoJobInfo1FormGroup() {
@@ -3040,7 +3454,10 @@ export namespace MyNS {
 		/** The journal instructions' description */
 		Description?: string | null;
 
-		/** The journal instructions' end date */
+		/**
+		 * The journal instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate?: Date | null;
 
 		/** The journal instructions' expression */
@@ -3055,7 +3472,10 @@ export namespace MyNS {
 		/** The journal instructions' nom code */
 		NomCode?: string | null;
 
-		/** The journal instructions' start date */
+		/**
+		 * The journal instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 
 		/** The journal instructions' sub nom code */
@@ -3069,7 +3489,10 @@ export namespace MyNS {
 		/** The journal instructions' description */
 		Description: FormControl<string | null | undefined>,
 
-		/** The journal instructions' end date */
+		/**
+		 * The journal instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate: FormControl<Date | null | undefined>,
 
 		/** The journal instructions' expression */
@@ -3084,7 +3507,10 @@ export namespace MyNS {
 		/** The journal instructions' nom code */
 		NomCode: FormControl<string | null | undefined>,
 
-		/** The journal instructions' start date */
+		/**
+		 * The journal instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 
 		/** The journal instructions' sub nom code */
@@ -3120,10 +3546,16 @@ export namespace MyNS {
 
 	export interface JournalLineJournalLine1 {
 
-		/** The journal lines' credit */
+		/**
+		 * The journal lines' credit
+		 * Type: double
+		 */
 		Credit?: number | null;
 
-		/** The journal lines' debit */
+		/**
+		 * The journal lines' debit
+		 * Type: double
+		 */
 		Debit?: number | null;
 
 		/** The journal lines' description */
@@ -3156,18 +3588,30 @@ export namespace MyNS {
 		/** The journal lines' sub nom code */
 		SubNomCode?: string | null;
 
-		/** The journal lines' tax period */
+		/**
+		 * The journal lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod?: number | null;
 
-		/** The journal lines' tax year */
+		/**
+		 * The journal lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 	}
 	export interface JournalLineJournalLine1FormProperties {
 
-		/** The journal lines' credit */
+		/**
+		 * The journal lines' credit
+		 * Type: double
+		 */
 		Credit: FormControl<number | null | undefined>,
 
-		/** The journal lines' debit */
+		/**
+		 * The journal lines' debit
+		 * Type: double
+		 */
 		Debit: FormControl<number | null | undefined>,
 
 		/** The journal lines' description */
@@ -3191,10 +3635,16 @@ export namespace MyNS {
 		/** The journal lines' sub nom code */
 		SubNomCode: FormControl<string | null | undefined>,
 
-		/** The journal lines' tax period */
+		/**
+		 * The journal lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod: FormControl<number | null | undefined>,
 
-		/** The journal lines' tax year */
+		/**
+		 * The journal lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 	}
 	export function CreateJournalLineJournalLine1FormGroup() {
@@ -3474,13 +3924,19 @@ export namespace MyNS {
 		/** The pay codes' description */
 		Description?: string | null;
 
-		/** The pay codes' effective date */
+		/**
+		 * The pay codes' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The pay codes' meta data */
 		MetaData?: string | null;
 
-		/** The pay codes' next revision date */
+		/**
+		 * The pay codes' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The pay codes' niable */
@@ -3501,7 +3957,10 @@ export namespace MyNS {
 		/** The pay codes' region */
 		Region?: EmployeeEmployee1Region | null;
 
-		/** The pay codes' revision */
+		/**
+		 * The pay codes' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The pay codes' taxable */
@@ -3524,13 +3983,19 @@ export namespace MyNS {
 		/** The pay codes' description */
 		Description: FormControl<string | null | undefined>,
 
-		/** The pay codes' effective date */
+		/**
+		 * The pay codes' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The pay codes' meta data */
 		MetaData: FormControl<string | null | undefined>,
 
-		/** The pay codes' next revision date */
+		/**
+		 * The pay codes' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The pay codes' niable */
@@ -3548,7 +4013,10 @@ export namespace MyNS {
 		/** The pay codes' region */
 		Region: FormControl<EmployeeEmployee1Region | null | undefined>,
 
-		/** The pay codes' revision */
+		/**
+		 * The pay codes' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The pay codes' taxable */
@@ -3630,13 +4098,19 @@ export namespace MyNS {
 		/** The pay instructions' description */
 		Description?: string | null;
 
-		/** The pay instructions' end date */
+		/**
+		 * The pay instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate?: Date | null;
 
 		/** The pay instructions' pay line tag */
 		PayLineTag?: string | null;
 
-		/** The pay instructions' start date */
+		/**
+		 * The pay instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 	}
 	export interface PayInstructionPayInstruction1FormProperties {
@@ -3644,13 +4118,19 @@ export namespace MyNS {
 		/** The pay instructions' description */
 		Description: FormControl<string | null | undefined>,
 
-		/** The pay instructions' end date */
+		/**
+		 * The pay instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate: FormControl<Date | null | undefined>,
 
 		/** The pay instructions' pay line tag */
 		PayLineTag: FormControl<string | null | undefined>,
 
-		/** The pay instructions' start date */
+		/**
+		 * The pay instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePayInstructionPayInstruction1FormGroup() {
@@ -3691,19 +4171,34 @@ export namespace MyNS {
 		/** The pay lines' pay code type */
 		PayCodeType?: PayCodePayCode1Type | null;
 
-		/** The pay lines' pay run sequence */
+		/**
+		 * The pay lines' pay run sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PayRunSequence?: number | null;
 
-		/** The pay lines' payment date */
+		/**
+		 * The pay lines' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate?: Date | null;
 
-		/** The pay lines' tax period */
+		/**
+		 * The pay lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod?: number | null;
 
-		/** The pay lines' tax year */
+		/**
+		 * The pay lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
-		/** The pay lines' value */
+		/**
+		 * The pay lines' value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 	export interface PayLinePayLine1FormProperties {
@@ -3723,19 +4218,34 @@ export namespace MyNS {
 		/** The pay lines' pay code type */
 		PayCodeType: FormControl<PayCodePayCode1Type | null | undefined>,
 
-		/** The pay lines' pay run sequence */
+		/**
+		 * The pay lines' pay run sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PayRunSequence: FormControl<number | null | undefined>,
 
-		/** The pay lines' payment date */
+		/**
+		 * The pay lines' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate: FormControl<Date | null | undefined>,
 
-		/** The pay lines' tax period */
+		/**
+		 * The pay lines' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod: FormControl<number | null | undefined>,
 
-		/** The pay lines' tax year */
+		/**
+		 * The pay lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
-		/** The pay lines' value */
+		/**
+		 * The pay lines' value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreatePayLinePayLine1FormGroup() {
@@ -3779,25 +4289,43 @@ export namespace MyNS {
 		/** The pay runs' pay schedule */
 		PaySchedule?: PayRunPayRun1PaySchedule;
 
-		/** The pay runs' payment date */
+		/**
+		 * The pay runs' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate?: Date | null;
 
-		/** The pay runs' period end */
+		/**
+		 * The pay runs' period end
+		 * Type: DateOnly
+		 */
 		PeriodEnd?: Date | null;
 
-		/** The pay runs' period start */
+		/**
+		 * The pay runs' period start
+		 * Type: DateOnly
+		 */
 		PeriodStart?: Date | null;
 
 		/** The pay runs' proceeding pay run */
 		ProceedingPayRun?: PayRunPayRun1ProceedingPayRun;
 
-		/** The pay runs' sequence */
+		/**
+		 * The pay runs' sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Sequence?: number | null;
 
-		/** The pay runs' tax period */
+		/**
+		 * The pay runs' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod?: number | null;
 
-		/** The pay runs' tax year */
+		/**
+		 * The pay runs' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 	}
 	export interface PayRunPayRun1FormProperties {
@@ -3811,22 +4339,40 @@ export namespace MyNS {
 		/** The pay runs' pay frequency */
 		PayFrequency: FormControl<JournalLineJournalLine1PayFrequency | null | undefined>,
 
-		/** The pay runs' payment date */
+		/**
+		 * The pay runs' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate: FormControl<Date | null | undefined>,
 
-		/** The pay runs' period end */
+		/**
+		 * The pay runs' period end
+		 * Type: DateOnly
+		 */
 		PeriodEnd: FormControl<Date | null | undefined>,
 
-		/** The pay runs' period start */
+		/**
+		 * The pay runs' period start
+		 * Type: DateOnly
+		 */
 		PeriodStart: FormControl<Date | null | undefined>,
 
-		/** The pay runs' sequence */
+		/**
+		 * The pay runs' sequence
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Sequence: FormControl<number | null | undefined>,
 
-		/** The pay runs' tax period */
+		/**
+		 * The pay runs' tax period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxPeriod: FormControl<number | null | undefined>,
 
-		/** The pay runs' tax year */
+		/**
+		 * The pay runs' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 	}
 	export function CreatePayRunPayRun1FormGroup() {
@@ -3922,7 +4468,10 @@ export namespace MyNS {
 		/** The pay run job instructions' employees */
 		Employees?: PayRunJobInstructionPayRunJobInstruction1Employees;
 
-		/** The pay run job instructions' end date */
+		/**
+		 * The pay run job instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate?: Date | null;
 
 		/** The pay run job instructions' holding date */
@@ -3934,15 +4483,24 @@ export namespace MyNS {
 		/** The pay run job instructions' pay schedule */
 		PaySchedule?: PayRunJobInstructionPayRunJobInstruction1PaySchedule;
 
-		/** The pay run job instructions' payment date */
+		/**
+		 * The pay run job instructions' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate?: Date | null;
 
-		/** The pay run job instructions' start date */
+		/**
+		 * The pay run job instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 	}
 	export interface PayRunJobInstructionPayRunJobInstruction1FormProperties {
 
-		/** The pay run job instructions' end date */
+		/**
+		 * The pay run job instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate: FormControl<Date | null | undefined>,
 
 		/** The pay run job instructions' holding date */
@@ -3951,10 +4509,16 @@ export namespace MyNS {
 		/** The pay run job instructions' is supplementary */
 		IsSupplementary: FormControl<boolean | null | undefined>,
 
-		/** The pay run job instructions' payment date */
+		/**
+		 * The pay run job instructions' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate: FormControl<Date | null | undefined>,
 
-		/** The pay run job instructions' start date */
+		/**
+		 * The pay run job instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePayRunJobInstructionPayRunJobInstruction1FormGroup() {
@@ -4105,40 +4669,67 @@ export namespace MyNS {
 		/** The pensions' code */
 		Code?: string | null;
 
-		/** The pensions' contribution deduction day */
+		/**
+		 * The pensions' contribution deduction day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContributionDeductionDay?: number | null;
 
-		/** The pensions' effective date */
+		/**
+		 * The pensions' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
-		/** The pensions' employee contribution cash */
+		/**
+		 * The pensions' employee contribution cash
+		 * Type: double
+		 */
 		EmployeeContributionCash?: number | null;
 
-		/** The pensions' employee contribution percent */
+		/**
+		 * The pensions' employee contribution percent
+		 * Type: double
+		 */
 		EmployeeContributionPercent?: number | null;
 
-		/** The pensions' employer contribution cash */
+		/**
+		 * The pensions' employer contribution cash
+		 * Type: double
+		 */
 		EmployerContributionCash?: number | null;
 
-		/** The pensions' employer contribution percent */
+		/**
+		 * The pensions' employer contribution percent
+		 * Type: double
+		 */
 		EmployerContributionPercent?: number | null;
 
 		/** The pensions' employer ni saving */
 		EmployerNiSaving?: boolean | null;
 
-		/** The pensions' employer ni saving percentage */
+		/**
+		 * The pensions' employer ni saving percentage
+		 * Type: double
+		 */
 		EmployerNiSavingPercentage?: number | null;
 
 		/** The pensions' group */
 		Group?: string | null;
 
-		/** The pensions' lower threshold */
+		/**
+		 * The pensions' lower threshold
+		 * Type: double
+		 */
 		LowerThreshold?: number | null;
 
 		/** The pensions' meta data */
 		MetaData?: string | null;
 
-		/** The pensions' next revision date */
+		/**
+		 * The pensions' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The pensions' pensionable pay codes */
@@ -4159,7 +4750,10 @@ export namespace MyNS {
 		/** The pensions' ras rounding override */
 		RasRoundingOverride?: PensionPension1RasRoundingOverride | null;
 
-		/** The pensions' revision */
+		/**
+		 * The pensions' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The pensions' rounding option */
@@ -4177,7 +4771,10 @@ export namespace MyNS {
 		/** The pensions' taxation method */
 		TaxationMethod?: PensionPension1TaxationMethod | null;
 
-		/** The pensions' upper threshold */
+		/**
+		 * The pensions' upper threshold
+		 * Type: double
+		 */
 		UpperThreshold?: number | null;
 
 		/** The pensions' use a e thresholds */
@@ -4194,40 +4791,67 @@ export namespace MyNS {
 		/** The pensions' code */
 		Code: FormControl<string | null | undefined>,
 
-		/** The pensions' contribution deduction day */
+		/**
+		 * The pensions' contribution deduction day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContributionDeductionDay: FormControl<number | null | undefined>,
 
-		/** The pensions' effective date */
+		/**
+		 * The pensions' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
-		/** The pensions' employee contribution cash */
+		/**
+		 * The pensions' employee contribution cash
+		 * Type: double
+		 */
 		EmployeeContributionCash: FormControl<number | null | undefined>,
 
-		/** The pensions' employee contribution percent */
+		/**
+		 * The pensions' employee contribution percent
+		 * Type: double
+		 */
 		EmployeeContributionPercent: FormControl<number | null | undefined>,
 
-		/** The pensions' employer contribution cash */
+		/**
+		 * The pensions' employer contribution cash
+		 * Type: double
+		 */
 		EmployerContributionCash: FormControl<number | null | undefined>,
 
-		/** The pensions' employer contribution percent */
+		/**
+		 * The pensions' employer contribution percent
+		 * Type: double
+		 */
 		EmployerContributionPercent: FormControl<number | null | undefined>,
 
 		/** The pensions' employer ni saving */
 		EmployerNiSaving: FormControl<boolean | null | undefined>,
 
-		/** The pensions' employer ni saving percentage */
+		/**
+		 * The pensions' employer ni saving percentage
+		 * Type: double
+		 */
 		EmployerNiSavingPercentage: FormControl<number | null | undefined>,
 
 		/** The pensions' group */
 		Group: FormControl<string | null | undefined>,
 
-		/** The pensions' lower threshold */
+		/**
+		 * The pensions' lower threshold
+		 * Type: double
+		 */
 		LowerThreshold: FormControl<number | null | undefined>,
 
 		/** The pensions' meta data */
 		MetaData: FormControl<string | null | undefined>,
 
-		/** The pensions' next revision date */
+		/**
+		 * The pensions' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The pensions' pro rata method */
@@ -4242,7 +4866,10 @@ export namespace MyNS {
 		/** The pensions' ras rounding override */
 		RasRoundingOverride: FormControl<PensionPension1RasRoundingOverride | null | undefined>,
 
-		/** The pensions' revision */
+		/**
+		 * The pensions' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The pensions' rounding option */
@@ -4260,7 +4887,10 @@ export namespace MyNS {
 		/** The pensions' taxation method */
 		TaxationMethod: FormControl<PensionPension1TaxationMethod | null | undefined>,
 
-		/** The pensions' upper threshold */
+		/**
+		 * The pensions' upper threshold
+		 * Type: double
+		 */
 		UpperThreshold: FormControl<number | null | undefined>,
 
 		/** The pensions' use a e thresholds */
@@ -4980,13 +5610,22 @@ export namespace MyNS {
 		/** The report lines' generated */
 		Generated?: Date | null;
 
-		/** The report lines' tax month */
+		/**
+		 * The report lines' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth?: number | null;
 
-		/** The report lines' tax year */
+		/**
+		 * The report lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
-		/** The report lines' value */
+		/**
+		 * The report lines' value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 	export interface ReportLineReportLine1FormProperties {
@@ -4997,13 +5636,22 @@ export namespace MyNS {
 		/** The report lines' generated */
 		Generated: FormControl<Date | null | undefined>,
 
-		/** The report lines' tax month */
+		/**
+		 * The report lines' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth: FormControl<number | null | undefined>,
 
-		/** The report lines' tax year */
+		/**
+		 * The report lines' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
-		/** The report lines' value */
+		/**
+		 * The report lines' value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateReportLineReportLine1FormGroup() {
@@ -5030,36 +5678,66 @@ export namespace MyNS {
 
 	export interface ReportingInstructionReportingInstruction1 {
 
-		/** The reporting instructions' end date */
+		/**
+		 * The reporting instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate?: Date | null;
 
-		/** The reporting instructions' start date */
+		/**
+		 * The reporting instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 
-		/** The reporting instructions' tax month */
+		/**
+		 * The reporting instructions' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth?: number | null;
 
-		/** The reporting instructions' tax year */
+		/**
+		 * The reporting instructions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
-		/** The reporting instructions' value */
+		/**
+		 * The reporting instructions' value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 	export interface ReportingInstructionReportingInstruction1FormProperties {
 
-		/** The reporting instructions' end date */
+		/**
+		 * The reporting instructions' end date
+		 * Type: DateOnly
+		 */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** The reporting instructions' start date */
+		/**
+		 * The reporting instructions' start date
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 
-		/** The reporting instructions' tax month */
+		/**
+		 * The reporting instructions' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth: FormControl<number | null | undefined>,
 
-		/** The reporting instructions' tax year */
+		/**
+		 * The reporting instructions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
-		/** The reporting instructions' value */
+		/**
+		 * The reporting instructions' value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateReportingInstructionReportingInstruction1FormGroup() {
@@ -5086,7 +5764,10 @@ export namespace MyNS {
 
 	export interface RtiJobInstructionRtiJobInstruction1 {
 
-		/** The rti job instructions' earlier tax year */
+		/**
+		 * The rti job instructions' earlier tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EarlierTaxYear?: number | null;
 
 		/** The rti job instructions' employer */
@@ -5104,22 +5785,37 @@ export namespace MyNS {
 		/** The rti job instructions' late reason */
 		LateReason?: RtiJobInstructionRtiJobInstruction1LateReason | null;
 
-		/** The rti job instructions' no payment for period from */
+		/**
+		 * The rti job instructions' no payment for period from
+		 * Type: DateOnly
+		 */
 		NoPaymentForPeriodFrom?: Date | null;
 
-		/** The rti job instructions' no payment for period to */
+		/**
+		 * The rti job instructions' no payment for period to
+		 * Type: DateOnly
+		 */
 		NoPaymentForPeriodTo?: Date | null;
 
 		/** The rti job instructions' pay schedule */
 		PaySchedule?: RtiJobInstructionRtiJobInstruction1PaySchedule;
 
-		/** The rti job instructions' payment date */
+		/**
+		 * The rti job instructions' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate?: Date | null;
 
-		/** The rti job instructions' period of inactivity from */
+		/**
+		 * The rti job instructions' period of inactivity from
+		 * Type: DateOnly
+		 */
 		PeriodOfInactivityFrom?: Date | null;
 
-		/** The rti job instructions' period of inactivity to */
+		/**
+		 * The rti job instructions' period of inactivity to
+		 * Type: DateOnly
+		 */
 		PeriodOfInactivityTo?: Date | null;
 
 		/** The rti job instructions' rti transaction */
@@ -5128,13 +5824,22 @@ export namespace MyNS {
 		/** The rti job instructions' rti type */
 		RtiType?: string | null;
 
-		/** The rti job instructions' scheme ceased */
+		/**
+		 * The rti job instructions' scheme ceased
+		 * Type: DateOnly
+		 */
 		SchemeCeased?: Date | null;
 
-		/** The rti job instructions' tax month */
+		/**
+		 * The rti job instructions' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth?: number | null;
 
-		/** The rti job instructions' tax year */
+		/**
+		 * The rti job instructions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
 		/** The rti job instructions' timestamp */
@@ -5145,7 +5850,10 @@ export namespace MyNS {
 	}
 	export interface RtiJobInstructionRtiJobInstruction1FormProperties {
 
-		/** The rti job instructions' earlier tax year */
+		/**
+		 * The rti job instructions' earlier tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EarlierTaxYear: FormControl<number | null | undefined>,
 
 		/** The rti job instructions' final submission for year */
@@ -5160,31 +5868,55 @@ export namespace MyNS {
 		/** The rti job instructions' late reason */
 		LateReason: FormControl<RtiJobInstructionRtiJobInstruction1LateReason | null | undefined>,
 
-		/** The rti job instructions' no payment for period from */
+		/**
+		 * The rti job instructions' no payment for period from
+		 * Type: DateOnly
+		 */
 		NoPaymentForPeriodFrom: FormControl<Date | null | undefined>,
 
-		/** The rti job instructions' no payment for period to */
+		/**
+		 * The rti job instructions' no payment for period to
+		 * Type: DateOnly
+		 */
 		NoPaymentForPeriodTo: FormControl<Date | null | undefined>,
 
-		/** The rti job instructions' payment date */
+		/**
+		 * The rti job instructions' payment date
+		 * Type: DateOnly
+		 */
 		PaymentDate: FormControl<Date | null | undefined>,
 
-		/** The rti job instructions' period of inactivity from */
+		/**
+		 * The rti job instructions' period of inactivity from
+		 * Type: DateOnly
+		 */
 		PeriodOfInactivityFrom: FormControl<Date | null | undefined>,
 
-		/** The rti job instructions' period of inactivity to */
+		/**
+		 * The rti job instructions' period of inactivity to
+		 * Type: DateOnly
+		 */
 		PeriodOfInactivityTo: FormControl<Date | null | undefined>,
 
 		/** The rti job instructions' rti type */
 		RtiType: FormControl<string | null | undefined>,
 
-		/** The rti job instructions' scheme ceased */
+		/**
+		 * The rti job instructions' scheme ceased
+		 * Type: DateOnly
+		 */
 		SchemeCeased: FormControl<Date | null | undefined>,
 
-		/** The rti job instructions' tax month */
+		/**
+		 * The rti job instructions' tax month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxMonth: FormControl<number | null | undefined>,
 
-		/** The rti job instructions' tax year */
+		/**
+		 * The rti job instructions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
 		/** The rti job instructions' timestamp */
@@ -5335,7 +6067,10 @@ export namespace MyNS {
 		/** The rti transaction bases' rti type */
 		RtiType?: string | null;
 
-		/** The rti transaction bases' tax year */
+		/**
+		 * The rti transaction bases' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
 		/** The rti transaction bases' timestamp */
@@ -5358,7 +6093,10 @@ export namespace MyNS {
 		/** The rti transaction bases' rti type */
 		RtiType: FormControl<string | null | undefined>,
 
-		/** The rti transaction bases' tax year */
+		/**
+		 * The rti transaction bases' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
 		/** The rti transaction bases' timestamp */
@@ -5445,7 +6183,10 @@ export namespace MyNS {
 		/** The sub contractors' deactivated */
 		Deactivated?: boolean | null;
 
-		/** The sub contractors' effective date */
+		/**
+		 * The sub contractors' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate?: Date | null;
 
 		/** The sub contractors' first name */
@@ -5463,7 +6204,10 @@ export namespace MyNS {
 		/** The sub contractors' middle name */
 		MiddleName?: string | null;
 
-		/** The sub contractors' next revision date */
+		/**
+		 * The sub contractors' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate?: Date | null;
 
 		/** The sub contractors' ni number */
@@ -5484,7 +6228,10 @@ export namespace MyNS {
 		/** The sub contractors' region */
 		Region?: EmployeeEmployee1Region | null;
 
-		/** The sub contractors' revision */
+		/**
+		 * The sub contractors' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** The sub contractors' taxation status */
@@ -5534,7 +6281,10 @@ export namespace MyNS {
 		/** The sub contractors' deactivated */
 		Deactivated: FormControl<boolean | null | undefined>,
 
-		/** The sub contractors' effective date */
+		/**
+		 * The sub contractors' effective date
+		 * Type: DateOnly
+		 */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
 		/** The sub contractors' first name */
@@ -5552,7 +6302,10 @@ export namespace MyNS {
 		/** The sub contractors' middle name */
 		MiddleName: FormControl<string | null | undefined>,
 
-		/** The sub contractors' next revision date */
+		/**
+		 * The sub contractors' next revision date
+		 * Type: DateOnly
+		 */
 		NextRevisionDate: FormControl<Date | null | undefined>,
 
 		/** The sub contractors' ni number */
@@ -5573,7 +6326,10 @@ export namespace MyNS {
 		/** The sub contractors' region */
 		Region: FormControl<EmployeeEmployee1Region | null | undefined>,
 
-		/** The sub contractors' revision */
+		/**
+		 * The sub contractors' revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** The sub contractors' taxation status */
@@ -5993,7 +6749,10 @@ export namespace MyNS {
 		/** The transform definitions' supported reports */
 		SupportedReports?: string | null;
 
-		/** The transform definitions' tax year */
+		/**
+		 * The transform definitions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear?: number | null;
 
 		/** The transform definitions' title */
@@ -6022,7 +6781,10 @@ export namespace MyNS {
 		/** The transform definitions' supported reports */
 		SupportedReports: FormControl<string | null | undefined>,
 
-		/** The transform definitions' tax year */
+		/**
+		 * The transform definitions' tax year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TaxYear: FormControl<number | null | undefined>,
 
 		/** The transform definitions' title */
@@ -7043,6 +7805,7 @@ export namespace MyNS {
 		 * @param {string} EmployeeId The employees' unique identifier. E.g EE001
 		 * @param {string} TagId The tag unique identifier. E.g. MyTag
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Tag} The tag object.
 		 */
 		GetTagFromEmployeeRevision(EmployerId: string, EmployeeId: string, TagId: string, EffectiveDate: Date): Observable<Tag> {
@@ -7068,6 +7831,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} EmployeeId The employees' unique identifier. E.g EE001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetTagsFromEmployeeRevision(EmployerId: string, EmployeeId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7081,6 +7845,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} EmployeeId The employees' unique identifier. E.g EE001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeleteEmployeeRevision(EmployerId: string, EmployeeId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -7094,6 +7859,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} EmployeeId The employees' unique identifier. E.g EE001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Employee} The employee object.
 		 */
 		GetEmployeeByEffectiveDate(EmployerId: string, EmployeeId: string, EffectiveDate: Date): Observable<Employee> {
@@ -7107,6 +7873,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} EmployeeId The employees' unique identifier. E.g EE001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {EmployeeSummary} The employee summary object.
 		 */
 		GetEmployeeSummaryByEffectiveDate(EmployerId: string, EmployeeId: string, EffectiveDate: Date): Observable<EmployeeSummary> {
@@ -7176,6 +7943,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/Employees/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetEmployeesByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7188,6 +7956,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/Employees/{EffectiveDate}/Summary
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetEmployeeSummariesByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7329,6 +8098,7 @@ export namespace MyNS {
 		 * @param {string} HolidaySchemeId The holiday schemes' unique identifier. E.g HOLSCH001
 		 * @param {string} TagId The tag unique identifier. E.g. MyTag
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Tag} The tag object.
 		 */
 		GetTagFromHolidaySchemeRevision(EmployerId: string, HolidaySchemeId: string, TagId: string, EffectiveDate: Date): Observable<Tag> {
@@ -7354,6 +8124,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} HolidaySchemeId The holiday schemes' unique identifier. E.g HOLSCH001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetTagsFromHolidaySchemeRevision(EmployerId: string, HolidaySchemeId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7367,6 +8138,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} HolidaySchemeId The holiday schemes' unique identifier. E.g HOLSCH001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeleteHolidaySchemeRevision(EmployerId: string, HolidaySchemeId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -7380,6 +8152,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} HolidaySchemeId The holiday schemes' unique identifier. E.g HOLSCH001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {HolidayScheme} The holiday scheme object.
 		 */
 		GetHolidaySchemeByEffectiveDate(EmployerId: string, HolidaySchemeId: string, EffectiveDate: Date): Observable<HolidayScheme> {
@@ -7438,6 +8211,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/HolidaySchemes/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetHolidaySchemesByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7817,6 +8591,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} PayCodeId The pay code unique identifier. E.g. BASIC
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeletePayCodeRevision(EmployerId: string, PayCodeId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -7830,6 +8605,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} PayCodeId The pay code unique identifier. E.g. BASIC
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {PayCode} The pay code object.
 		 */
 		GetPayCodeByEffectiveDate(EmployerId: string, PayCodeId: string, EffectiveDate: Date): Observable<PayCode> {
@@ -7888,6 +8664,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/PayCodes/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetPayCodesByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -7950,6 +8727,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} PayScheduleId The pay schedules' unique identifier. E.g SCH001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetEmployeesFromPayScheduleOnEffectiveDate(EmployerId: string, PayScheduleId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -8372,6 +9150,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} PensionId The pensions' unique identifier. E.g PEN001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeletePensionRevision(EmployerId: string, PensionId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -8385,6 +9164,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} PensionId The pensions' unique identifier. E.g PEN001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Pension} The pension object.
 		 */
 		GetPensionByEffectiveDate(EmployerId: string, PensionId: string, EffectiveDate: Date): Observable<Pension> {
@@ -8420,6 +9200,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/Pensions/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetPensionsByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -9180,6 +9961,7 @@ export namespace MyNS {
 		 * @param {string} SubContractorId The sub contractors' unique identifier. E.g SUB001
 		 * @param {string} TagId The tag unique identifier. E.g. MyTag
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Tag} The tag object.
 		 */
 		GetTagFromSubContractorRevision(EmployerId: string, SubContractorId: string, TagId: string, EffectiveDate: Date): Observable<Tag> {
@@ -9205,6 +9987,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} SubContractorId The sub contractors' unique identifier. E.g SUB001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetTagsFromSubContractorRevision(EmployerId: string, SubContractorId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -9218,6 +10001,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} SubContractorId The sub contractors' unique identifier. E.g SUB001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeleteSubContractorRevision(EmployerId: string, SubContractorId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -9231,6 +10015,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} SubContractorId The sub contractors' unique identifier. E.g SUB001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {SubContractor} The sub contractor object.
 		 */
 		GetSubContractorByEffectiveDate(EmployerId: string, SubContractorId: string, EffectiveDate: Date): Observable<SubContractor> {
@@ -9289,6 +10074,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/SubContractors/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetSubContractorsByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -9349,6 +10135,7 @@ export namespace MyNS {
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {string} TagId The tag unique identifier. E.g. MyTag
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Tag} The tag object.
 		 */
 		GetTagFromEmployerRevision(EmployerId: string, TagId: string, EffectiveDate: Date): Observable<Tag> {
@@ -9372,6 +10159,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/Tags/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetTagsFromEmployerRevision(EmployerId: string, EffectiveDate: Date): Observable<LinkCollection> {
@@ -9493,6 +10281,7 @@ export namespace MyNS {
 		 * Delete Employer/{EmployerId}/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		DeleteEmployerRevision(EmployerId: string, EffectiveDate: Date): Observable<HttpResponse<string>> {
@@ -9505,6 +10294,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/{EffectiveDate}
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {Employer} The employer object.
 		 */
 		GetEmployerByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<Employer> {
@@ -9517,6 +10307,7 @@ export namespace MyNS {
 		 * Get Employer/{EmployerId}/{EffectiveDate}/Summary
 		 * @param {string} EmployerId The employers' unique identifier. E.g ER001
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {EmployerSummary} The employer summary object.
 		 */
 		GetEmployerSummaryByEffectiveDate(EmployerId: string, EffectiveDate: Date): Observable<EmployerSummary> {
@@ -9580,6 +10371,7 @@ export namespace MyNS {
 		 * Gets links to all employers contained under the authorised application scope for the specified effective date.
 		 * Get Employers/{EffectiveDate}
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetEmployersByEffectiveDate(EffectiveDate: Date): Observable<LinkCollection> {
@@ -9591,6 +10383,7 @@ export namespace MyNS {
 		 * Get links to all employer summaries on specified effective date.
 		 * Get Employers/{EffectiveDate}/Summary
 		 * @param {Date} EffectiveDate The effective date to be applied. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @return {LinkCollection} The link collection object.
 		 */
 		GetEmployerSummariesByEffectiveDate(EffectiveDate: Date): Observable<LinkCollection> {
@@ -10232,8 +11025,11 @@ export namespace MyNS {
 		 * @param {string} EmployerKey The employer unique key. E.g. ER001
 		 * @param {string} EmployeeKey The employee unique key. E.g. EE001
 		 * @param {Date} ActiveOn The active date to consider. E.g 2017-04-05
+		 *     Type: DateOnly
 		 * @param {Date} FromDate The lower filter date. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @param {Date} ToDate The upper filter date. E.g 2017-04-05
+		 *     Type: DateOnly
 		 * @param {string} Type the data type to filter on. E.g. TaxPayInstruction
 		 * @return {string} The result of the active pay instructions report execution
 		 */
@@ -10262,7 +11058,9 @@ export namespace MyNS {
 		 * Get Report/DPSMSG/run
 		 * @param {string} EmployerKey The employer unique key. E.g. ER001
 		 * @param {Date} FromDate The lower filter date. E.g 2016-04-06
+		 *     Type: DateOnly
 		 * @param {Date} ToDate The upper filter date. E.g 2017-04-05
+		 *     Type: DateOnly
 		 * @param {string} MessageTypes The DPS message types as a CSV list. E.g. P6,P9,SL1,SL2
 		 * @param {string} MessageStatuses The DPS message status as a CSV list. E.g. Retrieved,Processed,Blocked,Ignored
 		 * @param {string} StartIndex The element index to begin the report. Used to control paging within large data sets. E.g. 1
@@ -10279,6 +11077,7 @@ export namespace MyNS {
 		 * Get Report/EMPSUM/run
 		 * @param {string} EmployerKey The employer unique key. E.g. ER001
 		 * @param {Date} ContextDate The date context for the report. E.g. 2018-04-30
+		 *     Type: DateOnly
 		 * @return {string} The result of the employer summary report execution
 		 */
 		GetEmployerSummaryReportOuput(EmployerKey: string, ContextDate: Date): Observable<string> {
@@ -10307,6 +11106,7 @@ export namespace MyNS {
 		 * Get Report/HOLBAL/run
 		 * @param {string} EmployerKey The employer unique key. E.g. ER001
 		 * @param {Date} HolidayYearEnd The holiday year end for the report. E.g. 2018-12-31
+		 *     Type: DateOnly
 		 * @param {string} EmployeeCodes A comma separated list of the employee codes. E.g. EMP001,EMP002
 		 * @param {string} StartIndex The element index to begin the report. Used to control paging within large data sets. E.g. 1
 		 * @param {string} MaxIndex The highest element index to return from the report. Used to control paging within large data sets. E.g. 100
@@ -10447,6 +11247,7 @@ export namespace MyNS {
 		 * @param {string} PayScheduleKey The pay schedule unique key. E.g. SCH001
 		 * @param {string} TaxYear The tax year. E.g. 2017 = 2017/18 year.
 		 * @param {Date} PaymentDate The payment date context for the report. E.g. 2018-04-30
+		 *     Type: DateOnly
 		 * @param {string} PensionKey The pension scheme unique key. E.g. PENSCH001
 		 * @param {string} MessageFunctionCode Specific to PAPDIS report, specifies the business function that the sender is requesting. If left BLANK it will be assumed to be 0 (Enrol / Receive Contributions).
 		 * @param {string} TransformDefinitionKey The transform definition unique key. E.g. P45-Pdf
@@ -10464,6 +11265,7 @@ export namespace MyNS {
 		 * @param {string} PayScheduleKey The pay schedule unique key. E.g. SCH001
 		 * @param {string} TaxYear The tax year. E.g. 2017 = 2017/18 year.
 		 * @param {Date} PaymentDate The payment date context for the report. E.g. 2018-04-30
+		 *     Type: DateOnly
 		 * @param {string} PensionKey The pension scheme unique key. E.g. PENSCH001
 		 * @param {string} MessageFunctionCode Specific to PAPDIS report, specifies the business function that the sender is requesting. If left BLANK it will be assumed to be 0 (Enrol / Receive Contributions).
 		 * @param {string} IntermediaryId Specific to PensionSync PASS report, a unique identifier for the Intermediary who is acting on behalf of the employer.
@@ -10486,7 +11288,9 @@ export namespace MyNS {
 		 * @param {string} StartIndex The element index to begin the report. Used to control paging within large data sets. E.g. 1
 		 * @param {string} MaxIndex The highest element index to return from the report. Used to control paging within large data sets. E.g. 100
 		 * @param {Date} PaymentDate The payment date context for the report. E.g. 2018-04-30
+		 *     Type: DateOnly
 		 * @param {Date} PublicationDate Specific to the Pay Dashboard report, allows the specification of a future payslip publication date. E.g. 2018-12-31
+		 *     Type: DateOnly
 		 * @return {string} The result of the Pay Dashboard payslip report execution
 		 */
 		GetPayDashboardPayslipReportOuput(EmployerKey: string, PayScheduleKey: string, TaxYear: string, EmployeeCodes: string | null | undefined, TransformDefinitionKey: string | null | undefined, StartIndex: string | null | undefined, MaxIndex: string | null | undefined, PaymentDate: Date | null | undefined, PublicationDate: Date): Observable<string> {
@@ -10505,6 +11309,7 @@ export namespace MyNS {
 		 * @param {string} StartIndex The element index to begin the report. Used to control paging within large data sets. E.g. 1
 		 * @param {string} MaxIndex The highest element index to return from the report. Used to control paging within large data sets. E.g. 100
 		 * @param {Date} PaymentDate The payment date context for the report. E.g. 2018-04-30
+		 *     Type: DateOnly
 		 * @return {string} The result of the verbose payslip report execution
 		 */
 		GetPayslip3ReportOutput(EmployerKey: string, PayScheduleKey: string, TaxYear: string, EmployeeCodes: string | null | undefined, TransformDefinitionKey: string | null | undefined, StartIndex: string | null | undefined, MaxIndex: string | null | undefined, PaymentDate: Date | null | undefined): Observable<string> {

@@ -72,8 +72,9 @@ export namespace MyNS {
 		/**
 		 * Destination Mobile Number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		to: number;
+		to: string;
 	}
 
 	/** Send SMS Request */
@@ -94,14 +95,15 @@ export namespace MyNS {
 		/**
 		 * Destination Mobile Number
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		to: FormControl<number | null | undefined>,
+		to: FormControl<string | null | undefined>,
 	}
 	export function CreateSendSMSRequestFormGroup() {
 		return new FormGroup<SendSMSRequestFormProperties>({
 			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			from: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			to: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			to: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

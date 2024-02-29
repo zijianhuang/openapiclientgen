@@ -689,7 +689,9 @@ export namespace MyNS {
 		 * Retrieves the customer’s account payments in UK Sterling.
 		 * Get account/payments
 		 * @param {number} page The page number to return (Used with pageSize)
+		 *     Type: double
 		 * @param {number} pageSize Specify the number of results to return per page.
+		 *     Type: double
 		 * @param {string} dateFrom The FROM datetime from payments to be returned. (yyyy-MM-ddTHH:mm:ss)
 		 * @param {string} dateTo The TO datetime for payments to be returned. (yyyy-MM-ddTHH:mm:ss)
 		 * @param {string} sort The order the response will be retuned by. i.e. date,desc

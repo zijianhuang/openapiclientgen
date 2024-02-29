@@ -1594,7 +1594,10 @@ namespace MyNS
 		/// <param name="lat">Latitude of point to search for facilities, in WGS84 coordinate reference system.</param>
 		/// <param name="_long">Longitude of point to search for facilities, in WGS84 coordinate reference system.</param>
 		/// <param name="radius">Optional radial distance from specified latitude and longitude to filter facilities search in WGS84 coordinate reference system.</param>
-		/// <param name="bbox_">Bounding box (longitude, latitude, longitude, latitude) within which facilities will be returned. (WGS84 coordinate reference system)</param>
+		/// <param name="bbox_">Bounding box (longitude, latitude, longitude, latitude) within which facilities will be returned. (WGS84 coordinate reference system)
+		/// Minimum items: 4
+		/// Maximum items: 4
+		// </param>
 		/// <param name="visn">VISN search of matching facilities.</param>
 		/// <param name="type">Optional facility type search filter</param>
 		/// <param name="services_">Optional facility service search filter</param>

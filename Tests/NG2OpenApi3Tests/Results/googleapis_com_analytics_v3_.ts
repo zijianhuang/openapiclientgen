@@ -158,7 +158,10 @@ export namespace MyNS {
 		/** A list of AccountSummaries. */
 		items?: Array<AccountSummary>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -170,10 +173,16 @@ export namespace MyNS {
 		/** Link to previous page for this AccountSummary collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -183,7 +192,10 @@ export namespace MyNS {
 	/** An AccountSummary collection lists a summary of accounts, properties and views (profiles) to which the user has access. Each resource in the collection corresponds to a single AccountSummary. */
 	export interface AccountSummariesFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -195,10 +207,16 @@ export namespace MyNS {
 		/** Link to previous page for this AccountSummary collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -725,7 +743,10 @@ export namespace MyNS {
 		/** Permissions the user has for this web property. */
 		permissions?: WebpropertyPermissions;
 
-		/** View (Profile) count for this web property. */
+		/**
+		 * View (Profile) count for this web property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profileCount?: number | null;
 
 		/** Link for this web property. */
@@ -784,7 +805,10 @@ export namespace MyNS {
 		/** Name of this web property. */
 		name: FormControl<string | null | undefined>,
 
-		/** View (Profile) count for this web property. */
+		/**
+		 * View (Profile) count for this web property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profileCount: FormControl<number | null | undefined>,
 
 		/** Link for this web property. */
@@ -955,7 +979,10 @@ export namespace MyNS {
 		/** A list of accounts. */
 		items?: Array<Account>;
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -967,10 +994,16 @@ export namespace MyNS {
 		/** Previous link for this account collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -980,7 +1013,10 @@ export namespace MyNS {
 	/** An account collection provides a list of Analytics accounts to which a user has access. The account collection is the entry point to all management information. Each resource in the collection corresponds to a single Analytics account. */
 	export interface AccountsFormProperties {
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -992,10 +1028,16 @@ export namespace MyNS {
 		/** Previous link for this account collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -1117,7 +1159,10 @@ export namespace MyNS {
 		/** Collection type. */
 		kind?: string | null;
 
-		/** Total number of columns returned in the response. */
+		/**
+		 * Total number of columns returned in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
@@ -1130,7 +1175,10 @@ export namespace MyNS {
 		/** Collection type. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Total number of columns returned in the response. */
+		/**
+		 * Total number of columns returned in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateColumnsFormGroup() {
@@ -1301,7 +1349,10 @@ export namespace MyNS {
 		/** Collection of custom data sources. */
 		items?: Array<CustomDataSource>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -1313,10 +1364,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom data source collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -1326,7 +1383,10 @@ export namespace MyNS {
 	/** Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source. */
 	export interface CustomDataSourcesFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -1338,10 +1398,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom data source collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -1376,7 +1442,10 @@ export namespace MyNS {
 		/** Custom dimension ID. */
 		id?: string | null;
 
-		/** Index of the custom dimension. */
+		/**
+		 * Index of the custom dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field. */
@@ -1416,7 +1485,10 @@ export namespace MyNS {
 		/** Custom dimension ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Index of the custom dimension. */
+		/**
+		 * Index of the custom dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field. */
@@ -1485,7 +1557,10 @@ export namespace MyNS {
 		/** Collection of custom dimensions. */
 		items?: Array<CustomDimension>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -1497,10 +1572,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom dimension collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -1510,7 +1591,10 @@ export namespace MyNS {
 	/** A custom dimension collection lists Analytics custom dimensions to which the user has access. Each resource in the collection corresponds to a single Analytics custom dimension. */
 	export interface CustomDimensionsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -1522,10 +1606,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom dimension collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -1560,7 +1650,10 @@ export namespace MyNS {
 		/** Custom metric ID. */
 		id?: string | null;
 
-		/** Index of the custom metric. */
+		/**
+		 * Index of the custom metric.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field. */
@@ -1609,7 +1702,10 @@ export namespace MyNS {
 		/** Custom metric ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Index of the custom metric. */
+		/**
+		 * Index of the custom metric.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field. */
@@ -1690,7 +1786,10 @@ export namespace MyNS {
 		/** Collection of custom metrics. */
 		items?: Array<CustomMetric>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -1702,10 +1801,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom metric collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -1715,7 +1820,10 @@ export namespace MyNS {
 	/** A custom metric collection lists Analytics custom metrics to which the user has access. Each resource in the collection corresponds to a single Analytics custom metric. */
 	export interface CustomMetricsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -1727,10 +1835,16 @@ export namespace MyNS {
 		/** Link to previous page for this custom metric collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -1876,7 +1990,10 @@ export namespace MyNS {
 		/** A list of entity Google Ads links. */
 		items?: Array<EntityAdWordsLink>;
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -1888,17 +2005,26 @@ export namespace MyNS {
 		/** Previous link for this Google Ads link collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** An entity Google Ads link collection provides a list of GA-Google Ads links Each resource in this collection corresponds to a single link. */
 	export interface EntityAdWordsLinksFormProperties {
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -1910,10 +2036,16 @@ export namespace MyNS {
 		/** Previous link for this Google Ads link collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateEntityAdWordsLinksFormGroup() {
@@ -2108,7 +2240,10 @@ export namespace MyNS {
 		/** A list of entity user links. */
 		items?: Array<EntityUserLink>;
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -2120,17 +2255,26 @@ export namespace MyNS {
 		/** Previous link for this account collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** An entity user link collection provides a list of Analytics ACL links Each resource in this collection corresponds to a single link. */
 	export interface EntityUserLinksFormProperties {
 
-		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -2142,10 +2286,16 @@ export namespace MyNS {
 		/** Previous link for this account collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateEntityUserLinksFormGroup() {
@@ -2191,7 +2341,10 @@ export namespace MyNS {
 		/** Resource type for an Analytics experiment. This field is read-only. */
 		kind?: string | null;
 
-		/** An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumExperimentLengthInDays?: number | null;
 
 		/** Experiment name. This field may not be changed for an experiment whose status is ENDED. This field is required when creating an experiment. */
@@ -2235,7 +2388,10 @@ export namespace MyNS {
 		/** Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING", "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or "RUNNING" state. This field is required when creating an experiment. */
 		status?: string | null;
 
-		/** A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: double
+		 */
 		trafficCoverage?: number | null;
 
 		/** Time the experiment was last modified. This field is read-only. */
@@ -2247,7 +2403,10 @@ export namespace MyNS {
 		/** Web property ID to which this experiment belongs. The web property ID is of the form UA-XXXXX-YY. This field is read-only. */
 		webPropertyId?: string | null;
 
-		/** A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: double
+		 */
 		winnerConfidenceLevel?: number | null;
 
 		/** Boolean specifying whether a winner has been found for this experiment. This field is read-only. */
@@ -2284,7 +2443,10 @@ export namespace MyNS {
 		/** Resource type for an Analytics experiment. This field is read-only. */
 		kind: FormControl<string | null | undefined>,
 
-		/** An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumExperimentLengthInDays: FormControl<number | null | undefined>,
 
 		/** Experiment name. This field may not be changed for an experiment whose status is ENDED. This field is required when creating an experiment. */
@@ -2325,7 +2487,10 @@ export namespace MyNS {
 		/** Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING", "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or "RUNNING" state. This field is required when creating an experiment. */
 		status: FormControl<string | null | undefined>,
 
-		/** A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: double
+		 */
 		trafficCoverage: FormControl<number | null | undefined>,
 
 		/** Time the experiment was last modified. This field is read-only. */
@@ -2334,7 +2499,10 @@ export namespace MyNS {
 		/** Web property ID to which this experiment belongs. The web property ID is of the form UA-XXXXX-YY. This field is read-only. */
 		webPropertyId: FormControl<string | null | undefined>,
 
-		/** A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED. */
+		/**
+		 * A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED.
+		 * Type: double
+		 */
 		winnerConfidenceLevel: FormControl<number | null | undefined>,
 
 		/** Boolean specifying whether a winner has been found for this experiment. This field is read-only. */
@@ -2407,7 +2575,10 @@ export namespace MyNS {
 		/** The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED. */
 		url?: string | null;
 
-		/** Weight that this variation should receive. Only present if the experiment is running. This field is read-only. */
+		/**
+		 * Weight that this variation should receive. Only present if the experiment is running. This field is read-only.
+		 * Type: double
+		 */
 		weight?: number | null;
 
 		/** True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. */
@@ -2424,7 +2595,10 @@ export namespace MyNS {
 		/** The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED. */
 		url: FormControl<string | null | undefined>,
 
-		/** Weight that this variation should receive. Only present if the experiment is running. This field is read-only. */
+		/**
+		 * Weight that this variation should receive. Only present if the experiment is running. This field is read-only.
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 
 		/** True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. */
@@ -2448,7 +2622,10 @@ export namespace MyNS {
 		/** A list of experiments. */
 		items?: Array<Experiment>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -2460,10 +2637,16 @@ export namespace MyNS {
 		/** Link to previous page for this experiment collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -2473,7 +2656,10 @@ export namespace MyNS {
 	/** An experiment collection lists Analytics experiments to which the user has access. Each view (profile) can have a set of experiments. Each resource in the Experiment collection corresponds to a single Analytics experiment. */
 	export interface ExperimentsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -2485,10 +2671,16 @@ export namespace MyNS {
 		/** Link to previous page for this experiment collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -2612,7 +2804,10 @@ export namespace MyNS {
 		/** Field A. */
 		fieldA?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldAIndex?: number | null;
 
 		/** Indicates if field A is required to match. */
@@ -2621,7 +2816,10 @@ export namespace MyNS {
 		/** Field B. */
 		fieldB?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldBIndex?: number | null;
 
 		/** Indicates if field B is required to match. */
@@ -2633,7 +2831,10 @@ export namespace MyNS {
 		/** Output field. */
 		outputToField?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputToFieldIndex?: number | null;
 
 		/** Indicates if the existing value of the output field, if any, should be overridden by the output expression. */
@@ -2653,7 +2854,10 @@ export namespace MyNS {
 		/** Field A. */
 		fieldA: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldAIndex: FormControl<number | null | undefined>,
 
 		/** Indicates if field A is required to match. */
@@ -2662,7 +2866,10 @@ export namespace MyNS {
 		/** Field B. */
 		fieldB: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldBIndex: FormControl<number | null | undefined>,
 
 		/** Indicates if field B is required to match. */
@@ -2674,7 +2881,10 @@ export namespace MyNS {
 		/** Output field. */
 		outputToField: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputToFieldIndex: FormControl<number | null | undefined>,
 
 		/** Indicates if the existing value of the output field, if any, should be overridden by the output expression. */
@@ -2800,7 +3010,10 @@ export namespace MyNS {
 		 */
 		field?: string | null;
 
-		/** The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex?: number | null;
 
 		/** Kind value for filter expression */
@@ -2910,7 +3123,10 @@ export namespace MyNS {
 		 */
 		field: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex: FormControl<number | null | undefined>,
 
 		/** Kind value for filter expression */
@@ -2936,7 +3152,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex?: number | null;
 	}
 	export interface FilterLowercaseDetailsFormProperties {
@@ -2944,7 +3163,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateFilterLowercaseDetailsFormGroup() {
@@ -2987,7 +3209,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex?: number | null;
 
 		/** Term to replace the search term with. */
@@ -3004,7 +3229,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex: FormControl<number | null | undefined>,
 
 		/** Term to replace the search term with. */
@@ -3029,7 +3257,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field?: string | null;
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex?: number | null;
 	}
 	export interface FilterUppercaseDetailsFormProperties {
@@ -3037,7 +3268,10 @@ export namespace MyNS {
 		/** Field to use in the filter. */
 		field: FormControl<string | null | undefined>,
 
-		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		/**
+		 * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fieldIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateFilterUppercaseDetailsFormGroup() {
@@ -3104,7 +3338,10 @@ export namespace MyNS {
 		/** A list of filters. */
 		items?: Array<Filter>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -3116,10 +3353,16 @@ export namespace MyNS {
 		/** Link to previous page for this filter collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -3129,7 +3372,10 @@ export namespace MyNS {
 	/** A filter collection lists filters created by users in an Analytics account. Each resource in the collection corresponds to a filter. */
 	export interface FiltersFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -3141,10 +3387,16 @@ export namespace MyNS {
 		/** Link to previous page for this filter collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -3180,7 +3432,10 @@ export namespace MyNS {
 		/** Unique ID for this data response. */
 		id?: string | null;
 
-		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Resource type. */
@@ -3210,7 +3465,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink?: string | null;
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -3229,7 +3487,10 @@ export namespace MyNS {
 		/** Unique ID for this data response. */
 		id: FormControl<string | null | undefined>,
 
-		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Resource type. */
@@ -3250,7 +3511,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -3426,7 +3690,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids?: string | null;
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results'?: number | null;
 
 		/** List of analytics metrics. */
@@ -3444,7 +3711,10 @@ export namespace MyNS {
 		/** Start date. */
 		'start-date'?: string | null;
 
-		/** Start index. */
+		/**
+		 * Start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'start-index'?: number | null;
 	}
 	export interface GaDataQueryFormProperties {
@@ -3461,7 +3731,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids: FormControl<string | null | undefined>,
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results': FormControl<number | null | undefined>,
 
 		/** Desired sampling level */
@@ -3473,7 +3746,10 @@ export namespace MyNS {
 		/** Start date. */
 		'start-date': FormControl<string | null | undefined>,
 
-		/** Start index. */
+		/**
+		 * Start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'start-index': FormControl<number | null | undefined>,
 	}
 	export function CreateGaDataQueryFormGroup() {
@@ -3537,7 +3813,10 @@ export namespace MyNS {
 		/** Details for the goal of the type URL_DESTINATION. */
 		urlDestinationDetails?: GoalUrlDestinationDetails;
 
-		/** Goal value. */
+		/**
+		 * Goal value.
+		 * Type: float
+		 */
 		value?: number | null;
 
 		/** Details for the goal of the type VISIT_NUM_PAGES. */
@@ -3586,7 +3865,10 @@ export namespace MyNS {
 		/** Time this goal was last modified. */
 		updated: FormControl<Date | null | undefined>,
 
-		/** Goal value. */
+		/**
+		 * Goal value.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 
 		/** Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. */
@@ -3746,7 +4028,10 @@ export namespace MyNS {
 		/** Step name. */
 		name?: string | null;
 
-		/** Step number. */
+		/**
+		 * Step number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** URL for this step. */
@@ -3757,7 +4042,10 @@ export namespace MyNS {
 		/** Step name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Step number. */
+		/**
+		 * Step number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** URL for this step. */
@@ -3827,7 +4115,10 @@ export namespace MyNS {
 		/** A list of goals. */
 		items?: Array<Goal>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -3839,10 +4130,16 @@ export namespace MyNS {
 		/** Link to previous page for this goal collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -3852,7 +4149,10 @@ export namespace MyNS {
 	/** A goal collection lists Analytics goals to which the user has access. Each view (profile) can have a set of goals. Each resource in the Goal collection corresponds to a single Analytics goal. */
 	export interface GoalsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -3864,10 +4164,16 @@ export namespace MyNS {
 		/** Link to previous page for this goal collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -3939,7 +4245,10 @@ export namespace MyNS {
 	/** JSON template for an Analytics Remarketing Include Conditions. */
 	export interface IncludeConditions {
 
-		/** The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience. */
+		/**
+		 * The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysToLookBack?: number | null;
 
 		/** Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577 */
@@ -3948,7 +4257,10 @@ export namespace MyNS {
 		/** Resource type for include conditions. */
 		kind?: string | null;
 
-		/** Number of days (in the range 1 to 540) a user remains in the audience. */
+		/**
+		 * Number of days (in the range 1 to 540) a user remains in the audience.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		membershipDurationDays?: number | null;
 
 		/** The segment condition that will cause a user to be added to an audience. */
@@ -3958,7 +4270,10 @@ export namespace MyNS {
 	/** JSON template for an Analytics Remarketing Include Conditions. */
 	export interface IncludeConditionsFormProperties {
 
-		/** The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience. */
+		/**
+		 * The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysToLookBack: FormControl<number | null | undefined>,
 
 		/** Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577 */
@@ -3967,7 +4282,10 @@ export namespace MyNS {
 		/** Resource type for include conditions. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Number of days (in the range 1 to 540) a user remains in the audience. */
+		/**
+		 * Number of days (in the range 1 to 540) a user remains in the audience.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		membershipDurationDays: FormControl<number | null | undefined>,
 
 		/** The segment condition that will cause a user to be added to an audience. */
@@ -4081,7 +4399,10 @@ export namespace MyNS {
 		/** Unique ID for this data response. */
 		id?: string | null;
 
-		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Resource type. */
@@ -4111,7 +4432,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink?: string | null;
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -4127,7 +4451,10 @@ export namespace MyNS {
 		/** Unique ID for this data response. */
 		id: FormControl<string | null | undefined>,
 
-		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Resource type. */
@@ -4148,7 +4475,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -4268,7 +4598,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids?: string | null;
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results'?: number | null;
 
 		/** List of analytics metrics. */
@@ -4286,7 +4619,10 @@ export namespace MyNS {
 		/** Start date. */
 		'start-date'?: string | null;
 
-		/** Start index. */
+		/**
+		 * Start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'start-index'?: number | null;
 	}
 	export interface McfDataQueryFormProperties {
@@ -4303,7 +4639,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids: FormControl<string | null | undefined>,
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results': FormControl<number | null | undefined>,
 
 		/** Desired sampling level */
@@ -4315,7 +4654,10 @@ export namespace MyNS {
 		/** Start date. */
 		'start-date': FormControl<string | null | undefined>,
 
-		/** Start index. */
+		/**
+		 * Start index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'start-index': FormControl<number | null | undefined>,
 	}
 	export function CreateMcfDataQueryFormGroup() {
@@ -4353,6 +4695,7 @@ export namespace MyNS {
 		 * The rank of this profile filter link relative to the other filters linked to the same profile.
 		 * For readonly (i.e., list and get) operations, the rank always starts at 1.
 		 * For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank?: number | null;
 
@@ -4373,6 +4716,7 @@ export namespace MyNS {
 		 * The rank of this profile filter link relative to the other filters linked to the same profile.
 		 * For readonly (i.e., list and get) operations, the rank always starts at 1.
 		 * For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: FormControl<number | null | undefined>,
 
@@ -4396,7 +4740,10 @@ export namespace MyNS {
 		/** A list of profile filter links. */
 		items?: Array<ProfileFilterLink>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -4408,10 +4755,16 @@ export namespace MyNS {
 		/** Link to previous page for this profile filter link collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -4421,7 +4774,10 @@ export namespace MyNS {
 	/** A profile filter link collection lists profile filter links between profiles and filters. Each resource in the collection corresponds to a profile filter link. */
 	export interface ProfileFilterLinksFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -4433,10 +4789,16 @@ export namespace MyNS {
 		/** Link to previous page for this profile filter link collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -4462,7 +4824,10 @@ export namespace MyNS {
 		/** A list of views (profiles). */
 		items?: Array<Profile>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -4474,10 +4839,16 @@ export namespace MyNS {
 		/** Link to previous page for this view (profile) collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -4487,7 +4858,10 @@ export namespace MyNS {
 	/** A view (profile) collection lists Analytics views (profiles) to which the user has access. Each resource in the collection corresponds to a single Analytics view (profile). */
 	export interface ProfilesFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -4499,10 +4873,16 @@ export namespace MyNS {
 		/** Link to previous page for this view (profile) collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -4546,7 +4926,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink?: string | null;
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -4565,7 +4948,10 @@ export namespace MyNS {
 		/** Link to this page. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		/**
+		 * The total number of rows for the query, regardless of the number of rows in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
@@ -4676,7 +5062,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids?: string | null;
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results'?: number | null;
 
 		/** List of real time metrics. */
@@ -4696,7 +5085,10 @@ export namespace MyNS {
 		/** Unique table ID. */
 		ids: FormControl<string | null | undefined>,
 
-		/** Maximum results per page. */
+		/**
+		 * Maximum results per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'max-results': FormControl<number | null | undefined>,
 	}
 	export function CreateRealtimeDataQueryFormGroup() {
@@ -4865,7 +5257,10 @@ export namespace MyNS {
 		/** A list of remarketing audiences. */
 		items?: Array<RemarketingAudience>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -4877,10 +5272,16 @@ export namespace MyNS {
 		/** Link to previous page for this view (profile) collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -4890,7 +5291,10 @@ export namespace MyNS {
 	/** A remarketing audience collection lists Analytics remarketing audiences to which the user has access. Each resource in the collection corresponds to a single Analytics remarketing audience. */
 	export interface RemarketingAudiencesFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -4902,10 +5306,16 @@ export namespace MyNS {
 		/** Link to previous page for this view (profile) collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -5008,7 +5418,10 @@ export namespace MyNS {
 		/** A list of segments. */
 		items?: Array<Segment>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type for segments. */
@@ -5020,10 +5433,16 @@ export namespace MyNS {
 		/** Link to previous page for this segment collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -5033,7 +5452,10 @@ export namespace MyNS {
 	/** An segment collection lists Analytics segments that the user has access to. Each resource in the collection corresponds to a single Analytics segment. */
 	export interface SegmentsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type for segments. */
@@ -5045,10 +5467,16 @@ export namespace MyNS {
 		/** Link to previous page for this segment collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -5254,7 +5682,10 @@ export namespace MyNS {
 		/** A list of unsampled reports. */
 		items?: Array<UnsampledReport>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -5266,10 +5697,16 @@ export namespace MyNS {
 		/** Link to previous page for this unsampled report collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -5279,7 +5716,10 @@ export namespace MyNS {
 	/** An unsampled report collection lists Analytics unsampled reports to which the user has access. Each view (profile) can have a set of unsampled reports. Each resource in the unsampled report collection corresponds to a single Analytics unsampled report. */
 	export interface UnsampledReportsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -5291,10 +5731,16 @@ export namespace MyNS {
 		/** Link to previous page for this unsampled report collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -5379,7 +5825,10 @@ export namespace MyNS {
 		/** A list of uploads. */
 		items?: Array<Upload>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -5391,17 +5840,26 @@ export namespace MyNS {
 		/** Link to previous page for this upload collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 	}
 
 	/** Upload collection lists Analytics uploads to which the user has access. Each custom data source can have a set of uploads. Each resource in the upload collection corresponds to a single Analytics data upload. */
 	export interface UploadsFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -5413,10 +5871,16 @@ export namespace MyNS {
 		/** Link to previous page for this upload collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of resources in the result. */
+		/**
+		 * The total number of results for the query, regardless of the number of resources in the result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateUploadsFormGroup() {
@@ -5514,7 +5978,10 @@ export namespace MyNS {
 		/** A list of web properties. */
 		items?: Array<Webproperty>;
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage?: number | null;
 
 		/** Collection type. */
@@ -5526,10 +5993,16 @@ export namespace MyNS {
 		/** Link to previous page for this web property collection. */
 		previousLink?: string | null;
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
@@ -5539,7 +6012,10 @@ export namespace MyNS {
 	/** A web property collection lists Analytics web properties to which the user has access. Each resource in the collection corresponds to a single Analytics web property. */
 	export interface WebpropertiesFormProperties {
 
-		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		/**
+		 * The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerPage: FormControl<number | null | undefined>,
 
 		/** Collection type. */
@@ -5551,10 +6027,16 @@ export namespace MyNS {
 		/** Link to previous page for this web property collection. */
 		previousLink: FormControl<string | null | undefined>,
 
-		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		/**
+		 * The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The total number of results for the query, regardless of the number of results in the response. */
+		/**
+		 * The total number of results for the query, regardless of the number of results in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalResults: FormControl<number | null | undefined>,
 
 		/** Email ID of the authenticated user */
@@ -5589,11 +6071,13 @@ export namespace MyNS {
 		 * @param {string} filters A comma-separated list of dimension or metric filters to be applied to Analytics data.
 		 * @param {boolean} include_empty_rows The response will include empty rows if this parameter is set to true, the default is true
 		 * @param {number} max_results The maximum number of entries to include in this feed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Analytics_data_ga_getOutput} output The selected format for the response. Default format is JSON.
 		 * @param {Analytics_data_ga_getSamplingLevel} samplingLevel The desired sampling level.
 		 * @param {string} segment An Analytics segment to be applied to data.
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {GaData} Successful response
 		 */
 		Analytics_data_ga_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, include_empty_rows: boolean | null | undefined, max_results: number | null | undefined, output: Analytics_data_ga_getOutput | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, segment: string | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<GaData> {
@@ -5610,9 +6094,11 @@ export namespace MyNS {
 		 * @param {string} dimensions A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.
 		 * @param {string} filters A comma-separated list of dimension or metric filters to be applied to the Analytics data.
 		 * @param {number} max_results The maximum number of entries to include in this feed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Analytics_data_ga_getSamplingLevel} samplingLevel The desired sampling level.
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for the Analytics data.
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {McfData} Successful response
 		 */
 		Analytics_data_mcf_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<McfData> {
@@ -5627,6 +6113,7 @@ export namespace MyNS {
 		 * @param {string} dimensions A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'.
 		 * @param {string} filters A comma-separated list of dimension or metric filters to be applied to real time data.
 		 * @param {number} max_results The maximum number of entries to include in this feed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for real time data.
 		 * @return {RealtimeData} Successful response
 		 */
@@ -5638,7 +6125,9 @@ export namespace MyNS {
 		 * Lists account summaries (lightweight tree comprised of accounts/properties/profiles) to which the user has access.
 		 * Get management/accountSummaries
 		 * @param {number} max_results The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {AccountSummaries} Successful response
 		 */
 		Analytics_management_accountSummaries_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<AccountSummaries> {
@@ -5649,7 +6138,9 @@ export namespace MyNS {
 		 * Lists all accounts to which the user has access.
 		 * Get management/accounts
 		 * @param {number} max_results The maximum number of accounts to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Accounts} Successful response
 		 */
 		Analytics_management_accounts_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<Accounts> {
@@ -5661,7 +6152,9 @@ export namespace MyNS {
 		 * Get management/accounts/{accountId}/entityUserLinks
 		 * @param {string} accountId Account ID to retrieve the user links for.
 		 * @param {number} max_results The maximum number of account-user links to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {EntityUserLinks} Successful response
 		 */
 		Analytics_management_accountUserLinks_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<EntityUserLinks> {
@@ -5705,7 +6198,9 @@ export namespace MyNS {
 		 * Get management/accounts/{accountId}/filters
 		 * @param {string} accountId Account ID to retrieve filters for.
 		 * @param {number} max_results The maximum number of filters to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Filters} Successful response
 		 */
 		Analytics_management_filters_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Filters> {
@@ -5771,7 +6266,9 @@ export namespace MyNS {
 		 * Get management/accounts/{accountId}/webproperties
 		 * @param {string} accountId Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
 		 * @param {number} max_results The maximum number of web properties to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Webproperties} Successful response
 		 */
 		Analytics_management_webproperties_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Webproperties> {
@@ -5827,7 +6324,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account Id for the custom data sources to retrieve.
 		 * @param {string} webPropertyId Web property Id for the custom data sources to retrieve.
 		 * @param {number} max_results The maximum number of custom data sources to include in this response.
+		 *     Minimum: 1
 		 * @param {number} start_index A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {CustomDataSources} Successful response
 		 */
 		Analytics_management_customDataSources_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<CustomDataSources> {
@@ -5853,7 +6352,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property Id for the uploads to retrieve.
 		 * @param {string} customDataSourceId Custom data source Id for uploads to retrieve.
 		 * @param {number} max_results The maximum number of uploads to include in this response.
+		 *     Minimum: 1
 		 * @param {number} start_index A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Uploads} Successful response
 		 */
 		Analytics_management_uploads_list(accountId: string, webPropertyId: string, customDataSourceId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Uploads> {
@@ -5891,7 +6392,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID for the custom dimensions to retrieve.
 		 * @param {string} webPropertyId Web property ID for the custom dimensions to retrieve.
 		 * @param {number} max_results The maximum number of custom dimensions to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {CustomDimensions} Successful response
 		 */
 		Analytics_management_customDimensions_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<CustomDimensions> {
@@ -5953,7 +6456,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID for the custom metrics to retrieve.
 		 * @param {string} webPropertyId Web property ID for the custom metrics to retrieve.
 		 * @param {number} max_results The maximum number of custom metrics to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {CustomMetrics} Successful response
 		 */
 		Analytics_management_customMetrics_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<CustomMetrics> {
@@ -6015,7 +6520,9 @@ export namespace MyNS {
 		 * @param {string} accountId ID of the account which the given web property belongs to.
 		 * @param {string} webPropertyId Web property ID to retrieve the Google Ads links for.
 		 * @param {number} max_results The maximum number of webProperty-Google Ads links to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {EntityAdWordsLinks} Successful response
 		 */
 		Analytics_management_webPropertyAdWordsLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<EntityAdWordsLinks> {
@@ -6087,7 +6594,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID which the given web property belongs to.
 		 * @param {string} webPropertyId Web Property ID for the webProperty-user links to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
 		 * @param {number} max_results The maximum number of webProperty-user Links to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {EntityUserLinks} Successful response
 		 */
 		Analytics_management_webpropertyUserLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<EntityUserLinks> {
@@ -6135,7 +6644,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
 		 * @param {string} webPropertyId Web property ID for the views (profiles) to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.
 		 * @param {number} max_results The maximum number of views (profiles) to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Profiles} Successful response
 		 */
 		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Profiles> {
@@ -6208,7 +6719,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web Property ID which the given view (profile) belongs to. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
 		 * @param {string} profileId View (Profile) ID to retrieve the profile-user links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
 		 * @param {number} max_results The maximum number of profile-user links to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {EntityUserLinks} Successful response
 		 */
 		Analytics_management_profileUserLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<EntityUserLinks> {
@@ -6260,7 +6773,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property ID to retrieve experiments for.
 		 * @param {string} profileId View (Profile) ID to retrieve experiments for.
 		 * @param {number} max_results The maximum number of experiments to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Experiments} Successful response
 		 */
 		Analytics_management_experiments_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Experiments> {
@@ -6338,7 +6853,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
 		 * @param {string} profileId View (Profile) ID to retrieve goals for. Can either be a specific view (profile) ID or '~all', which refers to all the views (profiles) that user has access to.
 		 * @param {number} max_results The maximum number of goals to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Goals} Successful response
 		 */
 		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<Goals> {
@@ -6403,7 +6920,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property Id for profile filter links for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
 		 * @param {string} profileId Profile ID to retrieve filter links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
 		 * @param {number} max_results The maximum number of profile filter links to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {ProfileFilterLinks} Successful response
 		 */
 		Analytics_management_profileFilterLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<ProfileFilterLinks> {
@@ -6481,7 +7000,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property ID to retrieve unsampled reports for. Must be a specific web property ID, ~all is not supported.
 		 * @param {string} profileId View (Profile) ID to retrieve unsampled reports for. Must be a specific view (profile) ID, ~all is not supported.
 		 * @param {number} max_results The maximum number of unsampled reports to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {UnsampledReports} Successful response
 		 */
 		Analytics_management_unsampledReports_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<UnsampledReports> {
@@ -6532,7 +7053,9 @@ export namespace MyNS {
 		 * @param {string} accountId The account ID of the remarketing audiences to retrieve.
 		 * @param {string} webPropertyId The web property ID of the remarketing audiences to retrieve.
 		 * @param {number} max_results The maximum number of remarketing audiences to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {RemarketingAudiences} Successful response
 		 */
 		Analytics_management_remarketingAudience_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined, type: string | null | undefined): Observable<RemarketingAudiences> {
@@ -6611,7 +7134,9 @@ export namespace MyNS {
 		 * Lists segments to which the user has access.
 		 * Get management/segments
 		 * @param {number} max_results The maximum number of segments to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {Segments} Successful response
 		 */
 		Analytics_management_segments_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<Segments> {

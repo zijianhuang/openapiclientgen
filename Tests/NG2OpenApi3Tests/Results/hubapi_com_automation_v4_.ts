@@ -106,7 +106,9 @@ export namespace MyNS {
 
 		/** Required */
 		actionUrl: string;
-		archivedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		archivedAt?: string | null;
 		executionRules?: Array<PublicExecutionTranslationRule>;
 
 		/** Required */
@@ -137,7 +139,9 @@ export namespace MyNS {
 
 		/** Required */
 		actionUrl: FormControl<string | null | undefined>,
-		archivedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		archivedAt: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
@@ -154,7 +158,7 @@ export namespace MyNS {
 	export function CreatePublicActionDefinitionFormGroup() {
 		return new FormGroup<PublicActionDefinitionFormProperties>({
 			actionUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			archivedAt: new FormControl<number | null | undefined>(undefined),
+			archivedAt: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			labels: new FormControl<{[id: string]: PublicActionLabels } | null | undefined>(undefined, [Validators.required]),
 			published: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
@@ -295,10 +299,16 @@ export namespace MyNS {
 		/** Required */
 		description: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayOrder: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		doubleData: number;
 
 		/** Required */
@@ -318,10 +328,16 @@ export namespace MyNS {
 		/** Required */
 		description: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		displayOrder: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		doubleData: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -609,7 +625,9 @@ export namespace MyNS {
 
 		/** Required */
 		actionUrl: string;
-		archivedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		archivedAt?: string | null;
 		executionRules?: Array<PublicExecutionTranslationRule>;
 
 		/** Required */
@@ -634,7 +652,9 @@ export namespace MyNS {
 
 		/** Required */
 		actionUrl: FormControl<string | null | undefined>,
-		archivedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		archivedAt: FormControl<string | null | undefined>,
 
 		/** Required */
 		labels: FormControl<{[id: string]: PublicActionLabels } | null | undefined>,
@@ -645,7 +665,7 @@ export namespace MyNS {
 	export function CreatePublicActionDefinitionEggFormGroup() {
 		return new FormGroup<PublicActionDefinitionEggFormProperties>({
 			actionUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			archivedAt: new FormControl<number | null | undefined>(undefined),
+			archivedAt: new FormControl<string | null | undefined>(undefined),
 			labels: new FormControl<{[id: string]: PublicActionLabels } | null | undefined>(undefined, [Validators.required]),
 			published: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
@@ -793,8 +813,10 @@ export namespace MyNS {
 		/**
 		 * Get automation/v4/actions/{appId}
 		 * @param {number} limit The maximum number of results to display per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} after The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.
 		 * @param {boolean} archived Whether to return only results that have been archived.
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollectionResponsePublicActionDefinitionForwardPaging} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappId_getPage(limit: number | null | undefined, after: string | null | undefined, archived: boolean | null | undefined, appId: number): Observable<CollectionResponsePublicActionDefinitionForwardPaging> {
@@ -803,6 +825,7 @@ export namespace MyNS {
 
 		/**
 		 * Post automation/v4/actions/{appId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Post_SlashautomationSlashv4SlashactionsSlashappId_create(appId: number, requestBody: PublicActionDefinitionEgg): Observable<HttpResponse<string>> {
@@ -811,6 +834,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete automation/v4/actions/{appId}/{definitionId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_archive(definitionId: string, appId: number): Observable<HttpResponse<string>> {
@@ -820,6 +844,7 @@ export namespace MyNS {
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}
 		 * @param {boolean} archived Whether to return only results that have been archived.
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicActionDefinition} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_getById(definitionId: string, archived: boolean | null | undefined, appId: number): Observable<PublicActionDefinition> {
@@ -828,6 +853,7 @@ export namespace MyNS {
 
 		/**
 		 * Patch automation/v4/actions/{appId}/{definitionId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicActionDefinition} successful operation
 		 */
 		Patch_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_update(definitionId: string, appId: number, requestBody: PublicActionDefinitionPatch): Observable<PublicActionDefinition> {
@@ -836,6 +862,7 @@ export namespace MyNS {
 
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}/functions
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollectionResponsePublicActionFunctionIdentifierNoPaging} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctions_getPage(definitionId: string, appId: number): Observable<CollectionResponsePublicActionFunctionIdentifierNoPaging> {
@@ -844,6 +871,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete automation/v4/actions/{appId}/{definitionId}/functions/{functionType}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionType_archiveByFunctionType(definitionId: string, functionType: PublicActionFunctionIdentifierFunctionType, appId: number): Observable<HttpResponse<string>> {
@@ -852,6 +880,7 @@ export namespace MyNS {
 
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}/functions/{functionType}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicActionFunction} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionType_getByFunctionType(definitionId: string, functionType: PublicActionFunctionIdentifierFunctionType, appId: number): Observable<PublicActionFunction> {
@@ -860,6 +889,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete automation/v4/actions/{appId}/{definitionId}/functions/{functionType}/{functionId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionTypeSlashfunctionId_archive(definitionId: string, functionType: PublicActionFunctionIdentifierFunctionType, functionId: string, appId: number): Observable<HttpResponse<string>> {
@@ -868,6 +898,7 @@ export namespace MyNS {
 
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}/functions/{functionType}/{functionId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicActionFunction} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionTypeSlashfunctionId_getById(definitionId: string, functionType: PublicActionFunctionIdentifierFunctionType, functionId: string, appId: number): Observable<PublicActionFunction> {
@@ -877,7 +908,9 @@ export namespace MyNS {
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}/revisions
 		 * @param {number} limit The maximum number of results to display per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} after The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollectionResponsePublicActionRevisionForwardPaging} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashrevisions_getPage(definitionId: string, limit: number | null | undefined, after: string | null | undefined, appId: number): Observable<CollectionResponsePublicActionRevisionForwardPaging> {
@@ -886,6 +919,7 @@ export namespace MyNS {
 
 		/**
 		 * Get automation/v4/actions/{appId}/{definitionId}/revisions/{revisionId}
+		 * @param {number} appId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicActionRevision} successful operation
 		 */
 		Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashrevisionsSlashrevisionId_getById(definitionId: string, revisionId: string, appId: number): Observable<PublicActionRevision> {

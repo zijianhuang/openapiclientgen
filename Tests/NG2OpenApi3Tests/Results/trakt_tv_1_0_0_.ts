@@ -1101,10 +1101,14 @@ export namespace MyNS {
 		/** Required */
 		ids: Add_hidden_itemsBodyMoviesIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface Add_hidden_itemsBodyMoviesFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodyMoviesFormGroup() {
@@ -1118,13 +1122,21 @@ export namespace MyNS {
 	export interface Add_hidden_itemsBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Add_hidden_itemsBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodyMoviesIdsFormGroup() {
@@ -1149,9 +1161,13 @@ export namespace MyNS {
 	}
 
 	export interface Add_hidden_itemsBodySeasonsIds {
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Add_hidden_itemsBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodySeasonsIdsFormGroup() {
@@ -1170,7 +1186,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface Add_hidden_itemsBodyShowsFormProperties {
@@ -1178,7 +1197,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodyShowsFormGroup() {
@@ -1192,15 +1214,27 @@ export namespace MyNS {
 	export interface Add_hidden_itemsBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Add_hidden_itemsBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodyShowsIdsFormGroup() {
@@ -1215,9 +1249,13 @@ export namespace MyNS {
 	}
 
 	export interface Add_hidden_itemsBodyShowsSeasons {
+
+		/** Type: double */
 		number?: number | null;
 	}
 	export interface Add_hidden_itemsBodyShowsSeasonsFormProperties {
+
+		/** Type: double */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateAdd_hidden_itemsBodyShowsSeasonsFormGroup() {
@@ -1254,14 +1292,26 @@ export namespace MyNS {
 
 	export interface Remove_items_from_collectionBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Remove_items_from_collectionBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyEpisodesIdsFormGroup() {
@@ -1279,10 +1329,14 @@ export namespace MyNS {
 		/** Required */
 		ids: Remove_items_from_collectionBodyMoviesIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface Remove_items_from_collectionBodyMoviesFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyMoviesFormGroup() {
@@ -1296,13 +1350,21 @@ export namespace MyNS {
 	export interface Remove_items_from_collectionBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Remove_items_from_collectionBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyMoviesIdsFormGroup() {
@@ -1327,13 +1389,25 @@ export namespace MyNS {
 	}
 
 	export interface Remove_items_from_collectionBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Remove_items_from_collectionBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodySeasonsIdsFormGroup() {
@@ -1356,7 +1430,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface Remove_items_from_collectionBodyShowsFormProperties {
@@ -1364,7 +1441,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyShowsFormGroup() {
@@ -1378,15 +1458,27 @@ export namespace MyNS {
 	export interface Remove_items_from_collectionBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Remove_items_from_collectionBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyShowsIdsFormGroup() {
@@ -1403,12 +1495,18 @@ export namespace MyNS {
 	export interface Remove_items_from_collectionBodyShowsSeasons {
 		Remove_items_from_collectionBodyShowsSeasonsEpisodes?: Array<Remove_items_from_collectionBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Remove_items_from_collectionBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyShowsSeasonsFormGroup() {
@@ -1420,12 +1518,18 @@ export namespace MyNS {
 
 	export interface Remove_items_from_collectionBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Remove_items_from_collectionBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateRemove_items_from_collectionBodyShowsSeasonsEpisodesFormGroup() {
@@ -1458,6 +1562,7 @@ export namespace MyNS {
 		 * Get calendars/all/dvd/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsAllDvd_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1471,6 +1576,7 @@ export namespace MyNS {
 		 * Get calendars/all/movies/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsAllMovies_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1484,6 +1590,7 @@ export namespace MyNS {
 		 * Get calendars/all/shows/new/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsAllShowsNew_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1497,6 +1604,7 @@ export namespace MyNS {
 		 * Get calendars/all/shows/premieres/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsAllShowsPremieres_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1510,6 +1618,7 @@ export namespace MyNS {
 		 * Get calendars/all/shows/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsAllShows_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1523,6 +1632,7 @@ export namespace MyNS {
 		 * Get calendars/my/dvd/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsMyDvd_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1536,6 +1646,7 @@ export namespace MyNS {
 		 * Get calendars/my/movies/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsMyMovies_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1549,6 +1660,7 @@ export namespace MyNS {
 		 * Get calendars/my/shows/new/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsMyShowsNew_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1562,6 +1674,7 @@ export namespace MyNS {
 		 * Get calendars/my/shows/premieres/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsMyShowsPremieres_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1575,6 +1688,7 @@ export namespace MyNS {
 		 * Get calendars/my/shows/{start_date}/{days}
 		 * @param {string} start_date Start the calendar on this date.
 		 * @param {number} days Number of days to display.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CalendarsMyShows_start_date_daysGet(start_date: string, days: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1739,6 +1853,7 @@ export namespace MyNS {
 		 * Returns the media item this comment is attached to. The media type can be `movie`, `show`, `season`, `episode`, or `list` and it also returns the standard media object for that media type.
 		 * Get comments/{id}/item
 		 * @param {number} id A specific comment ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Comments_idItemGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1775,6 +1890,7 @@ export namespace MyNS {
 		 * Returns all users who liked a comment. If you only need the `replies` count, the main `comment` object already has that, so no need to use this method.
 		 * Get comments/{id}/likes
 		 * @param {number} id A specific comment ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Comments_idLikesGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1869,6 +1985,7 @@ export namespace MyNS {
 		 * **Note:** You must use an integer `id`, and only public lists will return data.
 		 * Get lists/{id}
 		 * @param {number} id Trakt ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Lists_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1881,6 +1998,7 @@ export namespace MyNS {
 		 * Returns all top level comments for a list. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, and most `replies`.
 		 * Get lists/{id}/comments/{sort}
 		 * @param {number} id Trakt ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Lists_idComments_sortGetSort} sort how to sort
 		 * @return {void} OK
 		 */
@@ -2881,6 +2999,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} translations include episode translations
 		 * @return {void} OK
 		 */
@@ -2895,6 +3014,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/comments/{sort}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Shows_idComments_sortGetSort} sort how to sort
 		 * @return {void} OK
 		 */
@@ -2910,7 +3030,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} ```
 		 * /shows/game-of-thrones/seasons/1/episodes/1?extended=full
 		 * ```
@@ -2926,7 +3048,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/comments/{sort}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Movies_idComments_sortGetSort} sort how to sort
 		 * @return {void} OK
 		 */
@@ -2941,7 +3065,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/lists/{type}/{sort}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Shows_idSeasons_seasonEpisodes_episodeLists_type_sortGetType} type Filter for a specific list type
 		 * @param {Movies_idLists_type_sortGetSort} sort How to sort
 		 * @return {void} OK
@@ -2961,7 +3087,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/people
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} ```
 		 * /shows/game-of-thrones/seasons/1/episodes/1/people?extended=guest_stars
 		 * ```
@@ -2976,7 +3104,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/ratings
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonEpisodes_episodeRatingsGet(id: string, season: number, episode: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2989,7 +3119,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/stats
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonEpisodes_episodeStatsGet(id: string, season: number, episode: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3002,7 +3134,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/translations/{language}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language 2 character language code
 		 * @return {void} OK
 		 */
@@ -3017,7 +3151,9 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/episodes/{episode}/watching
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} episode episode number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonEpisodes_episodeWatchingGet(id: string, season: number, episode: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3031,6 +3167,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/lists/{type}/{sort}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Shows_idSeasons_seasonEpisodes_episodeLists_type_sortGetType} type Filter for a specific list type
 		 * @param {Movies_idLists_type_sortGetSort} sort How to sort
 		 * @return {void} OK
@@ -3050,6 +3187,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/people
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} ```
 		 * /shows/game-of-thrones/seasons/1/people?extended=guest_stars
 		 * ```
@@ -3064,6 +3202,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/ratings
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonRatingsGet(id: string, season: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3076,6 +3215,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/stats
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonStatsGet(id: string, season: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3088,6 +3228,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/translations/{language}
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language 2 character language code
 		 * @return {void} OK
 		 */
@@ -3102,6 +3243,7 @@ export namespace MyNS {
 		 * Get shows/{id}/seasons/{season}/watching
 		 * @param {string} id Trakt ID, Trakt slug, or IMDB ID
 		 * @param {number} season season number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shows_idSeasons_seasonWatchingGet(id: string, season: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3277,6 +3419,7 @@ export namespace MyNS {
 		 * | `/history/episodes/73482` | Only episode 1 for Breaking Bad: Season 1 |
 		 * Get sync/history/{type}/{id}
 		 * @param {number} id Trakt ID for a specific item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_at Starting date.
 		 * @param {string} end_at Ending date.
 		 * @return {void} ```
@@ -3306,6 +3449,7 @@ export namespace MyNS {
 		 * Remove a playback item from a user's playback progress list. A `404` will be returned if the `id` is invalid.
 		 * Delete sync/playback/{id}
 		 * @param {number} id playback ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		SyncPlayback_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3377,6 +3521,7 @@ export namespace MyNS {
 		 * Get a user's ratings filtered by `type`. You can optionally filter for a specific `rating` between 1 and 10. Send a comma separated string for `rating` if you need multiple ratings.
 		 * Get sync/ratings/{type}/{rating}
 		 * @param {SyncRatings_type_ratingGetRating} rating Filter for a specific rating.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} ```
 		 * /sync/ratings/episodes
 		 * ```
@@ -3794,6 +3939,7 @@ export namespace MyNS {
 		 * Get users/{id}/history/{type}/{item_id}
 		 * @param {string} id User slug
 		 * @param {number} item_id Trakt ID for a specific item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_at Starting date.
 		 * @param {string} end_at Ending date.
 		 * @return {void} ```
@@ -4083,6 +4229,7 @@ export namespace MyNS {
 		 * Get users/{id}/ratings/{type}/{rating}
 		 * @param {string} id User slug
 		 * @param {Users_idRatings_type_ratingGetRating} rating Filter for a specific rating.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} ```
 		 * /users/sean/ratings/episodes
 		 * ```
@@ -4202,10 +4349,14 @@ export namespace MyNS {
 	export interface CheckinPostPostBodyMovie {
 		ids?: CheckinPostPostBodyMovieIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface CheckinPostPostBodyMovieFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateCheckinPostPostBodyMovieFormGroup() {
@@ -4219,13 +4370,21 @@ export namespace MyNS {
 	export interface CheckinPostPostBodyMovieIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface CheckinPostPostBodyMovieIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateCheckinPostPostBodyMovieIdsFormGroup() {
@@ -4278,10 +4437,14 @@ export namespace MyNS {
 	export interface CommentsPostPostBodyMovie {
 		ids?: CommentsPostPostBodyMovieIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface CommentsPostPostBodyMovieFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentsPostPostBodyMovieFormGroup() {
@@ -4295,13 +4458,21 @@ export namespace MyNS {
 	export interface CommentsPostPostBodyMovieIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface CommentsPostPostBodyMovieIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentsPostPostBodyMovieIdsFormGroup() {
@@ -4465,11 +4636,15 @@ export namespace MyNS {
 		app_date?: string | null;
 		app_version?: string | null;
 		movie?: ScrobblePausePostPostBodyMovie;
+
+		/** Type: double */
 		progress?: number | null;
 	}
 	export interface ScrobblePausePostPostBodyFormProperties {
 		app_date: FormControl<string | null | undefined>,
 		app_version: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobblePausePostPostBodyFormGroup() {
@@ -4484,10 +4659,14 @@ export namespace MyNS {
 	export interface ScrobblePausePostPostBodyMovie {
 		ids?: ScrobblePausePostPostBodyMovieIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface ScrobblePausePostPostBodyMovieFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobblePausePostPostBodyMovieFormGroup() {
@@ -4501,13 +4680,21 @@ export namespace MyNS {
 	export interface ScrobblePausePostPostBodyMovieIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface ScrobblePausePostPostBodyMovieIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobblePausePostPostBodyMovieIdsFormGroup() {
@@ -4524,11 +4711,15 @@ export namespace MyNS {
 		app_date?: string | null;
 		app_version?: string | null;
 		movie?: ScrobbleStartPostPostBodyMovie;
+
+		/** Type: double */
 		progress?: number | null;
 	}
 	export interface ScrobbleStartPostPostBodyFormProperties {
 		app_date: FormControl<string | null | undefined>,
 		app_version: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStartPostPostBodyFormGroup() {
@@ -4543,10 +4734,14 @@ export namespace MyNS {
 	export interface ScrobbleStartPostPostBodyMovie {
 		ids?: ScrobbleStartPostPostBodyMovieIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface ScrobbleStartPostPostBodyMovieFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStartPostPostBodyMovieFormGroup() {
@@ -4560,13 +4755,21 @@ export namespace MyNS {
 	export interface ScrobbleStartPostPostBodyMovieIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface ScrobbleStartPostPostBodyMovieIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStartPostPostBodyMovieIdsFormGroup() {
@@ -4583,11 +4786,15 @@ export namespace MyNS {
 		app_date?: string | null;
 		app_version?: string | null;
 		movie?: ScrobbleStopPostPostBodyMovie;
+
+		/** Type: double */
 		progress?: number | null;
 	}
 	export interface ScrobbleStopPostPostBodyFormProperties {
 		app_date: FormControl<string | null | undefined>,
 		app_version: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		progress: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStopPostPostBodyFormGroup() {
@@ -4602,10 +4809,14 @@ export namespace MyNS {
 	export interface ScrobbleStopPostPostBodyMovie {
 		ids?: ScrobbleStopPostPostBodyMovieIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface ScrobbleStopPostPostBodyMovieFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStopPostPostBodyMovieFormGroup() {
@@ -4619,13 +4830,21 @@ export namespace MyNS {
 	export interface ScrobbleStopPostPostBodyMovieIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface ScrobbleStopPostPostBodyMovieIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleStopPostPostBodyMovieIdsFormGroup() {
@@ -4673,14 +4892,26 @@ export namespace MyNS {
 
 	export interface SyncCollectionPostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncCollectionPostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyEpisodesIdsFormGroup() {
@@ -4704,6 +4935,8 @@ export namespace MyNS {
 		media_type?: string | null;
 		resolution?: string | null;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncCollectionPostPostBodyMoviesFormProperties {
@@ -4714,6 +4947,8 @@ export namespace MyNS {
 		media_type: FormControl<string | null | undefined>,
 		resolution: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyMoviesFormGroup() {
@@ -4733,13 +4968,21 @@ export namespace MyNS {
 	export interface SyncCollectionPostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncCollectionPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyMoviesIdsFormGroup() {
@@ -4764,13 +5007,25 @@ export namespace MyNS {
 	}
 
 	export interface SyncCollectionPostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncCollectionPostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodySeasonsIdsFormGroup() {
@@ -4793,7 +5048,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncCollectionPostPostBodyShowsFormProperties {
@@ -4801,7 +5059,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyShowsFormGroup() {
@@ -4815,15 +5076,27 @@ export namespace MyNS {
 	export interface SyncCollectionPostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncCollectionPostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyShowsIdsFormGroup() {
@@ -4840,12 +5113,18 @@ export namespace MyNS {
 	export interface SyncCollectionPostPostBodyShowsSeasons {
 		SyncCollectionPostPostBodyShowsSeasonsEpisodes?: Array<SyncCollectionPostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface SyncCollectionPostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncCollectionPostPostBodyShowsSeasonsFormGroup() {
@@ -4860,7 +5139,10 @@ export namespace MyNS {
 		audio_channels?: string | null;
 		media_type?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 		resolution?: string | null;
 	}
@@ -4869,7 +5151,10 @@ export namespace MyNS {
 		audio_channels: FormControl<string | null | undefined>,
 		media_type: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 		resolution: FormControl<string | null | undefined>,
 	}
@@ -4914,14 +5199,26 @@ export namespace MyNS {
 
 	export interface SyncHistoryPostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryPostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodyEpisodesIdsFormGroup() {
@@ -4940,11 +5237,15 @@ export namespace MyNS {
 		ids: SyncHistoryPostPostBodyMoviesIds;
 		title?: string | null;
 		watched_at?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncHistoryPostPostBodyMoviesFormProperties {
 		title: FormControl<string | null | undefined>,
 		watched_at: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodyMoviesFormGroup() {
@@ -4959,13 +5260,21 @@ export namespace MyNS {
 	export interface SyncHistoryPostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncHistoryPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodyMoviesIdsFormGroup() {
@@ -4993,13 +5302,25 @@ export namespace MyNS {
 	}
 
 	export interface SyncHistoryPostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryPostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodySeasonsIdsFormGroup() {
@@ -5022,7 +5343,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncHistoryPostPostBodyShowsFormProperties {
@@ -5030,7 +5354,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodyShowsFormGroup() {
@@ -5044,15 +5371,27 @@ export namespace MyNS {
 	export interface SyncHistoryPostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryPostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryPostPostBodyShowsIdsFormGroup() {
@@ -5069,13 +5408,19 @@ export namespace MyNS {
 	export interface SyncHistoryPostPostBodyShowsSeasons {
 		SyncHistoryPostPostBodyShowsSeasonsEpisodes?: Array<SyncHistoryPostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 		watched_at?: string | null;
 	}
 	export interface SyncHistoryPostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 		watched_at: FormControl<string | null | undefined>,
 	}
@@ -5089,13 +5434,19 @@ export namespace MyNS {
 
 	export interface SyncHistoryPostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 		watched_at?: string | null;
 	}
 	export interface SyncHistoryPostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 		watched_at: FormControl<string | null | undefined>,
 	}
@@ -5135,14 +5486,26 @@ export namespace MyNS {
 
 	export interface SyncHistoryRemovePostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryRemovePostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyEpisodesIdsFormGroup() {
@@ -5160,10 +5523,14 @@ export namespace MyNS {
 		/** Required */
 		ids: SyncHistoryRemovePostPostBodyMoviesIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncHistoryRemovePostPostBodyMoviesFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyMoviesFormGroup() {
@@ -5177,13 +5544,21 @@ export namespace MyNS {
 	export interface SyncHistoryRemovePostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncHistoryRemovePostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyMoviesIdsFormGroup() {
@@ -5208,13 +5583,25 @@ export namespace MyNS {
 	}
 
 	export interface SyncHistoryRemovePostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryRemovePostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodySeasonsIdsFormGroup() {
@@ -5237,7 +5624,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncHistoryRemovePostPostBodyShowsFormProperties {
@@ -5245,7 +5635,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyShowsFormGroup() {
@@ -5259,15 +5652,27 @@ export namespace MyNS {
 	export interface SyncHistoryRemovePostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncHistoryRemovePostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyShowsIdsFormGroup() {
@@ -5284,12 +5689,18 @@ export namespace MyNS {
 	export interface SyncHistoryRemovePostPostBodyShowsSeasons {
 		SyncHistoryRemovePostPostBodyShowsSeasonsEpisodes?: Array<SyncHistoryRemovePostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface SyncHistoryRemovePostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyShowsSeasonsFormGroup() {
@@ -5301,12 +5712,18 @@ export namespace MyNS {
 
 	export interface SyncHistoryRemovePostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface SyncHistoryRemovePostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncHistoryRemovePostPostBodyShowsSeasonsEpisodesFormGroup() {
@@ -5336,9 +5753,13 @@ export namespace MyNS {
 
 	export interface SyncRatingsPostPostBodyEpisodes {
 		ids?: SyncRatingsPostPostBodyEpisodesIds;
+
+		/** Type: double */
 		rating?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyEpisodesFormProperties {
+
+		/** Type: double */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyEpisodesFormGroup() {
@@ -5350,14 +5771,26 @@ export namespace MyNS {
 
 	export interface SyncRatingsPostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyEpisodesIdsFormGroup() {
@@ -5376,17 +5809,27 @@ export namespace MyNS {
 		ids: SyncRatingsPostPostBodyMoviesIds;
 		rated_at?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: number;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyMoviesFormProperties {
 		rated_at: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyMoviesFormGroup() {
@@ -5402,13 +5845,21 @@ export namespace MyNS {
 	export interface SyncRatingsPostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyMoviesIdsFormGroup() {
@@ -5423,9 +5874,13 @@ export namespace MyNS {
 
 	export interface SyncRatingsPostPostBodySeasons {
 		ids?: SyncRatingsPostPostBodySeasonsIds;
+
+		/** Type: double */
 		rating?: number | null;
 	}
 	export interface SyncRatingsPostPostBodySeasonsFormProperties {
+
+		/** Type: double */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodySeasonsFormGroup() {
@@ -5436,13 +5891,25 @@ export namespace MyNS {
 	}
 
 	export interface SyncRatingsPostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncRatingsPostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodySeasonsIdsFormGroup() {
@@ -5458,6 +5925,8 @@ export namespace MyNS {
 
 		/** Required */
 		ids: SyncRatingsPostPostBodyShowsIds;
+
+		/** Type: double */
 		rating?: number | null;
 
 		/** Required */
@@ -5466,16 +5935,24 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncRatingsPostPostBodyShowsFormProperties {
+
+		/** Type: double */
 		rating: FormControl<number | null | undefined>,
 
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyShowsFormGroup() {
@@ -5490,15 +5967,27 @@ export namespace MyNS {
 	export interface SyncRatingsPostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyShowsIdsFormGroup() {
@@ -5515,14 +6004,24 @@ export namespace MyNS {
 	export interface SyncRatingsPostPostBodyShowsSeasons {
 		SyncRatingsPostPostBodyShowsSeasonsEpisodes?: Array<SyncRatingsPostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
+
+		/** Type: double */
 		rating?: number | null;
 	}
 	export interface SyncRatingsPostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyShowsSeasonsFormGroup() {
@@ -5535,18 +6034,30 @@ export namespace MyNS {
 
 	export interface SyncRatingsPostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: number;
 	}
 	export interface SyncRatingsPostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRatingsPostPostBodyShowsSeasonsEpisodesFormGroup() {
@@ -5579,11 +6090,15 @@ export namespace MyNS {
 		ids: SyncRecommendationsPostPostBodyMoviesIds;
 		notes?: string | null;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncRecommendationsPostPostBodyMoviesFormProperties {
 		notes: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsPostPostBodyMoviesFormGroup() {
@@ -5598,13 +6113,21 @@ export namespace MyNS {
 	export interface SyncRecommendationsPostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncRecommendationsPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsPostPostBodyMoviesIdsFormGroup() {
@@ -5626,7 +6149,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncRecommendationsPostPostBodyShowsFormProperties {
@@ -5635,7 +6161,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsPostPostBodyShowsFormGroup() {
@@ -5650,15 +6179,27 @@ export namespace MyNS {
 	export interface SyncRecommendationsPostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncRecommendationsPostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsPostPostBodyShowsIdsFormGroup() {
@@ -5689,10 +6230,14 @@ export namespace MyNS {
 		/** Required */
 		ids: SyncRecommendationsRemovePostPostBodyMoviesIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncRecommendationsRemovePostPostBodyMoviesFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsRemovePostPostBodyMoviesFormGroup() {
@@ -5706,13 +6251,21 @@ export namespace MyNS {
 	export interface SyncRecommendationsRemovePostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncRecommendationsRemovePostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsRemovePostPostBodyMoviesIdsFormGroup() {
@@ -5728,10 +6281,14 @@ export namespace MyNS {
 	export interface SyncRecommendationsRemovePostPostBodyShows {
 		ids?: SyncRecommendationsRemovePostPostBodyShowsIds;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncRecommendationsRemovePostPostBodyShowsFormProperties {
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsRemovePostPostBodyShowsFormGroup() {
@@ -5745,15 +6302,27 @@ export namespace MyNS {
 	export interface SyncRecommendationsRemovePostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncRecommendationsRemovePostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncRecommendationsRemovePostPostBodyShowsIdsFormGroup() {
@@ -5796,14 +6365,26 @@ export namespace MyNS {
 
 	export interface SyncWatchlistPostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncWatchlistPostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyEpisodesIdsFormGroup() {
@@ -5822,11 +6403,15 @@ export namespace MyNS {
 		ids: SyncWatchlistPostPostBodyMoviesIds;
 		notes?: string | null;
 		title?: string | null;
+
+		/** Type: double */
 		year?: number | null;
 	}
 	export interface SyncWatchlistPostPostBodyMoviesFormProperties {
 		notes: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyMoviesFormGroup() {
@@ -5841,13 +6426,21 @@ export namespace MyNS {
 	export interface SyncWatchlistPostPostBodyMoviesIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface SyncWatchlistPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyMoviesIdsFormGroup() {
@@ -5872,13 +6465,25 @@ export namespace MyNS {
 	}
 
 	export interface SyncWatchlistPostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncWatchlistPostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodySeasonsIdsFormGroup() {
@@ -5902,7 +6507,10 @@ export namespace MyNS {
 		/** Required */
 		title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: number;
 	}
 	export interface SyncWatchlistPostPostBodyShowsFormProperties {
@@ -5911,7 +6519,10 @@ export namespace MyNS {
 		/** Required */
 		title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyShowsFormGroup() {
@@ -5926,15 +6537,27 @@ export namespace MyNS {
 	export interface SyncWatchlistPostPostBodyShowsIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface SyncWatchlistPostPostBodyShowsIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyShowsIdsFormGroup() {
@@ -5951,12 +6574,18 @@ export namespace MyNS {
 	export interface SyncWatchlistPostPostBodyShowsSeasons {
 		SyncWatchlistPostPostBodyShowsSeasonsEpisodes?: Array<SyncWatchlistPostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface SyncWatchlistPostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyShowsSeasonsFormGroup() {
@@ -5968,12 +6597,18 @@ export namespace MyNS {
 
 	export interface SyncWatchlistPostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface SyncWatchlistPostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateSyncWatchlistPostPostBodyShowsSeasonsEpisodesFormGroup() {
@@ -6092,14 +6727,26 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsPostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyEpisodesIdsFormGroup() {
@@ -6130,10 +6777,14 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsPostPostBodyMoviesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyMoviesIdsFormGroup() {
@@ -6161,13 +6812,21 @@ export namespace MyNS {
 	export interface Users_idLists_list_idItemsPostPostBodyPeopleIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyPeopleIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyPeopleIdsFormGroup() {
@@ -6192,13 +6851,25 @@ export namespace MyNS {
 	}
 
 	export interface Users_idLists_list_idItemsPostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodySeasonsIdsFormGroup() {
@@ -6230,9 +6901,13 @@ export namespace MyNS {
 	}
 
 	export interface Users_idLists_list_idItemsPostPostBodyShowsIds {
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyShowsIdsFormProperties {
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyShowsIdsFormGroup() {
@@ -6245,12 +6920,18 @@ export namespace MyNS {
 	export interface Users_idLists_list_idItemsPostPostBodyShowsSeasons {
 		Users_idLists_list_idItemsPostPostBodyShowsSeasonsEpisodes?: Array<Users_idLists_list_idItemsPostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyShowsSeasonsFormGroup() {
@@ -6262,12 +6943,18 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsPostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Users_idLists_list_idItemsPostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsPostPostBodyShowsSeasonsEpisodesFormGroup() {
@@ -6305,14 +6992,26 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsRemovePostPostBodyEpisodesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyEpisodesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyEpisodesIdsFormGroup() {
@@ -6340,10 +7039,14 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsRemovePostPostBodyMoviesIds {
 		imdb?: string | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyMoviesIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyMoviesIdsFormGroup() {
@@ -6371,13 +7074,21 @@ export namespace MyNS {
 	export interface Users_idLists_list_idItemsRemovePostPostBodyPeopleIds {
 		imdb?: string | null;
 		slug?: string | null;
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyPeopleIdsFormProperties {
 		imdb: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyPeopleIdsFormGroup() {
@@ -6402,13 +7113,25 @@ export namespace MyNS {
 	}
 
 	export interface Users_idLists_list_idItemsRemovePostPostBodySeasonsIds {
+
+		/** Type: double */
 		tmdb?: number | null;
+
+		/** Type: double */
 		trakt?: number | null;
+
+		/** Type: double */
 		tvdb?: number | null;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodySeasonsIdsFormProperties {
+
+		/** Type: double */
 		tmdb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		tvdb: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodySeasonsIdsFormGroup() {
@@ -6437,9 +7160,13 @@ export namespace MyNS {
 	}
 
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsIds {
+
+		/** Type: double */
 		trakt?: number | null;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsIdsFormProperties {
+
+		/** Type: double */
 		trakt: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyShowsIdsFormGroup() {
@@ -6452,12 +7179,18 @@ export namespace MyNS {
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsSeasons {
 		Users_idLists_list_idItemsRemovePostPostBodyShowsSeasonsEpisodes?: Array<Users_idLists_list_idItemsRemovePostPostBodyShowsSeasonsEpisodes>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsSeasonsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyShowsSeasonsFormGroup() {
@@ -6469,12 +7202,18 @@ export namespace MyNS {
 
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsSeasonsEpisodes {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: number;
 	}
 	export interface Users_idLists_list_idItemsRemovePostPostBodyShowsSeasonsEpisodesFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idLists_list_idItemsRemovePostPostBodyShowsSeasonsEpisodesFormGroup() {

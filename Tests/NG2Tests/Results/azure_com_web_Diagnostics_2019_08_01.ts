@@ -805,6 +805,7 @@ export namespace MyNS {
 		 * Description for List Hosting Environment Detector Responses
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/detectors
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site Name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -819,6 +820,7 @@ export namespace MyNS {
 		 * Description for Get Hosting Environment Detector Response
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/detectors/{detectorName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name App Service Environment Name
 		 * @param {string} detectorName Detector Resource Name
 		 * @param {Date} startTime Start Time
@@ -837,6 +839,7 @@ export namespace MyNS {
 		 * Description for List Site Detector Responses
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/detectors
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -851,6 +854,7 @@ export namespace MyNS {
 		 * Description for Get site detector response
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/detectors/{detectorName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} detectorName Detector Resource Name
 		 * @param {Date} startTime Start Time
@@ -869,6 +873,7 @@ export namespace MyNS {
 		 * Description for Get Diagnostics Categories
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -883,6 +888,7 @@ export namespace MyNS {
 		 * Description for Get Diagnostics Category
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -898,6 +904,7 @@ export namespace MyNS {
 		 * Description for Get Site Analyses
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -913,6 +920,7 @@ export namespace MyNS {
 		 * Description for Get Site Analysis
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses/{analysisName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} analysisName Analysis Name
@@ -929,6 +937,7 @@ export namespace MyNS {
 		 * Description for Execute Analysis
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses/{analysisName}/execute
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Category Name
 		 * @param {string} analysisName Analysis Resource Name
@@ -948,6 +957,7 @@ export namespace MyNS {
 		 * Description for Get Detectors
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -963,6 +973,7 @@ export namespace MyNS {
 		 * Description for Get Detector
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors/{detectorName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} detectorName Detector Name
@@ -979,6 +990,7 @@ export namespace MyNS {
 		 * Description for Execute Detector
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors/{detectorName}/execute
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} detectorName Detector Resource Name
 		 * @param {string} diagnosticCategory Category Name
@@ -998,6 +1010,7 @@ export namespace MyNS {
 		 * Description for List Site Detector Responses
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/detectors
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} slot Slot Name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -1013,6 +1026,7 @@ export namespace MyNS {
 		 * Description for Get site detector response
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/detectors/{detectorName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} detectorName Detector Resource Name
 		 * @param {string} slot Slot Name
@@ -1032,6 +1046,7 @@ export namespace MyNS {
 		 * Description for Get Diagnostics Categories
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} slot Slot Name
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -1047,6 +1062,7 @@ export namespace MyNS {
 		 * Description for Get Diagnostics Category
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} slot Slot Name
@@ -1063,6 +1079,7 @@ export namespace MyNS {
 		 * Description for Get Site Analyses
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} slot Slot Name
@@ -1079,6 +1096,7 @@ export namespace MyNS {
 		 * Description for Get Site Analysis
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses/{analysisName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} analysisName Analysis Name
@@ -1096,6 +1114,7 @@ export namespace MyNS {
 		 * Description for Execute Analysis
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses/{analysisName}/execute
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Category Name
 		 * @param {string} analysisName Analysis Resource Name
@@ -1116,6 +1135,7 @@ export namespace MyNS {
 		 * Description for Get Detectors
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} slot Slot Name
@@ -1132,6 +1152,7 @@ export namespace MyNS {
 		 * Description for Get Detector
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors/{detectorName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} diagnosticCategory Diagnostic Category
 		 * @param {string} detectorName Detector Name
@@ -1149,6 +1170,7 @@ export namespace MyNS {
 		 * Description for Execute Detector
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors/{detectorName}/execute
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} siteName Site Name
 		 * @param {string} detectorName Detector Resource Name
 		 * @param {string} diagnosticCategory Category Name

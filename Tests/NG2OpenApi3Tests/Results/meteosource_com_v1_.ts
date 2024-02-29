@@ -11,6 +11,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: number;
 
@@ -34,6 +35,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: FormControl<number | null | undefined>,
 
@@ -67,6 +69,7 @@ export namespace MyNS {
 		/**
 		 * Total aerosol optical depth at 550 nm.
 		 * Unit: dimensionless
+		 * Type: double
 		 */
 		aerosol_550?: number | null;
 
@@ -79,12 +82,14 @@ export namespace MyNS {
 		 * * 5 - Very poor
 		 * * 6 - Extremely poor
 		 * Unit: index
+		 * Type: double
 		 */
 		air_quality?: number | null;
 
 		/**
 		 * Carbon monoxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		co_surface?: number | null;
 
@@ -94,54 +99,63 @@ export namespace MyNS {
 		/**
 		 * Dust aerosol optical depth at 550 nm.
 		 * Unit: dimensionless
+		 * Type: double
 		 */
 		dust_550nm?: number | null;
 
 		/**
 		 * Dust aerosol (0.55 - 0.9 µm) mixing ratio.
 		 * Unit: kg/kg
+		 * Type: double
 		 */
 		dust_mixing_ratio_05?: number | null;
 
 		/**
 		 * Nitrogen dioxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		no2_surface?: number | null;
 
 		/**
 		 * Nitrogen monoxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		no_surface?: number | null;
 
 		/**
 		 * Ozone.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		ozone_surface?: number | null;
 
 		/**
 		 * Total column ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone_total?: number | null;
 
 		/**
 		 * Particulate matter d < 10 µm (PM10).
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		pm10?: number | null;
 
 		/**
 		 * Particulate matter d < 2.5 µm (PM2.5).
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		pm25?: number | null;
 
 		/**
 		 * Sulphur dioxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		so2_surface?: number | null;
 	}
@@ -150,6 +164,7 @@ export namespace MyNS {
 		/**
 		 * Total aerosol optical depth at 550 nm.
 		 * Unit: dimensionless
+		 * Type: double
 		 */
 		aerosol_550: FormControl<number | null | undefined>,
 
@@ -162,12 +177,14 @@ export namespace MyNS {
 		 * * 5 - Very poor
 		 * * 6 - Extremely poor
 		 * Unit: index
+		 * Type: double
 		 */
 		air_quality: FormControl<number | null | undefined>,
 
 		/**
 		 * Carbon monoxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		co_surface: FormControl<number | null | undefined>,
 
@@ -177,54 +194,63 @@ export namespace MyNS {
 		/**
 		 * Dust aerosol optical depth at 550 nm.
 		 * Unit: dimensionless
+		 * Type: double
 		 */
 		dust_550nm: FormControl<number | null | undefined>,
 
 		/**
 		 * Dust aerosol (0.55 - 0.9 µm) mixing ratio.
 		 * Unit: kg/kg
+		 * Type: double
 		 */
 		dust_mixing_ratio_05: FormControl<number | null | undefined>,
 
 		/**
 		 * Nitrogen dioxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		no2_surface: FormControl<number | null | undefined>,
 
 		/**
 		 * Nitrogen monoxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		no_surface: FormControl<number | null | undefined>,
 
 		/**
 		 * Ozone.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		ozone_surface: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone_total: FormControl<number | null | undefined>,
 
 		/**
 		 * Particulate matter d < 10 µm (PM10).
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		pm10: FormControl<number | null | undefined>,
 
 		/**
 		 * Particulate matter d < 2.5 µm (PM2.5).
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		pm25: FormControl<number | null | undefined>,
 
 		/**
 		 * Sulphur dioxide at surface level.
 		 * Unit: µg/m3
+		 * Type: double
 		 */
 		so2_surface: FormControl<number | null | undefined>,
 	}
@@ -421,24 +447,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		cloud_cover?: number | null;
 
 		/**
 		 * Current dew point temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		dew_point?: number | null;
 
 		/**
 		 * Feels like temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -484,18 +514,21 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: weather_ico0_36
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon_num?: number | null;
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: double
 		 */
 		irradiance?: number | null;
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -505,6 +538,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -514,18 +548,21 @@ export namespace MyNS {
 		/**
 		 * Current temperature 2 metres above ground.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature?: number | null;
 
 		/**
 		 * UV index, values from zero (low risk of harm) to 11+ (extreme risk of harm).
 		 * Unit: uv_index
+		 * Type: double
 		 */
 		uv_index?: number | null;
 
 		/**
 		 * Visibility.
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -535,6 +572,7 @@ export namespace MyNS {
 		/**
 		 * Windchill temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 	}
@@ -543,24 +581,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		cloud_cover: FormControl<number | null | undefined>,
 
 		/**
 		 * Current dew point temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		dew_point: FormControl<number | null | undefined>,
 
 		/**
 		 * Feels like temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -606,24 +648,28 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: weather_ico0_36
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon_num: FormControl<number | null | undefined>,
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: double
 		 */
 		irradiance: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
@@ -633,24 +679,28 @@ export namespace MyNS {
 		/**
 		 * Current temperature 2 metres above ground.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * UV index, values from zero (low risk of harm) to 11+ (extreme risk of harm).
 		 * Unit: uv_index
+		 * Type: double
 		 */
 		uv_index: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility.
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
 		/**
 		 * Windchill temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
@@ -679,6 +729,7 @@ export namespace MyNS {
 		/**
 		 * Current amount of precipitation.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -699,6 +750,7 @@ export namespace MyNS {
 		/**
 		 * Current amount of precipitation.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -727,6 +779,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -739,12 +792,14 @@ export namespace MyNS {
 		/**
 		 * Wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		gusts?: number | null;
 
 		/**
 		 * Wind speed 10 metres above the ground.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		speed?: number | null;
 	}
@@ -753,6 +808,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -765,12 +821,14 @@ export namespace MyNS {
 		/**
 		 * Wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		gusts: FormControl<number | null | undefined>,
 
 		/**
 		 * Wind speed 10 metres above the ground.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		speed: FormControl<number | null | undefined>,
 	}
@@ -849,6 +907,7 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 		morning?: Point_PointDailyMorningData;
@@ -856,6 +915,7 @@ export namespace MyNS {
 		/**
 		 * Weather predictability. Values from 1 (very high predictability) to 5 (very low predictability).
 		 * Unit: 1-5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		predictability?: number | null;
 
@@ -912,12 +972,14 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Weather predictability. Values from 1 (very high predictability) to 5 (very low predictability).
 		 * Unit: 1-5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		predictability: FormControl<number | null | undefined>,
 
@@ -943,15 +1005,22 @@ export namespace MyNS {
 		/** Required */
 		cloud_cover: Point_PointDailyAfternoonCloudCoverData;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity. (afternoon avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -994,12 +1063,14 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Total column of ozone. (afternoon avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -1009,6 +1080,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level. (afternoon avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -1018,24 +1090,33 @@ export namespace MyNS {
 		/**
 		 * Snow depth. (afternoon avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
 		/**
 		 * Temperature 2 metres above ground. (afternoon avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature?: number | null;
 
 		/**
 		 * Visibility. (afternoon avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -1048,20 +1129,28 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (afternoon avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 	}
 	export interface Point_PointDailyAfternoonDataFormProperties {
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity. (afternoon avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -1104,42 +1193,54 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone. (afternoon avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level. (afternoon avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
 		/**
 		 * Snow depth. (afternoon avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Temperature 2 metres above ground. (afternoon avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility. (afternoon avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
@@ -1149,6 +1250,7 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (afternoon avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
@@ -1176,24 +1278,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle?: number | null;
 
 		/**
 		 * Percentage of sky covered by clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -1202,24 +1308,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by clouds. (afternoon avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1238,6 +1348,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (afternoon sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -1258,6 +1369,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (afternoon sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1286,18 +1398,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (afternoon avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze?: number | null;
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation?: number | null;
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm?: number | null;
 	}
@@ -1306,18 +1421,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (afternoon avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze: FormControl<number | null | undefined>,
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm: FormControl<number | null | undefined>,
 	}
@@ -1335,6 +1453,7 @@ export namespace MyNS {
 		/**
 		 * Afternoon wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -1344,10 +1463,16 @@ export namespace MyNS {
 		 */
 		dir?: string | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts?: number | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed?: number | null;
 	}
 	export interface Point_PointDailyAfternoonWindDataFormProperties {
@@ -1355,6 +1480,7 @@ export namespace MyNS {
 		/**
 		 * Afternoon wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -1364,10 +1490,16 @@ export namespace MyNS {
 		 */
 		dir: FormControl<string | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts: FormControl<number | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointDailyAfternoonWindDataFormGroup() {
@@ -1385,27 +1517,46 @@ export namespace MyNS {
 		/** Required */
 		cloud_cover: Point_PointDailyAllDayCloudCoverData;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point_min?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like_min?: number | null;
 
 		/**
 		 * Relative humidity. (allday avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -1448,12 +1599,14 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Total column of ozone. (allday avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -1463,6 +1616,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level. (allday avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -1472,42 +1626,69 @@ export namespace MyNS {
 		/**
 		 * Snow depth. (allday avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature_min?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature_min?: number | null;
 
 		/**
 		 * Temperature 2 metres above ground. (allday avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature_min?: number | null;
 
 		/**
 		 * Visibility. (allday avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -1520,38 +1701,64 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (allday avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill_max?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill_min?: number | null;
 	}
 	export interface Point_PointDailyAllDayDataFormProperties {
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point_min: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like_min: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity. (allday avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -1594,60 +1801,90 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone. (allday avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level. (allday avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
 		/**
 		 * Snow depth. (allday avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature_min: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature_min: FormControl<number | null | undefined>,
 
 		/**
 		 * Temperature 2 metres above ground. (allday avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature_min: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility. (allday avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
@@ -1657,13 +1894,20 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (allday avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill_max: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill_min: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointDailyAllDayDataFormGroup() {
@@ -1702,24 +1946,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle?: number | null;
 
 		/**
 		 * Percentage of sky covered by clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -1728,24 +1976,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by clouds. (allday avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -1764,6 +2016,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (allday sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -1784,6 +2037,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (allday sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1812,18 +2066,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (allday avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze?: number | null;
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation?: number | null;
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm?: number | null;
 	}
@@ -1832,18 +2089,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (allday avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze: FormControl<number | null | undefined>,
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm: FormControl<number | null | undefined>,
 	}
@@ -1861,6 +2121,7 @@ export namespace MyNS {
 		/**
 		 * All day wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -1870,10 +2131,16 @@ export namespace MyNS {
 		 */
 		dir?: string | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts?: number | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed?: number | null;
 	}
 	export interface Point_PointDailyAllDayWindDataFormProperties {
@@ -1881,6 +2148,7 @@ export namespace MyNS {
 		/**
 		 * All day wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -1890,10 +2158,16 @@ export namespace MyNS {
 		 */
 		dir: FormControl<string | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts: FormControl<number | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointDailyAllDayWindDataFormGroup() {
@@ -2010,15 +2284,22 @@ export namespace MyNS {
 		/** Required */
 		cloud_cover: Point_PointDailyEveningCloudCoverData;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity. (evening avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -2061,12 +2342,14 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Total column of ozone. (evening avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -2076,6 +2359,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level. (evening avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -2085,24 +2369,33 @@ export namespace MyNS {
 		/**
 		 * Snow depth. (evening avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
 		/**
 		 * Temperature 2 metres above ground. (evening avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature?: number | null;
 
 		/**
 		 * Visibility. (evening avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -2115,20 +2408,28 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (evening avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 	}
 	export interface Point_PointDailyEveningDataFormProperties {
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity. (evening avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -2171,42 +2472,54 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone. (evening avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level. (evening avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
 		/**
 		 * Snow depth. (evening avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Temperature 2 metres above ground. (evening avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility. (evening avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
@@ -2216,6 +2529,7 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (evening avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
@@ -2243,24 +2557,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle?: number | null;
 
 		/**
 		 * Percentage of sky covered by clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -2269,24 +2587,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by clouds. (evening avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -2305,6 +2627,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (evening sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -2325,6 +2648,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (evening sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2353,18 +2677,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (evening avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze?: number | null;
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation?: number | null;
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm?: number | null;
 	}
@@ -2373,18 +2700,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (evening avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze: FormControl<number | null | undefined>,
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm: FormControl<number | null | undefined>,
 	}
@@ -2402,6 +2732,7 @@ export namespace MyNS {
 		/**
 		 * Evening wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -2411,10 +2742,16 @@ export namespace MyNS {
 		 */
 		dir?: string | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts?: number | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed?: number | null;
 	}
 	export interface Point_PointDailyEveningWindDataFormProperties {
@@ -2422,6 +2759,7 @@ export namespace MyNS {
 		/**
 		 * Evening wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -2431,10 +2769,16 @@ export namespace MyNS {
 		 */
 		dir: FormControl<string | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts: FormControl<number | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointDailyEveningWindDataFormGroup() {
@@ -2452,15 +2796,22 @@ export namespace MyNS {
 		/** Required */
 		cloud_cover: Point_PointDailyMorningCloudCoverData;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity. (morning avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -2503,12 +2854,14 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Total column of ozone. (morning avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -2518,6 +2871,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level. (morning avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -2527,24 +2881,33 @@ export namespace MyNS {
 		/**
 		 * Snow depth. (morning avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
 		/**
 		 * Temperature 2 metres above ground. (morning avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature?: number | null;
 
 		/**
 		 * Visibility. (morning avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -2557,20 +2920,28 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (morning avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 	}
 	export interface Point_PointDailyMorningDataFormProperties {
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity. (morning avg)
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -2613,42 +2984,54 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: icon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone. (morning avg)
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level. (morning avg)
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
 		/**
 		 * Snow depth. (morning avg)
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Temperature 2 metres above ground. (morning avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility. (morning avg)
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
@@ -2658,6 +3041,7 @@ export namespace MyNS {
 		/**
 		 * Temperature 2 metres above ground. (morning avg)
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
@@ -2685,24 +3069,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle?: number | null;
 
 		/**
 		 * Percentage of sky covered by clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -2711,24 +3099,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by clouds. (morning avg)
 		 * Unit: \%
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -2747,6 +3139,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (morning sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -2767,6 +3160,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour. (morning sum)
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2795,18 +3189,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (morning avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze?: number | null;
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation?: number | null;
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm?: number | null;
 	}
@@ -2815,18 +3212,21 @@ export namespace MyNS {
 		/**
 		 * Probability the temperature drops below 0 °C. (morning avg)
 		 * Unit: %
+		 * Type: double
 		 */
 		freeze: FormControl<number | null | undefined>,
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm: FormControl<number | null | undefined>,
 	}
@@ -2844,6 +3244,7 @@ export namespace MyNS {
 		/**
 		 * Morning wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -2853,10 +3254,16 @@ export namespace MyNS {
 		 */
 		dir?: string | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts?: number | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed?: number | null;
 	}
 	export interface Point_PointDailyMorningWindDataFormProperties {
@@ -2864,6 +3271,7 @@ export namespace MyNS {
 		/**
 		 * Morning wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -2873,10 +3281,16 @@ export namespace MyNS {
 		 */
 		dir: FormControl<string | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts: FormControl<number | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointDailyMorningWindDataFormGroup() {
@@ -2913,12 +3327,14 @@ export namespace MyNS {
 		/**
 		 * Long-term average daily precipitation amount.
 		 * Units: metric = mm/day, us = inches per day, uk = mm/day, ca = mm/day
+		 * Type: double
 		 */
 		avg?: number | null;
 
 		/**
 		 * Long-term average precipitation probability.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		probability?: number | null;
 	}
@@ -2927,12 +3343,14 @@ export namespace MyNS {
 		/**
 		 * Long-term average daily precipitation amount.
 		 * Units: metric = mm/day, us = inches per day, uk = mm/day, ca = mm/day
+		 * Type: double
 		 */
 		avg: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term average precipitation probability.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		probability: FormControl<number | null | undefined>,
 	}
@@ -2949,30 +3367,35 @@ export namespace MyNS {
 		/**
 		 * Long-term temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg?: number | null;
 
 		/**
 		 * Long-term daily maximum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_max?: number | null;
 
 		/**
 		 * Long-term daily minimum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_min?: number | null;
 
 		/**
 		 * Historical daily maximum.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_max?: number | null;
 
 		/**
 		 * Historical daily minimum temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_min?: number | null;
 	}
@@ -2981,30 +3404,35 @@ export namespace MyNS {
 		/**
 		 * Long-term temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term daily maximum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_max: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term daily minimum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_min: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_max: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily minimum temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_min: FormControl<number | null | undefined>,
 	}
@@ -3024,6 +3452,7 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind angle.
 		 * Unit: deg
+		 * Type: double
 		 */
 		avg_angle?: number | null;
 
@@ -3036,18 +3465,21 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		avg_speed?: number | null;
 
 		/**
 		 * Historical daily maximum wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_gust?: number | null;
 
 		/**
 		 * Historical daily maximum wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_speed?: number | null;
 	}
@@ -3056,6 +3488,7 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind angle.
 		 * Unit: deg
+		 * Type: double
 		 */
 		avg_angle: FormControl<number | null | undefined>,
 
@@ -3068,18 +3501,21 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		avg_speed: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_gust: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_speed: FormControl<number | null | undefined>,
 	}
@@ -3104,6 +3540,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: number;
 		hourly?: Point_PointHourly;
@@ -3135,6 +3572,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: FormControl<number | null | undefined>,
 
@@ -3188,6 +3626,7 @@ export namespace MyNS {
 		/**
 		 * Convective available potential energy.
 		 * Unit: J/kg
+		 * Type: double
 		 */
 		cape?: number | null;
 
@@ -3197,21 +3636,29 @@ export namespace MyNS {
 		/** Datetime in YYYY-MM-DDTHH:MM:SS format. */
 		date?: Date | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
 		/**
 		 * Evaporation of liquid water into water vapor.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		evaporation?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -3254,24 +3701,28 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: weather_ico0_36
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: double
 		 */
 		irradiance?: number | null;
 
 		/**
 		 * Surface lifted index.
 		 * Unit: K
+		 * Type: double
 		 */
 		lftx?: number | null;
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone?: number | null;
 
@@ -3281,6 +3732,7 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
@@ -3290,10 +3742,14 @@ export namespace MyNS {
 		/**
 		 * Snow depth.
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
 		/** Short text summary of the weather, e.g. `Light rain`. */
@@ -3302,24 +3758,33 @@ export namespace MyNS {
 		/**
 		 * Sunshine duration since start of previous hour.
 		 * Unit: s
+		 * Type: double
 		 */
 		sunshine_duration?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature?: number | null;
 
 		/**
 		 * UV index, values from zero (low risk of harm) to 11+ (extreme risk of harm).
 		 * Unit: uv_index
+		 * Type: double
 		 */
 		uv_index?: number | null;
 
 		/**
 		 * Visibility.
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility?: number | null;
 
@@ -3329,7 +3794,10 @@ export namespace MyNS {
 		/** Required */
 		wind: Point_PointHourlyWindData;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill?: number | null;
 	}
 	export interface Point_PointHourlyDataFormProperties {
@@ -3337,27 +3805,36 @@ export namespace MyNS {
 		/**
 		 * Convective available potential energy.
 		 * Unit: J/kg
+		 * Type: double
 		 */
 		cape: FormControl<number | null | undefined>,
 
 		/** Datetime in YYYY-MM-DDTHH:MM:SS format. */
 		date: FormControl<Date | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
 		/**
 		 * Evaporation of liquid water into water vapor.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		evaporation: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -3400,40 +3877,49 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: weather_ico0_36
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: double
 		 */
 		irradiance: FormControl<number | null | undefined>,
 
 		/**
 		 * Surface lifted index.
 		 * Unit: K
+		 * Type: double
 		 */
 		lftx: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: double
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
 		/**
 		 * Snow depth.
 		 * Units: metric = cm, us = inch, uk = cm, ca = cm
+		 * Type: double
 		 */
 		snow_depth: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
 		/** Short text summary of the weather, e.g. `Light rain`. */
@@ -3442,31 +3928,43 @@ export namespace MyNS {
 		/**
 		 * Sunshine duration since start of previous hour.
 		 * Unit: s
+		 * Type: double
 		 */
 		sunshine_duration: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/**
 		 * UV index, values from zero (low risk of harm) to 11+ (extreme risk of harm).
 		 * Unit: uv_index
+		 * Type: double
 		 */
 		uv_index: FormControl<number | null | undefined>,
 
 		/**
 		 * Visibility.
 		 * Units: metric = km, us = mi, uk = mi, ca = km
+		 * Type: double
 		 */
 		visibility: FormControl<number | null | undefined>,
 
 		/** String identifier of the weather icon, e.g. `light_rain`. */
 		weather: FormControl<string | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointHourlyDataFormGroup() {
@@ -3501,22 +3999,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle?: number | null;
 
-		/** Unit: \% */
+		/**
+		 * Unit: \%
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface Point_PointHourlyCloudCoverDataFormProperties {
@@ -3524,22 +4028,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds.
 		 * Unit: \%
+		 * Type: double
 		 */
 		middle: FormControl<number | null | undefined>,
 
-		/** Unit: \% */
+		/**
+		 * Unit: \%
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointHourlyCloudCoverDataFormGroup() {
@@ -3557,6 +4067,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		convective?: number | null;
 
@@ -3569,6 +4080,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -3589,6 +4101,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		convective: FormControl<number | null | undefined>,
 
@@ -3601,6 +4114,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -3628,35 +4142,45 @@ export namespace MyNS {
 
 	export interface Point_PointHourlyProbData {
 
-		/** Unit: \% */
+		/**
+		 * Unit: \%
+		 * Type: double
+		 */
 		freeze?: number | null;
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation?: number | null;
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm?: number | null;
 	}
 	export interface Point_PointHourlyProbDataFormProperties {
 
-		/** Unit: \% */
+		/**
+		 * Unit: \%
+		 * Type: double
+		 */
 		freeze: FormControl<number | null | undefined>,
 
 		/**
 		 * Probability of non-zero precipitation.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precipitation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		storm: FormControl<number | null | undefined>,
 	}
@@ -3674,6 +4198,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle?: number | null;
 
@@ -3683,10 +4208,16 @@ export namespace MyNS {
 		 */
 		dir?: string | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts?: number | null;
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed?: number | null;
 	}
 	export interface Point_PointHourlyWindDataFormProperties {
@@ -3694,6 +4225,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction angle in degrees, 180° means wind from the south.
 		 * Unit: degrees
+		 * Type: double
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -3703,10 +4235,16 @@ export namespace MyNS {
 		 */
 		dir: FormControl<string | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		gusts: FormControl<number | null | undefined>,
 
-		/** Units: metric = m/s, us = mph, uk = mph, ca = km/h */
+		/**
+		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 	}
 	export function CreatePoint_PointHourlyWindDataFormGroup() {
@@ -3754,6 +4292,7 @@ export namespace MyNS {
 		 * Minutely precipitation amount (per hour). For the startup tier, showing one value per 10 minutes.
 		 * For other tiers, showing one value per each minute.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		precipitation?: number | null;
 	}
@@ -3766,6 +4305,7 @@ export namespace MyNS {
 		 * Minutely precipitation amount (per hour). For the startup tier, showing one value per 10 minutes.
 		 * For other tiers, showing one value per each minute.
 		 * Unit: mm/h
+		 * Type: double
 		 */
 		precipitation: FormControl<number | null | undefined>,
 	}
@@ -3801,12 +4341,14 @@ export namespace MyNS {
 		/**
 		 * Long-term average daily precipitation amount.
 		 * Units: metric = mm/day, us = inches per day, uk = mm/day, ca = mm/day
+		 * Type: double
 		 */
 		avg?: number | null;
 
 		/**
 		 * Long-term average precipitation probability.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		probability?: number | null;
 	}
@@ -3815,12 +4357,14 @@ export namespace MyNS {
 		/**
 		 * Long-term average daily precipitation amount.
 		 * Units: metric = mm/day, us = inches per day, uk = mm/day, ca = mm/day
+		 * Type: double
 		 */
 		avg: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term average precipitation probability.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		probability: FormControl<number | null | undefined>,
 	}
@@ -3837,30 +4381,35 @@ export namespace MyNS {
 		/**
 		 * Long-term temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg?: number | null;
 
 		/**
 		 * Long-term daily maximum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_max?: number | null;
 
 		/**
 		 * Long-term daily minimum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_min?: number | null;
 
 		/**
 		 * Historical daily maximum.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_max?: number | null;
 
 		/**
 		 * Historical daily minimum temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_min?: number | null;
 	}
@@ -3869,30 +4418,35 @@ export namespace MyNS {
 		/**
 		 * Long-term temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term daily maximum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_max: FormControl<number | null | undefined>,
 
 		/**
 		 * Long-term daily minimum temperature average.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		avg_min: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_max: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily minimum temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		record_min: FormControl<number | null | undefined>,
 	}
@@ -3912,6 +4466,7 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind angle.
 		 * Unit: deg
+		 * Type: double
 		 */
 		avg_angle?: number | null;
 
@@ -3924,18 +4479,21 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		avg_speed?: number | null;
 
 		/**
 		 * Historical daily maximum wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_gust?: number | null;
 
 		/**
 		 * Historical daily maximum wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_speed?: number | null;
 	}
@@ -3944,6 +4502,7 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind angle.
 		 * Unit: deg
+		 * Type: double
 		 */
 		avg_angle: FormControl<number | null | undefined>,
 
@@ -3956,18 +4515,21 @@ export namespace MyNS {
 		/**
 		 * Long-term average wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		avg_speed: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_gust: FormControl<number | null | undefined>,
 
 		/**
 		 * Historical daily maximum wind speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: double
 		 */
 		max_speed: FormControl<number | null | undefined>,
 	}
@@ -3990,6 +4552,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: number;
 
@@ -4022,6 +4585,7 @@ export namespace MyNS {
 		/**
 		 * Elevation above sea level in metres (for units 'metric', 'uk', 'ca') or feet (for units 'us')
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elevation: FormControl<number | null | undefined>,
 
@@ -4062,6 +4626,7 @@ export namespace MyNS {
 		/**
 		 * Convective available potential energy.
 		 * Unit: J/kg
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cape?: number | null;
 
@@ -4071,24 +4636,30 @@ export namespace MyNS {
 		/** Datetime in YYYY-MM-DDTHH:MM:SS format. */
 		date?: Date | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point?: number | null;
 
 		/**
 		 * Evaporation of liquid water into water vapor.
 		 * Unit: mm/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		evaporation?: number | null;
 
 		/**
 		 * Feels like temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		feels_like?: number | null;
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity?: number | null;
 
@@ -4131,18 +4702,21 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: N/A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon?: number | null;
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		irradiance?: number | null;
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ozone?: number | null;
 
@@ -4152,16 +4726,26 @@ export namespace MyNS {
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature?: number | null;
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature?: number | null;
 
 		/** String identifier of the weather icon, e.g. `light_rain`. */
@@ -4173,6 +4757,7 @@ export namespace MyNS {
 		/**
 		 * Windchill temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill?: number | null;
 	}
@@ -4181,30 +4766,37 @@ export namespace MyNS {
 		/**
 		 * Convective available potential energy.
 		 * Unit: J/kg
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cape: FormControl<number | null | undefined>,
 
 		/** Datetime in YYYY-MM-DDTHH:MM:SS format. */
 		date: FormControl<Date | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		dew_point: FormControl<number | null | undefined>,
 
 		/**
 		 * Evaporation of liquid water into water vapor.
 		 * Unit: mm/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		evaporation: FormControl<number | null | undefined>,
 
 		/**
 		 * Feels like temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		feels_like: FormControl<number | null | undefined>,
 
 		/**
 		 * Relative humidity.
 		 * Unit: \%
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		humidity: FormControl<number | null | undefined>,
 
@@ -4247,34 +4839,47 @@ export namespace MyNS {
 		 * * 35 - Rain and snow (night)
 		 * * 36 - Possible freezing rain (night)
 		 * Unit: N/A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		icon: FormControl<number | null | undefined>,
 
 		/**
 		 * Global downward short-wave radiation flux.
 		 * Unit: W/m2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		irradiance: FormControl<number | null | undefined>,
 
 		/**
 		 * Total column of ozone.
 		 * Unit: Dobson
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ozone: FormControl<number | null | undefined>,
 
 		/**
 		 * Atmospheric pressure at mean sea level.
 		 * Units: metric = hPa, us = Hg, uk = hPa, ca = kPa
+		 * Type: double
 		 */
 		pressure: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		soil_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		surface_temperature: FormControl<number | null | undefined>,
 
-		/** Units: metric = °C, us = °F, uk = °C, ca = °C */
+		/**
+		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
+		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/** String identifier of the weather icon, e.g. `light_rain`. */
@@ -4283,6 +4888,7 @@ export namespace MyNS {
 		/**
 		 * Windchill temperature.
 		 * Units: metric = °C, us = °F, uk = °C, ca = °C
+		 * Type: double
 		 */
 		wind_chill: FormControl<number | null | undefined>,
 	}
@@ -4312,24 +4918,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		high?: number | null;
 
 		/**
 		 * Percentage of sky covered by low clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		low?: number | null;
 
 		/**
 		 * Percentage of sky covered by middle clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		middle?: number | null;
 
 		/**
 		 * Percentage of sky covered by clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -4338,24 +4948,28 @@ export namespace MyNS {
 		/**
 		 * Percentage of sky covered by high clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		high: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by low clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		low: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by middle clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		middle: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of sky covered by clouds.
 		 * Unit: %
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -4374,6 +4988,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total?: number | null;
 
@@ -4394,6 +5009,7 @@ export namespace MyNS {
 		/**
 		 * Total precipitation amount accumulated since last hour.
 		 * Units: metric = mm/h, us = inches per hour, uk = mm/h, ca = mm/h
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4422,6 +5038,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction in `N`, `NNE`, `NE`, ..., `NNW` format.
 		 * Unit: deg
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		angle?: number | null;
 
@@ -4434,12 +5051,14 @@ export namespace MyNS {
 		/**
 		 * Wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gusts?: number | null;
 
 		/**
 		 * Wind speed 10 metres above the ground.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		speed?: number | null;
 	}
@@ -4448,6 +5067,7 @@ export namespace MyNS {
 		/**
 		 * Wind direction in `N`, `NNE`, `NE`, ..., `NNW` format.
 		 * Unit: deg
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		angle: FormControl<number | null | undefined>,
 
@@ -4460,12 +5080,14 @@ export namespace MyNS {
 		/**
 		 * Wind gust speed.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gusts: FormControl<number | null | undefined>,
 
 		/**
 		 * Wind speed 10 metres above the ground.
 		 * Units: metric = m/s, us = mph, uk = mph, ca = km/h
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		speed: FormControl<number | null | undefined>,
 	}
@@ -4577,8 +5199,11 @@ export namespace MyNS {
 		 * * Weather maps are only supported for forecasts, not for archive data.
 		 * Get map
 		 * @param {number} tile_x The X coordinate of Google Maps tile
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} tile_y The Y coordinate of Google Maps tile
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} tile_zoom The zoom level of Google Maps tile
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_lat Minimal latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.2
 		 * @param {string} min_lon Minimal longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.2
 		 * @param {string} max_lat Maximal latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.2.
@@ -4710,6 +5335,7 @@ export namespace MyNS {
 		 * @param {string} lat Latitude in format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4
 		 * @param {string} lon Longitude in format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4
 		 * @param {Date} date The day of the data in the past. Specify in `YYYY-MM-DD` format, e.g. `2021-08-24`.
+		 *     Type: DateOnly
 		 * @param {string} timezone Timezone to be used for the date fields. If not specified, local timezone of the location will be used.
 		 * The format is according to the tzinfo database, so values like `Europe/Prague` or `UTC` can be used.
 		 * Alternatively you may use the value ``auto`` in which case the local timezone of the location is used.

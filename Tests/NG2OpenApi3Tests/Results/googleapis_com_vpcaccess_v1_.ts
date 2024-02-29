@@ -16,16 +16,28 @@ export namespace MyNS {
 		/** Machine type of VM Instance underlying connector. Default is e2-micro */
 		machineType?: string | null;
 
-		/** Maximum value of instances in autoscaling group underlying the connector. */
+		/**
+		 * Maximum value of instances in autoscaling group underlying the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances?: number | null;
 
-		/** Maximum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 300 through 1000. Must be higher than the value specified by --min-throughput. If both max-throughput and max-instances are provided, max-instances takes precedence over max-throughput. The use of `max-throughput` is discouraged in favor of `max-instances`. */
+		/**
+		 * Maximum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 300 through 1000. Must be higher than the value specified by --min-throughput. If both max-throughput and max-instances are provided, max-instances takes precedence over max-throughput. The use of `max-throughput` is discouraged in favor of `max-instances`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxThroughput?: number | null;
 
-		/** Minimum value of instances in autoscaling group underlying the connector. */
+		/**
+		 * Minimum value of instances in autoscaling group underlying the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances?: number | null;
 
-		/** Minimum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 200 through 900. Must be lower than the value specified by --max-throughput. If both min-throughput and min-instances are provided, min-instances takes precedence over min-throughput. The use of `min-throughput` is discouraged in favor of `min-instances`. */
+		/**
+		 * Minimum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 200 through 900. Must be lower than the value specified by --max-throughput. If both min-throughput and min-instances are provided, min-instances takes precedence over min-throughput. The use of `min-throughput` is discouraged in favor of `min-instances`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minThroughput?: number | null;
 
 		/** The resource name in the format `projects/locations/connectors/*`. */
@@ -50,16 +62,28 @@ export namespace MyNS {
 		/** Machine type of VM Instance underlying connector. Default is e2-micro */
 		machineType: FormControl<string | null | undefined>,
 
-		/** Maximum value of instances in autoscaling group underlying the connector. */
+		/**
+		 * Maximum value of instances in autoscaling group underlying the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: FormControl<number | null | undefined>,
 
-		/** Maximum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 300 through 1000. Must be higher than the value specified by --min-throughput. If both max-throughput and max-instances are provided, max-instances takes precedence over max-throughput. The use of `max-throughput` is discouraged in favor of `max-instances`. */
+		/**
+		 * Maximum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 300 through 1000. Must be higher than the value specified by --min-throughput. If both max-throughput and max-instances are provided, max-instances takes precedence over max-throughput. The use of `max-throughput` is discouraged in favor of `max-instances`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxThroughput: FormControl<number | null | undefined>,
 
-		/** Minimum value of instances in autoscaling group underlying the connector. */
+		/**
+		 * Minimum value of instances in autoscaling group underlying the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: FormControl<number | null | undefined>,
 
-		/** Minimum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 200 through 900. Must be lower than the value specified by --max-throughput. If both min-throughput and min-instances are provided, min-instances takes precedence over min-throughput. The use of `min-throughput` is discouraged in favor of `min-instances`. */
+		/**
+		 * Minimum throughput of the connector in Mbps. Refers to the expected throughput when using an `e2-micro` machine type. Value must be a multiple of 100 from 200 through 900. Must be lower than the value specified by --max-throughput. If both min-throughput and min-instances are provided, min-instances takes precedence over min-throughput. The use of `min-throughput` is discouraged in favor of `min-instances`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minThroughput: FormControl<number | null | undefined>,
 
 		/** The resource name in the format `projects/locations/connectors/*`. */
@@ -286,7 +310,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -299,7 +326,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -481,6 +511,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -494,6 +525,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -506,6 +538,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/connectors
 		 * @param {string} parent Required. The project and location from which the routes should be listed.
 		 * @param {number} pageSize Maximum number of functions to return per call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token.
 		 * @return {ListConnectorsResponse} Successful response
 		 */

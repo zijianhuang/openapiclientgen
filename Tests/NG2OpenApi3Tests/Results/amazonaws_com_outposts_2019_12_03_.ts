@@ -247,65 +247,65 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID of the Outpost owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutpostArn?: string | null;
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId?: string | null;
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * The life cycle status.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		LifeCycleStatus?: string | null;
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone?: string | null;
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId?: string | null;
 		Tags?: TagMap;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteArn?: string | null;
 		SupportedHardwareType?: SupportedHardwareType;
@@ -317,64 +317,64 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Web Services account ID of the Outpost owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutpostArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The life cycle status.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		LifeCycleStatus: FormControl<string | null | undefined>,
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteArn: FormControl<string | null | undefined>,
 		SupportedHardwareType: FormControl<SupportedHardwareType | null | undefined>,
@@ -427,37 +427,37 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId?: string | null;
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description?: string | null;
 		Tags?: TagMap;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteArn?: string | null;
 		Notes?: string;
@@ -472,36 +472,36 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Amazon Web Services account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteArn: FormControl<string | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
@@ -747,16 +747,16 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 		OutpostId?: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutpostArn?: string | null;
 	}
@@ -764,16 +764,16 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		OutpostId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutpostArn: FormControl<string | null | undefined>,
 	}
@@ -824,8 +824,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId?: string | null;
 		AddressType?: AddressType;
@@ -835,8 +835,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId: FormControl<string | null | undefined>,
 		AddressType: FormControl<AddressType | null | undefined>,
@@ -923,8 +923,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -932,8 +932,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1017,8 +1017,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -1026,8 +1026,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1045,8 +1045,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -1054,8 +1054,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1116,8 +1116,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -1125,8 +1125,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1144,8 +1144,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -1153,8 +1153,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1310,15 +1310,15 @@ export namespace MyNS {
 		/**
 		 * The name of the Outpost.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -1327,15 +1327,15 @@ export namespace MyNS {
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone?: string | null;
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId?: string | null;
 		Tags?: TagMap;
@@ -1346,15 +1346,15 @@ export namespace MyNS {
 		/**
 		 * The name of the Outpost.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1363,15 +1363,15 @@ export namespace MyNS {
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId: FormControl<string | null | undefined>,
 		SupportedHardwareType: FormControl<SupportedHardwareType | null | undefined>,
@@ -1393,15 +1393,15 @@ export namespace MyNS {
 		/**
 		 * The name of the site.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: string;
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description?: string | null;
 		Notes?: string;
@@ -1415,15 +1415,15 @@ export namespace MyNS {
 		/**
 		 * The name of the site.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description: FormControl<string | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
@@ -1652,15 +1652,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 		SupportedHardwareType?: SupportedHardwareType;
@@ -1669,15 +1669,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 		SupportedHardwareType: FormControl<SupportedHardwareType | null | undefined>,
@@ -1715,15 +1715,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description?: string | null;
 		Notes?: string;
@@ -1732,15 +1732,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description: FormControl<string | null | undefined>,
 		Notes: FormControl<string | null | undefined>,
@@ -1800,6 +1800,7 @@ export namespace MyNS {
 		 * Cancels the specified order for an Outpost.
 		 * Post orders/{OrderId}/cancel
 		 * @param {string} OrderId  The ID of the order. 
+		 *     Min length: 1    Max length: 20
 		 * @return {CancelOrderOutput} Success
 		 */
 		CancelOrder(OrderId: string): Observable<CancelOrderOutput> {
@@ -1827,9 +1828,16 @@ export namespace MyNS {
 		/**
 		 * <p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		 * Get outposts
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {Array<string>} LifeCycleStatusFilter Filters the results by the lifecycle status.
+		 *     Minimum items: 1    Maximum items: 5
 		 * @param {Array<string>} AvailabilityZoneFilter Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
+		 *     Minimum items: 1    Maximum items: 5
 		 * @param {Array<string>} AvailabilityZoneIdFilter Filters the results by AZ ID (for example, <code>use1-az1</code>).
+		 *     Minimum items: 1    Maximum items: 5
 		 * @return {ListOutpostsOutput} Success
 		 */
 		ListOutposts(NextToken: string | null | undefined, MaxResults: number | null | undefined, LifeCycleStatusFilter: Array<string> | null | undefined, AvailabilityZoneFilter: Array<string> | null | undefined, AvailabilityZoneIdFilter: Array<string> | null | undefined): Observable<ListOutpostsOutput> {
@@ -1848,6 +1856,10 @@ export namespace MyNS {
 		/**
 		 * <p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		 * Get sites
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {Array<string>} OperatingAddressCountryCodeFilter Filters the results by country code.
 		 * @param {Array<string>} OperatingAddressStateOrRegionFilter Filters the results by state or region.
 		 * @param {Array<string>} OperatingAddressCityFilter Filters the results by city.
@@ -1861,6 +1873,7 @@ export namespace MyNS {
 		 * Deletes the specified Outpost.
 		 * Delete outposts/{OutpostId}
 		 * @param {string} OutpostId  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
 		 * @return {DeleteOutpostOutput} Success
 		 */
 		DeleteOutpost(OutpostId: string): Observable<DeleteOutpostOutput> {
@@ -1871,6 +1884,7 @@ export namespace MyNS {
 		 * Gets information about the specified Outpost.
 		 * Get outposts/{OutpostId}
 		 * @param {string} OutpostId  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
 		 * @return {GetOutpostOutput} Success
 		 */
 		GetOutpost(OutpostId: string): Observable<GetOutpostOutput> {
@@ -1881,6 +1895,7 @@ export namespace MyNS {
 		 * Updates an Outpost.
 		 * Patch outposts/{OutpostId}
 		 * @param {string} OutpostId  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
 		 * @return {UpdateOutpostOutput} Success
 		 */
 		UpdateOutpost(OutpostId: string, requestBody: UpdateOutpostPatchBody): Observable<UpdateOutpostOutput> {
@@ -1891,6 +1906,7 @@ export namespace MyNS {
 		 * Deletes the specified site.
 		 * Delete sites/{SiteId}
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteSiteOutput} Success
 		 */
 		DeleteSite(SiteId: string): Observable<DeleteSiteOutput> {
@@ -1901,6 +1917,7 @@ export namespace MyNS {
 		 * Gets information about the specified Outpost site.
 		 * Get sites/{SiteId}
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @return {GetSiteOutput} Success
 		 */
 		GetSite(SiteId: string): Observable<GetSiteOutput> {
@@ -1911,6 +1928,7 @@ export namespace MyNS {
 		 * Updates the specified site.
 		 * Patch sites/{SiteId}
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateSiteOutput} Success
 		 */
 		UpdateSite(SiteId: string, requestBody: UpdateSitePatchBody): Observable<UpdateSiteOutput> {
@@ -1921,6 +1939,7 @@ export namespace MyNS {
 		 * Gets information about the specified catalog item.
 		 * Get catalog/item/{CatalogItemId}
 		 * @param {string} CatalogItemId The ID of the catalog item.
+		 *     Min length: 1    Max length: 10
 		 * @return {GetCatalogItemOutput} Success
 		 */
 		GetCatalogItem(CatalogItemId: string): Observable<GetCatalogItemOutput> {
@@ -1931,6 +1950,7 @@ export namespace MyNS {
 		 * <note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about the specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
 		 * Get connections/{ConnectionId}
 		 * @param {string} ConnectionId  The ID of the connection. 
+		 *     Min length: 1    Max length: 1024
 		 * @return {GetConnectionResponse} Success
 		 */
 		GetConnection(ConnectionId: string): Observable<GetConnectionResponse> {
@@ -1941,6 +1961,7 @@ export namespace MyNS {
 		 * Gets information about the specified order.
 		 * Get orders/{OrderId}
 		 * @param {string} OrderId The ID of the order.
+		 *     Min length: 1    Max length: 20
 		 * @return {GetOrderOutput} Success
 		 */
 		GetOrder(OrderId: string): Observable<GetOrderOutput> {
@@ -1951,6 +1972,11 @@ export namespace MyNS {
 		 * Gets the instance types for the specified Outpost.
 		 * Get outposts/{OutpostId}/instanceTypes
 		 * @param {string} OutpostId  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @return {GetOutpostInstanceTypesOutput} Success
 		 */
 		GetOutpostInstanceTypes(OutpostId: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<GetOutpostInstanceTypesOutput> {
@@ -1961,6 +1987,7 @@ export namespace MyNS {
 		 * Gets the site address of the specified site.
 		 * Get sites/{SiteId}/address#AddressType
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @param {AddressType} AddressType The type of the address you request. 
 		 * @return {GetSiteAddressOutput} Success
 		 */
@@ -1972,8 +1999,14 @@ export namespace MyNS {
 		 * <p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		 * Get outposts/{OutpostId}/assets
 		 * @param {string} OutpostId  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
 		 * @param {Array<string>} HostIdFilter Filters the results by the host ID of a Dedicated Host.
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
 		 * @param {Array<AssetState>} StatusFilter Filters the results by state.
+		 *     Minimum items: 1    Maximum items: 3
 		 * @return {ListAssetsOutput} Success
 		 */
 		ListAssets(OutpostId: string, HostIdFilter: Array<string> | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined, StatusFilter: Array<AssetState> | null | undefined): Observable<ListAssetsOutput> {
@@ -1983,6 +2016,10 @@ export namespace MyNS {
 		/**
 		 * <p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 		 * Get catalog/items
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {Array<CatalogItemClass>} ItemClassFilter Filters the results by item class.
 		 * @param {Array<SupportedStorageEnum>} SupportedStorageFilter Filters the results by storage option.
 		 * @param {Array<string>} EC2FamilyFilter Filters the results by EC2 family (for example, M5).
@@ -1996,6 +2033,11 @@ export namespace MyNS {
 		 * Lists the Outpost orders for your Amazon Web Services account.
 		 * Get list-orders
 		 * @param {string} OutpostIdentifierFilter  The ID or the Amazon Resource Name (ARN) of the Outpost. 
+		 *     Min length: 1    Max length: 180
+		 * @param {string} NextToken Min length: 1
+		 *     Max length: 2048
+		 * @param {number} MaxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @return {ListOrdersOutput} Success
 		 */
 		ListOrders(OutpostIdentifierFilter: string | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListOrdersOutput> {
@@ -2006,6 +2048,7 @@ export namespace MyNS {
 		 * Lists the tags for the specified resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2016,6 +2059,7 @@ export namespace MyNS {
 		 * Adds tags to the specified resource.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2035,7 +2079,9 @@ export namespace MyNS {
 		 * Removes tags from the specified resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Max length: 1011
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2046,6 +2092,7 @@ export namespace MyNS {
 		 * <p>Updates the address of the specified site.</p> <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>
 		 * Put sites/{SiteId}/address
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateSiteAddressOutput} Success
 		 */
 		UpdateSiteAddress(SiteId: string, requestBody: UpdateSiteAddressPutBody): Observable<UpdateSiteAddressOutput> {
@@ -2056,6 +2103,7 @@ export namespace MyNS {
 		 * <p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p> <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order.</p>
 		 * Patch sites/{SiteId}/rackPhysicalProperties
 		 * @param {string} SiteId  The ID or the Amazon Resource Name (ARN) of the site. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateSiteRackPhysicalPropertiesOutput} Success
 		 */
 		UpdateSiteRackPhysicalProperties(SiteId: string, requestBody: UpdateSiteRackPhysicalPropertiesPatchBody): Observable<UpdateSiteRackPhysicalPropertiesOutput> {
@@ -2068,8 +2116,8 @@ export namespace MyNS {
 		/**
 		 * The ID or the Amazon Resource Name (ARN) of the Outpost.
 		 * Required
-		 * Max length: 180
 		 * Min length: 1
+		 * Max length: 180
 		 */
 		OutpostIdentifier: string;
 
@@ -2095,8 +2143,8 @@ export namespace MyNS {
 		/**
 		 * The ID or the Amazon Resource Name (ARN) of the Outpost.
 		 * Required
-		 * Max length: 180
 		 * Min length: 1
+		 * Max length: 180
 		 */
 		OutpostIdentifier: FormControl<string | null | undefined>,
 
@@ -2123,37 +2171,37 @@ export namespace MyNS {
 		/**
 		 * The name of the Outpost.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * The ID of the site.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId: string;
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone?: string | null;
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId?: string | null;
 
@@ -2168,37 +2216,37 @@ export namespace MyNS {
 		/**
 		 * The name of the Outpost.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the site.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SiteId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Availability Zone.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Availability Zone.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AvailabilityZoneId: FormControl<string | null | undefined>,
 
@@ -2226,22 +2274,22 @@ export namespace MyNS {
 		/**
 		 * The name of the site.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: string;
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description?: string | null;
 
 		/**
 		 * Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		Notes?: string | null;
 
@@ -2262,22 +2310,22 @@ export namespace MyNS {
 		/**
 		 * The name of the site.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		Notes: FormControl<string | null | undefined>,
 
@@ -2421,15 +2469,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -2440,15 +2488,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Outpost.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the Outpost.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2468,22 +2516,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description?: string | null;
 
 		/**
 		 * Notes about a site.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		Notes?: string | null;
 	}
@@ -2491,22 +2539,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the site.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 1001
 		 * Min length: 1
+		 * Max length: 1001
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Notes about a site.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		Notes: FormControl<string | null | undefined>,
 	}
@@ -2547,24 +2595,24 @@ export namespace MyNS {
 		/**
 		 * The serial number of the dongle.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		DeviceSerialNumber: string;
 
 		/**
 		 * The ID of the Outpost server.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		AssetId: string;
 
 		/**
 		 * The public key of the client.
 		 * Required
-		 * Max length: 44
 		 * Min length: 44
+		 * Max length: 44
 		 */
 		ClientPublicKey: string;
 
@@ -2581,24 +2629,24 @@ export namespace MyNS {
 		/**
 		 * The serial number of the dongle.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		DeviceSerialNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Outpost server.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		AssetId: FormControl<string | null | undefined>,
 
 		/**
 		 * The public key of the client.
 		 * Required
-		 * Max length: 44
 		 * Min length: 44
+		 * Max length: 44
 		 */
 		ClientPublicKey: FormControl<string | null | undefined>,
 

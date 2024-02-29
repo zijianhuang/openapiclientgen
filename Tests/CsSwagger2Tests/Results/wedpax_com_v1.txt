@@ -2511,6 +2511,12 @@ namespace MyNS
 		/// <summary>
 		/// ApiServicesAppAddressServicesGetAllGetBySortingAndSkipCountAndMaxResultCount api/services/app/AddressServices/GetAll
 		/// </summary>
+		/// <param name="SkipCount">Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="MaxResultCount">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PagedResultDto_GeoDetailsDto> ApiServicesAppAddressServicesGetAllGetBySortingAndSkipCountAndMaxResultCountAsync(string Sorting, int SkipCount, int MaxResultCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3040,6 +3046,12 @@ namespace MyNS
 		/// <summary>
 		/// ApiServicesAppRoleGetAllGetByKeywordAndSkipCountAndMaxResultCount api/services/app/Role/GetAll
 		/// </summary>
+		/// <param name="SkipCount">Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="MaxResultCount">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PagedResultDto_RoleDto> ApiServicesAppRoleGetAllGetByKeywordAndSkipCountAndMaxResultCountAsync(string Keyword, int SkipCount, int MaxResultCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3568,6 +3580,12 @@ namespace MyNS
 		/// <summary>
 		/// ApiServicesAppTenantGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount api/services/app/Tenant/GetAll
 		/// </summary>
+		/// <param name="SkipCount">Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="MaxResultCount">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PagedResultDto_TenantDto> ApiServicesAppTenantGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCountAsync(string Keyword, bool IsActive, int SkipCount, int MaxResultCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3874,6 +3892,12 @@ namespace MyNS
 		/// <summary>
 		/// ApiServicesAppUserGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount api/services/app/User/GetAll
 		/// </summary>
+		/// <param name="SkipCount">Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="MaxResultCount">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PagedResultDto_UserDto> ApiServicesAppUserGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCountAsync(string Keyword, bool IsActive, int SkipCount, int MaxResultCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4178,6 +4202,12 @@ namespace MyNS
 		/// <summary>
 		/// ApiServicesAppWeddingVendorServicesGetAllGetBySortingAndSkipCountAndMaxResultCount api/services/app/WeddingVendorServices/GetAll
 		/// </summary>
+		/// <param name="SkipCount">Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="MaxResultCount">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PagedResultDto_WeddingVendorDto> ApiServicesAppWeddingVendorServicesGetAllGetBySortingAndSkipCountAndMaxResultCountAsync(string Sorting, int SkipCount, int MaxResultCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

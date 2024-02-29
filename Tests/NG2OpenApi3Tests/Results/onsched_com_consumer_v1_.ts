@@ -146,6 +146,8 @@ export namespace MyNS {
 		customerBookingFields?: Array<BookingFieldItem>;
 		customerMessage?: string | null;
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize?: number | null;
 		name?: string | null;
 		notes?: string | null;
@@ -156,6 +158,8 @@ export namespace MyNS {
 	export interface AppointmentBookModelFormProperties {
 		customerMessage: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
@@ -260,6 +264,8 @@ export namespace MyNS {
 		customerMessage?: string | null;
 		email?: string | null;
 		endDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize?: number | null;
 		location?: string | null;
 		locationId?: string | null;
@@ -275,6 +281,8 @@ export namespace MyNS {
 		startDateTime?: Date | null;
 		timezoneName?: string | null;
 		travelAppointmentId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins?: number | null;
 	}
 	export interface AppointmentInitialModelFormProperties {
@@ -285,6 +293,8 @@ export namespace MyNS {
 		customerMessage: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		endDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize: FormControl<number | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
@@ -300,6 +310,8 @@ export namespace MyNS {
 		startDateTime: FormControl<Date | null | undefined>,
 		timezoneName: FormControl<string | null | undefined>,
 		travelAppointmentId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins: FormControl<number | null | undefined>,
 	}
 	export function CreateAppointmentInitialModelFormGroup() {
@@ -349,12 +361,16 @@ export namespace MyNS {
 		date?: string | null;
 		dateInternational?: string | null;
 		downloadIcsUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		email?: string | null;
 		emailConfirmationSent?: string | null;
 		emailReminderSent?: string | null;
 		endDateTime?: string | null;
 		firstname?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize?: number | null;
 		id?: string | null;
 		ipAddress?: string | null;
@@ -369,6 +385,8 @@ export namespace MyNS {
 		notes?: string | null;
 		object?: string | null;
 		onlineBooking?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentStatus?: number | null;
 		phone?: string | null;
 		phoneExt?: string | null;
@@ -391,7 +409,11 @@ export namespace MyNS {
 		status?: string | null;
 		stripeChargeId?: string | null;
 		stripeRefundId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone?: number | null;
 		timezoneIana?: string | null;
 		timezoneId?: string | null;
@@ -409,12 +431,16 @@ export namespace MyNS {
 		date: FormControl<string | null | undefined>,
 		dateInternational: FormControl<string | null | undefined>,
 		downloadIcsUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		emailConfirmationSent: FormControl<string | null | undefined>,
 		emailReminderSent: FormControl<string | null | undefined>,
 		endDateTime: FormControl<string | null | undefined>,
 		firstname: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		ipAddress: FormControl<string | null | undefined>,
@@ -429,6 +455,8 @@ export namespace MyNS {
 		notes: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		onlineBooking: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentStatus: FormControl<number | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		phoneExt: FormControl<string | null | undefined>,
@@ -450,7 +478,11 @@ export namespace MyNS {
 		status: FormControl<string | null | undefined>,
 		stripeChargeId: FormControl<string | null | undefined>,
 		stripeRefundId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone: FormControl<number | null | undefined>,
 		timezoneIana: FormControl<string | null | undefined>,
 		timezoneId: FormControl<string | null | undefined>,
@@ -522,6 +554,8 @@ export namespace MyNS {
 		businessId?: string | null;
 		companyId?: string | null;
 		fieldLabel?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fieldLength?: number | null;
 		fieldListItems?: Array<BookingFieldListItemViewModel>;
 		fieldName?: string | null;
@@ -529,22 +563,32 @@ export namespace MyNS {
 		fieldType?: string | null;
 		id?: string | null;
 		leadQuestion?: boolean | null;
+
+		/** Type: double */
 		leadQuestionWeight?: number | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey?: number | null;
 	}
 	export interface BookingFieldViewModelFormProperties {
 		businessId: FormControl<string | null | undefined>,
 		companyId: FormControl<string | null | undefined>,
 		fieldLabel: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fieldLength: FormControl<number | null | undefined>,
 		fieldName: FormControl<string | null | undefined>,
 		fieldRequired: FormControl<boolean | null | undefined>,
 		fieldType: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		leadQuestion: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		leadQuestionWeight: FormControl<number | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey: FormControl<number | null | undefined>,
 	}
 	export function CreateBookingFieldViewModelFormGroup() {
@@ -567,7 +611,11 @@ export namespace MyNS {
 
 	export interface BookingFieldListItemViewModel {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadAnswerScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadRoutingEntityId?: number | null;
 		leadRoutingEntityType?: string | null;
 		name?: string | null;
@@ -576,7 +624,11 @@ export namespace MyNS {
 	}
 	export interface BookingFieldListItemViewModelFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadAnswerScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadRoutingEntityId: FormControl<number | null | undefined>,
 		leadRoutingEntityType: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -641,17 +693,25 @@ export namespace MyNS {
 	}
 
 	export interface AppointmentListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<AppointmentViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface AppointmentListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -681,12 +741,16 @@ export namespace MyNS {
 		date?: string | null;
 		dateInternational?: string | null;
 		downloadIcsUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		email?: string | null;
 		emailConfirmationSent?: string | null;
 		emailReminderSent?: string | null;
 		endDateTime?: string | null;
 		firstname?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize?: number | null;
 		id?: string | null;
 		ipAddress?: string | null;
@@ -701,6 +765,8 @@ export namespace MyNS {
 		notes?: string | null;
 		object?: string | null;
 		onlineBooking?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentStatus?: number | null;
 		phone?: string | null;
 		phoneExt?: string | null;
@@ -723,7 +789,11 @@ export namespace MyNS {
 		status?: string | null;
 		stripeChargeId?: string | null;
 		stripeRefundId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone?: number | null;
 		timezoneIana?: string | null;
 		timezoneId?: string | null;
@@ -741,12 +811,16 @@ export namespace MyNS {
 		date: FormControl<string | null | undefined>,
 		dateInternational: FormControl<string | null | undefined>,
 		downloadIcsUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		emailConfirmationSent: FormControl<string | null | undefined>,
 		emailReminderSent: FormControl<string | null | undefined>,
 		endDateTime: FormControl<string | null | undefined>,
 		firstname: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		groupSize: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		ipAddress: FormControl<string | null | undefined>,
@@ -761,6 +835,8 @@ export namespace MyNS {
 		notes: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		onlineBooking: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentStatus: FormControl<number | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		phoneExt: FormControl<string | null | undefined>,
@@ -782,7 +858,11 @@ export namespace MyNS {
 		status: FormControl<string | null | undefined>,
 		stripeChargeId: FormControl<string | null | undefined>,
 		stripeRefundId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezone: FormControl<number | null | undefined>,
 		timezoneIana: FormControl<string | null | undefined>,
 		timezoneId: FormControl<string | null | undefined>,
@@ -861,23 +941,55 @@ export namespace MyNS {
 	}
 
 	export interface AppointmentReminderViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailFirstReminder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailFirstReminderInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailSecondReminder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailSecondReminderInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsFirstReminder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsFirstReminderInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsSecondReminder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsSecondReminderInterval?: number | null;
 	}
 	export interface AppointmentReminderViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailFirstReminder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailFirstReminderInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailSecondReminder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		emailSecondReminderInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsFirstReminder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsFirstReminderInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsSecondReminder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smsSecondReminderInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateAppointmentReminderViewModelFormGroup() {
@@ -901,6 +1013,8 @@ export namespace MyNS {
 		serviceId?: string | null;
 		startDateTime?: Date | null;
 		travelAppointmentId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins?: number | null;
 	}
 	export interface AppointmentRescheduleModelFormProperties {
@@ -910,6 +1024,8 @@ export namespace MyNS {
 		serviceId: FormControl<string | null | undefined>,
 		startDateTime: FormControl<Date | null | undefined>,
 		travelAppointmentId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins: FormControl<number | null | undefined>,
 	}
 	export function CreateAppointmentRescheduleModelFormGroup() {
@@ -968,6 +1084,8 @@ export namespace MyNS {
 		serviceDescription?: string | null;
 		serviceId?: string | null;
 		serviceName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tzRequested?: number | null;
 		url?: string | null;
 	}
@@ -979,6 +1097,8 @@ export namespace MyNS {
 		serviceDescription: FormControl<string | null | undefined>,
 		serviceId: FormControl<string | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tzRequested: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -999,22 +1119,34 @@ export namespace MyNS {
 
 	export interface AvailableDayViewModel {
 		available?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit?: number | null;
 		closed?: boolean | null;
 		date?: string | null;
 		object?: string | null;
 		reason?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reasonCode?: number | null;
 	}
 	export interface AvailableDayViewModelFormProperties {
 		available: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit: FormControl<number | null | undefined>,
 		closed: FormControl<boolean | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		reason: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reasonCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailableDayViewModelFormGroup() {
@@ -1046,6 +1178,8 @@ export namespace MyNS {
 		resourceIds?: string | null;
 		resourceName?: string | null;
 		serviceDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceDuration?: number | null;
 		serviceId?: string | null;
 		serviceName?: string | null;
@@ -1054,7 +1188,10 @@ export namespace MyNS {
 		/** Returns the Timezone Name in IANA format if a TimezoneName was passed into an Availability call; otherwise this property is hidden */
 		timezoneName?: string | null;
 
-		/** Returns the timezone offset if a tzOffset was supplied into an Availability call; null if a TimezoneName was passed; otherwise the Business timezone offset is returned */
+		/**
+		 * Returns the timezone offset if a tzOffset was supplied into an Availability call; null if a TimezoneName was passed; otherwise the Business timezone offset is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tzRequested?: number | null;
 		url?: string | null;
 	}
@@ -1071,6 +1208,8 @@ export namespace MyNS {
 		resourceIds: FormControl<string | null | undefined>,
 		resourceName: FormControl<string | null | undefined>,
 		serviceDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceDuration: FormControl<number | null | undefined>,
 		serviceId: FormControl<string | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
@@ -1079,7 +1218,10 @@ export namespace MyNS {
 		/** Returns the Timezone Name in IANA format if a TimezoneName was passed into an Availability call; otherwise this property is hidden */
 		timezoneName: FormControl<string | null | undefined>,
 
-		/** Returns the timezone offset if a tzOffset was supplied into an Availability call; null if a TimezoneName was passed; otherwise the Business timezone offset is returned */
+		/**
+		 * Returns the timezone offset if a tzOffset was supplied into an Availability call; null if a TimezoneName was passed; otherwise the Business timezone offset is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tzRequested: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -1109,33 +1251,61 @@ export namespace MyNS {
 	}
 
 	export interface AvailableTimeViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowableBookings?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowableCapacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableBookings?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableCapacity?: number | null;
 		date?: string | null;
 		displayTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
 		endDateTime?: string | null;
 		resourceId?: string | null;
 		startDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 		travelAppointmentId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins?: number | null;
 	}
 	export interface AvailableTimeViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowableBookings: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowableCapacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableBookings: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableCapacity: FormControl<number | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		displayTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
 		endDateTime: FormControl<string | null | undefined>,
 		resourceId: FormControl<string | null | undefined>,
 		startDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 		travelAppointmentId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		travelTimeMins: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailableTimeViewModelFormGroup() {
@@ -1160,10 +1330,14 @@ export namespace MyNS {
 	export interface BookingFieldListViewModel {
 		bookingFields?: Array<BookingFieldViewModel>;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface BookingFieldListViewModelFormProperties {
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBookingFieldListViewModelFormGroup() {
@@ -1209,12 +1383,16 @@ export namespace MyNS {
 		businessClosed?: boolean | null;
 		holidayName?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicHolidayId?: number | null;
 	}
 	export interface BusinessHolidayViewModelFormProperties {
 		businessClosed: FormControl<boolean | null | undefined>,
 		holidayName: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		publicHolidayId: FormControl<number | null | undefined>,
 	}
 	export function CreateBusinessHolidayViewModelFormGroup() {
@@ -1228,15 +1406,23 @@ export namespace MyNS {
 	}
 
 	export interface BusinessHourViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime?: number | null;
 		is24Hours?: boolean | null;
 		isOpen?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime?: number | null;
 	}
 	export interface BusinessHourViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime: FormControl<number | null | undefined>,
 		is24Hours: FormControl<boolean | null | undefined>,
 		isOpen: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime: FormControl<number | null | undefined>,
 	}
 	export function CreateBusinessHourViewModelFormGroup() {
@@ -1267,14 +1453,22 @@ export namespace MyNS {
 	}
 
 	export interface BusinessServiceViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceId?: number | null;
 		serviceName?: string | null;
 	}
 	export interface BusinessServiceViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceId: FormControl<number | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
 	}
@@ -1407,10 +1601,14 @@ export namespace MyNS {
 	export interface CustomFieldDefinitionListViewModel {
 		customFields?: Array<CustomFieldDefinitionViewModel>;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface CustomFieldDefinitionListViewModelFormProperties {
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomFieldDefinitionListViewModelFormGroup() {
@@ -1424,6 +1622,8 @@ export namespace MyNS {
 	export interface CustomFieldDefinitionViewModel {
 		fieldKey?: string | null;
 		fieldLabel?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fieldLength?: number | null;
 		fieldListItems?: Array<CustomFieldListDefinitionViewModel>;
 		fieldName?: string | null;
@@ -1432,13 +1632,19 @@ export namespace MyNS {
 		fieldType?: string | null;
 		id?: string | null;
 		leadQuestion?: boolean | null;
+
+		/** Type: double */
 		leadQuestionWeight?: number | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey?: number | null;
 	}
 	export interface CustomFieldDefinitionViewModelFormProperties {
 		fieldKey: FormControl<string | null | undefined>,
 		fieldLabel: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fieldLength: FormControl<number | null | undefined>,
 		fieldName: FormControl<string | null | undefined>,
 		fieldPublic: FormControl<boolean | null | undefined>,
@@ -1446,8 +1652,12 @@ export namespace MyNS {
 		fieldType: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		leadQuestion: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		leadQuestionWeight: FormControl<number | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomFieldDefinitionViewModelFormGroup() {
@@ -1470,7 +1680,11 @@ export namespace MyNS {
 
 	export interface CustomFieldListDefinitionViewModel {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadAnswerScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadRoutingEntityId?: number | null;
 		leadRoutingEntityType?: string | null;
 		name?: string | null;
@@ -1479,7 +1693,11 @@ export namespace MyNS {
 	}
 	export interface CustomFieldListDefinitionViewModelFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadAnswerScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		leadRoutingEntityId: FormControl<number | null | undefined>,
 		leadRoutingEntityType: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -1553,6 +1771,8 @@ export namespace MyNS {
 		notificationType?: string | null;
 		sendLeadNotification?: boolean | null;
 		stripeCustomerId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type?: number | null;
 	}
 	export interface CustomerInputModelFormProperties {
@@ -1566,6 +1786,8 @@ export namespace MyNS {
 		notificationType: FormControl<string | null | undefined>,
 		sendLeadNotification: FormControl<boolean | null | undefined>,
 		stripeCustomerId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerInputModelFormGroup() {
@@ -1584,17 +1806,25 @@ export namespace MyNS {
 	}
 
 	export interface CustomerListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<CustomerViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface CustomerListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -1739,6 +1969,8 @@ export namespace MyNS {
 		/** 0 = default(Email), 1 = Email, 2 = SMS, 3 = Email and SMS */
 		notificationType?: string | null;
 		stripeCustomerId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type?: number | null;
 	}
 	export interface CustomerUpdateModelFormProperties {
@@ -1751,6 +1983,8 @@ export namespace MyNS {
 		/** 0 = default(Email), 1 = Email, 2 = SMS, 3 = Email and SMS */
 		notificationType: FormControl<string | null | undefined>,
 		stripeCustomerId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerUpdateModelFormGroup() {
@@ -1768,17 +2002,25 @@ export namespace MyNS {
 	}
 
 	export interface LocationListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<LocationViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface LocationListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -1808,8 +2050,12 @@ export namespace MyNS {
 		friendlyId?: string | null;
 		id?: string | null;
 		imageUrl?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
 		logo?: string | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		name?: string | null;
 		object?: string | null;
@@ -1821,6 +2067,8 @@ export namespace MyNS {
 		settings?: OnlineSettingsViewModel;
 		timezoneIana?: string | null;
 		timezoneId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset?: number | null;
 		travel?: TravelViewModel;
 		website?: string | null;
@@ -1835,8 +2083,12 @@ export namespace MyNS {
 		friendlyId: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
 		logo: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
@@ -1846,6 +2098,8 @@ export namespace MyNS {
 		regionId: FormControl<string | null | undefined>,
 		timezoneIana: FormControl<string | null | undefined>,
 		timezoneId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset: FormControl<number | null | undefined>,
 		website: FormControl<string | null | undefined>,
 	}
@@ -1878,17 +2132,29 @@ export namespace MyNS {
 	}
 
 	export interface OnlineSettingsViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availabilityForm?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadUnit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadValue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookInAdvance?: number | null;
 		bookWithAccount?: boolean | null;
 		bookingConfirmationMessage?: string | null;
 		bookingMessage?: string | null;
 		bookingPolicy?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingTimerMins?: number | null;
 		businessId?: string | null;
 		companyId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		customerBookingsPerDay?: number | null;
 		customerVerification?: boolean | null;
 		defaultService?: boolean | null;
@@ -1898,6 +2164,8 @@ export namespace MyNS {
 		enabled?: boolean | null;
 		familyMembersEnabled?: boolean | null;
 		firstAvailable?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		formFlow?: number | null;
 		hideBreadCrumbNav?: boolean | null;
 		hideContinueBooking?: boolean | null;
@@ -1905,10 +2173,20 @@ export namespace MyNS {
 		hideNavBar?: boolean | null;
 		hideServiceGroupsNav?: boolean | null;
 		hideServicesNav?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateCancelAction?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateCancelHours?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateRescheduleAction?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateRescheduleHours?: number | null;
 		liveMode?: boolean | null;
 		locationId?: string | null;
@@ -1924,17 +2202,29 @@ export namespace MyNS {
 		showServiceGroups?: boolean | null;
 	}
 	export interface OnlineSettingsViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availabilityForm: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadUnit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadValue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookInAdvance: FormControl<number | null | undefined>,
 		bookWithAccount: FormControl<boolean | null | undefined>,
 		bookingConfirmationMessage: FormControl<string | null | undefined>,
 		bookingMessage: FormControl<string | null | undefined>,
 		bookingPolicy: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingTimerMins: FormControl<number | null | undefined>,
 		businessId: FormControl<string | null | undefined>,
 		companyId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		customerBookingsPerDay: FormControl<number | null | undefined>,
 		customerVerification: FormControl<boolean | null | undefined>,
 		defaultService: FormControl<boolean | null | undefined>,
@@ -1944,6 +2234,8 @@ export namespace MyNS {
 		enabled: FormControl<boolean | null | undefined>,
 		familyMembersEnabled: FormControl<boolean | null | undefined>,
 		firstAvailable: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		formFlow: FormControl<number | null | undefined>,
 		hideBreadCrumbNav: FormControl<boolean | null | undefined>,
 		hideContinueBooking: FormControl<boolean | null | undefined>,
@@ -1951,10 +2243,20 @@ export namespace MyNS {
 		hideNavBar: FormControl<boolean | null | undefined>,
 		hideServiceGroupsNav: FormControl<boolean | null | undefined>,
 		hideServicesNav: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateCancelAction: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateCancelHours: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateRescheduleAction: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lateRescheduleHours: FormControl<number | null | undefined>,
 		liveMode: FormControl<boolean | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
@@ -2074,6 +2376,8 @@ export namespace MyNS {
 
 	export interface RepeatViewModel {
 		frequency?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval?: number | null;
 		monthDay?: string | null;
 		monthType?: string | null;
@@ -2081,6 +2385,8 @@ export namespace MyNS {
 	}
 	export interface RepeatViewModelFormProperties {
 		frequency: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval: FormControl<number | null | undefined>,
 		monthDay: FormControl<string | null | undefined>,
 		monthType: FormControl<string | null | undefined>,
@@ -2098,17 +2404,25 @@ export namespace MyNS {
 	}
 
 	export interface ResourceGroupListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ResourceGroupViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ResourceGroupListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2124,6 +2438,8 @@ export namespace MyNS {
 	}
 
 	export interface ResourceGroupViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingNotification?: number | null;
 		deletedStatus?: boolean | null;
 		deletedTime?: Date | null;
@@ -2135,6 +2451,8 @@ export namespace MyNS {
 		object?: string | null;
 	}
 	export interface ResourceGroupViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingNotification: FormControl<number | null | undefined>,
 		deletedStatus: FormControl<boolean | null | undefined>,
 		deletedTime: FormControl<Date | null | undefined>,
@@ -2161,11 +2479,19 @@ export namespace MyNS {
 	}
 
 	export interface ResourceHourViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime?: number | null;
 	}
 	export interface ResourceHourViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceHourViewModelFormGroup() {
@@ -2194,17 +2520,25 @@ export namespace MyNS {
 	}
 
 	export interface ResourceListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ResourceViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ResourceListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2223,7 +2557,11 @@ export namespace MyNS {
 		address?: AddressViewModel;
 		availability?: ResourceHoursViewModel;
 		bioLink?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingNotification?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarAvailability?: number | null;
 		contact?: ContactViewModel;
 		customFields?: CustomFieldInputModel;
@@ -2235,26 +2573,38 @@ export namespace MyNS {
 		gender?: string | null;
 		googleCalendarId?: string | null;
 		groupId?: string | null;
+
+		/** Type: double */
 		hourly?: number | null;
 		id?: string | null;
 		ignoreBusinessHours?: boolean | null;
 		imageUrl?: string | null;
 		locationId?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notificationType?: number | null;
 		object?: string | null;
 		outlookCalendarId?: string | null;
 		recurringAvailability?: boolean | null;
 		services?: Array<ResourceServiceViewModel>;
 		skypeName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey?: number | null;
 		timezoneIana?: string | null;
 		timezoneId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset?: number | null;
 	}
 	export interface ResourceViewModelFormProperties {
 		bioLink: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingNotification: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendarAvailability: FormControl<number | null | undefined>,
 		deletedStatus: FormControl<boolean | null | undefined>,
 		deletedTime: FormControl<Date | null | undefined>,
@@ -2264,20 +2614,28 @@ export namespace MyNS {
 		gender: FormControl<string | null | undefined>,
 		googleCalendarId: FormControl<string | null | undefined>,
 		groupId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		hourly: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		ignoreBusinessHours: FormControl<boolean | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		notificationType: FormControl<number | null | undefined>,
 		object: FormControl<string | null | undefined>,
 		outlookCalendarId: FormControl<string | null | undefined>,
 		recurringAvailability: FormControl<boolean | null | undefined>,
 		skypeName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortKey: FormControl<number | null | undefined>,
 		timezoneIana: FormControl<string | null | undefined>,
 		timezoneId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceViewModelFormGroup() {
@@ -2314,15 +2672,23 @@ export namespace MyNS {
 
 	export interface ResourceServiceViewModel {
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resourceId?: number | null;
 		resourceName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceId?: number | null;
 		serviceName?: string | null;
 	}
 	export interface ResourceServiceViewModelFormProperties {
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resourceId: FormControl<number | null | undefined>,
 		resourceName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceId: FormControl<number | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
 	}
@@ -2338,17 +2704,25 @@ export namespace MyNS {
 	}
 
 	export interface ResourceServiceListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ResourceServiceViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ResourceServiceListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2364,17 +2738,25 @@ export namespace MyNS {
 	}
 
 	export interface ServiceAllocationListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ServiceAllocationViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ServiceAllocationListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2390,11 +2772,17 @@ export namespace MyNS {
 	}
 
 	export interface ServiceAllocationViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit?: number | null;
 		deletedStatus?: boolean | null;
 		deletedTime?: string | null;
 		endDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime?: number | null;
 		id?: string | null;
 		locationId?: string | null;
@@ -2409,21 +2797,33 @@ export namespace MyNS {
 		resourceName?: string | null;
 		resourcePhone?: PhoneViewModel;
 		serviceDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceDuration?: number | null;
 		serviceId?: string | null;
 		serviceImageUrl?: string | null;
 		serviceName?: string | null;
 		startDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime?: number | null;
 		timezoneName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset?: number | null;
 	}
 	export interface ServiceAllocationViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit: FormControl<number | null | undefined>,
 		deletedStatus: FormControl<boolean | null | undefined>,
 		deletedTime: FormControl<string | null | undefined>,
 		endDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
@@ -2435,13 +2835,19 @@ export namespace MyNS {
 		resourceImageUrl: FormControl<string | null | undefined>,
 		resourceName: FormControl<string | null | undefined>,
 		serviceDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceDuration: FormControl<number | null | undefined>,
 		serviceId: FormControl<string | null | undefined>,
 		serviceImageUrl: FormControl<string | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
 		startDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime: FormControl<number | null | undefined>,
 		timezoneName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timezoneOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateServiceAllocationViewModelFormGroup() {
@@ -2475,17 +2881,25 @@ export namespace MyNS {
 	}
 
 	export interface ServiceGroupListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ServiceGroupViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ServiceGroupListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2509,6 +2923,8 @@ export namespace MyNS {
 		locationId?: string | null;
 		name?: string | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type?: number | null;
 	}
 	export interface ServiceGroupViewModelFormProperties {
@@ -2520,6 +2936,8 @@ export namespace MyNS {
 		locationId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateServiceGroupViewModelFormGroup() {
@@ -2538,11 +2956,19 @@ export namespace MyNS {
 	}
 
 	export interface ServiceHourViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime?: number | null;
 	}
 	export interface ServiceHourViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endTime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startTime: FormControl<number | null | undefined>,
 	}
 	export function CreateServiceHourViewModelFormGroup() {
@@ -2571,17 +2997,25 @@ export namespace MyNS {
 	}
 
 	export interface ServiceListViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		data?: Array<ServiceViewModel>;
 		hasMore?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		url?: string | null;
 	}
 	export interface ServiceListViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		hasMore: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -2598,83 +3032,163 @@ export namespace MyNS {
 
 	export interface ServiceViewModel {
 		availability?: ServiceHoursViewModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadUnit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadValue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookInAdvance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit?: number | null;
 		calendarId?: string | null;
 		calendarResourceGroupId?: string | null;
+
+		/** Type: double */
 		cancellationFeeAmount?: number | null;
 		cancellationFeeTaxable?: boolean | null;
 		companyId?: string | null;
 		consumerPadding?: boolean | null;
 		customFields?: CustomFieldInputModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dailyBookingLimitCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dailyBookingLimitMinutes?: number | null;
 		defaultService?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMax?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMin?: number | null;
 		durationSelect?: boolean | null;
+
+		/** Type: double */
 		feeAmount?: number | null;
 		feeTaxable?: boolean | null;
 		id?: string | null;
 		imageUrl?: string | null;
 		locationId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxBookingLimit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCapacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxGroupSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxResourceBookingLimit?: number | null;
 		mediaPageUrl?: string | null;
 		name?: string | null;
 		nonRefundable?: boolean | null;
 		object?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padding?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		roundRobin?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceGroupId?: number | null;
 		serviceGroupName?: string | null;
 		showOnline?: boolean | null;
 		type?: string | null;
 	}
 	export interface ServiceViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadUnit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookAheadValue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookInAdvance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bookingLimit: FormControl<number | null | undefined>,
 		calendarId: FormControl<string | null | undefined>,
 		calendarResourceGroupId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cancellationFeeAmount: FormControl<number | null | undefined>,
 		cancellationFeeTaxable: FormControl<boolean | null | undefined>,
 		companyId: FormControl<string | null | undefined>,
 		consumerPadding: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dailyBookingLimitCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dailyBookingLimitMinutes: FormControl<number | null | undefined>,
 		defaultService: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMax: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		durationMin: FormControl<number | null | undefined>,
 		durationSelect: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		feeAmount: FormControl<number | null | undefined>,
 		feeTaxable: FormControl<boolean | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxBookingLimit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCapacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxGroupSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxResourceBookingLimit: FormControl<number | null | undefined>,
 		mediaPageUrl: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		nonRefundable: FormControl<boolean | null | undefined>,
 		object: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		padding: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		roundRobin: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serviceGroupId: FormControl<number | null | undefined>,
 		serviceGroupName: FormControl<string | null | undefined>,
 		showOnline: FormControl<boolean | null | undefined>,
@@ -2779,8 +3293,12 @@ export namespace MyNS {
 		calendarId?: string | null;
 		date?: string | null;
 		endDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		entityId?: number | null;
 		entityType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fromTime?: number | null;
 		locationId?: string | null;
 		objectName?: string | null;
@@ -2791,15 +3309,23 @@ export namespace MyNS {
 		serviceId?: string | null;
 		serviceName?: string | null;
 		startDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		toTime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tzOffset?: number | null;
 	}
 	export interface UnavailableTimeViewModelFormProperties {
 		calendarId: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		endDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		entityId: FormControl<number | null | undefined>,
 		entityType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fromTime: FormControl<number | null | undefined>,
 		locationId: FormControl<string | null | undefined>,
 		objectName: FormControl<string | null | undefined>,
@@ -2810,7 +3336,11 @@ export namespace MyNS {
 		serviceId: FormControl<string | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
 		startDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		toTime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tzOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateUnavailableTimeViewModelFormGroup() {
@@ -2859,7 +3389,9 @@ export namespace MyNS {
 		 * @param {string} status Filter by status: IN, BK, CN, RE, RS
 		 * @param {string} bookedBy Filter by the email of who booked
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit, default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AppointmentListViewModel} Success
 		 */
 		ConsumerV1AppointmentsGetByLocationIdAndEmailAndLastnameAndPhoneAndServiceIdAndCalendarIdAndResourceIdAndCustomerIdAndServiceAllocationIdAndStartDateAndEndDateAndStatusAndBookedByAndOffsetAndLimit(locationId: string | null | undefined, email: string | null | undefined, lastname: string | null | undefined, phone: string | null | undefined, serviceId: string | null | undefined, calendarId: string | null | undefined, resourceId: string | null | undefined, customerId: string | null | undefined, serviceAllocationId: string | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, status: string | null | undefined, bookedBy: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<AppointmentListViewModel> {
@@ -2970,6 +3502,7 @@ export namespace MyNS {
 		 * <p>For more information: <a href="https://onsched.readme.io/docs/appointments-overview">Appointment Overview</a></p>
 		 * Put consumer/v1/appointments/{id}/confirm
 		 * @param {number} id appointment id to confirm
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} undo Use this parameter to undo the confirmed status
 		 * @return {void} Success
 		 */
@@ -2983,6 +3516,7 @@ export namespace MyNS {
 		 * <p>For more information: <a href="https://onsched.readme.io/docs/appointments-overview">Appointment Overview</a></p>
 		 * Put consumer/v1/appointments/{id}/noshow
 		 * @param {number} id appointment id to mark as NoShow
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ConsumerV1Appointments_idNoshowPut(id: number, requestBody: AppointmentNoShowModel, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3048,19 +3582,25 @@ export namespace MyNS {
 		 * @param {Date} startDate Format YYYY-MM-DD: Start Date for availability search
 		 * @param {Date} endDate Format YYYY-MM-DD: End Date for availability search
 		 * @param {number} startTime Format Military Time Start Time for availability search. Defaults to Business Hours Start
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endTime Format Military Time. End Time for availability search. Defaults to Business Hours End
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locationId Id of business location, defaults to primary business location
 		 * @param {string} resourceId Resource Id for availability search
 		 * @param {string} resourceGroupId Resource Group Id for availability search
 		 * @param {string} resourceIds Comma separated Resource Id's for availability search
 		 * @param {string} roundRobin Round robin choice 0=none, 1=random, 2=balanced
 		 * @param {number} duration Duration of the service if different from default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} interval Booking Interval if different than the default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} timezoneName Requested IANA timezone Id to view availability
 		 * @param {number} tzOffset Request timezone offset to view availability
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} destination For calculating travel based availability, requires distance scope
 		 * @param {Date} dayAvailabilityStartDate Format YYYY-DD-YY: Start date for day availability, defaults to startDate
 		 * @param {number} dayAvailability Number of days of day availability to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} firstDayAvailable Return available times for the first available day
 		 * @return {AvailabilityViewModel} Success
 		 */
@@ -3083,6 +3623,7 @@ export namespace MyNS {
 		 * @param {string} locationId Id of business location, defaults to primary business location
 		 * @param {string} resourceId Resource Id to filter on
 		 * @param {number} tzOffset Timezone offset to view availability for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AvailabilityDayViewModel} Success
 		 */
 		ConsumerV1Availability_serviceId_startDate_endDateDaysGetByLocationIdAndResourceIdAndTzOffset(serviceId: string, startDate: Date, endDate: Date, locationId: string | null | undefined, resourceId: string | null | undefined, tzOffset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<AvailabilityDayViewModel> {
@@ -3101,7 +3642,9 @@ export namespace MyNS {
 		 * @param {string} locationId Id of business location, defaults to primary business location
 		 * @param {string} resourceId Resource Id to filter on
 		 * @param {number} duration Duration of the service if different from default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} tzOffset Request timezone offset to view unavailable times
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} skipTimePastUnavailability Set as true to remove Time Past (TP) blocks in the response
 		 * @return {UnavailableTimeListViewModel} Success
 		 */
@@ -3119,7 +3662,9 @@ export namespace MyNS {
 		 * @param {string} lastname Filter by lastname
 		 * @param {boolean} deleted Filter by deleted status
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CustomerListViewModel} Success
 		 */
 		ConsumerV1CustomersGetByLocationIdAndGroupIdAndEmailAndLastnameAndDeletedAndOffsetAndLimit(locationId: string | null | undefined, groupId: string | null | undefined, email: string | null | undefined, lastname: string | null | undefined, deleted: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<CustomerListViewModel> {
@@ -3222,13 +3767,16 @@ export namespace MyNS {
 		 * @param {string} name Location name (full or partial)
 		 * @param {string} nearestTo Search by distance nearest Geocoords, City, Postal/Zip Code
 		 * @param {number} proximity Maximum distance to display
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} units Distance either imperial(miles), metric(kilometers)
 		 * @param {string} serviceId Locations that offer this service
 		 * @param {string} friendlyId Frienldy Id of location
 		 * @param {string} regionId Locations within a specific region
 		 * @param {boolean} ignorePrimary Don't include the Primary Location
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit, default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LocationListViewModel} Success
 		 */
 		ConsumerV1LocationsGetByNameAndNearestToAndProximityAndUnitsAndServiceIdAndFriendlyIdAndRegionIdAndIgnorePrimaryAndOffsetAndLimit(name: string | null | undefined, nearestTo: string | null | undefined, proximity: number | null | undefined, units: string | null | undefined, serviceId: string | null | undefined, friendlyId: string | null | undefined, regionId: string | null | undefined, ignorePrimary: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<LocationListViewModel> {
@@ -3255,7 +3803,9 @@ export namespace MyNS {
 		 * @param {string} locationId id of business location, defaults to primary business location
 		 * @param {boolean} deleted Filter results by deleted status
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResourceGroupListViewModel} Success
 		 */
 		ConsumerV1ResourcegroupsGetByLocationIdAndDeletedAndOffsetAndLimit(locationId: string | null | undefined, deleted: boolean | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ResourceGroupListViewModel> {
@@ -3279,11 +3829,14 @@ export namespace MyNS {
 		 * Get consumer/v1/resources
 		 * @param {string} locationId id of business location, defaults to primary business location
 		 * @param {number} resourceGroupId Filter by groupId
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} email Filter by email address
 		 * @param {string} name Search by name, supports Partial name search
 		 * @param {string} sortOrder Specify sort order of response
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResourceListViewModel} resource object
 		 */
 		ConsumerV1ResourcesGetByLocationIdAndResourceGroupIdAndEmailAndNameAndSortOrderAndOffsetAndLimit(locationId: string | null | undefined, resourceGroupId: number | null | undefined, email: string | null | undefined, name: string | null | undefined, sortOrder: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ResourceListViewModel> {
@@ -3295,6 +3848,7 @@ export namespace MyNS {
 		 * <p>Use this endpoint to return a <b>Resource</b> object. A valid <b>resource id</b> is required. Find resource id's by using the <i>GET consumer/v1/resources</i> endpoint. </p>
 		 * Get consumer/v1/resources/{id}
 		 * @param {number} id id of resource object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResourceViewModel} Success
 		 */
 		ConsumerV1Resources_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<ResourceViewModel> {
@@ -3307,8 +3861,11 @@ export namespace MyNS {
 		 * <p>Resource linked services are used to explicitly define the services that can be booked for a specified resource. By default, all services are bookable for any resource. For more information: <a href="https://docs.onsched.com/docs/linked-services">Linked Services Overview</a></p>
 		 * Get consumer/v1/resources/{id}/services
 		 * @param {number} id id of resource object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResourceServiceListViewModel} list of resource services
 		 */
 		ConsumerV1Resources_idServicesGetByOffsetAndLimit(id: number, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ResourceServiceListViewModel> {
@@ -3321,7 +3878,9 @@ export namespace MyNS {
 		 * Get consumer/v1/servicegroups
 		 * @param {string} locationId id of business location, defaults to primary business location
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceGroupListViewModel} Success
 		 */
 		ConsumerV1ServicegroupsGetByLocationIdAndOffsetAndLimit(locationId: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ServiceGroupListViewModel> {
@@ -3333,6 +3892,7 @@ export namespace MyNS {
 		 * <p>Use this endpoint to return a <b>Service Group</b> object. A valid <b>serviceGroup id</b> is required. Find serviceGroup id's by using the <i>GET /consumer/v1/serviceGroups</i> endpoint.</p>
 		 * Get consumer/v1/servicegroups/{id}
 		 * @param {number} id id of the serviceGroup object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceGroupViewModel} Success
 		 */
 		ConsumerV1Servicegroups_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<ServiceGroupViewModel> {
@@ -3345,13 +3905,16 @@ export namespace MyNS {
 		 * Get consumer/v1/services
 		 * @param {string} locationId id of business location, defaults to primary business location
 		 * @param {number} serviceGroupId Filter by groupId
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} defaultService Filter by default service, default is false
 		 * @param {boolean} allLocations Search All Locations, default is false
 		 * @param {ServicesScope} scope Filter by scope, Company, Location or All, default is All
 		 * @param {string} name Filter by Name, supports Partial name search
 		 * @param {string} serviceId Filter by ServiceId, using this parameter would ignore all other parameters
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ServiceSortOrder} sortOrder Sort results using Natural Sort or Sorted alphabetically by Service Names, default is natural
 		 * @param {boolean} sortDescending Sort results in Descending Order, default true
 		 * @return {ServiceListViewModel} Success
@@ -3376,6 +3939,7 @@ export namespace MyNS {
 		 * <p>Use this endpoint to return a <b>Service</b> object. A valid <b>service id</b> is required. Find service id's by using the <i>GET /consumer/v1/services</i> endpoint.</p>
 		 * Get consumer/v1/services/{id}
 		 * @param {number} id id of service object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceViewModel} Success
 		 */
 		ConsumerV1Services_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<ServiceViewModel> {
@@ -3392,7 +3956,9 @@ export namespace MyNS {
 		 * @param {Date} startDate Format YYYY-MM-DD: Filter allocations on/after startDate
 		 * @param {Date} endDate Format YYYY-MM-DD. Filter allocations on/before endDate
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceAllocationListViewModel} service alloaction object
 		 */
 		ConsumerV1Services_idAllocationsGetByLocationIdAndResourceIdAndStartDateAndEndDateAndOffsetAndLimit(id: string, locationId: string | null | undefined, resourceId: string | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ServiceAllocationListViewModel> {
@@ -3406,7 +3972,9 @@ export namespace MyNS {
 		 * @param {string} id id of service object
 		 * @param {string} locationId id of business location, defaults to primary business location
 		 * @param {number} offset Starting row of page, default 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Page limit default 20, max 100
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ResourceListViewModel} Success
 		 */
 		ConsumerV1Services_idResourcesGetByLocationIdAndOffsetAndLimit(id: string, locationId: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ResourceListViewModel> {

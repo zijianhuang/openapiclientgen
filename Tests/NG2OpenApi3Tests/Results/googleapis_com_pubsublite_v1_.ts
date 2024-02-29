@@ -21,20 +21,32 @@ export namespace MyNS {
 	/** The throughput capacity configuration for each partition. */
 	export interface Capacity {
 
-		/** Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16. */
+		/**
+		 * Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publishMibPerSec?: number | null;
 
-		/** Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <= 32. */
+		/**
+		 * Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <= 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribeMibPerSec?: number | null;
 	}
 
 	/** The throughput capacity configuration for each partition. */
 	export interface CapacityFormProperties {
 
-		/** Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16. */
+		/**
+		 * Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publishMibPerSec: FormControl<number | null | undefined>,
 
-		/** Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <= 32. */
+		/**
+		 * Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <= 32.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribeMibPerSec: FormControl<number | null | undefined>,
 	}
 	export function CreateCapacityFormGroup() {
@@ -451,7 +463,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -464,7 +479,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -748,7 +766,10 @@ export namespace MyNS {
 		/** The number of partitions in the topic. Must be at least 1. Once a topic has been created the number of partitions can be increased but not decreased. Message ordering is not guaranteed across a topic resize. For more information see https://cloud.google.com/pubsub/lite/docs/topics#scaling_capacity */
 		count?: string | null;
 
-		/** DEPRECATED: Use capacity instead which can express a superset of configurations. Every partition in the topic is allocated throughput equivalent to `scale` times the standard partition throughput (4 MiB/s). This is also reflected in the cost of this topic; a topic with `scale` of 2 and count of 10 is charged for 20 partitions. This value must be in the range [1,4]. */
+		/**
+		 * DEPRECATED: Use capacity instead which can express a superset of configurations. Every partition in the topic is allocated throughput equivalent to `scale` times the standard partition throughput (4 MiB/s). This is also reflected in the cost of this topic; a topic with `scale` of 2 and count of 10 is charged for 20 partitions. This value must be in the range [1,4].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale?: number | null;
 	}
 
@@ -758,7 +779,10 @@ export namespace MyNS {
 		/** The number of partitions in the topic. Must be at least 1. Once a topic has been created the number of partitions can be increased but not decreased. Message ordering is not guaranteed across a topic resize. For more information see https://cloud.google.com/pubsub/lite/docs/topics#scaling_capacity */
 		count: FormControl<string | null | undefined>,
 
-		/** DEPRECATED: Use capacity instead which can express a superset of configurations. Every partition in the topic is allocated throughput equivalent to `scale` times the standard partition throughput (4 MiB/s). This is also reflected in the cost of this topic; a topic with `scale` of 2 and count of 10 is charged for 20 partitions. This value must be in the range [1,4]. */
+		/**
+		 * DEPRECATED: Use capacity instead which can express a superset of configurations. Every partition in the topic is allocated throughput equivalent to `scale` times the standard partition throughput (4 MiB/s). This is also reflected in the cost of this topic; a topic with `scale` of 2 and count of 10 is charged for 20 partitions. This value must be in the range [1,4].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreatePartitionConfigFormGroup() {
@@ -963,6 +987,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -985,6 +1010,7 @@ export namespace MyNS {
 		 * Get v1/admin/{name}/subscriptions
 		 * @param {string} name Required. The name of the topic whose subscriptions to list.
 		 * @param {number} pageSize The maximum number of subscriptions to return. The service may return fewer than this value. If unset or zero, all subscriptions for the given topic will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListTopicSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTopicSubscriptions` must match the call that provided the page token.
 		 * @return {ListTopicSubscriptionsResponse} Successful response
 		 */
@@ -997,6 +1023,7 @@ export namespace MyNS {
 		 * Get v1/admin/{name}/topics
 		 * @param {string} name Required. The name of the reservation whose topics to list. Structured like: projects/{project_number}/locations/{location}/reservations/{reservation_id}
 		 * @param {number} pageSize The maximum number of topics to return. The service may return fewer than this value. If unset or zero, all topics for the given reservation will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListReservationTopics` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReservationTopics` must match the call that provided the page token.
 		 * @return {ListReservationTopicsResponse} Successful response
 		 */
@@ -1029,6 +1056,7 @@ export namespace MyNS {
 		 * Get v1/admin/{parent}/reservations
 		 * @param {string} parent Required. The parent whose reservations are to be listed. Structured like `projects/{project_number}/locations/{location}`.
 		 * @param {number} pageSize The maximum number of reservations to return. The service may return fewer than this value. If unset or zero, all reservations for the parent will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListReservations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReservations` must match the call that provided the page token.
 		 * @return {ListReservationsResponse} Successful response
 		 */
@@ -1052,6 +1080,7 @@ export namespace MyNS {
 		 * Get v1/admin/{parent}/subscriptions
 		 * @param {string} parent Required. The parent whose subscriptions are to be listed. Structured like `projects/{project_number}/locations/{location}`.
 		 * @param {number} pageSize The maximum number of subscriptions to return. The service may return fewer than this value. If unset or zero, all subscriptions for the parent will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token.
 		 * @return {ListSubscriptionsResponse} Successful response
 		 */
@@ -1076,6 +1105,7 @@ export namespace MyNS {
 		 * Get v1/admin/{parent}/topics
 		 * @param {string} parent Required. The parent whose topics are to be listed. Structured like `projects/{project_number}/locations/{location}`.
 		 * @param {number} pageSize The maximum number of topics to return. The service may return fewer than this value. If unset or zero, all topics for the parent will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListTopics` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTopics` must match the call that provided the page token.
 		 * @return {ListTopicsResponse} Successful response
 		 */
@@ -1099,6 +1129,7 @@ export namespace MyNS {
 		 * Get v1/cursor/{parent}/cursors
 		 * @param {string} parent Required. The subscription for which to retrieve cursors. Structured like `projects/{project_number}/locations/{location}/subscriptions/{subscription_id}`.
 		 * @param {number} pageSize The maximum number of cursors to return. The service may return fewer than this value. If unset or zero, all cursors for the parent will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListPartitionCursors` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPartitionCursors` must match the call that provided the page token.
 		 * @return {ListPartitionCursorsResponse} Successful response
 		 */

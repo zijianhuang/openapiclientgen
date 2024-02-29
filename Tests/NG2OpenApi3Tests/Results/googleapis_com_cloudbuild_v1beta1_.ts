@@ -354,7 +354,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. */
 		repoSlug?: string | null;
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId?: number | null;
 	}
 
@@ -367,7 +370,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. */
 		repoSlug: FormControl<string | null | undefined>,
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId: FormControl<number | null | undefined>,
 	}
 	export function CreateBitbucketServerRepositoryIdFormGroup() {
@@ -383,7 +389,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -396,7 +405,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -496,7 +508,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. example: "namespace/project-slug", namespace is usually the username or group ID */
 		id?: string | null;
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId?: number | null;
 	}
 
@@ -506,7 +521,10 @@ export namespace MyNS {
 		/** Required. Identifier for the repository. example: "namespace/project-slug", namespace is usually the username or group ID */
 		id: FormControl<string | null | undefined>,
 
-		/** Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo. */
+		/**
+		 * Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		webhookId: FormControl<number | null | undefined>,
 	}
 	export function CreateGitLabRepositoryIdFormGroup() {
@@ -1445,7 +1463,10 @@ export namespace MyNS {
 		/** A list of environment variable definitions to be used when running a step. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE". */
 		env?: Array<string>;
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -1491,7 +1512,10 @@ export namespace MyNS {
 		/** Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used. */
 		entrypoint: FormControl<string | null | undefined>,
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */

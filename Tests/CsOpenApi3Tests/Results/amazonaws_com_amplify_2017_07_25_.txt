@@ -2309,8 +2309,13 @@ namespace MyNS
 		/// Returns a list of the existing Amplify apps.
 		/// ListApps apps
 		/// </summary>
-		/// <param name="nextToken"> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="nextToken"> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAppsResult> ListAppsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2344,7 +2349,10 @@ namespace MyNS
 		/// Creates a new backend environment for an Amplify app.
 		/// CreateBackendEnvironment apps/{appId}/backendenvironments
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateBackendEnvironmentResult> CreateBackendEnvironmentAsync(string appId, CreateBackendEnvironmentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2385,10 +2393,21 @@ namespace MyNS
 		/// Lists the backend environments for an Amplify app.
 		/// ListBackendEnvironments apps/{appId}/backendenvironments
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="environmentName"> The name of the backend environment </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="environmentName"> The name of the backend environment 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListBackendEnvironmentsResult> ListBackendEnvironmentsAsync(string appId, string environmentName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2422,7 +2441,10 @@ namespace MyNS
 		/// Creates a new branch for an Amplify app.
 		/// CreateBranch apps/{appId}/branches
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateBranchResult> CreateBranchAsync(string appId, CreateBranchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2463,9 +2485,17 @@ namespace MyNS
 		/// Lists the branches of an Amplify app.
 		/// ListBranches apps/{appId}/branches
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListBranchesResult> ListBranchesAsync(string appId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2499,8 +2529,14 @@ namespace MyNS
 		/// Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a repository.
 		/// CreateDeployment apps/{appId}/branches/{branchName}/deployments
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch, for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch, for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDeploymentResult> CreateDeploymentAsync(string appId, string branchName, CreateDeploymentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2541,7 +2577,10 @@ namespace MyNS
 		/// Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app
 		/// CreateDomainAssociation apps/{appId}/domains
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDomainAssociationResult> CreateDomainAssociationAsync(string appId, CreateDomainAssociationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2582,9 +2621,17 @@ namespace MyNS
 		/// Returns the domain associations for an Amplify app.
 		/// ListDomainAssociations apps/{appId}/domains
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDomainAssociationsResult> ListDomainAssociationsAsync(string appId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2618,7 +2665,10 @@ namespace MyNS
 		/// Creates a new webhook on an Amplify app.
 		/// CreateWebhook apps/{appId}/webhooks
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWebhookResult> CreateWebhookAsync(string appId, CreateWebhookPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2659,9 +2709,17 @@ namespace MyNS
 		/// Returns a list of webhooks for an Amplify app.
 		/// ListWebhooks apps/{appId}/webhooks
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWebhooksResult> ListWebhooksAsync(string appId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2695,7 +2753,10 @@ namespace MyNS
 		/// Deletes an existing Amplify app specified by an app ID.
 		/// DeleteApp apps/{appId}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAppResult> DeleteAppAsync(string appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2729,7 +2790,10 @@ namespace MyNS
 		/// Returns an existing Amplify app by appID.
 		/// GetApp apps/{appId}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppResult> GetAppAsync(string appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2763,7 +2827,10 @@ namespace MyNS
 		/// Updates an existing Amplify app.
 		/// UpdateApp apps/{appId}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppResult> UpdateAppAsync(string appId, UpdateAppPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2804,8 +2871,14 @@ namespace MyNS
 		/// Deletes a backend environment for an Amplify app.
 		/// DeleteBackendEnvironment apps/{appId}/backendenvironments/{environmentName}
 		/// </summary>
-		/// <param name="appId"> The unique ID of an Amplify app. </param>
-		/// <param name="environmentName"> The name of a backend environment of an Amplify app. </param>
+		/// <param name="appId"> The unique ID of an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="environmentName"> The name of a backend environment of an Amplify app. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteBackendEnvironmentResult> DeleteBackendEnvironmentAsync(string appId, string environmentName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2839,8 +2912,14 @@ namespace MyNS
 		/// Returns a backend environment for an Amplify app.
 		/// GetBackendEnvironment apps/{appId}/backendenvironments/{environmentName}
 		/// </summary>
-		/// <param name="appId"> The unique id for an Amplify app. </param>
-		/// <param name="environmentName"> The name for the backend environment. </param>
+		/// <param name="appId"> The unique id for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="environmentName"> The name for the backend environment. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBackendEnvironmentResult> GetBackendEnvironmentAsync(string appId, string environmentName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2874,8 +2953,14 @@ namespace MyNS
 		/// Deletes a branch for an Amplify app.
 		/// DeleteBranch apps/{appId}/branches/{branchName}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteBranchResult> DeleteBranchAsync(string appId, string branchName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2909,8 +2994,14 @@ namespace MyNS
 		/// Returns a branch for an Amplify app.
 		/// GetBranch apps/{appId}/branches/{branchName}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBranchResult> GetBranchAsync(string appId, string branchName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2944,8 +3035,14 @@ namespace MyNS
 		/// Updates a branch for an Amplify app.
 		/// UpdateBranch apps/{appId}/branches/{branchName}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateBranchResult> UpdateBranchAsync(string appId, string branchName, UpdateBranchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2986,8 +3083,13 @@ namespace MyNS
 		/// Deletes a domain association for an Amplify app.
 		/// DeleteDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
-		/// <param name="appId"> The unique id for an Amplify app. </param>
-		/// <param name="domainName"> The name of the domain. </param>
+		/// <param name="appId"> The unique id for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="domainName"> The name of the domain. 
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainAssociationResult> DeleteDomainAssociationAsync(string appId, string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3021,8 +3123,13 @@ namespace MyNS
 		/// Returns the domain information for an Amplify app.
 		/// GetDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
-		/// <param name="appId"> The unique id for an Amplify app. </param>
-		/// <param name="domainName"> The name of the domain. </param>
+		/// <param name="appId"> The unique id for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="domainName"> The name of the domain. 
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainAssociationResult> GetDomainAssociationAsync(string appId, string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3056,8 +3163,13 @@ namespace MyNS
 		/// Creates a new domain association for an Amplify app.
 		/// UpdateDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="domainName"> The name of the domain. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="domainName"> The name of the domain. 
+		/// Max length: 64
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDomainAssociationResult> UpdateDomainAssociationAsync(string appId, string domainName, UpdateDomainAssociationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3098,9 +3210,17 @@ namespace MyNS
 		/// Deletes a job for a branch of an Amplify app.
 		/// DeleteJob apps/{appId}/branches/{branchName}/jobs/{jobId}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch, for the job. </param>
-		/// <param name="jobId"> The unique ID for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch, for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="jobId"> The unique ID for the job. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteJobResult> DeleteJobAsync(string appId, string branchName, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3134,9 +3254,17 @@ namespace MyNS
 		/// Returns a job for a branch of an Amplify app.
 		/// GetJob apps/{appId}/branches/{branchName}/jobs/{jobId}
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The branch name for the job. </param>
-		/// <param name="jobId"> The unique ID for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The branch name for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="jobId"> The unique ID for the job. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetJobResult> GetJobAsync(string appId, string branchName, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3170,7 +3298,9 @@ namespace MyNS
 		/// Deletes a webhook.
 		/// DeleteWebhook webhooks/{webhookId}
 		/// </summary>
-		/// <param name="webhookId"> The unique ID for a webhook. </param>
+		/// <param name="webhookId"> The unique ID for a webhook. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWebhookResult> DeleteWebhookAsync(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3204,7 +3334,9 @@ namespace MyNS
 		/// Returns the webhook information that corresponds to a specified webhook ID.
 		/// GetWebhook webhooks/{webhookId}
 		/// </summary>
-		/// <param name="webhookId"> The unique ID for a webhook. </param>
+		/// <param name="webhookId"> The unique ID for a webhook. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWebhookResult> GetWebhookAsync(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3238,7 +3370,9 @@ namespace MyNS
 		/// Updates a webhook.
 		/// UpdateWebhook webhooks/{webhookId}
 		/// </summary>
-		/// <param name="webhookId"> The unique ID for a webhook. </param>
+		/// <param name="webhookId"> The unique ID for a webhook. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWebhookResult> UpdateWebhookAsync(string webhookId, UpdateWebhookPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3279,7 +3413,10 @@ namespace MyNS
 		/// Returns the website access logs for a specific time range using a presigned URL.
 		/// GenerateAccessLogs apps/{appId}/accesslogs
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GenerateAccessLogsResult> GenerateAccessLogsAsync(string appId, GenerateAccessLogsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3320,7 +3457,9 @@ namespace MyNS
 		/// Returns the artifact info that corresponds to an artifact id.
 		/// GetArtifactUrl artifacts/{artifactId}
 		/// </summary>
-		/// <param name="artifactId"> The unique ID for an artifact. </param>
+		/// <param name="artifactId"> The unique ID for an artifact. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetArtifactUrlResult> GetArtifactUrlAsync(string artifactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3354,11 +3493,24 @@ namespace MyNS
 		/// Returns a list of artifacts for a specified app, branch, and job.
 		/// ListArtifacts apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name of a branch that is part of an Amplify app. </param>
-		/// <param name="jobId"> The unique ID for a job. </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name of a branch that is part of an Amplify app. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="jobId"> The unique ID for a job. 
+		/// Max length: 255
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListArtifactsResult> ListArtifactsAsync(string appId, string branchName, string jobId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3392,10 +3544,21 @@ namespace MyNS
 		/// Lists the jobs for a branch of an Amplify app.
 		/// ListJobs apps/{appId}/branches/{branchName}/jobs
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for a branch. </param>
-		/// <param name="nextToken"> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </param>
-		/// <param name="maxResults"> The maximum number of records to list in a single response. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for a branch. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken"> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. 
+		/// Max length: 2000
+		// </param>
+		/// <param name="maxResults"> The maximum number of records to list in a single response. 
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobsResult> ListJobsAsync(string appId, string branchName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3429,8 +3592,14 @@ namespace MyNS
 		/// Starts a new job for a branch of an Amplify app.
 		/// StartJob apps/{appId}/branches/{branchName}/jobs
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The branch name for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The branch name for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobResult> StartJobAsync(string appId, string branchName, StartJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3471,7 +3640,10 @@ namespace MyNS
 		/// Returns a list of tags for a specified Amazon Resource Name (ARN).
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to list tags. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to list tags. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3505,7 +3677,10 @@ namespace MyNS
 		/// Tags the resource with a tag key and value.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to tag a resource. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to tag a resource. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3546,8 +3721,14 @@ namespace MyNS
 		/// Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
 		/// StartDeployment apps/{appId}/branches/{branchName}/deployments/start
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch, for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch, for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartDeploymentResult> StartDeploymentAsync(string appId, string branchName, StartDeploymentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3588,9 +3769,17 @@ namespace MyNS
 		/// Stops a job that is in progress for a branch of an Amplify app.
 		/// StopJob apps/{appId}/branches/{branchName}/jobs/{jobId}/stop
 		/// </summary>
-		/// <param name="appId"> The unique ID for an Amplify app. </param>
-		/// <param name="branchName"> The name for the branch, for the job. </param>
-		/// <param name="jobId"> The unique id for the job. </param>
+		/// <param name="appId"> The unique ID for an Amplify app. 
+		/// Max length: 20
+		/// Min length: 1
+		// </param>
+		/// <param name="branchName"> The name for the branch, for the job. 
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="jobId"> The unique id for the job. 
+		/// Max length: 255
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopJobResult> StopJobAsync(string appId, string branchName, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3624,8 +3813,14 @@ namespace MyNS
 		/// Untags a resource with a specified Amazon Resource Name (ARN).
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to untag a resource. </param>
-		/// <param name="tagKeys"> The tag keys to use to untag a resource. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to untag a resource. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys"> The tag keys to use to untag a resource. 
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

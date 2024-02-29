@@ -14,6 +14,7 @@ export namespace MyNS {
 		/**
 		 * The quantity of items of this specific SKU in the cart to be simulated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -34,6 +35,7 @@ export namespace MyNS {
 		/**
 		 * The quantity of items of this specific SKU in the cart to be simulated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -114,6 +116,7 @@ export namespace MyNS {
 		/**
 		 * The new price of the item.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 	}
@@ -122,6 +125,7 @@ export namespace MyNS {
 		/**
 		 * The new price of the item.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 	}
@@ -178,24 +182,30 @@ export namespace MyNS {
 		/**
 		 * Number of price digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		decimalDigitsPrecision: number;
 
 		/** Allows, on a first purchase, masking client's data. It could be useful when a shared cart is used and the client doesn't want to share its data. */
 		maskFirstPurchaseData?: boolean | null;
 
-		/** Allows the input of a limit of white label sellers involved on the cart. */
+		/**
+		 * Allows the input of a limit of white label sellers involved on the cart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfWhiteLabelSellers?: number | null;
 
 		/**
 		 * Minimum SKU quantity by cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumQuantityAccumulatedForItems: number;
 
 		/**
 		 * Minimum cart value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumValueAccumulated: number;
 
@@ -240,24 +250,30 @@ export namespace MyNS {
 		/**
 		 * Number of price digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		decimalDigitsPrecision: FormControl<number | null | undefined>,
 
 		/** Allows, on a first purchase, masking client's data. It could be useful when a shared cart is used and the client doesn't want to share its data. */
 		maskFirstPurchaseData: FormControl<boolean | null | undefined>,
 
-		/** Allows the input of a limit of white label sellers involved on the cart. */
+		/**
+		 * Allows the input of a limit of white label sellers involved on the cart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfWhiteLabelSellers: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum SKU quantity by cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumQuantityAccumulatedForItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum cart value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumValueAccumulated: FormControl<number | null | undefined>,
 
@@ -296,7 +312,10 @@ export namespace MyNS {
 		/** App ID. */
 		id?: string | null;
 
-		/** App major version. */
+		/**
+		 * App major version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 	}
 	export interface UpdateorderFormconfigurationRequestAppsFormProperties {
@@ -304,7 +323,10 @@ export namespace MyNS {
 		/** App ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** App major version. */
+		/**
+		 * App major version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateorderFormconfigurationRequestAppsFormGroup() {
@@ -351,6 +373,7 @@ export namespace MyNS {
 		/**
 		 * Number of days after order cancelation by a seller, during which another seller may be assigned to fulfill the order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		waitingTime: number;
 	}
@@ -359,6 +382,7 @@ export namespace MyNS {
 		/**
 		 * Number of days after order cancelation by a seller, during which another seller may be assigned to fulfill the order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		waitingTime: FormControl<number | null | undefined>,
 	}
@@ -561,6 +585,7 @@ export namespace MyNS {
 		 * Get api/checkout/pub/orderForm/{orderFormId}/installments
 		 * @param {string} orderFormId ID of the `orderForm` to be consulted for installments.
 		 * @param {number} paymentSystem ID of the payment method to be consulted for installments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetCartInstallments(orderFormId: string, paymentSystem: number): Observable<HttpResponse<string>> {
@@ -590,7 +615,6 @@ export namespace MyNS {
 		 * **Important**: **Request Body** must always be sent with empty value "{ }" in this endpoint.
 		 * Post api/checkout/pub/orderForm/{orderFormId}/items/removeAll
 		 * @param {string} orderFormId ID of the orderForm corresponding to the cart whose items you want to remove.
-		 * @return {string} 
 		 */
 		RemoveAllItems(orderFormId: string, requestBody: string): Observable<string> {
 			return this.http.post(this.baseUri + 'api/checkout/pub/orderForm/' + (orderFormId == null ? '' : encodeURIComponent(orderFormId)) + '/items/removeAll', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -664,7 +688,6 @@ export namespace MyNS {
 		 * After the creation of an order with this request, you have five minutes to send payment information and then request payment processing.
 		 * Post api/checkout/pub/orderForm/{orderFormId}/transaction
 		 * @param {string} orderFormId ID of the `orderForm` corresponding to the cart from which to place the order.
-		 * @return {string} 
 		 */
 		PlaceOrderFromExistingOrderForm(orderFormId: string, requestBody: PlaceOrderFromExistingOrderFormPostBody): Observable<string> {
 			return this.http.post(this.baseUri + 'api/checkout/pub/orderForm/' + (orderFormId == null ? '' : encodeURIComponent(orderFormId)) + '/transaction', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
@@ -680,7 +703,9 @@ export namespace MyNS {
 		 * Post api/checkout/pub/orderForms/simulation
 		 * @param {number} RnbBehavior This parameter defines which promotions apply to the simulation. Use `0` for simulations at cart stage, which means all promotions apply. In case of window simulation use `1`, which indicates promotions that apply nominal discounts over the total purchase value shouldn't be considered on the simulation.
 		 * Note that if this not sent, the parameter is `1`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sc Trade Policy (Sales Channel) identification.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CartSimulationReturn} OK
 		 */
 		CartSimulation(RnbBehavior: number | null | undefined, sc: number | null | undefined, requestBody: CartSimulationPostBody): Observable<CartSimulationReturn> {
@@ -693,6 +718,7 @@ export namespace MyNS {
 		 * >⚠️ The authentication of this endpoint is required if you are creating an order with an item that has an attachment that creates a Subscription. For more information, access [Subscriptions API](https://developers.vtex.com/docs/api-reference/subscriptions-api-v3).
 		 * Put api/checkout/pub/orders
 		 * @param {number} sc Trade Policy (Sales Channel) identification. This query can be used to create an order for a specific sales channel.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PlaceOrderReturn} OK
 		 */
 		PlaceOrder(sc: number | null | undefined, requestBody: PlaceOrderPutBody): Observable<PlaceOrderReturn> {
@@ -764,7 +790,6 @@ export namespace MyNS {
 		 * These settings are defined by the request [Update orderForm configuration](https://developers.vtex.com/reference/configuration#updateorderformconfiguration).
 		 * Always use this request to retrieve the current configuration before performing an update. By doing so you ensure that you are modifying only the properties you want.
 		 * Get api/checkout/pvt/configuration/orderForm
-		 * @return {any} 
 		 */
 		GetorderFormconfiguration(): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/checkout/pvt/configuration/orderForm', { observe: 'response', responseType: 'text' });
@@ -1099,25 +1124,43 @@ export namespace MyNS {
 		/** Indicates whether billing address for this payment is the default address. */
 		hasDefaultBillingAddress?: boolean | null;
 
-		/** Selected number of installments. */
+		/**
+		 * Selected number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
-		/** Installments' interest rate. */
+		/**
+		 * Installments' interest rate.
+		 * Type: double
+		 */
 		installmentsInterestRate?: number | null;
 
-		/** Value of the installments. */
+		/**
+		 * Value of the installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue?: number | null;
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem?: number | null;
 
 		/** Payment system name. */
 		paymentSystemName?: string | null;
 
-		/** Reference value used to calculate total order value with interest. */
+		/**
+		 * Reference value used to calculate total order value with interest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Total value assigned to this payment. */
+		/**
+		 * Total value assigned to this payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddPaymentDataPostBodyPaymentsFormProperties {
@@ -1128,25 +1171,43 @@ export namespace MyNS {
 		/** Indicates whether billing address for this payment is the default address. */
 		hasDefaultBillingAddress: FormControl<boolean | null | undefined>,
 
-		/** Selected number of installments. */
+		/**
+		 * Selected number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Installments' interest rate. */
+		/**
+		 * Installments' interest rate.
+		 * Type: double
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Value of the installments. */
+		/**
+		 * Value of the installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
 		/** Payment system name. */
 		paymentSystemName: FormControl<string | null | undefined>,
 
-		/** Reference value used to calculate total order value with interest. */
+		/**
+		 * Reference value used to calculate total order value with interest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Total value assigned to this payment. */
+		/**
+		 * Total value assigned to this payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddPaymentDataPostBodyPaymentsFormGroup() {
@@ -1189,7 +1250,10 @@ export namespace MyNS {
 
 	export interface AddShippingAddressPostBodyLogisticsInfo {
 
-		/** Index of item in items array */
+		/**
+		 * Index of item in items array
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. For example, `"delivery"` or `"pickup-in-point"`. */
@@ -1200,7 +1264,10 @@ export namespace MyNS {
 	}
 	export interface AddShippingAddressPostBodyLogisticsInfoFormProperties {
 
-		/** Index of item in items array */
+		/**
+		 * Index of item in items array
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. For example, `"delivery"` or `"pickup-in-point"`. */
@@ -1429,7 +1496,10 @@ export namespace MyNS {
 		/** User type. */
 		userType?: string | null;
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddCouponsReturnFormProperties {
@@ -1491,7 +1561,10 @@ export namespace MyNS {
 		/** User type. */
 		userType: FormControl<string | null | undefined>,
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnFormGroup() {
@@ -1871,10 +1944,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -1895,13 +1974,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -1925,13 +2010,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -1940,19 +2031,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/en/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface AddCouponsReturnItemsFormProperties {
@@ -1975,10 +2075,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -1999,13 +2105,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -2020,31 +2132,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnItemsFormGroup() {
@@ -2137,13 +2264,19 @@ export namespace MyNS {
 
 	export interface AddCouponsReturnItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -2151,13 +2284,19 @@ export namespace MyNS {
 	}
 	export interface AddCouponsReturnItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -2175,21 +2314,33 @@ export namespace MyNS {
 
 	export interface AddCouponsReturnItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		AddCouponsReturnItemsPriceDefinitionSellingPrices?: Array<AddCouponsReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface AddCouponsReturnItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnItemsPriceDefinitionFormGroup() {
@@ -2202,18 +2353,30 @@ export namespace MyNS {
 
 	export interface AddCouponsReturnItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddCouponsReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -2235,10 +2398,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddCouponsReturnItemsPriceTagsFormProperties {
@@ -2252,10 +2421,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnItemsPriceTagsFormGroup() {
@@ -2387,7 +2562,10 @@ export namespace MyNS {
 
 	export interface AddCouponsReturnPaymentDataGiftCards {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -2405,12 +2583,18 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode?: string | null;
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddCouponsReturnPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -2428,7 +2612,10 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode: FormControl<string | null | undefined>,
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnPaymentDataGiftCardsFormGroup() {
@@ -2493,16 +2680,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin?: string | null;
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface AddCouponsReturnPaymentDataTransactionsPaymentsFormProperties {
@@ -2513,16 +2709,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin: FormControl<string | null | undefined>,
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAddCouponsReturnPaymentDataTransactionsPaymentsFormGroup() {
@@ -2825,7 +3030,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId?: string | null;
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. */
@@ -2848,7 +3056,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. */
@@ -2896,7 +3107,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -2905,7 +3119,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -2917,7 +3134,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -2926,7 +3146,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -2940,7 +3163,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -2949,7 +3175,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -2958,7 +3187,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -2967,7 +3199,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -3003,7 +3238,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -3020,7 +3258,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -3289,15 +3530,20 @@ export namespace MyNS {
 		/**
 		 * The position of the item in the array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: number;
 
-		/** Price of the item in cents. Send this value in case you want to make a bulk price change. */
+		/**
+		 * Price of the item in cents. Send this value in case you want to make a bulk price change.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/**
 		 * The quantity of the item (SKU) in the cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -3318,15 +3564,20 @@ export namespace MyNS {
 		/**
 		 * The position of the item in the array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: FormControl<number | null | undefined>,
 
-		/** Price of the item in cents. Send this value in case you want to make a bulk price change. */
+		/**
+		 * Price of the item in cents. Send this value in case you want to make a bulk price change.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * The quantity of the item (SKU) in the cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -3451,7 +3702,10 @@ export namespace MyNS {
 		/** User type. */
 		userType?: string | null;
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsReturnFormProperties {
@@ -3513,7 +3767,10 @@ export namespace MyNS {
 		/** User type. */
 		userType: FormControl<string | null | undefined>,
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnFormGroup() {
@@ -3893,10 +4150,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -3917,13 +4180,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -3947,13 +4216,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -3962,19 +4237,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/en/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface ItemsReturnItemsFormProperties {
@@ -3997,10 +4281,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -4021,13 +4311,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -4042,31 +4338,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnItemsFormGroup() {
@@ -4159,13 +4470,19 @@ export namespace MyNS {
 
 	export interface ItemsReturnItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -4173,13 +4490,19 @@ export namespace MyNS {
 	}
 	export interface ItemsReturnItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -4197,21 +4520,33 @@ export namespace MyNS {
 
 	export interface ItemsReturnItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		ItemsReturnItemsPriceDefinitionSellingPrices?: Array<ItemsReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface ItemsReturnItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnItemsPriceDefinitionFormGroup() {
@@ -4224,18 +4559,30 @@ export namespace MyNS {
 
 	export interface ItemsReturnItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -4257,10 +4604,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsReturnItemsPriceTagsFormProperties {
@@ -4274,10 +4627,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnItemsPriceTagsFormGroup() {
@@ -4409,7 +4768,10 @@ export namespace MyNS {
 
 	export interface ItemsReturnPaymentDataGiftCards {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -4427,12 +4789,18 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode?: string | null;
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsReturnPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -4450,7 +4818,10 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode: FormControl<string | null | undefined>,
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnPaymentDataGiftCardsFormGroup() {
@@ -4515,16 +4886,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin?: string | null;
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsReturnPaymentDataTransactionsPaymentsFormProperties {
@@ -4535,16 +4915,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin: FormControl<string | null | undefined>,
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsReturnPaymentDataTransactionsPaymentsFormGroup() {
@@ -4847,7 +5236,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId?: string | null;
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. */
@@ -4870,7 +5262,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. */
@@ -4918,7 +5313,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -4927,7 +5325,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -4939,7 +5340,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -4948,7 +5352,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -4962,7 +5369,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -4971,7 +5381,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -4980,7 +5393,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -4989,7 +5405,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -5025,7 +5444,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -5042,7 +5464,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -5305,12 +5730,14 @@ export namespace MyNS {
 		/**
 		 * The position of the item in the array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: number;
 
 		/**
 		 * The quantity of the item in the cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 	}
@@ -5319,12 +5746,14 @@ export namespace MyNS {
 		/**
 		 * The position of the item in the array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * The quantity of the item in the cart.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 	}
@@ -5440,7 +5869,10 @@ export namespace MyNS {
 		/** User type. */
 		userType?: string | null;
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented as `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented as `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsUpdateReturnFormProperties {
@@ -5502,7 +5934,10 @@ export namespace MyNS {
 		/** User type. */
 		userType: FormControl<string | null | undefined>,
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented as `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented as `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnFormGroup() {
@@ -5882,10 +6317,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -5906,13 +6347,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -5936,13 +6383,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -5951,19 +6404,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/en/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface ItemsUpdateReturnItemsFormProperties {
@@ -5986,10 +6448,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -6010,13 +6478,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -6031,31 +6505,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnItemsFormGroup() {
@@ -6148,13 +6637,19 @@ export namespace MyNS {
 
 	export interface ItemsUpdateReturnItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -6162,13 +6657,19 @@ export namespace MyNS {
 	}
 	export interface ItemsUpdateReturnItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -6186,21 +6687,33 @@ export namespace MyNS {
 
 	export interface ItemsUpdateReturnItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		ItemsUpdateReturnItemsPriceDefinitionSellingPrices?: Array<ItemsUpdateReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface ItemsUpdateReturnItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnItemsPriceDefinitionFormGroup() {
@@ -6213,18 +6726,30 @@ export namespace MyNS {
 
 	export interface ItemsUpdateReturnItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsUpdateReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -6246,10 +6771,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsUpdateReturnItemsPriceTagsFormProperties {
@@ -6263,10 +6794,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnItemsPriceTagsFormGroup() {
@@ -6398,7 +6935,10 @@ export namespace MyNS {
 
 	export interface ItemsUpdateReturnPaymentDataGiftCards {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -6416,12 +6956,18 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode?: string | null;
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsUpdateReturnPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -6439,7 +6985,10 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode: FormControl<string | null | undefined>,
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnPaymentDataGiftCardsFormGroup() {
@@ -6504,16 +7053,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin?: string | null;
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ItemsUpdateReturnPaymentDataTransactionsPaymentsFormProperties {
@@ -6524,16 +7082,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin: FormControl<string | null | undefined>,
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateItemsUpdateReturnPaymentDataTransactionsPaymentsFormGroup() {
@@ -6836,7 +7403,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId?: string | null;
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. */
@@ -6859,7 +7429,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. */
@@ -6907,7 +7480,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -6916,7 +7492,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -6928,7 +7507,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -6937,7 +7519,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -6951,7 +7536,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -6960,7 +7548,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -6969,7 +7560,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -6978,7 +7572,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -7014,7 +7611,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -7031,7 +7631,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -7380,7 +7983,10 @@ export namespace MyNS {
 		/** User type. */
 		userType?: string | null;
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnFormProperties {
@@ -7442,7 +8048,10 @@ export namespace MyNS {
 		/** User type. */
 		userType: FormControl<string | null | undefined>,
 
-		/** Total value of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnFormGroup() {
@@ -7822,10 +8431,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -7846,13 +8461,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -7876,13 +8497,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -7891,19 +8518,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/en/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnItemsFormProperties {
@@ -7926,10 +8562,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -7950,13 +8592,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -7971,31 +8619,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnItemsFormGroup() {
@@ -8088,13 +8751,19 @@ export namespace MyNS {
 
 	export interface ClearorderFormMessagesReturnItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -8102,13 +8771,19 @@ export namespace MyNS {
 	}
 	export interface ClearorderFormMessagesReturnItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -8126,21 +8801,33 @@ export namespace MyNS {
 
 	export interface ClearorderFormMessagesReturnItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		ClearorderFormMessagesReturnItemsPriceDefinitionSellingPrices?: Array<ClearorderFormMessagesReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnItemsPriceDefinitionFormGroup() {
@@ -8153,18 +8840,30 @@ export namespace MyNS {
 
 	export interface ClearorderFormMessagesReturnItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -8186,10 +8885,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnItemsPriceTagsFormProperties {
@@ -8203,10 +8908,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnItemsPriceTagsFormGroup() {
@@ -8338,7 +9049,10 @@ export namespace MyNS {
 
 	export interface ClearorderFormMessagesReturnPaymentDataGiftCards {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -8356,12 +9070,18 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode?: string | null;
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -8379,7 +9099,10 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode: FormControl<string | null | undefined>,
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnPaymentDataGiftCardsFormGroup() {
@@ -8444,16 +9167,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin?: string | null;
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface ClearorderFormMessagesReturnPaymentDataTransactionsPaymentsFormProperties {
@@ -8464,16 +9196,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin: FormControl<string | null | undefined>,
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateClearorderFormMessagesReturnPaymentDataTransactionsPaymentsFormGroup() {
@@ -8776,7 +9517,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId?: string | null;
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. */
@@ -8799,7 +9543,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. */
@@ -8847,7 +9594,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -8856,7 +9606,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -8868,7 +9621,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -8877,7 +9633,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -8891,7 +9650,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -8900,7 +9662,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -8909,7 +9674,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -8918,7 +9686,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -8954,7 +9725,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -8971,7 +9745,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -9238,6 +10015,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate to be used in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestValue: number;
 
@@ -9253,6 +10031,7 @@ export namespace MyNS {
 		/**
 		 * Reference value of the order for calculating interest if that is the case. Can be equal to the total value and does not separate cents. For example, $24.99 is represented `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: number;
 
@@ -9262,6 +10041,7 @@ export namespace MyNS {
 		/**
 		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -9270,6 +10050,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate to be used in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestValue: FormControl<number | null | undefined>,
 
@@ -9285,6 +10066,7 @@ export namespace MyNS {
 		/**
 		 * Reference value of the order for calculating interest if that is the case. Can be equal to the total value and does not separate cents. For example, $24.99 is represented `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: FormControl<number | null | undefined>,
 
@@ -9294,6 +10076,7 @@ export namespace MyNS {
 		/**
 		 * Total value of the order without separating cents. For example, $24.99 is represented `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -9344,7 +10127,10 @@ export namespace MyNS {
 		/** The SKU ID. */
 		id?: string | null;
 
-		/** The quantity of items of this specific SKU in the cart to be simulated. */
+		/**
+		 * The quantity of items of this specific SKU in the cart to be simulated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** The ID of the seller responsible for this SKU. This ID can be found in your VTEX Admin. */
@@ -9355,7 +10141,10 @@ export namespace MyNS {
 		/** The SKU ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** The quantity of items of this specific SKU in the cart to be simulated. */
+		/**
+		 * The quantity of items of this specific SKU in the cart to be simulated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The ID of the seller responsible for this SKU. This ID can be found in your VTEX Admin. */
@@ -9424,7 +10213,10 @@ export namespace MyNS {
 		/** ID of the item. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Measurement unit. */
@@ -9436,10 +10228,16 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -9451,13 +10249,22 @@ export namespace MyNS {
 		/** Price expiration date and time. */
 		priceValidUntil?: string | null;
 
-		/** The quantity of the item the cart. */
+		/**
+		 * The quantity of the item the cart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Request index information. */
+		/**
+		 * Request index information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestIndex?: number | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** The seller responsible for the SKU. */
@@ -9466,13 +10273,22 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/en/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface CartSimulationReturnItemsFormProperties {
@@ -9483,7 +10299,10 @@ export namespace MyNS {
 		/** ID of the item. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Measurement unit. */
@@ -9492,34 +10311,58 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
 		priceValidUntil: FormControl<string | null | undefined>,
 
-		/** The quantity of the item the cart. */
+		/**
+		 * The quantity of the item the cart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Request index information. */
+		/**
+		 * Request index information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestIndex: FormControl<number | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** The seller responsible for the SKU. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
-		/** Unit multiplier. */
+		/**
+		 * Unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnItemsFormGroup() {
@@ -9545,21 +10388,33 @@ export namespace MyNS {
 
 	export interface CartSimulationReturnItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		CartSimulationReturnItemsPriceDefinitionSellingPrices?: Array<CartSimulationReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface CartSimulationReturnItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnItemsPriceDefinitionFormGroup() {
@@ -9572,18 +10427,30 @@ export namespace MyNS {
 
 	export interface CartSimulationReturnItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface CartSimulationReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -9608,10 +10475,16 @@ export namespace MyNS {
 		/** Identification of the responsible for the price tag. */
 		owner?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface CartSimulationReturnItemsPriceTagsFormProperties {
@@ -9628,10 +10501,16 @@ export namespace MyNS {
 		/** Identification of the responsible for the price tag. */
 		owner: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnItemsPriceTagsFormGroup() {
@@ -9654,7 +10533,10 @@ export namespace MyNS {
 		/** List of available delivery channels. */
 		CartSimulationReturnLogisticsInfoDeliveryChannels?: Array<CartSimulationReturnLogisticsInfoDeliveryChannels>;
 
-		/** Index of item in items array. */
+		/**
+		 * Index of item in items array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Item metadata. */
@@ -9669,7 +10551,10 @@ export namespace MyNS {
 		/** Purchase conditions information. */
 		purchaseConditions?: CartSimulationReturnLogisticsInfoPurchaseConditions;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Delivery channel selected by the customer. For example, `"delivery"` or `"pickup-in-point"`. */
@@ -9695,10 +10580,16 @@ export namespace MyNS {
 		/** Address ID. */
 		addressId: FormControl<string | null | undefined>,
 
-		/** Index of item in items array. */
+		/**
+		 * Index of item in items array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. For example, `"delivery"` or `"pickup-in-point"`. */
@@ -9797,10 +10688,16 @@ export namespace MyNS {
 		/** Item ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Seller. */
@@ -9817,10 +10714,16 @@ export namespace MyNS {
 		/** Item ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Seller. */
@@ -9853,7 +10756,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -9862,7 +10768,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -9874,7 +10783,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -9883,7 +10795,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -9897,7 +10812,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -9906,7 +10824,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -9915,7 +10836,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -9924,7 +10848,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -9954,16 +10881,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc?: string | null;
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice?: number | null;
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc?: string | null;
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 	}
 	export interface CartSimulationReturnLogisticsInfoPurchaseConditionsItemPurchaseConditionsSlasAvailableDeliveryWindowsFormProperties {
@@ -9971,16 +10907,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice: FormControl<number | null | undefined>,
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnLogisticsInfoPurchaseConditionsItemPurchaseConditionsSlasAvailableDeliveryWindowsFormGroup() {
@@ -10005,7 +10950,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -10022,7 +10970,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -10044,16 +10995,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc?: string | null;
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice?: number | null;
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc?: string | null;
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 	}
 	export interface CartSimulationReturnLogisticsInfoPurchaseConditionsItemPurchaseConditionsSlasDeliveryWindowFormProperties {
@@ -10061,16 +11021,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice: FormControl<number | null | undefined>,
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnLogisticsInfoPurchaseConditionsItemPurchaseConditionsSlasDeliveryWindowFormGroup() {
@@ -10146,7 +11115,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -10155,7 +11127,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -10167,7 +11142,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -10176,7 +11154,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -10190,7 +11171,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -10199,7 +11183,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -10208,7 +11195,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, "three business days" will be represented as `3bd`. */
@@ -10217,7 +11207,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented as `3bd`. */
@@ -10247,16 +11240,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc?: string | null;
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice?: number | null;
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc?: string | null;
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 	}
 	export interface CartSimulationReturnLogisticsInfoSlasAvailableDeliveryWindowsFormProperties {
@@ -10264,16 +11266,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice: FormControl<number | null | undefined>,
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnLogisticsInfoSlasAvailableDeliveryWindowsFormGroup() {
@@ -10298,7 +11309,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -10315,7 +11329,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -10337,16 +11354,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc?: string | null;
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice?: number | null;
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc?: string | null;
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 	}
 	export interface CartSimulationReturnLogisticsInfoSlasDeliveryWindowFormProperties {
@@ -10354,16 +11380,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice: FormControl<number | null | undefined>,
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnLogisticsInfoSlasDeliveryWindowFormGroup() {
@@ -10430,7 +11465,10 @@ export namespace MyNS {
 		/** Total name. */
 		name?: string | null;
 
-		/** Total value. */
+		/**
+		 * Total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface CartSimulationReturnLogisticsInfoTotalsFormProperties {
@@ -10441,7 +11479,10 @@ export namespace MyNS {
 		/** Total name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total value. */
+		/**
+		 * Total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCartSimulationReturnLogisticsInfoTotalsFormGroup() {
@@ -10508,7 +11549,10 @@ export namespace MyNS {
 		/** Payment group name. */
 		groupName?: string | null;
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Indicates whether it is custom. */
@@ -10549,7 +11593,10 @@ export namespace MyNS {
 		/** Payment group name. */
 		groupName: FormControl<string | null | undefined>,
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Indicates whether it is custom. */
@@ -10763,10 +11810,16 @@ export namespace MyNS {
 		/** Information on services sold along with the SKU. Example: a gift package. */
 		PlaceOrderPutBodyItemsBundleItems?: Array<PlaceOrderPutBodyItemsBundleItems>;
 
-		/** Comission. */
+		/**
+		 * Comission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commission?: number | null;
 
-		/** Freight comission */
+		/**
+		 * Freight comission
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightCommission?: number | null;
 
 		/**
@@ -10784,7 +11837,10 @@ export namespace MyNS {
 		/** SKU measurement unit. */
 		measurementUnit?: string | null;
 
-		/** Item price within the context of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Item price within the context of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Array of price tags, each of which, modifies the price in some way, like discounts or rates that apply to the item in the context of the order. */
@@ -10793,6 +11849,7 @@ export namespace MyNS {
 		/**
 		 * The quantity of items of this specific SKU in the cart to be simulated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -10802,15 +11859,24 @@ export namespace MyNS {
 		 */
 		seller: string;
 
-		/** SKU unit multiplier. */
+		/**
+		 * SKU unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface PlaceOrderPutBodyItemsFormProperties {
 
-		/** Comission. */
+		/**
+		 * Comission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		commission: FormControl<number | null | undefined>,
 
-		/** Freight comission */
+		/**
+		 * Freight comission
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		freightCommission: FormControl<number | null | undefined>,
 
 		/**
@@ -10825,12 +11891,16 @@ export namespace MyNS {
 		/** SKU measurement unit. */
 		measurementUnit: FormControl<string | null | undefined>,
 
-		/** Item price within the context of the order without separating cents. For example, $24.99 is represented `2499`. */
+		/**
+		 * Item price within the context of the order without separating cents. For example, $24.99 is represented `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * The quantity of items of this specific SKU in the cart to be simulated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -10840,7 +11910,10 @@ export namespace MyNS {
 		 */
 		seller: FormControl<string | null | undefined>,
 
-		/** SKU unit multiplier. */
+		/**
+		 * SKU unit multiplier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderPutBodyItemsFormGroup() {
@@ -10866,7 +11939,10 @@ export namespace MyNS {
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price. The last two digits are the cents. */
+		/**
+		 * Service price. The last two digits are the cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -10880,7 +11956,10 @@ export namespace MyNS {
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price. The last two digits are the cents. */
+		/**
+		 * Service price. The last two digits are the cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -10931,10 +12010,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderPutBodyItemsPriceTagsFormProperties {
@@ -10948,10 +12033,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderPutBodyItemsPriceTagsFormGroup() {
@@ -11058,7 +12149,10 @@ export namespace MyNS {
 
 	export interface PlaceOrderPutBodyPaymentDataGiftCards {
 
-		/** Gift card balance. */
+		/**
+		 * Gift card balance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -11082,12 +12176,16 @@ export namespace MyNS {
 		/**
 		 * Gift card value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
 	export interface PlaceOrderPutBodyPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance. */
+		/**
+		 * Gift card balance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -11111,6 +12209,7 @@ export namespace MyNS {
 		/**
 		 * Gift card value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -11135,7 +12234,10 @@ export namespace MyNS {
 		/** Payment group name. */
 		groupName?: string | null;
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Indicates whether it is custom. */
@@ -11167,7 +12269,10 @@ export namespace MyNS {
 		/** Payment group name. */
 		groupName: FormControl<string | null | undefined>,
 
-		/** Payment system ID. */
+		/**
+		 * Payment system ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Indicates whether it is custom. */
@@ -11251,6 +12356,7 @@ export namespace MyNS {
 		/**
 		 * Number of installments.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		installments: number;
 
@@ -11263,12 +12369,14 @@ export namespace MyNS {
 		/**
 		 * Reference value for calculating interest rates, in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: number;
 
 		/**
 		 * Value including interest, in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -11283,6 +12391,7 @@ export namespace MyNS {
 		/**
 		 * Number of installments.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		installments: FormControl<number | null | undefined>,
 
@@ -11295,12 +12404,14 @@ export namespace MyNS {
 		/**
 		 * Reference value for calculating interest rates, in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Value including interest, in case it applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -11464,6 +12575,7 @@ export namespace MyNS {
 		/**
 		 * Index of the item in the `items` array, starting from 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: number;
 
@@ -11473,6 +12585,7 @@ export namespace MyNS {
 		/**
 		 * Shipping price for the item. Does not account for the whole order's shipping price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
@@ -11490,6 +12603,7 @@ export namespace MyNS {
 		/**
 		 * Index of the item in the `items` array, starting from 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: FormControl<number | null | undefined>,
 
@@ -11499,6 +12613,7 @@ export namespace MyNS {
 		/**
 		 * Shipping price for the item. Does not account for the whole order's shipping price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -11527,16 +12642,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc?: string | null;
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice?: number | null;
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc?: string | null;
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 	}
 	export interface PlaceOrderPutBodyShippingDataLogisticsInfoDeliveryWindowFormProperties {
@@ -11544,16 +12668,25 @@ export namespace MyNS {
 		/** Delivery window ending day and time in UTC. */
 		endDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window list price. */
+		/**
+		 * Delivery window list price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lisPrice: FormControl<number | null | undefined>,
 
-		/** Delivery window price. */
+		/**
+		 * Delivery window price.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Delivery window starting day and time in UTC. */
 		startDateUtc: FormControl<string | null | undefined>,
 
-		/** Delivery window tax. */
+		/**
+		 * Delivery window tax.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderPutBodyShippingDataLogisticsInfoDeliveryWindowFormGroup() {
@@ -11652,7 +12785,10 @@ export namespace MyNS {
 		/** Information on rates and benefits that apply to the order. */
 		ratesAndBenefitsData?: PlaceOrderReturnOrdersRatesAndBenefitsData;
 
-		/** Rounding error. */
+		/**
+		 * Rounding error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roundingError?: number | null;
 
 		/** Sales Associate (Seller) identification code. */
@@ -11688,7 +12824,10 @@ export namespace MyNS {
 		/** User type. */
 		userType?: string | null;
 
-		/** Value of the order. */
+		/**
+		 * Value of the order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersFormProperties {
@@ -11738,7 +12877,10 @@ export namespace MyNS {
 		/** ID of the order in the Order Management System (OMS). */
 		orderId: FormControl<string | null | undefined>,
 
-		/** Rounding error. */
+		/**
+		 * Rounding error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roundingError: FormControl<number | null | undefined>,
 
 		/** Sales Associate (Seller) identification code. */
@@ -11765,7 +12907,10 @@ export namespace MyNS {
 		/** User type. */
 		userType: FormControl<string | null | undefined>,
 
-		/** Value of the order. */
+		/**
+		 * Value of the order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersFormGroup() {
@@ -12029,10 +13174,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -12053,13 +13204,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information for all units of a specific item. */
@@ -12083,13 +13240,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -12098,19 +13261,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/pt/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersItemsFormProperties {
@@ -12133,10 +13305,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -12157,13 +13335,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -12178,31 +13362,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersItemsFormGroup() {
@@ -12295,13 +13494,19 @@ export namespace MyNS {
 
 	export interface PlaceOrderReturnOrdersItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Service name. */
 		name?: string | null;
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Service type. */
@@ -12309,13 +13514,19 @@ export namespace MyNS {
 	}
 	export interface PlaceOrderReturnOrdersItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Service name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Service price in cents. */
+		/**
+		 * Service price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Service type. */
@@ -12333,21 +13544,33 @@ export namespace MyNS {
 
 	export interface PlaceOrderReturnOrdersItemsPriceDefinition {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Array of objects, each containing value (in cents) and quantity for the different rounding instances that can be combined to form the correctly rounded total. */
 		PlaceOrderReturnOrdersItemsPriceDefinitionSellingPrices?: Array<PlaceOrderReturnOrdersItemsPriceDefinitionSellingPrices>;
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersItemsPriceDefinitionFormProperties {
 
-		/** Item's calculated unitary selling price in cents. */
+		/**
+		 * Item's calculated unitary selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total value for all units of the item in cents. */
+		/**
+		 * Total value for all units of the item in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersItemsPriceDefinitionFormGroup() {
@@ -12360,18 +13583,30 @@ export namespace MyNS {
 
 	export interface PlaceOrderReturnOrdersItemsPriceDefinitionSellingPrices {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Rounding quantity, meaning how many items are rounded to this value. */
+		/**
+		 * Rounding quantity, meaning how many items are rounded to this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents for that specific rounding. */
+		/**
+		 * Value in cents for that specific rounding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersItemsPriceDefinitionSellingPricesFormGroup() {
@@ -12393,10 +13628,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name?: string | null;
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersItemsPriceTagsFormProperties {
@@ -12410,10 +13651,16 @@ export namespace MyNS {
 		/** Price tag name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price tag raw value. */
+		/**
+		 * Price tag raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Price tag value. */
+		/**
+		 * Price tag value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersItemsPriceTagsFormGroup() {
@@ -12462,7 +13709,10 @@ export namespace MyNS {
 
 	export interface PlaceOrderReturnOrdersPaymentDataGiftCards {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** Gift card ID. */
@@ -12480,12 +13730,18 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode?: string | null;
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersPaymentDataGiftCardsFormProperties {
 
-		/** Gift card balance in cents. */
+		/**
+		 * Gift card balance in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Gift card ID. */
@@ -12503,7 +13759,10 @@ export namespace MyNS {
 		/** Gift card redemption code. */
 		redemptionCode: FormControl<string | null | undefined>,
 
-		/** Gift card value in cents. */
+		/**
+		 * Gift card value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersPaymentDataGiftCardsFormGroup() {
@@ -12568,16 +13827,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin?: string | null;
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments?: number | null;
 
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersPaymentDataTransactionsPaymentsFormProperties {
@@ -12588,16 +13856,25 @@ export namespace MyNS {
 		/** Bin. */
 		bin: FormControl<string | null | undefined>,
 
-		/** Number of installments. */
+		/**
+		 * Number of installments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value for calculating interest rates, in case it applies. Displayed in cents. */
+		/**
+		 * Reference value for calculating interest rates, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Value including interest, in case it applies. Displayed in cents. */
+		/**
+		 * Value including interest, in case it applies. Displayed in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersPaymentDataTransactionsPaymentsFormGroup() {
@@ -12900,7 +14177,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId?: string | null;
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
 		/** Delivery channel selected by the customer. */
@@ -12923,7 +14203,10 @@ export namespace MyNS {
 		/** Item ID. */
 		itemId: FormControl<string | null | undefined>,
 
-		/** Index corresponding to the position of the object in the `items` array. */
+		/**
+		 * Index corresponding to the position of the object in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/** Delivery channel selected by the customer. */
@@ -12971,7 +14254,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id?: string | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
 		/** Estimate date of delivery. */
@@ -12980,7 +14266,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name?: string | null;
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance?: number | null;
 
 		/** Pickup point ID. */
@@ -12992,7 +14281,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -13001,7 +14293,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate?: string | null;
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -13015,7 +14310,10 @@ export namespace MyNS {
 		/** SLA ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
 		/** Estimate date of delivery. */
@@ -13024,7 +14322,10 @@ export namespace MyNS {
 		/** SLA name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Pickup point distance. */
+		/**
+		 * Pickup point distance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pickupDistance: FormControl<number | null | undefined>,
 
 		/** Pickup point ID. */
@@ -13033,7 +14334,10 @@ export namespace MyNS {
 		/** Polygon name. */
 		polygonName: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Shipping estimate. For instance, Three business days will be represented `3bd`. */
@@ -13042,7 +14346,10 @@ export namespace MyNS {
 		/** Shipping estimate date. */
 		shippingEstimateDate: FormControl<string | null | undefined>,
 
-		/** Tax in cents. */
+		/**
+		 * Tax in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Transit time. For instance, "three business days" is represented `3bd`. */
@@ -13078,7 +14385,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Warehouse ID. */
@@ -13095,7 +14405,10 @@ export namespace MyNS {
 		/** Warehouse ID. */
 		dockId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Warehouse ID. */
@@ -13348,7 +14661,10 @@ export namespace MyNS {
 		/** Total name. */
 		name?: string | null;
 
-		/** Total value. */
+		/**
+		 * Total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnOrdersTotalsFormProperties {
@@ -13359,7 +14675,10 @@ export namespace MyNS {
 		/** Total name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total value. */
+		/**
+		 * Total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnOrdersTotalsFormGroup() {
@@ -13452,13 +14771,19 @@ export namespace MyNS {
 		/** Payment system. */
 		paymentSystem?: string | null;
 
-		/** Reference value over which interests may be applied. */
+		/**
+		 * Reference value over which interests may be applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue?: number | null;
 
 		/** Token ID. */
 		tokenId?: string | null;
 
-		/** Total value to be paid in this payment. */
+		/**
+		 * Total value to be paid in this payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface PlaceOrderReturnTransactionDataMerchantTransactionsPaymentsFormProperties {
@@ -13481,13 +14806,19 @@ export namespace MyNS {
 		/** Payment system. */
 		paymentSystem: FormControl<string | null | undefined>,
 
-		/** Reference value over which interests may be applied. */
+		/**
+		 * Reference value over which interests may be applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
 		/** Token ID. */
 		tokenId: FormControl<string | null | undefined>,
 
-		/** Total value to be paid in this payment. */
+		/**
+		 * Total value to be paid in this payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceOrderReturnTransactionDataMerchantTransactionsPaymentsFormGroup() {

@@ -7,18 +7,22 @@ export namespace MyNS {
 	/** A source actor catalog with the timestamp it was mostly recently updated */
 	export interface ActorCatalogWithUpdatedAt {
 		catalog?: string | null;
-		updatedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt?: string | null;
 	}
 
 	/** A source actor catalog with the timestamp it was mostly recently updated */
 	export interface ActorCatalogWithUpdatedAtFormProperties {
 		catalog: FormControl<string | null | undefined>,
-		updatedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateActorCatalogWithUpdatedAtFormGroup() {
 		return new FormGroup<ActorCatalogWithUpdatedAtFormProperties>({
 			catalog: new FormControl<string | null | undefined>(undefined),
-			updatedAt: new FormControl<number | null | undefined>(undefined),
+			updatedAt: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -356,8 +360,11 @@ export namespace MyNS {
 		retryable?: boolean | null;
 		stacktrace?: string | null;
 
-		/** Required */
-		timestamp: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: string;
 	}
 	export interface AttemptFailureReasonFormProperties {
 		externalMessage: FormControl<string | null | undefined>,
@@ -373,8 +380,11 @@ export namespace MyNS {
 		retryable: FormControl<boolean | null | undefined>,
 		stacktrace: FormControl<string | null | undefined>,
 
-		/** Required */
-		timestamp: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateAttemptFailureReasonFormGroup() {
 		return new FormGroup<AttemptFailureReasonFormProperties>({
@@ -384,7 +394,7 @@ export namespace MyNS {
 			internalMessage: new FormControl<string | null | undefined>(undefined),
 			retryable: new FormControl<boolean | null | undefined>(undefined),
 			stacktrace: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -432,51 +442,81 @@ export namespace MyNS {
 	}
 
 	export interface AttemptRead {
-		bytesSynced?: number | null;
 
-		/** Required */
-		createdAt: number;
-		endedAt?: number | null;
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bytesSynced?: string | null;
+
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: string;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		endedAt?: string | null;
 		failureSummary?: AttemptFailureSummary;
 
-		/** Required */
-		id: number;
-		recordsSynced?: number | null;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsSynced?: string | null;
 
 		/** Required */
 		status: AttemptReadStatus;
 		streamStats?: Array<AttemptStreamStats>;
 		totalStats?: AttemptStats;
 
-		/** Required */
-		updatedAt: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updatedAt: string;
 	}
 	export interface AttemptReadFormProperties {
-		bytesSynced: FormControl<number | null | undefined>,
 
-		/** Required */
-		createdAt: FormControl<number | null | undefined>,
-		endedAt: FormControl<number | null | undefined>,
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bytesSynced: FormControl<string | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
-		recordsSynced: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		endedAt: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsSynced: FormControl<string | null | undefined>,
 
 		/** Required */
 		status: FormControl<AttemptReadStatus | null | undefined>,
 
-		/** Required */
-		updatedAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateAttemptReadFormGroup() {
 		return new FormGroup<AttemptReadFormProperties>({
-			bytesSynced: new FormControl<number | null | undefined>(undefined),
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			endedAt: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			recordsSynced: new FormControl<number | null | undefined>(undefined),
+			bytesSynced: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			endedAt: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			recordsSynced: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AttemptReadStatus | null | undefined>(undefined, [Validators.required]),
-			updatedAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			updatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -507,29 +547,53 @@ export namespace MyNS {
 	}
 
 	export interface AttemptStats {
-		bytesEmitted?: number | null;
-		estimatedBytes?: number | null;
-		estimatedRecords?: number | null;
-		recordsCommitted?: number | null;
-		recordsEmitted?: number | null;
-		stateMessagesEmitted?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bytesEmitted?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		estimatedBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		estimatedRecords?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsCommitted?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsEmitted?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stateMessagesEmitted?: string | null;
 	}
 	export interface AttemptStatsFormProperties {
-		bytesEmitted: FormControl<number | null | undefined>,
-		estimatedBytes: FormControl<number | null | undefined>,
-		estimatedRecords: FormControl<number | null | undefined>,
-		recordsCommitted: FormControl<number | null | undefined>,
-		recordsEmitted: FormControl<number | null | undefined>,
-		stateMessagesEmitted: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		bytesEmitted: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		estimatedBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		estimatedRecords: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsCommitted: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsEmitted: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stateMessagesEmitted: FormControl<string | null | undefined>,
 	}
 	export function CreateAttemptStatsFormGroup() {
 		return new FormGroup<AttemptStatsFormProperties>({
-			bytesEmitted: new FormControl<number | null | undefined>(undefined),
-			estimatedBytes: new FormControl<number | null | undefined>(undefined),
-			estimatedRecords: new FormControl<number | null | undefined>(undefined),
-			recordsCommitted: new FormControl<number | null | undefined>(undefined),
-			recordsEmitted: new FormControl<number | null | undefined>(undefined),
-			stateMessagesEmitted: new FormControl<number | null | undefined>(undefined),
+			bytesEmitted: new FormControl<string | null | undefined>(undefined),
+			estimatedBytes: new FormControl<string | null | undefined>(undefined),
+			estimatedRecords: new FormControl<string | null | undefined>(undefined),
+			recordsCommitted: new FormControl<string | null | undefined>(undefined),
+			recordsEmitted: new FormControl<string | null | undefined>(undefined),
+			stateMessagesEmitted: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -548,23 +612,31 @@ export namespace MyNS {
 	}
 
 	export interface AttemptNormalizationStatusRead {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attemptNumber?: number | null;
 		hasNormalizationFailed?: boolean | null;
 		hasRecordsCommitted?: boolean | null;
-		recordsCommitted?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsCommitted?: string | null;
 	}
 	export interface AttemptNormalizationStatusReadFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attemptNumber: FormControl<number | null | undefined>,
 		hasNormalizationFailed: FormControl<boolean | null | undefined>,
 		hasRecordsCommitted: FormControl<boolean | null | undefined>,
-		recordsCommitted: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		recordsCommitted: FormControl<string | null | undefined>,
 	}
 	export function CreateAttemptNormalizationStatusReadFormGroup() {
 		return new FormGroup<AttemptNormalizationStatusReadFormProperties>({
 			attemptNumber: new FormControl<number | null | undefined>(undefined),
 			hasNormalizationFailed: new FormControl<boolean | null | undefined>(undefined),
 			hasRecordsCommitted: new FormControl<boolean | null | undefined>(undefined),
-			recordsCommitted: new FormControl<number | null | undefined>(undefined),
+			recordsCommitted: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -928,11 +1000,17 @@ export namespace MyNS {
 		configType: SynchronousJobReadConfigType;
 		connectorConfigurationUpdated?: boolean | null;
 
-		/** Required */
-		createdAt: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: string;
 
-		/** Required */
-		endedAt: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		endedAt: string;
 
 		/** Required */
 		id: string;
@@ -950,11 +1028,17 @@ export namespace MyNS {
 		configType: FormControl<SynchronousJobReadConfigType | null | undefined>,
 		connectorConfigurationUpdated: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		createdAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: FormControl<string | null | undefined>,
 
-		/** Required */
-		endedAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		endedAt: FormControl<string | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
@@ -967,8 +1051,8 @@ export namespace MyNS {
 			configId: new FormControl<string | null | undefined>(undefined),
 			configType: new FormControl<SynchronousJobReadConfigType | null | undefined>(undefined, [Validators.required]),
 			connectorConfigurationUpdated: new FormControl<boolean | null | undefined>(undefined),
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			endedAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			endedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			succeeded: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1207,8 +1291,11 @@ export namespace MyNS {
 		/** Required */
 		timeUnit: ConnectionScheduleTimeUnit;
 
-		/** Required */
-		units: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		units: string;
 	}
 
 	/** if null, then no schedule is set. */
@@ -1217,13 +1304,16 @@ export namespace MyNS {
 		/** Required */
 		timeUnit: FormControl<ConnectionScheduleTimeUnit | null | undefined>,
 
-		/** Required */
-		units: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		units: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectionScheduleFormGroup() {
 		return new FormGroup<ConnectionScheduleFormProperties>({
 			timeUnit: new FormControl<ConnectionScheduleTimeUnit | null | undefined>(undefined, [Validators.required]),
-			units: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			units: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1251,21 +1341,27 @@ export namespace MyNS {
 		/** Required */
 		timeUnit: ConnectionScheduleTimeUnit;
 
-		/** Required */
-		units: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		units: string;
 	}
 	export interface ConnectionScheduleDataBasicScheduleFormProperties {
 
 		/** Required */
 		timeUnit: FormControl<ConnectionScheduleTimeUnit | null | undefined>,
 
-		/** Required */
-		units: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		units: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectionScheduleDataBasicScheduleFormGroup() {
 		return new FormGroup<ConnectionScheduleDataBasicScheduleFormProperties>({
 			timeUnit: new FormControl<ConnectionScheduleTimeUnit | null | undefined>(undefined, [Validators.required]),
-			units: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			units: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1845,7 +1941,9 @@ export namespace MyNS {
 	}
 
 	export interface DbMigrationRead {
-		migratedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		migratedAt?: string | null;
 		migratedBy?: string | null;
 
 		/** Required */
@@ -1860,7 +1958,9 @@ export namespace MyNS {
 		migrationVersion: string;
 	}
 	export interface DbMigrationReadFormProperties {
-		migratedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		migratedAt: FormControl<string | null | undefined>,
 		migratedBy: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -1876,7 +1976,7 @@ export namespace MyNS {
 	}
 	export function CreateDbMigrationReadFormGroup() {
 		return new FormGroup<DbMigrationReadFormProperties>({
-			migratedAt: new FormControl<number | null | undefined>(undefined),
+			migratedAt: new FormControl<string | null | undefined>(undefined),
 			migratedBy: new FormControl<string | null | undefined>(undefined),
 			migrationDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			migrationScript: new FormControl<string | null | undefined>(undefined),
@@ -2125,7 +2225,10 @@ export namespace MyNS {
 		/** The Airbyte Protocol version supported by the connector */
 		protocolVersion?: string | null;
 
-		/** The date when this connector was first released, in yyyy-mm-dd format. */
+		/**
+		 * The date when this connector was first released, in yyyy-mm-dd format.
+		 * Type: DateOnly
+		 */
 		releaseDate?: Date | null;
 		releaseStage?: DestinationDefinitionReadReleaseStage | null;
 
@@ -2159,7 +2262,10 @@ export namespace MyNS {
 		/** The Airbyte Protocol version supported by the connector */
 		protocolVersion: FormControl<string | null | undefined>,
 
-		/** The date when this connector was first released, in yyyy-mm-dd format. */
+		/**
+		 * The date when this connector was first released, in yyyy-mm-dd format.
+		 * Type: DateOnly
+		 */
 		releaseDate: FormControl<Date | null | undefined>,
 		releaseStage: FormControl<DestinationDefinitionReadReleaseStage | null | undefined>,
 
@@ -2691,8 +2797,11 @@ export namespace MyNS {
 		/** Required */
 		destinationDefinition: DestinationDefinitionRead;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		sourceDefinition: SourceDefinitionRead;
@@ -2711,8 +2820,11 @@ export namespace MyNS {
 		/** Required */
 		configType: FormControl<SynchronousJobReadConfigType | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		status: FormControl<JobDebugReadStatus | null | undefined>,
@@ -2722,7 +2834,7 @@ export namespace MyNS {
 			airbyteVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configType: new FormControl<SynchronousJobReadConfigType | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<JobDebugReadStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2744,7 +2856,10 @@ export namespace MyNS {
 		/** The Airbyte Protocol version supported by the connector */
 		protocolVersion?: string | null;
 
-		/** The date when this connector was first released, in yyyy-mm-dd format. */
+		/**
+		 * The date when this connector was first released, in yyyy-mm-dd format.
+		 * Type: DateOnly
+		 */
 		releaseDate?: Date | null;
 		releaseStage?: DestinationDefinitionReadReleaseStage | null;
 
@@ -2771,7 +2886,10 @@ export namespace MyNS {
 		/** The Airbyte Protocol version supported by the connector */
 		protocolVersion: FormControl<string | null | undefined>,
 
-		/** The date when this connector was first released, in yyyy-mm-dd format. */
+		/**
+		 * The date when this connector was first released, in yyyy-mm-dd format.
+		 * Type: DateOnly
+		 */
 		releaseDate: FormControl<Date | null | undefined>,
 		releaseStage: FormControl<DestinationDefinitionReadReleaseStage | null | undefined>,
 
@@ -2818,17 +2936,23 @@ export namespace MyNS {
 
 	export interface JobIdRequestBody {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 	}
 	export interface JobIdRequestBodyFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateJobIdRequestBodyFormGroup() {
 		return new FormGroup<JobIdRequestBodyFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2854,21 +2978,32 @@ export namespace MyNS {
 		/** Required */
 		configType: SynchronousJobReadConfigType;
 
-		/** Required */
-		createdAt: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: string;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** contains information about how a reset was configured. only populated if the job was a reset. */
 		resetConfig?: ResetConfig;
-		startedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		startedAt?: string | null;
 
 		/** Required */
 		status: JobDebugReadStatus;
 
-		/** Required */
-		updatedAt: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updatedAt: string;
 	}
 	export interface JobReadFormProperties {
 
@@ -2878,28 +3013,39 @@ export namespace MyNS {
 		/** Required */
 		configType: FormControl<SynchronousJobReadConfigType | null | undefined>,
 
-		/** Required */
-		createdAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		createdAt: FormControl<string | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
-		startedAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		startedAt: FormControl<string | null | undefined>,
 
 		/** Required */
 		status: FormControl<JobDebugReadStatus | null | undefined>,
 
-		/** Required */
-		updatedAt: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateJobReadFormGroup() {
 		return new FormGroup<JobReadFormProperties>({
 			configId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configType: new FormControl<SynchronousJobReadConfigType | null | undefined>(undefined, [Validators.required]),
-			createdAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			startedAt: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startedAt: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<JobDebugReadStatus | null | undefined>(undefined, [Validators.required]),
-			updatedAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			updatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2942,29 +3088,41 @@ export namespace MyNS {
 
 		/** Required */
 		configTypes: Array<JobConfigType>;
-		includingJobId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		includingJobId?: string | null;
 		pagination?: Pagination;
 	}
 	export interface JobListRequestBodyFormProperties {
 
 		/** Required */
 		configId: FormControl<string | null | undefined>,
-		includingJobId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		includingJobId: FormControl<string | null | undefined>,
 	}
 	export function CreateJobListRequestBodyFormGroup() {
 		return new FormGroup<JobListRequestBodyFormProperties>({
 			configId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			includingJobId: new FormControl<number | null | undefined>(undefined),
+			includingJobId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Pagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowOffset?: number | null;
 	}
 	export interface PaginationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rowOffset: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -2994,20 +3152,22 @@ export namespace MyNS {
 		/**
 		 * the total count of jobs for the specified connection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		totalJobCount: number;
+		totalJobCount: string;
 	}
 	export interface JobReadListFormProperties {
 
 		/**
 		 * the total count of jobs for the specified connection
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		totalJobCount: FormControl<number | null | undefined>,
+		totalJobCount: FormControl<string | null | undefined>,
 	}
 	export function CreateJobReadListFormGroup() {
 		return new FormGroup<JobReadListFormProperties>({
-			totalJobCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			totalJobCount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3365,12 +3525,14 @@ export namespace MyNS {
 		/**
 		 * The account id associated with the job
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountId: number;
 
 		/**
 		 * The job id associated with the job
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		jobId: number;
 	}
@@ -3379,12 +3541,14 @@ export namespace MyNS {
 		/**
 		 * The account id associated with the job
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/**
 		 * The job id associated with the job
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		jobId: FormControl<number | null | undefined>,
 	}
@@ -3561,38 +3725,56 @@ export namespace MyNS {
 
 	export interface SaveAttemptSyncConfigRequestBody {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: number;
 
-		/** Required */
-		jobId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: string;
 
 		/** Required */
 		syncConfig: AttemptSyncConfig;
 	}
 	export interface SaveAttemptSyncConfigRequestBodyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: FormControl<number | null | undefined>,
 
-		/** Required */
-		jobId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreateSaveAttemptSyncConfigRequestBodyFormGroup() {
 		return new FormGroup<SaveAttemptSyncConfigRequestBodyFormProperties>({
 			attemptNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			jobId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SaveStatsRequestBody {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: number;
 
-		/** Required */
-		jobId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: string;
 
 		/** Required */
 		stats: AttemptStats;
@@ -3600,16 +3782,22 @@ export namespace MyNS {
 	}
 	export interface SaveStatsRequestBodyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: FormControl<number | null | undefined>,
 
-		/** Required */
-		jobId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreateSaveStatsRequestBodyFormGroup() {
 		return new FormGroup<SaveStatsRequestBodyFormProperties>({
 			attemptNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			jobId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3666,11 +3854,17 @@ export namespace MyNS {
 
 	export interface SetWorkflowInAttemptRequestBody {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: number;
 
-		/** Required */
-		jobId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: string;
 		processingTaskQueue?: string | null;
 
 		/** Required */
@@ -3678,11 +3872,17 @@ export namespace MyNS {
 	}
 	export interface SetWorkflowInAttemptRequestBodyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attemptNumber: FormControl<number | null | undefined>,
 
-		/** Required */
-		jobId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		jobId: FormControl<string | null | undefined>,
 		processingTaskQueue: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -3691,7 +3891,7 @@ export namespace MyNS {
 	export function CreateSetWorkflowInAttemptRequestBodyFormGroup() {
 		return new FormGroup<SetWorkflowInAttemptRequestBodyFormProperties>({
 			attemptNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			jobId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			processingTaskQueue: new FormControl<string | null | undefined>(undefined),
 			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4293,20 +4493,32 @@ export namespace MyNS {
 	/** Summary of source and destination definitions that could be updated */
 	export interface WebBackendCheckUpdatesRead {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationDefinitions: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDefinitions: number;
 	}
 
 	/** Summary of source and destination definitions that could be updated */
 	export interface WebBackendCheckUpdatesReadFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationDefinitions: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDefinitions: FormControl<number | null | undefined>,
 	}
 	export function CreateWebBackendCheckUpdatesReadFormGroup() {
@@ -4425,8 +4637,11 @@ export namespace MyNS {
 		/** Required */
 		isSyncing: boolean;
 
-		/** epoch time of the latest sync job. null if no sync job has taken place. */
-		latestSyncJobCreatedAt?: number | null;
+		/**
+		 * epoch time of the latest sync job. null if no sync job has taken place.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestSyncJobCreatedAt?: string | null;
 		latestSyncJobStatus?: JobDebugReadStatus | null;
 
 		/** Required */
@@ -4460,8 +4675,11 @@ export namespace MyNS {
 		/** Required */
 		isSyncing: FormControl<boolean | null | undefined>,
 
-		/** epoch time of the latest sync job. null if no sync job has taken place. */
-		latestSyncJobCreatedAt: FormControl<number | null | undefined>,
+		/**
+		 * epoch time of the latest sync job. null if no sync job has taken place.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestSyncJobCreatedAt: FormControl<string | null | undefined>,
 		latestSyncJobStatus: FormControl<JobDebugReadStatus | null | undefined>,
 
 		/** Required */
@@ -4483,7 +4701,7 @@ export namespace MyNS {
 		return new FormGroup<WebBackendConnectionListItemFormProperties>({
 			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isSyncing: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			latestSyncJobCreatedAt: new FormControl<number | null | undefined>(undefined),
+			latestSyncJobCreatedAt: new FormControl<string | null | undefined>(undefined),
 			latestSyncJobStatus: new FormControl<JobDebugReadStatus | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			scheduleType: new FormControl<ConnectionCreateScheduleType | null | undefined>(undefined),
@@ -4531,8 +4749,11 @@ export namespace MyNS {
 		/** Required */
 		isSyncing: boolean;
 
-		/** epoch time of the latest sync job. null if no sync job has taken place. */
-		latestSyncJobCreatedAt?: number | null;
+		/**
+		 * epoch time of the latest sync job. null if no sync job has taken place.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestSyncJobCreatedAt?: string | null;
 		latestSyncJobStatus?: JobDebugReadStatus | null;
 
 		/** Required */
@@ -4601,8 +4822,11 @@ export namespace MyNS {
 		/** Required */
 		isSyncing: FormControl<boolean | null | undefined>,
 
-		/** epoch time of the latest sync job. null if no sync job has taken place. */
-		latestSyncJobCreatedAt: FormControl<number | null | undefined>,
+		/**
+		 * epoch time of the latest sync job. null if no sync job has taken place.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestSyncJobCreatedAt: FormControl<string | null | undefined>,
 		latestSyncJobStatus: FormControl<JobDebugReadStatus | null | undefined>,
 
 		/** Required */
@@ -4645,7 +4869,7 @@ export namespace MyNS {
 			destinationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			geography: new FormControl<ConnectionCreateGeography | null | undefined>(undefined),
 			isSyncing: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			latestSyncJobCreatedAt: new FormControl<number | null | undefined>(undefined),
+			latestSyncJobCreatedAt: new FormControl<string | null | undefined>(undefined),
 			latestSyncJobStatus: new FormControl<JobDebugReadStatus | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			namespaceDefinition: new FormControl<ConnectionCreateNamespaceDefinition | null | undefined>(undefined),

@@ -1989,6 +1989,7 @@ export namespace MyNS {
 		 * Get #Action=AddTags
 		 * @param {Array<string>} LoadBalancerNames The name of the load balancer. You can specify one load balancer only.
 		 * @param {Array<Tag>} Tags The tags.
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_AddTags(LoadBalancerNames: Array<string>, Tags: Array<Tag>, Action: GET_AddTagsAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2046,6 +2047,7 @@ export namespace MyNS {
 		 * @param {string} LoadBalancerName The name of the load balancer.
 		 * @param {string} PolicyName The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.
 		 * @param {number} CookieExpirationPeriod The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_CreateLBCookieStickinessPolicy(LoadBalancerName: string, PolicyName: string, CookieExpirationPeriod: number | null | undefined, Action: GET_CreateLBCookieStickinessPolicyAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2062,6 +2064,7 @@ export namespace MyNS {
 		 * @param {Array<string>} SecurityGroups The IDs of the security groups to assign to the load balancer.
 		 * @param {string} Scheme <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
 		 * @param {Array<Tag>} Tags <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_CreateLoadBalancer(LoadBalancerName: string, Listeners: Array<Listener>, AvailabilityZones: Array<string> | null | undefined, Subnets: Array<string> | null | undefined, SecurityGroups: Array<string> | null | undefined, Scheme: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateLoadBalancerAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2140,6 +2143,7 @@ export namespace MyNS {
 		 * Get #Action=DescribeAccountLimits
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeAccountLimits(Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeAccountLimitsAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2194,6 +2198,7 @@ export namespace MyNS {
 		 * @param {Array<string>} LoadBalancerNames The names of the load balancers.
 		 * @param {string} Marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @param {number} PageSize The maximum number of results to return with this call (a number from 1 to 400). The default is 400.
+		 *     Minimum: 1    Maximum: 400
 		 * @return {void} Success
 		 */
 		GET_DescribeLoadBalancers(LoadBalancerNames: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2204,6 +2209,7 @@ export namespace MyNS {
 		 * Describes the tags associated with the specified load balancers.
 		 * Get #Action=DescribeTags
 		 * @param {Array<string>} LoadBalancerNames The names of the load balancers.
+		 *     Minimum items: 1    Maximum items: 20
 		 * @return {void} Success
 		 */
 		GET_DescribeTags(LoadBalancerNames: Array<string>, Action: GET_DescribeTagsAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2270,6 +2276,7 @@ export namespace MyNS {
 		 * Get #Action=RemoveTags
 		 * @param {Array<string>} LoadBalancerNames The name of the load balancer. You can specify a maximum of one load balancer name.
 		 * @param {Array<TagKeyOnly>} Tags The list of tag keys to remove.
+		 *     Minimum items: 1
 		 * @return {void} Success
 		 */
 		GET_RemoveTags(LoadBalancerNames: Array<string>, Tags: Array<TagKeyOnly>, Action: GET_RemoveTagsAction, Version: GET_AddTagsVersion): Observable<HttpResponse<string>> {
@@ -2281,6 +2288,7 @@ export namespace MyNS {
 		 * Get #Action=SetLoadBalancerListenerSSLCertificate
 		 * @param {string} LoadBalancerName The name of the load balancer.
 		 * @param {number} LoadBalancerPort The port that uses the specified SSL certificate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} SSLCertificateId The Amazon Resource Name (ARN) of the SSL certificate.
 		 * @return {void} Success
 		 */
@@ -2293,6 +2301,7 @@ export namespace MyNS {
 		 * Get #Action=SetLoadBalancerPoliciesForBackendServer
 		 * @param {string} LoadBalancerName The name of the load balancer.
 		 * @param {number} InstancePort The port number associated with the EC2 instance.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} PolicyNames The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
 		 * @return {void} Success
 		 */
@@ -2305,6 +2314,7 @@ export namespace MyNS {
 		 * Get #Action=SetLoadBalancerPoliciesOfListener
 		 * @param {string} LoadBalancerName The name of the load balancer.
 		 * @param {number} LoadBalancerPort The external port of the load balancer.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} PolicyNames The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.
 		 * @return {void} Success
 		 */

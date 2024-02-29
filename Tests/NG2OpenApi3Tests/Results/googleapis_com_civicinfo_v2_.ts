@@ -812,10 +812,16 @@ export namespace MyNS {
 		/** The last date that this early vote site or drop off location may be used. This field is not populated for polling locations. */
 		endDate?: string | null;
 
-		/** Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations. */
+		/**
+		 * Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations. */
+		/**
+		 * Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** The name of the early vote site or drop off location. This field is not populated for polling locations. */
@@ -843,10 +849,16 @@ export namespace MyNS {
 		/** The last date that this early vote site or drop off location may be used. This field is not populated for polling locations. */
 		endDate: FormControl<string | null | undefined>,
 
-		/** Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations. */
+		/**
+		 * Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations. */
+		/**
+		 * Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** The name of the early vote site or drop off location. This field is not populated for polling locations. */

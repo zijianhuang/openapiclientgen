@@ -21,7 +21,10 @@ export namespace MyNS {
 		/** List of facets in which the term can be searched. */
 		AutocompleteSearchSuggestionsSearchesAttributes?: Array<AutocompleteSearchSuggestionsSearchesAttributes>;
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count?: number | null;
 
 		/** Search term. */
@@ -29,7 +32,10 @@ export namespace MyNS {
 	}
 	export interface AutocompleteSearchSuggestionsSearchesFormProperties {
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Search term. */
@@ -275,7 +281,10 @@ export namespace MyNS {
 		/** Human-readable format of the facet key. */
 		name?: string | null;
 
-		/** Number of possible values. */
+		/**
+		 * Number of possible values.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/**
@@ -296,7 +305,10 @@ export namespace MyNS {
 		/** Human-readable format of the facet key. */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of possible values. */
+		/**
+		 * Number of possible values.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/**
@@ -329,7 +341,10 @@ export namespace MyNS {
 		/** Human-readable format of the facet value */
 		name?: string | null;
 
-		/** Number of resulting products. */
+		/**
+		 * Number of resulting products.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Whether the value is selected (`true`) or not (`false`). */
@@ -349,7 +364,10 @@ export namespace MyNS {
 		/** Human-readable format of the facet value */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of resulting products. */
+		/**
+		 * Number of resulting products.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Whether the value is selected (`true`) or not (`false`). */
@@ -432,7 +450,10 @@ export namespace MyNS {
 		/** List of products */
 		products?: Array<string>;
 
-		/** Total number of products. */
+		/**
+		 * Total number of products.
+		 * Type: double
+		 */
 		recordsFiltered?: number | null;
 
 		/** Whether the list of products was translated by the IS (`true`) or not (`false`). */
@@ -450,7 +471,10 @@ export namespace MyNS {
 		 */
 		operator: FormControl<ProductSearchOperator | null | undefined>,
 
-		/** Total number of products. */
+		/**
+		 * Total number of products.
+		 * Type: double
+		 */
 		recordsFiltered: FormControl<number | null | undefined>,
 
 		/** Whether the list of products was translated by the IS (`true`) or not (`false`). */
@@ -500,7 +524,10 @@ export namespace MyNS {
 
 	export interface SearchSuggestionsSearches {
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count?: number | null;
 
 		/** Search term. */
@@ -508,7 +535,10 @@ export namespace MyNS {
 	}
 	export interface SearchSuggestionsSearchesFormProperties {
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Search term. */
@@ -541,7 +571,10 @@ export namespace MyNS {
 
 	export interface TopSearchesSearches {
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count?: number | null;
 
 		/** Search term. */
@@ -549,7 +582,10 @@ export namespace MyNS {
 	}
 	export interface TopSearchesSearchesFormProperties {
 
-		/** Number of times the term was searched. */
+		/**
+		 * Number of times the term was searched.
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Search term. */
@@ -660,7 +696,9 @@ export namespace MyNS {
 		 *  * `skip` - Never calls the simulation.
 		 *  * `only1P` - Only calls the simulation for first party sellers.
 		 * @param {number} count Number of products per page.
+		 *     Type: double
 		 * @param {number} page Current search page.
+		 *     Type: double
 		 * @param {Product_search_facetsGetByQueryAndSimulationBehaviorAndCountAndPageAndSortAndLocaleAndHideUnavailableItemsSort} sort Defines the sort type. If null, the products will be sorted by relevance.
 		 * @param {string} locale Indicates the target language as a BCP 47 language code. The Intelligent Search must have indexed the account in the target language.
 		 * @param {boolean} hideUnavailableItems Whether the result should hide unavailable items (`true`), or not (`false`)

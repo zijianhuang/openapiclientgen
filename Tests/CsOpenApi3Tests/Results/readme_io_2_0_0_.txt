@@ -273,8 +273,13 @@ namespace MyNS
 		/// Get API specification metadata
 		/// GetAPISpecification api-specification
 		/// </summary>
-		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)</param>
-		/// <param name="page">Used to specify further pages (starts at 1)</param>
+		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">Used to specify further pages (starts at 1)
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successfully retrieved API specification metadata.</returns>
 		public async Task GetAPISpecificationAsync(int perPage, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -388,8 +393,13 @@ namespace MyNS
 		/// Returns a list of changelogs associated with the project API key
 		/// GetChangelogs changelogs
 		/// </summary>
-		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)</param>
-		/// <param name="page">Used to specify further pages (starts at 1)</param>
+		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">Used to specify further pages (starts at 1)
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task GetChangelogsAsync(int perPage, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -547,8 +557,13 @@ namespace MyNS
 		/// Returns a list of custom pages associated with the project API key
 		/// GetCustomPages custompages
 		/// </summary>
-		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)</param>
-		/// <param name="page">Used to specify further pages (starts at 1)</param>
+		/// <param name="perPage">Number of items to include in pagination (up to 100, defaults to 10)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">Used to specify further pages (starts at 1)
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task GetCustomPagesAsync(int perPage, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

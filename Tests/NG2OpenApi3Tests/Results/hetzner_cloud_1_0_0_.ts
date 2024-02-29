@@ -13,6 +13,7 @@ export namespace MyNS {
 		 * Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
 		 * Get actions
 		 * @param {number} id Can be used multiple times, the response will contain only Actions with specified IDs
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {ActionsGetByIdAndSortAndStatusReturn} The `actions` key contains a list of Actions
@@ -26,6 +27,7 @@ export namespace MyNS {
 		 * Returns a specific Action object.
 		 * Get actions/{id}
 		 * @param {number} id ID of the Resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Actions_idGetReturn} The `action` key in the reply has this structure
 		 */
 		Actions_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Actions_idGetReturn> {
@@ -64,6 +66,7 @@ export namespace MyNS {
 		 * Deletes a Certificate.
 		 * Delete certificates/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Certificates_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -75,6 +78,7 @@ export namespace MyNS {
 		 * Gets a specific Certificate object.
 		 * Get certificates/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Certificates_idGetReturn} The `certificate` key contains a Certificate object
 		 */
 		Certificates_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Certificates_idGetReturn> {
@@ -88,6 +92,7 @@ export namespace MyNS {
 		 * Note: if the Certificate object changes during the request, the response will be a “conflict” error.
 		 * Put certificates/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Certificates_idPutReturn} The `certificate` key contains the Certificate that was just updated
 		 */
 		Certificates_idPut(id: number, requestBody: Certificates_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Certificates_idPutReturn> {
@@ -100,6 +105,7 @@ export namespace MyNS {
 		 * Only type `managed` Certificates can have Actions. For type `uploaded` Certificates the `actions` key will always contain an empty array.
 		 * Get certificates/{id}/actions
 		 * @param {number} id ID of the Resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Certificates_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -125,6 +131,7 @@ export namespace MyNS {
 		 * | `dns_zone_is_secondary_zone`                            | DNS zone is a secondary zone                                              |
 		 * Post certificates/{id}/actions/retry
 		 * @param {number} id ID of the Certificate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Certificates_idActionsRetryPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -136,7 +143,9 @@ export namespace MyNS {
 		 * Returns a specific Action for a Certificate. Only type `managed` Certificates have Actions.
 		 * Get certificates/{id}/actions/{action_id}
 		 * @param {number} id ID of the Certificate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Certificates_idActions_action_idGetReturn} The `action` key contains the Certificate Action
 		 */
 		Certificates_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Certificates_idActions_action_idGetReturn> {
@@ -159,6 +168,7 @@ export namespace MyNS {
 		 * Returns a specific Datacenter object.
 		 * Get datacenters/{id}
 		 * @param {number} id ID of Datacenter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Datacenters_idGetReturn} The `datacenter` key in the reply contains a Datacenter object with this structure
 		 */
 		Datacenters_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Datacenters_idGetReturn> {
@@ -203,6 +213,7 @@ export namespace MyNS {
 		 * | `resource_in_use`    | Firewall must not be in use to be deleted |
 		 * Delete firewalls/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Firewalls_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -214,6 +225,7 @@ export namespace MyNS {
 		 * Gets a specific Firewall object.
 		 * Get firewalls/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Firewalls_idGetReturn} The `firewall` key contains a Firewall object
 		 */
 		Firewalls_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Firewalls_idGetReturn> {
@@ -227,6 +239,7 @@ export namespace MyNS {
 		 * Note: if the Firewall object changes during the request, the response will be a “conflict” error.
 		 * Put firewalls/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Firewalls_idPutReturn} The `firewall` key contains the Firewall that was just updated
 		 */
 		Firewalls_idPut(id: number, requestBody: Firewalls_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Firewalls_idPutReturn> {
@@ -238,6 +251,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Firewall. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
 		 * Get firewalls/{id}/actions
 		 * @param {number} id ID of the Resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Firewalls_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -258,6 +272,7 @@ export namespace MyNS {
 		 * | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
 		 * Post firewalls/{id}/actions/apply_to_resources
 		 * @param {number} id ID of the Firewall
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Firewalls_idActionsApply_to_resourcesPost(id: number, requestBody: Firewalls_idActionsApply_to_resourcesPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -276,6 +291,7 @@ export namespace MyNS {
 		 * | `firewall_managed_by_label_selector`  | Firewall was applied via label selector and cannot be removed manually |
 		 * Post firewalls/{id}/actions/remove_from_resources
 		 * @param {number} id ID of the Firewall
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Firewalls_idActionsRemove_from_resourcesPost(id: number, requestBody: Firewalls_idActionsRemove_from_resourcesPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -293,6 +309,7 @@ export namespace MyNS {
 		 * | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
 		 * Post firewalls/{id}/actions/set_rules
 		 * @param {number} id ID of the Firewall
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Firewalls_idActionsSet_rulesPost(id: number, requestBody: Firewalls_idActionsSet_rulesPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -304,7 +321,9 @@ export namespace MyNS {
 		 * Returns a specific Action for a Firewall.
 		 * Get firewalls/{id}/actions/{action_id}
 		 * @param {number} id ID of the Firewall
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Firewalls_idActions_action_idGetReturn} The `action` key contains the Firewall Action
 		 */
 		Firewalls_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Firewalls_idActions_action_idGetReturn> {
@@ -340,6 +359,7 @@ export namespace MyNS {
 		 * Deletes a Floating IP. If it is currently assigned to a Server it will automatically get unassigned.
 		 * Delete floating_ips/{id}
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Floating_ips_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -351,6 +371,7 @@ export namespace MyNS {
 		 * Returns a specific Floating IP object.
 		 * Get floating_ips/{id}
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Floating_ips_idGetReturn} The `floating_ip` key in the reply contains a Floating IP object with this structure
 		 */
 		Floating_ips_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Floating_ips_idGetReturn> {
@@ -363,6 +384,7 @@ export namespace MyNS {
 		 * Also note that when updating labels, the Floating IP’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
 		 * Put floating_ips/{id}
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Floating_ips_idPutReturn} The `floating_ip` key in the reply contains the modified Floating IP object with the new description
 		 */
 		Floating_ips_idPut(id: number, requestBody: Floating_ips_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Floating_ips_idPutReturn> {
@@ -374,6 +396,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Floating IP. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
 		 * Get floating_ips/{id}/actions
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Floating_ips_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -387,6 +410,7 @@ export namespace MyNS {
 		 * Assigns a Floating IP to a Server.
 		 * Post floating_ips/{id}/actions/assign
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Floating_ips_idActionsAssignPost(id: number, requestBody: Floating_ips_idActionsAssignPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -398,6 +422,7 @@ export namespace MyNS {
 		 * Changes the hostname that will appear when getting the hostname belonging to this Floating IP.
 		 * Post floating_ips/{id}/actions/change_dns_ptr
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Floating_ips_idActionsChange_dns_ptrPostPostBody} requestBody Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP. You can add up to 100 IPv6 reverse DNS entries.
 		 * The target hostname is set by passing `dns_ptr`.
 		 * @return {void} 
@@ -411,6 +436,7 @@ export namespace MyNS {
 		 * Changes the protection configuration of the Floating IP.
 		 * Post floating_ips/{id}/actions/change_protection
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Floating_ips_idActionsChange_protectionPost(id: number, requestBody: Floating_ips_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -422,6 +448,7 @@ export namespace MyNS {
 		 * Unassigns a Floating IP, resulting in it being unreachable. You may assign it to a Server again at a later time.
 		 * Post floating_ips/{id}/actions/unassign
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Floating_ips_idActionsUnassignPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -433,7 +460,9 @@ export namespace MyNS {
 		 * Returns a specific Action object for a Floating IP.
 		 * Get floating_ips/{id}/actions/{action_id}
 		 * @param {number} id ID of the Floating IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Floating_ips_idActions_action_idGetReturn} The `action` key in the reply has this structure
 		 */
 		Floating_ips_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Floating_ips_idActions_action_idGetReturn> {
@@ -463,6 +492,7 @@ export namespace MyNS {
 		 * Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted.
 		 * Delete images/{id}
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Images_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -474,6 +504,7 @@ export namespace MyNS {
 		 * Returns a specific Image object.
 		 * Get images/{id}
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Images_idGetReturn} The `image` key in the reply contains an Image object with this structure
 		 */
 		Images_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Images_idGetReturn> {
@@ -486,6 +517,7 @@ export namespace MyNS {
 		 * Note that when updating labels, the current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
 		 * Put images/{id}
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Images_idPutReturn} The image key in the reply contains the modified Image object
 		 */
 		Images_idPut(id: number, requestBody: Images_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Images_idPutReturn> {
@@ -497,6 +529,7 @@ export namespace MyNS {
 		 * Returns all Action objects for an Image. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
 		 * Get images/{id}/actions
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Images_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -510,6 +543,7 @@ export namespace MyNS {
 		 * Changes the protection configuration of the Image. Can only be used on snapshots.
 		 * Post images/{id}/actions/change_protection
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Images_idActionsChange_protectionPost(id: number, requestBody: Images_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -521,7 +555,9 @@ export namespace MyNS {
 		 * Returns a specific Action for an Image.
 		 * Get images/{id}/actions/{action_id}
 		 * @param {number} id ID of the Image
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Images_idActions_action_idGetReturn} The `action` key contains the Image Action
 		 */
 		Images_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Images_idActions_action_idGetReturn> {
@@ -546,6 +582,7 @@ export namespace MyNS {
 		 * Returns a specific ISO object.
 		 * Get isos/{id}
 		 * @param {number} id ID of the ISO
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Isos_idGetReturn} The `iso` key in the reply contains an array of ISO objects with this structure
 		 */
 		Isos_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Isos_idGetReturn> {
@@ -568,6 +605,7 @@ export namespace MyNS {
 		 * Gets a specific Load Balancer type object.
 		 * Get load_balancer_types/{id}
 		 * @param {number} id ID of Load Balancer type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Load_balancer_types_idGetReturn} The `load_balancer_type` key in the reply contains a Load Balancer type object with this structure
 		 */
 		Load_balancer_types_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Load_balancer_types_idGetReturn> {
@@ -612,6 +650,7 @@ export namespace MyNS {
 		 * Deletes a Load Balancer.
 		 * Delete load_balancers/{id}
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -623,6 +662,7 @@ export namespace MyNS {
 		 * Gets a specific Load Balancer object.
 		 * Get load_balancers/{id}
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Load_balancers_idGetReturn} The `load_balancer` key contains the Load Balancer
 		 */
 		Load_balancers_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Load_balancers_idGetReturn> {
@@ -636,6 +676,7 @@ export namespace MyNS {
 		 * Note: if the Load Balancer object changes during the request, the response will be a “conflict” error.
 		 * Put load_balancers/{id}
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Load_balancers_idPutReturn} The `load_balancer` key contains the updated Load Balancer
 		 */
 		Load_balancers_idPut(id: number, requestBody: Load_balancers_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Load_balancers_idPutReturn> {
@@ -647,6 +688,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
 		 * Get load_balancers/{id}/actions
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Load_balancers_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -664,6 +706,7 @@ export namespace MyNS {
 		 * | `source_port_already_used` | The source port you are trying to add is already in use |
 		 * Post load_balancers/{id}/actions/add_service
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsAdd_servicePost(id: number, requestBody: Load_balancers_idActionsAdd_servicePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -684,6 +727,7 @@ export namespace MyNS {
 		 * | `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |
 		 * Post load_balancers/{id}/actions/add_target
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsAdd_targetPost(id: number, requestBody: Load_balancers_idActionsAdd_targetPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -701,6 +745,7 @@ export namespace MyNS {
 		 * | `no_subnet_available`            | No Subnet or IP is available for the Load Balancer within the network |
 		 * Post load_balancers/{id}/actions/attach_to_network
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsAttach_to_networkPost(id: number, requestBody: Load_balancers_idActionsAttach_to_networkPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -712,6 +757,7 @@ export namespace MyNS {
 		 * Change the algorithm that determines to which target new requests are sent.
 		 * Post load_balancers/{id}/actions/change_algorithm
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsChange_algorithmPost(id: number, requestBody: Load_balancers_idActionsChange_algorithmPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -724,6 +770,7 @@ export namespace MyNS {
 		 * Floating IPs assigned to the Server are not affected by this.
 		 * Post load_balancers/{id}/actions/change_dns_ptr
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Load_balancers_idActionsChange_dns_ptrPostPostBody} requestBody Select the IP address for which to change the DNS entry by passing `ip`. It can be either IPv4 or IPv6. The target hostname is set by passing `dns_ptr`.
 		 * @return {void} 
 		 */
@@ -736,6 +783,7 @@ export namespace MyNS {
 		 * Changes the protection configuration of a Load Balancer.
 		 * Post load_balancers/{id}/actions/change_protection
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsChange_protectionPost(id: number, requestBody: Load_balancers_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -751,6 +799,7 @@ export namespace MyNS {
 		 * | `invalid_load_balancer_type` | The Load Balancer type does not fit for the given Load Balancer |
 		 * Post load_balancers/{id}/actions/change_type
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsChange_typePost(id: number, requestBody: Load_balancers_idActionsChange_typePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -762,6 +811,7 @@ export namespace MyNS {
 		 * Delete a service of a Load Balancer.
 		 * Post load_balancers/{id}/actions/delete_service
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsDelete_servicePost(id: number, requestBody: Load_balancers_idActionsDelete_servicePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -773,6 +823,7 @@ export namespace MyNS {
 		 * Detaches a Load Balancer from a network.
 		 * Post load_balancers/{id}/actions/detach_from_network
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsDetach_from_networkPost(id: number, requestBody: Load_balancers_idActionsDetach_from_networkPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -789,6 +840,7 @@ export namespace MyNS {
 		 * | `targets_without_use_private_ip`          | The Load Balancer has targets that use the public IP instead of the private IP |
 		 * Post load_balancers/{id}/actions/disable_public_interface
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsDisable_public_interfacePost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -800,6 +852,7 @@ export namespace MyNS {
 		 * Enable the public interface of a Load Balancer. The Load Balancer will be accessible from the internet via its public IPs.
 		 * Post load_balancers/{id}/actions/enable_public_interface
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsEnable_public_interfacePost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -811,6 +864,7 @@ export namespace MyNS {
 		 * Removes a target from a Load Balancer.
 		 * Post load_balancers/{id}/actions/remove_target
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsRemove_targetPost(id: number, requestBody: Load_balancers_idActionsRemove_targetPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -826,6 +880,7 @@ export namespace MyNS {
 		 * | `source_port_already_used` | The source port you are trying to add is already in use |
 		 * Post load_balancers/{id}/actions/update_service
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Load_balancers_idActionsUpdate_servicePost(id: number, requestBody: Load_balancers_idActionsUpdate_servicePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -837,7 +892,9 @@ export namespace MyNS {
 		 * Returns a specific Action for a Load Balancer.
 		 * Get load_balancers/{id}/actions/{action_id}
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Load_balancers_idActions_action_idGetReturn} The `action` key contains the Load Balancer Action
 		 */
 		Load_balancers_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Load_balancers_idActions_action_idGetReturn> {
@@ -860,6 +917,7 @@ export namespace MyNS {
 		 * We limit the number of samples to a maximum of 500 and will adjust the step parameter accordingly.
 		 * Get load_balancers/{id}/metrics
 		 * @param {number} id ID of the Load Balancer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Load_balancers_idMetricsGetByTypeAndStartAndEndAndStepType} type Type of metrics to get
 		 * @param {string} start Start of period to get Metrics for (in ISO-8601 format)
 		 * @param {string} end End of period to get Metrics for (in ISO-8601 format)
@@ -886,6 +944,7 @@ export namespace MyNS {
 		 * Returns a specific Location object.
 		 * Get locations/{id}
 		 * @param {number} id ID of Location
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Locations_idGetReturn} The `location` key in the reply contains a Location object with this structure
 		 */
 		Locations_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Locations_idGetReturn> {
@@ -922,6 +981,7 @@ export namespace MyNS {
 		 * Note: if the network object changes during the request, the response will be a “conflict” error.
 		 * Delete networks/{id}
 		 * @param {number} id ID of the network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -933,6 +993,7 @@ export namespace MyNS {
 		 * Gets a specific network object.
 		 * Get networks/{id}
 		 * @param {number} id ID of the network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Networks_idGetReturn} The `network` key contains the network
 		 */
 		Networks_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Networks_idGetReturn> {
@@ -946,6 +1007,7 @@ export namespace MyNS {
 		 * Note: if the network object changes during the request, the response will be a “conflict” error.
 		 * Put networks/{id}
 		 * @param {number} id ID of the network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Networks_idPutReturn} The `network` key contains the updated network
 		 */
 		Networks_idPut(id: number, requestBody: Networks_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Networks_idPutReturn> {
@@ -957,6 +1019,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Network. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
 		 * Get networks/{id}/actions
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Networks_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -971,6 +1034,7 @@ export namespace MyNS {
 		 * Note: if the Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/add_route
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsAdd_routePost(id: number, requestBody: Networks_idActionsAdd_routePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -983,6 +1047,7 @@ export namespace MyNS {
 		 * Note: if the parent Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/add_subnet
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsAdd_subnetPost(id: number, requestBody: Networks_idActionsAdd_subnetPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -997,6 +1062,7 @@ export namespace MyNS {
 		 * Note: if the Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/change_ip_range
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsChange_ip_rangePost(id: number, requestBody: Networks_idActionsChange_ip_rangePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1009,6 +1075,7 @@ export namespace MyNS {
 		 * Note: if the Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/change_protection
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsChange_protectionPost(id: number, requestBody: Networks_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1021,6 +1088,7 @@ export namespace MyNS {
 		 * Note: if the Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/delete_route
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsDelete_routePost(id: number, requestBody: Networks_idActionsDelete_routePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1033,6 +1101,7 @@ export namespace MyNS {
 		 * Note: if the Network object changes during the request, the response will be a “conflict” error.
 		 * Post networks/{id}/actions/delete_subnet
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Networks_idActionsDelete_subnetPost(id: number, requestBody: Networks_idActionsDelete_subnetPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1044,7 +1113,9 @@ export namespace MyNS {
 		 * Returns a specific Action for a Network.
 		 * Get networks/{id}/actions/{action_id}
 		 * @param {number} id ID of the Network
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Networks_idActions_action_idGetReturn} The `action` key contains the Network Action
 		 */
 		Networks_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Networks_idActions_action_idGetReturn> {
@@ -1080,6 +1151,7 @@ export namespace MyNS {
 		 * Deletes a PlacementGroup.
 		 * Delete placement_groups/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Placement_groups_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1091,6 +1163,7 @@ export namespace MyNS {
 		 * Gets a specific PlacementGroup object.
 		 * Get placement_groups/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Placement_groups_idGetReturn} The `placement_group` key contains a PlacementGroup object
 		 */
 		Placement_groups_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Placement_groups_idGetReturn> {
@@ -1104,6 +1177,7 @@ export namespace MyNS {
 		 * Note: if the PlacementGroup object changes during the request, the response will be a “conflict” error.
 		 * Put placement_groups/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Placement_groups_idPutReturn} The `certificate` key contains the PlacementGroup that was just updated
 		 */
 		Placement_groups_idPut(id: number, requestBody: Placement_groups_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Placement_groups_idPutReturn> {
@@ -1160,6 +1234,7 @@ export namespace MyNS {
 		 * The Primary IP may be assigned to a Server. In this case it is unassigned automatically. The Server must be powered off (status `off`) in order for this operation to succeed.
 		 * Delete primary_ips/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Primary_ips_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1171,6 +1246,7 @@ export namespace MyNS {
 		 * Returns a specific Primary IP object.
 		 * Get primary_ips/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Primary_ips_idGetReturn} The `primary_ip` key contains a Primary IP object
 		 */
 		Primary_ips_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Primary_ips_idGetReturn> {
@@ -1184,6 +1260,7 @@ export namespace MyNS {
 		 * If the Primary IP object changes during the request, the response will be a “conflict” error.
 		 * Put primary_ips/{id}
 		 * @param {number} id ID of the resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Primary_ips_idPutReturn} The `primary_ip` key contains the Primary IP that was just updated
 		 */
 		Primary_ips_idPut(id: number, requestBody: Primary_ips_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Primary_ips_idPutReturn> {
@@ -1204,6 +1281,7 @@ export namespace MyNS {
 		 * | `server_has_ipv6`             | The server already has an ipv6 address                        |
 		 * Post primary_ips/{id}/actions/assign
 		 * @param {number} id ID of the Primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Primary_ips_idActionsAssignPost(id: number, requestBody: Primary_ips_idActionsAssignPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1215,6 +1293,7 @@ export namespace MyNS {
 		 * Changes the hostname that will appear when getting the hostname belonging to this Primary IP.
 		 * Post primary_ips/{id}/actions/change_dns_ptr
 		 * @param {number} id ID of the Primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Primary_ips_idActionsChange_dns_ptrPostPostBody} requestBody Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP. You can add up to 100 IPv6 reverse DNS entries.
 		 * The target hostname is set by passing `dns_ptr`.
 		 * @return {void} 
@@ -1229,6 +1308,7 @@ export namespace MyNS {
 		 * A Primary IP can only be delete protected if its `auto_delete` property is set to `false`.
 		 * Post primary_ips/{id}/actions/change_protection
 		 * @param {number} id ID of the Primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Primary_ips_idActionsChange_protectionPost(id: number, requestBody: Primary_ips_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1247,6 +1327,7 @@ export namespace MyNS {
 		 * | `server_is_load_balancer_target`  | The server ipv4 address is a loadbalancer target              |
 		 * Post primary_ips/{id}/actions/unassign
 		 * @param {number} id ID of the Primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Primary_ips_idActionsUnassignPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1269,6 +1350,7 @@ export namespace MyNS {
 		 * Gets a specific Server type object.
 		 * Get server_types/{id}
 		 * @param {number} id ID of Server Type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Server_types_idGetReturn} The `server_type` key in the reply contains a Server type object with this structure
 		 */
 		Server_types_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Server_types_idGetReturn> {
@@ -1318,6 +1400,7 @@ export namespace MyNS {
 		 * Deletes a Server. This immediately removes the Server from your account, and it is no longer accessible.
 		 * Delete servers/{id}
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Servers_idDeleteReturn} The `action` key in the reply contains an Action object with this structure
 		 */
 		Servers_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Servers_idDeleteReturn> {
@@ -1329,6 +1412,7 @@ export namespace MyNS {
 		 * Returns a specific Server object. The Server must exist inside the Project
 		 * Get servers/{id}
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Servers_idGetReturn} The `server` key in the reply contains a Server object with this structure
 		 */
 		Servers_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Servers_idGetReturn> {
@@ -1342,6 +1426,7 @@ export namespace MyNS {
 		 * Also note that when updating labels, the Server’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
 		 * Put servers/{id}
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Servers_idPutReturn} The `server` key in the reply contains the updated Server
 		 */
 		Servers_idPut(id: number, requestBody: Servers_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Servers_idPutReturn> {
@@ -1353,6 +1438,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Server. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
 		 * Get servers/{id}/actions
 		 * @param {number} id ID of the Resource
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Servers_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -1371,6 +1457,7 @@ export namespace MyNS {
 		 * | `server_not_stopped`          | The action requires a stopped server                                 |
 		 * Post servers/{id}/actions/add_to_placement_group
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsAdd_to_placement_groupPost(id: number, requestBody: Servers_idActionsAdd_to_placement_groupPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1383,6 +1470,7 @@ export namespace MyNS {
 		 * Servers with attached ISOs have a modified boot order: They will try to boot from the ISO first before falling back to hard disk.
 		 * Post servers/{id}/actions/attach_iso
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsAttach_isoPost(id: number, requestBody: Servers_idActionsAttach_isoPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1403,6 +1491,7 @@ export namespace MyNS {
 		 * | `networks_overlap`               | The network IP range overlaps with one of the server networks         |
 		 * Post servers/{id}/actions/attach_to_network
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsAttach_to_networkPost(id: number, requestBody: Servers_idActionsAttach_to_networkPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1414,6 +1503,7 @@ export namespace MyNS {
 		 * Changes the alias IPs of an already attached Network. Note that the existing aliases for the specified Network will be replaced with these provided in the request body. So if you want to add an alias IP, you have to provide the existing ones from the Network plus the new alias IP in the request body.
 		 * Post servers/{id}/actions/change_alias_ips
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsChange_alias_ipsPost(id: number, requestBody: Servers_idActionsChange_alias_ipsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1426,6 +1516,7 @@ export namespace MyNS {
 		 * Floating IPs assigned to the Server are not affected by this.
 		 * Post servers/{id}/actions/change_dns_ptr
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Servers_idActionsChange_dns_ptrPostPostBody} requestBody Select the IP address for which to change the DNS entry by passing `ip`. It can be either IPv4 or IPv6. The target hostname is set by passing `dns_ptr`.
 		 * @return {void} 
 		 */
@@ -1438,6 +1529,7 @@ export namespace MyNS {
 		 * Changes the protection configuration of the Server.
 		 * Post servers/{id}/actions/change_protection
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsChange_protectionPost(id: number, requestBody: Servers_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1458,6 +1550,7 @@ export namespace MyNS {
 		 * | `server_not_stopped`          | The action requires a stopped server                                 |
 		 * Post servers/{id}/actions/change_type
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsChange_typePost(id: number, requestBody: Servers_idActionsChange_typePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1471,6 +1564,7 @@ export namespace MyNS {
 		 * You can either create a `backup` Image that is bound to the Server and therefore will be deleted when the Server is deleted, or you can create an `snapshot` Image which is completely independent of the Server it was created from and will survive Server deletion. Backup Images are only available when the backup option is enabled for the Server. Snapshot Images are billed on a per GB basis.
 		 * Post servers/{id}/actions/create_image
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsCreate_imagePost(id: number, requestBody: Servers_idActionsCreate_imagePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1482,6 +1576,7 @@ export namespace MyNS {
 		 * Detaches a Server from a network. The interface for this network will vanish.
 		 * Post servers/{id}/actions/detach_from_network
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsDetach_from_networkPost(id: number, requestBody: Servers_idActionsDetach_from_networkPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1493,6 +1588,7 @@ export namespace MyNS {
 		 * Detaches an ISO from a Server. In case no ISO Image is attached to the Server, the status of the returned Action is immediately set to `success`
 		 * Post servers/{id}/actions/detach_iso
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsDetach_isoPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1505,6 +1601,7 @@ export namespace MyNS {
 		 * Caution: This immediately removes all existing backups for the Server!
 		 * Post servers/{id}/actions/disable_backup
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsDisable_backupPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1518,6 +1615,7 @@ export namespace MyNS {
 		 * Disabling rescue mode will not reboot your Server — you will have to do this yourself.
 		 * Post servers/{id}/actions/disable_rescue
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsDisable_rescuePost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1530,6 +1628,7 @@ export namespace MyNS {
 		 * Backups are automatically created daily.
 		 * Post servers/{id}/actions/enable_backup
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsEnable_backupPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1544,6 +1643,7 @@ export namespace MyNS {
 		 * Enabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-actions-soft-reboot-a-server) your Server — you will have to do this yourself.
 		 * Post servers/{id}/actions/enable_rescue
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsEnable_rescuePost(id: number, requestBody: Servers_idActionsEnable_rescuePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1555,6 +1655,7 @@ export namespace MyNS {
 		 * Cuts power to the Server. This forcefully stops it without giving the Server operating system time to gracefully stop. May lead to data loss, equivalent to pulling the power cord. Power off should only be used when shutdown does not work.
 		 * Post servers/{id}/actions/poweroff
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsPoweroffPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1566,6 +1667,7 @@ export namespace MyNS {
 		 * Starts a Server by turning its power on.
 		 * Post servers/{id}/actions/poweron
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsPoweronPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1577,6 +1679,7 @@ export namespace MyNS {
 		 * Reboots a Server gracefully by sending an ACPI request. The Server operating system must support ACPI and react to the request, otherwise the Server will not reboot.
 		 * Post servers/{id}/actions/reboot
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsRebootPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1590,6 +1693,7 @@ export namespace MyNS {
 		 * Your Server will automatically be powered off before the rebuild command executes.
 		 * Post servers/{id}/actions/rebuild
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Servers_idActionsRebuildPostPostBody} requestBody To select which Image to rebuild from you can either pass an ID or a name as the `image` argument. Passing a name only works for `system` Images since the other Image types do not have a name set.
 		 * @return {void} 
 		 */
@@ -1602,6 +1706,7 @@ export namespace MyNS {
 		 * Removes a Server from a Placement Group.
 		 * Post servers/{id}/actions/remove_from_placement_group
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsRemove_from_placement_groupPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1613,6 +1718,7 @@ export namespace MyNS {
 		 * Requests credentials for remote access via VNC over websocket to keyboard, monitor, and mouse for a Server. The provided URL is valid for 1 minute, after this period a new url needs to be created to connect to the Server. How long the connection is open after the initial connect is not subject to this timeout.
 		 * Post servers/{id}/actions/request_console
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsRequest_consolePost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1624,6 +1730,7 @@ export namespace MyNS {
 		 * Cuts power to a Server and starts it again. This forcefully stops it without giving the Server operating system time to gracefully stop. This may lead to data loss, it’s equivalent to pulling the power cord and plugging it in again. Reset should only be used when reboot does not work.
 		 * Post servers/{id}/actions/reset
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsResetPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1637,6 +1744,7 @@ export namespace MyNS {
 		 * If this does not succeed you can use the rescue system to netboot the Server and manually change your Server password by hand.
 		 * Post servers/{id}/actions/reset_password
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsReset_passwordPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1648,6 +1756,7 @@ export namespace MyNS {
 		 * Shuts down a Server gracefully by sending an ACPI shutdown request. The Server operating system must support ACPI and react to the request, otherwise the Server will not shut down.
 		 * Post servers/{id}/actions/shutdown
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Servers_idActionsShutdownPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1659,7 +1768,9 @@ export namespace MyNS {
 		 * Returns a specific Action object for a Server.
 		 * Get servers/{id}/actions/{action_id}
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Servers_idActions_action_idGetReturn} The `action` key in the reply has this structure
 		 */
 		Servers_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Servers_idActions_action_idGetReturn> {
@@ -1687,6 +1798,7 @@ export namespace MyNS {
 		 * We limit the number of samples returned to a maximum of 500 and will adjust the step parameter accordingly.
 		 * Get servers/{id}/metrics
 		 * @param {number} id ID of the Server
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Servers_idMetricsGetByTypeAndStartAndEndAndStepType} type Type of metrics to get
 		 * @param {string} start Start of period to get Metrics for (in ISO-8601 format)
 		 * @param {string} end End of period to get Metrics for (in ISO-8601 format)
@@ -1737,6 +1849,7 @@ export namespace MyNS {
 		 * Returns a specific SSH key object.
 		 * Get ssh_keys/{id}
 		 * @param {number} id ID of the SSH key
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Ssh_keys_idGetReturn} The `ssh_key` key in the reply contains an SSH key object with this structure
 		 */
 		Ssh_keys_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Ssh_keys_idGetReturn> {
@@ -1802,6 +1915,7 @@ export namespace MyNS {
 		 * Gets a specific Volume object.
 		 * Get volumes/{id}
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Volumes_idGetReturn} The `volume` key contains the volume
 		 */
 		Volumes_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Volumes_idGetReturn> {
@@ -1825,6 +1939,7 @@ export namespace MyNS {
 		 * Returns all Action objects for a Volume. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
 		 * Get volumes/{id}/actions
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ActionsGetByIdAndSortAndStatusSort} sort Can be used multiple times.
 		 * @param {ActionsGetByIdAndSortAndStatusStatus} status Can be used multiple times, the response will contain only Actions with specified statuses
 		 * @return {Volumes_idActionsGetBySortAndStatusReturn} The `actions` key contains a list of Actions
@@ -1838,6 +1953,7 @@ export namespace MyNS {
 		 * Attaches a Volume to a Server. Works only if the Server is in the same Location as the Volume.
 		 * Post volumes/{id}/actions/attach
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Volumes_idActionsAttachPost(id: number, requestBody: Volumes_idActionsAttachPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1849,6 +1965,7 @@ export namespace MyNS {
 		 * Changes the protection configuration of a Volume.
 		 * Post volumes/{id}/actions/change_protection
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Volumes_idActionsChange_protectionPost(id: number, requestBody: Volumes_idActionsChange_protectionPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1860,6 +1977,7 @@ export namespace MyNS {
 		 * Detaches a Volume from the Server it’s attached to. You may attach it to a Server again at a later time.
 		 * Post volumes/{id}/actions/detach
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Volumes_idActionsDetachPost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1871,6 +1989,7 @@ export namespace MyNS {
 		 * Changes the size of a Volume. Note that downsizing a Volume is not possible.
 		 * Post volumes/{id}/actions/resize
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Volumes_idActionsResizePost(id: number, requestBody: Volumes_idActionsResizePostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1882,7 +2001,9 @@ export namespace MyNS {
 		 * Returns a specific Action for a Volume.
 		 * Get volumes/{id}/actions/{action_id}
 		 * @param {number} id ID of the Volume
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} action_id ID of the Action
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Volumes_idActions_action_idGetReturn} The `action` key contains the Volume Action
 		 */
 		Volumes_idActions_action_idGet(id: number, action_id: number, headersHandler?: () => HttpHeaders): Observable<Volumes_idActions_action_idGetReturn> {
@@ -1931,12 +2052,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -1975,12 +2098,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -2049,6 +2174,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2063,6 +2189,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2100,36 +2227,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -2138,36 +2271,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -2219,12 +2358,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -2263,12 +2404,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -2337,6 +2480,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2351,6 +2495,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2415,6 +2560,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2477,6 +2623,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2574,6 +2721,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2588,6 +2736,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2623,36 +2772,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -2661,36 +2816,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -2802,6 +2963,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2864,6 +3026,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -2957,6 +3120,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -2971,6 +3135,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3054,6 +3219,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3116,6 +3282,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3209,6 +3376,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3223,6 +3391,7 @@ export namespace MyNS {
 		/**
 		 * ID of resource referenced
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3277,12 +3446,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -3321,12 +3492,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -3395,6 +3568,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3409,6 +3583,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3444,36 +3619,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -3482,36 +3663,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -3563,12 +3750,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -3607,12 +3796,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -3681,6 +3872,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3695,6 +3887,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3720,6 +3913,7 @@ export namespace MyNS {
 		/**
 		 * The Datacenter which is recommended to be used to create new Servers.
 		 * Required
+		 * Type: double
 		 */
 		recommendation: number;
 	}
@@ -3728,6 +3922,7 @@ export namespace MyNS {
 		/**
 		 * The Datacenter which is recommended to be used to create new Servers.
 		 * Required
+		 * Type: double
 		 */
 		recommendation: FormControl<number | null | undefined>,
 	}
@@ -3749,6 +3944,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3778,6 +3974,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3819,18 +4016,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -3869,18 +4069,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -3962,6 +4165,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3991,6 +4195,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -4032,18 +4237,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -4082,18 +4290,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -4179,6 +4390,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -4205,6 +4417,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -4276,6 +4489,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4284,6 +4498,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4324,6 +4539,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4332,6 +4548,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4428,36 +4645,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -4466,36 +4689,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -4604,6 +4833,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4612,6 +4842,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4711,6 +4942,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -4737,6 +4969,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -4808,6 +5041,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4816,6 +5050,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4854,6 +5089,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -4862,6 +5098,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -4985,6 +5222,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -5011,6 +5249,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5082,6 +5321,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -5090,6 +5330,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -5128,6 +5369,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -5136,6 +5378,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -5245,12 +5488,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -5289,12 +5534,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -5363,6 +5610,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -5377,6 +5625,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5412,36 +5661,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -5450,36 +5705,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -5562,6 +5823,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -5570,6 +5832,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -5647,6 +5910,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -5655,6 +5919,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -5780,12 +6045,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -5824,12 +6091,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -5898,6 +6167,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -5912,6 +6182,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5980,6 +6251,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6010,6 +6282,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
@@ -6042,6 +6315,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6066,6 +6340,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
@@ -6149,18 +6424,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -6199,18 +6477,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -6283,36 +6564,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -6321,36 +6608,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -6376,7 +6669,10 @@ export namespace MyNS {
 		labels?: string | null;
 		name?: string | null;
 
-		/** Server to assign the Floating IP to */
+		/**
+		 * Server to assign the Floating IP to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		server?: number | null;
 
 		/**
@@ -6395,7 +6691,10 @@ export namespace MyNS {
 		labels: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
-		/** Server to assign the Floating IP to */
+		/**
+		 * Server to assign the Floating IP to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		server: FormControl<number | null | undefined>,
 
 		/**
@@ -6464,6 +6763,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6494,6 +6794,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
@@ -6526,6 +6827,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6550,6 +6852,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
@@ -6633,18 +6936,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -6683,18 +6989,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -6826,6 +7135,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6856,6 +7166,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
@@ -6888,6 +7199,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6912,6 +7224,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
@@ -6995,18 +7308,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -7045,18 +7361,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -7145,12 +7464,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -7189,12 +7510,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -7263,6 +7586,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7277,6 +7601,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7299,6 +7624,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP shall be assigned to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 	}
@@ -7307,6 +7633,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Floating IP shall be assigned to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 	}
@@ -7406,12 +7733,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -7450,12 +7779,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -7524,6 +7855,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7538,6 +7870,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7578,6 +7911,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -7614,18 +7948,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -7679,6 +8016,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -7709,18 +8047,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -7789,6 +8130,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -7803,6 +8145,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7867,36 +8210,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -7905,36 +8254,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -7966,6 +8321,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -8002,18 +8358,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -8067,6 +8426,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -8097,18 +8457,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -8177,6 +8540,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8191,6 +8555,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8280,6 +8645,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -8316,18 +8682,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -8381,6 +8750,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -8411,18 +8781,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -8491,6 +8864,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8505,6 +8879,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8582,12 +8957,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -8626,12 +9003,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -8700,6 +9079,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8714,6 +9094,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8749,36 +9130,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -8787,36 +9174,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -8885,12 +9278,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -8929,12 +9324,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -9003,6 +9400,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9017,6 +9415,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9071,6 +9470,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9109,6 +9509,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9158,36 +9559,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -9196,36 +9603,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -9277,6 +9690,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -9315,6 +9729,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9372,30 +9787,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: number;
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: number;
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: number;
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: number;
 
@@ -9428,30 +9848,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: FormControl<number | null | undefined>,
 
@@ -9610,30 +10035,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: number;
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: number;
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: number;
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: number;
 
@@ -9666,30 +10096,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: FormControl<number | null | undefined>,
 
@@ -9851,18 +10286,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: number;
 
@@ -9887,6 +10325,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: number;
 
@@ -9931,18 +10370,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -9961,6 +10403,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 	}
@@ -10019,30 +10462,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: number;
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: number;
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: number;
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: number;
 
@@ -10075,30 +10523,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: FormControl<number | null | undefined>,
 
@@ -10252,18 +10705,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -10302,18 +10758,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -10345,10 +10804,14 @@ export namespace MyNS {
 
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersPrivate_net {
 		ip?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateLoad_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersPrivate_netFormGroup() {
@@ -10470,6 +10933,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -10485,6 +10949,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -10505,12 +10970,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -10544,12 +11011,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -10562,12 +11031,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -10576,12 +11047,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -10594,12 +11067,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -10674,7 +11149,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -10688,7 +11166,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersServicesHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -10758,10 +11239,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -10826,6 +11311,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -10834,6 +11320,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -10875,10 +11362,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -10895,6 +11386,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -10903,6 +11395,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -10933,36 +11426,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -10971,36 +11470,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -11042,7 +11547,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** ID of the network the Load Balancer should be attached to on creation */
+		/**
+		 * ID of the network the Load Balancer should be attached to on creation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network?: number | null;
 
 		/** Name of network zone */
@@ -11074,7 +11582,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** ID of the network the Load Balancer should be attached to on creation */
+		/**
+		 * ID of the network the Load Balancer should be attached to on creation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		network: FormControl<number | null | undefined>,
 
 		/** Name of network zone */
@@ -11140,6 +11651,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -11155,6 +11667,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -11175,12 +11688,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -11214,12 +11729,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -11232,12 +11749,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -11246,12 +11765,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -11264,12 +11785,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -11342,7 +11865,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -11356,7 +11882,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancersPostPostBodyServicesHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -11424,10 +11953,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancersPostPostBodyTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancersPostPostBodyTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -11490,6 +12023,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -11498,6 +12032,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -11539,10 +12074,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancersPostPostBodyTargetsTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancersPostPostBodyTargetsTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -11559,6 +12098,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -11567,6 +12107,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -11607,18 +12148,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: number;
 
@@ -11643,6 +12187,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: number;
 
@@ -11687,18 +12232,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -11717,6 +12265,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 	}
@@ -11773,30 +12322,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: number;
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: number;
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: number;
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: number;
 
@@ -11829,30 +12383,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: FormControl<number | null | undefined>,
 
@@ -12006,18 +12565,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -12056,18 +12618,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -12099,10 +12664,14 @@ export namespace MyNS {
 
 	export interface Load_balancers_idGetReturnLoad_balancerPrivate_net {
 		ip?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface Load_balancers_idGetReturnLoad_balancerPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateLoad_balancers_idGetReturnLoad_balancerPrivate_netFormGroup() {
@@ -12224,6 +12793,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -12239,6 +12809,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -12259,12 +12830,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -12298,12 +12871,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -12316,12 +12891,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -12330,12 +12907,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -12348,12 +12927,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -12426,7 +13007,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -12440,7 +13024,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancers_idGetReturnLoad_balancerServicesHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -12508,10 +13095,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancers_idGetReturnLoad_balancerTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancers_idGetReturnLoad_balancerTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -12574,6 +13165,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -12582,6 +13174,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -12623,10 +13216,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancers_idGetReturnLoad_balancerTargetsTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancers_idGetReturnLoad_balancerTargetsTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -12643,6 +13240,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -12651,6 +13249,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -12715,18 +13314,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: number;
 
@@ -12751,6 +13353,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: number;
 
@@ -12795,18 +13398,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -12825,6 +13431,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 	}
@@ -12881,30 +13488,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: number;
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: number;
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: number;
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: number;
 
@@ -12937,30 +13549,35 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of SSL Certificates that can be assigned to a single Load Balancer
 		 * Required
+		 * Type: double
 		 */
 		max_assigned_certificates: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of maximum simultaneous open connections
 		 * Required
+		 * Type: double
 		 */
 		max_connections: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of services a Load Balancer of this type can have
 		 * Required
+		 * Type: double
 		 */
 		max_services: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of targets a single Load Balancer can have
 		 * Required
+		 * Type: double
 		 */
 		max_targets: FormControl<number | null | undefined>,
 
@@ -13114,18 +13731,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -13164,18 +13784,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -13207,10 +13830,14 @@ export namespace MyNS {
 
 	export interface Load_balancers_idPutReturnLoad_balancerPrivate_net {
 		ip?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface Load_balancers_idPutReturnLoad_balancerPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateLoad_balancers_idPutReturnLoad_balancerPrivate_netFormGroup() {
@@ -13332,6 +13959,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -13347,6 +13975,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -13367,12 +13996,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -13406,12 +14037,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -13424,12 +14057,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -13438,12 +14073,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -13456,12 +14093,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -13534,7 +14173,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -13548,7 +14190,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancers_idPutReturnLoad_balancerServicesHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -13616,10 +14261,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancers_idPutReturnLoad_balancerTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancers_idPutReturnLoad_balancerTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -13682,6 +14331,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -13690,6 +14340,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -13731,10 +14382,14 @@ export namespace MyNS {
 	}
 
 	export interface Load_balancers_idPutReturnLoad_balancerTargetsTargetsHealth_status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port?: number | null;
 		status?: Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null;
 	}
 	export interface Load_balancers_idPutReturnLoad_balancerTargetsTargetsHealth_statusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		listen_port: FormControl<number | null | undefined>,
 		status: FormControl<Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus | null | undefined>,
 	}
@@ -13751,6 +14406,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -13759,6 +14415,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -13806,12 +14463,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -13850,12 +14509,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -13924,6 +14585,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -13938,6 +14600,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -13973,36 +14636,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -14011,36 +14680,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -14061,6 +14736,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -14076,6 +14752,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -14096,12 +14773,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -14135,12 +14814,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -14153,12 +14834,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -14167,12 +14850,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -14185,12 +14870,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -14263,7 +14950,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -14277,7 +14967,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancers_idActionsAdd_servicePostPostBodyHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -14389,6 +15082,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 	}
@@ -14397,6 +15091,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -14415,6 +15110,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to attach the Load Balancer to
 		 * Required
+		 * Type: double
 		 */
 		network: number;
 	}
@@ -14426,6 +15122,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to attach the Load Balancer to
 		 * Required
+		 * Type: double
 		 */
 		network: FormControl<number | null | undefined>,
 	}
@@ -14541,6 +15238,7 @@ export namespace MyNS {
 		/**
 		 * The listen port of the service you want to delete
 		 * Required
+		 * Type: double
 		 */
 		listen_port: number;
 	}
@@ -14549,6 +15247,7 @@ export namespace MyNS {
 		/**
 		 * The listen port of the service you want to delete
 		 * Required
+		 * Type: double
 		 */
 		listen_port: FormControl<number | null | undefined>,
 	}
@@ -14564,6 +15263,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to detach the Load Balancer from
 		 * Required
+		 * Type: double
 		 */
 		network: number;
 	}
@@ -14572,6 +15272,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to detach the Load Balancer from
 		 * Required
+		 * Type: double
 		 */
 		network: FormControl<number | null | undefined>,
 	}
@@ -14665,6 +15366,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 	}
@@ -14673,6 +15375,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -14688,6 +15391,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: number;
 
@@ -14703,6 +15407,7 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: number;
 
@@ -14723,12 +15428,14 @@ export namespace MyNS {
 		/**
 		 * Port the Load Balancer will balance to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		destination_port: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the Load Balancer listens on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_port: FormControl<number | null | undefined>,
 
@@ -14762,12 +15469,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -14780,12 +15489,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: number;
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -14794,12 +15505,14 @@ export namespace MyNS {
 		/**
 		 * Time interval in seconds health checks are performed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 
 		/**
 		 * Port the health check will be performed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -14812,12 +15525,14 @@ export namespace MyNS {
 		/**
 		 * Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retries: FormControl<number | null | undefined>,
 
 		/**
 		 * Time in seconds after an attempt is considered a timeout
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -14890,7 +15605,10 @@ export namespace MyNS {
 		/** IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is "http" */
 		certificates?: Array<number>;
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime?: number | null;
 
 		/** Name of the cookie used for sticky sessions */
@@ -14904,7 +15622,10 @@ export namespace MyNS {
 	}
 	export interface Load_balancers_idActionsUpdate_servicePostPostBodyHttpFormProperties {
 
-		/** Lifetime of the cookie used for sticky sessions */
+		/**
+		 * Lifetime of the cookie used for sticky sessions
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cookie_lifetime: FormControl<number | null | undefined>,
 
 		/** Name of the cookie used for sticky sessions */
@@ -14962,12 +15683,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -15006,12 +15729,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -15080,6 +15805,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -15094,6 +15820,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -15143,6 +15870,7 @@ export namespace MyNS {
 		/**
 		 * Resolution of results in seconds.
 		 * Required
+		 * Type: double
 		 */
 		step: number;
 
@@ -15169,6 +15897,7 @@ export namespace MyNS {
 		/**
 		 * Resolution of results in seconds.
 		 * Required
+		 * Type: double
 		 */
 		step: FormControl<number | null | undefined>,
 
@@ -15240,18 +15969,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -15290,18 +16022,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -15367,18 +16102,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -15417,18 +16155,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -15490,36 +16231,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -15528,36 +16275,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -15584,6 +16337,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -15643,6 +16397,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -15907,7 +16662,10 @@ export namespace MyNS {
 		 */
 		type: NetworksGetByNameAndLabel_selectorReturnNetworksSubnetsType;
 
-		/** ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch. */
+		/**
+		 * ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vswitch_id?: number | null;
 	}
 	export interface NetworksPostPostBodySubnetsFormProperties {
@@ -15927,7 +16685,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<NetworksGetByNameAndLabel_selectorReturnNetworksSubnetsType | null | undefined>,
 
-		/** ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch. */
+		/**
+		 * ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vswitch_id: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworksPostPostBodySubnetsFormGroup() {
@@ -15962,6 +16723,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -16021,6 +16783,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -16223,6 +16986,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -16282,6 +17046,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Network
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -16466,12 +17231,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -16510,12 +17277,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -16584,6 +17353,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -16598,6 +17368,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -16633,36 +17404,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -16671,36 +17448,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -16769,7 +17552,10 @@ export namespace MyNS {
 		 */
 		type: NetworksGetByNameAndLabel_selectorReturnNetworksSubnetsType;
 
-		/** ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch. */
+		/**
+		 * ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vswitch_id?: number | null;
 	}
 	export interface Networks_idActionsAdd_subnetPostPostBodyFormProperties {
@@ -16789,7 +17575,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<NetworksGetByNameAndLabel_selectorReturnNetworksSubnetsType | null | undefined>,
 
-		/** ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch. */
+		/**
+		 * ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vswitch_id: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworks_idActionsAdd_subnetPostPostBodyFormGroup() {
@@ -16937,12 +17726,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -16981,12 +17772,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -17055,6 +17848,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17069,6 +17863,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -17120,36 +17915,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -17158,36 +17959,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -17214,6 +18021,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17252,6 +18060,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -17351,6 +18160,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17389,6 +18199,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -17469,6 +18280,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -17507,6 +18319,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -17839,6 +18652,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type the price is for
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
@@ -17859,6 +18673,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Load Balancer type the price is for
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -18147,6 +18962,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server type the price is for
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
@@ -18167,6 +18983,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server type the price is for
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -18421,36 +19238,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -18459,36 +19282,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -18509,6 +19338,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: number;
 
@@ -18551,6 +19381,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -18589,6 +19420,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: FormControl<number | null | undefined>,
 
@@ -18619,6 +19451,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -18673,6 +19506,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -18702,6 +19536,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -18743,18 +19578,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -18793,18 +19631,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -18923,7 +19764,10 @@ export namespace MyNS {
 
 	export interface Primary_ipsPostPostBody {
 
-		/** ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned. */
+		/**
+		 * ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assignee_id?: number | null;
 
 		/**
@@ -18952,7 +19796,10 @@ export namespace MyNS {
 	}
 	export interface Primary_ipsPostPostBodyFormProperties {
 
-		/** ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned. */
+		/**
+		 * ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		assignee_id: FormControl<number | null | undefined>,
 
 		/**
@@ -19010,6 +19857,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: number;
 
@@ -19052,6 +19900,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -19090,6 +19939,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: FormControl<number | null | undefined>,
 
@@ -19120,6 +19970,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -19174,6 +20025,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -19203,6 +20055,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -19244,18 +20097,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -19294,18 +20150,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -19471,6 +20330,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: number;
 
@@ -19513,6 +20373,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -19551,6 +20412,7 @@ export namespace MyNS {
 		/**
 		 * ID of the resource the Primary IP is assigned to, null if it is not assigned at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: FormControl<number | null | undefined>,
 
@@ -19581,6 +20443,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -19635,6 +20498,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -19664,6 +20528,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -19705,18 +20570,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -19755,18 +20623,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -19888,6 +20759,7 @@ export namespace MyNS {
 		/**
 		 * ID of a resource of type `assignee_type`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: number;
 
@@ -19902,6 +20774,7 @@ export namespace MyNS {
 		/**
 		 * ID of a resource of type `assignee_type`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		assignee_id: FormControl<number | null | undefined>,
 
@@ -19996,6 +20869,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: number;
 
@@ -20020,18 +20894,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: number;
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: number;
 
@@ -20064,6 +20941,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: FormControl<number | null | undefined>,
 
@@ -20088,18 +20966,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: FormControl<number | null | undefined>,
 
@@ -20266,6 +21147,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: number;
 
@@ -20290,18 +21172,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: number;
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: number;
 
@@ -20334,6 +21219,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: FormControl<number | null | undefined>,
 
@@ -20358,18 +21244,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: FormControl<number | null | undefined>,
 
@@ -20542,36 +21431,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -20580,36 +21475,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -20648,6 +21549,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -20657,12 +21559,14 @@ export namespace MyNS {
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: number;
 
@@ -20694,6 +21598,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: number;
 		placement_group?: ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPlacement_group;
@@ -20701,6 +21606,7 @@ export namespace MyNS {
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: number;
 
@@ -20760,18 +21666,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -20796,12 +21705,14 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: FormControl<number | null | undefined>,
 
@@ -20846,6 +21757,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -20875,6 +21787,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -20916,18 +21829,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -20966,18 +21882,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -21040,6 +21959,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -21076,18 +21996,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -21141,6 +22064,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -21171,18 +22095,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -21251,6 +22178,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -21265,6 +22193,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -21328,6 +22257,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -21366,6 +22296,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -21404,6 +22335,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -21442,6 +22374,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -21478,11 +22411,15 @@ export namespace MyNS {
 		alias_ips?: Array<string>;
 		ip?: string | null;
 		mac_address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
 		mac_address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPrivate_netFormGroup() {
@@ -21563,7 +22500,10 @@ export namespace MyNS {
 
 	export interface ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPublic_netFirewalls {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Status of the Firewall on the Server */
@@ -21571,7 +22511,10 @@ export namespace MyNS {
 	}
 	export interface ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPublic_netFirewallsFormProperties {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Status of the Firewall on the Server */
@@ -21601,7 +22544,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: string;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -21624,7 +22570,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: FormControl<string | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -21657,7 +22606,10 @@ export namespace MyNS {
 		 */
 		ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPublic_netIpv6Dns_ptr: Array<ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPublic_netIpv6Dns_ptr>;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -21674,7 +22626,10 @@ export namespace MyNS {
 		 */
 		blocked: FormControl<boolean | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -21733,6 +22688,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: number;
 
@@ -21757,18 +22713,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: number;
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: number;
 
@@ -21795,6 +22754,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: FormControl<number | null | undefined>,
 
@@ -21819,18 +22779,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: FormControl<number | null | undefined>,
 
@@ -22002,7 +22965,10 @@ export namespace MyNS {
 		/** Network IDs which should be attached to the Server private network interface at the creation time */
 		networks?: Array<number>;
 
-		/** ID of the Placement Group the server should be in */
+		/**
+		 * ID of the Placement Group the server should be in
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		placement_group?: number | null;
 
 		/** Public Network options */
@@ -22052,7 +23018,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** ID of the Placement Group the server should be in */
+		/**
+		 * ID of the Placement Group the server should be in
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		placement_group: FormControl<number | null | undefined>,
 
 		/**
@@ -22085,12 +23054,18 @@ export namespace MyNS {
 
 	export interface ServersPostPostBodyFirewalls {
 
-		/** ID of the Firewall */
+		/**
+		 * ID of the Firewall
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firewall?: number | null;
 	}
 	export interface ServersPostPostBodyFirewallsFormProperties {
 
-		/** ID of the Firewall */
+		/**
+		 * ID of the Firewall
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firewall: FormControl<number | null | undefined>,
 	}
 	export function CreateServersPostPostBodyFirewallsFormGroup() {
@@ -22108,10 +23083,16 @@ export namespace MyNS {
 		/** Attach an IPv6 on the public NIC. If false, no IPv6 address will be attached. Defaults to true. */
 		enable_ipv6?: boolean | null;
 
-		/** ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created. */
+		/**
+		 * ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipv4?: number | null;
 
-		/** ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created. */
+		/**
+		 * ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipv6?: number | null;
 	}
 	export interface ServersPostPostBodyPublic_netFormProperties {
@@ -22122,10 +23103,16 @@ export namespace MyNS {
 		/** Attach an IPv6 on the public NIC. If false, no IPv6 address will be attached. Defaults to true. */
 		enable_ipv6: FormControl<boolean | null | undefined>,
 
-		/** ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created. */
+		/**
+		 * ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipv4: FormControl<number | null | undefined>,
 
-		/** ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created. */
+		/**
+		 * ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipv6: FormControl<number | null | undefined>,
 	}
 	export function CreateServersPostPostBodyPublic_netFormGroup() {
@@ -22172,12 +23159,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -22216,12 +23205,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -22290,6 +23281,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -22304,6 +23296,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -22355,6 +23348,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -22364,12 +23358,14 @@ export namespace MyNS {
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: number;
 
@@ -22401,6 +23397,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: number;
 		placement_group?: Servers_idGetReturnServerPlacement_group;
@@ -22408,6 +23405,7 @@ export namespace MyNS {
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: number;
 
@@ -22467,18 +23465,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -22503,12 +23504,14 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: FormControl<number | null | undefined>,
 
@@ -22553,6 +23556,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -22582,6 +23586,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -22623,18 +23628,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -22673,18 +23681,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -22747,6 +23758,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -22783,18 +23795,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -22848,6 +23863,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -22878,18 +23894,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -22958,6 +23977,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -22972,6 +23992,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -23035,6 +24056,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -23073,6 +24095,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -23111,6 +24134,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -23149,6 +24173,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -23185,11 +24210,15 @@ export namespace MyNS {
 		alias_ips?: Array<string>;
 		ip?: string | null;
 		mac_address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface Servers_idGetReturnServerPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
 		mac_address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateServers_idGetReturnServerPrivate_netFormGroup() {
@@ -23270,7 +24299,10 @@ export namespace MyNS {
 
 	export interface Servers_idGetReturnServerPublic_netFirewalls {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Status of the Firewall on the Server */
@@ -23278,7 +24310,10 @@ export namespace MyNS {
 	}
 	export interface Servers_idGetReturnServerPublic_netFirewallsFormProperties {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Status of the Firewall on the Server */
@@ -23306,7 +24341,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: string;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -23329,7 +24367,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: FormControl<string | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -23362,7 +24403,10 @@ export namespace MyNS {
 		 */
 		Servers_idGetReturnServerPublic_netIpv6Dns_ptr: Array<Servers_idGetReturnServerPublic_netIpv6Dns_ptr>;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -23379,7 +24423,10 @@ export namespace MyNS {
 		 */
 		blocked: FormControl<boolean | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -23438,6 +24485,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: number;
 
@@ -23462,18 +24510,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: number;
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: number;
 
@@ -23500,6 +24551,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: FormControl<number | null | undefined>,
 
@@ -23524,18 +24576,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: FormControl<number | null | undefined>,
 
@@ -23731,6 +24786,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -23740,12 +24796,14 @@ export namespace MyNS {
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: number;
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: number;
 
@@ -23777,6 +24835,7 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: number;
 		placement_group?: Servers_idPutReturnServerPlacement_group;
@@ -23784,6 +24843,7 @@ export namespace MyNS {
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: number;
 
@@ -23843,18 +24903,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		included_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Inbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		ingoing_traffic: FormControl<number | null | undefined>,
 
@@ -23879,12 +24942,14 @@ export namespace MyNS {
 		/**
 		 * Outbound Traffic for the current billing period in bytes
 		 * Required
+		 * Type: double
 		 */
 		outgoing_traffic: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the primary Disk
 		 * Required
+		 * Type: double
 		 */
 		primary_disk_size: FormControl<number | null | undefined>,
 
@@ -23929,6 +24994,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -23958,6 +25024,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -23999,18 +25066,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -24049,18 +25119,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -24123,6 +25196,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: number;
 
@@ -24159,18 +25233,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: number;
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: number;
 
@@ -24224,6 +25301,7 @@ export namespace MyNS {
 		/**
 		 * ID of Server the Image is bound to. Only set for Images of type `backup`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bound_to: FormControl<number | null | undefined>,
 
@@ -24254,18 +25332,21 @@ export namespace MyNS {
 		/**
 		 * Size of the disk contained in the Image in GB
 		 * Required
+		 * Type: double
 		 */
 		disk_size: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image.
 		 * Required
+		 * Type: double
 		 */
 		image_size: FormControl<number | null | undefined>,
 
@@ -24334,6 +25415,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -24348,6 +25430,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Image was created from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -24411,6 +25494,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -24449,6 +25533,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -24487,6 +25572,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -24525,6 +25611,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -24561,11 +25648,15 @@ export namespace MyNS {
 		alias_ips?: Array<string>;
 		ip?: string | null;
 		mac_address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network?: number | null;
 	}
 	export interface Servers_idPutReturnServerPrivate_netFormProperties {
 		ip: FormControl<string | null | undefined>,
 		mac_address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network: FormControl<number | null | undefined>,
 	}
 	export function CreateServers_idPutReturnServerPrivate_netFormGroup() {
@@ -24646,7 +25737,10 @@ export namespace MyNS {
 
 	export interface Servers_idPutReturnServerPublic_netFirewalls {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Status of the Firewall on the Server */
@@ -24654,7 +25748,10 @@ export namespace MyNS {
 	}
 	export interface Servers_idPutReturnServerPublic_netFirewallsFormProperties {
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Status of the Firewall on the Server */
@@ -24682,7 +25779,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: string;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -24705,7 +25805,10 @@ export namespace MyNS {
 		 */
 		dns_ptr: FormControl<string | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -24738,7 +25841,10 @@ export namespace MyNS {
 		 */
 		Servers_idPutReturnServerPublic_netIpv6Dns_ptr: Array<Servers_idPutReturnServerPublic_netIpv6Dns_ptr>;
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -24755,7 +25861,10 @@ export namespace MyNS {
 		 */
 		blocked: FormControl<boolean | null | undefined>,
 
-		/** ID of the Resource */
+		/**
+		 * ID of the Resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -24814,6 +25923,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: number;
 
@@ -24838,18 +25948,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: number;
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: number;
 
@@ -24876,6 +25989,7 @@ export namespace MyNS {
 		/**
 		 * Number of cpu cores a Server of this type will have
 		 * Required
+		 * Type: double
 		 */
 		cores: FormControl<number | null | undefined>,
 
@@ -24900,18 +26014,21 @@ export namespace MyNS {
 		/**
 		 * Disk size a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the Server type
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Memory a Server of this type will have in GB
 		 * Required
+		 * Type: double
 		 */
 		memory: FormControl<number | null | undefined>,
 
@@ -25086,12 +26203,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -25130,12 +26249,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -25204,6 +26325,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -25218,6 +26340,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -25253,36 +26376,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -25291,36 +26420,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -25341,6 +26476,7 @@ export namespace MyNS {
 		/**
 		 * ID of Placement Group the Server should be added to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		placement_group: number;
 	}
@@ -25349,6 +26485,7 @@ export namespace MyNS {
 		/**
 		 * ID of Placement Group the Server should be added to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		placement_group: FormControl<number | null | undefined>,
 	}
@@ -25393,6 +26530,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to attach the Server to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: number;
 	}
@@ -25404,6 +26542,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to attach the Server to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: FormControl<number | null | undefined>,
 	}
@@ -25426,6 +26565,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing Network already attached to the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: number;
 	}
@@ -25434,6 +26574,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing Network already attached to the Server
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: FormControl<number | null | undefined>,
 	}
@@ -25591,6 +26732,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to detach the Server from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: number;
 	}
@@ -25599,6 +26741,7 @@ export namespace MyNS {
 		/**
 		 * ID of an existing network to detach the Server from
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network: FormControl<number | null | undefined>,
 	}
@@ -25690,12 +26833,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -25734,12 +26879,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -25808,6 +26955,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -25822,6 +26970,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -25871,6 +27020,7 @@ export namespace MyNS {
 		/**
 		 * Resolution of results in seconds.
 		 * Required
+		 * Type: double
 		 */
 		step: number;
 
@@ -25897,6 +27047,7 @@ export namespace MyNS {
 		/**
 		 * Resolution of results in seconds.
 		 * Required
+		 * Type: double
 		 */
 		step: FormControl<number | null | undefined>,
 
@@ -25966,36 +27117,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -26004,36 +27161,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -26066,6 +27229,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26104,6 +27268,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26210,6 +27375,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26248,6 +27414,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26335,6 +27502,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26373,6 +27541,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26438,36 +27607,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -26476,36 +27651,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -26538,6 +27719,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26574,12 +27756,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: number;
 
@@ -26606,6 +27790,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26630,12 +27815,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -26683,18 +27870,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -26733,18 +27923,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -26819,12 +28012,16 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) */
+		/**
+		 * Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		server?: number | null;
 
 		/**
 		 * Size of the Volume in GB
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 	}
@@ -26848,12 +28045,16 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) */
+		/**
+		 * Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		server: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the Volume in GB
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 	}
@@ -26900,6 +28101,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -26936,12 +28138,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: number;
 
@@ -26968,6 +28172,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -26992,12 +28197,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -27045,18 +28252,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -27095,18 +28305,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -27228,6 +28441,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -27264,12 +28478,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: number;
 
@@ -27296,6 +28512,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -27320,12 +28537,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume is attached to, null if it is not attached at all
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 
 		/**
 		 * Size in GB of the Volume
 		 * Required
+		 * Type: double
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -27373,18 +28592,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -27423,18 +28645,21 @@ export namespace MyNS {
 		/**
 		 * ID of the Location
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of the city closest to the Location
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -27524,12 +28749,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -27568,12 +28795,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -27642,6 +28871,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -27656,6 +28886,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -27691,36 +28922,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: number;
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: number;
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: number;
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: number;
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: number;
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: number;
 	}
@@ -27729,36 +28966,42 @@ export namespace MyNS {
 		/**
 		 * ID of the last page available. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		last_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the next page. Can be null if the current page is the last one.
 		 * Required
+		 * Type: double
 		 */
 		next_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Current page number
 		 * Required
+		 * Type: double
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum number of items shown per page in the response
 		 * Required
+		 * Type: double
 		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * ID of the previous page. Can be null if the current page is the first one.
 		 * Required
+		 * Type: double
 		 */
 		previous_page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entries that exist in the database for this query. Nullable if unknown.
 		 * Required
+		 * Type: double
 		 */
 		total_entries: FormControl<number | null | undefined>,
 	}
@@ -27782,6 +29025,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume will be attached to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: number;
 	}
@@ -27793,6 +29037,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Server the Volume will be attached to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		server: FormControl<number | null | undefined>,
 	}
@@ -27826,6 +29071,7 @@ export namespace MyNS {
 		/**
 		 * New Volume size in GB (must be greater than current size)
 		 * Required
+		 * Type: double
 		 */
 		size: number;
 	}
@@ -27834,6 +29080,7 @@ export namespace MyNS {
 		/**
 		 * New Volume size in GB (must be greater than current size)
 		 * Required
+		 * Type: double
 		 */
 		size: FormControl<number | null | undefined>,
 	}
@@ -27880,12 +29127,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: number;
 
@@ -27924,12 +29173,14 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * Progress of Action in percent
 		 * Required
+		 * Type: double
 		 */
 		progress: FormControl<number | null | undefined>,
 
@@ -27998,6 +29249,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -28012,6 +29264,7 @@ export namespace MyNS {
 		/**
 		 * ID of the Resource
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 

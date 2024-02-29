@@ -516,7 +516,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -529,7 +532,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -552,6 +558,7 @@ export namespace MyNS {
 		 * List all AccessPolicies under a container.
 		 * Get v1beta/accessPolicies
 		 * @param {number} pageSize Number of AccessPolicy instances to include in the list. Default 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Next page token for the next batch of AccessPolicy instances. Defaults to the first page of results.
 		 * @param {string} parent Required. Resource name for the container to list AccessPolicy instances from. Format: `organizations/{org_id}`
 		 * @return {ListAccessPoliciesResponse} Successful response
@@ -607,6 +614,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name for the access policy to list Access Levels from. Format: `accessPolicies/{policy_id}`
 		 * @param {Accesscontextmanager_operations_getAccessLevelFormat} accessLevelFormat Whether to return `BasicLevels` in the Cloud Common Expression language, as `CustomLevels`, rather than as `BasicLevels`. Defaults to returning `AccessLevels` in the format they were defined.
 		 * @param {number} pageSize Number of Access Levels to include in the list. Default 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Next page token for the next batch of Access Level instances. Defaults to the first page of results.
 		 * @return {ListAccessLevelsResponse} Successful response
 		 */
@@ -629,6 +637,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/servicePerimeters
 		 * @param {string} parent Required. Resource name for the access policy to list Service Perimeters from. Format: `accessPolicies/{policy_id}`
 		 * @param {number} pageSize Number of Service Perimeters to include in the list. Default 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Next page token for the next batch of Service Perimeter instances. Defaults to the first page of results.
 		 * @return {ListServicePerimetersResponse} Successful response
 		 */

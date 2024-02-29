@@ -829,6 +829,7 @@ export namespace MyNS {
 		 * Get the evaluation associated with the Id.
 		 * Get evaluations/{evaluationId}
 		 * @param {string} evaluationId Id of the evaluation.
+		 *     Max length: 256
 		 * @return {Evaluation} Success
 		 */
 		Evaluations_Get(evaluationId: string): Observable<Evaluation> {
@@ -840,6 +841,7 @@ export namespace MyNS {
 		 * Delete the evaluation associated with the Id.
 		 * Delete evaluations/{evaluationId}
 		 * @param {string} evaluationId Id of the evaluation to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Evaluations_Delete(evaluationId: string): Observable<HttpResponse<string>> {
@@ -851,6 +853,7 @@ export namespace MyNS {
 		 * Report that the specified event was actually displayed to the user and a reward should be expected for it
 		 * Post events/{eventId}/activate
 		 * @param {string} eventId The event ID this activation applies to.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		Events_Activate(eventId: string): Observable<HttpResponse<string>> {
@@ -862,6 +865,7 @@ export namespace MyNS {
 		 * Report reward that resulted from using the action specified in rewardActionId for the specified event.
 		 * Post events/{eventId}/reward
 		 * @param {string} eventId The event id this reward applies to.
+		 *     Max length: 256
 		 * @param {RewardRequest} requestBody The reward should be a floating point number, typically between 0 and 1.
 		 * @return {void} 
 		 */

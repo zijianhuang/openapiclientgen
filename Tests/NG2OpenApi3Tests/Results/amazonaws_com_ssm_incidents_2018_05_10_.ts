@@ -2190,6 +2190,7 @@ export namespace MyNS {
 		 * Deletes all Regions in your replication set. Deleting the replication set deletes all Incident Manager data.
 		 * Post deleteReplicationSet#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the replication set you're deleting.
+		 *     Min length: 0    Max length: 1000
 		 * @return {void} 
 		 */
 		DeleteReplicationSet(arn: string): Observable<HttpResponse<string>> {
@@ -2227,6 +2228,7 @@ export namespace MyNS {
 		 * Returns the details for the specified incident record.
 		 * Get getIncidentRecord#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the incident record.
+		 *     Min length: 0    Max length: 1000
 		 * @return {GetIncidentRecordOutput} Success
 		 */
 		GetIncidentRecord(arn: string): Observable<GetIncidentRecordOutput> {
@@ -2237,6 +2239,7 @@ export namespace MyNS {
 		 * Retrieve your Incident Manager replication set.
 		 * Get getReplicationSet#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the replication set you want to retrieve.
+		 *     Min length: 0    Max length: 1000
 		 * @return {GetReplicationSetOutput} Success
 		 */
 		GetReplicationSet(arn: string): Observable<GetReplicationSetOutput> {
@@ -2247,6 +2250,7 @@ export namespace MyNS {
 		 * Retrieves the resource policies attached to the specified response plan.
 		 * Post getResourcePolicies#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the response plan with the attached resource policy. 
+		 *     Min length: 0    Max length: 1000
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourcePoliciesOutput} Success
@@ -2259,6 +2263,7 @@ export namespace MyNS {
 		 * Retrieves the details of the specified response plan.
 		 * Get getResponsePlan#arn
 		 * @param {string} arn The Amazon Resource Name (ARN) of the response plan.
+		 *     Min length: 0    Max length: 1000
 		 * @return {GetResponsePlanOutput} Success
 		 */
 		GetResponsePlan(arn: string): Observable<GetResponsePlanOutput> {
@@ -2269,7 +2274,9 @@ export namespace MyNS {
 		 * Retrieves a timeline event based on its ID and incident record.
 		 * Get getTimelineEvent#eventId&incidentRecordArn
 		 * @param {string} eventId The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} incidentRecordArn The Amazon Resource Name (ARN) of the incident that includes the timeline event.
+		 *     Min length: 0    Max length: 1000
 		 * @return {GetTimelineEventOutput} Success
 		 */
 		GetTimelineEvent(eventId: string, incidentRecordArn: string): Observable<GetTimelineEventOutput> {
@@ -2374,6 +2381,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the response plan you're removing a tag from.
 		 * @param {Array<string>} tagKeys The name of the tag to remove from the response plan.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -2439,8 +2447,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -2457,8 +2465,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2494,15 +2502,15 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The long format of the response plan name. This field can contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		displayName?: string | null;
 
@@ -2529,8 +2537,8 @@ export namespace MyNS {
 		/**
 		 * The short format name of the response plan. Can't include spaces.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 
@@ -2541,23 +2549,23 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The long format of the response plan name. This field can contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The short format name of the response plan. Can't include spaces.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2614,16 +2622,16 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the action only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * A short description of the event.
 		 * Required
-		 * Max length: 12000
 		 * Min length: 0
+		 * Max length: 12000
 		 */
 		eventData: string;
 
@@ -2643,16 +2651,16 @@ export namespace MyNS {
 		/**
 		 * The type of event. You can create timeline events of type <code>Custom Event</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		eventType: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 	}
@@ -2660,16 +2668,16 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the action only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A short description of the event.
 		 * Required
-		 * Max length: 12000
 		 * Min length: 0
+		 * Max length: 12000
 		 */
 		eventData: FormControl<string | null | undefined>,
 
@@ -2682,16 +2690,16 @@ export namespace MyNS {
 		/**
 		 * The type of event. You can create timeline events of type <code>Custom Event</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		eventType: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 	}
@@ -2711,8 +2719,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record you are deleting.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 	}
@@ -2721,8 +2729,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record you are deleting.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2738,16 +2746,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the resource policy you're deleting.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		policyId: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource you're deleting the policy from.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		resourceArn: string;
 	}
@@ -2756,16 +2764,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the resource policy you're deleting.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		policyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource you're deleting the policy from.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
@@ -2782,8 +2790,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 	}
@@ -2792,8 +2800,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -2809,16 +2817,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		eventId: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 	}
@@ -2827,16 +2835,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		eventId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 	}
@@ -2859,8 +2867,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -2875,8 +2883,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2906,8 +2914,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -2922,8 +2930,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2940,8 +2948,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record containing the listed related items.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 
@@ -2954,8 +2962,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -2964,8 +2972,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record containing the listed related items.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 
@@ -2978,8 +2986,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -3003,8 +3011,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -3019,8 +3027,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -3043,8 +3051,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 	}
@@ -3059,8 +3067,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -3107,8 +3115,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 
@@ -3121,8 +3129,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken?: string | null;
 
@@ -3137,8 +3145,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 
@@ -3151,8 +3159,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token to continue to the next page of results.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3178,16 +3186,16 @@ export namespace MyNS {
 		/**
 		 * Details of the resource policy.
 		 * Required
-		 * Max length: 4000
 		 * Min length: 0
+		 * Max length: 4000
 		 */
 		policy: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan to add the resource policy to.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		resourceArn: string;
 	}
@@ -3196,16 +3204,16 @@ export namespace MyNS {
 		/**
 		 * Details of the resource policy.
 		 * Required
-		 * Max length: 4000
 		 * Min length: 0
+		 * Max length: 4000
 		 */
 		policy: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan to add the resource policy to.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
@@ -3221,8 +3229,8 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -3243,15 +3251,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		responsePlanArn: string;
 
 		/**
 		 * Provide a title for the incident. Providing a title overwrites the title provided by the response plan.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		title?: string | null;
 
@@ -3262,8 +3270,8 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3277,15 +3285,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		responsePlanArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Provide a title for the incident. Providing a title overwrites the title provided by the response plan.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -3326,15 +3334,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the replication set to update.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -3349,15 +3357,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the replication set to update.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3381,8 +3389,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record you are updating.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 
@@ -3391,8 +3399,8 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -3415,15 +3423,15 @@ export namespace MyNS {
 
 		/**
 		 * A longer description of what occurred during the incident.
-		 * Max length: 8000
 		 * Min length: 0
+		 * Max length: 8000
 		 */
 		summary?: string | null;
 
 		/**
 		 * A brief description of the incident.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		title?: string | null;
 	}
@@ -3432,15 +3440,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record you are updating.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3456,15 +3464,15 @@ export namespace MyNS {
 
 		/**
 		 * A longer description of what occurred during the incident.
-		 * Max length: 8000
 		 * Min length: 0
+		 * Max length: 8000
 		 */
 		summary: FormControl<string | null | undefined>,
 
 		/**
 		 * A brief description of the incident.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -3496,16 +3504,16 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 
@@ -3519,16 +3527,16 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 	}
@@ -3565,15 +3573,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the replication set you're updating.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -3582,15 +3590,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the replication set you're updating.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * A token that ensures that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -3614,8 +3622,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: string;
 
@@ -3624,15 +3632,15 @@ export namespace MyNS {
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The long format name of the response plan. The display name can't contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		displayName?: string | null;
 
@@ -3645,8 +3653,8 @@ export namespace MyNS {
 
 		/**
 		 * The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentTemplateDedupeString?: string | null;
 
@@ -3666,8 +3674,8 @@ export namespace MyNS {
 
 		/**
 		 * A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.
-		 * Max length: 8000
 		 * Min length: 0
+		 * Max length: 8000
 		 */
 		incidentTemplateSummary?: string | null;
 
@@ -3676,8 +3684,8 @@ export namespace MyNS {
 
 		/**
 		 * The short format name of the incident. The title can't contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		incidentTemplateTitle?: string | null;
 
@@ -3693,29 +3701,29 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the response plan.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * A token ensuring that the operation is called only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The long format name of the response plan. The display name can't contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentTemplateDedupeString: FormControl<string | null | undefined>,
 
@@ -3728,8 +3736,8 @@ export namespace MyNS {
 
 		/**
 		 * A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.
-		 * Max length: 8000
 		 * Min length: 0
+		 * Max length: 8000
 		 */
 		incidentTemplateSummary: FormControl<string | null | undefined>,
 
@@ -3738,8 +3746,8 @@ export namespace MyNS {
 
 		/**
 		 * The short format name of the incident. The title can't contain spaces.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		incidentTemplateTitle: FormControl<string | null | undefined>,
 	}
@@ -3773,23 +3781,23 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * A short description of the event.
-		 * Max length: 12000
 		 * Min length: 0
+		 * Max length: 12000
 		 */
 		eventData?: string | null;
 
 		/**
 		 * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		eventId: string;
 
@@ -3805,16 +3813,16 @@ export namespace MyNS {
 
 		/**
 		 * The type of event. You can update events of type <code>Custom Event</code>.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		eventType?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: string;
 	}
@@ -3822,23 +3830,23 @@ export namespace MyNS {
 
 		/**
 		 * A token that ensures that a client calls the operation only once with the specified details.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * A short description of the event.
-		 * Max length: 12000
 		 * Min length: 0
+		 * Max length: 12000
 		 */
 		eventData: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		eventId: FormControl<string | null | undefined>,
 
@@ -3847,16 +3855,16 @@ export namespace MyNS {
 
 		/**
 		 * The type of event. You can update events of type <code>Custom Event</code>.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		eventType: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		incidentRecordArn: FormControl<string | null | undefined>,
 	}

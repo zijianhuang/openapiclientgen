@@ -5015,6 +5015,7 @@ export namespace MyNS {
 		 * Retrieves the tags that are associated with a specified flow.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the specified flow. 
+		 *     Max length: 512
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -5025,6 +5026,7 @@ export namespace MyNS {
 		 * Applies a tag to the specified flow.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the flow that you want to tag. 
+		 *     Max length: 512
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -5080,7 +5082,9 @@ export namespace MyNS {
 		 * Removes a tag from the specified flow.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the flow that you want to untag. 
+		 *     Max length: 512
 		 * @param {Array<string>} tagKeys  The tag keys associated with the tag that you want to remove from your flow. 
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -5158,8 +5162,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kmsArn?: string | null;
 
@@ -5189,8 +5193,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -5205,8 +5209,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kmsArn: FormControl<string | null | undefined>,
 
@@ -5230,8 +5234,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5276,8 +5280,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kmsArn?: string | null;
 
@@ -5313,8 +5317,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -5335,8 +5339,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kmsArn: FormControl<string | null | undefined>,
 
@@ -5345,8 +5349,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5958,8 +5962,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -5982,8 +5986,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6088,8 +6092,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs for flows that run on a schedule or based on an event. However, the error doesn't occur for flows that run on demand. You set the conditions that initiate your flow for the <code>triggerConfig</code> parameter.</p> <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -6104,8 +6108,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs for flows that run on a schedule or based on an event. However, the error doesn't occur for flows that run on demand. You set the conditions that initiate your flow for the <code>triggerConfig</code> parameter.</p> <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6197,8 +6201,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -6219,8 +6223,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6265,8 +6269,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -6287,8 +6291,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6356,8 +6360,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken?: string | null;
 	}
@@ -6378,8 +6382,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

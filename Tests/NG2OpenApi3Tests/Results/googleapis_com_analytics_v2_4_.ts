@@ -18,9 +18,11 @@ export namespace MyNS {
 		 * @param {string} dimensions A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.
 		 * @param {string} filters A comma-separated list of dimension or metric filters to be applied to the report data.
 		 * @param {number} max_results The maximum number of entries to include in this feed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} segment An Analytics advanced segment to be applied to the report data.
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for the report data.
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_data_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, segment: string | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -31,7 +33,9 @@ export namespace MyNS {
 		 * Lists all accounts to which the user has access.
 		 * Get management/accounts
 		 * @param {number} max_results The maximum number of accounts to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_management_accounts_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -43,7 +47,9 @@ export namespace MyNS {
 		 * Get management/accounts/{accountId}/webproperties
 		 * @param {string} accountId Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
 		 * @param {number} max_results The maximum number of web properties to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_management_webproperties_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -56,7 +62,9 @@ export namespace MyNS {
 		 * @param {string} accountId Account ID for the views (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
 		 * @param {string} webPropertyId Web property ID for the views (profiles) to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.
 		 * @param {number} max_results The maximum number of views (profiles) to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -70,7 +78,9 @@ export namespace MyNS {
 		 * @param {string} webPropertyId Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
 		 * @param {string} profileId View (Profile) ID to retrieve goals for. Can either be a specific view (profile) ID or '~all', which refers to all the views (profiles) that user has access to.
 		 * @param {number} max_results The maximum number of goals to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -81,7 +91,9 @@ export namespace MyNS {
 		 * Lists advanced segments to which the user has access.
 		 * Get management/segments
 		 * @param {number} max_results The maximum number of advanced segments to include in this response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start_index An index of the first advanced segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		 *     Minimum: 1
 		 * @return {void} Successful response
 		 */
 		Analytics_management_segments_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {

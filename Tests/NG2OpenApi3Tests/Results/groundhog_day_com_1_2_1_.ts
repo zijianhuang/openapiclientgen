@@ -261,6 +261,7 @@ export namespace MyNS {
 		 * Get all predictions for a given year.
 		 * Get api/v1/predictions
 		 * @param {number} year A calendar year
+		 *     Minimum: 1886
 		 * @return {PredictionsReturn} OK
 		 */
 		Predictions(year: number | null | undefined): Observable<PredictionsReturn> {

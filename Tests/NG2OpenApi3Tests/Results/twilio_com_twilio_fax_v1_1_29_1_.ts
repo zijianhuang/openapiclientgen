@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account that created the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -24,7 +24,10 @@ export namespace MyNS {
 		/** The direction of the fax */
 		direction?: Faxv1faxDirection | null;
 
-		/** The time it took to transmit the fax */
+		/**
+		 * The time it took to transmit the fax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The number the fax was sent from */
@@ -35,18 +38,24 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the FaxMedia resource that is associated with the Fax
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		media_sid?: string | null;
 
 		/** The Twilio-hosted URL that can be used to download fax media */
 		media_url?: string | null;
 
-		/** The number of pages contained in the fax document */
+		/**
+		 * The number of pages contained in the fax document
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The fax transmission price */
+		/**
+		 * The fax transmission price
+		 * Type: double
+		 */
 		price?: number | null;
 
 		/** The ISO 4217 currency used for billing */
@@ -57,8 +66,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that identifies the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -75,8 +84,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account that created the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -92,7 +101,10 @@ export namespace MyNS {
 		/** The direction of the fax */
 		direction: FormControl<Faxv1faxDirection | null | undefined>,
 
-		/** The time it took to transmit the fax */
+		/**
+		 * The time it took to transmit the fax
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The number the fax was sent from */
@@ -103,18 +115,24 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the FaxMedia resource that is associated with the Fax
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		media_sid: FormControl<string | null | undefined>,
 
 		/** The Twilio-hosted URL that can be used to download fax media */
 		media_url: FormControl<string | null | undefined>,
 
-		/** The number of pages contained in the fax document */
+		/**
+		 * The number of pages contained in the fax document
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The fax transmission price */
+		/**
+		 * The fax transmission price
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** The ISO 4217 currency used for billing */
@@ -125,8 +143,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that identifies the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -173,8 +191,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account that created the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -189,15 +207,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the fax the FaxMedia resource is associated with
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		fax_sid?: string | null;
 
 		/**
 		 * The unique string that identifies the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -208,8 +226,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Account that created the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -224,15 +242,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the fax the FaxMedia resource is associated with
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		fax_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that identifies the resource
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -265,6 +283,7 @@ export namespace MyNS {
 		 * @param {Date} DateCreatedOnOrBefore Retrieve only those faxes with a `date_created` that is before or equal to this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * @param {Date} DateCreatedAfter Retrieve only those faxes with a `date_created` that is later than this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListFaxReturn} OK
 		 */
 		ListFax(From: string | null | undefined, To: string | null | undefined, DateCreatedOnOrBefore: Date | null | undefined, DateCreatedAfter: Date | null | undefined, PageSize: number | null | undefined): Observable<ListFaxReturn> {
@@ -275,7 +294,9 @@ export namespace MyNS {
 		 * Retrieve a list of all fax media instances for the specified fax.
 		 * Get v1/Faxes/{FaxSid}/Media
 		 * @param {string} FaxSid The SID of the fax with the FaxMedia resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListFaxMediaReturn} OK
 		 */
 		ListFaxMedia(FaxSid: string, PageSize: number | null | undefined): Observable<ListFaxMediaReturn> {
@@ -286,7 +307,9 @@ export namespace MyNS {
 		 * Delete a specific fax media instance.
 		 * Delete v1/Faxes/{FaxSid}/Media/{Sid}
 		 * @param {string} FaxSid The SID of the fax with the FaxMedia resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the FaxMedia resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteFaxMedia(FaxSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -297,7 +320,9 @@ export namespace MyNS {
 		 * Fetch a specific fax media instance.
 		 * Get v1/Faxes/{FaxSid}/Media/{Sid}
 		 * @param {string} FaxSid The SID of the fax with the FaxMedia resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the FaxMedia resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Faxv1faxfax_media} OK
 		 */
 		FetchFaxMedia(FaxSid: string, Sid: string): Observable<Faxv1faxfax_media> {
@@ -308,6 +333,7 @@ export namespace MyNS {
 		 * Delete a specific fax and its associated media.
 		 * Delete v1/Faxes/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Fax resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteFax(Sid: string): Observable<HttpResponse<string>> {
@@ -318,6 +344,7 @@ export namespace MyNS {
 		 * Fetch a specific fax.
 		 * Get v1/Faxes/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Fax resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Faxv1fax} OK
 		 */
 		FetchFax(Sid: string): Observable<Faxv1fax> {
@@ -341,7 +368,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -350,7 +381,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -384,7 +419,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -393,7 +432,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

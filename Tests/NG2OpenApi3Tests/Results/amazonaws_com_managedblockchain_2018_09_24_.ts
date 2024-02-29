@@ -1804,7 +1804,9 @@ export namespace MyNS {
 		 * Returns a list of the accessors and their properties. Accessor objects are containers that have the information required for token based access to your Ethereum nodes.
 		 * Get accessors
 		 * @param {number} maxResults  The maximum number of accessors to list.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken  The pagination token that indicates the next set of results to retrieve. 
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccessorsOutput} Success
@@ -1817,6 +1819,7 @@ export namespace MyNS {
 		 * <p>Creates a member within a Managed Blockchain network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Post networks/{networkId}/members
 		 * @param {string} networkId The unique identifier of the network in which the member is created.
+		 *     Min length: 1    Max length: 32
 		 * @return {CreateMemberOutput} Success
 		 */
 		CreateMember(networkId: string, requestBody: CreateMemberPostBody): Observable<CreateMemberOutput> {
@@ -1827,11 +1830,14 @@ export namespace MyNS {
 		 * <p>Returns a list of the members in a network and properties of their configurations.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get networks/{networkId}/members
 		 * @param {string} networkId The unique identifier of the network for which to list members.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} name The optional name of the member to list.
 		 * @param {MemberStatus} status An optional status specifier. If provided, only members currently in this status are listed.
 		 * @param {boolean} isOwned An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.
 		 * @param {number} maxResults The maximum number of members to return in the request.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken The pagination token that indicates the next set of results to retrieve.
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMembersOutput} Success
@@ -1856,7 +1862,9 @@ export namespace MyNS {
 		 * @param {Framework} framework An optional framework specifier. If provided, only networks of this framework type are listed.
 		 * @param {NetworkStatus} status <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * @param {number} maxResults The maximum number of networks to list.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} nextToken The pagination token that indicates the next set of results to retrieve.
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNetworksOutput} Success
@@ -1869,6 +1877,7 @@ export namespace MyNS {
 		 * <p>Creates a node on the specified blockchain network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		 * Post networks/{networkId}/nodes
 		 * @param {string} networkId <p>The unique identifier of the network for the node.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
+		 *     Min length: 1    Max length: 32
 		 * @return {CreateNodeOutput} Success
 		 */
 		CreateNode(networkId: string, requestBody: CreateNodePostBody): Observable<CreateNodeOutput> {
@@ -1879,10 +1888,14 @@ export namespace MyNS {
 		 * <p>Returns information about the nodes within a network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		 * Get networks/{networkId}/nodes
 		 * @param {string} networkId The unique identifier of the network for which to list nodes.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId <p>The unique identifier of the member who owns the nodes to list.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		 *     Min length: 1    Max length: 32
 		 * @param {NodeStatus} status An optional status specifier. If provided, only nodes currently in this status are listed.
 		 * @param {number} maxResults The maximum number of nodes to list.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} nextToken The pagination token that indicates the next set of results to retrieve.
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNodesOutput} Success
@@ -1895,6 +1908,7 @@ export namespace MyNS {
 		 * <p>Creates a proposal for a change to the network that other members of the network can vote on, for example, a proposal to add a new member to the network. Any member can create a proposal.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Post networks/{networkId}/proposals
 		 * @param {string} networkId  The unique identifier of the network for which the proposal is made.
+		 *     Min length: 1    Max length: 32
 		 * @return {CreateProposalOutput} Success
 		 */
 		CreateProposal(networkId: string, requestBody: CreateProposalPostBody): Observable<CreateProposalOutput> {
@@ -1905,8 +1919,11 @@ export namespace MyNS {
 		 * <p>Returns a list of proposals for the network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get networks/{networkId}/proposals
 		 * @param {string} networkId  The unique identifier of the network. 
+		 *     Min length: 1    Max length: 32
 		 * @param {number} maxResults  The maximum number of proposals to return. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken  The pagination token that indicates the next set of results to retrieve. 
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalsOutput} Success
@@ -1919,6 +1936,7 @@ export namespace MyNS {
 		 * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or HTTP requests. However, WebSocket connections that were initiated while the accessor was in the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).
 		 * Delete accessors/{AccessorId}
 		 * @param {string} AccessorId The unique identifier of the accessor.
+		 *     Min length: 1    Max length: 32
 		 * @return {DeleteAccessorOutput} Success
 		 */
 		DeleteAccessor(AccessorId: string): Observable<DeleteAccessorOutput> {
@@ -1929,6 +1947,7 @@ export namespace MyNS {
 		 * Returns detailed information about an accessor. An accessor object is a container that has the information required for token based access to your Ethereum nodes.
 		 * Get accessors/{AccessorId}
 		 * @param {string} AccessorId The unique identifier of the accessor.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetAccessorOutput} Success
 		 */
 		GetAccessor(AccessorId: string): Observable<GetAccessorOutput> {
@@ -1939,7 +1958,9 @@ export namespace MyNS {
 		 * <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the Amazon Web Services account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the network is deleted also.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Delete networks/{networkId}/members/{memberId}
 		 * @param {string} networkId The unique identifier of the network from which the member is removed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId The unique identifier of the member to remove.
+		 *     Min length: 1    Max length: 32
 		 * @return {DeleteMemberOutput} Success
 		 */
 		DeleteMember(networkId: string, memberId: string): Observable<DeleteMemberOutput> {
@@ -1950,7 +1971,9 @@ export namespace MyNS {
 		 * <p>Returns detailed information about a member.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get networks/{networkId}/members/{memberId}
 		 * @param {string} networkId The unique identifier of the network to which the member belongs.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId The unique identifier of the member.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetMemberOutput} Success
 		 */
 		GetMember(networkId: string, memberId: string): Observable<GetMemberOutput> {
@@ -1961,7 +1984,9 @@ export namespace MyNS {
 		 * <p>Updates a member configuration with new parameters.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Patch networks/{networkId}/members/{memberId}
 		 * @param {string} networkId The unique identifier of the Managed Blockchain network to which the member belongs.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId The unique identifier of the member.
+		 *     Min length: 1    Max length: 32
 		 * @return {UpdateMemberOutput} Success
 		 */
 		UpdateMember(networkId: string, memberId: string, requestBody: UpdateMemberPatchBody): Observable<UpdateMemberOutput> {
@@ -1972,8 +1997,11 @@ export namespace MyNS {
 		 * <p>Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		 * Delete networks/{networkId}/nodes/{nodeId}
 		 * @param {string} networkId <p>The unique identifier of the network that the node is on.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId <p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		 *     Min length: 1    Max length: 32
 		 * @param {string} nodeId The unique identifier of the node.
+		 *     Min length: 1    Max length: 32
 		 * @return {DeleteNodeOutput} Success
 		 */
 		DeleteNode(networkId: string, memberId: string | null | undefined, nodeId: string): Observable<DeleteNodeOutput> {
@@ -1984,8 +2012,11 @@ export namespace MyNS {
 		 * <p>Returns detailed information about a node.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		 * Get networks/{networkId}/nodes/{nodeId}
 		 * @param {string} networkId The unique identifier of the network that the node is on.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} memberId <p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		 *     Min length: 1    Max length: 32
 		 * @param {string} nodeId The unique identifier of the node.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetNodeOutput} Success
 		 */
 		GetNode(networkId: string, memberId: string | null | undefined, nodeId: string): Observable<GetNodeOutput> {
@@ -1996,7 +2027,9 @@ export namespace MyNS {
 		 * <p>Updates a node configuration with new parameters.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Patch networks/{networkId}/nodes/{nodeId}
 		 * @param {string} networkId The unique identifier of the network that the node is on.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} nodeId The unique identifier of the node.
+		 *     Min length: 1    Max length: 32
 		 * @return {UpdateNodeOutput} Success
 		 */
 		UpdateNode(networkId: string, nodeId: string, requestBody: UpdateNodePatchBody): Observable<UpdateNodeOutput> {
@@ -2007,6 +2040,7 @@ export namespace MyNS {
 		 * <p>Returns detailed information about a network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		 * Get networks/{networkId}
 		 * @param {string} networkId The unique identifier of the network to get information about.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetNetworkOutput} Success
 		 */
 		GetNetwork(networkId: string): Observable<GetNetworkOutput> {
@@ -2017,7 +2051,9 @@ export namespace MyNS {
 		 * <p>Returns detailed information about a proposal.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get networks/{networkId}/proposals/{proposalId}
 		 * @param {string} networkId The unique identifier of the network for which the proposal is made.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} proposalId The unique identifier of the proposal.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetProposalOutput} Success
 		 */
 		GetProposal(networkId: string, proposalId: string): Observable<GetProposalOutput> {
@@ -2028,7 +2064,9 @@ export namespace MyNS {
 		 * <p>Returns a list of all invitations for the current Amazon Web Services account.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get invitations
 		 * @param {number} maxResults The maximum number of invitations to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The pagination token that indicates the next set of results to retrieve.
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInvitationsOutput} Success
@@ -2041,9 +2079,13 @@ export namespace MyNS {
 		 * <p>Returns the list of votes for a specified proposal, including the value of each vote and the unique identifier of the member that cast the vote.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Get networks/{networkId}/proposals/{proposalId}/votes
 		 * @param {string} networkId  The unique identifier of the network. 
+		 *     Min length: 1    Max length: 32
 		 * @param {string} proposalId  The unique identifier of the proposal. 
+		 *     Min length: 1    Max length: 32
 		 * @param {number} maxResults  The maximum number of votes to return. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken  The pagination token that indicates the next set of results to retrieve. 
+		 *     Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalVotesOutput} Success
@@ -2056,7 +2098,9 @@ export namespace MyNS {
 		 * <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the action.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Post networks/{networkId}/proposals/{proposalId}/votes
 		 * @param {string} networkId  The unique identifier of the network. 
+		 *     Min length: 1    Max length: 32
 		 * @param {string} proposalId  The unique identifier of the proposal. 
+		 *     Min length: 1    Max length: 32
 		 * @return {VoteOnProposalOutput} Success
 		 */
 		VoteOnProposal(networkId: string, proposalId: string, requestBody: VoteOnProposalPostBody): Observable<VoteOnProposalOutput> {
@@ -2067,6 +2111,7 @@ export namespace MyNS {
 		 * <p>Returns a list of tags for the specified resource. Each tag consists of a key and optional value.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2077,6 +2122,7 @@ export namespace MyNS {
 		 * <p>Adds or overwrites the specified tags for the specified Amazon Managed Blockchain resource. Each tag consists of a key and optional value.</p> <p>When you specify a tag key that already exists, the tag value is overwritten with the new value. Use <code>UntagResource</code> to remove tag keys.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2087,6 +2133,7 @@ export namespace MyNS {
 		 * <p>Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services account that has received an invitation to create a member and join a network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		 * Delete invitations/{invitationId}
 		 * @param {string} invitationId The unique identifier of the invitation to reject.
+		 *     Min length: 1    Max length: 32
 		 * @return {RejectInvitationOutput} Success
 		 */
 		RejectInvitation(invitationId: string): Observable<RejectInvitationOutput> {
@@ -2097,7 +2144,9 @@ export namespace MyNS {
 		 * <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2110,8 +2159,8 @@ export namespace MyNS {
 		/**
 		 * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -2129,8 +2178,8 @@ export namespace MyNS {
 		/**
 		 * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -2157,16 +2206,16 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * The unique identifier of the invitation that is sent to the member to join the network.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		InvitationId: string;
 
@@ -2181,16 +2230,16 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier of the invitation that is sent to the member to join the network.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		InvitationId: FormControl<string | null | undefined>,
 	}
@@ -2229,16 +2278,16 @@ export namespace MyNS {
 		/**
 		 * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * The name of the network.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: string;
 
@@ -2257,8 +2306,8 @@ export namespace MyNS {
 		/**
 		 * The version of the blockchain framework that the network uses.
 		 * Required
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		FrameworkVersion: string;
 
@@ -2285,16 +2334,16 @@ export namespace MyNS {
 		/**
 		 * This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the network.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2313,8 +2362,8 @@ export namespace MyNS {
 		/**
 		 * The version of the blockchain framework that the network uses.
 		 * Required
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		FrameworkVersion: FormControl<string | null | undefined>,
 
@@ -2382,15 +2431,15 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * <p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId?: string | null;
 
@@ -2408,15 +2457,15 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId: FormControl<string | null | undefined>,
 
@@ -2457,16 +2506,16 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
 		/**
 		 * The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId: string;
 
@@ -2490,16 +2539,16 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId: FormControl<string | null | undefined>,
 
@@ -2562,8 +2611,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId?: string | null;
 
@@ -2574,8 +2623,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		MemberId: FormControl<string | null | undefined>,
 	}
@@ -2602,8 +2651,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the member casting the vote.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		VoterMemberId: string;
 
@@ -2618,8 +2667,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the member casting the vote.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		VoterMemberId: FormControl<string | null | undefined>,
 

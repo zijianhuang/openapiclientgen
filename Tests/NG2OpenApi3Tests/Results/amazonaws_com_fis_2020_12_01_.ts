@@ -1518,7 +1518,9 @@ export namespace MyNS {
 		 * Lists your experiment templates.
 		 * Get experimentTemplates
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListExperimentTemplatesResponse} Success
 		 */
 		ListExperimentTemplates(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListExperimentTemplatesResponse> {
@@ -1529,6 +1531,7 @@ export namespace MyNS {
 		 * Deletes the specified experiment template.
 		 * Delete experimentTemplates/{id}
 		 * @param {string} id The ID of the experiment template.
+		 *     Max length: 64
 		 * @return {DeleteExperimentTemplateResponse} Success
 		 */
 		DeleteExperimentTemplate(id: string): Observable<DeleteExperimentTemplateResponse> {
@@ -1539,6 +1542,7 @@ export namespace MyNS {
 		 * Gets information about the specified experiment template.
 		 * Get experimentTemplates/{id}
 		 * @param {string} id The ID of the experiment template.
+		 *     Max length: 64
 		 * @return {GetExperimentTemplateResponse} Success
 		 */
 		GetExperimentTemplate(id: string): Observable<GetExperimentTemplateResponse> {
@@ -1549,6 +1553,7 @@ export namespace MyNS {
 		 * Updates the specified experiment template.
 		 * Patch experimentTemplates/{id}
 		 * @param {string} id The ID of the experiment template.
+		 *     Max length: 64
 		 * @return {UpdateExperimentTemplateResponse} Success
 		 */
 		UpdateExperimentTemplate(id: string, requestBody: UpdateExperimentTemplatePatchBody): Observable<UpdateExperimentTemplateResponse> {
@@ -1559,6 +1564,7 @@ export namespace MyNS {
 		 * Gets information about the specified FIS action.
 		 * Get actions/{id}
 		 * @param {string} id The ID of the action.
+		 *     Max length: 128
 		 * @return {GetActionResponse} Success
 		 */
 		GetAction(id: string): Observable<GetActionResponse> {
@@ -1569,6 +1575,7 @@ export namespace MyNS {
 		 * Gets information about the specified experiment.
 		 * Get experiments/{id}
 		 * @param {string} id The ID of the experiment.
+		 *     Max length: 64
 		 * @return {GetExperimentResponse} Success
 		 */
 		GetExperiment(id: string): Observable<GetExperimentResponse> {
@@ -1579,6 +1586,7 @@ export namespace MyNS {
 		 * Stops the specified experiment.
 		 * Delete experiments/{id}
 		 * @param {string} id The ID of the experiment.
+		 *     Max length: 64
 		 * @return {StopExperimentResponse} Success
 		 */
 		StopExperiment(id: string): Observable<StopExperimentResponse> {
@@ -1589,6 +1597,7 @@ export namespace MyNS {
 		 * Gets information about the specified resource type.
 		 * Get targetResourceTypes/{resourceType}
 		 * @param {string} resourceType The resource type.
+		 *     Max length: 128
 		 * @return {GetTargetResourceTypeResponse} Success
 		 */
 		GetTargetResourceType(resourceType: string): Observable<GetTargetResourceTypeResponse> {
@@ -1599,7 +1608,9 @@ export namespace MyNS {
 		 * Lists the available FIS actions.
 		 * Get actions
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListActionsResponse} Success
 		 */
 		ListActions(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListActionsResponse> {
@@ -1610,7 +1621,9 @@ export namespace MyNS {
 		 * Lists your experiments.
 		 * Get experiments
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListExperimentsResponse} Success
 		 */
 		ListExperiments(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListExperimentsResponse> {
@@ -1630,6 +1643,7 @@ export namespace MyNS {
 		 * Lists the tags for the specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1640,6 +1654,7 @@ export namespace MyNS {
 		 * Applies the specified tags to the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1650,6 +1665,7 @@ export namespace MyNS {
 		 * Removes the specified tags from the specified resource.
 		 * Delete tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys The tag keys to remove.
 		 * @return {UntagResourceResponse} Success
 		 */
@@ -1661,7 +1677,9 @@ export namespace MyNS {
 		 * Lists the target resource types.
 		 * Get targetResourceTypes
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListTargetResourceTypesResponse} Success
 		 */
 		ListTargetResourceTypes(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListTargetResourceTypesResponse> {
@@ -1674,8 +1692,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: string;
 
@@ -1704,8 +1722,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -1720,8 +1738,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1744,8 +1762,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -1798,8 +1816,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn?: string | null;
 
@@ -1822,8 +1840,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -1857,8 +1875,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: string;
 
@@ -1877,8 +1895,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: FormControl<string | null | undefined>,
 

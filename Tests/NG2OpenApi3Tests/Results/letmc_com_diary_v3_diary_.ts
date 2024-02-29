@@ -119,7 +119,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning BranchModel values */
 	export interface AdvertisingBranchModelResults {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** The resulting data returned from the paged query range */
@@ -129,7 +132,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning BranchModel values */
 	export interface AdvertisingBranchModelResultsFormProperties {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateAdvertisingBranchModelResultsFormGroup() {
@@ -350,7 +356,10 @@ export namespace MyNS {
 		/** The unique Object ID (OID). */
 		OID?: string | null;
 
-		/** The reccurrence interval for the appointment:- */
+		/**
+		 * The reccurrence interval for the appointment:-
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Recurrence?: number | null;
 
 		/** The type of recurrence:- */
@@ -402,7 +411,10 @@ export namespace MyNS {
 		/** The unique Object ID (OID). */
 		OID: FormControl<string | null | undefined>,
 
-		/** The reccurrence interval for the appointment:- */
+		/**
+		 * The reccurrence interval for the appointment:-
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Recurrence: FormControl<number | null | undefined>,
 
 		/** The type of recurrence:- */
@@ -845,7 +857,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning DiaryAppointmentModel values */
 	export interface DiaryAppointmentModelResults {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** The resulting data returned from the paged query range */
@@ -855,7 +870,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning DiaryAppointmentModel values */
 	export interface DiaryAppointmentModelResultsFormProperties {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateDiaryAppointmentModelResultsFormGroup() {
@@ -913,7 +931,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning DiaryAppointmentTypeModel values */
 	export interface DiaryAppointmentTypeModelResults {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** The resulting data returned from the paged query range */
@@ -923,7 +944,10 @@ export namespace MyNS {
 	/** Holds results from a paged query returning DiaryAppointmentTypeModel values */
 	export interface DiaryAppointmentTypeModelResultsFormProperties {
 
-		/** The total number of results available for all pages */
+		/**
+		 * The total number of results available for all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateDiaryAppointmentTypeModelResultsFormGroup() {
@@ -1021,7 +1045,10 @@ export namespace MyNS {
 	/** Contacts Person Model Results:- */
 	export interface GuestDiaryParametersResultsModel {
 
-		/** Results count:- */
+		/**
+		 * Results count:-
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count?: number | null;
 
 		/** Results data:- */
@@ -1034,7 +1061,10 @@ export namespace MyNS {
 	/** Contacts Person Model Results:- */
 	export interface GuestDiaryParametersResultsModelFormProperties {
 
-		/** Results count:- */
+		/**
+		 * Results count:-
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateGuestDiaryParametersResultsModelFormGroup() {
@@ -1144,7 +1174,9 @@ export namespace MyNS {
 		 * @param {Date} endDate The search to date
 		 * @param {Array<string>} appointmentTypesToSearch The appointment IDs to search for
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiaryAppointmentModelResults} OK
 		 */
 		DiaryController_GetAppointmentsBetweenDates(shortName: string, branchID: string, startDate: Date, endDate: Date, appointmentTypesToSearch: Array<string>, offset: number, count: number): Observable<DiaryAppointmentModelResults> {
@@ -1156,7 +1188,9 @@ export namespace MyNS {
 		 * Get v3/diary/{shortName}/appointmenttypes
 		 * @param {string} shortName The unique client short-name
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiaryAppointmentTypeModelResults} OK
 		 */
 		DiaryController_GetAppointmentTypes(shortName: string, offset: number, count: number): Observable<DiaryAppointmentTypeModelResults> {
@@ -1168,7 +1202,9 @@ export namespace MyNS {
 		 * Get v3/diary/{shortName}/company/branches
 		 * @param {string} shortName The unique client short-name
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AdvertisingBranchModelResults} OK
 		 */
 		CompanyController_GetBranches(shortName: string, offset: number, count: number): Observable<AdvertisingBranchModelResults> {
@@ -1193,7 +1229,9 @@ export namespace MyNS {
 		 * @param {string} branchID The unique ID of the Branch
 		 * @param {Array<string>} appointmentTypesToSearch The appointment IDs to search for
 		 * @param {number} offset The index of the first item to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count The maximum number of items to return (up to 1000 per request)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiaryAppointmentModelResults} OK
 		 */
 		DiaryController_GetRecurringAppointments(shortName: string, branchID: string, appointmentTypesToSearch: Array<string>, offset: number, count: number): Observable<DiaryAppointmentModelResults> {
@@ -1203,6 +1241,8 @@ export namespace MyNS {
 		/**
 		 * Match Guest Parameters with existing applicants
 		 * Get v3/diary/{shortname}/{branchID}/guest/search
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} count Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GuestDiaryParametersResultsModel} OK
 		 */
 		DiaryController_SearchGuest(shortname: string, branchID: string, forename: string, emailaddress: string, surname: string, offset: number, count: number): Observable<GuestDiaryParametersResultsModel> {

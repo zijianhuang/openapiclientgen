@@ -456,14 +456,20 @@ export namespace MyNS {
 	/** TotpMFAProviderConfig represents the TOTP based MFA provider. */
 	export interface GoogleCloudIdentitytoolkitAdminV2TotpMfaProviderConfig {
 
-		/** The allowed number of adjacent intervals that will be used for verification to avoid clock skew. */
+		/**
+		 * The allowed number of adjacent intervals that will be used for verification to avoid clock skew.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adjacentIntervals?: number | null;
 	}
 
 	/** TotpMFAProviderConfig represents the TOTP based MFA provider. */
 	export interface GoogleCloudIdentitytoolkitAdminV2TotpMfaProviderConfigFormProperties {
 
-		/** The allowed number of adjacent intervals that will be used for verification to avoid clock skew. */
+		/**
+		 * The allowed number of adjacent intervals that will be used for verification to avoid clock skew.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adjacentIntervals: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitAdminV2TotpMfaProviderConfigFormGroup() {
@@ -745,7 +751,10 @@ export namespace MyNS {
 		/** SMTP relay password */
 		password?: string | null;
 
-		/** SMTP relay port */
+		/**
+		 * SMTP relay port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** SMTP security mode. */
@@ -767,7 +776,10 @@ export namespace MyNS {
 		/** SMTP relay password */
 		password: FormControl<string | null | undefined>,
 
-		/** SMTP relay port */
+		/**
+		 * SMTP relay port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** SMTP security mode. */
@@ -885,14 +897,20 @@ export namespace MyNS {
 		/** Custom strength options to enforce on user passwords. */
 		customStrengthOptions?: GoogleCloudIdentitytoolkitAdminV2CustomStrengthOptions;
 
-		/** Output only. schema version number for the password policy */
+		/**
+		 * Output only. schema version number for the password policy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaVersion?: number | null;
 	}
 
 	/** The strength attributes for the password policy on the project. */
 	export interface GoogleCloudIdentitytoolkitAdminV2PasswordPolicyVersionFormProperties {
 
-		/** Output only. schema version number for the password policy */
+		/**
+		 * Output only. schema version number for the password policy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitAdminV2PasswordPolicyVersionFormGroup() {
@@ -918,10 +936,16 @@ export namespace MyNS {
 		/** The password must contain an upper case character. */
 		containsUppercaseCharacter?: boolean | null;
 
-		/** Maximum password length. No default max length */
+		/**
+		 * Maximum password length. No default max length
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordLength?: number | null;
 
-		/** Minimum password length. Range from 6 to 30 */
+		/**
+		 * Minimum password length. Range from 6 to 30
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPasswordLength?: number | null;
 	}
 
@@ -940,10 +964,16 @@ export namespace MyNS {
 		/** The password must contain an upper case character. */
 		containsUppercaseCharacter: FormControl<boolean | null | undefined>,
 
-		/** Maximum password length. No default max length */
+		/**
+		 * Maximum password length. No default max length
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordLength: FormControl<number | null | undefined>,
 
-		/** Minimum password length. Range from 6 to 30 */
+		/**
+		 * Minimum password length. Range from 6 to 30
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPasswordLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitAdminV2CustomStrengthOptionsFormGroup() {
@@ -1053,7 +1083,10 @@ export namespace MyNS {
 		/** The action taken if the reCAPTCHA score of a request is within the interval [start_score, end_score]. */
 		action?: GoogleCloudIdentitytoolkitAdminV2RecaptchaManagedRuleAction | null;
 
-		/** The end score (inclusive) of the score range for an action. Must be a value between 0.0 and 1.0, at 11 discrete values; e.g. 0, 0.1, 0.2, 0.3, ... 0.9, 1.0. A score of 0.0 indicates the riskiest request (likely a bot), whereas 1.0 indicates the safest request (likely a human). See https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment. */
+		/**
+		 * The end score (inclusive) of the score range for an action. Must be a value between 0.0 and 1.0, at 11 discrete values; e.g. 0, 0.1, 0.2, 0.3, ... 0.9, 1.0. A score of 0.0 indicates the riskiest request (likely a bot), whereas 1.0 indicates the safest request (likely a human). See https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment.
+		 * Type: float
+		 */
 		endScore?: number | null;
 	}
 
@@ -1063,7 +1096,10 @@ export namespace MyNS {
 		/** The action taken if the reCAPTCHA score of a request is within the interval [start_score, end_score]. */
 		action: FormControl<GoogleCloudIdentitytoolkitAdminV2RecaptchaManagedRuleAction | null | undefined>,
 
-		/** The end score (inclusive) of the score range for an action. Must be a value between 0.0 and 1.0, at 11 discrete values; e.g. 0, 0.1, 0.2, 0.3, ... 0.9, 1.0. A score of 0.0 indicates the riskiest request (likely a bot), whereas 1.0 indicates the safest request (likely a human). See https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment. */
+		/**
+		 * The end score (inclusive) of the score range for an action. Must be a value between 0.0 and 1.0, at 11 discrete values; e.g. 0, 0.1, 0.2, 0.3, ... 0.9, 1.0. A score of 0.0 indicates the riskiest request (likely a bot), whereas 1.0 indicates the safest request (likely a human). See https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment.
+		 * Type: float
+		 */
 		endScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitAdminV2RecaptchaManagedRuleFormGroup() {
@@ -1174,10 +1210,16 @@ export namespace MyNS {
 		/** Output only. Different password hash algorithms used in Identity Toolkit. */
 		algorithm?: GoogleCloudIdentitytoolkitAdminV2HashConfigAlgorithm | null;
 
-		/** Output only. Memory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field. */
+		/**
+		 * Output only. Memory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryCost?: number | null;
 
-		/** Output only. How many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms. */
+		/**
+		 * Output only. How many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rounds?: number | null;
 
 		/** Output only. Non-printable character to be inserted between the salt and plain text password in base64. */
@@ -1193,10 +1235,16 @@ export namespace MyNS {
 		/** Output only. Different password hash algorithms used in Identity Toolkit. */
 		algorithm: FormControl<GoogleCloudIdentitytoolkitAdminV2HashConfigAlgorithm | null | undefined>,
 
-		/** Output only. Memory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field. */
+		/**
+		 * Output only. Memory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryCost: FormControl<number | null | undefined>,
 
-		/** Output only. How many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms. */
+		/**
+		 * Output only. How many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rounds: FormControl<number | null | undefined>,
 
 		/** Output only. Non-printable character to be inserted between the salt and plain text password in base64. */
@@ -1897,10 +1945,16 @@ export namespace MyNS {
 		/** The password must contain an upper case character. */
 		containsUppercaseCharacter?: boolean | null;
 
-		/** Maximum password length. No default max length */
+		/**
+		 * Maximum password length. No default max length
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordLength?: number | null;
 
-		/** Minimum password length. Range from 6 to 30 */
+		/**
+		 * Minimum password length. Range from 6 to 30
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPasswordLength?: number | null;
 	}
 
@@ -1919,10 +1973,16 @@ export namespace MyNS {
 		/** The password must contain an upper case character. */
 		containsUppercaseCharacter: FormControl<boolean | null | undefined>,
 
-		/** Maximum password length. No default max length */
+		/**
+		 * Maximum password length. No default max length
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPasswordLength: FormControl<number | null | undefined>,
 
-		/** Minimum password length. Range from 6 to 30 */
+		/**
+		 * Minimum password length. Range from 6 to 30
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPasswordLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitV2CustomStrengthOptionsFormGroup() {
@@ -2240,7 +2300,10 @@ export namespace MyNS {
 		/** Users must have a password compliant with the password policy to sign-in. */
 		forceUpgradeOnSignin?: boolean | null;
 
-		/** Output only. schema version number for the password policy */
+		/**
+		 * Output only. schema version number for the password policy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaVersion?: number | null;
 	}
 
@@ -2253,7 +2316,10 @@ export namespace MyNS {
 		/** Users must have a password compliant with the password policy to sign-in. */
 		forceUpgradeOnSignin: FormControl<boolean | null | undefined>,
 
-		/** Output only. schema version number for the password policy */
+		/**
+		 * Output only. schema version number for the password policy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitV2PasswordPolicyFormGroup() {
@@ -2553,7 +2619,10 @@ export namespace MyNS {
 		/** The hashing algorithm used to generate the verification code. */
 		hashingAlgorithm?: string | null;
 
-		/** Duration in seconds at which the verification code will change. */
+		/**
+		 * Duration in seconds at which the verification code will change.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSec?: number | null;
 
 		/** An encoded string that represents the enrollment session. */
@@ -2562,7 +2631,10 @@ export namespace MyNS {
 		/** A base 32 encoded string that represents the shared TOTP secret. The base 32 encoding is the one specified by [RFC4648#section-6](https://datatracker.ietf.org/doc/html/rfc4648#section-6). (This is the same as the base 32 encoding from [RFC3548#section-5](https://datatracker.ietf.org/doc/html/rfc3548#section-5).) */
 		sharedSecretKey?: string | null;
 
-		/** The length of the verification code that needs to be generated. */
+		/**
+		 * The length of the verification code that needs to be generated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		verificationCodeLength?: number | null;
 	}
 
@@ -2575,7 +2647,10 @@ export namespace MyNS {
 		/** The hashing algorithm used to generate the verification code. */
 		hashingAlgorithm: FormControl<string | null | undefined>,
 
-		/** Duration in seconds at which the verification code will change. */
+		/**
+		 * Duration in seconds at which the verification code will change.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSec: FormControl<number | null | undefined>,
 
 		/** An encoded string that represents the enrollment session. */
@@ -2584,7 +2659,10 @@ export namespace MyNS {
 		/** A base 32 encoded string that represents the shared TOTP secret. The base 32 encoding is the one specified by [RFC4648#section-6](https://datatracker.ietf.org/doc/html/rfc4648#section-6). (This is the same as the base 32 encoding from [RFC3548#section-5](https://datatracker.ietf.org/doc/html/rfc3548#section-5).) */
 		sharedSecretKey: FormControl<string | null | undefined>,
 
-		/** The length of the verification code that needs to be generated. */
+		/**
+		 * The length of the verification code that needs to be generated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		verificationCodeLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudIdentitytoolkitV2StartMfaTotpEnrollmentResponseInfoFormGroup() {
@@ -2857,14 +2935,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GoogleIamV1GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GoogleIamV1GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1GetPolicyOptionsFormGroup() {
@@ -2887,7 +2971,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2897,7 +2984,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -3043,6 +3133,7 @@ export namespace MyNS {
 		 * List all default supported Idps.
 		 * Get v2/defaultSupportedIdps
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {GoogleCloudIdentitytoolkitAdminV2ListDefaultSupportedIdpsResponse} Successful response
 		 */
@@ -3108,6 +3199,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/defaultSupportedIdpConfigs
 		 * @param {string} parent The parent resource name, for example, "projects/my-awesome-project".
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {GoogleCloudIdentitytoolkitAdminV2ListDefaultSupportedIdpConfigsResponse} Successful response
 		 */
@@ -3131,6 +3223,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/inboundSamlConfigs
 		 * @param {string} parent The parent resource name, for example, "projects/my-awesome-project".
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {GoogleCloudIdentitytoolkitAdminV2ListInboundSamlConfigsResponse} Successful response
 		 */
@@ -3154,6 +3247,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/oauthIdpConfigs
 		 * @param {string} parent The parent resource name, for example, "projects/my-awesome-project".
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {GoogleCloudIdentitytoolkitAdminV2ListOAuthIdpConfigsResponse} Successful response
 		 */
@@ -3177,6 +3271,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/tenants
 		 * @param {string} parent Required. The parent resource name to list tenants for.
 		 * @param {number} pageSize The maximum number of results to return, capped at 1000. If not specified, the default value is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token from the response of a previous request.
 		 * @return {GoogleCloudIdentitytoolkitAdminV2ListTenantsResponse} Successful response
 		 */

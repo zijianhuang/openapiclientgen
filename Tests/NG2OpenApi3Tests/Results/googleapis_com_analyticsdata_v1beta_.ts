@@ -40,7 +40,10 @@ export namespace MyNS {
 		/** Output only. The time when CreateAudienceExport was called and the AudienceExport began the `CREATING` state. */
 		beginCreatingTime?: string | null;
 
-		/** Output only. The total quota tokens charged during creation of the AudienceExport. Because this token count is based on activity from the `CREATING` state, this tokens charged will be fixed once an AudienceExport enters the `ACTIVE` or `FAILED` states. */
+		/**
+		 * Output only. The total quota tokens charged during creation of the AudienceExport. Because this token count is based on activity from the `CREATING` state, this tokens charged will be fixed once an AudienceExport enters the `ACTIVE` or `FAILED` states.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creationQuotaTokensCharged?: number | null;
 
 		/** Required. The dimensions requested and displayed in the query response. */
@@ -52,10 +55,16 @@ export namespace MyNS {
 		/** Output only. Identifier. The audience export resource name assigned during creation. This resource name identifies this `AudienceExport`. Format: `properties/{property}/audienceExports/{audience_export}` */
 		name?: string | null;
 
-		/** Output only. The percentage completed for this audience export ranging between 0 to 100. */
+		/**
+		 * Output only. The percentage completed for this audience export ranging between 0 to 100.
+		 * Type: double
+		 */
 		percentageCompleted?: number | null;
 
-		/** Output only. The total number of rows in the AudienceExport result. */
+		/**
+		 * Output only. The total number of rows in the AudienceExport result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** Output only. The current state for this AudienceExport. */
@@ -74,7 +83,10 @@ export namespace MyNS {
 		/** Output only. The time when CreateAudienceExport was called and the AudienceExport began the `CREATING` state. */
 		beginCreatingTime: FormControl<string | null | undefined>,
 
-		/** Output only. The total quota tokens charged during creation of the AudienceExport. Because this token count is based on activity from the `CREATING` state, this tokens charged will be fixed once an AudienceExport enters the `ACTIVE` or `FAILED` states. */
+		/**
+		 * Output only. The total quota tokens charged during creation of the AudienceExport. Because this token count is based on activity from the `CREATING` state, this tokens charged will be fixed once an AudienceExport enters the `ACTIVE` or `FAILED` states.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creationQuotaTokensCharged: FormControl<number | null | undefined>,
 
 		/** Output only. Error message is populated when an audience export fails during creation. A common reason for such a failure is quota exhaustion. */
@@ -83,10 +95,16 @@ export namespace MyNS {
 		/** Output only. Identifier. The audience export resource name assigned during creation. This resource name identifies this `AudienceExport`. Format: `properties/{property}/audienceExports/{audience_export}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The percentage completed for this audience export ranging between 0 to 100. */
+		/**
+		 * Output only. The percentage completed for this audience export ranging between 0 to 100.
+		 * Type: double
+		 */
 		percentageCompleted: FormControl<number | null | undefined>,
 
-		/** Output only. The total number of rows in the AudienceExport result. */
+		/**
+		 * Output only. The total number of rows in the AudienceExport result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 
 		/** Output only. The current state for this AudienceExport. */
@@ -338,26 +356,38 @@ export namespace MyNS {
 	/** Configures the extended reporting date range for a cohort report. Specifies an offset duration to follow the cohorts over. */
 	export interface CohortsRange {
 
-		/** Required. `endOffset` specifies the end date of the extended reporting date range for a cohort report. `endOffset` can be any positive integer but is commonly set to 5 to 10 so that reports contain data on the cohort for the next several granularity time periods. If `granularity` is `DAILY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset` days. If `granularity` is `WEEKLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 7` days. If `granularity` is `MONTHLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 30` days. */
+		/**
+		 * Required. `endOffset` specifies the end date of the extended reporting date range for a cohort report. `endOffset` can be any positive integer but is commonly set to 5 to 10 so that reports contain data on the cohort for the next several granularity time periods. If `granularity` is `DAILY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset` days. If `granularity` is `WEEKLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 7` days. If `granularity` is `MONTHLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 30` days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset?: number | null;
 
 		/** Required. The granularity used to interpret the `startOffset` and `endOffset` for the extended reporting date range for a cohort report. */
 		granularity?: CohortsRangeGranularity | null;
 
-		/** `startOffset` specifies the start date of the extended reporting date range for a cohort report. `startOffset` is commonly set to 0 so that reports contain data from the acquisition of the cohort forward. If `granularity` is `DAILY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset` days. If `granularity` is `WEEKLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 7` days. If `granularity` is `MONTHLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 30` days. */
+		/**
+		 * `startOffset` specifies the start date of the extended reporting date range for a cohort report. `startOffset` is commonly set to 0 so that reports contain data from the acquisition of the cohort forward. If `granularity` is `DAILY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset` days. If `granularity` is `WEEKLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 7` days. If `granularity` is `MONTHLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 30` days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startOffset?: number | null;
 	}
 
 	/** Configures the extended reporting date range for a cohort report. Specifies an offset duration to follow the cohorts over. */
 	export interface CohortsRangeFormProperties {
 
-		/** Required. `endOffset` specifies the end date of the extended reporting date range for a cohort report. `endOffset` can be any positive integer but is commonly set to 5 to 10 so that reports contain data on the cohort for the next several granularity time periods. If `granularity` is `DAILY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset` days. If `granularity` is `WEEKLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 7` days. If `granularity` is `MONTHLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 30` days. */
+		/**
+		 * Required. `endOffset` specifies the end date of the extended reporting date range for a cohort report. `endOffset` can be any positive integer but is commonly set to 5 to 10 so that reports contain data on the cohort for the next several granularity time periods. If `granularity` is `DAILY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset` days. If `granularity` is `WEEKLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 7` days. If `granularity` is `MONTHLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 30` days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset: FormControl<number | null | undefined>,
 
 		/** Required. The granularity used to interpret the `startOffset` and `endOffset` for the extended reporting date range for a cohort report. */
 		granularity: FormControl<CohortsRangeGranularity | null | undefined>,
 
-		/** `startOffset` specifies the start date of the extended reporting date range for a cohort report. `startOffset` is commonly set to 0 so that reports contain data from the acquisition of the cohort forward. If `granularity` is `DAILY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset` days. If `granularity` is `WEEKLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 7` days. If `granularity` is `MONTHLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 30` days. */
+		/**
+		 * `startOffset` specifies the start date of the extended reporting date range for a cohort report. `startOffset` is commonly set to 0 so that reports contain data from the acquisition of the cohort forward. If `granularity` is `DAILY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset` days. If `granularity` is `WEEKLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 7` days. If `granularity` is `MONTHLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 30` days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateCohortsRangeFormGroup() {
@@ -471,7 +501,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface NumericValue {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** Integer value */
@@ -481,7 +514,10 @@ export namespace MyNS {
 	/** To represent a number. */
 	export interface NumericValueFormProperties {
 
-		/** Double value */
+		/**
+		 * Double value
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Integer value */
@@ -1165,14 +1201,20 @@ export namespace MyNS {
 		/** The size is the same as the cardinality of the corresponding dimension combinations. */
 		pivotDimensionHeaders?: Array<PivotDimensionHeader>;
 
-		/** The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request. */
+		/**
+		 * The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 	}
 
 	/** Dimensions' values in a single pivot. */
 	export interface PivotHeaderFormProperties {
 
-		/** The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request. */
+		/**
+		 * The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotHeaderFormGroup() {
@@ -1235,20 +1277,32 @@ export namespace MyNS {
 	/** Current state for a particular quota group. */
 	export interface QuotaStatus {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed?: number | null;
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining?: number | null;
 	}
 
 	/** Current state for a particular quota group. */
 	export interface QuotaStatusFormProperties {
 
-		/** Quota consumed by this request. */
+		/**
+		 * Quota consumed by this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumed: FormControl<number | null | undefined>,
 
-		/** Quota remaining after this request. */
+		/**
+		 * Quota remaining after this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: FormControl<number | null | undefined>,
 	}
 	export function CreateQuotaStatusFormGroup() {
@@ -1405,7 +1459,10 @@ export namespace MyNS {
 		/** Current state of all quotas for this Analytics Property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors. */
 		propertyQuota?: PropertyQuota;
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** Rows of dimension value combinations and metric values in the report. */
@@ -1421,7 +1478,10 @@ export namespace MyNS {
 		/** Identifies what kind of resource this message is. This `kind` is always the fixed string "analyticsData#runReport". Useful to distinguish between response types in JSON. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRunReportResponseFormGroup() {
@@ -1711,26 +1771,38 @@ export namespace MyNS {
 	/** A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ..., `endMinutesAgo`. Requests are allowed up to 2 minute ranges. */
 	export interface MinuteRange {
 
-		/** The inclusive end minute for the query as a number of minutes before now. Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15` specifies the report should include event data from prior to 15 minutes ago. If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics properties can request any minute in the last 30 minutes of event data (`endMinutesAgo <= 29`), and 360 Analytics properties can request any minute in the last 60 minutes of event data (`endMinutesAgo <= 59`). */
+		/**
+		 * The inclusive end minute for the query as a number of minutes before now. Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15` specifies the report should include event data from prior to 15 minutes ago. If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics properties can request any minute in the last 30 minutes of event data (`endMinutesAgo <= 29`), and 360 Analytics properties can request any minute in the last 60 minutes of event data (`endMinutesAgo <= 59`).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endMinutesAgo?: number | null;
 
 		/** Assigns a name to this minute range. The dimension `dateRange` is valued to this name in a report response. If set, cannot begin with `date_range_` or `RESERVED_`. If not set, minute ranges are named by their zero based index in the request: `date_range_0`, `date_range_1`, etc. */
 		name?: string | null;
 
-		/** The inclusive start minute for the query as a number of minutes before now. For example, `"startMinutesAgo": 29` specifies the report should include event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`. If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics properties can request up to the last 30 minutes of event data (`startMinutesAgo <= 29`), and 360 Analytics properties can request up to the last 60 minutes of event data (`startMinutesAgo <= 59`). */
+		/**
+		 * The inclusive start minute for the query as a number of minutes before now. For example, `"startMinutesAgo": 29` specifies the report should include event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`. If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics properties can request up to the last 30 minutes of event data (`startMinutesAgo <= 29`), and 360 Analytics properties can request up to the last 60 minutes of event data (`startMinutesAgo <= 59`).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startMinutesAgo?: number | null;
 	}
 
 	/** A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ..., `endMinutesAgo`. Requests are allowed up to 2 minute ranges. */
 	export interface MinuteRangeFormProperties {
 
-		/** The inclusive end minute for the query as a number of minutes before now. Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15` specifies the report should include event data from prior to 15 minutes ago. If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics properties can request any minute in the last 30 minutes of event data (`endMinutesAgo <= 29`), and 360 Analytics properties can request any minute in the last 60 minutes of event data (`endMinutesAgo <= 59`). */
+		/**
+		 * The inclusive end minute for the query as a number of minutes before now. Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15` specifies the report should include event data from prior to 15 minutes ago. If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics properties can request any minute in the last 30 minutes of event data (`endMinutesAgo <= 29`), and 360 Analytics properties can request any minute in the last 60 minutes of event data (`endMinutesAgo <= 59`).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endMinutesAgo: FormControl<number | null | undefined>,
 
 		/** Assigns a name to this minute range. The dimension `dateRange` is valued to this name in a report response. If set, cannot begin with `date_range_` or `RESERVED_`. If not set, minute ranges are named by their zero based index in the request: `date_range_0`, `date_range_1`, etc. */
 		name: FormControl<string | null | undefined>,
 
-		/** The inclusive start minute for the query as a number of minutes before now. For example, `"startMinutesAgo": 29` specifies the report should include event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`. If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics properties can request up to the last 30 minutes of event data (`startMinutesAgo <= 29`), and 360 Analytics properties can request up to the last 60 minutes of event data (`startMinutesAgo <= 59`). */
+		/**
+		 * The inclusive start minute for the query as a number of minutes before now. For example, `"startMinutesAgo": 29` specifies the report should include event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`. If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics properties can request up to the last 30 minutes of event data (`startMinutesAgo <= 29`), and 360 Analytics properties can request up to the last 60 minutes of event data (`startMinutesAgo <= 59`).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startMinutesAgo: FormControl<number | null | undefined>,
 	}
 	export function CreateMinuteRangeFormGroup() {
@@ -1791,7 +1863,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1804,7 +1879,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1856,14 +1934,20 @@ export namespace MyNS {
 		/** Rows for each user in an audience export. The number of rows in this response will be less than or equal to request's page size. */
 		audienceRows?: Array<V1betaAudienceRow>;
 
-		/** The total number of rows in the AudienceExport result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the AudienceExport result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 	}
 
 	/** A list of users in an audience export. */
 	export interface QueryAudienceExportResponseFormProperties {
 
-		/** The total number of rows in the AudienceExport result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination). */
+		/**
+		 * The total number of rows in the AudienceExport result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryAudienceExportResponseFormGroup() {
@@ -1982,7 +2066,10 @@ export namespace MyNS {
 		/** Current state of all quotas for this Analytics Property. If any quota for a property is exhausted, all requests to that property will return Resource Exhausted errors. */
 		propertyQuota?: PropertyQuota;
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response and the `limit` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response and the `limit` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** Rows of dimension value combinations and metric values in the report. */
@@ -1998,7 +2085,10 @@ export namespace MyNS {
 		/** Identifies what kind of resource this message is. This `kind` is always the fixed string "analyticsData#runRealtimeReport". Useful to distinguish between response types in JSON. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response and the `limit` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. */
+		/**
+		 * The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response and the `limit` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRunRealtimeReportResponseFormGroup() {
@@ -2039,6 +2129,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/audienceExports
 		 * @param {string} parent Required. All audience exports for this property will be listed in the response. Format: `properties/{property}`
 		 * @param {number} pageSize Optional. The maximum number of audience exports to return. The service may return fewer than this value. If unspecified, at most 200 audience exports will be returned. The maximum value is 1000 (higher values will be coerced to the maximum).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListAudienceExports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAudienceExports` must match the call that provided the page token.
 		 * @return {ListAudienceExportsResponse} Successful response
 		 */

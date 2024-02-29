@@ -104,6 +104,7 @@ export namespace MyNS {
 		 * @param {string} accessKey The accessKey provided by VisageCloud
 		 * @param {string} secretKey The secretKey or readOnlyKey provided by VisageCloud
 		 * @param {number} count How many records to retrieve at a time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RestResponse} OK
 		 */
 		RetriveLatestUsingGET(accessKey: string, secretKey: string, count: number | null | undefined): Observable<RestResponse> {
@@ -132,10 +133,15 @@ export namespace MyNS {
 		 * @param {Date} startDateTime startDateTime
 		 * @param {Date} endDateTime endDateTime
 		 * @param {string} visitDuration visitDuration
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} maxIterations maxIterations
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxBatchIterations maxBatchIterations
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minNeighborsMergedPerIteration minNeighborsMergedPerIteration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} mergingStep mergingStep
+		 *     Type: double
 		 * @param {boolean} shuffling shuffling
 		 * @return {RestResponse} OK
 		 */
@@ -152,6 +158,7 @@ export namespace MyNS {
 		 * @param {Date} startDateTime startDateTime
 		 * @param {Date} endDateTime endDateTime
 		 * @param {string} step step
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} attributes attributes
 		 * @return {RestResponse} OK
 		 */
@@ -197,15 +204,25 @@ export namespace MyNS {
 		 * @param {string} classificationAttributeName Classification attribute name
 		 * @param {boolean} considerViewPoints Consider view point
 		 * @param {number} seed Seed for divididing training and evaluation sets
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} trainingRatio Training ratio
+		 *     Type: double
 		 * @param {number} probabilityParameter Probability parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} gammaParameter Gamma parameter
+		 *     Type: double
 		 * @param {number} nuParameter Nu parameter
+		 *     Type: double
 		 * @param {number} cParameter c parameter
+		 *     Type: double
 		 * @param {number} svmTypeParameter SVM type parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} kernelTypeParameter Kernel type parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cacheSizeParameter Cache size parameter
+		 *     Type: double
 		 * @param {number} epsParameter Eps parameter
+		 *     Type: double
 		 * @return {RestResponse} OK
 		 */
 		AddSVMClassifierUsingPOST(accessKey: string, secretKey: string, name: string, collectionIds: Array<string>, preprocessor: string | null | undefined, classificationAttributeName: string, considerViewPoints: boolean | null | undefined, seed: number | null | undefined, trainingRatio: number | null | undefined, probabilityParameter: number | null | undefined, gammaParameter: number | null | undefined, nuParameter: number | null | undefined, cParameter: number | null | undefined, svmTypeParameter: number | null | undefined, kernelTypeParameter: number | null | undefined, cacheSizeParameter: number | null | undefined, epsParameter: number | null | undefined): Observable<RestResponse> {
@@ -573,6 +590,7 @@ export namespace MyNS {
 		 * @param {string} secretKey The secretKey or readOnlyKey provided by VisageCloud
 		 * @param {Array<string>} streamIds The id of the stream for which the frames will be retrieved
 		 * @param {number} count How many frames to retrieve at a time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RestResponse} OK
 		 */
 		GetLastNAttedanceUsingGET(accessKey: string, secretKey: string, streamIds: Array<string> | null | undefined, count: number | null | undefined): Observable<RestResponse> {
@@ -586,6 +604,7 @@ export namespace MyNS {
 		 * @param {string} secretKey The secretKey provided by VisageCloud
 		 * @param {string} streamId The id of the stream that will be stopped
 		 * @param {number} interval Frames older than interval (seconds) will be cleaned up
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RestResponse} OK
 		 */
 		CleanupStreamUsingPATCH(accessKey: string, secretKey: string, streamId: string, interval: number): Observable<RestResponse> {
@@ -599,6 +618,7 @@ export namespace MyNS {
 		 * @param {string} secretKey The secretKey or readOnlyKey provided by VisageCloud
 		 * @param {string} streamId The id of the stream for which the frames will be retrieved
 		 * @param {string} timestamp Timestamp of frame to retrieve
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
 		GetFrameImageUsingGET(accessKey: string, secretKey: string, streamId: string, timestamp: string): Observable<HttpResponse<string>> {
@@ -612,6 +632,7 @@ export namespace MyNS {
 		 * @param {string} secretKey The secretKey or readOnlyKey provided by VisageCloud
 		 * @param {string} streamId The id of the stream for which the frames will be retrieved
 		 * @param {number} count How many frames to retrieve at a time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} collectionId The collection id you want to run recognition against
 		 * @param {Array<string>} labels Labels associated with the given picture or picture URL
 		 * @param {Array<string>} attributeFilters Filters that will be applied on the recognition operation
@@ -657,6 +678,7 @@ export namespace MyNS {
 		 * @param {string} password Password
 		 * @param {boolean} skipFramesWithNoFaces Boolean value indicating whether you want the original picture to be stored for later retrieval
 		 * @param {number} retentionTime Number of seconds for frames to be kept. Default is 605000s (7 days)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} storeOriginalFrames Boolean value indicating whether you want the original picture to be stored for later retrieval
 		 * @param {boolean} storeAttendanceFaces Boolean value indicating whether you want to store permanently store faces clippings of the recognized faces
 		 * @param {boolean} storeAttendanceFrames Boolean value indicating whether you want to store permanently store frames with a recognized face in them
@@ -706,6 +728,7 @@ export namespace MyNS {
 		 * @param {string} password Password
 		 * @param {boolean} skipFramesWithNoFaces Boolean value indicating whether you want the original picture to be stored for later retrieval
 		 * @param {number} retentionTime Number of seconds for frames to be kept
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} storeOriginalFrames Boolean value indicating whether you want the original picture to be stored for later retrieval
 		 * @param {boolean} storeAttendanceFaces Boolean value indicating whether you want to store permanently store faces clippings of the recognized faces
 		 * @param {boolean} storeAttendanceFrames Boolean value indicating whether you want to store permanently store frames with a recognized face in them

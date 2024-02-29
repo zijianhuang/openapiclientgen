@@ -216,7 +216,10 @@ export namespace MyNS {
 	/** A rule for auto-archiving image analysis by time and/or tag-history */
 	export interface AnalysisArchiveTransitionRule {
 
-		/** Matches if the analysis is strictly older than this number of days */
+		/**
+		 * Matches if the analysis is strictly older than this number of days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_age_days?: number | null;
 		created_at?: Date | null;
 
@@ -224,7 +227,10 @@ export namespace MyNS {
 		exclude?: AnalysisArchiveTransitionRuleExclude;
 		last_updated?: Date | null;
 
-		/** This is the maximum number of image analyses an account can have. Can only be set on system_global rules */
+		/**
+		 * This is the maximum number of image analyses an account can have. Can only be set on system_global rules
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_images_per_account?: number | null;
 
 		/** Unique identifier for archive rule */
@@ -236,7 +242,10 @@ export namespace MyNS {
 		/** True if the rule applies to all accounts in the system. This is only available to admin users to update/modify, but all users with permission to list rules can see them */
 		system_global?: boolean | null;
 
-		/** Number of images mapped to the tag that are newer */
+		/**
+		 * Number of images mapped to the tag that are newer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tag_versions_newer?: number | null;
 
 		/**
@@ -249,12 +258,18 @@ export namespace MyNS {
 	/** A rule for auto-archiving image analysis by time and/or tag-history */
 	export interface AnalysisArchiveTransitionRuleFormProperties {
 
-		/** Matches if the analysis is strictly older than this number of days */
+		/**
+		 * Matches if the analysis is strictly older than this number of days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_age_days: FormControl<number | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 		last_updated: FormControl<Date | null | undefined>,
 
-		/** This is the maximum number of image analyses an account can have. Can only be set on system_global rules */
+		/**
+		 * This is the maximum number of image analyses an account can have. Can only be set on system_global rules
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_images_per_account: FormControl<number | null | undefined>,
 
 		/** Unique identifier for archive rule */
@@ -263,7 +278,10 @@ export namespace MyNS {
 		/** True if the rule applies to all accounts in the system. This is only available to admin users to update/modify, but all users with permission to list rules can see them */
 		system_global: FormControl<boolean | null | undefined>,
 
-		/** Number of images mapped to the tag that are newer */
+		/**
+		 * Number of images mapped to the tag that are newer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tag_versions_newer: FormControl<number | null | undefined>,
 
 		/**
@@ -290,7 +308,10 @@ export namespace MyNS {
 	/** Which Images to exclude from auto-archiving logic */
 	export interface AnalysisArchiveTransitionRuleExclude {
 
-		/** How long the image selected will be excluded from the archive transition */
+		/**
+		 * How long the image selected will be excluded from the archive transition
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration_days?: number | null;
 
 		/** A set of selection criteria to match an image by a tagged pullstring based on its components, with regex support in each field */
@@ -300,7 +321,10 @@ export namespace MyNS {
 	/** Which Images to exclude from auto-archiving logic */
 	export interface AnalysisArchiveTransitionRuleExcludeFormProperties {
 
-		/** How long the image selected will be excluded from the archive transition */
+		/**
+		 * How long the image selected will be excluded from the archive transition
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration_days: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisArchiveTransitionRuleExcludeFormGroup() {
@@ -351,7 +375,10 @@ export namespace MyNS {
 	/** Summary of the transition rule set */
 	export interface AnalysisArchiveRulesSummary {
 
-		/** The number of rules for this account */
+		/**
+		 * The number of rules for this account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The newest last_updated timestamp from the set of rules */
@@ -361,7 +388,10 @@ export namespace MyNS {
 	/** Summary of the transition rule set */
 	export interface AnalysisArchiveRulesSummaryFormProperties {
 
-		/** The number of rules for this account */
+		/**
+		 * The number of rules for this account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The newest last_updated timestamp from the set of rules */
@@ -409,13 +439,22 @@ export namespace MyNS {
 		/** The timestamp of the most recent archived image */
 		last_updated?: Date | null;
 
-		/** The total sum of all the bytes stored to the backing storage. Accounts for anchore-applied compression, but not compression by the underlying storage system. */
+		/**
+		 * The total sum of all the bytes stored to the backing storage. Accounts for anchore-applied compression, but not compression by the underlying storage system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_data_bytes?: number | null;
 
-		/** The number of unique images (digests) in the archive */
+		/**
+		 * The number of unique images (digests) in the archive
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_image_count?: number | null;
 
-		/** The number of tag records (registry/repo:tag pull strings) in the archive. This may include repeated tags but will always have a unique tag->digest mapping per record. */
+		/**
+		 * The number of tag records (registry/repo:tag pull strings) in the archive. This may include repeated tags but will always have a unique tag->digest mapping per record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tag_count?: number | null;
 	}
 
@@ -425,13 +464,22 @@ export namespace MyNS {
 		/** The timestamp of the most recent archived image */
 		last_updated: FormControl<Date | null | undefined>,
 
-		/** The total sum of all the bytes stored to the backing storage. Accounts for anchore-applied compression, but not compression by the underlying storage system. */
+		/**
+		 * The total sum of all the bytes stored to the backing storage. Accounts for anchore-applied compression, but not compression by the underlying storage system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_data_bytes: FormControl<number | null | undefined>,
 
-		/** The number of unique images (digests) in the archive */
+		/**
+		 * The number of unique images (digests) in the archive
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_image_count: FormControl<number | null | undefined>,
 
-		/** The number of tag records (registry/repo:tag pull strings) in the archive. This may include repeated tags but will always have a unique tag->digest mapping per record. */
+		/**
+		 * The number of tag records (registry/repo:tag pull strings) in the archive. This may include repeated tags but will always have a unique tag->digest mapping per record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tag_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisArchiveSummaryFormGroup() {
@@ -726,26 +774,38 @@ export namespace MyNS {
 	/** A unique image in the engine. */
 	export interface AnchoreImageTagSummary {
 		analysis_status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		analyzed_at?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at?: number | null;
 		fulltag?: string | null;
 		imageDigest?: string | null;
 		imageId?: string | null;
 		image_status?: string | null;
 		parentDigest?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tag_detected_at?: number | null;
 	}
 
 	/** A unique image in the engine. */
 	export interface AnchoreImageTagSummaryFormProperties {
 		analysis_status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		analyzed_at: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at: FormControl<number | null | undefined>,
 		fulltag: FormControl<string | null | undefined>,
 		imageDigest: FormControl<string | null | undefined>,
 		imageId: FormControl<string | null | undefined>,
 		image_status: FormControl<string | null | undefined>,
 		parentDigest: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tag_detected_at: FormControl<number | null | undefined>,
 	}
 	export function CreateAnchoreImageTagSummaryFormGroup() {
@@ -780,6 +840,8 @@ export namespace MyNS {
 
 	/** Generic HTTP API error response */
 	export interface ApiErrorResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 
 		/** Details structure for additional information about the error if available. Content and structure will be error specific. */
@@ -790,6 +852,8 @@ export namespace MyNS {
 
 	/** Generic HTTP API error response */
 	export interface ApiErrorResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 
 		/** Details structure for additional information about the error if available. Content and structure will be error specific. */
@@ -833,7 +897,10 @@ export namespace MyNS {
 		/** User provided annotations as key-value pairs */
 		annotations?: string | null;
 
-		/** The size, in bytes, of the analysis archive file */
+		/**
+		 * The size, in bytes, of the analysis archive file
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		archive_size_bytes?: number | null;
 		created_at?: Date | null;
 
@@ -856,7 +923,10 @@ export namespace MyNS {
 		/** User provided annotations as key-value pairs */
 		annotations: FormControl<string | null | undefined>,
 
-		/** The size, in bytes, of the analysis archive file */
+		/**
+		 * The size, in bytes, of the analysis archive file
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		archive_size_bytes: FormControl<number | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 
@@ -959,13 +1029,25 @@ export namespace MyNS {
 	}
 
 	export interface CVSSV2Scores {
+
+		/** Type: double */
 		base_score?: number | null;
+
+		/** Type: double */
 		exploitability_score?: number | null;
+
+		/** Type: double */
 		impact_score?: number | null;
 	}
 	export interface CVSSV2ScoresFormProperties {
+
+		/** Type: double */
 		base_score: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exploitability_score: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		impact_score: FormControl<number | null | undefined>,
 	}
 	export function CreateCVSSV2ScoresFormGroup() {
@@ -978,13 +1060,25 @@ export namespace MyNS {
 	}
 
 	export interface CVSSV3Scores {
+
+		/** Type: double */
 		base_score?: number | null;
+
+		/** Type: double */
 		exploitability_score?: number | null;
+
+		/** Type: double */
 		impact_score?: number | null;
 	}
 	export interface CVSSV3ScoresFormProperties {
+
+		/** Type: double */
 		base_score: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exploitability_score: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		impact_score: FormControl<number | null | undefined>,
 	}
 	export function CreateCVSSV3ScoresFormGroup() {
@@ -1019,22 +1113,34 @@ export namespace MyNS {
 
 	export interface ContentFilesResponseContent {
 		filename?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gid?: number | null;
 		linkdest?: string | null;
 		mode?: string | null;
 		sha256?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		uid?: number | null;
 	}
 	export interface ContentFilesResponseContentFormProperties {
 		filename: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gid: FormControl<number | null | undefined>,
 		linkdest: FormControl<string | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		sha256: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateContentFilesResponseContentFormGroup() {
@@ -1489,13 +1595,19 @@ export namespace MyNS {
 	/** Response envelope for paginated listing of events */
 	export interface EventsList {
 
-		/** Number of events in this page */
+		/**
+		 * Number of events in this page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		item_count?: number | null;
 
 		/** Boolean flag, True indicates there are more events and False otherwise */
 		next_page?: boolean | null;
 
-		/** Page number of this result set */
+		/**
+		 * Page number of this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
 		/** List of events */
@@ -1505,13 +1617,19 @@ export namespace MyNS {
 	/** Response envelope for paginated listing of events */
 	export interface EventsListFormProperties {
 
-		/** Number of events in this page */
+		/**
+		 * Number of events in this page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		item_count: FormControl<number | null | undefined>,
 
 		/** Boolean flag, True indicates there are more events and False otherwise */
 		next_page: FormControl<boolean | null | undefined>,
 
-		/** Page number of this result set */
+		/**
+		 * Page number of this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 	}
 	export function CreateEventsListFormGroup() {
@@ -1527,12 +1645,16 @@ export namespace MyNS {
 		created_at?: Date | null;
 		last_sync?: Date | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		record_count?: number | null;
 	}
 	export interface FeedGroupMetadataFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		last_sync: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		record_count: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedGroupMetadataFormGroup() {
@@ -1597,7 +1719,10 @@ export namespace MyNS {
 		/** The result of the sync operations, either co */
 		status?: GroupSyncResultStatus | null;
 
-		/** The duratin, in seconds, of the sync of the feed, the sum of all the group syncs */
+		/**
+		 * The duratin, in seconds, of the sync of the feed, the sum of all the group syncs
+		 * Type: double
+		 */
 		total_time_seconds?: number | null;
 	}
 
@@ -1610,7 +1735,10 @@ export namespace MyNS {
 		/** The result of the sync operations, either co */
 		status: FormControl<GroupSyncResultStatus | null | undefined>,
 
-		/** The duratin, in seconds, of the sync of the feed, the sum of all the group syncs */
+		/**
+		 * The duratin, in seconds, of the sync of the feed, the sum of all the group syncs
+		 * Type: double
+		 */
 		total_time_seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedSyncResultFormGroup() {
@@ -1628,13 +1756,22 @@ export namespace MyNS {
 		group?: string | null;
 		status?: GroupSyncResultStatus | null;
 
-		/** The duration of the group sync in seconds */
+		/**
+		 * The duration of the group sync in seconds
+		 * Type: double
+		 */
 		total_time_seconds?: number | null;
 
-		/** The number of images updated by the this group sync, across all accounts. This is typically only non-zero for vulnerability feeds which update images' vulnerability results during the sync. */
+		/**
+		 * The number of images updated by the this group sync, across all accounts. This is typically only non-zero for vulnerability feeds which update images' vulnerability results during the sync.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_image_count?: number | null;
 
-		/** The number of feed data records synced down as either updates or new records */
+		/**
+		 * The number of feed data records synced down as either updates or new records
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_record_count?: number | null;
 	}
 	export interface GroupSyncResultFormProperties {
@@ -1643,13 +1780,22 @@ export namespace MyNS {
 		group: FormControl<string | null | undefined>,
 		status: FormControl<GroupSyncResultStatus | null | undefined>,
 
-		/** The duration of the group sync in seconds */
+		/**
+		 * The duration of the group sync in seconds
+		 * Type: double
+		 */
 		total_time_seconds: FormControl<number | null | undefined>,
 
-		/** The number of images updated by the this group sync, across all accounts. This is typically only non-zero for vulnerability feeds which update images' vulnerability results during the sync. */
+		/**
+		 * The number of images updated by the this group sync, across all accounts. This is typically only non-zero for vulnerability feeds which update images' vulnerability results during the sync.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_image_count: FormControl<number | null | undefined>,
 
-		/** The number of feed data records synced down as either updates or new records */
+		/**
+		 * The number of feed data records synced down as either updates or new records
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated_record_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupSyncResultFormGroup() {
@@ -2771,26 +2917,42 @@ export namespace MyNS {
 
 	/** base object for Notifications (every notification has this basic structure) */
 	export interface NotificationBase {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at?: number | null;
 		dataId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_updated?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_tries?: number | null;
 		queueId?: string | null;
 		record_state_key?: string | null;
 		record_state_val?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tries?: number | null;
 		userId?: string | null;
 	}
 
 	/** base object for Notifications (every notification has this basic structure) */
 	export interface NotificationBaseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at: FormControl<number | null | undefined>,
 		dataId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_updated: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_tries: FormControl<number | null | undefined>,
 		queueId: FormControl<string | null | undefined>,
 		record_state_key: FormControl<string | null | undefined>,
 		record_state_val: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tries: FormControl<number | null | undefined>,
 		userId: FormControl<string | null | undefined>,
 	}
@@ -3072,7 +3234,10 @@ export namespace MyNS {
 		/** The page number returned (should match the requested page query string param) */
 		page?: string | null;
 
-		/** The number of items sent in this response */
+		/**
+		 * The number of items sent in this response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returned_count?: number | null;
 	}
 
@@ -3085,7 +3250,10 @@ export namespace MyNS {
 		/** The page number returned (should match the requested page query string param) */
 		page: FormControl<string | null | undefined>,
 
-		/** The number of items sent in this response */
+		/**
+		 * The number of items sent in this response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returned_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationPropertiesFormGroup() {
@@ -4544,7 +4712,9 @@ export namespace MyNS {
 		 * @param {string} since Return events that occurred after the timestamp
 		 * @param {string} before Return events that occurred before the timestamp
 		 * @param {number} page Pagination controls - return the nth page of results. Defaults to first page if left empty
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of events in the result set. Defaults to 100 if left empty
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventsList} Paginated list of event records and the next token
 		 */
 		List_events(source_servicename: string | null | undefined, source_hostid: string | null | undefined, event_type: string | null | undefined, resource_type: string | null | undefined, resource_id: string | null | undefined, level: string | null | undefined, since: string | null | undefined, before: string | null | undefined, page: number | null | undefined, limit: number | null | undefined): Observable<EventsList> {
@@ -5007,6 +5177,7 @@ export namespace MyNS {
 		 * @param {string} version Version of named package to filter on (e.g. 4.4-1)
 		 * @param {string} page The page of results to fetch. Pages start at 1
 		 * @param {number} limit Limit the number of records for the requested page. If omitted or set to 0, return all results in a single page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PaginatedImageList} Image listing
 		 */
 		Query_images_by_package(name: string, package_type: string | null | undefined, version: string | null | undefined, page: string | null | undefined, limit: number | null | undefined): Observable<PaginatedImageList> {
@@ -5023,7 +5194,9 @@ export namespace MyNS {
 		 * @param {StandaloneVulnerabilitySeverity} severity Filter results to vulnerable package/vulnerability with the given severity
 		 * @param {boolean} vendor_only Filter results to include only vulnerabilities that are not marked as invalid by upstream OS vendor data
 		 * @param {number} page The page of results to fetch. Pages start at 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Limit the number of records for the requested page. If omitted or set to 0, return all results in a single page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PaginatedVulnerableImageList} Image lookup success
 		 */
 		Query_images_by_vulnerability(vulnerability_id: string, namespace: string | null | undefined, affected_package: string | null | undefined, severity: StandaloneVulnerabilitySeverity | null | undefined, vendor_only: boolean | null | undefined, page: number | null | undefined, limit: number | null | undefined): Observable<PaginatedVulnerableImageList> {
@@ -5039,6 +5212,7 @@ export namespace MyNS {
 		 * @param {string} affected_package_version Filter results by specified package version (e.g. 4.4-1)
 		 * @param {string} page The page of results to fetch. Pages start at 1
 		 * @param {number} limit Limit the number of records for the requested page. If omitted or set to 0, return all results in a single page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} namespace Namespace(s) to filter vulnerability records by
 		 * @return {PaginatedVulnerabilityList} Vulnerability listing paginated
 		 */

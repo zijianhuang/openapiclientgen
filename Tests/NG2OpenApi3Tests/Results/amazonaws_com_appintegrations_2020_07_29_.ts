@@ -755,7 +755,9 @@ export namespace MyNS {
 		 * <p>Returns a paginated list of DataIntegrations in the account.</p> <note> <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> </note>
 		 * Get dataIntegrations
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListDataIntegrationsResponse} Success
 		 */
 		ListDataIntegrations(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDataIntegrationsResponse> {
@@ -775,7 +777,9 @@ export namespace MyNS {
 		 * Returns a paginated list of event integrations in the account.
 		 * Get eventIntegrations
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListEventIntegrationsResponse} Success
 		 */
 		ListEventIntegrations(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListEventIntegrationsResponse> {
@@ -786,6 +790,7 @@ export namespace MyNS {
 		 * <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role. </p> <note> <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> </note>
 		 * Delete dataIntegrations/{Identifier}
 		 * @param {string} Identifier A unique identifier for the DataIntegration.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteDataIntegrationResponse} Success
 		 */
 		DeleteDataIntegration(Identifier: string): Observable<DeleteDataIntegrationResponse> {
@@ -796,6 +801,7 @@ export namespace MyNS {
 		 * <p>Returns information about the DataIntegration.</p> <note> <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> </note>
 		 * Get dataIntegrations/{Identifier}
 		 * @param {string} Identifier A unique identifier.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetDataIntegrationResponse} Success
 		 */
 		GetDataIntegration(Identifier: string): Observable<GetDataIntegrationResponse> {
@@ -806,6 +812,7 @@ export namespace MyNS {
 		 * <p>Updates the description of a DataIntegration.</p> <note> <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> </note>
 		 * Patch dataIntegrations/{Identifier}
 		 * @param {string} Identifier A unique identifier for the DataIntegration.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateDataIntegrationResponse} Success
 		 */
 		UpdateDataIntegration(Identifier: string, requestBody: UpdateDataIntegrationPatchBody): Observable<UpdateDataIntegrationResponse> {
@@ -816,6 +823,7 @@ export namespace MyNS {
 		 * Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected.
 		 * Delete eventIntegrations/{Name}
 		 * @param {string} Name The name of the event integration.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteEventIntegrationResponse} Success
 		 */
 		DeleteEventIntegration(Name: string): Observable<DeleteEventIntegrationResponse> {
@@ -826,6 +834,7 @@ export namespace MyNS {
 		 * Returns information about the event integration.
 		 * Get eventIntegrations/{Name}
 		 * @param {string} Name The name of the event integration. 
+		 *     Min length: 1    Max length: 255
 		 * @return {GetEventIntegrationResponse} Success
 		 */
 		GetEventIntegration(Name: string): Observable<GetEventIntegrationResponse> {
@@ -836,6 +845,7 @@ export namespace MyNS {
 		 * Updates the description of an event integration.
 		 * Patch eventIntegrations/{Name}
 		 * @param {string} Name The name of the event integration.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateEventIntegrationResponse} Success
 		 */
 		UpdateEventIntegration(Name: string, requestBody: UpdateEventIntegrationPatchBody): Observable<UpdateEventIntegrationResponse> {
@@ -846,8 +856,11 @@ export namespace MyNS {
 		 * <p>Returns a paginated list of DataIntegration associations in the account.</p> <note> <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> </note>
 		 * Get dataIntegrations/{Identifier}/associations
 		 * @param {string} Identifier A unique identifier for the DataIntegration.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListDataIntegrationAssociationsResponse} Success
 		 */
 		ListDataIntegrationAssociations(Identifier: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDataIntegrationAssociationsResponse> {
@@ -858,8 +871,11 @@ export namespace MyNS {
 		 * Returns a paginated list of event integration associations in the account.
 		 * Get eventIntegrations/{Name}/associations
 		 * @param {string} Name The name of the event integration. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListEventIntegrationAssociationsResponse} Success
 		 */
 		ListEventIntegrationAssociations(Name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListEventIntegrationAssociationsResponse> {
@@ -870,6 +886,7 @@ export namespace MyNS {
 		 * Lists the tags for the specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -880,6 +897,7 @@ export namespace MyNS {
 		 * Adds the specified tags to the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 1    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -890,7 +908,9 @@ export namespace MyNS {
 		 * Removes the specified tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -903,31 +923,31 @@ export namespace MyNS {
 		/**
 		 * The name of the DataIntegration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
 		/**
 		 * A description of the DataIntegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
 		/**
 		 * The KMS key for the DataIntegration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		KmsKey: string;
 
 		/**
 		 * The URI of the data source.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		SourceURI: string;
 
@@ -942,8 +962,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken?: string | null;
 
@@ -958,31 +978,31 @@ export namespace MyNS {
 		/**
 		 * The name of the DataIntegration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the DataIntegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The KMS key for the DataIntegration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		KmsKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The URI of the data source.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		SourceURI: FormControl<string | null | undefined>,
 
@@ -991,8 +1011,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -1048,15 +1068,15 @@ export namespace MyNS {
 		/**
 		 * The name of the event integration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
 		/**
 		 * The description of the event integration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -1069,15 +1089,15 @@ export namespace MyNS {
 		/**
 		 * The EventBridge bus.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EventBridgeBus: string;
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken?: string | null;
 
@@ -1089,30 +1109,30 @@ export namespace MyNS {
 		/**
 		 * The name of the event integration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the event integration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The EventBridge bus.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EventBridgeBus: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -1147,15 +1167,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the DataIntegration.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * A description of the DataIntegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 	}
@@ -1163,15 +1183,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the DataIntegration.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the DataIntegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -1187,8 +1207,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the event inegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 	}
@@ -1196,8 +1216,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the event inegration.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 	}

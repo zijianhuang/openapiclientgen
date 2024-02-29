@@ -113,10 +113,17 @@ namespace MyNS
 		/// Gets the private link resources for MariaDB server.
 		/// PrivateLinkResources_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResourceListResult> PrivateLinkResources_ListByServerAsync(string resourceGroupName, string serverName, string subscriptionId, string api_version)
 		{
@@ -145,11 +152,18 @@ namespace MyNS
 		/// Gets a private link resource for MariaDB server.
 		/// PrivateLinkResources_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources/{groupName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="groupName">The name of the private link resource.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResource> PrivateLinkResources_GetAsync(string resourceGroupName, string serverName, string groupName, string subscriptionId, string api_version)
 		{

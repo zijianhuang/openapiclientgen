@@ -994,8 +994,14 @@ namespace MyNS
 		/// <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>
 		/// CancelJournalKinesisStream ledgers/{name}/journal-kinesis-streams/{streamId}
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
-		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
+		/// Max length: 22
+		/// Min length: 22
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJournalKinesisStreamResponse> CancelJournalKinesisStreamAsync(string name, string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1029,8 +1035,14 @@ namespace MyNS
 		/// <p>Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation request.</p> <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		/// DescribeJournalKinesisStream ledgers/{name}/journal-kinesis-streams/{streamId}
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
-		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
+		/// Max length: 22
+		/// Min length: 22
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJournalKinesisStreamResponse> DescribeJournalKinesisStreamAsync(string name, string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1104,8 +1116,14 @@ namespace MyNS
 		/// <p>Returns all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items and is paginated so that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
 		/// ListLedgers ledgers
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</param>
-		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</param>
+		/// <param name="max_results">The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.
+		/// Max length: 1024
+		/// Min length: 4
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1141,7 +1159,10 @@ namespace MyNS
 		/// <p>Deletes a ledger and all of its contents. This action is irreversible.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
 		/// DeleteLedger ledgers/{name}
 		/// </summary>
-		/// <param name="name">The name of the ledger that you want to delete.</param>
+		/// <param name="name">The name of the ledger that you want to delete.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteLedgerAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1169,7 +1190,10 @@ namespace MyNS
 		/// Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when it was created.
 		/// DescribeLedger ledgers/{name}
 		/// </summary>
-		/// <param name="name">The name of the ledger that you want to describe.</param>
+		/// <param name="name">The name of the ledger that you want to describe.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeLedgerResponse> DescribeLedgerAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1203,7 +1227,10 @@ namespace MyNS
 		/// Updates properties on a ledger.
 		/// UpdateLedger ledgers/{name}
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLedgerResponse> UpdateLedgerAsync(string name, UpdateLedgerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1244,8 +1271,14 @@ namespace MyNS
 		/// <p>Returns information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the export job with the given <code>ExportId</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p>
 		/// DescribeJournalS3Export ledgers/{name}/journal-s3-exports/{exportId}
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
-		/// <param name="exportId">The UUID (represented in Base62-encoded text) of the journal export job to describe.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="exportId">The UUID (represented in Base62-encoded text) of the journal export job to describe.
+		/// Max length: 22
+		/// Min length: 22
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJournalS3ExportResponse> DescribeJournalS3ExportAsync(string name, string exportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1279,7 +1312,10 @@ namespace MyNS
 		/// <p>Exports journal contents within a date and time range from a ledger into a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the data objects in either the text or binary representation of Amazon Ion format, or in <i>JSON Lines</i> text format.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond this limit, journal export requests throw <code>LimitExceededException</code>.</p>
 		/// ExportJournalToS3 ledgers/{name}/journal-s3-exports
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ExportJournalToS3Response> ExportJournalToS3Async(string name, ExportJournalToS3PostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1320,9 +1356,18 @@ namespace MyNS
 		/// <p>Returns all journal export jobs for a specified ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		/// ListJournalS3ExportsForLedger ledgers/{name}/journal-s3-exports
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
-		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</param>
-		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.
+		/// Max length: 1024
+		/// Min length: 4
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1358,7 +1403,10 @@ namespace MyNS
 		/// <p>Returns a block object at a specified address in a journal. Also returns a proof of the specified block for verification if <code>DigestTipAddress</code> is provided.</p> <p>For information about the data contents in a block, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified ledger doesn't exist or is in <code>DELETING</code> status, then throws <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with the specified address, then throws <code>InvalidParameterException</code>.</p>
 		/// GetBlock ledgers/{name}/block
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBlockResponse> GetBlockAsync(string name, GetBlockPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1399,7 +1447,10 @@ namespace MyNS
 		/// Returns the digest of a ledger at the latest committed block in the journal. The response includes a 256-bit hash value and a block address.
 		/// GetDigest ledgers/{name}/digest
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDigestResponse> GetDigestAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1428,7 +1479,10 @@ namespace MyNS
 		/// Returns a revision data object for a specified document ID and block address. Also returns a proof of the specified revision for verification if <code>DigestTipAddress</code> is provided.
 		/// GetRevision ledgers/{name}/revision
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRevisionResponse> GetRevisionAsync(string name, GetRevisionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1469,9 +1523,18 @@ namespace MyNS
 		/// <p>Returns all Amazon QLDB journal streams for a given ledger.</p> <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p>
 		/// ListJournalKinesisStreamsForLedger ledgers/{name}/journal-kinesis-streams
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
-		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</param>
-		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.
+		/// Max length: 1024
+		/// Min length: 4
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1507,7 +1570,10 @@ namespace MyNS
 		/// Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.
 		/// StreamJournalToKinesis ledgers/{name}/journal-kinesis-streams
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StreamJournalToKinesisResponse> StreamJournalToKinesisAsync(string name, StreamJournalToKinesisPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1548,8 +1614,14 @@ namespace MyNS
 		/// <p>Returns all journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		/// ListJournalS3Exports journal-s3-exports
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</param>
-		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</param>
+		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.
+		/// Max length: 1024
+		/// Min length: 4
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1585,7 +1657,10 @@ namespace MyNS
 		/// Returns all tags for a specified Amazon QLDB resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p></param>
+		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		/// Max length: 1600
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1619,7 +1694,10 @@ namespace MyNS
 		/// <p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p></param>
+		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		/// Max length: 1600
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1660,8 +1738,14 @@ namespace MyNS
 		/// Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50 tag keys to remove.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p></param>
-		/// <param name="tagKeys">The list of tag keys to remove.</param>
+		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		/// Max length: 1600
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1695,7 +1779,10 @@ namespace MyNS
 		/// <p>Updates the permissions mode of a ledger.</p> <important> <p>Before you switch to the <code>STANDARD</code> permissions mode, you must first create all required IAM policies and table tags to avoid disruption to your users. To learn more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </important>
 		/// UpdateLedgerPermissionsMode ledgers/{name}/permissions-mode
 		/// </summary>
-		/// <param name="name">The name of the ledger.</param>
+		/// <param name="name">The name of the ledger.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLedgerPermissionsModeResponse> UpdateLedgerPermissionsModeAsync(string name, UpdateLedgerPermissionsModePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

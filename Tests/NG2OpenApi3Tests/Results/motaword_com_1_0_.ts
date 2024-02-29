@@ -80,7 +80,9 @@ export namespace MyNS {
 
 		/** When true, Active ecosystem will collect all strings on TMS no matter if the translation is present in the cache. */
 		hit_backend_for_existing?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 
 		/** Continuous project language mappings */
 		language_mappings?: string | null;
@@ -171,7 +173,9 @@ export namespace MyNS {
 
 		/** When true, Active ecosystem will collect all strings on TMS no matter if the translation is present in the cache. */
 		hit_backend_for_existing: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/** Continuous project language mappings */
 		language_mappings: FormControl<string | null | undefined>,
@@ -243,7 +247,7 @@ export namespace MyNS {
 			follow_user: new FormControl<boolean | null | undefined>(undefined),
 			force_cache_refresh_interval: new FormControl<boolean | null | undefined>(undefined),
 			hit_backend_for_existing: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			language_mappings: new FormControl<string | null | undefined>(undefined),
 			live: new FormControl<boolean | null | undefined>(undefined),
 			modify_links: new FormControl<boolean | null | undefined>(undefined),
@@ -292,33 +296,54 @@ export namespace MyNS {
 	}
 
 	export interface PagingMetaPaging {
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
 		links?: PagingLinksMeta;
-		page?: number | null;
-		per_page?: number | null;
-		total_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		page?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		per_page?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_count?: string | null;
 	}
 	export interface PagingMetaPagingFormProperties {
-		count: FormControl<number | null | undefined>,
-		page: FormControl<number | null | undefined>,
-		per_page: FormControl<number | null | undefined>,
-		total_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		page: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		per_page: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_count: FormControl<string | null | undefined>,
 	}
 	export function CreatePagingMetaPagingFormGroup() {
 		return new FormGroup<PagingMetaPagingFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
-			page: new FormControl<number | null | undefined>(undefined),
-			per_page: new FormControl<number | null | undefined>(undefined),
-			total_count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
+			page: new FormControl<string | null | undefined>(undefined),
+			per_page: new FormControl<string | null | undefined>(undefined),
+			total_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Activity {
 
-		/** Unix epoch time */
-		activity_at?: number | null;
-		id?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		activity_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		links?: ActivityLinks;
 
 		/** Source text */
@@ -327,17 +352,25 @@ export namespace MyNS {
 		/** Target text of the activity, which is actually the translation of the source text. */
 		target_text?: string | null;
 
-		/** Unique identifier of the translator/proofreader of this activity. */
-		translator?: number | null;
+		/**
+		 * Unique identifier of the translator/proofreader of this activity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		translator?: string | null;
 
 		/** Currently there are two available activity types; 'translated', 'proofread'. */
 		type?: ActivityType | null;
 	}
 	export interface ActivityFormProperties {
 
-		/** Unix epoch time */
-		activity_at: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		activity_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/** Source text */
 		source_text: FormControl<string | null | undefined>,
@@ -345,19 +378,22 @@ export namespace MyNS {
 		/** Target text of the activity, which is actually the translation of the source text. */
 		target_text: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the translator/proofreader of this activity. */
-		translator: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the translator/proofreader of this activity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		translator: FormControl<string | null | undefined>,
 
 		/** Currently there are two available activity types; 'translated', 'proofread'. */
 		type: FormControl<ActivityType | null | undefined>,
 	}
 	export function CreateActivityFormGroup() {
 		return new FormGroup<ActivityFormProperties>({
-			activity_at: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			activity_at: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			source_text: new FormControl<string | null | undefined>(undefined),
 			target_text: new FormControl<string | null | undefined>(undefined),
-			translator: new FormControl<number | null | undefined>(undefined),
+			translator: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<ActivityType | null | undefined>(undefined),
 		});
 
@@ -505,23 +541,29 @@ export namespace MyNS {
 
 	export interface AsyncOperationStatus {
 
-		/** operation duration in milliseconds */
-		duration?: number | null;
+		/**
+		 * operation duration in milliseconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 		key?: string | null;
 		message?: string | null;
 		status?: AsyncOperationStatusStatus | null;
 	}
 	export interface AsyncOperationStatusFormProperties {
 
-		/** operation duration in milliseconds */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * operation duration in milliseconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		status: FormControl<AsyncOperationStatusStatus | null | undefined>,
 	}
 	export function CreateAsyncOperationStatusFormGroup() {
 		return new FormGroup<AsyncOperationStatusFormProperties>({
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			key: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AsyncOperationStatusStatus | null | undefined>(undefined),
@@ -535,7 +577,10 @@ export namespace MyNS {
 
 	export interface AvailableVendorsFilter {
 
-		/** Corporate account ID to filter for vendor authorization */
+		/**
+		 * Corporate account ID to filter for vendor authorization
+		 * Type: double
+		 */
 		corporateId?: number | null;
 
 		/** Filter vendors for manual work permission */
@@ -552,7 +597,10 @@ export namespace MyNS {
 	}
 	export interface AvailableVendorsFilterFormProperties {
 
-		/** Corporate account ID to filter for vendor authorization */
+		/**
+		 * Corporate account ID to filter for vendor authorization
+		 * Type: double
+		 */
 		corporateId: FormControl<number | null | undefined>,
 
 		/** Filter vendors for manual work permission */
@@ -605,7 +653,9 @@ export namespace MyNS {
 
 		/** Article excerpt */
 		excerpt?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 
 		/** language code */
 		language?: string | null;
@@ -626,7 +676,9 @@ export namespace MyNS {
 
 		/** Article excerpt */
 		excerpt: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/** language code */
 		language: FormControl<string | null | undefined>,
@@ -641,7 +693,7 @@ export namespace MyNS {
 			content: new FormControl<string | null | undefined>(undefined),
 			created_at: new FormControl<Date | null | undefined>(undefined),
 			excerpt: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined),
 			slug: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
@@ -679,14 +731,18 @@ export namespace MyNS {
 	}
 
 	export interface CM {
-		user_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id?: string | null;
 	}
 	export interface CMFormProperties {
-		user_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id: FormControl<string | null | undefined>,
 	}
 	export function CreateCMFormGroup() {
 		return new FormGroup<CMFormProperties>({
-			user_id: new FormControl<number | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -728,25 +784,36 @@ export namespace MyNS {
 		can_pam_manage?: boolean | null;
 		client?: User;
 
-		/** Assigned admin's id */
-		cm_id?: number | null;
+		/**
+		 * Assigned admin's id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cm_id?: string | null;
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		completed_on?: Date | null;
 		continuous_project_type?: string | null;
 
-		/** Unix epoch time */
-		created_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at?: string | null;
 
 		/** Custom data provided while creating a new project. */
 		custom?: string | null;
 
-		/** Unix epoch time */
-		delivery_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delivery_at?: string | null;
 
 		/** A list of errors. Visible when creating a project and uploading your documents at the same time, in case of multiple errors. */
 		errors?: Array<Error>;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		is_api_project?: boolean | null;
 		is_certified?: boolean | null;
 		is_continuous?: boolean | null;
@@ -773,10 +840,17 @@ export namespace MyNS {
 		/** TMS project name for this MW project. Requires privileged scope. */
 		tms_name?: string | null;
 
-		/** Unix epoch time. Available only if status is `pending`. */
-		valid_until?: number | null;
-		vendor_word_count?: number | null;
-		word_count?: number | null;
+		/**
+		 * Unix epoch time. Available only if status is `pending`.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valid_until?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vendor_word_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 		word_count_analysis?: ProjectWord_count_analysis;
 	}
 	export interface ProjectFormProperties {
@@ -787,22 +861,33 @@ export namespace MyNS {
 		callback_url: FormControl<string | null | undefined>,
 		can_pam_manage: FormControl<boolean | null | undefined>,
 
-		/** Assigned admin's id */
-		cm_id: FormControl<number | null | undefined>,
+		/**
+		 * Assigned admin's id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cm_id: FormControl<string | null | undefined>,
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		completed_on: FormControl<Date | null | undefined>,
 		continuous_project_type: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		created_at: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at: FormControl<string | null | undefined>,
 
 		/** Custom data provided while creating a new project. */
 		custom: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		delivery_at: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delivery_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		is_api_project: FormControl<boolean | null | undefined>,
 		is_certified: FormControl<boolean | null | undefined>,
 		is_continuous: FormControl<boolean | null | undefined>,
@@ -818,10 +903,17 @@ export namespace MyNS {
 		/** TMS project name for this MW project. Requires privileged scope. */
 		tms_name: FormControl<string | null | undefined>,
 
-		/** Unix epoch time. Available only if status is `pending`. */
-		valid_until: FormControl<number | null | undefined>,
-		vendor_word_count: FormControl<number | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time. Available only if status is `pending`.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valid_until: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vendor_word_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
@@ -829,13 +921,13 @@ export namespace MyNS {
 			budget_code: new FormControl<string | null | undefined>(undefined),
 			callback_url: new FormControl<string | null | undefined>(undefined),
 			can_pam_manage: new FormControl<boolean | null | undefined>(undefined),
-			cm_id: new FormControl<number | null | undefined>(undefined),
+			cm_id: new FormControl<string | null | undefined>(undefined),
 			completed_on: new FormControl<Date | null | undefined>(undefined),
 			continuous_project_type: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			custom: new FormControl<string | null | undefined>(undefined),
-			delivery_at: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			delivery_at: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			is_api_project: new FormControl<boolean | null | undefined>(undefined),
 			is_certified: new FormControl<boolean | null | undefined>(undefined),
 			is_continuous: new FormControl<boolean | null | undefined>(undefined),
@@ -846,15 +938,17 @@ export namespace MyNS {
 			source_language: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ProjectStatus | null | undefined>(undefined),
 			tms_name: new FormControl<string | null | undefined>(undefined),
-			valid_until: new FormControl<number | null | undefined>(undefined),
-			vendor_word_count: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			valid_until: new FormControl<string | null | undefined>(undefined),
+			vendor_word_count: new FormControl<string | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface User {
 		billing?: BillingAddress;
+
+		/** Type: DateOnly */
 		birthday?: Date | null;
 
 		/** \@deprecated. use `vendor` key */
@@ -863,18 +957,25 @@ export namespace MyNS {
 		/** \@deprecated. use mailing or billing key. */
 		city?: string | null;
 		client?: UserClient;
-		corporate_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		corporate_id?: string | null;
 
 		/** \@deprecated. use mailing or billing key. */
 		country?: string | null;
 
-		/** Unix epoch time */
-		created_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at?: string | null;
 		do_not_contact?: boolean | null;
 		email?: string | null;
 		first_name?: string | null;
 		has_pwd?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		is_client?: boolean | null;
 		is_developer?: boolean | null;
 
@@ -888,8 +989,11 @@ export namespace MyNS {
 		language_pairs?: Array<LanguagePair>;
 		last_name?: string | null;
 
-		/** Unix epoch time */
-		last_seen_online_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		last_seen_online_at?: string | null;
 		links?: UserLinks;
 
 		/** User Locale */
@@ -900,7 +1004,10 @@ export namespace MyNS {
 		/** \@deprecated. Native language of user */
 		native_language?: string | null;
 
-		/** \@deprecated. use /stats endpoint for the current nps value. */
+		/**
+		 * \@deprecated. use /stats endpoint for the current nps value.
+		 * Type: float
+		 */
 		nps?: number | null;
 		phone_number?: string | null;
 		profile_picture_path?: string | null;
@@ -923,6 +1030,8 @@ export namespace MyNS {
 		zip_code?: string | null;
 	}
 	export interface UserFormProperties {
+
+		/** Type: DateOnly */
 		birthday: FormControl<Date | null | undefined>,
 
 		/** \@deprecated. use `vendor` key */
@@ -930,18 +1039,25 @@ export namespace MyNS {
 
 		/** \@deprecated. use mailing or billing key. */
 		city: FormControl<string | null | undefined>,
-		corporate_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		corporate_id: FormControl<string | null | undefined>,
 
 		/** \@deprecated. use mailing or billing key. */
 		country: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		created_at: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at: FormControl<string | null | undefined>,
 		do_not_contact: FormControl<boolean | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		first_name: FormControl<string | null | undefined>,
 		has_pwd: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		is_client: FormControl<boolean | null | undefined>,
 		is_developer: FormControl<boolean | null | undefined>,
 
@@ -952,8 +1068,11 @@ export namespace MyNS {
 		is_vendor: FormControl<boolean | null | undefined>,
 		last_name: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		last_seen_online_at: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		last_seen_online_at: FormControl<string | null | undefined>,
 
 		/** User Locale */
 		locale: FormControl<string | null | undefined>,
@@ -962,7 +1081,10 @@ export namespace MyNS {
 		/** \@deprecated. Native language of user */
 		native_language: FormControl<string | null | undefined>,
 
-		/** \@deprecated. use /stats endpoint for the current nps value. */
+		/**
+		 * \@deprecated. use /stats endpoint for the current nps value.
+		 * Type: float
+		 */
 		nps: FormControl<number | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
 		profile_picture_path: FormControl<string | null | undefined>,
@@ -986,14 +1108,14 @@ export namespace MyNS {
 			birthday: new FormControl<Date | null | undefined>(undefined),
 			can_work_manual_files: new FormControl<boolean | null | undefined>(undefined),
 			city: new FormControl<string | null | undefined>(undefined),
-			corporate_id: new FormControl<number | null | undefined>(undefined),
+			corporate_id: new FormControl<string | null | undefined>(undefined),
 			country: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			do_not_contact: new FormControl<boolean | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			first_name: new FormControl<string | null | undefined>(undefined),
 			has_pwd: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			is_client: new FormControl<boolean | null | undefined>(undefined),
 			is_developer: new FormControl<boolean | null | undefined>(undefined),
 			is_proofreader: new FormControl<boolean | null | undefined>(undefined),
@@ -1001,7 +1123,7 @@ export namespace MyNS {
 			is_sales_person: new FormControl<boolean | null | undefined>(undefined),
 			is_vendor: new FormControl<boolean | null | undefined>(undefined),
 			last_name: new FormControl<string | null | undefined>(undefined),
-			last_seen_online_at: new FormControl<number | null | undefined>(undefined),
+			last_seen_online_at: new FormControl<string | null | undefined>(undefined),
 			locale: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			native_language: new FormControl<string | null | undefined>(undefined),
@@ -1020,31 +1142,39 @@ export namespace MyNS {
 
 	export interface UserClient {
 		corporate?: UserClientCorporate;
+
+		/** Type: float */
 		nps?: number | null;
-		subjects?: {[id: string]: number };
+		subjects?: {[id: string]: string };
 	}
 	export interface UserClientFormProperties {
+
+		/** Type: float */
 		nps: FormControl<number | null | undefined>,
-		subjects: FormControl<{[id: string]: number } | null | undefined>,
+		subjects: FormControl<{[id: string]: string } | null | undefined>,
 	}
 	export function CreateUserClientFormGroup() {
 		return new FormGroup<UserClientFormProperties>({
 			nps: new FormControl<number | null | undefined>(undefined),
-			subjects: new FormControl<{[id: string]: number } | null | undefined>(undefined),
+			subjects: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserClientCorporate {
 		email?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		logo?: string | null;
 		name?: string | null;
 		phone_number?: string | null;
 	}
 	export interface UserClientCorporateFormProperties {
 		email: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		logo: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
@@ -1052,7 +1182,7 @@ export namespace MyNS {
 	export function CreateUserClientCorporateFormGroup() {
 		return new FormGroup<UserClientCorporateFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			logo: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			phone_number: new FormControl<string | null | undefined>(undefined),
@@ -1096,20 +1226,28 @@ export namespace MyNS {
 	}
 
 	export interface UserGroup {
-		corporate_id?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		corporate_id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		permissions?: Array<string>;
 	}
 	export interface UserGroupFormProperties {
-		corporate_id: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		corporate_id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateUserGroupFormGroup() {
 		return new FormGroup<UserGroupFormProperties>({
-			corporate_id: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			corporate_id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1117,6 +1255,8 @@ export namespace MyNS {
 
 	export interface UserVendor {
 		can_work_manual_files?: boolean | null;
+
+		/** Type: float */
 		email_open_rate?: number | null;
 		is_frozen?: boolean | null;
 		is_proofreader?: boolean | null;
@@ -1124,6 +1264,8 @@ export namespace MyNS {
 
 		/** Native language of user */
 		native_language?: string | null;
+
+		/** Type: float */
 		pam_tqs?: number | null;
 		paypal_email?: string | null;
 		profile_survey?: ProfileSurvey;
@@ -1134,12 +1276,16 @@ export namespace MyNS {
 	}
 	export interface UserVendorFormProperties {
 		can_work_manual_files: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		email_open_rate: FormControl<number | null | undefined>,
 		is_frozen: FormControl<boolean | null | undefined>,
 		is_proofreader: FormControl<boolean | null | undefined>,
 
 		/** Native language of user */
 		native_language: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		pam_tqs: FormControl<number | null | undefined>,
 		paypal_email: FormControl<string | null | undefined>,
 		require_1099: FormControl<boolean | null | undefined>,
@@ -1274,12 +1420,16 @@ export namespace MyNS {
 	export interface Error {
 		code?: string | null;
 		help?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		http_code?: number | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
 		code: FormControl<string | null | undefined>,
 		help: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		http_code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1299,6 +1449,8 @@ export namespace MyNS {
 		/** Indicates if the vendor be able to proofred this pair */
 		is_proofreader?: boolean | null;
 		proofreader?: User;
+
+		/** Type: float */
 		proofreading_rate?: number | null;
 
 		/** Source language code */
@@ -1306,6 +1458,8 @@ export namespace MyNS {
 
 		/** Target language code */
 		target_language?: string | null;
+
+		/** Type: float */
 		translation_rate?: number | null;
 	}
 	export interface VendorProjectPairFormProperties {
@@ -1313,6 +1467,8 @@ export namespace MyNS {
 
 		/** Indicates if the vendor be able to proofred this pair */
 		is_proofreader: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		proofreading_rate: FormControl<number | null | undefined>,
 
 		/** Source language code */
@@ -1320,6 +1476,8 @@ export namespace MyNS {
 
 		/** Target language code */
 		target_language: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		translation_rate: FormControl<number | null | undefined>,
 	}
 	export function CreateVendorProjectPairFormGroup() {
@@ -1335,21 +1493,35 @@ export namespace MyNS {
 	}
 
 	export interface ProjectPrice {
+
+		/** Type: float */
 		amount?: number | null;
+
+		/** Type: float */
 		base_amount?: number | null;
 		base_currency?: string | null;
 		currency?: string | null;
 
-		/** USD is our base pricing currency. If `currency` is different, this will help. */
+		/**
+		 * USD is our base pricing currency. If `currency` is different, this will help.
+		 * Type: float
+		 */
 		usd_amount?: number | null;
 	}
 	export interface ProjectPriceFormProperties {
+
+		/** Type: float */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		base_amount: FormControl<number | null | undefined>,
 		base_currency: FormControl<string | null | undefined>,
 		currency: FormControl<string | null | undefined>,
 
-		/** USD is our base pricing currency. If `currency` is different, this will help. */
+		/**
+		 * USD is our base pricing currency. If `currency` is different, this will help.
+		 * Type: float
+		 */
 		usd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectPriceFormGroup() {
@@ -1364,21 +1536,35 @@ export namespace MyNS {
 	}
 
 	export interface ProjectPrice_without_discount {
+
+		/** Type: float */
 		amount?: number | null;
+
+		/** Type: float */
 		base_amount?: number | null;
 		base_currency?: string | null;
 		currency?: string | null;
 
-		/** USD is our base pricing currency. If `currency` is different, this will help. */
+		/**
+		 * USD is our base pricing currency. If `currency` is different, this will help.
+		 * Type: float
+		 */
 		usd_amount?: number | null;
 	}
 	export interface ProjectPrice_without_discountFormProperties {
+
+		/** Type: float */
 		amount: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		base_amount: FormControl<number | null | undefined>,
 		base_currency: FormControl<string | null | undefined>,
 		currency: FormControl<string | null | undefined>,
 
-		/** USD is our base pricing currency. If `currency` is different, this will help. */
+		/**
+		 * USD is our base pricing currency. If `currency` is different, this will help.
+		 * Type: float
+		 */
 		usd_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectPrice_without_discountFormGroup() {
@@ -1445,16 +1631,25 @@ export namespace MyNS {
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		account_creation_date?: Date | null;
 
-		/** total project count that this client sent */
+		/**
+		 * total project count that this client sent
+		 * Type: double
+		 */
 		client_project_count?: number | null;
 
 		/** corporate name */
 		corporate?: string | null;
 
-		/** corporate id */
+		/**
+		 * corporate id
+		 * Type: double
+		 */
 		corporate_id?: number | null;
 
-		/** total user count in a corporation */
+		/**
+		 * total user count in a corporation
+		 * Type: double
+		 */
 		corporate_user_count?: number | null;
 
 		/** the file extension for the files that usually this client sent */
@@ -1472,10 +1667,16 @@ export namespace MyNS {
 		/** the answer for the question "Is this client usually sent complex projects?" */
 		is_complex?: boolean | null;
 
-		/** corporate's spending in twelve months */
+		/**
+		 * corporate's spending in twelve months
+		 * Type: float
+		 */
 		last_12_months_spending?: number | null;
 
-		/** the quote number for the last project of this client */
+		/**
+		 * the quote number for the last project of this client
+		 * Type: double
+		 */
 		last_project?: number | null;
 
 		/** the creation date of the last project that is sent by this client */
@@ -1490,10 +1691,16 @@ export namespace MyNS {
 		/** net promoter score info for this client */
 		nps?: ClientProfileNps;
 
-		/** rank of the user in all corporate users for project count. If the user is the most active user foor sending projects her rank is 1 */
+		/**
+		 * rank of the user in all corporate users for project count. If the user is the most active user foor sending projects her rank is 1
+		 * Type: double
+		 */
 		user_rank_in_project_count?: number | null;
 
-		/** rank of the user in all corporate users for total spending. If the user is the most active user for spending her rank is 1 */
+		/**
+		 * rank of the user in all corporate users for total spending. If the user is the most active user for spending her rank is 1
+		 * Type: double
+		 */
 		user_rank_in_spending?: number | null;
 	}
 	export interface ClientProfileFormProperties {
@@ -1501,16 +1708,25 @@ export namespace MyNS {
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		account_creation_date: FormControl<Date | null | undefined>,
 
-		/** total project count that this client sent */
+		/**
+		 * total project count that this client sent
+		 * Type: double
+		 */
 		client_project_count: FormControl<number | null | undefined>,
 
 		/** corporate name */
 		corporate: FormControl<string | null | undefined>,
 
-		/** corporate id */
+		/**
+		 * corporate id
+		 * Type: double
+		 */
 		corporate_id: FormControl<number | null | undefined>,
 
-		/** total user count in a corporation */
+		/**
+		 * total user count in a corporation
+		 * Type: double
+		 */
 		corporate_user_count: FormControl<number | null | undefined>,
 
 		/** the file extension for the files that usually this client sent */
@@ -1525,19 +1741,31 @@ export namespace MyNS {
 		/** the answer for the question "Is this client usually sent complex projects?" */
 		is_complex: FormControl<boolean | null | undefined>,
 
-		/** corporate's spending in twelve months */
+		/**
+		 * corporate's spending in twelve months
+		 * Type: float
+		 */
 		last_12_months_spending: FormControl<number | null | undefined>,
 
-		/** the quote number for the last project of this client */
+		/**
+		 * the quote number for the last project of this client
+		 * Type: double
+		 */
 		last_project: FormControl<number | null | undefined>,
 
 		/** the creation date of the last project that is sent by this client */
 		last_project_time: FormControl<Date | null | undefined>,
 
-		/** rank of the user in all corporate users for project count. If the user is the most active user foor sending projects her rank is 1 */
+		/**
+		 * rank of the user in all corporate users for project count. If the user is the most active user foor sending projects her rank is 1
+		 * Type: double
+		 */
 		user_rank_in_project_count: FormControl<number | null | undefined>,
 
-		/** rank of the user in all corporate users for total spending. If the user is the most active user for spending her rank is 1 */
+		/**
+		 * rank of the user in all corporate users for total spending. If the user is the most active user for spending her rank is 1
+		 * Type: double
+		 */
 		user_rank_in_spending: FormControl<number | null | undefined>,
 	}
 	export function CreateClientProfileFormGroup() {
@@ -1616,18 +1844,30 @@ export namespace MyNS {
 
 	export interface ClientProfileNpsAverage {
 
-		/** total number of completed survey count by this client */
+		/**
+		 * total number of completed survey count by this client
+		 * Type: double
+		 */
 		completed_surveys_count?: number | null;
 
-		/** average score for all coompleted surveys */
+		/**
+		 * average score for all coompleted surveys
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 	export interface ClientProfileNpsAverageFormProperties {
 
-		/** total number of completed survey count by this client */
+		/**
+		 * total number of completed survey count by this client
+		 * Type: double
+		 */
 		completed_surveys_count: FormControl<number | null | undefined>,
 
-		/** average score for all coompleted surveys */
+		/**
+		 * average score for all coompleted surveys
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateClientProfileNpsAverageFormGroup() {
@@ -1643,7 +1883,10 @@ export namespace MyNS {
 		/** last surveys completion date */
 		completion_date?: Date | null;
 
-		/** score that the client gave us */
+		/**
+		 * score that the client gave us
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 	export interface ClientProfileNpsLastFormProperties {
@@ -1651,7 +1894,10 @@ export namespace MyNS {
 		/** last surveys completion date */
 		completion_date: FormControl<Date | null | undefined>,
 
-		/** score that the client gave us */
+		/**
+		 * score that the client gave us
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateClientProfileNpsLastFormGroup() {
@@ -1665,20 +1911,28 @@ export namespace MyNS {
 	export interface ClientProjectStat {
 		languages?: Array<string>;
 		month?: string | null;
-		number_of_projects?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number_of_projects?: string | null;
+
+		/** Type: float */
 		total_spending?: number | null;
 		week?: string | null;
 	}
 	export interface ClientProjectStatFormProperties {
 		month: FormControl<string | null | undefined>,
-		number_of_projects: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number_of_projects: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		total_spending: FormControl<number | null | undefined>,
 		week: FormControl<string | null | undefined>,
 	}
 	export function CreateClientProjectStatFormGroup() {
 		return new FormGroup<ClientProjectStatFormProperties>({
 			month: new FormControl<string | null | undefined>(undefined),
-			number_of_projects: new FormControl<number | null | undefined>(undefined),
+			number_of_projects: new FormControl<string | null | undefined>(undefined),
 			total_spending: new FormControl<number | null | undefined>(undefined),
 			week: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1697,39 +1951,67 @@ export namespace MyNS {
 	}
 
 	export interface ClientStats {
-		document_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		document_count?: string | null;
+
+		/** Type: float */
 		nps?: number | null;
-		started_project_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		started_project_count?: string | null;
 		total_discounted?: Monetary;
-		total_project_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_project_count?: string | null;
+
+		/** Type: float */
 		total_spending?: number | null;
-		translator_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		translator_count?: string | null;
 	}
 	export interface ClientStatsFormProperties {
-		document_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		document_count: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		nps: FormControl<number | null | undefined>,
-		started_project_count: FormControl<number | null | undefined>,
-		total_project_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		started_project_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_project_count: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		total_spending: FormControl<number | null | undefined>,
-		translator_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		translator_count: FormControl<string | null | undefined>,
 	}
 	export function CreateClientStatsFormGroup() {
 		return new FormGroup<ClientStatsFormProperties>({
-			document_count: new FormControl<number | null | undefined>(undefined),
+			document_count: new FormControl<string | null | undefined>(undefined),
 			nps: new FormControl<number | null | undefined>(undefined),
-			started_project_count: new FormControl<number | null | undefined>(undefined),
-			total_project_count: new FormControl<number | null | undefined>(undefined),
+			started_project_count: new FormControl<string | null | undefined>(undefined),
+			total_project_count: new FormControl<string | null | undefined>(undefined),
 			total_spending: new FormControl<number | null | undefined>(undefined),
-			translator_count: new FormControl<number | null | undefined>(undefined),
+			translator_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Monetary {
+
+		/** Type: float */
 		amount?: number | null;
 		currency?: string | null;
 	}
 	export interface MonetaryFormProperties {
+
+		/** Type: float */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<string | null | undefined>,
 	}
@@ -1743,36 +2025,52 @@ export namespace MyNS {
 
 	export interface ClientStringStats {
 		language_counts?: Array<LanguageStringStat>;
-		total_project_strings_count?: number | null;
-		total_tm_strings_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_project_strings_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_tm_strings_count?: string | null;
 	}
 	export interface ClientStringStatsFormProperties {
-		total_project_strings_count: FormControl<number | null | undefined>,
-		total_tm_strings_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_project_strings_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_tm_strings_count: FormControl<string | null | undefined>,
 	}
 	export function CreateClientStringStatsFormGroup() {
 		return new FormGroup<ClientStringStatsFormProperties>({
-			total_project_strings_count: new FormControl<number | null | undefined>(undefined),
-			total_tm_strings_count: new FormControl<number | null | undefined>(undefined),
+			total_project_strings_count: new FormControl<string | null | undefined>(undefined),
+			total_tm_strings_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface LanguageStringStat {
-		project_string_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_string_count?: string | null;
 		source_language?: string | null;
-		tm_string_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tm_string_count?: string | null;
 	}
 	export interface LanguageStringStatFormProperties {
-		project_string_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_string_count: FormControl<string | null | undefined>,
 		source_language: FormControl<string | null | undefined>,
-		tm_string_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		tm_string_count: FormControl<string | null | undefined>,
 	}
 	export function CreateLanguageStringStatFormGroup() {
 		return new FormGroup<LanguageStringStatFormProperties>({
-			project_string_count: new FormControl<number | null | undefined>(undefined),
+			project_string_count: new FormControl<string | null | undefined>(undefined),
 			source_language: new FormControl<string | null | undefined>(undefined),
-			tm_string_count: new FormControl<number | null | undefined>(undefined),
+			tm_string_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1855,9 +2153,14 @@ export namespace MyNS {
 		 */
 		comment: string;
 
-		/** Unix epoch time */
-		commented_at?: number | null;
-		id?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		commented_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		links?: CommentLinks;
 	}
 	export interface CommentFormProperties {
@@ -1868,15 +2171,20 @@ export namespace MyNS {
 		 */
 		comment: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		commented_at: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		commented_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateCommentFormGroup() {
 		return new FormGroup<CommentFormProperties>({
 			comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			commented_at: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			commented_at: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1965,7 +2273,9 @@ export namespace MyNS {
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		created_at?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		is_enabled?: boolean | null;
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
@@ -1990,7 +2300,9 @@ export namespace MyNS {
 
 		/** Continuous project type. We currently have only 2 types, NULL and "active". */
 		type?: string | null;
-		word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface ContinuousProjectFormProperties {
 
@@ -2002,7 +2314,9 @@ export namespace MyNS {
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		created_at: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		is_enabled: FormControl<boolean | null | undefined>,
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
@@ -2024,14 +2338,16 @@ export namespace MyNS {
 
 		/** Continuous project type. We currently have only 2 types, NULL and "active". */
 		type: FormControl<string | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateContinuousProjectFormGroup() {
 		return new FormGroup<ContinuousProjectFormProperties>({
 			analytics_enabled: new FormControl<boolean | null | undefined>(undefined),
 			auto_start_postedit: new FormControl<boolean | null | undefined>(undefined),
 			created_at: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			is_enabled: new FormControl<boolean | null | undefined>(undefined),
 			last_activity_at: new FormControl<Date | null | undefined>(undefined),
 			mt_enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -2041,7 +2357,7 @@ export namespace MyNS {
 			source_language: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2051,7 +2367,10 @@ export namespace MyNS {
 		/** Stripe downgradable plan */
 		downgrade?: Array<string>;
 
-		/** Stripe subscription plan payment card internal id */
+		/**
+		 * Stripe subscription plan payment card internal id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		payment_method?: number | null;
 
 		/** Stripe plan period end */
@@ -2084,7 +2403,10 @@ export namespace MyNS {
 	}
 	export interface SubscriptionFormProperties {
 
-		/** Stripe subscription plan payment card internal id */
+		/**
+		 * Stripe subscription plan payment card internal id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		payment_method: FormControl<number | null | undefined>,
 
 		/** Stripe plan period end */
@@ -2196,7 +2518,9 @@ export namespace MyNS {
 	}
 
 	export interface ContinuousProjectDocument {
-		billed_word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		billed_word_count?: string | null;
 		id?: string | null;
 		links?: DocumentLinks;
 		name?: string | null;
@@ -2204,26 +2528,32 @@ export namespace MyNS {
 		project_id?: string | null;
 		source_language?: string | null;
 		target_languages?: Array<string>;
-		word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface ContinuousProjectDocumentFormProperties {
-		billed_word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		billed_word_count: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		post_edit_enabled: FormControl<boolean | null | undefined>,
 		project_id: FormControl<string | null | undefined>,
 		source_language: FormControl<string | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateContinuousProjectDocumentFormGroup() {
 		return new FormGroup<ContinuousProjectDocumentFormProperties>({
-			billed_word_count: new FormControl<number | null | undefined>(undefined),
+			billed_word_count: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			post_edit_enabled: new FormControl<boolean | null | undefined>(undefined),
 			project_id: new FormControl<string | null | undefined>(undefined),
 			source_language: new FormControl<string | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2282,16 +2612,26 @@ export namespace MyNS {
 
 	export interface Invoice {
 
-		/** Monetary amount */
+		/**
+		 * Monetary amount
+		 * Type: float
+		 */
 		amount?: number | null;
 
-		/** Monetary amount */
+		/**
+		 * Monetary amount
+		 * Type: float
+		 */
 		base_amount?: number | null;
 		base_currency?: string | null;
 		billing?: BillingAddress;
 		currency?: string | null;
-		id?: number | null;
-		invoice_no?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invoice_no?: string | null;
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		invoiced_at?: Date | null;
@@ -2300,15 +2640,25 @@ export namespace MyNS {
 	}
 	export interface InvoiceFormProperties {
 
-		/** Monetary amount */
+		/**
+		 * Monetary amount
+		 * Type: float
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Monetary amount */
+		/**
+		 * Monetary amount
+		 * Type: float
+		 */
 		base_amount: FormControl<number | null | undefined>,
 		base_currency: FormControl<string | null | undefined>,
 		currency: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		invoice_no: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invoice_no: FormControl<string | null | undefined>,
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		invoiced_at: FormControl<Date | null | undefined>,
@@ -2320,8 +2670,8 @@ export namespace MyNS {
 			base_amount: new FormControl<number | null | undefined>(undefined),
 			base_currency: new FormControl<string | null | undefined>(undefined),
 			currency: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			invoice_no: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			invoice_no: new FormControl<string | null | undefined>(undefined),
 			invoiced_at: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2371,20 +2721,32 @@ export namespace MyNS {
 	}
 
 	export interface ContinuousProjectWordCounts {
-		mt?: number | null;
-		post_edit?: number | null;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		mt?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		post_edit?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 	export interface ContinuousProjectWordCountsFormProperties {
-		mt: FormControl<number | null | undefined>,
-		post_edit: FormControl<number | null | undefined>,
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		mt: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		post_edit: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateContinuousProjectWordCountsFormGroup() {
 		return new FormGroup<ContinuousProjectWordCountsFormProperties>({
-			mt: new FormControl<number | null | undefined>(undefined),
-			post_edit: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			mt: new FormControl<string | null | undefined>(undefined),
+			post_edit: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2434,7 +2796,9 @@ export namespace MyNS {
 		billing?: BillingAddress;
 		domain?: string | null;
 		email?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		logo?: string | null;
 		name?: string | null;
 
@@ -2444,7 +2808,9 @@ export namespace MyNS {
 	export interface CorporateAccountFormProperties {
 		domain: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		logo: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
@@ -2455,7 +2821,7 @@ export namespace MyNS {
 		return new FormGroup<CorporateAccountFormProperties>({
 			domain: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			logo: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			web_site: new FormControl<string | null | undefined>(undefined),
@@ -2465,20 +2831,24 @@ export namespace MyNS {
 
 	export interface CreditCard {
 		bin?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		is_default?: boolean | null;
 		payment_code?: string | null;
 	}
 	export interface CreditCardFormProperties {
 		bin: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		is_default: FormControl<boolean | null | undefined>,
 		payment_code: FormControl<string | null | undefined>,
 	}
 	export function CreateCreditCardFormGroup() {
 		return new FormGroup<CreditCardFormProperties>({
 			bin: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			is_default: new FormControl<boolean | null | undefined>(undefined),
 			payment_code: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2490,6 +2860,8 @@ export namespace MyNS {
 
 		/** true for late, false for on-time delivery */
 		late?: boolean | null;
+
+		/** Type: float */
 		probability?: number | null;
 	}
 	export interface DeliveryPredictionInLanguageFormProperties {
@@ -2497,6 +2869,8 @@ export namespace MyNS {
 
 		/** true for late, false for on-time delivery */
 		late: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateDeliveryPredictionInLanguageFormGroup() {
@@ -2509,14 +2883,18 @@ export namespace MyNS {
 	}
 
 	export interface DeliveryPredictionPayload {
-		projectId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectId?: string | null;
 	}
 	export interface DeliveryPredictionPayloadFormProperties {
-		projectId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeliveryPredictionPayloadFormGroup() {
 		return new FormGroup<DeliveryPredictionPayloadFormProperties>({
-			projectId: new FormControl<number | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2552,82 +2930,116 @@ export namespace MyNS {
 		/** Extension of the file */
 		file_type?: string | null;
 		has_custom_package?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		links?: DocumentLinks;
 		manual_files?: Array<ManualFile>;
 		name?: string | null;
-		project_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id?: string | null;
 		review_in_manual_editor?: boolean | null;
 		scheme?: string | null;
+
+		/** Type: float */
 		search_score?: number | null;
 		source_language?: string | null;
 		subject?: string | null;
 		target_languages?: Array<string>;
 
-		/** Unix epoch time */
-		uploaded_at?: number | null;
-		word_count?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface DocumentFormProperties {
 
 		/** Extension of the file */
 		file_type: FormControl<string | null | undefined>,
 		has_custom_package: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		project_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id: FormControl<string | null | undefined>,
 		review_in_manual_editor: FormControl<boolean | null | undefined>,
 		scheme: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		search_score: FormControl<number | null | undefined>,
 		source_language: FormControl<string | null | undefined>,
 		subject: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		uploaded_at: FormControl<number | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentFormGroup() {
 		return new FormGroup<DocumentFormProperties>({
 			file_type: new FormControl<string | null | undefined>(undefined),
 			has_custom_package: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			project_id: new FormControl<number | null | undefined>(undefined),
+			project_id: new FormControl<string | null | undefined>(undefined),
 			review_in_manual_editor: new FormControl<boolean | null | undefined>(undefined),
 			scheme: new FormControl<string | null | undefined>(undefined),
 			search_score: new FormControl<number | null | undefined>(undefined),
 			source_language: new FormControl<string | null | undefined>(undefined),
 			subject: new FormControl<string | null | undefined>(undefined),
-			uploaded_at: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			uploaded_at: new FormControl<string | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ManualFile {
-		driveFileId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		driveFileId?: string | null;
 		isProofread?: boolean | null;
 		isTranslated?: boolean | null;
 		language?: string | null;
-		proofreadingFileId?: number | null;
-		translationFileId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		proofreadingFileId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		translationFileId?: string | null;
 	}
 	export interface ManualFileFormProperties {
-		driveFileId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		driveFileId: FormControl<string | null | undefined>,
 		isProofread: FormControl<boolean | null | undefined>,
 		isTranslated: FormControl<boolean | null | undefined>,
 		language: FormControl<string | null | undefined>,
-		proofreadingFileId: FormControl<number | null | undefined>,
-		translationFileId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		proofreadingFileId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		translationFileId: FormControl<string | null | undefined>,
 	}
 	export function CreateManualFileFormGroup() {
 		return new FormGroup<ManualFileFormProperties>({
-			driveFileId: new FormControl<number | null | undefined>(undefined),
+			driveFileId: new FormControl<string | null | undefined>(undefined),
 			isProofread: new FormControl<boolean | null | undefined>(undefined),
 			isTranslated: new FormControl<boolean | null | undefined>(undefined),
 			language: new FormControl<string | null | undefined>(undefined),
-			proofreadingFileId: new FormControl<number | null | undefined>(undefined),
-			translationFileId: new FormControl<number | null | undefined>(undefined),
+			proofreadingFileId: new FormControl<string | null | undefined>(undefined),
+			translationFileId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2642,16 +3054,16 @@ export namespace MyNS {
 		return new FormGroup<DocumentInSearchFormProperties>({
 			file_type: new FormControl<string | null | undefined>(undefined),
 			has_custom_package: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			project_id: new FormControl<number | null | undefined>(undefined),
+			project_id: new FormControl<string | null | undefined>(undefined),
 			review_in_manual_editor: new FormControl<boolean | null | undefined>(undefined),
 			scheme: new FormControl<string | null | undefined>(undefined),
 			search_score: new FormControl<number | null | undefined>(undefined),
 			source_language: new FormControl<string | null | undefined>(undefined),
 			subject: new FormControl<string | null | undefined>(undefined),
-			uploaded_at: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			uploaded_at: new FormControl<string | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 			search_result_reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2732,8 +3144,11 @@ export namespace MyNS {
 	export interface LinkedSourceDocument {
 		name?: string | null;
 
-		/** file size in bytes. optional. */
-		size?: number | null;
+		/**
+		 * file size in bytes. optional.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** Preferred source names are listed as enum. If you have a custom file type, simply enter that name. */
 		source?: LinkedSourceDocumentSource | null;
@@ -2742,8 +3157,11 @@ export namespace MyNS {
 	export interface LinkedSourceDocumentFormProperties {
 		name: FormControl<string | null | undefined>,
 
-		/** file size in bytes. optional. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * file size in bytes. optional.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** Preferred source names are listed as enum. If you have a custom file type, simply enter that name. */
 		source: FormControl<LinkedSourceDocumentSource | null | undefined>,
@@ -2752,7 +3170,7 @@ export namespace MyNS {
 	export function CreateLinkedSourceDocumentFormGroup() {
 		return new FormGroup<LinkedSourceDocumentFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			source: new FormControl<LinkedSourceDocumentSource | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2787,26 +3205,42 @@ export namespace MyNS {
 	}
 
 	export interface Earning {
+
+		/** Type: float */
 		amount?: number | null;
 		currency?: string | null;
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		due_date?: Date | null;
 		status?: EarningStatus | null;
-		words?: number | null;
-		words_approved?: number | null;
-		words_translated?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words_approved?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words_translated?: string | null;
 	}
 	export interface EarningFormProperties {
+
+		/** Type: float */
 		amount: FormControl<number | null | undefined>,
 		currency: FormControl<string | null | undefined>,
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		due_date: FormControl<Date | null | undefined>,
 		status: FormControl<EarningStatus | null | undefined>,
-		words: FormControl<number | null | undefined>,
-		words_approved: FormControl<number | null | undefined>,
-		words_translated: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words_approved: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		words_translated: FormControl<string | null | undefined>,
 	}
 	export function CreateEarningFormGroup() {
 		return new FormGroup<EarningFormProperties>({
@@ -2814,9 +3248,9 @@ export namespace MyNS {
 			currency: new FormControl<string | null | undefined>(undefined),
 			due_date: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<EarningStatus | null | undefined>(undefined),
-			words: new FormControl<number | null | undefined>(undefined),
-			words_approved: new FormControl<number | null | undefined>(undefined),
-			words_translated: new FormControl<number | null | undefined>(undefined),
+			words: new FormControl<string | null | undefined>(undefined),
+			words_approved: new FormControl<string | null | undefined>(undefined),
+			words_translated: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2827,25 +3261,41 @@ export namespace MyNS {
 
 		/** Is this score above or below the average among other vendors in the same project? */
 		is_above_average?: boolean | null;
+
+		/** Type: float */
 		score?: number | null;
 
-		/** The number of translated strings by this translator which was edited by a proofreader. */
-		strings_edited?: number | null;
+		/**
+		 * The number of translated strings by this translator which was edited by a proofreader.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_edited?: string | null;
 
-		/** The number of translated strings by this translator. */
-		strings_translated?: number | null;
+		/**
+		 * The number of translated strings by this translator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_translated?: string | null;
 	}
 	export interface EarningWithTQSFormProperties extends EarningFormProperties {
 
 		/** Is this score above or below the average among other vendors in the same project? */
 		is_above_average: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		score: FormControl<number | null | undefined>,
 
-		/** The number of translated strings by this translator which was edited by a proofreader. */
-		strings_edited: FormControl<number | null | undefined>,
+		/**
+		 * The number of translated strings by this translator which was edited by a proofreader.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_edited: FormControl<string | null | undefined>,
 
-		/** The number of translated strings by this translator. */
-		strings_translated: FormControl<number | null | undefined>,
+		/**
+		 * The number of translated strings by this translator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_translated: FormControl<string | null | undefined>,
 	}
 	export function CreateEarningWithTQSFormGroup() {
 		return new FormGroup<EarningWithTQSFormProperties>({
@@ -2853,13 +3303,13 @@ export namespace MyNS {
 			currency: new FormControl<string | null | undefined>(undefined),
 			due_date: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<EarningStatus | null | undefined>(undefined),
-			words: new FormControl<number | null | undefined>(undefined),
-			words_approved: new FormControl<number | null | undefined>(undefined),
-			words_translated: new FormControl<number | null | undefined>(undefined),
+			words: new FormControl<string | null | undefined>(undefined),
+			words_approved: new FormControl<string | null | undefined>(undefined),
+			words_translated: new FormControl<string | null | undefined>(undefined),
 			is_above_average: new FormControl<boolean | null | undefined>(undefined),
 			score: new FormControl<number | null | undefined>(undefined),
-			strings_edited: new FormControl<number | null | undefined>(undefined),
-			strings_translated: new FormControl<number | null | undefined>(undefined),
+			strings_edited: new FormControl<string | null | undefined>(undefined),
+			strings_translated: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2867,9 +3317,13 @@ export namespace MyNS {
 	export interface Earnings {
 		completed?: Array<EarningWithTQS>;
 		ongoing?: Array<EarningWithTQS>;
+
+		/** Type: float */
 		total?: number | null;
 	}
 	export interface EarningsFormProperties {
+
+		/** Type: float */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateEarningsFormGroup() {
@@ -2893,24 +3347,32 @@ export namespace MyNS {
 	}
 
 	export interface FileNeedsVendor {
-		fileId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileId?: string | null;
 		guid?: string | null;
-		projectId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectId?: string | null;
 		reason?: string | null;
 		targetLanguage?: Array<string>;
 		taskType?: Array<string>;
 	}
 	export interface FileNeedsVendorFormProperties {
-		fileId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		fileId: FormControl<string | null | undefined>,
 		guid: FormControl<string | null | undefined>,
-		projectId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectId: FormControl<string | null | undefined>,
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateFileNeedsVendorFormGroup() {
 		return new FormGroup<FileNeedsVendorFormProperties>({
-			fileId: new FormControl<number | null | undefined>(undefined),
+			fileId: new FormControl<string | null | undefined>(undefined),
 			guid: new FormControl<string | null | undefined>(undefined),
-			projectId: new FormControl<number | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2937,16 +3399,20 @@ export namespace MyNS {
 	}
 
 	export interface SimpleModel {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface SimpleModelFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateSimpleModelFormGroup() {
 		return new FormGroup<SimpleModelFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2984,7 +3450,11 @@ export namespace MyNS {
 		country?: Array<string>;
 		created_at?: string | null;
 		current_services?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		daily_proofreading_capacity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		daily_translation_capacity?: number | null;
 		destination_languages?: Array<number>;
 		dtp_software?: Array<string>;
@@ -2998,45 +3468,83 @@ export namespace MyNS {
 		last_name?: string | null;
 		last_online?: string | null;
 		last_worked?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memoq?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memsource?: number | null;
+
+		/** Type: double */
 		min_tqs?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		omegat?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		project_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		proofreader_experience?: number | null;
 		provides_creative_writing_service?: boolean | null;
 		provides_postedit_service?: boolean | null;
 		quote_file_subjects?: Array<string>;
 		reference?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sdl_trados?: number | null;
 		search?: string | null;
 		skype_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smartcat?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smartling?: number | null;
 		source_languages?: Array<number>;
 		specialization?: Array<string>;
 		status?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtitle_edit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtitle_workshop?: number | null;
 		translator_association?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		transsuite_2000?: number | null;
 		user_working_timezone?: Array<string>;
 		vendor_profile_lsp?: string | null;
 		vendor_tags?: Array<string>;
 		vendor_type?: Array<string>;
 		vendor_working_timezone?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		word_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordbee?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordfast?: number | null;
 		work_type?: string | null;
 		work_with?: string | null;
 		working_as?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xbench?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xtm?: number | null;
 	}
 	export interface FilterVendorRequestFormProperties {
 		created_at: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		daily_proofreading_capacity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		daily_translation_capacity: FormControl<number | null | undefined>,
 		email_address: FormControl<string | null | undefined>,
 		first_name: FormControl<string | null | undefined>,
@@ -3045,31 +3553,65 @@ export namespace MyNS {
 		last_name: FormControl<string | null | undefined>,
 		last_online: FormControl<string | null | undefined>,
 		last_worked: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memoq: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memsource: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		min_tqs: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		omegat: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		project_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		proofreader_experience: FormControl<number | null | undefined>,
 		provides_creative_writing_service: FormControl<boolean | null | undefined>,
 		provides_postedit_service: FormControl<boolean | null | undefined>,
 		reference: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sdl_trados: FormControl<number | null | undefined>,
 		search: FormControl<string | null | undefined>,
 		skype_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smartcat: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		smartling: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtitle_edit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtitle_workshop: FormControl<number | null | undefined>,
 		translator_association: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		transsuite_2000: FormControl<number | null | undefined>,
 		vendor_profile_lsp: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		word_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordbee: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordfast: FormControl<number | null | undefined>,
 		work_type: FormControl<string | null | undefined>,
 		work_with: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xbench: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xtm: FormControl<number | null | undefined>,
 	}
 	export function CreateFilterVendorRequestFormGroup() {
@@ -3184,25 +3726,35 @@ export namespace MyNS {
 	}
 
 	export interface Glossary {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		links?: DocumentLinks;
 		name?: string | null;
 
-		/** Unix epoch time */
-		uploaded_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at?: string | null;
 	}
 	export interface GlossaryFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		uploaded_at: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at: FormControl<string | null | undefined>,
 	}
 	export function CreateGlossaryFormGroup() {
 		return new FormGroup<GlossaryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			uploaded_at: new FormControl<number | null | undefined>(undefined),
+			uploaded_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3340,7 +3892,10 @@ export namespace MyNS {
 		/** Action to be taken */
 		action?: string | null;
 
-		/** Email opening rate of the vendor */
+		/**
+		 * Email opening rate of the vendor
+		 * Type: double
+		 */
 		email_open_rate?: number | null;
 
 		/** Did the vendor enter the given project */
@@ -3355,16 +3910,28 @@ export namespace MyNS {
 		/** Vendors working status in any project */
 		is_worked_in_any_project?: boolean | null;
 
-		/** Last project date */
+		/**
+		 * Last project date
+		 * Type: DateOnly
+		 */
 		last_project_date?: Date | null;
 
-		/** Project translation percentage when interacted with the vendor */
+		/**
+		 * Project translation percentage when interacted with the vendor
+		 * Type: double
+		 */
 		project_status_when_interacted?: number | null;
 
-		/** Registration date */
+		/**
+		 * Registration date
+		 * Type: DateOnly
+		 */
 		registration_date?: Date | null;
 
-		/** Responsiveness of the vendor */
+		/**
+		 * Responsiveness of the vendor
+		 * Type: double
+		 */
 		responsiveness?: number | null;
 
 		/** Id in the Users */
@@ -3384,7 +3951,10 @@ export namespace MyNS {
 		/** Action to be taken */
 		action: FormControl<string | null | undefined>,
 
-		/** Email opening rate of the vendor */
+		/**
+		 * Email opening rate of the vendor
+		 * Type: double
+		 */
 		email_open_rate: FormControl<number | null | undefined>,
 
 		/** Did the vendor enter the given project */
@@ -3399,16 +3969,28 @@ export namespace MyNS {
 		/** Vendors working status in any project */
 		is_worked_in_any_project: FormControl<boolean | null | undefined>,
 
-		/** Last project date */
+		/**
+		 * Last project date
+		 * Type: DateOnly
+		 */
 		last_project_date: FormControl<Date | null | undefined>,
 
-		/** Project translation percentage when interacted with the vendor */
+		/**
+		 * Project translation percentage when interacted with the vendor
+		 * Type: double
+		 */
 		project_status_when_interacted: FormControl<number | null | undefined>,
 
-		/** Registration date */
+		/**
+		 * Registration date
+		 * Type: DateOnly
+		 */
 		registration_date: FormControl<Date | null | undefined>,
 
-		/** Responsiveness of the vendor */
+		/**
+		 * Responsiveness of the vendor
+		 * Type: double
+		 */
 		responsiveness: FormControl<number | null | undefined>,
 
 		/** Id in the Users */
@@ -3509,17 +4091,25 @@ export namespace MyNS {
 
 	export interface LanguagePairsReportReport {
 		language_pair?: LanguagePairsReportReportLanguage_pair;
+
+		/** Type: float */
 		spending?: number | null;
-		word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface LanguagePairsReportReportFormProperties {
+
+		/** Type: float */
 		spending: FormControl<number | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateLanguagePairsReportReportFormGroup() {
 		return new FormGroup<LanguagePairsReportReportFormProperties>({
 			spending: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3558,14 +4148,18 @@ export namespace MyNS {
 		/**
 		 * Latitude of location
 		 * Required
+		 * Type: float
 		 */
 		lat: number;
 
 		/**
 		 * Longitude of location
 		 * Required
+		 * Type: float
 		 */
 		lon: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp?: number | null;
 	}
 	export interface LocationUpdateContentFormProperties {
@@ -3573,14 +4167,18 @@ export namespace MyNS {
 		/**
 		 * Latitude of location
 		 * Required
+		 * Type: float
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of location
 		 * Required
+		 * Type: float
 		 */
 		lon: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationUpdateContentFormGroup() {
@@ -3658,14 +4256,18 @@ export namespace MyNS {
 
 	export interface NewSalesActivity {
 		subject?: string | null;
-		timestamp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		timestamp?: string | null;
 
 		/** Activity Type */
 		type?: string | null;
 	}
 	export interface NewSalesActivityFormProperties {
 		subject: FormControl<string | null | undefined>,
-		timestamp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		timestamp: FormControl<string | null | undefined>,
 
 		/** Activity Type */
 		type: FormControl<string | null | undefined>,
@@ -3673,7 +4275,7 @@ export namespace MyNS {
 	export function CreateNewSalesActivityFormGroup() {
 		return new FormGroup<NewSalesActivityFormProperties>({
 			subject: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3944,23 +4546,39 @@ export namespace MyNS {
 	}
 
 	export interface ProgressSub {
+
+		/** Type: float */
 		proofreading?: number | null;
+
+		/** Type: float */
 		total?: number | null;
+
+		/** Type: float */
 		translation?: number | null;
-		word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface ProgressSubFormProperties {
+
+		/** Type: float */
 		proofreading: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		translation: FormControl<number | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateProgressSubFormGroup() {
 		return new FormGroup<ProgressSubFormProperties>({
 			proofreading: new FormControl<number | null | undefined>(undefined),
 			total: new FormControl<number | null | undefined>(undefined),
 			translation: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3998,17 +4616,25 @@ export namespace MyNS {
 	}
 
 	export interface ProjectId {
-		'internal-id'?: number | null;
-		'public-id'?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		'internal-id'?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		'public-id'?: string | null;
 	}
 	export interface ProjectIdFormProperties {
-		'internal-id': FormControl<number | null | undefined>,
-		'public-id': FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		'internal-id': FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		'public-id': FormControl<string | null | undefined>,
 	}
 	export function CreateProjectIdFormGroup() {
 		return new FormGroup<ProjectIdFormProperties>({
-			'internal-id': new FormControl<number | null | undefined>(undefined),
-			'public-id': new FormControl<number | null | undefined>(undefined),
+			'internal-id': new FormControl<string | null | undefined>(undefined),
+			'public-id': new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4025,13 +4651,13 @@ export namespace MyNS {
 			budget_code: new FormControl<string | null | undefined>(undefined),
 			callback_url: new FormControl<string | null | undefined>(undefined),
 			can_pam_manage: new FormControl<boolean | null | undefined>(undefined),
-			cm_id: new FormControl<number | null | undefined>(undefined),
+			cm_id: new FormControl<string | null | undefined>(undefined),
 			completed_on: new FormControl<Date | null | undefined>(undefined),
 			continuous_project_type: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			custom: new FormControl<string | null | undefined>(undefined),
-			delivery_at: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			delivery_at: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			is_api_project: new FormControl<boolean | null | undefined>(undefined),
 			is_certified: new FormControl<boolean | null | undefined>(undefined),
 			is_continuous: new FormControl<boolean | null | undefined>(undefined),
@@ -4042,9 +4668,9 @@ export namespace MyNS {
 			source_language: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ProjectStatus | null | undefined>(undefined),
 			tms_name: new FormControl<string | null | undefined>(undefined),
-			valid_until: new FormControl<number | null | undefined>(undefined),
-			vendor_word_count: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			valid_until: new FormControl<string | null | undefined>(undefined),
+			vendor_word_count: new FormControl<string | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 			search_result_reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4102,8 +4728,11 @@ export namespace MyNS {
 		/** Optional with corporate accounts. Not available for others. */
 		budget_code?: string | null;
 
-		/** Optional. `client`, `app`, `corporate_card` methods require a credit card ID. `credit` method requires Stripe token and bin. */
-		card_id?: number | null;
+		/**
+		 * Optional. `client`, `app`, `corporate_card` methods require a credit card ID. `credit` method requires Stripe token and bin.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		card_id?: string | null;
 
 		/** Optional. `corporate` payment method requires this.s */
 		payment_code?: string | null;
@@ -4122,8 +4751,11 @@ export namespace MyNS {
 		/** Optional with corporate accounts. Not available for others. */
 		budget_code: FormControl<string | null | undefined>,
 
-		/** Optional. `client`, `app`, `corporate_card` methods require a credit card ID. `credit` method requires Stripe token and bin. */
-		card_id: FormControl<number | null | undefined>,
+		/**
+		 * Optional. `client`, `app`, `corporate_card` methods require a credit card ID. `credit` method requires Stripe token and bin.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		card_id: FormControl<string | null | undefined>,
 
 		/** Optional. `corporate` payment method requires this.s */
 		payment_code: FormControl<string | null | undefined>,
@@ -4138,7 +4770,7 @@ export namespace MyNS {
 		return new FormGroup<ProjectPaymentFormProperties>({
 			bin: new FormControl<string | null | undefined>(undefined),
 			budget_code: new FormControl<string | null | undefined>(undefined),
-			card_id: new FormControl<number | null | undefined>(undefined),
+			card_id: new FormControl<string | null | undefined>(undefined),
 			payment_code: new FormControl<string | null | undefined>(undefined),
 			payment_method: new FormControl<ProjectPaymentPayment_method | null | undefined>(undefined),
 			stripe_token: new FormControl<string | null | undefined>(undefined),
@@ -4152,32 +4784,48 @@ export namespace MyNS {
 
 		/** Is this score above or below the average among other vendors in the same project? */
 		is_above_average?: boolean | null;
+
+		/** Type: float */
 		score?: number | null;
 
-		/** The number of translated strings by this translator which was edited by a proofreader. */
-		strings_edited?: number | null;
+		/**
+		 * The number of translated strings by this translator which was edited by a proofreader.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_edited?: string | null;
 
-		/** The number of translated strings by this translator. */
-		strings_translated?: number | null;
+		/**
+		 * The number of translated strings by this translator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_translated?: string | null;
 	}
 	export interface ProjectTQSFormProperties {
 
 		/** Is this score above or below the average among other vendors in the same project? */
 		is_above_average: FormControl<boolean | null | undefined>,
+
+		/** Type: float */
 		score: FormControl<number | null | undefined>,
 
-		/** The number of translated strings by this translator which was edited by a proofreader. */
-		strings_edited: FormControl<number | null | undefined>,
+		/**
+		 * The number of translated strings by this translator which was edited by a proofreader.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_edited: FormControl<string | null | undefined>,
 
-		/** The number of translated strings by this translator. */
-		strings_translated: FormControl<number | null | undefined>,
+		/**
+		 * The number of translated strings by this translator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		strings_translated: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectTQSFormGroup() {
 		return new FormGroup<ProjectTQSFormProperties>({
 			is_above_average: new FormControl<boolean | null | undefined>(undefined),
 			score: new FormControl<number | null | undefined>(undefined),
-			strings_edited: new FormControl<number | null | undefined>(undefined),
-			strings_translated: new FormControl<number | null | undefined>(undefined),
+			strings_edited: new FormControl<string | null | undefined>(undefined),
+			strings_translated: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4218,7 +4866,9 @@ export namespace MyNS {
 		comment?: string | null;
 		docId?: string | null;
 		editorLink?: string | null;
-		end?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end?: string | null;
 		inSource?: boolean | null;
 		isCurrent?: boolean | null;
 		module?: string | null;
@@ -4226,7 +4876,9 @@ export namespace MyNS {
 		severity?: string | null;
 		source?: string | null;
 		sourceLanguage?: SimpleModel;
-		start?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
 		state?: string | null;
 		targetLanguage?: SimpleModel;
 		translation?: string | null;
@@ -4238,13 +4890,17 @@ export namespace MyNS {
 		comment: FormControl<string | null | undefined>,
 		docId: FormControl<string | null | undefined>,
 		editorLink: FormControl<string | null | undefined>,
-		end: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		end: FormControl<string | null | undefined>,
 		inSource: FormControl<boolean | null | undefined>,
 		isCurrent: FormControl<boolean | null | undefined>,
 		module: FormControl<string | null | undefined>,
 		severity: FormControl<string | null | undefined>,
 		source: FormControl<string | null | undefined>,
-		start: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		translation: FormControl<string | null | undefined>,
 		uniqueKey: FormControl<string | null | undefined>,
@@ -4255,13 +4911,13 @@ export namespace MyNS {
 			comment: new FormControl<string | null | undefined>(undefined),
 			docId: new FormControl<string | null | undefined>(undefined),
 			editorLink: new FormControl<string | null | undefined>(undefined),
-			end: new FormControl<number | null | undefined>(undefined),
+			end: new FormControl<string | null | undefined>(undefined),
 			inSource: new FormControl<boolean | null | undefined>(undefined),
 			isCurrent: new FormControl<boolean | null | undefined>(undefined),
 			module: new FormControl<string | null | undefined>(undefined),
 			severity: new FormControl<string | null | undefined>(undefined),
 			source: new FormControl<string | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
 			translation: new FormControl<string | null | undefined>(undefined),
 			uniqueKey: new FormControl<string | null | undefined>(undefined),
@@ -4393,32 +5049,52 @@ export namespace MyNS {
 	}
 
 	export interface Responsivity {
-		invited?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invited?: string | null;
 		month?: string | null;
-		notEntered?: number | null;
-		onlyEntered?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		notEntered?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		onlyEntered?: string | null;
+
+		/** Type: float */
 		score?: number | null;
 		week?: string | null;
-		worked?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		worked?: string | null;
 	}
 	export interface ResponsivityFormProperties {
-		invited: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invited: FormControl<string | null | undefined>,
 		month: FormControl<string | null | undefined>,
-		notEntered: FormControl<number | null | undefined>,
-		onlyEntered: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		notEntered: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		onlyEntered: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		score: FormControl<number | null | undefined>,
 		week: FormControl<string | null | undefined>,
-		worked: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		worked: FormControl<string | null | undefined>,
 	}
 	export function CreateResponsivityFormGroup() {
 		return new FormGroup<ResponsivityFormProperties>({
-			invited: new FormControl<number | null | undefined>(undefined),
+			invited: new FormControl<string | null | undefined>(undefined),
 			month: new FormControl<string | null | undefined>(undefined),
-			notEntered: new FormControl<number | null | undefined>(undefined),
-			onlyEntered: new FormControl<number | null | undefined>(undefined),
+			notEntered: new FormControl<string | null | undefined>(undefined),
+			onlyEntered: new FormControl<string | null | undefined>(undefined),
 			score: new FormControl<number | null | undefined>(undefined),
 			week: new FormControl<string | null | undefined>(undefined),
-			worked: new FormControl<number | null | undefined>(undefined),
+			worked: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4449,23 +5125,29 @@ export namespace MyNS {
 	export interface SalesActivity {
 		body?: string | null;
 
-		/** timestamp */
-		created_at?: number | null;
+		/**
+		 * timestamp
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at?: string | null;
 		created_by?: string | null;
 		type?: string | null;
 	}
 	export interface SalesActivityFormProperties {
 		body: FormControl<string | null | undefined>,
 
-		/** timestamp */
-		created_at: FormControl<number | null | undefined>,
+		/**
+		 * timestamp
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created_at: FormControl<string | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesActivityFormGroup() {
 		return new FormGroup<SalesActivityFormProperties>({
 			body: new FormControl<string | null | undefined>(undefined),
-			created_at: new FormControl<number | null | undefined>(undefined),
+			created_at: new FormControl<string | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4500,16 +5182,26 @@ export namespace MyNS {
 	}
 
 	export interface StringInSearch {
-		file_id?: number | null;
-		internal_project_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		file_id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		internal_project_id?: string | null;
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		last_updated?: Date | null;
-		project_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id?: string | null;
+
+		/** Type: float */
 		search_score?: number | null;
 		source?: string | null;
 		status?: StringInSearchStatus | null;
-		string_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		string_id?: string | null;
 		target?: string | null;
 		targets?: Array<string>;
 		tm_name?: string | null;
@@ -4518,16 +5210,26 @@ export namespace MyNS {
 		type?: StringInSearchType | null;
 	}
 	export interface StringInSearchFormProperties {
-		file_id: FormControl<number | null | undefined>,
-		internal_project_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		file_id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		internal_project_id: FormControl<string | null | undefined>,
 
 		/** the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z */
 		last_updated: FormControl<Date | null | undefined>,
-		project_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		search_score: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		status: FormControl<StringInSearchStatus | null | undefined>,
-		string_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		string_id: FormControl<string | null | undefined>,
 		target: FormControl<string | null | undefined>,
 		tm_name: FormControl<string | null | undefined>,
 
@@ -4536,14 +5238,14 @@ export namespace MyNS {
 	}
 	export function CreateStringInSearchFormGroup() {
 		return new FormGroup<StringInSearchFormProperties>({
-			file_id: new FormControl<number | null | undefined>(undefined),
-			internal_project_id: new FormControl<number | null | undefined>(undefined),
+			file_id: new FormControl<string | null | undefined>(undefined),
+			internal_project_id: new FormControl<string | null | undefined>(undefined),
 			last_updated: new FormControl<Date | null | undefined>(undefined),
-			project_id: new FormControl<number | null | undefined>(undefined),
+			project_id: new FormControl<string | null | undefined>(undefined),
 			search_score: new FormControl<number | null | undefined>(undefined),
 			source: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<StringInSearchStatus | null | undefined>(undefined),
-			string_id: new FormControl<number | null | undefined>(undefined),
+			string_id: new FormControl<string | null | undefined>(undefined),
 			target: new FormControl<string | null | undefined>(undefined),
 			tm_name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<StringInSearchType | null | undefined>(undefined),
@@ -4559,20 +5261,24 @@ export namespace MyNS {
 
 		/** source string content */
 		content?: string | null;
-		file_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		file_id?: string | null;
 		id?: string | null;
 	}
 	export interface SingleStringFormProperties {
 
 		/** source string content */
 		content: FormControl<string | null | undefined>,
-		file_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		file_id: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateSingleStringFormGroup() {
 		return new FormGroup<SingleStringFormProperties>({
 			content: new FormControl<string | null | undefined>(undefined),
-			file_id: new FormControl<number | null | undefined>(undefined),
+			file_id: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4605,12 +5311,18 @@ export namespace MyNS {
 
 	export interface VendorEarningStats {
 
-		/** total amount of USD that this user has earned in the platform so far. */
+		/**
+		 * total amount of USD that this user has earned in the platform so far.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface VendorEarningStatsFormProperties {
 
-		/** total amount of USD that this user has earned in the platform so far. */
+		/**
+		 * total amount of USD that this user has earned in the platform so far.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateVendorEarningStatsFormGroup() {
@@ -4622,55 +5334,85 @@ export namespace MyNS {
 
 	export interface VendorProjectStats {
 
-		/** total number of projects that this user was invited to. TODO this key is to replace "total" key due to naming ambiguity. */
-		invited?: number | null;
+		/**
+		 * total number of projects that this user was invited to. TODO this key is to replace "total" key due to naming ambiguity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invited?: string | null;
 
-		/** total number of projects that this user was invited to. */
-		total?: number | null;
+		/**
+		 * total number of projects that this user was invited to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 
-		/** total number of projects that this user actually worked on. */
-		worked?: number | null;
+		/**
+		 * total number of projects that this user actually worked on.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		worked?: string | null;
 	}
 	export interface VendorProjectStatsFormProperties {
 
-		/** total number of projects that this user was invited to. TODO this key is to replace "total" key due to naming ambiguity. */
-		invited: FormControl<number | null | undefined>,
+		/**
+		 * total number of projects that this user was invited to. TODO this key is to replace "total" key due to naming ambiguity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invited: FormControl<string | null | undefined>,
 
-		/** total number of projects that this user was invited to. */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * total number of projects that this user was invited to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 
-		/** total number of projects that this user actually worked on. */
-		worked: FormControl<number | null | undefined>,
+		/**
+		 * total number of projects that this user actually worked on.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		worked: FormControl<string | null | undefined>,
 	}
 	export function CreateVendorProjectStatsFormGroup() {
 		return new FormGroup<VendorProjectStatsFormProperties>({
-			invited: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
-			worked: new FormControl<number | null | undefined>(undefined),
+			invited: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
+			worked: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface VendorWordStats {
 
-		/** total number of words that this user has approved so far. */
-		approved?: number | null;
+		/**
+		 * total number of words that this user has approved so far.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		approved?: string | null;
 
-		/** total number of words that this user has translated so far. */
-		translated?: number | null;
+		/**
+		 * total number of words that this user has translated so far.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		translated?: string | null;
 	}
 	export interface VendorWordStatsFormProperties {
 
-		/** total number of words that this user has approved so far. */
-		approved: FormControl<number | null | undefined>,
+		/**
+		 * total number of words that this user has approved so far.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		approved: FormControl<string | null | undefined>,
 
-		/** total number of words that this user has translated so far. */
-		translated: FormControl<number | null | undefined>,
+		/**
+		 * total number of words that this user has translated so far.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		translated: FormControl<string | null | undefined>,
 	}
 	export function CreateVendorWordStatsFormGroup() {
 		return new FormGroup<VendorWordStatsFormProperties>({
-			approved: new FormControl<number | null | undefined>(undefined),
-			translated: new FormControl<number | null | undefined>(undefined),
+			approved: new FormControl<string | null | undefined>(undefined),
+			translated: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4696,7 +5438,7 @@ export namespace MyNS {
 	export function CreateStringWithTranslationsFormGroup() {
 		return new FormGroup<StringWithTranslationsFormProperties>({
 			content: new FormControl<string | null | undefined>(undefined),
-			file_id: new FormControl<number | null | undefined>(undefined),
+			file_id: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			translations: new FormControl<{[id: string]: StringTranslation } | null | undefined>(undefined),
 		});
@@ -4729,25 +5471,35 @@ export namespace MyNS {
 	export enum StringTranslationState { Approved = 'Approved', Translated = 'Translated' }
 
 	export interface StyleGuide {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		links?: DocumentLinks;
 		name?: string | null;
 
-		/** Unix epoch time */
-		uploaded_at?: number | null;
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at?: string | null;
 	}
 	export interface StyleGuideFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
-		/** Unix epoch time */
-		uploaded_at: FormControl<number | null | undefined>,
+		/**
+		 * Unix epoch time
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploaded_at: FormControl<string | null | undefined>,
 	}
 	export function CreateStyleGuideFormGroup() {
 		return new FormGroup<StyleGuideFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			uploaded_at: new FormControl<number | null | undefined>(undefined),
+			uploaded_at: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4789,25 +5541,41 @@ export namespace MyNS {
 
 	export interface SurveyAnswer {
 		answer?: string | null;
-		project_id?: number | null;
-		question_answer_id?: number | null;
-		question_id?: number | null;
-		user_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		question_answer_id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		question_id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id?: string | null;
 	}
 	export interface SurveyAnswerFormProperties {
 		answer: FormControl<string | null | undefined>,
-		project_id: FormControl<number | null | undefined>,
-		question_answer_id: FormControl<number | null | undefined>,
-		question_id: FormControl<number | null | undefined>,
-		user_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		project_id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		question_answer_id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		question_id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id: FormControl<string | null | undefined>,
 	}
 	export function CreateSurveyAnswerFormGroup() {
 		return new FormGroup<SurveyAnswerFormProperties>({
 			answer: new FormControl<string | null | undefined>(undefined),
-			project_id: new FormControl<number | null | undefined>(undefined),
-			question_answer_id: new FormControl<number | null | undefined>(undefined),
-			question_id: new FormControl<number | null | undefined>(undefined),
-			user_id: new FormControl<number | null | undefined>(undefined),
+			project_id: new FormControl<string | null | undefined>(undefined),
+			question_answer_id: new FormControl<string | null | undefined>(undefined),
+			question_id: new FormControl<string | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4839,14 +5607,18 @@ export namespace MyNS {
 	export interface SurveyQuestionQuestion {
 		enabled?: boolean | null;
 		format?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		question?: string | null;
 		text?: string | null;
 	}
 	export interface SurveyQuestionQuestionFormProperties {
 		enabled: FormControl<boolean | null | undefined>,
 		format: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		question: FormControl<string | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -4854,7 +5626,7 @@ export namespace MyNS {
 		return new FormGroup<SurveyQuestionQuestionFormProperties>({
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			format: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			question: new FormControl<string | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4880,28 +5652,36 @@ export namespace MyNS {
 
 	export interface Token {
 		access_token?: string | null;
-		expires_in?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_in?: string | null;
 		refresh_token?: string | null;
 		scope?: string | null;
 		token_type?: string | null;
-		user_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id?: string | null;
 	}
 	export interface TokenFormProperties {
 		access_token: FormControl<string | null | undefined>,
-		expires_in: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		expires_in: FormControl<string | null | undefined>,
 		refresh_token: FormControl<string | null | undefined>,
 		scope: FormControl<string | null | undefined>,
 		token_type: FormControl<string | null | undefined>,
-		user_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id: FormControl<string | null | undefined>,
 	}
 	export function CreateTokenFormGroup() {
 		return new FormGroup<TokenFormProperties>({
 			access_token: new FormControl<string | null | undefined>(undefined),
-			expires_in: new FormControl<number | null | undefined>(undefined),
+			expires_in: new FormControl<string | null | undefined>(undefined),
 			refresh_token: new FormControl<string | null | undefined>(undefined),
 			scope: new FormControl<string | null | undefined>(undefined),
 			token_type: new FormControl<string | null | undefined>(undefined),
-			user_id: new FormControl<number | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4945,8 +5725,11 @@ export namespace MyNS {
 		 */
 		scope: string;
 
-		/** Value for user_id grant type flow. */
-		user_id?: number | null;
+		/**
+		 * Value for user_id grant type flow.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		user_id?: string | null;
 
 		/** MW Account email (to be used in password grant type) */
 		username?: string | null;
@@ -4971,8 +5754,11 @@ export namespace MyNS {
 		 */
 		scope: FormControl<string | null | undefined>,
 
-		/** Value for user_id grant type flow. */
-		user_id: FormControl<number | null | undefined>,
+		/**
+		 * Value for user_id grant type flow.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		user_id: FormControl<string | null | undefined>,
 
 		/** MW Account email (to be used in password grant type) */
 		username: FormControl<string | null | undefined>,
@@ -4983,7 +5769,7 @@ export namespace MyNS {
 			password: new FormControl<string | null | undefined>(undefined),
 			refresh_token: new FormControl<string | null | undefined>(undefined),
 			scope: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			user_id: new FormControl<number | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 			username: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5040,13 +5826,25 @@ export namespace MyNS {
 	}
 
 	export interface UseAsDraftPayload {
+
+		/** Type: double */
 		fromFileId?: number | null;
+
+		/** Type: double */
 		fromManualTranslationFileId?: number | null;
+
+		/** Type: double */
 		toManualTranslationFileId?: number | null;
 	}
 	export interface UseAsDraftPayloadFormProperties {
+
+		/** Type: double */
 		fromFileId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fromManualTranslationFileId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		toManualTranslationFileId: FormControl<number | null | undefined>,
 	}
 	export function CreateUseAsDraftPayloadFormGroup() {
@@ -5062,6 +5860,8 @@ export namespace MyNS {
 		allowOriginalFilePreview?: boolean | null;
 		allowReviewInManualEditor?: boolean | null;
 		disableInvitations?: boolean | null;
+
+		/** Type: double */
 		fromManualTranslationFileId?: number | null;
 		hideNumbers?: boolean | null;
 		recreate?: boolean | null;
@@ -5070,6 +5870,8 @@ export namespace MyNS {
 		allowOriginalFilePreview: FormControl<boolean | null | undefined>,
 		allowReviewInManualEditor: FormControl<boolean | null | undefined>,
 		disableInvitations: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		fromManualTranslationFileId: FormControl<number | null | undefined>,
 		hideNumbers: FormControl<boolean | null | undefined>,
 		recreate: FormControl<boolean | null | undefined>,
@@ -5125,6 +5927,8 @@ export namespace MyNS {
 	}
 
 	export interface UserUpdateContent extends Address {
+
+		/** Type: DateOnly */
 		birthday?: Date | null;
 
 		/** Optional. User e-mail. */
@@ -5133,8 +5937,11 @@ export namespace MyNS {
 		/** Optional. User first name. */
 		first_name?: string | null;
 
-		/** Optional. ID of the user being updated. */
-		id?: number | null;
+		/**
+		 * Optional. ID of the user being updated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Optional. User last name. */
 		last_name?: string | null;
@@ -5155,6 +5962,8 @@ export namespace MyNS {
 		user_groups?: Array<number>;
 	}
 	export interface UserUpdateContentFormProperties extends AddressFormProperties {
+
+		/** Type: DateOnly */
 		birthday: FormControl<Date | null | undefined>,
 
 		/** Optional. User e-mail. */
@@ -5163,8 +5972,11 @@ export namespace MyNS {
 		/** Optional. User first name. */
 		first_name: FormControl<string | null | undefined>,
 
-		/** Optional. ID of the user being updated. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Optional. ID of the user being updated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Optional. User last name. */
 		last_name: FormControl<string | null | undefined>,
@@ -5189,7 +6001,7 @@ export namespace MyNS {
 			birthday: new FormControl<Date | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
 			first_name: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			last_name: new FormControl<string | null | undefined>(undefined),
 			notify: new FormControl<boolean | null | undefined>(undefined),
 			paypal_email: new FormControl<string | null | undefined>(undefined),
@@ -5236,20 +6048,28 @@ export namespace MyNS {
 
 	export interface UsersReportReport {
 		currency?: string | null;
+
+		/** Type: float */
 		spending?: number | null;
 		user?: User;
-		word_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count?: string | null;
 	}
 	export interface UsersReportReportFormProperties {
 		currency: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		spending: FormControl<number | null | undefined>,
-		word_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		word_count: FormControl<string | null | undefined>,
 	}
 	export function CreateUsersReportReportFormGroup() {
 		return new FormGroup<UsersReportReportFormProperties>({
 			currency: new FormControl<string | null | undefined>(undefined),
 			spending: new FormControl<number | null | undefined>(undefined),
-			word_count: new FormControl<number | null | undefined>(undefined),
+			word_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5267,14 +6087,18 @@ export namespace MyNS {
 
 	export interface VendorWithNeeds {
 		matchedNeeds?: Array<FileNeedsVendor>;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface VendorWithNeedsFormProperties {
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateVendorWithNeedsFormGroup() {
 		return new FormGroup<VendorWithNeedsFormProperties>({
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5347,9 +6171,11 @@ export namespace MyNS {
 		 * Get blogs
 		 * @param {string} locale Article language, default `en`. When no blog article is available and `fallback=true` is specified, it falls back to `en`.
 		 * @param {boolean} fallback When `true`, and no article is found in the locale, it falls back to `locale=en`.
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {BlogArticleList} List of blog articles
 		 */
-		GetBlogPosts(locale: string | null | undefined, fallback: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<BlogArticleList> {
+		GetBlogPosts(locale: string | null | undefined, fallback: boolean | null | undefined, page: string | null | undefined, per_page: string | null | undefined): Observable<BlogArticleList> {
 			return this.http.get<BlogArticleList>(this.baseUri + 'blogs?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&fallback=' + fallback + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -5406,10 +6232,11 @@ export namespace MyNS {
 		 * Delete a continuous project
 		 * Delete an existing continuous project. Your project will be cancelled, and you will still be charged for the amount of translations we have done for you so far.
 		 * Delete continuous_projects/{id}
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Continuous project deleted successfully
 		 */
-		DeleteContinuousProject(id: number): Observable<OperationStatus> {
+		DeleteContinuousProject(id: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'continuous_projects/' + id, {});
 		}
 
@@ -5417,10 +6244,11 @@ export namespace MyNS {
 		 * View a continuous project
 		 * View the details of a continuous project.
 		 * Get continuous_projects/{id}
-		 * @param {number} id Continuous Project ID
+		 * @param {string} id Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProject} ContinuousProject model
 		 */
-		GetContinuousProject(id: number): Observable<ContinuousProject> {
+		GetContinuousProject(id: string): Observable<ContinuousProject> {
 			return this.http.get<ContinuousProject>(this.baseUri + 'continuous_projects/' + id, {});
 		}
 
@@ -5428,10 +6256,11 @@ export namespace MyNS {
 		 * Update a continuous project
 		 * Update the details and settings of continuous project.
 		 * Post continuous_projects/{id}
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProject} Update continuous project operation status
 		 */
-		UpdateContinuousProject(id: number, requestBody: ContinuousProjectUpdateContent): Observable<ContinuousProject> {
+		UpdateContinuousProject(id: string, requestBody: ContinuousProjectUpdateContent): Observable<ContinuousProject> {
 			return this.http.post<ContinuousProject>(this.baseUri + 'continuous_projects/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5439,10 +6268,11 @@ export namespace MyNS {
 		 * Get JWT token to be used in analytics dashboards
 		 * Get JWT token to be used in analytics dashboards
 		 * Get continuous_projects/{id}/analytics-token
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AnalyticsToken} JWT token result
 		 */
-		GetAnalyticsToken(id: number): Observable<AnalyticsToken> {
+		GetAnalyticsToken(id: string): Observable<AnalyticsToken> {
 			return this.http.get<AnalyticsToken>(this.baseUri + 'continuous_projects/' + id + '/analytics-token', {});
 		}
 
@@ -5450,10 +6280,11 @@ export namespace MyNS {
 		 * Save/collect analytics data from Active widget
 		 * Save/collect analytics data from Active widget
 		 * Post continuous_projects/{id}/collect-analytics
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Analytics data collection result
 		 */
-		CollectAnalytics(id: number, requestBody: AnalyticsCollection): Observable<OperationStatus> {
+		CollectAnalytics(id: string, requestBody: AnalyticsCollection): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'continuous_projects/' + id + '/collect-analytics', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5461,10 +6292,11 @@ export namespace MyNS {
 		 * Complete continuous project
 		 * Complete continuous project
 		 * Post continuous_projects/{id}/complete
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation status
 		 */
-		Complete(id: number): Observable<OperationStatus> {
+		Complete(id: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'continuous_projects/' + id + '/complete', null, {});
 		}
 
@@ -5472,10 +6304,11 @@ export namespace MyNS {
 		 * Get quote for documents
 		 * Get a new quote for provided documents in continuous project
 		 * Post continuous_projects/{id}/documents/quote
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectList} Newly created project
 		 */
-		GetQuoteForDocuments(id: number, requestBody: GetQuotesForDocumentsBody): Observable<ProjectList> {
+		GetQuoteForDocuments(id: string, requestBody: GetQuotesForDocumentsBody): Observable<ProjectList> {
 			return this.http.post<ProjectList>(this.baseUri + 'continuous_projects/' + id + '/documents/quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5483,11 +6316,13 @@ export namespace MyNS {
 		 * Complete a continuous project document
 		 * Complete a continuous project document. Per your project settings, a continuous project document can be target language-specific or project-wide for all target languages of the project.
 		 * Post continuous_projects/{id}/documents/{documentId}/complete
-		 * @param {number} id Continuous project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation status
 		 */
-		CompleteContinuousDocument(id: number, documentId: number): Observable<OperationStatus> {
+		CompleteContinuousDocument(id: string, documentId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'continuous_projects/' + id + '/documents/' + documentId + '/complete', null, {});
 		}
 
@@ -5495,11 +6330,13 @@ export namespace MyNS {
 		 * Get a quote for a continuous project document
 		 * Get a new quote for provided document in continuous project. Per your project settings, a continuous project document can be target language-specific or project-wide for all target languages of the project.
 		 * Post continuous_projects/{id}/documents/{documentId}/quote
-		 * @param {number} id Continuous project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectList} Newly created project
 		 */
-		GetQuoteForDocument(id: number, documentId: number): Observable<ProjectList> {
+		GetQuoteForDocument(id: string, documentId: string): Observable<ProjectList> {
 			return this.http.post<ProjectList>(this.baseUri + 'continuous_projects/' + id + '/documents/' + documentId + '/quote', null, {});
 		}
 
@@ -5507,10 +6344,11 @@ export namespace MyNS {
 		 * Get quote for languages
 		 * Get a new quote for provided target languages in continuous project
 		 * Post continuous_projects/{id}/languages/quote
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectList} Newly created project
 		 */
-		GetQuoteForLanguages(id: number, requestBody: GetQuotesForLanguagesBody): Observable<ProjectList> {
+		GetQuoteForLanguages(id: string, requestBody: GetQuotesForLanguagesBody): Observable<ProjectList> {
 			return this.http.post<ProjectList>(this.baseUri + 'continuous_projects/' + id + '/languages/quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5518,11 +6356,12 @@ export namespace MyNS {
 		 * Complete continuous project language
 		 * Complete continuous project language
 		 * Post continuous_projects/{id}/languages/{targetLanguage}/complete
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} targetLanguage Target language that you want to complete
 		 * @return {OperationStatus} Operation status
 		 */
-		CompleteLanguage(id: number, targetLanguage: string): Observable<OperationStatus> {
+		CompleteLanguage(id: string, targetLanguage: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'continuous_projects/' + id + '/languages/' + (targetLanguage == null ? '' : encodeURIComponent(targetLanguage)) + '/complete', null, {});
 		}
 
@@ -5530,11 +6369,12 @@ export namespace MyNS {
 		 * Get quote for language
 		 * Get a new quote for provided target language in continuous project
 		 * Post continuous_projects/{id}/languages/{targetLanguage}/quote
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} targetLanguage Target language that you want to complete
 		 * @return {ProjectList} Newly created project(s)
 		 */
-		GetQuoteForLanguage(id: number, targetLanguage: string): Observable<ProjectList> {
+		GetQuoteForLanguage(id: string, targetLanguage: string): Observable<ProjectList> {
 			return this.http.post<ProjectList>(this.baseUri + 'continuous_projects/' + id + '/languages/' + (targetLanguage == null ? '' : encodeURIComponent(targetLanguage)) + '/quote', null, {});
 		}
 
@@ -5542,10 +6382,11 @@ export namespace MyNS {
 		 * Delete subscription for continuous project
 		 * Delete subscription for continuous project
 		 * Delete continuous_projects/{id}/subscription
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Subscription} Delete continuous project subscription
 		 */
-		DeleteSubscription(id: number): Observable<Subscription> {
+		DeleteSubscription(id: string): Observable<Subscription> {
 			return this.http.delete<Subscription>(this.baseUri + 'continuous_projects/' + id + '/subscription', {});
 		}
 
@@ -5553,10 +6394,11 @@ export namespace MyNS {
 		 * Get subscription for continuous project
 		 * Get subscription for continuous project
 		 * Get continuous_projects/{id}/subscription
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Subscription} Get continuous project subscription
 		 */
-		GetSubscription(id: number): Observable<Subscription> {
+		GetSubscription(id: string): Observable<Subscription> {
 			return this.http.get<Subscription>(this.baseUri + 'continuous_projects/' + id + '/subscription', {});
 		}
 
@@ -5564,10 +6406,11 @@ export namespace MyNS {
 		 * Create subscription for continuous project
 		 * Create subscription for continuous project
 		 * Post continuous_projects/{id}/subscription
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Subscription} Newly created continuous project subscription
 		 */
-		CreateSubscription(id: number, requestBody: Subscription): Observable<Subscription> {
+		CreateSubscription(id: string, requestBody: Subscription): Observable<Subscription> {
 			return this.http.post<Subscription>(this.baseUri + 'continuous_projects/' + id + '/subscription', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5575,10 +6418,11 @@ export namespace MyNS {
 		 * Update subscription for continuous project
 		 * Update subscription for continuous project
 		 * Put continuous_projects/{id}/subscription
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Subscription} Updated continuous project subscription
 		 */
-		UpdateSubscription(id: number, requestBody: Subscription): Observable<Subscription> {
+		UpdateSubscription(id: string, requestBody: Subscription): Observable<Subscription> {
 			return this.http.put<Subscription>(this.baseUri + 'continuous_projects/' + id + '/subscription', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5586,10 +6430,11 @@ export namespace MyNS {
 		 * Update subscription payment method for continuous project
 		 * Update subscription payment method for continuous project
 		 * Put continuous_projects/{id}/subscription/payment
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Subscription} Updated continuous project subscription
 		 */
-		UpdateSubscriptionPaymentMethod(id: number, requestBody: Subscription): Observable<Subscription> {
+		UpdateSubscriptionPaymentMethod(id: string, requestBody: Subscription): Observable<Subscription> {
 			return this.http.put<Subscription>(this.baseUri + 'continuous_projects/' + id + '/subscription/payment', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5597,11 +6442,12 @@ export namespace MyNS {
 		 * Instantly translate your content
 		 * Instantly translate your content with your existing TM and MT resources. This is the primary endpoint to translate your files and content on the fly, especially in CI/CD environments. This is a complex endpoint that is configured in your Active or Continuous Project dashboards. For instance, you can configure whether to use your TM, or translate missing strings via MT and then post-edit those new translations. There are various scenarios you can establish via a set of configurations.
 		 * Post continuous_projects/{id}/translate/{targetLanguage}
-		 * @param {number} id Continuous project ID
+		 * @param {string} id Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} targetLanguage Target language that you want to instantly translate your file into.
 		 * @return {InstantTranslationResult} Instant translation result. It may return a list of translated strings, or a list of translated files.
 		 */
-		Translate(id: number, targetLanguage: string, requestBody: InstantTranslationRequest): Observable<InstantTranslationResult> {
+		Translate(id: string, targetLanguage: string, requestBody: InstantTranslationRequest): Observable<InstantTranslationResult> {
 			return this.http.post<InstantTranslationResult>(this.baseUri + 'continuous_projects/' + id + '/translate/' + (targetLanguage == null ? '' : encodeURIComponent(targetLanguage)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5609,10 +6455,11 @@ export namespace MyNS {
 		 * View continuous documents
 		 * View the documents under this continuous project
 		 * Get continuous_projects/{projectId}/documents
-		 * @param {number} projectId Continuous Project ID
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectDocumentList} A list of continuous project document models
 		 */
-		GetContinuousProjectDocuments(projectId: number, filterByLanguage: string | null | undefined): Observable<ContinuousProjectDocumentList> {
+		GetContinuousProjectDocuments(projectId: string, filterByLanguage: string | null | undefined): Observable<ContinuousProjectDocumentList> {
 			return this.http.get<ContinuousProjectDocumentList>(this.baseUri + 'continuous_projects/' + projectId + '/documents?filterByLanguage=' + (filterByLanguage == null ? '' : encodeURIComponent(filterByLanguage)), {});
 		}
 
@@ -5620,10 +6467,11 @@ export namespace MyNS {
 		 * Add a new document to your continuous project
 		 * Add a new document to your continuous project. If the name already exists, it will update the existing document. In most scenarios, this operation will also trigger auto-translation of your document, via MT and/or TM.
 		 * Post continuous_projects/{projectId}/documents
-		 * @param {number} projectId Continuous project ID
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectDocument} The newly added continuous project document object.
 		 */
-		AddDocument(projectId: number, requestBody: AddOrUpdateDocumentRequest): Observable<ContinuousProjectDocument> {
+		AddDocument(projectId: string, requestBody: AddOrUpdateDocumentRequest): Observable<ContinuousProjectDocument> {
 			return this.http.post<ContinuousProjectDocument>(this.baseUri + 'continuous_projects/' + projectId + '/documents', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5631,20 +6479,22 @@ export namespace MyNS {
 		 * Get continuous project document progress for multiple IDs
 		 * Get continuous project document progress for multiple IDs
 		 * Post continuous_projects/{projectId}/documents/progress
-		 * @param {number} projectId Continuous project ID
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Progress} Progress information
 		 */
-		PostContinuousProjectDocumentProgress(projectId: number, requestBody: ContinuousProjectDocumentProgressBody): Observable<Progress> {
+		PostContinuousProjectDocumentProgress(projectId: string, requestBody: ContinuousProjectDocumentProgressBody): Observable<Progress> {
 			return this.http.post<Progress>(this.baseUri + 'continuous_projects/' + projectId + '/documents/progress', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Get a list of strings and its translations in the project.
 		 * Post continuous_projects/{projectId}/documents/strings
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		PostContinuousProjectFileStrings(projectId: number, requestBody: ContinuousProjectDocumentStringsBody): Observable<StringList> {
+		PostContinuousProjectFileStrings(projectId: string, requestBody: ContinuousProjectDocumentStringsBody): Observable<StringList> {
 			return this.http.post<StringList>(this.baseUri + 'continuous_projects/' + projectId + '/documents/strings', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5652,11 +6502,13 @@ export namespace MyNS {
 		 * View a continuous document
 		 * View the details of a source document in continuous translation project.
 		 * Get continuous_projects/{projectId}/documents/{documentId}
-		 * @param {number} projectId Continuous project ID
-		 * @param {number} documentId Document ID/Name
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID/Name
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectDocument} Progress information
 		 */
-		GetContinuousProjectDocument(projectId: number, documentId: number): Observable<ContinuousProjectDocument> {
+		GetContinuousProjectDocument(projectId: string, documentId: string): Observable<ContinuousProjectDocument> {
 			return this.http.get<ContinuousProjectDocument>(this.baseUri + 'continuous_projects/' + projectId + '/documents/' + documentId, {});
 		}
 
@@ -5664,11 +6516,13 @@ export namespace MyNS {
 		 * Update the document
 		 * Update source document in your continuous project. In most scenarios, this operation will also trigger auto-translation of your document, via MT and/or TM.
 		 * Post continuous_projects/{projectId}/documents/{documentId}
-		 * @param {number} projectId Continuous project ID
-		 * @param {number} documentId Continuous project document ID
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Continuous project document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectDocument} The updated continuous project document object.
 		 */
-		UpdateDocument(projectId: number, documentId: number, requestBody: AddOrUpdateDocumentRequest): Observable<ContinuousProjectDocument> {
+		UpdateDocument(projectId: string, documentId: string, requestBody: AddOrUpdateDocumentRequest): Observable<ContinuousProjectDocument> {
 			return this.http.post<ContinuousProjectDocument>(this.baseUri + 'continuous_projects/' + projectId + '/documents/' + documentId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5676,11 +6530,13 @@ export namespace MyNS {
 		 * Monitor progress of a continuous document
 		 * Monitor the translation progress of a document in a continuous project in real-time.
 		 * Get continuous_projects/{projectId}/documents/{documentId}/progress
-		 * @param {number} projectId Continuous project ID
-		 * @param {number} documentId Document ID/Name
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID/Name
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Progress} Progress information
 		 */
-		GetContinuousProjectDocumentProgress(projectId: number, documentId: number, filterByLanguage: string | null | undefined): Observable<Progress> {
+		GetContinuousProjectDocumentProgress(projectId: string, documentId: string, filterByLanguage: string | null | undefined): Observable<Progress> {
 			return this.http.get<Progress>(this.baseUri + 'continuous_projects/' + projectId + '/documents/' + documentId + '/progress?filterByLanguage=' + (filterByLanguage == null ? '' : encodeURIComponent(filterByLanguage)), {});
 		}
 
@@ -5688,11 +6544,13 @@ export namespace MyNS {
 		 * View strings their translations in a continuous document
 		 * View the strings from a document and their translations in your continuous translation project, for all target languages. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get continuous_projects/{projectId}/documents/{documentId}/strings
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID/Name
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID/Name
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetContinuousProjectFileStrings(projectId: number, documentId: number): Observable<StringList> {
+		GetContinuousProjectFileStrings(projectId: string, documentId: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'continuous_projects/' + projectId + '/documents/' + documentId + '/strings', {});
 		}
 
@@ -5700,10 +6558,11 @@ export namespace MyNS {
 		 * Invoices of a continuous project
 		 * Get real-time access to a continuous project's invoices.
 		 * Get continuous_projects/{projectId}/invoices
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectInvoices} Invoices List
 		 */
-		GetContinuousProjectInvoices(projectId: number): Observable<ContinuousProjectInvoices> {
+		GetContinuousProjectInvoices(projectId: string): Observable<ContinuousProjectInvoices> {
 			return this.http.get<ContinuousProjectInvoices>(this.baseUri + 'continuous_projects/' + projectId + '/invoices', {});
 		}
 
@@ -5711,10 +6570,11 @@ export namespace MyNS {
 		 * Monitor progress and status of a continous project
 		 * Monitor the translation progress of an ongoing continuous project in real-time.
 		 * Get continuous_projects/{projectId}/progress
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ContinuousProjectProgress} Progress information
 		 */
-		GetContinuousProjectProgress(projectId: number, filterByLanguage: string | null | undefined): Observable<ContinuousProjectProgress> {
+		GetContinuousProjectProgress(projectId: string, filterByLanguage: string | null | undefined): Observable<ContinuousProjectProgress> {
 			return this.http.get<ContinuousProjectProgress>(this.baseUri + 'continuous_projects/' + projectId + '/progress?filterByLanguage=' + (filterByLanguage == null ? '' : encodeURIComponent(filterByLanguage)), {});
 		}
 
@@ -5722,10 +6582,11 @@ export namespace MyNS {
 		 * View strings and translations in continuous project
 		 * View the strings and their translations in your continuous translation project, for all target languages. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get continuous_projects/{projectId}/strings
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetContinuousProjectStrings(projectId: number): Observable<StringList> {
+		GetContinuousProjectStrings(projectId: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'continuous_projects/' + projectId + '/strings', {});
 		}
 
@@ -5733,12 +6594,14 @@ export namespace MyNS {
 		 * Clear translation cache
 		 * Clear/delete continuous project translation cache.
 		 * Delete continuous_projects/{projectId}/strings/cached
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} locale Locale
-		 * @param {number} file_id Continuous Project File ID
+		 * @param {string} file_id Continuous Project File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation response
 		 */
-		ClearTranslationCache(projectId: number, locale: string | null | undefined, file_id: number | null | undefined): Observable<OperationStatus> {
+		ClearTranslationCache(projectId: string, locale: string | null | undefined, file_id: string | null | undefined): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'continuous_projects/' + projectId + '/strings/cached?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&file_id=' + file_id, {});
 		}
 
@@ -5746,11 +6609,12 @@ export namespace MyNS {
 		 * View cached strings translations in continuous project
 		 * MotaWord caches your account intensively (and in a smart way) in real-time translation environments. This endpoint will return the currently cached strings and translations in your continuous translation project.
 		 * Get continuous_projects/{projectId}/strings/cached
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} flatten Flatten cache results and ignore document keys
 		 * @return {ContinuousProjectCache} Response for strings and their translations
 		 */
-		GetTranslationCache(projectId: number, flatten: boolean | null | undefined): Observable<ContinuousProjectCache> {
+		GetTranslationCache(projectId: string, flatten: boolean | null | undefined): Observable<ContinuousProjectCache> {
 			return this.http.get<ContinuousProjectCache>(this.baseUri + 'continuous_projects/' + projectId + '/strings/cached?flatten=' + flatten, {});
 		}
 
@@ -5758,12 +6622,14 @@ export namespace MyNS {
 		 * Recache translations
 		 * Recache translations for the continuous project.
 		 * Post continuous_projects/{projectId}/strings/recache-tms
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} locale Locale
-		 * @param {number} file_id Continuous Project File ID
+		 * @param {string} file_id Continuous Project File ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation response
 		 */
-		RecacheTranslations(projectId: number, locale: string | null | undefined, file_id: number | null | undefined): Observable<OperationStatus> {
+		RecacheTranslations(projectId: string, locale: string | null | undefined, file_id: string | null | undefined): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'continuous_projects/' + projectId + '/strings/recache-tms?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&file_id=' + file_id, null, {});
 		}
 
@@ -5771,10 +6637,11 @@ export namespace MyNS {
 		 * View Active widgets
 		 * View a list of widgets in your Active project to be used in your website. Most website-specific configuration is provided via widgets.
 		 * Get continuous_projects/{projectId}/widgets
-		 * @param {number} projectId Continuous Project ID
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActiveWidgetList} List of widgets
 		 */
-		GetActiveWidgets(projectId: number): Observable<ActiveWidgetList> {
+		GetActiveWidgets(projectId: string): Observable<ActiveWidgetList> {
 			return this.http.get<ActiveWidgetList>(this.baseUri + 'continuous_projects/' + projectId + '/widgets', {});
 		}
 
@@ -5782,10 +6649,11 @@ export namespace MyNS {
 		 * Create a new Active widget
 		 * Create a new widget for your Active project to be used in your website. Most website-specific configuration is provided via widgets. This does not create a new Active project, just a separate widget.
 		 * Post continuous_projects/{projectId}/widgets
-		 * @param {number} projectId Continuous project ID
+		 * @param {string} projectId Continuous project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActiveWidget} Updated widget details
 		 */
-		CreateActiveWidget(projectId: number, requestBody: ActiveWidget): Observable<ActiveWidget> {
+		CreateActiveWidget(projectId: string, requestBody: ActiveWidget): Observable<ActiveWidget> {
 			return this.http.post<ActiveWidget>(this.baseUri + 'continuous_projects/' + projectId + '/widgets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5793,11 +6661,13 @@ export namespace MyNS {
 		 * Delete a single widget for this Active project
 		 * Delete a single widget for this Active project
 		 * Delete continuous_projects/{projectId}/widgets/{widgetId}
-		 * @param {number} projectId Continuous Project ID
-		 * @param {number} widgetId Active widget ID belonging to this Continuous Project
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} widgetId Active widget ID belonging to this Continuous Project
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Delete operation result
 		 */
-		DeleteActiveWidget(projectId: number, widgetId: number): Observable<OperationStatus> {
+		DeleteActiveWidget(projectId: string, widgetId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'continuous_projects/' + projectId + '/widgets/' + widgetId, {});
 		}
 
@@ -5805,11 +6675,13 @@ export namespace MyNS {
 		 * View an Active widget
 		 * View the details of an Active widget to be used in your website. Most website-specific configuration is provided via widgets.
 		 * Get continuous_projects/{projectId}/widgets/{widgetId}
-		 * @param {number} projectId Continuous Project ID
-		 * @param {number} widgetId Active widget ID belonging to this Continuous Project
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} widgetId Active widget ID belonging to this Continuous Project
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActiveWidget} Active widget details
 		 */
-		GetActiveWidget(projectId: number, widgetId: number): Observable<ActiveWidget> {
+		GetActiveWidget(projectId: string, widgetId: string): Observable<ActiveWidget> {
 			return this.http.get<ActiveWidget>(this.baseUri + 'continuous_projects/' + projectId + '/widgets/' + widgetId, {});
 		}
 
@@ -5817,11 +6689,13 @@ export namespace MyNS {
 		 * Update Active widget settings.
 		 * Update Active widget settings.
 		 * Post continuous_projects/{projectId}/widgets/{widgetId}
-		 * @param {number} projectId Continuous Project ID
-		 * @param {number} widgetId Active widget ID belonging to this Continuous Project
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} widgetId Active widget ID belonging to this Continuous Project
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActiveWidget} Updated widget details
 		 */
-		UpdateActiveWidget(projectId: number, widgetId: number, requestBody: ActiveWidget): Observable<ActiveWidget> {
+		UpdateActiveWidget(projectId: string, widgetId: string, requestBody: ActiveWidget): Observable<ActiveWidget> {
 			return this.http.post<ActiveWidget>(this.baseUri + 'continuous_projects/' + projectId + '/widgets/' + widgetId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5829,11 +6703,13 @@ export namespace MyNS {
 		 * Reset Active widget token
 		 * Reset the public token used with your Active widget. This token is used when communicating from your environment to MotaWord systems for translation, analytics and meta.
 		 * Post continuous_projects/{projectId}/widgets/{widgetId}/reset-token
-		 * @param {number} projectId Continuous Project ID
-		 * @param {number} widgetId Active widget ID belonging to this Continuous Project
+		 * @param {string} projectId Continuous Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} widgetId Active widget ID belonging to this Continuous Project
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActiveWidget} Updated widget details
 		 */
-		ResetActiveWidgetToken(projectId: number, widgetId: number): Observable<ActiveWidget> {
+		ResetActiveWidgetToken(projectId: string, widgetId: string): Observable<ActiveWidget> {
 			return this.http.post<ActiveWidget>(this.baseUri + 'continuous_projects/' + projectId + '/widgets/' + widgetId + '/reset-token', null, {});
 		}
 
@@ -5911,10 +6787,11 @@ export namespace MyNS {
 		 * Get details of this corporate account
 		 * Get details of this corporate account
 		 * Get corporates/{corporateId}
-		 * @param {number} corporateId Corporate ID
+		 * @param {string} corporateId Corporate ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CorporateAccount} Corporate account details
 		 */
-		GetCorporateById(corporateId: number): Observable<CorporateAccount> {
+		GetCorporateById(corporateId: string): Observable<CorporateAccount> {
 			return this.http.get<CorporateAccount>(this.baseUri + 'corporates/' + corporateId, {});
 		}
 
@@ -5922,10 +6799,11 @@ export namespace MyNS {
 		 * Get a list of available permissions for this corporate account. They are used when assigning permissions to corporate users.
 		 * Get a list of available permissions for this corporate account. They are used when assigning permissions to corporate users.
 		 * Get corporates/{corporateId}/permissions
-		 * @param {number} corporateId Corporate ID
+		 * @param {string} corporateId Corporate ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PermissionList} List of permission strings
 		 */
-		GetAvailableCorporatePermissionsById(corporateId: number): Observable<PermissionList> {
+		GetAvailableCorporatePermissionsById(corporateId: string): Observable<PermissionList> {
 			return this.http.get<PermissionList>(this.baseUri + 'corporates/' + corporateId + '/permissions', {});
 		}
 
@@ -5933,10 +6811,11 @@ export namespace MyNS {
 		 * Get a list of user groups for this corporate account
 		 * Get a list of user groups for this corporate account
 		 * Get corporates/{corporateId}/user-groups
-		 * @param {number} corporateId Corporate ID
+		 * @param {string} corporateId Corporate ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserGroupList} User group list
 		 */
-		GetCorporateUserGroupsById(corporateId: number): Observable<UserGroupList> {
+		GetCorporateUserGroupsById(corporateId: string): Observable<UserGroupList> {
 			return this.http.get<UserGroupList>(this.baseUri + 'corporates/' + corporateId + '/user-groups', {});
 		}
 
@@ -5944,10 +6823,11 @@ export namespace MyNS {
 		 * Create or update a corporate user group for this corporate account
 		 * Create or update a corporate user group for this corporate account
 		 * Post corporates/{corporateId}/user-groups
-		 * @param {number} corporateId Corporate ID
+		 * @param {string} corporateId Corporate ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserGroup} User group list
 		 */
-		SaveCorporateUserGroupById(corporateId: number, requestBody: UserGroup): Observable<UserGroup> {
+		SaveCorporateUserGroupById(corporateId: string, requestBody: UserGroup): Observable<UserGroup> {
 			return this.http.post<UserGroup>(this.baseUri + 'corporates/' + corporateId + '/user-groups', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5955,10 +6835,11 @@ export namespace MyNS {
 		 * Get a list of users for this corporate account
 		 * Get a list of users for this corporate account
 		 * Get corporates/{corporateId}/users
-		 * @param {number} corporateId Corporate ID
+		 * @param {string} corporateId Corporate ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserList} User list
 		 */
-		GetCorporateUsersById(corporateId: number): Observable<UserList> {
+		GetCorporateUsersById(corporateId: string): Observable<UserList> {
 			return this.http.get<UserList>(this.baseUri + 'corporates/' + corporateId + '/users', {});
 		}
 
@@ -5978,10 +6859,12 @@ export namespace MyNS {
 		 * Get documents
 		 * @param {boolean} recent When true, this will return the most 4 recent active documents.
 		 * @param {string} language_code searches in source language of documents, in source and target languages of document's quote
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {DocumentList} Document list
 		 */
-		GetDocuments(recent: boolean | null | undefined, search: string | null | undefined, type_filter: GetDocumentsType_filter | null | undefined, language_code: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, order_by: GetDocumentsOrder_by | null | undefined, order_type: ListOrderType | null | undefined, with_: Array<string> | null | undefined): Observable<DocumentList> {
+		GetDocuments(recent: boolean | null | undefined, search: string | null | undefined, type_filter: GetDocumentsType_filter | null | undefined, language_code: string | null | undefined, page: string | null | undefined, per_page: string | null | undefined, order_by: GetDocumentsOrder_by | null | undefined, order_type: ListOrderType | null | undefined, with_: Array<string> | null | undefined): Observable<DocumentList> {
 			return this.http.get<DocumentList>(this.baseUri + 'documents?recent=' + recent + '&search=' + (search == null ? '' : encodeURIComponent(search)) + '&type_filter=' + type_filter + '&language_code=' + (language_code == null ? '' : encodeURIComponent(language_code)) + '&page=' + page + '&per_page=' + per_page + '&order_by=' + order_by + '&order_type=' + order_type + '&' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -6011,6 +6894,7 @@ export namespace MyNS {
 		 * View the translation or proofreading progress of a document in your account. You can also track the progress of a document under the project that it was ordered with.
 		 * Get documents/{documentId}/progress
 		 * @param {number} documentId Document ID
+		 *     Type: double
 		 * @return {Progress} Progress information
 		 */
 		GetDocumentProgress(documentId: number): Observable<Progress> {
@@ -6021,10 +6905,11 @@ export namespace MyNS {
 		 * Regenerate preview and return preview URL for given file
 		 * Regenerate preview and return preview URL for given file
 		 * Post documents/{documentId}/regenerate_preview
-		 * @param {number} documentId Document ID
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {RegeneratePreviewResponse} RegeneratePreviewResponse
 		 */
-		RegeneratePreview(documentId: number): Observable<RegeneratePreviewResponse> {
+		RegeneratePreview(documentId: string): Observable<RegeneratePreviewResponse> {
 			return this.http.post<RegeneratePreviewResponse>(this.baseUri + 'documents/' + documentId + '/regenerate_preview', null, {});
 		}
 
@@ -6032,12 +6917,14 @@ export namespace MyNS {
 		 * Find documents similar to this document.
 		 * Find documents similar to this document. Optionally, include translation information.
 		 * Get documents/{documentId}/similars
-		 * @param {number} documentId Document ID
-		 * @param {number} per_page Determines the number of similar documents to return.
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Determines the number of similar documents to return.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {DocumentList} Document list
 		 */
-		GetSimilarDocuments(documentId: number, per_page: number | null | undefined, with_: Array<string> | null | undefined): Observable<DocumentList> {
+		GetSimilarDocuments(documentId: string, per_page: string | null | undefined, with_: Array<string> | null | undefined): Observable<DocumentList> {
 			return this.http.get<DocumentList>(this.baseUri + 'documents/' + documentId + '/similars?per_page=' + per_page + '&' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -6045,10 +6932,11 @@ export namespace MyNS {
 		 * Use the translation of given source manual document as manual draft source for the given target document.
 		 * Use the translation of given source manual document as manual draft source for the given target document.
 		 * Post documents/{documentId}/use_as_draft
-		 * @param {number} documentId Document ID
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation status
 		 */
-		UseAsDraft(documentId: number, requestBody: UseAsDraftPayload): Observable<OperationStatus> {
+		UseAsDraft(documentId: string, requestBody: UseAsDraftPayload): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'documents/' + documentId + '/use_as_draft', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6056,10 +6944,11 @@ export namespace MyNS {
 		 * Use the translation of the given manual document as a regular file.
 		 * Use the translation of the given manual document as a regular file.
 		 * Post documents/{documentId}/use_as_regular
-		 * @param {number} documentId Document ID
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation status
 		 */
-		UseAsRegular(documentId: number, requestBody: UseAsRegularPayload): Observable<OperationStatus> {
+		UseAsRegular(documentId: string, requestBody: UseAsRegularPayload): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'documents/' + documentId + '/use_as_regular', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6229,10 +7118,11 @@ export namespace MyNS {
 		 * Get the Pam profile of a client for this client ID
 		 * Get the Pam  profile of a client for this client ID
 		 * Get pam/profiles/client/{clientId}
-		 * @param {number} clientId Client ID
+		 * @param {string} clientId Client ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ClientProfile} Client profile
 		 */
-		GetClientProfileForPam(clientId: number): Observable<ClientProfile> {
+		GetClientProfileForPam(clientId: string): Observable<ClientProfile> {
 			return this.http.get<ClientProfile>(this.baseUri + 'pam/profiles/client/' + clientId, {});
 		}
 
@@ -6240,10 +7130,11 @@ export namespace MyNS {
 		 * Get completion report data of a project
 		 * Get completion report data of a project
 		 * Get pam/projects/{projectId}/completion-report
-		 * @param {number} projectId Quote ID
+		 * @param {string} projectId Quote ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectCompletionReport} Project Completion Report
 		 */
-		GetProjectCompletionReportForPam(projectId: number): Observable<ProjectCompletionReport> {
+		GetProjectCompletionReportForPam(projectId: string): Observable<ProjectCompletionReport> {
 			return this.http.get<ProjectCompletionReport>(this.baseUri + 'pam/projects/' + projectId + '/completion-report', {});
 		}
 
@@ -6300,20 +7191,22 @@ export namespace MyNS {
 		/**
 		 * View saved credit card
 		 * Get payment/{cardId}
-		 * @param {number} cardId Credit Card ID
+		 * @param {string} cardId Credit Card ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CreditCard} Credit card content
 		 */
-		GetCreditCard(cardId: number): Observable<CreditCard> {
+		GetCreditCard(cardId: string): Observable<CreditCard> {
 			return this.http.get<CreditCard>(this.baseUri + 'payment/' + cardId, {});
 		}
 
 		/**
 		 * Delete credit card
 		 * Delete payment/{cardId}/delete
-		 * @param {number} cardId Credit Card ID
+		 * @param {string} cardId Credit Card ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		DeleteCreditCard(cardId: number): Observable<OperationStatus> {
+		DeleteCreditCard(cardId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'payment/' + cardId + '/delete', {});
 		}
 
@@ -6321,10 +7214,11 @@ export namespace MyNS {
 		 * Reset credit card payment code
 		 * Reset the payment code used to bypass credit card payment. This will invalidate your current payment code and your users should be aware of this change while ordering translations.
 		 * Post payment/{cardId}/reset-payment-code
-		 * @param {number} cardId Credit Card ID
+		 * @param {string} cardId Credit Card ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CreditCard} Credit card content
 		 */
-		ResetCardPaymentCode(cardId: number): Observable<CreditCard> {
+		ResetCardPaymentCode(cardId: string): Observable<CreditCard> {
 			return this.http.post<CreditCard>(this.baseUri + 'payment/' + cardId + '/reset-payment-code', null, {});
 		}
 
@@ -6352,6 +7246,8 @@ export namespace MyNS {
 		 * View your translation projects
 		 * View the translation projects ordered in your account. If you have the related permission (configured by your account administrator), you can view the projects of your colleagues under the same company account.
 		 * Get projects
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<ProjectStatus>} status_ Filter projects by status. Accepts multiple statuses. Possible values 'pending', 'started', 'completed'
 		 * @param {boolean} with_pending deprecated. use `status[]` param.
 		 * @param {boolean} with_started deprecated. use `status[]` param.
@@ -6359,7 +7255,7 @@ export namespace MyNS {
 		 * @param {Array<string>} with_ Include detailed information. Possible values 'client', 'vendor'
 		 * @return {ProjectList} Project list
 		 */
-		GetProjects(page: number | null | undefined, per_page: number | null | undefined, status_: Array<ProjectStatus> | null | undefined, with_pending: boolean | null | undefined, with_started: boolean | null | undefined, with_completed: boolean | null | undefined, order_by: GetProjectsOrder_by | null | undefined, order_type: ListOrderType | null | undefined, with_: Array<string> | null | undefined): Observable<ProjectList> {
+		GetProjects(page: string | null | undefined, per_page: string | null | undefined, status_: Array<ProjectStatus> | null | undefined, with_pending: boolean | null | undefined, with_started: boolean | null | undefined, with_completed: boolean | null | undefined, order_by: GetProjectsOrder_by | null | undefined, order_type: ListOrderType | null | undefined, with_: Array<string> | null | undefined): Observable<ProjectList> {
 			return this.http.get<ProjectList>(this.baseUri + 'projects?page=' + page + '&per_page=' + per_page + '&' + status_?.map(z => `status[]=${z}`).join('&') + '&with_pending=' + with_pending + '&with_started=' + with_started + '&with_completed=' + with_completed + '&order_by=' + order_by + '&order_type=' + order_type + '&' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -6377,10 +7273,11 @@ export namespace MyNS {
 		 * Get Quote Id
 		 * Get Quote Id
 		 * Get projects/from-internal-id/{projectId}
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectId} QuoteId
 		 */
-		GetQuoteIdFromInternalId(projectId: number): Observable<ProjectId> {
+		GetQuoteIdFromInternalId(projectId: string): Observable<ProjectId> {
 			return this.http.get<ProjectId>(this.baseUri + 'projects/from-internal-id/' + projectId, {});
 		}
 
@@ -6390,9 +7287,11 @@ export namespace MyNS {
 		 * Get projects/vendor
 		 * @param {boolean} joined Return only projects that this user has already joined
 		 * @param {boolean} completed Return only projects that have been completed. When `true`, this makes `joined` true as well.
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectList} Vendor project list
 		 */
-		GetVendorProjects(joined: boolean | null | undefined, completed: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<ProjectList> {
+		GetVendorProjects(joined: boolean | null | undefined, completed: boolean | null | undefined, page: string | null | undefined, per_page: string | null | undefined): Observable<ProjectList> {
 			return this.http.get<ProjectList>(this.baseUri + 'projects/vendor?joined=' + joined + '&completed=' + completed + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -6400,10 +7299,11 @@ export namespace MyNS {
 		 * Delete your translation project
 		 * If you haven't launched your translation project yet, we will delete it. If MotaWord already started working on your project, we will cancel the project and refund the volume that we haven't worked on yet.
 		 * Delete projects/{id}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Project canceled successfully
 		 */
-		DeleteProject(id: number): Observable<OperationStatus> {
+		DeleteProject(id: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'projects/' + id, {});
 		}
 
@@ -6411,31 +7311,34 @@ export namespace MyNS {
 		 * View a translation project
 		 * View the details of a translation project in your account.
 		 * Get projects/{id}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Include detailed information. Possible values 'client', 'vendor', 'score'
 		 * @return {Project} Project model
 		 */
-		GetProject(id: number, with_: Array<string> | null | undefined): Observable<Project> {
+		GetProject(id: string, with_: Array<string> | null | undefined): Observable<Project> {
 			return this.http.get<Project>(this.baseUri + 'projects/' + id + '?' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
 		/**
 		 * Update project info and settings
 		 * Put projects/{id}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Project} Updated project
 		 */
-		UpdateProject(id: number, requestBody: ProjectUpdate): Observable<Project> {
+		UpdateProject(id: string, requestBody: ProjectUpdate): Observable<Project> {
 			return this.http.put<Project>(this.baseUri + 'projects/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Assign a CM to the project
 		 * Post projects/{id}/assign-cm
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation started successfully
 		 */
-		AssignCM(id: number, requestBody: CM): Observable<OperationStatus> {
+		AssignCM(id: string, requestBody: CM): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/assign-cm', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6443,11 +7346,12 @@ export namespace MyNS {
 		 * Trigger a call to your callback URL related to this project.
 		 * Trigger a call to your callback URL related to this project.
 		 * Get projects/{id}/callback/{actionType}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {TriggerCallbackActionType} actionType Callback type
 		 * @return {CallbackResult} Callback result
 		 */
-		TriggerCallback(id: number, actionType: TriggerCallbackActionType): Observable<CallbackResult> {
+		TriggerCallback(id: string, actionType: TriggerCallbackActionType): Observable<CallbackResult> {
 			return this.http.get<CallbackResult>(this.baseUri + 'projects/' + id + '/callback/' + actionType, {});
 		}
 
@@ -6455,10 +7359,11 @@ export namespace MyNS {
 		 * Cancel your translation project
 		 * If you haven't launched your translation project yet, we will delete it. If MotaWord already started working on your project, we will cancel the project and refund the volume that we haven't worked on yet.
 		 * Post projects/{id}/cancel
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Project canceled successfully
 		 */
-		CancelProject(id: number, requestBody: CancelProjectRequest): Observable<OperationStatus> {
+		CancelProject(id: string, requestBody: CancelProjectRequest): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/cancel', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6466,10 +7371,11 @@ export namespace MyNS {
 		 * Deliver project
 		 * Deliver project to the owner of the project. You can also download your translations in `/package` and `/download` endpoints.
 		 * Post projects/{id}/deliver
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Operation started successfully
 		 */
-		DeliverProject(id: number): Observable<OperationStatus> {
+		DeliverProject(id: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/deliver', null, {});
 		}
 
@@ -6477,10 +7383,11 @@ export namespace MyNS {
 		 * Download your translated project
 		 * Download the latest translation package. You must have requested a `/package` call beforehand and wait until the packaging status is 'completed'.
 		 * Get projects/{id}/download
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Translation package streamed. The streamed file is always a ZIP file, except when the API client is configured for Drupal and Wordpress.
 		 */
-		Download(id: number): Observable<HttpResponse<string>> {
+		Download(id: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + id + '/download', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6488,11 +7395,12 @@ export namespace MyNS {
 		 * Download your translated project language
 		 * Download the latest translation package for your target language. You must have requested a `/package` call beforehand and wait until the packaging status is 'completed'.
 		 * Get projects/{id}/download/{language}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Language code. You can download the translation of only a specific language.
 		 * @return {void} Translation package streamed. The streamed file is always a ZIP file, except when the API client is configured for Drupal and Wordpress.
 		 */
-		DownloadLanguage(id: number, language: string): Observable<HttpResponse<string>> {
+		DownloadLanguage(id: string, language: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + id + '/download/' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6500,10 +7408,11 @@ export namespace MyNS {
 		 * Send a quote email
 		 * Send a quote email
 		 * Post projects/{id}/email-quote
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Email sent successfully
 		 */
-		SendQuoteEmail(id: number): Observable<OperationStatus> {
+		SendQuoteEmail(id: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/email-quote', null, {});
 		}
 
@@ -6511,10 +7420,11 @@ export namespace MyNS {
 		 * View project invoice
 		 * View your invoice details for your translation project.
 		 * Get projects/{id}/invoice
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Invoice} Invoice
 		 */
-		GetInvoice(id: number): Observable<Invoice> {
+		GetInvoice(id: string): Observable<Invoice> {
 			return this.http.get<Invoice>(this.baseUri + 'projects/' + id + '/invoice', {});
 		}
 
@@ -6522,10 +7432,11 @@ export namespace MyNS {
 		 * Download project invoice (HTML)
 		 * Download your project invoice as HTML. This is useful when you want to show your users the invoice in a webpage.
 		 * Get projects/{id}/invoice.html
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Invoice
 		 */
-		DownloadHtmlInvoice(id: number): Observable<HttpResponse<string>> {
+		DownloadHtmlInvoice(id: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + id + '/invoice.html', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6533,10 +7444,11 @@ export namespace MyNS {
 		 * Download project invoice (PDF)
 		 * Download your project invoice as PDF. Your invoice may be in "unpaid" status, in which case youn can see the payment instructions in the PDF file.
 		 * Get projects/{id}/invoice.pdf
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Invoice
 		 */
-		DownloadPdfInvoice(id: number): Observable<HttpResponse<string>> {
+		DownloadPdfInvoice(id: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + id + '/invoice.pdf', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6544,10 +7456,11 @@ export namespace MyNS {
 		 * Launch your translation project
 		 * Launch your translation project so MotaWord can actually start working on your translation.
 		 * Post projects/{id}/launch
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectLaunchResponse} Project launched successfully
 		 */
-		LaunchProject(id: number, requestBody: ProjectPayment): Observable<ProjectLaunchResponse> {
+		LaunchProject(id: string, requestBody: ProjectPayment): Observable<ProjectLaunchResponse> {
 			return this.http.post<ProjectLaunchResponse>(this.baseUri + 'projects/' + id + '/launch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6555,11 +7468,13 @@ export namespace MyNS {
 		 * Package your translated project
 		 * Package the translations in your project, prepare translated documents and make it ready to be downloaded. Once packaged, you can download your translated project.
 		 * Post projects/{id}/package
-		 * @param {number} id Project ID
-		 * @param {number} async If you want to package and download the translation synchronously, mark this parameter as '0'. It will package the translation and then return the packaged file in the response, identical to /download call after an asynchronous /package call.
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} async If you want to package and download the translation synchronously, mark this parameter as '0'. It will package the translation and then return the packaged file in the response, identical to /download call after an asynchronous /package call.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Packaged translation streamed.
 		 */
-		Package(id: number, async: number | null | undefined): Observable<HttpResponse<string>> {
+		Package(id: string, async: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'projects/' + id + '/package?async=' + async, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6567,11 +7482,12 @@ export namespace MyNS {
 		 * Track translation packaging status
 		 * Track the packaging status of your translations, by using the `key` from packaging request. Once packaging is completed, you can download your translations via `/download` endpoints.
 		 * Get projects/{id}/package/check
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} key This is the package tracking key provided in the response of a /package call.
 		 * @return {PackageStatus} Current status of packaging process.
 		 */
-		TrackPackage(id: number, key: string | null | undefined): Observable<PackageStatus> {
+		TrackPackage(id: string, key: string | null | undefined): Observable<PackageStatus> {
 			return this.http.get<PackageStatus>(this.baseUri + 'projects/' + id + '/package/check?key=' + (key == null ? '' : encodeURIComponent(key)), {});
 		}
 
@@ -6579,12 +7495,14 @@ export namespace MyNS {
 		 * Package your translated project language
 		 * Package the translations in your project for a specific target language, prepare translated documents and make it ready to be downloaded. Once packaged, you can download your translated project in this target language.
 		 * Post projects/{id}/package/{language}
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Language code. You can package the translation of only a specific language.
-		 * @param {number} async If you want to package and download the translation synchronously, mark this parameter as '0'. It will package the translation and then return the packaged file in the response, identical to /download call after an asynchronous /package call.
+		 * @param {string} async If you want to package and download the translation synchronously, mark this parameter as '0'. It will package the translation and then return the packaged file in the response, identical to /download call after an asynchronous /package call.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Package} Packaging status and tracking code. With the package key, you can track the progress of translation packaging.Also packaged translation streamed.
 		 */
-		PackageLanguage(id: number, language: string, async: number | null | undefined): Observable<Package> {
+		PackageLanguage(id: string, language: string, async: string | null | undefined): Observable<Package> {
 			return this.http.post<Package>(this.baseUri + 'projects/' + id + '/package/' + (language == null ? '' : encodeURIComponent(language)) + '&async=' + async, null, {});
 		}
 
@@ -6592,51 +7510,56 @@ export namespace MyNS {
 		 * View progress of a project
 		 * Monitor the translation progress of an already launched project in real-time.
 		 * Get projects/{id}/progress
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} raw This will return a more raw progress information for translation and proofreading. For instance, when completed, we will return 100% for both tasks by default, whereas their actual progress may be lower than 100%.
 		 * @return {Progress} Progress information
 		 */
-		GetProgress(id: number, raw: boolean | null | undefined): Observable<Progress> {
+		GetProgress(id: string, raw: boolean | null | undefined): Observable<Progress> {
 			return this.http.get<Progress>(this.baseUri + 'projects/' + id + '/progress?raw=' + raw, {});
 		}
 
 		/**
 		 * Recreate your translation project from scratch. This is a risky action, you will lose current translations.
 		 * Post projects/{id}/recreate
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Project recreation process started successfully
 		 */
-		RecreateProject(id: number): Observable<OperationStatus> {
+		RecreateProject(id: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/recreate', null, {});
 		}
 
 		/**
 		 * Submit feedback report for a project
 		 * Post projects/{id}/reports
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Report submitted successfully
 		 */
-		SubmitProjectReports(id: number, requestBody: ReportContent): Observable<OperationStatus> {
+		SubmitProjectReports(id: string, requestBody: ReportContent): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/reports', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Get sales activities for a project
 		 * Get projects/{id}/sales/activities
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SalesActivities} Activities fetched successfully
 		 */
-		GetSalesActivities(id: number, excludeOwner: string | null | undefined, type: SalesActivityType | null | undefined): Observable<SalesActivities> {
+		GetSalesActivities(id: string, excludeOwner: string | null | undefined, type: SalesActivityType | null | undefined): Observable<SalesActivities> {
 			return this.http.get<SalesActivities>(this.baseUri + 'projects/' + id + '/sales/activities?excludeOwner=' + (excludeOwner == null ? '' : encodeURIComponent(excludeOwner)) + '&type=' + type, {});
 		}
 
 		/**
 		 * Insert sales activity for a project
 		 * Post projects/{id}/sales/activities
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Acvitity inserted successfully
 		 */
-		InsertSalesActivity(id: number, requestBody: NewSalesActivity): Observable<OperationStatus> {
+		InsertSalesActivity(id: string, requestBody: NewSalesActivity): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + 'projects/' + id + '/sales/activities', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6644,10 +7567,11 @@ export namespace MyNS {
 		 * Delete project webhooks
 		 * Delete project webhooks. Projects currently support registering only 1 webhook. This endpoint deletes the previously registered webhook.
 		 * Delete projects/{id}/webhooks
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Project webhook deleted successfully
 		 */
-		DeleteProjectWebhook(id: number): Observable<OperationStatus> {
+		DeleteProjectWebhook(id: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'projects/' + id + '/webhooks', {});
 		}
 
@@ -6655,10 +7579,11 @@ export namespace MyNS {
 		 * View project webhooks
 		 * This endpoint returns Project entity which contains `callback_url` field for webhook URL. Currently projects can have only 1 webhook registered.
 		 * Get projects/{id}/webhooks
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Project} Project model
 		 */
-		GetProjectWebhooks(id: number): Observable<Project> {
+		GetProjectWebhooks(id: string): Observable<Project> {
 			return this.http.get<Project>(this.baseUri + 'projects/' + id + '/webhooks', {});
 		}
 
@@ -6666,10 +7591,11 @@ export namespace MyNS {
 		 * Update project webhook
 		 * Update project webhook URL
 		 * Post projects/{id}/webhooks
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Project} Updated project
 		 */
-		PostProjectWebhook(id: number, requestBody: Webhook): Observable<Project> {
+		PostProjectWebhook(id: string, requestBody: Webhook): Observable<Project> {
 			return this.http.post<Project>(this.baseUri + 'projects/' + id + '/webhooks', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6677,10 +7603,11 @@ export namespace MyNS {
 		 * Update project webhook
 		 * Update project webhook URL
 		 * Put projects/{id}/webhooks
-		 * @param {number} id Project ID
+		 * @param {string} id Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Project} Updated project
 		 */
-		UpdateProjectWebhook(id: number, requestBody: Webhook): Observable<Project> {
+		UpdateProjectWebhook(id: string, requestBody: Webhook): Observable<Project> {
 			return this.http.put<Project>(this.baseUri + 'projects/' + id + '/webhooks', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6688,10 +7615,13 @@ export namespace MyNS {
 		 * Monitor project activities
 		 * Get a list of real-time activities in the project, such as translation suggestion and translation approval.
 		 * Get projects/{projectId}/activities
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ActivityList} A list of activity models
 		 */
-		GetActivities(projectId: number, page: number | null | undefined, per_page: number | null | undefined): Observable<ActivityList> {
+		GetActivities(projectId: string, page: string | null | undefined, per_page: string | null | undefined): Observable<ActivityList> {
 			return this.http.get<ActivityList>(this.baseUri + 'projects/' + projectId + '/activities?page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -6699,11 +7629,13 @@ export namespace MyNS {
 		 * View an activity
 		 * View the details of an activity in the project.
 		 * Get projects/{projectId}/activities/{activityId}
-		 * @param {number} projectId Project ID
-		 * @param {number} activityId Activity ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} activityId Activity ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Activity} Activity model
 		 */
-		GetActivity(projectId: number, activityId: number): Observable<Activity> {
+		GetActivity(projectId: string, activityId: string): Observable<Activity> {
 			return this.http.get<Activity>(this.baseUri + 'projects/' + projectId + '/activities/' + activityId, {});
 		}
 
@@ -6711,11 +7643,13 @@ export namespace MyNS {
 		 * Submit comment to an activity
 		 * Submit a comment to an activity in the project, such as translation or editing.
 		 * Post projects/{projectId}/activities/{activityId}
-		 * @param {number} projectId Project ID
-		 * @param {number} activityId Activity ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} activityId Activity ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Comment} Comment model
 		 */
-		SubmitComment(projectId: number, activityId: number, requestBody: Comment): Observable<Comment> {
+		SubmitComment(projectId: string, activityId: string, requestBody: Comment): Observable<Comment> {
 			return this.http.post<Comment>(this.baseUri + 'projects/' + projectId + '/activities/' + activityId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6723,11 +7657,13 @@ export namespace MyNS {
 		 * View activity comments
 		 * View a list of comments added to this activity.
 		 * Get projects/{projectId}/activities/{activityId}/comments
-		 * @param {number} projectId Project ID
-		 * @param {number} activityId Activity ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} activityId Activity ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CommentList} A list of Comment models
 		 */
-		GetActivityComments(projectId: number, activityId: number): Observable<CommentList> {
+		GetActivityComments(projectId: string, activityId: string): Observable<CommentList> {
 			return this.http.get<CommentList>(this.baseUri + 'projects/' + projectId + '/activities/' + activityId + '/comments', {});
 		}
 
@@ -6735,10 +7671,13 @@ export namespace MyNS {
 		 * View all project comments
 		 * View a list of activity comments in the project.
 		 * Get projects/{projectId}/comments
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CommentList} A list of Comment models
 		 */
-		GetComments(projectId: number, page: number | null | undefined, per_page: number | null | undefined): Observable<CommentList> {
+		GetComments(projectId: string, page: string | null | undefined, per_page: string | null | undefined): Observable<CommentList> {
 			return this.http.get<CommentList>(this.baseUri + 'projects/' + projectId + '/comments?page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -6746,11 +7685,12 @@ export namespace MyNS {
 		 * View project source documents
 		 * Get a list of source files you uploaded to be translated in your project.
 		 * Get projects/{projectId}/documents
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {DocumentList} A list of document models
 		 */
-		GetProjectDocuments(projectId: number, with_: Array<string> | null | undefined): Observable<DocumentList> {
+		GetProjectDocuments(projectId: string, with_: Array<string> | null | undefined): Observable<DocumentList> {
 			return this.http.get<DocumentList>(this.baseUri + 'projects/' + projectId + '/documents?' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -6758,10 +7698,11 @@ export namespace MyNS {
 		 * Upload a new document
 		 * Upload a new document
 		 * Post projects/{projectId}/documents
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DocumentList} A list of successfully added new documents.
 		 */
-		CreateProjectDocument(projectId: number, requestBody: DocumentUpdates): Observable<DocumentList> {
+		CreateProjectDocument(projectId: string, requestBody: DocumentUpdates): Observable<DocumentList> {
 			return this.http.post<DocumentList>(this.baseUri + 'projects/' + projectId + '/documents', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6769,11 +7710,13 @@ export namespace MyNS {
 		 * Delete the document
 		 * Delete the document
 		 * Delete projects/{projectId}/documents/{documentId}
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Document deleted successfully
 		 */
-		DeleteProjectDocument(projectId: number, documentId: number): Observable<OperationStatus> {
+		DeleteProjectDocument(projectId: string, documentId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'projects/' + projectId + '/documents/' + documentId, {});
 		}
 
@@ -6781,12 +7724,14 @@ export namespace MyNS {
 		 * View a project source document
 		 * View the details of a source file you uploaded to be translated in your project.
 		 * Get projects/{projectId}/documents/{documentId}
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {Document} Document model
 		 */
-		GetProjectDocument(projectId: number, documentId: number, with_: Array<string> | null | undefined): Observable<Document> {
+		GetProjectDocument(projectId: string, documentId: string, with_: Array<string> | null | undefined): Observable<Document> {
 			return this.http.get<Document>(this.baseUri + 'projects/' + projectId + '/documents/' + documentId + '?' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -6794,11 +7739,13 @@ export namespace MyNS {
 		 * Update the document.
 		 * Update the document. File name and contents will replaced with the new one.
 		 * Post projects/{projectId}/documents/{documentId}
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Document} Updated document model
 		 */
-		UpdateProjectDocument(projectId: number, documentId: number, requestBody: DocumentUploadRequest): Observable<Document> {
+		UpdateProjectDocument(projectId: string, documentId: string, requestBody: DocumentUploadRequest): Observable<Document> {
 			return this.http.post<Document>(this.baseUri + 'projects/' + projectId + '/documents/' + documentId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6806,11 +7753,13 @@ export namespace MyNS {
 		 * Download a project source document
 		 * Download an actual source file you uploaded to be translated in your project.
 		 * Get projects/{projectId}/documents/{documentId}/download
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Document streamed
 		 */
-		DownloadProjectDocument(projectId: number, documentId: number): Observable<string> {
+		DownloadProjectDocument(projectId: string, documentId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'projects/' + projectId + '/documents/' + documentId + '/download', { responseType: 'text' });
 		}
 
@@ -6818,11 +7767,13 @@ export namespace MyNS {
 		 * View strings and translations of a document
 		 * View the strings and their translations in your translation project for the specified source document. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get projects/{projectId}/documents/{documentId}/translations
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetDocumentTranslations(projectId: number, documentId: number): Observable<StringList> {
+		GetDocumentTranslations(projectId: string, documentId: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/documents/' + documentId + '/translations', {});
 		}
 
@@ -6830,13 +7781,15 @@ export namespace MyNS {
 		 * Download translated document
 		 * Download translated document in the given target language.
 		 * Get projects/{projectId}/documents/{documentId}/translations/download/{language}
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Target language code.
 		 * @param {boolean} certified Download certified translation
 		 * @return {void} File
 		 */
-		DownloadTranslatedDocumentForLanguage(projectId: number, documentId: number, language: string, certified: boolean | null | undefined): Observable<HttpResponse<string>> {
+		DownloadTranslatedDocumentForLanguage(projectId: string, documentId: string, language: string, certified: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + projectId + '/documents/' + documentId + '/translations/download/' + (language == null ? '' : encodeURIComponent(language)) + '&certified=' + certified, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6844,12 +7797,14 @@ export namespace MyNS {
 		 * View strings and translations of a document for target language
 		 * View the strings and their translations in the given target language for the specified source document. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get projects/{projectId}/documents/{documentId}/translations/{language}
-		 * @param {number} projectId Project ID
-		 * @param {number} documentId Document ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} documentId Document ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Target language code.
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetDocumentTranslationsForLanguage(projectId: number, documentId: number, language: string): Observable<StringList> {
+		GetDocumentTranslationsForLanguage(projectId: string, documentId: string, language: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/documents/' + documentId + '/translations/' + (language == null ? '' : encodeURIComponent(language)), {});
 		}
 
@@ -6857,10 +7812,11 @@ export namespace MyNS {
 		 * View glossaries
 		 * View a list of glossaries previously uploaded to the project.
 		 * Get projects/{projectId}/glossaries
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GlossaryList} A list of glossary models
 		 */
-		GetGlossaries(projectId: number): Observable<GlossaryList> {
+		GetGlossaries(projectId: string): Observable<GlossaryList> {
 			return this.http.get<GlossaryList>(this.baseUri + 'projects/' + projectId + '/glossaries', {});
 		}
 
@@ -6868,10 +7824,11 @@ export namespace MyNS {
 		 * Upload a glossary file
 		 * Upload a new glossary file to your project to be used during translation. Glossaries can be CSV or TBX files.
 		 * Post projects/{projectId}/glossaries
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Glossary} Newly created glossary model.
 		 */
-		CreateGlossary(projectId: number, requestBody: GlossaryUploadRequest): Observable<Glossary> {
+		CreateGlossary(projectId: string, requestBody: GlossaryUploadRequest): Observable<Glossary> {
 			return this.http.post<Glossary>(this.baseUri + 'projects/' + projectId + '/glossaries', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6879,11 +7836,13 @@ export namespace MyNS {
 		 * Delete a glossary
 		 * Delete the existing glossary from the project.
 		 * Delete projects/{projectId}/glossaries/{glossaryId}
-		 * @param {number} projectId Project ID
-		 * @param {number} glossaryId Glossary ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} glossaryId Glossary ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Glossary deleted successfully
 		 */
-		DeleteGlossary(projectId: number, glossaryId: number): Observable<OperationStatus> {
+		DeleteGlossary(projectId: string, glossaryId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'projects/' + projectId + '/glossaries/' + glossaryId, {});
 		}
 
@@ -6891,11 +7850,13 @@ export namespace MyNS {
 		 * View a glossary
 		 * View the details of a glossary file uploaded to a project.
 		 * Get projects/{projectId}/glossaries/{glossaryId}
-		 * @param {number} projectId Project ID
-		 * @param {number} glossaryId Glossary ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} glossaryId Glossary ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Glossary} Glossary model
 		 */
-		GetGlossary(projectId: number, glossaryId: number): Observable<Glossary> {
+		GetGlossary(projectId: string, glossaryId: string): Observable<Glossary> {
 			return this.http.get<Glossary>(this.baseUri + 'projects/' + projectId + '/glossaries/' + glossaryId, {});
 		}
 
@@ -6903,11 +7864,13 @@ export namespace MyNS {
 		 * Update a glossary
 		 * Update the existing glossary file in the project. Public users are allowed to have only 1 glossary per project and file name and contents will replaced with the new glossary file that you are uploading via this endpoint.
 		 * Put projects/{projectId}/glossaries/{glossaryId}
-		 * @param {number} projectId Project ID
-		 * @param {number} glossaryId Glossary ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} glossaryId Glossary ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Glossary} Updated glossary model
 		 */
-		UpdateGlossary(projectId: number, glossaryId: number, requestBody: GlossaryUploadRequest): Observable<Glossary> {
+		UpdateGlossary(projectId: string, glossaryId: string, requestBody: GlossaryUploadRequest): Observable<Glossary> {
 			return this.http.put<Glossary>(this.baseUri + 'projects/' + projectId + '/glossaries/' + glossaryId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6915,11 +7878,13 @@ export namespace MyNS {
 		 * Download a glossary
 		 * Download a previously uploaded glossary file.
 		 * Get projects/{projectId}/glossaries/{glossaryId}/download
-		 * @param {number} projectId Project ID
-		 * @param {number} glossaryId Glossary ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} glossaryId Glossary ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Glossary streamed
 		 */
-		DownloadGlossary(projectId: number, glossaryId: number): Observable<string> {
+		DownloadGlossary(projectId: string, glossaryId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'projects/' + projectId + '/glossaries/' + glossaryId + '/download', { responseType: 'text' });
 		}
 
@@ -6927,10 +7892,11 @@ export namespace MyNS {
 		 * View project strings and translations
 		 * View the strings and their translations in your translation project, for all target languages. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get projects/{projectId}/strings
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetProjectStrings(projectId: number): Observable<StringList> {
+		GetProjectStrings(projectId: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/strings', {});
 		}
 
@@ -6938,12 +7904,14 @@ export namespace MyNS {
 		 * Download project translation memory
 		 * Package and download project translation memory in TMX format
 		 * Post projects/{projectId}/strings/package
-		 * @param {number} projectId Project ID
-		 * @param {number} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} format Translation Memory file format
 		 * @return {AsyncOperationStatus} Response in TMX or async request
 		 */
-		PackageProjectTranslationMemory(projectId: number, async: number | null | undefined, format: string | null | undefined): Observable<AsyncOperationStatus> {
+		PackageProjectTranslationMemory(projectId: string, async: string | null | undefined, format: string | null | undefined): Observable<AsyncOperationStatus> {
 			return this.http.post<AsyncOperationStatus>(this.baseUri + 'projects/' + projectId + '/strings/package?async=' + async + '&format=' + (format == null ? '' : encodeURIComponent(format)), null, {});
 		}
 
@@ -6951,11 +7919,12 @@ export namespace MyNS {
 		 * Check translation memory packaging status
 		 * Check translation memory packaging status for async packaging requests, using the key returned from strings/package call.
 		 * Get projects/{projectId}/strings/package/status
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} async_request_key Async operation key
 		 * @return {AsyncOperationStatus} Async operation status. Use the key to query status of this operation.
 		 */
-		PackageProjectTranslationMemoryStatus(projectId: number, async_request_key: string): Observable<AsyncOperationStatus> {
+		PackageProjectTranslationMemoryStatus(projectId: string, async_request_key: string): Observable<AsyncOperationStatus> {
 			return this.http.get<AsyncOperationStatus>(this.baseUri + 'projects/' + projectId + '/strings/package/status?async_request_key=' + (async_request_key == null ? '' : encodeURIComponent(async_request_key)), {});
 		}
 
@@ -6963,13 +7932,15 @@ export namespace MyNS {
 		 * Download language-specific project translation memory
 		 * Package and download project translation memory in TMX format for a specific target language.
 		 * Post projects/{projectId}/strings/{languageCode}/package
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} languageCode Language Code
-		 * @param {number} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
+		 * @param {string} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} format Translation Memory file format
 		 * @return {AsyncOperationStatus} Response in TMX or async request
 		 */
-		PackageProjectTranslationMemoryForLanguage(projectId: number, languageCode: string, async: number | null | undefined, format: string | null | undefined): Observable<AsyncOperationStatus> {
+		PackageProjectTranslationMemoryForLanguage(projectId: string, languageCode: string, async: string | null | undefined, format: string | null | undefined): Observable<AsyncOperationStatus> {
 			return this.http.post<AsyncOperationStatus>(this.baseUri + 'projects/' + projectId + '/strings/' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '/package&async=' + async + '&format=' + (format == null ? '' : encodeURIComponent(format)), null, {});
 		}
 
@@ -6977,12 +7948,13 @@ export namespace MyNS {
 		 * Check language-specific translation memory packaging status
 		 * Check translation memory packaging status for async packaging requests, using the key returned from strings/package call.
 		 * Get projects/{projectId}/strings/{languageCode}/package/status
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} languageCode Language Code
 		 * @param {string} async_request_key Async operation key
 		 * @return {AsyncOperationStatus} Async operation status. Use the key to query status of this operation.
 		 */
-		PackageProjectTranslationMemoryForLanguageStatus(projectId: number, languageCode: string, async_request_key: string): Observable<AsyncOperationStatus> {
+		PackageProjectTranslationMemoryForLanguageStatus(projectId: string, languageCode: string, async_request_key: string): Observable<AsyncOperationStatus> {
 			return this.http.get<AsyncOperationStatus>(this.baseUri + 'projects/' + projectId + '/strings/' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '/package/status&async_request_key=' + (async_request_key == null ? '' : encodeURIComponent(async_request_key)), {});
 		}
 
@@ -6990,11 +7962,12 @@ export namespace MyNS {
 		 * View strings and translations for target language
 		 * View the strings and their translations in your translation project for the specified target language. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints.
 		 * Get projects/{projectId}/strings/{language}
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Target language code
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetProjectStringsForLanguage(projectId: number, language: string): Observable<StringList> {
+		GetProjectStringsForLanguage(projectId: string, language: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/strings/' + (language == null ? '' : encodeURIComponent(language)), {});
 		}
 
@@ -7002,11 +7975,12 @@ export namespace MyNS {
 		 * View style guides
 		 * View a list of style guides in your project.
 		 * Get projects/{projectId}/styleguides
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {StyleGuideList} A list of style guide models
 		 */
-		GetStyleGuides(projectId: number, with_: Array<string> | null | undefined): Observable<StyleGuideList> {
+		GetStyleGuides(projectId: string, with_: Array<string> | null | undefined): Observable<StyleGuideList> {
 			return this.http.get<StyleGuideList>(this.baseUri + 'projects/' + projectId + '/styleguides?' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -7014,10 +7988,11 @@ export namespace MyNS {
 		 * Upload a new style guide
 		 * Upload a new style guide
 		 * Post projects/{projectId}/styleguides
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StyleGuideList} Newly created style guide model or a list of new style guide models
 		 */
-		CreateStyleGuide(projectId: number, requestBody: StyleGuideUploadRequest): Observable<StyleGuideList> {
+		CreateStyleGuide(projectId: string, requestBody: StyleGuideUploadRequest): Observable<StyleGuideList> {
 			return this.http.post<StyleGuideList>(this.baseUri + 'projects/' + projectId + '/styleguides', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -7025,11 +8000,13 @@ export namespace MyNS {
 		 * Delete a style guide
 		 * Delete the existing style guide from the project.
 		 * Delete projects/{projectId}/styleguides/{styleGuideId}
-		 * @param {number} projectId Project ID
-		 * @param {number} styleGuideId Style Guide ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} styleGuideId Style Guide ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Style guide deleted successfully
 		 */
-		DeleteStyleGuide(projectId: number, styleGuideId: number): Observable<OperationStatus> {
+		DeleteStyleGuide(projectId: string, styleGuideId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + 'projects/' + projectId + '/styleguides/' + styleGuideId, {});
 		}
 
@@ -7037,12 +8014,14 @@ export namespace MyNS {
 		 * View a style guide
 		 * View the details of a style guide uploaded to a project
 		 * Get projects/{projectId}/styleguides/{styleGuideId}
-		 * @param {number} projectId Project ID
-		 * @param {number} styleGuideId Style Guide ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} styleGuideId Style Guide ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} with_ Attach further information. Possible values 'preview' to fetch temporary preview URLs. This is NOT recommended to be used with list calls. Only use with[]=preview for single document/style guide calls.
 		 * @return {StyleGuide} Style guide model
 		 */
-		GetStyleGuide(projectId: number, styleGuideId: number, with_: Array<string> | null | undefined): Observable<StyleGuide> {
+		GetStyleGuide(projectId: string, styleGuideId: string, with_: Array<string> | null | undefined): Observable<StyleGuide> {
 			return this.http.get<StyleGuide>(this.baseUri + 'projects/' + projectId + '/styleguides/' + styleGuideId + '?' + with_?.map(z => `with[]=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -7050,11 +8029,13 @@ export namespace MyNS {
 		 * Update a style guide
 		 * Update the existing style guide in the project. Public users are allowed to have only 1 style guide per project and file name and contents will replaced with the new style guide that you are uploading via this endpoint.
 		 * Put projects/{projectId}/styleguides/{styleGuideId}
-		 * @param {number} projectId Project ID
-		 * @param {number} styleGuideId Style guide ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} styleGuideId Style guide ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StyleGuide} Updated style guide model
 		 */
-		UpdateStyleGuide(projectId: number, styleGuideId: number, requestBody: StyleGuideUploadRequest): Observable<StyleGuide> {
+		UpdateStyleGuide(projectId: string, styleGuideId: string, requestBody: StyleGuideUploadRequest): Observable<StyleGuide> {
 			return this.http.put<StyleGuide>(this.baseUri + 'projects/' + projectId + '/styleguides/' + styleGuideId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -7062,32 +8043,36 @@ export namespace MyNS {
 		 * Download a style guide
 		 * Download a previously uploaded style guide file.
 		 * Get projects/{projectId}/styleguides/{styleGuideId}/download
-		 * @param {number} projectId Project ID
-		 * @param {number} styleGuideId Style Guide ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} styleGuideId Style Guide ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Style guide streamed
 		 */
-		DownloadStyleGuide(projectId: number, styleGuideId: number): Observable<string> {
+		DownloadStyleGuide(projectId: string, styleGuideId: string): Observable<string> {
 			return this.http.get(this.baseUri + 'projects/' + projectId + '/styleguides/' + styleGuideId + '/download', { responseType: 'text' });
 		}
 
 		/**
 		 * Deprecated. Use /projects/{projectId}/strings instead.
 		 * Get projects/{projectId}/translations
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetProjectTranslations(projectId: number): Observable<StringList> {
+		GetProjectTranslations(projectId: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/translations', {});
 		}
 
 		/**
 		 * Deprecated. use /projects/{projectId}/strings/{language} instead.
 		 * Get projects/{projectId}/translations/{language}
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} language Target language code
 		 * @return {StringList} Response for strings and their translations
 		 */
-		GetProjectTranslationsForLanguage(projectId: number, language: string): Observable<StringList> {
+		GetProjectTranslationsForLanguage(projectId: string, language: string): Observable<StringList> {
 			return this.http.get<StringList>(this.baseUri + 'projects/' + projectId + '/translations/' + (language == null ? '' : encodeURIComponent(language)), {});
 		}
 
@@ -7095,10 +8080,11 @@ export namespace MyNS {
 		 * Get a list of vendors.
 		 * Get a list of vendors.
 		 * Get projects/{projectId}/vendors
-		 * @param {number} projectId Project ID
+		 * @param {string} projectId Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserList} User list
 		 */
-		GetProjectVendors(projectId: number): Observable<UserList> {
+		GetProjectVendors(projectId: string): Observable<UserList> {
 			return this.http.get<UserList>(this.baseUri + 'projects/' + projectId + '/vendors', {});
 		}
 
@@ -7177,9 +8163,11 @@ export namespace MyNS {
 		 * Get search
 		 * @param {string} query Search query term
 		 * @param {Array<string>} include_ Search in these entities. Current oprions are projects, documents, strings. Can be multiple. When not provided, we'll search through all entities.
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SearchEverywhereResult} Search result for multiple entities and paging
 		 */
-		SearchEverywhere(query: string, include_: Array<string> | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<SearchEverywhereResult> {
+		SearchEverywhere(query: string, include_: Array<string> | null | undefined, page: string | null | undefined, per_page: string | null | undefined): Observable<SearchEverywhereResult> {
 			return this.http.get<SearchEverywhereResult>(this.baseUri + 'search?query=' + (query == null ? '' : encodeURIComponent(query)) + '&' + include_?.map(z => `include[]=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
@@ -7262,10 +8250,11 @@ export namespace MyNS {
 		 * Get a list of all strings and their translations under your account, from all projects. This is your MotaWord translation memory. If you have the related permission, this endpoint will also return strings from your company account.
 		 * Get strings
 		 * @param {string} source_language Source Language Code
-		 * @param {number} page Requested page
+		 * @param {string} page Requested page
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ClientStrings} List of strings in JSON
 		 */
-		GetStrings(source_language: string | null | undefined, page: number | null | undefined): Observable<ClientStrings> {
+		GetStrings(source_language: string | null | undefined, page: string | null | undefined): Observable<ClientStrings> {
 			return this.http.get<ClientStrings>(this.baseUri + 'strings?source_language=' + (source_language == null ? '' : encodeURIComponent(source_language)) + '&page=' + page, {});
 		}
 
@@ -7294,11 +8283,13 @@ export namespace MyNS {
 		 * Package and download account translation memory in TMX format. If you have the related permission, this will also download your company translation memory.
 		 * Post strings/{languageCode}/package
 		 * @param {string} languageCode Source Language Code
-		 * @param {number} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
-		 * @param {number} email If you don't need us to email the TMX, set this to '0'. Default is 1.
+		 * @param {string} async If you want to package and download the translation memory synchronously, mark this parameter as '0'. It will package the translation memory and then return the packaged file in the response, identical to async/download call after an asynchronous /package call.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} email If you don't need us to email the TMX, set this to '0'. Default is 1.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AsyncOperationStatus} Response in TMX or async request
 		 */
-		PackageUserTranslationMemory(languageCode: string, async: number | null | undefined, email: number | null | undefined): Observable<AsyncOperationStatus> {
+		PackageUserTranslationMemory(languageCode: string, async: string | null | undefined, email: string | null | undefined): Observable<AsyncOperationStatus> {
 			return this.http.post<AsyncOperationStatus>(this.baseUri + 'strings/' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '/package&async=' + async + '&email=' + email, null, {});
 		}
 
@@ -7340,10 +8331,11 @@ export namespace MyNS {
 		 * Get surveys/{scope}/{type}
 		 * @param {string} scope Scope
 		 * @param {string} type Type
-		 * @param {number} attach_answers_for_project Project ID
+		 * @param {string} attach_answers_for_project Project ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<SurveyQuestion>} Survey Questions
 		 */
-		GetQuestions(scope: string, type: string, attach_answers_for_project: number | null | undefined): Observable<Array<SurveyQuestion>> {
+		GetQuestions(scope: string, type: string, attach_answers_for_project: string | null | undefined): Observable<Array<SurveyQuestion>> {
 			return this.http.get<Array<SurveyQuestion>>(this.baseUri + 'surveys/' + (scope == null ? '' : encodeURIComponent(scope)) + '/' + (type == null ? '' : encodeURIComponent(type)) + '&attach_answers_for_project=' + attach_answers_for_project, {});
 		}
 
@@ -7403,9 +8395,11 @@ export namespace MyNS {
 		 * Get a list of platform users
 		 * Get a list of platform users
 		 * Get users
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserList} User list
 		 */
-		GetUsers(page: number | null | undefined, per_page: number | null | undefined, user_type: GetUsersUser_type | null | undefined, search: string | null | undefined, email: string | null | undefined): Observable<UserList> {
+		GetUsers(page: string | null | undefined, per_page: string | null | undefined, user_type: GetUsersUser_type | null | undefined, search: string | null | undefined, email: string | null | undefined): Observable<UserList> {
 			return this.http.get<UserList>(this.baseUri + 'users?page=' + page + '&per_page=' + per_page + '&user_type=' + user_type + '&search=' + (search == null ? '' : encodeURIComponent(search)) + '&email=' + (email == null ? '' : encodeURIComponent(email)), {});
 		}
 
@@ -7436,7 +8430,9 @@ export namespace MyNS {
 		 * Get a list of vendors available for the criteria given
 		 * Post users/filter
 		 * @param {number} page The page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page The number of items per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order_by The field to order the results by
 		 * @param {string} order The order to sort the results by (ascending or descending)
 		 * @return {UserList} Successful response User List
@@ -7467,38 +8463,42 @@ export namespace MyNS {
 		/**
 		 * Get user information, including client or vendor specific info.
 		 * Get {userId}
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {User} User summary
 		 */
-		GetUser(userId: number): Observable<User> {
+		GetUser(userId: string): Observable<User> {
 			return this.http.get<User>(this.baseUri + userId + '', {});
 		}
 
 		/**
 		 * Post {userId}
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {User} User info
 		 */
-		UpdateUser(userId: number, requestBody: UserUpdateContent): Observable<User> {
+		UpdateUser(userId: string, requestBody: UserUpdateContent): Observable<User> {
 			return this.http.post<User>(this.baseUri + userId + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Post {userId}/approve
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Vendor application of this user is approved. User is ready to work with us.
 		 */
-		ApproveVendorApplication(userId: number): Observable<OperationStatus> {
+		ApproveVendorApplication(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/approve', null, {});
 		}
 
 		/**
 		 * Delete requester account
 		 * Delete {userId}/delete-account
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		DeleteUserAccount(userId: number): Observable<OperationStatus> {
+		DeleteUserAccount(userId: string): Observable<OperationStatus> {
 			return this.http.delete<OperationStatus>(this.baseUri + userId + '/delete-account', {});
 		}
 
@@ -7506,68 +8506,77 @@ export namespace MyNS {
 		 * Get a list of your documents
 		 * Get a list of your documents
 		 * Get {userId}/documents
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} recent When true, this will return the most 4 recent active documents.
 		 * @param {string} language_code searches in source language of documents, in source and target languages of document's quote
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DocumentList} Document list
 		 */
-		GetUserDocuments(userId: number, recent: boolean | null | undefined, search: string | null | undefined, type_filter: GetDocumentsType_filter | null | undefined, language_code: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, order_by: GetDocumentsOrder_by | null | undefined, order_type: ListOrderType | null | undefined): Observable<DocumentList> {
+		GetUserDocuments(userId: string, recent: boolean | null | undefined, search: string | null | undefined, type_filter: GetDocumentsType_filter | null | undefined, language_code: string | null | undefined, page: string | null | undefined, per_page: string | null | undefined, order_by: GetDocumentsOrder_by | null | undefined, order_type: ListOrderType | null | undefined): Observable<DocumentList> {
 			return this.http.get<DocumentList>(this.baseUri + userId + '/documents?recent=' + recent + '&search=' + (search == null ? '' : encodeURIComponent(search)) + '&type_filter=' + type_filter + '&language_code=' + (language_code == null ? '' : encodeURIComponent(language_code)) + '&page=' + page + '&per_page=' + per_page + '&order_by=' + order_by + '&order_type=' + order_type + '', {});
 		}
 
 		/**
 		 * Post {userId}/downgrade-proofreader
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		DowngradeUserProofreader(userId: number): Observable<OperationStatus> {
+		DowngradeUserProofreader(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/downgrade-proofreader', null, {});
 		}
 
 		/**
 		 * Returns your vendor earnings. Includes real-time earnings from ongoing projects, and fixed earnings from completed projects. Also includes total earnings and string edits.
 		 * Get {userId}/earnings
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Earnings} Earnings for vendors
 		 */
-		GetUserEarnings(userId: number): Observable<Earnings> {
+		GetUserEarnings(userId: string): Observable<Earnings> {
 			return this.http.get<Earnings>(this.baseUri + userId + '/earnings', {});
 		}
 
 		/**
 		 * Freeze requester account for project notifications
 		 * Post {userId}/freeze-account
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		FreezeUserAccount(userId: number): Observable<OperationStatus> {
+		FreezeUserAccount(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/freeze-account', null, {});
 		}
 
 		/**
 		 * Post {userId}/make-proofreader
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		MakeUserProofreader(userId: number): Observable<OperationStatus> {
+		MakeUserProofreader(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/make-proofreader', null, {});
 		}
 
 		/**
 		 * Post {userId}/notifications/subscribe
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Saved notification subscription information
 		 */
-		SubscribeUserNotification(userId: number, requestBody: NotificationSubscription): Observable<OperationStatus> {
+		SubscribeUserNotification(userId: string, requestBody: NotificationSubscription): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/notifications/subscribe', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Post {userId}/notifications/unsubscribe
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Deleted notification subscription information
 		 */
-		UnsubscribeUserNotification(userId: number, requestBody: NotificationSubscription): Observable<OperationStatus> {
+		UnsubscribeUserNotification(userId: string, requestBody: NotificationSubscription): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/notifications/unsubscribe', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -7575,10 +8584,11 @@ export namespace MyNS {
 		 * View user's payment and billing info
 		 * Returns billing and saved credit card information for user, and their corporate account if present & allowed.
 		 * Get {userId}/payment
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PaymentInfo} Returns billing and saved card information for user, and their corporate if present.
 		 */
-		GetUserPaymentInfo(userId: number): Observable<PaymentInfo> {
+		GetUserPaymentInfo(userId: string): Observable<PaymentInfo> {
 			return this.http.get<PaymentInfo>(this.baseUri + userId + '/payment', {});
 		}
 
@@ -7586,29 +8596,32 @@ export namespace MyNS {
 		 * Update user payment info
 		 * Update user's billing and saved credit card information
 		 * Post {userId}/payment
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		UpdateUserPaymentInfo(userId: number, requestBody: PaymentInfo): Observable<OperationStatus> {
+		UpdateUserPaymentInfo(userId: string, requestBody: PaymentInfo): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/payment', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Returns a list of permissions that this user is authorized for.
 		 * Get {userId}/permissions
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PermissionList} List of permission strings
 		 */
-		GetUserPermissions(userId: number): Observable<PermissionList> {
+		GetUserPermissions(userId: string): Observable<PermissionList> {
 			return this.http.get<PermissionList>(this.baseUri + userId + '/permissions', {});
 		}
 
 		/**
 		 * Post {userId}/profile-picture
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		UploadUserProfilePicture(userId: number, requestBody: ProfilePictureUpload): Observable<OperationStatus> {
+		UploadUserProfilePicture(userId: string, requestBody: ProfilePictureUpload): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/profile-picture', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -7616,110 +8629,123 @@ export namespace MyNS {
 		 * Get a list of user/vendor projects
 		 * Get a list of user/vendor projects
 		 * Get {userId}/projects/vendor
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} joined Return only projects that this user has already joined
 		 * @param {boolean} completed Return only projects that have been completed. When `true`, this makes `joined` true as well.
+		 * @param {string} page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} per_page Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ProjectList} Vendor project list
 		 */
-		GetVendorProjectsByUserId(userId: number, joined: boolean | null | undefined, completed: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<ProjectList> {
+		GetVendorProjectsByUserId(userId: string, joined: boolean | null | undefined, completed: boolean | null | undefined, page: string | null | undefined, per_page: string | null | undefined): Observable<ProjectList> {
 			return this.http.get<ProjectList>(this.baseUri + userId + '/projects/vendor?joined=' + joined + '&completed=' + completed + '&page=' + page + '&per_page=' + per_page + '', {});
 		}
 
 		/**
 		 * Post {userId}/reject
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Vendor application of this user is rejected.
 		 */
-		RejectVendorApplication(userId: number): Observable<OperationStatus> {
+		RejectVendorApplication(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/reject', null, {});
 		}
 
 		/**
 		 * Sends email confirmation email for a user
 		 * Post {userId}/resend-email-confirmation
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} confirmation email has been sent
 		 */
-		SendUserEmailConfirmation(userId: number): Observable<OperationStatus> {
+		SendUserEmailConfirmation(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/resend-email-confirmation', null, {});
 		}
 
 		/**
 		 * Returns a user's vendor responsivity stats
 		 * Get {userId}/responsivity
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {GetResponsivityPeriod} period Period for calcualtion.
 		 * @return {ResponsivityList} Vendor responsivity stats
 		 */
-		GetUserResponsivity(userId: number, period: GetResponsivityPeriod | null | undefined): Observable<ResponsivityList> {
+		GetUserResponsivity(userId: string, period: GetResponsivityPeriod | null | undefined): Observable<ResponsivityList> {
 			return this.http.get<ResponsivityList>(this.baseUri + userId + '/responsivity?period=' + period + '', {});
 		}
 
 		/**
 		 * Returns a user's client and vendor statistics. This used to be called "summary" (\@deprecated).
 		 * Get {userId}/stats
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Stats} User stats for client and vendors
 		 */
-		GetUserStats(userId: number): Observable<Stats> {
+		GetUserStats(userId: string): Observable<Stats> {
 			return this.http.get<Stats>(this.baseUri + userId + '/stats', {});
 		}
 
 		/**
 		 * Returns the language pairs that the user has ordered most.
 		 * Get {userId}/stats/popular-pairs
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PopularLanguagePairs} User's most ordered language pairs
 		 */
-		GetUserPopularPairs(userId: number): Observable<PopularLanguagePairs> {
+		GetUserPopularPairs(userId: string): Observable<PopularLanguagePairs> {
 			return this.http.get<PopularLanguagePairs>(this.baseUri + userId + '/stats/popular-pairs', {});
 		}
 
 		/**
 		 * Returns a user's project statistics.
 		 * Get {userId}/stats/projects
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ClientProjectStats} User stats for client and vendors
 		 */
-		GetUserProjectStats(userId: number): Observable<ClientProjectStats> {
+		GetUserProjectStats(userId: string): Observable<ClientProjectStats> {
 			return this.http.get<ClientProjectStats>(this.baseUri + userId + '/stats/projects', {});
 		}
 
 		/**
 		 * Post {userId}/suspend
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Suspended user account.
 		 */
-		SuspendUser(userId: number, requestBody: SuspendUserRequest): Observable<OperationStatus> {
+		SuspendUser(userId: string, requestBody: SuspendUserRequest): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/suspend', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Unfreeze requester account for project notifications
 		 * Post {userId}/unfreeze-account
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {OperationStatus} Successful operation
 		 */
-		UnfreezeUserAccount(userId: number): Observable<OperationStatus> {
+		UnfreezeUserAccount(userId: string): Observable<OperationStatus> {
 			return this.http.post<OperationStatus>(this.baseUri + userId + '/unfreeze-account', null, {});
 		}
 
 		/**
 		 * Returns a list of user groups that this user belongs to.
 		 * Get {userId}/user-groups
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserGroupList} List of user groups
 		 */
-		GetThisUserGroups(userId: number): Observable<UserGroupList> {
+		GetThisUserGroups(userId: string): Observable<UserGroupList> {
 			return this.http.get<UserGroupList>(this.baseUri + userId + '/user-groups', {});
 		}
 
 		/**
 		 * Post {userId}/user-groups
-		 * @param {number} userId User ID
+		 * @param {string} userId User ID
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserGroupList} List of user groups
 		 */
-		UpdateUserGroup(userId: number, requestBody: ActiveWidget): Observable<UserGroupList> {
+		UpdateUserGroup(userId: string, requestBody: ActiveWidget): Observable<UserGroupList> {
 			return this.http.post<UserGroupList>(this.baseUri + userId + '/user-groups', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}

@@ -7,8 +7,12 @@ export namespace MyNS {
 		city?: string | null;
 		critic_name?: string | null;
 		event_detail_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_id?: number | null;
 		event_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_schedule_id?: number | null;
 		festival?: boolean | null;
 		film_rating?: boolean | null;
@@ -28,8 +32,12 @@ export namespace MyNS {
 		city: FormControl<string | null | undefined>,
 		critic_name: FormControl<string | null | undefined>,
 		event_detail_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_id: FormControl<number | null | undefined>,
 		event_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_schedule_id: FormControl<number | null | undefined>,
 		festival: FormControl<boolean | null | undefined>,
 		film_rating: FormControl<boolean | null | undefined>,
@@ -81,14 +89,18 @@ export namespace MyNS {
 		 * @param {string} latitude The latitude of the specified place.
 		 * @param {string} longitude The longitude of the specified place.
 		 * @param {number} elevation The elevation of the specified place, in meters.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sw Along with ne, forms a bounded box using the longitude and latitude coordinates specified as the southwest corner. The search results are limited to the resulting box. Two float values, separated by a comma `latitude,longitude` <br/> The ne parameter is required to use this parameter.
 		 * @param {string} query Search keywords to perform a text search on the fields: web_description, event_name and venue_name. 'AND' searches can be performed by wrapping query terms in quotes. If you do not specify a query, all results will be returned.
 		 * @param {string} filter Filters search results based on the facets provided.  For more information on the values you can filter on, see Facets.
 		 * @param {string} date_range Start date to end date in the following format- YYYY-MM-DD:YYYY-MM-DD
 		 * @param {EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetFacets} facets When facets is set to 1, a count of all facets will be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Sorts your results on the fields specified. <br/> `sort_value1+[asc | desc],sort_value2+[asc|desc],[...]`<br/> Appending +asc to a facet or response will sort results on that value in ascending order. Appending +desc to a facet or response  will sort results in descending order. You can sort on multiple fields. You can sort on any facet. For the list of responses you can sort on, see the Sortable Field column in the Response table. <br/><br/>If you are doing a spatial search with the ll parameter, you can also sort by the distance from the center of the search: dist+[asc | desc] <br/> **Note:** either +asc or +desc is required when using the sort parameter.
 		 * @param {number} limit Limits the number of results returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Sets the starting point of the result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetReturn} An array of events
 		 */
 		EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffset(name: string | null | undefined, latitude: string | null | undefined, longitude: string | null | undefined, elevation: number | null | undefined, sw: string | null | undefined, query: string | null | undefined, filter: string | null | undefined, date_range: string | null | undefined, facets: EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetFacets | null | undefined, sort: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetReturn> {

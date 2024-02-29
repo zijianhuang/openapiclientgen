@@ -923,9 +923,18 @@ namespace MyNS
 		/// </summary>
 		/// <param name="policyIds">The identifiers of the data lifecycle policies.</param>
 		/// <param name="state">The activation state.</param>
-		/// <param name="resourceTypes">The resource type.</param>
-		/// <param name="targetTags"><p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p></param>
-		/// <param name="tagsToAdd"><p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p></param>
+		/// <param name="resourceTypes">The resource type.
+		/// Minimum items: 1
+		/// Maximum items: 1
+		// </param>
+		/// <param name="targetTags"><p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
+		/// <param name="tagsToAdd"><p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLifecyclePoliciesResponse> GetLifecyclePoliciesAsync(string[] policyIds, GettablePolicyStateValues state, ResourceTypeValues[] resourceTypes, string[] targetTags, string[] tagsToAdd, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -959,7 +968,10 @@ namespace MyNS
 		/// <p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p> <p>For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle policies</a>.</p>
 		/// DeleteLifecyclePolicy policies/{policyId}/
 		/// </summary>
-		/// <param name="policyId">The identifier of the lifecycle policy.</param>
+		/// <param name="policyId">The identifier of the lifecycle policy.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(string policyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -993,7 +1005,10 @@ namespace MyNS
 		/// Gets detailed information about the specified lifecycle policy.
 		/// GetLifecyclePolicy policies/{policyId}/
 		/// </summary>
-		/// <param name="policyId">The identifier of the lifecycle policy.</param>
+		/// <param name="policyId">The identifier of the lifecycle policy.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(string policyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1027,7 +1042,10 @@ namespace MyNS
 		/// Lists the tags for the specified resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1061,7 +1079,10 @@ namespace MyNS
 		/// Adds the specified tags to the specified resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1102,8 +1123,14 @@ namespace MyNS
 		/// Removes the specified tags from the specified resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
-		/// <param name="tagKeys">The tag keys.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">The tag keys.
+		/// Minimum items: 1
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1137,7 +1164,10 @@ namespace MyNS
 		/// <p>Updates the specified lifecycle policy.</p> <p>For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle policies</a>.</p>
 		/// UpdateLifecyclePolicy policies/{policyId}
 		/// </summary>
-		/// <param name="policyId">The identifier of the lifecycle policy.</param>
+		/// <param name="policyId">The identifier of the lifecycle policy.
+		/// Max length: 64
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(string policyId, UpdateLifecyclePolicyPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

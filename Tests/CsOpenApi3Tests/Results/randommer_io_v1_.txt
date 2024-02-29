@@ -245,6 +245,7 @@ namespace MyNS
 		/// Get crypto address
 		/// ApiFinanceCryptoAddressGetByCryptoType api/Finance/CryptoAddress
 		/// </summary>
+		/// <param name="cryptoType">Max length: 100</param>
 		/// <returns>Success</returns>
 		public async Task ApiFinanceCryptoAddressGetByCryptoTypeAsync(string cryptoType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -299,6 +300,7 @@ namespace MyNS
 		/// Get IBAN by countryCode
 		/// ApiFinanceIban_countryCodeGet api/Finance/Iban/{countryCode}
 		/// </summary>
+		/// <param name="countryCode">Max length: 2</param>
 		/// <returns>Success</returns>
 		public async Task ApiFinanceIban_countryCodeGetAsync(string countryCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -372,6 +374,10 @@ namespace MyNS
 		/// <summary>
 		/// ApiMiscRandom_AddressGetByNumberAndCulture api/Misc/Random-Address
 		/// </summary>
+		/// <param name="number">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="culture">Max length: 100</param>
 		/// <returns>Success</returns>
 		public async Task ApiMiscRandom_AddressGetByNumberAndCultureAsync(int number, string culture, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -399,6 +405,9 @@ namespace MyNS
 		/// Get name
 		/// ApiNameGetByNameTypeAndQuantity api/Name
 		/// </summary>
+		/// <param name="quantity">Minimum: 1
+		/// Maximum: 5000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiNameGetByNameTypeAndQuantityAsync(NameType nameType, int quantity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -426,6 +435,7 @@ namespace MyNS
 		/// Generate brand name suggestions
 		/// ApiNameBrandNamePostByStartingWords api/Name/BrandName
 		/// </summary>
+		/// <param name="startingWords">Max length: 100</param>
 		/// <returns>Success</returns>
 		public async Task ApiNameBrandNamePostByStartingWordsAsync(string startingWords, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -448,6 +458,9 @@ namespace MyNS
 		/// Get business names for a specific culture
 		/// ApiNameBusinessNamePostByNumberAndCultureCode api/Name/BusinessName
 		/// </summary>
+		/// <param name="number">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiNameBusinessNamePostByNumberAndCultureCodeAsync(int number, string cultureCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -497,6 +510,7 @@ namespace MyNS
 		/// Get business name suggestions
 		/// ApiNameSuggestionsGetByStartingWords api/Name/Suggestions
 		/// </summary>
+		/// <param name="startingWords">Max length: 100</param>
 		/// <returns>Success</returns>
 		public async Task ApiNameSuggestionsGetByStartingWordsAsync(string startingWords, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -551,6 +565,10 @@ namespace MyNS
 		/// Get bulk telephone numbers for a country
 		/// ApiPhoneGenerateGetByCountryCodeAndQuantity api/Phone/Generate
 		/// </summary>
+		/// <param name="CountryCode">Max length: 2</param>
+		/// <param name="Quantity">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiPhoneGenerateGetByCountryCodeAndQuantityAsync(string CountryCode, int Quantity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -578,6 +596,9 @@ namespace MyNS
 		/// Get bulk imeis
 		/// ApiPhoneIMEIGetByQuantity api/Phone/IMEI
 		/// </summary>
+		/// <param name="Quantity">Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiPhoneIMEIGetByQuantityAsync(int Quantity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -605,6 +626,8 @@ namespace MyNS
 		/// Validate a phone number
 		/// ApiPhoneValidateGetByTelephoneAndCountryCode api/Phone/Validate
 		/// </summary>
+		/// <param name="telephone">Max length: 25</param>
+		/// <param name="CountryCode">Max length: 2</param>
 		/// <returns>Success</returns>
 		public async Task ApiPhoneValidateGetByTelephoneAndCountryCodeAsync(string telephone, string CountryCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -727,6 +750,9 @@ namespace MyNS
 		/// Generate lorem ipsum
 		/// ApiTextLoremIpsumGetByLoremTypeAndTypeAndNumber api/Text/LoremIpsum
 		/// </summary>
+		/// <param name="number">Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiTextLoremIpsumGetByLoremTypeAndTypeAndNumberAsync(LoremType loremType, TextType type, int number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -754,6 +780,9 @@ namespace MyNS
 		/// Generate password
 		/// ApiTextPasswordGetByLengthAndHasDigitsAndHasUppercaseAndHasSpecial api/Text/Password
 		/// </summary>
+		/// <param name="length">Minimum: 3
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiTextPasswordGetByLengthAndHasDigitsAndHasUppercaseAndHasSpecialAsync(int length, bool hasDigits, bool hasUppercase, bool hasSpecial, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -781,6 +810,10 @@ namespace MyNS
 		/// Get reviews (max quantity=500)
 		/// ApiTextReviewPostByProductAndQuantity api/Text/Review
 		/// </summary>
+		/// <param name="product">Max length: 50</param>
+		/// <param name="quantity">Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <returns>Success</returns>
 		public async Task ApiTextReviewPostByProductAndQuantityAsync(string product, int quantity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

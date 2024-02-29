@@ -1021,6 +1021,7 @@ export namespace MyNS {
 		 * <p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetTags</code> </p> </li> </ul>
 		 * Get resources/{Arn}/tags
 		 * @param {string} Arn The ARN of the resource group whose tags you want to retrieve.
+		 *     Min length: 12    Max length: 1600
 		 * @return {GetTagsOutput} Success
 		 */
 		GetTags(Arn: string): Observable<GetTagsOutput> {
@@ -1031,6 +1032,7 @@ export namespace MyNS {
 		 * <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important> <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> </important> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Tag</code> </p> </li> </ul>
 		 * Put resources/{Arn}/tags
 		 * @param {string} Arn The ARN of the resource group to which to add tags.
+		 *     Min length: 12    Max length: 1600
 		 * @return {TagOutput} Success
 		 */
 		Tag(Arn: string, requestBody: TagPutBody): Observable<TagOutput> {
@@ -1041,6 +1043,7 @@ export namespace MyNS {
 		 * <p>Deletes tags from a specified resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Untag</code> </p> </li> </ul>
 		 * Patch resources/{Arn}/tags
 		 * @param {string} Arn The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.
+		 *     Min length: 12    Max length: 1600
 		 * @return {UntagOutput} Success
 		 */
 		Untag(Arn: string, requestBody: UntagPatchBody): Observable<UntagOutput> {
@@ -1071,7 +1074,9 @@ export namespace MyNS {
 		 * <p>Returns a list of existing Resource Groups in your account.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:ListGroups</code> </p> </li> </ul>
 		 * Post groups-list
 		 * @param {number} maxResults The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
+		 *     Min length: 0    Max length: 8192
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsOutput} Success
@@ -1142,8 +1147,8 @@ export namespace MyNS {
 		/**
 		 * The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		Name: string;
 
@@ -1170,8 +1175,8 @@ export namespace MyNS {
 		/**
 		 * The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1213,15 +1218,15 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group to delete.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 	}
@@ -1229,15 +1234,15 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group to delete.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1253,15 +1258,15 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group to retrieve.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 	}
@@ -1269,15 +1274,15 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group to retrieve.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1293,8 +1298,8 @@ export namespace MyNS {
 
 		/**
 		 * The name or the ARN of the resource group for which you want to retrive the service configuration.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 	}
@@ -1302,8 +1307,8 @@ export namespace MyNS {
 
 		/**
 		 * The name or the ARN of the resource group for which you want to retrive the service configuration.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1318,15 +1323,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group to query.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 	}
@@ -1334,15 +1339,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group to query.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1398,8 +1403,8 @@ export namespace MyNS {
 		/**
 		 * The name or the ARN of the resource group to add resources to.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: string;
 
@@ -1416,8 +1421,8 @@ export namespace MyNS {
 		/**
 		 * The name or the ARN of the resource group to add resources to.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1432,15 +1437,15 @@ export namespace MyNS {
 
 		/**
 		 * <important> <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p> </important>
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 
@@ -1456,8 +1461,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken?: string | null;
 	}
@@ -1465,15 +1470,15 @@ export namespace MyNS {
 
 		/**
 		 * <important> <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p> </important>
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 
@@ -1486,8 +1491,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1518,8 +1523,8 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the resource group with the configuration that you want to update.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 
@@ -1533,8 +1538,8 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the resource group with the configuration that you want to update.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1562,8 +1567,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken?: string | null;
 	}
@@ -1578,8 +1583,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1612,8 +1617,8 @@ export namespace MyNS {
 		/**
 		 * The name or the ARN of the resource group from which to remove the resources.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: string;
 
@@ -1630,8 +1635,8 @@ export namespace MyNS {
 		/**
 		 * The name or the ARN of the resource group from which to remove the resources.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}
@@ -1663,15 +1668,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group to modify.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 
@@ -1685,15 +1690,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group to modify.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 
@@ -1716,15 +1721,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The name or the ARN of the resource group to query.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group?: string | null;
 
@@ -1738,15 +1743,15 @@ export namespace MyNS {
 
 		/**
 		 * Don't use this parameter. Use <code>Group</code> instead.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name or the ARN of the resource group to query.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		Group: FormControl<string | null | undefined>,
 	}

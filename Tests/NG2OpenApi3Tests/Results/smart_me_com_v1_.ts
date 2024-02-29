@@ -7,32 +7,40 @@ export namespace MyNS {
 	/** Container Class for the Put action of an Access Token */
 	export interface AccessTokenToPut {
 
-		/** The ID of the Card */
-		CardId?: number | null;
+		/**
+		 * The ID of the Card
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		CardId?: string | null;
 
 		/**
 		 * The ID of the User. The credentials provided must have permission to edit the user.
 		 * If no ID is provided, the user in the credentials is taken.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		UserId?: number | null;
+		UserId?: string | null;
 	}
 
 	/** Container Class for the Put action of an Access Token */
 	export interface AccessTokenToPutFormProperties {
 
-		/** The ID of the Card */
-		CardId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the Card
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		CardId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the User. The credentials provided must have permission to edit the user.
 		 * If no ID is provided, the user in the credentials is taken.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		UserId: FormControl<number | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
 	}
 	export function CreateAccessTokenToPutFormGroup() {
 		return new FormGroup<AccessTokenToPutFormProperties>({
-			CardId: new FormControl<number | null | undefined>(undefined),
-			UserId: new FormControl<number | null | undefined>(undefined),
+			CardId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -44,10 +52,16 @@ export namespace MyNS {
 		/** The Type of this action. */
 		ActionType?: ActionInformationActionType | null;
 
-		/** The maximum value of this action (e.g. for an AnalogAction) */
+		/**
+		 * The maximum value of this action (e.g. for an AnalogAction)
+		 * Type: double
+		 */
 		MaxValue?: number | null;
 
-		/** The minimum value of this action (e.g. for an AnalogAction) */
+		/**
+		 * The minimum value of this action (e.g. for an AnalogAction)
+		 * Type: double
+		 */
 		MinValue?: number | null;
 
 		/** The Name of this action */
@@ -63,10 +77,16 @@ export namespace MyNS {
 		/** The Type of this action. */
 		ActionType: FormControl<ActionInformationActionType | null | undefined>,
 
-		/** The maximum value of this action (e.g. for an AnalogAction) */
+		/**
+		 * The maximum value of this action (e.g. for an AnalogAction)
+		 * Type: double
+		 */
 		MaxValue: FormControl<number | null | undefined>,
 
-		/** The minimum value of this action (e.g. for an AnalogAction) */
+		/**
+		 * The minimum value of this action (e.g. for an AnalogAction)
+		 * Type: double
+		 */
 		MinValue: FormControl<number | null | undefined>,
 
 		/** The Name of this action */
@@ -119,7 +139,10 @@ export namespace MyNS {
 		/** The ObisCode (ID) of the Action */
 		ObisCode?: string | null;
 
-		/** The Value to Post */
+		/**
+		 * The Value to Post
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 
@@ -129,7 +152,10 @@ export namespace MyNS {
 		/** The ObisCode (ID) of the Action */
 		ObisCode: FormControl<string | null | undefined>,
 
-		/** The Value to Post */
+		/**
+		 * The Value to Post
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateActionToPostItemFormGroup() {
@@ -147,10 +173,16 @@ export namespace MyNS {
 		/** An additional Meter serial number. e.g. the number of a meter a smart-me device is connected to. */
 		AdditionalMeterSerialNumber?: string | null;
 
-		/** The Firmware Version of a Meter */
+		/**
+		 * The Firmware Version of a Meter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FirmwareVersion?: number | null;
 
-		/** The Hardware Version of a Meter. */
+		/**
+		 * The Hardware Version of a Meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HardwareVersion?: number | null;
 
 		/** The ID of the device */
@@ -162,7 +194,10 @@ export namespace MyNS {
 		 */
 		NetworkConnection?: string | null;
 
-		/** The connection RSSI value (0 is bad, 100 is best) */
+		/**
+		 * The connection RSSI value (0 is bad, 100 is best)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NetworkConnectionRSSI?: number | null;
 	}
 
@@ -172,10 +207,16 @@ export namespace MyNS {
 		/** An additional Meter serial number. e.g. the number of a meter a smart-me device is connected to. */
 		AdditionalMeterSerialNumber: FormControl<string | null | undefined>,
 
-		/** The Firmware Version of a Meter */
+		/**
+		 * The Firmware Version of a Meter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FirmwareVersion: FormControl<number | null | undefined>,
 
-		/** The Hardware Version of a Meter. */
+		/**
+		 * The Hardware Version of a Meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HardwareVersion: FormControl<number | null | undefined>,
 
 		/** The ID of the device */
@@ -187,7 +228,10 @@ export namespace MyNS {
 		 */
 		NetworkConnection: FormControl<string | null | undefined>,
 
-		/** The connection RSSI value (0 is bad, 100 is best) */
+		/**
+		 * The connection RSSI value (0 is bad, 100 is best)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NetworkConnectionRSSI: FormControl<number | null | undefined>,
 	}
 	export function CreateAdditionalDeviceInformationFormGroup() {
@@ -256,8 +300,11 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name?: string | null;
 
-		/** The Serial number */
-		Serial?: number | null;
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial?: string | null;
 
 		/** The Date of the Value (in UTC). If this is null the Server Time is used. */
 		ValueDate?: Date | null;
@@ -275,8 +322,11 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Serial number */
-		Serial: FormControl<number | null | undefined>,
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial: FormControl<string | null | undefined>,
 
 		/** The Date of the Value (in UTC). If this is null the Server Time is used. */
 		ValueDate: FormControl<Date | null | undefined>,
@@ -285,7 +335,7 @@ export namespace MyNS {
 		return new FormGroup<CustomDeviceToPostFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			Serial: new FormControl<number | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
 			ValueDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -298,7 +348,10 @@ export namespace MyNS {
 		/** The Name of the Value. */
 		Name?: string | null;
 
-		/** The Value */
+		/**
+		 * The Value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 
@@ -308,7 +361,10 @@ export namespace MyNS {
 		/** The Name of the Value. */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Value */
+		/**
+		 * The Value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomDeviceValuesFormGroup() {
@@ -323,70 +379,124 @@ export namespace MyNS {
 	/** Container Class for the Web API */
 	export interface Device {
 
-		/** The Actvie Power or current flow rate */
+		/**
+		 * The Actvie Power or current flow rate
+		 * Type: double
+		 */
 		ActivePower?: number | null;
 
-		/** The Actvie Power Phase L1 */
+		/**
+		 * The Actvie Power Phase L1
+		 * Type: double
+		 */
 		ActivePowerL1?: number | null;
 
-		/** The Actvie Power Phase L2 */
+		/**
+		 * The Actvie Power Phase L2
+		 * Type: double
+		 */
 		ActivePowerL2?: number | null;
 
-		/** The Actvie Power Phase L3 */
+		/**
+		 * The Actvie Power Phase L3
+		 * Type: double
+		 */
 		ActivePowerL3?: number | null;
 
 		/** The Unit of the Active Power Value */
 		ActivePowerUnit?: string | null;
 
-		/** The Number of the Active Tariff */
+		/**
+		 * The Number of the Active Tariff
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActiveTariff?: number | null;
 
 		/** An additional Meter serial number. e.g. the number of a meter a smart-me device is connected to. */
 		AdditionalMeterSerialNumber?: string | null;
 
-		/** The analog output number 1 (PWM signal) (0 - 32183) */
+		/**
+		 * The analog output number 1 (PWM signal) (0 - 32183)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AnalogOutput1?: number | null;
 
-		/** The analog output number 2 (PWM signal) (0 - 32183) */
+		/**
+		 * The analog output number 2 (PWM signal) (0 - 32183)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AnalogOutput2?: number | null;
 
 		/** The state of a pico charging station. (Only available for pico charging stations) */
 		ChargingStationState?: DeviceChargingStationState | null;
 
-		/** The Meter Counter Reading (Total Energy used) */
+		/**
+		 * The Meter Counter Reading (Total Energy used)
+		 * Type: double
+		 */
 		CounterReading?: number | null;
 
-		/** The Meter Counter Reading only export */
+		/**
+		 * The Meter Counter Reading only export
+		 * Type: double
+		 */
 		CounterReadingExport?: number | null;
 
-		/** The Meter Counter Reading only import */
+		/**
+		 * The Meter Counter Reading only import
+		 * Type: double
+		 */
 		CounterReadingImport?: number | null;
 
-		/** The Meter Counter Reading Tariff 1 */
+		/**
+		 * The Meter Counter Reading Tariff 1
+		 * Type: double
+		 */
 		CounterReadingT1?: number | null;
 
-		/** The Meter Counter Reading Tariff 2 */
+		/**
+		 * The Meter Counter Reading Tariff 2
+		 * Type: double
+		 */
 		CounterReadingT2?: number | null;
 
-		/** The Meter Counter Reading Tariff 3 */
+		/**
+		 * The Meter Counter Reading Tariff 3
+		 * Type: double
+		 */
 		CounterReadingT3?: number | null;
 
-		/** The Meter Counter Reading Tariff 4 */
+		/**
+		 * The Meter Counter Reading Tariff 4
+		 * Type: double
+		 */
 		CounterReadingT4?: number | null;
 
 		/** The Unit of the Counter Reading */
 		CounterReadingUnit?: string | null;
 
-		/** The Current (in A) */
+		/**
+		 * The Current (in A)
+		 * Type: double
+		 */
 		Current?: number | null;
 
-		/** The Current Phase L1 (in A) */
+		/**
+		 * The Current Phase L1 (in A)
+		 * Type: double
+		 */
 		CurrentL1?: number | null;
 
-		/** The Current Phase L2 (in A) */
+		/**
+		 * The Current Phase L2 (in A)
+		 * Type: double
+		 */
 		CurrentL2?: number | null;
 
-		/** The Current Phase L3 (in A) */
+		/**
+		 * The Current Phase L3 (in A)
+		 * Type: double
+		 */
 		CurrentL3?: number | null;
 
 		/** The Energy Type of this device */
@@ -407,7 +517,10 @@ export namespace MyNS {
 		/** The Family Type of the device. */
 		FamilyType?: DeviceFamilyType | null;
 
-		/** The current flow rate (e.g. m3/h) */
+		/**
+		 * The current flow rate (e.g. m3/h)
+		 * Type: double
+		 */
 		FlowRate?: number | null;
 
 		/** The ID of the device */
@@ -419,20 +532,35 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name?: string | null;
 
-		/** The Power Factor (cos phi). Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi). Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactor?: number | null;
 
-		/** The Power Factor (cos phi) Phase L1. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L1. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL1?: number | null;
 
-		/** The Power Factor (cos phi) Phase L2. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L2. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL2?: number | null;
 
-		/** The Power Factor (cos phi) Phase L3. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L3. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL3?: number | null;
 
-		/** The Serial number */
-		Serial?: number | null;
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial?: string | null;
 
 		/** Flag if the Switch is on on this device. */
 		SwitchOn?: boolean | null;
@@ -446,92 +574,161 @@ export namespace MyNS {
 		/** Flag if the Phase L3 is on on this device. */
 		SwitchPhaseL3On?: boolean | null;
 
-		/** The Temperature (in degree celsius) */
+		/**
+		 * The Temperature (in degree celsius)
+		 * Type: double
+		 */
 		Temperature?: number | null;
 
 		/** Time of last successful connection the the smart-me Cloud. */
 		ValueDate?: Date | null;
 
-		/** The Voltage (in V) */
+		/**
+		 * The Voltage (in V)
+		 * Type: double
+		 */
 		Voltage?: number | null;
 
-		/** The Voltage Phase L1 (in V) */
+		/**
+		 * The Voltage Phase L1 (in V)
+		 * Type: double
+		 */
 		VoltageL1?: number | null;
 
-		/** The Voltage Phase L2 (in V) */
+		/**
+		 * The Voltage Phase L2 (in V)
+		 * Type: double
+		 */
 		VoltageL2?: number | null;
 
-		/** The Voltage Phase L3 (in V) */
+		/**
+		 * The Voltage Phase L3 (in V)
+		 * Type: double
+		 */
 		VoltageL3?: number | null;
 	}
 
 	/** Container Class for the Web API */
 	export interface DeviceFormProperties {
 
-		/** The Actvie Power or current flow rate */
+		/**
+		 * The Actvie Power or current flow rate
+		 * Type: double
+		 */
 		ActivePower: FormControl<number | null | undefined>,
 
-		/** The Actvie Power Phase L1 */
+		/**
+		 * The Actvie Power Phase L1
+		 * Type: double
+		 */
 		ActivePowerL1: FormControl<number | null | undefined>,
 
-		/** The Actvie Power Phase L2 */
+		/**
+		 * The Actvie Power Phase L2
+		 * Type: double
+		 */
 		ActivePowerL2: FormControl<number | null | undefined>,
 
-		/** The Actvie Power Phase L3 */
+		/**
+		 * The Actvie Power Phase L3
+		 * Type: double
+		 */
 		ActivePowerL3: FormControl<number | null | undefined>,
 
 		/** The Unit of the Active Power Value */
 		ActivePowerUnit: FormControl<string | null | undefined>,
 
-		/** The Number of the Active Tariff */
+		/**
+		 * The Number of the Active Tariff
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActiveTariff: FormControl<number | null | undefined>,
 
 		/** An additional Meter serial number. e.g. the number of a meter a smart-me device is connected to. */
 		AdditionalMeterSerialNumber: FormControl<string | null | undefined>,
 
-		/** The analog output number 1 (PWM signal) (0 - 32183) */
+		/**
+		 * The analog output number 1 (PWM signal) (0 - 32183)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AnalogOutput1: FormControl<number | null | undefined>,
 
-		/** The analog output number 2 (PWM signal) (0 - 32183) */
+		/**
+		 * The analog output number 2 (PWM signal) (0 - 32183)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AnalogOutput2: FormControl<number | null | undefined>,
 
 		/** The state of a pico charging station. (Only available for pico charging stations) */
 		ChargingStationState: FormControl<DeviceChargingStationState | null | undefined>,
 
-		/** The Meter Counter Reading (Total Energy used) */
+		/**
+		 * The Meter Counter Reading (Total Energy used)
+		 * Type: double
+		 */
 		CounterReading: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading only export */
+		/**
+		 * The Meter Counter Reading only export
+		 * Type: double
+		 */
 		CounterReadingExport: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading only import */
+		/**
+		 * The Meter Counter Reading only import
+		 * Type: double
+		 */
 		CounterReadingImport: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 1 */
+		/**
+		 * The Meter Counter Reading Tariff 1
+		 * Type: double
+		 */
 		CounterReadingT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 2 */
+		/**
+		 * The Meter Counter Reading Tariff 2
+		 * Type: double
+		 */
 		CounterReadingT2: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 3 */
+		/**
+		 * The Meter Counter Reading Tariff 3
+		 * Type: double
+		 */
 		CounterReadingT3: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 4 */
+		/**
+		 * The Meter Counter Reading Tariff 4
+		 * Type: double
+		 */
 		CounterReadingT4: FormControl<number | null | undefined>,
 
 		/** The Unit of the Counter Reading */
 		CounterReadingUnit: FormControl<string | null | undefined>,
 
-		/** The Current (in A) */
+		/**
+		 * The Current (in A)
+		 * Type: double
+		 */
 		Current: FormControl<number | null | undefined>,
 
-		/** The Current Phase L1 (in A) */
+		/**
+		 * The Current Phase L1 (in A)
+		 * Type: double
+		 */
 		CurrentL1: FormControl<number | null | undefined>,
 
-		/** The Current Phase L2 (in A) */
+		/**
+		 * The Current Phase L2 (in A)
+		 * Type: double
+		 */
 		CurrentL2: FormControl<number | null | undefined>,
 
-		/** The Current Phase L3 (in A) */
+		/**
+		 * The Current Phase L3 (in A)
+		 * Type: double
+		 */
 		CurrentL3: FormControl<number | null | undefined>,
 
 		/** The Energy Type of this device */
@@ -552,7 +749,10 @@ export namespace MyNS {
 		/** The Family Type of the device. */
 		FamilyType: FormControl<DeviceFamilyType | null | undefined>,
 
-		/** The current flow rate (e.g. m3/h) */
+		/**
+		 * The current flow rate (e.g. m3/h)
+		 * Type: double
+		 */
 		FlowRate: FormControl<number | null | undefined>,
 
 		/** The ID of the device */
@@ -564,20 +764,35 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Power Factor (cos phi). Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi). Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactor: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L1. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L1. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL1: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L2. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L2. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL2: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L3. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L3. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL3: FormControl<number | null | undefined>,
 
-		/** The Serial number */
-		Serial: FormControl<number | null | undefined>,
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial: FormControl<string | null | undefined>,
 
 		/** Flag if the Switch is on on this device. */
 		SwitchOn: FormControl<boolean | null | undefined>,
@@ -591,22 +806,37 @@ export namespace MyNS {
 		/** Flag if the Phase L3 is on on this device. */
 		SwitchPhaseL3On: FormControl<boolean | null | undefined>,
 
-		/** The Temperature (in degree celsius) */
+		/**
+		 * The Temperature (in degree celsius)
+		 * Type: double
+		 */
 		Temperature: FormControl<number | null | undefined>,
 
 		/** Time of last successful connection the the smart-me Cloud. */
 		ValueDate: FormControl<Date | null | undefined>,
 
-		/** The Voltage (in V) */
+		/**
+		 * The Voltage (in V)
+		 * Type: double
+		 */
 		Voltage: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L1 (in V) */
+		/**
+		 * The Voltage Phase L1 (in V)
+		 * Type: double
+		 */
 		VoltageL1: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L2 (in V) */
+		/**
+		 * The Voltage Phase L2 (in V)
+		 * Type: double
+		 */
 		VoltageL2: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L3 (in V) */
+		/**
+		 * The Voltage Phase L3 (in V)
+		 * Type: double
+		 */
 		VoltageL3: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
@@ -647,7 +877,7 @@ export namespace MyNS {
 			PowerFactorL1: new FormControl<number | null | undefined>(undefined),
 			PowerFactorL2: new FormControl<number | null | undefined>(undefined),
 			PowerFactorL3: new FormControl<number | null | undefined>(undefined),
-			Serial: new FormControl<number | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
 			SwitchOn: new FormControl<boolean | null | undefined>(undefined),
 			SwitchPhaseL1On: new FormControl<boolean | null | undefined>(undefined),
 			SwitchPhaseL2On: new FormControl<boolean | null | undefined>(undefined),
@@ -674,49 +904,94 @@ export namespace MyNS {
 	/** Container Class for the Web API. Conatinas the MeterValues in the Past */
 	export interface DeviceInPast {
 
-		/** The Meter Counter Reading (Total Energy used) */
+		/**
+		 * The Meter Counter Reading (Total Energy used)
+		 * Type: double
+		 */
 		CounterReading?: number | null;
 
-		/** The Meter Counter Reading Export */
+		/**
+		 * The Meter Counter Reading Export
+		 * Type: double
+		 */
 		CounterReadingExport?: number | null;
 
-		/** The Meter Counter Reading Export Tariff 1 */
+		/**
+		 * The Meter Counter Reading Export Tariff 1
+		 * Type: double
+		 */
 		CounterReadingExportT1?: number | null;
 
-		/** The Meter Counter Reading Export Tariff 2 */
+		/**
+		 * The Meter Counter Reading Export Tariff 2
+		 * Type: double
+		 */
 		CounterReadingExportT2?: number | null;
 
-		/** The Meter Counter Reading Export Tariff 3 */
+		/**
+		 * The Meter Counter Reading Export Tariff 3
+		 * Type: double
+		 */
 		CounterReadingExportT3?: number | null;
 
-		/** The Meter Counter Reading Export Tariff 4 */
+		/**
+		 * The Meter Counter Reading Export Tariff 4
+		 * Type: double
+		 */
 		CounterReadingExportT4?: number | null;
 
-		/** The Meter Counter Reading Import */
+		/**
+		 * The Meter Counter Reading Import
+		 * Type: double
+		 */
 		CounterReadingImport?: number | null;
 
-		/** The Meter Counter Reading Import Tariff 1 */
+		/**
+		 * The Meter Counter Reading Import Tariff 1
+		 * Type: double
+		 */
 		CounterReadingImportT1?: number | null;
 
-		/** The Meter Counter Reading Import Tariff 2 */
+		/**
+		 * The Meter Counter Reading Import Tariff 2
+		 * Type: double
+		 */
 		CounterReadingImportT2?: number | null;
 
-		/** The Meter Counter Reading Import Tariff 3 */
+		/**
+		 * The Meter Counter Reading Import Tariff 3
+		 * Type: double
+		 */
 		CounterReadingImportT3?: number | null;
 
-		/** The Meter Counter Reading Import Tariff 4 */
+		/**
+		 * The Meter Counter Reading Import Tariff 4
+		 * Type: double
+		 */
 		CounterReadingImportT4?: number | null;
 
-		/** The Meter Counter Reading Tariff 1 */
+		/**
+		 * The Meter Counter Reading Tariff 1
+		 * Type: double
+		 */
 		CounterReadingT1?: number | null;
 
-		/** The Meter Counter Reading Tariff 2 */
+		/**
+		 * The Meter Counter Reading Tariff 2
+		 * Type: double
+		 */
 		CounterReadingT2?: number | null;
 
-		/** The Meter Counter Reading Tariff 3 */
+		/**
+		 * The Meter Counter Reading Tariff 3
+		 * Type: double
+		 */
 		CounterReadingT3?: number | null;
 
-		/** The Meter Counter Reading Tariff 4 */
+		/**
+		 * The Meter Counter Reading Tariff 4
+		 * Type: double
+		 */
 		CounterReadingT4?: number | null;
 
 		/** The Unit of the Counter Reading */
@@ -728,56 +1003,104 @@ export namespace MyNS {
 		/** The ID of the device */
 		Id?: string | null;
 
-		/** The Serial number */
-		Serial?: number | null;
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial?: string | null;
 	}
 
 	/** Container Class for the Web API. Conatinas the MeterValues in the Past */
 	export interface DeviceInPastFormProperties {
 
-		/** The Meter Counter Reading (Total Energy used) */
+		/**
+		 * The Meter Counter Reading (Total Energy used)
+		 * Type: double
+		 */
 		CounterReading: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Export */
+		/**
+		 * The Meter Counter Reading Export
+		 * Type: double
+		 */
 		CounterReadingExport: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Export Tariff 1 */
+		/**
+		 * The Meter Counter Reading Export Tariff 1
+		 * Type: double
+		 */
 		CounterReadingExportT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Export Tariff 2 */
+		/**
+		 * The Meter Counter Reading Export Tariff 2
+		 * Type: double
+		 */
 		CounterReadingExportT2: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Export Tariff 3 */
+		/**
+		 * The Meter Counter Reading Export Tariff 3
+		 * Type: double
+		 */
 		CounterReadingExportT3: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Export Tariff 4 */
+		/**
+		 * The Meter Counter Reading Export Tariff 4
+		 * Type: double
+		 */
 		CounterReadingExportT4: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Import */
+		/**
+		 * The Meter Counter Reading Import
+		 * Type: double
+		 */
 		CounterReadingImport: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Import Tariff 1 */
+		/**
+		 * The Meter Counter Reading Import Tariff 1
+		 * Type: double
+		 */
 		CounterReadingImportT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Import Tariff 2 */
+		/**
+		 * The Meter Counter Reading Import Tariff 2
+		 * Type: double
+		 */
 		CounterReadingImportT2: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Import Tariff 3 */
+		/**
+		 * The Meter Counter Reading Import Tariff 3
+		 * Type: double
+		 */
 		CounterReadingImportT3: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Import Tariff 4 */
+		/**
+		 * The Meter Counter Reading Import Tariff 4
+		 * Type: double
+		 */
 		CounterReadingImportT4: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 1 */
+		/**
+		 * The Meter Counter Reading Tariff 1
+		 * Type: double
+		 */
 		CounterReadingT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 2 */
+		/**
+		 * The Meter Counter Reading Tariff 2
+		 * Type: double
+		 */
 		CounterReadingT2: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 3 */
+		/**
+		 * The Meter Counter Reading Tariff 3
+		 * Type: double
+		 */
 		CounterReadingT3: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 4 */
+		/**
+		 * The Meter Counter Reading Tariff 4
+		 * Type: double
+		 */
 		CounterReadingT4: FormControl<number | null | undefined>,
 
 		/** The Unit of the Counter Reading */
@@ -789,8 +1112,11 @@ export namespace MyNS {
 		/** The ID of the device */
 		Id: FormControl<string | null | undefined>,
 
-		/** The Serial number */
-		Serial: FormControl<number | null | undefined>,
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceInPastFormGroup() {
 		return new FormGroup<DeviceInPastFormProperties>({
@@ -812,7 +1138,7 @@ export namespace MyNS {
 			CounterReadingUnit: new FormControl<string | null | undefined>(undefined),
 			Date: new FormControl<Date | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Serial: new FormControl<number | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -821,37 +1147,70 @@ export namespace MyNS {
 	/** Container Class for the Web API */
 	export interface DeviceToPost {
 
-		/** The Active Power or current flow rate. In kW or m3/h */
+		/**
+		 * The Active Power or current flow rate. In kW or m3/h
+		 * Type: double
+		 */
 		ActivePower?: number | null;
 
-		/** The Meter Counter Reading (Total Energy used) in kWh or m3. */
+		/**
+		 * The Meter Counter Reading (Total Energy used) in kWh or m3.
+		 * Type: double
+		 */
 		CounterReading?: number | null;
 
-		/** The Meter Counter Reading only export */
+		/**
+		 * The Meter Counter Reading only export
+		 * Type: double
+		 */
 		CounterReadingExport?: number | null;
 
-		/** The Meter Counter Reading only export (Tariff 1) */
+		/**
+		 * The Meter Counter Reading only export (Tariff 1)
+		 * Type: double
+		 */
 		CounterReadingExportT1?: number | null;
 
-		/** The Meter Counter Reading only export (Tariff 2) */
+		/**
+		 * The Meter Counter Reading only export (Tariff 2)
+		 * Type: double
+		 */
 		CounterReadingExportT2?: number | null;
 
-		/** The Meter Counter Reading Tariff 1 in kWh or m3. */
+		/**
+		 * The Meter Counter Reading Tariff 1 in kWh or m3.
+		 * Type: double
+		 */
 		CounterReadingT1?: number | null;
 
-		/** The Meter Counter Reading Tariff 2 in kWh or m3. */
+		/**
+		 * The Meter Counter Reading Tariff 2 in kWh or m3.
+		 * Type: double
+		 */
 		CounterReadingT2?: number | null;
 
-		/** The Current (in A) */
+		/**
+		 * The Current (in A)
+		 * Type: double
+		 */
 		Current?: number | null;
 
-		/** The Current Phase L1 (in A) */
+		/**
+		 * The Current Phase L1 (in A)
+		 * Type: double
+		 */
 		CurrentL1?: number | null;
 
-		/** The Current Phase L2 (in A) */
+		/**
+		 * The Current Phase L2 (in A)
+		 * Type: double
+		 */
 		CurrentL2?: number | null;
 
-		/** The Current Phase L3 (in A) */
+		/**
+		 * The Current Phase L3 (in A)
+		 * Type: double
+		 */
 		CurrentL3?: number | null;
 
 		/** The Energy Type of this device */
@@ -869,74 +1228,137 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name?: string | null;
 
-		/** The Power Factor (cos phi). Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi). Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactor?: number | null;
 
-		/** The Power Factor (cos phi) Phase L1. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L1. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL1?: number | null;
 
-		/** The Power Factor (cos phi) Phase L2. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L2. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL2?: number | null;
 
-		/** The Power Factor (cos phi) Phase L3. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L3. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL3?: number | null;
 
-		/** The Serial number */
-		Serial?: number | null;
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial?: string | null;
 
-		/** The Temperature (in degree celsius) */
+		/**
+		 * The Temperature (in degree celsius)
+		 * Type: double
+		 */
 		Temperature?: number | null;
 
 		/** The Date of the Value (in UTC). If this is null the Server Time is used. */
 		ValueDate?: Date | null;
 
-		/** The Voltage (in V) */
+		/**
+		 * The Voltage (in V)
+		 * Type: double
+		 */
 		Voltage?: number | null;
 
-		/** The Voltage Phase L1 (in V) */
+		/**
+		 * The Voltage Phase L1 (in V)
+		 * Type: double
+		 */
 		VoltageL1?: number | null;
 
-		/** The Voltage Phase L2 (in V) */
+		/**
+		 * The Voltage Phase L2 (in V)
+		 * Type: double
+		 */
 		VoltageL2?: number | null;
 
-		/** The Voltage Phase L3 (in V) */
+		/**
+		 * The Voltage Phase L3 (in V)
+		 * Type: double
+		 */
 		VoltageL3?: number | null;
 	}
 
 	/** Container Class for the Web API */
 	export interface DeviceToPostFormProperties {
 
-		/** The Active Power or current flow rate. In kW or m3/h */
+		/**
+		 * The Active Power or current flow rate. In kW or m3/h
+		 * Type: double
+		 */
 		ActivePower: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading (Total Energy used) in kWh or m3. */
+		/**
+		 * The Meter Counter Reading (Total Energy used) in kWh or m3.
+		 * Type: double
+		 */
 		CounterReading: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading only export */
+		/**
+		 * The Meter Counter Reading only export
+		 * Type: double
+		 */
 		CounterReadingExport: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading only export (Tariff 1) */
+		/**
+		 * The Meter Counter Reading only export (Tariff 1)
+		 * Type: double
+		 */
 		CounterReadingExportT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading only export (Tariff 2) */
+		/**
+		 * The Meter Counter Reading only export (Tariff 2)
+		 * Type: double
+		 */
 		CounterReadingExportT2: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 1 in kWh or m3. */
+		/**
+		 * The Meter Counter Reading Tariff 1 in kWh or m3.
+		 * Type: double
+		 */
 		CounterReadingT1: FormControl<number | null | undefined>,
 
-		/** The Meter Counter Reading Tariff 2 in kWh or m3. */
+		/**
+		 * The Meter Counter Reading Tariff 2 in kWh or m3.
+		 * Type: double
+		 */
 		CounterReadingT2: FormControl<number | null | undefined>,
 
-		/** The Current (in A) */
+		/**
+		 * The Current (in A)
+		 * Type: double
+		 */
 		Current: FormControl<number | null | undefined>,
 
-		/** The Current Phase L1 (in A) */
+		/**
+		 * The Current Phase L1 (in A)
+		 * Type: double
+		 */
 		CurrentL1: FormControl<number | null | undefined>,
 
-		/** The Current Phase L2 (in A) */
+		/**
+		 * The Current Phase L2 (in A)
+		 * Type: double
+		 */
 		CurrentL2: FormControl<number | null | undefined>,
 
-		/** The Current Phase L3 (in A) */
+		/**
+		 * The Current Phase L3 (in A)
+		 * Type: double
+		 */
 		CurrentL3: FormControl<number | null | undefined>,
 
 		/** The Energy Type of this device */
@@ -954,37 +1376,67 @@ export namespace MyNS {
 		/** The Name of the Device */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Power Factor (cos phi). Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi). Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactor: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L1. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L1. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL1: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L2. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L2. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL2: FormControl<number | null | undefined>,
 
-		/** The Power Factor (cos phi) Phase L3. Range: 0 - 1 */
+		/**
+		 * The Power Factor (cos phi) Phase L3. Range: 0 - 1
+		 * Type: double
+		 */
 		PowerFactorL3: FormControl<number | null | undefined>,
 
-		/** The Serial number */
-		Serial: FormControl<number | null | undefined>,
+		/**
+		 * The Serial number
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Serial: FormControl<string | null | undefined>,
 
-		/** The Temperature (in degree celsius) */
+		/**
+		 * The Temperature (in degree celsius)
+		 * Type: double
+		 */
 		Temperature: FormControl<number | null | undefined>,
 
 		/** The Date of the Value (in UTC). If this is null the Server Time is used. */
 		ValueDate: FormControl<Date | null | undefined>,
 
-		/** The Voltage (in V) */
+		/**
+		 * The Voltage (in V)
+		 * Type: double
+		 */
 		Voltage: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L1 (in V) */
+		/**
+		 * The Voltage Phase L1 (in V)
+		 * Type: double
+		 */
 		VoltageL1: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L2 (in V) */
+		/**
+		 * The Voltage Phase L2 (in V)
+		 * Type: double
+		 */
 		VoltageL2: FormControl<number | null | undefined>,
 
-		/** The Voltage Phase L3 (in V) */
+		/**
+		 * The Voltage Phase L3 (in V)
+		 * Type: double
+		 */
 		VoltageL3: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceToPostFormGroup() {
@@ -1009,7 +1461,7 @@ export namespace MyNS {
 			PowerFactorL1: new FormControl<number | null | undefined>(undefined),
 			PowerFactorL2: new FormControl<number | null | undefined>(undefined),
 			PowerFactorL3: new FormControl<number | null | undefined>(undefined),
-			Serial: new FormControl<number | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
 			Temperature: new FormControl<number | null | undefined>(undefined),
 			ValueDate: new FormControl<Date | null | undefined>(undefined),
 			Voltage: new FormControl<number | null | undefined>(undefined),
@@ -1024,56 +1476,104 @@ export namespace MyNS {
 	/** Container class for the folder API */
 	export interface FolderData {
 
-		/** The Counter values for electricity (kWh) */
+		/**
+		 * The Counter values for electricity (kWh)
+		 * Type: double
+		 */
 		ElectricityCounterValue?: number | null;
 
-		/** The Power for electricity (kW) */
+		/**
+		 * The Power for electricity (kW)
+		 * Type: double
+		 */
 		ElectricityPower?: number | null;
 
-		/** The Counter values for Gas (m3) */
+		/**
+		 * The Counter values for Gas (m3)
+		 * Type: double
+		 */
 		GasCounterValue?: number | null;
 
-		/** The Flow Rate for Gas (m3/h) */
+		/**
+		 * The Flow Rate for Gas (m3/h)
+		 * Type: double
+		 */
 		GasFlowRate?: number | null;
 
-		/** The Counter values for Heat (kWh) */
+		/**
+		 * The Counter values for Heat (kWh)
+		 * Type: double
+		 */
 		HeatCounterValue?: number | null;
 
-		/** The Power for Heat (kW) */
+		/**
+		 * The Power for Heat (kW)
+		 * Type: double
+		 */
 		HeatPower?: number | null;
 
-		/** The Counter values for Water (m3) */
+		/**
+		 * The Counter values for Water (m3)
+		 * Type: double
+		 */
 		WaterCounterValue?: number | null;
 
-		/** The Flow Rate for Water (m3/h) */
+		/**
+		 * The Flow Rate for Water (m3/h)
+		 * Type: double
+		 */
 		WaterFlowRate?: number | null;
 	}
 
 	/** Container class for the folder API */
 	export interface FolderDataFormProperties {
 
-		/** The Counter values for electricity (kWh) */
+		/**
+		 * The Counter values for electricity (kWh)
+		 * Type: double
+		 */
 		ElectricityCounterValue: FormControl<number | null | undefined>,
 
-		/** The Power for electricity (kW) */
+		/**
+		 * The Power for electricity (kW)
+		 * Type: double
+		 */
 		ElectricityPower: FormControl<number | null | undefined>,
 
-		/** The Counter values for Gas (m3) */
+		/**
+		 * The Counter values for Gas (m3)
+		 * Type: double
+		 */
 		GasCounterValue: FormControl<number | null | undefined>,
 
-		/** The Flow Rate for Gas (m3/h) */
+		/**
+		 * The Flow Rate for Gas (m3/h)
+		 * Type: double
+		 */
 		GasFlowRate: FormControl<number | null | undefined>,
 
-		/** The Counter values for Heat (kWh) */
+		/**
+		 * The Counter values for Heat (kWh)
+		 * Type: double
+		 */
 		HeatCounterValue: FormControl<number | null | undefined>,
 
-		/** The Power for Heat (kW) */
+		/**
+		 * The Power for Heat (kW)
+		 * Type: double
+		 */
 		HeatPower: FormControl<number | null | undefined>,
 
-		/** The Counter values for Water (m3) */
+		/**
+		 * The Counter values for Water (m3)
+		 * Type: double
+		 */
 		WaterCounterValue: FormControl<number | null | undefined>,
 
-		/** The Flow Rate for Water (m3/h) */
+		/**
+		 * The Flow Rate for Water (m3/h)
+		 * Type: double
+		 */
 		WaterFlowRate: FormControl<number | null | undefined>,
 	}
 	export function CreateFolderDataFormGroup() {
@@ -1215,16 +1715,25 @@ export namespace MyNS {
 		/** The parent folder ID of this item */
 		ParentFolderId?: string | null;
 
-		/** The serial number (meter only) */
-		SerialNumber?: number | null;
+		/**
+		 * The serial number (meter only)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		SerialNumber?: string | null;
 
 		/** Flag if the meter is usable for virtual billing meters (e.g. washroom) */
 		UseableForVirtualBillingMeters?: boolean | null;
 
-		/** The value correction on this meter */
+		/**
+		 * The value correction on this meter
+		 * Type: double
+		 */
 		ValueCorrection?: number | null;
 
-		/** The value correction on all parent folders. but not on the meter itself */
+		/**
+		 * The value correction on all parent folders. but not on the meter itself
+		 * Type: double
+		 */
 		ValueCorrectionParentFolder?: number | null;
 
 		/** The name of the visualization of the folder */
@@ -1249,16 +1758,25 @@ export namespace MyNS {
 		/** The parent folder ID of this item */
 		ParentFolderId: FormControl<string | null | undefined>,
 
-		/** The serial number (meter only) */
-		SerialNumber: FormControl<number | null | undefined>,
+		/**
+		 * The serial number (meter only)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		SerialNumber: FormControl<string | null | undefined>,
 
 		/** Flag if the meter is usable for virtual billing meters (e.g. washroom) */
 		UseableForVirtualBillingMeters: FormControl<boolean | null | undefined>,
 
-		/** The value correction on this meter */
+		/**
+		 * The value correction on this meter
+		 * Type: double
+		 */
 		ValueCorrection: FormControl<number | null | undefined>,
 
-		/** The value correction on all parent folders. but not on the meter itself */
+		/**
+		 * The value correction on all parent folders. but not on the meter itself
+		 * Type: double
+		 */
 		ValueCorrectionParentFolder: FormControl<number | null | undefined>,
 
 		/** The name of the visualization of the folder */
@@ -1271,7 +1789,7 @@ export namespace MyNS {
 			FolderType: new FormControl<FolderMenuItemFolderType | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			ParentFolderId: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<number | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
 			UseableForVirtualBillingMeters: new FormControl<boolean | null | undefined>(undefined),
 			ValueCorrection: new FormControl<number | null | undefined>(undefined),
 			ValueCorrectionParentFolder: new FormControl<number | null | undefined>(undefined),
@@ -1287,7 +1805,10 @@ export namespace MyNS {
 		/** The Name of the Input */
 		Name?: string | null;
 
-		/** The number of the Input. (1 for Input 1) */
+		/**
+		 * The number of the Input. (1 for Input 1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number?: number | null;
 
 		/** The visualization text for an OFF action */
@@ -1306,7 +1827,10 @@ export namespace MyNS {
 		/** The Name of the Input */
 		Name: FormControl<string | null | undefined>,
 
-		/** The number of the Input. (1 for Input 1) */
+		/**
+		 * The number of the Input. (1 for Input 1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number: FormControl<number | null | undefined>,
 
 		/** The visualization text for an OFF action */
@@ -1338,7 +1862,10 @@ export namespace MyNS {
 		/** The Name of the Input */
 		Name?: string | null;
 
-		/** The Number of this Input. Use this as ID to switch it on or off. */
+		/**
+		 * The Number of this Input. Use this as ID to switch it on or off.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number?: number | null;
 	}
 
@@ -1348,7 +1875,10 @@ export namespace MyNS {
 		/** The Name of the Input */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Number of this Input. Use this as ID to switch it on or off. */
+		/**
+		 * The Number of this Input. Use this as ID to switch it on or off.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number: FormControl<number | null | undefined>,
 	}
 	export function CreateInputInformationFormGroup() {
@@ -1393,16 +1923,28 @@ export namespace MyNS {
 	/** Container Class for the Web API */
 	export interface MeterFolderInformation {
 
-		/** The Version of the Communication Module (if exists) */
+		/**
+		 * The Version of the Communication Module (if exists)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CommunicationModuleFirmwareVersion?: number | null;
 
-		/** The Version of the Communication Module (if exists) */
+		/**
+		 * The Version of the Communication Module (if exists)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CommunicationModuleHardwareVersion?: number | null;
 
-		/** The Firmware Version of a Meter */
+		/**
+		 * The Firmware Version of a Meter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FirmwareVersion?: number | null;
 
-		/** The Hardware Version of a Meter. */
+		/**
+		 * The Hardware Version of a Meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HardwareVersion?: number | null;
 
 		/** Informations about the available Inputs */
@@ -1421,16 +1963,28 @@ export namespace MyNS {
 	/** Container Class for the Web API */
 	export interface MeterFolderInformationFormProperties {
 
-		/** The Version of the Communication Module (if exists) */
+		/**
+		 * The Version of the Communication Module (if exists)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CommunicationModuleFirmwareVersion: FormControl<number | null | undefined>,
 
-		/** The Version of the Communication Module (if exists) */
+		/**
+		 * The Version of the Communication Module (if exists)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CommunicationModuleHardwareVersion: FormControl<number | null | undefined>,
 
-		/** The Firmware Version of a Meter */
+		/**
+		 * The Firmware Version of a Meter
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FirmwareVersion: FormControl<number | null | undefined>,
 
-		/** The Hardware Version of a Meter. */
+		/**
+		 * The Hardware Version of a Meter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HardwareVersion: FormControl<number | null | undefined>,
 
 		/** Flag if it's a Folder or a Meter */
@@ -1461,7 +2015,10 @@ export namespace MyNS {
 		/** The Name of the Output */
 		Name?: string | null;
 
-		/** The Number of this Output. Use this as ID to switch it on or off. */
+		/**
+		 * The Number of this Output. Use this as ID to switch it on or off.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number?: number | null;
 
 		/** The Obis Code for this Output */
@@ -1477,7 +2034,10 @@ export namespace MyNS {
 		/** The Name of the Output */
 		Name: FormControl<string | null | undefined>,
 
-		/** The Number of this Output. Use this as ID to switch it on or off. */
+		/**
+		 * The Number of this Output. Use this as ID to switch it on or off.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number: FormControl<number | null | undefined>,
 
 		/** The Obis Code for this Output */
@@ -1541,7 +2101,10 @@ export namespace MyNS {
 		/** The Name of the Output */
 		Name?: string | null;
 
-		/** The number of the Output. (1 for Output 1, 2 for Output 2) */
+		/**
+		 * The number of the Output. (1 for Output 1, 2 for Output 2)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number?: number | null;
 
 		/** The S0 Pulse Value */
@@ -1560,7 +2123,10 @@ export namespace MyNS {
 		/** The Name of the Output */
 		Name: FormControl<string | null | undefined>,
 
-		/** The number of the Output. (1 for Output 1, 2 for Output 2) */
+		/**
+		 * The number of the Output. (1 for Output 1, 2 for Output 2)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number: FormControl<number | null | undefined>,
 
 		/** The S0 Pulse Value */
@@ -1590,16 +2156,25 @@ export namespace MyNS {
 	/** Container class for the pico charging station API */
 	export interface PicoChargingData {
 
-		/** The energy used by this active charging (in kWh) */
+		/**
+		 * The energy used by this active charging (in kWh)
+		 * Type: double
+		 */
 		ActiveChargingEnergy?: number | null;
 
-		/** The power of the active charging (in kW) */
+		/**
+		 * The power of the active charging (in kW)
+		 * Type: double
+		 */
 		ActiveChargingPower?: number | null;
 
 		/** The mode how this station is connected to the cloud */
 		ConnectionMode?: PicoChargingDataConnectionMode | null;
 
-		/** The duration of this charging in seconds */
+		/**
+		 * The duration of this charging in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Duration?: number | null;
 
 		/** The last warning or error of the station. This message is only shown if the warning or error happend in the last 5 minutes. */
@@ -1617,24 +2192,40 @@ export namespace MyNS {
 		/** The name of the loadmanagement group. Or string.empty if the station is not in a group */
 		LoadmanagementGroupName?: string | null;
 
-		/** Max allowed charging current in A */
+		/**
+		 * Max allowed charging current in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAllowedChargingCurrent?: number | null;
 
-		/** Max. dynamic current (e.g. set over API or Modbus TCP) of this station or the loadmanagement group of the station if the station is in a group. in A */
+		/**
+		 * Max. dynamic current (e.g. set over API or Modbus TCP) of this station or the loadmanagement group of the station if the station is in a group. in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxDynamicCurrent?: number | null;
 
-		/** Max. current of the loadmanagement group of this station (if there is any) in A */
+		/**
+		 * Max. current of the loadmanagement group of this station (if there is any) in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxLoadmanagementGroupCurrent?: number | null;
 
-		/** Max. current of the station in A */
+		/**
+		 * Max. current of the station in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStationCurrent?: number | null;
 
-		/** Min. current of the station in A */
+		/**
+		 * Min. current of the station in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinStationCurrent?: number | null;
 
 		/**
 		 * Received Signal Strength Indicator for the connection mode (wifi or mobile).
 		 * -127 (min) to 0 (Max)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		RSSI?: number | null;
 
@@ -1648,16 +2239,25 @@ export namespace MyNS {
 	/** Container class for the pico charging station API */
 	export interface PicoChargingDataFormProperties {
 
-		/** The energy used by this active charging (in kWh) */
+		/**
+		 * The energy used by this active charging (in kWh)
+		 * Type: double
+		 */
 		ActiveChargingEnergy: FormControl<number | null | undefined>,
 
-		/** The power of the active charging (in kW) */
+		/**
+		 * The power of the active charging (in kW)
+		 * Type: double
+		 */
 		ActiveChargingPower: FormControl<number | null | undefined>,
 
 		/** The mode how this station is connected to the cloud */
 		ConnectionMode: FormControl<PicoChargingDataConnectionMode | null | undefined>,
 
-		/** The duration of this charging in seconds */
+		/**
+		 * The duration of this charging in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Duration: FormControl<number | null | undefined>,
 
 		/** The last warning or error of the station. This message is only shown if the warning or error happend in the last 5 minutes. */
@@ -1675,24 +2275,40 @@ export namespace MyNS {
 		/** The name of the loadmanagement group. Or string.empty if the station is not in a group */
 		LoadmanagementGroupName: FormControl<string | null | undefined>,
 
-		/** Max allowed charging current in A */
+		/**
+		 * Max allowed charging current in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAllowedChargingCurrent: FormControl<number | null | undefined>,
 
-		/** Max. dynamic current (e.g. set over API or Modbus TCP) of this station or the loadmanagement group of the station if the station is in a group. in A */
+		/**
+		 * Max. dynamic current (e.g. set over API or Modbus TCP) of this station or the loadmanagement group of the station if the station is in a group. in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxDynamicCurrent: FormControl<number | null | undefined>,
 
-		/** Max. current of the loadmanagement group of this station (if there is any) in A */
+		/**
+		 * Max. current of the loadmanagement group of this station (if there is any) in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxLoadmanagementGroupCurrent: FormControl<number | null | undefined>,
 
-		/** Max. current of the station in A */
+		/**
+		 * Max. current of the station in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStationCurrent: FormControl<number | null | undefined>,
 
-		/** Min. current of the station in A */
+		/**
+		 * Min. current of the station in A
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinStationCurrent: FormControl<number | null | undefined>,
 
 		/**
 		 * Received Signal Strength Indicator for the connection mode (wifi or mobile).
 		 * -127 (min) to 0 (Max)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		RSSI: FormControl<number | null | undefined>,
 
@@ -1735,10 +2351,16 @@ export namespace MyNS {
 	/** Api container for the charging station history */
 	export interface PicoChargingHistoryData {
 
-		/** The duration in seconds */
+		/**
+		 * The duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Duration?: number | null;
 
-		/** The energy used (in kWh) */
+		/**
+		 * The energy used (in kWh)
+		 * Type: double
+		 */
 		EnergyUsed?: number | null;
 
 		/** The starttime of the charging (in UTC) */
@@ -1749,10 +2371,16 @@ export namespace MyNS {
 	/** Api container for the charging station history */
 	export interface PicoChargingHistoryDataFormProperties {
 
-		/** The duration in seconds */
+		/**
+		 * The duration in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Duration: FormControl<number | null | undefined>,
 
-		/** The energy used (in kWh) */
+		/**
+		 * The energy used (in kWh)
+		 * Type: double
+		 */
 		EnergyUsed: FormControl<number | null | undefined>,
 
 		/** The starttime of the charging (in UTC) */
@@ -1778,13 +2406,19 @@ export namespace MyNS {
 		/** The ID of the loadmanagement group */
 		Id?: string | null;
 
-		/** The max current of this loadmanagement group */
+		/**
+		 * The max current of this loadmanagement group
+		 * Type: double
+		 */
 		MaxCurrent?: number | null;
 
 		/** The name of the station */
 		Name?: string | null;
 
-		/** The number of assigned stations */
+		/**
+		 * The number of assigned stations
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfStations?: number | null;
 	}
 
@@ -1794,13 +2428,19 @@ export namespace MyNS {
 		/** The ID of the loadmanagement group */
 		Id: FormControl<string | null | undefined>,
 
-		/** The max current of this loadmanagement group */
+		/**
+		 * The max current of this loadmanagement group
+		 * Type: double
+		 */
 		MaxCurrent: FormControl<number | null | undefined>,
 
 		/** The name of the station */
 		Name: FormControl<string | null | undefined>,
 
-		/** The number of assigned stations */
+		/**
+		 * The number of assigned stations
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfStations: FormControl<number | null | undefined>,
 	}
 	export function CreatePicoLoadmanagementGroupDtoFormGroup() {
@@ -1841,10 +2481,16 @@ export namespace MyNS {
 		/** The ID of the loadmanagement group */
 		LoadmanagementGroupId?: string | null;
 
-		/** The max current of this station (in A) */
+		/**
+		 * The max current of this station (in A)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxCurrent?: number | null;
 
-		/** The max current of this station (in A) */
+		/**
+		 * The max current of this station (in A)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinCurrent?: number | null;
 
 		/** Flag if ModbusTcp is enabled */
@@ -1884,10 +2530,16 @@ export namespace MyNS {
 		/** The ID of the loadmanagement group */
 		LoadmanagementGroupId: FormControl<string | null | undefined>,
 
-		/** The max current of this station (in A) */
+		/**
+		 * The max current of this station (in A)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxCurrent: FormControl<number | null | undefined>,
 
-		/** The max current of this station (in A) */
+		/**
+		 * The max current of this station (in A)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinCurrent: FormControl<number | null | undefined>,
 
 		/** Flag if ModbusTcp is enabled */
@@ -2072,7 +2724,10 @@ export namespace MyNS {
 		/** Flag if the switch can be turned off or is always on. */
 		CanSwitchOff?: boolean | null;
 
-		/** The number of the phase. (e.g. 1 for Phase L1) */
+		/**
+		 * The number of the phase. (e.g. 1 for Phase L1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number?: number | null;
 	}
 
@@ -2082,7 +2737,10 @@ export namespace MyNS {
 		/** Flag if the switch can be turned off or is always on. */
 		CanSwitchOff: FormControl<boolean | null | undefined>,
 
-		/** The number of the phase. (e.g. 1 for Phase L1) */
+		/**
+		 * The number of the phase. (e.g. 1 for Phase L1)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Number: FormControl<number | null | undefined>,
 	}
 	export function CreateSwitchConfigurationContainerFormGroup() {
@@ -2170,8 +2828,11 @@ export namespace MyNS {
 		/** The EMail Address of the User */
 		Email?: string | null;
 
-		/** The ID of the User */
-		Id?: number | null;
+		/**
+		 * The ID of the User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id?: string | null;
 
 		/** The ID of the user as string */
 		IdAsString?: string | null;
@@ -2192,8 +2853,11 @@ export namespace MyNS {
 		/** The EMail Address of the User */
 		Email: FormControl<string | null | undefined>,
 
-		/** The ID of the User */
-		Id: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id: FormControl<string | null | undefined>,
 
 		/** The ID of the user as string */
 		IdAsString: FormControl<string | null | undefined>,
@@ -2207,7 +2871,7 @@ export namespace MyNS {
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			Email: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
 			IdAsString: new FormControl<string | null | undefined>(undefined),
 			IsAdmin: new FormControl<boolean | null | undefined>(undefined),
 			Username: new FormControl<string | null | undefined>(undefined),
@@ -2268,7 +2932,10 @@ export namespace MyNS {
 		 */
 		Obis?: string | null;
 
-		/** The Value */
+		/**
+		 * The Value
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 
@@ -2282,7 +2949,10 @@ export namespace MyNS {
 		 */
 		Obis: FormControl<string | null | undefined>,
 
-		/** The Value */
+		/**
+		 * The Value
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateValueDataFormGroup() {
@@ -2326,26 +2996,38 @@ export namespace MyNS {
 
 	export interface VirtualTariff {
 
-		/** Says how many of the active power is used in this tariff. This is calculated from the last meter values. */
+		/**
+		 * Says how many of the active power is used in this tariff. This is calculated from the last meter values.
+		 * Type: double
+		 */
 		Factor?: number | null;
 		Id?: string | null;
 		Name?: string | null;
 		Type?: VirtualTariffType | null;
 		Unit?: string | null;
 
-		/** The Counter Value of this tariff */
+		/**
+		 * The Counter Value of this tariff
+		 * Type: double
+		 */
 		Value?: number | null;
 	}
 	export interface VirtualTariffFormProperties {
 
-		/** Says how many of the active power is used in this tariff. This is calculated from the last meter values. */
+		/**
+		 * Says how many of the active power is used in this tariff. This is calculated from the last meter values.
+		 * Type: double
+		 */
 		Factor: FormControl<number | null | undefined>,
 		Id: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<VirtualTariffType | null | undefined>,
 		Unit: FormControl<string | null | undefined>,
 
-		/** The Counter Value of this tariff */
+		/**
+		 * The Counter Value of this tariff
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateVirtualTariffFormGroup() {
@@ -2366,7 +3048,10 @@ export namespace MyNS {
 	/** Container class for the virtual tariff consumption */
 	export interface VirtualTariffConsumptionData {
 
-		/** The consumption (e.g. kWh) of this tariff */
+		/**
+		 * The consumption (e.g. kWh) of this tariff
+		 * Type: double
+		 */
 		Consumption?: number | null;
 
 		/** The currency of the price */
@@ -2375,7 +3060,10 @@ export namespace MyNS {
 		/** The Name of this virtual tariff */
 		Name?: string | null;
 
-		/** The price of the energy in this timerange */
+		/**
+		 * The price of the energy in this timerange
+		 * Type: double
+		 */
 		Price?: number | null;
 
 		/** The type of the virtual tariff (e.g. solar) */
@@ -2385,7 +3073,10 @@ export namespace MyNS {
 	/** Container class for the virtual tariff consumption */
 	export interface VirtualTariffConsumptionDataFormProperties {
 
-		/** The consumption (e.g. kWh) of this tariff */
+		/**
+		 * The consumption (e.g. kWh) of this tariff
+		 * Type: double
+		 */
 		Consumption: FormControl<number | null | undefined>,
 
 		/** The currency of the price */
@@ -2394,7 +3085,10 @@ export namespace MyNS {
 		/** The Name of this virtual tariff */
 		Name: FormControl<string | null | undefined>,
 
-		/** The price of the energy in this timerange */
+		/**
+		 * The price of the energy in this timerange
+		 * Type: double
+		 */
 		Price: FormControl<number | null | undefined>,
 
 		/** The type of the virtual tariff (e.g. solar) */
@@ -2543,10 +3237,11 @@ export namespace MyNS {
 		 * Gets a Device by it's Serial Number. The Serial is the part before the "-".
 		 * Gets a Device by it's Serial Number. The Serial is the part before the "-".
 		 * Get api/DeviceBySerial
-		 * @param {number} serial The Serial Number of the device
+		 * @param {string} serial The Serial Number of the device
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Device} OK
 		 */
-		DeviceBySerial_Get(serial: number): Observable<Device> {
+		DeviceBySerial_Get(serial: string): Observable<Device> {
 			return this.http.get<Device>(this.baseUri + 'api/DeviceBySerial?serial=' + serial, {});
 		}
 
@@ -2593,6 +3288,7 @@ export namespace MyNS {
 		 * @param {string} id The ID of the device
 		 * @param {boolean} switchState The new state of the switch
 		 * @param {number} switchNumber The number of the switch if there are multiple (1 for L1, 3 for L3)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Object} OK
 		 */
 		Devices_Put(id: string, switchState: boolean, switchNumber: number | null | undefined): Observable<Object> {
@@ -2844,6 +3540,7 @@ export namespace MyNS {
 		 * @param {Date} startDate The date when the first value should start
 		 * @param {Date} endDate The date when the last value should start
 		 * @param {number} interval The interval in minutes betwenn the values. 0 means as fast as possible. Only 1000 values can be get in one call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ValuesData>} OK
 		 */
 		ValuesInPastMultiple_Get(id: string, startDate: Date, endDate: Date, interval: number): Observable<Array<ValuesData>> {
@@ -3084,11 +3781,13 @@ export namespace MyNS {
 		/**
 		 * Sets the dynamic current of a load management group or a single station.
 		 * Post api/pico/loadmanagementgroup/current/{serial}
-		 * @param {number} serial The serial number can be any pico serial in the group (e.g. 700001)
+		 * @param {string} serial The serial number can be any pico serial in the group (e.g. 700001)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} current The dynamic current of the group (in mA)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Object} OK
 		 */
-		PicoLoadmanagementSetDynamicCurrent_Post(serial: number, current: number): Observable<Object> {
+		PicoLoadmanagementSetDynamicCurrent_Post(serial: string, current: number): Observable<Object> {
 			return this.http.post<Object>(this.baseUri + 'api/pico/loadmanagementgroup/current/' + serial + '?current=' + current, null, {});
 		}
 

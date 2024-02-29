@@ -1834,7 +1834,10 @@ export namespace MyNS {
 		/** A list of environment variable definitions to be used when running a step. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE". */
 		env?: Array<string>;
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -1883,7 +1886,10 @@ export namespace MyNS {
 		/** Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used. */
 		entrypoint: FormControl<string | null | undefined>,
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -2015,12 +2021,19 @@ export namespace MyNS {
 		/** Defined in CVSS v3, CVSS v2 */
 		availabilityImpact?: CVSSAvailabilityImpact | null;
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: float
+		 */
 		baseScore?: number | null;
 
 		/** Defined in CVSS v3, CVSS v2 */
 		confidentialityImpact?: CVSSAvailabilityImpact | null;
+
+		/** Type: float */
 		exploitabilityScore?: number | null;
+
+		/** Type: float */
 		impactScore?: number | null;
 
 		/** Defined in CVSS v3, CVSS v2 */
@@ -2051,12 +2064,19 @@ export namespace MyNS {
 		/** Defined in CVSS v3, CVSS v2 */
 		availabilityImpact: FormControl<CVSSAvailabilityImpact | null | undefined>,
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: float
+		 */
 		baseScore: FormControl<number | null | undefined>,
 
 		/** Defined in CVSS v3, CVSS v2 */
 		confidentialityImpact: FormControl<CVSSAvailabilityImpact | null | undefined>,
+
+		/** Type: float */
 		exploitabilityScore: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		impactScore: FormControl<number | null | undefined>,
 
 		/** Defined in CVSS v3, CVSS v2 */
@@ -2107,7 +2127,10 @@ export namespace MyNS {
 	/** A compliance check that is a CIS benchmark. */
 	export interface CisBenchmark {
 
-		/** The profile level of this CIS benchmark check. */
+		/**
+		 * The profile level of this CIS benchmark check.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profileLevel?: number | null;
 
 		/** The severity level of this CIS benchmark check. */
@@ -2117,7 +2140,10 @@ export namespace MyNS {
 	/** A compliance check that is a CIS benchmark. */
 	export interface CisBenchmarkFormProperties {
 
-		/** The profile level of this CIS benchmark check. */
+		/**
+		 * The profile level of this CIS benchmark check.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		profileLevel: FormControl<number | null | undefined>,
 
 		/** The severity level of this CIS benchmark check. */
@@ -3546,7 +3572,10 @@ export namespace MyNS {
 		/** A list of environment variable definitions to be used when running a step. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE". */
 		env?: Array<string>;
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -3595,7 +3624,10 @@ export namespace MyNS {
 		/** Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used. */
 		entrypoint: FormControl<string | null | undefined>,
 
-		/** Output only. Return code from running the step. */
+		/**
+		 * Output only. Return code from running the step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency. */
@@ -3732,7 +3764,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3745,7 +3780,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3961,7 +3999,10 @@ export namespace MyNS {
 		/** Output only. This contains the base image URL for the derived image occurrence. */
 		baseResourceUrl?: string | null;
 
-		/** Output only. The number of layers by which this image differs from the associated image basis. */
+		/**
+		 * Output only. The number of layers by which this image differs from the associated image basis.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		distance?: number | null;
 
 		/** A set of properties that uniquely identify a given Docker image. */
@@ -3977,7 +4018,10 @@ export namespace MyNS {
 		/** Output only. This contains the base image URL for the derived image occurrence. */
 		baseResourceUrl: FormControl<string | null | undefined>,
 
-		/** Output only. The number of layers by which this image differs from the associated image basis. */
+		/**
+		 * Output only. The number of layers by which this image differs from the associated image basis.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		distance: FormControl<number | null | undefined>,
 	}
 	export function CreateDerivedFormGroup() {
@@ -4156,7 +4200,10 @@ export namespace MyNS {
 	/** Version contains structured information about the version of the package. For a discussion of this in Debian/Ubuntu: http://serverfault.com/questions/604541/debian-packages-version-convention For a discussion of this in Redhat/Fedora/Centos: http://blog.jasonantman.com/2014/07/how-yum-and-rpm-compare-versions/ */
 	export interface Version {
 
-		/** Used to correct mistakes in the version numbering scheme. */
+		/**
+		 * Used to correct mistakes in the version numbering scheme.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epoch?: number | null;
 
 		/** Whether this version is vulnerable, when defining the version bounds. For example, if the minimum version is 2.0, inclusive=true would say 2.0 is vulnerable, while inclusive=false would say it's not */
@@ -4175,7 +4222,10 @@ export namespace MyNS {
 	/** Version contains structured information about the version of the package. For a discussion of this in Debian/Ubuntu: http://serverfault.com/questions/604541/debian-packages-version-convention For a discussion of this in Redhat/Fedora/Centos: http://blog.jasonantman.com/2014/07/how-yum-and-rpm-compare-versions/ */
 	export interface VersionFormProperties {
 
-		/** Used to correct mistakes in the version numbering scheme. */
+		/**
+		 * Used to correct mistakes in the version numbering scheme.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		epoch: FormControl<number | null | undefined>,
 
 		/** Whether this version is vulnerable, when defining the version bounds. For example, if the minimum version is 2.0, inclusive=true would say 2.0 is vulnerable, while inclusive=false would say it's not */
@@ -4697,14 +4747,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -5364,7 +5420,10 @@ export namespace MyNS {
 	/** Used by Occurrence to point to where the vulnerability exists and how to fix it. */
 	export interface VulnerabilityDetails {
 
-		/** Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0-10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0-10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssScore?: number | null;
 
 		/** Common Vulnerability Scoring System. This message is compatible with CVSS v2 and v3. For CVSS v2 details, see https://www.first.org/cvss/v2/guide CVSS v2 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator For CVSS v3 details, see https://www.first.org/cvss/specification-document CVSS v3 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator */
@@ -5398,7 +5457,10 @@ export namespace MyNS {
 	/** Used by Occurrence to point to where the vulnerability exists and how to fix it. */
 	export interface VulnerabilityDetailsFormProperties {
 
-		/** Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0-10 where 0 indicates low severity and 10 indicates high severity. */
+		/**
+		 * Output only. The CVSS score of this vulnerability. CVSS score is on a scale of 0-10 where 0 indicates low severity and 10 indicates high severity.
+		 * Type: float
+		 */
 		cvssScore: FormControl<number | null | undefined>,
 
 		/** Output only. CVSS version used to populate cvss_score and severity. */
@@ -6080,7 +6142,10 @@ export namespace MyNS {
 	/** VulnerabilityType provides metadata about a security vulnerability. */
 	export interface VulnerabilityType {
 
-		/** The CVSS score for this Vulnerability. */
+		/**
+		 * The CVSS score for this Vulnerability.
+		 * Type: float
+		 */
 		cvssScore?: number | null;
 
 		/** Common Vulnerability Scoring System. This message is compatible with CVSS v2 and v3. For CVSS v2 details, see https://www.first.org/cvss/v2/guide CVSS v2 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator For CVSS v3 details, see https://www.first.org/cvss/specification-document CVSS v3 calculator: https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator */
@@ -6102,7 +6167,10 @@ export namespace MyNS {
 	/** VulnerabilityType provides metadata about a security vulnerability. */
 	export interface VulnerabilityTypeFormProperties {
 
-		/** The CVSS score for this Vulnerability. */
+		/**
+		 * The CVSS score for this Vulnerability.
+		 * Type: float
+		 */
 		cvssScore: FormControl<number | null | undefined>,
 
 		/** CVSS version used to populate cvss_score and severity. */
@@ -6227,7 +6295,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -6237,7 +6308,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -6365,6 +6439,7 @@ export namespace MyNS {
 		 * @param {string} name The name field will contain the project Id for example: "providers/{provider_id} @Deprecated
 		 * @param {string} filter The filter expression.
 		 * @param {number} pageSize Number of notes to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @param {string} parent This field contains the project Id for example: "projects/{PROJECT_ID}".
 		 * @return {ListNotesResponse} Successful response
@@ -6391,6 +6466,7 @@ export namespace MyNS {
 		 * @param {string} name The name field will contain the note name for example: "provider/{provider_id}/notes/{note_id}"
 		 * @param {string} filter The filter expression.
 		 * @param {number} pageSize Number of notes to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {ListNoteOccurrencesResponse} Successful response
 		 */
@@ -6405,6 +6481,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter expression.
 		 * @param {string} name The name field will contain the project Id for example: "providers/{provider_id} @Deprecated
 		 * @param {number} pageSize Number of notes to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {ListNotesResponse} Successful response
 		 */
@@ -6432,6 +6509,7 @@ export namespace MyNS {
 		 * @param {DiscoveryAnalysisKind} kind The kind of occurrences to filter on.
 		 * @param {string} name The name field contains the project Id. For example: "projects/{project_id} @Deprecated
 		 * @param {number} pageSize Number of occurrences to return in the list.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {ListOccurrencesResponse} Successful response
 		 */
@@ -6477,6 +6555,7 @@ export namespace MyNS {
 		 * @param {string} parent This containers the project Id i.e.: projects/{project_id}
 		 * @param {string} filter The filter expression.
 		 * @param {number} pageSize The number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The page token to use for the next request.
 		 * @return {ListScanConfigsResponse} Successful response
 		 */

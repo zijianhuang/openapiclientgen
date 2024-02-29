@@ -6,37 +6,65 @@ export namespace MyNS {
 	export enum AmendmentDecision { NoDecision = 'NoDecision', Withdrawn = 'Withdrawn', Disagreed = 'Disagreed', NotMoved = 'NotMoved', Agreed = 'Agreed' }
 
 	export interface AmendmentDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amendmentId?: number | null;
 		amendmentLines?: Array<AmendmentLine>;
 		amendmentNote?: string | null;
 		amendmentPosition?: string | null;
 		amendmentType?: AmendmentDetailAmendmentType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clause?: number | null;
 		decision?: AmendmentDecision | null;
 		explanatoryText?: string | null;
 		explanatoryTextPrefix?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber?: number | null;
 		marshalledListText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		schedule?: number | null;
 		sponsors?: Array<AmendmentMember>;
 	}
 	export interface AmendmentDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amendmentId: FormControl<number | null | undefined>,
 		amendmentNote: FormControl<string | null | undefined>,
 		amendmentPosition: FormControl<string | null | undefined>,
 		amendmentType: FormControl<AmendmentDetailAmendmentType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clause: FormControl<number | null | undefined>,
 		decision: FormControl<AmendmentDecision | null | undefined>,
 		explanatoryText: FormControl<string | null | undefined>,
 		explanatoryTextPrefix: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber: FormControl<number | null | undefined>,
 		marshalledListText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		schedule: FormControl<number | null | undefined>,
 	}
 	export function CreateAmendmentDetailFormGroup() {
@@ -62,6 +90,8 @@ export namespace MyNS {
 	export interface AmendmentLine {
 		hangingIndentation?: string | null;
 		imageType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		indentation?: number | null;
 		isImage?: boolean | null;
 		text?: string | null;
@@ -69,6 +99,8 @@ export namespace MyNS {
 	export interface AmendmentLineFormProperties {
 		hangingIndentation: FormControl<string | null | undefined>,
 		imageType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		indentation: FormControl<number | null | undefined>,
 		isImage: FormControl<boolean | null | undefined>,
 		text: FormControl<string | null | undefined>,
@@ -90,24 +122,32 @@ export namespace MyNS {
 		house?: AmendmentMemberHouse | null;
 		isLead?: boolean | null;
 		memberFrom?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		memberPage?: string | null;
 		memberPhoto?: string | null;
 		name?: string | null;
 		party?: string | null;
 		partyColour?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface AmendmentMemberFormProperties {
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
 		isLead: FormControl<boolean | null | undefined>,
 		memberFrom: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		memberPage: FormControl<string | null | undefined>,
 		memberPhoto: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		party: FormControl<string | null | undefined>,
 		partyColour: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateAmendmentMemberFormGroup() {
@@ -129,31 +169,59 @@ export namespace MyNS {
 	export enum AmendmentMemberHouse { All = 'All', Commons = 'Commons', Lords = 'Lords', Unassigned = 'Unassigned' }
 
 	export interface AmendmentSearchItem {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amendmentId?: number | null;
 		amendmentPosition?: string | null;
 		amendmentType?: AmendmentDetailAmendmentType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clause?: number | null;
 		decision?: AmendmentDecision | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber?: number | null;
 		marshalledListText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		schedule?: number | null;
 		sponsors?: Array<AmendmentMember>;
 		summaryText?: Array<string>;
 	}
 	export interface AmendmentSearchItemFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amendmentId: FormControl<number | null | undefined>,
 		amendmentPosition: FormControl<string | null | undefined>,
 		amendmentType: FormControl<AmendmentDetailAmendmentType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		clause: FormControl<number | null | undefined>,
 		decision: FormControl<AmendmentDecision | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lineNumber: FormControl<number | null | undefined>,
 		marshalledListText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		schedule: FormControl<number | null | undefined>,
 	}
 	export function CreateAmendmentSearchItemFormGroup() {
@@ -175,11 +243,19 @@ export namespace MyNS {
 
 	export interface AmendmentSearchItemSearchResult {
 		items?: Array<AmendmentSearchItem>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface AmendmentSearchItemSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateAmendmentSearchItemSearchResultFormGroup() {
@@ -194,12 +270,18 @@ export namespace MyNS {
 
 	export interface Bill {
 		agent?: BillAgent;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billTypeId?: number | null;
 		billWithdrawn?: Date | null;
 		currentHouse?: AmendmentMemberHouse | null;
 		currentStage?: StageSummary;
 		includedSessionIds?: Array<number>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		introducedSessionId?: number | null;
 		isAct?: boolean | null;
 		isDefeated?: boolean | null;
@@ -214,10 +296,16 @@ export namespace MyNS {
 		summary?: string | null;
 	}
 	export interface BillFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billTypeId: FormControl<number | null | undefined>,
 		billWithdrawn: FormControl<Date | null | undefined>,
 		currentHouse: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		introducedSessionId: FormControl<number | null | undefined>,
 		isAct: FormControl<boolean | null | undefined>,
 		isDefeated: FormControl<boolean | null | undefined>,
@@ -278,9 +366,17 @@ export namespace MyNS {
 		abbreviation?: string | null;
 		description?: string | null;
 		house?: AmendmentMemberHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sessionId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId?: number | null;
 		stageSittings?: Array<BillStageSitting>;
 	}
@@ -288,9 +384,17 @@ export namespace MyNS {
 		abbreviation: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sessionId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId: FormControl<number | null | undefined>,
 	}
 	export function CreateStageSummaryFormGroup() {
@@ -307,17 +411,33 @@ export namespace MyNS {
 	}
 
 	export interface BillStageSitting {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId?: number | null;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId?: number | null;
 	}
 	export interface BillStageSittingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId: FormControl<number | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId: FormControl<number | null | undefined>,
 	}
 	export function CreateBillStageSittingFormGroup() {
@@ -350,9 +470,13 @@ export namespace MyNS {
 	export interface Sponsor {
 		member?: Member;
 		organisation?: Organisation;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface SponsorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateSponsorFormGroup() {
@@ -365,6 +489,8 @@ export namespace MyNS {
 	export interface Member {
 		house?: AmendmentMemberHouse | null;
 		memberFrom?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId?: number | null;
 		memberPage?: string | null;
 		memberPhoto?: string | null;
@@ -375,6 +501,8 @@ export namespace MyNS {
 	export interface MemberFormProperties {
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
 		memberFrom: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		memberId: FormControl<number | null | undefined>,
 		memberPage: FormControl<string | null | undefined>,
 		memberPhoto: FormControl<string | null | undefined>,
@@ -416,6 +544,8 @@ export namespace MyNS {
 		displayDate?: Date | null;
 		files?: Array<PublicationDocument>;
 		house?: AmendmentMemberHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		links?: Array<PublicationLink>;
 		publicationType?: PublicationType;
@@ -424,6 +554,8 @@ export namespace MyNS {
 	export interface BillPublicationFormProperties {
 		displayDate: FormControl<Date | null | undefined>,
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -438,15 +570,23 @@ export namespace MyNS {
 	}
 
 	export interface PublicationDocument {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contentLength?: number | null;
 		contentType?: string | null;
 		filename?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface PublicationDocumentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contentLength: FormControl<number | null | undefined>,
 		contentType: FormControl<string | null | undefined>,
 		filename: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreatePublicationDocumentFormGroup() {
@@ -461,12 +601,16 @@ export namespace MyNS {
 
 	export interface PublicationLink {
 		contentType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 		url?: string | null;
 	}
 	export interface PublicationLinkFormProperties {
 		contentType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -483,11 +627,15 @@ export namespace MyNS {
 
 	export interface PublicationType {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface PublicationTypeFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -501,10 +649,14 @@ export namespace MyNS {
 	}
 
 	export interface BillPublicationList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
 		publications?: Array<BillPublication>;
 	}
 	export interface BillPublicationListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
 	}
 	export function CreateBillPublicationListFormGroup() {
@@ -521,12 +673,24 @@ export namespace MyNS {
 		committee?: Committee;
 		description?: string | null;
 		house?: AmendmentMemberHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lastUpdate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextStageBillStageId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previousStageBillStageId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sessionId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId?: number | null;
 		stageSittings?: Array<BillStageSitting>;
 	}
@@ -534,12 +698,24 @@ export namespace MyNS {
 		abbreviation: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextStageBillStageId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previousStageBillStageId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sessionId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stageId: FormControl<number | null | undefined>,
 	}
 	export function CreateBillStageDetailsFormGroup() {
@@ -561,6 +737,8 @@ export namespace MyNS {
 	export interface Committee {
 		category?: string | null;
 		house?: CommitteeHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		url?: string | null;
@@ -568,6 +746,8 @@ export namespace MyNS {
 	export interface CommitteeFormProperties {
 		category: FormControl<string | null | undefined>,
 		house: FormControl<CommitteeHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -586,11 +766,15 @@ export namespace MyNS {
 	export enum CommitteeHouse { Commons = 'Commons', Lords = 'Lords', Joint = 'Joint' }
 
 	export interface BillStagePublicationList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId?: number | null;
 		publications?: Array<Publication>;
 		sittings?: Array<BillStageSittingPublicationList>;
 	}
 	export interface BillStagePublicationListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billStageId: FormControl<number | null | undefined>,
 	}
 	export function CreateBillStagePublicationListFormGroup() {
@@ -603,6 +787,8 @@ export namespace MyNS {
 	export interface Publication {
 		displayDate?: Date | null;
 		files?: Array<PublicationDocument>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		links?: Array<PublicationLink>;
 		publicationType?: PublicationType;
@@ -610,6 +796,8 @@ export namespace MyNS {
 	}
 	export interface PublicationFormProperties {
 		displayDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -624,9 +812,13 @@ export namespace MyNS {
 
 	export interface BillStageSittingPublicationList {
 		publications?: Array<Publication>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sittingId?: number | null;
 	}
 	export interface BillStageSittingPublicationListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sittingId: FormControl<number | null | undefined>,
 	}
 	export function CreateBillStageSittingPublicationListFormGroup() {
@@ -638,11 +830,19 @@ export namespace MyNS {
 
 	export interface BillStageSittingSearchResult {
 		items?: Array<BillStageSitting>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface BillStageSittingSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBillStageSittingSearchResultFormGroup() {
@@ -654,12 +854,18 @@ export namespace MyNS {
 	}
 
 	export interface BillSummary {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billTypeId?: number | null;
 		billWithdrawn?: Date | null;
 		currentHouse?: AmendmentMemberHouse | null;
 		currentStage?: StageSummary;
 		includedSessionIds?: Array<number>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		introducedSessionId?: number | null;
 		isAct?: boolean | null;
 		isDefeated?: boolean | null;
@@ -668,10 +874,16 @@ export namespace MyNS {
 		shortTitle?: string | null;
 	}
 	export interface BillSummaryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		billTypeId: FormControl<number | null | undefined>,
 		billWithdrawn: FormControl<Date | null | undefined>,
 		currentHouse: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		introducedSessionId: FormControl<number | null | undefined>,
 		isAct: FormControl<boolean | null | undefined>,
 		isDefeated: FormControl<boolean | null | undefined>,
@@ -697,11 +909,19 @@ export namespace MyNS {
 
 	export interface BillSummarySearchResult {
 		items?: Array<BillSummary>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface BillSummarySearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBillSummarySearchResultFormGroup() {
@@ -715,12 +935,16 @@ export namespace MyNS {
 	export interface BillType {
 		category?: BillTypeCategory | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface BillTypeFormProperties {
 		category: FormControl<BillTypeCategory | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -738,11 +962,19 @@ export namespace MyNS {
 
 	export interface BillTypeSearchResult {
 		items?: Array<BillType>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface BillTypeSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBillTypeSearchResultFormGroup() {
@@ -760,12 +992,16 @@ export namespace MyNS {
 	export interface NewsArticlesSummary {
 		content?: string | null;
 		displayDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 	}
 	export interface NewsArticlesSummaryFormProperties {
 		content: FormControl<string | null | undefined>,
 		displayDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -781,11 +1017,19 @@ export namespace MyNS {
 
 	export interface NewsArticlesSummarySearchResult {
 		items?: Array<NewsArticlesSummary>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface NewsArticlesSummarySearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateNewsArticlesSummarySearchResultFormGroup() {
@@ -801,6 +1045,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -808,6 +1054,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -825,11 +1073,19 @@ export namespace MyNS {
 
 	export interface PublicationTypeSearchResult {
 		items?: Array<PublicationType>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface PublicationTypeSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePublicationTypeSearchResultFormGroup() {
@@ -842,11 +1098,15 @@ export namespace MyNS {
 
 	export interface StageReference {
 		house?: AmendmentMemberHouse | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface StageReferenceFormProperties {
 		house: FormControl<AmendmentMemberHouse | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -861,11 +1121,19 @@ export namespace MyNS {
 
 	export interface StageReferenceSearchResult {
 		items?: Array<StageReference>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface StageReferenceSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateStageReferenceSearchResultFormGroup() {
@@ -878,11 +1146,19 @@ export namespace MyNS {
 
 	export interface StageSummarySearchResult {
 		items?: Array<StageSummary>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface StageSummarySearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateStageSummarySearchResultFormGroup() {
@@ -901,6 +1177,8 @@ export namespace MyNS {
 		/**
 		 * Returns a list of Bill types.
 		 * Get api/v1/BillTypes
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillTypeSearchResult} Success
 		 */
 		ApiV1BillTypesGetByCategoryAndSkipAndTake(Category: BillTypeCategory | null | undefined, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BillTypeSearchResult> {
@@ -910,6 +1188,11 @@ export namespace MyNS {
 		/**
 		 * Returns a list of Bills.
 		 * Get api/v1/Bills
+		 * @param {number} Session Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MemberId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} DepartmentId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillSummarySearchResult} Success
 		 */
 		ApiV1BillsGetBySearchTermAndSessionAndCurrentHouseAndOriginatingHouseAndMemberIdAndDepartmentIdAndBillStageAndBillStagesExcludedAndIsDefeatedAndIsWithdrawnAndBillTypeAndSortOrderAndBillIdsAndSkipAndTake(SearchTerm: string | null | undefined, Session: number | null | undefined, CurrentHouse: AmendmentMemberHouse | null | undefined, OriginatingHouse: OriginatingHouse | null | undefined, MemberId: number | null | undefined, DepartmentId: number | null | undefined, BillStage: Array<number> | null | undefined, BillStagesExcluded: Array<number> | null | undefined, IsDefeated: boolean | null | undefined, IsWithdrawn: boolean | null | undefined, BillType: Array<number> | null | undefined, SortOrder: BillSortOrder | null | undefined, BillIds: Array<number> | null | undefined, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BillSummarySearchResult> {
@@ -920,6 +1203,7 @@ export namespace MyNS {
 		 * Return a Bill.
 		 * Get api/v1/Bills/{billId}
 		 * @param {number} billId Bill with ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Bill} Success
 		 */
 		ApiV1Bills_billIdGet(billId: number, headersHandler?: () => HttpHeaders): Observable<Bill> {
@@ -929,6 +1213,9 @@ export namespace MyNS {
 		/**
 		 * Returns a list of news articles for a Bill.
 		 * Get api/v1/Bills/{billId}/NewsArticles
+		 * @param {number} billId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {NewsArticlesSummarySearchResult} Success
 		 */
 		ApiV1Bills_billIdNewsArticlesGetBySkipAndTake(billId: number, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<NewsArticlesSummarySearchResult> {
@@ -939,6 +1226,7 @@ export namespace MyNS {
 		 * Return a list of Bill publications.
 		 * Get api/v1/Bills/{billId}/Publications
 		 * @param {number} billId Publications relating to Bill with Bill ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillPublicationList} Success
 		 */
 		ApiV1Bills_billIdPublicationsGet(billId: number, headersHandler?: () => HttpHeaders): Observable<BillPublicationList> {
@@ -949,6 +1237,9 @@ export namespace MyNS {
 		 * Returns all Bill stages.
 		 * Get api/v1/Bills/{billId}/Stages
 		 * @param {number} billId Stages relating to a Bill with Bill ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StageSummarySearchResult} Success
 		 */
 		ApiV1Bills_billIdStagesGetBySkipAndTake(billId: number, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<StageSummarySearchResult> {
@@ -959,7 +1250,9 @@ export namespace MyNS {
 		 * Returns a Bill stage.
 		 * Get api/v1/Bills/{billId}/Stages/{billStageId}
 		 * @param {number} billId Bill stage relating to Bill with Bill ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} billStageId Bill stage with ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillStageDetails} Success
 		 */
 		ApiV1Bills_billIdStages_billStageIdGet(billId: number, billStageId: number, headersHandler?: () => HttpHeaders): Observable<BillStageDetails> {
@@ -970,7 +1263,12 @@ export namespace MyNS {
 		 * Returns a list of amendments.
 		 * Get api/v1/Bills/{billId}/Stages/{billStageId}/Amendments
 		 * @param {number} billId Amendments relating to a Bill with Bill ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} billStageId Amendments relating to a Bill stage with Bill stage ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MemberId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AmendmentSearchItemSearchResult} Success
 		 */
 		ApiV1Bills_billIdStages_billStageIdAmendmentsGetBySearchTermAndDecisionAndMemberIdAndSkipAndTake(billId: number, billStageId: number, SearchTerm: string | null | undefined, Decision: Decision | null | undefined, MemberId: number | null | undefined, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<AmendmentSearchItemSearchResult> {
@@ -981,8 +1279,11 @@ export namespace MyNS {
 		 * Returns an amendment.
 		 * Get api/v1/Bills/{billId}/Stages/{billStageId}/Amendments/{amendmentId}
 		 * @param {number} billId Amendment relating to a bill with bill ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} billStageId Amendment relating to a bill stage with bill stage ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} amendmentId Amendment with amendment ID specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AmendmentDetail} Success
 		 */
 		ApiV1Bills_billIdStages_billStageIdAmendments_amendmentIdGet(billId: number, billStageId: number, amendmentId: number, headersHandler?: () => HttpHeaders): Observable<AmendmentDetail> {
@@ -992,6 +1293,8 @@ export namespace MyNS {
 		/**
 		 * Return a list of Bill stage publications.
 		 * Get api/v1/Bills/{billId}/Stages/{stageId}/Publications
+		 * @param {number} billId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} stageId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillStagePublicationList} Success
 		 */
 		ApiV1Bills_billIdStages_stageIdPublicationsGet(billId: number, stageId: number, headersHandler?: () => HttpHeaders): Observable<BillStagePublicationList> {
@@ -1001,6 +1304,8 @@ export namespace MyNS {
 		/**
 		 * Returns a list of publication types.
 		 * Get api/v1/PublicationTypes
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicationTypeSearchResult} Success
 		 */
 		ApiV1PublicationTypesGetBySkipAndTake(Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PublicationTypeSearchResult> {
@@ -1011,7 +1316,9 @@ export namespace MyNS {
 		 * Return information on a document.
 		 * Get api/v1/Publications/{publicationId}/Documents/{documentId}
 		 * @param {number} publicationId Document with publication Id specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} documentId Document with Id specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PublicationDocument} Success
 		 */
 		ApiV1Publications_publicationIdDocuments_documentIdGet(publicationId: number, documentId: number, headersHandler?: () => HttpHeaders): Observable<PublicationDocument> {
@@ -1022,7 +1329,9 @@ export namespace MyNS {
 		 * Return a document.
 		 * Get api/v1/Publications/{publicationId}/Documents/{documentId}/Download
 		 * @param {number} publicationId Document with publication Id specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} documentId Document with Id specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiV1Publications_publicationIdDocuments_documentIdDownloadGet(publicationId: number, documentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1033,6 +1342,7 @@ export namespace MyNS {
 		 * Returns an Rss feed of a certain Bill.
 		 * Get api/v1/Rss/Bills/{id}.rss
 		 * @param {number} id Id of Bill
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiV1RssBills_id_rssGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1069,6 +1379,8 @@ export namespace MyNS {
 		/**
 		 * Returns a list of Sittings.
 		 * Get api/v1/Sittings
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BillStageSittingSearchResult} Success
 		 */
 		ApiV1SittingsGetByHouseAndDateFromAndDateToAndSkipAndTake(House: AmendmentMemberHouse | null | undefined, DateFrom: Date | null | undefined, DateTo: Date | null | undefined, Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<BillStageSittingSearchResult> {
@@ -1078,6 +1390,8 @@ export namespace MyNS {
 		/**
 		 * Returns a list of Bill stages.
 		 * Get api/v1/Stages
+		 * @param {number} Skip Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Take Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {StageReferenceSearchResult} Success
 		 */
 		ApiV1StagesGetBySkipAndTake(Skip: number | null | undefined, Take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<StageReferenceSearchResult> {

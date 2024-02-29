@@ -1419,7 +1419,9 @@ export namespace MyNS {
 		 * Get datastore
 		 * @param {DatastoreStatus} datastoreStatus The data store status.
 		 * @param {string} nextToken The pagination token used to request the list of data stores on the next page.
+		 *     Min length: 1    Max length: 8192
 		 * @param {number} maxResults Valid Range: Minimum value of 1. Maximum value of 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListDatastoresResponse} Success
 		 */
 		ListDatastores(datastoreStatus: DatastoreStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatastoresResponse> {
@@ -1462,6 +1464,7 @@ export namespace MyNS {
 		 * Get getDICOMImportJob/datastore/{datastoreId}/job/{jobId}
 		 * @param {string} datastoreId The data store identifier.
 		 * @param {string} jobId The import job identifier.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetDICOMImportJobResponse} Success
 		 */
 		GetDICOMImportJob(datastoreId: string, jobId: string): Observable<GetDICOMImportJobResponse> {
@@ -1509,7 +1512,9 @@ export namespace MyNS {
 		 * @param {string} datastoreId The data store identifier.
 		 * @param {JobStatus} jobStatus The filters for listing import jobs based on status.
 		 * @param {string} nextToken The pagination token used to request the list of import jobs on the next page.
+		 *     Min length: 1    Max length: 8192
 		 * @param {number} maxResults The max results count. The upper bound is determined by load testing.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListDICOMImportJobsResponse} Success
 		 */
 		ListDICOMImportJobs(datastoreId: string, jobStatus: JobStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDICOMImportJobsResponse> {
@@ -1522,7 +1527,9 @@ export namespace MyNS {
 		 * @param {string} datastoreId The data store identifier.
 		 * @param {string} imageSetId The image set identifier.
 		 * @param {string} nextToken The pagination token used to request the list of image set versions on the next page.
+		 *     Min length: 1    Max length: 8192
 		 * @param {number} maxResults The max results count.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {ListImageSetVersionsResponse} Success
 		 */
 		ListImageSetVersions(datastoreId: string, imageSetId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListImageSetVersionsResponse> {
@@ -1554,7 +1561,9 @@ export namespace MyNS {
 		 * Post datastore/{datastoreId}/searchImageSets
 		 * @param {string} datastoreId The identifier of the data store where the image sets reside.
 		 * @param {number} maxResults The maximum number of results that can be returned in a search.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.
+		 *     Min length: 1    Max length: 8192
 		 * @return {SearchImageSetsResponse} Success
 		 */
 		SearchImageSets(datastoreId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, requestBody: SearchImageSetsPostBody): Observable<SearchImageSetsResponse> {
@@ -1576,6 +1585,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the medical imaging resource that tags are being removed from.
 		 * @param {Array<string>} tagKeys The keys for the tags to be removed from the medical imaging resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1627,16 +1637,16 @@ export namespace MyNS {
 
 		/**
 		 * The data store name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		datastoreName?: string | null;
 
 		/**
 		 * A unique identifier for API idempotency.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1645,8 +1655,8 @@ export namespace MyNS {
 
 		/**
 		 * ARN referencing a KMS key or KMS key alias.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		kmsKeyArn?: string | null;
 	}
@@ -1654,16 +1664,16 @@ export namespace MyNS {
 
 		/**
 		 * The data store name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for API idempotency.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1672,8 +1682,8 @@ export namespace MyNS {
 
 		/**
 		 * ARN referencing a KMS key or KMS key alias.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
 	}
@@ -1767,40 +1777,40 @@ export namespace MyNS {
 
 		/**
 		 * The import job name.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		jobName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that grants permission to access medical imaging resources.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		dataAccessRoleArn: string;
 
 		/**
 		 * A unique identifier for API idempotency.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
 		/**
 		 * The input prefix path for the S3 bucket that contains the DICOM files to be imported.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputS3Uri: string;
 
 		/**
 		 * The output prefix of the S3 bucket to upload the results of the DICOM import job.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		outputS3Uri: string;
 	}
@@ -1808,40 +1818,40 @@ export namespace MyNS {
 
 		/**
 		 * The import job name.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		jobName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that grants permission to access medical imaging resources.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		dataAccessRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for API idempotency.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The input prefix path for the S3 bucket that contains the DICOM files to be imported.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputS3Uri: FormControl<string | null | undefined>,
 
 		/**
 		 * The output prefix of the S3 bucket to upload the results of the DICOM import job.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		outputS3Uri: FormControl<string | null | undefined>,
 	}

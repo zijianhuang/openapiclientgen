@@ -5009,6 +5009,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource that you want to untag.
 		 * @param {Array<string>} tagKeys The tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -5054,8 +5055,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -5070,8 +5071,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5099,15 +5100,15 @@ export namespace MyNS {
 
 		/**
 		 * Describes the contents of the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
 		 * The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		changeDescription?: string | null;
 
@@ -5126,8 +5127,8 @@ export namespace MyNS {
 
 		/**
 		 * Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.
-		 * Max length: 16000
 		 * Min length: 1
+		 * Max length: 16000
 		 */
 		data?: string | null;
 
@@ -5136,8 +5137,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the KMS key that is used to encrypt this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId?: string | null;
 
@@ -5147,8 +5148,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the component.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -5168,15 +5169,15 @@ export namespace MyNS {
 
 		/**
 		 * Describes the contents of the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		changeDescription: FormControl<string | null | undefined>,
 
@@ -5188,8 +5189,8 @@ export namespace MyNS {
 
 		/**
 		 * Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.
-		 * Max length: 16000
 		 * Min length: 1
+		 * Max length: 16000
 		 */
 		data: FormControl<string | null | undefined>,
 
@@ -5198,8 +5199,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the KMS key that is used to encrypt this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId: FormControl<string | null | undefined>,
 
@@ -5209,8 +5210,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the component.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5246,8 +5247,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the container recipe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -5269,8 +5270,8 @@ export namespace MyNS {
 
 		/**
 		 * The Dockerfile template used to build your image as an inline data blob.
-		 * Max length: 16000
 		 * Min length: 1
+		 * Max length: 16000
 		 */
 		dockerfileTemplateData?: string | null;
 
@@ -5282,16 +5283,16 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the operating system version for the base image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		imageOsVersionOverride?: string | null;
 
 		/**
 		 * The base image for the container recipe.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		parentImage: string;
 
@@ -5300,8 +5301,8 @@ export namespace MyNS {
 
 		/**
 		 * The working directory for use during build and test workflows.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		workingDirectory?: string | null;
 
@@ -5313,16 +5314,16 @@ export namespace MyNS {
 
 		/**
 		 * Identifies which KMS key is used to encrypt the container image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId?: string | null;
 
 		/**
 		 * The client token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -5342,8 +5343,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the container recipe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -5355,8 +5356,8 @@ export namespace MyNS {
 
 		/**
 		 * The Dockerfile template used to build your image as an inline data blob.
-		 * Max length: 16000
 		 * Min length: 1
+		 * Max length: 16000
 		 */
 		dockerfileTemplateData: FormControl<string | null | undefined>,
 
@@ -5368,16 +5369,16 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the operating system version for the base image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		imageOsVersionOverride: FormControl<string | null | undefined>,
 
 		/**
 		 * The base image for the container recipe.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		parentImage: FormControl<string | null | undefined>,
 
@@ -5386,23 +5387,23 @@ export namespace MyNS {
 
 		/**
 		 * The working directory for use during build and test workflows.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		workingDirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifies which KMS key is used to encrypt the container image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5465,8 +5466,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the distribution configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -5482,8 +5483,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the distribution configuration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -5497,8 +5498,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the distribution configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -5508,8 +5509,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the distribution configuration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5552,8 +5553,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 
@@ -5586,8 +5587,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5644,8 +5645,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image pipeline.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -5682,8 +5683,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 
@@ -5700,8 +5701,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image pipeline.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -5732,8 +5733,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5812,8 +5813,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image recipe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -5833,8 +5834,8 @@ export namespace MyNS {
 		/**
 		 * The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		parentImage: string;
 
@@ -5846,8 +5847,8 @@ export namespace MyNS {
 
 		/**
 		 * The working directory used during build and test workflows.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		workingDirectory?: string | null;
 
@@ -5857,8 +5858,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -5872,8 +5873,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image recipe.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -5886,8 +5887,8 @@ export namespace MyNS {
 		/**
 		 * The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		parentImage: FormControl<string | null | undefined>,
 
@@ -5896,16 +5897,16 @@ export namespace MyNS {
 
 		/**
 		 * The working directory used during build and test workflows.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		workingDirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -5946,8 +5947,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the infrastructure configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -5957,8 +5958,8 @@ export namespace MyNS {
 		/**
 		 * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		instanceProfileName: string;
 
@@ -5967,8 +5968,8 @@ export namespace MyNS {
 
 		/**
 		 * The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		subnetId?: string | null;
 
@@ -5977,8 +5978,8 @@ export namespace MyNS {
 
 		/**
 		 * The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		keyPair?: string | null;
 
@@ -6000,8 +6001,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -6015,30 +6016,30 @@ export namespace MyNS {
 
 		/**
 		 * The description of the infrastructure configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		instanceProfileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		subnetId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		keyPair: FormControl<string | null | undefined>,
 
@@ -6057,8 +6058,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6121,15 +6122,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component. Describes the contents of the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
 		 * The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		changeDescription?: string | null;
 
@@ -6153,8 +6154,8 @@ export namespace MyNS {
 
 		/**
 		 * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		data?: string | null;
 
@@ -6163,8 +6164,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the KMS key that should be used to encrypt this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId?: string | null;
 
@@ -6174,8 +6175,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the component.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -6195,15 +6196,15 @@ export namespace MyNS {
 
 		/**
 		 * The description of the component. Describes the contents of the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		changeDescription: FormControl<string | null | undefined>,
 
@@ -6227,8 +6228,8 @@ export namespace MyNS {
 
 		/**
 		 * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		data: FormControl<string | null | undefined>,
 
@@ -6237,8 +6238,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the KMS key that should be used to encrypt this component.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		kmsKeyId: FormControl<string | null | undefined>,
 
@@ -6248,8 +6249,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the component.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6276,8 +6277,8 @@ export namespace MyNS {
 		/**
 		 * The name of the base image that is created by the import process.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		name: string;
 
@@ -6289,8 +6290,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the base image that is created by the import process.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -6309,8 +6310,8 @@ export namespace MyNS {
 		/**
 		 * The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		vmImportTaskId: string;
 
@@ -6320,8 +6321,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -6330,8 +6331,8 @@ export namespace MyNS {
 		/**
 		 * The name of the base image that is created by the import process.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -6343,8 +6344,8 @@ export namespace MyNS {
 
 		/**
 		 * The description for the base image that is created by the import process.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6363,8 +6364,8 @@ export namespace MyNS {
 		/**
 		 * The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		vmImportTaskId: FormControl<string | null | undefined>,
 
@@ -6374,8 +6375,8 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -6410,8 +6411,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6432,8 +6433,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6470,8 +6471,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6492,8 +6493,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6528,8 +6529,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -6547,8 +6548,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6579,8 +6580,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6595,8 +6596,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6632,8 +6633,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6654,8 +6655,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6685,8 +6686,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6707,8 +6708,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6745,8 +6746,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6767,8 +6768,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6799,8 +6800,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6815,8 +6816,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6849,8 +6850,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6868,8 +6869,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6889,8 +6890,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6898,8 +6899,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6942,8 +6943,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -6958,8 +6959,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6995,8 +6996,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 
@@ -7020,8 +7021,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -7057,8 +7058,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 	}
@@ -7073,8 +7074,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -7120,8 +7121,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 
@@ -7142,8 +7143,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -7173,8 +7174,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken?: string | null;
 
@@ -7195,8 +7196,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 65535
 		 * Min length: 1
+		 * Max length: 65535
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -7226,8 +7227,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: string;
 	}
@@ -7242,8 +7243,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -7266,8 +7267,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply to the container recipe.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: string;
 	}
@@ -7282,8 +7283,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply to the container recipe.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -7306,8 +7307,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: string;
 	}
@@ -7322,8 +7323,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -7346,8 +7347,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: string;
 	}
@@ -7362,8 +7363,8 @@ export namespace MyNS {
 		/**
 		 * The policy to apply.
 		 * Required
-		 * Max length: 30000
 		 * Min length: 1
+		 * Max length: 30000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -7386,8 +7387,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -7402,8 +7403,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7425,8 +7426,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the distribution configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -7439,8 +7440,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token of the distribution configuration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 	}
@@ -7454,16 +7455,16 @@ export namespace MyNS {
 
 		/**
 		 * The description of the distribution configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The idempotency token of the distribution configuration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7486,8 +7487,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image pipeline.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -7521,8 +7522,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 
@@ -7539,8 +7540,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the image pipeline.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -7568,8 +7569,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7647,8 +7648,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the infrastructure configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -7658,8 +7659,8 @@ export namespace MyNS {
 		/**
 		 * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		instanceProfileName: string;
 
@@ -7668,8 +7669,8 @@ export namespace MyNS {
 
 		/**
 		 * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		subnetId?: string | null;
 
@@ -7678,8 +7679,8 @@ export namespace MyNS {
 
 		/**
 		 * The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		keyPair?: string | null;
 
@@ -7692,8 +7693,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: string;
 
@@ -7713,30 +7714,30 @@ export namespace MyNS {
 
 		/**
 		 * The description of the infrastructure configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		instanceProfileName: FormControl<string | null | undefined>,
 
 		/**
 		 * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		subnetId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		keyPair: FormControl<string | null | undefined>,
 
@@ -7749,8 +7750,8 @@ export namespace MyNS {
 		/**
 		 * The idempotency token used to make this request idempotent.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		clientToken: FormControl<string | null | undefined>,
 

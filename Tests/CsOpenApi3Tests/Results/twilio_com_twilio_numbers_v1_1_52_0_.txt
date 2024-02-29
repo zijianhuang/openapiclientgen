@@ -480,7 +480,10 @@ namespace MyNS
 		/// Fetch an eligibility bulk check that you requested to host in Twilio.
 		/// FetchBulkEligibility v1/HostedNumber/Eligibility/Bulk/{RequestId}
 		/// </summary>
-		/// <param name="RequestId">The SID of the bulk eligibility check that you want to know about.</param>
+		/// <param name="RequestId">The SID of the bulk eligibility check that you want to know about.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Numbersv1bulk_eligibility> FetchBulkEligibilityAsync(string RequestId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -514,7 +517,10 @@ namespace MyNS
 		/// Fetch a port in request by SID
 		/// FetchPortingPortInFetch v1/Porting/PortIn/{PortInRequestSid}
 		/// </summary>
-		/// <param name="PortInRequestSid">The SID of the Port In request. This is a unique identifier of the port in request.</param>
+		/// <param name="PortInRequestSid">The SID of the Port In request. This is a unique identifier of the port in request.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Numbersv1porting_port_in_fetch> FetchPortingPortInFetchAsync(string PortInRequestSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -549,7 +555,10 @@ namespace MyNS
 		/// FetchPortingPortability v1/Porting/Portability/PhoneNumber/{PhoneNumber}
 		/// </summary>
 		/// <param name="PhoneNumber">The phone number which portability is to be checked. Phone numbers are in E.164 format (e.g. +16175551212).</param>
-		/// <param name="TargetAccountSid">The SID of the account where the phone number(s) will be ported.</param>
+		/// <param name="TargetAccountSid">The SID of the account where the phone number(s) will be ported.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Numbersv1porting_portability> FetchPortingPortabilityAsync(string PhoneNumber, string TargetAccountSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -583,7 +592,10 @@ namespace MyNS
 		/// Fetch a previous portability check. This should return the current status of the validation and the result for all the numbers provided, given that they have been validated (as this process is performed asynchronously).
 		/// FetchPortingBulkPortability v1/Porting/Portability/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies the Portability check.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies the Portability check.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Numbersv1porting_bulk_portability> FetchPortingBulkPortabilityAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

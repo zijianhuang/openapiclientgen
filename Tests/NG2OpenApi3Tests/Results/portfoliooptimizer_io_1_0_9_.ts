@@ -1370,6 +1370,7 @@ export namespace MyNS {
 		/**
 		 * The absorption ratio of the universe of assets
 		 * Required
+		 * Type: double
 		 */
 		assetsAbsorptionRatio: number;
 	}
@@ -1378,6 +1379,7 @@ export namespace MyNS {
 		/**
 		 * The absorption ratio of the universe of assets
 		 * Required
+		 * Type: double
 		 */
 		assetsAbsorptionRatio: FormControl<number | null | undefined>,
 	}
@@ -1439,6 +1441,7 @@ export namespace MyNS {
 		/**
 		 * the turbulence index of the universe of assets
 		 * Required
+		 * Type: double
 		 */
 		assetsTurbulenceIndex: number;
 	}
@@ -1447,6 +1450,7 @@ export namespace MyNS {
 		/**
 		 * the turbulence index of the universe of assets
 		 * Required
+		 * Type: double
 		 */
 		assetsTurbulenceIndex: FormControl<number | null | undefined>,
 	}
@@ -2206,6 +2210,7 @@ export namespace MyNS {
 		/**
 		 * The kurtosis of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosis: number;
 	}
@@ -2214,6 +2219,7 @@ export namespace MyNS {
 		/**
 		 * The kurtosis of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosis: FormControl<number | null | undefined>,
 	}
@@ -2831,6 +2837,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: number;
 	}
@@ -2839,6 +2846,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: FormControl<number | null | undefined>,
 	}
@@ -3056,18 +3064,21 @@ export namespace MyNS {
 		/**
 		 * The mean parameter of the Cornish-Fisher distribution, corresponding to the arithmetic average return of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturnParameter: number;
 
 		/**
 		 * The (excess) kurtosis parameter of the Cornish-Fisher distribution, corresponding approximately to the (excess) kurtosis of the asset returns
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosisParameter: number;
 
 		/**
 		 * The skewness parameter of the Cornish-Fisher distribution, corresponding approximately to the skewness of the asset returns
 		 * Required
+		 * Type: double
 		 */
 		assetSkewnessParameter: number;
 
@@ -3095,18 +3106,21 @@ export namespace MyNS {
 		/**
 		 * The mean parameter of the Cornish-Fisher distribution, corresponding to the arithmetic average return of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturnParameter: FormControl<number | null | undefined>,
 
 		/**
 		 * The (excess) kurtosis parameter of the Cornish-Fisher distribution, corresponding approximately to the (excess) kurtosis of the asset returns
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosisParameter: FormControl<number | null | undefined>,
 
 		/**
 		 * The skewness parameter of the Cornish-Fisher distribution, corresponding approximately to the skewness of the asset returns
 		 * Required
+		 * Type: double
 		 */
 		assetSkewnessParameter: FormControl<number | null | undefined>,
 
@@ -3194,18 +3208,21 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset, corresponding to the mean of the corrected Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: number;
 
 		/**
 		 * The kurtosis of the asset returns, corresponding to the kurtosis of the Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosis: number;
 
 		/**
 		 * The skewness of the asset returns, corresponding to the skewness of the Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetSkewness: number;
 
@@ -3233,18 +3250,21 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset, corresponding to the mean of the corrected Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: FormControl<number | null | undefined>,
 
 		/**
 		 * The kurtosis of the asset returns, corresponding to the kurtosis of the Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetKurtosis: FormControl<number | null | undefined>,
 
 		/**
 		 * The skewness of the asset returns, corresponding to the skewness of the Cornish-Fisher distribution
 		 * Required
+		 * Type: double
 		 */
 		assetSkewness: FormControl<number | null | undefined>,
 
@@ -3332,6 +3352,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset, corresponding to the mean of the Gaussian distribution
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: number;
 
@@ -3359,6 +3380,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the asset, corresponding to the mean of the Gaussian distribution
 		 * Required
+		 * Type: double
 		 */
 		assetAverageReturn: FormControl<number | null | undefined>,
 
@@ -3588,6 +3610,7 @@ export namespace MyNS {
 		/**
 		 * The skewness of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetSkewness: number;
 	}
@@ -3596,6 +3619,7 @@ export namespace MyNS {
 		/**
 		 * The skewness of the asset
 		 * Required
+		 * Type: double
 		 */
 		assetSkewness: FormControl<number | null | undefined>,
 	}
@@ -3833,6 +3857,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio Jensen's alpha, which correponds to the portfolio excess return adjusted for the systematic risk in the Capital Asset Pricing Model (CAPM)
 		 * Required
+		 * Type: double
 		 */
 		portfolioAlpha: number;
 	}
@@ -3841,6 +3866,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio Jensen's alpha, which correponds to the portfolio excess return adjusted for the systematic risk in the Capital Asset Pricing Model (CAPM)
 		 * Required
+		 * Type: double
 		 */
 		portfolioAlpha: FormControl<number | null | undefined>,
 	}
@@ -3872,6 +3898,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio beta, which correponds to the portfolio systematic risk in the Capital Asset Pricing Model (CAPM)
 		 * Required
+		 * Type: double
 		 */
 		portfolioBeta: number;
 	}
@@ -3880,6 +3907,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio beta, which correponds to the portfolio systematic risk in the Capital Asset Pricing Model (CAPM)
 		 * Required
+		 * Type: double
 		 */
 		portfolioBeta: FormControl<number | null | undefined>,
 	}
@@ -4452,6 +4480,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio alpha, which correponds to the portion of the portfolio returns that cannot be explained by the portfolio factor exposures
 		 * Required
+		 * Type: double
 		 */
 		portfolioAlpha: number;
 
@@ -4465,6 +4494,7 @@ export namespace MyNS {
 		/**
 		 * The portfolio R^2, which indicates how much of the variability in the portfolio returns can be explained by the portfolio factor exposures; generally, the higher the R^2 the better the portfolio factor exposures explain the portfolio returns
 		 * Required
+		 * Type: double
 		 */
 		portfolioRSquared: number;
 	}
@@ -4473,12 +4503,14 @@ export namespace MyNS {
 		/**
 		 * The portfolio alpha, which correponds to the portion of the portfolio returns that cannot be explained by the portfolio factor exposures
 		 * Required
+		 * Type: double
 		 */
 		portfolioAlpha: FormControl<number | null | undefined>,
 
 		/**
 		 * The portfolio R^2, which indicates how much of the variability in the portfolio returns can be explained by the portfolio factor exposures; generally, the higher the R^2 the better the portfolio factor exposures explain the portfolio returns
 		 * Required
+		 * Type: double
 		 */
 		portfolioRSquared: FormControl<number | null | undefined>,
 	}
@@ -4629,6 +4661,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: number;
 
@@ -4644,6 +4677,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 
@@ -4801,6 +4835,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: number;
 
@@ -4816,6 +4851,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 
@@ -4855,6 +4891,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: number;
 	}
@@ -4863,6 +4900,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 	}
@@ -4923,6 +4961,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioAverageReturn: number;
 	}
@@ -4931,6 +4970,7 @@ export namespace MyNS {
 		/**
 		 * The arithmetic average return of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioAverageReturn: FormControl<number | null | undefined>,
 	}
@@ -4962,6 +5002,7 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioSharpeRatio: number;
 	}
@@ -4970,6 +5011,7 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioSharpeRatio: FormControl<number | null | undefined>,
 	}
@@ -4991,6 +5033,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -4999,6 +5042,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5047,6 +5091,7 @@ export namespace MyNS {
 		/**
 		 * The bias-adjusted Sharpe ratio of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioBiasAdjustedSharpeRatio: number;
 	}
@@ -5055,6 +5100,7 @@ export namespace MyNS {
 		/**
 		 * The bias-adjusted Sharpe ratio of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioBiasAdjustedSharpeRatio: FormControl<number | null | undefined>,
 	}
@@ -5086,6 +5132,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -5104,6 +5151,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5174,6 +5222,7 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the benchmark, in the same sampling frequency as the sampling frequency of the portfolio values
 		 * Required
+		 * Type: double
 		 */
 		benchmarkSharpeRatio: number;
 
@@ -5186,6 +5235,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -5194,12 +5244,14 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the benchmark, in the same sampling frequency as the sampling frequency of the portfolio values
 		 * Required
+		 * Type: double
 		 */
 		benchmarkSharpeRatio: FormControl<number | null | undefined>,
 
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5249,6 +5301,7 @@ export namespace MyNS {
 		/**
 		 * The probabilistic Sharpe ratio of the portfolio, in percentage
 		 * Required
+		 * Type: double
 		 */
 		portfolioProbabilisticSharpeRatio: number;
 	}
@@ -5257,6 +5310,7 @@ export namespace MyNS {
 		/**
 		 * The probabilistic Sharpe ratio of the portfolio, in percentage
 		 * Required
+		 * Type: double
 		 */
 		portfolioProbabilisticSharpeRatio: FormControl<number | null | undefined>,
 	}
@@ -5272,6 +5326,7 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the benchmark, in the same sampling frequency as the sampling frequency of the portfolio values
 		 * Required
+		 * Type: double
 		 */
 		benchmarkSharpeRatio: number;
 
@@ -5291,6 +5346,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -5299,6 +5355,7 @@ export namespace MyNS {
 		/**
 		 * The Sharpe ratio of the benchmark, in the same sampling frequency as the sampling frequency of the portfolio values
 		 * Required
+		 * Type: double
 		 */
 		benchmarkSharpeRatio: FormControl<number | null | undefined>,
 
@@ -5312,6 +5369,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5362,6 +5420,7 @@ export namespace MyNS {
 		/**
 		 * The minimum track record length of the portfolio, in number of required arithmetic returns, possibly equal to null in case the minimum track record length does not exist
 		 * Required
+		 * Type: double
 		 */
 		portfolioSharpeRatioMinimumTrackRecordLength: number;
 	}
@@ -5370,6 +5429,7 @@ export namespace MyNS {
 		/**
 		 * The minimum track record length of the portfolio, in number of required arithmetic returns, possibly equal to null in case the minimum track record length does not exist
 		 * Required
+		 * Type: double
 		 */
 		portfolioSharpeRatioMinimumTrackRecordLength: FormControl<number | null | undefined>,
 	}
@@ -5472,6 +5532,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -5480,6 +5541,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5525,6 +5587,7 @@ export namespace MyNS {
 		/**
 		 * The Ulcer Index of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioUlcerIndex: number;
 	}
@@ -5533,6 +5596,7 @@ export namespace MyNS {
 		/**
 		 * The Ulcer Index of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioUlcerIndex: FormControl<number | null | undefined>,
 	}
@@ -5554,6 +5618,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -5562,6 +5627,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -5607,6 +5673,7 @@ export namespace MyNS {
 		/**
 		 * The Ulcer Performance Index of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioUlcerPerformanceIndex: number;
 	}
@@ -5615,6 +5682,7 @@ export namespace MyNS {
 		/**
 		 * The Ulcer Performance Index of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioUlcerPerformanceIndex: FormControl<number | null | undefined>,
 	}
@@ -5694,6 +5762,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: number;
 	}
@@ -5702,6 +5771,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -5781,6 +5851,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: number;
 	}
@@ -5789,6 +5860,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -5868,6 +5940,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: number;
 	}
@@ -5876,6 +5949,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -5955,6 +6029,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: number;
 	}
@@ -5963,6 +6038,7 @@ export namespace MyNS {
 		/**
 		 * The conditional value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioConditionalValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -6042,6 +6118,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: number;
 	}
@@ -6050,6 +6127,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -6129,6 +6207,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: number;
 	}
@@ -6137,6 +6216,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -6216,6 +6296,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: number;
 	}
@@ -6224,6 +6305,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -6303,6 +6385,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: number;
 	}
@@ -6311,6 +6394,7 @@ export namespace MyNS {
 		/**
 		 * The value at risk of the portfolio
 		 * Required
+		 * Type: double
 		 */
 		portfolioValueAtRisk: FormControl<number | null | undefined>,
 	}
@@ -6798,6 +6882,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -6813,6 +6898,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -7883,6 +7969,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -7898,6 +7985,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -8011,6 +8099,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -8026,6 +8115,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -8165,6 +8255,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 
@@ -8198,6 +8289,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 
@@ -8318,6 +8410,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: number;
 	}
@@ -8326,6 +8419,7 @@ export namespace MyNS {
 		/**
 		 * The risk free rate
 		 * Required
+		 * Type: double
 		 */
 		riskFreeRate: FormControl<number | null | undefined>,
 	}
@@ -8504,7 +8598,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure?: number | null;
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn?: number | null;
 
 		/**
@@ -8535,7 +8632,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure: FormControl<number | null | undefined>,
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 
 		/**
@@ -8666,7 +8766,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure?: number | null;
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn?: number | null;
 
 		/**
@@ -8709,7 +8812,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure: FormControl<number | null | undefined>,
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 
 		/**
@@ -8870,7 +8976,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure?: number | null;
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn?: number | null;
 
 		/**
@@ -8901,7 +9010,10 @@ export namespace MyNS {
 		 */
 		minimumPortfolioExposure: FormControl<number | null | undefined>,
 
-		/** The portfolio return; exclusive with portfolioVolatility and riskTolerance */
+		/**
+		 * The portfolio return; exclusive with portfolioVolatility and riskTolerance
+		 * Type: double
+		 */
 		portfolioReturn: FormControl<number | null | undefined>,
 
 		/**

@@ -882,7 +882,10 @@ export namespace MyNS {
 		/** Information about an endpoint. */
 		endpoint?: GoogleChecksReportV1alphaEndpoint;
 
-		/** The number of times this endpoint was contacted by your app. */
+		/**
+		 * The number of times this endpoint was contacted by your app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hitCount?: number | null;
 
 		/** Information about a data monitoring result. */
@@ -892,7 +895,10 @@ export namespace MyNS {
 	/** Information about an endpoint that was contacted by your app. */
 	export interface GoogleChecksReportV1alphaDataMonitoringEndpointResultFormProperties {
 
-		/** The number of times this endpoint was contacted by your app. */
+		/**
+		 * The number of times this endpoint was contacted by your app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hitCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleChecksReportV1alphaDataMonitoringEndpointResultFormGroup() {
@@ -1076,7 +1082,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1089,7 +1098,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1156,6 +1168,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1188,6 +1201,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/apps
 		 * @param {string} parent Required. The parent account. Example: `accounts/123`
 		 * @param {number} pageSize Optional. The maximum number of results to return. The server may further constrain the maximum number of results returned in a single page. If unspecified, the server will decide the number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token received from a previous `ListApps` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleChecksAccountV1alphaListAppsResponse} Successful response
 		 */
@@ -1202,6 +1216,7 @@ export namespace MyNS {
 		 * @param {string} checksFilter Optional. An [AIP-160](https://google.aip.dev/160) filter string to filter checks within reports. Only checks that match the filter string are included in the response. Example: `state = FAILED`
 		 * @param {string} filter Optional. An [AIP-160](https://google.aip.dev/160) filter string to filter reports. Example: `appBundle.releaseType = PRE_RELEASE`
 		 * @param {number} pageSize Optional. The maximum number of reports to return. If unspecified, at most 10 reports will be returned. The maximum value is 50; values above 50 will be coerced to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token received from a previous `ListReports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReports` must match the call that provided the page token.
 		 * @return {GoogleChecksReportV1alphaListReportsResponse} Successful response
 		 */

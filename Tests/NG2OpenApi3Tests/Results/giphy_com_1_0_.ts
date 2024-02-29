@@ -314,7 +314,10 @@ export namespace MyNS {
 		/** A unique ID paired with this response from the API. */
 		response_id?: string | null;
 
-		/** HTTP Response Code */
+		/**
+		 * HTTP Response Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 
@@ -329,7 +332,10 @@ export namespace MyNS {
 		/** A unique ID paired with this response from the API. */
 		response_id: FormControl<string | null | undefined>,
 
-		/** HTTP Response Code */
+		/**
+		 * HTTP Response Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -347,13 +353,22 @@ export namespace MyNS {
 	 */
 	export interface Pagination {
 
-		/** Total number of items returned. */
+		/**
+		 * Total number of items returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Position in pagination. */
+		/**
+		 * Position in pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
-		/** Total number of items available. */
+		/**
+		 * Total number of items available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -362,13 +377,22 @@ export namespace MyNS {
 	 */
 	export interface PaginationFormProperties {
 
-		/** Total number of items returned. */
+		/**
+		 * Total number of items returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Position in pagination. */
+		/**
+		 * Position in pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Total number of items available. */
+		/**
+		 * Total number of items available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -390,7 +414,6 @@ export namespace MyNS {
 		 * A multiget version of the get GIF by ID endpoint.
 		 * Get gifs
 		 * @param {string} ids Filters results by specified GIF IDs, separated by commas.
-		 * @return {GetGifsByIdReturn} 
 		 */
 		GetGifsById(ids: string | null | undefined): Observable<GetGifsByIdReturn> {
 			return this.http.get<GetGifsByIdReturn>(this.baseUri + 'gifs?ids=' + (ids == null ? '' : encodeURIComponent(ids)), {});
@@ -402,7 +425,6 @@ export namespace MyNS {
 		 * Get gifs/random
 		 * @param {string} tag Filters results by specified tag.
 		 * @param {string} rating Filters results by specified rating.
-		 * @return {RandomGifReturn} 
 		 */
 		RandomGif(tag: string | null | undefined, rating: string | null | undefined): Observable<RandomGifReturn> {
 			return this.http.get<RandomGifReturn>(this.baseUri + 'gifs/random?tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&rating=' + (rating == null ? '' : encodeURIComponent(rating)), {});
@@ -414,7 +436,9 @@ export namespace MyNS {
 		 * Get gifs/search
 		 * @param {string} q Search query term or prhase.
 		 * @param {number} limit The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset An optional results offset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} rating Filters results by specified rating.
 		 * @param {string} lang Specify default language for regional content; use a 2-letter ISO 639-1 language code.
 		 * @return {SearchGifsReturn} Search results
@@ -428,7 +452,6 @@ export namespace MyNS {
 		 * The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
 		 * Get gifs/translate
 		 * @param {string} s Search term.
-		 * @return {TranslateGifReturn} 
 		 */
 		TranslateGif(s: string): Observable<TranslateGifReturn> {
 			return this.http.get<TranslateGifReturn>(this.baseUri + 'gifs/translate?s=' + (s == null ? '' : encodeURIComponent(s)), {});
@@ -439,9 +462,10 @@ export namespace MyNS {
 		 * Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
 		 * Get gifs/trending
 		 * @param {number} limit The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset An optional results offset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} rating Filters results by specified rating.
-		 * @return {TrendingGifsReturn} 
 		 */
 		TrendingGifs(limit: number | null | undefined, offset: number | null | undefined, rating: string | null | undefined): Observable<TrendingGifsReturn> {
 			return this.http.get<TrendingGifsReturn>(this.baseUri + 'gifs/trending?limit=' + limit + '&offset=' + offset + '&rating=' + (rating == null ? '' : encodeURIComponent(rating)), {});
@@ -452,7 +476,7 @@ export namespace MyNS {
 		 * Returns a GIF given that GIF's unique ID
 		 * Get gifs/{gifId}
 		 * @param {number} gifId Filters results by specified GIF ID.
-		 * @return {GetGifByIdReturn} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetGifById(gifId: number): Observable<GetGifByIdReturn> {
 			return this.http.get<GetGifByIdReturn>(this.baseUri + 'gifs/' + gifId, {});
@@ -464,7 +488,6 @@ export namespace MyNS {
 		 * Get stickers/random
 		 * @param {string} tag Filters results by specified tag.
 		 * @param {string} rating Filters results by specified rating.
-		 * @return {RandomStickerReturn} 
 		 */
 		RandomSticker(tag: string | null | undefined, rating: string | null | undefined): Observable<RandomStickerReturn> {
 			return this.http.get<RandomStickerReturn>(this.baseUri + 'stickers/random?tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&rating=' + (rating == null ? '' : encodeURIComponent(rating)), {});
@@ -476,7 +499,9 @@ export namespace MyNS {
 		 * Get stickers/search
 		 * @param {string} q Search query term or prhase.
 		 * @param {number} limit The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset An optional results offset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} rating Filters results by specified rating.
 		 * @param {string} lang Specify default language for regional content; use a 2-letter ISO 639-1 language code.
 		 * @return {SearchStickersReturn} Search results
@@ -490,7 +515,6 @@ export namespace MyNS {
 		 * The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
 		 * Get stickers/translate
 		 * @param {string} s Search term.
-		 * @return {TranslateStickerReturn} 
 		 */
 		TranslateSticker(s: string): Observable<TranslateStickerReturn> {
 			return this.http.get<TranslateStickerReturn>(this.baseUri + 'stickers/translate?s=' + (s == null ? '' : encodeURIComponent(s)), {});
@@ -501,9 +525,10 @@ export namespace MyNS {
 		 * Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
 		 * Get stickers/trending
 		 * @param {number} limit The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset An optional results offset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} rating Filters results by specified rating.
-		 * @return {TrendingStickersReturn} 
 		 */
 		TrendingStickers(limit: number | null | undefined, offset: number | null | undefined, rating: string | null | undefined): Observable<TrendingStickersReturn> {
 			return this.http.get<TrendingStickersReturn>(this.baseUri + 'stickers/trending?limit=' + limit + '&offset=' + offset + '&rating=' + (rating == null ? '' : encodeURIComponent(rating)), {});

@@ -223,7 +223,10 @@ export namespace MyNS {
 
 	export interface CreditResponse_etat {
 
-		/** Montant du crédit restant */
+		/**
+		 * Montant du crédit restant
+		 * Type: double
+		 */
 		credit?: number | null;
 
 		/** Equivalence du crédit en nombre de SMS vers la France Métropolitaine. */
@@ -231,7 +234,10 @@ export namespace MyNS {
 	}
 	export interface CreditResponse_etatFormProperties {
 
-		/** Montant du crédit restant */
+		/**
+		 * Montant du crédit restant
+		 * Type: double
+		 */
 		credit: FormControl<number | null | undefined>,
 
 		/** Equivalence du crédit en nombre de SMS vers la France Métropolitaine. */
@@ -798,7 +804,10 @@ export namespace MyNS {
 
 	export interface SMSReponse_etat_etat {
 
-		/** Code retour. Voir "tableau des code retour" dans l'annexe de la documentation */
+		/**
+		 * Code retour. Voir "tableau des code retour" dans l'annexe de la documentation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Libellé associé au code de retour */
@@ -812,7 +821,10 @@ export namespace MyNS {
 	}
 	export interface SMSReponse_etat_etatFormProperties {
 
-		/** Code retour. Voir "tableau des code retour" dans l'annexe de la documentation */
+		/**
+		 * Code retour. Voir "tableau des code retour" dans l'annexe de la documentation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Libellé associé au code de retour */
@@ -963,11 +975,15 @@ export namespace MyNS {
 	}
 
 	export interface ShortlinkResponseEtatEtat {
+
+		/** Type: double */
 		code?: number | null;
 		message?: string | null;
 		shortlink?: string | null;
 	}
 	export interface ShortlinkResponseEtatEtatFormProperties {
+
+		/** Type: double */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		shortlink: FormControl<string | null | undefined>,
@@ -1185,6 +1201,8 @@ export namespace MyNS {
 	}
 
 	export interface SubaccountAddResponseEtatEtat {
+
+		/** Type: double */
 		code?: number | null;
 		message?: string | null;
 		subAccountId?: string | null;
@@ -1192,6 +1210,8 @@ export namespace MyNS {
 		subAccountLogin?: string | null;
 	}
 	export interface SubaccountAddResponseEtatEtatFormProperties {
+
+		/** Type: double */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		subAccountId: FormControl<string | null | undefined>,

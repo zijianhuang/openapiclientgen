@@ -3521,7 +3521,10 @@ namespace MyNS
 		/// ListPhoneNumberOrders phone-number-orders
 		/// </summary>
 		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3557,7 +3560,10 @@ namespace MyNS
 		/// Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers.
 		/// CreateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task CreateProxySessionAsync(string voiceConnectorId, CreateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions";
@@ -3591,10 +3597,18 @@ namespace MyNS
 		/// Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector.
 		/// ListProxySessions voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="status">The proxy session status.</param>
-		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="next_token">The token used to retrieve the next page of results.
+		/// Max length: 65535
+		// </param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3663,8 +3677,13 @@ namespace MyNS
 		/// Lists the SIP media applications under the administrator's AWS account.
 		/// ListSipMediaApplications sip-media-applications
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
-		/// <param name="next_token">The token used to return the next page of results.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">The token used to return the next page of results.
+		/// Max length: 65535
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3768,8 +3787,13 @@ namespace MyNS
 		/// ListSipRules sip-rules
 		/// </summary>
 		/// <param name="sip_media_application">The SIP media application ID.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.</param>
-		/// <param name="next_token">The token used to return the next page of results.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call. Defaults to 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="next_token">The token used to return the next page of results.
+		/// Max length: 65535
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3839,7 +3863,10 @@ namespace MyNS
 		/// ListVoiceConnectors voice-connectors
 		/// </summary>
 		/// <param name="next_token">The token used to return the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3909,7 +3936,10 @@ namespace MyNS
 		/// ListVoiceConnectorGroups voice-connector-groups
 		/// </summary>
 		/// <param name="next_token">The token used to return the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call. </param>
+		/// <param name="max_results">The maximum number of results to return in a single call. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4012,7 +4042,10 @@ namespace MyNS
 		/// ListVoiceProfileDomains voice-profile-domains
 		/// </summary>
 		/// <param name="next_token">The token used to return the next page of results.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4150,8 +4183,14 @@ namespace MyNS
 		/// Deletes the specified proxy session from the specified Amazon Chime SDK Voice Connector.
 		/// DeleteProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions/"+ (proxySessionId==null? "" : System.Uri.EscapeDataString(proxySessionId));
@@ -4178,8 +4217,14 @@ namespace MyNS
 		/// Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector.
 		/// GetProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProxySessionResponse> GetProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4213,8 +4258,14 @@ namespace MyNS
 		/// Updates the specified proxy session details, such as voice or SMS capabilities.
 		/// UpdateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="proxySessionId">The proxy session ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="proxySessionId">The proxy session ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task UpdateProxySessionAsync(string voiceConnectorId, string proxySessionId, UpdateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/proxy-sessions/"+ (proxySessionId==null? "" : System.Uri.EscapeDataString(proxySessionId));
@@ -4846,7 +4897,10 @@ namespace MyNS
 		/// Deletes the proxy configuration from the specified Amazon Chime SDK Voice Connector.
 		/// DeleteVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (voiceConnectorId==null? "" : System.Uri.EscapeDataString(voiceConnectorId))+"/programmable-numbers/proxy";
@@ -4873,7 +4927,10 @@ namespace MyNS
 		/// Retrieves the proxy configuration details for the specified Amazon Chime SDK Voice Connector.
 		/// GetVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4907,7 +4964,10 @@ namespace MyNS
 		/// Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector.
 		/// PutVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
-		/// <param name="voiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="voiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(string voiceConnectorId, PutVoiceConnectorProxyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5186,7 +5246,10 @@ namespace MyNS
 		/// Deletes a voice profile, including its voice print and enrollment data. WARNING: This action is not reversible.
 		/// DeleteVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
-		/// <param name="VoiceProfileId">The voice profile ID.</param>
+		/// <param name="VoiceProfileId">The voice profile ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task DeleteVoiceProfileAsync(string VoiceProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-profiles/"+ (VoiceProfileId==null? "" : System.Uri.EscapeDataString(VoiceProfileId));
@@ -5213,7 +5276,10 @@ namespace MyNS
 		/// Retrieves the details of the specified voice profile.
 		/// GetVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
-		/// <param name="VoiceProfileId">The voice profile ID.</param>
+		/// <param name="VoiceProfileId">The voice profile ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceProfileResponse> GetVoiceProfileAsync(string VoiceProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5247,7 +5313,10 @@ namespace MyNS
 		/// <p>Updates the specified voice profile’s voice print and refreshes its expiration timestamp.</p> <important> <p>As a condition of using this feature, you acknowledge that the collection, use, storage, and retention of your caller’s biometric identifiers and biometric information (“biometric data”) in the form of a digital voiceprint requires the caller’s informed consent via a written release. Such consent is required under various state laws, including biometrics laws in Illinois, Texas, Washington and other state privacy laws.</p> <p>You must provide a written release to each caller through a process that clearly reflects each caller’s informed consent before using Amazon Chime SDK Voice Insights service, as required under the terms of your agreement with AWS governing your use of the service.</p> </important>
 		/// UpdateVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
-		/// <param name="VoiceProfileId">The profile ID.</param>
+		/// <param name="VoiceProfileId">The profile ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVoiceProfileResponse> UpdateVoiceProfileAsync(string VoiceProfileId, UpdateVoiceProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5288,7 +5357,10 @@ namespace MyNS
 		/// Deletes all voice profiles in the domain. WARNING: This action is not reversible.
 		/// DeleteVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
-		/// <param name="VoiceProfileDomainId">The voice profile domain ID.</param>
+		/// <param name="VoiceProfileDomainId">The voice profile domain ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task DeleteVoiceProfileDomainAsync(string VoiceProfileDomainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-profile-domains/"+ (VoiceProfileDomainId==null? "" : System.Uri.EscapeDataString(VoiceProfileDomainId));
@@ -5315,7 +5387,10 @@ namespace MyNS
 		/// Retrieves the details of the specified voice profile domain.
 		/// GetVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
-		/// <param name="VoiceProfileDomainId">The voice profile domain ID.</param>
+		/// <param name="VoiceProfileDomainId">The voice profile domain ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceProfileDomainResponse> GetVoiceProfileDomainAsync(string VoiceProfileDomainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5349,7 +5424,10 @@ namespace MyNS
 		/// Updates the settings for the specified voice profile domain.
 		/// UpdateVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
-		/// <param name="VoiceProfileDomainId">The domain ID.</param>
+		/// <param name="VoiceProfileDomainId">The domain ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVoiceProfileDomainResponse> UpdateVoiceProfileDomainAsync(string VoiceProfileDomainId, UpdateVoiceProfileDomainPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5788,8 +5866,14 @@ namespace MyNS
 		/// Retrieves the details of the specified speaker search task.
 		/// GetSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="SpeakerSearchTaskId">The ID of the speaker search task.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="SpeakerSearchTaskId">The ID of the speaker search task.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSpeakerSearchTaskResponse> GetSpeakerSearchTaskAsync(string VoiceConnectorId, string SpeakerSearchTaskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5932,8 +6016,14 @@ namespace MyNS
 		/// Retrieves the details of a voice tone analysis task.
 		/// GetVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#isCaller
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone anlysis task.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone anlysis task.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="isCaller">Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceToneAnalysisTaskResponse> GetVoiceToneAnalysisTaskAsync(string VoiceConnectorId, string VoiceToneAnalysisTaskId, bool isCaller, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6005,7 +6095,10 @@ namespace MyNS
 		/// <param name="product_type">The phone number product types.</param>
 		/// <param name="filter_name">The filter to limit the number of results.</param>
 		/// <param name="filter_value">The filter value.</param>
-		/// <param name="max_results">The maximum number of results to return in a single call.</param>
+		/// <param name="max_results">The maximum number of results to return in a single call.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="next_token">The token used to return the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6076,7 +6169,10 @@ namespace MyNS
 		/// Returns a list of the tags in a given resource.
 		/// ListTagsForResource tags#arn
 		/// </summary>
-		/// <param name="arn">The resource ARN.</param>
+		/// <param name="arn">The resource ARN.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6144,9 +6240,15 @@ namespace MyNS
 		/// Lists the voice profiles in a voice profile domain.
 		/// ListVoiceProfiles voice-profiles#voice-profile-domain-id
 		/// </summary>
-		/// <param name="voice_profile_domain_id">The ID of the voice profile domain.</param>
+		/// <param name="voice_profile_domain_id">The ID of the voice profile domain.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="next_token">The token used to retrieve the next page of results.</param>
-		/// <param name="max_results">The maximum number of results in the request.</param>
+		/// <param name="max_results">The maximum number of results in the request.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6249,9 +6351,15 @@ namespace MyNS
 		/// <param name="city">Confines a search to just the phone numbers associated with the specified city.</param>
 		/// <param name="country">Confines a search to just the phone numbers associated with the specified country.</param>
 		/// <param name="state">Confines a search to just the phone numbers associated with the specified state.</param>
-		/// <param name="toll_free_prefix">Confines a search to just the phone numbers associated with the specified toll-free prefix.</param>
+		/// <param name="toll_free_prefix">Confines a search to just the phone numbers associated with the specified toll-free prefix.
+		/// Max length: 3
+		/// Min length: 3
+		// </param>
 		/// <param name="phone_number_type">Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</param>
-		/// <param name="max_results">The maximum number of results to return.</param>
+		/// <param name="max_results">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="next_token">The token used to return the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6288,7 +6396,10 @@ namespace MyNS
 		/// <p>Starts a speaker search task.</p> <important> <p>Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p> </important>
 		/// StartSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task StartSpeakerSearchTaskAsync(string VoiceConnectorId, StartSpeakerSearchTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (VoiceConnectorId==null? "" : System.Uri.EscapeDataString(VoiceConnectorId))+"/speaker-search-tasks";
@@ -6322,7 +6433,10 @@ namespace MyNS
 		/// <p>Starts a voice tone analysis task. For more information about voice tone analysis, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> <important> <p>Before starting any voice tone analysis tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p> </important>
 		/// StartVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task StartVoiceToneAnalysisTaskAsync(string VoiceConnectorId, StartVoiceToneAnalysisTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (VoiceConnectorId==null? "" : System.Uri.EscapeDataString(VoiceConnectorId))+"/voice-tone-analysis-tasks";
@@ -6356,8 +6470,14 @@ namespace MyNS
 		/// Stops a speaker search task.
 		/// StopSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}#operation=stop
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="SpeakerSearchTaskId">The speaker search task ID.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="SpeakerSearchTaskId">The speaker search task ID.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task StopSpeakerSearchTaskAsync(string VoiceConnectorId, string SpeakerSearchTaskId, StopSpeakerSearchTaskOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (VoiceConnectorId==null? "" : System.Uri.EscapeDataString(VoiceConnectorId))+"/speaker-search-tasks/"+ (SpeakerSearchTaskId==null? "" : System.Uri.EscapeDataString(SpeakerSearchTaskId))+"#operation=stop&operation=" + operation;
@@ -6379,8 +6499,14 @@ namespace MyNS
 		/// Stops a voice tone analysis task.
 		/// StopVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#operation=stop
 		/// </summary>
-		/// <param name="VoiceConnectorId">The Voice Connector ID.</param>
-		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone analysis task.</param>
+		/// <param name="VoiceConnectorId">The Voice Connector ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone analysis task.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task StopVoiceToneAnalysisTaskAsync(string VoiceConnectorId, string VoiceToneAnalysisTaskId, StopSpeakerSearchTaskOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "voice-connectors/"+ (VoiceConnectorId==null? "" : System.Uri.EscapeDataString(VoiceConnectorId))+"/voice-tone-analysis-tasks/"+ (VoiceToneAnalysisTaskId==null? "" : System.Uri.EscapeDataString(VoiceToneAnalysisTaskId))+"#operation=stop&operation=" + operation;

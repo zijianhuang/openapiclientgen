@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -26,8 +26,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies the Inbound Processing Region assignments for this phone number.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -41,8 +41,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -60,8 +60,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies the Inbound Processing Region assignments for this phone number.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -88,8 +88,8 @@ export namespace MyNS {
 	export interface Routesv2sip_domain {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		date_created?: Date | null;
@@ -97,8 +97,8 @@ export namespace MyNS {
 		friendly_name?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		sip_domain?: string | null;
@@ -108,8 +108,8 @@ export namespace MyNS {
 	export interface Routesv2sip_domainFormProperties {
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
@@ -117,8 +117,8 @@ export namespace MyNS {
 		friendly_name: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		sip_domain: FormControl<string | null | undefined>,
@@ -143,8 +143,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -159,8 +159,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies the Inbound Processing Region assignments for this SIP Trunk.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -177,8 +177,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -193,8 +193,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies the Inbound Processing Region assignments for this SIP Trunk.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 

@@ -8,13 +8,22 @@ export namespace MyNS {
 		/** Required */
 		endpoint: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: number;
 
 		/** Required */
@@ -25,13 +34,22 @@ export namespace MyNS {
 		/** Required */
 		endpoint: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateAdditemsubscription_groupIdRequestFormGroup() {
@@ -125,7 +143,10 @@ export namespace MyNS {
 
 	export interface Frequency {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: number;
 
 		/** Required */
@@ -133,7 +154,10 @@ export namespace MyNS {
 	}
 	export interface FrequencyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -388,13 +412,22 @@ export namespace MyNS {
 		/** Required */
 		endpoint: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: number;
 
 		/** Required */
@@ -405,13 +438,22 @@ export namespace MyNS {
 		/** Required */
 		endpoint: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
@@ -432,7 +474,10 @@ export namespace MyNS {
 		/** Required */
 		createdAt: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleCount: number;
 
 		/** Required */
@@ -447,19 +492,31 @@ export namespace MyNS {
 		/** Required */
 		metadata: Array<Metadatum>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		originalItemIndex: number;
 
 		/** Required */
 		originalOrderId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: number;
 
 		/** Required */
@@ -476,7 +533,10 @@ export namespace MyNS {
 		/** Required */
 		createdAt: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleCount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -488,19 +548,31 @@ export namespace MyNS {
 		/** Required */
 		lastUpdate: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		originalItemIndex: FormControl<number | null | undefined>,
 
 		/** Required */
 		originalOrderId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceAtSubscriptionDate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -905,6 +977,7 @@ export namespace MyNS {
 		/**
 		 * Indicates the time future subscription orders will be generated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		executionHourInUtc: number;
 
@@ -987,6 +1060,7 @@ export namespace MyNS {
 		/**
 		 * Indicates the time future subscription orders will be generated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		executionHourInUtc: FormControl<number | null | undefined>,
 
@@ -1097,7 +1171,9 @@ export namespace MyNS {
 		 * Get report/subscriptionsByDate
 		 * @param {string} requesterEmail Email that the report will be sent to
 		 * @param {number} beginDate begin date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate end date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Requestreportbydate(requesterEmail: string, beginDate: number, endDate: number): Observable<HttpResponse<string>> {
@@ -1110,6 +1186,7 @@ export namespace MyNS {
 		 * Get report/subscriptionsByStatus
 		 * @param {string} requesterEmail Email that the report will be sent to
 		 * @param {number} status Binary OR of the following status: 1 - ACTIVE; 2 - PAUSED; 4 - CANCELED; 8 - EXPIRED
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		RequestreportbyStatus(requesterEmail: string, status: number): Observable<HttpResponse<string>> {
@@ -1122,7 +1199,9 @@ export namespace MyNS {
 		 * Get report/subscriptionsOrderByDate
 		 * @param {string} requesterEmail Email that the report will be sent to
 		 * @param {number} beginDate begin date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate end date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Requestreportbyorderdate(requesterEmail: string, beginDate: number, endDate: number): Observable<HttpResponse<string>> {
@@ -1135,7 +1214,9 @@ export namespace MyNS {
 		 * Get report/subscriptionsScheduled
 		 * @param {string} requesterEmail Email that the report will be sent to
 		 * @param {number} beginDate begin date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate end date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Requestreportbyschedule(requesterEmail: string, beginDate: number, endDate: number): Observable<HttpResponse<string>> {
@@ -1148,7 +1229,9 @@ export namespace MyNS {
 		 * Get report/subscriptionsUpdated
 		 * @param {string} requesterEmail Email that the report will be sent to
 		 * @param {number} beginDate begin date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate end date of report interval, use format yyyyMMdd
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Requestreportbyupdate(requesterEmail: string, beginDate: number, endDate: number): Observable<HttpResponse<string>> {

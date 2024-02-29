@@ -680,6 +680,7 @@ export namespace MyNS {
 		 * Lists all the available namespaces within the ResourceGroup.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {RelayNamespaceListResult} Namespaces by resource group returned successfully
@@ -692,7 +693,9 @@ export namespace MyNS {
 		 * Returns the description for the specified namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {RelayNamespace} Namespace description returned successfully.
@@ -705,7 +708,9 @@ export namespace MyNS {
 		 * Create Azure Relay namespace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RelayNamespace} requestBody Parameters supplied to create a namespace resource.
@@ -719,7 +724,9 @@ export namespace MyNS {
 		 * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Namespace delete request succeeded.
@@ -732,7 +739,9 @@ export namespace MyNS {
 		 * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RelayUpdateParameters} requestBody Parameters for updating a namespace resource.
@@ -746,7 +755,9 @@ export namespace MyNS {
 		 * Authorization rules for a namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRuleListResult} Namespace authorization rule returned successfully.
@@ -759,8 +770,11 @@ export namespace MyNS {
 		 * Authorization rule for a namespace by name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRule} Namespace Authorization rule returned successfully.
@@ -773,8 +787,11 @@ export namespace MyNS {
 		 * Creates or updates an authorization rule for a namespace.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AuthorizationRule} requestBody The authorization rule parameters.
@@ -788,8 +805,11 @@ export namespace MyNS {
 		 * Deletes a namespace authorization rule.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Request to delete namespace authorization rule succeeded.
@@ -802,8 +822,11 @@ export namespace MyNS {
 		 * Primary and secondary connection strings to the namespace.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/listKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AccessKeys} Successful.
@@ -816,8 +839,11 @@ export namespace MyNS {
 		 * Regenerates the primary or secondary connection strings to the namespace.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RegenerateAccessKeyParameters} requestBody Parameters supplied to regenerate authorization rule.
@@ -831,7 +857,9 @@ export namespace MyNS {
 		 * Lists the hybrid connection within the namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {HybridConnectionListResult} Request to retrieve hybrid connections by namespace succeeded.
@@ -844,8 +872,11 @@ export namespace MyNS {
 		 * Returns the description for the specified hybrid connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {HybridConnection} Successfully retrieved description for the hybrid connection.
@@ -858,8 +889,11 @@ export namespace MyNS {
 		 * Creates or updates a service hybrid connection. This operation is idempotent.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {HybridConnection} requestBody Parameters supplied to create a hybrid connection.
@@ -873,8 +907,11 @@ export namespace MyNS {
 		 * Deletes a hybrid connection.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Request to delete hybrid connection succeeded.
@@ -887,8 +924,11 @@ export namespace MyNS {
 		 * Authorization rules for a hybrid connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRuleListResult} Authorization rules successfully returned.
@@ -901,9 +941,13 @@ export namespace MyNS {
 		 * Hybrid connection authorization rule for a hybrid connection by name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRule} Hybrid connection authorization rule returned successfully.
@@ -916,9 +960,13 @@ export namespace MyNS {
 		 * Creates or updates an authorization rule for a hybrid connection.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AuthorizationRule} requestBody The authorization rule parameters.
@@ -932,9 +980,13 @@ export namespace MyNS {
 		 * Deletes a hybrid connection authorization rule.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Hybrid connection authorization rule deleted.
@@ -947,9 +999,13 @@ export namespace MyNS {
 		 * Primary and secondary connection strings to the hybrid connection.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/listKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AccessKeys} Request to retirve connection strings to the hybrid connection succeeded.
@@ -962,9 +1018,13 @@ export namespace MyNS {
 		 * Regenerates the primary or secondary connection strings to the hybrid connection.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} hybridConnectionName The hybrid connection name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RegenerateAccessKeyParameters} requestBody Parameters supplied to regenerate authorization rule.
@@ -978,7 +1038,9 @@ export namespace MyNS {
 		 * Lists the WCF relays within the namespace.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {WcfRelaysListResult} WCF relays returned successfully.
@@ -991,8 +1053,11 @@ export namespace MyNS {
 		 * Returns the description for the specified WCF relay.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {WcfRelay} Successfully retrieved WCF relay description.
@@ -1005,8 +1070,11 @@ export namespace MyNS {
 		 * Creates or updates a WCF relay. This operation is idempotent.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {WcfRelay} requestBody Parameters supplied to create a WCF relay.
@@ -1020,8 +1088,11 @@ export namespace MyNS {
 		 * Deletes a WCF relay.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} WCF relay deleted.
@@ -1034,8 +1105,11 @@ export namespace MyNS {
 		 * Authorization rules for a WCF relay.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRuleListResult} Authorization rules successfully returned.
@@ -1048,9 +1122,13 @@ export namespace MyNS {
 		 * Get authorizationRule for a WCF relay by name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AuthorizationRule} Request for WCF relay authorization rule succeeded.
@@ -1063,9 +1141,13 @@ export namespace MyNS {
 		 * Creates or updates an authorization rule for a WCF relay.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AuthorizationRule} requestBody The authorization rule parameters.
@@ -1079,9 +1161,13 @@ export namespace MyNS {
 		 * Deletes a WCF relay authorization rule.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} Request to delete WCF relay authorization rule succeeded.
@@ -1094,9 +1180,13 @@ export namespace MyNS {
 		 * Primary and secondary connection strings to the WCF relay.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/listKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AccessKeys} Successful.
@@ -1109,9 +1199,13 @@ export namespace MyNS {
 		 * Regenerates the primary or secondary connection strings to the WCF relay.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} namespaceName The namespace name
+		 *     Min length: 6    Max length: 50
 		 * @param {string} relayName The relay name.
+		 *     Min length: 1
 		 * @param {string} authorizationRuleName The authorization rule name.
+		 *     Min length: 1
 		 * @param {string} api_version Client API version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RegenerateAccessKeyParameters} requestBody Parameters supplied to regenerate authorization rule.

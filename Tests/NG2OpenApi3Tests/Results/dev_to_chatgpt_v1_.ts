@@ -111,7 +111,10 @@ export namespace MyNS {
 		/** Required */
 		edited_at: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -126,10 +129,16 @@ export namespace MyNS {
 		 */
 		path: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positive_reactions_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_reactions_count: number;
 
 		/** Required */
@@ -147,6 +156,7 @@ export namespace MyNS {
 		/**
 		 * Reading time, in minutes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reading_time_minutes: number;
 
@@ -217,7 +227,10 @@ export namespace MyNS {
 		/** Required */
 		edited_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -229,10 +242,16 @@ export namespace MyNS {
 		 */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positive_reactions_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_reactions_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -250,6 +269,7 @@ export namespace MyNS {
 		/**
 		 * Reading time, in minutes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reading_time_minutes: FormControl<number | null | undefined>,
 
@@ -318,7 +338,9 @@ export namespace MyNS {
 		 * Get api/articles/search
 		 * @param {string} q Accepts keywords to use as a search query.
 		 * @param {number} page Pagination Page
+		 *     Minimum: 0
 		 * @param {number} per_page Page size (the number of items to return per page).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} top Returns the most popular articles in the last N days. 'top' indicates the number of days since publication of the articles returned. This param can be used in conjuction with q or tag.
 		 * @return {void} OK
 		 */

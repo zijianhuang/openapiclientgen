@@ -6,7 +6,10 @@ export namespace MyNS {
 	export interface Account {
 		address?: Address;
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Name of the account */
@@ -17,7 +20,10 @@ export namespace MyNS {
 	}
 	export interface AccountFormProperties {
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the account */
@@ -108,30 +114,54 @@ export namespace MyNS {
 		_embedded?: AccountEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages?: number | null;
 	}
 	export interface AccountHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountHalResponseFormGroup() {
@@ -316,7 +346,10 @@ export namespace MyNS {
 	export interface Location {
 		address?: AddressWithTimeZone;
 
-		/** Unique identifier of the location */
+		/**
+		 * Unique identifier of the location
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Name of the location */
@@ -324,7 +357,10 @@ export namespace MyNS {
 	}
 	export interface LocationFormProperties {
 
-		/** Unique identifier of the location */
+		/**
+		 * Unique identifier of the location
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the location */
@@ -359,30 +395,54 @@ export namespace MyNS {
 		_embedded?: LocationEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages?: number | null;
 	}
 	export interface LocationHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationHalResponseFormGroup() {
@@ -415,15 +475,31 @@ export namespace MyNS {
 		/** Collection of location objects */
 		_embedded?: LocationsEmbeddedObject;
 		_links?: Links;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
+
+		/** Type: double */
 		total_items?: number | null;
+
+		/** Type: double */
 		total_pages?: number | null;
 	}
 	export interface LocationsHalResponseFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_items: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationsHalResponseFormGroup() {
@@ -445,6 +521,7 @@ export namespace MyNS {
 		 * Get account data by ID
 		 * Get api/accounts/{account_id}
 		 * @param {number} account_id The Vonage Business Cloud account ID
+		 *     Type: double
 		 * @return {AccountHalResponse} Success
 		 */
 		AccountCtrl_getAccountServicesByAccountID(account_id: number): Observable<AccountHalResponse> {
@@ -455,6 +532,7 @@ export namespace MyNS {
 		 * Get account locations data by account ID
 		 * Get api/accounts/{account_id}/locations
 		 * @param {number} account_id The Vonage Business Cloud account ID
+		 *     Type: double
 		 * @return {LocationsHalResponse} Success
 		 */
 		AccountCtrl_getLocationsByAccountID(account_id: number): Observable<LocationsHalResponse> {
@@ -465,7 +543,9 @@ export namespace MyNS {
 		 * Get location data by account ID and location ID
 		 * Get api/accounts/{account_id}/locations/{location_id}
 		 * @param {number} account_id The Vonage Business Cloud account ID
+		 *     Type: double
 		 * @param {number} location_id The Vonage Business Cloud location ID
+		 *     Type: double
 		 * @return {LocationHalResponse} Success
 		 */
 		AccountCtrl_getLocationByID(account_id: number, location_id: number): Observable<LocationHalResponse> {

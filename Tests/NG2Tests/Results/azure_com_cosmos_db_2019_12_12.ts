@@ -3825,6 +3825,7 @@ export namespace MyNS {
 		 * Lists all the Azure Cosmos DB database accounts available under the given resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @return {DatabaseAccountsListResult} The operation completed successfully.
@@ -3838,7 +3839,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {DatabaseAccountGetResults} The database account properties were retrieved successfully.
 		 */
@@ -3851,7 +3854,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {DatabaseAccountCreateUpdateParameters} requestBody The parameters to provide for the current database account.
 		 * @return {DatabaseAccountGetResults} The database account create or update operation will complete asynchronously.
@@ -3865,7 +3870,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
 		 */
@@ -3878,7 +3885,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {DatabaseAccountUpdateParameters} requestBody The parameters to provide for the current database account.
 		 * @return {DatabaseAccountGetResults} The database account update operation will complete asynchronously.
@@ -3892,7 +3901,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {CassandraKeyspaceListResult} The Cassandra keyspace properties were retrieved successfully.
 		 */
@@ -3905,7 +3916,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {CassandraKeyspaceGetResults} The Cassandra keyspace property was retrieved successfully.
@@ -3919,7 +3932,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {CassandraKeyspaceCreateUpdateParameters} requestBody The parameters to provide for the current Cassandra keyspace.
@@ -3934,7 +3949,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
@@ -3948,7 +3965,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {CassandraTableListResult} The Cassandra table properties were retrieved successfully.
@@ -3962,7 +3981,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -3977,7 +3998,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -3993,7 +4016,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4008,7 +4033,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4023,7 +4050,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4039,7 +4068,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {ThroughputSettingsGetResults} The RUs per second of the Cassandra Keyspace was retrieved successfully.
@@ -4053,7 +4084,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} keyspaceName Cosmos DB keyspace name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {ThroughputSettingsUpdateParameters} requestBody The RUs per second of the parameters to provide for the current Cassandra Keyspace.
@@ -4068,7 +4101,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/metricDefinitions
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4083,7 +4118,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4099,7 +4136,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitionKeyRangeId/{partitionKeyRangeId}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} partitionKeyRangeId Partition Key Range Id for which to get data.
@@ -4116,7 +4155,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitions/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4132,7 +4173,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitions/usages
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4148,7 +4191,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/usages
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4164,7 +4209,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/metricDefinitions
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {MetricDefinitionsListResult} The metric definitions for the database were retrieved successfully.
@@ -4178,7 +4225,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.
@@ -4193,7 +4242,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/usages
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).
@@ -4208,7 +4259,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/failoverPriorityChange
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {FailoverPolicies} requestBody The new failover policies for the database account.
 		 * @return {void} 
@@ -4222,7 +4275,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {GremlinDatabaseListResult} The Gremlin database properties were retrieved successfully.
 		 */
@@ -4235,7 +4290,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {GremlinDatabaseGetResults} The Gremlin database property was retrieved successfully.
@@ -4249,7 +4306,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {GremlinDatabaseCreateUpdateParameters} requestBody The parameters to provide for the current Gremlin database.
@@ -4264,7 +4323,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
@@ -4278,7 +4339,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {GremlinGraphListResult} The Gremlin graph properties were retrieved successfully.
@@ -4292,7 +4355,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} graphName Cosmos DB graph name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4307,7 +4372,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} graphName Cosmos DB graph name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4323,7 +4390,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} graphName Cosmos DB graph name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4338,7 +4407,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} graphName Cosmos DB graph name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4353,7 +4424,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} graphName Cosmos DB graph name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4369,7 +4442,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {ThroughputSettingsGetResults} The RUs per second of the Gremlin database was retrieved successfully.
@@ -4383,7 +4458,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {ThroughputSettingsUpdateParameters} requestBody The RUs per second of the parameters to provide for the current Gremlin database.
@@ -4398,7 +4475,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/listConnectionStrings
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {DatabaseAccountListConnectionStringsResult} The operation completed successfully.
 		 */
@@ -4411,7 +4490,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/listKeys
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {DatabaseAccountListKeysResult} The operation completed successfully.
 		 */
@@ -4424,7 +4505,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/metricDefinitions
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {MetricDefinitionsListResult} The metric definitions for the database account were retrieved successfully.
 		 */
@@ -4437,7 +4520,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.
 		 * @return {MetricListResult} The metrics for the database account were retrieved successfully.
@@ -4451,7 +4536,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {MongoDBDatabaseListResult} The MongoDB database properties were retrieved successfully.
 		 */
@@ -4464,7 +4551,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {MongoDBDatabaseGetResults} The MongoDB database property was retrieved successfully.
@@ -4478,7 +4567,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {MongoDBDatabaseCreateUpdateParameters} requestBody The parameters to provide for the current MongoDB database.
@@ -4493,7 +4584,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
@@ -4507,7 +4600,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {MongoDBCollectionListResult} The MongoDB collection properties were retrieved successfully.
@@ -4521,7 +4616,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} collectionName Cosmos DB collection name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4536,7 +4633,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} collectionName Cosmos DB collection name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4552,7 +4651,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} collectionName Cosmos DB collection name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4567,7 +4668,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} collectionName Cosmos DB collection name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4582,7 +4685,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} collectionName Cosmos DB collection name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4598,7 +4703,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {ThroughputSettingsGetResults} The RUs per second of the MongoDB database was retrieved successfully.
@@ -4612,7 +4719,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {ThroughputSettingsUpdateParameters} requestBody The RUs per second of the parameters to provide for the current MongoDB database.
@@ -4627,7 +4736,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/offlineRegion
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {RegionForOnlineOffline} requestBody Cosmos DB region to offline for the database account.
 		 * @return {void} The offline region operation is completed successfully.
@@ -4641,7 +4752,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/onlineRegion
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {RegionForOnlineOffline} requestBody Cosmos DB region to online for the database account.
 		 * @return {void} The online region operation is completed successfully.
@@ -4655,7 +4768,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/percentile/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.
 		 * @return {PercentileMetricListResult} The percentile metrics for the account were retrieved successfully.
@@ -4669,7 +4784,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/readonlykeys
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {DatabaseAccountListReadOnlyKeysResult} The operation completed successfully.
 		 */
@@ -4682,7 +4799,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/readonlykeys
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {DatabaseAccountListReadOnlyKeysResult} The operation completed successfully.
 		 */
@@ -4695,7 +4814,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/regenerateKey
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {DatabaseAccountRegenerateKeyParameters} requestBody The name of the key to regenerate.
 		 * @return {void} OK
@@ -4709,7 +4830,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} region Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
@@ -4726,7 +4849,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/partitionKeyRangeId/{partitionKeyRangeId}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} region Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
@@ -4744,7 +4869,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/partitions/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} region Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} databaseRid Cosmos DB database rid.
 		 * @param {string} collectionRid Cosmos DB collection rid.
@@ -4761,7 +4888,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} region Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.
@@ -4776,7 +4905,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sourceRegion/{sourceRegion}/targetRegion/{targetRegion}/percentile/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} sourceRegion Source region from which data is written. Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} targetRegion Target region to which data is written. Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4792,7 +4923,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {SqlDatabaseListResult} The SQL database properties were retrieved successfully.
 		 */
@@ -4805,7 +4938,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {SqlDatabaseGetResults} The SQL database property was retrieved successfully.
@@ -4819,7 +4954,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {SqlDatabaseCreateUpdateParameters} requestBody The parameters to provide for the current SQL database.
@@ -4834,7 +4971,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
@@ -4848,7 +4987,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {SqlContainerListResult} The SQL container properties were retrieved successfully.
@@ -4862,7 +5003,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4877,7 +5020,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4893,7 +5038,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4908,7 +5055,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4923,7 +5072,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} storedProcedureName Cosmos DB storedProcedure name.
@@ -4939,7 +5090,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} storedProcedureName Cosmos DB storedProcedure name.
@@ -4956,7 +5109,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} storedProcedureName Cosmos DB storedProcedure name.
@@ -4972,7 +5127,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -4987,7 +5144,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -5003,7 +5162,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -5018,7 +5179,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} triggerName Cosmos DB trigger name.
@@ -5034,7 +5197,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} triggerName Cosmos DB trigger name.
@@ -5051,7 +5216,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} triggerName Cosmos DB trigger name.
@@ -5067,7 +5234,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
@@ -5082,7 +5251,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} userDefinedFunctionName Cosmos DB userDefinedFunction name.
@@ -5098,7 +5269,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} userDefinedFunctionName Cosmos DB userDefinedFunction name.
@@ -5115,7 +5288,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} containerName Cosmos DB container name.
 		 * @param {string} userDefinedFunctionName Cosmos DB userDefinedFunction name.
@@ -5131,7 +5306,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {ThroughputSettingsGetResults} The RUs per second of the SQL database was retrieved successfully.
@@ -5145,7 +5322,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} databaseName Cosmos DB database name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {ThroughputSettingsUpdateParameters} requestBody The parameters to provide for the RUs per second of the current SQL database.
@@ -5160,7 +5339,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {TableListResult} The Table properties were retrieved successfully.
 		 */
@@ -5173,7 +5354,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {TableGetResults} The Table property was retrieved successfully.
@@ -5187,7 +5370,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {TableCreateUpdateParameters} requestBody The parameters to provide for the current Table.
@@ -5202,7 +5387,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {void} 
@@ -5216,7 +5403,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @return {ThroughputSettingsGetResults} The RUs per second of the Table was retrieved successfully.
@@ -5230,7 +5419,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} tableName Cosmos DB table name.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {ThroughputSettingsUpdateParameters} requestBody The parameters to provide for the RUs per second of the current Table.
@@ -5245,7 +5436,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/targetRegion/{targetRegion}/percentile/metrics
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} targetRegion Target region to which data is written. Cosmos DB region, with spaces between words and each word capitalized.
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.
@@ -5260,7 +5453,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/usages
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} filter An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).
 		 * @return {UsagesResult} The usages for the database account were retrieved successfully.

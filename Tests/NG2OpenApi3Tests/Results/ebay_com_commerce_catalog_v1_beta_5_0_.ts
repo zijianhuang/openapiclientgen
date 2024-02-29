@@ -58,7 +58,10 @@ export namespace MyNS {
 		/** The localized value of the category aspect identified by <b>refinement.aspectDistributions.localizedAspectName</b>. */
 		localizedAspectValue?: string | null;
 
-		/** The number of times the value of <b>localizedAspectValue</b> has been used for eBay product listings. By comparing this quantity to the <b>matchCount</b> for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the <b>search</b> call's <b>aspect_filter</b> parameter to refine your search. */
+		/**
+		 * The number of times the value of <b>localizedAspectValue</b> has been used for eBay product listings. By comparing this quantity to the <b>matchCount</b> for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the <b>search</b> call's <b>aspect_filter</b> parameter to refine your search.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchCount?: number | null;
 
 		/** A HATEOAS reference that further refines the search with this particular <b>localizedAspectValue</b>. */
@@ -71,7 +74,10 @@ export namespace MyNS {
 		/** The localized value of the category aspect identified by <b>refinement.aspectDistributions.localizedAspectName</b>. */
 		localizedAspectValue: FormControl<string | null | undefined>,
 
-		/** The number of times the value of <b>localizedAspectValue</b> has been used for eBay product listings. By comparing this quantity to the <b>matchCount</b> for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the <b>search</b> call's <b>aspect_filter</b> parameter to refine your search. */
+		/**
+		 * The number of times the value of <b>localizedAspectValue</b> has been used for eBay product listings. By comparing this quantity to the <b>matchCount</b> for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the <b>search</b> call's <b>aspect_filter</b> parameter to refine your search.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchCount: FormControl<number | null | undefined>,
 
 		/** A HATEOAS reference that further refines the search with this particular <b>localizedAspectValue</b>. */
@@ -96,7 +102,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -127,7 +136,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */
@@ -179,26 +191,38 @@ export namespace MyNS {
 	/** This type contains information about a product image stored in eBay Picture Services (EPS). */
 	export interface Image {
 
-		/** The height of the image in pixels. */
+		/**
+		 * The height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The eBay Picture Services (EPS) URL of the image. */
 		imageUrl?: string | null;
 
-		/** The width of the image in pixels. */
+		/**
+		 * The width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** This type contains information about a product image stored in eBay Picture Services (EPS). */
 	export interface ImageFormProperties {
 
-		/** The height of the image in pixels. */
+		/**
+		 * The height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The eBay Picture Services (EPS) URL of the image. */
 		imageUrl: FormControl<string | null | undefined>,
 
-		/** The width of the image in pixels. */
+		/**
+		 * The width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -307,13 +331,19 @@ export namespace MyNS {
 		/** This field is reserved for internal or future use. <!-- The URI of the <b>search</b> method request that produced this result set. --> */
 		href?: string | null;
 
-		/** The number of product summaries returned in the response. This is the <i>result set</i>, a subset of the full collection of products that match the search or filter criteria of this call. If the <b>limit</b> query parameter was included in the request, this field will have the same value. <br /><br /> <b>Default:</b> <code>50</code> */
+		/**
+		 * The number of product summaries returned in the response. This is the <i>result set</i>, a subset of the full collection of products that match the search or filter criteria of this call. If the <b>limit</b> query parameter was included in the request, this field will have the same value. <br /><br /> <b>Default:</b> <code>50</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This field is reserved for internal or future use. <!-- <i>Returned only if</i> there are more product records to retrieve from the current collection of matching products, this field contains the <b>search</b> call URI for the next result set. For example, the following URI returns records 41 thru 50 from the collection of matched products: <br /><br /> <code><i>path</i>/product_summary/search?limit=10&offset=40</code> <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first product in the list has an offset of <code>0</code>.</span> --> */
 		next?: string | null;
 
-		/** This field is reserved for internal or future use. <!-- The distance (number of records) from the first product in the collection to the first product in this result set. If the <b>offset</b> query parameter was included in the request, this field will have the same value. The <b>offset</b> value is used in conjunction with the <b>limit</b> value to control the pagination of the output. For example, if <b>offset</b> is set to <code>30</code> and <b>limit</b> is set to <code>10</code>, the call retrieves products 31 thru 40 from the resulting collection of products. <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> <br /><br /> <b>Default:</b> <code>0</code> (zero) --> */
+		/**
+		 * This field is reserved for internal or future use. <!-- The distance (number of records) from the first product in the collection to the first product in this result set. If the <b>offset</b> query parameter was included in the request, this field will have the same value. The <b>offset</b> value is used in conjunction with the <b>limit</b> value to control the pagination of the output. For example, if <b>offset</b> is set to <code>30</code> and <b>limit</b> is set to <code>10</code>, the call retrieves products 31 thru 40 from the resulting collection of products. <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> <br /><br /> <b>Default:</b> <code>0</code> (zero) -->
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** This field is reserved for internal or future use.  !-- <i>Not returned if</i> the currently returned result set is the first set of product records from the current collection of matching products. This field contains the <b>search</b> call URI for the previous result set. For example, the following URI returns products 21 thru 30 from the collection of products: <br /><br /> <code><i>path</i>/product_summary/search?limit=10&offset=20</code> <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first product in the list has an offset of <code>0</code>.</span> > */
@@ -325,7 +355,10 @@ export namespace MyNS {
 		/** This type identifies a product category and the aspects associated with that category. Each aspect distribution container returns the distribution of values that have been used for the aspect. */
 		refinement?: Refinement;
 
-		/** This field is reserved for internal or future use. <!-- The total number of product records in the returned collection of matched products. > */
+		/**
+		 * This field is reserved for internal or future use. <!-- The total number of product records in the returned collection of matched products. >
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -335,19 +368,28 @@ export namespace MyNS {
 		/** This field is reserved for internal or future use. <!-- The URI of the <b>search</b> method request that produced this result set. --> */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of product summaries returned in the response. This is the <i>result set</i>, a subset of the full collection of products that match the search or filter criteria of this call. If the <b>limit</b> query parameter was included in the request, this field will have the same value. <br /><br /> <b>Default:</b> <code>50</code> */
+		/**
+		 * The number of product summaries returned in the response. This is the <i>result set</i>, a subset of the full collection of products that match the search or filter criteria of this call. If the <b>limit</b> query parameter was included in the request, this field will have the same value. <br /><br /> <b>Default:</b> <code>50</code>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** This field is reserved for internal or future use. <!-- <i>Returned only if</i> there are more product records to retrieve from the current collection of matching products, this field contains the <b>search</b> call URI for the next result set. For example, the following URI returns records 41 thru 50 from the collection of matched products: <br /><br /> <code><i>path</i>/product_summary/search?limit=10&offset=40</code> <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first product in the list has an offset of <code>0</code>.</span> --> */
 		next: FormControl<string | null | undefined>,
 
-		/** This field is reserved for internal or future use. <!-- The distance (number of records) from the first product in the collection to the first product in this result set. If the <b>offset</b> query parameter was included in the request, this field will have the same value. The <b>offset</b> value is used in conjunction with the <b>limit</b> value to control the pagination of the output. For example, if <b>offset</b> is set to <code>30</code> and <b>limit</b> is set to <code>10</code>, the call retrieves products 31 thru 40 from the resulting collection of products. <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> <br /><br /> <b>Default:</b> <code>0</code> (zero) --> */
+		/**
+		 * This field is reserved for internal or future use. <!-- The distance (number of records) from the first product in the collection to the first product in this result set. If the <b>offset</b> query parameter was included in the request, this field will have the same value. The <b>offset</b> value is used in conjunction with the <b>limit</b> value to control the pagination of the output. For example, if <b>offset</b> is set to <code>30</code> and <b>limit</b> is set to <code>10</code>, the call retrieves products 31 thru 40 from the resulting collection of products. <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first item in the list has an offset of <code>0</code>.</span> <br /><br /> <b>Default:</b> <code>0</code> (zero) -->
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** This field is reserved for internal or future use.  !-- <i>Not returned if</i> the currently returned result set is the first set of product records from the current collection of matching products. This field contains the <b>search</b> call URI for the previous result set. For example, the following URI returns products 21 thru 30 from the collection of products: <br /><br /> <code><i>path</i>/product_summary/search?limit=10&offset=20</code> <br /><br />  <span class="tablenote"><strong>Note:</strong> This feature employs a zero-based list, where the first product in the list has an offset of <code>0</code>.</span> > */
 		prev: FormControl<string | null | undefined>,
 
-		/** This field is reserved for internal or future use. <!-- The total number of product records in the returned collection of matched products. > */
+		/**
+		 * This field is reserved for internal or future use. <!-- The total number of product records in the returned collection of matched products. >
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateProductSearchResponseFormGroup() {

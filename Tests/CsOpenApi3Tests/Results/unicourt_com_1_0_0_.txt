@@ -20042,8 +20042,14 @@ namespace MyNS
 		/// Get list of callback types with count for a requested Date.
 		/// GetCallbacks callbacks
 		/// </summary>
-		/// <param name="date">Date for which fetch the callback type list. By default, the date will be set to current date.</param>
-		/// <param name="status">Status of the callbacks. Default status will fetch all callbacks.</param>
+		/// <param name="date">Date for which fetch the callback type list. By default, the date will be set to current date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="status">Status of the callbacks. Default status will fetch all callbacks.
+		/// Max length: 11
+		/// Min length: 7
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CallbackListResponse> GetCallbacksAsync(System.DateTimeOffset date, GetCallbacksStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20149,7 +20155,10 @@ namespace MyNS
 		/// GetCaseDocketEntries case/{caseId}/docketEntries
 		/// </summary>
 		/// <param name="docketNumber">Retrieve the docket entry witih the specified docket number in the case with the specified caseId value.</param>
-		/// <param name="sortBy">Sort the retrieved docket entries in ascending order or descending order of date.</param>
+		/// <param name="sortBy">Sort the retrieved docket entries in ascending order or descending order of date.
+		/// Max length: 20
+		/// Min length: 10
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<DocketEntries> GetCaseDocketEntriesAsync(int docketNumber, GetCaseDocketEntriesSortBy sortBy, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20187,8 +20196,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="docketNumber">Retrieve the primary documents associated with the specified docket number in the case with the specified caseId value.</param>
 		/// <param name="inLibrary">Retrieve the primary documents in the with the specified inLibrary flag in the case with the specified caseId value.</param>
-		/// <param name="afterFirstFetchDate">Retrieve all primary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.</param>
-		/// <param name="libraryDate">Retrieve all primary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.</param>
+		/// <param name="afterFirstFetchDate">Retrieve all primary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="libraryDate">Retrieve all primary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<DocketEntryPrimaryDocuments> GetPrimaryDocumentsForDocketEntriesAsync(int docketNumber, bool inLibrary, System.DateTimeOffset afterFirstFetchDate, System.DateTimeOffset libraryDate, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20226,8 +20241,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="docketNumber">Retrieve the secondary documents associated with the specified docket number in the case with the specified caseId value.</param>
 		/// <param name="inLibrary">Retrieve the secondary documents in the with the specified inLibrary flag in the case with the specified caseId value.</param>
-		/// <param name="afterFirstFetchDate">Retrieve all secondary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.</param>
-		/// <param name="libraryDate">Retrieve all secondary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.</param>
+		/// <param name="afterFirstFetchDate">Retrieve all secondary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="libraryDate">Retrieve all secondary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<DocketEntrySecondaryDocuments> GetSecondaryDocumentsForDocketEntriesAsync(int docketNumber, bool inLibrary, System.DateTimeOffset afterFirstFetchDate, System.DateTimeOffset libraryDate, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20264,10 +20285,22 @@ namespace MyNS
 		/// GetCaseDocuments case/{caseId}/documents
 		/// </summary>
 		/// <param name="inLibrary">Filter all the documents those are added to the UniCourt library.</param>
-		/// <param name="afterFirstFetchDate">Get all the documents which were added to the case on or after a specific date.</param>
-		/// <param name="libraryDate">Sort all the documents based on the date when the document was added to the UniCourt Library.</param>
-		/// <param name="firstFetchDate">Sort all the documents based on the date it was fetched from the source site.</param>
-		/// <param name="sortBy">Sort documents with document order.</param>
+		/// <param name="afterFirstFetchDate">Get all the documents which were added to the case on or after a specific date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="libraryDate">Sort all the documents based on the date when the document was added to the UniCourt Library.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="firstFetchDate">Sort all the documents based on the date it was fetched from the source site.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="sortBy">Sort documents with document order.
+		/// Max length: 20
+		/// Min length: 10
+		// </param>
 		/// <param name="pageNumber">The page for which the result should be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<CaseDocuments> GetCaseDocumentsAsync(bool inLibrary, System.DateTimeOffset afterFirstFetchDate, System.DateTimeOffset libraryDate, System.DateTimeOffset firstFetchDate, GetCaseDocumentsSortBy sortBy, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20377,10 +20410,22 @@ namespace MyNS
 		/// </summary>
 		/// <param name="isVisible">Retrieve parties in the case with the specified caseId value whose isVisible flag is set to the specified value.</param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.</param>
-		/// <param name="partyRoleId">Retrieve all parties with the specified partyRoleId value in the case with the specified caseId value.</param>
-		/// <param name="partyRoleGroupId">Retrieve all parties with the specified partyRoleGroupId value in the case with the specified caseId value.</param>
-		/// <param name="attorneyRepresentationTypeId">Retrieve all parties with the specified attorneyRepresentationTypeId value in the case with the specified caseId value.</param>
-		/// <param name="partyClassificationType">Retrieve all parties with the specified partyClassificationType value in the case with the specified caseId value.</param>
+		/// <param name="partyRoleId">Retrieve all parties with the specified partyRoleId value in the case with the specified caseId value.
+		/// Max length: 18
+		/// Min length: 18
+		// </param>
+		/// <param name="partyRoleGroupId">Retrieve all parties with the specified partyRoleGroupId value in the case with the specified caseId value.
+		/// Max length: 18
+		/// Min length: 18
+		// </param>
+		/// <param name="attorneyRepresentationTypeId">Retrieve all parties with the specified attorneyRepresentationTypeId value in the case with the specified caseId value.
+		/// Max length: 18
+		/// Min length: 18
+		// </param>
+		/// <param name="partyClassificationType">Retrieve all parties with the specified partyClassificationType value in the case with the specified caseId value.
+		/// Max length: 10
+		/// Min length: 5
+		// </param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<Parties> GetCasePartiesAsync(bool isVisible, int pageNumber, string partyRoleId, string partyRoleGroupId, string attorneyRepresentationTypeId, PartyPartyClassificationType partyClassificationType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20480,10 +20525,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByAreaOfLaw caseCountAnalyticsByAreaOfLaw
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByAreaOfLawResponse> GetCaseCountAnalyticsByAreaOfLawAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20548,10 +20597,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCaseClass caseCountAnalyticsByCaseClass
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCaseClassResponse> GetCaseCountAnalyticsByCaseClassAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20616,10 +20669,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCaseFiledDate caseCountAnalyticsByCaseFiledDate
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <param name="groupBy">GroupBy</param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCaseFiledDateResponse> GetCaseCountAnalyticsByCaseFiledDateAsync(string q, int pageNumber, CaseCountAnalyticsByCaseFiledDateGroupedBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20685,10 +20742,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCaseType caseCountAnalyticsByCaseType
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCaseTypeResponse> GetCaseCountAnalyticsByCaseTypeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20753,10 +20814,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCaseTypeGroup caseCountAnalyticsByCaseTypeGroup
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCaseTypeGroupResponse> GetCaseCountAnalyticsByCaseTypeGroupAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20821,10 +20886,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCourt caseCountAnalyticsByCourt
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCourtResponse> GetCaseCountAnalyticsByCourtAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20889,10 +20958,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCourtLocation caseCountAnalyticsByCourtLocation
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCourtLocationResponse> GetCaseCountAnalyticsByCourtLocationAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20957,10 +21030,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCourtSystem caseCountAnalyticsByCourtSystem
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCourtSystemResponse> GetCaseCountAnalyticsByCourtSystemAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21025,10 +21102,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByCourtType caseCountAnalyticsByCourtType
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByCourtTypeResponse> GetCaseCountAnalyticsByCourtTypeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21093,10 +21174,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByJurisdictionGeo caseCountAnalyticsByJurisdictionGeo
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByJurisdictionGeoResponse> GetCaseCountAnalyticsByJurisdictionGeoAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21161,10 +21246,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByNormAttorney caseCountAnalyticsByNormAttorney
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormAttorneyResponse> GetCaseCountAnalyticsByNormAttorneyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21225,10 +21314,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByNormJudge caseCountAnalyticsByNormJudge
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormJudgeResponse> GetCaseCountAnalyticsByNormJudgeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21293,10 +21386,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByNormLawFirm caseCountAnalyticsByNormLawFirm
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormLawFirmResponse> GetCaseCountAnalyticsByNormLawFirmAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21361,10 +21458,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByNormParty caseCountAnalyticsByNormParty
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormPartyResponse> GetCaseCountAnalyticsByNormPartyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21426,10 +21527,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByPartyRole caseCountAnalyticsByPartyRole
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByPartyRoleResponse> GetCaseCountAnalyticsByPartyRoleAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21491,10 +21596,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByPartyRoleGroup caseCountAnalyticsByPartyRoleGroup
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByPartyRoleGroupResponse> GetCaseCountAnalyticsByPartyRoleGroupAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21641,11 +21750,19 @@ namespace MyNS
 		/// Get Case Document Order Callback list for a requested Date.
 		/// GetCaseDocumentOrderCallbacks caseDocumentOrder/callbacks
 		/// </summary>
-		/// <param name="date">Date for which fetch the Case Document Order Callback list. By default, the date will be set to current date.</param>
-		/// <param name="status">Status of Document Order callbacks. Default status will fetch all callbacks.</param>
+		/// <param name="date">Date for which fetch the Case Document Order Callback list. By default, the date will be set to current date.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="status">Status of Document Order callbacks. Default status will fetch all callbacks.
+		/// Max length: 11
+		/// Min length: 7
+		// </param>
 		/// <param name="pageNumber">Page to fetch the Case Document Order Callback list.<br>
 		///  - Minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseDocumentOrderCallbackListResponse> GetCaseDocumentOrderCallbacksAsync(System.DateTimeOffset date, GetCallbacksStatus status, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21714,11 +21831,19 @@ namespace MyNS
 		/// Retrieve callbacks according to the specified criteria.
 		/// GetCaseExportCallbacks caseExport/callbacks
 		/// </summary>
-		/// <param name="date">The date for which callbacks are to be retrieved.</param>
-		/// <param name="status">The status code of the callbacks to be retrieved.</param>
+		/// <param name="date">The date for which callbacks are to be retrieved.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="status">The status code of the callbacks to be retrieved.
+		/// Max length: 11
+		/// Min length: 7
+		// </param>
 		/// <param name="pageNumber">The page number of the callbacks to be retrieved.<br>
 		///  - Minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseExportCallbackListResponse> GetCaseExportCallbacksAsync(System.DateTimeOffset date, GetCallbacksStatus status, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21883,13 +22008,27 @@ namespace MyNS
 		/// SearchCases caseSearch
 		/// </summary>
 		/// <param name="q">Query parameter for keyword expressions.</a>
-		///</param>
-		/// <param name="sort">Query parameter specifying how results are to be sorted. Results can be sorted according to filedDate or relevancy.</param>
-		/// <param name="order">Query parameter specifying whether search result are sorted in ascending or descending order.</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
+		/// <param name="sort">Query parameter specifying how results are to be sorted. Results can be sorted according to filedDate or relevancy.
+		/// Max length: 9
+		/// Min length: 9
+		// </param>
+		/// <param name="order">Query parameter specifying whether search result are sorted in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseSearchResponse> SearchCasesAsync(string q, SearchCasesSort sort, SearchCasesOrder order, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21928,7 +22067,12 @@ namespace MyNS
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseSearchResponse> SearchCasesByIdAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22073,12 +22217,20 @@ namespace MyNS
 		/// GetCaseTracks caseTracks
 		/// </summary>
 		/// <param name="lastFetchDate">The lastFetchDate value of the tracked case. The date value should be entered in the format YYYY-MM-DDTHH:MM:SS+ZZ:zz.
-		///</param>
+		///
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="lastFetchDateWithUpdates">The date on which changes were last found in the case information.
-		///</param>
+		///
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.<br>
 		///  - Minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseTrackListResponse> GetCaseTracksAsync(System.DateTimeOffset lastFetchDate, System.DateTimeOffset lastFetchDateWithUpdates, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22188,12 +22340,23 @@ namespace MyNS
 		/// Retrieve case updates for the specified date.
 		/// GetCaseUpdates caseUpdates
 		/// </summary>
-		/// <param name="caseId">The caseId value of the case for which updates should be retrieved.</param>
-		/// <param name="requestedDate">The date for which case updates are to be retrieved.</param>
-		/// <param name="status">Status of the case updates to be retrieved.</param>
+		/// <param name="caseId">The caseId value of the case for which updates should be retrieved.
+		/// Max length: 18
+		/// Min length: 18
+		// </param>
+		/// <param name="requestedDate">The date for which case updates are to be retrieved.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="status">Status of the case updates to be retrieved.
+		/// Max length: 11
+		/// Min length: 7
+		// </param>
 		/// <param name="pageNumber">The page number of the callbacks to be retrieved.<br>
 		///  - Minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseUpdateListResponse> GetCaseUpdatesAsync(string caseId, System.DateTimeOffset requestedDate, GetCallbacksStatus status, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22511,13 +22674,27 @@ namespace MyNS
 		/// GetAreasOfLaw masterData/areaOfLaw
 		/// </summary>
 		/// <param name="q">Retrieve one or more areas of law using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AreaOfLawResponse> GetAreasOfLawAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22599,13 +22776,27 @@ namespace MyNS
 		/// GetAttorneyRepresentationTypes masterData/attorneyRepresentationType
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the attorney representation type.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AttorneyRepresentationTypeResponse> GetAttorneyRepresentationTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22688,13 +22879,27 @@ namespace MyNS
 		/// GetAttorneyTypes masterData/attorneyType
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the attorney type.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AttorneyTypeResponse> GetAttorneyTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22777,13 +22982,27 @@ namespace MyNS
 		/// GetCasesClass masterData/caseClass
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired case class.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseClassResponse> GetCasesClassAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22866,13 +23085,27 @@ namespace MyNS
 		/// GetCaseRelationshipTypes masterData/caseRelationshipType
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the case relationship type.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseRelationshipTypeResponse> GetCaseRelationshipTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22955,13 +23188,27 @@ namespace MyNS
 		/// GetCasesStatus masterData/caseStatus
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired case status.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseStatusResponse> GetCasesStatusAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23044,13 +23291,27 @@ namespace MyNS
 		/// GetCaseStatusGroups masterData/caseStatusGroup
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired case status group.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseStatusGroupResponse> GetCaseStatusGroupsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23133,13 +23394,27 @@ namespace MyNS
 		/// GetCaseTypes masterData/caseType
 		/// </summary>
 		/// <param name="q">Retrieve one or more case types using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseTypeResponse> GetCaseTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23222,13 +23497,27 @@ namespace MyNS
 		/// GetCaseTypeGroups masterData/caseTypeGroup
 		/// </summary>
 		/// <param name="q">Retrieve one or more case type groups using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CaseTypeGroupResponse> GetCaseTypeGroupsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23311,13 +23600,27 @@ namespace MyNS
 		/// GetCausesOfAction masterData/causeOfAction
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired cause of action.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CauseOfActionResponse> GetCausesOfActionAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23400,13 +23703,27 @@ namespace MyNS
 		/// GetCausesOfActionAdditionalData masterData/causeOfActionAdditionalData
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired cause of action additional data.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CauseOfActionAdditionalDataResponse> GetCausesOfActionAdditionalDataAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23489,13 +23806,27 @@ namespace MyNS
 		/// GetCausesOfActionGroup masterData/causeOfActionGroup
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired cause of action group.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CauseOfActionGroupResponse> GetCausesOfActionGroupAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23578,13 +23909,27 @@ namespace MyNS
 		/// GetCharges masterData/charge
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired charge.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChargeResponse> GetChargesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23667,13 +24012,27 @@ namespace MyNS
 		/// GetChargesAdditionalData masterData/chargeAdditionalData
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired charge additional data.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChargeAdditionalDataResponse> GetChargesAdditionalDataAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23756,13 +24115,27 @@ namespace MyNS
 		/// GetChargesDegree masterData/chargeDegree
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired charge degree.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChargeDegreeResponse> GetChargesDegreeAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23845,13 +24218,27 @@ namespace MyNS
 		/// GetChargeGroups masterData/chargeGroup
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired charge group.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChargeGroupResponse> GetChargeGroupsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23934,13 +24321,27 @@ namespace MyNS
 		/// GetChargesSeverity masterData/chargeSeverity
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired charge severity.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ChargeSeverityResponse> GetChargesSeverityAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24023,13 +24424,27 @@ namespace MyNS
 		/// GetCourts masterData/court
 		/// </summary>
 		/// <param name="q">The keyword expression that sets forth the criteria concerning the court or courts to be retrieved. Keyword expressions should be constructed according to the rules shown above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CourtResponse> GetCourtsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24103,7 +24518,10 @@ namespace MyNS
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">The field according to which search results are to be sorted.</param>
 		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
 		/// <returns>Success</returns>
@@ -24144,7 +24562,10 @@ namespace MyNS
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">The field according to which search results are to be sorted.</param>
 		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
 		/// <returns>Success</returns>
@@ -24185,7 +24606,10 @@ namespace MyNS
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">The field according to which search results are to be sorted.</param>
 		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
 		/// <returns>Success</returns>
@@ -24235,13 +24659,27 @@ namespace MyNS
 		/// GetCourtLocations masterData/courtLocation
 		/// </summary>
 		/// <param name="q">The keyword expression that sets forth the criteria concerning the court location or court locations to target. Keyword expressions should be constructed according to the rules shown above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CourtLocationResponse> GetCourtLocationsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24315,7 +24753,10 @@ namespace MyNS
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">The field according to which search results are to be sorted.</param>
 		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
 		/// <returns>Success</returns>
@@ -24365,13 +24806,27 @@ namespace MyNS
 		/// GetCourtsServiceStatus masterData/courtServiceStatus
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired court. Keyword expressions should be constructed according to the rules given above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CourtServiceStatusResponse> GetCourtsServiceStatusAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24454,13 +24909,27 @@ namespace MyNS
 		/// GetCourtSystems masterData/courtSystem
 		/// </summary>
 		/// <param name="q">The keyword expression that sets forth the criteria concerning the court system or court systems. Keyword expressions should be constructed according to the rules shown above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CourtSystemResponse> GetCourtSystemsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24543,13 +25012,27 @@ namespace MyNS
 		/// GetCourtTypes masterData/courtType
 		/// </summary>
 		/// <param name="q">The keyword expression that sets forth the criteria concerning the court type or court types. Keyword expressions should be constructed according to the rules shown above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CourtTypeResponse> GetCourtTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24632,13 +25115,27 @@ namespace MyNS
 		/// GetJudgeTypes masterData/judgeType
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the judge type.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<JudgeTypeResponse> GetJudgeTypesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24721,13 +25218,24 @@ namespace MyNS
 		/// GetJurisdictionsGeo masterData/jurisdictionGeo
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired jurisdiction geography. Keyword expressions should be constructed according to the rules given above.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<JurisdictionGeoResponse> GetJurisdictionsGeoAsync(string q, int pageNumber, GetJurisdictionGeoForCourtSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24801,7 +25309,10 @@ namespace MyNS
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
+		///
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sort">Sort field.</param>
 		/// <param name="order">Sort order.</param>
 		/// <returns>Success</returns>
@@ -24851,13 +25362,27 @@ namespace MyNS
 		/// GetPartyRoles masterData/partyRole
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired party role.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PartyRoleResponse> GetPartyRolesAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24940,13 +25465,27 @@ namespace MyNS
 		/// GetPartyRoleGroups masterData/partyRoleGroup
 		/// </summary>
 		/// <param name="q">The keyword expression targeting the desired party role group.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the results to be retrieved.
 		///- minimum: 1
 		///- maximum: 100
-		///</param>
-		/// <param name="sort">The field according to which search results are to be sorted.</param>
-		/// <param name="order">Whether search results are to be shown in ascending or descending order.</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="sort">The field according to which search results are to be sorted.
+		/// Max length: 4
+		/// Min length: 4
+		// </param>
+		/// <param name="order">Whether search results are to be shown in ascending or descending order.
+		/// Max length: 4
+		/// Min length: 3
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PartyRoleGroupResponse> GetPartyRoleGroupsAsync(string q, int pageNumber, GetAreasOfLawSort sort, SearchCasesOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25073,10 +25612,14 @@ namespace MyNS
 		/// 
 		/// GetNormJudgesAssociatedWithNormAttorney normAttorney/{normAttorneyId}/associatedNormJudges
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormJudgeResponse> GetNormJudgesAssociatedWithNormAttorneyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25138,10 +25681,14 @@ namespace MyNS
 		/// 
 		/// GetNormLawFirmsAssociatedWithNormAttorney normAttorney/{normAttorneyId}/associatedNormLawFirms
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormLawFirmResponse> GetNormLawFirmsAssociatedWithNormAttorneyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25204,10 +25751,14 @@ namespace MyNS
 		/// 
 		/// GetNormPartiesAssociatedWithNormAttorney normAttorney/{normAttorneyId}/associatedNormParties
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormPartyResponse> GetNormPartiesAssociatedWithNormAttorneyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25271,10 +25822,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByOpposingNormAttorneyForANormAttorney normAttorney/{normAttorneyId}/caseCountAnalyticsByOpposingNormAttorney
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormAttorneyResponse> GetCaseCountAnalyticsByOpposingNormAttorneyForANormAttorneyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25312,11 +25867,19 @@ namespace MyNS
 		/// </summary>
 		/// <param name="q">The URL encoded query you are searching for.
 		///The query can be as simple as a keyword, but supports many additional options and filters.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormAttorneySearchResponse> SearchNormalizedAttorneysAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25355,7 +25918,12 @@ namespace MyNS
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormAttorneySearchResponse> SearchNormalizedAttorneysByIdAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25448,10 +26016,14 @@ namespace MyNS
 		/// 
 		/// GetNormAttorneysAssociatedWithNormJudge normJudge/{normJudgeId}/associatedNormAttorneys
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormAttorneyResponse> GetNormAttorneysAssociatedWithNormJudgeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25509,10 +26081,14 @@ namespace MyNS
 		/// 
 		/// GetNormLawFirmsAssociatedWithNormJudge normJudge/{normJudgeId}/associatedNormLawFirms
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormLawFirmResponse> GetNormLawFirmsAssociatedWithNormJudgeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25570,10 +26146,14 @@ namespace MyNS
 		/// 
 		/// GetNormPartiesAssociatedWithNormJudge normJudge/{normJudgeId}/associatedNormParties
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormPartyResponse> GetNormPartiesAssociatedWithNormJudgeAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25611,11 +26191,19 @@ namespace MyNS
 		/// </summary>
 		/// <param name="q">The URL encoded query you are searching for.
 		///The query can be as simple as a keyword, but supports many additional options and filters.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormJudgeSearchResponse> SearchNormalizedJudgesAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25654,7 +26242,12 @@ namespace MyNS
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormJudgeSearchResponse> SearchNormalizedJudgesByIdAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25751,10 +26344,14 @@ namespace MyNS
 		/// 
 		/// GetNormAttorneysAssociatedWithNormLawFirm normLawFirm/{normLawFirmId}/associatedNormAttorneys
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormAttorneyResponse> GetNormAttorneysAssociatedWithNormLawFirmAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25813,10 +26410,14 @@ namespace MyNS
 		/// 
 		/// GetNormJudgesAssociatedWithNormLawFirm normLawFirm/{normLawFirmId}/associatedNormJudges
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormJudgeResponse> GetNormJudgesAssociatedWithNormLawFirmAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25878,10 +26479,14 @@ namespace MyNS
 		/// 
 		/// GetNormPartiesAssociatedWithNormLawFirm normLawFirm/{normLawFirmId}/associatedNormParties
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormPartyResponse> GetNormPartiesAssociatedWithNormLawFirmAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25945,10 +26550,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByOpposingNormLawFirmForANormLawFirm normLawFirm/{normLawFirmId}/caseCountAnalyticsByOpposingNormLawFirm
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormLawFirmResponse> GetCaseCountAnalyticsByOpposingNormLawFirmForANormLawFirmAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -25986,11 +26595,19 @@ namespace MyNS
 		/// </summary>
 		/// <param name="q">The URL encoded query you are searching for.
 		///The query can be as simple as a keyword, but supports many additional options and filters.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormLawFirmSearchResponse> SearchNormalizedLawFirmsAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26029,7 +26646,12 @@ namespace MyNS
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormLawFirmSearchResponse> SearchNormalizedLawFirmsByIdAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26126,10 +26748,14 @@ namespace MyNS
 		/// 
 		/// GetNormAttorneysAssociatedWithNormParty normParty/{normPartyId}/associatedNormAttorneys
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormAttorneyResponse> GetNormAttorneysAssociatedWithNormPartyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26188,10 +26814,14 @@ namespace MyNS
 		/// 
 		/// GetNormJudgesAssociatedWithNormParty normParty/{normPartyId}/associatedNormJudges
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormJudgeResponse> GetNormJudgesAssociatedWithNormPartyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26252,10 +26882,14 @@ namespace MyNS
 		/// 
 		/// GetNormLawFirmsAssociatedWithNormParty normParty/{normPartyId}/associatedNormLawFirms
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<AssociatedNormLawFirmResponse> GetNormLawFirmsAssociatedWithNormPartyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26319,10 +26953,14 @@ namespace MyNS
 		/// 
 		/// GetCaseCountAnalyticsByOpposingNormPartyForANormParty normParty/{normPartyId}/caseCountAnalyticsByOpposingNormParty
 		/// </summary>
-		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.</param>
+		/// <param name="q">The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		/// Max length: 2048
+		// </param>
 		/// <param name="pageNumber">Page number.
 		///- minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CaseCountAnalyticsByNormPartyResponse> GetCaseCountAnalyticsByOpposingNormPartyForANormPartyAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26360,11 +26998,19 @@ namespace MyNS
 		/// </summary>
 		/// <param name="q">The URL encoded query you are searching for.
 		///The query can be as simple as a keyword, but supports many additional options and filters.</a>
-		///</param>
+		///
+		/// Max length: 2000
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormPartySearchResponse> SearchNormalizedPartiesAsync(string q, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26403,7 +27049,12 @@ namespace MyNS
 		/// <param name="pageNumber">Query parameter specifying the page number of the search results to be retrieved.
 		///- Minimum: 1
 		///- Maximum: 1000
-		///</param>
+		///
+		/// Max length: 255
+		/// Min length: 1
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<NormPartySearchResponse> SearchNormalizedPartiesByIdAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26450,10 +27101,22 @@ namespace MyNS
 		/// 2.The results of the search has less Meta information in case objects compared to the Meta information of cases found using the PCL search APIs.
 		/// ImportPacerCaseByCourtUsingCaseNumber pacer/importCaseByCourtUsingCaseNumber
 		/// </summary>
-		/// <param name="pacerUserId">The PACER username of the PACER account under which the case should be imported.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the case should be imported.</param>
-		/// <param name="caseNumber">The case number of the case to be imported.</param>
-		/// <param name="courtId">The courtId value of the court from which the case is to be imported.</param>
+		/// <param name="pacerUserId">The PACER username of the PACER account under which the case should be imported.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the case should be imported.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="caseNumber">The case number of the case to be imported.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
+		/// <param name="courtId">The courtId value of the court from which the case is to be imported.
+		/// Max length: 18
+		/// Min length: 18
+		// </param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PACERImportCase> ImportPacerCaseByCourtUsingCaseNumberAsync(string pacerUserId, string pacerClientCode, string caseNumber, string courtId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -26488,8 +27151,14 @@ namespace MyNS
 		/// Search all courts within the PACER system for a particular case.
 		/// AllCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/allCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -26516,7 +27185,10 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
 		///
@@ -26524,10 +27196,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -26542,18 +27222,36 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> AllCourtsPacerCaseLocatorCaseSearchAsync(
@@ -26607,8 +27305,14 @@ namespace MyNS
 		/// Search for PACER cases filed in U.S. Courts of Appeals.
 		/// AppealCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/appealCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn  
@@ -26617,7 +27321,10 @@ namespace MyNS
 		///
 		///yy  case year (may be 2 or 4 digits) 
 		///
-		///nnnnn  case number (up to 5 digits).</param>
+		///nnnnn  case number (up to 5 digits).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
 		///
@@ -26625,10 +27332,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -26650,18 +27365,36 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> AppealCourtsPacerCaseLocatorCaseSearchAsync(
@@ -26716,8 +27449,14 @@ namespace MyNS
 		/// Search for PACER cases filed in U.S. Bankruptcy Courts.
 		/// BankruptcyCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/bankruptcyCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -26744,7 +27483,10 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
 		///
@@ -26752,10 +27494,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -26777,28 +27527,58 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDischargedStartDate">The date on which or after which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDischargedEndDate">The date on which or before which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDismissedStartDate">The date on which or after which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
-		/// <param name="caseDismissedEndDate">The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseDismissedEndDate">The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> BankruptcyCourtsPacerCaseLocatorCaseSearchAsync(
@@ -26857,8 +27637,14 @@ namespace MyNS
 		/// Search for civil cases filed in PACER.
 		/// CivilCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/civilCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -26885,7 +27671,10 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
 		///
@@ -26893,10 +27682,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case.</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case.
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -26918,18 +27715,36 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> CivilCourtsPacerCaseLocatorCaseSearchAsync(
@@ -26984,8 +27799,14 @@ namespace MyNS
 		/// Search for criminal cases in PACER.
 		/// CriminalCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/criminalCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27012,7 +27833,10 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
 		///
@@ -27020,10 +27844,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27038,18 +27870,36 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> CriminalCourtsPacerCaseLocatorCaseSearchAsync(
@@ -27103,8 +27953,14 @@ namespace MyNS
 		/// Search for multidistrict litigation in PACER.
 		/// MultiDistrictCourtsPacerCaseLocatorCaseSearch pacerCaseLocator/caseSearch/multiDistrictCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27131,7 +27987,10 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="jpmlNumber">Master JPML Case Number.</param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27140,10 +27999,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27158,18 +28025,36 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario: When mulitple sort paramters needs to be requested. 
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLCase> MultiDistrictCourtsPacerCaseLocatorCaseSearchAsync(
@@ -27224,8 +28109,14 @@ namespace MyNS
 		/// Search for the specified party across all PACER case filings.
 		/// AllCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/allCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27252,13 +28143,26 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27267,10 +28171,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case.</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case.
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27285,12 +28197,28 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -27303,8 +28231,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> AllCourtsPacerCaseLocatorPartySearchAsync(
@@ -27367,8 +28301,14 @@ namespace MyNS
 		/// Search for the specified party across all PACER appeals cases.
 		/// AppealCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/appealCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27395,13 +28335,26 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27410,10 +28363,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27428,12 +28389,28 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -27446,8 +28423,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> AppealCourtsPacerCaseLocatorPartySearchAsync(
@@ -27510,8 +28493,14 @@ namespace MyNS
 		/// Search for the specified party in PACER bankruptcy filings.
 		/// BankruptcyCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/bankruptcyCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27538,13 +28527,26 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27553,10 +28555,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27571,26 +28581,58 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="ssnOrEin">The Social Security number or the federal Employer Identification Number of the target party. Either number can be entered with or without dashes.</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="ssnOrEin">The Social Security number or the federal Employer Identification Number of the target party. Either number can be entered with or without dashes.
+		/// Max length: 9
+		// </param>
 		/// <param name="fourDigitSsn">The last four digits of the Social Security number of the target party.
 		///
-		///	Note: When specified, a last name/entity name must also be specified.</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		///	Note: When specified, a last name/entity name must also be specified.
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDischargedStartDate">The date on which or after which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDischargedEndDate">The date on which or before which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="caseDismissedStartDate">The date on which or after which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		///
-		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.</param>
-		/// <param name="caseDismissedEndDate">The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		///	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseDismissedEndDate">The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -27603,8 +28645,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> BankruptcyCourtsPacerCaseLocatorPartySearchAsync(
@@ -27673,8 +28721,14 @@ namespace MyNS
 		/// Search for the specified party in civil cases filed in PACER.
 		/// CivilCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/civilCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27701,13 +28755,26 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The name suffix (e.g., III, MD).</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The name suffix (e.g., III, MD).
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27716,10 +28783,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27734,12 +28809,28 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -27752,8 +28843,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> CivilCourtsPacerCaseLocatorPartySearchAsync(
@@ -27816,8 +28913,14 @@ namespace MyNS
 		/// Search for the specified party in PACER criminal cases.
 		/// CriminalCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/criminalCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27844,13 +28947,26 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -27859,10 +28975,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -27877,12 +29001,28 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -27895,8 +29035,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> CriminalCourtsPacerCaseLocatorPartySearchAsync(
@@ -27959,8 +29105,14 @@ namespace MyNS
 		/// Search for the specified party in multidistrict litigation in PACER.
 		/// MultiDistrictCourtsPacerCaseLocatorPartySearch pacerCaseLocator/partySearch/multiDistrictCourts
 		/// </summary>
-		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.</param>
-		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.</param>
+		/// <param name="pacerUserId">The username of the PACER account under which the search is to be performed.
+		/// Max length: 20
+		/// Min length: 6
+		// </param>
+		/// <param name="pacerClientCode">The PACER client code under which the search is to be performed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="caseNumber">The case number of the target case. You may use the following case-number formats: 
 		///
 		///	yy-nnnnn 
@@ -27987,14 +29139,27 @@ namespace MyNS
 		///
 		///tp  case type (up to 2 characters) 
 		///
-		///o  office where the case was filed (1 digit).</param>
+		///o  office where the case was filed (1 digit).
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="jpmlNumber">Master JPML Case Number.</param>
 		/// <param name="pacerCaseId">The PACER-assigned identifier of the target case.</param>
-		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.</param>
-		/// <param name="firstName">The first name of the target party.</param>
-		/// <param name="middleName">The middle name of the target party.</param>
-		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.</param>
-		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
+		/// <param name="lastName">The last name (for an individual) or the entity name (for a business entity) of the target party.
+		/// Max length: 50
+		// </param>
+		/// <param name="firstName">The first name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="middleName">The middle name of the target party.
+		/// Max length: 100
+		// </param>
+		/// <param name="generation">The suffix (e.g., Jr., III) of the target party's name.
+		/// Max length: 5
+		// </param>
+		/// <param name="partyType">The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		/// Max length: 50
+		// </param>
 		/// <param name="partyExactNameMatch">Specify whether the search string must match the name of the target party exactly.</param>
 		/// <param name="partyRoleArray">The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.</param>
 		/// <param name="caseTitle">The title of the target case. 
@@ -28003,10 +29168,18 @@ namespace MyNS
 		///
 		///	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		///
-		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.</param>
-		/// <param name="caseOffice">The divisional office in which the case was filed.</param>
-		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345</param>
-		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.</param>
+		///	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		/// Max length: 255
+		// </param>
+		/// <param name="caseOffice">The divisional office in which the case was filed.
+		/// Max length: 1
+		// </param>
+		/// <param name="caseSequenceNumber">The PACER-assigned sequence number of the target case. Ex 12345
+		/// Max length: 6
+		// </param>
+		/// <param name="caseYear">The two- or four-digit year in which the target case was filed.
+		/// Max length: 4
+		// </param>
 		/// <param name="caseTypeArray">The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		///
 		///	Scenario: When mulitple case types needs to be requested. 
@@ -28021,12 +29194,28 @@ namespace MyNS
 		///	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		///
 		///	Example: courtRegionIdArray=cac&courtRegionIdArray=cae</param>
-		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later</param>
-		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier</param>
-		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
-		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).</param>
+		/// <param name="caseYearFrom">Limit the results of the search to those cases from the year specified or later
+		/// Max length: 4
+		// </param>
+		/// <param name="caseYearTo">Limit the results of the search to those cases from the year specified or earlier
+		/// Max length: 4
+		// </param>
+		/// <param name="caseFiledStartDate">The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseFiledEndDate">The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedStartDate">The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
+		/// <param name="caseTerminatedEndDate">The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		/// Max length: 25
+		/// Min length: 25
+		// </param>
 		/// <param name="sortParameterQuery">How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		///
 		///	Scenario 1: When mulitple sort paramters needs to be requested. 
@@ -28039,8 +29228,14 @@ namespace MyNS
 		///
 		///	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		///
-		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC</param>
-		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.</param>
+		///	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		/// Max length: 100
+		/// Min length: 5
+		// </param>
+		/// <param name="caseStatus">Whether the target case is marked as 'open' or 'closed' within PACER.
+		/// Max length: 100
+		/// Min length: 3
+		// </param>
 		/// <param name="pageNumber">The page number of the search results to be retrieved.</param>
 		/// <returns>The request is recieved.</returns>
 		public async Task<PCLParty> MultiDistrictCourtsPacerCaseLocatorPartySearchAsync(
@@ -28106,7 +29301,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="pageNumber">The page number of the PACER credentials to be retrieved.<br>
 		///  - Minimum: 1
-		///</param>
+		///
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<PacerCredentialListResponse> GetPacerCredentialAsync(int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

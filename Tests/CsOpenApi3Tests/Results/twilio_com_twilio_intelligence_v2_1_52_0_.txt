@@ -595,8 +595,13 @@ namespace MyNS
 		/// Retrieves a list of all Services for an account.
 		/// ListService v2/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -692,7 +697,10 @@ namespace MyNS
 		/// Retrieve a list of Transcripts for a given service.
 		/// ListTranscript v2/Transcripts
 		/// </summary>
-		/// <param name="ServiceSid">The unique SID identifier of the Service.</param>
+		/// <param name="ServiceSid">The unique SID identifier of the Service.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="BeforeStartTime">Filter by before StartTime.</param>
 		/// <param name="AfterStartTime">Filter by after StartTime.</param>
 		/// <param name="BeforeDateCreated">Filter by before DateCreated.</param>
@@ -700,8 +708,13 @@ namespace MyNS
 		/// <param name="Status">Filter by status.</param>
 		/// <param name="LanguageCode">Filter by Language Code.</param>
 		/// <param name="SourceSid">Filter by SourceSid.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTranscriptReturn> ListTranscriptAsync(string ServiceSid, string BeforeStartTime, string AfterStartTime, string BeforeDateCreated, string AfterDateCreated, string Status, string LanguageCode, string SourceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -736,7 +749,10 @@ namespace MyNS
 		/// Delete a specific Transcript.
 		/// DeleteTranscript v2/Transcripts/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteTranscriptAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/Transcripts/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -763,7 +779,10 @@ namespace MyNS
 		/// Fetch a specific Transcript.
 		/// FetchTranscript v2/Transcripts/{Sid}
 		/// </summary>
-		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.</param>
+		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Intelligencev2transcript> FetchTranscriptAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -797,7 +816,10 @@ namespace MyNS
 		/// Get download URLs for media if possible
 		/// FetchMedia v2/Transcripts/{Sid}/Media
 		/// </summary>
-		/// <param name="Sid">The unique SID identifier of the Transcript.</param>
+		/// <param name="Sid">The unique SID identifier of the Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Redacted">Grant access to PII Redacted/Unredacted Media. If redaction is enabled, the default is `true` to access redacted media.</param>
 		/// <returns>OK</returns>
 		public async Task<Intelligencev2transcriptmedia> FetchMediaAsync(string Sid, bool Redacted, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -832,10 +854,18 @@ namespace MyNS
 		/// Retrieve a list of Operator Results for the given Transcript.
 		/// ListOperatorResult v2/Transcripts/{TranscriptSid}/OperatorResults
 		/// </summary>
-		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.</param>
+		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Redacted">Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListOperatorResultReturn> ListOperatorResultAsync(string TranscriptSid, bool Redacted, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -870,8 +900,14 @@ namespace MyNS
 		/// Fetch a specific Operator Result for the given Transcript.
 		/// FetchOperatorResult v2/Transcripts/{TranscriptSid}/OperatorResults/{OperatorSid}
 		/// </summary>
-		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.</param>
-		/// <param name="OperatorSid">A 34 character string that identifies this Language Understanding operator sid.</param>
+		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="OperatorSid">A 34 character string that identifies this Language Understanding operator sid.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Redacted">Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.</param>
 		/// <returns>OK</returns>
 		public async Task<Intelligencev2transcriptoperator_result> FetchOperatorResultAsync(string TranscriptSid, string OperatorSid, bool Redacted, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -906,10 +942,18 @@ namespace MyNS
 		/// Get all Transcript Sentences by TranscriptSid
 		/// ListSentence v2/Transcripts/{TranscriptSid}/Sentences
 		/// </summary>
-		/// <param name="TranscriptSid">The unique SID identifier of the Transcript.</param>
+		/// <param name="TranscriptSid">The unique SID identifier of the Transcript.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Redacted">Grant access to PII Redacted/Unredacted Sentences. If redaction is enabled, the default is `true` to access redacted sentences.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSentenceReturn> ListSentenceAsync(string TranscriptSid, bool Redacted, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

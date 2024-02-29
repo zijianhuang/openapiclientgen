@@ -2170,7 +2170,9 @@ export namespace MyNS {
 		 * <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project. </p> <note> <p>When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.</p> </note>
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/devEnvironments
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {void} 
 		 */
 		CreateDevEnvironment(spaceName: string, projectName: string, requestBody: CreateDevEnvironmentPutBody): Observable<HttpResponse<string>> {
@@ -2181,7 +2183,9 @@ export namespace MyNS {
 		 * Retrieves a list of Dev Environments in a project.
 		 * Post v1/spaces/{spaceName}/projects/{projectName}/devEnvironments
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDevEnvironmentsResponse} Success
@@ -2194,6 +2198,7 @@ export namespace MyNS {
 		 * Creates a project in a specified space.
 		 * Put v1/spaces/{spaceName}/projects
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {void} 
 		 */
 		CreateProject(spaceName: string, requestBody: CreateProjectPutBody): Observable<HttpResponse<string>> {
@@ -2204,6 +2209,7 @@ export namespace MyNS {
 		 * Retrieves a list of projects.
 		 * Post v1/spaces/{spaceName}/projects
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListProjectsResponse} Success
@@ -2216,8 +2222,11 @@ export namespace MyNS {
 		 * Creates an empty Git-based source repository in a specified project. The repository is created with an initial empty commit with a default branch named <code>main</code>.
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the source repository. For more information about name requirements, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html">Quotas for source repositories</a>.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		CreateSourceRepository(spaceName: string, projectName: string, name: string, requestBody: CreateSourceRepositoryPutBody): Observable<HttpResponse<string>> {
@@ -2228,8 +2237,11 @@ export namespace MyNS {
 		 * Deletes a source repository in Amazon CodeCatalyst. You cannot use this API to delete a linked repository. It can only be used to delete a Amazon CodeCatalyst source repository.
 		 * Delete v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the source repository.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteSourceRepositoryResponse} Success
 		 */
 		DeleteSourceRepository(spaceName: string, projectName: string, name: string): Observable<DeleteSourceRepositoryResponse> {
@@ -2240,8 +2252,11 @@ export namespace MyNS {
 		 * Returns information about a source repository.
 		 * Get v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the source repository.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetSourceRepositoryResponse} Success
 		 */
 		GetSourceRepository(spaceName: string, projectName: string, name: string): Observable<GetSourceRepositoryResponse> {
@@ -2252,9 +2267,13 @@ export namespace MyNS {
 		 * <p>Creates a branch in a specified source repository in Amazon CodeCatalyst. </p> <note> <p>This API only creates a branch in a source repository hosted in Amazon CodeCatalyst. You cannot use this API to create a branch in a linked repository.</p> </note>
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/branches/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} sourceRepositoryName The name of the repository where you want to create a branch.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} name The name for the branch you're creating.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		CreateSourceRepositoryBranch(spaceName: string, projectName: string, sourceRepositoryName: string, name: string, requestBody: CreateSourceRepositoryBranchPutBody): Observable<HttpResponse<string>> {
@@ -2265,6 +2284,7 @@ export namespace MyNS {
 		 * Deletes a specified personal access token (PAT). A personal access token can only be deleted by the user who created it.
 		 * Delete v1/accessTokens/{id}
 		 * @param {string} id The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <a>ListAccessTokens</a>.
+		 *     Min length: 1    Max length: 36
 		 * @return {DeleteAccessTokenResponse} Success
 		 */
 		DeleteAccessToken(id: string): Observable<DeleteAccessTokenResponse> {
@@ -2275,7 +2295,9 @@ export namespace MyNS {
 		 * Deletes a Dev Environment.
 		 * Delete v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <a>ListDevEnvironments</a>.
 		 * @return {DeleteDevEnvironmentResponse} Success
 		 */
@@ -2287,7 +2309,9 @@ export namespace MyNS {
 		 * Returns information about a Dev Environment for a source repository in a project. Dev Environments are specific to the user who creates them.
 		 * Get v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <a>ListDevEnvironments</a>.
 		 * @return {GetDevEnvironmentResponse} Success
 		 */
@@ -2299,7 +2323,9 @@ export namespace MyNS {
 		 * Changes one or more values for a Dev Environment. Updating certain values of the Dev Environment will cause a restart.
 		 * Patch v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment. 
 		 * @return {UpdateDevEnvironmentResponse} Success
 		 */
@@ -2311,7 +2337,9 @@ export namespace MyNS {
 		 * Deletes a project in a space.
 		 * Delete v1/spaces/{spaceName}/projects/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the project in the space. To retrieve a list of project names, use <a>ListProjects</a>.
+		 *     Min length: 3    Max length: 63
 		 * @return {DeleteProjectResponse} Success
 		 */
 		DeleteProject(spaceName: string, name: string): Observable<DeleteProjectResponse> {
@@ -2322,7 +2350,9 @@ export namespace MyNS {
 		 * Returns information about a project.
 		 * Get v1/spaces/{spaceName}/projects/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {GetProjectResponse} Success
 		 */
 		GetProject(spaceName: string, name: string): Observable<GetProjectResponse> {
@@ -2333,7 +2363,9 @@ export namespace MyNS {
 		 * Changes one or more values for a project.
 		 * Patch v1/spaces/{spaceName}/projects/{name}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} name The name of the project.
+		 *     Min length: 3    Max length: 63
 		 * @return {UpdateProjectResponse} Success
 		 */
 		UpdateProject(spaceName: string, name: string, requestBody: UpdateProjectPatchBody): Observable<UpdateProjectResponse> {
@@ -2344,6 +2376,7 @@ export namespace MyNS {
 		 * <p>Deletes a space.</p> <important> <p>Deleting a space cannot be undone. Additionally, since space names must be unique across Amazon CodeCatalyst, you cannot reuse names of deleted spaces.</p> </important>
 		 * Delete v1/spaces/{name}
 		 * @param {string} name The name of the space. To retrieve a list of space names, use <a>ListSpaces</a>.
+		 *     Min length: 3    Max length: 63
 		 * @return {DeleteSpaceResponse} Success
 		 */
 		DeleteSpace(name: string): Observable<DeleteSpaceResponse> {
@@ -2354,6 +2387,7 @@ export namespace MyNS {
 		 * Returns information about an space.
 		 * Get v1/spaces/{name}
 		 * @param {string} name The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {GetSpaceResponse} Success
 		 */
 		GetSpace(name: string): Observable<GetSpaceResponse> {
@@ -2364,6 +2398,7 @@ export namespace MyNS {
 		 * Changes one or more values for a space.
 		 * Patch v1/spaces/{name}
 		 * @param {string} name The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {UpdateSpaceResponse} Success
 		 */
 		UpdateSpace(name: string, requestBody: UpdateSpacePatchBody): Observable<UpdateSpaceResponse> {
@@ -2374,8 +2409,11 @@ export namespace MyNS {
 		 * Returns information about the URLs that can be used with a Git client to clone a source repository.
 		 * Get v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/cloneUrls
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} sourceRepositoryName The name of the source repository.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetSourceRepositoryCloneUrlsResponse} Success
 		 */
 		GetSourceRepositoryCloneUrls(spaceName: string, projectName: string, sourceRepositoryName: string): Observable<GetSourceRepositoryCloneUrlsResponse> {
@@ -2386,6 +2424,7 @@ export namespace MyNS {
 		 * Returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
 		 * Get v1/spaces/{spaceName}/subscription
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @return {GetSubscriptionResponse} Success
 		 */
 		GetSubscription(spaceName: string): Observable<GetSubscriptionResponse> {
@@ -2396,7 +2435,9 @@ export namespace MyNS {
 		 * Returns information about a user.
 		 * Get userDetails
 		 * @param {string} id The system-generated unique ID of the user. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} userName The name of the user as displayed in Amazon CodeCatalyst.
+		 *     Min length: 3    Max length: 100
 		 * @return {GetUserDetailsResponse} Success
 		 */
 		GetUserDetails(id: string | null | undefined, userName: string | null | undefined): Observable<GetUserDetailsResponse> {
@@ -2407,7 +2448,9 @@ export namespace MyNS {
 		 * Retrieves a list of active sessions for a Dev Environment in a project.
 		 * Post v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{devEnvironmentId}/sessions
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} devEnvironmentId The system-generated unique ID of the Dev Environment.
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
@@ -2421,6 +2464,7 @@ export namespace MyNS {
 		 * Retrieves a list of events that occurred during a specified time period in a space. You can use these events to audit user and system activity in a space.
 		 * Post v1/spaces/{spaceName}/eventLogs
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEventLogsResponse} Success
@@ -2433,7 +2477,9 @@ export namespace MyNS {
 		 * Retrieves a list of source repositories in a project.
 		 * Post v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSourceRepositoriesResponse} Success
@@ -2446,8 +2492,11 @@ export namespace MyNS {
 		 * Retrieves a list of branches in a specified source repository.
 		 * Post v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/branches
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} sourceRepositoryName The name of the source repository.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} maxResults Pagination limit
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSourceRepositoryBranchesResponse} Success
@@ -2470,7 +2519,9 @@ export namespace MyNS {
 		 * Starts a specified Dev Environment and puts it into an active state.
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/start
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment. 
 		 * @return {StartDevEnvironmentResponse} Success
 		 */
@@ -2482,7 +2533,9 @@ export namespace MyNS {
 		 * Starts a session for a specified Dev Environment.
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/session
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment.
 		 * @return {StartDevEnvironmentSessionResponse} Success
 		 */
@@ -2494,7 +2547,9 @@ export namespace MyNS {
 		 * Pauses a specified Dev Environment and places it in a non-running state. Stopped Dev Environments do not consume compute minutes.
 		 * Put v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/stop
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment. 
 		 * @return {StopDevEnvironmentResponse} Success
 		 */
@@ -2506,9 +2561,12 @@ export namespace MyNS {
 		 * Stops a session for a specified Dev Environment.
 		 * Delete v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/session/{sessionId}
 		 * @param {string} spaceName The name of the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} projectName The name of the project in the space.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} id The system-generated unique ID of the Dev Environment. To obtain this ID, use <a>ListDevEnvironments</a>.
 		 * @param {string} sessionId The system-generated unique ID of the Dev Environment session. This ID is returned by <a>StartDevEnvironmentSession</a>.
+		 *     Min length: 1    Max length: 96
 		 * @return {StopDevEnvironmentSessionResponse} Success
 		 */
 		StopDevEnvironmentSession(spaceName: string, projectName: string, id: string, sessionId: string): Observable<StopDevEnvironmentSessionResponse> {
@@ -2530,8 +2588,8 @@ export namespace MyNS {
 		/**
 		 * The friendly name of the personal access token.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -2543,8 +2601,8 @@ export namespace MyNS {
 		/**
 		 * The friendly name of the personal access token.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2569,8 +2627,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 	}
@@ -2584,8 +2642,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2604,15 +2662,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The user-defined alias for a Dev Environment.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		alias?: string | null;
 
@@ -2646,15 +2704,15 @@ export namespace MyNS {
 
 		/**
 		 * A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The user-defined alias for a Dev Environment.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		alias: FormControl<string | null | undefined>,
 
@@ -2701,8 +2759,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -2717,8 +2775,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -2742,15 +2800,15 @@ export namespace MyNS {
 		/**
 		 * The friendly name of the project that will be displayed to users.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		displayName: string;
 
 		/**
 		 * The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 	}
@@ -2759,15 +2817,15 @@ export namespace MyNS {
 		/**
 		 * The friendly name of the project that will be displayed to users.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		displayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2783,8 +2841,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -2802,8 +2860,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -2826,8 +2884,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the source repository.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -2835,8 +2893,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the source repository.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2868,8 +2926,8 @@ export namespace MyNS {
 
 		/**
 		 * The user-specified alias for the Dev Environment. Changing this value will not cause a restart.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		alias?: string | null;
 
@@ -2892,8 +2950,8 @@ export namespace MyNS {
 
 		/**
 		 * A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken?: string | null;
 	}
@@ -2901,8 +2959,8 @@ export namespace MyNS {
 
 		/**
 		 * The user-specified alias for the Dev Environment. Changing this value will not cause a restart.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		alias: FormControl<string | null | undefined>,
 
@@ -2918,8 +2976,8 @@ export namespace MyNS {
 
 		/**
 		 * A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2937,8 +2995,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the project.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 	}
@@ -2946,8 +3004,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the project.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2962,8 +3020,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the space.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 	}
@@ -2971,8 +3029,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the space.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2987,8 +3045,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -3003,8 +3061,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3042,8 +3100,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -3073,8 +3131,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3100,8 +3158,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -3116,8 +3174,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3140,8 +3198,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 
@@ -3156,8 +3214,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -3180,8 +3238,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken?: string | null;
 	}
@@ -3189,8 +3247,8 @@ export namespace MyNS {
 
 		/**
 		 * A token returned from a call to this API to indicate the next batch of results to return, if any.
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}

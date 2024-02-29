@@ -10,7 +10,10 @@ export namespace MyNS {
 		/** The class of delivery error. */
 		errorClass?: DeliveryErrorErrorClass | null;
 
-		/** The ratio of messages where the error occurred vs all authenticated traffic. */
+		/**
+		 * The ratio of messages where the error occurred vs all authenticated traffic.
+		 * Type: double
+		 */
 		errorRatio?: number | null;
 
 		/** The type of delivery error. */
@@ -23,7 +26,10 @@ export namespace MyNS {
 		/** The class of delivery error. */
 		errorClass: FormControl<DeliveryErrorErrorClass | null | undefined>,
 
-		/** The ratio of messages where the error occurred vs all authenticated traffic. */
+		/**
+		 * The ratio of messages where the error occurred vs all authenticated traffic.
+		 * Type: double
+		 */
 		errorRatio: FormControl<number | null | undefined>,
 
 		/** The type of delivery error. */
@@ -86,7 +92,10 @@ export namespace MyNS {
 		/** Feedback loop identifier that uniquely identifies individual campaigns. */
 		id?: string | null;
 
-		/** The ratio of user marked spam messages with the identifier vs the total number of inboxed messages with that identifier. */
+		/**
+		 * The ratio of user marked spam messages with the identifier vs the total number of inboxed messages with that identifier.
+		 * Type: double
+		 */
 		spamRatio?: number | null;
 	}
 
@@ -96,7 +105,10 @@ export namespace MyNS {
 		/** Feedback loop identifier that uniquely identifies individual campaigns. */
 		id: FormControl<string | null | undefined>,
 
-		/** The ratio of user marked spam messages with the identifier vs the total number of inboxed messages with that identifier. */
+		/**
+		 * The ratio of user marked spam messages with the identifier vs the total number of inboxed messages with that identifier.
+		 * Type: double
+		 */
 		spamRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedbackLoopFormGroup() {
@@ -202,16 +214,25 @@ export namespace MyNS {
 		/** Delivery errors for the domain. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). */
 		deliveryErrors?: Array<DeliveryError>;
 
-		/** The ratio of mail that successfully authenticated with DKIM vs. all mail that attempted to authenticate with [DKIM](http://www.dkim.org/). Spoofed mail is excluded. */
+		/**
+		 * The ratio of mail that successfully authenticated with DKIM vs. all mail that attempted to authenticate with [DKIM](http://www.dkim.org/). Spoofed mail is excluded.
+		 * Type: double
+		 */
 		dkimSuccessRatio?: number | null;
 
-		/** The ratio of mail that passed [DMARC](https://dmarc.org/) alignment checks vs all mail received from the domain that successfully authenticated with either of [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of mail that passed [DMARC](https://dmarc.org/) alignment checks vs all mail received from the domain that successfully authenticated with either of [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		dmarcSuccessRatio?: number | null;
 
 		/** Reputation of the domain. */
 		domainReputation?: IpReputationReputation | null;
 
-		/** The ratio of incoming mail (to Gmail), that passed secure transport (TLS) vs all mail received from that domain. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of incoming mail (to Gmail), that passed secure transport (TLS) vs all mail received from that domain. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		inboundEncryptionRatio?: number | null;
 
 		/** Reputation information pertaining to the IP addresses of the email servers for the domain. There is exactly one entry for each reputation category except REPUTATION_CATEGORY_UNSPECIFIED. */
@@ -220,56 +241,95 @@ export namespace MyNS {
 		/** The resource name of the traffic statistics. Traffic statistic names have the form `domains/{domain}/trafficStats/{date}`, where domain_name is the fully qualified domain name (i.e., mymail.mydomain.com) of the domain this traffic statistics pertains to and date is the date in yyyymmdd format that these statistics corresponds to. For example: domains/mymail.mydomain.com/trafficStats/20160807 */
 		name?: string | null;
 
-		/** The ratio of outgoing mail (from Gmail) that was accepted over secure transport (TLS). */
+		/**
+		 * The ratio of outgoing mail (from Gmail) that was accepted over secure transport (TLS).
+		 * Type: double
+		 */
 		outboundEncryptionRatio?: number | null;
 
 		/** Spammy [Feedback loop identifiers] (https://support.google.com/mail/answer/6254652) with their individual spam rates. This metric only pertains to traffic that is authenticated by [DKIM](http://www.dkim.org/). */
 		spammyFeedbackLoops?: Array<FeedbackLoop>;
 
-		/** The ratio of mail that successfully authenticated with SPF vs. all mail that attempted to authenticate with [SPF](http://www.openspf.org/). Spoofed mail is excluded. */
+		/**
+		 * The ratio of mail that successfully authenticated with SPF vs. all mail that attempted to authenticate with [SPF](http://www.openspf.org/). Spoofed mail is excluded.
+		 * Type: double
+		 */
 		spfSuccessRatio?: number | null;
 
-		/** The ratio of user-report spam vs. email that was sent to the inbox. This is potentially inexact -- users may want to refer to the description of the interval fields userReportedSpamRatioLowerBound and userReportedSpamRatioUpperBound for more explicit accuracy guarantees. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of user-report spam vs. email that was sent to the inbox. This is potentially inexact -- users may want to refer to the description of the interval fields userReportedSpamRatioLowerBound and userReportedSpamRatioUpperBound for more explicit accuracy guarantees. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatio?: number | null;
 
-		/** The lower bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this lower bound and the corresponding upper bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The lower bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this lower bound and the corresponding upper bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatioLowerBound?: number | null;
 
-		/** The upper bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this upper bound and the corresponding lower bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The upper bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this upper bound and the corresponding lower bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatioUpperBound?: number | null;
 	}
 
 	/** Email traffic statistics pertaining to a specific date. */
 	export interface TrafficStatsFormProperties {
 
-		/** The ratio of mail that successfully authenticated with DKIM vs. all mail that attempted to authenticate with [DKIM](http://www.dkim.org/). Spoofed mail is excluded. */
+		/**
+		 * The ratio of mail that successfully authenticated with DKIM vs. all mail that attempted to authenticate with [DKIM](http://www.dkim.org/). Spoofed mail is excluded.
+		 * Type: double
+		 */
 		dkimSuccessRatio: FormControl<number | null | undefined>,
 
-		/** The ratio of mail that passed [DMARC](https://dmarc.org/) alignment checks vs all mail received from the domain that successfully authenticated with either of [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of mail that passed [DMARC](https://dmarc.org/) alignment checks vs all mail received from the domain that successfully authenticated with either of [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		dmarcSuccessRatio: FormControl<number | null | undefined>,
 
 		/** Reputation of the domain. */
 		domainReputation: FormControl<IpReputationReputation | null | undefined>,
 
-		/** The ratio of incoming mail (to Gmail), that passed secure transport (TLS) vs all mail received from that domain. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of incoming mail (to Gmail), that passed secure transport (TLS) vs all mail received from that domain. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		inboundEncryptionRatio: FormControl<number | null | undefined>,
 
 		/** The resource name of the traffic statistics. Traffic statistic names have the form `domains/{domain}/trafficStats/{date}`, where domain_name is the fully qualified domain name (i.e., mymail.mydomain.com) of the domain this traffic statistics pertains to and date is the date in yyyymmdd format that these statistics corresponds to. For example: domains/mymail.mydomain.com/trafficStats/20160807 */
 		name: FormControl<string | null | undefined>,
 
-		/** The ratio of outgoing mail (from Gmail) that was accepted over secure transport (TLS). */
+		/**
+		 * The ratio of outgoing mail (from Gmail) that was accepted over secure transport (TLS).
+		 * Type: double
+		 */
 		outboundEncryptionRatio: FormControl<number | null | undefined>,
 
-		/** The ratio of mail that successfully authenticated with SPF vs. all mail that attempted to authenticate with [SPF](http://www.openspf.org/). Spoofed mail is excluded. */
+		/**
+		 * The ratio of mail that successfully authenticated with SPF vs. all mail that attempted to authenticate with [SPF](http://www.openspf.org/). Spoofed mail is excluded.
+		 * Type: double
+		 */
 		spfSuccessRatio: FormControl<number | null | undefined>,
 
-		/** The ratio of user-report spam vs. email that was sent to the inbox. This is potentially inexact -- users may want to refer to the description of the interval fields userReportedSpamRatioLowerBound and userReportedSpamRatioUpperBound for more explicit accuracy guarantees. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The ratio of user-report spam vs. email that was sent to the inbox. This is potentially inexact -- users may want to refer to the description of the interval fields userReportedSpamRatioLowerBound and userReportedSpamRatioUpperBound for more explicit accuracy guarantees. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatio: FormControl<number | null | undefined>,
 
-		/** The lower bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this lower bound and the corresponding upper bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The lower bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this lower bound and the corresponding upper bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatioLowerBound: FormControl<number | null | undefined>,
 
-		/** The upper bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this upper bound and the corresponding lower bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/). */
+		/**
+		 * The upper bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this upper bound and the corresponding lower bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+		 * Type: double
+		 */
 		userReportedSpamRatioUpperBound: FormControl<number | null | undefined>,
 	}
 	export function CreateTrafficStatsFormGroup() {
@@ -297,6 +357,7 @@ export namespace MyNS {
 		 * Lists the domains that have been registered by the client. The order of domains in the response is unspecified and non-deterministic. Newly created domains will not necessarily be added to the end of this list.
 		 * Get v1beta1/domains
 		 * @param {number} pageSize Requested page size. Server may return fewer domains than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any. This is the value of ListDomainsResponse.next_page_token returned from the previous call to `ListDomains` method.
 		 * @return {ListDomainsResponse} Successful response
 		 */
@@ -319,13 +380,20 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/trafficStats
 		 * @param {string} parent The resource name of the domain whose traffic statistics we'd like to list. It should have the form `domains/{domain_name}`, where domain_name is the fully qualified domain name.
 		 * @param {number} endDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Requested page size. Server may return fewer TrafficStats than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any. This is the value of ListTrafficStatsResponse.next_page_token returned from the previous call to `ListTrafficStats` method.
 		 * @param {number} startDate_day Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListTrafficStatsResponse} Successful response
 		 */
 		Gmailpostmastertools_domains_trafficStats_list(parent: string, endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<ListTrafficStatsResponse> {

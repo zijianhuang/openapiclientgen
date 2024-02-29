@@ -966,7 +966,9 @@ namespace MyNS
 		/// Project_username_projectGetByLimitAndOffsetAndFilter project/{username}/{project}
 		/// </summary>
 		/// <param name="limit">The number of builds to return. Maximum 100, defaults to 30.
-		///</param>
+		///
+		/// Maximum: 100
+		// </param>
 		/// <param name="offset">The API returns builds starting from this offset, defaults to 0.
 		///</param>
 		/// <param name="filter">Restricts which builds are returned.
@@ -1622,7 +1624,9 @@ namespace MyNS
 		/// Recent_buildsGetByLimitAndOffset recent-builds
 		/// </summary>
 		/// <param name="limit">The number of builds to return. Maximum 100, defaults to 30.
-		///</param>
+		///
+		/// Maximum: 100
+		// </param>
 		/// <param name="offset">The API returns builds starting from this offset, defaults to 0.
 		///</param>
 		/// <returns>Build summary for each of the last 30 recent builds</returns>

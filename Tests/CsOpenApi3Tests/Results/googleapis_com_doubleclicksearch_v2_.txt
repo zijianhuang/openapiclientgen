@@ -841,9 +841,18 @@ namespace MyNS
 		/// <param name="agencyId">Numeric ID of the agency.</param>
 		/// <param name="advertiserId">Numeric ID of the advertiser.</param>
 		/// <param name="engineAccountId">Numeric ID of the engine account.</param>
-		/// <param name="endDate">Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.</param>
-		/// <param name="rowCount">The number of conversions to return per call.</param>
-		/// <param name="startDate">First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.</param>
+		/// <param name="endDate">Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
+		/// Minimum: 20091101
+		/// Maximum: 99991231
+		// </param>
+		/// <param name="rowCount">The number of conversions to return per call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="startDate">First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
+		/// Minimum: 20091101
+		/// Maximum: 99991231
+		// </param>
 		/// <param name="startRow">The 0-based starting index for retrieving conversions results.</param>
 		/// <param name="adGroupId">Numeric ID of the ad group.</param>
 		/// <param name="adId">Numeric ID of the ad.</param>
@@ -1074,9 +1083,18 @@ namespace MyNS
 		/// Doubleclicksearch_conversion_getByCustomerId doubleclicksearch/v2/customer/{customerId}/conversion
 		/// </summary>
 		/// <param name="customerId">Customer ID of a client account in the new Search Ads 360 experience.</param>
-		/// <param name="endDate">Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.</param>
-		/// <param name="rowCount">The number of conversions to return per call.</param>
-		/// <param name="startDate">First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.</param>
+		/// <param name="endDate">Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
+		/// Minimum: 20091101
+		/// Maximum: 99991231
+		// </param>
+		/// <param name="rowCount">The number of conversions to return per call.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="startDate">First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
+		/// Minimum: 20091101
+		/// Maximum: 99991231
+		// </param>
 		/// <param name="startRow">The 0-based starting index for retrieving conversions results.</param>
 		/// <param name="adGroupId">Numeric ID of the ad group.</param>
 		/// <param name="adId">Numeric ID of the ad.</param>
@@ -1233,7 +1251,9 @@ namespace MyNS
 		/// Doubleclicksearch_reports_getFile doubleclicksearch/v2/reports/{reportId}/files/{reportFragment}
 		/// </summary>
 		/// <param name="reportId">ID of the report.</param>
-		/// <param name="reportFragment">The index of the report fragment to download.</param>
+		/// <param name="reportFragment">The index of the report fragment to download.
+		/// Minimum: 0
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task Doubleclicksearch_reports_getFileAsync(string reportId, int reportFragment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

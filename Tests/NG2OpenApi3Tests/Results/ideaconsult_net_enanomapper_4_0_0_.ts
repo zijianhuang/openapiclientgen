@@ -45,11 +45,15 @@ export namespace MyNS {
 		effectendpoint?: string | null;
 		endpoint?: string | null;
 		endpointcategory?: string | null;
+
+		/** Type: double */
 		err?: number | null;
 		errQualifier?: string | null;
 		guidance?: string | null;
 		investigation?: string | null;
 		loQualifier?: string | null;
+
+		/** Type: double */
 		loValue?: number | null;
 		name?: string | null;
 		owner_name?: string | null;
@@ -66,6 +70,8 @@ export namespace MyNS {
 		type_s?: string | null;
 		unit?: string | null;
 		upQualifier?: string | null;
+
+		/** Type: double */
 		upValue?: number | null;
 		updated?: string | null;
 	}
@@ -76,11 +82,15 @@ export namespace MyNS {
 		effectendpoint: FormControl<string | null | undefined>,
 		endpoint: FormControl<string | null | undefined>,
 		endpointcategory: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		err: FormControl<number | null | undefined>,
 		errQualifier: FormControl<string | null | undefined>,
 		guidance: FormControl<string | null | undefined>,
 		investigation: FormControl<string | null | undefined>,
 		loQualifier: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		loValue: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		owner_name: FormControl<string | null | undefined>,
@@ -97,6 +107,8 @@ export namespace MyNS {
 		type_s: FormControl<string | null | undefined>,
 		unit: FormControl<string | null | undefined>,
 		upQualifier: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		upValue: FormControl<number | null | undefined>,
 		updated: FormControl<string | null | undefined>,
 	}
@@ -139,16 +151,24 @@ export namespace MyNS {
 		facet?: string | null;
 		filter?: string | null;
 		query?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rows?: number | null;
 		sort?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 	}
 	export interface SolrQueryFormProperties {
 		facet: FormControl<string | null | undefined>,
 		filter: FormControl<string | null | undefined>,
 		query: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rows: FormControl<number | null | undefined>,
 		sort: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateSolrQueryFormGroup() {
@@ -177,13 +197,25 @@ export namespace MyNS {
 
 	export interface SolrResponseResponse {
 		docs?: Array<string>;
+
+		/** Type: double */
 		maxScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numFound?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 	}
 	export interface SolrResponseResponseFormProperties {
+
+		/** Type: double */
 		maxScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numFound: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateSolrResponseResponseFormGroup() {
@@ -196,14 +228,22 @@ export namespace MyNS {
 	}
 
 	export interface SolrResponseResponseHeader {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QTime?: number | null;
 		params?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		zkConnected?: boolean | null;
 	}
 	export interface SolrResponseResponseHeaderFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QTime: FormControl<number | null | undefined>,
 		params: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		zkConnected: FormControl<boolean | null | undefined>,
 	}
@@ -288,9 +328,13 @@ export namespace MyNS {
 
 	export interface QueryBodyParams {
 		fl?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rows?: number | null;
 	}
 	export interface QueryBodyParamsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryBodyParamsFormGroup() {
@@ -315,7 +359,9 @@ export namespace MyNS {
 		 * @param {string} inchikey Search parameter, InChI key(s) of the substance component(s), comma delimited
 		 * @param {string} id Search parameter, chemical structure or substance identifier(s), comma delimited
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Investigation} OK. Entries found
 		 */
 		GetInvestigationResults(db: GetInvestigationResultsDb, type: GetInvestigationResultsType, search: string, inchikey: string | null | undefined, id: string | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Investigation> {
@@ -334,7 +380,9 @@ export namespace MyNS {
 		 * @param {string} bundle_uri Bundle URI
 		 * @param {string} sameas Ontology URI to define groups of columns
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Dataset} OK. Entries found
 		 */
 		SearchByIdentifier(db: GetInvestigationResultsDb, term: SearchByIdentifierTerm, representation: SearchByIdentifierRepresentation, search: string | null | undefined, b64search: string | null | undefined, casesens: boolean | null | undefined, bundle_uri: string | null | undefined, sameas: string | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Dataset> {
@@ -350,13 +398,16 @@ export namespace MyNS {
 		 * @param {string} b64search Base64 encoded mol file; if included, will be used instead of the 'search' parameter
 		 * @param {SearchBySimilarityType} type Defines the expected content of the search parameter
 		 * @param {number} threshold Similarity threshold
+		 *     Type: double
 		 * @param {string} dataset_uri Restrict the search within the AMBIT dataset specified with the URI
 		 * @param {boolean} filterBySubstance Restrict the search within the set of structures with assigned substances
 		 * @param {string} bundle_uri If the structure is used in the specified bundle URI, the selection tag will be returned
 		 * @param {string} sameas Ontology URI to define groups of columns
 		 * @param {boolean} mol Only for application/json; to include mol as JSON field
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Dataset} OK. Entries found
 		 */
 		SearchBySimilarity(db: GetInvestigationResultsDb, search: string | null | undefined, b64search: string | null | undefined, type: SearchBySimilarityType | null | undefined, threshold: number | null | undefined, dataset_uri: string | null | undefined, filterBySubstance: boolean | null | undefined, bundle_uri: string | null | undefined, sameas: string | null | undefined, mol: boolean | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Dataset> {
@@ -377,7 +428,9 @@ export namespace MyNS {
 		 * @param {string} sameas Ontology URI to define groups of columns
 		 * @param {boolean} mol Only for application/json; to include mol as JSON field
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Dataset} OK. Entries found
 		 */
 		SearchBySmarts(db: GetInvestigationResultsDb, search: string | null | undefined, b64search: string | null | undefined, type: SearchBySimilarityType | null | undefined, dataset_uri: string | null | undefined, filterBySubstance: boolean | null | undefined, bundle_uri: string | null | undefined, sameas: string | null | undefined, mol: boolean | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Dataset> {
@@ -408,7 +461,9 @@ export namespace MyNS {
 		 * @param {boolean} addDummySubstance Adds a compound record as substance in JSON; only if type=related
 		 * @param {boolean} studysummary If true retrieves study summary for each substance
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Substance} OK. Substances found
 		 */
 		GetSubstances(db: GetInvestigationResultsDb, search: string | null | undefined, type: GetSubstancesType | null | undefined, compound_uri: string | null | undefined, bundle_uri: string | null | undefined, addDummySubstance: boolean | null | undefined, studysummary: boolean | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Substance> {
@@ -423,7 +478,9 @@ export namespace MyNS {
 		 * @param {string} uuid Substance UUID
 		 * @param {string} property_uris_ Property URIs
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Substance} OK. Substances found
 		 */
 		GetSubstanceByUUID(db: GetInvestigationResultsDb, uuid: string, property_uris_: string | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<Substance> {
@@ -438,7 +495,9 @@ export namespace MyNS {
 		 * @param {string} uuid Substance UUID
 		 * @param {boolean} all true (Show all compositions) false (do not show hidden compositions)
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubstanceComposition} OK. compositions found
 		 */
 		GetSubstanceComposition(db: GetInvestigationResultsDb, uuid: string, all: boolean | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<SubstanceComposition> {
@@ -452,7 +511,9 @@ export namespace MyNS {
 		 * @param {GetInvestigationResultsDb} db Database ID
 		 * @param {string} uuid Substance UUID
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Dataset} OK. compositions found
 		 */
 		GetSubstanceStructures(db: GetInvestigationResultsDb, uuid: string, page: number | null | undefined, pagesize: number | null | undefined): Observable<Dataset> {
@@ -471,7 +532,9 @@ export namespace MyNS {
 		 * @param {string} property Property UUID
 		 * @param {string} investigation_uuid Investigation UUID, a code to link different studies
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubstanceStudy} OK. Substances found
 		 */
 		GetSubstanceStudy(db: GetInvestigationResultsDb, uuid: string, top: GetEndpointSummaryTop | null | undefined, category: string | null | undefined, property_uri: string | null | undefined, property: string | null | undefined, investigation_uuid: string | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<SubstanceStudy> {
@@ -490,7 +553,9 @@ export namespace MyNS {
 		 * @param {string} property Property UUID, see Property service
 		 * @param {boolean} result If true will group by topcategory,endpointcategory,interpretation result
 		 * @param {number} page Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagesize Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SubstanceStudySummary} OK.
 		 */
 		GetSubstanceStudySummary(db: GetInvestigationResultsDb, uuid: string, top: GetEndpointSummaryTop | null | undefined, category: string | null | undefined, property_uri: string | null | undefined, property: string | null | undefined, result: boolean | null | undefined, page: number | null | undefined, pagesize: number | null | undefined): Observable<SubstanceStudySummary> {
@@ -505,7 +570,9 @@ export namespace MyNS {
 		 * @param {string} fq Filter query
 		 * @param {string} fl Field list
 		 * @param {number} start Starting page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rows Page size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Solrquery_getWt} wt Response format
 		 * @return {SolrResponse} Query performed successfully
 		 */

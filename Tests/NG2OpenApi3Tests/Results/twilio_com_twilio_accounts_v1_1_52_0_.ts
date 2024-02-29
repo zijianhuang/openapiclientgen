@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -28,8 +28,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -70,8 +70,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AWS resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -86,8 +86,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the AWS resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -98,8 +98,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AWS resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -114,8 +114,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the AWS resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -138,8 +138,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential that the PublicKey resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -154,8 +154,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the PublicKey resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -166,8 +166,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential that the PublicKey resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -182,8 +182,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that that we created to identify the PublicKey resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -209,8 +209,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the SafeList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 	}
@@ -221,8 +221,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the SafeList resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 	}
@@ -238,8 +238,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -259,8 +259,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the secondary Auth Token was created for.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -323,7 +323,9 @@ export namespace MyNS {
 		 * Retrieves a collection of AWS Credentials belonging to the account used to make the request
 		 * Get v1/Credentials/AWS
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialAwsReturn} OK
 		 */
@@ -335,6 +337,7 @@ export namespace MyNS {
 		 * Delete a Credential from your account
 		 * Delete v1/Credentials/AWS/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the AWS resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredentialAws(Sid: string): Observable<HttpResponse<string>> {
@@ -345,6 +348,7 @@ export namespace MyNS {
 		 * Fetch the AWS credentials specified by the provided Credential Sid
 		 * Get v1/Credentials/AWS/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the AWS resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Accountsv1credentialcredential_aws} OK
 		 */
 		FetchCredentialAws(Sid: string): Observable<Accountsv1credentialcredential_aws> {
@@ -355,7 +359,9 @@ export namespace MyNS {
 		 * Retrieves a collection of Public Key Credentials belonging to the account used to make the request
 		 * Get v1/Credentials/PublicKeys
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialPublicKeyReturn} OK
 		 */
@@ -367,6 +373,7 @@ export namespace MyNS {
 		 * Delete a Credential from your account
 		 * Delete v1/Credentials/PublicKeys/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the PublicKey resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredentialPublicKey(Sid: string): Observable<HttpResponse<string>> {
@@ -377,6 +384,7 @@ export namespace MyNS {
 		 * Fetch the public key specified by the provided Credential Sid
 		 * Get v1/Credentials/PublicKeys/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the PublicKey resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Accountsv1credentialcredential_public_key} OK
 		 */
 		FetchCredentialPublicKey(Sid: string): Observable<Accountsv1credentialcredential_public_key> {
@@ -420,7 +428,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -429,7 +441,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -463,7 +479,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -472,7 +492,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

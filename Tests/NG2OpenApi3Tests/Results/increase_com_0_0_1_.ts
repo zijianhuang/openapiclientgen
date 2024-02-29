@@ -46,6 +46,7 @@ export namespace MyNS {
 		/**
 		 * The latest [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date on which interest was accrued.
 		 * Required
+		 * Type: DateOnly
 		 */
 		interest_accrued_at: Date;
 
@@ -110,6 +111,7 @@ export namespace MyNS {
 		/**
 		 * The latest [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date on which interest was accrued.
 		 * Required
+		 * Type: DateOnly
 		 */
 		interest_accrued_at: FormControl<Date | null | undefined>,
 
@@ -360,6 +362,7 @@ export namespace MyNS {
 		/**
 		 * The Account's balance at the start of its statement period.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ending_balance: number;
 
@@ -378,6 +381,7 @@ export namespace MyNS {
 		/**
 		 * The Account's balance at the start of its statement period.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		starting_balance: number;
 
@@ -418,6 +422,7 @@ export namespace MyNS {
 		/**
 		 * The Account's balance at the start of its statement period.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ending_balance: FormControl<number | null | undefined>,
 
@@ -436,6 +441,7 @@ export namespace MyNS {
 		/**
 		 * The Account's balance at the start of its statement period.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		starting_balance: FormControl<number | null | undefined>,
 
@@ -520,6 +526,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -608,6 +615,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1087,6 +1095,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents. A positive amount indicates a credit transfer pushing funds to the receiving account. A negative amount indicates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -1141,6 +1150,7 @@ export namespace MyNS {
 		/**
 		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		effective_date: Date;
 
@@ -1259,6 +1269,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents. A positive amount indicates a credit transfer pushing funds to the receiving account. A negative amount indicates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1301,6 +1312,7 @@ export namespace MyNS {
 		/**
 		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		effective_date: FormControl<Date | null | undefined>,
 
@@ -1764,15 +1776,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email?: string | null;
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone?: string | null;
 	}
@@ -1786,15 +1798,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone: FormControl<string | null | undefined>,
 	}
@@ -1811,8 +1823,8 @@ export namespace MyNS {
 
 		/**
 		 * Why the tokenization attempt was declined. This is for logging purposes only and is not displayed to the end-user.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		reason?: string | null;
 	}
@@ -1820,8 +1832,8 @@ export namespace MyNS {
 
 		/**
 		 * Why the tokenization attempt was declined. This is for logging purposes only and is not displayed to the end-user.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		reason: FormControl<string | null | undefined>,
 	}
@@ -1845,12 +1857,14 @@ export namespace MyNS {
 		/**
 		 * The Account's available balance, representing the current balance less any open Pending Transactions on the Account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		available_balance: number;
 
 		/**
 		 * The Account's current balance, representing the sum of all posted Transactions on the Account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_balance: number;
 
@@ -1873,12 +1887,14 @@ export namespace MyNS {
 		/**
 		 * The Account's available balance, representing the current balance less any open Pending Transactions on the Account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		available_balance: FormControl<number | null | undefined>,
 
 		/**
 		 * The Account's current balance, representing the sum of all posted Transactions on the Account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_balance: FormControl<number | null | undefined>,
 
@@ -2042,6 +2058,7 @@ export namespace MyNS {
 		/**
 		 * The Entry amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -2076,6 +2093,7 @@ export namespace MyNS {
 		/**
 		 * The Entry amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2226,6 +2244,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the entry in minor units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -2246,6 +2265,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the entry in minor units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2303,12 +2323,14 @@ export namespace MyNS {
 		/**
 		 * The month the card expires in M format (e.g., August is 8).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_month: number;
 
 		/**
 		 * The year the card expires in YYYY format (e.g., 2025).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_year: number;
 
@@ -2361,12 +2383,14 @@ export namespace MyNS {
 		/**
 		 * The month the card expires in M format (e.g., August is 8).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_month: FormControl<number | null | undefined>,
 
 		/**
 		 * The year the card expires in YYYY format (e.g., 2025).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_year: FormControl<number | null | undefined>,
 
@@ -2548,12 +2572,14 @@ export namespace MyNS {
 		/**
 		 * The month the card expires in M format (e.g., August is 8).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_month: number;
 
 		/**
 		 * The year the card expires in YYYY format (e.g., 2025).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_year: number;
 
@@ -2588,12 +2614,14 @@ export namespace MyNS {
 		/**
 		 * The month the card expires in M format (e.g., August is 8).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_month: FormControl<number | null | undefined>,
 
 		/**
 		 * The year the card expires in YYYY format (e.g., 2025).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expiration_year: FormControl<number | null | undefined>,
 
@@ -3098,18 +3126,21 @@ export namespace MyNS {
 		/**
 		 * The value of the blue channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		blue: number;
 
 		/**
 		 * The value of the green channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		green: number;
 
 		/**
 		 * The value of the red channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		red: number;
 	}
@@ -3118,18 +3149,21 @@ export namespace MyNS {
 		/**
 		 * The value of the blue channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		blue: FormControl<number | null | undefined>,
 
 		/**
 		 * The value of the green channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		green: FormControl<number | null | undefined>,
 
 		/**
 		 * The value of the red channel in the RGB color.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		red: FormControl<number | null | undefined>,
 	}
@@ -3192,6 +3226,7 @@ export namespace MyNS {
 		/**
 		 * The deposited amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -3274,6 +3309,7 @@ export namespace MyNS {
 		/**
 		 * The deposited amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3352,6 +3388,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -3396,6 +3433,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3447,6 +3485,7 @@ export namespace MyNS {
 		/**
 		 * The rejected amount in the minor unit of check's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -3473,6 +3512,7 @@ export namespace MyNS {
 		/**
 		 * The rejected amount in the minor unit of check's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3511,6 +3551,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -3546,6 +3587,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -3670,6 +3712,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -3824,6 +3867,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -4407,8 +4451,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -4426,8 +4470,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -4482,6 +4526,7 @@ export namespace MyNS {
 		/**
 		 * The entry amount in the minor unit of the account currency. For dollars, for example, this is cents. Debit entries have positive amounts; credit entries have negative amounts.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 	}
@@ -4496,6 +4541,7 @@ export namespace MyNS {
 		/**
 		 * The entry amount in the minor unit of the account currency. For dollars, for example, this is cents. Debit entries have positive amounts; credit entries have negative amounts.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 	}
@@ -4518,8 +4564,8 @@ export namespace MyNS {
 		/**
 		 * Why you are disputing this Transaction.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		explanation: string;
 	}
@@ -4534,8 +4580,8 @@ export namespace MyNS {
 		/**
 		 * Why you are disputing this Transaction.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		explanation: FormControl<string | null | undefined>,
 	}
@@ -4560,8 +4606,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the card.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -4578,8 +4624,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the card.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4596,39 +4642,39 @@ export namespace MyNS {
 		/**
 		 * The city of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the billing address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The postal code of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		postal_code: string;
 
 		/**
 		 * The US state of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -4637,39 +4683,39 @@ export namespace MyNS {
 		/**
 		 * The city of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the billing address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The postal code of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		postal_code: FormControl<string | null | undefined>,
 
 		/**
 		 * The US state of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -4691,15 +4737,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode over email.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email?: string | null;
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone?: string | null;
 	}
@@ -4710,15 +4756,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode over email.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone: FormControl<string | null | undefined>,
 	}
@@ -4736,8 +4782,8 @@ export namespace MyNS {
 		/**
 		 * A description you can use to identify the Card Profile.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
@@ -4752,8 +4798,8 @@ export namespace MyNS {
 		/**
 		 * A description you can use to identify the Card Profile.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4781,22 +4827,22 @@ export namespace MyNS {
 		/**
 		 * A user-facing description for the card itself.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		card_description: string;
 
 		/**
 		 * An email address the user can contact to receive support for their card.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		contact_email?: string | null;
 
 		/**
 		 * A phone number the user can contact to receive support for their card.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		contact_phone?: string | null;
 
@@ -4806,8 +4852,8 @@ export namespace MyNS {
 		/**
 		 * A user-facing description for whoever is issuing the card.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		issuer_name: string;
 
@@ -4831,22 +4877,22 @@ export namespace MyNS {
 		/**
 		 * A user-facing description for the card itself.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		card_description: FormControl<string | null | undefined>,
 
 		/**
 		 * An email address the user can contact to receive support for their card.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		contact_email: FormControl<string | null | undefined>,
 
 		/**
 		 * A phone number the user can contact to receive support for their card.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		contact_phone: FormControl<string | null | undefined>,
 
@@ -4856,8 +4902,8 @@ export namespace MyNS {
 		/**
 		 * A user-facing description for whoever is issuing the card.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		issuer_name: FormControl<string | null | undefined>,
 	}
@@ -4959,8 +5005,8 @@ export namespace MyNS {
 		/**
 		 * The currency to use for the deposit.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		currency: string;
 
@@ -4994,8 +5040,8 @@ export namespace MyNS {
 		/**
 		 * The currency to use for the deposit.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		currency: FormControl<string | null | undefined>,
 
@@ -5027,39 +5073,39 @@ export namespace MyNS {
 		/**
 		 * The city of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_city: string;
 
 		/**
 		 * The street address of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_line1: string;
 
 		/**
 		 * The second line of the address of the check's destination.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_line2?: string | null;
 
 		/**
 		 * The state of the check's destination.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		address_state: string;
 
 		/**
 		 * The postal code of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_zip: string;
 
@@ -5073,23 +5119,23 @@ export namespace MyNS {
 		/**
 		 * The descriptor that will be printed on the memo field on the check.
 		 * Required
-		 * Max length: 73
 		 * Min length: 1
+		 * Max length: 73
 		 */
 		message: string;
 
 		/**
 		 * The descriptor that will be printed on the letter included with the check.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		note?: string | null;
 
 		/**
 		 * The name that will be printed on the check.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		recipient_name: string;
 
@@ -5110,39 +5156,39 @@ export namespace MyNS {
 		/**
 		 * The city of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_city: FormControl<string | null | undefined>,
 
 		/**
 		 * The street address of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address of the check's destination.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The state of the check's destination.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		address_state: FormControl<string | null | undefined>,
 
 		/**
 		 * The postal code of the check's destination.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		address_zip: FormControl<string | null | undefined>,
 
@@ -5156,23 +5202,23 @@ export namespace MyNS {
 		/**
 		 * The descriptor that will be printed on the memo field on the check.
 		 * Required
-		 * Max length: 73
 		 * Min length: 1
+		 * Max length: 73
 		 */
 		message: FormControl<string | null | undefined>,
 
 		/**
 		 * The descriptor that will be printed on the letter included with the check.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		note: FormControl<string | null | undefined>,
 
 		/**
 		 * The name that will be printed on the check.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		recipient_name: FormControl<string | null | undefined>,
 
@@ -5201,47 +5247,47 @@ export namespace MyNS {
 		/**
 		 * The city of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the return address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The name of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 
 		/**
 		 * The US state of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The postal code of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -5250,47 +5296,47 @@ export namespace MyNS {
 		/**
 		 * The city of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the return address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The US state of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The postal code of the return address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -5310,8 +5356,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the File.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -5331,8 +5377,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the File.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -5373,8 +5419,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Account or Account Number you wish to associate the limit with.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		model_id: string;
 
@@ -5399,8 +5445,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Account or Account Number you wish to associate the limit with.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		model_id: FormControl<string | null | undefined>,
 
@@ -5437,22 +5483,22 @@ export namespace MyNS {
 		/**
 		 * The name of the transfer's recipient.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		creditor_name: string;
 
 		/**
 		 * The destination account number.
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		destination_account_number?: string | null;
 
 		/**
 		 * The destination American Bankers' Association (ABA) Routing Transit Number (RTN).
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		destination_routing_number?: string | null;
 
@@ -5462,8 +5508,8 @@ export namespace MyNS {
 		/**
 		 * Unstructured information that will show on the recipient's bank statement.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		remittance_information: string;
 
@@ -5488,22 +5534,22 @@ export namespace MyNS {
 		/**
 		 * The name of the transfer's recipient.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		creditor_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The destination account number.
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		destination_account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * The destination American Bankers' Association (ABA) Routing Transit Number (RTN).
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		destination_routing_number: FormControl<string | null | undefined>,
 
@@ -5513,8 +5559,8 @@ export namespace MyNS {
 		/**
 		 * Unstructured information that will show on the recipient's bank statement.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		remittance_information: FormControl<string | null | undefined>,
 
@@ -5582,53 +5628,53 @@ export namespace MyNS {
 		/**
 		 * A message the recipient will see as part of the request.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		message_to_recipient: string;
 
 		/**
 		 * The drawdown request's recipient's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		recipient_account_number: string;
 
 		/**
 		 * Line 1 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line1?: string | null;
 
 		/**
 		 * Line 2 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line2?: string | null;
 
 		/**
 		 * Line 3 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line3?: string | null;
 
 		/**
 		 * The drawdown request's recipient's name.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_name: string;
 
 		/**
 		 * The drawdown request's recipient's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		recipient_routing_number: string;
 	}
@@ -5650,53 +5696,53 @@ export namespace MyNS {
 		/**
 		 * A message the recipient will see as part of the request.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		message_to_recipient: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's recipient's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		recipient_account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 1 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 2 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 3 of the drawdown request's recipient's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's recipient's name.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		recipient_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's recipient's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		recipient_routing_number: FormControl<string | null | undefined>,
 	}
@@ -5725,8 +5771,8 @@ export namespace MyNS {
 
 		/**
 		 * The account number for the destination account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		account_number?: string | null;
 
@@ -5739,30 +5785,30 @@ export namespace MyNS {
 
 		/**
 		 * The beneficiary's address line 1.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line1?: string | null;
 
 		/**
 		 * The beneficiary's address line 2.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line2?: string | null;
 
 		/**
 		 * The beneficiary's address line 3.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line3?: string | null;
 
 		/**
 		 * The beneficiary's name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_name: string;
 
@@ -5772,8 +5818,8 @@ export namespace MyNS {
 		/**
 		 * The message that will show on the recipient's bank statement.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		message_to_recipient: string;
 
@@ -5782,8 +5828,8 @@ export namespace MyNS {
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number?: string | null;
 	}
@@ -5797,8 +5843,8 @@ export namespace MyNS {
 
 		/**
 		 * The account number for the destination account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		account_number: FormControl<string | null | undefined>,
 
@@ -5811,30 +5857,30 @@ export namespace MyNS {
 
 		/**
 		 * The beneficiary's address line 1.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The beneficiary's address line 2.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The beneficiary's address line 3.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The beneficiary's name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_name: FormControl<string | null | undefined>,
 
@@ -5844,8 +5890,8 @@ export namespace MyNS {
 		/**
 		 * The message that will show on the recipient's bank statement.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		message_to_recipient: FormControl<string | null | undefined>,
 
@@ -5854,8 +5900,8 @@ export namespace MyNS {
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: FormControl<string | null | undefined>,
 	}
@@ -5887,8 +5933,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the Account Number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -5903,8 +5949,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the Account Number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -5927,8 +5973,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the Account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 
@@ -5946,8 +5992,8 @@ export namespace MyNS {
 		/**
 		 * The name you choose for the Account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5982,8 +6028,8 @@ export namespace MyNS {
 		/**
 		 * The description you choose to give the transfer.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
@@ -6014,8 +6060,8 @@ export namespace MyNS {
 		/**
 		 * The description you choose to give the transfer.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6044,71 +6090,74 @@ export namespace MyNS {
 		/**
 		 * The account number for the destination account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		account_number: string;
 
 		/**
 		 * Additional information that will be sent to the recipient.
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		addendum?: string | null;
 
 		/**
 		 * The description of the date of the transfer.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date?: string | null;
 
 		/**
 		 * The data you choose to associate with the transfer.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data?: string | null;
 
 		/**
 		 * The description of the transfer you wish to be shown to the recipient.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description?: string | null;
 
 		/**
 		 * The name by which the recipient knows you.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name?: string | null;
 
 		/** Whether the Prenotification is for a future debit or credit. */
 		credit_debit_indicator?: Ach_prenotificationCredit_debit_indicator | null;
 
-		/** The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
+		/**
+		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+		 * Type: DateOnly
+		 */
 		effective_date?: Date | null;
 
 		/**
 		 * Your identifer for the transfer recipient.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_id?: string | null;
 
 		/**
 		 * The name of the transfer recipient. This value is information and not verified by the recipient's bank.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_name?: string | null;
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: string;
 
@@ -6120,71 +6169,74 @@ export namespace MyNS {
 		/**
 		 * The account number for the destination account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Additional information that will be sent to the recipient.
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		addendum: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the date of the transfer.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date: FormControl<string | null | undefined>,
 
 		/**
 		 * The data you choose to associate with the transfer.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the transfer you wish to be shown to the recipient.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name by which the recipient knows you.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name: FormControl<string | null | undefined>,
 
 		/** Whether the Prenotification is for a future debit or credit. */
 		credit_debit_indicator: FormControl<Ach_prenotificationCredit_debit_indicator | null | undefined>,
 
-		/** The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
+		/**
+		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+		 * Type: DateOnly
+		 */
 		effective_date: FormControl<Date | null | undefined>,
 
 		/**
 		 * Your identifer for the transfer recipient.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the transfer recipient. This value is information and not verified by the recipient's bank.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: FormControl<string | null | undefined>,
 
@@ -6257,53 +6309,57 @@ export namespace MyNS {
 
 		/**
 		 * The account number for the destination account.
-		 * Max length: 17
 		 * Min length: 1
+		 * Max length: 17
 		 */
 		account_number?: string | null;
 
 		/**
 		 * Additional information that will be sent to the recipient. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		addendum?: string | null;
 
 		/**
 		 * The transfer amount in cents. A positive amount originates a credit transfer pushing funds to the receiving account. A negative amount originates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
 		/**
 		 * The description of the date of the transfer, usually in the format `YYMMDD`. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date?: string | null;
 
 		/**
 		 * The data you choose to associate with the transfer. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data?: string | null;
 
 		/**
 		 * A description of the transfer. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description?: string | null;
 
 		/**
 		 * The name by which the recipient knows you. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name?: string | null;
 
-		/** The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
+		/**
+		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+		 * Type: DateOnly
+		 */
 		effective_date?: Date | null;
 
 		/** The ID of an External Account to initiate a transfer to. If this parameter is provided, `account_number`, `routing_number`, and `funding` must be absent. */
@@ -6314,15 +6370,15 @@ export namespace MyNS {
 
 		/**
 		 * Your identifer for the transfer recipient.
-		 * Max length: 15
 		 * Min length: 1
+		 * Max length: 15
 		 */
 		individual_id?: string | null;
 
 		/**
 		 * The name of the transfer recipient. This value is informational and not verified by the recipient's bank.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_name?: string | null;
 
@@ -6331,8 +6387,8 @@ export namespace MyNS {
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number?: string | null;
 
@@ -6342,8 +6398,8 @@ export namespace MyNS {
 		/**
 		 * A description you choose to give the transfer. This will be saved with the transfer details, displayed in the dashboard, and returned by the API. If `individual_name` and `company_name` are not explicitly set by this API, the `statement_descriptor` will be sent in those fields to the receiving bank to help the customer recognize the transfer. You are highly encouraged to pass `individual_name` and `company_name` instead of relying on this fallback.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		statement_descriptor: string;
 	}
@@ -6357,53 +6413,57 @@ export namespace MyNS {
 
 		/**
 		 * The account number for the destination account.
-		 * Max length: 17
 		 * Min length: 1
+		 * Max length: 17
 		 */
 		account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Additional information that will be sent to the recipient. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		addendum: FormControl<string | null | undefined>,
 
 		/**
 		 * The transfer amount in cents. A positive amount originates a credit transfer pushing funds to the receiving account. A negative amount originates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The description of the date of the transfer, usually in the format `YYMMDD`. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date: FormControl<string | null | undefined>,
 
 		/**
 		 * The data you choose to associate with the transfer. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the transfer. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name by which the recipient knows you. This is included in the transfer data sent to the receiving bank.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name: FormControl<string | null | undefined>,
 
-		/** The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
+		/**
+		 * The transfer effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+		 * Type: DateOnly
+		 */
 		effective_date: FormControl<Date | null | undefined>,
 
 		/** The ID of an External Account to initiate a transfer to. If this parameter is provided, `account_number`, `routing_number`, and `funding` must be absent. */
@@ -6414,15 +6474,15 @@ export namespace MyNS {
 
 		/**
 		 * Your identifer for the transfer recipient.
-		 * Max length: 15
 		 * Min length: 1
+		 * Max length: 15
 		 */
 		individual_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the transfer recipient. This value is informational and not verified by the recipient's bank.
-		 * Max length: 22
 		 * Min length: 1
+		 * Max length: 22
 		 */
 		individual_name: FormControl<string | null | undefined>,
 
@@ -6431,8 +6491,8 @@ export namespace MyNS {
 
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: FormControl<string | null | undefined>,
 
@@ -6442,8 +6502,8 @@ export namespace MyNS {
 		/**
 		 * A description you choose to give the transfer. This will be saved with the transfer details, displayed in the dashboard, and returned by the API. If `individual_name` and `company_name` are not explicitly set by this API, the `statement_descriptor` will be sent in those fields to the receiving bank to help the customer recognize the transfer. You are highly encouraged to pass `individual_name` and `company_name` instead of relying on this fallback.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		statement_descriptor: FormControl<string | null | undefined>,
 	}
@@ -6477,8 +6537,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -6510,8 +6570,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -6552,24 +6612,24 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the corporation's state of incorporation.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		incorporation_state?: string | null;
 
 		/**
 		 * The legal name of the corporation.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 
 		/**
 		 * The Employer Identification Number (EIN) for the corporation.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		tax_identifier: string;
 
@@ -6580,24 +6640,24 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the corporation's state of incorporation.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		incorporation_state: FormControl<string | null | undefined>,
 
 		/**
 		 * The legal name of the corporation.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The Employer Identification Number (EIN) for the corporation.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		tax_identifier: FormControl<string | null | undefined>,
 
@@ -6619,39 +6679,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -6660,39 +6720,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -6711,8 +6771,8 @@ export namespace MyNS {
 
 		/**
 		 * This person's role or title within the entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		company_title?: string | null;
 
@@ -6732,8 +6792,8 @@ export namespace MyNS {
 
 		/**
 		 * This person's role or title within the entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		company_title: FormControl<string | null | undefined>,
 
@@ -6765,6 +6825,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -6777,8 +6838,8 @@ export namespace MyNS {
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -6790,14 +6851,15 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -6815,39 +6877,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -6856,39 +6918,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -6917,8 +6979,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: string;
 
@@ -6939,8 +7001,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -6957,6 +7019,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -6969,8 +7032,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -6979,6 +7042,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -6991,8 +7055,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -7012,20 +7076,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/**
@@ -7039,20 +7106,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -7076,14 +7146,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -7098,14 +7169,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -7136,8 +7208,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the joint entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name?: string | null;
 	}
@@ -7145,8 +7217,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the joint entity.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -7171,6 +7243,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -7183,8 +7256,8 @@ export namespace MyNS {
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -7196,14 +7269,15 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -7221,39 +7295,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -7262,39 +7336,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -7323,8 +7397,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: string;
 
@@ -7345,8 +7419,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -7363,6 +7437,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -7375,8 +7450,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -7385,6 +7460,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -7397,8 +7473,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -7416,20 +7492,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/**
@@ -7443,20 +7522,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -7480,14 +7562,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -7502,14 +7585,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -7542,6 +7626,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -7554,8 +7639,8 @@ export namespace MyNS {
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -7567,14 +7652,15 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -7592,39 +7678,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -7633,39 +7719,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -7694,8 +7780,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: string;
 
@@ -7716,8 +7802,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -7734,6 +7820,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -7746,8 +7833,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -7756,6 +7843,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -7768,8 +7856,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -7787,20 +7875,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/**
@@ -7814,20 +7905,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -7851,14 +7945,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -7873,14 +7968,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -7945,8 +8041,8 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state in which the trust was formed.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		formation_state?: string | null;
 
@@ -7956,15 +8052,15 @@ export namespace MyNS {
 		/**
 		 * The legal name of the trust.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 
 		/**
 		 * The Employer Identification Number (EIN) for the trust. Required if `category` is equal to `irrevocable`.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		tax_identifier?: string | null;
 
@@ -7987,23 +8083,23 @@ export namespace MyNS {
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state in which the trust was formed.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		formation_state: FormControl<string | null | undefined>,
 
 		/**
 		 * The legal name of the trust.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The Employer Identification Number (EIN) for the trust. Required if `category` is equal to `irrevocable`.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		tax_identifier: FormControl<string | null | undefined>,
 	}
@@ -8023,39 +8119,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -8064,39 +8160,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -8127,6 +8223,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -8139,8 +8236,8 @@ export namespace MyNS {
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -8152,14 +8249,15 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -8177,39 +8275,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -8218,39 +8316,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -8279,8 +8377,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: string;
 
@@ -8301,8 +8399,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -8319,6 +8417,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -8331,8 +8430,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -8341,6 +8440,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -8353,8 +8453,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -8372,20 +8472,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/**
@@ -8399,20 +8502,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -8436,14 +8542,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -8458,14 +8565,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -8524,6 +8632,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -8536,8 +8645,8 @@ export namespace MyNS {
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: string;
 	}
@@ -8549,14 +8658,15 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
 		/**
 		 * The person's legal name.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -8574,39 +8684,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: string;
 	}
@@ -8615,39 +8725,39 @@ export namespace MyNS {
 		/**
 		 * The city of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the address. This is usually the street number and street.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the address. This might be the floor or room number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * The ZIP code of the address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -8676,8 +8786,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: string;
 
@@ -8698,8 +8808,8 @@ export namespace MyNS {
 		/**
 		 * An identification number that can be used to verify the individual's identity, such as a social security number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 4
+		 * Max length: 200
 		 */
 		number: FormControl<string | null | undefined>,
 	}
@@ -8716,6 +8826,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -8728,8 +8839,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -8738,6 +8849,7 @@ export namespace MyNS {
 		/**
 		 * The driver's license's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -8750,8 +8862,8 @@ export namespace MyNS {
 		/**
 		 * The state that issued the provided driver's license.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -8769,20 +8881,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date?: Date | null;
 
 		/**
@@ -8796,20 +8911,23 @@ export namespace MyNS {
 		/**
 		 * The two-character ISO 3166-1 code representing the country that issued the document.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the document submitted.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The document's expiration date in YYYY-MM-DD format. */
+		/**
+		 * The document's expiration date in YYYY-MM-DD format.
+		 * Type: DateOnly
+		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -8833,14 +8951,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: string;
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: Date;
 
@@ -8855,14 +8974,15 @@ export namespace MyNS {
 		/**
 		 * The country that issued the passport.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The passport's expiration date in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		expiration_date: FormControl<Date | null | undefined>,
 
@@ -8890,8 +9010,8 @@ export namespace MyNS {
 
 		/**
 		 * The key that will be used to sign webhooks. If no value is passed, a random string will be used as default.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		shared_secret?: string | null;
 
@@ -8908,8 +9028,8 @@ export namespace MyNS {
 
 		/**
 		 * The key that will be used to sign webhooks. If no value is passed, a random string will be used as default.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		shared_secret: FormControl<string | null | undefined>,
 
@@ -9082,16 +9202,16 @@ export namespace MyNS {
 		/**
 		 * The account number for the destination account.
 		 * Required
-		 * Max length: 17
 		 * Min length: 1
+		 * Max length: 17
 		 */
 		account_number: string;
 
 		/**
 		 * The name you choose for the Account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: string;
 
@@ -9101,8 +9221,8 @@ export namespace MyNS {
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: string;
 	}
@@ -9111,16 +9231,16 @@ export namespace MyNS {
 		/**
 		 * The account number for the destination account.
 		 * Required
-		 * Max length: 17
 		 * Min length: 1
+		 * Max length: 17
 		 */
 		account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * The name you choose for the Account.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -9130,8 +9250,8 @@ export namespace MyNS {
 		/**
 		 * The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		routing_number: FormControl<string | null | undefined>,
 	}
@@ -9160,6 +9280,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9224,6 +9345,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9350,6 +9472,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9385,6 +9508,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9437,6 +9561,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9517,6 +9642,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9669,6 +9795,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9701,6 +9828,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9749,6 +9877,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9766,6 +9895,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9794,6 +9924,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9850,6 +9981,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9923,6 +10055,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9941,7 +10074,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -10036,6 +10172,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -10054,7 +10191,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -10792,6 +10932,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -10812,6 +10953,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -10980,6 +11122,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -11000,6 +11143,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -11139,6 +11283,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -11159,6 +11304,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -11489,6 +11635,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -11509,6 +11656,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -11677,6 +11825,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: Date;
 
@@ -11697,6 +11846,7 @@ export namespace MyNS {
 		/**
 		 * The person's date of birth in YYYY-MM-DD format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		date_of_birth: FormControl<Date | null | undefined>,
 
@@ -12914,6 +13064,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -12976,6 +13127,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13100,6 +13252,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13135,6 +13288,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13185,6 +13339,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13265,6 +13420,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13409,6 +13565,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13441,6 +13598,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13487,6 +13645,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13504,6 +13663,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13530,6 +13690,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13586,6 +13747,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13657,6 +13819,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13675,7 +13838,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -13770,6 +13936,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -13788,7 +13955,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -13931,6 +14101,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -13993,6 +14164,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14303,6 +14475,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14341,6 +14514,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14391,6 +14565,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14405,6 +14580,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14427,6 +14603,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14441,6 +14618,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14466,6 +14644,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14489,6 +14668,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14654,6 +14834,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14722,6 +14903,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14809,6 +14991,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14841,6 +15024,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14884,6 +15068,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14916,6 +15101,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -14962,6 +15148,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -14994,6 +15181,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15040,6 +15228,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15106,6 +15295,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -15126,6 +15316,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15192,6 +15383,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -15242,6 +15434,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15286,6 +15479,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15337,6 +15531,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15372,6 +15567,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15449,6 +15645,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15505,6 +15702,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15706,6 +15904,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15726,6 +15925,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15755,6 +15955,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15769,6 +15970,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15792,6 +15994,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15806,6 +16009,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15828,6 +16032,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15860,6 +16065,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15907,6 +16113,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15930,6 +16137,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -15964,6 +16172,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -15982,7 +16191,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -16077,6 +16289,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16095,7 +16308,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16232,6 +16448,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16282,6 +16499,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16346,6 +16564,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16390,6 +16609,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16453,6 +16673,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16465,6 +16686,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -16489,6 +16711,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -16515,6 +16738,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16527,6 +16751,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -16551,6 +16776,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -16593,6 +16819,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16617,6 +16844,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -16641,6 +16869,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -16679,6 +16908,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16703,6 +16933,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -16727,6 +16958,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -16785,6 +17017,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16841,6 +17074,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16926,6 +17160,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -16958,6 +17193,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -16995,6 +17231,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17012,6 +17249,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17040,6 +17278,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17072,6 +17311,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17141,6 +17381,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17161,6 +17402,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17212,6 +17454,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17241,6 +17484,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17341,6 +17585,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17403,6 +17648,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17527,6 +17773,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17562,6 +17809,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17612,6 +17860,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17692,6 +17941,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17836,6 +18086,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17868,6 +18119,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17914,6 +18166,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -17931,6 +18184,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -17957,6 +18211,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18013,6 +18268,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18084,6 +18340,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18102,7 +18359,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -18197,6 +18457,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18215,7 +18476,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -18358,6 +18622,7 @@ export namespace MyNS {
 		/**
 		 * The Pending Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18432,6 +18697,7 @@ export namespace MyNS {
 		/**
 		 * The Pending Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18594,6 +18860,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18614,6 +18881,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18643,6 +18911,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18657,6 +18926,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18679,6 +18949,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18759,6 +19030,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18905,6 +19177,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -18937,6 +19210,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -18985,6 +19259,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19017,6 +19292,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19060,6 +19336,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19080,6 +19357,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19109,6 +19387,7 @@ export namespace MyNS {
 		/**
 		 * The held amount in the minor unit of the account's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19159,6 +19438,7 @@ export namespace MyNS {
 		/**
 		 * The held amount in the minor unit of the account's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19225,6 +19505,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19239,6 +19520,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19264,6 +19546,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19281,6 +19564,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19308,6 +19592,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19328,6 +19613,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19462,6 +19748,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19524,6 +19811,7 @@ export namespace MyNS {
 		/**
 		 * The Declined Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19648,6 +19936,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19683,6 +19972,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19733,6 +20023,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19813,6 +20104,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -19957,6 +20249,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -19989,6 +20282,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20035,6 +20329,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20052,6 +20347,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20078,6 +20374,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20134,6 +20431,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20205,6 +20503,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20223,7 +20522,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -20318,6 +20620,7 @@ export namespace MyNS {
 		/**
 		 * The declined amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20336,7 +20639,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -20479,6 +20785,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20541,6 +20848,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20851,6 +21159,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20889,6 +21198,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20939,6 +21249,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20953,6 +21264,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -20975,6 +21287,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -20989,6 +21302,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21014,6 +21328,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21037,6 +21352,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21202,6 +21518,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21270,6 +21587,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21355,6 +21673,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21387,6 +21706,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21430,6 +21750,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21462,6 +21783,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21508,6 +21830,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21540,6 +21863,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21586,6 +21910,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21652,6 +21977,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -21672,6 +21998,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21738,6 +22065,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -21784,6 +22112,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21828,6 +22157,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21879,6 +22209,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -21914,6 +22245,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -21991,6 +22323,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22047,6 +22380,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22248,6 +22582,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22268,6 +22603,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22297,6 +22633,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22311,6 +22648,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22334,6 +22672,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22348,6 +22687,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22370,6 +22710,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22402,6 +22743,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22449,6 +22791,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22472,6 +22815,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22506,6 +22850,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22524,7 +22869,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -22619,6 +22967,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22637,7 +22986,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -22774,6 +23126,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22824,6 +23177,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22888,6 +23242,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -22932,6 +23287,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -22995,6 +23351,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23007,6 +23364,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -23031,6 +23389,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -23057,6 +23416,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23069,6 +23429,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -23093,6 +23454,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -23135,6 +23497,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23159,6 +23522,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -23183,6 +23547,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -23221,6 +23586,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23245,6 +23611,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -23269,6 +23636,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -23327,6 +23695,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23383,6 +23752,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23468,6 +23838,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23500,6 +23871,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23537,6 +23909,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23554,6 +23927,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23580,6 +23954,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23612,6 +23987,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23681,6 +24057,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23701,6 +24078,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23752,6 +24130,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23781,6 +24160,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -23836,6 +24216,7 @@ export namespace MyNS {
 		/**
 		 * The amount being requested in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -23972,6 +24353,7 @@ export namespace MyNS {
 		/**
 		 * The amount being requested in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24208,6 +24590,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24270,6 +24653,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24580,6 +24964,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24618,6 +25003,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24668,6 +25054,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24682,6 +25069,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24704,6 +25092,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24718,6 +25107,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24743,6 +25133,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24766,6 +25157,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -24931,6 +25323,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -24999,6 +25392,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25084,6 +25478,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25116,6 +25511,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25159,6 +25555,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25191,6 +25588,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25237,6 +25635,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25269,6 +25668,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25315,6 +25715,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25381,6 +25782,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -25401,6 +25803,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25467,6 +25870,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -25513,6 +25917,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25557,6 +25962,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25608,6 +26014,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25643,6 +26050,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25720,6 +26128,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25776,6 +26185,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -25977,6 +26387,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -25997,6 +26408,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26026,6 +26438,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26040,6 +26453,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26063,6 +26477,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26077,6 +26492,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26099,6 +26515,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26131,6 +26548,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26178,6 +26596,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26201,6 +26620,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26235,6 +26655,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26253,7 +26674,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -26348,6 +26772,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26366,7 +26791,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -26503,6 +26931,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26553,6 +26982,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26617,6 +27047,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26661,6 +27092,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26724,6 +27156,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26736,6 +27169,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -26760,6 +27194,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -26786,6 +27221,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26798,6 +27234,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -26822,6 +27259,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -26864,6 +27302,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -26888,6 +27327,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -26912,6 +27352,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -26950,6 +27391,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -26974,6 +27416,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -26998,6 +27441,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -27056,6 +27500,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27112,6 +27557,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27197,6 +27643,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27229,6 +27676,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27266,6 +27714,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27283,6 +27732,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27309,6 +27759,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27341,6 +27792,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27410,6 +27862,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27430,6 +27883,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27481,6 +27935,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27510,6 +27965,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27602,6 +28058,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -27664,6 +28121,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -27974,6 +28432,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28012,6 +28471,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28062,6 +28522,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28076,6 +28537,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28098,6 +28560,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28112,6 +28575,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28137,6 +28601,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28160,6 +28625,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28325,6 +28791,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28393,6 +28860,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28478,6 +28946,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28510,6 +28979,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28553,6 +29023,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28585,6 +29056,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28631,6 +29103,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28663,6 +29136,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28709,6 +29183,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28775,6 +29250,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -28795,6 +29271,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -28861,6 +29338,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -28907,6 +29385,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -28951,6 +29430,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29002,6 +29482,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29037,6 +29518,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29114,6 +29596,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29170,6 +29653,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29371,6 +29855,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29391,6 +29876,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29420,6 +29906,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29434,6 +29921,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29457,6 +29945,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29471,6 +29960,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29493,6 +29983,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29525,6 +30016,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29572,6 +30064,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29595,6 +30088,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29629,6 +30123,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29647,7 +30142,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -29742,6 +30240,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -29760,7 +30259,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -29897,6 +30399,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -29947,6 +30450,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30011,6 +30515,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30055,6 +30560,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30118,6 +30624,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30130,6 +30637,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -30154,6 +30662,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -30180,6 +30689,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30192,6 +30702,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -30216,6 +30727,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -30258,6 +30770,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30282,6 +30795,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -30306,6 +30820,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -30344,6 +30859,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30368,6 +30884,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -30392,6 +30909,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -30450,6 +30968,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30506,6 +31025,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30591,6 +31111,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30623,6 +31144,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30660,6 +31182,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30677,6 +31200,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30703,6 +31227,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30735,6 +31260,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30804,6 +31330,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30824,6 +31351,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -30875,6 +31403,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -30904,6 +31433,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31001,6 +31531,7 @@ export namespace MyNS {
 		/**
 		 * The value to evaluate the Limit against.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -31053,6 +31584,7 @@ export namespace MyNS {
 		/**
 		 * The value to evaluate the Limit against.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -31259,6 +31791,7 @@ export namespace MyNS {
 		/**
 		 * The Pending Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31335,6 +31868,7 @@ export namespace MyNS {
 		/**
 		 * The Pending Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31497,6 +32031,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31517,6 +32052,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31546,6 +32082,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31560,6 +32097,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31582,6 +32120,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31662,6 +32201,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31806,6 +32346,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31838,6 +32379,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31884,6 +32426,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31916,6 +32459,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -31959,6 +32503,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -31979,6 +32524,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -32008,6 +32554,7 @@ export namespace MyNS {
 		/**
 		 * The held amount in the minor unit of the account's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -32058,6 +32605,7 @@ export namespace MyNS {
 		/**
 		 * The held amount in the minor unit of the account's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -32122,6 +32670,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -32136,6 +32685,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -32161,6 +32711,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -32178,6 +32729,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -32205,6 +32757,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -32225,6 +32778,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -32570,6 +33124,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the attempted authorization in the currency the card user sees at the time of purchase, in the minor unit of that currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -32582,6 +33137,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the attempted authorization in the currency it will be settled in. This currency is the same as that of the Account the card belongs to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		settlement_amount: number;
 
@@ -32650,6 +33206,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the attempted authorization in the currency the card user sees at the time of purchase, in the minor unit of that currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -32662,6 +33219,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the attempted authorization in the currency it will be settled in. This currency is the same as that of the Account the card belongs to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		settlement_amount: FormControl<number | null | undefined>,
 
@@ -32926,6 +33484,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -33038,6 +33597,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -33513,29 +34073,29 @@ export namespace MyNS {
 
 		/**
 		 * The account number of the account that sent the transfer.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		debtor_account_number?: string | null;
 
 		/**
 		 * The name provided by the sender of the transfer.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		debtor_name?: string | null;
 
 		/**
 		 * The routing number of the account that sent the transfer.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		debtor_routing_number?: string | null;
 
 		/**
 		 * Additional information included with the transfer.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		remittance_information?: string | null;
 
@@ -33559,29 +34119,29 @@ export namespace MyNS {
 
 		/**
 		 * The account number of the account that sent the transfer.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		debtor_account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * The name provided by the sender of the transfer.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		debtor_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The routing number of the account that sent the transfer.
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		debtor_routing_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Additional information included with the transfer.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		remittance_information: FormControl<string | null | undefined>,
 
@@ -33664,92 +34224,92 @@ export namespace MyNS {
 
 		/**
 		 * The sending bank will set beneficiary_address_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line1?: string | null;
 
 		/**
 		 * The sending bank will set beneficiary_address_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line2?: string | null;
 
 		/**
 		 * The sending bank will set beneficiary_address_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line3?: string | null;
 
 		/**
 		 * The sending bank will set beneficiary_name in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_name?: string | null;
 
 		/**
 		 * The sending bank will set beneficiary_reference in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_reference?: string | null;
 
 		/**
 		 * The sending bank will set originator_address_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line1?: string | null;
 
 		/**
 		 * The sending bank will set originator_address_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line2?: string | null;
 
 		/**
 		 * The sending bank will set originator_address_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line3?: string | null;
 
 		/**
 		 * The sending bank will set originator_name in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_name?: string | null;
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line1?: string | null;
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line2?: string | null;
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line3?: string | null;
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line4 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line4?: string | null;
 	}
@@ -33770,92 +34330,92 @@ export namespace MyNS {
 
 		/**
 		 * The sending bank will set beneficiary_address_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set beneficiary_address_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set beneficiary_address_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set beneficiary_name in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set beneficiary_reference in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_reference: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_address_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_address_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_address_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_name in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line1 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line2 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line3 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The sending bank will set originator_to_beneficiary_information_line4 in production. You can simulate any value here.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_to_beneficiary_information_line4: FormControl<string | null | undefined>,
 	}
@@ -33914,41 +34474,42 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in cents. A positive amount originates a credit transfer pushing funds to the receiving account. A negative amount originates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
 		/**
 		 * The description of the date of the transfer.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date?: string | null;
 
 		/**
 		 * Data associated with the transfer set by the sender.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data?: string | null;
 
 		/**
 		 * The description of the transfer set by the sender.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description?: string | null;
 
 		/**
 		 * The sender's company id.
-		 * Max length: 15
 		 * Min length: 1
+		 * Max length: 15
 		 */
 		company_id?: string | null;
 
 		/**
 		 * The name of the sender.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name?: string | null;
 	}
@@ -33963,41 +34524,42 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in cents. A positive amount originates a credit transfer pushing funds to the receiving account. A negative amount originates a debit transfer pulling funds from the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The description of the date of the transfer.
-		 * Max length: 6
 		 * Min length: 1
+		 * Max length: 6
 		 */
 		company_descriptive_date: FormControl<string | null | undefined>,
 
 		/**
 		 * Data associated with the transfer set by the sender.
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		company_discretionary_data: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the transfer set by the sender.
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		company_entry_description: FormControl<string | null | undefined>,
 
 		/**
 		 * The sender's company id.
-		 * Max length: 15
 		 * Min length: 1
+		 * Max length: 15
 		 */
 		company_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the sender.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		company_name: FormControl<string | null | undefined>,
 	}
@@ -34074,132 +34636,132 @@ export namespace MyNS {
 		/**
 		 * The drawdown request's beneficiary's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_account_number: string;
 
 		/**
 		 * Line 1 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line1?: string | null;
 
 		/**
 		 * Line 2 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line2?: string | null;
 
 		/**
 		 * Line 3 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line3?: string | null;
 
 		/**
 		 * The drawdown request's beneficiary's name.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_name?: string | null;
 
 		/**
 		 * The drawdown request's beneficiary's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_routing_number: string;
 
 		/**
 		 * The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the amount being requested. Will always be "USD".
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		currency: string;
 
 		/**
 		 * A message from the drawdown request's originator.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		message_to_recipient: string;
 
 		/**
 		 * The drawdown request's originator's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_account_number: string;
 
 		/**
 		 * Line 1 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line1?: string | null;
 
 		/**
 		 * Line 2 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line2?: string | null;
 
 		/**
 		 * Line 3 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line3?: string | null;
 
 		/**
 		 * The drawdown request's originator's name.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_name?: string | null;
 
 		/**
 		 * The drawdown request's originator's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_routing_number: string;
 
 		/**
 		 * Line 1 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line1?: string | null;
 
 		/**
 		 * Line 2 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line2?: string | null;
 
 		/**
 		 * Line 3 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line3?: string | null;
 
 		/**
 		 * Line 4 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line4?: string | null;
 
@@ -34221,132 +34783,132 @@ export namespace MyNS {
 		/**
 		 * The drawdown request's beneficiary's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 1 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 2 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 3 of the drawdown request's beneficiary's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's beneficiary's name.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		beneficiary_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's beneficiary's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		beneficiary_routing_number: FormControl<string | null | undefined>,
 
 		/**
 		 * The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the amount being requested. Will always be "USD".
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		currency: FormControl<string | null | undefined>,
 
 		/**
 		 * A message from the drawdown request's originator.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		message_to_recipient: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's originator's account number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_account_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 1 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 2 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 3 of the drawdown request's originator's address.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_address_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's originator's name.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_name: FormControl<string | null | undefined>,
 
 		/**
 		 * The drawdown request's originator's routing number.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		originator_routing_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 1 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line1: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 2 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line2: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 3 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line3: FormControl<string | null | undefined>,
 
 		/**
 		 * Line 4 of the information conveyed from the originator of the message to the beneficiary.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		originator_to_beneficiary_information_line4: FormControl<string | null | undefined>,
 
@@ -34496,8 +35058,8 @@ export namespace MyNS {
 
 		/**
 		 * Why the dispute was rejected. Not required for accepting disputes.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		explanation?: string | null;
 
@@ -34511,8 +35073,8 @@ export namespace MyNS {
 
 		/**
 		 * Why the dispute was rejected. Not required for accepting disputes.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		explanation: FormControl<string | null | undefined>,
 
@@ -34545,6 +35107,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -34609,6 +35172,7 @@ export namespace MyNS {
 		/**
 		 * The Transaction amount in the minor unit of its currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -34919,6 +35483,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -34957,6 +35522,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35007,6 +35573,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35021,6 +35588,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35043,6 +35611,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35057,6 +35626,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35082,6 +35652,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35105,6 +35676,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35270,6 +35842,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35338,6 +35911,7 @@ export namespace MyNS {
 		/**
 		 * The pending amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35423,6 +35997,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35455,6 +36030,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35498,6 +36074,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35530,6 +36107,7 @@ export namespace MyNS {
 		/**
 		 * The refunded amount in the minor unit of the refunded currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35576,6 +36154,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35608,6 +36187,7 @@ export namespace MyNS {
 		/**
 		 * The settled amount in the minor unit of the settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35654,6 +36234,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35720,6 +36301,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: number;
 
@@ -35740,6 +36322,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's settlement currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35806,6 +36389,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's presentment currency.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		presentment_amount: FormControl<number | null | undefined>,
 
@@ -35852,6 +36436,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35896,6 +36481,7 @@ export namespace MyNS {
 		/**
 		 * The amount to be deposited in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -35947,6 +36533,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -35982,6 +36569,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36059,6 +36647,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36115,6 +36704,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36316,6 +36906,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36336,6 +36927,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36365,6 +36957,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36379,6 +36972,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36402,6 +36996,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36416,6 +37011,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36438,6 +37034,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36470,6 +37067,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36517,6 +37115,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36540,6 +37139,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36574,6 +37174,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36592,7 +37193,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: number;
 
 		/** Required */
@@ -36687,6 +37291,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the destination account currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36705,7 +37310,10 @@ export namespace MyNS {
 		/** Required */
 		foreign_exchange_reference_indicator: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreign_payment_amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -36842,6 +37450,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -36892,6 +37501,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transfer's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -36956,6 +37566,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37000,6 +37611,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37063,6 +37675,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37075,6 +37688,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -37099,6 +37713,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -37125,6 +37740,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37137,6 +37753,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -37161,6 +37778,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -37203,6 +37821,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37227,6 +37846,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -37251,6 +37871,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -37289,6 +37910,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37313,6 +37935,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -37337,6 +37960,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -37395,6 +38019,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37451,6 +38076,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37536,6 +38162,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37568,6 +38195,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37605,6 +38233,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37622,6 +38251,7 @@ export namespace MyNS {
 		/**
 		 * The amount in the minor unit of the transaction's currency. For dollars, for example, this is cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37648,6 +38278,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37680,6 +38311,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37749,6 +38381,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37769,6 +38402,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37820,6 +38454,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -37849,6 +38484,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -37935,8 +38571,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the card.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -37950,8 +38586,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the card.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -37971,39 +38607,39 @@ export namespace MyNS {
 		/**
 		 * The city of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: string;
 
 		/**
 		 * The first line of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: string;
 
 		/**
 		 * The second line of the billing address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2?: string | null;
 
 		/**
 		 * The postal code of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		postal_code: string;
 
 		/**
 		 * The US state of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: string;
 	}
@@ -38012,39 +38648,39 @@ export namespace MyNS {
 		/**
 		 * The city of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * The first line of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line1: FormControl<string | null | undefined>,
 
 		/**
 		 * The second line of the billing address.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		line2: FormControl<string | null | undefined>,
 
 		/**
 		 * The postal code of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		postal_code: FormControl<string | null | undefined>,
 
 		/**
 		 * The US state of the billing address.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -38066,15 +38702,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode over email.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email?: string | null;
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone?: string | null;
 	}
@@ -38085,15 +38721,15 @@ export namespace MyNS {
 
 		/**
 		 * An email address that can be used to verify the cardholder via one-time passcode over email.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/**
 		 * A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		phone: FormControl<string | null | undefined>,
 	}
@@ -38135,8 +38771,8 @@ export namespace MyNS {
 
 		/**
 		 * The name you choose for the Account Number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name?: string | null;
 
@@ -38147,8 +38783,8 @@ export namespace MyNS {
 
 		/**
 		 * The name you choose for the Account Number.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -38167,8 +38803,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name of the Account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name?: string | null;
 	}
@@ -38176,8 +38812,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name of the Account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -38211,8 +38847,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the external account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -38223,8 +38859,8 @@ export namespace MyNS {
 
 		/**
 		 * The description you choose to give the external account.
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -38252,6 +38888,7 @@ export namespace MyNS {
 		/**
 		 * The amount being requested in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -38346,6 +38983,7 @@ export namespace MyNS {
 		/**
 		 * The amount being requested in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -38520,6 +39158,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -38650,6 +39289,7 @@ export namespace MyNS {
 		/**
 		 * The transfer amount in USD cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -38839,6 +39479,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -38863,6 +39504,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: Date;
 
@@ -38887,6 +39529,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: Date;
 
@@ -38925,6 +39568,7 @@ export namespace MyNS {
 		/**
 		 * The amount that was reversed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -38949,6 +39593,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire reversal.
 		 * Required
+		 * Type: DateOnly
 		 */
 		input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -38973,6 +39618,7 @@ export namespace MyNS {
 		/**
 		 * The Fedwire cycle date for the wire transfer that was reversed.
 		 * Required
+		 * Type: DateOnly
 		 */
 		previous_message_input_cycle_date: FormControl<Date | null | undefined>,
 
@@ -39107,6 +39753,7 @@ export namespace MyNS {
 		/**
 		 * List Account Numbers
 		 * Get account_numbers
+		 * @param {number} limit Minimum: 0
 		 * @return {Account_number_list} Account Number List
 		 */
 		List_account_numbers(cursor: string | null | undefined, limit: number | null | undefined, status: Account_numberStatus | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Account_number_list> {
@@ -39143,6 +39790,7 @@ export namespace MyNS {
 		/**
 		 * List Account Statements
 		 * Get account_statements
+		 * @param {number} limit Minimum: 0
 		 * @return {Account_statement_list} Account Statement List
 		 */
 		List_account_statements(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, statement_period_start_after: Date | null | undefined, statement_period_start_before: Date | null | undefined, statement_period_start_on_or_after: Date | null | undefined, statement_period_start_on_or_before: Date | null | undefined): Observable<Account_statement_list> {
@@ -39161,6 +39809,7 @@ export namespace MyNS {
 		/**
 		 * List Account Transfers
 		 * Get account_transfers
+		 * @param {number} limit Minimum: 0
 		 * @return {Account_transfer_list} Account Transfer List
 		 */
 		List_account_transfers(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Account_transfer_list> {
@@ -39206,6 +39855,7 @@ export namespace MyNS {
 		/**
 		 * List Accounts
 		 * Get accounts
+		 * @param {number} limit Minimum: 0
 		 * @return {Account_list} Account List
 		 */
 		List_accounts(cursor: string | null | undefined, limit: number | null | undefined, entity_id: string | null | undefined, status: AccountStatus | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Account_list> {
@@ -39251,6 +39901,7 @@ export namespace MyNS {
 		/**
 		 * List ACH Prenotifications
 		 * Get ach_prenotifications
+		 * @param {number} limit Minimum: 0
 		 * @return {Ach_prenotification_list} ACH Prenotification List
 		 */
 		List_ach_prenotifications(cursor: string | null | undefined, limit: number | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Ach_prenotification_list> {
@@ -39278,6 +39929,7 @@ export namespace MyNS {
 		/**
 		 * List ACH Transfers
 		 * Get ach_transfers
+		 * @param {number} limit Minimum: 0
 		 * @return {Ach_transfer_list} ACH Transfer List
 		 */
 		List_ach_transfers(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, external_account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Ach_transfer_list> {
@@ -39334,6 +39986,7 @@ export namespace MyNS {
 		/**
 		 * List Bookkeeping Accounts
 		 * Get bookkeeping_accounts
+		 * @param {number} limit Minimum: 0
 		 * @return {Bookkeeping_account_list} Bookkeeping Account List
 		 */
 		List_bookkeeping_accounts(cursor: string | null | undefined, limit: number | null | undefined): Observable<Bookkeeping_account_list> {
@@ -39352,6 +40005,7 @@ export namespace MyNS {
 		/**
 		 * List Bookkeeping Entries
 		 * Get bookkeeping_entries
+		 * @param {number} limit Minimum: 0
 		 * @return {Bookkeeping_entry_list} Bookkeeping Entry List
 		 */
 		List_bookkeeping_entries(cursor: string | null | undefined, limit: number | null | undefined): Observable<Bookkeeping_entry_list> {
@@ -39370,6 +40024,7 @@ export namespace MyNS {
 		/**
 		 * List Card Disputes
 		 * Get card_disputes
+		 * @param {number} limit Minimum: 0
 		 * @return {Card_dispute_list} Card Dispute List
 		 */
 		List_card_disputes(cursor: string | null | undefined, limit: number | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined, status_in: Array<Card_disputeStatus> | null | undefined): Observable<Card_dispute_list> {
@@ -39397,6 +40052,7 @@ export namespace MyNS {
 		/**
 		 * List Card Profiles
 		 * Get card_profiles
+		 * @param {number} limit Minimum: 0
 		 * @return {Card_profile_list} Card Profile List
 		 */
 		List_card_profiles(cursor: string | null | undefined, limit: number | null | undefined, status_in: Array<Card_profileStatus> | null | undefined): Observable<Card_profile_list> {
@@ -39424,6 +40080,7 @@ export namespace MyNS {
 		/**
 		 * List Cards
 		 * Get cards
+		 * @param {number} limit Minimum: 0
 		 * @return {Card_list} Card List
 		 */
 		List_cards(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Card_list> {
@@ -39469,6 +40126,7 @@ export namespace MyNS {
 		/**
 		 * List Check Deposits
 		 * Get check_deposits
+		 * @param {number} limit Minimum: 0
 		 * @return {Check_deposit_list} Check Deposit List
 		 */
 		List_check_deposits(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Check_deposit_list> {
@@ -39496,6 +40154,7 @@ export namespace MyNS {
 		/**
 		 * List Check Transfers
 		 * Get check_transfers
+		 * @param {number} limit Minimum: 0
 		 * @return {Check_transfer_list} Check Transfer List
 		 */
 		List_check_transfers(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Check_transfer_list> {
@@ -39550,6 +40209,7 @@ export namespace MyNS {
 		/**
 		 * List Declined Transactions
 		 * Get declined_transactions
+		 * @param {number} limit Minimum: 0
 		 * @return {Declined_transaction_list} Declined Transaction List
 		 */
 		List_declined_transactions(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined, route_id: string | null | undefined): Observable<Declined_transaction_list> {
@@ -39568,6 +40228,7 @@ export namespace MyNS {
 		/**
 		 * List Digital Wallet Tokens
 		 * Get digital_wallet_tokens
+		 * @param {number} limit Minimum: 0
 		 * @return {Digital_wallet_token_list} Digital Wallet Token List
 		 */
 		List_digital_wallet_tokens(cursor: string | null | undefined, limit: number | null | undefined, card_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Digital_wallet_token_list> {
@@ -39586,6 +40247,7 @@ export namespace MyNS {
 		/**
 		 * List Documents
 		 * Get documents
+		 * @param {number} limit Minimum: 0
 		 * @return {Document_list} Document List
 		 */
 		List_documents(cursor: string | null | undefined, limit: number | null | undefined, entity_id: string | null | undefined, category_in: Array<DocumentCategory> | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Document_list> {
@@ -39604,6 +40266,7 @@ export namespace MyNS {
 		/**
 		 * List Entities
 		 * Get entities
+		 * @param {number} limit Minimum: 0
 		 * @return {Entity_list} Entity List
 		 */
 		List_entities(cursor: string | null | undefined, limit: number | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Entity_list> {
@@ -39640,6 +40303,7 @@ export namespace MyNS {
 		/**
 		 * List Event Subscriptions
 		 * Get event_subscriptions
+		 * @param {number} limit Minimum: 0
 		 * @return {Event_subscription_list} Event Subscription List
 		 */
 		List_event_subscriptions(cursor: string | null | undefined, limit: number | null | undefined): Observable<Event_subscription_list> {
@@ -39676,6 +40340,7 @@ export namespace MyNS {
 		/**
 		 * List Events
 		 * Get events
+		 * @param {number} limit Minimum: 0
 		 * @return {Event_list} Event List
 		 */
 		List_events(cursor: string | null | undefined, limit: number | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined, category_in: Array<Create_an_event_subscription_parametersSelected_event_category> | null | undefined, associated_object_id: string | null | undefined): Observable<Event_list> {
@@ -39694,6 +40359,7 @@ export namespace MyNS {
 		/**
 		 * List Exports
 		 * Get exports
+		 * @param {number} limit Minimum: 0
 		 * @return {Export_list} Export List
 		 */
 		List_exports(cursor: string | null | undefined, limit: number | null | undefined): Observable<Export_list> {
@@ -39721,6 +40387,7 @@ export namespace MyNS {
 		/**
 		 * List External Accounts
 		 * Get external_accounts
+		 * @param {number} limit Minimum: 0
 		 * @return {External_account_list} External Account List
 		 */
 		List_external_accounts(cursor: string | null | undefined, limit: number | null | undefined, status_in: Array<External_accountStatus> | null | undefined): Observable<External_account_list> {
@@ -39757,6 +40424,7 @@ export namespace MyNS {
 		/**
 		 * List Files
 		 * Get files
+		 * @param {number} limit Minimum: 0
 		 * @return {File_list} File List
 		 */
 		List_files(cursor: string | null | undefined, limit: number | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined, purpose_in: Array<FilePurpose> | null | undefined): Observable<File_list> {
@@ -39785,6 +40453,7 @@ export namespace MyNS {
 		/**
 		 * List Inbound ACH Transfer Returns
 		 * Get inbound_ach_transfer_returns
+		 * @param {number} limit Minimum: 0
 		 * @return {Inbound_ach_transfer_return_list} Inbound ACH Transfer Return List
 		 */
 		List_inbound_ach_transfer_returns(cursor: string | null | undefined, limit: number | null | undefined): Observable<Inbound_ach_transfer_return_list> {
@@ -39812,6 +40481,7 @@ export namespace MyNS {
 		/**
 		 * List Inbound Wire Drawdown Requests
 		 * Get inbound_wire_drawdown_requests
+		 * @param {number} limit Minimum: 0
 		 * @return {Inbound_wire_drawdown_request_list} Inbound Wire Drawdown Request List
 		 */
 		List_inbound_wire_drawdown_requests(cursor: string | null | undefined, limit: number | null | undefined): Observable<Inbound_wire_drawdown_request_list> {
@@ -39830,6 +40500,11 @@ export namespace MyNS {
 		/**
 		 * List Limits
 		 * Get limits
+		 * @param {number} limit Minimum: 0
+		 * @param {string} model_id Min length: 1
+		 *     Max length: 200
+		 * @param {string} status Min length: 1
+		 *     Max length: 200
 		 * @return {Limit_list} Limit List
 		 */
 		List_limits(cursor: string | null | undefined, limit: number | null | undefined, model_id: string | null | undefined, status: string | null | undefined): Observable<Limit_list> {
@@ -39866,6 +40541,7 @@ export namespace MyNS {
 		/**
 		 * List OAuth Connections
 		 * Get oauth_connections
+		 * @param {number} limit Minimum: 0
 		 * @return {Oauth_connection_list} OAuth Connection List
 		 */
 		List_oauth_connections(cursor: string | null | undefined, limit: number | null | undefined): Observable<Oauth_connection_list> {
@@ -39884,6 +40560,7 @@ export namespace MyNS {
 		/**
 		 * List Pending Transactions
 		 * Get pending_transactions
+		 * @param {number} limit Minimum: 0
 		 * @return {Pending_transaction_list} Pending Transaction List
 		 */
 		List_pending_transactions(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, route_id: string | null | undefined, source_id: string | null | undefined, status_in: Array<export_Status> | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Pending_transaction_list> {
@@ -39902,6 +40579,7 @@ export namespace MyNS {
 		/**
 		 * List Programs
 		 * Get programs
+		 * @param {number} limit Minimum: 0
 		 * @return {Program_list} Program List
 		 */
 		List_programs(cursor: string | null | undefined, limit: number | null | undefined): Observable<Program_list> {
@@ -39938,6 +40616,7 @@ export namespace MyNS {
 		/**
 		 * List Real Time Payments Transfers
 		 * Get real_time_payments_transfers
+		 * @param {number} limit Minimum: 0
 		 * @return {Real_time_payments_transfer_list} Real Time Payments Transfer List
 		 */
 		List_real_time_payments_transfers(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, external_account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Real_time_payments_transfer_list> {
@@ -39966,6 +40645,9 @@ export namespace MyNS {
 		 * List Routing Numbers
 		 * You can use this API to confirm if a routing number is valid, such as when a user is providing you with bank account details. Since routing numbers uniquely identify a bank, this will always return 0 or 1 entry. In Sandbox, the only valid routing number for this method is 110000000.
 		 * Get routing_numbers
+		 * @param {number} limit Minimum: 0
+		 * @param {string} routing_number Min length: 9
+		 *     Max length: 9
 		 * @return {Routing_number_list} Routing Number List
 		 */
 		List_routing_numbers(cursor: string | null | undefined, limit: number | null | undefined, routing_number: string): Observable<Routing_number_list> {
@@ -40215,6 +40897,7 @@ export namespace MyNS {
 		/**
 		 * List Transactions
 		 * Get transactions
+		 * @param {number} limit Minimum: 0
 		 * @return {Transaction_list} Transaction List
 		 */
 		List_transactions(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined, category_in: Array<Inbound_ach_transfer_simulation_resultTransactionSourceCategory> | null | undefined, route_id: string | null | undefined): Observable<Transaction_list> {
@@ -40233,6 +40916,7 @@ export namespace MyNS {
 		/**
 		 * List Wire Drawdown Requests
 		 * Get wire_drawdown_requests
+		 * @param {number} limit Minimum: 0
 		 * @return {Wire_drawdown_request_list} Wire Drawdown Request List
 		 */
 		List_wire_drawdown_requests(cursor: string | null | undefined, limit: number | null | undefined): Observable<Wire_drawdown_request_list> {
@@ -40260,6 +40944,7 @@ export namespace MyNS {
 		/**
 		 * List Wire Transfers
 		 * Get wire_transfers
+		 * @param {number} limit Minimum: 0
 		 * @return {Wire_transfer_list} Wire Transfer List
 		 */
 		List_wire_transfers(cursor: string | null | undefined, limit: number | null | undefined, account_id: string | null | undefined, external_account_id: string | null | undefined, created_at_after: Date | null | undefined, created_at_before: Date | null | undefined, created_at_on_or_after: Date | null | undefined, created_at_on_or_before: Date | null | undefined): Observable<Wire_transfer_list> {

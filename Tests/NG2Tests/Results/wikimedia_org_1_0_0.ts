@@ -1926,6 +1926,7 @@ export namespace MyNS {
 		 * Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).
 		 * Get media/math/formula/{hash}
 		 * @param {string} hash The hash string of the previous POST data
+		 *     Min length: 1
 		 * @return {void} Information about the checked formula
 		 */
 		MediaMathFormula_hashGet(hash: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1943,6 +1944,7 @@ export namespace MyNS {
 		 * Get media/math/render/{format}/{hash}
 		 * @param {MediaMathRender_format_hashGetFormat} format The output format; can be svg or mml
 		 * @param {string} hash The hash string of the previous POST data
+		 *     Min length: 1
 		 * @return {void} The rendered formula
 		 */
 		MediaMathRender_format_hashGet(format: MediaMathRender_format_hashGetFormat, hash: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

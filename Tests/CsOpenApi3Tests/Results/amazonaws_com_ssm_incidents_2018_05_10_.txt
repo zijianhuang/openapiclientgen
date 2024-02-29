@@ -2163,7 +2163,10 @@ namespace MyNS
 		/// Deletes all Regions in your replication set. Deleting the replication set deletes all Incident Manager data.
 		/// DeleteReplicationSet deleteReplicationSet#arn
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you're deleting.</param>
+		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you're deleting.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		public async Task DeleteReplicationSetAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "deleteReplicationSet#arn?arn=" + (arn==null? "" : System.Uri.EscapeDataString(arn));
@@ -2291,7 +2294,10 @@ namespace MyNS
 		/// Returns the details for the specified incident record.
 		/// GetIncidentRecord getIncidentRecord#arn
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN) of the incident record.</param>
+		/// <param name="arn">The Amazon Resource Name (ARN) of the incident record.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIncidentRecordOutput> GetIncidentRecordAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2325,7 +2331,10 @@ namespace MyNS
 		/// Retrieve your Incident Manager replication set.
 		/// GetReplicationSet getReplicationSet#arn
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you want to retrieve.</param>
+		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you want to retrieve.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReplicationSetOutput> GetReplicationSetAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2359,7 +2368,10 @@ namespace MyNS
 		/// Retrieves the resource policies attached to the specified response plan.
 		/// GetResourcePolicies getResourcePolicies#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the response plan with the attached resource policy. 
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2402,7 +2414,10 @@ namespace MyNS
 		/// Retrieves the details of the specified response plan.
 		/// GetResponsePlan getResponsePlan#arn
 		/// </summary>
-		/// <param name="arn">The Amazon Resource Name (ARN) of the response plan.</param>
+		/// <param name="arn">The Amazon Resource Name (ARN) of the response plan.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResponsePlanOutput> GetResponsePlanAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2436,8 +2451,14 @@ namespace MyNS
 		/// Retrieves a timeline event based on its ID and incident record.
 		/// GetTimelineEvent getTimelineEvent#eventId&incidentRecordArn
 		/// </summary>
-		/// <param name="eventId">The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</param>
-		/// <param name="incidentRecordArn">The Amazon Resource Name (ARN) of the incident that includes the timeline event.</param>
+		/// <param name="eventId">The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.
+		/// Max length: 50
+		/// Min length: 0
+		// </param>
+		/// <param name="incidentRecordArn">The Amazon Resource Name (ARN) of the incident that includes the timeline event.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTimelineEventOutput> GetTimelineEventAsync(string eventId, string incidentRecordArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2830,7 +2851,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</param>
-		/// <param name="tagKeys">The name of the tag to remove from the response plan.</param>
+		/// <param name="tagKeys">The name of the tag to remove from the response plan.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

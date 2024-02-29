@@ -20,6 +20,7 @@ export namespace MyNS {
 		/**
 		 * Clubhouse uses this to check for updates when app is not installed from App Store (eg TestFlight)
 		 * Get check_for_update
+		 * @param {number} is_testflight Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} successful response
 		 */
 		Check_for_updateGetByIs_testflight(is_testflight: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -119,6 +120,8 @@ export namespace MyNS {
 		/**
 		 * the Upcoming for You page
 		 * Get get_events
+		 * @param {number} page_size Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} a list of events
 		 */
 		Get_eventsGetByIs_filteredAndPage_sizeAndPage(is_filtered: boolean | null | undefined, page_size: number | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -137,6 +140,8 @@ export namespace MyNS {
 		/**
 		 * get notifications (the bell icon)
 		 * Get get_notifications
+		 * @param {number} page_size Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Returns a list of notifications.
 		 */
 		Get_notificationsGetByPage_sizeAndPage(page_size: number | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -191,6 +196,8 @@ export namespace MyNS {
 		/**
 		 * gets suggested follows during signup
 		 * Get get_suggested_follows_all
+		 * @param {number} page_size Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} a list of users to follow. bios truncated to 80 chars.
 		 */
 		Get_suggested_follows_allGetByIn_onboardingAndPage_sizeAndPage(in_onboarding: boolean | null | undefined, page_size: number | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -246,6 +253,9 @@ export namespace MyNS {
 		/**
 		 * looks up users by topic.
 		 * Get get_users_for_topic
+		 * @param {number} topic_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page_size Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} returns list of users with pagination. Bios truncated to 80 chars.
 		 */
 		Get_users_for_topicGetByTopic_idAndPage_sizeAndPage(topic_id: number | null | undefined, page_size: number | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

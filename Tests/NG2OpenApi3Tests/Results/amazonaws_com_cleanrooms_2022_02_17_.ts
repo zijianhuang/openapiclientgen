@@ -3426,6 +3426,7 @@ export namespace MyNS {
 		 * Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
 		 * Post collaborations/{collaborationIdentifier}/batch-analysistemplates
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchGetCollaborationAnalysisTemplateOutput} Success
 		 */
 		BatchGetCollaborationAnalysisTemplate(collaborationIdentifier: string, requestBody: BatchGetCollaborationAnalysisTemplatePostBody): Observable<BatchGetCollaborationAnalysisTemplateOutput> {
@@ -3436,6 +3437,7 @@ export namespace MyNS {
 		 * Retrieves multiple schemas by their identifiers.
 		 * Post collaborations/{collaborationIdentifier}/batch-schema
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchGetSchemaOutput} Success
 		 */
 		BatchGetSchema(collaborationIdentifier: string, requestBody: BatchGetSchemaPostBody): Observable<BatchGetSchemaOutput> {
@@ -3446,6 +3448,7 @@ export namespace MyNS {
 		 * Creates a new analysis template.
 		 * Post memberships/{membershipIdentifier}/analysistemplates
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {CreateAnalysisTemplateOutput} Success
 		 */
 		CreateAnalysisTemplate(membershipIdentifier: string, requestBody: CreateAnalysisTemplatePostBody): Observable<CreateAnalysisTemplateOutput> {
@@ -3456,8 +3459,11 @@ export namespace MyNS {
 		 * Lists analysis templates that the caller owns.
 		 * Get memberships/{membershipIdentifier}/analysistemplates
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAnalysisTemplatesOutput} Success
 		 */
 		ListAnalysisTemplates(membershipIdentifier: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAnalysisTemplatesOutput> {
@@ -3477,7 +3483,9 @@ export namespace MyNS {
 		 * Lists collaborations the caller owns, is active in, or has been invited to.
 		 * Get collaborations
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {FilterableMemberStatus} memberStatus The caller's status in a collaboration.
 		 * @return {ListCollaborationsOutput} Success
 		 */
@@ -3498,7 +3506,9 @@ export namespace MyNS {
 		 * Lists configured tables.
 		 * Get configuredTables
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListConfiguredTablesOutput} Success
 		 */
 		ListConfiguredTables(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListConfiguredTablesOutput> {
@@ -3509,6 +3519,7 @@ export namespace MyNS {
 		 * Creates a new analysis rule for a configured table. Currently, only one analysis rule can be created for a given configured table.
 		 * Post configuredTables/{configuredTableIdentifier}/analysisRule
 		 * @param {string} configuredTableIdentifier The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. 
+		 *     Min length: 36    Max length: 36
 		 * @return {CreateConfiguredTableAnalysisRuleOutput} Success
 		 */
 		CreateConfiguredTableAnalysisRule(configuredTableIdentifier: string, requestBody: CreateConfiguredTableAnalysisRulePostBody): Observable<CreateConfiguredTableAnalysisRuleOutput> {
@@ -3519,6 +3530,7 @@ export namespace MyNS {
 		 * Creates a configured table association. A configured table association links a configured table with a collaboration.
 		 * Post memberships/{membershipIdentifier}/configuredTableAssociations
 		 * @param {string} membershipIdentifier A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {CreateConfiguredTableAssociationOutput} Success
 		 */
 		CreateConfiguredTableAssociation(membershipIdentifier: string, requestBody: CreateConfiguredTableAssociationPostBody): Observable<CreateConfiguredTableAssociationOutput> {
@@ -3529,8 +3541,11 @@ export namespace MyNS {
 		 * Lists configured table associations for a membership.
 		 * Get memberships/{membershipIdentifier}/configuredTableAssociations
 		 * @param {string} membershipIdentifier A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListConfiguredTableAssociationsOutput} Success
 		 */
 		ListConfiguredTableAssociations(membershipIdentifier: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListConfiguredTableAssociationsOutput> {
@@ -3550,7 +3565,9 @@ export namespace MyNS {
 		 * Lists all memberships resources within the caller's account.
 		 * Get memberships
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {MembershipStatus} status A filter which will return only memberships in the specified status.
 		 * @return {ListMembershipsOutput} Success
 		 */
@@ -3562,7 +3579,9 @@ export namespace MyNS {
 		 * Deletes an analysis template.
 		 * Delete memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} analysisTemplateIdentifier The identifier for the analysis template resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteAnalysisTemplate(membershipIdentifier: string, analysisTemplateIdentifier: string): Observable<HttpResponse<string>> {
@@ -3573,7 +3592,9 @@ export namespace MyNS {
 		 * Retrieves an analysis template.
 		 * Get memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} analysisTemplateIdentifier The identifier for the analysis template resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetAnalysisTemplateOutput} Success
 		 */
 		GetAnalysisTemplate(membershipIdentifier: string, analysisTemplateIdentifier: string): Observable<GetAnalysisTemplateOutput> {
@@ -3584,7 +3605,9 @@ export namespace MyNS {
 		 * Updates the analysis template metadata.
 		 * Patch memberships/{membershipIdentifier}/analysistemplates/{analysisTemplateIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} analysisTemplateIdentifier The identifier for the analysis template resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAnalysisTemplateOutput} Success
 		 */
 		UpdateAnalysisTemplate(membershipIdentifier: string, analysisTemplateIdentifier: string, requestBody: UpdateAnalysisTemplatePatchBody): Observable<UpdateAnalysisTemplateOutput> {
@@ -3595,6 +3618,7 @@ export namespace MyNS {
 		 * Deletes a collaboration. It can only be called by the collaboration owner.
 		 * Delete collaborations/{collaborationIdentifier}
 		 * @param {string} collaborationIdentifier The identifier for the collaboration.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteCollaboration(collaborationIdentifier: string): Observable<HttpResponse<string>> {
@@ -3605,6 +3629,7 @@ export namespace MyNS {
 		 * Returns metadata about a collaboration.
 		 * Get collaborations/{collaborationIdentifier}
 		 * @param {string} collaborationIdentifier The identifier for the collaboration.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetCollaborationOutput} Success
 		 */
 		GetCollaboration(collaborationIdentifier: string): Observable<GetCollaborationOutput> {
@@ -3615,6 +3640,7 @@ export namespace MyNS {
 		 * Updates collaboration metadata and can only be called by the collaboration owner.
 		 * Patch collaborations/{collaborationIdentifier}
 		 * @param {string} collaborationIdentifier The identifier for the collaboration.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateCollaborationOutput} Success
 		 */
 		UpdateCollaboration(collaborationIdentifier: string, requestBody: UpdateCollaborationPatchBody): Observable<UpdateCollaborationOutput> {
@@ -3625,6 +3651,7 @@ export namespace MyNS {
 		 * Deletes a configured table.
 		 * Delete configuredTables/{configuredTableIdentifier}
 		 * @param {string} configuredTableIdentifier The unique ID for the configured table to delete.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteConfiguredTable(configuredTableIdentifier: string): Observable<HttpResponse<string>> {
@@ -3635,6 +3662,7 @@ export namespace MyNS {
 		 * Retrieves a configured table.
 		 * Get configuredTables/{configuredTableIdentifier}
 		 * @param {string} configuredTableIdentifier The unique ID for the configured table to retrieve.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetConfiguredTableOutput} Success
 		 */
 		GetConfiguredTable(configuredTableIdentifier: string): Observable<GetConfiguredTableOutput> {
@@ -3645,6 +3673,7 @@ export namespace MyNS {
 		 * Updates a configured table.
 		 * Patch configuredTables/{configuredTableIdentifier}
 		 * @param {string} configuredTableIdentifier The identifier for the configured table to update. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateConfiguredTableOutput} Success
 		 */
 		UpdateConfiguredTable(configuredTableIdentifier: string, requestBody: UpdateConfiguredTablePatchBody): Observable<UpdateConfiguredTableOutput> {
@@ -3655,6 +3684,7 @@ export namespace MyNS {
 		 * Deletes a configured table analysis rule.
 		 * Delete configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		 * @param {string} configuredTableIdentifier The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {AnalysisRuleType} analysisRuleType The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.
 		 * @return {void} 
 		 */
@@ -3666,6 +3696,7 @@ export namespace MyNS {
 		 * Retrieves a configured table analysis rule.
 		 * Get configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		 * @param {string} configuredTableIdentifier The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {AnalysisRuleType} analysisRuleType The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.
 		 * @return {GetConfiguredTableAnalysisRuleOutput} Success
 		 */
@@ -3677,6 +3708,7 @@ export namespace MyNS {
 		 * Updates a configured table analysis rule.
 		 * Patch configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}
 		 * @param {string} configuredTableIdentifier The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {AnalysisRuleType} analysisRuleType The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.
 		 * @return {UpdateConfiguredTableAnalysisRuleOutput} Success
 		 */
@@ -3688,7 +3720,9 @@ export namespace MyNS {
 		 * Deletes a configured table association.
 		 * Delete memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		 * @param {string} configuredTableAssociationIdentifier The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} membershipIdentifier A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteConfiguredTableAssociation(configuredTableAssociationIdentifier: string, membershipIdentifier: string): Observable<HttpResponse<string>> {
@@ -3699,7 +3733,9 @@ export namespace MyNS {
 		 * Retrieves a configured table association.
 		 * Get memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		 * @param {string} configuredTableAssociationIdentifier The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} membershipIdentifier A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetConfiguredTableAssociationOutput} Success
 		 */
 		GetConfiguredTableAssociation(configuredTableAssociationIdentifier: string, membershipIdentifier: string): Observable<GetConfiguredTableAssociationOutput> {
@@ -3710,7 +3746,9 @@ export namespace MyNS {
 		 * Updates a configured table association.
 		 * Patch memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}
 		 * @param {string} configuredTableAssociationIdentifier The unique identifier for the configured table association to update. Currently accepts the configured table association ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} membershipIdentifier The unique ID for the membership that the configured table association belongs to.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateConfiguredTableAssociationOutput} Success
 		 */
 		UpdateConfiguredTableAssociation(configuredTableAssociationIdentifier: string, membershipIdentifier: string, requestBody: UpdateConfiguredTableAssociationPatchBody): Observable<UpdateConfiguredTableAssociationOutput> {
@@ -3721,7 +3759,9 @@ export namespace MyNS {
 		 * Removes the specified member from a collaboration. The removed member is placed in the Removed status and can't interact with the collaboration. The removed member's data is inaccessible to active members of the collaboration.
 		 * Delete collaborations/{collaborationIdentifier}/member/{accountId}
 		 * @param {string} collaborationIdentifier The unique identifier for the associated collaboration.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} accountId The account ID of the member to remove.
+		 *     Min length: 12    Max length: 12
 		 * @return {void} 
 		 */
 		DeleteMember(collaborationIdentifier: string, accountId: string): Observable<HttpResponse<string>> {
@@ -3732,6 +3772,7 @@ export namespace MyNS {
 		 * Deletes a specified membership. All resources under a membership must be deleted.
 		 * Delete memberships/{membershipIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteMembership(membershipIdentifier: string): Observable<HttpResponse<string>> {
@@ -3742,6 +3783,7 @@ export namespace MyNS {
 		 * Retrieves a specified membership for an identifier.
 		 * Get memberships/{membershipIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership resource.
+		 *     Min length: 36    Max length: 36
 		 * @return {GetMembershipOutput} Success
 		 */
 		GetMembership(membershipIdentifier: string): Observable<GetMembershipOutput> {
@@ -3752,6 +3794,7 @@ export namespace MyNS {
 		 * Updates a membership.
 		 * Patch memberships/{membershipIdentifier}
 		 * @param {string} membershipIdentifier The unique identifier of the membership.
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateMembershipOutput} Success
 		 */
 		UpdateMembership(membershipIdentifier: string, requestBody: UpdateMembershipPatchBody): Observable<UpdateMembershipOutput> {
@@ -3762,7 +3805,9 @@ export namespace MyNS {
 		 * Retrieves an analysis template within a collaboration.
 		 * Get collaborations/{collaborationIdentifier}/analysistemplates/{analysisTemplateArn}
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} analysisTemplateArn The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+		 *     Min length: 0    Max length: 200
 		 * @return {GetCollaborationAnalysisTemplateOutput} Success
 		 */
 		GetCollaborationAnalysisTemplate(collaborationIdentifier: string, analysisTemplateArn: string): Observable<GetCollaborationAnalysisTemplateOutput> {
@@ -3773,7 +3818,9 @@ export namespace MyNS {
 		 * Returns query processing metadata.
 		 * Get memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a membership in a protected query instance.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} protectedQueryIdentifier The identifier for a protected query instance.
+		 *     Min length: 1    Max length: 36
 		 * @return {GetProtectedQueryOutput} Success
 		 */
 		GetProtectedQuery(membershipIdentifier: string, protectedQueryIdentifier: string): Observable<GetProtectedQueryOutput> {
@@ -3784,7 +3831,9 @@ export namespace MyNS {
 		 * Updates the processing of a currently running query.
 		 * Patch memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}
 		 * @param {string} membershipIdentifier The identifier for a member of a protected query instance.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} protectedQueryIdentifier The identifier for a protected query instance.
+		 *     Min length: 1    Max length: 36
 		 * @return {UpdateProtectedQueryOutput} Success
 		 */
 		UpdateProtectedQuery(membershipIdentifier: string, protectedQueryIdentifier: string, requestBody: UpdateProtectedQueryPatchBody): Observable<UpdateProtectedQueryOutput> {
@@ -3795,7 +3844,9 @@ export namespace MyNS {
 		 * Retrieves the schema for a relation within a collaboration.
 		 * Get collaborations/{collaborationIdentifier}/schemas/{name}
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} name The name of the relation to retrieve the schema for.
+		 *     Min length: 0    Max length: 128
 		 * @return {GetSchemaOutput} Success
 		 */
 		GetSchema(collaborationIdentifier: string, name: string): Observable<GetSchemaOutput> {
@@ -3806,7 +3857,9 @@ export namespace MyNS {
 		 * Retrieves a schema analysis rule.
 		 * Get collaborations/{collaborationIdentifier}/schemas/{name}/analysisRule/{type}
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} name The name of the schema to retrieve the analysis rule for.
+		 *     Min length: 0    Max length: 128
 		 * @param {AnalysisRuleType} type The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.
 		 * @return {GetSchemaAnalysisRuleOutput} Success
 		 */
@@ -3818,8 +3871,11 @@ export namespace MyNS {
 		 * Lists analysis templates within a collaboration.
 		 * Get collaborations/{collaborationIdentifier}/analysistemplates
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListCollaborationAnalysisTemplatesOutput} Success
 		 */
 		ListCollaborationAnalysisTemplates(collaborationIdentifier: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListCollaborationAnalysisTemplatesOutput> {
@@ -3830,8 +3886,11 @@ export namespace MyNS {
 		 * Lists all members within a collaboration.
 		 * Get collaborations/{collaborationIdentifier}/members
 		 * @param {string} collaborationIdentifier The identifier of the collaboration in which the members are listed.
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListMembersOutput} Success
 		 */
 		ListMembers(collaborationIdentifier: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListMembersOutput> {
@@ -3842,9 +3901,12 @@ export namespace MyNS {
 		 * Lists protected queries, sorted by the most recent query.
 		 * Get memberships/{membershipIdentifier}/protectedQueries
 		 * @param {string} membershipIdentifier The identifier for the membership in the collaboration.
+		 *     Min length: 36    Max length: 36
 		 * @param {ProtectedQueryStatus} status A filter on the status of the protected query.
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. 
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListProtectedQueriesOutput} Success
 		 */
 		ListProtectedQueries(membershipIdentifier: string, status: ProtectedQueryStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProtectedQueriesOutput> {
@@ -3855,6 +3917,7 @@ export namespace MyNS {
 		 * Creates a protected query that is started by Clean Rooms .
 		 * Post memberships/{membershipIdentifier}/protectedQueries
 		 * @param {string} membershipIdentifier A unique identifier for the membership to run this query against. Currently accepts a membership ID.
+		 *     Min length: 36    Max length: 36
 		 * @return {StartProtectedQueryOutput} Success
 		 */
 		StartProtectedQuery(membershipIdentifier: string, requestBody: StartProtectedQueryPostBody): Observable<StartProtectedQueryOutput> {
@@ -3865,9 +3928,12 @@ export namespace MyNS {
 		 * Lists the schemas for relations within a collaboration.
 		 * Get collaborations/{collaborationIdentifier}/schemas
 		 * @param {string} collaborationIdentifier A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {SchemaType} schemaType If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.
 		 * @param {string} nextToken The token value retrieved from a previous call to access the next page of results.
+		 *     Min length: 0    Max length: 10240
 		 * @param {number} maxResults The maximum size of the results that is returned per call.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListSchemasOutput} Success
 		 */
 		ListSchemas(collaborationIdentifier: string, schemaType: SchemaType | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListSchemasOutput> {
@@ -3878,6 +3944,7 @@ export namespace MyNS {
 		 * Lists all of the tags that have been added to a resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
+		 *     Min length: 0    Max length: 100
 		 * @return {ListTagsForResourceOutput} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceOutput> {
@@ -3888,6 +3955,7 @@ export namespace MyNS {
 		 * Tags a resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) associated with the resource you want to tag.
+		 *     Min length: 0    Max length: 100
 		 * @return {TagResourceOutput} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceOutput> {
@@ -3898,6 +3966,7 @@ export namespace MyNS {
 		 * Removes a tag or list of tags from a resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
+		 *     Min length: 0    Max length: 100
 		 * @param {Array<string>} tagKeys A list of key names of tags to be removed.
 		 * @return {UntagResourceOutput} Success
 		 */
@@ -3946,16 +4015,16 @@ export namespace MyNS {
 
 		/**
 		 * The description of the analysis template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the analysis template.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: string;
 
@@ -3985,16 +4054,16 @@ export namespace MyNS {
 
 		/**
 		 * The description of the analysis template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the analysis template.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4043,16 +4112,16 @@ export namespace MyNS {
 		/**
 		 * The display name for a collaboration.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
 		/**
 		 * A description of the collaboration provided by the collaboration owner.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: string;
 
@@ -4065,8 +4134,8 @@ export namespace MyNS {
 		/**
 		 * The display name of the collaboration creator.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		creatorDisplayName: string;
 
@@ -4087,24 +4156,24 @@ export namespace MyNS {
 		/**
 		 * The display name for a collaboration.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the collaboration provided by the collaboration owner.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The display name of the collaboration creator.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		creatorDisplayName: FormControl<string | null | undefined>,
 
@@ -4155,15 +4224,15 @@ export namespace MyNS {
 		/**
 		 * The name of the configured table.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
 		/**
 		 * A description for the configured table.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
@@ -4195,15 +4264,15 @@ export namespace MyNS {
 		/**
 		 * The name of the configured table.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the configured table.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4282,31 +4351,31 @@ export namespace MyNS {
 		/**
 		 * The name of the configured table association. This name is used to query the underlying configured table.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: string;
 
 		/**
 		 * A description for the configured table association.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		configuredTableIdentifier: string;
 
 		/**
 		 * The service will assume this role to access catalog metadata and query the table.
 		 * Required
-		 * Max length: 512
 		 * Min length: 32
+		 * Max length: 512
 		 */
 		roleArn: string;
 
@@ -4318,31 +4387,31 @@ export namespace MyNS {
 		/**
 		 * The name of the configured table association. This name is used to query the underlying configured table.
 		 * Required
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the configured table association.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		configuredTableIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The service will assume this role to access catalog metadata and query the table.
 		 * Required
-		 * Max length: 512
 		 * Min length: 32
+		 * Max length: 512
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -4365,8 +4434,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID for the associated collaboration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		collaborationIdentifier: string;
 
@@ -4384,8 +4453,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID for the associated collaboration.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		collaborationIdentifier: FormControl<string | null | undefined>,
 
@@ -4411,8 +4480,8 @@ export namespace MyNS {
 
 		/**
 		 * A new description for the analysis template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -4420,8 +4489,8 @@ export namespace MyNS {
 
 		/**
 		 * A new description for the analysis template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4436,15 +4505,15 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable identifier provided by the collaboration owner. Display names are not unique.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
 		/**
 		 * A description of the collaboration.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -4452,15 +4521,15 @@ export namespace MyNS {
 
 		/**
 		 * A human-readable identifier provided by the collaboration owner. Display names are not unique.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the collaboration.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4476,15 +4545,15 @@ export namespace MyNS {
 
 		/**
 		 * A new name for the configured table.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
 		/**
 		 * A new description for the configured table.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 	}
@@ -4492,15 +4561,15 @@ export namespace MyNS {
 
 		/**
 		 * A new name for the configured table.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A new description for the configured table.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -4543,15 +4612,15 @@ export namespace MyNS {
 
 		/**
 		 * A new description for the configured table association.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * The service will assume this role to access catalog metadata and query the table.
-		 * Max length: 512
 		 * Min length: 32
+		 * Max length: 512
 		 */
 		roleArn?: string | null;
 	}
@@ -4559,15 +4628,15 @@ export namespace MyNS {
 
 		/**
 		 * A new description for the configured table association.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The service will assume this role to access catalog metadata and query the table.
-		 * Max length: 512
 		 * Min length: 32
+		 * Max length: 512
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}

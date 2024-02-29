@@ -2098,6 +2098,7 @@ export namespace MyNS {
 		 * Delete deletepermissionversion#permissionArn&permissionVersion
 		 * @param {string} permissionArn Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.
 		 * @param {number} permissionVersion <p>Specifies the version number to delete.</p> <p>You can't delete the default version for a customer managed permission.</p> <p>You can't delete a version if it's the only version of the permission. You must either first create another version, or delete the permission completely.</p> <p>You can't delete a version if it is attached to any resource shares. If the version is the default, you must first use <a>SetDefaultPermissionVersion</a> to set a different version as the default for the customer managed permission, and then use <a>AssociateResourceSharePermission</a> to update your resource shares to use the new default version.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} clientToken <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
 		 * @return {DeletePermissionVersionResponse} Success
 		 */
@@ -2458,7 +2459,10 @@ export namespace MyNS {
 		/** <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p> */
 		clientToken?: string | null;
 
-		/** <p>Specifies the version of the RAM permission to associate with the resource share. You can specify <i>only</i> the version that is currently set as the default version for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>, then this operation updates an outdated version of the permission to the current default version.</p> <note> <p>You don't need to specify this parameter because the default behavior is to use the version that is currently set as the default version for the permission. This parameter is supported for backwards compatibility.</p> </note> */
+		/**
+		 * <p>Specifies the version of the RAM permission to associate with the resource share. You can specify <i>only</i> the version that is currently set as the default version for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>, then this operation updates an outdated version of the permission to the current default version.</p> <note> <p>You don't need to specify this parameter because the default behavior is to use the version that is currently set as the default version for the permission. This parameter is supported for backwards compatibility.</p> </note>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion?: number | null;
 	}
 	export interface AssociateResourceSharePermissionPostBodyFormProperties {
@@ -2481,7 +2485,10 @@ export namespace MyNS {
 		/** <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p> */
 		clientToken: FormControl<string | null | undefined>,
 
-		/** <p>Specifies the version of the RAM permission to associate with the resource share. You can specify <i>only</i> the version that is currently set as the default version for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>, then this operation updates an outdated version of the permission to the current default version.</p> <note> <p>You don't need to specify this parameter because the default behavior is to use the version that is currently set as the default version for the permission. This parameter is supported for backwards compatibility.</p> </note> */
+		/**
+		 * <p>Specifies the version of the RAM permission to associate with the resource share. You can specify <i>only</i> the version that is currently set as the default version for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>, then this operation updates an outdated version of the permission to the current default version.</p> <note> <p>You don't need to specify this parameter because the default behavior is to use the version that is currently set as the default version for the permission. This parameter is supported for backwards compatibility.</p> </note>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateAssociateResourceSharePermissionPostBodyFormGroup() {
@@ -2500,8 +2507,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		name: string;
 
@@ -2528,8 +2535,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2743,7 +2750,10 @@ export namespace MyNS {
 		 */
 		permissionArn: string;
 
-		/** <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p> <p>To see the list of available versions, use <a>ListPermissionVersions</a>.</p> */
+		/**
+		 * <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p> <p>To see the list of available versions, use <a>ListPermissionVersions</a>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion?: number | null;
 	}
 	export interface GetPermissionPostBodyFormProperties {
@@ -2754,7 +2764,10 @@ export namespace MyNS {
 		 */
 		permissionArn: FormControl<string | null | undefined>,
 
-		/** <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p> <p>To see the list of available versions, use <a>ListPermissionVersions</a>.</p> */
+		/**
+		 * <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p> <p>To see the list of available versions, use <a>ListPermissionVersions</a>.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPermissionPostBodyFormGroup() {
@@ -2950,7 +2963,10 @@ export namespace MyNS {
 		/** Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>. */
 		permissionArn?: string | null;
 
-		/** Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission. */
+		/**
+		 * Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion?: number | null;
 	}
 	export interface GetResourceSharesPostBodyFormProperties {
@@ -2980,7 +2996,10 @@ export namespace MyNS {
 		/** Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>. */
 		permissionArn: FormControl<string | null | undefined>,
 
-		/** Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission. */
+		/**
+		 * Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetResourceSharesPostBodyFormGroup() {
@@ -3053,7 +3072,10 @@ export namespace MyNS {
 		/** Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission. */
 		permissionArn?: string | null;
 
-		/** Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission. */
+		/**
+		 * Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion?: number | null;
 
 		/** Specifies that you want to list only those associations with resource shares that match this status. */
@@ -3083,7 +3105,10 @@ export namespace MyNS {
 		/** Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission. */
 		permissionArn: FormControl<string | null | undefined>,
 
-		/** Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission. */
+		/**
+		 * Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		permissionVersion: FormControl<number | null | undefined>,
 
 		/** Specifies that you want to list only those associations with resource shares that match this status. */
@@ -3557,7 +3582,10 @@ export namespace MyNS {
 		 */
 		fromPermissionArn: string;
 
-		/** Specifies that you want to updated the permissions for only those resource shares that use the specified version of the managed permission. */
+		/**
+		 * Specifies that you want to updated the permissions for only those resource shares that use the specified version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromPermissionVersion?: number | null;
 
 		/**
@@ -3577,7 +3605,10 @@ export namespace MyNS {
 		 */
 		fromPermissionArn: FormControl<string | null | undefined>,
 
-		/** Specifies that you want to updated the permissions for only those resource shares that use the specified version of the managed permission. */
+		/**
+		 * Specifies that you want to updated the permissions for only those resource shares that use the specified version of the managed permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromPermissionVersion: FormControl<number | null | undefined>,
 
 		/**
@@ -3610,6 +3641,7 @@ export namespace MyNS {
 		/**
 		 * Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <a>ListPermissionVersions</a>.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		permissionVersion: number;
 
@@ -3627,6 +3659,7 @@ export namespace MyNS {
 		/**
 		 * Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <a>ListPermissionVersions</a>.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		permissionVersion: FormControl<number | null | undefined>,
 

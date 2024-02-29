@@ -809,8 +809,8 @@ export namespace MyNS {
 
 		/**
 		 * The administrator user name of catalog database.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		catalogAdminUserName?: string | null;
 
@@ -826,8 +826,8 @@ export namespace MyNS {
 
 		/**
 		 * The administrator user name of catalog database.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		catalogAdminUserName: FormControl<string | null | undefined>,
 

@@ -862,10 +862,18 @@ namespace MyNS
 		/// </summary>
 		/// <param name="category">Used to filter messases by category.  Must be set to one of the following three categories: inbox, archived, blocked
 		///</param>
-		/// <param name="page">The page of conversations to return.</param>
-		/// <param name="per_page">The number of conversations to return per page (must be >= 1 and <= 30).</param>
+		/// <param name="page">The page of conversations to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">The number of conversations to return per page (must be >= 1 and <= 30).
+		/// Minimum: 1
+		/// Maximum: 30
+		// </param>
 		/// <param name="num_messages">The number of recent messages to return with each conversation. Additional messages can be retrieved using get conversation messages endpoint.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 30
+		// </param>
 		/// <param name="include_num_unread">If set to 1, the num_unread field in the response will be set to the count of the total number of conversations that have unread messages. <br /><br /> This is useful for showing users the total number of unread messages that they have in their inbox. Calculating the count will slow the request down a bit so setting this should be avoided for requests where it's not needed (eg. requesting archived or blocked conversations or requests that are just paging through older conversations).
 		///</param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
@@ -899,8 +907,13 @@ namespace MyNS
 		/// Search_conversations conversations/search
 		/// </summary>
 		/// <param name="search">The search query used to find conversations and messages.</param>
-		/// <param name="page">The page of conversations to return.</param>
-		/// <param name="per_page">The number of conversations to return per page (must be >= 1 and <= 30).</param>
+		/// <param name="page">The page of conversations to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">The number of conversations to return per page (must be >= 1 and <= 30).
+		/// Minimum: 1
+		/// Maximum: 30
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <returns>The conversations and paging data.</returns>
 		public async Task<Search_conversationsReturn> Search_conversationsAsync(string search, int page, int per_page, double device_pixel_ratio)
@@ -977,8 +990,13 @@ namespace MyNS
 		/// Get_conversation_messages conversations/{conversation_id}/messages
 		/// </summary>
 		/// <param name="conversation_id">The ID of the conversation to return messages from.</param>
-		/// <param name="page">The page of messages to return.</param>
-		/// <param name="per_page">The number of messages to return per page (must be >= 1 and <= 30).</param>
+		/// <param name="page">The page of messages to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">The number of messages to return per page (must be >= 1 and <= 30).
+		/// Minimum: 1
+		/// Maximum: 30
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="include_conversation">If set to 1, the conversation will be returned along with the messages.</param>
 		/// <returns>The messages and page data.  The conversation data is optional and is only returned if the include_conversation parameter is set.
@@ -1060,15 +1078,23 @@ namespace MyNS
 		/// <param name="latitude">Find groups near the given latitude and longitude.</param>
 		/// <param name="longitude">Find groups near the given latitude and longitude.</param>
 		/// <param name="distance">When latitude and longitude are passed, distance can optionally be passed to only return groups within a certain distance (in kilometers) from the point specified by the latitude and longitude.  The distance must be > 0 and <= 150 and will default to 100.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 150
+		// </param>
 		/// <param name="country">Find groups in the given country where country is a 2 letter country code for the country (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ).
 		///</param>
 		/// <param name="region">For countries with regions (AU, CA, GB, US), search groups in a specific region as specified by the region abbreviation.  The supported regions and their abbreviations are listed below. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority. <br /><br /> --- <br /><br /> **AU**<br /> - QLD: Queensland<br /> - SA: South Australia<br /> - TAS: Tasmania<br /> - VIC: Victoria<br /> - WA: Western Australia<br /> - NT: Northern Territory<br /> - NSW: New South Wales - ACT<br /> <br /> **CA**<br /> - AB: Alberta<br /> - BC: British Columbia<br /> - MB: Manitoba<br /> - NB: New Brunswick<br /> - NL: Newfoundland and Labrador<br /> - NS: Nova Scotia<br /> - ON: Ontario<br /> - QC: Quebec<br /> - SK: Saskatchewan<br /> - PE: Prince Edward Island<br /> <br /> **GB**<br /> - E: East<br /> - EM: East Midlands<br /> - LDN: London<br /> - NE: North East<br /> - NW: North West<br /> - NI: Northern Ireland<br /> - SC: Scotland<br /> - SE: South East<br /> - SW: South West<br /> - WA: Wales<br /> - WM: West Midlands<br /> - YH: Yorkshire and the Humber<br /> <br /> **US**<br /> All 50 states and the District of Columbia are supported.  For the abbreviations, see: https://github.com/jasonong/List-of-US-States/blob/master/states.csv
 		///</param>
 		/// <param name="postal_code">Find groups in the given postal code.  Only a few countries support postal code searches (US, CA, AU, GB).  The country parameter must be passed when the postal_code parameter is set. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority.
 		///</param>
-		/// <param name="page">The page of groups to return.</param>
-		/// <param name="per_page">The number of groups to return per page (must be >= 1 and <= 100).</param>
+		/// <param name="page">The page of groups to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="per_page">The number of groups to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>The groups and paging data.</returns>
 		public async Task<Search_groupsReturn> Search_groupsAsync(string name, double latitude, double longitude, double distance, string country, string region, string postal_code, int page, int per_page)
 		{
@@ -1315,15 +1341,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.</param>
@@ -1365,8 +1399,13 @@ namespace MyNS
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_min. And the date and time must be rounded to the nearest second.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 50).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 50).
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <returns>The posts.</returns>
 		public async Task<Get_all_postsReturn> Get_all_postsAsync(string types, System.DateTimeOffset date_min, System.DateTimeOffset date_max, int per_page, int page, double device_pixel_ratio)
@@ -1562,15 +1601,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.</param>
@@ -1954,15 +2001,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.</param>
@@ -2007,15 +2062,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.</param>
@@ -2160,15 +2223,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.</param>
@@ -2215,15 +2286,23 @@ namespace MyNS
 		///</param>
 		/// <param name="group_ids">A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		///</param>
-		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).</param>
-		/// <param name="page">The page of posts to return.</param>
+		/// <param name="per_page">The number of posts to return per page (must be >= 1 and <= 100).
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="page">The page of posts to return.
+		/// Minimum: 1
+		// </param>
 		/// <param name="device_pixel_ratio">Client device pixel ratio used to determine thumbnail size (default 1.0).</param>
 		/// <param name="latitude">The latitude of a point around which to return posts.
 		///</param>
 		/// <param name="longitude">The longitude of a point around which to return posts.
 		///</param>
 		/// <param name="radius">The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
-		///</param>
+		///
+		/// Minimum: 0
+		/// Maximum: 257500
+		// </param>
 		/// <param name="date_min">Only posts newer than or equal to this UTC date and time will be returned.
 		///</param>
 		/// <param name="date_max">Only posts older than this UTC date and time will be returned.</param>

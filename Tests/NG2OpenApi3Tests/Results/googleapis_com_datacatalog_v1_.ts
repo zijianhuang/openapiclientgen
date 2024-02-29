@@ -107,14 +107,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -515,7 +521,10 @@ export namespace MyNS {
 		/** Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`. */
 		mode?: string | null;
 
-		/** Optional. Ordinal position */
+		/**
+		 * Optional. Ordinal position
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition?: number | null;
 
 		/** Optional. Schema of sub-columns. A column can have zero or more sub-columns. */
@@ -546,7 +555,10 @@ export namespace MyNS {
 		/** Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`. */
 		mode: FormControl<string | null | undefined>,
 
-		/** Optional. Ordinal position */
+		/**
+		 * Optional. Ordinal position
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinalPosition: FormControl<number | null | undefined>,
 
 		/** Required. Type of the column. Must be a UTF-8 string with the maximum size of 128 bytes. */
@@ -1189,13 +1201,19 @@ export namespace MyNS {
 		/** Output only. The display name of this field. */
 		displayName?: string | null;
 
-		/** The value of a tag field with a double type. */
+		/**
+		 * The value of a tag field with a double type.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** An enum value. */
 		enumValue?: GoogleCloudDatacatalogV1TagFieldEnumValue;
 
-		/** Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don't have to be sequential. */
+		/**
+		 * Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don't have to be sequential.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order?: number | null;
 
 		/** The value of a tag field with a rich text type. The maximum length is 10 MiB as this value holds HTML descriptions including encoded images. The maximum length of the text without images is 100 KiB. */
@@ -1217,10 +1235,16 @@ export namespace MyNS {
 		/** Output only. The display name of this field. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The value of a tag field with a double type. */
+		/**
+		 * The value of a tag field with a double type.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
-		/** Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don't have to be sequential. */
+		/**
+		 * Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don't have to be sequential.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** The value of a tag field with a rich text type. The maximum length is 10 MiB as this value holds HTML descriptions including encoded images. The maximum length of the text without images is 100 KiB. */
@@ -1886,32 +1910,56 @@ export namespace MyNS {
 	/** Detailed statistics on the entry's usage. Usage statistics have the following limitations: - Only BigQuery tables have them. - They only include BigQuery query jobs. - They might be underestimated because wildcard table references are not yet counted. For more information, see [Querying multiple tables using a wildcard table] (https://cloud.google.com/bigquery/docs/querying-wildcard-tables) */
 	export interface GoogleCloudDatacatalogV1UsageStats {
 
-		/** The number of cancelled attempts to use the underlying entry. */
+		/**
+		 * The number of cancelled attempts to use the underlying entry.
+		 * Type: float
+		 */
 		totalCancellations?: number | null;
 
-		/** The number of successful uses of the underlying entry. */
+		/**
+		 * The number of successful uses of the underlying entry.
+		 * Type: float
+		 */
 		totalCompletions?: number | null;
 
-		/** Total time spent only on successful uses, in milliseconds. */
+		/**
+		 * Total time spent only on successful uses, in milliseconds.
+		 * Type: float
+		 */
 		totalExecutionTimeForCompletionsMillis?: number | null;
 
-		/** The number of failed attempts to use the underlying entry. */
+		/**
+		 * The number of failed attempts to use the underlying entry.
+		 * Type: float
+		 */
 		totalFailures?: number | null;
 	}
 
 	/** Detailed statistics on the entry's usage. Usage statistics have the following limitations: - Only BigQuery tables have them. - They only include BigQuery query jobs. - They might be underestimated because wildcard table references are not yet counted. For more information, see [Querying multiple tables using a wildcard table] (https://cloud.google.com/bigquery/docs/querying-wildcard-tables) */
 	export interface GoogleCloudDatacatalogV1UsageStatsFormProperties {
 
-		/** The number of cancelled attempts to use the underlying entry. */
+		/**
+		 * The number of cancelled attempts to use the underlying entry.
+		 * Type: float
+		 */
 		totalCancellations: FormControl<number | null | undefined>,
 
-		/** The number of successful uses of the underlying entry. */
+		/**
+		 * The number of successful uses of the underlying entry.
+		 * Type: float
+		 */
 		totalCompletions: FormControl<number | null | undefined>,
 
-		/** Total time spent only on successful uses, in milliseconds. */
+		/**
+		 * Total time spent only on successful uses, in milliseconds.
+		 * Type: float
+		 */
 		totalExecutionTimeForCompletionsMillis: FormControl<number | null | undefined>,
 
-		/** The number of failed attempts to use the underlying entry. */
+		/**
+		 * The number of failed attempts to use the underlying entry.
+		 * Type: float
+		 */
 		totalFailures: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatacatalogV1UsageStatsFormGroup() {
@@ -2129,7 +2177,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2142,7 +2193,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2284,7 +2338,10 @@ export namespace MyNS {
 		/** Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs. */
 		name?: string | null;
 
-		/** Output only. Number of policy tags in this taxonomy. */
+		/**
+		 * Output only. Number of policy tags in this taxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyTagCount?: number | null;
 
 		/** The source system of the Taxonomy. */
@@ -2306,7 +2363,10 @@ export namespace MyNS {
 		/** Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. Number of policy tags in this taxonomy. */
+		/**
+		 * Output only. Number of policy tags in this taxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policyTagCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatacatalogV1TaxonomyFormGroup() {
@@ -2713,7 +2773,10 @@ export namespace MyNS {
 		/** Specifies the order of results. Currently supported case-sensitive values are: * `relevance` that can only be descending * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default * `default` that can only be descending Search queries don't guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries. If you are experiencing recall issues and you don't have to fetch the results in any specific order, consider setting this parameter to `default`. If this parameter is omitted, it defaults to the descending `relevance`. */
 		orderBy?: string | null;
 
-		/** Upper bound on the number of results you can get in a single response. Can't be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an "invalid argument" exception. */
+		/**
+		 * Upper bound on the number of results you can get in a single response. Can't be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an "invalid argument" exception.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. Pagination token that, if specified, returns the next page of search results. If empty, returns the first page. This token is returned in the SearchCatalogResponse.next_page_token field of the response to a previous SearchCatalogRequest call. */
@@ -2735,7 +2798,10 @@ export namespace MyNS {
 		/** Specifies the order of results. Currently supported case-sensitive values are: * `relevance` that can only be descending * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default * `default` that can only be descending Search queries don't guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries. If you are experiencing recall issues and you don't have to fetch the results in any specific order, consider setting this parameter to `default`. If this parameter is omitted, it defaults to the descending `relevance`. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** Upper bound on the number of results you can get in a single response. Can't be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an "invalid argument" exception. */
+		/**
+		 * Upper bound on the number of results you can get in a single response. Can't be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an "invalid argument" exception.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. Pagination token that, if specified, returns the next page of search results. If empty, returns the first page. This token is returned in the SearchCatalogResponse.next_page_token field of the response to a previous SearchCatalogRequest call. */
@@ -2809,7 +2875,10 @@ export namespace MyNS {
 		/** Search results. */
 		results?: Array<GoogleCloudDatacatalogV1SearchCatalogResult>;
 
-		/** The approximate total number of entries matched by the query. */
+		/**
+		 * The approximate total number of entries matched by the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 
 		/** Unreachable locations. Search results don't include data from those locations. To get additional information on an error, repeat the search request and restrict it to specific locations by setting the `SearchCatalogRequest.scope.restricted_locations` parameter. */
@@ -2822,7 +2891,10 @@ export namespace MyNS {
 		/** Pagination token that can be used in subsequent calls to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The approximate total number of entries matched by the query. */
+		/**
+		 * The approximate total number of entries matched by the query.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatacatalogV1SearchCatalogResponseFormGroup() {
@@ -3005,7 +3077,10 @@ export namespace MyNS {
 		/** Output only. The resource name of the tag template field in URL format. Example: `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}` Note: The tag template field itself might not be stored in the location specified in its name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 64 characters. */
 		name?: string | null;
 
-		/** The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don't have to be sequential. */
+		/**
+		 * The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don't have to be sequential.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order?: number | null;
 		type?: GoogleCloudDatacatalogV1FieldType;
 	}
@@ -3025,7 +3100,10 @@ export namespace MyNS {
 		/** Output only. The resource name of the tag template field in URL format. Example: `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}` Note: The tag template field itself might not be stored in the location specified in its name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 64 characters. */
 		name: FormControl<string | null | undefined>,
 
-		/** The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don't have to be sequential. */
+		/**
+		 * The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don't have to be sequential.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatacatalogV1TagTemplateFieldFormGroup() {
@@ -3146,7 +3224,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3156,7 +3237,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -3285,6 +3369,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3367,6 +3452,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/entries
 		 * @param {string} parent Required. The name of the entry group that contains the entries to list. Can be provided in URL format.
 		 * @param {number} pageSize The maximum number of items to return. Default is 10. Maximum limit is 1000. Throws an invalid argument if `page_size` is more than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token that specifies the next page to return. If empty, the first page is returned.
 		 * @param {string} readMask The fields to return for each entry. If empty or omitted, all fields are returned. For example, to return a list of entries with only the `name` field, set `read_mask` to only one path with the `name` value.
 		 * @return {GoogleCloudDatacatalogV1ListEntriesResponse} Successful response
@@ -3401,6 +3487,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/entryGroups
 		 * @param {string} parent Required. The name of the location that contains the entry groups to list. Can be provided as a URL.
 		 * @param {number} pageSize Optional. The maximum number of items to return. Default is 10. Maximum limit is 1000. Throws an invalid argument if `page_size` is greater than 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Pagination token that specifies the next page to return. If empty, returns the first page.
 		 * @return {GoogleCloudDatacatalogV1ListEntryGroupsResponse} Successful response
 		 */
@@ -3435,6 +3522,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/policyTags
 		 * @param {string} parent Required. Resource name of the taxonomy to list the policy tags of.
 		 * @param {number} pageSize The maximum number of items to return. Must be a value between 1 and 1000 inclusively. If not set, defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token of the next results page. If not set, returns the first page. The token is returned in the response to a previous list request.
 		 * @return {GoogleCloudDatacatalogV1ListPolicyTagsResponse} Successful response
 		 */
@@ -3468,6 +3556,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/tags
 		 * @param {string} parent Required. The name of the Data Catalog resource to list the tags of. The resource can be an Entry or an EntryGroup (without `/entries/{entries}` at the end).
 		 * @param {number} pageSize The maximum number of tags to return. Default is 10. Maximum limit is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Pagination token that specifies the next page to return. If empty, the first page is returned.
 		 * @return {GoogleCloudDatacatalogV1ListTagsResponse} Successful response
 		 */
@@ -3501,6 +3590,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name of the project to list the taxonomies of.
 		 * @param {string} filter Supported field for filter is 'service' and value is 'dataplex'. Eg: service=dataplex.
 		 * @param {number} pageSize The maximum number of items to return. Must be a value between 1 and 1000 inclusively. If not set, defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token of the next results page. If not set, the first page is returned. The token is returned in the response to a previous list request.
 		 * @return {GoogleCloudDatacatalogV1ListTaxonomiesResponse} Successful response
 		 */

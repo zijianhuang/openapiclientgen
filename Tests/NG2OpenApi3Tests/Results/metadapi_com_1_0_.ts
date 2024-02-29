@@ -184,19 +184,27 @@ export namespace MyNS {
 		/**
 		 * Zip Code Land Area in square kilometers.
 		 * Required
+		 * Type: double
 		 */
 		landAreaKm2: number;
 
 		/**
 		 * Zip Code Land area in Square Miles
 		 * Required
+		 * Type: double
 		 */
 		landAreaMi2: number;
 
-		/** Zip Code Latitude */
+		/**
+		 * Zip Code Latitude
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Zip Code Longitude */
+		/**
+		 * Zip Code Longitude
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/**
@@ -354,12 +362,14 @@ export namespace MyNS {
 		/**
 		 * Zip Code water area in Square kilometers.
 		 * Required
+		 * Type: double
 		 */
 		waterAreaKm2: number;
 
 		/**
 		 * Zip Code Water Area in Square Miles
 		 * Required
+		 * Type: double
 		 */
 		waterAreaMi2: number;
 
@@ -380,8 +390,8 @@ export namespace MyNS {
 		/**
 		 * 5 Digit Zip Code. Zone Improvement Plan.
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		zipCode: string;
 
@@ -420,19 +430,27 @@ export namespace MyNS {
 		/**
 		 * Zip Code Land Area in square kilometers.
 		 * Required
+		 * Type: double
 		 */
 		landAreaKm2: FormControl<number | null | undefined>,
 
 		/**
 		 * Zip Code Land area in Square Miles
 		 * Required
+		 * Type: double
 		 */
 		landAreaMi2: FormControl<number | null | undefined>,
 
-		/** Zip Code Latitude */
+		/**
+		 * Zip Code Latitude
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Zip Code Longitude */
+		/**
+		 * Zip Code Longitude
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/**
@@ -590,12 +608,14 @@ export namespace MyNS {
 		/**
 		 * Zip Code water area in Square kilometers.
 		 * Required
+		 * Type: double
 		 */
 		waterAreaKm2: FormControl<number | null | undefined>,
 
 		/**
 		 * Zip Code Water Area in Square Miles
 		 * Required
+		 * Type: double
 		 */
 		waterAreaMi2: FormControl<number | null | undefined>,
 
@@ -616,8 +636,8 @@ export namespace MyNS {
 		/**
 		 * 5 Digit Zip Code. Zone Improvement Plan.
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		zipCode: FormControl<string | null | undefined>,
 	}
@@ -762,24 +782,28 @@ export namespace MyNS {
 		/**
 		 * Total female population of the zip code.
 		 * Required
+		 * Type: double
 		 */
 		femalePopulation: number;
 
 		/**
 		 * Total Male population of the zip code.
 		 * Required
+		 * Type: double
 		 */
 		malePopulation: number;
 
 		/**
 		 * Total population of the zip code
 		 * Required
+		 * Type: double
 		 */
 		totalPopulation: number;
 
 		/**
 		 * Year for the captured statistic
 		 * Required
+		 * Type: double
 		 */
 		year: number;
 	}
@@ -788,24 +812,28 @@ export namespace MyNS {
 		/**
 		 * Total female population of the zip code.
 		 * Required
+		 * Type: double
 		 */
 		femalePopulation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Male population of the zip code.
 		 * Required
+		 * Type: double
 		 */
 		malePopulation: FormControl<number | null | undefined>,
 
 		/**
 		 * Total population of the zip code
 		 * Required
+		 * Type: double
 		 */
 		totalPopulation: FormControl<number | null | undefined>,
 
 		/**
 		 * Year for the captured statistic
 		 * Required
+		 * Type: double
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -826,18 +854,21 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 
 		/**
 		 * Total number of records returned in the data array.
 		 * Required
+		 * Type: double
 		 */
 		limit: number;
 
 		/**
 		 * Offset position of where the first record returned.
 		 * Required
+		 * Type: double
 		 */
 		offset: number;
 	}
@@ -848,18 +879,21 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records returned in the data array.
 		 * Required
+		 * Type: double
 		 */
 		limit: FormControl<number | null | undefined>,
 
 		/**
 		 * Offset position of where the first record returned.
 		 * Required
+		 * Type: double
 		 */
 		offset: FormControl<number | null | undefined>,
 	}
@@ -904,8 +938,11 @@ export namespace MyNS {
 		 * This end point lists all the Metropolitan and Micropolitan Statistical Areas in the United States with the corresponding states and counties that make up the group.
 		 * Get zipc/v1/msagroups
 		 * @param {number} limit Number of records to return in each page. Max value: 50.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} offset Offset is the position in the dataset to start retrieval of records.
+		 *     Minimum: 0
 		 * @param {string} stateCode Parameter for state code.
+		 *     Min length: 2    Max length: 2
 		 * @return {Get_msagroupsReturn} OK
 		 */
 		Get_msagroups(limit: number, offset: number, stateCode: string | null | undefined): Observable<Get_msagroupsReturn> {
@@ -927,8 +964,11 @@ export namespace MyNS {
 		 * Endpoint that returns the zip codes that fall within the specified radius of another zip code. The returned zip codes are sorted by distance.
 		 * Get zipc/v1/radius
 		 * @param {string} zipCode 5 Digit US Zip Code
+		 *     Min length: 5    Max length: 5
 		 * @param {number} radius Radius distance.  Max 322 km or 200 mi
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Get_radiusUom} uom Unit of Measure
+		 *     Min length: 2    Max length: 2
 		 * @return {Get_radiusReturn} OK
 		 */
 		Get_radius(zipCode: string, radius: number, uom: Get_radiusUom): Observable<Get_radiusReturn> {
@@ -940,16 +980,20 @@ export namespace MyNS {
 		 * Returns a list of zip codes. Results are always paginated. Visit the [Zip Code Data API](https://www.metadapi.com/API-Products/API-Product-Details/zip-code-api) product page for information on how to get an API key.
 		 * Get zipc/v1/zipcodes
 		 * @param {number} offset Offset is the position in the dataset to start retrieval of records.
+		 *     Minimum: 0
 		 * @param {number} limit Number of records to return in each page.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} zipcode 5 Digit Zip Code query parameter. Can have multiple values (separated by comma).
 		 * @param {string} uspsMainCityKey Parameter for USPS City / Town key identifier for the main city of the zip code.
 		 * @param {string} zipClassificationCode Parameter for zipClassificationCode
+		 *     Min length: 1    Max length: 1
 		 * @param {string} uspsFacilityCode Parameter for facility code.
 		 * @param {string} uspsDeliveryCode Parameter for delivery code.
 		 * @param {string} uspsCarrierRouteSortCode Parameter for carrier route sort code.
 		 * @param {boolean} uniqueZipNameInd Parameter for unique zip name indicator.
 		 * @param {string} uspsFinanceNumber Parameter for finance number.
 		 * @param {string} stateCode Parameter for state code.
+		 *     Min length: 2    Max length: 2
 		 * @param {string} stateFipsCode Parameter for State FIPS code.
 		 * @param {string} countyFipsCode Parameter for county FIPS code.
 		 * @param {string} divisionCode Parameter for division code. 
@@ -990,10 +1034,16 @@ export namespace MyNS {
 
 	export interface Get_distanceReturnData {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		distanceKm: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		distanceMi: number;
 
 		/**
@@ -1010,10 +1060,16 @@ export namespace MyNS {
 	}
 	export interface Get_distanceReturnDataFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		distanceKm: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		distanceMi: FormControl<number | null | undefined>,
 
 		/**
@@ -1148,8 +1204,8 @@ export namespace MyNS {
 		/**
 		 * Standard 2 character state code.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		stateCode: string;
 
@@ -1172,8 +1228,8 @@ export namespace MyNS {
 		/**
 		 * Standard 2 character state code.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		stateCode: FormControl<string | null | undefined>,
 
@@ -1324,18 +1380,21 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 
 		/**
 		 * Total number of records returned in the data array. Specified by limit query parameter.
 		 * Required
+		 * Type: double
 		 */
 		limit: number;
 
 		/**
 		 * Offset position of where the first record returned.
 		 * Required
+		 * Type: double
 		 */
 		offset: number;
 	}
@@ -1344,18 +1403,21 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records returned in the data array. Specified by limit query parameter.
 		 * Required
+		 * Type: double
 		 */
 		limit: FormControl<number | null | undefined>,
 
 		/**
 		 * Offset position of where the first record returned.
 		 * Required
+		 * Type: double
 		 */
 		offset: FormControl<number | null | undefined>,
 	}
@@ -1589,6 +1651,7 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 	}
@@ -1597,6 +1660,7 @@ export namespace MyNS {
 		/**
 		 * Total number of records of the response. Note: the data object always has a limit number of records retrieved.
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 	}
@@ -1636,32 +1700,36 @@ export namespace MyNS {
 		/**
 		 * Distance to query parameter zip code in kilometers
 		 * Required
+		 * Type: double
 		 */
 		distanceKm: number;
 
 		/**
 		 * Distance to query parameter zip code in miles
 		 * Required
+		 * Type: double
 		 */
 		distanceMi: number;
 
 		/**
 		 * Zip Code Latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Zip Code Longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
 		/**
 		 * 5 Digit Zip Code. Zone Improvement Plan.
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		zipCode: string;
 
@@ -1677,32 +1745,36 @@ export namespace MyNS {
 		/**
 		 * Distance to query parameter zip code in kilometers
 		 * Required
+		 * Type: double
 		 */
 		distanceKm: FormControl<number | null | undefined>,
 
 		/**
 		 * Distance to query parameter zip code in miles
 		 * Required
+		 * Type: double
 		 */
 		distanceMi: FormControl<number | null | undefined>,
 
 		/**
 		 * Zip Code Latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Zip Code Longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/**
 		 * 5 Digit Zip Code. Zone Improvement Plan.
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		zipCode: FormControl<string | null | undefined>,
 
@@ -1755,6 +1827,7 @@ export namespace MyNS {
 		/**
 		 * Number of zip codes found in the radius
 		 * Required
+		 * Type: double
 		 */
 		count: number;
 	}
@@ -1763,6 +1836,7 @@ export namespace MyNS {
 		/**
 		 * Number of zip codes found in the radius
 		 * Required
+		 * Type: double
 		 */
 		count: FormControl<number | null | undefined>,
 	}

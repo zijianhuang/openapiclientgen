@@ -613,6 +613,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @return {DeploymentScriptListResult} OK -- Returns a list of deployment scripts.
 		 */
@@ -625,7 +626,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @return {DeploymentScript} OK -- Returns information about the deployment script.
 		 */
@@ -638,7 +641,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @param {DeploymentScript} requestBody Deployment script supplied to the operation.
 		 * @return {DeploymentScript} OK -- Deployment script is updated.
@@ -652,7 +657,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @return {void} OK -- Deployment script deleted.
 		 */
@@ -665,7 +672,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @param {DeploymentScriptUpdateParameter} requestBody Deployment script resource with the tags to be updated.
 		 * @return {DeploymentScript} OK -- Deployment script tags are updated.
@@ -679,7 +688,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}/logs
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @return {ScriptLogsList} OK -- Returns deployment script logs if available.
 		 */
@@ -692,7 +703,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}/logs/default
 		 * @param {string} subscriptionId Subscription Id which forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} scriptName Name of the deployment script.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Client Api version.
 		 * @return {ScriptLog} OK -- Returns deployment script logs if available.
 		 */

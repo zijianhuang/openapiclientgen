@@ -1704,6 +1704,7 @@ export namespace MyNS {
 		 * Delete a migration workflow. You must pause a running workflow in Migration Hub Orchestrator console to delete it.
 		 * Delete migrationworkflow/{id}
 		 * @param {string} id The ID of the migration workflow you want to delete.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteWorkflow(id: string): Observable<HttpResponse<string>> {
@@ -1714,6 +1715,7 @@ export namespace MyNS {
 		 * Get migration workflow.
 		 * Get migrationworkflow/{id}
 		 * @param {string} id The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetMigrationWorkflowResponse} Success
 		 */
 		GetWorkflow(id: string): Observable<GetMigrationWorkflowResponse> {
@@ -1724,6 +1726,7 @@ export namespace MyNS {
 		 * Update a migration workflow.
 		 * Post migrationworkflow/{id}
 		 * @param {string} id The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateMigrationWorkflowResponse} Success
 		 */
 		UpdateWorkflow(id: string, requestBody: UpdateWorkflowPostBody): Observable<UpdateMigrationWorkflowResponse> {
@@ -1734,8 +1737,11 @@ export namespace MyNS {
 		 * Delete a step in a migration workflow. Pause the workflow to delete a running step.
 		 * Delete workflowstep/{id}#stepGroupId&workflowId
 		 * @param {string} id The ID of the step you want to delete.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId The ID of the step group that contains the step you want to delete.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {DeleteWorkflowStepResponse} Success
 		 */
 		DeleteWorkflowStep(id: string, stepGroupId: string, workflowId: string): Observable<DeleteWorkflowStepResponse> {
@@ -1746,7 +1752,9 @@ export namespace MyNS {
 		 * Delete a step group in a migration workflow.
 		 * Delete workflowstepgroup/{id}#workflowId
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} id The ID of the step group you want to delete.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteWorkflowStepGroup(workflowId: string, id: string): Observable<HttpResponse<string>> {
@@ -1757,7 +1765,9 @@ export namespace MyNS {
 		 * Get the step group of a migration workflow.
 		 * Get workflowstepgroup/{id}#workflowId
 		 * @param {string} id The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetWorkflowStepGroupResponse} Success
 		 */
 		GetWorkflowStepGroup(id: string, workflowId: string): Observable<GetWorkflowStepGroupResponse> {
@@ -1768,7 +1778,9 @@ export namespace MyNS {
 		 * Update the step group in a migration workflow.
 		 * Post workflowstepgroup/{id}#workflowId
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} id The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		UpdateWorkflowStepGroup(workflowId: string, id: string, requestBody: UpdateWorkflowStepGroupPostBody): Observable<HttpResponse<string>> {
@@ -1779,6 +1791,7 @@ export namespace MyNS {
 		 * Get the template you want to use for creating a migration workflow.
 		 * Get migrationworkflowtemplate/{id}
 		 * @param {string} id The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetMigrationWorkflowTemplateResponse} Success
 		 */
 		GetTemplate(id: string): Observable<GetMigrationWorkflowTemplateResponse> {
@@ -1789,8 +1802,11 @@ export namespace MyNS {
 		 * Get a specific step in a template.
 		 * Get templatestep/{id}#templateId&stepGroupId
 		 * @param {string} id The ID of the step.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} templateId The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetTemplateStepResponse} Success
 		 */
 		GetTemplateStep(id: string, templateId: string, stepGroupId: string): Observable<GetTemplateStepResponse> {
@@ -1801,7 +1817,9 @@ export namespace MyNS {
 		 * Get a step group in a template.
 		 * Get templates/{templateId}/stepgroups/{id}
 		 * @param {string} templateId The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} id The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetTemplateStepGroupResponse} Success
 		 */
 		GetTemplateStepGroup(templateId: string, id: string): Observable<GetTemplateStepGroupResponse> {
@@ -1812,8 +1830,11 @@ export namespace MyNS {
 		 * Get a step in the migration workflow.
 		 * Get workflowstep/{id}#workflowId&stepGroupId
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId desThe ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} id The ID of the step.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetWorkflowStepResponse} Success
 		 */
 		GetWorkflowStep(workflowId: string, stepGroupId: string, id: string): Observable<GetWorkflowStepResponse> {
@@ -1824,7 +1845,9 @@ export namespace MyNS {
 		 * List AWS Migration Hub Orchestrator plugins.
 		 * Get plugins
 		 * @param {number} maxResults The maximum number of plugins that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListPluginsResponse} Success
 		 */
 		ListPlugins(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListPluginsResponse> {
@@ -1855,8 +1878,11 @@ export namespace MyNS {
 		 * List the step groups in a template.
 		 * Get templatestepgroups/{templateId}
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} templateId The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @return {ListTemplateStepGroupsResponse} Success
 		 */
 		ListTemplateStepGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, templateId: string): Observable<ListTemplateStepGroupsResponse> {
@@ -1867,9 +1893,13 @@ export namespace MyNS {
 		 * List the steps in a template.
 		 * Get templatesteps#templateId&stepGroupId
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} templateId The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @return {ListTemplateStepsResponse} Success
 		 */
 		ListTemplateSteps(maxResults: number | null | undefined, nextToken: string | null | undefined, templateId: string, stepGroupId: string): Observable<ListTemplateStepsResponse> {
@@ -1880,8 +1910,11 @@ export namespace MyNS {
 		 * List the templates available in Migration Hub Orchestrator to create a migration workflow.
 		 * Get migrationworkflowtemplates
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} name The name of the template.
+		 *     Min length: 1    Max length: 100
 		 * @return {ListMigrationWorkflowTemplatesResponse} Success
 		 */
 		ListTemplates(maxResults: number | null | undefined, nextToken: string | null | undefined, name: string | null | undefined): Observable<ListMigrationWorkflowTemplatesResponse> {
@@ -1892,8 +1925,11 @@ export namespace MyNS {
 		 * List the step groups in a migration workflow.
 		 * Get workflowstepgroups#workflowId
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {ListWorkflowStepGroupsResponse} Success
 		 */
 		ListWorkflowStepGroups(nextToken: string | null | undefined, maxResults: number | null | undefined, workflowId: string): Observable<ListWorkflowStepGroupsResponse> {
@@ -1904,9 +1940,13 @@ export namespace MyNS {
 		 * List the steps in a workflow.
 		 * Get workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @return {ListWorkflowStepsResponse} Success
 		 */
 		ListWorkflowSteps(nextToken: string | null | undefined, maxResults: number | null | undefined, workflowId: string, stepGroupId: string): Observable<ListWorkflowStepsResponse> {
@@ -1917,9 +1957,13 @@ export namespace MyNS {
 		 * List the migration workflows.
 		 * Get migrationworkflows
 		 * @param {number} maxResults The maximum number of results that can be returned.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} nextToken The pagination token.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} templateId The ID of the template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} adsApplicationConfigurationName The name of the application configured in Application Discovery Service.
+		 *     Min length: 1    Max length: 100
 		 * @param {MigrationWorkflowStatusEnum} status The status of the migration workflow.
 		 * @param {string} name The name of the migration workflow.
 		 * @return {ListMigrationWorkflowsResponse} Success
@@ -1932,8 +1976,11 @@ export namespace MyNS {
 		 * Retry a failed step in a migration workflow.
 		 * Post retryworkflowstep/{id}#workflowId&stepGroupId
 		 * @param {string} workflowId The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} stepGroupId The ID of the step group.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} id The ID of the step.
+		 *     Min length: 1    Max length: 100
 		 * @return {RetryWorkflowStepResponse} Success
 		 */
 		RetryWorkflowStep(workflowId: string, stepGroupId: string, id: string): Observable<RetryWorkflowStepResponse> {
@@ -1944,6 +1991,7 @@ export namespace MyNS {
 		 * Start a migration workflow.
 		 * Post migrationworkflow/{id}/start
 		 * @param {string} id The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {StartMigrationWorkflowResponse} Success
 		 */
 		StartWorkflow(id: string): Observable<StartMigrationWorkflowResponse> {
@@ -1954,6 +2002,7 @@ export namespace MyNS {
 		 * Stop an ongoing migration workflow.
 		 * Post migrationworkflow/{id}/stop
 		 * @param {string} id The ID of the migration workflow.
+		 *     Min length: 1    Max length: 100
 		 * @return {StopMigrationWorkflowResponse} Success
 		 */
 		StopWorkflow(id: string): Observable<StopMigrationWorkflowResponse> {
@@ -1965,6 +2014,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource from which you want to remove tags.
 		 * @param {Array<string>} tagKeys One or more tag keys. Specify only the tag keys, not the tag values.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1975,6 +2025,7 @@ export namespace MyNS {
 		 * Update a step in a migration workflow.
 		 * Post workflowstep/{id}
 		 * @param {string} id The ID of the step.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateWorkflowStepResponse} Success
 		 */
 		UpdateWorkflowStep(id: string, requestBody: UpdateWorkflowStepPostBody): Observable<UpdateWorkflowStepResponse> {
@@ -1987,31 +2038,31 @@ export namespace MyNS {
 		/**
 		 * The name of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
 		/**
 		 * The description of the migration workflow.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
 		/**
 		 * The ID of the template.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		templateId: string;
 
 		/**
 		 * The configuration ID of the application configured in Application Discovery Service.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationConfigurationId: string;
 
@@ -2032,31 +2083,31 @@ export namespace MyNS {
 		/**
 		 * The name of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the migration workflow.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the template.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		templateId: FormControl<string | null | undefined>,
 
 		/**
 		 * The configuration ID of the application configured in Application Discovery Service.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		applicationConfigurationId: FormControl<string | null | undefined>,
 
@@ -2086,24 +2137,24 @@ export namespace MyNS {
 		/**
 		 * The name of the step.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
 		/**
 		 * The ID of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stepGroupId: string;
 
 		/**
 		 * The ID of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: string;
 
@@ -2115,8 +2166,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the step.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2140,24 +2191,24 @@ export namespace MyNS {
 		/**
 		 * The name of the step.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stepGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: FormControl<string | null | undefined>,
 
@@ -2169,8 +2220,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the step.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2211,23 +2262,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the migration workflow that will contain the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: string;
 
 		/**
 		 * The name of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
 		/**
 		 * The description of the step group.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2242,23 +2293,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the migration workflow that will contain the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the step group.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2275,15 +2326,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the migration workflow.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
 		/**
 		 * The description of the migration workflow.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2297,15 +2348,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the migration workflow.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the migration workflow.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2325,15 +2376,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the step group.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
 		/**
 		 * The description of the step group.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2347,15 +2398,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the step group.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the step group.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -2395,30 +2446,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stepGroupId: string;
 
 		/**
 		 * The ID of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: string;
 
 		/**
 		 * The name of the step.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
 		/**
 		 * The description of the step.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2448,30 +2499,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the step group.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stepGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the migration workflow.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		workflowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the step.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the step.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 

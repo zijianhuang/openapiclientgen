@@ -233,19 +233,31 @@ export namespace MyNS {
 		/** The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: organizations/123/attackExposureResults/456 */
 		attackExposureResult?: string | null;
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedHighValueResourcesCount?: number | null;
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedLowValueResourcesCount?: number | null;
 
-		/** The number of medium value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of medium value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedMediumValueResourcesCount?: number | null;
 
 		/** The most recent time the attack exposure was updated on this finding. */
 		latestCalculationTime?: string | null;
 
-		/** A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate. */
+		/**
+		 * A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate.
+		 * Type: double
+		 */
 		score?: number | null;
 
 		/** What state this AttackExposure is in. This captures whether or not an attack exposure has been calculated or not. */
@@ -258,19 +270,31 @@ export namespace MyNS {
 		/** The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: organizations/123/attackExposureResults/456 */
 		attackExposureResult: FormControl<string | null | undefined>,
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedHighValueResourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of high value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of high value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedLowValueResourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of medium value resources that are exposed as a result of this finding. */
+		/**
+		 * The number of medium value resources that are exposed as a result of this finding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exposedMediumValueResourcesCount: FormControl<number | null | undefined>,
 
 		/** The most recent time the attack exposure was updated on this finding. */
 		latestCalculationTime: FormControl<string | null | undefined>,
 
-		/** A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate. */
+		/**
+		 * A number between 0 (inclusive) and infinity that represents how important this finding is to remediate. The higher the score, the more important it is to remediate.
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** What state this AttackExposure is in. This captures whether or not an attack exposure has been calculated or not. */
@@ -515,7 +539,10 @@ export namespace MyNS {
 		/** Destination IP address. Not present for sockets that are listening and not connected. */
 		destinationIp?: string | null;
 
-		/** Destination port. Not present for sockets that are listening and not connected. */
+		/**
+		 * Destination port. Not present for sockets that are listening and not connected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** IANA Internet Protocol Number such as TCP(6) and UDP(17). */
@@ -524,7 +551,10 @@ export namespace MyNS {
 		/** Source IP address. */
 		sourceIp?: string | null;
 
-		/** Source port. */
+		/**
+		 * Source port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort?: number | null;
 	}
 
@@ -534,7 +564,10 @@ export namespace MyNS {
 		/** Destination IP address. Not present for sockets that are listening and not connected. */
 		destinationIp: FormControl<string | null | undefined>,
 
-		/** Destination port. Not present for sockets that are listening and not connected. */
+		/**
+		 * Destination port. Not present for sockets that are listening and not connected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** IANA Internet Protocol Number such as TCP(6) and UDP(17). */
@@ -543,7 +576,10 @@ export namespace MyNS {
 		/** Source IP address. */
 		sourceIp: FormControl<string | null | undefined>,
 
-		/** Source port. */
+		/**
+		 * Source port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePort: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectionFormGroup() {
@@ -717,7 +753,10 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact?: Cvssv3AvailabilityImpact | null;
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: double
+		 */
 		baseScore?: number | null;
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
@@ -748,7 +787,10 @@ export namespace MyNS {
 		/** This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability. */
 		availabilityImpact: FormControl<Cvssv3AvailabilityImpact | null | undefined>,
 
-		/** The base score is a function of the base metric scores. */
+		/**
+		 * The base score is a function of the base metric scores.
+		 * Type: double
+		 */
 		baseScore: FormControl<number | null | undefined>,
 
 		/** This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability. */
@@ -880,7 +922,10 @@ export namespace MyNS {
 		/** The name of the binary associated with the memory hash signature detection. */
 		binary?: string | null;
 
-		/** The percentage of memory page hashes in the signature that were matched. */
+		/**
+		 * The percentage of memory page hashes in the signature that were matched.
+		 * Type: double
+		 */
 		percentPagesMatched?: number | null;
 	}
 
@@ -890,7 +935,10 @@ export namespace MyNS {
 		/** The name of the binary associated with the memory hash signature detection. */
 		binary: FormControl<string | null | undefined>,
 
-		/** The percentage of memory page hashes in the signature that were matched. */
+		/**
+		 * The percentage of memory page hashes in the signature that were matched.
+		 * Type: double
+		 */
 		percentPagesMatched: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectionFormGroup() {
@@ -3260,7 +3308,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3273,7 +3324,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3308,6 +3362,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

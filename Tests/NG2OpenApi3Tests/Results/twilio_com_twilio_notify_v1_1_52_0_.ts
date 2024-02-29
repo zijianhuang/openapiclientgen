@@ -13,8 +13,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -32,8 +32,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Credential_enum_push_service | null;
@@ -45,8 +45,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -64,8 +64,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Credential_enum_push_service | null | undefined>,
@@ -91,8 +91,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -101,8 +101,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for APN Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		apn_credential_sid?: string | null;
 
@@ -135,8 +135,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for FCM Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		fcm_credential_sid?: string | null;
 
@@ -145,8 +145,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for GCM Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		gcm_credential_sid?: string | null;
 
@@ -158,15 +158,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Messaging Service](https://www.twilio.com/docs/sms/quickstart#messaging-services) to use for SMS Bindings. In order to send SMS notifications this parameter has to be set.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		messaging_service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -177,8 +177,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -187,8 +187,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for APN Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		apn_credential_sid: FormControl<string | null | undefined>,
 
@@ -221,8 +221,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for FCM Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		fcm_credential_sid: FormControl<string | null | undefined>,
 
@@ -231,8 +231,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for GCM Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		gcm_credential_sid: FormControl<string | null | undefined>,
 
@@ -244,15 +244,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Messaging Service](https://www.twilio.com/docs/sms/quickstart#messaging-services) to use for SMS Bindings. In order to send SMS notifications this parameter has to be set.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		messaging_service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -289,8 +289,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Binding resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -302,8 +302,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) resource to be used to send notifications to this Binding. If present, this overrides the Credential specified in the Service resource. Applicable only to `apn`, `fcm`, and `gcm` type Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		credential_sid?: string | null;
 
@@ -327,15 +327,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Binding resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -349,8 +349,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Binding resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -362,8 +362,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) resource to be used to send notifications to this Binding. If present, this overrides the Credential specified in the Service resource. Applicable only to `apn`, `fcm`, and `gcm` type Bindings.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		credential_sid: FormControl<string | null | undefined>,
 
@@ -387,15 +387,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Binding resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -425,8 +425,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Notification resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -466,15 +466,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Notification resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -490,15 +490,18 @@ export namespace MyNS {
 		/** The notification title. For FCM and GCM, this translates to the `data.twi_title` value. For APNS, this translates to the `aps.alert.title` value. SMS does not support this property. This field is not visible on iOS phones and tablets but appears on Apple Watch and Android devices. */
 		title?: string | null;
 
-		/** How long, in seconds, the notification is valid. Can be an integer between 0 and 2,419,200, which is 4 weeks, the default and the maximum supported time to live (TTL). Delivery should be attempted if the device is offline until the TTL elapses. Zero means that the notification delivery is attempted immediately, only once, and is not stored for future delivery. SMS does not support this property. */
+		/**
+		 * How long, in seconds, the notification is valid. Can be an integer between 0 and 2,419,200, which is 4 weeks, the default and the maximum supported time to live (TTL). Delivery should be attempted if the device is offline until the TTL elapses. Zero means that the notification delivery is attempted immediately, only once, and is not stored for future delivery. SMS does not support this property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface Notifyv1servicenotificationFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Notification resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -532,15 +535,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Notification resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -553,7 +556,10 @@ export namespace MyNS {
 		/** The notification title. For FCM and GCM, this translates to the `data.twi_title` value. For APNS, this translates to the `aps.alert.title` value. SMS does not support this property. This field is not visible on iOS phones and tablets but appears on Apple Watch and Android devices. */
 		title: FormControl<string | null | undefined>,
 
-		/** How long, in seconds, the notification is valid. Can be an integer between 0 and 2,419,200, which is 4 weeks, the default and the maximum supported time to live (TTL). Delivery should be attempted if the device is offline until the TTL elapses. Zero means that the notification delivery is attempted immediately, only once, and is not stored for future delivery. SMS does not support this property. */
+		/**
+		 * How long, in seconds, the notification is valid. Can be an integer between 0 and 2,419,200, which is 4 weeks, the default and the maximum supported time to live (TTL). Delivery should be attempted if the device is offline until the TTL elapses. Zero means that the notification delivery is attempted immediately, only once, and is not stored for future delivery. SMS does not support this property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateNotifyv1servicenotificationFormGroup() {
@@ -587,7 +593,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Credentials
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialReturn} OK
 		 */
@@ -598,6 +606,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Credentials/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Credential resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredential(Sid: string): Observable<HttpResponse<string>> {
@@ -607,6 +616,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Credentials/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Credential resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Notifyv1credential} OK
 		 */
 		FetchCredential(Sid: string): Observable<Notifyv1credential> {
@@ -617,7 +627,9 @@ export namespace MyNS {
 		 * Get v1/Services
 		 * @param {string} FriendlyName The string that identifies the Service resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -628,12 +640,17 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Bindings
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to read the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {Date} StartDate Only include usage that has occurred on or after this date. Specify the date in GMT and format as `YYYY-MM-DD`.
+		 *     Type: DateOnly
 		 * @param {Date} EndDate Only include usage that occurred on or before this date. Specify the date in GMT and format as `YYYY-MM-DD`.
+		 *     Type: DateOnly
 		 * @param {Array<string>} Identity The [User](https://www.twilio.com/docs/chat/rest/user-resource)'s `identity` value of the resources to read.
 		 * @param {Array<string>} Tag Only list Bindings that have all of the specified Tags. The following implicit tags are available: `all`, `apn`, `fcm`, `gcm`, `sms`, `facebook-messenger`. Up to 5 tags are allowed.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListBindingReturn} OK
 		 */
@@ -644,7 +661,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Bindings/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Binding resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteBinding(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -654,7 +673,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Bindings/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Binding resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Notifyv1servicebinding} OK
 		 */
 		FetchBinding(ServiceSid: string, Sid: string): Observable<Notifyv1servicebinding> {
@@ -664,6 +685,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Service resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteService(Sid: string): Observable<HttpResponse<string>> {
@@ -673,6 +695,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Service resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Notifyv1service} OK
 		 */
 		FetchService(Sid: string): Observable<Notifyv1service> {
@@ -696,7 +719,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -705,7 +732,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -739,7 +770,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -748,7 +783,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -782,7 +821,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -791,7 +834,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

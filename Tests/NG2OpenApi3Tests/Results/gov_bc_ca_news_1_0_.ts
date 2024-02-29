@@ -22,18 +22,22 @@ export namespace MyNS {
 	export interface Asset {
 		key?: string | null;
 		label?: string | null;
-		length?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		length?: string | null;
 	}
 	export interface AssetFormProperties {
 		key: FormControl<string | null | undefined>,
 		label: FormControl<string | null | undefined>,
-		length: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		length: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetFormGroup() {
 		return new FormGroup<AssetFormProperties>({
 			key: new FormControl<string | null | undefined>(undefined),
 			label: new FormControl<string | null | undefined>(undefined),
-			length: new FormControl<number | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -137,6 +141,8 @@ export namespace MyNS {
 		contacts?: Array<DocumentContact>;
 		detailsHtml?: string | null;
 		headline?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		languageId?: number | null;
 		pageTitle?: string | null;
 		subheadline?: string | null;
@@ -145,6 +151,8 @@ export namespace MyNS {
 		byline: FormControl<string | null | undefined>,
 		detailsHtml: FormControl<string | null | undefined>,
 		headline: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		languageId: FormControl<number | null | undefined>,
 		pageTitle: FormControl<string | null | undefined>,
 		subheadline: FormControl<string | null | undefined>,
@@ -214,12 +222,22 @@ export namespace MyNS {
 
 	export interface FacebookPost {
 		content?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		facebookObjectId?: number | null;
 		pictureUri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postComments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postLikes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postShares?: number | null;
 		poster?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		posterLikes?: number | null;
 		posterLogo?: string | null;
 		posterSubtitle?: string | null;
@@ -227,12 +245,22 @@ export namespace MyNS {
 	}
 	export interface FacebookPostFormProperties {
 		content: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		facebookObjectId: FormControl<number | null | undefined>,
 		pictureUri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postComments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postLikes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postShares: FormControl<number | null | undefined>,
 		poster: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		posterLikes: FormControl<number | null | undefined>,
 		posterLogo: FormControl<string | null | undefined>,
 		posterSubtitle: FormControl<string | null | undefined>,
@@ -769,7 +797,9 @@ export namespace MyNS {
 		 * @param {string} indexKey default or one key of the categories (ministries, sectors, services, tags, themes)
 		 * @param {string} postKind One of: releases, stories, factsheets, updates or default (releases+stories+factsheets)
 		 * @param {number} count number of posts to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip number of posts to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The requested API version
 		 * @return {Array<KeyValuePair_2>} Success
 		 */
@@ -794,7 +824,9 @@ export namespace MyNS {
 		 * @param {string} indexKey default or one key of the categories (ministries, sectors, services, tags, themes)
 		 * @param {string} postKind One of: releases, stories, factsheets, updates or default (releases+stories except top/feature)
 		 * @param {number} count number of posts to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} skip number of posts to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The requested API version
 		 * @return {Array<Post>} Success
 		 */

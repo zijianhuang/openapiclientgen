@@ -24,16 +24,32 @@ export namespace MyNS {
 
 	export interface PagingInfo {
 		GlobalStatusCounts?: Array<StatusCount>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Skip?: number | null;
 		StatusCounts?: Array<StatusCount>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Total?: number | null;
 	}
 	export interface PagingInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Skip: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Total: FormControl<number | null | undefined>,
 	}
 	export function CreatePagingInfoFormGroup() {
@@ -47,11 +63,19 @@ export namespace MyNS {
 	}
 
 	export interface StatusCount {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusId?: number | null;
 	}
 	export interface StatusCountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatusId: FormControl<number | null | undefined>,
 	}
 	export function CreateStatusCountFormGroup() {
@@ -64,38 +88,66 @@ export namespace MyNS {
 
 	export interface PublishedEarlyDayMotion {
 		AmendmentSuffix?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AmendmentToMotionId?: number | null;
 		DateTabled?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId?: number | null;
 		MotionText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PrayingAgainstNegativeStatutoryInstrumentId?: number | null;
 		PrimarySponsor?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsorsCount?: number | null;
 		Status?: PublishedEarlyDayMotionStatus | null;
 		StatusDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatutoryInstrumentNumber?: number | null;
 		StatutoryInstrumentTitle?: string | null;
 		StatutoryInstrumentYear?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN?: number | null;
 		UINWithAmendmentSuffix?: string | null;
 	}
 	export interface PublishedEarlyDayMotionFormProperties {
 		AmendmentSuffix: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AmendmentToMotionId: FormControl<number | null | undefined>,
 		DateTabled: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId: FormControl<number | null | undefined>,
 		MotionText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PrayingAgainstNegativeStatutoryInstrumentId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsorsCount: FormControl<number | null | undefined>,
 		Status: FormControl<PublishedEarlyDayMotionStatus | null | undefined>,
 		StatusDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatutoryInstrumentNumber: FormControl<number | null | undefined>,
 		StatutoryInstrumentTitle: FormControl<string | null | undefined>,
 		StatutoryInstrumentYear: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN: FormControl<number | null | undefined>,
 		UINWithAmendmentSuffix: FormControl<string | null | undefined>,
 	}
@@ -124,24 +176,36 @@ export namespace MyNS {
 	export interface MemberForDate {
 		Constituency?: string | null;
 		ListAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MnisId?: number | null;
 		Name?: string | null;
 		Party?: string | null;
 		PartyColour?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PartyId?: number | null;
 		PhotoUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PimsId?: number | null;
 		Status?: string | null;
 	}
 	export interface MemberForDateFormProperties {
 		Constituency: FormControl<string | null | undefined>,
 		ListAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MnisId: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Party: FormControl<string | null | undefined>,
 		PartyColour: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PartyId: FormControl<number | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PimsId: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
 	}
@@ -189,6 +253,8 @@ export namespace MyNS {
 		AnsweringMinisterTitles?: string | null;
 		AnsweringWhen?: Date | null;
 		DeadlineWhen?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		SubstantiveTime?: string | null;
 		TopicalTime?: string | null;
@@ -198,6 +264,8 @@ export namespace MyNS {
 		AnsweringMinisterTitles: FormControl<string | null | undefined>,
 		AnsweringWhen: FormControl<Date | null | undefined>,
 		DeadlineWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		SubstantiveTime: FormControl<string | null | undefined>,
 		TopicalTime: FormControl<string | null | undefined>,
@@ -236,40 +304,64 @@ export namespace MyNS {
 
 	export interface PublishedOralQuestion {
 		AnsweringBody?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringBodyId?: number | null;
 		AnsweringMinister?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringMinisterId?: number | null;
 		AnsweringMinisterTitle?: string | null;
 		AnsweringWhen?: Date | null;
 		AskingMember?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AskingMemberId?: number | null;
 		DeclarableInterestDetail?: string | null;
 		HansardLink?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
 		QuestionText?: string | null;
 		QuestionType?: PublishedOralQuestionQuestionType | null;
 		RemovedFromToBeAskedWhen?: Date | null;
 		Status?: PublishedOralQuestionStatus | null;
 		TabledWhen?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN?: number | null;
 	}
 	export interface PublishedOralQuestionFormProperties {
 		AnsweringBody: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringBodyId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringMinisterId: FormControl<number | null | undefined>,
 		AnsweringMinisterTitle: FormControl<string | null | undefined>,
 		AnsweringWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AskingMemberId: FormControl<number | null | undefined>,
 		DeclarableInterestDetail: FormControl<string | null | undefined>,
 		HansardLink: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
 		QuestionText: FormControl<string | null | undefined>,
 		QuestionType: FormControl<PublishedOralQuestionQuestionType | null | undefined>,
 		RemovedFromToBeAskedWhen: FormControl<Date | null | undefined>,
 		Status: FormControl<PublishedOralQuestionStatus | null | undefined>,
 		TabledWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN: FormControl<number | null | undefined>,
 	}
 	export function CreatePublishedOralQuestionFormGroup() {
@@ -321,32 +413,52 @@ export namespace MyNS {
 		Answer?: string | null;
 		AnsweredWhen?: Date | null;
 		AnsweringBody?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringBodyId?: number | null;
 		AnsweringMinister?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringMinisterId?: number | null;
 		AnsweringMinisterTitle?: string | null;
 		AskingMember?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AskingMemberId?: number | null;
 		DueForAnswer?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		QuestionText?: string | null;
 		QuestionType?: PublishedWrittenQuestionQuestionType | null;
 		TabledWhen?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN?: number | null;
 	}
 	export interface PublishedWrittenQuestionFormProperties {
 		Answer: FormControl<string | null | undefined>,
 		AnsweredWhen: FormControl<Date | null | undefined>,
 		AnsweringBody: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringBodyId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnsweringMinisterId: FormControl<number | null | undefined>,
 		AnsweringMinisterTitle: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AskingMemberId: FormControl<number | null | undefined>,
 		DueForAnswer: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		QuestionText: FormControl<string | null | undefined>,
 		QuestionType: FormControl<PublishedWrittenQuestionQuestionType | null | undefined>,
 		TabledWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN: FormControl<number | null | undefined>,
 	}
 	export function CreatePublishedWrittenQuestionFormGroup() {
@@ -412,40 +524,68 @@ export namespace MyNS {
 
 	export interface PublishedEarlyDayMotionDetails {
 		AmendmentSuffix?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AmendmentToMotionId?: number | null;
 		Amendments?: Array<PublishedEarlyDayMotionDetails>;
 		DateTabled?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId?: number | null;
 		MotionText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PrayingAgainstNegativeStatutoryInstrumentId?: number | null;
 		PrimarySponsor?: MemberForDate;
 		Sponsors?: Array<PublishedEarlyDayMotionSponsor>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsorsCount?: number | null;
 		Status?: PublishedEarlyDayMotionStatus | null;
 		StatusDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatutoryInstrumentNumber?: number | null;
 		StatutoryInstrumentTitle?: string | null;
 		StatutoryInstrumentYear?: string | null;
 		Title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN?: number | null;
 		UINWithAmendmentSuffix?: string | null;
 	}
 	export interface PublishedEarlyDayMotionDetailsFormProperties {
 		AmendmentSuffix: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AmendmentToMotionId: FormControl<number | null | undefined>,
 		DateTabled: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId: FormControl<number | null | undefined>,
 		MotionText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PrayingAgainstNegativeStatutoryInstrumentId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsorsCount: FormControl<number | null | undefined>,
 		Status: FormControl<PublishedEarlyDayMotionStatus | null | undefined>,
 		StatusDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatutoryInstrumentNumber: FormControl<number | null | undefined>,
 		StatutoryInstrumentTitle: FormControl<string | null | undefined>,
 		StatutoryInstrumentYear: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UIN: FormControl<number | null | undefined>,
 		UINWithAmendmentSuffix: FormControl<string | null | undefined>,
 	}
@@ -473,18 +613,30 @@ export namespace MyNS {
 
 	export interface PublishedEarlyDayMotionSponsor {
 		CreatedWhen?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		IsWithdrawn?: boolean | null;
 		Member?: MemberForDate;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsoringOrder?: number | null;
 		WithdrawnDate?: Date | null;
 	}
 	export interface PublishedEarlyDayMotionSponsorFormProperties {
 		CreatedWhen: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		IsWithdrawn: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MemberId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SponsoringOrder: FormControl<number | null | undefined>,
 		WithdrawnDate: FormControl<Date | null | undefined>,
 	}
@@ -517,7 +669,10 @@ export namespace MyNS {
 		/** Early Day Motions which are a prayer against a Negative Statutory Instrument. */
 		IsPrayer?: boolean | null;
 
-		/** Return Early Day Motions tabled by Member with ID provided. */
+		/**
+		 * Return Early Day Motions tabled by Member with ID provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MemberId?: number | null;
 
 		/** Order results by date tabled, title or signature count. Default is date tabled. */
@@ -526,7 +681,10 @@ export namespace MyNS {
 		/** Early Day Motions where the title includes the search term provided. */
 		SearchTerm?: string | null;
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip?: number | null;
 
 		/** Early Day Motions where current status is in the selected list. */
@@ -538,7 +696,10 @@ export namespace MyNS {
 		/** Early Day Motions where the date tabled is on or after the date provided. Date format YYYY-MM-DD. */
 		TabledStartDate?: Date | null;
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take?: number | null;
 
 		/** Early Day Motions with an UINWithAmendmentSuffix provided. */
@@ -558,7 +719,10 @@ export namespace MyNS {
 		/** Early Day Motions which are a prayer against a Negative Statutory Instrument. */
 		IsPrayer: FormControl<boolean | null | undefined>,
 
-		/** Return Early Day Motions tabled by Member with ID provided. */
+		/**
+		 * Return Early Day Motions tabled by Member with ID provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MemberId: FormControl<number | null | undefined>,
 
 		/** Order results by date tabled, title or signature count. Default is date tabled. */
@@ -567,7 +731,10 @@ export namespace MyNS {
 		/** Early Day Motions where the title includes the search term provided. */
 		SearchTerm: FormControl<string | null | undefined>,
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip: FormControl<number | null | undefined>,
 
 		/** Early Day Motions where the date tabled is on or before the date provided. Date format YYYY-MM-DD. */
@@ -576,7 +743,10 @@ export namespace MyNS {
 		/** Early Day Motions where the date tabled is on or after the date provided. Date format YYYY-MM-DD. */
 		TabledStartDate: FormControl<Date | null | undefined>,
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take: FormControl<number | null | undefined>,
 
 		/** Early Day Motions with an UINWithAmendmentSuffix provided. */
@@ -616,16 +786,25 @@ export namespace MyNS {
 		/** The ID of the member asking the question. Lists of member IDs for each house are available <a href="http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Commons" target="_blank">Commons</a> and <a href="http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords" target="_blank">Lords</a>. */
 		AskingMemberIds?: Array<number>;
 
-		/** Oral Questions where the question is within the question time with the ID provided */
+		/**
+		 * Oral Questions where the question is within the question time with the ID provided
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		OralQuestionTimeId?: number | null;
 
 		/** Oral Questions where the question type is the selected type, substantive or topical. */
 		QuestionType?: PublishedOralQuestionQuestionType | null;
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip?: number | null;
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take?: number | null;
 
 		/** The UIN for the question - note that UINs reset at the start of each Parliamentary session. */
@@ -639,16 +818,25 @@ export namespace MyNS {
 		/** Oral Questions where the answering date has been set on or after the date provided. Date format YYYY-MM-DD. */
 		AnsweringDateStart: FormControl<Date | null | undefined>,
 
-		/** Oral Questions where the question is within the question time with the ID provided */
+		/**
+		 * Oral Questions where the question is within the question time with the ID provided
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		OralQuestionTimeId: FormControl<number | null | undefined>,
 
 		/** Oral Questions where the question type is the selected type, substantive or topical. */
 		QuestionType: FormControl<PublishedOralQuestionQuestionType | null | undefined>,
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip: FormControl<number | null | undefined>,
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take: FormControl<number | null | undefined>,
 	}
 	export function CreatePublishedOralQuestionQueryParametersFormGroup() {
@@ -680,13 +868,22 @@ export namespace MyNS {
 		/** Oral Questions Time where the deadline date has been set on or after the date provided. Date format YYYY-MM-DD. */
 		DeadlineDateStart?: Date | null;
 
-		/** Identifier of the OQT */
+		/**
+		 * Identifier of the OQT
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		OralQuestionTimeId?: number | null;
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip?: number | null;
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take?: number | null;
 	}
 	export interface PublishedOralQuestionTimeQueryParametersFormProperties {
@@ -703,13 +900,22 @@ export namespace MyNS {
 		/** Oral Questions Time where the deadline date has been set on or after the date provided. Date format YYYY-MM-DD. */
 		DeadlineDateStart: FormControl<Date | null | undefined>,
 
-		/** Identifier of the OQT */
+		/**
+		 * Identifier of the OQT
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		OralQuestionTimeId: FormControl<number | null | undefined>,
 
-		/** The number of records to skip from the first, default is 0. */
+		/**
+		 * The number of records to skip from the first, default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Skip: FormControl<number | null | undefined>,
 
-		/** The number of records to return, default is 25, maximum is 100. */
+		/**
+		 * The number of records to return, default is 25, maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Take: FormControl<number | null | undefined>,
 	}
 	export function CreatePublishedOralQuestionTimeQueryParametersFormGroup() {
@@ -735,6 +941,7 @@ export namespace MyNS {
 		 * Get a single Early Day Motion which has the ID specified.
 		 * Get EarlyDayMotion/{id}
 		 * @param {number} id Early Day Motion with the ID specified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse_List_PublishedWrittenQuestion_} OK
 		 */
 		PublishedEarlyDayMotion_Get(id: number): Observable<ApiResponse_List_PublishedWrittenQuestion_> {
@@ -752,13 +959,16 @@ export namespace MyNS {
 		 * @param {Date} parameters_currentStatusDateEnd Early Day Motions where the current status has been set on or before the date provided. Date format YYYY-MM-DD.
 		 * @param {boolean} parameters_isPrayer Early Day Motions which are a prayer against a Negative Statutory Instrument.
 		 * @param {number} parameters_memberId Return Early Day Motions tabled by Member with ID provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} parameters_includeSponsoredByMember Include Early Day Motions sponsored by Member specified
 		 * @param {Date} parameters_tabledStartDate Early Day Motions where the date tabled is on or after the date provided. Date format YYYY-MM-DD.
 		 * @param {Date} parameters_tabledEndDate Early Day Motions where the date tabled is on or before the date provided. Date format YYYY-MM-DD.
 		 * @param {Array<PublishedEarlyDayMotionStatus>} parameters_statuses Early Day Motions where current status is in the selected list.
 		 * @param {PublishedEarlyDayMotionQueryParametersOrderBy} parameters_orderBy Order results by date tabled, title or signature count. Default is date tabled.
 		 * @param {number} parameters_skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} parameters_take The number of records to return, default is 25, maximum is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse_List_PublishedWrittenQuestion_} OK
 		 */
 		Early_Day_MotionsGetByParameters_edmIdsAndParameters_uINWithAmendmentSuffixAndParameters_searchTermAndParameters_currentStatusDateStartAndParameters_currentStatusDateEndAndParameters_isPrayerAndParameters_memberIdAndParameters_includeSponsoredByMemberAndParameters_tabledStartDateAndParameters_tabledEndDateAndParameters_statusesAndParameters_orderByAndParameters_skipAndParameters_take(parameters_edmIds: Array<number> | null | undefined, parameters_uINWithAmendmentSuffix: string | null | undefined, parameters_searchTerm: string | null | undefined, parameters_currentStatusDateStart: Date | null | undefined, parameters_currentStatusDateEnd: Date | null | undefined, parameters_isPrayer: boolean | null | undefined, parameters_memberId: number | null | undefined, parameters_includeSponsoredByMember: boolean | null | undefined, parameters_tabledStartDate: Date | null | undefined, parameters_tabledEndDate: Date | null | undefined, parameters_statuses: Array<PublishedEarlyDayMotionStatus> | null | undefined, parameters_orderBy: PublishedEarlyDayMotionQueryParametersOrderBy | null | undefined, parameters_skip: number | null | undefined, parameters_take: number | null | undefined): Observable<ApiResponse_List_PublishedWrittenQuestion_> {
@@ -773,11 +983,14 @@ export namespace MyNS {
 		 * @param {Date} parameters_answeringDateEnd Oral Questions where the answering date has been set on or before the date provided. Date format YYYY-MM-DD.
 		 * @param {PublishedOralQuestionQuestionType} parameters_questionType Oral Questions where the question type is the selected type, substantive or topical.
 		 * @param {number} parameters_oralQuestionTimeId Oral Questions where the question is within the question time with the ID provided
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} parameters_askingMemberIds The ID of the member asking the question. Lists of member IDs for each house are available <a href="http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Commons" target="_blank">Commons</a> and <a href="http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords" target="_blank">Lords</a>.
 		 * @param {Array<number>} parameters_uINs The UIN for the question - note that UINs reset at the start of each Parliamentary session.
 		 * @param {Array<number>} parameters_answeringBodyIds Which answering body is to respond. A list of answering bodies can be found <a target="_blank" href="http://data.parliament.uk/membersdataplatform/services/mnis/referencedata/AnsweringBodies/">here</a>.
 		 * @param {number} parameters_skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} parameters_take The number of records to return, default is 25, maximum is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse_List_PublishedWrittenQuestion_} OK
 		 */
 		PublishedOralQuestion_Get(parameters_answeringDateStart: Date | null | undefined, parameters_answeringDateEnd: Date | null | undefined, parameters_questionType: PublishedOralQuestionQuestionType | null | undefined, parameters_oralQuestionTimeId: number | null | undefined, parameters_askingMemberIds: Array<number> | null | undefined, parameters_uINs: Array<number> | null | undefined, parameters_answeringBodyIds: Array<number> | null | undefined, parameters_skip: number | null | undefined, parameters_take: number | null | undefined): Observable<ApiResponse_List_PublishedWrittenQuestion_> {
@@ -793,9 +1006,12 @@ export namespace MyNS {
 		 * @param {Date} parameters_deadlineDateStart Oral Questions Time where the deadline date has been set on or after the date provided. Date format YYYY-MM-DD.
 		 * @param {Date} parameters_deadlineDateEnd Oral Questions Time where the deadline date has been set on or before the date provided. Date format YYYY-MM-DD.
 		 * @param {number} parameters_oralQuestionTimeId Identifier of the OQT
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} parameters_answeringBodyIds Which answering body is to respond. A list of answering bodies can be found <a target="_blank" href="http://data.parliament.uk/membersdataplatform/services/mnis/referencedata/AnsweringBodies/">here</a>.
 		 * @param {number} parameters_skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} parameters_take The number of records to return, default is 25, maximum is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiResponse_List_PublishedWrittenQuestion_} OK
 		 */
 		PublishedOralQuestionTime_Get(parameters_answeringDateStart: Date | null | undefined, parameters_answeringDateEnd: Date | null | undefined, parameters_deadlineDateStart: Date | null | undefined, parameters_deadlineDateEnd: Date | null | undefined, parameters_oralQuestionTimeId: number | null | undefined, parameters_answeringBodyIds: Array<number> | null | undefined, parameters_skip: number | null | undefined, parameters_take: number | null | undefined): Observable<ApiResponse_List_PublishedWrittenQuestion_> {

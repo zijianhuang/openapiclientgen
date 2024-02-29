@@ -33,9 +33,13 @@ export namespace MyNS {
 	}
 
 	export interface CountOf {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 	}
 	export interface CountOfFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCountOfFormGroup() {
@@ -102,8 +106,8 @@ export namespace MyNS {
 		callbackOnModify: boolean;
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl?: string | null;
 
@@ -123,8 +127,8 @@ export namespace MyNS {
 		frequency: string;
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name?: string | null;
 		serial?: string | null;
@@ -142,8 +146,8 @@ export namespace MyNS {
 		callbackOnModify: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 
@@ -163,8 +167,8 @@ export namespace MyNS {
 		frequency: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name: FormControl<string | null | undefined>,
 		serial: FormControl<string | null | undefined>,
@@ -214,8 +218,8 @@ export namespace MyNS {
 		custom?: any;
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name?: string | null;
 		serial?: string | null;
@@ -227,8 +231,8 @@ export namespace MyNS {
 		custom: FormControl<any | null | undefined>,
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name: FormControl<string | null | undefined>,
 		serial: FormControl<string | null | undefined>,
@@ -257,8 +261,8 @@ export namespace MyNS {
 		callbackOnModify: boolean;
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl?: string | null;
 
@@ -278,8 +282,8 @@ export namespace MyNS {
 		keys?: Array<KeyView>;
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name?: string | null;
 		updated?: Date | null;
@@ -296,8 +300,8 @@ export namespace MyNS {
 		callbackOnModify: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 
@@ -316,8 +320,8 @@ export namespace MyNS {
 		frequency: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name: FormControl<string | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
@@ -347,8 +351,8 @@ export namespace MyNS {
 		callbackOnModify?: boolean | null;
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl?: string | null;
 		custom?: any;
@@ -361,8 +365,8 @@ export namespace MyNS {
 		key?: string | null;
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name?: string | null;
 		serial?: string | null;
@@ -378,8 +382,8 @@ export namespace MyNS {
 		callbackOnModify: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 800
 		 * Min length: 0
+		 * Max length: 800
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 		custom: FormControl<any | null | undefined>,
@@ -392,8 +396,8 @@ export namespace MyNS {
 		key: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 80
 		 * Min length: 0
+		 * Max length: 80
 		 */
 		name: FormControl<string | null | undefined>,
 		serial: FormControl<string | null | undefined>,
@@ -421,7 +425,6 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/KeysApi/Current/{serial}
-		 * @return {CurrentKey} 
 		 */
 		KeysApi_Current(serial: string): Observable<CurrentKey> {
 			return this.http.get<CurrentKey>(this.baseUri + 'v1/KeysApi/Current/' + (serial == null ? '' : encodeURIComponent(serial)), {});
@@ -437,7 +440,6 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/KeysApi/Expiry/{serial}
-		 * @return {Expiry} 
 		 */
 		KeysApi_Expiry(serial: string): Observable<Expiry> {
 			return this.http.get<Expiry>(this.baseUri + 'v1/KeysApi/Expiry/' + (serial == null ? '' : encodeURIComponent(serial)), {});
@@ -445,7 +447,6 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/KeysApi/Find/{serial}
-		 * @return {KeyView} 
 		 */
 		KeysApi_Find(serial: string): Observable<KeyView> {
 			return this.http.get<KeyView>(this.baseUri + 'v1/KeysApi/Find/' + (serial == null ? '' : encodeURIComponent(serial)), {});
@@ -469,7 +470,6 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/ProductsApi/Count
-		 * @return {CountOf} 
 		 */
 		ProductsApi_Count(requestBody: ApiKey): Observable<CountOf> {
 			return this.http.post<CountOf>(this.baseUri + 'v1/ProductsApi/Count', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -477,7 +477,7 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/ProductsApi/Find
-		 * @return {ProductView} 
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ProductsApi_Find(page: number | null | undefined, requestBody: FindCredentials): Observable<ProductView> {
 			return this.http.post<ProductView>(this.baseUri + 'v1/ProductsApi/Find?page=' + page, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -485,7 +485,7 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/ProductsApi/List
-		 * @return {Array<ProductView>} 
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ProductsApi_List(page: number | null | undefined, requestBody: ApiKey): Observable<Array<ProductView>> {
 			return this.http.post<Array<ProductView>>(this.baseUri + 'v1/ProductsApi/List?page=' + page, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -533,7 +533,6 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/SubscriptionsApi/Count
-		 * @return {CountOf} 
 		 */
 		SubscriptionsApi_Count(requestBody: ApiCredentials): Observable<CountOf> {
 			return this.http.post<CountOf>(this.baseUri + 'v1/SubscriptionsApi/Count', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -573,7 +572,6 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/SubscriptionsApi/Find
-		 * @return {SubscriptionView} 
 		 */
 		SubscriptionsApi_Find(requestBody: FindCredentials): Observable<SubscriptionView> {
 			return this.http.post<SubscriptionView>(this.baseUri + 'v1/SubscriptionsApi/Find', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -581,7 +579,7 @@ export namespace MyNS {
 
 		/**
 		 * Post v1/SubscriptionsApi/List
-		 * @return {Array<SubscriptionView>} 
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SubscriptionsApi_List(page: number | null | undefined, requestBody: FindCredentials): Observable<Array<SubscriptionView>> {
 			return this.http.post<Array<SubscriptionView>>(this.baseUri + 'v1/SubscriptionsApi/List?page=' + page, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

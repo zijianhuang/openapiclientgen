@@ -4,20 +4,28 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Comparison {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		differences?: number | null;
 		elements?: Array<Element>;
 		error?: boolean | null;
 		message?: string | null;
 		show_comparisons_public_url?: string | null;
 		show_comparisons_web_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tolerance?: number | null;
 	}
 	export interface ComparisonFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		differences: FormControl<number | null | undefined>,
 		error: FormControl<boolean | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		show_comparisons_public_url: FormControl<string | null | undefined>,
 		show_comparisons_web_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tolerance: FormControl<number | null | undefined>,
 	}
 	export function CreateComparisonFormGroup() {
@@ -81,9 +89,13 @@ export namespace MyNS {
 	}
 
 	export interface Screenshot {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenshot_id?: number | null;
 	}
 	export interface ScreenshotFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenshot_id: FormControl<number | null | undefined>,
 	}
 	export function CreateScreenshotFormGroup() {
@@ -138,8 +150,11 @@ export namespace MyNS {
 		 * Get comparison results for all browsers in target screenshot test against the same browser in the base screenshot test. This is a good method for regression testing. For example, you've run a screenshot test against a set of browsers that is "good". Then, after some changes, you run a new screenshot test against the same set of browsers. This method will compare each of the same browsers against each other. For example, IE9 will be compared to IE9 from an earlier test. This is a many-to-many comparison where the OS/Browser/Resolution must match between the two test versions in order for the comparison to return results. The two versions can be from the same screenshot_test_id or not.
 		 * Get screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}
 		 * @param {number} target_screenshot_test_id test id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} target_version_id version id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} base_version_id version id of the base Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The format of the returned data. Possible values are "json" or "jsonp".
 		 * @param {string} callback Name of callback method for JSONP requests.
 		 * @param {string} tolerance Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results. The default is 30px which is a good basis for finding notable layout differences.
@@ -154,8 +169,11 @@ export namespace MyNS {
 		 * Get comparison results for all browsers in target screenshot test against a base screenshot result. The base result can be from the same test or from another test run at an earlier time. This is a one-to-many comparison.
 		 * Get screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}
 		 * @param {number} target_screenshot_test_id test id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} target_version_id version id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} base_result_id result id of the base Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The format of the returned data. Possible values are "json" or "jsonp".
 		 * @param {string} callback Name of callback method for JSONP requests.
 		 * @param {string} tolerance Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results. The default is 30px which is a good basis for finding notable layout differences.
@@ -170,9 +188,13 @@ export namespace MyNS {
 		 * Get comparison results for a single target screenshot result against a base screenshot result. This is a one-to-one comparison.
 		 * Get screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}
 		 * @param {number} target_screenshot_test_id test id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} target_version_id version id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} target_result_id result id of the target Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} base_result_id result id of the base Screenshot Test
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The format of the returned data. Possible values are "json" or "jsonp".
 		 * @param {string} callback Name of callback method for JSONP requests.
 		 * @param {string} tolerance Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results. The default is 30px which is a good basis for finding notable layout differences.

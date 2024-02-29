@@ -7,6 +7,8 @@ export namespace MyNS {
 		city?: string | null;
 		country?: string | null;
 		countryCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		geonameId?: number | null;
 		ipAddress?: string | null;
 		phoneNumber?: string | null;
@@ -18,6 +20,8 @@ export namespace MyNS {
 		city: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
 		countryCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		geonameId: FormControl<number | null | undefined>,
 		ipAddress: FormControl<string | null | undefined>,
 		phoneNumber: FormControl<string | null | undefined>,
@@ -56,47 +60,75 @@ export namespace MyNS {
 
 	export interface Person {
 		address?: Address;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age?: number | null;
 		bloodType?: string | null;
 		ccNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditScore?: number | null;
 		doB?: string | null;
 		email?: string | null;
 		eyeColor?: string | null;
 		gender?: string | null;
+
+		/** Type: double */
 		gpa?: number | null;
 		hasChildren?: boolean | null;
 		hasDegree?: boolean | null;
+
+		/** Type: double */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		incomeUSD?: number | null;
 		job?: string | null;
 		married?: boolean | null;
 		name?: string | null;
+
+		/** Type: double */
 		politicalLeaning?: number | null;
 		religion?: string | null;
 		username?: string | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 	export interface PersonFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age: FormControl<number | null | undefined>,
 		bloodType: FormControl<string | null | undefined>,
 		ccNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creditScore: FormControl<number | null | undefined>,
 		doB: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		eyeColor: FormControl<string | null | undefined>,
 		gender: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gpa: FormControl<number | null | undefined>,
 		hasChildren: FormControl<boolean | null | undefined>,
 		hasDegree: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		incomeUSD: FormControl<number | null | undefined>,
 		job: FormControl<string | null | undefined>,
 		married: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		politicalLeaning: FormControl<number | null | undefined>,
 		religion: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonFormGroup() {
@@ -484,6 +516,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/person/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		GetCompressedPerson_1(number: number): Observable<Array<string>> {
@@ -492,6 +525,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/person/{number}/
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		GetCompressedPerson(number: number): Observable<Array<string>> {

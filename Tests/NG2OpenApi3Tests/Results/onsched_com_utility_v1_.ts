@@ -4,23 +4,55 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ThreadPoolInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableCompletionThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableWorkerThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCompletionThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxWorkerThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minCompletionThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minWorkerThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupiedCompletionThreads?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupiedWorkerThreads?: number | null;
 	}
 	export interface ThreadPoolInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableCompletionThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		availableWorkerThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCompletionThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxWorkerThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minCompletionThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minWorkerThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupiedCompletionThreads: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		occupiedWorkerThreads: FormControl<number | null | undefined>,
 	}
 	export function CreateThreadPoolInfoFormGroup() {

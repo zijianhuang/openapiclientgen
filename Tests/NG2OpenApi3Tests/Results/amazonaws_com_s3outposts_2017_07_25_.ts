@@ -347,7 +347,9 @@ export namespace MyNS {
 		 * <p>Lists endpoints associated with the specified Outpost. </p> <p>Related actions include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li> </ul>
 		 * Get S3Outposts/ListEndpoints
 		 * @param {string} nextToken If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of endpoints that will be returned in the response.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEndpointsResult} Success
@@ -360,7 +362,9 @@ export namespace MyNS {
 		 * Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM).
 		 * Get S3Outposts/ListOutpostsWithS3
 		 * @param {string} nextToken When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of Outposts to return. The limit is 100.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOutpostsWithS3Result} Success
@@ -373,7 +377,9 @@ export namespace MyNS {
 		 * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM).</p> <p>Related actions include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li> </ul>
 		 * Get S3Outposts/ListSharedEndpoints#outpostId
 		 * @param {string} nextToken If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of endpoints that will be returned in the response.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} outpostId The ID of the Amazon Web Services Outpost.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token

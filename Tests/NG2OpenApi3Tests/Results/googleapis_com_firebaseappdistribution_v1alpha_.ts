@@ -402,13 +402,19 @@ export namespace MyNS {
 	/** Statistics collected during a Robo test. */
 	export interface GoogleFirebaseAppdistroV1alphaRoboStats {
 
-		/** Output only. Number of actions that crawler performed. */
+		/**
+		 * Output only. Number of actions that crawler performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionsPerformed?: number | null;
 
 		/** Output only. Duration of crawl. */
 		crawlDuration?: string | null;
 
-		/** Output only. Number of distinct screens visited. */
+		/**
+		 * Output only. Number of distinct screens visited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctVisitedScreens?: number | null;
 
 		/** Output only. Whether the main activity crawl timed out. */
@@ -418,13 +424,19 @@ export namespace MyNS {
 	/** Statistics collected during a Robo test. */
 	export interface GoogleFirebaseAppdistroV1alphaRoboStatsFormProperties {
 
-		/** Output only. Number of actions that crawler performed. */
+		/**
+		 * Output only. Number of actions that crawler performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionsPerformed: FormControl<number | null | undefined>,
 
 		/** Output only. Duration of crawl. */
 		crawlDuration: FormControl<string | null | undefined>,
 
-		/** Output only. Number of distinct screens visited. */
+		/**
+		 * Output only. Number of distinct screens visited.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distinctVisitedScreens: FormControl<number | null | undefined>,
 
 		/** Output only. Whether the main activity crawl timed out. */
@@ -521,7 +533,10 @@ export namespace MyNS {
 		/** Last activity timestamp */
 		lastActivityAt?: string | null;
 
-		/** Number of testers who have open invitations for the release */
+		/**
+		 * Number of testers who have open invitations for the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		openInvitationCount?: number | null;
 
 		/** unused. */
@@ -530,10 +545,16 @@ export namespace MyNS {
 		/** Release notes summary */
 		releaseNotesSummary?: string | null;
 
-		/** Count of testers added to the release */
+		/**
+		 * Count of testers added to the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerCount?: number | null;
 
-		/** Number of testers who have installed the release */
+		/**
+		 * Number of testers who have installed the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerWithInstallCount?: number | null;
 	}
 
@@ -558,7 +579,10 @@ export namespace MyNS {
 		/** Last activity timestamp */
 		lastActivityAt: FormControl<string | null | undefined>,
 
-		/** Number of testers who have open invitations for the release */
+		/**
+		 * Number of testers who have open invitations for the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		openInvitationCount: FormControl<number | null | undefined>,
 
 		/** unused. */
@@ -567,10 +591,16 @@ export namespace MyNS {
 		/** Release notes summary */
 		releaseNotesSummary: FormControl<string | null | undefined>,
 
-		/** Count of testers added to the release */
+		/**
+		 * Count of testers added to the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerCount: FormControl<number | null | undefined>,
 
-		/** Number of testers who have installed the release */
+		/**
+		 * Number of testers who have installed the release
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testerWithInstallCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleFirebaseAppdistroV1alphaReleaseFormGroup() {
@@ -988,6 +1018,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/tests
 		 * @param {string} parent Required. The name of the release resource, which is the parent of the tests Format: `projects/{project_number}/apps/{app_id}/releases/{release_id}`
 		 * @param {number} pageSize Optional. The maximum number of tests to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListReleaseTests` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleFirebaseAppdistroV1alphaListReleaseTestsResponse} Successful response
 		 */

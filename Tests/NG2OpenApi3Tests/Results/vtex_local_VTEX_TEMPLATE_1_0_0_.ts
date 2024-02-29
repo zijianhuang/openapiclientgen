@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Error {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 
 		/** Required */
@@ -13,7 +16,10 @@ export namespace MyNS {
 	}
 	export interface ErrorFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -29,8 +35,11 @@ export namespace MyNS {
 
 	export interface Pet {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		name: string;
@@ -38,8 +47,11 @@ export namespace MyNS {
 	}
 	export interface PetFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
@@ -47,7 +59,7 @@ export namespace MyNS {
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tag: new FormControl<string | null | undefined>(undefined),
 		});
@@ -63,6 +75,7 @@ export namespace MyNS {
 		 * List all pets
 		 * Get pets
 		 * @param {number} limit How many items to return at one time (max 100)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Pet>} An paged array of pets
 		 */
 		ListPets(limit: number | null | undefined): Observable<Array<Pet>> {

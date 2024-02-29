@@ -2849,10 +2849,15 @@ namespace MyNS
 		/// <param name="appCollection">Application collection.</param>
 		/// <param name="appName">Application resource name.</param>
 		/// <param name="api_version">Client Api Version.</param>
-		/// <param name="skip">Control paging of export tasks, start results at the given offset, defaults to 0 (1st page of data).</param>
+		/// <param name="skip">Control paging of export tasks, start results at the given offset, defaults to 0 (1st page of data).
+		/// Minimum: 0
+		// </param>
 		/// <param name="top">Control paging of export tasks, number of export tasks to return with each call. By default, it returns all export tasks with a default paging of 20.
 		///The response contains a `nextLink` property describing the path to get the next page if there are more results.
-		///The maximum paging limit for $top is 40.</param>
+		///The maximum paging limit for $top is 40.
+		/// Minimum: 1
+		/// Maximum: 40
+		// </param>
 		/// <param name="orderby">Sort results by an expression which looks like `$orderby=taskId asc` (default when not specified).
 		///The syntax is orderby={property} {direction} or just orderby={property}.
 		///Properties that can be specified for sorting: taskId, errorDetails, dateCreated, taskStatus, and dateCreated.
@@ -3256,10 +3261,15 @@ namespace MyNS
 		/// <param name="appCollection">Application collection.</param>
 		/// <param name="appName">Application resource name.</param>
 		/// <param name="api_version">Client Api Version.</param>
-		/// <param name="skip">Control paging of import jobs, start results at the given offset, defaults to 0 (1st page of data).</param>
+		/// <param name="skip">Control paging of import jobs, start results at the given offset, defaults to 0 (1st page of data).
+		/// Minimum: 0
+		// </param>
 		/// <param name="top">Control paging of import jobs, number of import jobs to return with each call. By default, it returns all import jobs with a default paging of 20.
 		///The response contains a `nextLink` property describing the path to get the next page if there are more results.
-		///The maximum paging limit for $top is 40.</param>
+		///The maximum paging limit for $top is 40.
+		/// Minimum: 1
+		/// Maximum: 40
+		// </param>
 		/// <param name="orderby">Sort results by an expression which looks like `$orderby=jobId asc` (default when not specified).
 		///The syntax is orderby={property} {direction} or just orderby={property}.
 		///Properties that can be specified for sorting: jobId, errorDetails, dateCreated, jobStatus, and dateCreated.

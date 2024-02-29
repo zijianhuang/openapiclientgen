@@ -751,7 +751,10 @@ namespace MyNS
 		/// Lists all of the protection policies within a resource group.
 		/// Policies_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
 		/// <returns>OK. The request has succeeded.</returns>
@@ -782,8 +785,13 @@ namespace MyNS
 		/// Retrieve protection policy with specified name within a resource group.
 		/// Policies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
+		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
+		/// Max length: 128
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
 		/// <returns>OK. The request has succeeded.</returns>
@@ -814,8 +822,13 @@ namespace MyNS
 		/// Create or update policy with specified rule set name within a resource group.
 		/// Policies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
+		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
+		/// Max length: 128
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
 		/// <param name="requestBody">Policy to be created.</param>
@@ -854,8 +867,13 @@ namespace MyNS
 		/// Deletes Policy
 		/// Policies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
+		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
+		/// Max length: 128
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
 		/// <returns>Delete successful.</returns>
@@ -880,8 +898,13 @@ namespace MyNS
 		/// Update an existing CdnWebApplicationFirewallPolicy with the specified policy name under the specified subscription and resource group
 		/// Policies_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
-		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
+		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
+		/// Max length: 128
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
 		/// <param name="requestBody">CdnWebApplicationFirewallPolicy parameters to be patched.</param>

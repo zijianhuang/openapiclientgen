@@ -4459,6 +4459,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomerInsights/hubs/{hubName}
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the Hub.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {Hub} requestBody Parameters supplied to the CreateOrUpdate Hub operation.
@@ -4528,6 +4529,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} authorizationPolicyName The name of the policy.
+		 *     Min length: 1    Max length: 50
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AuthorizationPolicyResourceFormat} requestBody Parameters supplied to the CreateOrUpdate authorization policy operation.
@@ -4598,6 +4600,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} connectorName The name of the connector.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {ConnectorResourceFormat} requestBody Parameters supplied to the CreateOrUpdate Connector operation.
@@ -4657,6 +4660,7 @@ export namespace MyNS {
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} connectorName The name of the connector.
 		 * @param {string} mappingName The name of the connector mapping.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {ConnectorMappingResourceFormat} requestBody Parameters supplied to the CreateOrUpdate Connector Mapping operation.
@@ -4744,6 +4748,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} interactionName The name of the interaction.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {InteractionResourceFormat} requestBody Parameters supplied to the CreateOrUpdate Interaction operation.
@@ -4800,6 +4805,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} kpiName The name of the KPI.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {KpiResourceFormat} requestBody Parameters supplied to the create/update KPI operation.
@@ -4870,6 +4876,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} linkName The name of the link.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {LinkResourceFormat} requestBody Parameters supplied to the CreateOrUpdate Link operation.
@@ -4926,6 +4933,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} predictionName The name of the Prediction.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {PredictionResourceFormat} requestBody Parameters supplied to the create/update Prediction operation.
@@ -5027,6 +5035,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} profileName The name of the profile.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {ProfileResourceFormat} requestBody Parameters supplied to the create/delete Profile type operation
@@ -5098,6 +5107,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} relationshipLinkName The name of the relationship link.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RelationshipLinkResourceFormat} requestBody Parameters supplied to the CreateOrUpdate relationship link operation.
@@ -5154,6 +5164,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} relationshipName The name of the Relationship.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RelationshipResourceFormat} requestBody Parameters supplied to the CreateOrUpdate Relationship operation.
@@ -5210,6 +5221,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} assignmentName The assignment name
+		 *     Min length: 1    Max length: 128
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {RoleAssignmentResourceFormat} requestBody Parameters supplied to the CreateOrUpdate RoleAssignment operation.
@@ -5281,6 +5293,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} hubName The name of the hub.
 		 * @param {string} viewName The name of the view.
+		 *     Min length: 1    Max length: 512
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {ViewResourceFormat} requestBody Parameters supplied to the CreateOrUpdate View operation.

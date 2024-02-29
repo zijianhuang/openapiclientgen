@@ -1650,7 +1650,10 @@ namespace MyNS
 		/// ListConnectors v1/connectors
 		/// </summary>
 		/// <param name="connectorNamePrefix">The name prefix that you want to use to search for and list connectors.</param>
-		/// <param name="maxResults">The maximum number of connectors to list in one response.</param>
+		/// <param name="maxResults">The maximum number of connectors to list in one response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</param>
 		/// <returns>Success</returns>
 		public async Task<ListConnectorsResponse> ListConnectorsAsync(string connectorNamePrefix, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1725,7 +1728,10 @@ namespace MyNS
 		/// Returns a list of all of the custom plugins in this account and Region.
 		/// ListCustomPlugins v1/custom-plugins
 		/// </summary>
-		/// <param name="maxResults">The maximum number of custom plugins to list in one response.</param>
+		/// <param name="maxResults">The maximum number of custom plugins to list in one response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</param>
 		/// <returns>Success</returns>
 		public async Task<ListCustomPluginsResponse> ListCustomPluginsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1800,7 +1806,10 @@ namespace MyNS
 		/// Returns a list of all of the worker configurations in this account and Region.
 		/// ListWorkerConfigurations v1/worker-configurations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of worker configurations to list in one response.</param>
+		/// <param name="maxResults">The maximum number of worker configurations to list in one response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkerConfigurationsResponse> ListWorkerConfigurationsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -1233,20 +1233,32 @@ export namespace MyNS {
 	/** Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value. */
 	export interface FixedOrPercent {
 
-		/** Specifies a fixed value. */
+		/**
+		 * Specifies a fixed value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed?: number | null;
 
-		/** Specifies the relative value defined as a percentage, which will be multiplied by a reference value. */
+		/**
+		 * Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent?: number | null;
 	}
 
 	/** Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value. */
 	export interface FixedOrPercentFormProperties {
 
-		/** Specifies a fixed value. */
+		/**
+		 * Specifies a fixed value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixed: FormControl<number | null | undefined>,
 
-		/** Specifies the relative value defined as a percentage, which will be multiplied by a reference value. */
+		/**
+		 * Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent: FormControl<number | null | undefined>,
 	}
 	export function CreateFixedOrPercentFormGroup() {
@@ -1587,7 +1599,10 @@ export namespace MyNS {
 	/** Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month". */
 	export interface MonthlySchedule {
 
-		/** Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1 indicates the last day of the month. Months without the target day will be skipped. For example, a schedule to run "every month on the 31st" will not run in February, April, June, etc. */
+		/**
+		 * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1 indicates the last day of the month. Months without the target day will be skipped. For example, a schedule to run "every month on the 31st" will not run in February, April, June, etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monthDay?: number | null;
 
 		/** Represents one week day in a month. An example is "the 4th Sunday". */
@@ -1597,7 +1612,10 @@ export namespace MyNS {
 	/** Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month". */
 	export interface MonthlyScheduleFormProperties {
 
-		/** Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1 indicates the last day of the month. Months without the target day will be skipped. For example, a schedule to run "every month on the 31st" will not run in February, April, June, etc. */
+		/**
+		 * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1 indicates the last day of the month. Months without the target day will be skipped. For example, a schedule to run "every month on the 31st" will not run in February, April, June, etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monthDay: FormControl<number | null | undefined>,
 	}
 	export function CreateMonthlyScheduleFormGroup() {
@@ -1614,10 +1632,16 @@ export namespace MyNS {
 		/** Required. A day of the week. */
 		dayOfWeek?: WeekDayOfMonthDayOfWeek | null;
 
-		/** Optional. Represents the number of days before or after the given week day of month that the patch deployment is scheduled for. For example if `week_ordinal` and `day_of_week` values point to the second day of the month and this `day_offset` value is set to `3`, the patch deployment takes place three days after the second Tuesday of the month. If this value is negative, for example -5, the patches are deployed five days before before the second Tuesday of the month. Allowed values are in range [-30, 30]. */
+		/**
+		 * Optional. Represents the number of days before or after the given week day of month that the patch deployment is scheduled for. For example if `week_ordinal` and `day_of_week` values point to the second day of the month and this `day_offset` value is set to `3`, the patch deployment takes place three days after the second Tuesday of the month. If this value is negative, for example -5, the patches are deployed five days before before the second Tuesday of the month. Allowed values are in range [-30, 30].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOffset?: number | null;
 
-		/** Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month. */
+		/**
+		 * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOrdinal?: number | null;
 	}
 
@@ -1627,10 +1651,16 @@ export namespace MyNS {
 		/** Required. A day of the week. */
 		dayOfWeek: FormControl<WeekDayOfMonthDayOfWeek | null | undefined>,
 
-		/** Optional. Represents the number of days before or after the given week day of month that the patch deployment is scheduled for. For example if `week_ordinal` and `day_of_week` values point to the second day of the month and this `day_offset` value is set to `3`, the patch deployment takes place three days after the second Tuesday of the month. If this value is negative, for example -5, the patches are deployed five days before before the second Tuesday of the month. Allowed values are in range [-30, 30]. */
+		/**
+		 * Optional. Represents the number of days before or after the given week day of month that the patch deployment is scheduled for. For example if `week_ordinal` and `day_of_week` values point to the second day of the month and this `day_offset` value is set to `3`, the patch deployment takes place three days after the second Tuesday of the month. If this value is negative, for example -5, the patches are deployed five days before before the second Tuesday of the month. Allowed values are in range [-30, 30].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dayOffset: FormControl<number | null | undefined>,
 
-		/** Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month. */
+		/**
+		 * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOrdinal: FormControl<number | null | undefined>,
 	}
 	export function CreateWeekDayOfMonthFormGroup() {
@@ -1648,32 +1678,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -1873,7 +1927,10 @@ export namespace MyNS {
 		/** Output only. Name of the patch deployment that created this patch job. */
 		patchDeployment?: string | null;
 
-		/** Reflects the overall progress of the patch job in the range of 0.0 being no progress to 100.0 being complete. */
+		/**
+		 * Reflects the overall progress of the patch job in the range of 0.0 being no progress to 100.0 being complete.
+		 * Type: double
+		 */
 		percentComplete?: number | null;
 
 		/** Patch rollout configuration specifications. Contains details on the concurrency control when applying patch(es) to all targeted VMs. */
@@ -1913,7 +1970,10 @@ export namespace MyNS {
 		/** Output only. Name of the patch deployment that created this patch job. */
 		patchDeployment: FormControl<string | null | undefined>,
 
-		/** Reflects the overall progress of the patch job in the range of 0.0 being no progress to 100.0 being complete. */
+		/**
+		 * Reflects the overall progress of the patch job in the range of 0.0 being no progress to 100.0 being complete.
+		 * Type: double
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The current state of the PatchJob. */
@@ -2253,6 +2313,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/guestPolicies
 		 * @param {string} parent Required. The resource name of the parent using one of the following forms: `projects/{project_number}`.
 		 * @param {number} pageSize The maximum number of guest policies to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to `ListGuestPolicies` that indicates where this listing should continue from.
 		 * @return {ListGuestPoliciesResponse} Successful response
 		 */
@@ -2277,6 +2338,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent for the instances are in the form of `projects/patchJobs/*`.
 		 * @param {string} filter A filter expression that filters results listed in the response. This field supports filtering results by instance zone, name, state, or `failure_reason`.
 		 * @param {number} pageSize The maximum number of instance details records to return. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call that indicates where this listing should continue from.
 		 * @return {ListPatchJobInstanceDetailsResponse} Successful response
 		 */
@@ -2289,6 +2351,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/patchDeployments
 		 * @param {string} parent Required. The resource name of the parent in the form `projects/*`.
 		 * @param {number} pageSize Optional. The maximum number of patch deployments to return. Default is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A pagination token returned from a previous call to ListPatchDeployments that indicates where this listing should continue from.
 		 * @return {ListPatchDeploymentsResponse} Successful response
 		 */
@@ -2313,6 +2376,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. In the form of `projects/*`
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by patch jobs to be included in the response. Currently, filtering is only available on the patch_deployment field.
 		 * @param {number} pageSize The maximum number of instance status to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call that indicates where this listing should continue from.
 		 * @return {ListPatchJobsResponse} Successful response
 		 */

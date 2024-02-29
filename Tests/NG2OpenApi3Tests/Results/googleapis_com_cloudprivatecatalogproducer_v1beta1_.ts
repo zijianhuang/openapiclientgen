@@ -1283,6 +1283,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version?: number | null;
 	}
@@ -1378,6 +1379,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -1674,7 +1676,10 @@ export namespace MyNS {
 	 */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/**
@@ -1701,7 +1706,10 @@ export namespace MyNS {
 	 */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/**
@@ -1759,6 +1767,7 @@ export namespace MyNS {
 		 * scope of the parent resource.
 		 * Get v1beta1/catalogs
 		 * @param {number} pageSize The maximum number of catalogs to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListCatalogs
 		 * that indicates where this listing should continue from.
 		 * This field is optional.
@@ -1792,6 +1801,7 @@ export namespace MyNS {
 		 * @param {string} filter The standard list filter.
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
@@ -1882,6 +1892,7 @@ export namespace MyNS {
 		 * @param {string} parent The resource name of the `Catalog` whose `Associations` are
 		 * being retrieved. In the format `catalogs/<catalog>`.
 		 * @param {number} pageSize The maximum number of catalog associations to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from the previous call to
 		 * `ListAssociations`.
 		 * @return {void} Successful response
@@ -1908,6 +1919,7 @@ export namespace MyNS {
 		 * @param {string} filter A filter expression used to restrict the returned results based
 		 * upon properties of the product.
 		 * @param {number} pageSize The maximum number of products to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListProducts
 		 * that indicates where this listing should continue from.
 		 * This field is optional.
@@ -1933,6 +1945,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/versions
 		 * @param {string} parent The resource name of the parent resource.
 		 * @param {number} pageSize The maximum number of versions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A pagination token returned from a previous call to ListVersions
 		 * that indicates where this listing should continue from.
 		 * This field is optional.
@@ -1978,6 +1991,7 @@ export namespace MyNS {
 		 * Requests for policies with any conditional bindings must specify version 3.
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Cloudprivatecatalogproducer_catalogs_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {

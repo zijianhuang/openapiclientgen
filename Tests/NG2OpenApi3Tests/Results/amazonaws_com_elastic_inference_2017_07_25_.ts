@@ -370,6 +370,7 @@ export namespace MyNS {
 		 * <p> Returns all tags of an Elastic Inference Accelerator. </p> <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn  The ARN of the Elastic Inference Accelerator to list the tags for. 
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResult} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResult> {
@@ -380,6 +381,7 @@ export namespace MyNS {
 		 * <p> Adds the specified tags to an Elastic Inference Accelerator. </p> <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn  The ARN of the Elastic Inference Accelerator to tag. 
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResult} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResult> {
@@ -390,7 +392,9 @@ export namespace MyNS {
 		 * <p> Removes the specified tags from an Elastic Inference Accelerator. </p> <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn  The ARN of the Elastic Inference Accelerator to untag. 
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys  The list of tags to remove from the Elastic Inference Accelerator. 
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResult} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResult> {
@@ -403,8 +407,8 @@ export namespace MyNS {
 		/**
 		 * The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		locationType: LocationType;
 
@@ -420,8 +424,8 @@ export namespace MyNS {
 		/**
 		 * The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		locationType: FormControl<LocationType | null | undefined>,
 	}
@@ -457,8 +461,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -473,8 +477,8 @@ export namespace MyNS {
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}

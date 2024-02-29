@@ -11,7 +11,10 @@ export namespace MyNS {
 		/** The email address of the user. Present only if the email scope is present in the request. */
 		email?: string | null;
 
-		/** The expiry time of the token, as number of seconds left until expiry. */
+		/**
+		 * The expiry time of the token, as number of seconds left until expiry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** To whom was the token issued to. In general the same as audience. */
@@ -34,7 +37,10 @@ export namespace MyNS {
 		/** The email address of the user. Present only if the email scope is present in the request. */
 		email: FormControl<string | null | undefined>,
 
-		/** The expiry time of the token, as number of seconds left until expiry. */
+		/**
+		 * The expiry time of the token, as number of seconds left until expiry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** To whom was the token issued to. In general the same as audience. */

@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Activity {
 
-		/** If cost prices are utilized on employees, this can be used to determine a markup percentage for the given activity.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If cost prices are utilized on employees, this can be used to determine a markup percentage for the given activity.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPriceMarkupPercentage?: number | null;
 
 		/** Date where price should change from before to after.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -14,13 +17,17 @@ export namespace MyNS {
 		/**
 		 * The number of the activity group that this activity belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: number;
 
 		/** Hides an activity from employees when registering in e-conomic UI.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		hideInSearch?: boolean | null;
 
-		/** If time in lieu is used, this defines which code the activity should utilize when registered upon.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If time in lieu is used, this defines which code the activity should utilize when registered upon.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inLieuCode?: number | null;
 
 		/** Defines whether the activity can be registered upon.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -29,8 +36,8 @@ export namespace MyNS {
 		/**
 		 * Name of the activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -45,15 +52,24 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion?: string | null;
 
-		/** Price to be used after defined cut off date if defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Price to be used after defined cut off date if defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPriceAfter?: number | null;
 
-		/** Price for a given activity. This will be utilized if no special price is defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Price for a given activity. This will be utilized if no special price is defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPriceBefore?: number | null;
 	}
 	export interface ActivityFormProperties {
 
-		/** If cost prices are utilized on employees, this can be used to determine a markup percentage for the given activity.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If cost prices are utilized on employees, this can be used to determine a markup percentage for the given activity.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPriceMarkupPercentage: FormControl<number | null | undefined>,
 
 		/** Date where price should change from before to after.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -62,13 +78,17 @@ export namespace MyNS {
 		/**
 		 * The number of the activity group that this activity belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: FormControl<number | null | undefined>,
 
 		/** Hides an activity from employees when registering in e-conomic UI.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		hideInSearch: FormControl<boolean | null | undefined>,
 
-		/** If time in lieu is used, this defines which code the activity should utilize when registered upon.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If time in lieu is used, this defines which code the activity should utilize when registered upon.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inLieuCode: FormControl<number | null | undefined>,
 
 		/** Defines whether the activity can be registered upon.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -77,8 +97,8 @@ export namespace MyNS {
 		/**
 		 * Name of the activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -93,10 +113,16 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion: FormControl<string | null | undefined>,
 
-		/** Price to be used after defined cut off date if defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Price to be used after defined cut off date if defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPriceAfter: FormControl<number | null | undefined>,
 
-		/** Price for a given activity. This will be utilized if no special price is defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Price for a given activity. This will be utilized if no special price is defined.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPriceBefore: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityFormGroup() {
@@ -147,6 +173,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountClosed?: number | null;
 
@@ -155,6 +182,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountOngoing?: number | null;
 
@@ -172,6 +200,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costContraAccountOngoing?: number | null;
 
@@ -184,12 +213,15 @@ export namespace MyNS {
 		/**
 		 * Name of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
-		/** The unique number of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -200,6 +232,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountClosed?: number | null;
 
@@ -208,6 +241,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountOngoing?: number | null;
 
@@ -225,6 +259,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesContraAccountOngoing?: number | null;
 
@@ -244,6 +279,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountClosed: FormControl<number | null | undefined>,
 
@@ -252,6 +288,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountOngoing: FormControl<number | null | undefined>,
 
@@ -269,6 +306,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costContraAccountOngoing: FormControl<number | null | undefined>,
 
@@ -281,12 +319,15 @@ export namespace MyNS {
 		/**
 		 * Name of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The unique number of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -297,6 +338,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountClosed: FormControl<number | null | undefined>,
 
@@ -305,6 +347,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountOngoing: FormControl<number | null | undefined>,
 
@@ -322,6 +365,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesContraAccountOngoing: FormControl<number | null | undefined>,
 
@@ -389,6 +433,7 @@ export namespace MyNS {
 		/**
 		 * The number of the cost type group that the cost type belongs to.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costGroupNumber: number;
 
@@ -401,8 +446,8 @@ export namespace MyNS {
 		/**
 		 * Name of the cost type.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -425,6 +470,7 @@ export namespace MyNS {
 		/**
 		 * The number of the cost type group that the cost type belongs to.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costGroupNumber: FormControl<number | null | undefined>,
 
@@ -437,8 +483,8 @@ export namespace MyNS {
 		/**
 		 * Name of the cost type.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -498,23 +544,28 @@ export namespace MyNS {
 		/**
 		 * The account number to register costs for closed projects.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountClosed: number;
 
 		/**
 		 * The account number to register ongoing costs.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountOnGoing: number;
 
-		/** The difference in percentage between the sales price and the cost price.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The difference in percentage between the sales price and the cost price.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		markup?: number | null;
 
 		/**
 		 * Name of the cost type group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -542,23 +593,28 @@ export namespace MyNS {
 		/**
 		 * The account number to register costs for closed projects.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountClosed: FormControl<number | null | undefined>,
 
 		/**
 		 * The account number to register ongoing costs.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountOnGoing: FormControl<number | null | undefined>,
 
-		/** The difference in percentage between the sales price and the cost price.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The difference in percentage between the sales price and the cost price.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		markup: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the cost type group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -620,12 +676,18 @@ export namespace MyNS {
 
 	export interface CreatedResult {
 
-		/** The identifier of the newly created entity<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The identifier of the newly created entity<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 	}
 	export interface CreatedResultFormProperties {
 
-		/** The identifier of the newly created entity<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The identifier of the newly created entity<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateCreatedResultFormGroup() {
@@ -645,22 +707,23 @@ export namespace MyNS {
 
 		/**
 		 * Employee's email address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		email?: string | null;
 
 		/**
 		 * The number of the employee group that this employee belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: number;
 
 		/**
 		 * Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -677,8 +740,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's telephone number.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		phone?: string | null;
 	}
@@ -692,22 +755,23 @@ export namespace MyNS {
 
 		/**
 		 * Employee's email address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of the employee group that this employee belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -724,8 +788,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's telephone number.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		phone: FormControl<string | null | undefined>,
 	}
@@ -771,8 +835,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -792,8 +856,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -906,12 +970,14 @@ export namespace MyNS {
 		/**
 		 * The distance amount that the mileage registration should contain<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: double
 		 */
 		distance: number;
 
 		/**
 		 * The employee number of the project mileage entry<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		employeeNumber: number;
 
@@ -927,7 +993,10 @@ export namespace MyNS {
 		/** Value specifying if the mileage was approved. If it was approved, it can not be updated anymore.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		isApproved?: boolean | null;
 
-		/** The unique number of the project mileage entry<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project mileage entry<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -936,6 +1005,7 @@ export namespace MyNS {
 		/**
 		 * The project number of the project mileage entry<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: number;
 
@@ -953,12 +1023,14 @@ export namespace MyNS {
 		/**
 		 * The distance amount that the mileage registration should contain<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: double
 		 */
 		distance: FormControl<number | null | undefined>,
 
 		/**
 		 * The employee number of the project mileage entry<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		employeeNumber: FormControl<number | null | undefined>,
 
@@ -974,7 +1046,10 @@ export namespace MyNS {
 		/** Value specifying if the mileage was approved. If it was approved, it can not be updated anymore.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		isApproved: FormControl<boolean | null | undefined>,
 
-		/** The unique number of the project mileage entry<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project mileage entry<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -983,6 +1058,7 @@ export namespace MyNS {
 		/**
 		 * The project number of the project mileage entry<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: FormControl<number | null | undefined>,
 
@@ -1047,36 +1123,66 @@ export namespace MyNS {
 
 	export interface MileagePrices {
 
-		/** The total cost of the trip, calculated based on the mileage cost rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The total cost of the trip, calculated based on the mileage cost rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice?: number | null;
 
-		/** The cost of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The cost of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costRate?: number | null;
 
-		/** The mileage entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The mileage entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The total sales price of the trip, calculated based on the mileage sales rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The total sales price of the trip, calculated based on the mileage sales rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice?: number | null;
 
-		/** The sales price of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The sales price of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesRate?: number | null;
 	}
 	export interface MileagePricesFormProperties {
 
-		/** The total cost of the trip, calculated based on the mileage cost rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The total cost of the trip, calculated based on the mileage cost rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice: FormControl<number | null | undefined>,
 
-		/** The cost of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The cost of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costRate: FormControl<number | null | undefined>,
 
-		/** The mileage entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The mileage entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The total sales price of the trip, calculated based on the mileage sales rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The total sales price of the trip, calculated based on the mileage sales rates.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice: FormControl<number | null | undefined>,
 
-		/** The sales price of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The sales price of the trip per mile, provided by the mileage setup.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesRate: FormControl<number | null | undefined>,
 	}
 	export function CreateMileagePricesFormGroup() {
@@ -1119,10 +1225,16 @@ export namespace MyNS {
 		/** The date when the project was closed and booked.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		closedDate?: Date | null;
 
-		/** The number of the contact person. Has to be from the same customer as the one defined in the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the contact person. Has to be from the same customer as the one defined in the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactPersonId?: number | null;
 
-		/** Sum of registrations based on cost price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of registrations based on cost price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice?: number | null;
 
 		/**
@@ -1135,23 +1247,35 @@ export namespace MyNS {
 		/** The project delivery date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		deliveryDate?: Date | null;
 
-		/** The location number used to deliver the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The location number used to deliver the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryLocationNumber?: number | null;
 
-		/** Only relevant if the user uses addon dimensions<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Only relevant if the user uses addon dimensions<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departmentNumber?: number | null;
 
 		/**
 		 * Text describing the project.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
-		 * Max length: 2500
 		 * Min length: 0
+		 * Max length: 2500
 		 */
 		description?: string | null;
 
-		/** If a fixed price is agreed upon with a customer, this can be utilized. It is not retrieved when invoicing, however, so it is only used for reporting.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If a fixed price is agreed upon with a customer, this can be utilized. It is not retrieved when invoicing, however, so it is only used for reporting.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		fixedPrice?: number | null;
 
-		/** Sum of invoiced amount for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of invoiced amount for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		invoicedTotal?: number | null;
 
 		/** Barred projects cannot retrieve registrations<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -1169,17 +1293,23 @@ export namespace MyNS {
 		/** The date and time when this project was last updated. Use it in the filter to retrieve only updated projects.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		lastUpdated?: Date | null;
 
-		/** The number of the main project, if this is a sub project linked to a main project. It can be null for both main and sub projects (sub project can exist not linked to any main project, like standalone project).<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the main project, if this is a sub project linked to a main project. It can be null for both main and sub projects (sub project can exist not linked to any main project, like standalone project).<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mainProjectNumber?: number | null;
 
-		/** Default amount of mileage for the project<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Default amount of mileage for the project<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		mileage?: number | null;
 
 		/**
 		 * Name of the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1193,22 +1323,35 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion?: string | null;
 
-		/** Second employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Second employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherResponsibleEmployeeNumber?: number | null;
 
 		/**
 		 * The number of the project group that this project belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectGroupNumber: number;
 
-		/** The employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsibleEmployeeNumber?: number | null;
 
-		/** Sum of registrations based on sales price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of registrations based on sales price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice?: number | null;
 
-		/** The number of the project status. Project status is a separate manageable resource.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the project status. Project status is a separate manageable resource.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ProjectFormProperties {
@@ -1216,10 +1359,16 @@ export namespace MyNS {
 		/** The date when the project was closed and booked.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		closedDate: FormControl<Date | null | undefined>,
 
-		/** The number of the contact person. Has to be from the same customer as the one defined in the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the contact person. Has to be from the same customer as the one defined in the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contactPersonId: FormControl<number | null | undefined>,
 
-		/** Sum of registrations based on cost price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of registrations based on cost price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice: FormControl<number | null | undefined>,
 
 		/**
@@ -1232,23 +1381,35 @@ export namespace MyNS {
 		/** The project delivery date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		deliveryDate: FormControl<Date | null | undefined>,
 
-		/** The location number used to deliver the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The location number used to deliver the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryLocationNumber: FormControl<number | null | undefined>,
 
-		/** Only relevant if the user uses addon dimensions<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Only relevant if the user uses addon dimensions<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departmentNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Text describing the project.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
-		 * Max length: 2500
 		 * Min length: 0
+		 * Max length: 2500
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** If a fixed price is agreed upon with a customer, this can be utilized. It is not retrieved when invoicing, however, so it is only used for reporting.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * If a fixed price is agreed upon with a customer, this can be utilized. It is not retrieved when invoicing, however, so it is only used for reporting.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		fixedPrice: FormControl<number | null | undefined>,
 
-		/** Sum of invoiced amount for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of invoiced amount for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		invoicedTotal: FormControl<number | null | undefined>,
 
 		/** Barred projects cannot retrieve registrations<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -1266,17 +1427,23 @@ export namespace MyNS {
 		/** The date and time when this project was last updated. Use it in the filter to retrieve only updated projects.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** The number of the main project, if this is a sub project linked to a main project. It can be null for both main and sub projects (sub project can exist not linked to any main project, like standalone project).<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the main project, if this is a sub project linked to a main project. It can be null for both main and sub projects (sub project can exist not linked to any main project, like standalone project).<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mainProjectNumber: FormControl<number | null | undefined>,
 
-		/** Default amount of mileage for the project<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Default amount of mileage for the project<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		mileage: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1290,22 +1457,35 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion: FormControl<string | null | undefined>,
 
-		/** Second employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Second employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherResponsibleEmployeeNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of the project group that this project belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectGroupNumber: FormControl<number | null | undefined>,
 
-		/** The employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The employee number that is responsible for the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsibleEmployeeNumber: FormControl<number | null | undefined>,
 
-		/** Sum of registrations based on sales price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Sum of registrations based on sales price for the project<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice: FormControl<number | null | undefined>,
 
-		/** The number of the project status. Project status is a separate manageable resource.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the project status. Project status is a separate manageable resource.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectFormGroup() {
@@ -1344,6 +1524,7 @@ export namespace MyNS {
 		/**
 		 * The number of the activity that is linked to the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		activityNumber: number;
 
@@ -1353,7 +1534,10 @@ export namespace MyNS {
 		/** The date when registration on the project activity stops being allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		endDate?: Date | null;
 
-		/** The system unique number of the project activity entry. This property is not visible in the UI.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The system unique number of the project activity entry. This property is not visible in the UI.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -1362,10 +1546,14 @@ export namespace MyNS {
 		/**
 		 * The number of the project that the activity is linked to.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: number;
 
-		/** The number of the employee that is responsible for the project activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the employee that is responsible for the project activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsibleEmployeeNumber?: number | null;
 
 		/** The date when registration on the project activity starts being allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -1376,6 +1564,7 @@ export namespace MyNS {
 		/**
 		 * The number of the activity that is linked to the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		activityNumber: FormControl<number | null | undefined>,
 
@@ -1385,7 +1574,10 @@ export namespace MyNS {
 		/** The date when registration on the project activity stops being allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		endDate: FormControl<Date | null | undefined>,
 
-		/** The system unique number of the project activity entry. This property is not visible in the UI.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The system unique number of the project activity entry. This property is not visible in the UI.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -1394,10 +1586,14 @@ export namespace MyNS {
 		/**
 		 * The number of the project that the activity is linked to.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: FormControl<number | null | undefined>,
 
-		/** The number of the employee that is responsible for the project activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The number of the employee that is responsible for the project activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsibleEmployeeNumber: FormControl<number | null | undefined>,
 
 		/** The date when registration on the project activity starts being allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
@@ -1470,8 +1666,8 @@ export namespace MyNS {
 		/**
 		 * Name of the customer.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1491,8 +1687,8 @@ export namespace MyNS {
 		/**
 		 * Name of the customer.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1544,8 +1740,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's home address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		address?: string | null;
 
@@ -1563,18 +1759,27 @@ export namespace MyNS {
 
 		/**
 		 * Employee's city of residence.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		city?: string | null;
 
-		/** The cost after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The cost after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		costPriceAfter?: number | null;
 
-		/** The cost before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The cost before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		costPriceBefore?: number | null;
 
-		/** By default, salesPriceBefore is used, unless a cutoffDate and salesPriceAfter is determined. The cutoffDate serves the purpose of choosing which date the salesPriceAfter shall apply from. It can be null if only salesPriceBefore should apply.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * By default, salesPriceBefore is used, unless a cutoffDate and salesPriceAfter is determined. The cutoffDate serves the purpose of choosing which date the salesPriceAfter shall apply from. It can be null if only salesPriceBefore should apply.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: true</p>
+		 * Type: DateOnly
+		 */
 		cutOffDate?: Date | null;
 
 		/**
@@ -1589,6 +1794,7 @@ export namespace MyNS {
 		/**
 		 * The number of the employee group that this employee belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: number;
 
@@ -1604,8 +1810,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1620,10 +1826,16 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion?: string | null;
 
-		/** The sale price after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The sale price after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		salesPriceAfter?: number | null;
 
-		/** The sale price before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The sale price before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		salesPriceBefore?: number | null;
 
 		/** User id of the employee if it's a user.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
@@ -1631,8 +1843,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's zip code.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		zipCode?: string | null;
 	}
@@ -1640,8 +1852,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's home address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		address: FormControl<string | null | undefined>,
 
@@ -1659,18 +1871,27 @@ export namespace MyNS {
 
 		/**
 		 * Employee's city of residence.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		city: FormControl<string | null | undefined>,
 
-		/** The cost after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The cost after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		costPriceAfter: FormControl<number | null | undefined>,
 
-		/** The cost before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The cost before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		costPriceBefore: FormControl<number | null | undefined>,
 
-		/** By default, salesPriceBefore is used, unless a cutoffDate and salesPriceAfter is determined. The cutoffDate serves the purpose of choosing which date the salesPriceAfter shall apply from. It can be null if only salesPriceBefore should apply.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * By default, salesPriceBefore is used, unless a cutoffDate and salesPriceAfter is determined. The cutoffDate serves the purpose of choosing which date the salesPriceAfter shall apply from. It can be null if only salesPriceBefore should apply.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: true</p>
+		 * Type: DateOnly
+		 */
 		cutOffDate: FormControl<Date | null | undefined>,
 
 		/**
@@ -1685,6 +1906,7 @@ export namespace MyNS {
 		/**
 		 * The number of the employee group that this employee belongs.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupNumber: FormControl<number | null | undefined>,
 
@@ -1700,8 +1922,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1716,10 +1938,16 @@ export namespace MyNS {
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion: FormControl<string | null | undefined>,
 
-		/** The sale price after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The sale price after the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		salesPriceAfter: FormControl<number | null | undefined>,
 
-		/** The sale price before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The sale price before the cut off date.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: double
+		 */
 		salesPriceBefore: FormControl<number | null | undefined>,
 
 		/** User id of the employee if it's a user.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
@@ -1727,8 +1955,8 @@ export namespace MyNS {
 
 		/**
 		 * Employee's zip code.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		zipCode: FormControl<string | null | undefined>,
 	}
@@ -1785,8 +2013,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -1806,8 +2034,8 @@ export namespace MyNS {
 		/**
 		 * Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1862,6 +2090,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountClosed?: number | null;
 
@@ -1870,6 +2099,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountOngoing?: number | null;
 
@@ -1887,6 +2117,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costContraAccountOngoing?: number | null;
 
@@ -1899,12 +2130,15 @@ export namespace MyNS {
 		/**
 		 * The project group name.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
-		/** The unique number of the project group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -1915,6 +2149,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountClosed?: number | null;
 
@@ -1923,6 +2158,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountOngoing?: number | null;
 
@@ -1940,6 +2176,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesContraAccountOngoing?: number | null;
 
@@ -1959,6 +2196,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountClosed: FormControl<number | null | undefined>,
 
@@ -1967,6 +2205,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costAccountOngoing: FormControl<number | null | undefined>,
 
@@ -1984,6 +2223,7 @@ export namespace MyNS {
 		 * If includeCostPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		costContraAccountOngoing: FormControl<number | null | undefined>,
 
@@ -1996,12 +2236,15 @@ export namespace MyNS {
 		/**
 		 * The project group name.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The unique number of the project group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -2012,6 +2255,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountClosed: FormControl<number | null | undefined>,
 
@@ -2020,6 +2264,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesAccountOngoing: FormControl<number | null | undefined>,
 
@@ -2037,6 +2282,7 @@ export namespace MyNS {
 		 * If includeSalesPriceInFinance is set to true, this property is required.
 		 * Otherwise, it cannot be provided.
 		 * Only accessible accounts (not barred) with accountType=="status" or "profitAndLoss" are allowed.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		salesContraAccountOngoing: FormControl<number | null | undefined>,
 
@@ -2100,13 +2346,19 @@ export namespace MyNS {
 		/** Name of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p> */
 		name?: string | null;
 
-		/** The unique number of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion?: string | null;
 
-		/** Defines the priority of the project status<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Defines the priority of the project status<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/**
@@ -2121,13 +2373,19 @@ export namespace MyNS {
 		/** Name of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p> */
 		name: FormControl<string | null | undefined>,
 
-		/** The unique number of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The unique number of the project status.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
 		objectVersion: FormControl<string | null | undefined>,
 
-		/** Defines the priority of the project status<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Defines the priority of the project status<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/**
@@ -2179,6 +2437,7 @@ export namespace MyNS {
 		/**
 		 * The activity identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		activityNumber: number;
 
@@ -2191,6 +2450,7 @@ export namespace MyNS {
 		/**
 		 * The employee identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		employeeNumber: number;
 
@@ -2203,10 +2463,16 @@ export namespace MyNS {
 		/** The time entry last updated date.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		lastUpdated?: Date | null;
 
-		/** The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** Number of hours of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Number of hours of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		numberOfHours?: number | null;
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -2215,6 +2481,7 @@ export namespace MyNS {
 		/**
 		 * The project identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: number;
 
@@ -2226,6 +2493,7 @@ export namespace MyNS {
 		/**
 		 * The activity identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		activityNumber: FormControl<number | null | undefined>,
 
@@ -2238,6 +2506,7 @@ export namespace MyNS {
 		/**
 		 * The employee identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		employeeNumber: FormControl<number | null | undefined>,
 
@@ -2250,10 +2519,16 @@ export namespace MyNS {
 		/** The time entry last updated date.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: eq, ne, lt, lte, gt, gte</p><p class='sort'>Sortable: false</p> */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** Number of hours of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * Number of hours of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		numberOfHours: FormControl<number | null | undefined>,
 
 		/** The object version, required for PUT requests.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
@@ -2262,6 +2537,7 @@ export namespace MyNS {
 		/**
 		 * The project identifier of time entry.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		projectNumber: FormControl<number | null | undefined>,
 
@@ -2327,24 +2603,42 @@ export namespace MyNS {
 
 	export interface TimeEntryPrices {
 
-		/** The time entry cost price, calculated based on the activity cost price or on the employee cost price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The time entry cost price, calculated based on the activity cost price or on the employee cost price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice?: number | null;
 
-		/** The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The time entry sales price, calculated based on the activity sales price or on the employee sales price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The time entry sales price, calculated based on the activity sales price or on the employee sales price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice?: number | null;
 	}
 	export interface TimeEntryPricesFormProperties {
 
-		/** The time entry cost price, calculated based on the activity cost price or on the employee cost price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The time entry cost price, calculated based on the activity cost price or on the employee cost price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		costPrice: FormControl<number | null | undefined>,
 
-		/** The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p> */
+		/**
+		 * The time entry identifier.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: true</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The time entry sales price, calculated based on the activity sales price or on the employee sales price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p> */
+		/**
+		 * The time entry sales price, calculated based on the activity sales price or on the employee sales price when no activity price is provided.<p class='filter'>Read-only: true</p><p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
+		 * Type: double
+		 */
 		salesPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeEntryPricesFormGroup() {
@@ -2389,6 +2683,8 @@ export namespace MyNS {
 		 * Retrieve all Activities
 		 * Use this endpoint to retrieve all Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get activities
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ActivityCursorResults} Success
 		 */
 		GetAllActivities(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ActivityCursorResults> {
@@ -2420,7 +2716,9 @@ export namespace MyNS {
 		 * Use this endpoint to get all the activities that the employee is allowed to register an entry on for a given project. Potential restrictions of registration are based on recording rules in the UI, which cannot be modified through the API. Add the employee number and project to your query parameter to obtain the allowed activities for registrations.
 		 * Get activities/allowed
 		 * @param {number} employeeNumber The employee number.
+		 *     Minimum: 1    Maximum: 999999
 		 * @param {number} projectNumber The project number.
+		 *     Minimum: 1    Maximum: 999999999
 		 * @return {Array<Activity>} List of allowed activities.
 		 */
 		GetAllowedActivities(employeeNumber: number, projectNumber: number): Observable<Array<Activity>> {
@@ -2432,6 +2730,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Activities. You can use a filtering as well.
 		 * Get activities/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfActivities(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'activities/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2441,6 +2740,10 @@ export namespace MyNS {
 		 * Retrieve a page of Activities
 		 * Use this endpoint to load a page of Activities.
 		 * Get activities/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<Activity>} Success
 		 */
 		GetPageOfActivities(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<Activity>> {
@@ -2451,6 +2754,7 @@ export namespace MyNS {
 		 * Retrieve single Activity
 		 * Use this endpoint to load a single Activity by id/number.
 		 * Get activities/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Activity} Success
 		 */
 		GetActivityById(number: number): Observable<Activity> {
@@ -2461,6 +2765,8 @@ export namespace MyNS {
 		 * Retrieve all Activity Groups
 		 * Use this endpoint to retrieve all Activity Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get activitygroups
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ActivityGroupCursorResults} Success
 		 */
 		GetAllActivityGroups(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ActivityGroupCursorResults> {
@@ -2482,6 +2788,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Activity Groups. You can use a filtering as well.
 		 * Get activitygroups/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfActivityGroups(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'activitygroups/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2491,6 +2798,10 @@ export namespace MyNS {
 		 * Retrieve a page of Activity Groups
 		 * Use this endpoint to load a page of Activity Groups.
 		 * Get activitygroups/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ActivityGroup>} Success
 		 */
 		GetPageOfActivityGroups(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ActivityGroup>> {
@@ -2501,6 +2812,7 @@ export namespace MyNS {
 		 * Retrieve single Activity Group
 		 * Use this endpoint to load a single Activity Group by id/number.
 		 * Get activitygroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ActivityGroup} Success
 		 */
 		GetActivityGroupById(number: number): Observable<ActivityGroup> {
@@ -2511,6 +2823,8 @@ export namespace MyNS {
 		 * Retrieve all Cost Type Groups
 		 * Use this endpoint to retrieve all Cost Type Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get costtypegroups
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {CostTypeGroupCursorResults} Success
 		 */
 		GetAllCostTypeGroups(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<CostTypeGroupCursorResults> {
@@ -2522,6 +2836,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Cost Type Groups. You can use a filtering as well.
 		 * Get costtypegroups/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfCostTypeGroups(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'costtypegroups/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2531,6 +2846,10 @@ export namespace MyNS {
 		 * Retrieve a page of Cost Type Groups
 		 * Use this endpoint to load a page of Cost Type Groups.
 		 * Get costtypegroups/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<CostTypeGroup>} Success
 		 */
 		GetPageOfCostTypeGroups(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<CostTypeGroup>> {
@@ -2541,6 +2860,7 @@ export namespace MyNS {
 		 * Retrieve single Cost Type Group
 		 * Use this endpoint to load a single Cost Type Group by id/number.
 		 * Get costtypegroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CostTypeGroup} Success
 		 */
 		GetCostTypeGroupById(number: number): Observable<CostTypeGroup> {
@@ -2551,6 +2871,8 @@ export namespace MyNS {
 		 * Retrieve all Cost Types
 		 * Use this endpoint to retrieve all Cost Types in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get costtypes
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {CostTypeCursorResults} Success
 		 */
 		GetAllCostTypes(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<CostTypeCursorResults> {
@@ -2562,6 +2884,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Cost Types. You can use a filtering as well.
 		 * Get costtypes/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfCostTypes(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'costtypes/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2571,6 +2894,10 @@ export namespace MyNS {
 		 * Retrieve a page of Cost Types
 		 * Use this endpoint to load a page of Cost Types.
 		 * Get costtypes/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<CostType>} Success
 		 */
 		GetPageOfCostTypes(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<CostType>> {
@@ -2581,6 +2908,7 @@ export namespace MyNS {
 		 * Retrieve single Cost Type
 		 * Use this endpoint to load a single Cost Type by id/number.
 		 * Get costtypes/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CostType} Success
 		 */
 		GetCostTypeById(number: number): Observable<CostType> {
@@ -2591,6 +2919,8 @@ export namespace MyNS {
 		 * Retrieve all Employee groups
 		 * Use this endpoint to retrieve all Employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get employeegroups
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {EmployeeGroupCursorResults} Success
 		 */
 		GetAllEmployeeGroups(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<EmployeeGroupCursorResults> {
@@ -2622,6 +2952,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Employee groups. You can use a filtering as well.
 		 * Get employeegroups/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfEmployeeGroups(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'employeegroups/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2631,6 +2962,10 @@ export namespace MyNS {
 		 * Retrieve a page of Employee groups
 		 * Use this endpoint to load a page of Employee groups.
 		 * Get employeegroups/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<EmployeeGroup>} Success
 		 */
 		GetPageOfEmployeeGroups(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<EmployeeGroup>> {
@@ -2641,6 +2976,7 @@ export namespace MyNS {
 		 * Delete single Employee group
 		 * Use this endpoint to delete a single Employee group by id/number.
 		 * Delete employeegroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteEmployeeGroupById(number: number): Observable<HttpResponse<string>> {
@@ -2651,6 +2987,7 @@ export namespace MyNS {
 		 * Retrieve single Employee group
 		 * Use this endpoint to load a single Employee group by id/number.
 		 * Get employeegroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EmployeeGroup} Success
 		 */
 		GetEmployeeGroupById(number: number): Observable<EmployeeGroup> {
@@ -2661,6 +2998,8 @@ export namespace MyNS {
 		 * Retrieve all Employees
 		 * Use this endpoint to retrieve all Employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get employees
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {EmployeeCursorResults} Success
 		 */
 		GetAllEmployees(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<EmployeeCursorResults> {
@@ -2692,6 +3031,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Employees. You can use a filtering as well.
 		 * Get employees/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfEmployees(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'employees/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2701,6 +3041,10 @@ export namespace MyNS {
 		 * Retrieve a page of Employees
 		 * Use this endpoint to load a page of Employees.
 		 * Get employees/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<Employee>} Success
 		 */
 		GetPageOfEmployees(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<Employee>> {
@@ -2711,6 +3055,7 @@ export namespace MyNS {
 		 * Delete single Employee
 		 * Use this endpoint to delete a single Employee by id/number.
 		 * Delete employees/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteEmployeeById(number: number): Observable<HttpResponse<string>> {
@@ -2721,6 +3066,7 @@ export namespace MyNS {
 		 * Retrieve single Employee
 		 * Use this endpoint to load a single Employee by id/number.
 		 * Get employees/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Employee} Success
 		 */
 		GetEmployeeById(number: number): Observable<Employee> {
@@ -2731,6 +3077,8 @@ export namespace MyNS {
 		 * Retrieve all Mileage entry prices
 		 * Use this endpoint to retrieve all Mileage entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get mileageprices
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {MileagePricesCursorResults} Success
 		 */
 		GetAllMileageEntryPrices(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<MileagePricesCursorResults> {
@@ -2741,6 +3089,10 @@ export namespace MyNS {
 		 * Retrieve a page of Mileage entry prices
 		 * Use this endpoint to load a page of Mileage entry prices.
 		 * Get mileageprices/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<MileagePrices>} Success
 		 */
 		GetPageOfMileageEntryPrices(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<MileagePrices>> {
@@ -2751,6 +3103,7 @@ export namespace MyNS {
 		 * Retrieve single Mileage entry prices
 		 * Use this endpoint to load a single Mileage entry prices by id/number.
 		 * Get mileageprices/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MileagePrices} Success
 		 */
 		GetMileagePricesById(number: number): Observable<MileagePrices> {
@@ -2761,6 +3114,8 @@ export namespace MyNS {
 		 * Retrieve all Mileage entries
 		 * Use this endpoint to retrieve all Mileage entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get mileages
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {MileageCursorResults} Success
 		 */
 		GetAllMileageEntries(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<MileageCursorResults> {
@@ -2802,6 +3157,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Mileage entries. You can use a filtering as well.
 		 * Get mileages/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfMileageEntries(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mileages/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2811,6 +3167,10 @@ export namespace MyNS {
 		 * Retrieve a page of Mileage entries
 		 * Use this endpoint to load a page of Mileage entries.
 		 * Get mileages/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<Mileage>} Success
 		 */
 		GetPageOfMileageEntries(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<Mileage>> {
@@ -2821,6 +3181,7 @@ export namespace MyNS {
 		 * Delete single Mileage entry
 		 * Use this endpoint to delete a single Mileage entry by id/number.
 		 * Delete mileages/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteMileageById(number: number): Observable<HttpResponse<string>> {
@@ -2831,6 +3192,7 @@ export namespace MyNS {
 		 * Retrieve single Mileage entry
 		 * Use this endpoint to load a single Mileage entry by id/number.
 		 * Get mileages/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Mileage} Success
 		 */
 		GetMileageById(number: number): Observable<Mileage> {
@@ -2841,6 +3203,8 @@ export namespace MyNS {
 		 * Retrieve all Project Activities
 		 * Use this endpoint to retrieve all Project Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get project-activities
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectActivityCursorResults} Success
 		 */
 		GetAllProjectActivities(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectActivityCursorResults> {
@@ -2872,6 +3236,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project Activities. You can use a filtering as well.
 		 * Get project-activities/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectActivities(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'project-activities/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2881,6 +3246,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project Activities
 		 * Use this endpoint to load a page of Project Activities.
 		 * Get project-activities/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectActivity>} Success
 		 */
 		GetPageOfProjectActivities(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectActivity>> {
@@ -2891,6 +3260,7 @@ export namespace MyNS {
 		 * Delete single Project Activity
 		 * Use this endpoint to delete a single Project Activity by id/number.
 		 * Delete project-activities/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteProjectActivityById(number: number): Observable<HttpResponse<string>> {
@@ -2901,6 +3271,7 @@ export namespace MyNS {
 		 * Retrieve single Project Activity
 		 * Use this endpoint to load a single Project Activity by id/number.
 		 * Get project-activities/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectActivity} Success
 		 */
 		GetProjectActivityById(number: number): Observable<ProjectActivity> {
@@ -2911,6 +3282,8 @@ export namespace MyNS {
 		 * Retrieve all Project Customers
 		 * Use this endpoint to retrieve all Project Customers in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get project-customers
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectCustomerCursorResults} Success
 		 */
 		GetAllProjectCustomers(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectCustomerCursorResults> {
@@ -2922,6 +3295,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project Customers. You can use a filtering as well.
 		 * Get project-customers/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectCustomers(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'project-customers/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2931,6 +3305,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project Customers
 		 * Use this endpoint to load a page of Project Customers.
 		 * Get project-customers/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectCustomer>} Success
 		 */
 		GetPageOfProjectCustomers(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectCustomer>> {
@@ -2941,6 +3319,7 @@ export namespace MyNS {
 		 * Retrieve single Project Customer
 		 * Use this endpoint to load a single Project Customer by id/number.
 		 * Get project-customers/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectCustomer} Success
 		 */
 		GetProjectCustomerById(number: number): Observable<ProjectCustomer> {
@@ -2951,6 +3330,8 @@ export namespace MyNS {
 		 * Retrieve all Project employee groups
 		 * Use this endpoint to retrieve all Project employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get project-employeegroups
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectEmployeeGroupCursorResults} Success
 		 */
 		GetAllProjectEmployeeGroups(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectEmployeeGroupCursorResults> {
@@ -2982,6 +3363,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project employee groups. You can use a filtering as well.
 		 * Get project-employeegroups/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectEmployeeGroups(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'project-employeegroups/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -2991,6 +3373,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project employee groups
 		 * Use this endpoint to load a page of Project employee groups.
 		 * Get project-employeegroups/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectEmployeeGroup>} Success
 		 */
 		GetPageOfProjectEmployeeGroups(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectEmployeeGroup>> {
@@ -3001,6 +3387,7 @@ export namespace MyNS {
 		 * Delete single Project employee group
 		 * Use this endpoint to delete a single Project employee group by id/number.
 		 * Delete project-employeegroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteProjectEmployeeGroupById(number: number): Observable<HttpResponse<string>> {
@@ -3011,6 +3398,7 @@ export namespace MyNS {
 		 * Retrieve single Project employee group
 		 * Use this endpoint to load a single Project employee group by id/number.
 		 * Get project-employeegroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectEmployeeGroup} Success
 		 */
 		GetProjectEmployeeGroupById(number: number): Observable<ProjectEmployeeGroup> {
@@ -3021,6 +3409,8 @@ export namespace MyNS {
 		 * Retrieve all Project employees
 		 * Use this endpoint to retrieve all Project employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get project-employees
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectEmployeeCursorResults} Success
 		 */
 		GetAllProjectEmployees(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectEmployeeCursorResults> {
@@ -3052,6 +3442,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project employees. You can use a filtering as well.
 		 * Get project-employees/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectEmployees(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'project-employees/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -3061,6 +3452,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project employees
 		 * Use this endpoint to load a page of Project employees.
 		 * Get project-employees/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectEmployee>} Success
 		 */
 		GetPageOfProjectEmployees(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectEmployee>> {
@@ -3071,6 +3466,7 @@ export namespace MyNS {
 		 * Delete single Project employee
 		 * Use this endpoint to delete a single Project employee by id/number.
 		 * Delete project-employees/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteProjectEmployeeById(number: number): Observable<HttpResponse<string>> {
@@ -3081,6 +3477,7 @@ export namespace MyNS {
 		 * Retrieve single Project employee
 		 * Use this endpoint to load a single Project employee by id/number.
 		 * Get project-employees/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectEmployee} Success
 		 */
 		GetProjectEmployeeById(number: number): Observable<ProjectEmployee> {
@@ -3091,6 +3488,8 @@ export namespace MyNS {
 		 * Retrieve all Project Groups
 		 * Use this endpoint to retrieve all Project Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get projectgroups
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectGroupCursorResults} Success
 		 */
 		GetAllProjectGroups(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectGroupCursorResults> {
@@ -3112,6 +3511,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project Groups. You can use a filtering as well.
 		 * Get projectgroups/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectGroups(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projectgroups/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -3121,6 +3521,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project Groups
 		 * Use this endpoint to load a page of Project Groups.
 		 * Get projectgroups/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectGroup>} Success
 		 */
 		GetPageOfProjectGroups(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectGroup>> {
@@ -3131,6 +3535,7 @@ export namespace MyNS {
 		 * Retrieve single Project Group
 		 * Use this endpoint to load a single Project Group by id/number.
 		 * Get projectgroups/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectGroup} Success
 		 */
 		GetProjectGroupById(number: number): Observable<ProjectGroup> {
@@ -3141,6 +3546,8 @@ export namespace MyNS {
 		 * Retrieve all Projects
 		 * Use this endpoint to retrieve all Projects in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get projects
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectCursorResults} Success
 		 */
 		GetAllProjects(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectCursorResults> {
@@ -3172,6 +3579,7 @@ export namespace MyNS {
 		 * Use this endpoint to get all the projects that the employee is allowed to register an entry on. Potential restrictions of registration are based on recording rules in the UI, which cannot be modified through the API. Add the employee number to your query parameter to obtain the allowed projects for registrations.
 		 * Get projects/allowed
 		 * @param {number} employeeNumber The employee number.
+		 *     Minimum: 1    Maximum: 999999
 		 * @return {Array<Project>} Success
 		 */
 		GetPagedListOfProjectUnderEmployee(employeeNumber: number): Observable<Array<Project>> {
@@ -3183,6 +3591,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Projects. You can use a filtering as well.
 		 * Get projects/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjects(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projects/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -3192,6 +3601,10 @@ export namespace MyNS {
 		 * Retrieve a page of Projects
 		 * Use this endpoint to load a page of Projects.
 		 * Get projects/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<Project>} Success
 		 */
 		GetPageOfProjects(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<Project>> {
@@ -3202,6 +3615,7 @@ export namespace MyNS {
 		 * Delete single Project
 		 * Use this endpoint to delete a single Project by id/number.
 		 * Delete projects/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteProjectById(number: number): Observable<HttpResponse<string>> {
@@ -3212,6 +3626,7 @@ export namespace MyNS {
 		 * Retrieve single Project
 		 * Use this endpoint to load a single Project by id/number.
 		 * Get projects/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Project} Success
 		 */
 		GetProjectById(number: number): Observable<Project> {
@@ -3222,6 +3637,8 @@ export namespace MyNS {
 		 * Retrieve all Project Statuses
 		 * Use this endpoint to retrieve all Project Statuses in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get projectstatuses
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {ProjectStatusCursorResults} Success
 		 */
 		GetAllProjectStatuses(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<ProjectStatusCursorResults> {
@@ -3233,6 +3650,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Project Statuses. You can use a filtering as well.
 		 * Get projectstatuses/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfProjectStatuses(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'projectstatuses/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -3242,6 +3660,10 @@ export namespace MyNS {
 		 * Retrieve a page of Project Statuses
 		 * Use this endpoint to load a page of Project Statuses.
 		 * Get projectstatuses/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<ProjectStatus>} Success
 		 */
 		GetPageOfProjectStatuses(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<ProjectStatus>> {
@@ -3252,6 +3674,7 @@ export namespace MyNS {
 		 * Retrieve single Project Status
 		 * Use this endpoint to load a single Project Status by id/number.
 		 * Get projectstatuses/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ProjectStatus} Success
 		 */
 		GetProjectStatusById(number: number): Observable<ProjectStatus> {
@@ -3262,6 +3685,8 @@ export namespace MyNS {
 		 * Retrieve all Time entries
 		 * Use this endpoint to retrieve all Time entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get timeentries
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {TimeEntryCursorResults} Success
 		 */
 		GetAllTimeEntries(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<TimeEntryCursorResults> {
@@ -3303,6 +3728,7 @@ export namespace MyNS {
 		 * Call this endpoint to get the number of Time entries. You can use a filtering as well.
 		 * Get timeentries/count
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		GetNumberOfTimeEntries(Filter: string | null | undefined): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'timeentries/count?Filter=' + (Filter == null ? '' : encodeURIComponent(Filter)), {});
@@ -3312,6 +3738,10 @@ export namespace MyNS {
 		 * Retrieve a page of Time entries
 		 * Use this endpoint to load a page of Time entries.
 		 * Get timeentries/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<TimeEntry>} Success
 		 */
 		GetPageOfTimeEntries(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<TimeEntry>> {
@@ -3322,6 +3752,7 @@ export namespace MyNS {
 		 * Delete single Time entry
 		 * Use this endpoint to delete a single Time entry by id/number.
 		 * Delete timeentries/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteTimeEntryById(number: number): Observable<HttpResponse<string>> {
@@ -3332,6 +3763,7 @@ export namespace MyNS {
 		 * Retrieve single Time entry
 		 * Use this endpoint to load a single Time entry by id/number.
 		 * Get timeentries/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TimeEntry} Success
 		 */
 		GetTimeEntryById(number: number): Observable<TimeEntry> {
@@ -3342,6 +3774,8 @@ export namespace MyNS {
 		 * Retrieve all Time entry prices
 		 * Use this endpoint to retrieve all Time entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		 * Get timeentryprices
+		 * @param {string} Cursor Min length: 0
+		 *     Max length: 50
 		 * @return {TimeEntryPricesCursorResults} Success
 		 */
 		GetAllTimeEntryPrices(Cursor: string | null | undefined, Filter: string | null | undefined): Observable<TimeEntryPricesCursorResults> {
@@ -3352,6 +3786,10 @@ export namespace MyNS {
 		 * Retrieve a page of Time entry prices
 		 * Use this endpoint to load a page of Time entry prices.
 		 * Get timeentryprices/paged
+		 * @param {number} PageSize Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} SkipPages Minimum: 0
+		 *     Maximum: 100
 		 * @return {Array<TimeEntryPrices>} Success
 		 */
 		GetPageOfTimeEntryPrices(Filter: string | null | undefined, Sort: string | null | undefined, PageSize: number | null | undefined, SkipPages: number | null | undefined): Observable<Array<TimeEntryPrices>> {
@@ -3362,6 +3800,7 @@ export namespace MyNS {
 		 * Retrieve single Time entry prices
 		 * Use this endpoint to load a single Time entry prices by id/number.
 		 * Get timeentryprices/{number}
+		 * @param {number} number Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TimeEntryPrices} Success
 		 */
 		GetTimeEntryPricesById(number: number): Observable<TimeEntryPrices> {

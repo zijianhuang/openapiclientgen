@@ -285,7 +285,9 @@ namespace MyNS
 		/// List all available Windows.ESU provider operations.
 		/// Operations_List providers/Microsoft.WindowsESU/operations
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<OperationList> Operations_ListAsync(string api_version)
 		{
@@ -314,8 +316,12 @@ namespace MyNS
 		/// List all Multiple Activation Keys (MAK) created for a subscription.
 		/// MultipleActivationKeys_List subscriptions/{subscriptionId}/providers/Microsoft.WindowsESU/multipleActivationKeys
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<MultipleActivationKeyList> MultipleActivationKeys_ListAsync(string subscriptionId, string api_version)
 		{
@@ -344,9 +350,16 @@ namespace MyNS
 		/// List all Multiple Activation Keys (MAK) in a resource group.
 		/// MultipleActivationKeys_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<MultipleActivationKeyList> MultipleActivationKeys_ListByResourceGroupAsync(string subscriptionId, string resourceGroupName, string api_version)
 		{
@@ -375,9 +388,16 @@ namespace MyNS
 		/// Get a MAK key.
 		/// MultipleActivationKeys_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="multipleActivationKeyName">The name of the MAK key.</param>
 		/// <returns>OK</returns>
 		public async Task<MultipleActivationKey> MultipleActivationKeys_GetAsync(string subscriptionId, string resourceGroupName, string api_version, string multipleActivationKeyName)
@@ -407,9 +427,16 @@ namespace MyNS
 		/// Create a MAK key.
 		/// MultipleActivationKeys_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="multipleActivationKeyName">The name of the MAK key.</param>
 		/// <param name="requestBody">Details of the MAK key.</param>
 		/// <returns>OK</returns>
@@ -447,9 +474,16 @@ namespace MyNS
 		/// Delete a MAK key.
 		/// MultipleActivationKeys_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="multipleActivationKeyName">The name of the MAK key.</param>
 		/// <returns>OK</returns>
 		public async Task MultipleActivationKeys_DeleteAsync(string subscriptionId, string resourceGroupName, string api_version, string multipleActivationKeyName)
@@ -473,9 +507,16 @@ namespace MyNS
 		/// Update a MAK key.
 		/// MultipleActivationKeys_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WindowsESU/multipleActivationKeys/{multipleActivationKeyName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <param name="multipleActivationKeyName">The name of the MAK key.</param>
 		/// <param name="requestBody">Details of the MAK key.</param>
 		/// <returns>OK</returns>

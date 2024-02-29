@@ -2730,6 +2730,7 @@ export namespace MyNS {
 		 * Cancels the reprocessing of data through the pipeline.
 		 * Delete pipelines/{pipelineName}/reprocessing/{reprocessingId}
 		 * @param {string} pipelineName The name of pipeline for which data reprocessing is canceled.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} reprocessingId The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).
 		 * @return {CancelPipelineReprocessingResponse} Success
 		 */
@@ -2751,6 +2752,7 @@ export namespace MyNS {
 		 * Get channels
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListChannelsResponse} Success
 		 */
 		ListChannels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListChannelsResponse> {
@@ -2771,6 +2773,7 @@ export namespace MyNS {
 		 * Get datasets
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDatasetsResponse} Success
 		 */
 		ListDatasets(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
@@ -2781,6 +2784,7 @@ export namespace MyNS {
 		 * Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application).
 		 * Post datasets/{datasetName}/content
 		 * @param {string} datasetName The name of the dataset.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateDatasetContentResponse} Success
 		 */
 		CreateDatasetContent(datasetName: string, requestBody: CreateDatasetContentPostBody): Observable<CreateDatasetContentResponse> {
@@ -2791,7 +2795,9 @@ export namespace MyNS {
 		 * Deletes the content of the specified dataset.
 		 * Delete datasets/{datasetName}/content
 		 * @param {string} datasetName The name of the dataset whose content is deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionId The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
+		 *     Min length: 7    Max length: 36
 		 * @return {void} 
 		 */
 		DeleteDatasetContent(datasetName: string, versionId: string | null | undefined): Observable<HttpResponse<string>> {
@@ -2802,7 +2808,9 @@ export namespace MyNS {
 		 * Retrieves the contents of a dataset as presigned URIs.
 		 * Get datasets/{datasetName}/content
 		 * @param {string} datasetName The name of the dataset whose contents are retrieved.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionId The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.
+		 *     Min length: 7    Max length: 36
 		 * @return {GetDatasetContentResponse} Success
 		 */
 		GetDatasetContent(datasetName: string, versionId: string | null | undefined): Observable<GetDatasetContentResponse> {
@@ -2823,6 +2831,7 @@ export namespace MyNS {
 		 * Get datastores
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDatastoresResponse} Success
 		 */
 		ListDatastores(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatastoresResponse> {
@@ -2843,6 +2852,7 @@ export namespace MyNS {
 		 * Get pipelines
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListPipelinesResponse} Success
 		 */
 		ListPipelines(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPipelinesResponse> {
@@ -2853,6 +2863,7 @@ export namespace MyNS {
 		 * Deletes the specified channel.
 		 * Delete channels/{channelName}
 		 * @param {string} channelName The name of the channel to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteChannel(channelName: string): Observable<HttpResponse<string>> {
@@ -2863,6 +2874,7 @@ export namespace MyNS {
 		 * Retrieves information about a channel.
 		 * Get channels/{channelName}
 		 * @param {string} channelName The name of the channel whose information is retrieved.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} includeStatistics If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.
 		 * @return {DescribeChannelResponse} Success
 		 */
@@ -2874,6 +2886,7 @@ export namespace MyNS {
 		 * Used to update the settings of a channel.
 		 * Put channels/{channelName}
 		 * @param {string} channelName The name of the channel to be updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateChannel(channelName: string, requestBody: UpdateChannelPutBody): Observable<HttpResponse<string>> {
@@ -2884,6 +2897,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified dataset.</p> <p>You do not have to delete the content of the dataset before you perform this operation.</p>
 		 * Delete datasets/{datasetName}
 		 * @param {string} datasetName The name of the dataset to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteDataset(datasetName: string): Observable<HttpResponse<string>> {
@@ -2894,6 +2908,7 @@ export namespace MyNS {
 		 * Retrieves information about a dataset.
 		 * Get datasets/{datasetName}
 		 * @param {string} datasetName The name of the dataset whose information is retrieved.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDatasetResponse} Success
 		 */
 		DescribeDataset(datasetName: string): Observable<DescribeDatasetResponse> {
@@ -2904,6 +2919,7 @@ export namespace MyNS {
 		 * Updates the settings of a dataset.
 		 * Put datasets/{datasetName}
 		 * @param {string} datasetName The name of the dataset to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateDataset(datasetName: string, requestBody: UpdateDatasetPutBody): Observable<HttpResponse<string>> {
@@ -2914,6 +2930,7 @@ export namespace MyNS {
 		 * Deletes the specified data store.
 		 * Delete datastores/{datastoreName}
 		 * @param {string} datastoreName The name of the data store to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteDatastore(datastoreName: string): Observable<HttpResponse<string>> {
@@ -2924,6 +2941,7 @@ export namespace MyNS {
 		 * Retrieves information about a data store.
 		 * Get datastores/{datastoreName}
 		 * @param {string} datastoreName The name of the data store
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} includeStatistics If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.
 		 * @return {DescribeDatastoreResponse} Success
 		 */
@@ -2935,6 +2953,7 @@ export namespace MyNS {
 		 * Used to update the settings of a data store.
 		 * Put datastores/{datastoreName}
 		 * @param {string} datastoreName The name of the data store to be updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateDatastore(datastoreName: string, requestBody: UpdateDatastorePutBody): Observable<HttpResponse<string>> {
@@ -2945,6 +2964,7 @@ export namespace MyNS {
 		 * Deletes the specified pipeline.
 		 * Delete pipelines/{pipelineName}
 		 * @param {string} pipelineName The name of the pipeline to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeletePipeline(pipelineName: string): Observable<HttpResponse<string>> {
@@ -2955,6 +2975,7 @@ export namespace MyNS {
 		 * Retrieves information about a pipeline.
 		 * Get pipelines/{pipelineName}
 		 * @param {string} pipelineName The name of the pipeline whose information is retrieved.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribePipelineResponse} Success
 		 */
 		DescribePipeline(pipelineName: string): Observable<DescribePipelineResponse> {
@@ -2965,6 +2986,7 @@ export namespace MyNS {
 		 * Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.
 		 * Put pipelines/{pipelineName}
 		 * @param {string} pipelineName The name of the pipeline to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdatePipeline(pipelineName: string, requestBody: UpdatePipelinePutBody): Observable<HttpResponse<string>> {
@@ -2993,8 +3015,10 @@ export namespace MyNS {
 		 * Lists information about dataset contents that have been created.
 		 * Get datasets/{datasetName}/contents
 		 * @param {string} datasetName The name of the dataset whose contents information you want to list.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return in this request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {Date} scheduledOnOrAfter A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
 		 * @param {Date} scheduledBefore A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
 		 * @return {ListDatasetContentsResponse} Success
@@ -3007,6 +3031,7 @@ export namespace MyNS {
 		 * Lists the tags (metadata) that you have assigned to the resource.
 		 * Get tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource whose tags you want to list.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3017,6 +3042,7 @@ export namespace MyNS {
 		 * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
 		 * Post tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource whose tags you want to modify.
+		 *     Min length: 20    Max length: 2048
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -3036,7 +3062,9 @@ export namespace MyNS {
 		 * Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.
 		 * Get channels/{channelName}/sample
 		 * @param {string} channelName The name of the channel whose message samples are retrieved.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxMessages The number of sample messages to be retrieved. The limit is 10. The default is also 10.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {Date} startTime The start of the time window from which sample messages are retrieved.
 		 * @param {Date} endTime The end of the time window from which sample messages are retrieved.
 		 * @return {SampleChannelDataResponse} Success
@@ -3049,6 +3077,7 @@ export namespace MyNS {
 		 * Starts the reprocessing of raw message data through the pipeline.
 		 * Post pipelines/{pipelineName}/reprocessing
 		 * @param {string} pipelineName The name of the pipeline on which to start reprocessing.
+		 *     Min length: 1    Max length: 128
 		 * @return {StartPipelineReprocessingResponse} Success
 		 */
 		StartPipelineReprocessing(pipelineName: string, requestBody: StartPipelineReprocessingPostBody): Observable<StartPipelineReprocessingResponse> {
@@ -3059,7 +3088,9 @@ export namespace MyNS {
 		 * Removes the given tags (metadata) from the resource.
 		 * Delete tags#resourceArn&tagKeys
 		 * @param {string} resourceArn The ARN of the resource whose tags you want to remove.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys The keys of those tags which you want to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -3072,8 +3103,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel where the messages are sent.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelName: string;
 
@@ -3088,8 +3119,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel where the messages are sent.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
@@ -3105,8 +3136,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelName: string;
 
@@ -3128,8 +3159,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
@@ -3173,8 +3204,8 @@ export namespace MyNS {
 		/**
 		 * The name of the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		datasetName: string;
 
@@ -3225,8 +3256,8 @@ export namespace MyNS {
 		/**
 		 * The name of the dataset.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		datasetName: FormControl<string | null | undefined>,
 	}
@@ -3273,8 +3304,8 @@ export namespace MyNS {
 
 		/**
 		 * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
-		 * Max length: 36
 		 * Min length: 7
+		 * Max length: 36
 		 */
 		versionId?: string | null;
 	}
@@ -3282,8 +3313,8 @@ export namespace MyNS {
 
 		/**
 		 * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
-		 * Max length: 36
 		 * Min length: 7
+		 * Max length: 36
 		 */
 		versionId: FormControl<string | null | undefined>,
 	}
@@ -3299,8 +3330,8 @@ export namespace MyNS {
 		/**
 		 * The name of the data store.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		datastoreName: string;
 
@@ -3328,8 +3359,8 @@ export namespace MyNS {
 		/**
 		 * The name of the data store.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 	}
@@ -3397,8 +3428,8 @@ export namespace MyNS {
 		/**
 		 * The name of the pipeline.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		pipelineName: string;
 
@@ -3422,8 +3453,8 @@ export namespace MyNS {
 		/**
 		 * The name of the pipeline.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 	}
